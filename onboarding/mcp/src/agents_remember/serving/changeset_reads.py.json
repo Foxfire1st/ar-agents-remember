@@ -39,15 +39,14 @@
   ],
   "references": {
     "1": {
-      "note": "Working diff counters use the native reader and register attribute inputs.",
+      "note": "Working diff counters use the native reader and register attribute inputs.\n\nAnchor: `changed_files_with_counts`",
       "targets": [
         {
           "anchor": {
-            "blob": "5c5bad11e569807e1f8ac3f6b751e29506700331",
-            "content": "sha256:9bd1058368a641b153f336e91799b4bbcc487930c3c224d971f824b3df7de61e",
+            "blob": "92ae1bfa857dbaf808ea47e97592015fb49a034e",
+            "content": "sha256:810f4e3750a0365227a2cb677133ef85646d2923fca5c5e03a2a61e4ecddf3f0",
             "locator": {
-              "kind": "symbol",
-              "name": "changed_files_with_counts"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -55,15 +54,14 @@
       ]
     },
     "2": {
-      "note": "A missing text result needs successful native absence proof before retention.",
+      "note": "A missing text result needs successful native absence proof before retention.\n\nAnchor: `commit_text_or_none`",
       "targets": [
         {
           "anchor": {
-            "blob": "5c5bad11e569807e1f8ac3f6b751e29506700331",
-            "content": "sha256:58d968db46a6fa1635856ce62c7884812309e8cdc0bb9577d19ad4e5a04d9e01",
+            "blob": "92ae1bfa857dbaf808ea47e97592015fb49a034e",
+            "content": "sha256:810f4e3750a0365227a2cb677133ef85646d2923fca5c5e03a2a61e4ecddf3f0",
             "locator": {
-              "kind": "symbol",
-              "name": "commit_text_or_none"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -71,15 +69,14 @@
       ]
     },
     "3": {
-      "note": "Only successful fixed native command results are retained.",
+      "note": "Only successful fixed native command results are retained.\n\nAnchor: `read_git`",
       "targets": [
         {
           "anchor": {
-            "blob": "5c5bad11e569807e1f8ac3f6b751e29506700331",
-            "content": "sha256:01c6c46ebf65ba9cad0beeef883a618899fe3f0ef4eaab6d199c65ec693da674",
+            "blob": "92ae1bfa857dbaf808ea47e97592015fb49a034e",
+            "content": "sha256:810f4e3750a0365227a2cb677133ef85646d2923fca5c5e03a2a61e4ecddf3f0",
             "locator": {
-              "kind": "symbol",
-              "name": "read_git"
+              "kind": "file"
             }
           },
           "kind": "code"

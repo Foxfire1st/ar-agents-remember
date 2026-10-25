@@ -34,7 +34,9 @@ while leaving production bundles and live DevTools recording behavior untouched.
 
 ### Repo-Internal References
 
+
 - The Panda entry + layer order it loads. [1]
+
 - The `:root` design tokens it loads. [2]
 
-- The current entry imports index.css and tokens.css only; its StrictMode/MotionConfig, effects flag and development timeline cleanup remain. \[4] [4]
+- The current entry imports index.css and tokens.css only; its StrictMode/MotionConfig, effects flag and development timeline cleanup remain. [4]

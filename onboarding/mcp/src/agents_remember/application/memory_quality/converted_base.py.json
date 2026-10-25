@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/application/memory_quality/converted_base.py",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
@@ -52,12 +53,23 @@
       ]
     },
     "4": {
-      "note": "The memory-quality run passes the port into the drift context.",
+      "note": "The memory-quality run passes the port into the drift context.\n\nAnchor: `_execute_memory_quality`",
       "targets": [
         {
           "anchor": {
-            "blob": "a6eadd9ff1cf0a28a7754688d343ff8f802d2f04",
-            "content": "sha256:a615899736aae3f8c317123c8f935e70b75405d00193ba9fb8691d63cd70a36a",
+            "blob": "a4cb0ce3f5f3f488c8ad8313b8063d4a8218871e",
+            "content": "sha256:a2df6307f79b0a5282c67184a98d37a2d5fb71ad24fefd455d684627e7c5a73c",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/memory_quality/controller.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a4cb0ce3f5f3f488c8ad8313b8063d4a8218871e",
+            "content": "sha256:306f6286876759fdd98fa31ee60140a06b129e5d528ab0d843fc5dcea6300b09",
             "locator": {
               "kind": "symbol",
               "name": "_execute_memory_quality"
@@ -73,29 +85,13 @@
       "targets": [
         {
           "anchor": {
-            "blob": "30934f67876dc31aa7d36ec277f0841537570fb2",
+            "blob": "2464d2d12704dfa0b90457ac3a62acf2212bedb8",
             "content": "sha256:215ec4b99c44aff97b9eb3535f1dba09e2ceb0332d9ba4ba17cd371e9eacc32e",
             "locator": {
               "kind": "symbol",
               "name": "_comparison_bases"
             },
             "path": "mcp/src/agents_remember/memory_quality/converted_check.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "6": {
-      "note": "The landing base resolves the admitted commit, base listing, code deletion evidence and code-named renames independently.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "861c389d81f395584673bd0dfc2616de8ed2f6ef",
-            "content": "sha256:7c70a3a8ca954a2318c9081cdc45e724afae94492bc3f1de31034dc202c93251",
-            "locator": {
-              "kind": "symbol",
-              "name": "leaf_base_port"
-            }
           },
           "kind": "code"
         }

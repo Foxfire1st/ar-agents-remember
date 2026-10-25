@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "8caf0a1f98e9f4812878979738b6941ee469c2bf",
-    "commit": "6f81148c90e0d0db595034e111f696697cc40c7e",
+    "codeTree": "92c652c317276bbf370c18624e543eb8cd30cfbc",
+    "commit": "f22f39dfea8d0f6c9e0729206bdc909653494861",
     "role": "curator",
-    "statement": "The package copy repeats the source tool reference, so the same first-run preparation contract holds in the served copy.",
-    "task": "260928-MIK",
+    "statement": "At the synced candidate, the packaged tool reference remains byte-identical to the canonical document and carries the same diagnostic-versus-publication and non-waivable baseline boundaries.",
+    "task": "260928-MIK-L191",
     "uncommitted": true
   },
   "document": "mcp/src/agents_remember/package_data/runtime/docs/tool-details.md",
@@ -17,12 +17,12 @@
     "leaf": "260928-MIK-L188",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
       "anchor": {
-        "blob": "3d5e58b7836e8f82afefa7914174ad78dfcaa06d",
+        "blob": "7db3399548165beb205fd2430614eca1118e9ce6",
         "content": "sha256:4dfecd273e8b7851ec4b7d4cfa3656919408df3d0c9325d4769becf683f22684",
         "locator": {
           "kind": "symbol",
@@ -34,7 +34,7 @@
     },
     {
       "anchor": {
-        "blob": "1ad7586788f52bf0dc2245813ffc6e1bd8f283b5",
+        "blob": "f5e98565595261000309d4af6931b1bd494a558b",
         "content": "sha256:8b5ff8f9f66b69de9ac42443a04b79192ac20f26109b76cc6cd87808ae77adf5",
         "locator": {
           "kind": "symbol",
@@ -43,6 +43,16 @@
         "path": "mcp/src/agents_remember/kernel/primitives/paseo_authority.py"
       },
       "kind": "anchor"
+    },
+    {
+      "id": "INV-033XSD",
+      "kind": "record",
+      "revision": 1
+    },
+    {
+      "id": "INV-QR6DSA",
+      "kind": "record",
+      "revision": 2
     }
   ]
 }

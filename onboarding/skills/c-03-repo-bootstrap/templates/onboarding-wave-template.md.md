@@ -42,7 +42,9 @@ The following same-repository source ranges support the template description and
 - Bootstrap overview waves are deliberately small and bounded. [4]
 - Phase 4H uses this manifest, delegates file-level work to c-05, defines bounded sizing and reading duties, and calls for index refresh. [5]
 - The canonical bootstrap skill names c-05 as owner of file-level semantics and delegates file output rules to it. [6]
-- c-05 is the onboarding entry point; its converted-memory branch overrides the legacy workflow/template routing below it. [7]
+
+- c-05 remains the public onboarding entry point. A knowledge/layout.json marker selects its converted-card workflow and admitted citation/trace writers; old-format memory is refused pending conversion. [7]
+
 
 ### Cross-Repo References
 

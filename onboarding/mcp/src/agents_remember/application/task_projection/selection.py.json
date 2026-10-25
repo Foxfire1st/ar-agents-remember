@@ -10,8 +10,9 @@
             "blob": "8be78de10fc38e8a62c7f2cea910598322db1488",
             "content": "sha256:09b0210ac5fd385abd7c94fcc2cfc945cbbfcf6ae99d8c66066558b4f4fc0de4",
             "locator": {
-              "kind": "symbol",
-              "name": "_READ_ALTITUDES"
+              "end": 82,
+              "kind": "line_range",
+              "start": 61
             }
           },
           "kind": "code"
@@ -21,8 +22,9 @@
             "blob": "8be78de10fc38e8a62c7f2cea910598322db1488",
             "content": "sha256:4a7ab5f6e4bafa7b42f5c1ce420e327fb56412d48a09ea6ce4c1fb92ab380374",
             "locator": {
-              "kind": "symbol",
-              "name": "_PARENT_BUCKETS"
+              "end": 54,
+              "kind": "line_range",
+              "start": 54
             }
           },
           "kind": "code"
@@ -30,11 +32,11 @@
         {
           "anchor": {
             "blob": "8be78de10fc38e8a62c7f2cea910598322db1488",
-            "content": "sha256:01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+            "content": "sha256:305ba592749702ede47cb4e7500f6a1aa6202bf3d8f53ee06c15f819d6c9732d",
             "locator": {
-              "end": 44,
+              "end": 25,
               "kind": "line_range",
-              "start": 44
+              "start": 19
             }
           },
           "kind": "code"
@@ -124,7 +126,7 @@
       ]
     },
     "5": {
-      "note": "The frozen operation and role vocabularies this table must cover exactly.",
+      "note": "The frozen operation and role vocabularies this table must cover exactly.\n\nAnchor: `CAPSULE_OPERATIONS` `CAPSULE_ROLES`",
       "targets": [
         {
           "anchor": {
@@ -140,8 +142,8 @@
         },
         {
           "anchor": {
-            "blob": "cae83c767e4181dfaf6e8e45ad3efc05ef5fa9be",
-            "content": "sha256:f43459d304c6190880a186bea3b98bf494287d7777ff024c41bd43c8d7990ca8",
+            "blob": "f82bdc4007083ae4dad1686445d94d0c7e33d03b",
+            "content": "sha256:6811946246157d4d86d1215e8aa358f70653c11feeffd6b1d134adeb2cda0c71",
             "locator": {
               "kind": "symbol",
               "name": "CAPSULE_ROLES"
@@ -171,6 +173,17 @@
               "end": 72,
               "kind": "line_range",
               "start": 62
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/vocabulary.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f82bdc4007083ae4dad1686445d94d0c7e33d03b",
+            "content": "sha256:b6de98e8985e330ee99310530410ec3d4d9da72620da822d7be82e3a611f4cd7",
+            "locator": {
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/models/role_capsules/vocabulary.py"
           },

@@ -35,20 +35,33 @@ None recorded.
 
 The configured Domain Documentation registry is empty. No external documentation claim is made.
 
-- No external domain source is required for this repository-owned test contract. [1]
+
+> Retained earlier citation wording: - No external domain source is required for this repository-owned test contract. [1]
+
 
 ### Repo-Internal References
 
 The test file is direct evidence for the production boundary named above.
 
-- The selected scenarios and assertions implement this test unit's forcing proof. [2]
+
+> Retained earlier citation wording: - The selected scenarios and assertions implement this test unit's forcing proof. [2]
+
 
 ### Cross-Repo References
 
 No cross-repository source is allowed by the resolved settings.
 
-- No meaningful cross-repository reference applies. [3]
+
+> Retained earlier citation wording: - No meaningful cross-repository reference applies. [3]
 
 ## 260928-MIK-L198 — a published test enclosure's root is this module's to remove
 
 `publish_test_enclosure` now remembers the outside scratch root each publication creates — from the manifest's published record, else from the contract's recorded root — and removes those roots when the run ends, so a test that deletes its fixture tree does not leave an empty root behind in the product parent. Publication itself is unchanged: the helper still delegates to `publish_new_lifecycle_operation_location`.
+
+- No external domain source is required for this repository-owned test contract.  Anchor: `enclosure_contract` [1]
+
+
+- The selected scenarios and assertions implement this test unit's forcing proof.  Anchor: `enclosure_contract` [2]
+
+
+- No meaningful cross-repository reference applies.  Anchor: `enclosure_contract` [3]

@@ -40,12 +40,12 @@
       ]
     },
     "2": {
-      "note": "New step-2 writer command/options and step-3 family/external/readback detail; same admitted writer remains owner.\n\nAnchor: Candidate instruction body, lines 20–40",
+      "note": "New step-2 writer command/options and step-3 family/external/readback detail; same admitted writer remains owner.",
       "targets": [
         {
           "anchor": {
-            "blob": "bcdffc827a6aabd156e73f322a46e69d89a8e969",
-            "content": "sha256:ad12e3e0f430f470376a7cfa1c03a5a1eb7a05902d007e4faf6febd908ccde1d",
+            "blob": "a5e74f1a57f73c4f392379af6fbbb06b2e82f1e7",
+            "content": "sha256:69ecad41caf43ad328b978a418dfd1dc813ce148e4def3c7bed7db5aafbde643",
             "locator": {
               "end": 40,
               "kind": "line_range",

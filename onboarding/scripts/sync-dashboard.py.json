@@ -102,39 +102,14 @@
       ]
     },
     "4": {
-      "note": "The serving resolver mounts what this script placed, or answers 503 when nothing was placed.",
+      "note": "The serving resolver mounts what this script placed, or answers 503 when nothing was placed.\n\nAnchor: `dashboard_static_dir` `mount_static` `MissingDashboardBundle`",
       "targets": [
         {
           "anchor": {
             "blob": "9370af89f416c029c9b3cbb54290c0f1263a9474",
-            "content": "sha256:94cffaf7be3ad1a86233ca6f33e36845f7785d80048df74111ac83755bc14a61",
+            "content": "sha256:0ac58c7449874763cbc1d92b9ec71c49fe9d6acd25a3adc64c9dd46a4ee38253",
             "locator": {
-              "kind": "symbol",
-              "name": "dashboard_static_dir"
-            },
-            "path": "mcp/src/agents_remember/serving/static.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "0411370c042b987440c3681001642cc1f1ef7d5b",
-            "content": "sha256:1f606188e90d39e5ba2cfc48b354700f36033577e0e58aa84612f9e26c84a423",
-            "locator": {
-              "kind": "symbol",
-              "name": "mount_static"
-            },
-            "path": "mcp/src/agents_remember/serving/static.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "9370af89f416c029c9b3cbb54290c0f1263a9474",
-            "content": "sha256:06dfc4226588f7c4716fc05f2f63ee501591ad0f08f69610b2e6695d7094aead",
-            "locator": {
-              "kind": "symbol",
-              "name": "MissingDashboardBundle"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/serving/static.py"
           },

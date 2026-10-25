@@ -1,9 +1,10 @@
 {
   "path": "mcp/src/agents_remember/cli/role_document_chats.py",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
-        "blob": "9b84c4e4c1ff06239a846650d874d9132b82b7e4",
+        "blob": "edf0fbb7f0b42b3939d6da42c0b98a6cbb49f988",
         "content": "sha256:96e7ee16a8ae5501e7eff8c4776540c5163f814f5e33acf6d8cae933af9dee80",
         "locator": {
           "end": 102,
@@ -17,7 +18,7 @@
         "handoffEntry": "MIK-R98@v1 §7",
         "leaf": "260928-MIK-L98"
       },
-      "rationale": "Default server enumeration remains the document’s existing primary roles.",
+      "rationale": "The entry says default server enumeration stays the document's existing primary roles; `_records` at C takes `_primary_roles(selection)` (94) and `_primary_roles` (131-149) answers worker/reviewer/curator, manager, orchestrator or architect plus the free agent by what the selection names, so an investigator's own seats never displace them.",
       "role": "enforcement"
     },
     {
@@ -76,7 +77,7 @@
     },
     {
       "anchor": {
-        "blob": "9b84c4e4c1ff06239a846650d874d9132b82b7e4",
+        "blob": "edf0fbb7f0b42b3939d6da42c0b98a6cbb49f988",
         "content": "sha256:94817887839163988991af2398b35a43a520541ada47d34bf4b3da21827e55ef",
         "locator": {
           "end": 208,
@@ -90,12 +91,12 @@
         "handoffEntry": "L140-R1-F02",
         "leaf": "260928-MIK-L140"
       },
-      "rationale": "The read of one document refuses a damaged record with the 409 that asks to reconcile it.",
+      "rationale": "The entry says the read of one document refuses a damaged record with the 409 that asks to reconcile it: that is `_readable_chat_record` (223-231) called per record from document_chats (282). The recorded 200-208 holds `_is_reference`, the stored-selection check, so the claim is true at C but this extent does not show it.",
       "role": "enforcement"
     },
     {
       "anchor": {
-        "blob": "9b84c4e4c1ff06239a846650d874d9132b82b7e4",
+        "blob": "edf0fbb7f0b42b3939d6da42c0b98a6cbb49f988",
         "content": "sha256:c2f1579192c25b5dc6c4c90578cabe1f24dd186856f886e6cd1b6c53b9505a6f",
         "locator": {
           "end": 154,
@@ -109,7 +110,7 @@
         "handoffEntry": "L140-R1-F02",
         "leaf": "260928-MIK-L140"
       },
-      "rationale": "The one check both reads use: what is kept of a record, and which shapes count as damage and which only as a record without a hosted agent.",
+      "rationale": "`_chat_record` at C is the one check both reads share — which parts of a record are kept, and that a record without an execution of the right kind is no damage while a record without a role is — and the recorded 129-154 opens that function at 152; the surrounding `_primary_roles` lines in the same span are the default enumeration, not a second check.",
       "role": "primary-authority"
     }
   ],
@@ -119,8 +120,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9b84c4e4c1ff06239a846650d874d9132b82b7e4",
-            "content": "sha256:8fe1c27babec9fbfe513a42246fe6591072b4fdf7262ea1790007318f70413ff",
+            "blob": "edf0fbb7f0b42b3939d6da42c0b98a6cbb49f988",
+            "content": "sha256:5c135f9257d645c1b7fec5ef80e91e56cb912e6a500ae07f9aa549146aae1737",
             "locator": {
               "kind": "file"
             }
@@ -149,8 +150,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9b84c4e4c1ff06239a846650d874d9132b82b7e4",
-            "content": "sha256:8fe1c27babec9fbfe513a42246fe6591072b4fdf7262ea1790007318f70413ff",
+            "blob": "edf0fbb7f0b42b3939d6da42c0b98a6cbb49f988",
+            "content": "sha256:5c135f9257d645c1b7fec5ef80e91e56cb912e6a500ae07f9aa549146aae1737",
             "locator": {
               "kind": "file"
             }
@@ -180,8 +181,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9b84c4e4c1ff06239a846650d874d9132b82b7e4",
-            "content": "sha256:a42ac413dc0c1e6433082fb66d15784218ad0e1354eb23fa8baccb1230a5c4ca",
+            "blob": "edf0fbb7f0b42b3939d6da42c0b98a6cbb49f988",
+            "content": "sha256:34b956fc0cc8e53f661805c9b9c3cf97f635f7166966600af1f083303699f396",
             "locator": {
               "kind": "symbol",
               "name": "document_chats"
@@ -196,8 +197,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9b84c4e4c1ff06239a846650d874d9132b82b7e4",
-            "content": "sha256:5e9e77d56110e27da0d2b62e8f5a0eaf38b60edaabba06f8a014cc9af96fbc7b",
+            "blob": "edf0fbb7f0b42b3939d6da42c0b98a6cbb49f988",
+            "content": "sha256:a033f842dfb7d89e6706ea0d5fa091292d1aa496600ffc4576e01a3618260976",
             "locator": {
               "end": 132,
               "kind": "line_range",
@@ -213,8 +214,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9b84c4e4c1ff06239a846650d874d9132b82b7e4",
-            "content": "sha256:8fe1c27babec9fbfe513a42246fe6591072b4fdf7262ea1790007318f70413ff",
+            "blob": "edf0fbb7f0b42b3939d6da42c0b98a6cbb49f988",
+            "content": "sha256:5c135f9257d645c1b7fec5ef80e91e56cb912e6a500ae07f9aa549146aae1737",
             "locator": {
               "kind": "file"
             }

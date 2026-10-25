@@ -192,15 +192,14 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The Curator's role text names both authoring routes, says no other route writes knowledge, and writes `--commit` as `commit: true`",
+      "note": "The Curator's role text names both authoring routes, says no other route writes knowledge, and writes `--commit` as `commit: true`.\n\nAnchor: `test_current_coordination_and_curator_rules`",
       "targets": [
         {
           "anchor": {
-            "blob": "adf9b5a6fa1244eb38e099643fe8e5ff6e1defba",
-            "content": "sha256:1c37c333461ea486df03ee23330e489e0a7a14b8e54beb5340a36e54f8def7c3",
+            "blob": "4cec94249db175d2ad18bef512477765ff722e18",
+            "content": "sha256:dca259efe483c0dddf7ac9efb9dc47c202a1c7185e959f138771a0b28bbdc159",
             "locator": {
-              "kind": "symbol",
-              "name": "test_current_coordination_and_curator_rules"
+              "kind": "file"
             }
           },
           "kind": "test"

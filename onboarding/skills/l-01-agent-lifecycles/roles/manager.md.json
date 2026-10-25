@@ -292,9 +292,11 @@
         {
           "anchor": {
             "blob": "3c2cfd97c8d64a0cd6245c1b87c6f6bd45457380",
-            "content": "sha256:902b783ec4cab1957955571cf96d89c04f8119647a23f6bed27ed5a21d6cfbef",
+            "content": "sha256:0da1da28846e81fea9451aee83b9504af26a86969357fcdea34d0de8dbc10729",
             "locator": {
-              "kind": "file"
+              "end": 76,
+              "kind": "line_range",
+              "start": 1
             }
           },
           "kind": "code"
@@ -387,30 +389,73 @@
       ]
     },
     "2": {
-      "note": "Hosted child dispatch uses leaf document, role, and complete brief without retained occupant ids.",
+      "note": "Manager starts permitted roles on its own canonical master through role_start; a leaf's Worker, Reviewer and Curator start together through role_start_set. Canonical task references and the chosen request ID select the assignment, and the start writes the complete handover and returns the agent ID and artifact paths for retained addressing.",
       "targets": [
         {
           "anchor": {
             "blob": "3c2cfd97c8d64a0cd6245c1b87c6f6bd45457380",
-            "content": "sha256:902b783ec4cab1957955571cf96d89c04f8119647a23f6bed27ed5a21d6cfbef",
+            "content": "sha256:0da1da28846e81fea9451aee83b9504af26a86969357fcdea34d0de8dbc10729",
             "locator": {
-              "kind": "file"
+              "end": 76,
+              "kind": "line_range",
+              "start": 1
             }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "dee346f3da2aa768e464f5895f9489da5f4ad6bd",
+            "content": "sha256:c83f2005aac0b8437653afbeb0a5376c1028b96db4512e74c646dc7898506bdf",
+            "locator": {
+              "end": 12,
+              "kind": "line_range",
+              "start": 8
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/coordination.md"
           },
           "kind": "code"
         }
       ]
     },
     "3": {
-      "note": "The leaf loop sequences builder, reviewer, exact-packet/adjudication curator intake, closeout, integration, and cleanup duties.",
+      "note": "The Manager starts the Worker, Reviewer and Curator as one role_start_set; their freeze, finding, passed-code input and memory-verdict handovers run directly between the three seats. Curator intake remains bound to the leaf task, approved version-bound requirement packets, the exact passed freeze and both producers' requirement-shaped hand-off items. Manager reads the reports and both verdicts, decides the gate and retains closeout, integration, task-stage publication, acceptance and landing order.",
       "targets": [
         {
           "anchor": {
             "blob": "3c2cfd97c8d64a0cd6245c1b87c6f6bd45457380",
-            "content": "sha256:902b783ec4cab1957955571cf96d89c04f8119647a23f6bed27ed5a21d6cfbef",
+            "content": "sha256:0da1da28846e81fea9451aee83b9504af26a86969357fcdea34d0de8dbc10729",
             "locator": {
-              "kind": "file"
+              "end": 76,
+              "kind": "line_range",
+              "start": 1
             }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "dee346f3da2aa768e464f5895f9489da5f4ad6bd",
+            "content": "sha256:c83f2005aac0b8437653afbeb0a5376c1028b96db4512e74c646dc7898506bdf",
+            "locator": {
+              "end": 12,
+              "kind": "line_range",
+              "start": 8
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/coordination.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c2d38cd0a82b9efe96a765c4512f2242c6a9d3e6",
+            "content": "sha256:b95001ae8bf9b397af7baba04ca1f1256304f7bc3d2cbc08bb54bbbea7f037e3",
+            "locator": {
+              "end": 30,
+              "kind": "line_range",
+              "start": 23
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
           },
           "kind": "code"
         }
@@ -422,9 +467,11 @@
         {
           "anchor": {
             "blob": "3c2cfd97c8d64a0cd6245c1b87c6f6bd45457380",
-            "content": "sha256:902b783ec4cab1957955571cf96d89c04f8119647a23f6bed27ed5a21d6cfbef",
+            "content": "sha256:0da1da28846e81fea9451aee83b9504af26a86969357fcdea34d0de8dbc10729",
             "locator": {
-              "kind": "file"
+              "end": 76,
+              "kind": "line_range",
+              "start": 1
             }
           },
           "kind": "code"
@@ -437,9 +484,11 @@
         {
           "anchor": {
             "blob": "3c2cfd97c8d64a0cd6245c1b87c6f6bd45457380",
-            "content": "sha256:902b783ec4cab1957955571cf96d89c04f8119647a23f6bed27ed5a21d6cfbef",
+            "content": "sha256:0da1da28846e81fea9451aee83b9504af26a86969357fcdea34d0de8dbc10729",
             "locator": {
-              "kind": "file"
+              "end": 76,
+              "kind": "line_range",
+              "start": 1
             }
           },
           "kind": "code"
@@ -447,14 +496,16 @@
       ]
     },
     "6": {
-      "note": "Manager dispatch compiles and preserves the exact per-ID acceptance set through reviewer and curator handoffs.",
+      "note": "Manager dispatch carries each leaf's one primary requirement revision, with inherited or adjacent requirements remaining constraints, and preserves stable requirement and finding IDs while keeping implementation, review, curation and publication status distinct.",
       "targets": [
         {
           "anchor": {
             "blob": "3c2cfd97c8d64a0cd6245c1b87c6f6bd45457380",
-            "content": "sha256:902b783ec4cab1957955571cf96d89c04f8119647a23f6bed27ed5a21d6cfbef",
+            "content": "sha256:0da1da28846e81fea9451aee83b9504af26a86969357fcdea34d0de8dbc10729",
             "locator": {
-              "kind": "file"
+              "end": 76,
+              "kind": "line_range",
+              "start": 1
             }
           },
           "kind": "code"
@@ -467,9 +518,11 @@
         {
           "anchor": {
             "blob": "3c2cfd97c8d64a0cd6245c1b87c6f6bd45457380",
-            "content": "sha256:902b783ec4cab1957955571cf96d89c04f8119647a23f6bed27ed5a21d6cfbef",
+            "content": "sha256:0da1da28846e81fea9451aee83b9504af26a86969357fcdea34d0de8dbc10729",
             "locator": {
-              "kind": "file"
+              "end": 76,
+              "kind": "line_range",
+              "start": 1
             }
           },
           "kind": "code"
@@ -482,9 +535,11 @@
         {
           "anchor": {
             "blob": "3c2cfd97c8d64a0cd6245c1b87c6f6bd45457380",
-            "content": "sha256:902b783ec4cab1957955571cf96d89c04f8119647a23f6bed27ed5a21d6cfbef",
+            "content": "sha256:0da1da28846e81fea9451aee83b9504af26a86969357fcdea34d0de8dbc10729",
             "locator": {
-              "kind": "file"
+              "end": 76,
+              "kind": "line_range",
+              "start": 1
             }
           },
           "kind": "code"

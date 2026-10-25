@@ -1,10 +1,45 @@
 {
   "path": "mcp/src/agents_remember/cli/memory_citations.py",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
-        "blob": "c0c550accd9ceca3d505217ba6fdb339b18af926",
-        "content": "sha256:77094e80be1a77d6342c5c94f2ad9299deed3e1353948eedb5af0551f7481e86",
+        "blob": "21948ddc357f6a2e2168780d610322e15dc611b9",
+        "content": "sha256:2d04bd59fc9de1eb87fed1bd650664492398ac3ec5c44ec82ad377e2f447e1fd",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-0TPWSZ",
+      "invariant": "INV-BTF5NF",
+      "origin": {
+        "handoffEntry": "MIK-R198@v2 §2 anchor-census",
+        "leaf": "260928-MIK-L191"
+      },
+      "rationale": "The command that runs the census and prints its state.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "21948ddc357f6a2e2168780d610322e15dc611b9",
+        "content": "sha256:2d04bd59fc9de1eb87fed1bd650664492398ac3ec5c44ec82ad377e2f447e1fd",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-MYHE2D",
+      "invariant": "INV-Q7KYQH",
+      "origin": {
+        "handoffEntry": "MIK-R198@v2 §8 reference-note-revision",
+        "leaf": "260928-MIK-L191"
+      },
+      "rationale": "The command-line verb over the same owner, with the same refusal set.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "21948ddc357f6a2e2168780d610322e15dc611b9",
+        "content": "sha256:dce445b9c5221bd0d4deb183d855826142a7c31f1443b2db5f00d4157064716a",
         "locator": {
           "kind": "symbol",
           "name": "run"
@@ -22,15 +57,14 @@
   ],
   "references": {
     "1": {
-      "note": "CLI declarations make --contract optional for the two-admission fixer route and preserve the repeatable per-call exclusion option.",
+      "note": "CLI declarations make --contract optional for the two fixer admissions and keep --document as a repeatable per-call selection.\n\nAnchor: `add_arguments`",
       "targets": [
         {
           "anchor": {
-            "blob": "d7044d3112c956a66bbf4c93b281a1ea7b6ea3ef",
-            "content": "sha256:18edfd061feecc55293c636fd49b04a87655f6188919d4fa8d68b40d4536e92a",
+            "blob": "21948ddc357f6a2e2168780d610322e15dc611b9",
+            "content": "sha256:2d04bd59fc9de1eb87fed1bd650664492398ac3ec5c44ec82ad377e2f447e1fd",
             "locator": {
-              "kind": "symbol",
-              "name": "add_arguments"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -38,12 +72,22 @@
       ]
     },
     "2": {
-      "note": "Dispatch requires a contract for modes other than fix and forwards the fixer's optional contract to its application owner.",
+      "note": "Dispatch requires a contract for modes other than fix and forwards the fixer's optional contract to its application owner.\n\nAnchor: `run`",
       "targets": [
         {
           "anchor": {
-            "blob": "d7044d3112c956a66bbf4c93b281a1ea7b6ea3ef",
-            "content": "sha256:e33fad7a90a6411090818cd294305a19a71d62324d7a3bfb7116f153439953a1",
+            "blob": "21948ddc357f6a2e2168780d610322e15dc611b9",
+            "content": "sha256:2d04bd59fc9de1eb87fed1bd650664492398ac3ec5c44ec82ad377e2f447e1fd",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "21948ddc357f6a2e2168780d610322e15dc611b9",
+            "content": "sha256:dce445b9c5221bd0d4deb183d855826142a7c31f1443b2db5f00d4157064716a",
             "locator": {
               "kind": "symbol",
               "name": "run"
@@ -54,12 +98,12 @@
       ]
     },
     "3": {
-      "note": "The scope that carries the caller's excludes and refuses a meaningless pattern.",
+      "note": "The scope that carries the caller’s named documents and refuses both selectors, an empty list, and a list outside citation_fix.",
       "targets": [
         {
           "anchor": {
-            "blob": "84fbb29df58c44c36db8c9264ba0dc39948e5181",
-            "content": "sha256:10c63f67a9e534a6072cf0948e7f7dd1823bed64f50133f77457e912895ccacf",
+            "blob": "d9169328f4aefb6445b7866c552597f00ff49f5a",
+            "content": "sha256:b9330db4676ef731cd95886e9ad74664f430ed48bd0b1054011157379721166f",
             "locator": {
               "kind": "symbol",
               "name": "CitationOperationScope"
@@ -70,12 +114,23 @@
         },
         {
           "anchor": {
-            "blob": "14a9847dc0fe1618a504d9409b12301cf85b3a58",
-            "content": "sha256:27d2c0d43899f359ac65dfe92a7f45dff084343aed56c28243a18f7c1ca5d846",
+            "blob": "d9169328f4aefb6445b7866c552597f00ff49f5a",
+            "content": "sha256:0f0c734630b026feb275f60ff129107cdf091fad6ce837783b161ebe23950c10",
             "locator": {
-              "end": 75,
+              "end": 80,
               "kind": "line_range",
-              "start": 64
+              "start": 69
+            },
+            "path": "mcp/src/agents_remember/application/memory_tools.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d9169328f4aefb6445b7866c552597f00ff49f5a",
+            "content": "sha256:6245c0fad1ad37363ec36508b7e32f67104a8b9143178bc7e8c18a0856de40bb",
+            "locator": {
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/memory_tools.py"
           },
@@ -84,12 +139,22 @@
       ]
     },
     "5": {
-      "note": "The --document help states the converted form: --document alone.",
+      "note": "The --document help states the converted form: --document alone.\n\nAnchor: `add_arguments`",
       "targets": [
         {
           "anchor": {
-            "blob": "02a5df1b93288aabad9b65d70fb9b8dde50bd320",
-            "content": "sha256:cb7a095cbbb1de4adabc9783ba41d032c98e644420b0dfd501bb4ccf863476b1",
+            "blob": "21948ddc357f6a2e2168780d610322e15dc611b9",
+            "content": "sha256:2d04bd59fc9de1eb87fed1bd650664492398ac3ec5c44ec82ad377e2f447e1fd",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "21948ddc357f6a2e2168780d610322e15dc611b9",
+            "content": "sha256:3a37719e3e1cec8ff5224140c9ccaf38c09ab4bf683b81f3d5df821c4ce08f14",
             "locator": {
               "kind": "symbol",
               "name": "add_arguments"
@@ -100,12 +165,22 @@
       ]
     },
     "6": {
-      "note": "The CLI declares report/fix and optional contract with repeatable document selection.",
+      "note": "The CLI declares report/fix and optional contract with repeatable document selection.\n\nAnchor: `add_arguments`",
       "targets": [
         {
           "anchor": {
-            "blob": "c0c550accd9ceca3d505217ba6fdb339b18af926",
-            "content": "sha256:66745857733b9b6bee8d1b88745fdc8ddb8ed99abeb770034f3222162d0e7805",
+            "blob": "21948ddc357f6a2e2168780d610322e15dc611b9",
+            "content": "sha256:2d04bd59fc9de1eb87fed1bd650664492398ac3ec5c44ec82ad377e2f447e1fd",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "21948ddc357f6a2e2168780d610322e15dc611b9",
+            "content": "sha256:3a37719e3e1cec8ff5224140c9ccaf38c09ab4bf683b81f3d5df821c4ce08f14",
             "locator": {
               "kind": "symbol",
               "name": "add_arguments"
@@ -120,7 +195,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "418f56cddea13a857e15e32f93c11db719101459",
+            "blob": "d9169328f4aefb6445b7866c552597f00ff49f5a",
             "content": "sha256:b9330db4676ef731cd95886e9ad74664f430ed48bd0b1054011157379721166f",
             "locator": {
               "kind": "symbol",

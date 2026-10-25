@@ -25,4 +25,4 @@ package's surface is reached through its submodules (`app.create_app`, `projecto
 
 ### Repo-Internal References
 
-- The serving route overview. [1]
+- The serving route overview. 

@@ -115,7 +115,6 @@ share is accepted.
 - The validator refusing a claimed remainder with no way to reach it and counts that do not describe the entries. [12]
 - The validator refusing a truncated roster presented as a complete one. [13]
 - The production-entry cases this module is the value half of. [14]
-- The population case independently checks authored-head ambiguity and explicitly requested revision history. [15]
 
 ### Cross-Repo References
 

@@ -6,7 +6,9 @@
 
 ## Current source contract evidence
 
-- Current source declarations support the qualified naming or fixture account; no executed test or acceptance is inferred. [40]
+
+- Current source declarations support the qualified naming or fixture account; no executed test or acceptance is inferred.
+
 
 ## Purpose
 
@@ -78,10 +80,13 @@ No Domain Documentation source is configured for this slice.
 
 ### Repo-Internal References
 
-- `test_the_ordinary_read_returns_source_and_the_selected_tree_index` supplies the current fixture or assertion described above. [21]
 - `test_an_unconverted_root_cannot_open_a_legacy_database` supplies the current fixture or assertion described above. [22]
-- `test_the_carrier_uses_the_field_spellings_the_payload_actually_returns` supplies the current fixture or assertion described above. [23]
-- `test_the_mounted_route_returns_no_knowledge_section_for_unconverted_memory` supplies the current fixture or assertion described above. [24]
+
+- `test_the_carrier_uses_the_field_spellings_the_answer_returns` supplies the current fixture or assertion described above. [23]
+
+
+- `test_unconverted_memory_names_no_card` and `test_named_answer_validates_against_the_registered_model` supply the current fixture or assertion described above. [24]
+
 
 Each current definition below can be inspected in the exact source file. Historical references
 to removed methods are superseded by this current inventory.
@@ -93,21 +98,24 @@ fixtures and assertions, so the exact retained source is the direct evidence.
 
 No external domain claim is required.
 
-- Range request returns exact slice [25]
-- Full read is not truncated [26]
-- Binary source is omitted [27]
+
 - Path confinement rejects escape [28]
+
+
 - Symlink file escape rejected [29]
+
+
 - Symlink dir escape rejected [30]
-- First read attaches overview and route chain [31]
-- Second read dedups unchanged pieces [32]
-- Changed overview is reserved [33]
-- Refresh forces reserve [34]
-- Compact marker resets served [35]
-- Payload reads committed source [36]
+
+
 - **The carrier-parity case: the payload's real field spellings are derived from a real page, and the camelCase variants are rejected.** [37]
-- **The mounted route, which is the call an agent actually makes: on unconverted memory it returns no knowledge section and names the legacy format, with and without a database.** [38]
+
+
+- **The mounted route: on an unconverted memory it answers `memoryState: unconverted` with no card and no card text, and the answer validates against the registered model.** [38]
+
+
 - The published-intent fixtures, including the `_selection()` narrowing helper the type-checked call sites need. [39]
+
 
 ### Cross-Repo References
 

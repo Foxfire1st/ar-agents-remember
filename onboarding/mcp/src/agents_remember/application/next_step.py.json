@@ -3,15 +3,14 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The response boundary preserves an explicit producer hint or computes one, rejects contradictory task addresses, and enriches the validated model before final serialization.",
+      "note": "The response boundary preserves an explicit producer hint or computes one, rejects contradictory task addresses, and enriches the validated model before final serialization.\n\nAnchor: `_attach_lifecycle_tail` `bound_next_step` `_tool_payload`",
       "targets": [
         {
           "anchor": {
-            "blob": "1e151bfd9338a57f52c14bca69c5e9cb90e9398f",
-            "content": "sha256:b9a1f903280fdf70c544924c96f7717d7189f719708eac93720b3b059a8681be",
+            "blob": "e0e46bc6a90dd3b9da4bab12c43f61d1e4e71a70",
+            "content": "sha256:611cce8419f2f98ceb4edd0b31ea0dc5fe740280eed2d76a3dce05c98fa22b14",
             "locator": {
-              "kind": "symbol",
-              "name": "_attach_lifecycle_tail"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/tool_response.py"
           },
@@ -19,23 +18,10 @@
         },
         {
           "anchor": {
-            "blob": "59e7484044e1a4c769a0a1ed236724296ecd865c",
-            "content": "sha256:f0688ad773a589f140c01f1a6a70fa5088d8ca7c30ef383f7dca90b8f6eee32a",
+            "blob": "bbd96445dae6e10e1c4052722fab1b614aafedfe",
+            "content": "sha256:e65598ad08d511a5ffa26a3099d273596eea7844d5c2a00685c2ccb183271c43",
             "locator": {
-              "kind": "symbol",
-              "name": "bound_next_step"
-            },
-            "path": "mcp/src/agents_remember/application/tool_response.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "cf09680d5bb09436a9d3afb73da9cbd60f1af5fc",
-            "content": "sha256:35b48e3f7dcb68f7a66dcb72920ee84b9b6dd535711731b79de1596a0e2239fa",
-            "locator": {
-              "kind": "symbol",
-              "name": "_tool_payload"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/mcp/tools/base.py"
           },
@@ -97,39 +83,14 @@
       ]
     },
     "2": {
-      "note": "`NextStep` model + the `nextStep` field on the response envelopes — the declaration that makes setting it at the choke point legal.\n\nAnchor: `NextStep`, `ResponseModel`, `FlexibleResponseEnvelope`",
+      "note": "`NextStep` model + the `nextStep` field on the response envelopes — the declaration that makes setting it at the choke point legal.\n\nAnchor: `NextStep` `ResponseModel` `FlexibleResponseEnvelope`",
       "targets": [
         {
           "anchor": {
-            "blob": "6e1c2663fa140e39d14ec835f6a5a6db3ced7de2",
-            "content": "sha256:97ca067f4e2155179fed866700f9d054d3bf3dd0ca64d618c853e3ea894b37dc",
+            "blob": "929a3e608b76db907cfb41bd92cb7d2453b386c5",
+            "content": "sha256:9a0d5793850004aa14c40ba9565c3926c5407d032778d4b68f3eb416b7c40e0b",
             "locator": {
-              "kind": "symbol",
-              "name": "NextStep"
-            },
-            "path": "mcp/src/agents_remember/models/base.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "082789175b65a73ba6821158b07e1f5849c192ca",
-            "content": "sha256:45b7cfd1ea33c7e121c05e03d6d9040b9c5f4e017f07efaaef19d7a73d4d1607",
-            "locator": {
-              "kind": "symbol",
-              "name": "ResponseModel"
-            },
-            "path": "mcp/src/agents_remember/models/base.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "082789175b65a73ba6821158b07e1f5849c192ca",
-            "content": "sha256:bab97e8117945fc2fe05d6a2063d006a4ce6a2ed3f8d1141acbf89838da6ba50",
-            "locator": {
-              "kind": "symbol",
-              "name": "FlexibleResponseEnvelope"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/models/base.py"
           },
@@ -168,15 +129,16 @@
       ]
     },
     "4": {
-      "note": "`load_contract` / `WorktreeContract` (sub-state fields read by `_gate_after`).",
+      "note": "`load_contract` / `WorktreeContract` (sub-state fields read by `_turn_end_after`).  Anchor: `load_contract` `WorktreeContract`",
       "targets": [
         {
           "anchor": {
-            "blob": "1ef6715a9f5e28dd748cb8dde604a86bad8f190d",
-            "content": "sha256:3bc924f5a9c3f4bd27d8bbc6cc3f4383cd0ced5ea64c848c72e01998bbba924d",
+            "blob": "c9e2847f64ca428bdc799c8173b43aa736f4b0e9",
+            "content": "sha256:bfec3a3775045fe3fe7e3a92d32691cdcd15bb5f228b4411aa801ec873ff97a9",
             "locator": {
-              "kind": "symbol",
-              "name": "load_contract"
+              "end": 491,
+              "kind": "line_range",
+              "start": 460
             },
             "path": "mcp/src/agents_remember/worktrees/worktree_contract.py"
           },
@@ -184,11 +146,12 @@
         },
         {
           "anchor": {
-            "blob": "cad2b5290a889e152e487a9d3b2b27aeea339086",
-            "content": "sha256:8c82cf9643d566fa58d68d1a4bc2a516b15a7c4470a36c65892a811abb1e4454",
+            "blob": "c9e2847f64ca428bdc799c8173b43aa736f4b0e9",
+            "content": "sha256:de8fea3db94fe34a6b30d3583ecaff1cdf4c047fc7b04d32ee0d7eb5571a40fb",
             "locator": {
-              "kind": "symbol",
-              "name": "WorktreeContract"
+              "end": 311,
+              "kind": "line_range",
+              "start": 246
             },
             "path": "mcp/src/agents_remember/worktrees/worktree_contract.py"
           },
@@ -196,8 +159,8 @@
         },
         {
           "anchor": {
-            "blob": "cad2b5290a889e152e487a9d3b2b27aeea339086",
-            "content": "sha256:c5e4e7307c4da5cc20c6c1b48e19c9012267dbd3e199212531320805f6447987",
+            "blob": "c9e2847f64ca428bdc799c8173b43aa736f4b0e9",
+            "content": "sha256:f5e1cba8d20f29a747255bf26737ace45a5f1abc788d18338bfdba877f70d51e",
             "locator": {
               "end": 284,
               "kind": "line_range",
@@ -209,25 +172,12 @@
         },
         {
           "anchor": {
-            "blob": "1ef6715a9f5e28dd748cb8dde604a86bad8f190d",
-            "content": "sha256:225670e4f2433ff1929faf819dafa637b0134fdf5c4ed4a175e9ef0925e0c65b",
+            "blob": "c9e2847f64ca428bdc799c8173b43aa736f4b0e9",
+            "content": "sha256:e4018d774645cce7dce0c51cbf04e207718d8685255da4379ea1c0691d889378",
             "locator": {
-              "end": 433,
+              "end": 491,
               "kind": "line_range",
-              "start": 432
-            },
-            "path": "mcp/src/agents_remember/worktrees/worktree_contract.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "1ef6715a9f5e28dd748cb8dde604a86bad8f190d",
-            "content": "sha256:6c5ab465b93696620a60e450c2acfdda4e048e62046bf6b8962ad2c2657aba29",
-            "locator": {
-              "end": 464,
-              "kind": "line_range",
-              "start": 434
+              "start": 246
             },
             "path": "mcp/src/agents_remember/worktrees/worktree_contract.py"
           },
@@ -236,15 +186,14 @@
       ]
     },
     "7": {
-      "note": "The next-step entry point derives guidance from the current lifecycle and tool; this source citation does not establish response token-count coverage.",
+      "note": "The next-step entry point derives guidance from the current lifecycle and tool; this source citation does not establish response token-count coverage.\n\nAnchor: `next_step_for`",
       "targets": [
         {
           "anchor": {
-            "blob": "489dc6c75481f9ee30b38f151e6e43e1334d474a",
-            "content": "sha256:51be012d8c1fb51ca4d362f7a3eb8025862f19d7729b7894e11e315c169d102b",
+            "blob": "a0ebc421a6c1cbf393461876ac120f34d348d7ac",
+            "content": "sha256:2ea815d1fdd699dbe67829dca211baddb1e52dea79cceff14ced31a237edc172",
             "locator": {
-              "kind": "symbol",
-              "name": "next_step_for"
+              "kind": "file"
             }
           },
           "kind": "code"

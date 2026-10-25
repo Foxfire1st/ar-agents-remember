@@ -97,11 +97,19 @@ each returns what the plain call returns and raises what it raises.
 
 - The module docstring: the three byte identities, the two selection namespaces and the conflict rule. [7]
 - The identity of a file at this moment. [8]
+
 - The recording block sets and restores the context variable. [9]
+
+
 - One read is recorded with the passed identity or the file's identity. [10]
+
+
 - Two different identities for one key become a conflict. [11]
+
 - Rows of another block or process are recorded through the same conflict rule. [12]
+
 - The validation of a row that arrives from another process. [13]
+
 - The recheck repeats the recorded operation. [14]
 - Selections are rechecked before bytes, and bytes only when no selection moved. [15]
 - A conflict or an unreadable row marks the set as failed. [16]
@@ -109,9 +117,13 @@ each returns what the plain call returns and raises what it raises.
 - The recorded existence probe of a path, also for a directory. [18]
 - A false existence probe records `exists:<absolute logical path>` = absent, distinct from a failed byte read. [19]
 - One read of the bytes, recorded, then decoded with newline translation. [20]
+
 - The absent higher-priority settings file, the absent JSON sibling and the consumed Markdown file are rows of one recording. [21]
+
 - A retargeted packet locator is seen through its resolve row, and no byte outside the task is read for the recheck. [22]
 - A failed root probe is recorded as unreadable and the view is not kept. [23]
 - A malformed row from the child is refused by the parent. [24]
+
 - Every file the gate reads is in its read set, and a conflicting read is never kept. [25]
+
 - The direct JSON listing of a folder is recorded as one `json-files:` row, empty listing included. [26]

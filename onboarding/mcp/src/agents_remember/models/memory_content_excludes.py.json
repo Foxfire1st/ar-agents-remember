@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/models/memory_content_excludes.py",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
@@ -86,7 +87,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "63231e18a2ea7fe60b5e8d8df3eaf437680f2429",
+            "blob": "c72c2b159123047c79c15fc46fd02991f16ef41b",
             "content": "sha256:90564862944969df9ce94f1879758f8292bfd1d26c38277e85cea02eeff7c139",
             "locator": {
               "kind": "symbol",

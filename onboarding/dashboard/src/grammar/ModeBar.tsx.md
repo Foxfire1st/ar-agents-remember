@@ -57,5 +57,7 @@ No configured live documentation source was available for this pass.
 No cross-repo boundary is crossed by this file.
 
 - The local style preserves flex display, flexShrink zero, base gap, top border and padding. Its max-width 40rem rule newly sets flexWrap wrap and minWidth zero while retaining gap 0.2rem, button paddingInline 0.35rem and zero letterSpacing. No visual-fit result follows from these declarations. [4]
+
 - Cockpit's VIEWS contains Chats, Operations, Knowledge and File Viewer in that order, and its ModeBar invocation passes that array. ModeBar itself maps caller-provided items and does not define the product list. [5]
+
 - viewTabMetrics declares shared font, spacing, case, padding, border width and radius. viewTabButton, launcherButton, launcherSelect and launcherChip spread those metrics; the selector overrides textTransform. viewTabButton also declares the selected and focus-visible looks. This establishes shared style definitions, not identical rendered dimensions. [6]

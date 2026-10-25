@@ -109,15 +109,14 @@
       ]
     },
     "2": {
-      "note": "Frozen implementation of _admit_task_scope supporting the stated file behavior.",
+      "note": "Frozen implementation of _admit_task_scope supporting the stated file behavior.\n\nAnchor: `_admit_task_scope`",
       "targets": [
         {
           "anchor": {
-            "blob": "a16d61fab1c533b0b101b675bdd8a7b79fc491cd",
-            "content": "sha256:4afff32af965daf0ba1a7707e09c7d3546a9d73383479cd47dd0833f280279fd",
+            "blob": "9dfc1293d27d539ce40fd6f6e61b4e4093dc2d01",
+            "content": "sha256:b80f9f3d8fe83b34866640bdbc4a54bf311a5d8cbe191016cacd7342436adc59",
             "locator": {
-              "kind": "symbol",
-              "name": "_admit_task_scope"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -125,15 +124,14 @@
       ]
     },
     "3": {
-      "note": "Frozen implementation of _canonical_leaf_contract supporting the stated file behavior.",
+      "note": "Frozen implementation of _canonical_leaf_contract supporting the stated file behavior.\n\nAnchor: `_canonical_leaf_contract`",
       "targets": [
         {
           "anchor": {
-            "blob": "a16d61fab1c533b0b101b675bdd8a7b79fc491cd",
-            "content": "sha256:ffdd5cba81058e609463807d63dafe9cac09c732e71cc47c6d35aa0ad0d24595",
+            "blob": "9dfc1293d27d539ce40fd6f6e61b4e4093dc2d01",
+            "content": "sha256:b80f9f3d8fe83b34866640bdbc4a54bf311a5d8cbe191016cacd7342436adc59",
             "locator": {
-              "kind": "symbol",
-              "name": "_canonical_leaf_contract"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -141,15 +139,14 @@
       ]
     },
     "4": {
-      "note": "Alternating/concurrent registered base and leaf calls preserve their source/memory roots; wrong repository, canonical contract and malformed pairs refuse.",
+      "note": "Alternating/concurrent registered base and leaf calls preserve their source/memory roots; wrong repository, canonical contract and malformed pairs refuse.\n\nAnchor: `test_registered_readers_use_call_local_admitted_leaf_context`",
       "targets": [
         {
           "anchor": {
-            "blob": "0c75122a7ec9c252dbd7ec955ac8315c6a53ac1b",
-            "content": "sha256:0f651d353ac549ec8d4c8cea50b1708c6685ba7689a87c3d7d5ca9f55ec8d3ff",
+            "blob": "dc497e2837c489670650776c799b50df249c049f",
+            "content": "sha256:3d9f3de88b6f6e1fd6dcf3a8b699c0bbe77859c13612343566455ddc53eb2788",
             "locator": {
-              "kind": "symbol",
-              "name": "test_registered_readers_use_call_local_admitted_leaf_context"
+              "kind": "file"
             },
             "path": "mcp/tests/test_reader_task_context_protocol.py"
           },
@@ -162,8 +159,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6958d604bdee60df93e970f6ed81a68053e00427",
-            "content": "sha256:672d97378f2ae2f617e944947a1691c5a53bca645eba4829449adb300304c8c4",
+            "blob": "9dfc1293d27d539ce40fd6f6e61b4e4093dc2d01",
+            "content": "sha256:e63fde19e97e4a977467e85b9b440427e57a6eba395ae8ed2b59b0b698454297",
             "locator": {
               "end": 187,
               "kind": "line_range",

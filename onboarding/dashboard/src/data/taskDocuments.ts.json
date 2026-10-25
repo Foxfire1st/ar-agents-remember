@@ -58,16 +58,16 @@
   ],
   "references": {
     "3": {
-      "note": "The serving route maps projection readiness and the confined snapshot read to HTTP responses.\n\nAnchor: \"def _task_document_response(runtime: _ServingRuntime\"",
+      "note": "The serving route maps projection readiness and the confined snapshot read to HTTP responses.",
       "targets": [
         {
           "anchor": {
-            "blob": "1fc264615fc571535afdb52edcec869ec5228657",
-            "content": "sha256:d4723aa1a7b1320b1fdbfaa4c2119f52eb6d81a7d65dacd30a8f182370c443d9",
+            "blob": "00dbff88a35b8e2bcb41c27d8fd4dbb239decc67",
+            "content": "sha256:4e9148bbe3c09673dbc7b8474d7406994ba9c7e011f2cc509e1c71b8cf6b2e62",
             "locator": {
-              "end": 109,
+              "end": 200,
               "kind": "line_range",
-              "start": 109
+              "start": 200
             },
             "path": "mcp/src/agents_remember/serving/_app_routes.py"
           },
@@ -76,15 +76,14 @@
       ]
     },
     "5": {
-      "note": "That reader reaches the schema through the shared tolerant parse, so a field a newer build wrote no longer turns a readable body into a 404.",
+      "note": "That reader reaches the schema through the shared tolerant parse, so a field a newer build wrote no longer turns a readable body into a 404.\n\nAnchor: `_projected_document`",
       "targets": [
         {
           "anchor": {
-            "blob": "6030d7e7f82fadbdbcdedfda71855155018b84c0",
-            "content": "sha256:739671a860e8acf658130f7eb9c33cb6edfdc17e53f07c46beb1d1df6cc91c75",
+            "blob": "8553750157ecbc4d4c86582aec77207f1b043431",
+            "content": "sha256:ff5ac511e0d698f5f84ad870b6a061f08c95a504abeea453f0ee998e356b059f",
             "locator": {
-              "kind": "symbol",
-              "name": "_projected_document"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py"
           },

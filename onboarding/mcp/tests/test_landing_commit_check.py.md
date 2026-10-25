@@ -59,7 +59,9 @@ decide the outcome rather than a mocked runner.
 - UnrunnableHookTests: qualified source contract — `UnrunnableHookTests` in mcp/tests/test_landing_commit_check.py. [3]
 - StashRecoveryTests: qualified source contract — `StashRecoveryTests` in mcp/tests/test_landing_commit_check.py. [4]
 - TrailerFactTests: qualified source contract — `TrailerFactTests` in mcp/tests/test_landing_commit_check.py. [5]
+
 - RoundOneFindingTests: qualified source contract — `RoundOneFindingTests` in mcp/tests/test_landing_commit_check.py. [6]
+
 - Remaining-route fixtures protect exact-tree ordinary/direct publication refusal and pass facts — `RemainingRouteProductionTests` in mcp/tests/test_landing_commit_check.py. [7]
 
 - AnswerAndTextTests owns the skill-sync subprocess using the current interpreter; this is source attribution, not execution. [8]

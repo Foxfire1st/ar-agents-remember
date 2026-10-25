@@ -48,8 +48,12 @@ No configured live documentation source was available for this pass.
 ### Repo-Internal References
 
 - The suite mounts the shell on Operations for its keep-alive assertions. [6]
+
 - The mode-bar entry the tests click. [7]
+
+
 - The File Viewer the tests keep mounted. [8]
+
 
 ### Cross-Repo References
 

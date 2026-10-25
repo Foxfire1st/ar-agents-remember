@@ -40,15 +40,16 @@
   ],
   "references": {
     "10": {
-      "note": "The registered first-leaf proof preserves startup/Git state and checks the call records separately. [10]",
+      "note": "The registered first-leaf proof preserves startup/Git state and checks the call records separately. \\[10]  Anchor: `test_registered_first_leaf_preview_is_repeatable_without_publication`",
       "targets": [
         {
           "anchor": {
-            "blob": "8d86ca26f65f28f7054fb550878c3120abc18eab",
-            "content": "sha256:e9dceee757cfcac7831e050a9891e08a2c25113a34449a9761e670cb13982470",
+            "blob": "6f1c1332855742f33a42427582b074c430695e4a",
+            "content": "sha256:f9b0ff1c796c84cacf9b2008984d93638cac24ca8d520264c2ebd1b1190f35a8",
             "locator": {
-              "kind": "symbol",
-              "name": "test_registered_first_leaf_preview_is_repeatable_without_publication"
+              "end": 300,
+              "kind": "line_range",
+              "start": 271
             },
             "path": "mcp/tests/test_worktree_start_preview.py"
           },

@@ -52,15 +52,29 @@ No configured external source applies.
 The following current source boundaries establish the ledger-retirement behavior.
 
 - `command_closeout` normalizes code/memory messages before the journal-bound closeout adapter. [1]
+
 - `build_parser` exposes closeout/integration options without ledger-message flags. [2]
 
+
 - The CLI module exposes the public main entry point for `python -m` execution. (`main`) [3]
+
 - MCP startup enters the result-returning application owner without CLI parsing. (`worktree_start_tool`) [4]
+
+
 - MCP attachment enters the result-returning application owner without CLI parsing. (`worktree_attach_tool`) [5]
+
+
 - MCP status enters the result-returning application owner without CLI parsing. (`worktree_status_tool`) [6]
+
+
 - Start or observe the exact contract-addressed integration operation. (`worktree_integrate_tool`) [7]
+
+
 - MCP cleanup enters the result-returning application owner without CLI parsing. (`worktree_cleanup_tool`) [8]
-- The heal implementation this seam invokes (walk once, cheap-skip canonical ids, rewrite + report) lives in the contract module. (`heal_contract_leaf_ids`) [9]
+
+
+> Retained earlier citation wording: - The heal implementation this seam invokes (walk once, cheap-skip canonical ids, rewrite + report) lives in the contract module. (`heal_contract_leaf_ids`) [9]
+
 
 ### Cross-Repo References
 
@@ -91,3 +105,5 @@ The current source seams include `parse_json_stdout`, `command_status`, `command
 ## Governing Overview
 
 [Governing route overview](overview.md)
+
+- The heal implementation this seam invokes (walk once, cheap-skip canonical ids, rewrite + report) lives in the contract module. (`heal_contract_leaf_ids`)  Anchor: `heal_contract_leaf_ids` [9]

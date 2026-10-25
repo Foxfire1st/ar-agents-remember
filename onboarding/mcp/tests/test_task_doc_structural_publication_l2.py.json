@@ -35,15 +35,14 @@
       ]
     },
     "3": {
-      "note": "Detach first allows later exact absence bound create",
+      "note": "Detach first allows later exact absence bound create\n\nAnchor: `test_detach_first_allows_later_exact_absence_bound_create`",
       "targets": [
         {
           "anchor": {
-            "blob": "60461b93b2043be11198aaee3cf9929191b7f87f",
-            "content": "sha256:ee4d084d3e6d19412f106a92c3361f6f05598cbf6530c6fe8f241e40292a3106",
+            "blob": "e9c1c0892bf5095504598965581f7730b19f140e",
+            "content": "sha256:05b1aa1614b46bf659dcc940d3b9aa30972068186efd5de84c2884c306ac32cd",
             "locator": {
-              "kind": "symbol",
-              "name": "test_detach_first_allows_later_exact_absence_bound_create"
+              "kind": "file"
             }
           },
           "kind": "test"

@@ -1,5 +1,6 @@
 {
   "path": "dashboard/src/panels/detail-panel/worktreeSpine.tsx",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
@@ -25,8 +26,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5808118c1f9c6f301b8666c714e9c7b5fdb99b4d",
-            "content": "sha256:ff5b63eb016b7c4857d6c57d263dd71111752988cd15162e1fa163e302fd63aa",
+            "blob": "8d090c4203b6555e1594976610af77c6527bebd4",
+            "content": "sha256:96042e85e98cb3cdc0b976641cc00a8ff49692ba7a2b596a6c827267f7ec6c4c",
             "locator": {
               "kind": "symbol",
               "name": "WorktreeSpine"

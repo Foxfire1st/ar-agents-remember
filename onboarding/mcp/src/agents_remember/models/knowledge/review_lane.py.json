@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/models/knowledge/review_lane.py",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
@@ -65,11 +66,37 @@
         {
           "anchor": {
             "blob": "7de34abd58a60d8a07b3f81b6f7c7f5250b522e2",
+            "content": "sha256:3c2facd67caf9a2854420dfe1f1ffc9443ebad19a2c6f619f03abbeaee794709",
+            "locator": {
+              "end": 322,
+              "kind": "line_range",
+              "start": 320
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review_trees.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7de34abd58a60d8a07b3f81b6f7c7f5250b522e2",
             "content": "sha256:1502bba5be539e44ce370f5799a3fd14c09a36099fc5ef5e2b3cd1c109833f52",
             "locator": {
               "end": 326,
               "kind": "line_range",
               "start": 324
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review_trees.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7de34abd58a60d8a07b3f81b6f7c7f5250b522e2",
+            "content": "sha256:0e0f1cc272fad1beaae61f56a5d574fb6516142d7c9ef11c644de3368f0ead1d",
+            "locator": {
+              "end": 269,
+              "kind": "line_range",
+              "start": 267
             },
             "path": "mcp/src/agents_remember/models/knowledge/review_trees.py"
           },
@@ -186,6 +213,18 @@
         {
           "anchor": {
             "blob": "8782327a6e099b3956ac7cc1f62a33f5e9f70502",
+            "content": "sha256:fc9012b1df245b96d9ee45741837412aa1530b33561d3ce9c9949111492b4ba9",
+            "locator": {
+              "end": 162,
+              "kind": "line_range",
+              "start": 122
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8782327a6e099b3956ac7cc1f62a33f5e9f70502",
             "content": "sha256:0255f6e7f688c4e77f43ebbde34329220fbc8890947d550773652151ad1640b9",
             "locator": {
               "end": 165,
@@ -213,8 +252,8 @@
         },
         {
           "anchor": {
-            "blob": "e93d348be7f3a7d0ed0e91c3d79da2748f55c5ab",
-            "content": "sha256:14061162768ded5cf20c3a0d09a0376968389afb9f332aad82c9168bd3db5ed1",
+            "blob": "8782327a6e099b3956ac7cc1f62a33f5e9f70502",
+            "content": "sha256:b6fdb9ae231f82cb33f07ff1408bbd9a4de71aa4267b3669c85f4925cf3e848f",
             "locator": {
               "kind": "symbol",
               "name": "ReviewLaneHunk"
@@ -330,6 +369,42 @@
     "9": {
       "note": "The lane admits measured/partial totals and unavailable absence, checking bucket sums and the number of paths, not uniqueness of path identities.\n\nAnchor: Lane fields and bucket validator",
       "targets": [
+        {
+          "anchor": {
+            "blob": "8782327a6e099b3956ac7cc1f62a33f5e9f70502",
+            "content": "sha256:a208d87a7cb001a2fcd075150319f6a9e33feabfc6136b60e9b45114a097eea8",
+            "locator": {
+              "end": 319,
+              "kind": "line_range",
+              "start": 291
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8782327a6e099b3956ac7cc1f62a33f5e9f70502",
+            "content": "sha256:205376230b6e51803e62801ffe0f7b70d46f74b1500559d360938934fc08b60f",
+            "locator": {
+              "end": 319,
+              "kind": "line_range",
+              "start": 311
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8782327a6e099b3956ac7cc1f62a33f5e9f70502",
+            "content": "sha256:f818d8ab1c6a13b065cf6842635243e979783678602f63d0fb65f52866b9c9ec",
+            "locator": {
+              "end": 368,
+              "kind": "line_range",
+              "start": 352
+            }
+          },
+          "kind": "code"
+        },
         {
           "anchor": {
             "blob": "8782327a6e099b3956ac7cc1f62a33f5e9f70502",

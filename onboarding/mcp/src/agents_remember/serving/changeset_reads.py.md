@@ -21,6 +21,11 @@ the read wiring now follows rule 5 and the f0607391/b84bf836 repair. A pair of i
 
 ## Evidence
 
+
 - Working diff counters use the native reader and register attribute inputs. [1]
+
+
 - A missing text result needs successful native absence proof before retention. [2]
+
+
 - Only successful fixed native command results are retained. [3]

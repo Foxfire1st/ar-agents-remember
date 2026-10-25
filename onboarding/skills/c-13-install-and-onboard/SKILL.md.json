@@ -133,12 +133,12 @@
   ],
   "references": {
     "1": {
-      "note": "Adds migration-author use of the shared writing profile and independent meaning review; it changes authoring guidance, not converter admission or publication authority.\n\nAnchor: Candidate instruction body, lines 8–23",
+      "note": "Adds migration-author use of the shared writing profile and independent meaning review; it changes authoring guidance, not converter admission or publication authority.",
       "targets": [
         {
           "anchor": {
-            "blob": "6ebeba78dcb06d9111cec33fcaba5afd0c79979b",
-            "content": "sha256:d7ec5758f02f606bb046f25f77df772d688f11e49b28ed06f3bdaa2d352ec04f",
+            "blob": "9ba438896d80e98eccff21873058fdebd5b9bf63",
+            "content": "sha256:1debd115822d26252af65bd8a809b2f4feecbc8b98e7e440cfd7c513ac824733",
             "locator": {
               "end": 23,
               "kind": "line_range",
@@ -146,20 +146,44 @@
             }
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9ba438896d80e98eccff21873058fdebd5b9bf63",
+            "content": "sha256:c2565480600fdc2f8955bfe282ef689312a608019e72f134fd442d6e9774644a",
+            "locator": {
+              "end": 379,
+              "kind": "line_range",
+              "start": 374
+            }
+          },
+          "kind": "code"
         }
       ]
     },
     "2": {
-      "note": "Adds migration-author use of the shared writing profile and independent meaning review; it changes authoring guidance, not converter admission or publication authority.\n\nAnchor: Candidate instruction body, lines 48–76",
+      "note": "Adds migration-author use of the shared writing profile and independent meaning review; it changes authoring guidance, not converter admission or publication authority.",
       "targets": [
         {
           "anchor": {
-            "blob": "6ebeba78dcb06d9111cec33fcaba5afd0c79979b",
-            "content": "sha256:9fb5f40c3d84a1162d2279ce0bf54622d84df946e6824fa7a185e26d0251b5cb",
+            "blob": "9ba438896d80e98eccff21873058fdebd5b9bf63",
+            "content": "sha256:70c6e0a777ed43eeec43c3c68114245ba242fcc478bc2d76ababe1aac2deaa55",
             "locator": {
               "end": 76,
               "kind": "line_range",
               "start": 48
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9ba438896d80e98eccff21873058fdebd5b9bf63",
+            "content": "sha256:c2565480600fdc2f8955bfe282ef689312a608019e72f134fd442d6e9774644a",
+            "locator": {
+              "end": 379,
+              "kind": "line_range",
+              "start": 374
             }
           },
           "kind": "code"
@@ -184,12 +208,12 @@
       ]
     },
     "4": {
-      "note": "Adds migration-author use of the shared writing profile and independent meaning review; it changes authoring guidance, not converter admission or publication authority.\n\nAnchor: Candidate instruction body, lines 381–443",
+      "note": "Adds migration-author use of the shared writing profile and independent meaning review; it changes authoring guidance, not converter admission or publication authority.",
       "targets": [
         {
           "anchor": {
-            "blob": "6ebeba78dcb06d9111cec33fcaba5afd0c79979b",
-            "content": "sha256:ae5fb7bf9b3d113ccff3fdcd89ab9f3f55e5663ae301e35a9db9ba795077f81b",
+            "blob": "9ba438896d80e98eccff21873058fdebd5b9bf63",
+            "content": "sha256:4576cc8f6fbebb6627fb3a1d4541eb8715d2ed6a277fab43836f50b1e172b56e",
             "locator": {
               "end": 443,
               "kind": "line_range",
@@ -197,20 +221,44 @@
             }
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9ba438896d80e98eccff21873058fdebd5b9bf63",
+            "content": "sha256:c2565480600fdc2f8955bfe282ef689312a608019e72f134fd442d6e9774644a",
+            "locator": {
+              "end": 379,
+              "kind": "line_range",
+              "start": 374
+            }
+          },
+          "kind": "code"
         }
       ]
     },
     "5": {
-      "note": "Adds migration-author use of the shared writing profile and independent meaning review; it changes authoring guidance, not converter admission or publication authority.\n\nAnchor: Candidate instruction body, lines 445–515",
+      "note": "Adds migration-author use of the shared writing profile and independent meaning review; it changes authoring guidance, not converter admission or publication authority.",
       "targets": [
         {
           "anchor": {
-            "blob": "6ebeba78dcb06d9111cec33fcaba5afd0c79979b",
-            "content": "sha256:6391671989fd62cdbb0ba88bac86b67e716c1f12780e464faf68e2c8dd61bc64",
+            "blob": "9ba438896d80e98eccff21873058fdebd5b9bf63",
+            "content": "sha256:88b7cf456a373eb88975d61520480ddffc72936957a9febe86db82c376ba7792",
             "locator": {
               "end": 515,
               "kind": "line_range",
               "start": 445
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9ba438896d80e98eccff21873058fdebd5b9bf63",
+            "content": "sha256:c2565480600fdc2f8955bfe282ef689312a608019e72f134fd442d6e9774644a",
+            "locator": {
+              "end": 379,
+              "kind": "line_range",
+              "start": 374
             }
           },
           "kind": "code"

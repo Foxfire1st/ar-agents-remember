@@ -46,11 +46,15 @@ AgentBinding.environment emits all seven binding variables and clears hosted-sea
 The earlier system-specialist spelling is normalized to Investigator on reads while the recorded role value and addresses remain intact. Investigator accepts exactly Projects, sprint or sprint/master reference patterns; minted actor/request UUIDs, absolute report path and readable canonical topology remain mandatory. A role name or folder never supplies missing references.
 
 
+
 - The current source implements this file’s stated Investigator boundary. [6]
+
 
 
 ## Refreshed current evidence
 
+
 - Frozen implementation of read_agent_binding supporting the stated file behavior. [2]
+
 
 </details>

@@ -20,4 +20,5 @@ This module defines result/error vocabulary, not Git process execution. The Git 
 - CancelTreeAssessment: qualified source contract. [2]
 - SyncKnowledgeValidationError: qualified source contract. [3]
 - SyncFastForwardValidationError: qualified source contract. [4]
+
 - SideMergeOutcome: qualified source contract. [5]

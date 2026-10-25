@@ -12,8 +12,24 @@ This source-bound correction covers the described L54 seams only. Unrelated inhe
 
 ## Current evidence
 
-- Refused reports clear action/evidence collections and expose the planned count and question identities. \[9] [9]
-- Serialized requirement outcomes include changed and archived metadata. \[10] [10]
+- Refused reports clear action/evidence collections and expose the planned count and question identities. [9]
+- Serialized requirement outcomes include changed and archived metadata. [10]
+- The outcome of one evidence-bearing entry. [1]
+
+- The report and its refused flag. [2]
+
+
+- The JSON form. [3]
+
+
+- The text form. [4]
+
+- The carried entries in the report, JSON and text. [5]
+
+- One requirement endpoint a record links and the owner's answer, `resolved` or `unresolved`: an unchanged unresolved link is reported, while a changed one refuses the write naming the endpoint and its code. [6]
+
+- The report's requirement endpoints, and their JSON key. [7]
+- The text line per endpoint comes from a helper, so `render` does not grow (review F3). [8]
 
 ## Inherited source-epoch account (non-operative)
 

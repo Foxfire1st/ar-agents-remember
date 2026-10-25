@@ -105,7 +105,9 @@ and refuse nothing: the landing happens, and its answer says how many documents 
 
 ## Evidence
 
+
 - Every newly closed master history file is authenticated against its owner publication. [9]
+
 
 
 ### Docs References
@@ -123,7 +125,9 @@ No configured live documentation source was available for this pass.
 
 - The finding codes. [2]
 
+
 - The refusal and the named remedy. [3]
+
 
 - The closed history file in the landed commit. [4]
 - The master's net staleness, refusing anything not current. [5]

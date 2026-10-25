@@ -92,15 +92,14 @@
   ],
   "references": {
     "1": {
-      "note": "Frozen implementation of RoleKnobs supporting the stated file behavior.",
+      "note": "Frozen implementation of RoleKnobs supporting the stated file behavior.\n\nAnchor: `RoleKnobs`",
       "targets": [
         {
           "anchor": {
-            "blob": "09119f0fcea0d8909fef132de503ad82de52cec2",
-            "content": "sha256:2514da97502c9fb0578a7d9163de3c71370b124883543f34e2a2fffbbc06d3b4",
+            "blob": "db5945e5f2851a76ce476f905684a268325b9442",
+            "content": "sha256:83f9ef3b3cacad9ff2e0d4ea57f0bdf33279b90ab372459a61f8a53536b2a19e",
             "locator": {
-              "kind": "symbol",
-              "name": "RoleKnobs"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -125,12 +124,12 @@
       ]
     },
     "11": {
-      "note": "`CAPABILITY_IDS` names the non-seat capabilities that carry a launch block (`review-presenter`): their choices live under `orchestration.roles.<capability>` with the same per-field provenance and refusal rules as a seat, while the capsule, dispatch and level tables stay seat-only. [11]\n\nAnchor: `CAPABILITY_IDS`",
+      "note": "`CAPABILITY_IDS` names the non-seat capabilities that carry a launch block (`review-presenter`): their choices live under `orchestration.roles.<capability>` with the same per-field provenance and refusal rules as a seat, while the capsule, dispatch and level tables stay seat-only. \\[11]",
       "targets": [
         {
           "anchor": {
-            "blob": "3ed0b06b535ec1eee654b38555686c2a173d8a10",
-            "content": "sha256:531982e596b540a1d73da6a12c8f9da12f0321e6b934eab0d453741a4b13e767",
+            "blob": "db5945e5f2851a76ce476f905684a268325b9442",
+            "content": "sha256:83f9ef3b3cacad9ff2e0d4ea57f0bdf33279b90ab372459a61f8a53536b2a19e",
             "locator": {
               "kind": "file"
             }
@@ -140,15 +139,14 @@
       ]
     },
     "2": {
-      "note": "Frozen implementation of AgenticSettings supporting the stated file behavior.",
+      "note": "Frozen implementation of AgenticSettings supporting the stated file behavior.\n\nAnchor: `AgenticSettings`",
       "targets": [
         {
           "anchor": {
-            "blob": "2295c698608e6e8910ee28c1db3c5296dcf4d6a4",
-            "content": "sha256:ce0be4ecd65f60c16d0327b701f23c67874c953b4fc091313505f55a0b1ba9f3",
+            "blob": "db5945e5f2851a76ce476f905684a268325b9442",
+            "content": "sha256:83f9ef3b3cacad9ff2e0d4ea57f0bdf33279b90ab372459a61f8a53536b2a19e",
             "locator": {
-              "kind": "symbol",
-              "name": "AgenticSettings"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -156,15 +154,14 @@
       ]
     },
     "3": {
-      "note": "Separate ordinary launch vocabulary from outer stepUp.",
+      "note": "Separate ordinary launch vocabulary from outer stepUp.\n\nAnchor: `KNOWN_ROLE_LAUNCH_FIELDS`",
       "targets": [
         {
           "anchor": {
-            "blob": "3ed0b06b535ec1eee654b38555686c2a173d8a10",
-            "content": "sha256:1c87ebacfdfb82c5ac6e22f299d3aa27e220bbfe3b98ea7e7cd773626f6c07ab",
+            "blob": "db5945e5f2851a76ce476f905684a268325b9442",
+            "content": "sha256:83f9ef3b3cacad9ff2e0d4ea57f0bdf33279b90ab372459a61f8a53536b2a19e",
             "locator": {
-              "kind": "symbol",
-              "name": "KNOWN_ROLE_LAUNCH_FIELDS"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -204,15 +201,14 @@
       ]
     },
     "6": {
-      "note": "Effective flat/altitude merge rechecks distinctness.",
+      "note": "Effective flat/altitude merge rechecks distinctness.\n\nAnchor: `resolved_role_knobs`",
       "targets": [
         {
           "anchor": {
-            "blob": "3ed0b06b535ec1eee654b38555686c2a173d8a10",
-            "content": "sha256:a4c377a67913d36f82ebd5b5c2625c977d0591870d79af7815a7735151c9fc4d",
+            "blob": "db5945e5f2851a76ce476f905684a268325b9442",
+            "content": "sha256:83f9ef3b3cacad9ff2e0d4ea57f0bdf33279b90ab372459a61f8a53536b2a19e",
             "locator": {
-              "kind": "symbol",
-              "name": "resolved_role_knobs"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -237,15 +233,14 @@
       ]
     },
     "8": {
-      "note": "Three is the counted-role threshold default, not a new review budget.",
+      "note": "Three is the counted-role threshold default, not a new review budget.\n\nAnchor: `_parse_step_up`",
       "targets": [
         {
           "anchor": {
-            "blob": "87f02f4e0cd8794a4b65bb733206c164a7809c1a",
-            "content": "sha256:334a42eb2560a9bc948417c6465a22b915f7282c2fb77ac65ffd8818fd6e0cd3",
+            "blob": "d3b92b15b04467dce898722fe980347aee339810",
+            "content": "sha256:a8e3cc2e0dbf594097b2d171715ea7216ee1c8168be98e43d7ea1fa3099a83f5",
             "locator": {
-              "kind": "symbol",
-              "name": "_parse_step_up"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/kernel/_agentic_settings_sections.py"
           },

@@ -42,8 +42,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a2d8fedd5515c6d6585486ce7062b7b41d2b117b",
-            "content": "sha256:85ddf92ab7687b8d0201e4718e1d09dc804aea7e94b57935610f63c036a5b9b2",
+            "blob": "d9eb94f7aaf6c3f5b190b0bef5e30a2114841f92",
+            "content": "sha256:bdde14ccb9a4b9d563c4216e8ce53a9a118573f32fbc14b5562b82ac442d4425",
             "locator": {
               "end": 8,
               "kind": "line_range",
@@ -162,8 +162,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "12eb97789e3b5b076082ea8c463b176ac39fed14",
-            "content": "sha256:82136752d6f34ae6cae17df18aa32eeb792251410e1d33c2554d175965c5a556",
+            "blob": "eecdaff3bad79ebac4230c53a03b1b6e2e47c1cf",
+            "content": "sha256:a139f7141ef2668e04b800a2462d282f96c3b1bb3b83283065cd9d1bad66a26e",
             "locator": {
               "end": 118,
               "kind": "line_range",
@@ -383,8 +383,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3b03f380ad4729710613edb19be006631824405d",
-            "content": "sha256:a3e155bd1d6e77c9ee05d322c42597623ffbc4a9641f9ea5b76519a9839bd222",
+            "blob": "6ebfb806297848d106380c5ef96a6911d7a2f6ad",
+            "content": "sha256:9686028754fed6202d0e6d2daa420145174dcefe1e13d07359a88e14ef4b3431",
             "locator": {
               "end": 112,
               "kind": "line_range",
@@ -428,27 +428,14 @@
       ]
     },
     "35": {
-      "note": "The current complete closeout function preserves the memory-before-cache sequence; exact-tree validation independently refuses ungated memory.",
+      "note": "The current complete closeout function preserves the memory-before-cache sequence; exact-tree validation independently refuses ungated memory.\n\nAnchor: `external_closeout_commits` `_refuse_ungated_memory`",
       "targets": [
         {
           "anchor": {
-            "blob": "12eb97789e3b5b076082ea8c463b176ac39fed14",
-            "content": "sha256:83359b4306c44b3d04e27cbb1c63bc883464a7a728bac450c985bf94d044f798",
-            "locator": {
-              "kind": "symbol",
-              "name": "external_closeout_commits"
-            },
-            "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
             "blob": "eecdaff3bad79ebac4230c53a03b1b6e2e47c1cf",
-            "content": "sha256:6733de358d09058db7ab9672204df11f721366208bfd9ed54924fe325d71e265",
+            "content": "sha256:b4b64e690f1183dff4dd72d8c7499aa007f8a2bb01db4e82338a750dd4f62f15",
             "locator": {
-              "kind": "symbol",
-              "name": "_refuse_ungated_memory"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
           },

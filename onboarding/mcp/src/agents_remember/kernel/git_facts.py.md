@@ -105,11 +105,15 @@ No relevant external documentation is needed for git-facts assembly.
 
 The shared git runner and the context-packet consumer are the direct evidence.
 
+
 - Git invocations are delegated to the shared `run_git` runner rather than a private wrapper. [1]
+
 - The local default bound is 300 seconds. [2]
 - The ordinary remote bound is 120 seconds. [3]
 - The metadata bound is 30 seconds. [4]
+
 - The shared Git runner applies caller-selected bounds and isolated repository environment. [5]
+
 - The other kernel caller of `branch --show-current` and `rev-parse HEAD` names the same metadata bound, so one command means one bound. [6]
 
 | `git_facts_to_packet` output feeds the context packet's repo summary. | "git_facts = read_git_facts(" | mcp/src/agents_remember/application/context_packet.py:85-85 |

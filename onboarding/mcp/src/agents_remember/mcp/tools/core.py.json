@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/mcp/tools/core.py",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
@@ -119,93 +120,6 @@
             "locator": {
               "kind": "symbol",
               "name": "context_packet_payload"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "3": {
-      "note": "Current source excerpt `def server_info_payload(` identifies this section's adapter/control owner, not an executed success.\n\nAnchor: `def server_info_payload(`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "6b123c608ce155f50f62249a98196f1b0e80ed08",
-            "content": "sha256:01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
-            "locator": {
-              "end": 36,
-              "kind": "line_range",
-              "start": 36
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "4": {
-      "note": "Current source excerpt `class ServerInfoResponse(ResponseModel):` identifies this section's adapter/control owner, not an executed success.\n\nAnchor: `class ServerInfoResponse(ResponseModel):`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "50b927fc9be26f6eca8b9a85631aa7247714a99f",
-            "content": "sha256:207c28df3bfdd808704fc53fec3f8f0a09e8da41e1e1469f33267102e86d4254",
-            "locator": {
-              "end": 45,
-              "kind": "line_range",
-              "start": 45
-            },
-            "path": "mcp/src/agents_remember/models/core.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "5": {
-      "note": "Current source excerpt `def runtime_install_payload(` identifies this section's adapter/control owner, not an executed success.\n\nAnchor: `def runtime_install_payload(`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "6b123c608ce155f50f62249a98196f1b0e80ed08",
-            "content": "sha256:bb2d87f6483a0a9c16f92dc1140910aefe86b0a9a239f54592cb342e631e5d74",
-            "locator": {
-              "end": 97,
-              "kind": "line_range",
-              "start": 97
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "6": {
-      "note": "Current source excerpt `# Rule 2: a list with more entries is cut; the answer keeps the count, the` identifies this section's adapter/control owner, not an executed success.\n\nAnchor: `# Rule 2: a list with more entries is cut; the answer keeps the count, the`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "6886781334954f937c6bcd390b33841da83c8e04",
-            "content": "sha256:a398f8aa5d3b033f907d46ab4601cd5bb9608f8d98a5591536b0fb67871436ac",
-            "locator": {
-              "end": 27,
-              "kind": "line_range",
-              "start": 27
-            },
-            "path": "mcp/src/agents_remember/models/tools/tool_answer.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "7": {
-      "note": "Current candidate source supports the operative account; historical sections grant no current tool or execution acceptance.\n\nAnchor: file",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "6b123c608ce155f50f62249a98196f1b0e80ed08",
-            "content": "sha256:09e72328496cb4c241b18eea21e8a73e3a39927a6962024b20f22c3b9063c9f3",
-            "locator": {
-              "end": 171,
-              "kind": "line_range",
-              "start": 1
             }
           },
           "kind": "code"

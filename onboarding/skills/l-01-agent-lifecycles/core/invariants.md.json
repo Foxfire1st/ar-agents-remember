@@ -1,14 +1,27 @@
 {
   "path": "skills/l-01-agent-lifecycles/core/invariants.md",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
-      "note": "Shared durable continuity and artifact-of-record obligation.\n\nAnchor: \"## Continuity lives in durable state, never in transcripts\"",
+      "note": "Shared durable continuity and artifact-of-record obligation.",
       "targets": [
         {
           "anchor": {
-            "blob": "eb99c95f071db499252c12ef9e4dc01bfedc46fe",
-            "content": "sha256:8dcc78812092daf6f788be86ec379e186a990a3098247ebb7477d99e313cfadd",
+            "blob": "ec06d070fd680fae7715b1c662fd7a2e95fc6275",
+            "content": "sha256:5b2d90b210de3c1f48c5bc8a125762ac50fdf3ca6aa7dc0a24f606ced38281ce",
+            "locator": {
+              "end": 11,
+              "kind": "line_range",
+              "start": 5
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ec06d070fd680fae7715b1c662fd7a2e95fc6275",
+            "content": "sha256:48a6a4b65c028ac772589f158d3ff29cf384d7d07b67a9d8fa8d71911f3eb5a3",
             "locator": {
               "end": 11,
               "kind": "line_range",
@@ -20,7 +33,7 @@
       ]
     },
     "10": {
-      "note": "Task intent creates its branch and build worktree; design and chat are not build routes. [10]\n\nAnchor: source extent 36–50",
+      "note": "Task intent creates its branch and build worktree; design and chat are not build routes. \\[1]\n\nAnchor: source extent 36–50",
       "targets": [
         {
           "anchor": {
@@ -37,7 +50,7 @@
       ]
     },
     "11": {
-      "note": "Launch settings own current knob rows; removed launchArgs/sessionCommands/promptKeywords load but are unused. [11]\n\nAnchor: source extent 65–82",
+      "note": "Launch settings own current knob rows; removed launchArgs/sessionCommands/promptKeywords load but are unused. \\[2]\n\nAnchor: source extent 65–82",
       "targets": [
         {
           "anchor": {
@@ -54,12 +67,12 @@
       ]
     },
     "12": {
-      "note": "Task collaboration, format, memory-specific commands and role/operation duties have separate instruction owners. [12]\n\nAnchor: source extent 84–94",
+      "note": "Task collaboration, format, memory-specific commands and role/operation duties have separate instruction owners. \\[12] Source caption: source extent 84–94",
       "targets": [
         {
           "anchor": {
-            "blob": "ec4f4e39a6e4cd08c740a6ad21690b3fb5f66761",
-            "content": "sha256:609a60de3427b8cf33f7b622f3b5a819ef5afed14f40d71f9d431e78cbef22d6",
+            "blob": "ec06d070fd680fae7715b1c662fd7a2e95fc6275",
+            "content": "sha256:82713bfd22578be176fa50ebdf8ed7ce5732a6d174a6f16be06409ef7fc1efec",
             "locator": {
               "end": 94,
               "kind": "line_range",
@@ -71,12 +84,12 @@
       ]
     },
     "13": {
-      "note": "Core inheritance is retained corpus doctrine and does not prove current native capsule contents. [13]\n\nAnchor: source extent 84–94",
+      "note": "Core inheritance is retained corpus doctrine and does not prove current native capsule contents. \\[13] Source caption: source extent 84–94",
       "targets": [
         {
           "anchor": {
-            "blob": "ec4f4e39a6e4cd08c740a6ad21690b3fb5f66761",
-            "content": "sha256:609a60de3427b8cf33f7b622f3b5a819ef5afed14f40d71f9d431e78cbef22d6",
+            "blob": "ec06d070fd680fae7715b1c662fd7a2e95fc6275",
+            "content": "sha256:82713bfd22578be176fa50ebdf8ed7ce5732a6d174a6f16be06409ef7fc1efec",
             "locator": {
               "end": 94,
               "kind": "line_range",
@@ -156,12 +169,24 @@
       ]
     },
     "6": {
-      "note": "Portable roles, settings precedence, permitted launch keys and harness-independent dispatch.\n\nAnchor: \"## Knob resolution and capability doctrine\"",
+      "note": "Portable roles, settings precedence, permitted launch keys and harness-independent dispatch.",
       "targets": [
         {
           "anchor": {
-            "blob": "eb99c95f071db499252c12ef9e4dc01bfedc46fe",
-            "content": "sha256:feaa19cdc47088d902e2e948496ca0f58b6be05433c7c6d51e83b627afc36d7e",
+            "blob": "ec06d070fd680fae7715b1c662fd7a2e95fc6275",
+            "content": "sha256:8c9396bb24f4664d95957e974e43191dc2d78442e0eb940a6f51352b91f7b538",
+            "locator": {
+              "end": 82,
+              "kind": "line_range",
+              "start": 65
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ec06d070fd680fae7715b1c662fd7a2e95fc6275",
+            "content": "sha256:545ffd60e2acb63397d8982aea9f63b9632ddeef2bdf0b35c920ef525261576f",
             "locator": {
               "end": 81,
               "kind": "line_range",
@@ -173,12 +198,12 @@
       ]
     },
     "7": {
-      "note": "Task, memory, role, operation and rationale ownership; retained core composition sentence.\n\nAnchor: \"## Instruction-surface boundaries\"",
+      "note": "Task, memory, role, operation and rationale ownership; retained core composition sentence. Source caption: \"## Instruction-surface boundaries\"",
       "targets": [
         {
           "anchor": {
-            "blob": "ec4f4e39a6e4cd08c740a6ad21690b3fb5f66761",
-            "content": "sha256:609a60de3427b8cf33f7b622f3b5a819ef5afed14f40d71f9d431e78cbef22d6",
+            "blob": "ec06d070fd680fae7715b1c662fd7a2e95fc6275",
+            "content": "sha256:82713bfd22578be176fa50ebdf8ed7ce5732a6d174a6f16be06409ef7fc1efec",
             "locator": {
               "end": 94,
               "kind": "line_range",
@@ -204,16 +229,66 @@
             "path": "skills/l-01-agent-lifecycles/operations/orientation.md"
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "541f15fba478277772b410bd15974fb889feaabc",
+            "content": "sha256:fbfe5d342f1db9b3cde07e66c2711bee493d17fa1ef0c9491df4eb2e6fd45b7e",
+            "locator": {
+              "end": 7,
+              "kind": "line_range",
+              "start": 3
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/orientation.md"
+          },
+          "kind": "code"
         }
       ]
     },
     "9": {
-      "note": "Present parent routing and explicit parentless exception qualify the retained universal Architect-only statement.\n\nAnchor: \"Without a parent\"",
+      "note": "Present parent routing and explicit parentless exception qualify the retained universal Architect-only statement.",
       "targets": [
         {
           "anchor": {
-            "blob": "66b580e5158b30270e6f97efbfda840f38d784d7",
-            "content": "sha256:f19996a6e39c8ced671ebe691144c37fa09460938d267fda2eea936e1639ed46",
+            "blob": "541f15fba478277772b410bd15974fb889feaabc",
+            "content": "sha256:b5dd7e76af9ae885092e013ed37f601ae0f3fb90bd166d075e39de593a088c20",
+            "locator": {
+              "end": 23,
+              "kind": "line_range",
+              "start": 19
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/orientation.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ec06d070fd680fae7715b1c662fd7a2e95fc6275",
+            "content": "sha256:d57ab022881017ab8bf756ee970d4c73ef4ea327e78b78d94880e2f48e89edd2",
+            "locator": {
+              "end": 21,
+              "kind": "line_range",
+              "start": 20
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ec06d070fd680fae7715b1c662fd7a2e95fc6275",
+            "content": "sha256:5e719166befb7b65ecec27921ad74c55c455315a35a64ed40654c3b67f15200e",
+            "locator": {
+              "end": 34,
+              "kind": "line_range",
+              "start": 32
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "541f15fba478277772b410bd15974fb889feaabc",
+            "content": "sha256:7df959c2917b4936ec3ca2c26ec455f0bfae76025fc9b5fb54833688b6130a44",
             "locator": {
               "end": 20,
               "kind": "line_range",

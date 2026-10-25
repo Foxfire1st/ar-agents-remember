@@ -38,12 +38,12 @@
       ]
     },
     "2": {
-      "note": "Browser-build alias preserves layout effects\n\nAnchor: `alias`",
+      "note": "Browser-build alias preserves layout effects",
       "targets": [
         {
           "anchor": {
-            "blob": "f84e121103ee2abc1a191c6d978cd4fdd4b97ec6",
-            "content": "sha256:f151b01154fee94b1f5dcded3f611954ccbeaa5a9c7af6c6ff3c87de440061e2",
+            "blob": "3e11c5781a563030ed73ad70c65b5c1e87a440b6",
+            "content": "sha256:fa443370a8d10f90e9788e3c04d774bc3dd6e5fad89ac45fcb8eaf6348d78356",
             "locator": {
               "end": 25,
               "kind": "line_range",
@@ -55,12 +55,12 @@
       ]
     },
     "3": {
-      "note": "Worker cap, setup, coverage scope and diagnostic reporters\n\nAnchor: `test`",
+      "note": "Worker cap, setup, coverage scope and diagnostic reporters",
       "targets": [
         {
           "anchor": {
-            "blob": "806c7977eae4d53e9c874c7cff1b0686916dc5cd",
-            "content": "sha256:0b1839f8f2fd81c78fcc204b4fdceabc38a36e6cdfe347a6230cf02400e25437",
+            "blob": "3e11c5781a563030ed73ad70c65b5c1e87a440b6",
+            "content": "sha256:3e5146d53b46f84cc41444a3a42aad9e55fc536892d3083d7831c55b9c472e66",
             "locator": {
               "end": 47,
               "kind": "line_range",

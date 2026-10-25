@@ -1,10 +1,11 @@
 {
   "path": "mcp/tests/tool_entry_point_world.py",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
-        "blob": "409829eb905f6ae7132b150b97cabe6d569742e0",
-        "content": "sha256:e541b15c7dc3251499ca26eba55378079d6627035baf4a2f66b7fb11c23d62e2",
+        "blob": "fd07730a1a1bd23acfdd526b3ac57a628c498940",
+        "content": "sha256:49bcb990f26420af71d068b23535f6b9567ef0fdd876729446f22dee2b9c829f",
         "locator": {
           "end": 883,
           "kind": "line_range",
@@ -17,12 +18,12 @@
         "handoffEntry": "L71-CURRENT242-W-20",
         "leaf": "260928-MIK-L71"
       },
-      "rationale": "Shared classifier/empty pin remain; ambient labels are literal none, not measurements.",
+      "rationale": "the realization entry the existing row records; unchanged by this landing",
       "role": "support"
     },
     {
       "anchor": {
-        "blob": "409829eb905f6ae7132b150b97cabe6d569742e0",
+        "blob": "fd07730a1a1bd23acfdd526b3ac57a628c498940",
         "content": "sha256:0f306524e822c2ba7fdc3e1c1007d96a0fabab7e2d6d03f04c2b7e9c5bb71836",
         "locator": {
           "kind": "symbol",
@@ -40,7 +41,7 @@
     },
     {
       "anchor": {
-        "blob": "409829eb905f6ae7132b150b97cabe6d569742e0",
+        "blob": "fd07730a1a1bd23acfdd526b3ac57a628c498940",
         "content": "sha256:c4bac9584ff57d79b197e1ae2162e83f182902c091e0956914a3b6bebd602048",
         "locator": {
           "kind": "symbol",
@@ -58,7 +59,7 @@
     },
     {
       "anchor": {
-        "blob": "409829eb905f6ae7132b150b97cabe6d569742e0",
+        "blob": "fd07730a1a1bd23acfdd526b3ac57a628c498940",
         "content": "sha256:60905a49bb6b00060bd9c4f7a88e5370debc600e0aca023dd28fbbe65078ffe9",
         "locator": {
           "kind": "symbol",
@@ -76,7 +77,7 @@
     },
     {
       "anchor": {
-        "blob": "409829eb905f6ae7132b150b97cabe6d569742e0",
+        "blob": "fd07730a1a1bd23acfdd526b3ac57a628c498940",
         "content": "sha256:94827d7d82d1ba1109c0607fbd852ede5b7e830d2ac9490d0c7e76402c68cd0c",
         "locator": {
           "kind": "symbol",
@@ -94,7 +95,7 @@
     },
     {
       "anchor": {
-        "blob": "409829eb905f6ae7132b150b97cabe6d569742e0",
+        "blob": "fd07730a1a1bd23acfdd526b3ac57a628c498940",
         "content": "sha256:0f306524e822c2ba7fdc3e1c1007d96a0fabab7e2d6d03f04c2b7e9c5bb71836",
         "locator": {
           "kind": "symbol",
@@ -112,7 +113,7 @@
     },
     {
       "anchor": {
-        "blob": "409829eb905f6ae7132b150b97cabe6d569742e0",
+        "blob": "fd07730a1a1bd23acfdd526b3ac57a628c498940",
         "content": "sha256:e70868a155b3a04ce2b756d208c0f43673e28f1561ac0d0b6effd9883252c8c7",
         "locator": {
           "end": 31,
@@ -131,7 +132,7 @@
     },
     {
       "anchor": {
-        "blob": "409829eb905f6ae7132b150b97cabe6d569742e0",
+        "blob": "fd07730a1a1bd23acfdd526b3ac57a628c498940",
         "content": "sha256:8ebad6cf5a03e40d8ab1c44a97616f90c57847a56f70c0e84d2142e2b0e888b8",
         "locator": {
           "kind": "symbol",
@@ -149,7 +150,7 @@
     },
     {
       "anchor": {
-        "blob": "409829eb905f6ae7132b150b97cabe6d569742e0",
+        "blob": "fd07730a1a1bd23acfdd526b3ac57a628c498940",
         "content": "sha256:37578a1f10cb0bfb736dc16bace943a4034c864a0d510646723f7ba78e95ada6",
         "locator": {
           "end": 349,
@@ -163,12 +164,12 @@
         "handoffEntry": "MIK-R130@v1 / L130-W03 / L130-R03",
         "leaf": "260928-MIK-L130"
       },
-      "rationale": "The single classifier binds the previously verified whole-result reader to the now repaired same-place and refusal predicates; this acceptance is baseline plus sealed delta, not a new whole review.",
+      "rationale": "The entry says the one classifier binds the already-verified whole-result reader to the same-place and refusal predicates; `classify` at 337-349 still returns `_raised_arm`/`_returned_arm` for the outcome and still reads the answer beside the whole result, so the claim holds at C. Its base anchor is valid at C; the candidate re-recorded it with the uncommitted worktree's blob.",
       "role": "enforcement"
     },
     {
       "anchor": {
-        "blob": "409829eb905f6ae7132b150b97cabe6d569742e0",
+        "blob": "fd07730a1a1bd23acfdd526b3ac57a628c498940",
         "content": "sha256:37578a1f10cb0bfb736dc16bace943a4034c864a0d510646723f7ba78e95ada6",
         "locator": {
           "end": 349,
@@ -182,13 +183,13 @@
         "handoffEntry": "MIK-R130@v1 rule 6 + one classifier",
         "leaf": "260928-MIK-L130"
       },
-      "rationale": "The single classifier the sweep and the controls both use, judging a returned call from the whole result and the delivered answer.",
+      "rationale": "The same 13 lines are the single classifier the sweep and the positive control both call (337-349); no second implementation of the arms exists in the file at C, so the control still proves the sweep rather than a copy of it.",
       "role": "primary-authority"
     },
     {
       "anchor": {
-        "blob": "409829eb905f6ae7132b150b97cabe6d569742e0",
-        "content": "sha256:7f50509686224e01400f7078b44b0ff47ab307e17179ff99a9078f6221d87bb9",
+        "blob": "fd07730a1a1bd23acfdd526b3ac57a628c498940",
+        "content": "sha256:bcb9e85aeee88bbc602fad846577f057f3caa9c900e314fdf5f7a6b1b0d53588",
         "locator": {
           "end": 895,
           "kind": "line_range",
@@ -201,12 +202,12 @@
         "handoffEntry": "L130-sweep-runs-whole",
         "leaf": "260928-MIK-L130"
       },
-      "rationale": "Records one tool's deadline as that tool's finding and continues with the rest, so no tool stays unjudged behind another's timeout.",
+      "rationale": "The entry says one tool's deadline is recorded as that tool's finding and the sweep goes on; that is the `except _ToolCallTimeout` branch at 873-885 inside the recorded 847-895, which sets `arm: unvalidatable` with the timeout text and `continue`s. At C the span carries the base card's bytes; the candidate's re-recording came from the uncommitted worktree, where the same 49 lines sit at 858.",
       "role": "enforcement"
     },
     {
       "anchor": {
-        "blob": "409829eb905f6ae7132b150b97cabe6d569742e0",
+        "blob": "fd07730a1a1bd23acfdd526b3ac57a628c498940",
         "content": "sha256:0f306524e822c2ba7fdc3e1c1007d96a0fabab7e2d6d03f04c2b7e9c5bb71836",
         "locator": {
           "kind": "symbol",
@@ -224,7 +225,7 @@
     },
     {
       "anchor": {
-        "blob": "409829eb905f6ae7132b150b97cabe6d569742e0",
+        "blob": "fd07730a1a1bd23acfdd526b3ac57a628c498940",
         "content": "sha256:0f306524e822c2ba7fdc3e1c1007d96a0fabab7e2d6d03f04c2b7e9c5bb71836",
         "locator": {
           "kind": "symbol",
@@ -242,8 +243,8 @@
     },
     {
       "anchor": {
-        "blob": "409829eb905f6ae7132b150b97cabe6d569742e0",
-        "content": "sha256:7f50509686224e01400f7078b44b0ff47ab307e17179ff99a9078f6221d87bb9",
+        "blob": "fd07730a1a1bd23acfdd526b3ac57a628c498940",
+        "content": "sha256:bcb9e85aeee88bbc602fad846577f057f3caa9c900e314fdf5f7a6b1b0d53588",
         "locator": {
           "end": 895,
           "kind": "line_range",
@@ -256,12 +257,12 @@
         "handoffEntry": "MIK-R130@v1 rule 6 + one classifier",
         "leaf": "260928-MIK-L130"
       },
-      "rationale": "Records one tool's deadline as that tool's finding and goes on, so nothing stays unrun behind it.",
+      "rationale": "Same branch, same conclusion at C: the recorded 847-895 covers `sweep` from `benign()` through the timeout branch and the classify call at 886, so nothing stays unrun behind another tool's deadline; only the blob/bytes of the candidate's re-recording are the uncommitted file's.",
       "role": "primary-authority"
     },
     {
       "anchor": {
-        "blob": "409829eb905f6ae7132b150b97cabe6d569742e0",
+        "blob": "fd07730a1a1bd23acfdd526b3ac57a628c498940",
         "content": "sha256:60905a49bb6b00060bd9c4f7a88e5370debc600e0aca023dd28fbbe65078ffe9",
         "locator": {
           "kind": "symbol",
@@ -279,7 +280,7 @@
     },
     {
       "anchor": {
-        "blob": "409829eb905f6ae7132b150b97cabe6d569742e0",
+        "blob": "fd07730a1a1bd23acfdd526b3ac57a628c498940",
         "content": "sha256:7e19957a3c6b197157cd35a10484d2e1b647e26205051158c12204322a81a871",
         "locator": {
           "kind": "symbol",
@@ -297,7 +298,7 @@
     },
     {
       "anchor": {
-        "blob": "409829eb905f6ae7132b150b97cabe6d569742e0",
+        "blob": "fd07730a1a1bd23acfdd526b3ac57a628c498940",
         "content": "sha256:5051eee79bbddebacb81642153d672e5fa69042a984ac06ee8b17ca76b0582d8",
         "locator": {
           "kind": "symbol",
@@ -315,7 +316,7 @@
     },
     {
       "anchor": {
-        "blob": "409829eb905f6ae7132b150b97cabe6d569742e0",
+        "blob": "fd07730a1a1bd23acfdd526b3ac57a628c498940",
         "content": "sha256:94827d7d82d1ba1109c0607fbd852ede5b7e830d2ac9490d0c7e76402c68cd0c",
         "locator": {
           "kind": "symbol",
@@ -333,7 +334,7 @@
     },
     {
       "anchor": {
-        "blob": "409829eb905f6ae7132b150b97cabe6d569742e0",
+        "blob": "fd07730a1a1bd23acfdd526b3ac57a628c498940",
         "content": "sha256:616725463860034f01645ef22c9b069790e16605dd50f886654cbdcbdb5299b8",
         "locator": {
           "kind": "symbol",
@@ -351,7 +352,7 @@
     },
     {
       "anchor": {
-        "blob": "409829eb905f6ae7132b150b97cabe6d569742e0",
+        "blob": "fd07730a1a1bd23acfdd526b3ac57a628c498940",
         "content": "sha256:616725463860034f01645ef22c9b069790e16605dd50f886654cbdcbdb5299b8",
         "locator": {
           "kind": "symbol",
@@ -374,8 +375,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "409829eb905f6ae7132b150b97cabe6d569742e0",
-            "content": "sha256:291faffe32b3f8fb77f3c7c60a1bad2972e9ea7cb11864b0a601f1dfe2ec1889",
+            "blob": "fd07730a1a1bd23acfdd526b3ac57a628c498940",
+            "content": "sha256:7f66ab8eb3447252a65b2ae3749cde0e7635d735a7fa4fc354aa40504a0c9417",
             "locator": {
               "kind": "file"
             }
@@ -384,8 +385,8 @@
         },
         {
           "anchor": {
-            "blob": "4bfc02956d94b6b490c6ccdcd5a93694127f5cca",
-            "content": "sha256:adddd95646eb8304aba7f9bcc4ebb0372ead80b944bf6120cc8cd73e9f622fc3",
+            "blob": "d0b0ddd9f150e32116b430ecc74907fcf68fee97",
+            "content": "sha256:fdef15e2ca9d39f66c8570a7147cb894dda16f47c7d3558bb4454e5b4714875f",
             "locator": {
               "kind": "file"
             },
@@ -396,53 +397,79 @@
       ]
     },
     "11": {
-      "note": "The shared world uses an object-form read refusal stimulus, delegates whole/answer validation through its classifier helpers and records timeout continuation in its own sweep; the separate self-contained sweep propagates the timeout instead. Source assertions establish no execution.",
+      "note": "The shared world supplies an object-form read_ar_files stimulus and validates whole results and delivered answers through classifier helpers. Its sweep records timeouts as unvalidatable and continues; the separate self-contained support sweep propagates a timeout from call. These are source assertions, not execution.",
       "targets": [
         {
           "anchor": {
-            "blob": "08726d555e9f754a8c10ba62bdd886360ce737fd",
-            "content": "sha256:d9be222905830aafec45b9bdbbb220c71a07be309b808067be900c9ccfad254a",
+            "blob": "fd07730a1a1bd23acfdd526b3ac57a628c498940",
+            "content": "sha256:26925b2276d716191c931970a30e365193f610496476de443b457df458515d65",
             "locator": {
-              "end": 532,
+              "end": 385,
               "kind": "line_range",
-              "start": 515
-            },
-            "path": "mcp/tests/test_tool_entry_point_sweep.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "08726d555e9f754a8c10ba62bdd886360ce737fd",
-            "content": "sha256:56d4dec70ccce5262706d0c0af167f18b8bbe7aaaa60cc20dfa3d4a6827a1752",
-            "locator": {
-              "end": 909,
-              "kind": "line_range",
-              "start": 886
-            },
-            "path": "mcp/tests/test_tool_entry_point_sweep.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "1127e755a7c6bf63a7933f8529ee33405648b503",
-            "content": "sha256:e9ad2233d4877b31157419973abfb2d0469fb57ff58d968057b84471766dc1e6",
-            "locator": {
-              "kind": "file"
+              "start": 280
             }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "fd07730a1a1bd23acfdd526b3ac57a628c498940",
+            "content": "sha256:7ff3fbc7997754b9c4faf3f2eb66d986ccddb6c473531cd71f65f46777948c82",
+            "locator": {
+              "end": 683,
+              "kind": "line_range",
+              "start": 675
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "fd07730a1a1bd23acfdd526b3ac57a628c498940",
+            "content": "sha256:f97ad8681d5de2d2b47784da833f91281b88e97d38ca5a6c08333bfcc7c44a00",
+            "locator": {
+              "end": 905,
+              "kind": "line_range",
+              "start": 858
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "d27b57b9ce20fcfcc981f64f791af071b4769e5c",
+            "content": "sha256:9209e74267686a3bea76cdb106bece8cd3faa13efb14d327f9395e8106cd89b1",
+            "locator": {
+              "end": 468,
+              "kind": "line_range",
+              "start": 450
+            },
+            "path": "mcp/tests/tool_entry_point_sweep_support.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "d27b57b9ce20fcfcc981f64f791af071b4769e5c",
+            "content": "sha256:40cc20d7cafada165689cbf38f29990f904e6bf5b14d27bb75e6832bae61f551",
+            "locator": {
+              "end": 872,
+              "kind": "line_range",
+              "start": 832
+            },
+            "path": "mcp/tests/tool_entry_point_sweep_support.py"
           },
           "kind": "test"
         }
       ]
     },
     "13": {
-      "note": "Build authors and starts the addressed enclosure without a session lifecycle option.",
+      "note": "`build()` authors and starts the addressed enclosure without a session lifecycle option.",
       "targets": [
         {
           "anchor": {
-            "blob": "75420c39085a4299d8d35fc38ac5a837cf901560",
-            "content": "sha256:4128e09011a743c7647d70b77fc58c610bdde0145175e49d2182a1f849d78197",
+            "blob": "fd07730a1a1bd23acfdd526b3ac57a628c498940",
+            "content": "sha256:d5ddb49abe8321c060349687834469539f17d89221903323f44b042b2b1e2bf1",
             "locator": {
               "kind": "symbol",
               "name": "build"
@@ -453,11 +480,11 @@
       ]
     },
     "14": {
-      "note": "Shared sweep uses fixed fixture labels and preserves named timeout continuation.",
+      "note": "The shared sweep uses fixed fixture labels and preserves the named timeout continuation.",
       "targets": [
         {
           "anchor": {
-            "blob": "409829eb905f6ae7132b150b97cabe6d569742e0",
+            "blob": "fd07730a1a1bd23acfdd526b3ac57a628c498940",
             "content": "sha256:7f50509686224e01400f7078b44b0ff47ab307e17179ff99a9078f6221d87bb9",
             "locator": {
               "kind": "symbol",
@@ -469,15 +496,14 @@
       ]
     },
     "2": {
-      "note": "The whole result is read back from the file the answer names, and a missing or unreadable file is an unvalidatable finding, never a fallback.",
+      "note": "The whole result is read back from the file the answer names, and a missing or unreadable file is an unvalidatable finding.\n\nAnchor: `_read_whole_result`",
       "targets": [
         {
           "anchor": {
-            "blob": "bc923dd7b8709184ad7aa6f785406aee6c0cb75f",
-            "content": "sha256:8a6ac22a1cce7a44906d7512d6a7f215f67bedccbfc8f464e5b9f5f0bafa2d09",
+            "blob": "fd07730a1a1bd23acfdd526b3ac57a628c498940",
+            "content": "sha256:7f66ab8eb3447252a65b2ae3749cde0e7635d735a7fa4fc354aa40504a0c9417",
             "locator": {
-              "kind": "symbol",
-              "name": "_read_whole_result"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -485,12 +511,22 @@
       ]
     },
     "3": {
-      "note": "A returned call validates the whole result under its model and judges the delivered answer as delivered.",
+      "note": "A returned call validates the whole result under its model and judges the delivered answer as delivered.\n\nAnchor: `_returned_arm`",
       "targets": [
         {
           "anchor": {
-            "blob": "1ccfbf29072d91472336f538f2f9820ebf797c6e",
-            "content": "sha256:712b2e176205abbeafbeedddced8f935df28d46cba3ff22638854e17719a45d5",
+            "blob": "fd07730a1a1bd23acfdd526b3ac57a628c498940",
+            "content": "sha256:7f66ab8eb3447252a65b2ae3749cde0e7635d735a7fa4fc354aa40504a0c9417",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "fd07730a1a1bd23acfdd526b3ac57a628c498940",
+            "content": "sha256:0f306524e822c2ba7fdc3e1c1007d96a0fabab7e2d6d03f04c2b7e9c5bb71836",
             "locator": {
               "kind": "symbol",
               "name": "_returned_arm"
@@ -505,7 +541,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "409829eb905f6ae7132b150b97cabe6d569742e0",
+            "blob": "fd07730a1a1bd23acfdd526b3ac57a628c498940",
             "content": "sha256:37578a1f10cb0bfb736dc16bace943a4034c864a0d510646723f7ba78e95ada6",
             "locator": {
               "kind": "symbol",
@@ -521,7 +557,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "409829eb905f6ae7132b150b97cabe6d569742e0",
+            "blob": "fd07730a1a1bd23acfdd526b3ac57a628c498940",
             "content": "sha256:cdee253b37027f823794d963e164401d59d8a3df94597f8731eca5d854c71375",
             "locator": {
               "kind": "symbol",
@@ -537,8 +573,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0b5f9c1cf9cdb077b82d130369ea5be940025987",
-            "content": "sha256:60a3eaef7f215666bc91a3354e002d4ba968e31026d48649bf154b74efb62603",
+            "blob": "fd07730a1a1bd23acfdd526b3ac57a628c498940",
+            "content": "sha256:75e832cfc1127d25129cdfb5af15c622230f4d08151d4cfe640273f19383f51d",
             "locator": {
               "end": 484,
               "kind": "line_range",
@@ -550,7 +586,7 @@
       ]
     },
     "7": {
-      "note": "A fake-account child imports this worktree's world, receives the guard's refusal and leaves the fake configuration home empty.",
+      "note": "A fake-account child imports this worktree's world, receives the guard's refusal and leaves the fake configuration home empty — `test_building_the_world_with_the_users_own_environment_is_refused` in mcp/tests/test_user_settings_guard.py.",
       "targets": [
         {
           "anchor": {
@@ -571,7 +607,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "409829eb905f6ae7132b150b97cabe6d569742e0",
+            "blob": "fd07730a1a1bd23acfdd526b3ac57a628c498940",
             "content": "sha256:0f306524e822c2ba7fdc3e1c1007d96a0fabab7e2d6d03f04c2b7e9c5bb71836",
             "locator": {
               "kind": "symbol",
@@ -583,11 +619,11 @@
       ]
     },
     "9": {
-      "note": "The delivered-answer refusal arm classifies ok:false from delivered code and actionable-next marks.",
+      "note": "The delivered-answer refusal arm classifies `ok: false` from the delivered code and actionable-next marks.",
       "targets": [
         {
           "anchor": {
-            "blob": "409829eb905f6ae7132b150b97cabe6d569742e0",
+            "blob": "fd07730a1a1bd23acfdd526b3ac57a628c498940",
             "content": "sha256:a5a7fee973a3d7e5d8b2202b333cd02d381249d1cc1bbe974c1e34d52a95d2da",
             "locator": {
               "kind": "symbol",

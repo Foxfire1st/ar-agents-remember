@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/application/task_docs/task_sprint_context.py",
+  "proves": [],
   "realizes": [],
   "references": {
     "5": {
@@ -24,11 +25,37 @@
         {
           "anchor": {
             "blob": "be6077cacddf1e01c108ee2a00fa606660e7034c",
+            "content": "sha256:8419d7988572743009192b4adb159c9a92a197f8300f9f62c3e8b55c3ae61083",
+            "locator": {
+              "end": 879,
+              "kind": "line_range",
+              "start": 868
+            },
+            "path": "mcp/src/agents_remember/tasks/document.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "be6077cacddf1e01c108ee2a00fa606660e7034c",
             "content": "sha256:80ef05a2017c1dd74aff6dc8eb9893564a5b796f64de7e32b2e03f3f0f5cc68c",
             "locator": {
               "end": 1237,
               "kind": "line_range",
               "start": 1226
+            },
+            "path": "mcp/src/agents_remember/tasks/document.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "be6077cacddf1e01c108ee2a00fa606660e7034c",
+            "content": "sha256:577548ba26577563f7a9c800103d88fb16c0f8f6ae1322ba87d0cdab8bf275bc",
+            "locator": {
+              "end": 824,
+              "kind": "line_range",
+              "start": 813
             },
             "path": "mcp/src/agents_remember/tasks/document.py"
           },

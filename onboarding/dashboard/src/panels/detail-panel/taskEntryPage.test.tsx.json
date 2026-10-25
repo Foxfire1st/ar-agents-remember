@@ -39,12 +39,12 @@
       ]
     },
     "2": {
-      "note": "Shared served word\n\nAnchor: shows the same served activity and event age in the Now row and page",
+      "note": "Shared served word",
       "targets": [
         {
           "anchor": {
-            "blob": "0908732b08c38bb4fe07bf61a13acf568b90eec5",
-            "content": "sha256:193c9780c5a1297d8f5e30a3e4fe7cd66df032c3cd4ec72eca1a3ee7b8f15a06",
+            "blob": "35a0b237537aaffeeb5455b4b100973d58f07378",
+            "content": "sha256:e288b6792061ad0c8d9d993de54eb53fe80b61c9ae96e0064ed04a6cb0a06aed",
             "locator": {
               "end": 153,
               "kind": "line_range",

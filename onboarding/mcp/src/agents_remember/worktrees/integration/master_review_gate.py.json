@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/worktrees/integration/master_review_gate.py",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
@@ -19,15 +20,16 @@
       ]
     },
     "2": {
-      "note": "Preflight and lock-time publication paths consume the gate.\n\nAnchor: \"def _publish_integration_edge(\"; \"def publish_series_integration_under_authority[T](\"",
+      "note": "Preflight and lock-time publication paths consume the gate.",
       "targets": [
         {
           "anchor": {
-            "blob": "c054d516075fdbf679b03ca2b05a8873db52c1eb",
-            "content": "sha256:ceb507d540125da5f00f817836da3982424a4676f0c9ed472ed13effc8d0d240",
+            "blob": "1f67d47b47455dbb360a0884ecaa0e4aa1da3383",
+            "content": "sha256:aaf23b3f05a648c8e098cb89f6a5d58f19d78f7297731bf47fa896739fcdd377",
             "locator": {
-              "kind": "symbol",
-              "name": "integrate_result"
+              "end": 730,
+              "kind": "line_range",
+              "start": 695
             },
             "path": "mcp/src/agents_remember/worktrees/modules/integrate.py"
           },
@@ -62,11 +64,88 @@
         {
           "anchor": {
             "blob": "8d72ef78699dbeac2d7afe91a91bd4824265e0f6",
+            "content": "sha256:403eea6ede935e9b630c5b4777595a6bad5e06f2f0ed85121e3a93648278b49b",
+            "locator": {
+              "end": 111,
+              "kind": "line_range",
+              "start": 95
+            },
+            "path": "mcp/src/agents_remember/worktrees/series_closeout.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1f67d47b47455dbb360a0884ecaa0e4aa1da3383",
+            "content": "sha256:27fad559a8b42dd8535ce73c5eba0d269dafc45e5e0cc300ab1fbd175477a587",
+            "locator": {
+              "end": 1100,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/integrate.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1f67d47b47455dbb360a0884ecaa0e4aa1da3383",
+            "content": "sha256:aaf23b3f05a648c8e098cb89f6a5d58f19d78f7297731bf47fa896739fcdd377",
+            "locator": {
+              "kind": "symbol",
+              "name": "integrate_result"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/integrate.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8d72ef78699dbeac2d7afe91a91bd4824265e0f6",
             "content": "sha256:42c01ff8df6539ed7d575b6c7380a841e355694f5bddb1d007aea0ab1d008639",
             "locator": {
               "end": 95,
               "kind": "line_range",
               "start": 95
+            },
+            "path": "mcp/src/agents_remember/worktrees/series_closeout.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1f67d47b47455dbb360a0884ecaa0e4aa1da3383",
+            "content": "sha256:a283edb0f7b8943e6f00d0cc2a6b5f9061d4f75e5ed377f43a6bc97f1e9c770f",
+            "locator": {
+              "end": 707,
+              "kind": "line_range",
+              "start": 682
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/integrate.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1f67d47b47455dbb360a0884ecaa0e4aa1da3383",
+            "content": "sha256:4f57cccb7f29b225115929506f95c600e89a539cb23bdf2aa40fd9a3dce9763b",
+            "locator": {
+              "end": 957,
+              "kind": "line_range",
+              "start": 952
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/integrate.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8d72ef78699dbeac2d7afe91a91bd4824265e0f6",
+            "content": "sha256:8302d86a40e35557a81dcf39a168f2b1a78605a73ffc2cc47d78c518a1bd8090",
+            "locator": {
+              "end": 74,
+              "kind": "line_range",
+              "start": 74
             },
             "path": "mcp/src/agents_remember/worktrees/series_closeout.py"
           },

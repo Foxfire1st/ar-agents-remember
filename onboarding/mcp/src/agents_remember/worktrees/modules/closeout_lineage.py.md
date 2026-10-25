@@ -94,7 +94,9 @@ No Domain Documentation source is configured for this memory root.
 - Every refusal shares one lead-sentence-plus-guidance shape and carries typed status/payload. [4]
 - The projection, refusal vocabulary, and ordered sync recoveries this module consumes are owned by the lineage policy. [5]
 - The projected state and its ordered `recoveries` are the shared wire model. [6]
+
 - The heal runs the ordinary public sync result for the owning contract. [7]
+
 - Closeout imports this module in place of the bare `require_current_source_lineage` guard at both entry points. [8]
 
 ### Cross-Repo References

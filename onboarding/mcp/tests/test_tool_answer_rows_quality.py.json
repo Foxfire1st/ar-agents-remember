@@ -3,12 +3,12 @@
   "proves": [
     {
       "anchor": {
-        "blob": "0ab3450c0494a600707fd97b72f54b632f05f0ee",
+        "blob": "382c018cfe6df5236fc6be5c1b7e3491fc676dc4",
         "content": "sha256:4b31f829a9e66f99017480733838b5c33a01705b4151d94b4e20a9beb8c8fe34",
         "locator": {
-          "end": 607,
+          "end": 613,
           "kind": "line_range",
-          "start": 511
+          "start": 517
         }
       },
       "facet": "Missing-only, stale-only, census-only and mixed cases assert projected entries and repair order; the missing-only case also asserts blockingCount=1.",
@@ -23,37 +23,14 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "Source cases assert sync/start/poll row shapes and bounded blocking samples; converted missing-anchor sidecars seed the largest sync expectation.",
+      "note": "Source cases assert sync/start/poll row shapes and bounded blocking samples; converted missing-anchor sidecars seed the largest sync expectation.\n\nAnchor: `QualityProductionTests` `_write_missing_anchor_sidecars` `_write_converted_layout`",
       "targets": [
         {
           "anchor": {
-            "blob": "86edaf064d848420532474444e9d69dfed9e83e0",
-            "content": "sha256:72dbaea635d3936902aa2b8ae2c30742705adb551f8b3693f9c2783484f44395",
+            "blob": "382c018cfe6df5236fc6be5c1b7e3491fc676dc4",
+            "content": "sha256:f9c82ad39288cfde25fe9cd099b2c12a33c853f9c00aa782ed24a7ab2388fe04",
             "locator": {
-              "kind": "symbol",
-              "name": "QualityProductionTests"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "0ab3450c0494a600707fd97b72f54b632f05f0ee",
-            "content": "sha256:693e282817bd69306dfddd37f2eeb6bceb5953adebfb4e2c801eec6897cf0765",
-            "locator": {
-              "kind": "symbol",
-              "name": "_write_missing_anchor_sidecars"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "0ab3450c0494a600707fd97b72f54b632f05f0ee",
-            "content": "sha256:f88629b38a93ffeac2e8ddce6eb88c654277fa48c07a34a30c9557e2064e610f",
-            "locator": {
-              "kind": "symbol",
-              "name": "_write_converted_layout"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -65,7 +42,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0ab3450c0494a600707fd97b72f54b632f05f0ee",
+            "blob": "382c018cfe6df5236fc6be5c1b7e3491fc676dc4",
             "content": "sha256:68e6c8137b3985a11ca978ad720c26f0dc47754f4392eb7cfca545c1bb1ad016",
             "locator": {
               "end": 249,

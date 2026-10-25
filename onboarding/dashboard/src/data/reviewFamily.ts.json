@@ -581,8 +581,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6aef8710047677b74fa337e6c4e2b6df948df099",
-            "content": "sha256:c9ad04aec0562a821d11af1297f1e4718cad9f1bf0507476287add74a7b30139",
+            "blob": "5e94e860bdcfd117a4e496db152da5bfdb241e53",
+            "content": "sha256:1924d98e919f514ac32cae493d36735250d05ee2f10f681c0c6a7641c1da23ff",
             "locator": {
               "end": 71,
               "kind": "line_range",
@@ -676,7 +676,7 @@
       ]
     },
     "32": {
-      "note": "The tree retains side order and member-row reduction; guarantee rendering lives in FamilyGuarantees and selected statements use their own text-first owner.\n\nAnchor: `memberRows`, `GuaranteeComparisonBlock`, `SelectedStatement`",
+      "note": "The tree retains side order and member-row reduction; guarantee rendering lives in FamilyGuarantees and selected statements use their own text-first owner.\n\nAnchor: `memberRows` `GuaranteeComparisonBlock` `SelectedStatement`",
       "targets": [
         {
           "anchor": {
@@ -692,11 +692,34 @@
         },
         {
           "anchor": {
-            "blob": "99713fb4b8e8123ffe1a5353b3575be10ec3a5d8",
-            "content": "sha256:deab132b40316eafd0463e17d08d7a8f2ea90b9b05f09f258dab1aabf86a58f3",
+            "blob": "001a6d546effd9f6a846d5f8ba58d9e8c7f6233d",
+            "content": "sha256:69e2b90461a44e63efafabf3d1da83cae84ce86733fa12b84eecbeb872cee68c",
             "locator": {
-              "kind": "symbol",
-              "name": "GuaranteeComparisonBlock"
+              "end": 22,
+              "kind": "line_range",
+              "start": 10
+            },
+            "path": "dashboard/src/panels/review/FamilyTree.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "001a6d546effd9f6a846d5f8ba58d9e8c7f6233d",
+            "content": "sha256:2a99d712d92b75078eb815fba54a0f35a5efb71caa8a63c4e516398368f51a3b",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/FamilyTree.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0f9d5162c03303344b3de1d89bcc1b8f7498c0d1",
+            "content": "sha256:4e45f67f20749d0ca3ebb377ca4578f3597f5b9ea45250e743cde871c32c608f",
+            "locator": {
+              "kind": "file"
             },
             "path": "dashboard/src/panels/review/FamilyGuarantees.tsx"
           },
@@ -704,26 +727,12 @@
         },
         {
           "anchor": {
-            "blob": "d8af41bfe0908f05374380a0703fb25af4cd3acb",
-            "content": "sha256:c9cfb750e31f2c7edf37fa3bb22e64283c52d55971873c518b7a25496e19b4e6",
+            "blob": "65da80233c61fee36508e14b7c87ed65437a34a7",
+            "content": "sha256:b9c5a10b14f877688caa72fb3a2ee6248b43005dc3fcd20eac47e4496bc67037",
             "locator": {
-              "kind": "symbol",
-              "name": "SelectedStatement"
+              "kind": "file"
             },
             "path": "dashboard/src/panels/review/SubjectReview.tsx"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "a6452e32b37107141d8d2cb94125603cbeb46e68",
-            "content": "sha256:0f4a2ca6b2e5a8f320f745ebb6fddfc107c324f82a349d147d20bd384bb43899",
-            "locator": {
-              "end": 22,
-              "kind": "line_range",
-              "start": 10
-            },
-            "path": "dashboard/src/panels/review/FamilyTree.tsx"
           },
           "kind": "code"
         }

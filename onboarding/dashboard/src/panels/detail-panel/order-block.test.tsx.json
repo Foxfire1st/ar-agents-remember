@@ -21,12 +21,12 @@
   ],
   "references": {
     "1": {
-      "note": "Sprint display/whole-graph and rest/focus/reduced-motion assertions remain; the seeded master case pins placement, ready-only next tasks, projected progress, relation text and exact navigation. Source inspection only.\n\nAnchor: seeded entry-state, graph-navigation and interaction assertions",
+      "note": "Sprint display/whole-graph and rest/focus/reduced-motion assertions remain; the seeded master case pins placement, ready-only next tasks, projected progress, relation text and exact navigation. Source inspection only.",
       "targets": [
         {
           "anchor": {
-            "blob": "79cba390a3cc9f043bd2fd84d5e149283fa56137",
-            "content": "sha256:a9ccaae0a3b5eb1f0180a00386519c591cc213257612eabd97f56a1a310050c8",
+            "blob": "1b9f7ed87855e537c7a8a27f692bfc197cc4293a",
+            "content": "sha256:a30c78fd7b9d8b3428aead4f337396c0ef505ab5df457a16d7018de25366395c",
             "locator": {
               "end": 342,
               "kind": "line_range",
@@ -55,12 +55,12 @@
       ]
     },
     "3": {
-      "note": "Parameterized Order cases pin the started work accent independently of the activity word, the restored legend, and distinct ready/waits wave accents. This is source assertion coverage, not a fresh execution.\n\nAnchor: Current source assertions",
+      "note": "Parameterized Order cases pin the started work accent independently of the activity word, the restored legend, and distinct ready/waits wave accents. This is source assertion coverage, not a fresh execution.",
       "targets": [
         {
           "anchor": {
-            "blob": "62889f481e3d1aaec57c6c2d8dab97ac76ef4066",
-            "content": "sha256:54fa9e81d3d435e60d55291ac9dddcfa409060afd1b60e1ec7d0923b3b125ebd",
+            "blob": "1b9f7ed87855e537c7a8a27f692bfc197cc4293a",
+            "content": "sha256:32a236ed022fee06f1e5854f486deafd896cba246004400450c816226d6e4675",
             "locator": {
               "end": 176,
               "kind": "line_range",

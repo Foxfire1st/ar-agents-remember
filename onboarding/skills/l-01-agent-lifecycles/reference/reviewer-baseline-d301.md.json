@@ -3,12 +3,12 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "New steps-3–5 detail preserving independent evidence-class/lens inspection and empty-baseline termination.\n\nAnchor: Candidate instruction body, lines 3–19",
+      "note": "New steps-3–5 detail preserving independent evidence-class/lens inspection and empty-baseline termination.",
       "targets": [
         {
           "anchor": {
-            "blob": "c5e6cacb287ad1af8d0408628581b64154892663",
-            "content": "sha256:1c36925ce451687bb0b3befa07c5627c3a839d20cdf15941172ac8fda1cc53df",
+            "blob": "0a33b0151854b4970da05b7ecfa1fcc42af54b25",
+            "content": "sha256:3a0eb643149e4f028a6888e98aa386cbb9b8eb4668397f2eab633b2a3a826e87",
             "locator": {
               "end": 19,
               "kind": "line_range",

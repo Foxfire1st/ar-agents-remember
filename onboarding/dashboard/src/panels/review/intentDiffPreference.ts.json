@@ -21,12 +21,12 @@
   ],
   "references": {
     "1": {
-      "note": "The module's statement: browser-local, the house idiom, no server store, inline when storage is unavailable.\n\nAnchor: \"It is not review state and no server\"; \"the passage defaults to inline\"",
+      "note": "The module's statement: browser-local, the house idiom, no server store, inline when storage is unavailable.",
       "targets": [
         {
           "anchor": {
-            "blob": "1c3b371513e65c82cbd1fc726693058682167dbc",
-            "content": "sha256:e30439f270e9187ed58dde2935c13575333b447589375ae1e80091cd5c0d9776",
+            "blob": "e8e7bf594e455235be6cf3b21bc673afc6102f57",
+            "content": "sha256:c494fa0522bcc03e5b5568d8dc1c10bb0a3322b249e020a982f9d2135b06e675",
             "locator": {
               "end": 5,
               "kind": "line_range",

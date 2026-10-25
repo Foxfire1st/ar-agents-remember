@@ -27,7 +27,9 @@ Cleanup attempts process/group termination and waits up to the configured reap i
 - Only non-taskless roles with an effective task inspect singleton receipt/prior decision; review-count warnings and explicit/prior choices remain qualified. [1]
 - Per-root inventory constants explicitly bound capture time, bytes, NUL records, diagnostics and bounded reap wait. [8]
 - Cleanup attempts process/group termination and bounded waiting, closes pipes and can return unconfirmed termination; an earlier read reason takes precedence. [11]
-- The runtime reuses the receipt owner’s Architect/Investigator taskless classification; effective-master presence is not singleton receipt identity. [12]
+
+- The runtime reuses the owner's shared taskless set — `architect`, `investigator` and `bootstrap` — for receipt identity; effective-master presence is not that identity. [12]
+
 
 - Unconfirmed task metadata cannot assert an applied predecessor. [2]
 - Actual receipt choices supply the from record. [3]
@@ -35,7 +37,9 @@ Cleanup attempts process/group termination and waits up to the configured reap i
 - Inventory starts a separate process group for bounded cleanup attempts, not a guaranteed successful reap. [5]
 
 - Partial inventories expose recovery instead of pretending completeness. [6]
+
 - Test source exercises bounded partial inventory without blocking later seat start. [7]
+
 
 - Capture enforces aggregate bytes, diagnostics and NUL-record budgets. [9]
 - Selector readiness precedes each descriptor read; the loop checks its monotonic remaining budget and rejects incomplete final records. No descriptor-nonblocking setting or universal OS-read timing bound is inferred. [10]

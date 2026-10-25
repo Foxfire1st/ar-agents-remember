@@ -76,12 +76,12 @@
       ]
     },
     "11": {
-      "note": "The reader's document text renders through this primitive.\n\nAnchor: `PathViews`",
+      "note": "The reader's document text renders through this primitive.",
       "targets": [
         {
           "anchor": {
-            "blob": "0a45fdcc36dc7c92163b39f88afc0683eaa646ef",
-            "content": "sha256:da288ddd97d0dde83f693eadd73bcfbb682a6100fba2ebbcd50aac7a48150f74",
+            "blob": "aa5aeef9b5ccd6ce48001162347974b95ed036f7",
+            "content": "sha256:227395be75710b76deebe0589be35dd07191632b8e14e66ead0d99f7cb1913be",
             "locator": {
               "kind": "file"
             },
@@ -92,12 +92,12 @@
       ]
     },
     "7": {
-      "note": "The renderer mounts its plugins only when the caller asks for markers or heading ids.\n\nAnchor: `Markdown`",
+      "note": "The renderer mounts its plugins only when the caller asks for markers or heading ids.",
       "targets": [
         {
           "anchor": {
-            "blob": "b4c74c37212e432009df876b3276beea828250fa",
-            "content": "sha256:bc43508e5e9614897d5cc5c61ee66424045ef4aeb4dbdb3e53be476b95279558",
+            "blob": "1a65bd4444779518a555e2e38d8ca30fa0df9f3a",
+            "content": "sha256:dbbcb27210f3e352d08d6ba242aaa61621f03500d95beccbb45dbe266bda2ae3",
             "locator": {
               "kind": "file"
             }
@@ -107,12 +107,12 @@
       ]
     },
     "8": {
-      "note": "The requirement anchor resolves registered packets and refuses unregistered addresses.\n\nAnchor: `requirementAnchor`",
+      "note": "The requirement anchor resolves registered packets and refuses unregistered addresses.",
       "targets": [
         {
           "anchor": {
-            "blob": "b4c74c37212e432009df876b3276beea828250fa",
-            "content": "sha256:bc43508e5e9614897d5cc5c61ee66424045ef4aeb4dbdb3e53be476b95279558",
+            "blob": "1a65bd4444779518a555e2e38d8ca30fa0df9f3a",
+            "content": "sha256:dbbcb27210f3e352d08d6ba242aaa61621f03500d95beccbb45dbe266bda2ae3",
             "locator": {
               "kind": "file"
             }
@@ -122,12 +122,12 @@
       ]
     },
     "9": {
-      "note": "The document typing used by the Knowledge reader is one opt-in block.\n\nAnchor: `box`",
+      "note": "The document typing used by the Knowledge reader is one opt-in block.",
       "targets": [
         {
           "anchor": {
-            "blob": "b4c74c37212e432009df876b3276beea828250fa",
-            "content": "sha256:bc43508e5e9614897d5cc5c61ee66424045ef4aeb4dbdb3e53be476b95279558",
+            "blob": "1a65bd4444779518a555e2e38d8ca30fa0df9f3a",
+            "content": "sha256:dbbcb27210f3e352d08d6ba242aaa61621f03500d95beccbb45dbe266bda2ae3",
             "locator": {
               "kind": "file"
             }

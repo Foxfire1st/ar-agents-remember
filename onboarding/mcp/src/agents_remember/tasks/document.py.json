@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/tasks/document.py",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
@@ -455,15 +456,14 @@
       ]
     },
     "13": {
-      "note": "The route-review record validates its typed dependency declaration and self-digest.",
+      "note": "The route-review record validates its typed dependency declaration and self-digest.\n\nAnchor: `RouteReviewRecord`",
       "targets": [
         {
           "anchor": {
-            "blob": "0049f555b1338b3ab35a59750be6c0c51cbb63d2",
-            "content": "sha256:12f59076c4a930fa1b31117b0ca7b7b0d476d705d0de00a07975e53bbc6cc986",
+            "blob": "c2275b9792d563997e82c391c04d0f6d885acd58",
+            "content": "sha256:dec1e870f6476ae35e3eb90c61301c71553bf75141daf92defe26a0422a24f71",
             "locator": {
-              "kind": "symbol",
-              "name": "RouteReviewRecord"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/tasks/route_review.py"
           },
@@ -886,15 +886,14 @@
       ]
     },
     "4": {
-      "note": "The refusals: master, empty, repeated subject and effect.",
+      "note": "The refusals: master, empty, repeated subject and effect.\n\nAnchor: `_check_expected_knowledge_effects`",
       "targets": [
         {
           "anchor": {
-            "blob": "ef35d2d921f438cb1f260638e11b337325b8e2e0",
-            "content": "sha256:0ceb4aa7f9a4698685f87ce33780733ed6c745f1403d91057039fda37cdaa401",
+            "blob": "be6077cacddf1e01c108ee2a00fa606660e7034c",
+            "content": "sha256:fa8b044677dd79fab9c5621308c459f97c7d85686fbbbab4f54a2854f040241d",
             "locator": {
-              "kind": "symbol",
-              "name": "_check_expected_knowledge_effects"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -919,16 +918,16 @@
       ]
     },
     "6": {
-      "note": "The check runs in the document validator.\n\nAnchor: \"_check_expected_knowledge_effects(self.kind, self.expectedKnowledgeEffects)\"",
+      "note": "The check runs in the document validator.",
       "targets": [
         {
           "anchor": {
-            "blob": "ef35d2d921f438cb1f260638e11b337325b8e2e0",
-            "content": "sha256:1c1a21ee6d3265d4f8bad42874a04696f0615c020d99b4b1edd501e127ca6543",
+            "blob": "be6077cacddf1e01c108ee2a00fa606660e7034c",
+            "content": "sha256:216a1907ff987f77601d06c71dd93ca445e0854388ce2583a35dd0e125477c8f",
             "locator": {
-              "end": 752,
+              "end": 1109,
               "kind": "line_range",
-              "start": 752
+              "start": 1109
             }
           },
           "kind": "code"

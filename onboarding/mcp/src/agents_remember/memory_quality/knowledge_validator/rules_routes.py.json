@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/rules_routes.py",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
@@ -22,15 +23,14 @@
   ],
   "references": {
     "1": {
-      "note": "Carried routes are the union of every base's family routes.",
+      "note": "Carried routes are the union of every base's family routes.\n\nAnchor: `_base_family_routes`",
       "targets": [
         {
           "anchor": {
-            "blob": "cc200af6047d796b28cbf2c7fa300c747581c70a",
-            "content": "sha256:22f6b67b9265ec86bacc2c94bed207801c5311f60b6beacb95fc503d44694f43",
+            "blob": "9d0fd44f3dd129ddde8d51e1df229c8c44f0e57a",
+            "content": "sha256:ae9be8bfcb816227d42ccdf313e7ac0bafcf7b30f789e22d3a8e42ab4954a41d",
             "locator": {
-              "kind": "symbol",
-              "name": "_base_family_routes"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -484,7 +484,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2b48e8684df88aa39e033120aedd762f0377f38a",
+            "blob": "57a9d02cb9368158ac152ea6010b478c2a5bf7ed",
             "content": "sha256:5ef9511e1c519d4475c9228eeafcb84917dbf14fe180155f0d27ef9ec53452a5",
             "locator": {
               "end": 231,
@@ -562,7 +562,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2b48e8684df88aa39e033120aedd762f0377f38a",
+            "blob": "57a9d02cb9368158ac152ea6010b478c2a5bf7ed",
             "content": "sha256:830185b2ab81ae775c2b7b08f66f0b149037f8f26a53630b471d7844eaa6692a",
             "locator": {
               "kind": "symbol",
@@ -574,12 +574,23 @@
         },
         {
           "anchor": {
-            "blob": "b82b15199ae3a85cf7b55e3bfca9ea85608e0759",
-            "content": "sha256:8c69934db64c84ca5c1ff10b0b62d90b1f4462421e484b0f4ac8e06a671950c9",
+            "blob": "57a9d02cb9368158ac152ea6010b478c2a5bf7ed",
+            "content": "sha256:4331535e173bd68e7706591f72bb4c93a71529735aaea735127b189579e53201",
             "locator": {
               "end": 234,
               "kind": "line_range",
               "start": 218
+            },
+            "path": "mcp/tests/test_knowledge_family_routes.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "57a9d02cb9368158ac152ea6010b478c2a5bf7ed",
+            "content": "sha256:0f161efb767870542be4e8ad99bea57bdd5b58ec7848bc5c4e2c621e36992a7a",
+            "locator": {
+              "kind": "file"
             },
             "path": "mcp/tests/test_knowledge_family_routes.py"
           },
@@ -592,8 +603,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b82b15199ae3a85cf7b55e3bfca9ea85608e0759",
-            "content": "sha256:9cb52af69cbc3423d9f755594e5bd796248fabc6cfd9580f5bdcb80d9aa598d5",
+            "blob": "57a9d02cb9368158ac152ea6010b478c2a5bf7ed",
+            "content": "sha256:2415b3a975a7fa45f9d4bfad61b1cdbf7933bf41b94de10a6fbe8349282d9aa5",
             "locator": {
               "kind": "symbol",
               "name": "test_a_route_holding_only_a_proof_entry_violates_non_empty"
@@ -604,12 +615,23 @@
         },
         {
           "anchor": {
-            "blob": "b82b15199ae3a85cf7b55e3bfca9ea85608e0759",
-            "content": "sha256:8f6781e52db33b956c3ce190fca31b30cac9db95357fdbb6b604f9f2c26d97b1",
+            "blob": "57a9d02cb9368158ac152ea6010b478c2a5bf7ed",
+            "content": "sha256:2bda2e5736232382061a6a5d2d55770aea8bb7c3e188b1d9efc1a083400af90c",
             "locator": {
               "end": 166,
               "kind": "line_range",
               "start": 154
+            },
+            "path": "mcp/tests/test_knowledge_family_routes.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "57a9d02cb9368158ac152ea6010b478c2a5bf7ed",
+            "content": "sha256:0f161efb767870542be4e8ad99bea57bdd5b58ec7848bc5c4e2c621e36992a7a",
+            "locator": {
+              "kind": "file"
             },
             "path": "mcp/tests/test_knowledge_family_routes.py"
           },

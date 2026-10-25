@@ -74,4 +74,5 @@ blocks that are marked `yaml`, `yml` or unmarked.
 - The supported onboarding roots and the refusal that names both shapes. [8]
 - The one-to-one card path. [9]
 - An absent memory root, a retargeted root link and an equal-bytes retarget each recompute a kept view. [10]
+
 - A higher-priority settings file that appears is a change of the recorded set. [11]

@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/mcp/registration/role_agents.py",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
@@ -61,8 +62,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "feb441f42445512bd07b4a92bcd0e55945b14d14",
-            "content": "sha256:dd6489151bcb4b41c8b639c699e9bd2a46f11fcd4dc3d5adeacaa7593f08b210",
+            "blob": "d7a350b97b2ba83910cf0f815eef07fa8d044f8c",
+            "content": "sha256:3e0136ac2d223e2a37422b565a2104228271445025cae7eaaabf07cb271fab72",
             "locator": {
               "kind": "file"
             }
@@ -76,8 +77,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "feb441f42445512bd07b4a92bcd0e55945b14d14",
-            "content": "sha256:219243b506686d858151b941e3d7afa3ec5d2d6902a6536f24dee1a980572867",
+            "blob": "d7a350b97b2ba83910cf0f815eef07fa8d044f8c",
+            "content": "sha256:39dab55c022bc0709501958f85a78da7c1f3addd5927b9dfa1f46c5eaf35c2e2",
             "locator": {
               "end": 141,
               "kind": "line_range",
@@ -93,8 +94,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "feb441f42445512bd07b4a92bcd0e55945b14d14",
-            "content": "sha256:dd6489151bcb4b41c8b639c699e9bd2a46f11fcd4dc3d5adeacaa7593f08b210",
+            "blob": "d7a350b97b2ba83910cf0f815eef07fa8d044f8c",
+            "content": "sha256:3e0136ac2d223e2a37422b565a2104228271445025cae7eaaabf07cb271fab72",
             "locator": {
               "kind": "file"
             }
@@ -177,8 +178,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "feb441f42445512bd07b4a92bcd0e55945b14d14",
-            "content": "sha256:3a020b47dcead1b39714d5ff629712c61f61dece62effbd1c8442a149c4faec6",
+            "blob": "d7a350b97b2ba83910cf0f815eef07fa8d044f8c",
+            "content": "sha256:58f8bc4c49b594830e76029269db88b1de6418b833cffa7f81f1b88752f20afc",
             "locator": {
               "kind": "symbol",
               "name": "register_role_agent_tools"

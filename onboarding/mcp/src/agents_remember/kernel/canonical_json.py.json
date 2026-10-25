@@ -129,15 +129,14 @@
       ]
     },
     "6": {
-      "note": "The schema fingerprint computed through this encoder.",
+      "note": "The schema fingerprint computed through this encoder.\n\nAnchor: `schema_fingerprint`",
       "targets": [
         {
           "anchor": {
-            "blob": "5e27550d32bfd12f38a8b3393ad8622114eb677a",
-            "content": "sha256:74d79276760442616a5d96d92b3bf2e0ecf18a351a9f3f74bd38d1f61dbdb74e",
+            "blob": "ec5bf0677108161ea883091d9613a34d21a3697c",
+            "content": "sha256:9e10ce1d79604d8957a14bb7d9e140464ea4f5b91ed4cd87a5b76d911c6490a5",
             "locator": {
-              "kind": "symbol",
-              "name": "schema_fingerprint"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/memory/knowledge/schema.py"
           },

@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/memory/knowledge/read_anchor_memo.py",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
@@ -144,8 +145,19 @@
       ]
     },
     "7": {
-      "note": "The consumer that decides what is put, keyed by root plus ids, and only after Git or the parser answered.",
+      "note": "The consumer that decides what is put, keyed by root plus ids, and only after Git or the parser answered.\n\nAnchor: `_recorded_lines` `_blob_definitions` `_tree_entry`",
       "targets": [
+        {
+          "anchor": {
+            "blob": "d8f46ee1c5404cab224a76e01020e735b06cdc76",
+            "content": "sha256:b47621a27defc5426917edd8933fd829b1d411ddc075e4511d57c563d9bf660f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/read_anchors.py"
+          },
+          "kind": "code"
+        },
         {
           "anchor": {
             "blob": "d8f46ee1c5404cab224a76e01020e735b06cdc76",
@@ -172,8 +184,8 @@
         },
         {
           "anchor": {
-            "blob": "24c7f2718e93cdc31278f980928b3ae205aa8c86",
-            "content": "sha256:98ad77f96dbefbe914ffd43fd0d599365cc160d6938b470fef4d3183f09f0708",
+            "blob": "d8f46ee1c5404cab224a76e01020e735b06cdc76",
+            "content": "sha256:62cf932e19d9cc3abd4240c043a0c4f0d7ad0f9f5a39d59002b045cce748f5fc",
             "locator": {
               "kind": "symbol",
               "name": "_tree_entry"

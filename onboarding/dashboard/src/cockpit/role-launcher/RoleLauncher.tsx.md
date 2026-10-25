@@ -14,7 +14,7 @@ The extracted role launcher: one row of controls that fills or accepts a selecti
 
 The earlier ordinary task-needing role/sprint/master/task/agent/model/effort/one-feature/mode/Start/Refresh composition was measured as fitting one line at 1440px; that is retained layout evidence, not a new guarantee for the added step-up/status controls. Extra controls or narrower space wrap by whole controls, without an overflow menu; the strip is not an unconditional fixed-height or wide-nowrap container. Reply length still cannot grow it because execution/reply prose is absent. During preparation, the Start label carries the shared progress phase; failures retain the existing single actionable line. The mode and optional Instructions are chips, permission-bearing features are settings-owned chips, and selectable features share the row's selector. Service-tier disclosure keeps its test id as a shared chip; while the selected execution is stepped up, its Base label and hover explicitly deny that it is the applied tier.
 
-The Chats pane and document rail share this extracted owner. Bound callers hide references already determined by their selection and retain uncertainty/retry identity. Ordinary singleton and Projects rows prohibit a second open-request start; selected sprint/master Investigator rows retain their backend-admitted per-request exception. Choice ordering and start/options payloads retain their existing owners. A selected bound seat with status `held` is labeled “(held)” and counts as a live occupant, disabling another ordinary bound Start. That state extension does not change the shared visual authority or add execution prose. Explicit model and effort UI changes retain feature values; inherited invalid-catalog model/effort repair drops them, and an invalid explicit agent id clears the override. No second workspace list, report navigation or execution-prose surface is introduced.
+The Chats pane and document rail share this extracted owner. Bound callers hide references already determined by their selection and retain uncertainty/retry identity. Ordinary singleton and Projects bound rows prohibit a second open-request start; selected sprint/master Investigator rows retain their backend-admitted per-request exception. Choice ordering and start/options payloads retain their existing owners. A selected bound seat with status `held` is labeled “(held)” and counts as a live occupant, disabling another ordinary bound Start. That state extension does not change the shared visual authority or add execution prose. Explicit model and effort UI changes retain feature values; inherited invalid-catalog model/effort repair drops them, and an invalid explicit agent id clears the override. No second workspace list, report navigation or execution-prose surface is introduced.
 
 ## Current Contract
 
@@ -27,12 +27,20 @@ This account is bound to the candidate source, not a claim of a running serving 
 
 
 
+
 - The final Start guard joins backend startability, preparation and bound-seat occupancy. [1]
+
 - Bound mode omits the reference fields the selection already determines. [2]
+
 - Preparation is carried by the Start label rather than an extra ordinary status line. [3]
+
+
 - The visual grid keeps whole-control wrapping. [6]
 
+
+
 - The complete selected document label and identity survive truncation in hover; an empty or unmatched document selector instead names only its purpose. [7]
+
 
 ## Investigator scope and request identity
 
@@ -44,7 +52,9 @@ Ordinary singleton and Projects bound rows still adopt an open request and disab
 
 ## Refreshed current evidence
 
+
 - The shared composition wires field sections, repair effects and the action bar. [4]
+
 
 - File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence. [8]
 

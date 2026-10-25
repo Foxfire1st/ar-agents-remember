@@ -74,7 +74,9 @@ This account is bound to the candidate source, not a claim of a running serving 
 
 
 - Launch copies detail files, substitutes paths, and records frozen revisions. [7]
+
 - Replay validates regular opened files and frozen revisions at deterministic detail names beside the saved handover in its recorded canonical folder, not mutable corpus sources. [8]
+
 - Per-request detail artifacts use exact admitted bytes beside the handover and write-once publication. [9]
 - File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence. [10]
 - File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence. [11]
@@ -91,8 +93,12 @@ No relevant documentation found after checking live sources.
 
 - The locked plan and admitted-source shapes this module compares. [1]
 - The refusals this module raises. [2]
+
 - The compiler step that runs this validation before resolution. [3]
+
+
 - The YAML-free source of the declared plan: the parsed canonical manifest. [4]
+
 - Missing mandatory material and wrongly-rooted/undeclared sources are refused rather than omitted. [5]
 - **The declared-skill gate** and its two directions: an incomplete admitted set refuses, and a referenced-but-missing skill refuses. [6]
 

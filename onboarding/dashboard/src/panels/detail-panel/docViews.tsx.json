@@ -22,15 +22,14 @@
   ],
   "references": {
     "1": {
-      "note": "Shared content-view dispatch preserves form-specific collection ownership.",
+      "note": "Shared content-view dispatch preserves form-specific collection ownership.\n\nAnchor: `DocContentView`",
       "targets": [
         {
           "anchor": {
-            "blob": "aa135237a0d7f3dddd0ef503c5e11820b3769225",
-            "content": "sha256:b14c8fa608fd63395f6f38a41d39791bfc3dc9ce8e8fecf50e572e3b7239efe3",
+            "blob": "9fb68c1344589e5515826a5dc2602ea963a371a9",
+            "content": "sha256:a6cae716d96c6ca5dfc7b4d61d609851be3d349738fe2fcd2eebda378053709f",
             "locator": {
-              "kind": "symbol",
-              "name": "DocContentView"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -38,15 +37,14 @@
       ]
     },
     "2": {
-      "note": "Reference views retain server-resolved artifact handlers rather than flattening links.",
+      "note": "Reference views retain server-resolved artifact handlers rather than flattening links.\n\nAnchor: `ReferencesView`",
       "targets": [
         {
           "anchor": {
-            "blob": "aa135237a0d7f3dddd0ef503c5e11820b3769225",
-            "content": "sha256:c8552683e4682a3c70a666a6acd713aef8b44df71b6b90a317dcc1d7132c7f29",
+            "blob": "9fb68c1344589e5515826a5dc2602ea963a371a9",
+            "content": "sha256:a6cae716d96c6ca5dfc7b4d61d609851be3d349738fe2fcd2eebda378053709f",
             "locator": {
-              "kind": "symbol",
-              "name": "ReferencesView"
+              "kind": "file"
             }
           },
           "kind": "code"

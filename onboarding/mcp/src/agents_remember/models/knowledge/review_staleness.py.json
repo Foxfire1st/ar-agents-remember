@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/models/knowledge/review_staleness.py",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
@@ -70,23 +71,12 @@
       ]
     },
     "11": {
-      "note": "**The re-export that made the extraction invisible to importers, and the payload vocabulary's own `__all__` entries for the three names.**\n\nAnchor: `review_staleness`",
+      "note": "**The re-export that made the extraction invisible to importers, and the payload vocabulary's own `__all__` entries for the three names.**\n\nAnchor: `ReviewSyncMovement`",
       "targets": [
         {
           "anchor": {
-            "blob": "bd66eb3576aa6605929a1dcc30616584b3563cb1",
-            "content": "sha256:32e759ddeff1713b2c257983248ed0d623b1d3c56babd35a02ada80c9df93252",
-            "locator": {
-              "kind": "symbol",
-              "name": "ReviewSyncMovement"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "f9105a09d9fdee4eeed9ab2b715723940337949e",
-            "content": "sha256:8980e37eb52f85329d39409e1121708f681cfa2a94fe60232b5518f5bdb87c9e",
+            "blob": "e298bc656619aa09b3566b8e7baeb7a8453b656f",
+            "content": "sha256:1df21c261139d0b76321fd2bb51d4f4c7ddb8cecd66eb60183c7566f3639c011",
             "locator": {
               "end": 65,
               "kind": "line_range",
@@ -108,16 +98,61 @@
             "path": "mcp/src/agents_remember/models/knowledge/review.py"
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ce64a977e926846a0ca408bf1aceecec8a22ea85",
+            "content": "sha256:4f507c20870bedff3a241f6f80d91580db9a794c2ee33a6bba3a52d169ee38de",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ce64a977e926846a0ca408bf1aceecec8a22ea85",
+            "content": "sha256:0a73c374ac5c8e30f16a41de3bf760f5b0448916ab28caeee7e6d168978d7ba0",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewSyncMovement"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e298bc656619aa09b3566b8e7baeb7a8453b656f",
+            "content": "sha256:8841d9b4305b8e5289292ba0da306f7336977180937f9c7ca8026308ea48e0b6",
+            "locator": {
+              "end": 66,
+              "kind": "line_range",
+              "start": 63
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review.py"
+          },
+          "kind": "code"
         }
       ]
     },
     "12": {
-      "note": "**The payload that still declares the staleness, submission and movement fields, and the comment distinguishing \"no sync has reported\" from \"a sync reported agreement\".**",
+      "note": "**The payload that still declares the staleness, submission and movement fields, and the comment distinguishing \"no sync has reported\" from \"a sync reported agreement\".**\n\nAnchor: `KnowledgeReviewPayload` `sync_movement`",
       "targets": [
         {
           "anchor": {
-            "blob": "f9105a09d9fdee4eeed9ab2b715723940337949e",
-            "content": "sha256:60f8245e26872ab7d3cc717591296fbc7b92122d500d501f0056eed402c42b2d",
+            "blob": "e298bc656619aa09b3566b8e7baeb7a8453b656f",
+            "content": "sha256:4d0b65fa6dad1cd50ffccbef6a9438db99bd5d650c265f6820bac0cf5e6bf315",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e298bc656619aa09b3566b8e7baeb7a8453b656f",
+            "content": "sha256:0e006f842e6954082a9d752be51896858f6970f40ff39161b5d4046e191a8da0",
             "locator": {
               "kind": "symbol",
               "name": "KnowledgeReviewPayload"
@@ -141,8 +176,30 @@
       ]
     },
     "13": {
-      "note": "**The R17 producer that builds a current or carried-mismatch staleness, and the fold that replaces it when a sync measured movement.**",
+      "note": "**The R17 producer that builds a current or carried-mismatch staleness, and the fold that replaces it when a sync measured movement.**\n\nAnchor: `review_staleness` `review_staleness_with_sync_movement`",
       "targets": [
+        {
+          "anchor": {
+            "blob": "6a494701b8520968af8948b5a113ce07400e0364",
+            "content": "sha256:11e81de2d0360287791aa8d09c7e4790133ee97e98bd530389f7ea1e009dfe89",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/review_comparison_staleness.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3a7a51167bc4342c1d0cd79fee92196b7ae12b14",
+            "content": "sha256:8cc0bd8a910711f5fab8a88d254b0100adad175944c0bb7bd41a787a28e086be",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/review_sync_movement.py"
+          },
+          "kind": "code"
+        },
         {
           "anchor": {
             "blob": "6a494701b8520968af8948b5a113ce07400e0364",
@@ -157,8 +214,8 @@
         },
         {
           "anchor": {
-            "blob": "93731bde89e06ef01c6f5b0ae7c8ce7dd102a747",
-            "content": "sha256:0ccfd42136229222421be834f0bcd59a7cec380180f6ace5e845db1926a75a18",
+            "blob": "3a7a51167bc4342c1d0cd79fee92196b7ae12b14",
+            "content": "sha256:94a2912674267018cbcfd30c8b3a461a896dd8c2aefb2222a4e52420564919ed",
             "locator": {
               "kind": "symbol",
               "name": "review_staleness_with_sync_movement"
@@ -170,12 +227,12 @@
       ]
     },
     "14": {
-      "note": "The task-context producer that uses the `not_compared` state because no knowledge operand was compared.\n\nAnchor: `ReviewStaleness`",
+      "note": "The task-context producer that uses the `not_compared` state because no knowledge operand was compared.",
       "targets": [
         {
           "anchor": {
-            "blob": "2e07decd2e1af9974e5873e074771ae1745d4634",
-            "content": "sha256:a1e9951a80e3c0599f4087957acc15fdd6975af780628bdc7b4f330a9c65845d",
+            "blob": "5bd81fc6f8ff0b3bd239e3a985472aa9ae3d6d01",
+            "content": "sha256:63bba7592b7f97bc655d0115d7982a21c861a6957c56bb833c33c50671a1f80b",
             "locator": {
               "end": 191,
               "kind": "line_range",
@@ -188,12 +245,23 @@
       ]
     },
     "15": {
-      "note": "The display-only submission producer, whose two states are the model's own members.",
+      "note": "The display-only submission producer, whose two states are the model's own members.\n\nAnchor: `submission`",
       "targets": [
         {
           "anchor": {
-            "blob": "083bfa8a894d7c237c473d61e2a406eb6e49c127",
-            "content": "sha256:b5d9ba51fb12b3d8f75f56225b0ad35b2e9b276a7a749d2bb8359a3e32ef608d",
+            "blob": "8eafcdd6f1f2e70dfd792d2dc57a62caed505101",
+            "content": "sha256:64120005fabcf3773d46f7ae9c91c031396a5756a537ec7be8ac2076dc656e53",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/review_record_rendering.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8eafcdd6f1f2e70dfd792d2dc57a62caed505101",
+            "content": "sha256:d7578c21db39e1f32665c3ebd45914600424e8486dc19c0f3cee2deb28265715",
             "locator": {
               "kind": "symbol",
               "name": "submission"
@@ -209,8 +277,73 @@
       "targets": [
         {
           "anchor": {
-            "blob": "93731bde89e06ef01c6f5b0ae7c8ce7dd102a747",
-            "content": "sha256:8f9ca922b68691ee041e2b5f39d96ababee0a521df37edd10be6a59796780642",
+            "blob": "3a7a51167bc4342c1d0cd79fee92196b7ae12b14",
+            "content": "sha256:d40a79190a281a59a50b462bec2156b444a6377fa1054cfa67aa77438903ce25",
+            "locator": {
+              "end": 119,
+              "kind": "line_range",
+              "start": 90
+            },
+            "path": "mcp/src/agents_remember/application/review_sync_movement.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a3c76aa75aa29226350c1d16fe7d5613c131e5ab",
+            "content": "sha256:efa1fb7875aa490893ce95abf51dcc13ce0aa7b3fffbcca55e299881f9cec8e5",
+            "locator": {
+              "end": 61,
+              "kind": "line_range",
+              "start": 61
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review_sync_rebinding.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a3c76aa75aa29226350c1d16fe7d5613c131e5ab",
+            "content": "sha256:77ed6b8488cbeb678bce59ae8c03e5b1a81b73e06883e69b4e43cbeff038b247",
+            "locator": {
+              "end": 203,
+              "kind": "line_range",
+              "start": 203
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review_sync_rebinding.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a3c76aa75aa29226350c1d16fe7d5613c131e5ab",
+            "content": "sha256:77ed6b8488cbeb678bce59ae8c03e5b1a81b73e06883e69b4e43cbeff038b247",
+            "locator": {
+              "end": 299,
+              "kind": "line_range",
+              "start": 299
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review_sync_rebinding.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3a7a51167bc4342c1d0cd79fee92196b7ae12b14",
+            "content": "sha256:94a2912674267018cbcfd30c8b3a461a896dd8c2aefb2222a4e52420564919ed",
+            "locator": {
+              "end": 197,
+              "kind": "line_range",
+              "start": 168
+            },
+            "path": "mcp/src/agents_remember/application/review_sync_movement.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3a7a51167bc4342c1d0cd79fee92196b7ae12b14",
+            "content": "sha256:d40a79190a281a59a50b462bec2156b444a6377fa1054cfa67aa77438903ce25",
             "locator": {
               "kind": "symbol",
               "name": "_project"
@@ -228,19 +361,6 @@
               "name": "ReviewSyncRebindingVerdict"
             },
             "path": "mcp/src/agents_remember/models/knowledge/review_sync_rebinding.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "93731bde89e06ef01c6f5b0ae7c8ce7dd102a747",
-            "content": "sha256:e9fbf91a1b44fa128fe6456add93a18cf14fde5b094c83c1098e3c1342af7ef1",
-            "locator": {
-              "end": 213,
-              "kind": "line_range",
-              "start": 165
-            },
-            "path": "mcp/src/agents_remember/application/review_sync_movement.py"
           },
           "kind": "code"
         }
@@ -298,12 +418,12 @@
       ]
     },
     "2": {
-      "note": "The imports the three models need, and the `after` validator machinery they are built on.\n\nAnchor: `model_validator`",
+      "note": "The imports the three models need, and the `after` validator machinery they are built on.",
       "targets": [
         {
           "anchor": {
-            "blob": "bd66eb3576aa6605929a1dcc30616584b3563cb1",
-            "content": "sha256:a8b3f434a782dee478f4d3d23dbb94d1b6218d990d8cc0490816b5283d27625b",
+            "blob": "ce64a977e926846a0ca408bf1aceecec8a22ea85",
+            "content": "sha256:2cc317c3b2e3ef63ab1cb7b837e395cb73d9ac87cca8e8ba920cb0b34bac53c6",
             "locator": {
               "end": 35,
               "kind": "line_range",

@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/serving/paseo/paseo_plugin_files.py",
+  "proves": [],
   "realizes": [
     {
       "anchor": {

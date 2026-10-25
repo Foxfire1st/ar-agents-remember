@@ -59,6 +59,11 @@ Cases use `paseo_role_tools_test_support` for the bridge and message fixtures, a
 
 ## Evidence
 
+
 - Role addressing, reachability bounds, holding, at-most-once delivery, turn steering and waits are asserted here. [1]
+
+
 - A message file carries one timestamp, sender and recipient and reports its returned SHA-256, while a bodyless delivered text keeps its existing form. [2]
+
+
 - Controlled-runtime cases hold permission, start-unfinished and unwritable-turn messages, deliver waiting work in order, refuse two live leaf occupants, and keep a completed holder's seat until archived. [3]

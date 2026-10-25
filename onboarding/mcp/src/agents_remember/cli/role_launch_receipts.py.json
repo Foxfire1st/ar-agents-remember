@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/cli/role_launch_receipts.py",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
@@ -272,7 +273,7 @@
     },
     {
       "anchor": {
-        "blob": "254611b9dd9545c29ca618fd436596929122cc49",
+        "blob": "12aab96f86c33555f5973aa2e4fc3cf0a6b827b4",
         "content": "sha256:2980ed72f696b5c2250df1bff2f2769ad6eaf90ff1f71e62571e5b8f13539d1b",
         "locator": {
           "end": 791,
@@ -286,7 +287,7 @@
         "handoffEntry": "L140-R1-F02",
         "leaf": "260928-MIK-L140"
       },
-      "rationale": "The shared reader answers bytes that are not UTF-8, a number too long to convert and a nesting too deep as an unreadable record, not as a failure of the server.",
+      "rationale": "`_read_receipt` at C still turns bytes that are not UTF-8, a number too long to convert and a nesting too deep into the same unreadable-record 409, plus the not-a-regular-file and schema 409s, so one damaged receipt cannot become a server failure; the span matches C.",
       "role": "support"
     },
     {
@@ -314,8 +315,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "254611b9dd9545c29ca618fd436596929122cc49",
-            "content": "sha256:3d455f7d32430b32c72283616f6883109f0075faf6bc60a716736608fffcd8b3",
+            "blob": "12aab96f86c33555f5973aa2e4fc3cf0a6b827b4",
+            "content": "sha256:d29a14c737179cb2f058fccfd1316555ad121cd67d113239d7e90ff025fcf3d1",
             "locator": {
               "kind": "file"
             }
@@ -397,8 +398,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "254611b9dd9545c29ca618fd436596929122cc49",
-            "content": "sha256:3d455f7d32430b32c72283616f6883109f0075faf6bc60a716736608fffcd8b3",
+            "blob": "12aab96f86c33555f5973aa2e4fc3cf0a6b827b4",
+            "content": "sha256:d29a14c737179cb2f058fccfd1316555ad121cd67d113239d7e90ff025fcf3d1",
             "locator": {
               "kind": "file"
             }
@@ -412,8 +413,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "254611b9dd9545c29ca618fd436596929122cc49",
-            "content": "sha256:3d455f7d32430b32c72283616f6883109f0075faf6bc60a716736608fffcd8b3",
+            "blob": "12aab96f86c33555f5973aa2e4fc3cf0a6b827b4",
+            "content": "sha256:d29a14c737179cb2f058fccfd1316555ad121cd67d113239d7e90ff025fcf3d1",
             "locator": {
               "kind": "file"
             }
@@ -560,8 +561,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "254611b9dd9545c29ca618fd436596929122cc49",
-            "content": "sha256:3d455f7d32430b32c72283616f6883109f0075faf6bc60a716736608fffcd8b3",
+            "blob": "12aab96f86c33555f5973aa2e4fc3cf0a6b827b4",
+            "content": "sha256:d29a14c737179cb2f058fccfd1316555ad121cd67d113239d7e90ff025fcf3d1",
             "locator": {
               "kind": "file"
             }
@@ -641,8 +642,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "96d93da2b32b08c8db896a174271b53d877d3589",
-            "content": "sha256:c19447ef2f48ffd918b13f1f1ad6720599f4749bb687bb09e416fe637213d36c",
+            "blob": "cfd95f0c56ed965a4f09d45ba05ac7b22d817eca",
+            "content": "sha256:158b5878d2ee04232811674710852c27b9fa3839efcad02c8aad806fc5e33e32",
             "locator": {
               "kind": "file"
             },

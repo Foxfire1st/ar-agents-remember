@@ -24,8 +24,13 @@ The reasoned step-up case mounts `RoleLauncher`, asserts `{role, stepUp}` at `on
 
 ## Evidence
 
+
 - Mounted assertions protect controls-only rendering, accessible names, selected-label/source hovers, informational chips, and shared recipe identity; overfull checks are DOM/source checks rather than pixel measurement. [1]
+
+
 - The default fixture supplies mode and choice provenance plus instruction metadata. [2]
+
+
 
 
 - Retains compact-row accessibility, source/label hovers, permission-owned chips, shared recipe and overfull DOM/source controls. The new case mounts RoleLauncher, prompts for a reason, asserts role plus stepUp only, and renders both status owners with host-default then observed-model text. [3]

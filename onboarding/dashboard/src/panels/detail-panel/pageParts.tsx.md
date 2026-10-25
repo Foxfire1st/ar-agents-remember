@@ -31,4 +31,5 @@ No document classification, authoritative step state, review count or task mutat
 
 - StepMarks uses indexed cached StepDot payloads for at most twelve states; larger populations return only the aggregate ProgressBar. [4]
 
+
 - Unknown host activity draws the started word without changing the served key; task status and event-age presentation consume the served entry. [5]

@@ -22,7 +22,7 @@
   ],
   "references": {
     "1": {
-      "note": "The application entry point that admits bytes from disk and calls this compiler, returning success or refusal as a value.",
+      "note": "The application entry point that admits bytes from disk and calls this compiler, returning success or refusal as a value.\n\nAnchor: `compile_admitted_capsule` `CapsuleCompilationOutcome`",
       "targets": [
         {
           "anchor": {
@@ -38,8 +38,8 @@
         },
         {
           "anchor": {
-            "blob": "8f55401b7e0afa34d4cc0cc01d77d2aa95c1a3b7",
-            "content": "sha256:4aae10481d05e43d7a434e93ae593f4f4643d82811f592c85432b658c5def51e",
+            "blob": "0de84f83644c391b29759b1623034309cabc8c72",
+            "content": "sha256:7b16c4a32019a3e8f4ccf82b15f964d954f4c2df5c97d530d7128a382caa421b",
             "locator": {
               "kind": "symbol",
               "name": "CapsuleCompilationOutcome"
@@ -50,12 +50,10 @@
         },
         {
           "anchor": {
-            "blob": "8f55401b7e0afa34d4cc0cc01d77d2aa95c1a3b7",
-            "content": "sha256:890ae5d28141750c1f331f5741092fc292b0d05127e02b5d8d667323dfe0b1ad",
+            "blob": "0de84f83644c391b29759b1623034309cabc8c72",
+            "content": "sha256:fa7dbb04c116a8a6d6767c3d85c3b723091f0af5bfd84f27ffc91b7b7e9f8f52",
             "locator": {
-              "end": 88,
-              "kind": "line_range",
-              "start": 46
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/role_capsules/compilation.py"
           },
@@ -68,8 +66,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "90b609572aa48fb2a5e13fbf13040c2f337839b0",
-            "content": "sha256:54e6493669a47ba6cf13fdf525c739de4a1ac59255c99f635a7398b21561700d",
+            "blob": "9f6e5640683f5837e056f35ab36b73d582df963d",
+            "content": "sha256:1370d89348c253989e44556933ef532f9e18cb312db58b4d7c604dea6da98bb4",
             "locator": {
               "end": 101,
               "kind": "line_range",

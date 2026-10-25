@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/application/task_docs/task_retirement_shared.py",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
@@ -116,8 +117,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2db7333575772368f1d89440b5564a8734508da2",
-            "content": "sha256:ef342c0972e113bf14e6ae3438aef79de3067e82771d702495a3db30961a3451",
+            "blob": "f854045dec27bba63edeb981464f908f197bfc6e",
+            "content": "sha256:fa1a5de7cf0ce0bd6dab25973bea355afa973ec0582392f77282c72968b49fd3",
             "locator": {
               "kind": "symbol",
               "name": "archive_hook"

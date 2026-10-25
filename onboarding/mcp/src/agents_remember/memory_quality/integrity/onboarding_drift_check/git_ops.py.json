@@ -3,15 +3,14 @@
   "realizes": [],
   "references": {
     "3": {
-      "note": "The sole current_branch_name helper uses the kernel Git runner and yields unknown-branch for failed or empty branch lookup.",
+      "note": "The sole current_branch_name helper uses the kernel Git runner and yields unknown-branch for failed or empty branch lookup.\n\nAnchor: `run_git` `current_branch_name`",
       "targets": [
         {
           "anchor": {
-            "blob": "a45917c8d5fcfe2e6ebc3d0d483a03273f42c2ca",
-            "content": "sha256:60788cf6b3cf57e313ccacab456fb49fd9601a1930fa8f8de28c01088b22a2af",
+            "blob": "07979a6e10a7cde98e4a4ce1dcaca7a203241e3f",
+            "content": "sha256:6e94e3f710e3074a2f9def9a24032a21aee42476e665e4ea421cba0067b627bb",
             "locator": {
-              "kind": "symbol",
-              "name": "run_git"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/kernel/git_command.py"
           },
@@ -20,10 +19,9 @@
         {
           "anchor": {
             "blob": "f9c228579cbe946ea0a84e37a781ed3f9d135d82",
-            "content": "sha256:5c60cfa8642a6c618f67475238e81f0498275dcd6bc965ecb7764d0b10f590ef",
+            "content": "sha256:7b4830e6745f4d61ddc2d5d705f11c05cd7deab8b46f0e434da66cbc5fd217a0",
             "locator": {
-              "kind": "symbol",
-              "name": "current_branch_name"
+              "kind": "file"
             }
           },
           "kind": "code"

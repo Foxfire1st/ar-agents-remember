@@ -64,8 +64,17 @@ is quarantined, while a *caller asking for* one is refused before it can be writ
 
 
 - LeafRefResolutionError and resolve_leaf_ref are the live shared failure and resolution owners; removed terminal-seat modules supply no current type or route. [1]
-- Start contract builder that calls these helpers. [2]
-- `ContractError`, `_task_vocabulary` and the six-cell vocabulary the second refusal reports on. [3]
+
+> Retained earlier citation wording: - Start contract builder that calls these helpers. [2]
+
+
+> Retained earlier citation wording: - `ContractError`, `_task_vocabulary` and the six-cell vocabulary the second refusal reports on. [3]
+
 
 
 - Caller parent is an assertion against canonical task topology; a mismatch returns corrected operation inputs before publication. [4]
+
+- Start contract builder that calls these helpers.  Anchor: `build_start_contract` [2]
+
+
+- `ContractError`, `_task_vocabulary` and the six-cell vocabulary the second refusal reports on.  Anchor: `ContractError` `_task_vocabulary` `ContractCells` [3]

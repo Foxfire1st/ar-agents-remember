@@ -3,12 +3,12 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "A held bound seat is named held and its ordinary Start is disabled.\n\nAnchor: \"names a held seat held and keeps Start disabled\"",
+      "note": "A held bound seat is named held and its ordinary Start is disabled.",
       "targets": [
         {
           "anchor": {
-            "blob": "00f6e87a591ab2fc3a1b1f355a7b200ad589e2e8",
-            "content": "sha256:c507a9918f7a98f424807955dabc8606525cf2c3bab6f470c483836780859a31",
+            "blob": "1ad84c1d9bb025e46096048dab75ad29cffc6267",
+            "content": "sha256:6d46a2857b03a5cbb239fe8f2d549cb73bb877431edf289f408be84ffc43de64",
             "locator": {
               "end": 55,
               "kind": "line_range",
@@ -20,12 +20,12 @@
       ]
     },
     "2": {
-      "note": "Running naming remains distinct from held naming.\n\nAnchor: \"still names a running seat running\"",
+      "note": "Running naming remains distinct from held naming.",
       "targets": [
         {
           "anchor": {
-            "blob": "00f6e87a591ab2fc3a1b1f355a7b200ad589e2e8",
-            "content": "sha256:834d971ee6d795076b3c5c73ad7b8e66adf7aa1dd7cfb5df89ba0c0b3543c58f",
+            "blob": "1ad84c1d9bb025e46096048dab75ad29cffc6267",
+            "content": "sha256:cf4922ed000a66675afe8e6a087d51e48deed748a5aa5c86bec50f47ff7b5f54",
             "locator": {
               "end": 60,
               "kind": "line_range",

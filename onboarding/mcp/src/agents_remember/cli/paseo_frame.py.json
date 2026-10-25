@@ -22,15 +22,14 @@
   ],
   "references": {
     "1": {
-      "note": "Frozen implementation of frame_descriptor supporting the stated file behavior.",
+      "note": "Frozen implementation of frame_descriptor supporting the stated file behavior.\n\nAnchor: `frame_descriptor`",
       "targets": [
         {
           "anchor": {
-            "blob": "e12597105b2e0ea9b2784d220eb255836eb861d6",
-            "content": "sha256:446cd90929966fedddc54ef9d0775161e01b0752b96b6abd33095483405ef494",
+            "blob": "418b476b368ff00c4acc18cdc93c9edbbb325edf",
+            "content": "sha256:89c8fb984ea1b42f7c92c2c1e3c089290af5890ad6bc50c6d518696c5cb863d8",
             "locator": {
-              "kind": "symbol",
-              "name": "frame_descriptor"
+              "kind": "file"
             }
           },
           "kind": "code"

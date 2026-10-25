@@ -94,12 +94,17 @@ These current source spans identify the implementation owners and the specific a
 - Typed payloads and separate lifecycle/recovery builders. [1]
 - Carryover completion is a real two-repository ancestry proof. [2]
 - Phase precedence, finalization guidance, and the still-working checkpoint branch. [3]
+
 - Freshness, consumer paths, identity fields, and interactive/projected observation. [4]
+
 - The canonical lifecycle wire vocabularies. [5]
+
 - External completion remains valid with damaged caches and rejects unlanded commits. [6]
+
 
 ### Cross-Repo References
 
 The operation and fixture boundaries described here are defined by same-repository contracts and Git helpers. No separate cross-repository document is used as evidence for this card.
+
 
 - Status guidance may include task_document_copies from stale_copy_line, with refresh occurring on later canonical publication. No notice is not a universal hash equality proof. Copy drift is informational and separate from carryover ancestry. The readable-disabled/non-external branch is a retained boundary, not a restored internal-mode feature or permission to bypass landing controls. [7]

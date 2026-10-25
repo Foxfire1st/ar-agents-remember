@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1b073b40c856a543a8a8616ba9888a747125bdf7",
+            "blob": "502be409c27eb74c17f996f378046fc8adcb252e",
             "content": "sha256:ec573cff53f154d2a9eb7c68b3c09300bab15d36ca8a9d123ec6affa32909ddb",
             "locator": {
               "kind": "symbol",
@@ -60,16 +60,16 @@
       ]
     },
     "3": {
-      "note": "stubNotes responds to task-document, notes-list/read and requirements-list requests.\n\nAnchor: \"export function stubNotes(\"",
+      "note": "stubNotes responds to task-document, notes-list/read and requirements-list requests.",
       "targets": [
         {
           "anchor": {
-            "blob": "eece777a5d82079de506a7e6e7fb54121ab9cc61",
-            "content": "sha256:d9aab540e64f7ed65f742ef60c525f229dad5e2f29de181fbfca7813183791f6",
+            "blob": "154d7272959eb18a7f5f80927be651dc6bf6789d",
+            "content": "sha256:db6bb4edc9133ed8034df4a70f39dad6dbc795d6663bfdf5a02ee8096d746883",
             "locator": {
-              "end": 505,
+              "end": 385,
               "kind": "line_range",
-              "start": 454
+              "start": 365
             },
             "path": "dashboard/src/panels/detail-panel/test-utils.tsx"
           },
@@ -82,7 +82,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8bacf923a1a9b77562130bce9a5c3c707b4e4fcf",
+            "blob": "67bd836a126c87cce7dd24fb8f82a699decf8e4f",
             "content": "sha256:64dcffd02dd61f5aa8f6f1d95dd0db4075a6daef4ae167adc7723c101b1d3097",
             "locator": {
               "kind": "symbol",
@@ -94,7 +94,7 @@
         },
         {
           "anchor": {
-            "blob": "8bacf923a1a9b77562130bce9a5c3c707b4e4fcf",
+            "blob": "67bd836a126c87cce7dd24fb8f82a699decf8e4f",
             "content": "sha256:f6b5bf5a981ee7a6120113585214555db8fbb1e14381b488209bca7a7fddd52a",
             "locator": {
               "kind": "symbol",
@@ -106,7 +106,7 @@
         },
         {
           "anchor": {
-            "blob": "8bacf923a1a9b77562130bce9a5c3c707b4e4fcf",
+            "blob": "67bd836a126c87cce7dd24fb8f82a699decf8e4f",
             "content": "sha256:6e695fd6c7bc2ce9a823ec7e111d9584dd2b4226f707b198ae01c835b828f54e",
             "locator": {
               "kind": "symbol",
@@ -118,7 +118,7 @@
         },
         {
           "anchor": {
-            "blob": "8bacf923a1a9b77562130bce9a5c3c707b4e4fcf",
+            "blob": "67bd836a126c87cce7dd24fb8f82a699decf8e4f",
             "content": "sha256:c179fbb2c20209acb3ba521eec8ee441837684bc6f223ea5fb427053fcfd5393",
             "locator": {
               "kind": "symbol",
@@ -155,15 +155,16 @@
       ]
     },
     "5": {
-      "note": "The requirement anchor rendering exercised through Markdown.",
+      "note": "The requirement anchor rendering exercised through Markdown.\n\nAnchor: `requirementAnchor`",
       "targets": [
         {
           "anchor": {
-            "blob": "b4c74c37212e432009df876b3276beea828250fa",
-            "content": "sha256:05be57e678d8a1e5344116182c17cb38b244ccccd5f68c44775d35bb98e50e57",
+            "blob": "1a65bd4444779518a555e2e38d8ca30fa0df9f3a",
+            "content": "sha256:53c3c42e8e266135ca62efba2df1a04f8a772831910cd7c246fbadc4c9d3103e",
             "locator": {
-              "kind": "symbol",
-              "name": "requirementAnchor"
+              "end": 172,
+              "kind": "line_range",
+              "start": 170
             },
             "path": "dashboard/src/grammar/Markdown.tsx"
           },
@@ -171,12 +172,10 @@
         },
         {
           "anchor": {
-            "blob": "b4c74c37212e432009df876b3276beea828250fa",
-            "content": "sha256:7bf5be7697c92195aee2aa16bff015e2725a50da8bddb016dd77981eca43b460",
+            "blob": "1a65bd4444779518a555e2e38d8ca30fa0df9f3a",
+            "content": "sha256:dbbcb27210f3e352d08d6ba242aaa61621f03500d95beccbb45dbe266bda2ae3",
             "locator": {
-              "end": 172,
-              "kind": "line_range",
-              "start": 170
+              "kind": "file"
             },
             "path": "dashboard/src/grammar/Markdown.tsx"
           },

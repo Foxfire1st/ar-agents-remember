@@ -92,7 +92,7 @@ binding.
 - The leaf-only parent read, and why a master's or sprint's parent is not resolved. [5]
 - The exact accepted task-document bytes this module digests, rather than re-reading the file. [6]
 - The topology owner that decides whether a reference resolves and which altitude may carry the seat. [7]
-- The enclosure contract and its reader — the owner of branch, base commit and leaf identity. [8]
+- The enclosure contract and its reader — the owner of branch, base commit and leaf identity.  Anchor: `WorktreeContract` `load_contract` `WorktreeContractReader` [8]
 - The resolution shape this module mirrors rather than reinvents. [9]
 - The case that proves every unresolvable input returns its own source-resolution status. [10]
 - The case that proves a refused and a successful projection leave the task tree byte-identical. [11]

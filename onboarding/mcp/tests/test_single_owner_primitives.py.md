@@ -51,7 +51,9 @@ to removed methods are superseded by this current inventory.
 - A shell command string is read down to its program word [3]
 - Gh is not git [4]
 - The module attribute form is caught [5]
+
 - A bare replace from dataclasses is not the one from os [6]
+
 - Direct imports and aliases are caught [7]
 - Reexport without a call and unrelated local names are not callers [8]
 

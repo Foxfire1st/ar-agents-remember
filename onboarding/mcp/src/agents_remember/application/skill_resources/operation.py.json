@@ -1,77 +1,17 @@
 {
   "path": "mcp/src/agents_remember/application/skill_resources/operation.py",
+  "proves": [],
   "realizes": [],
   "references": {
-    "1": {
-      "note": "The capsule entry point re-shapes the flat tool parameters into the enclosure selector the coordination layer accepts.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "0797a9a6277fe708624936c2b633d2baecfb8883",
-            "content": "sha256:2a778309bf92a9929919ae0209c369036fd2adf9dca6c28339059322f38c4320",
-            "locator": {
-              "kind": "symbol",
-              "name": "role_capsule_compile_tool"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "b3c7c37d578fe58dac28e34d6eeafca3333eea84",
-            "content": "sha256:7ccd69fabb4452b501bcdfe4ff63951869ba9660a72d3a8ba7a9a0a1f3f178dc",
-            "locator": {
-              "kind": "symbol",
-              "name": "CapsuleOperationRequest"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "2": {
-      "note": "The three skill entry points build one catalog, with the shipped corpus as the default and a caller-supplied tree as the test override.",
+      "note": "`skill_catalog_registry` builds one catalog from `SkillCatalogRequest`: the shipped corpus by default, and a caller-supplied origin and root when a test drives a different tree.\n\nAnchor: `skill_catalog_list_tool` `skill_catalog_read_tool` `skill_catalog_registry` `_catalog`",
       "targets": [
         {
           "anchor": {
-            "blob": "0797a9a6277fe708624936c2b633d2baecfb8883",
-            "content": "sha256:5fbdf557958300c14da8a4f0432c62e3bc804136fe2221d2e9cbf3c8779f6346",
-            "locator": {
-              "kind": "symbol",
-              "name": "skill_catalog_list_tool"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "0797a9a6277fe708624936c2b633d2baecfb8883",
-            "content": "sha256:82eefdaf02b663fb22ca10337f2dab01ae502c37c1bfbf162f533f48288ead12",
-            "locator": {
-              "kind": "symbol",
-              "name": "skill_catalog_read_tool"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
             "blob": "b3c7c37d578fe58dac28e34d6eeafca3333eea84",
-            "content": "sha256:b0a1099489b76eb70de65ebfbd7fe1c35054703d060baf0d1ad82900abec8514",
+            "content": "sha256:a996823b0716179e8c5dcb1004f3567552d6257040ef2fa23f68d1390b6e6037",
             "locator": {
-              "kind": "symbol",
-              "name": "skill_catalog_registry"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "b3c7c37d578fe58dac28e34d6eeafca3333eea84",
-            "content": "sha256:4a89f92236c1f2769c7add94fce48a204faf322869fdf5aa9364f19591d46fc3",
-            "locator": {
-              "kind": "symbol",
-              "name": "_catalog"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -161,8 +101,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1d6d4c77ad41eb2f9783975d929a3519d218f22f",
-            "content": "sha256:fdc3df03e6984138a4dd82eb0bd84582f4754ab3779042878e6c006845bdd1f5",
+            "blob": "231672944ca7b848d89e9ce82d950d95d92e5cc2",
+            "content": "sha256:3457497d1f83653411517625d1ef81417210b9171d8c2fb902e8e7475cd7d598",
             "locator": {
               "kind": "symbol",
               "name": "test_the_discovery_registry_is_not_the_model_visible_catalog"
@@ -173,12 +113,23 @@
         },
         {
           "anchor": {
-            "blob": "1d6d4c77ad41eb2f9783975d929a3519d218f22f",
-            "content": "sha256:2e0be92cf9b6dc1bd52d05de1fbf41646af68de7dfa5d2601e43ddd71d4e6143",
+            "blob": "231672944ca7b848d89e9ce82d950d95d92e5cc2",
+            "content": "sha256:f5d7c778e1d2acee984a940089be45ee070ca9f6a9576e15f3b5d81e9fff1096",
             "locator": {
               "end": 887,
               "kind": "line_range",
               "start": 861
+            },
+            "path": "mcp/tests/test_capsule_serving.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "231672944ca7b848d89e9ce82d950d95d92e5cc2",
+            "content": "sha256:ad3d94e6364f84bb66c0c762b33c3ee884d2fb94066e18b3964f3c9321ecec05",
+            "locator": {
+              "kind": "file"
             },
             "path": "mcp/tests/test_capsule_serving.py"
           },

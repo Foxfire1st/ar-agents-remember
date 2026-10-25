@@ -453,8 +453,8 @@
         },
         {
           "anchor": {
-            "blob": "f05c9d56341ea7f7ee838e165cd9754129f30e34",
-            "content": "sha256:01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+            "blob": "fab936dda80543f94c1a840030ce192da6fa5616",
+            "content": "sha256:cf6870de9bbda95db3291e66e2559334e450419b2e9961fd9a8986c095535db0",
             "locator": {
               "end": 308,
               "kind": "line_range",
@@ -498,12 +498,38 @@
       "targets": [
         {
           "anchor": {
-            "blob": "11ba98ff63f4a4815985ac51e2c0c7b5a48556a4",
+            "blob": "102c4550ab6429f44c8fb543d1d0662de66a1b8c",
+            "content": "sha256:a1087283d1e84c3b6d04b4157722be53d0881f6ce44636357e63d06058448f97",
+            "locator": {
+              "end": 145,
+              "kind": "line_range",
+              "start": 145
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "102c4550ab6429f44c8fb543d1d0662de66a1b8c",
             "content": "sha256:33b4b865c5c5115dd7a22ed4473ff30e50bbc9a1ec3048676cad3730f5be890a",
             "locator": {
-              "end": 158,
+              "end": 161,
               "kind": "line_range",
-              "start": 158
+              "start": 161
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "102c4550ab6429f44c8fb543d1d0662de66a1b8c",
+            "content": "sha256:8f9c86a58330db90b67de65d40018c36e7a440d879ea8f9a109f2a7f4f921763",
+            "locator": {
+              "end": 130,
+              "kind": "line_range",
+              "start": 130
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -688,12 +714,22 @@
       ]
     },
     "22": {
-      "note": "For 2000 fully paired monotone references, pairing returns the exact identity map and asserts `elapsed < 10` seconds.",
+      "note": "For 2000 fully paired monotone references, pairing returns the exact identity map and asserts `elapsed < 10` seconds.\n\nAnchor: `test_gap_pairing_scales_near_linearly_on_fully_paired_inputs`",
       "targets": [
         {
           "anchor": {
-            "blob": "f05c9d56341ea7f7ee838e165cd9754129f30e34",
-            "content": "sha256:ea0d77923e399d4c77a8526b6281ac1e00d331ed46a079ce6b9c766e67b7d869",
+            "blob": "fab936dda80543f94c1a840030ce192da6fa5616",
+            "content": "sha256:07fed5861f231d52ff62bc856eb238e5c79c21b8ff11c0e05dc0edadc6689d40",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "fab936dda80543f94c1a840030ce192da6fa5616",
+            "content": "sha256:d22118d26c37a44908e886427aeb12019c7c321a91eec2f9a14066f141e619ad",
             "locator": {
               "kind": "symbol",
               "name": "test_gap_pairing_scales_near_linearly_on_fully_paired_inputs"
@@ -704,7 +740,7 @@
       ]
     },
     "23": {
-      "note": "Current source delta inspected statically: Separate pure-plan sync context and real managed transaction evidence; replace whole-route conversion-pass claim with successful base conversion plus carried-stale refusal, preserving L46 legacy-lock assertions and bounded recovery commentary.",
+      "note": "The real managed route rather than the pure plan: the fixture's sync crosses an unconverted leaf into a converted line, lands `synced`, and persists the worklist recomputed at its new base pair.",
       "targets": [
         {
           "anchor": {
@@ -732,8 +768,8 @@
         },
         {
           "anchor": {
-            "blob": "f05c9d56341ea7f7ee838e165cd9754129f30e34",
-            "content": "sha256:01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+            "blob": "fab936dda80543f94c1a840030ce192da6fa5616",
+            "content": "sha256:cf6870de9bbda95db3291e66e2559334e450419b2e9961fd9a8986c095535db0",
             "locator": {
               "end": 308,
               "kind": "line_range",
@@ -757,12 +793,22 @@
       ]
     },
     "4": {
-      "note": "Markers first, conversion, then structural merge and validation in a pure `cross` plan, not a managed transaction.",
+      "note": "Markers first, conversion, then structural merge and validation in a pure `cross` plan, not a managed transaction.\n\nAnchor: `test_a_crossing_moves_the_leaf_markers_converts_each_side_and_merges`",
       "targets": [
         {
           "anchor": {
-            "blob": "db9c35fdb20211fac752fa0117c19135551706d2",
-            "content": "sha256:719e9c694563497aeeeafd97cdc0fbe7878868090e14d6cedc17aac682683e86",
+            "blob": "fab936dda80543f94c1a840030ce192da6fa5616",
+            "content": "sha256:07fed5861f231d52ff62bc856eb238e5c79c21b8ff11c0e05dc0edadc6689d40",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "fab936dda80543f94c1a840030ce192da6fa5616",
+            "content": "sha256:8f2b26a7f9a8251e584a9a9375676962d4b897836ea14f38bfc3f80797d257cc",
             "locator": {
               "kind": "symbol",
               "name": "test_a_crossing_moves_the_leaf_markers_converts_each_side_and_merges"
@@ -813,8 +859,8 @@
         },
         {
           "anchor": {
-            "blob": "f05c9d56341ea7f7ee838e165cd9754129f30e34",
-            "content": "sha256:01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+            "blob": "fab936dda80543f94c1a840030ce192da6fa5616",
+            "content": "sha256:cf6870de9bbda95db3291e66e2559334e450419b2e9961fd9a8986c095535db0",
             "locator": {
               "end": 308,
               "kind": "line_range",
@@ -894,8 +940,8 @@
         },
         {
           "anchor": {
-            "blob": "f05c9d56341ea7f7ee838e165cd9754129f30e34",
-            "content": "sha256:01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+            "blob": "fab936dda80543f94c1a840030ce192da6fa5616",
+            "content": "sha256:cf6870de9bbda95db3291e66e2559334e450419b2e9961fd9a8986c095535db0",
             "locator": {
               "end": 308,
               "kind": "line_range",

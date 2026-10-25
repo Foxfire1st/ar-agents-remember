@@ -25,12 +25,16 @@ to the plugin, not this pane.
 
 The current source and test assertions below establish the documented ownership; test citations do not claim a rerun in this pass.
 
+
 - The pane composes canonical scopes, controls, options and the persistent view. [1]
+
 
 - Selected Result/report reads retain UUID and live-target guards. [2]
 
 - Start/Revive dispatch keeps exact request scope and retained retry identity. [3]
+
 - The sole Chats destination mounts RoleChatsPane directly, has no Chats-mode selector or SessionsView child, and keeps the pane identity while hiding/showing the existing layer. [4]
+
 
 ## MIK-R95 Extracted Launcher And Bound Row
 

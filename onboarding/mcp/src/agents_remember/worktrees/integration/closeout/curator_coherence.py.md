@@ -100,8 +100,12 @@ No configured Domain Documentation source applies.
 The following declarations carry the changed boundary.
 
 - A named retained generation is read without asserting live readiness. [8]
+
 - The closeout validator's gate over the exact candidate, refusing with every finding (MIK-R09). [9]
+
+
 - The closeout validator refuses until the gate passes and never runs ungated. [10]
+
 - Current readiness still validates live inputs and dependencies. [11]
 
 ### Cross-Repo References

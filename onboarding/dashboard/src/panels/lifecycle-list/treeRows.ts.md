@@ -18,4 +18,5 @@ Each parent's served children are ordered with `rowOrder` instead of `rowBand`, 
 
 - Sibling placement uses the band-then-host-time order rather than the band alone. [2]
 
+
 - The pure flattener combines served ancestors with per-selection released keys for parent collapse and terminal-fold holding; seen guards retain one placement. [1]

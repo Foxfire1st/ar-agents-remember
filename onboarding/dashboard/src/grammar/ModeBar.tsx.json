@@ -1,5 +1,6 @@
 {
   "path": "dashboard/src/grammar/ModeBar.tsx",
+  "proves": [],
   "realizes": [],
   "references": {
     "3": {
@@ -36,8 +37,34 @@
       ]
     },
     "5": {
-      "note": "Cockpit's VIEWS contains Chats, Operations, Knowledge and File Viewer in that order, and its ModeBar invocation passes that array. ModeBar itself maps caller-provided items and does not define the product list.\n\nAnchor: inclusive source ranges",
+      "note": "Cockpit's VIEWS contains Chats, Operations, Knowledge and File Viewer in that order, and its ModeBar invocation passes that array. ModeBar itself maps caller-provided items and does not define the product list.",
       "targets": [
+        {
+          "anchor": {
+            "blob": "1b839113b8d511b4a8343230e70a8de0be01b79f",
+            "content": "sha256:1d061860536a7ab7515059a8b3d5667ddfdb9181418863f76ab2bdb4f181436b",
+            "locator": {
+              "end": 75,
+              "kind": "line_range",
+              "start": 70
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1b839113b8d511b4a8343230e70a8de0be01b79f",
+            "content": "sha256:daf7759807ca73204f1101b76ce315c1bd86087008bf4144e5ae76f35b38a445",
+            "locator": {
+              "end": 619,
+              "kind": "line_range",
+              "start": 619
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "kind": "code"
+        },
         {
           "anchor": {
             "blob": "1b839113b8d511b4a8343230e70a8de0be01b79f",
@@ -53,12 +80,12 @@
         },
         {
           "anchor": {
-            "blob": "9dffc6e41bb9701b7a33ff1b82335a087c154484",
-            "content": "sha256:c774a3d936e0fd3af138728dc3a7a664a5aca344764534d0de5bb93456cfeb8f",
+            "blob": "1b839113b8d511b4a8343230e70a8de0be01b79f",
+            "content": "sha256:eac72c611c469363040eb0c5a0e2f85820513286db45f3fecfd4c1153937f315",
             "locator": {
-              "end": 619,
+              "end": 66,
               "kind": "line_range",
-              "start": 619
+              "start": 61
             },
             "path": "dashboard/src/cockpit/Cockpit.tsx"
           },

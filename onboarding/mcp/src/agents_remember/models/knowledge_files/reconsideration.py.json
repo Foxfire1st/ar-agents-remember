@@ -207,15 +207,14 @@
       ]
     },
     "18": {
-      "note": "An explicitly supplied superseded set closes a stored item without a row; the empty default preserves row-based compatibility.",
+      "note": "An explicitly supplied superseded set closes a stored item without a row; the empty default preserves row-based compatibility.\n\nAnchor: `reconsideration_item_open`",
       "targets": [
         {
           "anchor": {
-            "blob": "42c565522bb5fcf7774ff7f640226cdb0463a5ac",
-            "content": "sha256:31a2f56932da49beab78b1ad7113659a48f696d65c5318576fdeccd5e22d0bae",
+            "blob": "be65f7f2f73bbabec6d57403384bcae971bd56b2",
+            "content": "sha256:2fb04d0cd7f55e0cd96a2d5ffdf5c018635431d44d1485380e31770e2c748ae9",
             "locator": {
-              "kind": "symbol",
-              "name": "reconsideration_item_open"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -413,15 +412,14 @@
       ]
     },
     "8": {
-      "note": "The one spelling of a link target, compared before a refresh (N1).",
+      "note": "The one spelling of a link target, compared before a refresh (N1).\n\nAnchor: `link_target_key`",
       "targets": [
         {
           "anchor": {
-            "blob": "42c565522bb5fcf7774ff7f640226cdb0463a5ac",
-            "content": "sha256:2932a907e6720df1bec89e1b1fd9b66517b46196b9d4bb030e3556cb53078dd3",
+            "blob": "be65f7f2f73bbabec6d57403384bcae971bd56b2",
+            "content": "sha256:2fb04d0cd7f55e0cd96a2d5ffdf5c018635431d44d1485380e31770e2c748ae9",
             "locator": {
-              "kind": "symbol",
-              "name": "link_target_key"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -429,15 +427,14 @@
       ]
     },
     "9": {
-      "note": "The pure stored-item rule closes matching rows or supplied superseded IDs; empty default preserves two-argument behavior.",
+      "note": "The pure stored-item rule closes matching rows or supplied superseded IDs; empty default preserves two-argument behavior.\n\nAnchor: `reconsideration_item_open`",
       "targets": [
         {
           "anchor": {
-            "blob": "42c565522bb5fcf7774ff7f640226cdb0463a5ac",
-            "content": "sha256:31a2f56932da49beab78b1ad7113659a48f696d65c5318576fdeccd5e22d0bae",
+            "blob": "be65f7f2f73bbabec6d57403384bcae971bd56b2",
+            "content": "sha256:2fb04d0cd7f55e0cd96a2d5ffdf5c018635431d44d1485380e31770e2c748ae9",
             "locator": {
-              "kind": "symbol",
-              "name": "reconsideration_item_open"
+              "kind": "file"
             }
           },
           "kind": "code"

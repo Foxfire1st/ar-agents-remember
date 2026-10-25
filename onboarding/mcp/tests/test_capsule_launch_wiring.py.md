@@ -172,34 +172,48 @@ No configured live documentation source was available for this pass.
 
 ### Repo-Internal References
 
-- The acceptance case for a task-attached seat: the spawn primitive's own argv, the real runner and factory, and the capsule read from the session's own `thread/start`. [1]
-- The acceptance case for a free agent with no task document, through the production dashboard route. [2]
+
+- The task-attached case compares compile_launch_capsule with compile_task_capsule for the same admitted leaf, asserting identical trusted instruction text and semantic digest. It does not exercise a spawned session. [1]
+
+
+- The free-agent admission case names its absent task plane with free-agent:bootstrap, checks is_taskless, requires a task-document parser refusal of that identity, and checks a sha256 capsule digest. [2]
+
+
 - The negative case: an un-compilable role refuses by name before any host effect. [3]
+
+
 - The one decision point, for every seat class. [4]
-- Behaviour 6 measured as bytes: the capsule-free payload is identical to the pre-capsule one. [5]
-- The single-carrier bound: exactly one `trustedInstructions` key, and no task context in argv. **L11 extends this case with D12's argv bound** — the delivered token is asserted under `ARGV_TOKEN_BOUND_BYTES` and a padded carrier is refused by name, with no argv returned. [6]
-- The enumeration case: every production launch site is wired or declares its legacy chain, and the site set cannot change silently. [7]
-- The one declared legacy exclusion, named with its reason. [8]
-- The production-chain eve case: the route's own cwd and env, then the consumer's own gate, then the workspace agreement. [9]
-- The spawn side's agreement with its own capsule about the workspace. [10]
-- D13: the registered MCP operation resolves a repository through its declared schema, and a schema losing the field fails the case. [11]
+
+
+- The D13 case asserts that role_capsule_compile is absent from registered tools, then compiles through the application entry point using the enclosure contract and requires compiled instructions. [11]
+
+
 - The free agent's named absence, and the identity that moves with the seat. [12]
-- D20: a refused stage refuses again in the same process, never passing. [13]
-- The two boundary doubles: the vendor-process recorder and the tmux host. [14]
+
 - The lane row D9's fail-closed loader requires for every new test module. [15]
 
 - The live launch request value and internal compiler carry capsule identity; removed terminal launch points and the removed resolver are not current production routes. [18]
-- **Superseded evidence pointer, kept for the record** — `L15`'s round-1 production-chain transcript no longer exists at this path (`citation_source_vanished`; the enclosing `notes/reports/` tree holds only the master's own artifacts, and L15's evidence directory was never carried into this memory repo). The **live** equivalent claimed by the module is `test_a_production_eve_launch_runs_where_its_capsule_admits_and_the_consumer_accepts` below, plus `test_the_spawn_launch_agrees_with_its_capsule_about_the_workspace`. Do not re-cite the deleted file. [19]
-- The three governed-artifact rows registering this module as a consumer. [21]
+
+
+
+> Retained earlier citation wording: - The three governed-artifact rows registering this module as a consumer. [21]
+
+
 
 ### Cross-Repo References
 
 The vendor boundary this module records is the installed Codex app-server's thread-open request shape;
 the fixture it is pinned against lives in this repository.
 
-- The recorded vendor boundary is the thread-open request, and the capsule travels the instruction field it declares. [20]
+
+- The admitted binding a delivery belongs to: repository, task document path, role and operation, each refused when empty or carrying outer whitespace, and reported under those four names. [20]
+
 
 </details>
 
 
 - Adds a copied shipped corpus fixture while keeping real admission/selection/compilation. Three launch-boundary cases refuse unmarked section text with the exact line (including frontmatter), an operation that does not apply to the requested role, and a missing required operation file; each requires no delivery and a named status. Existing compiler-identity/free-agent/tool-removal cases remain. [22]
+
+- The current task-attached launch asserts equality with the compiler's trusted instructions and semantic digest for the same admitted seat. Workspace-sensitive capsule identity is asserted by a separate free-agent test; it is not a spawn-launch workspace-agreement assertion.  Historical former note: "The spawn side's agreement with its own capsule about the workspace." The former spawn-workspace assertion is historical; the current module has no such test case. [23]
+
+- The three governed-artifact rows registering this module as a consumer. [21]

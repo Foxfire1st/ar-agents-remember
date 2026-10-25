@@ -91,15 +91,14 @@
       ]
     },
     "11": {
-      "note": "A converting candidate is gated, not legacy-locked.",
+      "note": "A converting candidate is gated, not legacy-locked.\n\nAnchor: `test_the_converting_candidate_is_gated_never_locked`",
       "targets": [
         {
           "anchor": {
-            "blob": "6df5cc21c5cbb50d56cb9682a190a0acafb530ee",
-            "content": "sha256:9562e96fdf3bbfa214287193ff0d97a5c78cdee9dc78e8e37287cf4fc0138c22",
+            "blob": "dbadc5eac8be8186b2473fd1362b4525c155deb4",
+            "content": "sha256:2abc517281a9e7a0d868ac429497acd1ee1b222d581388b83120014b406378f6",
             "locator": {
-              "kind": "symbol",
-              "name": "test_the_converting_candidate_is_gated_never_locked"
+              "kind": "file"
             },
             "path": "mcp/tests/test_knowledge_cutover.py"
           },

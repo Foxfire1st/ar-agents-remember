@@ -36,7 +36,9 @@ No relevant external documentation is needed.
 ### Repo-Internal References
 
 - The CLI delegates JSON/text output to this module. [1]
+
 - The application context packet builds the packet with `context_to_dict()`. [2]
+
 
 ### Cross-Repo References
 

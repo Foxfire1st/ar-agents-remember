@@ -38,11 +38,16 @@ This is a repository-local Markdown report contract. The inherited card required
 
 - Usage context, shape selection and formatting/lifecycle split are explicit template declarations. [1]
 - Claims cite evidence, inference is distinguished and limits remain visible. [2]
-- The full report supplies frame, findings, ledger, proof inventory, gaps and artifact-shape decision fields. [3]
-- Compact research retains answer, evidence, proof inventory, gaps and decision. [4]
+> Retained earlier citation wording: - The full report supplies frame, findings, ledger, proof inventory, gaps and artifact-shape decision fields. [3]
+> Retained earlier citation wording: - Compact research retains answer, evidence, proof inventory, gaps and decision. [4]
 
 - The evidence taxonomy defines Semantics as route-index plus capped onboarding-text search and Relationship as native structural search, while requiring bounded Intent, source-verified developer clarification and explicit inference uncertainty. [5]
 
 - Ledger guidance asks for inspectable source detail and guards against overclaiming. [6]
 - Current capsule composition is role plus operation, not a shared lifecycle or template-injection claim. [7]
 - Turn completion, review, curation, semantic acceptance and publication have separate owning evidence. [8]
+
+- The full report supplies frame, findings, ledger, proof inventory, gaps and artifact-shape decision fields.  Anchor: `Suggested artifact shape if spawned` [3]
+
+
+- Compact research retains answer, evidence, proof inventory, gaps and decision.  Anchor: `## Compact Shape` [4]

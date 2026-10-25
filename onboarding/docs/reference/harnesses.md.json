@@ -1,5 +1,6 @@
 {
   "path": "docs/reference/harnesses.md",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
@@ -21,12 +22,12 @@
   ],
   "references": {
     "1": {
-      "note": "Current settings core deep-merges per-level role knobs over flat defaults and keeps repository-local versus user settings path boundaries.\n\nAnchor: lines 291-313",
+      "note": "Current settings core deep-merges per-level role knobs over flat defaults and keeps repository-local versus user settings path boundaries.",
       "targets": [
         {
           "anchor": {
-            "blob": "3a25350b15bf7f7821bfdded2ac8e3c4d6e4cb20",
-            "content": "sha256:d3a91b06a5aeee77f46eec54925fb9f86dc4fff9616bd4f0c5165a56c5bc4335",
+            "blob": "db5945e5f2851a76ce476f905684a268325b9442",
+            "content": "sha256:6b6b2bf502c8b69429486d810824094b1ebc4429f1d02b6a7bad30200c667f33",
             "locator": {
               "kind": "symbol",
               "name": "resolved_role_knobs"
@@ -43,6 +44,30 @@
               "end": 496,
               "kind": "line_range",
               "start": 474
+            },
+            "path": "mcp/src/agents_remember/kernel/_agentic_settings_core.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "db5945e5f2851a76ce476f905684a268325b9442",
+            "content": "sha256:83f9ef3b3cacad9ff2e0d4ea57f0bdf33279b90ab372459a61f8a53536b2a19e",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/kernel/_agentic_settings_core.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "db5945e5f2851a76ce476f905684a268325b9442",
+            "content": "sha256:ff6f103c1e9547e4d195cc8583db4e114e486e67b7da4714a061ce267a18e44a",
+            "locator": {
+              "end": 313,
+              "kind": "line_range",
+              "start": 291
             },
             "path": "mcp/src/agents_remember/kernel/_agentic_settings_core.py"
           },

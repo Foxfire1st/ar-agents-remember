@@ -79,8 +79,13 @@ No cross-repo boundary is crossed by this file.
 - Returned members only, and the failure states that are unknown, never unchanged. [4]
 - Definition 8, the moved entry, the unresolved range and the unread sidecar beside an established fact. [5]
 - The total, the derived facts and the dataset review. [6]
-- Its lane row.  Anchor: "mcp/tests/test_review_change_kinds.py" [7]
+
+
+> Retained earlier citation wording: - Its lane row.  Anchor: "mcp/tests/test_review_change_kinds.py" [7]
+
+
 - The outline reads indexes only and keeps catalogue bytes [8]
+
 - Families, membership and summaries match the detail's facts  Anchor: `outline` [9]
 
 - Corrupt invariant records produce unknown outline facts; a corrupt family names cannot read FAM-F00001; dataset and missing-index cases are unavailable. [10]
@@ -92,3 +97,5 @@ No cross-repo boundary is crossed by this file.
 The index-only outline case now includes `comparison` in the exact serialized field sequence checked after excluding `outline`. The forbidden source, roster and per-subject readers remain in place, and catalogue equality, totals, authored membership order and meaning-only facts remain asserted. This extra field-name assertion does not independently validate a numbered comparison's resolved value.
 
 - The index-only outline preserves exact catalogue fields including comparison. [13]
+
+- Its lane row.  Anchor: "mcp/tests/test_review_change_kinds.py" [7]

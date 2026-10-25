@@ -12,6 +12,8 @@ Strict frozen models admit in-turn/permission/idle/ended and reject naive eventA
 
 ## Evidence
 
+
 - Define the shared validated host publication and default-unknown retained activity facts. [1]
+
 
 **L184 — INV-VDWN33.** This reader is where the publication becomes a snapshot, so the completeness rule is realized here. The obligation this leaf records for this place is stated in the invariant named here; the card's earlier account of this file stands, and this paragraph adds what the change made true.

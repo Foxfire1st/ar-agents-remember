@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/application/user_settings_init.py",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
@@ -39,8 +40,8 @@
     },
     {
       "anchor": {
-        "blob": "00d4788b93369f26323d6ac3018ac3c7f1099372",
-        "content": "sha256:28bc4bf8cdafeb934de8367445dd858b8582d32ed7d06cbdf161b432173764f8",
+        "blob": "46fca51f33906e050ca2e132dc6c7c80f4a714fd",
+        "content": "sha256:b4ddcf4a6b053e14bc4a2bdc4e286138fb7723752d9bc5bec0cd88992e96969a",
         "locator": {
           "kind": "symbol",
           "name": "initialize_role_settings"
@@ -52,21 +53,20 @@
         "handoffEntry": "L188-B03",
         "leaf": "260928-MIK-L188"
       },
-      "rationale": "The initializer separates existing-file reporting from absent-file creation.",
+      "rationale": "initialize_role_settings at C separates existing-file reporting from absent-file creation exactly as the conditions require, and its recorded span equals C's bytes.",
       "role": "enforcement"
     }
   ],
   "references": {
     "1": {
-      "note": "The one create-or-report decision, with the existing file reported before any choice is validated.",
+      "note": "The one create-or-report decision, with the existing file reported before any choice is validated.\n\nAnchor: `initialize_role_settings`",
       "targets": [
         {
           "anchor": {
-            "blob": "00d4788b93369f26323d6ac3018ac3c7f1099372",
-            "content": "sha256:28bc4bf8cdafeb934de8367445dd858b8582d32ed7d06cbdf161b432173764f8",
+            "blob": "46fca51f33906e050ca2e132dc6c7c80f4a714fd",
+            "content": "sha256:516612cba099bb00223a25164dd0e72c5f00034c47d5223d095b1420deced494",
             "locator": {
-              "kind": "symbol",
-              "name": "initialize_role_settings"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -176,12 +176,12 @@
       ]
     },
     "6": {
-      "note": "Current source account and its stated boundaries.\n\nAnchor: current source",
+      "note": "Current source account and its stated boundaries.",
       "targets": [
         {
           "anchor": {
-            "blob": "00d4788b93369f26323d6ac3018ac3c7f1099372",
-            "content": "sha256:8ea159a26ced2dec781ed32892ad113ee06c00c17023819b30bf33765ea24332",
+            "blob": "46fca51f33906e050ca2e132dc6c7c80f4a714fd",
+            "content": "sha256:516612cba099bb00223a25164dd0e72c5f00034c47d5223d095b1420deced494",
             "locator": {
               "kind": "file"
             }

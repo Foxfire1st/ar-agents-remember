@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/worktrees/modules/startup/start_contract.py",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
@@ -112,15 +113,16 @@
   ],
   "references": {
     "1": {
-      "note": "Master bootstrap separates durable contract creation from that contract's own disposable activation selection: it publishes that contract's own activation as reconciling without touching another master's record, then syncs the pinned source pair and reconciles it active before returning implementation authority.",
+      "note": "Master bootstrap separates durable contract creation from that contract's own disposable activation selection: it publishes that contract's own activation as reconciling without touching another master's record, then syncs the pinned source pair and reconciles it active before returning implementation authority.  Anchor: `ensure_master_series_contract`",
       "targets": [
         {
           "anchor": {
-            "blob": "1d628c838dc068656971378f114183addcef346f",
-            "content": "sha256:97610670b1b5964828417fa7a47fdc0116dc09500c70d46991909ee6db504649",
+            "blob": "b33bc33f160f5a34a1f71f94e4f021f8a85cbad4",
+            "content": "sha256:7032ffdf9f227d6d8d1a224a1d5cde57db6a77eb7a595c9c2739b50a69d585de",
             "locator": {
-              "kind": "symbol",
-              "name": "ensure_master_series_contract"
+              "end": 523,
+              "kind": "line_range",
+              "start": 218
             }
           },
           "kind": "code"
@@ -157,15 +159,16 @@
       ]
     },
     "11": {
-      "note": "The start operation returns through `start_result`.",
+      "note": "The start operation returns through `start_result`.  Anchor: `start_result`",
       "targets": [
         {
           "anchor": {
-            "blob": "e3f54e37b007c2eaa9f6f3cb3a61951c16976eca",
-            "content": "sha256:3bdba6df0ef43793fafab8bb405bc4d894e2b1fe319eaff3248bd9f66335d18e",
+            "blob": "2ca78649db203d17f9087e7728f77b20e3a1d144",
+            "content": "sha256:37427aa1cc2f1304794c07ff376813311070b7b149da51558d766fea9c9a082a",
             "locator": {
-              "kind": "symbol",
-              "name": "start_result"
+              "end": 541,
+              "kind": "line_range",
+              "start": 517
             },
             "path": "mcp/src/agents_remember/worktrees/modules/start.py"
           },
@@ -174,15 +177,16 @@
       ]
     },
     "12": {
-      "note": "start_result consumes StartContractPlan before existing-contract handling, preflight and enclosure planning, forwarding its preview parent only through the explicit dry-run request.",
+      "note": "start_result consumes StartContractPlan before existing-contract handling, preflight and enclosure planning, forwarding its preview parent only through the explicit dry-run request.  Anchor: `start_result`",
       "targets": [
         {
           "anchor": {
-            "blob": "54402c93a8363ff8c10db48dd342d08ff3e17f26",
-            "content": "sha256:fe44acba9b6f8848def241a8b84e9a8d203cda148a657760fe4fff98a69f80e2",
+            "blob": "2ca78649db203d17f9087e7728f77b20e3a1d144",
+            "content": "sha256:37427aa1cc2f1304794c07ff376813311070b7b149da51558d766fea9c9a082a",
             "locator": {
-              "kind": "symbol",
-              "name": "start_result"
+              "end": 541,
+              "kind": "line_range",
+              "start": 517
             },
             "path": "mcp/src/agents_remember/worktrees/modules/start.py"
           },
@@ -191,15 +195,16 @@
       ]
     },
     "13": {
-      "note": "The start operation creates its enclosure through `_create_start_enclosure`.\n\nAnchor: \"return _create_start_enclosure(context\"",
+      "note": "The start operation creates its enclosure through `_create_start_enclosure`.",
       "targets": [
         {
           "anchor": {
-            "blob": "e3f54e37b007c2eaa9f6f3cb3a61951c16976eca",
-            "content": "sha256:69ccec8898c2c8818e049ebdf39539f58432a690a78576ed80336c8df2163327",
+            "blob": "2ca78649db203d17f9087e7728f77b20e3a1d144",
+            "content": "sha256:d4daffb6bad4b41d0826b198c5fafaefaf36f6bde9ce08666c592fab7ad09e0b",
             "locator": {
-              "kind": "symbol",
-              "name": "_create_start_enclosure"
+              "end": 741,
+              "kind": "line_range",
+              "start": 705
             },
             "path": "mcp/src/agents_remember/worktrees/modules/start.py"
           },
@@ -207,12 +212,25 @@
         },
         {
           "anchor": {
-            "blob": "e3f54e37b007c2eaa9f6f3cb3a61951c16976eca",
-            "content": "sha256:176908bccab5e38b6a20d0e686c5aa95a845548686d3fb57b2608f2d5d2803c7",
+            "blob": "2ca78649db203d17f9087e7728f77b20e3a1d144",
+            "content": "sha256:d675f016ff245bd67eafa6a925f861a7a08e5661812f73177edaf3b16da1adea",
             "locator": {
-              "end": 532,
+              "end": 554,
               "kind": "line_range",
-              "start": 532
+              "start": 554
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/start.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2ca78649db203d17f9087e7728f77b20e3a1d144",
+            "content": "sha256:01f55406dba16dbe4ee91b173a634e001eb1f526cc438bf457ba04026268ff0a",
+            "locator": {
+              "end": 741,
+              "kind": "line_range",
+              "start": 517
             },
             "path": "mcp/src/agents_remember/worktrees/modules/start.py"
           },
@@ -221,15 +239,16 @@
       ]
     },
     "14": {
-      "note": "`_task_vocabulary` and `validate_contract` are distinct sources of `ContractError`.",
+      "note": "`_task_vocabulary` and `validate_contract` are distinct sources of `ContractError`.  Anchor: `_task_vocabulary` `validate_contract`",
       "targets": [
         {
           "anchor": {
             "blob": "c9e2847f64ca428bdc799c8173b43aa736f4b0e9",
             "content": "sha256:4ad4ee1d7ce035aa8b4626b3e4c1274f186852a2b51da62504c9f51ba31b40e7",
             "locator": {
-              "kind": "symbol",
-              "name": "_task_vocabulary"
+              "end": 187,
+              "kind": "line_range",
+              "start": 168
             },
             "path": "mcp/src/agents_remember/worktrees/worktree_contract.py"
           },
@@ -237,11 +256,12 @@
         },
         {
           "anchor": {
-            "blob": "cad2b5290a889e152e487a9d3b2b27aeea339086",
-            "content": "sha256:012a22ccbe63ed3307e1bdefe846cab438eabf4a9e703535799003d9f3e1c886",
+            "blob": "c9e2847f64ca428bdc799c8173b43aa736f4b0e9",
+            "content": "sha256:d4e8a4bf3db61272bb050e2e455c7fa7d3ba99855a8c28b098bc3f0fb94a02d3",
             "locator": {
-              "kind": "symbol",
-              "name": "validate_contract"
+              "end": 957,
+              "kind": "line_range",
+              "start": 895
             },
             "path": "mcp/src/agents_remember/worktrees/worktree_contract.py"
           },
@@ -262,12 +282,12 @@
         },
         {
           "anchor": {
-            "blob": "cad2b5290a889e152e487a9d3b2b27aeea339086",
-            "content": "sha256:ca5571444bbba108e2a280bd7c7f80ef63b01ef8a7fa56504c3ab703d2ab9b5b",
+            "blob": "c9e2847f64ca428bdc799c8173b43aa736f4b0e9",
+            "content": "sha256:0c3dc1091c8b0ceee20df11f1139417ec0de0e3fbe822d21005684ae83fd43b5",
             "locator": {
-              "end": 822,
+              "end": 957,
               "kind": "line_range",
-              "start": 767
+              "start": 168
             },
             "path": "mcp/src/agents_remember/worktrees/worktree_contract.py"
           },
@@ -292,15 +312,14 @@
       ]
     },
     "16": {
-      "note": "The startup admission module owns memory-mode selection for a code/memory pair.",
+      "note": "The startup admission module owns memory-mode selection for a code/memory pair.\n\nAnchor: `memory_mode_for_repository`",
       "targets": [
         {
           "anchor": {
-            "blob": "93388b43355dd90752a5dfdefad1a7a7e2c5a426",
-            "content": "sha256:0a045c17873db583b05194bd56ab8b7892081ee2816882b0e547035ba5cfcae0",
+            "blob": "c21ef23dc8e7179e020f7f27c3fe7cd4de3bc32e",
+            "content": "sha256:5b0c776a0b51f18c73ab4c4f41f3e6993706cb4eaf1ea0876bac3648f1ea67d5",
             "locator": {
-              "kind": "symbol",
-              "name": "memory_mode_for_repository"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/worktrees/modules/startup/master_series_admission.py"
           },
@@ -325,15 +344,16 @@
       ]
     },
     "18": {
-      "note": "The existing builder returns a leaf plus its same-request preview-only parent.",
+      "note": "The existing builder returns a leaf plus its same-request preview-only parent.  Anchor: `_build_start_contract`",
       "targets": [
         {
           "anchor": {
-            "blob": "360f0c93207f994a849e34d583f562602effa5a8",
-            "content": "sha256:504da8dc317c5886905be21149c3bde6dc882a0e5321e2eed6ebf19a5c96d4b7",
+            "blob": "b33bc33f160f5a34a1f71f94e4f021f8a85cbad4",
+            "content": "sha256:31e4b2e4974fde590c271366b702116379d31fcf74f0aef94cd05b76a3c1e689",
             "locator": {
-              "kind": "symbol",
-              "name": "_build_start_contract"
+              "end": 1112,
+              "kind": "line_range",
+              "start": 1013
             }
           },
           "kind": "code"
@@ -341,15 +361,16 @@
       ]
     },
     "19": {
-      "note": "The public start-side adapter preserves existing typed refusals.",
+      "note": "The public start-side adapter preserves existing typed refusals.  Anchor: `build_start_contract`",
       "targets": [
         {
           "anchor": {
-            "blob": "360f0c93207f994a849e34d583f562602effa5a8",
-            "content": "sha256:a7984fc43652a959ef8d3c5c7fcb1a864cd03033c86b986dbb9a5b4340bbe7dd",
+            "blob": "b33bc33f160f5a34a1f71f94e4f021f8a85cbad4",
+            "content": "sha256:b0119b570d38b871b3aa00d1c0a6635f73778c5478a69736b48c08bb7a6e6af2",
             "locator": {
-              "kind": "symbol",
-              "name": "build_start_contract"
+              "end": 850,
+              "kind": "line_range",
+              "start": 818
             }
           },
           "kind": "code"
@@ -378,10 +399,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1d628c838dc068656971378f114183addcef346f",
-            "content": "sha256:742e31e8132b51a57218ca37fe9224be2962de3d494f0d9c4ad981edd657b2e8",
+            "blob": "b33bc33f160f5a34a1f71f94e4f021f8a85cbad4",
+            "content": "sha256:31e4b2e4974fde590c271366b702116379d31fcf74f0aef94cd05b76a3c1e689",
             "locator": {
-              "kind": "file"
+              "end": 1112,
+              "kind": "line_range",
+              "start": 1013
             }
           },
           "kind": "code"
@@ -482,15 +505,16 @@
       ]
     },
     "3": {
-      "note": "The start preflight projects a persisted master-edge refusal before protected-surface calculation.",
+      "note": "The start preflight projects a persisted master-edge refusal before protected-surface calculation.  Anchor: `_existing_master_series_admission_refusal`",
       "targets": [
         {
           "anchor": {
-            "blob": "360f0c93207f994a849e34d583f562602effa5a8",
-            "content": "sha256:edef247f1c4423d3475b6727891e9a65260b9d6e3d2ee11613ba4299913c1e83",
+            "blob": "b33bc33f160f5a34a1f71f94e4f021f8a85cbad4",
+            "content": "sha256:39bdfb87152031c42af7914c04214f93c0d17c55a3969ef22bbba0d7d5da1dc0",
             "locator": {
-              "kind": "symbol",
-              "name": "_existing_master_series_admission_refusal"
+              "end": 1010,
+              "kind": "line_range",
+              "start": 941
             }
           },
           "kind": "code"
@@ -498,15 +522,16 @@
       ]
     },
     "4": {
-      "note": "The start builder performs the pre-protected-surface admission check and returns its refusal result.",
+      "note": "The start builder performs the pre-protected-surface admission check and returns its refusal result.  Anchor: `_build_start_contract`",
       "targets": [
         {
           "anchor": {
-            "blob": "b8577a114fe2639f50a60476e857835d3c942812",
-            "content": "sha256:db14615e7c9d97025396f084a1f072b0ed902609d6d09c460c1ee2900fd3d51a",
+            "blob": "b33bc33f160f5a34a1f71f94e4f021f8a85cbad4",
+            "content": "sha256:31e4b2e4974fde590c271366b702116379d31fcf74f0aef94cd05b76a3c1e689",
             "locator": {
-              "kind": "symbol",
-              "name": "_build_start_contract"
+              "end": 1112,
+              "kind": "line_range",
+              "start": 1013
             }
           },
           "kind": "code"
@@ -514,15 +539,16 @@
       ]
     },
     "5": {
-      "note": "The parent-series builder that no longer short-circuits on a command result and no longer re-checks a child-admission seal: it returns the series `ensure_master_series_contract` produced.",
+      "note": "The parent-series builder that no longer short-circuits on a command result and no longer re-checks a child-admission seal: it returns the series `ensure_master_series_contract` produced.  Anchor: `_parent_series_contract`",
       "targets": [
         {
           "anchor": {
-            "blob": "360f0c93207f994a849e34d583f562602effa5a8",
-            "content": "sha256:a8c83b67ae958d50c04482ef985bed5294d301dd564aeb63d95d67ed489e95b0",
+            "blob": "b33bc33f160f5a34a1f71f94e4f021f8a85cbad4",
+            "content": "sha256:0c1964fefaf316c9fc99e76ac5889fa09975c411cda8f3b9e439f1c27317f9ac",
             "locator": {
-              "kind": "symbol",
-              "name": "_parent_series_contract"
+              "end": 792,
+              "kind": "line_range",
+              "start": 736
             }
           },
           "kind": "code"
@@ -530,7 +556,7 @@
       ]
     },
     "6": {
-      "note": "The leaf-admission operation label that survives the seal removal and still names the caller's operation inside the master-series admission refusals.\n\nAnchor: `leaf_admission_operation`; \"operation=leaf_admission_operation or \\\"worktree_start\\\"\"",
+      "note": "The leaf-admission operation label that survives the seal removal and still names the caller's operation inside the master-series admission refusals.",
       "targets": [
         {
           "anchor": {
@@ -546,12 +572,12 @@
         },
         {
           "anchor": {
-            "blob": "b8577a114fe2639f50a60476e857835d3c942812",
-            "content": "sha256:c23e890e4a4a83f295a059547238a575129b7332038f21d45d9556455181d8de",
+            "blob": "b33bc33f160f5a34a1f71f94e4f021f8a85cbad4",
+            "content": "sha256:4ff6b4ab0e5dafd15715a405e5af47c16d8058cd426d0b75766f8e5537470984",
             "locator": {
-              "end": 244,
+              "end": 790,
               "kind": "line_range",
-              "start": 244
+              "start": 790
             }
           },
           "kind": "code"
@@ -576,51 +602,14 @@
       ]
     },
     "8": {
-      "note": "Selection fetches evidence outside integration authority, re-reads the exact contract under authority, and delegates reconciliation; the focused transaction keeps the selected series reconciling until the exact current source pair is proven before active exposure.",
+      "note": "Selection fetches evidence outside integration authority, re-reads the exact contract under authority, and delegates reconciliation; the focused transaction keeps the selected series reconciling until the exact current source pair is proven before active exposure.\n\nAnchor: `activate_atomic_series_contract` `reconcile_selected_series_under_authority` `sync_selected_atomic_series_under_authority` `_sync_selected_atomic_series_under_authority`",
       "targets": [
         {
           "anchor": {
             "blob": "62bf48665f1375408886ec0c3c4e30c5fd58a172",
-            "content": "sha256:82a0467e81acda8134452cb44246bd38e3d67121d07bc23793e8ba7e05db8703",
+            "content": "sha256:a9b15768aaeddcc49e9ac662237ac67cd5fff449295a8849a2cb2f97d84d2f95",
             "locator": {
-              "kind": "symbol",
-              "name": "activate_atomic_series_contract"
-            },
-            "path": "mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "62bf48665f1375408886ec0c3c4e30c5fd58a172",
-            "content": "sha256:630ac1cdcec197b6d2a3c68fbc6b0a37d5a076d74cbd235fc33dd544da42b423",
-            "locator": {
-              "kind": "symbol",
-              "name": "reconcile_selected_series_under_authority"
-            },
-            "path": "mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "62bf48665f1375408886ec0c3c4e30c5fd58a172",
-            "content": "sha256:5a07c603afd747ea33a5d098cd85e3ba5b4c5e079f79e5fd0cb541631ca38944",
-            "locator": {
-              "kind": "symbol",
-              "name": "sync_selected_atomic_series_under_authority"
-            },
-            "path": "mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "ff96dbc4a7bc81bcfcaaa7eaae871eff3d759b82",
-            "content": "sha256:d7396696dcaf00edbb1527f2ab42a13ab21e0aff701abf80c6ad60218ec15497",
-            "locator": {
-              "kind": "symbol",
-              "name": "_sync_selected_atomic_series_under_authority"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py"
           },

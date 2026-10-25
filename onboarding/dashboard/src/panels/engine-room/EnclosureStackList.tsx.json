@@ -1,17 +1,17 @@
 {
   "path": "dashboard/src/panels/engine-room/EnclosureStackList.tsx",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
-      "note": "`EnclosureStackList` component + props (`views`, `selectedKey`, `onSelect`)",
+      "note": "`EnclosureStackList` component + props (`views`, `selectedKey`, `onSelect`)\n\nAnchor: `EnclosureStackList`",
       "targets": [
         {
           "anchor": {
-            "blob": "b799b339f49a88c118eabef01ef2dadd0821da2f",
-            "content": "sha256:5dbc5522501399c81d0fec1f027495271dbb78ebace13350bf81879c4defb3b4",
+            "blob": "054ead2663c65b7d2efb4b784b2c7d7ae25d7dca",
+            "content": "sha256:f937632fda04a565321bf1716443db9c40bf060508ace5ea1ce49f8413a71981",
             "locator": {
-              "kind": "symbol",
-              "name": "EnclosureStackList"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -19,7 +19,7 @@
       ]
     },
     "2": {
-      "note": "Single-selection `ListBox`; `Selection` coerced to single key in `onSelectionChange`\n\nAnchor: \"single\"; `onSelectionChange`; `typeof`",
+      "note": "Single-selection `ListBox`; `Selection` coerced to single key in `onSelectionChange`",
       "targets": [
         {
           "anchor": {
@@ -47,8 +47,8 @@
         },
         {
           "anchor": {
-            "blob": "b799b339f49a88c118eabef01ef2dadd0821da2f",
-            "content": "sha256:c8513314e2572dcd90970ad6c208dc55bc4907410914a725381df4e9c0d103e1",
+            "blob": "054ead2663c65b7d2efb4b784b2c7d7ae25d7dca",
+            "content": "sha256:fa5cba863ed7acd2ecb02b9636a5cf8ff3f073b3b39d6859109c98825ce0c772",
             "locator": {
               "end": 45,
               "kind": "line_range",
@@ -81,8 +81,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fddde3fe60faa2d9374405b9676016ab026af1b6",
-            "content": "sha256:db0f63a67e32561c8d0d178904d2e3ed60574e0643583158dd20b2c7cd5c625f",
+            "blob": "d71e9db1948f52b82bd84b2348775f13ac9b57e7",
+            "content": "sha256:8ad3ab8e99817b1e4b23b7b6259fc08e02b0810861d5f984fa3479bfc83258a5",
             "locator": {
               "kind": "symbol",
               "name": "EngineProcessNode"
@@ -98,7 +98,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c93efa0c8dad93909ffe08e9cb9d17efb3321b21",
+            "blob": "61fa5ab62915df0658c9617649fee1dec455a082",
             "content": "sha256:09c0d8d001339fc44a99ea4a59737a494b60e862b798cf58659ddfc831ecdd24",
             "locator": {
               "kind": "symbol",
@@ -110,7 +110,7 @@
         },
         {
           "anchor": {
-            "blob": "c93efa0c8dad93909ffe08e9cb9d17efb3321b21",
+            "blob": "61fa5ab62915df0658c9617649fee1dec455a082",
             "content": "sha256:5de7520067a7984282375194629a00bcc4e15cc28258cd7b24594a4b143bda57",
             "locator": {
               "kind": "symbol",
@@ -122,7 +122,7 @@
         },
         {
           "anchor": {
-            "blob": "c93efa0c8dad93909ffe08e9cb9d17efb3321b21",
+            "blob": "61fa5ab62915df0658c9617649fee1dec455a082",
             "content": "sha256:e69262c9162561589714c55ab15aa15635aea8d5a8a756e0617d44c4e46b884f",
             "locator": {
               "kind": "symbol",
@@ -139,7 +139,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c93efa0c8dad93909ffe08e9cb9d17efb3321b21",
+            "blob": "61fa5ab62915df0658c9617649fee1dec455a082",
             "content": "sha256:50937e62d1ea53a3b68a16332d004a9691e5ef6739acebc65501fc151e3fc476",
             "locator": {
               "kind": "symbol",
@@ -156,12 +156,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cd5c184afd89ddd45144be1d679d04bd09da6b9c",
+            "blob": "5705ba6821a3de4af9781d63732e0300475af6a6",
             "content": "sha256:7d543e6ea33a4af29069865d85cfef21efd1f6c9c7b320db9fd341c884f5e53e",
             "locator": {
-              "end": 252,
+              "end": 140,
               "kind": "line_range",
-              "start": 252
+              "start": 140
             },
             "path": "dashboard/src/panels/engine-room/stage.styles.ts"
           },

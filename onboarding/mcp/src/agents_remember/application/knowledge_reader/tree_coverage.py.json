@@ -115,12 +115,12 @@
       ]
     },
     "6": {
-      "note": "The route entry that delegates its listing here.\n\nAnchor: `tree_listing`",
+      "note": "The route entry that delegates its listing here.",
       "targets": [
         {
           "anchor": {
-            "blob": "18bad8156b6b463b6d7476a9620a0ec7857cc8b5",
-            "content": "sha256:139f451a49f64de0920e30aedbbc6ef6442e9763880c057e2abb4e75a289a555",
+            "blob": "af90f6f941d94f61cbe62afeef683543347d7244",
+            "content": "sha256:4d30be0f728ae5484c385ae048bb8ac4e89b18907af159fb746a3e7a89223133",
             "locator": {
               "kind": "file"
             },

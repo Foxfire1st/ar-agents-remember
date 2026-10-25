@@ -67,7 +67,9 @@ The preserved table statuses are onboarding metadata, not operative lifecycle pr
 - The bounded read-only observer validates the cursor, polls the exact generation, and returns change or timeout. [1]
 
 - Configured admission checks repository and contract-location authority while permitting only an explicit candidate-identity delegation. [2]
+
 - Ordinary converted-leaf closeout checks its mandatory gate before approval or code publication and validates its exact memory output and recovered output before memory publication. [3]
+
 - Typed admission findings are projected completely; rail-failure and status-wait construction remains retained capability rather than a registered detached execution route. [4]
 
 - Unreadable contract observations prefer retained strict journals and otherwise preserve proven initial publication loss as a developer-decision refusal. [5]

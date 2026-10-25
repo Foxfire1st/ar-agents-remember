@@ -48,15 +48,21 @@ TaskScopedReaderContext is extra-forbid/frozen and carries task_document_ref plu
 
 ### Repo-Internal References
 
+
 - The frozen model validates, hashes, and serializes the canonical document reference. [1]
+
+
 - Topology resolves the reference against real task documents. [2]
+
 
 ### Cross-Repo References
 
 ### Runtime Source References
 
 - Frozen implementation of TaskScopedReaderContext supporting the stated file behavior. [3]
+
 - Frozen implementation of TaskDocumentRef supporting the stated file behavior. [4]
+
 
 ## 260815-DAG-L3 Bounded Durable Identity
 

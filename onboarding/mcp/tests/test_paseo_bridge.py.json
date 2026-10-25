@@ -60,8 +60,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "acaf5f3e7de3fe29059c03497b8fe50bcf25482e",
-            "content": "sha256:846e1bc9be8eadf3126ffcdaade8c57eab77ab126d48358135d5bce47418c23c",
+            "blob": "e3472bf4f045755e7579e72348c6b9aa2c08df0f",
+            "content": "sha256:f0418117bdf7bc4c3f2b0c0b2bd8da71f4af90b15d350785ac4e4f8447b4de1f",
             "locator": {
               "kind": "file"
             }
@@ -71,12 +71,12 @@
       ]
     },
     "2": {
-      "note": "The bridge environment case with the product Node.",
+      "note": "Process-level refuse-before-spawn and single-target behaviour of `bridge_call`.",
       "targets": [
         {
           "anchor": {
-            "blob": "b0af01fc7a5dd4073694f370cf0ab432e0df1e7f",
-            "content": "sha256:97905cf1cea2a9dcbd61233fd9f765988c203b3d1c10d907892ae2294857a07d",
+            "blob": "e3472bf4f045755e7579e72348c6b9aa2c08df0f",
+            "content": "sha256:67abba28f1bedffba95f06f4ee1eff3a7845167947037a3ef5742ff12706c500",
             "locator": {
               "kind": "symbol",
               "name": "BridgeProcessTests"
@@ -86,8 +86,8 @@
         },
         {
           "anchor": {
-            "blob": "b0af01fc7a5dd4073694f370cf0ab432e0df1e7f",
-            "content": "sha256:ececd38026784b04de24c13c44a769bb91eddfa53916761915ed09576227fe82",
+            "blob": "e3472bf4f045755e7579e72348c6b9aa2c08df0f",
+            "content": "sha256:393b850c4952e117c9749373b3780cf9767b62cda1f3af69909d707d28501967",
             "locator": {
               "end": 260,
               "kind": "line_range",
@@ -95,16 +95,26 @@
             }
           },
           "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e3472bf4f045755e7579e72348c6b9aa2c08df0f",
+            "content": "sha256:f0418117bdf7bc4c3f2b0c0b2bd8da71f4af90b15d350785ac4e4f8447b4de1f",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
         }
       ]
     },
     "3": {
-      "note": "Catalog shape retains modes/features while isolated settings are prepared per case.",
+      "note": "Catalog shape, script failures and provider-option naming against the real script and fake client.",
       "targets": [
         {
           "anchor": {
-            "blob": "1a68c7a81775f27549e988aa5d11cc504e980fc6",
-            "content": "sha256:7188fc8065931fc405d5fc40a115a6d864668e7c3d92e7ca677d16f5a25afb34",
+            "blob": "e3472bf4f045755e7579e72348c6b9aa2c08df0f",
+            "content": "sha256:f0418117bdf7bc4c3f2b0c0b2bd8da71f4af90b15d350785ac4e4f8447b4de1f",
             "locator": {
               "kind": "file"
             }

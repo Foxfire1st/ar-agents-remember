@@ -1,14 +1,26 @@
 {
   "path": "mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
-      "note": "Strict Pydantic records define the contract-keyed selector state and archive evidence consumed here.",
+      "note": "Strict Pydantic records define the contract-keyed selector state and archive evidence consumed here.\n\nAnchor: `AtomicSeriesActivationRecord` `AtomicSeriesActivationArchiveEvidence`",
       "targets": [
         {
           "anchor": {
-            "blob": "4d8d2b8672e40bb74d872381d4750f94605ca226",
-            "content": "sha256:39bfe87ee76b966b89c56559a309084c50575c93658ea6df389137d13b9c3556",
+            "blob": "001fa8a374f859c5ea85997053f826c5a3f06f23",
+            "content": "sha256:370e42bfb4c36180e5f33c5b29f18bbb17ae3b49c6b2ba83a09cb828ceaeeef2",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/models/structural/atomic_series_activation.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "001fa8a374f859c5ea85997053f826c5a3f06f23",
+            "content": "sha256:74235b0b12154f6d9c42f4ac574672a4100c4074ae185ab27f28afcb12e39c90",
             "locator": {
               "kind": "symbol",
               "name": "AtomicSeriesActivationRecord"
@@ -185,12 +197,12 @@
       ]
     },
     "2": {
-      "note": "The fingerprinted record is keyed by the canonical series contract path and stores no source-pair field.\n\nAnchor: \"class AtomicSeriesActivationRecord(BaseModel):\"; \"class AtomicSeriesActivationArchiveEvidence(BaseModel):\"",
+      "note": "The fingerprinted record is keyed by the canonical series contract path and stores no source-pair field.",
       "targets": [
         {
           "anchor": {
-            "blob": "4d8d2b8672e40bb74d872381d4750f94605ca226",
-            "content": "sha256:39bfe87ee76b966b89c56559a309084c50575c93658ea6df389137d13b9c3556",
+            "blob": "001fa8a374f859c5ea85997053f826c5a3f06f23",
+            "content": "sha256:68e984dd4f1ac05cc769e483135628490268befce08df8102a49a3789469eb0e",
             "locator": {
               "end": 27,
               "kind": "line_range",
@@ -208,6 +220,19 @@
               "end": 53,
               "kind": "line_range",
               "start": 38
+            },
+            "path": "mcp/src/agents_remember/models/structural/atomic_series_activation.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "001fa8a374f859c5ea85997053f826c5a3f06f23",
+            "content": "sha256:33eb8f1bab3b96acc07f04ba46be87dd48fa92b24e8d01cabc494074ab7cf8d8",
+            "locator": {
+              "end": 45,
+              "kind": "line_range",
+              "start": 30
             },
             "path": "mcp/src/agents_remember/models/structural/atomic_series_activation.py"
           },

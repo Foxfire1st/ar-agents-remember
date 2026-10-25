@@ -14,11 +14,11 @@ For a callable MCP operation, begin with the literal public roster and its famil
 
 Historical pre-L113 dispatch doctrine (not a current public route): for ordinary free-chat role-shaped work, the lifecycle doctrine described an identity-free launcher that resolves a sprint, durably pins the canonical architect brief, and calls `dispatch_agent` once. An explicit developer-declared task-seat takeover is the bounded exception, targeting the named role at its canonical task altitude. Plane-hosted dispatch derives caller identity from the process and authorizes direct children; the request cannot select caller identity, and a plane refusal cannot retry as ambient. Durable dispatched/queued delivery is not an instruction to resend the initial brief.
 
-The current literal public roster has 43 names: the prior 42-name set plus `explainer_control`. Native `retire_child`, `role_start_set` and `direct_execution_grant` remain. The earlier L113 40-name, L109 41-name and pre-sync R111 42-name populations are historical source epochs; this census supplies no live-advertisement acceptance.
+The current literal public roster has 44 names: the prior 42-name set plus `explainer_control` and `citation_note_revision`. Native `retire_child`, `role_start_set` and `direct_execution_grant` remain. The earlier L113 40-name, L109 41-name and pre-sync R111 42-name populations are historical source epochs; this census supplies no live-advertisement acceptance.
 
 > Superseded pre-L113 composition history: The public roster had 41 names, up from 39 at 8d2e7547 through the additions of native `retire_child` and `role_start_set`. Current L113 membership has40 after dispatch removal; this history does not establish present membership.
 
- Bound Paseo `role_start` remains advertised. Only the owning Manager may start the leaf's Worker, Reviewer and Curator together; Worker opens immediately, Reviewer opens with a supplied first message or stays held, and Curator stays held. Deterministic per-seat request IDs reconcile partial sets. An occupied leaf seat requires an explicit holder replacement; only its starter or the launcher may replace it, with explicit interruption authority for an active turn. It is distinct from structural dispatch: only an AR-launched role agent may call it, its role matrix and canonical selection constrain children, and caller-owned request IDs reconcile starts. `role_message` accepts agent identity or role plus required task references, refuses ambiguity, and may resume a closed session. A pending permission decision, unfinished start, or unavailable mid-turn handoff ordinarily holds the message in the recipient's workspace-local product store. At most twenty messages wait per recipient; overflow refuses without dropping messages, and senders may withdraw their own uncommitted messages. Delivery preserves order and opens a held seat with its stored handover. The serving lifespan owns the retry sweep; permission decisions remain developer-owned, and messaging does not cancel the running turn. A completed recipient turn is not requirement acceptance.
+Bound Paseo `role_start` remains advertised. Only the owning Manager may start the leaf's Worker, Reviewer and Curator together; Worker opens immediately, Reviewer opens with a supplied first message or stays held, and Curator stays held. Deterministic per-seat request IDs reconcile partial sets. An occupied leaf seat requires an explicit holder replacement; only its starter or the launcher may replace it, with explicit interruption authority for an active turn. It is distinct from structural dispatch: only an AR-launched role agent may call it, its role matrix and canonical selection constrain children, and caller-owned request IDs reconcile starts. `role_message` accepts agent identity or role plus required task references, refuses ambiguity, and may resume a closed session. A pending permission decision, unfinished start, or unavailable mid-turn handoff ordinarily holds the message in the recipient's workspace-local product store. At most twenty messages wait per recipient; overflow refuses without dropping messages, and senders may withdraw their own uncommitted messages. Delivery preserves order and opens a held seat with its stored handover. The serving lifespan owns the retry sweep; permission decisions remain developer-owned, and messaging does not cancel the running turn. A completed recipient turn is not requirement acceptance.
 
 `mcp-tools.md` now documents `explainer_control` for `update`, `retire` and `claim`. A hosted Architect may claim one master; that record gates the two leaf actions, and a different seat receives `not-this-masters-architect` until it claims. Claim transfers that master's held reports to the claiming seat. Developer Update/Retire presses use dashboard routes; master retirement and sprint archive use their hooks. The environment is built on the first explicit developer request, and these control calls do not start a model turn. These are the reference's declared boundaries, with typed refusals; the literal roster and mounted registration remain separate evidence.
 
@@ -103,25 +103,16 @@ These inherited tables are retained verbatim for navigation and custody. Their s
 Inherited finding [23] retains its exact wording/target as the historical profile-required closeout account; parent adjudicates that outdated prerequisite. Current requested-certification and invariant-gated transaction are separate:
 
 - Requested certification is explicitly selected repository-profile work through Dagger and commits nothing. The profile and loader are still authority for that requested Gates 1–4 work; a selection named `closeout` is not an automatic closeout invocation. Ordinary closeout runs no gate but the invariant gate, retains exact candidate/approval/lineage checks and code-then-memory Git publication, and does not run certification, code-quality checks, test suites or independent review. A missing profile or certification result does not block that transaction. This does not remove canonical Curator/Reviewer duties or confer independent semantic acceptance on diagnostics. [26]
-
 - Retained reference account (no fresh execution or acceptance inferred): The normalized public input has only two commit legs. [1]
-
 - Retained reference account (no fresh execution or acceptance inferred): The public tool reference maps the current tool surface to its registered families and owning routes. [2]
-
 - Retained reference account (no fresh execution or acceptance inferred): The settings reference describes the active MCP authority, user role settings and their distinct merge and precedence boundaries. [3]
-
 - Retained reference account (no fresh execution or acceptance inferred): The Paseo catalog adapter is the source owner for the configured host catalog route. [4]
-
 - Retained reference account (no fresh execution or acceptance inferred): The settings document's host section. [5]
-
 - Retained reference account (no fresh execution or acceptance inferred): The runtime layout document. [6]
-
-
+- Current literal public roster has 44 names, including knowledge_write, user_settings_init, explainer_control and citation_note_revision; historical populations retain their own epochs and supply no live-advertisement acceptance. [7]
 - Ordered family registration owns the advertised tool definitions. [8]
-
 - Bound role starts retain caller/role constraints, request reconciliation and no caller permission-feature authority; set starts are Manager-only and preserve held siblings. [9]
 - Poll includes optional contract scope while extra execution-only fields are forbidden. [10]
-
 - Memory preparation distinguishes diagnostic scope, raw readiness, coherence validation and capacity refusal. [11]
 - Pre-baseline writes require the declared converted root, no baseline and no dependent linked worktree. [12]
 - Converted citation repair excludes refused cards from its mechanical second stage in both list and singleton paths. [13]
@@ -133,12 +124,6 @@ Inherited finding [23] retains its exact wording/target as the historical profil
 - Activation waiting is scoped to this contract's own reconciliation. [21]
 - Raw-Git support matrix keeps unsupported transitions and ancestry limits explicit. [22]
 - Source-quality profile requirement has an explicit no-code-commit exception. [23]
-
 - Setup reports the knowledge state and hands foundation work to the user-started Architect's regular task and its Curator; the following provider stage retires providers. [24]
-
-
-- The public tool reference distinguishes Architect claim/leaf actions from developer dashboard controls and states the first-request environment and no-model-turn boundary. [27]
-
-- Current literal public roster has 43 names, including knowledge_write, user_settings_init and explainer_control; historical populations retain their own epochs and supply no live-advertisement acceptance. [7]
-- Current literal public roster has 43 names, including knowledge_write, user_settings_init and explainer_control; historical populations retain their own epochs and supply no live-advertisement acceptance. [25]
+- Current literal public roster has 44 names, including knowledge_write, user_settings_init, explainer_control and citation_note_revision; historical populations retain their own epochs and supply no live-advertisement acceptance. [25]
 - The public explainer_control reference declares hosted Architect claim, master-record-gated leaf actions, developer dashboard routes and first-request/no-model-turn controls. [27]

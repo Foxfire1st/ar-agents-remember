@@ -331,34 +331,54 @@ No configured external source applies.
 
 The following current source boundaries establish the ledger-retirement behavior.
 
+
 - `closeout_preview_payload` asks approval for the actual code/memory transaction and reports cache refresh separately; a converted leaf the gate refuses gets the refused preview instead, which asks for no approval. [1]
+
 - `_validate_closeout_source_heads` proves code and memory source tips against their recorded base or landed output. [2]
+
 
 - `_amended_closeout_contract` records actual code/memory output and clears integration fields only when reopening. [3]
 
+
+
 - `_recover_closeout_finalization` asks the recovery gate and re-proves existing output commits before exact contract publication. [4]
+
+
 
 
 - Closeout retains entity-fingerprint and derived route-index refresh before exact converted-memory publication, not legacy metadata stamps. [5]
 
 
+
+
 - Defines the `WorktreeArgs` dataclass that types every closeout entry point and helper. [6]
+
 - The pure closeout-gate policy this module enforces (slice 6b). (`evaluate_gate`; `evaluate_closeout_gate`; the `GateGuard` value and `CONSUMED_APPROVAL_GATE_KINDS` it reads live in the controlplane store, `controlplane/store.py`, not here.) [7]
+
 - The gate policy threaded through `WorktreeArgs`. [8]
+
+
 - `GateStore.claim_approval` — the compare-and-swap this module now spends an approval through: fold, policy verdict and the `applied` append inside one held `exclusive_access`. It is the only way to spend one; `_mark_closeout_gate_applied` was deleted. (`claim_approval`) [9]
+
 - `CONSUMED_APPROVAL_GATE_KINDS` — why the `applied` snapshot this module writes is no longer reclaimed at any age, which is the other half of the replay fix. [10]
 - The strict source-quality adapter decides applicability, executes the current worktree wrapper under the selected mode/executor, and fails before mutation. (`code_quality_gate_preview`; `requires_strict_code_quality`; `run_strict_code_quality_gate`) [11]
 - `require_git` is the fail-closed facade over the shared Git runner; it preserves raw runner decoding and makes only raised diagnostics transport-safe. [12]
 - Closeout imports the self-healing lineage guard that carries a settleable stale break through the existing sync. (`heal_current_source_lineage,`) [13]
 - Closeout's import block takes the queue preview and recovery owners and imports no code-quality gate; the staged-quality owner `gate_staged_code` lives only in its own module. [14]
 
+
 - Closeout revalidates the accepted candidate tree and refuses a candidate that moved after admission before publishing; the reversible code-quality preflight no longer exists in the transaction. (`_revalidate_candidate`; `closeout_result`) [15]
+
 
 - The extracted owner binds and certifies the exact staged candidate. (`gate_staged_code`) [16]
 - The closeout transaction runs no code-quality gate and no memory pre-refresh; the memory-quality phase owners remain standalone in their own module. (`run_memory_quality_phase`; `combine_memory_quality`) [17]
 - `recovery_guidance` and the `RecoveryOperation` vocabulary the commit-approval gate belongs to, plus `status_payload`. [18]
-- `ContractCells` and `amend_contract` define the contract-cell amendment API. [19]
-- Closeout uses that amendment API for its contract write and avoids the forbidden `replace` keyword. (`_amended_closeout_contract`) [20]
+
+> Retained earlier citation wording: - `ContractCells` and `amend_contract` define the contract-cell amendment API. [19]
+
+
+- Closeout amends its contract through `amend_contract`, passing the free-text commit and approval fields by `replace` and the vocabulary cells through `ContractCells`. (`_amended_closeout_contract`) [20]
+
 
 ### 260815-DAG-L3 Claim/Certification History, Replaced By Journal Evidence
 
@@ -518,18 +538,28 @@ The current source seams include `closeout_changed_paths`, `closeout_preview_pay
 
 ### Reconciled Source Evidence
 
+
 - The current module exposes `closeout_changed_paths`, `closeout_preview_payload`, `closeout_result` at this ownership boundary. [21]
 
+
+
 - The source-state boundary self-heals a settleable stale break and re-proves the immediate heads on the healed contract; candidate revalidation returns that healed contract. (`_validate_closeout_source_state`; `_validate_closeout_source_heads`; `_revalidate_candidate`) [22]
+
 - The expected source heads a contract's own landing may have produced, now covering a checkpoint's recorded move. (`_landed_source_heads`; `contract.integration_status in {"completed", "checkpointed"} and integrated`) [23]
 
+
 - The current module exposes `closeout_changed_paths`, `closeout_preview_payload`, `closeout_result` at this ownership boundary. [24]
+
 
 - The source-state boundary self-heals a settleable stale break and re-proves the immediate heads on the healed contract; candidate revalidation returns that healed contract. (`_validate_closeout_source_state`; `_validate_closeout_source_heads`; `_revalidate_candidate`) [25]
 - The expected source heads a contract's own landing may have produced, now covering a checkpoint's recorded move. (`_landed_source_heads`; `contract.integration_status in {"completed", "checkpointed"} and integrated`) [26]
 
+
 - The single closeout entry and the entry helper that reaches the validator for series contracts too. (`closeout_result`; `_closeout_entry`) [27]
+
+
 - The closeout entry threads the healed contract through preflight, the gate's preflight and the locked publication callback. (`closeout_result`; `_publish_closeout_candidate`; `_closeout_entry`) [28]
+
 
 ## 260821-CLIVE Journal-Owned Claim Boundary
 
@@ -610,17 +640,29 @@ On converted memory three places of this module ask the mandatory invariant gate
 > - **A recovered closeout.** `_recover_closeout_finalization` calls `require_gated_recovery` before it proves the
 >   recovered commits, so the contract is finalized only for a memory commit the gate passes.
 
+
 - **Retained historical source account — superseded by the current contract:** The apply asks the gate before it publishes the closeout. [29]
+
+
 - **Retained historical source account — superseded by the current contract:** The preview asks the same verdict and answers the refused preview. [30]
+
 - **Retained historical source account — superseded by the current contract:** The refused preview: the findings, no approval, no next tool. [31]
+
 - **Retained historical source account — superseded by the current contract:** A refused preview returns code 2. [32]
+
+
 - **Retained historical source account — superseded by the current contract:** A recovered closeout is finalized only for a gated memory commit. [33]
+
 - **Retained historical source account — superseded by the current contract:** The preview answers what the apply will do. [34]
+
 - **Retained historical source account — superseded by the current contract:** An unconverted leaf's preview is refused before closeout publication. [35]
 
-- Registered calls keep the daily call record independently of closeout publication. \[36] [36]
-- Completed calls keep their workspace-river event independently of closeout publication. \[37] [37]
+
+- Registered calls keep the daily call record independently of closeout publication. [36]
+- Completed calls keep their workspace-river event independently of closeout publication. [37]
 
 
 
 - Refused closeout previews include knowledge/opt-out, undecided approval as closeout-gate-blocked, and series authority as blocked with its original code/sentence. They carry coded blockers, request no commit approval, offer no would-closeout success and return nonzero. Recovery/apply also adapt recognized CloseoutQueueError results. A stored-gate refusal names STORED_GATE_WAY_OUT and no gate_list or other deciding tool; inherited nextTool/nextArgs/nextRequiredArgs are removed, while the preview retains its coded blocker and summary; an abandoned master may offer worktree_abandon; other repair advice remains prose when no single executable step exists. This changes presentation, not gate or commit authority. [38]
+
+- `ContractCells` and `amend_contract` define the contract-cell amendment API.  Anchor: `ContractCells` [19]

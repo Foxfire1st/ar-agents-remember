@@ -64,5 +64,7 @@ No separate external implementation source applies.
 ### Current Source-Inspection References
 
 - Removed obsolete third-commit writers and their unused closed-state/argument fixture chain; retained historical tracked-cache seeds. [1]
+
 - External-memory fixture supplies real isolated Git repositories and current contract inputs. [2]
+
 - The base class provides helper methods rather than collected test cases. [3]

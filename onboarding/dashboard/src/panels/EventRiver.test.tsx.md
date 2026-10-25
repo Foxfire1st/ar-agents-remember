@@ -64,4 +64,5 @@ Stubbed layout permits render assertions, not browser geometry/live delivery. Fu
 
 - read.packet rows are synthetic compatibility fixtures in these declared rendering cases, not evidence that the removed ambient emitter still exists. Source inspection, not execution. [7]
 
+
 - The `ObserverEvent` shape (trust/actor/kind/data) the helper builds. [8]

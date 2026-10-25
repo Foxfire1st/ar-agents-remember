@@ -4,7 +4,9 @@
 
 The retained worker artifact uses the report path its handover names, rather than a fixed default or a notifier lookup convention. Main-loop ownership, immutable requirement-attempt evidence, exact checks and file-based handovers remain; a host turn-end signal does not inspect or accept the report.
 
+
 - The retained worker artifact uses the report path its handover names, rather than a fixed default or a notifier lookup convention. Main-loop ownership, immutable requirement-attempt evidence, exact checks and file-based handovers remain; a host turn-end signal does not inspect or accept the report. [4]
+
 
 
 
@@ -99,8 +101,12 @@ No external Domain Documentation source governs this report format.
 
 ### Repo-Internal References
 
+
 - Every briefed manifestation receives an immutable candidate-bound worker record containing its complete envelope. [1]
+
+
 - Exact commands and outcomes have a first-class report section. [2]
+
 - Artifact lifecycle and task continuity are recorded separately. [3]
 
 ### Cross-Repo References
@@ -279,7 +285,9 @@ Inherited reference 5 commentary (not a revalidated target):
 
 The authored file is the canonical contract; its measured byte-equal package copy is a distribution carrier, not an independent role, task or permission authority. The following whole-file reference locates that authored contract; it does not convert inherited statements into executed or whole-card acceptance.
 
+
 - The authored source owns this contract; the distribution copy is not a separate authority. [5]
+
 
 - Adds conditional visual-explainer/profile linkage; visuals supplement rather than replace mandatory evidence/report or acceptance. [6]
 - Adds conditional visual-explainer/profile linkage; visuals supplement rather than replace mandatory evidence/report or acceptance. [7]

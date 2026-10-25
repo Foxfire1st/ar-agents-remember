@@ -22,12 +22,12 @@
   ],
   "references": {
     "1": {
-      "note": "The scoped current source carries the module/document behavior described above.",
+      "note": "The sandbox fixture, its real child processes, port claims and recorded fake operations.",
       "targets": [
         {
           "anchor": {
-            "blob": "d93f431577912340938e8f4cbe896e6b572b058c",
-            "content": "sha256:33b576f091f8b4efd2f7f3cbe72919dc3a3e8c1d5ecce3dbeef8fe54fc27e462",
+            "blob": "7cc125a6d4a5093a51132f2af0c4d291306e884a",
+            "content": "sha256:f6344511c87fef0874115ad7f007edb5055b6d10fe178359083ab33b3e6887aa",
             "locator": {
               "kind": "file"
             }
@@ -37,12 +37,12 @@
       ]
     },
     "2": {
-      "note": "SandboxCase hides named harness configuration markers at ancestors outside its owned fixture through a scoped Path.exists view. Existence inside the fixture and for all other paths uses the real filesystem; production location guards, lexical harness-path refusal and unsafe-project/symlink/escape checks remain active.\n\nAnchor: `SandboxCase.setUp`",
+      "note": "`SandboxCase` hides named harness configuration markers at ancestors outside its owned fixture through a scoped existence view, while the fixture's own paths and all others use the real filesystem.",
       "targets": [
         {
           "anchor": {
-            "blob": "d93f431577912340938e8f4cbe896e6b572b058c",
-            "content": "sha256:33b576f091f8b4efd2f7f3cbe72919dc3a3e8c1d5ecce3dbeef8fe54fc27e462",
+            "blob": "7cc125a6d4a5093a51132f2af0c4d291306e884a",
+            "content": "sha256:e65b6f731da025f18afc094136033157d3eaa151472dc80f0428106e4f4e1b85",
             "locator": {
               "end": 500,
               "kind": "line_range",

@@ -15,4 +15,5 @@ The module is part of the leaf's direct hand-over and instruction-guard evidence
 ## Evidence
 
 
+
 - A bound Reviewer opens and records ordinary CODE BLOCK rounds, retaining the same unresolved sealed ID; changed IDs and the next unapproved begin are refused. [1]

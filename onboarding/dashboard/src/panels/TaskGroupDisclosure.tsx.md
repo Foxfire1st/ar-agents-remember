@@ -50,10 +50,14 @@ No configured domain-documentation source was available for this local UI primit
 - RowCaret mounts the disclosure only for a non-flat parent, passing actual collapsed state and a callback that delegates the held-state decision to the list. [1]
 
 
+
 - The parent list mounts `TaskGroupDisclosure` for the descendant-bearing row. [2]
 
 
+
+
 - Focused tests verify native button semantics, accessible names, aria-expanded state, and selection isolation. [3]
+
 
 
 ### Cross-Repo References

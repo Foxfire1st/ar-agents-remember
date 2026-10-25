@@ -71,8 +71,12 @@ No relevant external documentation is configured for the memory-cap module.
 
 - Preview reports the selected resource mode and planned command. [1]
 - Execution follows the selected capped or uncapped command plan. [2]
+
 - The settings model for `orchestration.qualityGate`, including the host-managed `None` default. [3]
+
+
 - The fail-loud parser for `orchestration.qualityGate`, including absent/empty host-managed behavior. [4]
+
 
 ### Cross-Repo References
 

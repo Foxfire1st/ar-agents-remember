@@ -56,12 +56,12 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "Revision identity and crossing responses\n\nAnchor: deduplicates concurrent reads and reuses the parsed body after navigation",
+      "note": "Revision identity and crossing responses",
       "targets": [
         {
           "anchor": {
-            "blob": "b006c831d90995af88efe4c092cf41de90372ecb",
-            "content": "sha256:02b0b8b0147ebe5f4bacb2fba367d253ad7f1c5335eacd2542772026d7220cf4",
+            "blob": "c83285e17de7fb1ba7a99305ff79d478d0007cbb",
+            "content": "sha256:406d39b37177205cba7c92b3f4e439395a52197d224e714235fbec458c76f298",
             "locator": {
               "end": 69,
               "kind": "line_range",

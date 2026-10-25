@@ -3,16 +3,16 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The pipeline that invokes these passes at Stage 3, and the OWNED-vs-DELEGATE split.\n\nAnchor: `# dashboard-experience-review Dashboard Experience Review`",
+      "note": "The pipeline that invokes these passes at Stage 3, and the OWNED-vs-DELEGATE split.",
       "targets": [
         {
           "anchor": {
-            "blob": "9d9675efec08314d237737fc275cadad172934ec",
-            "content": "sha256:866b993ee02a239e143fc9e743bbaba4f6b8117f330a1c3151f8bf078b4cab0b",
+            "blob": "bf05b5698702f61d5cdb2c079ccbc59c881a89a8",
+            "content": "sha256:09e0d968707dafbf8970bef3f338e05cb2796c820757df74674325efea0a4412",
             "locator": {
-              "end": 134,
+              "end": 102,
               "kind": "line_range",
-              "start": 6
+              "start": 46
             },
             "path": "dev-skills/dashboard-experience-review/SKILL.md"
           },
@@ -21,12 +21,12 @@
       ]
     },
     "2": {
-      "note": "The doctrine whose violations raise severity by a tier.\n\nAnchor: `# Cockpit Dashboard — Review Doctrine`",
+      "note": "The doctrine whose violations raise severity by a tier.",
       "targets": [
         {
           "anchor": {
-            "blob": "3b03f380ad4729710613edb19be006631824405d",
-            "content": "sha256:a3e155bd1d6e77c9ee05d322c42597623ffbc4a9641f9ea5b76519a9839bd222",
+            "blob": "6ebfb806297848d106380c5ef96a6911d7a2f6ad",
+            "content": "sha256:9686028754fed6202d0e6d2daa420145174dcefe1e13d07359a88e14ef4b3431",
             "locator": {
               "end": 112,
               "kind": "line_range",

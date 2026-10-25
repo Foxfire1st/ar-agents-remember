@@ -87,15 +87,14 @@
       ]
     },
     "2": {
-      "note": "The `ObserverEvent` shape (trust/actor/kind/data).",
+      "note": "The `ObserverEvent` shape (trust/actor/kind/data).\n\nAnchor: `ObserverEvent`",
       "targets": [
         {
           "anchor": {
-            "blob": "505b38f7f19667fa0c0cc4caca3e8a966d548e1d",
-            "content": "sha256:8b045c8da2fe34c0eebd21a36174eb5c131119422538977de690652191a5fae3",
+            "blob": "25b46051e848ed30ec884515068da4de250b2117",
+            "content": "sha256:ad737b334a9d79e13b1ab2b81a6e1a25a8ccc71cfb4c4f2a07ca3e974d61049e",
             "locator": {
-              "kind": "symbol",
-              "name": "ObserverEvent"
+              "kind": "file"
             },
             "path": "dashboard/src/types/event.ts"
           },
@@ -143,7 +142,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e696c956756f8e506411a473a7778e5a2afc9bfb",
+            "blob": "57b40a28ef6817c4a90d64069b26a67fb7ed47eb",
             "content": "sha256:2f18f6e7b4d67baf5a8247a5f1b7ef458b6058c1f0ed8858151d5ad447397bbb",
             "locator": {
               "kind": "symbol",

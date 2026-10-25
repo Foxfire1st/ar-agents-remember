@@ -373,15 +373,14 @@
       ]
     },
     "50": {
-      "note": "The memory initializer this module's authority document is shared with (since MIK-R24 it also writes `knowledge/layout.json` for a brand-new root, and never for an existing one).",
+      "note": "The memory initializer this module's authority document is shared with (since MIK-R24 it also writes `knowledge/layout.json` for a brand-new root, and never for an existing one).\n\nAnchor: `initialize_memory`",
       "targets": [
         {
           "anchor": {
-            "blob": "d728e744eed73ba2c4a96242d1d8a2742c2eae22",
-            "content": "sha256:dc35f0ac6c1d979495de058188d436491161ef89a78952adbc42ac4916e8fe6d",
+            "blob": "67e94b40bdca0d2ade552d18fe76f65117816117",
+            "content": "sha256:f96fabc4d732d9b88a38bc15cd567f99ddb4aeee1feab743e649b111530dda32",
             "locator": {
-              "kind": "symbol",
-              "name": "initialize_memory"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/kernel/memory_init.py"
           },

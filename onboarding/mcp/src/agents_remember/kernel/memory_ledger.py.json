@@ -51,15 +51,14 @@
       ]
     },
     "13": {
-      "note": "A ledger read by the reviewer's worklist is recorded with the bytes read, its absence and its read failure.",
+      "note": "A ledger read by the reviewer's worklist is recorded with the bytes read, its absence and its read failure.\n\nAnchor: `_external_ledger`",
       "targets": [
         {
           "anchor": {
-            "blob": "947c83735c58429e61de59ea7777ebe2d820eb43",
-            "content": "sha256:181ee030afc2c2100350828b0c49a3719196e815d185db95bcb911071b7d2758",
+            "blob": "9719c9159d392a3e5377a242638474a1a15b1f37",
+            "content": "sha256:c081cf381bb3f13633d7bf5418bc9534212e3a89628153ff30047098d9b0be43",
             "locator": {
-              "kind": "symbol",
-              "name": "_external_ledger"
+              "kind": "file"
             },
             "path": "mcp/tests/test_reviewer_worklist_reads.py"
           },

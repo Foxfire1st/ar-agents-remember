@@ -30,8 +30,13 @@ Abandon now has explicit stage-transaction witnesses: terminal-contract write fa
 - Invalid parent stage refuses preview/apply without changing the pending contract. [5]
 
 
+
 - No-remains abandon and cleanup with persisted reason are pinned. [1]
 
+
+
 - Folder-only abandon and conditional cleanup branches preserve distinct no-remains discriminators. [2]
+
+
 
 - Returned refusal checks retain the original sentence/regex and complete no-write snapshot, adding exact nextStep and returncode identity. The original readiness and absence controls are not weakened by changing the refusal carrier. [3]

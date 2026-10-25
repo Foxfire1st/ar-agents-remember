@@ -159,11 +159,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "10fc96becf7770c443afcc8cee7888254836cc69",
-            "content": "sha256:38d624acd3e04b9a21161f22f18e389bd0052af14896728bdf9976d8361182c6",
+            "blob": "c9e2847f64ca428bdc799c8173b43aa736f4b0e9",
+            "content": "sha256:de8fea3db94fe34a6b30d3583ecaff1cdf4c047fc7b04d32ee0d7eb5571a40fb",
             "locator": {
-              "kind": "symbol",
-              "name": "WorktreeContract"
+              "end": 311,
+              "kind": "line_range",
+              "start": 246
             }
           },
           "kind": "code"

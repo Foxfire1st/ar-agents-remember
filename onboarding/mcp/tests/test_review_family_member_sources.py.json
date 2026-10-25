@@ -36,12 +36,22 @@
       ]
     },
     "17": {
-      "note": "`test_an_unresolved_locator_is_stated_with_its_recorded_locator_and_no_range` supplies the current fixture or assertion described above.",
+      "note": "`test_an_unresolved_locator_is_stated_with_its_recorded_locator_and_no_range` supplies the current fixture or assertion described above.\n\nAnchor: `test_an_unresolved_locator_is_stated_with_its_recorded_locator_and_no_range`",
       "targets": [
         {
           "anchor": {
-            "blob": "1863cffa06d71d79ae64ac0462a1fae69a504fd0",
-            "content": "sha256:b5c7289a9caaaff031a075dd6d77b6da46f251968d0c55544d3aeaf764754423",
+            "blob": "1a3f67ee67cb1020df64027cc09f2106124dc530",
+            "content": "sha256:02df58aec4d0bc1ad919106746ff7a7f94c81078d79faf781504cf126f29402c",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "1a3f67ee67cb1020df64027cc09f2106124dc530",
+            "content": "sha256:852ff7bee81c027477a97d0b272dc41451a65feb6a1a038b09fd1f2639154f46",
             "locator": {
               "kind": "symbol",
               "name": "test_an_unresolved_locator_is_stated_with_its_recorded_locator_and_no_range"
@@ -88,8 +98,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1863cffa06d71d79ae64ac0462a1fae69a504fd0",
-            "content": "sha256:3e619b73a87ee62d1efc6e6c9981337ee5b7533c0cbb122aef03e421c0ca4f0c",
+            "blob": "1a3f67ee67cb1020df64027cc09f2106124dc530",
+            "content": "sha256:dd88c170e39f82783ce0941670968593028463a2427967840f53bcb41f85e6f2",
             "locator": {
               "end": 44,
               "kind": "line_range",
@@ -101,15 +111,14 @@
       ]
     },
     "21": {
-      "note": "RowStore inserts index-shaped fixture rows without the retired production admission plane.",
+      "note": "RowStore writes text-tree fixture rows without the retired production admission plane.\n\nAnchor: `RowStore`",
       "targets": [
         {
           "anchor": {
-            "blob": "25497ca2fe27297d4ac750d338e86962058a76f1",
-            "content": "sha256:041b3cc8ba5b2d4ef617d3c837e60d9fdc1aca5a8c4787a0854ce08e91e91eee",
+            "blob": "62e692c8ea18903861ec2efddd03c884ed14f818",
+            "content": "sha256:43a32e8370a3aa07c1e8247bd8b4d445a42caab3b630d2ed5783e663bc3c824e",
             "locator": {
-              "kind": "symbol",
-              "name": "RowStore"
+              "kind": "file"
             },
             "path": "mcp/tests/knowledge_rows_test_support.py"
           },
@@ -183,15 +192,14 @@
       ]
     },
     "24": {
-      "note": "**The fixture: seven before claims, a copied after dataset and the re-attested after claim over two real commits.**",
+      "note": "**The fixture: seven before claims, an independently built matching after population and the re-recorded alpha claim over two real commits.**\n\nAnchor: `build_sources_fixture`",
       "targets": [
         {
           "anchor": {
-            "blob": "1863cffa06d71d79ae64ac0462a1fae69a504fd0",
-            "content": "sha256:33c1d10e04e3d6b1fde86165784b171d7cf78a032c2572ae86dac75387a9065f",
+            "blob": "1a3f67ee67cb1020df64027cc09f2106124dc530",
+            "content": "sha256:02df58aec4d0bc1ad919106746ff7a7f94c81078d79faf781504cf126f29402c",
             "locator": {
-              "kind": "symbol",
-              "name": "build_sources_fixture"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -247,12 +255,22 @@
       ]
     },
     "28": {
-      "note": "Unresolved locators keep their recorded value and carry no range.",
+      "note": "Unresolved locators keep their recorded value and carry no range.\n\nAnchor: `test_an_unresolved_locator_is_stated_with_its_recorded_locator_and_no_range`",
       "targets": [
         {
           "anchor": {
-            "blob": "1863cffa06d71d79ae64ac0462a1fae69a504fd0",
-            "content": "sha256:b5c7289a9caaaff031a075dd6d77b6da46f251968d0c55544d3aeaf764754423",
+            "blob": "1a3f67ee67cb1020df64027cc09f2106124dc530",
+            "content": "sha256:02df58aec4d0bc1ad919106746ff7a7f94c81078d79faf781504cf126f29402c",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "1a3f67ee67cb1020df64027cc09f2106124dc530",
+            "content": "sha256:852ff7bee81c027477a97d0b272dc41451a65feb6a1a038b09fd1f2639154f46",
             "locator": {
               "kind": "symbol",
               "name": "test_an_unresolved_locator_is_stated_with_its_recorded_locator_and_no_range"
@@ -345,16 +363,16 @@
       ]
     },
     "34": {
-      "note": "The lane registration.\n\nAnchor: `test_review_family_member_sources`",
+      "note": "The lane registration. Source caption: `test_review_family_member_sources`",
       "targets": [
         {
           "anchor": {
-            "blob": "11ba98ff63f4a4815985ac51e2c0c7b5a48556a4",
-            "content": "sha256:e111d9824c5c3b8661b7747afcdcbdcaaad1743618904d235184c6584fe3b78a",
+            "blob": "102c4550ab6429f44c8fb543d1d0662de66a1b8c",
+            "content": "sha256:f176b16c2afbd14618bc048ea73d4b31a20898a9e7f85cac3869f6f76c354ada",
             "locator": {
-              "end": 365,
+              "end": 358,
               "kind": "line_range",
-              "start": 365
+              "start": 358
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -363,12 +381,25 @@
       ]
     },
     "35": {
-      "note": "The shared-fixture consumer registration.\n\nAnchor: `test_review_family_member_sources`",
+      "note": "The shared-fixture consumer registration.",
       "targets": [
         {
           "anchor": {
-            "blob": "a0569bc130f1ea52e6731d4460788c50542ae82a",
-            "content": "sha256:e111d9824c5c3b8661b7747afcdcbdcaaad1743618904d235184c6584fe3b78a",
+            "blob": "3c5993c94cf78973b3b39cfe7de9774c8aea6d1a",
+            "content": "sha256:7e027222c96ad14c1c4341d24a8b3af6f32f8c3230040db2e2f1ff07eddd9be8",
+            "locator": {
+              "end": 3307,
+              "kind": "line_range",
+              "start": 3307
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "3c5993c94cf78973b3b39cfe7de9774c8aea6d1a",
+            "content": "sha256:b7a8c5c6b9750f6382f814c83dce10800497283a461bbd4745015146c916c802",
             "locator": {
               "end": 1948,
               "kind": "line_range",

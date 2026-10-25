@@ -68,7 +68,9 @@ The pinned Architect planning paragraph includes the single developer question ‚
 - Declared step detail bytes travel as separate references. [2]
 - The handover writes immutable source details beside its file. [3]
 - The launch composition names frozen details by their request paths. [4]
+
 - The Curator receives ruled step details separately and keeps the writer boundaries. [5]
+
 - Manager curation receives neither the Curator's card nor the writer's steps. [6]
 - The real D301 capsules deliver named step files as frozen launch artifacts. [7]
 - The Curator's capsule keeps the whole handover and its step limits. [8]
@@ -87,6 +89,7 @@ The pinned Architect planning paragraph includes the single developer question ‚
 - Operation audience markings preserve the pinned bytes and the immutable closeout. [21]
 - A repairing role stops after three repairs of the same check or finding. [22]
 - The expected Reviewer-only paragraph includes the missing-entry return and the clean-sync no-round obligations. [23]
+
 - The approved implementation and review body hashes are repinned in the existing corpus check. [24]
 
 - The pinned Architect planning paragraph includes the single developer question ‚Äúgo, or review first?‚Äù, disclosure that the upfront review has a planned comparison with no task workspace, first-Explain environment creation, and the `intentReview` answer. The Manager paragraphs pin that `intent-review-open` waits for the Architect's go and is not retried. Their planning/coordination seals move with those exact admitted sentences. [25]

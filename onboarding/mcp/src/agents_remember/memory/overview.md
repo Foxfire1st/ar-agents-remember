@@ -133,6 +133,8 @@ These retired source accounts preserve earlier intent only. Their former citatio
 
 ## Evidence
 
+- Retained reference account (no fresh execution or acceptance inferred): The per-file detail for the module that gained the export.
+
 Inherited numbered findings [116], [149] retain their exact wording and full targets as historical custody where their candidate9 owner is retired or their account conflicts with the current route. They are not evidence that an absent legacy owner still executes. No guarantee is retired by this proposal; parent disposition remains required. The source-bound current account below is separate.
 
 
@@ -154,7 +156,6 @@ Inherited numbered findings [116], [149] retain their exact wording and full tar
 - Retained reference account (no fresh execution or acceptance inferred): The single-file publication the export deliberately does not replace. [24]
 - Retained reference account (no fresh execution or acceptance inferred): **Its first consumer, which derives the whole generation layout from it.** [25]
 - Retained reference account (no fresh execution or acceptance inferred): The per-file detail for the module that gained the export: the durable root and the shipped value it returns. [26]
-- Retained reference account (no fresh execution or acceptance inferred): The per-file detail for the module that gained the export. [27]
 - Retained reference account (no fresh execution or acceptance inferred): The two operations and twelve codes the merge added to the shared vocabulary. [39]
 - Retained reference account (no fresh execution or acceptance inferred): **The read half's selection policy: `F0` frozen before membership expansion, the advertised-and-untraversed frontier, and the declared item order.** [41]
 - Retained reference account (no fresh execution or acceptance inferred): Whole-item paging over an already-selected scope. [42]
@@ -233,7 +234,6 @@ Inherited numbered findings [116], [149] retain their exact wording and full tar
 - Retained reference account (no fresh execution or acceptance inferred): The bound-checked line-range observation. [18]
 - Retained reference account (no fresh execution or acceptance inferred): The symbol observation carrying every defining extent. [19]
 - Retained reference account (no fresh execution or acceptance inferred): **The display seam: one observation, the carried partition, the two established omissions, and the deliberate non-replacement.** [22]
-- Retained reference account (no fresh execution or acceptance inferred): Real authority availability and unmeasured count contract. [31]
 - Retained reference account (no fresh execution or acceptance inferred): The shared case harness registered as `contract:common-base-merge-cases`, and its evidence node. [52]
 - Retained reference account (no fresh execution or acceptance inferred): **The advertised command, now the delimiter-safe interface the measurement itself reads.** [97]
 - Retained reference account (no fresh execution or acceptance inferred): **The expansion detail that states a partial observation's own limit instead of only counting the paths it could carry.** [98]

@@ -39,15 +39,14 @@
   "realizes": [],
   "references": {
     "10": {
-      "note": "Retained citation_fix-only configured-contract-authority refusal assertions.",
+      "note": "Retained citation_fix-only configured-contract-authority refusal assertions.\n\nAnchor: `test_citation_tools_name_a_configured_contract_authority_refusal`",
       "targets": [
         {
           "anchor": {
-            "blob": "b0f0a8f5d35241679c8c7ae2f3266628049542a7",
-            "content": "sha256:0acd2450a45d829ef37d4b394e7e39548164fd088f47feb6a707ed9d94720b74",
+            "blob": "5ccfc2f0216de5938eaaad23dc4e41733c57613b",
+            "content": "sha256:43c78866b14d9f46fa72c00abdc5dc8c3089f30ce001436395ef7e624076b47a",
             "locator": {
-              "kind": "symbol",
-              "name": "test_citation_tools_name_a_configured_contract_authority_refusal"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -75,8 +74,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6cee0991b51d19733071c1bdbf92f2f8e593c72b",
-            "content": "sha256:93873c83ce1b6de0c04065ac00695742aa55b14cbb99a1dcec35c4e99fe2c8c6",
+            "blob": "5ccfc2f0216de5938eaaad23dc4e41733c57613b",
+            "content": "sha256:b5c9ee4d74fc87285a66a6391685d0eb5dbca0e07aeb6bac030fc64d449cac7b",
             "locator": {
               "end": 112,
               "kind": "line_range",
@@ -92,8 +91,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6cee0991b51d19733071c1bdbf92f2f8e593c72b",
-            "content": "sha256:93873c83ce1b6de0c04065ac00695742aa55b14cbb99a1dcec35c4e99fe2c8c6",
+            "blob": "5ccfc2f0216de5938eaaad23dc4e41733c57613b",
+            "content": "sha256:b5c9ee4d74fc87285a66a6391685d0eb5dbca0e07aeb6bac030fc64d449cac7b",
             "locator": {
               "end": 112,
               "kind": "line_range",
@@ -109,8 +108,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6cee0991b51d19733071c1bdbf92f2f8e593c72b",
-            "content": "sha256:93873c83ce1b6de0c04065ac00695742aa55b14cbb99a1dcec35c4e99fe2c8c6",
+            "blob": "5ccfc2f0216de5938eaaad23dc4e41733c57613b",
+            "content": "sha256:b5c9ee4d74fc87285a66a6391685d0eb5dbca0e07aeb6bac030fc64d449cac7b",
             "locator": {
               "end": 112,
               "kind": "line_range",
@@ -126,8 +125,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6cee0991b51d19733071c1bdbf92f2f8e593c72b",
-            "content": "sha256:93873c83ce1b6de0c04065ac00695742aa55b14cbb99a1dcec35c4e99fe2c8c6",
+            "blob": "5ccfc2f0216de5938eaaad23dc4e41733c57613b",
+            "content": "sha256:b5c9ee4d74fc87285a66a6391685d0eb5dbca0e07aeb6bac030fc64d449cac7b",
             "locator": {
               "end": 112,
               "kind": "line_range",
@@ -156,15 +155,14 @@
       ]
     },
     "9": {
-      "note": "Negative registration/roster/model assertions for citation_migrate.",
+      "note": "Negative registration/roster/model assertions for citation_migrate.\n\nAnchor: `test_the_tool_is_not_registered_advertised_or_modelled`",
       "targets": [
         {
           "anchor": {
-            "blob": "b0f0a8f5d35241679c8c7ae2f3266628049542a7",
-            "content": "sha256:be11367bb8424b91d8513f8cc8c546c8d6db5f7ddfeb9cbf9cb64476e6c0850e",
+            "blob": "5ccfc2f0216de5938eaaad23dc4e41733c57613b",
+            "content": "sha256:43c78866b14d9f46fa72c00abdc5dc8c3089f30ce001436395ef7e624076b47a",
             "locator": {
-              "kind": "symbol",
-              "name": "test_the_tool_is_not_registered_advertised_or_modelled"
+              "kind": "file"
             }
           },
           "kind": "test"

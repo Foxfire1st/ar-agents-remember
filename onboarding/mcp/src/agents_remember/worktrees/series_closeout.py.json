@@ -131,10 +131,11 @@
         {
           "anchor": {
             "blob": "8d72ef78699dbeac2d7afe91a91bd4824265e0f6",
-            "content": "sha256:ad01f6f9b90deef6e2925ce657c80182c000bb9a5b1c83947e63119f0cc72f50",
+            "content": "sha256:3ac41c041d874284f11a9734da21dad08b464c9bee055d5a290d1c0e86a48ea7",
             "locator": {
-              "kind": "symbol",
-              "name": "SeriesCheckpointRefs"
+              "end": 123,
+              "kind": "line_range",
+              "start": 114
             }
           },
           "kind": "code"
@@ -144,8 +145,9 @@
             "blob": "8d72ef78699dbeac2d7afe91a91bd4824265e0f6",
             "content": "sha256:3ff9bea0e28f74c006cebecdeb7b3209b9ca2c462d8b8109f8d33b995f304eba",
             "locator": {
-              "kind": "symbol",
-              "name": "publish_series_checkpoint_under_authority"
+              "end": 247,
+              "kind": "line_range",
+              "start": 216
             }
           },
           "kind": "code"
@@ -153,7 +155,7 @@
       ]
     },
     "3": {
-      "note": "Leaf membership, output identity, and ordering remain exact.",
+      "note": "Leaf membership, output identity, and ordering remain exact.\n\nAnchor: `_exact_atomic_landing_chain` `_ordered_atomic_landing_chain` `_atomic_leaf_code_matches` `_atomic_leaf_memory_matches`",
       "targets": [
         {
           "anchor": {
@@ -202,7 +204,7 @@
       ]
     },
     "4": {
-      "note": "Recorded origins and admitted substantive history preserve reconciled series proof.",
+      "note": "Recorded origins and admitted substantive history preserve reconciled series proof.\n\nAnchor: `_require_chain_origin` `_require_admitted_step`",
       "targets": [
         {
           "anchor": {
@@ -256,7 +258,7 @@
       ]
     },
     "6": {
-      "note": "Recorded origins and admitted substantive history preserve reconciled series proof.",
+      "note": "Recorded origins and admitted substantive history preserve reconciled series proof.\n\nAnchor: `_require_chain_origin` `_require_admitted_step` `_positions_inside_the_step` `_reached_by_an_official_position`",
       "targets": [
         {
           "anchor": {
@@ -337,7 +339,7 @@
       ]
     },
     "9": {
-      "note": "An empty leaf chain skips leaf-origin validation; spine validation still proves the series ref from its recorded or pre-sync base and admitted source positions.",
+      "note": "An empty leaf chain skips leaf-origin validation; spine validation still proves the series ref from its recorded or pre-sync base and admitted source positions.\n\nAnchor: `_require_chain_origin` `_require_landing_spine_side`",
       "targets": [
         {
           "anchor": {

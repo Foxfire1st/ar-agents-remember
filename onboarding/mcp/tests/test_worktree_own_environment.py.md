@@ -45,7 +45,9 @@ accounting contracts; no external source is claimed.
 - All shipped worker briefs must delegate environment setup and record the actual interpreter. [1]
 - Canonical instruction surfaces contain no named candidate-interpreter tokens. [2]
 - The token predicate rejects the retired wording rather than passing vacuously. [3]
+
 - The accounting case requires a built venv and excludes either environment directory from the working inventory; it does not run the lifecycle. [4]
+
 
 ### Cross-Repo References
 

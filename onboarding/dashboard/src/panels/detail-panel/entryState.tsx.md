@@ -52,10 +52,18 @@ No relevant domain documentation was found.
 
 - Why the pattern exists, and why the disclosure is outside the button. [1]
 - The closed disclosure with its accessible summary. [2]
+
 - The brief word per shared token. [3]
+
+
 - The owner's full sentence, with nothing invented. [4]
+
+
 - The disclosure styles. [5]
+
+
 - The two consumers. [6]
+
 
 ### Cross-Repo References
 

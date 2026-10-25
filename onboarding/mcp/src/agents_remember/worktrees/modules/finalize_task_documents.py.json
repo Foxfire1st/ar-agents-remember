@@ -205,15 +205,14 @@
   ],
   "references": {
     "1": {
-      "note": "Series finalization selects the master and any proven typed or correlated seat row; absent or ambiguous correlation is reported as skipped unless a parent was asserted.",
+      "note": "Series finalization selects the master and any proven typed or correlated seat row; absent or ambiguous correlation is reported as skipped unless a parent was asserted.\n\nAnchor: `resolve_series_targets`",
       "targets": [
         {
           "anchor": {
-            "blob": "47c3c6c1197098901dd9e1a004bd32a2c2617454",
-            "content": "sha256:98820625a31b901e4c6b61d054fea15a5486289f2a323c7150e98f3bc275ee29",
+            "blob": "b8bda143860aa43bd6865974d210d639a5ffe665",
+            "content": "sha256:dae78692c3f880a9249afa60c0944470b31b3405c308e45b8f77235c248a2a2a",
             "locator": {
-              "kind": "symbol",
-              "name": "resolve_series_targets"
+              "kind": "file"
             }
           },
           "kind": "code"

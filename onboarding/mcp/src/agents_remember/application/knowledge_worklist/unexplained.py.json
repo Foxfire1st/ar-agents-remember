@@ -22,12 +22,12 @@
   ],
   "references": {
     "1": {
-      "note": "The module docstring: registration, what is raised, coverage and satisfaction.\n\nAnchor: \"MIK-R10's unexplained changes\"",
+      "note": "The module docstring: registration, what is raised, coverage and satisfaction.",
       "targets": [
         {
           "anchor": {
-            "blob": "b4b5af83970320975a67685a916fedb49b483a5b",
-            "content": "sha256:07f36e49a86b1cf195be2a8ee607c684ea05259f9ad442272f644fbb550c2489",
+            "blob": "62a9874eea7180a43ff42b31d50d47fc23a761ec",
+            "content": "sha256:bc94153dc45ded3d55492c1ee3f241b5b7e8d7b3b040200079337486a47cc163",
             "locator": {
               "end": 35,
               "kind": "line_range",
@@ -71,26 +71,14 @@
       ]
     },
     "12": {
-      "note": "Unlinked hunks and non-text changes collected; identical lines share a subject.",
+      "note": "Unlinked hunks and non-text changes collected; identical lines share a subject.\n\nAnchor: `_Collector` `change`",
       "targets": [
         {
           "anchor": {
-            "blob": "b4b5af83970320975a67685a916fedb49b483a5b",
-            "content": "sha256:25b7af0891971428588622fb62e28f0278d7a702422680d682ceb14391af4a62",
+            "blob": "62a9874eea7180a43ff42b31d50d47fc23a761ec",
+            "content": "sha256:c4900bcedbbf44212a41caa27dda53a0e5b0612aeb35db8efb35ea9c5dea8341",
             "locator": {
-              "kind": "symbol",
-              "name": "_Collector"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "b4b5af83970320975a67685a916fedb49b483a5b",
-            "content": "sha256:aac499b1d244cc6e9628e1378070115daf4b98eba08c389696e543a11e5d91cc",
-            "locator": {
-              "kind": "symbol",
-              "name": "change"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -159,15 +147,14 @@
       ]
     },
     "16": {
-      "note": "The answering set from covered items only; stray `no_invariant` rows are unnecessary.",
+      "note": "The answering set from covered items only; stray `no_invariant` rows are unnecessary.\n\nAnchor: `unexplained_items`",
       "targets": [
         {
           "anchor": {
-            "blob": "b4b5af83970320975a67685a916fedb49b483a5b",
-            "content": "sha256:5dca16bf69734edf893d234298fa62b9397ac356ceb40507ee2b8026b5ac87a3",
+            "blob": "62a9874eea7180a43ff42b31d50d47fc23a761ec",
+            "content": "sha256:c4900bcedbbf44212a41caa27dda53a0e5b0612aeb35db8efb35ea9c5dea8341",
             "locator": {
-              "kind": "symbol",
-              "name": "unexplained_items"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -236,15 +223,14 @@
       ]
     },
     "2": {
-      "note": "The one satisfying-row text over both kinds and the coverage split.",
+      "note": "The one satisfying-row text over both kinds and the coverage split.\n\nAnchor: `_SATISFYING_ROW`",
       "targets": [
         {
           "anchor": {
-            "blob": "b4b5af83970320975a67685a916fedb49b483a5b",
-            "content": "sha256:4ae6f380902d6ece5b51db0f13934acdc6f60d0fc54b188cb58b11970001190f",
+            "blob": "62a9874eea7180a43ff42b31d50d47fc23a761ec",
+            "content": "sha256:c4900bcedbbf44212a41caa27dda53a0e5b0612aeb35db8efb35ea9c5dea8341",
             "locator": {
-              "kind": "symbol",
-              "name": "_SATISFYING_ROW"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -252,12 +238,12 @@
       ]
     },
     "20": {
-      "note": "Step 7 of the run: the items join the one sorted list.\n\nAnchor: `unexplained_items`",
+      "note": "Step 7 of the run: the items join the one sorted list.",
       "targets": [
         {
           "anchor": {
-            "blob": "a9361b86286bca9cc42dd02954bfb370d3f6ac13",
-            "content": "sha256:adea779c07461380ea74319b60280e96ff45253eaf6dacaa189f135dcac1eee8",
+            "blob": "59df3e87b029877e99fa290243535ef8afed51ed",
+            "content": "sha256:c16f4be68071ea31f9aec73c7866e4572986ecf529fcc488e1b5576b4140bdba",
             "locator": {
               "end": 279,
               "kind": "line_range",
@@ -270,12 +256,12 @@
       ]
     },
     "21": {
-      "note": "Per-change linkage belongs to linkage._Linkage._change; linkage._linked symmetrically requires changed lines on the side supplying coverage: delete-only B, insertion-only C.",
+      "note": "Per-change linkage belongs to linkage._Linkage._change; linkage._classify_hunk symmetrically requires changed lines on the side supplying coverage: delete-only B, insertion-only C.",
       "targets": [
         {
           "anchor": {
-            "blob": "8f2174f431d1314684097c47a8a4ebcd365a15ee",
-            "content": "sha256:bfcfe1d10a8145d49c2e35e1120bfda4c136912bb3eb5f7f627ac1711aa2c6bc",
+            "blob": "6d7207b62870c112ca4f25941c37846c0152a38a",
+            "content": "sha256:c0ccd7c87236c95c6ef8f7fbbbf3cad1fe809e6da7b3aa82c2eb332e3453e75e",
             "locator": {
               "end": 56,
               "kind": "line_range",
@@ -287,8 +273,8 @@
         },
         {
           "anchor": {
-            "blob": "8f2174f431d1314684097c47a8a4ebcd365a15ee",
-            "content": "sha256:db79a7714ac6d5e7970f07a1b22fa6ecc32e8977493f6b38478764d462d52f4f",
+            "blob": "6d7207b62870c112ca4f25941c37846c0152a38a",
+            "content": "sha256:2538a9857190784faf002a61a8e4a84e25c9a3273724f0ecc49ac48fa22ac285",
             "locator": {
               "end": 106,
               "kind": "line_range",
@@ -366,15 +352,14 @@
       ]
     },
     "25": {
-      "note": "An uncovered file: its onboarding trace; its no_invariant row is unnecessary.",
+      "note": "An uncovered file: its onboarding trace; its no_invariant row is unnecessary.\n\nAnchor: `test_an_uncovered_new_file_is_satisfied_by_its_onboarding_trace`",
       "targets": [
         {
           "anchor": {
-            "blob": "8e108013ca6f2f2a0a316b40a89ba0dff31652d9",
-            "content": "sha256:c8eaca5b6d41d9b5d9647daa9dd9067331cc3d34a6b02bee18e654be630df6d6",
+            "blob": "4db279a6707405d8691a10946c71c433d9c71823",
+            "content": "sha256:66b6cbe0523bee0559e9bd323bd871e4d0c69c177ace2e539a62ba7c626ca2e0",
             "locator": {
-              "kind": "symbol",
-              "name": "test_an_uncovered_new_file_is_satisfied_by_its_onboarding_trace"
+              "kind": "file"
             },
             "path": "mcp/tests/test_unexplained_change_disposition.py"
           },
@@ -400,12 +385,12 @@
       ]
     },
     "27": {
-      "note": "The initial uncovered trace and row selection share the actual counted card change before separate-item settlement.\n\nThe initial uncovered-item fact and its answer use one actual counted card change; settlement may still replace both from the trace item. A counted edit alone does not answer the item.\n\nAnchor: `mcp/src/agents_remember/application/knowledge_worklist/unexplained.py`",
+      "note": "The initial uncovered-item fact and its answer use one actual counted card change; settlement may still replace both from the trace item. A counted edit alone does not answer the item.",
       "targets": [
         {
           "anchor": {
-            "blob": "2fd25829eecb328f37c2a31bfc1352e0eedcf2c8",
-            "content": "sha256:acc38054ca59f28756eaab8dbce35fc9e7e062553a8aace47351f1fcc51c7c5e",
+            "blob": "62a9874eea7180a43ff42b31d50d47fc23a761ec",
+            "content": "sha256:c4900bcedbbf44212a41caa27dda53a0e5b0612aeb35db8efb35ea9c5dea8341",
             "locator": {
               "kind": "file"
             }
@@ -419,8 +404,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0cb1f808ea70c1133423ea224e66a9c4547836dd",
-            "content": "sha256:06eab91e96cf7f1a7493f5f968f76bb841e9414023a39e96c216472e7fc46a22",
+            "blob": "62a9874eea7180a43ff42b31d50d47fc23a761ec",
+            "content": "sha256:77503e7bcbecee261786f4a388395af7612b8f201b0d5c582340727f8c7d22f0",
             "locator": {
               "end": 526,
               "kind": "line_range",

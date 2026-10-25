@@ -35,19 +35,34 @@ Every claim on this card is checkable in the uncommitted candidate: the module's
 fourteen definitions, the application modules that fill these values, the review vocabulary that
 re-exports them, and the cases that measure the shape through the production composition.
 
-- **The module's own statement of the five rules its shape enforces: both sides, the carried identity, no blank state, recorded-only pairing bases, and the rename as an inference.** [1]
+
+- The module's own statement of the four rules its shape enforces: both sides, the carried identity, no blank state, and the rename as an inference. [1]
+
+
 - The published vocabulary. [2]
-- The four relationship kinds, the two side names, the five side states, the six transitions and the seven gap codes. [3]
-- **The two recorded relations a pairing may name, and the single-member rename basis.** [4]
+
+
+- The four relationship kinds, the two side names, the six side states, the seven transitions and the six gap codes. [3]
+
+
+- The two recorded relations a pairing may name, and the single-member rename basis. [4]
+
 - **The unresolved fact as a value: its side, its field, its code and its sentence.** [5]
 - **One snapshot's recorded side, with the validator that refuses a recorded side carrying no relationship identity.** [6]
-- A recorded relation with every related revision, and the absence of any field a similarity could occupy. [7]
 - **The labelled rename inference, with the validator that ties a pairing to its state and refuses a similarity word on an unmeasured inference.** [8]
+
 - **The movement's four validators: the transition must match its sides, a gap must name a displayed side, a pairing must state its basis, and an absent identity must state itself.** [9]
+
+
 - The application module that builds the movements, and the display module that renders them. [10]
+
+
 - The review vocabulary that re-exports these names and gains the two new fields on the pane row. [11]
 
-- The production movement cases retain moved and withdrawn realizations and distinguish each declared route from an unread route side. [12]
+
+
+- The production movement cases retain withdrawn realizations and distinguish each declared route from an unread route side; a moved realization is displayed as a retraction and an addition, not one movement. [12]
+
 
 
 ### Cross-Repo References

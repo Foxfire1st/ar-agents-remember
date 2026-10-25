@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/cli/context_packet.py",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
@@ -7,8 +8,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1b1b9671292115c6dd9de74936534444e0f8affe",
-            "content": "sha256:514fad889468a806ec57d17b62cd9ab44b6ebefa44cbd0699a45ced8dd108303",
+            "blob": "37b2aac34d912943eff6a629b0d6906b3df837f0",
+            "content": "sha256:f693daf76a853a8dd3717df397402b659122d0092f9d56512ec1cbb23653a985",
             "locator": {
               "kind": "symbol",
               "name": "build_context_packet"
@@ -19,8 +20,8 @@
         },
         {
           "anchor": {
-            "blob": "1b1b9671292115c6dd9de74936534444e0f8affe",
-            "content": "sha256:5d447d35f33dba40c66d1c4aff55d65dd1ed9c19199b789d5f91a7c3f67b330a",
+            "blob": "37b2aac34d912943eff6a629b0d6906b3df837f0",
+            "content": "sha256:a74cfa6b84ea15d212447d2d0a679c2955630af5c6678e9ce334b7b5f09c73ce",
             "locator": {
               "end": 104,
               "kind": "line_range",
@@ -29,16 +30,27 @@
             "path": "mcp/src/agents_remember/application/context_packet.py"
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "37b2aac34d912943eff6a629b0d6906b3df837f0",
+            "content": "sha256:b555aa17fe4af5d16d43fbd5b8426035a27e8b75737f9931a7e7582236902440",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/context_packet.py"
+          },
+          "kind": "code"
         }
       ]
     },
     "2": {
-      "note": "CLI JSON output is covered by the context packet tests.\n\nAnchor: \"class ContextPacketTests(unittest.TestCase):\"",
+      "note": "CLI JSON output is covered by the context packet tests.",
       "targets": [
         {
           "anchor": {
-            "blob": "5a79aface2c4f39b630e117c45e48f88b20fb3ea",
-            "content": "sha256:8774f7c72ae3ed700cf52d9468bdc4370d7ab782904a13721f19389f19e861fb",
+            "blob": "a363ba265e5b479e8a8bf64b04e6165f1fe893f5",
+            "content": "sha256:2396e4c2cb4dc94a9f590a49fad7bffb172be9141b402041ab48a73d44a9a46a",
             "locator": {
               "end": 107,
               "kind": "line_range",

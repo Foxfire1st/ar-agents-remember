@@ -189,8 +189,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3752a3ab168c0328d813795f07294a49dbda4106",
-            "content": "sha256:4e5d9a4af3aa583e267580822939120931bc93c8854770cedbd8a41ec8e49956",
+            "blob": "0b496c35d974799f8b06ef5d5fbcd481df3c13fa",
+            "content": "sha256:acc10e08a3f05b05d8fc9f0b6ce20dea50a4aef973e6a4c30b76c193b54ecc7f",
             "locator": {
               "kind": "symbol",
               "name": "test_an_interrupted_cache_deletion_replays_as_attributed_already_absent"
@@ -356,16 +356,16 @@
       ]
     },
     "8": {
-      "note": "The lane row.\n\nAnchor: \"mcp/tests/test_review_artifact_cleanup.py\"",
+      "note": "The lane row. Source caption: \"mcp/tests/test_review_artifact_cleanup.py\"",
       "targets": [
         {
           "anchor": {
-            "blob": "11ba98ff63f4a4815985ac51e2c0c7b5a48556a4",
-            "content": "sha256:526a643244ab1dbb0d8f374c24e9047cc62d337dcb37d130f76a0ab5725ee5b5",
+            "blob": "102c4550ab6429f44c8fb543d1d0662de66a1b8c",
+            "content": "sha256:5c841a673a207505dfd9cb6be6bd129ad78df140553cc864386850fef01a7f77",
             "locator": {
-              "end": 347,
+              "end": 338,
               "kind": "line_range",
-              "start": 347
+              "start": 338
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },

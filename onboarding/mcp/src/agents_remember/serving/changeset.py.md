@@ -193,10 +193,16 @@ sidecar pairing from `kernel/sidecar_pairing.route_sidecar_status`.
 
 - The shared scope resolution + error map (`FileScope`, `run_scoped`, `language_for`). [1]
 > Historical reference 2 groups the former worktree-module primitive ownership. The current serving count/text owner is named above and in current evidence; it is not a current local-definition or runtime claim.
+
 - Sidecar presence is derived from governing route indexes or a mirrored sidecar-file probe. [3]
+
 - Shared path confinement resolves the requested path and refuses repository escape. [4]
-- The persisted contract model ("def load_contract(path: Path) -> WorktreeContract:") and loader ("def load_contract(path: Path) -> WorktreeContract:") behind master/leaf accumulation, with leaf-id normalization via "slug = slugify(worktree_name)". `slugify` is now defined in `tasks/task_paths.py` and re-exported by `worktrees/task_resolver.py`. [5]
+
+> Retained earlier citation wording: - The persisted contract model ("def load_contract(path: Path) -> WorktreeContract:") and loader ("def load_contract(path: Path) -> WorktreeContract:") behind master/leaf accumulation, with leaf-id normalization via "slug = slugify(worktree_name)". `slugify` is now defined in `tasks/task_paths.py` and re-exported by `worktrees/task_resolver.py`. [5]
+
+
 - The app factory that calls `register_changeset_routes` before `mount_static`. [6]
+
 
 > Historical declaration excerpt (not current extent): | The task change-set envelope carries code/memory changes and counters. | "class TaskChangeSet(" | mcp/src/agents_remember/serving/response_contract.py:834-840 |
 > Historical declaration excerpt (not current extent): | The leaf change-set extends the task shape with the selected committed/working mode, and (260921-ICR-L25) with the `state`/`stateDetail` pair that keeps an unrecorded range apart from a measured-empty one. | "class LeafChangeSet(" | mcp/src/agents_remember/serving/response_contract.py:843-860 |
@@ -257,10 +263,16 @@ content comes from the same recorded pair as the path list.
 says so. The two modes are never mixed.
 
 - **The two sides resolve independently, with the code half carrying its named absence in the return value while only an unrecorded memory half degrades to empty.** [7]
+
 - The committed branch of the file diff, now reading both sides from the recorded range's own repository. [8]
+
 - The doc-reader entry point that publishes the `committed` view's `state`/`stateDetail` and states the live-worktree requirement for `working`. [9]
+
 - **The new collaborator: which exact Git objects a committed range binds, the three absence kinds, and the named absence an unrecorded endpoint reports.** [10]
+
+
 - **The cases that measure the change: the recorded range bound and unmoved by a later commit, the state answered instead of a `HEAD` read, the route's own `200`, and the one-half degradation.** [11]
+
 
 ## 260921-ICR-L13 Current Delta — The Master Net Is Generation-Bound, And Selection Moved Out
 
@@ -285,7 +297,9 @@ complexity overflow (C901 11>10) was cleared by that extraction, with no suppres
 limit widening. `LeafSummary` rows carry the new `state` (`committed`/`working`, from
 `_leaf_state`).
 
+
 - **The thin delegating entry: pins in, selection resolved, endpoint-to-endpoint diffs per side, `generation` + `currentness` + `scope` published; unknown master degrades, missing code endpoints refuse.** [12]
+
 - **One side's net between two validated commits: empty pair degrades to `[]`, failed read refuses as `unresolvable`, missing repository refuses as `no-repository`.** [13]
 - **The pinned AFTER side: live integrated result unpinned, exact recorded tip pinned; unresolvable pins refused, never re-resolved.** [14]
 - **Whether a breakdown row shows live work or its landed delta.** [15]
@@ -339,9 +353,20 @@ an empty `stateDetail`.
 - **The caller that now carries the code half's named absence instead of raising it, and the memory half that still degrades to empty.** [19]
 - **The doc-reader entry point that publishes the absence as the body's `state`/`stateDetail`.** [20]
 - **The served vocabulary of the two states.** [21]
+
 - **The cases that measure this change: the state discriminator with the head absent from the detail, the route-level status, and the one-half degradation.** [22]
+
+
 - **The client that carries the state and withholds the total it would misprint.** [23]
 
+
+
 - All three change-set routes share and return one app-owned conditional-read cache. [28]
+
+
 - Only actual successful response bytes get the ETag/no-cache and matching bodyless 304 path. [29]
-- NUL-safe count/status reads belong to the serving reader, not the worktree mutator. [30]
+
+
+- The serving entry caches and reuses the worktree mutator's own NUL-delimited count/status read rather than implementing a second one. [30]
+
+- The persisted WorktreeContract model and load_contract loader support master/leaf accumulation. normalize_contract_leaf_id resolves legacy leaf IDs through the canonical task-document reference; worktree_folder_name separately applies "slug = slugify(worktree_name)" to folder names. `slugify` is defined in `tasks/task_paths.py` and re-exported by `worktrees/task_resolver.py`. [5]

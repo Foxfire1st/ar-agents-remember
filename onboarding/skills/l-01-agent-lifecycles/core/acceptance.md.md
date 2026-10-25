@@ -58,7 +58,9 @@ No relevant documentation found after checking live sources.
 
 ### Repo-Internal References
 
-- The host relays mechanical turn completion without inspecting acceptance artifacts. \[1] [8]
+
+- The host relays mechanical turn completion without inspecting acceptance artifacts. \[8] [8]
+
 
 - Each seat has its own artifact and distinct validator. \[2] [9]
 
@@ -129,7 +131,9 @@ The earlier packaged-path card described the same completion boundary, envelope,
 
 The quoted anchors below are literal strings in the canonical source ranges. They establish declarations and selected instruction boundaries, not executed outcomes.
 
+
 - Mechanical completion, artifact-blind relay, owner validation and unchanged authority. [1]
+
 - Seat/artifact/validator duties and no second completion row. [2]
 - One primary revision, six-part envelope and independent adjudication. [3]
 - Immutable attempts, malformed-row correction, candidate-specific review and successor rules. [4]

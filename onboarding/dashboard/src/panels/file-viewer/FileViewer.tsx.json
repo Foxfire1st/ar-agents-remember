@@ -1,5 +1,6 @@
 {
   "path": "dashboard/src/panels/file-viewer/FileViewer.tsx",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
@@ -201,8 +202,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5131273c15899ad6afac98ffc28a6005a9b54d32",
-            "content": "sha256:6fdf1e0ad4f182baf776bf3ac64b7530e1f43832b9b646cb1f0c15a70085a52f",
+            "blob": "1b839113b8d511b4a8343230e70a8de0be01b79f",
+            "content": "sha256:1ac52653a51e3f6baa0cd6d608709287a3c4c3f8e993d65d3bf8e2170c817edc",
             "locator": {
               "kind": "symbol",
               "name": "CockpitShell"
@@ -213,8 +214,8 @@
         },
         {
           "anchor": {
-            "blob": "5131273c15899ad6afac98ffc28a6005a9b54d32",
-            "content": "sha256:1eda33cb057457f00b53b454c6b262f23d811d88b1fb828ff0cf6731aa329492",
+            "blob": "1b839113b8d511b4a8343230e70a8de0be01b79f",
+            "content": "sha256:054d4cc1aaabba6284f7cdfeae8f609aba3d6af75651bac7e4bba96a06df3b1c",
             "locator": {
               "end": 666,
               "kind": "line_range",
@@ -223,15 +224,17 @@
             "path": "dashboard/src/cockpit/Cockpit.tsx"
           },
           "kind": "code"
-        }
-      ]
-    },
-    "6": {
-      "note": "The route overview that governs this page.\n\nAnchor: `# dashboard/src/panels/file-viewer/ — File Viewer Overview`",
-      "targets": [
+        },
         {
-          "kind": "unresolved",
-          "text": "onboarding/dashboard/src/panels/file-viewer/overview.md:1-107"
+          "anchor": {
+            "blob": "1b839113b8d511b4a8343230e70a8de0be01b79f",
+            "content": "sha256:a8152c8952fadad87a17271c8a6febccb6420f118def2bd84f341dab609d41c2",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "kind": "code"
         }
       ]
     },

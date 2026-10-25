@@ -22,12 +22,12 @@
   ],
   "references": {
     "1": {
-      "note": "The source retains the fake-runtime model and guards the shared settings path before both writing and removal.",
+      "note": "The fake npm and Paseo command line, its settings writers, process record and file-state observation.",
       "targets": [
         {
           "anchor": {
-            "blob": "b3cb8e0cfe6a4097ac4a7d31fb86e95f21af545c",
-            "content": "sha256:a2e85db120606a5e577e6cae335da26a957858ef6d9fba43343283c38a290ecf",
+            "blob": "d09e7284df65a71fa6e9f79938589cc8a13cb18b",
+            "content": "sha256:a1501d2096e47f8c82f89e60311712309ae9016105cdc010ac558ddb20ceb1dc",
             "locator": {
               "kind": "file"
             }

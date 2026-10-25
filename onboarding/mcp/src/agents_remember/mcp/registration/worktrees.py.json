@@ -27,8 +27,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3afb5891e83bab3ed736d325c549bedded27414d",
-            "content": "sha256:5d7906a4f2fd72bfffeb8c7c6710a934e2a51c455ca2f2e757aa5a8528a69d37",
+            "blob": "6cab8ed468b7f66a0ab4a5f89bbda5cad2022867",
+            "content": "sha256:1c64b32caf234c0c43e07186253e6775527e246baed49f8269d6373a1e90a25c",
             "locator": {
               "kind": "symbol",
               "name": "worktree_pause"
@@ -38,8 +38,8 @@
         },
         {
           "anchor": {
-            "blob": "3afb5891e83bab3ed736d325c549bedded27414d",
-            "content": "sha256:95ca8877501ad58a495304e93f9128e1fc9ebfa25f8dea36a91daaa0c2c2be65",
+            "blob": "6cab8ed468b7f66a0ab4a5f89bbda5cad2022867",
+            "content": "sha256:5a195ea8fb7f02e420cc51dd1eaa0c78cdb24df450156a9c82e25708d7964e24",
             "locator": {
               "kind": "symbol",
               "name": "_register_worktree_stop_tools"
@@ -50,7 +50,7 @@
       ]
     },
     "10": {
-      "note": "`TaskRef` — the shared task locator attach and status pack.",
+      "note": "**Retained historical source account — superseded by the current contract:** `TaskRef` — the shared task locator attach and status pack.",
       "targets": [
         {
           "anchor": {
@@ -67,14 +67,39 @@
       ]
     },
     "11": {
-      "note": "**The pairing this registrar performs, and the vocabulary the decision is typed by.**",
+      "note": "**Retained historical source account — superseded by the current contract:** **The pairing this registrar performs, and the vocabulary the decision is typed by.** Historical KS-L40 caption: commit74c6c693 paired resolution_action and knowledge_resolution into SyncResolutionInput; b52adc8 removed that authored-reconciliation input. On current source the registrar constructs action-only SyncResolutionInput(action=resolution_action), with continue/cancel vocabulary. The retained historical pairing account remains superseded.",
       "targets": [
         {
           "anchor": {
-            "blob": "b4bf02afeb62c71b1a3333562b505eeb244d637e",
-            "content": "sha256:56058015a92fef97436b9d0c169947ec7559a0c25f5575074e1b73b6d76bf4c3",
+            "blob": "6cab8ed468b7f66a0ab4a5f89bbda5cad2022867",
+            "content": "sha256:790dae73611804194f883c5ac4f1ee30708ee20339a085cdea89d611ea23c46f",
             "locator": {
-              "end": 162,
+              "end": 202,
+              "kind": "line_range",
+              "start": 175
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b4bf02afeb62c71b1a3333562b505eeb244d637e",
+            "content": "sha256:11ff3c4c19259b7a62b72f0cafecfd04eeeca6cdd032b7811c1af4694cb40a14",
+            "locator": {
+              "end": 87,
+              "kind": "line_range",
+              "start": 86
+            },
+            "path": "mcp/src/agents_remember/models/worktree.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b4bf02afeb62c71b1a3333562b505eeb244d637e",
+            "content": "sha256:3bb1db0cf79e680c28ede9577bb884ad984242f4be8d086307df0b299e70c7ff",
+            "locator": {
+              "end": 165,
               "kind": "line_range",
               "start": 162
             },
@@ -105,8 +130,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3afb5891e83bab3ed736d325c549bedded27414d",
-            "content": "sha256:9f4dac8fd5d60b7e138d2ad66be135106a73906bb35a0bae43ca08352956232d",
+            "blob": "6cab8ed468b7f66a0ab4a5f89bbda5cad2022867",
+            "content": "sha256:59abaad5244554e405946dfece37df1be3de69ae4a8b9ed9ec1fd5d9a3ff55dd",
             "locator": {
               "kind": "file"
             }
@@ -135,8 +160,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3afb5891e83bab3ed736d325c549bedded27414d",
-            "content": "sha256:9f4dac8fd5d60b7e138d2ad66be135106a73906bb35a0bae43ca08352956232d",
+            "blob": "6cab8ed468b7f66a0ab4a5f89bbda5cad2022867",
+            "content": "sha256:59abaad5244554e405946dfece37df1be3de69ae4a8b9ed9ec1fd5d9a3ff55dd",
             "locator": {
               "kind": "file"
             }
@@ -146,7 +171,7 @@
       ]
     },
     "3": {
-      "note": "The start payload forwards task identity, bases and execution configuration to the application owner.\n\nAnchor: \"def worktree_start_payload\"",
+      "note": "**Retained historical source account — superseded by the current contract:** The start payload forwards task identity, bases and execution configuration to the application owner.\n\nAnchor: \"def worktree_start_payload\"",
       "targets": [
         {
           "anchor": {
@@ -164,12 +189,12 @@
       ]
     },
     "4": {
-      "note": "The attach payload forwards the requested worktree attachment to the application owner.\n\nAnchor: \"def worktree_attach_payload\"",
+      "note": "**Retained historical source account — superseded by the current contract:** The attach payload forwards the requested worktree attachment to the application owner.",
       "targets": [
         {
           "anchor": {
-            "blob": "20ca5f754679645c69bfde58ceaec70643364e95",
-            "content": "sha256:23440330059ad18128a37d5b739a65d259e83188c806a3583eae5a286a4d1971",
+            "blob": "23805a3cc7fbb5f58d96584b7b4e3ce915c3eab9",
+            "content": "sha256:c1750539f94440f2c9ac605180dc44226027d1e852b66433df43871e933baa6a",
             "locator": {
               "end": 79,
               "kind": "line_range",
@@ -182,7 +207,7 @@
       ]
     },
     "5": {
-      "note": "The status payload reads status through the application owner.\n\nAnchor: \"def worktree_status_payload\"",
+      "note": "**Retained historical source account — superseded by the current contract:** The status payload reads status through the application owner.\n\nAnchor: \"def worktree_status_payload\"",
       "targets": [
         {
           "anchor": {
@@ -200,7 +225,7 @@
       ]
     },
     "6": {
-      "note": "The sync payload forwards the paired resolution value to the application owner.\n\nAnchor: \"def worktree_sync_payload\"",
+      "note": "**Retained historical source account — superseded by the current contract:** The sync payload forwards the paired resolution value to the application owner.\n\nAnchor: \"def worktree_sync_payload\"",
       "targets": [
         {
           "anchor": {
@@ -218,7 +243,7 @@
       ]
     },
     "7": {
-      "note": "The identity parameter object `TaskIdentity` (repo_id, task_name, worktree_name, leaf_id, parent_task, workflow_kind defaulting to `light-task`), defined in the application request boundary.",
+      "note": "**Retained historical source account — superseded by the current contract:** The identity parameter object `TaskIdentity` (repo_id, task_name, worktree_name, leaf_id, parent_task, workflow_kind defaulting to `light-task`), defined in the application request boundary.",
       "targets": [
         {
           "anchor": {
@@ -265,7 +290,7 @@
       ]
     },
     "9": {
-      "note": "The execution parameter object `StartExecution` (dry_run, skip_provider_setup, retry_provider_setup), defined in the application request boundary.",
+      "note": "**Retained historical source account — superseded by the current contract:** The execution parameter object `StartExecution` (dry_run, skip_provider_setup, retry_provider_setup), defined in the application request boundary.",
       "targets": [
         {
           "anchor": {

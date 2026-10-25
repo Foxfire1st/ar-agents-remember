@@ -124,10 +124,14 @@ sites that read them. Every anchor in a row occurs inside the range that row cit
 - The published surface: exactly the two functions, one responsibility each. [2]
 - **The moved sentence and its moved axis, worded where the state is built rather than at a render site.** [3]
 - **The comparison's own declared identity: the operation's published binding, digest and selector digest copied verbatim with the policy version and both snapshots' own facts, and the assertion that a page declaring no identity is refused rather than given a fallback.** [4]
+
 - **The staleness rule: agreement or an absent previous digest is `current`; disagreement is `stale` with the carried identity retained as the labelled previous input and the moved axis named.** [5]
+
 - **The model validator that makes "a stale claim names its previous input" structural: a `stale` state with no reference and a `current` state carrying one are both unconstructible.** [6]
 - **The request field the previous identity travels on, sha256-shaped and optional — the *previous* identity, never a substitute for the current one.** [7]
+
 - **The adapter's delegation: the composition computes the identity once and reads one staleness value for both the published state and the submission state, and imports these names instead of defining them.** [8]
+
 - **The transport's admission of the previous identity in the route's own vocabulary, shape-checked against the models' own digest pattern rather than raised out of the request model.** [9]
 - **The cases that measure the rule through the real composition: the stale rule in both directions at the composition, and the new R17 case that drives the whole transport path — admission, forwarding on the request, `stale` with `previous_comparison_ref` and `disabled_stale`, `current` when nothing was carried, and a 400 naming a malformed spelling.** [10]
 

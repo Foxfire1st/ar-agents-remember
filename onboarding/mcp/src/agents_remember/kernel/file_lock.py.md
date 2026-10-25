@@ -61,11 +61,15 @@ No cross-repository evidence is required for these claims.
 `lock_path_for` and `exclusive_file_lock` now back the public Node acquisition: the lock file sits beside the locked resource, waits are bounded by the caller's deadline, and a timeout is the named `LockAcquisitionTimeout`. The Node invariant owns the specific use; the primitive itself keeps its log-lock contract.
 
 - One physical suffix, one mutex per resource, and thread-local nesting. [1]
+
 - Capability probing, complete transaction exclusion, and current-thread hold inspection. [2]
+
 
 - Control-plane target authorization precedes primitive entry; capability errors are translated. [3]
 
 - The resource lock path. [5]
+
 - The bounded exclusive lock. [6]
 
-- `_lock_handle` opens the caller's held physical target when `io_path` names the same resource through a directory descriptor, while the mutex, capability cache and nesting keep the canonical lock identity — so two descriptor numbers cannot split one lock. \[7] [7]
+
+- `_lock_handle` opens the caller's held physical target when `io_path` names the same resource through a directory descriptor, while the mutex, capability cache and nesting keep the canonical lock identity — so two descriptor numbers cannot split one lock. [7]

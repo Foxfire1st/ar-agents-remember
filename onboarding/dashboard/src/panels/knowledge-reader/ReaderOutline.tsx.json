@@ -22,12 +22,12 @@
   ],
   "references": {
     "1": {
-      "note": "The outline derives chapters from the document and marks the current one.\n\nAnchor: `ReaderOutline`",
+      "note": "The outline derives chapters from the document and marks the current one.",
       "targets": [
         {
           "anchor": {
-            "blob": "cbd4e1e033b1822b9c6cdf0d8c0879f0b51cfb0b",
-            "content": "sha256:0e1d5d5a96b53143060b6b1a7c0f144fb32f9b9f7bfb705ae8042b6dfa646c51",
+            "blob": "c18a078a87a4bf5adc68342854e722257a33b8e1",
+            "content": "sha256:265c5f3c2cfa7a43356a9eb31573ae93b9f943a3e996bf4d613fff0bd6a21d04",
             "locator": {
               "kind": "file"
             }
@@ -37,12 +37,12 @@
       ]
     },
     "2": {
-      "note": "The marked row is kept visible inside the outline's scroll.\n\nAnchor: `revealCurrentChapter`",
+      "note": "The marked row is kept visible inside the outline's scroll.",
       "targets": [
         {
           "anchor": {
-            "blob": "cbd4e1e033b1822b9c6cdf0d8c0879f0b51cfb0b",
-            "content": "sha256:0e1d5d5a96b53143060b6b1a7c0f144fb32f9b9f7bfb705ae8042b6dfa646c51",
+            "blob": "c18a078a87a4bf5adc68342854e722257a33b8e1",
+            "content": "sha256:265c5f3c2cfa7a43356a9eb31573ae93b9f943a3e996bf4d613fff0bd6a21d04",
             "locator": {
               "kind": "file"
             }

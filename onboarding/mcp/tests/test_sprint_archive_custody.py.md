@@ -28,7 +28,9 @@ cannot stand in for a file-backed public answer.
 ## Evidence
 
 
+
 - Archive custody, legacy admission and logged whole-preview bounds are pinned. [1]
+
 
 - The obsolete forced-overflow shape is replaced by the actual answered bound. The controlled fifteen-master/sixteen-move evidence remains complete; a compact delivery does not remove archived custody assertions. [2]
 

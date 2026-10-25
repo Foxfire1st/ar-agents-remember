@@ -105,8 +105,8 @@ No relevant documentation found after checking live sources.
 - The bounded task-seat-takeover exception. \[3]
 - The launcher's prohibition list. \[4]
 - The structural reason this block is authored outside `roles/`. \[5]
-- The manifest declares the launcher entry under the ambient-launcher routing condition whose instruction source is this file. \[6]
-- The shipped check asserts the launcher is not a role and that `ambient-launcher` is a routing condition. \[7]
+- The manifest declares the launcher entry under the ambient-launcher routing condition whose instruction source is this file. \
+- The shipped check asserts the launcher is not a role and that `ambient-launcher` is a routing condition. \
 
 ### Cross-Repo References
 

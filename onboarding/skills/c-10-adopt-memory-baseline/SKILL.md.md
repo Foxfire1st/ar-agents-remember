@@ -20,7 +20,7 @@ The workflow resolves external context, runs the memory-quality procedure's drif
 
 ### Converted-tree validity cannot be waived
 
-Actionable drift blocks unless the approved adoption request accepts it. Converted memory adds a non-waivable blocked-invalid condition: the knowledge validator must accept the tree before the first baseline is committed. accept_drift accepts stale anchors only, never validator violations. The converted-drift paragraph further states that a stale reference alone does not block; invariant currentness belongs to knowledge_read/knowledge_integrity_check. citation_fix handles moved-only anchors and curator re-authoring handles stale meaning; describing those operations does not authorize their execution.
+Actionable drift blocks unless the approved adoption request accepts it. Converted memory adds a non-waivable blocked-invalid condition: the knowledge validator must accept the tree before the first baseline is committed. `accept_drift` bypasses the actionable-drift gate only, never validator violations. A stale code/test reference is refused as `R198.1-reference-anchor`, because adoption validates the staged tree against the paired code commit; accepting drift cannot waive that refusal. A stale reference alone therefore blocks adoption; invariant currentness still belongs to knowledge_read/knowledge_integrity_check. citation_fix handles moved-only anchors and curator re-authoring handles stale meaning; describing those operations does not authorize their execution.
 
 ### Reviewable states and refusal preservation
 
@@ -94,9 +94,14 @@ These are the old companion’s explanatory notes, retained as historical eviden
 
 The following references support the source-contract commentary, not fresh runtime acceptance. Canonical authored source owns the contract; the inspected package copy is an equal distribution twin only. Root overview ownership context is onboarding/overview.md, especially its construction/ownership and retained naming-versus-reading doctrine. The description of a source contract is not runtime acceptance or permission to execute its operations.
 
+
 - Existing-onboarding use case and explicit trust boundary [1]
+
 - Status-first, apply-by-default preview and approval [2]
+
 - External context, drift, attribution and validated content commit [3]
+
 - Output states and no-change dry-run/refusal semantics [4]
 - Converted reference drift versus invariant currentness [5]
+
 - Cache exclusion, separate refresh and non-waivable validator [6]

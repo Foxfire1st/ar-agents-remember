@@ -220,15 +220,14 @@
       ]
     },
     "27": {
-      "note": "The leaf fixture: real repositories plus the task root and enclosure.",
+      "note": "The leaf fixture: real repositories plus the task root and enclosure.\n\nAnchor: `converted_memory`",
       "targets": [
         {
           "anchor": {
-            "blob": "bb33d32e66cacf8fa81aad1a23356a78e271e230",
-            "content": "sha256:58326037683ec47f20567dbfcd69dbb87a9d4941dfb1ae2ba15027db6ef3ce3b",
+            "blob": "e159e3fdc8444fdd57cce28d9f770103e7ac3cb6",
+            "content": "sha256:bbcba9e57b03794900e6df5024bc17408af317e3896a1eff84d4042f64e3e44e",
             "locator": {
-              "kind": "symbol",
-              "name": "converted_memory"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -296,15 +295,14 @@
       ]
     },
     "31": {
-      "note": "The writer's carry.",
+      "note": "The writer's carry.\n\nAnchor: `test_the_writer_carries_moved_blobs_and_the_rows_that_cover_them`",
       "targets": [
         {
           "anchor": {
-            "blob": "bb33d32e66cacf8fa81aad1a23356a78e271e230",
-            "content": "sha256:f2ab56e2b5b537001c07008dc9577493f986db58f2841cf8129d3eb17317a987",
+            "blob": "e159e3fdc8444fdd57cce28d9f770103e7ac3cb6",
+            "content": "sha256:bbcba9e57b03794900e6df5024bc17408af317e3896a1eff84d4042f64e3e44e",
             "locator": {
-              "kind": "symbol",
-              "name": "test_the_writer_carries_moved_blobs_and_the_rows_that_cover_them"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -344,15 +342,14 @@
       ]
     },
     "34": {
-      "note": "A writer-authored proof raises its invariant.",
+      "note": "A writer-authored proof raises its invariant.\n\nAnchor: `test_a_proof_authored_through_the_writer_raises_its_invariant_when_its_test_changes`",
       "targets": [
         {
           "anchor": {
-            "blob": "bb33d32e66cacf8fa81aad1a23356a78e271e230",
-            "content": "sha256:d1746df272aa238fbb3082c7fd351f8eb3135a946375cbeee40bc7ee475166f7",
+            "blob": "e159e3fdc8444fdd57cce28d9f770103e7ac3cb6",
+            "content": "sha256:bbcba9e57b03794900e6df5024bc17408af317e3896a1eff84d4042f64e3e44e",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_proof_authored_through_the_writer_raises_its_invariant_when_its_test_changes"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -376,15 +373,14 @@
       ]
     },
     "36": {
-      "note": "The controller-level run; since MIK-R09 its four open items count (4).",
+      "note": "The controller-level run; since MIK-R09 its four open items count (4).\n\nAnchor: `test_the_memory_quality_controller_persists_the_worklist_and_renders_it_in_the_checklist`",
       "targets": [
         {
           "anchor": {
-            "blob": "bb33d32e66cacf8fa81aad1a23356a78e271e230",
-            "content": "sha256:97d167479c46526e971c737b39edb1a5a866e564a441c05066da749bfb6791f7",
+            "blob": "e159e3fdc8444fdd57cce28d9f770103e7ac3cb6",
+            "content": "sha256:bbcba9e57b03794900e6df5024bc17408af317e3896a1eff84d4042f64e3e44e",
             "locator": {
-              "kind": "symbol",
-              "name": "test_the_memory_quality_controller_persists_the_worklist_and_renders_it_in_the_checklist"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -440,16 +436,16 @@
       ]
     },
     "40": {
-      "note": "The census-derived consumer row.\n\nAnchor: `test_knowledge_worklist_leaf`",
+      "note": "The census-derived consumer row.",
       "targets": [
         {
           "anchor": {
-            "blob": "008585e26ec337eafd1554ed18033421299bdc72",
-            "content": "sha256:8aa6e197d7f8f2e7c570ee6de7c6ff3b6397dd22743f0c75a60bcf3ea1ccaf51",
+            "blob": "3c5993c94cf78973b3b39cfe7de9774c8aea6d1a",
+            "content": "sha256:da02548ce4ede5f08c6d261a0d17d44df0708ada720380fbf5906306bcf3b81e",
             "locator": {
-              "end": 1243,
+              "end": 2072,
               "kind": "line_range",
-              "start": 1239
+              "start": 2072
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -462,8 +458,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c6812adcc6ab02a7d3f4171a191ff52abb61c1c9",
-            "content": "sha256:c818c2f11964b91e1dac9c354d30fba65d70c8fe163868d42f9f03eb9d297e50",
+            "blob": "e159e3fdc8444fdd57cce28d9f770103e7ac3cb6",
+            "content": "sha256:e8b4fb49b6f1eb248c2369e613455942d0206e4f5403ed7c102b44f757e069ea",
             "locator": {
               "end": 706,
               "kind": "line_range",

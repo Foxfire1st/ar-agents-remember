@@ -75,16 +75,30 @@ No external domain evidence applies.
 
 ### Repo-Internal References
 
+
 - Registered status projects activation without mutation. [1]
+
+
 - The sync refusal addresses only the addressed contract's own state: no `classification`/`blocking`/`sourcePair*` key, this contract's fingerprint and status action, and a foreign live master named nowhere. [2]
+
+
 - Vacant and unreadable snapshots remain distinct and unchanged. [3]
+
+
 
 - Oversized status and sync refusals keep bounded whole-result diagnostics in their logs and preserve malformed source bytes. [4]
 
+
+
 - Startup edge mismatch retains expected and observed branch evidence. [5]
+
+
 - Authoritative startup reread preserves edge evidence when the contract drifts after upstream refresh. [6]
 
+
+
 - Unreadable startup contracts retain concrete bounded parser reason and admission in the logged whole refusal; delivered overflow identity and retry guidance are checked separately. [7]
+
 
 - The shared admission explainer no longer emits `classification`/`blocking`, and keys the refusal to the observed contract fingerprint. [8]
 
@@ -94,7 +108,10 @@ No cross-repository implementation evidence is required for this disposable regi
 
 The fixture does not establish a live external integration.
 
+
 - Registered-adapter readiness/admission facts are recovered from the answer log. Foreign-master exclusion, bounded parser reason, fingerprints and addressed action assertions remain. A compact answer and its retained detailed result are different carriers. [9]
+
+
 
 
 - Registered refusal assertions require bounded no-overflow code/summary/next operation and retain detailed admission/parser evidence in the log. [10]

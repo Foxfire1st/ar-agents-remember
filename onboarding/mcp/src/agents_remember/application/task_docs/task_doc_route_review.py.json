@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/application/task_docs/task_doc_route_review.py",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
@@ -58,7 +59,7 @@
   ],
   "references": {
     "1": {
-      "note": "Call-level knobs and the branch-addressed policy gate.",
+      "note": "Call-level knobs and the branch-addressed policy gate.\n\nAnchor: `TaskDocCall` `_enforce_branch_addressed_policy`",
       "targets": [
         {
           "anchor": {
@@ -73,8 +74,8 @@
         },
         {
           "anchor": {
-            "blob": "72ce34182a64631ea716a5f10b950d394ed01348",
-            "content": "sha256:00c5cdff8748eb46f066053f0205a3b25ecbdd3a59fee37bafad061034fe5c84",
+            "blob": "f5edfbc3d469737fdadc36945e0204f336dc4eb8",
+            "content": "sha256:19aad386da9c48607155adfeb5de918b8135089ba67641f65b2f3c37e5a59f4d",
             "locator": {
               "kind": "symbol",
               "name": "_enforce_branch_addressed_policy"
@@ -96,12 +97,10 @@
         },
         {
           "anchor": {
-            "blob": "72ce34182a64631ea716a5f10b950d394ed01348",
-            "content": "sha256:034464f95d24a11a4a2ba75b660ba647874b0b1cbac6b7f57e7052d7cec0ba76",
+            "blob": "f5edfbc3d469737fdadc36945e0204f336dc4eb8",
+            "content": "sha256:6c1cf0824b0ba3b76ab9168bfe39e9796d88e3e0c86b0411cd86930e2091839c",
             "locator": {
-              "end": 67,
-              "kind": "line_range",
-              "start": 52
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -230,15 +229,14 @@
       ]
     },
     "2": {
-      "note": "The binding form that records a review over the resolved candidate document and re-validates.",
+      "note": "The binding form that records a review over the resolved candidate document and re-validates.\n\nAnchor: `_record_route_review_bound`",
       "targets": [
         {
           "anchor": {
-            "blob": "d881ab5de9364e771102d7ae2acaf20344a91ac9",
-            "content": "sha256:ef0b929d18193b628ffd6b04697b43b520433b140ac8981ebdd404627b802fb7",
+            "blob": "f5edfbc3d469737fdadc36945e0204f336dc4eb8",
+            "content": "sha256:6c1cf0824b0ba3b76ab9168bfe39e9796d88e3e0c86b0411cd86930e2091839c",
             "locator": {
-              "kind": "symbol",
-              "name": "_record_route_review_bound"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -278,15 +276,14 @@
       ]
     },
     "5": {
-      "note": "The route-review authority rule (create/replace cannot author or change evidence).",
+      "note": "The route-review authority rule (create/replace cannot author or change evidence).\n\nAnchor: `_enforce_route_review_authority`",
       "targets": [
         {
           "anchor": {
-            "blob": "d881ab5de9364e771102d7ae2acaf20344a91ac9",
-            "content": "sha256:db08fdd411786e5288c10612f19f9008b933b596c7d2f4d60cffb27cae6e889e",
+            "blob": "f5edfbc3d469737fdadc36945e0204f336dc4eb8",
+            "content": "sha256:6c1cf0824b0ba3b76ab9168bfe39e9796d88e3e0c86b0411cd86930e2091839c",
             "locator": {
-              "kind": "symbol",
-              "name": "_enforce_route_review_authority"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -294,15 +291,14 @@
       ]
     },
     "6": {
-      "note": "The stamping owner it delegates to; now takes the resolved candidate document.",
+      "note": "The stamping owner it delegates to; now takes the resolved candidate document.\n\nAnchor: `build_route_review`",
       "targets": [
         {
           "anchor": {
-            "blob": "d5e95ad7ec9dd109087e19f54bf649eb0bfe4e3e",
-            "content": "sha256:a19d6c217a92f988b92ac61567ac6004a483214ee67ae78f776fabec97932f93",
+            "blob": "f77659efee8d80f8c6cfa6dab23a63501ab76013",
+            "content": "sha256:28f91e1f645dd0e8946a9e15c5b3dcd0fd513bc4342a259de6fcc55edc1a594f",
             "locator": {
-              "kind": "symbol",
-              "name": "build_route_review"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/worktrees/route_review.py"
           },
@@ -328,15 +324,14 @@
       ]
     },
     "8": {
-      "note": "The facade that dispatches into this module.",
+      "note": "The facade that dispatches into this module.\n\nAnchor: `task_doc_tool`",
       "targets": [
         {
           "anchor": {
-            "blob": "95185967dd7ca4326d7c22ffeb56416e31f26d89",
-            "content": "sha256:96d91386dd747620af7cd049c59642c34a2a858dda54f25f0f85386615e35bd6",
+            "blob": "f174a79f72375a38aa57f50907312424f3fc2c3c",
+            "content": "sha256:4639ac7fede07fbf8fd4a606e94345d3e15fdc3bc40ee0f57fba307bccd95505",
             "locator": {
-              "kind": "symbol",
-              "name": "task_doc_tool"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/task_docs/task_doc_tools.py"
           },
@@ -349,8 +344,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d881ab5de9364e771102d7ae2acaf20344a91ac9",
-            "content": "sha256:01894303981a5214405f456df923d035ad88e5c72947f68a9f6e4fbc6f605941",
+            "blob": "f5edfbc3d469737fdadc36945e0204f336dc4eb8",
+            "content": "sha256:8e3f1377893a1f8769dc4fc6fafa162b050297444eb241739c8e36a0155c1fb9",
             "locator": {
               "end": 343,
               "kind": "line_range",

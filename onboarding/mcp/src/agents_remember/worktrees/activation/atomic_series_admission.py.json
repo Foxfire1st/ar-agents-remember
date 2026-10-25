@@ -130,12 +130,12 @@
       ]
     },
     "8": {
-      "note": "Registered forcing proves a sync refusal addresses only this contract's own state and bounds oversized unreadable detail.\n\nAnchor: \"def test_registered_sync_refusal_addresses_only_this_contracts_own_state(self) -> None:\"; \"def test_registered_status_and_sync_bound_oversized_unreadable_detail(self) -> None:\"",
+      "note": "Registered forcing proves a sync refusal addresses only this contract's own state and bounds oversized unreadable detail.",
       "targets": [
         {
           "anchor": {
-            "blob": "ff9baaa4a10c7a8abd9a3028e60741add9bacc02",
-            "content": "sha256:b2896e61b76908922674683e6ea2262b72c1e0a343bfec96328e141130f2cfb2",
+            "blob": "5352b9cf2aed9b259e0491083ff9e33fc0a1e989",
+            "content": "sha256:c2599fafab56ba9456979301c885779679bdb51a60bc29b029441a9a98239d9f",
             "locator": {
               "end": 222,
               "kind": "line_range",
@@ -147,8 +147,8 @@
         },
         {
           "anchor": {
-            "blob": "ff9baaa4a10c7a8abd9a3028e60741add9bacc02",
-            "content": "sha256:ea0418384aa1455b2aa2f742f4d72b7177ce1f687b35fa7eba0861b49e7e3f1c",
+            "blob": "5352b9cf2aed9b259e0491083ff9e33fc0a1e989",
+            "content": "sha256:dc51fc069d4c91bb05dfcd60aa46f5bf21a6473c525439cd0bc9f0773c520623",
             "locator": {
               "end": 321,
               "kind": "line_range",

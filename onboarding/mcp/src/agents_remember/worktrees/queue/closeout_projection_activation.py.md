@@ -61,7 +61,7 @@ No Domain Documentation source is configured for this memory root.
 
 - The current named cross-master test asserts both masters active and both activation projections with empty waiting tuples on one source pair; this is source evidence, not a rerun. [3]
 
-- The current read-only activation projection names worktree_start/worktree_attach as malformed-snapshot recovery and no dispatch_agent remedy. \[4] [4]
+- The current read-only activation projection names worktree_start/worktree_attach as malformed-snapshot recovery and no dispatch_agent remedy. [4]
 
 ### Cross-Repo References
 

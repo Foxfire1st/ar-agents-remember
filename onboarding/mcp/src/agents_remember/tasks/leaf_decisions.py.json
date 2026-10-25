@@ -22,15 +22,14 @@
   ],
   "references": {
     "10": {
-      "note": "The lookup inside a nested recording, and the rows it replays to the caller.",
+      "note": "The lookup inside a nested recording, and the rows it replays to the caller.\n\nAnchor: `strict_leaf_doc`",
       "targets": [
         {
           "anchor": {
-            "blob": "595dc264b1f1d539adcf8b55289d50b1ee67ba40",
-            "content": "sha256:a2ca06cddf2a7ba940f3d1a44f9a74cede81f53b5a46821547dadbc438d66392",
+            "blob": "aadce53774c779828d6dcfc8549d40e01f2cdd89",
+            "content": "sha256:31b1d56fe14ad5162059be5041627e59c48322ef9dd4fb51c2ca83bef9b6656a",
             "locator": {
-              "kind": "symbol",
-              "name": "strict_leaf_doc"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -38,15 +37,14 @@
       ]
     },
     "11": {
-      "note": "Every JSON file of the folder is read; a broken file that names the leaf is collected.",
+      "note": "Every JSON file of the folder is read; a broken file that names the leaf is collected.\n\nAnchor: `_unreadable_claims`",
       "targets": [
         {
           "anchor": {
-            "blob": "595dc264b1f1d539adcf8b55289d50b1ee67ba40",
-            "content": "sha256:c36e48bd1fe9c7d9aea24246714c447bece5c2296e5f693c01a7453b53d54657",
+            "blob": "aadce53774c779828d6dcfc8549d40e01f2cdd89",
+            "content": "sha256:31b1d56fe14ad5162059be5041627e59c48322ef9dd4fb51c2ca83bef9b6656a",
             "locator": {
-              "kind": "symbol",
-              "name": "_unreadable_claims"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -120,15 +118,14 @@
       ]
     },
     "16": {
-      "note": "A sibling file that is read at two identities during the lookup stays recorded as a conflict, and the view is refused.",
+      "note": "A sibling file that is read at two identities during the lookup stays recorded as a conflict, and the view is refused.\n\nAnchor: `_fallback_reads`",
       "targets": [
         {
           "anchor": {
-            "blob": "947c83735c58429e61de59ea7777ebe2d820eb43",
-            "content": "sha256:c48cbe7e5aee25ee87ff2d812887b9cdfbbbaf7e9204f155abd4e60f4c45f1e1",
+            "blob": "9719c9159d392a3e5377a242638474a1a15b1f37",
+            "content": "sha256:c081cf381bb3f13633d7bf5418bc9534212e3a89628153ff30047098d9b0be43",
             "locator": {
-              "kind": "symbol",
-              "name": "_fallback_reads"
+              "kind": "file"
             },
             "path": "mcp/tests/test_reviewer_worklist_reads.py"
           },
@@ -158,8 +155,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "595dc264b1f1d539adcf8b55289d50b1ee67ba40",
-            "content": "sha256:1096fe60bf974f4e2c4ff08101b364c44a8a45713a618ae47da61b369b9f9e64",
+            "blob": "aadce53774c779828d6dcfc8549d40e01f2cdd89",
+            "content": "sha256:6c6eed5cd59a5acbab521b55ccf23cc26f352d62fde96281210a51fecf21706e",
             "locator": {
               "end": 29,
               "kind": "line_range",

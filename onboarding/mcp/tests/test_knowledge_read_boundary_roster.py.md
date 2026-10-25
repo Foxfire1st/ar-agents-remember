@@ -14,6 +14,7 @@ The roster names every read-described route with its constructor, call and outco
 
 ## Evidence
 
+
 - Every route names its outcome [1]
+
 - Cockpit boundary needs no live lifetime [2]
-- Terminal and harness GETs read without live actors [3]

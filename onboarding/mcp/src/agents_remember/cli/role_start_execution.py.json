@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/cli/role_start_execution.py",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {

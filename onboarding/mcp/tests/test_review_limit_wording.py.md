@@ -45,6 +45,9 @@ which is what makes it a class detector rather than a spelling list.
 ## Evidence
 
 - Positive detector controls and the intentional label and allowance exemptions. [1]
+
 - Stage facets are bound to the extracted section rather than satisfied by relocated source text. [2]
+
 - The Reviewer, Worker and Manager property and construction sentences survive source and compiled projections. [3]
-- Reviewer and Curator facet alternatives are role scoped, and presence, deletion and relocation checks bind to the extracted stage-end section. [4]
+
+- Reviewer/Curator facet alternatives are explicitly role scoped. Presence, deletion and relocation checks still bind to the extracted Stage end section. Source and compiled controls assert the original surface is complete and mutation actually changes text; compiled relocation is now exercised as well as deletion. The four roles are parametrized individually; numeric budget detector and rule-nine cases remain. [4]

@@ -66,15 +66,14 @@
       ]
     },
     "12": {
-      "note": "The re-exported public names.",
+      "note": "The re-exported public names.\n\nAnchor: `__all__`",
       "targets": [
         {
           "anchor": {
-            "blob": "b3193de109180056792f36682988d548411aadc1",
-            "content": "sha256:51d77c7894fd3c39093ef05f76d35ea241a27b33d794964b910c875c5893f4f2",
+            "blob": "91accb712cb4fb7b396e0cc7ae5aabe698b19022",
+            "content": "sha256:d00a936e15b241a75cb59eb37322f570965aa055a21df3c6d4c4b93079e24a0a",
             "locator": {
-              "kind": "symbol",
-              "name": "__all__"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -100,18 +99,43 @@
       ]
     },
     "14": {
-      "note": "The one recompute entry point it re-exports for L08's triggers (since MIK-R09 a Git failure is named `git`; the mandatory gate recomputes through `leaf_worklist` over its exact candidate).\n\nAnchor: \"def recompute_leaf_worklist(\"",
+      "note": "The one recompute entry point it re-exports for L08's triggers (since MIK-R09 a Git failure is named `git`; the mandatory gate recomputes through `leaf_worklist` over its exact candidate).",
       "targets": [
         {
           "anchor": {
-            "blob": "755bdc4c33e077b8eb9590027c0c3050d8fae12c",
-            "content": "sha256:c7b91ceaca73355262ca0e9d27c432120569dabfaef884dce3609f26741dc31b",
+            "blob": "91accb712cb4fb7b396e0cc7ae5aabe698b19022",
+            "content": "sha256:5971327732f3e8990aaf7070faf0db06d2e48ff6eee3b60502ed564db7c2b3e3",
             "locator": {
-              "end": 766,
+              "end": 55,
               "kind": "line_range",
-              "start": 731
+              "start": 44
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ad49bbea3aa27328b16a81b38c0fac81b3448485",
+            "content": "sha256:1c1d4159e584b5d46a2a3e052a6ee257174743ce98805af48d469ce836f8b5ca",
+            "locator": {
+              "end": 61,
+              "kind": "line_range",
+              "start": 56
             },
             "path": "mcp/src/agents_remember/application/knowledge_worklist/leaf.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cc3ddad2210e25566378995fa748618b9afcee64",
+            "content": "sha256:cd0d33ddfba52916525ac69d6bd719e9f166802023d6a1e51d0a95ea62d607e2",
+            "locator": {
+              "end": 203,
+              "kind": "line_range",
+              "start": 165
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_worklist/leaf_completion.py"
           },
           "kind": "code"
         }
@@ -122,8 +146,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b87ea88b0add39daf99fa86fd39f1a7a8c7a6375",
-            "content": "sha256:debce2a8bc9a64ad1c0aebaded8b245ebb90d94f17e715e2dfc30e70a442f78d",
+            "blob": "91accb712cb4fb7b396e0cc7ae5aabe698b19022",
+            "content": "sha256:0e88901f870a14559bb51fc6cd5d319e50d34b97590aa5bb2cd759b9a4e82b4c",
             "locator": {
               "end": 96,
               "kind": "line_range",

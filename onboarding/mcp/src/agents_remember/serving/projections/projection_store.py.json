@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/serving/projections/projection_store.py",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
@@ -81,8 +82,8 @@
         },
         {
           "anchor": {
-            "blob": "ffb20091c2f732f798e06eb62370e7ad811943c0",
-            "content": "sha256:8e6754d4af49b0510d27b637b4bbd93d599ba4f4e241b712d16f693b77c6f1ba",
+            "blob": "e1d561eb43926925f6fefc875db17155ef322eb4",
+            "content": "sha256:964cfb319d533a030399f793bf91afec60286d13053e8195fd187a95f2ae7cfd",
             "locator": {
               "end": 748,
               "kind": "line_range",
@@ -128,38 +129,6 @@
             }
           },
           "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "79fe315d5237cfb717072e7c3490257a684907ad",
-            "content": "sha256:53ddd653035ea58996869a47767f0c921e313914b2ab39eed475221b695b4c2d",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "mcp/src/agents_remember/serving/projections/contract_snapshot.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "bb650c9aa0b941f8efa168ab1050b3b5e3f53043",
-            "content": "sha256:f6ac2e56a35bc8a2ac2c51a2532ebc9942ccf67b82ed8b34a0d4339b3f9581f7",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "mcp/src/agents_remember/serving/projections/projection_inputs.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "c3c2ff4bb45c68e3c588824c2a1e01c05816700a",
-            "content": "sha256:40ac3d310a59c8c7b5ded669843889ceaf5604e20d0c0be2a6bdf9dd7c36d63a",
-            "locator": {
-              "kind": "file"
-            }
-          },
-          "kind": "code"
         }
       ]
     },
@@ -181,23 +150,12 @@
       ]
     },
     "13": {
-      "note": "Projection assembly forwards only retained input fields and closeout queues.",
+      "note": "Projection assembly forwards only retained input fields and closeout queues.\n\nAnchor: `project_and_write`",
       "targets": [
         {
           "anchor": {
             "blob": "80f68a14806839156738f156091e776e566e18b6",
             "content": "sha256:3dfabfe5745c213923ce0843a0db6ab71e1623aa0a5cd99c1153efed4f73c050",
-            "locator": {
-              "kind": "symbol",
-              "name": "project_and_write"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "759479025b5e816a163b468faada469459390e0c",
-            "content": "sha256:5667b0127cb7a1fb2fddc1a3c953237f7b6abdedfd957ed57f1175fd081e1e7b",
             "locator": {
               "kind": "symbol",
               "name": "project_and_write"
@@ -213,17 +171,6 @@
         {
           "anchor": {
             "blob": "80f68a14806839156738f156091e776e566e18b6",
-            "content": "sha256:954807971041fb1a3214d979f69b958d29612fc8d1400979c0672b3190893772",
-            "locator": {
-              "kind": "symbol",
-              "name": "_gather_repo_surfaces_cached"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "2497eca35695f895fd899b6722332e8e60fc9597",
             "content": "sha256:954807971041fb1a3214d979f69b958d29612fc8d1400979c0672b3190893772",
             "locator": {
               "kind": "symbol",
@@ -248,23 +195,11 @@
             "path": "mcp/src/agents_remember/serving/projections/projection_inputs.py"
           },
           "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "ffb20091c2f732f798e06eb62370e7ad811943c0",
-            "content": "sha256:7d8adfdb6418d0e64ef6c45a1c0fa71e0041a5e39dbd50db4efeb581d800baf0",
-            "locator": {
-              "kind": "symbol",
-              "name": "read"
-            },
-            "path": "mcp/src/agents_remember/serving/projections/projection_inputs.py"
-          },
-          "kind": "code"
         }
       ]
     },
     "16": {
-      "note": "The repository cache stores route coverage and ledger; the projection edge forwards no sidecar age input and retains closeout queues.",
+      "note": "The repository cache stores route coverage and ledger; the projection edge forwards no sidecar age input and retains closeout queues.\n\nAnchor: `_gather_repo_surfaces` `_gather_repo_surfaces_cached` `project_and_write` `ProjectionInputs`",
       "targets": [
         {
           "anchor": {
@@ -399,8 +334,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6d39fb7ec35853b95ab1cf2d3a521da95a2912a8",
-            "content": "sha256:bdffc67512ed2bc2934b76b9e771aa5c32b1c164dee37c616624b30ee383717d",
+            "blob": "e1d561eb43926925f6fefc875db17155ef322eb4",
+            "content": "sha256:baaed6f6db2c9d37909ce87e1f577bce5bd956b34f99785d4857b557c8e76fdc",
             "locator": {
               "kind": "symbol",
               "name": "_refresh_tasks"
@@ -411,12 +346,23 @@
         },
         {
           "anchor": {
-            "blob": "6d39fb7ec35853b95ab1cf2d3a521da95a2912a8",
-            "content": "sha256:b0d6b4a515fff356493fc6ab5571f4be35aa9af776bd65ed5c381b23ab8723cc",
+            "blob": "e1d561eb43926925f6fefc875db17155ef322eb4",
+            "content": "sha256:b10eeca24540dd6758eddd25f64a40c28cb8ccb2ef230b22894270dc94472a7d",
             "locator": {
               "end": 287,
               "kind": "line_range",
               "start": 277
+            },
+            "path": "mcp/src/agents_remember/serving/projections/projection_inputs.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e1d561eb43926925f6fefc875db17155ef322eb4",
+            "content": "sha256:b587decdc4759fbe040b7cad855befcc7b342d9523ac108060ef6932868ced65",
+            "locator": {
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/serving/projections/projection_inputs.py"
           },
@@ -441,8 +387,8 @@
         },
         {
           "anchor": {
-            "blob": "bb650c9aa0b941f8efa168ab1050b3b5e3f53043",
-            "content": "sha256:476fe81096a39706002db4833b5c484c499c6e2f1e761a4417b92c2f03aecd82",
+            "blob": "e1d561eb43926925f6fefc875db17155ef322eb4",
+            "content": "sha256:f4529841f775726975ad315439ef9bce2fe4bab20d4a4d6d71f2b4cd6b30b5b6",
             "locator": {
               "end": 772,
               "kind": "line_range",
@@ -454,11 +400,10 @@
         },
         {
           "anchor": {
-            "blob": "ffb20091c2f732f798e06eb62370e7ad811943c0",
-            "content": "sha256:cbd8b127ee4fc7b32edb046d54507981d9836fb51f9d424c2992df0a9bf543cf",
+            "blob": "e1d561eb43926925f6fefc875db17155ef322eb4",
+            "content": "sha256:b587decdc4759fbe040b7cad855befcc7b342d9523ac108060ef6932868ced65",
             "locator": {
-              "kind": "symbol",
-              "name": "_refresh_engine_facts"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/serving/projections/projection_inputs.py"
           },
@@ -467,24 +412,12 @@
       ]
     },
     "6": {
-      "note": "The worker-owned state refreshes progress inputs.",
+      "note": "The worker-owned state refreshes progress inputs.\n\nAnchor: `_refresh_progress`",
       "targets": [
         {
           "anchor": {
             "blob": "e1d561eb43926925f6fefc875db17155ef322eb4",
             "content": "sha256:04ba87c2215930d6e8ccb37062b4e6d587bd52085416fcc597a8c9669ba63ec1",
-            "locator": {
-              "kind": "symbol",
-              "name": "_refresh_progress"
-            },
-            "path": "mcp/src/agents_remember/serving/projections/projection_inputs.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "bb650c9aa0b941f8efa168ab1050b3b5e3f53043",
-            "content": "sha256:fca8bd8ee1eb3f508cd48a9afd5c95ebdb0be69c5abad250a60fa3a760b61f36",
             "locator": {
               "kind": "symbol",
               "name": "_refresh_progress"
@@ -500,8 +433,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bb650c9aa0b941f8efa168ab1050b3b5e3f53043",
-            "content": "sha256:19add99b4c190e674aa1c2fc1f446d38b2ee9986118ea3b72ed22dc8fdd22580",
+            "blob": "e1d561eb43926925f6fefc875db17155ef322eb4",
+            "content": "sha256:050dca0403c7c899af3d75c6e3fe77b97a5af1384a2dda60ad8f9f40876d31c2",
             "locator": {
               "kind": "symbol",
               "name": "ProjectionInputState"
@@ -512,12 +445,10 @@
         },
         {
           "anchor": {
-            "blob": "bb650c9aa0b941f8efa168ab1050b3b5e3f53043",
-            "content": "sha256:b8320bf8f86f6de6db7ab1871db486ea80b0e586c8d94ec8b590a7de8338b040",
+            "blob": "e1d561eb43926925f6fefc875db17155ef322eb4",
+            "content": "sha256:b587decdc4759fbe040b7cad855befcc7b342d9523ac108060ef6932868ced65",
             "locator": {
-              "end": 842,
-              "kind": "line_range",
-              "start": 354
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/serving/projections/projection_inputs.py"
           },
@@ -530,8 +461,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bb650c9aa0b941f8efa168ab1050b3b5e3f53043",
-            "content": "sha256:04db84169452aca3b58433da0bee7c2dd76e3daa9a0e7b5143afa7615011faf9",
+            "blob": "e1d561eb43926925f6fefc875db17155ef322eb4",
+            "content": "sha256:e95ca6ef4f2be52ec48402d13851e1fab71f1936509ae2d2f600bd963b24ffaa",
             "locator": {
               "kind": "symbol",
               "name": "ProjectionInputs"
@@ -542,8 +473,19 @@
         },
         {
           "anchor": {
-            "blob": "bb650c9aa0b941f8efa168ab1050b3b5e3f53043",
-            "content": "sha256:cbe7c90c1b6d66659c6bac9c55b33e313e1be750a6e58bd0d4fe4e17e824a883",
+            "blob": "e1d561eb43926925f6fefc875db17155ef322eb4",
+            "content": "sha256:b587decdc4759fbe040b7cad855befcc7b342d9523ac108060ef6932868ced65",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/serving/projections/projection_inputs.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e1d561eb43926925f6fefc875db17155ef322eb4",
+            "content": "sha256:68bf445f29c38be01c9bd533061aab99ccf8f8ab0de5bcf98685cc78876ad3bf",
             "locator": {
               "end": 298,
               "kind": "line_range",
@@ -560,8 +502,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c3c2ff4bb45c68e3c588824c2a1e01c05816700a",
-            "content": "sha256:91d0302742e71a054ec9e189541bd252571ccff79f90082d54679902f56ef9f3",
+            "blob": "80f68a14806839156738f156091e776e566e18b6",
+            "content": "sha256:3dfabfe5745c213923ce0843a0db6ab71e1623aa0a5cd99c1153efed4f73c050",
             "locator": {
               "kind": "symbol",
               "name": "project_and_write"
@@ -571,8 +513,18 @@
         },
         {
           "anchor": {
-            "blob": "c3c2ff4bb45c68e3c588824c2a1e01c05816700a",
-            "content": "sha256:30913cba84ecc67ba6e46685625415ec00352ca49ef6016c1184bdee8f67f3c4",
+            "blob": "80f68a14806839156738f156091e776e566e18b6",
+            "content": "sha256:6f85a783f40f8df5c8afb659c5f7da8114cd5c3877c48f66578a5e8b5479dfb8",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "80f68a14806839156738f156091e776e566e18b6",
+            "content": "sha256:65967a8d8bc5ce2be9c4d102af61ca9d6414dcb1fe1487f617282c4977d7d679",
             "locator": {
               "end": 229,
               "kind": "line_range",

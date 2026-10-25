@@ -1,14 +1,15 @@
 {
   "path": "mcp/src/agents_remember/models/role_capsules/diagnostics.py",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
-      "note": "The content half whose digest must stay independent of these shapes.",
+      "note": "The content half whose digest must stay independent of these shapes.\n\nAnchor: `CapsuleCapsule` `CapsuleCompilationResult`",
       "targets": [
         {
           "anchor": {
-            "blob": "59951ae0d9258670a0277ede0b38068df22b48c3",
-            "content": "sha256:57b0718a3ae9e2c8769b9728d72996c910023d64d1b783d49aaf471a3ab4c350",
+            "blob": "3283618c85b66070d98755f6d21a3f2e66f407ff",
+            "content": "sha256:b57f9b8ad4c5d36d549f87b06c6f0e7292044d901dd037fd989d5da35b424e45",
             "locator": {
               "kind": "symbol",
               "name": "CapsuleCapsule"
@@ -44,8 +45,19 @@
         },
         {
           "anchor": {
-            "blob": "59951ae0d9258670a0277ede0b38068df22b48c3",
-            "content": "sha256:2b89c8b5b829b4c7aee6c3d04716f38516d808c54d06d59ddab700d15a20c067",
+            "blob": "3283618c85b66070d98755f6d21a3f2e66f407ff",
+            "content": "sha256:db8b77de969e266050b3045291a29cc618317ce8aa109f2a18da3344072c7ad0",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/types.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3283618c85b66070d98755f6d21a3f2e66f407ff",
+            "content": "sha256:92887471c78ca2b2e1eed84222369b578c4f00d42bcd35d0b5afe527850d03df",
             "locator": {
               "end": 475,
               "kind": "line_range",
@@ -99,12 +111,23 @@
       ]
     },
     "3": {
-      "note": "The digest document that must not reference any field of this module.",
+      "note": "The digest document that must not reference any field of this module.\n\nAnchor: `semantic_digest`",
       "targets": [
         {
           "anchor": {
-            "blob": "e0c363f53732c65054fa825f478956800f102db7",
-            "content": "sha256:24e597bc39f27710d9a95b8b39c255ff485a17e23e1bce53e77e51cc39ba55cc",
+            "blob": "762c104a0bcdc0375416163993d106dc37c5fb18",
+            "content": "sha256:157949db0f9acdf0d70ebbd6959fb382dccab34600bf2e6cfd9b12f0b9079a74",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/compiler.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "762c104a0bcdc0375416163993d106dc37c5fb18",
+            "content": "sha256:c6d826c4ee869200b8875ec1996b06854bea1c36a837c6955a90979f6b49a93e",
             "locator": {
               "kind": "symbol",
               "name": "semantic_digest"
@@ -116,12 +139,23 @@
       ]
     },
     "4": {
-      "note": "The application outcome that pairs a capsule or a refusal with this manifest.",
+      "note": "The application outcome that pairs a capsule or a refusal with this manifest.\n\nAnchor: `CapsuleCompilationOutcome` `render_explanation`",
       "targets": [
         {
           "anchor": {
-            "blob": "8f55401b7e0afa34d4cc0cc01d77d2aa95c1a3b7",
-            "content": "sha256:4aae10481d05e43d7a434e93ae593f4f4643d82811f592c85432b658c5def51e",
+            "blob": "0de84f83644c391b29759b1623034309cabc8c72",
+            "content": "sha256:fa7dbb04c116a8a6d6767c3d85c3b723091f0af5bfd84f27ffc91b7b7e9f8f52",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/role_capsules/compilation.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0de84f83644c391b29759b1623034309cabc8c72",
+            "content": "sha256:7b16c4a32019a3e8f4ccf82b15f964d954f4c2df5c97d530d7128a382caa421b",
             "locator": {
               "kind": "symbol",
               "name": "CapsuleCompilationOutcome"

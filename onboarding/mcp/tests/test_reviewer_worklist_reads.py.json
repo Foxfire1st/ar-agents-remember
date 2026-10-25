@@ -144,8 +144,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "01e2a20863ccb48a974ef6dc523aaf1cfa2b5b85",
-            "content": "sha256:e42f8118686fe878504c45e6d88d4d453e864e73e0b0fd1cda16fc264ba41914",
+            "blob": "9719c9159d392a3e5377a242638474a1a15b1f37",
+            "content": "sha256:a409d5a58fef5e56ee6c37fb11e72c00254b28d1b60870d2215681b10ae571d6",
             "locator": {
               "kind": "symbol",
               "name": "_external_ledger"
@@ -155,12 +155,22 @@
         },
         {
           "anchor": {
-            "blob": "01e2a20863ccb48a974ef6dc523aaf1cfa2b5b85",
-            "content": "sha256:8031de85a70672928def6c07eaa0ea0d49106440bf9b5e6c783069bf34def06b",
+            "blob": "9719c9159d392a3e5377a242638474a1a15b1f37",
+            "content": "sha256:8762dc90e70043df6508162c95245209b6aeb1459de28938fce42786ad8994bc",
             "locator": {
               "end": 846,
               "kind": "line_range",
               "start": 761
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "9719c9159d392a3e5377a242638474a1a15b1f37",
+            "content": "sha256:c081cf381bb3f13633d7bf5418bc9534212e3a89628153ff30047098d9b0be43",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -412,15 +422,14 @@
       ]
     },
     "4": {
-      "note": "The rows of the settings selection.",
+      "note": "The rows of the settings selection.\n\nAnchor: `_settings_selection`",
       "targets": [
         {
           "anchor": {
-            "blob": "01e2a20863ccb48a974ef6dc523aaf1cfa2b5b85",
-            "content": "sha256:33f286de1c38e8dd5a9d1e6ed094213f4377eada0ffc6e92a261d04832c41724",
+            "blob": "9719c9159d392a3e5377a242638474a1a15b1f37",
+            "content": "sha256:c081cf381bb3f13633d7bf5418bc9534212e3a89628153ff30047098d9b0be43",
             "locator": {
-              "kind": "symbol",
-              "name": "_settings_selection"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -428,15 +437,14 @@
       ]
     },
     "5": {
-      "note": "The fallback contract read and a sibling read at two identities.",
+      "note": "The fallback contract read and a sibling read at two identities.\n\nAnchor: `_fallback_reads`",
       "targets": [
         {
           "anchor": {
-            "blob": "01e2a20863ccb48a974ef6dc523aaf1cfa2b5b85",
-            "content": "sha256:e9b22799d9379e38bc1c0c32689d23bc0d5cc15e8ded39a838a41ef0ad28e5a3",
+            "blob": "9719c9159d392a3e5377a242638474a1a15b1f37",
+            "content": "sha256:c081cf381bb3f13633d7bf5418bc9534212e3a89628153ff30047098d9b0be43",
             "locator": {
-              "kind": "symbol",
-              "name": "_fallback_reads"
+              "kind": "file"
             }
           },
           "kind": "test"

@@ -55,15 +55,29 @@ path. The per-column `keyPrefix` keeps the code column and the sidecar column's 
 
 ### Repo-Internal References
 
+
 - Four persisted toggles map onto the change-set / full-file / highlight-off / rendered states. [1]
+
+
 - Highlight-off renders the plain L2 FilePane on the after-content. [2]
+
 - Markdown files get a `rendered` toggle that swaps the diff for a `<Markdown>` view. [3]
+
 - The markdown renderer reused for the rendered-markdown view. [4]
+
+
 - Otherwise it mounts the DiffPane with mode/collapse. [5]
+
 - The localStorage-backed flag hook it reuses (per-column keyPrefix). [6]
+
 - The plain read-only pane reused for highlight-off / full-file-plain. [7]
+
+
 - The `FileDiff` shape it renders. [8]
+
+
 - The screen that mounts it for the file + partner columns. [9]
+
 - One diff column with per-column persisted flags [10]
 - Narrow comparisons default to inline without touching the persisted flag [11]
 - Markdown files offer the rendered prose mode [12]

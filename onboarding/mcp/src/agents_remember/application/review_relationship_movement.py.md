@@ -14,7 +14,9 @@
 
 ## Evidence
 
+
 - One traversal over the union both snapshots record [17]
+
 - Pairing by the same recorded row, one movement per relationship [18]
 - The search published for a one-sided sentence [19]
 - Same-citation matching without authored lines [20]

@@ -113,10 +113,14 @@ No Domain Documentation source is configured for this memory root.
 The source itself and its governing route are sufficient for this thin payload adapter.
 
 - Integration payloads forward contract, strategy, and preview choice without ledger intent. [1]
+
 - Start, sync, attach, pause, and status payload builders preserve typed application inputs, and the sync builder now takes one paired resolution value instead of a bare action. [2]
+
 - The checkpoint-landing payload builder forwards the contract and typed integration arguments without owning a completion decision. [3]
 - The pause payload builder forwards one contract path to the stop tool and owns no decision; it is the transport edge of the route that publishes nothing. [4]
-- **The paired resolution value this builder forwards, and the application entry point that unpacks it into the driver's two arguments.** [5]
+
+> Retained earlier citation wording: - **The paired resolution value this builder forwards, and the application entry point that unpacks it into the driver's two arguments.** [5]
+
 
 ### Cross-Repo References
 
@@ -144,3 +148,5 @@ The current source seams include `worktree_start_payload`, `worktree_sync_payloa
 **Superseded.** The `worktree_status_wait_payload` builder and the `worktree_status_wait` tool it
 served were removed; this module exports no wait payload today and the name appears nowhere in the
 worktree payload surface. Recorded so the L15 paragraph above is not read as current.
+
+- **The current resolution value this builder forwards, and the application entry point that reads its action for the driver's resolution_action argument. The memory_sync_choice argument is passed independently.**  Anchor: `SyncResolutionInput` `worktree_sync_tool` [5]

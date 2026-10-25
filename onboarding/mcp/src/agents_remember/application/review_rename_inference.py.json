@@ -247,15 +247,14 @@
       ]
     },
     "39": {
-      "note": "The traversal that calls this module last, after the movements exist.",
+      "note": "The traversal that calls this module last, after the movements exist.\n\nAnchor: `relationship_movements`",
       "targets": [
         {
           "anchor": {
-            "blob": "e437ee9bba5c14761a4d4fb336ef4294cee7ca27",
-            "content": "sha256:496b3dcefa9ca0d521d8ef5cd9057719d8d06766aa30b6c86639856a97e3389c",
+            "blob": "8810b5f2e85378847113d9ea6246a4fb96def91f",
+            "content": "sha256:31b4506c1ef62e6c77c68efb52f668b00415b0725a84ff746be8e9adbd222cae",
             "locator": {
-              "kind": "symbol",
-              "name": "relationship_movements"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/review_relationship_movement.py"
           },
@@ -281,15 +280,14 @@
       ]
     },
     "41": {
-      "note": "**The cases that measure the inference: a source rename displayed as a labelled Git inference, the same rename with no authored edge producing a retraction and an addition rather than a movement, and the separation of a measured absence from a measurement never made.**",
+      "note": "The cases that measure the movement inference: a source rename is never a recorded movement and carries no inference, the same rename with no authored edge is a retraction and an addition, and a side that did not resolve exactly keeps its own state and reason.\n\nAnchor: `test_a_source_rename_is_displayed_as_a_labelled_git_inference`",
       "targets": [
         {
           "anchor": {
-            "blob": "4fbe8a393d04d0bc0f0af6d31ed7a7880fd4c684",
-            "content": "sha256:9d92a141ef6c66f5c78b86d4ff8ffaface38f7e13a723906ff63df0e4896b51f",
+            "blob": "b2988f6b2880854b942ad85dea6de14ff88eb7c9",
+            "content": "sha256:d48782df1cc07dc9fa8556307192ab80fe5651cdc798afaab7fd5d94fd22b31e",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_source_rename_is_displayed_as_a_labelled_git_inference"
+              "kind": "file"
             },
             "path": "mcp/tests/test_knowledge_review_relationship_movement.py"
           },

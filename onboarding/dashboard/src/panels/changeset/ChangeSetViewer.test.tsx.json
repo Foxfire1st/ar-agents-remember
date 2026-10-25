@@ -37,12 +37,12 @@
       ]
     },
     "7": {
-      "note": "The case mounts the shell explicitly on Operations.\n\nAnchor: `CockpitShell`",
+      "note": "The case mounts the shell explicitly on Operations.",
       "targets": [
         {
           "anchor": {
-            "blob": "4be1864cd677ee7db77fe71feb9d14c900e1a87d",
-            "content": "sha256:89ef6360fb95d3eff4d3e88d4e03fc321f3daec91487d392d9d9c94ddcf558c1",
+            "blob": "74208244a4e041382cb580f021189aba8311a02a",
+            "content": "sha256:b7e4c2a87a1d47bb1627c6771b6e9ffc8f3671d5622009905daeadfbc20f2e0a",
             "locator": {
               "kind": "file"
             }
@@ -56,8 +56,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "86545416eae45e7557f551de907178a8e9174476",
-            "content": "sha256:009cd4276ae7f423d665790ef70bf7d3a5c8e0c39e3e84b71f234953c5653b99",
+            "blob": "0f255485bc9dc7fc49932bd57f66ff49c8a4564c",
+            "content": "sha256:a07755e77404e8354fd4134325908235f10bd244bb5049776b162574c8bb6473",
             "locator": {
               "kind": "file"
             },

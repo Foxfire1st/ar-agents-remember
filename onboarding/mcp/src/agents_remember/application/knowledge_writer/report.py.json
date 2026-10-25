@@ -55,15 +55,14 @@
       ]
     },
     "2": {
-      "note": "The report and its refused flag.",
+      "note": "The report and its refused flag.\n\nAnchor: `WriteReport`",
       "targets": [
         {
           "anchor": {
-            "blob": "622d5f552a2f64f1d02785f56c29c24a9d1ec0a2",
-            "content": "sha256:9bba29baf730d5ee7a6f5e49e97aa863c37837ae1b1cf4b42b25ca233be36242",
+            "blob": "c84b18b7dc47f00185b7c530a94c6ee5e5b37fb7",
+            "content": "sha256:1440a36ff6ee4b86d1b713b3fd554352a4470aec19563ba537bc6b2f52175992",
             "locator": {
-              "kind": "symbol",
-              "name": "WriteReport"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -71,15 +70,14 @@
       ]
     },
     "3": {
-      "note": "The JSON form.",
+      "note": "The JSON form.\n\nAnchor: `to_document`",
       "targets": [
         {
           "anchor": {
-            "blob": "622d5f552a2f64f1d02785f56c29c24a9d1ec0a2",
-            "content": "sha256:877a7d13e70cb96ad55f68aba275a8ad198ee7b71af6123ca9c22b117a55bfb2",
+            "blob": "c84b18b7dc47f00185b7c530a94c6ee5e5b37fb7",
+            "content": "sha256:1440a36ff6ee4b86d1b713b3fd554352a4470aec19563ba537bc6b2f52175992",
             "locator": {
-              "kind": "symbol",
-              "name": "to_document"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -87,15 +85,14 @@
       ]
     },
     "4": {
-      "note": "The text form.",
+      "note": "The text form.\n\nAnchor: `render`",
       "targets": [
         {
           "anchor": {
-            "blob": "622d5f552a2f64f1d02785f56c29c24a9d1ec0a2",
-            "content": "sha256:cab42a6d9efb1e915fce60f012d595ebf3008b00577b046e3d3ecf0a35ea4344",
+            "blob": "c84b18b7dc47f00185b7c530a94c6ee5e5b37fb7",
+            "content": "sha256:1440a36ff6ee4b86d1b713b3fd554352a4470aec19563ba537bc6b2f52175992",
             "locator": {
-              "kind": "symbol",
-              "name": "render"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -131,15 +128,14 @@
       ]
     },
     "6": {
-      "note": "One requirement endpoint and the owner's answer; unresolved is reported, never refused.",
+      "note": "One requirement endpoint a record links and the owner's answer, `resolved` or `unresolved`: an unchanged unresolved link is reported, while a changed one refuses the write naming the endpoint and its code.\n\nAnchor: `EndpointOutcome`",
       "targets": [
         {
           "anchor": {
-            "blob": "5440676e5e3f76d0952d7ce26742ee4a58a7eade",
-            "content": "sha256:e9cc657c2493f2f254e99bea83bc15cf352b22cf53e88b3a846e559b2a33d1a7",
+            "blob": "c84b18b7dc47f00185b7c530a94c6ee5e5b37fb7",
+            "content": "sha256:1440a36ff6ee4b86d1b713b3fd554352a4470aec19563ba537bc6b2f52175992",
             "locator": {
-              "kind": "symbol",
-              "name": "EndpointOutcome"
+              "kind": "file"
             }
           },
           "kind": "code"

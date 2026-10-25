@@ -56,7 +56,9 @@ No configured live documentation source was available for this pass.
 The parser, the builder and the row writers.
 
 - The builder's contract: one snapshot in, problems named, nothing derived. [1]
+
 - The parsed tree and its completeness. [2]
+
 - What one build reports. [3]
 
 - Parsing skips Markdown companions before decoding; indexed JSON decode/schema failures become named problems. [4]

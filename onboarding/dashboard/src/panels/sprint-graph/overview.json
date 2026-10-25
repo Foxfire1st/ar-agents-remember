@@ -1,9 +1,22 @@
 {
-  "path": "dashboard/src/panels/sprint-graph",
+  "path": "dashboard/src/panels/sprint-graph/overview",
+  "proves": [],
+  "realizes": [],
   "references": {
     "1": {
-      "note": "Wave grouping and segment/lump construction retain producer order; each box uses the qualified task entry for its task word and accessible name, independently of the dependency badge.",
+      "note": "Wave grouping and segment/lump construction retain producer order; each box uses the qualified task entry for its task word and accessible name, independently of the dependency badge.\n\nAnchor: `SprintGraphView` `SprintGraphViewImpl` `GraphBox`",
       "targets": [
+        {
+          "anchor": {
+            "blob": "5a995ff889391494f6d68d05f4de87e3777f7460",
+            "content": "sha256:6f5a5c01e4363b57960c454e49402ef105205a13722bb291b90115ddf378c1a3",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/sprint-graph/SprintGraphView.tsx"
+          },
+          "kind": "code"
+        },
         {
           "anchor": {
             "blob": "5a995ff889391494f6d68d05f4de87e3777f7460",
@@ -30,8 +43,8 @@
         },
         {
           "anchor": {
-            "blob": "10fa9b314498732151de2f419d952921a92ebe84",
-            "content": "sha256:b7563252acdaec7fd3e57e8db9cc1053a683950cca8f4f81b73f5969ce6e43aa",
+            "blob": "5a995ff889391494f6d68d05f4de87e3777f7460",
+            "content": "sha256:4b97c0b23c1b36662a1d4659733b442bde44f328ce590a10b2386840b86b08b9",
             "locator": {
               "kind": "symbol",
               "name": "GraphBox"
@@ -114,7 +127,7 @@
       ]
     },
     "4": {
-      "note": "Current shell/component sources define reachability, graphless queue access, canonical reset, entry-owned words/tones with live updates and qualified missing entries, plus responsive declarations; no Curator execution is claimed.\n\nAnchor: source assertions and canonical reset",
+      "note": "Current shell/component sources define reachability, graphless queue access, canonical reset, entry-owned words/tones with live updates and qualified missing entries, plus responsive declarations; no Curator execution is claimed.",
       "targets": [
         {
           "anchor": {
@@ -131,8 +144,8 @@
         },
         {
           "anchor": {
-            "blob": "15344fb37b57a54e73496120e5afdedcda971695",
-            "content": "sha256:35ddf338632731e9bfce21409dd6359028bd80096b4363118053c63d7138db3d",
+            "blob": "62502853b1c6bb6eac0b6a35f5d7146e87255ee4",
+            "content": "sha256:7a36164266770154ae790a060eab4591c668621ca2d9663496ac2cfa7fd817c2",
             "locator": {
               "end": 193,
               "kind": "line_range",
@@ -141,19 +154,6 @@
             "path": "dashboard/src/panels/sprint-graph/SprintGraphView.test.tsx"
           },
           "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "e696c956756f8e506411a473a7778e5a2afc9bfb",
-            "content": "sha256:4af845c9fea8f1c1b6b995ce683cada1fb5e42174a87b131fbcedbc843a00e4d",
-            "locator": {
-              "end": 377,
-              "kind": "line_range",
-              "start": 367
-            },
-            "path": "dashboard/src/data/store.ts"
-          },
-          "kind": "code"
         }
       ]
     },
@@ -198,12 +198,25 @@
         },
         {
           "anchor": {
-            "blob": "fddde3fe60faa2d9374405b9676016ab026af1b6",
-            "content": "sha256:3210b67654efd86b837f892e3568ebe8331b76d1196385091dbe937cc30473ce",
+            "blob": "d71e9db1948f52b82bd84b2348775f13ac9b57e7",
+            "content": "sha256:177fca6a059e1ee8b373f832a2725a9b97761ec3b03fa9bf5f72b9a8929f8619",
             "locator": {
               "end": 599,
               "kind": "line_range",
               "start": 565
+            },
+            "path": "dashboard/src/types/projection.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d71e9db1948f52b82bd84b2348775f13ac9b57e7",
+            "content": "sha256:30130bf59300f0b9bd54a089663da88bb8ef3c1a3f323e9b87903068f1c39041",
+            "locator": {
+              "end": 571,
+              "kind": "line_range",
+              "start": 537
             },
             "path": "dashboard/src/types/projection.ts"
           },
@@ -259,8 +272,19 @@
       ]
     },
     "8": {
-      "note": "Only ready/waiting or an explicit cycle become dependency badges; absent qualified task entries have no fallback task word.",
+      "note": "Only ready/waiting or an explicit cycle become dependency badges; absent qualified task entries have no fallback task word.\n\nAnchor: `readinessOf` `GraphBox`",
       "targets": [
+        {
+          "anchor": {
+            "blob": "5a995ff889391494f6d68d05f4de87e3777f7460",
+            "content": "sha256:6f5a5c01e4363b57960c454e49402ef105205a13722bb291b90115ddf378c1a3",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/sprint-graph/SprintGraphView.tsx"
+          },
+          "kind": "code"
+        },
         {
           "anchor": {
             "blob": "5a995ff889391494f6d68d05f4de87e3777f7460",
@@ -275,8 +299,8 @@
         },
         {
           "anchor": {
-            "blob": "10fa9b314498732151de2f419d952921a92ebe84",
-            "content": "sha256:b7563252acdaec7fd3e57e8db9cc1053a683950cca8f4f81b73f5969ce6e43aa",
+            "blob": "5a995ff889391494f6d68d05f4de87e3777f7460",
+            "content": "sha256:4b97c0b23c1b36662a1d4659733b442bde44f328ce590a10b2386840b86b08b9",
             "locator": {
               "kind": "symbol",
               "name": "GraphBox"
@@ -288,5 +312,5 @@
       ]
     }
   },
-  "schema": "ar-onboarding-route/v1"
+  "schema": "ar-onboarding-file/v1"
 }

@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/application/context_packet.py",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
@@ -119,7 +120,7 @@
         },
         {
           "anchor": {
-            "blob": "ffcb9d3a40422681e2f012e763513225ed727137",
+            "blob": "b4bf02afeb62c71b1a3333562b505eeb244d637e",
             "content": "sha256:30279b1752e0553b54475d9df98e562424f5f4fbde36428d0533666e1482106d",
             "locator": {
               "kind": "symbol",
@@ -163,15 +164,14 @@
       ]
     },
     "5": {
-      "note": "Public payload builder validates this application entry point output through the model registry.",
+      "note": "Public payload builder validates this application entry point output through the model registry.\n\nAnchor: `context_packet_payload`",
       "targets": [
         {
           "anchor": {
             "blob": "6b123c608ce155f50f62249a98196f1b0e80ed08",
-            "content": "sha256:4ca9c7f33dd5b33e6e28cea6c6fda08205ba9cd7fc864963f5929beae3e6ee3b",
+            "content": "sha256:33a7112467f0720462329fcd72b5b7cf94fc062499c3a8a146aca89e054bb04d",
             "locator": {
-              "kind": "symbol",
-              "name": "context_packet_payload"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/mcp/tools/core.py"
           },
@@ -214,37 +214,14 @@
       ]
     },
     "8": {
-      "note": "The current module exposes `ContextPacketError`, `ContextPacketRequest`, `build_context_packet` at this ownership boundary.",
+      "note": "The current module exposes `ContextPacketError`, `ContextPacketRequest`, `build_context_packet` at this ownership boundary.\n\nAnchor: `ContextPacketError` `ContextPacketRequest` `build_context_packet`",
       "targets": [
         {
           "anchor": {
             "blob": "37b2aac34d912943eff6a629b0d6906b3df837f0",
-            "content": "sha256:3ae031cbe65c164de319b55fe1ccefb3ad3edaeade89531a176bdfd304386d44",
+            "content": "sha256:b555aa17fe4af5d16d43fbd5b8426035a27e8b75737f9931a7e7582236902440",
             "locator": {
-              "kind": "symbol",
-              "name": "ContextPacketError"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "37b2aac34d912943eff6a629b0d6906b3df837f0",
-            "content": "sha256:ace4d74d87c5147165b8e2e9d8be8cd87f8ff44baf8cc030b3d0f5ec3165cc5f",
-            "locator": {
-              "kind": "symbol",
-              "name": "ContextPacketRequest"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "37b2aac34d912943eff6a629b0d6906b3df837f0",
-            "content": "sha256:f693daf76a853a8dd3717df397402b659122d0092f9d56512ec1cbb23653a985",
-            "locator": {
-              "kind": "symbol",
-              "name": "build_context_packet"
+              "kind": "file"
             }
           },
           "kind": "code"

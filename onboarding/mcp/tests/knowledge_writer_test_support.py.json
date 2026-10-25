@@ -46,15 +46,14 @@
       ]
     },
     "3": {
-      "note": "The base memory: one exported invariant, one realization, one exported family.",
+      "note": "The base memory: one exported invariant, one realization, one exported family.\n\nAnchor: `base_memory`",
       "targets": [
         {
           "anchor": {
-            "blob": "dc1d4c8274b03e14c7500e8ed0d0c17d0fa8cef3",
-            "content": "sha256:372a7f52cdebb63537b2e4675fe478251ab772ba57555d961754823178fdadf9",
+            "blob": "a3ad63d88505d9c1197e5788968cc800573fc65d",
+            "content": "sha256:67ada9914106f91f35e6ee29a276a7e684691771f67f69d8b177a4602e878d29",
             "locator": {
-              "kind": "symbol",
-              "name": "base_memory"
+              "kind": "file"
             }
           },
           "kind": "test"

@@ -6,6 +6,8 @@
 
 ## Purpose
 
+The reference policy separates anchor validity from note truth. `R198.1-reference-anchor` refuses stale paired blob/content anchors at publication and full quality; the drift summary and writer/sync-merge routes expose repair debt. A current anchor with an inaccurate note needs note-only revision preserving targets, anchors and numbering. The table includes this rule, with eleven decided rules and six writer-reported refusing rules.
+
 The pre-code-commit and pre-curation memory-quality procedure this skill now owns: resolve context, run task-start drift control, classify drift, hand off maintenance, check missing onboarding before the code commit, run the complete curation check, judge validator findings, publish curator coherence and use targeted style fixers only after findings.
 
 ## Code Commentary
@@ -16,6 +18,11 @@ Its boundaries now route authoring to the sibling procedures of the same skill r
 
 ## Evidence
 
+
 - Drift classification answers in `context_packet`'s own response and files no temporary report; the durable result is the contract-scoped checklist at the `reportPath` `memory_quality_check` returns, with its attestation beside it. [1]
+
+
 - The procedure reports and routes; authoring belongs to this same skill's `SKILL.md` and `converted-card-workflow.md`, and closeout commits stay with the `w-02-light-task-workflow` transaction. [2]
+
+
 - Curation is always the complete operation, and a scoped diagnostic never replaces it or turns into a repository-wide adoption scan. [3]

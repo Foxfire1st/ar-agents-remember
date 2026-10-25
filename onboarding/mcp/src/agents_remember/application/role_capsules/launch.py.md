@@ -25,13 +25,27 @@ This is current-source interpretation of the A9 candidate, not a new test result
 - [6]
 - [7]
 - [8]
-- [9]
-- [11]
-- [12]
+
+
+
+- Anchor: Canonical task resolution precedes the same task compiler. [9]
+
+
+
+
+
+- Anchor: Manifest-routed generic taskless compilation, not an Eve-specific carrier. [11]
+
+
+
+
+
+- Anchor: Both paths produce the generic compiler-derived delivery. [12]
+
+
 - [13]
 - [19]
 - [20]
 - [21]
 - [22]
 - [23]
-

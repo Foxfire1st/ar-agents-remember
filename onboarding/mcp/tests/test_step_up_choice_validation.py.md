@@ -47,7 +47,10 @@ both the answer and the bytes of the settings file.
 - A feature refusal names the authored key before retirement. [1]
 - An omitted mode takes the host default without changing the base. [2]
 - An effective no-op step-up refuses with the authored file and key. [3]
+
 - A per-level refusal preserves the settings file and the exact feature key. [4]
+
 - A post-commit settings-hint failure returns the recorded review. [5]
 - A lost receipt uses the durable destination as the predecessor in takeover material. [6]
+
 - A same-scope native tier step-up is not hidden by an inherited alias. [7]

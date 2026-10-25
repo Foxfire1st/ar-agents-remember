@@ -25,11 +25,17 @@ A binary file staged as added before parking carries carriage returns: the cance
 
 ## Evidence
 
+
 - Union rows added at the same place finish sync with exact carried-first output. [1]
+
 - A missing parked union row fails only its named path and retains stash authority. [2]
 - Cancellation recognizes reapplied catalogs and restores the parked tree. [3]
 - Cancellation recognizes a binary addition's exact staged bytes. [4]
+
 - A byte-distinct other-algorithm result cannot satisfy restoration or authorize cancellation. [5]
+
 - The effective worktree driver/configuration is used for proof and cancellation. [6]
+
 - Native acquisition failure retains the stopped generation and refuses without fallback before recoverable cancellation. [7]
+
 - Every repository merge value needs a declared real-sync case. [8]

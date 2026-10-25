@@ -1,5 +1,6 @@
 {
   "path": "mcp/tests/test_compact_content.py",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
@@ -20,15 +21,14 @@
       ]
     },
     "2": {
-      "note": "`create_server()` installs the shim before registering tools.",
+      "note": "`create_server()` installs the shim before registering tools.\n\nAnchor: `create_server`",
       "targets": [
         {
           "anchor": {
-            "blob": "f307a8adb3d7fc51aeb3c776f4593c9b2517412d",
-            "content": "sha256:71d47f4c57afe64bde317fd506eb089eb32b746ce2e130e5732824d6c3fcd1fe",
+            "blob": "04fe591490945dea61eca1af410ae2553d95ea05",
+            "content": "sha256:cc3a440dce07a6635e86d3b3c0bd4747a332896e3470112e376449434e08b69a",
             "locator": {
-              "kind": "symbol",
-              "name": "create_server"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/mcp/server.py"
           },

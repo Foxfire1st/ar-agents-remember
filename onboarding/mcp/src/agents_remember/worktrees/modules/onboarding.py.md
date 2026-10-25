@@ -71,9 +71,15 @@ The converted curator trace entry remains source-bound. It requires one `Onboard
 - Every catalog row is evidence-checked against the code candidate tree, planned or not; absent evidence is the unconditional check, while an unsupported algorithm and a missing fingerprint value are diagnosed from the plan's rows. [15]
 
 - Route-index refresh accepts the resolved storage authority and consumes one deterministic source snapshot. (`build_route_indexes`; `route_index_source_snapshot`) [12]
+
 - Source-current rows govern converted onboarding; updated needs a counted Markdown/reference edit and current candidate blob binding. [7]
+
+
 - The helper raises for missing/unsupported cards; the trace wrapper catches that RuntimeError and prepends the finding while retaining trace findings. [3]
+
+
 - The surviving curator trace entry takes the candidate blobs and the run's identical-copy groups through one inputs value and requires current eligible answers; missing converted sides are incomplete. [13]
+
 
 - The one entity refusal the closeout asks before the code commit and again before the memory commit. [16]
 - A row's value is computed over the code commit's own tree, not `HEAD`. [17]
@@ -110,6 +116,8 @@ No additional cross-repository evidence applies.
 
 - Converted-tree classification remains layout-marker based at the retained knowledge-gate owner; the local converted_onboarding wrapper was removed. [1]
 
+
 - The converted memory-quality entry point requires one inputs value and forwards the candidate blobs and the run's identical-copy groups; it returns trace repair findings. [4]
+
 
 - The gate reads a run's groups through one strict reader: a malformed or representative-omitting group raises rather than shortening into a single source. (`identical_changes_from_run`; `IdenticalChangesUnreadable`) [14]

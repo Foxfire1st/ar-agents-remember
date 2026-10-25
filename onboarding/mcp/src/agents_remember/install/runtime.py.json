@@ -416,7 +416,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6ebb200020acfc5c807c9619d18ce2d89b4fb555",
+            "blob": "d2b3ea0cd51a15c2ec8828868eb9c03a98b0991b",
             "content": "sha256:ed908d4b26865a91717a59fb120b1ce44121b9f55e8aa502f7a3623e5584ba55",
             "locator": {
               "kind": "symbol",
@@ -428,12 +428,11 @@
         },
         {
           "anchor": {
-            "blob": "6ebb200020acfc5c807c9619d18ce2d89b4fb555",
-            "content": "sha256:09aac509651a977604c45eff433cc41819fe33cf12f580c740962a913422f9a8",
+            "blob": "d2b3ea0cd51a15c2ec8828868eb9c03a98b0991b",
+            "content": "sha256:ed908d4b26865a91717a59fb120b1ce44121b9f55e8aa502f7a3623e5584ba55",
             "locator": {
-              "end": 39,
-              "kind": "line_range",
-              "start": 25
+              "kind": "symbol",
+              "name": "lifecycle_settings_from_config"
             },
             "path": "mcp/src/agents_remember/providers/settings.py"
           },

@@ -184,9 +184,13 @@ worktree cleanup while preserving cancellation as the public outcome.
 - The projector publishes one successful tick by computing events, committing stable/current authority, then notifying subscribers.  Anchor: "def _publish_projection(" [1]
 - Subscription activation registers its queue before current-snapshot capture and removes it in `finally`.  Anchor: "self._subscribers.add(queue)"; "self._subscribers.discard(queue)" [2]
 
+
 - The stream consumes one projector subscription under explicit aclosing, and decorates snapshot events with the build stamp and optional watcher-health tail. Missing build/health facts are omitted; deltas carry no whole-workspace tail. [3]
 
+
+
 - All real tick outcomes reach completion only after actual work/drain.  Anchor: `Projector._tick` [4]
+
 
 - Landing interest reads the actual state-stream subscriber set without adding mutation or publication authority. [5]
 - The composed runtime preserves interest until the final real subscriber leaves. [6]

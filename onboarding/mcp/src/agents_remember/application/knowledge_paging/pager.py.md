@@ -6,7 +6,9 @@
 
 ## Current source contract evidence
 
-- Current candidate source supports the operative account; historical sections grant no current tool or execution acceptance. [7]
+
+- Current candidate source supports the operative account; historical sections grant no current tool or execution acceptance.
+
 
 ## Purpose
 
@@ -53,10 +55,16 @@ No configured live documentation source was available for this pass.
 
 - The module statement: indivisible rows, the header reference, the exact walk. [1]
 - The flag an oversized single-row page carries. [2]
+
 - The row, the cut and the binding. [3]
+
 - Only a page starting inside a group continues a family. [4]
+
 - The cut: estimate, verify, shorten; blocked versus oversized. [5]
+
+
 - The page facts every bounded response states. [6]
+
 
 ### Cross-Repo References
 

@@ -1,14 +1,26 @@
 {
   "path": "mcp/src/agents_remember/mcp/tools/base.py",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
-      "note": "The advertised tuple names the structural public surface, and is now defined in the `models` leaf.",
+      "note": "The advertised tuple names the structural public surface, and is now defined in the `models` leaf.\n\nAnchor: `PUBLIC_TOOLS`",
       "targets": [
         {
           "anchor": {
-            "blob": "11f7b63ef890f294ec645cb0a18372190e239551",
-            "content": "sha256:68e903ed4eb01e85a91b74875abc196a300101695c83e602e2fcf8a2d0805c21",
+            "blob": "d0b0ddd9f150e32116b430ecc74907fcf68fee97",
+            "content": "sha256:fdef15e2ca9d39f66c8570a7147cb894dda16f47c7d3558bb4454e5b4714875f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/models/tools/public_roster.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d0b0ddd9f150e32116b430ecc74907fcf68fee97",
+            "content": "sha256:77300d3d8d990814a8c85c25a0c314254dde308fd394c4a03ff87c1fd34e2cb3",
             "locator": {
               "kind": "symbol",
               "name": "PUBLIC_TOOLS"
@@ -57,8 +69,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5f9986250119015031432880e7c411d6bdf453ea",
-            "content": "sha256:2ebc14b18d51623f784392c927ed0622576181781cf21bbf6c445a50ea2d9ae9",
+            "blob": "d0620d3a6b3d0466f16d6b6d715eb161641e387f",
+            "content": "sha256:99af9a6a427cf236127e24d5be61389107383dbbf702a8547b09e09dc08713ed",
             "locator": {
               "kind": "symbol",
               "name": "PublicSurfaceInventoryTests"
@@ -69,8 +81,8 @@
         },
         {
           "anchor": {
-            "blob": "5f9986250119015031432880e7c411d6bdf453ea",
-            "content": "sha256:8ff5679e907d7c783697590bddca168b76d2d8d0ee7926088784a9b9cd17f011",
+            "blob": "d0620d3a6b3d0466f16d6b6d715eb161641e387f",
+            "content": "sha256:72d33dbfd1b9de2466890068890de129b04207ba8007116032039dec04d251a6",
             "locator": {
               "end": 214,
               "kind": "line_range",
@@ -79,16 +91,37 @@
             "path": "mcp/tests/test_tools.py"
           },
           "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "d0620d3a6b3d0466f16d6b6d715eb161641e387f",
+            "content": "sha256:a1e4d314feb531d1035a87ca865b4aec6d628128b791f4f2639ff61a7399da89",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_tools.py"
+          },
+          "kind": "test"
         }
       ]
     },
     "4": {
-      "note": "The shared adapter finalizes one application result.",
+      "note": "The shared adapter finalizes one application result.\n\nAnchor: `_tool_payload`",
       "targets": [
         {
           "anchor": {
-            "blob": "cf09680d5bb09436a9d3afb73da9cbd60f1af5fc",
-            "content": "sha256:35b48e3f7dcb68f7a66dcb72920ee84b9b6dd535711731b79de1596a0e2239fa",
+            "blob": "bbd96445dae6e10e1c4052722fab1b614aafedfe",
+            "content": "sha256:e65598ad08d511a5ffa26a3099d273596eea7844d5c2a00685c2ccb183271c43",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bbd96445dae6e10e1c4052722fab1b614aafedfe",
+            "content": "sha256:c0e54f12b9211f7fb26dd24d118a8562de4972ce6d7beb7a43b920a7fc979f42",
             "locator": {
               "kind": "symbol",
               "name": "_tool_payload"
@@ -103,11 +136,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9ade787685940a8e8c127d3c75b23c32e05acb9d",
-            "content": "sha256:f2c28947cf1d464a66d9b8fdc18b28052f9e07bbb80604a521f8eaf99c5392d7",
+            "blob": "de6a43ed2001fc740bfc55163c3d1a0d70ae39bb",
+            "content": "sha256:185d879c207c0934b116aa247336e7f9cfb0b4fb73b704363101242d2713e15e",
             "locator": {
-              "kind": "symbol",
-              "name": "TOOL_REGISTRARS"
+              "end": 45,
+              "kind": "line_range",
+              "start": 33
             },
             "path": "mcp/src/agents_remember/mcp/registration/__init__.py"
           },
@@ -115,12 +149,11 @@
         },
         {
           "anchor": {
-            "blob": "1992fb7acf8e245685369d397149006982245cfa",
-            "content": "sha256:3f0d4213495fcd5354b75164a9e2fe189f73a9a689516ccea835d2476d982981",
+            "blob": "de6a43ed2001fc740bfc55163c3d1a0d70ae39bb",
+            "content": "sha256:ba5f80c4312577cf05ce7edf0740f0539e8ca3817e94705c6d618c18813ab107",
             "locator": {
-              "end": 51,
-              "kind": "line_range",
-              "start": 38
+              "kind": "symbol",
+              "name": "TOOL_REGISTRARS"
             },
             "path": "mcp/src/agents_remember/mcp/registration/__init__.py"
           },
@@ -150,7 +183,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4bfc02956d94b6b490c6ccdcd5a93694127f5cca",
+            "blob": "d0b0ddd9f150e32116b430ecc74907fcf68fee97",
             "content": "sha256:1ee50c5e88e29258dcff4296d3ab8ffcbf7cbf0ab83a774c7271bdc490930b3b",
             "locator": {
               "end": 22,
@@ -181,12 +214,12 @@
       ]
     },
     "9": {
-      "note": "The protocol adapter delegates response completion to the application boundary.\n\nAnchor: \"def _tool_payload(\"",
+      "note": "The protocol adapter delegates response completion to the application boundary.",
       "targets": [
         {
           "anchor": {
-            "blob": "cf09680d5bb09436a9d3afb73da9cbd60f1af5fc",
-            "content": "sha256:99fcc8b8517d59f1b701140ddf00c842b539245f7a74358c3785a061633b7d23",
+            "blob": "bbd96445dae6e10e1c4052722fab1b614aafedfe",
+            "content": "sha256:02861ec722ea4c0fc6571e07ac18f67ec72c64be18bf5754811b91af64bbe1f4",
             "locator": {
               "end": 22,
               "kind": "line_range",

@@ -3,28 +3,28 @@
   "realizes": [],
   "references": {
     "2": {
-      "note": "§4.2 3-zone room (`Panel fill` → `roomShell` → header + `roomGrid` [stack \\| `roomStage` \\| `roomZone`]).\n\nAnchor: `roomShell`",
+      "note": "§4.2 3-zone room (`Panel fill` → `roomShell` → header + `roomGrid` [stack \\| `roomStage` \\| `roomZone`]).",
       "targets": [
         {
           "anchor": {
-            "blob": "9cb152993c6abde275ec7569438fad326e9a3ae1",
-            "content": "sha256:087b98f6e2c1c275edb63a6956df7a120b2f4b535222c1731c199d7790a163b2",
+            "blob": "c89382b7530853796de958e287f52a05bf0222f3",
+            "content": "sha256:8f2f25166c9a3108fbdd4dd3614786b86a9f0924c6e2b3c5482efe3c91d9af83",
             "locator": {
-              "end": 279,
+              "end": 165,
               "kind": "line_range",
-              "start": 252
+              "start": 147
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "9cb152993c6abde275ec7569438fad326e9a3ae1",
-            "content": "sha256:9d3df2db1ce7057ac0599e0c56f6d5a2bb16dee5ef1be5995f217640871a22c0",
+            "blob": "c89382b7530853796de958e287f52a05bf0222f3",
+            "content": "sha256:772258103515c77131d88eddcb009d0152258a5ca0256f0e5ee02cfa58141460",
             "locator": {
-              "end": 292,
+              "end": 176,
               "kind": "line_range",
-              "start": 284
+              "start": 169
             }
           },
           "kind": "code"
@@ -32,15 +32,14 @@
       ]
     },
     "3": {
-      "note": "`EngineRoomHeader` (health/phase/nextAction + master-caution from `selectQueue`).",
+      "note": "`EngineRoomHeader` (health/phase/nextAction + master-caution from `selectQueue`).\n\nAnchor: `EngineRoomHeader`",
       "targets": [
         {
           "anchor": {
-            "blob": "b967c7e758ed50c05ed177e1eca3ae5771f9e0eb",
-            "content": "sha256:58d15a56ecc549ad38344568d9dcf75211615fbbe42a58e947aca64d28a6163e",
+            "blob": "c89382b7530853796de958e287f52a05bf0222f3",
+            "content": "sha256:5618965181d8da987f106c86d53201f36adbbd5d11be42a1e036a3731a8f2f1d",
             "locator": {
-              "kind": "symbol",
-              "name": "EngineRoomHeader"
+              "kind": "file"
             }
           },
           "kind": "code"

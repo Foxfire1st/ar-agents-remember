@@ -1,10 +1,11 @@
 {
   "path": "AGENTS.md",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
-        "blob": "e60848154d5bc66f07dcad5a3ffcf82482137e04",
-        "content": "sha256:153da913a572205ac1dd919fa012d6179d0d928d4d898dadf6a908d6d3b1dd68",
+        "blob": "a85a322c28466c2bf57ad99345c0bdcdee9dfd0c",
+        "content": "sha256:747210c981896c1d6f0a12dda877823a7b46fd7c37495ec45d51344b2a769826",
         "locator": {
           "kind": "file"
         }
@@ -15,18 +16,18 @@
         "handoffEntry": "L192-W-R199-09",
         "leaf": "260928-MIK-L192"
       },
-      "rationale": "The root instruction's context_packet call now names only an admitted parameter, which is what a reader copies.",
+      "rationale": "The root instruction at C copies only an admitted parameter into its context_packet call (AGENTS.md:64-71), which is what the entry asserts; the whole-file anchor is now recorded against C's bytes.",
       "role": "primary-authority"
     }
   ],
   "references": {
     "1": {
-      "note": "Source scope and role routing.\n\nAnchor: `## Start Here — Route By Role`",
+      "note": "Source scope and role routing.",
       "targets": [
         {
           "anchor": {
-            "blob": "0d37eb9c9aa1a4ec77e34063f3996c3371b18d97",
-            "content": "sha256:62f06f70e6c408d3a15c7316e01aa72a686dc9d097b71627e6222fedcc4fd46c",
+            "blob": "a85a322c28466c2bf57ad99345c0bdcdee9dfd0c",
+            "content": "sha256:502fdaf44329e840e866f9f55227fd7c8a2067c09e0c70a4adf343c2166031b0",
             "locator": {
               "end": 47,
               "kind": "line_range",
@@ -38,16 +39,16 @@
       ]
     },
     "2": {
-      "note": "Resolved memory and retrieval strategy.\n\nAnchor: `## Memory And Onboarding`",
+      "note": "Resolved memory and retrieval strategy.",
       "targets": [
         {
           "anchor": {
-            "blob": "0d37eb9c9aa1a4ec77e34063f3996c3371b18d97",
-            "content": "sha256:d138d6b4efeb42aae94027ddacafda429be62f07990ae9b11b3696f6d216b87e",
+            "blob": "a85a322c28466c2bf57ad99345c0bdcdee9dfd0c",
+            "content": "sha256:c525e2b1e0722a07ab56014d333dcd1e4538a6f4601d3247eb3556bd2f37481f",
             "locator": {
-              "end": 97,
+              "end": 96,
               "kind": "line_range",
-              "start": 51
+              "start": 50
             }
           },
           "kind": "code"
@@ -55,16 +56,16 @@
       ]
     },
     "3": {
-      "note": "Canonical sources and generated-copy boundaries.\n\nAnchor: `## Source Layout`",
+      "note": "Canonical sources and generated-copy boundaries.",
       "targets": [
         {
           "anchor": {
-            "blob": "0d37eb9c9aa1a4ec77e34063f3996c3371b18d97",
-            "content": "sha256:2d95e28fb56459bb35b12480b4141c60e0c9686863a965e03250c684abb1f72c",
+            "blob": "a85a322c28466c2bf57ad99345c0bdcdee9dfd0c",
+            "content": "sha256:db219917c9cfad021a9a0f8e706a3e2890989d70c99c776421a6f110af585747",
             "locator": {
-              "end": 149,
+              "end": 153,
               "kind": "line_range",
-              "start": 99
+              "start": 103
             }
           },
           "kind": "code"
@@ -76,12 +77,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9370dacfc2f0fbd23a35456a8dccdd121d65cc65",
+            "blob": "a85a322c28466c2bf57ad99345c0bdcdee9dfd0c",
             "content": "sha256:e3c8a94181a7d1874dc250f9be9690b52e73b10385f4e704aa157cf28cde7559",
             "locator": {
-              "end": 206,
+              "end": 211,
               "kind": "line_range",
-              "start": 150
+              "start": 155
             }
           },
           "kind": "code"

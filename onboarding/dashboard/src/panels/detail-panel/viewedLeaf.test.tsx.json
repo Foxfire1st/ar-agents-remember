@@ -3,12 +3,12 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The viewed-leaf reporting suite.\n\nAnchor: \"describe(\\\"DetailPanel viewed-task reporting\\\", () => {\"",
+      "note": "The viewed-leaf reporting suite.",
       "targets": [
         {
           "anchor": {
-            "blob": "f9ee7e42ed892907e1f59870e29ad56d7051d16e",
-            "content": "sha256:133efcf649d7dc227b817fa92cc405807b6f05a86c869b7fcd606916fcb4c7d9",
+            "blob": "af3d9f2b08e94aab4a2a2f8bf446df3b893e9aac",
+            "content": "sha256:684719c7ced24d141fbe0a07fcc5a5bb0be6159341fdc598caca8a1897b4f178",
             "locator": {
               "end": 52,
               "kind": "line_range",

@@ -1,24 +1,8 @@
 {
   "path": "mcp/src/agents_remember/application/coordination_tools.py",
+  "proves": [],
   "realizes": [],
   "references": {
-    "1": {
-      "note": "Runtime/coordination response models include `ResolveContextResponse`.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "4245ae0dec5940e62c5982d6c6889ac5d0111f53",
-            "content": "sha256:7c5b7bf592c3d7b26559f62fa2d1d34a630622a68974893a08a759ab6bce6694",
-            "locator": {
-              "kind": "symbol",
-              "name": "ResolveContextResponse"
-            },
-            "path": "mcp/src/agents_remember/models/runtime.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "2": {
       "note": "Coordination context resolver owns the actual context construction.\n\nAnchor: \"_resolver.resolve_coordination_context\"",
       "targets": [
@@ -84,12 +68,23 @@
         },
         {
           "anchor": {
-            "blob": "68e62a4e78041f271e927977fa67c79ca74c18b7",
-            "content": "sha256:7f26b29a1f0b715def1de7f7d30a324a15e3f00cce6914d124078511b7b7f2c5",
+            "blob": "806f87dacbd41bb3a7c9c2fa4c012db6332d673b",
+            "content": "sha256:fb800266240f36af9f14de537ed4d581198f01f8f68c8fb12005119ee5900e72",
             "locator": {
               "end": 116,
               "kind": "line_range",
               "start": 110
+            },
+            "path": "mcp/src/agents_remember/errors.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "806f87dacbd41bb3a7c9c2fa4c012db6332d673b",
+            "content": "sha256:63e6dd3c2a1da05c6bfc50b4ab760bf26a30d93b5dec100bd558d7d615b5ad8b",
+            "locator": {
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/errors.py"
           },
@@ -112,8 +107,8 @@
         },
         {
           "anchor": {
-            "blob": "63ae88194f6139bbf645a8124da15478ae62deb3",
-            "content": "sha256:b7eba9a5a62f32e8f3ebbf067c59dccd87ba3858e7aad7744485128c679f0e30",
+            "blob": "d761896c386f18cb351957b2b8eb97f0a29e53e2",
+            "content": "sha256:206071c42de1aff30b9b7232be7a57b08118e5fa08026e6382edc496f618aca4",
             "locator": {
               "kind": "file"
             },
@@ -123,8 +118,8 @@
         },
         {
           "anchor": {
-            "blob": "df41a546c63eba8fca68cfb360f962c4c354e484",
-            "content": "sha256:e4cb84afc5784e0e9efdf0c25e7247430a1dbb972a599563955d17cf15ec4bc9",
+            "blob": "1f275a693016ec1e678f6e6d18b704f7ffb5d6e4",
+            "content": "sha256:94beaf856da073ad11a5185a4c4b146fda61446305666a69bb15fa0140e9ad3e",
             "locator": {
               "kind": "file"
             },

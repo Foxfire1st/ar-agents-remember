@@ -49,8 +49,12 @@ The review doctrine + scenario catalog the skill enforces live in the repo (outs
 
 The conductor references its companion docs and templates.
 
-- The five encoded analysis passes + persona/severity model the pipeline runs. [2]
+
+- The encoded analysis passes plus the persona and severity models: Methods 1-4 and Method 6 are runnable procedures, while Method 5 has no subject since the embedded terminal was removed and is not run.  Anchor: `## Severity model`; `## Method 1 — Scenario-driven cognitive walkthrough (Stage 3a)`; `## Method 2 — Workflow × UI-state matrix → missing views (Stage 3b)`; `## Method 3 — Observability canon audit: RED/USE + altitude (Stage 3c)`; `## Method 4 — Motion-as-communication (Stage 3d)`; `## Method 6 — Information-scent / 5-second / progressive-disclosure foraging` [2]
+
+
 - The per-dimension delegate map + constraints. [3]
+
 
 ### Cross-Repo References
 

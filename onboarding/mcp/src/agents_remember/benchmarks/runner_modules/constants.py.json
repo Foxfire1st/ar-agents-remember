@@ -19,15 +19,6 @@
         }
       ]
     },
-    "2": {
-      "note": "The route-local overview summarizes how this module fits into the benchmark runner split.\n\nAnchor: `## Purpose`",
-      "targets": [
-        {
-          "kind": "unresolved",
-          "text": "onboarding/mcp/src/agents_remember/benchmarks/runner_modules/overview.md:13-19"
-        }
-      ]
-    },
     "3": {
       "note": "The instruction targets a benchmark workspace receives.",
       "targets": [

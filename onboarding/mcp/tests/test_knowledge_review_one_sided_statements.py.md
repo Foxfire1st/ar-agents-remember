@@ -105,7 +105,7 @@ composition calls `select_subject_revisions` for each tree's selected subject; a
 record has one numeric revision and one statement.
 
 **Historical selector account, not a current limitation:** the earlier R07 account described a
-one-sided subject with several retained revisions, `_identity_item` returning `candidates[0]`, and
+one-sided subject with several retained revisions, `_identity_item` returning `candidates`, and
 page-order-dependent wording. That describes the former model, not the present selector or text
 record shape. The old account is retained here only as history.
 
@@ -125,23 +125,47 @@ bodies, the fixture module it builds on, the store operations it authors through
 drives, the owner of the projection it asserts against, and the catalogue and lane rows that register
 it.
 
+
 - **The module's own scope statement: six cases over the real adapter and two real datasets, and the load-bearing properties each one owns.** [1]
+
 - The module's whole lane declaration. [2]
 
 
+
 - **The fixture: two independently built snapshots under one namespace, and the four authored revisions that make an addition, a removal and a real transition.** [6]
+
+
 - The one composition call, with the hand-assembled resolution and the loud failure on a refusal. [7]
+
 - **The addition and the removal: the complete present-side statement, the named absent side with `text is None`, and the comparison's own side-absence code.** [8]
 - The one-sided record reported by coverage with an empty roster, against the conditions the after side really recorded. [11]
+
 - **The task-context case: no comparison, both sides unresolved with the same reason and no text, and no roster.** [12]
+
+
 
 - Read fixture and test-only row builder supply both datasets. [15]
 
-- **The lane row that selects this module, and the artifact consumer row that registers it against the fixture it consumes.** [16]
-- The `consumer_scope = "exact"` artifact whose list this module joined. [17]
+
+
+
+
+> Retained earlier citation wording: - **The lane row that selects this module, and the artifact consumer row that registers it against the fixture it consumes.** [16]
+
+
+
+
+
+> Retained earlier citation wording: - The `consumer_scope = "exact"` artifact whose list this module joined. [17]
+
+
+
 
 - The renderer displays before/after statements and its component tests use synthetic statement values; they neither import the Python statement constants nor assert acceptance_ref field rows. [18]
+
+
 - Current revision selection takes the subject's own before/after item for each tree, rather than the historical _identity_item/page-order account. [19]
+
 - An invariant text record stores one numeric revision and one statement, distinct from the former retained-revision model. [20]
 
 ### Cross-Repo References
@@ -156,4 +180,10 @@ Fixture repositories and protocol doubles do not establish a live external integ
 - The exact roster is acceptance_ref, lifecycle and payload_digest; accepted provenance uses a text-knowledge acceptance prefix. [9]
 - The retained function asserts key-order canonicality only and explicitly discloses withdrawal of its fixture-driven round trip. [10]
 - The projection owner defines canonical structured-value text and its wrapper markers. The retained local test asserts key-order canonicality; marker round-trip test coverage is not claimed. [13]
+
 - The current compose_review entry point takes resolution and request; the local review helper invokes it without the removed ReviewRecordInputs bag. [14]
+
+- **The lane row that selects this module, and the artifact consumer row that registers it against the fixture it consumes.** [16]
+
+
+- The `consumer_scope = "exact"` artifact whose list this module joined. [17]

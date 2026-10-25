@@ -31,39 +31,14 @@
       ]
     },
     "2": {
-      "note": "The R12 authority admits a checked host snapshot, records live consumers in its locked registry, and releases only the exact owner.",
+      "note": "The R12 authority admits a checked host snapshot, records live consumers in its locked registry, and releases only the exact owner.\n\nAnchor: `admit_dagger_authority` `AuthorityRegistry` `release_dagger_authority`",
       "targets": [
         {
           "anchor": {
             "blob": "fff6d1b371fb4fe0a233004fbd3522c895a94e7d",
-            "content": "sha256:5f3a3344b5c5d5ab2c212bebef152b1d6cd0b8b35cb6941f7709d7060ce67080",
+            "content": "sha256:7acb1d1212a8796c06e8cb9c5c8977d1b710aed97368e424de712b2647fd73ab",
             "locator": {
-              "kind": "symbol",
-              "name": "admit_dagger_authority"
-            },
-            "path": "mcp/src/agents_remember/worktrees/modules/quality/dagger_authority.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "41a89dbdabc0301f09afec0b6d6b3e766df374fe",
-            "content": "sha256:7e7dc47a742753da2d7797c9f144ad0644de688aa36a537a1a78da22fdd626f7",
-            "locator": {
-              "kind": "symbol",
-              "name": "AuthorityRegistry"
-            },
-            "path": "mcp/src/agents_remember/worktrees/modules/quality/dagger_authority.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "41a89dbdabc0301f09afec0b6d6b3e766df374fe",
-            "content": "sha256:ddcfe4ed4be952e2c0e15bdc7335395474fcbe1100767a5393be7765f0fc8b5b",
-            "locator": {
-              "kind": "symbol",
-              "name": "release_dagger_authority"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/worktrees/modules/quality/dagger_authority.py"
           },

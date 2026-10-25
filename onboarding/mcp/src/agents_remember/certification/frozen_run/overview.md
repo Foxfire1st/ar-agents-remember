@@ -52,4 +52,5 @@ The following retained coverage metadata describes the onboarding map, not lifec
 - Requested certification freezes the admitted repository profile, plans, registry and original provenance before gate execution; selected recovery reopens the exact retained frozen run without profile or journal rediscovery. Ordinary closeout is not this certification route. [3]
 
 - Retained authority models carry generated declarations, an optional admittedMemoryTree, input snapshots and provenance; model validation does not prove a current runtime observer or gate execution. [4]
+
 - Historical pre-R65 refresh composition checked sidecars and route overviews; that legacy composition is removed. The surviving converted controller uses its trace gate. [5]

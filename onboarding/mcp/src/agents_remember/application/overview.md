@@ -5,6 +5,8 @@
 
 ## Purpose
 
+Reference maintenance is composed here by `memory_tools`: `census_inputs` captures the paired bytes, and `census_artifacts` owns complete artifact addressing and reclamation. The note-revision entry changes one reference note under the leaf contract. Knowledge writing passes candidate code blobs and repository authority into validation, so the shared reference-anchor rule can judge the candidate bytes rather than only a path set.
+
 `mcp/src/agents_remember/application/` composes operations from admitted runtime configuration, canonical task authority and typed requests. It connects source/onboarding reads, converted knowledge, memory quality, task authoring, role launch, structural coordination and worktree services without making transport adapters a second implementation of domain policy. A typed handle records an admission already established by an owner; constructing the handle does not confer authority.
 
 The current account is the converted-text and native role route after MIK-R74 and MIK-R112. The earlier KS/ICR database, publication, generation-freeze and supporting-record accounts explain inherited intent and historical defects; they do not establish that retired capabilities remain public or that their earlier deliveries were freshly accepted. Internal provider services and retained lifecycle modules likewise do not establish public registration.
@@ -211,6 +213,7 @@ The explainer composition binds serving to the existing comparison, evidence and
 
 ## Evidence
 
+- No prior text removed. The current implementation adds exact explainer evidence preparation, planned authority, explicit frame removal and named outside-task environment cleanup to the application route.
 - Requested certification is explicitly selected repository-profile work through Dagger and commits nothing. The profile and loader are still authority for that requested Gates 1–4 work; a selection named `closeout` is not an automatic closeout invocation. Ordinary closeout runs no gate but the invariant gate, retains exact candidate/approval/lineage checks and code-then-memory Git publication, and does not run certification, code-quality checks, test suites or independent review. A missing profile or certification result does not block that transaction. This does not remove canonical Curator/Reviewer duties or confer independent semantic acceptance on diagnostics. [496]
 
 
@@ -244,7 +247,7 @@ Inherited numbered findings [288] retain their separate historical custody; no c
 - **The presence vocabulary and the totals with their agreement validator.** [27]
 - **The new policy owner: the one head rule, what it reads, what it returns, and why it is its own module.** [29]
 - **The recorded value the policy returns into, carried on the pane.** [31]
-- The retained-selection cases assert the single retained pair, known-empty removal, sorted retained population and the pane's own recorded statements; the former chain/fork policy cases are retired. These are source assertions, not a new execution claim. [32]
+- The retained-selection cases assert the single retained revision pair, the known-empty removal with the before head recorded, and the pane's own recorded statements; the former chain/fork policy cases are retired. These are source assertions, not a new execution claim. [32]
 - **The confinement itself, now in the admission owner: a changed path of a measured change set (the requested generation's own, or, when that measurement is unavailable, the one this leaf's review publishes), or since L43 an unchanged path a recorded realization of the same comparison links — with the admission carried on the value.** [37]
 - The refusals that keep the read confined, and the status an admitted path keeps when the pair's change set was not measured. [38]
 - **The third collaborator port that carries this owner into the serving tier.** [45]
@@ -387,7 +390,6 @@ Inherited numbered findings [288] retain their separate historical custody; no c
 - The one observation both the review's inventory and the comparison's expansion read, with the two Git questions it asks. [245] [432]
 - **The inventory value and the two honesty rules: the count is the list's own length, and a name that is not valid text is carried by its byte form in a measured, partial inventory.** [246]
 - **The source pane: the inventory first and unconditionally, then the comparison's own attribution facts carried verbatim or stated as not measured.** [247]
-- **The record renderer, and the one reason it is a module: two compositions render the same records, so one copy is what keeps an unassessed collection reading identically in both.** [248]
 - **The task-context entry: no comparison faked, the inventory rendered in all three states, the candidate re-checked before publication, and the reason it states — including an absent dataset half.** [249]
 
 - Current boundary: compose_review still measures the bound source pair and inventory before selector or knowledge-availability branching, independently of record selection. The old _review_matrix acquisition step alone is retired; no records page is composed from it. References and targets retained for custody. Historical account: **The composition that measures first and branches second, so no knowledge availability can remove a source change from the list.** [250]
@@ -454,7 +456,6 @@ Inherited numbered findings [288] retain their separate historical custody; no c
 - The two kinds, registered on import. [326]
 - Coverage by a realization entry in K_B or a migrated route. [327]
 - The answering set from covered items only. [328]
-- A delete-only hunk is linked only by a K_B range (and, since MIK-R09, an insertion-only hunk only by a K_C range). [329]
 - The checklist keeps needed onboarding rows out of the unnecessary report. [331]
 - The inherited row owner authors explicit no-invariant dispositions. [332]
 - The chain module statement. [333]
@@ -694,4 +695,7 @@ Inherited numbered findings [288] retain their separate historical custody; no c
 
 - The initializer reports knowledge state and the two admitted response branches name state-first Architect/regular-task/Curator continuation; partial-index, legacy-format and context-admission actions remain distinct. [516]
 
-- No prior text removed. The current implementation adds exact explainer evidence preparation, planned authority, explicit frame removal and named outside-task environment cleanup to the application route. [517]
+- The current module constructs only the review read’s refusal and read-only submission states. `refused(repository_id, refusal_value)` returns a refused result carrying the supplied named refusal and no supplied payload. `submission(stale)` uses the caller’s boolean: `disabled_stale` asks for a new comparison; otherwise `unavailable` says the review is read-only and directs authoring through the existing writer with author/task/authority provenance. Both branches carry the existing proposed-disposition vocabulary. No record collections are composed here. Historical predecessor claim (superseded): **The record renderer, and the one reason it is a module: two compositions render the same records, so one copy is what keeps an unassessed collection reading identically in both.** [517]
+
+- A delete-only hunk is linked only by a K_B range (and, since MIK-R09, an insertion-only hunk only by a K_C range). Anchor: "def _linked("; "hunk.new_count > 0 and any(hits_new(hunk, span) for span in candidate_spans)" The Anchor caption above records the historical `_linked`/`candidate_spans` spelling. Current enforcement is `linkage._classify_hunk`: the before and after comprehensions require changed lines on their own side (`old_count > 0` with `hits_old`, and `new_count > 0` with `hits_new`). [518]
+

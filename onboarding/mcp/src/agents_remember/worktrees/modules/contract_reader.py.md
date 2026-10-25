@@ -38,7 +38,14 @@ No configured domain documentation was available.
 
 ### Repo-Internal References
 
-- The kernel resolver declares the port this adapter implements. [1]
+
+
+
+
+- The kernel resolver declares the port this adapter implements. Source caption: "class ContractReaderPort" [1]
+
+
+
 
 ### Cross-Repo References
 

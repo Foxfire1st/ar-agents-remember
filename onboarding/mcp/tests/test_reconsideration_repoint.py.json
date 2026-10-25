@@ -3,8 +3,8 @@
   "proves": [
     {
       "anchor": {
-        "blob": "26c670be25ba72aef9ca22a6ca4e2633e5878b6a",
-        "content": "sha256:1bfa2171e3b9b8edb4eb7e2a3678112985b7a62e87d077489acfc7f9404d61ef",
+        "blob": "59e2195889d8a7ccce80db594fa67cd98903147b",
+        "content": "sha256:423fd257c5fabd7ae759fabde00b89399eb2fb11e0591e68cf6c26d3c97b221d",
         "locator": {
           "kind": "symbol",
           "name": "test_a_repoint_answers_an_earlier_refresh_that_no_longer_stands"

@@ -42,7 +42,14 @@ script and a manifest; `TEST_PATHS` names the test paths excluded from the scan.
 
 ## Evidence
 
+
 - The bridge and runtime commands as the only admitted path, and the exactness of the tree scan. [1]
+
+
 - The single-path cases as they apply to the host modules. [2]
+
+
 - The dev-only fake host holds two admitted pinned-server comments, not a second host path. [3]
+
+
 - One helper's allowance is two address reads: the recorded settings block and the build's resolution under the server environment. [4]

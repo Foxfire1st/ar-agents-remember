@@ -6,7 +6,11 @@
 
 ## Purpose
 
-Exercises portable repository-owned Gate 1–4 profiles using distinct fixture languages and adapters. It checks digest invalidation, preservation of earlier gate identities after a later edit, explicit not-applicable gates, confined selector/decoder outputs, refusal of unreasoned targeted expansion, passing teardown prerequisites and invalid-graph rejection before compilation. These are fixture protocol checks, not installed-vendor smoke evidence.
+Exercises portable repository-owned Gate 1–4 profiles using distinct fixture languages and adapters. It checks digest invalidation, preservation of earlier gate identities after a later edit, explicit not-applicable gates, confined selector/decoder outputs, refusal of unreasoned targeted expansion and invalid-graph rejection before compilation. The predecessor teardown-prerequisite case was removed with the old orchestration; it is not part of this module's retained test population.
+
+> Retained earlier card wording; superseded by the current account above:
+> refusal of unreasoned targeted expansion, passing teardown prerequisites and invalid-graph rejection before compilation.
+ These are fixture protocol checks, not installed-vendor smoke evidence.
 
 ## Code Commentary
 
@@ -54,8 +58,8 @@ to removed methods are superseded by this current inventory.
 - Result decoder refuses a symlink escape [6]
 - Repository profile selector refuses an unadmitted absolute output [7]
 - Selector result refuses unreasoned output and targeted full expansion [8]
-- Repository profile teardown adapter requires a passing cleanup checkpoint [9]
 - Invalid graphs refuse before plan compilation [10]
+
 
 ### Cross-Repo References
 

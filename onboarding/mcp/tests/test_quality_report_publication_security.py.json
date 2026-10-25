@@ -19,15 +19,14 @@
       ]
     },
     "2": {
-      "note": "Nested legacy directory symlink cannot delete external reports",
+      "note": "Nested legacy directory symlink cannot delete external reports\n\nAnchor: `test_nested_legacy_directory_symlink_cannot_delete_external_reports`",
       "targets": [
         {
           "anchor": {
-            "blob": "9068f2c62ce94a93f661824d4a8ab9802761324b",
-            "content": "sha256:a045ad8d8f064cb93c62727a69cc2da3404efe8bcc11f840e98873b9f79509c6",
+            "blob": "d6b50c3eb025343e866324397dba843182e70b59",
+            "content": "sha256:c759260f6160ef8e67249c0044b2a281848a757be2f47095d9038f79b26487c8",
             "locator": {
-              "kind": "symbol",
-              "name": "test_nested_legacy_directory_symlink_cannot_delete_external_reports"
+              "kind": "file"
             }
           },
           "kind": "test"

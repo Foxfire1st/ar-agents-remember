@@ -3,15 +3,14 @@
   "realizes": [],
   "references": {
     "19": {
-      "note": "`FinalOutputReceipt` owns the current boundary described above.",
+      "note": "`FinalOutputReceipt` owns the current boundary described above.\n\nAnchor: `FinalOutputReceipt`",
       "targets": [
         {
           "anchor": {
-            "blob": "296b288583ead598ff029a9527dbe8416ba5430d",
-            "content": "sha256:0cf1f482d90ee2d5d28cd176f5016ecf10e4294f7aed07964b916d48bdcf665c",
+            "blob": "25aff6fa1ebaa98820eedd53ccd8042d698546ec",
+            "content": "sha256:38d20b0a70088192f4a24c597ff4d801f67454330c976163d047d6876e2663c8",
             "locator": {
-              "kind": "symbol",
-              "name": "FinalOutputReceipt"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -35,15 +34,14 @@
       ]
     },
     "21": {
-      "note": "`tree_output_verdict` owns the current boundary described above.",
+      "note": "`tree_output_verdict` owns the current boundary described above.\n\nAnchor: `tree_output_verdict`",
       "targets": [
         {
           "anchor": {
-            "blob": "28af7054d13320531c1f10ba385735948e1da3ab",
-            "content": "sha256:77b2d85c328fa8a74f0ea2b47e09a7beb2146697885d4674b82270b1c2720c4c",
+            "blob": "25aff6fa1ebaa98820eedd53ccd8042d698546ec",
+            "content": "sha256:38d20b0a70088192f4a24c597ff4d801f67454330c976163d047d6876e2663c8",
             "locator": {
-              "kind": "symbol",
-              "name": "tree_output_verdict"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -131,15 +129,14 @@
       ]
     },
     "28": {
-      "note": "The code channel's comparison: delivered tree against reviewed candidate tree.",
+      "note": "The code channel's comparison: delivered tree against reviewed candidate tree.\n\nAnchor: `code_match_state`",
       "targets": [
         {
           "anchor": {
-            "blob": "28af7054d13320531c1f10ba385735948e1da3ab",
-            "content": "sha256:e121461b497175ab9a0757f9b873218bd99443384382961c13d6cf3b27ae9364",
+            "blob": "25aff6fa1ebaa98820eedd53ccd8042d698546ec",
+            "content": "sha256:38d20b0a70088192f4a24c597ff4d801f67454330c976163d047d6876e2663c8",
             "locator": {
-              "kind": "symbol",
-              "name": "code_match_state"
+              "kind": "file"
             }
           },
           "kind": "code"

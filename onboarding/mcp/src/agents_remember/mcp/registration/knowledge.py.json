@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/mcp/registration/knowledge.py",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
@@ -130,30 +131,36 @@
     }
   ],
   "references": {
-    "1": {
-      "note": "The docstring sentences on the chain rows and the family seed.\n\nAnchor: \"one compact chain_family row per family routed at the path's directory or an ancestor\"",
+    "10": {
+      "note": "The statement of what the runtime configuration supplies to this family — the workspace root a read falls back to as a **default repository**, never half of a resolution pair, and the coordination root under which a converted memory tree's derived index is cached — and the configuration type whose `workspace_root` is the first value.\n\nAnchor: `McpRuntimeConfig`",
       "targets": [
         {
           "anchor": {
-            "blob": "b2b780dd761b42b26eca880adb422539c5b5e50a",
-            "content": "sha256:429d58ebcd0a04fccd0879350ada71e8a79b6093a50c1f2bf13ba68d30c83a0e",
+            "blob": "b7ef5fc94fc32347b301880b444fe2a2f85775a9",
+            "content": "sha256:c81044bcca1bebd8e9882cf2186e6a9e265245c2c3a5d233d233422ff01f1e94",
             "locator": {
-              "end": 97,
+              "end": 85,
               "kind": "line_range",
-              "start": 95
+              "start": 80
             }
           },
           "kind": "code"
-        }
-      ]
-    },
-    "10": {
-      "note": "The statement of what the runtime configuration supplies to this family — the workspace root a read falls back to as a **default repository**, never half of a resolution pair, and the coordination root under which a converted memory tree's derived index is cached — and the configuration type whose `workspace_root` is the first value.\n\nAnchor: \"The runtime configuration supplies two things to this family. The workspace root is the\"",
-      "targets": [
+        },
         {
           "anchor": {
-            "blob": "08fa67e7d17028c0392d8c20bf1c9499b0681f8f",
-            "content": "sha256:f21e868a1c38a7502c15e4b466c9c15e6892813b141a19fdfb4854110be1142a",
+            "blob": "d29d100ea200d65a695333b54064543d7833f90e",
+            "content": "sha256:e2d83560666924530b06c82fcd178952932211795b5d29970b35d162ce3a4e47",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d29d100ea200d65a695333b54064543d7833f90e",
+            "content": "sha256:e7791119b1e18159ebfbbbd83a14da6aa29442e78892e2f9d570688969689704",
             "locator": {
               "kind": "symbol",
               "name": "McpRuntimeConfig"
@@ -177,37 +184,14 @@
       ]
     },
     "11": {
-      "note": "The three registered handlers: the read registrar that forwards the caller's own root and the configured workspace root as two separate arguments plus the configured coordination root, and the diff and integrity registrars that take the server alone.",
+      "note": "The four registered handlers: the read registrar that forwards the caller's own root and the configured workspace root as two separate arguments plus the configured coordination root, the write and diff registrars that take the configuration beside the server, and the integrity registrar that takes the server alone.\n\nAnchor: `_register_knowledge_read` `_register_knowledge_diff` `_register_knowledge_integrity_check`",
       "targets": [
         {
           "anchor": {
-            "blob": "b2b780dd761b42b26eca880adb422539c5b5e50a",
-            "content": "sha256:cb48a35ba71d5697b64e1f9be98e4e8a443e23c3a084340154da5486774c785c",
+            "blob": "b7ef5fc94fc32347b301880b444fe2a2f85775a9",
+            "content": "sha256:0d9ea0a0c1efae38c0f2bddbff7f150e27f5bb25ef1d000544c38fd164d10b78",
             "locator": {
-              "kind": "symbol",
-              "name": "_register_knowledge_read"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "b2b780dd761b42b26eca880adb422539c5b5e50a",
-            "content": "sha256:ecef9352112812a811184e5e67297a51363c14ee624c8182a579143ec29244bc",
-            "locator": {
-              "kind": "symbol",
-              "name": "_register_knowledge_diff"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "8639d356981b156cf326c00c80e903f16d1761e7",
-            "content": "sha256:a55c430bedc3dd4913776fc41edded360d4d1d3f448823531929e3661a94e740",
-            "locator": {
-              "kind": "symbol",
-              "name": "_register_knowledge_integrity_check"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -215,15 +199,14 @@
       ]
     },
     "12": {
-      "note": "The published read contract: the three views, the attributed records, the rule that an unclassifiable value is an unresolved limitation rather than an empty class, and the optional `sourcePath` seed the signature carries into `ReadToolRequest.source_path`.\n\nAnchor: \"orderingInput: str \\| None = None,\"",
+      "note": "The published read contract: the named views with their filters, rows that name ID, kind, state and location and never text, and the optional `sourcePath` seed the signature carries into `ReadToolRequest.source_path`.\n\nAnchor: `knowledge_read`",
       "targets": [
         {
           "anchor": {
-            "blob": "b2b780dd761b42b26eca880adb422539c5b5e50a",
-            "content": "sha256:5af946539fb0d1514ce2804109591c840042181768e1bb1bc07dea5e9878e38d",
+            "blob": "b7ef5fc94fc32347b301880b444fe2a2f85775a9",
+            "content": "sha256:0d9ea0a0c1efae38c0f2bddbff7f150e27f5bb25ef1d000544c38fd164d10b78",
             "locator": {
-              "kind": "symbol",
-              "name": "knowledge_read"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -231,12 +214,22 @@
       ]
     },
     "13": {
-      "note": "The family entry point as the package door's contract requires it: one `register_*_tools(server, config)` public function for this family, delegating to the payload builders.",
+      "note": "The family entry point as the package door's contract requires it: one `register_*_tools(server, config)` public function for this family, delegating to the payload builders.\n\nAnchor: `register_knowledge_tools`",
       "targets": [
         {
           "anchor": {
-            "blob": "b2b780dd761b42b26eca880adb422539c5b5e50a",
-            "content": "sha256:75e6ff162f472186848c092bbe1d1742318ddba247e8f802c97094a5d2a5262d",
+            "blob": "b7ef5fc94fc32347b301880b444fe2a2f85775a9",
+            "content": "sha256:0d9ea0a0c1efae38c0f2bddbff7f150e27f5bb25ef1d000544c38fd164d10b78",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b7ef5fc94fc32347b301880b444fe2a2f85775a9",
+            "content": "sha256:6940317dcf65978f081aea3eaa77d0c44ee8dee0c297217398cdb6b0f3926173",
             "locator": {
               "kind": "symbol",
               "name": "register_knowledge_tools"
@@ -247,12 +240,22 @@
       ]
     },
     "14": {
-      "note": "The comparison registrar and handler return the knowledge files' Git diff, grouped by record and source path, without inferring a semantic effect label.",
+      "note": "The comparison registrar and handler return the knowledge files' Git diff, grouped by record and source path, without inferring a semantic effect label.\n\nAnchor: `_register_knowledge_diff` `knowledge_diff`",
       "targets": [
         {
           "anchor": {
-            "blob": "b2b780dd761b42b26eca880adb422539c5b5e50a",
-            "content": "sha256:ecef9352112812a811184e5e67297a51363c14ee624c8182a579143ec29244bc",
+            "blob": "b7ef5fc94fc32347b301880b444fe2a2f85775a9",
+            "content": "sha256:0d9ea0a0c1efae38c0f2bddbff7f150e27f5bb25ef1d000544c38fd164d10b78",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b7ef5fc94fc32347b301880b444fe2a2f85775a9",
+            "content": "sha256:462eafa5b1361a6c9e781fea4ba3dfd5cb3f6a441b4d85111a77abbcfe0ee0e0",
             "locator": {
               "kind": "symbol",
               "name": "_register_knowledge_diff"
@@ -262,8 +265,8 @@
         },
         {
           "anchor": {
-            "blob": "b2b780dd761b42b26eca880adb422539c5b5e50a",
-            "content": "sha256:251cb5794ddb1ae81b87d72493d8b18777ba771727471ec50dd1a03c42a7f956",
+            "blob": "b7ef5fc94fc32347b301880b444fe2a2f85775a9",
+            "content": "sha256:8c0674e47cd64339db13b3e2620199f7cfefa2f7bbf1ff913a001294b2964268",
             "locator": {
               "kind": "symbol",
               "name": "knowledge_diff"
@@ -278,8 +281,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8639d356981b156cf326c00c80e903f16d1761e7",
-            "content": "sha256:a55c430bedc3dd4913776fc41edded360d4d1d3f448823531929e3661a94e740",
+            "blob": "b7ef5fc94fc32347b301880b444fe2a2f85775a9",
+            "content": "sha256:996856950511320ea19a5c78de08ab93cba16a5c5e9b8c0ad5787ddfdd412f28",
             "locator": {
               "kind": "symbol",
               "name": "_register_knowledge_integrity_check"
@@ -289,8 +292,8 @@
         },
         {
           "anchor": {
-            "blob": "8639d356981b156cf326c00c80e903f16d1761e7",
-            "content": "sha256:c51f3a47a835457f4f75f84dde69dfb53c6c366aec324dd13f6e53f4f9a76ba9",
+            "blob": "b7ef5fc94fc32347b301880b444fe2a2f85775a9",
+            "content": "sha256:79fa732d612509a624a09e79e3e8da5aed6af660c6713eed0f3d8c2f9ab12542",
             "locator": {
               "kind": "symbol",
               "name": "knowledge_integrity_check"
@@ -301,12 +304,12 @@
       ]
     },
     "16": {
-      "note": "The request value objects and payload builders this module delegates to, imported rather than re-declared here.\n\nAnchor: \"from agents_remember.kernel.primitives.runtime_config import McpRuntimeConfig\"",
+      "note": "The request value objects and payload builders this module delegates to, imported rather than re-declared here.",
       "targets": [
         {
           "anchor": {
-            "blob": "1c0839216b9822496a884e9dcbcfcdfa24a51470",
-            "content": "sha256:6237e0babe6fd6ce736de07cac5b1a4d2b0d5fe751144464cfd08ef595b7c6ce",
+            "blob": "b7ef5fc94fc32347b301880b444fe2a2f85775a9",
+            "content": "sha256:a1f16b45885148fac14d82548380f25a2c15b678876d308ab40e6f5f41c27ca6",
             "locator": {
               "end": 41,
               "kind": "line_range",
@@ -318,12 +321,12 @@
       ]
     },
     "17": {
-      "note": "The registry the family is appended to, where the import and the tail tuple entry are the family's whole integration, and the live-registration test that compares the resulting order against the advertised roster.\n\nAnchor: \"from .knowledge import register_knowledge_tools\"",
+      "note": "The registry the family is appended to, where the import and the tail tuple entry are the family's whole integration, and the live-registration test that compares the resulting order against the advertised roster.\n\nAnchor: `TOOL_REGISTRARS` `test_live_registration_matches_the_public_inventory_in_order`",
       "targets": [
         {
           "anchor": {
-            "blob": "1992fb7acf8e245685369d397149006982245cfa",
-            "content": "sha256:ece5180bbddb3a1dc607a955576509259061fa0039df7da124a37ac6d91d3156",
+            "blob": "de6a43ed2001fc740bfc55163c3d1a0d70ae39bb",
+            "content": "sha256:ba5f80c4312577cf05ce7edf0740f0539e8ca3817e94705c6d618c18813ab107",
             "locator": {
               "kind": "symbol",
               "name": "TOOL_REGISTRARS"
@@ -331,6 +334,41 @@
             "path": "mcp/src/agents_remember/mcp/registration/__init__.py"
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "de6a43ed2001fc740bfc55163c3d1a0d70ae39bb",
+            "content": "sha256:81b381ab8ef9d70679dc502b1e04ec59f307345d6a59cad1ab4ae0f7ad132988",
+            "locator": {
+              "end": 24,
+              "kind": "line_range",
+              "start": 24
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/__init__.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "de6a43ed2001fc740bfc55163c3d1a0d70ae39bb",
+            "content": "sha256:a745162e8d77df72379e28b49e4dacde7a65f41774cbd89653b9ab790c0174e3",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/__init__.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d0620d3a6b3d0466f16d6b6d715eb161641e387f",
+            "content": "sha256:a1e4d314feb531d1035a87ca865b4aec6d628128b791f4f2639ff61a7399da89",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_tools.py"
+          },
+          "kind": "test"
         },
         {
           "anchor": {
@@ -364,12 +402,38 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4bfc02956d94b6b490c6ccdcd5a93694127f5cca",
+            "blob": "d0b0ddd9f150e32116b430ecc74907fcf68fee97",
+            "content": "sha256:c7336ed48d05821e1ed79fb1c27b8f9cc90855247bf34b5b9d875bde90eb5195",
+            "locator": {
+              "end": 70,
+              "kind": "line_range",
+              "start": 68
+            },
+            "path": "mcp/src/agents_remember/models/tools/public_roster.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d0b0ddd9f150e32116b430ecc74907fcf68fee97",
             "content": "sha256:309a611cc8d773f899de1875fc66442a2a03026bc0714ff7849f3f2eb367af6a",
             "locator": {
-              "end": 68,
+              "end": 69,
               "kind": "line_range",
-              "start": 66
+              "start": 67
+            },
+            "path": "mcp/src/agents_remember/models/tools/public_roster.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d0b0ddd9f150e32116b430ecc74907fcf68fee97",
+            "content": "sha256:7414a453c602b347f45352d4cc34c516e668bfad6631ad58191f2e1a0c5c7626",
+            "locator": {
+              "end": 67,
+              "kind": "line_range",
+              "start": 65
             },
             "path": "mcp/src/agents_remember/models/tools/public_roster.py"
           },
@@ -382,12 +446,38 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c2f2a68ee84ec48aad55956ebf5a6719371ce655",
-            "content": "sha256:c422dc8c23ea96e84036ce5510418d23580b411e5073ea35f1e83b5c88205c62",
+            "blob": "ca5af906298a90f3101a98a5542005e3549b3c0a",
+            "content": "sha256:6097689f38804f991da7fac414a2d2002f37af6fd432bfdd4fcc9b744507ba9d",
             "locator": {
-              "end": 123,
+              "end": 126,
               "kind": "line_range",
-              "start": 121
+              "start": 124
+            },
+            "path": "mcp/src/agents_remember/models/tools/tool_registry.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ca5af906298a90f3101a98a5542005e3549b3c0a",
+            "content": "sha256:72d64292840bc0a101731ce071a40da0ac5b2da6b2b95c39cd456f4ad74a2247",
+            "locator": {
+              "end": 125,
+              "kind": "line_range",
+              "start": 123
+            },
+            "path": "mcp/src/agents_remember/models/tools/tool_registry.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ca5af906298a90f3101a98a5542005e3549b3c0a",
+            "content": "sha256:37d525e2cd534b34d4a8aaba57562488748596ca549d2949971767866232f7b5",
+            "locator": {
+              "end": 122,
+              "kind": "line_range",
+              "start": 120
             },
             "path": "mcp/src/agents_remember/models/tools/tool_registry.py"
           },
@@ -395,42 +485,24 @@
         }
       ]
     },
-    "2": {
-      "note": "The docstring sentences on the leaf read and, after MIK-R05's chain sentences, the `invariant` view's families.\n\nAnchor: \"resumed page; without either they are unverifiable. source_context with sourcePath is the\"; \"familyRevisionId and no sourcePath returns that family's full content. The invariant view\"",
+    "20": {
+      "note": "The strict response classes preserve the read view's payload, the diff's file changes and the validator's report/worklist as distinct responsibilities; the current integrity response has no compatible field.\n\nAnchor: `KnowledgeReadResponse` `KnowledgeDiffResponse` `KnowledgeIntegrityCheckResponse`",
       "targets": [
         {
           "anchor": {
-            "blob": "b2b780dd761b42b26eca880adb422539c5b5e50a",
-            "content": "sha256:678cc70821fcb6283ba570048744746339e97b8eaaec93fc7325cb52df1d967d",
+            "blob": "0b97b80d44d3d0a2bd5e469d8c0c966b71f28fa7",
+            "content": "sha256:160816c7bee58615d164d30b3d62b33d769e45d203cc1ff66445ac3f3619cef5",
             "locator": {
-              "end": 94,
-              "kind": "line_range",
-              "start": 91
-            }
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/models/tools/knowledge_responses.py"
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "b2b780dd761b42b26eca880adb422539c5b5e50a",
-            "content": "sha256:0ccaa71fbfcecb83c8af484d03faab52c19c115129e12eb472dcccb292bd7272",
-            "locator": {
-              "end": 98,
-              "kind": "line_range",
-              "start": 97
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "20": {
-      "note": "The strict response classes preserve the read view's payload, the diff's file changes and the validator's report/worklist as distinct responsibilities; the current integrity response has no compatible field.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "b95b845d5f59e720f11bbf5f0f21d0f8d620ea5a",
-            "content": "sha256:cd0bb85b2d3107913e3eaf8924705f554fed961e044ae925d976bd7e75b28a0b",
+            "blob": "0b97b80d44d3d0a2bd5e469d8c0c966b71f28fa7",
+            "content": "sha256:c6e2600e9ba932eb405f3c40a9306f46b26f47e8bfd80c6ee7d37c8a1120282d",
             "locator": {
               "kind": "symbol",
               "name": "KnowledgeReadResponse"
@@ -441,8 +513,8 @@
         },
         {
           "anchor": {
-            "blob": "b95b845d5f59e720f11bbf5f0f21d0f8d620ea5a",
-            "content": "sha256:328d6c1f2080dbd0c3169e7a865a3a3dd08af205cca15d201cf2c19e59a9112a",
+            "blob": "0b97b80d44d3d0a2bd5e469d8c0c966b71f28fa7",
+            "content": "sha256:56378eecacf2289549c32aa3be01be39ff48699acd6d564caa98ce7f3a1f9f15",
             "locator": {
               "kind": "symbol",
               "name": "KnowledgeDiffResponse"
@@ -453,29 +525,13 @@
         },
         {
           "anchor": {
-            "blob": "b95b845d5f59e720f11bbf5f0f21d0f8d620ea5a",
-            "content": "sha256:485cfa3bb9afd5ca691bc3c15251a93b9dce8f2a1a756474ab312f717954cb3d",
+            "blob": "0b97b80d44d3d0a2bd5e469d8c0c966b71f28fa7",
+            "content": "sha256:ff68ce0fc9bc2b83bb37171633d836ca0617299821e55922d8e477a2db9c0f3f",
             "locator": {
               "kind": "symbol",
               "name": "KnowledgeIntegrityCheckResponse"
             },
             "path": "mcp/src/agents_remember/models/tools/knowledge_responses.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "21": {
-      "note": "The current candidate source supports the operative account — the four registrations and the mounted read's description naming both public writer commands — while the historical sections grant no current tool or execution acceptance.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "8639d356981b156cf326c00c80e903f16d1761e7",
-            "content": "sha256:cc5363fc654e3f8699934ef47dd55877d2b4c1f7af492928bb6a645f46723aa8",
-            "locator": {
-              "kind": "symbol",
-              "name": "_register_knowledge_write"
-            }
           },
           "kind": "code"
         }
@@ -496,137 +552,13 @@
         }
       ]
     },
-    "3": {
-      "note": "The integrity handler names a leaf contract or an explicit memory/code tree with comparison bases, forwards one IntegrityCheckRequest, and returns the validator report and persisted leaf worklist; no database pair or recorded-run selector survives.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "8639d356981b156cf326c00c80e903f16d1761e7",
-            "content": "sha256:a55c430bedc3dd4913776fc41edded360d4d1d3f448823531929e3661a94e740",
-            "locator": {
-              "kind": "symbol",
-              "name": "_register_knowledge_integrity_check"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "8639d356981b156cf326c00c80e903f16d1761e7",
-            "content": "sha256:c51f3a47a835457f4f75f84dde69dfb53c6c366aec324dd13f6e53f4f9a76ba9",
-            "locator": {
-              "kind": "symbol",
-              "name": "knowledge_integrity_check"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "4": {
-      "note": "The builder that decides the accepted combinations.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "91582d2f9125dba48448aa71b5cc9ec39517dc98",
-            "content": "sha256:0b24a3fa35f7dfa0f5991e96ab2739c7b83316b42a48b79aafedaad56bdca22f",
-            "locator": {
-              "kind": "symbol",
-              "name": "knowledge_integrity_check_payload"
-            },
-            "path": "mcp/src/agents_remember/mcp/tools/knowledge.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "5": {
-      "note": "The read docstring's `currentness` sentence, now at the walk's code tree.\n\nAnchor: \"`currentness` gives each returned invariant's state (stale, unverifiable, unrealized,\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "b2b780dd761b42b26eca880adb422539c5b5e50a",
-            "content": "sha256:eb7c20363c343ae157fad9105073f3120dfea6b0e3f75770163bb57d8a835eb6",
-            "locator": {
-              "end": 91,
-              "kind": "line_range",
-              "start": 89
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "6": {
-      "note": "Only a named tree ID (or the continuation's) is the walk's code tree; `HEAD` is never used.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f88bb661f85cb46755bade8be26469270181b8e7",
-            "content": "sha256:e92265b8e987e12d2d2ab79fcd13cf6bca61d702af0f7427a537d0214d8d96d8",
-            "locator": {
-              "kind": "symbol",
-              "name": "_at_code_tree"
-            },
-            "path": "mcp/src/agents_remember/application/knowledge_paging/tree_read.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "b4fb3c6660f8614143e3526477bf733ef8f58d20",
-            "content": "sha256:5d5b0a1f3ef99ef70850f6c59d2ea1e778efc30f4d6e35bc27f7cd3121a28cae",
-            "locator": {
-              "kind": "symbol",
-              "name": "read_tree_page"
-            },
-            "path": "mcp/src/agents_remember/application/knowledge_paging/tree_read.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "7": {
-      "note": "The docstring sentences on the page, the threshold and the cross-surface continuation.\n\nAnchor: \"returned with an empty class. orderingInput defaults to stable_ordering. Every response is\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "b2b780dd761b42b26eca880adb422539c5b5e50a",
-            "content": "sha256:1662d8b1277525b567a8d4866462c3e8e62e924d09b3838eb69376d43359b550",
-            "locator": {
-              "end": 88,
-              "kind": "line_range",
-              "start": 84
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "8": {
-      "note": "The ordering argument that is `None` unless the caller names one.\n\nAnchor: \"orderingInput: str \\| None = None,\"",
+    "9": {
+      "note": "The family module's own statement of its scope — appended rather than inserted, the three operations in the design's spelling, no domain reasoning and nothing mounted for the reviewer — together with the one entry point whose four `_register_*` calls are made in the read, diff, integrity, write order.",
       "targets": [
         {
           "anchor": {
             "blob": "b7ef5fc94fc32347b301880b444fe2a2f85775a9",
-            "content": "sha256:a380842a09e5f075c3db75cc8669b3fe7bef183525903c568c419da6b60a6fb6",
-            "locator": {
-              "end": 92,
-              "kind": "line_range",
-              "start": 92
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "9": {
-      "note": "The family module's own statement of its scope — appended rather than inserted, the three operations in the design's spelling, no domain reasoning and nothing mounted for the reviewer — together with the one entry point whose three `_register_*` calls are made in the declared read, diff, integrity order.\n\nAnchor: \"\\\"\\\"\\\"The knowledge operation family: the mounted surface over a memory tree's text knowledge.\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "b2b780dd761b42b26eca880adb422539c5b5e50a",
-            "content": "sha256:75e6ff162f472186848c092bbe1d1742318ddba247e8f802c97094a5d2a5262d",
+            "content": "sha256:6940317dcf65978f081aea3eaa77d0c44ee8dee0c297217398cdb6b0f3926173",
             "locator": {
               "kind": "symbol",
               "name": "register_knowledge_tools"
@@ -642,6 +574,16 @@
               "end": 25,
               "kind": "line_range",
               "start": 1
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b7ef5fc94fc32347b301880b444fe2a2f85775a9",
+            "content": "sha256:0d9ea0a0c1efae38c0f2bddbff7f150e27f5bb25ef1d000544c38fd164d10b78",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "code"

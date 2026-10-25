@@ -1,5 +1,6 @@
 {
   "path": "dashboard/src/panels/changeset/ChangeSetViewer.tsx",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
@@ -285,26 +286,14 @@
       ]
     },
     "13": {
-      "note": "Leaf-row callbacks choose working versus committed from the returned row and compose its repo/master/leaf target through the supplied callback.",
+      "note": "Leaf-row callbacks choose working versus committed from the returned row and compose its repo/master/leaf target through the supplied callback.\n\nAnchor: `LeafBreakdown` `ChangeSetViewer`",
       "targets": [
         {
           "anchor": {
             "blob": "0f255485bc9dc7fc49932bd57f66ff49c8a4564c",
-            "content": "sha256:d0d69d2bd4ad7e19443d8c39e35a3e01e08cf8d037e8ec1ad55150ab28dbe8b0",
+            "content": "sha256:a07755e77404e8354fd4134325908235f10bd244bb5049776b162574c8bb6473",
             "locator": {
-              "kind": "symbol",
-              "name": "LeafBreakdown"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "6993a184aeaa068823584aaf01432b6cb2a43a80",
-            "content": "sha256:ea938b81e12504e03ca2a95192640036cb293d96762add432d1ad4908ef99abc",
-            "locator": {
-              "kind": "symbol",
-              "name": "ChangeSetViewer"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -344,15 +333,14 @@
       ]
     },
     "16": {
-      "note": "The cockpit forwards leaf reopening into the existing takeover instead of requiring another document-navigation path.",
+      "note": "The cockpit forwards leaf reopening into the existing takeover instead of requiring another document-navigation path.\n\nAnchor: `ChangeSetTakeover`",
       "targets": [
         {
           "anchor": {
-            "blob": "9dffc6e41bb9701b7a33ff1b82335a087c154484",
-            "content": "sha256:f25b2b3c3741760705bda321539bf5b1f56bb7804f74be4a246497ac98eb7a86",
+            "blob": "1b839113b8d511b4a8343230e70a8de0be01b79f",
+            "content": "sha256:a8152c8952fadad87a17271c8a6febccb6420f118def2bd84f341dab609d41c2",
             "locator": {
-              "kind": "symbol",
-              "name": "ChangeSetTakeover"
+              "kind": "file"
             },
             "path": "dashboard/src/cockpit/Cockpit.tsx"
           },
@@ -540,15 +528,14 @@
       ]
     },
     "21": {
-      "note": "The comparison header names its number, Back destination and abbreviated code trees; it does not display all four full operands.",
+      "note": "The comparison header names its number, Back destination and abbreviated code trees; it does not display all four full operands.\n\nAnchor: `ChangeSetViewer`",
       "targets": [
         {
           "anchor": {
-            "blob": "6993a184aeaa068823584aaf01432b6cb2a43a80",
-            "content": "sha256:ea938b81e12504e03ca2a95192640036cb293d96762add432d1ad4908ef99abc",
+            "blob": "0f255485bc9dc7fc49932bd57f66ff49c8a4564c",
+            "content": "sha256:a07755e77404e8354fd4134325908235f10bd244bb5049776b162574c8bb6473",
             "locator": {
-              "kind": "symbol",
-              "name": "ChangeSetViewer"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -731,15 +718,14 @@
       ]
     },
     "6": {
-      "note": "The current workspace mounts the selected main pane and a second partner pane only when its supplied partner value exists.",
+      "note": "The current workspace mounts the selected main pane and a second partner pane only when its supplied partner value exists.\n\nAnchor: `ChangeSetWorkspace`",
       "targets": [
         {
           "anchor": {
-            "blob": "6993a184aeaa068823584aaf01432b6cb2a43a80",
-            "content": "sha256:a2404de56cc8ff34fa1806257de3e9f76a05ea6dd8b7db911f5510bf0020ca46",
+            "blob": "0f255485bc9dc7fc49932bd57f66ff49c8a4564c",
+            "content": "sha256:a07755e77404e8354fd4134325908235f10bd244bb5049776b162574c8bb6473",
             "locator": {
-              "kind": "symbol",
-              "name": "ChangeSetWorkspace"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -747,15 +733,14 @@
       ]
     },
     "7": {
-      "note": "The actual cockpit takeover dispatches review targets separately and supplies the ordinary viewer Back and leaf-retarget callbacks.",
+      "note": "The actual cockpit takeover dispatches review targets separately and supplies the ordinary viewer Back and leaf-retarget callbacks.\n\nAnchor: `ChangeSetTakeover`",
       "targets": [
         {
           "anchor": {
-            "blob": "9dffc6e41bb9701b7a33ff1b82335a087c154484",
-            "content": "sha256:f25b2b3c3741760705bda321539bf5b1f56bb7804f74be4a246497ac98eb7a86",
+            "blob": "1b839113b8d511b4a8343230e70a8de0be01b79f",
+            "content": "sha256:a8152c8952fadad87a17271c8a6febccb6420f118def2bd84f341dab609d41c2",
             "locator": {
-              "kind": "symbol",
-              "name": "ChangeSetTakeover"
+              "kind": "file"
             },
             "path": "dashboard/src/cockpit/Cockpit.tsx"
           },
@@ -780,27 +765,14 @@
       ]
     },
     "9": {
-      "note": "The current task/detail controls supply change-set targets; their caller, not this viewer, owns entry selection.",
+      "note": "The current task/detail controls supply change-set targets; their caller, not this viewer, owns entry selection.\n\nAnchor: `ChangeSetButton` `DocChangeSetBar`",
       "targets": [
         {
           "anchor": {
-            "blob": "cb170808c1e7ad3aa75e0bfd0860f2206b2291c8",
-            "content": "sha256:76731c30be319737a129f5f705e565d9487afa6e06b8b7c5245f21845652ceee",
-            "locator": {
-              "kind": "symbol",
-              "name": "ChangeSetButton"
-            },
-            "path": "dashboard/src/panels/detail-panel/changeSetBar.tsx"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
             "blob": "dc229d234ae888019f18a20c91a1cd0135ada287",
-            "content": "sha256:c9916dfeff8632353c5ff9e5577530b17de00762552e772fd092288914935ec3",
+            "content": "sha256:71fa11b449377ad53a5ea1f8709e31ba8dc17859a548994c22ea9e683b519a62",
             "locator": {
-              "kind": "symbol",
-              "name": "DocChangeSetBar"
+              "kind": "file"
             },
             "path": "dashboard/src/panels/detail-panel/changeSetBar.tsx"
           },

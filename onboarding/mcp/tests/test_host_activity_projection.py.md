@@ -21,6 +21,10 @@ A configured bridge snapshot must acknowledge the current publication boot befor
 - Composition binds host-activity-snapshot to the existing bridge. [2]
 - Reconciliation replaces stale startup activity and joins only registered roles. [3]
 - New boot requires matching acknowledgement and failed bridge reads remain unknown. [4]
+
 - Idle heartbeat passes neither read publications nor relaunch the bridge snapshot. [5]
+
+
 - Periodic healing/degraded wakes do not poll host activity or role records. [6]
+
 - A failed boot attempt retries only after new publication bytes. [7]

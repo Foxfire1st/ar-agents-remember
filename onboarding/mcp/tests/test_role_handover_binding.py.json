@@ -22,12 +22,12 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The scoped current source carries the module/document behavior described above.",
+      "note": "Scoped compilation, taskless planning, repeats, enclosure binding, report isolation and folder/grant preparation are asserted here.",
       "targets": [
         {
           "anchor": {
-            "blob": "53ac70b284948ddef78ba01073e2780d14fcced4",
-            "content": "sha256:3a3527a9ecbe030a7e9bf34ad2480fb09e5eb690f01db93511f1ddf506c103cc",
+            "blob": "4e5d18cc4fa53ab8660c051d343250f6261ad4c7",
+            "content": "sha256:a428f205170395698193d59724a37939a5d33279d5af0e75e4e87cefb9377a00",
             "locator": {
               "kind": "file"
             }
@@ -37,12 +37,12 @@
       ]
     },
     "2": {
-      "note": "Taskless Architect planning passes role=architect to the resolver and keeps existing binding/no-invented-task/repository assertions.\n\nAnchor: `RoleScopedCapsuleBindingTests.test_taskless_architect_handover_uses_planning_without_inventing_task_or_repository`",
+      "note": "Taskless Architect planning passes `role=architect` to the resolver and keeps the existing binding, no-invented-task and no-invented-repository assertions.",
       "targets": [
         {
           "anchor": {
-            "blob": "3cffd7b61e9afc8bed9670f5bd57ead01d157132",
-            "content": "sha256:3c3c470e5bc61ffc6ee77a3b5f93b52f70bad8e59d4c41e1960c39e897067e6e",
+            "blob": "4e5d18cc4fa53ab8660c051d343250f6261ad4c7",
+            "content": "sha256:7e7417f305e99bebbb282e4c928b98eba9c576375a946033e4ec6a46673e4f5b",
             "locator": {
               "end": 538,
               "kind": "line_range",

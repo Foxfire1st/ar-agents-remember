@@ -89,15 +89,14 @@
       ]
     },
     "29": {
-      "note": "`_run` owns the current boundary described above.",
+      "note": "`_run` owns the current boundary described above.\n\nAnchor: `_run`",
       "targets": [
         {
           "anchor": {
-            "blob": "ac95d9ba546fa91777026e0b623d55226d7a3da0",
-            "content": "sha256:f5fc650a7a85cfd35b04047b9457a44b78af752f80e6e31785612d2b968bedd1",
+            "blob": "9c6506d57c883df32cb209ec9591575ca8d06a5b",
+            "content": "sha256:74ef98bc0612185ff6dd74108ab1d092429526c04aa8937c5e92b6663c1106f0",
             "locator": {
-              "kind": "symbol",
-              "name": "_run"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -186,15 +185,14 @@
       ]
     },
     "35": {
-      "note": "The wave passes the admitted authority's coordination root, so requirement endpoints resolve (MIK-R13, review F4).",
+      "note": "The wave passes the admitted authority's coordination root, so requirement endpoints resolve (MIK-R13, review F4).\n\nAnchor: `_run`",
       "targets": [
         {
           "anchor": {
-            "blob": "ac95d9ba546fa91777026e0b623d55226d7a3da0",
-            "content": "sha256:f5fc650a7a85cfd35b04047b9457a44b78af752f80e6e31785612d2b968bedd1",
+            "blob": "9c6506d57c883df32cb209ec9591575ca8d06a5b",
+            "content": "sha256:74ef98bc0612185ff6dd74108ab1d092429526c04aa8937c5e92b6663c1106f0",
             "locator": {
-              "kind": "symbol",
-              "name": "_run"
+              "kind": "file"
             }
           },
           "kind": "code"

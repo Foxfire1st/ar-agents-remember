@@ -194,12 +194,12 @@
   ],
   "references": {
     "1": {
-      "note": "A stale receipt zero does not lose durable admitted text after restart.\n\nAnchor: `HeldQueueRecoveryTests.test_a_restart_with_a_stale_zero_counter_delivers_without_a_retry`",
+      "note": "A stale receipt zero does not lose durable admitted text after a restart.",
       "targets": [
         {
           "anchor": {
-            "blob": "ca9646b828f32fd62ee6a921624d01730b6a41d6",
-            "content": "sha256:46fc42e5bd3076e9a427ec0b4401faebf9a3ef4c4f338ec2eaaa0136a5245a99",
+            "blob": "aeaf9c4dc04184a6128f593d3b6215292330efca",
+            "content": "sha256:32ab64fe0bfb9c892aa1871a056d547db93ddc6a0ff45c315d3a0608f092d124",
             "locator": {
               "end": 177,
               "kind": "line_range",
@@ -211,12 +211,12 @@
       ]
     },
     "2": {
-      "note": "A terminal end survives the deletion-to-publication crash boundary.\n\nAnchor: `HeldQueueRecoveryTests.test_a_stop_after_store_deletion_still_records_its_terminal_end`",
+      "note": "A terminal end survives the deletion-to-publication crash boundary.",
       "targets": [
         {
           "anchor": {
-            "blob": "ca9646b828f32fd62ee6a921624d01730b6a41d6",
-            "content": "sha256:f53a60d364083b77eebbd423f746b08198bb46f3370b3564b7766fd7deefc271",
+            "blob": "aeaf9c4dc04184a6128f593d3b6215292330efca",
+            "content": "sha256:672e504a330519d0d4f96a5044ac584c6357f0d8beaf06e38523964f99069a8c",
             "locator": {
               "end": 206,
               "kind": "line_range",
@@ -228,12 +228,12 @@
       ]
     },
     "3": {
-      "note": "Replayed split work retains its part ID on a deduping host.\n\nAnchor: `HeldQueueRecoveryTests.test_a_split_recovery_keeps_the_part_id_on_a_deduping_host`",
+      "note": "Replayed split work retains its part id on a deduping host.",
       "targets": [
         {
           "anchor": {
-            "blob": "ca9646b828f32fd62ee6a921624d01730b6a41d6",
-            "content": "sha256:592947b2d4c0d1e6136b700d3c3ed0176caf271093c80b28b0a0798361a43f4e",
+            "blob": "aeaf9c4dc04184a6128f593d3b6215292330efca",
+            "content": "sha256:9292362904196583a34ac42fffee1b0451b2301e2407bd08f26011db1a52a225",
             "locator": {
               "end": 255,
               "kind": "line_range",
@@ -245,12 +245,12 @@
       ]
     },
     "4": {
-      "note": "A larger admissible remainder is not chopped by a smaller earlier accepted size.\n\nAnchor: `HeldQueueRecoveryTests.test_variable_lengths_split_into_the_minimum_two_deliveries`",
+      "note": "A larger admissible remainder is not chopped by a smaller earlier accepted size.",
       "targets": [
         {
           "anchor": {
-            "blob": "ca9646b828f32fd62ee6a921624d01730b6a41d6",
-            "content": "sha256:f49681f3cd597b803fa483992311cb78937a416cd34d75e2b4dc3cc336d9bd9a",
+            "blob": "aeaf9c4dc04184a6128f593d3b6215292330efca",
+            "content": "sha256:9fa9143794ef138f9316035d7b4a9a46aa5819cd4c06a51d504a52eee873a99d",
             "locator": {
               "end": 318,
               "kind": "line_range",
@@ -262,12 +262,12 @@
       ]
     },
     "5": {
-      "note": "Fleet-scale idle ticks cap reads and observe enumeration independently of read counts.\n\nAnchor: `HeldSweepBoundsTests.test_idle_fleet_reads_stay_bounded_at_two_sizes`",
+      "note": "Fleet-scale idle ticks cap reads and observe enumeration independently of read counts.",
       "targets": [
         {
           "anchor": {
-            "blob": "ca9646b828f32fd62ee6a921624d01730b6a41d6",
-            "content": "sha256:1d417539658d5f0ed1883bd373f91a0419f784d98df6d2c270c660f53c04ccea",
+            "blob": "aeaf9c4dc04184a6128f593d3b6215292330efca",
+            "content": "sha256:4ab4752be40ffa8d5c106920ca5cb9aa52dee688d76ad2af4499311abb17306a",
             "locator": {
               "end": 599,
               "kind": "line_range",

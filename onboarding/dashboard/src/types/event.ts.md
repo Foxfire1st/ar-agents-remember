@@ -36,8 +36,12 @@ No domain documentation is configured. This card describes repository source onl
 
 These constructs establish the behavior described above.
 
+
 - Closed provenance vocabularies and event field shape [1]
+
+
 - Python envelope supplies the corresponding wire names and provenance values [2]
+
 
 ### Cross-Repo References
 

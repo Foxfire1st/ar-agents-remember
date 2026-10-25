@@ -19,6 +19,8 @@ Bounded investigation reads at a comparison's exact trees: the operand is the co
 - A path spelling that could name another operand is refused rather than repaired. [2]
 - One bounded read returns a window, an honest remainder and a progressing continuation. [3]
 - A line cut by the window is returned as the decoded prefix text it examined, with the next byte offset, never as absence. [4]
+
 - A scan that could not reach the requested line says so instead of certifying an empty range. [5]
+
 - A requested range that runs past the object's end ends at its last line and is complete, with no continuation and no limit. [6]
 - A read started at or past the object's end is a measured range absence, never an empty line and never a continuation that reads no byte. [7]

@@ -59,8 +59,12 @@ No relevant domain documentation was found.
 The exact source declarations below establish the current behavior; this inventory is not execution evidence.
 
 - Separate diagnostic Vitest configuration [1]
+
 - Browser-build alias preserves layout effects [2]
+
+
 - Worker cap, setup, coverage scope and diagnostic reporters [3]
+
 - Source/script unit tests, excluding Playwright collection [4]
 
 ### Cross-Repo References

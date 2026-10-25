@@ -59,8 +59,12 @@ No configured live documentation source was available for this pass.
 - The tool returns the last persisted worklist and computes nothing. [1]
 - The compact item row, with its `planning` mark where present. [2]
 - The three states, the compact item rows and `plannedEffects`. [3]
+
 - The tool's consumer of these fields. [4]
+
+
 - The tool returns the latest worklist and the checklist shows it. [5]
+
 
 ### Cross-Repo References
 

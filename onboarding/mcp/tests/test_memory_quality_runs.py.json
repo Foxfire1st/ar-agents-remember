@@ -67,15 +67,14 @@
       ]
     },
     "5": {
-      "note": "The dead-governing-overview case hands the census to `_attach_curator_checklist` through the prepared-inputs bundle.\n\nAnchor: \"prepared=controller._PreparedInputs(census=cast(Any, census))\"",
+      "note": "The dead-governing-overview case hands the census to `_attach_curator_checklist` through the prepared-inputs bundle.\n\nAnchor: `test_a_dead_governing_overview_reaches_the_gated_repair_set`",
       "targets": [
         {
           "anchor": {
-            "blob": "969de0a555b54603934abf04a7b0caf5ea50a96e",
-            "content": "sha256:37e02f87961a5e1e151282226c0750534fb796e47a360eeb0775d9b9b89744ab",
+            "blob": "e1f043170e5b45402da4c338e1fcc0e1346042b7",
+            "content": "sha256:864e6b889911eed86e6243fd3e5a2981aa29873e1adee8c3377ced5b153af3a1",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_dead_governing_overview_reaches_the_gated_repair_set"
+              "kind": "file"
             }
           },
           "kind": "test"

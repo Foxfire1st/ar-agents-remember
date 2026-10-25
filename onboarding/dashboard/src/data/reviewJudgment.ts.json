@@ -52,15 +52,14 @@
       ]
     },
     "4": {
-      "note": "Consumer rejects missing/misaddressed judgment and renders rows and proofs.",
+      "note": "Consumer rejects missing/misaddressed judgment and renders rows and proofs.\n\nAnchor: `SubjectJudgment`",
       "targets": [
         {
           "anchor": {
-            "blob": "5998106166bd7ead48ac09f5173c06c3cacb5f39",
-            "content": "sha256:9a537c4f259d8e6387f67a8426e2f23197407fa6e00aeea42e92753f646c84bf",
+            "blob": "fb3673e391e127346cf2d3310decd68af3efe750",
+            "content": "sha256:6bee5bf69957e553ae3bf8c57876363e3f67f3f9c75ff2bec7633def95791a47",
             "locator": {
-              "kind": "symbol",
-              "name": "SubjectJudgment"
+              "kind": "file"
             },
             "path": "dashboard/src/panels/review/SubjectJudgment.tsx"
           },

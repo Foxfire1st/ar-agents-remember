@@ -51,15 +51,14 @@
       ]
     },
     "4": {
-      "note": "Shared composition drives actual Node publisher, injected listings/resume and first-turn task activity.",
+      "note": "Shared composition drives actual Node publisher, injected listings/resume and first-turn task activity.\n\nAnchor: `_restart_then_reopen`",
       "targets": [
         {
           "anchor": {
-            "blob": "0e2f1c1bf9c135c1c59a9c09a5e3074f3df31955",
-            "content": "sha256:2c2dee52c403b2760a990e4f0f30686a73d6d313b2e902e9d5c04d82300d576e",
+            "blob": "a8a2b4585c3a3f6bfabc2efe8b70f8357238c6da",
+            "content": "sha256:5ba77196c6a42c43c71cc9cd8d861e636cdac7ff63df5de26404fd109c40c2ea",
             "locator": {
-              "kind": "symbol",
-              "name": "_restart_then_reopen"
+              "kind": "file"
             }
           },
           "kind": "test"

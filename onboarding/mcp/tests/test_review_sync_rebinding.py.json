@@ -255,20 +255,8 @@
       ]
     },
     "41": {
-      "note": "The shipped capture owner that derives the resolved source side after the sync.",
+      "note": "The shipped capture owner that derives the resolved source side after the sync.\n\nAnchor: `capture_future_code_candidate`",
       "targets": [
-        {
-          "anchor": {
-            "blob": "2d8e99cd79e804247722e6d5946bcdb5ca2717c3",
-            "content": "sha256:c28610a807f07eef9605c4d4d26582f6c12b09134c54dc26451500653d03b94b",
-            "locator": {
-              "kind": "symbol",
-              "name": "capture_future_code_candidate"
-            },
-            "path": "mcp/src/agents_remember/worktrees/modules/future_code_candidate.py"
-          },
-          "kind": "code"
-        },
         {
           "anchor": {
             "blob": "e1d40f3cd8b8ad7c20b47ba43bf08632f20a09c5",
@@ -279,6 +267,17 @@
               "start": 152
             },
             "path": "mcp/src/agents_remember/application/review_sync_rebinding.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a7ffdba484f4eaafa7f3a0a0860e045504f33755",
+            "content": "sha256:e43779b643a5347584f7acf8bdbaafaaf2b0969fd5de3af06b46da3195049899",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/future_code_candidate.py"
           },
           "kind": "code"
         }

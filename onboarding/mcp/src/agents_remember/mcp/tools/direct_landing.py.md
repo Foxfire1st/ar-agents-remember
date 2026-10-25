@@ -41,9 +41,15 @@ No configured Domain Documentation source applies.
 ### Repo-Internal References
 
 - The payload builder `direct_landing_payload` wraps the application result with the standard envelope. [1]
+
 - The standard `_tool_payload` envelope converts one application result into its protocol-ready response. [2]
+
+
 - Registered as a public tool. [3]
+
+
 - The registration declaration. [4]
+
 
 ### Cross-Repo References
 

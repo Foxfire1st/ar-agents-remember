@@ -75,15 +75,14 @@
   ],
   "references": {
     "1": {
-      "note": "Intake the plugin’s event-driven host publication only at startup or host invalidation, reconciling boot identity before exposing known activity.",
+      "note": "Intake the plugin’s event-driven host publication only at startup or host invalidation, reconciling boot identity before exposing known activity.\n\nAnchor: `HostActivityInput`",
       "targets": [
         {
           "anchor": {
-            "blob": "ca1ce27c37152b46f279a699a403f81d03935901",
-            "content": "sha256:541866508eb5aaab01e63f9a9a359c845064db140dd95972551fa7381a98e3ef",
+            "blob": "0ce1357b19b87897a111544e0477ef1d7bb1450f",
+            "content": "sha256:bdff12ea41d26dcc2816d777441d8833df29687f28f3ba4c08c94a05d7897673",
             "locator": {
-              "kind": "symbol",
-              "name": "HostActivityInput"
+              "kind": "file"
             }
           },
           "kind": "code"

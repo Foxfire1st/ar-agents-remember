@@ -1,10 +1,11 @@
 {
   "path": "docs/README.md",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
-        "blob": "2f500fd3655596672020da3e460f242e778052c8",
-        "content": "sha256:e13ac4d073932c7913921b0d5737ec18614e16c4571e3406dd492cde819ef99c",
+        "blob": "772aeac647052c221cd848d6c31765066c7dc5e2",
+        "content": "sha256:6f0b4f9ee675ef43efd1856dbbc506d59734270bc81db43412a60fc893cd8ff0",
         "locator": {
           "kind": "file"
         }
@@ -15,7 +16,7 @@
         "handoffEntry": "L192-W-R199-12",
         "leaf": "260928-MIK-L192"
       },
-      "rationale": "The inbound caption describes the retirement page rather than provider enablement.",
+      "rationale": "docs/README.md at C still lists the guide as 'the retired semantic and code-graph providers: what an old install leaves behind and how to clean it up', not as an install path.",
       "role": "presentation"
     }
   ],

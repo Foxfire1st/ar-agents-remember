@@ -16,5 +16,7 @@ The final series route requires the full canonical non-abandoned leaf population
 
 No external Domain Documentation source is configured for this repository. The following source witnesses establish the contract, not a new execution receipt.
 
+
 - Integration admission preserves the no-write refusal boundary. [1]
+
 - The exact closeout pair is rejudged against the current parent memory tip. [2]

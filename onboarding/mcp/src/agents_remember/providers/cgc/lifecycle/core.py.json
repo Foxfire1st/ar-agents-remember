@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/providers/cgc/lifecycle/core.py",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
@@ -25,7 +26,7 @@
         {
           "anchor": {
             "blob": "4b951246c7fde0b145aac05a589c5d0d1bc1574c",
-            "content": "sha256:e1ad7965a2867ab847ad207bb2a5331fafafe99f93cd03b34f2f1ec5efbfca63",
+            "content": "sha256:6d936260e2175c573d00b28b6ce2adf0dea98de797f70381c7ff03d272295fd9",
             "locator": {
               "kind": "symbol",
               "name": "cgc_layout_action_results"

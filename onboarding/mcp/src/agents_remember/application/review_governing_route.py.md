@@ -39,16 +39,34 @@ Every claim on this card is checkable in the uncommitted candidate: the module's
 definitions, the route owner it reads through, the traversal that calls it, and the two cases that
 measure it.
 
-- **The module's own statement of the three states, of the existence question asked before the route question, and of the path seed that asks about no identity.** [1]
+
+- **The module's own statement of the four states, of the existence question asked before the route question, and of the path seed that asks about no identity.** [1]
+
+
 - The published surface: the fourth relationship kind and the one entry point. [2]
+
+
 - The governed-table names the route owner's own writes answer, so the read asks the question the write answers. [3]
+
+
 - **One side read: the identity kind named by the selector, the existence question first, then the route and its recorded path.** [4]
+
+
 - The selector question: an identity or an exact revision of one names it, a path selector names none. [5]
-- **The transition and the gap: reassigned when the recorded routes differ, and one gap per side whose snapshot does not record the identity.** [6]
+
+
+- **The transition and the gap: `added`, `retracted`, `unchanged`, `moved` or `unresolved` per route — never `reassigned` — and one gap per side whose identity is not recorded or whose route declarations were not read.** [6]
+
+
 - The statement of both sides and the word each side is rendered as — never the repository root. [7]
+
+
 - The traversal that calls this module once per review, and the wire vocabulary the movement fills. [9]
 
+
+
 - Text route sets yield one association per route and unread declarations are never ungoverned. [10]
+
 
 
 ### Cross-Repo References

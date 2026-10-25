@@ -119,15 +119,14 @@
       ]
     },
     "8": {
-      "note": "The reset that is durable while the locator is still the collected generation is resumed, not refused.",
+      "note": "The reset that is durable while the locator is still the collected generation is resumed, not refused.\n\nAnchor: `_assert_an_interrupted_series_reset_is_resumed`",
       "targets": [
         {
           "anchor": {
-            "blob": "94443c23f3d62914811f6b7825e5c1521814a169",
-            "content": "sha256:555e265f8dcb37cc7c17ba1266502f46543ead21ebb3e9b05173798379aa7f3f",
+            "blob": "b9b46a4f7d8f6a87bc535b5995eb6af1e66be9d4",
+            "content": "sha256:bc093eb8cb406c16a3b80e376f0bdc4f083f66cc40b57653a2b155acc5eb3c01",
             "locator": {
-              "kind": "symbol",
-              "name": "_assert_an_interrupted_series_reset_is_resumed"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -135,15 +134,14 @@
       ]
     },
     "9": {
-      "note": "A series that is already live and unaddressed is re-addressed: the successor is published citing the archived predecessor, the branch is unmoved, and the spent review counter is cleared.",
+      "note": "A series that is already live and unaddressed is re-addressed: the successor is published citing the archived predecessor, the branch is unmoved, and the spent review counter is cleared.\n\nAnchor: `_assert_a_live_unaddressed_series_is_re_addressed`",
       "targets": [
         {
           "anchor": {
-            "blob": "94443c23f3d62914811f6b7825e5c1521814a169",
-            "content": "sha256:01ab8d452f8f2c33cd38df64cd535080e2bb503967ea2ce8857b6982c4ed85eb",
+            "blob": "b9b46a4f7d8f6a87bc535b5995eb6af1e66be9d4",
+            "content": "sha256:bc093eb8cb406c16a3b80e376f0bdc4f083f66cc40b57653a2b155acc5eb3c01",
             "locator": {
-              "kind": "symbol",
-              "name": "_assert_a_live_unaddressed_series_is_re_addressed"
+              "kind": "file"
             }
           },
           "kind": "test"

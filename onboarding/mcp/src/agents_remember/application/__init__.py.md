@@ -26,4 +26,5 @@ recreate that MCP surface.
 
 ### Repo-Internal References
 
+
 - Public payload builders import application entry points directly from their owning modules. [2]

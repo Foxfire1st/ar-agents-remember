@@ -22,12 +22,12 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The scoped current source carries the module/document behavior described above.",
+      "note": "The tracked tree names the previous host nowhere outside the allow-list, and the former block loads as absent.",
       "targets": [
         {
           "anchor": {
-            "blob": "87237878bcca0cf15605c0d5e5586f274c7c51b2",
-            "content": "sha256:58b82a1b1b54c664ca553349a5200d4ca13dd493924b0dd3d8105bdf89f55792",
+            "blob": "bdf32d31c515c5116ec65915e3821b238ff1d5ea",
+            "content": "sha256:4bd28300d95238a6fb0047be483b48c2d5a90628161ecad732f0cf6d3bf57cfc",
             "locator": {
               "kind": "file"
             }

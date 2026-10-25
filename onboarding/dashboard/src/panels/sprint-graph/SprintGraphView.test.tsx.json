@@ -21,12 +21,12 @@
   ],
   "references": {
     "1": {
-      "note": "The component forcing suite.\n\nAnchor: seeded component assertions",
+      "note": "The component forcing suite.",
       "targets": [
         {
           "anchor": {
-            "blob": "15344fb37b57a54e73496120e5afdedcda971695",
-            "content": "sha256:2d108842a22450524a79c13ded45e79b77d9ce14bbe63b12b3bf9f18b566f375",
+            "blob": "62502853b1c6bb6eac0b6a35f5d7146e87255ee4",
+            "content": "sha256:f0be5acda6a5bc0f415c559f1bf953523f4a65b1366c4d94d2348df2ac9e2245",
             "locator": {
               "end": 193,
               "kind": "line_range",
@@ -38,12 +38,12 @@
       ]
     },
     "2": {
-      "note": "The component under test.\n\nAnchor: entry subscriptions and graph composition",
+      "note": "The component under test.",
       "targets": [
         {
           "anchor": {
-            "blob": "10fa9b314498732151de2f419d952921a92ebe84",
-            "content": "sha256:56e0e9a3b737fb1f2626d83df52458e2b0a96fe664f54d6b63a369749b70cd40",
+            "blob": "5a995ff889391494f6d68d05f4de87e3777f7460",
+            "content": "sha256:46c765703e228f1be2d5202d901a064e308232c346f9b579a5e7ca83378904e0",
             "locator": {
               "end": 207,
               "kind": "line_range",
@@ -69,27 +69,14 @@
       ]
     },
     "3": {
-      "note": "The style contracts asserted.",
+      "note": "The style contracts asserted.\n\nAnchor: `waveGridStyles` `leafLineStyles`",
       "targets": [
         {
           "anchor": {
-            "blob": "cc87a76606193c60a16b87908c901278951e8362",
-            "content": "sha256:c2a38597e09b2f1568795b2529db88b97948ec861b7950908616a9b62a923519",
+            "blob": "4e9801e315eb3e0cb3f9d8873ee957b31c30c2b6",
+            "content": "sha256:1745412435e7d451ae33aea1bfee4aef20a71146dc013e6e03f2acb387e52abb",
             "locator": {
-              "kind": "symbol",
-              "name": "waveGridStyles"
-            },
-            "path": "dashboard/src/panels/sprint-graph/styles.ts"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "cc87a76606193c60a16b87908c901278951e8362",
-            "content": "sha256:4607313f16f9a165f471221d4a4ff8727d45751431c806dbefbaafe1b809bda1",
-            "locator": {
-              "kind": "symbol",
-              "name": "leafLineStyles"
+              "kind": "file"
             },
             "path": "dashboard/src/panels/sprint-graph/styles.ts"
           },

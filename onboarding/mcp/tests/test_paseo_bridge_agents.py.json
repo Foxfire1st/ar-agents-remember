@@ -3,12 +3,12 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The scoped current source carries the module/document behavior described above.",
+      "note": "Workspace, creation, message, get and archive commands against the real script and fake client.",
       "targets": [
         {
           "anchor": {
-            "blob": "592c9b3da2e5a26e96819ff8f1c343873092ea51",
-            "content": "sha256:fcdd0526ea934ec81f0a3d181a55483e7dea215da7c6f15af515d4843e764cb3",
+            "blob": "007d783f16c7194fc5f67ac3acbf82c980df2172",
+            "content": "sha256:e5fa5fd9c10c7844640605bc970e6c34d2006d2ab5e4d0250333ad77debf2e8a",
             "locator": {
               "kind": "file"
             }
@@ -18,12 +18,12 @@
       ]
     },
     "2": {
-      "note": "Feature discovery may precede refusal, but refused features send no agent create or message.",
+      "note": "Feature discovery may precede a refusal, but refused features send no agent create or message.",
       "targets": [
         {
           "anchor": {
-            "blob": "bfa96daa7162d12ca301a9512c3f9cb77e0d9d6c",
-            "content": "sha256:02ee61a3bf16fb50cf3381329fecf4d975634bdb73caf79bdbe6f1b575d527c9",
+            "blob": "007d783f16c7194fc5f67ac3acbf82c980df2172",
+            "content": "sha256:e5fa5fd9c10c7844640605bc970e6c34d2006d2ab5e4d0250333ad77debf2e8a",
             "locator": {
               "kind": "file"
             }

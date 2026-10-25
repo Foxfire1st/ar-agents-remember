@@ -1,25 +1,25 @@
 {
   "path": "mcp/tests/test_closeout_queue.py",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
-      "note": "Retired the unused three-commit close_contract helper while retaining historical cache seeds and task/door fixture behavior.",
+      "note": "Retired the unused three-commit close_contract helper while retaining historical cache seeds and task/door fixture behavior.\n\nAnchor: `enable_direct_execution` `QueueFixture`",
       "targets": [
         {
           "anchor": {
-            "blob": "b421dc01d662880c123e56decf3307cf1d96cfe0",
-            "content": "sha256:988cd43ca42e50b20c431c983e6b7fb95a3bde5c6cd2bba7472e3801281bfb26",
+            "blob": "2b8ac1d7c5b42f4e303e64468765ece62af300ee",
+            "content": "sha256:6015f871ee523f0a8919a87fca29440181c1603d508f6a11e2ca99d2a8f01e1d",
             "locator": {
-              "kind": "symbol",
-              "name": "enable_direct_execution"
+              "kind": "file"
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "8ca516d31bf8f6438ce9a3c0f6c043060e32fa67",
-            "content": "sha256:ba28344f8ca924f9bb7915f32cd4344b59aa9c262be90e77e48240e81f038662",
+            "blob": "2b8ac1d7c5b42f4e303e64468765ece62af300ee",
+            "content": "sha256:8152e6a4d868803287c8564f0f256429d97aa4579380f2f284344cb4cebd99dd",
             "locator": {
               "kind": "symbol",
               "name": "QueueFixture"
@@ -94,15 +94,14 @@
       ]
     },
     "14": {
-      "note": "Queuefixture.\n\nAnchor: \"Current task/door/projection fixture retained for non-queue lifecycle suites.\"",
+      "note": "Queuefixture.\n\nAnchor: `enable_direct_execution`",
       "targets": [
         {
           "anchor": {
-            "blob": "b421dc01d662880c123e56decf3307cf1d96cfe0",
-            "content": "sha256:988cd43ca42e50b20c431c983e6b7fb95a3bde5c6cd2bba7472e3801281bfb26",
+            "blob": "2b8ac1d7c5b42f4e303e64468765ece62af300ee",
+            "content": "sha256:6015f871ee523f0a8919a87fca29440181c1603d508f6a11e2ca99d2a8f01e1d",
             "locator": {
-              "kind": "symbol",
-              "name": "enable_direct_execution"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -110,15 +109,14 @@
       ]
     },
     "15": {
-      "note": "The retained task/door/projection fixture class that non-queue lifecycle suites construct.\n\nAnchor: \"Current task/door/projection fixture retained for non-queue lifecycle suites.\"",
+      "note": "The retained task/door/projection fixture class that non-queue lifecycle suites construct.\n\nAnchor: `enable_direct_execution`",
       "targets": [
         {
           "anchor": {
-            "blob": "b421dc01d662880c123e56decf3307cf1d96cfe0",
-            "content": "sha256:988cd43ca42e50b20c431c983e6b7fb95a3bde5c6cd2bba7472e3801281bfb26",
+            "blob": "2b8ac1d7c5b42f4e303e64468765ece62af300ee",
+            "content": "sha256:6015f871ee523f0a8919a87fca29440181c1603d508f6a11e2ca99d2a8f01e1d",
             "locator": {
-              "kind": "symbol",
-              "name": "enable_direct_execution"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -126,26 +124,14 @@
       ]
     },
     "16": {
-      "note": "Command a canonical leaf with no work started: subtask row, leaf document, judgment and priority rows only.",
+      "note": "Start a canonical leaf with no work started: the master's subtask, judgment and priority rows, the leaf document with its route review, and -- on converted memory -- the fixture change row its own code change needs.\n\nAnchor: `author_unstarted_leaf` `start_leaf`",
       "targets": [
         {
           "anchor": {
             "blob": "2b8ac1d7c5b42f4e303e64468765ece62af300ee",
-            "content": "sha256:07c2ece7529bb0f68d85ba0c8aaed029671b1b453901326309388624e3f937df",
+            "content": "sha256:6015f871ee523f0a8919a87fca29440181c1603d508f6a11e2ca99d2a8f01e1d",
             "locator": {
-              "kind": "symbol",
-              "name": "author_unstarted_leaf"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "8ca516d31bf8f6438ce9a3c0f6c043060e32fa67",
-            "content": "sha256:df646c2a7ec05b69f61dbe3821c331ad9167797a97a0b41b4ab16e64f4ecf264",
-            "locator": {
-              "kind": "symbol",
-              "name": "start_leaf"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -153,12 +139,22 @@
       ]
     },
     "17": {
-      "note": "Start an authored leaf from its master's current tips, creating the enclosure, worktrees and branches.",
+      "note": "Start an authored leaf from its master's current tips, creating the enclosure, worktrees and branches.\n\nAnchor: `start_leaf`",
       "targets": [
         {
           "anchor": {
-            "blob": "8ca516d31bf8f6438ce9a3c0f6c043060e32fa67",
-            "content": "sha256:df646c2a7ec05b69f61dbe3821c331ad9167797a97a0b41b4ab16e64f4ecf264",
+            "blob": "2b8ac1d7c5b42f4e303e64468765ece62af300ee",
+            "content": "sha256:6015f871ee523f0a8919a87fca29440181c1603d508f6a11e2ca99d2a8f01e1d",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "2b8ac1d7c5b42f4e303e64468765ece62af300ee",
+            "content": "sha256:cc373d45116d9eea8e9d85e1a315c0e79fb55c13c878be089d65f5e2e90bfd3a",
             "locator": {
               "kind": "symbol",
               "name": "start_leaf"
@@ -169,12 +165,22 @@
       ]
     },
     "18": {
-      "note": "Declare the closeout door for a leaf that is not yet the master's current one, with its own authored grade.",
+      "note": "Declare the closeout door for a leaf that is not yet the master's current one, with its own authored grade.\n\nAnchor: `declare_leaf`",
       "targets": [
         {
           "anchor": {
-            "blob": "8ca516d31bf8f6438ce9a3c0f6c043060e32fa67",
-            "content": "sha256:802c77a9b87ed5ea7cce8dd73de54756f9ef560c5375174d109e6689e83abb55",
+            "blob": "2b8ac1d7c5b42f4e303e64468765ece62af300ee",
+            "content": "sha256:6015f871ee523f0a8919a87fca29440181c1603d508f6a11e2ca99d2a8f01e1d",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "2b8ac1d7c5b42f4e303e64468765ece62af300ee",
+            "content": "sha256:1737be0353e70123498466c90a50f523b07c7370452f4360e124ba8f5b01d316",
             "locator": {
               "kind": "symbol",
               "name": "declare_leaf"
@@ -185,23 +191,22 @@
       ]
     },
     "2": {
-      "note": "The retired three-commit `close_contract` convenience method is gone; what remains is the fixture class the non-queue lifecycle suites build their task, door and projection state from.",
+      "note": "The retired three-commit `close_contract` convenience method is gone; what remains is the fixture class the non-queue lifecycle suites build their task, door and projection state from.\n\nAnchor: `enable_direct_execution` `QueueFixture`",
       "targets": [
         {
           "anchor": {
-            "blob": "b421dc01d662880c123e56decf3307cf1d96cfe0",
-            "content": "sha256:988cd43ca42e50b20c431c983e6b7fb95a3bde5c6cd2bba7472e3801281bfb26",
+            "blob": "2b8ac1d7c5b42f4e303e64468765ece62af300ee",
+            "content": "sha256:6015f871ee523f0a8919a87fca29440181c1603d508f6a11e2ca99d2a8f01e1d",
             "locator": {
-              "kind": "symbol",
-              "name": "enable_direct_execution"
+              "kind": "file"
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "8ca516d31bf8f6438ce9a3c0f6c043060e32fa67",
-            "content": "sha256:ba28344f8ca924f9bb7915f32cd4344b59aa9c262be90e77e48240e81f038662",
+            "blob": "2b8ac1d7c5b42f4e303e64468765ece62af300ee",
+            "content": "sha256:8152e6a4d868803287c8564f0f256429d97aa4579380f2f284344cb4cebd99dd",
             "locator": {
               "kind": "symbol",
               "name": "QueueFixture"

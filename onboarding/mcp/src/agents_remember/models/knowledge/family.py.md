@@ -80,14 +80,18 @@ No configured domain documentation could be checked.
 - The separation between the family guarantee and its members' obligations. [1]
 - The identity draft and its stored, digest-carrying form. [2]
 - The authored aggregate before sealing, with its digest deliberately absent. [3]
+
 - The sealed revision and its stored read shape. [4]
+
 - The shared accepted/proposed rule this aggregate applies at construction. [5]
 - The payload this revision's digest seals, including the sorted predecessor set. [6]
 
 - The retained family revision decoder verifies the sealed aggregate and sorted predecessors. [7]
 
 
+
 - The production reader retrieves family identities and exact sealed revisions from the derived index; it writes nothing. [8]
+
 
 - The declared `family` and `family_revision` tables these values map onto. [9]
 The requirement this vocabulary's first delivered slice belongs to: requirement packet `KS-R02@v1`, which lives in the coordination root, outside both the code and the memory repository, so the citation grammar cannot address it.

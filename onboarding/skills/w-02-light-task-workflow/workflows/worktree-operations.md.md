@@ -16,6 +16,14 @@ The current text reads each task's recorded branch edge instead of assuming one 
 
 ## Evidence
 
+
+
 - The kept procedure owns intake and intent, start/attach/status, sync, closeout hand-off, integration, finalization, cleanup and reopening, with the `worktree_*` family as its authority. [1]
+
+
+
 - Atomic and organizational masters are read from the task's recorded nature and edge: an organizational master adds no series contract or integration branch, and its leaves use the recorded super branch. [2]
+
+
+
 - Intake order keeps context resolution, the task-start drift check, the pre-worktree memory commit and the Worktree Intent Gate, and a developer-gated step holds its action while the turn follows the orientation operation. [3]

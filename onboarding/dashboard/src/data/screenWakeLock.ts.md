@@ -40,7 +40,9 @@ No relevant external documentation is configured.
 ### Repo-Internal References
 
 - Visibility, release, and overlapping-acquire handling. [1]
+
 - Cockpit startup owns the returned lifecycle. [2]
+
 
 ### Cross-Repo References
 

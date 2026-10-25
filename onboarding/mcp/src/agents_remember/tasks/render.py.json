@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/tasks/render.py",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
@@ -95,13 +96,61 @@
     }
   ],
   "references": {
-    "1": {
-      "note": "The maintenance-scope header is drawn only for a truthy field; the current header also conditionally carries the raw waitsFor line.",
+    "10": {
+      "note": "render_markdown formats external leaf-grant and supplied graph/master Order inputs; the master emits truthy fixed fields before preserved authored sections and renders full legacy-cycle identity when unfinished cycle work remains. It neither reads the grant store nor derives Order.",
       "targets": [
         {
           "anchor": {
-            "blob": "aacc841ceeb09f0e9e5e4159ff1ba4d2641fd600",
-            "content": "sha256:5873bebd8f729ab23521b34d05fa6ca000eb39642b6da0df1f46b9064b29609c",
+            "blob": "79a6277b50baffef12beb1ba6eea3a87e4859faf",
+            "content": "sha256:c592deabbfffb076308befcacd1c04cf02dffb89b3df4d3814043ccd22b3f641",
+            "locator": {
+              "end": 88,
+              "kind": "line_range",
+              "start": 52
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "79a6277b50baffef12beb1ba6eea3a87e4859faf",
+            "content": "sha256:7672c33f9daed6456f3d7e3ed29840faef97c11406e925ed4807966e96fc941f",
+            "locator": {
+              "end": 148,
+              "kind": "line_range",
+              "start": 109
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "79a6277b50baffef12beb1ba6eea3a87e4859faf",
+            "content": "sha256:0ad8d30d2d35687fb6b6fd463cf8ee6eb897bb43adb172054e35de3a82810a1a",
+            "locator": {
+              "end": 163,
+              "kind": "line_range",
+              "start": 151
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "79a6277b50baffef12beb1ba6eea3a87e4859faf",
+            "content": "sha256:5926b3f2187c38c097ee38178c09785073af26377d78de8ff89b98ae4a715f8f",
+            "locator": {
+              "end": 186,
+              "kind": "line_range",
+              "start": 166
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "79a6277b50baffef12beb1ba6eea3a87e4859faf",
+            "content": "sha256:5630fcb894ce9b6e3eb10b5bf5785e1e067990eae759245cba0c1b905181b108",
             "locator": {
               "end": 289,
               "kind": "line_range",
@@ -110,23 +159,6 @@
           },
           "kind": "code"
         },
-        {
-          "anchor": {
-            "blob": "79a6277b50baffef12beb1ba6eea3a87e4859faf",
-            "content": "sha256:a113be1d972065ae8c54fec4ead29f0000840d892dac88be8f322fd3c21812e0",
-            "locator": {
-              "end": 252,
-              "kind": "line_range",
-              "start": 249
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "10": {
-      "note": "render_markdown formats external leaf-grant and supplied graph/master Order inputs; the master emits truthy fixed fields before preserved authored sections and renders full legacy-cycle identity when unfinished cycle work remains. It neither reads the grant store nor derives Order.",
-      "targets": [
         {
           "anchor": {
             "blob": "79a6277b50baffef12beb1ba6eea3a87e4859faf",
@@ -162,30 +194,6 @@
             }
           },
           "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "aacc841ceeb09f0e9e5e4159ff1ba4d2641fd600",
-            "content": "sha256:074658d0ac91e8c9480b3b28dc56fb2635ac317eaccb25610986f78d4a12bf44",
-            "locator": {
-              "end": 186,
-              "kind": "line_range",
-              "start": 166
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "aacc841ceeb09f0e9e5e4159ff1ba4d2641fd600",
-            "content": "sha256:5873bebd8f729ab23521b34d05fa6ca000eb39642b6da0df1f46b9064b29609c",
-            "locator": {
-              "end": 289,
-              "kind": "line_range",
-              "start": 253
-            }
-          },
-          "kind": "code"
         }
       ]
     },
@@ -204,26 +212,21 @@
         }
       ]
     },
-    "2": {
-      "note": "Expected-knowledge-effects header bullets are drawn only when the declaration is truthy and retain declared order.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "aacc841ceeb09f0e9e5e4159ff1ba4d2641fd600",
-            "content": "sha256:5873bebd8f729ab23521b34d05fa6ca000eb39642b6da0df1f46b9064b29609c",
-            "locator": {
-              "end": 289,
-              "kind": "line_range",
-              "start": 253
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "3": {
       "note": "The step renderer suffixes a top-level note onto the checkbox line and draws that line when a note is the only reason to.",
       "targets": [
+        {
+          "anchor": {
+            "blob": "79a6277b50baffef12beb1ba6eea3a87e4859faf",
+            "content": "sha256:98142073c7eea77433dda7b6ef00c6d50fffe38bacc649c2f3d07d76ebb36e4b",
+            "locator": {
+              "end": 548,
+              "kind": "line_range",
+              "start": 524
+            }
+          },
+          "kind": "code"
+        },
         {
           "anchor": {
             "blob": "79a6277b50baffef12beb1ba6eea3a87e4859faf",
@@ -244,6 +247,18 @@
         {
           "anchor": {
             "blob": "79a6277b50baffef12beb1ba6eea3a87e4859faf",
+            "content": "sha256:b936b776e58203013838fbc3f306059cbf03339e9a4653e7453824d91e680b10",
+            "locator": {
+              "end": 343,
+              "kind": "line_range",
+              "start": 302
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "79a6277b50baffef12beb1ba6eea3a87e4859faf",
             "content": "sha256:0df2ed738f173bbac2215763230cbab2036a71fc0fa02a330ff7ad358920024d",
             "locator": {
               "end": 376,
@@ -258,6 +273,54 @@
     "5": {
       "note": "Declarations use qualified title identity and edge endpoints reuse the ordinal allocation.",
       "targets": [
+        {
+          "anchor": {
+            "blob": "79a6277b50baffef12beb1ba6eea3a87e4859faf",
+            "content": "sha256:2411f2531855436e17c5ab425adffc86d91b504320a5c8714640e33481835b58",
+            "locator": {
+              "end": 426,
+              "kind": "line_range",
+              "start": 408
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "79a6277b50baffef12beb1ba6eea3a87e4859faf",
+            "content": "sha256:4b64fa016682a7f2812a972611efebe05442f9c7a09af3eb2ce75eefbcbd0253",
+            "locator": {
+              "end": 443,
+              "kind": "line_range",
+              "start": 429
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "79a6277b50baffef12beb1ba6eea3a87e4859faf",
+            "content": "sha256:c37edb0b55d651b27519657739fc9a9599d8c2bb6b287ab44e845a9e1c1cd31b",
+            "locator": {
+              "end": 461,
+              "kind": "line_range",
+              "start": 446
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "79a6277b50baffef12beb1ba6eea3a87e4859faf",
+            "content": "sha256:328704da0fb14db1618c92d34c273bf7d54c486c853f737bb9c609641070c859",
+            "locator": {
+              "end": 480,
+              "kind": "line_range",
+              "start": 464
+            }
+          },
+          "kind": "code"
+        },
         {
           "anchor": {
             "blob": "79a6277b50baffef12beb1ba6eea3a87e4859faf",
@@ -331,6 +394,42 @@
         {
           "anchor": {
             "blob": "79a6277b50baffef12beb1ba6eea3a87e4859faf",
+            "content": "sha256:d0b18f448b6d17f60e69fbe5b33306add4cb1d93fe4d91f904aa446d72ab78b4",
+            "locator": {
+              "end": 498,
+              "kind": "line_range",
+              "start": 491
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "79a6277b50baffef12beb1ba6eea3a87e4859faf",
+            "content": "sha256:56fb1340e6b9fdf412beab9f1f6f7fce5550085376e7a7e23f4ff12f96b64442",
+            "locator": {
+              "end": 508,
+              "kind": "line_range",
+              "start": 501
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "79a6277b50baffef12beb1ba6eea3a87e4859faf",
+            "content": "sha256:3905b0bbc32c31e14b65b9ffd343720aebf36aad2bc9ffeda8fdff1e087cb1e0",
+            "locator": {
+              "end": 609,
+              "kind": "line_range",
+              "start": 587
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "79a6277b50baffef12beb1ba6eea3a87e4859faf",
             "content": "sha256:dab15127874a6faca082c2c89a1ff50cd9fd14d9e0a7e4534fdcfff2a1faebcc",
             "locator": {
               "end": 531,
@@ -372,6 +471,18 @@
         {
           "anchor": {
             "blob": "79a6277b50baffef12beb1ba6eea3a87e4859faf",
+            "content": "sha256:99e4aa32574d37304e660fe1a3da186b9d8fae99d78a106b76f1bf6741ee4c62",
+            "locator": {
+              "end": 106,
+              "kind": "line_range",
+              "start": 100
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "79a6277b50baffef12beb1ba6eea3a87e4859faf",
             "content": "sha256:47da8f33e3becfde5a50a1be71a810621dc9ab324414cc328fc9c04fd3cf7e02",
             "locator": {
               "end": 107,
@@ -386,6 +497,18 @@
     "9": {
       "note": "A retired master's row shows the retirement time and reason after its scope.",
       "targets": [
+        {
+          "anchor": {
+            "blob": "79a6277b50baffef12beb1ba6eea3a87e4859faf",
+            "content": "sha256:381eebcf6da78d8c1397267de8a843dd4809d29ea7f15bc7083b2e6689c60de7",
+            "locator": {
+              "end": 217,
+              "kind": "line_range",
+              "start": 201
+            }
+          },
+          "kind": "code"
+        },
         {
           "anchor": {
             "blob": "79a6277b50baffef12beb1ba6eea3a87e4859faf",

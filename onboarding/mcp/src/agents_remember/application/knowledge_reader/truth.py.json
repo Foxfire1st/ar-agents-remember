@@ -135,15 +135,14 @@
       ]
     },
     "2": {
-      "note": "One record's truth view carries its links, kind part and timeline, now forwarding a continuation and lazy history callback.",
+      "note": "One record's truth view carries its links, kind part and timeline, now forwarding a continuation and lazy history callback.\n\nAnchor: `record_view`",
       "targets": [
         {
           "anchor": {
-            "blob": "429d9030986b5580fecabfb7a347284e223fcd4a",
-            "content": "sha256:b80c5725c35e1b812593a13e2044a48a01bab80a1aad9b4f3c76d94f9f127253",
+            "blob": "ee654cd82d489cde336684009e07dfa9403cc41a",
+            "content": "sha256:5270313d797bb7d5d70ee50130dc508ac7831187fa2139c503b60659111ef00b",
             "locator": {
-              "kind": "symbol",
-              "name": "record_view"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -178,26 +177,14 @@
       ]
     },
     "4": {
-      "note": "Outgoing links, or the reason they could not be read (F11).",
+      "note": "Outgoing links, or the reason they could not be read (F11).\n\nAnchor: `_outgoing` `_links_of`",
       "targets": [
         {
           "anchor": {
-            "blob": "429d9030986b5580fecabfb7a347284e223fcd4a",
-            "content": "sha256:cf6a1294113f57e14297b0e4047546d04fb2b39e2bc405752385757e9b6bd0f8",
-            "locator": {
-              "kind": "symbol",
-              "name": "_outgoing"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
             "blob": "ee654cd82d489cde336684009e07dfa9403cc41a",
-            "content": "sha256:dd388475cbd25655fb9a729ab99bb9d53d1ded378727e448f045c81fba8590c7",
+            "content": "sha256:5270313d797bb7d5d70ee50130dc508ac7831187fa2139c503b60659111ef00b",
             "locator": {
-              "kind": "symbol",
-              "name": "_links_of"
+              "kind": "file"
             }
           },
           "kind": "code"

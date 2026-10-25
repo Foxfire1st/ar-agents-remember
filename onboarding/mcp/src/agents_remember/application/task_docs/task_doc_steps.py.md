@@ -109,14 +109,19 @@ No relevant external documentation was found after checking the configured sourc
 - **Retained historical source account — superseded by the current contract:** The shared nonblank-reason reader, also consumed by the tools module's terminal-status exemption. [2]
 - **Retained historical source account — superseded by the current contract:** The single addressing rule every step operation shares, including the parent-naming miss hint. [3]
 - **Retained historical source account — superseded by the current contract:** The create-only operation requires a title and refuses an existing id in its scope. [4]
+
 - **Retained historical source account — superseded by the current contract:** The delete-only operation requires a reason and appends the removal decision. [5]
+
 - **Retained historical source account — superseded by the current contract:** The update-only operation and the fields it may copy. [6]
+
 - **Retained historical source account — superseded by the current contract:** `skip_step` moved here verbatim: keep the unit, mark it done, record `intentionalSkip`, do not cascade. [7]
-- **Retained historical source account — superseded by the current contract:** The focused checklist read behind the `read_steps` special operation. [8]
+
 - **Retained historical source account — superseded by the current contract:** The dispatcher that registers the operations and delegates through thin `_apply_*` adapters. [9]
 - **Retained historical source account — superseded by the current contract:** The terminal-status guard that admits a reasoned `remove_step` on a `Completed` document. [10]
 - **Retained historical source account — superseded by the current contract:** The schema field that made a top-level `note` storable at all. [11]
-- **Retained historical source account — superseded by the current contract:** The executor that pins the addressing, create/delete, note-persistence, rendering, and Completed-document behaviours. [12]
+
+- The application test class that pins the addressing, create/edit/delete, rendering and Completed-document behaviours. [12]
+
 
 ### Cross-Repo References
 

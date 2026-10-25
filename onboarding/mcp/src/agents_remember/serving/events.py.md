@@ -109,7 +109,9 @@ No relevant external or domain documentation was found for this repository-local
 
 ### Repo-Internal References
 
+
 - The observer event envelope tailed here. [1]
+
 - EventStore appends and reads a single workspace Event River at <observer_root>/workspace/events.jsonl, using WORKSPACE_SOURCE = "workspace". Its log_path takes no lifecycle id; lifecycle-specific event logs are not part of this layout. [2]
 - The one read/path abstraction (NS #5). [3]
 
@@ -120,7 +122,12 @@ No meaningful cross-repository implementation source governs this repository-loc
 
 The reviewed behavior is wholly repository-local.
 
+
 - The app that mounts this as `GET /api/events`.  Anchor: "async def stream_events(" [4]
+
 - initial_event_offsets computes fresh-connect offsets for workspace/events.jsonl from the recent replay window plus the persisted virtual base offset. The retained-offset scan keeps events it cannot prove older than the cutoff. Physical reclamation belongs to the workspace River compactor and append-time size-bound admission under the shared lock, not lifecycle-log pruning in a projection pass. [5]
+
 - `read_new_events` realigns records, admits top-level objects, and bounds emitted batches. [6]
+
+
 - `stream_raw_events` computes offsets once, drains the backlog in bounded chunks without pruning, and emits `ready` once after it. [7]

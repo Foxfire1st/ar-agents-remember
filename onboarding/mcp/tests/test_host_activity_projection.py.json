@@ -138,15 +138,14 @@
       ]
     },
     "5": {
-      "note": "Idle heartbeat passes neither read publications nor relaunch the bridge snapshot.",
+      "note": "Idle heartbeat passes neither read publications nor relaunch the bridge snapshot.\n\nAnchor: `test_idle_heartbeats_do_not_read_activity_or_launch_another_snapshot`",
       "targets": [
         {
           "anchor": {
-            "blob": "f0de2c3d3ee0f63ebbdc18be70d0ad02b5d6a858",
-            "content": "sha256:e0995e249ab658fa143f64b48325869ccbb6ca58b83c7b2d8033550080707ac6",
+            "blob": "a339dfc94fe9ff7259b538c9ac0bd1bfa7dc26ee",
+            "content": "sha256:57bba1e85257402e00bca3fe919993d7eab69aefbbf2f654b296a56178edf6a6",
             "locator": {
-              "kind": "symbol",
-              "name": "test_idle_heartbeats_do_not_read_activity_or_launch_another_snapshot"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -154,15 +153,14 @@
       ]
     },
     "6": {
-      "note": "Periodic healing/degraded wakes do not poll host activity or role records.",
+      "note": "Periodic healing/degraded wakes do not poll host activity or role records.\n\nAnchor: `test_periodic_full_and_degraded_wakes_retain_host_without_reads`",
       "targets": [
         {
           "anchor": {
-            "blob": "f0de2c3d3ee0f63ebbdc18be70d0ad02b5d6a858",
-            "content": "sha256:aa691a2ffe46be638aee5faa6072731811a8a9728109981a671e8efbb044836c",
+            "blob": "a339dfc94fe9ff7259b538c9ac0bd1bfa7dc26ee",
+            "content": "sha256:57bba1e85257402e00bca3fe919993d7eab69aefbbf2f654b296a56178edf6a6",
             "locator": {
-              "kind": "symbol",
-              "name": "test_periodic_full_and_degraded_wakes_retain_host_without_reads"
+              "kind": "file"
             }
           },
           "kind": "test"

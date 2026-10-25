@@ -1,14 +1,15 @@
 {
   "path": "dashboard/src/panels/engine-room/BootTimeline.tsx",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
-      "note": "Consumes the `EngineProcessNode` projection shape (`edges`, `health`, `providers`, `memoryMode`, `codeWorktree`/`memoryWorktree`).\n\nAnchor: \"export interface EngineProcessNode {\"; \"function steadyState(node: EngineProcessNode): StepState {\"; \"node.health === \\\"failed\\\"\"; \"node.providers.some\"; \"function bootSteps(node: EngineProcessNode): Step[] {\"; \"node.edges.find\"; \"node.codeWorktree.exists\"; \"Memory (${node.memoryMode})\"",
+      "note": "Consumes the `EngineProcessNode` projection shape (`phase`, `landing`, `memoryMode`, `codeWorktree`/`memoryWorktree`).",
       "targets": [
         {
           "anchor": {
-            "blob": "1752c54fbf1720ecd899afb14e1e26ad7e19be4a",
-            "content": "sha256:ed922a8cea866a8b2c3e127b59b81ab6f1aa6d13cd44d5968cf6f04ac1c44348",
+            "blob": "6c6fb3353eaaf5c876e680e34783ef2a1b24b47f",
+            "content": "sha256:d5edf7185332fe06cf68e92ecdf66f0ea2a987d10cb1a4103e617bc27e803f71",
             "locator": {
               "end": 47,
               "kind": "line_range",
@@ -19,8 +20,8 @@
         },
         {
           "anchor": {
-            "blob": "1752c54fbf1720ecd899afb14e1e26ad7e19be4a",
-            "content": "sha256:2a13ddaa1bfe9b2a03dcd13ced0e482d6168f07e03840fb61c538b32a07c2b10",
+            "blob": "6c6fb3353eaaf5c876e680e34783ef2a1b24b47f",
+            "content": "sha256:4ebe15136dcaa8af636d7a72b718aaa8ea30fa997abfdf014349800f84db671e",
             "locator": {
               "end": 51,
               "kind": "line_range",
@@ -31,7 +32,7 @@
         },
         {
           "anchor": {
-            "blob": "33e18afe1b7a4d27a0a989faa241924eb5afc6ef",
+            "blob": "6c6fb3353eaaf5c876e680e34783ef2a1b24b47f",
             "content": "sha256:86a24e3b169e9590101ed78d462c0b7de45f6bcb6ec3603d1af9e5fc3dbbfdb2",
             "locator": {
               "end": 33,
@@ -43,8 +44,8 @@
         },
         {
           "anchor": {
-            "blob": "1752c54fbf1720ecd899afb14e1e26ad7e19be4a",
-            "content": "sha256:3df5a073799c2e377268f95ace656bd7cc731f742d45732fa584945f04e170c8",
+            "blob": "6c6fb3353eaaf5c876e680e34783ef2a1b24b47f",
+            "content": "sha256:8e2a00a2480d8a81c68cbb0fe395b8f9d346511f7fd24f3509ed9ff95f7ea78f",
             "locator": {
               "end": 58,
               "kind": "line_range",
@@ -55,8 +56,8 @@
         },
         {
           "anchor": {
-            "blob": "33e18afe1b7a4d27a0a989faa241924eb5afc6ef",
-            "content": "sha256:c5c79d18083d274fb29eee7997ec2963afd493731731960a864626a7ae57449d",
+            "blob": "6c6fb3353eaaf5c876e680e34783ef2a1b24b47f",
+            "content": "sha256:040190a3058d9b1e76b3c5537e727b5bc36db0554b871e50dbb8dc95b8698260",
             "locator": {
               "end": 39,
               "kind": "line_range",
@@ -67,8 +68,8 @@
         },
         {
           "anchor": {
-            "blob": "1752c54fbf1720ecd899afb14e1e26ad7e19be4a",
-            "content": "sha256:8b6806385925909228f947b0f50a8e87d5aa29e57a6c69e33b8562b18a60acc3",
+            "blob": "6c6fb3353eaaf5c876e680e34783ef2a1b24b47f",
+            "content": "sha256:24b518fbdac99efe9bf34cfcb03cd8be9abda281145080f96d1046b993de4425",
             "locator": {
               "end": 105,
               "kind": "line_range",
@@ -79,8 +80,8 @@
         },
         {
           "anchor": {
-            "blob": "fddde3fe60faa2d9374405b9676016ab026af1b6",
-            "content": "sha256:adc5e70699b6beb4f6da806e367cc006d742e94259f35a0eafbb048349540fd4",
+            "blob": "d71e9db1948f52b82bd84b2348775f13ac9b57e7",
+            "content": "sha256:76e4fbb0eebd8fbc52351462221a1e750d6f4a16012323e44a5facfd2407b8bf",
             "locator": {
               "end": 188,
               "kind": "line_range",
@@ -92,52 +93,12 @@
         }
       ]
     },
-    "2": {
-      "note": "`EngineProcessEdge.state` is mapped through the known `EDGE_TO_STEP` values.\n\nAnchor: \"node.edges.find\"; \"EDGE_TO_STEP[found.state] ?? \\\"pending\\\"\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "fddde3fe60faa2d9374405b9676016ab026af1b6",
-            "content": "sha256:21cac9e0ab2bd51c63ac823fa1d60ca86b9759849b9cbd5ccabcdb3bd7aa8072",
-            "locator": {
-              "kind": "symbol",
-              "name": "EngineProcessEdge"
-            },
-            "path": "dashboard/src/types/projection.ts"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "1752c54fbf1720ecd899afb14e1e26ad7e19be4a",
-            "content": "sha256:ed91b3293e751fd037a99921f5d9273f97f5a91967266017aaa232db3d98c61e",
-            "locator": {
-              "kind": "symbol",
-              "name": "EDGE_TO_STEP"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "1752c54fbf1720ecd899afb14e1e26ad7e19be4a",
-            "content": "sha256:d0fcb3e6a2b8cd31fb31fad5de57ceefcbbb506587de711c2d2c1066c49d0bd3",
-            "locator": {
-              "end": 59,
-              "kind": "line_range",
-              "start": 58
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "3": {
       "note": "`DISPOSE_PHASES`, `disposeFrontier(node)`, and `teardownSteps(node)` drive tear-down mode.",
       "targets": [
         {
           "anchor": {
-            "blob": "33e18afe1b7a4d27a0a989faa241924eb5afc6ef",
+            "blob": "6c6fb3353eaaf5c876e680e34783ef2a1b24b47f",
             "content": "sha256:28abac8c02d21ae2f066d7fae2bfba8659fc0c2549db082966c7c3cedfdf3700",
             "locator": {
               "kind": "symbol",
@@ -148,7 +109,7 @@
         },
         {
           "anchor": {
-            "blob": "33e18afe1b7a4d27a0a989faa241924eb5afc6ef",
+            "blob": "6c6fb3353eaaf5c876e680e34783ef2a1b24b47f",
             "content": "sha256:61f589c5c9db15c7a1f2f1bb25c82ca846af1fe99d32ee49469285c1e820b542",
             "locator": {
               "kind": "symbol",
@@ -159,7 +120,7 @@
         },
         {
           "anchor": {
-            "blob": "33e18afe1b7a4d27a0a989faa241924eb5afc6ef",
+            "blob": "6c6fb3353eaaf5c876e680e34783ef2a1b24b47f",
             "content": "sha256:044468d2da86177b5ff76cb127f2c69423abfd20f0fa3903991fdbb3f3411b8c",
             "locator": {
               "kind": "symbol",
@@ -175,7 +136,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c93efa0c8dad93909ffe08e9cb9d17efb3321b21",
+            "blob": "61fa5ab62915df0658c9617649fee1dec455a082",
             "content": "sha256:ddb22371d1431e4693c119fe49084434b7e81799e979d23ad788cdf2edb59bcb",
             "locator": {
               "end": 103,
@@ -188,8 +149,8 @@
         },
         {
           "anchor": {
-            "blob": "c93efa0c8dad93909ffe08e9cb9d17efb3321b21",
-            "content": "sha256:3f62f35905f1b5da1739610389611ce4583a871998327fc69ee41431540182ee",
+            "blob": "61fa5ab62915df0658c9617649fee1dec455a082",
+            "content": "sha256:25557dbe8cf0bc036765c6ccffdadfbc079b5ef6f8caa110ceafde1b23d67df8",
             "locator": {
               "end": 474,
               "kind": "line_range",
@@ -201,8 +162,8 @@
         },
         {
           "anchor": {
-            "blob": "c93efa0c8dad93909ffe08e9cb9d17efb3321b21",
-            "content": "sha256:8d0406bc7822642f02d87e58aeebe9412c47f49c4a8c0c13d1077819c8772a1c",
+            "blob": "61fa5ab62915df0658c9617649fee1dec455a082",
+            "content": "sha256:01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
             "locator": {
               "end": 482,
               "kind": "line_range",
@@ -214,48 +175,14 @@
         },
         {
           "anchor": {
-            "blob": "c93efa0c8dad93909ffe08e9cb9d17efb3321b21",
-            "content": "sha256:825a2a514e7505fb618c6534c08c70c660c4394d12ab4a8589cc26e817cc000d",
+            "blob": "61fa5ab62915df0658c9617649fee1dec455a082",
+            "content": "sha256:cb925b92ff4a11ed52767227a8350dae028a6e9d38078efda2fb74dd89d0148a",
             "locator": {
               "end": 503,
               "kind": "line_range",
               "start": 503
             },
             "path": "dashboard/src/panels/engine-room/layout.styles.ts"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "5": {
-      "note": "bootSteps now returns Contract anchor (complete), Code worktree (exists-derived), then Ledger-map · memory worktree for  — source ownership, not executed visual proof.\n\nAnchor: `function materialized(exists: boolean   undefined): StepState {`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "33e18afe1b7a4d27a0a989faa241924eb5afc6ef",
-            "content": "sha256:24e1766fdf74d527f911cd4376f5b7502cab4fc7c67e23c048444941ebaba205",
-            "locator": {
-              "end": 50,
-              "kind": "line_range",
-              "start": 29
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "6": {
-      "note": "bootSteps now returns Contract anchor (complete), Code worktree (exists-derived), then Ledger-map · memory worktree for  — source ownership, not executed visual proof.\n\nAnchor: `const DISPOSE_PHASES = new Set([`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "33e18afe1b7a4d27a0a989faa241924eb5afc6ef",
-            "content": "sha256:4a474e90da0060a41349f979ef7b8e99a7353a69c60ee85559bccbc2719b29aa",
-            "locator": {
-              "end": 145,
-              "kind": "line_range",
-              "start": 54
-            }
           },
           "kind": "code"
         }

@@ -29,11 +29,17 @@ An admitted leaf receives its own rendered document plus declared requirement fi
 ## Evidence
 
 - **Retained historical source account — superseded by the current contract:** A leaf role's own rendered document is prepared as a real enclosure file with one index entry. [1]
+
 - **Retained historical source account — superseded by the current contract:** Public writes select the written task's copies before staging and atomic publication. [2]
+
+
 
 - **Retained historical source account — superseded by the current contract:** Atomic copy publication restores prior copied bytes if publication fails. [3]
 
+
+
 - **Retained historical source account — superseded by the current contract:** Raw artifact selection excludes readable siblings and foreign nonmembers before full contract loading. [4]
+
 - **Retained historical source account — superseded by the current contract:** Unrecognized files are tolerated only past staged own copies; otherwise their error is raised. [5]
 
 

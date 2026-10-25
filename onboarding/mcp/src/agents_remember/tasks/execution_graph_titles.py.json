@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/tasks/execution_graph_titles.py",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
@@ -63,11 +64,37 @@
         {
           "anchor": {
             "blob": "79a6277b50baffef12beb1ba6eea3a87e4859faf",
+            "content": "sha256:079ad1e25bf840dbe046c9abc10c01408f41626f065640085a3dfa497ade4d0c",
+            "locator": {
+              "end": 431,
+              "kind": "line_range",
+              "start": 417
+            },
+            "path": "mcp/src/agents_remember/tasks/render.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "79a6277b50baffef12beb1ba6eea3a87e4859faf",
             "content": "sha256:d3ed1fd1b4034f855c326c15f7a8ff6f29617901586708de76818d24305a39fa",
             "locator": {
               "end": 464,
               "kind": "line_range",
               "start": 450
+            },
+            "path": "mcp/src/agents_remember/tasks/render.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "79a6277b50baffef12beb1ba6eea3a87e4859faf",
+            "content": "sha256:584af24fddfb239341db68874c415a20a0d9a2c692a21f8ce275f950dc43cb9d",
+            "locator": {
+              "end": 357,
+              "kind": "line_range",
+              "start": 343
             },
             "path": "mcp/src/agents_remember/tasks/render.py"
           },

@@ -41,10 +41,25 @@ The inherited card recorded no template-local TODO and required no sibling-repos
 - The report shape contains analytical author and affected scope, changed-sidecar and new-file inventories. [3]
 - Check statuses, conditional coherence, drift and ledger fields describe what must be reported, not successful execution. [4]
 - Overview and handoff fields require explicit gaps and forbid full-green overclaiming. [5]
+
 - Three-way reconciliation separates current intent, ruled change and implemented reality. [6]
+
+
 - The owning curation loop requires the full operation, actionable repairs/blocked codes and conditional coherence. [7]
+
 - Curator reconciliation and memory authoring do not own Git publication or landing. [8]
+
 - Future hashes/uncommitted fingerprints are forbidden; handoff evidence and required coherence retain their own boundary. [9]
-- Reviewer doctrine assigns the normal authoring full-MQC exception to the Curator, not a reviewer subset. [10]
-- Reviewer outputs include both durable route-report templates. [11]
+
+
+> Retained earlier citation wording: - Reviewer doctrine assigns the normal authoring full-MQC exception to the Curator, not a reviewer subset. [10]
+
+
+> Retained earlier citation wording: - Reviewer outputs include both durable route-report templates. [11]
+
 - Helpers are not AR seats or independent review; Curator authoring retains one writer. [12]
+
+- Reviewer doctrine assigns the normal authoring full-MQC exception to the Curator, not a reviewer subset. [10]
+
+
+- Reviewer outputs include both durable route-report templates. [11]

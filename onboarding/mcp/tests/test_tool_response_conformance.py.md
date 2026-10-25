@@ -14,13 +14,13 @@ The current source facts below replace the former operative inventory. The separ
 
 ### Source and authority bounds
 
-- Source comparison: the current module declares ROSTER_SIZE=43, TOOL_MODULE_COUNT=14 and TOOL_HANDLER_COUNT=45, including explainer_control. The A10 declarations42/13/44 and the earlier41/20/65 and39/19/63 accounts describe earlier source epochs. The remaining source assertions compare populations rather than granting acceptance from numbers.
+- Source comparison: the current module declares ROSTER_SIZE=44, TOOL_MODULE_COUNT=14 and TOOL_HANDLER_COUNT=46, including explainer_control. The A10 declarations 42/13/44 and the earlier 41/20/65 and 39/19/63 accounts describe earlier source epochs. The remaining source assertions compare populations rather than granting acceptance from numbers.
 - Source comparison: test_every_registered_model_is_strict_or_declared_flexible derives strict/flexible model sets; imports and compatibility rows do not enlarge the public roster.
 - Historical source comparison only: the former DispatchAgentResponse field assertion is removed on A10 and supplies no current dispatch contract.
 
 > **Retained historical source account — superseded by the current contract:**
-> - Source comparison: `mcp/tests/test_tool_response_conformance.py:225 (ROSTER_SIZE =)`.
-> - Source comparison: `mcp/tests/test_tool_response_conformance.py:422 (def test_every_registered_model_is_strict_or_declared_flexible)`.
+> - Source comparison: `mcp/tests/test_tool_response_conformance.py:207 (ROSTER_SIZE =)`.
+> - Source comparison: `mcp/tests/test_tool_response_conformance.py:384 (def test_every_registered_model_is_strict_or_declared_flexible)`.
 > - Historical source comparison only: the former DispatchAgentResponse field assertion is removed on A10 and supplies no current dispatch contract.
 
 > **Retained historical source account — superseded by the current contract:**
@@ -28,8 +28,7 @@ The current source facts below replace the former operative inventory. The separ
 
 ## Current source contract evidence
 
-- Current synced source supports the qualified account; declarations, mirrors and fixture assertions are not executed acceptance. [21]
-
+- Current source pins are 44 public tools, 14 adapter modules and 46 handlers; removed task-read coverage asserts both operations answer `operation-removed` with the rendered file names and no steps, and validates the `TaskDocResponse` logged beside the refusal rather than the delivered answer.
 
 ## Historical original card — preserved, not the current operative account
 
@@ -104,7 +103,7 @@ early return fails instead of passing quietly. The deleted sweep was also
   executed payload for every registered model needs the fixture infrastructure the deleted sweep
   had, and that infrastructure is what rotted (11 rot sites; it does not collect verbatim).
 - **No `-m` override and no marker**: lane membership is `architecture-fitness`
-  (`mcp/tests/test-evidence-lanes.toml:246`), which is what keeps these cases in the default lane.
+  (`mcp/tests/test-evidence-lanes.toml:651`), which is what keeps these cases in the default lane.
 - Importing `test_agent_notifier` for its fixtures means this module shares that module's world
   builder; it does not re-run or certify it.
 
@@ -123,23 +122,26 @@ The anchors below identify current behaviour of this module; they are not execut
 they make no acceptance claim.
 
 - Registration and adapter id sets are derived from source and asserted equal both ways. [1]
-- The 17 internal compatibility registrations are named, not implied. [2]
+
 - The fixtures' models are the registry's own objects. [3]
-- Every registered model is strict or declared flexible; the 48/36 split is pinned. [4]
+
+- Every registered model is strict or declared flexible, and the split is derived twice — from the declared base class and from each model's own `extra` config — so the two derivations must agree by name. [4]
+
 - Every tool adapter module routes through the `_tool_payload` choke point, per handler on the return. [5]
+
 - `lifecycle_finalize_task` validates with the series release produced, and asserts it reached the emitting branch. [6]
+
 - The same response validates on the `activation-release-blocked` arm, where only the release key is present. [7]
 - The declaring set for the two atomic-series keys is exactly `lifecycle_finalize_task`. [8]
-- `task_doc`'s `read_steps` validates and returns the authored units. [9]
+
 - The registered description and the refusal name the same `kind` vocabulary. [10]
+
 - Every `next_tool=` literal the lifecycle package passes is declared on the response model. [11]
-- The `sprint-owner-required` refusal is a typed payload, driven through the real tool. [12]
-- A queued operator post must still report `entryId`, `state`, `messageKind`, `deliveryState`. [13]
-- `session_retire` reports the stranded row after the seat is already gone. [14]
-- The structural delivery projection is declared on the shared base every consumer inherits. [15]
-- The lane row that keeps this module in the default lane. [20]
+
 - The choke point whose guarantee this module moves into the suite. [17]
+
 - The registry whose models the structural layer sweeps. [18]
+
 - The advertised public roster the surface layer checks against. [19]
 
 ### Cross-Repo References
@@ -150,8 +152,8 @@ No repository or external-system boundary is proved by this module.
 
 </details>
 
-- The composed source declares41 public tools,20 modules and65 handlers; the R111 pre-sync42/20/66 and older39/19/63 figures are historical. Removed task-read coverage asserts both operations return operation-removed/file names, no steps, log-backed TaskDocResponse validation and no delivered framework envelope. The deleted successful-checklist method cannot witness current behavior. These declarations and assertions are not a fresh live advertisement; retain the separately disclosed delivered-payload fallback rather than claiming every whole-result check is independent. [21]
-
 ## Current source evidence
 
-- Current literal source populations are43 roster names,14 adapter modules and45 handlers, while strict/flexible sets remain derived. [22]
+- Current literal source populations are 44 roster names, 14 adapter modules and 46 handlers, while strict/flexible sets remain derived. Anchor: `ROSTER_SIZE`, `TOOL_MODULE_COUNT`, `TOOL_HANDLER_COUNT` [22]
+
+- The lane manifest registers mcp/tests/test_tool_response_conformance.py in architecture-fitness. Membership selects evidence and does not establish execution. [20]

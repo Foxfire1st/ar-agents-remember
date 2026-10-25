@@ -1,14 +1,15 @@
 {
   "path": "mcp/src/agents_remember/application/review_sync_movement.py",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
-      "note": "**The module's own statement of the requirement, the read-half gap it closes, and the \"measures, owns no verdict\" boundary.**\n\nAnchor: \"It measures; it owns no verdict of its own.\"",
+      "note": "The module's own statement of purpose: it renders exact managed-sync tree measurements on the live review surface (ICR-R22).",
       "targets": [
         {
           "anchor": {
-            "blob": "93731bde89e06ef01c6f5b0ae7c8ce7dd102a747",
-            "content": "sha256:93d9ba049e3fa15bc5e1b3b5d41b8c9cf1d87f2fc8aef3de46d1d2a3848479bb",
+            "blob": "3a7a51167bc4342c1d0cd79fee92196b7ae12b14",
+            "content": "sha256:65ba90c2e14adfea4d27d73e07e8376c3b33be4b62ea39a21ec228be99ae8af9",
             "locator": {
               "end": 30,
               "kind": "line_range",
@@ -20,12 +21,22 @@
       ]
     },
     "10": {
-      "note": "**The projection: the state taken from the record's verdict, moved identities named only on a moving channel, resolved identities only where one moved.**",
+      "note": "**The projection: the state taken from the record's verdict, moved identities named only on a moving channel, resolved identities only where one moved.**\n\nAnchor: `_project`",
       "targets": [
         {
           "anchor": {
-            "blob": "93731bde89e06ef01c6f5b0ae7c8ce7dd102a747",
-            "content": "sha256:8f9ca922b68691ee041e2b5f39d96ababee0a521df37edd10be6a59796780642",
+            "blob": "3a7a51167bc4342c1d0cd79fee92196b7ae12b14",
+            "content": "sha256:8cc0bd8a910711f5fab8a88d254b0100adad175944c0bb7bd41a787a28e086be",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3a7a51167bc4342c1d0cd79fee92196b7ae12b14",
+            "content": "sha256:d40a79190a281a59a50b462bec2156b444a6377fa1054cfa67aa77438903ce25",
             "locator": {
               "kind": "symbol",
               "name": "_project"
@@ -36,15 +47,14 @@
       ]
     },
     "11": {
-      "note": "**The absence reason built from the record's own values, including the location's own state and sentence.**",
+      "note": "An `unmeasured` projection publishes the record's own `memory_detail` as its reason; every measured state carries none.\n\nAnchor: `_unmeasured_reason`",
       "targets": [
         {
           "anchor": {
-            "blob": "93731bde89e06ef01c6f5b0ae7c8ce7dd102a747",
-            "content": "sha256:fd66218667884bf1935ca48275d62735dbf2d03a42217e46000831c06226501a",
+            "blob": "3a7a51167bc4342c1d0cd79fee92196b7ae12b14",
+            "content": "sha256:8cc0bd8a910711f5fab8a88d254b0100adad175944c0bb7bd41a787a28e086be",
             "locator": {
-              "kind": "symbol",
-              "name": "_unmeasured_reason"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -52,15 +62,14 @@
       ]
     },
     "12": {
-      "note": "**One sentence per state, with the agreement sentence reachable only from `current`.**",
+      "note": "The statement the movement publishes is the rebinding record's own `statement()`: one sentence per state, with the agreement sentence reachable only from `current`.\n\nAnchor: `_statement`",
       "targets": [
         {
           "anchor": {
-            "blob": "93731bde89e06ef01c6f5b0ae7c8ce7dd102a747",
-            "content": "sha256:d4f237c1873df838180a2a2cdd0599585dfcdfaa5f8fe0d1daf91b4cb96612b9",
+            "blob": "3a7a51167bc4342c1d0cd79fee92196b7ae12b14",
+            "content": "sha256:8cc0bd8a910711f5fab8a88d254b0100adad175944c0bb7bd41a787a28e086be",
             "locator": {
-              "kind": "symbol",
-              "name": "_statement"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -68,15 +77,14 @@
       ]
     },
     "13": {
-      "note": "The agreement clause that names only the channels actually compared and matched.",
+      "note": "The projection adds no clause of its own: the statement, including the clause naming the channels compared and their matches, comes from the rebinding record.\n\nAnchor: `_measured_clause`",
       "targets": [
         {
           "anchor": {
-            "blob": "93731bde89e06ef01c6f5b0ae7c8ce7dd102a747",
-            "content": "sha256:9ee99fdadebe5cfc2004b881dcf255bde03949a859c682aa88e841f164033c82",
+            "blob": "3a7a51167bc4342c1d0cd79fee92196b7ae12b14",
+            "content": "sha256:8cc0bd8a910711f5fab8a88d254b0100adad175944c0bb7bd41a787a28e086be",
             "locator": {
-              "kind": "symbol",
-              "name": "_measured_clause"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -84,12 +92,22 @@
       ]
     },
     "14": {
-      "note": "**The fold: a `stale` movement outranks the reader's carried identity, and the previous input is always one somebody held.**",
+      "note": "**The fold: a `stale` movement outranks the reader's carried identity, and the previous input is always one somebody held.**\n\nAnchor: `review_staleness_with_sync_movement`",
       "targets": [
         {
           "anchor": {
-            "blob": "93731bde89e06ef01c6f5b0ae7c8ce7dd102a747",
-            "content": "sha256:0ccfd42136229222421be834f0bcd59a7cec380180f6ace5e845db1926a75a18",
+            "blob": "3a7a51167bc4342c1d0cd79fee92196b7ae12b14",
+            "content": "sha256:8cc0bd8a910711f5fab8a88d254b0100adad175944c0bb7bd41a787a28e086be",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3a7a51167bc4342c1d0cd79fee92196b7ae12b14",
+            "content": "sha256:94a2912674267018cbcfd30c8b3a461a896dd8c2aefb2222a4e52420564919ed",
             "locator": {
               "kind": "symbol",
               "name": "review_staleness_with_sync_movement"
@@ -129,27 +147,14 @@
       ]
     },
     "16": {
-      "note": "**The record read as a state rather than an exception, with its three read states.**",
+      "note": "The record read as a state rather than an exception, with four read states: `recorded`, `legacy-limit`, `not-recorded` and `unreadable`.\n\nAnchor: `ReviewSyncRebindingRead` `read_review_sync_rebinding`",
       "targets": [
         {
           "anchor": {
-            "blob": "4bde11e7cf0ae5120d98215524297fba21a57dd3",
-            "content": "sha256:4ae9140d50511795322cb5b7e037f5c0ea983fed6aac81cbdacf03702f95830f",
+            "blob": "e1d40f3cd8b8ad7c20b47ba43bf08632f20a09c5",
+            "content": "sha256:b47e03e635db4b85b39bc7ec2c7bb496275809ee93659ff581f9fecd27c67409",
             "locator": {
-              "kind": "symbol",
-              "name": "ReviewSyncRebindingRead"
-            },
-            "path": "mcp/src/agents_remember/application/review_sync_rebinding.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "4bde11e7cf0ae5120d98215524297fba21a57dd3",
-            "content": "sha256:9bb8f04741895dfb5a019a7e3b8ccf13cf7a6657ed555c4da60b68d2a1b7cee3",
-            "locator": {
-              "kind": "symbol",
-              "name": "read_review_sync_rebinding"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/review_sync_rebinding.py"
           },
@@ -158,12 +163,23 @@
       ]
     },
     "17": {
-      "note": "**The check that a record describes *this* generation, which is what makes a foreign record `unavailable` instead of a measurement.**",
+      "note": "**The check that a record describes *this* generation, which is what makes a foreign record `unavailable` instead of a measurement.**\n\nAnchor: `rebinding_names_the_generation`",
       "targets": [
         {
           "anchor": {
-            "blob": "4bde11e7cf0ae5120d98215524297fba21a57dd3",
-            "content": "sha256:fbe7001f206da3485404a0c930c675517fce07f0d65a639874c39667d90a368f",
+            "blob": "e1d40f3cd8b8ad7c20b47ba43bf08632f20a09c5",
+            "content": "sha256:b47e03e635db4b85b39bc7ec2c7bb496275809ee93659ff581f9fecd27c67409",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/review_sync_rebinding.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e1d40f3cd8b8ad7c20b47ba43bf08632f20a09c5",
+            "content": "sha256:43e97bbfff8c9ea5f5a60f7d2d5bc0151c22f923c0099b7c145be087275ad862",
             "locator": {
               "kind": "symbol",
               "name": "rebinding_names_the_generation"
@@ -269,15 +285,14 @@
       ]
     },
     "2": {
-      "note": "The published surface: exactly the two operations, and the routing that keeps the R17 fold callable beside the movement read.",
+      "note": "The module publishes three public names — the movement read, the sync-movement fold and the external-movement fold — and declares no `__all__`.\n\nAnchor: `__all__`",
       "targets": [
         {
           "anchor": {
-            "blob": "93731bde89e06ef01c6f5b0ae7c8ce7dd102a747",
-            "content": "sha256:0dadff0167a6fb9346b95a96e36d0a7147d266a4af161340e90cc19f49404c51",
+            "blob": "3a7a51167bc4342c1d0cd79fee92196b7ae12b14",
+            "content": "sha256:8cc0bd8a910711f5fab8a88d254b0100adad175944c0bb7bd41a787a28e086be",
             "locator": {
-              "kind": "symbol",
-              "name": "__all__"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -285,12 +300,23 @@
       ]
     },
     "20": {
-      "note": "The resolution whose `contract` decides whether a generation can be resolved at all.",
+      "note": "The resolution whose `contract` decides whether a generation can be resolved at all.\n\nAnchor: `ReviewCandidateResolution`",
       "targets": [
         {
           "anchor": {
-            "blob": "33aff10f88f16a1e0005ac6a64cd2a7f0f8020d8",
-            "content": "sha256:dee356c1578dcd48c6b6ed62de9b417fd51e3dd5b8999ae3b023a021770c4695",
+            "blob": "e3af58a3091d7364172ee73c5443ed98c970efa1",
+            "content": "sha256:7e9ac77f2f5915763ef1f783b4f702cb301873552bf902458c10e481c3590527",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/review_candidate_resolution.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e3af58a3091d7364172ee73c5443ed98c970efa1",
+            "content": "sha256:c2d0d2845aede68ef62da4920815be1fac37cd60aa5078d8f5ff99eab7c42348",
             "locator": {
               "kind": "symbol",
               "name": "ReviewCandidateResolution"
@@ -302,12 +328,23 @@
       ]
     },
     "21": {
-      "note": "**The movement model whose validator the projection must satisfy, and the clause that ties `record_readable` to `unavailable`.**",
+      "note": "**The movement model whose validator the projection must satisfy, and the clause that ties `record_readable` to `unavailable`.**\n\nAnchor: `ReviewSyncMovement` `_the_state_follows_from_what_was_measured`",
       "targets": [
         {
           "anchor": {
-            "blob": "bd66eb3576aa6605929a1dcc30616584b3563cb1",
-            "content": "sha256:32e759ddeff1713b2c257983248ed0d623b1d3c56babd35a02ada80c9df93252",
+            "blob": "ce64a977e926846a0ca408bf1aceecec8a22ea85",
+            "content": "sha256:4f507c20870bedff3a241f6f80d91580db9a794c2ee33a6bba3a52d169ee38de",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review_staleness.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ce64a977e926846a0ca408bf1aceecec8a22ea85",
+            "content": "sha256:0a73c374ac5c8e30f16a41de3bf760f5b0448916ab28caeee7e6d168978d7ba0",
             "locator": {
               "kind": "symbol",
               "name": "ReviewSyncMovement"
@@ -318,8 +355,8 @@
         },
         {
           "anchor": {
-            "blob": "bd66eb3576aa6605929a1dcc30616584b3563cb1",
-            "content": "sha256:d70780b9ab23f1ae57de6b7e2812a00b62d0eb719b2117bd46813bf9a729b172",
+            "blob": "ce64a977e926846a0ca408bf1aceecec8a22ea85",
+            "content": "sha256:5798cf5abf4433f66f882189aa2abc471a372a9a4ad5aecd97a80640c8547534",
             "locator": {
               "kind": "symbol",
               "name": "_the_state_follows_from_what_was_measured"
@@ -331,12 +368,33 @@
       ]
     },
     "22": {
-      "note": "**The live read that consumes both operations and folds the movement into the staleness it publishes.**",
+      "note": "**The live read that consumes both operations and folds the movement into the staleness it publishes.**\n\nAnchor: `compose_review` `review_staleness_with_sync_movement`",
       "targets": [
         {
           "anchor": {
-            "blob": "75a68c3874ea545bd49e863046a120e320587404",
-            "content": "sha256:cccdeadc30f88b4527694d3c2e46f16c82c0784cb1d38b04bece61b9ec6bd1d8",
+            "blob": "1c9f8394dfb38bee67a5da3b90ace66147bd5334",
+            "content": "sha256:bc9aed0908cabfef3b176f1734ea114458607fab1f9bf612787eace2cfa4d0c0",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_review.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3a7a51167bc4342c1d0cd79fee92196b7ae12b14",
+            "content": "sha256:8cc0bd8a910711f5fab8a88d254b0100adad175944c0bb7bd41a787a28e086be",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1c9f8394dfb38bee67a5da3b90ace66147bd5334",
+            "content": "sha256:8031c5ed17f3ab243106bb4c84c6a162e538a7d27c5ed0dc06d2caef33cba0ca",
             "locator": {
               "kind": "symbol",
               "name": "compose_review"
@@ -347,8 +405,8 @@
         },
         {
           "anchor": {
-            "blob": "93731bde89e06ef01c6f5b0ae7c8ce7dd102a747",
-            "content": "sha256:0ccfd42136229222421be834f0bcd59a7cec380180f6ace5e845db1926a75a18",
+            "blob": "3a7a51167bc4342c1d0cd79fee92196b7ae12b14",
+            "content": "sha256:94a2912674267018cbcfd30c8b3a461a896dd8c2aefb2222a4e52420564919ed",
             "locator": {
               "kind": "symbol",
               "name": "review_staleness_with_sync_movement"
@@ -359,12 +417,23 @@
       ]
     },
     "23": {
-      "note": "The payload field the movement is published on, beside the staleness it is folded into.",
+      "note": "The payload field the movement is published on, beside the staleness it is folded into.\n\nAnchor: `KnowledgeReviewPayload` `sync_movement`",
       "targets": [
         {
           "anchor": {
-            "blob": "f9105a09d9fdee4eeed9ab2b715723940337949e",
-            "content": "sha256:60f8245e26872ab7d3cc717591296fbc7b92122d500d501f0056eed402c42b2d",
+            "blob": "e298bc656619aa09b3566b8e7baeb7a8453b656f",
+            "content": "sha256:4d0b65fa6dad1cd50ffccbef6a9438db99bd5d650c265f6820bac0cf5e6bf315",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e298bc656619aa09b3566b8e7baeb7a8453b656f",
+            "content": "sha256:0e006f842e6954082a9d752be51896858f6970f40ff39161b5d4046e191a8da0",
             "locator": {
               "kind": "symbol",
               "name": "KnowledgeReviewPayload"
@@ -388,8 +457,19 @@
       ]
     },
     "24": {
-      "note": "**The reopen channel reading the same durable record for itself, with the same location-then-generation order.**",
+      "note": "**The reopen channel reading the same durable record for itself, with the same location-then-generation order.**\n\nAnchor: `sync_rebinding` `_measured_rebinding`",
       "targets": [
+        {
+          "anchor": {
+            "blob": "07dda66c98a13ea7b9344ae8f32b60b389587469",
+            "content": "sha256:b51a747c49928c8f464739a053c8f6b82953f24fa0dcd29cb5eb74a1a59a0387",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/review_comparison_reopen.py"
+          },
+          "kind": "code"
+        },
         {
           "anchor": {
             "blob": "07dda66c98a13ea7b9344ae8f32b60b389587469",
@@ -404,8 +484,8 @@
         },
         {
           "anchor": {
-            "blob": "774f5a68ac28a9e06c64a50e6eb9fce95dd97b06",
-            "content": "sha256:498c675da22a57e302b4153be20d0a0b04bb8db26268f502175eaf0cdc11d75d",
+            "blob": "07dda66c98a13ea7b9344ae8f32b60b389587469",
+            "content": "sha256:57337aa92772f46bc6eecae09f2bfee559869f68875434e41a6e531d74388bb8",
             "locator": {
               "kind": "symbol",
               "name": "_measured_rebinding"
@@ -417,12 +497,23 @@
       ]
     },
     "25": {
-      "note": "The sync tool's projection point, where the write half is attached after the Git work has finished.\n\nAnchor: `rebinding_result_block`",
+      "note": "The sync tool's projection point, where the write half is attached after the Git work has finished.\n\nAnchor: `worktree_sync_tool`",
       "targets": [
         {
           "anchor": {
-            "blob": "e77dbabae8b914a6fd3fd7a8b12467c3c5055259",
-            "content": "sha256:cabb77aa88aead381f04b713ca52f9f3ce5e8bf7bdf00d7e0d0d79100b76bd2e",
+            "blob": "f70e3d124e543009c5876c7472ccdb85120ff60c",
+            "content": "sha256:bbb78251410816eadf042a2a830aa80b49cba552da4ddedc15da284b6fb36888",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/worktree_tools.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f70e3d124e543009c5876c7472ccdb85120ff60c",
+            "content": "sha256:8e0d747e51053cb3f8f394cc56e2231d82dc661c50824500a0efd4ed322b4af4",
             "locator": {
               "kind": "symbol",
               "name": "worktree_sync_tool"
@@ -468,26 +559,14 @@
       ]
     },
     "3": {
-      "note": "The two channels a moved identity can belong to, and the `channel:identity` spelling.",
+      "note": "The two channels a moved identity can belong to, and the `channel:identity` spelling.\n\nAnchor: `_CODE_CHANNEL` `_KNOWLEDGE_CHANNEL`",
       "targets": [
         {
           "anchor": {
-            "blob": "93731bde89e06ef01c6f5b0ae7c8ce7dd102a747",
-            "content": "sha256:308fbe89ee71a33661a7afad406367d5d6db1fbcf0ef2c131f033621191c70d2",
+            "blob": "3a7a51167bc4342c1d0cd79fee92196b7ae12b14",
+            "content": "sha256:8cc0bd8a910711f5fab8a88d254b0100adad175944c0bb7bd41a787a28e086be",
             "locator": {
-              "kind": "symbol",
-              "name": "_CODE_CHANNEL"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "93731bde89e06ef01c6f5b0ae7c8ce7dd102a747",
-            "content": "sha256:92656fde5d2268690764300bedfd7034bd03f3ba9b6b7bcc6d8cf0d8db53ddc3",
-            "locator": {
-              "kind": "symbol",
-              "name": "_KNOWLEDGE_CHANNEL"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -512,15 +591,14 @@
       ]
     },
     "4": {
-      "note": "**The verdict-to-state mapping stated as a table, and the comment that records why a two-way channel reading would promote `unmeasured` to agreement (G1).**",
+      "note": "The verdict-to-state mapping, declared inside the projection: `current` stays `current`, `moved` becomes `stale` and `unmeasured` becomes `not-measured`.\n\nAnchor: `_MOVEMENT_STATES`",
       "targets": [
         {
           "anchor": {
-            "blob": "93731bde89e06ef01c6f5b0ae7c8ce7dd102a747",
-            "content": "sha256:005df1db2d85424eb439ebde805f695bbcc08dccf73a74c946048bbedd460bf3",
+            "blob": "3a7a51167bc4342c1d0cd79fee92196b7ae12b14",
+            "content": "sha256:8cc0bd8a910711f5fab8a88d254b0100adad175944c0bb7bd41a787a28e086be",
             "locator": {
-              "kind": "symbol",
-              "name": "_MOVEMENT_STATES"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -528,12 +606,22 @@
       ]
     },
     "5": {
-      "note": "The remedy stated once: the successor generation the record itself names, not an action this module performs.",
+      "note": "The remedy stated once: the successor generation the record itself names, not an action this module performs.\n\nAnchor: `_SUPERSESSION`",
       "targets": [
         {
           "anchor": {
-            "blob": "93731bde89e06ef01c6f5b0ae7c8ce7dd102a747",
-            "content": "sha256:aeed46b669c1e78dab737c3e78866d01aa63e0c6558f4a20d40154cb9c9cccf2",
+            "blob": "3a7a51167bc4342c1d0cd79fee92196b7ae12b14",
+            "content": "sha256:8cc0bd8a910711f5fab8a88d254b0100adad175944c0bb7bd41a787a28e086be",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3a7a51167bc4342c1d0cd79fee92196b7ae12b14",
+            "content": "sha256:e4a26c49e3f708a94cdae3333208653ae5483fed797906f710db2acbe141d5f3",
             "locator": {
               "kind": "symbol",
               "name": "_SUPERSESSION"
@@ -544,15 +632,14 @@
       ]
     },
     "6": {
-      "note": "**The never-raising read: no leaf contract, or any store read error, answers `None` so the live review read cannot fail on a measurement.**",
+      "note": "The never-raising read: no leaf contract, a closed leaf or a pair that is no longer live answers `None`, and any store or read error answers an `unavailable` movement instead of raising.\n\nAnchor: `review_sync_movement`",
       "targets": [
         {
           "anchor": {
-            "blob": "93731bde89e06ef01c6f5b0ae7c8ce7dd102a747",
-            "content": "sha256:1b68626c1df4e3f1e3683ff4327f045cbff60658d4ede5c37bf83aaf964f3076",
+            "blob": "3a7a51167bc4342c1d0cd79fee92196b7ae12b14",
+            "content": "sha256:8cc0bd8a910711f5fab8a88d254b0100adad175944c0bb7bd41a787a28e086be",
             "locator": {
-              "kind": "symbol",
-              "name": "review_sync_movement"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -560,15 +647,14 @@
       ]
     },
     "7": {
-      "note": "**The three outcomes and the middle one's own reason for existing — an unusable record is neither an absence nor a measurement.**",
+      "note": "The measurement's outcomes: a missing or unrecorded comparison is no movement at all, a selection or record that cannot be used is `unavailable` with its detail, and an accepted record is projected.\n\nAnchor: `_measured`",
       "targets": [
         {
           "anchor": {
-            "blob": "93731bde89e06ef01c6f5b0ae7c8ce7dd102a747",
-            "content": "sha256:1a99220b3d866a7e80f37d33896bb06e179c3cae885eb25e7198d8fac00473ca",
+            "blob": "3a7a51167bc4342c1d0cd79fee92196b7ae12b14",
+            "content": "sha256:8cc0bd8a910711f5fab8a88d254b0100adad175944c0bb7bd41a787a28e086be",
             "locator": {
-              "kind": "symbol",
-              "name": "_measured"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -576,12 +662,22 @@
       ]
     },
     "8": {
-      "note": "The `unavailable` value: its own state, `record_readable=False`, the reason, and the absence sentence.",
+      "note": "The `unavailable` value: its own state, `record_readable=False`, the reason, and the absence sentence.\n\nAnchor: `_unavailable`",
       "targets": [
         {
           "anchor": {
-            "blob": "93731bde89e06ef01c6f5b0ae7c8ce7dd102a747",
-            "content": "sha256:dc33fc3cb13e231434f407b61edba05ccf4732a03fce8f06e202b4e0b2f61117",
+            "blob": "3a7a51167bc4342c1d0cd79fee92196b7ae12b14",
+            "content": "sha256:8cc0bd8a910711f5fab8a88d254b0100adad175944c0bb7bd41a787a28e086be",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3a7a51167bc4342c1d0cd79fee92196b7ae12b14",
+            "content": "sha256:a75184e78b1ecde6fd6c06f44ba18991381752545847c339e3e149ebe30e8cae",
             "locator": {
               "kind": "symbol",
               "name": "_unavailable"
@@ -592,15 +688,14 @@
       ]
     },
     "9": {
-      "note": "The reviewed dataset identity read off the generation's own after side, or `None` when it retained none.",
+      "note": "The reviewed identities the movement carries — the comparison digest and the reviewed code and memory candidate trees — read off the retained source comparison.\n\nAnchor: `_reviewed_knowledge`",
       "targets": [
         {
           "anchor": {
-            "blob": "93731bde89e06ef01c6f5b0ae7c8ce7dd102a747",
-            "content": "sha256:bea60a4fc15abfb2345b55e767f99a3ee81654847f449d6c39e47ca9c72236d8",
+            "blob": "3a7a51167bc4342c1d0cd79fee92196b7ae12b14",
+            "content": "sha256:8cc0bd8a910711f5fab8a88d254b0100adad175944c0bb7bd41a787a28e086be",
             "locator": {
-              "kind": "symbol",
-              "name": "_reviewed_knowledge"
+              "kind": "file"
             }
           },
           "kind": "code"

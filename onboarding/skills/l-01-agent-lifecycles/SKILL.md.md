@@ -55,7 +55,7 @@ separate protocol events as delivery attempts.
   requirement-shaped items the builder and the reviewer hand directly to the curator, one
   entry per item with its statement, kind, place, evidence and disposition. Producers emit it as
   data; the curator fills the curator-side fields. It is a hand-off artifact rather than a
-  brief-schema, which is why the router names it on its own.
+  brief schema. The composition manifest registers the shared template; the current thin router names that manifest as the routing metadata authority.
 - Native starts and peer messages use bound role tools and durable handovers; a developer question goes to the parent when one exists, and only a parentless or unreachable-parent agent asks in the own chat.
 - Preserve actual returned agent IDs and canonical task/workspace bindings. Never invent a parent, recipient or delivery outcome.
 
@@ -114,7 +114,6 @@ The following requirement and attempt references retain their source-epoch evide
 - Requirement acceptance is exact, per-ID, independently adjudicated, and separate from evidence promotion. [7]
 - Attempt lineage separates semantic versions from candidate-bound delivery history and gives regression invalidation to independent proof plus the owning seat. [8]
 - Leaf journals are authority and the master summary is explicitly rebuildable and non-gating. [9]
-- The producers' Curator hand-off shape remains a separate template contract, rather than an injected router rule. [10]
 
 ## Historical L23 Dispatch Admission
 
@@ -257,3 +256,5 @@ Inherited reference 4 commentary (not a revalidated target):
 The byte-equal package copy is a distribution carrier, not an independent role, task or permission authority. Whole-file source evidence does not certify inherited statements, execution, grading or the whole card.
 
 - Canonical role-capsule doctrine and the packaged byte-equal carrier have one authored owner; the package is a generated distribution extent. [18]
+
+- The composition manifest registers `curator-handoff-list.md` alongside brief templates. That template defines the producers’ curator hand-off output shape. The thin router names the manifest as the routing metadata authority.  Historical source caption: "Anchor: \"the **producer's output shape**\"" [19]

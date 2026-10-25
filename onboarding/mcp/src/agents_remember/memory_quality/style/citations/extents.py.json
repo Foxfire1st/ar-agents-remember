@@ -22,15 +22,14 @@
   ],
   "references": {
     "26": {
-      "note": "`qualified_spans` owns the current boundary described above.",
+      "note": "`qualified_spans` owns the current boundary described above.\n\nAnchor: `qualified_spans`",
       "targets": [
         {
           "anchor": {
-            "blob": "4757f36e9a477d0e286dfcc9ea3e7446977a1821",
-            "content": "sha256:b2ced6307919efd33b944f30f6c6418bab915d3d05ad6b8ac6cb29f047a21ca0",
+            "blob": "00c487c023255a663f0ff6e9ffe68d65da3a8202",
+            "content": "sha256:f9aeb8d32574f8ec2e8b27a39814340b8d823c6b1294c5ac6593466dce67314e",
             "locator": {
-              "kind": "symbol",
-              "name": "qualified_spans"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -38,15 +37,14 @@
       ]
     },
     "29": {
-      "note": "Defines the class `Extent` (lines 39-49) — One range an anchor occupies in a file, and how it was found..",
+      "note": "Defines the class `Extent` — one range an anchor occupies in a file, and how it was found.\n\nAnchor: `Extent`",
       "targets": [
         {
           "anchor": {
-            "blob": "4757f36e9a477d0e286dfcc9ea3e7446977a1821",
-            "content": "sha256:5531d559680e00e0a64707bdd56679d7f62fba5b493641e626da92afa94c4170",
+            "blob": "00c487c023255a663f0ff6e9ffe68d65da3a8202",
+            "content": "sha256:f9aeb8d32574f8ec2e8b27a39814340b8d823c6b1294c5ac6593466dce67314e",
             "locator": {
-              "kind": "symbol",
-              "name": "Extent"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -54,15 +52,14 @@
       ]
     },
     "35": {
-      "note": "Defines the function `definitions` (lines 102-116) — Every name this file binds at any depth, and the extent of the construct binding it..",
+      "note": "Defines the function `definitions` — every name this file binds at any depth, and the extent of the construct binding it.\n\nAnchor: `definitions`",
       "targets": [
         {
           "anchor": {
-            "blob": "4757f36e9a477d0e286dfcc9ea3e7446977a1821",
-            "content": "sha256:96c24b4eb0f3218dbc1541bcff255228f976d64905854de32b2012f6ce82db1c",
+            "blob": "00c487c023255a663f0ff6e9ffe68d65da3a8202",
+            "content": "sha256:f9aeb8d32574f8ec2e8b27a39814340b8d823c6b1294c5ac6593466dce67314e",
             "locator": {
-              "kind": "symbol",
-              "name": "definitions"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -70,15 +67,14 @@
       ]
     },
     "36": {
-      "note": "The one symbol-binding rule, shared by the curator writer, the conversion and the reference check.",
+      "note": "The one symbol-binding rule, shared by the curator writer, the conversion and the reference check.\n\nAnchor: `qualified_spans`",
       "targets": [
         {
           "anchor": {
-            "blob": "4757f36e9a477d0e286dfcc9ea3e7446977a1821",
-            "content": "sha256:b2ced6307919efd33b944f30f6c6418bab915d3d05ad6b8ac6cb29f047a21ca0",
+            "blob": "00c487c023255a663f0ff6e9ffe68d65da3a8202",
+            "content": "sha256:f9aeb8d32574f8ec2e8b27a39814340b8d823c6b1294c5ac6593466dce67314e",
             "locator": {
-              "kind": "symbol",
-              "name": "qualified_spans"
+              "kind": "file"
             }
           },
           "kind": "code"

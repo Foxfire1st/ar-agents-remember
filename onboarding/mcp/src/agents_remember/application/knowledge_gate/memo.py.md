@@ -74,16 +74,26 @@ replay does not turn incomplete or conflicting inputs into cacheable results.
 - The two bounds. [11]
 - The key's fields. [12]
 - A kept verdict is current when no recorded observation changed. [13]
+
 - The key from contract bytes, the strict task lookup and the build stamp. [14]
+
+
 - A kept verdict is served only when young enough and unchanged. [15]
+
 - Only a memoisable verdict without a failed observation is kept. [16]
+
 - The gate asks the memo, records its reads and offers the verdict. [17]
+
 - A warm pass becomes the refusal when the packet locator is retargeted to a file with the same bytes. [18]
 - The gate's verdict follows the packet in both directions, and a repeated evaluation gives the same verdict. [19]
 - A verdict behind an unreadable contract read keeps its answer and occupies no memo slot. [20]
+
 - Every file read is in the read set and a conflicting read is never kept. [21]
+
 - The same trees against another parent tip are another key and another evaluation. [22]
+
 - The worktree layer's gate port calls the gate. [23]
+
 
 - Contract and found task-document reads record their digest or read failure while constructing the exact memo key. [24]
 - A valid memo hit replays its kept observations; memo admission still excludes failed observations. [25]

@@ -108,15 +108,14 @@
       ]
     },
     "5": {
-      "note": "Public cap, exhaustion-only direct permission, cumulative rounds four/five, and pending replay.",
+      "note": "Settings-budget exhaustion, recorded architect/developer approval, cumulative extra rounds and pending replay.\n\nAnchor: `test_public_review_api_enforces_cap_and_carries_explicit_extra_rounds`",
       "targets": [
         {
           "anchor": {
-            "blob": "1dc57e8d6cf77f97d03401739949559c58d2c2b4",
-            "content": "sha256:559bbf35d69cf5bbe7f975c1d023354931dce11a0e9a4413a1c4e39770322ecb",
+            "blob": "146d56e5f6948eef3143be0fc68c91c10cdcc01b",
+            "content": "sha256:a9b433263f9e6d58c2ea8d939ed770bfab08e99e8de9ac302a66129f2a45d2d7",
             "locator": {
-              "kind": "symbol",
-              "name": "test_public_review_api_enforces_cap_and_carries_explicit_extra_rounds"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -144,8 +143,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b4d4564d05db2d63d79443ed37b22f11edd65798",
-            "content": "sha256:4f9ae3a9ad729c09893d23f037fbe5ff8c7feece1591a3f4470a6ff16d46d98b",
+            "blob": "146d56e5f6948eef3143be0fc68c91c10cdcc01b",
+            "content": "sha256:a9b433263f9e6d58c2ea8d939ed770bfab08e99e8de9ac302a66129f2a45d2d7",
             "locator": {
               "kind": "file"
             }

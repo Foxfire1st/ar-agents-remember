@@ -98,8 +98,10 @@ No configured domain evidence applies to the file-local claims above.
 - Surfaces 3 and 4 classify a configured contract's removal on both admission paths. [9]
 - Surface 5 carries the refusal into the direct-landing answer. [10]
 - Surface 6 reports the removal as its own fact in the unstarted-evidence answer. [11]
-- Surface 7 keeps the worktree-start payload typed instead of falling through to the generic clause. [12]
+> Retained earlier citation wording: - Surface 7 keeps the worktree-start payload typed instead of falling through to the generic clause. [12]
 
 ### Cross-Repo References
 
 No cross-repository implementation evidence is required for these local reporting-shape claims.
+
+- Surface 7 keeps the worktree-status payload typed instead of falling through to the generic clause.  Anchor: "except MemoryModeUnsupportedError" [12]

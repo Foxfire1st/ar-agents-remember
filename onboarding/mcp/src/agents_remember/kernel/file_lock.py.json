@@ -41,37 +41,14 @@
       ]
     },
     "2": {
-      "note": "Capability probing, complete transaction exclusion, and current-thread hold inspection.",
+      "note": "Capability probing, complete transaction exclusion, and current-thread hold inspection.\n\nAnchor: `_verify_lock_capability` `exclusive_file_lock` `lock_held`",
       "targets": [
         {
           "anchor": {
-            "blob": "5801a3451a06ef3ec426db8cf0c48e06147bb8c4",
-            "content": "sha256:1996fc940c9364949b7810894e5de4904d201c9dfd588ee4ec9fe8130af6978e",
-            "locator": {
-              "kind": "symbol",
-              "name": "_verify_lock_capability"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "5801a3451a06ef3ec426db8cf0c48e06147bb8c4",
-            "content": "sha256:dd8d3d0f95aedef79978e2d0f55d8bcb30dde228556a7c232ba96ba8b21d9e36",
-            "locator": {
-              "kind": "symbol",
-              "name": "exclusive_file_lock"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
             "blob": "1c8709e75ca22ed12ab5182e676a05d389075a96",
-            "content": "sha256:938a7ee0fafc28cb146d0acc1fb7fb46383b87b1f68ba3708f3341c547450d0a",
+            "content": "sha256:e6215a71b64bbbaf314085e12c561af5ab131b13a04ff6e28d38b951f6922140",
             "locator": {
-              "kind": "symbol",
-              "name": "lock_held"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -147,8 +124,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5801a3451a06ef3ec426db8cf0c48e06147bb8c4",
-            "content": "sha256:dd8d3d0f95aedef79978e2d0f55d8bcb30dde228556a7c232ba96ba8b21d9e36",
+            "blob": "1c8709e75ca22ed12ab5182e676a05d389075a96",
+            "content": "sha256:b5fbc44c9c78607266f10080567a3c94aa2aedcb0a0937fb7c8e3faf7d10509e",
             "locator": {
               "kind": "symbol",
               "name": "exclusive_file_lock"
@@ -158,12 +135,22 @@
         },
         {
           "anchor": {
-            "blob": "5801a3451a06ef3ec426db8cf0c48e06147bb8c4",
-            "content": "sha256:c0453442d1206c0e6d313cbd03ef19130da31f43c4b4b2fb0005289b5cd687b8",
+            "blob": "1c8709e75ca22ed12ab5182e676a05d389075a96",
+            "content": "sha256:4e18bfc71307e9986b946114b42bee3fa64623384046c4cc722a107f31f3eec8",
             "locator": {
               "end": 200,
               "kind": "line_range",
               "start": 158
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1c8709e75ca22ed12ab5182e676a05d389075a96",
+            "content": "sha256:e6215a71b64bbbaf314085e12c561af5ab131b13a04ff6e28d38b951f6922140",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "code"

@@ -126,11 +126,16 @@ No configured domain documentation could be checked.
 - Namespace and page-budget refusals preserve row counts and logical digest; the read-only digest handle is not a raw-byte measurement. [8]
 
 
+
 - Controlled non-zero lookup exit asserts unavailable resolution and exit-status detail; historical withdrawn kill and natural-path nonreachability are separate. [9]
 
 
 
-- The read boundary module occupies the integration lane row; registration is not execution evidence. [10]
+
+
+
+> Retained earlier citation wording: - The read boundary module occupies the integration lane row; registration is not execution evidence. [10]
+
 
 
 
@@ -139,3 +144,5 @@ No configured domain documentation could be checked.
 No cross-repository behavior is implemented in this file.
 
 No meaningful cross-repo references found.
+
+- The read boundary module occupies the integration lane row; registration is not execution evidence. [10]

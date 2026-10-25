@@ -21,12 +21,16 @@ Local implementation and executable evidence do not replace requirement authorit
 ## Evidence
 
 
+
 - Hold a request-local proof of equal physical snapshots spanning a private-index capture. Reuse requires the same tree and current index/file snapshot, plus current HEAD when the caller supplied a head binding. Memory review supplies the bracketed memory HEAD; the future-code helper omits this optional binding and checks its route identity separately. Unreadable or changed bound operands force re-derivation. [1]
+
 
 ## Current source evidence
 
 
+
 - Capture dependency observation is request-local and restored on every scope exit. [2]
+
 
 ## 260928-MIK-L177 The Proof Reads The Capture's Own Census, Never The Worktree
 

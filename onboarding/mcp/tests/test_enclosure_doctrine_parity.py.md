@@ -42,4 +42,5 @@ The case reads the shipped files by path rather than a copy in the test, so a mo
 
 ## Evidence
 
+
 - Doctrine parity across the skill copies and the MCP reference is pinned. [1]

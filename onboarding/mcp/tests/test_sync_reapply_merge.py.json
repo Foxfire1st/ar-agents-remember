@@ -209,12 +209,12 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "Union rows added at the same place finish sync with exact carried-first output.\n\nAnchor: `ReapplyMergeTests.test_rows_added_at_one_place_of_a_merged_catalog_finish_the_sync`",
+      "note": "Union rows added at the same place finish sync with exact carried-first output.",
       "targets": [
         {
           "anchor": {
-            "blob": "c033c80fc9b67d4adca3403f4e895f9958020161",
-            "content": "sha256:a00326b6c14918c1b2a8d118b688ef1560c37a6586c37a1573d694da9656a3b7",
+            "blob": "7b39ff0bd3bf7f78df5fbb3c96d48e95d9c8d8b2",
+            "content": "sha256:9ff6988b51dfb300bf2800da7f316f5f7e274b84f45ad82e1ef7795ab10b5698",
             "locator": {
               "end": 218,
               "kind": "line_range",
@@ -277,12 +277,12 @@
       ]
     },
     "5": {
-      "note": "A byte-distinct other-algorithm result cannot satisfy restoration or count as owned cancellation output. Cancellation still succeeds after saving the unattributable/later bytes; this is not the retired refusal-only cancel rule.\n\nAnchor: `ReapplyMergeTests.test_the_merge_of_another_diff_algorithm_does_not_pass_the_proof`, `ReapplyMergeTests.test_cancel_keeps_a_later_edit_that_equals_another_algorithms_merge`",
+      "note": "A byte-distinct other-algorithm result cannot satisfy restoration or authorize cancellation.",
       "targets": [
         {
           "anchor": {
-            "blob": "c033c80fc9b67d4adca3403f4e895f9958020161",
-            "content": "sha256:d41fffffd94af7edd3ed4980e125027bcc30be2de20e6cc7e93b143eb22d15b2",
+            "blob": "7b39ff0bd3bf7f78df5fbb3c96d48e95d9c8d8b2",
+            "content": "sha256:b22150ae56e547ea76cc798c25a312ec83aebb59b3a1a59a82c725ec2f644e37",
             "locator": {
               "end": 431,
               "kind": "line_range",
@@ -311,12 +311,12 @@
       ]
     },
     "7": {
-      "note": "Native acquisition failure retains the stopped generation and refuses without fallback before recoverable cancellation.\n\nAnchor: `ReapplyMergeTests.test_a_merge_git_cannot_make_fails_its_path_and_no_other_merge_stands_in`",
+      "note": "Native acquisition failure retains the stopped generation and refuses without fallback before recoverable cancellation.",
       "targets": [
         {
           "anchor": {
-            "blob": "c033c80fc9b67d4adca3403f4e895f9958020161",
-            "content": "sha256:7f26c3432d448373173e2469e0736792a3afeaa31811753bdf9b8ee37e3d9e6f",
+            "blob": "7b39ff0bd3bf7f78df5fbb3c96d48e95d9c8d8b2",
+            "content": "sha256:3e4b5e7b08290b6325ba36eeaede44c4d9051a0ef13297b96fcea5f3f316bef0",
             "locator": {
               "end": 564,
               "kind": "line_range",

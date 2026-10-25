@@ -3,15 +3,14 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "Removed-store reporting and explicit deletion tests: implementation/assertion boundary described above.",
+      "note": "Removed-store reporting and explicit deletion tests: implementation/assertion boundary described above.\n\nAnchor: `test_the_registered_install_files_the_stores_and_answers_their_count`",
       "targets": [
         {
           "anchor": {
-            "blob": "d8869be4ce9a764a383adf8bd8ffd97d076d235f",
-            "content": "sha256:d6262aa41ec6cc81acf2e0bb0da11e0cda89a96094e29427106dae1380055910",
+            "blob": "296117d80139f8ec043d8af5744e643dc0c56939",
+            "content": "sha256:015b28885335e4f63630c7335c80cfd6f9241189432243f74869eae618d51f72",
             "locator": {
-              "kind": "symbol",
-              "name": "test_the_registered_install_files_the_stores_and_answers_their_count"
+              "kind": "file"
             }
           },
           "kind": "test"

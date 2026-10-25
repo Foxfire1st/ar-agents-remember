@@ -26,8 +26,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ea3023d7212f38d18e3551a60dadb64d9f4aec64",
-            "content": "sha256:b36e2d55d94f80fdaabf4ff9dfe7632f2dd3684cd72de03e78fd72ff6e87b914",
+            "blob": "2a5f8a8f33152825aa0d093e104fb1014dedb321",
+            "content": "sha256:3c64326c2cc882bb3c97e5013fe7973f8ee05906629ac3ccbe2aaf546a7b58d0",
             "locator": {
               "kind": "file"
             }
@@ -37,12 +37,12 @@
       ]
     },
     "2": {
-      "note": "The accounting-cost case measures calling-thread CPU with `time.thread_time()` for exactly 10,000 recorded units under the unchanged 0.5-second bound. It excludes scheduler waiting and does not establish installed processor share or a wall-time ceiling.\n\nAnchor: `AccountingCostTests.test_recording_ten_thousand_units_costs_less_than_half_a_thread_cpu_second`",
+      "note": "The accounting-cost case measures calling-thread CPU with `time.thread_time()` for exactly 10,000 recorded units under the unchanged 0.5-second bound. It excludes scheduler waiting and does not establish installed processor share or a wall-time ceiling.",
       "targets": [
         {
           "anchor": {
-            "blob": "ea3023d7212f38d18e3551a60dadb64d9f4aec64",
-            "content": "sha256:b36e2d55d94f80fdaabf4ff9dfe7632f2dd3684cd72de03e78fd72ff6e87b914",
+            "blob": "2a5f8a8f33152825aa0d093e104fb1014dedb321",
+            "content": "sha256:75394eacb843e8d30d1ec79f6265afdf092be8f15ca8476f3ff21af065324fc9",
             "locator": {
               "end": 668,
               "kind": "line_range",

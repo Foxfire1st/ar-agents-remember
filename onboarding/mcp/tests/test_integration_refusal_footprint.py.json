@@ -55,15 +55,14 @@
       ]
     },
     "2": {
-      "note": "Recorded landing refusal also preserves its footprint.",
+      "note": "Recorded landing refusal also preserves its footprint.\n\nAnchor: `test_refused_record_landing_writes_nothing`",
       "targets": [
         {
           "anchor": {
-            "blob": "f50a634c77b561d2e8c5f717cf3f48cc074263ea",
-            "content": "sha256:9622426385ea5ffa5a50ecd5e33d5a220d6d8e8aad13bbd76a0bf77ac53aad1f",
+            "blob": "bf9403ffee9c9d82d25625b471088c28f03d4e4d",
+            "content": "sha256:1e2341844959435baeec4f1c8b69be6d552951cd47c7698df053962d4ede8698",
             "locator": {
-              "kind": "symbol",
-              "name": "test_refused_record_landing_writes_nothing"
+              "kind": "file"
             }
           },
           "kind": "test"

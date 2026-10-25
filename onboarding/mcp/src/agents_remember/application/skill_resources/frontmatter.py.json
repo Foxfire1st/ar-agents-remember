@@ -47,36 +47,6 @@
         }
       ]
     },
-    "11": {
-      "note": "The case that executes the verbatim-frontmatter requirement end to end.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "d3952ef797ae6f8761d477b1f5a56be86884e40e",
-            "content": "sha256:5648d5b6e1c8200caad56717af8affec2584f1fd9a7a9ceee33399aeaa5805c6",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_every_sep_2640_entry_is_complete_and_carries_verbatim_frontmatter"
-            },
-            "path": "mcp/tests/test_capsule_serving.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "d3952ef797ae6f8761d477b1f5a56be86884e40e",
-            "content": "sha256:61c08aaf49ada80c0fa72a39ba8af18ecb253d6e8dc875aea59002e16dca45d0",
-            "locator": {
-              "end": 1075,
-              "kind": "line_range",
-              "start": 1044
-            },
-            "path": "mcp/tests/test_capsule_serving.py"
-          },
-          "kind": "test"
-        }
-      ]
-    },
     "2": {
       "note": "A host MUST NOT honor a skill's declared `allowed-tools`; the value is an observation.",
       "targets": [

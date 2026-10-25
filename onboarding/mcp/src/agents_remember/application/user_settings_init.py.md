@@ -14,10 +14,13 @@ The single write is `orchestration.roles.<role>.harness` in `~/.config/agents-re
 
 ## Evidence
 
+
 - The one create-or-report decision, with the existing file reported before any choice is validated. [1]
+
 - The exclusive create at 0600 that refuses any destination already present. [2]
 - The write-time refusal of a destination the preview saw absent. [3]
 - An absent destination is created exclusively with the chosen roles, and the created file is not world readable. [4]
 - An existing marked file is reported and kept byte for byte, an unreadable one is refused without a second read, and a destination that appears after the state read is refused. [5]
+
 
 - Current source account and its stated boundaries. [6]

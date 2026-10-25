@@ -3,12 +3,12 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The mounted suite asserts switch state, row absence, canonical route and refusal/pending behavior.\n\nAnchor: `dashboard/src/panels/detail-panel/directGrantControl.test.tsx`",
+      "note": "The mounted suite asserts switch state, row absence, canonical route and refusal/pending behavior.",
       "targets": [
         {
           "anchor": {
-            "blob": "2c8bb11688199e43565ae637f7a967807d92d240",
-            "content": "sha256:92f7db6a7d8e03f4f86560e1a2008d864027b8df7504a7c56b441b9f7310f924",
+            "blob": "f9088c31ea5ca0294b1f62cda1f0135319635e64",
+            "content": "sha256:3c9febe314f76ba614b4175d504ebb1e04d58973b331d6d215cd20a346a51a86",
             "locator": {
               "kind": "file"
             }

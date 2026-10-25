@@ -1,5 +1,6 @@
 {
   "path": "dashboard/src/panels/engine-room/fixtures.ts",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
@@ -19,7 +20,7 @@
         },
         {
           "anchor": {
-            "blob": "fddde3fe60faa2d9374405b9676016ab026af1b6",
+            "blob": "d71e9db1948f52b82bd84b2348775f13ac9b57e7",
             "content": "sha256:21cac9e0ab2bd51c63ac823fa1d60ca86b9759849b9cbd5ccabcdb3bd7aa8072",
             "locator": {
               "kind": "symbol",
@@ -54,23 +55,9 @@
         {
           "anchor": {
             "blob": "8e709ead155da60c76cf2682665cc540e1219207",
-            "content": "sha256:f7b876097caa5bb7a951c46fde939e2577942ca901f74198d2dec85e566fcc08",
+            "content": "sha256:32cf712b9c7b122379105031817441971f436256ea62140649c48161267282cd",
             "locator": {
-              "end": 597,
-              "kind": "line_range",
-              "start": 597
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "c25943bc8dde59686e3cd56112ad7650690f984c",
-            "content": "sha256:38bad0e3d8615f750e61f6d064fba42554a1d22cde88fe535dcd82dbb7785acb",
-            "locator": {
-              "end": 982,
-              "kind": "line_range",
-              "start": 982
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -78,11 +65,19 @@
         {
           "anchor": {
             "blob": "8e709ead155da60c76cf2682665cc540e1219207",
-            "content": "sha256:bf2d99be1ea3bf92179953f84507723acd7f515730c761bcf2745a405673683c",
+            "content": "sha256:32cf712b9c7b122379105031817441971f436256ea62140649c48161267282cd",
             "locator": {
-              "end": 789,
-              "kind": "line_range",
-              "start": 765
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8e709ead155da60c76cf2682665cc540e1219207",
+            "content": "sha256:32cf712b9c7b122379105031817441971f436256ea62140649c48161267282cd",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -107,12 +102,12 @@
         },
         {
           "anchor": {
-            "blob": "fddde3fe60faa2d9374405b9676016ab026af1b6",
+            "blob": "d71e9db1948f52b82bd84b2348775f13ac9b57e7",
             "content": "sha256:a69870ff3d37fe34a2fcd072803a7c290dbee8f1bcc7de15513ba6e0295450d5",
             "locator": {
-              "end": 216,
+              "end": 209,
               "kind": "line_range",
-              "start": 215
+              "start": 208
             },
             "path": "dashboard/src/types/projection.ts"
           },
@@ -195,8 +190,8 @@
         },
         {
           "anchor": {
-            "blob": "a5f4ae8184249b0af91433e1c8892c6dc9713e32",
-            "content": "sha256:c0d658b66cc9df003669db192eb18900b22185e916463037258830a7c5ee10d4",
+            "blob": "b655ff830c5a9c45e80be3c51bbd8390324add5b",
+            "content": "sha256:7c58dd7321607af85369d6195ac8adb1453c30395cf1e33057b309150c52f17e",
             "locator": {
               "end": 73,
               "kind": "line_range",
@@ -229,8 +224,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fc93bae691a82da28bef3516bc6b7b8a85af6db8",
-            "content": "sha256:9438263648732139f82abce5f76d8ba78adf95de1b686cc1f01565f11d9c9810",
+            "blob": "fd0cd6ba53b5d874adfcb26807b26ab92e77d56e",
+            "content": "sha256:4b31b460cf2bfd78dc4589df8a552c328a633762e9e07d658f5db4e360b63935",
             "locator": {
               "kind": "symbol",
               "name": "EngineProcessEdge"
@@ -241,45 +236,15 @@
         }
       ]
     },
-    "3": {
-      "note": "`_seed_edge_state` returns `stale` for the reroute case — the state this fixture now carries.\n\nAnchor: \"def _seed_edge_state(\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "7137fb6b1d0cd4fbee647c82ab46c5710cf1bafe",
-            "content": "sha256:2e916c163864333f653579c3520968a76f3842c03f3d3ba6bd92d819f91d26fc",
-            "locator": {
-              "end": 638,
-              "kind": "line_range",
-              "start": 638
-            },
-            "path": "mcp/src/agents_remember/observer/reducer_impl/_processes.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "4": {
-      "note": "`EngineRoomScenario` interface + exported `ENGINE_ROOM_SCENARIOS`\n\nAnchor: `EngineRoomScenario`, `ENGINE_ROOM_SCENARIOS`",
+      "note": "`EngineRoomScenario` interface + exported `ENGINE_ROOM_SCENARIOS`\n\nAnchor: `EngineRoomScenario` `ENGINE_ROOM_SCENARIOS`",
       "targets": [
         {
           "anchor": {
-            "blob": "c25943bc8dde59686e3cd56112ad7650690f984c",
-            "content": "sha256:8ee50046f058c8158efcdcde36ad8a9be983836c172241f93fb9177d68e88d2d",
+            "blob": "8e709ead155da60c76cf2682665cc540e1219207",
+            "content": "sha256:32cf712b9c7b122379105031817441971f436256ea62140649c48161267282cd",
             "locator": {
-              "kind": "symbol",
-              "name": "EngineRoomScenario"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "727a12ef1854578e89447d0ece47aaf2cf78225b",
-            "content": "sha256:fcdfb5fed7ecad411da4df17dbae7d1a8bc4fdc2afb4627e81d05383d7823d93",
-            "locator": {
-              "kind": "symbol",
-              "name": "ENGINE_ROOM_SCENARIOS"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -291,8 +256,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c25943bc8dde59686e3cd56112ad7650690f984c",
-            "content": "sha256:dc99b32a910b1c07a8d043335b5dfdc7ec1ac6a782e272da43d943566ab0bff6",
+            "blob": "8e709ead155da60c76cf2682665cc540e1219207",
+            "content": "sha256:609e33527f78bd0bc97a80d3df00b22a934d13d5341f1b8cb505c62543cc3f9c",
             "locator": {
               "kind": "symbol",
               "name": "engineProcess"
@@ -307,8 +272,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c25943bc8dde59686e3cd56112ad7650690f984c",
-            "content": "sha256:e2b99293561a6547d88ae7fb9e6bc50ef4d55d11b98840129575d9abe7b703c3",
+            "blob": "8e709ead155da60c76cf2682665cc540e1219207",
+            "content": "sha256:395c8291e744c1c51dfd2d09c67c682d0484c8ed0551d941fb9231aaf796a83e",
             "locator": {
               "kind": "symbol",
               "name": "edges"
@@ -318,8 +283,8 @@
         },
         {
           "anchor": {
-            "blob": "c25943bc8dde59686e3cd56112ad7650690f984c",
-            "content": "sha256:5ef14be86bbf47a95bcc3454e0e3d678933ca8bd4192c8c19e92a4de588a29fb",
+            "blob": "8e709ead155da60c76cf2682665cc540e1219207",
+            "content": "sha256:19e8e15e2eb11715d5d2312b55105a3927ff7e6d47ebcb6082825c4412f497b8",
             "locator": {
               "kind": "symbol",
               "name": "EdgeStates"
@@ -329,29 +294,12 @@
         },
         {
           "anchor": {
-            "blob": "c25943bc8dde59686e3cd56112ad7650690f984c",
-            "content": "sha256:911f0b30b440b3970fcf8c179dbd853d02f7e77ce1d208bde766cb2f72d08afb",
+            "blob": "8e709ead155da60c76cf2682665cc540e1219207",
+            "content": "sha256:e77143fb33eb54f47e0a76582b61c7f489c9d19833c50a473dffed1b6d27a76d",
             "locator": {
               "end": 139,
               "kind": "line_range",
               "start": 132
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "7": {
-      "note": "`engine-cgc-seed-refused` — the T9C scenario, now `edges({ cgc: \"stale\", … })` with `seedFallback: true`.\n\nAnchor: \"engine-cgc-seed-refused\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "c25943bc8dde59686e3cd56112ad7650690f984c",
-            "content": "sha256:dc3d533f4116127b5df39faefb769bfbf78c1cc3fbe6d76186cd26b24499c789",
-            "locator": {
-              "end": 834,
-              "kind": "line_range",
-              "start": 834
             }
           },
           "kind": "code"
@@ -363,8 +311,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c25943bc8dde59686e3cd56112ad7650690f984c",
-            "content": "sha256:f8d6d619c6ea3369f6ce21bc7af381da9fc4f58e2aa6f4f15cab8522aabd8d9e",
+            "blob": "8e709ead155da60c76cf2682665cc540e1219207",
+            "content": "sha256:95fb8dae098511d52f073c18934e3871e536d120e62866d25e567217304d35b9",
             "locator": {
               "kind": "symbol",
               "name": "bootStages"

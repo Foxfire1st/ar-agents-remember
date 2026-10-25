@@ -1,10 +1,37 @@
 {
   "path": "mcp/src/agents_remember/cli/discovery.py",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
       "note": "The CLI consumer: `--config` optional, discovery fallback + `ConfigDiscoveryError` reporting.\n\nAnchor: \"config_path = args.config or discover_config()\"; \"except (ConfigDiscoveryError, ConfigError) as error:\"",
       "targets": [
+        {
+          "anchor": {
+            "blob": "126d045c43fbd830d1f124ab63fee6589db5d1ff",
+            "content": "sha256:f899e19342a74c29894d5e2b562951e12fd3657fcb740e82ace7889114949d60",
+            "locator": {
+              "end": 417,
+              "kind": "line_range",
+              "start": 417
+            },
+            "path": "mcp/src/agents_remember/cli/dashboard.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "126d045c43fbd830d1f124ab63fee6589db5d1ff",
+            "content": "sha256:c673c1416a0b294a253f82f9f483c7fdde9ddfd450221a059affb95a5c13228a",
+            "locator": {
+              "end": 419,
+              "kind": "line_range",
+              "start": 419
+            },
+            "path": "mcp/src/agents_remember/cli/dashboard.py"
+          },
+          "kind": "code"
+        },
         {
           "anchor": {
             "blob": "126d045c43fbd830d1f124ab63fee6589db5d1ff",
@@ -26,6 +53,32 @@
               "end": 456,
               "kind": "line_range",
               "start": 456
+            },
+            "path": "mcp/src/agents_remember/cli/dashboard.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "126d045c43fbd830d1f124ab63fee6589db5d1ff",
+            "content": "sha256:f4de6c20cdbc5c6a8aaace6a233b480238209652b239c4be2cd4fbbfb6c6bf31",
+            "locator": {
+              "end": 349,
+              "kind": "line_range",
+              "start": 349
+            },
+            "path": "mcp/src/agents_remember/cli/dashboard.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "126d045c43fbd830d1f124ab63fee6589db5d1ff",
+            "content": "sha256:6be439a47503427a4c79f9bd3c3c3fc1f93fd1e7b4c7a151d5afad0402d1a8ea",
+            "locator": {
+              "end": 351,
+              "kind": "line_range",
+              "start": 351
             },
             "path": "mcp/src/agents_remember/cli/dashboard.py"
           },
@@ -39,6 +92,32 @@
         {
           "anchor": {
             "blob": "126d045c43fbd830d1f124ab63fee6589db5d1ff",
+            "content": "sha256:f899e19342a74c29894d5e2b562951e12fd3657fcb740e82ace7889114949d60",
+            "locator": {
+              "end": 417,
+              "kind": "line_range",
+              "start": 417
+            },
+            "path": "mcp/src/agents_remember/cli/dashboard.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "126d045c43fbd830d1f124ab63fee6589db5d1ff",
+            "content": "sha256:c673c1416a0b294a253f82f9f483c7fdde9ddfd450221a059affb95a5c13228a",
+            "locator": {
+              "end": 419,
+              "kind": "line_range",
+              "start": 419
+            },
+            "path": "mcp/src/agents_remember/cli/dashboard.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "126d045c43fbd830d1f124ab63fee6589db5d1ff",
             "content": "sha256:0165886a086fec60887fd91b9e41063515a8e8276f8177c375838ff6ef7d75c5",
             "locator": {
               "end": 454,
@@ -57,6 +136,32 @@
               "end": 456,
               "kind": "line_range",
               "start": 456
+            },
+            "path": "mcp/src/agents_remember/cli/dashboard.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "126d045c43fbd830d1f124ab63fee6589db5d1ff",
+            "content": "sha256:f4de6c20cdbc5c6a8aaace6a233b480238209652b239c4be2cd4fbbfb6c6bf31",
+            "locator": {
+              "end": 349,
+              "kind": "line_range",
+              "start": 349
+            },
+            "path": "mcp/src/agents_remember/cli/dashboard.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "126d045c43fbd830d1f124ab63fee6589db5d1ff",
+            "content": "sha256:6be439a47503427a4c79f9bd3c3c3fc1f93fd1e7b4c7a151d5afad0402d1a8ea",
+            "locator": {
+              "end": 351,
+              "kind": "line_range",
+              "start": 351
             },
             "path": "mcp/src/agents_remember/cli/dashboard.py"
           },

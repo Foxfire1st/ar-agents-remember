@@ -72,7 +72,9 @@ The converter, its binding and the rule 7 helper.
 - The base's own paired code commit. [3]
 - The commit route's converter, with the documented fallback-card difference. [4]
 - Rule 7 for any comparison consumer. [5]
+
 - The commit route validates against the conversion of an unconverted base, at the base's own code commit. [6]
+
 
 ### Cross-Repo References
 

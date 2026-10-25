@@ -26,10 +26,14 @@ SprintGraphPage seeds native tasks and SPRINT_GRAPH_QUEUE, then selects the qual
 
 ### Repo-Internal References
 
+
 - The dev sprint-graph page. [1]
+
 - The page seeds the native sprint entry and its closeout queue. [2]
 - The real page surface rendered. [3]
+
 - The dev route dispatch. [4]
+
 
 ### Cross-Repo References
 

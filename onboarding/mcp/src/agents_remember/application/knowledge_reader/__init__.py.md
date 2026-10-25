@@ -90,10 +90,14 @@ No configured live documentation source was available for this pass.
 - The record ID is required and the continuation reaches the truth-view owner. [10]
 
 
+
 - The module's own statement of the views, read-only reads and named failures. [1]
+
 - The ten views, including explicitly requested whole onboarding prose. [2]
 - One question: selections first, the selection opened, the typed failures and the envelope. [3]
+
 - Dispatch by view; a record the tree does not hold is `not-found`. [4]
+
 - The `invalid-request` answer. [5]
 - The measured selection block a subtree page returns in place of the default (R3-1). [6]
 - The composition root's port that calls this function. [7]

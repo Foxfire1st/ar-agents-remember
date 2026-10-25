@@ -22,15 +22,14 @@
   ],
   "references": {
     "1": {
-      "note": "Task document topology is centralized in one typed resolver.",
+      "note": "Task document topology is centralized in one typed resolver.\n\nAnchor: `TaskDocumentTopology`",
       "targets": [
         {
           "anchor": {
-            "blob": "69e32bb63816aa2c1aea0193801a80b22f105ecd",
-            "content": "sha256:8dc94c15360c220e6e4de674edefdc37988c1f95b466ef3b86c707c9ee0b642b",
+            "blob": "8e7a9eac75417f2c2bf003612d5c62cfc540661a",
+            "content": "sha256:6128cde80120b1453092e64570b36beec886f302204e049e82779bc2277c9489",
             "locator": {
-              "kind": "symbol",
-              "name": "TaskDocumentTopology"
+              "kind": "file"
             }
           },
           "kind": "code"

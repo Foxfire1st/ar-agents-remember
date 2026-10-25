@@ -154,12 +154,12 @@
   ],
   "references": {
     "1": {
-      "note": "Marks common text all-role and adds Curator-only serving-build producer constraints so they remain inline in this stage.\n\nAnchor: Candidate instruction body, lines 1–23",
+      "note": "Marks common text all-role and adds Curator-only serving-build producer constraints so they remain inline in this stage.",
       "targets": [
         {
           "anchor": {
-            "blob": "1d8ff0d5b32a38eb4b384c61d6beb6855cd9768e",
-            "content": "sha256:0fb095f2293912d40518a286cef9f71b9840de540438737213d3c802dd5a812f",
+            "blob": "541f15fba478277772b410bd15974fb889feaabc",
+            "content": "sha256:dd5968b6e1e106336fb71c7f00fe2c68729bedfc38c6f628c2cc1901c67ae881",
             "locator": {
               "end": 23,
               "kind": "line_range",

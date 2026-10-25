@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/cli/role_instruction_details.py",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
@@ -90,15 +91,14 @@
       ]
     },
     "3": {
-      "note": "The detail keeps its deterministic report sibling name and resolves beside the saved handover's canonical path, not the report's collection destination.",
+      "note": "The detail keeps its deterministic report sibling name and resolves beside the saved handover's canonical path, not the report's collection destination.\n\nAnchor: `_require_detail_target`",
       "targets": [
         {
           "anchor": {
-            "blob": "90b609572aa48fb2a5e13fbf13040c2f337839b0",
-            "content": "sha256:636a4d62d5d5bd7dc78e7d0e719348663ab2ea3a6bf9388698ca6bb011d2060c",
+            "blob": "9f6e5640683f5837e056f35ab36b73d582df963d",
+            "content": "sha256:a830d7d1269cb01d8a5bf6565b8662b145c8d3b276abc9ccc232ec8e26751b4d",
             "locator": {
-              "kind": "symbol",
-              "name": "_require_detail_target"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -106,15 +106,14 @@
       ]
     },
     "4": {
-      "note": "Receipt restoration invokes the detail validator.",
+      "note": "Receipt restoration invokes the detail validator.\n\nAnchor: `_restore_launch_handover`",
       "targets": [
         {
           "anchor": {
-            "blob": "ce3562637ef9146c730bbacc243e73efb61ace86",
-            "content": "sha256:b5a859b60be97ef213c9d51289edeff5ceb68c0498bb005434e341ae666af600",
+            "blob": "12aab96f86c33555f5973aa2e4fc3cf0a6b827b4",
+            "content": "sha256:d29a14c737179cb2f058fccfd1316555ad121cd67d113239d7e90ff025fcf3d1",
             "locator": {
-              "kind": "symbol",
-              "name": "_restore_launch_handover"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/cli/role_launch_receipts.py"
           },

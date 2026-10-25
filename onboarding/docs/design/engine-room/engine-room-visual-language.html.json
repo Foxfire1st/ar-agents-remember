@@ -1,5 +1,6 @@
 {
   "path": "docs/design/engine-room/engine-room-visual-language.html",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
@@ -38,15 +39,14 @@
       ]
     },
     "3": {
-      "note": "The React engine-room renderer implements these primitives in `EnclosureCanvas.tsx`.",
+      "note": "The React engine-room renderer implements these primitives in `EnclosureCanvas.tsx`.\n\nAnchor: `EnclosureCanvas`",
       "targets": [
         {
           "anchor": {
-            "blob": "3e8bac7662cfcef7ae4bddc696e4824dcde4491f",
-            "content": "sha256:9074e8c83128d82ecfa8eefd5437dd80da8bf4fdb3f36ba8a9c452d165ff034e",
+            "blob": "15444872a266d89123558da6eb8909e81fe96665",
+            "content": "sha256:dc5f212cb9ccbe8d35a4d690d984bb4f5b0b8b5f7e72042f1368075db707b271",
             "locator": {
-              "kind": "symbol",
-              "name": "EnclosureCanvas"
+              "kind": "file"
             },
             "path": "dashboard/src/panels/engine-room/EnclosureCanvas.tsx"
           },
@@ -77,12 +77,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c93efa0c8dad93909ffe08e9cb9d17efb3321b21",
+            "blob": "61fa5ab62915df0658c9617649fee1dec455a082",
             "content": "sha256:2f9d1ceeef6c4b05f29c6c936f984810604c546cfd3d0857aff0a6bef857ab64",
             "locator": {
-              "end": 592,
+              "end": 542,
               "kind": "line_range",
-              "start": 592
+              "start": 542
             },
             "path": "dashboard/src/panels/engine-room/layout.styles.ts"
           },
@@ -95,7 +95,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "33e18afe1b7a4d27a0a989faa241924eb5afc6ef",
+            "blob": "6c6fb3353eaaf5c876e680e34783ef2a1b24b47f",
             "content": "sha256:8d6ea6fba04630798b8afd56ea1ff899118d1fdbc873dc96686300c0ad8723a9",
             "locator": {
               "kind": "symbol",

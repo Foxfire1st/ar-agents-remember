@@ -19,15 +19,6 @@
           "kind": "code"
         }
       ]
-    },
-    "2": {
-      "note": "The route-local overview summarizes how this module fits into the benchmark runner split.\n\nAnchor: `# mcp/src/agents_remember/benchmarks/runner_modules Overview`",
-      "targets": [
-        {
-          "kind": "unresolved",
-          "text": "onboarding/mcp/src/agents_remember/benchmarks/runner_modules/overview.md:1-137"
-        }
-      ]
     }
   },
   "schema": "ar-onboarding-file/v1"

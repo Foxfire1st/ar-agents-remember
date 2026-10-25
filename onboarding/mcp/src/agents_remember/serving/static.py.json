@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/serving/static.py",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
@@ -57,7 +58,7 @@
       ]
     },
     "2": {
-      "note": "The absent-bundle surface answers 503 on GET/HEAD and 405 on every other method, mirroring `StaticFiles`.\n\nAnchor: \"def mount_static\"",
+      "note": "After the unknown-API guard, the absent-bundle static surface answers 503 on GET/HEAD and 405 on other methods, mirroring `StaticFiles`.\n\nAnchor: \"def mount_static\"",
       "targets": [
         {
           "anchor": {
@@ -92,12 +93,25 @@
       ]
     },
     "4": {
-      "note": "The serving app registers API routes before the static mount.\n\nAnchor: \"mount_static(app)\"",
+      "note": "The serving app registers API routes before the static mount.",
       "targets": [
         {
           "anchor": {
-            "blob": "6577555f1e999bbd273e7cf52324244d2b863929",
-            "content": "sha256:dd34a9df779b9566b04ad2b9e6cdde3b1d5e6c1a8c8b97ab7c28a7b13a33bd6a",
+            "blob": "d60acd0e4be738b9a9a33eb9f333fa6c53974f2b",
+            "content": "sha256:8aa0d623bf09d6d8867d3fc30c2e039e4e6ee1290780be0be1be6b4cdd0db345",
+            "locator": {
+              "end": 201,
+              "kind": "line_range",
+              "start": 171
+            },
+            "path": "mcp/src/agents_remember/serving/app.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d60acd0e4be738b9a9a33eb9f333fa6c53974f2b",
+            "content": "sha256:30c1f188f142ed7a824680b207172c5519bc614a48fda7cf167edb8ddf79956c",
             "locator": {
               "end": 260,
               "kind": "line_range",
@@ -109,12 +123,25 @@
         },
         {
           "anchor": {
-            "blob": "6577555f1e999bbd273e7cf52324244d2b863929",
-            "content": "sha256:0b518088925ef50559b9a014ab2d743430cf9d23c6507ec96c9c0fd23f10b750",
+            "blob": "d60acd0e4be738b9a9a33eb9f333fa6c53974f2b",
+            "content": "sha256:01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
             "locator": {
               "end": 271,
               "kind": "line_range",
               "start": 271
+            },
+            "path": "mcp/src/agents_remember/serving/app.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d60acd0e4be738b9a9a33eb9f333fa6c53974f2b",
+            "content": "sha256:75d66c5dbf884901ac1bca727ff0361a362a29f3d963d0ebb32e08faa0023b41",
+            "locator": {
+              "end": 173,
+              "kind": "line_range",
+              "start": 173
             },
             "path": "mcp/src/agents_remember/serving/app.py"
           },
@@ -183,6 +210,19 @@
               "end": 490,
               "kind": "line_range",
               "start": 459
+            },
+            "path": "mcp/tests/test_previous_host_removed.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "bdf32d31c515c5116ec65915e3821b238ff1d5ea",
+            "content": "sha256:f629849a2625cc6b14cb891db1fef6ed28fe8e4af40eb5e6f188dc67906d8a06",
+            "locator": {
+              "end": 480,
+              "kind": "line_range",
+              "start": 449
             },
             "path": "mcp/tests/test_previous_host_removed.py"
           },

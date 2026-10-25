@@ -3,15 +3,14 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The proofs of a set of invariants.",
+      "note": "The proofs of a set of invariants.\n\nAnchor: `proofs_of`",
       "targets": [
         {
           "anchor": {
-            "blob": "b3ce6d4c0ba10e9e0b9db33ea9cb60baf7c0f4ed",
-            "content": "sha256:851e491f99f981c033839274a2e88756ba2d7c4987f775789fa66aa9cd97a0a7",
+            "blob": "86f24d733e3cbbc5a513f6cfb86d2c0849c8dd3e",
+            "content": "sha256:0c4dab1d4a2c67f0f014cfa7ded80d40b73cb3e3155a74ac5fc761b257b34a30",
             "locator": {
-              "kind": "symbol",
-              "name": "proofs_of"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -246,26 +245,14 @@
       ]
     },
     "17": {
-      "note": "The reverse identity lookup and the ancestor match that never matches on a name prefix and ends with the root route.",
+      "note": "The reverse lookup from a projected UUID to the text ID it stands for (rule 6's reverse map).\n\nAnchor: `text_id` `_self_and_ancestors`",
       "targets": [
         {
           "anchor": {
-            "blob": "b3ce6d4c0ba10e9e0b9db33ea9cb60baf7c0f4ed",
-            "content": "sha256:7a17f26193db250e08579cc97dbb9605fa3804af979e7e0635711ba1740d7523",
-            "locator": {
-              "kind": "symbol",
-              "name": "text_id"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
             "blob": "86f24d733e3cbbc5a513f6cfb86d2c0849c8dd3e",
-            "content": "sha256:0b5929a879acb62ec3f73f0a0a5b84bc212860a29742cbb28d4d639d26ab2237",
+            "content": "sha256:0c4dab1d4a2c67f0f014cfa7ded80d40b73cb3e3155a74ac5fc761b257b34a30",
             "locator": {
-              "kind": "symbol",
-              "name": "_self_and_ancestors"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -371,15 +358,14 @@
       ]
     },
     "20": {
-      "note": "One history row by its ID.",
+      "note": "One history row by its ID.\n\nAnchor: `history_row`",
       "targets": [
         {
           "anchor": {
-            "blob": "c05477af99ced9b1b7220e89e6103387323f57ae",
-            "content": "sha256:de321f92493fdb2c490a1e2657b10e7d172b1964e5254daa1147bcf53dfb46cc",
+            "blob": "86f24d733e3cbbc5a513f6cfb86d2c0849c8dd3e",
+            "content": "sha256:0c4dab1d4a2c67f0f014cfa7ded80d40b73cb3e3155a74ac5fc761b257b34a30",
             "locator": {
-              "kind": "symbol",
-              "name": "history_row"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -437,15 +423,14 @@
       ]
     },
     "5": {
-      "note": "Entries of the files directly in a directory (F2).",
+      "note": "Entries of the files directly in a directory (F2).\n\nAnchor: `entries_in_directory`",
       "targets": [
         {
           "anchor": {
-            "blob": "b3ce6d4c0ba10e9e0b9db33ea9cb60baf7c0f4ed",
-            "content": "sha256:c85ac1187524b4a8769d9db0d1f394ddd679d7e5ed98887a8a27b416b8769aec",
+            "blob": "86f24d733e3cbbc5a513f6cfb86d2c0849c8dd3e",
+            "content": "sha256:0c4dab1d4a2c67f0f014cfa7ded80d40b73cb3e3155a74ac5fc761b257b34a30",
             "locator": {
-              "kind": "symbol",
-              "name": "entries_in_directory"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -523,37 +508,14 @@
       ]
     },
     "9": {
-      "note": "The directory condition and the prefix it is built from.",
+      "note": "The directory condition and the prefix it is built from.\n\nAnchor: `_prefix` `_under` `_split`",
       "targets": [
         {
           "anchor": {
             "blob": "86f24d733e3cbbc5a513f6cfb86d2c0849c8dd3e",
-            "content": "sha256:4d81f7a8de8fe5a5f5701d3327127cf72d51c72336a8fc761755d4f22076c8c6",
+            "content": "sha256:0c4dab1d4a2c67f0f014cfa7ded80d40b73cb3e3155a74ac5fc761b257b34a30",
             "locator": {
-              "kind": "symbol",
-              "name": "_prefix"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "b3ce6d4c0ba10e9e0b9db33ea9cb60baf7c0f4ed",
-            "content": "sha256:86c5da5daee9cf0503dbca9ce588b06e037f7f911d21b0dc5ae7a199ef0c67e8",
-            "locator": {
-              "kind": "symbol",
-              "name": "_under"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "86f24d733e3cbbc5a513f6cfb86d2c0849c8dd3e",
-            "content": "sha256:1c1511898bfd9087026e8a5845da17780a738665938ea967a36d462b93f0f95f",
-            "locator": {
-              "kind": "symbol",
-              "name": "_split"
+              "kind": "file"
             }
           },
           "kind": "code"

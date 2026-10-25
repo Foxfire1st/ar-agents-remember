@@ -80,8 +80,12 @@ must be kept for the legacy projection tests.
 
 ### Repo-Internal References
 
+
 - §4.2 3-zone room (`Panel fill` → `roomShell` → header + `roomGrid` [stack \| `roomStage` \| `roomZone`]). [2]
+
+
 - `EngineRoomHeader` (health/phase/nextAction + master-caution from `selectQueue`). [3]
+
 - The bounded-height panel variant the room uses. [6]
 - The per-worktree provider + enclosure-process read (surface 4 / `engineProcesses`). [8]
 

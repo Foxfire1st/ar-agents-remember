@@ -1,5 +1,6 @@
 {
   "path": "mcp/tests/test_retry_selection.py",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
@@ -82,16 +83,16 @@
       ]
     },
     "3": {
-      "note": "The suite has explicit unit-regression membership.\n\nAnchor: \"mcp/tests/test_retry_selection.py\"",
+      "note": "The suite has explicit unit-regression membership. Source caption: \"mcp/tests/test_retry_selection.py\"",
       "targets": [
         {
           "anchor": {
-            "blob": "11ba98ff63f4a4815985ac51e2c0c7b5a48556a4",
-            "content": "sha256:ffe7fe2d34ee681b5de1f90380260e2deca5bd2666cfac315ec010ce02294d9d",
+            "blob": "102c4550ab6429f44c8fb543d1d0662de66a1b8c",
+            "content": "sha256:788cc24593830efa4e9e44983040e5a055e973a6d727ad107f95738aa74df681",
             "locator": {
-              "end": 345,
+              "end": 336,
               "kind": "line_range",
-              "start": 345
+              "start": 336
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },

@@ -256,59 +256,14 @@
       ]
     },
     "2": {
-      "note": "**The closed vocabularies: item kinds, coverage, the six record transitions, the omission reasons and the five limitations.**",
+      "note": "The closed vocabularies: item kinds, coverage, the four record transitions, the omission reasons and the five limitations.\n\nAnchor: `DiffItemKind` `DiffCoverage` `DiffRecordTransition` `DiffOmissionReason` `DiffLimitation`",
       "targets": [
         {
           "anchor": {
             "blob": "ec3f57f4ae1b5efd42f4dcea696445d0bec02c2d",
-            "content": "sha256:265062c6cd5921315f4506f765cee5d5a27a135f64d93f680224db9a5d0618d0",
+            "content": "sha256:eb5df98640da1116d9c6b0a77f5725cf93fb4a3b547607b338f199763a89057f",
             "locator": {
-              "kind": "symbol",
-              "name": "DiffItemKind"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "ec3f57f4ae1b5efd42f4dcea696445d0bec02c2d",
-            "content": "sha256:6733152556905c93b86ae6ae020018eaed1385da8285ce0887564516b385768d",
-            "locator": {
-              "kind": "symbol",
-              "name": "DiffCoverage"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "c9fcdc6eb83172b467dff0898d6506787d5264a1",
-            "content": "sha256:da6d283291257f21b559d724bae3a5b59c209fae3e0fdda2c9ed1a16246a40d6",
-            "locator": {
-              "kind": "symbol",
-              "name": "DiffRecordTransition"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "ec3f57f4ae1b5efd42f4dcea696445d0bec02c2d",
-            "content": "sha256:05881efda0e978ed5d0d8d0b2bbd03922fb1fd869223cb624568dd07e6deb1be",
-            "locator": {
-              "kind": "symbol",
-              "name": "DiffOmissionReason"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "ec3f57f4ae1b5efd42f4dcea696445d0bec02c2d",
-            "content": "sha256:eef779e301b3611436082d0fd6722444b246839b54c28c6b60c9084525884ad3",
-            "locator": {
-              "kind": "symbol",
-              "name": "DiffLimitation"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -437,7 +392,7 @@
       ]
     },
     "25": {
-      "note": "The one member this leaf added to the operation union, and the vocabulary the new refusals reuse.",
+      "note": "The one member this leaf added to the operation union, and the vocabulary the new refusals reuse.\n\nAnchor: `KnowledgeOperation` `KnowledgeRefusalCode`",
       "targets": [
         {
           "anchor": {
@@ -453,8 +408,8 @@
         },
         {
           "anchor": {
-            "blob": "b3ba0efd36a74910f4ca9604b862c73a167fe659",
-            "content": "sha256:f051963a9e1e68afc1b0bcc52921de0235a2dc7d1bb9fdc3445413c26a5fd763",
+            "blob": "26599e0fe8b427bc0d290767b7b8e263cde390b6",
+            "content": "sha256:4b1bcca9dc4387cf22200602f0fcc11f1b61e336587bae16344ac2d70dd05b48",
             "locator": {
               "kind": "symbol",
               "name": "KnowledgeRefusalCode"
@@ -471,6 +426,17 @@
               "end": 212,
               "kind": "line_range",
               "start": 141
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/result.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "26599e0fe8b427bc0d290767b7b8e263cde390b6",
+            "content": "sha256:b52da855cdfe70820e352cdb3cf40bc64be29efba79386dafe6d5f47ae56083b",
+            "locator": {
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/models/knowledge/result.py"
           },

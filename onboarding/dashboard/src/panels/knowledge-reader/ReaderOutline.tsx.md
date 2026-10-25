@@ -53,8 +53,12 @@ No configured live documentation source was available for this pass.
 
 ### Repo-Internal References
 
+
 - The outline derives chapters from the document and marks the current one. [1]
+
+
 - The marked row is kept visible inside the outline's scroll. [2]
+
 - The text-derived heading ids with per-slug suffixes the outline navigates. [3]
 
 ### Cross-Repo References

@@ -54,7 +54,9 @@ No relevant external documentation was configured.
 
 The wrapper owns when this plugin is loaded; the focused suite owns its fail-closed item filtering.
 
+
 - Delta commands retain canonical collection roots and pass one explicit affected path per module. [1]
+
 - The hook records successful module collection, partitions exact paths, and keeps genuinely uncollected paths fail-loud. [2]
 - Focused tests prove narrow selection, explicit zero-body collection, and all input-refusal families. [3]
 

@@ -38,12 +38,12 @@
       ]
     },
     "3": {
-      "note": "Per-target developer send and explicit outcome parsing\n\nAnchor: \"export async function sendTray(\"",
+      "note": "Per-target developer send and explicit outcome parsing",
       "targets": [
         {
           "anchor": {
-            "blob": "a7b52f8ea1700ad310b1816d4c4b28e6f7280f85",
-            "content": "sha256:013cad38175eb47a01d33e695708b8f47e9e584b7d1a81b3309436ef2be41195",
+            "blob": "3f9fefd3840bd0f06bf8849aa277b1f6f761783f",
+            "content": "sha256:0554ac70db8bc6a8ef94c826865cc82df17e8f38d0a1c6361686b3be68d6de99",
             "locator": {
               "end": 186,
               "kind": "line_range",
@@ -104,20 +104,8 @@
       ]
     },
     "6": {
-      "note": "First-pick defaults consume published context: the document column’s active bound target, and the drawn Chats frame’s reported chat or its target before the first report. [6]\n\nAnchor: `const target = defaultTargetFor`; `export function usePublishShownChat`; `return frameChat === undefined ?`",
+      "note": "The Chats pane publishes the chat its own frame reports showing, and nothing else: a frame that has not reported a chat yet names none, and while a placeholder stands in for the frame it publishes nothing.\n\nAnchor: `usePublishShownChat`",
       "targets": [
-        {
-          "anchor": {
-            "blob": "ecb8d4a3c28bb82a4089522ed7ce0707d09e0b2d",
-            "content": "sha256:af5e08351085b3c06ecb043a7cfacf7c7d77db89af71bb9d8bc5bf1e51abe8fa",
-            "locator": {
-              "kind": "symbol",
-              "name": "usePublishShownChat"
-            },
-            "path": "dashboard/src/tray/shownChat.ts"
-          },
-          "kind": "code"
-        },
         {
           "anchor": {
             "blob": "7082e1dd104ce22def00308dae2977b249c4c7a0",
@@ -133,8 +121,8 @@
         },
         {
           "anchor": {
-            "blob": "02c32272e80e76c8589dadef8c2dc56e0aaa4be0",
-            "content": "sha256:6865a025f482e9d7b06c01bf5fcd58212dca1307150ccb8587ca71aa40dbe658",
+            "blob": "87320203450d777a0b564196b6dccdb508028659",
+            "content": "sha256:428cce74b5b012d625f318405667e138cbd353f350422cb28aea11617ac82e89",
             "locator": {
               "end": 42,
               "kind": "line_range",
@@ -146,14 +134,25 @@
         },
         {
           "anchor": {
-            "blob": "1321bad4ddf72db0e5ab8637a08f820af27dc11e",
-            "content": "sha256:b6fe80e733deba2ab8932e8b23efaeb2a5a0a02f24c3e8f3f8bae4baa3060146",
+            "blob": "84550a276c2350aa700370967d9509160521edc2",
+            "content": "sha256:34da2e16be948c504943031daafba241cee6d0be50475122638442192df6f410",
             "locator": {
               "end": 229,
               "kind": "line_range",
               "start": 209
             },
             "path": "dashboard/src/cockpit/RoleChatsView.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ecb8d4a3c28bb82a4089522ed7ce0707d09e0b2d",
+            "content": "sha256:78881dbedfe548ef712d2d9dd48f7beabf54c1ceb377bece7c440895ce3e9466",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/tray/shownChat.ts"
           },
           "kind": "code"
         }

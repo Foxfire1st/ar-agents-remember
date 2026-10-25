@@ -1,10 +1,21 @@
 {
   "path": "mcp/tests/test_cross_master_concurrency.py",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
-      "note": "Independent activation, private content, and sibling leaf landing.",
+      "note": "Independent activation, private content, and sibling leaf landing.\n\nAnchor: `test_two_unfinished_masters_share_one_source_pair_and_both_stay_ready` `test_releasing_master_a_activation_publishes_nothing_and_leaves_master_b_eligible`",
       "targets": [
+        {
+          "anchor": {
+            "blob": "35e1afaa9c71a35e4c33c4ff4b785acc13328801",
+            "content": "sha256:471f4c33d15ee6f1fd7609cef4def7689bee997c9d5d6376de14f3b952e42890",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        },
         {
           "anchor": {
             "blob": "35e1afaa9c71a35e4c33c4ff4b785acc13328801",
@@ -18,8 +29,8 @@
         },
         {
           "anchor": {
-            "blob": "fcda352fb4c8619e202a9b04628f9d71a088f729",
-            "content": "sha256:2f85bdf23ab5fc59c8487b52d8f32d85cb6ca0ec724ee32b17cdb52a605a42d3",
+            "blob": "35e1afaa9c71a35e4c33c4ff4b785acc13328801",
+            "content": "sha256:a540b7b1c8a86c03979b273b83d83d44af4866881ace1482e3f96ff9e07a7148",
             "locator": {
               "kind": "symbol",
               "name": "test_releasing_master_a_activation_publishes_nothing_and_leaves_master_b_eligible"
@@ -30,12 +41,22 @@
       ]
     },
     "2": {
-      "note": "Release and conflicting publication preserve sibling state.",
+      "note": "Release and conflicting publication preserve sibling state.\n\nAnchor: `test_releasing_master_a_activation_publishes_nothing_and_leaves_master_b_eligible` `test_a_conflicting_publication_cannot_overwrite_master_b`",
       "targets": [
         {
           "anchor": {
-            "blob": "fcda352fb4c8619e202a9b04628f9d71a088f729",
-            "content": "sha256:2f85bdf23ab5fc59c8487b52d8f32d85cb6ca0ec724ee32b17cdb52a605a42d3",
+            "blob": "35e1afaa9c71a35e4c33c4ff4b785acc13328801",
+            "content": "sha256:471f4c33d15ee6f1fd7609cef4def7689bee997c9d5d6376de14f3b952e42890",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "35e1afaa9c71a35e4c33c4ff4b785acc13328801",
+            "content": "sha256:a540b7b1c8a86c03979b273b83d83d44af4866881ace1482e3f96ff9e07a7148",
             "locator": {
               "kind": "symbol",
               "name": "test_releasing_master_a_activation_publishes_nothing_and_leaves_master_b_eligible"
@@ -57,12 +78,22 @@
       ]
     },
     "3": {
-      "note": "Ordinary resume/reconciliation/completion preserves actual histories.\n\nAnchor: \"def test_master_a_resumes_reconciles_and_completes_after_master_b_landed\"",
+      "note": "Ordinary resume/reconciliation/completion preserves actual histories.\n\nAnchor: `test_master_a_resumes_reconciles_and_completes_after_master_b_landed`",
       "targets": [
         {
           "anchor": {
-            "blob": "fcda352fb4c8619e202a9b04628f9d71a088f729",
-            "content": "sha256:d956027cdda8f4592160a9e6de61f52bcdf0a0a38b5bf34a2e717065918ace6a",
+            "blob": "35e1afaa9c71a35e4c33c4ff4b785acc13328801",
+            "content": "sha256:471f4c33d15ee6f1fd7609cef4def7689bee997c9d5d6376de14f3b952e42890",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "35e1afaa9c71a35e4c33c4ff4b785acc13328801",
+            "content": "sha256:06a2689a3caea3110ba13abd0b8db072c3e445e059cccf0d7bece3e1c93e20e7",
             "locator": {
               "kind": "symbol",
               "name": "test_master_a_resumes_reconciles_and_completes_after_master_b_landed"
@@ -97,6 +128,18 @@
             }
           },
           "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "35e1afaa9c71a35e4c33c4ff4b785acc13328801",
+            "content": "sha256:3fb24068a11069c890e011e6f634526a7d3c2325a653ae81f06db69c2d61720b",
+            "locator": {
+              "end": 600,
+              "kind": "line_range",
+              "start": 584
+            }
+          },
+          "kind": "test"
         }
       ]
     },
@@ -117,12 +160,22 @@
       ]
     },
     "6": {
-      "note": "Fixture commits are two actual outputs with Git-owned attribution.\n\nAnchor: \"def _land_leaf_contract\"",
+      "note": "Fixture commits are two actual outputs with Git-owned attribution.\n\nAnchor: `_land_leaf_contract`",
       "targets": [
         {
           "anchor": {
-            "blob": "d1988a54997bf88167cbab99ecfa373059cee6ac",
-            "content": "sha256:0e5d3fcc7ef97fe23b821f36dbfae0a684a63ccd4ffac53fae3e126ac4458202",
+            "blob": "35e1afaa9c71a35e4c33c4ff4b785acc13328801",
+            "content": "sha256:471f4c33d15ee6f1fd7609cef4def7689bee997c9d5d6376de14f3b952e42890",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "35e1afaa9c71a35e4c33c4ff4b785acc13328801",
+            "content": "sha256:154284651c0f720556b241df8bdfa6360427f3ba0b0ec0fdeacd5567cc9e3b99",
             "locator": {
               "kind": "symbol",
               "name": "_land_leaf_contract"

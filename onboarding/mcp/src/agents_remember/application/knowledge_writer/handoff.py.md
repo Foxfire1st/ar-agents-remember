@@ -98,8 +98,12 @@ at C is the writer's to establish (`authoring._cited_test`).
   title after `::`, as well as the existing structured `{path, symbol}` form. Evidence extraction
   still does not establish that any named case resolves at C or was executed.
 
+
 - Both forms, the bare file, and expressions that are not read as one test. [1]
+
+
 - A file named with a test anywhere in the evidence is not also reported bare. [2]
+
 
 ## 260928-MIK-L06 A Cover May Name The Path Its Entry Moves To (MIK-R06, Ruling Q6)
 
@@ -121,13 +125,17 @@ is the hand-off shape:
   module's: it permits `moved`, `extended`, `changed` and `deleted`. The older moved-only account
   and request docstring describe the original relocation route, not the current allowlist.
 
+
 - The module docstring: a moved row's cover may name another source path, and a cover may carry a rationale that replaces the entry's in place. [3]
+
 - The cover request, its `path` and its `rationale`. [4]
 
 - A cover read: its ID, locator, path and rationale, with every problem reported. [5]
 
 - The path check: remove plus path, and a path that is not a repository path, are named problems. [6]
+
 - The four refusals and the relocation, end to end. [7]
+
 
 ## 260928-MIK-L37 A Cover May Carry A Rationale
 
@@ -177,19 +185,31 @@ The document's sections and their readers.
 
 - The template's `incidental` is written as `support`. [8]
 - One refusal reason: where, and what. [9]
+
 - An entry and its curator keys; a ruling authors no invariant; the tests its evidence cites come from `tests_named_in`. [10]
+
+
 - The two test forms and the bare test module, read in order and once each. [11]
+
 - Read the three sections, collecting every problem. [12]
 - A ruling no record names is refused, and so are proofs on it. [13]
 - Locators in the file form: symbol, line range, whole file. [14]
 - Targets through the shipped realization rules. [15]
 - Proofs carry the curator's facet. [16]
+
 - An entry: new invariant needs scope, admission and a statement. [17]
+
+
 - A record: kind, fields, and the writer-owned fields refused. [18]
+
+
 
 - History input refuses caller-owned id/revision/sources and malformed considered examinations; the empty list remains intentional. [19]
 
+
+
 - The row keys and the request field a planned row's `ref` travels in. [20]
+
 - Four problems refused in one operation, each named. [21]
 - An entry that names no record is refused. [22]
 
@@ -209,4 +229,5 @@ No cross-repo boundary is crossed by this file.
 A proof's `test` may now be `{path, locator: {kind: "line_range", start, end}}`, read into `TestRangeReference`; any other locator kind is refused with the form to write. A row may carry `repoint`, read into `RepointRequest` items: the 0-based linked position, the path and the locator, with a duplicate link refused as a shape problem. Both are shape only: the writer decides whether the range is one case and whether the re-point is admitted.
 
 - A test reference may name a case by its lines, and only a line-range locator says where a case sits. [29]
+
 - A `repoint` row item names one fired link's position, the path and the locator, and is refused if it renames a link. [30]

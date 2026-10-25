@@ -55,12 +55,12 @@
       ]
     },
     "10": {
-      "note": "Focused tests pin a named master's row completion and two-document rollback and the misplaced-master refusal, and (MIK-R38) the folder master's row under the demotion rule, the dry run, the standalone cases and every refusal before any write.\n\nAnchor: \"class LifecycleFinalizeTests(_FinalizeFixtures):\"; \"class FolderMasterFinalizeTests(_FinalizeFixtures):\"",
+      "note": "Focused tests pin a named master's row completion and two-document rollback and the misplaced-master refusal, and (MIK-R38) the folder master's row under the demotion rule, the dry run, the standalone cases and every refusal before any write.",
       "targets": [
         {
           "anchor": {
-            "blob": "2ba36feffea27bd80672ea011924abc793b574be",
-            "content": "sha256:6aaaf95f042fb6da60141929d71c50cff7e3d6c7ffdc8c70f29550bbed3dd69a",
+            "blob": "89659796b2834dc723959513e9f107b2823ba7a0",
+            "content": "sha256:b4b2fd0a18eb637ed2548d3007b54790cd5877c81d7b0a5165ce81f5d35da289",
             "locator": {
               "end": 254,
               "kind": "line_range",
@@ -72,8 +72,8 @@
         },
         {
           "anchor": {
-            "blob": "2ba36feffea27bd80672ea011924abc793b574be",
-            "content": "sha256:08a5851bd43bf65dff467e2f4c322a2baf0f6f7ef855eee5317880d3c0bf815e",
+            "blob": "89659796b2834dc723959513e9f107b2823ba7a0",
+            "content": "sha256:82f1f7ad11622bf03b3cd38620f0cfe1d7c86a3b307d0c757cc3d08cbbd182d9",
             "locator": {
               "end": 419,
               "kind": "line_range",
@@ -86,15 +86,14 @@
       ]
     },
     "11": {
-      "note": "Parent resolution dispatches on the leaf's `master`; with no target the leaf finalizes standalone, and an asserted parent is refused.",
+      "note": "Parent resolution dispatches on the leaf’s `master`; a leaf naming none is resolved through the folder master, and a leaf with no folder master or leaf row is refused rather than finalized alone.\n\nAnchor: `_resolve_parent_target`",
       "targets": [
         {
           "anchor": {
-            "blob": "e39d70ff98455855cf4ff91e31535253c13ba185",
-            "content": "sha256:c8c988d7e04421d3e7aaefade1ae1b426920b034706406b43892eeb448465447",
+            "blob": "b8bda143860aa43bd6865974d210d639a5ffe665",
+            "content": "sha256:dae78692c3f880a9249afa60c0944470b31b3405c308e45b8f77235c248a2a2a",
             "locator": {
-              "kind": "symbol",
-              "name": "_resolve_parent_target"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/worktrees/modules/finalize_task_documents.py"
           },
@@ -103,15 +102,14 @@
       ]
     },
     "12": {
-      "note": "A named master: expected path, assertions, read, exactly one row.",
+      "note": "A named master: expected path, assertions, read, exactly one row.\n\nAnchor: `_named_parent`",
       "targets": [
         {
           "anchor": {
-            "blob": "e39d70ff98455855cf4ff91e31535253c13ba185",
-            "content": "sha256:2fe3fc3da1dceaa80677ff4730ee028bac9635bab6782e785d5ee9b8f5412ab1",
+            "blob": "b8bda143860aa43bd6865974d210d639a5ffe665",
+            "content": "sha256:dae78692c3f880a9249afa60c0944470b31b3405c308e45b8f77235c248a2a2a",
             "locator": {
-              "kind": "symbol",
-              "name": "_named_parent"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/worktrees/modules/finalize_task_documents.py"
           },
@@ -120,15 +118,14 @@
       ]
     },
     "13": {
-      "note": "A leaf naming none: the master sync's helper, the named-master checks, standalone without a row, and the named cause when a parent was asserted.",
+      "note": "A leaf naming none: the master sync’s helper, the same named-master checks, and the named refusal when the folder master or its row is absent.\n\nAnchor: `_folder_parent`",
       "targets": [
         {
           "anchor": {
-            "blob": "e39d70ff98455855cf4ff91e31535253c13ba185",
-            "content": "sha256:97d7d439c49779161d3656f6b2b73ecca61271b27d675c63e4c74d8680162d84",
+            "blob": "b8bda143860aa43bd6865974d210d639a5ffe665",
+            "content": "sha256:dae78692c3f880a9249afa60c0944470b31b3405c308e45b8f77235c248a2a2a",
             "locator": {
-              "kind": "symbol",
-              "name": "_folder_parent"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/worktrees/modules/finalize_task_documents.py"
           },
@@ -166,15 +163,14 @@
       ]
     },
     "15": {
-      "note": "The completed row goes through the master demotion rule.",
+      "note": "The completed row goes through the master demotion rule.\n\nAnchor: `_parent_completion_candidate`",
       "targets": [
         {
           "anchor": {
-            "blob": "e39d70ff98455855cf4ff91e31535253c13ba185",
-            "content": "sha256:660a54a9cf2bc7f82176be21e55ad608068c7efaa8706a49172a6e373ffa8ad1",
+            "blob": "b8bda143860aa43bd6865974d210d639a5ffe665",
+            "content": "sha256:dae78692c3f880a9249afa60c0944470b31b3405c308e45b8f77235c248a2a2a",
             "locator": {
-              "kind": "symbol",
-              "name": "_parent_completion_candidate"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/worktrees/modules/finalize_task_documents.py"
           },
@@ -183,12 +179,12 @@
       ]
     },
     "16": {
-      "note": "The one rule for a leaf naming no master, shared with the master sync and reopen.\n\nAnchor: \"def folder_master_json_path(task_root: Path, leaf: TaskDocument)\"",
+      "note": "The one rule for a leaf naming no master, shared with the master sync and reopen.",
       "targets": [
         {
           "anchor": {
-            "blob": "55abfd6f453d2c1fd50283bd978936948b9367b2",
-            "content": "sha256:b71097f7db9038140b56ed2d23976c5a1d5c73fdf20acbc9a80f91d78a42e5a5",
+            "blob": "4568c29f3b900b0d0b94dce225776b17f1e981be",
+            "content": "sha256:9088b84a19015a1c79d2a52ddc77cfec084c3f0aa4fe087ff1223d471cde5d34",
             "locator": {
               "end": 190,
               "kind": "line_range",
@@ -201,15 +197,16 @@
       ]
     },
     "17": {
-      "note": "Finalization resolves the document targets before cleanup, blocks on unresolved work units, and reconciles the documents after cleanup.",
+      "note": "Finalization resolves the document targets before cleanup, blocks on unresolved work units, and reconciles the documents after cleanup.  Anchor: `finalize_result`",
       "targets": [
         {
           "anchor": {
-            "blob": "8d9f9f6d38cccaf611abe0ad4d5f3c094f8fa960",
-            "content": "sha256:dcb7aa69563bbc7deb0df357e25fba2ea1ca41d9ddef54bbc16b1599b8d019e5",
+            "blob": "dcbcb92eb8805a1f241603ea248fdac21fb64a9d",
+            "content": "sha256:52b5c0761eb8d202bf1a85e9e7aee1041bb145fcefaa0de93e0be6ea0a9c9664",
             "locator": {
-              "kind": "symbol",
-              "name": "finalize_result"
+              "end": 133,
+              "kind": "line_range",
+              "start": 40
             }
           },
           "kind": "code"
@@ -233,15 +230,14 @@
       ]
     },
     "19": {
-      "note": "Series finalization selects the master and any proven typed or correlated seat row; absent or ambiguous correlation is reported as skipped unless a parent was asserted.",
+      "note": "Series finalization selects the master and any proven typed or correlated seat row; absent or ambiguous correlation is reported as skipped unless a parent was asserted.\n\nAnchor: `resolve_series_targets`",
       "targets": [
         {
           "anchor": {
-            "blob": "e39d70ff98455855cf4ff91e31535253c13ba185",
-            "content": "sha256:98820625a31b901e4c6b61d054fea15a5486289f2a323c7150e98f3bc275ee29",
+            "blob": "b8bda143860aa43bd6865974d210d639a5ffe665",
+            "content": "sha256:dae78692c3f880a9249afa60c0944470b31b3405c308e45b8f77235c248a2a2a",
             "locator": {
-              "kind": "symbol",
-              "name": "resolve_series_targets"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/worktrees/modules/finalize_task_documents.py"
           },
@@ -300,14 +296,14 @@
       ]
     },
     "4": {
-      "note": "Cleanup behavior and branch/worktree removal are delegated here.\n\nAnchor: \"def cleanup_result\"",
+      "note": "Cleanup behavior and branch/worktree removal are delegated here.",
       "targets": [
         {
           "anchor": {
             "blob": "38b1dccdd3748dc7d095c969fb81d964e1075f11",
-            "content": "sha256:c67d9c6f0da95e0f43314b177f8e65a64274cd7457cd8d5de05324b0da35ea03",
+            "content": "sha256:25e44519d8c52fa20b1c7a9de674a0f6be77dcd794d22f6dcae868cc057786b5",
             "locator": {
-              "end": 854,
+              "end": 857,
               "kind": "line_range",
               "start": 854
             },
@@ -322,11 +318,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "dec31ccdcb591d5166431d390ccbbd2612e63565",
-            "content": "sha256:46e710059fa3fcc62979171c9b45c62888fc179687f8a1e92e0cfb670917a1b7",
+            "blob": "dcbcb92eb8805a1f241603ea248fdac21fb64a9d",
+            "content": "sha256:0ca1fc1d90191c59879780dfa605be2927cea690034f76e7255aff81f1bd1cf7",
             "locator": {
-              "kind": "symbol",
-              "name": "_run_or_verify_cleanup"
+              "end": 371,
+              "kind": "line_range",
+              "start": 312
             }
           },
           "kind": "code"
@@ -334,15 +331,16 @@
       ]
     },
     "6": {
-      "note": "The operator-facing report shape this module restores for a completed reclamation, and its `already-clean` rule.\n\nAnchor: \"ALREADY_CLEAN = \\\"already-clean\\\"\"",
+      "note": "The operator-facing report shape this module restores for a completed reclamation, and its `already-clean` rule.  Anchor: \"ALREADY_CLEAN = \\\"already-clean\\\"\"",
       "targets": [
         {
           "anchor": {
-            "blob": "505f89641c3d479ee1c8304b064d4d3d832165cf",
-            "content": "sha256:5639d25df486b875d0fc0f50cfba0741b129eedf7856fbb199ed17283850a0e5",
+            "blob": "3b7f427a2911b1e7d510e47ddbe5ed92a231af77",
+            "content": "sha256:f71d558a0c6fad3a909c9c129f0e4eff665a1a5e33dee3b11049d8e307514cd9",
             "locator": {
-              "kind": "symbol",
-              "name": "cleanup_report"
+              "end": 69,
+              "kind": "line_range",
+              "start": 29
             },
             "path": "mcp/src/agents_remember/worktrees/modules/cleanup_report.py"
           },

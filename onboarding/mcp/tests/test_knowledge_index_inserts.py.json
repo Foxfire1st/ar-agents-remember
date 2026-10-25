@@ -19,15 +19,14 @@
       ]
     },
     "2": {
-      "note": "Retired detector vectors are inert data, never called",
+      "note": "Retired detector vectors are inert data, never called\n\nAnchor: `test_retired_detector_vectors_are_inert_data_never_called`",
       "targets": [
         {
           "anchor": {
-            "blob": "1d93fdf9a78b7801ce03867cafcb8047d5c00429",
-            "content": "sha256:3aa20b5e15f8cecdf2c07ca9be7c16540a3e1dd559d0dbafd59a89649f27c132",
+            "blob": "936fa0ad1e94fd9c02b1fce1e40b99905b00535f",
+            "content": "sha256:baa1707eeeedfa270a7978e1b0fbd004ec01a4c5d053d81439ed5cf66adce644",
             "locator": {
-              "kind": "symbol",
-              "name": "test_retired_detector_vectors_are_inert_data_never_called"
+              "kind": "file"
             }
           },
           "kind": "test"

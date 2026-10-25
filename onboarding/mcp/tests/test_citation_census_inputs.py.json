@@ -1,0 +1,58 @@
+{
+  "path": "mcp/tests/test_citation_census_inputs.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "0ad2e116f2af713a1299f1fe7ca7c77b86aa906a",
+        "content": "sha256:f4d7ea286fdd46c75851c268291b447677031a15749d01c18d24c12931b87712",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_live_changes_cannot_rebind_the_captured_census"
+        }
+      },
+      "facet": "Live changes cannot rebind a captured census, so incomplete input stays named.",
+      "id": "PRF-5FXRJX",
+      "invariant": "INV-BTF5NF",
+      "origin": {
+        "handoffEntry": "MIK-R198@v2 §2 anchor-census",
+        "leaf": "260928-MIK-L191"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "A change made during the read cannot rebind the captured census, over a directory pair and a Git pair",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0ad2e116f2af713a1299f1fe7ca7c77b86aa906a",
+            "content": "sha256:f4d7ea286fdd46c75851c268291b447677031a15749d01c18d24c12931b87712",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_live_changes_cannot_rebind_the_captured_census"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "A quiet pair has reproducible identities, and a failed capture refuses instead of measuring a partial index",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0ad2e116f2af713a1299f1fe7ca7c77b86aa906a",
+            "content": "sha256:12664283e76ee2789f081c43de1abe4443d8b75293e6b44ed64b403f2ee9fad8",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_quiet_captured_pair_has_reproducible_input_identities"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

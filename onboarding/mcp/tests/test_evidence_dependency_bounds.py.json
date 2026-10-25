@@ -39,15 +39,14 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "An admitted maximum record publishes and validates with its distinct dependencies.",
+      "note": "An admitted maximum record publishes and validates with its distinct dependencies.\n\nAnchor: `test_maximum_coherence_publication_validates_at_capacity`",
       "targets": [
         {
           "anchor": {
-            "blob": "36095c36cbdbc76df02280415b7d1414ebb5493f",
-            "content": "sha256:e246b511755166c835464d878e83cd00338238015576d75da7691959d9e1fd52",
+            "blob": "c9b187d1789b1bcd27e27139879beeb3df25a676",
+            "content": "sha256:cd2bd5fe14bd055965d51de153965cd718f5bee2fa1ca6056944f276c92ff562",
             "locator": {
-              "kind": "symbol",
-              "name": "test_maximum_coherence_publication_validates_at_capacity"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -71,15 +70,14 @@
       ]
     },
     "3": {
-      "note": "The complete pre-derivation record retains compatible encoding.",
+      "note": "The complete pre-derivation record retains compatible encoding.\n\nAnchor: `test_old_coherence_record_still_loads`",
       "targets": [
         {
           "anchor": {
-            "blob": "c58585dc2fa421f819dc8a88ea3153b268692e9f",
-            "content": "sha256:9d09b49479a9cc27a5cf74d5048e42cd4d828b4179857182bd6ae6dbcef2aa25",
+            "blob": "c9b187d1789b1bcd27e27139879beeb3df25a676",
+            "content": "sha256:cd2bd5fe14bd055965d51de153965cd718f5bee2fa1ca6056944f276c92ff562",
             "locator": {
-              "kind": "symbol",
-              "name": "test_old_coherence_record_still_loads"
+              "kind": "file"
             }
           },
           "kind": "test"

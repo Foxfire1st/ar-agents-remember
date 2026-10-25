@@ -14,7 +14,7 @@ AddToTray and pickBuilders collect objects. SelectionOffer/useSelectionOffer col
 
 ## Construction And Ownership
 
-pickKey deduplicates the exact kind, comparison/tree/side/path/range/revision identity. The first pick chooses only the initial target: its source chat for a chat passage, the published shown-chat target for another pick, or none. Explicit target choices win and later picks do not redirect them. The document column publishes its active, non-hidden bound target; that publication is not a native drawn-chat acknowledgement. On the Chats page, a drawn frame uses its plugin report once one arrives and its frame target before that first report. Recipient discovery is paged and preserves known rows while an incomplete listing leaves missing seats unknown.
+pickKey deduplicates the exact kind, comparison/tree/side/path/range/revision identity. The first pick chooses only the initial target: its source chat for a chat passage, the published shown-chat target for another pick, or none. Explicit target choices win and later picks do not redirect them. The document column publishes its active, non-hidden bound target; that publication is not a native drawn-chat acknowledgement. On the Chats page, a drawn frame uses its plugin report once one arrives. Recipient discovery is paged and preserves known rows while an incomplete listing leaves missing seats unknown.
 
 Metadata, notes, text and targets persist per browser origin; image bytes use digest-keyed IndexedDB with a live memory copy. A storage failure leaves live content and a visible non-persistence warning. Preferences set copy-on-highlight and positive count/image/message bounds locally. The backend enforces its own independent request and decoded-byte limits.
 
@@ -24,7 +24,7 @@ On a review page with its chat column closed, a pick reveals only the minimized 
 
 An ordinary Send captures an immutable snapshot and submits one composed message per remaining live target after archived or placeholder explainer recipients are separated. The backend resolves reference/provenance forms and files the complete message and hashed picks before native send or hold. Delivered and held outcomes are counted as sent without conflating those states. A refusal keeps the snapshot for its failed targets; picks added during the send survive settlement. The bounded sent log follows each message's own held end and retains the durable files.
 
-A Send aimed at an archived or placeholder explainer first asks that leaf’s fixed-target first-request form to open with the current text and collected picks. If no live target remains, no role-chat post or settlement occurs and the collection stays; a mixed selection continues through ordinary live-target posting and settlement. This handoff is not reported as native delivery. The minimized line’s head also expands on a click, Enter or space outside a nested control; the nested button, link, input, textarea, select and listed ARIA control targets retain their own actions, so Close does not also expand. The existing closed-column minimized-pick rule remains separate from the explicit first-request signal that opens its matching column.
+A Send aimed at an archived or placeholder explainer first asks that leaf’s fixed-target first-request form to open with the current text. If no live target remains, no role-chat post or settlement occurs and the collection stays; a mixed selection continues through ordinary live-target posting and settlement. This handoff is not reported as native delivery. The minimized line’s head also expands on a click, Enter or space outside a nested control; the nested button, link, input, textarea, select and listed ARIA control targets retain their own actions, so Close does not also expand. The existing closed-column minimized-pick rule remains separate from the explicit first-request signal that opens its matching column.
 
 ## Invariants And Boundaries
 
@@ -39,12 +39,17 @@ The tray neither navigates the host chat nor creates a role. Native origin/windo
 ## Evidence
 
 - Collection admission, first-target choice and snapshot settlement [1]
+
 - Exact structured reference identity [2]
+
 - Per-target developer send and explicit outcome parsing [3]
+
 - One dock outside the retained frame, its column placement at the message box's own left and width. [4]
 
-- A hosted idle object control follows its own hover/focus host; the named taken control and repeated click remain explicit. \[5] [5]
-- First-pick defaults consume published context: the document column’s active bound target, and the drawn Chats frame’s reported chat or its target before the first report. \[6] [6]
-- A review pick stays minimized with the column closed; explicit expansion opens it, while one pending target default ends on user choice, empty automatic collection or leaving review. \[7] [7]
+- A hosted idle object control follows its own hover/focus host; the named taken control and repeated click remain explicit. [5]
 
-- A Send aimed at an archived or placeholder explainer first asks that leaf’s fixed-target first-request form to open with the current text and collected picks. If no live target remains, no role-chat post or settlement occurs and the collection stays; a mixed selection continues through ordinary live-target posting and settlement. This handoff is not reported as native delivery. The minimized line’s head also expands on a click, Enter or space outside a nested control; the nested button, link, input, textarea, select and listed ARIA control targets retain their own actions, so Close does not also expand. The existing closed-column minimized-pick rule remains separate from the explicit first-request signal that opens its matching column. [8]
+- The Chats pane publishes the chat its own frame reports showing, and nothing else: a frame that has not reported a chat yet names none, and while a placeholder stands in for the frame it publishes nothing. [6]
+
+- A review pick stays minimized with the column closed; explicit expansion opens it, while one pending target default ends on user choice, empty automatic collection or leaving review. [7]
+
+- A Send aimed at an archived or placeholder explainer first asks that leaf’s fixed-target first-request form to open with the current text. If no live target remains, no role-chat post or settlement occurs and the collection stays; a mixed selection continues through ordinary live-target posting and settlement. This handoff is not reported as native delivery. The minimized line’s head also expands on a click, Enter or space outside a nested control; the nested button, link, input, textarea, select and listed ARIA control targets retain their own actions, so Close does not also expand. The existing closed-column minimized-pick rule remains separate from the explicit first-request signal that opens its matching column. [8]

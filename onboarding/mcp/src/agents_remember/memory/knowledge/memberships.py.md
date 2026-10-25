@@ -80,7 +80,9 @@ The requirement this module's first delivered slice belongs to: requirement pack
 
 - - The relation this module owns, stated as one exact pair. [17]
 - - The reverse read (invariant revision to families) over the same rows. [18]
+
 - - The declared `family_member` table, its unique tuple, its index and its no-repoint trigger. [19]
+
 
 ### Cross-Repo References
 

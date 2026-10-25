@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/controlplane/durable_store.py",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
@@ -60,12 +61,23 @@
       ]
     },
     "10": {
-      "note": "Watcher exclusion derives the shared lock suffix and filters every directory.",
+      "note": "Watcher exclusion derives the shared lock suffix and filters every directory.\n\nAnchor: `is_projection_input_event`",
       "targets": [
         {
           "anchor": {
-            "blob": "a1ee0ff2565114d0863fefb21fad733a2b220929",
-            "content": "sha256:cd641e004b118159e1a6858f216b3feb3e462f481365df68cd322100544f7fad",
+            "blob": "0ae1839d9155c7886092035967d54caf0e07c15d",
+            "content": "sha256:49d729ec0eb02f26bf0bf6afa82a75c294fad3fd6d43a9fa9e7afbaf7674be11",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/serving/change_watcher.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0ae1839d9155c7886092035967d54caf0e07c15d",
+            "content": "sha256:d9ef3969e16b8aae5bc6fb18d935ab09f26ece5dab35aeeb5bb1301fffc39bbb",
             "locator": {
               "kind": "symbol",
               "name": "is_projection_input_event"
@@ -81,8 +93,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "97dbd9063f43194a8744408df88da6452cec103f",
-            "content": "sha256:243aa186ad21e463c83464777d66478f1701201a4aacb1fe7748cba83c63e27e",
+            "blob": "3bcfb74d351791ef4ac8b910d5d3e8cc5ea09f55",
+            "content": "sha256:f059598c75454045054ab19ff4fee9386ac782fad0ee5b78edfdb454ab115797",
             "locator": {
               "kind": "symbol",
               "name": "test_host_admission_keeps_undeclared_checkout_coordinator_writes_refused"
@@ -93,8 +105,8 @@
         },
         {
           "anchor": {
-            "blob": "97dbd9063f43194a8744408df88da6452cec103f",
-            "content": "sha256:d95adf3d4942c07eaa1f4bfbecf8648d1bd7b5796d2d66e0439279a1125b9672",
+            "blob": "3bcfb74d351791ef4ac8b910d5d3e8cc5ea09f55",
+            "content": "sha256:77a3207363f73689651227fbd35e356f4f4bb8801cdf9e151fec3c431f411c62",
             "locator": {
               "end": 114,
               "kind": "line_range",
@@ -103,16 +115,53 @@
             "path": "mcp/tests/test_dagger_registry_lock.py"
           },
           "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "3bcfb74d351791ef4ac8b910d5d3e8cc5ea09f55",
+            "content": "sha256:8f6b26946dea0b040a19ac136ed30363b760cf5e02da72cb39f2acc7052fa4d1",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_dagger_registry_lock.py"
+          },
+          "kind": "test"
         }
       ]
     },
     "12": {
-      "note": "Current attention writes read and replace under one store hold; reconciliation uses actual observations rather than lifecycle pruning.\n\nAnchor: `AttentionDismissalStore.dismiss`; `AttentionDismissalStore.reconcile`",
+      "note": "Current attention writes read and replace under one store hold; reconciliation uses actual observations rather than lifecycle pruning.",
       "targets": [
         {
           "anchor": {
-            "blob": "7f26c932e6a31d8da2e9f2593954cde82ea1b9ff",
-            "content": "sha256:60e95c95e5646d85ef8f0c9a41f649dbd72a170534264bb5ebf54afb48a199eb",
+            "blob": "b8fc8a5487a7d0bfd52efcf027cbcd3607d671f9",
+            "content": "sha256:bad9940cecf6194524cd6cb1c2a28a735c9afbe9f4a9169fbe2290912f64cda4",
+            "locator": {
+              "end": 149,
+              "kind": "line_range",
+              "start": 130
+            },
+            "path": "mcp/src/agents_remember/controlplane/attention_dismissals.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b8fc8a5487a7d0bfd52efcf027cbcd3607d671f9",
+            "content": "sha256:6925d73bfb0a1a10bc32227e5b55ff8bcfa701ffdd436ee4e8c01325ec1090dc",
+            "locator": {
+              "end": 217,
+              "kind": "line_range",
+              "start": 174
+            },
+            "path": "mcp/src/agents_remember/controlplane/attention_dismissals.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b8fc8a5487a7d0bfd52efcf027cbcd3607d671f9",
+            "content": "sha256:165382a3c2de18d7cad598309e82a013e94aef5daeaeaf501360328eaf1863fe",
             "locator": {
               "end": 139,
               "kind": "line_range",
@@ -124,8 +173,8 @@
         },
         {
           "anchor": {
-            "blob": "7f26c932e6a31d8da2e9f2593954cde82ea1b9ff",
-            "content": "sha256:40060f9dcbef2663741f4e2b9ba101e6b633ed8fa380be2d8d45f077244fbf18",
+            "blob": "b8fc8a5487a7d0bfd52efcf027cbcd3607d671f9",
+            "content": "sha256:0612b695d7b7ca67ec0f3dc31967c5eee533e11cc811cb2d3e12118c355ba654",
             "locator": {
               "end": 207,
               "kind": "line_range",
@@ -230,8 +279,19 @@
       ]
     },
     "4": {
-      "note": "The kernel owns lock naming, thread mutexes, nesting, capability and hold observation.",
+      "note": "The kernel owns lock naming, thread mutexes, nesting, capability and hold observation.\n\nAnchor: `lock_path_for` `thread_mutex_for` `_LockDepth` `_verify_lock_capability` `exclusive_file_lock` `lock_held`",
       "targets": [
+        {
+          "anchor": {
+            "blob": "1c8709e75ca22ed12ab5182e676a05d389075a96",
+            "content": "sha256:e6215a71b64bbbaf314085e12c561af5ab131b13a04ff6e28d38b951f6922140",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/kernel/file_lock.py"
+          },
+          "kind": "code"
+        },
         {
           "anchor": {
             "blob": "1c8709e75ca22ed12ab5182e676a05d389075a96",
@@ -270,8 +330,8 @@
         },
         {
           "anchor": {
-            "blob": "5801a3451a06ef3ec426db8cf0c48e06147bb8c4",
-            "content": "sha256:1996fc940c9364949b7810894e5de4904d201c9dfd588ee4ec9fe8130af6978e",
+            "blob": "1c8709e75ca22ed12ab5182e676a05d389075a96",
+            "content": "sha256:3f59ef391be34f52baf1343c04b7770a5b29f245ff82a45c29c963b7847c1082",
             "locator": {
               "kind": "symbol",
               "name": "_verify_lock_capability"
@@ -282,8 +342,8 @@
         },
         {
           "anchor": {
-            "blob": "5801a3451a06ef3ec426db8cf0c48e06147bb8c4",
-            "content": "sha256:dd8d3d0f95aedef79978e2d0f55d8bcb30dde228556a7c232ba96ba8b21d9e36",
+            "blob": "1c8709e75ca22ed12ab5182e676a05d389075a96",
+            "content": "sha256:b5fbc44c9c78607266f10080567a3c94aa2aedcb0a0937fb7c8e3faf7d10509e",
             "locator": {
               "kind": "symbol",
               "name": "exclusive_file_lock"
@@ -345,7 +405,7 @@
       ]
     },
     "6": {
-      "note": "Current raw read, single/batched durable append and atomic rewrite.",
+      "note": "Current raw read, single/batched durable append and atomic rewrite.  Historical reference 7 in the preserved F001 card records the removed explicit migration helper; it is not a current callable or migration instruction.",
       "targets": [
         {
           "anchor": {

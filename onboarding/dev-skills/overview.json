@@ -1,16 +1,17 @@
 {
-  "path": "dev-skills",
+  "path": "dev-skills/overview",
+  "proves": [],
+  "realizes": [],
   "references": {
     "1": {
-      "note": "`sync-skills.py` copies only `REPO_ROOT/\"skills\"` into its fixed targets, so `dev-skills/` is outside this distribution flow. Checking compares the canonical tree with target contents, so an independently copied dev-skill inside a checked target can be reported as extra; this does not inspect the `dev-skills/` source tree.",
+      "note": "`sync-skills.py` copies only `REPO_ROOT/\"skills\"` into its fixed targets, so `dev-skills/` is outside this distribution flow. Checking compares the canonical tree with target contents, so an independently copied dev-skill inside a checked target can be reported as extra; this does not inspect the `dev-skills/` source tree.\n\nAnchor: `CANONICAL_SKILLS` `TARGETS` `diff_target` `sync_target` `check_targets`",
       "targets": [
         {
           "anchor": {
             "blob": "00b5dd8aa2698993636ba72c416beaf0d07dff3f",
-            "content": "sha256:556c2515bac2a5348f19a93d199ce8620848ee26c5e67dea565240287f582394",
+            "content": "sha256:753adb3ef38e223969853a4fa937b2e7eeda92d641fe862b8ea7ec19e6bbbe28",
             "locator": {
-              "kind": "symbol",
-              "name": "CANONICAL_SKILLS"
+              "kind": "file"
             },
             "path": "scripts/sync-skills.py"
           },
@@ -18,11 +19,11 @@
         },
         {
           "anchor": {
-            "blob": "52ead88df5abcc06f44245c1a48ebae0f190b1a6",
-            "content": "sha256:e8ae57b3feb2abf05b2199278870a9ed1f18ce1b2fd4b58f9345fd0deafbc97c",
+            "blob": "00b5dd8aa2698993636ba72c416beaf0d07dff3f",
+            "content": "sha256:556c2515bac2a5348f19a93d199ce8620848ee26c5e67dea565240287f582394",
             "locator": {
               "kind": "symbol",
-              "name": "TARGETS"
+              "name": "CANONICAL_SKILLS"
             },
             "path": "scripts/sync-skills.py"
           },
@@ -54,8 +55,8 @@
         },
         {
           "anchor": {
-            "blob": "52ead88df5abcc06f44245c1a48ebae0f190b1a6",
-            "content": "sha256:cc0fc76d82fcb1ce49eccf65d18cc94932f99661e0467ab778bd59fca87baeac",
+            "blob": "00b5dd8aa2698993636ba72c416beaf0d07dff3f",
+            "content": "sha256:1c8dbc9ac78cd4e8aecbfeaece0b1cee9d5e1ab7d1d4ae36c7dc40afff255e22",
             "locator": {
               "kind": "symbol",
               "name": "check_targets"
@@ -67,5 +68,5 @@
       ]
     }
   },
-  "schema": "ar-onboarding-route/v1"
+  "schema": "ar-onboarding-file/v1"
 }

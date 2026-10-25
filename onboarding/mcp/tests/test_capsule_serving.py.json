@@ -3,15 +3,14 @@
   "realizes": [],
   "references": {
     "14": {
-      "note": "Fixture world with external contract and synthetic corpus",
+      "note": "Fixture world with external contract and synthetic corpus\n\nAnchor: `World`",
       "targets": [
         {
           "anchor": {
-            "blob": "1d6d4c77ad41eb2f9783975d929a3519d218f22f",
-            "content": "sha256:937522b87e25da9a43cc1ed8072f32f7c6a3b4db64f8b34c8d444d8c4b6a7190",
+            "blob": "231672944ca7b848d89e9ce82d950d95d92e5cc2",
+            "content": "sha256:ad3d94e6364f84bb66c0c762b33c3ee884d2fb94066e18b3964f3c9321ecec05",
             "locator": {
-              "kind": "symbol",
-              "name": "World"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -67,15 +66,14 @@
       ]
     },
     "18": {
-      "note": "Non-conforming skill directory is recorded, never served",
+      "note": "Non-conforming skill directory is recorded, never served\n\nAnchor: `test_a_skill_directory_whose_root_file_is_not_conforming_is_recorded_not_served`",
       "targets": [
         {
           "anchor": {
-            "blob": "1d6d4c77ad41eb2f9783975d929a3519d218f22f",
-            "content": "sha256:9b10035a44a274e5b41f065fba3b82b4447b4b0b2b619522bf303e14382ecf5f",
+            "blob": "231672944ca7b848d89e9ce82d950d95d92e5cc2",
+            "content": "sha256:ad3d94e6364f84bb66c0c762b33c3ee884d2fb94066e18b3964f3c9321ecec05",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_skill_directory_whose_root_file_is_not_conforming_is_recorded_not_served"
+              "kind": "file"
             }
           },
           "kind": "test"

@@ -25,7 +25,9 @@ The projection fills index rows and production readers open those files read-onl
 ### Repo-Internal References
 
 
+
 - Current package pin and schema-feature reason. [2]
+
 
 
 - Derived-index projection and read-only connections use APSW. [5]

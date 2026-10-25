@@ -75,7 +75,9 @@ No relevant domain documentation was found.
 - Task-context root selection and the registered-root guard. [2]
 - The stricter no-symlink confinement reused by read. [3]
 - The declared models + shared scoped-read refusal table. [4]
+
 - Composition: the app registers this surface. [5]
+
 
 
 ### Cross-Repo References

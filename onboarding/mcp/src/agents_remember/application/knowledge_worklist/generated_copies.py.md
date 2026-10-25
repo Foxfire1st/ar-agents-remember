@@ -35,7 +35,9 @@ None recorded for this source contract. The nonrecursive presence check is the i
 No Domain Documentation source is configured for this repository. The governing design is MIK-R55@v1 rule11 and the L54 round3 C12 repair; task evidence is not presented as a code-tree directory.
 
 - Raw declaration mode is checked before filtered blob lookup, then per-payload canonical/equality facts are derived from the candidate. [1]
+
 - One bounded nonrecursive Git entry read observes even a tree with no recursive leaves. [2]
+
 - Full worklist fixtures retain canonical and ordinary changes, suppress only equal declared copies and restore a divergent copy's obligation. [3]
 - Grouped members keep their canonical bindings and complete source/base populations regardless of the representative. [4]
 - Both source-side and target-side symlinks retain full worklist obligations even when their link blobs compare equal. [5]

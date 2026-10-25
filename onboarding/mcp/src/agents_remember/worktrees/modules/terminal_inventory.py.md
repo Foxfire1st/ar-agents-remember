@@ -14,8 +14,10 @@ MIK-R82 rule 5: a leaf enclosure with no locator, no worktree folder, no work br
 
 ## Evidence
 
-- One shared no-remains probe finishes locator-less, folder-less, branch-less enclosures with a persisted reason. [1]
+> Retained earlier citation wording: - One shared no-remains probe finishes locator-less, folder-less, branch-less enclosures with a persisted reason. [1]
 
 ## 260928-MIK-L198 — No remains now means no root on disk either
 
 `terminal_without_remains_reason` now requires `_outside_scratch_absent(contract)` in its conjunction, beside the missing locator, the absent worktree folder and the absent work branches. `_outside_scratch_absent` answers true when `outside_scratch.recorded_root(contract)` is `None`, which is a pre-MIK-R207 enclosure, and otherwise checks that the recorded root no longer exists on disk. The recorded reason sentence is unchanged, and a contract whose root is still there simply gets `None` back and keeps the normal terminal path.
+
+- One shared no-remains probe finishes locator-less, folder-less, branch-less enclosures with a persisted reason. [1]

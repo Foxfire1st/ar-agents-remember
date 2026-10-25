@@ -1,14 +1,15 @@
 {
   "path": "mcp/src/agents_remember/application/knowledge_currentness/surface.py",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
-      "note": "The module statement: returned records are the UUIDs the index translates, and the answer is never edited.\n\nAnchor: \"The answer itself is never edited\"",
+      "note": "The module statement: returned records are the UUIDs the index translates, and the answer is never edited.",
       "targets": [
         {
           "anchor": {
-            "blob": "9b8baf9d7a43159b371465cce575f2fffd360465",
-            "content": "sha256:f6d3d1d8b14241d9ace87394d58c2a0414ef234da57c3ae9c8a4841383091a73",
+            "blob": "faef800be20876a094d800a6266d27c77247c850",
+            "content": "sha256:118c5f7bbca39ad6c069a241a3b5ff28b109a433a362a32eac047de9ef8b0151",
             "locator": {
               "end": 10,
               "kind": "line_range",
@@ -20,12 +21,23 @@
       ]
     },
     "10": {
-      "note": "The published-intent consumer since MIK-R02, at its resolved source tree and inside the bounded block.\n\nAnchor: `WalkCurrentness`",
+      "note": "The published-intent consumer since MIK-R02, at its resolved source tree and inside the bounded block.\n\nAnchor: `read_published_intent`",
       "targets": [
         {
           "anchor": {
-            "blob": "4be19bfc4f0db366151478c0195bb8e5278c7351",
-            "content": "sha256:fe62f6922d09b0a8c45d7735d9da499c5892065318fec4509b85124eac79ef8d",
+            "blob": "e2257653c8f42c1861ece020b7afb0ebe068ff1e",
+            "content": "sha256:ed945298901c54ce9411f7391b4d3b19bb0e13b0f246be1cbad4704f98383880",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/published_intent.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e2257653c8f42c1861ece020b7afb0ebe068ff1e",
+            "content": "sha256:5be26a3a71d66ee5e95d4c7c1cb3a5049375cd567aaefe7db04b6dbbcb789b91",
             "locator": {
               "kind": "symbol",
               "name": "read_published_intent"
@@ -37,12 +49,23 @@
       ]
     },
     "11": {
-      "note": "No tree, or only a repository, is unverifiable and never reads `HEAD`.",
+      "note": "No tree, or only a repository, is unverifiable and never reads `HEAD`.\n\nAnchor: `test_knowledge_read_without_a_named_tree_is_unverifiable_and_never_reads_head`",
       "targets": [
         {
           "anchor": {
-            "blob": "85c55f2eaf44e11e20283306277a55040b2fa8a1",
-            "content": "sha256:a5a23df64e8b4bd5366430a3e80d049b43770ee44894375733f350207e20d399",
+            "blob": "035d30df74bd1bad93ddc28456d591c1024b28d2",
+            "content": "sha256:58f2f830be97427187427103b14ba610b4a99dad8ba64e42c299bd5fd25f7478",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_knowledge_currentness.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "035d30df74bd1bad93ddc28456d591c1024b28d2",
+            "content": "sha256:f661cccb6214678afe8e668525b5f561ef5c285207806be7772f5e89089c066c",
             "locator": {
               "kind": "symbol",
               "name": "test_knowledge_read_without_a_named_tree_is_unverifiable_and_never_reads_head"
@@ -54,12 +77,23 @@
       ]
     },
     "12": {
-      "note": "A failing step degrades to a reason and never refuses the read.",
+      "note": "A failing step degrades to a reason and never refuses the read.\n\nAnchor: `test_a_failing_currentness_step_degrades_to_a_reason_and_never_refuses_the_read`",
       "targets": [
         {
           "anchor": {
-            "blob": "85c55f2eaf44e11e20283306277a55040b2fa8a1",
-            "content": "sha256:e183a2d74a57440dfd414fdac038941d816a450c2727f7809775ad31ab88d2a7",
+            "blob": "035d30df74bd1bad93ddc28456d591c1024b28d2",
+            "content": "sha256:58f2f830be97427187427103b14ba610b4a99dad8ba64e42c299bd5fd25f7478",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_knowledge_currentness.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "035d30df74bd1bad93ddc28456d591c1024b28d2",
+            "content": "sha256:8eafa74e77e1208a1bc9f6b56f8deb48035926357fd13502a59e0e4d8f265a4d",
             "locator": {
               "kind": "symbol",
               "name": "test_a_failing_currentness_step_degrades_to_a_reason_and_never_refuses_the_read"
@@ -141,47 +175,14 @@
       ]
     },
     "5": {
-      "note": "The one evaluation a paged caller cuts candidates from; it raises instead of degrading.",
+      "note": "The one evaluation a paged caller cuts candidates from; it raises instead of degrading.\n\nAnchor: `evaluate_answer`",
       "targets": [
         {
           "anchor": {
-            "blob": "9b8baf9d7a43159b371465cce575f2fffd360465",
-            "content": "sha256:abcb620fc6591616ca287e313ea02d3ba8dda068040937702855d8c46d3e8b07",
+            "blob": "faef800be20876a094d800a6266d27c77247c850",
+            "content": "sha256:646c9a47cdd8579dae9ec7572e5eef61cfcfa5ae339fd54be8933b830a3f80df",
             "locator": {
-              "kind": "symbol",
-              "name": "evaluate_answer"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "6": {
-      "note": "Only a named tree ID is a request; `HEAD` is never substituted.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "9b8baf9d7a43159b371465cce575f2fffd360465",
-            "content": "sha256:cf3942eafbe8b4856d4c9252d2e2030b558574c317fd3dd28cc678e6be0a79b8",
-            "locator": {
-              "kind": "symbol",
-              "name": "requested_code_tree"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "7": {
-      "note": "The block, which degrades to the failure document and never raises.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "9b8baf9d7a43159b371465cce575f2fffd360465",
-            "content": "sha256:364f6e7478a17287709d0d1b4edc1bbbedd89336ee8fa7fa3b25702edc0d42ec",
-            "locator": {
-              "kind": "symbol",
-              "name": "read_currentness"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -189,10 +190,10 @@
         {
           "anchor": {
             "blob": "faef800be20876a094d800a6266d27c77247c850",
-            "content": "sha256:af20866a9e0e196ece227711b6656c595f7548fb99af9ac0fa8b011ef25fe7a9",
+            "content": "sha256:fcff3295136cb40d4b2888c977ad6ce8c543453fd63948ea1c5480eb6d75b0b5",
             "locator": {
               "kind": "symbol",
-              "name": "failure_document"
+              "name": "evaluate_answer"
             }
           },
           "kind": "code"

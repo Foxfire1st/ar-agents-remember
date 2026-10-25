@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
@@ -159,12 +160,23 @@
       ]
     },
     "5": {
-      "note": "Route review binds code tree, task intent, per-evidence-file SHA-256, and validator.",
+      "note": "Route review binds code tree, task intent, per-evidence-file SHA-256, and validator.\n\nAnchor: `build_route_review` `require_current_route_review_task_intent`",
       "targets": [
         {
           "anchor": {
-            "blob": "0949ba0ebbf02b7ceccbe81478df2eabe7073177",
-            "content": "sha256:a19d6c217a92f988b92ac61567ac6004a483214ee67ae78f776fabec97932f93",
+            "blob": "f77659efee8d80f8c6cfa6dab23a63501ab76013",
+            "content": "sha256:28f91e1f645dd0e8946a9e15c5b3dcd0fd513bc4342a259de6fcc55edc1a594f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/worktrees/route_review.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f77659efee8d80f8c6cfa6dab23a63501ab76013",
+            "content": "sha256:1bd5705068bb818ead3f9c2ddb232ebe3c68e5fa177ac13beb9f65a064808341",
             "locator": {
               "kind": "symbol",
               "name": "build_route_review"

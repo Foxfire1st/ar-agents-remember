@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/tasks/leaf_doc.py",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
@@ -100,15 +101,14 @@
       ]
     },
     "12": {
-      "note": "The worktrees-side re-export surface those helpers used to be imported from, and which still publishes them to its own callers.",
+      "note": "The worktrees-side re-export surface those helpers used to be imported from, and which still publishes them to its own callers.\n\nAnchor: `__all__`",
       "targets": [
         {
           "anchor": {
-            "blob": "e11a2d5cec5eaa45cbe97ddf3444c5dcff666da8",
-            "content": "sha256:6c1455ed80efdc58adedd62a93333653587b02e905f52689b874aae4a43bf67b",
+            "blob": "0a6426966075d0545fc7e6ffea623bf8eebc99c4",
+            "content": "sha256:38d894cb7f0ff3160facb1e8fa82e1e8ab696e770b25008299f3e729761c8ac6",
             "locator": {
-              "kind": "symbol",
-              "name": "__all__"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/worktrees/task_resolver.py"
           },
@@ -152,12 +152,12 @@
       ]
     },
     "15": {
-      "note": "The observer joins this lookup mirrors (doc id → enclosures[] refs → stem).\n\nAnchor: \"def read_task_documents(\"",
+      "note": "The summary read that projects the full pass and a path-directed read through one canonical source builder, with full bodies read on demand.",
       "targets": [
         {
           "anchor": {
-            "blob": "6030d7e7f82fadbdbcdedfda71855155018b84c0",
-            "content": "sha256:43b15bfd7db981b739d72d3c6476c8f74733223abdafec3d5f8d3823e281f23a",
+            "blob": "8553750157ecbc4d4c86582aec77207f1b043431",
+            "content": "sha256:f0d9f734be5aa03935c499b71411355cefac2a2bf57989e1246d35a7352c7e9a",
             "locator": {
               "end": 126,
               "kind": "line_range",
@@ -290,15 +290,16 @@
       ]
     },
     "4": {
-      "note": "Post-contract start revalidates and publishes the lifecycle restamp through the task-first mutation owner.",
+      "note": "Post-contract start revalidates and publishes the lifecycle restamp through the task-first mutation owner.  Anchor: `_create_start_enclosure`",
       "targets": [
         {
           "anchor": {
-            "blob": "e3f54e37b007c2eaa9f6f3cb3a61951c16976eca",
-            "content": "sha256:69ccec8898c2c8818e049ebdf39539f58432a690a78576ed80336c8df2163327",
+            "blob": "2ca78649db203d17f9087e7728f77b20e3a1d144",
+            "content": "sha256:d4daffb6bad4b41d0826b198c5fafaefaf36f6bde9ce08666c592fab7ad09e0b",
             "locator": {
-              "kind": "symbol",
-              "name": "_create_start_enclosure"
+              "end": 741,
+              "kind": "line_range",
+              "start": 705
             },
             "path": "mcp/src/agents_remember/worktrees/modules/start.py"
           },
@@ -324,27 +325,14 @@
       ]
     },
     "6": {
-      "note": "The worktree-side wrapper that resolves the canonical parent row and delegates to this module's enclosure-registration planner.",
+      "note": "The worktree-side wrapper that resolves the canonical parent row and delegates to this module's enclosure-registration planner.\n\nAnchor: `plan_current_leaf_enclosure_registration` `require_current_leaf_enclosure_binding`",
       "targets": [
         {
           "anchor": {
-            "blob": "c554da0c00d1dd4aa5f8c386a8e0bc80ed87e050",
-            "content": "sha256:0ffd79b744b7109023faaac368528614523a417295e9b5a447af892600b67003",
-            "locator": {
-              "kind": "symbol",
-              "name": "plan_current_leaf_enclosure_registration"
-            },
-            "path": "mcp/src/agents_remember/worktrees/task_leaf_binding.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
             "blob": "cd710bd6a033d75cf06cff17f62b2844f8fc6bdd",
-            "content": "sha256:53e338ecd6b60e94356ce55a36630d7831af36729cf3c38f0e5dde95b2aa8210",
+            "content": "sha256:f5b4acb27fe33e47a48ba7ff762ff9cb8d9d2d88ba98c8a17a256ac4185ac3dd",
             "locator": {
-              "kind": "symbol",
-              "name": "require_current_leaf_enclosure_binding"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/worktrees/task_leaf_binding.py"
           },

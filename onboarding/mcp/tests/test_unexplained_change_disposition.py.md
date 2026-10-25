@@ -92,15 +92,29 @@ No configured live documentation source was available for this pass.
 
 ### Repo-Internal References
 
+
 - The module docstring: the reused worklist world and the predicate check. [1]
+
 - Registration and the row model's refusals. [3]
 - Coverage by entries or the latest census status. [4]
 - The three answers of a covered hunk; never onboarding. [5]
 - Delete-only: only no_invariant. [6]
 - Non-text changes bound to the C blob. [7]
 - The writer's refusals, including a retired invariant. [11]
-- The unit-lane row. [13]
-- The catalog consumer row. [14]
+
+
+
+
+> Retained earlier citation wording: - The unit-lane row. Source caption: "mcp/tests/test_unexplained_change_disposition.py" [13]
+
+
+
+
+
+
+> Retained earlier citation wording: - The catalog consumer row. [14]
+
+
 
 ### Cross-Repo References
 
@@ -117,4 +131,10 @@ No cross-repo boundary is crossed by this file.
 
 ## Current counted-change evidence
 
+
 - The changed-card regression asserts worklist/gate agreement for an authored updated row without a separately bound trace item; source assertions are not fresh execution acceptance. [16]
+
+- The unit-lane row. Source caption: "mcp/tests/test_unexplained_change_disposition.py" [13]
+
+
+- The catalog consumer row. [14]

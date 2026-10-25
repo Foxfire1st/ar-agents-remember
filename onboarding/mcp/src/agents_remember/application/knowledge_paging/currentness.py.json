@@ -3,12 +3,12 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The module statement: once per walk page, cut to each candidate.\n\nAnchor: \"Currentness for the pages of one walk\"",
+      "note": "The module statement: once per walk page, cut to each candidate.",
       "targets": [
         {
           "anchor": {
-            "blob": "c5cc7308bb3160db0349c4296921fe78ca367279",
-            "content": "sha256:eade0de7652a2e457ad8288fde6793d0a5489220ab680dea9623107a5ebb9a33",
+            "blob": "f27e5e874fabd31f53fe3fcba70573999fc1eb89",
+            "content": "sha256:2c63d1adeb914f6b81973052bc09d8b7a997a6deccfe3d0d1861a8f86175dce4",
             "locator": {
               "end": 11,
               "kind": "line_range",

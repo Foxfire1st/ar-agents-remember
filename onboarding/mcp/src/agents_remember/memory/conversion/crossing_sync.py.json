@@ -55,15 +55,14 @@
       ]
     },
     "14": {
-      "note": "The crossing result carries the alignment counts beside conflicts and cards.",
+      "note": "The crossing result carries the alignment counts beside conflicts and cards.\n\nAnchor: `cross`",
       "targets": [
         {
           "anchor": {
-            "blob": "c52a085d1bc02fe0861b0770f891cbf57e7c42d7",
-            "content": "sha256:ebd00a9cdc167595759bb2c18b19a6794f5143cc12fec01fbc0c2d84f2153e6d",
+            "blob": "9a01cff9e8bb4544cac7f17e7d9c03c952f8eb9c",
+            "content": "sha256:bd790652bb6b7faa32731fc6c57555aa064bce0f77dd95380f7896c80643b87d",
             "locator": {
-              "kind": "symbol",
-              "name": "cross"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -281,15 +280,14 @@
       ]
     },
     "22": {
-      "note": "- The markers move, each side converts, and the trees merge.",
+      "note": "- The markers move, each side converts, and the trees merge.\n\nAnchor: `test_a_crossing_moves_the_leaf_markers_converts_each_side_and_merges`",
       "targets": [
         {
           "anchor": {
-            "blob": "1b81505edc5c675ce2a6f1cdf92a60af07a2a634",
-            "content": "sha256:719e9c694563497aeeeafd97cdc0fbe7878868090e14d6cedc17aac682683e86",
+            "blob": "fab936dda80543f94c1a840030ce192da6fa5616",
+            "content": "sha256:07fed5861f231d52ff62bc856eb238e5c79c21b8ff11c0e05dc0edadc6689d40",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_crossing_moves_the_leaf_markers_converts_each_side_and_merges"
+              "kind": "file"
             },
             "path": "mcp/tests/test_knowledge_crossing.py"
           },
@@ -298,15 +296,14 @@
       ]
     },
     "23": {
-      "note": "- Many long markers fit one valid row.",
+      "note": "- Many long markers fit one valid row.\n\nAnchor: `test_many_long_markers_move_into_one_valid_history_row`",
       "targets": [
         {
           "anchor": {
-            "blob": "1b81505edc5c675ce2a6f1cdf92a60af07a2a634",
-            "content": "sha256:a4429208556043268c2b04d6fb8e5c19deb7da5d2d734fe98531175c83ec4064",
+            "blob": "fab936dda80543f94c1a840030ce192da6fa5616",
+            "content": "sha256:07fed5861f231d52ff62bc856eb238e5c79c21b8ff11c0e05dc0edadc6689d40",
             "locator": {
-              "kind": "symbol",
-              "name": "test_many_long_markers_move_into_one_valid_history_row"
+              "kind": "file"
             },
             "path": "mcp/tests/test_knowledge_crossing.py"
           },

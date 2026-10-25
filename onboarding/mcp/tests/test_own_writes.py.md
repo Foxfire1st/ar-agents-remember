@@ -19,5 +19,5 @@ Local implementation and executable evidence do not replace requirement authorit
 ## Evidence
 
 
-- The dashboard's bounded own-write suppression tests distinguish retained own effects from expired/evicted evidence and genuine foreign mutations. [1]
 
+- The dashboard's bounded own-write suppression tests distinguish retained own effects from expired/evicted evidence and genuine foreign mutations. [1]

@@ -56,15 +56,14 @@
       ]
     },
     "6": {
-      "note": "The exact enclosure population preserves the abandoned-but-landed refusal.",
+      "note": "The exact enclosure population preserves the abandoned-but-landed refusal.\n\nAnchor: `exact_atomic_leaf_contracts`",
       "targets": [
         {
           "anchor": {
-            "blob": "093961344dabf41f2cae9f73415874cd296b3315",
-            "content": "sha256:0da9354d60c7d3c6e6d026adbd3f4d8550df1addb379c7bce3c59684ef1da6f1",
+            "blob": "9d0d9de269f8ce88534dd78ab58d135e71e88072",
+            "content": "sha256:2bd089dada1c1cd2496b3657ed7d92aaadbaa7a16abe6a80588ff7ff01ba6c23",
             "locator": {
-              "kind": "symbol",
-              "name": "exact_atomic_leaf_contracts"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -72,15 +71,14 @@
       ]
     },
     "7": {
-      "note": "Static controls cover absent/unlanded abandoned enclosures and an empty file cell while preserving the master.",
+      "note": "Static controls cover absent/unlanded abandoned enclosures and an empty file cell while preserving the master.\n\nAnchor: `test_abandoned_rows_without_enclosures_and_with_unlanded_enclosures_pass`",
       "targets": [
         {
           "anchor": {
-            "blob": "2a6ff701f935e41e2e3ada07519a187dff1790d7",
-            "content": "sha256:f437d15386e07f6e47e75ea3c2afdb9dc63ee0fbb0110e24a10a9d071bca5977",
+            "blob": "d24389c3568444823237ed60dc8c5c033291659f",
+            "content": "sha256:78d1665c7012718b946dd7baff42277ac8e466b60ff19950c787fa96f3d9a3ba",
             "locator": {
-              "kind": "symbol",
-              "name": "test_abandoned_rows_without_enclosures_and_with_unlanded_enclosures_pass"
+              "kind": "file"
             },
             "path": "mcp/tests/test_abandoned_series_closeout.py"
           },

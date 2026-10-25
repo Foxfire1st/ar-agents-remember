@@ -20,7 +20,7 @@
       ]
     },
     "2": {
-      "note": "The MCP runtime installer requires and copies `mcp/src/agents_remember/package_data/runtime/providers` into the coordination root.",
+      "note": "The MCP runtime installer requires and copies `mcp/src/agents_remember/package_data/runtime/providers` into the coordination root.\n\nAnchor: `require_runtime_tree` `install_runtime`",
       "targets": [
         {
           "anchor": {
@@ -48,12 +48,12 @@
         },
         {
           "anchor": {
-            "blob": "1c2dfb4f0f87317da6302be2ab2a2cb173460c1d",
-            "content": "sha256:f62de7e5fede1731981cdb8f6fe65b2e458eebff5c092b51ec8571061e7204a2",
+            "blob": "25ec3884f99e38afdbe0b09d6e8e37699bbae8e9",
+            "content": "sha256:c420b140b52d7907e6c91da3ae959285c58c8a12bc2d23813b50848988d55a78",
             "locator": {
-              "end": 346,
+              "end": 464,
               "kind": "line_range",
-              "start": 335
+              "start": 453
             },
             "path": "mcp/src/agents_remember/install/runtime.py"
           },
@@ -61,12 +61,10 @@
         },
         {
           "anchor": {
-            "blob": "1c2dfb4f0f87317da6302be2ab2a2cb173460c1d",
-            "content": "sha256:33d0396ab8accec0bb3dd6a756809e50e15576932ecb1e7f69fa9308ab2f3fc7",
+            "blob": "25ec3884f99e38afdbe0b09d6e8e37699bbae8e9",
+            "content": "sha256:98f3a29716db1ab43c170852a41719d17edc42985b176f5a4df252d893420af5",
             "locator": {
-              "end": 571,
-              "kind": "line_range",
-              "start": 480
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/install/runtime.py"
           },

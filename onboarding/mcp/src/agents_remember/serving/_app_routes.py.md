@@ -22,8 +22,13 @@ This is current-source interpretation of the admitted frozen candidate, not a ne
 
 ## Source-bound reference inputs
 
+
 - The state response uses projector revision weak ETags, refuses an absent snapshot, returns bodyless 304 on a match, otherwise copies the memoized projection and adds the served-state tail. [1]
+
+
 - The state SSE route passes ordinary snapshot/delta events through the optional review-memory multiplexer under aclosing; the distinct raw-event route still forwards observer records and its own ready marker. [2]
+
+
 - All omitted review selectors opt out; any supplied selector forms a normalized three-string identity for the resolver. The multiplexer—not normalization—checks segments/root admission, emits review.memory.error on admitted failure paths and keeps ordinary events flowing. [3]
 
 - The review stream multiplexes projection/memory invalidation with moved notices. _merged_stream lets notice exhaustion leave the page stream alive and ordinary stream exhaustion close it; finally cancels/gathers pending next-event tasks and aclosing releases subscriptions. [4]

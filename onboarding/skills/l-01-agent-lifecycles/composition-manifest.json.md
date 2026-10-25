@@ -519,7 +519,9 @@ The byte-equal package copy is a distribution carrier, not an independent role, 
 
 - The earlier audience-selection change added audience fields for all nine operations and fifteen reference entries, fourteen then marked step_detail. Those counts describe that change before the Bootstrap failure-state detail was added; they are not the current registry totals. [28]
 
-- The earlier audience-selection account records unchanged routing vocabulary, applicability, role order and role/operation composition order at that change. [29]
+
+- Adds audience selection to all nine operations and marks fifteen of the twenty-one reference entries `step_detail`. [29]
+
 
 - The earlier audience-selection account retains its recorded fifteen reference entries and fourteen marked step_detail; those are historical change counts. [30]
 

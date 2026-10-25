@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/cli/developer_message_files.py",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
@@ -170,8 +171,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "86947944f54b6b0791bb41a6fb5035f041075466",
-            "content": "sha256:ac696de528b175aa5abde3035bcbb94c03cb496c72d04810a3d4982b6e639355",
+            "blob": "ac827458f27200ce6218cfa709586ce7030bae64",
+            "content": "sha256:d0f390d49f4191f336a0241aeed5a4c228976dfd74e7b56f91cd1594ef1d4242",
             "locator": {
               "end": 93,
               "kind": "line_range",

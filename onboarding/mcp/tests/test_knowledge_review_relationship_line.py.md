@@ -28,10 +28,23 @@ No Domain Documentation source is configured for this slice.
 
 ### Repo-Internal References
 
-- `test_two_further_revisions_that_record_relationships_are_a_retraction_and_never_denied` supplies the current fixture or assertion described above. [11]
-- `test_two_unpaired_rows_are_two_absences_and_never_a_unique_head` supplies the current fixture or assertion described above. [12]
-- `test_a_further_revision_outside_the_union_states_only_what_was_read` supplies the current fixture or assertion described above. [13]
-- `test_a_relationship_at_a_further_revision_outside_the_union_is_not_displayed` supplies the current fixture or assertion described above. [14]
+
+- `test_two_further_revisions_that_record_relationships_are_a_retraction_and_never_denied` builds the split-with-relationships fixture and asserts the withdrawn association’s retraction beside no sentence denying a displayed relationship. [11]
+
+
+- `test_two_unpaired_rows_are_two_absences_and_never_a_unique_head` asserts no movement for the withdrawn address and no statement claiming a uniquely established head. [12]
+
+
+- `test_a_relationship_at_a_further_revision_outside_the_union_is_not_displayed` builds the intermediate-descendant fixture and asserts the withdrawn claim displays nowhere while its retraction keeps the identity. [13]
+
+
+- `test_a_membership_recorded_again_under_another_family_revision_is_a_retraction` builds the family-head membership fixture and asserts the withdrawn side displays alone as a retraction with no sibling row named for it. [14]
+
+
 - `test_a_membership_recorded_again_under_another_family_revision_is_a_retraction` supplies the current fixture or assertion described above. [15]
+
+
 - Fixture construction imports test-only row constructors; it does not call the retired canonical writer. [16]
+
+
 - RowStore writes text-tree fixture rows without the retired production admission plane. [17]

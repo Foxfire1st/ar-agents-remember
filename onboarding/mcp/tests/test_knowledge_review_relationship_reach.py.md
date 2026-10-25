@@ -31,12 +31,27 @@ No Domain Documentation source is configured for this slice.
 
 ### Repo-Internal References
 
+
 - `test_a_member_identities_moved_realization_is_a_retraction_with_no_read_continuation` supplies the current fixture or assertion described above. [10]
+
 - `test_a_member_line_with_two_unpaired_revisions_is_a_retraction_and_never_denied` supplies the current fixture or assertion described above. [11]
-- `test_a_withdrawal_never_denies_a_relationship_the_same_payload_displays` supplies the current fixture or assertion described above. [12]
+
+- `test_a_row_at_a_matching_address_with_no_recorded_relation_is_only_an_addition` supplies the current fixture or assertion described above. [12]
+
+
 - `test_a_family_revision_that_keeps_its_members_displays_each_membership_once` supplies the current fixture or assertion described above. [13]
+
+
 - `test_every_two_sided_movement_names_the_recorded_row_it_was_paired_on` supplies the current fixture or assertion described above. [14]
+
+
 - `test_a_row_at_a_matching_address_with_no_recorded_relation_is_only_an_addition` supplies the current fixture or assertion described above. [15]
-- `test_the_rename_inference_separates_a_measured_absence_from_a_measurement_never_made` supplies the current fixture or assertion described above. [16]
-- Fixture construction imports test-only row constructors; it does not call the retired canonical writer. [17]
-- RowStore writes text-tree fixture rows without the retired production admission plane. [18]
+
+
+- The fixture that withdraws a member identity's realization with no continuation the union can read, and the candidate-only paths the cases author. [16]
+
+
+- **The ruling measured: a member identity's withdrawn realization is a retraction stating what it searched, and the moved-to address outside the reviewed union is not displayed as a movement.** [17]
+
+
+- **The two-unpaired-revisions line stated as a retraction with its reason, and never a denial.** [18]

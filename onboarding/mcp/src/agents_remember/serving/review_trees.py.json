@@ -121,15 +121,14 @@
       ]
     },
     "15": {
-      "note": "A tree read answers in under a second while the default executor is full.",
+      "note": "A tree read answers in under a second while the default executor is full.\n\nAnchor: `test_a_busy_default_executor_cannot_delay_a_tree_read`",
       "targets": [
         {
           "anchor": {
-            "blob": "fc2f318d24af7c5975edd95387985683c84e9a7d",
-            "content": "sha256:20dc6b3df66ec1d9e7ac98996c7191cd23684b8942a209bcd98ebf4ca8ae51f8",
+            "blob": "27133970f3efd75083fdda0b036762cfe19db511",
+            "content": "sha256:0d5dcf1893f5dd43166d599a4319981049775a685e6d32beb6c990ad5663ab30",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_busy_default_executor_cannot_delay_a_tree_read"
+              "kind": "file"
             },
             "path": "mcp/tests/test_reviewer_worklist_process.py"
           },
@@ -138,15 +137,14 @@
       ]
     },
     "16": {
-      "note": "A client disconnect and a shutdown each stop the child and its Git process through the real route.",
+      "note": "A client disconnect and a shutdown each stop the child and its Git process through the real route.\n\nAnchor: `_route_stop`",
       "targets": [
         {
           "anchor": {
-            "blob": "fc2f318d24af7c5975edd95387985683c84e9a7d",
-            "content": "sha256:87651b0c5d54d6b6d81b42262cb5c8a0b29dc82b97f9a9d2ec90bfba7eeeb25f",
+            "blob": "27133970f3efd75083fdda0b036762cfe19db511",
+            "content": "sha256:0d5dcf1893f5dd43166d599a4319981049775a685e6d32beb6c990ad5663ab30",
             "locator": {
-              "kind": "symbol",
-              "name": "_route_stop"
+              "kind": "file"
             },
             "path": "mcp/tests/test_reviewer_worklist_process.py"
           },
@@ -155,15 +153,14 @@
       ]
     },
     "17": {
-      "note": "The deadline runs from the request's arrival, so work before the child spends it.",
+      "note": "The deadline runs from the request's arrival, so work before the child spends it.\n\nAnchor: `test_the_requests_deadline_runs_from_its_arrival_and_the_child_gets_what_is_left`",
       "targets": [
         {
           "anchor": {
-            "blob": "fc2f318d24af7c5975edd95387985683c84e9a7d",
-            "content": "sha256:1a535b3acb3d59ec92e0b87b2f9c66f51d1bf1287975fea0c00060269972a0b4",
+            "blob": "27133970f3efd75083fdda0b036762cfe19db511",
+            "content": "sha256:0d5dcf1893f5dd43166d599a4319981049775a685e6d32beb6c990ad5663ab30",
             "locator": {
-              "kind": "symbol",
-              "name": "test_the_requests_deadline_runs_from_its_arrival_and_the_child_gets_what_is_left"
+              "kind": "file"
             },
             "path": "mcp/tests/test_reviewer_worklist_process.py"
           },
@@ -193,8 +190,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bbe110e4539f26ac9b00924e646363fd5b16e48d",
-            "content": "sha256:cdda17b30683bb6f72303a361aeabde6eb90efd61187a7df1f9ed4cfcffdc8f8",
+            "blob": "d01fab7c887ce5127ca0f3677f82eca9ec27053b",
+            "content": "sha256:a4921aa4a86e456fb0346bbc4c48706628f19c04f34e6863ca9d2724b53fbde5",
             "locator": {
               "end": 14,
               "kind": "line_range",

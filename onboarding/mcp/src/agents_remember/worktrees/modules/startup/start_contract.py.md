@@ -18,8 +18,12 @@ memory bases, validates the requested leaf ref, and returns a request-scoped `St
 `ensure_master_series_contract` remains the one bootstrap/planning owner: planning observes canonical topology, source/ref and journal facts without publication, while actual apply keeps its per-master transaction and exact current activation/source revalidation. Only actual implementation exposure requires reconciled active authority; an admitted preview does not claim activity.
 
 
-- The existing builder returns a leaf plus its same-request preview-only parent. [18]
-- The public start-side adapter preserves existing typed refusals. [19]
+
+> Retained earlier citation wording: - The existing builder returns a leaf plus its same-request preview-only parent. [18]
+
+
+> Retained earlier citation wording: - The public start-side adapter preserves existing typed refusals. [19]
+
 
 ## Code Commentary
 
@@ -205,20 +209,40 @@ No Domain Documentation source is configured for this memory root.
 - The facade forwards the operation label; preflight and second-read admission refusals use it in the extracted owner. [23]
 - The activation docstring and non-nesting comment now reside with the actual implementation. [24]
 
-- Master bootstrap separates durable contract creation from that contract's own disposable activation selection: it publishes that contract's own activation as reconciling without touching another master's record, then syncs the pinned source pair and reconciles it active before returning implementation authority. [1]
+
+> Retained earlier citation wording: - Master bootstrap separates durable contract creation from that contract's own disposable activation selection: it publishes that contract's own activation as reconciling without touching another master's record, then syncs the pinned source pair and reconciles it active before returning implementation authority. [1]
+
 - The admission error type gives persisted master-edge mismatches a typed, contract-bound payload before branch-protection projection. [2]
-- The start preflight projects a persisted master-edge refusal before protected-surface calculation. [3]
-- The start builder performs the pre-protected-surface admission check and returns its refusal result. [4]
-- The parent-series builder that no longer short-circuits on a command result and no longer re-checks a child-admission seal: it returns the series `ensure_master_series_contract` produced. [5]
-- The leaf-admission operation label that survives the seal removal and still names the caller's operation inside the master-series admission refusals. [6]
+
+> Retained earlier citation wording: - The start preflight projects a persisted master-edge refusal before protected-surface calculation. [3]
+
+
+> Retained earlier citation wording: - The start builder performs the pre-protected-surface admission check and returns its refusal result. [4]
+
+
+> Retained earlier citation wording: - The parent-series builder that no longer short-circuits on a command result and no longer re-checks a child-admission seal: it returns the series `ensure_master_series_contract` produced. [5]
+
+
+> Retained earlier citation wording: - The leaf-admission operation label that survives the seal removal and still names the caller's operation inside the master-series admission refusals. [6]
+
 - The end-to-end playthrough that proves a leaf commanded after a checkpoint landing still starts. [7]
+
 - Selection fetches evidence outside integration authority, re-reads the exact contract under authority, and delegates reconciliation; the focused transaction keeps the selected series reconciling until the exact current source pair is proven before active exposure. [8]
+
 - Shared leaf-ref validation and candidate reporting. [9]
 - Start-side conversion from leaf-ref resolution errors and contract-construction errors into command results. [10]
-- The start operation returns through `start_result`. [11]
-- start_result consumes StartContractPlan before existing-contract handling, preflight and enclosure planning, forwarding its preview parent only through the explicit dry-run request. [12]
-- The start operation creates its enclosure through `_create_start_enclosure`. [13]
-- `_task_vocabulary` and `validate_contract` are distinct sources of `ContractError`. [14]
+
+> Retained earlier citation wording: - The start operation returns through `start_result`. [11]
+
+
+> Retained earlier citation wording: - start_result consumes StartContractPlan before existing-contract handling, preflight and enclosure planning, forwarding its preview parent only through the explicit dry-run request. [12]
+
+
+> Retained earlier citation wording: - The start operation creates its enclosure through `_create_start_enclosure`. [13]
+
+
+> Retained earlier citation wording: - `_task_vocabulary` and `validate_contract` are distinct sources of `ContractError`. [14]
+
 
 ### Cross-Repo References
 
@@ -240,7 +264,9 @@ The current source seams include `memory_base_for_source`, `memory_mode_for_repo
 ### Reconciled Source Evidence
 
 - The current module exposes the source-branch memory base helper at this ownership boundary. [15]
+
 - The startup admission module owns memory-mode selection for a code/memory pair. [16]
+
 - The current module defines the strict master-series contract specification. [17]
 
 ## 260831-LOCR-L36 Contract-Keyed Activation (Source Wording Now Corrected)
@@ -264,7 +290,9 @@ Read the extracted owner's docstring and lock boundary for that mechanism; the f
 the same spec, dry-run, activation arguments and operation label without a second implementation.
 
 
-- Parent/source assertions are validated read-only before actual bootstrap; apply still re-resolves durable authority. [20]
+
+> Retained earlier citation wording: - Parent/source assertions are validated read-only before actual bootstrap; apply still re-resolves durable authority. [20]
+
 
 - The facade carries the exact spec and arguments to the extracted activation owner. [21]
 - The extracted owner retains bootstrap locking, outside-authority fetch and exact activation reconciliation. [22]
@@ -272,3 +300,38 @@ the same spec, dry-run, activation arguments and operation label without a secon
 ## 260928-MIK-L198 — Series bootstrap publishes and recovers a recorded generation
 
 `_finish_master_series_bootstrap` applies `outside_scratch.with_root_record(contract)` before the retry comparison and before `publish_new_lifecycle_operation_location` writes the contract text, so the series contract this publication pins records the generation's root. The record goes on before the comparison because a retry finds the contract this same publication already wrote, and the retry must keep that published record instead of computing a second identity whose root would be a second directory. `_recover_master_series_bootstrap` accepts a contract file that equals either the bare rebuild or that rebuild with the record applied, and returns the on-disk contract, so an interruption between the publication and the journal's retirement neither refuses the retry's own work nor loses the root. `with_root_record` reuses the record the enclosure's published manifest already holds, so a bootstrap retry names the same root. The publication the bootstrap already performs then creates the directory, because `publish_new_lifecycle_operation_location` runs the materialisation step owned by `lifecycle_operation_location.py`.
+
+- Master bootstrap separates durable contract creation from that contract's own disposable activation selection: it publishes that contract's own activation as reconciling without touching another master's record, then syncs the pinned source pair and reconciles it active before returning implementation authority.  Anchor: `ensure_master_series_contract` [1]
+
+
+- The start operation returns through `start_result`.  Anchor: `start_result` [11]
+
+
+- start_result consumes StartContractPlan before existing-contract handling, preflight and enclosure planning, forwarding its preview parent only through the explicit dry-run request.  Anchor: `start_result` [12]
+
+
+- The start operation creates its enclosure through `_create_start_enclosure`. [13]
+
+
+- `_task_vocabulary` and `validate_contract` are distinct sources of `ContractError`.  Anchor: `_task_vocabulary` `validate_contract` [14]
+
+
+- The existing builder returns a leaf plus its same-request preview-only parent.  Anchor: `_build_start_contract` [18]
+
+
+- The public start-side adapter preserves existing typed refusals.  Anchor: `build_start_contract` [19]
+
+
+- Parent/source assertions are validated read-only before actual bootstrap; apply still re-resolves durable authority. [20]
+
+
+- The start preflight projects a persisted master-edge refusal before protected-surface calculation.  Anchor: `_existing_master_series_admission_refusal` [3]
+
+
+- The start builder performs the pre-protected-surface admission check and returns its refusal result.  Anchor: `_build_start_contract` [4]
+
+
+- The parent-series builder that no longer short-circuits on a command result and no longer re-checks a child-admission seal: it returns the series `ensure_master_series_contract` produced.  Anchor: `_parent_series_contract` [5]
+
+
+- The leaf-admission operation label that survives the seal removal and still names the caller's operation inside the master-series admission refusals. [6]

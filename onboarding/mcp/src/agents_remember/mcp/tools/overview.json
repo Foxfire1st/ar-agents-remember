@@ -1,5 +1,7 @@
 {
-  "path": "mcp/src/agents_remember/mcp/tools",
+  "path": "mcp/src/agents_remember/mcp/tools/overview",
+  "proves": [],
+  "realizes": [],
   "references": {
     "1": {
       "note": "The named refusal of a root with no code tree.",
@@ -127,11 +129,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8c2e4699aae0165b9cf73eb87c8893483de2c903",
-            "content": "sha256:5e15c91b59b90db38d3db51fbe86a1dcff207b43893ad43aabd56cf3e6e099e3",
+            "blob": "ca5af906298a90f3101a98a5542005e3549b3c0a",
+            "content": "sha256:e32d72e73c43c68526666e351964e31154f7ccc5f262554de0776dac177d9e07",
             "locator": {
               "kind": "symbol",
-              "name": "INTERNAL_COMPAT_TOOL_NAMES"
+              "name": "TOOL_RESPONSE_MODELS"
             },
             "path": "mcp/src/agents_remember/models/tools/tool_registry.py"
           },
@@ -144,12 +146,25 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4bfc02956d94b6b490c6ccdcd5a93694127f5cca",
+            "blob": "d0b0ddd9f150e32116b430ecc74907fcf68fee97",
+            "content": "sha256:480b7a1f00361820d82a54d1db20d87b6b2305d43f27c39c57bfaafa053b01de",
+            "locator": {
+              "end": 51,
+              "kind": "line_range",
+              "start": 50
+            },
+            "path": "mcp/src/agents_remember/models/tools/public_roster.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d0b0ddd9f150e32116b430ecc74907fcf68fee97",
             "content": "sha256:bbb5cca63d43ead2e0f1ad32f19424df622d951e01b873c11f562c947aadb02e",
             "locator": {
-              "end": 49,
+              "end": 50,
               "kind": "line_range",
-              "start": 48
+              "start": 49
             },
             "path": "mcp/src/agents_remember/models/tools/public_roster.py"
           },
@@ -162,12 +177,25 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4bfc02956d94b6b490c6ccdcd5a93694127f5cca",
+            "blob": "d0b0ddd9f150e32116b430ecc74907fcf68fee97",
+            "content": "sha256:7cdcc1b122de88ac087d497c67adfa8e2eb7232bbf20655c5ab2a6688281f379",
+            "locator": {
+              "end": 44,
+              "kind": "line_range",
+              "start": 44
+            },
+            "path": "mcp/src/agents_remember/models/tools/public_roster.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d0b0ddd9f150e32116b430ecc74907fcf68fee97",
             "content": "sha256:5261f1bd25d426960cb7aa279d69e4f5cc4b5c82d338d617a3e656c5c5cb5b35",
             "locator": {
-              "end": 42,
+              "end": 43,
               "kind": "line_range",
-              "start": 42
+              "start": 43
             },
             "path": "mcp/src/agents_remember/models/tools/public_roster.py"
           },
@@ -328,23 +356,6 @@
         }
       ]
     },
-    "29": {
-      "note": "The declarations that call these builders, which pass no corpus override to the wire surface.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "6047b268d9f925ebce5535a63f38066cf908c1e9",
-            "content": "sha256:377ac80ba8a0470d8eda5c6052fa12f6cf74f6b6a6b3eac8faae8311655853e7",
-            "locator": {
-              "kind": "symbol",
-              "name": "_register_skill_tools"
-            },
-            "path": "mcp/src/agents_remember/mcp/registration/capsule_serving.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "3": {
       "note": "The leaf response the paged tree read routes to, for a path or (since MIK-R05) a family seed, a path's refusal carrying its route chain.",
       "targets": [
@@ -363,7 +374,7 @@
       ]
     },
     "30": {
-      "note": "The capsule envelope carries its refusal in the same shape as a success.",
+      "note": "**Historical removed-tool evidence, not a current capability:** The capsule envelope carries its refusal in the same shape as a success.",
       "targets": [
         {
           "anchor": {
@@ -447,8 +458,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fd8aafa42294297c2e90284fa42abb308a4dccf1",
-            "content": "sha256:c347b6b2c29013f3b294b5d0bbb363465354349cd3d315a5dd6b3c13ce920ed0",
+            "blob": "c608555cc3f6361621affb9e5e66d35c57c9aa0e",
+            "content": "sha256:1f1d2a161696fa7391af75c24f05e4fa9a17fdd1d8dd85d2a89857a5d03e9be8",
             "locator": {
               "kind": "symbol",
               "name": "_memory_tree_refusal"
@@ -484,48 +495,18 @@
       ]
     },
     "37": {
-      "note": "Current imported source owns this scoped route boundary.",
+      "note": "Role-agent MCP payload builders delegate start and message calls to the Paseo role tools while retaining the addressed role in the tool-event context.",
       "targets": [
         {
           "anchor": {
-            "blob": "6908e5a27d9359eeb17e607a2914048d3eb25274",
-            "content": "sha256:0b438fe5cb113d6ed0bcba3855c028168503029c5cead9856e635dbd4b2a7482",
+            "blob": "06312961eb1a285e4dc69292d9973c71884c5620",
+            "content": "sha256:f04f3bcfef33ce2989869f2f74b26f2e8bc758cf031268feb46ee9ed8435f9ef",
             "locator": {
-              "kind": "file"
+              "end": 60,
+              "kind": "line_range",
+              "start": 25
             },
             "path": "mcp/src/agents_remember/mcp/tools/role_agents.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "38": {
-      "note": "Current imported source owns this scoped route boundary.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "6b123c608ce155f50f62249a98196f1b0e80ed08",
-            "content": "sha256:33a7112467f0720462329fcd72b5b7cf94fc062499c3a8a146aca89e054bb04d",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "mcp/src/agents_remember/mcp/tools/core.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "39": {
-      "note": "Current imported source owns this scoped route boundary.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "3071bf4d172c84e9e2a65a0bf098f2ba952da17a",
-            "content": "sha256:e1ab75b77ea5ce34fbb5cb6f810f4430df3e5507d340870a2dd26a88fd322729",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "mcp/src/agents_remember/mcp/tools/read_files.py"
           },
           "kind": "code"
         }
@@ -549,28 +530,24 @@
         {
           "anchor": {
             "blob": "c608555cc3f6361621affb9e5e66d35c57c9aa0e",
+            "content": "sha256:3feeecfa210a16362b99aa9bfc3c92908acf8f6d0e82a5e41df1dbd6bc947b96",
+            "locator": {
+              "end": 449,
+              "kind": "line_range",
+              "start": 449
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/knowledge.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c608555cc3f6361621affb9e5e66d35c57c9aa0e",
             "content": "sha256:c48bb9635c8642be4b4779b3bef22ffa4d5061667f23f26a45c4a8864a92488b",
             "locator": {
               "end": 447,
               "kind": "line_range",
               "start": 447
-            },
-            "path": "mcp/src/agents_remember/mcp/tools/knowledge.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "41": {
-      "note": "- The shared selection and its refusal mapping, which since MIK-R01 also refuses a named root with no code tree by name.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "c608555cc3f6361621affb9e5e66d35c57c9aa0e",
-            "content": "sha256:bd46131b34125fbbd1d1d23fa0fd79e29d355329f2e48ee6a4105399cb94ab1c",
-            "locator": {
-              "kind": "symbol",
-              "name": "_selection_refusal"
             },
             "path": "mcp/src/agents_remember/mcp/tools/knowledge.py"
           },
@@ -600,7 +577,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "150a3b8059398aa4ad099a9e9c342e9db7241288",
+            "blob": "e10b32fdbb80d5c5c1e05892e1a33d81a4841c92",
             "content": "sha256:6b4b26958f056bd9d75b59221385af66c0e00a549062651ca9c58d920c856ad0",
             "locator": {
               "kind": "symbol",
@@ -612,7 +589,7 @@
         },
         {
           "anchor": {
-            "blob": "150a3b8059398aa4ad099a9e9c342e9db7241288",
+            "blob": "e10b32fdbb80d5c5c1e05892e1a33d81a4841c92",
             "content": "sha256:be1298f91607ed5f18940f2ac88c6ccee032edc696091d21f4a0541a05e4ee52",
             "locator": {
               "kind": "symbol",
@@ -625,12 +602,12 @@
       ]
     },
     "44": {
-      "note": "Current facade exports the retained pure payload builders, including role-agent start/message, memory, task and worktree operations; removed structural, terminal, gate and inbox adapters are not facade members.\n\nAnchor: lines 10-95",
+      "note": "Current facade exports the retained pure payload builders, including role-agent start/message, memory, task and worktree operations; removed structural, terminal, gate and inbox adapters are not facade members.",
       "targets": [
         {
           "anchor": {
-            "blob": "613577deab76c70a0924657a26734acde57294f0",
-            "content": "sha256:08b426d6b9741f5519f27cffbcba164f484eda21f8e28b25fa59330ccfa4145e",
+            "blob": "0a29daece8de46849bc5b8afc1f6e66a0b6a4f5c",
+            "content": "sha256:c0eb86f6b801a7c0ab2a2e4b7d64784119b0e3b6bfdd13bbda4b0c9bb6c01bca",
             "locator": {
               "end": 95,
               "kind": "line_range",
@@ -643,15 +620,14 @@
       ]
     },
     "45": {
-      "note": "Current single literal PUBLIC_TOOLS contains 42 public names, including the mounted `user_settings_init`, and excludes dispatch_agent; native role, retirement and knowledge vocabulary remains. Source census only, no live advertisement, new CODE grade or MEMORY acceptance. The retained base export is the same roster object.",
+      "note": "Current single literal PUBLIC_TOOLS contains 44 ordinary public names, including mounted `user_settings_init`, `citation_note_revision` and `explainer_control`, and excludes dispatch_agent; native role, retirement and knowledge vocabulary remains. Source census only, no live advertisement, new CODE grade or MEMORY acceptance. The retained base export is the same roster object.\n\nAnchor: `PUBLIC_TOOLS`",
       "targets": [
         {
           "anchor": {
-            "blob": "44df3f0a99fa590ada490ba3e7629b32bd9e30b0",
-            "content": "sha256:ac49c2ae5cf1e0a4df50dd5d828ee1ba26bf2967610ccdb038db943998fa0215",
+            "blob": "d0b0ddd9f150e32116b430ecc74907fcf68fee97",
+            "content": "sha256:fdef15e2ca9d39f66c8570a7147cb894dda16f47c7d3558bb4454e5b4714875f",
             "locator": {
-              "kind": "symbol",
-              "name": "PUBLIC_TOOLS"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/models/tools/public_roster.py"
           },
@@ -660,39 +636,14 @@
       ]
     },
     "46": {
-      "note": "Public registry excludes explicitly retained internal names and includes native retirement and set-start responses.\n\nAnchor: `INTERNAL_COMPAT_TOOL_NAMES`, `TOOL_RESPONSE_MODELS`, `PUBLIC_TOOL_RESPONSE_MODELS`",
+      "note": "One registry, TOOL_RESPONSE_MODELS, maps each public tool name to the response model its payload validates against; no separate public subset or internal-compat exclusion remains.\n\nAnchor: `INTERNAL_COMPAT_TOOL_NAMES` `TOOL_RESPONSE_MODELS` `PUBLIC_TOOL_RESPONSE_MODELS`",
       "targets": [
         {
           "anchor": {
-            "blob": "8c2e4699aae0165b9cf73eb87c8893483de2c903",
-            "content": "sha256:5e15c91b59b90db38d3db51fbe86a1dcff207b43893ad43aabd56cf3e6e099e3",
+            "blob": "ca5af906298a90f3101a98a5542005e3549b3c0a",
+            "content": "sha256:10aa450f5caa463f1fe75eabf3cdf642c485bc41fe35884de37c4765dece2359",
             "locator": {
-              "kind": "symbol",
-              "name": "INTERNAL_COMPAT_TOOL_NAMES"
-            },
-            "path": "mcp/src/agents_remember/models/tools/tool_registry.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "04979be62d9e43e81fabc9c8503cdd958c109214",
-            "content": "sha256:7961cf857a4dcfda690e311e7f9b94b1466c113114eda2ef1611ad880425931f",
-            "locator": {
-              "kind": "symbol",
-              "name": "TOOL_RESPONSE_MODELS"
-            },
-            "path": "mcp/src/agents_remember/models/tools/tool_registry.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "8c2e4699aae0165b9cf73eb87c8893483de2c903",
-            "content": "sha256:b0f056003cfce510855c7b66dfeaeebebcd86c393fee53b96f267dea414e1223",
-            "locator": {
-              "kind": "symbol",
-              "name": "PUBLIC_TOOL_RESPONSE_MODELS"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/models/tools/tool_registry.py"
           },
@@ -701,7 +652,7 @@
       ]
     },
     "47": {
-      "note": "Whole-result validation precedes supplied/default answer selection, logging and final guards.\n\nAnchor: `_write_delivered_line`, `complete_tool_response`",
+      "note": "**Retained historical source account — superseded by the current route account:** Whole-result validation precedes supplied/default answer selection, logging and final guards.\n\nAnchor: `_write_delivered_line`, `complete_tool_response`",
       "targets": [
         {
           "anchor": {
@@ -730,7 +681,7 @@
       ]
     },
     "48": {
-      "note": "Guidance uses exact response address and enrichment precedes serialization\n\nAnchor: Address predicate and tail; model finalizer",
+      "note": "**Retained historical source account — superseded by the current route account:** Guidance uses exact response address and enrichment precedes serialization\n\nAnchor: Address predicate and tail; model finalizer",
       "targets": [
         {
           "anchor": {
@@ -761,7 +712,7 @@
       ]
     },
     "49": {
-      "note": "Server info reports binding/build rather than roster; context reader is scoped\n\nAnchor: Core builders",
+      "note": "**Retained historical source account — superseded by the current route account:** Server info reports binding/build rather than roster; context reader is scoped\n\nAnchor: Core builders",
       "targets": [
         {
           "anchor": {
@@ -796,7 +747,7 @@
       ]
     },
     "50": {
-      "note": "Adoption is explicit, confined and preview-identity approved\n\nAnchor: Adoption request and apply boundary",
+      "note": "**Retained historical source account — superseded by the current route account:** Adoption is explicit, confined and preview-identity approved\n\nAnchor: Adoption request and apply boundary",
       "targets": [
         {
           "anchor": {
@@ -814,7 +765,7 @@
       ]
     },
     "52": {
-      "note": "Single-role adapters scope target-role observation; set starts have no single target role; the caller owner requires actual binding and runtime.\n\nAnchor: `role_start_set_payload`, `role_start_payload`, `role_message_payload`, `_caller`",
+      "note": "**Retained historical source account — superseded by the current route account:** Single-role adapters scope target-role observation; set starts have no single target role; the caller owner requires actual binding and runtime.\n\nAnchor: `role_start_set_payload`, `role_start_payload`, `role_message_payload`, `_caller`",
       "targets": [
         {
           "anchor": {
@@ -867,7 +818,7 @@
       ]
     },
     "53": {
-      "note": "Knowledge selection and paging replace database-facing requests.\n\nAnchor: `ReadToolRequest`, `_memory_tree_refusal`, `_select`, `_source_resolution`, `_read_result`, `_tree_extras`",
+      "note": "**Retained historical source account — superseded by the current route account:** Knowledge selection and paging replace database-facing requests.\n\nAnchor: `ReadToolRequest`, `_memory_tree_refusal`, `_select`, `_source_resolution`, `_read_result`, `_tree_extras`",
       "targets": [
         {
           "anchor": {
@@ -883,8 +834,8 @@
         },
         {
           "anchor": {
-            "blob": "fd8aafa42294297c2e90284fa42abb308a4dccf1",
-            "content": "sha256:c347b6b2c29013f3b294b5d0bbb363465354349cd3d315a5dd6b3c13ce920ed0",
+            "blob": "c608555cc3f6361621affb9e5e66d35c57c9aa0e",
+            "content": "sha256:1f1d2a161696fa7391af75c24f05e4fa9a17fdd1d8dd85d2a89857a5d03e9be8",
             "locator": {
               "kind": "symbol",
               "name": "_memory_tree_refusal"
@@ -944,7 +895,7 @@
       ]
     },
     "54": {
-      "note": "Fresh and resumed walks retain explicit tree binding and incomplete-index facts\n\nAnchor: Pager and leaf/refusal renderers",
+      "note": "**Retained historical source account — superseded by the current route account:** Fresh and resumed walks retain explicit tree binding and incomplete-index facts\n\nAnchor: Pager and leaf/refusal renderers",
       "targets": [
         {
           "anchor": {
@@ -975,7 +926,7 @@
       ]
     },
     "55": {
-      "note": "Integrity validates paired roots, retains all whole-result findings and bounds the delivered violation list without losing counts.\n\nAnchor: `IntegrityCheckRequest`, `knowledge_integrity_check_payload`, `_integrity_answer`, `_validator_inputs`, `_validation_block`",
+      "note": "**Retained historical source account — superseded by the current route account:** Integrity validates paired roots, retains all whole-result findings and bounds the delivered violation list without losing counts.\n\nAnchor: `IntegrityCheckRequest`, `knowledge_integrity_check_payload`, `_integrity_answer`, `_validator_inputs`, `_validation_block`",
       "targets": [
         {
           "anchor": {
@@ -1015,8 +966,8 @@
         },
         {
           "anchor": {
-            "blob": "fd8aafa42294297c2e90284fa42abb308a4dccf1",
-            "content": "sha256:ade4d88dbeade42a730c3787f2307238b6fd70d73f74f74ef757c32d8bf8be22",
+            "blob": "c608555cc3f6361621affb9e5e66d35c57c9aa0e",
+            "content": "sha256:4f6b2140500cb3c8df6d9664efc29d6bd17ac62c5bd1545d89a5122189c31cf2",
             "locator": {
               "kind": "symbol",
               "name": "_validator_inputs"
@@ -1040,11 +991,11 @@
       ]
     },
     "56": {
-      "note": "Citation repair projects selected actionable lists; the retained 50-entry helper is not called by the builder.\n\nAnchor: `citation_fix_payload`, `_citation_fix_answer`, `_bounded_lists`, `_bounded_citation_fix`",
+      "note": "**Retained historical source account — superseded by the current route account:** Citation repair projects selected actionable lists; the retained 50-entry helper is not called by the builder.\n\nAnchor: `citation_fix_payload`, `_citation_fix_answer`, `_bounded_lists`, `_bounded_citation_fix`",
       "targets": [
         {
           "anchor": {
-            "blob": "150a3b8059398aa4ad099a9e9c342e9db7241288",
+            "blob": "e10b32fdbb80d5c5c1e05892e1a33d81a4841c92",
             "content": "sha256:be1298f91607ed5f18940f2ac88c6ccee032edc696091d21f4a0541a05e4ee52",
             "locator": {
               "kind": "symbol",
@@ -1056,7 +1007,7 @@
         },
         {
           "anchor": {
-            "blob": "150a3b8059398aa4ad099a9e9c342e9db7241288",
+            "blob": "e10b32fdbb80d5c5c1e05892e1a33d81a4841c92",
             "content": "sha256:6b4b26958f056bd9d75b59221385af66c0e00a549062651ca9c58d920c856ad0",
             "locator": {
               "kind": "symbol",
@@ -1068,7 +1019,7 @@
         },
         {
           "anchor": {
-            "blob": "150a3b8059398aa4ad099a9e9c342e9db7241288",
+            "blob": "e10b32fdbb80d5c5c1e05892e1a33d81a4841c92",
             "content": "sha256:7c44d946957d2476123e216465be3f31715a16cb1db44b9338824fa83ce2b312",
             "locator": {
               "kind": "symbol",
@@ -1080,7 +1031,7 @@
         },
         {
           "anchor": {
-            "blob": "150a3b8059398aa4ad099a9e9c342e9db7241288",
+            "blob": "e10b32fdbb80d5c5c1e05892e1a33d81a4841c92",
             "content": "sha256:7420d85006f92b21848cdf6aa2fd7ec7c19dde6640d4e4774e4a7c7be194c09e",
             "locator": {
               "kind": "symbol",
@@ -1093,7 +1044,7 @@
       ]
     },
     "59": {
-      "note": "Skill registrar serves resources/extension methods without tools\n\nAnchor: Registrar",
+      "note": "**Retained historical source account — superseded by the current route account:** Skill registrar serves resources/extension methods without tools\n\nAnchor: Registrar",
       "targets": [
         {
           "anchor": {
@@ -1141,12 +1092,12 @@
       ]
     },
     "60": {
-      "note": "The current model-owned public roster has42 names. The payload facade still delegates typed requests and whole-result completion rather than becoming policy authority. role_start_payload and role_message_payload keep the addressed target-role context through _tool_payload completion and reset it in finally, with held projections supplied explicitly. This fixes message observer context without changing id resolution, target-role arguments, sender receipt custody or registration ownership.",
+      "note": "The L111 predecessor model-owned public roster had41 after resolve_context removal; the current ordinary source has 44 (including mounted user_settings_init, citation_note_revision and explainer_control; the earlier 42-name epoch is historical). The payload facade still delegates typed requests and whole-result completion rather than becoming policy authority. role_start_payload and role_message_payload keep the addressed target-role context through _tool_payload completion and reset it in finally, with held projections supplied explicitly. This fixes message observer context without changing id resolution, target-role arguments, sender receipt custody or registration ownership.",
       "targets": [
         {
           "anchor": {
-            "blob": "44df3f0a99fa590ada490ba3e7629b32bd9e30b0",
-            "content": "sha256:df4e3da6e3d5b67023b5f5dcbba937d93c8aa8714beba6e7c0f21dbfbde9ef7e",
+            "blob": "d0b0ddd9f150e32116b430ecc74907fcf68fee97",
+            "content": "sha256:fdef15e2ca9d39f66c8570a7147cb894dda16f47c7d3558bb4454e5b4714875f",
             "locator": {
               "kind": "file"
             },
@@ -1156,8 +1107,8 @@
         },
         {
           "anchor": {
-            "blob": "6908e5a27d9359eeb17e607a2914048d3eb25274",
-            "content": "sha256:0b438fe5cb113d6ed0bcba3855c028168503029c5cead9856e635dbd4b2a7482",
+            "blob": "06312961eb1a285e4dc69292d9973c71884c5620",
+            "content": "sha256:0610f236b6dad84e694809f783d6ea749db5f1b7846827f58fe0bc640279e028",
             "locator": {
               "kind": "file"
             },
@@ -1168,12 +1119,23 @@
       ]
     },
     "61": {
-      "note": "The settings payload that answers a refusal instead of raising it.",
+      "note": "The settings payload that answers a refusal instead of raising it.\n\nAnchor: `user_settings_init_payload`",
       "targets": [
         {
           "anchor": {
-            "blob": "6908e5a27d9359eeb17e607a2914048d3eb25274",
-            "content": "sha256:aded4265d4497a5281f46fd1aa689a6bd735b6735656ef582975747eeab7dba1",
+            "blob": "06312961eb1a285e4dc69292d9973c71884c5620",
+            "content": "sha256:0610f236b6dad84e694809f783d6ea749db5f1b7846827f58fe0bc640279e028",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/role_agents.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "06312961eb1a285e4dc69292d9973c71884c5620",
+            "content": "sha256:8c4d848acba2ae83de73d85662dde488f228b8d30d1f766c55bd83e1978e1ddf",
             "locator": {
               "kind": "symbol",
               "name": "user_settings_init_payload"
@@ -1202,12 +1164,12 @@
       ]
     },
     "63": {
-      "note": "Current ordinary model roster has 43 names, ten ordered registrars include explainer control, and the facade exports its DTO/builder; the explainer-bound surface remains separate.",
+      "note": "Current ordinary model roster has 44 names, including citation_note_revision, ten ordered registrars include explainer control, and the facade exports its DTO/builder; the explainer-bound surface remains separate.",
       "targets": [
         {
           "anchor": {
-            "blob": "4bfc02956d94b6b490c6ccdcd5a93694127f5cca",
-            "content": "sha256:13d1cecbfa436c465d32b52131c227d7c6ca23396dbef1096e35df37ec54608d",
+            "blob": "d0b0ddd9f150e32116b430ecc74907fcf68fee97",
+            "content": "sha256:77300d3d8d990814a8c85c25a0c314254dde308fd394c4a03ff87c1fd34e2cb3",
             "locator": {
               "kind": "symbol",
               "name": "PUBLIC_TOOLS"
@@ -1230,8 +1192,8 @@
         },
         {
           "anchor": {
-            "blob": "0fa31000c046f2f804084d4f0b4088c89e71cea9",
-            "content": "sha256:eac0c089b3aaaebbdeeae9cf169dc1211e05555373b1f3430b5fc6365e5bed66",
+            "blob": "0a29daece8de46849bc5b8afc1f6e66a0b6a4f5c",
+            "content": "sha256:55e8b1fb6a433c140a0369bc4b22f83a7aac05c4a4d35af946e31d4d2f430702",
             "locator": {
               "kind": "file"
             },
@@ -1282,6 +1244,45 @@
         {
           "anchor": {
             "blob": "c608555cc3f6361621affb9e5e66d35c57c9aa0e",
+            "content": "sha256:7111592926d337dbb6f372cc110a6365fb68c6f1a7bbbc8540c466ec8430a659",
+            "locator": {
+              "end": 648,
+              "kind": "line_range",
+              "start": 639
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/knowledge.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c608555cc3f6361621affb9e5e66d35c57c9aa0e",
+            "content": "sha256:ac9e36e23014efafd200b4b893b3c121e078a3ecdf24e0cdc78938ffec68df2a",
+            "locator": {
+              "end": 663,
+              "kind": "line_range",
+              "start": 654
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/knowledge.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c608555cc3f6361621affb9e5e66d35c57c9aa0e",
+            "content": "sha256:aa75041cbecbcfc718cdcb7ddab2fc36c64adea561ff4444c4c1619e6683e8ec",
+            "locator": {
+              "end": 682,
+              "kind": "line_range",
+              "start": 673
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/knowledge.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c608555cc3f6361621affb9e5e66d35c57c9aa0e",
             "content": "sha256:bddaf45a7a4a7c6ae575d75cd454d1e461ef76d0eb4066dae8afcb8f2e958955",
             "locator": {
               "end": 646,
@@ -1300,19 +1301,6 @@
               "end": 661,
               "kind": "line_range",
               "start": 652
-            },
-            "path": "mcp/src/agents_remember/mcp/tools/knowledge.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "c608555cc3f6361621affb9e5e66d35c57c9aa0e",
-            "content": "sha256:aa75041cbecbcfc718cdcb7ddab2fc36c64adea561ff4444c4c1619e6683e8ec",
-            "locator": {
-              "end": 682,
-              "kind": "line_range",
-              "start": 673
             },
             "path": "mcp/src/agents_remember/mcp/tools/knowledge.py"
           },
@@ -1355,5 +1343,5 @@
       ]
     }
   },
-  "schema": "ar-onboarding-route/v1"
+  "schema": "ar-onboarding-file/v1"
 }

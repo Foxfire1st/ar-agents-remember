@@ -29,7 +29,7 @@ The model, the reader and the writer of a series contract and of a leaf enclosur
 - Request side refuses removed modes by name [66]
 - Started contracts are always external [67]
 - Write path is external-only by type [68]
-- Read record carries the readable vocabulary [69]
+> Retained earlier citation wording: - Read record carries the readable vocabulary [69]
 - Runtime vocabulary set is external-only [70]
 
 - Healing reports foreign contracts as skipped and unreadable contracts as errors without treating either as a healable enclosure. [71]
@@ -37,3 +37,5 @@ The model, the reader and the writer of a series contract and of a leaf enclosur
 ## 260928-MIK-L198 — The contract records its generation's outside scratch root
 
 `WorktreeContract` carries three additive string fields with a `""` default — `outside_scratch_root`, `outside_scratch_generation` and `outside_scratch_marker_sha256` — and `_contract_from_data` reads them from an `outside_scratch:` section whose cells are `root`, `generation` and `marker_sha256`. `contract_to_text` emits that section through `_outside_scratch_lines`, placed after the `lifecycle:` block and before `memory:`, and only when `outside_scratch_root` is non-empty. A contract written before this change records no root, so the helper returns no lines and a rewrite reproduces its text unchanged, while a parse of that same text yields the three empty defaults. `outside_scratch.recorded_root` in `worktrees/outside_scratch.py` treats a root as recorded only when all three cells are set, so an enclosure without one keeps the handling it had.
+
+- Read record carries the readable vocabulary [69]

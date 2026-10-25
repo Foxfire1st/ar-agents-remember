@@ -41,7 +41,9 @@ The retained source anchors below support the fixture roles and assertion bounda
 - Task scope remains in the workspace river and creates no lifecycle directory. [4]
 - Unbound tool facts use the same workspace log. [5]
 
+
 - Round trip through store. [3]
+
 
 ### Cross-Repo References
 

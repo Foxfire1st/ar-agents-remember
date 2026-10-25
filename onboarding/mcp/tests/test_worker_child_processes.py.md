@@ -46,7 +46,9 @@ No external source is required for the forcing proof.
 
 ### Repo-Internal References
 
+
 - A retained real child exits and has already been reaped by its owner. [1]
+
 - Registry identity is idempotent for one object and safe against PID aliasing or reuse. [2]
 - Linux refuses missing pidfd APIs while non-Linux remains importable. [3]
 

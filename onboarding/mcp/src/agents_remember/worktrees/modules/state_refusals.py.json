@@ -38,15 +38,14 @@
       ]
     },
     "2": {
-      "note": "Terminal conversion is a recognized-message mapping with an unrecognized fallback.",
+      "note": "Terminal conversion is a recognized-message mapping with an unrecognized fallback.\n\nAnchor: `terminal_state_refusal`",
       "targets": [
         {
           "anchor": {
-            "blob": "9290555764aea37db9bc098b15929d2ab4ac4b43",
-            "content": "sha256:5267c5bb9dbfe91158eb7d972b3b48f2326b1a09eb6acf2d95efa8bba750204a",
+            "blob": "a7a08b14c6340768201af155b6a9d5003c0f28b5",
+            "content": "sha256:d07cb3bdcaa085204e1820a1176287d2ad0fff7d3bf0ededbeac809782eacee0",
             "locator": {
-              "kind": "symbol",
-              "name": "terminal_state_refusal"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -54,15 +53,14 @@
       ]
     },
     "3": {
-      "note": "Shared blocker sentences preserve producer fields and add the dirty/unmerged force wording without changing a caller.",
+      "note": "Shared blocker sentences preserve producer fields and add the dirty/unmerged force wording without changing a caller.\n\nAnchor: `_shaped_terminal_blocker`",
       "targets": [
         {
           "anchor": {
-            "blob": "9290555764aea37db9bc098b15929d2ab4ac4b43",
-            "content": "sha256:288c4a9ef75ceeb2a95bc70553137aa9c8446ac64728f64fd1f2a001acefd74d",
+            "blob": "a7a08b14c6340768201af155b6a9d5003c0f28b5",
+            "content": "sha256:d07cb3bdcaa085204e1820a1176287d2ad0fff7d3bf0ededbeac809782eacee0",
             "locator": {
-              "kind": "symbol",
-              "name": "_shaped_terminal_blocker"
+              "kind": "file"
             }
           },
           "kind": "code"

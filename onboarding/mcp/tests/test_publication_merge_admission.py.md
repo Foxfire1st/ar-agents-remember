@@ -20,8 +20,22 @@ The suite proves the admission rule and its refusals over constructed and real o
 
 ### Repo-Internal References
 
+
+
 - The helper builds the admitted shape the rule is tested against. [1]
+
+
+
 - The rule admits the publication merge and keeps the refusal for any other merge. [2]
+
+
+
 - The landing-workflow read is exercised where the admission consumes it. [3]
+
+
+
 - The rule is exercised on real Git objects, not only modeled input. [4]
+
+
+
 - The refusal text a caller sees today is pinned. [5]

@@ -202,9 +202,15 @@ No configured domain documentation could be checked.
 - The declared execution bound itself. [12]
 - **The nodes that measure the packet's `P/I1/F/J1/G/K1` rule, including the explicit `G` expansion that reaches K1.** [13]
 - **The nodes that measure the corrected page counts: a one-item page still advertising the second location, and the union of all pages equalling the declared set.** [14]
+
 - The ordering, truncation, budget, bound and absence nodes. [15]
+
+
 - **The node that kills mutation `R30` — the per-side exact-revision address the override exists for.** [16]
+
+
 - The fixture the policy is measured on, and the one cell decoder a read page and the logical digest share. [17]
+
 
 ### Cross-Repo References
 

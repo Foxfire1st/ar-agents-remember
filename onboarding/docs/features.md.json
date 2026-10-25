@@ -1,10 +1,11 @@
 {
   "path": "docs/features.md",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
-        "blob": "23515cbe90e8edb60491a46e0150db2b2867f7fd",
-        "content": "sha256:7a7aafe9ddac7d3205fbb891947e4d960976018ea7b5c6d60d3ea4e1e27ac6e1",
+        "blob": "63b36c83fdfd0d75126ab6e73a7a3931e340b9ee",
+        "content": "sha256:bd42263a8a45e258f65e1e789c92eb632659ab611625e77ebeecab42eba436e9",
         "locator": {
           "kind": "file"
         }
@@ -15,7 +16,7 @@
         "handoffEntry": "L192-W-R199-12",
         "leaf": "260928-MIK-L192"
       },
-      "rationale": "The feature page's inbound provider caption and its opening provider description are reframed as retired; other provider-stack wording on the same page is that page's own current text and not part of this change.",
+      "rationale": "docs/features.md at C keeps its provider caption and opening description in the retired voice ('both providers are retired', 'its provider is retired, so that route has no engine now'), which is the inbound description the entry asserts.",
       "role": "presentation"
     }
   ],
@@ -25,8 +26,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b26fb76d5eced9e89cafb8d2fe80c3cc9a1ef77b",
-            "content": "sha256:8f9c38491812ac2dd5f1a4c29ce02ea2428112d9f2cd8dd689034093abb69b69",
+            "blob": "63b36c83fdfd0d75126ab6e73a7a3931e340b9ee",
+            "content": "sha256:bd42263a8a45e258f65e1e789c92eb632659ab611625e77ebeecab42eba436e9",
             "locator": {
               "kind": "file"
             }
@@ -40,8 +41,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b26fb76d5eced9e89cafb8d2fe80c3cc9a1ef77b",
-            "content": "sha256:8f9c38491812ac2dd5f1a4c29ce02ea2428112d9f2cd8dd689034093abb69b69",
+            "blob": "63b36c83fdfd0d75126ab6e73a7a3931e340b9ee",
+            "content": "sha256:bd42263a8a45e258f65e1e789c92eb632659ab611625e77ebeecab42eba436e9",
             "locator": {
               "kind": "file"
             }
@@ -55,8 +56,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b26fb76d5eced9e89cafb8d2fe80c3cc9a1ef77b",
-            "content": "sha256:8f9c38491812ac2dd5f1a4c29ce02ea2428112d9f2cd8dd689034093abb69b69",
+            "blob": "63b36c83fdfd0d75126ab6e73a7a3931e340b9ee",
+            "content": "sha256:bd42263a8a45e258f65e1e789c92eb632659ab611625e77ebeecab42eba436e9",
             "locator": {
               "kind": "file"
             }
@@ -70,8 +71,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b26fb76d5eced9e89cafb8d2fe80c3cc9a1ef77b",
-            "content": "sha256:8f9c38491812ac2dd5f1a4c29ce02ea2428112d9f2cd8dd689034093abb69b69",
+            "blob": "63b36c83fdfd0d75126ab6e73a7a3931e340b9ee",
+            "content": "sha256:bd42263a8a45e258f65e1e789c92eb632659ab611625e77ebeecab42eba436e9",
             "locator": {
               "kind": "file"
             }
@@ -85,8 +86,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b26fb76d5eced9e89cafb8d2fe80c3cc9a1ef77b",
-            "content": "sha256:8f9c38491812ac2dd5f1a4c29ce02ea2428112d9f2cd8dd689034093abb69b69",
+            "blob": "63b36c83fdfd0d75126ab6e73a7a3931e340b9ee",
+            "content": "sha256:bd42263a8a45e258f65e1e789c92eb632659ab611625e77ebeecab42eba436e9",
             "locator": {
               "kind": "file"
             }
@@ -100,8 +101,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b26fb76d5eced9e89cafb8d2fe80c3cc9a1ef77b",
-            "content": "sha256:8f9c38491812ac2dd5f1a4c29ce02ea2428112d9f2cd8dd689034093abb69b69",
+            "blob": "63b36c83fdfd0d75126ab6e73a7a3931e340b9ee",
+            "content": "sha256:bd42263a8a45e258f65e1e789c92eb632659ab611625e77ebeecab42eba436e9",
             "locator": {
               "kind": "file"
             }
@@ -115,8 +116,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b26fb76d5eced9e89cafb8d2fe80c3cc9a1ef77b",
-            "content": "sha256:8f9c38491812ac2dd5f1a4c29ce02ea2428112d9f2cd8dd689034093abb69b69",
+            "blob": "63b36c83fdfd0d75126ab6e73a7a3931e340b9ee",
+            "content": "sha256:bd42263a8a45e258f65e1e789c92eb632659ab611625e77ebeecab42eba436e9",
             "locator": {
               "kind": "file"
             }
@@ -130,8 +131,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b26fb76d5eced9e89cafb8d2fe80c3cc9a1ef77b",
-            "content": "sha256:8f9c38491812ac2dd5f1a4c29ce02ea2428112d9f2cd8dd689034093abb69b69",
+            "blob": "63b36c83fdfd0d75126ab6e73a7a3931e340b9ee",
+            "content": "sha256:bd42263a8a45e258f65e1e789c92eb632659ab611625e77ebeecab42eba436e9",
             "locator": {
               "kind": "file"
             }
@@ -145,8 +146,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b26fb76d5eced9e89cafb8d2fe80c3cc9a1ef77b",
-            "content": "sha256:8f9c38491812ac2dd5f1a4c29ce02ea2428112d9f2cd8dd689034093abb69b69",
+            "blob": "63b36c83fdfd0d75126ab6e73a7a3931e340b9ee",
+            "content": "sha256:bd42263a8a45e258f65e1e789c92eb632659ab611625e77ebeecab42eba436e9",
             "locator": {
               "kind": "file"
             }

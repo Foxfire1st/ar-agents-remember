@@ -104,30 +104,30 @@ surface.
 - `context_packet` uses `provider_summary_packet()`, not diagnostics/raw status.
 - `provider_diagnostics` is the detail surface for raw provider state.
 - A skipped provider projection reports aggregate skipped state only; it does
-  not emit per-provider summary rows with unknown or omitted `ok` fields.
+ not emit per-provider summary rows with unknown or omitted `ok` fields.
 - Temporary lifecycle settings come from MCP settings and are deleted after the
-  status read.
+ status read.
 - Provider status is read-only from the MCP caller perspective; setup history
-  belongs in provider setup summary logs.
+ belongs in provider setup summary logs.
 - Dashboard refreshes persist through the current-state writer; ordinary status reads build the
-  same aggregated state with no file behind them (rule 6 admits only runtime caches,
-  recorded-comparison reports/objects/pin, and closeout-preview worklist/reports/judged trees), so the persisted provider contract has
-  one owner and reads file no per-call report.
+ same aggregated state with no file behind them (rule 6 admits only runtime caches,
+ recorded-comparison reports/objects/pin, and closeout-preview worklist/reports/judged trees), so the persisted provider contract has
+ one owner and reads file no per-call report.
 - `noWorkspace` remains a degraded state; status adds restart/rebind guidance
-  rather than treating missing workspaces as acceptable readiness.
+ rather than treating missing workspaces as acceptable readiness.
 - Container liveness alone must never produce global `ok: true`; content-level
-  current-state aggregation gates it too. Running containers over a 0-node
-  graph reported green for three days before this rule existed (2026-06-09
-  incident).
+ current-state aggregation gates it too. Running containers over a 0-node
+ graph reported green for three days before this rule existed (2026-06-09
+ incident).
 - `indexing` is informational, never degrading: a busy target stays `ok` and
-  appears in the busy list, so "wait" and "intervene" remain distinguishable
-  signals.
+ appears in the busy list, so "wait" and "intervene" remain distinguishable
+ signals.
 - The `metrics` block is daemon-sampled and read-only from the status path; it
-  must stay attached even when providers are disabled so leftover container
-  stacks remain observable (containment R4).
+ must stay attached even when providers are disabled so leftover container
+ stacks remain observable (containment R4).
 - Index staleness is a reportable state (260707-HFX-L2): the `indexState`
-  rows surface behind-ness on the status packet; they never gate or degrade
-  the projection's `ok`.
+ rows surface behind-ness on the status packet; they never gate or degrade
+ the projection's `ok`.
 
 ## Evidence
 
@@ -138,7 +138,7 @@ surface.
 
 - Restart/rebind recovery wording is shared with runtime-install recovery reporting. [5]
 - The containment metrics store whose rolling current snapshot rides the status packet (containment R4). [6]
-- Provider status appends restart guidance when projected GrepAI state reports `indexingState: noWorkspace`. [7]
+- Provider status no longer projects GrepAI `indexingState` at all: the retired summary carries no `noWorkspace`, no restart guidance and no recovery action.
 
 | `refresh_current_provider_state` calls the regular provider-status projection and returns the current-state payload for dashboard-owned refreshes. | `refresh_current_provider_state` | mcp/src/agents_remember/providers/status.py:157-167 |
 

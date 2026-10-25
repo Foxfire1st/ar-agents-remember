@@ -104,21 +104,35 @@ No configured live documentation source was available for this pass.
 ### Repo-Internal References
 
 - NUL is rejected explicitly; other non-special spellings are resolved as commit names. [14]
+
 - Git resolves a concrete commit; an unresolved name is invalid-request with guidance. [15]
 
 
+
+
 - The module's own statement of the three spellings and the code-tree rule. [1]
+
 - **Historical reference account; not current evidence:** The recent-commit convenience list remains forty; accepted names include memory commits and branches. (historical reference 2)
 - The named read failures (F11). [3]
 - A refusal, typed and named. [4]
+
 - The opened selection and the block every answer carries: code tree, source, note and pin. [5]
+
+
 
 - Published and leaf spellings dispatch explicitly; other names, including branches, resolve as concrete Git commits. NUL and unresolved names return invalid-request guidance. [6]
 
+
 - A leaf only when an active enclosure has the scope. [7]
+
 - Published and leaf: not-converted first, the captured tree, `HEAD`, the pin when clean. [8]
+
+
 - A commit: the layout marker, the Git-tree index, the paired code tree. [9]
+
+
 - `HEAD` of the checkout, with the leaf note; the `Code-Commit` pairing, or the reason there is none. [10]
+
 - The selector's choices, and a commit list that cannot be read named. [11]
 - Active leaves exclude foreign task-document nonmembers with a named warning before the existing repository and liveness filters. [12]
 - **Historical reference account; not current evidence:** Historical selection controls are retained as prior evidence only; current commit/branch admission is proved by open_selection and _commit_selection, not by a retired hexadecimal-only test name. (historical reference 13)

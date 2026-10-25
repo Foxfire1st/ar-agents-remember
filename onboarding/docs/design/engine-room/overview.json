@@ -2,15 +2,14 @@
   "path": "docs/design/engine-room",
   "references": {
     "1": {
-      "note": "The React engine-room renderer realizes the two-world canvas and lifecycle overlays, but its current official-line and worktree layers retain couplers rather than provider engines.\n\nAnchor: lines 42–88",
+      "note": "The React engine-room renderer realizes the two-world canvas and lifecycle overlays, but its current official-line and worktree layers retain couplers rather than provider engines.\n\nAnchor: `EnclosureCanvas` `OfficialLineLayer` `OfficialCoupler` `WorktreeEngineLayer`",
       "targets": [
         {
           "anchor": {
-            "blob": "e496e2924af2443fe26b4b8712a14c6cadf07d7c",
-            "content": "sha256:0979e5ce335b473ee2c5b90a78896656c2f95fd6c6bd944d087218033bb65053",
+            "blob": "15444872a266d89123558da6eb8909e81fe96665",
+            "content": "sha256:dc5f212cb9ccbe8d35a4d690d984bb4f5b0b8b5f7e72042f1368075db707b271",
             "locator": {
-              "kind": "symbol",
-              "name": "EnclosureCanvas"
+              "kind": "file"
             },
             "path": "dashboard/src/panels/engine-room/EnclosureCanvas.tsx"
           },
@@ -18,35 +17,10 @@
         },
         {
           "anchor": {
-            "blob": "596dec5c6c7c633b293640144a05def6c8ef4578",
-            "content": "sha256:72f2653ca4e8f55fb48cd6a9ff2d15035f61189318ea94cdb1953773945b1805",
+            "blob": "053b605eb77ad20fed2c08ede3c3caabf4fc3cf6",
+            "content": "sha256:c0fbb52ecbcce67e54a21668a623c11b50b1fca334816811ed85b54d0b5533da",
             "locator": {
-              "kind": "symbol",
-              "name": "OfficialLineLayer"
-            },
-            "path": "dashboard/src/panels/engine-room/sceneLayers.tsx"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "596dec5c6c7c633b293640144a05def6c8ef4578",
-            "content": "sha256:05b9fd0d3958c50b0a2f30f8440890b810a1462f1ff2092ed2e19cee77d77e7e",
-            "locator": {
-              "kind": "symbol",
-              "name": "OfficialCoupler"
-            },
-            "path": "dashboard/src/panels/engine-room/sceneLayers.tsx"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "596dec5c6c7c633b293640144a05def6c8ef4578",
-            "content": "sha256:f27b16740429a71245dd5b7f220fda5ecaf5966b1aa7fdcd604ada1d11043766",
-            "locator": {
-              "kind": "symbol",
-              "name": "WorktreeEngineLayer"
+              "kind": "file"
             },
             "path": "dashboard/src/panels/engine-room/sceneLayers.tsx"
           },

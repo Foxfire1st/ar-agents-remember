@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/observer/reducer.py",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
@@ -7,12 +8,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f2e7fe58c2b1df6c0dc6fddecd7cf6177bf4c0e6",
-            "content": "sha256:301ef8d70dd58cfea37fec34be64e52db39dffa54148fef28bedb99d169f90f3",
+            "blob": "fd0cd6ba53b5d874adfcb26807b26ab92e77d56e",
+            "content": "sha256:9d00407991a5ac2ae6112d754bf7c6f06f544820a425de0cb7b78edc726abb74",
             "locator": {
-              "end": 1159,
-              "kind": "line_range",
-              "start": 1137
+              "kind": "symbol",
+              "name": "WorkspaceProjection"
             },
             "path": "mcp/src/agents_remember/observer/projection.py"
           },
@@ -21,15 +21,14 @@
       ]
     },
     "18": {
-      "note": "The facade composes metrics and the narrowed analytical bundle, including closeout queue input, without verification-age rollups. Current counts are task-entry-owned; lifecycle-only counting describes the predecessor, not the current native task fold.",
+      "note": "The facade composes metrics and the narrowed analytical bundle, including closeout queue input, without verification-age rollups. Current counts are task-entry-owned; lifecycle-only counting describes the predecessor, not the current native task fold.\n\nAnchor: `_metrics` `build_analytics` `AnalyticalInputs` `project_workspace`",
       "targets": [
         {
           "anchor": {
-            "blob": "a57241d40018faab0653508e3bee2b113308af12",
-            "content": "sha256:971aac8fab740fef0829ff52b5068a0f8a13ba5611810f706362a35146ea8022",
+            "blob": "dc7a6d1a7b42e9f22d3b82ddcee7e044cd9d7cb5",
+            "content": "sha256:bde726e93efe7ef8244710df716b85856e4098d733522c36dcd6c57f033a528e",
             "locator": {
-              "kind": "symbol",
-              "name": "_metrics"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/observer/reducer_impl/_metrics.py"
           },
@@ -37,23 +36,10 @@
         },
         {
           "anchor": {
-            "blob": "a57241d40018faab0653508e3bee2b113308af12",
-            "content": "sha256:06e642ef9e699c3302d7cfcd7227332256f2ad862f684c07f7534497b59d364a",
+            "blob": "cfd5ccff277b5ad7e7da2e2437b7617b01f6b241",
+            "content": "sha256:50326ead1fca9c4f0127c6ff9373dc2069a48e0393d6289ffdef2f759b3be6bb",
             "locator": {
-              "kind": "symbol",
-              "name": "build_analytics"
-            },
-            "path": "mcp/src/agents_remember/observer/reducer_impl/_metrics.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "a8f22bb60059d2d711a13f582ae6aa5a76f82b1b",
-            "content": "sha256:0a645573f3b00702d56103b9a7d9dc65e893c604b8355f219f6417b96f86e446",
-            "locator": {
-              "kind": "symbol",
-              "name": "AnalyticalInputs"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/observer/reducer_impl/_types.py"
           },
@@ -61,11 +47,10 @@
         },
         {
           "anchor": {
-            "blob": "8df68bbe026c7aa7cf76a02d438686311f33fe24",
-            "content": "sha256:345a7190e7af38edf2028f0b8da0e484a41277f058c00043026be41c7bf310c9",
+            "blob": "904affccf65ef0037d48637edd0a3e5fe519ec38",
+            "content": "sha256:66268ef1053bb27dce72efe85c833db159b41a756f30d3945e61528bd6a9a281",
             "locator": {
-              "kind": "symbol",
-              "name": "project_workspace"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -77,8 +62,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fa86695a71693162c503d41124c312c48284e1a6",
-            "content": "sha256:dbadad4c1ab095669084d1cad0054c513c08078274380c326a02440f520bb84c",
+            "blob": "904affccf65ef0037d48637edd0a3e5fe519ec38",
+            "content": "sha256:08d408cee4d96cc78934f79696166c200ce072ea15822d48680fbd23972ecd82",
             "locator": {
               "end": 91,
               "kind": "line_range",

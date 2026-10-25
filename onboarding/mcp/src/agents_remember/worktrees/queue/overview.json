@@ -114,12 +114,12 @@
       ]
     },
     "3": {
-      "note": "Canonical publication precedes projection refresh; exact-current publication and first-ready admission do not give projection rows lifecycle authority.\n\nAnchor: mcp/src/agents_remember/worktrees/task_fact_publication.py; mcp/src/agents_remember/controlplane/closeout_queue_store.py; mcp/src/agents_remember/worktrees/queue/closeout_queue.py; mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operations.py",
+      "note": "Canonical publication precedes projection refresh; exact-current publication and first-ready admission do not give projection rows lifecycle authority.",
       "targets": [
         {
           "anchor": {
-            "blob": "10e812f1f833b1b85b91249f1f1e9a49c9705556",
-            "content": "sha256:6c142deeead0c9a953cab5a92045a147f1983f65b18af66df8b6bc72af899b12",
+            "blob": "476c1c24ac02e05fb96b654322bf771287e6cbff",
+            "content": "sha256:873bfa7e9bb1ff261a9dfc0625155358eaa48d5f7670595f53ed6e592cecf852",
             "locator": {
               "end": 99,
               "kind": "line_range",
@@ -432,8 +432,8 @@
         },
         {
           "anchor": {
-            "blob": "d49c1f82a6632b5bbfe78e59b21d3fbae9c990cb",
-            "content": "sha256:d598410e66af9aedd23c536212dd6b693addd6ad9fed2b1677e4647611259681",
+            "blob": "9cfaea0658dd0c7c7e4ab655d0031da3b206961d",
+            "content": "sha256:0dea96a726455405845cbf45a7b8569bc8b409a1790058d485bcb0685d70cc41",
             "locator": {
               "end": 979,
               "kind": "line_range",
@@ -445,8 +445,8 @@
         },
         {
           "anchor": {
-            "blob": "13a3397260777a0db5b7bf2d2854037b42f8f18b",
-            "content": "sha256:41bc720564f4888e101505eeec74aed3bbe6ccde9c5526f8e1868d034bdbad0c",
+            "blob": "e45cbd6127d560f2f834a2b326c1f9a481c697ac",
+            "content": "sha256:1cb6adda389fe576da272f5a5eeb1d3e94bedd6d0108b24c2d8d833d174389d8",
             "locator": {
               "end": 237,
               "kind": "line_range",

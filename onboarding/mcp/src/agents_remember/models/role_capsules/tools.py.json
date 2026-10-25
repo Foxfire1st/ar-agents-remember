@@ -87,15 +87,14 @@
       ]
     },
     "3": {
-      "note": "The compiler step that narrows requests before sealing the digest.",
+      "note": "The compiler step that narrows requests before sealing the digest.\n\nAnchor: `compile_role_capsule`",
       "targets": [
         {
           "anchor": {
-            "blob": "e0c363f53732c65054fa825f478956800f102db7",
-            "content": "sha256:d1502ab73ec7a0c2f3607cb0f65c326092b8f83aa9d9d5fbab123774326f3f90",
+            "blob": "762c104a0bcdc0375416163993d106dc37c5fb18",
+            "content": "sha256:157949db0f9acdf0d70ebbd6959fb382dccab34600bf2e6cfd9b12f0b9079a74",
             "locator": {
-              "kind": "symbol",
-              "name": "compile_role_capsule"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/models/role_capsules/compiler.py"
           },
@@ -104,12 +103,12 @@
       ]
     },
     "4": {
-      "note": "The architect seat's declared tool requests in the canonical manifest, including the child-seat messaging tool that supplies a declared identity.\n\nAnchor: `message_child`",
+      "note": "The architect seat's declared tool requests in the canonical manifest, which name `role_message` and `role_start` for child-seat messaging.",
       "targets": [
         {
           "anchor": {
-            "blob": "c3ab60b6e780b73cf9eea5d9de950566b03b5192",
-            "content": "sha256:21f46bb350690dde6c4201f996fa73d8b56bec6be1d59e153c5ee274a7037ab3",
+            "blob": "2f3ce46a32a38d86f474252bb23d8081e91f0a6e",
+            "content": "sha256:9d833a0f8de397314e26669e2017f1dc0f7101305ca546b2672f3c3d96ea23b7",
             "locator": {
               "end": 174,
               "kind": "line_range",

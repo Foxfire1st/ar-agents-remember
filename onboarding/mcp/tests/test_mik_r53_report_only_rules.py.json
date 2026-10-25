@@ -1,5 +1,6 @@
 {
   "path": "mcp/tests/test_mik_r53_report_only_rules.py",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
@@ -7,12 +8,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2836212ea2e452af67cafb4d775acf99d2ff3d9d",
-            "content": "sha256:ccae73e28ad9ef03dd4d6df611dc458094a55cdb86f6fcd81803ffb8071fc53b",
+            "blob": "4126afbd0bcfdc59586d62956ce09ece6b5beb4c",
+            "content": "sha256:619f17c091d16525a1ff7a84557b624ed7bd73081183b92b5020ea47fa640b18",
             "locator": {
-              "end": 206,
+              "end": 211,
               "kind": "line_range",
-              "start": 164
+              "start": 169
             }
           },
           "kind": "test"
@@ -20,16 +21,28 @@
       ]
     },
     "2": {
-      "note": "Leaf/publication versus merge cases exercise existing-record, absent-route, unrealized-family and gone-path refusal boundaries.",
+      "note": "Leaf and publication versus merge cases exercise the existing-record, absent-route, unrealized-family and gone-path boundaries.",
       "targets": [
         {
           "anchor": {
-            "blob": "6fc84f8473f78c4a48ee5d04b02a690c7c7b2177",
+            "blob": "4126afbd0bcfdc59586d62956ce09ece6b5beb4c",
+            "content": "sha256:192877edef327465b1ec999587dbfb8d6bc16462f2a4a0bd4e15730747ebb0e9",
+            "locator": {
+              "end": 330,
+              "kind": "line_range",
+              "start": 226
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "4126afbd0bcfdc59586d62956ce09ece6b5beb4c",
             "content": "sha256:e0fcd5912d2b7020a26f4e94827a952929942d8de08631d743860b3f73f0a483",
             "locator": {
-              "end": 320,
+              "end": 325,
               "kind": "line_range",
-              "start": 216
+              "start": 221
             }
           },
           "kind": "test"
@@ -37,16 +50,28 @@
       ]
     },
     "3": {
-      "note": "Standalone conversion rejects bases, paired code and publication; candidate overviews join the migration population.",
+      "note": "A standalone conversion rejects bases, paired code and publication, while candidate overviews join the migration population.",
       "targets": [
         {
           "anchor": {
-            "blob": "6fc84f8473f78c4a48ee5d04b02a690c7c7b2177",
+            "blob": "4126afbd0bcfdc59586d62956ce09ece6b5beb4c",
+            "content": "sha256:173145b57f869fb4ca558a6b6ef5631aa3b0827f9b98c27a74f7592400621258",
+            "locator": {
+              "end": 480,
+              "kind": "line_range",
+              "start": 405
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "4126afbd0bcfdc59586d62956ce09ece6b5beb4c",
             "content": "sha256:4ee546e56c465c74828a63e870d6693ff39c9f6b32255d8c0bb93c11512cd1cc",
             "locator": {
-              "end": 470,
+              "end": 475,
               "kind": "line_range",
-              "start": 395
+              "start": 400
             }
           },
           "kind": "test"
@@ -58,12 +83,24 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6fc84f8473f78c4a48ee5d04b02a690c7c7b2177",
+            "blob": "4126afbd0bcfdc59586d62956ce09ece6b5beb4c",
+            "content": "sha256:97c48ce961e6760fc5b2a4a054af747dd467685bc307349452da86f0d29d1aa0",
+            "locator": {
+              "end": 531,
+              "kind": "line_range",
+              "start": 510
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "4126afbd0bcfdc59586d62956ce09ece6b5beb4c",
             "content": "sha256:f00f50ac9020f679d88c77a0839fed5055d344e1874cd854fb6bafe4f289eea2",
             "locator": {
-              "end": 521,
+              "end": 526,
               "kind": "line_range",
-              "start": 500
+              "start": 505
             }
           },
           "kind": "test"
@@ -71,28 +108,64 @@
       ]
     },
     "5": {
-      "note": "Merge-moved rows report at merge but are refused by covered-entry validation at publication.",
+      "note": "A merge-moved row reports at merge but is refused by covered-entry validation at publication.",
       "targets": [
         {
           "anchor": {
-            "blob": "6fc84f8473f78c4a48ee5d04b02a690c7c7b2177",
-            "content": "sha256:96359996509fdcfe1ba3dc31aa69c3b180d2790c324870e25a948258df28c546",
+            "blob": "4126afbd0bcfdc59586d62956ce09ece6b5beb4c",
+            "content": "sha256:364d76628f79b629787e6b9005f8bfe043e5ea1a42005f7ae2de0a361f4d228d",
             "locator": {
-              "end": 537,
+              "end": 547,
               "kind": "line_range",
-              "start": 524
+              "start": 534
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "6fc84f8473f78c4a48ee5d04b02a690c7c7b2177",
+            "blob": "4126afbd0bcfdc59586d62956ce09ece6b5beb4c",
+            "content": "sha256:5f38d5d3c4792f0c22f452fc3faaa39b15d5f398e1aad708de034475347475b9",
+            "locator": {
+              "end": 808,
+              "kind": "line_range",
+              "start": 792
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "4126afbd0bcfdc59586d62956ce09ece6b5beb4c",
+            "content": "sha256:96359996509fdcfe1ba3dc31aa69c3b180d2790c324870e25a948258df28c546",
+            "locator": {
+              "end": 542,
+              "kind": "line_range",
+              "start": 529
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "4126afbd0bcfdc59586d62956ce09ece6b5beb4c",
             "content": "sha256:a5844232eb083e38b46fad2c78b1739f798cc0c3c54e44933dbc7bfcaea4fb16",
             "locator": {
-              "end": 798,
+              "end": 803,
               "kind": "line_range",
-              "start": 782
+              "start": 787
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "4126afbd0bcfdc59586d62956ce09ece6b5beb4c",
+            "content": "sha256:be53d6ab3472df9ff9cc6f78f65c9c95059235e1b75cfbe8d1c8dcbf203ac7ad",
+            "locator": {
+              "end": 806,
+              "kind": "line_range",
+              "start": 790
             }
           },
           "kind": "test"
@@ -100,16 +173,16 @@
       ]
     },
     "6": {
-      "note": "Messages, command help and skill text carry the named reporting and refusal decisions.",
+      "note": "Messages, command help and the workflow text carry the named reporting and refusal decisions.",
       "targets": [
         {
           "anchor": {
-            "blob": "6b14705e99adedb64cbba57e4dc449a84134e58b",
-            "content": "sha256:5f2a0bb378dd7991c38012f47e3e3b6a505f30a0d3376397ea7a761dffb04516",
+            "blob": "4126afbd0bcfdc59586d62956ce09ece6b5beb4c",
+            "content": "sha256:d39ecb55473f46cf28ca81d7c44d4c35321106db3b6d84a2c71bee62b520531c",
             "locator": {
-              "end": 736,
+              "end": 746,
               "kind": "line_range",
-              "start": 690
+              "start": 700
             }
           },
           "kind": "test"
@@ -117,28 +190,52 @@
       ]
     },
     "7": {
-      "note": "Complete-census boundary cases cover carried debt at both landing and sync with incomplete controls.",
+      "note": "Complete-census cases cover carried debt at both landing and sync with incomplete controls.",
       "targets": [
         {
           "anchor": {
-            "blob": "6fc84f8473f78c4a48ee5d04b02a690c7c7b2177",
-            "content": "sha256:f8f40d925e36289e61049c3636a436dd581371bcbba966e0a0d4e4672584ea8f",
+            "blob": "4126afbd0bcfdc59586d62956ce09ece6b5beb4c",
+            "content": "sha256:8cdfa759bbc111a16b5e2430b0a8402739dff66309f81e0b102958b6acf4f79e",
             "locator": {
-              "end": 778,
+              "end": 788,
               "kind": "line_range",
-              "start": 743
+              "start": 753
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "6fc84f8473f78c4a48ee5d04b02a690c7c7b2177",
+            "blob": "4126afbd0bcfdc59586d62956ce09ece6b5beb4c",
+            "content": "sha256:f8f40d925e36289e61049c3636a436dd581371bcbba966e0a0d4e4672584ea8f",
+            "locator": {
+              "end": 783,
+              "kind": "line_range",
+              "start": 748
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "4126afbd0bcfdc59586d62956ce09ece6b5beb4c",
             "content": "sha256:43f5c50653caa3fa5ff3285651cd0bf1d46564d214021591cd3b4993ba2c3c52",
             "locator": {
-              "end": 909,
+              "end": 914,
               "kind": "line_range",
-              "start": 832
+              "start": 837
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "4126afbd0bcfdc59586d62956ce09ece6b5beb4c",
+            "content": "sha256:925be81904b27720f0c41e0e44fd1f34d3d70bc5ac4f42669f0f084a10290bff",
+            "locator": {
+              "end": 786,
+              "kind": "line_range",
+              "start": 751
             }
           },
           "kind": "test"
@@ -146,16 +243,16 @@
       ]
     },
     "8": {
-      "note": "The merge-report set assertion includes the separate link-target rule beside the original ten-rule decisions.",
+      "note": "The merge-report set assertion includes the separate link-target rule beside the original ten decisions.",
       "targets": [
         {
           "anchor": {
-            "blob": "6fc84f8473f78c4a48ee5d04b02a690c7c7b2177",
-            "content": "sha256:6b8eba7f29d761c4b8280c4d7ca2fb118474b8e018e2d82e210565d7cd6f1ea1",
+            "blob": "4126afbd0bcfdc59586d62956ce09ece6b5beb4c",
+            "content": "sha256:74e8730008e49fed8bf6a32b83ff0608f4f3da2237ff0924cab2b679c24267b6",
             "locator": {
-              "end": 204,
+              "end": 214,
               "kind": "line_range",
-              "start": 197
+              "start": 207
             }
           },
           "kind": "test"
@@ -172,6 +269,18 @@
             "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/rules_link_targets.py"
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4126afbd0bcfdc59586d62956ce09ece6b5beb4c",
+            "content": "sha256:6b8eba7f29d761c4b8280c4d7ca2fb118474b8e018e2d82e210565d7cd6f1ea1",
+            "locator": {
+              "end": 209,
+              "kind": "line_range",
+              "start": 202
+            }
+          },
+          "kind": "test"
         }
       ]
     }

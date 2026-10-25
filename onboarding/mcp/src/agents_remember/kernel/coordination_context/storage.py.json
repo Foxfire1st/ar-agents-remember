@@ -1,10 +1,63 @@
 {
   "path": "mcp/src/agents_remember/kernel/coordination_context/storage.py",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
       "note": "JSON settings parsing produces the storage settings and path-rule models.",
       "targets": [
+        {
+          "anchor": {
+            "blob": "de648bcc90f0df139f1935da685f0443db3f0b4c",
+            "content": "sha256:b38bb68029c1287d08aff7e0e338422c5c0e24ef5676c308d6c7130b8ecf133f",
+            "locator": {
+              "end": 94,
+              "kind": "line_range",
+              "start": 83
+            },
+            "path": "mcp/src/agents_remember/kernel/coordination_context/json_settings.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "de648bcc90f0df139f1935da685f0443db3f0b4c",
+            "content": "sha256:d4b2f86a41e017f61aba163ef9e62e00b57bc58c59ce2ce311b263ac83e21cfb",
+            "locator": {
+              "end": 131,
+              "kind": "line_range",
+              "start": 124
+            },
+            "path": "mcp/src/agents_remember/kernel/coordination_context/json_settings.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "de648bcc90f0df139f1935da685f0443db3f0b4c",
+            "content": "sha256:c75360896cf923932be81e2bd79e0fcfa92d8ca59f23e276a379ff56073c1ade",
+            "locator": {
+              "end": 101,
+              "kind": "line_range",
+              "start": 88
+            },
+            "path": "mcp/src/agents_remember/kernel/coordination_context/json_settings.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "de648bcc90f0df139f1935da685f0443db3f0b4c",
+            "content": "sha256:682b87112afe697b09e7790df1a258cd693399573045ef4e5750206fe3b0e57a",
+            "locator": {
+              "end": 138,
+              "kind": "line_range",
+              "start": 131
+            },
+            "path": "mcp/src/agents_remember/kernel/coordination_context/json_settings.py"
+          },
+          "kind": "code"
+        },
         {
           "anchor": {
             "blob": "de648bcc90f0df139f1935da685f0443db3f0b4c",
@@ -32,11 +85,11 @@
         {
           "anchor": {
             "blob": "de648bcc90f0df139f1935da685f0443db3f0b4c",
-            "content": "sha256:c75360896cf923932be81e2bd79e0fcfa92d8ca59f23e276a379ff56073c1ade",
+            "content": "sha256:09a00d6a73cd9c06afbb213389e0daa943b1c715c411a8f468233c7d65e1a39a",
             "locator": {
-              "end": 101,
+              "end": 57,
               "kind": "line_range",
-              "start": 88
+              "start": 44
             },
             "path": "mcp/src/agents_remember/kernel/coordination_context/json_settings.py"
           },
@@ -45,11 +98,11 @@
         {
           "anchor": {
             "blob": "de648bcc90f0df139f1935da685f0443db3f0b4c",
-            "content": "sha256:682b87112afe697b09e7790df1a258cd693399573045ef4e5750206fe3b0e57a",
+            "content": "sha256:493295a44aad255c55b04f3d35ca41cfa3058e6b09238b889fb9982a21c2fbfe",
             "locator": {
-              "end": 138,
+              "end": 94,
               "kind": "line_range",
-              "start": 131
+              "start": 87
             },
             "path": "mcp/src/agents_remember/kernel/coordination_context/json_settings.py"
           },
@@ -108,8 +161,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "30934f67876dc31aa7d36ec277f0841537570fb2",
-            "content": "sha256:442534c644775bbb678b96945cd22af6f8879e3344bfd3bf015f57e31b601c8d",
+            "blob": "2464d2d12704dfa0b90457ac3a62acf2212bedb8",
+            "content": "sha256:e7109c0588b84e7d222d12ef7a88c4114473bdcdff902c7ea5f4728867a2a587",
             "locator": {
               "end": 154,
               "kind": "line_range",

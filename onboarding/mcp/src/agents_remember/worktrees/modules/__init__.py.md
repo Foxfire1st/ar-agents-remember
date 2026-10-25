@@ -22,4 +22,4 @@ No external Domain Documentation source is configured for this memory repo.
 
 ### Repo-Internal References
 
-- The package overview describes the module split. [1]
+- The package overview describes the module split. 

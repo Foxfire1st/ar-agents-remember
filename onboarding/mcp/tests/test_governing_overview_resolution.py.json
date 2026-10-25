@@ -106,8 +106,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cfedadad8afb9d580e9064cabf997316c914f4eb",
-            "content": "sha256:4991743281717e026a059e8a532eb68e8f7c641489e431218b36bcbbe35adc14",
+            "blob": "e1f043170e5b45402da4c338e1fcc0e1346042b7",
+            "content": "sha256:8630c8805d8080430c06fd321008cf2923ef4ae5b36f3e64bb268c28284200cf",
             "locator": {
               "kind": "symbol",
               "name": "test_a_dead_governing_overview_reaches_the_gated_repair_set"
@@ -118,8 +118,8 @@
         },
         {
           "anchor": {
-            "blob": "cfedadad8afb9d580e9064cabf997316c914f4eb",
-            "content": "sha256:0de7f2750333a87720c7fc1b75b92840164636a2d9c67ea5d969831d35a44cd7",
+            "blob": "e1f043170e5b45402da4c338e1fcc0e1346042b7",
+            "content": "sha256:b2ac5179f6916e246edeb14e99b23765dcef0a00365de10b9d5824267c9f7125",
             "locator": {
               "end": 458,
               "kind": "line_range",
@@ -128,16 +128,27 @@
             "path": "mcp/tests/test_memory_quality_runs.py"
           },
           "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e1f043170e5b45402da4c338e1fcc0e1346042b7",
+            "content": "sha256:864e6b889911eed86e6243fd3e5a2981aa29873e1adee8c3377ced5b153af3a1",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_memory_quality_runs.py"
+          },
+          "kind": "test"
         }
       ]
     },
     "8": {
-      "note": "The population ceiling the module's one-case budget was measured against.\n\nAnchor: `unit_case_budget`",
+      "note": "The population ceiling the module's one-case budget was measured against.",
       "targets": [
         {
           "anchor": {
-            "blob": "11afdcbd034529ba6e12f7c6ab8fb204ee9a77d6",
-            "content": "sha256:247bbb930b2420b58c6de2e29c3947ee8d23cf69de7f980abf10f28c0d922079",
+            "blob": "0b550ee3cda163c8b451cb06a4fb69b489c4686d",
+            "content": "sha256:79c0d59db6d93b68aa53b2669223d644641ccdc0b40cf63850058ea3bf9c96cb",
             "locator": {
               "end": 278,
               "kind": "line_range",

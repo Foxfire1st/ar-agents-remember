@@ -1,5 +1,6 @@
 {
   "path": "mcp/tests/test_paseo_no_harness_name.py",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
@@ -7,8 +8,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "aec2879878a8e9a0c0655a59bd24dc5f276e11e7",
-            "content": "sha256:6c245115ddf6783fe0b35de5f7298d684be24f6c1ac9f8ff63187154d19ca44f",
+            "blob": "040c6193be9368525f9cfd815b56a0ee2aeeaf6f",
+            "content": "sha256:c268d7e6826b798928b621f46a30e348dfdca28158520ba8c35761c931e333e3",
             "locator": {
               "kind": "file"
             }
@@ -22,8 +23,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "180b85c5844eae286e2b7ba00b22dae4523f77fe",
-            "content": "sha256:38bd4563000184058a4fa75a4326d64cdfb3b73923ec2de4fac5bd9e06b2f800",
+            "blob": "040c6193be9368525f9cfd815b56a0ee2aeeaf6f",
+            "content": "sha256:c268d7e6826b798928b621f46a30e348dfdca28158520ba8c35761c931e333e3",
             "locator": {
               "kind": "file"
             }

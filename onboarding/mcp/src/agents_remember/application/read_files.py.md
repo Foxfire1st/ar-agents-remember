@@ -10,7 +10,9 @@
 
 ## Current source contract evidence
 
-- The addressed read names governing knowledge only; it emits no ambient read.packet or source/card content. [9]
+
+- The addressed read names governing knowledge only; it emits no ambient read.packet or source/card content.
+
 
 ## Historical original card — all remaining original prose and evidence are non-operative
 
@@ -227,12 +229,21 @@ Overview dedup now keys each lifecycle entry by both resolved code root and onbo
 
 ### Repo-Internal References
 
+
 - The thin payload wrapper that returns this application entry point's dict through the token choke point. [1]
+
+
 - **The published-intent half this entry point attaches: the owning module's public surface, the import it arrives through, and the assembly line it is attached at.** [2]
-- **The format switch (MIK-R24 rules 5 and 9): a converted tree's file results carry the sidecar and resolved references, and an unconverted tree's are marked `legacy-format`.** [3]
+
+
+- **The memory-format switch: a tree counts as converted only when it carries the layout marker, a readable dataset selection and the text format; anything else is `unconverted` and names no card.** [3]
+
+
 - The import of the format helpers. [4]
-- **MIK-R05: a chain entry already served to this lifecycle is shortened to `served_earlier` through the served ledger, under its own kind; the rendering is imported from the chain module.** [5]
-- The strict response contract this dict validates against; `FileRead.status` is typed by the `FileReadStatus` alias declared in that model. [6]
+
+
+- The strict response contract this result validates against: `ReadArFilesResponse`, whose per-path `NamedFile` types the card location, the record counts, the action-needed records and the refusals. [6]
+
 
 | Repo-resolution authority guard. | `require_repo` | mcp/src/agents_remember/kernel/authority.py:16-24 |
 | The authority-violation error raised on a bad batch/range/path. | `AuthorityError` | mcp/src/agents_remember/errors.py:110-116 |
@@ -247,5 +258,5 @@ Overview dedup now keys each lifecycle entry by both resolved code root and onbo
 
 ### Runtime Source References
 
-- Frozen implementation of _overview_scope_key supporting the stated file behavior. [7]
-- Frozen implementation of _attach_front_door supporting the stated file behavior. [8]
+
+- The batch's overview locations: each named path contributes its ancestor chain, every overview is listed once for the call, and deeper chains sort before their ancestors. [7]

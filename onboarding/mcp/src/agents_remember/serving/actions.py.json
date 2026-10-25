@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/serving/actions.py",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
@@ -25,12 +26,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fc93bae691a82da28bef3516bc6b7b8a85af6db8",
-            "content": "sha256:94d8ede398dc9d392cd88616bba2585f18a5b2371222324d5462a93590296c7c",
+            "blob": "fd0cd6ba53b5d874adfcb26807b26ab92e77d56e",
+            "content": "sha256:8f897ee97a5df4ec6bc2cdb53e32669158ad72e83b1d826e0af636eb31908a32",
             "locator": {
-              "end": 82,
-              "kind": "line_range",
-              "start": 69
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/observer/projection.py"
           },
@@ -38,12 +37,10 @@
         },
         {
           "anchor": {
-            "blob": "f2e7fe58c2b1df6c0dc6fddecd7cf6177bf4c0e6",
-            "content": "sha256:301ef8d70dd58cfea37fec34be64e52db39dffa54148fef28bedb99d169f90f3",
+            "blob": "fd0cd6ba53b5d874adfcb26807b26ab92e77d56e",
+            "content": "sha256:8f897ee97a5df4ec6bc2cdb53e32669158ad72e83b1d826e0af636eb31908a32",
             "locator": {
-              "end": 1159,
-              "kind": "line_range",
-              "start": 1137
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/observer/projection.py"
           },
@@ -92,8 +89,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "95e3bb02fd723653615ef09f7220685e54b3a901",
-            "content": "sha256:1a312daa6558f3b821abbf8270cd61217dbf6e1cdfb6ba149ab22b72e37d396d",
+            "blob": "b8fc8a5487a7d0bfd52efcf027cbcd3607d671f9",
+            "content": "sha256:907d872c4b0b7b3634ad6f169022e4befd3bcce9e83f62f22df8ac389c870cd7",
             "locator": {
               "end": 135,
               "kind": "line_range",
@@ -106,14 +103,14 @@
       ]
     },
     "6": {
-      "note": "Dismiss actions bypass target lookup but require a nonempty itemId, a published dismissible row and exactly matching kind. Missing itemId yields 400, unknown item yields 404, and a published non-dismissible row yields 409 not-dismissible before kind comparison; kind mismatch yields 400. A matching dismissible row returns 202 plus a DismissalIntent carrying the published actionable fingerprint. Non-dismiss actions require a target (400 if absent), a known target (404 otherwise) and a published enabled action (409 if absent or disabled); enabled actions return 202. There is no actionable-drift-only missing-target exemption.",
+      "note": "Dismiss actions bypass target lookup but require a nonempty itemId, an item published in the attention queue and an exactly matching kind. Missing itemId yields 400, unknown item yields 404 and kind mismatch yields 400. Every published kind is dismissible; a match returns 202 plus a DismissalIntent carrying the published actionable fingerprint. Non-dismiss actions require a target (400 if absent), a known target (404 otherwise) and a published enabled action (409 if absent or disabled); enabled actions return 202. There is no actionable-drift-only missing-target exemption.",
       "targets": [
         {
           "anchor": {
-            "blob": "4c7c41ca072e2b68a304b9a4569bb9b3fa4f64f7",
-            "content": "sha256:562af3374710eed6c9be817f59f216a1e0f425a9fe65c03844a720e273d29241",
+            "blob": "890efc977f601d145e7b7670ea9f41b04303abf7",
+            "content": "sha256:2d46716429d772363c69690fc6834e04b6333d7a9d52e03095427c984b5cd148",
             "locator": {
-              "end": 191,
+              "end": 183,
               "kind": "line_range",
               "start": 84
             }

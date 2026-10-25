@@ -1,9 +1,10 @@
 {
   "path": "mcp/src/agents_remember/mcp/tools/memory.py",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
-        "blob": "150a3b8059398aa4ad099a9e9c342e9db7241288",
+        "blob": "e10b32fdbb80d5c5c1e05892e1a33d81a4841c92",
         "content": "sha256:5aad99e6ca9de0e4f39431d106120972c20f02e56705d2290d7b43ecc939b5cc",
         "locator": {
           "kind": "symbol",
@@ -21,7 +22,7 @@
     },
     {
       "anchor": {
-        "blob": "150a3b8059398aa4ad099a9e9c342e9db7241288",
+        "blob": "e10b32fdbb80d5c5c1e05892e1a33d81a4841c92",
         "content": "sha256:8512bf49ed060b04bc987a87a99f12c2e9bf03d022426c17124c865589a1f38c",
         "locator": {
           "kind": "symbol",
@@ -34,12 +35,12 @@
         "handoffEntry": "L183-deferred-discovery-implementation",
         "leaf": "260928-MIK-L183"
       },
-      "rationale": "Cutover-lock legacy-format helpers resolve at the carryover/refusal operation rather than module discovery; the same full refusal and compact projection are retained.",
+      "rationale": "`memory_carryover_plan_payload` at C still resolves the cutover-lock refusal helper at the operation rather than at module discovery, and keeps the full refusal plus the compact projection; the symbol's bytes match C's.",
       "role": "enforcement"
     },
     {
       "anchor": {
-        "blob": "150a3b8059398aa4ad099a9e9c342e9db7241288",
+        "blob": "e10b32fdbb80d5c5c1e05892e1a33d81a4841c92",
         "content": "sha256:4f54e6f38987cf9270c2e363362117f4bcae7ae067096e41872b77e795ff4266",
         "locator": {
           "kind": "symbol",
@@ -57,7 +58,7 @@
     },
     {
       "anchor": {
-        "blob": "150a3b8059398aa4ad099a9e9c342e9db7241288",
+        "blob": "e10b32fdbb80d5c5c1e05892e1a33d81a4841c92",
         "content": "sha256:4f54e6f38987cf9270c2e363362117f4bcae7ae067096e41872b77e795ff4266",
         "locator": {
           "kind": "symbol",
@@ -70,13 +71,13 @@
         "handoffEntry": "L183-deferred-discovery-implementation",
         "leaf": "260928-MIK-L183"
       },
-      "rationale": "Cutover-lock legacy-format helpers resolve at the carryover/refusal operation rather than module discovery; the same full refusal and compact projection are retained.",
+      "rationale": "`_carry_legacy_refusal` at C still imports the cutover lock inside the function call that needs its code, so the legacy-format code is resolved at the carryover/refusal operation and the answer keeps the same full refusal and compact projection.",
       "role": "enforcement"
     },
     {
       "anchor": {
-        "blob": "150a3b8059398aa4ad099a9e9c342e9db7241288",
-        "content": "sha256:9dc6a89d422b00d45be3cd0a157b69bc5b34f27e3aa9d9dd2bf221a0ffc26674",
+        "blob": "e10b32fdbb80d5c5c1e05892e1a33d81a4841c92",
+        "content": "sha256:fe97bcc5955773116ca3a0f9d1b0f876808252c1c03d537c54c24b5a92d5d54e",
         "locator": {
           "end": 253,
           "kind": "line_range",
@@ -89,12 +90,12 @@
         "handoffEntry": "L110-C-status",
         "leaf": "260928-MIK-L110"
       },
-      "rationale": "Selects citation status counts and document/place/reason entries, not successful authoring material.",
+      "rationale": "The entry says the citation answer selects status counts and document/place/reason entries and leaves successful authoring material out; `_citation_fix_answer` (199-241) plus `_CITATION_ENTRY_KEYS`/`_slim_citation_entry` do exactly that inside the recorded 202-253 at C. The candidate's recorded bytes are the leaf's uncommitted file, whose citations answer moved 52 lines down.",
       "role": "presentation"
     },
     {
       "anchor": {
-        "blob": "150a3b8059398aa4ad099a9e9c342e9db7241288",
+        "blob": "e10b32fdbb80d5c5c1e05892e1a33d81a4841c92",
         "content": "sha256:be1298f91607ed5f18940f2ac88c6ccee032edc696091d21f4a0541a05e4ee52",
         "locator": {
           "kind": "symbol",
@@ -112,7 +113,7 @@
     },
     {
       "anchor": {
-        "blob": "150a3b8059398aa4ad099a9e9c342e9db7241288",
+        "blob": "e10b32fdbb80d5c5c1e05892e1a33d81a4841c92",
         "content": "sha256:3dcddad935eda28d068e65014a7b2c9056140aba53823fd329a100ad867a9375",
         "locator": {
           "kind": "symbol",
@@ -130,8 +131,8 @@
     },
     {
       "anchor": {
-        "blob": "150a3b8059398aa4ad099a9e9c342e9db7241288",
-        "content": "sha256:c750e428a274347ebd829786135cd10b36c599405e3fe4d4bca3af8de0fd9cbb",
+        "blob": "e10b32fdbb80d5c5c1e05892e1a33d81a4841c92",
+        "content": "sha256:dcca617ad726477c585f127f88da5467a4391ee90d138945960e4d0f25852e12",
         "locator": {
           "end": 470,
           "kind": "line_range",
@@ -144,12 +145,29 @@
         "handoffEntry": "L110-C-status",
         "leaf": "260928-MIK-L110"
       },
-      "rationale": "Selects refresh counts and stale work, leaving successful index material in detail.",
+      "rationale": "The entry says the refresh answer selects refresh counts and stale work and leaves successful index material in the detail; that is `_ROUTE_STATUS_KEYS` (342-355) and `_route_index_answer` (356+) at C, not the recorded 449-470, which holds `compact_carryover_payload`'s tail and the carryover plan's head. The claim is true of the tool, but this extent never showed it, at the base tree either.",
       "role": "presentation"
     },
     {
       "anchor": {
-        "blob": "150a3b8059398aa4ad099a9e9c342e9db7241288",
+        "blob": "e10b32fdbb80d5c5c1e05892e1a33d81a4841c92",
+        "content": "sha256:e5ec15101aadfde2395cb9c8d604a46bb7ff6dd543307eed240b82f94eaf8e0b",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-P25D9K",
+      "invariant": "INV-Q7KYQH",
+      "origin": {
+        "handoffEntry": "MIK-R198@v2 §8 reference-note-revision",
+        "leaf": "260928-MIK-L191"
+      },
+      "rationale": "Declares the tool's arguments and answer so the revision is reachable from the mounted surface.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "e10b32fdbb80d5c5c1e05892e1a33d81a4841c92",
         "content": "sha256:8512bf49ed060b04bc987a87a99f12c2e9bf03d022426c17124c865589a1f38c",
         "locator": {
           "kind": "symbol",
@@ -167,7 +185,7 @@
     },
     {
       "anchor": {
-        "blob": "150a3b8059398aa4ad099a9e9c342e9db7241288",
+        "blob": "e10b32fdbb80d5c5c1e05892e1a33d81a4841c92",
         "content": "sha256:d3f622fc4d9f4c5ecba385b0dbf495db20bdefab71304abd6bbdb5033341f253",
         "locator": {
           "kind": "symbol",
@@ -184,287 +202,6 @@
       "role": "primary-authority"
     }
   ],
-  "references": {
-    "1": {
-      "note": "A converted tree's citation-fix result is bounded for transport; a legacy result passes through.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "4f90514bfd9638960c4e5bffe878df58c2e763c8",
-            "content": "sha256:fbabee3e8414d55363ba542adaf2f26747e94ff6b238ae1aa8ea34d7714aabf2",
-            "locator": {
-              "kind": "symbol",
-              "name": "bounded_citation_fix"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "10": {
-      "note": "Route refresh delivers counts and stale targets rather than successful index material.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "150a3b8059398aa4ad099a9e9c342e9db7241288",
-            "content": "sha256:d4d8ce5521b5faaf8a62fd9bf5d1f16bcbd5efa38e76d465158f818005c4728b",
-            "locator": {
-              "kind": "symbol",
-              "name": "_route_index_answer"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "11": {
-      "note": "Citation fix delivers the ordinary status projection while preserving the configured-authority refusal.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "6379f4552ea2a65eed09380a580733143e208098",
-            "content": "sha256:d71246584d20574f92b906966a05615f44168196fc58b7ccbcfb2860f8cba0fb",
-            "locator": {
-              "kind": "symbol",
-              "name": "_citation_fix_answer"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "12": {
-      "note": "Converted citation fixes return bounded status/count work orders; legacy-format refusals carry conversion code/detail rather than a repair list.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "150a3b8059398aa4ad099a9e9c342e9db7241288",
-            "content": "sha256:6b4b26958f056bd9d75b59221385af66c0e00a549062651ca9c58d920c856ad0",
-            "locator": {
-              "kind": "symbol",
-              "name": "_citation_fix_answer"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "183175ecfcf669bf424883e05272a8381b817224",
-            "content": "sha256:984daf3ad48bb0b4d0b90bdc40cbe4579e67d48a13b240133ae460a8283a7a32",
-            "locator": {
-              "kind": "symbol",
-              "name": "_carry_legacy_refusal"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "13": {
-      "note": "The source test asserts singleton reference scope, full status counts and a capped actionable first slice without authoring/rewritten-detail delivery.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "30dd326ad5bd484a832faaf1dba13488f4247b60",
-            "content": "sha256:e614d2725b13a0030c62f9bd39a58f4b917cbad3a5d7c6b43970c9ef14aa15c4",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_one_documents_fix_reports_its_own_stale_references_and_the_status_counts"
-            },
-            "path": "mcp/tests/test_knowledge_conversion_toolchain.py"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "14": {
-      "note": "Carryover adapters retain full review detail and merge genuine delivered decision fields into the validated/logged whole; only apply files a per-call report. Compact answers retain recovery guidance, decisions/carriedPaths and apply reportPath without raw candidates/conversion/publication.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "183175ecfcf669bf424883e05272a8381b817224",
-            "content": "sha256:3b7fa9b63fdfe99c9d163a729e30870f76860b2d5cba70c0f500ae15fe8c9ffb",
-            "locator": {
-              "kind": "symbol",
-              "name": "memory_carryover_apply_payload"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "150a3b8059398aa4ad099a9e9c342e9db7241288",
-            "content": "sha256:5aad99e6ca9de0e4f39431d106120972c20f02e56705d2290d7b43ecc939b5cc",
-            "locator": {
-              "kind": "symbol",
-              "name": "compact_carryover_payload"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "183175ecfcf669bf424883e05272a8381b817224",
-            "content": "sha256:508ccc1386ebd49fb09d1ec80186c34f3a3aad5fe0e31144d56771f14e81465f",
-            "locator": {
-              "kind": "symbol",
-              "name": "memory_carryover_plan_payload"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "15": {
-      "note": "The payload now computes whole first and supplies the filtered answer only for legacy-format; full is still handed to _tool_payload. Other changes defer cutover imports with the same error semantics.\n\nAnchor: `memory_baseline_adopt_payload`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "150a3b8059398aa4ad099a9e9c342e9db7241288",
-            "content": "sha256:bdbafb3ac93451a5e694d476f506380efd7edb0fc6adc51b5fc4daa721090e9e",
-            "locator": {
-              "kind": "file"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "2": {
-      "note": "Each named list capped, with its full count.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "150a3b8059398aa4ad099a9e9c342e9db7241288",
-            "content": "sha256:7c44d946957d2476123e216465be3f31715a16cb1db44b9338824fa83ce2b312",
-            "locator": {
-              "kind": "symbol",
-              "name": "_bounded_lists"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "3": {
-      "note": "The response caps every list, says so, and keeps the full counts.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "ac132ba02c16f5f0000f16185b12cfe345dfe99b",
-            "content": "sha256:c69fc638c7048214c08a7d809605e5451b242f96cc4a106102802dce0f1af01a",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_one_documents_fix_reports_its_own_stale_references_and_the_response_is_bounded"
-            },
-            "path": "mcp/tests/test_knowledge_conversion_toolchain.py"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "4": {
-      "note": "The retained citation-fix adapter's configured-contract-authority refusal names the status and next action; the former MCP migration caller is retired.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "150a3b8059398aa4ad099a9e9c342e9db7241288",
-            "content": "sha256:d3f622fc4d9f4c5ecba385b0dbf495db20bdefab71304abd6bbdb5033341f253",
-            "locator": {
-              "kind": "symbol",
-              "name": "_citation_authority_refusal"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "5": {
-      "note": "The refusal carries the failing side and name in its detail, for both tools.\n\nAnchor: `CitationMigrateRegistrationTests.test_citation_tools_name_a_configured_contract_authority_refusal`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "b66e438d366393a10d739b54b1a04aa82506677a",
-            "content": "sha256:47c21fb887a24232541272af1ed142c408e233db3afbe6443e137ec8a3e4dc57",
-            "locator": {
-              "end": 130,
-              "kind": "line_range",
-              "start": 103
-            },
-            "path": "mcp/tests/test_citation_migrate_registration.py"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "6": {
-      "note": "Only that error is translated: every other error, an `AuthorityError` among them, still propagates unchanged.\n\nAnchor: `CitationMigrateRegistrationTests.test_citation_tools_propagate_other_authority_errors`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "b66e438d366393a10d739b54b1a04aa82506677a",
-            "content": "sha256:bcbac1c556eea291d079d8e13e34aeb8e45f1c4949d770f0f125b2f2b49303e5",
-            "locator": {
-              "end": 152,
-              "kind": "line_range",
-              "start": 132
-            },
-            "path": "mcp/tests/test_citation_migrate_registration.py"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "7": {
-      "note": "Current source excerpt `def memory_quality_check_payload(` identifies this section's adapter/control owner, not an executed success.\n\nAnchor: `def memory_quality_check_payload(`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "150a3b8059398aa4ad099a9e9c342e9db7241288",
-            "content": "sha256:3ad14df6f0cb0c228b49fdd388fc0034b0993668f75311d52fefb5ce45a86309",
-            "locator": {
-              "end": 115,
-              "kind": "line_range",
-              "start": 115
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "8": {
-      "note": "Current source excerpt `def _bounded_lists(payload: dict[str, Any], names: tuple[str, ...]) -> dict[str, Any]:` identifies this section's adapter/control owner, not an executed success.\n\nAnchor: `def _bounded_lists(payload: dict[str, Any], names: tuple[str, ...]) -> dict[str, Any]:`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "150a3b8059398aa4ad099a9e9c342e9db7241288",
-            "content": "sha256:91efc6cb9c35e004c197d83521a8f0a8893232470d8d0fae53a490b0ba2f34ec",
-            "locator": {
-              "end": 285,
-              "kind": "line_range",
-              "start": 285
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "9": {
-      "note": "The retained citation-fix payload forwards the optional contract and translates only configured-contract authority mismatch.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "4f90514bfd9638960c4e5bffe878df58c2e763c8",
-            "content": "sha256:6ee103c8825c424ba619ceb729e8d59ca82a6bfb34444c6959c46c5bc4d171f7",
-            "locator": {
-              "kind": "symbol",
-              "name": "citation_fix_payload"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    }
-  },
+  "references": {},
   "schema": "ar-onboarding-file/v1"
 }

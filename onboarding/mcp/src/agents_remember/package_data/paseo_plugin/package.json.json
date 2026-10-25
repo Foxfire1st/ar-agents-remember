@@ -40,12 +40,12 @@
   ],
   "references": {
     "1": {
-      "note": "The plugin's development SDK is pinned to 0.11.1.\n\nAnchor: `0.11.1`",
+      "note": "The plugin's development SDK is pinned to 0.12.0.",
       "targets": [
         {
           "anchor": {
-            "blob": "a1b9f77f7da973558f9aa1f0fd2c90f5f13267a4",
-            "content": "sha256:0d5fd1b53a5104318d0dc8c8b501f0f1819ea5c832aef8f91ecb35b17b09ae5b",
+            "blob": "a3c96c80333a5a4df48c75a2eed1d0a6f35b8953",
+            "content": "sha256:edb570c57d692e59b1e813098dfba2eb6f652234809e805a2f8ed67d263f7290",
             "locator": {
               "end": 26,
               "kind": "line_range",
@@ -57,12 +57,12 @@
       ]
     },
     "2": {
-      "note": "Current source owner or exact assertion described above.\n\nAnchor: `typecheck`",
+      "note": "Current source owner or exact assertion described above.",
       "targets": [
         {
           "anchor": {
-            "blob": "a1b9f77f7da973558f9aa1f0fd2c90f5f13267a4",
-            "content": "sha256:0d5fd1b53a5104318d0dc8c8b501f0f1819ea5c832aef8f91ecb35b17b09ae5b",
+            "blob": "a3c96c80333a5a4df48c75a2eed1d0a6f35b8953",
+            "content": "sha256:edb570c57d692e59b1e813098dfba2eb6f652234809e805a2f8ed67d263f7290",
             "locator": {
               "end": 26,
               "kind": "line_range",

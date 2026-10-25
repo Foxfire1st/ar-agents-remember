@@ -21,11 +21,15 @@ Source inspection supplies no new test, native-host, whole-build, landing or mem
 
 ## Grant response registration
 
+The registry also maps `citation_note_revision` to `CitationNoteRevisionResponse`, giving the public note writer its own response contract. Registration does not perform or authorize the write.
+
 The strict registry additionally maps direct_execution_grant to DirectExecutionGrantResponse. It shapes the public product answer and does not admit the caller, read the store or mutate a task. Existing role/retirement and knowledge model rows retain their independent contracts.
 
 ## Current source contract evidence
 
-- Current synced source supports the qualified account; declarations, mirrors and fixture assertions are not executed acceptance. [14]
+
+- Current synced source supports the qualified account; declarations, mirrors and fixture assertions are not executed acceptance.
+
 
 ## Synced current-source qualification
 
@@ -113,7 +117,9 @@ No configured domain documentation was available.
 
 > Historical registry-owner scope only: the public structural/gate/capsule/five-knowledge and dated acceptance claims below describe earlier registry states. They grant no current tool or executor result. The current registry maps context_packet to SlimContextPacket, omits resolve_context, and retains explicitly excluded private compatibility rows.
 
+
 - Frozen implementation of TOOL_RESPONSE_MODELS supporting the stated file behavior. [13]
+
 
 ## L23 Lifecycle Model Package Review
 
@@ -279,6 +285,7 @@ explicit `unresolved` list rather than manufacturing a verdict from a passing te
 ## The settings initializer's response model
 
 `TOOL_RESPONSE_MODELS` binds `user_settings_init` to `UserSettingsInitResponse`, so its answer crosses the strict model that declares the state, path, role harnesses and refusal fields.
+
 
 - The by-name response-model registry, which carries the settings initializer. [15]
 

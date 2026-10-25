@@ -300,21 +300,25 @@ These are the old companion’s explanatory notes, retained as historical eviden
 
 ## Historical Source Evidence
 
-These references retain the selected historical source chapters, including their retirement statements, synthetic response shapes and catalog links. They describe that source epoch rather than the current native question sections; they grant no callable provider or execution authority.
+These references preserve the historical retired-provider chapters and bind their current native question replacements. The original chapters, synthetic shapes, catalog links and anchor objects remain in immutable task evidence; their historical descriptions grant no callable provider or execution authority.
 
-- Historical source: retired GrepAI route and synthetic catalog examples [3]
-- Historical source: retired CodeGraphContext route, synthetic impact and complexity shapes, and native-search rules [4]
+> Retained earlier citation wording: - Historical retired GrepAI section and synthetic catalog examples, with the current native semantics-question replacement. [3]
+> Retained earlier citation wording: - Historical retired CodeGraphContext section, synthetic impact/complexity shapes and native-search rules, with the current native relationship/risk replacement. [4]
 
 ## Evidence
 
 The following references support the source-contract commentary, not fresh runtime acceptance. Canonical authored source owns the contract; the inspected package copy is an equal distribution twin only. Root overview ownership context is onboarding/overview.md, especially its construction/ownership and retained naming-versus-reading doctrine. The description of a source contract is not runtime acceptance or permission to execute its operations.
 
-- Authored identity and retrieval-contract-first purpose [1]
-- Substrate labels, the retirement of the first two, and the triage rule that starts at Intent [2]
-- Location-only read_ar_files and argument refusals [5]
-- Bounded route confirmation and native research reads [6]
-- Recorded text, derived index and exact memory-root scope [7]
-- Named records, legacy format and seed absences [8]
+> Retained earlier citation wording: - Authored identity and retrieval-contract-first purpose [1]
+> Retained earlier citation wording: - Substrate labels, the retirement of the first two, and the triage rule that starts at Intent [2]
+> Retained earlier citation wording: - Location-only read_ar_files and argument refusals [5]
+> Retained earlier citation wording: - Bounded route confirmation and native research reads [6]
+
+> Retained earlier citation wording: - Recorded text, derived index and exact memory-root scope [7]
+
+
+> Retained earlier citation wording: - Named records, legacy format and seed absences [8]
+
 - Family-complete source context and chain expansion [9]
 - Bounded knowledge_read continuation and refusals [10]
 - Memory tree requirement and no substituted dataset [11]
@@ -322,3 +326,26 @@ The following references support the source-contract commentary, not fresh runti
 
 - Semantics questions use the route index and one capped native search over memory onboarding and knowledge text; the sidecar mapping identifies the source path. [13]
 - Relationship questions follow native symbol hits one call or import level at a time; native risk triage remains a bounded map rather than a completeness claim. [14]
+
+- Authored identity and retrieval-contract-first purpose  Anchor: "# c-04-retrieval-strategy-router Retrieval Strategy Router" [1]
+
+
+- Substrate labels, retirement and introductory tension  Anchor: "## Retrieval Substrates" [2]
+
+
+- Historical source note (retained verbatim):  Retired GrepAI route and synthetic catalog examples  Anchor: "## Semantics: GrepAI (retired)"  Current qualification: The former GrepAI section and its synthetic catalog examples are absent from the current router. GrepAI remains retired. Semantics questions now start with context_packet when configured, then the route index and a capped native search over onboarding and knowledge text; the sidecar mapping gives the source path. [3]
+
+
+- Historical source note (retained verbatim):  Retired relationship route, synthetic shapes and native search  Anchor: "## Relationship: CodeGraphContext (retired)"  Current qualification: The former CodeGraphContext section and its synthetic impact/complexity shapes are absent from the current router. The relationship-query tool remains retired. Relationship questions now follow native symbol hits one call or import level at a time; native risk triage is a bounded early map rather than a completeness claim. [4]
+
+
+- Location-only read_ar_files and argument refusals  Anchor: "## Intent: Onboarding And Source" [5]
+
+
+- Bounded route confirmation and native research reads  Anchor: "### Rules:" [6]
+
+
+- Recorded text, derived index and exact memory-root scope [7]
+
+
+- Named records, legacy format and seed absences [8]

@@ -65,11 +65,19 @@ No configured live documentation source was available for this pass.
 
 The cases and their helpers.
 
+
 - The Doc14 family example validates, and a proof is not a location. [1]
+
+
 - Coverage and Non-empty violations name the family, the route and the path. [2]
+
+
 - One broad route passes; the suggestion offers local routes. [3]
+
 - Route spellings: `.` or a repository path. [4]
+
 - A family without routes that is not an unassessed export violates Coverage. [7]
+
 - A standalone conversion checks no route directory: with no code tree it passes, reporting only the legacy count. [8]
 - The lane registration. [9]
 
@@ -79,8 +87,14 @@ No meaningful cross-repo references found: the tests read the repository's own f
 
 No cross-repo boundary is crossed by this file.
 
+
 - Based root-route fixtures pin coverage/non-empty and only carried incomplete legacy-debt reporting; not a no-base pass. [5]
+
+
 - Current unrealized-family off-merge refusal/sync reporting, actual carried route-unassigned debt and the retired exemption. [6]
+
+
 - Current source delta inspected statically: Repair route/debt/writer reporting and based controls; retain root routes, waivers and retired exemption. [10]
+
 
 - Nested-route refusal, one state computation per fixture family/validation and explicit routes-command difference output are source assertions. [11]

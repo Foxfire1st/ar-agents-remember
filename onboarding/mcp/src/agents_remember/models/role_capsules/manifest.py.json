@@ -3,12 +3,12 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The frozen vocabulary this parser is validated against.",
+      "note": "The frozen vocabulary this parser is validated against.\n\nAnchor: `CAPSULE_ROLES` `CAPSULE_OPERATIONS`",
       "targets": [
         {
           "anchor": {
-            "blob": "cae83c767e4181dfaf6e8e45ad3efc05ef5fa9be",
-            "content": "sha256:f43459d304c6190880a186bea3b98bf494287d7777ff024c41bd43c8d7990ca8",
+            "blob": "f82bdc4007083ae4dad1686445d94d0c7e33d03b",
+            "content": "sha256:6811946246157d4d86d1215e8aa358f70653c11feeffd6b1d134adeb2cda0c71",
             "locator": {
               "kind": "symbol",
               "name": "CAPSULE_ROLES"
@@ -54,6 +54,17 @@
             "path": "mcp/src/agents_remember/models/role_capsules/vocabulary.py"
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f82bdc4007083ae4dad1686445d94d0c7e33d03b",
+            "content": "sha256:b6de98e8985e330ee99310530410ec3d4d9da72620da822d7be82e3a611f4cd7",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/vocabulary.py"
+          },
+          "kind": "code"
         }
       ]
     },
@@ -80,8 +91,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "90b609572aa48fb2a5e13fbf13040c2f337839b0",
-            "content": "sha256:54e6493669a47ba6cf13fdf525c739de4a1ac59255c99f635a7398b21561700d",
+            "blob": "9f6e5640683f5837e056f35ab36b73d582df963d",
+            "content": "sha256:1370d89348c253989e44556933ef532f9e18cb312db58b4d7c604dea6da98bb4",
             "locator": {
               "end": 101,
               "kind": "line_range",

@@ -79,11 +79,17 @@ No relevant domain documentation was found.
 
 - Attribution and defined unexplained_open are copied separately from authored plus/minus, including on the unavailable branch. [5]
 
+
 - The mirrored server result constrains its declared outcome and optional non-negative stored-open field. [6]
+
+
 
 - The consumer distinguishes main authored counts/problem, attribution and separate open-work count, and opens the task-bound review. [7]
 
+
+
 - The shared cache shares pending work only for equal facts; supersession is abort-guarded before retained-value replacement or revalidation relabeling. [8]
+
 
 ### Cross-Repo References
 

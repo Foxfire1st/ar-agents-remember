@@ -39,7 +39,9 @@ No relevant domain documentation was found.
 
 ### Repo-Internal References
 
+
 - The state hook and its pure resolvers. [1]
+
 
 ### Cross-Repo References
 

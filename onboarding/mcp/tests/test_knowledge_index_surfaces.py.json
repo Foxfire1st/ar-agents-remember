@@ -49,12 +49,22 @@
       ]
     },
     "11": {
-      "note": "`test_every_knowledge_tool_refuses_legacy_memory_and_opens_no_database` owns the current boundary described above.",
+      "note": "`test_every_knowledge_tool_refuses_legacy_memory_and_opens_no_database` owns the current boundary described above.\n\nAnchor: `test_every_knowledge_tool_refuses_legacy_memory_and_opens_no_database`",
       "targets": [
         {
           "anchor": {
-            "blob": "874885a025a88d07d976a8846a8775a37045d35f",
-            "content": "sha256:5bc3a8924f717e9a6d5081c853dbe84a471c3533bcc2f1ee6131c4f9802bbdc3",
+            "blob": "bc2b134a1ee2b8958e995038dec519a5af1d7b69",
+            "content": "sha256:ea95bfa599e174f1929e6b7796658990bfd638ff2f8acaf153a5687b24b5c5cf",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "bc2b134a1ee2b8958e995038dec519a5af1d7b69",
+            "content": "sha256:35cd6c3d19d38de1c42fefdcc64d139ae6134334dfae7d81d6fc76e74a1bfd45",
             "locator": {
               "kind": "symbol",
               "name": "test_every_knowledge_tool_refuses_legacy_memory_and_opens_no_database"
@@ -65,12 +75,22 @@
       ]
     },
     "12": {
-      "note": "Retired records are never live.",
+      "note": "Retired records are never live.\n\nAnchor: `test_a_retired_record_is_never_selected_as_live_and_is_answered_as_retired` `test_a_retired_family_is_never_selected_as_live`",
       "targets": [
         {
           "anchor": {
-            "blob": "874885a025a88d07d976a8846a8775a37045d35f",
-            "content": "sha256:4be154412171cb8e4ec07dad7a2f9dd37772f0a5c2e41abc3e3ddd91d7a29cc3",
+            "blob": "bc2b134a1ee2b8958e995038dec519a5af1d7b69",
+            "content": "sha256:ea95bfa599e174f1929e6b7796658990bfd638ff2f8acaf153a5687b24b5c5cf",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "bc2b134a1ee2b8958e995038dec519a5af1d7b69",
+            "content": "sha256:5f9ef05754573b3b60836d951f5fa95e29012c6759d43150204cba2149e23200",
             "locator": {
               "kind": "symbol",
               "name": "test_a_retired_record_is_never_selected_as_live_and_is_answered_as_retired"
@@ -80,8 +100,8 @@
         },
         {
           "anchor": {
-            "blob": "694a9727c6739a654c8fec5abf47260e23bd77b5",
-            "content": "sha256:5d19e381bcd3f13593101c47fa53c4e4ac8acabaf0cb0531465c6f180ec572b7",
+            "blob": "bc2b134a1ee2b8958e995038dec519a5af1d7b69",
+            "content": "sha256:7194126f77942be5b011aac4423f276edf1d4c69dbc4538ada04bcf761264d16",
             "locator": {
               "kind": "symbol",
               "name": "test_a_retired_family_is_never_selected_as_live"
@@ -96,29 +116,40 @@
       "targets": [
         {
           "anchor": {
-            "blob": "11ba98ff63f4a4815985ac51e2c0c7b5a48556a4",
-            "content": "sha256:222a6ff244f67693b41c16ff732f292d763843984688f77f46c8f03400b9bb92",
+            "blob": "102c4550ab6429f44c8fb543d1d0662de66a1b8c",
+            "content": "sha256:33b4b865c5c5115dd7a22ed4473ff30e50bbc9a1ec3048676cad3730f5be890a",
             "locator": {
-              "end": 174,
+              "end": 161,
               "kind": "line_range",
-              "start": 174
+              "start": 161
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
           "kind": "test"
-        }
-      ]
-    },
-    "14": {
-      "note": "Diff answers are names/counts beside their whole report; integrity details remain marked domain-unit evidence. Source declarations describe these assertions, not execution or unconditional CODE acceptance.",
-      "targets": [
+        },
         {
           "anchor": {
-            "blob": "bc2b134a1ee2b8958e995038dec519a5af1d7b69",
-            "content": "sha256:ea95bfa599e174f1929e6b7796658990bfd638ff2f8acaf153a5687b24b5c5cf",
+            "blob": "102c4550ab6429f44c8fb543d1d0662de66a1b8c",
+            "content": "sha256:222a6ff244f67693b41c16ff732f292d763843984688f77f46c8f03400b9bb92",
             "locator": {
-              "kind": "file"
-            }
+              "end": 177,
+              "kind": "line_range",
+              "start": 177
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "102c4550ab6429f44c8fb543d1d0662de66a1b8c",
+            "content": "sha256:37ef1f10db420bf2f737a1dad465b7b2f934b2075cdcfe7a056eabd040680f53",
+            "locator": {
+              "end": 146,
+              "kind": "line_range",
+              "start": 146
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
           },
           "kind": "test"
         }
@@ -142,12 +173,22 @@
       ]
     },
     "9": {
-      "note": "`test_knowledge_diff_with_no_after_revision_compares_with_the_working_tree` owns the current boundary described above.",
+      "note": "`test_knowledge_diff_with_no_after_revision_compares_with_the_working_tree` owns the current boundary described above.\n\nAnchor: `test_knowledge_diff_with_no_after_revision_compares_with_the_working_tree`",
       "targets": [
         {
           "anchor": {
-            "blob": "874885a025a88d07d976a8846a8775a37045d35f",
-            "content": "sha256:2b037a47c104f2367c8b5d6c6d2fe222a33590d4580dee2881b8a87dca110a7c",
+            "blob": "bc2b134a1ee2b8958e995038dec519a5af1d7b69",
+            "content": "sha256:ea95bfa599e174f1929e6b7796658990bfd638ff2f8acaf153a5687b24b5c5cf",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "bc2b134a1ee2b8958e995038dec519a5af1d7b69",
+            "content": "sha256:726c1b8aabb652cdc4703fe6e7d27e9752c81252e61e8169dc0e3d9bcb6efa2d",
             "locator": {
               "kind": "symbol",
               "name": "test_knowledge_diff_with_no_after_revision_compares_with_the_working_tree"

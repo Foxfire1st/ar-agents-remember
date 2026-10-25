@@ -135,25 +135,45 @@ No configured live documentation source was available for this pass.
 
 ### Repo-Internal References
 
+
 - The module docstring: both rows, the refresh, and the five link states it names. [1]
+
+
 - The task owner's `openQuestions` port. [2]
+
 - What a subject names: a decision, a rejected or deferred alternative, and a link addressing it. [3]
 - The `raise` question and its key. [4]
+
 - The append in a committing run; every refusal is returned. [5]
+
 - The code candidate a refresh maps anchors to. [6]
 - The link states. [7]
 - What a row answers, and the refresh's result. [8]
+
 - Only fired, refreshable links; each judged against its K_B target. [9]
+
+
 - One fired link to a target or a refusal; the new-change refusals. [10]
+
+
 - The K_B target: the base record's link, the facts' anchor, or the key alone. [11]
+
+
 - The state dispatch and the requirement states, with the R5-2 upper bound. [12]
+
+
 - The anchor states: stale item, unchanged, carried only when the content survives, changed again. [13]
+
+
 - The refresh target: the item's version and packet, or the anchor mapped to C. [14]
+
 - `still_rejected` refusals of a wrong subject or extra field. [15]
 - A requirement link re-pointed once, bumped once; the next leaf raises nothing. [16]
 - An anchor re-anchored; a `raise` leaves it; a second change raises a new item. [17]
 - Only fired links; a range mapped through the diff (F1). [18]
+
 - An unmappable range, or a row naming another item, refuses. [19]
+
 - The re-point takes the item's facts (F4). [20]
 - Re-authored, lookalike and moved links refuse (N1, N2). [21]
 - Idempotent reruns (R3-1). [22]

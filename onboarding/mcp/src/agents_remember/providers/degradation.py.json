@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/providers/degradation.py",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
@@ -38,12 +39,12 @@
       ]
     },
     "10": {
-      "note": "`_metrics_loop` — the sole production caller: `metrics_store.record`, `evaluate_provider_degradation` and `metrics_store.compact` on one 30s tick. This is why the dashboard is the declared compaction owner of both provider stores, and it is where the ownership is enforced structurally.\n\nAnchor: \"async def _metrics_loop\"",
+      "note": "`_metrics_loop` — the sole production caller: `metrics_store.record`, `evaluate_provider_degradation` and `metrics_store.compact` on one 30s tick. This is why the dashboard is the declared compaction owner of both provider stores, and it is where the ownership is enforced structurally.",
       "targets": [
         {
           "anchor": {
-            "blob": "709320161c9744d9aa93d005a483faf721515e33",
-            "content": "sha256:2e09a4f75ec282ec2e3357dae728a08d2ac14b514ac51b4a02189c39d0f17058",
+            "blob": "fb417e233674d6d9e471a591b5c9c081da7cf2b6",
+            "content": "sha256:01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
             "locator": {
               "end": 78,
               "kind": "line_range",
@@ -56,12 +57,12 @@
       ]
     },
     "11": {
-      "note": "Failing-first tests pinning hysteresis, inbox delivery parity, and failsafe-stop-failure durability.\n\nAnchor: `test_hysteresis_requires_sustained_bad_and_sustained_healthy_samples`, `test_critical_transition_records_event_inbox_and_failsafe_once`, `test_critical_stop_failure_still_records_event_inbox_and_state`",
+      "note": "Failing-first tests pinning hysteresis and the critical transition's event and failsafe-once record, with the stop failure that still records the event and state.  Anchor: `test_hysteresis_requires_sustained_bad_and_sustained_healthy_samples`, `test_critical_transition_records_event_and_failsafe_once`, `test_critical_stop_failure_still_records_event_and_state`",
       "targets": [
         {
           "anchor": {
-            "blob": "1f26629202066b5e321f999ea7f0c0c71e0363a0",
-            "content": "sha256:af492a95b39193969164e9f4e846152657a31c17366aad6d9d2c792d640710ce",
+            "blob": "7bbd2b44b9ee05cfd3e9a3a27b72e1e617ddbe3e",
+            "content": "sha256:44cd5bf2ce9a70e22e4ca7ab722871393799fd2ce2d05029530fd70f419148cf",
             "locator": {
               "kind": "file"
             },
@@ -208,12 +209,25 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9846480c31e5c891191dfbc75bf3e37cb64781e7",
-            "content": "sha256:7c3eeb17805bef2edd0e22916d67ef56962c4f8aea9913ea43d8a06e09899139",
+            "blob": "b8fc8a5487a7d0bfd52efcf027cbcd3607d671f9",
+            "content": "sha256:4452c3c284f93d76cee4c9a8ad19693bf4b40e91251cf03a9bfed9e833ccd005",
             "locator": {
               "end": 135,
               "kind": "line_range",
               "start": 135
+            },
+            "path": "mcp/src/agents_remember/controlplane/attention_dismissals.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b8fc8a5487a7d0bfd52efcf027cbcd3607d671f9",
+            "content": "sha256:01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+            "locator": {
+              "end": 107,
+              "kind": "line_range",
+              "start": 107
             },
             "path": "mcp/src/agents_remember/controlplane/attention_dismissals.py"
           },
@@ -244,8 +258,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "feb3705c0b9fadd03556a6fb1fdcf216d50ea060",
-            "content": "sha256:6b4e1c8c8514bb93045ad329729f03d966ad1b2f139426402832477e4ac1a485",
+            "blob": "2edff51be75051062a682ac9a09910ffdb4db13a",
+            "content": "sha256:40d7816d0c5b9185a064f230407906af290c62cd2792e5c7a5ee80c0234aaf03",
             "locator": {
               "kind": "file"
             }
@@ -290,8 +304,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "25f5e93613f68f82f04faf97634be24ddde454a3",
-            "content": "sha256:884247cd813565c533d3d9d98a1deec69b752a7afb8a32372f7fc4dcb9c70d1d",
+            "blob": "42e87d16f6942eb793617b78e693781c881667d5",
+            "content": "sha256:63a9108e497ce74b8e28e27c8e411b648af09022b380b97eb70edf26826f74b7",
             "locator": {
               "kind": "symbol",
               "name": "run_configured_watchers"
@@ -302,12 +316,23 @@
         },
         {
           "anchor": {
-            "blob": "25f5e93613f68f82f04faf97634be24ddde454a3",
-            "content": "sha256:c0581c61f810a18f090603803749bf6b1a0e7bb631ec5b8463ca4fbc2720449e",
+            "blob": "42e87d16f6942eb793617b78e693781c881667d5",
+            "content": "sha256:c7a4bbb6d0c16174a01b3f821b1a2b92d62cb5e0de6c4e8ac04bdf0e722575c6",
             "locator": {
               "end": 43,
               "kind": "line_range",
               "start": 16
+            },
+            "path": "mcp/src/agents_remember/providers/watcher_service.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "42e87d16f6942eb793617b78e693781c881667d5",
+            "content": "sha256:f937cc549ec9bc846117a31f38f7ac47c7969be7b762268b49d10cf5adc7ca40",
+            "locator": {
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/providers/watcher_service.py"
           },
@@ -321,11 +346,37 @@
         {
           "anchor": {
             "blob": "fb417e233674d6d9e471a591b5c9c081da7cf2b6",
+            "content": "sha256:19431733bd6618dbffc17e52be6c534fd560d2bcb5cd20d3108221bbff2df22d",
+            "locator": {
+              "end": 129,
+              "kind": "line_range",
+              "start": 129
+            },
+            "path": "mcp/src/agents_remember/serving/_app_lifespan.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fb417e233674d6d9e471a591b5c9c081da7cf2b6",
             "content": "sha256:854764ab5f4f78c17cdb6147bd8976e36131d6257fd9f098b290f7ce4d1b5c00",
             "locator": {
               "end": 132,
               "kind": "line_range",
               "start": 132
+            },
+            "path": "mcp/src/agents_remember/serving/_app_lifespan.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fb417e233674d6d9e471a591b5c9c081da7cf2b6",
+            "content": "sha256:19f826cf27ec169660e650b561f67b8ddea5b1c0ffb28784fedc2570edfb44b6",
+            "locator": {
+              "end": 127,
+              "kind": "line_range",
+              "start": 127
             },
             "path": "mcp/src/agents_remember/serving/_app_lifespan.py"
           },

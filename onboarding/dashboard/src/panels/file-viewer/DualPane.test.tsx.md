@@ -40,5 +40,7 @@ path, and the `0.18` opacity), so renaming those or changing the clip/opacity is
 
 ### Repo-Internal References
 
+
 - The component under test — the `empty` backdrop branch, the partnerless-overview branch, and `SidecarSide`. [1]
+
 - The effects-gated boomerang backdrop whose `video` `src`/`opacity` are asserted. [2]

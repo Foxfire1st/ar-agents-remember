@@ -33,6 +33,8 @@ None.
 
 ### Repo-Internal References
 
+
 - Public agent and gate models live in explicit sibling modules. [1]
+
 
 ### Cross-Repo References

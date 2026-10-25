@@ -190,4 +190,5 @@ Inherited reference 9 commentary (not a revalidated target):
 
 The authored file is the canonical contract; its measured byte-equal package copy is a distribution carrier, not an independent role, task or permission authority. The following whole-file reference locates that authored contract; it does not convert inherited statements into executed or whole-card acceptance.
 
+
 - The authored source owns this contract; the distribution copy is not a separate authority. [4]

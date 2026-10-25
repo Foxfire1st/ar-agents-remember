@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/application/review_unexplained_lane.py",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
@@ -71,7 +72,7 @@
       ]
     },
     "11": {
-      "note": "The lane and file reads dispatched.\n\nAnchor: \"return _focused(query, trees, lane=unexplained_lane(trees))\"",
+      "note": "The lane and file reads dispatched.",
       "targets": [
         {
           "anchor": {
@@ -87,8 +88,8 @@
         },
         {
           "anchor": {
-            "blob": "8a178d876684d0169dafd905b8770b7cc6730ff7",
-            "content": "sha256:a688c1224f2be9ecb85828129bc30a1f5dcae4f101d4f05642bb3f770bbe43d3",
+            "blob": "a956af1c8d6d0ae8752c70bec8277c64a19a3022",
+            "content": "sha256:5b68f88dca88efe291e6769583e98ce01d39eda141a3be943dcc205e6b3918ac",
             "locator": {
               "end": 170,
               "kind": "line_range",
@@ -97,16 +98,27 @@
             "path": "mcp/src/agents_remember/application/review_tree_knowledge.py"
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a956af1c8d6d0ae8752c70bec8277c64a19a3022",
+            "content": "sha256:6deabdb2f5186f865bde9fe961078af112af94670506384a38de1de1f782c13e",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/review_tree_knowledge.py"
+          },
+          "kind": "code"
         }
       ]
     },
     "12": {
-      "note": "The entry's count carried on the summary.\n\nAnchor: \"return summary.model_copy(update={\\\"attribution\\\": lane_summary(resolved.trees)})\"",
+      "note": "The entry's count carried on the summary.",
       "targets": [
         {
           "anchor": {
-            "blob": "96157590471703712a13a99aed3a5c608c6b1a77",
-            "content": "sha256:04c32bbcb03310e7b6c2018d5b8868df4a809ddb6065012c019c7e0c9f3736ad",
+            "blob": "1e87d0a39c00f0f34c2be2952a0f05e7f5c56550",
+            "content": "sha256:7c1c47a8ce943d6afdf0fc1165cee8abbb8a90537acacd53a7f7b5950e873ee4",
             "locator": {
               "end": 141,
               "kind": "line_range",
@@ -331,8 +343,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4b7294a6ea2d3e5b452d17b76d428c7df0241116",
-            "content": "sha256:9f70bdae3d13c5fc08efa7673a7653cee41635ce9db1ee8b63827abb6aa0af23",
+            "blob": "cf766302096799e4309cb82ba52c0c60f0cfac55",
+            "content": "sha256:ca583d8be2ecb4e05620ad5419b9bc305ec7917745d4d332650e8990fd6ce2fe",
             "locator": {
               "kind": "symbol",
               "name": "_classification"
@@ -364,8 +376,8 @@
         },
         {
           "anchor": {
-            "blob": "4b7294a6ea2d3e5b452d17b76d428c7df0241116",
-            "content": "sha256:b07d9111a80d389cf82bcbcd339472e9a6b4d9e535c7abcb7a896671c3eb6a2f",
+            "blob": "cf766302096799e4309cb82ba52c0c60f0cfac55",
+            "content": "sha256:114a48b4f2f8862e452d688d5572dc073063388e05d48f2c55923a41cc80312f",
             "locator": {
               "kind": "symbol",
               "name": "_hunk"
@@ -378,6 +390,54 @@
     "9": {
       "note": "_link preserves entry ID/kind, optional proof facet, invariant identity key, optional invariant revision/key and supplied range, and obtains families through _occurrences. With no listed family, _occurrences keeps the completeness-based state and supplies an own-side reason only for membership_unknown. Named occurrences preserve family identity/key/revision and the unchanged _membership state; _occurrence supplies an other-side reason only for membership_unknown. _membership_reason uses the reading's side name and detail, or its incomplete-family sentence, and passes the result through bounded_text. Other states receive reason=None.\n\nAnchor: inclusive source ranges",
       "targets": [
+        {
+          "anchor": {
+            "blob": "cf766302096799e4309cb82ba52c0c60f0cfac55",
+            "content": "sha256:06b8c26666ca7e3e15b3cbf702d723d19d19452f5c21b891c21687807655b5e4",
+            "locator": {
+              "end": 336,
+              "kind": "line_range",
+              "start": 317
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cf766302096799e4309cb82ba52c0c60f0cfac55",
+            "content": "sha256:f52f35c307909547e6ff4f5e40353c607107f5292ecca4043010f6606b79448a",
+            "locator": {
+              "end": 356,
+              "kind": "line_range",
+              "start": 339
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cf766302096799e4309cb82ba52c0c60f0cfac55",
+            "content": "sha256:36a2c4734abd93355c9cfc833fd46e00d9946f8bb9d9429ba91c0412606f913e",
+            "locator": {
+              "end": 369,
+              "kind": "line_range",
+              "start": 359
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cf766302096799e4309cb82ba52c0c60f0cfac55",
+            "content": "sha256:5c7c71fb4a43bc95d070150ffc8f3408d8c97d6c09a121f81044fe22d75e488d",
+            "locator": {
+              "end": 387,
+              "kind": "line_range",
+              "start": 372
+            }
+          },
+          "kind": "code"
+        },
         {
           "anchor": {
             "blob": "cf766302096799e4309cb82ba52c0c60f0cfac55",

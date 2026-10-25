@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/application/task_projection/scope.py",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
@@ -26,8 +27,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9a4ce498ea27dd1a592a152b56acd5500346eee1",
-            "content": "sha256:b5f0bf5bde1ae1a2fc3d09be0af5f6a41c4a6aaf28aae3f2dd6026c09d0c431e",
+            "blob": "b520874e0837707762dcede94c19521961ac366e",
+            "content": "sha256:8066fa6e26c57c7f763122c5edf9f86631e8e4f32561cd7fc13eda1ba398a0cc",
             "locator": {
               "kind": "symbol",
               "name": "resolve_task_projection_scope"
@@ -59,12 +60,36 @@
         },
         {
           "anchor": {
-            "blob": "9a4ce498ea27dd1a592a152b56acd5500346eee1",
-            "content": "sha256:81126b0f7a03d02cc085700c5e38b241c87e43e9e548465253f0f0b14f466533",
+            "blob": "b520874e0837707762dcede94c19521961ac366e",
+            "content": "sha256:e4f70a2fcaf7533049274c3056b1ddfa49a11b7ab58fbbf901dd506ef9f67582",
             "locator": {
               "end": 373,
               "kind": "line_range",
               "start": 292
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b520874e0837707762dcede94c19521961ac366e",
+            "content": "sha256:435ef6b36957376248265fec6c6cb819b979981017145ed2280673bc204dc9ec",
+            "locator": {
+              "end": 106,
+              "kind": "line_range",
+              "start": 94
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b520874e0837707762dcede94c19521961ac366e",
+            "content": "sha256:5c548de3ce52cf24b1c9c8fde9e71e634a2cbfbbebb0a907f5c47f6fac79da0c",
+            "locator": {
+              "end": 121,
+              "kind": "line_range",
+              "start": 110
             }
           },
           "kind": "code"
@@ -161,6 +186,18 @@
         {
           "anchor": {
             "blob": "b520874e0837707762dcede94c19521961ac366e",
+            "content": "sha256:1f176e722d2f5c6bd7d175bdad0665a9064551bc133c0232b159099dfa497792",
+            "locator": {
+              "end": 90,
+              "kind": "line_range",
+              "start": 63
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b520874e0837707762dcede94c19521961ac366e",
             "content": "sha256:55fda0d9e552bf51e48d35a8b460df5987bb5ef94dc61ab03cbb75f35d96c1cf",
             "locator": {
               "end": 89,
@@ -193,6 +230,30 @@
             "locator": {
               "kind": "symbol",
               "name": "referenced_documents"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b520874e0837707762dcede94c19521961ac366e",
+            "content": "sha256:11c8b236153fa4662a8d83f0c7372df0e72251a51d13a3ae9526911ead50b4c0",
+            "locator": {
+              "end": 391,
+              "kind": "line_range",
+              "start": 376
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b520874e0837707762dcede94c19521961ac366e",
+            "content": "sha256:727a2685e8b9d5ed5929383e6f8ddaa1385a1a6eccb1c12a6ba14f3edf64f155",
+            "locator": {
+              "end": 405,
+              "kind": "line_range",
+              "start": 394
             }
           },
           "kind": "code"
@@ -261,12 +322,36 @@
         },
         {
           "anchor": {
-            "blob": "9a4ce498ea27dd1a592a152b56acd5500346eee1",
-            "content": "sha256:28ac698b26212ddda441ae43cec0266b2285f337ee14839e25cc952fac83bbd3",
+            "blob": "b520874e0837707762dcede94c19521961ac366e",
+            "content": "sha256:d970083844d3421357d0466d7c0fcee67c029c783bd944bbbd37413f21a9d0eb",
             "locator": {
               "end": 165,
               "kind": "line_range",
               "start": 146
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b520874e0837707762dcede94c19521961ac366e",
+            "content": "sha256:6d1b3a1ce55c287424525036cd32d54763f65742e7ef0d3be82cfa9b84544f86",
+            "locator": {
+              "end": 213,
+              "kind": "line_range",
+              "start": 195
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b520874e0837707762dcede94c19521961ac366e",
+            "content": "sha256:f9182bb802713c7301c8144cefb6d912ca2a92a81362f0dfbaf93a7bc9dbc276",
+            "locator": {
+              "end": 234,
+              "kind": "line_range",
+              "start": 216
             }
           },
           "kind": "code"
@@ -343,12 +428,23 @@
       ]
     },
     "7": {
-      "note": "The topology owner that decides whether a reference resolves and which altitude may carry the seat.",
+      "note": "The topology owner that decides whether a reference resolves and which altitude may carry the seat.\n\nAnchor: `TaskDocumentTopology` `TaskDocumentRefError` `TaskAltitude`",
       "targets": [
         {
           "anchor": {
-            "blob": "4726f82955a9d9fa8749b5d07b038240fe039acb",
-            "content": "sha256:73d23ab4a1404cf3bba554d9ac6c1d23eca46cb8b732a50e1a96924ed62d8853",
+            "blob": "8e7a9eac75417f2c2bf003612d5c62cfc540661a",
+            "content": "sha256:6128cde80120b1453092e64570b36beec886f302204e049e82779bc2277c9489",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/tasks/document_refs.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8e7a9eac75417f2c2bf003612d5c62cfc540661a",
+            "content": "sha256:76321fe013755208406f51b2919f00181be275ec94d76eb82bcd62488d3e9a84",
             "locator": {
               "kind": "symbol",
               "name": "TaskDocumentTopology"
@@ -384,15 +480,16 @@
       ]
     },
     "8": {
-      "note": "The enclosure contract and its reader — the owner of branch, base commit and leaf identity.",
+      "note": "The enclosure contract and its reader — the owner of branch, base commit and leaf identity.  Anchor: `WorktreeContract` `load_contract` `WorktreeContractReader`",
       "targets": [
         {
           "anchor": {
-            "blob": "cad2b5290a889e152e487a9d3b2b27aeea339086",
-            "content": "sha256:8c82cf9643d566fa58d68d1a4bc2a516b15a7c4470a36c65892a811abb1e4454",
+            "blob": "c9e2847f64ca428bdc799c8173b43aa736f4b0e9",
+            "content": "sha256:de8fea3db94fe34a6b30d3583ecaff1cdf4c047fc7b04d32ee0d7eb5571a40fb",
             "locator": {
-              "kind": "symbol",
-              "name": "WorktreeContract"
+              "end": 311,
+              "kind": "line_range",
+              "start": 246
             },
             "path": "mcp/src/agents_remember/worktrees/worktree_contract.py"
           },
@@ -400,11 +497,12 @@
         },
         {
           "anchor": {
-            "blob": "1ef6715a9f5e28dd748cb8dde604a86bad8f190d",
-            "content": "sha256:3bc924f5a9c3f4bd27d8bbc6cc3f4383cd0ced5ea64c848c72e01998bbba924d",
+            "blob": "c9e2847f64ca428bdc799c8173b43aa736f4b0e9",
+            "content": "sha256:bfec3a3775045fe3fe7e3a92d32691cdcd15bb5f228b4411aa801ec873ff97a9",
             "locator": {
-              "kind": "symbol",
-              "name": "load_contract"
+              "end": 491,
+              "kind": "line_range",
+              "start": 460
             },
             "path": "mcp/src/agents_remember/worktrees/worktree_contract.py"
           },
@@ -412,20 +510,8 @@
         },
         {
           "anchor": {
-            "blob": "2839bd8153b4ebbc2bb89e86da08e84840c848e5",
-            "content": "sha256:4c5254d69f10d674d7ed9d6dec6c8dd44eeb2703fed21c69221d9829899bb252",
-            "locator": {
-              "kind": "symbol",
-              "name": "WorktreeContractReader"
-            },
-            "path": "mcp/src/agents_remember/worktrees/modules/contract_reader.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "cad2b5290a889e152e487a9d3b2b27aeea339086",
-            "content": "sha256:b5538d3d87466b1af2902ccd01d110f5363b44f3af22cf841ff96c97d242a6d2",
+            "blob": "c9e2847f64ca428bdc799c8173b43aa736f4b0e9",
+            "content": "sha256:9a5a179fd46ed4313775e3939101db7139c1fc0b1905d9b659c953859f361038",
             "locator": {
               "end": 284,
               "kind": "line_range",
@@ -437,14 +523,27 @@
         },
         {
           "anchor": {
-            "blob": "1ef6715a9f5e28dd748cb8dde604a86bad8f190d",
-            "content": "sha256:577cb109a6d729c5c376912d407f750475b5d33d7f9164e79eda91776bd7c6f6",
+            "blob": "c9e2847f64ca428bdc799c8173b43aa736f4b0e9",
+            "content": "sha256:e4018d774645cce7dce0c51cbf04e207718d8685255da4379ea1c0691d889378",
             "locator": {
-              "end": 463,
+              "end": 491,
               "kind": "line_range",
-              "start": 432
+              "start": 246
             },
             "path": "mcp/src/agents_remember/worktrees/worktree_contract.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f559e076f63f3df3a567dca2ddc05058fe41eeaa",
+            "content": "sha256:a21d4f6ebb494a3e2a1432e5a877916404e3e4ab3cd366e76f41ad600f300ab5",
+            "locator": {
+              "end": 118,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/contract_reader.py"
           },
           "kind": "code"
         }

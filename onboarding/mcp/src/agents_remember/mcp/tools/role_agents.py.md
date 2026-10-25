@@ -31,5 +31,7 @@ retire_child_payload calls the existing retire_native_seat owner with the typed 
 
 `user_settings_init_payload` previews or writes the role-harness settings file through `application.user_settings_init`. Only an absent destination is created; an existing file is read and reported without completion or overwrite. A refusal is an answer rather than an exception: it carries `state: refused` with its `code`, `detail`, `nextAction`, the path resolved without reading the destination and the target, and nothing was written. `target=host-authority` is refused by name, because the `paseoRuntime` block belongs to the installed MCP settings file and the host preparation stage owns that write, and a dry run answers `state: preview`.
 
+
 - The payload that answers a refusal instead of raising one. [4]
+
 - The named refusal of a host block in the user settings file. [5]

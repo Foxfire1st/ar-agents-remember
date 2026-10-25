@@ -3,15 +3,14 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "Registered preview transport case was deleted with the closeout route-review gate; the removal is pinned at both altitudes by the atomic-master public closeout test.",
+      "note": "Registered preview transport case was deleted with the closeout route-review gate; the removal is pinned at both altitudes by the atomic-master public closeout test.\n\nAnchor: `test_closeout_never_gates_on_a_route_review_record_at_either_altitude`",
       "targets": [
         {
           "anchor": {
-            "blob": "b2755068eba62b98899d103786f9d26695cd9519",
-            "content": "sha256:5322d3f73f08434e37c5910c595288389cba431dc191c55190431c4a9410bc0d",
+            "blob": "a2ae9d1eb1ad7ea61d6329d0350f3d0ec052f73a",
+            "content": "sha256:0ca2054f158dab0a706b7190b444dcdaf404c3abdb353f71b3ed6a8feaa73aa5",
             "locator": {
-              "kind": "symbol",
-              "name": "test_closeout_never_gates_on_a_route_review_record_at_either_altitude"
+              "kind": "file"
             },
             "path": "mcp/tests/test_atomic_master_review_public.py"
           },

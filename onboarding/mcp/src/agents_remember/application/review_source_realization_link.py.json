@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/application/review_source_realization_link.py",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
@@ -89,12 +90,34 @@
       ]
     },
     "10": {
-      "note": "The read owner's identity resolution and exact claim-at-path query this module re-uses.",
+      "note": "The read owner's identity resolution and exact claim-at-path query this module re-uses.\n\nAnchor: `open_read_context` `fetch_realizations_at_path`",
       "targets": [
         {
           "anchor": {
-            "blob": "b71c42f66555bf28336d90d4449c7f9b2aaede25",
-            "content": "sha256:6b25c5ae9bc387cc07259a2f7f75a5be091b9d352b392c4a435b056f1a50eed5",
+            "blob": "9d2460c7b39373ba3a888ebd88da47468cc93266",
+            "content": "sha256:ca739f3b2996c442fd9c6e03488e5ff8b46ff05da0437375a48061f73df7d72f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_read.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8c1f6f5bcd3dd39fbd974373a48a8d714ddc8bec",
+            "content": "sha256:7adfb17f465ae05c5df2710f4d05a921b610d502740c56213ea1ec60cc13e371",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/read_queries.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9d2460c7b39373ba3a888ebd88da47468cc93266",
+            "content": "sha256:3b8eed5fbfb87e74aa54c8c4c607da5cf6af518e8986d2891659a70661f90548",
             "locator": {
               "kind": "symbol",
               "name": "open_read_context"
@@ -118,8 +141,30 @@
       ]
     },
     "11": {
-      "note": "The generation owners that bind a superseded pair to its retained knowledge.",
+      "note": "The generation owners that bind a superseded pair to its retained knowledge.\n\nAnchor: `read_generation_refs` `read_manifest` `task_root_for_review` `resolve_committed_leaf_review`",
       "targets": [
+        {
+          "anchor": {
+            "blob": "251e7c89eb87aa6086e0059351fa20f921d94638",
+            "content": "sha256:c9150b4c6814ed6e50f4c4cea4115c966d2881137f619f854fab26b2d0b943a0",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/review_comparison_generation.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c39e9055a99425a3cd8d683e96d279c87b35d720",
+            "content": "sha256:04ef00a4f26959260c046b0d4b570cbdd72b409cf0306989fabf5f177feb3741",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/review_committed_leaf.py"
+          },
+          "kind": "code"
+        },
         {
           "anchor": {
             "blob": "251e7c89eb87aa6086e0059351fa20f921d94638",
@@ -158,8 +203,8 @@
         },
         {
           "anchor": {
-            "blob": "f1950eaa1da83687a4057e31a07d75638b1400ed",
-            "content": "sha256:7dcac80a8b8df7ac06900093814815776479539dfcb1e54347cbf683c7babbe7",
+            "blob": "c39e9055a99425a3cd8d683e96d279c87b35d720",
+            "content": "sha256:780810baad0324cbfb864c23c86741ada531a1c33f0a5be32250abba6093f296",
             "locator": {
               "kind": "symbol",
               "name": "resolve_committed_leaf_review"
@@ -171,12 +216,34 @@
       ]
     },
     "12": {
-      "note": "The namespace record (the record beside the bytes, or, since MIK-R25, a derived knowledge index's own namespace) and the path-seed shape rule.",
+      "note": "The namespace record (the record beside the bytes, or, since MIK-R25, a derived knowledge index's own namespace) and the path-seed shape rule.\n\nAnchor: `review_namespace` `PathSeed`",
       "targets": [
         {
           "anchor": {
-            "blob": "33aff10f88f16a1e0005ac6a64cd2a7f0f8020d8",
-            "content": "sha256:7f5ce855ce3dfb30ab5c65f92bf2e989104ce00f061705ee89d95bcaf3c06054",
+            "blob": "e3af58a3091d7364172ee73c5443ed98c970efa1",
+            "content": "sha256:7e9ac77f2f5915763ef1f783b4f702cb301873552bf902458c10e481c3590527",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/review_candidate_resolution.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e3dd598b62290d22b1995fc556f1f6cc8ae0761f",
+            "content": "sha256:fbd98175de6f3059b83374833481f33639bdf4840ffee08959b2e96e4c46239f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/read.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e3af58a3091d7364172ee73c5443ed98c970efa1",
+            "content": "sha256:c12f2d6be24cf899b572b83562f39ddbadfda75b97c536d420b20daa0a109c61",
             "locator": {
               "kind": "symbol",
               "name": "review_namespace"
@@ -200,12 +267,23 @@
       ]
     },
     "13": {
-      "note": "**Cases: cross-comparison refusal, recorded historical bytes after the tree moves, closed leaf, padded spellings, and the lowered selection bound.**",
+      "note": "**Cases: cross-comparison refusal, recorded historical bytes after the tree moves, closed leaf, padded spellings, and the lowered selection bound.**\n\nAnchor: `test_a_path_linked_only_in_another_comparison_is_refused_for_this_one` `test_after_the_live_tree_moves_the_listed_pair_keeps_its_exact_attributed_bytes` `test_a_closed_leaf_opens_its_attributed_path_from_the_retained_generation` `test_a_padded_spelling_is_never_admitted_as_attributed_context` `test_a_selection_bound_below_the_scope_cannot_refuse_a_linked_path`",
       "targets": [
         {
           "anchor": {
-            "blob": "9df6a850742f0e02c026d141b7813616ea5c2944",
-            "content": "sha256:c8d4944c85a19f02a6fdb0d278d9a9de1bb0f8f69aec5c9fa54cd29de21094b9",
+            "blob": "373b98939739fd3634b0fe64b4ea2d00c508d5bb",
+            "content": "sha256:4f7ecc8772618d62abc5902fc65b5a8b5e48a7d69e4e689e810128c571ba4261",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_knowledge_review_attributed_source_content.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "373b98939739fd3634b0fe64b4ea2d00c508d5bb",
+            "content": "sha256:7bbc9e7dfed79e65b20eaf2e0849f7218fe90927136e619991fd3b13f69a5fac",
             "locator": {
               "kind": "symbol",
               "name": "test_a_path_linked_only_in_another_comparison_is_refused_for_this_one"
@@ -216,8 +294,8 @@
         },
         {
           "anchor": {
-            "blob": "9df6a850742f0e02c026d141b7813616ea5c2944",
-            "content": "sha256:1ac66ae3aeb994c338c865c195eb25d4f2feee0e2e5753b1924c37b4cdc898c4",
+            "blob": "373b98939739fd3634b0fe64b4ea2d00c508d5bb",
+            "content": "sha256:3dc9ddf1f8d5fac8720ff2aa75bbd9c609e8a5280195d0b8df5344bd632caa9e",
             "locator": {
               "kind": "symbol",
               "name": "test_after_the_live_tree_moves_the_listed_pair_keeps_its_exact_attributed_bytes"
@@ -228,8 +306,8 @@
         },
         {
           "anchor": {
-            "blob": "9df6a850742f0e02c026d141b7813616ea5c2944",
-            "content": "sha256:f0a82b1a00a776952096e0d0d56a5e1d6148cde33e1cc07f941e5d6fc3ef504b",
+            "blob": "373b98939739fd3634b0fe64b4ea2d00c508d5bb",
+            "content": "sha256:d7ec1eb1845df3bf24feec266350742adf96310815ade2db0d7677825cd7e606",
             "locator": {
               "kind": "symbol",
               "name": "test_a_closed_leaf_opens_its_attributed_path_from_the_retained_generation"
@@ -240,8 +318,8 @@
         },
         {
           "anchor": {
-            "blob": "9df6a850742f0e02c026d141b7813616ea5c2944",
-            "content": "sha256:2edac6227df8eb74aadea566ce8f9193e3b1d6a7ff8b4ce12a12d9be9f2cff01",
+            "blob": "373b98939739fd3634b0fe64b4ea2d00c508d5bb",
+            "content": "sha256:a106a785d11d775de2dbf51735afe26592c9a63c2898e28a6995b83e9aa0a3f0",
             "locator": {
               "kind": "symbol",
               "name": "test_a_padded_spelling_is_never_admitted_as_attributed_context"
@@ -252,8 +330,8 @@
         },
         {
           "anchor": {
-            "blob": "9df6a850742f0e02c026d141b7813616ea5c2944",
-            "content": "sha256:37acee70ec0266ae29337e5b2d3e803ab252fab720fa9fa9a71f922f8063c11d",
+            "blob": "373b98939739fd3634b0fe64b4ea2d00c508d5bb",
+            "content": "sha256:a5c5eb8aabdd1c83dee386edc801dcb89b560a1e569df0fc4788f2d66657ff5f",
             "locator": {
               "kind": "symbol",
               "name": "test_a_selection_bound_below_the_scope_cannot_refuse_a_linked_path"
@@ -308,12 +386,22 @@
       ]
     },
     "4": {
-      "note": "**The entry point: bind the comparison, check the spelling, read the namespace, ask each half; the halves' answer composed apart.**",
+      "note": "**The entry point: bind the comparison, check the spelling, read the namespace, ask each half; the halves' answer composed apart.**\n\nAnchor: `recorded_realization_link` `_link_of`",
       "targets": [
         {
           "anchor": {
-            "blob": "c44437cfac6ee519a532c3ce675f46baa01148fe",
-            "content": "sha256:8ef4c43fc85de2eca313ac24b362b166d2034dc3e91b56e1671f4e5d73858773",
+            "blob": "bc638f5e47c02721604a66086ebc28876ec93f4c",
+            "content": "sha256:1d48a327261da8e5b431d2148745fd5f228e87171e9b8e12a8113c31c32ccb4d",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bc638f5e47c02721604a66086ebc28876ec93f4c",
+            "content": "sha256:7ca3162b210e28ae0b41ff020882d0b9ec231cc4ff6de3e8094ac12962e5256b",
             "locator": {
               "kind": "symbol",
               "name": "recorded_realization_link"
@@ -351,12 +439,22 @@
       ]
     },
     "6": {
-      "note": "**Comparison binding: current pair, recorded superseded pair, or nothing — never the leaf's current knowledge.**",
+      "note": "**Comparison binding: current pair, recorded superseded pair, or nothing — never the leaf's current knowledge.**\n\nAnchor: `_bound_knowledge`",
       "targets": [
         {
           "anchor": {
-            "blob": "c44437cfac6ee519a532c3ce675f46baa01148fe",
-            "content": "sha256:781db4799e3aba7a5072754614565b4c94163636b43b0c12ad35b5d547efc5ef",
+            "blob": "bc638f5e47c02721604a66086ebc28876ec93f4c",
+            "content": "sha256:1d48a327261da8e5b431d2148745fd5f228e87171e9b8e12a8113c31c32ccb4d",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bc638f5e47c02721604a66086ebc28876ec93f4c",
+            "content": "sha256:9bf4e1e3d753bd5a6fd2070b32e9c81f1ada34a122b0a1a82f7981ab2e12b42b",
             "locator": {
               "kind": "symbol",
               "name": "_bound_knowledge"

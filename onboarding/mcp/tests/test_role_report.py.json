@@ -124,15 +124,14 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "Reads the deterministic report of every launchable role, task-bound and taskless, and leaves the receipt, report bytes and mtimes unchanged.",
+      "note": "Reads the deterministic report of every launchable role, task-bound and taskless, and leaves the receipt, report bytes and mtimes unchanged.\n\nAnchor: `test_report_of_every_launchable_role_is_read_only`",
       "targets": [
         {
           "anchor": {
-            "blob": "6cfa19ffb66e085937e6ae1895c9e618464b0a4b",
-            "content": "sha256:e217e3fb62ff334ccd71eb217da704b3567d0e652fd9a0f841475a35fdc7c5cd",
+            "blob": "97fcb9935981a0b3844e70d1bfc713f7aa2cb9ea",
+            "content": "sha256:5afa2d6eaa19cf08dc16657df128cbba417719604fc32a584e1b2f5489d092c4",
             "locator": {
-              "kind": "symbol",
-              "name": "test_report_of_every_launchable_role_is_read_only"
+              "kind": "file"
             }
           },
           "kind": "test"

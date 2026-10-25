@@ -73,15 +73,14 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "Abandoned rows with no enclosure, an empty file cell and unlanded enclosures pass; the master document is unchanged.",
+      "note": "Abandoned rows with no enclosure, an empty file cell and unlanded enclosures pass; the master document is unchanged.\n\nAnchor: `test_abandoned_rows_without_enclosures_and_with_unlanded_enclosures_pass`",
       "targets": [
         {
           "anchor": {
-            "blob": "2a6ff701f935e41e2e3ada07519a187dff1790d7",
-            "content": "sha256:f437d15386e07f6e47e75ea3c2afdb9dc63ee0fbb0110e24a10a9d071bca5977",
+            "blob": "d24389c3568444823237ed60dc8c5c033291659f",
+            "content": "sha256:78d1665c7012718b946dd7baff42277ac8e466b60ff19950c787fa96f3d9a3ba",
             "locator": {
-              "kind": "symbol",
-              "name": "test_abandoned_rows_without_enclosures_and_with_unlanded_enclosures_pass"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -89,15 +88,14 @@
       ]
     },
     "2": {
-      "note": "An abandoned row that landed refuses with the row named.",
+      "note": "An abandoned row that landed refuses with the row named.\n\nAnchor: `test_landed_abandoned_row_refuses_with_named_remedy`",
       "targets": [
         {
           "anchor": {
-            "blob": "2a6ff701f935e41e2e3ada07519a187dff1790d7",
-            "content": "sha256:f818235e44ba7642bb9563e33df1cb10010c190f7c45d0345a1fdb8e73fb3086",
+            "blob": "d24389c3568444823237ed60dc8c5c033291659f",
+            "content": "sha256:78d1665c7012718b946dd7baff42277ac8e466b60ff19950c787fa96f3d9a3ba",
             "locator": {
-              "kind": "symbol",
-              "name": "test_landed_abandoned_row_refuses_with_named_remedy"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -173,8 +171,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5779b2e79b35fba9711313ec9ebadb3417ee36b4",
-            "content": "sha256:f7cacd27561faddb4d28dc6b0053d7cf02e71bb0d671120b98c680fd557c78dd",
+            "blob": "d24389c3568444823237ed60dc8c5c033291659f",
+            "content": "sha256:78d1665c7012718b946dd7baff42277ac8e466b60ff19950c787fa96f3d9a3ba",
             "locator": {
               "kind": "file"
             }

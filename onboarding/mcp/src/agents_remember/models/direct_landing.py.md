@@ -58,14 +58,28 @@ No configured external domain-documentation source applies.
 
 ### Repo-Internal References
 
+
 - Real code/memory SHAs are separate from optional ledgerCache diagnostics. [1]
+
+
 - The response model shape for the direct landing operation. [2]
+
+
 - Registered as the `direct_landing` tool response model. [3]
+
+
 - Produced by the admitted direct-landing coordinator. [4]
+
+
 - Memory-content execution and same-generation recovery are journaled below the coordinator. [5]
+
 - None [6]
+
 - None [7]
+
+
 - None [8]
+
 
 ### Cross-Repo References
 
@@ -86,7 +100,9 @@ The current source seams include `DirectLandingResponse`. The response vocabular
 
 ### Reconciled Source Evidence
 
+
 - The current module exposes `DirectLandingResponse` at this ownership boundary. [9]
+
 
 ## 260821-DAGQC-L2 Closed Outcome Vocabulary
 
@@ -96,5 +112,6 @@ belong inside the lifecycle projection; they are evidence about how the operatio
 not a fourth direct-landing outcome. The separate `doorGenerationId` recovery field this section
 once carried was removed by the closeout-door cut (commit `fad9808e`); a direct landing no longer
 carries or reports a door generation.
+
 
 - The strict response adds optional candidateTree, candidatePaths and codeCommitMessage for code-create preview/output evidence. [10]

@@ -48,7 +48,9 @@ No configured domain documentation could be checked.
 ### Repo-Internal References
 
 - The namespace model and its nonblank authority-home rule. [1]
+
 - The `repository` table this identity keys, and its no-update/no-delete triggers. [2]
+
 
 - The repository value declares namespace and authority home; the old rebinding writer is retired. [3]
 

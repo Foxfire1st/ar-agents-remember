@@ -92,8 +92,12 @@ No configured domain-documentation source was available for this local hook.
 
 - One immutable persisted set supports both ordinary toggle and unconditional collapse, without a second opened-state store. [4]
 
+
 - The parent list applies the hook only to BY REPO hierarchy visibility and leaves selection/detail separate. [1]
-- Focused tests verify stable storage keys, remount persistence, independent nested state, and expanded defaults. The landed-master cases this row used to name (`holds a fully landed master closed by default…`, `never closes a row that carries OTHER rows…`) **were deleted with the L33 revert** and no longer exist in `hierarchy.test.tsx`; the row now names the three cases the reverted file really carries. [2]
+
+
+- Focused tests pin the stable `operations.tasks.collapsed.v1` keys, independent sprint and master disclosures that stay collapsed across a remount, and BY PHASE grouping that stays flat and never changes selection. [2]
+
 - The existing persisted-flag pattern was the worker's local implementation reference. [3]
 
 ### Cross-Repo References

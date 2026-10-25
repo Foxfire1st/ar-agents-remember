@@ -1,18 +1,19 @@
 {
   "path": "mcp/src/agents_remember/tasks/__init__.py",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
-      "note": "The schema, renderer, and store owned by this package.\n\nAnchor: \"class TaskDocument(_Doc):\"; \"def render_markdown(doc: TaskDocument, *, graph_titles:\"; \"def write_task_docs(\"",
+      "note": "The schema, renderer, and store owned by this package.",
       "targets": [
         {
           "anchor": {
             "blob": "be6077cacddf1e01c108ee2a00fa606660e7034c",
-            "content": "sha256:35060cdf1a6f2cf8755ce8a6e9e698c5d3268f8e7c527e2f29104d38d458382f",
+            "content": "sha256:7b79f7eb5968da95a337c3c1094fd9d9a00ddf3375040e75f776abadf5fda1a6",
             "locator": {
-              "end": 1041,
+              "end": 688,
               "kind": "line_range",
-              "start": 1041
+              "start": 688
             },
             "path": "mcp/src/agents_remember/tasks/document.py"
           },
@@ -20,8 +21,8 @@
         },
         {
           "anchor": {
-            "blob": "5fa8f225e2f4d8ea5ed8a1108eb5e91e03cc816a",
-            "content": "sha256:040de9046446bc00301360ec9f4d3f535074d79d16a103878abe4638484715ff",
+            "blob": "79a6277b50baffef12beb1ba6eea3a87e4859faf",
+            "content": "sha256:1162f99dfdf356e50737bcc386fd34194c8de4104614e9a0460979890031b5f7",
             "locator": {
               "end": 45,
               "kind": "line_range",
@@ -43,11 +44,50 @@
             "path": "mcp/src/agents_remember/tasks/store.py"
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "be6077cacddf1e01c108ee2a00fa606660e7034c",
+            "content": "sha256:35060cdf1a6f2cf8755ce8a6e9e698c5d3268f8e7c527e2f29104d38d458382f",
+            "locator": {
+              "end": 1041,
+              "kind": "line_range",
+              "start": 1041
+            },
+            "path": "mcp/src/agents_remember/tasks/document.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "be6077cacddf1e01c108ee2a00fa606660e7034c",
+            "content": "sha256:997f5b0640ada7d6be05fa7783e6228bf8c52237d3264d29c6d7d61d5ef32bd8",
+            "locator": {
+              "end": 667,
+              "kind": "line_range",
+              "start": 667
+            },
+            "path": "mcp/src/agents_remember/tasks/document.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2a64cde126895735be83f19ed1521595ea1c7a01",
+            "content": "sha256:01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+            "locator": {
+              "end": 124,
+              "kind": "line_range",
+              "start": 124
+            },
+            "path": "mcp/src/agents_remember/tasks/store.py"
+          },
+          "kind": "code"
         }
       ]
     },
     "2": {
-      "note": "Current facade re-exports of the typed task-intent slot models.\n\nAnchor: \"from agents_remember.models.task_intent import (\"; \"__all__ = [\"",
+      "note": "Current facade re-exports of the typed task-intent slot models.",
       "targets": [
         {
           "anchor": {
@@ -63,8 +103,8 @@
         },
         {
           "anchor": {
-            "blob": "d82759802e5fc502d133aec8c52295c77bfa992f",
-            "content": "sha256:9f2e321c169b8082aa87f8e77a21c03ad267c793d10af561f94ea3ef592d89ce",
+            "blob": "21c91c2e2ed4f36f23962b9b10bac3bce3806ef1",
+            "content": "sha256:b2f652b199f05d5d38c9e0e2e1bcc49e7dbd1a1f0fee6b4290e939c595c680d2",
             "locator": {
               "end": 128,
               "kind": "line_range",
@@ -76,7 +116,7 @@
       ]
     },
     "3": {
-      "note": "The current module exposes the canonical task models, publication primitives, discard/audit types, and rollback-safe store operations.\n\nAnchor: \"from .document import (\"; \"from .store import (\"; \"__all__ = [\"",
+      "note": "The current module exposes the canonical task models, publication primitives, discard/audit types, and rollback-safe store operations.",
       "targets": [
         {
           "anchor": {
@@ -104,12 +144,24 @@
         },
         {
           "anchor": {
-            "blob": "d82759802e5fc502d133aec8c52295c77bfa992f",
-            "content": "sha256:9f2e321c169b8082aa87f8e77a21c03ad267c793d10af561f94ea3ef592d89ce",
+            "blob": "21c91c2e2ed4f36f23962b9b10bac3bce3806ef1",
+            "content": "sha256:b2f652b199f05d5d38c9e0e2e1bcc49e7dbd1a1f0fee6b4290e939c595c680d2",
             "locator": {
               "end": 128,
               "kind": "line_range",
               "start": 88
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "21c91c2e2ed4f36f23962b9b10bac3bce3806ef1",
+            "content": "sha256:fafba0527c3953c4b6e0e5b5739ba83612f8053bcdc9466730193cd1d590b408",
+            "locator": {
+              "end": 75,
+              "kind": "line_range",
+              "start": 75
             }
           },
           "kind": "code"

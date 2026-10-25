@@ -190,15 +190,14 @@
       ]
     },
     "11": {
-      "note": "The open-work control supplies external-memory leaf cells and creates the intended code-side open work.",
+      "note": "The open-work control supplies external-memory leaf cells and creates the intended code-side open work.\n\nAnchor: `test_lone_master_with_open_work_refuses_without_writes_and_a_pending_cleanup_does_not`",
       "targets": [
         {
           "anchor": {
-            "blob": "095f89b833e33c88b35c7da7a5febffe41942af3",
-            "content": "sha256:72b25acb1b3791fd92508a0211da3ff9f45437e2279ab9a8f008317b044afdfe",
+            "blob": "139e788dbd8dcb39da0498d136bf9d05282d5b02",
+            "content": "sha256:0ad6649b621a1b1c3c84d1edce92ba6fbf34893195de79c586057a4497c7860e",
             "locator": {
-              "kind": "symbol",
-              "name": "test_lone_master_with_open_work_refuses_without_writes_and_a_pending_cleanup_does_not"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -206,12 +205,12 @@
       ]
     },
     "12": {
-      "note": "A real tool_call_context precedes the registered adapter call, so its retained detailed result is available without repeating the mutator for facts. The unchanged-receipt assertion remains.\n\nAnchor: Current STOP-delta source carrier",
+      "note": "A real tool_call_context precedes the registered adapter call, so its retained detailed result is available without repeating the mutator for facts. The unchanged-receipt assertion remains.",
       "targets": [
         {
           "anchor": {
-            "blob": "5e9768dd6a0ebe88bf5f210ef18a818fd6d82de8",
-            "content": "sha256:e05e72bed0de5299b7f674c7bfc066091659328e6167ec58a1aa7afccfd4e7a6",
+            "blob": "139e788dbd8dcb39da0498d136bf9d05282d5b02",
+            "content": "sha256:0ad6649b621a1b1c3c84d1edce92ba6fbf34893195de79c586057a4497c7860e",
             "locator": {
               "kind": "file"
             }
@@ -299,15 +298,14 @@
       ]
     },
     "5": {
-      "note": "A partial hook failure on a lone master keeps the retirement and retries the cleanup only.",
+      "note": "A partial hook failure on a lone master keeps the retirement and retries the cleanup only.\n\nAnchor: `test_lone_master_partial_hook_failure_keeps_the_retirement_and_retries_cleanup_only`",
       "targets": [
         {
           "anchor": {
-            "blob": "095f89b833e33c88b35c7da7a5febffe41942af3",
-            "content": "sha256:526e0be026f6749188ddaca59187f01e036dbceaa13806b71514b401223d4f18",
+            "blob": "139e788dbd8dcb39da0498d136bf9d05282d5b02",
+            "content": "sha256:0ad6649b621a1b1c3c84d1edce92ba6fbf34893195de79c586057a4497c7860e",
             "locator": {
-              "kind": "symbol",
-              "name": "test_lone_master_partial_hook_failure_keeps_the_retirement_and_retries_cleanup_only"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -331,15 +329,14 @@
       ]
     },
     "7": {
-      "note": "Any exception before archival ends restored on both routes.",
+      "note": "Any exception before archival ends restored on both routes.\n\nAnchor: `test_any_exception_before_archival_ends_restored_on_both_routes`",
       "targets": [
         {
           "anchor": {
-            "blob": "095f89b833e33c88b35c7da7a5febffe41942af3",
-            "content": "sha256:4e52681c2c87e54b89868636fef4cd5c4b3d65ca7bc4c55bcee14e614a4a3dc4",
+            "blob": "139e788dbd8dcb39da0498d136bf9d05282d5b02",
+            "content": "sha256:0ad6649b621a1b1c3c84d1edce92ba6fbf34893195de79c586057a4497c7860e",
             "locator": {
-              "kind": "symbol",
-              "name": "test_any_exception_before_archival_ends_restored_on_both_routes"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -363,15 +360,14 @@
       ]
     },
     "9": {
-      "note": "Pending cleanup alone permits preview while a real child worktree refuses.",
+      "note": "Pending cleanup alone permits preview while a real child worktree refuses.\n\nAnchor: `test_lone_master_with_open_work_refuses_without_writes_and_a_pending_cleanup_does_not`",
       "targets": [
         {
           "anchor": {
-            "blob": "095f89b833e33c88b35c7da7a5febffe41942af3",
-            "content": "sha256:72b25acb1b3791fd92508a0211da3ff9f45437e2279ab9a8f008317b044afdfe",
+            "blob": "139e788dbd8dcb39da0498d136bf9d05282d5b02",
+            "content": "sha256:0ad6649b621a1b1c3c84d1edce92ba6fbf34893195de79c586057a4497c7860e",
             "locator": {
-              "kind": "symbol",
-              "name": "test_lone_master_with_open_work_refuses_without_writes_and_a_pending_cleanup_does_not"
+              "kind": "file"
             }
           },
           "kind": "test"

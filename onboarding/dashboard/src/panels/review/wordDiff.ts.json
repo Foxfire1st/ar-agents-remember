@@ -1,5 +1,6 @@
 {
   "path": "dashboard/src/panels/review/wordDiff.ts",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
@@ -141,12 +142,34 @@
       ]
     },
     "11": {
-      "note": "The actual statement renderer consumes prepared text/list passages and names coarse/unpaired reasons without moving diff computation into this pure module.\n\nAnchor: `IntentStatementBody`, `TextPassageBody`, `ListPassage`, `preparePassage`",
+      "note": "The actual statement renderer consumes prepared text/list passages and names coarse/unpaired reasons without moving diff computation into this pure module.\n\nAnchor: `IntentStatementBody` `TextPassageBody` `ListPassage` `preparePassage`",
       "targets": [
         {
           "anchor": {
-            "blob": "8035228691bc89dfc59d344fc409816473ff6df6",
-            "content": "sha256:2e8d7346b2b02511605a3ba9709a7f09869fe310241fe3de7ecbdb6b70260058",
+            "blob": "44feb721874f617dff2c7f015005def20ce3d63c",
+            "content": "sha256:44c7ca6227ae8c7184ae08bd065c56b15a8eb7193fe6b29b0f6fc025be4e85b2",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/IntentWordDiff.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "070aae7f888e8aece3db0fb18d68b10adcfb6ed1",
+            "content": "sha256:2c7a29353e881ad02007f28383871866b4fa3183abcd3b1c7dc5b86df5f069a2",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/intent-passage/model.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "44feb721874f617dff2c7f015005def20ce3d63c",
+            "content": "sha256:83f4f098c23b8c4ebf5c1aee40d823ea661e52d8356906bf15e76657a19dd562",
             "locator": {
               "kind": "symbol",
               "name": "IntentStatementBody"
@@ -169,8 +192,8 @@
         },
         {
           "anchor": {
-            "blob": "8035228691bc89dfc59d344fc409816473ff6df6",
-            "content": "sha256:18d40a77de5423d4102fb87f1f6b92b272939df9ecc4449a35594be0de75d13e",
+            "blob": "44feb721874f617dff2c7f015005def20ce3d63c",
+            "content": "sha256:d1c876ef7ca57377dcfbf78ecc416053e6fe0322b3d1d6085bd1a31c57c75910",
             "locator": {
               "kind": "symbol",
               "name": "ListPassage"

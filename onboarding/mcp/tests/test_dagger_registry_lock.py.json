@@ -3,15 +3,14 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "Host admission keeps undeclared checkout coordinator writes refused.",
+      "note": "Host admission keeps undeclared checkout coordinator writes refused.\n\nAnchor: `test_host_admission_keeps_undeclared_checkout_coordinator_writes_refused`",
       "targets": [
         {
           "anchor": {
-            "blob": "97dbd9063f43194a8744408df88da6452cec103f",
-            "content": "sha256:243aa186ad21e463c83464777d66478f1701201a4aacb1fe7748cba83c63e27e",
+            "blob": "3bcfb74d351791ef4ac8b910d5d3e8cc5ea09f55",
+            "content": "sha256:8f6b26946dea0b040a19ac136ed30363b760cf5e02da72cb39f2acc7052fa4d1",
             "locator": {
-              "kind": "symbol",
-              "name": "test_host_admission_keeps_undeclared_checkout_coordinator_writes_refused"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -19,15 +18,14 @@
       ]
     },
     "2": {
-      "note": "Registry nested exception retains then releases thread and process exclusion.",
+      "note": "Registry nested exception retains then releases thread and process exclusion.\n\nAnchor: `test_registry_nested_exception_retains_then_releases_thread_and_process_exclusion`",
       "targets": [
         {
           "anchor": {
-            "blob": "1f7bd5c47ccb962d5e0c3011b0d66a3c990e7e0f",
-            "content": "sha256:16b7903b69d258faf75a47fd260eb5149ebb16066405ec41a93e60b5d0a694e3",
+            "blob": "3bcfb74d351791ef4ac8b910d5d3e8cc5ea09f55",
+            "content": "sha256:8f6b26946dea0b040a19ac136ed30363b760cf5e02da72cb39f2acc7052fa4d1",
             "locator": {
-              "kind": "symbol",
-              "name": "test_registry_nested_exception_retains_then_releases_thread_and_process_exclusion"
+              "kind": "file"
             }
           },
           "kind": "test"

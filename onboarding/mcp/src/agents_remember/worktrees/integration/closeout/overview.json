@@ -2,15 +2,14 @@
   "path": "mcp/src/agents_remember/worktrees/integration/closeout",
   "references": {
     "1": {
-      "note": "The closeout validator's gate over the authority's exact candidate.",
+      "note": "The closeout validator's gate over the authority's exact candidate.\n\nAnchor: `_require_knowledge_gate`",
       "targets": [
         {
           "anchor": {
-            "blob": "10081759c2352c391ba3ab5713f24de7f02d16c6",
-            "content": "sha256:6772ad476d6034ab968dd523ccb86bc0f93ee4372cdfa9b4e5cc52e06e2f85b3",
+            "blob": "a61bb8710773ccee56c8016d87b57de1d750388c",
+            "content": "sha256:3ea7b2f02a294a5fea2dc010c849cac60fe37d3309a27bfc7b9cbda1dddef791",
             "locator": {
-              "kind": "symbol",
-              "name": "_require_knowledge_gate"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py"
           },
@@ -141,99 +140,14 @@
       ]
     },
     "4": {
-      "note": "Publication derives the input statement, files prepared candidates, binds assessment authorship and verifies generations before pointer replacement; optional file transport preserves the required identities.\n\nAnchor: `_prepare`, `_write_candidate_set`, `_publish`, `_read_judgments_file`, `_exact_review_assessments`, `_published_evidence_bytes`, `_require_predecessor`, `_publish_generation`, `PUBLICATION_MEMBERS`, `publication_input_statement`, `CuratorCoherenceRequest`, `_read_judgments_bytes`, `_parse_judgments_payload`, `_validate_file_entries`",
+      "note": "Publication derives the input statement, files prepared candidates, binds assessment authorship and verifies generations before pointer replacement; optional file transport preserves the required identities.\n\nAnchor: `_prepare` `_write_candidate_set` `_publish` `_read_judgments_file` `_exact_review_assessments` `_published_evidence_bytes` `_require_predecessor` `_publish_generation` `PUBLICATION_MEMBERS` `publication_input_statement` `CuratorCoherenceRequest` `_read_judgments_bytes` `_parse_judgments_payload` `_validate_file_entries`",
       "targets": [
         {
           "anchor": {
             "blob": "8e48e38066874b65d5c7dec91535af65a658fbe4",
-            "content": "sha256:23536224bcc5dc1d36955a44793da1c70344126e5a7f714f428ad67d6f3f2690",
+            "content": "sha256:62ff8ce4bdbd3f00c78efdacd84276c39aa645becc3eef914179028fe1628ab6",
             "locator": {
-              "kind": "symbol",
-              "name": "_prepare"
-            },
-            "path": "mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_publication.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "8e48e38066874b65d5c7dec91535af65a658fbe4",
-            "content": "sha256:7d7fe17df0eb2eba57e4a0d4e6835c0a273a3ad49e5ebdd1037d9c813d0e188e",
-            "locator": {
-              "kind": "symbol",
-              "name": "_write_candidate_set"
-            },
-            "path": "mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_publication.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "2396376cd715d4d7b646d44e5d83f4304708a636",
-            "content": "sha256:b80bc966651f313af77137b13fbb72874e1782d1f082b1619850f97df0731593",
-            "locator": {
-              "kind": "symbol",
-              "name": "_publish"
-            },
-            "path": "mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_publication.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "8e48e38066874b65d5c7dec91535af65a658fbe4",
-            "content": "sha256:1fd80c3a76055f1835f74cefeb20712474288da2da439c8eb87087593cc2fcca",
-            "locator": {
-              "kind": "symbol",
-              "name": "_read_judgments_file"
-            },
-            "path": "mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_publication.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "8e48e38066874b65d5c7dec91535af65a658fbe4",
-            "content": "sha256:421f477ff7368bb7bb4f0fb49df1bc279818f14e55fcc06d36e177f27bdc0bd3",
-            "locator": {
-              "kind": "symbol",
-              "name": "_exact_review_assessments"
-            },
-            "path": "mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_publication.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "8e48e38066874b65d5c7dec91535af65a658fbe4",
-            "content": "sha256:1c32af722c9926f2f8cdc23990be98cabcae8403d185f46ace6e39e5e7b6ad80",
-            "locator": {
-              "kind": "symbol",
-              "name": "_published_evidence_bytes"
-            },
-            "path": "mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_publication.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "8e48e38066874b65d5c7dec91535af65a658fbe4",
-            "content": "sha256:dc472f59702c79e32b43b7e12a39438759cf7aba3c37bc239a7e7abe489b7e7e",
-            "locator": {
-              "kind": "symbol",
-              "name": "_require_predecessor"
-            },
-            "path": "mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_publication.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "8e48e38066874b65d5c7dec91535af65a658fbe4",
-            "content": "sha256:8cced7d9a25816cd211a9a19fc4dc6cc0d006be0276453187b76fd0c67b761e1",
-            "locator": {
-              "kind": "symbol",
-              "name": "_publish_generation"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_publication.py"
           },
@@ -242,34 +156,9 @@
         {
           "anchor": {
             "blob": "7e534abbc8eddc596c09dd188591a8e33755c064",
-            "content": "sha256:bb049a3555b26c9f959e9e5d3289d2e9c71f4641c68da2fb93ffe66838fd75a4",
+            "content": "sha256:7fd3c6c2378c4bbc7cf578de5cac6b61de8b6217e6161425e43a285c4f577ae3",
             "locator": {
-              "kind": "symbol",
-              "name": "PUBLICATION_MEMBERS"
-            },
-            "path": "mcp/src/agents_remember/models/lifecycles/curator_coherence.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "7e534abbc8eddc596c09dd188591a8e33755c064",
-            "content": "sha256:6056a8e954ae75eb1c188747da2865b05c86acc1d71b16e70b5c3d533fa37f84",
-            "locator": {
-              "kind": "symbol",
-              "name": "publication_input_statement"
-            },
-            "path": "mcp/src/agents_remember/models/lifecycles/curator_coherence.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "7e534abbc8eddc596c09dd188591a8e33755c064",
-            "content": "sha256:d88ff6cfa7d8e4c8df6b7a72e9b6c9ba1856f3e0e86a26998308eb295bc08447",
-            "locator": {
-              "kind": "symbol",
-              "name": "CuratorCoherenceRequest"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/models/lifecycles/curator_coherence.py"
           },
@@ -278,34 +167,9 @@
         {
           "anchor": {
             "blob": "9150d6ea2188c64e23f747c261ce8ef28cdd1bf4",
-            "content": "sha256:67b9a0e15940babb1423f361efe886d54e5cac4e699f7323638811aba21846dd",
+            "content": "sha256:86b5e459286f0d79d7c4ea38fbeef81f4177a0b2507baa810d44601575c74df7",
             "locator": {
-              "kind": "symbol",
-              "name": "_read_judgments_bytes"
-            },
-            "path": "mcp/src/agents_remember/worktrees/integration/closeout/curator_judgments_file.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "9150d6ea2188c64e23f747c261ce8ef28cdd1bf4",
-            "content": "sha256:3c7f22f0aa40b532696214f95e32ec5efc7df911f85b5f2c96a75b638e41182d",
-            "locator": {
-              "kind": "symbol",
-              "name": "_parse_judgments_payload"
-            },
-            "path": "mcp/src/agents_remember/worktrees/integration/closeout/curator_judgments_file.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "9150d6ea2188c64e23f747c261ce8ef28cdd1bf4",
-            "content": "sha256:065dff6bed0e70f6aa452c179cbf2c4109b71cddf0e080fdcd5d41b21eb5c1ff",
-            "locator": {
-              "kind": "symbol",
-              "name": "_validate_file_entries"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/worktrees/integration/closeout/curator_judgments_file.py"
           },
@@ -362,14 +226,40 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b6704e5115285c7fc8764c42552d71d931813182",
-            "content": "sha256:b3def53255b2297f52b52886c7df85a677a17d5cf71cb0a2d39b734086a65357",
+            "blob": "b0dc75488f84e9b970fce1a584c4600297291e84",
+            "content": "sha256:7ba7c5fca3aecea0293eacd8b8632ff8bf507c93d9a67cf7f4f1e3a9cf5a2947",
             "locator": {
-              "end": 235,
+              "end": 46,
               "kind": "line_range",
-              "start": 161
+              "start": 26
             },
             "path": "mcp/src/agents_remember/worktrees/integration/closeout/preparation_selection.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f80165f2fce348dd60607343404287bd534b8d7f",
+            "content": "sha256:725b21ea24776facdac2d7f73a7f65e66a5aedf3188b86acb0affbbf4d63ee08",
+            "locator": {
+              "end": 109,
+              "kind": "line_range",
+              "start": 22
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/preparation_state.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f80165f2fce348dd60607343404287bd534b8d7f",
+            "content": "sha256:1a5b27d51034b41d654dd6b6ea4ae8df1337a6938ea43bc6186fa0d8efddcd95",
+            "locator": {
+              "end": 289,
+              "kind": "line_range",
+              "start": 270
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/preparation_state.py"
           },
           "kind": "code"
         }
@@ -437,8 +327,8 @@
         },
         {
           "anchor": {
-            "blob": "9cfb3331ff9fa3f591e098da8dbf93635dd481b9",
-            "content": "sha256:e17d8bbdf80632372cd9d73bac4a8ea5ac67a635ff735e1245eadec8701661d1",
+            "blob": "eecdaff3bad79ebac4230c53a03b1b6e2e47c1cf",
+            "content": "sha256:3b9e6e573fa71d95f9e69ddc01590078df8a07595832f36a5ba2913b04d43a1a",
             "locator": {
               "end": 276,
               "kind": "line_range",

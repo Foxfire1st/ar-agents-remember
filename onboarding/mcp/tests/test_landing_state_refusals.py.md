@@ -31,7 +31,10 @@ The closeout gate preview source case requires closeout-gate-blocked with a code
 - Deletion of a dropped field must fail the independent whole-result identity check. [2]
 - Changing a retained value must also fail that identity check. [3]
 
+
 - Three existing waits now use wait_until on the same contract closeout_status == completed condition. The first condition polls worktree_status before reading completion; the other two read the contract directly. The shared guard is unchanged, and all existing assertions retain their values; no sleep duration or new allowlist supplies readiness. [4]
+
+
 
 
 - Ordinary refusal tests require no error and read summary while preserving exact codes, next steps and state guards. The closeout gate preview source case requires closeout-gate-blocked with a coded blocker and no commit approval; nextStep contains no nextTool and its summary contains STORED_GATE_WAY_OUT. This is static assertion coverage, not a Curator execution or transaction acceptance. [5]

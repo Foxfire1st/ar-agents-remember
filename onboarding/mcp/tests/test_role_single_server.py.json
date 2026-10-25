@@ -3,12 +3,12 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The complete file owns the behavior and limits described above; documentation/tests are not fresh execution evidence.\n\nAnchor: 1-384",
+      "note": "The complete file owns the behavior and limits described above; documentation/tests are not fresh execution evidence.",
       "targets": [
         {
           "anchor": {
-            "blob": "8d68fb3c30ee049a11e1077608d8c7c5f9019e72",
-            "content": "sha256:0442d06b104ac33f52169f84231cb0bda890aab3fab3d8c6597d8a1fc70f2630",
+            "blob": "d6e37b4806d2bab90f46929c69179f32df12e046",
+            "content": "sha256:75da005965ffcc521c2397a7b7697836dba9b530aafbef9018878a4faffcbf9f",
             "locator": {
               "kind": "file"
             }

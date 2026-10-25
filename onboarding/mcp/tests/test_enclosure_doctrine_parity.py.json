@@ -243,12 +243,12 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "Doctrine parity across skill copies and the MCP reference is pinned.",
+      "note": "Doctrine parity across the skill copies and the MCP reference is pinned.",
       "targets": [
         {
           "anchor": {
-            "blob": "6d1f0d8cc20980d85104833c2923b58630e7c3d6",
-            "content": "sha256:d141b6bc1efd40f1e4bc7217ea4f0193fbcaa5a516ee95f8f765f51d4fd6a71a",
+            "blob": "830a0b90f65d8f5643675b485b2b1b094fb4fe7c",
+            "content": "sha256:a6e835c62c3a41e09fafc4c358027af534598c2aacb71ff522aa9f79a32bc1ab",
             "locator": {
               "kind": "file"
             }

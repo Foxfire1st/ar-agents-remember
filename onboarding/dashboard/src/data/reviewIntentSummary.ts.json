@@ -166,12 +166,12 @@
       ]
     },
     "6": {
-      "note": "The mirrored server result constrains its declared outcome and optional non-negative stored-open field.\n\nAnchor: Current implementation",
+      "note": "The mirrored server result constrains its declared outcome and optional non-negative stored-open field.",
       "targets": [
         {
           "anchor": {
-            "blob": "4d3de3149beba772c4408439aa637fb03436836d",
-            "content": "sha256:a06a94de49bd0b25fcebb01ce3f699bd961fb27e910060f4de1ab6cc8bb0271f",
+            "blob": "e475e37acb0871bfbf9a2dce8acdb6f76d42e801",
+            "content": "sha256:a01d5e00d63aa7731f3a048ea6f595d89181fa70ff02b58a98d44b16a942a0d5",
             "locator": {
               "end": 124,
               "kind": "line_range",
@@ -184,14 +184,14 @@
       ]
     },
     "7": {
-      "note": "The consumer distinguishes main authored counts/problem, attribution and separate open-work count, and opens the task-bound review.\n\nAnchor: Current implementation",
+      "note": "The consumer distinguishes main authored counts/problem, attribution and separate open-work count, and opens the task-bound review.",
       "targets": [
         {
           "anchor": {
-            "blob": "e7a6bf60038ae40902f419fca145a006573f1587",
-            "content": "sha256:65663d672a0556e603dbc6b40bba3602fb8f8032e1c573b1b94dba732a2253be",
+            "blob": "7589f63f1bb655f537e84d56ad377746d725da2b",
+            "content": "sha256:80788d26999d0339031459440c855c5bd9f921dd8b2faf705bd54d08c2a94771",
             "locator": {
-              "end": 190,
+              "end": 188,
               "kind": "line_range",
               "start": 31
             },
@@ -202,12 +202,12 @@
       ]
     },
     "8": {
-      "note": "The shared cache shares pending work only for equal facts; supersession is abort-guarded before retained-value replacement or revalidation relabeling.\n\nAnchor: Current implementation",
+      "note": "The shared cache shares pending work only for equal facts; supersession is abort-guarded before retained-value replacement or revalidation relabeling.",
       "targets": [
         {
           "anchor": {
-            "blob": "d64c2458cf4416a842ef1eff840bbf025ac0a5a9",
-            "content": "sha256:e6db7948a6285509052250f33afd2f49c6cbfc13f7849132b214641fdc465660",
+            "blob": "bf1cda5edde56c5b7be27ecd4232e531a9fe9da0",
+            "content": "sha256:a55148e9db17b2f54d24ca0a589d72c1003f781ab45b385726e840ee1789136f",
             "locator": {
               "end": 88,
               "kind": "line_range",

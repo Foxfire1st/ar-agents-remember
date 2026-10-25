@@ -145,36 +145,36 @@
         },
         {
           "anchor": {
-            "blob": "957bde915fa92fda0bbc6ed7afa2b580166c2603",
+            "blob": "dba4715382062ade57f75405fa7fcae034b1953f",
             "content": "sha256:d04deafb28393c660121cc33f9535f587bd3a6a0cb24c2baa162d0e6667f5ff2",
             "locator": {
-              "end": 85,
+              "end": 84,
               "kind": "line_range",
-              "start": 85
+              "start": 84
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "957bde915fa92fda0bbc6ed7afa2b580166c2603",
+            "blob": "dba4715382062ade57f75405fa7fcae034b1953f",
             "content": "sha256:4d96a68c4b529fac792a7e6701452e2f3cb7aa49ccc03be4278d93cb75205710",
             "locator": {
-              "end": 112,
+              "end": 110,
               "kind": "line_range",
-              "start": 112
+              "start": 110
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "f15f81a57f076686b9c0b38a3602086ff29499a0",
+            "blob": "f8278dbb21252d1ffb0922f6be85733f1ccb7d2e",
             "content": "sha256:ba47a7c5399b7012e1a2bbf959243c7014d63882dbf53875c5a99d1e11c9d87a",
             "locator": {
-              "end": 154,
+              "end": 152,
               "kind": "line_range",
-              "start": 154
+              "start": 152
             },
             "path": "mcp/src/agents_remember/serving/projector.py"
           },
@@ -182,12 +182,12 @@
         },
         {
           "anchor": {
-            "blob": "f15f81a57f076686b9c0b38a3602086ff29499a0",
+            "blob": "f8278dbb21252d1ffb0922f6be85733f1ccb7d2e",
             "content": "sha256:1bc048a329b741374a79ec926485102fb060c79d82a6fcd448157d4bbafb4a3e",
             "locator": {
-              "end": 450,
+              "end": 446,
               "kind": "line_range",
-              "start": 450
+              "start": 446
             },
             "path": "mcp/src/agents_remember/serving/projector.py"
           },
@@ -195,12 +195,12 @@
         },
         {
           "anchor": {
-            "blob": "f15f81a57f076686b9c0b38a3602086ff29499a0",
+            "blob": "f8278dbb21252d1ffb0922f6be85733f1ccb7d2e",
             "content": "sha256:14602b382ca2a8bc280fa2fe5ee0736b592ae516090dc68fdf1c2449cef0e4f3",
             "locator": {
-              "end": 492,
+              "end": 488,
               "kind": "line_range",
-              "start": 492
+              "start": 488
             },
             "path": "mcp/src/agents_remember/serving/projector.py"
           },

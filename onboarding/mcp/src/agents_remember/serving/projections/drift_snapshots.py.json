@@ -114,26 +114,14 @@
       ]
     },
     "3": {
-      "note": "`prune_orphaned_drift_snapshots` and `_active_worktree_snapshot_keys` take the keyword-only `contracts` snapshot; the tick-injected snapshot means zero pruning-time contract parses.  Anchor: `prune_orphaned_drift_snapshots`, `_active_worktree_snapshot_keys`",
+      "note": "`prune_orphaned_drift_snapshots` takes the keyword-only `contracts` snapshot and hands it to `_observe_branches`; the tick-injected snapshot means zero pruning-time contract parses.  Anchor: `prune_orphaned_drift_snapshots`, `_observe_branches`\n\nAnchor: `prune_orphaned_drift_snapshots` `_active_worktree_snapshot_keys`",
       "targets": [
         {
           "anchor": {
-            "blob": "39f4e13a9097020e58d0cf867a143026183b7e6d",
-            "content": "sha256:9e8accfe394d6a556e9fc4457092cc23b97b7cfa4824353885310ba49365227f",
+            "blob": "dddcce3e33bed7ffbd8bec7c711954dc794d4e8d",
+            "content": "sha256:540e66199e6c2b997835cc079421ad4395816766d16dfe5c6a7ca12e848bd2b7",
             "locator": {
-              "kind": "symbol",
-              "name": "prune_orphaned_drift_snapshots"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "39f4e13a9097020e58d0cf867a143026183b7e6d",
-            "content": "sha256:e72e9b1944a45942700369ee08b85b2bb8971f427ecde59e9b5f0e8d935dc4a6",
-            "locator": {
-              "kind": "symbol",
-              "name": "_active_worktree_snapshot_keys"
+              "kind": "file"
             }
           },
           "kind": "code"

@@ -76,12 +76,18 @@ No configured external document defines this same-repository React state seam.
 
 
 
+
 - The transport adapter owns the same-origin endpoint and non-OK rejection. [5]
+
+
 
 - Source-defined taskBody.test.tsx component assertions hold the body request open, check body-first ordering, cover long fields and fallback, and pin revision caching. Source inspection only; no fresh execution. [6]
 
 
+
+
 - Fixed prose is merged by the production body hook; separate native-operand mounted DetailPanel cases start from summaries missing nonGoals/acceptance, stub transport, and declare assertions for restored fields, fixed-block order, legacy access and one body request. This is source inspection, not a new producer/test run or acceptance. [8]
+
 
 - Retained body identity combines the qualified repository/path reference with the body revision, not a path-only key. [9]
 

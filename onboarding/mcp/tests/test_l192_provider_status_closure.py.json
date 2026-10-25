@@ -20,8 +20,8 @@
     },
     {
       "anchor": {
-        "blob": "357ab41cbae9d18b131f15fec00ee98921a2b69e",
-        "content": "sha256:62c117aa7a008d29cffce491af73ff0c444a9cc7f5d8d0f2e5a53fe4c07b189a",
+        "blob": "988603f1daac14aa1e9da87626de87bd3ef25b12",
+        "content": "sha256:1a7fb4530eb08d40414e68c66d974f0bae89e890704638993258b5af253e540f",
         "locator": {
           "kind": "symbol",
           "name": "test_the_status_only_projection_is_gone_and_the_stop_route_and_image_owner_survive"

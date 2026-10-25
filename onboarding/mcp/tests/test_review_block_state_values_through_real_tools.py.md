@@ -48,5 +48,7 @@ comparison directly.
 - An integration receipt is bound when both trees match. [3]
 - A memory capture fault records unmeasured. [4]
 - Removed-mode behaviour is a named refusal, not a memory-free comparison. [5]
+
 - A differing-byte carry retains the refusal block's original not-measured and non-covering assertions. [6]
+
 - The real owner history is closed and a fresh production comparison taken before closeout, with the original receipt assertions intact. [7]

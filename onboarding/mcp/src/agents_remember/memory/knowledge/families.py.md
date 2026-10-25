@@ -55,10 +55,14 @@ No configured domain documentation could be checked.
 ### Repo-Internal References
 
 
+
 - Families are authored joint guarantees; these functions only read the derived index. [1]
 
 
+
+
 - The retained family identity, exact revision and revision enumeration reads. [9]
+
 
 
 - The family revision payload mapping and digest. [12]
@@ -68,10 +72,16 @@ No configured domain documentation could be checked.
 
 The requirement this module's first delivered slice belongs to: requirement packet `KS-R02@v1`, which lives in the coordination root, outside both the code and the memory repository, so the citation grammar cannot address it.
 
+
 - - The two rules this module is shaped by, stated in its own docstring. [14]
+
+
 - - The read surface, including the seal-verifying revision read. [15]
+
 - - The payload a family revision's digest seals, including the sorted predecessor set. [16]
-- - The declared `family`, `family_revision` and `family_predecessor` tables and their indexes. [17]
+
+- - The declared `family`, `family_revision` and `family_member` tables and their indexes. [17]
+
 
 ### Cross-Repo References
 

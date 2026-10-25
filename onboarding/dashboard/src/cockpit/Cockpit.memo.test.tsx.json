@@ -1,14 +1,15 @@
 {
   "path": "dashboard/src/cockpit/Cockpit.memo.test.tsx",
+  "proves": [],
   "realizes": [],
   "references": {
     "13": {
-      "note": "The keep-alive case observes the File Viewer layer identity instead of the Engine Room.\n\nAnchor: `FileViewer`",
+      "note": "The keep-alive case observes the File Viewer layer identity instead of the Engine Room.",
       "targets": [
         {
           "anchor": {
-            "blob": "17e3d12d252e214305fe04d6109ac533785766da",
-            "content": "sha256:b912e8f586f56ef02b1f4e575d5fed1667b5e4da2c797cb5e2bdc9ad946490fc",
+            "blob": "a34e748d74bbd03ce1ffd35fe6d4b719b434cd55",
+            "content": "sha256:ebac7e86f0373cc77040c74c9d3842c5f1cd232b4b05d87d73e7baf2afe0b5d1",
             "locator": {
               "kind": "file"
             },
@@ -23,8 +24,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f2a0c19687a17a6ccf7f4639369c323139256b91",
-            "content": "sha256:403ce849f016995d80f9a15045834c90e5044963798787138719f11ab461e9b6",
+            "blob": "1b839113b8d511b4a8343230e70a8de0be01b79f",
+            "content": "sha256:a8152c8952fadad87a17271c8a6febccb6420f118def2bd84f341dab609d41c2",
             "locator": {
               "kind": "file"
             },
@@ -39,8 +40,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f2a0c19687a17a6ccf7f4639369c323139256b91",
-            "content": "sha256:403ce849f016995d80f9a15045834c90e5044963798787138719f11ab461e9b6",
+            "blob": "1b839113b8d511b4a8343230e70a8de0be01b79f",
+            "content": "sha256:a8152c8952fadad87a17271c8a6febccb6420f118def2bd84f341dab609d41c2",
             "locator": {
               "kind": "file"
             },
@@ -55,12 +56,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1600c5b265732b34d92584f0f087217d4ae5c502",
-            "content": "sha256:6e9ae38a2bd33d28ce0a055212b652d7a09a4f63fd8c0c4e016a9d9d3efedc23",
+            "blob": "cd1bd114a1b40d2f90a6a932ce77f8777a6a2880",
+            "content": "sha256:99e41a35d9481745fe549e492926d24fd431e2b793af9be11de49a0e3593562c",
             "locator": {
-              "end": 313,
+              "end": 243,
               "kind": "line_range",
-              "start": 1
+              "start": 229
             }
           },
           "kind": "test"

@@ -25,6 +25,14 @@
     ],
     "file:scripts/sync-skills.py": [
       "knowledge/dependents/DPD-Y454FF-l188-AGENTS-md.json"
+    ],
+    "record:INV-033XSD": [
+      "knowledge/dependents/DPD-10YCT2-l188-docs-tool-details-md.json",
+      "knowledge/dependents/DPD-NGC2F6-l188-mcp-src-agents_remember-package_data-runtime-docs-tool-details-md.json"
+    ],
+    "record:INV-QR6DSA": [
+      "knowledge/dependents/DPD-10YCT2-l188-docs-tool-details-md.json",
+      "knowledge/dependents/DPD-NGC2F6-l188-mcp-src-agents_remember-package_data-runtime-docs-tool-details-md.json"
     ]
   },
   "schema": "ar-memory-layout/v2"

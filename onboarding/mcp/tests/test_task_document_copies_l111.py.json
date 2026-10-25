@@ -37,12 +37,12 @@
       ]
     },
     "3": {
-      "note": "Clearing leaf requirements reclaims their copies while retaining only the leaf document.\n\nAnchor: `ParentWriteKeepsLeafCopiesTests.test_leaf_clear_still_reclaims_through_union_refresh`",
+      "note": "Clearing leaf requirements reclaims their copies while retaining only the leaf document.",
       "targets": [
         {
           "anchor": {
-            "blob": "2231fa2a40773b299c05ae7769bea7dfe5510c60",
-            "content": "sha256:de26b914186e2e3084425b2e1a5e742af30f548dcf7ea5ba683d1fd7e68f9c9c",
+            "blob": "0d9081cdfd5ecdfb23546e869614d6e7010a2901",
+            "content": "sha256:46c353dbcc1ed80fbf755494bd61dbb42a6cce3b5cc935bcbaf69805a6c3c1e9",
             "locator": {
               "end": 627,
               "kind": "line_range",

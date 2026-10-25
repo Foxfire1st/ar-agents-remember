@@ -144,15 +144,14 @@
       ]
     },
     "7": {
-      "note": "The envelope the block is measured in.",
+      "note": "The envelope the block is measured in.\n\nAnchor: `_tree_block`",
       "targets": [
         {
           "anchor": {
-            "blob": "bda6abac209b8bb555561b79169c66526d769437",
-            "content": "sha256:50736cbebf2454d75107453626b6d9e77ad49561e698b9b649e95a01f8a9f98e",
+            "blob": "e2257653c8f42c1861ece020b7afb0ebe068ff1e",
+            "content": "sha256:ed945298901c54ce9411f7391b4d3b19bb0e13b0f246be1cbad4704f98383880",
             "locator": {
-              "kind": "symbol",
-              "name": "_tree_block"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/published_intent.py"
           },

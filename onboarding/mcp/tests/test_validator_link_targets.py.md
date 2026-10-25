@@ -22,4 +22,5 @@ This is a current source account, not an executed test, CODE/MEMORY grade, live 
 
 ## Evidence
 
+
 - Describes anchor and record-link validation across ordinary comparisons, sync merges and leaf publication. Reporting at a multi-parent sync is not a landing waiver. Assertions retain separate refusing/report-only populations and do not imply every route was run in this curation pass. [1]

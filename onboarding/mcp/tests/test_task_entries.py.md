@@ -17,7 +17,9 @@ The suite separately exercises genuinely absent-master fallback, present unresol
 ## Evidence
 
 
+
 - Master validation in placement applies only to documented subTasks; other listed kinds retain list placement under existing identity/cycle guards, not a kind-rejection or own-master-validation rule. [8]
+
 
 
 - Parameterized fallback/disagreement cases distinguish missing, explicit and unresolvable masters, retain raw literals and suppress duplicate reports. [7]
@@ -25,7 +27,14 @@ The suite separately exercises genuinely absent-master fallback, present unresol
 - Document stage overrides host activity except for started tasks. [1]
 
 - Activity precedence and contributor event time are order-independent; missing times stay absent and future timestamps remain served. [2]
+
 - A missing declared child has one entry, later authored in place, with shared count semantics. [3]
+
+
 - Only reciprocal declared membership sets parent; all entries remain reachable once. [4]
+
+
 - A fileless plan has one opaque child identity without invented document/body. [5]
+
+
 - Two-parent/cycle/missing-parent conflicts remain deterministic, reciprocal and reachable with consistent counts. [6]

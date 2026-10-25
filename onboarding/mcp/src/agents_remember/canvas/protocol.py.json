@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/canvas/protocol.py",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
@@ -188,8 +189,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4e843505300eca82d83e98f7f01d37d43c7af271",
-            "content": "sha256:0ce612b1982ae978bcfe81011a96916ddcbf5b72f61e123afebc87998c51357b",
+            "blob": "7dce59b9b16e5cc0a57665565dc026afedcd294d",
+            "content": "sha256:8b0e2f4f9efa469fae3d6cb78edfabed12987f113ab7c36bd0c85426157d380b",
             "locator": {
               "kind": "symbol",
               "name": "RequestLedger"

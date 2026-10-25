@@ -20,16 +20,16 @@
       ]
     },
     "10": {
-      "note": "Reviewer doctrine assigns the normal authoring full-MQC exception to the Curator, not a reviewer subset.\n\nAnchor: `**The normal curation authoring pass is the exception**`",
+      "note": "Reviewer doctrine assigns the normal authoring full-MQC exception to the Curator, not a reviewer subset.",
       "targets": [
         {
           "anchor": {
-            "blob": "696db71c1cdd1ea9215c7212533d609be9b2a1cf",
-            "content": "sha256:c856df7d76b56a27ace3a9c001b1a8d410a04dca2e671a0bbdd8f4fa29d6322a",
+            "blob": "ab9a2e087d2cfd299ad5ffbac061aac232c8e831",
+            "content": "sha256:a4d4c7e8371cc1b3b0f486c9809721cdfe1bd3bfc3f67d30902f3523bf31fd65",
             "locator": {
-              "end": 92,
+              "end": 70,
               "kind": "line_range",
-              "start": 83
+              "start": 68
             },
             "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
           },
@@ -38,16 +38,16 @@
       ]
     },
     "11": {
-      "note": "Reviewer outputs include both durable route-report templates.\n\nAnchor: `**The durable route reports**`",
+      "note": "Reviewer outputs include both durable route-report templates.",
       "targets": [
         {
           "anchor": {
-            "blob": "696db71c1cdd1ea9215c7212533d609be9b2a1cf",
-            "content": "sha256:887e04304a0a9a7a009159b52dca9f4aad2ac332742fb64a1316d3fa3f2fba9e",
+            "blob": "ab9a2e087d2cfd299ad5ffbac061aac232c8e831",
+            "content": "sha256:29e7ad9fe2962ce68e22bdd5b82bbc822add75ffd6bb5211626dcd5799e0218f",
             "locator": {
-              "end": 136,
+              "end": 99,
               "kind": "line_range",
-              "start": 134
+              "start": 97
             },
             "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
           },
@@ -142,12 +142,12 @@
       ]
     },
     "6": {
-      "note": "Three-way reconciliation separates current intent, ruled change and implemented reality.\n\nAnchor: `**Reconcile three ways.**`",
+      "note": "Three-way reconciliation separates current intent, ruled change and implemented reality.",
       "targets": [
         {
           "anchor": {
-            "blob": "a098b80f993eed0489e69950f7b6046a28d943f2",
-            "content": "sha256:137bc2e0134402f16bfe5cbd61bbe6b392824d62acc01318cb74f7b23187d4e8",
+            "blob": "145be631612f52c363b97b82d253839028ebc907",
+            "content": "sha256:ace0ecf9af7e8a31f418146efdae4e3c79a359c1de1147b24bee456d0d5238e3",
             "locator": {
               "end": 106,
               "kind": "line_range",
@@ -160,12 +160,12 @@
       ]
     },
     "7": {
-      "note": "The owning curation loop requires the full operation, actionable repairs/blocked codes and conditional coherence.\n\nAnchor: `**Run the complete curation check set**`",
+      "note": "The owning curation loop requires the full operation, actionable repairs/blocked codes and conditional coherence.",
       "targets": [
         {
           "anchor": {
-            "blob": "a098b80f993eed0489e69950f7b6046a28d943f2",
-            "content": "sha256:1a9a834d781429351fcc9552db4464987aec6b8861372fdd7bd8c983262637dc",
+            "blob": "145be631612f52c363b97b82d253839028ebc907",
+            "content": "sha256:e2f158a891e7deac0152fc807122877dec4f46971000224f1332ef1f7c883a05",
             "locator": {
               "end": 165,
               "kind": "line_range",
@@ -196,16 +196,16 @@
       ]
     },
     "9": {
-      "note": "Future hashes/uncommitted fingerprints are forbidden; handoff evidence and required coherence retain their own boundary.\n\nAnchor: `**Do not invent a future code commit hash**`",
+      "note": "Future hashes/uncommitted fingerprints are forbidden; handoff evidence and required coherence retain their own boundary.",
       "targets": [
         {
           "anchor": {
-            "blob": "a098b80f993eed0489e69950f7b6046a28d943f2",
-            "content": "sha256:40bd9daafed333e1817bc5952aa61076043734876d4811b02ff070df4079688d",
+            "blob": "145be631612f52c363b97b82d253839028ebc907",
+            "content": "sha256:ae9ca0fc86f0ae408b4a5639afaef0cbec546f155550c1c7d885836546e4c089",
             "locator": {
-              "end": 237,
+              "end": 135,
               "kind": "line_range",
-              "start": 224
+              "start": 128
             },
             "path": "skills/l-01-agent-lifecycles/operations/curation.md"
           },

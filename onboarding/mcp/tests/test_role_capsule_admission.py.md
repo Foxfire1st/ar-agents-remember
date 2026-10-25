@@ -87,14 +87,22 @@ No relevant documentation found after checking live sources.
 
 ### Repo-Internal References
 
+
 - The frozen vocabulary and its completeness guard the vocabulary group pins. [1]
+
+
 - The manifest parser the shipped-manifest group exercises against the real file. [2]
+
 - The admission boundary the admission group refuses through. [3]
 - The both-directions plan validation, including the skill-root gate. [4]
 - **The carried skill channel** these cases pin, and the helper that names a skill identity. [5]
+
 - The application entry point that converts an admission refusal into an outcome value — including an **emptied source**, whose refusal reaches the caller as a value rather than as an escaping exception (D25). [6]
 
+
+
 - The real corpus this module and the distinct audience/launch/manifest-edge modules read. [7]
+
 
 - The sibling module that owns the compiler's own property cases. [8]
 

@@ -22,4 +22,5 @@ Each executable test uses temporary XDG data/cache/config roots. The existing-en
 - Decimal-part ordering rejects lexical-order mistakes and treats missing parts as zero. [1]
 - The gate accepts a newer PATH uv and prints its exact version/path/minimum. [2]
 - Unreadable and failed version outputs retain their diagnostic token rather than inventing empty text. [3]
+
 - A failed sync names both versions and restores an existing environment when the checker-valid runtime prerequisite is met. [4]

@@ -6,7 +6,9 @@
 
 ## Current source contract evidence
 
-- Public family/walk premises measure fitting text-free pages with continuation; complete domain-unit walks retain rows and filter raw or projected framing-reference vocabulary, not pointer proof or a runtime verdict. [13]
+
+- Public family/walk premises measure fitting text-free pages with continuation; complete domain-unit walks retain rows and filter raw or projected framing-reference vocabulary, not pointer proof or a runtime verdict.
+
 
 ## Purpose
 
@@ -62,16 +64,28 @@ No configured live documentation source was available for this pass.
 
 ### Repo-Internal References
 
+
 - The module statement. [1]
+
+
 - The reused L01 and `read_ar_files` helpers. [2]
+
 - The world: the layout, routed families and the nested fixture. [3]
 - The chain over nested directories, never a child or a sibling. [4]
 - The exact compact entry. [5]
 - Compact entries after the leaf, `memberAtSeed` with live counts, and `no_governing_family`. [6]
+
 - The conforming example. [7]
+
+
 - Expansion from a family seed, and its spellings. [8]
+
+
 - The walk helper and the long fixture. [9]
+
+
 - The budget, the family-seed resume under any spelling, a lacking revision refused on resume, and the v1 token refused. [10]
+
 - Repeated calls name the same files, omit served_earlier and retain governing family/chain IDs without session state. [14]
 - The lane row. [12]
 

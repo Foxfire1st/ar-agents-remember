@@ -68,7 +68,9 @@ No configured domain documentation source.
 - The gate delegation policy this package exports (moved to kernel primitives by L9). [2]
 - The store this package exports. [3]
 - The enforcement policy this package exports (slice 6b). [4]
-- The durable-store contract exports: the package-docstring paragraph stating the contract at L15-L21, the import block at L26-L36, and the matching `__all__` entries at L73-L108. [6]
+
+- The durable-store contract exports: the package-docstring paragraph stating the contract, the import block, and the matching `__all__` entries. [6]
+
 - Historical six-ownership witness; current `GATE_OWNERSHIP` and `ATTENTION_DISMISSAL_OWNERSHIP` remain direct durable-store imports, not facade exports. [7]
 
 

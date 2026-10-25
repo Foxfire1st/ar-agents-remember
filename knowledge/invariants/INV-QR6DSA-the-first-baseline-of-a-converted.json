@@ -6,16 +6,15 @@
     ],
     "justification": "The detector and adoption gate together prevent attributed converted trees containing unanchored old-format cards; drift acceptance must not erase that boundary."
   },
-  "applicability": "First attributed baseline status/adoption of a converted memory tree without an existing attributed baseline.",
+  "applicability": "Status and adoption of the first converted-tree baseline.",
   "conditions": [
-    "Legacy signs are metadata-key first cells doc_type / lastVerifiedCommitHash / lastVerifiedCommitDate, plain or backticked, and a level-two Update History heading.",
-    "The result lists affected cards; correcting them permits the normal adoption checks.",
-    "accept_drift waives stale anchors only, not legacy-card or validator refusals."
+    "Legacy signs are a metadata-key first cell and a numbered metadata table; a stale anchor is a non-current code or test reference.",
+    "The result lists the affected cards, and correcting them permits the normal adoption checks.",
+    "accept_drift waives no refusing finding; a stale anchor refuses the baseline as a legacy card does."
   ],
   "exclusions": [
-    "Ordinary validator rules for an already-adopted repository.",
-    "Prose/code mentions in a later table cell.",
-    "Overriding already-attributed adoption precedence."
+    "A legacy card without blocking structure is reported, not silently accepted.",
+    "Deleting the offending cards is not an acceptance route."
   ],
   "id": "INV-QR6DSA",
   "origin": {
@@ -31,9 +30,9 @@
     "leaf": "260928-MIK-L45",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "The first baseline of a converted tree holds no old-format card: status and adoption report blocked-legacy-cards with the cards, and accept_drift never lifts it.",
+  "statement": "The first baseline of a converted tree holds no old-format card and no stale reference anchor: status and adoption report blocked-legacy-cards and the refusing anchor findings with the cards they name, and accept_drift lifts neither.",
   "status": "proposed",
   "supersedes": []
 }

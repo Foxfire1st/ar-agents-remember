@@ -129,12 +129,19 @@ recreates everything.
 ### Repo-Internal References
 
 - The `task_doc` / `task_reopen` payload builders. [1]
-- The finalize description: the folder-master row and the sub-task refusal (MIK-R38). [2]
+
+
+
+- The finalize description: proves the landed edge and refuses before cleanup unless every declared step is done, then reconciles the exact parent row; leaves require a master and ancestors are not completed. [2]
+
+
 - The finalize builder. [3]
 - `FinalizeTaskDocs`. [4]
 
 
-- The `task_doc` description names `retire_master` as the individual-master archive route and states its two forms, its refusals and its retry rule. [5]
+
+- The `task_doc` description lists `retire_master` among the compact operation vocabulary and states only that writes answer `ok` while dry runs answer `wouldLose` and the diff. [5]
+
 
 
 ## Historical 260815-DAG-L3 Queue Registration (Superseded)
@@ -200,6 +207,7 @@ The current compact curator_coherence description names its four actions, all ni
 > reversed). The pin is taken from the **registered** FastMCP surface
 > (`TOOL_REGISTRARS` → the real `task_doc` description), not from this constant, by
 > `mcp/tests/test_tool_response_conformance.py::test_task_doc_description_and_refusal_name_the_same_kind_vocabulary`.
+
 
 - The compact task_doc description names write/linkage operations and canonical generated-file reading. get/read_steps are removed and answered with operation-removed; they are not usable observations. Flat fields_file/section_body_file inputs are forwarded to the authoring owner. Delivered writes use ok/updated phrases; dry answers use wouldLose/diff and retained locations. Review, linkage, retirement and curator-coherence authorities remain at their established application/reference owners; short descriptions and a finished tool turn do not certify them. [6]
 

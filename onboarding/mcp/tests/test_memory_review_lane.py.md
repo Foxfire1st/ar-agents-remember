@@ -47,7 +47,9 @@ documents built in memory, without a launch world or a persisted review.
 
 ## Evidence
 
+
 - A memory record answers through the Curator lane without reopening passed code. [1]
+
 - A memory baseline after a code pass is independent and persisted. [2]
 - A memory record binds memory bytes, not code bytes. [3]
 - The strict reader and launch-only diagnostic preserve raw state. [4]

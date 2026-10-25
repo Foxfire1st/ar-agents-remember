@@ -1,10 +1,11 @@
 {
   "path": "mcp/src/agents_remember/observer/reducer_impl/_types.py",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
-        "blob": "f72c8701152e2f178534923ff06bc9669c13c305",
-        "content": "sha256:1050b55faeab2f5a67576e9639065a1233afcfedb29405635b3b4b4ef8dd201b",
+        "blob": "cfd5ccff277b5ad7e7da2e2437b7617b01f6b241",
+        "content": "sha256:50326ead1fca9c4f0127c6ff9373dc2069a48e0393d6289ffdef2f759b3be6bb",
         "locator": {
           "kind": "file"
         }
@@ -15,13 +16,13 @@
         "handoffEntry": "L192-W-R199-02",
         "leaf": "260928-MIK-L192"
       },
-      "rationale": "The reducer's node and snapshot types no longer declare a provider node, a provider boot record or setup summaries, so no reducer output can carry one.",
+      "rationale": "The reducer's node and snapshot types declare no provider node, provider boot record or setup summary at C, so no reducer output can carry one.",
       "role": "primary-authority"
     }
   ],
   "references": {
     "1": {
-      "note": "Frozen structural and analytical bundles retain their separate owners without removed gate/pickup/expectation or verification-age inputs.",
+      "note": "Frozen structural and analytical bundles retain their separate owners without removed gate/pickup/expectation or verification-age inputs.\n\nAnchor: `WorkspaceStructure` `AnalyticalInputs`",
       "targets": [
         {
           "anchor": {
@@ -48,7 +49,7 @@
       ]
     },
     "2": {
-      "note": "Frozen structural and analytical bundles retain their separate owners without removed gate/pickup/expectation or verification-age inputs.",
+      "note": "Frozen structural and analytical bundles retain their separate owners without removed gate/pickup/expectation or verification-age inputs.\n\nAnchor: `AnalyticalInputs`",
       "targets": [
         {
           "anchor": {

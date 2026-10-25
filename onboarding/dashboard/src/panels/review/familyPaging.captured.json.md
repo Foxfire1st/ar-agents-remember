@@ -22,7 +22,7 @@ This file is fixture data, not current project knowledge or a new selection auth
 
 ```json
 {
-  "jsonPath": "$[\"before\"][0]",
+  "jsonPath": "$[\"before\"]",
   "state": "review",
   "operation": "read_knowledge_review",
   "candidate": {
@@ -126,7 +126,7 @@ This file is fixture data, not current project knowledge or a new selection auth
 
 ```json
 {
-  "jsonPath": "$[\"before\"][0][\"payload\"][\"source\"][\"inventory\"]",
+  "jsonPath": "$[\"before\"][\"payload\"][\"source\"][\"inventory\"]",
   "state": "measured",
   "entries.count": 179
 }
@@ -136,7 +136,7 @@ This file is fixture data, not current project knowledge or a new selection auth
 
 ```json
 {
-  "jsonPath": "$[\"before\"][0][\"payload\"][\"family_context\"]",
+  "jsonPath": "$[\"before\"][\"payload\"][\"family_context\"]",
   "state": "partial",
   "entries.count": 1
 }
@@ -146,7 +146,7 @@ This file is fixture data, not current project knowledge or a new selection auth
 
 ```json
 {
-  "jsonPath": "$[\"before\"][1]",
+  "jsonPath": "$[\"before\"]",
   "state": "review",
   "operation": "read_knowledge_review",
   "candidate": {
@@ -268,7 +268,7 @@ This file is fixture data, not current project knowledge or a new selection auth
 
 ```json
 {
-  "jsonPath": "$[\"before\"][1][\"payload\"][\"source\"][\"inventory\"]",
+  "jsonPath": "$[\"before\"][\"payload\"][\"source\"][\"inventory\"]",
   "state": "measured",
   "entries.count": 179
 }
@@ -278,7 +278,7 @@ This file is fixture data, not current project knowledge or a new selection auth
 
 ```json
 {
-  "jsonPath": "$[\"before\"][1][\"payload\"][\"family_context\"]",
+  "jsonPath": "$[\"before\"][\"payload\"][\"family_context\"]",
   "state": "partial",
   "entries.count": 1
 }

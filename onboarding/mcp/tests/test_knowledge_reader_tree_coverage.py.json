@@ -22,12 +22,12 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The real composed-tree presence and coverage case.\n\nAnchor: `test_real_composed_tree_counts_and_presence_from_selected_settings`",
+      "note": "The real composed-tree presence and coverage case.",
       "targets": [
         {
           "anchor": {
-            "blob": "a306e6c17747dcb7de5c2287af5e111db4c020d7",
-            "content": "sha256:878a18b29990b14d6c6250e5f5ce32e5195dd294a176447263d559b1bdc606ad",
+            "blob": "4f1ab6d9c150e96c234127a7f40c93a768c81e1f",
+            "content": "sha256:9064ecb840ee6b3b24d4d0f2da7e61e4301fd23a5965ebf79fea0dd302c96c8b",
             "locator": {
               "kind": "file"
             }
@@ -53,14 +53,16 @@
       ]
     },
     "3": {
-      "note": "The suite's lane membership in the evidence catalog.\n\nAnchor: `mcp/tests/test_knowledge_reader_tree_coverage.py`",
+      "note": "The suite's lane membership in the evidence catalog.",
       "targets": [
         {
           "anchor": {
-            "blob": "1b49c940bdf62820d63cc18acb5757398b1e5e9b",
-            "content": "sha256:40e1095164a0b24a975c8edfafcd1998f1fe689a31d0c76f43cb834ffc511646",
+            "blob": "102c4550ab6429f44c8fb543d1d0662de66a1b8c",
+            "content": "sha256:ca4e0f4726a7b894a9ac5a2f5c43c5aefa74beaaf5f1b6037a07097d866ba16d",
             "locator": {
-              "kind": "file"
+              "end": 188,
+              "kind": "line_range",
+              "start": 188
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },

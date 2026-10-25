@@ -19,9 +19,16 @@ RowStore and the revision, family, membership and realization constructors are i
 
 The topology, and why each part exists:
 
-- **`I1`** is the second revision of the retry-budget invariant and carries **two realization claims at two
-  distinct source locations** (`src/integration.py` and `src/synchronization.py`) — the requirement's own
-  conformance example.
+- **`I1`** is the retry-budget record's single revision, with the friendly display label `v2`, and carries
+  **two realization claims at two distinct source locations** (`src/integration.py` and
+  `src/synchronization.py`) — the requirement's own conformance example. The label does not establish
+  a retained predecessor or a second stored revision.
+
+> Retained earlier card wording; superseded by the current account above:
+> - **`I1`** is the second revision of the retry-budget invariant and carries **two realization claims at two
+>   distinct source locations** (`src/integration.py` and `src/synchronization.py`) — the requirement's own
+>   conformance example.
+
 - **`J1`** is the first revision of the candidate-batch invariant. It carries **two claims at one
   location** (`src/batch.py`), which is what makes "two claim identities, one distinct source location"
   measurable, and it is the sibling the frontier advertises.
@@ -75,12 +82,24 @@ No Domain Documentation source is configured for this slice.
 
 ### Repo-Internal References
 
+
 - `build_read_scope_fixture` supplies the current fixture or assertion described above. [11]
+
+
 - `_create_invariant` supplies the current fixture or assertion described above. [12]
+
+
 - `_create_revision` supplies the current fixture or assertion described above. [13]
+
+
 - `_create_realization` supplies the current fixture or assertion described above. [14]
+
+
 - Fixture construction imports test-only row constructors; it does not call the retired canonical writer. [15]
+
+
 - RowStore writes text-tree fixture rows without the retired production admission plane. [16]
+
 
 ### Docs References
 
@@ -89,15 +108,30 @@ No domain documentation source is configured for this repository (`system/source
 
 No configured domain documentation could be checked.
 
+
 - **The fixture's declared topology and why this graph and not the shared branching one.** [17]
-- The graph constants: the labels, statements, conditions and the four direct family guarantees. [18]
+
+
+- The graph constants: the invariant labels and statements, the applicability, conditions and exclusions, and the three direct family guarantees. [18]
+
 - The recorded paths, including the two the read is measured against (absent and mismatched). [19]
 - The current seed allocator supplies identities; removed predecessor/successor ordering helpers are not current fixture owners. [20]
+
 - The public builder and the value types a case reads. [21]
-- **The governed-artifact and contract rows that make this module part of the catalog.** [22]
+
+
+
+
+
+> Retained earlier citation wording: - **The governed-artifact and contract rows that make this module part of the catalog.** Source caption: `read_scope_test_support` [22]
+
+
+
 
 ### Cross-Repo References
 
 No cross-repository behavior is implemented in this file.
 
 No meaningful cross-repo references found.
+
+- **The governed-artifact and contract rows that make this module part of the catalog.** Source caption: `read_scope_test_support` [22]

@@ -69,10 +69,16 @@ No relevant external documentation found; behavior is defined by repo task-docum
 
 ### Repo-Internal References
 
+
 - Same-root parent planning uses the shared named-master refusal rule; unnamed leaves retain folder fallback. [1]
+
+
 - The one rule for a leaf naming no master: `None` for a named master or a non-`subTask`, else the folder's `task.json` when it exists. [2]
 
+
+
 - The finalizer and reopen resolve an unnamed leaf through the same helper. [3]
+
 - Deterministic leaf-to-row mapping with manual scope preservation. [4]
 - Document status is mirrored directly; unresolved-parent demotion remains a separate progress check. [5]
 - Existing-row path validation. [6]
@@ -91,7 +97,9 @@ The current source seams include `MasterSyncError`, `MasterSyncPlan`, `plan_mast
 
 ### Reconciled Source Evidence
 
+
 - The current module exposes `MasterSyncError`, `MasterSyncPlan`, `plan_master_sync` at this ownership boundary. [8]
+
 
 - The shared folder-master helper corrects the historical omitted parent row and grants no standalone-leaf publication authority. [9]
 

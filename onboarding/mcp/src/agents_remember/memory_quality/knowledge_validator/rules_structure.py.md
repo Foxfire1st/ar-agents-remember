@@ -59,7 +59,9 @@ No configured live documentation source was available for this pass.
 
 The structure rules and their registration.
 
+
 - Shape keeps the layout marker; canonical formatting is its own rule. [1]
+
 - Unique IDs across records and entries; a merge duplicate is a conflict naming both files. [2]
 - A relationship on the wrong side is a rule-4 refusal. [3]
 - An unconverted base is refused unless this is a standalone conversion. [4]

@@ -30,4 +30,5 @@ This source account is not a test result or an execution, permission, CODE/MEMOR
 - Intersection sets include only sides with positive changed-line counts. [3]
 
 
+
 - Measures whether changed files and actual changed hunk lines intersect recorded realization/proof ranges on their own comparison sides. A delete-only hunk cannot borrow a C span; an insertion-only hunk cannot borrow a B span. Non-text linkage requires whole-file coverage rather than any symbol at that path. Resolved recorded ranges are linkage observations, not an authored acceptance or invariant-effect judgment. [1]

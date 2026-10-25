@@ -144,15 +144,21 @@ No relevant documentation found after checking live sources.
 
 ### Repo-Internal References
 
+
 - The module under test and its pipeline. [1]
+
 - The carried skill channel these cases pin. [2]
 - The `source-not-utf8` and revision/blank-content refusals the source-value cases pin. [3]
 - The refusal codes the refusal cases assert. [4]
 - The identity-resolution outcomes the duplicate and override cases pin. [5]
 - The tool-policy narrowing the tool cases pin. [6]
+
 - The outcome shape whose exactly-one-of rule the two outcome cases pin. [7]
+
 - The admission cases live in the sibling module, not here, where the capsule composes only the operations its own role declares and the independently compared routing side is retired. [8]
+
 - The corpus test preserved by the earlier leaf; this pass retains that historical evidence and asserts no fresh execution result. [9]
+
 
 The falsifiability probe that exercised these cases (seeds M01–M10, `all 10 seeded mutations were
 caught`) is **not** a product artifact and is deliberately not promoted into `mcp/tests/`. It lives

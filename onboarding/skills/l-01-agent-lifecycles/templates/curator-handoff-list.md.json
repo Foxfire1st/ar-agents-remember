@@ -163,12 +163,12 @@
       ]
     },
     "10": {
-      "note": "The MIK-R10 no_invariant-row bullet: its subject, its one disposition, the answers that need no row, delete-only hunks and uncovered files.\n\nAnchor: \"A no_invariant row (MIK-R10, converted memory only)\"",
+      "note": "The MIK-R10 no_invariant-row bullet: its subject, its one disposition, the answers that need no row, delete-only hunks and uncovered files.",
       "targets": [
         {
           "anchor": {
-            "blob": "1bee63798494dbe5fac95e34ec4ec62b2bae7455",
-            "content": "sha256:8cc8b1015eb2d44c99787efc1cfcee332c3fb2c7cfdc3507b4c9e62a1ac14127",
+            "blob": "00c3e00784503e851d2ca11c94f62d0c2576a160",
+            "content": "sha256:09d0acc7a8915e920774672ec3e37dbef2f4a052e421ce543922f98643519824",
             "locator": {
               "end": 556,
               "kind": "line_range",
@@ -180,12 +180,12 @@
       ]
     },
     "11": {
-      "note": "The MIK-R14 reconsideration-row bullet: its subject, `still_rejected` with the refresh and the new-item answer, `raise` with the task-document question, route targets, superseded decisions, never reversing, and linked alternatives kept at their index.\n\nAnchor: \"A reconsideration row (MIK-R14, converted memory only)\"; \"rerunning the same row is refused: answer the new item by\"",
+      "note": "The MIK-R14 reconsideration-row bullet: its subject, `still_rejected` with the refresh and the new-item answer, `raise` with the task-document question, route targets, superseded decisions, never reversing, and linked alternatives kept at their index.",
       "targets": [
         {
           "anchor": {
-            "blob": "46471ae05e047488c29a112e5a03f699ee7b9d1d",
-            "content": "sha256:0fa9d0c6055c786caf0d543096aaaa4812db11acc9a366150fbc0b5b67b90b78",
+            "blob": "00c3e00784503e851d2ca11c94f62d0c2576a160",
+            "content": "sha256:8bdae07a37c4d25fd7bb81b72de3662e65871aac71007c0fd9f3aaba6aff13e9",
             "locator": {
               "end": 603,
               "kind": "line_range",
@@ -252,8 +252,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5df4d8e3b98501161d08a2e1f9822cd492b94ae4",
-            "content": "sha256:fddc1c578a9b5af2f7abc557a497f0f5ba664f91bff1c9e5a3d0ee1b3b251197",
+            "blob": "00c3e00784503e851d2ca11c94f62d0c2576a160",
+            "content": "sha256:7611977f3c46d3fdc3e8e716551e8d58f329311f08341e51aa38034383286d07",
             "locator": {
               "end": 609,
               "kind": "line_range",
@@ -337,8 +337,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5df4d8e3b98501161d08a2e1f9822cd492b94ae4",
-            "content": "sha256:60d8b082c1683687528088ef6d0bc4568439e688b21509a382c4f84624b34dfb",
+            "blob": "00c3e00784503e851d2ca11c94f62d0c2576a160",
+            "content": "sha256:f634a9e0170f21dab52298212ec4ebcf330244afc8176532c75154a5fe11072e",
             "locator": {
               "end": 688,
               "kind": "line_range",
@@ -366,8 +366,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "09a340563bd51c31168737f64744393c3c680ca9",
-            "content": "sha256:4d5b4d57964b10ab9001f614fc7dfe7da82ee58a888e348f734cd37a4d15e7f2",
+            "blob": "00c3e00784503e851d2ca11c94f62d0c2576a160",
+            "content": "sha256:b6b3dd11aca382eb2fd9db2f6eac47d5a35dfccee30b68b8408a21446904a898",
             "locator": {
               "kind": "file"
             }
@@ -381,8 +381,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "09a340563bd51c31168737f64744393c3c680ca9",
-            "content": "sha256:4d5b4d57964b10ab9001f614fc7dfe7da82ee58a888e348f734cd37a4d15e7f2",
+            "blob": "00c3e00784503e851d2ca11c94f62d0c2576a160",
+            "content": "sha256:b6b3dd11aca382eb2fd9db2f6eac47d5a35dfccee30b68b8408a21446904a898",
             "locator": {
               "kind": "file"
             }
@@ -528,12 +528,12 @@
       ]
     },
     "3": {
-      "note": "**The informational MIK-R21 section: where an entry lands once knowledge is text, and that nothing changes before MIK-R37.**\n\nAnchor: `## Where an entry lands once knowledge is text (MIK-R21)`; \"Nothing here changes what a producer emits today.\"",
+      "note": "**The informational MIK-R21 section: where an entry lands once knowledge is text, and that nothing changes before MIK-R37.**",
       "targets": [
         {
           "anchor": {
-            "blob": "5df4d8e3b98501161d08a2e1f9822cd492b94ae4",
-            "content": "sha256:e5ff15e96d46f5d125a3ae30b8816c16e5f72db7114a97cf506faa9324395e93",
+            "blob": "00c3e00784503e851d2ca11c94f62d0c2576a160",
+            "content": "sha256:5b8525d41934a6f73a65ece912f566602e859f57373cc538ef72a53a65dd8a42",
             "locator": {
               "end": 484,
               "kind": "line_range",
@@ -562,12 +562,12 @@
       ]
     },
     "4": {
-      "note": "Curator-owned semantic scope remains required.\n\nAnchor: `### Curator-authored semantic scope`",
+      "note": "Curator-owned semantic scope remains required.",
       "targets": [
         {
           "anchor": {
-            "blob": "5df4d8e3b98501161d08a2e1f9822cd492b94ae4",
-            "content": "sha256:2d5c29a4ec6b7c0f7362fbbc9ab15f25d5fa3388b5881e04e9ea0d67f2995224",
+            "blob": "00c3e00784503e851d2ca11c94f62d0c2576a160",
+            "content": "sha256:39cf6ff27fbf58631d7041b7fdcb08170e0eeb40c5254a0a4d0409e5d028dad2",
             "locator": {
               "end": 194,
               "kind": "line_range",
@@ -579,12 +579,12 @@
       ]
     },
     "5": {
-      "note": "Historical database-era `retain_memberships` input and exact published-roster readback, not the current file-family API.\n\nAnchor: `### Retain exact siblings when adding new obligations to a family successor`",
+      "note": "Historical database-era `retain_memberships` input and exact published-roster readback, not the current file-family API.",
       "targets": [
         {
           "anchor": {
-            "blob": "5df4d8e3b98501161d08a2e1f9822cd492b94ae4",
-            "content": "sha256:63f24a04138e768b53fe1ce38854c8f0a360e1cae5dec16e47d68222952d30a2",
+            "blob": "00c3e00784503e851d2ca11c94f62d0c2576a160",
+            "content": "sha256:04a079a40aee2d8c3ce83d9516c0c70d5a6109f339b8fc3db4ea268b753da189",
             "locator": {
               "end": 424,
               "kind": "line_range",
@@ -596,12 +596,12 @@
       ]
     },
     "6": {
-      "note": "Historical per-target rationale/role and value/vocabulary/length rules, including the database writer's committed-retry exemption; the separate target-element supersession remains current.\n\nAnchor: \"Realization rationale and role: one authored explanation per target\"; \"this file's element shape supersedes rule 1's\"",
+      "note": "Historical per-target rationale/role and value/vocabulary/length rules, including the database writer's committed-retry exemption; the separate target-element supersession remains current.",
       "targets": [
         {
           "anchor": {
-            "blob": "5df4d8e3b98501161d08a2e1f9822cd492b94ae4",
-            "content": "sha256:00402e86fcbbd766c960c3b8325bdb627598baf51759a5b1781e72a630b30989",
+            "blob": "00c3e00784503e851d2ca11c94f62d0c2576a160",
+            "content": "sha256:26b89509dcce1809803064302c0f17ae12335dd9b70c1b377b1bc6434db27096",
             "locator": {
               "end": 140,
               "kind": "line_range",
@@ -625,7 +625,7 @@
       ]
     },
     "7": {
-      "note": "**The MIK-R28 additions: both evidence forms, the facet authored beside the statement draft, and the views, the informational \"without proof\" list and the migration pass.**\n\nAnchor: \"as a path plus symbol\"; \"Proofs are shown and counted (MIK-R28).\"",
+      "note": "**The MIK-R28 additions: both evidence forms, the facet authored beside the statement draft, and the views, the informational \"without proof\" list and the migration pass.**",
       "targets": [
         {
           "anchor": {
@@ -641,8 +641,8 @@
         },
         {
           "anchor": {
-            "blob": "46471ae05e047488c29a112e5a03f699ee7b9d1d",
-            "content": "sha256:93a7d20c309ec3e66a8f8df1fbc11cacbd6461a865950cf49b10a5c39c262722",
+            "blob": "00c3e00784503e851d2ca11c94f62d0c2576a160",
+            "content": "sha256:3036d35c0169811212acfe132b77455cfc0f0fa7d4517379835586eb24be9b2e",
             "locator": {
               "end": 454,
               "kind": "line_range",
@@ -654,12 +654,12 @@
       ]
     },
     "8": {
-      "note": "Historical MIK-R30 onboarding-row form: `no_impact` only and no row for a counted card change, not the normal MIK-R53 source-bound contract or this leaf's amended rollout authority.\n\nAnchor: \"An onboarding row (MIK-R30, converted memory only)\"",
+      "note": "The onboarding row for a source file or route overview: `updated` when a counted change brought the card up to date and `no_impact` when the reviewed file needs none, bound to its source files and reopened when one of them changes again.",
       "targets": [
         {
           "anchor": {
-            "blob": "1bee63798494dbe5fac95e34ec4ec62b2bae7455",
-            "content": "sha256:45648f762efd1f014b318ec5f46ac682697da0211fabf6faff2d7d25250b415d",
+            "blob": "00c3e00784503e851d2ca11c94f62d0c2576a160",
+            "content": "sha256:719d672ca9287c8a619f3a93ecd979104dc3181746e8de0b4b4c5095f4a16373",
             "locator": {
               "end": 537,
               "kind": "line_range",

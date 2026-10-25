@@ -16,7 +16,9 @@ Changing bindings belongs to the keymap; changing what a step does belongs to tr
 
 ## Evidence
 
+
 - Reviewer help joins effective bindings to command labels. [2]
+
 - Source test rejects a chord whose commandId is not registered; not an executed result. [3]
 
 - Command records contain identity and label only, including the two review traversal names. [1]

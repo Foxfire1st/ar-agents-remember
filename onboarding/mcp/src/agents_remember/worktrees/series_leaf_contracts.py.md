@@ -20,6 +20,9 @@ Membership/enclosure checks use named `CloseoutQueueError` refusals. Canonical l
 
 - Only non-abandoned rows require exact owned documents; colliding numbers belong to those rows. [5]
 
+
 - The exact enclosure population preserves the abandoned-but-landed refusal. [6]
+
+
 
 - Static controls cover absent/unlanded abandoned enclosures and an empty file cell while preserving the master. [7]

@@ -18,7 +18,9 @@ The existing worktree/mTime preparation keeps its dry-run boundary: no worktree 
 
 ## Evidence
 
+
 - External-only preparation, exact source ref, no fallback [12]
+
 - Missing repository routes to the blocked state [13]
 - Removed answer refused by name, never honored [14]
 - One remaining recovery choice [15]

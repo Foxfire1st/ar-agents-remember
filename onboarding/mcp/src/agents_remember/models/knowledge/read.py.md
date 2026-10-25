@@ -117,13 +117,19 @@ No configured domain documentation could be checked.
 ### Repo-Internal References
 
 - **The closed seed union: five members, one per row of the requirement's table, carrying no filter, sort or display version.** [1]
+
 - **The read context and its two construction rules** (one namespace, and an all-or-nothing source resolution), with `task_ref=None` a supported state. [2]
+
 - The declared policy version, budgets and execution bound. [3]
+
 - **The correction this leaf's review sealed: the counts describe one walk, and the model refuses its own arithmetic contradiction.** [4]
+
 - **The page that cannot present a truncation as complete, and the result that is a page or a refusal and never both.** [5]
 - **The cursor's binding fields, and the only encoder/decoder pair.** [6]
 - The one homogeneous item model and the advertised frontier entry. [7]
+
 - **The anchor observation, now declared in its own module with the structured `resolved_ranges` field, and the import that re-exports it here.** [8]
+
 
 - The seven states are the retained AnchorResolutionState Literal re-exported through read.py. [9]
 

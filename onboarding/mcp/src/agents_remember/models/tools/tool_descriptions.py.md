@@ -19,10 +19,13 @@ Do not turn the declaration's transition map into a current roster, infer that a
 ## Evidence
 
 - The module declares ordinary description and argument-description ceilings of 600 and 120 characters. [1]
+
 - Historical A7 interim ownership declaration contains retained reader/memory/task tools, not a dispatch_agent length exception. [4]
+
 
 ## Preserved incoming L109 source witness
 
 The incoming source witness below is retained at its original epoch; its complete anchor is not a post-composition currency claim. Current declaration bounds, finalized reader ownership and R113's removed dispatch pin are stated above.
+
 
 - Historical incoming L109 declaration account: Current candidate source supports the operative account; historical sections grant no current tool or execution acceptance. [3]

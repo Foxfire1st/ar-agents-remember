@@ -84,10 +84,18 @@ The two readings and their consumers.
 - The cached or throwaway index. [6]
 - The tests the migrated evidence names. [7]
 - The view consumer, since MIK-R02 the per-page extras of a converted tree's read. [8]
+
 - The checklist consumer. [9]
+
+
 - The index lookups it reads. [10]
+
+
 - Migrated evidence is listed, then a curator pass writes the proof and the list empties. [11]
+
+
 - The cache is reused, and an unreadable cache is reported, not raised. [12]
+
 
 ### Cross-Repo References
 

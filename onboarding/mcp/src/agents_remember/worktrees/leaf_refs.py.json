@@ -65,15 +65,16 @@
       ]
     },
     "3": {
-      "note": "The heal sweep `heal_contract_leaf_ids` rewrites legacy leaf ids using that per-root index.",
+      "note": "The heal sweep `heal_contract_leaf_ids` rewrites legacy leaf ids using that per-root index.  Anchor: `heal_contract_leaf_ids`",
       "targets": [
         {
           "anchor": {
-            "blob": "ba58fbaeceea3ba8048de3c5168fe7f90d3458df",
-            "content": "sha256:47e1d3767355bc54493cb7dd35c20385d84ffe7a953bb2cfabea7959bafd7d71",
+            "blob": "c9e2847f64ca428bdc799c8173b43aa736f4b0e9",
+            "content": "sha256:6f5b3897ad0d2bcd243e5947c04e07b49153f132da7f99aa1058a79531e63d35",
             "locator": {
-              "kind": "symbol",
-              "name": "heal_contract_leaf_ids"
+              "end": 618,
+              "kind": "line_range",
+              "start": 545
             },
             "path": "mcp/src/agents_remember/worktrees/worktree_contract.py"
           },

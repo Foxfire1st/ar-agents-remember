@@ -65,7 +65,9 @@ the compaction must never raise on non-JSON content.
 ### Repo-Internal References
 
 - The shim under test installs the FastMCP converter patch. [1]
+
 - `create_server()` installs the shim before registering tools. [2]
+
 - MCP settings fixtures come from `test_config.py`. [3]
 
 </details>

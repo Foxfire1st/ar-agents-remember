@@ -6,6 +6,8 @@
 
 ## Purpose
 
+`citation_census_tool` measures captured leaf-pair inputs, returns at most 200 target rows and writes the complete population to a named artifact with digest, measured identities and retention. `citation_note_revision_tool` requires a converted leaf card, reference key, replacement note and exact base digest. It records the repairing leaf, preserves targets and numbering, and returns named no-write refusals for admission or revision errors. Preview is distinct from write, and a successful unchanged note reports `changed=false`.
+
 `memory_tools.py` is the typed application entry point surface for onboarding drift, citation work,
 route-index refresh, memory initialization, baseline adoption, and memory carryover. Memory-quality
 scope, execution, and async control now belong to the dedicated typed controller.
@@ -63,7 +65,8 @@ entry points preserve their separate service contracts.
 (MIK-R24 rule 5).** Both tools first ask `memory_quality/reference_state.is_converted_memory` whether the
 memory root (the onboarding root's parent) holds `knowledge/layout.json`. If it does, they return
 `reference_state.check_references` or, for the fixer, `_converted_citation_fix` instead of building citation
-`Trees`. A stale reference is reported (report-only), never a gate finding. Since L37 (fix round P1b)
+`Trees`. A stale reference is reported here and refused as a gate finding by the validator's
+`R198.1-reference-anchor` at publication and in the full quality run (MIK-R198 rule 5). Since L37 (fix round P1b)
 `_converted_citation_fix` does two things: it authors the cards' citation rows into resolved sidecar
 references (`memory/conversion/card_authoring.author_card_references`), then re-records the anchors whose
 bytes moved mechanically (`reference_state.fix_references`). With one `document` named, both steps touch
@@ -116,7 +119,7 @@ The unconverted `citation_fix_tool` whole result now explicitly carries `nextAct
 
 ## Evidence
 
-Inherited numbered findings [3], [12], [9], [13], [36], [20], [21], [26], [27] retain their separate historical custody; no currentness is inferred from those inherited targets. The source-bound account below distinguishes surviving owners from the legacy implementation removed by this task. Removed projection, source-index and prepared-continuation captions are not retained as executable behavior.
+Inherited numbered findings [3], [12], [9], [13], [36], [21], [26], [27] retain their separate historical custody; no currentness is inferred from those inherited targets. The source-bound account below distinguishes surviving owners from the legacy implementation removed by this task. Removed projection, source-index and prepared-continuation captions are not retained as executable behavior.
 
 - Carryover options forward approval intent and explicit review selection without a commit subject. [37]
 
@@ -202,7 +205,9 @@ DEC-VMMJDN exception does not authorize any of these writes on unconverted memor
 
 - Baseline status reports unsuccessful `ok` for unavailable Git history as well as blocked drift, while preserving the owner's payload. [1]
 - The baseline owner distinguishes unreadable attribution behind a resolvable HEAD from an unborn repository, retaining the existing drift decision. [2]
-- Carryover has one memory subject and forwards it without a ledger-message option. [3]
+
+- Carryover's options carry the approval intent and the explicit review selections, not a memory commit subject, and the apply adapter forwards those fields. [3]
+
 - Canonical quality scope is owned by the focused scope module. [4]
 
 - Typed quality execution and public run translation are owned by the controller. [5]
@@ -214,11 +219,17 @@ DEC-VMMJDN exception does not authorize any of these writes on unconverted memor
 
 - The route-index builder receives storage authority explicitly in its typed signature. [8]
 
+
 - The apply entry point that forwards that subject and nothing else. [9]
+
 - Baseline status reports unsuccessful `ok` for unavailable Git history as well as blocked drift, while preserving the owner's payload. [10]
 - The baseline owner distinguishes unreadable attribution behind a resolvable HEAD from an unborn repository, retaining the existing drift decision. [11]
-- Carryover has one memory subject and forwards it without a ledger-message option. [12]
+
+- Carryover's options carry the approval intent and the explicit review selections, not a memory commit subject, and the apply adapter forwards those fields. [12]
+
+
 - The apply entry point that forwards that subject and nothing else. [13]
+
 - Canonical quality scope is owned by the focused scope module. [14]
 - Its resolver, which binds a repository to the scope the quality surface runs against. [15]
 
@@ -231,13 +242,18 @@ DEC-VMMJDN exception does not authorize any of these writes on unconverted memor
 - On a converted tree the citation check reports sidecar references instead of reading citation tables. [18]
 
 - The shared converted fixer authors references, then refreshes mechanical moves, excluding every authoring-refused sidecar; one named document scopes both stages. [19]
-- The shared construction point applies caller excludes to legacy Trees branches, not converted check/fix. [20]
-- The scope object the caller's excludes ride with, validated at construction. [21]
+
+- The scope object the caller's named documents ride with, validated at construction. [21]
+
 - **The memory initializer now reports the knowledge foundation beside the memory root it scaffolds (`ICR-R29@v1`).** [23]
 - **The admission whose location this block reports, so the location a curator is told to populate is the one the bootstrap publishes to.** [24]
 - The read that decides the block's state, and the unavailable form its states come from. [25]
-- One document with no frozen generation is admitted for converted memory; legacy operations validate strictly. [26]
-- The three card writers, which ask no cutover lock. [27]
+
+- The scope's own check: one named `document`, or a `documents` list only for `citation_fix`, refused before the memory tree is resolved. [26]
+
+
+- The two card writers, which ask no cutover lock. Anchor: `citation_fix_tool`, `route_index_refresh_tool` [27]
+
 - Frozen implementation of _refuse_official_memory supporting the stated file behavior. [28]
 - Frozen implementation of _leaf_memory_writer_scope supporting the stated file behavior. [29]
 - The drift tool binds the leaf's converted base with a contract, else the checkout HEAD. [30]
@@ -249,6 +265,8 @@ DEC-VMMJDN exception does not authorize any of these writes on unconverted memor
 - Finite fix selection is validated before reads with the shared bound. [34]
 
 - The operation-specific shared legacy refusal preserves short-message/full-detail conversion guidance; only recognized caller RuntimeErrors are translated. [35]
+
 - The public apply catches only the recognized legacy refusal; success and converted-target refusal remain distinct. [36]
+
 
 - Memory initialization reports the foundation without authoring records. Complete resolved states and nonlegacy unavailable publication name the measured state before the Architect/regular-task/Curator handover; partial-index repair, legacy conversion and admission refusals retain their distinct next actions. [42]

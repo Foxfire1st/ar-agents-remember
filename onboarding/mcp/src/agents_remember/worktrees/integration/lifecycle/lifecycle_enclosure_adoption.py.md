@@ -50,7 +50,9 @@ No configured Domain Documentation source applies to this repository-internal li
 
 The source file is the direct evidence for this file-specific ownership boundary.
 
+
 - The module defines `AdoptedLifecycleArtifact`; `LifecycleEnclosureAdoptionReceipt`; `LifecycleEnclosureAdoptionPreview` as its public seam. [1]
+
 - The missing-intent generation archive recognition predicate. [2]
 
 ### Cross-Repo References

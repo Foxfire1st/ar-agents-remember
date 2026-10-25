@@ -70,9 +70,13 @@ A stubbed-fetch component suite; nothing crosses repositories.
 
 ### Repo-Internal References
 
+
 - The component under test. [1]
+
 - The folder entry type shaped by the suite's stub payload. [2]
 - The component suite's `stubNotesApi` returns the directly evidenced folder payload. [3]
+
 - The reader suite covers the content pane this entry surface opens. [4]
 
-- Equal content does not repeat resolution; changing content posts the current list, while the empty-list to one-empty-text regression retains the historical joined-key equivalence. \[5] [5]
+
+- Equal content does not repeat resolution; changing content posts the current list, while the empty-list to one-empty-text regression retains the historical joined-key equivalence. [5]

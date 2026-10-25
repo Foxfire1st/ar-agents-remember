@@ -19,15 +19,14 @@
       ]
     },
     "2": {
-      "note": "The seeded sprint queue.",
+      "note": "The seeded sprint queue.\n\nAnchor: `SPRINT_GRAPH_QUEUE`",
       "targets": [
         {
           "anchor": {
-            "blob": "90f6f8567000deb643b5669dd35b04fbcb487642",
-            "content": "sha256:97163f5b5f933e37b831d2c9d164f528194dedb4f8a0f4fdac038007f99960ae",
+            "blob": "ca3e4a735bf2f8cd11dcb8e2a103212ec6835783",
+            "content": "sha256:8e667e3a8a9305e0c4f1f675d1ae27fc66bb305f479c8f281dd21dace012c81b",
             "locator": {
-              "kind": "symbol",
-              "name": "SPRINT_GRAPH_QUEUE"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -35,15 +34,14 @@
       ]
     },
     "3": {
-      "note": "The page that consumes the fixture.",
+      "note": "The page that consumes the fixture.\n\nAnchor: `SprintGraphPage`",
       "targets": [
         {
           "anchor": {
-            "blob": "95a59d4a85525f50216856b227bd1864e2dcb773",
-            "content": "sha256:89acca4aa72ca1af52d10dd2614b0f13d7437e01c52ca83507a39751ee65d4d7",
+            "blob": "7dfc1906ff5bccdc7c4a2fd81c1b939871b6f63a",
+            "content": "sha256:9da6207596db63aca24df90a7118db4a2494e18718168b2a4a202797cf686185",
             "locator": {
-              "kind": "symbol",
-              "name": "SprintGraphPage"
+              "kind": "file"
             },
             "path": "dashboard/src/dev/sprintGraphPage.tsx"
           },
@@ -56,7 +54,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fddde3fe60faa2d9374405b9676016ab026af1b6",
+            "blob": "d71e9db1948f52b82bd84b2348775f13ac9b57e7",
             "content": "sha256:aba557ba3e3dd7a0538e54add74e8b5a26632e69e6fbd0805b7b5e653c9c6735",
             "locator": {
               "kind": "symbol",

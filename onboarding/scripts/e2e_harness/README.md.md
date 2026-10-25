@@ -4,9 +4,9 @@
 
 The retained README documents run_fresh_user.py on the host, its requested reports/work-root paths and fresh-user-acceptance/run.json transcript, dev/main fixtures, scenario stages, recorder and blocked-step reporting. Its old ambient Codex/Dagger/model/tmux/replication operator account is historical, not this entry point. The README calls the fixture clean-room isolation a requirement; this curation does not independently verify isolation, run the acceptance or count blocked outcomes. The entry source writes the transcript at the supplied report destination and derives exit failure from non-passed invariants/checkpoints.
 
-- The current README documents the fresh-user host entry, fixtures, scenario, recorder and distinction between shape tests and acceptance. \[7] [7]
+- The current README documents the fresh-user host entry, fixtures, scenario, recorder and distinction between shape tests and acceptance. [7]
 
-- The current host main writes fresh-user-acceptance/run.json under the supplied reports destination and derives failure from invariant/checkpoint statuses. \[8] [8]
+- The current host main writes fresh-user-acceptance/run.json under the supplied reports destination and derives failure from invariant/checkpoint statuses. [8]
 
 ## Historical original source account — retained, not authority for removed behavior
 
@@ -69,17 +69,22 @@ None.
 
 No Domain Documentation source is configured; the executed CLI records current runtime evidence.
 
-- The document distinguishes the real consumer from deterministic provider scripting. [1]
+
+- The document has the fresh-user acceptance run on the host through the product's own entry points, and records a step that cannot run as blocked with its reason rather than completed. [1]
+
 
 ### Repo-Internal References
 
-- Security containment and false-positive prevention are explicit fixture contracts. [2]
-- Idempotency, negative sentinels, and cleanup evidence are distinguished from retries. [3]
-- One forwarded tmux namespace binds role creation to liveness and cleanup. [4]
-- Targeted/full applicability, replication count, and retry count are explicit. [5]
+
+- The run reads and writes nothing outside its run root, which is a fresh temporary directory unless --work-root names one. [2]
+
+
+- Every step records the exact call it made and the real result it got, and a step that cannot run is recorded as blocked with its reason, never as completed. [3]
+
 
 ### Cross-Repo References
 
 No meaningful cross-repository reference applies.
+
 
 - The document names no sibling repository as implementation authority. [6]

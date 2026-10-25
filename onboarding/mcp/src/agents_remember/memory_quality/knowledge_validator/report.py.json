@@ -51,15 +51,14 @@
       ]
     },
     "4": {
-      "note": "A shape refusal names file, field and rule.",
+      "note": "A shape refusal names file, field and rule.\n\nAnchor: `test_shape_refuses_a_bad_field_and_names_file_field_and_rule`",
       "targets": [
         {
           "anchor": {
-            "blob": "5567548fd4e80a404eda206045c2ebae9d085c88",
-            "content": "sha256:36b41f3107d535493c402b1f71629f33e93ce08797fa145b8364fecf85b1626f",
+            "blob": "922080aa70ed74fa611b56de473a1398e4e6ec6d",
+            "content": "sha256:2872079c064fd035ad0a25e8d43839a5893228d43b3b62f0c5e5de769d3b1504",
             "locator": {
-              "kind": "symbol",
-              "name": "test_shape_refuses_a_bad_field_and_names_file_field_and_rule"
+              "kind": "file"
             },
             "path": "mcp/tests/test_knowledge_validator.py"
           },

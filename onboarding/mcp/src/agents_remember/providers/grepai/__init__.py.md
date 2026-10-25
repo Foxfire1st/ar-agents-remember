@@ -26,4 +26,4 @@ modules such as `providers.grepai.setup`, `providers.grepai.context`, or
 
 ### Repo-Internal References
 
-- The package overview describes the provider-owned GrepAI route. [1]
+- The package overview describes the provider-owned GrepAI route. 

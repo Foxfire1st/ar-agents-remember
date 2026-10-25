@@ -24,8 +24,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f9bd40ee8223cd15356575dcbed191d6a71c5fe5",
-            "content": "sha256:ea3c68416f89d912afac8dff0b6353e7567b66b419ae91d9de35e932cfe519ba",
+            "blob": "606cd459608eefcdc3a1c7e164d9e2f497cfcd1c",
+            "content": "sha256:605fc078a7ebdf203071ff6345b8e3df803bfbd50760ed1bb3d3ced874e3ef8a",
             "locator": {
               "kind": "file"
             },
@@ -268,7 +268,7 @@
         },
         {
           "anchor": {
-            "blob": "fddde3fe60faa2d9374405b9676016ab026af1b6",
+            "blob": "d71e9db1948f52b82bd84b2348775f13ac9b57e7",
             "content": "sha256:dd55d08ef804af44cbb330442d1401ec6e37afd5e55b9b8eb9969cf751223fed",
             "locator": {
               "kind": "symbol",
@@ -298,8 +298,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2b82959051f071a383754faa3d11ebe8b8728ec0",
-            "content": "sha256:6ee5c46f86daa7f42b360c05299e3adfcf42551c5195c6410e87801a5b512907",
+            "blob": "046383e5c526185a26684c0f11200956456de65e",
+            "content": "sha256:0f3dc25316fcb99e356aa1370a90f39e2c263aca80e424025f95e1679793b4fa",
             "locator": {
               "kind": "symbol",
               "name": "CONSTEL_STATUSES"
@@ -310,7 +310,7 @@
         },
         {
           "anchor": {
-            "blob": "2b82959051f071a383754faa3d11ebe8b8728ec0",
+            "blob": "046383e5c526185a26684c0f11200956456de65e",
             "content": "sha256:d6c061b2bf9f32b160e796212e1d8d724a8d4a57d15d7f18803d71dc3c1d3caa",
             "locator": {
               "kind": "symbol",
@@ -367,15 +367,14 @@
       ]
     },
     "9": {
-      "note": "The task column's pivot header mounts AttentionQueue; a severity mark is not an old handoff/lifecycle state mark.",
+      "note": "The task column's pivot header mounts AttentionQueue; a severity mark is not an old handoff/lifecycle state mark.\n\nAnchor: `TaskPivotBar`",
       "targets": [
         {
           "anchor": {
-            "blob": "e619eda0f192808b9ff9a988c7cffb3ebfdbcd04",
-            "content": "sha256:48a973522b2f73edcd783ec2c921d240158eedd9a0a35779e1884ed0090b8092",
+            "blob": "83b4bd442bbeab34f2f4e4d7d95140c60cc3bee6",
+            "content": "sha256:516806e520f6bd8d636878384426d04e668a123e7f41a38d5c9f21372a2776e2",
             "locator": {
-              "kind": "symbol",
-              "name": "TaskPivotBar"
+              "kind": "file"
             },
             "path": "dashboard/src/panels/lifecycle-list/columnPresentation.tsx"
           },

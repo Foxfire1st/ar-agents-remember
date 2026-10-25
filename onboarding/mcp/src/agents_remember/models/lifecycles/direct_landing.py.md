@@ -64,7 +64,9 @@ the current working-candidate behavior; historical entries below retain their or
 - The accepted input contains code/memory identity and validates route plus intent. [1]
 - The shared snapshot keeps actual object identity and optional content-only comparison. [2]
 
+
 - The coordinator captures the accepted candidate from actual Git facts. [3]
+
 
 - The strict model carries code/memory identity and its `_accepted_direct_plan_is_exact` validator requires the direct-landing route plus a nonblank approval note. [4]
 - The shared snapshot's `_require_state_evidence` validator keeps actual object identity: `observed is not before` is refused while `observed == before` is reconciled. [5]
@@ -79,5 +81,6 @@ the package-local implementation above. No additional external or sibling-reposi
 source is configured for this file's claims.
 
 No additional configured cross-repository evidence is claimed.
+
 
 - The typed direct input adds exact leafTaskDocumentRef, codeCommitMessage and optional codeBefore. [7]

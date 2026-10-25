@@ -15,4 +15,5 @@ This canonical role/operation requires messages to be short wake-ups naming requ
 
 - Canonical Bootstrap message instructions use wake text and file-carried body/attachments without a pinned settings limit. [1]
 
-- Bootstrap reads through the retained naming surface, identifies resolve_context as removed and forbids retire_child beyond its setup powers. \[2] [2]
+
+- Bootstrap reads through the retained naming surface, identifies resolve_context as removed and forbids retire_child beyond its setup powers. [2]

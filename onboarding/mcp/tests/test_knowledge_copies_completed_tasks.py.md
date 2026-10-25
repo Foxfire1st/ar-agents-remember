@@ -14,6 +14,8 @@ MIK-R82 rule 2: the copies command gains one rule over MIK-R26 rule 6. The legac
 
 ## Evidence
 
+
 - The completed-task copies rule deletes finished-task copies and keeps open-task copies. [1]
+
 
 - Legacy-copy fixtures build under a working filename and remove derived index tables. [2]

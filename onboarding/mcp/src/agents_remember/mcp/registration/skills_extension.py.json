@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/mcp/registration/skills_extension.py",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
@@ -57,7 +58,7 @@
       ]
     },
     "10": {
-      "note": "The declaration beside it: the capability and the methods are installed together, so the advertisement cannot outrun the implementation.",
+      "note": "The declaration beside it: the capability and the methods are installed together, so the advertisement cannot outrun the implementation.\n\nAnchor: `_register_skill_resources` `declare_skills_extension`",
       "targets": [
         {
           "anchor": {
@@ -85,8 +86,8 @@
         },
         {
           "anchor": {
-            "blob": "6047b268d9f925ebce5535a63f38066cf908c1e9",
-            "content": "sha256:767833d45872b6a7a015f00f8d40a455bcaa7519bd423a97b02d2c64d196d45b",
+            "blob": "5865a5625745237980b5f2727a2b258b47488104",
+            "content": "sha256:935a9b62e15361103dd6ad0ec5c496c95dd4ac0df1f1e6edbba360cba8dc1338",
             "locator": {
               "end": 154,
               "kind": "line_range",
@@ -104,6 +105,30 @@
               "end": 104,
               "kind": "line_range",
               "start": 77
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/capsule_serving.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5865a5625745237980b5f2727a2b258b47488104",
+            "content": "sha256:e599d213ee8a82d54eb3535c16767e98a907ef2191dd8819d3f9c007367f5466",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/capsule_serving.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5865a5625745237980b5f2727a2b258b47488104",
+            "content": "sha256:3c6ff13f347f8cf95a0f7072582c5c0bd2645bac5cab9fb89d481002db957d74",
+            "locator": {
+              "end": 184,
+              "kind": "line_range",
+              "start": 157
             },
             "path": "mcp/src/agents_remember/mcp/registration/capsule_serving.py"
           },
@@ -174,26 +199,14 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d3952ef797ae6f8761d477b1f5a56be86884e40e",
-            "content": "sha256:b8e12a88c690222106abb3e467066887f175eac7ea90103e3c71b33d0c844b3d",
+            "blob": "7016203837db907490d39c45cdae36cf39d35288",
+            "content": "sha256:07b2d018f61e7eee032ab39fac5eab11793315e6ce434103eabbc38475ee366b",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_real_client_and_server_exchange_over_the_installed_sdk"
-            },
-            "path": "mcp/tests/test_capsule_serving.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "d3952ef797ae6f8761d477b1f5a56be86884e40e",
-            "content": "sha256:bbf8e9abc5153061cc1ab722ff28e4cf18e96fdd7cdcea32589f21a4155e3e6f",
-            "locator": {
-              "end": 1268,
+              "end": 381,
               "kind": "line_range",
-              "start": 1198
+              "start": 306
             },
-            "path": "mcp/tests/test_capsule_serving.py"
+            "path": "mcp/tests/test_capsule_serving_surface.py"
           },
           "kind": "test"
         }
@@ -204,26 +217,14 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d3952ef797ae6f8761d477b1f5a56be86884e40e",
-            "content": "sha256:a464c5c90ae7e6c60b75a33933f6ea136eefc3dbb7650e907500009240e000b1",
+            "blob": "7016203837db907490d39c45cdae36cf39d35288",
+            "content": "sha256:121a8847c559a9a6db5e74967695da263150846f1f0a123e5d682ca57eca4ff2",
             "locator": {
-              "kind": "symbol",
-              "name": "test_the_extension_declaration_is_installed_once_per_server"
-            },
-            "path": "mcp/tests/test_capsule_serving.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "d3952ef797ae6f8761d477b1f5a56be86884e40e",
-            "content": "sha256:58c5cdb5eac0f54b16df586a0c0499539d707908cbbb1e899c1b1bba85f26971",
-            "locator": {
-              "end": 1407,
+              "end": 523,
               "kind": "line_range",
-              "start": 1393
+              "start": 507
             },
-            "path": "mcp/tests/test_capsule_serving.py"
+            "path": "mcp/tests/test_capsule_serving_surface.py"
           },
           "kind": "test"
         }

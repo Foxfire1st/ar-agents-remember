@@ -45,5 +45,8 @@ compacted text remains a faithful mirror of the structured payload.
 
 ### Repo-Internal References
 
+
 - `create_server()` installs the shim as its first action. [1]
+
+
 - Behavior is verified through an in-process tool call. [2]

@@ -90,16 +90,26 @@ No configured domain documentation could be checked.
 ### Repo-Internal References
 
 - `open_read_only_database` owns the current boundary described above. [13]
+
 - `create_or_validate_schema` owns the current boundary described above. [14]
+
+
 - `inspect_schema` owns the current boundary described above. [15]
+
 
 - - The bounded lock policy and its no-retry rule. [16]
 - - The read-only connection every identity confirmation uses, so a pass cannot repair what it checks. [17]
 - - The shared one-row reader every graph read is built on. [18]
+
 - - Create-on-empty versus validate-on-existing, and the post-commit version marker. [19]
+
+
 - - The existing database is checked for generation, exact table columns and the full trigger set. [20]
+
 - - The single immediate transaction whose exit rolls back without suppressing the failure. [21]
+
 - - The graph readers that reuse the one-row helper. [22]
+
 - - The close that no longer calls the peer unlink, and why. [23]
 
 ### Cross-Repo References

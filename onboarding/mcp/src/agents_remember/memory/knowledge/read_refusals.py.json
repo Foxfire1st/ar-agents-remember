@@ -30,12 +30,12 @@
       ]
     },
     "10": {
-      "note": "**The node that measures a refused read of a real database leaving the file byte-identical.**\n\nAnchor: \"test_a_refused_read_of_a_real_database_leaves_the_file_byte_identical\"",
+      "note": "**The node that measures a refused read of a real database leaving the file byte-identical.**",
       "targets": [
         {
           "anchor": {
-            "blob": "beb6950c6a52b96e321ecc6a5edd6278cc6591c7",
-            "content": "sha256:3bee079b0807815d5d2bfd9840144db2a31d59f93241d877b5b3697d51180f74",
+            "blob": "b8b22ada1c4ed31896992818816752ec5841126e",
+            "content": "sha256:4ac7c466a0e52bc1600d2e4b379163605ab28651053f80736f3422708580661d",
             "locator": {
               "end": 977,
               "kind": "line_range",
@@ -189,27 +189,14 @@
       ]
     },
     "8": {
-      "note": "**The six codes and the one operation this leaf added to the shared vocabulary.**",
+      "note": "**The six codes and the one operation this leaf added to the shared vocabulary.**\n\nAnchor: `KnowledgeRefusalCode` `KnowledgeOperation`",
       "targets": [
         {
           "anchor": {
-            "blob": "b3ba0efd36a74910f4ca9604b862c73a167fe659",
-            "content": "sha256:f051963a9e1e68afc1b0bcc52921de0235a2dc7d1bb9fdc3445413c26a5fd763",
-            "locator": {
-              "kind": "symbol",
-              "name": "KnowledgeRefusalCode"
-            },
-            "path": "mcp/src/agents_remember/models/knowledge/result.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
             "blob": "26599e0fe8b427bc0d290767b7b8e263cde390b6",
-            "content": "sha256:91c0e01b1715c0a3ca629e2b554757eca67b4da8f4d6cbae650b0017b9630432",
+            "content": "sha256:b52da855cdfe70820e352cdb3cf40bc64be29efba79386dafe6d5f47ae56083b",
             "locator": {
-              "kind": "symbol",
-              "name": "KnowledgeOperation"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/models/knowledge/result.py"
           },

@@ -20,12 +20,12 @@
       ]
     },
     "2": {
-      "note": "Plan review independently validates that choice.\n\nAnchor: `### PR-4 — Order-respects-edges`",
+      "note": "Plan review independently validates that choice.",
       "targets": [
         {
           "anchor": {
-            "blob": "2baa1144a605aef991583f1aef62c519858d656b",
-            "content": "sha256:e28d7efd76498a26fbe6ea5e441319c357365ec4046733e938dcf17c883fa069",
+            "blob": "062d955f1d03cafdc384de0f46f29cb39f67c028",
+            "content": "sha256:8edbac6ef43c98573cbb37b8bb4e5a31468b8f51843e4388e9c884602cd00b2c",
             "locator": {
               "end": 70,
               "kind": "line_range",

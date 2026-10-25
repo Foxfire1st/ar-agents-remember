@@ -18,8 +18,14 @@ The path witnesses distinguish domains: ordinary nonsecret paths within 200 char
 
 No Domain Documentation sources are configured; the evidence below is repository implementation or test assertions, not a new execution attestation.
 
+
 - Log fields, redaction and write-failure behavior are checked. [1]
+
+
 - Raised and refused calls keep real entry logging. [2]
+
+
 - Hermetic enclosure log placement and cleanup are asserted. [3]
+
 
 - Real temporary-root paths obey the exact preservation or length-and-digest rule. [4]

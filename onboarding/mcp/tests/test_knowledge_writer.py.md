@@ -87,11 +87,15 @@ No configured live documentation source was available for this pass.
 
 The cases.
 
+
 - Every kind through the command line. [2]
+
 - Unresolvable evidence reported and kept. [3]
 - A bootstrap of converted memory writes as a wave. [4]
 - A rerun that changes a locator removes this leaf's old entry only. [5]
+
 - The bootstrap command dispatch. [6]
+
 - MIK-R27: the writer refuses an unsupported admission claim and writes nothing, and writes once the proof is added. [7]
 - Route rules: report in the writer, refusal at commit. [8]
 - The requirement packet the owner resolves, and D12 lifted with governs, reconsider and requirement links. [10]
@@ -107,7 +111,9 @@ The cases.
 
 
 
+
 - A master line's crossing records its rows through the writer. [15]
+
 
 - A cover revises a realization entry's rationale in place. [16]
 

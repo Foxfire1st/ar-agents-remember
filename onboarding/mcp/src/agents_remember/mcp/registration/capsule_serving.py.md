@@ -125,7 +125,9 @@ None recorded.
 The specification this surface implements. Its two operative clauses for a reader here:
 
 - The extension introduces **three** protocol methods; `skills/list` and `skills/get` are implemented by every server declaring the extension, and it introduces no **other** methods, message types or schema changes. [1]
+
 - **Declaring the extension itself commits the server** to `skills/list` and `skills/get` — which is why the declaration and the methods install together here. [2]
+
 - This server's own index resource is the Agent Skills well-known-discovery shape and is explicitly *not* the extension's enumeration result. [3]
 
 Canonical live reference: <https://github.com/modelcontextprotocol/modelcontextprotocol> (the skills
@@ -133,18 +135,23 @@ extension specification, SEP-2640).
 
 ### Repo-Internal References
 
-- The one entry point the registrar tuple calls, registering both tool families and the resource set. [4]
-- The flat registered signature is the published schema; the test-only corpus overrides stay off the wire. [5]
+
+- The one entry point the registrar tuple calls: it registers the skill surface's resources, and no tools. [4]
+
+
 - The capability and the two protocol methods are installed by adjacent calls, so the advertisement cannot outrun the implementation. [6]
+
+
 - The extension declaration extends the SDK's initialization options at their one construction point, without narrowing a typed field. [7]
+
 - The resource shapes, whose loader re-checks the revision and proves containment before serving. [8]
 - The two mandatory methods and their handlers. [9]
 
+
 - The three response models the payloads are validated against. [11]
+
 - The resource `_meta` provenance block every served file carries. [12]
-- The live client/server exchange that executes the declaration, both methods and the resource list. [13]
-- The traversal case that reads a path outside a skill directory from the live process and must be refused. [14]
-- The case that pins the install-once idempotence of the declaration. [15]
+
 
 ### Cross-Repo References
 

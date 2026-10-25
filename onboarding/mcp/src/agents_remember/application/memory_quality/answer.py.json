@@ -17,21 +17,20 @@
         "handoffEntry": "L110-C-status",
         "leaf": "260928-MIK-L110"
       },
-      "rationale": "Projects complete quality results without replacing the material retained by the logger.",
+      "rationale": "`quality_result_answer` at C still projects complete quality results with their finding counts and bounded blocking rows and names the checklist/census paths, leaving the material the logger keeps untouched; the span matches C.",
       "role": "presentation"
     }
   ],
   "references": {
     "1": {
-      "note": "Completed results retain status, blocking totals and report locations.",
+      "note": "Completed results retain status, blocking totals and report locations.\n\nAnchor: `quality_result_answer`",
       "targets": [
         {
           "anchor": {
-            "blob": "f0902aa35cc3bb8ed54b6653d2fdf57956548fd5",
-            "content": "sha256:8e057ae8d82e9b879d5cd089fca06c045de96b21b015f1ba18037f7a2f9ea80d",
+            "blob": "0be87d00a47ea321e70ece47c29392d112e29571",
+            "content": "sha256:e5f32156b9e95ddc8e9e6da0ee71602ca6bd411bdd98f8a1b95f5401a648f6ba",
             "locator": {
-              "kind": "symbol",
-              "name": "quality_result_answer"
+              "kind": "file"
             }
           },
           "kind": "code"

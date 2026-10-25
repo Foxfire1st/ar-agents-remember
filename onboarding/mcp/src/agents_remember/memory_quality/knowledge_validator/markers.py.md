@@ -16,7 +16,7 @@
 - `_paragraphs` splits the text into paragraphs of (line number, line), dropping fenced code blocks: a line opening with three or more backticks or tildes, indented at most three spaces, up to a closing fence of the same character and at least the same length (`_closes`).
 - `_prose_spans` removes inline code spans (a backtick run up to the next run of the same length within the paragraph); an unclosed run is prose.
 - `_escaped` treats a `[` preceded by an odd number of backslashes as escaped.
-- `Marker.valid` is true only when the digits match `REFERENCE_NUMBER_PATTERN`. `[0]` and `[01]` are still markers; the rule reports them as invalid and names `\[n]` or a code span.
+- `Marker.valid` is true only when the digits match `REFERENCE_NUMBER_PATTERN`. `` and `[01]` are still markers; the rule reports them as invalid and names `\[n]` or a code span.
 - `escape_markers(text)` (MIK-R24) returns `text` with every marker this module would report escaped as `\[n]`, so `find_markers` then finds none. `_paragraph_marker_offsets` locates each unescaped marker of a paragraph as (line, offset), through the same `_paragraphs`, `_prose_spans` and `_escaped` rules, so exactly the brackets `find_markers` reports are escaped and nothing inside code is touched. The conversion (`memory/conversion/cards.render_card`) uses it before substituting its own reference numbers, so the only markers of a converted card are the ones the conversion wrote.
 
 ### Conventions
@@ -27,7 +27,7 @@
 ### Invariants And Boundaries
 
 - Only fenced blocks and inline spans hide a marker; escaping is the author's other way out.
-- Real prose such as `signals[0]` or `line(s) [153]` is a marker. The MIK-R24 conversion escapes such tokens with `escape_markers`, which uses this grammar (review R1 finding 7, routed to L24). On the real repository it escaped none: the `line(s) [n]` texts leave with Update History, and the table cells that held subscripts were already code spans.
+- Real prose such as `signals` or `line(s)` is a marker. The MIK-R24 conversion escapes such tokens with `escape_markers`, which uses this grammar (review R1 finding 7, routed to L24). On the real repository it escaped none: the `line(s) [n]` texts leave with Update History, and the table cells that held subscripts were already code spans.
 
 ### Todos
 

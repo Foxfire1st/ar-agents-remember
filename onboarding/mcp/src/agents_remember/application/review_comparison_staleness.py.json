@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/application/review_comparison_staleness.py",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
@@ -139,12 +140,62 @@
             "path": "mcp/src/agents_remember/models/knowledge/review.py"
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e298bc656619aa09b3566b8e7baeb7a8453b656f",
+            "content": "sha256:d0a3894404e94428fd3c916158daf5c5f4483980b28884e530ba505d41c9157d",
+            "locator": {
+              "end": 374,
+              "kind": "line_range",
+              "start": 336
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review.py"
+          },
+          "kind": "code"
         }
       ]
     },
     "5": {
-      "note": "**The staleness rule: agreement or an absent previous digest is `current`; disagreement is `stale` with the carried identity retained as the labelled previous input and the moved axis named.**\n\nAnchor: `ReviewStaleness`",
+      "note": "**The staleness rule: agreement or an absent previous digest is `current`; disagreement is `stale` with the carried identity retained as the labelled previous input and the moved axis named.**",
       "targets": [
+        {
+          "anchor": {
+            "blob": "6a494701b8520968af8948b5a113ce07400e0364",
+            "content": "sha256:15a2fc725e2a0cbd9486c59eee6fddb4e786b7a50ff3bad82cae3ad0e11005dd",
+            "locator": {
+              "end": 48,
+              "kind": "line_range",
+              "start": 44
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6a494701b8520968af8948b5a113ce07400e0364",
+            "content": "sha256:aaf46a13f4003029706f3d1c5ebf8af593de7f1953d75d945b3b77555fb3917b",
+            "locator": {
+              "end": 97,
+              "kind": "line_range",
+              "start": 76
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ce64a977e926846a0ca408bf1aceecec8a22ea85",
+            "content": "sha256:34a5d8e83a0088df46de2f68d8e6d8bd7d500c25c4923ae17a06f012ca617d95",
+            "locator": {
+              "end": 93,
+              "kind": "line_range",
+              "start": 52
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review_staleness.py"
+          },
+          "kind": "code"
+        },
         {
           "anchor": {
             "blob": "6a494701b8520968af8948b5a113ce07400e0364",
@@ -153,19 +204,6 @@
               "kind": "symbol",
               "name": "review_staleness"
             }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "005c44f99677f29c3777322502b77b732a3a0252",
-            "content": "sha256:793cc34ecee90d2c8cdfbe62e461e7c8814b09001592d79fffeb4655be410dae",
-            "locator": {
-              "end": 1015,
-              "kind": "line_range",
-              "start": 990
-            },
-            "path": "mcp/src/agents_remember/models/knowledge/review.py"
           },
           "kind": "code"
         }
@@ -206,12 +244,12 @@
       ]
     },
     "8": {
-      "note": "**The adapter's delegation: the composition computes the identity once and reads one staleness value for both the published state and the submission state, and imports these names instead of defining them.**\n\nAnchor: `comparison_identity`; `review_staleness`",
+      "note": "**The adapter's delegation: the composition computes the identity once and reads one staleness value for both the published state and the submission state, and imports these names instead of defining them.**",
       "targets": [
         {
           "anchor": {
-            "blob": "75a68c3874ea545bd49e863046a120e320587404",
-            "content": "sha256:cccdeadc30f88b4527694d3c2e46f16c82c0784cb1d38b04bece61b9ec6bd1d8",
+            "blob": "1c9f8394dfb38bee67a5da3b90ace66147bd5334",
+            "content": "sha256:8031c5ed17f3ab243106bb4c84c6a162e538a7d27c5ed0dc06d2caef33cba0ca",
             "locator": {
               "kind": "symbol",
               "name": "compose_review"
@@ -228,6 +266,30 @@
               "end": 25,
               "kind": "line_range",
               "start": 21
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_review.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1c9f8394dfb38bee67a5da3b90ace66147bd5334",
+            "content": "sha256:bc9aed0908cabfef3b176f1734ea114458607fab1f9bf612787eace2cfa4d0c0",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_review.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1c9f8394dfb38bee67a5da3b90ace66147bd5334",
+            "content": "sha256:b6c6c04bc3392d5e3c07ea2fae6f636a03670308486829e9b24c999dd9e9b522",
+            "locator": {
+              "end": 83,
+              "kind": "line_range",
+              "start": 79
             },
             "path": "mcp/src/agents_remember/application/knowledge_review.py"
           },

@@ -23,7 +23,9 @@ finalizer's contradiction rule or create live open-work directories.
 The unreadable-sibling happy path distinguishes completing the master itself from updating its sprint row: only the master receives completedAt, neither document receives an appended decision, and the dry run writes nothing.
 
 
+
 - Finalization assertion setup forces real master completion; dry-run preserves complete world, real call requires completedAt and unchanged master/sprint decisions with absent sprint completedAt. [5]
+
 
 
 A readable ordinary no-master document still cannot authorize completion: after restoring its bytes, the source case requires `task-document-resolution-blocked` and byte equality. The genuinely absent ordinary-document case requires the same refusal in both dry and real calls, names the contract-bound document/master-row requirement and leaves the path absent. These are distinct negative controls from the admitted master-completion case above.
@@ -31,11 +33,17 @@ A readable ordinary no-master document still cannot authorize completion: after 
 ## Evidence
 
 
+
 - Finalization refuses an abandoned row that landed and names the row, for masters of either nature. [1]
+
+
 - Canonical unreadable sibling is reported by file while native master finalization timestamps only the completed master and preserves master/sprint decisions; dry run preserves the world. Unbound title/missing member refusals remain separate. [2]
 
 
+
+
 - An unreadable proven canonical sibling is reported as a fact without changing its membership, row, node or bytes; an unbound title is a named unresolved identity. [3]
+
 
 - The finalization control supplies the external-memory leaf cells before testing retained landing truth. [4]
 

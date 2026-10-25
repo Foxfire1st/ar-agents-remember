@@ -78,7 +78,9 @@ No configured domain documentation could be checked.
 
 - - The canonical JSON typed-column encoding used for every structured column. [16]
 - - The read path re-derives the seal and treats a mismatch as a damaged store. [17]
+
 - - The predecessor edge tables are gone, so no edge rows are decoded and decoded predecessors are always (). [18]
+
 - - The family identity and family revision codecs, including the seal-verifying decode over the stored cells. [19]
 - - The relation codecs and their table-scoped expected-row digests. [20]
 - - The digest the read path recomputes, for both payloads. [21]

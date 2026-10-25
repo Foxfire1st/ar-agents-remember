@@ -28,9 +28,20 @@ There are five declared cases. This card records their current assertion bodies,
 
 ### Repo-Internal References
 
+
 - Three paired mounts use fixture-backed native task identity, and stubbed fetch replies are real Response instances. [1]
+
+
 - Initial readiness reconciles the selected answer and entry after one pre-arm synthetic edit, while duplicate and unrelated events are silent. [2]
+
+
 - A matching edit refreshes the actual selected subject and entry without restoring an old subject answer; catalogue renewal follows changed comparison identity. [3]
+
+
 - Initial responses arriving after the reconciled generation cannot replace its answer or count. [4]
+
+
 - Deferred fetch responses and explicit synthetic capture perturbations control the late/failure cases. [5]
+
+
 - Newest response wins; failed edits retain the labelled coherent generation and a later edit recovers it. [6]

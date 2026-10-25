@@ -47,13 +47,19 @@ no enclosure unless a case adds one.
 
 ## Evidence
 
+
 - Abandoned rows with no enclosure, an empty file cell and unlanded enclosures pass; the master document is unchanged. [1]
+
+
 - An abandoned row that landed refuses with the row named. [2]
+
 - A planning row and a non-abandoned row with an unreadable or missing document refuse by name. [3]
 - An all-abandoned master proves an empty chain and refuses a foreign commit. [4]
 - Malformed rows are refused with the master, the row and the action named. [5]
 - Checkpoint refusals name the master and the action. [6]
 
+
 - The series fixture mirrors completed landings on code and external memory. [7]
+
 
 - Returned refusal controls keep the original abandoned-row sentence/regex and complete no-write world frame while checking the exact code and recorded detail. The missing canonical leaf-document I/O case still raises; it is not silently converted into a returned-refusal case. [8]

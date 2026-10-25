@@ -45,5 +45,7 @@ former path is probed with.
 
 ## Evidence
 
+
 - The tracked tree names the previous host nowhere outside the allow-list, and the former block loads as absent. [1]
+
 - Ten current launcher routes include `GET /api/role-launch/warmup`, while every former-path 404 check remains. [2]

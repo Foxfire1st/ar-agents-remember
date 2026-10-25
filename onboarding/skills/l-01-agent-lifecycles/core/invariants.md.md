@@ -66,9 +66,23 @@ No relevant documentation found after checking live sources.
 
 - Launch settings own current knob rows; removed launchArgs/sessionCommands/promptKeywords load but are unused. \[2] [11]
 
-- Task collaboration, format, memory-specific commands and role/operation duties have separate instruction owners. \[3] [12]
 
-- Core inheritance is retained corpus doctrine and does not prove current native capsule contents. \[4] [13]
+
+
+
+- Task collaboration, format, memory-specific commands and role/operation duties have separate instruction owners. \[12] Source caption: source extent 84–94 [12]
+
+
+
+
+
+
+
+
+- Core inheritance is retained corpus doctrine and does not prove current native capsule contents. \[13] Source caption: source extent 84–94 [13]
+
+
+
 
 ### Cross-Repo References
 
@@ -125,14 +139,27 @@ The previous packaged-path card's continuity, sequencing, settings-key and instr
 
 The quoted anchors below are literal strings in the canonical source ranges. They establish declarations and selected instruction boundaries, not executed outcomes.
 
+
 - Shared durable continuity and artifact-of-record obligation. [1]
+
 - Questions, analysis, rulings and retained Architect relay. [2]
 - Dependency-based sequencing and retained observability doctrine. [3]
 - Task/branch/worktree intent and chat/build boundary. [4]
 - Small blanks, one-rung escalation and Orchestrator-only spirit test. [5]
+
 - Portable roles, settings precedence, permitted launch keys and harness-independent dispatch. [6]
-- Task, memory, role, operation and rationale ownership; retained core composition sentence. [7]
+
+
+
+
+
+- Task, memory, role, operation and rationale ownership; retained core composition sentence. Source caption: "## Instruction-surface boundaries" [7]
+
+
+
 - Selected Orientation starts from supplied assignment and forbids loading other role/core files. [8]
+
 - Present parent routing and explicit parentless exception qualify the retained universal Architect-only statement. [9]
+
 
 </details>

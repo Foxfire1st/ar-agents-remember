@@ -105,10 +105,16 @@ No cross-repo boundary is crossed by this file.
 - The entry count reads no hunk. [6]
 - Hunks on their changed lines at each side's recorded blob, before and after curation. [7]
 - Links, revisions, proofs and membership. [8]
+
 - An unread side and a partial index (review F3). [9]
+
 - Bounded reasons (review F4). [10]
 - Unmeasured change sets carry no count. [11]
 - One focused question per request. [12]
 - The live tree leaf, and long paths answered typed (review F2). [13]
 - A dataset review's entry has no attribution. [14]
+
+
+> Retained earlier citation wording: - The module's lane row.  Anchor: "mcp/tests/test_review_unexplained_lane.py" [15]
+
 - The module's lane row.  Anchor: "mcp/tests/test_review_unexplained_lane.py" [15]

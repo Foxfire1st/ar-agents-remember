@@ -36,4 +36,4 @@ setup reaches neither announcement because the retired provider is never enabled
 
 - The retained install, prepare/clone and refresh entry points all return no work at the shared retired-provider gate. [1]
 
-- Docker-owned GrepAI lifecycle behavior lives in the GrepAI lifecycle modules. [2]
+- Docker-owned GrepAI lifecycle behavior lives in the GrepAI lifecycle modules. 

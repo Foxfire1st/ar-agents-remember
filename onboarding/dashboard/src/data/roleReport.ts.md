@@ -21,4 +21,5 @@ The module never builds a file path and never falls back to another file: the re
 The current source and test assertions below establish the documented ownership; test citations do not claim a rerun in this pass.
 
 - The one dashboard call to the report route; readable operation-prefixed errors keep raw parser or network text off the launcher's failure line. [1]
+
 - A report read failure reaches the launcher as a readable line instead of `[object Object]`, a JSON parse error or `Failed to fetch`. [2]

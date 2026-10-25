@@ -1,5 +1,6 @@
 {
   "path": "mcp/tests/test_capsule_experiment_install.py",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
@@ -65,15 +66,14 @@
       ]
     },
     "4": {
-      "note": "The installed application keeps machine-local trees out of the mirror and its `node_modules` is a real directory, not a symlink.",
+      "note": "The module drives the real installer end to end and reads its results back from the files it wrote: the legacy-to-capsule cutover, the per-run selection record and the rollback plan, with the install source tree left byte-identical.\n\nAnchor: `test_the_installed_application_keeps_its_machine_local_trees_out_of_the_mirror`",
       "targets": [
         {
           "anchor": {
-            "blob": "692f79431814b394af61d023185c1331cca1bf3f",
-            "content": "sha256:149cfea082184ca050887a3419ba8c11ffc884395f566636884fe193cdc0f826",
+            "blob": "bd60afd08d4f1473efecd2a83389438bb7e57f39",
+            "content": "sha256:5e014a5c45f03a49cf126e88367eec4f6dd4d04d846a0a0100a2c5bdf3503225",
             "locator": {
-              "kind": "symbol",
-              "name": "test_the_installed_application_keeps_its_machine_local_trees_out_of_the_mirror"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -102,12 +102,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "380151722a26a1464b9ab9fa812e213516aa0bc4",
-            "content": "sha256:8aa653741ca100107c6ee856e46833701459dcda97c6c5b6c5f93627dc19024d",
+            "blob": "3c5993c94cf78973b3b39cfe7de9774c8aea6d1a",
+            "content": "sha256:cc01aa81b98cbba00bbd0d158e04e1c677d0ea96d8ece418a214cb90932b3cd9",
             "locator": {
-              "end": 200,
+              "end": 207,
               "kind": "line_range",
-              "start": 200
+              "start": 207
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -115,12 +115,12 @@
         },
         {
           "anchor": {
-            "blob": "380151722a26a1464b9ab9fa812e213516aa0bc4",
-            "content": "sha256:8aa653741ca100107c6ee856e46833701459dcda97c6c5b6c5f93627dc19024d",
+            "blob": "3c5993c94cf78973b3b39cfe7de9774c8aea6d1a",
+            "content": "sha256:7f928fec3d90578643c5a10e2e23d16436c6170a8faeafc95393ed9b6760fd22",
             "locator": {
-              "end": 1807,
+              "end": 1877,
               "kind": "line_range",
-              "start": 1807
+              "start": 1877
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -133,12 +133,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "380151722a26a1464b9ab9fa812e213516aa0bc4",
-            "content": "sha256:8aa653741ca100107c6ee856e46833701459dcda97c6c5b6c5f93627dc19024d",
+            "blob": "3c5993c94cf78973b3b39cfe7de9774c8aea6d1a",
+            "content": "sha256:cc01aa81b98cbba00bbd0d158e04e1c677d0ea96d8ece418a214cb90932b3cd9",
             "locator": {
-              "end": 200,
+              "end": 207,
               "kind": "line_range",
-              "start": 200
+              "start": 207
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -146,12 +146,12 @@
         },
         {
           "anchor": {
-            "blob": "380151722a26a1464b9ab9fa812e213516aa0bc4",
-            "content": "sha256:8aa653741ca100107c6ee856e46833701459dcda97c6c5b6c5f93627dc19024d",
+            "blob": "3c5993c94cf78973b3b39cfe7de9774c8aea6d1a",
+            "content": "sha256:7f928fec3d90578643c5a10e2e23d16436c6170a8faeafc95393ed9b6760fd22",
             "locator": {
-              "end": 1807,
+              "end": 1877,
               "kind": "line_range",
-              "start": 1807
+              "start": 1877
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },

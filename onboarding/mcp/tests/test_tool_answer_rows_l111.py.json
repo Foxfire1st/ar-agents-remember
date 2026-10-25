@@ -3,12 +3,12 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The assembled table must contain no row still naming L111 as interim owner.\n\nAnchor: `ToolAnswerL111ShapedRowsTests.test_no_interim_row_names_l111`",
+      "note": "The assembled table must contain no row still naming L111 as interim owner.",
       "targets": [
         {
           "anchor": {
-            "blob": "a6a17a59bb59182bab60f9aba7f0eb736c0124cc",
-            "content": "sha256:047d4b98e9d862e010e63316f11a0e2473da3eda051d92ec3cc6c71f6dcfdcb7",
+            "blob": "54abe1dda54a25bedf1a695244d42273c0718f05",
+            "content": "sha256:dc24e2f96cde832dd58dd3abed3a76a08919bb9fbaa1a40d6459dc0dad866e80",
             "locator": {
               "end": 24,
               "kind": "line_range",

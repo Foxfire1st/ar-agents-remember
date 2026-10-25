@@ -77,15 +77,23 @@ No relevant external documentation found after checking live sources for the das
 The suite is the contract guard for the dashboard store reducers; the task-34 sliding-window test pins
 the bounded buffer documented in the store sidecar.
 
+
 - System under test: the Zustand store these reducers belong to, including its one full reset transaction. [1]
+
 - Sliding-window guard pins `EVENT_WINDOW` (2000): newest retained, oldest slid off. [2]
+
 - Snapshot fold + named-delta upsert/removed + wholesale metrics/analytics + conn channel. [3]
+
+
 - The typed nonempty queue fixture and direct canonical-reset regression force exact queue clearance plus one generation increment. [4]
+
 
 - Fixture narrowing and task-derived keys/count replace lifecycle population. [6]
 - The parameter type that IS the check, and why the double cast was not one. [7]
 - Typed reparsed supplies cloning; the heartbeat builder is no longer used here. [8]
-- Projection / observer-event types the store maps over. [9]
+
+- The projection mirror the store folds into its id-keyed maps on each snapshot. [9]
+
 
 ### Cross-Repo References
 

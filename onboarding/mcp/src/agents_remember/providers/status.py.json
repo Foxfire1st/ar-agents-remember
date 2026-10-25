@@ -39,15 +39,14 @@
       ]
     },
     "5": {
-      "note": "Restart/rebind recovery wording is shared with runtime-install recovery reporting.",
+      "note": "Restart/rebind recovery wording is shared with runtime-install recovery reporting.\n\nAnchor: `PROVIDER_WATCHER_RESTART_RECOVERY`",
       "targets": [
         {
           "anchor": {
-            "blob": "20fb4b49968c5fcb543544a98b504277bab5bd54",
-            "content": "sha256:088eabf2316e399777558055f4a7a9dbb7ea1ee06e914e6801e8ca64699f5b91",
+            "blob": "750cbed65dd0d732b828bd2784dfa8372cbfc438",
+            "content": "sha256:eea9403a5c826e44d5c43ee28e74fdf4bcc919cec7eb0536fcdce1ad8f189a7a",
             "locator": {
-              "kind": "symbol",
-              "name": "PROVIDER_WATCHER_RESTART_RECOVERY"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/providers/recovery.py"
           },
@@ -68,23 +67,6 @@
               "start": 161
             },
             "path": "mcp/src/agents_remember/providers/metrics.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "7": {
-      "note": "Provider status appends restart guidance when projected GrepAI state reports `indexingState: noWorkspace`.\n\nAnchor: \"def refresh_current_provider_state\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "5fed969801e59c3f21496bdd6c76892ccdc0b659",
-            "content": "sha256:0e796fc86c9a82c8b37f93e8024f664505bc2ff6487133b900aef327c13c3eb7",
-            "locator": {
-              "end": 160,
-              "kind": "line_range",
-              "start": 160
-            }
           },
           "kind": "code"
         }

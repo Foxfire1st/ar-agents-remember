@@ -37,5 +37,8 @@ badges and viewport size.
 
 ### Repo-Internal References
 
+
 - The `EnclosureNode` statuses (closeout/integration/cleanup) and existence flags shown/filtered on. [1]
+
+
 - The running-operation regression proves the durable command is visible and preserved as the full badge title. [5]

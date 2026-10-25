@@ -114,8 +114,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3217c4adb9fbc296e18af85213f0b2f1583f7807",
-            "content": "sha256:5e0c28cd527a4a323d41631f88c4aab2eac2b8269e9f023a9070022af36bb033",
+            "blob": "dbe9fc515e4c555a8ec218ec404f423c7eb7703f",
+            "content": "sha256:99f98e8c338f8383e9e69db684b2a7ab84f8d24ffd55efc2211d2e1d678573d8",
             "locator": {
               "kind": "file"
             }
@@ -129,8 +129,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9d8a68b40c1381f486a23f08720bea8d9524f312",
-            "content": "sha256:ee8b4bdb44e163fb75c9784b7b41f98debdf07db7bda304a5954b59c439ab7a0",
+            "blob": "dbe9fc515e4c555a8ec218ec404f423c7eb7703f",
+            "content": "sha256:99f98e8c338f8383e9e69db684b2a7ab84f8d24ffd55efc2211d2e1d678573d8",
             "locator": {
               "kind": "file"
             }
@@ -140,12 +140,12 @@
       ]
     },
     "3": {
-      "note": "Returned refusal checks retain the original sentence/regex and complete no-write snapshot, adding exact nextStep and returncode identity. The original readiness and absence controls are not weakened by changing the refusal carrier.\n\nAnchor: Current STOP-delta source carrier",
+      "note": "Returned refusal checks retain the original sentence/regex and complete no-write snapshot, adding exact nextStep and returncode identity. The original readiness and absence controls are not weakened by changing the refusal carrier.",
       "targets": [
         {
           "anchor": {
-            "blob": "5edfe64ea4e8df716dd4464aab09d108cff02df8",
-            "content": "sha256:97bde096e591af18159844ee6c9ac395ae9feb7e2b4640807d0772f92a353065",
+            "blob": "dbe9fc515e4c555a8ec218ec404f423c7eb7703f",
+            "content": "sha256:99f98e8c338f8383e9e69db684b2a7ab84f8d24ffd55efc2211d2e1d678573d8",
             "locator": {
               "kind": "file"
             }

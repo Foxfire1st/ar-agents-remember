@@ -57,12 +57,12 @@
       ]
     },
     "3": {
-      "note": "The render test that depends on these stubs.\n\nAnchor: \"renders complete bodies for direct\"",
+      "note": "The render test that depends on these stubs.",
       "targets": [
         {
           "anchor": {
-            "blob": "76abf41ae07c7b89a71f1ad16b21b8a93570329c",
-            "content": "sha256:829d4366f973211f2be8695064dc0715d94d99e45d8ce76f9a244e5d3acc55a8",
+            "blob": "d49c4b3ee776a1dadfa652fbc14bdb3765457d06",
+            "content": "sha256:076935d4dbc457d92333634d51a95d3870758e72a18cf71896ad515893349cbd",
             "locator": {
               "end": 395,
               "kind": "line_range",

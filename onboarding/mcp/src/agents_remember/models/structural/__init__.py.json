@@ -7,11 +7,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fc80ef01a34d05116f889c6548eca4d4dca8c39a",
-            "content": "sha256:772a8073516131dd78eadb4621548fd53b4a34443ccc4201b6a8ac5d5d68b5c5",
+            "blob": "858edcaf45e6805e2ad603908597559ce9fadaa1",
+            "content": "sha256:e554a27ef2f02a52eca0faced610457fb61cf7e02fbea2628dfc82972a5b6c89",
             "locator": {
-              "kind": "symbol",
-              "name": "DispatchAgentRequest"
+              "end": 54,
+              "kind": "line_range",
+              "start": 1
             },
             "path": "mcp/src/agents_remember/models/structural/agent.py"
           },
@@ -19,10 +20,10 @@
         },
         {
           "anchor": {
-            "blob": "440b9b2c878491059ad01444fc78b008d7a4ff35",
-            "content": "sha256:3067f0a5ebd7781fd41dfb516d1394a0d4cae45391cbdb060ce55259eb303fd7",
+            "blob": "0293e1f8c2efa7f2159e4e430fe6aa292dd78162",
+            "content": "sha256:52753d92bdd833e2f16198e51ca0ceacd058630f4022c9640d5d7d93f26790b8",
             "locator": {
-              "end": 165,
+              "end": 20,
               "kind": "line_range",
               "start": 1
             },

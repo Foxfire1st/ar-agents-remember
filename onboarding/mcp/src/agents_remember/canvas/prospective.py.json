@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/canvas/prospective.py",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
@@ -80,8 +81,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "84fc5213f67cdf09816ba50e14d09728d1f3bf31",
-            "content": "sha256:d13ad7c0afad7655dc1def72056f04e4eae6db7764fa56b73540f597d48092f9",
+            "blob": "5ca2ca69a99e69ac35709a756f52967e156695f9",
+            "content": "sha256:9f84c0afc5857072563b76a82a109406b8aea689fa6608c334a0c3e5d3bbf643",
             "locator": {
               "kind": "symbol",
               "name": "BrowserProspectiveLoad"

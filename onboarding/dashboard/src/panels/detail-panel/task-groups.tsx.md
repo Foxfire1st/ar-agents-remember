@@ -32,6 +32,9 @@ The reader supplies navigation callbacks and qualified reference-path resolution
 
 
 
+
 - Master Now keeps served step counts and cached major-step dots without grant controls; readiness remains a navigation-only graph display. [5]
 
-- Master Tasks keeps discarded-before-start history reachable beside abandoned rows, and GroupViewBody renders that audit even without live group rows. [3]
+
+
+- Master Tasks keeps discarded-before-start history reachable beside aborted rows, and GroupViewBody renders that discarded audit independently of whether any live child row matches the aborted stage. [3]

@@ -68,14 +68,21 @@ None.
 - The persisted projection schema, copied for safe mutation. [2]
 - The declared HTTP/SSE snapshot schema, including its serve-time tail. [3]
 - Stable bytes for the committed JSON Schema artifact. [4]
+
 - The exact declaration sets the renderer folds into TypeScript, including the served projection's payload rename. [5]
+
 - Refinements are serialized deterministically beside their property instead of being dropped. [8]
 - The recursive, fail-closed schema walk that refuses any unknown or shape-inapplicable keyword. [9]
+
 - The served projection's own definitions are folded into the same generated module, and the definition set is compared exactly. [11]
+
 - The drift check the repository gates on: a stale generated artifact is named rather than regenerated silently. [12]
 - `_without_null` distinguishes non-null unions, one surviving variant, multiple surviving variants, and the invalid all-null case. [13]
 
+
 - Only remaining attention and process vocabularies are emitted. [14]
+
 - Every model property emits directly, without lifecycle metrics inheritance. [15]
 - Nullable properties become optional after null removal. [16]
+
 - Runtime refinements are shape-checked and unsupported keywords refuse. [17]

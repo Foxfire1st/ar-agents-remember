@@ -245,18 +245,18 @@ Manager receives the clean-sync focused-test result for its own preview; no clea
 
 - Converted leaf ingest requires a contract/list/authorization, writes only with the file-write flag, and routes converted memory to the file writer. Anchor: `add_arguments`, `run` [37]
 
-- Current family and external-document authoring supersede retired database entry keys.  Anchor: The curator's authored keys beside the thirteen fields \[38] [38]
+- Current family and external-document authoring supersede retired database entry keys.  Anchor: The curator's authored keys beside the thirteen fields [38]
 
 - Curator authors scope, completes full MQC and coherence, and records no separate Reviewer-owned Git comparison. Anchor: Normal workflow; Scope before ingest; Authority gates [39]
 
-- Raw quality is retained separately; combined readiness changes only when coherence validation fails after quality is ready. \[40] [40]
+- Raw quality is retained separately; combined readiness changes only when coherence validation fails after quality is ready. [40]
 
 - Current native Curator launch resolves and validates the canonical sprint/master/leaf chain; the removed generic task-binding module supplies no current taskless Curator admission, and the foundation task the Architect opens is an ordinary leaf on that chain. [41]
 
 - The retained repository-context admission helper refuses enclosure_in_scope; the current authoring route is separately admitted inside the actual Architect task/enclosure. [42]
 
-- Native enclosure preparation reads contract-scoped status and refuses unsuccessful preparation; this alone does not prove the historical whole-path lineage claim. \[43] [43]
-- Graph absence declares no dependencies and resolves the atomic shape without serializing masters.  Anchor: `resolve_scheduling_mode`, `effective_execution_nature` \[44] [44]
+- Native enclosure preparation reads contract-scoped status and refuses unsuccessful preparation; this alone does not prove the historical whole-path lineage claim. [43]
+- Graph absence declares no dependencies and resolves the atomic shape without serializing masters.  Anchor: `resolve_scheduling_mode`, `effective_execution_nature` [44]
 
 - Developer answers require receiving identity and quoted words; unanswered/denied permissions have no bypass, and held messages are not resent. Anchor: Operation — Orientation [45]
 
@@ -313,7 +313,5 @@ Manager receives the clean-sync focused-test result for its own preview; no clea
 - Role-stage selection, precise authoring, narrow own-step completion and independent recorded memory lane; source declarations, no execution acceptance. [61]
 
 - Role-stage selection, precise authoring, narrow own-step completion and independent recorded memory lane; source declarations, no execution acceptance. [62]
-
-- The Architect verifies copied developer words against the filed message and claims a master when its record does not name this Architect. [65]
 
 - The Architect verifies copied developer words against the filed message and claims a master when its record does not name this Architect. [65]

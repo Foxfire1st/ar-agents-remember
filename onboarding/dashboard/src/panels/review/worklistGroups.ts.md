@@ -69,7 +69,9 @@ No configured live documentation source was available for this pass.
 - Unexplained items by file, then coverage state. [5]
 - The four groups. [6]
 - The cards' planning marks and the hunk linkage. [7]
+
 - The server's matching row lookup. [8]
+
 
 ### Cross-Repo References
 

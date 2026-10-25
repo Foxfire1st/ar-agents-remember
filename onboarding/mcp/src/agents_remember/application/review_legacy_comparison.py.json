@@ -31,12 +31,22 @@
       ]
     },
     "2": {
-      "note": "A closed leaf of a converted repository with no tree record: generation, recorded range, or refusal.",
+      "note": "A closed leaf of a converted repository with no tree record: generation, recorded range, or refusal.\n\nAnchor: `legacy_comparison_resolution`",
       "targets": [
         {
           "anchor": {
-            "blob": "f2ad4d1f7941c71ac00e0185007a23d8e55e04ab",
-            "content": "sha256:91acadd600eec28db3d5b0b1f9b12f7dc836f70e63e5ed746281d682a7825c89",
+            "blob": "53b08953a6a22265857ca1a84dc67b3157905859",
+            "content": "sha256:c6c6763e5e17304dc520f8c2ae243126304e2c2034e2b554c18835725ab09c5c",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "53b08953a6a22265857ca1a84dc67b3157905859",
+            "content": "sha256:1dace3da463addb2efc206336ec61ca6220e1e7a084fbe0cadd6000e7202cb67",
             "locator": {
               "kind": "symbol",
               "name": "legacy_comparison_resolution"
@@ -95,8 +105,18 @@
       ]
     },
     "6": {
-      "note": "The refusal, declared facts and detail of a legacy or partly unavailable comparison.",
+      "note": "The refusal, declared facts and detail of a legacy or partly unavailable comparison.\n\nAnchor: `knowledge_unavailable_refusal` `knowledge_unavailable_limitations` `knowledge_unavailable_detail`",
       "targets": [
+        {
+          "anchor": {
+            "blob": "53b08953a6a22265857ca1a84dc67b3157905859",
+            "content": "sha256:c6c6763e5e17304dc520f8c2ae243126304e2c2034e2b554c18835725ab09c5c",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
         {
           "anchor": {
             "blob": "53b08953a6a22265857ca1a84dc67b3157905859",
@@ -110,8 +130,8 @@
         },
         {
           "anchor": {
-            "blob": "f2ad4d1f7941c71ac00e0185007a23d8e55e04ab",
-            "content": "sha256:b1361bf8077ebe8b3db61a73f304dc14dbd4b6e4e885777af6b0c54f3d03c630",
+            "blob": "53b08953a6a22265857ca1a84dc67b3157905859",
+            "content": "sha256:ff62a52993891de5cffe48004f21d7c4ebf0acc0e56046afc07b6078014c4593",
             "locator": {
               "kind": "symbol",
               "name": "knowledge_unavailable_limitations"
@@ -133,12 +153,23 @@
       ]
     },
     "7": {
-      "note": "The closed-leaf route reopens exact tree records first and then preserves legacy source without opening datasets.",
+      "note": "The closed-leaf route reopens exact tree records first and then preserves legacy source without opening datasets.\n\nAnchor: `resolve_committed_leaf_review`",
       "targets": [
         {
           "anchor": {
-            "blob": "c56b9fb89745db2a10f6d1d6071fd484991027c2",
-            "content": "sha256:75d730cafc4ac9a4cce868d102a297f65c42314e299cf732c0587408408f9eda",
+            "blob": "c39e9055a99425a3cd8d683e96d279c87b35d720",
+            "content": "sha256:04ef00a4f26959260c046b0d4b570cbdd72b409cf0306989fabf5f177feb3741",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/review_committed_leaf.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c39e9055a99425a3cd8d683e96d279c87b35d720",
+            "content": "sha256:780810baad0324cbfb864c23c86741ada531a1c33f0a5be32250abba6093f296",
             "locator": {
               "kind": "symbol",
               "name": "resolve_committed_leaf_review"

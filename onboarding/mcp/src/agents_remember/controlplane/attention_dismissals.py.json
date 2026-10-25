@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/controlplane/attention_dismissals.py",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
@@ -110,16 +111,16 @@
   ],
   "references": {
     "1": {
-      "note": "Projection input refreshers collect native per-kind AttentionObservations and reconcile acknowledgements through AttentionDismissalStore. A record can be reclaimed for source absence, healthy recovery or a changed known fingerprint only when the observation is complete and started no earlier than its dismissal; the first complete fingerprint can instead be adopted. Unread/incomplete kinds retain their acknowledgements. Reconciliation is locked, avoids unchanged physical writes and returns prior current acknowledgements if cleanup fails; this is not prune_lifecycles after a lifecycle fold.",
+      "note": "Projection input refreshers collect native per-kind AttentionObservations and reconcile acknowledgements through AttentionDismissalStore. A record is reclaimed for source absence, healthy recovery or a changed known fingerprint only when the observation is complete and started no earlier than its dismissal, and the first complete fingerprint is instead adopted; unread or incomplete kinds retain their acknowledgements. Reconciliation is locked, skips unchanged physical writes, returns the prior current set if the rewrite fails, and then bounds the kept rows, the oldest leaving first.",
       "targets": [
         {
           "anchor": {
-            "blob": "3cedc4c3230d6645fcd5c5ede281b3defc11fdd5",
-            "content": "sha256:459548e6a17602484127655b7441dc1bca9ea3d2ac22e126e094af194f90b1c2",
+            "blob": "e1d561eb43926925f6fefc875db17155ef322eb4",
+            "content": "sha256:6eab6a92cc74865b69bebe5842f18d02e8b884da4dc36d46198a49b9665259b9",
             "locator": {
-              "end": 419,
+              "end": 404,
               "kind": "line_range",
-              "start": 414
+              "start": 399
             },
             "path": "mcp/src/agents_remember/serving/projections/projection_inputs.py"
           },
@@ -127,12 +128,12 @@
         },
         {
           "anchor": {
-            "blob": "3cedc4c3230d6645fcd5c5ede281b3defc11fdd5",
-            "content": "sha256:f0b85983516e18e6a4a409f87f814f9fdd14c204049f8801b4f1d39cb9ec7b2d",
+            "blob": "e1d561eb43926925f6fefc875db17155ef322eb4",
+            "content": "sha256:8436c4fba7d70574cea8d96196073b5d538c533dff77ef994a41a6b98a3bec4f",
             "locator": {
-              "end": 684,
+              "end": 720,
               "kind": "line_range",
-              "start": 641
+              "start": 677
             },
             "path": "mcp/src/agents_remember/serving/projections/projection_inputs.py"
           },
@@ -152,12 +153,12 @@
         },
         {
           "anchor": {
-            "blob": "7f26c932e6a31d8da2e9f2593954cde82ea1b9ff",
-            "content": "sha256:503187d3d3034f9c234c22145dd5e8b9898cf62ec8911984541e6154b0824586",
+            "blob": "b8fc8a5487a7d0bfd52efcf027cbcd3607d671f9",
+            "content": "sha256:be335d19d80d08383760cb07137bbeff2d85f5ad2b9aee8afec8d270e1ac8173",
             "locator": {
-              "end": 191,
+              "end": 205,
               "kind": "line_range",
-              "start": 164
+              "start": 178
             }
           },
           "kind": "code"
@@ -165,24 +166,24 @@
       ]
     },
     "5": {
-      "note": "`dismiss` holds `exclusive_access` across the read and the rewrite; `_replace` delegates to `rewrite_lines` and never unlinks.  Anchor: `exclusive_access`",
+      "note": "Whole read/rewrite exclusion and cleanup-failure retention preserve concurrent acknowledgements.",
       "targets": [
         {
           "anchor": {
-            "blob": "7f26c932e6a31d8da2e9f2593954cde82ea1b9ff",
-            "content": "sha256:60e95c95e5646d85ef8f0c9a41f649dbd72a170534264bb5ebf54afb48a199eb",
+            "blob": "b8fc8a5487a7d0bfd52efcf027cbcd3607d671f9",
+            "content": "sha256:bad9940cecf6194524cd6cb1c2a28a735c9afbe9f4a9169fbe2290912f64cda4",
             "locator": {
-              "end": 139,
+              "end": 149,
               "kind": "line_range",
-              "start": 120
+              "start": 130
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "853c93c007b2d0d1fecabbb71e5ae6a7bb068160",
-            "content": "sha256:79e71fbc769e057af4268402dcbc7d19671d29476fe3d064440b357d29992f64",
+            "blob": "b8fc8a5487a7d0bfd52efcf027cbcd3607d671f9",
+            "content": "sha256:95126393f33719793e8cd3ad2567e071e28f2d10f7feca9bc574a196fa4e514a",
             "locator": {
               "end": 140,
               "kind": "line_range",

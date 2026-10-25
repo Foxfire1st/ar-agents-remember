@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/package_data/runtime/skills/c-13-install-and-onboard/SKILL.md",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
@@ -21,12 +22,12 @@
   ],
   "references": {
     "1": {
-      "note": "The skill starts only after the harness package is copied and rendered, MCP is wired, and the harness has restarted once; package files own skills, hooks, rules, instructions, MCP templates, settings templates, and render scripts.\n\nAnchor: `# c-13-install-and-onboard Install And Onboard`",
+      "note": "Historical original-card/source account (not current setup authority): The skill starts only after the harness package is copied and rendered, MCP is wired, and the harness has restarted once; package files own skills, hooks, rules, instructions, MCP templates, settings templates, and render scripts.\n\nAnchor: `# c-13-install-and-onboard Install And Onboard`",
       "targets": [
         {
           "anchor": {
-            "blob": "09e86086c68bfcc8d94a615c67b0fe3626569197",
-            "content": "sha256:2d55c4a06392a6717c884e622aff7610ffc9971c36c2ab8e6d80aaddd7de30ea",
+            "blob": "9ba438896d80e98eccff21873058fdebd5b9bf63",
+            "content": "sha256:4c828b8e267a0f4427383363bd45d0ad2b1a7084fd53d2181caa2235516a639e",
             "locator": {
               "end": 273,
               "kind": "line_range",
@@ -38,12 +39,12 @@
       ]
     },
     "2": {
-      "note": "Stage 0 checks MCP reachability, package presence, settings, runtime state, provider prerequisites when enabled, and topology consistency, but does not install or repair hooks.\n\nAnchor: `## Stage 0 - Preflight`",
+      "note": "Historical original-card/source account (not current setup authority): Stage 0 checks MCP reachability, package presence, settings, runtime state, provider prerequisites when enabled, and topology consistency, but does not install or repair hooks.\n\nAnchor: `## Stage 0 - Preflight`",
       "targets": [
         {
           "anchor": {
-            "blob": "09e86086c68bfcc8d94a615c67b0fe3626569197",
-            "content": "sha256:a19ff75c5707777bff678a91e3f768c8b9b790276b624bdeacca8633161e938c",
+            "blob": "9ba438896d80e98eccff21873058fdebd5b9bf63",
+            "content": "sha256:aead4314fa1a66412d3015009735208f92ecabc319dbe380780703bc392f8052",
             "locator": {
               "end": 103,
               "kind": "line_range",
@@ -55,12 +56,12 @@
       ]
     },
     "3": {
-      "note": "Stage 1 runs/verifies `runtime_install()` and explicitly avoids `skills_install()` during package-based first-run setup.\n\nAnchor: `## Stage 1 - Runtime Scaffold`",
+      "note": "Historical original-card/source account (not current setup authority): Stage 1 runs/verifies `runtime_install()` and explicitly avoids `skills_install()` during package-based first-run setup.\n\nAnchor: `## Stage 1 - Runtime Scaffold`",
       "targets": [
         {
           "anchor": {
-            "blob": "22886059ca7858736f6ab22b15f5a2a637cba41d",
-            "content": "sha256:eeb898b2049eaf96fc7d04985513eea1dde217ca27f6b92d33ef542852b80a0d",
+            "blob": "9ba438896d80e98eccff21873058fdebd5b9bf63",
+            "content": "sha256:c7ff389a40b4fa3a3681e2d965830f241af1de3aa5d65e8abe39c82a49dbf3f0",
             "locator": {
               "end": 152,
               "kind": "line_range",
@@ -72,12 +73,12 @@
       ]
     },
     "4": {
-      "note": "Stage 2 interviews the developer on the agentic settings families, writes the seeded global file, and verifies the two caller kinds of the public dispatch transaction.\n\nAnchor: `## Stage 2 - Agentic Settings: Interview The Developer`",
+      "note": "Historical original-card/source account (not current setup authority): Stage 2 interviews the developer on the agentic settings families, writes the seeded global file, and verifies the two caller kinds of the public dispatch transaction.\n\nAnchor: `## Stage 2 - Agentic Settings: Interview The Developer`",
       "targets": [
         {
           "anchor": {
-            "blob": "09e86086c68bfcc8d94a615c67b0fe3626569197",
-            "content": "sha256:031256e74562b6f80ae743b5d96304776443093ed70cd5c4c45f3c5cffbc5a5d",
+            "blob": "9ba438896d80e98eccff21873058fdebd5b9bf63",
+            "content": "sha256:9585cbe7581de2608946730fde9623eb5702976df89ed2d87229a33323772c25",
             "locator": {
               "end": 189,
               "kind": "line_range",
@@ -89,12 +90,12 @@
       ]
     },
     "5": {
-      "note": "Stage 3 (new under CCR-R22@v1, commit `685f83c44055`) authors, validates, and registers one repository-owned Gate 1-4 certification profile per code-committing repository (`repositories.<repo-id>.certificationProfile`) against `docs/reference/repository-certification-profile.md`; Stage 4/5 delegate memory init, existing-memory adoption, and bootstrap to the existing skills; Stage 6 configures providers.\n\nAnchor: \"## Stage 3 - Repository Certification Profile (explicit operation only)\"; \"## Stage 4 - Memory Repo: Ask Scaffold Vs Existing\"; \"## Stage 5 - Bootstrap\"; \"## Stage 6 - Configure Providers To Index\"",
+      "note": "Historical original-card/source account (not current setup authority): Stage 3 (new under CCR-R22@v1, commit `685f83c44055`) authors, validates, and registers one repository-owned Gate 1-4 certification profile per code-committing repository (`repositories.<repo-id>.certificationProfile`) against `docs/reference/repository-certification-profile.md`; Stage 4/5 delegate memory init, existing-memory adoption, and bootstrap to the existing skills; Stage 6 configures providers.\n\nAnchor: \"## Stage 3 - Repository Certification Profile (explicit operation only)\"; \"## Stage 4 - Memory Repo: Ask Scaffold Vs Existing\"; \"## Stage 5 - Bootstrap\"; \"## Stage 6 - Configure Providers To Index\"",
       "targets": [
         {
           "anchor": {
-            "blob": "52275d0af2da30b946b20bfb8f1462cd14266877",
-            "content": "sha256:d3193544b972392be6ef4ff518b45dd61d4d894f99896b285b293f6e8b196d8b",
+            "blob": "9ba438896d80e98eccff21873058fdebd5b9bf63",
+            "content": "sha256:09b4a7570c4f17602caa8be81cfedfd8c55d27fc84afe40f4f2c4c35cc3ecf3e",
             "locator": {
               "end": 281,
               "kind": "line_range",
@@ -117,8 +118,8 @@
         },
         {
           "anchor": {
-            "blob": "22886059ca7858736f6ab22b15f5a2a637cba41d",
-            "content": "sha256:6f7e7448490dca4c7224498afe0987c29f76330c23fa3253ac20b39fb5ff6b9d",
+            "blob": "9ba438896d80e98eccff21873058fdebd5b9bf63",
+            "content": "sha256:cda25ddd455b37d73454d5dba4ab29d3c7800645312edae8f3af642c17595c44",
             "locator": {
               "end": 342,
               "kind": "line_range",
@@ -129,8 +130,8 @@
         },
         {
           "anchor": {
-            "blob": "9d6aaef39fa8726993ecacea4eb791ee797892f5",
-            "content": "sha256:098afcbcbcf974dcf105dd48c09f276a9d2155c41731f989a3cef49afa204094",
+            "blob": "9ba438896d80e98eccff21873058fdebd5b9bf63",
+            "content": "sha256:b9450707ecd66cb37f6d07de47d2a43f2bad8cf40200275d6b3c9e2661d535de",
             "locator": {
               "end": 335,
               "kind": "line_range",
@@ -141,8 +142,8 @@
         },
         {
           "anchor": {
-            "blob": "9d6aaef39fa8726993ecacea4eb791ee797892f5",
-            "content": "sha256:5aa2036ce856d4d141abb09eeffd6fe65d1e677f37edc0fac224d3d72ba5ace0",
+            "blob": "9ba438896d80e98eccff21873058fdebd5b9bf63",
+            "content": "sha256:210d484e28291729cc22b0c3d6cd839e9097f65a77fb58b6697614f6cb0301be",
             "locator": {
               "end": 337,
               "kind": "line_range",
@@ -153,8 +154,8 @@
         },
         {
           "anchor": {
-            "blob": "22886059ca7858736f6ab22b15f5a2a637cba41d",
-            "content": "sha256:80eeb0c2b0bae92cbd87bd26e58606b84e1e7f256f91abfcaf10150b091012d9",
+            "blob": "9ba438896d80e98eccff21873058fdebd5b9bf63",
+            "content": "sha256:c53f2ad2a108573ca33c26bdbedd6c596a9959655cf7c2e960d2803a04729a03",
             "locator": {
               "end": 447,
               "kind": "line_range",
@@ -165,8 +166,8 @@
         },
         {
           "anchor": {
-            "blob": "02677b4e360f93f17905c5bb061817767369ac52",
-            "content": "sha256:3a72bd9da7a58673638a31fa992a3efc5a956013d361fb470e7dd1533379fc45",
+            "blob": "9ba438896d80e98eccff21873058fdebd5b9bf63",
+            "content": "sha256:610c23f45a3d190700fd68d19a7275ecdf411fdc81d442d19751807c80ed87c4",
             "locator": {
               "end": 405,
               "kind": "line_range",
@@ -178,12 +179,12 @@
       ]
     },
     "8": {
-      "note": "The package copy of the install skill.",
+      "note": "Historical original-card/source account (not current setup authority): The package copy of the install skill.",
       "targets": [
         {
           "anchor": {
-            "blob": "9d6aaef39fa8726993ecacea4eb791ee797892f5",
-            "content": "sha256:131bf15e0ce4474852f7641cab645c2fa9ac9a58b83d687207ff10b784df643c",
+            "blob": "9ba438896d80e98eccff21873058fdebd5b9bf63",
+            "content": "sha256:27c52961a8380a0380b308d5fcf1b9a33df0704bfb19b8544a3f6260443d4db4",
             "locator": {
               "kind": "file"
             }

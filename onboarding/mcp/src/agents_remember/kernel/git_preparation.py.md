@@ -58,4 +58,4 @@ These helpers can operate on explicitly addressed external-memory Git repositori
 No distinct cross-repository evidence source is configured for this file.
 
 
-- Sealed observation authorization and strict no-follow physical proof survive without preparation command execution. \[7] [7]
+- Sealed observation authorization and strict no-follow physical proof survive without preparation command execution. [7]

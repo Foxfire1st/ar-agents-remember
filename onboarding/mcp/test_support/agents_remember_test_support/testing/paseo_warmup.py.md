@@ -18,4 +18,5 @@ Local implementation and executable evidence do not replace requirement authorit
 
 ## Evidence
 
+
 - Provide fake host/runtime, controlled memory and drained-resume fixtures for the focused warmup suites. No helper reaches a native host or sends a message; operation-level native witnesses are separately attributed. [1]

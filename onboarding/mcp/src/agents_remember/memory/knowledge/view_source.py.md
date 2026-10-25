@@ -117,7 +117,9 @@ their own builder.
 
 ### Repo-Internal References
 
+
 - `StoreViewReader` owns the current boundary described above. [19]
+
 - `open_view_reader` owns the current boundary described above. [20]
 
 ### Docs References
@@ -131,17 +133,19 @@ module refuses to decide; the tables it reads are the eight logical tables the s
 below cite the reader's statements, builders and entry points, the vocabulary it imports rather than
 re-declares, and the layer where selection, ordering and provenance classification actually happen.
 
+
 - The port returns recorded rows in deterministic query order while the view layer owns semantic selection, ordering and provenance classification. [21]
+
 - The read-only handle this module opens through, with the read-only APSW flag and the busy timeout it does set. [22]
 - `open_view_reader` composes a snapshot from the dataset digest and supplied namespace/schema identity; direct reader construction retains its supplied snapshot. [23]
-- The per-question statements, each naming its columns rather than selecting by a star so a later column cannot change what a view sees. [24]
 - The two registered totals, each counted from its own table and returned as one counts value. [25]
 - Each entity read by its own statement: invariant revisions, family revisions, memberships and realization claims. [26]
 - The family-membership read: its own statement, executed from its own port method. [27]
 - The realization-claim read and the source anchor it joins, so a claim arrives with the location it attributes. [28]
-- No attachment read remains: the facet tables are deleted. [29]
 - The typed-JSON decoding and the never-defaulted author lookup every stored payload passes through. [30]
+
 - The reader class, built from an already-open connection and the declared snapshot, holding no path of its own, and the port it answers. [31]
+
 - The snapshot accessor, the registered counts and the per-statement read with its lifetime cache. [32]
 - The entity row readers plus the count helper that refuses an empty count result. [33]
 - The anchor-state answer: not-requested when there is no resolver, a typed error when the resolver is not callable. [34]

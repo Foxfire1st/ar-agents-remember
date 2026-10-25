@@ -190,16 +190,16 @@
       ]
     },
     "14": {
-      "note": "The sidecar/route body-gate composition was removed; converted memory is judged by the onboarding-trace gate, and the external-memory refresh keeps only entity-fingerprint and route-index refresh.\n\nAnchor: modules/onboarding.py; application/memory_quality/controller.py",
+      "note": "Converted memory is judged through the onboarding-trace gate, which reports missing traces and incomplete sides while unnecessary rows report only. External-memory helpers separately plan entity fingerprints and refresh route indexes; they do not restore the removed sidecar/route-body gate.",
       "targets": [
         {
           "anchor": {
-            "blob": "3d1ec99567502c102e54707aba3a3d8e169af0d5",
-            "content": "sha256:34b68b21fbe2ebfb14563f10424ab75e5206ec6befd64444856573161247cbaa",
+            "blob": "80a4a1aa9ecd845e13f6f600c46560e34da8ce15",
+            "content": "sha256:bb1e4654147146462bd319bb37fdd0381d2a77b78720f305b8c591560dead28f",
             "locator": {
-              "end": 949,
+              "end": 177,
               "kind": "line_range",
-              "start": 874
+              "start": 153
             },
             "path": "mcp/src/agents_remember/worktrees/modules/onboarding.py"
           },
@@ -207,12 +207,25 @@
         },
         {
           "anchor": {
-            "blob": "adf33020c862905f50d7358b34941854b5176535",
-            "content": "sha256:f3e4967a9b7a9a15aad9d024b090f24e6f153a9170d5f513238245277dca59de",
+            "blob": "80a4a1aa9ecd845e13f6f600c46560e34da8ce15",
+            "content": "sha256:261360cc53456518e6e9c505bc9d3b6571679db63361a8cea94697d121702f05",
             "locator": {
-              "end": 939,
+              "end": 643,
               "kind": "line_range",
-              "start": 902
+              "start": 633
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/onboarding.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a4cb0ce3f5f3f488c8ad8313b8063d4a8218871e",
+            "content": "sha256:6463ae48eea95244cea5e8b82e5a35b01859fb3bd5d564f7493aa05b81af995b",
+            "locator": {
+              "end": 1027,
+              "kind": "line_range",
+              "start": 954
             },
             "path": "mcp/src/agents_remember/application/memory_quality/controller.py"
           },
@@ -304,15 +317,16 @@
       ]
     },
     "5": {
-      "note": "Direct recovery is admitted independently of closeout doors and settles its retained receipt on completion.\n\nLocator and manifest determine per-kind journal addresses independently of task-document reads.",
+      "note": "Direct recovery is admitted independently of closeout doors and settles its retained receipt on completion.  Locator and manifest determine per-kind journal addresses independently of task-document reads.",
       "targets": [
         {
           "anchor": {
-            "blob": "434d45bc71bdc6e739827062531ec2cdbe1970f2",
-            "content": "sha256:8247b4751f8814567be6b20878bd9287267e94104b0d8b2c4e8a848d93304eb0",
+            "blob": "a80df4903ac866d31ac7495d03f6ca3827bc1ebf",
+            "content": "sha256:e0353a308bd74aaca0768371f2dc78fdfdf5b43b168ff53c867a77848088011d",
             "locator": {
-              "kind": "symbol",
-              "name": "_resume"
+              "end": 390,
+              "kind": "line_range",
+              "start": 344
             },
             "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_controls.py"
           },
@@ -323,8 +337,9 @@
             "blob": "88ece6e1110590381723a65e8df129899ebd3266",
             "content": "sha256:abc5c389ad0d9255383d2c2dee1fb6a8e391b5af0ee6c36ba544e3ed81fe4f9b",
             "locator": {
-              "kind": "symbol",
-              "name": "LifecycleOperationLocation"
+              "end": 126,
+              "kind": "line_range",
+              "start": 91
             },
             "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_location.py"
           },
@@ -332,11 +347,12 @@
         },
         {
           "anchor": {
-            "blob": "5883f86f6d80a442b3eba941807ac137f7e546e3",
-            "content": "sha256:f2194ea79b5d61f7c67b3760aa0578d2115a6aee860a9ce9f609a050a64e47fd",
+            "blob": "88ece6e1110590381723a65e8df129899ebd3266",
+            "content": "sha256:05924e83ec58994b1f610cc6a7cee4f237ee22e83a5c7425aeaaedaa25d670ff",
             "locator": {
-              "kind": "symbol",
-              "name": "resolve_lifecycle_operation_location"
+              "end": 644,
+              "kind": "line_range",
+              "start": 583
             },
             "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_location.py"
           },
@@ -347,8 +363,9 @@
             "blob": "b39bda9a05cb1565bf94a6572d1fee7a98ed2d75",
             "content": "sha256:bb3755458836e4ba83bff04180dce736de1ec62bfab66d20cf9a6b8a475b8130",
             "locator": {
-              "kind": "symbol",
-              "name": "unreadable_contract_operation_projections"
+              "end": 220,
+              "kind": "line_range",
+              "start": 172
             },
             "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/observation/projection.py"
           },

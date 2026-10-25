@@ -249,7 +249,7 @@ The registry records the changed compiled-text budgets under the existing ceilin
 
 - The bootstrap operation's own prohibition on authoring the foundation, and the completion line that carries the foundation's state. [33]
 
-- Historical L32 taskless-seat account, not current launch authority; current role instructions make Bootstrap read/report only and remove the instructed-session taskless writer. [34]
+- The procedure these carriers delegate to, and its own statement that there is no taskless entry to it: a curator's authoring seat is opened on a task document the Architect opens, and reading the knowledge state before such a task exists stays with the bootstrap seat. [34]
 
 - The step-local authoring and writer details supply the invocation and written/planned/refused report consumption; the role output supplies durable file/record/entry/history identities, not a dataset publication. [35]
 
@@ -316,7 +316,7 @@ The registry records the changed compiled-text budgets under the existing ceilin
 
 - Current router explicitly supports eight roles including Bootstrap, selected role plus operation and no injected shared core. [59]
 
-- Role compiler scope distinguishes ambient launcher core from dispatched role composition. \[60] [60]
+- Role compiler scope distinguishes ambient launcher core from dispatched role composition. [60]
 
 - Launcher wire vocabulary retains system-specialist as an alias of Investigator. Anchor: `LauncherRole`, `RoleSelection.canonical_role_id` [61]
 
@@ -326,7 +326,7 @@ The registry records the changed compiled-text budgets under the existing ceilin
 
 - Manager prepares sibling leaf seats with role_start_set; direct leaf loop and Manager transaction responsibility remain explicit, held messages are not resent, and refused delegation has no direct-coordination fallback. Anchor: Operation — Coordination [63]
 
-- Report-only admission does not perform or complete the normal authoring pass.  Anchor: Bound Paseo intake and capabilities \[64] [64]
+- Report-only admission does not perform or complete the normal authoring pass.  Anchor: Bound Paseo intake and capabilities [64]
 
 - Current curation writes files, has no publication flags and records no separate task comparison. Anchor: Admitted writer; scope before ingest [65]
 
@@ -336,11 +336,11 @@ The registry records the changed compiled-text budgets under the existing ceilin
 
 - File writer parses the handoff for every operation and target parsing invokes rationale refusal. Anchor: `write_knowledge`, `_targets` [67]
 
-- Families use records and external documents use card references; database entry keys and manifest are retired.  Anchor: Curator-authored keys \[68] [68]
+- Families use records and external documents use card references; database entry keys and manifest are retired.  Anchor: Curator-authored keys [68]
 
 - History preserves governing changed rows and replacement covers; admission and decision rules remain explicit. Anchor: History; admission; decisions [69]
 
-- Raw quality status is preserved; stale coherence rewrites combined status, current coherence sets readiness without rewriting it. \[70] [70]
+- Raw quality status is preserved; stale coherence rewrites combined status, current coherence sets readiness without rewriting it. [70]
 - The retained repository-context admission helper refuses `enclosure_in_scope` for a resolved enclosure; current foundation authoring is separately admitted inside the actual Architect task/enclosure through the task-contract knowledge-ingest/knowledge_write route. [72]
 
 - Verification stays on sealed existing findings; settings govern ordinary rounds and Manager-recorded architect/developer approval is required beyond them, separately in each lane. [73]
@@ -393,7 +393,5 @@ The registry records the changed compiled-text budgets under the existing ceilin
 - Role-stage selection, precise authoring, narrow own-step completion and independent recorded memory lane; source declarations, no execution acceptance. [90]
 
 - Role-stage selection, precise authoring, narrow own-step completion and independent recorded memory lane; source declarations, no execution acceptance. [91]
-
-- Before any new-leaf start, the Architect records the once-asked go/review-first decision; planned review creates no task workspace, first Explain creates its own workspace, and intent-review-open starts wait for go without retry. [95]
 
 - Before any new-leaf start, the Architect records the once-asked go/review-first decision; planned review creates no task workspace, first Explain creates its own workspace, and intent-review-open starts wait for go without retry. [95]

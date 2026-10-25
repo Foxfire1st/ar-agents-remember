@@ -2,15 +2,14 @@
   "path": "mcp/src/agents_remember/package_data/paseo_plugin",
   "references": {
     "1": {
-      "note": "Keep embed RPC while wiring turn, permission and archive events to product-owned decisions; asynchronous handler failures are logged.",
+      "note": "Keep embed RPC while wiring turn, permission and archive events to product-owned decisions; asynchronous handler failures are logged.\n\nAnchor: `contribute`",
       "targets": [
         {
           "anchor": {
-            "blob": "9b7786810e75cffea857615f9eb5306eea34bbfd",
-            "content": "sha256:89c725b26ce26eab4dc6347fcb56332e31044f110d84469b5f3a9626717af629",
+            "blob": "4973808b24e87c4f48217316928eb053db0fa69b",
+            "content": "sha256:7a20a4770517aeb358d7d1a02f45cbafd50b35b38a7f5b6d5e70e67225d8ce88",
             "locator": {
-              "kind": "symbol",
-              "name": "contribute"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/package_data/paseo_plugin/index.server.ts"
           },
@@ -123,15 +122,14 @@
       ]
     },
     "3": {
-      "note": "The client bridge negotiates display replies while keeping native navigation, selected-screen admission and drawing/failure distinct.",
+      "note": "The client bridge negotiates display replies while keeping native navigation, selected-screen admission and drawing/failure distinct.\n\nAnchor: `installBridge`",
       "targets": [
         {
           "anchor": {
-            "blob": "663b73fe37299fe6e79d10c208cbb7663e90a281",
-            "content": "sha256:d6e760ba1c471642d54b85a3dd2d74ce54bdbc71c7c35563d07708efc8db2421",
+            "blob": "60e1843bafb77b72c3d43d1bc3774a7b1afa0a9e",
+            "content": "sha256:e2420cc37c40ee6289b92611b267183ee3fd9ac94bdc22a80ad2562c2b29423f",
             "locator": {
-              "kind": "symbol",
-              "name": "installBridge"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/bridge.ts"
           },
@@ -140,15 +138,14 @@
       ]
     },
     "4": {
-      "note": "Host activity is boot-qualified, record-bounded and event-driven; concurrent events win over the whole host read and no idle event time is invented.",
+      "note": "Host activity is boot-qualified, record-bounded and event-driven; concurrent events win over the whole host read and no idle event time is invented.\n\nAnchor: `HostActivityPublisher`",
       "targets": [
         {
           "anchor": {
-            "blob": "908cd59d77b69bd40d9bc75fa6187363fbbf7d53",
-            "content": "sha256:2303afd446ffa09552fc1102abbe260b4b7bca4c282ba0cd382077e61355f6c4",
+            "blob": "0b031f5a97d1b56192251c36fe822a3882198843",
+            "content": "sha256:85e79187becdd644146a83bc7be1c9e55cd253f4ce275c1bb6d64f2e19f75fd2",
             "locator": {
-              "kind": "symbol",
-              "name": "HostActivityPublisher"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/host_activity.ts"
           },
@@ -157,15 +154,14 @@
       ]
     },
     "5": {
-      "note": "Parent-wake handlers retain the existing gates and send through explicit host steering.",
+      "note": "Parent-wake handlers retain the existing gates: any admitted send asks the host for a steer, a free parent takes the line at once, and only a parent that is already in a turn is withheld unless the product knows its provider keeps that turn.\n\nAnchor: `registerParentWakeEvents`",
       "targets": [
         {
           "anchor": {
-            "blob": "5dcb7031b563ff6a932a970d782fb0d1bb680619",
-            "content": "sha256:89bb35437919671e558fe2a18184c9652b552f2cf5950ac040a19a79e9a059e4",
+            "blob": "dc867726c9071a79792d76230a55b4be0f68908c",
+            "content": "sha256:3ba0f0fe2d258d10aa88bcc879a80a673db2297f7c5c8f0e98b3153c53b69398",
             "locator": {
-              "kind": "symbol",
-              "name": "registerParentWakeEvents"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_events.ts"
           },

@@ -90,17 +90,32 @@ No external domain claim is required.
 
 - Reference body projection uses validated corpus documents and documents_by_ref without a lifecycle map. [11]
 
+
 - Original fixture-specific serialized body comparison, sprint graph titles/fallback and absent-path refusal remain; RF01 separately asserts owner/listed-child schema admission by comparing dependency/graph fields with the corpus reader. [4]
+
+
 
 - The recorder counts listings and task JSON reads through all three reader modules; a separate counted-ready wrapper asserts one ready-tuple indexing pass per graph at two sizes and entry points. [5]
 
+
+
 - At 4/40 unrelated tasks, the fixture asserts identical touched-file lists: leaf plus owner, master alone, or sprint plus graph-named candidates; leaf/master fixtures list no directories. [6]
+
 
 - The enumeration equals the earlier recursive glob, including its exclusions and symlink behavior. [7]
 
+
 - The production body read uses separate sprint graph-master and addressed ordinary owner/listed-child Order joins; newly read Order inputs are raw-schema-filtered before tolerant parsing. [8]
+
 - The bounded enumeration and the named-path probe under test. [9]
-- The lane registration. [10]
+
+
+
+
+> Retained earlier citation wording: - The lane registration. Source caption: "mcp/tests/test_task_document_body_lookup.py" [10]
+
+
+
 
 ### Cross-Repo References
 
@@ -108,3 +123,5 @@ This card covers test behavior only. There is no separate cross-repository proto
 installation involved.
 
 No meaningful cross-repo references found.
+
+- The lane registration. Source caption: "mcp/tests/test_task_document_body_lookup.py" [10]

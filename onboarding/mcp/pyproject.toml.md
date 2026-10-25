@@ -173,8 +173,12 @@ later reader does not have to reconstruct it from a report.
 
 - The quality plan composes the selected development tools; coverage and production CRAP remain diagnostic. [1]
 - Root pytest configuration selects four workers by default. [2]
+
 - Public response contracts depend on Pydantic and token accounting depends on tiktoken. [3]
+
+
 - The knowledge store's SQLite binding is exact-pinned, with the session/build-option reason recorded inline above the entry. [4]
+
 - The same exact pin in the checkout requirements manifest, which must agree with this file. [5]
 
 - The locked resolution carries the pin as a direct requirement plus the platform wheel set the exact pin selects. [6]
@@ -183,7 +187,9 @@ later reader does not have to reconstruct it from a report.
 - The MCP console entry point resolves through `agents_remember.mcp.__main__`. [8]
 - MCP server payloads report `SERVER_VERSION`, resolved by the kernel helper from installed package metadata with the source-checkout release fallback. [9]
 
+
 - The package README documents the installable MCP command and setup-oriented tool surface for PyPI/package readers: the Quickstart, the canonical runtime section and the local-wheel Install And Run block. [10]
+
 
 - `runtime_install` reconciles the `package_data/` runtime scaffold shipped by this `package-data` declaration into a coordinator. [11]
 - The release job builds the frontend, places the bundle, packages with the locked project venv, and then verifies both distributions carry the bundle and its fingerprint sidecar. [12]
@@ -194,4 +200,4 @@ later reader does not have to reconstruct it from a report.
 
 - Package metadata directly bounds the interpreter line and declares its Python classifier. [17]
 
-- The package data includes `canvas/*.md` and `canvas/*.mjs` beside the generated package-data copy, because `canvas/presenter_inputs.py` resolves the capability text module-relatively in an installed build; the capsule-text test fails on drift between the two copies. \[18] [18]
+- The package data includes `canvas/*.md` and `canvas/*.mjs` beside the generated package-data copy, because `canvas/presenter_inputs.py` resolves the capability text module-relatively in an installed build; the capsule-text test fails on drift between the two copies. [18]

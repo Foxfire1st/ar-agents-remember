@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/models/knowledge_files/ids.py",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
@@ -22,12 +23,22 @@
   ],
   "references": {
     "1": {
-      "note": "The kind tables, declared once.",
+      "note": "The kind tables, declared once.\n\nAnchor: `RECORD_PREFIXES` `ENTRY_PREFIXES` `ROW_PREFIXES`",
       "targets": [
         {
           "anchor": {
-            "blob": "e83739dc4ee15dc537577aee6681e998e25a7500",
-            "content": "sha256:5c6e2acab6221979c51b7e3cecaa47bb5014c22df43280afc92b2bb9c712491a",
+            "blob": "f77e500937c184fa16c5e41208b41d7ca84d5bd4",
+            "content": "sha256:93f831d3bf882101e450d88c5427bf9177e66721ce8a7d65738ff9650001c2ac",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f77e500937c184fa16c5e41208b41d7ca84d5bd4",
+            "content": "sha256:a0cc47b29df7642f270c1b4592821af8e19d9d44569a7fd6f7faa03c3a301783",
             "locator": {
               "kind": "symbol",
               "name": "RECORD_PREFIXES"

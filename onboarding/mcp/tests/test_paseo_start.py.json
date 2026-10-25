@@ -105,15 +105,14 @@
       ]
     },
     "3": {
-      "note": "The join-outcome case.",
+      "note": "A contending start joins the same owned outcome without retry.\n\nAnchor: `test_contending_start_joins_the_same_owned_outcome_without_retry`",
       "targets": [
         {
           "anchor": {
-            "blob": "03d20024f657d641e591e1ecd7e37fc538ae412b",
-            "content": "sha256:349a91601550572c5d8c1b59b1132c389ca1c7d3c18b5a71d3420a2f5787086d",
+            "blob": "6c6ee6ccc570dbc595425721c799a3cc0a8ccf12",
+            "content": "sha256:e35ea8726b6a07890b3f57fce22bc207163995d2c2015bd70ce77d3e16abfc7d",
             "locator": {
-              "kind": "symbol",
-              "name": "test_contending_start_joins_the_same_owned_outcome_without_retry"
+              "kind": "file"
             }
           },
           "kind": "test"

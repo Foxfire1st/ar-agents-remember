@@ -226,7 +226,9 @@ the architect's approval) through `task_doc`. Absent means no declaration, and e
   The store writes with `exclude_none`, so a write from the new build never emits the key as `null`.
 
 - One declaration: subject form, effect label and requirement reference. [3]
+
 - The refusals: master, empty, repeated subject and effect. [4]
+
 
 
 - The shared patterns. [7]
@@ -267,7 +269,9 @@ No relevant external documentation was available after checking the configured s
 - Node equality/hash are structural while legacy bare-ref parse/serialize compatibility remains a separate wire concern. [10]
 - The persisted graph delegates admission and waves to one indexed analysis while preserving the schema validation surface. [11]
 - Public endpoint resolution remains available, but canonical admission no longer performs repeated public scans. [12]
+
 - The route-review record validates its typed dependency declaration and self-digest. [13]
+
 
 - EvidenceDependencies and its required-kind/currentness and canonical-hash helpers own the R03 declaration vocabulary; preserve the unchanged helper targets while relocating the stale model definition extent. [14]
 
@@ -326,7 +330,9 @@ The structural role vocabulary uses canonical Investigator. Renaming that value 
 
 - The optional field and its comment. [1]
 - The optional field and its comment. [5]
+
 - The check runs in the document validator. [6]
+
 
 ## 260928-MIK-L126 Current Delta — Product-Record Decision Marking
 

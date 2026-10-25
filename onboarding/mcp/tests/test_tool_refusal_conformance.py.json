@@ -1,5 +1,6 @@
 {
   "path": "mcp/tests/test_tool_refusal_conformance.py",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
@@ -35,12 +36,23 @@
       ]
     },
     "11": {
-      "note": "The measured population and the production invocation per tool, kept in a support module so a probe can drive the same census.",
+      "note": "The measured population and the production invocation per tool, kept in a support module so a probe can drive the same census.\n\nAnchor: `failure_invocations`",
       "targets": [
         {
           "anchor": {
-            "blob": "dd557f153a6b8b82b52dc20d2c94d1434fea9751",
-            "content": "sha256:70004f4a8906f2f7b09752a32beb96438e5bdf3a1b3dec692c144087a9559d49",
+            "blob": "31fd4c69a2c8558775d9279f3eb9d2333461c3ea",
+            "content": "sha256:96f08764559df3361b3c7628b803b9b3416f94aa48f3bfadc98488882846b09d",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/tool_refusal_census_support.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "31fd4c69a2c8558775d9279f3eb9d2333461c3ea",
+            "content": "sha256:0e056ca470e8de8345031fd4895fde447a08181ab84a7e30329dda1b6e707990",
             "locator": {
               "kind": "symbol",
               "name": "failure_invocations"
@@ -52,12 +64,23 @@
       ]
     },
     "12": {
-      "note": "The driver that refuses a table which is not the roster before it drives anything.",
+      "note": "The driver that refuses a table which is not the roster before it drives anything.\n\nAnchor: `drive_census`",
       "targets": [
         {
           "anchor": {
-            "blob": "6e31e9fe5cef119b70cfa03d7c0c1649c2017b9c",
-            "content": "sha256:f1eb90822a966bdd841e236dec24900e7cd7421e786986fb1e713dba929c984f",
+            "blob": "31fd4c69a2c8558775d9279f3eb9d2333461c3ea",
+            "content": "sha256:96f08764559df3361b3c7628b803b9b3416f94aa48f3bfadc98488882846b09d",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/tool_refusal_census_support.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "31fd4c69a2c8558775d9279f3eb9d2333461c3ea",
+            "content": "sha256:61dd0a36fe216ebad8023aba8624d84901d54762d74e54f669fea1fb86e8bf30",
             "locator": {
               "kind": "symbol",
               "name": "drive_census"
@@ -69,15 +92,14 @@
       ]
     },
     "13": {
-      "note": "The nine tools `T34` repaired, owned by the sweep module beside the pin they left.",
+      "note": "The one `T34` tool the sweep still repairs — `memory_baseline_adopt` — re-exported by the sweep module beside the pin it left.\n\nAnchor: `T34_REPAIRED_TOOLS`",
       "targets": [
         {
           "anchor": {
-            "blob": "99b2576c60f8486c3086bb6446973f8299d4a116",
-            "content": "sha256:60a9d93a1cc6995761b1305a228494edd1bd3f9f02248323fc6369ee4cd4b55d",
+            "blob": "1fe4dc4416c2727815fcab3f9558e152bb422ee4",
+            "content": "sha256:ac977ef5869212f7443d157e025e8d6ec5761e0de2b398d07aea7dbe9cad4089",
             "locator": {
-              "kind": "symbol",
-              "name": "T34_REPAIRED_TOOLS"
+              "kind": "file"
             },
             "path": "mcp/tests/test_tool_entry_point_sweep.py"
           },
@@ -86,15 +108,14 @@
       ]
     },
     "14": {
-      "note": "The sweep whose benign half this module completes, and the world both share.",
+      "note": "The sweep whose benign half this module completes, and the world both share.\n\nAnchor: `EntryPointWorld`",
       "targets": [
         {
           "anchor": {
-            "blob": "06c7d7ff5739a3ad3e74a813262fb3ce5803f41a",
-            "content": "sha256:5c64f8e3c9cb8d30991cc0d9e0799de7d4585b70f68302fcfae99a461555202b",
+            "blob": "1fe4dc4416c2727815fcab3f9558e152bb422ee4",
+            "content": "sha256:ac977ef5869212f7443d157e025e8d6ec5761e0de2b398d07aea7dbe9cad4089",
             "locator": {
-              "kind": "symbol",
-              "name": "EntryPointWorld"
+              "kind": "file"
             },
             "path": "mcp/tests/test_tool_entry_point_sweep.py"
           },
@@ -103,12 +124,23 @@
       ]
     },
     "15": {
-      "note": "The advertised roster the population is derived from and asserted equal to.",
+      "note": "The advertised roster the population is derived from and asserted equal to.\n\nAnchor: `PUBLIC_TOOLS`",
       "targets": [
         {
           "anchor": {
-            "blob": "37b01ee751f37d46d0fa1d6ea4c24e5aff5f1200",
-            "content": "sha256:7d00533fe5fe98c6953fcd37b7f70fe04e7a048b82aa53b8da59ffa147469646",
+            "blob": "d0b0ddd9f150e32116b430ecc74907fcf68fee97",
+            "content": "sha256:fdef15e2ca9d39f66c8570a7147cb894dda16f47c7d3558bb4454e5b4714875f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/models/tools/public_roster.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d0b0ddd9f150e32116b430ecc74907fcf68fee97",
+            "content": "sha256:77300d3d8d990814a8c85c25a0c314254dde308fd394c4a03ff87c1fd34e2cb3",
             "locator": {
               "kind": "symbol",
               "name": "PUBLIC_TOOLS"
@@ -120,16 +152,16 @@
       ]
     },
     "16": {
-      "note": "The lane row that keeps this module in the default selection.\n\nAnchor: \"mcp/tests/test_tool_refusal_conformance.py\"",
+      "note": "The lane row that keeps this module in the default selection. Source caption: \"mcp/tests/test_tool_refusal_conformance.py\"",
       "targets": [
         {
           "anchor": {
-            "blob": "11ba98ff63f4a4815985ac51e2c0c7b5a48556a4",
-            "content": "sha256:b78fff81f43c6d30e5e8b25d49358e2b1ed7d8595b49fe2de0249401357402bf",
+            "blob": "102c4550ab6429f44c8fb543d1d0662de66a1b8c",
+            "content": "sha256:9739e30cabc53ee75d8cfad7c6b7aa344c507d160505af9f1918ceabf5281fb3",
             "locator": {
-              "end": 472,
+              "end": 461,
               "kind": "line_range",
-              "start": 472
+              "start": 461
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -137,28 +169,13 @@
         }
       ]
     },
-    "17": {
-      "note": "Current source declarations support the qualified naming or fixture account; no executed test or acceptance is inferred.\n\nRetained R111 pre-sync qualified source account; volatile numbers name that earlier epoch, not the composed source: The current BARE_RAISERS declaration has eleven entries after task_doc's same-change repair. Four response shapes, five always-answer pins and seventeen test definitions remain. Earlier larger-tool/raiser captions are historical; current source pins and fixture assertions are not a fresh live advertisement or execution census.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "571b44858d62eee049c4d206e940abdca526df21",
-            "content": "sha256:f50ea9ab4f9bc5c2493584a79295efea67f4bf7abb1aff20182396406fb5890d",
-            "locator": {
-              "kind": "file"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
     "18": {
-      "note": "Only the repaired enclosure_adopt bare-raiser exclusion is removed. The declared bare-raiser set now has ten names. Both-direction census and invocation of actual failure cases remain source assertions, not this Curator's execution.\n\nAnchor: Current STOP-delta source carrier",
+      "note": "The declared bare-raiser set has ten names: `memory_baseline_adopt` and `task_doc` left it with their repairs. Both-direction census and invocation of actual failure cases remain source assertions, not this Curator's execution.",
       "targets": [
         {
           "anchor": {
-            "blob": "cb8bccf5d0047c01f0492c64a9c62eda258b06fd",
-            "content": "sha256:3a06d00afe85d9e55c52ba656fefd2073fd65be638d8d8ffd8bd8ca270150125",
+            "blob": "9072cf8da124a4aac8c884c3f64bd7b496791e7d",
+            "content": "sha256:5ff6ebb1fb30702b3b3ebf3ff6c1b1e52a6cbb90a4a8cc323f24b6b80d5925bd",
             "locator": {
               "kind": "file"
             }
@@ -184,15 +201,14 @@
       ]
     },
     "2": {
-      "note": "The seventeen invocations that legitimately answer `ok: true`, each with its reason.",
+      "note": "The four invocations that legitimately answer `ok: true`, each with its reason.\n\nAnchor: `ALWAYS_ANSWERS`",
       "targets": [
         {
           "anchor": {
-            "blob": "b6fc35b9ea8eb7a78a5ddc863c692dcb45a25e81",
-            "content": "sha256:4c7198c65f8ebb69beff8a42c6bc33ce2ec01c0a261922735f79304c641a364a",
+            "blob": "9072cf8da124a4aac8c884c3f64bd7b496791e7d",
+            "content": "sha256:5ff6ebb1fb30702b3b3ebf3ff6c1b1e52a6cbb90a4a8cc323f24b6b80d5925bd",
             "locator": {
-              "kind": "symbol",
-              "name": "ALWAYS_ANSWERS"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -216,15 +232,14 @@
       ]
     },
     "3": {
-      "note": "The eighteen tools that still lose the envelope, grouped in the source by the mechanism that raises.",
+      "note": "The ten tools that still lose the envelope, grouped in the source by the mechanism that raises.\n\nAnchor: `BARE_RAISERS`",
       "targets": [
         {
           "anchor": {
-            "blob": "b6fc35b9ea8eb7a78a5ddc863c692dcb45a25e81",
-            "content": "sha256:b299c5327ad71d4573de548512b9151a257d72c154da7ef8a6988add11252976",
+            "blob": "9072cf8da124a4aac8c884c3f64bd7b496791e7d",
+            "content": "sha256:5ff6ebb1fb30702b3b3ebf3ff6c1b1e52a6cbb90a4a8cc323f24b6b80d5925bd",
             "locator": {
-              "kind": "symbol",
-              "name": "BARE_RAISERS"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -232,15 +247,14 @@
       ]
     },
     "4": {
-      "note": "The census: one world, one run, and the assertions that bind both pins in both directions.",
+      "note": "The census: one world, one run, and the assertions that bind all three pins in both directions.\n\nAnchor: `FailurePathCensusTests`",
       "targets": [
         {
           "anchor": {
-            "blob": "f0bd4dba227957e95bc3ec30e7953814077747ee",
-            "content": "sha256:2a61392be61fb9656f5f336ed601e9876f012d4f21793dc007f887f259222b0d",
+            "blob": "9072cf8da124a4aac8c884c3f64bd7b496791e7d",
+            "content": "sha256:5ff6ebb1fb30702b3b3ebf3ff6c1b1e52a6cbb90a4a8cc323f24b6b80d5925bd",
             "locator": {
-              "kind": "symbol",
-              "name": "FailurePathCensusTests"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -280,12 +294,22 @@
       ]
     },
     "7": {
-      "note": "Each refusal axis asserted by name, so a regression says which one it broke.",
+      "note": "Each refusal axis asserted by name, so a regression says which one it broke.\n\nAnchor: `test_every_refusal_names_what_refused_why_and_the_next_action`",
       "targets": [
         {
           "anchor": {
-            "blob": "b6fc35b9ea8eb7a78a5ddc863c692dcb45a25e81",
-            "content": "sha256:8b769d2a3669df7e8a51fbad966fb4756471c46c789dee36e6c06d44b82b37b3",
+            "blob": "9072cf8da124a4aac8c884c3f64bd7b496791e7d",
+            "content": "sha256:5ff6ebb1fb30702b3b3ebf3ff6c1b1e52a6cbb90a4a8cc323f24b6b80d5925bd",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "9072cf8da124a4aac8c884c3f64bd7b496791e7d",
+            "content": "sha256:504a5ccd3322de272edea68a988af2a9809fb4238cfa9871ecd582f04026988a",
             "locator": {
               "kind": "symbol",
               "name": "test_every_refusal_names_what_refused_why_and_the_next_action"
@@ -312,12 +336,22 @@
       ]
     },
     "9": {
-      "note": "The executed control: each axis stripped from a real refusal, and the predicate required to reject it.",
+      "note": "The executed control: each axis stripped from a real refusal, and the predicate required to reject it.\n\nAnchor: `FailurePathControlTests`",
       "targets": [
         {
           "anchor": {
-            "blob": "b6fc35b9ea8eb7a78a5ddc863c692dcb45a25e81",
-            "content": "sha256:c225a0e907ddab59f8b7f22ada7eb82694e2db1dfddb93f08c87c0992b56beb2",
+            "blob": "9072cf8da124a4aac8c884c3f64bd7b496791e7d",
+            "content": "sha256:5ff6ebb1fb30702b3b3ebf3ff6c1b1e52a6cbb90a4a8cc323f24b6b80d5925bd",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "9072cf8da124a4aac8c884c3f64bd7b496791e7d",
+            "content": "sha256:2ad28dae53bd43ba3407e1160498be0b6cb87c0eedc48b8dd9f2b08c0b199753",
             "locator": {
               "kind": "symbol",
               "name": "FailurePathControlTests"

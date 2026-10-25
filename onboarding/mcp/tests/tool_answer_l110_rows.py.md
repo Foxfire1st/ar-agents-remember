@@ -13,6 +13,8 @@ production paths, so the answer-size table can be checked without the data being
 
 ### Logic
 
+The `NOTE_REVISION_` block declares the note-only revision outcome, selected reference, repairing leaf, preview/change state, retained target/reference counts, before/after sidecar digests and refusal fields. Its bound is 1,200 tokens over `("converted",)`, and `L110_ROW_DATA` includes `citation_note_revision`. These are row declarations, not a performed revision.
+
 Each subject is a block of four values — a `*_ROW_FIELDS` set of the keys an answer may carry, a `*_ROW_USES` map
 of what each field is for, a `*_ROW_BOUND` token ceiling and a `*_PRODUCTION_PATHS` tuple of the paths the answer
 is produced on. The blocks cover the coherence, citation-fix, quality, route, integrity, knowledge-write, drift,

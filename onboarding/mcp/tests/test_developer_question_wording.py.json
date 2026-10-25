@@ -90,12 +90,12 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The parentable roles carry the question, recovery, provenance and notice clauses.\n\nAnchor: `test_each_parentable_role_has_question_recovery_and_answer_provenance`",
+      "note": "The parentable roles carry the question, recovery, provenance and notice clauses.",
       "targets": [
         {
           "anchor": {
-            "blob": "731bf63474ee6041fdc12bbf748378e86bbca44f",
-            "content": "sha256:a2844d5eacbbfa62864441cd24984ee9e40d109eef7400a8752c36b350cd1f05",
+            "blob": "ddc4e0152814a7b8e396988f3bdb89c35da6ff1d",
+            "content": "sha256:2832e6a287fdf818743f49d4979bc33754ea52470600682f9d1a4d9680c17e09",
             "locator": {
               "kind": "file"
             }
@@ -105,12 +105,12 @@
       ]
     },
     "2": {
-      "note": "Every starter role carries the upward notice and unchanged downward answer duties.\n\nAnchor: `test_each_parent_has_upward_notice_and_unchanged_downward_answer_duties`",
+      "note": "Every starter role carries the upward notice and unchanged downward answer duties.",
       "targets": [
         {
           "anchor": {
-            "blob": "731bf63474ee6041fdc12bbf748378e86bbca44f",
-            "content": "sha256:a2844d5eacbbfa62864441cd24984ee9e40d109eef7400a8752c36b350cd1f05",
+            "blob": "ddc4e0152814a7b8e396988f3bdb89c35da6ff1d",
+            "content": "sha256:2832e6a287fdf818743f49d4979bc33754ea52470600682f9d1a4d9680c17e09",
             "locator": {
               "kind": "file"
             }
@@ -136,12 +136,12 @@
       ]
     },
     "4": {
-      "note": "The leaf ownerRelation keeps peer results and named parent occasions.\n\nAnchor: `test_leaf_owner_relation_keeps_peer_results_and_named_parent_occasions`",
+      "note": "The leaf `ownerRelation` keeps peer results and named parent occasions.",
       "targets": [
         {
           "anchor": {
-            "blob": "731bf63474ee6041fdc12bbf748378e86bbca44f",
-            "content": "sha256:a2844d5eacbbfa62864441cd24984ee9e40d109eef7400a8752c36b350cd1f05",
+            "blob": "ddc4e0152814a7b8e396988f3bdb89c35da6ff1d",
+            "content": "sha256:2832e6a287fdf818743f49d4979bc33754ea52470600682f9d1a4d9680c17e09",
             "locator": {
               "kind": "file"
             }
@@ -151,12 +151,12 @@
       ]
     },
     "5": {
-      "note": "Each exact retired directive is detected as an independent sentence.\n\nAnchor: `test_exact_retired_directives_are_detected_as_independent_sentences`",
+      "note": "Each exact retired directive is detected as an independent sentence.",
       "targets": [
         {
           "anchor": {
-            "blob": "731bf63474ee6041fdc12bbf748378e86bbca44f",
-            "content": "sha256:a2844d5eacbbfa62864441cd24984ee9e40d109eef7400a8752c36b350cd1f05",
+            "blob": "ddc4e0152814a7b8e396988f3bdb89c35da6ff1d",
+            "content": "sha256:2832e6a287fdf818743f49d4979bc33754ea52470600682f9d1a4d9680c17e09",
             "locator": {
               "kind": "file"
             }
@@ -166,15 +166,14 @@
       ]
     },
     "6": {
-      "note": "The compiled leaf ownerRelation carries the current Manager role/task returnAddress separately from descriptive starter identity.",
+      "note": "The compiled leaf `ownerRelation` carries the current Manager role and task return address separately from the descriptive starter identity.\n\nAnchor: `test_leaf_owner_relation_keeps_peer_results_and_named_parent_occasions`",
       "targets": [
         {
           "anchor": {
-            "blob": "b76fd5126da4c8aabfd318bd6ad9fc20b6a48315",
-            "content": "sha256:feb497f5846ac4fefd8dfeb12f419f02f3fd18ca884682e332b423036f00f58d",
+            "blob": "ddc4e0152814a7b8e396988f3bdb89c35da6ff1d",
+            "content": "sha256:2832e6a287fdf818743f49d4979bc33754ea52470600682f9d1a4d9680c17e09",
             "locator": {
-              "kind": "symbol",
-              "name": "test_leaf_owner_relation_keeps_peer_results_and_named_parent_occasions"
+              "kind": "file"
             }
           },
           "kind": "test"

@@ -3,15 +3,14 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The terminal remedy text.",
+      "note": "The terminal remedy text.\n\nAnchor: `terminal_provision_remedy`",
       "targets": [
         {
           "anchor": {
-            "blob": "f9a257c5c1f0238fa38add5f0ae6a36a70edd3b8",
-            "content": "sha256:be7a6eb76892e3fc004a7f0131ab8ef542b95cf0868cb02c8b1400be215de53b",
+            "blob": "b38e0ed5dfa469d3e1d51a887dfe4a7fbd654d41",
+            "content": "sha256:20d7c2d6f854245f0ae20ae394c76e25f22eed3d7a107eff79317df003598c42",
             "locator": {
-              "kind": "symbol",
-              "name": "terminal_provision_remedy"
+              "kind": "file"
             }
           },
           "kind": "code"

@@ -68,7 +68,9 @@ No relevant documentation found after checking live sources.
 
 - The loaded-source value this module produces and the digest it records. [1]
 - The refused source set is validated against the locked plan in both directions after admission. [2]
+
 - The application entry point that admits and then compiles, returning a refusal as a value. [3]
+
 - The typed source-refusal base and the codes raised here. `source-root-invalid`, `source-root-missing`, `source-path-invalid`, `source-path-escapes-root`, `source-missing`, and `duplicate-identity` are raised by this module and are deliberately **not** members of `CAPSULE_STATUSES`. [4]
 - Traversal, missing-source, non-directory-root, double-request and unreadable-source cases. [5]
 

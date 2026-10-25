@@ -45,7 +45,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "50b8aa9eacaf2a00dc1f0c36569cf2778bce6df8",
+            "blob": "68e489fdd659f3a7bfacf65b7b6d8c4a3d4aef0c",
             "content": "sha256:8d0f4e6cfeff893bba1cc3d375ca2eb7c888352a38da616818539c193aeb6b30",
             "locator": {
               "kind": "symbol",
@@ -61,7 +61,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "50b8aa9eacaf2a00dc1f0c36569cf2778bce6df8",
+            "blob": "68e489fdd659f3a7bfacf65b7b6d8c4a3d4aef0c",
             "content": "sha256:1730e2ee0b0b9fba3e7440f0141acb336c818dd9a505c6539b55f1785803c77f",
             "locator": {
               "kind": "symbol",
@@ -73,15 +73,14 @@
       ]
     },
     "3": {
-      "note": "A dismissal is not lost to a prune sweeping on another thread.",
+      "note": "A dismissal is not lost to a prune sweeping on another thread.\n\nAnchor: `test_a_dismissal_is_not_lost_to_a_prune_sweeping_on_another_thread`",
       "targets": [
         {
           "anchor": {
-            "blob": "1dcc272a8211cf31c26296efe00ab05ac2be48d5",
-            "content": "sha256:95042d3cd977bfa85f487aa68d93ca66d12c51cc26b563cf704c52db6485b14a",
+            "blob": "68e489fdd659f3a7bfacf65b7b6d8c4a3d4aef0c",
+            "content": "sha256:1c81861d6d3db00e7cd69567ddf7831d75f8b92fe0154802284c66b82a4a3424",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_dismissal_is_not_lost_to_a_prune_sweeping_on_another_thread"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -93,7 +92,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "50b8aa9eacaf2a00dc1f0c36569cf2778bce6df8",
+            "blob": "68e489fdd659f3a7bfacf65b7b6d8c4a3d4aef0c",
             "content": "sha256:627c39a29299c3691df2b7125e1c04dd6fe23b7a39c68da046153372a85e8f28",
             "locator": {
               "kind": "symbol",
@@ -109,7 +108,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "50b8aa9eacaf2a00dc1f0c36569cf2778bce6df8",
+            "blob": "68e489fdd659f3a7bfacf65b7b6d8c4a3d4aef0c",
             "content": "sha256:d20b13775112110d3dffa03766cec0b6fc7a17caa94c04b628f329fd67eb471d",
             "locator": {
               "kind": "symbol",
@@ -125,7 +124,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "50b8aa9eacaf2a00dc1f0c36569cf2778bce6df8",
+            "blob": "68e489fdd659f3a7bfacf65b7b6d8c4a3d4aef0c",
             "content": "sha256:fc4199446e0b666880a4389dfef591227d03e19ddeab06e8033d81ca1668f31e",
             "locator": {
               "kind": "symbol",
@@ -137,15 +136,14 @@
       ]
     },
     "9": {
-      "note": "Actual mutex contention precedes the negative dismissal assertion.",
+      "note": "Actual mutex contention precedes the negative dismissal assertion.\n\nAnchor: `test_a_dismissal_is_not_lost_to_a_prune_sweeping_on_another_thread`",
       "targets": [
         {
           "anchor": {
-            "blob": "10a3b65d2f3c9dd193ad2542a6466689c6d911d8",
-            "content": "sha256:ebc8e54fd064ba9c1b4253e5d9b8023d4483a08c35754b2489a6eceb8680fb2b",
+            "blob": "68e489fdd659f3a7bfacf65b7b6d8c4a3d4aef0c",
+            "content": "sha256:1c81861d6d3db00e7cd69567ddf7831d75f8b92fe0154802284c66b82a4a3424",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_dismissal_is_not_lost_to_a_prune_sweeping_on_another_thread"
+              "kind": "file"
             }
           },
           "kind": "test"

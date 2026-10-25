@@ -86,15 +86,14 @@
       ]
     },
     "3": {
-      "note": "Refuses a default on either budget declaration, so a dead number cannot return to the tree.",
+      "note": "Refuses a default on either budget declaration, so a dead number cannot return to the tree.\n\nAnchor: `test_the_option_declarations_state_no_budget_of_their_own`",
       "targets": [
         {
           "anchor": {
-            "blob": "d1776ec98316a40e56eb96143c777bc04b370a56",
-            "content": "sha256:c9f2490ea91d3c6be34a5804af22b2170a22faecbadd576682d4d45993650d65",
+            "blob": "5930773b499dccfcff2fbb23b686794e65e22ad1",
+            "content": "sha256:e7f86545075d82fb4f9f513462cf9d51b8a7b075547518f319e5a2025dd8f160",
             "locator": {
-              "kind": "symbol",
-              "name": "test_the_option_declarations_state_no_budget_of_their_own"
+              "kind": "file"
             }
           },
           "kind": "test"

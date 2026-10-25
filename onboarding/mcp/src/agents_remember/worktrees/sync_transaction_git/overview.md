@@ -32,8 +32,11 @@ Restoration and cancellation ownership are distinct. Full parked inventory and n
 
 - Successful absence from both Git holders selects mirroring; native binary patches preserve staged and unstaged state before rollback. [6]
 
+
 - Compatibility exports preserve qualified implementation boundaries. [1]
+
 - Complete stash inventory is distinct from its display sample. [2]
 - Native expected reapply has one configured merge owner. [3]
 - Saved unproved state is written before destructive cancellation. [4]
+
 - Incoming memory fast-forwards validate before moving refs. [5]

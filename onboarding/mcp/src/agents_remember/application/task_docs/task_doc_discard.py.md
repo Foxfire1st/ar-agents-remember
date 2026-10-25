@@ -34,7 +34,9 @@ No configured domain-documentation source applies to this repository-internal ro
 ### Repo-Internal References
 
 - The request and candidate models bind discard input to exact source evidence. [1]
+
 - The apply and resume paths publish the parent audit and exact child removals. [2]
+
 - Replay removal is guarded by recorded digest, size, and regular-file mode. [3]
 
 ### Cross-Repo References

@@ -80,7 +80,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "418f56cddea13a857e15e32f93c11db719101459",
+            "blob": "d9169328f4aefb6445b7866c552597f00ff49f5a",
             "content": "sha256:752848b4867967cdcbbc2e0bbbead222c7bf0b552f0d9e8fe80885e9c83e785d",
             "locator": {
               "kind": "symbol",
@@ -97,8 +97,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "200a80a5a86766acda65bb578ad829157530397f",
-            "content": "sha256:f1e709fc119f697102ecf22e5636434363c5b9a799d2e76f15ca65ae997be7d4",
+            "blob": "b534c85463fd186bc2a7a4cab7d02efd07a60508",
+            "content": "sha256:3617512dc4dbf5e374d2d4f85eb0bd8a3f5161198c0d05af200570fad0c322d5",
             "locator": {
               "kind": "symbol",
               "name": "EscapedPipeAnchorTests"
@@ -108,8 +108,8 @@
         },
         {
           "anchor": {
-            "blob": "200a80a5a86766acda65bb578ad829157530397f",
-            "content": "sha256:6112d37356480994e9d31785bdbe16340dac8a9d45cf596f04bc97668ef57ef7",
+            "blob": "b534c85463fd186bc2a7a4cab7d02efd07a60508",
+            "content": "sha256:dd9d258f3fc5f9a411dd642bd815402fd412b1de157b6c9b47a6d6949dcc79f6",
             "locator": {
               "end": 579,
               "kind": "line_range",
@@ -117,51 +117,13 @@
             }
           },
           "kind": "test"
-        }
-      ]
-    },
-    "11": {
-      "note": "The wrapped-`cit:` detector, proven by a planted shape so the corpus zero is measured.",
-      "targets": [
+        },
         {
           "anchor": {
-            "blob": "200a80a5a86766acda65bb578ad829157530397f",
-            "content": "sha256:5833f6a043c7e8512c6399be91fbe628f9f3ca8c408ae4b8451a326255ec9aac",
+            "blob": "b534c85463fd186bc2a7a4cab7d02efd07a60508",
+            "content": "sha256:803509efd210036b984056ff3b5e0c8bdb84f5dbc7ac1196829afdcf8062c03f",
             "locator": {
-              "kind": "symbol",
-              "name": "wrapped_constructs"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "12": {
-      "note": "The code repository's own markdown, enumerated: zero wrapped constructs is the pin.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "200a80a5a86766acda65bb578ad829157530397f",
-            "content": "sha256:0df4e20be394303b0cb144be023e898560251a8f8288114b2ee195dee3ec1b09",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_the_repository_carries_none"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "13": {
-      "note": "The live case: `T52` 130, enforced 97, `T58` 3 constructs in 2 documents, on the pair.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "200a80a5a86766acda65bb578ad829157530397f",
-            "content": "sha256:d248082a22cfa51db7af292f57cfef5839efe09370c0a4cc490f464bced8672f",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_the_live_memory_tree_matches_the_pins"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -264,22 +226,6 @@
         }
       ]
     },
-    "2": {
-      "note": "The world: a code tree and the memory tree that documents it, both under one temporary root, with the citation cache slot its census was built in removed.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "200a80a5a86766acda65bb578ad829157530397f",
-            "content": "sha256:ad2da9d788b1aa8d74843f0337f03ae8c4e0486203c2a7f8f3e220c1915a5c18",
-            "locator": {
-              "kind": "symbol",
-              "name": "World"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
     "20": {
       "note": "The qualified-heading census: a NAMED population pinned at one entry, the merged sibling line's deliberate dated heading.",
       "targets": [
@@ -349,8 +295,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "726e094b21a70ceea5073df1a1551fee8e20416a",
-            "content": "sha256:646a32f67b2497ead2a21bda682e6c36b5356b4fd63aef28a75808b3fd51caa9",
+            "blob": "b534c85463fd186bc2a7a4cab7d02efd07a60508",
+            "content": "sha256:a900b2c6997b72e228666f9c819ad3630fdda7c3c6e9094846c82153f14842e2",
             "locator": {
               "end": 520,
               "kind": "line_range",
@@ -362,12 +308,22 @@
       ]
     },
     "25": {
-      "note": "The repaired sentence held by a case now that its stale entry is gone, so a repair is not a gap.",
+      "note": "The repaired sentence held by a case now that its stale entry is gone, so a repair is not a gap.\n\nAnchor: `test_the_repaired_site_states_the_declared_pair`",
       "targets": [
         {
           "anchor": {
-            "blob": "726e094b21a70ceea5073df1a1551fee8e20416a",
-            "content": "sha256:b38f395ecafbdfeca6cbf50b0da249c8eeb250ada4f36b1aec4f2311c8cc8d20",
+            "blob": "b534c85463fd186bc2a7a4cab7d02efd07a60508",
+            "content": "sha256:803509efd210036b984056ff3b5e0c8bdb84f5dbc7ac1196829afdcf8062c03f",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b534c85463fd186bc2a7a4cab7d02efd07a60508",
+            "content": "sha256:f86cee960573dd4d6139238255e7aef54f395c291e4d1c7d6eb56e182156f360",
             "locator": {
               "kind": "symbol",
               "name": "test_the_repaired_site_states_the_declared_pair"
@@ -426,16 +382,16 @@
       ]
     },
     "29": {
-      "note": "The lane row that keeps this module in the default selection.\n\nAnchor: \"mcp/tests/test_memory_citation_agreement.py\"",
+      "note": "The lane row that keeps this module in the default selection. Source caption: \"mcp/tests/test_memory_citation_agreement.py\"",
       "targets": [
         {
           "anchor": {
-            "blob": "11ba98ff63f4a4815985ac51e2c0c7b5a48556a4",
-            "content": "sha256:f077da38793d14168158a19a2d41f7fbcff188affdbc98de0e9dccf33bef430a",
+            "blob": "102c4550ab6429f44c8fb543d1d0662de66a1b8c",
+            "content": "sha256:766f303bc7e15e82fd24136e1f75c57daa2d42f95ed1533239ab313812f24b13",
             "locator": {
-              "end": 236,
+              "end": 223,
               "kind": "line_range",
-              "start": 236
+              "start": 223
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },

@@ -14,7 +14,9 @@ Converted drift fingerprints cover complete actionable findings rather than samp
 
 ## Evidence
 
+
 - Fingerprint ignores order and nonactionable rows but changes with a finding despite equal counts. [1]
+
 - Click retains the shown fingerprint; time-only refreshes stay dismissed and changed findings return. [2]
 - Legacy acknowledgement adopts once and later changed findings recur. [3]
 - Partial, malformed, unreadable and invalid-count inputs leave acknowledgement bytes intact. [4]

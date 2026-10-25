@@ -38,47 +38,31 @@
       ]
     },
     "10": {
-      "note": "Evidence and working files stay outside the memory worktree.\n\nAnchor: lines 107-110\n\nOverview authoring is purpose-first, changes belong in their body section, and citation lines terminate the overview.",
+      "note": "Evidence and working files stay outside the memory worktree.  Overview authoring is purpose-first, changes belong in their body section, and citation lines terminate the overview.",
       "targets": [
         {
           "anchor": {
-            "blob": "700f45663d148e00dd89e0e5560e7c22f3bdbf7f",
-            "content": "sha256:b2d2b85db8c7fd89807992475fa635ff3835cd305ee5a0043974e53c3939a45d",
+            "blob": "c2d38cd0a82b9efe96a765c4512f2242c6a9d3e6",
+            "content": "sha256:fa818773877dec6d068de4be9fd08a8ce079eaffb73e52e06ff61809bb915ec8",
             "locator": {
-              "end": 114,
+              "end": 65,
               "kind": "line_range",
-              "start": 111
-            }
+              "start": 59
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "963c16d8a2a10f460dfcbbb2a9400df6e0ab601a",
-            "content": "sha256:b319457fc6b8c16226e8b15b759a94d792a6652b16b8cbaee97f83524cce3d22",
+            "blob": "6ebd065137efa6511deb754505556d60730f4647",
+            "content": "sha256:d06e0b525746fbafe6e3ad6d41b81b07a86d36cbfbe00e09c201256c82c5644b",
             "locator": {
-              "end": 83,
+              "end": 12,
               "kind": "line_range",
-              "start": 80
+              "start": 7
             },
-            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "11": {
-      "note": "Every reported cut has task-change causality; finding-clearing deletion is forbidden.\n\nAnchor: lines 141-148",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "963c16d8a2a10f460dfcbbb2a9400df6e0ab601a",
-            "content": "sha256:ea11330c768950d01748db65761189c97e2618bf4717483f2bcf74a32811c511",
-            "locator": {
-              "end": 160,
-              "kind": "line_range",
-              "start": 153
-            }
+            "path": "skills/l-01-agent-lifecycles/reference/curator-card-details.md"
           },
           "kind": "code"
         }
@@ -89,13 +73,40 @@
       "targets": [
         {
           "anchor": {
-            "blob": "963c16d8a2a10f460dfcbbb2a9400df6e0ab601a",
-            "content": "sha256:784d74beba291bbcade026dcaaf871b683a2923d568de6ea1829524f121b9ab5",
+            "blob": "145be631612f52c363b97b82d253839028ebc907",
+            "content": "sha256:f46dcb1a56028f631a030ff88a0c28e75e84188d1d91b2acb12af3f7d2fe9450",
             "locator": {
-              "end": 122,
+              "end": 29,
               "kind": "line_range",
-              "start": 86
-            }
+              "start": 26
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/curation.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "145be631612f52c363b97b82d253839028ebc907",
+            "content": "sha256:a8e1d190918d1438f9d67e211ee09809dfcae576409a9ee14a60fde969c1c74d",
+            "locator": {
+              "end": 100,
+              "kind": "line_range",
+              "start": 75
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/curation.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "145be631612f52c363b97b82d253839028ebc907",
+            "content": "sha256:c49a27f05bdf3b87d666fb6a88ad454a3992d44d087e2362e2d006bb03b7711a",
+            "locator": {
+              "end": 111,
+              "kind": "line_range",
+              "start": 111
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/curation.md"
           },
           "kind": "code"
         }
@@ -130,103 +141,168 @@
         }
       ]
     },
-    "2": {
-      "note": "Three-way reconciliation, explicit retention, writer/readback and full quality duties.\n\nAnchor: `memory_quality_check`",
+    "14": {
+      "note": "Every reported cut has task-change causality; finding-clearing deletion is forbidden.  Historical source caption: \"Anchor: lines 141-148\"",
       "targets": [
         {
           "anchor": {
-            "blob": "e5cae0a0b2c4de28fc27e640bfe785ddda22832a",
-            "content": "sha256:06fd950ab4ff855b283e9ba318fabcff24d06466992796b8da1fde1f3fe49e16",
+            "blob": "c2d38cd0a82b9efe96a765c4512f2242c6a9d3e6",
+            "content": "sha256:8afd32a91dbe3f21c503c60671caf19d815046f13a0f5d4f92d02b1e0effee18",
             "locator": {
-              "end": 151,
+              "end": 79,
               "kind": "line_range",
-              "start": 147
+              "start": 79
             }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Three-way reconciliation, explicit retention, writer/readback and full quality duties.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "69517ee942d200d941aa32f6439d9be3dec88d70",
+            "content": "sha256:b106d164720ae94cda96f04c1b38578f67b868ede055feb803394923342b1ab8",
+            "locator": {
+              "end": 27,
+              "kind": "line_range",
+              "start": 21
+            },
+            "path": "skills/l-01-agent-lifecycles/reference/curator-authoring-d301.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "69517ee942d200d941aa32f6439d9be3dec88d70",
+            "content": "sha256:8a9a087bcfa7acc5393e36301bdea328977aef46d7704bee9c431ef85b0b7c45",
+            "locator": {
+              "end": 39,
+              "kind": "line_range",
+              "start": 31
+            },
+            "path": "skills/l-01-agent-lifecycles/reference/curator-authoring-d301.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "69517ee942d200d941aa32f6439d9be3dec88d70",
+            "content": "sha256:244a5e0c650543adac4951f6642e9d4c868ca7cd3940238d59e2885e483f7ea3",
+            "locator": {
+              "end": 92,
+              "kind": "line_range",
+              "start": 86
+            },
+            "path": "skills/l-01-agent-lifecycles/reference/curator-authoring-d301.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c2d38cd0a82b9efe96a765c4512f2242c6a9d3e6",
+            "content": "sha256:0f16232f63b23d731f3a46fe76299115f107cff50511eaefb7bfda17481e8447",
+            "locator": {
+              "end": 65,
+              "kind": "line_range",
+              "start": 54
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
           },
           "kind": "code"
         }
       ]
     },
     "3": {
-      "note": "The curator’s prohibited writes and source-stamp boundary.\n\nAnchor: `enclosure_in_scope`",
+      "note": "The curator’s prohibited writes and source-stamp boundary.",
       "targets": [
         {
           "anchor": {
-            "blob": "963c16d8a2a10f460dfcbbb2a9400df6e0ab601a",
-            "content": "sha256:7979f990bee5061a061df5dd00b315be4679a1e8bd3d0302ba20565a5a0d4a42",
+            "blob": "c2d38cd0a82b9efe96a765c4512f2242c6a9d3e6",
+            "content": "sha256:2cc8c50f6a8715285333d93e4243c8b6968e46534c650ac3bc0a9c40eb62a2ac",
             "locator": {
-              "end": 132,
+              "end": 120,
               "kind": "line_range",
-              "start": 128
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "4": {
-      "note": "Process step 3 requires an authored rationale on every hand-off target before ingest (generated copy).\n\nAnchor: `realization_rationale_absent`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "e5cae0a0b2c4de28fc27e640bfe785ddda22832a",
-            "content": "sha256:0d1cb6509d1a798bf9b444b32a0257d5c2b7910929f38a38bc10bbf9f68738fe",
-            "locator": {
-              "end": 116,
-              "kind": "line_range",
-              "start": 113
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "5": {
-      "note": "Process step 3 lifts the decisions that keep governing code, on converted memory (MIK-R13).\n\nAnchor: `MIK-R13`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "963c16d8a2a10f460dfcbbb2a9400df6e0ab601a",
-            "content": "sha256:c4a79f969d539ba5ec8670fff476d4c6262cefd3b99b934e47777a8a342971d3",
-            "locator": {
-              "end": 106,
-              "kind": "line_range",
-              "start": 103
-            }
+              "start": 112
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
           },
           "kind": "code"
         }
       ]
     },
     "6": {
-      "note": "Converted cards need current content-bound onboarding rows, and an independent nonauthor checks curated statements and row judgments before closeout.\n\nAnchor: lines 86-118",
+      "note": "Converted cards need current content-bound onboarding rows, and an independent nonauthor checks curated statements and row judgments before closeout.",
       "targets": [
         {
           "anchor": {
-            "blob": "963c16d8a2a10f460dfcbbb2a9400df6e0ab601a",
-            "content": "sha256:056a30dd09a5e252a427dc8c3c2716748c1bdf16567a5e2ab67e43fc8960c65e",
+            "blob": "69517ee942d200d941aa32f6439d9be3dec88d70",
+            "content": "sha256:c071e691e1f2eeb5ec32e53a6258618391b56f4c1d4d2b0588199ba26477c7b7",
             "locator": {
-              "end": 118,
+              "end": 12,
               "kind": "line_range",
-              "start": 86
-            }
+              "start": 9
+            },
+            "path": "skills/l-01-agent-lifecycles/reference/curator-authoring-d301.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c2d38cd0a82b9efe96a765c4512f2242c6a9d3e6",
+            "content": "sha256:fa818773877dec6d068de4be9fd08a8ce079eaffb73e52e06ff61809bb915ec8",
+            "locator": {
+              "end": 65,
+              "kind": "line_range",
+              "start": 59
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "38daf6f3a9e1766c06dbbe2cc50c5b44db32d5f1",
+            "content": "sha256:0ba25bf7bd5021c9fc0c70d75575bbcf5c18009e7fb268ab093b3dd9a0c2c5a1",
+            "locator": {
+              "end": 35,
+              "kind": "line_range",
+              "start": 28
+            },
+            "path": "skills/l-01-agent-lifecycles/criteria/onboarding-memory.md"
           },
           "kind": "code"
         }
       ]
     },
     "7": {
-      "note": "On converted memory knowledge-ingest is the file writer and publishes no dataset.\n\nAnchor: `knowledge-ingest`",
+      "note": "On converted memory knowledge-ingest is the file writer and publishes no dataset.",
       "targets": [
         {
           "anchor": {
-            "blob": "e5cae0a0b2c4de28fc27e640bfe785ddda22832a",
-            "content": "sha256:44b5013b8972aedc7790986e04ec1d94aff404acbbafe1a20e429a9ad8c9c347",
+            "blob": "c2d38cd0a82b9efe96a765c4512f2242c6a9d3e6",
+            "content": "sha256:3cf92085343c90e04efb30ec0ca0148475584e307dffedde80d3e67c2f149b02",
             "locator": {
-              "end": 123,
+              "end": 35,
               "kind": "line_range",
-              "start": 117
-            }
+              "start": 33
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c2d38cd0a82b9efe96a765c4512f2242c6a9d3e6",
+            "content": "sha256:bf8af09eeb56aafbbb73a958e64e3bf5bab6c1d6bc79878cf06e12790e352624",
+            "locator": {
+              "end": 107,
+              "kind": "line_range",
+              "start": 103
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
           },
           "kind": "code"
         }
@@ -237,11 +313,40 @@
       "targets": [
         {
           "anchor": {
-            "blob": "128fa3a7f4a59afa387ac9963db075a27ca8d1c2",
-            "content": "sha256:14fbaf274fec9141c6b515816e20a8ffac22733d064b4a950782459b941b2ebd",
+            "blob": "c2d38cd0a82b9efe96a765c4512f2242c6a9d3e6",
+            "content": "sha256:5fa674b1f6fa14eaf33ae796f319b854ed175ecf5921787e267a34814d0d9ecb",
             "locator": {
-              "kind": "file"
-            }
+              "end": 65,
+              "kind": "line_range",
+              "start": 49
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "145be631612f52c363b97b82d253839028ebc907",
+            "content": "sha256:37acace39292198a835dda5aaac31a302750023a2974d39086c18f9f26a3d5c0",
+            "locator": {
+              "end": 176,
+              "kind": "line_range",
+              "start": 176
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/curation.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ab9a2e087d2cfd299ad5ffbac061aac232c8e831",
+            "content": "sha256:9cdd501356748fca03a98de167e62906d558d2392d58ca3d3e47c49caae79b8f",
+            "locator": {
+              "end": 157,
+              "kind": "line_range",
+              "start": 152
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
           },
           "kind": "code"
         }
@@ -252,13 +357,52 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0aa64abcceae8acc8d29755e7d85bd183f04cce8",
-            "content": "sha256:1cdf518f1795bd06288d5f7e86631f5dd319b16a0d5e7a42b3d847598c6660a6",
+            "blob": "c2d38cd0a82b9efe96a765c4512f2242c6a9d3e6",
+            "content": "sha256:00582ac4ef21bd40018009a78a235a9675b7f0214fc07894e7545cd872720bfb",
             "locator": {
-              "end": 244,
+              "end": 147,
               "kind": "line_range",
-              "start": 1
+              "start": 124
             }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6ebd065137efa6511deb754505556d60730f4647",
+            "content": "sha256:17285fd2535f8db51753f8b0c481afa531f4c4e1b7e3b5f3e11d3024c07e6712",
+            "locator": {
+              "end": 31,
+              "kind": "line_range",
+              "start": 27
+            },
+            "path": "skills/l-01-agent-lifecycles/reference/curator-card-details.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "896e170e9ff4b3ee595eeeb3285983629e0db7eb",
+            "content": "sha256:0f284486f90b96b01330a4b4583420666b043e9f165fd520509ec4cdab276b07",
+            "locator": {
+              "end": 18,
+              "kind": "line_range",
+              "start": 10
+            },
+            "path": "skills/l-01-agent-lifecycles/reference/curator-handoff-d301.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "145be631612f52c363b97b82d253839028ebc907",
+            "content": "sha256:2d4f1e4a04674e22d8784c2bb1c449585ddd025da78757343777ede50708908c",
+            "locator": {
+              "end": 32,
+              "kind": "line_range",
+              "start": 20
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/curation.md"
           },
           "kind": "code"
         }

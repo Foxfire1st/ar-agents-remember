@@ -53,7 +53,9 @@ The following current source boundaries establish the ledger-retirement behavior
 - `MemoryCloseoutOutcome` contains the memory commit and informational refresh results. [1]
 - `prove_closeout_recovery_commits` proves exact output refs without consulting a cache table. [2]
 - `_prove_memory_output` checks memory source ancestry and substantive cleanliness before best-effort cache refresh. [3]
+
 - `accepted_code_commit` commits or reuses the exact accepted code tree and records its proof. [4]
+
 - `resume_external_commits` re-proves existing memory output and republishes only the code/memory pair. [5]
 
 The current recovery primitives below establish exact two-output proof and cache-independent resumption.

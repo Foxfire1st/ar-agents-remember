@@ -14,4 +14,5 @@ MIK-R82 rule 1: every precondition refusal names its row or file and clearing ac
 
 ## Evidence
 
+
 - Sprint-archive preconditions, exact dry runs and staying-master handling are pinned. [1]

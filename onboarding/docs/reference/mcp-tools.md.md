@@ -39,7 +39,9 @@ but cannot advertise removed tools or turn a transport acceptance into implement
 ## Current evidence
 
 
+
 - Source reference records retirement of structural/lifecycle/provider/benchmark/capsule tools; backend existence is not advertisement. [2]
+
 
 ## Historical superseded account (non-operative)
 
@@ -108,4 +110,5 @@ review R1 note 5 at 13:11:32, and "sub-task" rather than "leaf" by ruling 14:12:
 task itself is not completed, is unchanged. The same clauses are in the registered tool description
 (`mcp/registration/tasks.py`) and the `w-02-light-task-workflow` skill, which now owns that procedure.
 
-- Current reference header states 40 public tools while the literal roster declares 42; older header38 and 40/41-name roster statements are historical, not live advertisement. [1]
+
+- The reference header states 40 public tools while the literal roster declares 43; the older header and roster counts are historical, not live advertisement. [1]

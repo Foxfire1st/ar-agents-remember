@@ -288,15 +288,16 @@
       ]
     },
     "20": {
-      "note": "A route target fires only on a retiring row; code gone with no row raises nothing.",
+      "note": "The route-target test checks that `no_impact` and unchanged-route `changed` family rows do not fire, a `retired` family row does, and directory absence without a history row fires `route_absent`. Source caption: `test_a_route_target_fires_only_through_a_rerouting_or_retiring_row`",
       "targets": [
         {
           "anchor": {
-            "blob": "4c8880a5bea27aef3f0432a094116c46f2b7ed0d",
-            "content": "sha256:46a4bf8f6dae7f08d53aef0fe61a88d0f2e1f4754a7bedb5fad15ddb7b196dcf",
+            "blob": "1176f3ca1d7d895f188bac1a18b73621a5897e93",
+            "content": "sha256:c795714daab9032242d0f659987c8ab70d8d8673af2667f427d087ce635ac160",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_route_target_fires_only_through_a_rerouting_or_retiring_row"
+              "end": 638,
+              "kind": "line_range",
+              "start": 608
             },
             "path": "mcp/tests/test_reconsideration_surfacing.py"
           },
@@ -561,15 +562,14 @@
       ]
     },
     "4": {
-      "note": "What the triggers read: both sides, the anchor classifier, the owner and the coordination root.",
+      "note": "What the triggers read: both sides, the anchor classifier, the owner and the coordination root.\n\nAnchor: `ReconsiderationInputs`",
       "targets": [
         {
           "anchor": {
-            "blob": "734394e8929c8f0c66836aa09f4cd96b6873d3c7",
-            "content": "sha256:0d1bcb29470038bb749e70df9a88f21826c34859ee04c6544dcc2021c350cd71",
+            "blob": "61c506dfcd093f09a94571716d7c351b56906af2",
+            "content": "sha256:6719f5dc512f3f630e0ed6d3654ea6397ae68fef7169417059a089cc56bf763b",
             "locator": {
-              "kind": "symbol",
-              "name": "ReconsiderationInputs"
+              "kind": "file"
             }
           },
           "kind": "code"

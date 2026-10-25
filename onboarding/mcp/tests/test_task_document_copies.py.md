@@ -52,5 +52,8 @@ is what is asserted.
 
 ## Evidence
 
+
 - The module keeps preparation, publication and cleanup cases and adds scoped enumeration, physical membership and conditional unreadable-file controls. [1]
+
+
 - Own-leaf copy controls include real non-symlink requirement bytes and digest rows, missing rows with a handover warning, exclusion of reference, master and sprint baggage, publication adding a requirement, source drift then refresh, and requirement-copy cleanup. [2]

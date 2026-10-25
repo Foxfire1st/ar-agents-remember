@@ -1,10 +1,21 @@
 {
   "path": "mcp/tests/test_task_documents_graph_projection.py",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
-      "note": "Segmented master scenario projects titles and predecessors",
+      "note": "Segmented master scenario projects titles and predecessors\n\nAnchor: `_segmented_scenario` `test_segmented_master_scenario_projects_titles_and_predecessors`",
       "targets": [
+        {
+          "anchor": {
+            "blob": "530630f996ef1314283d863c5361689f84cbeeb4",
+            "content": "sha256:6a3b48bc9ef52f06442aef7657efb1ad51a1dd39f97da1c614ea36a860220190",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        },
         {
           "anchor": {
             "blob": "530630f996ef1314283d863c5361689f84cbeeb4",
@@ -18,8 +29,8 @@
         },
         {
           "anchor": {
-            "blob": "9bed61ca73d766e293e06dc77a62f9c8282da047",
-            "content": "sha256:2c1aeb545f85214b7b2d03d8ef3254b4e0c47be405fd00586364a0529f8a0d7d",
+            "blob": "530630f996ef1314283d863c5361689f84cbeeb4",
+            "content": "sha256:2e84d2c8a3133211cf7f72791ddeab10713a5d5e9ba866eeb1a248b3706a4672",
             "locator": {
               "kind": "symbol",
               "name": "test_segmented_master_scenario_projects_titles_and_predecessors"
@@ -30,12 +41,22 @@
       ]
     },
     "2": {
-      "note": "An abandoned master reads `abandoned` and no longer gates its successor, whose frontier becomes ready",
+      "note": "An abandoned master reads `abandoned` and no longer gates its successor, whose frontier becomes ready\n\nAnchor: `test_abandoned_master_reads_abandoned_and_stops_gating_its_successor`",
       "targets": [
         {
           "anchor": {
-            "blob": "9bed61ca73d766e293e06dc77a62f9c8282da047",
-            "content": "sha256:0572d4f20154ff11f6b33743136f08af0bc768c3d481d041f535a5082e05db16",
+            "blob": "530630f996ef1314283d863c5361689f84cbeeb4",
+            "content": "sha256:6a3b48bc9ef52f06442aef7657efb1ad51a1dd39f97da1c614ea36a860220190",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "530630f996ef1314283d863c5361689f84cbeeb4",
+            "content": "sha256:55c36fa3c5988a77b858d63ccd9cfdf8c587a78ca3cfb14ce5a9d6081066812b",
             "locator": {
               "kind": "symbol",
               "name": "test_abandoned_master_reads_abandoned_and_stops_gating_its_successor"
@@ -46,12 +67,22 @@
       ]
     },
     "3": {
-      "note": "Duplicate local leaf numbers keep master qualified titles",
+      "note": "Duplicate local leaf numbers keep master qualified titles\n\nAnchor: `test_duplicate_local_leaf_numbers_keep_master_qualified_titles`",
       "targets": [
         {
           "anchor": {
-            "blob": "9bed61ca73d766e293e06dc77a62f9c8282da047",
-            "content": "sha256:4d93455816bc4e952e32f9396ccf5d5632ed00913a6f13a67647a57d557a0a13",
+            "blob": "530630f996ef1314283d863c5361689f84cbeeb4",
+            "content": "sha256:6a3b48bc9ef52f06442aef7657efb1ad51a1dd39f97da1c614ea36a860220190",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "530630f996ef1314283d863c5361689f84cbeeb4",
+            "content": "sha256:c52440770e7bfe7d6072af20110a237567c0f5582493946f777e8ee87d611782",
             "locator": {
               "kind": "symbol",
               "name": "test_duplicate_local_leaf_numbers_keep_master_qualified_titles"
@@ -78,12 +109,22 @@
       ]
     },
     "5": {
-      "note": "The reachability contract: a completed leaf written by a newer build stays reachable, an unstarted one stays reachable, and a broken document is still withheld.",
+      "note": "The reachability contract: a completed leaf written by a newer build stays reachable, an unstarted one stays reachable, and a broken document is still withheld.\n\nAnchor: `SubTaskIndexReachabilityTests` `test_completed_leaf_written_by_another_build_stays_reachable_from_the_index`",
       "targets": [
         {
           "anchor": {
-            "blob": "9bed61ca73d766e293e06dc77a62f9c8282da047",
-            "content": "sha256:aa04eca73a6a07e989197558bbf62e62f3db60904ca951a925002bb2a88a1c85",
+            "blob": "530630f996ef1314283d863c5361689f84cbeeb4",
+            "content": "sha256:6a3b48bc9ef52f06442aef7657efb1ad51a1dd39f97da1c614ea36a860220190",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "530630f996ef1314283d863c5361689f84cbeeb4",
+            "content": "sha256:79ab0c15a7b0321e37e4b5091e969558e391f83f0c84b62e35832ca09338fdbe",
             "locator": {
               "kind": "symbol",
               "name": "SubTaskIndexReachabilityTests"
@@ -93,8 +134,8 @@
         },
         {
           "anchor": {
-            "blob": "9bed61ca73d766e293e06dc77a62f9c8282da047",
-            "content": "sha256:9bae24d9a0f60e686b8b06d01e49975ac7129574cb09afa513f62cf5a4bcc889",
+            "blob": "530630f996ef1314283d863c5361689f84cbeeb4",
+            "content": "sha256:d4af8ed530adc9e8d644950d569160a0cc9bec6bf9dc6ed1328164d545ece8e7",
             "locator": {
               "kind": "symbol",
               "name": "test_completed_leaf_written_by_another_build_stays_reachable_from_the_index"

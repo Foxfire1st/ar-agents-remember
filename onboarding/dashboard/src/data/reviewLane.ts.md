@@ -63,13 +63,17 @@ No configured live documentation source was available for this pass.
 
 ### Repo-Internal References
 
+
 - The adapter's own statement: the server classifies once and this file only carries the answer. [1]
+
 - The entry's count: totals only when counted. [2]
 - A link's keys and family occurrences; the per-file response. [3]
 - A destination, one path's bucket, and the lane with `paths`. [4]
 - The read states, and an answer without its value read as unavailable. [5]
 - One answer kept with its URL; `null` asks nothing. [6]
+
 - The lane hook asks nothing without a comparison; one-file classification remains a single-shot marker read, not a hook. [7]
+
 - One file's classification as a single read for the intent markers; a transport failure is `unavailable`. [8]
 - The server's shapes this file mirrors. [11]
 
@@ -78,7 +82,15 @@ No configured live documentation source was available for this pass.
 No cross-repo boundary is crossed by this file.
 - The lane is read per comparison through the tree-view route [12]
 - useIntentMarkerScope supplies readFileClassification only when comparison is defined. Its cache refuses unlisted paths, reuses pending reads, retains ready answers and removes unavailable answers from pending so later calls can retry. This is observed caller evidence, not an exhaustive caller catalog. [9]
-- ReviewPanes calls useReviewLane once with the payload's parsed comparison number or undefined, then passes that read to the workspace, details and change-page owner. This does not assert a global count of every possible lane request. [10]
+
+
+
+- The lane read is acquired once by the reading surface's change-set hook, with the comparison number that hook resolved or `undefined`, and the surface carries that one read into the open change page without asking for the lane itself. [10]
+
+
 - laneUrl constructs the comparison-bound tree-view request. useReviewLane suppresses the request when comparison is undefined and selects the lane answer otherwise. This module retains readFileClassification as a single-shot file read and declares no exported useReviewFileClassification hook; these local targets do not prove global focused-view removal. [14]
 - ReviewLaneFamilyOccurrence preserves optional family identity/revision fields and required membership state, adding optional reason; ReviewLaneLink continues to carry these occurrences. The server declares the corresponding reason field and validates its presence exactly for membership_unknown. This is DTO carriage and server validation, not evidence that every carried field renders. [15]
-- treeComparisonNumber returns the number from the first matching review:trees:<digits> limitation token, otherwise undefined. The inspected surface uses that result as the lane comparison argument; it does not branch on dataset kind. [16]
+
+
+
+- `treeComparisonNumber` returns the number in the first `review:trees:<digits>` limitation token and `undefined` when there is none; the surface uses it to number the comparison it shows and to check an evidence destination against it, never branching on dataset kind. [16]

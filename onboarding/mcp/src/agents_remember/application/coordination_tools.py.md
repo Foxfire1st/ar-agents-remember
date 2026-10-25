@@ -10,7 +10,9 @@
 
 ## Current source contract evidence
 
+
 - Current candidate source supports the operative account; historical sections grant no current tool or execution acceptance. [5]
+
 
 ## Historical original card — all remaining original prose and evidence are non-operative
 
@@ -52,10 +54,11 @@ repo is disallowed or a path escapes the coordination root.
 
 ### Repo-Internal References
 
-- Runtime/coordination response models include `ResolveContextResponse`. [1]
 - Coordination context resolver owns the actual context construction. [2]
 - `require_repo` and `require_within_coordination` (repo resolution and path confinement) now live in the shared `kernel/authority.py` module. [3]
+
 - `AuthorityError` is the authority-violation error type the guards raise. [4]
+
 
 ## Series-Contract Notes
 

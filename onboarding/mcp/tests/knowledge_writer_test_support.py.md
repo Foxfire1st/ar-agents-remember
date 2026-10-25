@@ -62,7 +62,9 @@ The world.
 
 - The base records' legacy IDs and the IDs derived from them. [1]
 - The shared admission claims a criterion the validator does not check. [2]
+
 - The base memory: one exported invariant, one realization, one exported family. [3]
+
 - The leaf contract naming both worktrees. [4]
 - Both repositories and the task root. [5]
 - A producer entry with curator keys. [6]

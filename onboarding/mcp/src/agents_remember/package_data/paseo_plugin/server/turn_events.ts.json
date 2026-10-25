@@ -75,15 +75,14 @@
   ],
   "references": {
     "1": {
-      "note": "Native host handlers and explicit steering sends.",
+      "note": "Native host handlers and explicit steering sends.\n\nAnchor: `registerParentWakeEvents`",
       "targets": [
         {
           "anchor": {
-            "blob": "5dcb7031b563ff6a932a970d782fb0d1bb680619",
-            "content": "sha256:89bb35437919671e558fe2a18184c9652b552f2cf5950ac040a19a79e9a059e4",
+            "blob": "dc867726c9071a79792d76230a55b4be0f68908c",
+            "content": "sha256:3ba0f0fe2d258d10aa88bcc879a80a673db2297f7c5c8f0e98b3153c53b69398",
             "locator": {
-              "kind": "symbol",
-              "name": "registerParentWakeEvents"
+              "kind": "file"
             }
           },
           "kind": "code"

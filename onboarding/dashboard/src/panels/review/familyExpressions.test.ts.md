@@ -111,7 +111,7 @@ all. Only the two states where the read did not find the recorded bytes at the a
 the server refuses to send an address for and which is therefore a non-measurement rather than a change).
 Each row prints the read's own resolution rather than this function's reading of it. **The repair added one
 assertion here, and it is the per-side observed identity:** the `path_absent` excerpt's
-`readingsBySide[0].observed` is `[]` while the stale one's is `["3"*40]`, so an address the read found
+`readingsBySide.observed` is `[]` while the stale one's is `["3"*40]`, so an address the read found
 nowhere says so per side rather than printing a single observed value.
 
 **Case 7 — an empty collection is a measured empty one, with the carried rows counted (`:282-298`).** One

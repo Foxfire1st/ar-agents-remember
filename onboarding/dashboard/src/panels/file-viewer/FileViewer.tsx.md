@@ -69,8 +69,10 @@ switches and is full-bleed (drops the rails), like the Engine Room / Topology / 
 - The one tree explorer rendered twice (code + onboarding sides). [2]
 - The persisted split/single flag (`localStorage`-backed). [3]
 - The files API client — `fetchRepos`/`readFile`/`resolveForward`/`resolveReverse` + types. [4]
+
 - The shell that registers + keeps this view mounted across tab switches. [5]
-- The route overview that governs this page. [6]
+
+- The route overview that governs this page. 
 
 ## Current L5I Maintenance
 

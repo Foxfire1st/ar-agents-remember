@@ -84,14 +84,18 @@ The same-size, same-second Git rewrite scenario imports the single `rewrite_in_t
 
 ### Repo-Internal References
 
+
 - `test_a_reopened_leaf_writes_its_next_attempt_and_its_history_is_every_file` owns the current boundary described above. [25]
+
 - `test_the_public_closeout_refuses_an_open_item_and_commits_once_it_is_answered` owns the current boundary described above. [26]
 
 
 - The shared owner establishes a same-size rewrite in the index-write second. [29]
 
 
+
 - The module docstring: reopen after a converted closeout. [30]
+
 - Attempt files are named, ordered and backward compatible. [32]
 - The closeout closes the latest attempt and never reopens a closed one. [33]
 - The gate names the attempt the writer writes. [34]
@@ -125,6 +129,8 @@ No cross-repo boundary is crossed by this file.
 - A continued leaf writes its next attempt, including file/overview source-bound traces after the new edit; frozen invariant history remains separate. [41]
 - Current source delta inspected statically: Replace closed-trace presence claims with refreshed source bindings and own-file closed provenance; retain freeze and exact-tree assertions. [46]
 
+
 - `test_a_file_rewritten_while_the_gate_runs_is_never_committed_unjudged` owns the current boundary described above. [27]
+
 - `test_the_latest_row_about_a_subject_governs_across_attempts` owns the current boundary described above. [28]
 - The latest row about a subject governs across attempts. [43]

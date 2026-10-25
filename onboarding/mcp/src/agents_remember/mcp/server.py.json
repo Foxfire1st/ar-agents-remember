@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/mcp/server.py",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
@@ -111,8 +112,8 @@
     },
     {
       "anchor": {
-        "blob": "12908b669ea3101c46ac27e3ef3a02dfe3779b42",
-        "content": "sha256:dddbd3d12df683b084e5ef8cfbae743653d345e4e041d4248e9f5272760ba553",
+        "blob": "04fe591490945dea61eca1af410ae2553d95ea05",
+        "content": "sha256:55910440a2a7264672d972aa95728dcc1d711974b99de4c47bbe87b58607db76",
         "locator": {
           "kind": "symbol",
           "name": "AgentsRememberMCP.call_tool"
@@ -124,7 +125,7 @@
         "handoffEntry": "L183-CUR-ET01-bound-explainer-roster",
         "leaf": "260928-MIK-L183"
       },
-      "rationale": "Enforces exposed tool name and launched-seat identity ahead of every handler.",
+      "rationale": "`call_tool` at C enforces the bound surface and the launched seat ahead of `super().call_tool` (100-120), so one check covers all 22 tools and a named-but-unexposed tool is refused by name rather than merely absent from discovery.",
       "role": "enforcement"
     },
     {
@@ -184,12 +185,22 @@
   ],
   "references": {
     "1": {
-      "note": "`create_server` builds the FastMCP instance and invokes the registered tool families.",
+      "note": "`create_server` builds the FastMCP instance and invokes the registered tool families.\n\nAnchor: `create_server`",
       "targets": [
         {
           "anchor": {
-            "blob": "f307a8adb3d7fc51aeb3c776f4593c9b2517412d",
-            "content": "sha256:71d47f4c57afe64bde317fd506eb089eb32b746ce2e130e5732824d6c3fcd1fe",
+            "blob": "04fe591490945dea61eca1af410ae2553d95ea05",
+            "content": "sha256:cc3a440dce07a6635e86d3b3c0bd4747a332896e3470112e376449434e08b69a",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "04fe591490945dea61eca1af410ae2553d95ea05",
+            "content": "sha256:a0f83948be17a52e49ae3ea3458054d02d413132a902ccf88db97b841eeef676",
             "locator": {
               "kind": "symbol",
               "name": "create_server"
@@ -200,12 +211,12 @@
       ]
     },
     "2": {
-      "note": "The registration package imports each family registrar, collects them in `TOOL_REGISTRARS`, and exports that collection for server wiring.\n\nAnchor: \"from .core import register_core_tools\"",
+      "note": "The registration package imports each family registrar, collects them in `TOOL_REGISTRARS`, and exports that collection for server wiring.\n\nAnchor: `TOOL_REGISTRARS` `__all__`",
       "targets": [
         {
           "anchor": {
-            "blob": "1149a450bdeeb1c3fd5ac1a6582df92484fcab4d",
-            "content": "sha256:9fd42bf8e19137209f43dfdb2ab7dbe2d5884f2f233af46f523c38ebe7be7192",
+            "blob": "de6a43ed2001fc740bfc55163c3d1a0d70ae39bb",
+            "content": "sha256:ba5f80c4312577cf05ce7edf0740f0539e8ca3817e94705c6d618c18813ab107",
             "locator": {
               "kind": "symbol",
               "name": "TOOL_REGISTRARS"
@@ -228,8 +239,8 @@
         },
         {
           "anchor": {
-            "blob": "1992fb7acf8e245685369d397149006982245cfa",
-            "content": "sha256:a6fb5d4d6f0448e097032a504c7c1bcf016c8928f9aa411b31b30d629970088b",
+            "blob": "de6a43ed2001fc740bfc55163c3d1a0d70ae39bb",
+            "content": "sha256:81b381ab8ef9d70679dc502b1e04ec59f307345d6a59cad1ab4ae0f7ad132988",
             "locator": {
               "end": 24,
               "kind": "line_range",
@@ -251,6 +262,17 @@
             "path": "mcp/src/agents_remember/mcp/registration/__init__.py"
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "de6a43ed2001fc740bfc55163c3d1a0d70ae39bb",
+            "content": "sha256:a745162e8d77df72379e28b49e4dacde7a65f41774cbd89653b9ab790c0174e3",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/__init__.py"
+          },
+          "kind": "code"
         }
       ]
     },
@@ -259,7 +281,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0fa31000c046f2f804084d4f0b4088c89e71cea9",
+            "blob": "0a29daece8de46849bc5b8afc1f6e66a0b6a4f5c",
             "content": "sha256:68e08fd0af1d0f9e7709b3ebca2332ace9b888551b696607dcfca0fe46dae953",
             "locator": {
               "end": 6,
@@ -277,8 +299,21 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0fa31000c046f2f804084d4f0b4088c89e71cea9",
+            "blob": "0a29daece8de46849bc5b8afc1f6e66a0b6a4f5c",
             "content": "sha256:7e384b95c08958d4ebd2088a2e5a043c805551caa34f5710d6b607b4a8d3762e",
+            "locator": {
+              "end": 40,
+              "kind": "line_range",
+              "start": 40
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/__init__.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0a29daece8de46849bc5b8afc1f6e66a0b6a4f5c",
+            "content": "sha256:e52dda3cc86aa62ef96de2b331d2d84a33ec2580a972413d73b7ffa6ca61a644",
             "locator": {
               "end": 39,
               "kind": "line_range",
@@ -295,12 +330,25 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0fa31000c046f2f804084d4f0b4088c89e71cea9",
+            "blob": "0a29daece8de46849bc5b8afc1f6e66a0b6a4f5c",
             "content": "sha256:ed4d77a0a5436bf22b0d8c7ff20f7ff77c4f1cb32c6a8c91d502d82ca66676b4",
             "locator": {
-              "end": 55,
+              "end": 56,
               "kind": "line_range",
-              "start": 55
+              "start": 56
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/__init__.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0a29daece8de46849bc5b8afc1f6e66a0b6a4f5c",
+            "content": "sha256:fafba0527c3953c4b6e0e5b5739ba83612f8053bcdc9466730193cd1d590b408",
+            "locator": {
+              "end": 54,
+              "kind": "line_range",
+              "start": 54
             },
             "path": "mcp/src/agents_remember/mcp/tools/__init__.py"
           },
@@ -325,12 +373,22 @@
       ]
     },
     "7": {
-      "note": "Frozen implementation of create_server supporting the stated file behavior.",
+      "note": "Frozen implementation of create_server supporting the stated file behavior.\n\nAnchor: `create_server`",
       "targets": [
         {
           "anchor": {
-            "blob": "933e9cccdeb8316ecccfe17da622e599700d0773",
-            "content": "sha256:c3ed0814fd9aa904bcb2ed946c4c6539a1be63e48e73b1f6bfa05d67b04c6813",
+            "blob": "04fe591490945dea61eca1af410ae2553d95ea05",
+            "content": "sha256:cc3a440dce07a6635e86d3b3c0bd4747a332896e3470112e376449434e08b69a",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "04fe591490945dea61eca1af410ae2553d95ea05",
+            "content": "sha256:a0f83948be17a52e49ae3ea3458054d02d413132a902ccf88db97b841eeef676",
             "locator": {
               "kind": "symbol",
               "name": "create_server"

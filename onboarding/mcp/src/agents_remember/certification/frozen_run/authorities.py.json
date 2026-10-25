@@ -82,23 +82,6 @@
           "kind": "code"
         }
       ]
-    },
-    "4": {
-      "note": "The production observer derives records from current task, door, worktree, lineage and contract owners.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "186e793a41b1b6b6fccf3de6101ecbfabbe838d2",
-            "content": "sha256:f06a32dbc028b6727c6c6da6b56fca5f5db2cc7a7adbf68f88dc63cf14cd9fef",
-            "locator": {
-              "kind": "symbol",
-              "name": "observe_certification_candidate"
-            },
-            "path": "mcp/src/agents_remember/worktrees/integration/closeout/certification/observation.py"
-          },
-          "kind": "code"
-        }
-      ]
     }
   },
   "schema": "ar-onboarding-file/v1"

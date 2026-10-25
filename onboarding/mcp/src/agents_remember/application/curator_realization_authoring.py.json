@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/application/curator_realization_authoring.py",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
@@ -337,15 +338,14 @@
       ]
     },
     "8": {
-      "note": "Converted target parsing collects the pure guard's named problems and the writer refuses the whole handoff before its physical write step.\n\nAnchor: `_targets`, `write_knowledge`",
+      "note": "Converted target parsing collects the pure guard's named problems and the writer refuses the whole handoff before its physical write step.\n\nAnchor: `_targets` `write_knowledge`",
       "targets": [
         {
           "anchor": {
             "blob": "0fcaee614b530fbfb7a642fa65cbaf53214d3a9f",
-            "content": "sha256:5a5c4f47f8364e929f773c384fae0cc2ce8bc3c390fd6fabf3568e5b71a52a22",
+            "content": "sha256:e479229e390480e45139ef071f72d388dcd648c2025f34f1cb08be559ada9ec9",
             "locator": {
-              "kind": "symbol",
-              "name": "_targets"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/knowledge_writer/handoff.py"
           },
@@ -353,11 +353,10 @@
         },
         {
           "anchor": {
-            "blob": "da500d2404d720403d8aa5129db2c2088a4ddadd",
-            "content": "sha256:9167964a51c55a52013fae20c85aed606e89f9ff71dc4037a6689b27c7b38b06",
+            "blob": "f8c3ebb0fba1a81fe6fad47e544b6183713f1019",
+            "content": "sha256:7fdd22a5c098b7645dcbb18b54f3ed58f98b8504c69bc155a9e3493e0e3e44d0",
             "locator": {
-              "kind": "symbol",
-              "name": "write_knowledge"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/knowledge_writer/writer.py"
           },

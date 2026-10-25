@@ -1,5 +1,6 @@
 {
   "path": "dashboard/src/panels/review/canvas/canvasHooks.ts",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
@@ -7,8 +8,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "467387a2b90dca924acece2053b1792063adaa56",
-            "content": "sha256:da6d78aebf7a2cadff9633f3a16db518b38066b670fd0849ffe6f83761b707e0",
+            "blob": "71064a6c8a1e180cc3932f745d2e528279e8f0bf",
+            "content": "sha256:c954d3042edf09d3a8b563000106124bac6f23de13869596d877be18b14bd1b5",
             "locator": {
               "kind": "file"
             }
@@ -22,8 +23,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "467387a2b90dca924acece2053b1792063adaa56",
-            "content": "sha256:da6d78aebf7a2cadff9633f3a16db518b38066b670fd0849ffe6f83761b707e0",
+            "blob": "71064a6c8a1e180cc3932f745d2e528279e8f0bf",
+            "content": "sha256:c954d3042edf09d3a8b563000106124bac6f23de13869596d877be18b14bd1b5",
             "locator": {
               "kind": "file"
             }

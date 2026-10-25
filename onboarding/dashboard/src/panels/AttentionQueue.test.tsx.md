@@ -34,7 +34,7 @@ Seeded render and mocked writes do not prove server persistence. Severity render
 
 
 
-- The seeded queue includes the two operational rows, a taskless permission action, a stalled-task action and a landed notice. Mocked component cases exercise exact dismissal payloads, optimistic hide and failed-write retry, mixed and all-action clearing, suppression of a served non-dismissible action, and exact task or taskless-agent opening controls; these are source-level component assertions, not backend or live acceptance. [4]
+- The seeded queue includes operational rows, a taskless permission action, a stalled-task action and a landed notice. Mocked component cases exercise exact dismissal payloads, optimistic hide, a failed write that restores the row and a retry that clears it, mixed and all-action clearing, the x on a row served with the old non-dismissible flag, and the exact task or taskless-agent opening controls; these are source-level component assertions, not backend or live acceptance. [4]
 
 
 - Clear all optimistically removes both listed live items and sends exactly two itemId/kind requests. The mixed-result case restores only the failed `blocked-start` row and reports that dismissal did not hold. [5]

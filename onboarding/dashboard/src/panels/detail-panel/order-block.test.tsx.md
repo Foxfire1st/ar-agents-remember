@@ -21,8 +21,11 @@ This card describes the executable assertions and fixture seams of this module. 
 
 ## Evidence
 
+
 - Sprint display/whole-graph and rest/focus/reduced-motion assertions remain; the seeded master case pins placement, ready-only next tasks, projected progress, relation text and exact navigation. Source inspection only. [1]
 
+
 - Seeded mixed/all-completed cycle assertions name both legacy members where a wave remains, hide completed entry marks and require no separate done row, and omit an all-completed wave and ready-next block. This is not a native SCC producer opportunity or new execution. [2]
+
 
 - Parameterized Order cases pin the started work accent independently of the activity word, the restored legend, and distinct ready/waits wave accents. This is source assertion coverage, not a fresh execution. [3]

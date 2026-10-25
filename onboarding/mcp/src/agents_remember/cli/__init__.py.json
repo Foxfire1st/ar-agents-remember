@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/cli/__init__.py",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
@@ -20,15 +21,14 @@
       ]
     },
     "2": {
-      "note": "The umbrella entrypoint dispatches subcommands for this package.",
+      "note": "The umbrella entrypoint dispatches subcommands for this package.\n\nAnchor: `main`",
       "targets": [
         {
           "anchor": {
-            "blob": "a3e26f0f89e771bd2475715a4c480c1b9c1bc405",
-            "content": "sha256:90568bdc8bd602e0e941eb5c9baa73d267646ad22be69c80b38184c8280d660a",
+            "blob": "6e7bd5a18da5ea781594e67999b9b01f305937d4",
+            "content": "sha256:57963a8c05a50b4d7b23ed1e71af1f6df4675bb345acf2864f756afcd68470ec",
             "locator": {
-              "kind": "symbol",
-              "name": "main"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/cli/__main__.py"
           },
@@ -41,8 +41,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "80dd57c34d44fcd1bdd1920cb2b74809135bed5a",
-            "content": "sha256:19f9b7165341d3052d1b1125a87d54dbda0cec85951ef043f790dd6075630b36",
+            "blob": "126d045c43fbd830d1f124ab63fee6589db5d1ff",
+            "content": "sha256:2ac014290e03e6cef09c5d4c86328c45a3db96e9e47ee81cdd4c28e284d99354",
             "locator": {
               "kind": "symbol",
               "name": "run"
@@ -53,12 +53,23 @@
         },
         {
           "anchor": {
-            "blob": "2066b4ba787438d5c04bc970fcd0310977657ae1",
-            "content": "sha256:de2d22455c9b0a532e7879f2bc22dcb6bb375b8b975b2f49a0967da209b3575f",
+            "blob": "126d045c43fbd830d1f124ab63fee6589db5d1ff",
+            "content": "sha256:cccc952ca91b4ef43f2cab02fd411537259a0c82f0b5b51aef00cf1cf70e1105",
             "locator": {
-              "end": 294,
+              "end": 331,
               "kind": "line_range",
-              "start": 259
+              "start": 296
+            },
+            "path": "mcp/src/agents_remember/cli/dashboard.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "126d045c43fbd830d1f124ab63fee6589db5d1ff",
+            "content": "sha256:46c5e49607dc31e2f7cc4d0109b23ffcf419a4a9b04c24d0af483843012913b4",
+            "locator": {
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/cli/dashboard.py"
           },
@@ -67,15 +78,14 @@
       ]
     },
     "4": {
-      "note": "The context-packet CLI adapter peer.",
+      "note": "The context-packet CLI adapter peer.\n\nAnchor: `main`",
       "targets": [
         {
           "anchor": {
-            "blob": "f947ad7465ca039456a25e1f1d1a33273877ec5c",
-            "content": "sha256:7ee50b9f3a11345425f238468deef7fce578ac0b95c4f990dc3225a4d7d84e53",
+            "blob": "8695830492651c2480f98ae0111805f5fd7e1783",
+            "content": "sha256:4dc0e23cd58a72177f4ea11d2b05d955fe48eb865f489519ec98090d572d4c7d",
             "locator": {
-              "kind": "symbol",
-              "name": "main"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/cli/context_packet.py"
           },

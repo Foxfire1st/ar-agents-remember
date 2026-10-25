@@ -28,7 +28,7 @@
   - Every token is minted with `response="leaf"` and `view=LEAF_VIEW` (`source_context`).
 - **The page (`_page`).**
   - `seed`, `state: "page"` and `memoryTreeId` (rule 9); `manifestDigest`; `rows`; `counts` with the walk's `rowsReturned` and `rowsRemaining`; `hasMore`, `enumerationComplete` and `indexState`; `continuation`, `continuationOperation: "knowledge_read"` and `continuationView: "source_context"`; and `page`, L02's page block.
-  - **The header reference is a literal first row** (carried obligation 1, L02 ruling Q3 of 2026-09-29 19:56:40): `_page` pops `headerReference` out of `page` and places the `family_header_reference` row at `rows[0]`. It repeats an identity already returned and is not counted as a returned row.
+  - **The header reference is a literal first row** (carried obligation 1, L02 ruling Q3 of 2026-09-29 19:56:40): `_page` pops `headerReference` out of `page` and places the `family_header_reference` row at `rows`. It repeats an identity already returned and is not counted as a returned row.
   - `enumerationComplete` is true only when the cut is complete *and* the index is `complete`: a page from a partial index is never presented as complete.
   - **The route chain (MIK-R05).** A path seed's page (not a family seed's) carries `routeChain` from `chain.route_chain_block`: `directory`, `links`, `derivation: "mechanical"`, `state` (`governed` or `no_governing_family`) and `families`. When the path has no seed invariant, the page also states `registration: {"state": "registration_absent", "detail"}`, with the N6 wording (MIK-R01 Failure: route-chain families are still returned). Every path page carries `routeChain`, even when it states `no_governing_family`, so the block's tokens can move the page-1 cut by one row on paged walks; the selection and the row sequence do not change (review R1 F3, accepted as designed on 2026-09-30 04:12:49).
   - When this seed is done and a queued seed follows, the token moves on to it with that seed's manifest, and the page names it as `continuationSeed`.
@@ -66,10 +66,16 @@ No configured live documentation source was available for this pass.
 
 ### Repo-Internal References
 
+
 - The module statement: one prepared leaf for both surfaces, and the header reference as a literal first row. [1]
+
 - The view a leaf walk resumes on, and the request with its path or family seed. [2]
+
 - The prepared leaf with its page, deferred and collapsed forms, each minting a `leaf` token. [3]
+
+
 - The preparation: `selector_absent` for an unknown family seed, `registration_absent` (naming proof claims too) for a path with no entry and no governing family, the binding, and the position check of a resumed walk. [4]
+
 - Currentness computed once per selection, advisory on failure, family headers counting live members. [5]
 - The first queued seed's manifest, selected through the path-or-family step, and the refusal of a queued seed that selects nothing. [6]
 - What a path's `registration_absent` refusal adds on both surfaces: its route chain, which found no family. [7]

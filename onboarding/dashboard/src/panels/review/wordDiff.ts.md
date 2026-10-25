@@ -159,5 +159,7 @@ source evidence, not a new execution result.
 - sideText rebuilds each supplied string from same plus its own change runs; this API does not claim raw-file byte decoding preservation. [8]
 - Whitespace is rendered as visible glyphs and counted descriptive names without changing the supplied text. [9]
 - Within the cell bound, exact-text LCS/move pairing precedes gap pairing; over budget or unequal gaps produce explicit removed/added rows with reasons. [10]
+
 - The actual statement renderer consumes prepared text/list passages and names coarse/unpaired reasons without moving diff computation into this pure module. [11]
+
 - Stored assertions cover exact string reassembly, token-boundary changes, coarse middle/list bounds and duplicate move pairing; these are inspected cases, not fresh execution. [12]

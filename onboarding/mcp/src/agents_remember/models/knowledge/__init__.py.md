@@ -56,10 +56,14 @@ The rows below cite the submodules this facade re-exports and the two consumers 
 - Retired mutation outcome helpers are absent from the current facade; internal acceptance validation stays in base.py. [6]
 
 
+
 - The production store consumes these retained values through read-only operations. [7]
 
 
+
+
 - The shared branching fixture authors its identity and graph halves from these same models. [8]
+
 
 ### Cross-Repo References
 

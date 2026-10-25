@@ -1,18 +1,19 @@
 {
   "path": "mcp/tests/test_review_assessments.py",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
-      "note": "The lane row this module's classification rests on, and the lane header that declares the classification.\n\nAnchor: \"mcp/tests/test_review_assessments.py\"; \"unit-regression = [\"",
+      "note": "The lane row this module's classification rests on, and the lane header that declares the classification. Source caption: \"mcp/tests/test_review_assessments.py\"; \"unit-regression = [\"",
       "targets": [
         {
           "anchor": {
-            "blob": "11ba98ff63f4a4815985ac51e2c0c7b5a48556a4",
-            "content": "sha256:150e66e357bc146775235033162172839b6b6d1b88bdec1c85b56bf386ca2149",
+            "blob": "102c4550ab6429f44c8fb543d1d0662de66a1b8c",
+            "content": "sha256:4b8e768a1795b2b9d2ef240da08f1b9455c19ac05ce7bbfce6d5d6b3c277f368",
             "locator": {
-              "end": 351,
+              "end": 342,
               "kind": "line_range",
-              "start": 351
+              "start": 342
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -20,7 +21,7 @@
         },
         {
           "anchor": {
-            "blob": "11ba98ff63f4a4815985ac51e2c0c7b5a48556a4",
+            "blob": "102c4550ab6429f44c8fb543d1d0662de66a1b8c",
             "content": "sha256:06825f71b027f3b49cb717ee9df6a258f90b94a43b1594a0cefab0ef51ea5b50",
             "locator": {
               "end": 5,
@@ -34,8 +35,19 @@
       ]
     },
     "2": {
-      "note": "The record, its submission shape and the validator the shape cases drive.",
+      "note": "The record, its submission shape and the validator the shape cases drive.\n\nAnchor: `ReviewAssessment` `ReviewAssessmentRevision` `_AuthoredAssessmentFields`",
       "targets": [
+        {
+          "anchor": {
+            "blob": "4fd1f27d3283052427f6944c13312ee2c3991752",
+            "content": "sha256:19247bbdc8b6343e6275d489cd9f4773e6c9348ec6ef69e33f94de93bc61354f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/review_assessment.py"
+          },
+          "kind": "code"
+        },
         {
           "anchor": {
             "blob": "4fd1f27d3283052427f6944c13312ee2c3991752",
@@ -50,8 +62,8 @@
         },
         {
           "anchor": {
-            "blob": "64b193a86dfde5bf1f874b750ae2e9664e3734e3",
-            "content": "sha256:16d69ce24987cd3f5dfb1caf822527e05631acf439a3b9d2a015be26e47a1019",
+            "blob": "4fd1f27d3283052427f6944c13312ee2c3991752",
+            "content": "sha256:dc6f59838bb455363519131caba84eb37cf3f4bdf40a3112f16fca55964cbadb",
             "locator": {
               "kind": "symbol",
               "name": "ReviewAssessmentRevision"
@@ -129,8 +141,19 @@
       ]
     },
     "4": {
-      "note": "The state projection the read cases drive.",
+      "note": "The state projection the read cases drive.\n\nAnchor: `assessment_state_for` `SubjectAssessmentState`",
       "targets": [
+        {
+          "anchor": {
+            "blob": "4fd1f27d3283052427f6944c13312ee2c3991752",
+            "content": "sha256:19247bbdc8b6343e6275d489cd9f4773e6c9348ec6ef69e33f94de93bc61354f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/review_assessment.py"
+          },
+          "kind": "code"
+        },
         {
           "anchor": {
             "blob": "4fd1f27d3283052427f6944c13312ee2c3991752",
@@ -145,8 +168,8 @@
         },
         {
           "anchor": {
-            "blob": "64b193a86dfde5bf1f874b750ae2e9664e3734e3",
-            "content": "sha256:4faf2f2634b984c53e7008b3efeefafe750a9af482e72f5c96d16a475fe3d561",
+            "blob": "4fd1f27d3283052427f6944c13312ee2c3991752",
+            "content": "sha256:c973a0216267b57a66a30a0157ca64beb3b3c6b2e5c95f05740faf92c4332215",
             "locator": {
               "kind": "symbol",
               "name": "SubjectAssessmentState"
@@ -158,12 +181,23 @@
       ]
     },
     "5": {
-      "note": "The report-only section the checklist cases assert.",
+      "note": "The report-only section the checklist cases assert.\n\nAnchor: `knowledge_review_section`",
       "targets": [
         {
           "anchor": {
-            "blob": "b50f8652c4f13ce686dc1c39af4b56097be880c2",
-            "content": "sha256:5bc4727760a8fdcae578b641cfd1345f9807744a5bff05a3ab8d86856d9813ce",
+            "blob": "9af566a4f50f42d95a977d28b8159d6e434cd27c",
+            "content": "sha256:e30e125436201a9195508d11be47cd15288cc5b724b734e164fd7549b178aa43",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/knowledge_review.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9af566a4f50f42d95a977d28b8159d6e434cd27c",
+            "content": "sha256:18f74e6be2791e368b8a5c62d02d98ff87b727c9d6350084654ba70646a88853",
             "locator": {
               "kind": "symbol",
               "name": "knowledge_review_section"

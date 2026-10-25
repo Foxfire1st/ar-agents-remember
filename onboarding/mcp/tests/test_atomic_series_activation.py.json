@@ -3,15 +3,14 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "One sprint commands both masters, so both series contracts share one protected source pair.",
+      "note": "One sprint commands both masters, so both series contracts share one protected source pair.\n\nAnchor: `ActivationFixture`",
       "targets": [
         {
           "anchor": {
-            "blob": "598b2015f9054a298a1a3e54896cfb6ec238b38c",
-            "content": "sha256:b674e15b0b76c36d8970de5e2826ba91db11859fc230b58eee717297b43828ea",
+            "blob": "d47e2bc09187643af69ca1e07519d5ce75c4e69a",
+            "content": "sha256:21e13c4cf29b03c59ab20fc7ee6d33812d87e4dd9c3d82c99072955ed59fa5b6",
             "locator": {
-              "kind": "symbol",
-              "name": "ActivationFixture"
+              "kind": "file"
             }
           },
           "kind": "test"

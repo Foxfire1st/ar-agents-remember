@@ -32,11 +32,17 @@ own memory branch plan; reattaching a master does not opt the test out of the su
 ## Evidence
 
 
+
 - **Retained historical source account — superseded by the current contract:** A sprint that lost its last master to a retirement is read as a sprint by every tool, with no next action that cannot work. [1]
+
+
 
 - **Retained historical source account — superseded by the current contract:** An emptied sprint can be edited and commands a master again. [2]
 
+
+
 - The emptied-sprint control builds its new series with both code and external-memory plans. [3]
+
 
 
 - The _whole boundary helper distinguishes a raw retirement application result from a projected answer. Raw taskArchive-bearing retirement facts stay direct; projected answers require their retained log. Removed get controls, linkage reportPath, empty topology and reattachment assertions keep their separate surfaces. Earlier carrier account retained literally as historical: Pre/post-retirement get controls assert operation-removed rather than a successful sprint read. Linkage facts come from linkage_report's reportPath; rich retirement/projection state is read through _whole from the retained log. Empty-sprint topology, no impossible next action and reattachment assertions remain distinct from their bounded delivery carriers. [4]

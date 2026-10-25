@@ -14,7 +14,9 @@ The suite stubs only the network boundary and drives the real component, hook, m
 
 ## Evidence
 
+
 - An unreadable host uses the one-line Retry notice distinct from confirmed absence and permits no start until its fresh answer recovers. [1]
+
 
 
 
@@ -25,13 +27,24 @@ The suite stubs only the network boundary and drives the real component, hook, m
 The mounted executions[] cases exercise sprint and master separately: persisted UUID restoration, automatic/manual Result/report, same-ID Retry and Revive, remount with a newer sibling, unchanged earlier Projects storage and primary coordinator preservation. The parameterized test macro is retained source/evidence; the current writer cannot resolve it as a named proof symbol, so no synthetic proof anchor is claimed.
 
 
+
 - The current source implements this file’s stated Investigator boundary. [7]
+
 
 
 ## Refreshed current evidence
 
+
 - A started Projects role steers the retained frame to its exact agent. [2]
+
+
 - An open bound row is running and offers no second start. [3]
+
+
 - Bound rows and unsupported selections follow the admitted role set. [4]
+
+
 - The role table is asserted for Projects, sprint, commanded master and leaf. [5]
+
+
 - The trusted host snapshot moves the retained frame by message when the selection changes, and the launcher is exposed by the manual "Launch role" click; no empty-agent or archived transition is exercised. [6]

@@ -72,13 +72,19 @@ No configured live documentation source was available for this pass.
 ### Repo-Internal References
 
 - The state word and the detail a pre-conversion comparison reports. [1]
+
 - A closed leaf of a converted repository with no tree record: generation, recorded range, or refusal. [2]
+
 - The newest or named generation, read as a record. [3]
 - Converted recorded endpoints become a committed four-tree comparison named by the task directory. [4]
 - The code sides kept and both knowledge sides `legacy-unavailable`, naming no file. [5]
+
 - The refusal, declared facts and detail of a legacy or partly unavailable comparison. [6]
 
+
+
 - The closed-leaf route reopens exact tree records first and then preserves legacy source without opening datasets. [7]
+
 
 - Code sides kept, knowledge `legacy-unavailable`, zero database opens. [8]
 

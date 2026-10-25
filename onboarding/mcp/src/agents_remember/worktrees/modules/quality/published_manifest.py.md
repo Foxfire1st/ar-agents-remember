@@ -76,7 +76,9 @@ None recorded.
 - Serialization preserves the complete accepted snapshot. [4]
 - Generation and dependency records are derived from exact bound input fields. [5]
 - Manifest file keys are canonical safe relative paths. [6]
+
 - Render an exact journal selection after full original-object and artifact readback. [7]
+
 
 ### Cross-Repo References
 

@@ -6,7 +6,9 @@ The Manager starts Worker, Reviewer and Curator together through one role_start_
 
 This account controls the named changed seams; contradictory earlier card wording below is retained only as historical evidence. Unchanged role duties and R117 file-only wake/report transport are preserved. Source inspection supplies no new runtime test, CODE verdict, review counter or acceptance.
 
+
 - The Manager starts Worker, Reviewer and Curator together through one role_start_set; Worker opens immediately, the other seats are held unless first Reviewer work is supplied. Public messaging takes a unique live seat, refuses ambiguity, and holds behind already-held messages when a start, permission prompt or non-steerable turn prevents delivery. Permission decisions are never answered by transport; the upward notice names the role/task/agent/permission, and the product delivers held work when admissible without sender resubmission. CODE and MEMORY lanes keep separate counts; the settings limit and recorded architect/developer authority govern extra rounds. Direct peer packages are not relayed by Manager. [1]
+
 
 
 ## Current Source Qualification
@@ -165,7 +167,9 @@ Inherited reference 5 commentary (not a revalidated target):
 
 The byte-equal package copy is a distribution carrier, not an independent role, task or permission authority. Whole-file source evidence does not certify inherited statements, execution, grading or the whole card.
 
+
 - The authored source owns this contract; the distribution copy is not a separate authority. [2]
+
 
 
 - Marks common operation text all-role and isolates the Manager-only report/retry-occasion paragraph; no substantive start/message rule is rewritten. [3]

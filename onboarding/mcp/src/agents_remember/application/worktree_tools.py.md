@@ -26,7 +26,7 @@ Before worktree_start prepares an enclosure, the application owner resolves the 
 ## Current source evidence
 
 
-- Start/attach retain exact task authority without an ambient-session adoption or already-bound-session veto. [26]
+- Start/attach retain exact task authority without an ambient-session adoption or already-bound-session veto.
 
 
 ## Historical original card — preserved, not the current operative account
@@ -349,25 +349,48 @@ Certification refusals use the same projector when a `routeReview` finding is pr
 all original findings and gate-start facts. The catches remain narrow (`RouteReviewError` and
 `CertificationContractError`); no broad fallback or task-document mutation occurs in this adapter.
 
+
 - Integration, checkpoint, landing recording, and resume normalize code/memory authority without ledger subjects. [1]
+
 - Public status observes the stable journal through the canonical locator and preserves it in the result. [2]
+
 - Public sync forwards typed memory choice and continue/cancel control after configured-contract admission. [3]
+
+
 - The checkpoint landing entry point admits the contract and delegates the whole decision to the worktree layer. [4]
+
+
 - The pause entry point admits the contract, builds the typed args with the configured gate policy, and delegates to the stop route; it performs no publication work of its own. [5]
+
 - Stable sync projection is read from the enclosure-root journal. [6]
+
 - Worktree service behavior is owned by the worktree manager and its worktree modules, which this manager module re-exports. [7]
-- Worktree response models define the public tool envelopes and context summary, including activation/admission fields and the checkpoint-landing envelope. [8]
+
+
+> Retained earlier citation wording: - Worktree response models define the public tool envelopes and context summary, including activation/admission fields and the checkpoint-landing envelope. [8]
+
+
 - Route-review refusals are projected once with exact contract guidance at start/admission and closeout. [9]
+
 - **The closeout preview and closeout apply return paths now carry this leaf's final-output projection (ICR-R21@v1): the preview is decorated with the selected comparison generation and `prepared_is_reviewed_candidate`, the apply with the recorded receipt, and integration with the refs it landed — all attached after the Git transaction, so none of them can gate it.** [10]
 - Worktree service behavior is owned by the worktree manager and modules. [11]
 - Shared repo/path authority guards (`require_repo`, `require_within_coordination`). [12]
-- Lifecycle finalization behavior is delegated to the worktree finalizer module. [13]
+
+> Retained earlier citation wording: - Lifecycle finalization behavior is delegated to the worktree finalizer module. [13]
+
+
 - The on-disk provider authority reload consumed before provider setup (containment R1). [14]
-- `RetirementSettings`/`config.retirement` gating the two auto-land hooks. [19]
+
 - None [20]
-- None [21]
+
+> Retained earlier citation wording: - The finalizer behind `lifecycle_finalize_task`: it refuses a disabled contract, answers the contract's readiness blockers, verifies cleanup, then reconciles the task documents and returns the finalized result. [21]
+
+
 - Worktree service behavior is owned by the worktree modules, which this manager module re-exports. [22]
+
+
 - **The sync measures its own rebinding after the Git transaction and its contract write, so no review obligation can gate or refuse a completed sync (`ICR-R22@v1`); what it measured is a carrying sync's own resolved pair, published additively on the result.** [23]
+
 
 ## Series-Contract Notes
 
@@ -407,8 +430,12 @@ The current source seams include `TaskIdentity`, `TaskBases`, `StartExecution`. 
 
 ### Reconciled Source Evidence
 
+
 - The facade's start entry point consumes the extracted task-start request types at this boundary. [24]
-- None [25]
+
+
+- The start entry point: it refuses a direct leaf start, reloads the on-disk provider authority before setup, and answers the worktree manager's start result with the provider veto and the start eligibility. [25]
+
 
 ## 260821-CLIVE Final Public Worktree Boundary
 
@@ -490,3 +517,11 @@ field is additive: a caller that does not read it sees the sync result it always
 [governing overview](overview.md)
 
 </details>
+
+- Lifecycle finalization behavior is delegated to the worktree finalizer module.  Anchor: `finalize_result` [13]
+
+
+- The finalizer behind `lifecycle_finalize_task`: it refuses a disabled contract, answers the contract's readiness blockers, verifies cleanup, then reconciles the task documents and returns the finalized result.  Anchor: `finalize_result` [21]
+
+
+- Worktree response models define the public tool envelopes and context summary, including activation/admission fields and the checkpoint-landing envelope.  Anchor: `WorktreeSummary` `WorktreeCheckpointLandingResponse` [8]

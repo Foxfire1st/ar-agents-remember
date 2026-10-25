@@ -71,10 +71,16 @@ No configured live documentation source was available for this pass.
 The format switch and the two readings.
 
 - The format is decided by the layout marker. [1]
+
 - An unconverted tree's knowledge section names both conversion routes. [2]
+
 - A converted card's sidecar and resolved references. [3]
+
 - The call site in the entry point. [4]
-- `read_ar_files` returns legacy-format or resolved references, and the converted tree's knowledge section through the tool. [5]
+
+
+- read_ar_files names the converted records that govern a path - existence, the card's location and the records' states - and carries none of their text; an unconverted tree is answered as unconverted rather than with a knowledge section. [5]
+
 
 ### Cross-Repo References
 

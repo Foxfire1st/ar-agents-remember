@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/worktrees/modules/contract_reader.py",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
@@ -22,14 +23,14 @@
   ],
   "references": {
     "1": {
-      "note": "The kernel resolver declares the port this adapter implements.\n\nAnchor: \"class ContractReaderPort\"",
+      "note": "The kernel resolver declares the port this adapter implements. Source caption: \"class ContractReaderPort\"",
       "targets": [
         {
           "anchor": {
             "blob": "a203d370b91f8e34a9d49be343da9793f8e54a63",
-            "content": "sha256:9c8e1ccf99415a26c0a7740805b47e50789f46efd487c20df7b53a7d210a452d",
+            "content": "sha256:51b34a9383278d48dea1f3fd53658bfe17ed93cf8730528df2ba0244e0ae1d4e",
             "locator": {
-              "end": 134,
+              "end": 163,
               "kind": "line_range",
               "start": 134
             },

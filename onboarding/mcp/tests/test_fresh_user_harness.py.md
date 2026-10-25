@@ -72,7 +72,9 @@ None.
 
 - The fixture owns everything under its own run root. [3]
 - A step that cannot run is blocked by name and never reported as completed. [4]
+
 - Every governed harness module this suite answers for exists. [5]
+
 - The entry point requires `--reports` and defaults the run root. [6]
 - A non-`str` `sys.path` entry would be silently ignored, so both roots are inserted as strings. [7]
 - A governed harness module is loaded by path, since the harness root is not a package. [8]

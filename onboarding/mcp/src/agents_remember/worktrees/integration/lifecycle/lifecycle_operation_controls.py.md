@@ -52,13 +52,17 @@ No configured external source applies.
 
 The following current source boundaries establish the ledger-retirement behavior.
 
+
 - Direct recovery continues its retained generation and settles its closing receipt in the same call; the closeout path keeps its publication checks. [1]
+
 - `_resume_arguments` retains the admitted code/memory messages in the successor correction. [2]
 - `_closeout_resume_admission` combines current candidate evidence with code/memory input for resume. [3]
 
 The source file is the direct evidence for this file-specific ownership boundary.
 
+
 - The module defines `LifecycleControlCommand`; `control_operation` as its public seam. [4]
+
 
 ### Cross-Repo References
 
@@ -94,5 +98,6 @@ control classification, and public responses therefore share one exhaustive acti
 ## CCR-R18@v1 Rebinding Controls And Previews
 
 260831-CCR-L18 routed the control-layer projection rewrites through the envelope binders: `_preview_completed_supersede` now returns `bind_projection_result(operation_projection(record, contract=contract), {...})` for the `would-supersede` dry-run preview, and `_resume_closeout_successor` uses `bind_projection_result` with a `LifecycleRecommendedAction` (`apply-closeout-successor` → `worktree_closeout_apply`) plus guidance instead of mutating a `model_copy` projection. Every rewritten control projection therefore rebinds its component digests to the exact journal revision through the sole validator.
+
 
 - A mechanically recoverable interrupted direct-create generation is requeued through its advertised public recovery owner and completed under that same accepted input. [5]

@@ -15,5 +15,7 @@ restore_launch_files checks every reference and every target before the first by
 ## Evidence
 
 - Every refusal of a saved launch's files is one ValueError the held opener and the retry route both recognise. [1]
+
 - The saved launch's files are restored together, checked before the first write. [2]
+
 - A receipt without the second file's reference reports none rather than inventing one. [3]

@@ -42,11 +42,17 @@ Reviewer receives no freeze and opens no round for a clean sync with passing foc
 - Reviewer returns a repair freeze missing its per-finding entries without counting a round, and receives no new freeze or round for a clean sync. [8]
 
 
+
 - The verdict goes directly to the Worker and code PASS directly to the Curator. [1]
+
+
 
 - Fix-verification checks the sealed outstanding IDs; ordinary rounds follow the settings limit and extras need recorded Architect-or-developer approval. [2]
 
+
+
 - The Reviewer never edits, accepts, starts a role or publishes. [3]
+
 
 ## Inherited Source-Epoch Commentary
 
@@ -162,7 +168,11 @@ Inherited reference 4 commentary (not a revalidated target):
 
 The byte-equal package copy is a distribution carrier, not an independent role, task or permission authority. Whole-file source evidence does not certify inherited statements, execution, grading or the whole card.
 
+
 - The authored source owns this contract; the distribution copy is not a separate authority. [5]
 
+
+
 - Partitions Reviewer-only handover/record-only/code-concern method from common review rules and adds the post-landing recorded memory lane. [6]
+
 - Partitions Reviewer-only handover/record-only/code-concern method from common review rules and adds the post-landing recorded memory lane. [7]

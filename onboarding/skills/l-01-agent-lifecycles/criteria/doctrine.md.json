@@ -56,16 +56,16 @@
       ]
     },
     "3": {
-      "note": "Baseline mode and fix-verification are explicit supplied review modes, not inferred whole-review authority.\n\nAnchor: \"`baseline` or `fix-verification`\"",
+      "note": "Baseline mode and fix-verification are explicit supplied review modes, not inferred whole-review authority.",
       "targets": [
         {
           "anchor": {
-            "blob": "696db71c1cdd1ea9215c7212533d609be9b2a1cf",
-            "content": "sha256:09feeb75868b0b9350fa71743d58dde664459b357a8b997280696b06351c13c7",
+            "blob": "ab9a2e087d2cfd299ad5ffbac061aac232c8e831",
+            "content": "sha256:7f555e31c36f957a5c72ae7f3323d01160a4c83235250eb4bffb76b777f41a20",
             "locator": {
-              "end": 34,
+              "end": 25,
               "kind": "line_range",
-              "start": 31
+              "start": 24
             },
             "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
           },

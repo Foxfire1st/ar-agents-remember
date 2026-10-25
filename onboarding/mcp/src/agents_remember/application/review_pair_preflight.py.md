@@ -55,9 +55,15 @@ No relevant domain documentation was found.
 
 ### Repo-Internal References
 
-- The four refusals in their fixed order. [1]
+
+- The pair's refusals in their fixed order: an unavailable knowledge selection, the closed leaf's dataset, an absent half, an unreadable half, and the candidate receipt. [1]
+
+
 - The live pair's absent-half refusal, naming the half and the file. [2]
+
+
 - The catalogue caller: one call, refused before any subject is listed. [3]
+
 - The summary caller: the same call before either side is read. [4]
 - The absent-half probe it builds on. [5]
 

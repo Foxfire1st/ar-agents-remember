@@ -69,10 +69,16 @@ No configured domain documentation could be checked.
 - The invariant identity shape, its nonblank display label and the row digest a label edit names. [1]
 - The complete revision aggregate and its validators, including the self-predecessor rule. [2]
 - The shared accepted/proposed rule this validator now delegates to. [3]
+
 - The read-back shape that pins the sorted predecessor set. [4]
+
+
 - The stored `invariant_revision` table this aggregate is written to, with its immutability triggers. [5]
 
+
+
 - The current exact revision read and decoder verify a retained aggregate rather than writing it. [6]
+
 
 The requirement packet whose normative property this model encodes: requirement packet `KS-R01@v1`, which lives in the coordination root, outside both the code and the memory repository, so the citation grammar cannot address it.
 

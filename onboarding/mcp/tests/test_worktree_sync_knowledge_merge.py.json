@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "9bbf972218547a9c18754de92fb2bd2eab3b636f",
+        "blob": "18197be7e17a21cde80e42b12ff6790886c48ad1",
         "content": "sha256:57f128955beb75a87bdc6e4d9800c356257fbc269852e479e2f6fb747415350a",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "9bbf972218547a9c18754de92fb2bd2eab3b636f",
+        "blob": "18197be7e17a21cde80e42b12ff6790886c48ad1",
         "content": "sha256:acef561348b46ecff2e9dce4bba1fb04fafe63eda12863db2a4ed95ec3bd296f",
         "locator": {
           "kind": "symbol",
@@ -37,7 +37,7 @@
     },
     {
       "anchor": {
-        "blob": "9bbf972218547a9c18754de92fb2bd2eab3b636f",
+        "blob": "18197be7e17a21cde80e42b12ff6790886c48ad1",
         "content": "sha256:fbbbc04db8c079221668a668c9cfe4220c5cae0e88f6af1adda6c19825ad551c",
         "locator": {
           "kind": "symbol",
@@ -60,7 +60,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9bbf972218547a9c18754de92fb2bd2eab3b636f",
+            "blob": "18197be7e17a21cde80e42b12ff6790886c48ad1",
             "content": "sha256:0ca05062d98be318419f086d9d6c8b47c44378e729567dbc580bc686b2b59219",
             "locator": {
               "kind": "symbol",
@@ -72,11 +72,11 @@
       ]
     },
     "3": {
-      "note": "The report seam asserts renumbered-reference, evidence-only, skip-only, conflict, converted and empty plans. It has no alignedCards-only emission control; INV-0J9FS1 explicitly excludes alignedCards alone as a trigger. The retained proof facet is read under that governing condition, not as universal alignment-field coverage.",
+      "note": "The report seam keeps every nonzero alignment population.",
       "targets": [
         {
           "anchor": {
-            "blob": "9bbf972218547a9c18754de92fb2bd2eab3b636f",
+            "blob": "18197be7e17a21cde80e42b12ff6790886c48ad1",
             "content": "sha256:acef561348b46ecff2e9dce4bba1fb04fafe63eda12863db2a4ed95ec3bd296f",
             "locator": {
               "kind": "symbol",
@@ -88,12 +88,22 @@
       ]
     },
     "4": {
-      "note": "Evidence-only and skip-only plans write a report.",
+      "note": "Evidence-only and skip-only plans write a report.\n\nAnchor: `test_apply_writes_a_report_for_evidence_only_and_skip_only_plans`",
       "targets": [
         {
           "anchor": {
-            "blob": "d0c2d83c5f7aaa6d1bcffdaf7bc649693200baba",
-            "content": "sha256:de7ef726246f2b4b55ee7a97eb10a32415070089606cd494dfb4ff76e9999c5c",
+            "blob": "18197be7e17a21cde80e42b12ff6790886c48ad1",
+            "content": "sha256:0edc0fe9e79634ec06d171d8542007b88239e8c8410d6fe1c2398f3ce16689f4",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "18197be7e17a21cde80e42b12ff6790886c48ad1",
+            "content": "sha256:fbbbc04db8c079221668a668c9cfe4220c5cae0e88f6af1adda6c19825ad551c",
             "locator": {
               "kind": "symbol",
               "name": "test_apply_writes_a_report_for_evidence_only_and_skip_only_plans"
@@ -108,7 +118,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9bbf972218547a9c18754de92fb2bd2eab3b636f",
+            "blob": "18197be7e17a21cde80e42b12ff6790886c48ad1",
             "content": "sha256:57f128955beb75a87bdc6e4d9800c356257fbc269852e479e2f6fb747415350a",
             "locator": {
               "kind": "symbol",

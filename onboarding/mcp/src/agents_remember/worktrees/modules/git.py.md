@@ -92,7 +92,9 @@ No configured external domain-documentation evidence.
 
 ### Repo-Internal References
 
+
 - Native NUL-delimited statuses/counts live in `git_changes`; the serving wrapper caches that one implementation. [27]
+
 
 - Only the change-set wrapper adds diff.autoRefreshIndex=false; the native landing worklist keeps ordinary Git refresh behavior, and the existing identical-byte/native-stage regression asserts an empty worklist. [28]
 
@@ -111,24 +113,44 @@ No additional configured external or sibling-repository evidence is claimed.
 
 No additional configured cross-repository evidence.
 
+
 - One shared entry owns copied-index and existing full capture. [7]
+
+
 - The copied index is normalized without changing real-index state. [8]
+
+
 - Flag clearing uses the worktree top-level and one option per command. [9]
+
+
 - `worktree_candidate_tree` implements the retained boundary described above. [10]
+
 - `stage_tree` implements the retained boundary described above. [11]
+
 - `publish_tree_commit` implements the retained boundary described above. [12]
+
 - `_move_admitted_ref` implements the retained boundary described above. [13]
 - One Git command runs against a private index file; a failure keeps its name. [14]
+
 - Staging writes a private index file when asked; otherwise the worktree's own index. [15]
+
 - Ref/repository identity and transport-safe errors have shared implementations. [19]
+
 - Candidate trees use private indices and exact derived-path exclusions. [20]
+
 > Historical reference 22 records the former local change-set reader. Its current serving owner is named in the operative account and current source evidence, not re-advertised as a local function.
 - `stage_tree` makes the index exactly one tree and reads nothing from the working tree. [23]
+
 - checkout_holding_branch reads git worktree list --porcelain and selects the first non-detached, non-bare checkout holding the exact refs/heads branch, returning None if unavailable. [24]
+
+
 
 - Capture orchestration delegates private-copy materialization and exclusion pathspecs to their actual owner. [25]
 
+
+
 - The serving count reader retains deletion/rename/binary path facts outside this mutation module. [26]
+
 
 ## 260928-MIK-L177 The Capture Hands Its Private Index To Its Caller
 

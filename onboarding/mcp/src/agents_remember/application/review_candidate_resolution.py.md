@@ -224,7 +224,9 @@ memory trees (never a copy); a pin failure or an unreadable side is a `ReviewRef
 - The one contract locator: the recorded task root, the globbed enclosures, the `repo_name`/`cleanup` skips and the leaf-id slug match. [39]
 - **The case module that measures the bound endpoints through the real resolution, the real capture and the real comparison.** [40]
 
+
 - The live pair: four trees for converted memory; otherwise source identities and explicit legacy-unavailable knowledge sides, never a dataset fallback. [41]
+
 
 - A derived index answers its own namespace; any other file answers none. [42]
 

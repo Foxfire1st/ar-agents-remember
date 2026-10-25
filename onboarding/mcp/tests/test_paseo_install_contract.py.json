@@ -107,15 +107,14 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The one-provision call-time read case.",
+      "note": "The one-provision call-time read case.\n\nAnchor: `test_install_reads_added_shared_block_at_call_and_provisions_once`",
       "targets": [
         {
           "anchor": {
-            "blob": "2eb50e2d0b8bab46977808a19f0c1ffb923accc4",
-            "content": "sha256:347eec6e8f7ec21818f1846891a4a0870a49258c011e7f8bb9607e144fc67bad",
+            "blob": "c25d6c32df6325e952b7053581771d40e25c8906",
+            "content": "sha256:77032ab77bba6ccc482f0a821a4e0c1474ae7b2e68e9bacf6cea9431ffe16907",
             "locator": {
-              "kind": "symbol",
-              "name": "test_install_reads_added_shared_block_at_call_and_provisions_once"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -123,15 +122,14 @@
       ]
     },
     "2": {
-      "note": "The preview and failure-composition case.",
+      "note": "The preview and failure-composition case.\n\nAnchor: `test_preview_and_absent_host_make_no_mutation_and_host_error_preserves_earlier_steps`",
       "targets": [
         {
           "anchor": {
-            "blob": "2eb50e2d0b8bab46977808a19f0c1ffb923accc4",
-            "content": "sha256:8db10404beead96c6db15b53dbeffbdf75d2b4234daff058ea67e6b00cefe3bf",
+            "blob": "c25d6c32df6325e952b7053581771d40e25c8906",
+            "content": "sha256:77032ab77bba6ccc482f0a821a4e0c1474ae7b2e68e9bacf6cea9431ffe16907",
             "locator": {
-              "kind": "symbol",
-              "name": "test_preview_and_absent_host_make_no_mutation_and_host_error_preserves_earlier_steps"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -139,15 +137,14 @@
       ]
     },
     "3": {
-      "note": "The build-pin-wins case.",
+      "note": "The build-pin-wins case.\n\nAnchor: `test_build_pin_wins_all_settings_selectors_and_legacy_harness_block_is_ignored`",
       "targets": [
         {
           "anchor": {
-            "blob": "2eb50e2d0b8bab46977808a19f0c1ffb923accc4",
-            "content": "sha256:9f2a6eb8eb0f7414beb205290e8747e0cc151f80783b3fd3bc1b299afaa3b127",
+            "blob": "c25d6c32df6325e952b7053581771d40e25c8906",
+            "content": "sha256:77032ab77bba6ccc482f0a821a4e0c1474ae7b2e68e9bacf6cea9431ffe16907",
             "locator": {
-              "kind": "symbol",
-              "name": "test_build_pin_wins_all_settings_selectors_and_legacy_harness_block_is_ignored"
+              "kind": "file"
             }
           },
           "kind": "test"

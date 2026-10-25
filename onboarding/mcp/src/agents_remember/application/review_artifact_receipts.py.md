@@ -26,13 +26,20 @@ The first attempt writes an initial receipt even when it deletes nothing. A late
 
 - The reclaimed frame revisions are a shared artifact class for every receipt consumer. [8]
 
+
 - The ledger records intended deletion before it happens and records the outcome afterward. [4]
+
+
 
 
 - The first no-op records a receipt; an already-recorded unchanged repeat writes none. [5]
 
 
+
+
 - Replacement preserves the prior receipt under that receipt's own number. [6]
+
+
 
 
 - Recorded prior deletion or new absence is reported by the ledger. [7]

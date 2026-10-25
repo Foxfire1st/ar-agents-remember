@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/kernel/memory_init.py",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
@@ -7,8 +8,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5913ba545d715a93a1b4ee5534a2f1ef3b60b032",
-            "content": "sha256:7bab24b998635280567cd1af10c29a57166796dae057cb5669ebedcecd9c3b87",
+            "blob": "5dd2a44685920ec5d90e001beb9a4c0e14cf8c00",
+            "content": "sha256:275d08cfd2e9b635e8769cac9b682666df6b82acc2c145ab47c68b44fff5e6be",
             "locator": {
               "kind": "symbol",
               "name": "memory_init"
@@ -88,12 +89,23 @@
       ]
     },
     "3": {
-      "note": "The marker case: only a new root is created in the text format.",
+      "note": "The marker case: only a new root is created in the text format.\n\nAnchor: `test_memory_init_creates_new_memory_in_the_text_format_only`",
       "targets": [
         {
           "anchor": {
-            "blob": "737a38f7aeef4298e5aca6f39699b7bf4e717303",
-            "content": "sha256:6090ce7ef3c04c42c8448bb9179d3c922c8abfe88f4dfe7cd27cd7d9b35fd4ce",
+            "blob": "c1c7d17344cd9be8f9ea3dbac4d826343761c185",
+            "content": "sha256:28fd122ff2c33d1107d06aa386bb795f4dba57257da61e80f4c61dd118335d22",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_knowledge_conversion_toolchain.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "c1c7d17344cd9be8f9ea3dbac4d826343761c185",
+            "content": "sha256:55be5fee7c89003afce15b29002151f9a33cb7f945235d819ae9ba151b99d893",
             "locator": {
               "kind": "symbol",
               "name": "test_memory_init_creates_new_memory_in_the_text_format_only"
@@ -105,12 +117,23 @@
       ]
     },
     "4": {
-      "note": "MCP config defines repository memory roots.",
+      "note": "MCP config defines repository memory roots.\n\nAnchor: `McpRuntimeConfig`",
       "targets": [
         {
           "anchor": {
-            "blob": "2d0c60d2df2abaa3c483fb0f63bfd7c0b107ddfe",
-            "content": "sha256:0d3b1a86df3de4b2b7f81828fd3dc25bd588d932ed545f8863363d4d68b777e5",
+            "blob": "d29d100ea200d65a695333b54064543d7833f90e",
+            "content": "sha256:e2d83560666924530b06c82fcd178952932211795b5d29970b35d162ce3a4e47",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d29d100ea200d65a695333b54064543d7833f90e",
+            "content": "sha256:e7791119b1e18159ebfbbbd83a14da6aa29442e78892e2f9d570688969689704",
             "locator": {
               "kind": "symbol",
               "name": "McpRuntimeConfig"
@@ -214,7 +237,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "63231e18a2ea7fe60b5e8d8df3eaf437680f2429",
+            "blob": "c72c2b159123047c79c15fc46fd02991f16ef41b",
             "content": "sha256:ae0d53d8ece2974def4f707eff77ab5d8955a1b916fbfa0cd0bf4b88e11fd199",
             "locator": {
               "kind": "symbol",
@@ -305,39 +328,14 @@
       ]
     },
     "9": {
-      "note": "The one git runner this module's `git init` goes through: `git_environment` scrubs `GIT_REPOSITORY_SELECTOR_ENV` (L56-L72), `GIT_LOCAL_TIMEOUT_SECONDS = 300` is the default bound (L93-L93), and `run_git` applies both (L150-L215).",
+      "note": "The one git runner this module's `git init` goes through: `git_environment` strips `GIT_REPOSITORY_SELECTOR_ENV`, `GIT_LOCAL_TIMEOUT_SECONDS = 300` is the default bound, and `run_git` applies both.\n\nAnchor: `run_git` `git_environment` `GIT_LOCAL_TIMEOUT_SECONDS`",
       "targets": [
         {
           "anchor": {
-            "blob": "cd35c66bb9c9d8af0f23fd2579f5e610cf4ee8da",
-            "content": "sha256:60788cf6b3cf57e313ccacab456fb49fd9601a1930fa8f8de28c01088b22a2af",
-            "locator": {
-              "kind": "symbol",
-              "name": "run_git"
-            },
-            "path": "mcp/src/agents_remember/kernel/git_command.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "0add0d691edd9fadf0873b47c05c3556c94fb585",
-            "content": "sha256:9a5c584084f2d3c5b2f922be34cc829903d4c855e354a734263febd5289b334b",
-            "locator": {
-              "kind": "symbol",
-              "name": "git_environment"
-            },
-            "path": "mcp/src/agents_remember/kernel/git_command.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
             "blob": "07979a6e10a7cde98e4a4ce1dcaca7a203241e3f",
-            "content": "sha256:4b6abd07dd0bca1048d191f3231041c240ff088073c53fb101afa00643f5e146",
+            "content": "sha256:6e94e3f710e3074a2f9def9a24032a21aee42476e665e4ea421cba0067b627bb",
             "locator": {
-              "kind": "symbol",
-              "name": "GIT_LOCAL_TIMEOUT_SECONDS"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/kernel/git_command.py"
           },

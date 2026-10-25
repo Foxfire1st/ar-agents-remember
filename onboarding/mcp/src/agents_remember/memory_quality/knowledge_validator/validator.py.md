@@ -63,15 +63,21 @@ The three entry points.
 - Commit routes validate only when a side has the marker. [4]
 - The registering import of MIK-R09's history-row rules. [6]
 
+
 - A leaf publication, and the frozen history files of a `LeafCommit`, reach the context (MIK-R09). [7]
+
 
 - The registering import of MIK-R14's link guard. [8]
 - The registering import of MIK-R13's decision content rules. [9]
 
 - A commit that publishes a leaf, with the history files of the commit it sits on. [10]
+
 - The frozen trees reach the validation context. [11]
 
+
+
 - The overview-order module is imported for registration and participates in the same every-rule traversal. [12]
+
 
 ### Cross-Repo References
 
@@ -81,8 +87,14 @@ No cross-repo boundary is crossed by this file.
 
 - Overview-order rules activate at leaf publication, not conversion or ordinary adoption/census/writer validation. [13]
 
+
 - The validator runs every registered check and computes each violation's report/refuse through `_reports_at_route`, using route and carried-debt context. [1]
+
+
 - An unconverted base is refused; standalone conversion checks no anchor path and cannot combine with comparison bases, paired code or leaf publication. [5]
+
+
 - Current source delta inspected statically: Compute per-finding route reporting, reject mixed conversion contexts and qualify fixture debt; retain applicability and LeafCommit scope. [14]
+
 
 - Carried-only reporting does not waive new targets and one validation context serves all registered checks. [15]

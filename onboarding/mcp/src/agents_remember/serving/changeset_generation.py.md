@@ -21,7 +21,12 @@ the module now observes Git's own signals. `working_generation(root)` (`:94-135`
 
 ## Evidence
 
+
 - Filesystem generations include directory names, symlinks, ctime and unskipped descendants. [1]
+
+
 - Object observations distinguish stable existing objects from revoked content and absence proofs. [2]
+
 - Native locations/configuration are discovered through Git and retained with their governing inputs. [3]
-- Only directory-level native ignore proof permits skipping a working subtree. [4]
+
+- The working view's generation is Git's own `status --porcelain=v2` answer with each changed path's identity folded in; no part of the module walks the worktree. [4]

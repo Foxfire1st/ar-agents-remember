@@ -49,7 +49,7 @@ the GSAP layer keys on — `node.phase`, the running draw lanes (`edges` filtere
 kinds sorted), the resolved landing flows (`landing[]` `kind:state:factState`, sorted), the engine fx states
 (`providers` `role:runtimeState`, sorted), the **refused edges** — the local is still called `refused`, but
 the filter is now `edges` with `state` ∈ `failed`/`stale` only (`kind:state`, sorted — 05o) —
-`seedFallback ? "reindex" : ""`, and `memoryMode` — so
+`seedFallback ? "reindex": ""`, and `memoryMode` — so
 the effect re-runs (revert → rebuild) exactly when a choreography input changes (a `planned → running` lane
 re-draws, a cleared fault stops flickering). The fold-in matters because a failed or stale lane is **not** a
 `running` lane, so the `draws` segment alone misses it — without it the one-shot `refuse` flash would not re-arm
@@ -82,7 +82,7 @@ expected cyan; then `gsap.to(..., { drawSVG: "100% 100%", 0.45s, power2.in, over
 visible segment to nothing, and `onComplete` does `clearProps: "strokeDashoffset,strokeDasharray,stroke,filter"`
 so each lane settles back at its CSS end-state. **(2) DRAW** — then one `gsap.context` over the root draws each
 active lane with DrawSVG **once per lane** (05n — `gsap.from` over `[data-draw='on']` lanes not yet stamped
-`data-drawn`, `{ drawSVG: 0, ...DRAW, stagger: 0.1, overwrite: true }`). The stamp is now applied on
+`data-drawn`, `{ drawSVG: 0,...DRAW, stagger: 0.1, overwrite: true }`). The stamp is now applied on
 **`onComplete`, not eagerly** (5o): StrictMode double-invokes the effect (run → revert → run), and the old eager
 stamp made run-1 stamp, the revert kill the draw, and run-2 skip as already-stamped — so the draw-on never
 animated; stamping on complete lets the surviving mount actually draw. The stamp (a DOM attribute) survives
@@ -101,23 +101,23 @@ per-fx durations). Comments tie each fx back to the CSS keyframe it replaced.
 ### Invariants And Boundaries
 
 - **Property-split law (`05f` §8.1):** GSAP owns the stroke reveal (DrawSVG draw-ons + the tail-to-tip retract),
-  the travelling packet's transform (MotionPath), and the `data-fx` repeating loops ALONE; Motion owns the
-  NODES' opacity/transform/scaleY/fill + enter/exit. The same property/element is never driven by both systems —
-  the packet is a GSAP-exclusive `<circle>`, not a Motion element, so MotionPath owning its transform keeps the
-  law. The retract's transient `stroke`/`filter` lock is GSAP-only and always `clearProps`-released back to the
-  CSS class, so no static colour is left shadowing the recipe.
+ the travelling packet's transform (MotionPath), and the `data-fx` repeating loops ALONE; Motion owns the
+ NODES' opacity/transform/scaleY/fill + enter/exit. The same property/element is never driven by both systems —
+ the packet is a GSAP-exclusive `<circle>`, not a Motion element, so MotionPath owning its transform keeps the
+ law. The retract's transient `stroke`/`filter` lock is GSAP-only and always `clearProps`-released back to the
+ CSS class, so no static colour is left shadowing the recipe.
 - **StrictMode-safe stamping (5o):** the draw-on stamps `data-drawn` on `onComplete`, never eagerly, so the
-  StrictMode run → revert → run double-invoke can't stamp-then-skip and leave the lane undrawn.
+ StrictMode run → revert → run double-invoke can't stamp-then-skip and leave the lane undrawn.
 - **Gated by `useShouldAnimate()`:** under `data-effects=off` / `prefers-reduced-motion` the effect returns
-  before building anything — no `gsap.context`, no ticker — so the rendered end-state stands and the
-  Playwright/vitest snapshots stay deterministic. (`EnclosureProcessMap.test.tsx` spies on `gsap.context` to
-  prove this both ways.)
+ before building anything — no `gsap.context`, no ticker — so the rendered end-state stands and the
+ Playwright/vitest snapshots stay deterministic. (`EnclosureProcessMap.test.tsx` spies on `gsap.context` to
+ prove this both ways.)
 - **Alarm cap:** the `fault` / `stop` flickers stay ≤3 flashes/s (WCAG 2.3.1).
 - **`fxSignature` folds in states the reducer can actually emit.** The refused fold-in filters on `failed`
-  and `stale`, both of which `_seed_edge_state` returns. Do not re-add `refused`: no reducer path produces
-  it, so the arm would be dead on arrival and would make the signature claim a beat that cannot occur.
+ and `stale`, both of which `_seed_edge_state` returns. Do not re-add `refused`: no reducer path produces
+ it, so the arm would be dead on arrival and would make the signature claim a beat that cannot occur.
 - **One context per enclosure**, scoped to the SVG root; `ctx.revert()` restores all inline state on
-  unmount/re-run, so a re-key (`worktreeGroup`) or a phase change cleanly rebuilds.
+ unmount/re-run, so a re-key (`worktreeGroup`) or a phase change cleanly rebuilds.
 - Pure motion driver: it reads the `node` projection + a ref; it renders nothing and owns no DOM structure.
 
 ### Todos
@@ -132,16 +132,25 @@ This is a same-repository motion hook; the proving evidence is the source plus t
 produces the `data-draw`/`data-fx` elements. The `system/sources.md` registry lists no Domain Documentation
 entries, so the GSAP/Motion library docs are not cited here — the split is proven by the in-repo code.
 
+
 - `phaseStage` / `fxSignature` / `buildFx` + the `useEngineTimeline` context (retract + draw-on + fx, gated). [1]
+
+
 - `fxSignature`'s refused fold-in now filters `failed`/`stale` only. [2]
-- `_seed_edge_state` — the states a seed edge can actually carry; `refused` is not among them. [3]
+
 - `EngineProcessEdge`'s documented `state` vocabulary, which never listed `refused`. [4]
 - RETRACT phase (5o) — departing lanes erased tail-to-tip, stroke locked cyan via `gsap.set` before the tween, `clearProps` stroke/filter on complete. [5]
-- Draw-on stamps `data-drawn` on `onComplete` (5o StrictMode fix); the `refuse` one-shot and the gentle ~1.7s sine `fault` breathe. [6]
+
+- `buildFx` installs the canvas effect tweens the markup declares: the pre-block verify scan ring, the warp-core surge bands, the attention `breath`, the terminal stop flash, the one-shot refused-conduit flash coloured by the lane's `data-polarity`, and the flow packet riding `data-path`. [6]
+
 - The honest-motion gate that suppresses the whole hook under effects-off/reduced-motion. [7]
+
 - The canvas that renders the `data-draw='on'` / `data-fx=…` elements + wires this hook to the `<svg>` root. [8]
+
 - `EngineProcessNode` / `EngineProcessEdge` (the `phase` / `edges` / `landing` / `providers` / `seedFallback` / `memoryMode` it reads; `EngineProcessEdge` no longer declares `refusedPolarity`). [9]
+
 - The GSAP-gate determinism tests that pin the no-ticker-under-effects-off contract. [10]
+
 
 ## Current L5I Maintenance
 

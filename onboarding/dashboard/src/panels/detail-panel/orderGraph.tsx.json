@@ -154,7 +154,7 @@
   ],
   "references": {
     "1": {
-      "note": "Order uses entry stage/activity and the shared status presentation while retaining producer dependency waves/readiness; graph-derived done/abandoned totals are absent, and the own graph view retains the supplied graph.\n\nAnchor: entry rows, node state and whole-graph view",
+      "note": "Order uses entry stage/activity and the shared status presentation while retaining producer dependency waves/readiness; graph-derived done/abandoned totals are absent, and the own graph view retains the supplied graph.",
       "targets": [
         {
           "anchor": {
@@ -170,8 +170,8 @@
         },
         {
           "anchor": {
-            "blob": "93ffe77d936316b626b29345160cb4f334d0451b",
-            "content": "sha256:f3183abfa389ede38a838c5676e0641e1c656b80747d2faac871151fcb476270",
+            "blob": "3697bf67f62826377744697f4c60a9d4a4711332",
+            "content": "sha256:14d599290343af74c66b9fa8be5de7b3449035054b86bd4ac6c7d73cbc451bc9",
             "locator": {
               "end": 156,
               "kind": "line_range",
@@ -194,8 +194,8 @@
         },
         {
           "anchor": {
-            "blob": "17da14e723222a8d50b4ed6f0595390ab1fe1f6a",
-            "content": "sha256:bc4ae159d2c06abf5b3013b49558caef6bdd9ce2485a940130f171bf32322519",
+            "blob": "bc164a94462c83d4491167bce3b58a8ce7003b54",
+            "content": "sha256:a7d31073a2ef5dc9812fd57e66016ec03e020cdbe39dff625f6a30dcefcd76ee",
             "locator": {
               "end": 101,
               "kind": "line_range",

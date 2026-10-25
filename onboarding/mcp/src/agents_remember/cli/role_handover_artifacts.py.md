@@ -30,13 +30,24 @@ Primary handover size limit, exact first-message recovery line, atomic hard-link
 
 - Per-source deterministic detail names reuse immutable publication. [7]
 - Takeover reference retains exact bounded bytes. [8]
+
 - Replay binds takeover bytes to the saved report and primary handover. [9]
-- Descriptor-level regular-file and no-follow checks protect exact reuse. [10]
+
+
+- Exact reuse is protected by `cli/immutable_artifact`'s descriptor-level regular-file and no-follow checks, imported here as the write-once and preflight seams. [10]
+
 - Test source models a regular-to-link swap and unchanged foreign bytes. [11]
 
+
 - Frozen implementation of write_handover_artifact supporting the stated file behavior. [1]
+
+
 - Frozen implementation of restore_handover_artifact supporting the stated file behavior. [2]
-- Frozen implementation of _write_once supporting the stated file behavior. [3]
+
+
+- `write_once`, imported from `cli/immutable_artifact` as `_write_once`, is how this module's artifacts are created once and reused only when they already hold the same bytes. [3]
+
 - Checks path, bytes, digest, read-only mode, exact reuse and conflicting-content refusal. [4]
 - Checks size limit and refuses links without changing their target. [5]
+
 - Through leaf/taskless routes checks restoration/refusal, exact advice and unchanged receipt/foreign link target. [6]

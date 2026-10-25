@@ -19,12 +19,12 @@
       ]
     },
     "2": {
-      "note": "Cockpit startup owns the returned lifecycle.\n\nAnchor: \"} from \\\"react\\\";\"; \"import { startScreenWakeLock } from \"",
+      "note": "Cockpit startup owns the returned lifecycle.",
       "targets": [
         {
           "anchor": {
-            "blob": "76c1e952f0b6c4c9d708c3edf4cd8b28c0f764ff",
-            "content": "sha256:08b8bd133a0e18ed1096568fc817b9ab856652a56f71ff512bb6015ffa2ca149",
+            "blob": "1b839113b8d511b4a8343230e70a8de0be01b79f",
+            "content": "sha256:fac0c916f45a1e4a7a4a32782c96e1da69bd2532f4f284fd893214e506f8cd61",
             "locator": {
               "end": 21,
               "kind": "line_range",
@@ -36,8 +36,8 @@
         },
         {
           "anchor": {
-            "blob": "76c1e952f0b6c4c9d708c3edf4cd8b28c0f764ff",
-            "content": "sha256:ce3e0150659079d77f1751f95b88af50229efa4af6fec3f03153e4fe0db78919",
+            "blob": "1b839113b8d511b4a8343230e70a8de0be01b79f",
+            "content": "sha256:301a96d8f8bdab44886b0e3b17bb4bd91794d7f0c66cfd9bb33b26023b74112e",
             "locator": {
               "end": 9,
               "kind": "line_range",

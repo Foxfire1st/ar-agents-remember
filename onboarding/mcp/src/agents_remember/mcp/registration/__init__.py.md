@@ -91,17 +91,26 @@ register_role_agent_tools is added to TOOL_REGISTRARS in the existing registrati
 
 ### Repo-Internal References
 
+
 - The `create_server` consumer iterates `TOOL_REGISTRARS`. [1]
+
+
 - The advertised tool-name list's one definition, re-exported unchanged by the adapter. [2]
+
 - The registrar appended last so no existing registration order moved. [3]
 - The three advertised names the appended registrar publishes, at the tail of both surfaces. [4]
+
 - The capsule registrar historically appended immediately before knowledge, before the role-agent insertion. [5]
-- The three advertised names the capsule/skill registrar publishes, immediately before the knowledge tail. [6]
+
+
 - The live registered-order comparison that makes a registrar-without-roster-name a surface violation. [7]
+
 
 ### Runtime Source References
 
+
 - Frozen implementation of TOOL_REGISTRARS supporting the stated file behavior. [8]
+
 
 </details>
 

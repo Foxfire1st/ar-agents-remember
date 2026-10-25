@@ -58,12 +58,12 @@
         },
         {
           "anchor": {
-            "blob": "aec064fbe052f1fae448ad042ec0647e548071fd",
-            "content": "sha256:8efb5d901989cf470afb25fe25b846eaa94d15eb31377c5d7f02008fd6560484",
+            "blob": "f4f4a7834d1243439efb6dc5e62786c22a5a31ad",
+            "content": "sha256:1811729027c9bdd791b188956be41ff38a06eb354889e4a0e488c010c25983ae",
             "locator": {
-              "end": 549,
+              "end": 552,
               "kind": "line_range",
-              "start": 506
+              "start": 509
             }
           },
           "kind": "test"
@@ -339,8 +339,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a86a7adc9a850e0e4913976530bd22203c29b300",
-            "content": "sha256:f1929db39cd0d9445a87d050cc25354ae9c502cf5f18a022c5a8b826d887526f",
+            "blob": "f4f4a7834d1243439efb6dc5e62786c22a5a31ad",
+            "content": "sha256:974fa459af786fdcc6648545971d2b34a1fd2e962b831ea017e6877c50fd5c5e",
             "locator": {
               "kind": "symbol",
               "name": "_World"
@@ -369,12 +369,12 @@
       ]
     },
     "26": {
-      "note": "The integration lane contains test_task_reopen_series_extension.py at the current declaration location, line470. Integration membership and the nine-step route are unchanged; a stale historical row number is not a semantic reopen change or an executed result.",
+      "note": "The integration lane in `mcp/tests/test-evidence-lanes.toml` lists `mcp/tests/test_task_reopen_series_extension.py`, and its nine-step route case still runs the whole route in order.",
       "targets": [
         {
           "anchor": {
-            "blob": "aec064fbe052f1fae448ad042ec0647e548071fd",
-            "content": "sha256:9e6f38281f8b0e026bd24cfa9eeda4653e35b6fccab9de9df33900168d4006fd",
+            "blob": "f4f4a7834d1243439efb6dc5e62786c22a5a31ad",
+            "content": "sha256:e2ebd8e3d6a1c059c044fcfefbb00e93b8d9f65e3d51a3a5cca763422a196ad2",
             "locator": {
               "kind": "file"
             }

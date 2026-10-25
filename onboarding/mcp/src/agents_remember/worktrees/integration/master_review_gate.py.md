@@ -46,7 +46,12 @@ No external documentation source was configured for this source-owned gate.
 ### Repo-Internal References
 
 - Typed blocked-integration payload projection. The former `master_route_review_block` / `master_route_review_refusal` pair is gone from this module; the refusal projection now lives in `worktrees/route_review.py` as `route_review_refusal_projection` / `route_review_refusal_fields`. [1]
+
+
+
 - Preflight and lock-time publication paths consume the gate. [2]
+
+
 
 ### Cross-Repo References
 

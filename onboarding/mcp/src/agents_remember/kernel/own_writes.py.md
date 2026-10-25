@@ -18,4 +18,5 @@ Local implementation and executable evidence do not replace requirement authorit
 
 ## Evidence
 
+
 - Suppress only this process's certified completed filesystem effects from its native projection watcher. Pending announcements defer judgment; descriptor identity, event kind and optional payload digest distinguish outside writes. Missing/error/expired identities fail open; bounded drop-oldest maps expose reclamation. [1]

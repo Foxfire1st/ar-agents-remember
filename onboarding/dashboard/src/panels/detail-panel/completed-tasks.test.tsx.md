@@ -18,7 +18,9 @@ Aborted-master/sprint groups retain authored order without sort controls. Seeded
 
 ## Evidence
 
+
 - Seeded completed-table cases assert time/number ordering, preview and retained non-completed/sprint order, not timestamp production. [1]
+
 
 
 

@@ -3,12 +3,12 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The real summary, and the state table's derivation from it.\n\nAnchor: \"'../review/laneReview.summary.captured.json'\"",
+      "note": "The real summary, and the state table's derivation from it.",
       "targets": [
         {
           "anchor": {
-            "blob": "1212d288a2e6c5341f27f05db469d7533ea2dd26",
-            "content": "sha256:1174c213d5a75f6b6d810796f3ef03b54274fe8ee3664b4105cbd2a592338dab",
+            "blob": "2e00968b1dc3795394c0decc980f766b22dd901f",
+            "content": "sha256:22aab2b31eb79fd8faf7956f1c3520ddbdbca3d549a8a93b485e11bb3b1802f8",
             "locator": {
               "end": 23,
               "kind": "line_range",
@@ -71,39 +71,14 @@
       ]
     },
     "5": {
-      "note": "The entry's count and its details under test.",
+      "note": "The entry's count and its details under test.\n\nAnchor: `attributionText` `AttributionCount` `AttributionDetails`",
       "targets": [
         {
           "anchor": {
-            "blob": "9f16a4ea899010aae0203cfd8712a007026dabf6",
-            "content": "sha256:9e22e2645d3b1d91a5dd37f4578d13472ea9fabbcedb940b2ebab83de9a174be",
+            "blob": "7589f63f1bb655f537e84d56ad377746d725da2b",
+            "content": "sha256:2d7f4935f88d2401d98cb7d831ecccab0c534bc6477233cd179cbd540e8fbb0a",
             "locator": {
-              "kind": "symbol",
-              "name": "attributionText"
-            },
-            "path": "dashboard/src/panels/detail-panel/intentReviewEntry.tsx"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "9f16a4ea899010aae0203cfd8712a007026dabf6",
-            "content": "sha256:a4b2b612e17165e9f6d36b9ac10e6f34715027b57b1b9d56baef8973f49ce833",
-            "locator": {
-              "kind": "symbol",
-              "name": "AttributionCount"
-            },
-            "path": "dashboard/src/panels/detail-panel/intentReviewEntry.tsx"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "9f16a4ea899010aae0203cfd8712a007026dabf6",
-            "content": "sha256:b97e9c7ab455a45dababfe31c12adb079fbd1ddbb56b54e2e1fc28cbbfb4da43",
-            "locator": {
-              "kind": "symbol",
-              "name": "AttributionDetails"
+              "kind": "file"
             },
             "path": "dashboard/src/panels/detail-panel/intentReviewEntry.tsx"
           },

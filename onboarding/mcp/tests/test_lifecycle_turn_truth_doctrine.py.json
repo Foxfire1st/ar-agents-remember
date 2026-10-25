@@ -75,12 +75,12 @@
   ],
   "references": {
     "1": {
-      "note": "The common home owns terminal-only truth, recipient validation and the separate acceptance authority.\n\nAnchor: Substantive terminal truth and owner validation, not the heading alone",
+      "note": "The common home owns terminal-only truth, recipient validation and the separate acceptance authority.",
       "targets": [
         {
           "anchor": {
-            "blob": "4f6181bc4f0045bcaf1828fe6e777bf68c490a9a",
-            "content": "sha256:6bed139c436c8266e367d854087105ad365b9d36152c5dbfc3456ceaab8b7f15",
+            "blob": "2a112bdb1148478a8a719636588cb908fab01cac",
+            "content": "sha256:5f751456b63f2e6f3938c662f9154b87dc851fd198fbe5b1db8c8940c9b355b6",
             "locator": {
               "end": 25,
               "kind": "line_range",
@@ -120,12 +120,22 @@
       ]
     },
     "3": {
-      "note": "The per-surface owed clauses, and the relay-mechanics surfaces the corpus still names.\n\nAnchor: `OWED_STATEMENTS`, `RELAY_MECHANICS_SURFACES`",
+      "note": "The per-surface owed clauses, and the relay-mechanics surfaces the corpus still names.\n\nAnchor: `OWED_STATEMENTS` `RELAY_MECHANICS_SURFACES`",
       "targets": [
         {
           "anchor": {
-            "blob": "2eaa2f828ba56892bad654fa5cf51b39dd84ccca",
-            "content": "sha256:df6409f55f169bb98d26d104ce854ad89419febcb01f1dd6253cbbd9e29aa59d",
+            "blob": "74a051a27a76bfa2d21ab404b581911d5e391701",
+            "content": "sha256:aa48fe416b66858a80f0e78f0780efcad0ed9caa4b6123f32b4a29ba4f1a2ead",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "74a051a27a76bfa2d21ab404b581911d5e391701",
+            "content": "sha256:fac708389f4be2411d00eed64bafb5eb9308c15e9062f27e0bb70e64e2d23a41",
             "locator": {
               "kind": "symbol",
               "name": "OWED_STATEMENTS"
@@ -234,27 +244,14 @@
       ]
     },
     "6": {
-      "note": "The projection-side sibling that re-asserts the same clauses against canonical plus the nine generated copies.",
+      "note": "The projection-side sibling that re-asserts the boundary clauses against the canonical doctrine tree and its one declared packaged copy.\n\nAnchor: `PROJECTED_BOUNDARY_CLAUSES` `BoundaryClause`",
       "targets": [
         {
           "anchor": {
-            "blob": "fa6b99bc359f684819c0a8df22f9ba1246bec976",
-            "content": "sha256:2fd9565c1694edc13ad32b80f722ab7cc18d04d4904c2a2dc7e153cc1704b6d8",
-            "locator": {
-              "kind": "symbol",
-              "name": "PROJECTED_BOUNDARY_CLAUSES"
-            },
-            "path": "mcp/tests/test_sync_scripts.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
             "blob": "d8d6485f71b25f0443538b015acbb8645352309d",
-            "content": "sha256:7b95197c93f288ae1830ba7b56ae9ea89b7be9746ad053dbe3c6b02ea778e3e6",
+            "content": "sha256:81048cf1574047eb159b42caaccadab6709f9ae6e942183f0ee98e12cae46dc5",
             "locator": {
-              "kind": "symbol",
-              "name": "BoundaryClause"
+              "kind": "file"
             },
             "path": "mcp/tests/test_sync_scripts.py"
           },

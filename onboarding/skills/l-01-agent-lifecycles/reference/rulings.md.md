@@ -21,14 +21,20 @@ The index records the conditional clean-sync rule, the Manager's same-kind prece
 - The ruling index names the clean-sync, precedent and visible direct-repair obligations at their authored owners. [5]
 
 
+
 - Each row records one obeyed ruling with its carrying anchor and supersession. [1]
+
+
 - Seats follow rules where authored; reason and supersession live in this index. [2]
+
 
 ## Current source qualification
 
 The current index records reasons and supersession, while the operative rule stays at its role/operation/core owner. It records role_start for the free-chat Architect start and the host's turn-end line to the parent, not the removed notifier sweep. Its LOCR section is explicitly historical after R113; it restores neither observer/relay machinery nor the withdrawn blanket harness-helper ban. Existing ownership and independent-review boundaries remain.
 
+
 - The ruling index preserves supersession while marking LOCR relay/sweep/observer material historical and retaining the current role_start/host-signal account. [3]
+
 
 
 ## Inherited Source-Epoch Commentary
@@ -133,5 +139,6 @@ Inherited reference 1 commentary (not a revalidated target):
 ## Canonical Source Ownership
 
 The byte-equal package copy is a distribution carrier, not an independent role, task or permission authority. Whole-file source evidence does not certify inherited statements, execution, grading or the whole card.
+
 
 - The authored source owns this contract; the distribution copy is not a separate authority. [4]

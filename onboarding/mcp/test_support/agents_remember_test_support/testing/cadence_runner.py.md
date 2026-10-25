@@ -48,7 +48,9 @@ No external domain documentation governs the local cadence command.
 ### Repo-Internal References
 
 - Only scheduled, provider-bump, and migration triggers can execute. [1]
+
 - The Dagger public route remains explicitly non-accepting. [2]
+
 
 ### Cross-Repo References
 

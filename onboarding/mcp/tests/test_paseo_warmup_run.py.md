@@ -19,5 +19,5 @@ Local implementation and executable evidence do not replace requirement authorit
 ## Evidence
 
 
-- Unit assertions for the background warmup scheduler (MIK-R145), with injected resume and memory callbacks; this module observes no actual host start or host request. [1]
 
+- Unit assertions for the background warmup scheduler (MIK-R145), with injected resume and memory callbacks; this module observes no actual host start or host request. [1]

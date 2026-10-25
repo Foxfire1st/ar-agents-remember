@@ -148,10 +148,18 @@ and outside this leaf's packet:
 
 ## Evidence
 
+
 - The tokens a reader can be shown. [22]
+
+
 - The codes and their tokens, with the two transient codes of the leaf-wide view. [23]
+
+
 - The refusals of the intent half alone. [24]
+
+
 - The error a review read throws. [25]
+
 - A typed refusal becomes a failure with its fields unchanged. [27]
 - A superseded request's signal is aborted. [28]
 
@@ -170,23 +178,43 @@ behaviour this module deliberately does not change, the client that delegates he
 that consume the one failure shape, and the case module that drives the whole thing over real HTTP
 bodies. Every anchor in a row occurs inside the range that row cites.
 
+
 - **The header's own record of the defect this module exists for, and of its two boundaries: the body is the answer whatever the status, and the shared client keeps throwing for the routes that use it.** [29]
+
 - **The shared client whose throw-on-non-2xx idiom is right for the other serving routes and dropped this route's typed refusal whole: the behaviour this module deliberately does not change.** [30]
+
 - **The failure vocabulary: one token per answer that is not a review, including the two honest fallbacks, and the explicit statement that `loading`/`known-empty` are not members.** [31]
+
 - **One failure in the owner's own terms, with `code` never re-spelled and `httpStatus` present only when a response carried it.** [32]
 - The typed refusal's wire fields, declared structurally so the import runs one way only. [33]
+
 - **The only code→state table in the dashboard, and the classifier that carries an unknown code verbatim rather than guessing it into a state.** [34]
+
+
 - **The refusals that answer for the intent half alone, which is what licenses offering the task's source inventory as a separate question.** [35]
+
+
 - The one error, staying a `FilesApiError` for existing catchers while carrying the whole failure. [36]
+
 - **The single transport-level classification: the body's own `status`, the optional fields read only where published, and `path` accepted as the port's own spelling of the offending input.** [37]
+
 - **A failure with no HTTP response is its own token and carries no status.** [38]
+
 - **A typed refusal projected through the same classifier, so the entry and the surface cannot disagree about a code.** [40]
+
 - An answer whose `state` this client does not admit is named, never rendered as a review. [41]
+
 - Any thrown cause as a failure: the transport error's own, anything else as the network failure it must be. [42]
-- The three public client reads use the shared review transport. [43]
+
+- The review client's two public reads — the review and the entry catalogue — both go through the shared review transport, which this module re-exports. [43]
+
 - **The rendered counterpart of this module's classification: one region for every state that is not a review, and one block carrying every field the owner published.** [44]
+
 - The task entry's brief word for the same tokens (`briefProblem`), shown on a control that never disappears, with the owner's full sentence in the disclosure beside it (`problemSentence`, since `260921-ICR-L47`). [45]
+
+
 - The change-set client and the route the routed debt belongs to — a different client, a different route and a different owner from the review transport, which is why this leaf leaves it untouched. [46]
+
 - **The cases that drive the real client functions against the measured route bodies, including the pair that shows `getJson` dropping the identical body this decode preserves.** [47]
 
 ### Cross-Repo References

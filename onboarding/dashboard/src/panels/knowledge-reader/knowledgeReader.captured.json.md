@@ -60,13 +60,17 @@ No configured live documentation source was available for this pass.
 
 ### Repo-Internal References
 
+
 - The provenance: the re-capture, the scratch commits, the source and the trims. [1]
+
 - The root summary's body. [2]
 - The superseded decision: stored active, derived superseded. [3]
 - The invariant's body with its timeline. [4]
 - The commit list named as listed. [5]
 - One subtree page under the reader's policy. [6]
+
 - The test that reads it. [7]
+
 
 ### Cross-Repo References
 

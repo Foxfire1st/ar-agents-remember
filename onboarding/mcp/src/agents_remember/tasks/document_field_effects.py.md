@@ -121,7 +121,9 @@ It is an authority link, not a resolved dependency-version source; current behav
 evidenced by the repository-owned references below.
 
 
+
 - R04 taxonomy and task-first projection scope remain separate owners; the root map now classifies completedAt as audit, waitsFor as topology, and nonGoals/acceptance as intent. Invalidation follows recursive classified deltas, never operation-name inference. [1]
+
 
 
 
@@ -131,7 +133,9 @@ evidenced by the repository-owned references below.
 - MIK-R11's declaration and its nested fields are classified normative. [3]
 - The closed effect vocabulary and projector are declared together. [4]
 
+
 - The exhaustive map covers root and nested persisted models, including the four new root fields; display-only major counting does not weaken nested readiness memberships. [5]
+
 
 
 - The effect-to-mutation-class map and the exact before/candidate classifier drive projection invalidation decisions. [6]

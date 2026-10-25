@@ -44,7 +44,9 @@ No configured live documentation source was available for this pass.
 
 ### Repo-Internal References
 
+
 - The module statement: once per walk page, cut to each candidate. [1]
+
 - The one evaluation, and its failure document. [2]
 - A candidate's subset block. [3]
 - The subset as an object, for the merge with a leaf subset (MIK-R01). [4]

@@ -3,12 +3,12 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "New step-1 reader-argument syntax reference; scope/refusal boundaries stay inline.\n\nAnchor: Candidate instruction body, lines 3–7",
+      "note": "New step-1 reader-argument syntax reference; scope/refusal boundaries stay inline.",
       "targets": [
         {
           "anchor": {
-            "blob": "7ad11c184492f8e943420dd44a70ae192d5bc7c5",
-            "content": "sha256:e2a568864a81a70982a1d7ec8461a1df802d52855bc84b424374ddd1c57da0c5",
+            "blob": "e5545375ff6ae1cca5c2c6a0580d1779332b1e9a",
+            "content": "sha256:ff6c18c98d9b7554ff7f8bdcf9902cd08a9b59c4836ba7f7123205d52139be82",
             "locator": {
               "end": 7,
               "kind": "line_range",

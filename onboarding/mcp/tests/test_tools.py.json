@@ -1,23 +1,8 @@
 {
   "path": "mcp/tests/test_tools.py",
+  "proves": [],
   "realizes": [],
   "references": {
-    "1": {
-      "note": "Ping payload",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "3ab0d44d1db2a5d0385439309040570f61329bc5",
-            "content": "sha256:bc3523be0c26fbd36b7da7ba6d31cfcd23532281978cbcc1dcf5ce29237da720",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_ping_payload"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
     "10": {
       "note": "The pause description presents a stop that publishes NOTHING, names the checkpoint landing as the separate publication, and — since the already-vacant stop — advertises no refusal the verb no longer performs while still naming the release it does perform.",
       "targets": [
@@ -130,8 +115,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3ab0d44d1db2a5d0385439309040570f61329bc5",
-            "content": "sha256:a7c540b564a4f70b43238020cc5398b72ae9e8051fc96713452ea5f3e762ab4c",
+            "blob": "d0620d3a6b3d0466f16d6b6d715eb161641e387f",
+            "content": "sha256:64e24595149ec7e53a9dd213b8c83c0f00fc7e087dd026628590b21cc5c7cc27",
             "locator": {
               "kind": "symbol",
               "name": "test_server_info_payload_reports_safe_config_summary"
@@ -162,19 +147,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3ab0d44d1db2a5d0385439309040570f61329bc5",
-            "content": "sha256:5b77c4fe61a1fd3aeeb22e88812b8b82593225c0bbf55608abe1575e271953ce",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_typed_cgc_payloads_reject_invalid_inputs_before_provider_execution"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "3ab0d44d1db2a5d0385439309040570f61329bc5",
-            "content": "sha256:fd8784fc66056433d934794603ababc2ec17659055fe43f6b27084c6b3b76bde",
+            "blob": "d0620d3a6b3d0466f16d6b6d715eb161641e387f",
+            "content": "sha256:a4afd4438f11d148b262fabd30b44932163efd02a75d9762358b095f52647751",
             "locator": {
               "end": 166,
               "kind": "line_range",
@@ -190,19 +164,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3ab0d44d1db2a5d0385439309040570f61329bc5",
-            "content": "sha256:5aac2d9cc9d5297ac6dd6fe069dcbb99751556de2fb89dade0d69a816dbf91b4",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_grepai_payloads_reject_invalid_scope_and_trace_inputs"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "3ab0d44d1db2a5d0385439309040570f61329bc5",
-            "content": "sha256:4ed6f3af6d13c5ed97676e10c9307610042cba307c8acd8ff9728897dc07f745",
+            "blob": "d0620d3a6b3d0466f16d6b6d715eb161641e387f",
+            "content": "sha256:aa318b7bc3a66a5a1e5a2ad721c70f6463d8d0a4ffd07eb5595949331777ff80",
             "locator": {
               "end": 197,
               "kind": "line_range",
@@ -246,8 +209,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3ab0d44d1db2a5d0385439309040570f61329bc5",
-            "content": "sha256:5319f993c559291e3b720caa230d0a29bb5c50a11a75b5cfceef5c6635bf98d6",
+            "blob": "d0620d3a6b3d0466f16d6b6d715eb161641e387f",
+            "content": "sha256:03030d49d68430511b4a8a43d5f01b97bb4d6adb68b01824b29c75d0c05c56ab",
             "locator": {
               "kind": "symbol",
               "name": "test_worktree_record_landing_has_a_response_model_that_validates"
@@ -257,8 +220,8 @@
         },
         {
           "anchor": {
-            "blob": "3ab0d44d1db2a5d0385439309040570f61329bc5",
-            "content": "sha256:4871fce57c7aa66b58e7dfc4a4c41f84f6fc1ded874fe0fe29b9b3dd9f09b000",
+            "blob": "d0620d3a6b3d0466f16d6b6d715eb161641e387f",
+            "content": "sha256:4dac9164dae32c20b456dee533176d6229b756e736392bcfefd23eb476db89ae",
             "locator": {
               "end": 261,
               "kind": "line_range",

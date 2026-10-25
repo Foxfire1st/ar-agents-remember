@@ -15,8 +15,15 @@ Without task_context readers retain configured Projects roots. With context, rep
 ## Evidence
 
 - Frozen implementation of task_scoped_mcp_config_for_reader supporting the stated file behavior. [1]
+
 - Frozen implementation of _admit_task_scope supporting the stated file behavior. [2]
+
+
 - Frozen implementation of _canonical_leaf_contract supporting the stated file behavior. [3]
+
+
 - Alternating/concurrent registered base and leaf calls preserve their source/memory roots; wrong repository, canonical contract and malformed pairs refuse. [4]
+
+
 
 - The two canonical leaf reader branches preserve product-derived roots and call-local configuration. [5]

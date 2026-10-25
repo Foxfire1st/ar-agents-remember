@@ -127,11 +127,15 @@ and D-33 names the memory-quality and citation surfaces.
 
 - The tool response carries the converted measurement fields beside the legacy ones. [7]
 
+
 - Other memory MCP application entry points retain drift, citation, route-index, init, baseline, and carryover ownership. [2]
+
 - `DriftCheckResponse.status` uses the shared `DriftStatus` alias. [4]
 - `DriftSummary.status` uses the same shared `DriftStatus` alias. [5]
 - The context-packet wire face includes its matching `error` field. [6]
 
+
 - Memory-quality codes reach the shared guard without a model length rejection. [8]
+
 
 - The two optional quality fields are declared rather than merely tolerated flexible extras. [9]

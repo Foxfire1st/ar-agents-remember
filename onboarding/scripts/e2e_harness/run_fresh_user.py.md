@@ -69,7 +69,9 @@ None.
 - The entry point that drives the acceptance and writes the transcript. [1]
 - `--reports` is required and `--work-root` is optional. [2]
 - The transcript lands under this directory name. [3]
+
 - The acceptance the entry point drives. [4]
+
 - The shared writer for the transcript file. [5]
 - The case pinning the argument contract. [7]
 

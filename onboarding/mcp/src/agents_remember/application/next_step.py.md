@@ -228,13 +228,21 @@ No configured domain documentation governs this repository-local hint engine.
 the `NextStep` model, the worktree guidance state machine, the contract loader,
 and the ambient lifecycle / phase definitions.
 
+
 - The response boundary preserves an explicit producer hint or computes one, rejects contradictory task addresses, and enriches the validated model before final serialization. [1]
+
+
 - `NextStep` model + the `nextStep` field on the response envelopes — the declaration that makes setting it at the choke point legal. [2]
+
 - `lifecycle_guidance` state machine delegated to in the linear half; `_guidance_for` widens its payload with `dict(...)`. [3]
-- `load_contract` / `WorktreeContract` (sub-state fields read by `_gate_after`). [4]
+
+> Retained earlier citation wording: - `load_contract` / `WorktreeContract` (sub-state fields read by `_turn_end_after`). [4]
+
 - `amb.current` — the live `LifecycleState` resolved at the edge. (historical source target retired; original citation 5 retained in custody)
 - `LifecycleState` (`enclosure`, `is_terminal`) + `Phase` literals (`decide`, …) and the `awaiting-developer` state the parked branch reads (state/phase vocabulary in `models/lifecycle.py` since L9). (historical source target retired; original citation 6 retained in custody)
+
 - The next-step entry point derives guidance from the current lifecycle and tool; this source citation does not establish response token-count coverage. [7]
+
 
 As of HFX-L6, the FRONT_HALF_RUNDOWN reframe bullet names the architect lifecycle explicitly
 (`l-01-agent-lifecycles` `roles/architect.md`); the rundown's flow semantics are unchanged — the
@@ -252,3 +260,5 @@ No meaningful cross-repo references found.
 The reviewed response-hint boundary is internal to this repository.
 
 </details>
+
+- `load_contract` / `WorktreeContract` (sub-state fields read by `_turn_end_after`).  Anchor: `load_contract` `WorktreeContract` [4]

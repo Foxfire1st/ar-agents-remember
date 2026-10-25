@@ -24,7 +24,9 @@ No separate reference list: the file's sidecar carries the realization entries f
 
 The current source distinguishes the procedure from a role seat and removes the taskless authoring entry. The bootstrap seat neither reaches the procedure nor authors a record: it reads `memory_init`'s `knowledge` block, reports the state, and names the Architect as the next step. The Architect opens the real task, and a Curator started on that task's document through the ordinary launch route authors the foundation under the task's actual enclosure contract; a curator started from the dashboard without a task reads and reports only. No flag, boolean or instructed session takes the place of task admission, and no development leaf, worktree, enclosure or task document is fabricated to give the writer an argument list. Foundation authoring still uses the existing admitted file writer and the memory worktree the contract names, not a new database or publication destination. Older taskless-seat, taskless-wave and capsule-routing statements in the inherited copy are historical on those changed seams.
 
+
 - Foundation procedure carriers are distinct from the leaf-bound Curator seat; historical taskless-seat availability is not restored. [1]
+
 
 The procedure's last step is about what a run meets while reading: whatever part of the code it reads, a weakness it meets in that file is recorded in the same step, as a `WKN-` record of kind `context`, `compute`, `storage`, `time`, `fault` or `debt`, on the file and the symbol where it occurs, with one sentence and any measurement the reader took. The author is the curator and the route the writer, as for every other record; nothing writes a weakness by hand. A run's census, coverage plan and independent check count records and obligations, not weaknesses: a weakness is not a finding, its absence from a file is not an omission, and a run that meets none records none.
 
@@ -372,5 +374,6 @@ Inherited reference 9 commentary (not a revalidated target):
 ## Canonical Source Ownership
 
 The byte-equal package copy is a distribution carrier, not an independent role, task or permission authority. Whole-file source evidence does not certify inherited statements, execution, grading or the whole card.
+
 
 - The authored source owns this contract; the distribution copy is not a separate authority. [2]

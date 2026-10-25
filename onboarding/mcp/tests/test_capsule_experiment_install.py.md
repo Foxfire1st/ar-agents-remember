@@ -70,11 +70,26 @@ returned summary alone.
 
 - Selected-run facts are asserted from the retained logged whole result. [9]
 
-- Historical source-bound test account: the earlier `test_the_installed_application_keeps_its_machine_local_trees_out_of_the_mirror` at source blob `692f79431814b394af61d023185c1331cca1bf3f`, lines 668–698, asserted that machine-local dependency trees were not copied/pruned and the installed node_modules was a real directory. [4]
+
+- The module drives the real installer end to end and reads its results back from the files it wrote: the legacy-to-capsule cutover, the per-run selection record and the rollback plan, with the install source tree left byte-identical. [4]
+
 
 The present test module no longer contains that test or asserts those installed-application facts; the earlier witness is retained at its original source epoch, not claimed as a current regression case.
 
 - The current rollback test names the AGENTS.md restore row and its no-experiment restore command, and compares the payload rollback paths with those rows. [5]
 
+
+
+
+> Retained earlier citation wording: - The current settings-guard and portable Node-lockfile artifact rows both declare test_capsule_experiment_install.py as a consumer. The original two-row addition account belongs to its prior source epoch; these declarations establish no invocation. [6]
+
+
+
+
+
+> Retained earlier citation wording: - The current settings-guard and portable Node-lockfile artifact rows both declare test_capsule_experiment_install.py as a consumer. The original two-row addition account belongs to its prior source epoch; these declarations establish no invocation. [7]
+
 - The current settings-guard and portable Node-lockfile artifact rows both declare test_capsule_experiment_install.py as a consumer. The original two-row addition account belongs to its prior source epoch; these declarations establish no invocation. [6]
+
+
 - The current settings-guard and portable Node-lockfile artifact rows both declare test_capsule_experiment_install.py as a consumer. The original two-row addition account belongs to its prior source epoch; these declarations establish no invocation. [7]

@@ -122,26 +122,14 @@
       ]
     },
     "5": {
-      "note": "Missing compatible taskIntent withholds legacy reuse only when admitted direct leaf input is also absent; direct canonical-leaf binding preserves controls.",
+      "note": "Missing compatible taskIntent withholds legacy reuse only when admitted direct leaf input is also absent; direct canonical-leaf binding preserves controls.\n\nAnchor: `_without_legacy_generation_reuse` `_direct_generation_bound`",
       "targets": [
         {
           "anchor": {
-            "blob": "22e54f93cf313d0fba847faf9db02aee4548d848",
-            "content": "sha256:4eb8bfe6e999de484e6aa9986fa9af5dc1356deedc6fd13a97ad3815bdc92993",
+            "blob": "ec15ac742cf6d1c0f36be58ace69dbd8f600c128",
+            "content": "sha256:55f534cea5d95b295b098c2bba487721a8c4db77d8e06f18acd465332d328667",
             "locator": {
-              "kind": "symbol",
-              "name": "_without_legacy_generation_reuse"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "22e54f93cf313d0fba847faf9db02aee4548d848",
-            "content": "sha256:5e6c611b39e50ccbc11188edbd085d591392aae6ed8ec6fd595186029040adcc",
-            "locator": {
-              "kind": "symbol",
-              "name": "_direct_generation_bound"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -149,17 +137,43 @@
       ]
     },
     "6": {
-      "note": "Direct-create recoverability is classified from persisted same-generation code/ref/memory evidence.",
+      "note": "Direct-landing recoverability is classified from the persisted generation's typed accepted input, exact code commit/tree, memory repository/ref and accepted or intended live memory evidence.",
       "targets": [
         {
           "anchor": {
-            "blob": "22e54f93cf313d0fba847faf9db02aee4548d848",
-            "content": "sha256:d6798d20bfa4a8ce762aba2349db95d78ca3c025db9c70a61db33e361bfc879e",
+            "blob": "ec15ac742cf6d1c0f36be58ace69dbd8f600c128",
+            "content": "sha256:d8c4211602b3526af93b586a8d536d0af5c9c8ad02ad3812b6bdbe14aa1c1a3d",
             "locator": {
-              "end": 602,
+              "end": 191,
               "kind": "line_range",
-              "start": 1
+              "start": 181
             }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b7cf5d8bc1072379437f9008a7e43f97c869764b",
+            "content": "sha256:57199e9248e66a069a4c92ed5f42d21f2c439cc0534277bc86d0bd7304ee71a1",
+            "locator": {
+              "end": 184,
+              "kind": "line_range",
+              "start": 97
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_recovery_state.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b7cf5d8bc1072379437f9008a7e43f97c869764b",
+            "content": "sha256:98cf2c0859b5c7a1f7d6b47137f1bed015b5a84cddf7745200bcc29be8ed5c9d",
+            "locator": {
+              "end": 319,
+              "kind": "line_range",
+              "start": 294
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_recovery_state.py"
           },
           "kind": "code"
         }

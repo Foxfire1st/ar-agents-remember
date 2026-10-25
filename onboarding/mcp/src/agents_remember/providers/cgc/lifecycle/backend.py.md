@@ -14,7 +14,7 @@
 
 `cgc_primary_backend_context(args)` and `cgc_backend_start_context(args)` now return the frozen
 **`CgcBackendContext(settings_path, provider_settings, layouts, backend)`** instead of a
-five-tuple. `context.layout` is a property returning `layouts[0]` — the primary layout the backend
+five-tuple. `context.layout` is a property returning `layouts` — the primary layout the backend
 commands act through, since the FalkorDB backend is shared across every configured repo layout.
 Every backend command needs the whole context, so unpacking is gone.
 

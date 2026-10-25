@@ -88,7 +88,14 @@ This onboarding is backed by the source template itself.
 - The developer-clarification section routes verified clarifications through `c-05-create-or-update-onboarding-files` only after a code-reality check, and discusses mismatches before onboarding propagation. [4]
 - The resolver section uses context_packet for roots/actions with no provider argument; provider state comes from settings/provider operations when configured. [5]
 
-- Memory-layer routing sends repository-specific guidance, including code quality checks, to memory-layer `system/*` files after `c-08-ar-coordination-context-resolver` skill resolves `memory_root`. [6]
+
+
+
+
+- Memory-layer routing sends repository-specific guidance, including code quality checks, to memory-layer `system/*` files after `c-08-ar-coordination-context-resolver` skill resolves `memory_root`. Source caption: `### Memory Repo User Settings, Instructions, and Guidelines` [6]
+
+
+
 - The template says not to run Git commands against `ar-coordination/` as a whole; Git belongs to resolved code roots or memory roots that are Git repositories, and task files under `ar-coordination/tasks/` are local coordination artifacts unless a workflow says otherwise. [7]
 - Branch/worktree approval boundaries and memory-layer authority remain listed in the template. [8]
 - The final code-quality section points agents at resolved memory-layer `system/tools.md` and optional `system/coding-guidelines.md` for repository-specific checks and coding rules. [9]
@@ -100,6 +107,8 @@ No sibling repository evidence is needed for this package template.
 No meaningful cross-repo references found.
 
 ## Preserved incoming L109 source witness
+
+
 
 
 

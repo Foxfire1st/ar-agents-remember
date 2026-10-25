@@ -69,20 +69,27 @@ None.
 ### Repo-Internal References
 
 
+
 - `qualified_spans` owns the current boundary described above. [26]
+
 
 
 
 
 This module defines the top-level symbols cited below; each row points at the exact source range holding the anchor.
 
-- Defines the class `Extent` (lines 16-27) — One range an anchor occupies in a file, and how it was found. [29]
+
+- Defines the class `Extent` — one range an anchor occupies in a file, and how it was found. [29]
 
 
 
 
 
 
-- Defines the function `definitions` (lines 30-52) — Every name this file binds at any depth, and the extent of the construct binding it. [35]
+
+
+- Defines the function `definitions` — every name this file binds at any depth, and the extent of the construct binding it. [35]
+
+
 
 - The one symbol-binding rule, shared by the curator writer, the conversion and the reference check. [36]

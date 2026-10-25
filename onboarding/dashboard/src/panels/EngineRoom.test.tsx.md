@@ -17,7 +17,7 @@ Source/test/fixture inspection is not a fresh mounted capture or a passing test 
 Historical provider-shaped input data and retained compatibility definitions do not
 restore removed provider visuals or tool exposure.
 
-- Task status and operation phase remain separate; provider strip and fallback are absent in the rendered component fixture. [6] [7]
+> > - Task status and operation phase remain separate; provider strip and fallback are absent in the rendered component fixture. [6] [7]
 
 ## Historical superseded account (non-operative)
 
@@ -69,11 +69,19 @@ do not assert or reshape the enclosure canvas' workspace-engine rendering.
 
 ### Repo-Internal References
 
+
 - The `EngineRoomHeader` + `LIFECYCLE_PHASES` under test. [1]
-- `OfficialStrip` groups official workspace providers by label + runtime state and exposes grouped repo labels via hover/title. [2]
-- The local provider fixture helpers and official-strip assertions pin counted same-state CGCs, mixed-state separation, and GrepAI visibility. [3]
+
+
 - The `GALLERY` projection seed + the store `applySnapshot`. [4]
+
 - The honest-motion gate the pulse reads. [5]
+
+- The current EngineRoom case asserts no official provider strip or fallback, while the enclosure canvas remains present; its title records the MIK-R112 provider-engine surface removal. [6]
+
+
+- The current Engine Room composes enclosure stack, process map, boot timeline and diagnostics; its test requires the official provider strip and fallback absent while the enclosure canvas remains. This is source ownership, not fresh executed visual proof. [7]
+
 
 ## Current L5I Maintenance
 

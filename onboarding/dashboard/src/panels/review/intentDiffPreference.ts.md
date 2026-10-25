@@ -49,11 +49,13 @@ No configured live documentation source was available for this pass.
 
 ### Repo-Internal References
 
+
 - The module's statement: browser-local, the house idiom, no server store, inline when storage is unavailable. [1]
+
 - The key and the guarded read. [2]
 - The store: a guarded storage accessor, a write that never breaks the toggle, and the hook. [3]
 
-- The current module itself guards localStorage access and persistence failure while updating in-memory layout; no removed thinkingPreference import is needed. \[6] [6]
+- The current module itself guards localStorage access and persistence failure while updating in-memory layout; no removed thinkingPreference import is needed. [6]
 - The cases: the choice kept locally; inline when storage throws, and the toggle still works. [5]
 
 ### Cross-Repo References

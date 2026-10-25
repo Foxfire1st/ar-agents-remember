@@ -65,5 +65,7 @@ No meaningful cross-repo references found.
 
 - Kernel naming/exact cleanup retains its boundary. [1]
 - Drift pruning reuses the supplied contract snapshot (or builds one standalone), lists native heads once per configured/contract code repository and observes configured and worktree branch identities. A skipped contract, failed ref census or invalid/unreadable snapshot makes removal proof incomplete: invalid snapshots are skipped and every valid snapshot is retained. Only a complete census permits removal of a valid snapshot whose repository/branch identity is absent; physical checkout existence alone is not the keep policy. [2]
-- Shared snapshot parsing rejects malformed counters/identity/fingerprint data. [3]
+
+- `prune_orphaned_drift_snapshots` takes the keyword-only `contracts` snapshot and hands it to `_observe_branches`; the tick-injected snapshot means zero pruning-time contract parses.  Anchor: `prune_orphaned_drift_snapshots`, `_observe_branches` [3]
+
 - Contract snapshots remain immutable shared inputs. [4]

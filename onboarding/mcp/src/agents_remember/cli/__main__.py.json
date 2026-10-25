@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/cli/__main__.py",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
@@ -21,15 +22,14 @@
   ],
   "references": {
     "1": {
-      "note": "The `dashboard` subcommand adapter this dispatches to.",
+      "note": "The `dashboard` subcommand adapter this dispatches to.\n\nAnchor: `run`",
       "targets": [
         {
           "anchor": {
-            "blob": "80dd57c34d44fcd1bdd1920cb2b74809135bed5a",
-            "content": "sha256:19f9b7165341d3052d1b1125a87d54dbda0cec85951ef043f790dd6075630b36",
+            "blob": "126d045c43fbd830d1f124ab63fee6589db5d1ff",
+            "content": "sha256:46c5e49607dc31e2f7cc4d0109b23ffcf419a4a9b04c24d0af483843012913b4",
             "locator": {
-              "kind": "symbol",
-              "name": "run"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/cli/dashboard.py"
           },
@@ -140,15 +140,14 @@
       ]
     },
     "16": {
-      "note": "Frozen implementation of build_parser supporting the stated file behavior.",
+      "note": "Frozen implementation of build_parser supporting the stated file behavior.\n\nAnchor: `build_parser`",
       "targets": [
         {
           "anchor": {
-            "blob": "f2a43436f14b0bddc355c2234535b9c400967fe5",
-            "content": "sha256:299fa5a559924ee75e7670a38b95865d09d6118563b45252fa76a9ce59195f06",
+            "blob": "6e7bd5a18da5ea781594e67999b9b01f305937d4",
+            "content": "sha256:57963a8c05a50b4d7b23ed1e71af1f6df4675bb345acf2864f756afcd68470ec",
             "locator": {
-              "kind": "symbol",
-              "name": "build_parser"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -172,15 +171,14 @@
       ]
     },
     "18": {
-      "note": "The `upgrade-user-settings` subparser this leaf adds: the explicit whole-file move from the old coordination settings file to the user configuration directory, with `--coordination-root` and `--dry-run`.",
+      "note": "The `upgrade-user-settings` subparser this leaf adds: the explicit whole-file move from the old coordination settings file to the user configuration directory, with `--coordination-root` and `--dry-run`.\n\nAnchor: `build_parser`",
       "targets": [
         {
           "anchor": {
-            "blob": "f2a43436f14b0bddc355c2234535b9c400967fe5",
-            "content": "sha256:299fa5a559924ee75e7670a38b95865d09d6118563b45252fa76a9ce59195f06",
+            "blob": "6e7bd5a18da5ea781594e67999b9b01f305937d4",
+            "content": "sha256:57963a8c05a50b4d7b23ed1e71af1f6df4675bb345acf2864f756afcd68470ec",
             "locator": {
-              "kind": "symbol",
-              "name": "build_parser"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -205,15 +203,14 @@
       ]
     },
     "2": {
-      "note": "The peer CLI adapter pattern.",
+      "note": "The peer CLI adapter pattern.\n\nAnchor: `main`",
       "targets": [
         {
           "anchor": {
-            "blob": "f947ad7465ca039456a25e1f1d1a33273877ec5c",
-            "content": "sha256:7ee50b9f3a11345425f238468deef7fce578ac0b95c4f990dc3225a4d7d84e53",
+            "blob": "8695830492651c2480f98ae0111805f5fd7e1783",
+            "content": "sha256:4dc0e23cd58a72177f4ea11d2b05d955fe48eb865f489519ec98090d572d4c7d",
             "locator": {
-              "kind": "symbol",
-              "name": "main"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/cli/context_packet.py"
           },
@@ -222,27 +219,14 @@
       ]
     },
     "3": {
-      "note": "The memory-citations adapter, registered the same declarative way.",
+      "note": "The memory-citations adapter, registered the same declarative way.\n\nAnchor: `add_arguments` `run`",
       "targets": [
         {
           "anchor": {
-            "blob": "56a26304d13684aecb3c0fa2a06fcc57c5642b59",
-            "content": "sha256:8aeced3406aa19f6fd28dfbee6d4da96b780c3930df3f85c9c27b8a3f0ee47f2",
+            "blob": "21948ddc357f6a2e2168780d610322e15dc611b9",
+            "content": "sha256:2d04bd59fc9de1eb87fed1bd650664492398ac3ec5c44ec82ad377e2f447e1fd",
             "locator": {
-              "kind": "symbol",
-              "name": "add_arguments"
-            },
-            "path": "mcp/src/agents_remember/cli/memory_citations.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "02a5df1b93288aabad9b65d70fb9b8dde50bd320",
-            "content": "sha256:2c3cbe9f8391b24c471c4aa4ec30a0ee01bc0f8a16754b148d211d419bb3a00d",
-            "locator": {
-              "kind": "symbol",
-              "name": "run"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/cli/memory_citations.py"
           },
@@ -349,12 +333,12 @@
       ]
     },
     "9": {
-      "note": "**The `knowledge-convert` subparser `260928-MIK-L24` adds: the conversion of a memory tree and its database into the text format.**\n\nAnchor: `knowledge_convert`; \"knowledge-convert\"",
+      "note": "**The `knowledge-convert` subparser `260928-MIK-L24` adds: the conversion of a memory tree and its database into the text format.**",
       "targets": [
         {
           "anchor": {
-            "blob": "b51476f4480f30475c670c28cb88802ba8b600f4",
-            "content": "sha256:78bf7ea52798639925cff6048b1f51e086ddb12d000042dd4f29bea084924d52",
+            "blob": "6e7bd5a18da5ea781594e67999b9b01f305937d4",
+            "content": "sha256:bb18696d259d64016fee4989761364cc24939165e8776f2a56fa25407b61992b",
             "locator": {
               "end": 101,
               "kind": "line_range",

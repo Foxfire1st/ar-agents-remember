@@ -50,7 +50,7 @@ The following source-backed definitions and producer seams retain the broader re
 
 - RepoState and VALID_REPO_STATES define the producer vocabulary; git_facts_to_packet supplies the dict RepoSummary validates. [13]
 - FreshnessState and VALID_FRESHNESS_STATES define the producer vocabulary; freshness_to_packet supplies the freshness dict. [14]
-- ReadableMemoryMode is external/disabled for persisted reads; the startable MemoryMode is external only. Packet memory.mode and worktree.memoryMode use the readable alias. [15]
+> Retained earlier citation wording: - ReadableMemoryMode is external/disabled for persisted reads; the startable MemoryMode is external only. Packet memory.mode and worktree.memoryMode use the readable alias. [15]
 - worktree_status_packet returns WorktreeSummary directly; the packet constructs its worktree block rather than validating a dict. [16]
 
 ## Historical provider-readiness account
@@ -62,3 +62,5 @@ These former current claims are retained as history, not as instructions or pres
 > Provider readiness in the packet uses compact provider summary models.
 
 - The retained ContextPacketV2 schema has a ProviderSummary field, whose current producer emits configured/enabled with state skipped and no readiness items. The mounted SlimContextPacket v3 carries roots/actions and no provider block. [12]
+
+- ReadableMemoryMode is external/disabled for persisted reads; the startable MemoryMode is external only. Packet memory.mode and worktree.memoryMode use the readable alias.  Anchor: `ReadableMemoryMode` `MemorySummary` `WorktreeSummary` [15]

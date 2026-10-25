@@ -6,7 +6,9 @@
 
 ## Current source contract evidence
 
+
 - Current candidate source supports the operative account; historical sections grant no current tool or execution acceptance. [82]
+
 
 ## Purpose
 
@@ -190,10 +192,14 @@ No configured domain documentation could be checked.
 - Integrity delivers bounded validator/worklist status beside the whole internal result, not selected-run identities or a semantic verdict. [3]
 
 
+
 - Only admitted views carry proofs. [4]
 
 
+
+
 - The strict integrity model carries validator totals, bounded violations and the optional persisted leaf worklist, not a CODE/currentness verdict. [51]
+
 
 
 - All three tools refuse legacy/database selections without opening them; a partial read retains incomplete status. [56]
@@ -201,24 +207,46 @@ No configured domain documentation could be checked.
 
 - - The read adds `proofs` only for a converted memory tree's page, prepared once per page since MIK-R02. [57]
 - - A key mismatch joins the selection failures. [58]
+
 - - Invariant and family views of a tree carry their proofs; no pass or result key exists. [59]
+
 - - The integrity check's request value. [60]
+
 - - Dataset, leaf, both or neither; the leaf's worklist fields added when a contract is named. [61]
+
 - - The worklist fields read from the persisted file. [62]
 - - The tool returns the latest worklist. [63]
 - - A converted tree's page carries `currentness` at the walk's code tree, computed once per page beside its proofs. [64]
+
 - - A named tree flags the stale invariant and keeps it visible. [65]
+
+
 - - Without `codeTreeId` it is unverifiable and never reads `HEAD`. [66]
+
+
 - - A failing step never refuses the view. [67]
+
+
 - - A converted tree's read is handed to the paged tree read right after the selection. [68]
+
 - - The default ordering, applied only when the caller named none. [69]
-- - A converted-tree refusal states the threshold; a database refusal does not. [70]
+
+- - A refused read states the threshold block beside its refusal code and detail; a page states the same block in its own answer. [70]
+
+
 - - The paged tree read this module hands a converted selection to. [71]
+
 - - A named root that resolves no code tree is its own error, refused `selected_input_unavailable` naming the root. [72]
 - - `_source_resolution` raises it for a caller-named root without a tree. [73]
+
 - - The leaf read the tree read routes a `source_context` path read to (and, since MIK-R05, a read naming only `familyRevisionId`, as a family seed). [74]
+
+
 - - The flat read request as one frozen value: the continuation, the two revision selectors, the optional source roots, and an ordering left `None` unless the caller names one. [75]
+
+
 - - The flat read request's optional source-path seed, beside the unnamed-by-default ordering MIK-R02 introduced. [76]
+
 - - The one refusal envelope the read operation returns for an unknown view and for a view the seam refused. [77]
 - - The one refusal envelope the read operation returns for an unknown view and for a view the seam refused. [78]
 - The internal read admits six views — `source_context`, `invariant`, `family`, `record`, `weakness` and `dependent`, the last two being the marks views MIK-R118 rule 6 and MIK-R124 rule 7 read through — and carries its selected tree and shared resolver beside the rich page, binding sizing/projection to one revalidated epoch. [79]

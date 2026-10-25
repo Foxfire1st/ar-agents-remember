@@ -15,7 +15,9 @@ payload for MCP closeout workflows.
 
 `DriftCheckContext.landing_base` is an optional independent landing resolver. The converted drift-slot dispatch forwards it to `converted_knowledge_check` alongside the existing `knowledge_base`: contract-bound reports compare with the admitted leaf base, while validator classification keeps its operation-base semantics. This is context propagation, not another refusing check or registry entry.
 
+
 - The converted dispatch forwards independent validator and landing base ports. [18]
+
 
 
 ### Logic
@@ -31,7 +33,7 @@ On a converted tree the drift slot runs `converted_knowledge_check` under the re
 application binds it to the shared converted-base cache, so a converted working tree on an unconverted `HEAD`
 is validated against `HEAD`'s conversion (MIK-R24 rule 7). Without it the check uses a converted `HEAD`.
 
-The converted checker supplies refusing validator findings and report-only reference/landing observations. A supplied comparison-base failure is a named `R24.7-converted-base` finding, and base-dependent anchor-path refusals are withheld rather than evaluated against an invented empty base. This is not the removed source-index acquisition/error guard. The aggregate runner retains each checker's declared finding count, complete refusing findings, bounded report-only samples and opt-in complete report-only findings.
+The converted checker supplies refusing validator findings, a stale reference anchor among them, and report-only landing observations. A supplied comparison-base failure is a named `R24.7-converted-base` finding, and base-dependent anchor-path refusals are withheld rather than evaluated against an invented empty base. This is not the removed source-index acquisition/error guard. The aggregate runner retains each checker's declared finding count, complete refusing findings, bounded report-only samples and opt-in complete report-only findings.
 
 ### Invariants And Boundaries
 
@@ -47,9 +49,18 @@ The converted checker supplies refusing validator findings and report-only refer
 
 ### Repo-Internal References
 
-- `memory_quality_check` MCP tool builds drift context and calls this runner. [1]
+
+
+
+- The registered `memory_quality_check` dispatches typed sync/start/poll requests to their payload builders; its description names candidate leaf-contract scope and required coherence validation. [1]
+
+
+
 - Drift summary provides the integrity checker payload, now typed `-> DriftSummaryPacket`. [3]
+
+
 - The packet's `status` field typed by the imported status vocabulary, plus its `NotRequired` keys. [4]
+
 - The first pre-code check enforces entity inventory/fingerprint alignment without requiring code metadata. [5]
 
 - StyleCheckInputs now carries only the onboarding root; surviving style runners do not execute claim reopening or prepared-history citation gates. [6]
@@ -58,13 +69,20 @@ The converted checker supplies refusing validator findings and report-only refer
 
 - The surviving runner aggregates selected check results; it has no source-index acquisition exception guard. [8]
 
+
 - The converted checker reports named base-build failure rather than inventing an empty comparison. [9]
 
+
+
 - When a supplied converted base cannot be built, its named finding is retained and base-dependent anchor-path refusals are withheld. [10]
+
 
 - run_check dispatches only the surviving STYLE_CHECKS and refuses an unknown name. [11]
 
 - The aggregate runner retains declared refusing counts and complete findings, with bounded report-only samples and optional complete report-only rows. [13]
 
+
 - The drift context carries the converted tree's comparison base. [16]
+
+
 - The converted check receives the base port. [17]

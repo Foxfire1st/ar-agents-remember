@@ -1,5 +1,6 @@
 {
   "path": "dashboard/e2e/cockpit.spec.ts",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
@@ -7,8 +8,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d68450d8f1377b5ae463e379f2e78a6d2404ab0f",
-            "content": "sha256:b689db0fbed9b2afb176ecd5479091788175d4eeb63269b5c994412a07e5a978",
+            "blob": "bd0ab74c16b7f0bca74d183b9b006cd48b77924e",
+            "content": "sha256:33146b3fd83ec5cabc780889a981dc336142c833accf29cd7f81fdb21bad10e4",
             "locator": {
               "kind": "file"
             }
@@ -22,24 +23,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6ce7dec4c40a6fe280d065cc5ce576f1b5b3da2d",
-            "content": "sha256:b6eb8228a9d5873b043ed84fa8ba3f3588a0e03ab3cf630ca6eaff9955390452",
+            "blob": "58403a8e3f376b93e6cea8747e0d8ecdb222dd8c",
+            "content": "sha256:0b399324a5b92b6875378f983347d8c30a4dd89938753534c6152123b46f4a9d",
             "locator": {
-              "kind": "symbol",
-              "name": "cockpitScenarios"
-            },
-            "path": "dashboard/src/dev/scenarios.ts"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "6ce7dec4c40a6fe280d065cc5ce576f1b5b3da2d",
-            "content": "sha256:73861988b8cb841aeb93db3a5230f2a30a74d8332a27fdd5eacc34db4f71d813",
-            "locator": {
-              "end": 257,
-              "kind": "line_range",
-              "start": 214
+              "kind": "file"
             },
             "path": "dashboard/src/dev/scenarios.ts"
           },
@@ -52,8 +39,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "74de70faf9870cb74c6975c7bf2abcd19487c9a5",
-            "content": "sha256:b93daab0b7e84ca9b809a2140a4ccb1ed24f128888551ebd2252930e60453785",
+            "blob": "bd0ab74c16b7f0bca74d183b9b006cd48b77924e",
+            "content": "sha256:33146b3fd83ec5cabc780889a981dc336142c833accf29cd7f81fdb21bad10e4",
             "locator": {
               "kind": "file"
             }

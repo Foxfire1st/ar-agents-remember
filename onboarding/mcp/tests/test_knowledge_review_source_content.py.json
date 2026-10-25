@@ -1,5 +1,6 @@
 {
   "path": "mcp/tests/test_knowledge_review_source_content.py",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
@@ -420,7 +421,7 @@
       ]
     },
     "20": {
-      "note": "**The transport this module drives: the third route constant, the selector that carries the caller's generation, and the port the composition supplies.**",
+      "note": "**The transport this module drives: the third route constant, the selector that carries the caller's generation, and the port the composition supplies.**  > Retained earlier citation wording: - **The lane row and the two consumer rows this module's registration produced, with the counts they do not move.**",
       "targets": [
         {
           "anchor": {
@@ -484,35 +485,82 @@
         }
       ]
     },
-    "21": {
-      "note": "The refusal code the route answers with, added to the review vocabulary in the same change.\n\nAnchor: \"source_content_unresolved\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "005c44f99677f29c3777322502b77b732a3a0252",
-            "content": "sha256:bd6c5bf6eca62d44c807319571d642d9c42dffef1af37cc88ba79a795855c8f6",
-            "locator": {
-              "end": 160,
-              "kind": "line_range",
-              "start": 159
-            },
-            "path": "mcp/src/agents_remember/models/knowledge/review.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "22": {
       "note": "**The lane row and the two consumer rows this module's registration produced, with the counts they do not move.**\n\nAnchor: \"mcp/tests/test_knowledge_review_source_content.py\"",
       "targets": [
         {
           "anchor": {
-            "blob": "11ba98ff63f4a4815985ac51e2c0c7b5a48556a4",
+            "blob": "102c4550ab6429f44c8fb543d1d0662de66a1b8c",
+            "content": "sha256:a76d28987255bc973fec0d29a9e3b41a0704330037508157d8de6058c414cd94",
+            "locator": {
+              "end": 187,
+              "kind": "line_range",
+              "start": 187
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "102c4550ab6429f44c8fb543d1d0662de66a1b8c",
+            "content": "sha256:7700d68dcf4855295d022fa726b30b7d6da58a42755ce8d37843d680b6327b07",
+            "locator": {
+              "end": 5,
+              "kind": "line_range",
+              "start": 4
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "3c5993c94cf78973b3b39cfe7de9774c8aea6d1a",
+            "content": "sha256:ffd4aacf0b2ebfad8dbe2395bb2eabc563da4c4a440d925c41ad63fc3c0df2a5",
+            "locator": {
+              "end": 1221,
+              "kind": "line_range",
+              "start": 1193
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "3c5993c94cf78973b3b39cfe7de9774c8aea6d1a",
+            "content": "sha256:c6a5576999f7b056929cf63369b7bcaf3dd4144345132783feceee445860816a",
+            "locator": {
+              "end": 3355,
+              "kind": "line_range",
+              "start": 3322
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "102c4550ab6429f44c8fb543d1d0662de66a1b8c",
             "content": "sha256:eab64d260194c5f36644cc4bc3d873faed91e35e43249c7ecde01524f853437f",
             "locator": {
-              "end": 200,
+              "end": 203,
               "kind": "line_range",
-              "start": 200
+              "start": 203
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "102c4550ab6429f44c8fb543d1d0662de66a1b8c",
+            "content": "sha256:ef900a5b38b3a4393ac60a6d42f336d540dcb806538d4acca19a65c9c1fc194c",
+            "locator": {
+              "end": 172,
+              "kind": "line_range",
+              "start": 172
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -623,8 +671,29 @@
       ]
     },
     "5": {
-      "note": "**The shared R01 production fixture these cases extend rather than duplicate.**",
+      "note": "**The shared R01 production fixture these cases extend rather than duplicate.**\n\nAnchor: `content_fixture` `build_endpoint_fixture` `EndpointFixture`",
       "targets": [
+        {
+          "anchor": {
+            "blob": "311e58a2b77c5b2fe0036ebbb98a88798cc389ed",
+            "content": "sha256:33b2517fb5047cfd099afc6d3876eba9e880ee93eab36f4e8328c19cb5d6691a",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "bcbcc496c1dec9b0ec440122d7a990d82dcb69a1",
+            "content": "sha256:154d84ed29279279b9c392a02851fadf228ee0d19619acb50fe961e9174d8dc2",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_knowledge_review_source_endpoints.py"
+          },
+          "kind": "test"
+        },
         {
           "anchor": {
             "blob": "311e58a2b77c5b2fe0036ebbb98a88798cc389ed",
@@ -638,8 +707,8 @@
         },
         {
           "anchor": {
-            "blob": "ef7ea37ef8748fc8652f213eb82a099ffd4ad708",
-            "content": "sha256:f59fd381d9ee91d2ea59af9a8a0b994f40668abf4fb2974151cc8fe06d754a8c",
+            "blob": "bcbcc496c1dec9b0ec440122d7a990d82dcb69a1",
+            "content": "sha256:7a71c6aa065e4c675cc52debce57c452cc234e283c30bce536b251b1bb363146",
             "locator": {
               "kind": "symbol",
               "name": "build_endpoint_fixture"
@@ -650,8 +719,8 @@
         },
         {
           "anchor": {
-            "blob": "ef7ea37ef8748fc8652f213eb82a099ffd4ad708",
-            "content": "sha256:0c798a95c1ada8c9446d651225169cbdde97b5be1b2d1607112c87ae41550075",
+            "blob": "bcbcc496c1dec9b0ec440122d7a990d82dcb69a1",
+            "content": "sha256:63ec7b796d7c0062b9b913f86887f9d59ac926d08cd886085837eb6517ac4f90",
             "locator": {
               "kind": "symbol",
               "name": "EndpointFixture"
@@ -663,40 +732,17 @@
       ]
     },
     "6": {
-      "note": "**The routes wired as the composition root wires them, over the real application owners.**",
+      "note": "**The routes wired as the composition root wires them, over the real application owners.**\n\nAnchor: `_served` `register_review_routes` `read_review_source_content`",
       "targets": [
         {
           "anchor": {
-            "blob": "6492d7c9aef520bfe3699194cab7a1fea4a5dd65",
-            "content": "sha256:e6c57deb2e4c9371c91c6e79dfbc08eef9e5769504432102510ea2779aa2026d",
-            "locator": {
-              "kind": "symbol",
-              "name": "_served"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "f586b37f58f8578b6d886336ff8945ad4d88ac29",
-            "content": "sha256:99fc4ec2d3677253837aad7a34cb07b174c1c9f64b90e97a401c506ba1a03ad0",
+            "blob": "6add444a4a97d7a6620d640d6ffd27c4b3ec8734",
+            "content": "sha256:222322dbd439e8caeb43c5a2954c7c57f47b0033c5ea26c0647c13ee42493f09",
             "locator": {
               "kind": "symbol",
               "name": "register_review_routes"
             },
             "path": "mcp/src/agents_remember/serving/review.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "bb34bd25afcf45ac4905cf56ba55f8595a612b79",
-            "content": "sha256:dd9c9685ddbd2a1538eee6c37c80ce168bbd04f1084ce9b67bf3c48c6eef0e79",
-            "locator": {
-              "kind": "symbol",
-              "name": "read_review_source_content"
-            },
-            "path": "mcp/src/agents_remember/application/review_source_content.py"
           },
           "kind": "code"
         },
@@ -710,6 +756,61 @@
               "start": 221
             },
             "path": "mcp/src/agents_remember/serving/review.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "311e58a2b77c5b2fe0036ebbb98a88798cc389ed",
+            "content": "sha256:33b2517fb5047cfd099afc6d3876eba9e880ee93eab36f4e8328c19cb5d6691a",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "6add444a4a97d7a6620d640d6ffd27c4b3ec8734",
+            "content": "sha256:be76df9bb0c0e05f941397f214226d9d6338317e6ffca04c2ba890a9997fd41f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/serving/review.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "86818db1da3ffa24ccd6e04e62006ebf22897723",
+            "content": "sha256:dd8d91a91cd65fe4c2def41a42ee2ec108b32ed9ee94f9ca75321c0bc43b28c1",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/review_source_content.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "311e58a2b77c5b2fe0036ebbb98a88798cc389ed",
+            "content": "sha256:69c7843361f8b53b9b104a801eadbcb73a08919fac717353b4861568a4bb8333",
+            "locator": {
+              "kind": "symbol",
+              "name": "_served"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "86818db1da3ffa24ccd6e04e62006ebf22897723",
+            "content": "sha256:a7b54f8e8b6b6237ddfc474f9f9c9bacf7c17583e978f70442cb67ef3eafc3a7",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_review_source_content"
+            },
+            "path": "mcp/src/agents_remember/application/review_source_content.py"
           },
           "kind": "code"
         }

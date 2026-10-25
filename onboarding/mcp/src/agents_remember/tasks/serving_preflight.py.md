@@ -65,7 +65,9 @@ cannot parse. The topology probe above is unchanged.
 
 ### Docs References
 
+
 - The operator contract for served-build preflight (section 4): run authoring through the deployed serving server; refresh the rc7 venv. [1]
+
 
 ### Repo-Internal References
 
@@ -74,7 +76,9 @@ cannot parse. The topology probe above is unchanged.
 
 - Wired into ordinary topology-emitting edits. [4]
 
+
 - Wired into sprint attach/detach through the linkage wrapper. [5]
+
 
 ### Cross-Repo References
 

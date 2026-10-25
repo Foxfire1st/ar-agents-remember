@@ -119,5 +119,8 @@ The following references support the source-contract commentary, not fresh runti
 - Normal context_packet route and freshness write caveat [5]
 - Admitted roots, compact answer and removed resolver [6]
 - Delegation policy location and instruction-only tree [7]
+
 - Downstream quality, retrieval and worktree consumers [8]
+
+
 - Single resolver ownership and creation/mutation exclusions [9]

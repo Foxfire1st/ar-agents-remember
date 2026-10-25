@@ -12,9 +12,14 @@ This source-bound correction covers the described L54 seams only. Unrelated inhe
 
 ## Current evidence
 
-- Public subset/full requests preserve scope authority, actual builds, stale bytes and write errors. \[2] [2]
-- Explicit all-check subset and ordinary full requests keep distinct asynchronous run identities. \[3] [3]
-- Missing-only cache preparation preserves existing stale bytes and reports render failures. \[4] [4]
+
+- Public subset/full requests preserve scope authority, actual builds, stale bytes and write errors. [2]
+
+- Explicit all-check subset and ordinary full requests keep distinct asynchronous run identities. [3]
+- Missing-only cache preparation preserves existing stale bytes and reports render failures. [4]
+
+- The scoped current source carries the module/document behavior described above. [1]
+
 
 ## Inherited source-epoch account (non-operative)
 

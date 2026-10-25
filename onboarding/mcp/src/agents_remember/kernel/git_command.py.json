@@ -163,15 +163,14 @@
       ]
     },
     "33": {
-      "note": "The options object: work directory, input, timeout and identity.",
+      "note": "The options object: work directory, input, timeout and identity.\n\nAnchor: `GitRunnerOptions`",
       "targets": [
         {
           "anchor": {
-            "blob": "af8d0af3c1cdbec034b7f460d8b013e802e8163e",
-            "content": "sha256:87f876d7fba393da591ef709d4defe2bc32a213ba91020032479fca65c83d943",
+            "blob": "07979a6e10a7cde98e4a4ce1dcaca7a203241e3f",
+            "content": "sha256:6e94e3f710e3074a2f9def9a24032a21aee42476e665e4ea421cba0067b627bb",
             "locator": {
-              "kind": "symbol",
-              "name": "GitRunnerOptions"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -179,15 +178,14 @@
       ]
     },
     "34": {
-      "note": "The existing general runner remains text-mode through the shared setup.",
+      "note": "The existing general runner remains text-mode through the shared setup.\n\nAnchor: `run_git`",
       "targets": [
         {
           "anchor": {
-            "blob": "cebb73b6be7b8f1829e91c3404632496f92dd7e1",
-            "content": "sha256:d8a99aac987e11cec4d4a227b859bafd75141708e1dd867b43624caa17286592",
+            "blob": "07979a6e10a7cde98e4a4ce1dcaca7a203241e3f",
+            "content": "sha256:6e94e3f710e3074a2f9def9a24032a21aee42476e665e4ea421cba0067b627bb",
             "locator": {
-              "kind": "symbol",
-              "name": "run_git"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -215,8 +213,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "af8d0af3c1cdbec034b7f460d8b013e802e8163e",
-            "content": "sha256:b2c4280144f8f398ce9986d010e904fdfa3b97e1ec29dbb9a7b44997638010ca",
+            "blob": "07979a6e10a7cde98e4a4ce1dcaca7a203241e3f",
+            "content": "sha256:6228fc9b31cee580abb2018fa37c6b4bdfbc4edc0451c74889ea99e07cdf6702",
             "locator": {
               "end": 360,
               "kind": "line_range",
@@ -310,15 +308,14 @@
       ]
     },
     "42": {
-      "note": "The shared-read block: one dictionary per block, reset on exit.",
+      "note": "The shared-read block: one dictionary per block, reset on exit.\n\nAnchor: `shared_blob_reads`",
       "targets": [
         {
           "anchor": {
-            "blob": "cb96525be294896525624afef669abf8fd942413",
-            "content": "sha256:41f1d184eae01373fe7f22e46f2d241c158d32e1d5d2338124d8498258276898",
+            "blob": "07979a6e10a7cde98e4a4ce1dcaca7a203241e3f",
+            "content": "sha256:6e94e3f710e3074a2f9def9a24032a21aee42476e665e4ea421cba0067b627bb",
             "locator": {
-              "kind": "symbol",
-              "name": "shared_blob_reads"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -326,15 +323,14 @@
       ]
     },
     "43": {
-      "note": "The batched reader answers held blobs from the block and reads only the others.",
+      "note": "The batched reader answers held blobs from the block and reads only the others.\n\nAnchor: `read_git_blobs_bytes`",
       "targets": [
         {
           "anchor": {
-            "blob": "cebb73b6be7b8f1829e91c3404632496f92dd7e1",
-            "content": "sha256:b72c1a4870f5a00b969c783678127cfd4352c2d8c36351418bde1e26bc826827",
+            "blob": "07979a6e10a7cde98e4a4ce1dcaca7a203241e3f",
+            "content": "sha256:6e94e3f710e3074a2f9def9a24032a21aee42476e665e4ea421cba0067b627bb",
             "locator": {
-              "kind": "symbol",
-              "name": "read_git_blobs_bytes"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -358,15 +354,14 @@
       ]
     },
     "45": {
-      "note": "One cat-file batch; a header that is not the requested blob raises.",
+      "note": "One cat-file batch; a header that is not the requested blob raises.\n\nAnchor: `_batch_blobs`",
       "targets": [
         {
           "anchor": {
-            "blob": "cebb73b6be7b8f1829e91c3404632496f92dd7e1",
-            "content": "sha256:a48c5b2acba64cfbe711ec202877f26690cc58bf2dc1635070e8b9b430cec9da",
+            "blob": "07979a6e10a7cde98e4a4ce1dcaca7a203241e3f",
+            "content": "sha256:6e94e3f710e3074a2f9def9a24032a21aee42476e665e4ea421cba0067b627bb",
             "locator": {
-              "kind": "symbol",
-              "name": "_batch_blobs"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -496,15 +491,14 @@
       ]
     },
     "55": {
-      "note": "Both public transports share environment scrubbing, identity validation and execution options.",
+      "note": "Both public transports share environment scrubbing, identity validation and execution options.\n\nAnchor: `_git_run`",
       "targets": [
         {
           "anchor": {
-            "blob": "cebb73b6be7b8f1829e91c3404632496f92dd7e1",
-            "content": "sha256:1ba76dd811007be85dbfa8e9908d0052119f51101d347a1bef9a83228aaf1e8c",
+            "blob": "07979a6e10a7cde98e4a4ce1dcaca7a203241e3f",
+            "content": "sha256:6e94e3f710e3074a2f9def9a24032a21aee42476e665e4ea421cba0067b627bb",
             "locator": {
-              "kind": "symbol",
-              "name": "_git_run"
+              "kind": "file"
             }
           },
           "kind": "code"

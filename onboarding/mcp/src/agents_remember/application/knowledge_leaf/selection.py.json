@@ -138,37 +138,14 @@
       ]
     },
     "16": {
-      "note": "The member, entry and header rows with their fields.",
+      "note": "The member, entry and header rows with their fields.\n\nAnchor: `_member_row` `_entry_row` `_header_row`",
       "targets": [
         {
           "anchor": {
             "blob": "4d9220bb81627ba0142a8c73bd020d644a12a0af",
-            "content": "sha256:5c9d2aef8028f0fd5970a3e9586d29060f9f86d53efaa6cc70426c768337a663",
+            "content": "sha256:62bf69a07fb0c2a526bcfeab9882238651e510f7d690c54e72a69dbf0fbbd979",
             "locator": {
-              "kind": "symbol",
-              "name": "_member_row"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "cfecb1a12353cebd13ba65a1140776e39f09a8d7",
-            "content": "sha256:7be59906cfcab3d67b8825925ee428b35a67dee7ef7bbf7ab18539689b5aa0b5",
-            "locator": {
-              "kind": "symbol",
-              "name": "_entry_row"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "4d9220bb81627ba0142a8c73bd020d644a12a0af",
-            "content": "sha256:880504a3bbd02280ecbfe7dbfbc32f68668c6e08a89fc8b6f37bd434e36c084e",
-            "locator": {
-              "kind": "symbol",
-              "name": "_header_row"
+              "kind": "file"
             }
           },
           "kind": "code"

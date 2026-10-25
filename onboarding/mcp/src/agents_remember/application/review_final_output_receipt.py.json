@@ -37,15 +37,14 @@
       ]
     },
     "34": {
-      "note": "`record_final_output_receipt` supplies the current exact-tree receipt boundary described above.",
+      "note": "`record_final_output_receipt` supplies the current exact-tree receipt boundary described above.\n\nAnchor: `record_final_output_receipt`",
       "targets": [
         {
           "anchor": {
-            "blob": "6a81a8342eae21ae87cc564a14db157d557fb56b",
-            "content": "sha256:05efdacdc397a149b12bffb084cd3876672db3b1d546e9749087545656583ab2",
+            "blob": "f7afa065a332f8a820d948bb876f4a51dc8cb52e",
+            "content": "sha256:08512356feac720bc99a5d802a532109b131bcf1fe9a2063d2c0b51380b8bc6f",
             "locator": {
-              "kind": "symbol",
-              "name": "record_final_output_receipt"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -181,15 +180,14 @@
       ]
     },
     "43": {
-      "note": "**Measuring one phase and publishing it: the owners' values, the read-back, and `replaced_existing` rather than a hidden rewrite.**",
+      "note": "**Measuring one phase and publishing it: the owners' values, the read-back, and `replaced_existing` rather than a hidden rewrite.**\n\nAnchor: `record_final_output_receipt`",
       "targets": [
         {
           "anchor": {
-            "blob": "6a81a8342eae21ae87cc564a14db157d557fb56b",
-            "content": "sha256:05efdacdc397a149b12bffb084cd3876672db3b1d546e9749087545656583ab2",
+            "blob": "f7afa065a332f8a820d948bb876f4a51dc8cb52e",
+            "content": "sha256:08512356feac720bc99a5d802a532109b131bcf1fe9a2063d2c0b51380b8bc6f",
             "locator": {
-              "kind": "symbol",
-              "name": "record_final_output_receipt"
+              "kind": "file"
             }
           },
           "kind": "code"

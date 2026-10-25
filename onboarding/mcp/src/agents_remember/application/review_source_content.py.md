@@ -191,9 +191,13 @@ that measure it against real repositories.
 - **The wire vocabulary this module fills: six side states, the closed currentness set, the two bounding measurements, the two admissions, and the structural prohibitions that make a non-textual side carrying text unrepresentable.** [22]
 - The expansion value: the requested generation echoed back, the currentness statement, the bounding measurement, the admission, and the command beside the content. [23]
 - The request that carries the task context, the path and the exact generation, and the result that is either the expansion or one typed refusal and never both. [24]
+
 - **The transport that reaches this owner: the third route, its selector value, its unwired answer and its incomplete-generation body.** [27]
+
 - The third port the composition root supplies, and the wiring that gives it the real owner. [28]
+
 - The refusal code this read publishes, added to the review vocabulary without changing how an unknown code maps. [29]
+
 - **The production-composition cases: both endpoints' own bytes against an independent `git show`, an unmapped addition's whole text, a deletion's whole base text, every non-text kind, a stated bounded expansion, generation binding across a branch advance, the pruned-blob and missing-object states, the unmeasured-generation confinement, a commit id refused, and the unwired process refused by name.** [30]
 
 ### Cross-Repo References
@@ -228,7 +232,9 @@ No meaningful cross-repo references found.
 - **Reproduction hints name the exact object IDs. The displayed lookup omits literal pathspec magic and shell quoting is incomplete, so these strings do not guarantee reproduction for every admitted path/root spelling.** [20]
 
 - **The one measurement this module calls instead of re-deriving: the change inventory of a bound tree pair, and the side value that binds a tree id to the root it resolves in.** [25]
+
 - The resolution this module re-uses to bind the leaf, and the shipped recheck it calls for currentness rather than inventing a second capture. [26]
+
 - **The attributed-unchanged cases: admission without counting, cross-comparison refusal, historical bytes after the tree moves, exact spelling, and undetermined refusal.** [31]
 
 

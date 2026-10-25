@@ -19,12 +19,12 @@
       ]
     },
     "2": {
-      "note": "The `repository` table this identity keys, and its no-update/no-delete triggers.\n\nAnchor: `repository`; `repository_no_update`; `repository_no_delete`",
+      "note": "The `repository` table this identity keys, and its no-update/no-delete triggers.",
       "targets": [
         {
           "anchor": {
-            "blob": "5e27550d32bfd12f38a8b3393ad8622114eb677a",
-            "content": "sha256:d1fb1ba23e9166fd72fab8a268903dd967ac66ebbb40ba6073aa011089a94011",
+            "blob": "ec5bf0677108161ea883091d9613a34d21a3697c",
+            "content": "sha256:e3d7c3be7f0d028f3f130f6997b0e77e52361078fdc06563d8cff467df1b6156",
             "locator": {
               "end": 123,
               "kind": "line_range",

@@ -14,14 +14,22 @@ The owner never self-approves, the builder never lands, the reviewer never decid
 
 ## Evidence
 
+
 - Owner, builder and reviewer never take each other's acts; verdicts are evidence. [1]
+
+
 - Review is opt-in with tiers tuning depth; rounds follow the settings limit and retain sealed lists. [2]
+
+
 
 - Requirement compilation into stable ID and version packets precedes task topology. [3]
 
+
 ## Current Source Evidence
 
+
 - Current settings-budget, recorded approval and preserved stage/ownership boundaries are carried by this canonical instruction source. [4]
+
 
 ## Current source qualification
 

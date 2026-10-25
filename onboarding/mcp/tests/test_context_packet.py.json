@@ -3,15 +3,14 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "Builds packet from allowed repo.",
+      "note": "Builds packet from allowed repo.\n\nAnchor: `test_builds_packet_from_allowed_repo`",
       "targets": [
         {
           "anchor": {
-            "blob": "5a79aface2c4f39b630e117c45e48f88b20fb3ea",
-            "content": "sha256:93b58ad3b082323d1d476f3d9041fa612fe1a5798aba83a46e478e6eef5fa657",
+            "blob": "a363ba265e5b479e8a8bf64b04e6165f1fe893f5",
+            "content": "sha256:c303e04dcd013978bb32f685cc5b79a1c5e9fcb0ce9254558b83e029f803ccf5",
             "locator": {
-              "kind": "symbol",
-              "name": "test_builds_packet_from_allowed_repo"
+              "kind": "file"
             }
           },
           "kind": "test"

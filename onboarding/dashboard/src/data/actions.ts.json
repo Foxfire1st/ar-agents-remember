@@ -7,11 +7,51 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8a4362a00140410e6607925f9f1a1770ece33d7c",
-            "content": "sha256:6a65d648e32adea6ffa505c946fb5448f67645d4c0b426adc7543e00568cb366",
+            "blob": "c12094244f7358af502e88ac603fcd73652b80ad",
+            "content": "sha256:d1b977693db935f9efc8ce2c9b1e395ccef2fd82a2aa5417986d3cf4e0521c5a",
             "locator": {
-              "kind": "symbol",
-              "name": "AttentionQueueImpl"
+              "end": 580,
+              "kind": "line_range",
+              "start": 526
+            },
+            "path": "dashboard/src/panels/AttentionQueue.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c12094244f7358af502e88ac603fcd73652b80ad",
+            "content": "sha256:304b1cefff22c5e5f3a16a54b41b2098b25498a85fcc058093e1d7d1daff33c9",
+            "locator": {
+              "end": 460,
+              "kind": "line_range",
+              "start": 450
+            },
+            "path": "dashboard/src/panels/AttentionQueue.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c12094244f7358af502e88ac603fcd73652b80ad",
+            "content": "sha256:d3529c5a02bd1bb13c834be2caebf9185eb8690648af36c5b43e495181d836c2",
+            "locator": {
+              "end": 497,
+              "kind": "line_range",
+              "start": 485
+            },
+            "path": "dashboard/src/panels/AttentionQueue.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c12094244f7358af502e88ac603fcd73652b80ad",
+            "content": "sha256:9bbeeae4927bad2e6afe87f015e16b82356dae74fbc23f20ae7cbd0e8fb50b4c",
+            "locator": {
+              "end": 294,
+              "kind": "line_range",
+              "start": 264
             },
             "path": "dashboard/src/panels/AttentionQueue.tsx"
           },
@@ -20,12 +60,12 @@
       ]
     },
     "5": {
-      "note": "The current AttentionQueue caller uses suppressAttention before posting and releaseAttention for failed results; this is caller behavior, not an execution or server-authority claim. [5]",
+      "note": "The current AttentionQueue caller uses suppressAttention before posting and releaseAttention for failed results; this is caller behavior, not an execution or server-authority claim. \\[5]",
       "targets": [
         {
           "anchor": {
-            "blob": "b62becb3d09abb72399bc323b751556cf8ffbff4",
-            "content": "sha256:9e90e2eb042240492a8b18ea9f02d00d422f107a796f8b92adf9f8ecf87effc6",
+            "blob": "c12094244f7358af502e88ac603fcd73652b80ad",
+            "content": "sha256:2065a502d94e098f4e8e4c8b04ae3f5f6adac6dbf19a06daad2413d467dde27a",
             "locator": {
               "end": 291,
               "kind": "line_range",

@@ -103,16 +103,16 @@
       ]
     },
     "7": {
-      "note": "**The case that makes \"the reference is never rewritten\" total: four real owner refusals carried verbatim, with the stored reference byte-identical.**\n\nAnchor: \"test_each_owner_refusal_is_carried_verbatim_and_leaves_the_reference_unrewritten\"",
+      "note": "Four real owner-refusal cases assert unresolved state, the expected owner refusal code, a nonempty owner detail and an unchanged stored reference path.",
       "targets": [
         {
           "anchor": {
-            "blob": "e40a461904005e0df7a3fce77c0d31bbd8aa4946",
-            "content": "sha256:95e53442f94103b000ec03697a6b325f635bc02e8547ba2d8ab297ddac1d71a2",
+            "blob": "c016bb78fdf29532debe7734de0bd6f6011834c1",
+            "content": "sha256:90ef0a79d28cba45adfa3c32bf160933160454021bc92240fc51b1f974a28b53",
             "locator": {
-              "end": 499,
+              "end": 170,
               "kind": "line_range",
-              "start": 435
+              "start": 129
             },
             "path": "mcp/tests/test_knowledge_requirement_reference_contract.py"
           },
@@ -121,16 +121,16 @@
       ]
     },
     "8": {
-      "note": "The case that keeps the refusal the owner's: paths the owner would refuse are still representable, so the answer cannot come from the substrate.\n\nAnchor: \"test_the_payload_does_not_police_the_reference_the_owner_owns\"",
+      "note": "The case that keeps the refusal the owner's: paths the owner would refuse are still representable, so the answer cannot come from the substrate.",
       "targets": [
         {
           "anchor": {
-            "blob": "e40a461904005e0df7a3fce77c0d31bbd8aa4946",
-            "content": "sha256:a9d1e5b122e5bd3a9a86d5960366a4fc391b9078b7b32ee65f86ea77b4cdedde",
+            "blob": "c016bb78fdf29532debe7734de0bd6f6011834c1",
+            "content": "sha256:342bc725056391032b713afb3c9e12dd55eebb85f4233a0a487449ee4386b31a",
             "locator": {
-              "end": 276,
+              "end": 127,
               "kind": "line_range",
-              "start": 259
+              "start": 112
             },
             "path": "mcp/tests/test_knowledge_requirement_reference_contract.py"
           },

@@ -1,14 +1,26 @@
 {
   "path": "dashboard/src/panels/EngineRoom.test.tsx",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
-      "note": "The `EngineRoomHeader` + `LIFECYCLE_PHASES` under test.",
+      "note": "The `EngineRoomHeader` + `LIFECYCLE_PHASES` under test.\n\nAnchor: `EngineRoomHeader` `LIFECYCLE_PHASES`",
       "targets": [
         {
           "anchor": {
-            "blob": "20386ce24dbf50d2623c264f361b4a10dff165c5",
-            "content": "sha256:58d15a56ecc549ad38344568d9dcf75211615fbbe42a58e947aca64d28a6163e",
+            "blob": "c89382b7530853796de958e287f52a05bf0222f3",
+            "content": "sha256:5618965181d8da987f106c86d53201f36adbbd5d11be42a1e036a3731a8f2f1d",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/EngineRoom.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c89382b7530853796de958e287f52a05bf0222f3",
+            "content": "sha256:6e9adda042b547ae3499d1b20e0b8b4ade1082ae8bde5914bbf19acc9761a1a0",
             "locator": {
               "kind": "symbol",
               "name": "EngineRoomHeader"
@@ -19,8 +31,8 @@
         },
         {
           "anchor": {
-            "blob": "20386ce24dbf50d2623c264f361b4a10dff165c5",
-            "content": "sha256:1dc7ebbc67959512746628e11ce54e25ff0cb9b3e0d2551374614a9bfccbc885",
+            "blob": "c89382b7530853796de958e287f52a05bf0222f3",
+            "content": "sha256:8332e101b5109e115e1fbd02b7e54f6b3136ae7a065365c01f754c51cb3986b1",
             "locator": {
               "kind": "symbol",
               "name": "LIFECYCLE_PHASES"
@@ -31,70 +43,35 @@
         }
       ]
     },
-    "2": {
-      "note": "`OfficialStrip` groups official workspace providers by label + runtime state and exposes grouped repo labels via hover/title.",
+    "4": {
+      "note": "The `GALLERY` projection seed + the store `applySnapshot`.\n\nAnchor: `GALLERY` `applySnapshot`",
       "targets": [
         {
           "anchor": {
-            "blob": "9cb152993c6abde275ec7569438fad326e9a3ae1",
-            "content": "sha256:014599f78795057568d2d9ae61ac1df42a915f0f7d6fbe8714edf70689df66ee",
+            "blob": "87693eb6b819166337bd70d0a819044301bb6ecf",
+            "content": "sha256:0195b4c579d2a1a8dd00fffc526a784ef564c4ee1b088984acd3a58e9bd964fb",
             "locator": {
-              "kind": "symbol",
-              "name": "OfficialStrip"
+              "kind": "file"
             },
-            "path": "dashboard/src/panels/EngineRoom.tsx"
+            "path": "dashboard/src/dev/fixtures.ts"
           },
           "kind": "code"
-        }
-      ]
-    },
-    "3": {
-      "note": "The local provider fixture helpers and official-strip assertions pin counted same-state CGCs, mixed-state separation, and GrepAI visibility.\n\nAnchor: \"aggregates same-state official CGC engines into one strip chip\"; \"keeps official CGC aggregate chips separated by runtime state\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "a237ea46fb4fa0f7e68107f3403c217b91cc3ae4",
-            "content": "sha256:f286ca6fada8072f8174c5e5b556876a4a2a17eb7518bede60a044c80e52c872",
-            "locator": {
-              "kind": "symbol",
-              "name": "seedOfficialProviders"
-            }
-          },
-          "kind": "test"
         },
         {
           "anchor": {
-            "blob": "a237ea46fb4fa0f7e68107f3403c217b91cc3ae4",
-            "content": "sha256:40bf6dec8f58db91fab2497cb59239c56b1c58b4fbfb849533f96cf63565daaa",
+            "blob": "57b40a28ef6817c4a90d64069b26a67fb7ed47eb",
+            "content": "sha256:e6bf93bba9343c7e5745a763afa66ba650cdd0e61f20ce4f6595c1eddd38f132",
             "locator": {
-              "end": 211,
-              "kind": "line_range",
-              "start": 196
-            }
+              "kind": "file"
+            },
+            "path": "dashboard/src/data/store.ts"
           },
-          "kind": "test"
+          "kind": "code"
         },
         {
           "anchor": {
-            "blob": "a237ea46fb4fa0f7e68107f3403c217b91cc3ae4",
-            "content": "sha256:5f4189f025d31a1c6443a34be4abddd5b8b9687a8437ef50b85ef317bd72cee7",
-            "locator": {
-              "end": 237,
-              "kind": "line_range",
-              "start": 213
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "4": {
-      "note": "The `GALLERY` projection seed + the store `applySnapshot`.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "9b908ffe392c7403618dbf4785c58bf66825627c",
-            "content": "sha256:494192985f8d2f2ea7f9f79c571aed7020551fcece88e01e2cb4b4e396f00cf8",
+            "blob": "87693eb6b819166337bd70d0a819044301bb6ecf",
+            "content": "sha256:a42962e11da2b584c87dbc9a9401315e35f17789695d4263ddf419fc8a962460",
             "locator": {
               "kind": "symbol",
               "name": "GALLERY"
@@ -105,7 +82,7 @@
         },
         {
           "anchor": {
-            "blob": "e696c956756f8e506411a473a7778e5a2afc9bfb",
+            "blob": "57b40a28ef6817c4a90d64069b26a67fb7ed47eb",
             "content": "sha256:c0420b2dd5bea4a4f594d8ed95ced8b024a0ed142835e84b314d6e1d298ec012",
             "locator": {
               "kind": "symbol",
@@ -135,16 +112,16 @@
       ]
     },
     "6": {
-      "note": "The two official aggregation tests and workspace provider helper factories were removed. A new test asserts official-str — source ownership, not executed visual proof.\n\nAnchor: `describe(\"EngineRoom lifecycle phase motion (5f S5, T12–T18)\", () => {`",
+      "note": "The current EngineRoom case asserts no official provider strip or fallback, while the enclosure canvas remains present; its title records the MIK-R112 provider-engine surface removal.",
       "targets": [
         {
           "anchor": {
-            "blob": "b7da5c1cb1b5932d8fc0544204df41597aa7c8c4",
-            "content": "sha256:1ccb656c8c16c67f259b34ed1bee448799d5cc9bf07560b90f582f2571d32c7d",
+            "blob": "be0ac451d8bedb89e099b27a7d7548602601d947",
+            "content": "sha256:a7c9a318073762c1d8424db848b67e3031b2cf02b3e0326e37991462bd3c2810",
             "locator": {
-              "end": 234,
+              "end": 151,
               "kind": "line_range",
-              "start": 130
+              "start": 144
             }
           },
           "kind": "test"
@@ -152,20 +129,32 @@
       ]
     },
     "7": {
-      "note": "The two official aggregation tests and workspace provider helper factories were removed. A new test asserts official-str — source ownership, not executed visual proof.\n\nAnchor: `function EngineRoomImpl() {`",
+      "note": "The current Engine Room composes enclosure stack, process map, boot timeline and diagnostics; its test requires the official provider strip and fallback absent while the enclosure canvas remains. This is source ownership, not fresh executed visual proof.",
       "targets": [
         {
           "anchor": {
-            "blob": "20386ce24dbf50d2623c264f361b4a10dff165c5",
-            "content": "sha256:f4ab1c90d9929275a97a8d0b49974149ee57fa99ffef5ce6bac0243de71c121d",
+            "blob": "c89382b7530853796de958e287f52a05bf0222f3",
+            "content": "sha256:2aede7278b5afa2f34d995f55e47a09251c5042e5d230c595155d47469266519",
             "locator": {
-              "end": 177,
+              "end": 178,
               "kind": "line_range",
-              "start": 93
+              "start": 107
             },
             "path": "dashboard/src/panels/EngineRoom.tsx"
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "be0ac451d8bedb89e099b27a7d7548602601d947",
+            "content": "sha256:a7c9a318073762c1d8424db848b67e3031b2cf02b3e0326e37991462bd3c2810",
+            "locator": {
+              "end": 151,
+              "kind": "line_range",
+              "start": 144
+            }
+          },
+          "kind": "test"
         }
       ]
     }

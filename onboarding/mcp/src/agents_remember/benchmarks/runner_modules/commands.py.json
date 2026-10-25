@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/benchmarks/runner_modules/commands.py",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
@@ -20,22 +21,24 @@
         }
       ]
     },
-    "2": {
-      "note": "The route-local overview summarizes how this module fits into the benchmark runner split.\n\nAnchor: `## Hot Path Summary`",
-      "targets": [
-        {
-          "kind": "unresolved",
-          "text": "onboarding/mcp/src/agents_remember/benchmarks/runner_modules/overview.md:20-68"
-        }
-      ]
-    },
     "3": {
-      "note": "The one Git runner both call sites go through, and the option object that carries `work_dir` and the timeout class.",
+      "note": "The one Git runner both call sites go through, and the option object that carries `work_dir` and the timeout class.\n\nAnchor: `run_git` `GitRunnerOptions`",
       "targets": [
         {
           "anchor": {
-            "blob": "cd35c66bb9c9d8af0f23fd2579f5e610cf4ee8da",
-            "content": "sha256:60788cf6b3cf57e313ccacab456fb49fd9601a1930fa8f8de28c01088b22a2af",
+            "blob": "07979a6e10a7cde98e4a4ce1dcaca7a203241e3f",
+            "content": "sha256:6e94e3f710e3074a2f9def9a24032a21aee42476e665e4ea421cba0067b627bb",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/kernel/git_command.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "07979a6e10a7cde98e4a4ce1dcaca7a203241e3f",
+            "content": "sha256:2581abe22f96abd5eed654d6bbd4024993314e94a5eb2eae6b9f4df000dcba6c",
             "locator": {
               "kind": "symbol",
               "name": "run_git"
@@ -46,8 +49,8 @@
         },
         {
           "anchor": {
-            "blob": "cd35c66bb9c9d8af0f23fd2579f5e610cf4ee8da",
-            "content": "sha256:87f876d7fba393da591ef709d4defe2bc32a213ba91020032479fca65c83d943",
+            "blob": "07979a6e10a7cde98e4a4ce1dcaca7a203241e3f",
+            "content": "sha256:2961fa2dde6ec5d075bbc287e727285dea9bac2eb0dd590f9bfbf6262e1d3a6d",
             "locator": {
               "kind": "symbol",
               "name": "GitRunnerOptions"
@@ -59,8 +62,19 @@
       ]
     },
     "4": {
-      "note": "`git_environment()` and the `GIT_REPOSITORY_SELECTOR_ENV` tuple the runner strips with.",
+      "note": "`git_environment()` and the `GIT_REPOSITORY_SELECTOR_ENV` tuple the runner strips with.\n\nAnchor: `GIT_REPOSITORY_SELECTOR_ENV` `git_environment`",
       "targets": [
+        {
+          "anchor": {
+            "blob": "07979a6e10a7cde98e4a4ce1dcaca7a203241e3f",
+            "content": "sha256:6e94e3f710e3074a2f9def9a24032a21aee42476e665e4ea421cba0067b627bb",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/kernel/git_command.py"
+          },
+          "kind": "code"
+        },
         {
           "anchor": {
             "blob": "07979a6e10a7cde98e4a4ce1dcaca7a203241e3f",
@@ -75,8 +89,8 @@
         },
         {
           "anchor": {
-            "blob": "0add0d691edd9fadf0873b47c05c3556c94fb585",
-            "content": "sha256:9a5c584084f2d3c5b2f922be34cc829903d4c855e354a734263febd5289b334b",
+            "blob": "07979a6e10a7cde98e4a4ce1dcaca7a203241e3f",
+            "content": "sha256:86485973cec1b30881a8538bc29f5f42f53066c3901c053eb5c3b164acaf512d",
             "locator": {
               "kind": "symbol",
               "name": "git_environment"

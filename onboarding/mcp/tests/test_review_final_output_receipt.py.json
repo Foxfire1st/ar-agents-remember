@@ -36,12 +36,22 @@
       ]
     },
     "21": {
-      "note": "`test_memory_movement_and_absent_memory_never_claim_delivered_coverage` supplies the current fixture or assertion described above.",
+      "note": "`test_memory_movement_and_absent_memory_never_claim_delivered_coverage` supplies the current fixture or assertion described above.\n\nAnchor: `test_memory_movement_and_absent_memory_never_claim_delivered_coverage`",
       "targets": [
         {
           "anchor": {
-            "blob": "8f4d87ab4a3b7adffd6b6a39df3a04145b4f263b",
-            "content": "sha256:a3dd976afa3b090af81f000744dba367704dc6f8b1d60a26f835dc7c36280377",
+            "blob": "47f543e6f8938531a9b9d47338c21ac978a0c542",
+            "content": "sha256:1037e087ab7fa4a4f9e54fbb399be3242e1a3f83a50f78afe7ee0bd1c161f031",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "47f543e6f8938531a9b9d47338c21ac978a0c542",
+            "content": "sha256:31b8316a3d6c1d35574e5aa8c3029f94620c7d087b336dcac82e1c53bf459ac1",
             "locator": {
               "kind": "symbol",
               "name": "test_memory_movement_and_absent_memory_never_claim_delivered_coverage"
@@ -84,16 +94,16 @@
       ]
     },
     "24": {
-      "note": "The lane row and the exact-scope consumer row this module is registered in.\n\nAnchor: `\"mcp/tests/test_review_final_output_receipt.py\"`",
+      "note": "The lane row and the exact-scope consumer row this module is registered in.",
       "targets": [
         {
           "anchor": {
-            "blob": "11ba98ff63f4a4815985ac51e2c0c7b5a48556a4",
-            "content": "sha256:67f58c58dbc55122e84f30cab52617992ecf9b03d80f0738288afe38aac190bf",
+            "blob": "102c4550ab6429f44c8fb543d1d0662de66a1b8c",
+            "content": "sha256:cdfe6b89975b92062224baf59395e70e8687cd699475f5dd83314438b819cb7d",
             "locator": {
-              "end": 366,
+              "end": 359,
               "kind": "line_range",
-              "start": 366
+              "start": 359
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -101,14 +111,53 @@
         },
         {
           "anchor": {
-            "blob": "008585e26ec337eafd1554ed18033421299bdc72",
-            "content": "sha256:67f58c58dbc55122e84f30cab52617992ecf9b03d80f0738288afe38aac190bf",
+            "blob": "3c5993c94cf78973b3b39cfe7de9774c8aea6d1a",
+            "content": "sha256:a37d171635064aa14d726c4722a22b22583264942184fa31b68ee931ebcd2969",
+            "locator": {
+              "end": 2266,
+              "kind": "line_range",
+              "start": 2266
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "102c4550ab6429f44c8fb543d1d0662de66a1b8c",
+            "content": "sha256:efbce7e8e992e3a78052c7d6fb7c9d869951b36bae361c1add238771fd27c079",
+            "locator": {
+              "end": 373,
+              "kind": "line_range",
+              "start": 373
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "3c5993c94cf78973b3b39cfe7de9774c8aea6d1a",
+            "content": "sha256:b26bf62ab6777914d041873bb8fd7b5ddf74956f277dbcd6451a4721b403b8cd",
             "locator": {
               "end": 1367,
               "kind": "line_range",
               "start": 1367
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "102c4550ab6429f44c8fb543d1d0662de66a1b8c",
+            "content": "sha256:795ef4ca69e05fc25a8ae9fc9a05183b3df3a9461da43e8c0a55c295dfea76f3",
+            "locator": {
+              "end": 256,
+              "kind": "line_range",
+              "start": 256
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
           },
           "kind": "test"
         }

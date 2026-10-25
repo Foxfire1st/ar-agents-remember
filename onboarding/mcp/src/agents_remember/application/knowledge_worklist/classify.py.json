@@ -339,26 +339,14 @@
       ]
     },
     "3": {
-      "note": "One entry's class and facts; the per-side content identity.",
+      "note": "One entry's class and facts; the per-side content identity.\n\nAnchor: `Classification` `contents`",
       "targets": [
         {
           "anchor": {
-            "blob": "e38c5642ac22c3434a71089d59ee34199a034b27",
-            "content": "sha256:87d07602605446ad837ae4b17df2f53aca9e6ae6909fc3ca8fb1297a79805265",
-            "locator": {
-              "kind": "symbol",
-              "name": "Classification"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
             "blob": "65f6916c97086d1a61b7e17170076cd29f25c40c",
-            "content": "sha256:ac43167257da9759884d08c1d978ddc21d6d9dfb8365c7eae4315721b658c8d8",
+            "content": "sha256:fc298f92d0a3f833ac04391482e718b716e75374f596bca5478e661f734627c6",
             "locator": {
-              "kind": "symbol",
-              "name": "contents"
+              "kind": "file"
             }
           },
           "kind": "code"

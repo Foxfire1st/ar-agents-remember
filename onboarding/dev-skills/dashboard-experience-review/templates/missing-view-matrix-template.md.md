@@ -4,7 +4,7 @@
 
 The current matrix lists lifecycle, worktree and session states, not session/TUI. It crosses scenario steps and reachable states with the forced UI-state columns; blank cells become missing-view findings, with a scenario-blocking blank Blocker/High. This describes the template, not a claim that owned-methods has deleted every provider reference or that a disposable harness was run.
 
-- The current template enumerates session rather than session/TUI while retaining the workflow-by-forced-state matrix and missing-cell output rule. \[2] [2]
+- The current template enumerates session rather than session/TUI while retaining the workflow-by-forced-state matrix and missing-cell output rule. [2]
 
 
 ## Current operative account — MIK-R112

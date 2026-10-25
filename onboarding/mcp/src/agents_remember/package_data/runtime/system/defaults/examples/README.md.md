@@ -44,7 +44,14 @@ No relevant external documentation found.
 The source file itself is the active example index.
 
 - The README states that examples are split by target folder rather than by inferred ownership from file names. [1]
-- The README defines coordinator examples as workspace-wide/global, memory-repo examples as repository-specific, and names the memory-repo `task-publication.md` landing-flow starter and quality-report template. [2]
+
+
+
+
+- The README defines coordinator examples as workspace-wide/global, memory-repo examples as repository-specific, and names the memory-repo `task-publication.md` landing-flow starter and quality-report template. Source caption: `## Memory Repo` [2]
+
+
+
 
 ### Cross-Repo References
 

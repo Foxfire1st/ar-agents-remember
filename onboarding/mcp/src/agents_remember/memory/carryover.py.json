@@ -22,23 +22,12 @@
   ],
   "references": {
     "1": {
-      "note": "Candidate comparison and explicit review selection.",
+      "note": "Candidate comparison and explicit review selection.\n\nAnchor: `CarryoverRefs` `selected_candidates`",
       "targets": [
         {
           "anchor": {
-            "blob": "1f4797dc78a4b4079de6cca8a4ea066f27bbe722",
-            "content": "sha256:70d995ddcb9a0ae5695f02f371dda09351c4d8e7a1981c45ba032ff50e80220c",
-            "locator": {
-              "kind": "symbol",
-              "name": "CarryoverRefs"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "1f4797dc78a4b4079de6cca8a4ea066f27bbe722",
-            "content": "sha256:21acfe200141bff26a1f5934a7916819f9eb398695cdf3c265c8a89f3beebd5b",
+            "blob": "0f2012e3d1b6cfcf742adc9b3bf25460b4073950",
+            "content": "sha256:405091a1cb312da2728e779028c9e8f9bfe8fbad4f52127a5cefc9b3c1a1b314",
             "locator": {
               "kind": "symbol",
               "name": "selected_candidates"
@@ -48,12 +37,22 @@
         },
         {
           "anchor": {
-            "blob": "1f4797dc78a4b4079de6cca8a4ea066f27bbe722",
-            "content": "sha256:f65af551c6010f015e95f621e2138afe74fcb96ed9b95789b56adb42ec0d5d70",
+            "blob": "0f2012e3d1b6cfcf742adc9b3bf25460b4073950",
+            "content": "sha256:621f0a3febddc4a1836b7500a24e0cf02a0e359c27af85688fc4785775a5b366",
             "locator": {
               "end": 239,
               "kind": "line_range",
               "start": 224
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0f2012e3d1b6cfcf742adc9b3bf25460b4073950",
+            "content": "sha256:747038ba884874ecd061048d8ad0b0e56b0a848bf7026b05a24e652f1632a675",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -88,26 +87,14 @@
       ]
     },
     "2": {
-      "note": "Apply owns one content commit and preserves exact leaf/repository authority.",
+      "note": "Apply checks the converted formats, the configured code and external-memory authority and an ordinary checkout, then writes the selected candidates into the open recovery leaf without committing; closeout commits the judged tree.\n\nAnchor: `_apply_carryover_for_request` `memory_content_commit`",
       "targets": [
         {
           "anchor": {
-            "blob": "1f4797dc78a4b4079de6cca8a4ea066f27bbe722",
-            "content": "sha256:dfa99ee31e7f92c07f24ca8f4f893677f6139263e11b2ee9582de4b17888aeaa",
+            "blob": "0f2012e3d1b6cfcf742adc9b3bf25460b4073950",
+            "content": "sha256:747038ba884874ecd061048d8ad0b0e56b0a848bf7026b05a24e652f1632a675",
             "locator": {
-              "kind": "symbol",
-              "name": "_apply_carryover_for_request"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "1f4797dc78a4b4079de6cca8a4ea066f27bbe722",
-            "content": "sha256:fed86363160cefb3b92ed2de4dbf62c3760401ba528d5c243e1fe9154ed9a8bf",
-            "locator": {
-              "kind": "symbol",
-              "name": "memory_content_commit"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -173,48 +160,14 @@
       ]
     },
     "5": {
-      "note": "Public legacy carryover asserts conversion guidance and no observed ref/index/content/cache mutation; the prior successful-attribution test is retired",
+      "note": "Public legacy carryover asserts conversion guidance and no observed ref/index/content/cache mutation; the prior successful-attribution test is retired\n\nAnchor: `test_carryover_apply_refuses_unconverted_memory_with_the_conversion_step`",
       "targets": [
         {
           "anchor": {
-            "blob": "57cd36d5ff05363f74589b58c19c0c339174062a",
-            "content": "sha256:93c0e060e4976d0e9d2d1e911cf92d98d3572192445dc02c28c0bfd9b7fa0e1c",
+            "blob": "659c4e4b7b46e70bfdd7a52d67c89425345d4f8c",
+            "content": "sha256:c0f95d663316f578a2fdcc9fda38ac17dd4209e670da772d11647555eff9b14c",
             "locator": {
-              "kind": "symbol",
-              "name": "test_carryover_apply_refuses_unconverted_memory_with_the_conversion_step"
-            },
-            "path": "mcp/tests/test_memory_attribution_producers.py"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "6": {
-      "note": "A converted target is refused, and an unconverted one takes the cutover lock.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "4896c60fdd18274d54d45b59dac47cf5603e68b6",
-            "content": "sha256:fba247cc78e709d217d40c200126d0529c6538e287d4a7e5137f76eaef7c7ef9",
-            "locator": {
-              "kind": "symbol",
-              "name": "_require_legacy_format_target"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "7": {
-      "note": "Carryover never writes converted memory and takes the cutover lock.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "099211937d3cad09ea11f90a89074c9a08a5b415",
-            "content": "sha256:bc5c043af086c3e51c880b10223be8624c949d67783070dac5793f19d1cd3ae6",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_carryover_never_writes_converted_memory_and_takes_the_cutover_lock"
+              "kind": "file"
             },
             "path": "mcp/tests/test_memory_attribution_producers.py"
           },

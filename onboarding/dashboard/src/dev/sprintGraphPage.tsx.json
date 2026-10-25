@@ -3,15 +3,14 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The dev sprint-graph page.",
+      "note": "The dev sprint-graph page.\n\nAnchor: `SprintGraphPage`",
       "targets": [
         {
           "anchor": {
-            "blob": "95a59d4a85525f50216856b227bd1864e2dcb773",
-            "content": "sha256:89acca4aa72ca1af52d10dd2614b0f13d7437e01c52ca83507a39751ee65d4d7",
+            "blob": "7dfc1906ff5bccdc7c4a2fd81c1b939871b6f63a",
+            "content": "sha256:9da6207596db63aca24df90a7118db4a2494e18718168b2a4a202797cf686185",
             "locator": {
-              "kind": "symbol",
-              "name": "SprintGraphPage"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -52,7 +51,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1b073b40c856a543a8a8616ba9888a747125bdf7",
+            "blob": "502be409c27eb74c17f996f378046fc8adcb252e",
             "content": "sha256:ec573cff53f154d2a9eb7c68b3c09300bab15d36ca8a9d123ec6affa32909ddb",
             "locator": {
               "kind": "symbol",
@@ -65,15 +64,14 @@
       ]
     },
     "4": {
-      "note": "The dev route dispatch.",
+      "note": "The dev route dispatch.\n\nAnchor: `DevApp`",
       "targets": [
         {
           "anchor": {
-            "blob": "cf7f4bd3885bdab232af0f680b217afa7430295b",
-            "content": "sha256:59333905f63faa2ee52e3142368e4d0587b9e70c0c8673395833e9e81457c5c2",
+            "blob": "1fef46d2a2bd69da100ec62b64aa4237c6ead793",
+            "content": "sha256:e4227fa03a7aa9b3acec21774a08c1b118b164947b0977c6b1ffe7e514e34a45",
             "locator": {
-              "kind": "symbol",
-              "name": "DevApp"
+              "kind": "file"
             },
             "path": "dashboard/src/dev/DevApp.tsx"
           },

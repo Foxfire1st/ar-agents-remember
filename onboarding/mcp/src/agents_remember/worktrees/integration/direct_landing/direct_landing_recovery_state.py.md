@@ -72,7 +72,9 @@ the current working-candidate behavior; historical entries below retain their or
 - Memory receipt inference and output matching are based on actual Git lineage. [2]
 - Prepared and committed intent convergence retain exact ref/tree checks. [3]
 - Shared snapshots exclude cache data while retaining actual objects. [4]
+
 - Recovery tests reject code/ref/content drift and accept cache absence or damage. [5]
+
 
 ### Cross-Repo References
 

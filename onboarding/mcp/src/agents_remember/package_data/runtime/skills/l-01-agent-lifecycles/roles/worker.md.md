@@ -6,14 +6,15 @@ The Manager starts the three leaf seats as a set; Worker cannot start its checke
 
 This account controls the named changed seams; contradictory earlier card wording below is retained only as historical evidence. Unchanged role duties and R117 file-only wake/report transport are preserved. Source inspection supplies no new runtime test, CODE verdict, review counter or acceptance.
 
+
 - The Manager starts the three leaf seats as a set; Worker cannot start its checker or accept/publish its own implementation. Its stage requires final candidate meeting the requirement, relevant tests/lint/type checks passing and the report with Reviewer. Own failures are corrected on its own ground; blocked/unrun evidence remains explicit. A record-only repair stays on the same review round only with candidate unchanged; repeated cases demand property/construction reasoning rather than case chasing. [6]
+
 
 
 ## Message/file transport
 
 This packaged copy makes role messages short wake-ups naming requested work or a handover and its files. Complete report, verdict, list and evidence contents travel through file-only `body` or existing-file `attach`, never pasted into message text. Within a shared task, message files remain with its record and a leaf workspace exposes the message-folder link. Wake text uses the effective settings limit, not a number pinned in this role/template. This transport account changes neither the file's existing role/write boundaries nor requirement, review, curation or landing authority.
 
-- Messages wake; complete payloads and evidence travel as files. [5]
 
 
 ## Governing Overview
@@ -28,7 +29,9 @@ The source-owner repair restored the explicit workspace.scratchRoot temporary-fi
 
 ## Current source contract evidence
 
-- Current synced source supports the qualified account; declarations, mirrors and fixture assertions are not executed acceptance. [7]
+
+> Retained earlier citation wording: - Current synced source supports the qualified account; declarations, mirrors and fixture assertions are not executed acceptance. [7]
+
 
 ## Purpose
 
@@ -97,7 +100,9 @@ When the master line moves, Worker runs its supported leaf sync. If no path chan
 
 ## Evidence
 
-- The generated role carries its canonical repair-loop instructions without independent authority. [9]
+
+> Retained earlier citation wording: - The generated role carries its canonical repair-loop instructions without independent authority. [9]
+
 
 
 ### Repo-Internal References
@@ -106,8 +111,12 @@ When the master line moves, Worker runs its supported leaf sync. If no path chan
 | --- | --- | --- |
 | Exact leaf intake, read-only memory, targeted evidence, single report and uncommitted role boundary. | lines 8-26 | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/worker.md:8-26 |
 
+
 - The packaged worker declares its seat purpose, authority boundary, and no-commit contract. [1]
+
+
 - The role is a self-contained capsule — everything this seat does is on this page — and it declares no inherited shared sources. [2]
+
 - The canonical source owns this doctrine. [3]
 - MCP package data is copied from canonical skills and checked for drift. [4]
 
@@ -120,7 +129,21 @@ acceptance, leaf integration does not rerun it, and full acceptance belongs to m
 ## Current Contract Evidence
 
 
+
+> Retained earlier citation wording: - Current stage boundaries, settings-owned review budget and recorded approval duties are carried by these instruction sources. [5]
+
+
+
+
+> Retained earlier citation wording: - Worker intake opens exact rendered_path/json_path files and uses actual named-memory reader arguments without restoring task_doc reads. [8]
+
 - Current stage boundaries, settings-owned review budget and recorded approval duties are carried by these instruction sources. [5]
 
 
+- Current synced source supports the qualified account; declarations, mirrors and fixture assertions are not executed acceptance. [7]
+
+
 - Worker intake opens exact rendered_path/json_path files and uses actual named-memory reader arguments without restoring task_doc reads. [8]
+
+
+- The generated role carries its canonical repair-loop instructions without independent authority. [9]

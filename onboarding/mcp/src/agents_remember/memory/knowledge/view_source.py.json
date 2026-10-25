@@ -3,15 +3,14 @@
   "realizes": [],
   "references": {
     "19": {
-      "note": "`StoreViewReader` owns the current boundary described above.",
+      "note": "`StoreViewReader` owns the current boundary described above.\n\nAnchor: `StoreViewReader`",
       "targets": [
         {
           "anchor": {
-            "blob": "4373f6a795d66534ed9b12f910c8ac565728f73f",
-            "content": "sha256:5ef0cca41ca67602fed83f265456f9747a1e1efdbf178552b7b1ef89cc73faf8",
+            "blob": "62477ae2fb481bc7ea9762d2594fad4babc33bd3",
+            "content": "sha256:b4b96302f20338518c4e0f72a5915ddad984e20ec735face8560bd9dbfbe28fa",
             "locator": {
-              "kind": "symbol",
-              "name": "StoreViewReader"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -35,15 +34,14 @@
       ]
     },
     "21": {
-      "note": "The reader's own statement of its division of labour: recorded rows out, no selection, no ordering and no classification, because every such decision carries a provenance class one layer up.",
+      "note": "The port returns recorded rows in deterministic query order while the view layer owns semantic selection, ordering and provenance classification.\n\nAnchor: `StoreViewReader`",
       "targets": [
         {
           "anchor": {
-            "blob": "4373f6a795d66534ed9b12f910c8ac565728f73f",
-            "content": "sha256:5ef0cca41ca67602fed83f265456f9747a1e1efdbf178552b7b1ef89cc73faf8",
+            "blob": "62477ae2fb481bc7ea9762d2594fad4babc33bd3",
+            "content": "sha256:b4b96302f20338518c4e0f72a5915ddad984e20ec735face8560bd9dbfbe28fa",
             "locator": {
-              "kind": "symbol",
-              "name": "StoreViewReader"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -77,22 +75,6 @@
               "end": 151,
               "kind": "line_range",
               "start": 148
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "24": {
-      "note": "The envelope-and-revision read, with its columns named rather than selected by a star so a later column cannot change what a view sees.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "4373f6a795d66534ed9b12f910c8ac565728f73f",
-            "content": "sha256:3881db8104ec885ffb3e58a8eece2d83598f675c90230059dedc9449ad363eb7",
-            "locator": {
-              "kind": "symbol",
-              "name": "RECORDS_OF_KIND"
             }
           },
           "kind": "code"
@@ -163,22 +145,6 @@
         }
       ]
     },
-    "29": {
-      "note": "The attachment read, whose endpoint column is chosen from the declared vocabulary instead of being interpolated from caller text.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "4373f6a795d66534ed9b12f910c8ac565728f73f",
-            "content": "sha256:f8f09d56eb33402f004686745387f811159d584a3ebe50a43f496584347c4aeb",
-            "locator": {
-              "kind": "symbol",
-              "name": "ATTACHMENTS_OF_ENDPOINT"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "30": {
       "note": "The typed-JSON decoding and the never-defaulted author lookup every stored payload passes through.",
       "targets": [
@@ -196,15 +162,14 @@
       ]
     },
     "31": {
-      "note": "The reader class, built from an already-open connection and the declared snapshot, holding no path of its own, and the port it answers — including the membership method the protocol declares so a caller cannot reach for the envelope kind by name.",
+      "note": "The reader class, built from an already-open connection and the declared snapshot, holding no path of its own, and the port it answers.\n\nAnchor: `StoreViewReader`",
       "targets": [
         {
           "anchor": {
-            "blob": "4373f6a795d66534ed9b12f910c8ac565728f73f",
-            "content": "sha256:5ef0cca41ca67602fed83f265456f9747a1e1efdbf178552b7b1ef89cc73faf8",
+            "blob": "62477ae2fb481bc7ea9762d2594fad4babc33bd3",
+            "content": "sha256:b4b96302f20338518c4e0f72a5915ddad984e20ec735face8560bd9dbfbe28fa",
             "locator": {
-              "kind": "symbol",
-              "name": "StoreViewReader"
+              "kind": "file"
             }
           },
           "kind": "code"

@@ -1,5 +1,6 @@
 {
   "path": "dashboard/src/topology/constel.test.ts",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
@@ -48,8 +49,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9cf8c0f5572eef476907ba10a4bfef8669303116",
-            "content": "sha256:b8b519048d8a46d111901e761469e9220916486b24bb1b8ff1e8d520cbf64252",
+            "blob": "235b077ab68b7adfffa2b675a339fb346dca83c1",
+            "content": "sha256:f53636330ee7ec12551b481449425862fa552d1c9deca278efcf4998770d6ee5",
             "locator": {
               "kind": "symbol",
               "name": "constelColors"
@@ -60,7 +61,7 @@
         },
         {
           "anchor": {
-            "blob": "9cf8c0f5572eef476907ba10a4bfef8669303116",
+            "blob": "235b077ab68b7adfffa2b675a339fb346dca83c1",
             "content": "sha256:12d2460b1a40a9cda35b6a2484f2b5e689953029172cd14866fc6116216fac84",
             "locator": {
               "kind": "symbol",
@@ -72,8 +73,8 @@
         },
         {
           "anchor": {
-            "blob": "9cf8c0f5572eef476907ba10a4bfef8669303116",
-            "content": "sha256:1cdd58c292429d5b544ac150cc706f587d9a4c30410eb81af1c423e20be10719",
+            "blob": "235b077ab68b7adfffa2b675a339fb346dca83c1",
+            "content": "sha256:e01d375c5487b04ae8462b795a076f8cd749832339025551285bf5068e95d767",
             "locator": {
               "kind": "symbol",
               "name": "mountConstel"
@@ -84,30 +85,24 @@
         }
       ]
     },
-    "3": {
-      "note": "`col` indexes the palette with no `??` fallback, which makes test 2's `undefined` expectation correct.",
+    "4": {
+      "note": "`CONSTEL_STATUSES` is the `as const` tuple from which `ConstelStatus` is derived.\n\nAnchor: `CONSTEL_STATUSES` `ConstelStatus`",
       "targets": [
         {
           "anchor": {
-            "blob": "25c49cf6ee2dbf0428790acb516b69ee13c75ab9",
-            "content": "sha256:a2754e65dd6d9015d2fe7f78a87565089ff3b2e986f32d600aeb35b6400b290f",
+            "blob": "046383e5c526185a26684c0f11200956456de65e",
+            "content": "sha256:d3d10649bf9236c7aa420388c78fdc9c43caf883bf6224f15a0e32bad2bc395f",
             "locator": {
-              "kind": "symbol",
-              "name": "col"
+              "kind": "file"
             },
-            "path": "dashboard/src/panels/changeset/ChangeSetPane.tsx"
+            "path": "dashboard/src/topology/model.ts"
           },
           "kind": "code"
-        }
-      ]
-    },
-    "4": {
-      "note": "`CONSTEL_STATUSES` is the `as const` tuple from which `ConstelStatus` is derived.",
-      "targets": [
+        },
         {
           "anchor": {
-            "blob": "59f64541870e7ff5dc2349ca590ec159703d74d1",
-            "content": "sha256:6995f9835dafa8ba781ddb2c4a7946277d0f3595424f45737eb3c90e4fc82152",
+            "blob": "046383e5c526185a26684c0f11200956456de65e",
+            "content": "sha256:0f3dc25316fcb99e356aa1370a90f39e2c263aca80e424025f95e1679793b4fa",
             "locator": {
               "kind": "symbol",
               "name": "CONSTEL_STATUSES"
@@ -118,7 +113,7 @@
         },
         {
           "anchor": {
-            "blob": "2b82959051f071a383754faa3d11ebe8b8728ec0",
+            "blob": "046383e5c526185a26684c0f11200956456de65e",
             "content": "sha256:42573ce5c78e597a8799eec27360bf40b57381b7f19ba075170a2b29e01cb18f",
             "locator": {
               "kind": "symbol",
@@ -135,8 +130,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2b82959051f071a383754faa3d11ebe8b8728ec0",
-            "content": "sha256:29d9bf22bd8fbd2401b5e4ea2d9fcb529fbce95fcc44665fbf4ebc3fc9464921",
+            "blob": "046383e5c526185a26684c0f11200956456de65e",
+            "content": "sha256:3f99ac28a49f45b66dd7c5bac8b1ba190f9919c7dd9ab410a1d34c5c9d2d4bf3",
             "locator": {
               "end": 26,
               "kind": "line_range",
@@ -148,12 +143,38 @@
         },
         {
           "anchor": {
-            "blob": "2b82959051f071a383754faa3d11ebe8b8728ec0",
-            "content": "sha256:d6c061b2bf9f32b160e796212e1d8d724a8d4a57d15d7f18803d71dc3c1d3caa",
+            "blob": "046383e5c526185a26684c0f11200956456de65e",
+            "content": "sha256:bd8d5ae0ad68ee4e6e3e77a3972716d0062055d6349f826fc1f7ce0e9c4a048b",
             "locator": {
               "end": 98,
               "kind": "line_range",
               "start": 94
+            },
+            "path": "dashboard/src/topology/model.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "046383e5c526185a26684c0f11200956456de65e",
+            "content": "sha256:32239729b2cea10656284d3b0a41e322717ea996e25f99d129ed6ef76b1bf022",
+            "locator": {
+              "end": 20,
+              "kind": "line_range",
+              "start": 14
+            },
+            "path": "dashboard/src/topology/model.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "046383e5c526185a26684c0f11200956456de65e",
+            "content": "sha256:2d81ab7ba909241283f14082c4b6a7c6d2cd40fac2fa1864796cfed10dccd04d",
+            "locator": {
+              "end": 90,
+              "kind": "line_range",
+              "start": 86
             },
             "path": "dashboard/src/topology/model.ts"
           },

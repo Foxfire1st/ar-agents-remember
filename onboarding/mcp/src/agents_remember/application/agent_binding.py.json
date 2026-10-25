@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/application/agent_binding.py",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
@@ -237,12 +238,12 @@
       ]
     },
     "2": {
-      "note": "Frozen implementation of read_agent_binding supporting the stated file behavior.\n\nAnchor: `read_agent_binding`",
+      "note": "Frozen implementation of read_agent_binding supporting the stated file behavior.",
       "targets": [
         {
           "anchor": {
-            "blob": "f46e6968a1059fe465e50037c9a0f72474965c2e",
-            "content": "sha256:f1ca31a4d002efaa16615dd983d5bc8cda89fe6b59ba3b56359948f548f09c33",
+            "blob": "a80733809cbf60af7617defb6e31923ca95cf87a",
+            "content": "sha256:15f08bef0be4927e0a4e46b8123926c43c0b02110518730a61c26831443aee50",
             "locator": {
               "kind": "file"
             }
@@ -257,11 +258,37 @@
         {
           "anchor": {
             "blob": "cfd95f0c56ed965a4f09d45ba05ac7b22d817eca",
+            "content": "sha256:22bc349351bd8af2100aeac13fc4c7778bbc399dba5194344c66299f8b6c8f59",
+            "locator": {
+              "end": 201,
+              "kind": "line_range",
+              "start": 127
+            },
+            "path": "mcp/tests/test_paseo_agent_tools.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "cfd95f0c56ed965a4f09d45ba05ac7b22d817eca",
             "content": "sha256:2c1fa5fc562c7174dcaa4c45db2c0e143648ee7d6dbe903ec304e5a00fbd5ec0",
             "locator": {
               "end": 202,
               "kind": "line_range",
               "start": 128
+            },
+            "path": "mcp/tests/test_paseo_agent_tools.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "cfd95f0c56ed965a4f09d45ba05ac7b22d817eca",
+            "content": "sha256:2d438796aceb5e76ff5fad176adea4f38eac4e80cd423f215e2fc9fa0092eb2f",
+            "locator": {
+              "end": 193,
+              "kind": "line_range",
+              "start": 119
             },
             "path": "mcp/tests/test_paseo_agent_tools.py"
           },
@@ -293,11 +320,37 @@
         {
           "anchor": {
             "blob": "cfd95f0c56ed965a4f09d45ba05ac7b22d817eca",
+            "content": "sha256:21d4030e6f17e2c62614149dc77d5c509cdbfcdfa5a4bbe557bfc9aa5c599ed7",
+            "locator": {
+              "end": 329,
+              "kind": "line_range",
+              "start": 203
+            },
+            "path": "mcp/tests/test_paseo_agent_tools.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "cfd95f0c56ed965a4f09d45ba05ac7b22d817eca",
             "content": "sha256:bb5b7002484217f2322d40f302be3f8202c07d44941cf97df9e5e8e859815209",
             "locator": {
               "end": 330,
               "kind": "line_range",
               "start": 204
+            },
+            "path": "mcp/tests/test_paseo_agent_tools.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "cfd95f0c56ed965a4f09d45ba05ac7b22d817eca",
+            "content": "sha256:123da210d41deed51137ca3d85b74c7aad3778866ab3d80d83e573f81e2a0498",
+            "locator": {
+              "end": 321,
+              "kind": "line_range",
+              "start": 195
             },
             "path": "mcp/tests/test_paseo_agent_tools.py"
           },
@@ -310,8 +363,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f46e6968a1059fe465e50037c9a0f72474965c2e",
-            "content": "sha256:f1ca31a4d002efaa16615dd983d5bc8cda89fe6b59ba3b56359948f548f09c33",
+            "blob": "a80733809cbf60af7617defb6e31923ca95cf87a",
+            "content": "sha256:726ef4bae83c7466502c544fb5e140119c88d65009fd1d895a05bd1ff78d73c4",
             "locator": {
               "end": 180,
               "kind": "line_range",

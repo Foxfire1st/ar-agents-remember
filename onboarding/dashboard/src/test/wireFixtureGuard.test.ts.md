@@ -119,15 +119,29 @@ No external documentation is used for this bounded card.
 
 - The framing and three responsibilities the mechanism cannot supply itself. [1]
 
+
 - The sanctioned-site registry separates retained decode sites, fixture narrowing, the legacy-provider retirement probe and compiler suppression. [2]
 
+
 - The real-tree sweep derives its discovered vocabulary with `wireTypeNames(program, ROOT)`. [3]
+
 - The vacuity suite's fixture-surface checks. [4]
+
+
 - The reconciliation over the real tree. [5]
+
+
 - The virtual planted modules and honest forms. [6]
+
+
 - Each rule shown biting, including cross-module and unresolved-name cases. [7]
+
+
 - Zero findings on the honest forms. [8]
+
+
 - The registry reconciliation unit cases. [9]
+
 - The five-rule mechanism and discovered vocabulary. [10]
 - The guard's documented uncovered-evasions section names `ElementAccessExpression`. [11]
 

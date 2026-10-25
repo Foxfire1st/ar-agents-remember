@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/models/role_capsules/vocabulary.py",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
@@ -79,16 +80,55 @@
             "path": "mcp/tests/test_role_capsule_admission.py"
           },
           "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "fde424ce1c4b108a144b9b7ab8f0d9fe8a807bf1",
+            "content": "sha256:64e0e480b68fa469482a805923873d4dea2630d4c24170ea616542af67cca3db",
+            "locator": {
+              "end": 153,
+              "kind": "line_range",
+              "start": 148
+            },
+            "path": "mcp/tests/test_role_capsule_admission.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "fde424ce1c4b108a144b9b7ab8f0d9fe8a807bf1",
+            "content": "sha256:93415aaca7ab2dfa02a55eee9566545e6bde49125acfa17ef4793f868131578c",
+            "locator": {
+              "end": 160,
+              "kind": "line_range",
+              "start": 155
+            },
+            "path": "mcp/tests/test_role_capsule_admission.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "fde424ce1c4b108a144b9b7ab8f0d9fe8a807bf1",
+            "content": "sha256:64705d563ae3eca69e611ecbf0a7a272cfebe826a6e54388d515e5adc4dd2c97",
+            "locator": {
+              "end": 166,
+              "kind": "line_range",
+              "start": 162
+            },
+            "path": "mcp/tests/test_role_capsule_admission.py"
+          },
+          "kind": "test"
         }
       ]
     },
     "2": {
-      "note": "The independent role census this module's runtime tuple is compared against.",
+      "note": "The independent role census this module's runtime tuple is compared against.\n\nAnchor: `SHIPPED_ROLES` `SHIPPED_OPERATIONS`",
       "targets": [
         {
           "anchor": {
-            "blob": "392fa69b39891b707c00373514afe893e454be9c",
-            "content": "sha256:63410f259f4d312c7d8028e3f30c9a6663efc101b8e504e91663accb3489bf35",
+            "blob": "fde424ce1c4b108a144b9b7ab8f0d9fe8a807bf1",
+            "content": "sha256:9b008fe112479535ecde29b4117b0800d457eca7f994f5841b1588aeed53387b",
             "locator": {
               "kind": "symbol",
               "name": "SHIPPED_ROLES"
@@ -111,8 +151,8 @@
         },
         {
           "anchor": {
-            "blob": "392fa69b39891b707c00373514afe893e454be9c",
-            "content": "sha256:c73bd88a71370dbb98d5c279e98e22557884e1fbe824c11a48cf3f3993d8acd6",
+            "blob": "fde424ce1c4b108a144b9b7ab8f0d9fe8a807bf1",
+            "content": "sha256:6a1982f58c5de1336717525b201c47a34e38a228960d2f79e44de204ed3f7b0e",
             "locator": {
               "end": 87,
               "kind": "line_range",
@@ -134,16 +174,51 @@
             "path": "mcp/tests/test_role_capsule_admission.py"
           },
           "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "fde424ce1c4b108a144b9b7ab8f0d9fe8a807bf1",
+            "content": "sha256:41eab388669cc60d09513c679530323f23325d78af602839380582ef589c8dfa",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_role_capsule_admission.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "fde424ce1c4b108a144b9b7ab8f0d9fe8a807bf1",
+            "content": "sha256:9caad7c0acbb81f00dc722d5ebb1905a53306888b50387f58df3b87174e4ae37",
+            "locator": {
+              "end": 98,
+              "kind": "line_range",
+              "start": 89
+            },
+            "path": "mcp/tests/test_role_capsule_admission.py"
+          },
+          "kind": "test"
         }
       ]
     },
     "3": {
-      "note": "The parser that is handed this vocabulary and refuses a manifest that disagrees.",
+      "note": "The parser that is handed this vocabulary and refuses a manifest that disagrees.\n\nAnchor: `parse_composition_manifest` `MANIFEST_VOCABULARY_MISMATCH`",
       "targets": [
         {
           "anchor": {
-            "blob": "96753fd67b5fc1c702ebbcc0f89dab1182db7156",
-            "content": "sha256:d3e6eee279eafcfca161291cb247167af728e57159bcf6e30031ef5a16653f19",
+            "blob": "cd8a486213211e6be0e506486402269997de9b68",
+            "content": "sha256:9e72f69c7d30b140570b8095c2756eefda32d61086f0928b95fbd99ff46d676f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/manifest.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cd8a486213211e6be0e506486402269997de9b68",
+            "content": "sha256:f6eb837e5cb925d8c0d34322f5d2c6bb210d05d0fc8839d5792af417a3acbde6",
             "locator": {
               "kind": "symbol",
               "name": "parse_composition_manifest"
@@ -167,7 +242,7 @@
       ]
     },
     "4": {
-      "note": "The narrowing helpers that turn an untrusted string into a role or refuse it.",
+      "note": "The narrowing helpers that turn an untrusted string into a role or refuse it.\n\nAnchor: `narrow_operation` `narrow_role`",
       "targets": [
         {
           "anchor": {
@@ -183,8 +258,8 @@
         },
         {
           "anchor": {
-            "blob": "7bd746889c565d4328ceabf4a616abd724148bed",
-            "content": "sha256:4f5cbb93958244780448723a4b41daa1dcfeba370e0e6b3c465e081bf37fadb1",
+            "blob": "0dfbfa7cad2cc062959ea0052500d3edc6219618",
+            "content": "sha256:6288321bc3f942cff7810ea96a02f6f874e623dd433111d6c0166e0de7648de5",
             "locator": {
               "kind": "symbol",
               "name": "narrow_role"
@@ -201,6 +276,17 @@
               "end": 189,
               "kind": "line_range",
               "start": 177
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/selection.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0dfbfa7cad2cc062959ea0052500d3edc6219618",
+            "content": "sha256:2d7b0d6285eed564c0e4b3baa4959c1e6d2dd75b6f69522cb73b12be963ad207",
+            "locator": {
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/models/role_capsules/selection.py"
           },
@@ -231,8 +317,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2295c698608e6e8910ee28c1db3c5296dcf4d6a4",
-            "content": "sha256:b50b2c40b618cc6614d6928bff38bc85c43f019a5690caf174f7d940ccbb8aeb",
+            "blob": "db5945e5f2851a76ce476f905684a268325b9442",
+            "content": "sha256:5ee7af22f1475511d413b6813ad1187f76c2decd5725f7d5f68615d5f062aea0",
             "locator": {
               "kind": "symbol",
               "name": "KNOWN_ROLES"
@@ -243,12 +329,23 @@
         },
         {
           "anchor": {
-            "blob": "2295c698608e6e8910ee28c1db3c5296dcf4d6a4",
-            "content": "sha256:2300076a199f3e81a0920a5259f39ce51ae89d3b738db3dd3e0b975c0f189ce6",
+            "blob": "db5945e5f2851a76ce476f905684a268325b9442",
+            "content": "sha256:583553444822b40df56b808e08d4ece7e7172b232e2340b26c006711e82dc851",
             "locator": {
               "end": 94,
               "kind": "line_range",
               "start": 78
+            },
+            "path": "mcp/src/agents_remember/kernel/_agentic_settings_core.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "db5945e5f2851a76ce476f905684a268325b9442",
+            "content": "sha256:83f9ef3b3cacad9ff2e0d4ea57f0bdf33279b90ab372459a61f8a53536b2a19e",
+            "locator": {
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/kernel/_agentic_settings_core.py"
           },

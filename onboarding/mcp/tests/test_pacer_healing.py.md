@@ -18,4 +18,5 @@ Local implementation and executable evidence do not replace requirement authorit
 
 ## Evidence
 
+
 - MIK-R81 rules 5/6 (F05/F06): healing wakes and invalidation acknowledgement. [1]

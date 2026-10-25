@@ -3,15 +3,14 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The oracle snapshots files, refs, admin dirs and alternates chains",
+      "note": "The oracle snapshots files, refs, admin dirs and alternates chains\n\nAnchor: `_snapshot`",
       "targets": [
         {
           "anchor": {
-            "blob": "c9c76f665a1c80f400e0aed0a3c0531b4054a3c8",
-            "content": "sha256:4991520fd28539c2618b1937e855aa3826ecc7b038c1c5a1db407b177e0b0666",
+            "blob": "1be60dc881b0a6565e8429a0734fd63a841d2e0d",
+            "content": "sha256:e4d890accb41a459d8ab3d27e0a6385e83f86c2b777e901a99b9080884ab2e7d",
             "locator": {
-              "kind": "symbol",
-              "name": "_snapshot"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -51,15 +50,14 @@
       ]
     },
     "4": {
-      "note": "Classification is one entry point over Git and file findings",
+      "note": "Classification is one entry point over Git and file findings\n\nAnchor: `_classify`",
       "targets": [
         {
           "anchor": {
-            "blob": "c9c76f665a1c80f400e0aed0a3c0531b4054a3c8",
-            "content": "sha256:2ac4461b13698c2e9fc70096230d667f87810e627e22c7603c80c2431e94ae87",
+            "blob": "1be60dc881b0a6565e8429a0734fd63a841d2e0d",
+            "content": "sha256:e4d890accb41a459d8ab3d27e0a6385e83f86c2b777e901a99b9080884ab2e7d",
             "locator": {
-              "kind": "symbol",
-              "name": "_classify"
+              "kind": "file"
             }
           },
           "kind": "test"

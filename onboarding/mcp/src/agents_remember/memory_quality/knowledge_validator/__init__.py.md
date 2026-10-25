@@ -48,7 +48,9 @@ The module docstring names MIK-R48's rule beside the history-row rule: at a
 leaf's publication a new or edited changed family row records its effect and own
 revision. Registration itself is unchanged; one module still owns the registry.
 
-- The validator package's module map names the family-judgment publication rule. [7]
+
+- The validator package's module map names the family-judgment publication rule.
+
 
 ## Evidence
 
@@ -66,9 +68,13 @@ No configured live documentation source was available for this pass.
 
 The re-exported API and the module map.
 
+
 - The re-exported names, `writer_reported_rule_ids` included. [1]
+
 - Importing the validator registers the rule modules, MIK-R04's route rules and MIK-R27's admission rules included. [2]
+
 - The route adapter the composition binds. [3]
+
 
 - The module map names MIK-R14's link guard, and importing the validator registers it. [5]
 

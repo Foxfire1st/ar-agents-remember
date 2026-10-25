@@ -31,4 +31,3 @@ No Domain Documentation sources are configured. These are source/test contracts,
 - Working-tree inventory counts file/link entries without following targets or including Git administration. [5]
 - Leaf-bound reports retain committed changes and keep the diagnostic fallback distinct. [6]
 - The pure report keeps landing facts report-only and names an unreadable base. [7]
-- The operation-level gate and closeout-quality cases compare landed and clean populations without claiming a live transaction. [8]

@@ -54,6 +54,8 @@ without timing the wall clock.
 
 ### Conventions
 
+The expected merge-reported and writer-reported rule sets also include `R198.1-reference-anchor`. It reports repair debt during authoring/sync and refuses publication; it is not an unconditionally report-only rule. Existing test function spellings containing ten/five are retained names, not current rule population counts.
+
 A case that asserts a route's behaviour calls the validator through the route (publication, merge, sync) rather
 than only through the validator function.
 
@@ -64,11 +66,15 @@ than only through the validator function.
 
 ## Evidence
 
+
 - Registration rejects unnamed reporting or competing report reasons and verifies the rule sets. [1]
+
 - Leaf and publication versus merge cases exercise the existing-record, absent-route, unrealized-family and gone-path boundaries. [2]
 - A standalone conversion rejects bases, paired code and publication, while candidate overviews join the migration population. [3]
 - Admission operation counts constrain per-record classification rather than elapsed runtime. [4]
 - A merge-moved row reports at merge but is refused by covered-entry validation at publication. [5]
+
 - Messages, command help and the workflow text carry the named reporting and refusal decisions. [6]
+
 - Complete-census cases cover carried debt at both landing and sync with incomplete controls. [7]
 - The merge-report set assertion includes the separate link-target rule beside the original ten decisions. [8]

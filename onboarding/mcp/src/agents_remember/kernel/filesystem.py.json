@@ -1,54 +1,19 @@
 {
   "path": "mcp/src/agents_remember/kernel/filesystem.py",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
-      "note": "`c-09-git-worktree-manager` skill closeout planning uses the helper for changed-file filtering and onboarding metadata/catalog reads and writes; since MIK-R30 the card metadata refresh returns before any read or write on a converted memory tree.\n\nAnchor: \"def changed_worktree_paths\"",
+      "note": "Worktree closeout planning uses the helper to filter changed worktree and committed paths, to plan sidecar refreshes over working and committed-range paths, and to recompute the changed entity fingerprints in the onboarding catalog. Source caption: `onboarding_refresh_plan_for_context` `refresh_entity_fingerprints_for_context` `refresh_onboarding_metadata_for_context`",
       "targets": [
         {
           "anchor": {
-            "blob": "92153a583a3f119a02cba25ddf722a99e3b54c8f",
-            "content": "sha256:bc695c5ab4f0ba0ca4694f35156fc27f5aa39c58e1679e822bf1995e96066035",
+            "blob": "9cfaea0658dd0c7c7e4ab655d0031da3b206961d",
+            "content": "sha256:0e79ba415fc69c4911c449a0d32333a3dd33e0aa68e711b17568dba622df25cb",
             "locator": {
-              "kind": "symbol",
-              "name": "onboarding_refresh_plan_for_context"
-            },
-            "path": "mcp/src/agents_remember/worktrees/modules/onboarding.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "92153a583a3f119a02cba25ddf722a99e3b54c8f",
-            "content": "sha256:aba14effbd20ffcb8185568f013586b3f5080fa11159ab7bfe40e2030b54bdb3",
-            "locator": {
-              "kind": "symbol",
-              "name": "refresh_entity_fingerprints_for_context"
-            },
-            "path": "mcp/src/agents_remember/worktrees/modules/onboarding.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "92153a583a3f119a02cba25ddf722a99e3b54c8f",
-            "content": "sha256:153e06b90c444ab11b1392d55921a00acc233df75e6a9d16b5a820ffe315a2b8",
-            "locator": {
-              "kind": "symbol",
-              "name": "refresh_onboarding_metadata_for_context"
-            },
-            "path": "mcp/src/agents_remember/worktrees/modules/onboarding.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "adcfc9f09ecae3d0d9b7cd7484d6c0642564547a",
-            "content": "sha256:b9ce6efbe01edbc2ac10790bf2696826d77d52c17d7037e75ef1f0d364f728f8",
-            "locator": {
-              "end": 228,
+              "end": 988,
               "kind": "line_range",
-              "start": 228
+              "start": 975
             },
             "path": "mcp/src/agents_remember/worktrees/modules/git.py"
           },
@@ -57,9 +22,9 @@
         {
           "anchor": {
             "blob": "9cfaea0658dd0c7c7e4ab655d0031da3b206961d",
-            "content": "sha256:db0bd40924bf1e90c5906d0f63e1ce158dcfbbd13124ada55c7387ecdc24a02d",
+            "content": "sha256:1195728b19af21f629571abbfeb4fded7ff821b5d4e5eaa5b03576e2bdf0cb6d",
             "locator": {
-              "end": 932,
+              "end": 946,
               "kind": "line_range",
               "start": 931
             },
@@ -70,13 +35,26 @@
         {
           "anchor": {
             "blob": "9cfaea0658dd0c7c7e4ab655d0031da3b206961d",
-            "content": "sha256:e183e7b58e6de88bcad7a93b275b632381a133fdb68bdd47537b24b1cc4d28e4",
+            "content": "sha256:09041fbb1dc62ffbb3e5d7e1edc8feb428539e8c960cd11661e8c32767ef56b7",
             "locator": {
-              "end": 949,
+              "end": 963,
               "kind": "line_range",
               "start": 949
             },
             "path": "mcp/src/agents_remember/worktrees/modules/git.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "80a4a1aa9ecd845e13f6f600c46560e34da8ce15",
+            "content": "sha256:18d5ebbea3a05ed4ec5591770b5c64663f584dbb94a405c0d12d7e7aebe6a8dc",
+            "locator": {
+              "end": 775,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/onboarding.py"
           },
           "kind": "code"
         }

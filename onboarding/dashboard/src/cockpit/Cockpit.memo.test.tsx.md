@@ -42,10 +42,15 @@ No configured live documentation source was available for this pass.
 
 ### Repo-Internal References
 
+
 - The keep-alive case observes the File Viewer layer identity instead of the Engine Room. [13]
 
 
+
+
 - The hidden-not-unmounted wrapper whose identity survives a switch. [14]
+
+
 
 
 - The mounted layers the render counts observe. [15]
@@ -53,7 +58,10 @@ No configured live documentation source was available for this pass.
 
 
 
+
+
 - The River-hidden sidebar case keeps the same document-chat node across the EventRiver toggle. [16]
+
 
 
 

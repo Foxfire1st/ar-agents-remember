@@ -1,9 +1,10 @@
 {
   "path": "mcp/tests/test_review_block_state_values_through_real_tools.py",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
-      "note": "Sync records current when the line leaves both trees",
+      "note": "Sync records current when the carried line leaves both trees.",
       "targets": [
         {
           "anchor": {
@@ -19,7 +20,7 @@
       ]
     },
     "2": {
-      "note": "Closeout receipt is moved when code changes after review",
+      "note": "A closeout receipt reads moved when the code changes after review.",
       "targets": [
         {
           "anchor": {
@@ -35,7 +36,7 @@
       ]
     },
     "3": {
-      "note": "Integration receipt is bound when both trees match",
+      "note": "An integration receipt is bound when both trees match.",
       "targets": [
         {
           "anchor": {
@@ -51,7 +52,7 @@
       ]
     },
     "4": {
-      "note": "Memory capture fault records unmeasured",
+      "note": "A memory capture fault records unmeasured.",
       "targets": [
         {
           "anchor": {
@@ -67,7 +68,7 @@
       ]
     },
     "5": {
-      "note": "Removed-mode behavior is a named refusal, not a memory-free comparison.\n\nAnchor: `test_start_refuses_disabled_where_knowledge_exists`, `test_admission_refuses_a_legacy_contract_with_the_way_out`",
+      "note": "Removed-mode behaviour is a named refusal, not a memory-free comparison.\n\nAnchor: `test_start_refuses_disabled_where_knowledge_exists`, `test_admission_refuses_a_legacy_contract_with_the_way_out`",
       "targets": [
         {
           "anchor": {
@@ -96,45 +97,12 @@
       ]
     },
     "6": {
-      "note": "A differing-byte carry retains the refusal block's original not-measured and non-covering assertions. Receipt fixtures retain canonical layout and real receipt assertions while sharing the explicit items-judgment seam.\n\nAnchor: `_closed_reviewed_leaf`, `test_integration_receipt_is_bound_when_both_trees_match`, `test_integration_receipt_is_moved_when_code_changes_after_review`",
+      "note": "A differing-byte carry retains the refusal block's original not-measured and non-covering assertions.\n\nAnchor: `_closed_reviewed_leaf` `test_integration_receipt_is_bound_when_both_trees_match` `test_integration_receipt_is_moved_when_code_changes_after_review`",
       "targets": [
         {
           "anchor": {
             "blob": "2039f4b6a5144c87ffb2c0862a2f7dea1ae42120",
-            "content": "sha256:2f05c6acf789e0194b1c43f2a047c4885039cde4f377475a438b6aeab2f7e0f9",
-            "locator": {
-              "kind": "symbol",
-              "name": "_closed_reviewed_leaf"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "2039f4b6a5144c87ffb2c0862a2f7dea1ae42120",
-            "content": "sha256:8bbdea19933e2c3b0d4cf592cc9563dd050ca7cd9214292afa35cffa7db2ccaf",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_integration_receipt_is_bound_when_both_trees_match"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "2039f4b6a5144c87ffb2c0862a2f7dea1ae42120",
-            "content": "sha256:ab56f1c18b9f14f208b8489e4db28b29ae49d650a8992b458291c5da0d2de249",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_integration_receipt_is_moved_when_code_changes_after_review"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "aa3b471611ed3b69e6220c1fe39c269ebcb80b30",
-            "content": "sha256:edf3b78957e049193a52d7dfdee9026bd05020332e1393f48fdfec9b550a2014",
+            "content": "sha256:e6e8f2cec91f9ef7645f5e974e24cb4800349fd7906b754447240fb8ed5af904",
             "locator": {
               "kind": "file"
             }
@@ -144,7 +112,7 @@
       ]
     },
     "7": {
-      "note": "Close the real owner history and take a fresh production comparison before closeout; original receipt assertions remain.",
+      "note": "The real owner history is closed and a fresh production comparison taken before closeout, with the original receipt assertions intact.",
       "targets": [
         {
           "anchor": {

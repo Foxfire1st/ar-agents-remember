@@ -16,4 +16,5 @@ The answer-table tests consume these exact fixture bytes. Production versus reco
 
 ## Evidence
 
+
 - This static answer records the naming/compact fields and its own epoch qualifiers. [1]

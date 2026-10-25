@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/application/knowledge_paging/tree_read.py",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
@@ -119,8 +120,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b4fb3c6660f8614143e3526477bf733ef8f58d20",
-            "content": "sha256:5680bcd9eb0d97cf2dc07777b851539d05de60a0e94221f8549a48bda238e663",
+            "blob": "2e48a7f6cc081b63ab5137fc50e99d764788f520",
+            "content": "sha256:8fdc5c240c49f2f15ecf87b4ac628e1ac2345b4fe5f971db8f01e0b3421b0f86",
             "locator": {
               "kind": "symbol",
               "name": "_leaf_response"
@@ -202,12 +203,23 @@
       ]
     },
     "16": {
-      "note": "Converted trees refuse unheld seeds; mounted tools refuse legacy memory without opening a database.",
+      "note": "Converted trees refuse unheld seeds; mounted tools refuse legacy memory without opening a database.\n\nAnchor: `test_a_converted_tree_refuses_a_seed_it_does_not_hold` `test_every_knowledge_tool_refuses_legacy_memory_and_opens_no_database`",
       "targets": [
         {
           "anchor": {
-            "blob": "9ca8a915fc0011e8ee8f280439e1cad09171468c",
-            "content": "sha256:7e1e729d4246d5a2324fb9fe15f5684ab9fcb8e6a56f1fe41f480e811afb4724",
+            "blob": "bc2b134a1ee2b8958e995038dec519a5af1d7b69",
+            "content": "sha256:ea95bfa599e174f1929e6b7796658990bfd638ff2f8acaf153a5687b24b5c5cf",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_knowledge_index_surfaces.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "bc2b134a1ee2b8958e995038dec519a5af1d7b69",
+            "content": "sha256:c56f96e5b76b517748e7c36fddf6f1d863d0d60d5636bb0b2ab6b04dc3e481ef",
             "locator": {
               "kind": "symbol",
               "name": "test_a_converted_tree_refuses_a_seed_it_does_not_hold"
@@ -218,8 +230,8 @@
         },
         {
           "anchor": {
-            "blob": "9ca8a915fc0011e8ee8f280439e1cad09171468c",
-            "content": "sha256:5bc3a8924f717e9a6d5081c853dbe84a471c3533bcc2f1ee6131c4f9802bbdc3",
+            "blob": "bc2b134a1ee2b8958e995038dec519a5af1d7b69",
+            "content": "sha256:35cd6c3d19d38de1c42fefdcc64d139ae6134334dfae7d81d6fc76e74a1bfd45",
             "locator": {
               "kind": "symbol",
               "name": "test_every_knowledge_tool_refuses_legacy_memory_and_opens_no_database"
@@ -235,8 +247,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f88bb661f85cb46755bade8be26469270181b8e7",
-            "content": "sha256:6663f74a814545efd5290af88c056a6a0fc1640b5a00b2b0dec9104312f73238",
+            "blob": "2e48a7f6cc081b63ab5137fc50e99d764788f520",
+            "content": "sha256:e19c94b6f01431198d3ed4919b379a66f760aa92c5e528c0ec635c8a82d1d9b8",
             "locator": {
               "kind": "file"
             }
@@ -293,8 +305,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b4fb3c6660f8614143e3526477bf733ef8f58d20",
-            "content": "sha256:5d5b0a1f3ef99ef70850f6c59d2ea1e778efc30f4d6e35bc27f7cd3121a28cae",
+            "blob": "2e48a7f6cc081b63ab5137fc50e99d764788f520",
+            "content": "sha256:24c34bcf9733410d1c3b76f98624f7e230c837b5292888559704d894241543c3",
             "locator": {
               "kind": "symbol",
               "name": "read_tree_page"
@@ -309,8 +321,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f88bb661f85cb46755bade8be26469270181b8e7",
-            "content": "sha256:e92265b8e987e12d2d2ab79fcd13cf6bca61d702af0f7427a537d0214d8d96d8",
+            "blob": "2e48a7f6cc081b63ab5137fc50e99d764788f520",
+            "content": "sha256:b9380406a4ff3db3e70b5000526ce77ac7a6a0bdadff4c13d79c7d67a163e214",
             "locator": {
               "kind": "symbol",
               "name": "_at_code_tree"
@@ -347,8 +359,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b4fb3c6660f8614143e3526477bf733ef8f58d20",
-            "content": "sha256:845a97957369f4d8cb630d04183cf2b588095b7b6481e0e59d5d78a01a2f79d4",
+            "blob": "2e48a7f6cc081b63ab5137fc50e99d764788f520",
+            "content": "sha256:9d731812d4aed0981017a5a3daaeb28d609def112c0e1eba7bb86bf1db91fedd",
             "locator": {
               "kind": "symbol",
               "name": "_view_response"
@@ -358,8 +370,8 @@
         },
         {
           "anchor": {
-            "blob": "b4fb3c6660f8614143e3526477bf733ef8f58d20",
-            "content": "sha256:5c73d18b721e8796bc1ba9f5e08f8b33b1db1d26a2055e73f966c1e2e28c1f1d",
+            "blob": "2e48a7f6cc081b63ab5137fc50e99d764788f520",
+            "content": "sha256:268cc0d2036674636a0b9f9bc76ba17b0b7dc08e40454cf8b14efddf23ac6df8",
             "locator": {
               "kind": "symbol",
               "name": "_scope_response"

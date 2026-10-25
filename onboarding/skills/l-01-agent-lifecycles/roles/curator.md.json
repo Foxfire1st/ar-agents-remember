@@ -1,5 +1,6 @@
 {
   "path": "skills/l-01-agent-lifecycles/roles/curator.md",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
@@ -251,8 +252,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cfec25b1fea3859e299dc47f8f8978fed2bb2c52",
-            "content": "sha256:aeaf9ad0ca1ac350656b7d577f4f3db76cc4e12d6014225eeee383dc3201bca0",
+            "blob": "c2d38cd0a82b9efe96a765c4512f2242c6a9d3e6",
+            "content": "sha256:77f0bc67759623c8c52d7ef822db6c67c86fea9258d4d1a657531e1475d3bf25",
             "locator": {
               "end": 58,
               "kind": "line_range",
@@ -268,12 +269,59 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0aa64abcceae8acc8d29755e7d85bd183f04cce8",
-            "content": "sha256:1cdf518f1795bd06288d5f7e86631f5dd319b16a0d5e7a42b3d847598c6660a6",
+            "blob": "6ebd065137efa6511deb754505556d60730f4647",
+            "content": "sha256:17285fd2535f8db51753f8b0c481afa531f4c4e1b7e3b5f3e11d3024c07e6712",
             "locator": {
-              "end": 244,
+              "end": 31,
               "kind": "line_range",
-              "start": 1
+              "start": 27
+            },
+            "path": "skills/l-01-agent-lifecycles/reference/curator-card-details.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "896e170e9ff4b3ee595eeeb3285983629e0db7eb",
+            "content": "sha256:0f284486f90b96b01330a4b4583420666b043e9f165fd520509ec4cdab276b07",
+            "locator": {
+              "end": 18,
+              "kind": "line_range",
+              "start": 10
+            },
+            "path": "skills/l-01-agent-lifecycles/reference/curator-handoff-d301.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "145be631612f52c363b97b82d253839028ebc907",
+            "content": "sha256:2d4f1e4a04674e22d8784c2bb1c449585ddd025da78757343777ede50708908c",
+            "locator": {
+              "end": 32,
+              "kind": "line_range",
+              "start": 20
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/curation.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c2d38cd0a82b9efe96a765c4512f2242c6a9d3e6",
+            "content": "sha256:bf84a3ed8c01ec6b196ea32aefcba2d0b8d3ba25d5ca9879640d6e153bc2c9a5",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c2d38cd0a82b9efe96a765c4512f2242c6a9d3e6",
+            "content": "sha256:bf84a3ed8c01ec6b196ea32aefcba2d0b8d3ba25d5ca9879640d6e153bc2c9a5",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -285,8 +333,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "700f45663d148e00dd89e0e5560e7c22f3bdbf7f",
-            "content": "sha256:b2d2b85db8c7fd89807992475fa635ff3835cd305ee5a0043974e53c3939a45d",
+            "blob": "c2d38cd0a82b9efe96a765c4512f2242c6a9d3e6",
+            "content": "sha256:8df803d9c8d6946b75b61e978b66dd9afa976d1ff23c056fa7ed75b11ab01587",
             "locator": {
               "end": 114,
               "kind": "line_range",
@@ -297,8 +345,8 @@
         },
         {
           "anchor": {
-            "blob": "e0b3bcfc145479a365a748510d7bd04490842c91",
-            "content": "sha256:b319457fc6b8c16226e8b15b759a94d792a6652b16b8cbaee97f83524cce3d22",
+            "blob": "c2d38cd0a82b9efe96a765c4512f2242c6a9d3e6",
+            "content": "sha256:d44800ba84c39aa2417763f53903d481cae2c9159ba80174fcf6fecddc3eb709",
             "locator": {
               "end": 108,
               "kind": "line_range",
@@ -314,12 +362,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e0b3bcfc145479a365a748510d7bd04490842c91",
-            "content": "sha256:ea11330c768950d01748db65761189c97e2618bf4717483f2bcf74a32811c511",
+            "blob": "c2d38cd0a82b9efe96a765c4512f2242c6a9d3e6",
+            "content": "sha256:bf84a3ed8c01ec6b196ea32aefcba2d0b8d3ba25d5ca9879640d6e153bc2c9a5",
             "locator": {
-              "end": 185,
-              "kind": "line_range",
-              "start": 178
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -327,12 +373,12 @@
       ]
     },
     "13": {
-      "note": "Updated/no_impact source-bound onboarding judgments are distinct from mere mechanical changes.",
+      "note": "Foundation authoring is task work inside the Architect's task under the Curator rules; the seat is leaf-bound, and no taskless session stands in for task admission. \\ Anchor: Foundation carrier and admission",
       "targets": [
         {
           "anchor": {
-            "blob": "e0b3bcfc145479a365a748510d7bd04490842c91",
-            "content": "sha256:9c4ee978968c2e6202ea77b8efa655ab95d33ba67d98d60cafd09432fd17efac",
+            "blob": "c2d38cd0a82b9efe96a765c4512f2242c6a9d3e6",
+            "content": "sha256:801c0c0da78233c56ad4e2a286fe9f0c8eab2bc5299b63b0cbcafaf86a8eae86",
             "locator": {
               "end": 123,
               "kind": "line_range",
@@ -348,8 +394,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e0b3bcfc145479a365a748510d7bd04490842c91",
-            "content": "sha256:de413ba94526aa06747cb525534cd1f3dd39b374eb6fe4d12d771950924d8f14",
+            "blob": "c2d38cd0a82b9efe96a765c4512f2242c6a9d3e6",
+            "content": "sha256:f18ab9c78f5fa3cd358f09f655f6018c0bca674510f18605e9e8506b51d4127d",
             "locator": {
               "end": 147,
               "kind": "line_range",
@@ -361,7 +407,7 @@
       ]
     },
     "15": {
-      "note": "Foundation authoring is task work inside the Architect's task under the Curator rules; the seat is leaf-bound, and no taskless session stands in for task admission. [13] Anchor: Foundation carrier and admission",
+      "note": "Foundation authoring is task work inside the Architect's task under the Curator rules; the seat is leaf-bound, and no taskless session stands in for task admission. \\ Anchor: Foundation carrier and admission",
       "targets": [
         {
           "anchor": {
@@ -377,8 +423,8 @@
         },
         {
           "anchor": {
-            "blob": "65ce2a9cb31855e3babcd27aff8cadee4339db25",
-            "content": "sha256:6719405682a75696487c0d8fe4e1df3bce94c42ff31364ae9843ee551af84c7e",
+            "blob": "c2d38cd0a82b9efe96a765c4512f2242c6a9d3e6",
+            "content": "sha256:43c092f547ed399db3639eb0b8d5e87170a88eb4c78c27bb8b338248f01a1e87",
             "locator": {
               "end": 157,
               "kind": "line_range",
@@ -390,17 +436,31 @@
       ]
     },
     "16": {
-      "note": "The canonical section states corrected Writer/worklist/recovery duties and records real rejected design alternatives rather than inventing future work.",
+      "note": "The named worklist detail states corrected Writer/worklist/link-repair duties; authoring detail107–108 retains real rejected alternatives rather than invented future work.",
       "targets": [
         {
           "anchor": {
-            "blob": "e0b3bcfc145479a365a748510d7bd04490842c91",
-            "content": "sha256:7491349cf80cfc2e035d5254060368d69c4a1c22448ea81147abc6ea572fae22",
+            "blob": "7a78bd431734fd758e40bbd22a3dbcad0d2810a8",
+            "content": "sha256:7f1846c0abf6d396570532e2b9f39f267851fffee06f877717cc8fab96732b13",
             "locator": {
-              "end": 94,
+              "end": 32,
               "kind": "line_range",
-              "start": 68
-            }
+              "start": 1
+            },
+            "path": "skills/l-01-agent-lifecycles/reference/curator-worklist-details.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "69517ee942d200d941aa32f6439d9be3dec88d70",
+            "content": "sha256:05dd52f53ca57d931572b5b83107164696feb67479ee732bfcb0c9c1f4728623",
+            "locator": {
+              "end": 108,
+              "kind": "line_range",
+              "start": 105
+            },
+            "path": "skills/l-01-agent-lifecycles/reference/curator-authoring-d301.md"
           },
           "kind": "code"
         }
@@ -411,8 +471,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a602c903e6382a89023cdd7692950e3a0b1e3061",
-            "content": "sha256:88406221712eeded31a9816ef129f48f6a693432619933c9688aa0a3eaa8f978",
+            "blob": "c2d38cd0a82b9efe96a765c4512f2242c6a9d3e6",
+            "content": "sha256:bd9c0e422ab145a3fc3642ee010b43d3b63ba9d9e1595fdd3c1940618db11c84",
             "locator": {
               "end": 47,
               "kind": "line_range",
@@ -424,16 +484,16 @@
       ]
     },
     "18": {
-      "note": "Compresses/reorganizes the role around whole inline inputs/outputs and boundaries, references named-step detail, adds completion-only own-step marking and the three-own-repair stop, and names recorded memory review.\n\nAnchor: Current source; preserved L88 property 18",
+      "note": "Compresses/reorganizes the role around whole inline inputs/outputs and boundaries, references named-step detail, adds completion-only own-step marking and the three-own-repair stop, and names recorded memory review.\n\nAnchor: Current source; preserved L88 property 17",
       "targets": [
         {
           "anchor": {
-            "blob": "c1ca237cbef48e6790002772f6026d98fe214427",
-            "content": "sha256:570f194fc738467db507560337ed162f771825573e90f1fc6870604be8d6a86c",
+            "blob": "c2d38cd0a82b9efe96a765c4512f2242c6a9d3e6",
+            "content": "sha256:bd9c0e422ab145a3fc3642ee010b43d3b63ba9d9e1595fdd3c1940618db11c84",
             "locator": {
-              "end": 84,
+              "end": 47,
               "kind": "line_range",
-              "start": 51
+              "start": 10
             }
           },
           "kind": "code"
@@ -441,16 +501,16 @@
       ]
     },
     "19": {
-      "note": "Compresses/reorganizes the role around whole inline inputs/outputs and boundaries, references named-step detail, adds completion-only own-step marking and the three-own-repair stop, and names recorded memory review.\n\nAnchor: Current source; preserved L88 property 19",
+      "note": "Compresses/reorganizes the role around whole inline inputs/outputs and boundaries, references named-step detail, adds completion-only own-step marking and the three-own-repair stop, and names recorded memory review.\n\nAnchor: Current source; preserved L88 property 17",
       "targets": [
         {
           "anchor": {
-            "blob": "70bb5757b6f36200ece074f47b219868173729ae",
-            "content": "sha256:3c29a3dc294be51af202a1de3402beafee3fa7f1ee1eb72534a3013fa3b055a0",
+            "blob": "c2d38cd0a82b9efe96a765c4512f2242c6a9d3e6",
+            "content": "sha256:bd9c0e422ab145a3fc3642ee010b43d3b63ba9d9e1595fdd3c1940618db11c84",
             "locator": {
-              "end": 125,
+              "end": 47,
               "kind": "line_range",
-              "start": 89
+              "start": 10
             }
           },
           "kind": "code"
@@ -458,33 +518,47 @@
       ]
     },
     "2": {
-      "note": "Three-way reconciliation, explicit retention, writer/readback and full quality duties.\n\nAnchor: `## Process`",
+      "note": "Three-way reconciliation, explicit retention, writer/readback and full quality duties.",
       "targets": [
         {
           "anchor": {
-            "blob": "5a756f65b233df245d1ae081625d17ba1283e89a",
-            "content": "sha256:629aa6b61c855ffdb823b6cfa3f29152dc6283ba7596cbe2219a82383e8e5720",
+            "blob": "69517ee942d200d941aa32f6439d9be3dec88d70",
+            "content": "sha256:f9dc8f9e634fad1e4b0a3318d79cad6fb2a3169b47b5bb9f0c86f1300f3f05d3",
             "locator": {
-              "end": 163,
+              "end": 54,
               "kind": "line_range",
-              "start": 59
-            }
+              "start": 19
+            },
+            "path": "skills/l-01-agent-lifecycles/reference/curator-authoring-d301.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6ebd065137efa6511deb754505556d60730f4647",
+            "content": "sha256:661abe0158c5c7e35b5523dd1f643df66f67fdc87d8dc8ca9e60aec21523e2b8",
+            "locator": {
+              "end": 5,
+              "kind": "line_range",
+              "start": 3
+            },
+            "path": "skills/l-01-agent-lifecycles/reference/curator-card-details.md"
           },
           "kind": "code"
         }
       ]
     },
     "20": {
-      "note": "Compresses/reorganizes the role around whole inline inputs/outputs and boundaries, references named-step detail, adds completion-only own-step marking and the three-own-repair stop, and names recorded memory review.\n\nAnchor: Current source; preserved L88 property 20",
+      "note": "Compresses/reorganizes the role around whole inline inputs/outputs and boundaries, references named-step detail, adds completion-only own-step marking and the three-own-repair stop, and names recorded memory review.\n\nAnchor: Current source; preserved L88 property 17",
       "targets": [
         {
           "anchor": {
-            "blob": "9c3645680ef1a2c5c09b50320b7189006fa67d90",
-            "content": "sha256:62cf321e9787c1e5e53a9f1d3c988c55d5d2ad326fd1acc147dfe57d077a1499",
+            "blob": "c2d38cd0a82b9efe96a765c4512f2242c6a9d3e6",
+            "content": "sha256:bd9c0e422ab145a3fc3642ee010b43d3b63ba9d9e1595fdd3c1940618db11c84",
             "locator": {
-              "end": 159,
+              "end": 47,
               "kind": "line_range",
-              "start": 126
+              "start": 10
             }
           },
           "kind": "code"
@@ -492,90 +566,85 @@
       ]
     },
     "21": {
-      "note": "Compresses/reorganizes the role around whole inline inputs/outputs and boundaries, references named-step detail, adds completion-only own-step marking and the three-own-repair stop, and names recorded memory review.\n\nAnchor: Current source; preserved L88 property 21",
+      "note": "Compresses/reorganizes the role around whole inline inputs/outputs and boundaries, references named-step detail, adds completion-only own-step marking and the three-own-repair stop, and names recorded memory review.\n\nAnchor: Current source; preserved L88 property 17",
       "targets": [
         {
           "anchor": {
-            "blob": "145be631612f52c363b97b82d253839028ebc907",
-            "content": "sha256:ecc246e59241aed510b2b97b39743d48a13d91db7eab4de737a7b5f7fc524a65",
+            "blob": "c2d38cd0a82b9efe96a765c4512f2242c6a9d3e6",
+            "content": "sha256:bd9c0e422ab145a3fc3642ee010b43d3b63ba9d9e1595fdd3c1940618db11c84",
             "locator": {
-              "end": 99,
+              "end": 47,
               "kind": "line_range",
-              "start": 68
-            },
-            "path": "skills/l-01-agent-lifecycles/operations/curation.md"
+              "start": 10
+            }
           },
           "kind": "code"
         }
       ]
     },
     "22": {
-      "note": "Compresses/reorganizes the role around whole inline inputs/outputs and boundaries, references named-step detail, adds completion-only own-step marking and the three-own-repair stop, and names recorded memory review.\n\nAnchor: Current source; preserved L88 property 22",
+      "note": "Compresses/reorganizes the role around whole inline inputs/outputs and boundaries, references named-step detail, adds completion-only own-step marking and the three-own-repair stop, and names recorded memory review.\n\nAnchor: Current source; preserved L88 property 17",
       "targets": [
         {
           "anchor": {
-            "blob": "145be631612f52c363b97b82d253839028ebc907",
-            "content": "sha256:e539ae56bc6d0dc38e8c81840aae4265cf58cdbe902b07c5519632f02bfd3087",
+            "blob": "c2d38cd0a82b9efe96a765c4512f2242c6a9d3e6",
+            "content": "sha256:bd9c0e422ab145a3fc3642ee010b43d3b63ba9d9e1595fdd3c1940618db11c84",
             "locator": {
-              "end": 194,
+              "end": 47,
               "kind": "line_range",
-              "start": 176
-            },
-            "path": "skills/l-01-agent-lifecycles/operations/curation.md"
+              "start": 10
+            }
           },
           "kind": "code"
         }
       ]
     },
     "23": {
-      "note": "Compresses/reorganizes the role around whole inline inputs/outputs and boundaries, references named-step detail, adds completion-only own-step marking and the three-own-repair stop, and names recorded memory review.\n\nAnchor: Current source; preserved L88 property 23",
+      "note": "Compresses/reorganizes the role around whole inline inputs/outputs and boundaries, references named-step detail, adds completion-only own-step marking and the three-own-repair stop, and names recorded memory review.\n\nAnchor: Current source; preserved L88 property 17",
       "targets": [
         {
           "anchor": {
-            "blob": "69517ee942d200d941aa32f6439d9be3dec88d70",
-            "content": "sha256:4bbc78059565f9c306f8b728e76b7cacec27df65f4e2d699176f9ca7dacb524e",
+            "blob": "c2d38cd0a82b9efe96a765c4512f2242c6a9d3e6",
+            "content": "sha256:bd9c0e422ab145a3fc3642ee010b43d3b63ba9d9e1595fdd3c1940618db11c84",
             "locator": {
-              "end": 54,
+              "end": 47,
               "kind": "line_range",
-              "start": 14
-            },
-            "path": "skills/l-01-agent-lifecycles/reference/curator-authoring-d301.md"
+              "start": 10
+            }
           },
           "kind": "code"
         }
       ]
     },
     "24": {
-      "note": "Compresses/reorganizes the role around whole inline inputs/outputs and boundaries, references named-step detail, adds completion-only own-step marking and the three-own-repair stop, and names recorded memory review.\n\nAnchor: Current source; preserved L88 property 24",
+      "note": "Compresses/reorganizes the role around whole inline inputs/outputs and boundaries, references named-step detail, adds completion-only own-step marking and the three-own-repair stop, and names recorded memory review.\n\nAnchor: Current source; preserved L88 property 17",
       "targets": [
         {
           "anchor": {
-            "blob": "703dd2c81c3b958c48a60dcec16affe0918006d3",
-            "content": "sha256:9a60dfc85016548347c6f0b19ef41e29be008ad761641b5550a70d85f30b249b",
+            "blob": "c2d38cd0a82b9efe96a765c4512f2242c6a9d3e6",
+            "content": "sha256:bd9c0e422ab145a3fc3642ee010b43d3b63ba9d9e1595fdd3c1940618db11c84",
             "locator": {
-              "end": 32,
+              "end": 47,
               "kind": "line_range",
-              "start": 7
-            },
-            "path": "skills/l-01-agent-lifecycles/reference/curator-worklist-details.md"
+              "start": 10
+            }
           },
           "kind": "code"
         }
       ]
     },
     "25": {
-      "note": "Compresses/reorganizes the role around whole inline inputs/outputs and boundaries, references named-step detail, adds completion-only own-step marking and the three-own-repair stop, and names recorded memory review.\n\nAnchor: Current source; preserved L88 property 25",
+      "note": "Compresses/reorganizes the role around whole inline inputs/outputs and boundaries, references named-step detail, adds completion-only own-step marking and the three-own-repair stop, and names recorded memory review.\n\nAnchor: Current source; preserved L88 property 17",
       "targets": [
         {
           "anchor": {
-            "blob": "a5e74f1a57f73c4f392379af6fbbb06b2e82f1e7",
-            "content": "sha256:8b87edb5bb5884dd19bfc3e192bf3a935723e2eb9a3b179dd54ada325ee7126a",
+            "blob": "c2d38cd0a82b9efe96a765c4512f2242c6a9d3e6",
+            "content": "sha256:bd9c0e422ab145a3fc3642ee010b43d3b63ba9d9e1595fdd3c1940618db11c84",
             "locator": {
-              "end": 44,
+              "end": 47,
               "kind": "line_range",
-              "start": 33
-            },
-            "path": "skills/l-01-agent-lifecycles/reference/curator-writer-details.md"
+              "start": 10
+            }
           },
           "kind": "code"
         }
@@ -586,8 +655,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a602c903e6382a89023cdd7692950e3a0b1e3061",
-            "content": "sha256:c210f1cd4085c85d6bab67a1d67d489d2fba9caa74519af1ca26ec369cbf750c",
+            "blob": "c2d38cd0a82b9efe96a765c4512f2242c6a9d3e6",
+            "content": "sha256:fe3e92348d9e1d3f15a1424416cef36b2560acef2e42832e4d45cb5ea2f90dd7",
             "locator": {
               "end": 109,
               "kind": "line_range",
@@ -603,12 +672,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cfec25b1fea3859e299dc47f8f8978fed2bb2c52",
-            "content": "sha256:08c5288905fc3c24da58cf4a44d71a61f932e769e95cd620053715fa27b42d1b",
+            "blob": "c2d38cd0a82b9efe96a765c4512f2242c6a9d3e6",
+            "content": "sha256:bf84a3ed8c01ec6b196ea32aefcba2d0b8d3ba25d5ca9879640d6e153bc2c9a5",
             "locator": {
-              "end": 235,
-              "kind": "line_range",
-              "start": 221
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -616,12 +683,12 @@
       ]
     },
     "4": {
-      "note": "Process step 3 requires an authored rationale on every hand-off target before ingest.\n\nAnchor: \"every target carries its own authored\"",
+      "note": "The named authoring detail requires each hand-off target’s authored rationale before ingest; a missing producer explanation is authored from evidence under the unchanged template.\n\nAnchor: \"every target carries its own authored\"",
       "targets": [
         {
           "anchor": {
-            "blob": "bf1e2997e894d1ef157e3ca253db1bda030c53a6",
-            "content": "sha256:84b78f1189216855976a2aabc4f74c2959948c5f6db7d0925ff2bb75cdfe3743",
+            "blob": "c2d38cd0a82b9efe96a765c4512f2242c6a9d3e6",
+            "content": "sha256:abf29a0e77d28b1acfa2a4d22e8d9c532ae07a9feaac92edb93b5182e469aa98",
             "locator": {
               "end": 108,
               "kind": "line_range",
@@ -633,12 +700,12 @@
       ]
     },
     "5": {
-      "note": "Process step 3 lifts the decisions that keep governing code, on converted memory (MIK-R13).\n\nAnchor: \"Lift the decisions that keep governing code.\"",
+      "note": "The named authoring detail retains continuing-decision lifting; task-only choices stay task-local.\n\nAnchor: \"Lift the decisions that keep governing code.\"",
       "targets": [
         {
           "anchor": {
-            "blob": "e0b3bcfc145479a365a748510d7bd04490842c91",
-            "content": "sha256:c4a79f969d539ba5ec8670fff476d4c6262cefd3b99b934e47777a8a342971d3",
+            "blob": "c2d38cd0a82b9efe96a765c4512f2242c6a9d3e6",
+            "content": "sha256:889d12fc562435a7c13d990f59b052bbae0304adb900048690f68c673bbcb890",
             "locator": {
               "end": 131,
               "kind": "line_range",
@@ -654,8 +721,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cfec25b1fea3859e299dc47f8f8978fed2bb2c52",
-            "content": "sha256:fdb248efe75baf14cb687c476122a2d642336e098f23b135dfceeb49739dda62",
+            "blob": "c2d38cd0a82b9efe96a765c4512f2242c6a9d3e6",
+            "content": "sha256:eb02cf26ab9400d1eb749beb762748063694174bc81378eb4b101566a537342d",
             "locator": {
               "end": 76,
               "kind": "line_range",
@@ -671,8 +738,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bf1e2997e894d1ef157e3ca253db1bda030c53a6",
-            "content": "sha256:c757caacc807f3e5dc9815f66e611e8c058ad564e2e5fde4c48efa67ae1f741f",
+            "blob": "c2d38cd0a82b9efe96a765c4512f2242c6a9d3e6",
+            "content": "sha256:8c21419d25cf8e02a39ef2f6c71cd48cdc624ab075e21309dd74f32074a3d15f",
             "locator": {
               "end": 126,
               "kind": "line_range",
@@ -705,8 +772,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "128fa3a7f4a59afa387ac9963db075a27ca8d1c2",
-            "content": "sha256:14fbaf274fec9141c6b515816e20a8ffac22733d064b4a950782459b941b2ebd",
+            "blob": "c2d38cd0a82b9efe96a765c4512f2242c6a9d3e6",
+            "content": "sha256:bf84a3ed8c01ec6b196ea32aefcba2d0b8d3ba25d5ca9879640d6e153bc2c9a5",
             "locator": {
               "kind": "file"
             }

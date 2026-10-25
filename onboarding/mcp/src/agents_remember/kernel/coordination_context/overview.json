@@ -138,15 +138,14 @@
       ]
     },
     "18": {
-      "note": "An explicit contract candidate is resolved through the recorder; candidate absence is recorded.",
+      "note": "An explicit contract candidate is resolved through the recorder; candidate absence is recorded.\n\nAnchor: `resolve_contract`",
       "targets": [
         {
           "anchor": {
-            "blob": "b717ebab81e9aa6e19dc527f82886403eb38bc7d",
-            "content": "sha256:8d88b0769315f5fd470b1f14b7fef07fc82bca093e9345ce980201f9add0f420",
+            "blob": "966962a5c51fd55b2bea46368e0e32d612447a7d",
+            "content": "sha256:fee72aa133b66e827ad2dce5e3ffe3cc10510ffa66e14729ee2d7c3b2e5e45db",
             "locator": {
-              "kind": "symbol",
-              "name": "resolve_contract"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/kernel/coordination_context/contracts.py"
           },
@@ -189,15 +188,14 @@
       ]
     },
     "21": {
-      "note": "A skipped settings file of higher priority and a JSON-only settings file are recorded.",
+      "note": "A skipped settings file of higher priority and a JSON-only settings file are recorded.\n\nAnchor: `_settings_selection`",
       "targets": [
         {
           "anchor": {
-            "blob": "b8f75c0db0ff78135ca05f2e8d2d82d0a8f2350e",
-            "content": "sha256:33f286de1c38e8dd5a9d1e6ed094213f4377eada0ffc6e92a261d04832c41724",
+            "blob": "9719c9159d392a3e5377a242638474a1a15b1f37",
+            "content": "sha256:c081cf381bb3f13633d7bf5418bc9534212e3a89628153ff30047098d9b0be43",
             "locator": {
-              "kind": "symbol",
-              "name": "_settings_selection"
+              "kind": "file"
             },
             "path": "mcp/tests/test_reviewer_worklist_reads.py"
           },

@@ -93,12 +93,22 @@ No configured live documentation source was available for this pass.
 - Deeper live-entry paths are counted separately from the own-level view. [21]
 
 
+
 - The explorer level delegates to the one tree-coverage owner. [13]
+
 - The one pathname inventory, presence marks and coverage owner. [14]
+
 - The path view, bounded for a directory. [15]
+
+
 - The one currentness call, and its failure named. [16]
+
+
 - The without-proof list, filtered by path. [17]
+
+
 - The file, directory, test-file, explorer and without-proof cases. [18]
+
 
 ### Cross-Repo References
 

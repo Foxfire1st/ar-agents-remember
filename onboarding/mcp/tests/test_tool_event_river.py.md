@@ -25,8 +25,14 @@ The surviving unit vehicle is `server_info` with its required response fields. M
 
 ## Evidence
 
+
 - The river test class pins each feed behavior end to end. [1]
+
+
 - Bound first call writes one event with caller and facts. [2]
+
+
 - Every append lands at or under the ceiling. [3]
+
 
 - Role-message fixtures carry UUID recipients and current binding/sender shapes at the actual lookup boundary. [4]

@@ -90,7 +90,9 @@ The vocabularies this module declares and the owners whose types they must stay 
 - The three admissible requirement declaration shapes, and the `None` identity an exact-text declaration gets. [3]
 - The recorded, optional knowledge seam and its request value. [4]
 - The complete projection value: model-visible markdown plus the inspectable half. [5]
+
 - The relation vocabulary this module imports rather than retypes. [6]
+
 - The task-altitude vocabulary owned by the task layer, which is why the types live at this rank. [7]
 - The duplicate-declaration guard for a PEP 695 alias beside its runtime tuple. [8]
 

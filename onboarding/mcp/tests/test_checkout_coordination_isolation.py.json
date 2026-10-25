@@ -26,7 +26,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c81891c02a234c89c82dd8f289c1b325c809d646",
+            "blob": "06a9795d179558224cae3de5e32a54b02e419808",
             "content": "sha256:7b9e477794f9711a01e233e8b69512a8f667059c3378bfef8bb4bc9548485d54",
             "locator": {
               "kind": "symbol",
@@ -42,7 +42,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c81891c02a234c89c82dd8f289c1b325c809d646",
+            "blob": "06a9795d179558224cae3de5e32a54b02e419808",
             "content": "sha256:8a169bdbcf1c97f4712f9841b1cbf866e2885f7a510d35e4cfcde5e9d1051875",
             "locator": {
               "kind": "symbol",
@@ -54,15 +54,14 @@
       ]
     },
     "2": {
-      "note": "Checkout config ignores live authority and uses only dummy root.",
+      "note": "Checkout config ignores live authority and uses only dummy root.\n\nAnchor: `test_checkout_config_ignores_live_authority_and_uses_only_dummy_root`",
       "targets": [
         {
           "anchor": {
-            "blob": "3007e85e367bbc50f9009d7656d839dc3c45c4e2",
-            "content": "sha256:44eb5a95ca2d65dcce46ff05848bad44d1fcbccb21233a271bf8d69ff140afe0",
+            "blob": "06a9795d179558224cae3de5e32a54b02e419808",
+            "content": "sha256:c0b2dd99ed7b8ad43b54b73bfe8290c5443ad18d71a813cadede9143509abd0b",
             "locator": {
-              "kind": "symbol",
-              "name": "test_checkout_config_ignores_live_authority_and_uses_only_dummy_root"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -70,15 +69,14 @@
       ]
     },
     "3": {
-      "note": "Incident shaped inbox write lands only in leaf dummy root.",
+      "note": "Incident shaped store write lands only in leaf dummy root.\n\nAnchor: `test_incident_shaped_inbox_write_lands_only_in_leaf_dummy_root`",
       "targets": [
         {
           "anchor": {
-            "blob": "3007e85e367bbc50f9009d7656d839dc3c45c4e2",
-            "content": "sha256:55f0df658d42a0ea337fa47c05c8bfa0d2ffc201b5447f2a6842ee3d6de035b6",
+            "blob": "06a9795d179558224cae3de5e32a54b02e419808",
+            "content": "sha256:c0b2dd99ed7b8ad43b54b73bfe8290c5443ad18d71a813cadede9143509abd0b",
             "locator": {
-              "kind": "symbol",
-              "name": "test_incident_shaped_inbox_write_lands_only_in_leaf_dummy_root"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -86,15 +84,14 @@
       ]
     },
     "4": {
-      "note": "Store guard refuses escape before creating lock or parent.",
+      "note": "Store guard refuses escape before creating lock or parent.\n\nAnchor: `test_store_guard_refuses_escape_before_creating_lock_or_parent`",
       "targets": [
         {
           "anchor": {
-            "blob": "3007e85e367bbc50f9009d7656d839dc3c45c4e2",
-            "content": "sha256:18df38e6032b741c49e0ec95de1f55ec9d6b90398d884c1255201d6d3c19b0a7",
+            "blob": "06a9795d179558224cae3de5e32a54b02e419808",
+            "content": "sha256:c0b2dd99ed7b8ad43b54b73bfe8290c5443ad18d71a813cadede9143509abd0b",
             "locator": {
-              "kind": "symbol",
-              "name": "test_store_guard_refuses_escape_before_creating_lock_or_parent"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -102,15 +99,14 @@
       ]
     },
     "5": {
-      "note": "Enclosure report write is allowed without opening coordination escape.",
+      "note": "Enclosure report write is allowed without opening coordination escape.\n\nAnchor: `test_enclosure_report_write_is_allowed_without_opening_coordination_escape`",
       "targets": [
         {
           "anchor": {
-            "blob": "3007e85e367bbc50f9009d7656d839dc3c45c4e2",
-            "content": "sha256:e2e8e2edc34a150d39a8357e94d36217bd0707450f56bfd2ffa9d53e1c520839",
+            "blob": "06a9795d179558224cae3de5e32a54b02e419808",
+            "content": "sha256:c0b2dd99ed7b8ad43b54b73bfe8290c5443ad18d71a813cadede9143509abd0b",
             "locator": {
-              "kind": "symbol",
-              "name": "test_enclosure_report_write_is_allowed_without_opening_coordination_escape"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -118,15 +114,14 @@
       ]
     },
     "6": {
-      "note": "Rewrite guard refuses a manually constructed live target.",
+      "note": "Rewrite guard refuses a manually constructed live target.\n\nAnchor: `test_rewrite_guard_refuses_a_manually_constructed_live_target`",
       "targets": [
         {
           "anchor": {
-            "blob": "3007e85e367bbc50f9009d7656d839dc3c45c4e2",
-            "content": "sha256:9ab727a4471a903f66c6c36fbc73239e0a501d3798df4d546447923746e696e1",
+            "blob": "06a9795d179558224cae3de5e32a54b02e419808",
+            "content": "sha256:c0b2dd99ed7b8ad43b54b73bfe8290c5443ad18d71a813cadede9143509abd0b",
             "locator": {
-              "kind": "symbol",
-              "name": "test_rewrite_guard_refuses_a_manually_constructed_live_target"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -138,7 +133,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c81891c02a234c89c82dd8f289c1b325c809d646",
+            "blob": "06a9795d179558224cae3de5e32a54b02e419808",
             "content": "sha256:7620870ce2d414f236eb0c98bf52b22af7dc896de9af500f842346c204ab1a07",
             "locator": {
               "kind": "symbol",
@@ -154,7 +149,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c81891c02a234c89c82dd8f289c1b325c809d646",
+            "blob": "06a9795d179558224cae3de5e32a54b02e419808",
             "content": "sha256:948f7e8675cce5e0c58602622f77dd3c5d7165bdfbccd911f37f9a20fd1a6f85",
             "locator": {
               "kind": "symbol",
@@ -166,15 +161,14 @@
       ]
     },
     "9": {
-      "note": "Any mode declaration lifts the primary refusal and the write confinement, with the refusal itself as the positive control.",
+      "note": "Any mode declaration lifts the primary refusal and the write confinement, with the refusal itself as the positive control.\n\nAnchor: `test_any_mode_declaration_lifts_the_primary_refusal_and_confinement`",
       "targets": [
         {
           "anchor": {
-            "blob": "3007e85e367bbc50f9009d7656d839dc3c45c4e2",
-            "content": "sha256:471d4eb771897f57b3e08ac1820c77f2fbb76d9565c0194bf4e402529f823e1b",
+            "blob": "06a9795d179558224cae3de5e32a54b02e419808",
+            "content": "sha256:c0b2dd99ed7b8ad43b54b73bfe8290c5443ad18d71a813cadede9143509abd0b",
             "locator": {
-              "kind": "symbol",
-              "name": "test_any_mode_declaration_lifts_the_primary_refusal_and_confinement"
+              "kind": "file"
             }
           },
           "kind": "test"

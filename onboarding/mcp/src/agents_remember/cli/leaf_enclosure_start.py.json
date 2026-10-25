@@ -56,15 +56,14 @@
       ]
     },
     "2": {
-      "note": "Frozen implementation of run supporting the stated file behavior.",
+      "note": "Frozen implementation of run supporting the stated file behavior.\n\nAnchor: `run`",
       "targets": [
         {
           "anchor": {
-            "blob": "923c0130efe1463f198f18955453a2497a54dc1e",
-            "content": "sha256:65aa5ec687357b73ae2e8fd105c6ac076dcb0a39f1d3032e23201ae7fa59b781",
+            "blob": "f89c07d5c76650bfb7a058e9cdd8e721a48e1e5a",
+            "content": "sha256:a500623fc32bb3c2a9d9c5943ccfe27e21dab4cac22a540df2c2ebb030167aa5",
             "locator": {
-              "kind": "symbol",
-              "name": "run"
+              "kind": "file"
             }
           },
           "kind": "code"

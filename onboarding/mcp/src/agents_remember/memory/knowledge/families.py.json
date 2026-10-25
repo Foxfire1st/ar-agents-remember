@@ -3,26 +3,14 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "Families are authored joint guarantees; these functions only read the derived index.",
+      "note": "Families are authored joint guarantees; these functions only read the derived index.\n\nAnchor: `get_family` `get_family_revision`",
       "targets": [
         {
           "anchor": {
             "blob": "fafa18088da97ad02199d8d81db836c10e274a58",
-            "content": "sha256:c51a165b94e9dd6de79384fdbe979368a7dc0a52f33cd560713ccc13b1c1a432",
+            "content": "sha256:57f72baf8adc3f53f857c90088fe3142582d1c875cdce06320c91253b8665a11",
             "locator": {
-              "kind": "symbol",
-              "name": "get_family"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "66102e9850b5f1c88cdba3b4cbd1af7d321197e8",
-            "content": "sha256:be4b89a03071dfec313b2a235a46f08cf7115843cc9c516c6f0287f5b35be4c0",
-            "locator": {
-              "kind": "symbol",
-              "name": "get_family_revision"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -88,15 +76,14 @@
       ]
     },
     "14": {
-      "note": "- The two rules this module is shaped by, stated in its own docstring.",
+      "note": "- The two rules this module is shaped by, stated in its own docstring.\n\nAnchor: `get_family_revision`",
       "targets": [
         {
           "anchor": {
-            "blob": "66102e9850b5f1c88cdba3b4cbd1af7d321197e8",
-            "content": "sha256:be4b89a03071dfec313b2a235a46f08cf7115843cc9c516c6f0287f5b35be4c0",
+            "blob": "fafa18088da97ad02199d8d81db836c10e274a58",
+            "content": "sha256:57f72baf8adc3f53f857c90088fe3142582d1c875cdce06320c91253b8665a11",
             "locator": {
-              "kind": "symbol",
-              "name": "get_family_revision"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -104,15 +91,14 @@
       ]
     },
     "15": {
-      "note": "- The read surface, including the seal-verifying revision read.",
+      "note": "- The read surface, including the seal-verifying revision read.\n\nAnchor: `get_family_revision`",
       "targets": [
         {
           "anchor": {
-            "blob": "66102e9850b5f1c88cdba3b4cbd1af7d321197e8",
-            "content": "sha256:be4b89a03071dfec313b2a235a46f08cf7115843cc9c516c6f0287f5b35be4c0",
+            "blob": "fafa18088da97ad02199d8d81db836c10e274a58",
+            "content": "sha256:57f72baf8adc3f53f857c90088fe3142582d1c875cdce06320c91253b8665a11",
             "locator": {
-              "kind": "symbol",
-              "name": "get_family_revision"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -137,15 +123,14 @@
       ]
     },
     "17": {
-      "note": "- The declared `family`, `family_revision` and `family_predecessor` tables and their indexes.",
+      "note": "- The declared `family`, `family_revision` and `family_member` tables and their indexes.\n\nAnchor: `TABLE_DDL`",
       "targets": [
         {
           "anchor": {
-            "blob": "5e27550d32bfd12f38a8b3393ad8622114eb677a",
-            "content": "sha256:1efcb530f1e377466f79224937603ba0b0bc9f31377d471199e8f89853430953",
+            "blob": "ec5bf0677108161ea883091d9613a34d21a3697c",
+            "content": "sha256:9e10ce1d79604d8957a14bb7d9e140464ea4f5b91ed4cd87a5b76d911c6490a5",
             "locator": {
-              "kind": "symbol",
-              "name": "TABLE_DDL"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/memory/knowledge/schema.py"
           },
@@ -154,37 +139,14 @@
       ]
     },
     "9": {
-      "note": "The retained family identity, exact revision and revision enumeration reads.",
+      "note": "The retained family identity, exact revision and revision enumeration reads.\n\nAnchor: `get_family` `get_family_revision` `list_family_revision_ids`",
       "targets": [
         {
           "anchor": {
             "blob": "fafa18088da97ad02199d8d81db836c10e274a58",
-            "content": "sha256:c51a165b94e9dd6de79384fdbe979368a7dc0a52f33cd560713ccc13b1c1a432",
+            "content": "sha256:57f72baf8adc3f53f857c90088fe3142582d1c875cdce06320c91253b8665a11",
             "locator": {
-              "kind": "symbol",
-              "name": "get_family"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "66102e9850b5f1c88cdba3b4cbd1af7d321197e8",
-            "content": "sha256:be4b89a03071dfec313b2a235a46f08cf7115843cc9c516c6f0287f5b35be4c0",
-            "locator": {
-              "kind": "symbol",
-              "name": "get_family_revision"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "fafa18088da97ad02199d8d81db836c10e274a58",
-            "content": "sha256:8efde8a6ffa20dfab43f421de39f55bccfb3cd8f9f7b726e5a5c635dee4daf87",
-            "locator": {
-              "kind": "symbol",
-              "name": "list_family_revision_ids"
+              "kind": "file"
             }
           },
           "kind": "code"

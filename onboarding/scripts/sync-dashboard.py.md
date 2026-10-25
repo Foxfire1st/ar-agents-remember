@@ -10,16 +10,29 @@
 `mcp/src/agents_remember/package_data/dashboard/` so the wheel and sdist ship the cockpit with
 no Node build at install time.
 
-**It is a release build step, not a drift check.** The destination is a generated artifact and is
-**not under version control** (master decision OQ6, 2026-07-31, leaf 260731-EFA-L1). The release
-job runs `npm --prefix dashboard run build` and then this script; `python -m build` then reads
-what this script placed. Nothing in the repository can drift from a bundle the repository does not
-contain, so the `--check` mode is gone along with its subject.
+**It is a release build step with a read-only drift check.** The generated destination remains
+outside version control (master decision OQ6, 2026-07-31, leaf 260731-EFA-L1). The release job builds
+the frontend, runs this script, and packages its output. `--check` now compares the placed bundle
+and sidecar with the required current `dashboard/dist` and source fingerprint, reports drift and
+writes nothing. Nothing built or placed is an explicit inability to verify, so it exits nonzero.
 
-That removal is the root fix for a chain of downstream defects, and the reason to keep it removed:
-a 28 MB generated tree in git produced the fingerprint sidecar's fail-open, the stale-stamping
-`sync()`, a pre-commit hook that could not pass on a clean tree, and 45 commits made with
-`--no-verify`.
+Historical context: the earlier no-op check was removed after the generated-tree/fingerprint
+fail-open, stale-stamping and hook problems recorded by the predecessor card, including its
+28 MB tree and 45 `--no-verify` commits account. The current read-only check answers the placed
+artifact's currency question without reviving that no-op behavior.
+
+> Retained earlier card wording; superseded by the current account above:
+> **It is a release build step, not a drift check.** The destination is a generated artifact and is
+> **not under version control** (master decision OQ6, 2026-07-31, leaf 260731-EFA-L1). The release
+> job runs `npm --prefix dashboard run build` and then this script; `python -m build` then reads
+> what this script placed. Nothing in the repository can drift from a bundle the repository does not
+> contain, so the `--check` mode is gone along with its subject.
+>
+> That removal is the root fix for a chain of downstream defects, and the reason to keep it removed:
+> a 28 MB generated tree in git produced the fingerprint sidecar's fail-open, the stale-stamping
+> `sync()`, a pre-commit hook that could not pass on a clean tree, and 45 commits made with
+> `--no-verify`.
+
 
 ## Code Commentary
 
@@ -44,14 +57,26 @@ nothing where this runs — a fresh clone or a CI checkout writes every file at 
 newer than its inputs" is satisfiable by an artifact that was never built from them.
 
 `sync()` refuses (exit 1, message naming `REBUILD_HINT`) when `dist` is absent, and refuses again
-when `dist` does not carry the current fingerprint. Only then does it `replace_tree()` (the
-crash-safe copy-then-swap staging pattern shared with `sync-runtime.py`) and write the sidecar —
+when `dist` does not carry the current fingerprint. Only then does it `replace_tree()` (a
+completed staging copy followed by two separate renames, shared with `sync-runtime.py`) and write the sidecar —
+
+> Retained earlier card wording; superseded by the current account above:
+> when `dist` does not carry the current fingerprint. Only then does it `replace_tree()` (the
+> crash-safe copy-then-swap staging pattern shared with `sync-runtime.py`) and write the sidecar —
+
 **after** the tree, never before, so a crash between the two cannot leave a sidecar advertising a
 build identity for a bundle that is not there.
 
-`main()` parses an empty argument set and returns `sync()`. Passing `--check` now exits non-zero
-with `unrecognized arguments: --check`, which is deliberate: a silently tolerated flag would let a
-hook or workflow keep believing a check runs.
+`main()` accepts `--check`: that flag calls the read-only `check()`, while ordinary invocation
+calls `sync()`. `check()` reports missing built/placed artifacts, stale build-input identity,
+missing/extra/changed placed files and a missing or wrong sidecar; any drift returns 1, and a current
+placed bundle returns 0. It creates no staging copy and rewrites no sidecar.
+
+> Retained earlier card wording; superseded by the current account above:
+> `main()` parses an empty argument set and returns `sync()`. Passing `--check` now exits non-zero
+> with `unrecognized arguments: --check`, which is deliberate: a silently tolerated flag would let a
+> hook or workflow keep believing a check runs.
+
 
 ### Conventions
 
@@ -65,8 +90,14 @@ signal the sidecar exists to carry.
 ### Invariants And Boundaries
 
 - `package_data/dashboard/` and `package_data/dashboard.fingerprint` are git-ignored
-  (`.gitignore`). Do not commit either; do not add a check that compares the repository against
-  them.
+  (`.gitignore`). Do not commit either. The current read-only `--check` verifies those placed
+  artifacts against the required current build/source and reports absence as unverifiable drift.
+
+> Retained earlier card wording; superseded by the current account above:
+> - `package_data/dashboard/` and `package_data/dashboard.fingerprint` are git-ignored
+>   (`.gitignore`). Do not commit either; do not add a check that compares the repository against
+>   them.
+
 - There is **no fail-open**. Absent `dist`, a `dist` built from other source, and an absent
   `dashboard/src` all return 1. (An absent source tree yields an empty input set whose fingerprint
   no real bundle carries, so it refuses by construction rather than by a special case.)
@@ -97,7 +128,9 @@ No relevant external or domain documentation exists for this repository-local bu
 - The script refuses an absent or non-current `dist`, places the tree, then writes the sidecar. [1]
 - Vite compiles the same fingerprint into the bundle as `__AR_DASHBOARD_BUILD__`, which is the literal `bundle_is_current` searches for. [2]
 - The release job builds the frontend, runs this script, packages, then asserts both distributions carry the bundle and the sidecar. [3]
+
 - The serving resolver mounts what this script placed, or answers 503 when nothing was placed. [4]
+
 - The sidecar this script writes is what the build stamp publishes as `dashboardBuild`. [5]
 - Both generated paths are git-ignored with the reason recorded inline. [6]
 

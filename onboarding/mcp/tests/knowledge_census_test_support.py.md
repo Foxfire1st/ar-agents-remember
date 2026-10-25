@@ -52,7 +52,9 @@ The fixture builders.
 
 - The six routes and their cards. [1]
 - A claim document. [2]
+
 - The converted tree with a pinned census. [3]
+
 - 42 claims: 31 T, 4 F, 5 U, 2 P. [4]
 - Every route migrated, with two status entries. [5]
 

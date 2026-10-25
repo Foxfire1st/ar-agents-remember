@@ -25,10 +25,12 @@ through the shipped extractor.
 - `tree_entry_mode(tree, path)` observes the exact raw candidate entry with bounded, nonrecursive `git ls-tree -z <tree> -- <path>`. Unlike recursive leaf inventory it sees an empty tree or a tree of empty subtrees. It returns the mode or `None` for true absence; a failed Git read raises `CodeObjectError`. Generated-copy declaration admission uses this observation before filtered blob lookup; the shared recursive inventory remains leaf-oriented.
 
 
-- Tree inventory and mode snapshots retain symlink entry blobs, with link_paths supplying explicit symbol-extraction context. [10]
+
+- Tree inventory and mode snapshots retain symlink entry blobs, with link_paths supplying explicit symbol-extraction context.
 
 
-- Symbol and content locators use explicit symlink context. [11]
+
+- Symbol and content locators use explicit symlink context.
 
 - `prefetch(blob_ids)` reads uncached blobs in batches of 1,500 through `read_git_blobs_bytes`, and wraps
   any failure as `CodeObjectError`. `blob` and `has_blob` read single objects; `line_count` reuses the instance's blob-keyed split-line representation.
@@ -90,17 +92,31 @@ No configured live documentation source was available for this pass.
 
 The object store's read-only surface.
 
+
 - The read-only class retains raw blobs and instance-local blob-keyed split lines; no persistent worklist is stored. [1]
 
+
+
 - A commit by exact name. [2]
+
+
 - Every commit with a prefix, so ambiguity is seen. [3]
+
+
 
 - A commit's regular-file and symlink blob map remains read-only and mode-aware. [4]
 
+
+
 - Git's not-found exit, and a Git failure named rather than read as absent (R3-2). [5]
+
+
 - Batched blob reads. [6]
+
 - Symbol extraction is cached by blob, grammar and path, preserves the selected symlink context, and supports the explicit top-level reading for recorded claims. [7]
+
 - Exact nonrecursive entry-mode observation distinguishes present empty trees from absence without broadening recursive source inventory. [12]
+
 
 - Whole-file content hashes the blob; symbol and line-range content reuse the instance's split lines through the inclusive-range helper. [8]
 

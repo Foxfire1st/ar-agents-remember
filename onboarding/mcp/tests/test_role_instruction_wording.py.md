@@ -56,17 +56,36 @@ bearing on that surface.
 
 ## Evidence
 
-- Delegation, developer channels, host tool names and capsule returns are checked on their delivered surfaces. [1]
-- The Investigator's scope, report and authority, and the retired wording that would replace them. [2]
-- Compiled parented handovers distinguish fixed starter identity from ordinary return role and task addresses; leaf returns name the current Manager. [3]
-- Protected instruction, compiled and tool-description sentences require the Manager-owned three-seat set with ordered held messages. [4]
-- The source declarations support the fixture account; no executed acceptance is inferred from them. [5]
+
+- Instruction tests check Investigator scope and authority, coordination and positive seat obligations, task-server vocabulary and compiled handover/await returns; the declarations do not establish a fresh test run. [1]
+
+
+- The Investigator wording case checks scoped concern intake, report and remediation authority, and the canonical investigator role plus retained system-specialist alias. [2]
+
+
+- Compiled parented handovers distinguish fixed starter identity from ordinary return role/task addresses; leaf returns name the current Manager. [3]
+
+
+- Current protected instruction/compiled/tool-description sentences require the Manager-owned three-seat set and product-held permission/start/turn messages with ordered delivery and no prompt answering or sender resubmission. Description census includes role_start_set beside role_start/role_message. Investigator report-notice substring, actual-parent developer questions and ordinary role/task report return stay distinct; no wording case proves a concrete live recipient or host consumption. [4]
+
+
+- The current source declares positive instruction-clause deletion controls and task-tool-server/host naming assertions; source presence supplies no executed test result or acceptance. [5]
+
+
 - Long host-consumption instruction checks live with their reference-document owner; the compact registration keeps its wording boundary. [6]
-- Each relocated facet is read on its real surface with a nonvacuous deletion control. [8]
+
+
+- Uses capsule_wording to read relocated facets on their real role, stage or detail surface and apply nonvacuous deletion controls. Curator short forms retain writer/admission/foundation/worklist/output boundaries; the Git code-and-two-memory-tree comparison is checked in the delivered handoff. Reviewer parentless wording is role-specific. Writer syntax is checked in declared writer/intake details; admission tests preserve no-bypass, selected-root, report/refusal and coherence duties, while the curation operation retains admitted-record readback. [8]
+
 - The conditional sync and visible direct-repair clauses are pinned at their delivered audiences. [9]
+
 - The Architect's flat-mode closeout gates and its kept clause stay pinned here after the coordination clauses moved out. [10]
 
+
+
 - The census pins the router, the eight launcher role files and their nine operations in delivered order. [11]
+
+
 
 
 - Protected Manager text separates automatic stage publication, explicit correction and organizational completion — mcp/tests/test_curator_instruction_wording.py:42-114. [12]

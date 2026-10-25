@@ -54,15 +54,14 @@
       ]
     },
     "3": {
-      "note": "The negative admission witness proves the named refusal precedes any newer standard-library import.",
+      "note": "The negative admission witness proves the named refusal precedes any newer standard-library import.\n\nAnchor: `test_unsupported_version_is_named_before_importing_new_stdlib_modules`",
       "targets": [
         {
           "anchor": {
-            "blob": "139df3a4f334da8c2e58090358a031c850cd4629",
-            "content": "sha256:35e74be497130959d66b2e54c19662d18ac9122ea975a3e48be6afb515bec439",
+            "blob": "69debfc33e84f9ff25e6669f7bd3ecd30eb3fab5",
+            "content": "sha256:3fc3cb2ac06c35bff06ea04435e9e54f121f15a8ab5c1ff25b121f5eb29627dd",
             "locator": {
-              "kind": "symbol",
-              "name": "test_unsupported_version_is_named_before_importing_new_stdlib_modules"
+              "kind": "file"
             }
           },
           "kind": "test"

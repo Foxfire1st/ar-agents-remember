@@ -90,17 +90,26 @@ No repository-relative Domain Documentation source applies; the two external Typ
 
 - Partial overrides can erase required task-entry stage, enclosure repoName, task-summary steps or projection enclosures without a cast; the property-name guard does not see this value hole. [1]
 
-- The measured rejection of `exactOptionalPropertyTypes` (222 errors / 71 files) and the call-site property the narrow fix has instead. [2]
+
+- The measured rejection of `exactOptionalPropertyTypes` — 381 errors across 107 files on this tree — and the call-site property the narrow fix has instead.  Anchor: `exactOptionalPropertyTypes` [2]
+
 - Current limits are fresh-literal-only and retained wire.ts builders only; the widened TaskEntry control is a known pass, not a removed conversation/nested builder promise. [3]
 - `RequiredKeys<T>`, `Overrides<O, T>` and `NoOverrides`. [4]
+
 - The proof that all four rejections fire, that excess-property checking survives, and that the widened-variable case is a known pass. [5]
+
+
 - Consumer: every projection builder takes `Overrides<O, Node>`. [6]
+
 - The app project's whole `compilerOptions` block — `strict` is on, `resolveJsonModule` is on, and no `exactOptionalPropertyTypes` entry appears anywhere in it. That absence is the config fact this file exists to answer. [8]
-- `tsconfig.driver.json` covers the Playwright suites (`e2e`, `e2e-chats`, `e2e-production`, `perf`) and also omits the flag, which is why a call-site constraint reaches further than the flag would have. [9]
+
+- tsconfig.driver.json currently enables strict driver checks for e2e and playwright.config.ts; its compilerOptions omit exactOptionalPropertyTypes. [9]
+
 
 ### Cross-Repo References
 
 No meaningful cross-repository or external-system boundary is involved; this is a type helper for
 in-repo test fixtures.
+
 
 - Import and boundary review found the same-repository `wire.ts` consumer. [10]

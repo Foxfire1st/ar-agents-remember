@@ -16,5 +16,7 @@ Set start publishes all three role facts. When an older held receipt lacks its r
 
 
 - One Manager call creates three agents with exactly the Worker opened. [1]
+
 - A partial creation completes with the same set identities and held seats intact. [2]
+
 - A set does not enlarge the existing role may-start matrix. [3]

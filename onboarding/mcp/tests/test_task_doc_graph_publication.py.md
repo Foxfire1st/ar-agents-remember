@@ -47,7 +47,9 @@ Each current definition below can be inspected in the exact source file. Histori
 to removed methods are superseded by this current inventory.
 
 - Plain or single graph document is the supported batch shape [1]
+
 - Two graph documents refuse before task or projection publication [2]
+
 
 ### Cross-Repo References
 

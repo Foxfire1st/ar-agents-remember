@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_operation.py",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
@@ -39,8 +40,18 @@
   ],
   "references": {
     "1": {
-      "note": "The runtime validates and publishes progress, completion, and input-required evidence.",
+      "note": "The runtime validates and publishes progress, completion, and input-required evidence.\n\nAnchor: `progress` `DirectLandingRuntime`",
       "targets": [
+        {
+          "anchor": {
+            "blob": "2f6614bd7c75fe2f4092edca1b8645a6631e496e",
+            "content": "sha256:c347fd9b4616a265d5d711201c5b4bee47f034b085f8f857d6625d927df14451",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
         {
           "anchor": {
             "blob": "2f6614bd7c75fe2f4092edca1b8645a6631e496e",
@@ -54,8 +65,8 @@
         },
         {
           "anchor": {
-            "blob": "a070ca3085c67cc4745a014146b74a2b2da5637b",
-            "content": "sha256:f54310f31d10e8641be0442f3bfe8121a23a42331ce81403aedab6af304489ab",
+            "blob": "2f6614bd7c75fe2f4092edca1b8645a6631e496e",
+            "content": "sha256:2f5b59f578f9fd465eee0ec4876aec975a0a1ca0cbb9400680e31e03fd2c85ce",
             "locator": {
               "kind": "symbol",
               "name": "DirectLandingRuntime"
@@ -123,12 +134,23 @@
       ]
     },
     "4": {
-      "note": "The classifier supplies exact memory output evidence.",
+      "note": "The classifier supplies exact memory output evidence.\n\nAnchor: `classify_direct_landing_recovery` `_memory_output_matches_evidence`",
       "targets": [
         {
           "anchor": {
-            "blob": "be974cfb747b9a8d6a659199e705f46c2d155e57",
-            "content": "sha256:bb957c9d78a2300e16abeab2e90c595dbca16da3d9cbcf3b2c721b1a5a1cfc05",
+            "blob": "b7cf5d8bc1072379437f9008a7e43f97c869764b",
+            "content": "sha256:9b1be711413856f669c5da9654de698b337c63658bef588db1649feb0d3f1f0f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_recovery_state.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b7cf5d8bc1072379437f9008a7e43f97c869764b",
+            "content": "sha256:ca537360d3319f5eecbae48a65fee2fe084e7f90085a43db8f171eb14755fa99",
             "locator": {
               "kind": "symbol",
               "name": "classify_direct_landing_recovery"

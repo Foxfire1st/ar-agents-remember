@@ -1,14 +1,25 @@
 {
   "path": "dashboard/src/panels/detail-panel/test-utils.tsx",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
-      "note": "The retained shared fixture builders include seedProjection, seedPromotedLeaf and stubCounters; the removed gallery seed helper is not a current owner.",
+      "note": "The retained shared fixture builders include seedProjection, seedPromotedLeaf and stubCounters; the removed gallery seed helper is not a current owner.\n\nAnchor: `seedProjection` `seedPromotedLeaf` `stubCounters`",
       "targets": [
         {
           "anchor": {
-            "blob": "73867f2ec1adccaa2d3c1bf66e8276fa77d8207d",
-            "content": "sha256:2ff148248e6cc47bb326c5c3f2dce006d6c5ae3c322af4e885c3db5f9b3f2e0d",
+            "blob": "154d7272959eb18a7f5f80927be651dc6bf6789d",
+            "content": "sha256:6f8f3cf452d0cdd632afc241785af9e5bd63487eff348093f1e93f4eb042b786",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "154d7272959eb18a7f5f80927be651dc6bf6789d",
+            "content": "sha256:339fc3807511945753666053810592f602b2905331e1bbfb29fb4709fbf245ce",
             "locator": {
               "kind": "symbol",
               "name": "seedProjection"
@@ -18,8 +29,8 @@
         },
         {
           "anchor": {
-            "blob": "73867f2ec1adccaa2d3c1bf66e8276fa77d8207d",
-            "content": "sha256:94084aa8e3c6b5494c25c2a0c6661587bf9dae2bcca46b3813d6e86c22a9f78f",
+            "blob": "154d7272959eb18a7f5f80927be651dc6bf6789d",
+            "content": "sha256:0d7c9af1ffa331486b66efaf15733a190bfd873d13789b47d50ce038ca69015e",
             "locator": {
               "kind": "symbol",
               "name": "seedPromotedLeaf"
@@ -41,16 +52,16 @@
       ]
     },
     "2": {
-      "note": "The fetch route table delegates to named payload helpers; task body and empty recorded-report payloads have dedicated branches. [2]",
+      "note": "The fetch route table delegates to named payload helpers; task body and empty recorded-report payloads have dedicated branches.",
       "targets": [
         {
           "anchor": {
-            "blob": "73867f2ec1adccaa2d3c1bf66e8276fa77d8207d",
-            "content": "sha256:9c449f7efc17eecc1778d5a46b838e043afc3f2bf545d4ff559e1fc97e130e7e",
+            "blob": "154d7272959eb18a7f5f80927be651dc6bf6789d",
+            "content": "sha256:4ca5fcad89cbee99ad5205430acf29da88590b57b167c979c333a7eec50b4fec",
             "locator": {
-              "end": 594,
+              "end": 382,
               "kind": "line_range",
-              "start": 428
+              "start": 370
             }
           },
           "kind": "code"

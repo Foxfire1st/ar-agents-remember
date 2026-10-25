@@ -97,4 +97,5 @@ The module measures current eligible worktree additions before code commit. Crea
 
 - The kernel filesystem helper handles long-path sidecar and source probes. [4]
 
+
 - `run_git` — the single runner `require_git` wraps — owns the selector scrubbing, the DEVNULL stdin and the timeout classes. [5]

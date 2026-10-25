@@ -17,4 +17,5 @@ TaskPivotBar renders the task count, controlled repo/phase toggles and the share
 ## Evidence
 
 
+
 - Extracted column styling and controlled grouping pivot preserve separate row derivation and task-own state; there is no pickup dismissal control. [1]

@@ -20,26 +20,14 @@
       ]
     },
     "2": {
-      "note": "The manifest digest over each row's identity.",
+      "note": "The manifest digest over each row's identity.\n\nAnchor: `WholeView` `_row_identity`",
       "targets": [
         {
           "anchor": {
             "blob": "3611974d4c194883823a8342d07e110763d9cc2c",
-            "content": "sha256:7cb8920955f72ccf018b320f8ec99a8aee3deacd563b562ec1ee1b4734ef64b9",
+            "content": "sha256:74817b3a3620d41a6c9893563f7912f0f1dd9ea868134c08d19cc39e676260fd",
             "locator": {
-              "kind": "symbol",
-              "name": "WholeView"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "515bb4ccad5fce1778aeb34ae79460a9ca25c856",
-            "content": "sha256:de16a083c6f614bf216d92824cb0a3ed0b157f234cb7a2b2b7b237d043dc3ba3",
-            "locator": {
-              "kind": "symbol",
-              "name": "_row_identity"
+              "kind": "file"
             }
           },
           "kind": "code"

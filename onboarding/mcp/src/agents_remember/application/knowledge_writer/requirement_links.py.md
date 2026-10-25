@@ -12,8 +12,14 @@ This source-bound correction covers the described L54 seams only. Unrelated inhe
 
 ## Current evidence
 
-- Endpoint outcomes compare complete current links with their previous record links and retain archived state. \[3] [3]
-- Only changed unresolved links with a supplied coordination root yield writer problems. \[4] [4]
+- Endpoint outcomes compare complete current links with their previous record links and retain archived state. [3]
+- Only changed unresolved links with a supplied coordination root yield writer problems. [4]
+
+- Each requirement link target of the run's records, with the owner's resolution. [1]
+
+
+- A lifted decision round-trips; one endpoint resolved, one reported unresolved; the rerun is unchanged. [2]
+
 
 ## Inherited source-epoch account (non-operative)
 

@@ -18,8 +18,14 @@ This is the inspected source contract, not an execution certificate. Parent and 
 
 ## Evidence
 
+
 - Selected-subject judgment and proofs: `SubjectJudgment` owns the described branch. [1]
+
+
 - Selected-subject judgment and proofs: `JudgmentRow` owns the described branch. [2]
+
+
 - Selected-subject judgment and proofs: `Proof` owns the described branch. [3]
+
 - Selected-subject judgment and proofs: `effectLabel` owns the described branch. [4]
 

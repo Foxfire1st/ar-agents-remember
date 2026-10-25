@@ -50,10 +50,16 @@ No relevant documentation found after checking live sources.
 
 ### Repo-Internal References
 
+
 - The admitted compile entry point this package exports. [1]
+
 - The root-confined source admission this package exports. [2]
+
 - The pure compiler this boundary feeds, which owns every selection rule. [3]
+
+
 - The sibling model package whose contract this boundary resolves inputs for. [4]
+
 
 ### Cross-Repo References
 

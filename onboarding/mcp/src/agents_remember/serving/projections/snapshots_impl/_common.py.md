@@ -65,7 +65,9 @@ The module's own top-level surface is listed in Code Commentary; no cross-file c
 - The canonical enumeration: three listed levels, the archive/enclosure filter, and a sort over only the kept entries. [1]
 - The named-tail probe, an exact same-order subset of the enumeration. [2]
 - The two listed levels, descended the way `rglob` descends. [3]
+
 - One listing level: real directories only; an unreadable folder contributes nothing. [4]
+
 - The rationale for the removed summary bound, which is unchanged and now sits two lines lower. [5]
 - Regression evidence: the enumeration equals the earlier recursive glob, including its exclusions and symlink behavior. [6]
 

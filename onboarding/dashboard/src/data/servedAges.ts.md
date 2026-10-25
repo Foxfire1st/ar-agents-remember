@@ -61,7 +61,9 @@ No configured Domain Documentation source exists for this file.
 ### Repo-Internal References
 
 - The server half: stable-form diff + the canonical volatile set. [1]
+
 - The consuming merge (identity reuse + stamping on apply). [2]
+
 
 - MemoryMirror and AttentionQueue retain the shared served-age/clock imports. Hangar instead renders the bound task through TaskStatusWord, not the removed enclosure-age ticker. [3]
 

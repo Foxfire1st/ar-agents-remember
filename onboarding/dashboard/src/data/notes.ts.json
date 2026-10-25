@@ -74,15 +74,14 @@
       ]
     },
     "3": {
-      "note": "The task page owns the Notes line and delegates reader opening.",
+      "note": "The task page owns the Notes line and delegates reader opening.\n\nAnchor: `TaskNotes`",
       "targets": [
         {
           "anchor": {
-            "blob": "4fd13392ee64ff470abdcce77426d87eb9f9a55b",
-            "content": "sha256:19d59d8bb1924194adca2e83f7c75750415b180dea906466d8a9643fba277bfe",
+            "blob": "1d06daecf8740ea6de32c4565dc4d24506617c0d",
+            "content": "sha256:16777e69212429051dac863d0dff5e83ccbce71dafed078bec65a573f52c3072",
             "locator": {
-              "kind": "symbol",
-              "name": "TaskNotes"
+              "kind": "file"
             },
             "path": "dashboard/src/panels/TaskNotes.tsx"
           },

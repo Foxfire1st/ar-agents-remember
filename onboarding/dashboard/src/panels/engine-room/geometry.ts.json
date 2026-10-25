@@ -1,9 +1,10 @@
 {
   "path": "dashboard/src/panels/engine-room/geometry.ts",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
-      "note": "The scene-wide coordinate constants and conduit-path builder consumed by the layers.",
+      "note": "The scene-wide coordinate constants and conduit-path builder consumed by the layers.\n\nAnchor: `COL_MAIN_CX` `conduitPathD`",
       "targets": [
         {
           "anchor": {
@@ -18,8 +19,8 @@
         },
         {
           "anchor": {
-            "blob": "eea270bf10b885af35285fb98b6205dcb491dd5c",
-            "content": "sha256:7c3ee3a791b37ef2418dcb2c82f1a40d6817975ba6e171b2abb31553000c897d",
+            "blob": "0a3de3f86452a06356eee661d5e4bbdc7ccdf5eb",
+            "content": "sha256:7a834696248f231ee436448e606794ecb8f0eead0d0427e85d8e4c7ecb3ae79c",
             "locator": {
               "kind": "symbol",
               "name": "conduitPathD"
@@ -32,17 +33,6 @@
     "2": {
       "note": "The runtime/state vocabulary narrowing shared by gauges and conduits.",
       "targets": [
-        {
-          "anchor": {
-            "blob": "f23ae83b49025d9b10e7b6bc846ede9a6d48563e",
-            "content": "sha256:9d01763296cfa395218917f0b578f6da349947b0aec03d46064b3d09cd5883c5",
-            "locator": {
-              "kind": "symbol",
-              "name": "runtimeState"
-            }
-          },
-          "kind": "code"
-        },
         {
           "anchor": {
             "blob": "0a3de3f86452a06356eee661d5e4bbdc7ccdf5eb",

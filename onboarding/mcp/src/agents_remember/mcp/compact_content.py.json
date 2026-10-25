@@ -1,17 +1,17 @@
 {
   "path": "mcp/src/agents_remember/mcp/compact_content.py",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
-      "note": "`create_server()` installs the shim as its first action.",
+      "note": "`create_server()` installs the shim as its first action.\n\nAnchor: `create_server`",
       "targets": [
         {
           "anchor": {
-            "blob": "f307a8adb3d7fc51aeb3c776f4593c9b2517412d",
-            "content": "sha256:71d47f4c57afe64bde317fd506eb089eb32b746ce2e130e5732824d6c3fcd1fe",
+            "blob": "04fe591490945dea61eca1af410ae2553d95ea05",
+            "content": "sha256:cc3a440dce07a6635e86d3b3c0bd4747a332896e3470112e376449434e08b69a",
             "locator": {
-              "kind": "symbol",
-              "name": "create_server"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/mcp/server.py"
           },
@@ -24,8 +24,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ad020e68793e601a91add82fe38b4485c5b36430",
-            "content": "sha256:7ee0ffa0b9189d7a75fe2d0914c3b13afb67c8acba43280d4090a366b5cd2771",
+            "blob": "07aa7958b1413048cb4b33c455b0339b9e4afda5",
+            "content": "sha256:1cc55325833004c9564b92de870f2049068687cab12c87194589476ae34ebcbd",
             "locator": {
               "kind": "symbol",
               "name": "test_tool_call_text_block_is_compact_and_matches_structured"
@@ -36,12 +36,23 @@
         },
         {
           "anchor": {
-            "blob": "ad020e68793e601a91add82fe38b4485c5b36430",
-            "content": "sha256:3d680b578c690ac4ec21fbeb66c7f4b87f0d02770c023e660b097f71fcfcb2b9",
+            "blob": "07aa7958b1413048cb4b33c455b0339b9e4afda5",
+            "content": "sha256:8161d0476c28a81bbd4cfb1366b7e2d39e509277577ed6d9c38b75367eb8c6a7",
             "locator": {
               "end": 72,
               "kind": "line_range",
               "start": 50
+            },
+            "path": "mcp/tests/test_compact_content.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "07aa7958b1413048cb4b33c455b0339b9e4afda5",
+            "content": "sha256:01e523374470e32a95aa84add1602496bb825ac226fbefc59b637a7cec2f60b6",
+            "locator": {
+              "kind": "file"
             },
             "path": "mcp/tests/test_compact_content.py"
           },

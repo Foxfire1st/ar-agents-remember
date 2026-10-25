@@ -67,8 +67,12 @@ No cross-repo boundary is crossed by this file.
 - spanLabel and sideLines retain range/gap naming and side-text line splitting; no focused-window API is restored. [6]
 - Explorer-named constants preserve vocabulary only, not a current explorer implementation. [7]
 - Held lane reads preserve pending/unknown/read states; destination file lists, partialness and owned count formatting remain distinct responsibilities. [8]
+
 - IntentMarkers imports and actually calls spanLabel for hunk names/attributes and sideLines for full-side/excerpt extent measurement. [10]
+
+
 - The current ReviewMainFacts—not the closed technical details—uses held lane facts for openly marked remaining counts and preserves fallback for unowned names. [11]
+
 - Explorer label vocabulary remains the mapped/unmapped/unknown constants. [13]
 - Pending vocabulary remains Attribution pending. [14]
 - laneAttributionFacts derives paths from the two held destination file lists and keeps loading/unavailable/missing-list states explicit. [15]

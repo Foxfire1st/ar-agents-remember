@@ -1,25 +1,15 @@
 {
   "path": "mcp/src/agents_remember/application/review_governing_route.py",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
-      "note": "**The module's own statement of the three states, of the existence question asked before the route question, and of the path seed that asks about no identity.**",
+      "note": "**The module's own statement of the four states, of the existence question asked before the route question, and of the path seed that asks about no identity.**\n\nAnchor: `governing_route_movement`",
       "targets": [
         {
           "anchor": {
-            "blob": "092cb3b97e3749de11fc851e90067341bccde9a2",
-            "content": "sha256:f5b33ad9b2104c55d7a89e44ee5001d0cc08eee15f507f868c663090de6bdfd2",
-            "locator": {
-              "kind": "symbol",
-              "name": "governing_route_movement"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "092cb3b97e3749de11fc851e90067341bccde9a2",
-            "content": "sha256:42b02a49a0831b01ec91b4343187d20fca4e53a4da85e981d3e3aea210a0cf53",
+            "blob": "055c11c9366f9b384a3122b4ad7c84c014d9bb12",
+            "content": "sha256:65a2151d1c1e3375198fed4428f336bf5bd8569e5b982fa57fb86ef9e7d6b7d7",
             "locator": {
               "end": 21,
               "kind": "line_range",
@@ -27,12 +17,33 @@
             }
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "055c11c9366f9b384a3122b4ad7c84c014d9bb12",
+            "content": "sha256:0683c1d8418e232ff47d96ab4e7154e19a2d68a1c96c4044a298fe6278c40c2a",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
         }
       ]
     },
     "10": {
-      "note": "Text route sets yield one association per route and unread declarations are never ungoverned.",
+      "note": "Text route sets yield one association per route and unread declarations are never ungoverned.\n\nAnchor: `test_a_familys_declared_route_set_is_the_governing_association_read_from_text` `test_each_declared_route_is_one_relationship_and_an_unread_side_is_never_ungoverned`",
       "targets": [
+        {
+          "anchor": {
+            "blob": "b2988f6b2880854b942ad85dea6de14ff88eb7c9",
+            "content": "sha256:d48782df1cc07dc9fa8556307192ab80fe5651cdc798afaab7fd5d94fd22b31e",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_knowledge_review_relationship_movement.py"
+          },
+          "kind": "test"
+        },
         {
           "anchor": {
             "blob": "b2988f6b2880854b942ad85dea6de14ff88eb7c9",
@@ -47,8 +58,8 @@
         },
         {
           "anchor": {
-            "blob": "4fbe8a393d04d0bc0f0af6d31ed7a7880fd4c684",
-            "content": "sha256:a3228e55bfb2cfb17777ec323257d38273b2c23ca70020ac9e3201deb902eebb",
+            "blob": "b2988f6b2880854b942ad85dea6de14ff88eb7c9",
+            "content": "sha256:7a88a26130090bf4b55fadf1b248d6c1f651ab484508d73e2a715e9273df27d7",
             "locator": {
               "kind": "symbol",
               "name": "test_each_declared_route_is_one_relationship_and_an_unread_side_is_never_ungoverned"
@@ -60,8 +71,18 @@
       ]
     },
     "2": {
-      "note": "The published surface: the fourth relationship kind and the one entry point.",
+      "note": "The published surface: the fourth relationship kind and the one entry point.\n\nAnchor: `GOVERNING_ROUTE_KIND` `__all__`",
       "targets": [
+        {
+          "anchor": {
+            "blob": "055c11c9366f9b384a3122b4ad7c84c014d9bb12",
+            "content": "sha256:0683c1d8418e232ff47d96ab4e7154e19a2d68a1c96c4044a298fe6278c40c2a",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
         {
           "anchor": {
             "blob": "055c11c9366f9b384a3122b4ad7c84c014d9bb12",
@@ -75,8 +96,8 @@
         },
         {
           "anchor": {
-            "blob": "092cb3b97e3749de11fc851e90067341bccde9a2",
-            "content": "sha256:e2637b2ac45dd35b0baac0fccc326ca9f9db469293a8c95c643c366ef380d9d9",
+            "blob": "055c11c9366f9b384a3122b4ad7c84c014d9bb12",
+            "content": "sha256:3ecdf0ef5f2d0c62550b2e6f0f73c2aba97c35c6bf6123c367dc00c2f0b43ab9",
             "locator": {
               "kind": "symbol",
               "name": "__all__"
@@ -87,15 +108,14 @@
       ]
     },
     "3": {
-      "note": "The governed-table names the route owner's own writes answer, so the read asks the question the write answers.",
+      "note": "The governed-table names the route owner's own writes answer, so the read asks the question the write answers.\n\nAnchor: `_GOVERNED_TABLES`",
       "targets": [
         {
           "anchor": {
-            "blob": "092cb3b97e3749de11fc851e90067341bccde9a2",
-            "content": "sha256:3676ae078ec6fa6320ac7e2b995a4ee4c04fb27244fcf65faf6f01e48d5f8724",
+            "blob": "055c11c9366f9b384a3122b4ad7c84c014d9bb12",
+            "content": "sha256:0683c1d8418e232ff47d96ab4e7154e19a2d68a1c96c4044a298fe6278c40c2a",
             "locator": {
-              "kind": "symbol",
-              "name": "_GOVERNED_TABLES"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -103,37 +123,14 @@
       ]
     },
     "4": {
-      "note": "**One side read: the identity kind named by the selector, the existence question first, then the route and its recorded path.**",
+      "note": "**One side read: the identity kind named by the selector, the existence question first, then the route and its recorded path.**\n\nAnchor: `_route_side` `_RouteFacts` `_route_side_of` `_identity_recorded`",
       "targets": [
         {
           "anchor": {
-            "blob": "092cb3b97e3749de11fc851e90067341bccde9a2",
-            "content": "sha256:907c3eaa1ba59e15daaaf92c2f37774eef641581dc92cf947f4bb34a6182bf6d",
+            "blob": "055c11c9366f9b384a3122b4ad7c84c014d9bb12",
+            "content": "sha256:0683c1d8418e232ff47d96ab4e7154e19a2d68a1c96c4044a298fe6278c40c2a",
             "locator": {
-              "kind": "symbol",
-              "name": "_route_side"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "092cb3b97e3749de11fc851e90067341bccde9a2",
-            "content": "sha256:2e30dcb2c793fadce6185397b477e4077cbb9c501d9ff9a9fbc51d6348697735",
-            "locator": {
-              "kind": "symbol",
-              "name": "_RouteFacts"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "092cb3b97e3749de11fc851e90067341bccde9a2",
-            "content": "sha256:718e139d4a1e8623a7517758a3f29617ae9c406d024013366451f1848b5aafb3",
-            "locator": {
-              "kind": "symbol",
-              "name": "_route_side_of"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -152,12 +149,22 @@
       ]
     },
     "5": {
-      "note": "The selector question: an identity or an exact revision of one names it, a path selector names none.",
+      "note": "The selector question: an identity or an exact revision of one names it, a path selector names none.\n\nAnchor: `_subject_identity`",
       "targets": [
         {
           "anchor": {
-            "blob": "092cb3b97e3749de11fc851e90067341bccde9a2",
-            "content": "sha256:25337b4b4121dabb6f0ff6e8f54a7bc4c05c73f5b708e8b5b3ae7f7f6c50f9ad",
+            "blob": "055c11c9366f9b384a3122b4ad7c84c014d9bb12",
+            "content": "sha256:0683c1d8418e232ff47d96ab4e7154e19a2d68a1c96c4044a298fe6278c40c2a",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "055c11c9366f9b384a3122b4ad7c84c014d9bb12",
+            "content": "sha256:4a9ca2095ea6f99d5d251ea3404bab60a52186ea7dbd7d188f9492c9258c5599",
             "locator": {
               "kind": "symbol",
               "name": "_subject_identity"
@@ -168,26 +175,14 @@
       ]
     },
     "6": {
-      "note": "**The transition and the gap: reassigned when the recorded routes differ, and one gap per side whose snapshot does not record the identity.**",
+      "note": "**The transition and the gap: `added`, `retracted`, `unchanged`, `moved` or `unresolved` per route — never `reassigned` — and one gap per side whose identity is not recorded or whose route declarations were not read.**\n\nAnchor: `_route_transition` `_route_gaps`",
       "targets": [
         {
           "anchor": {
-            "blob": "092cb3b97e3749de11fc851e90067341bccde9a2",
-            "content": "sha256:4913ee6366557d4e9f6583f0f64e873f6eabcf5f2dcf36b366493de8f6486f1c",
+            "blob": "055c11c9366f9b384a3122b4ad7c84c014d9bb12",
+            "content": "sha256:0683c1d8418e232ff47d96ab4e7154e19a2d68a1c96c4044a298fe6278c40c2a",
             "locator": {
-              "kind": "symbol",
-              "name": "_route_transition"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "092cb3b97e3749de11fc851e90067341bccde9a2",
-            "content": "sha256:800a612e13f8bdfb8867ced07af24fff22aa2c756f30fd098cf60e4277530115",
-            "locator": {
-              "kind": "symbol",
-              "name": "_route_gaps"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -195,12 +190,22 @@
       ]
     },
     "7": {
-      "note": "The statement of both sides and the word each side is rendered as — never the repository root.",
+      "note": "The statement of both sides and the word each side is rendered as — never the repository root.\n\nAnchor: `_route_statement` `_route_word`",
       "targets": [
         {
           "anchor": {
-            "blob": "092cb3b97e3749de11fc851e90067341bccde9a2",
-            "content": "sha256:da8e4285515aeb5b76853624140812882c2e5a9363a2cf827eca2672edef92ed",
+            "blob": "055c11c9366f9b384a3122b4ad7c84c014d9bb12",
+            "content": "sha256:0683c1d8418e232ff47d96ab4e7154e19a2d68a1c96c4044a298fe6278c40c2a",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "055c11c9366f9b384a3122b4ad7c84c014d9bb12",
+            "content": "sha256:a2f094271cb930e2178ae08dfe74dd3849685227a28c5b22d971adc6cb716803",
             "locator": {
               "kind": "symbol",
               "name": "_route_statement"
@@ -210,8 +215,8 @@
         },
         {
           "anchor": {
-            "blob": "092cb3b97e3749de11fc851e90067341bccde9a2",
-            "content": "sha256:42b88e782122d46445c364ff41da6955601c68e8999ee8f0f615b73dfb56cd49",
+            "blob": "055c11c9366f9b384a3122b4ad7c84c014d9bb12",
+            "content": "sha256:22692dbcd8662c0b1cd208b9d50953b72d6fe84f6ee6389d1e349d950d90de9e",
             "locator": {
               "kind": "symbol",
               "name": "_route_word"
@@ -222,12 +227,34 @@
       ]
     },
     "9": {
-      "note": "The traversal that calls this module once per review, and the wire vocabulary the movement fills.",
+      "note": "The traversal that calls this module once per review, and the wire vocabulary the movement fills.\n\nAnchor: `relationship_movements` `ReviewRelationshipMovement`",
       "targets": [
         {
           "anchor": {
-            "blob": "2010ceb201503bdba78bee89fd27919ced5b4c4a",
-            "content": "sha256:fff934dfcda5aff44a91daa122a2d3139fd4f05c109babd2142bf85c39003b34",
+            "blob": "8810b5f2e85378847113d9ea6246a4fb96def91f",
+            "content": "sha256:31b4506c1ef62e6c77c68efb52f668b00415b0725a84ff746be8e9adbd222cae",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/review_relationship_movement.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "052766edeb931fb7a3ab142ec97de73583b76cdf",
+            "content": "sha256:319d9f8a3fe71f650293d56516821b43d0be1ee15df18a981dff4d28d9afa1fe",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review_relationships.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8810b5f2e85378847113d9ea6246a4fb96def91f",
+            "content": "sha256:e47de7a4450503f66ae9d7c98a35193368b91c63449a4362879b234a7cf8d045",
             "locator": {
               "kind": "symbol",
               "name": "relationship_movements"
@@ -238,8 +265,8 @@
         },
         {
           "anchor": {
-            "blob": "e3e8df3624cd2d7cb440199d304479c1fa4dba64",
-            "content": "sha256:88313a99b690437de0e806fac0ad2c236476cf98fa1869d1e61d7147b0b7ea73",
+            "blob": "052766edeb931fb7a3ab142ec97de73583b76cdf",
+            "content": "sha256:7cf29daa7f50cdde84fe7b9ab893f7307ed6b67352cee43aa097ae9358a2cd95",
             "locator": {
               "kind": "symbol",
               "name": "ReviewRelationshipMovement"

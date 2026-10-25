@@ -75,7 +75,9 @@ No configured domain documentation could be checked.
 - The one verdict rule, stated once so a writer and the record's validator cannot disagree. [39]
 - The reader's three states, its sentence, and its own statement that a discarded record and one never written read the same. [40]
 
+
 - The shipped capture owner that derives the resolved source side after the sync. [41]
+
 
 - The durable-evidence pair every record is published and read back through. [42]
 

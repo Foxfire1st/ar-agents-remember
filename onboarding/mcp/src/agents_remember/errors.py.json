@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/errors.py",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
@@ -74,7 +75,7 @@
       ]
     },
     "10": {
-      "note": "The consumer that turns this family into a value with an explanation instead of an escaping exception.",
+      "note": "The consumer that turns this family into a value with an explanation instead of an escaping exception.\n\nAnchor: `compile_admitted_capsule` `CapsuleCompilationOutcome`",
       "targets": [
         {
           "anchor": {
@@ -90,8 +91,8 @@
         },
         {
           "anchor": {
-            "blob": "8f55401b7e0afa34d4cc0cc01d77d2aa95c1a3b7",
-            "content": "sha256:4aae10481d05e43d7a434e93ae593f4f4643d82811f592c85432b658c5def51e",
+            "blob": "0de84f83644c391b29759b1623034309cabc8c72",
+            "content": "sha256:7b16c4a32019a3e8f4ccf82b15f964d954f4c2df5c97d530d7128a382caa421b",
             "locator": {
               "kind": "symbol",
               "name": "CapsuleCompilationOutcome"
@@ -102,12 +103,23 @@
         },
         {
           "anchor": {
-            "blob": "8f55401b7e0afa34d4cc0cc01d77d2aa95c1a3b7",
-            "content": "sha256:047666cc0858cce5a47f7e64a553bf01cdff370afb731d8575acec7fbc9fc1fc",
+            "blob": "0de84f83644c391b29759b1623034309cabc8c72",
+            "content": "sha256:08368e1ce84e4ac275d87a6323fa926ebceb6cbd57b92d19e00d0d74f4a5ba61",
             "locator": {
               "end": 80,
               "kind": "line_range",
               "start": 44
+            },
+            "path": "mcp/src/agents_remember/application/role_capsules/compilation.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0de84f83644c391b29759b1623034309cabc8c72",
+            "content": "sha256:fa7dbb04c116a8a6d6767c3d85c3b723091f0af5bfd84f27ffc91b7b7e9f8f52",
+            "locator": {
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/role_capsules/compilation.py"
           },
@@ -183,8 +195,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9a4ce498ea27dd1a592a152b56acd5500346eee1",
-            "content": "sha256:b5f0bf5bde1ae1a2fc3d09be0af5f6a41c4a6aaf28aae3f2dd6026c09d0c431e",
+            "blob": "b520874e0837707762dcede94c19521961ac366e",
+            "content": "sha256:8066fa6e26c57c7f763122c5edf9f86631e8e4f32561cd7fc13eda1ba398a0cc",
             "locator": {
               "kind": "symbol",
               "name": "resolve_task_projection_scope"
@@ -207,8 +219,8 @@
         },
         {
           "anchor": {
-            "blob": "9a4ce498ea27dd1a592a152b56acd5500346eee1",
-            "content": "sha256:81126b0f7a03d02cc085700c5e38b241c87e43e9e548465253f0f0b14f466533",
+            "blob": "b520874e0837707762dcede94c19521961ac366e",
+            "content": "sha256:e4f70a2fcaf7533049274c3056b1ddfa49a11b7ab58fbbf901dd506ef9f67582",
             "locator": {
               "end": 373,
               "kind": "line_range",
@@ -297,15 +309,14 @@
       ]
     },
     "18": {
-      "note": "**The retention owner's typed failure, whose five statuses distinguish an invalid ref, a missing object, an occupied ref, an unwritable ref and a moved ref.**\n\nAnchor: `__init__`",
+      "note": "**The retention owner's typed failure, whose status distinguishes a ref the record never held, a ref that has moved and a ref that could not be deleted.**\n\nAnchor: `CodeObjectRetentionError`",
       "targets": [
         {
           "anchor": {
-            "blob": "e21353f470d1e68a80a490a4f964aa81289de43f",
-            "content": "sha256:2274d2c732dc02f1a1446d8b254aa836da88e671b3b6ad42de1656eb83fead61",
+            "blob": "806f87dacbd41bb3a7c9c2fa4c012db6332d673b",
+            "content": "sha256:63e6dd3c2a1da05c6bfc50b4ab760bf26a30d93b5dec100bd558d7d615b5ad8b",
             "locator": {
-              "kind": "symbol",
-              "name": "CodeObjectRetentionError"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -406,12 +417,23 @@
       ]
     },
     "21": {
-      "note": "**The deletion owner that raises the second, and the two raise sites that keep the mismatch from recording a deletion.**",
+      "note": "**The deletion owner that raises the second, and the two raise sites that keep the mismatch from recording a deletion.**\n\nAnchor: `discard_comparison_snapshots` `_measure_and_remove`",
       "targets": [
         {
           "anchor": {
-            "blob": "73d4bf4ca91ab0c915638a6b9f8388b2880bc3e1",
-            "content": "sha256:2d02bfda2b3bbcfa8f3de7fae05a367ca4045f9c08ff00232765e5f6be676e2f",
+            "blob": "fe49634e9ec9be9654d8cf2cfd533cd3eaf6208d",
+            "content": "sha256:2270c48e14970e4b325d1f3759ac88c82dfa18bc835493b8c78bbb355548caa4",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/review_comparison_reclamation.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fe49634e9ec9be9654d8cf2cfd533cd3eaf6208d",
+            "content": "sha256:f78a7068598131d1b72a4260ff00daa527718fb981c22cd7f3698f08baf466dc",
             "locator": {
               "kind": "symbol",
               "name": "discard_comparison_snapshots"
@@ -544,59 +566,14 @@
       ]
     },
     "5": {
-      "note": "Composition, integrity, harness retry safety and history failures.",
+      "note": "**The tokenizer vocabulary and the grammar an install cannot supply: the counter's missing vendored vocabulary and a citation check's missing grammar, each raised rather than downloaded or approximated.**\n\nAnchor: `ConversationCompositionError` `TokenizerVocabularyError` `GrammarUnavailableError` `HarnessAdapterDisconnectedError` `NativeHistoryLimitExceeded`",
       "targets": [
         {
           "anchor": {
-            "blob": "68e62a4e78041f271e927977fa67c79ca74c18b7",
-            "content": "sha256:30d69af6e832f280748a8bbb1e429dacd58e08a4059f7159a448967092428c93",
-            "locator": {
-              "kind": "symbol",
-              "name": "ConversationCompositionError"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
             "blob": "806f87dacbd41bb3a7c9c2fa4c012db6332d673b",
-            "content": "sha256:04d03b51a0e2def2231844a1f5415c5289fedb25fe94f50ca32bcfbdb7fd163e",
+            "content": "sha256:63e6dd3c2a1da05c6bfc50b4ab760bf26a30d93b5dec100bd558d7d615b5ad8b",
             "locator": {
-              "kind": "symbol",
-              "name": "TokenizerVocabularyError"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "806f87dacbd41bb3a7c9c2fa4c012db6332d673b",
-            "content": "sha256:d2aa0598cafb8738ed8819d135bb68cba56c994a61f7c61dfbf1f41446b753ea",
-            "locator": {
-              "kind": "symbol",
-              "name": "GrammarUnavailableError"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "68e62a4e78041f271e927977fa67c79ca74c18b7",
-            "content": "sha256:367e55cc5bd76348fedeefa7164e30bdb6bbadb02c5c7b6d3c5940183fa0e6fa",
-            "locator": {
-              "kind": "symbol",
-              "name": "HarnessAdapterDisconnectedError"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "68e62a4e78041f271e927977fa67c79ca74c18b7",
-            "content": "sha256:378bf02d299203184feb933d1e4e1669d99a25210c2ec1882fb259350703d949",
-            "locator": {
-              "kind": "symbol",
-              "name": "NativeHistoryLimitExceeded"
+              "kind": "file"
             }
           },
           "kind": "code"

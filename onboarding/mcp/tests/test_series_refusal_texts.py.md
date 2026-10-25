@@ -14,7 +14,11 @@ A master's series refusals name the master, the contract cell or folder, and the
 
 ## Evidence
 
+
 - The dirty atomic-master refusal guides delivery through a closed leaf and owner publication or discard, and advertises no integration-workbench commit. [1]
+
+
 - A series refusal names the master, the contract cell or folder, and the repair. [2]
+
 
 - Series-refusal fixtures carry the mirrored external-memory landing leg. [3]

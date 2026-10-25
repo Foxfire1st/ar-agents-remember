@@ -35,6 +35,8 @@ read from CSS custom properties rather than hardcoded, so the theme tracks the l
 
 ### Repo-Internal References
 
+
 - `FilePane` builds its `EditorView` with this theme bundle. [1]
+
 - The CodeMirror chrome bundle reads the panel, ink, grid, amber selection, and monospace font tokens. [2]
 - The syntax-highlight bundle reads the cyan and mint syntax tokens. [3]

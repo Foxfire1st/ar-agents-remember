@@ -1,5 +1,6 @@
 {
   "path": "dashboard/src/test/contract.test.ts",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
@@ -21,12 +22,22 @@
   ],
   "references": {
     "1": {
-      "note": "Reconciled the phase registry with retired ledger publication phases; sample membership and coverage checks remain.",
+      "note": "Reconciled the phase registry with retired ledger publication phases; sample membership and coverage checks remain.\n\nAnchor: `VOCABULARIES`",
       "targets": [
         {
           "anchor": {
-            "blob": "64d36bbd8b2f66b79eab4166dd578cab277c875a",
-            "content": "sha256:1476ee2893530daf908528dab4adb135711349f5f7eb05111c45680e89b2b2d4",
+            "blob": "609ce5dbd44b34a6cdfe57060a562b9a58283df8",
+            "content": "sha256:e4c1d9ef5cc07b0654006905c3bb80d97eb5b9294352d77ea04e531916e40c5f",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "609ce5dbd44b34a6cdfe57060a562b9a58283df8",
+            "content": "sha256:8c6b8ebc48bd6ddb925c7df7f815cbf97ee7c3d6fe00d77ef0b42fbff77f0747",
             "locator": {
               "kind": "symbol",
               "name": "VOCABULARIES"
@@ -41,8 +52,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1acfa30a3d49af71983046497da65be4299e1951",
-            "content": "sha256:86ab2c05032a1fe9b632c7f44b708814a74929b9f727332fe4a8e846ba55b471",
+            "blob": "609ce5dbd44b34a6cdfe57060a562b9a58283df8",
+            "content": "sha256:1d95a183b530bfd3cfa245d6f91e18cb825c661cbb2883c5b4098871a56f4218",
             "locator": {
               "end": 643,
               "kind": "line_range",
@@ -50,16 +61,39 @@
             }
           },
           "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "609ce5dbd44b34a6cdfe57060a562b9a58283df8",
+            "content": "sha256:950723b50253687ab4e16c97f2f09c7d520f0ca2ad14aaf28d35408c87ae38c7",
+            "locator": {
+              "end": 637,
+              "kind": "line_range",
+              "start": 614
+            }
+          },
+          "kind": "test"
         }
       ]
     },
     "12": {
-      "note": "The generated mirror's metric and analytics declarations.",
+      "note": "The generated mirror's metric and analytics declarations.\n\nAnchor: `Analytics` `Metrics`",
       "targets": [
         {
           "anchor": {
-            "blob": "9374d32f8fe2786461d81cc5bf483ed603f982ff",
-            "content": "sha256:f270561fa42cf5fe631104784425526d73522d7be331c673b220622a9e7cd5a7",
+            "blob": "d71e9db1948f52b82bd84b2348775f13ac9b57e7",
+            "content": "sha256:daaaf9f80d95ac50acc42b4097c5fcc9293b51a91e135d7b45f3ae87ee7e947f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/types/projection.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d71e9db1948f52b82bd84b2348775f13ac9b57e7",
+            "content": "sha256:c7cd986e0c3afd707786bcb06aa53e098b36857db0a07a118a047c40018ea2e6",
             "locator": {
               "kind": "symbol",
               "name": "Analytics"
@@ -70,8 +104,8 @@
         },
         {
           "anchor": {
-            "blob": "38e0e78f58e9873a97f4e8ebe6212c2a6ee98d94",
-            "content": "sha256:d5e32a2d59fd75950163926f820ab20137baf7f9381086c1c40a4a892b4d05aa",
+            "blob": "d71e9db1948f52b82bd84b2348775f13ac9b57e7",
+            "content": "sha256:3392bfcc22276f192aed9fa84c970db0395da4b0b61a2f84855546c3b833b504",
             "locator": {
               "kind": "symbol",
               "name": "Metrics"
@@ -100,12 +134,23 @@
       ]
     },
     "2": {
-      "note": "Persisted projection state is written by `write_projection` with omitted `None` values.",
+      "note": "Persisted projection state is written by `write_projection` with omitted `None` values.\n\nAnchor: `write_projection`",
       "targets": [
         {
           "anchor": {
-            "blob": "759479025b5e816a163b468faada469459390e0c",
-            "content": "sha256:959b8f03573616a2d384631232c632f1f4009fcef82870a0c7d2d2222cf14eec",
+            "blob": "80f68a14806839156738f156091e776e566e18b6",
+            "content": "sha256:6f85a783f40f8df5c8afb659c5f7da8114cd5c3877c48f66578a5e8b5479dfb8",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/serving/projections/projection_store.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "80f68a14806839156738f156091e776e566e18b6",
+            "content": "sha256:4e230865600527cbd76449ad81e48c3805d260a223450cbbf622a20ae6f603b9",
             "locator": {
               "kind": "symbol",
               "name": "write_projection"
@@ -148,12 +193,12 @@
       ]
     },
     "21": {
-      "note": "The Python source of truth is in-repo, and its docstring states the served contract is client-agnostic rather than owned by any external consumer.\n\nAnchor: `dashboard`; \"The shapes are client-agnostic\"",
+      "note": "The Python source of truth is in-repo, and its docstring states the served contract is client-agnostic rather than owned by any external consumer.",
       "targets": [
         {
           "anchor": {
-            "blob": "1c93a3cfc20a23e78c37a94c82f1c267d32a474a",
-            "content": "sha256:122b8af302e57af32e5f7d3ee8fb735bb940e322c05d47e887bdcde86cccef00",
+            "blob": "fd0cd6ba53b5d874adfcb26807b26ab92e77d56e",
+            "content": "sha256:55e210a8091ad416654531913b0655918344ee0eed84e84cbe4658faa8c2204a",
             "locator": {
               "end": 18,
               "kind": "line_range",
@@ -166,12 +211,24 @@
       ]
     },
     "22": {
-      "note": "The closed-vocabulary registry includes all four task-list disagreement kind values; its existing sample guard is not live record reconciliation.\n\nAnchor: Current source assertions",
+      "note": "The closed-vocabulary registry includes all four task-list disagreement kind values; its existing sample guard is not live record reconciliation.",
       "targets": [
         {
           "anchor": {
-            "blob": "85bfabbd9bc1d198a3e5080e42db1f702f42be98",
-            "content": "sha256:54a014da3bbf53d59a35b820c533f8f8437a073cfd63d015a8a6b5ca3a835b6e",
+            "blob": "609ce5dbd44b34a6cdfe57060a562b9a58283df8",
+            "content": "sha256:74868106b75c47fc8624af8172f35e6784cba3b9cfd9847ab1b80e74ef368768",
+            "locator": {
+              "end": 285,
+              "kind": "line_range",
+              "start": 268
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "609ce5dbd44b34a6cdfe57060a562b9a58283df8",
+            "content": "sha256:fa813420c61ebfeb722cb17a0dea4227758c1c4178a47a6c4438ee9bdcac5365",
             "locator": {
               "end": 287,
               "kind": "line_range",
@@ -183,12 +240,23 @@
       ]
     },
     "3": {
-      "note": "The contract test's inverted TypeScript pins are registered as an explicit fixture-guard allowance.\n\nAnchor: `error`",
+      "note": "The contract test's inverted TypeScript pins are registered as an explicit fixture-guard allowance.\n\nAnchor: `SANCTIONED_WIRE_SITES`",
       "targets": [
         {
           "anchor": {
-            "blob": "422820d3b137d6391b4633f25bc2bee615473d94",
-            "content": "sha256:6fb3069befefdbf0b993642000d2799d21ed30e2d0319e6c669b5c44fc852211",
+            "blob": "a638463e5b64ab2206752784eae0cb1426ad8637",
+            "content": "sha256:8c574945484876085ce2c0a763e3e28e1c157d90bddede766c1192d225eb6e6d",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/test/wireFixtureGuard.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "a638463e5b64ab2206752784eae0cb1426ad8637",
+            "content": "sha256:5402c58fb9157f5c0f6f1cfe48c98da4fe05f9996a471b5d6577f8457181aae8",
             "locator": {
               "kind": "symbol",
               "name": "SANCTIONED_WIRE_SITES"
@@ -200,12 +268,12 @@
       ]
     },
     "4": {
-      "note": "The header: three fixture-coverage seams, the double cast that disabled checking, and the boundary now closed by schema codegen.\n\nAnchor: `directions`; \"it does so at three seams\"",
+      "note": "The header: three fixture-coverage seams, the double cast that disabled checking, and the boundary now closed by schema codegen.",
       "targets": [
         {
           "anchor": {
-            "blob": "64d36bbd8b2f66b79eab4166dd578cab277c875a",
-            "content": "sha256:04796d65286293f716f8e713fb17a4f4c3767ec81cd3ba161ffa77de1210c0aa",
+            "blob": "609ce5dbd44b34a6cdfe57060a562b9a58283df8",
+            "content": "sha256:b36d2c9a19492b83b43e61ac317732f0235aae7ad1f654383d9d4a4c1120445b",
             "locator": {
               "end": 60,
               "kind": "line_range",
@@ -217,8 +285,18 @@
       ]
     },
     "5": {
-      "note": "`ServedOnlyPaths` + `mirrorMustDeclare` — the `mirror ⊇ served` direction, naming the path.",
+      "note": "`ServedOnlyPaths` + `mirrorMustDeclare` — the `mirror ⊇ served` direction, naming the path.\n\nAnchor: `mirrorMustDeclare` `ServedOnlyPaths`",
       "targets": [
+        {
+          "anchor": {
+            "blob": "609ce5dbd44b34a6cdfe57060a562b9a58283df8",
+            "content": "sha256:e4c1d9ef5cc07b0654006905c3bb80d97eb5b9294352d77ea04e531916e40c5f",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        },
         {
           "anchor": {
             "blob": "609ce5dbd44b34a6cdfe57060a562b9a58283df8",
@@ -232,22 +310,11 @@
         },
         {
           "anchor": {
-            "blob": "e38500a66db86825287340b04f5b87e554e7a9f2",
-            "content": "sha256:0a110dec98843285bfb20bde58fd9ba2daf36c1d4b7a55d6a1f6d6666f016f4a",
+            "blob": "609ce5dbd44b34a6cdfe57060a562b9a58283df8",
+            "content": "sha256:367a6705c7e082772c2ab64762c11d6ba092925cf0e23758d83aeb34ff8b6b84",
             "locator": {
               "kind": "symbol",
               "name": "ServedOnlyPaths"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "1acfa30a3d49af71983046497da65be4299e1951",
-            "content": "sha256:b11c19a7afaf928444a3387cf589035b202a9705875f862b421afb105b61137e",
-            "locator": {
-              "kind": "symbol",
-              "name": "mirrorMustDeclare"
             }
           },
           "kind": "test"
@@ -255,8 +322,18 @@
       ]
     },
     "6": {
-      "note": "`MirrorOnlyPaths` + `KnownUnsampled` + `fixtureMustSample` + `allowlistMustStayEarned` — the oracle guarded, including why an empty array is worse than a missing field.",
+      "note": "`MirrorOnlyPaths` + `KnownUnsampled` + `fixtureMustSample` + `allowlistMustStayEarned` — the oracle guarded, including why an empty array is worse than a missing field.\n\nAnchor: `fixtureMustSample` `KnownUnsampled`",
       "targets": [
+        {
+          "anchor": {
+            "blob": "609ce5dbd44b34a6cdfe57060a562b9a58283df8",
+            "content": "sha256:e4c1d9ef5cc07b0654006905c3bb80d97eb5b9294352d77ea04e531916e40c5f",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        },
         {
           "anchor": {
             "blob": "609ce5dbd44b34a6cdfe57060a562b9a58283df8",
@@ -270,22 +347,11 @@
         },
         {
           "anchor": {
-            "blob": "e38500a66db86825287340b04f5b87e554e7a9f2",
-            "content": "sha256:92c6be3a3f8b5b2315de340b42ba13553963d58c397d65bc01529bbcacf39021",
+            "blob": "609ce5dbd44b34a6cdfe57060a562b9a58283df8",
+            "content": "sha256:d095b290529584141a460e5399674c3c90273d68829c76680c4db755a4299fa8",
             "locator": {
               "kind": "symbol",
               "name": "KnownUnsampled"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "1acfa30a3d49af71983046497da65be4299e1951",
-            "content": "sha256:77239ba352a111c3c40f271e0f00cfbe46702e2215d52a4e2a61f8d1963fc990",
-            "locator": {
-              "kind": "symbol",
-              "name": "fixtureMustSample"
             }
           },
           "kind": "test"
@@ -319,30 +385,8 @@
         },
         {
           "anchor": {
-            "blob": "1acfa30a3d49af71983046497da65be4299e1951",
-            "content": "sha256:4bce69eaa9645ba5566f4a0e67cba692db90a38e54177e3135ef2a6038858381",
-            "locator": {
-              "kind": "symbol",
-              "name": "AbsorbingPaths"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "e04bc90c0459913ff00bb72c86e355b1b0d28a8e",
-            "content": "sha256:9fee5ea8a1aa224921c7644f25f3ea183716b20b55000ec94ab9ab229468c668",
-            "locator": {
-              "kind": "symbol",
-              "name": "INDEX_SIGNATURE_SITES"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "1acfa30a3d49af71983046497da65be4299e1951",
-            "content": "sha256:02d4fb8493e000904244cba921ee08000e6fbcf9580c57dee8f961d386344ee2",
+            "blob": "609ce5dbd44b34a6cdfe57060a562b9a58283df8",
+            "content": "sha256:08bc0461e88af4cf8fb55e567a174648968862f4f40d532c6a7a27a81b8abbd6",
             "locator": {
               "end": 560,
               "kind": "line_range",
@@ -350,16 +394,36 @@
             }
           },
           "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "609ce5dbd44b34a6cdfe57060a562b9a58283df8",
+            "content": "sha256:e4c1d9ef5cc07b0654006905c3bb80d97eb5b9294352d77ea04e531916e40c5f",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
         }
       ]
     },
     "8": {
-      "note": "`ClosedUnionPaths` + `VOCABULARIES` — every registered path bound to its value set, replacing hand-written checks.",
+      "note": "`ClosedUnionPaths` + `VOCABULARIES` — every registered path bound to its value set, replacing hand-written checks.\n\nAnchor: `VOCABULARIES`",
       "targets": [
         {
           "anchor": {
-            "blob": "64d36bbd8b2f66b79eab4166dd578cab277c875a",
-            "content": "sha256:1476ee2893530daf908528dab4adb135711349f5f7eb05111c45680e89b2b2d4",
+            "blob": "609ce5dbd44b34a6cdfe57060a562b9a58283df8",
+            "content": "sha256:e4c1d9ef5cc07b0654006905c3bb80d97eb5b9294352d77ea04e531916e40c5f",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "609ce5dbd44b34a6cdfe57060a562b9a58283df8",
+            "content": "sha256:8c6b8ebc48bd6ddb925c7df7f815cbf97ee7c3d6fe00d77ef0b42fbff77f0747",
             "locator": {
               "kind": "symbol",
               "name": "VOCABULARIES"
@@ -370,7 +434,7 @@
       ]
     },
     "9": {
-      "note": "Sample vocabulary assertion: every registered path is reached and every carried value is declared by its vocabulary.",
+      "note": "Sample vocabulary assertion: every registered path is reached and every carried value is declared by its vocabulary.\n\nAnchor: `UnsampledMirrorPaths` `VOCABULARIES`",
       "targets": [
         {
           "anchor": {
@@ -385,8 +449,8 @@
         },
         {
           "anchor": {
-            "blob": "462c4e27789ba9889fec000e0f7d3d1598777eef",
-            "content": "sha256:1e3c65d378d210b59514a0ca0f9d5e715b8e2f6448d413772958bda417153509",
+            "blob": "609ce5dbd44b34a6cdfe57060a562b9a58283df8",
+            "content": "sha256:8c6b8ebc48bd6ddb925c7df7f815cbf97ee7c3d6fe00d77ef0b42fbff77f0747",
             "locator": {
               "kind": "symbol",
               "name": "VOCABULARIES"
@@ -396,23 +460,22 @@
         },
         {
           "anchor": {
-            "blob": "e38500a66db86825287340b04f5b87e554e7a9f2",
-            "content": "sha256:dcf2fa88586cf37ff5bff80ca9e6eb567432539485ef34dce78a259343abc20d",
+            "blob": "609ce5dbd44b34a6cdfe57060a562b9a58283df8",
+            "content": "sha256:e4c1d9ef5cc07b0654006905c3bb80d97eb5b9294352d77ea04e531916e40c5f",
             "locator": {
-              "end": 503,
-              "kind": "line_range",
-              "start": 494
+              "kind": "file"
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "1acfa30a3d49af71983046497da65be4299e1951",
-            "content": "sha256:990940ed55ea9b857b23d30d0b037a09ab1d6d81bc3410767572ce1ed42685b6",
+            "blob": "609ce5dbd44b34a6cdfe57060a562b9a58283df8",
+            "content": "sha256:941ff1b898fe9d1fdc9f3c8ac4add5fad9b323c41eddd9ff358a6e1e15e63cf3",
             "locator": {
-              "kind": "symbol",
-              "name": "UnsampledMirrorPaths"
+              "end": 503,
+              "kind": "line_range",
+              "start": 494
             }
           },
           "kind": "test"

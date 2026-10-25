@@ -39,15 +39,14 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "A line-range proof stores a `line_range` anchor with the case's blob content and reports the paired evidence `proof_written`",
+      "note": "A line-range proof stores a `line_range` anchor with the case's blob content and reports the paired evidence `proof_written`\n\nAnchor: `test_a_proof_by_lines_writes_a_line_range_anchor_and_pairs_the_evidence`",
       "targets": [
         {
           "anchor": {
-            "blob": "ec342983392707f378d77b513e5027ba88cef07e",
-            "content": "sha256:a7407bb7c6d5ff61cca69bd327b77e4e5ff324aea2c906a39ea84cd58b247835",
+            "blob": "7d0eb57c81eacf9b61885708a730ae2064b7e61b",
+            "content": "sha256:2e7e185439b0154e4a9291c2be22b09936c00ed5abcf91a513b402ea6f5792b9",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_proof_by_lines_writes_a_line_range_anchor_and_pairs_the_evidence"
+              "kind": "file"
             }
           },
           "kind": "test"

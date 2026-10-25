@@ -544,12 +544,12 @@
       ]
     },
     "29": {
-      "note": "Adds audience selection for all nine operations and fifteen reference entries, fourteen marked step_detail. Routing vocabulary, applicability, role order and role/operation composition order are unchanged.\n\nAnchor: Current source; preserved L88 property 29",
+      "note": "Adds audience selection to all nine operations and marks fifteen of the twenty-one reference entries `step_detail`.",
       "targets": [
         {
           "anchor": {
-            "blob": "f282452741c4fb76df6b7d6b469519c7ea2cb936",
-            "content": "sha256:84ae84a118faa696ea1c03c359d3774c18369093a574fd9de1a8997974f78826",
+            "blob": "2f3ce46a32a38d86f474252bb23d8081e91f0a6e",
+            "content": "sha256:4f6073f7439b39c5b2793297eaed9673f96d68fd89b19c352bfedc89f77be709",
             "locator": {
               "end": 685,
               "kind": "line_range",

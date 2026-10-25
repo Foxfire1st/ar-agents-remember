@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/mcp/tools/role_agents.py",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
@@ -58,8 +59,8 @@
     },
     {
       "anchor": {
-        "blob": "6908e5a27d9359eeb17e607a2914048d3eb25274",
-        "content": "sha256:aded4265d4497a5281f46fd1aa689a6bd735b6735656ef582975747eeab7dba1",
+        "blob": "06312961eb1a285e4dc69292d9973c71884c5620",
+        "content": "sha256:8c4d848acba2ae83de73d85662dde488f228b8d30d1f766c55bd83e1978e1ddf",
         "locator": {
           "kind": "symbol",
           "name": "user_settings_init_payload"
@@ -71,7 +72,7 @@
         "handoffEntry": "L188-B07",
         "leaf": "260928-MIK-L188"
       },
-      "rationale": "The public refusal boundary returns the original modeled refusal without re-entering the failed reader.",
+      "rationale": "The entry says the public refusal boundary returns the original modeled refusal without re-entering the failed reader; at C the payload builder's refusal branch (99-115) copies code, detail and next action off `SettingsInitRefused` and never calls the reader again, and the path it reports is the non-reading resolver's.",
       "role": "enforcement"
     },
     {
@@ -143,15 +144,14 @@
       ]
     },
     "4": {
-      "note": "The payload that answers a refusal instead of raising one.",
+      "note": "The payload that answers a refusal instead of raising one.\n\nAnchor: `user_settings_init_payload`",
       "targets": [
         {
           "anchor": {
-            "blob": "6908e5a27d9359eeb17e607a2914048d3eb25274",
-            "content": "sha256:aded4265d4497a5281f46fd1aa689a6bd735b6735656ef582975747eeab7dba1",
+            "blob": "06312961eb1a285e4dc69292d9973c71884c5620",
+            "content": "sha256:0610f236b6dad84e694809f783d6ea749db5f1b7846827f58fe0bc640279e028",
             "locator": {
-              "kind": "symbol",
-              "name": "user_settings_init_payload"
+              "kind": "file"
             }
           },
           "kind": "code"

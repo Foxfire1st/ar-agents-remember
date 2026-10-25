@@ -58,9 +58,13 @@ Without `repository`, CodeSide supplies no tray target. This component still per
 
 ### Repo-Internal References
 
+
 - The read-only CodeMirror pane it hosts on the code side. [1]
 
+
+
 - The markdown renderer the sidecar pane reuses. [2]
+
 - The effects-gated boomerang backdrop the `empty` state fills the pane with. [3]
 - The `FileContent` type / onboarding pairing it renders. [5]
 

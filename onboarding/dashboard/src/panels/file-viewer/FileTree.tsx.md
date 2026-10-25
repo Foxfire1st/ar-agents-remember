@@ -52,9 +52,13 @@ No configured live documentation source was available for this pass.
 ### Repo-Internal References
 
 - The File Viewer's tree is the shared explorer with a File API loader. [5]
+
 - The loader reads one directory listing and returns the requested side. [6]
+
 - The shared explorer that owns loading, traversal and selection. [7]
+
 - The page that mounts the tree twice (code and onboarding sides). [8]
+
 
 ### Cross-Repo References
 

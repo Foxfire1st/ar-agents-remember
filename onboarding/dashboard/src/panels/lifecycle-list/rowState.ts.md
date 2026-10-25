@@ -22,4 +22,5 @@ MIK-R174 adds `rowOrder` and `hostTime`: inside the started band the rows the ho
 - A missing host time orders nothing and is never turned into zero or now. [2]
 - The started band orders timed rows newest first, untimed rows in the server's order. [3]
 
+
 - The hover explicitly selects its actual rendered fields; scope and full reference path are not among them. This corrects an earlier Curator wording overstatement, not product behavior. [1]

@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/worktrees/modules/quality/dagger_authority.py",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
@@ -281,8 +282,19 @@
       ]
     },
     "9": {
-      "note": "One physical lock protocol, actual thread/process exclusion and capability probe.",
+      "note": "One physical lock protocol, actual thread/process exclusion and capability probe.\n\nAnchor: `lock_path_for` `exclusive_file_lock` `_verify_lock_capability`",
       "targets": [
+        {
+          "anchor": {
+            "blob": "1c8709e75ca22ed12ab5182e676a05d389075a96",
+            "content": "sha256:e6215a71b64bbbaf314085e12c561af5ab131b13a04ff6e28d38b951f6922140",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/kernel/file_lock.py"
+          },
+          "kind": "code"
+        },
         {
           "anchor": {
             "blob": "1c8709e75ca22ed12ab5182e676a05d389075a96",
@@ -297,8 +309,8 @@
         },
         {
           "anchor": {
-            "blob": "977ccec9d8280f5159803ee01a455090bc4de2bd",
-            "content": "sha256:915104295d8fa4d8973a118ed3314645db9b7e134d512c63302bf14e7f51085c",
+            "blob": "1c8709e75ca22ed12ab5182e676a05d389075a96",
+            "content": "sha256:b5fbc44c9c78607266f10080567a3c94aa2aedcb0a0937fb7c8e3faf7d10509e",
             "locator": {
               "kind": "symbol",
               "name": "exclusive_file_lock"
@@ -309,8 +321,8 @@
         },
         {
           "anchor": {
-            "blob": "977ccec9d8280f5159803ee01a455090bc4de2bd",
-            "content": "sha256:453d3b09cee82b3412379fb449e22269ec97d11c8dd64c39efe1e612b49d5aeb",
+            "blob": "1c8709e75ca22ed12ab5182e676a05d389075a96",
+            "content": "sha256:3f59ef391be34f52baf1343c04b7770a5b29f245ff82a45c29c963b7847c1082",
             "locator": {
               "kind": "symbol",
               "name": "_verify_lock_capability"

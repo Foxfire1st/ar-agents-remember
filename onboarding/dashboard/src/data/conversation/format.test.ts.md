@@ -42,7 +42,7 @@ No configured Domain Documentation source exists for this file.
 
 - The retained humanizeDuration presentation convention under test; earlier age/chip/freshness/truncation helpers and their cases are removed. [1]
 
-- Three current source cases assert duration strings, large-value humanization and em-dash for NaN/negative values; this is no execution result. \[2] [2]
+- Three current source cases assert duration strings, large-value humanization and em-dash for NaN/negative values; this is no execution result. [2]
 
 ### Cross-Repo References
 

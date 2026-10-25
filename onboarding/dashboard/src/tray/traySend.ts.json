@@ -1,5 +1,6 @@
 {
   "path": "dashboard/src/tray/traySend.ts",
+  "proves": [],
   "realizes": [
     {
       "anchor": {

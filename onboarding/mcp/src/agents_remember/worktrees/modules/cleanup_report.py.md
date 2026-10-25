@@ -88,14 +88,16 @@ No external domain claim is required.
 
 ### Repo-Internal References
 
-- The public entry point and the `already-clean` short-circuit that reports a proven prior reclamation. [1]
-- The four target kinds are inventoried into `removed` / `notRemoved`; kept targets fall back to the contract's own worktrees and branches. [2]
-- The counted operator sentence naming what was removed and what was left in place. [3]
+> Retained earlier citation wording: - The public entry point and the `already-clean` short-circuit that reports a proven prior reclamation. [1]
+> Retained earlier citation wording: - The four target kinds are inventoried into `removed` / `notRemoved`; kept targets fall back to the contract's own worktrees and branches. [2]
+> Retained earlier citation wording: - The counted operator sentence naming what was removed and what was left in place. [3]
 - Removed entries come from the cleanup payload's own observation of each target. [4]
 
-- **The caller.** It runs `cleanup_result`, short-circuits an already-completed cell, and shapes a real successful reclamation through this module — deliberately not when `dry_run` or the return code is nonzero, so a preview or refusal is reported in cleanup's own words. A completed cleanup cell still archives its recorded terminal agents. [5]
+> Retained earlier citation wording: - **The caller.** It runs `cleanup_result`, short-circuits an already-completed cell, and shapes a real successful reclamation through this module — deliberately not when `dry_run` or the return code is nonzero, so a preview or refusal is reported in cleanup's own words. A completed cleanup cell still archives its recorded terminal agents. [5]
 
-- The destructive procedure and its refusal authority, which this module deliberately does not duplicate. [6]
+
+> Retained earlier citation wording: - The destructive procedure and its refusal authority, which this module deliberately does not duplicate. [6]
+
 - The kept-inventory fallback reads the contract it is handed, so its report is derived from the contract's own worktree and branch facts. [7]
 
 ### Cross-Repo References
@@ -108,3 +110,17 @@ No meaningful cross-repo references found.
 ## 260928-MIK-L198 — The report lists the outside scratch root
 
 `_inventory` gains a fifth inventory key, `outsideScratch`, filled by `_outside_scratch` from `outside_scratch.recorded_root(contract)` and the payload's `directories.outside_scratch` cell, falling back to a top-level `outsideScratch` entry when the nested one is absent. An enclosure that records no root reports no such row, so a pre-MIK-R207 cleanup keeps the four it always had. `_inventory_phrase` appends the counted clause after the enclosure root, so a real cleanup that removed the root reads "... 1 enclosure root, 1 outside scratch root; nothing was left in place." A `removed` entry for the root goes into `removed`, and a root that stayed goes into `notRemoved` with `_reason` supplying its reason. The `already-clean` short-circuit reports what the retry itself removed instead of asserting an empty inventory.
+
+- The public entry point and the `already-clean` short-circuit that reports a proven prior reclamation.  Anchor: "ALREADY_CLEAN = \"already-clean\"" [1]
+
+
+- The four enclosure target kinds and optional outside scratch entry are inventoried into `removed` / `notRemoved`; kept worktree and branch targets fall back to the contract's own worktrees and branches. [2]
+
+
+- The counted operator sentence naming what was removed and what was left in place. [3]
+
+
+- **The caller.** It runs `cleanup_result`, short-circuits an already-completed cell, and shapes a real successful reclamation through this module — deliberately not when `dry_run` or the return code is nonzero, so a preview or refusal is reported in cleanup's own words. A completed cleanup cell still archives its recorded terminal agents. [5]
+
+
+- The destructive procedure and its refusal authority, which this module deliberately does not duplicate.  Anchor: `cleanup_result` [6]

@@ -69,7 +69,10 @@ No relevant documentation found after checking live sources.
 - The adoption seam whose hard-coded `main` the first group replaced. [9]
 - The recorded-name validation the first group holds, and its malformed-name refusal. [10]
 - The exclusion policy the third group pins. [12]
+
+
 - The lane row that keeps the fail-closed evidence registry loading clean. [15]
+
 
 - Converted first baselines run under a bound validator via the bound_validation fixture. [16]
 
@@ -80,6 +83,8 @@ No sibling-repository contract defines this check.
 
 No meaningful cross-repo references found.
 
+
 - Group 1 — adoption follows the recorded branch, and the default-branch accessor validates it. [4]
+
 - Group 3 — the exclusion, pinned on the commit tree. [6]
 - The staging helper the third group's failure mode lives in. [13]

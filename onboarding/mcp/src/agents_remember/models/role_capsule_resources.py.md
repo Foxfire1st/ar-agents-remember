@@ -78,9 +78,13 @@ This account is bound to the candidate source, not a claim of a running serving 
 ## Evidence
 
 
+
 - The current response registry omits former capsule/catalog tools; retained response types are not public tool exposure. [11]
+
 - Launch copies detail files, substitutes paths, and records frozen revisions. [12]
+
 - Replay validates regular opened files and frozen revisions at deterministic detail names beside the saved handover in its recorded canonical folder, not mutable corpus sources. [13]
+
 - Per-request detail artifacts use exact admitted bytes beside the handover and write-once publication. [14]
 - File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence. [15]
 - File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence. [16]
@@ -98,12 +102,15 @@ extension specification, SEP-2640).
 
 ### Repo-Internal References
 
+
 - The capsule envelope: required explanation, optional identity/provenance, and the refusal fields. [3]
+
 - The nested capsule payloads, one per fact family. [4]
 - The listing carries relative file names and no content; the read carries two distinct revisions. [5]
 - The constant trust statement every served file declares. [6]
-- Historical registry rows for the former capsule/catalog tool responses; the current public tool registry no longer registers these retained response types. [7]
+
 - The builder that fills these contracts from owner-produced values only. [8]
+
 - The requested-versus-granted boundary the compiler narrows against: the policy type is declared in the `models` leaf, and the operation snapshots the published roster into it. [9]
 - The case that executes the no-grant guarantee on a served skill's declared tools. [10]
 

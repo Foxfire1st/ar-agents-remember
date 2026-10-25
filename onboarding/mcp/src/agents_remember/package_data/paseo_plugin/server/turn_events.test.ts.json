@@ -40,17 +40,17 @@
   ],
   "references": {
     "1": {
-      "note": "The contributed adapter admits a seat wake only from an exhausted host listing; incomplete walks leave the seat alone.",
+      "note": "The contributed adapter admits a seat wake only from an exhausted host listing; every incomplete walk leaves the seat alone and preserves the parent's line.",
       "targets": [
         {
           "anchor": {
-            "blob": "31a8b700c3fd0f2078aa2b41e6248c5a7d15d74c",
-            "content": "sha256:1cc5098258ea599da8f609dede2ca5c5c5fd84fb018934fa113ef7414ad5600e",
+            "blob": "d2677f95fba9979f2b05ee370b5ff98e56bd8190",
+            "content": "sha256:d1f423737130f75380d1e71a86842020365ca2c9b794effda49822c1665b6ebb",
             "locator": {
               "kind": "file"
             }
           },
-          "kind": "code"
+          "kind": "test"
         }
       ]
     }

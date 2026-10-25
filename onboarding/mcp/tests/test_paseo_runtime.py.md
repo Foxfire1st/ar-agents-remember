@@ -54,5 +54,8 @@ the recorded mutating calls rather than on a daemon's side effects alone.
 
 ## Evidence
 
+
 - Provision, reload, restart, failure, rollback, process-record, status and stop behaviour is asserted in this file. [1]
+
+
 - The runtime cases are contract-sourced: each recorded call is checked against what the pass was allowed to do. [2]

@@ -56,20 +56,28 @@ No domain-documentation source is configured for this slice. The behavior descri
 These current source spans identify the implementation owners and the specific assertions supporting the file's behavior. A test definition is evidence of its assertions, not an execution or certification receipt.
 
 - Final closeout and series integration re-prove canonical completion. [1]
+
 - Checkpoint capture retains code and applicable external-memory refs, and publication revalidates that explicit captured candidate. [2]
+
+
 
 
 - Leaf membership, output identity, and ordering remain exact. [3]
 
 
 
+
+
 - Recorded origins and admitted substantive history preserve reconciled series proof. [4]
+
 
 
 - Series cleanliness and actual memory-ref capture exclude cache authority. [5]
 
 
+
 - Recorded origins and admitted substantive history preserve reconciled series proof. [6]
+
 
 
 ### Cross-Repo References
@@ -79,7 +87,9 @@ The operation and fixture boundaries described here are defined by same-reposito
 - The landing chain is built from the exact enclosures of the non-abandoned rows and then proved. [7]
 - An unordered chain names the leaf pairs and the contract cells to repair. [8]
 
+
 - An empty leaf chain skips leaf-origin validation; spine validation still proves the series ref from its recorded or pre-sync base and admitted source positions. [9]
+
 
 
 

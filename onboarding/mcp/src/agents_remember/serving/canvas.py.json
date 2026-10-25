@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/serving/canvas.py",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
@@ -326,8 +327,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "07aabb56414a17aa6b0ab2a858526689f888f09c",
-            "content": "sha256:dfe892c51e32af2da61a6e202038d77d7d2fabe1b2ac989dd4e1793cc8643f6b",
+            "blob": "0e8924061ad376de479020d84377b3ccc75d78ca",
+            "content": "sha256:71139e86ade555eab8d4613c2c8a36410d58f77be3c6cacad7fd262d9d49ff48",
             "locator": {
               "kind": "symbol",
               "name": "session_message"
@@ -342,8 +343,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "07aabb56414a17aa6b0ab2a858526689f888f09c",
-            "content": "sha256:30f8f272fdf0ce27858a05d0be46054059a214892560dfc1c930b1c017bcff7b",
+            "blob": "0e8924061ad376de479020d84377b3ccc75d78ca",
+            "content": "sha256:85b2dbd643babe2e5185e0bc149d0a8821003ba348957b8e1012661287b32cb6",
             "locator": {
               "kind": "symbol",
               "name": "register_canvas_routes"

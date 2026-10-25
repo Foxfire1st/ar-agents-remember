@@ -22,16 +22,16 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "Controlled state-stream cases cover wake, hidden, error, and never-open paths.\n\nAnchor: \"connectState liveness (260723 sleep/wake)\"",
+      "note": "Controlled state-stream cases cover wake, hidden, error, and never-open paths.",
       "targets": [
         {
           "anchor": {
-            "blob": "e371651d00f4293703019b01d184498fdf04fc37",
-            "content": "sha256:2fa635fbe53fa33ea4c0da21630953611203c6b1eefc71cdd208307c38973139",
+            "blob": "29e9552de22cfcef425b964752ddd9796793770c",
+            "content": "sha256:7e76cfca0b8b0538acd57cb24c148be98d40aca857f1c3f85f8327b8549901de",
             "locator": {
-              "end": 120,
+              "end": 122,
               "kind": "line_range",
-              "start": 36
+              "start": 38
             }
           },
           "kind": "test"
@@ -39,15 +39,14 @@
       ]
     },
     "2": {
-      "note": "Production state-stream transport owns the deadline.",
+      "note": "Production state-stream transport owns the deadline.\n\nAnchor: `connectState`",
       "targets": [
         {
           "anchor": {
-            "blob": "02afc6e0851be4e730b3b9d0fa41c83479dcc1df",
-            "content": "sha256:e3d90fe0b37e7ff86579270533de22fd1bbb1774e8b5d9e5a9ddf5e0aa70e80b",
+            "blob": "e759eb54b9cbb7db614234415ff2c56f1d345e2c",
+            "content": "sha256:eee51c3781c7dc641d9a571568caab5341d83b8dfb50133f24064e92cd7223f3",
             "locator": {
-              "kind": "symbol",
-              "name": "connectState"
+              "kind": "file"
             },
             "path": "dashboard/src/data/stream.ts"
           },
@@ -56,16 +55,16 @@
       ]
     },
     "3": {
-      "note": "The test covers dashboard-local state transport.\n\nAnchor: \"connectState liveness (260723 sleep/wake)\"",
+      "note": "The test covers dashboard-local state transport.",
       "targets": [
         {
           "anchor": {
-            "blob": "e371651d00f4293703019b01d184498fdf04fc37",
-            "content": "sha256:2fa635fbe53fa33ea4c0da21630953611203c6b1eefc71cdd208307c38973139",
+            "blob": "29e9552de22cfcef425b964752ddd9796793770c",
+            "content": "sha256:7e76cfca0b8b0538acd57cb24c148be98d40aca857f1c3f85f8327b8549901de",
             "locator": {
-              "end": 120,
+              "end": 122,
               "kind": "line_range",
-              "start": 36
+              "start": 38
             }
           },
           "kind": "test"

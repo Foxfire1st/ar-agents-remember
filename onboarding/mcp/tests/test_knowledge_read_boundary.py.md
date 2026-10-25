@@ -51,20 +51,31 @@ rather than on a single file, so a read that files something anywhere is caught.
 
 ## Evidence
 
+
 - Selected knowledge reads, refusals, diff, integrity and published intent leave only the allowed footprint. [1]
+
 - A mutated read is caught, so the roster cannot pass vacuously. [2]
 - Enclosure reads attribute comparison objects and allow only preview effects. [3]
+
 - Review GET routes read without other protected-state changes. [4]
+
 - Remaining dashboard GETs read without writing. [5]
 - Converted drift and registered baseline status use the filing oracle. [6]
 - Context-packet, internal drift and baseline-status paths preserve the selected memory-backed seat, including `ok=False` and `state="legacy-format"`. [8]
 - Skill catalog list, advertised-URI read and bogus-URI refusal preserve the fixture. [9]
 - Baseline adoption dry run preserves the converted fixture. [10]
+
 - Freshness is opt-in: no unrequested fetch, and a requested fetch changes only its bounded Git footprint. [11]
+
 - Adopted-seat status, preview, integrate and reopen dry runs respect the preview allowance. [12]
+
 - Remaining preview, carryover and queue paths answer or name their refusals without landing or protected-state mutation. [13]
+
+
 - Two formerly raised boundary cases assert their exact returned refusal codes, while unrelated authority and queue errors still raise. [15]
+
 - Server-info, gate and file calls preserve the synthetic seat; `resolve_context` is not called and file inputs do not prove successful naming. [16]
 - The summary port accepts `_number`, and all three GETs retain the before-and-after oracle. [17]
+
 
 - Current source declarations support the qualified naming or fixture account; no executed test or acceptance is inferred — mcp/tests/test_knowledge_read_boundary.py:1-1037. [14]

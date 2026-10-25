@@ -45,14 +45,26 @@ No configured domain evidence applies to the file-local claims above.
 The retained source anchors below support the fixture roles and assertion boundaries described above. They identify current behavior, not a request to restore historical test counts or percentage targets.
 
 - Linked checkout is derived from loaded source not cwd. [1]
+
 - Checkout config ignores live authority and uses only dummy root. [2]
-- Incident shaped inbox write lands only in leaf dummy root. [3]
+
+
+- Incident shaped store write lands only in leaf dummy root. [3]
+
+
 - Store guard refuses escape before creating lock or parent. [4]
+
+
 - Enclosure report write is allowed without opening coordination escape. [5]
+
+
 - Rewrite guard refuses a manually constructed live target. [6]
+
 - Primary checkout undeclared config access fails closed. [7]
 - Explicit test mode preserves temporary store writes. [8]
+
 - Any mode declaration lifts the primary refusal and the write confinement, with the refusal itself as the positive control. [9]
+
 - The reserved lifecycle-operation mode is declarable by any caller, and reports as a writer of every store `mcp` owns. [10]
 
 ### Cross-Repo References

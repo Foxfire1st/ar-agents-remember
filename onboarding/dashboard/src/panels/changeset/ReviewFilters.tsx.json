@@ -52,15 +52,14 @@
       ]
     },
     "4": {
-      "note": "Actual viewer imports and mounts this owner.",
+      "note": "Actual viewer imports and mounts this owner.\n\nAnchor: `ChangeSetViewer`",
       "targets": [
         {
           "anchor": {
-            "blob": "741a64673f3d3197f2f6630dd5f629a0d045e379",
-            "content": "sha256:ea938b81e12504e03ca2a95192640036cb293d96762add432d1ad4908ef99abc",
+            "blob": "0f255485bc9dc7fc49932bd57f66ff49c8a4564c",
+            "content": "sha256:a07755e77404e8354fd4134325908235f10bd244bb5049776b162574c8bb6473",
             "locator": {
-              "kind": "symbol",
-              "name": "ChangeSetViewer"
+              "kind": "file"
             },
             "path": "dashboard/src/panels/changeset/ChangeSetViewer.tsx"
           },

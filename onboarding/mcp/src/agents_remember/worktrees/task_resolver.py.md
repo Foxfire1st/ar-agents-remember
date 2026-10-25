@@ -93,14 +93,20 @@ No relevant external documentation is needed for the local task resolver.
 
 Same-repository source and tests define the supported task-folder and series-contract behavior.
 
+
 - The explicit import/re-export surface publishes the task-layout vocabulary without defining it. [1]
+
+
 - The existing slug, path-builder and enclosure/archive rules remain single-defined; the iterator now excludes notes as well. [2]
+
 - Task-name resolution, which this module still owns: current and legacy folder names plus the candidate list. [3]
 - The error a resolution failure raises, and the current/legacy root builders. [4]
+
 - Active series discovery excludes archived task folders and leaf enclosure contracts; active task resolution can be constrained by `parent_task` and errors on ambiguous task names. [5]
+
 - Leaf enclosure resolution selects an explicit leaf, auto-selects a single leaf, or errors when several leaves exist. [6]
 - `leaf_refs.py` owns qualified/doc-id/legacy-stem leaf-ref validation and alias-aware legacy enclosure lookup. [7]
-- `start.py` uses the resolver to load a leaf contract from `task_name` / `leaf_id` and to build starts under the resolved parent task root. [8]
+> Retained earlier citation wording: - `start.py` uses the resolver to load a leaf contract from `task_name` / `leaf_id` and to build starts under the resolved parent task root. [8]
 - The finalizer calls the root archive helper for a series contract, which is skipped; leaf finalization skips the archive call. [9]
 - Worktree support tests pin leaf-start contract placement and branch relationships through `series_contract_path` / `leaf_enclosure_path`. [10]
 - The package order that makes `tasks` the correct home for the vocabulary this module re-exports. [11]
@@ -113,3 +119,5 @@ No sibling repository boundary is needed to explain this file.
 
 - A root task holding a series contract is skipped, and the skip is worded by the series skip. [12]
 - The skip names the commanding sprint, or the retire route when no sprint commands the master, and keeps today's reason for any other task. [13]
+
+- `start.py` uses the resolver to load a leaf contract from `task_name` / `leaf_id` and to build starts under the resolved parent task root.  Anchor: "def load_contract_from_args" [8]

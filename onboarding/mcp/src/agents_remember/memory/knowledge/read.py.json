@@ -198,12 +198,12 @@
       ]
     },
     "15": {
-      "note": "The ordering, truncation, budget, bound and absence nodes.\n\nAnchor: \"test_the_item_stream_is_ordered_by_stored_identity_and_never_by_an_authored_label\"; \"test_a_truncated_page_states_that_items_remain_rather_than_claiming_completeness\"; \"test_a_page_budget_that_cannot_hold_one_item_refuses_and_keeps_the_position\"; \"test_a_selection_that_reaches_its_declared_bound_refuses_rather_than_reporting_a_total\"",
+      "note": "The ordering, truncation, budget, bound and absence nodes.",
       "targets": [
         {
           "anchor": {
-            "blob": "61493ab06ab1c25137186e0a59838d91236bd92e",
-            "content": "sha256:4651404abbab03832a57a3c0db0e96b1e087813b8c29c45004713ba095a76130",
+            "blob": "a5222c4eec50b2e2ccd24fd1e8e8fb1a18964b32",
+            "content": "sha256:d817d428b92efcb29262627303cc2c12c5bd815f96e3986513833f04e9858235",
             "locator": {
               "end": 837,
               "kind": "line_range",
@@ -255,12 +255,12 @@
       ]
     },
     "16": {
-      "note": "**The node that kills mutation `R30` — the per-side exact-revision address the override exists for.**\n\nAnchor: \"test_explicit_side_selectors_address_a_different_exact_revision_on_each_side\"",
+      "note": "**The node that kills mutation `R30` — the per-side exact-revision address the override exists for.**",
       "targets": [
         {
           "anchor": {
-            "blob": "6839ec8adb0e987ab0ae64a2391cf27bc1cbd606",
-            "content": "sha256:a10b6073bc9f4919f240f3ef038eff9eb7daae2f82abafea5072990cc6fe5eaf",
+            "blob": "f43f2cfeb97e1480b885bba3821e2ae00214aee4",
+            "content": "sha256:bdd72fb19530b17b9def8bb0a662916820da845a1fa6e06d705d328fa70d7772",
             "locator": {
               "end": 395,
               "kind": "line_range",
@@ -273,24 +273,12 @@
       ]
     },
     "17": {
-      "note": "The fixture the policy is measured on, and the one cell decoder a read page and the logical digest share.\n\nAnchor: `read_scope_test_support.py`",
+      "note": "The fixture the policy is measured on, and the one cell decoder a read page and the logical digest share.\n\nAnchor: `cell_value`",
       "targets": [
         {
           "anchor": {
-            "blob": "4d65b32afc0da2f5b016054c83eadd52d0f2bcb4",
-            "content": "sha256:19b24fa8965b32406c0fa4cb94cb6a51b998f6acca88447458c8eca6b30446ac",
-            "locator": {
-              "kind": "symbol",
-              "name": "cell_value"
-            },
-            "path": "mcp/src/agents_remember/memory/knowledge/logical.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "5a1878604b07f06ed4405b62e95d643483d571f5",
-            "content": "sha256:6fcc062947fdea7dd24c7c6dcda0be5c4fcfc7ebf09df35e0797bfe5d04f6052",
+            "blob": "0d327ce3b9436eec25a74e5548e566bfbde89c7e",
+            "content": "sha256:c47ee40fc97e61b3330c7948488dcf34301174a7658a8e55bbb67d9be6cc41a7",
             "locator": {
               "end": 51,
               "kind": "line_range",
@@ -299,6 +287,17 @@
             "path": "mcp/tests/read_scope_test_support.py"
           },
           "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "4d65b32afc0da2f5b016054c83eadd52d0f2bcb4",
+            "content": "sha256:ba617c8b0b9c11e4b619cfc570e18a9f32c5eaca7c7d6c581c7a1ba13b28c3ac",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/logical.py"
+          },
+          "kind": "code"
         }
       ]
     },

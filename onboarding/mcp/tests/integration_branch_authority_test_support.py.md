@@ -51,9 +51,15 @@ No domain-documentation source is configured for this slice. The behavior descri
 
 These current source spans identify the implementation owners and the specific assertions supporting the file's behavior. A test definition is evidence of its assertions, not an execution or certification receipt.
 
+
 - Closed external leaves are backed by two actual commits and a disposable cache. [1]
+
+
 - Optional lifecycle admission precedes fixture finalization. [2]
+
+
 - Configured repository, profile, protected branches, and task topology. [3]
+
 - Consumers retain ownership, cache-independence, and CAS scenarios. [4]
 
 ### Cross-Repo References

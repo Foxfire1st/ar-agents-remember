@@ -1,5 +1,6 @@
 {
   "path": "mcp/tests/workflow_chain_guidance_test_support.py",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
@@ -7,8 +8,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b868a0abd730b0ba98ed54b6158819a36297adc9",
-            "content": "sha256:57fb108d47b6cef8c77d8b0cddb9d2cea863a1d3229a8bf756f5a4744299d0f8",
+            "blob": "1dd38993d64a5a76c92bb9db1782e407cb760c9c",
+            "content": "sha256:9092354fb66b9838eb70a15c295bd38aebeff2dcce7914daa611db4e40bd5a43",
             "locator": {
               "kind": "file"
             }
@@ -22,8 +23,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b868a0abd730b0ba98ed54b6158819a36297adc9",
-            "content": "sha256:57fb108d47b6cef8c77d8b0cddb9d2cea863a1d3229a8bf756f5a4744299d0f8",
+            "blob": "1dd38993d64a5a76c92bb9db1782e407cb760c9c",
+            "content": "sha256:9092354fb66b9838eb70a15c295bd38aebeff2dcce7914daa611db4e40bd5a43",
             "locator": {
               "kind": "file"
             }
@@ -37,8 +38,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b868a0abd730b0ba98ed54b6158819a36297adc9",
-            "content": "sha256:57fb108d47b6cef8c77d8b0cddb9d2cea863a1d3229a8bf756f5a4744299d0f8",
+            "blob": "1dd38993d64a5a76c92bb9db1782e407cb760c9c",
+            "content": "sha256:9092354fb66b9838eb70a15c295bd38aebeff2dcce7914daa611db4e40bd5a43",
             "locator": {
               "kind": "file"
             }

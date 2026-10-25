@@ -3,17 +3,31 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "`parse_coordination_settings` selects JSON settings when present, parses Markdown settings blocks otherwise, and returns the `StorageSettings` defaults — `DEFAULT_STORAGE_MODE` = `\"memory-repo\"` — when no settings file exists. It takes no `topology` parameter any more.",
+      "note": "`parse_coordination_settings` selects JSON settings when present, parses Markdown settings blocks otherwise, and returns the `StorageSettings` defaults — `DEFAULT_STORAGE_MODE` = `\"memory-repo\"` — when no settings file exists. It takes no `topology` parameter any more. Source caption: `parse_coordination_settings`",
       "targets": [
         {
           "anchor": {
-            "blob": "1c615fd86728b62479486cf8394ee6b5096d7fe6",
-            "content": "sha256:330333cc5d9a2188c727fe55eca874888474d9a0cdbfe441c276e68dd9faf8c2",
+            "blob": "7b8f0ba2f80cb5650c2f5e806ad9d0dbab9c09a8",
+            "content": "sha256:c7ced00e2f88651401c0f3a38fc3add0dbc0b25152dd8057562b12ffbd7c29f5",
             "locator": {
-              "kind": "symbol",
-              "name": "parse_coordination_settings"
+              "end": 105,
+              "kind": "line_range",
+              "start": 83
             },
             "path": "mcp/src/agents_remember/kernel/coordination_context/settings.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a203d370b91f8e34a9d49be343da9793f8e54a63",
+            "content": "sha256:7111a3b69c6d1751598edfaa6d6fb733c53af8a1a2aefb64258ae9ae96167bf3",
+            "locator": {
+              "end": 55,
+              "kind": "line_range",
+              "start": 42
+            },
+            "path": "mcp/src/agents_remember/kernel/coordination_context/models.py"
           },
           "kind": "code"
         }

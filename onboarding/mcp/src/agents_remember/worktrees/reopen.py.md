@@ -52,17 +52,25 @@ These current source spans identify the implementation owners and the specific a
 
 
 - `_plan_leaf_doc_reset` owns the current boundary described above. [18]
+
 - `_plan_master_index_reset` owns the current boundary described above. [19]
+
 - `_publish_reopen_transition` owns the current boundary described above. [20]
 - `_restore_reopen_artifacts` owns the current boundary described above. [21]
 
+
 - Terminal preflight, accepted memory ancestry, and integrated source-position checks. [22]
+
 - Contract reset preserves identity while clearing two-output provenance. [23]
 - Frozen observation, task plans, and canonical publication remain coordinated. [24]
-- An unnamed leaf's master through the shared helper; a named reference by reopen's own rule. [25]
+
+- `_reopen_master_path` resolves an unnamed leaf's master through the shared folder rule and a named reference through the shared `master_json_path_from_ref` resolver, refusing a reference that leaves the task folder. [25]
+
 - The master reset refuses a misplaced master before planning its row, and keeps the demotion rule. [26]
 - The leaf reset refuses a misplaced leaf before planning its reset. [27]
+
 - The shared rule. [28]
+
 - Parent lineage compares exact prestart output positions to the configured parent source. [29]
 - The series half shares the terminal path's tombstone proof, guards and archive citation. [30]
 

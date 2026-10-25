@@ -118,30 +118,45 @@ does not.
 - `projection.ts` marks itself generated and names its schema, generator, regeneration command, and drift check. [6]
 - The projection generator implements both check and generation paths. [7]
 - The sample introduces no served field missing from the mirror. [8]
+
 - The sample covers declared structural paths except explicit residue. [9]
+
 - Every sampled registered vocabulary value must be legal. [10]
 
+
 - EMPTY_ANALYTICS carries every current analytics key as an empty list, without the retired stalestSidecars key. [15]
+
 - `reparsed` using `structuredClone`, with the note that `asServedProjection(JSON.parse(…))` is a vacuous check. [17]
 - `asServedProjection` — the sanctioned narrowing this module's `SERVED` constant is read through. [18]
+
 - The fixture bases draw their enclosure sample from the same oracle. [20]
 
+
+
 - The wire oracle carries the hand-maintained sampled analytics payload. [21]
+
 The former task-document builder sampled analytics in the predecessor. Current native entries and summaries are separate; no analytics task-document catalogue or lifecycle-derived metrics builder is restored.
 - BASE_ATTENTION copies the sampled attention item identity, kind, severity, lane and title, including required itemClass and dismissible; the sample remains manually maintained. [24]
+
 - The engine-process builder takes its sample from analytics. [25]
+
 
 - The projection default object supplies tasks/taskCounts, enclosures, active worktree groups, metrics and analytics without a providers field. [26]
 
 `SERVED_PROVIDER`, `BASE_PROVIDER` and the `provider()` builder are removed; the projection's default object supplies no top-level provider array.
 
 - The override constraint every builder takes, and the three limits it documents. [28]
+
 - The guard that catches the residue `Overrides` cannot — the smuggled field with no assertion to ban, and the `any` rule whose comment names `fixtures/wire.ts::reparsed` as the site that was making exactly that mistake. [29]
+
+
 - `ObserverEvent` — the separate event contract this module's `observerEvent` builder targets, mirroring `observer/events.py` rather than `projection.py`. [31]
+
 
 ### Cross-Repo References
 
 No cross-repository boundary. The wire this file builds against is a Python↔TypeScript seam inside
 `agents-remember`; both the producing models and the consuming mirror are in this repository.
+
 
 - The in-repo `WorkspaceProjection` producer model uses `extra="forbid"` and declares the complete projection boundary. [33]

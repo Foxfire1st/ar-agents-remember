@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/application/knowledge_paging/threshold.py",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
@@ -22,12 +23,12 @@
   ],
   "references": {
     "1": {
-      "note": "The module statement: one measurement for the cut and the stamped tokens.\n\nAnchor: \"The one token threshold every bounded knowledge read\"",
+      "note": "The module statement: one measurement for the cut and the stamped tokens.",
       "targets": [
         {
           "anchor": {
-            "blob": "351b796fb4c1d3a5da7835b9dc2c204da6075b40",
-            "content": "sha256:4340f7bcd4a815eb5f027931f328e902bee96c81a87b259e7e1a29b79a4bab12",
+            "blob": "7cfaacdbd561aed6643e8b2cbc4d2f4092d037cb",
+            "content": "sha256:3127fc2f2bf624a5c549f2d185506c844434b547bdccfa2fec0b0a99d5286e32",
             "locator": {
               "end": 9,
               "kind": "line_range",
@@ -54,8 +55,8 @@
         },
         {
           "anchor": {
-            "blob": "b02e62d02e247f178c27f0327bdfbc980277af33",
-            "content": "sha256:feb2448332ea2139ff65b935aab136044a46f31ad478f6b3fc86b5f9e2d19388",
+            "blob": "7cfaacdbd561aed6643e8b2cbc4d2f4092d037cb",
+            "content": "sha256:d6ca7c50e1daab5484d6d22165f45529fae1816e573328e0a7439edfe38ede3f",
             "locator": {
               "kind": "symbol",
               "name": "KNOWLEDGE_PAGE_TOKENIZER"
@@ -86,8 +87,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b02e62d02e247f178c27f0327bdfbc980277af33",
-            "content": "sha256:ad56aac5093e9cd05b3fe82a523d7fba59bafe2628bc2de021366c5bda14b2b1",
+            "blob": "7cfaacdbd561aed6643e8b2cbc4d2f4092d037cb",
+            "content": "sha256:ab9be371d337f0c21933b05e772dee0c59a4138b047a8125f52e5bbe08aa0df1",
             "locator": {
               "kind": "symbol",
               "name": "response_tokens"

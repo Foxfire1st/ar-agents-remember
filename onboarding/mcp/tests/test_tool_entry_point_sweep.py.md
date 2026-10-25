@@ -29,7 +29,7 @@ Source inspection supplies no new test, native-host, whole-build, landing or mem
 
 ## Current source contract evidence
 
-- Current source declarations support the qualified naming or fixture account; no executed test or acceptance is inferred. [55]
+
 
 
 ## Historical original card — preserved, not the current operative account
@@ -181,60 +181,94 @@ No configured domain evidence applies to the file-local claims above.
 The anchors below identify current behaviour of this module; they are not execution evidence and
 they make no acceptance claim.
 
+
 - `EntryPointProbeTests` owns the current boundary described above. [47]
 
 
-- `T34`'s nine stay repaired; the pin now holds the four lifecycle preconditions that raise. [26]
-- The same defect on the lifecycle family's state precondition, five tools with their losing states. [27]
+
+
+- `T34`'s surviving repaired tool stays repaired, and the envelope-losing raiser pin is empty because the four lifecycle preconditions were repaired. [26]
+
+
 
 - The sweep itself: one world, one run, and the equality assertions that bind every pin. [28]
 
+
 - A refusal's own marks, read from the payload rather than from the arm. [29]
 
-- The bare-answer pin records the `memory_quality_check` surface that no refusal identity or next action covers; T64's repair remains. [30]
+
+- The bare-answer pin is empty since L110 repaired the `memory_quality_check` coherence refusal; T64's citation-preview repair remains. [30]
+
+
 
 - The world: one scratch coordination root, two repositories, one real leaf enclosure, then the opened lifecycle ended. [31]
+
 
 - The refused model's identity, which separates a response-model break from the caller's invalid arguments. [32]
 
 - The discriminator: which model refused decides the arm — the tool's own response model or the caller's arguments model. [52]
 
+
 - The invalid-argument control proving the caller's side lands in its own arm and is never reported as the tool's break. [53]
 
-- The matrix's four ambient states. [33]
 
-- The population written out, so weakening the derivation rule is a second visible edit. [34]
+
 
 - The two scaffold files the sweep's own world may gain, and nothing else. [35]
 
-- The coordination-root zones inside which the product may legitimately write. [36]
+
 
 - The swept population is derived and equals the live server's advertisement. [37]
 
+
+
 - The executed positive control over the choke point, and both break shapes at the entry point. [38]
+
 - The executed positive control over the choke point, and both break shapes at the entry point. [51]
 
 - The census controls: write, rewrite and delete in both repositories and outside every zone. [39]
 
-- The lane row that keeps this module in the default selection. [40]
+
+
+
+
+
+> Retained earlier citation wording: - The lane row that keeps this module in the default selection. [40]
+
+
+
+
 
 - The advertised roster the swept population is derived from and asserted equal to. [41]
 
+
 - The population-equality control asserting the swept population equals the live advertisement. [54]
+
 
 - The registry whose models classify a payload that does not validate. [42]
 
+
+
 - The choke point a bypassing handler skips, and the validation this module's control executes. [43]
+
+
 
 - The validation the positive control drives directly. [44]
 
+
 - The three 60-second phase limits and the named timeout that the classifier does not count as a product raiser. [45]
+
 
 - The control that holds an answer back and requires the named failure, the closed handler and a working next call. [46]
 
+
 - Every tool and every aspect is judged on its own subTest on the final bytes. [48]
+
 - The lifecycle pin is exact in both directions; T34's original nine must remain repaired. [49]
-- The four lifecycle raisers are pinned as the measured surface owned by L111. [50]
+
+
+- The four lifecycle raisers are pinned empty after L111 repaired them, and the equality is still asserted in both directions. [50]
+
 
 ### Cross-Repo References
 
@@ -268,12 +302,22 @@ Current pins (L130): `ENVELOPE_LOSING_RAISERS` holds `worktree_checkpoint_landin
 
 </details>
 
+
 - The self-contained world obtains its protected-settings write path and uses a workspace-sibling code repository. [55]
+
+
 - The benign census includes grant input and canonical direct-landing leaf identity. [56]
 
-- The retained envelope pin remains exact in both directions; the removed ambient-state matrix is not a finalize acceptance or current test population. Historical raiser counts are not re-certified. [57]
+
+
+- ENVELOPE_LOSING_RAISERS is empty on the current source, and exact bidirectional equality still pins it; the four L111 raisers it once carried are historical, not today's backlog. No sweep execution, broader acceptance or relaxed pin is implied by this declaration. [57]
+
 
 ## Current source evidence
 
+
 - Envelope loss is pinned empty; the positive T34 population retains only memory_baseline_adopt. [58]
+
 - The main probe retains exact equality between observed raisers and the current pin. [59]
+
+- The lane row that keeps this module in the default selection. [40]

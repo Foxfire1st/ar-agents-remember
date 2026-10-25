@@ -19,24 +19,6 @@
         }
       ]
     },
-    "2": {
-      "note": "CGC provider context constants, layout, cleanup, and patches live under the CGC provider package.\n\nAnchor: `# mcp/src/agents_remember/providers/cgc/context/ - CGC Context Overview`",
-      "targets": [
-        {
-          "kind": "unresolved",
-          "text": "onboarding/mcp/src/agents_remember/providers/cgc/context/overview.md:1-63"
-        }
-      ]
-    },
-    "3": {
-      "note": "GrepAI provider context layout, live-root workspace config, and artifact cleanup live under the GrepAI provider package.\n\nAnchor: `# mcp/src/agents_remember/providers/grepai/context/ - GrepAI Context Overview`",
-      "targets": [
-        {
-          "kind": "unresolved",
-          "text": "onboarding/mcp/src/agents_remember/providers/grepai/context/overview.md:1-58"
-        }
-      ]
-    },
     "4": {
       "note": "Provider setup and lifecycle modules import this facade for runtime layout and install work.",
       "targets": [

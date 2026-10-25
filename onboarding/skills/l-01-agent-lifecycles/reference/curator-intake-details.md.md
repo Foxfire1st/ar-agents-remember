@@ -10,4 +10,5 @@ At bound intake use the handover's readerArguments and actual schemas: knowledge
 
 ## Evidence
 
+
 - New step-1 reader-argument syntax reference; scope/refusal boundaries stay inline. [1]

@@ -1,14 +1,15 @@
 {
   "path": "skills/l-01-agent-lifecycles/criteria/plan-review.md",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
-      "note": "PR-4 defines both explicit-graph and graph-less activation review.\n\nAnchor: `### PR-4 — Order-respects-edges`",
+      "note": "PR-4 defines both explicit-graph and graph-less activation review.",
       "targets": [
         {
           "anchor": {
-            "blob": "0e55dad68ba351cb50941db3bf47c3f4c03e9e77",
-            "content": "sha256:15c532779777404947b1de5c9579138abd5e3d41336886feedf712199ceb2a8b",
+            "blob": "062d955f1d03cafdc384de0f46f29cb39f67c028",
+            "content": "sha256:8edbac6ef43c98573cbb37b8bb4e5a31468b8f51843e4388e9c884602cd00b2c",
             "locator": {
               "end": 70,
               "kind": "line_range",
@@ -20,7 +21,7 @@
       ]
     },
     "2": {
-      "note": "Strategist doctrine authors the topology choice under review.\n\nAnchor: `# Strategist`; \"Choose the topology explicitly.\"",
+      "note": "Strategist doctrine authors the topology choice under review.",
       "targets": [
         {
           "anchor": {
@@ -37,8 +38,8 @@
         },
         {
           "anchor": {
-            "blob": "09e5245f54c7057c342770d3061293cdcf757a83",
-            "content": "sha256:103da3c5211c87729494a0bf94d28a1139ff54d3c44b03d53c6a510ee5618fcb",
+            "blob": "28cbe55d2100b6fb6780c7126fab86611025738a",
+            "content": "sha256:274ec646625f1cf38e8c8f950621f347d6db2abf21bdf4a98e3db612460eae4b",
             "locator": {
               "end": 48,
               "kind": "line_range",
@@ -73,8 +74,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "db2296f77f4d16753ab2058ac90daa4e776f4874",
-            "content": "sha256:794370bb498126d6768379a5d939e2da20e0527a6a20f3ee4d7cdab86a0d293c",
+            "blob": "062d955f1d03cafdc384de0f46f29cb39f67c028",
+            "content": "sha256:90c187e3bf420767014628c0eaf41e49c6489cbd2dd585395cb00a434d756fd5",
             "locator": {
               "kind": "file"
             }

@@ -14,4 +14,5 @@ CLI adapter for the leftover-copy cleanup.
 
 ## Evidence
 
+
 - The file realizes its current contract at the corrected candidate. [1]

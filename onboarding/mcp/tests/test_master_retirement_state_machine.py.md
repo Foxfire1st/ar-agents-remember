@@ -20,8 +20,14 @@ The retire operation as one state machine: every state is read from disk, never 
 
 ## Evidence
 
+
 - A death at any transition leaves a state the same request completes, with the sprint still resolving every master it names and at most one record. [1]
+
+
 - Every other request against the state a death left is refused without a change. [2]
+
+
 - A dry run after a partial cleanup lists exactly what remains. [3]
+
 
 - Only raw/projected boundary navigation changes. Existing transition, recovery, receipt and complete no-write assertions retain their original values; a helper change does not create fresh state-machine execution. [4]

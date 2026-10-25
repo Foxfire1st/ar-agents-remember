@@ -21,33 +21,16 @@
       ]
     },
     "2": {
-      "note": "The co-located dev-gallery styles it imports.\n\nAnchor: \"./dev.css\"",
+      "note": "The co-located dev-gallery styles it imports.",
       "targets": [
         {
           "anchor": {
-            "blob": "3f886555d9e977cc78ca8759c47dd5abc8e35a0b",
-            "content": "sha256:55d52b0ac92b770ddbf9460f6345ea8537b2fa81a6ac9716b60272027fa6e665",
+            "blob": "1fef46d2a2bd69da100ec62b64aa4237c6ead793",
+            "content": "sha256:01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
             "locator": {
               "end": 9,
               "kind": "line_range",
               "start": 9
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "3": {
-      "note": "The L6 renderer measurement harness mounted at `/dev/pty-bench`.\n\nAnchor: \"return <PtyRenderBench />\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "3f886555d9e977cc78ca8759c47dd5abc8e35a0b",
-            "content": "sha256:3c35cf2257c369d77748fb3642554505709712f23949f1e32b2017ee1bd2b124",
-            "locator": {
-              "end": 20,
-              "kind": "line_range",
-              "start": 20
             }
           },
           "kind": "code"

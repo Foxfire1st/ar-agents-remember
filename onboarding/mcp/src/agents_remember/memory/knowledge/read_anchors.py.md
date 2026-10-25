@@ -231,11 +231,21 @@ No configured domain documentation could be checked.
 - The observation vocabulary this module reports into (seven members), declared in `read_anchor.py` and imported through `read.py`'s re-export, with the validator that refuses ranges beside any resolution other than the exact recorded blob. [6]
 - The tables, their keys and the one admission test for a key. [14]
 - **The cases that pin the ranges: two members at distinct ranges in one file, a double definition carrying both ranges, a range past the blob end unresolved, and a mismatched blob carrying none.** [16]
+
 - **The case that pins the three facts apart: an unaddressable stored spelling refused rather than reported absent.** [17]
+
+
 - **The case that drives the second producer: a Git this process cannot run.** [18]
+
+
 - **The case that shows a failed lookup is unavailable rather than absent.** [19]
+
+
 - **The case that authors, stores, seeds and resolves a path holding glob characters to its own blob, and measures the Git facts itself.** [20]
+
+
 - The non-blob entry case, and the ordinary absent-path case. [21]
+
 
 ### Cross-Repo References
 
@@ -255,6 +265,8 @@ No meaningful cross-repo references found.
 - The extractor's defining extents as distinct `(start, end)` pairs rather than spelled strings, computed once per blob and grammar and looked up per name. [11]
 - **The memo's three content answers: a tree entry (or its definite absence), a blob's lines as a tuple and a blob's definitions per grammar — each remembered only after Git or the parser answered, and only for a complete id.** [12]
 
+
 - The resolver calls the replace-proofed `_tree_exists` probe before consulting process-lifetime content tables. Availability is not retained in those tables; the lower Git runner may reuse a successful identical probe within one active request memo scope. The two residuals remain stated in the module docstring. [13]
+
 
 - **The cases that pin the memo: one read per object and identical answers, a failure asked again, an abbreviation never remembered, a pruned or revoked tree reported unavailable, no cross-repository or cross-grammar reuse.**  Anchor: "test_repeated_observations_answer_identically_from_one_read_per_object"; "test_a_failure_is_never_remembered_and_the_later_success_is_observed"; "test_a_question_asked_with_an_abbreviated_tree_id_is_never_remembered"; "test_a_tree_that_stops_being_available_is_reported_unavailable_not_remembered"; "test_one_repositorys_answers_are_never_served_for_another"; "test_one_blob_is_parsed_per_grammar_whichever_is_asked_first" [15]

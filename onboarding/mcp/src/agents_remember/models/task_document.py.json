@@ -3,7 +3,7 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "Response and task modules import the vocabulary from this module.\n\nAnchor: \"from agents_remember.models.task_document import CompletionBlocker\"",
+      "note": "Response and task modules import the vocabulary from this module.",
       "targets": [
         {
           "anchor": {
@@ -20,12 +20,12 @@
         },
         {
           "anchor": {
-            "blob": "534c8029a0f729847f072c2405e9486656ac9a6f",
-            "content": "sha256:fafba0527c3953c4b6e0e5b5739ba83612f8053bcdc9466730193cd1d590b408",
+            "blob": "be6077cacddf1e01c108ee2a00fa606660e7034c",
+            "content": "sha256:1aa882612b7932f7d7e7d487eadb49954f04dcf128b750a5be95ca00618a6db2",
             "locator": {
-              "end": 32,
+              "end": 48,
               "kind": "line_range",
-              "start": 32
+              "start": 48
             },
             "path": "mcp/src/agents_remember/tasks/document.py"
           },

@@ -30,7 +30,7 @@ decisions_L170 records ten changed capsule measurements for the conditional sync
 ## Evidence
 
 
-- The registry records the instruction-change measurements and reasons under the existing capped budget policy. [8]
+> Retained earlier citation wording: - The registry records the instruction-change measurements and reasons under the existing capped budget policy. [8]
 
 
 
@@ -82,7 +82,7 @@ Inherited reference 2 commentary (not a revalidated target):
 The byte-equal package copy is a distribution carrier, not an independent role, task or permission authority. Whole-file source evidence does not certify inherited statements, execution, grading or the whole card.
 
 
-- The authored source owns this contract; the distribution copy is not a separate authority. [4]
+> Retained earlier citation wording: - The authored source owns this contract; the distribution copy is not a separate authority. [4]
 
 
 
@@ -99,10 +99,10 @@ The byte-equal package copy is a distribution carrier, not an independent role, 
 
 
 
-- All 38 capsules carry capped eleven-tenths budgets recorded with the texts they measure. [1]
+> Retained earlier citation wording: - All 38 capsules carry capped eleven-tenths budgets recorded with the texts they measure. [1]
 
 
-- The registry retains 38 capped capsule rows and fifteen step-file rows; its decisions retain the provenance of their own measured changes. The publication pointers were measured in their own decision entry — twelve capsules, the 36-word Manager clause, both coordination capsules at the 3,700 ceiling and `manager/coordination` at 3,684 — under the capped budget policy unchanged. [3]
+> Retained earlier citation wording: - The registry retains 38 capped capsule rows and fifteen step-file rows; its decisions retain the provenance of their own measured changes. The publication pointers were measured in their own decision entry — twelve capsules, the 36-word Manager clause, both coordination capsules at the 3,700 ceiling and `manager/coordination` at 3,684 — under the capped budget policy unchanged. [3]
 
 ## Outside scratch and merged capsule measurements
 
@@ -117,3 +117,14 @@ The retained handover block records worker implementation at 3,038 tokens, revie
 - The registry records the instruction-change measurements and reasons under the existing capped budget policy. [9]
 
 - The registry's current capsule, step-detail and handover rows retain their capped formulas and recorded values. [10]
+
+- All 38 capsules carry capped eleven-tenths budgets recorded with the texts they measure. [1]
+
+
+- The registry retains 38 capped capsule rows and fifteen step-file rows; its decisions retain the provenance of their own measured changes.  Anchor: current definitions [3]
+
+
+- The authored source owns this contract; the distribution copy is not a separate authority. [4]
+
+
+- The registry records the instruction-change measurements and reasons under the existing capped budget policy. [8]

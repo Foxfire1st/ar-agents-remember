@@ -17,7 +17,7 @@
         "handoffEntry": "L110-C-status",
         "leaf": "260928-MIK-L110"
       },
-      "rationale": "Validates/logs the whole payload while delivering and guarding the distinct optional status projection.",
+      "rationale": "`complete_tool_response` at C still validates and logs the whole payload while delivering and guarding the distinct status projection, with the whole result's digest and size recorded and the answer bound applied to the projection; the span matches C.",
       "role": "enforcement"
     },
     {
@@ -77,15 +77,14 @@
       ]
     },
     "3": {
-      "note": "The completion choke validates the whole, selects the answer, retains available caller diff reports, measures final delivery and emits one event through its existing owner.",
+      "note": "The completion choke validates the whole, selects the answer, retains available caller diff reports, measures final delivery and emits one event through its existing owner.\n\nAnchor: `complete_tool_response`",
       "targets": [
         {
           "anchor": {
-            "blob": "82511233b54099a86d5c8a35db96c7b26c4ac288",
-            "content": "sha256:bacab007e9a10790558eb136881f6e1255c654be10db3659ff394410a5996845",
+            "blob": "e0e46bc6a90dd3b9da4bab12c43f61d1e4e71a70",
+            "content": "sha256:611cce8419f2f98ceb4edd0b31ea0dc5fe740280eed2d76a3dce05c98fa22b14",
             "locator": {
-              "kind": "symbol",
-              "name": "complete_tool_response"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -93,15 +92,14 @@
       ]
     },
     "4": {
-      "note": "Whole-result validation/logging and explicit or default tool-specific projected-answer guarding remain distinct.",
+      "note": "Whole-result validation/logging and explicit or default tool-specific projected-answer guarding remain distinct.\n\nAnchor: `complete_tool_response`",
       "targets": [
         {
           "anchor": {
-            "blob": "82511233b54099a86d5c8a35db96c7b26c4ac288",
-            "content": "sha256:bacab007e9a10790558eb136881f6e1255c654be10db3659ff394410a5996845",
+            "blob": "e0e46bc6a90dd3b9da4bab12c43f61d1e4e71a70",
+            "content": "sha256:611cce8419f2f98ceb4edd0b31ea0dc5fe740280eed2d76a3dce05c98fa22b14",
             "locator": {
-              "kind": "symbol",
-              "name": "complete_tool_response"
+              "kind": "file"
             }
           },
           "kind": "code"

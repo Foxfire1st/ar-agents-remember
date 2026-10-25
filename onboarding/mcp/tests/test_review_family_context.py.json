@@ -4,15 +4,14 @@
   "realizes": [],
   "references": {
     "42": {
-      "note": "`test_a_successor_family_revision_is_read_from_its_own_rows_not_inherited` supplies the current fixture or assertion described above.",
+      "note": "`test_a_successor_family_revision_is_read_from_its_own_rows_not_inherited` supplies the current fixture or assertion described above.\n\nAnchor: `test_a_successor_family_revision_is_read_from_its_own_rows_not_inherited`",
       "targets": [
         {
           "anchor": {
-            "blob": "8383cab135e9e3d918c4b8bf59f0cd03435ac2b5",
-            "content": "sha256:d39754d6376ebea839ee166c5469ff4e28e0307a7c6e8b38d4e9120e22551726",
+            "blob": "ad638ac1b54db37d8ed4f7655ba8f7a94063bbec",
+            "content": "sha256:4a078d59f7bbd0a4200d4558e70c6a9acb1aa2a641ab803150b92035d440abae",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_successor_family_revision_is_read_from_its_own_rows_not_inherited"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -20,15 +19,14 @@
       ]
     },
     "43": {
-      "note": "`test_a_shared_member_is_one_canonical_revision_referenced_in_two_contexts` supplies the current fixture or assertion described above.",
+      "note": "`test_a_shared_member_is_one_canonical_revision_referenced_in_two_contexts` supplies the current fixture or assertion described above.\n\nAnchor: `test_a_shared_member_is_one_canonical_revision_referenced_in_two_contexts`",
       "targets": [
         {
           "anchor": {
-            "blob": "8383cab135e9e3d918c4b8bf59f0cd03435ac2b5",
-            "content": "sha256:e50b9ab7a3d30e3badc4a2a3005ec44a0f83f38129256e1940736c8ee70f206d",
+            "blob": "ad638ac1b54db37d8ed4f7655ba8f7a94063bbec",
+            "content": "sha256:4a078d59f7bbd0a4200d4558e70c6a9acb1aa2a641ab803150b92035d440abae",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_shared_member_is_one_canonical_revision_referenced_in_two_contexts"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -68,15 +66,14 @@
       ]
     },
     "46": {
-      "note": "`test_a_roster_walk_larger_than_one_page_terminates_with_a_page_and_no_failure` supplies the current fixture or assertion described above.",
+      "note": "`test_a_roster_walk_larger_than_one_page_terminates_with_a_page_and_no_failure` supplies the current fixture or assertion described above.\n\nAnchor: `test_a_roster_walk_larger_than_one_page_terminates_with_a_page_and_no_failure`",
       "targets": [
         {
           "anchor": {
-            "blob": "8383cab135e9e3d918c4b8bf59f0cd03435ac2b5",
-            "content": "sha256:4faadd5478ffef5d7e9a50b7f4c68ccd83d761ea15419fd700802d0713e1961d",
+            "blob": "ad638ac1b54db37d8ed4f7655ba8f7a94063bbec",
+            "content": "sha256:4a078d59f7bbd0a4200d4558e70c6a9acb1aa2a641ab803150b92035d440abae",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_roster_walk_larger_than_one_page_terminates_with_a_page_and_no_failure"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -88,8 +85,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8383cab135e9e3d918c4b8bf59f0cd03435ac2b5",
-            "content": "sha256:5ba71ed24626377c591d1a80b893f08eaa212ac52ebbe5ba1808d1dcfca9a742",
+            "blob": "ad638ac1b54db37d8ed4f7655ba8f7a94063bbec",
+            "content": "sha256:dab1c6896d19d89c9e8807fb3a8cee4137e3c904fd507a838878c1fdb2e3e14d",
             "locator": {
               "end": 74,
               "kind": "line_range",
@@ -101,15 +98,14 @@
       ]
     },
     "48": {
-      "note": "RowStore inserts index-shaped fixture rows without the retired production admission plane.",
+      "note": "RowStore writes text-tree fixture rows without the retired production admission plane.\n\nAnchor: `RowStore`",
       "targets": [
         {
           "anchor": {
-            "blob": "25497ca2fe27297d4ac750d338e86962058a76f1",
-            "content": "sha256:041b3cc8ba5b2d4ef617d3c837e60d9fdc1aca5a8c4787a0854ce08e91e91eee",
+            "blob": "62e692c8ea18903861ec2efddd03c884ed14f818",
+            "content": "sha256:43a32e8370a3aa07c1e8247bd8b4d445a42caab3b630d2ed5783e663bc3c824e",
             "locator": {
-              "kind": "symbol",
-              "name": "RowStore"
+              "kind": "file"
             },
             "path": "mcp/tests/knowledge_rows_test_support.py"
           },
@@ -118,15 +114,14 @@
       ]
     },
     "49": {
-      "note": "**The leaf's load-bearing properties, one case each, and the fact that nothing here builds a review payload.**",
+      "note": "**The leaf's load-bearing properties, one case each, and the fact that nothing here builds a review payload.**\n\nAnchor: `build_family_scenario`",
       "targets": [
         {
           "anchor": {
-            "blob": "8383cab135e9e3d918c4b8bf59f0cd03435ac2b5",
-            "content": "sha256:27368b5407b8f2b664ad9f4ba4e6894965a62c4568db3e8b7401491d23ea5885",
+            "blob": "ad638ac1b54db37d8ed4f7655ba8f7a94063bbec",
+            "content": "sha256:4a078d59f7bbd0a4200d4558e70c6a9acb1aa2a641ab803150b92035d440abae",
             "locator": {
-              "kind": "symbol",
-              "name": "build_family_scenario"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -134,15 +129,14 @@
       ]
     },
     "50": {
-      "note": "The frozen scenario handle the cases read.",
+      "note": "The frozen scenario handle the cases read.\n\nAnchor: `FamilyScenario`",
       "targets": [
         {
           "anchor": {
-            "blob": "8383cab135e9e3d918c4b8bf59f0cd03435ac2b5",
-            "content": "sha256:06f3d0dcac73a11c942e4a1704c4f30f9268b9b68dcd23b00a70d94cf2a4d388",
+            "blob": "ad638ac1b54db37d8ed4f7655ba8f7a94063bbec",
+            "content": "sha256:4a078d59f7bbd0a4200d4558e70c6a9acb1aa2a641ab803150b92035d440abae",
             "locator": {
-              "kind": "symbol",
-              "name": "FamilyScenario"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -150,12 +144,12 @@
       ]
     },
     "51": {
-      "note": "The module-scoped scenario fixture.\n\nAnchor: `scenario`",
+      "note": "The module-scoped scenario fixture.",
       "targets": [
         {
           "anchor": {
-            "blob": "8383cab135e9e3d918c4b8bf59f0cd03435ac2b5",
-            "content": "sha256:c2a57a98feaff009b9d0c0e035bb610f2c312951d5a101595e7eab50f48cfe2f",
+            "blob": "ad638ac1b54db37d8ed4f7655ba8f7a94063bbec",
+            "content": "sha256:b1106045aaae1caaab2872dec7f9717c802e0a983e5fcd114489c090cb335485",
             "locator": {
               "end": 131,
               "kind": "line_range",
@@ -167,15 +161,14 @@
       ]
     },
     "52": {
-      "note": "**The real leaf enclosure built over the shared endpoint fixture, with two real knowledge datasets.**",
+      "note": "**The real leaf enclosure built over the shared endpoint fixture, with two real knowledge datasets.**\n\nAnchor: `build_family_scenario`",
       "targets": [
         {
           "anchor": {
-            "blob": "8383cab135e9e3d918c4b8bf59f0cd03435ac2b5",
-            "content": "sha256:27368b5407b8f2b664ad9f4ba4e6894965a62c4568db3e8b7401491d23ea5885",
+            "blob": "ad638ac1b54db37d8ed4f7655ba8f7a94063bbec",
+            "content": "sha256:4a078d59f7bbd0a4200d4558e70c6a9acb1aa2a641ab803150b92035d440abae",
             "locator": {
-              "kind": "symbol",
-              "name": "build_family_scenario"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -183,15 +176,14 @@
       ]
     },
     "55": {
-      "note": "**One membership row authored through the membership owner, so a membership exists only because a case recorded it.**",
+      "note": "**One membership row built by the test-only fixture helper, not the retired canonical authoring plane.**\n\nAnchor: `_author_membership`",
       "targets": [
         {
           "anchor": {
-            "blob": "8383cab135e9e3d918c4b8bf59f0cd03435ac2b5",
-            "content": "sha256:ec1f67219014c54a7b73f5cc62864f2aa72c62dc730bae39b3e6f48d34afe424",
+            "blob": "ad638ac1b54db37d8ed4f7655ba8f7a94063bbec",
+            "content": "sha256:4a078d59f7bbd0a4200d4558e70c6a9acb1aa2a641ab803150b92035d440abae",
             "locator": {
-              "kind": "symbol",
-              "name": "_author_membership"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -279,15 +271,14 @@
       ]
     },
     "61": {
-      "note": "An unchanged family still composed at its own revision.",
+      "note": "An unchanged family still composed at its own revision.\n\nAnchor: `test_a_family_that_did_not_move_is_still_composed_at_its_own_revision`",
       "targets": [
         {
           "anchor": {
-            "blob": "8383cab135e9e3d918c4b8bf59f0cd03435ac2b5",
-            "content": "sha256:75908044475e2941eaea7e3dc8d6fdce412d1f2c9a8c0176fd4f4084cfc33d4e",
+            "blob": "ad638ac1b54db37d8ed4f7655ba8f7a94063bbec",
+            "content": "sha256:4a078d59f7bbd0a4200d4558e70c6a9acb1aa2a641ab803150b92035d440abae",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_family_that_did_not_move_is_still_composed_at_its_own_revision"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -295,15 +286,14 @@
       ]
     },
     "62": {
-      "note": "**A successor revision read from its own rows, with the dropped membership still carried on the side that records it.**",
+      "note": "**A successor revision read from its own rows, with the dropped membership still carried on the side that records it.**\n\nAnchor: `test_a_successor_family_revision_is_read_from_its_own_rows_not_inherited`",
       "targets": [
         {
           "anchor": {
-            "blob": "8383cab135e9e3d918c4b8bf59f0cd03435ac2b5",
-            "content": "sha256:d39754d6376ebea839ee166c5469ff4e28e0307a7c6e8b38d4e9120e22551726",
+            "blob": "ad638ac1b54db37d8ed4f7655ba8f7a94063bbec",
+            "content": "sha256:4a078d59f7bbd0a4200d4558e70c6a9acb1aa2a641ab803150b92035d440abae",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_successor_family_revision_is_read_from_its_own_rows_not_inherited"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -311,15 +301,14 @@
       ]
     },
     "63": {
-      "note": "**One canonical revision referenced in two contexts, with the unique count not growing.**",
+      "note": "**One canonical revision referenced in two contexts, with the unique count not growing.**\n\nAnchor: `test_a_shared_member_is_one_canonical_revision_referenced_in_two_contexts`",
       "targets": [
         {
           "anchor": {
-            "blob": "8383cab135e9e3d918c4b8bf59f0cd03435ac2b5",
-            "content": "sha256:e50b9ab7a3d30e3badc4a2a3005ec44a0f83f38129256e1940736c8ee70f206d",
+            "blob": "ad638ac1b54db37d8ed4f7655ba8f7a94063bbec",
+            "content": "sha256:4a078d59f7bbd0a4200d4558e70c6a9acb1aa2a641ab803150b92035d440abae",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_shared_member_is_one_canonical_revision_referenced_in_two_contexts"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -327,15 +316,14 @@
       ]
     },
     "64": {
-      "note": "**A member change making its family context available and concluding nothing about the guarantee.**",
+      "note": "**A member change making its family context available and concluding nothing about the guarantee.**\n\nAnchor: `test_a_member_change_makes_its_family_context_available_and_concludes_nothing`",
       "targets": [
         {
           "anchor": {
-            "blob": "8383cab135e9e3d918c4b8bf59f0cd03435ac2b5",
-            "content": "sha256:dc628de00e2b636665eff8af10c8ce5c80dc7b530b86174a0ec78dada657267f",
+            "blob": "ad638ac1b54db37d8ed4f7655ba8f7a94063bbec",
+            "content": "sha256:4a078d59f7bbd0a4200d4558e70c6a9acb1aa2a641ab803150b92035d440abae",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_member_change_makes_its_family_context_available_and_concludes_nothing"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -391,15 +379,14 @@
       ]
     },
     "68": {
-      "note": "A family only the candidate records as a one-sided context with a stated absence.",
+      "note": "A family only the candidate records as a one-sided context with a stated absence.\n\nAnchor: `test_a_family_only_the_candidate_records_is_a_one_sided_context_with_a_stated_absence`",
       "targets": [
         {
           "anchor": {
-            "blob": "8383cab135e9e3d918c4b8bf59f0cd03435ac2b5",
-            "content": "sha256:6c7a4a32081885db20534c08b8f645918aedcf93fac4d56ce3d7d6f0e18ce2b8",
+            "blob": "ad638ac1b54db37d8ed4f7655ba8f7a94063bbec",
+            "content": "sha256:4a078d59f7bbd0a4200d4558e70c6a9acb1aa2a641ab803150b92035d440abae",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_family_only_the_candidate_records_is_a_one_sided_context_with_a_stated_absence"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -407,15 +394,14 @@
       ]
     },
     "71": {
-      "note": "**A truncated roster staying partial with the owner's counts and the cursor that reaches the rest.**",
+      "note": "**A truncated roster staying partial with the owner's counts and the cursor that reaches the rest.**\n\nAnchor: `test_a_truncated_roster_stays_partial_with_the_owners_counts_and_continuation`",
       "targets": [
         {
           "anchor": {
-            "blob": "8383cab135e9e3d918c4b8bf59f0cd03435ac2b5",
-            "content": "sha256:0141b01f6d466f2dc8c1e2b3a2c2d77df8c6bb8a7dc45cc2b88b8df3dccc4947",
+            "blob": "ad638ac1b54db37d8ed4f7655ba8f7a94063bbec",
+            "content": "sha256:4a078d59f7bbd0a4200d4558e70c6a9acb1aa2a641ab803150b92035d440abae",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_truncated_roster_stays_partial_with_the_owners_counts_and_continuation"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -503,15 +489,14 @@
       ]
     },
     "77": {
-      "note": "**The complete source inventory and its unique counts not growing with a repeated membership.**",
+      "note": "**The complete source inventory and its unique counts not growing with a repeated membership.**\n\nAnchor: `test_the_complete_source_population_does_not_grow_with_a_repeated_membership`",
       "targets": [
         {
           "anchor": {
-            "blob": "8383cab135e9e3d918c4b8bf59f0cd03435ac2b5",
-            "content": "sha256:7ccf82a518450b2395334a1c352f5dc203c948c3793148811f6159d91513ed55",
+            "blob": "ad638ac1b54db37d8ed4f7655ba8f7a94063bbec",
+            "content": "sha256:4a078d59f7bbd0a4200d4558e70c6a9acb1aa2a641ab803150b92035d440abae",
             "locator": {
-              "kind": "symbol",
-              "name": "test_the_complete_source_population_does_not_grow_with_a_repeated_membership"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -519,15 +504,14 @@
       ]
     },
     "78": {
-      "note": "The one-sided family fixture.",
+      "note": "The one-sided family fixture.\n\nAnchor: `_author_added_family`",
       "targets": [
         {
           "anchor": {
-            "blob": "8383cab135e9e3d918c4b8bf59f0cd03435ac2b5",
-            "content": "sha256:fc3541b2abd258210ad7180f045670b669a70010c73c9cb4d744f1f5eb71576b",
+            "blob": "ad638ac1b54db37d8ed4f7655ba8f7a94063bbec",
+            "content": "sha256:4a078d59f7bbd0a4200d4558e70c6a9acb1aa2a641ab803150b92035d440abae",
             "locator": {
-              "kind": "symbol",
-              "name": "_author_added_family"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -535,15 +519,14 @@
       ]
     },
     "79": {
-      "note": "The review of a subject the fixture never authored.",
+      "note": "The review of a subject the fixture never authored.\n\nAnchor: `_review_of_unfamiliar_invariant`",
       "targets": [
         {
           "anchor": {
-            "blob": "8383cab135e9e3d918c4b8bf59f0cd03435ac2b5",
-            "content": "sha256:2313fae382384da8354ee1e04985b3c8c8944c8f9e5f10b9b2dfa16701a29bf2",
+            "blob": "ad638ac1b54db37d8ed4f7655ba8f7a94063bbec",
+            "content": "sha256:4a078d59f7bbd0a4200d4558e70c6a9acb1aa2a641ab803150b92035d440abae",
             "locator": {
-              "kind": "symbol",
-              "name": "_review_of_unfamiliar_invariant"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -583,15 +566,14 @@
       ]
     },
     "82": {
-      "note": "**Further memberships authored through the store's own operations, so a roster needs more than one page of the read walk.**",
+      "note": "**Further memberships built through test-only row construction, so a roster needs more than one page of the production read walk.**\n\nAnchor: `_author_extra_roster_rows`",
       "targets": [
         {
           "anchor": {
-            "blob": "8383cab135e9e3d918c4b8bf59f0cd03435ac2b5",
-            "content": "sha256:747252aa1337eb9e83d4c4adee2ae81c01e81df789ae8867e606019f5c7bc6e0",
+            "blob": "ad638ac1b54db37d8ed4f7655ba8f7a94063bbec",
+            "content": "sha256:4a078d59f7bbd0a4200d4558e70c6a9acb1aa2a641ab803150b92035d440abae",
             "locator": {
-              "kind": "symbol",
-              "name": "_author_extra_roster_rows"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -631,15 +613,14 @@
       ]
     },
     "85": {
-      "note": "**The page the pre-correction guard refused: a completed FINAL page carrying only its own share, which used to answer a server failure.**",
+      "note": "**The page the pre-correction guard refused: a completed FINAL page carrying only its own share, which used to answer a server failure.**\n\nAnchor: `test_the_final_page_of_a_long_walk_may_carry_only_its_own_share`",
       "targets": [
         {
           "anchor": {
-            "blob": "8383cab135e9e3d918c4b8bf59f0cd03435ac2b5",
-            "content": "sha256:c41925da33f3f69df8fb03c6c84ec3b70e3e9665858f08ad142824d4e5022094",
+            "blob": "ad638ac1b54db37d8ed4f7655ba8f7a94063bbec",
+            "content": "sha256:4a078d59f7bbd0a4200d4558e70c6a9acb1aa2a641ab803150b92035d440abae",
             "locator": {
-              "kind": "symbol",
-              "name": "test_the_final_page_of_a_long_walk_may_carry_only_its_own_share"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -647,15 +628,14 @@
       ]
     },
     "86": {
-      "note": "**The multi-page boundary: every step is this route's own answer and the pages together carried exactly the owner's total.**",
+      "note": "**The multi-page boundary: every step is this route's own answer and the pages together carried exactly the owner's total.**\n\nAnchor: `test_a_roster_walk_larger_than_one_page_terminates_with_a_page_and_no_failure`",
       "targets": [
         {
           "anchor": {
-            "blob": "8383cab135e9e3d918c4b8bf59f0cd03435ac2b5",
-            "content": "sha256:4faadd5478ffef5d7e9a50b7f4c68ccd83d761ea15419fd700802d0713e1961d",
+            "blob": "ad638ac1b54db37d8ed4f7655ba8f7a94063bbec",
+            "content": "sha256:4a078d59f7bbd0a4200d4558e70c6a9acb1aa2a641ab803150b92035d440abae",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_roster_walk_larger_than_one_page_terminates_with_a_page_and_no_failure"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -663,15 +643,14 @@
       ]
     },
     "87": {
-      "note": "**The production read these cases drive, which composes the context and carries it on the payload.**",
+      "note": "**The production read these cases drive, which composes the context and carries it on the payload.**\n\nAnchor: `compose_review`",
       "targets": [
         {
           "anchor": {
-            "blob": "656c6acccc15cb4da02e3931dd492b4f0e2eef71",
-            "content": "sha256:6dda3053ddc4fb807706f55c13825da45037daaa69c86979ec2debed051cacef",
+            "blob": "1c9f8394dfb38bee67a5da3b90ace66147bd5334",
+            "content": "sha256:bc9aed0908cabfef3b176f1734ea114458607fab1f9bf612787eace2cfa4d0c0",
             "locator": {
-              "kind": "symbol",
-              "name": "compose_review"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/knowledge_review.py"
           },
@@ -680,15 +659,14 @@
       ]
     },
     "88": {
-      "note": "The population cases this module's fixtures are shared with.",
+      "note": "The population cases this module's fixtures are shared with.\n\nAnchor: `test_the_canonical_memberless_successor_shape_is_an_ambiguity`",
       "targets": [
         {
           "anchor": {
-            "blob": "425092f3285d3d94542b2b0e0be045cade63d706",
-            "content": "sha256:0e457f893388e558ecaf11d5afe9154f07a58461be178a7f7d09c31ae8e17787",
+            "blob": "54fbdbbfa712edeba863208bcf50313b08770968",
+            "content": "sha256:0d8146c5ae05f221556a8607e58e4a538894a7fc60ca930e296a1fa1ba07a7c6",
             "locator": {
-              "kind": "symbol",
-              "name": "test_the_canonical_memberless_successor_shape_is_an_ambiguity"
+              "kind": "file"
             },
             "path": "mcp/tests/test_review_family_context_population.py"
           },

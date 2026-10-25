@@ -3,12 +3,12 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The document distinguishes the real consumer from deterministic provider scripting.\n\nAnchor: `# Clean-room E2E harnesses`",
+      "note": "The document has the fresh-user acceptance run on the host through the product's own entry points, and records a step that cannot run as blocked with its reason rather than completed.",
       "targets": [
         {
           "anchor": {
-            "blob": "f6f71cae178232c4ed595595e45a4dc52d9a02c5",
-            "content": "sha256:d9a16b22be55a11b28ae784acf25a376c1d998d4c674e364029e8c4d2c591d64",
+            "blob": "e2073d9a22cadf9104eaef85931b2148531baae8",
+            "content": "sha256:9bb05335ab7a8a928ea29f36629f2b1192f33ba691106d28a5c31825e2020da6",
             "locator": {
               "end": 9,
               "kind": "line_range",
@@ -20,12 +20,12 @@
       ]
     },
     "2": {
-      "note": "Security containment and false-positive prevention are explicit fixture contracts.\n\nAnchor: \"danger-full-access\"",
+      "note": "The run reads and writes nothing outside its run root, which is a fresh temporary directory unless --work-root names one.",
       "targets": [
         {
           "anchor": {
-            "blob": "f6f71cae178232c4ed595595e45a4dc52d9a02c5",
-            "content": "sha256:a92706871cde97bae14fcf685fc16b54c908478717317a553f5be83e347bbcf5",
+            "blob": "e2073d9a22cadf9104eaef85931b2148531baae8",
+            "content": "sha256:1dc60fd6f16d32ebbcc16715d45950ab3b47dbe569b3db9985188a12ae3f572d",
             "locator": {
               "end": 15,
               "kind": "line_range",
@@ -37,12 +37,12 @@
       ]
     },
     "3": {
-      "note": "Idempotency, negative sentinels, and cleanup evidence are distinguished from retries.\n\nAnchor: \"same canonical occupant\"",
+      "note": "Every step records the exact call it made and the real result it got, and a step that cannot run is recorded as blocked with its reason, never as completed.",
       "targets": [
         {
           "anchor": {
-            "blob": "f6f71cae178232c4ed595595e45a4dc52d9a02c5",
-            "content": "sha256:51d91d63e6c8633b3452fb9e28ae825f3c2c9db809ecbd97ffd34c6fb17100f3",
+            "blob": "e2073d9a22cadf9104eaef85931b2148531baae8",
+            "content": "sha256:1e617c0b24e50abc01d43d5917fb08aa1ee8652b9c0be34710709f582fa4015e",
             "locator": {
               "end": 23,
               "kind": "line_range",
@@ -53,49 +53,15 @@
         }
       ]
     },
-    "4": {
-      "note": "One forwarded tmux namespace binds role creation to liveness and cleanup.\n\nAnchor: `TMUX_TMPDIR`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f6f71cae178232c4ed595595e45a4dc52d9a02c5",
-            "content": "sha256:81737b72e2afe71b3511e3122958e360ca4d26fb18485e52df9890c5bb95301f",
-            "locator": {
-              "end": 29,
-              "kind": "line_range",
-              "start": 25
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "5": {
-      "note": "Targeted/full applicability, replication count, and retry count are explicit.\n\nAnchor: \"Every invocation executes two planned fresh replications and zero retries\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f6f71cae178232c4ed595595e45a4dc52d9a02c5",
-            "content": "sha256:1754dad06d2fc7aebc291784043b1569392b1a66be4c35876b9a04e7c6e1b80a",
-            "locator": {
-              "end": 34,
-              "kind": "line_range",
-              "start": 31
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "6": {
-      "note": "The document names no sibling repository as implementation authority.\n\nAnchor: `# Clean-room E2E harnesses`",
+      "note": "The document names no sibling repository as implementation authority.",
       "targets": [
         {
           "anchor": {
-            "blob": "f6f71cae178232c4ed595595e45a4dc52d9a02c5",
-            "content": "sha256:1f4ecec61489a8061378d8e32eea77af6f3f7208c600f263b831aa223117472c",
+            "blob": "e2073d9a22cadf9104eaef85931b2148531baae8",
+            "content": "sha256:f68df3464ac3202a786710e6b24a3f2cdd90da4d32b711efcd1b0c52c7427fa4",
             "locator": {
-              "end": 34,
+              "end": 30,
               "kind": "line_range",
               "start": 1
             }

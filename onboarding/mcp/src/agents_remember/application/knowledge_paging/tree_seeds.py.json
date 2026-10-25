@@ -3,12 +3,12 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The module docstring: why an unheld seed is refused and that a database read is untouched.\n\nAnchor: \"a seed the tree does not hold is refused\"",
+      "note": "The module docstring explains unheld-seed refusal; its database-preservation sentence is historical, not the mounted contract.",
       "targets": [
         {
           "anchor": {
-            "blob": "c698021618cda8477c60dae1731504db396c28e1",
-            "content": "sha256:6b87ae7da7743dd83cfec8fc8b025af25cc217a4c6d330e45e40445475f3b5cf",
+            "blob": "e5ddd6d171ff4162d6139e84bdd2afce9270358a",
+            "content": "sha256:b9794b8df5a61cc3fc2212408fd421a123bc9be2c166f2645ef4580bfe771e22",
             "locator": {
               "end": 9,
               "kind": "line_range",
@@ -20,15 +20,14 @@
       ]
     },
     "2": {
-      "note": "Why a named seed names no revision the tree holds; a bare held ID is told its seed.",
+      "note": "Why a named seed names no revision the tree holds; a bare held ID is told its seed.\n\nAnchor: `absent_seed`",
       "targets": [
         {
           "anchor": {
-            "blob": "c698021618cda8477c60dae1731504db396c28e1",
-            "content": "sha256:958408f0af6fc866d28b9f7a31be1508010821307d69d8c0a7f3ff474d9811fa",
+            "blob": "e5ddd6d171ff4162d6139e84bdd2afce9270358a",
+            "content": "sha256:68a8009b5029e1080390cfc3e9bc873780b770a3465193305673ad688b633523",
             "locator": {
-              "kind": "symbol",
-              "name": "absent_seed"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -52,15 +51,14 @@
       ]
     },
     "4": {
-      "note": "Where current seeds come from, as every refusal says.",
+      "note": "Where current seeds come from, as every refusal says.\n\nAnchor: `SEED_SOURCES`",
       "targets": [
         {
           "anchor": {
-            "blob": "d9773915a85ebdfb20f5d4b5dc599f2dc51eac45",
-            "content": "sha256:7560ec2d07cd86d4c8a8a0c9375f08874430c8e1e238effa4d7cd54234409cc9",
+            "blob": "e5ddd6d171ff4162d6139e84bdd2afce9270358a",
+            "content": "sha256:68a8009b5029e1080390cfc3e9bc873780b770a3465193305673ad688b633523",
             "locator": {
-              "kind": "symbol",
-              "name": "SEED_SOURCES"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -68,27 +66,14 @@
       ]
     },
     "5": {
-      "note": "Converted trees refuse unheld seeds; the former database control is replaced by explicit mounted legacy-format refusal.",
+      "note": "Converted trees refuse unheld seeds; the former database control is replaced by explicit mounted legacy-format refusal.\n\nAnchor: `test_a_converted_tree_refuses_a_seed_it_does_not_hold` `test_every_knowledge_tool_refuses_legacy_memory_and_opens_no_database`",
       "targets": [
         {
           "anchor": {
-            "blob": "9ca8a915fc0011e8ee8f280439e1cad09171468c",
-            "content": "sha256:7e1e729d4246d5a2324fb9fe15f5684ab9fcb8e6a56f1fe41f480e811afb4724",
+            "blob": "bc2b134a1ee2b8958e995038dec519a5af1d7b69",
+            "content": "sha256:ea95bfa599e174f1929e6b7796658990bfd638ff2f8acaf153a5687b24b5c5cf",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_converted_tree_refuses_a_seed_it_does_not_hold"
-            },
-            "path": "mcp/tests/test_knowledge_index_surfaces.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "9ca8a915fc0011e8ee8f280439e1cad09171468c",
-            "content": "sha256:5bc3a8924f717e9a6d5081c853dbe84a471c3533bcc2f1ee6131c4f9802bbdc3",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_every_knowledge_tool_refuses_legacy_memory_and_opens_no_database"
+              "kind": "file"
             },
             "path": "mcp/tests/test_knowledge_index_surfaces.py"
           },
@@ -97,15 +82,14 @@
       ]
     },
     "6": {
-      "note": "A held text record refusal names its current revision UUID; seed sources use the refusal or source_context text IDs.",
+      "note": "A held text record refusal names its current revision UUID; seed sources use the refusal or source_context text IDs.\n\nAnchor: `absent_seed`",
       "targets": [
         {
           "anchor": {
-            "blob": "c698021618cda8477c60dae1731504db396c28e1",
-            "content": "sha256:958408f0af6fc866d28b9f7a31be1508010821307d69d8c0a7f3ff474d9811fa",
+            "blob": "e5ddd6d171ff4162d6139e84bdd2afce9270358a",
+            "content": "sha256:68a8009b5029e1080390cfc3e9bc873780b770a3465193305673ad688b633523",
             "locator": {
-              "kind": "symbol",
-              "name": "absent_seed"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -117,8 +101,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c698021618cda8477c60dae1731504db396c28e1",
-            "content": "sha256:b52b8b933832b3425de2b45834feb77ad87c3e7c5e401e3196985ba755939aeb",
+            "blob": "e5ddd6d171ff4162d6139e84bdd2afce9270358a",
+            "content": "sha256:68a8009b5029e1080390cfc3e9bc873780b770a3465193305673ad688b633523",
             "locator": {
               "kind": "file"
             }

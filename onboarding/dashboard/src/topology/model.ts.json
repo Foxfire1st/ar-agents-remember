@@ -1,5 +1,6 @@
 {
   "path": "dashboard/src/topology/model.ts",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
@@ -42,8 +43,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2543af1b8eb99722d5abb9d562a7195eb23a801e",
-            "content": "sha256:5b62afbdea12f4ac212b52371a63bd1ffd8cdd6e9db162d158c4f9ba96bcd2b9",
+            "blob": "904affccf65ef0037d48637edd0a3e5fe519ec38",
+            "content": "sha256:3e1f8743a78f2ff0224d4c1c22bd8ff0d9019949af1c942601853cebca386204",
             "locator": {
               "kind": "symbol",
               "name": "project_workspace"
@@ -54,12 +55,23 @@
         },
         {
           "anchor": {
-            "blob": "099b61b20b7737cc83e281cc58bd425ac0d230cb",
-            "content": "sha256:6f42dd9b6382bf7482a850fc3dafd63996fb0c0f3ae495249ffcfc414d3790b0",
+            "blob": "904affccf65ef0037d48637edd0a3e5fe519ec38",
+            "content": "sha256:3e1f8743a78f2ff0224d4c1c22bd8ff0d9019949af1c942601853cebca386204",
             "locator": {
-              "end": 179,
-              "kind": "line_range",
-              "start": 126
+              "kind": "symbol",
+              "name": "project_workspace"
+            },
+            "path": "mcp/src/agents_remember/observer/reducer.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "904affccf65ef0037d48637edd0a3e5fe519ec38",
+            "content": "sha256:3e1f8743a78f2ff0224d4c1c22bd8ff0d9019949af1c942601853cebca386204",
+            "locator": {
+              "kind": "symbol",
+              "name": "project_workspace"
             },
             "path": "mcp/src/agents_remember/observer/reducer.py"
           },
@@ -85,12 +97,12 @@
         },
         {
           "anchor": {
-            "blob": "2497eca35695f895fd899b6722332e8e60fc9597",
+            "blob": "80f68a14806839156738f156091e776e566e18b6",
             "content": "sha256:05897ce97fc64aa562c243a90491e9cc4a5521e0816ec7e13aadab384ba22795",
             "locator": {
-              "end": 201,
+              "end": 160,
               "kind": "line_range",
-              "start": 201
+              "start": 160
             },
             "path": "mcp/src/agents_remember/serving/projections/projection_store.py"
           },
@@ -103,8 +115,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9cf8c0f5572eef476907ba10a4bfef8669303116",
-            "content": "sha256:b8b519048d8a46d111901e761469e9220916486b24bb1b8ff1e8d520cbf64252",
+            "blob": "235b077ab68b7adfffa2b675a339fb346dca83c1",
+            "content": "sha256:f53636330ee7ec12551b481449425862fa552d1c9deca278efcf4998770d6ee5",
             "locator": {
               "kind": "symbol",
               "name": "constelColors"
@@ -116,15 +128,14 @@
       ]
     },
     "9": {
-      "note": "`Topology.tsx` is the only caller: it runs `activeTopologyInputs` then `buildTopology` before handing the model to `mountConstel`.",
+      "note": "`Topology.tsx` is the only caller: it runs `activeTopologyInputs` then `buildTopology` before handing the model to `mountConstel`.\n\nAnchor: `Topology`",
       "targets": [
         {
           "anchor": {
-            "blob": "e6f197168068ebede03bb29a8769b4dccc419147",
-            "content": "sha256:c420d1aa8394b04cdbc37e97e27d92604d46847c69806fa78679d90e877447be",
+            "blob": "df6406b5558760d99e709731298749fbf82c081d",
+            "content": "sha256:5071a8ac1ab49420778bd00f5977347b64f4717b2896905b84a6a4acf290ea7f",
             "locator": {
-              "kind": "symbol",
-              "name": "Topology"
+              "kind": "file"
             },
             "path": "dashboard/src/panels/Topology.tsx"
           },

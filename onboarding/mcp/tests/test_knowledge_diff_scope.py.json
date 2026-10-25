@@ -1,5 +1,6 @@
 {
   "path": "mcp/tests/test_knowledge_diff_scope.py",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
@@ -52,12 +53,12 @@
       ]
     },
     "10": {
-      "note": "**The filter narrowing the display and never the comparison, and the filter bound into the comparison identity.**\n\nAnchor: \"test_a_role_filter_narrows_the_display_and_never_the_comparison\"; \"test_the_filter_is_bound_into_the_comparison_identity_so_another_filter_cannot_reuse_it\"",
+      "note": "**The filter narrowing the display and never the comparison, and the filter bound into the comparison identity.**",
       "targets": [
         {
           "anchor": {
-            "blob": "6839ec8adb0e987ab0ae64a2391cf27bc1cbd606",
-            "content": "sha256:50cfb2d3dc2b563edadc7a64d7da4c87938d75d3ace4287debc0222214872c56",
+            "blob": "f43f2cfeb97e1480b885bba3821e2ae00214aee4",
+            "content": "sha256:c4e91cfbcbae8e9710e5de1b04180655382b6759f662da261ce30fe38e147f40",
             "locator": {
               "end": 547,
               "kind": "line_range",
@@ -132,12 +133,12 @@
       ]
     },
     "14": {
-      "note": "The fixture these cases run on.",
+      "note": "The fixture these cases run on.\n\nAnchor: `build_diff_fixture` `DiffFixture`",
       "targets": [
         {
           "anchor": {
-            "blob": "472aa6a95dbd78142b0e19f328d23e2e3d2d3026",
-            "content": "sha256:0e33a6818449f12402a8bb83520c99d0fd294d8c353a6afe9f326d22e3665449",
+            "blob": "f71d2f06be49d435153b9c1758713da504a05c2e",
+            "content": "sha256:93278447340ac95295f133b59e4f66156f4b6856936d678eeb57d00502567eda",
             "locator": {
               "kind": "symbol",
               "name": "build_diff_fixture"
@@ -148,8 +149,8 @@
         },
         {
           "anchor": {
-            "blob": "472aa6a95dbd78142b0e19f328d23e2e3d2d3026",
-            "content": "sha256:001584ab745e28afcd6f1111f23193c034a107b180674d07b25de79659af14a3",
+            "blob": "f71d2f06be49d435153b9c1758713da504a05c2e",
+            "content": "sha256:22dfb1ee84670abf255273f091ceecbfb65214bb1921d6f80fc131d2d651c6b7",
             "locator": {
               "kind": "symbol",
               "name": "DiffFixture"
@@ -160,8 +161,8 @@
         },
         {
           "anchor": {
-            "blob": "472aa6a95dbd78142b0e19f328d23e2e3d2d3026",
-            "content": "sha256:09483ea98a393005a338e66ad2b22f9316da1a8238a005d5cbfe7facd1667d00",
+            "blob": "f71d2f06be49d435153b9c1758713da504a05c2e",
+            "content": "sha256:31343f243cd725d90b72cddfc1d4474d1140464dc974f78a52aff054ca45d37d",
             "locator": {
               "end": 228,
               "kind": "line_range",
@@ -173,12 +174,23 @@
         },
         {
           "anchor": {
-            "blob": "472aa6a95dbd78142b0e19f328d23e2e3d2d3026",
-            "content": "sha256:4f35fe3fefcfe7467dbe42f57d671de1779be58a683811fbddd4c6dc8a74536e",
+            "blob": "f71d2f06be49d435153b9c1758713da504a05c2e",
+            "content": "sha256:3af23de501bf82d717a215ae9f16fc46671d1fa5218f289b8f74a3bb6af316f7",
             "locator": {
               "end": 181,
               "kind": "line_range",
               "start": 143
+            },
+            "path": "mcp/tests/diff_scope_test_support.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f71d2f06be49d435153b9c1758713da504a05c2e",
+            "content": "sha256:89e6a01e76fd13467e7a2ecb6f31901685045bb135f47e56e5dfb8f4a62a8fe8",
+            "locator": {
+              "kind": "file"
             },
             "path": "mcp/tests/diff_scope_test_support.py"
           },
@@ -191,12 +203,51 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5b85740d9ae416814196e4c0ca40c2bab4419451",
+            "blob": "3c5993c94cf78973b3b39cfe7de9774c8aea6d1a",
             "content": "sha256:6152fe3c6e4ca81f7267758e2203b8a7e113f335d720a5117ab9bf154c80d735",
             "locator": {
               "end": 17,
               "kind": "line_range",
               "start": 17
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "102c4550ab6429f44c8fb543d1d0662de66a1b8c",
+            "content": "sha256:7700d68dcf4855295d022fa726b30b7d6da58a42755ce8d37843d680b6327b07",
+            "locator": {
+              "end": 5,
+              "kind": "line_range",
+              "start": 4
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "102c4550ab6429f44c8fb543d1d0662de66a1b8c",
+            "content": "sha256:d1c16f445e6a689901e9328ebcf230324dd61045cfd694e1f27ed85792cf760e",
+            "locator": {
+              "end": 152,
+              "kind": "line_range",
+              "start": 152
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "3c5993c94cf78973b3b39cfe7de9774c8aea6d1a",
+            "content": "sha256:51abef4b82c98cb557d8d8e526dcaeb213609da8d7ade5a1f1a5b01a5d09d9dd",
+            "locator": {
+              "end": 1212,
+              "kind": "line_range",
+              "start": 1193
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -209,7 +260,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5b85740d9ae416814196e4c0ca40c2bab4419451",
+            "blob": "3c5993c94cf78973b3b39cfe7de9774c8aea6d1a",
             "content": "sha256:6152fe3c6e4ca81f7267758e2203b8a7e113f335d720a5117ab9bf154c80d735",
             "locator": {
               "end": 17,
@@ -219,11 +270,50 @@
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
           "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "102c4550ab6429f44c8fb543d1d0662de66a1b8c",
+            "content": "sha256:7700d68dcf4855295d022fa726b30b7d6da58a42755ce8d37843d680b6327b07",
+            "locator": {
+              "end": 5,
+              "kind": "line_range",
+              "start": 4
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "102c4550ab6429f44c8fb543d1d0662de66a1b8c",
+            "content": "sha256:d1c16f445e6a689901e9328ebcf230324dd61045cfd694e1f27ed85792cf760e",
+            "locator": {
+              "end": 152,
+              "kind": "line_range",
+              "start": 152
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "3c5993c94cf78973b3b39cfe7de9774c8aea6d1a",
+            "content": "sha256:51abef4b82c98cb557d8d8e526dcaeb213609da8d7ade5a1f1a5b01a5d09d9dd",
+            "locator": {
+              "end": 1212,
+              "kind": "line_range",
+              "start": 1193
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
         }
       ]
     },
     "2": {
-      "note": "The two readers that let a case name a record rather than a position.",
+      "note": "The two readers that let a case name a record rather than a position.\n\nAnchor: `items_of` `item_for`",
       "targets": [
         {
           "anchor": {
@@ -261,8 +351,8 @@
         },
         {
           "anchor": {
-            "blob": "6839ec8adb0e987ab0ae64a2391cf27bc1cbd606",
-            "content": "sha256:3287bf7da377d92a7ef8fd5353178ed04f33da0b3dcec054d6aec85a4bad0c36",
+            "blob": "f43f2cfeb97e1480b885bba3821e2ae00214aee4",
+            "content": "sha256:d5bccd03aff1650b715572e6cb2c3213a8b02190e6a7fd4bc341205cc58a172c",
             "locator": {
               "end": 196,
               "kind": "line_range",
@@ -273,8 +363,8 @@
         },
         {
           "anchor": {
-            "blob": "6839ec8adb0e987ab0ae64a2391cf27bc1cbd606",
-            "content": "sha256:3287bf7da377d92a7ef8fd5353178ed04f33da0b3dcec054d6aec85a4bad0c36",
+            "blob": "f43f2cfeb97e1480b885bba3821e2ae00214aee4",
+            "content": "sha256:6788d292f43d84f81050921bdb8d5bbe479775639f83d2c372b425d24ee2982a",
             "locator": {
               "end": 273,
               "kind": "line_range",
@@ -309,8 +399,8 @@
         },
         {
           "anchor": {
-            "blob": "6839ec8adb0e987ab0ae64a2391cf27bc1cbd606",
-            "content": "sha256:fdff29c004c8e80b89e828c67ff5a5cd168d5e628579202ec225909d15a0b30c",
+            "blob": "f43f2cfeb97e1480b885bba3821e2ae00214aee4",
+            "content": "sha256:9bb0531e86c54437006ab9e382a68a099061fa0a3c0ac8ce0e6c965c2b9d13ce",
             "locator": {
               "end": 156,
               "kind": "line_range",
@@ -345,8 +435,8 @@
         },
         {
           "anchor": {
-            "blob": "6839ec8adb0e987ab0ae64a2391cf27bc1cbd606",
-            "content": "sha256:30c4042f86c5a5a0faaf6d6ac15399f6c29e935c6b482765422050718d72f753",
+            "blob": "f43f2cfeb97e1480b885bba3821e2ae00214aee4",
+            "content": "sha256:1cfb61b42e02ead9bc3b14b9243b00b985666c955dcea572d07dc341cb723143",
             "locator": {
               "end": 325,
               "kind": "line_range",
@@ -381,8 +471,8 @@
         },
         {
           "anchor": {
-            "blob": "6839ec8adb0e987ab0ae64a2391cf27bc1cbd606",
-            "content": "sha256:d67983f6132945cb1b451d4c1b27e39d0806b6d7a2081fcf948f7798bef58859",
+            "blob": "f43f2cfeb97e1480b885bba3821e2ae00214aee4",
+            "content": "sha256:e506bb6c7e25c3a2779a3faa03c87b0f4c76dec7f06b36b146008278d8e3d741",
             "locator": {
               "end": 450,
               "kind": "line_range",
@@ -393,8 +483,8 @@
         },
         {
           "anchor": {
-            "blob": "6839ec8adb0e987ab0ae64a2391cf27bc1cbd606",
-            "content": "sha256:30c4042f86c5a5a0faaf6d6ac15399f6c29e935c6b482765422050718d72f753",
+            "blob": "f43f2cfeb97e1480b885bba3821e2ae00214aee4",
+            "content": "sha256:7897a6aedecefe495ef0e47bf46c99d85b2b607853ed388f8c3f02c70048e6a3",
             "locator": {
               "end": 456,
               "kind": "line_range",
@@ -414,16 +504,26 @@
             }
           },
           "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f43f2cfeb97e1480b885bba3821e2ae00214aee4",
+            "content": "sha256:cd3cb765776b422ebfb708cfaabb6beea27a3a9cf9dc35bd9f0fa6985e076610",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
         }
       ]
     },
     "3": {
-      "note": "**The revised statement as a successor pair, and the divergent revision groups an identity seed retains per side.**\n\nAnchor: \"test_a_revised_statement_arrives_as_a_successor_alongside_the_revision_it_replaced\"; \"test_the_identity_seed_retains_a_revision_group_for_each_side_even_where_they_diverge\"",
+      "note": "**The revised statement as removal beside unrelated addition, and the divergent revision groups an identity seed retains per side.**",
       "targets": [
         {
           "anchor": {
-            "blob": "6839ec8adb0e987ab0ae64a2391cf27bc1cbd606",
-            "content": "sha256:21ffed4ee00b8e151821410a3c39531d555aae4f22e00bb95c437878612a90ff",
+            "blob": "f43f2cfeb97e1480b885bba3821e2ae00214aee4",
+            "content": "sha256:f58a833d689e7dd2332312d73dce1fc75f99e18180a7e087a18bf89c66f5aaa4",
             "locator": {
               "end": 148,
               "kind": "line_range",
@@ -434,8 +534,8 @@
         },
         {
           "anchor": {
-            "blob": "6839ec8adb0e987ab0ae64a2391cf27bc1cbd606",
-            "content": "sha256:49d2eab48f645c70951654acd344b67acfad9013ad8fddfda93f82b918dfe630",
+            "blob": "f43f2cfeb97e1480b885bba3821e2ae00214aee4",
+            "content": "sha256:0e701a73ad260212e555372c4fdab6c372d71895c08f61e6fa04de3d2a88d02e",
             "locator": {
               "end": 378,
               "kind": "line_range",
@@ -447,12 +547,12 @@
       ]
     },
     "4": {
-      "note": "**The source-only change: `record_field_changed=False` with `source_observation_changed=True`, on identical recorded anchors.**\n\nAnchor: \"test_a_source_only_change_is_reported_as_a_source_observation_and_no_record_field_changed\"",
+      "note": "**The source-only change: `record_field_changed=False` with `source_observation_changed=True`, on identical recorded anchors.**",
       "targets": [
         {
           "anchor": {
-            "blob": "6839ec8adb0e987ab0ae64a2391cf27bc1cbd606",
-            "content": "sha256:a90102345b58e27b755615a2ab215d27b92c1fb90623fefe744224ec36ba55a1",
+            "blob": "f43f2cfeb97e1480b885bba3821e2ae00214aee4",
+            "content": "sha256:bb55581afadc33f565d5d5ff78784b89fca94e583f743848c06857a6cc22d4af",
             "locator": {
               "end": 193,
               "kind": "line_range",
@@ -515,12 +615,12 @@
       ]
     },
     "8": {
-      "note": "**The explicit per-side selectors addressing two different exact revisions of one identity.**\n\nAnchor: \"test_explicit_side_selectors_address_a_different_exact_revision_on_each_side\"",
+      "note": "**The explicit per-side selectors addressing two different exact revisions of one identity.**",
       "targets": [
         {
           "anchor": {
-            "blob": "6839ec8adb0e987ab0ae64a2391cf27bc1cbd606",
-            "content": "sha256:a10b6073bc9f4919f240f3ef038eff9eb7daae2f82abafea5072990cc6fe5eaf",
+            "blob": "f43f2cfeb97e1480b885bba3821e2ae00214aee4",
+            "content": "sha256:bdd72fb19530b17b9def8bb0a662916820da845a1fa6e06d705d328fa70d7772",
             "locator": {
               "end": 395,
               "kind": "line_range",
@@ -532,12 +632,12 @@
       ]
     },
     "9": {
-      "note": "**The present-outside-versus-absent distinction side by side, and the per-table rule-2 subsumption assertion with its dangling-edge failure lines.**\n\nAnchor: \"test_a_record_the_other_snapshot_holds_but_the_selection_missed_is_not_an_absence\"",
+      "note": "The present-outside-versus-absent distinction asserted side by side, and the coverage decision's two selection- and probe-based rules -- another exact revision selected, or the record held by the other side's tables -- with no authored edge participating.",
       "targets": [
         {
           "anchor": {
-            "blob": "6839ec8adb0e987ab0ae64a2391cf27bc1cbd606",
-            "content": "sha256:81b010ef2c353f364db385bb89fd4931ca9d5fc9a672dc53c3b7e523d3862a36",
+            "blob": "f43f2cfeb97e1480b885bba3821e2ae00214aee4",
+            "content": "sha256:c54c7e8c89d37d07086c708d505d276719a4e0c6c067dffcc3c26b0d1b7a611a",
             "locator": {
               "end": 504,
               "kind": "line_range",

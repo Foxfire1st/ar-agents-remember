@@ -1,17 +1,19 @@
 {
   "path": "mcp/src/agents_remember/memory_quality/check.py",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
-      "note": "`memory_quality_check` MCP tool builds drift context and calls this runner.",
+      "note": "The registered `memory_quality_check` dispatches typed sync/start/poll requests to their payload builders; its description names candidate leaf-contract scope and required coherence validation.",
       "targets": [
         {
           "anchor": {
-            "blob": "bc203f51a480dfd6aa1e061eba5b13c974ed0a86",
-            "content": "sha256:b09603e04b6cf4b9e5b34d9a79fe6b45ec4c7aa6be6dcfb94875d51f2f3bb880",
+            "blob": "5dd2a44685920ec5d90e001beb9a4c0e14cf8c00",
+            "content": "sha256:5020bab552b9053a016c3fa1071a014a7e2989fa8c43f1185d109c3bd1ddacc7",
             "locator": {
-              "kind": "symbol",
-              "name": "memory_quality_check"
+              "end": 68,
+              "kind": "line_range",
+              "start": 51
             },
             "path": "mcp/src/agents_remember/mcp/registration/memory.py"
           },
@@ -19,12 +21,25 @@
         },
         {
           "anchor": {
-            "blob": "dcfe71aa4f7e50fefbfe8a4e18d21a3bd3106d86",
-            "content": "sha256:148ca44a62dc07a852a3ec1043d8292e85ab2b5d14a2f712e83b92ab57f86721",
+            "blob": "5dd2a44685920ec5d90e001beb9a4c0e14cf8c00",
+            "content": "sha256:43a1d7f95272f5ff1aa38680687e73983baf6cc1a83aba578dba8c56155f1f5f",
             "locator": {
-              "end": 75,
+              "end": 45,
               "kind": "line_range",
-              "start": 57
+              "start": 38
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/memory.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5dd2a44685920ec5d90e001beb9a4c0e14cf8c00",
+            "content": "sha256:9300e9d65f093aadea42a2e8d3fb56a7ca5198251793ae878b267f3621318d04",
+            "locator": {
+              "end": 68,
+              "kind": "line_range",
+              "start": 64
             },
             "path": "mcp/src/agents_remember/mcp/registration/memory.py"
           },
@@ -37,8 +52,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "30934f67876dc31aa7d36ec277f0841537570fb2",
-            "content": "sha256:2f06c63cdfc6f5727215116fe41106ac8ef9fabbe3111681d05f8c4e036dab1e",
+            "blob": "2464d2d12704dfa0b90457ac3a62acf2212bedb8",
+            "content": "sha256:ca9cd615f6db698de4ada87fa1a8bba53c7e86283086087c1c54b29fb93f58f2",
             "locator": {
               "end": 115,
               "kind": "line_range",
@@ -85,15 +100,14 @@
       ]
     },
     "16": {
-      "note": "The drift context carries the converted tree's comparison base.",
+      "note": "The drift context carries the converted tree's comparison base.\n\nAnchor: `DriftCheckContext`",
       "targets": [
         {
           "anchor": {
-            "blob": "1674ddafd122460d559e7f5b2a55090d8a447805",
-            "content": "sha256:8b1c897823a6f938c5aa7f09d014a7a79a37c660760e13f56fbecef815421617",
+            "blob": "acbadcd4888a7c17f2d92aed6961938cefde99d5",
+            "content": "sha256:d6de97e147d8e262922b1b7a1fed1346c158ac4683515916799ef798383a45b6",
             "locator": {
-              "kind": "symbol",
-              "name": "DriftCheckContext"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -101,15 +115,14 @@
       ]
     },
     "17": {
-      "note": "The converted check receives the base port.",
+      "note": "The converted check receives the base port.\n\nAnchor: `_converted_check`",
       "targets": [
         {
           "anchor": {
-            "blob": "1674ddafd122460d559e7f5b2a55090d8a447805",
-            "content": "sha256:14d2d4a47323a91bcd6415822b50ccb7c96517861036c7b8d272dc7d18cb3b61",
+            "blob": "acbadcd4888a7c17f2d92aed6961938cefde99d5",
+            "content": "sha256:d6de97e147d8e262922b1b7a1fed1346c158ac4683515916799ef798383a45b6",
             "locator": {
-              "kind": "symbol",
-              "name": "_converted_check"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -117,15 +130,14 @@
       ]
     },
     "18": {
-      "note": "The converted dispatch forwards independent validator and landing base ports.",
+      "note": "The converted dispatch forwards independent validator and landing base ports.\n\nAnchor: `_converted_check`",
       "targets": [
         {
           "anchor": {
-            "blob": "af90a5e881dbd08f059ec7d77453b13da9a65f36",
-            "content": "sha256:ef347bf7716d217d6f90928e3402100eb4c14121d37c55b248834a72bfc14450",
+            "blob": "acbadcd4888a7c17f2d92aed6961938cefde99d5",
+            "content": "sha256:d6de97e147d8e262922b1b7a1fed1346c158ac4683515916799ef798383a45b6",
             "locator": {
-              "kind": "symbol",
-              "name": "_converted_check"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -137,8 +149,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "658c6f6924b5894147f8e568aa85fa76d743161f",
-            "content": "sha256:d1ac205dbaa6ffc19900eec8884c15383ec45c72e0d1971e0100a0327dd2380e",
+            "blob": "a720a45eb42c920a7a873e768d3f2ffc1052178c",
+            "content": "sha256:3e9a916ba90afd210ad99829837375542936074de9cf0f334b1611456150a733",
             "locator": {
               "kind": "symbol",
               "name": "run_drift_summary"
@@ -149,8 +161,8 @@
         },
         {
           "anchor": {
-            "blob": "658c6f6924b5894147f8e568aa85fa76d743161f",
-            "content": "sha256:cc71e59e34007427b7f27a80030370176d365d5edb7aab0bd94795bd9d862c38",
+            "blob": "a720a45eb42c920a7a873e768d3f2ffc1052178c",
+            "content": "sha256:1b9953d970b36c875996a978d3da8113711651e3af76b139b1cdfc7bbd992065",
             "locator": {
               "end": 73,
               "kind": "line_range",
@@ -159,19 +171,29 @@
             "path": "mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/summary.py"
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a720a45eb42c920a7a873e768d3f2ffc1052178c",
+            "content": "sha256:ab519e5c7b3ac50307e78163aef14d1d777585b7c6f7ce352a5af81e674f87b0",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/summary.py"
+          },
+          "kind": "code"
         }
       ]
     },
     "4": {
-      "note": "The packet's `status` field typed by the imported status vocabulary, plus its `NotRequired` keys.",
+      "note": "The packet's `status` field typed by the imported status vocabulary, plus its `NotRequired` keys.\n\nAnchor: `DriftSummaryPacket`",
       "targets": [
         {
           "anchor": {
-            "blob": "e2170cdb4c53e14c97e2189e3b26cbf0cbe7d364",
-            "content": "sha256:b1213e60508c3a33c3ef17d5a6328b3c7b35a75d0a9db124c1e8ade517e853dc",
+            "blob": "d617ae8333cdb55f3cf9bdac4802153afe86655d",
+            "content": "sha256:bfcfc88d85e60d6e1136dcb896c75928a6d330f6843bc3bd028c58fb5b38b533",
             "locator": {
-              "kind": "symbol",
-              "name": "DriftSummaryPacket"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/models.py"
           },
@@ -252,8 +274,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "30934f67876dc31aa7d36ec277f0841537570fb2",
-            "content": "sha256:2f06c63cdfc6f5727215116fe41106ac8ef9fabbe3111681d05f8c4e036dab1e",
+            "blob": "2464d2d12704dfa0b90457ac3a62acf2212bedb8",
+            "content": "sha256:ca9cd615f6db698de4ada87fa1a8bba53c7e86283086087c1c54b29fb93f58f2",
             "locator": {
               "end": 115,
               "kind": "line_range",

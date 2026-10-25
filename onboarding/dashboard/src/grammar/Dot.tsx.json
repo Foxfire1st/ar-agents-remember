@@ -7,8 +7,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ddef0c7aeef2f5cdf7801233052007e107b0942f",
-            "content": "sha256:4f63f2788aad631331bd6bc90ba93465fecc9416fcfd9f7853ea1e8e1efc1975",
+            "blob": "ad18738b0d781e04a5a6ed715ccbd1f67f02b34b",
+            "content": "sha256:3bf23101250eb6f1cc151d92ae358f52e91a507bb65e47c844bcae9683e979db",
             "locator": {
               "kind": "file"
             }
@@ -18,12 +18,12 @@
       ]
     },
     "4": {
-      "note": "The unlayered `html[data-effects=\"off\"]` rule that nulls `animation`/`transition` with `!important` — why motion can never carry identity here.\n\nAnchor: \"unlayered html[data-effects=\"off\"] freeze\"",
+      "note": "The unlayered `html[data-effects=\"off\"]` rule that nulls `animation`/`transition` with `!important` — why motion can never carry identity here.",
       "targets": [
         {
           "anchor": {
-            "blob": "f6f4905f6238821e495131ba80290cba55ca4a21",
-            "content": "sha256:9532920553cc70c97159cd9f44de6a0516ae51fc591be7664d830222ac044808",
+            "blob": "319b14c211d7a499f34bc89014be9d0a17ca8dea",
+            "content": "sha256:b76d5cd1b87ed84512c23b0c6cfdc1f3aa0455f6456a6b2b07603f9e2cf73824",
             "locator": {
               "end": 9,
               "kind": "line_range",
@@ -40,8 +40,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6a460c6fd89ea57d3d7f84df6ae7869d0d6d5a95",
-            "content": "sha256:6c603b1b19d01b6fe32fda4bbc3064c40c3693bd4a08764799016c73f01b3d26",
+            "blob": "c12094244f7358af502e88ac603fcd73652b80ad",
+            "content": "sha256:fc4f4acc142ba429f3537d355197205d37fde3c67a2e9b62cbb0c1419490af9d",
             "locator": {
               "kind": "file"
             },

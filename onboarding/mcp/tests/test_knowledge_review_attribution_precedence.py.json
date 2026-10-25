@@ -20,7 +20,7 @@
       ]
     },
     "11": {
-      "note": "`test_a_damaged_knowledge_half_cannot_support_a_negative_attribution_conclusion` owns the current boundary described above.",
+      "note": "`test_a_damaged_knowledge_half_cannot_support_a_negative_attribution_conclusion` owns the current boundary described above.  > Retained earlier citation wording: - **The precedence cases: one unreadable half leaves the readable side attributed and the rest unknown; the same pair read completely confirms absence where the lost half could not; a damaged half cannot support a negative conclusion.**  > Retained earlier citation wording: - The unit-regression lane row, beside its sibling's. Anchor: `test_knowledge_review_attribution_precedence`",
       "targets": [
         {
           "anchor": {
@@ -43,6 +43,42 @@
             "blob": "26bea4dd1c38960ff6a3657933b7f67eaf5de29a",
             "content": "sha256:bab86f608af5e7616a8171381280f06d69cc9aa26e631a371aecc709c0a27828",
             "locator": {
+              "end": 126,
+              "kind": "line_range",
+              "start": 102
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "26bea4dd1c38960ff6a3657933b7f67eaf5de29a",
+            "content": "sha256:773107394bbdc64fce4ae5f0c2bfb2e3ba7a795611781ce0ac1f9bc2e3ff98f2",
+            "locator": {
+              "end": 184,
+              "kind": "line_range",
+              "start": 161
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "26bea4dd1c38960ff6a3657933b7f67eaf5de29a",
+            "content": "sha256:6984c5db6e9442ccd83da7cad9eeb5ecf6bcdb706e9b86af68b6dbe0ea10b1d9",
+            "locator": {
+              "end": 217,
+              "kind": "line_range",
+              "start": 187
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "26bea4dd1c38960ff6a3657933b7f67eaf5de29a",
+            "content": "sha256:bab86f608af5e7616a8171381280f06d69cc9aa26e631a371aecc709c0a27828",
+            "locator": {
               "kind": "symbol",
               "name": "test_one_unreadable_knowledge_half_leaves_the_readable_side_attributed_and_the_rest_unknown"
             }
@@ -56,12 +92,51 @@
       "targets": [
         {
           "anchor": {
-            "blob": "11ba98ff63f4a4815985ac51e2c0c7b5a48556a4",
+            "blob": "102c4550ab6429f44c8fb543d1d0662de66a1b8c",
+            "content": "sha256:7700d68dcf4855295d022fa726b30b7d6da58a42755ce8d37843d680b6327b07",
+            "locator": {
+              "end": 5,
+              "kind": "line_range",
+              "start": 4
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "102c4550ab6429f44c8fb543d1d0662de66a1b8c",
+            "content": "sha256:38e9f32e39e043b91e89c08e85f0f096c064442116b67c9e8375c2dced581e29",
+            "locator": {
+              "end": 179,
+              "kind": "line_range",
+              "start": 177
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "102c4550ab6429f44c8fb543d1d0662de66a1b8c",
             "content": "sha256:6027af8247fcbbf12777fca8eae097ec0fc644ead20dc6255cbb7bb10446dd31",
             "locator": {
-              "end": 175,
+              "end": 178,
               "kind": "line_range",
-              "start": 175
+              "start": 178
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "102c4550ab6429f44c8fb543d1d0662de66a1b8c",
+            "content": "sha256:da02548ce4ede5f08c6d261a0d17d44df0708ada720380fbf5906306bcf3b81e",
+            "locator": {
+              "end": 147,
+              "kind": "line_range",
+              "start": 147
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },

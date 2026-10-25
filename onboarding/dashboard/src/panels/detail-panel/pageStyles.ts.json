@@ -35,7 +35,7 @@
       ]
     },
     "3": {
-      "note": "Order work/ready/waits and legend accents retain relation marks; task-status words still use the common table.\n\nAnchor: Order CSS, relation marks and shared status presentation",
+      "note": "Task-status words still come from the shared STATUS_WORDS tone/word table, while the order work/ready/waits legend keeps its relation marks in the order-graph panel.",
       "targets": [
         {
           "anchor": {
@@ -63,12 +63,12 @@
         },
         {
           "anchor": {
-            "blob": "901cf61d779e58bf30849e0eea78a9123b9792fd",
-            "content": "sha256:8696a9cbb2aa564405705eb6e1da2c0815a977cde562695dce0594fa14960a6d",
+            "blob": "bc164a94462c83d4491167bce3b58a8ce7003b54",
+            "content": "sha256:dfc6d6ce8ef975fac5e82a30eacde63c043fb59fc573bd9e3068d3a448312071",
             "locator": {
-              "end": 104,
+              "end": 108,
               "kind": "line_range",
-              "start": 69
+              "start": 73
             },
             "path": "dashboard/src/panels/detail-panel/pageParts.tsx"
           },

@@ -1,14 +1,25 @@
 {
   "path": "mcp/src/agents_remember/application/knowledge_read.py",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
-      "note": "**The constructor that resolves a context from the identity the file actually holds, so a caller cannot hand-write the snapshot a read is verified against.**",
+      "note": "**The constructor that resolves a context from the identity the file actually holds, so a caller cannot hand-write the snapshot a read is verified against.**\n\nAnchor: `open_read_context`",
       "targets": [
         {
           "anchor": {
-            "blob": "b71c42f66555bf28336d90d4449c7f9b2aaede25",
-            "content": "sha256:6b25c5ae9bc387cc07259a2f7f75a5be091b9d352b392c4a435b056f1a50eed5",
+            "blob": "9d2460c7b39373ba3a888ebd88da47468cc93266",
+            "content": "sha256:ca739f3b2996c442fd9c6e03488e5ff8b46ff05da0437375a48061f73df7d72f",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9d2460c7b39373ba3a888ebd88da47468cc93266",
+            "content": "sha256:3b8eed5fbfb87e74aa54c8c4c607da5cf6af518e8986d2891659a70661f90548",
             "locator": {
               "kind": "symbol",
               "name": "open_read_context"
@@ -62,6 +73,18 @@
               "end": 391,
               "kind": "line_range",
               "start": 359
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9d2460c7b39373ba3a888ebd88da47468cc93266",
+            "content": "sha256:1d203bf4721c4d4a0353ef558fec900ec329dbc209e8895fc45a2c17391a1040",
+            "locator": {
+              "end": 389,
+              "kind": "line_range",
+              "start": 357
             }
           },
           "kind": "code"
@@ -198,11 +221,63 @@
             "path": "mcp/tests/test_knowledge_read_boundaries.py"
           },
           "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b8b22ada1c4ed31896992818816752ec5841126e",
+            "content": "sha256:268a4caf82bace4e39eb52cc58bf042b70577f7a1528d13bfdcc78c3df7a2943",
+            "locator": {
+              "end": 613,
+              "kind": "line_range",
+              "start": 602
+            },
+            "path": "mcp/tests/test_knowledge_read_boundaries.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b8b22ada1c4ed31896992818816752ec5841126e",
+            "content": "sha256:23cc0712da7df403e2e856adffb5b2b33c359a0e14ff226e0601cffbd6d648c6",
+            "locator": {
+              "end": 758,
+              "kind": "line_range",
+              "start": 700
+            },
+            "path": "mcp/tests/test_knowledge_read_boundaries.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b8b22ada1c4ed31896992818816752ec5841126e",
+            "content": "sha256:477e0c6e8814b998ab1d65592662291182f9529cfb0f1f06a5740dba7833df88",
+            "locator": {
+              "end": 796,
+              "kind": "line_range",
+              "start": 761
+            },
+            "path": "mcp/tests/test_knowledge_read_boundaries.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b8b22ada1c4ed31896992818816752ec5841126e",
+            "content": "sha256:d13a0a3ba75e78d6401eede1989ec3b40fc236c98235f0807b39e015af045104",
+            "locator": {
+              "end": 943,
+              "kind": "line_range",
+              "start": 912
+            },
+            "path": "mcp/tests/test_knowledge_read_boundaries.py"
+          },
+          "kind": "test"
         }
       ]
     },
     "14": {
-      "note": "**The task-free baseline read node, the snapshot/namespace/schema refusal nodes and the absent-database node.**\n\nAnchor: \"test_a_baseline_read_serves_a_task_free_context_and_reaches_the_whole_selected_scope\"; \"test_a_context_naming_another_namespace_refuses_and_names_both_identities\"; \"test_a_context_whose_logical_digest_is_not_the_files_is_refused\"; \"test_a_context_declaring_another_schema_generation_is_refused_before_a_page_is_built\"; \"test_an_absent_database_refuses_as_an_unavailable_input_rather_than_as_empty_knowledge\"",
+      "note": "**The task-free baseline read node, the snapshot/namespace/schema refusal nodes and the absent-database node.**",
       "targets": [
         {
           "anchor": {
@@ -232,8 +307,8 @@
         },
         {
           "anchor": {
-            "blob": "beb6950c6a52b96e321ecc6a5edd6278cc6591c7",
-            "content": "sha256:907798c0af2dbd66275012f7af49f64ce659b5ca0316491d9c9108bd33e11f24",
+            "blob": "b8b22ada1c4ed31896992818816752ec5841126e",
+            "content": "sha256:df45d85456e4817c6b0d5c191078f0517dc564e1f66c3ccf416934af4c0e62f6",
             "locator": {
               "end": 542,
               "kind": "line_range",
@@ -264,6 +339,58 @@
               "end": 606,
               "kind": "line_range",
               "start": 606
+            },
+            "path": "mcp/tests/test_knowledge_read_boundaries.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b8b22ada1c4ed31896992818816752ec5841126e",
+            "content": "sha256:020b8a6c6b099b79ad0ff8983c7cdf72753240a7c126aab3b8e69705c9776d7b",
+            "locator": {
+              "end": 577,
+              "kind": "line_range",
+              "start": 554
+            },
+            "path": "mcp/tests/test_knowledge_read_boundaries.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b8b22ada1c4ed31896992818816752ec5841126e",
+            "content": "sha256:bedd8a7acc51aa53ab176f173e68f8e4716cb56b59bba22c024172d9f7f573c9",
+            "locator": {
+              "end": 516,
+              "kind": "line_range",
+              "start": 487
+            },
+            "path": "mcp/tests/test_knowledge_read_boundaries.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b8b22ada1c4ed31896992818816752ec5841126e",
+            "content": "sha256:4e1eab55ee0fdccbb3d42b90dc9fa2b977aaa2307e8d83bd449eb6132d909e28",
+            "locator": {
+              "end": 815,
+              "kind": "line_range",
+              "start": 752
+            },
+            "path": "mcp/tests/test_knowledge_read_boundaries.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b8b22ada1c4ed31896992818816752ec5841126e",
+            "content": "sha256:fc3707a990bbf0529e71e0c2e2cf811b526cad9bd1c9377b43b72d87af698310",
+            "locator": {
+              "end": 580,
+              "kind": "line_range",
+              "start": 580
             },
             "path": "mcp/tests/test_knowledge_read_boundaries.py"
           },
@@ -337,6 +464,58 @@
             "path": "mcp/tests/test_knowledge_read_boundaries.py"
           },
           "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b8b22ada1c4ed31896992818816752ec5841126e",
+            "content": "sha256:c4339394d6680d56da063e28ab0f29c2a66dfb58a6b6f430ba2e2bc9a9fa8295",
+            "locator": {
+              "end": 602,
+              "kind": "line_range",
+              "start": 602
+            },
+            "path": "mcp/tests/test_knowledge_read_boundaries.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b8b22ada1c4ed31896992818816752ec5841126e",
+            "content": "sha256:1a8725657293b4874121f6ac5a7cf7bb64ebfacb839a0f03010eebde17d40e93",
+            "locator": {
+              "end": 713,
+              "kind": "line_range",
+              "start": 653
+            },
+            "path": "mcp/tests/test_knowledge_read_boundaries.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b8b22ada1c4ed31896992818816752ec5841126e",
+            "content": "sha256:042b49f4bdd479ccf674adbfbcc9b93579ca3d00fe0ed4e533b2b47630ca1411",
+            "locator": {
+              "end": 761,
+              "kind": "line_range",
+              "start": 761
+            },
+            "path": "mcp/tests/test_knowledge_read_boundaries.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b8b22ada1c4ed31896992818816752ec5841126e",
+            "content": "sha256:3969cc60391b2ec62cffe390d0dd75f3c7c0ff0b80a658205a6268b4424789e6",
+            "locator": {
+              "end": 912,
+              "kind": "line_range",
+              "start": 912
+            },
+            "path": "mcp/tests/test_knowledge_read_boundaries.py"
+          },
+          "kind": "test"
         }
       ]
     },
@@ -358,12 +537,23 @@
       ]
     },
     "17": {
-      "note": "The schema identity the seam inspects before it selects anything.",
+      "note": "The schema identity the seam inspects before it selects anything.\n\nAnchor: `inspect_schema`",
       "targets": [
         {
           "anchor": {
-            "blob": "5330296baa8cabeac31286bb196c70bcf2763703",
-            "content": "sha256:930d3a928f847e7604bbfec6b53ca6fe384a4611fa001211ae4f11be297e4d66",
+            "blob": "9c7a8f0bd625027cff8b6d9d775cae6526466089",
+            "content": "sha256:6103fb9c356387c002eb386f9eccd45c4d05899ecd91ba0e16bd14038f297f0d",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/connection.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9c7a8f0bd625027cff8b6d9d775cae6526466089",
+            "content": "sha256:a9ab19749b103506ed6a72c592dcae453297474764557b6b15191e08389da3cf",
             "locator": {
               "kind": "symbol",
               "name": "inspect_schema"
@@ -456,8 +646,18 @@
       ]
     },
     "6": {
-      "note": "**MIK-R02: the whole verified scope of one seed, unpaged, under the same guard and failure mapping.**",
+      "note": "**MIK-R02: the whole verified scope of one seed, unpaged, under the same guard and failure mapping.**\n\nAnchor: `select_knowledge_scope` `_guarded` `_selected_scope`",
       "targets": [
+        {
+          "anchor": {
+            "blob": "9d2460c7b39373ba3a888ebd88da47468cc93266",
+            "content": "sha256:ca739f3b2996c442fd9c6e03488e5ff8b46ff05da0437375a48061f73df7d72f",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
         {
           "anchor": {
             "blob": "9d2460c7b39373ba3a888ebd88da47468cc93266",
@@ -471,8 +671,8 @@
         },
         {
           "anchor": {
-            "blob": "6679af216c37ef21bacdda5ff59f20b077ab50d3",
-            "content": "sha256:2066e84bbda10501e44f2137cd665b656601a1006292dd14a08426df2c87187c",
+            "blob": "9d2460c7b39373ba3a888ebd88da47468cc93266",
+            "content": "sha256:17df8a8c566982f23d0148d856d2b1c4bf86ec6fac2d180866d8ad5d834404d1",
             "locator": {
               "kind": "symbol",
               "name": "_guarded"

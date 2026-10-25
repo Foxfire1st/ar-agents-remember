@@ -33,7 +33,9 @@ public names of its submodules; it contains no logic of its own.
   converted-base cache, review R1 F6) is imported by `leaf` and `onboarding_trace` and is not re-exported.
 - `membership` registers `UNASSIGNED_INVARIANT_KIND` for live new/newly unlisted invariants; `touched_records` registers `TOUCHED_RECORD_KIND` for changed base decision/facet records. Both kinds are exported and enter through compute, not recursive family traversal. The four-kind L30 snapshot below is historical.
 
+
 - Membership and touched-record kinds join the public worklist surface. [15]
+
 - `__all__` re-exports the run (`compute_worklist`, `incomplete_worklist`, `WorklistInputs`, `Item`,
   `Incomplete`, `WORKLIST_SCHEMA`), the leaf surface (`leaf_worklist`, `recompute_leaf_worklist`,
   `LeafWorklistRecompute`, `worklist_for_sides`, `ExplicitSides`, `persist_worklist`, `read_leaf_worklist`,
@@ -136,9 +138,13 @@ No configured live documentation source was available for this pass.
 ### Repo-Internal References
 
 - The package map and the three raising cases. [11]
+
 - The re-exported public names. [12]
+
 - The run entry point it re-exports (since MIK-R09 a Git call that fails or times out makes the run `incomplete` naming `git`). [13]
+
 - The one recompute entry point it re-exports for L08's triggers (since MIK-R09 a Git failure is named `git`; the mandatory gate recomputes through `leaf_worklist` over its exact candidate). [14]
+
 
 ### Cross-Repo References
 

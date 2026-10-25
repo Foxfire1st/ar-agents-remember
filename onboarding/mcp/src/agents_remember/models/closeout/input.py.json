@@ -1,9 +1,10 @@
 {
   "path": "mcp/src/agents_remember/models/closeout/input.py",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
-      "note": "Raw input, resolved plans, effective input, and message-field vocabulary contain code and memory only.",
+      "note": "Raw input, resolved plans, effective input, and message-field vocabulary contain code and memory only.\n\nAnchor: `CloseoutCommitLegName` `EffectiveCloseoutInput`",
       "targets": [
         {
           "anchor": {
@@ -18,8 +19,8 @@
         },
         {
           "anchor": {
-            "blob": "681650244368f19f94b6933c5e5bc1ad7066e642",
-            "content": "sha256:b5e66c5b68b109768d7f9b3fa3b46cef7c18c9b10729650e94dee8263695b769",
+            "blob": "55d70d4c4f5afc640625e66189bae6733fc902fd",
+            "content": "sha256:457b9ce311765d89fa23812aeecfe4ef682abdaf9bab7db651d5350730d5ccf0",
             "locator": {
               "kind": "symbol",
               "name": "EffectiveCloseoutInput"
@@ -35,6 +36,16 @@
               "end": 32,
               "kind": "line_range",
               "start": 32
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "55d70d4c4f5afc640625e66189bae6733fc902fd",
+            "content": "sha256:8e7a43288932c874261fa782a5f1e091f46de297584a499b2f623b8d4da4525d",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -74,10 +85,21 @@
         {
           "anchor": {
             "blob": "55d70d4c4f5afc640625e66189bae6733fc902fd",
-            "content": "sha256:cddc1709e2ea3b45f4c901c4af378308e81acf84cceb4caaf0cc213cac5ebedd",
+            "content": "sha256:8e272d5d3aebe96cc9f9600241586e3ded7ea7ec493af34631d2b12e90cd5971",
             "locator": {
               "kind": "symbol",
-              "name": "EffectiveCloseoutLeg"
+              "name": "CloseoutMessageInput"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "55d70d4c4f5afc640625e66189bae6733fc902fd",
+            "content": "sha256:dde7ba7bb8b303bbf419202b9a1fb3358d68f2505b2a5b83df405199a842647e",
+            "locator": {
+              "kind": "symbol",
+              "name": "CloseoutInvalidField"
             }
           },
           "kind": "code"
@@ -233,8 +255,19 @@
       ]
     },
     "8": {
-      "note": "The census that enforces the one definition this route now depends on — the key identifier and its interpolation in exactly one production module, and all five producers reaching a shared renderer entry, this model's method included.",
+      "note": "The census that enforces the one definition this route now depends on — the key identifier and its interpolation in exactly one production module, and all five producers reaching a shared renderer entry, this model's method included.\n\nAnchor: `test_the_attribution_key_is_named_and_rendered_in_exactly_one_module` `test_every_census_producer_reaches_the_shared_renderer`",
       "targets": [
+        {
+          "anchor": {
+            "blob": "659c4e4b7b46e70bfdd7a52d67c89425345d4f8c",
+            "content": "sha256:c0f95d663316f578a2fdcc9fda38ac17dd4209e670da772d11647555eff9b14c",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_memory_attribution_producers.py"
+          },
+          "kind": "test"
+        },
         {
           "anchor": {
             "blob": "659c4e4b7b46e70bfdd7a52d67c89425345d4f8c",
@@ -249,8 +282,8 @@
         },
         {
           "anchor": {
-            "blob": "099211937d3cad09ea11f90a89074c9a08a5b415",
-            "content": "sha256:eebbd1e7d3bc3c69dd94ce1fae90d8fca19dbf187d18734f35d16dc1dcb4c116",
+            "blob": "659c4e4b7b46e70bfdd7a52d67c89425345d4f8c",
+            "content": "sha256:41abd9b7675b6a614e19ffa3d765ecdb9acb65c973876ff336042dc1069d18af",
             "locator": {
               "kind": "symbol",
               "name": "test_every_census_producer_reaches_the_shared_renderer"
@@ -262,12 +295,34 @@
       ]
     },
     "9": {
-      "note": "The worktree and direct routes render attributed memory messages at their real commit seams (since MIK-R09 the worktree route first validates a converted leaf's exact tree); no ledger commit is produced.",
+      "note": "The worktree and direct routes render attributed memory messages at their real commit seams (since MIK-R09 the worktree route first validates a converted leaf's exact tree); no ledger commit is produced.\n\nAnchor: `_commit_memory_content` `_direct_memory_commit`",
       "targets": [
         {
           "anchor": {
-            "blob": "19c72639c979ce52f9f07935337ddf20b3666852",
-            "content": "sha256:f42805eb6774d150f98de11e3a85ac0aaf847636b3e0fc97b7ac9423f264f663",
+            "blob": "eecdaff3bad79ebac4230c53a03b1b6e2e47c1cf",
+            "content": "sha256:b4b64e690f1183dff4dd72d8c7499aa007f8a2bb01db4e82338a750dd4f62f15",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6c7d29157526ef2aafde959c4a7507881596815e",
+            "content": "sha256:41d08a6dbcb3eb262f4bd5a757022983784d0b77e9cc89108038789754647e50",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_execution.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "eecdaff3bad79ebac4230c53a03b1b6e2e47c1cf",
+            "content": "sha256:d74fc2b14e7948998b1aaaea59cb7cb4c2d67731eee72bafdab33e7f9381ff29",
             "locator": {
               "kind": "symbol",
               "name": "_commit_memory_content"
@@ -278,8 +333,8 @@
         },
         {
           "anchor": {
-            "blob": "71f832a845ba7f4e7e47de4c6929d9ffa42c2495",
-            "content": "sha256:71dc6b111f8da282d014b6892504a7795300587220e818cb6e952e175f640f4d",
+            "blob": "6c7d29157526ef2aafde959c4a7507881596815e",
+            "content": "sha256:d55ef03d9421165196bd4bf02c64554ea14fa011dad895ac5600779f6986b837",
             "locator": {
               "kind": "symbol",
               "name": "_direct_memory_commit"

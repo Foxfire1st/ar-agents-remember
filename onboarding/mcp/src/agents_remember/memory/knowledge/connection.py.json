@@ -19,15 +19,14 @@
       ]
     },
     "14": {
-      "note": "`create_or_validate_schema` owns the current boundary described above.",
+      "note": "`create_or_validate_schema` owns the current boundary described above.\n\nAnchor: `create_or_validate_schema`",
       "targets": [
         {
           "anchor": {
-            "blob": "5330296baa8cabeac31286bb196c70bcf2763703",
-            "content": "sha256:53c6a302dae053cdcdc2b6cc13bf78624646239924382882de2449261f0f3090",
+            "blob": "9c7a8f0bd625027cff8b6d9d775cae6526466089",
+            "content": "sha256:6103fb9c356387c002eb386f9eccd45c4d05899ecd91ba0e16bd14038f297f0d",
             "locator": {
-              "kind": "symbol",
-              "name": "create_or_validate_schema"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -35,15 +34,14 @@
       ]
     },
     "15": {
-      "note": "`inspect_schema` owns the current boundary described above.",
+      "note": "`inspect_schema` owns the current boundary described above.\n\nAnchor: `inspect_schema`",
       "targets": [
         {
           "anchor": {
-            "blob": "5330296baa8cabeac31286bb196c70bcf2763703",
-            "content": "sha256:930d3a928f847e7604bbfec6b53ca6fe384a4611fa001211ae4f11be297e4d66",
+            "blob": "9c7a8f0bd625027cff8b6d9d775cae6526466089",
+            "content": "sha256:6103fb9c356387c002eb386f9eccd45c4d05899ecd91ba0e16bd14038f297f0d",
             "locator": {
-              "kind": "symbol",
-              "name": "inspect_schema"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -99,15 +97,14 @@
       ]
     },
     "19": {
-      "note": "- Create-on-empty versus validate-on-existing, and the post-commit version marker.",
+      "note": "- Create-on-empty versus validate-on-existing, and the post-commit version marker.\n\nAnchor: `create_or_validate_schema`",
       "targets": [
         {
           "anchor": {
-            "blob": "5330296baa8cabeac31286bb196c70bcf2763703",
-            "content": "sha256:53c6a302dae053cdcdc2b6cc13bf78624646239924382882de2449261f0f3090",
+            "blob": "9c7a8f0bd625027cff8b6d9d775cae6526466089",
+            "content": "sha256:6103fb9c356387c002eb386f9eccd45c4d05899ecd91ba0e16bd14038f297f0d",
             "locator": {
-              "kind": "symbol",
-              "name": "create_or_validate_schema"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -115,15 +112,14 @@
       ]
     },
     "20": {
-      "note": "- The existing database is checked for generation, exact table columns and the full trigger set.",
+      "note": "- The existing database is checked for generation, exact table columns and the full trigger set.\n\nAnchor: `inspect_schema`",
       "targets": [
         {
           "anchor": {
-            "blob": "5330296baa8cabeac31286bb196c70bcf2763703",
-            "content": "sha256:930d3a928f847e7604bbfec6b53ca6fe384a4611fa001211ae4f11be297e4d66",
+            "blob": "9c7a8f0bd625027cff8b6d9d775cae6526466089",
+            "content": "sha256:6103fb9c356387c002eb386f9eccd45c4d05899ecd91ba0e16bd14038f297f0d",
             "locator": {
-              "kind": "symbol",
-              "name": "inspect_schema"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -147,15 +143,14 @@
       ]
     },
     "22": {
-      "note": "- The graph readers that reuse the one-row helper.",
+      "note": "- The graph readers that reuse the one-row helper.\n\nAnchor: `get_family_revision`",
       "targets": [
         {
           "anchor": {
-            "blob": "66102e9850b5f1c88cdba3b4cbd1af7d321197e8",
-            "content": "sha256:be4b89a03071dfec313b2a235a46f08cf7115843cc9c516c6f0287f5b35be4c0",
+            "blob": "fafa18088da97ad02199d8d81db836c10e274a58",
+            "content": "sha256:57f72baf8adc3f53f857c90088fe3142582d1c875cdce06320c91253b8665a11",
             "locator": {
-              "kind": "symbol",
-              "name": "get_family_revision"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/memory/knowledge/families.py"
           },

@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/cli/paseo_role_tools.py",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
@@ -606,8 +607,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "27865ad091d9188d70cd5637bd75233d8f5bae16",
-            "content": "sha256:a69e6b61f7c63f603ece2e45eeeabda148c06cc8ef977717f8b3bb5073450459",
+            "blob": "4f542fc6a6101512a8a4688f8bd109a5ae5c55f1",
+            "content": "sha256:da8fc34daa9eb7458bc351502dd76d87c9a1ef247dd3c208c1e06d46f0e29f67",
             "locator": {
               "kind": "file"
             }
@@ -617,27 +618,28 @@
       ]
     },
     "11": {
-      "note": "Public message call uses local resolution, report collection, prologue filing and held/native dispatch rather than the retained delivery-module dispatcher.\n\nLeaf revival compares current grant-sensitive canonical task/contract scope before bridge use.",
+      "note": "Public message call uses local resolution, report collection, prologue filing and held/native dispatch rather than the retained delivery-module dispatcher.  Leaf revival compares current grant-sensitive canonical task/contract scope before bridge use.",
       "targets": [
         {
           "anchor": {
             "blob": "4f542fc6a6101512a8a4688f8bd109a5ae5c55f1",
-            "content": "sha256:d76d5b2e8837a52a2a5983f15e9d924fffb772f728a7fde5152e6db885f8af24",
+            "content": "sha256:beb65176764bcad989badce2fc11b1bd09348cc5f8312901e3312fe876cab935",
             "locator": {
-              "kind": "symbol",
-              "name": "send_role_message"
+              "end": 826,
+              "kind": "line_range",
+              "start": 764
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "27865ad091d9188d70cd5637bd75233d8f5bae16",
-            "content": "sha256:fc2953de0fb8c3fd3b7c21197a92aa13dedea42c4bc086b4abf6d202b34b0209",
+            "blob": "4f542fc6a6101512a8a4688f8bd109a5ae5c55f1",
+            "content": "sha256:d4b6b3f5ed3fce2dbbae284d42489978a6726df9d32f49c71de6d0026479c18e",
             "locator": {
-              "end": 1647,
+              "end": 1829,
               "kind": "line_range",
-              "start": 1
+              "start": 1809
             }
           },
           "kind": "code"
@@ -647,6 +649,42 @@
     "12": {
       "note": "After ordinary recipient resolution succeeds, the prologue constructs the filed identity from shared attachment/link/store primitives before that resolved-recipient delivery; unfinished-start holding returns through _hold_for_unresolved before _file_message and has no filed identity.",
       "targets": [
+        {
+          "anchor": {
+            "blob": "4f542fc6a6101512a8a4688f8bd109a5ae5c55f1",
+            "content": "sha256:451370779bf011b9179e6754d32b06340ca91ff5177ca34a6b9c400de0d2ba69",
+            "locator": {
+              "end": 785,
+              "kind": "line_range",
+              "start": 732
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4f542fc6a6101512a8a4688f8bd109a5ae5c55f1",
+            "content": "sha256:d063606f26994922812368c8bfe1cee9c397385d6189cde2ac8ca2b3914b80c5",
+            "locator": {
+              "end": 850,
+              "kind": "line_range",
+              "start": 788
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4f542fc6a6101512a8a4688f8bd109a5ae5c55f1",
+            "content": "sha256:892df358d7c76e5531b5ff1a1b1108b74ae5fa9393eb9927da42bfd8bb6442c2",
+            "locator": {
+              "end": 1076,
+              "kind": "line_range",
+              "start": 1057
+            }
+          },
+          "kind": "code"
+        },
         {
           "anchor": {
             "blob": "4f542fc6a6101512a8a4688f8bd109a5ae5c55f1",
@@ -679,6 +717,42 @@
               "end": 1079,
               "kind": "line_range",
               "start": 1060
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4f542fc6a6101512a8a4688f8bd109a5ae5c55f1",
+            "content": "sha256:4c8ece809cd773e809413aab95712be6721f94d80e20dffd07dbdb2450709478",
+            "locator": {
+              "end": 782,
+              "kind": "line_range",
+              "start": 729
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4f542fc6a6101512a8a4688f8bd109a5ae5c55f1",
+            "content": "sha256:10be109a68b9507b5b521bc567c4821f19eee5f5c6535271f56bdc58966a3b40",
+            "locator": {
+              "end": 847,
+              "kind": "line_range",
+              "start": 785
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4f542fc6a6101512a8a4688f8bd109a5ae5c55f1",
+            "content": "sha256:f49276f194deefd411f91b27f8480f6a0043f827bc417ba4abec6d45692674f4",
+            "locator": {
+              "end": 1073,
+              "kind": "line_range",
+              "start": 1054
             }
           },
           "kind": "code"
@@ -723,6 +797,18 @@
         {
           "anchor": {
             "blob": "4f542fc6a6101512a8a4688f8bd109a5ae5c55f1",
+            "content": "sha256:f7e90450e693e938dd444a600258d879c831fa02214ec34eee83a830226e6d9a",
+            "locator": {
+              "end": 562,
+              "kind": "line_range",
+              "start": 495
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4f542fc6a6101512a8a4688f8bd109a5ae5c55f1",
             "content": "sha256:86a9e4b5aa714b12c4d1596aad684467e28cb81bad07515dea1806c715bb374e",
             "locator": {
               "end": 565,
@@ -731,16 +817,28 @@
             }
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4f542fc6a6101512a8a4688f8bd109a5ae5c55f1",
+            "content": "sha256:c880b0569715f1c6d65a67e51639789b9042795f04234ff0d1ef0ed54157132b",
+            "locator": {
+              "end": 559,
+              "kind": "line_range",
+              "start": 492
+            }
+          },
+          "kind": "code"
         }
       ]
     },
     "16": {
-      "note": "Projection now delegates to the extracted answer owner.\n\nAnchor: Current source; preserved L88 property 16",
+      "note": "Projection now delegates to the extracted answer owner.",
       "targets": [
         {
           "anchor": {
-            "blob": "27865ad091d9188d70cd5637bd75233d8f5bae16",
-            "content": "sha256:75a11da44c802486bc6f65640aa48a730f0f684c5c07a42ba3cd1735eb3fb070",
+            "blob": "4f542fc6a6101512a8a4688f8bd109a5ae5c55f1",
+            "content": "sha256:bae4627cff64a6320a1f7b275993044113038bc0bd40eb71731ec564c6d32579",
             "locator": {
               "end": 675,
               "kind": "line_range",
@@ -788,11 +886,11 @@
         {
           "anchor": {
             "blob": "12aab96f86c33555f5973aa2e4fc3cf0a6b827b4",
-            "content": "sha256:fb204c62fce606ae6c928d09415ba9506ab2110ae7f1e06b0bfb1351365f5a62",
+            "content": "sha256:7444244c4bf0aafe48c70951dd2b4d08494b80c9612b41cb44b3b397151ca660",
             "locator": {
-              "end": 129,
+              "end": 131,
               "kind": "line_range",
-              "start": 93
+              "start": 95
             },
             "path": "mcp/src/agents_remember/cli/role_launch_receipts.py"
           },
@@ -808,6 +906,32 @@
               "start": 1
             },
             "path": "mcp/src/agents_remember/cli/role_start_answer.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "12aab96f86c33555f5973aa2e4fc3cf0a6b827b4",
+            "content": "sha256:fb204c62fce606ae6c928d09415ba9506ab2110ae7f1e06b0bfb1351365f5a62",
+            "locator": {
+              "end": 129,
+              "kind": "line_range",
+              "start": 93
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_receipts.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "12aab96f86c33555f5973aa2e4fc3cf0a6b827b4",
+            "content": "sha256:e0599bedbc353596bd239ec382536966f335442da377d98f4bbad012c85c2ba8",
+            "locator": {
+              "end": 132,
+              "kind": "line_range",
+              "start": 96
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_receipts.py"
           },
           "kind": "code"
         }
@@ -846,8 +970,42 @@
       ]
     },
     "20": {
-      "note": "The start carries the client harness; configured-host choices are checked before dispatch, while a cold root defers binding and validation until after preparation.\n\nAnchor: `_start_role`, `bound_to_caller_harness`",
+      "note": "The start carries the client harness; configured-host choices are checked before dispatch, while a cold root defers binding and validation until after preparation.\n\nAnchor: `bound_to_caller_harness`",
       "targets": [
+        {
+          "anchor": {
+            "blob": "f8cfe435ca6fbe3bbe12080957f343453ad78be9",
+            "content": "sha256:754408ad18741d52cf5e04e2ab1fed531e79502b9ee5044bb4360ad704ad495c",
+            "locator": {
+              "end": 278,
+              "kind": "line_range",
+              "start": 250
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_routes.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "932a9eb64943b87d06372b21f57b90a7dbfad8a7",
+            "content": "sha256:9bc0df8385879b45f8fc2a81c89b74d4005f4c6bb842c47f060b2903ef46d49f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/role_agent_override.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4f542fc6a6101512a8a4688f8bd109a5ae5c55f1",
+            "content": "sha256:da8fc34daa9eb7458bc351502dd76d87c9a1ef247dd3c208c1e06d46f0e29f67",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
         {
           "anchor": {
             "blob": "932a9eb64943b87d06372b21f57b90a7dbfad8a7",
@@ -870,16 +1028,6 @@
               "start": 260
             },
             "path": "mcp/src/agents_remember/cli/role_launch_routes.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "27865ad091d9188d70cd5637bd75233d8f5bae16",
-            "content": "sha256:a69e6b61f7c63f603ece2e45eeeabda148c06cc8ef977717f8b3bb5073450459",
-            "locator": {
-              "kind": "file"
-            }
           },
           "kind": "code"
         }

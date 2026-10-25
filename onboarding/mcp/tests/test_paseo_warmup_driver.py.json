@@ -7,8 +7,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "78eddaf6d47e8b7ca05a144ea22530fe4fdd11b5",
-            "content": "sha256:dd98c123c55df6177f6515a9615bc8878b633136fa1b2dff4428ec9a4ed4f24b",
+            "blob": "fa6b05127f21eb41de2b60b6c0ec7a4b14462b7e",
+            "content": "sha256:0e60a55abf1ff0f7aeefb8332fcb89eac30117865ad74363e81cbde767139e1d",
             "locator": {
               "kind": "file"
             }

@@ -20,83 +20,66 @@
     }
   ],
   "references": {
-    "1": {
-      "note": "A leaf's declared knowledge effects are checked against its packet; a mismatch is a finding (MIK-R11).\n\nAnchor: `expectedKnowledgeEffects`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "89fce2dcfcb7aecf803f8c647736688a7c01bb64",
-            "content": "sha256:6e496165f569558e9be2890f58fdbf115dfb83e1977232bf4eb80b324a7f3546",
-            "locator": {
-              "end": 103,
-              "kind": "line_range",
-              "start": 101
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "10": {
-      "note": "The completion lens accounts for every master requirement, leaf, substep, and accepted blank-fill.\n\nAnchor: `MISSING`",
+      "note": "The completion lens accounts for every master requirement, leaf, substep, and accepted blank-fill.",
       "targets": [
         {
           "anchor": {
-            "blob": "89fce2dcfcb7aecf803f8c647736688a7c01bb64",
-            "content": "sha256:62868fa002fa99a54365d9725c63be70830edca8bfed2bde3ea2f93fcc24eac1",
+            "blob": "99a9b9a9f248e28d650a1afb43429172a05d4a67",
+            "content": "sha256:36cf9ceb756dd1dad0d6df0c1908048da32232fadad24222729ba3dffe66ce62",
             "locator": {
-              "end": 172,
+              "end": 6,
               "kind": "line_range",
-              "start": 168
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "11": {
-      "note": "Skipped or reshaped work has a decision-log trail.\n\nAnchor: `decision-log`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "89fce2dcfcb7aecf803f8c647736688a7c01bb64",
-            "content": "sha256:c997d18ddc1aaf492425db68b4e7529f43ff3f834bf5cd40b9ef5ea04223508f",
-            "locator": {
-              "end": 169,
-              "kind": "line_range",
-              "start": 169
-            }
+              "start": 3
+            },
+            "path": "skills/l-01-agent-lifecycles/reference/reviewer-master-exit-d301.md"
           },
           "kind": "code"
         }
       ]
     },
     "12": {
-      "note": "No unfinished leaf work is hidden inside the handover packet.\n\nAnchor: `hidden`",
+      "note": "No unfinished leaf work is hidden inside the handover packet.",
       "targets": [
         {
           "anchor": {
-            "blob": "89fce2dcfcb7aecf803f8c647736688a7c01bb64",
-            "content": "sha256:063a6e8727e828ae33969c253d544d7f2353733529c83cde090b1f799f9110b3",
+            "blob": "99a9b9a9f248e28d650a1afb43429172a05d4a67",
+            "content": "sha256:36cf9ceb756dd1dad0d6df0c1908048da32232fadad24222729ba3dffe66ce62",
             "locator": {
-              "end": 171,
+              "end": 6,
               "kind": "line_range",
-              "start": 169
-            }
+              "start": 3
+            },
+            "path": "skills/l-01-agent-lifecycles/reference/reviewer-master-exit-d301.md"
           },
           "kind": "code"
         }
       ]
     },
     "13": {
-      "note": "The scoped-implementation lens checks the builder's targeted tests and the repository-prescribed lint, formatting, typing and structural checks.\n\nAnchor: current qualified source",
+      "note": "The scoped evidence checks the Worker's targeted tests and regressions and uses resolved system/tools.md for repository-specific check commands; unrequested full suites and drift reporting remain excluded.",
       "targets": [
         {
           "anchor": {
-            "blob": "5c836fa1ac282d80571339508fb398a05d281e13",
-            "content": "sha256:b73db5928abc7a94bd4e33d5b1954b84ee68cddd452c615ae683ad740aa9edc7",
+            "blob": "ab9a2e087d2cfd299ad5ffbac061aac232c8e831",
+            "content": "sha256:6a97e1eb1149f6dcb3b24e76b72aba4d47664d9711d3cdfc33d72e2abfaad915",
             "locator": {
-              "kind": "file"
+              "end": 51,
+              "kind": "line_range",
+              "start": 51
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ab9a2e087d2cfd299ad5ffbac061aac232c8e831",
+            "content": "sha256:f0e10f4491be65b9f9a8c4940aa1d1a591d031f64996f2879d483e1c7418c9c2",
+            "locator": {
+              "end": 70,
+              "kind": "line_range",
+              "start": 66
             },
             "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
           },
@@ -105,17 +88,31 @@
       ]
     },
     "14": {
-      "note": "The onboarding-vs-code lens diffs sidecars and route overviews against as-landed code and rejects history-only refreshes.\n\nAnchor: `sidecars`",
+      "note": "The onboarding-vs-code lens diffs sidecars and route overviews against as-landed code and rejects history-only refreshes.",
       "targets": [
         {
           "anchor": {
-            "blob": "89fce2dcfcb7aecf803f8c647736688a7c01bb64",
-            "content": "sha256:45ceabbe3500feb46aedc900fa419ed47b5ce7781b0faec98772988208c788d6",
+            "blob": "38daf6f3a9e1766c06dbbe2cc50c5b44db32d5f1",
+            "content": "sha256:bf5358659ed5c180cbc5a9591818ccca74331c76ccfbacca3ad1559e0bdbf64e",
             "locator": {
-              "end": 166,
+              "end": 17,
               "kind": "line_range",
-              "start": 162
-            }
+              "start": 13
+            },
+            "path": "skills/l-01-agent-lifecycles/criteria/onboarding-memory.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "38daf6f3a9e1766c06dbbe2cc50c5b44db32d5f1",
+            "content": "sha256:0ba25bf7bd5021c9fc0c70d75575bbcf5c18009e7fb268ab093b3dd9a0c2c5a1",
+            "locator": {
+              "end": 35,
+              "kind": "line_range",
+              "start": 28
+            },
+            "path": "skills/l-01-agent-lifecycles/criteria/onboarding-memory.md"
           },
           "kind": "code"
         }
@@ -139,14 +136,29 @@
       ]
     },
     "16": {
-      "note": "Affected-sidecar/route checks and only requested full-suite/drift reporting remain distinct from Curator-owned complete MQC; drift_check is not restored.\n\nAnchor: current qualified source",
+      "note": "Repository-scoped review checks and explicitly requested full suites or drift reporting remain distinct from the Curator's mandatory complete memory_quality_check; the review surface names requested drift reporting, not a drift_check tool.",
       "targets": [
         {
           "anchor": {
-            "blob": "5c836fa1ac282d80571339508fb398a05d281e13",
-            "content": "sha256:b73db5928abc7a94bd4e33d5b1954b84ee68cddd452c615ae683ad740aa9edc7",
+            "blob": "ab9a2e087d2cfd299ad5ffbac061aac232c8e831",
+            "content": "sha256:f0e10f4491be65b9f9a8c4940aa1d1a591d031f64996f2879d483e1c7418c9c2",
             "locator": {
-              "kind": "file"
+              "end": 70,
+              "kind": "line_range",
+              "start": 66
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ab9a2e087d2cfd299ad5ffbac061aac232c8e831",
+            "content": "sha256:d1fe2255d51ab5ddc075fd596636dfe4a93be8374ef29b196da47fefea71c20b",
+            "locator": {
+              "end": 142,
+              "kind": "line_range",
+              "start": 139
             },
             "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
           },
@@ -189,31 +201,47 @@
       ]
     },
     "19": {
-      "note": "Reviewer duties include writing the verdict artifact and returning a baseline block as decomposable fix leaves.\n\nAnchor: `verdict`",
+      "note": "Reviewer duties include writing the verdict artifact and returning a baseline block as decomposable fix leaves.",
       "targets": [
         {
           "anchor": {
-            "blob": "89fce2dcfcb7aecf803f8c647736688a7c01bb64",
-            "content": "sha256:8df72c04a9e104a0be92c76c4889dc66ffab28b96dbc2a95f56d15462bbf82a2",
+            "blob": "ab9a2e087d2cfd299ad5ffbac061aac232c8e831",
+            "content": "sha256:6d4d9a5ce9df2823b0ee2b786a13a400fba69ea23af4b42a7c9e4210a953ba8e",
             "locator": {
-              "end": 125,
+              "end": 103,
               "kind": "line_range",
-              "start": 123
-            }
+              "start": 94
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ab9a2e087d2cfd299ad5ffbac061aac232c8e831",
+            "content": "sha256:9c2999de71342d59c8a870bc4f58ed02e80c13aebb05b035903310059beacd3c",
+            "locator": {
+              "end": 137,
+              "kind": "line_range",
+              "start": 134
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
           },
           "kind": "code"
         }
       ]
     },
     "2": {
-      "note": "The reviewer is short-lived and self-contained.\n\nAnchor: current qualified source",
+      "note": "The Reviewer scopes one seam or loop round, refutes or confirms against brief-bound catalogs, writes its verdict and ends.",
       "targets": [
         {
           "anchor": {
-            "blob": "5c836fa1ac282d80571339508fb398a05d281e13",
-            "content": "sha256:b73db5928abc7a94bd4e33d5b1954b84ee68cddd452c615ae683ad740aa9edc7",
+            "blob": "ab9a2e087d2cfd299ad5ffbac061aac232c8e831",
+            "content": "sha256:67cf8d785e6803fb4409c8d7d5664546d8e146b071d667d1dae5fc7199538f81",
             "locator": {
-              "kind": "file"
+              "end": 9,
+              "kind": "line_range",
+              "start": 8
             },
             "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
           },
@@ -239,14 +267,16 @@
       ]
     },
     "22": {
-      "note": "The role's tools are the review surface.\n\nAnchor: current qualified source",
+      "note": "The permitted review surface is read-only retrieval and scoped checks, report/journal artifacts, bound leaf messages, and ordinary review-round begin/result recording.",
       "targets": [
         {
           "anchor": {
-            "blob": "5c836fa1ac282d80571339508fb398a05d281e13",
-            "content": "sha256:b73db5928abc7a94bd4e33d5b1954b84ee68cddd452c615ae683ad740aa9edc7",
+            "blob": "ab9a2e087d2cfd299ad5ffbac061aac232c8e831",
+            "content": "sha256:5ee124b30dfc98de6400e6f1e62019df0f8f9b5371ec337d1e3b5ac18ea6de91",
             "locator": {
-              "kind": "file"
+              "end": 145,
+              "kind": "line_range",
+              "start": 139
             },
             "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
           },
@@ -255,14 +285,55 @@
       ]
     },
     "23": {
-      "note": "The role declares the readable order — Inputs, Process, Outputs — with no inherited-sources line and no operator-knob block.\n\nAnchor: current qualified source",
+      "note": "The role presents Inputs, Process and Outputs in order. Its operator-knob passage is a prohibition on setting harness, model, effort and serviceTier, not a launch-default block.",
       "targets": [
         {
           "anchor": {
-            "blob": "5c836fa1ac282d80571339508fb398a05d281e13",
-            "content": "sha256:b73db5928abc7a94bd4e33d5b1954b84ee68cddd452c615ae683ad740aa9edc7",
+            "blob": "ab9a2e087d2cfd299ad5ffbac061aac232c8e831",
+            "content": "sha256:6c9a86e79ff06d538293b232913dfea1eecfa0eb0e7eb4c0373c7e3bac548f7a",
             "locator": {
-              "kind": "file"
+              "end": 18,
+              "kind": "line_range",
+              "start": 18
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ab9a2e087d2cfd299ad5ffbac061aac232c8e831",
+            "content": "sha256:07329d1d01437e670051b0ec1cc09be8b66f68278a6ae04d751130cbf1eee3b6",
+            "locator": {
+              "end": 54,
+              "kind": "line_range",
+              "start": 54
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ab9a2e087d2cfd299ad5ffbac061aac232c8e831",
+            "content": "sha256:af557134ea67f4c7ce28e7f9f4342d78e10d8a304afa39897da7f3aee7e4acd8",
+            "locator": {
+              "end": 86,
+              "kind": "line_range",
+              "start": 86
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ab9a2e087d2cfd299ad5ffbac061aac232c8e831",
+            "content": "sha256:c54e4cb35762d2befcb9fbc93b0da10dc4cbed4b986d1977185a78ba67ff317a",
+            "locator": {
+              "end": 157,
+              "kind": "line_range",
+              "start": 156
             },
             "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
           },
@@ -271,31 +342,60 @@
       ]
     },
     "24": {
-      "note": "The role keeps the two seam rubrics and the three review lenses.\n\nAnchor: `Master-exit`",
+      "note": "The role keeps the two seam rubrics and the three review lenses.",
       "targets": [
         {
           "anchor": {
-            "blob": "89fce2dcfcb7aecf803f8c647736688a7c01bb64",
-            "content": "sha256:2076f2dc96bf9e1b94129fd6100ffd0ac19a63a7ce4224e826f79d2858bbe9ba",
+            "blob": "ab9a2e087d2cfd299ad5ffbac061aac232c8e831",
+            "content": "sha256:ff596cfc7bc76d9388e9de08fcd69740aafed9995be0725becfe8bc0841d50e1",
             "locator": {
-              "end": 172,
+              "end": 137,
               "kind": "line_range",
-              "start": 160
-            }
+              "start": 119
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0a33b0151854b4970da05b7ecfa1fcc42af54b25",
+            "content": "sha256:891dea8e071b8d11f3b543a89a53423e7d1f5a4e3b0a32a4451ff6b4e221fa40",
+            "locator": {
+              "end": 11,
+              "kind": "line_range",
+              "start": 10
+            },
+            "path": "skills/l-01-agent-lifecycles/reference/reviewer-baseline-d301.md"
           },
           "kind": "code"
         }
       ]
     },
     "26": {
-      "note": "Bound explicit review intake and parent/dashboard transport.\n\nAnchor: current qualified source",
+      "note": "Bound explicit review intake and parent/dashboard transport.",
       "targets": [
         {
           "anchor": {
-            "blob": "5c836fa1ac282d80571339508fb398a05d281e13",
-            "content": "sha256:b73db5928abc7a94bd4e33d5b1954b84ee68cddd452c615ae683ad740aa9edc7",
+            "blob": "ab9a2e087d2cfd299ad5ffbac061aac232c8e831",
+            "content": "sha256:3f19b7e579aed17ebf00965884e99ceb045e29d805462a67b1caacc372ede4c8",
             "locator": {
-              "kind": "file"
+              "end": 16,
+              "kind": "line_range",
+              "start": 11
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ab9a2e087d2cfd299ad5ffbac061aac232c8e831",
+            "content": "sha256:c278fae98dea74fa2b4acbccb9a62a5910af3f8e0e9fe10086d0acb735d4c3db",
+            "locator": {
+              "end": 25,
+              "kind": "line_range",
+              "start": 20
             },
             "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
           },
@@ -304,14 +404,29 @@
       ]
     },
     "27": {
-      "note": "Complete diff, required evidence, standing criteria, exact attempts and sealed findings.\n\nAnchor: current qualified source",
+      "note": "Complete diff, required evidence, standing criteria, exact attempts and sealed findings.",
       "targets": [
         {
           "anchor": {
-            "blob": "5c836fa1ac282d80571339508fb398a05d281e13",
-            "content": "sha256:b73db5928abc7a94bd4e33d5b1954b84ee68cddd452c615ae683ad740aa9edc7",
+            "blob": "ab9a2e087d2cfd299ad5ffbac061aac232c8e831",
+            "content": "sha256:0ccc7da6e8a71b3123d26f897495a8d2c9c9376ac0a1e3929058dfb8ef3f2783",
             "locator": {
-              "kind": "file"
+              "end": 76,
+              "kind": "line_range",
+              "start": 60
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ab9a2e087d2cfd299ad5ffbac061aac232c8e831",
+            "content": "sha256:0d5f674d4925c96b3d3eb1d01bcbc405fc6eca3b345c8e99bfc18a6f0223950c",
+            "locator": {
+              "end": 103,
+              "kind": "line_range",
+              "start": 88
             },
             "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
           },
@@ -320,14 +435,29 @@
       ]
     },
     "28": {
-      "note": "Permitted read surface, role/recording prohibitions and retained seam duties.\n\nAnchor: current qualified source",
+      "note": "Permitted read surface, role/recording prohibitions and retained seam duties.",
       "targets": [
         {
           "anchor": {
-            "blob": "5c836fa1ac282d80571339508fb398a05d281e13",
-            "content": "sha256:b73db5928abc7a94bd4e33d5b1954b84ee68cddd452c615ae683ad740aa9edc7",
+            "blob": "ab9a2e087d2cfd299ad5ffbac061aac232c8e831",
+            "content": "sha256:f2c3667859a20e413e6966d978d8d432541ee6503baedd96f343c835925899c8",
             "locator": {
-              "kind": "file"
+              "end": 144,
+              "kind": "line_range",
+              "start": 119
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ab9a2e087d2cfd299ad5ffbac061aac232c8e831",
+            "content": "sha256:e5c6e777aad3d9990bee390dd6f8da3c2f14d46c98a1d057da3d2a413c7ca028",
+            "locator": {
+              "end": 157,
+              "kind": "line_range",
+              "start": 147
             },
             "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
           },
@@ -336,31 +466,34 @@
       ]
     },
     "29": {
-      "note": "Reviewer communications use role_message for delivery to another role agent, named by agent id or by role plus task references.\n\nAnchor: lines 22-28",
+      "note": "Reviewer leaf communications use role_message on agents-remember-task with the handover's sibling role and exact leaf task references; product-supplied IDs remain whole and unchanged.",
       "targets": [
         {
           "anchor": {
-            "blob": "89fce2dcfcb7aecf803f8c647736688a7c01bb64",
-            "content": "sha256:a53e73818ce431690928b5ed7dfc2fbb4a45476fb6035cc7cfecb2531ced0d46",
+            "blob": "ab9a2e087d2cfd299ad5ffbac061aac232c8e831",
+            "content": "sha256:4c079802e8f03398d7f2d2ef8fa94035ba10678b3b68f7f750fe01683941aa19",
             "locator": {
-              "end": 25,
+              "end": 16,
               "kind": "line_range",
-              "start": 19
-            }
+              "start": 16
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
           },
           "kind": "code"
         }
       ]
     },
     "3": {
-      "note": "The reviewer receives the brief as its session start.\n\nAnchor: current qualified source",
+      "note": "The reviewer receives the brief as its session start.",
       "targets": [
         {
           "anchor": {
-            "blob": "5c836fa1ac282d80571339508fb398a05d281e13",
-            "content": "sha256:b73db5928abc7a94bd4e33d5b1954b84ee68cddd452c615ae683ad740aa9edc7",
+            "blob": "ab9a2e087d2cfd299ad5ffbac061aac232c8e831",
+            "content": "sha256:67cf8d785e6803fb4409c8d7d5664546d8e146b071d667d1dae5fc7199538f81",
             "locator": {
-              "kind": "file"
+              "end": 9,
+              "kind": "line_range",
+              "start": 8
             },
             "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
           },
@@ -386,14 +519,29 @@
       ]
     },
     "31": {
-      "note": "Current stage boundaries, settings-owned review budget and recorded approval duties are carried by these instruction sources. Messages wake and complete payloads travel as files; retained operator knobs are harness, model, effort and serviceTier.\n\nAnchor: current qualified source",
+      "note": "Current stage boundaries, settings-owned review budget and recorded approval duties are carried by these instruction sources. Messages wake and complete payloads travel as files; retained operator knobs are harness, model, effort and serviceTier.",
       "targets": [
         {
           "anchor": {
-            "blob": "5c836fa1ac282d80571339508fb398a05d281e13",
-            "content": "sha256:b73db5928abc7a94bd4e33d5b1954b84ee68cddd452c615ae683ad740aa9edc7",
+            "blob": "ab9a2e087d2cfd299ad5ffbac061aac232c8e831",
+            "content": "sha256:9cdd501356748fca03a98de167e62906d558d2392d58ca3d3e47c49caae79b8f",
             "locator": {
-              "kind": "file"
+              "end": 157,
+              "kind": "line_range",
+              "start": 152
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ab9a2e087d2cfd299ad5ffbac061aac232c8e831",
+            "content": "sha256:3b9c714389133a124fb9858502aa97b2477e4d9367c94bd1d8732dfb11d9a2fb",
+            "locator": {
+              "end": 195,
+              "kind": "line_range",
+              "start": 189
             },
             "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
           },
@@ -402,14 +550,29 @@
       ]
     },
     "32": {
-      "note": "The whole requirement verdict, findings and coverage ends this independent stage. Reviewer records ordinary begin/result within the actual review-state settings limit; Manager records architect/developer authorization beyond it. A record-only check preserves the last round only on byte-identical candidate with all candidate findings closed. A finding states the broken required property; a case is its proof, not a replacement finding or automatic new round. MEMORY stays a separate sealed lane.\n\nAnchor: current qualified source",
+      "note": "The whole requirement verdict, findings and coverage ends this independent stage. Reviewer records ordinary begin/result within the actual review-state settings limit; Manager records architect/developer authorization beyond it. A record-only check preserves the last round only on byte-identical candidate with all candidate findings closed. A finding states the broken required property; a case is its proof, not a replacement finding or automatic new round. MEMORY stays a separate sealed lane.",
       "targets": [
         {
           "anchor": {
-            "blob": "5c836fa1ac282d80571339508fb398a05d281e13",
-            "content": "sha256:b73db5928abc7a94bd4e33d5b1954b84ee68cddd452c615ae683ad740aa9edc7",
+            "blob": "ab9a2e087d2cfd299ad5ffbac061aac232c8e831",
+            "content": "sha256:9cdd501356748fca03a98de167e62906d558d2392d58ca3d3e47c49caae79b8f",
             "locator": {
-              "kind": "file"
+              "end": 157,
+              "kind": "line_range",
+              "start": 152
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ab9a2e087d2cfd299ad5ffbac061aac232c8e831",
+            "content": "sha256:a201cfd018d6eb5ae461620c31944b64f6a6a3e1a18cdc73cfb7697c7ee7c652",
+            "locator": {
+              "end": 191,
+              "kind": "line_range",
+              "start": 183
             },
             "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
           },
@@ -418,17 +581,18 @@
       ]
     },
     "33": {
-      "note": "The separate memory review judges cut reasons and requirement ownership of outside-knowledge additions.\n\nAnchor: lines 105-111",
+      "note": "The separate memory review judges cut reasons and requirement ownership of outside-knowledge additions.",
       "targets": [
         {
           "anchor": {
-            "blob": "89fce2dcfcb7aecf803f8c647736688a7c01bb64",
-            "content": "sha256:b4dafc8a8b1a2f1c64cff7f454c512410a4eaa6582e470c72b0f1a3551f5a2c0",
+            "blob": "49a8301d2f85c2182938d3a9123bcaf84dee7a37",
+            "content": "sha256:84b6ff8bd0ba842fa0a97d9542202508a8855006790dada48d51e455e2b0595d",
             "locator": {
-              "end": 110,
+              "end": 5,
               "kind": "line_range",
-              "start": 104
-            }
+              "start": 3
+            },
+            "path": "skills/l-01-agent-lifecycles/reference/reviewer-memory-d301.md"
           },
           "kind": "code"
         }
@@ -439,62 +603,94 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1a3d797d83fc3ba15c7d85511414c1e66d36b141",
-            "content": "sha256:2e87caeced1309c6c026810a69faa77730d702ef425a1cc3dd6ab93264bdcd13",
+            "blob": "ab9a2e087d2cfd299ad5ffbac061aac232c8e831",
+            "content": "sha256:932d78d8a601259ac0243380be58f3a910dbad430082f84d1ad5542b6a42272e",
             "locator": {
-              "kind": "file"
-            }
+              "end": 16,
+              "kind": "line_range",
+              "start": 13
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ab9a2e087d2cfd299ad5ffbac061aac232c8e831",
+            "content": "sha256:8a1a9c731835872135225727957c94af1bb0d59693a2a5942e06740dc99cff87",
+            "locator": {
+              "end": 52,
+              "kind": "line_range",
+              "start": 52
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
           },
           "kind": "code"
         }
       ]
     },
     "4": {
-      "note": "Dashboard-owned sessions keep this seat's role fixed for the session lifetime.\n\nAnchor: `dashboard`",
+      "note": "Dashboard-owned sessions keep this seat's role fixed for the session lifetime.",
       "targets": [
         {
           "anchor": {
-            "blob": "89fce2dcfcb7aecf803f8c647736688a7c01bb64",
-            "content": "sha256:95c75021c42665278a2ac9fdaa5250003acf964398dd41d393fe1f3ee06aebf3",
+            "blob": "c43823ed0215be2bd0ae9e12b8f7c961f5f8fcbb",
+            "content": "sha256:b6ded71f39934298f77c485546632461d4e23e489bf867dd27087da49001bb58",
             "locator": {
-              "end": 25,
+              "end": 38,
               "kind": "line_range",
-              "start": 23
-            }
+              "start": 36
+            },
+            "path": "skills/l-01-agent-lifecycles/core/authority.md"
           },
           "kind": "code"
         }
       ]
     },
     "5": {
-      "note": "A pasted brief for another role is refused and reported through the inbox.\n\nAnchor: `decider`",
+      "note": "A pasted brief for another seat is refused and reported to the seam's decider; the Reviewer never absorbs the other seat's work.",
       "targets": [
         {
           "anchor": {
-            "blob": "89fce2dcfcb7aecf803f8c647736688a7c01bb64",
-            "content": "sha256:d83f5e6c5adb49293d6c575e9cd3c3dc9112e588235dc8212964dddd9805f5f6",
+            "blob": "ab9a2e087d2cfd299ad5ffbac061aac232c8e831",
+            "content": "sha256:f9f75f0d92b9c57e84677622c17fcfff1d3e6fd80c0be15e5109faa7165bd279",
             "locator": {
-              "end": 201,
+              "end": 154,
               "kind": "line_range",
-              "start": 198
-            }
+              "start": 149
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
           },
           "kind": "code"
         }
       ]
     },
     "6": {
-      "note": "Review retrieval is refute-or-confirm, and findings must survive attempted refutation.\n\nAnchor: `refute-or-confirm`",
+      "note": "Review retrieval is refute-or-confirm, and findings must survive attempted refutation.",
       "targets": [
         {
           "anchor": {
-            "blob": "89fce2dcfcb7aecf803f8c647736688a7c01bb64",
-            "content": "sha256:0b27b897504acc5dd147ccda53e31e56db35bde775f71aa7beec5e18dde48e76",
+            "blob": "0a33b0151854b4970da05b7ecfa1fcc42af54b25",
+            "content": "sha256:41ca9295197e517fef04dda366b7fe31dec2ef6491b66652472e5e44b9001ad6",
             "locator": {
-              "end": 85,
+              "end": 15,
               "kind": "line_range",
-              "start": 83
-            }
+              "start": 10
+            },
+            "path": "skills/l-01-agent-lifecycles/reference/reviewer-baseline-d301.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "433f8190ab1b43e83eb600ffa449bf029d9a8d8c",
+            "content": "sha256:e8d952f8cb6dd23af460809adee2bd08fbb3edbd55669bca853a47f5531be9fb",
+            "locator": {
+              "end": 91,
+              "kind": "line_range",
+              "start": 85
+            },
+            "path": "skills/l-01-agent-lifecycles/criteria/code-seam.md"
           },
           "kind": "code"
         }
@@ -518,34 +714,31 @@
       ]
     },
     "8": {
-      "note": "A first review runs the standing catalogs its review type binds.\n\nAnchor: `Baseline`",
+      "note": "A first review runs the standing catalogs its review type binds.",
       "targets": [
         {
           "anchor": {
-            "blob": "89fce2dcfcb7aecf803f8c647736688a7c01bb64",
-            "content": "sha256:a6da1c5fa19b7ad3d738e7364190700b2e54647a06b4486c024ce801a3a6b301",
+            "blob": "ab9a2e087d2cfd299ad5ffbac061aac232c8e831",
+            "content": "sha256:313d6ae5d5d3eea6d4393cfae149e951e5d6fd2f165516d17d276b153d78b921",
             "locator": {
-              "end": 85,
+              "end": 49,
               "kind": "line_range",
-              "start": 80
-            }
+              "start": 40
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
           },
           "kind": "code"
-        }
-      ]
-    },
-    "9": {
-      "note": "The exploratory mandate defaults to two lenses.\n\nAnchor: `exploratory mandate`",
-      "targets": [
+        },
         {
           "anchor": {
-            "blob": "89fce2dcfcb7aecf803f8c647736688a7c01bb64",
-            "content": "sha256:0b27b897504acc5dd147ccda53e31e56db35bde775f71aa7beec5e18dde48e76",
+            "blob": "433f8190ab1b43e83eb600ffa449bf029d9a8d8c",
+            "content": "sha256:196522bd512b2800fbf4462f245fae3a7cebcf773fe3ca5c1a606d01c713b2dc",
             "locator": {
-              "end": 85,
+              "end": 9,
               "kind": "line_range",
-              "start": 83
-            }
+              "start": 3
+            },
+            "path": "skills/l-01-agent-lifecycles/criteria/code-seam.md"
           },
           "kind": "code"
         }

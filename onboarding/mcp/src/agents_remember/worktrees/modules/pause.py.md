@@ -18,6 +18,10 @@ Both success payloads carry the same `_PAUSE_NEXT_STEP` — a summary and no `ne
 
 ## Evidence
 
+
 - Disabled contract refused before the kind check [14]
+
+
 - Only a re-observed vacant record reports stopped [15]
+
 - Refusals propose no next call either [16]

@@ -16,4 +16,5 @@ Rows keep supplied full-list positions, optional target navigation and a dash wh
 
 ## Evidence
 
+
 - Mount-local sorting, newest-five preview and optional row navigation share the same completed-row renderer. [1]

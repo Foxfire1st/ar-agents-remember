@@ -33,5 +33,7 @@ error.
 
 ### Repo-Internal References
 
+
 - `FilePane` awaits this and pushes the result as an editor extension, guarding a late resolve. [1]
+
 - The `language` id is produced by the L1 read client. [2]

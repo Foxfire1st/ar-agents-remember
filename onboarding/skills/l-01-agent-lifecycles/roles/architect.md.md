@@ -6,7 +6,11 @@ Architect may grant a beyond-settings round for a concrete shrinking repair set;
 
 This account controls the named changed seams; contradictory earlier card wording below is retained only as historical evidence. Unchanged role duties and R117 file-only wake/report transport are preserved. Source inspection supplies no new runtime test, CODE verdict, review counter or acceptance.
 
+
+- Architect may grant a beyond-settings round for a concrete shrinking repair set; an unchanged failed repair or disputed requirement meaning needs a ruling instead of another round. Permission/non-finished starts are held by the product, and held permission notices propagate without message resubmission. Scope/parent identity and orchestration release stay distinct from native transport and AR acceptance. [2]
+
 - The Architect may grant a beyond-settings round for a concrete shrinking repair set, and an unchanged failed repair or disputed requirement meaning needs a ruling instead. [5]
+
 
 
 ## Current Source Qualification
@@ -82,8 +86,6 @@ The Architect answers a child's question within its authority and says the answe
 - Registration creates the leaf's open linked issue only where the resolved memory carries the publication instruction; where that file is absent, registration publishes nothing. [4]
 
 
-
-
 ### Docs References
 
 No relevant documentation was configured in the resolved source registry; task artifacts and the final candidate are the direct evidence.
@@ -139,6 +141,10 @@ free a runtime selection.
 
 The Architect keeps the developer conversation and may check, measure, run tests and builds, read the code and sources of the product, the host and the harnesses, and try things out in a sandbox himself, on a copy; that work informs his rulings, his requirements and the developer but never stands in for a leaf's build, review, curation or gate, and he changes no leaf's code or memory. A check before a landing is not a landing step. A check or investigation he does not do himself goes under delegation to the actual Manager or Orchestrator; developer-chosen direct coordination assigns a leaf check to Worker/Reviewer and a non-leaf concern to Investigator. Investigator starts remain within admitted Projects, sprint or master containment, and still-forbidden starts route to the actual parent or a parentless blocker. One Manager remains the default for one master.
 
+
+- This source owns the stated current Investigator scope or canonical vocabulary. [1]
+
 - This source owns the stated current Investigator scope or canonical vocabulary. [6]
+
 
 The earlier fixed-three budget wording is superseded by MIK-R116: the settings limit governs ordinary CODE and separately counted MEMORY rounds, with recorded Architect-or-developer extras. This updates the operative transaction-boundary account, not the retained historical task authority.

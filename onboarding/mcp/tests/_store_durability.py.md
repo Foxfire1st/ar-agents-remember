@@ -45,11 +45,17 @@ No external Domain Documentation source is configured; these are repository-owne
 The exact source declarations below establish the current behavior; this inventory is not execution evidence.
 
 - Shared real-store write/reclaim boundary [1]
+
 - Provider stores share the same instrument [2]
+
 - Independent durable-record/torn-line accounting [3]
+
 - Controlled actual rewrite rendezvous [4]
+
 - Per-root receipt isolation [5]
+
 - Forked append/reclaim orchestration and bounded joins [6]
+
 
 ### Cross-Repo References
 

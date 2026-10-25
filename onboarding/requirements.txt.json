@@ -68,12 +68,12 @@
       ]
     },
     "4": {
-      "note": "The package development extra independently pins the same Ruff release.\n\nAnchor: \"\\\"ruff==0.16.1\\\",\"",
+      "note": "The package development extra independently pins the same Ruff release.",
       "targets": [
         {
           "anchor": {
-            "blob": "3ab72de78e8bc9f72c5d7c631e761c9101d2ee84",
-            "content": "sha256:01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+            "blob": "3f30237a53623bb13be7bf1d5d8dc8413ba64f6c",
+            "content": "sha256:7de15b1c5b4e6c7f7fa1815f90ae5fe799317c871eefe4362bdcae36e75109e3",
             "locator": {
               "end": 71,
               "kind": "line_range",

@@ -44,7 +44,9 @@ No relevant external documentation found.
 ### Repo-Internal References
 
 - The provider requirements file pins CodeGraphContext to version 0.4.10 plus Tree-Sitter parser dependencies needed for symbol extraction. [1]
+
 - The MCP runtime installer requires and copies `mcp/src/agents_remember/package_data/runtime/providers` into the coordination root. [2]
+
 - The CGC runner build uses the installed requirements pin when building the Docker runner image. [3]
 
 ### Cross-Repo References

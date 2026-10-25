@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/worktrees/start_progress.py",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
@@ -35,15 +36,14 @@
       ]
     },
     "3": {
-      "note": "Best-effort write that never raises",
+      "note": "Best-effort write that never raises\n\nAnchor: `write_start_progress`",
       "targets": [
         {
           "anchor": {
-            "blob": "31325b4557bdc3363eae39d52c1cdc301b7b3139",
-            "content": "sha256:4a3030af5b7b05b4b473774339d20194c0a912fade3ffba0112ca08973385db0",
+            "blob": "9227773387e3bae878d9ce48db571537d9ff3de5",
+            "content": "sha256:a6f982760a746eeabcf77676e49937d6011daa0b7dcd8d3a588e058cbcd8598e",
             "locator": {
-              "kind": "symbol",
-              "name": "write_start_progress"
+              "kind": "file"
             }
           },
           "kind": "code"

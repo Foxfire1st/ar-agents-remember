@@ -37,13 +37,17 @@ None recorded.
 
 The configured Domain Documentation registry is empty. No external documentation claim is made.
 
+
 - No external domain source is required to establish this repository-owned implementation. [1]
+
 
 ### Repo-Internal References
 
 The source file is the direct evidence for this unit; its governing overview records adjacent owners.
 
+
 - The module's concrete API, control flow, and validation boundary are implemented here. [2]
+
 - Refusal payloads forward the typed task-intent next action. [3]
 
 ### Cross-Repo References
@@ -51,7 +55,9 @@ The source file is the direct evidence for this unit; its governing overview rec
 No cross-repository source is allowed by the resolved settings, and this unit owns no external
 protocol claim.
 
+
 - No meaningful cross-repository reference applies. [4]
+
 
 ## CCR-R02@v2 Task-Intent Refusal Guidance
 

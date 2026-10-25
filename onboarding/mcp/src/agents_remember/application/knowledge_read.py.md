@@ -145,12 +145,16 @@ No configured domain documentation could be checked.
 
 ### Repo-Internal References
 
+
 - **The constructor that resolves a context from the identity the file actually holds, so a caller cannot hand-write the snapshot a read is verified against.** [1]
+
 - **The entry point, its typed parameters and the never-raises contract inside them.** [2]
 - **The read-only handle, the request-level cursor check before the file is opened, and the close.** [3]
 - **The ordered sequence: verify the snapshot, select, decide absence, check the continuation, page, refuse a too-small budget.** [4]
 - **MIK-R02: the verified selection shared by the paged read and the whole-scope read.** [5]
+
 - **MIK-R02: the whole verified scope of one seed, unpaged, under the same guard and failure mapping.** [6]
+
 - **The three separate snapshot comparisons — namespace, schema generation, logical dataset — each naming the comparison that fired.** [7]
 - **The scope-dependent half of the cursor binding: a position past the end is typed, and the manifest must be this selection's.** [8]
 - **The request-level cursor bindings, checked once before the file is opened.** [9]
@@ -158,10 +162,14 @@ No configured domain documentation could be checked.
 - **The persisted-nothing measurement, read through the same read-only handle the operation uses.** [11]
 - The result assembly for a page and for a refusal, and the unusable-snapshot rendering. [12]
 - **The nodes that measure the binding refusals: the selector and the context/policy bindings in one merged case, one case each for the manifest binding, the past-the-selection position and the own-snapshot continuation.** [13]
+
 - **The task-free baseline read node, the snapshot/namespace/schema refusal nodes and the absent-database node.** [14]
+
 - **The nodes that measure the binding refusals, each with its own positive control.** [15]
 - The read-only connection the seam opens. [16]
+
 - The schema identity the seam inspects before it selects anything. [17]
+
 - The existing reader whose confinement helper must **not** be reused for tree paths. [18]
 
 ### Cross-Repo References

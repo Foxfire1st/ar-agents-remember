@@ -22,10 +22,16 @@ Host refusals are retained as `.undelivered.md` with refusal detail when marking
 
 ## Evidence
 
+
 - Stage and sync the payload once, allocate with a bounded cache and atomic no-overwrite link. [1]
+
+
 - Scope storage to the narrowest shared task, or the sender class's taskless execution record. [2]
+
 
 - Validate/hash every attachment before the copy phase. [3]
 - Preserve occupied or divergent workspace links with warnings. [4]
+
 - Failed copies remove their partial target and earlier message-owned copies. [5]
+
 - Retain refused-file detail, returning the original path if marking fails. [6]

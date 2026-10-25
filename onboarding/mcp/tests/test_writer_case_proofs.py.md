@@ -16,5 +16,7 @@ This is a current source account, not an executed test, CODE/MEMORY grade, live 
 
 ## Evidence
 
+
 - A line-range proof stores a `line_range` anchor with the case's blob content and reports the paired evidence `proof_written` [1]
+
 - A computed title's evidence stays `unresolvable` while its proof is written and listed [2]

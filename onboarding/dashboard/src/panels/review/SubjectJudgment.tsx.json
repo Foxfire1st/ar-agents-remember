@@ -22,15 +22,14 @@
   ],
   "references": {
     "1": {
-      "note": "Selected-subject judgment and proofs: `SubjectJudgment` owns the described branch.",
+      "note": "Selected-subject judgment and proofs: `SubjectJudgment` owns the described branch.\n\nAnchor: `SubjectJudgment`",
       "targets": [
         {
           "anchor": {
-            "blob": "5998106166bd7ead48ac09f5173c06c3cacb5f39",
-            "content": "sha256:9a537c4f259d8e6387f67a8426e2f23197407fa6e00aeea42e92753f646c84bf",
+            "blob": "fb3673e391e127346cf2d3310decd68af3efe750",
+            "content": "sha256:6bee5bf69957e553ae3bf8c57876363e3f67f3f9c75ff2bec7633def95791a47",
             "locator": {
-              "kind": "symbol",
-              "name": "SubjectJudgment"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -38,15 +37,14 @@
       ]
     },
     "2": {
-      "note": "Selected-subject judgment and proofs: `JudgmentRow` owns the described branch.",
+      "note": "Selected-subject judgment and proofs: `JudgmentRow` owns the described branch.\n\nAnchor: `JudgmentRow`",
       "targets": [
         {
           "anchor": {
-            "blob": "5998106166bd7ead48ac09f5173c06c3cacb5f39",
-            "content": "sha256:d21dd291512c2c99137ae8ec720b409e0a33e73573db5e2f41c5eeba30fbe8a2",
+            "blob": "fb3673e391e127346cf2d3310decd68af3efe750",
+            "content": "sha256:6bee5bf69957e553ae3bf8c57876363e3f67f3f9c75ff2bec7633def95791a47",
             "locator": {
-              "kind": "symbol",
-              "name": "JudgmentRow"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -54,15 +52,14 @@
       ]
     },
     "3": {
-      "note": "Selected-subject judgment and proofs: `Proof` owns the described branch.",
+      "note": "Selected-subject judgment and proofs: `Proof` owns the described branch.\n\nAnchor: `Proof`",
       "targets": [
         {
           "anchor": {
-            "blob": "5998106166bd7ead48ac09f5173c06c3cacb5f39",
-            "content": "sha256:779b8cfdcc9f45cc5ca6109e72649c95c3afc4d829ae0b10776004cf8e959817",
+            "blob": "fb3673e391e127346cf2d3310decd68af3efe750",
+            "content": "sha256:6bee5bf69957e553ae3bf8c57876363e3f67f3f9c75ff2bec7633def95791a47",
             "locator": {
-              "kind": "symbol",
-              "name": "Proof"
+              "kind": "file"
             }
           },
           "kind": "code"

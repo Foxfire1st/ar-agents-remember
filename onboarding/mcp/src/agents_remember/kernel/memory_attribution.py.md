@@ -77,7 +77,9 @@ Source declarations and test assertions are distinguished from execution and acc
 - The history walk and message/value parsers define the actual read behavior. [2]
 - Row conversion and optional object validation. [3]
 - Runtime ledger derivation never consults cache text. [4]
+
 - The source census and behavioral renderer case keep the producer seam visible. [5]
+
 - None [6]
 - None [7]
 - None [8]

@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/application/task_docs/task_doc_section_scaffolding.py",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
@@ -41,15 +42,14 @@
       ]
     },
     "2": {
-      "note": "`_build_doc` routes create and replace candidates through this helper (after the `kind` default) and only then through `_validate`, the canonical model validation.\n\nAnchor: \"scaffold_register_sections(data)\"",
+      "note": "`_build_doc` routes create and replace candidates through this helper (after the `kind` default) and only then through `_validate`, the canonical model validation.\n\nAnchor: `_build_doc`",
       "targets": [
         {
           "anchor": {
-            "blob": "95185967dd7ca4326d7c22ffeb56416e31f26d89",
-            "content": "sha256:a5d655ebf704827e586fa3e9600ee8a602dbbe9434637cd67d5caeb81ee94732",
+            "blob": "f174a79f72375a38aa57f50907312424f3fc2c3c",
+            "content": "sha256:4639ac7fede07fbf8fd4a606e94345d3e15fdc3bc40ee0f57fba307bccd95505",
             "locator": {
-              "kind": "symbol",
-              "name": "_build_doc"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/task_docs/task_doc_tools.py"
           },

@@ -47,5 +47,7 @@ so a stuck start fails as a name rather than as a hang.
 
 - A down home starts once and never installs, configures or reloads. [1]
 - Two concurrent starts share one home lock. [2]
+
 - A contending start joins the same owned outcome without retry. [3]
+
 - Start and status never query npm and name the configuration they discovered. [4]

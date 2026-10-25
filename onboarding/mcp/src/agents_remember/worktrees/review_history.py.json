@@ -94,37 +94,14 @@
   ],
   "references": {
     "1": {
-      "note": "Error/status boundary, cap-aware begin semantics, and pending admission.",
+      "note": "Error/status boundary, cap-aware begin semantics, and pending admission.\n\nAnchor: `ReviewHistoryError` `begin_task_review` `require_pending_review`",
       "targets": [
         {
           "anchor": {
             "blob": "29bbfb919fa2a5e25fc3e3ee172407e92e192fc0",
-            "content": "sha256:57cb0cc0a1a3eca719c853b3d40d04af6f08a12b20a3f13d2b4c92ee8c1cd232",
+            "content": "sha256:42dd33d21c574d9e80eec3ddcee8b4a0814786c26ea0359ce5660dd395c29f1d",
             "locator": {
-              "kind": "symbol",
-              "name": "ReviewHistoryError"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "148f3e330b6e969f257757c54ab70c7506c5bfae",
-            "content": "sha256:c07d7a3c7ba19f526c24128b195a611d257f79e05869f1c0034c3f722702e859",
-            "locator": {
-              "kind": "symbol",
-              "name": "begin_task_review"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "29bbfb919fa2a5e25fc3e3ee172407e92e192fc0",
-            "content": "sha256:5bd6ecbaf66d7e943325fdc3d95e9c3a29d3db71421e133bf2d8f9fe6a827a33",
-            "locator": {
-              "kind": "symbol",
-              "name": "require_pending_review"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -166,37 +143,14 @@
       ]
     },
     "2": {
-      "note": "Publication field validation, developer-permission parsing, and sealed baseline creation.",
+      "note": "Publication field validation, architect/developer approval parsing, and sealed baseline creation.\n\nAnchor: `_validate_publication_fields` `_parse_developer_exception` `_record_baseline`",
       "targets": [
         {
           "anchor": {
-            "blob": "148f3e330b6e969f257757c54ab70c7506c5bfae",
-            "content": "sha256:8bb975a0afc7d1347c49594ad894de494fb3c46ffd93c170d28304409f882a4a",
-            "locator": {
-              "kind": "symbol",
-              "name": "_validate_publication_fields"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "148f3e330b6e969f257757c54ab70c7506c5bfae",
-            "content": "sha256:89d61f6775c469e3d6643321f2d77ecdecadc983d01b98f07e2fd2593e3a209b",
-            "locator": {
-              "kind": "symbol",
-              "name": "_parse_developer_exception"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
             "blob": "29bbfb919fa2a5e25fc3e3ee172407e92e192fc0",
-            "content": "sha256:416714329edf8424a27308852ed61776ca20fb58a7285203fced0c17a61cdd66",
+            "content": "sha256:42dd33d21c574d9e80eec3ddcee8b4a0814786c26ea0359ce5660dd395c29f1d",
             "locator": {
-              "kind": "symbol",
-              "name": "_record_baseline"
+              "kind": "file"
             }
           },
           "kind": "code"

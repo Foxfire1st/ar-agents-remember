@@ -62,7 +62,7 @@
       ]
     },
     "3": {
-      "note": "The application entry point that admits and then compiles, returning a refusal as a value.",
+      "note": "The application entry point that admits and then compiles, returning a refusal as a value.\n\nAnchor: `compile_admitted_capsule` `CapsuleCompilationOutcome`",
       "targets": [
         {
           "anchor": {
@@ -78,8 +78,8 @@
         },
         {
           "anchor": {
-            "blob": "8f55401b7e0afa34d4cc0cc01d77d2aa95c1a3b7",
-            "content": "sha256:4aae10481d05e43d7a434e93ae593f4f4643d82811f592c85432b658c5def51e",
+            "blob": "0de84f83644c391b29759b1623034309cabc8c72",
+            "content": "sha256:7b16c4a32019a3e8f4ccf82b15f964d954f4c2df5c97d530d7128a382caa421b",
             "locator": {
               "kind": "symbol",
               "name": "CapsuleCompilationOutcome"
@@ -90,12 +90,10 @@
         },
         {
           "anchor": {
-            "blob": "8f55401b7e0afa34d4cc0cc01d77d2aa95c1a3b7",
-            "content": "sha256:890ae5d28141750c1f331f5741092fc292b0d05127e02b5d8d667323dfe0b1ad",
+            "blob": "0de84f83644c391b29759b1623034309cabc8c72",
+            "content": "sha256:fa7dbb04c116a8a6d6767c3d85c3b723091f0af5bfd84f27ffc91b7b7e9f8f52",
             "locator": {
-              "end": 88,
-              "kind": "line_range",
-              "start": 46
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/role_capsules/compilation.py"
           },

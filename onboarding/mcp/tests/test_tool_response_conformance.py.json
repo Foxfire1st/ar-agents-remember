@@ -1,5 +1,6 @@
 {
   "path": "mcp/tests/test_tool_response_conformance.py",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
@@ -7,7 +8,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "509ea5f692f3a2118acadb072754265a7d8e5ea8",
+            "blob": "f59be949fc3fa155da0ce68d6c8301c02ac3e624",
             "content": "sha256:71008f419ddeb28d82ad7d9e3deee3ba0467de59dedc94cbe79b486c1b8abd55",
             "locator": {
               "kind": "symbol",
@@ -19,12 +20,22 @@
       ]
     },
     "10": {
-      "note": "The registered description and the refusal name the same `kind` vocabulary.",
+      "note": "The registered description and the refusal name the same `kind` vocabulary.\n\nAnchor: `test_task_doc_description_and_refusal_name_the_same_kind_vocabulary`",
       "targets": [
         {
           "anchor": {
-            "blob": "6e3fe231e66183f0b626d5f8e2e0ac4273e9fca1",
-            "content": "sha256:c01ec63e077c1f54f8d409ce8df2e0c0bced59b01234b9961f631814f2f7099b",
+            "blob": "f59be949fc3fa155da0ce68d6c8301c02ac3e624",
+            "content": "sha256:be58db0b4bd445f33d60894388f32d419f2b27d55d0e2933870095fd73ce20c1",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f59be949fc3fa155da0ce68d6c8301c02ac3e624",
+            "content": "sha256:f04412ed9dae0bc176c2e8bfc1973e838f9062eaafab55c1999493c21a15fa36",
             "locator": {
               "kind": "symbol",
               "name": "test_task_doc_description_and_refusal_name_the_same_kind_vocabulary"
@@ -35,12 +46,22 @@
       ]
     },
     "11": {
-      "note": "Every `next_tool=` literal the lifecycle package passes is declared on the response model.",
+      "note": "Every `next_tool=` literal the lifecycle package passes is declared on the response model.\n\nAnchor: `test_every_next_tool_its_own_refusals_advertise_is_declared`",
       "targets": [
         {
           "anchor": {
-            "blob": "eedb1ad29acbd2948a1f51bf3896865529e74a5f",
-            "content": "sha256:269e347b7998fc111fadd348da9e5ee7e4b1ed533c20f7d96cf957c6a4519891",
+            "blob": "f59be949fc3fa155da0ce68d6c8301c02ac3e624",
+            "content": "sha256:be58db0b4bd445f33d60894388f32d419f2b27d55d0e2933870095fd73ce20c1",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f59be949fc3fa155da0ce68d6c8301c02ac3e624",
+            "content": "sha256:8e838319984d9e09e3ffafd67f72cb9ca0f01175313ab96dcb1b6801866e8d53",
             "locator": {
               "kind": "symbol",
               "name": "test_every_next_tool_its_own_refusals_advertise_is_declared"
@@ -50,77 +71,24 @@
         }
       ]
     },
-    "12": {
-      "note": "The `sprint-owner-required` refusal is a typed payload, driven through the real tool.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "eedb1ad29acbd2948a1f51bf3896865529e74a5f",
-            "content": "sha256:dd0b17022497288cc92d70957c4d9078c6eaa355b91ca76554cfdac3b093099c",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_operator_inbox_post_sprint_owner_refusal_is_a_typed_payload"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "13": {
-      "note": "A queued operator post must still report `entryId`, `state`, `messageKind`, `deliveryState`.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "87e2c6a6db3159dfeefd2bc8a99eb86d00ff1f50",
-            "content": "sha256:c33e700b779973c57a1d0611c819e41f5c8d15a18b8bc649b2b9de0dd82abc6c",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_a_queued_operator_inbox_post_still_must_report_its_entry"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "14": {
-      "note": "`session_retire` reports the stranded row after the seat is already gone.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "6e3fe231e66183f0b626d5f8e2e0ac4273e9fca1",
-            "content": "sha256:ba73bb49dc8e61a4b45cc6933c76eea58117d7d5b538b42c8e05d5837ebfc5b1",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_session_retire_reports_the_stranded_row_after_the_seat_is_gone"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "15": {
-      "note": "The structural delivery projection is declared on the shared base every consumer inherits.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "18137942a95e9b7f9202606afaa26a9e68d7dcde",
-            "content": "sha256:e661867c6ff7d344365267bdaf53415fed314675cbdb7cf9f56d79ae365e99fb",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_the_structural_delivery_projection_is_declared_on_every_consumer"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
     "17": {
-      "note": "The choke point whose guarantee this module moves into the suite.",
+      "note": "The choke point whose guarantee this module moves into the suite.\n\nAnchor: `_tool_payload`",
       "targets": [
         {
           "anchor": {
-            "blob": "cf09680d5bb09436a9d3afb73da9cbd60f1af5fc",
-            "content": "sha256:35b48e3f7dcb68f7a66dcb72920ee84b9b6dd535711731b79de1596a0e2239fa",
+            "blob": "bbd96445dae6e10e1c4052722fab1b614aafedfe",
+            "content": "sha256:e65598ad08d511a5ffa26a3099d273596eea7844d5c2a00685c2ccb183271c43",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/base.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bbd96445dae6e10e1c4052722fab1b614aafedfe",
+            "content": "sha256:c0e54f12b9211f7fb26dd24d118a8562de4972ce6d7beb7a43b920a7fc979f42",
             "locator": {
               "kind": "symbol",
               "name": "_tool_payload"
@@ -132,12 +100,23 @@
       ]
     },
     "18": {
-      "note": "The registry whose models the structural layer sweeps.",
+      "note": "The registry whose models the structural layer sweeps.\n\nAnchor: `TOOL_RESPONSE_MODELS`",
       "targets": [
         {
           "anchor": {
-            "blob": "f0ed9e8a95befff8de1c27cb1778af257e3929df",
-            "content": "sha256:c5e692c8d6a2bd9e57fe45c669fad6d515fb880c1ffd1637dd37a067f6c787fc",
+            "blob": "ca5af906298a90f3101a98a5542005e3549b3c0a",
+            "content": "sha256:10aa450f5caa463f1fe75eabf3cdf642c485bc41fe35884de37c4765dece2359",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/models/tools/tool_registry.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ca5af906298a90f3101a98a5542005e3549b3c0a",
+            "content": "sha256:e32d72e73c43c68526666e351964e31154f7ccc5f262554de0776dac177d9e07",
             "locator": {
               "kind": "symbol",
               "name": "TOOL_RESPONSE_MODELS"
@@ -149,12 +128,23 @@
       ]
     },
     "19": {
-      "note": "The advertised public roster the surface layer checks against.",
+      "note": "The advertised public roster the surface layer checks against.\n\nAnchor: `PUBLIC_TOOLS`",
       "targets": [
         {
           "anchor": {
-            "blob": "37b01ee751f37d46d0fa1d6ea4c24e5aff5f1200",
-            "content": "sha256:7d00533fe5fe98c6953fcd37b7f70fe04e7a048b82aa53b8da59ffa147469646",
+            "blob": "d0b0ddd9f150e32116b430ecc74907fcf68fee97",
+            "content": "sha256:fdef15e2ca9d39f66c8570a7147cb894dda16f47c7d3558bb4454e5b4714875f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/models/tools/public_roster.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d0b0ddd9f150e32116b430ecc74907fcf68fee97",
+            "content": "sha256:77300d3d8d990814a8c85c25a0c314254dde308fd394c4a03ff87c1fd34e2cb3",
             "locator": {
               "kind": "symbol",
               "name": "PUBLIC_TOOLS"
@@ -165,33 +155,17 @@
         }
       ]
     },
-    "2": {
-      "note": "The 17 internal compatibility registrations are named, not implied.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "87e2c6a6db3159dfeefd2bc8a99eb86d00ff1f50",
-            "content": "sha256:fa77efa16b2fd7b9c964415e6d6b9788a28bfc87162708ce96b98b801ddf3a4f",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_the_seventeen_internal_registrations_are_named_not_implied"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
     "20": {
-      "note": "The lane row that keeps this module in the default lane.",
+      "note": "The lane manifest registers mcp/tests/test_tool_response_conformance.py in architecture-fitness. Membership selects evidence and does not establish execution.",
       "targets": [
         {
           "anchor": {
-            "blob": "11ba98ff63f4a4815985ac51e2c0c7b5a48556a4",
-            "content": "sha256:9bedbc4065fdfc05429289b99eac1e9736fd504528bdcf8432e49d781e4c3f98",
+            "blob": "102c4550ab6429f44c8fb543d1d0662de66a1b8c",
+            "content": "sha256:b8fa47d0ac57d66635cfaba93efe83a1167ba84b70f00142a1cc66be6e186d05",
             "locator": {
-              "end": 630,
+              "end": 628,
               "kind": "line_range",
-              "start": 630
+              "start": 628
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -199,28 +173,13 @@
         }
       ]
     },
-    "21": {
-      "note": "Current synced source supports the qualified account; declarations, mirrors and fixture assertions are not executed acceptance.\n\nRetained R111 pre-sync qualified source account; volatile numbers name that earlier epoch, not the composed source: Current source pins are 42 public tools,20 modules and66 handlers; former39/19/63 figures are historical. Removed task-read coverage asserts both operations return operation-removed/file names, no steps, log-backed TaskDocResponse validation and no delivered framework envelope. The deleted successful-checklist method cannot witness current behavior. These declarations and assertions are not a fresh live advertisement; retain the separately disclosed delivered-payload fallback rather than claiming every whole-result check is independent.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "87e2c6a6db3159dfeefd2bc8a99eb86d00ff1f50",
-            "content": "sha256:31eb1edfb861e20076a70a1632ef10b44d38ac329965d20a73292714f6875ed4",
-            "locator": {
-              "kind": "file"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
     "22": {
-      "note": "Current literal source populations are43 roster names,14 adapter modules and45 handlers, while strict/flexible sets remain derived.",
+      "note": "Current literal source populations are 44 roster names, 14 adapter modules and 46 handlers, while strict/flexible sets remain derived. Anchor: `ROSTER_SIZE`, `TOOL_MODULE_COUNT`, `TOOL_HANDLER_COUNT`",
       "targets": [
         {
           "anchor": {
-            "blob": "509ea5f692f3a2118acadb072754265a7d8e5ea8",
-            "content": "sha256:035e921f3d82586846aa17938695179ffe8501d4a67663694ba630ff9a79e0e7",
+            "blob": "f59be949fc3fa155da0ce68d6c8301c02ac3e624",
+            "content": "sha256:be58db0b4bd445f33d60894388f32d419f2b27d55d0e2933870095fd73ce20c1",
             "locator": {
               "kind": "file"
             }
@@ -230,12 +189,22 @@
       ]
     },
     "3": {
-      "note": "The fixtures' models are the registry's own objects.",
+      "note": "The fixtures' models are the registry's own objects.\n\nAnchor: `test_the_models_these_fixtures_validate_are_the_registered_ones`",
       "targets": [
         {
           "anchor": {
-            "blob": "18137942a95e9b7f9202606afaa26a9e68d7dcde",
-            "content": "sha256:652a88dfd0a8b6444a5b35c2c25c51d2e5d891bfc59ab831225a5c0e762fdf79",
+            "blob": "f59be949fc3fa155da0ce68d6c8301c02ac3e624",
+            "content": "sha256:be58db0b4bd445f33d60894388f32d419f2b27d55d0e2933870095fd73ce20c1",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f59be949fc3fa155da0ce68d6c8301c02ac3e624",
+            "content": "sha256:dd131eb690b30ddcc7c1555da13e60450cef7deaea0bd876e5b7b7542de61f4f",
             "locator": {
               "kind": "symbol",
               "name": "test_the_models_these_fixtures_validate_are_the_registered_ones"
@@ -246,15 +215,14 @@
       ]
     },
     "4": {
-      "note": "Every registered model is strict or declared flexible; the 48/36 split is pinned.",
+      "note": "Every registered model is strict or declared flexible, and the split is derived twice — from the declared base class and from each model's own `extra` config — so the two derivations must agree by name.\n\nAnchor: `test_every_registered_model_is_strict_or_declared_flexible`",
       "targets": [
         {
           "anchor": {
-            "blob": "6e3fe231e66183f0b626d5f8e2e0ac4273e9fca1",
-            "content": "sha256:a30646fc8a8af95305e19572cb143889b84ea0510b28dae90fa1888a400710b9",
+            "blob": "f59be949fc3fa155da0ce68d6c8301c02ac3e624",
+            "content": "sha256:be58db0b4bd445f33d60894388f32d419f2b27d55d0e2933870095fd73ce20c1",
             "locator": {
-              "kind": "symbol",
-              "name": "test_every_registered_model_is_strict_or_declared_flexible"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -262,12 +230,22 @@
       ]
     },
     "5": {
-      "note": "Every tool adapter module routes through the `_tool_payload` choke point, per handler on the return.",
+      "note": "Every tool adapter module routes through the `_tool_payload` choke point, per handler on the return.\n\nAnchor: `test_every_tool_adapter_module_routes_through_the_choke_point`",
       "targets": [
         {
           "anchor": {
-            "blob": "2b79bc185bf328037d31b1feb511a87b81cc180f",
-            "content": "sha256:da2ab1dfe577f07a990695bf995d691617d8c9dae0bb14c1537ac68f604f05f7",
+            "blob": "f59be949fc3fa155da0ce68d6c8301c02ac3e624",
+            "content": "sha256:be58db0b4bd445f33d60894388f32d419f2b27d55d0e2933870095fd73ce20c1",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f59be949fc3fa155da0ce68d6c8301c02ac3e624",
+            "content": "sha256:360db21bdbf1c242bc44a8eba5ec778921a7a72cb1d2d8d6d9e8d7fcb8ee74a9",
             "locator": {
               "kind": "symbol",
               "name": "test_every_tool_adapter_module_routes_through_the_choke_point"
@@ -278,12 +256,22 @@
       ]
     },
     "6": {
-      "note": "`lifecycle_finalize_task` validates with the series release produced, and asserts it reached the emitting branch.",
+      "note": "`lifecycle_finalize_task` validates with the series release produced, and asserts it reached the emitting branch.\n\nAnchor: `test_lifecycle_finalize_validates_with_the_series_release_produced`",
       "targets": [
         {
           "anchor": {
-            "blob": "6e3fe231e66183f0b626d5f8e2e0ac4273e9fca1",
-            "content": "sha256:29bbc6291ff08de8522956701ed7e06a87550720eedb292a3012105e1a7d252e",
+            "blob": "f59be949fc3fa155da0ce68d6c8301c02ac3e624",
+            "content": "sha256:be58db0b4bd445f33d60894388f32d419f2b27d55d0e2933870095fd73ce20c1",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f59be949fc3fa155da0ce68d6c8301c02ac3e624",
+            "content": "sha256:dd1f3b8dd7e919a0e30cd9cf6b9e4d99f6fa11f765ce9dad80c391ce7c2e6be1",
             "locator": {
               "kind": "symbol",
               "name": "test_lifecycle_finalize_validates_with_the_series_release_produced"
@@ -298,7 +286,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "509ea5f692f3a2118acadb072754265a7d8e5ea8",
+            "blob": "f59be949fc3fa155da0ce68d6c8301c02ac3e624",
             "content": "sha256:77fb2fc4c029d7c3830a75adbc316db7b6a7afea31777b10b10f8cf8e970d63a",
             "locator": {
               "kind": "symbol",
@@ -314,27 +302,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "509ea5f692f3a2118acadb072754265a7d8e5ea8",
+            "blob": "f59be949fc3fa155da0ce68d6c8301c02ac3e624",
             "content": "sha256:afd6f7681d39f08c133ae77cc7fcf455726b80680450f9479c2cd045526b9717",
             "locator": {
               "kind": "symbol",
               "name": "test_the_two_atomic_series_keys_are_declared_together"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "9": {
-      "note": "`task_doc`'s `read_steps` validates and returns the authored units.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "eedb1ad29acbd2948a1f51bf3896865529e74a5f",
-            "content": "sha256:11a051b483f19cc4c742304757e5481aa647bdf67dacf0a287246bfd1459ccc7",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_task_doc_read_steps_validates_and_returns_the_checklist"
             }
           },
           "kind": "test"

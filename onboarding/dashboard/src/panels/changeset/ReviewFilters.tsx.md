@@ -21,4 +21,5 @@ The caller must keep page, lane and inventory bound to the same comparison. Thes
 - Destination count, named waiting state and empty-versus-missing button behavior. [1]
 - No context means no controls; non-all filters show shared notes. [2]
 - Lane file selection and intersection are pure held-answer helpers. [3]
+
 - Actual viewer imports and mounts this owner. [4]

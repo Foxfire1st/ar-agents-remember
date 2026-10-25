@@ -1,5 +1,6 @@
 {
   "path": "skills/c-05-create-or-update-onboarding-files/SKILL.md",
+  "proves": [],
   "realizes": [],
   "references": {
     "15": {
@@ -7,10 +8,24 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2402e3a7fb35fe2eeee50102ee86c1354e216a5b",
-            "content": "sha256:8473803499e0af51b9ab60e0b4327e3d2335fb1657bee3ec968f2076a43059e7",
+            "blob": "7544470421d07347f2127e91131a701490676138",
+            "content": "sha256:8d77f99e302aeca8049524e9e8b10dd027ad47093e804ba3dd5566124e64ecd3",
             "locator": {
-              "kind": "file"
+              "end": 35,
+              "kind": "line_range",
+              "start": 8
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7544470421d07347f2127e91131a701490676138",
+            "content": "sha256:ded0a37646f5bb829be12c1751d4585cb778a01b2f287e72f482b1320661e732",
+            "locator": {
+              "end": 57,
+              "kind": "line_range",
+              "start": 46
             }
           },
           "kind": "code"
@@ -22,8 +37,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6f67bb038ad8fbe809c2027b6b98879459a2e1ce",
-            "content": "sha256:2ce77f99d363de2e86b7363d1728ecedfa524c0311fa0cb21dba831bfa104af2",
+            "blob": "07f4fbb59134af0846462f3929091464962f171f",
+            "content": "sha256:4e96ce5e2d8df463581dd6b7b389e93a5d177d57aac6a52ca881e431b29307fc",
             "locator": {
               "kind": "file"
             },

@@ -72,7 +72,9 @@ the current working-candidate behavior; historical entries below retain their or
 
 
 
+
 - The lifecycle recovery owner performs the required same-generation resumption. [4]
+
 
 ### Cross-Repo References
 
@@ -83,6 +85,10 @@ source is configured for this file's claims.
 No additional configured cross-repository evidence is claimed.
 
 - The fixture owns real temporary code/memory refs and an admitted series contract. [1]
+
 - The retained scenario proves one content commit and reads its attribution from Git. [2]
+
+
 - Converted paired-commit/replay guarantees and retained interrupted-receipt recovery [3]
+
 - The pre-code census case performs grant controls before real edit, reanchor and source-bound trace computation. [5]

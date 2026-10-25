@@ -75,7 +75,9 @@ The source file itself is the current evidence for this file-specific contract.
 - Door generation and dependency construction bind consumed evidence without a ledger identity or provenance edge. [1]
 - The module defines `CloseoutDoorGeneration`; `DoorPublicationEvidence` as its public seam. [2]
 - The three retired contract-byte digest names and the read-time strip that keeps older persisted operation records loadable while every other unknown key still fails. [3]
+
 - The R03 door dependency vocabulary owned by this record type. [4]
+
 
 ### Cross-Repo References
 

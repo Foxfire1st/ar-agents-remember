@@ -3,12 +3,12 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "A sprint that lost its last master to a retirement is read as a sprint by every tool, with no next action that cannot work.",
+      "note": "**Retained historical source account — superseded by the current contract:** A sprint that lost its last master to a retirement is read as a sprint by every tool, with no next action that cannot work.",
       "targets": [
         {
           "anchor": {
-            "blob": "5ae5ad72e7637a2820d59a503a8a30535af93f9e",
-            "content": "sha256:fc96e58f57290726673064f4ec2794c88d088aa7ee7301e6b29f606401222c8d",
+            "blob": "03ef49236daa150822614b10a9f3270eb5c3b92d",
+            "content": "sha256:ab5235c8002f534c898644c64460e9ec99950e00eb4df44c71760b4b53445600",
             "locator": {
               "kind": "file"
             }
@@ -18,12 +18,12 @@
       ]
     },
     "2": {
-      "note": "An emptied sprint can be edited and commands a master again.",
+      "note": "**Retained historical source account — superseded by the current contract:** An emptied sprint can be edited and commands a master again.",
       "targets": [
         {
           "anchor": {
-            "blob": "5ae5ad72e7637a2820d59a503a8a30535af93f9e",
-            "content": "sha256:fc96e58f57290726673064f4ec2794c88d088aa7ee7301e6b29f606401222c8d",
+            "blob": "03ef49236daa150822614b10a9f3270eb5c3b92d",
+            "content": "sha256:ab5235c8002f534c898644c64460e9ec99950e00eb4df44c71760b4b53445600",
             "locator": {
               "kind": "file"
             }
@@ -33,15 +33,14 @@
       ]
     },
     "3": {
-      "note": "The emptied-sprint control builds its new series with both code and external-memory plans.",
+      "note": "The emptied-sprint control builds its new series with both code and external-memory plans.\n\nAnchor: `test_a_sprint_that_lost_its_last_master_is_read_as_a_sprint_by_every_tool`",
       "targets": [
         {
           "anchor": {
-            "blob": "5ae5ad72e7637a2820d59a503a8a30535af93f9e",
-            "content": "sha256:6b2632f8ce45d5ee975b9a7ed90e61970842c9e7cf100cf1898623f697d4f9cd",
+            "blob": "03ef49236daa150822614b10a9f3270eb5c3b92d",
+            "content": "sha256:ab5235c8002f534c898644c64460e9ec99950e00eb4df44c71760b4b53445600",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_sprint_that_lost_its_last_master_is_read_as_a_sprint_by_every_tool"
+              "kind": "file"
             }
           },
           "kind": "test"

@@ -77,7 +77,9 @@ The declarations readers, the refusal they map, and the owners that decide packe
 - The identity helper: a packet reference yields `"<stable_id>@<version>"`, prose yields `None`. [2]
 - The deliberate non-ownership path that does not read an adjacent packet. [3]
 - A missing obligation is a reported gap, never an empty section. [4]
+
 - The task-intent owner that confines a declared packet path, reads it and verifies its header. [5]
+
 - The task-root-relative packet confinement the exact-text route reuses rather than reimplements. [6]
 - The section role vocabulary a gap is reported against. [7]
 - The case that proves every owned obligation is carried verbatim and a missing section is a gap. [8]

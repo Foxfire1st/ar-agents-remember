@@ -1,5 +1,6 @@
 {
   "path": "scripts/sync-skills.py",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
@@ -159,8 +160,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "52ead88df5abcc06f44245c1a48ebae0f190b1a6",
-            "content": "sha256:cc0fc76d82fcb1ce49eccf65d18cc94932f99661e0467ab778bd59fca87baeac",
+            "blob": "00b5dd8aa2698993636ba72c416beaf0d07dff3f",
+            "content": "sha256:1c8dbc9ac78cd4e8aecbfeaece0b1cee9d5e1ab7d1d4ae36c7dc40afff255e22",
             "locator": {
               "kind": "symbol",
               "name": "check_targets"
@@ -170,8 +171,8 @@
         },
         {
           "anchor": {
-            "blob": "52ead88df5abcc06f44245c1a48ebae0f190b1a6",
-            "content": "sha256:17c47dd48cd733f916a959f009cc6d8a4b8a626a9310d1a59abd479874ef2def",
+            "blob": "00b5dd8aa2698993636ba72c416beaf0d07dff3f",
+            "content": "sha256:898338fcf0c6c168c8cdc67208a611993659524c94462aee8fbb5987b755524c",
             "locator": {
               "end": 192,
               "kind": "line_range",
@@ -179,16 +180,26 @@
             }
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "00b5dd8aa2698993636ba72c416beaf0d07dff3f",
+            "content": "sha256:753adb3ef38e223969853a4fa937b2e7eeda92d641fe862b8ea7ec19e6bbbe28",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
         }
       ]
     },
     "3": {
-      "note": "Normal sync mode refuses self-sync, replaces each target skill folder, copies canonical skills into place, and then reruns the check.",
+      "note": "Normal sync mode refuses self-sync, replaces each target skill folder, copies canonical skills into place, and then reruns the check.\n\nAnchor: `sync_targets` `sync_target` `replace_tree`",
       "targets": [
         {
           "anchor": {
-            "blob": "52ead88df5abcc06f44245c1a48ebae0f190b1a6",
-            "content": "sha256:749faa913fd02887de600f0c5da29e8e5d815d3ab4936ea5bb847d1a302f9b7d",
+            "blob": "00b5dd8aa2698993636ba72c416beaf0d07dff3f",
+            "content": "sha256:8a708c228cb1c5ae2d195b62d9f39f63c6cf457f6fee943a1a36015a3f79dd99",
             "locator": {
               "kind": "symbol",
               "name": "sync_targets"
@@ -220,8 +231,8 @@
         },
         {
           "anchor": {
-            "blob": "52ead88df5abcc06f44245c1a48ebae0f190b1a6",
-            "content": "sha256:8fbd9ebfe0acdf40f935fe337d0cddb9b12b37bdefd46155ad53f319f950f16f",
+            "blob": "00b5dd8aa2698993636ba72c416beaf0d07dff3f",
+            "content": "sha256:18f5305bfc2ccce4612104b4ebef09d6badbaf527908201fd3b08413cb78941e",
             "locator": {
               "end": 203,
               "kind": "line_range",
@@ -229,16 +240,26 @@
             }
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "00b5dd8aa2698993636ba72c416beaf0d07dff3f",
+            "content": "sha256:753adb3ef38e223969853a4fa937b2e7eeda92d641fe862b8ea7ec19e6bbbe28",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
         }
       ]
     },
     "4": {
-      "note": "The root AGENTS instructions tell contributors to edit root `skills/` first and run `python3 scripts/sync-skills.py` rather than editing generated skill copies directly.\n\nAnchor: `# Agents Remember Source Checkout Instructions`",
+      "note": "The root AGENTS instructions tell contributors to edit root `skills/` first and run `python3 scripts/sync-skills.py` rather than editing generated skill copies directly.",
       "targets": [
         {
           "anchor": {
-            "blob": "0d37eb9c9aa1a4ec77e34063f3996c3371b18d97",
-            "content": "sha256:8ae65118d9ec5b5998e11492c0f087b3b4f6e41f2e152ea839fd339ed78c435a",
+            "blob": "a85a322c28466c2bf57ad99345c0bdcdee9dfd0c",
+            "content": "sha256:6fface819a00caa92cd1e6d7b9da02f390dc9d0f69c140ba43577b342b7dda5c",
             "locator": {
               "end": 198,
               "kind": "line_range",

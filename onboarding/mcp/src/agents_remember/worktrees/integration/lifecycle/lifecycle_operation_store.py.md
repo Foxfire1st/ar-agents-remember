@@ -105,7 +105,9 @@ revisions after validation and refuses transforms that pre-assign either. The su
 supersede writers bump `meaningfulRevision` alongside the generation/record-revision
 advance, so a successor is always visible to an old-generation waiter.
 
+
 - A terminal successor archives its exact predecessor before publishing the next generation. (`replace_terminal`) [10]
+
 - The shared meaningful-change comparison. (`meaningful_state_changed`) [11]
 
 - The current `_validate_private_preparation_transition` boundary implements the preparation contract above. [1]

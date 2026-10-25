@@ -3,15 +3,14 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "`FilePane` builds its `EditorView` with this theme bundle.",
+      "note": "`FilePane` builds its `EditorView` with this theme bundle.\n\nAnchor: `FilePane`",
       "targets": [
         {
           "anchor": {
-            "blob": "51f94729899f48cef6ffa98458e7c097fa30497e",
-            "content": "sha256:6c1ef40b74941e5bc4e8f9a286aefb833f98a00d211239b487d8009b8f9f6887",
+            "blob": "dbbb34c143ffd24687f884bd401852c94fb43a96",
+            "content": "sha256:4381a6ac5fd2d1fed3c3059c96f97e25dc55475450953631d92a8d35b059cd90",
             "locator": {
-              "kind": "symbol",
-              "name": "FilePane"
+              "kind": "file"
             },
             "path": "dashboard/src/panels/file-viewer/FilePane.tsx"
           },

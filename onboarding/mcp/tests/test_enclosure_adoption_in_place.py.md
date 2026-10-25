@@ -20,6 +20,8 @@ MIK-R82 rule 4 as amended: an enclosure holding its operation records in its own
 
 ## Evidence
 
+
 - In-place record adoption with hashed dry-run listing is pinned. [1]
+
 
 - Direct application whole facts retain exact found-in-place identity, digest and byte-size pins, plus no-copy/no-move comparisons. The adapter projection is not mistaken for that raw result. [2]

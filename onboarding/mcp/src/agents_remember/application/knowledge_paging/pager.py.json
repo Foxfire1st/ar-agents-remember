@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/application/knowledge_paging/pager.py",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
@@ -73,8 +74,18 @@
       ]
     },
     "3": {
-      "note": "The row, the cut and the binding.",
+      "note": "The row, the cut and the binding.\n\nAnchor: `PageRow` `PageCut` `PageBinding`",
       "targets": [
+        {
+          "anchor": {
+            "blob": "a3659136033c017cf54220a70cf6fee1566065ef",
+            "content": "sha256:7cb3eb8a72f5c9159b67e7296f006b50c8b11369a63ae1bcdb8a85ebecff4466",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
         {
           "anchor": {
             "blob": "a3659136033c017cf54220a70cf6fee1566065ef",
@@ -99,8 +110,8 @@
         },
         {
           "anchor": {
-            "blob": "42a16ad2e8a64f62e2ffb752fe4e7146cc9f2b58",
-            "content": "sha256:b06ea5f67589ba9ffa1623ba76ea6357c8281906741bbbb87b0e0e55e43aa55c",
+            "blob": "a3659136033c017cf54220a70cf6fee1566065ef",
+            "content": "sha256:cef5c0d3fcc4284568d57c2b8ca7858cea8da4c6d0d10a86b0f5db894d7720be",
             "locator": {
               "kind": "symbol",
               "name": "PageBinding"
@@ -124,16 +135,38 @@
             }
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a3659136033c017cf54220a70cf6fee1566065ef",
+            "content": "sha256:1c00010f96aaaffb9157b95207b94358ffbed8527225327b7963d1006082a428",
+            "locator": {
+              "end": 134,
+              "kind": "line_range",
+              "start": 119
+            }
+          },
+          "kind": "code"
         }
       ]
     },
     "5": {
-      "note": "The cut: estimate, verify, shorten; blocked versus oversized.",
+      "note": "The cut: estimate, verify, shorten; blocked versus oversized.\n\nAnchor: `cut_page` `_estimated_end`",
       "targets": [
         {
           "anchor": {
-            "blob": "0661a6e93ba9d5761a7d60a2bca321268a1aef6e",
-            "content": "sha256:daa56fe88a6360df3fd1cd2cb89b8928546f2266430c875b5d7f9d6778fb638e",
+            "blob": "a3659136033c017cf54220a70cf6fee1566065ef",
+            "content": "sha256:7cb3eb8a72f5c9159b67e7296f006b50c8b11369a63ae1bcdb8a85ebecff4466",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a3659136033c017cf54220a70cf6fee1566065ef",
+            "content": "sha256:ceb9fca9a7609622fe435196a98b7b32b1357ca31533b483671d585a83361370",
             "locator": {
               "kind": "symbol",
               "name": "cut_page"
@@ -143,8 +176,8 @@
         },
         {
           "anchor": {
-            "blob": "0661a6e93ba9d5761a7d60a2bca321268a1aef6e",
-            "content": "sha256:07271a984a98152491ee8476bef5c837dc930fb93151b0a1946cbbe33a709ea6",
+            "blob": "a3659136033c017cf54220a70cf6fee1566065ef",
+            "content": "sha256:7929ce7357119908166542f454764985676fa5a84b0228aff2d0f3aaa9c0f0a3",
             "locator": {
               "kind": "symbol",
               "name": "_estimated_end"
@@ -155,30 +188,25 @@
       ]
     },
     "6": {
-      "note": "The page facts every bounded response states.",
+      "note": "The page facts every bounded response states.\n\nAnchor: `page_block`",
       "targets": [
         {
           "anchor": {
-            "blob": "42a16ad2e8a64f62e2ffb752fe4e7146cc9f2b58",
-            "content": "sha256:b6ce691ff26737713add28021079800055ef5f1134ca3d2004779c996d26b0c6",
+            "blob": "a3659136033c017cf54220a70cf6fee1566065ef",
+            "content": "sha256:7cb3eb8a72f5c9159b67e7296f006b50c8b11369a63ae1bcdb8a85ebecff4466",
             "locator": {
-              "kind": "symbol",
-              "name": "page_block"
+              "kind": "file"
             }
           },
           "kind": "code"
-        }
-      ]
-    },
-    "7": {
-      "note": "Current candidate source supports the operative account; historical sections grant no current tool or execution acceptance.",
-      "targets": [
+        },
         {
           "anchor": {
-            "blob": "42a16ad2e8a64f62e2ffb752fe4e7146cc9f2b58",
-            "content": "sha256:929adc6ef039eedb58b904c3a5495c98719019b091b871565d44d33885679ff2",
+            "blob": "a3659136033c017cf54220a70cf6fee1566065ef",
+            "content": "sha256:04ca359fde767e301b48e20c510c00fd09eb5dc6f231f8e557e1c47ec8c323ec",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "page_block"
             }
           },
           "kind": "code"

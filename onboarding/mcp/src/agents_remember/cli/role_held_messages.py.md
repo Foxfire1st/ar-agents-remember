@@ -35,17 +35,25 @@ A ValueError releases the claim and returns cannot-open with the specific recove
 ## Evidence
 
 
+
 - Admission appends under the store lock and refuses overflow without dropping text. [1]
+
+
 
 - A drain delegates claim/readiness checks and whole-first FIFO delivery. [2]
 
+
+
 - Terminal lines are published separately from ended text and retain failure state. [3]
+
 
 - Yielded receipt paths, reads and drains are capped; each directory stays open as a live filesystem-order scan. Delivery root discovery is synchronous and retains one walk per discovered root, without the attention reader's sixty-four-folder cap. [4]
 
 - Validation precedes prompt construction and host launch; failures retain waiting work. [5]
 
+
 - Common restoration also validates instruction details and takeover references. [6]
+
 
 - Test source checks cannot-open, zero second host calls and retained/reclaimable work. [7]
 

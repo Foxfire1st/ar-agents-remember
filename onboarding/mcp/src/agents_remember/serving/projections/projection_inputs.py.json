@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/serving/projections/projection_inputs.py",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
@@ -72,8 +73,8 @@
     },
     {
       "anchor": {
-        "blob": "39e76d5f318181ffa7a607dc94fb9c7caabbbfca",
-        "content": "sha256:7e2a4b0031089fe480fc6885c2f18e8c706d1feeb69a50ba09f000b8c69ffbf2",
+        "blob": "e1d561eb43926925f6fefc875db17155ef322eb4",
+        "content": "sha256:b587decdc4759fbe040b7cad855befcc7b342d9523ac108060ef6932868ced65",
         "locator": {
           "kind": "file"
         }
@@ -84,7 +85,7 @@
         "handoffEntry": "L192-W-R199-02",
         "leaf": "260928-MIK-L192"
       },
-      "rationale": "Projection inputs collect no provider display state, so a removed panel has nothing to be fed from.",
+      "rationale": "projection_inputs.py collects no provider display state at C, so a retired panel has nothing to be fed from.",
       "role": "enforcement"
     },
     {
@@ -111,8 +112,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c3c2ff4bb45c68e3c588824c2a1e01c05816700a",
-            "content": "sha256:91d0302742e71a054ec9e189541bd252571ccff79f90082d54679902f56ef9f3",
+            "blob": "80f68a14806839156738f156091e776e566e18b6",
+            "content": "sha256:3dfabfe5745c213923ce0843a0db6ab71e1623aa0a5cd99c1153efed4f73c050",
             "locator": {
               "kind": "symbol",
               "name": "project_and_write"
@@ -123,12 +124,10 @@
         },
         {
           "anchor": {
-            "blob": "c3c2ff4bb45c68e3c588824c2a1e01c05816700a",
-            "content": "sha256:30913cba84ecc67ba6e46685625415ec00352ca49ef6016c1184bdee8f67f3c4",
+            "blob": "80f68a14806839156738f156091e776e566e18b6",
+            "content": "sha256:6f85a783f40f8df5c8afb659c5f7da8114cd5c3877c48f66578a5e8b5479dfb8",
             "locator": {
-              "end": 229,
-              "kind": "line_range",
-              "start": 155
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/serving/projections/projection_store.py"
           },
@@ -141,8 +140,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "58ee37a6db0561ca3b32095a92ecbd196ce02e9d",
-            "content": "sha256:30b9623107abc2c65c63e4d07a4fc1863a9ffcee3705c3244c47fa41a2351090",
+            "blob": "f8278dbb21252d1ffb0922f6be85733f1ccb7d2e",
+            "content": "sha256:96fd9160e41e3cf241c3c975f36c48fbd443544fdcf1b2bdfc48e87fbabcb5cf",
             "locator": {
               "kind": "symbol",
               "name": "Projector"
@@ -153,12 +152,23 @@
         },
         {
           "anchor": {
-            "blob": "58ee37a6db0561ca3b32095a92ecbd196ce02e9d",
-            "content": "sha256:8f7b37421109ff56d5c82909a5c2b8dee902f9ec43b218a722b793ab6af8a0d1",
+            "blob": "f8278dbb21252d1ffb0922f6be85733f1ccb7d2e",
+            "content": "sha256:40d46dcfd729fe83cb6329ce150f6e7f3cb7970ad114064fa5b768456f2c1196",
             "locator": {
               "end": 435,
               "kind": "line_range",
               "start": 137
+            },
+            "path": "mcp/src/agents_remember/serving/projector.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f8278dbb21252d1ffb0922f6be85733f1ccb7d2e",
+            "content": "sha256:6e368284f71bf1f05e31c3246430c5e34ea878cc3304b85750db8770d592c0b2",
+            "locator": {
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/serving/projector.py"
           },
@@ -193,7 +203,7 @@
         },
         {
           "anchor": {
-            "blob": "ffb20091c2f732f798e06eb62370e7ad811943c0",
+            "blob": "e1d561eb43926925f6fefc875db17155ef322eb4",
             "content": "sha256:c764fe81c6219344b74013ef3bb25a11a92503228e4f3b24514e110856314936",
             "locator": {
               "kind": "symbol",
@@ -204,7 +214,7 @@
         },
         {
           "anchor": {
-            "blob": "ffb20091c2f732f798e06eb62370e7ad811943c0",
+            "blob": "e1d561eb43926925f6fefc875db17155ef322eb4",
             "content": "sha256:f03d24460a6c0b25e5a7bb5b94f9766207f3551155e27aa69f462d7a23da23e8",
             "locator": {
               "kind": "symbol",
@@ -220,8 +230,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cb0ab4cb5e3a37ea0377727c5e29c1744b0d162b",
-            "content": "sha256:ae819fb65f1d1a25497ac0fc575d13dc21f8551f4119b6dac04ec32fb3cdeac0",
+            "blob": "80f68a14806839156738f156091e776e566e18b6",
+            "content": "sha256:954807971041fb1a3214d979f69b958d29612fc8d1400979c0672b3190893772",
             "locator": {
               "kind": "symbol",
               "name": "_gather_repo_surfaces_cached"
@@ -245,12 +255,23 @@
         },
         {
           "anchor": {
-            "blob": "2497eca35695f895fd899b6722332e8e60fc9597",
+            "blob": "80f68a14806839156738f156091e776e566e18b6",
+            "content": "sha256:6f85a783f40f8df5c8afb659c5f7da8114cd5c3877c48f66578a5e8b5479dfb8",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/serving/projections/projection_store.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "80f68a14806839156738f156091e776e566e18b6",
             "content": "sha256:080616f28cf77422a2508335a3d7e0cce09a0ba3bc4a682e7069af75dd926be4",
             "locator": {
-              "end": 63,
+              "end": 61,
               "kind": "line_range",
-              "start": 63
+              "start": 61
             },
             "path": "mcp/src/agents_remember/serving/projections/projection_store.py"
           },
@@ -259,44 +280,21 @@
       ]
     },
     "6": {
-      "note": "Repository reader and retained input aggregate omit sidecar staleness and carry route coverage plus ledgers.",
+      "note": "Repository reader and retained input aggregate omit sidecar staleness and carry route coverage plus ledgers.\n\nAnchor: `RepoSurfaceReader` `ProjectionInputs` `read`",
       "targets": [
         {
           "anchor": {
             "blob": "e1d561eb43926925f6fefc875db17155ef322eb4",
-            "content": "sha256:5d6afa1edd0685b517f4bcb1577bc8a3709921b62e7e6cb0b6cc5c12f17b744b",
+            "content": "sha256:b587decdc4759fbe040b7cad855befcc7b342d9523ac108060ef6932868ced65",
             "locator": {
-              "kind": "symbol",
-              "name": "RepoSurfaceReader"
+              "kind": "file"
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "6df2a6bdbd12ddafa2399eb3f43c87f41499a72d",
-            "content": "sha256:64531789cbd6f9df5352c252bd0d92353df57a58265ccebe9b3071b9e29a6e0a",
-            "locator": {
-              "kind": "symbol",
-              "name": "ProjectionInputs"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "6df2a6bdbd12ddafa2399eb3f43c87f41499a72d",
-            "content": "sha256:d91344ace808fd0e01038c722a7745880773253abdb803923d71964c265c7822",
-            "locator": {
-              "kind": "symbol",
-              "name": "read"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "ffb20091c2f732f798e06eb62370e7ad811943c0",
+            "blob": "e1d561eb43926925f6fefc875db17155ef322eb4",
             "content": "sha256:5d6afa1edd0685b517f4bcb1577bc8a3709921b62e7e6cb0b6cc5c12f17b744b",
             "locator": {
               "kind": "symbol",

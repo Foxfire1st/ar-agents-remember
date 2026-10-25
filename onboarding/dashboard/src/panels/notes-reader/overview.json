@@ -36,12 +36,12 @@
       ]
     },
     "3": {
-      "note": "The reused File Viewer content pane maps both notes and requirement packets to markdown/code/placeholder rendering.\n\nAnchor: \"function noteAsFileContent(\"; \"function dualPaneProps(\"; \"<DualPane {...dualPaneProps(note)} split={false} />\"",
+      "note": "The reused File Viewer content pane maps both notes and requirement packets to markdown/code/placeholder rendering.",
       "targets": [
         {
           "anchor": {
-            "blob": "39c771ce25e4839e8a75adb7e81a8f43e4466435",
-            "content": "sha256:594588f676c4d2debe3970e4c23069527741e528fdcf9ac4f6c9965912371242",
+            "blob": "ada2a7f8a47f7355bd83f5d5cd6ce220572fd0e0",
+            "content": "sha256:d1f3a9e5586965cd322a4773002f7ede9fab3e1c9f3dd2c871aedd49bfc9223f",
             "locator": {
               "end": 146,
               "kind": "line_range",
@@ -67,16 +67,16 @@
       ]
     },
     "4": {
-      "note": "Cockpit defines the note-opening callback.\n\nAnchor: \"const openNotes = useCallback((target: NotesReaderTarget) => {\"",
+      "note": "Cockpit defines the note-opening callback.",
       "targets": [
         {
           "anchor": {
-            "blob": "01fba3cb6e8f87f6cb5855729b1ff805ef49457e",
-            "content": "sha256:70415866ef3eaf11b112a4d3a1e096c4a6dd6672bc1652987b78dd2e85ee207e",
+            "blob": "1b839113b8d511b4a8343230e70a8de0be01b79f",
+            "content": "sha256:6a34aa3b14cd1be54f3340cdfebd8ce49357b31ae57967c5f379b7cc97db7cc3",
             "locator": {
-              "end": 506,
+              "end": 507,
               "kind": "line_range",
-              "start": 502
+              "start": 503
             },
             "path": "dashboard/src/cockpit/Cockpit.tsx"
           },
@@ -85,12 +85,12 @@
       ]
     },
     "5": {
-      "note": "Cockpit defines the note-selection callback.\n\nAnchor: \"const selectNote = useCallback(\"",
+      "note": "Cockpit defines the note-selection callback.",
       "targets": [
         {
           "anchor": {
-            "blob": "f907717bf9460d7f6facca800810459ce72ecbdf",
-            "content": "sha256:477c90a87261c3bd02c91e291b73d783272a382dfeb16e8fa309dc55970b545c",
+            "blob": "1b839113b8d511b4a8343230e70a8de0be01b79f",
+            "content": "sha256:328f8d7bf1057d23c7b3fdde9ef76923dd32a3fbfb1c093be0fa743ee693dad2",
             "locator": {
               "end": 544,
               "kind": "line_range",
@@ -103,16 +103,16 @@
       ]
     },
     "6": {
-      "note": "Cockpit renders NotesReaderViewer.\n\nAnchor: \"<NotesReaderViewer\"",
+      "note": "Cockpit renders NotesReaderViewer.",
       "targets": [
         {
           "anchor": {
-            "blob": "01fba3cb6e8f87f6cb5855729b1ff805ef49457e",
-            "content": "sha256:5e7324eb16d1a1120e25ff0485617aa4e555dad57373f64a2c8235296b853979",
+            "blob": "1b839113b8d511b4a8343230e70a8de0be01b79f",
+            "content": "sha256:daf7759807ca73204f1101b76ce315c1bd86087008bf4144e5ae76f35b38a445",
             "locator": {
-              "end": 604,
+              "end": 619,
               "kind": "line_range",
-              "start": 604
+              "start": 619
             },
             "path": "dashboard/src/cockpit/Cockpit.tsx"
           },
@@ -121,15 +121,14 @@
       ]
     },
     "7": {
-      "note": "TaskNotes resolves registered requirement references first; a requirement address never falls through to a note target.",
+      "note": "TaskNotes resolves registered requirement references first; a requirement address never falls through to a note target.\n\nAnchor: `TaskNotes`",
       "targets": [
         {
           "anchor": {
-            "blob": "4fd13392ee64ff470abdcce77426d87eb9f9a55b",
-            "content": "sha256:19d59d8bb1924194adca2e83f7c75750415b180dea906466d8a9643fba277bfe",
+            "blob": "1d06daecf8740ea6de32c4565dc4d24506617c0d",
+            "content": "sha256:16777e69212429051dac863d0dff5e83ccbce71dafed078bec65a573f52c3072",
             "locator": {
-              "kind": "symbol",
-              "name": "TaskNotes"
+              "kind": "file"
             },
             "path": "dashboard/src/panels/TaskNotes.tsx"
           },

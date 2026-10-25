@@ -45,18 +45,18 @@ No new file-local follow-up is established by this documentation pass.
 
 ## Evidence
 
-Inherited numbered findings [2], [6], [7], [4], [5] retain their exact wording and full targets as historical custody where their candidate9 owner is retired or their account conflicts with the current route. They are not evidence that an absent legacy owner still executes. No guarantee is retired by this proposal; parent disposition remains required. The source-bound current account below is separate.
+Inherited numbered findings [2], [4], [5] retain their exact wording and full targets as historical custody where their candidate9 owner is retired or their account conflicts with the current route. They are not evidence that an absent legacy owner still executes. No guarantee is retired by this proposal; parent disposition remains required. The source-bound current account below is separate.
 
 
-- Converted carryover selects paired cards against official code and imports them into the exact recovery worktree without a commit or carried history. \[8] [8]
-
-
-
-- Carryover performs worktree validation/restore without staging, committing or refreshing a ledger. \[9] [9]
+- Converted carryover selects paired cards against official code and imports them into the exact recovery worktree without a commit or carried history. [8]
 
 
 
-- Converted carryover requires equal converted formats; unconverted input retains central conversion refusal. \[10] [10]
+- Carryover performs worktree validation/restore without staging, committing or refreshing a ledger. [9]
+
+
+
+- Converted carryover requires equal converted formats; unconverted input retains central conversion refusal. [10]
 
 
 
@@ -73,16 +73,20 @@ No configured external domain-documentation evidence.
 These repository-relative targets were checked in the L9 code checkout. The cited ranges support
 the current working-candidate behavior; historical entries below retain their original scope.
 
+
 - Candidate comparison and explicit review selection. [1]
-- Apply owns one content commit and preserves exact leaf/repository authority. [2]
+
+
+- Apply checks the converted formats, the configured code and external-memory authority and an ordinary checkout, then writes the selected candidates into the open recovery leaf without committing; closeout commits the judged tree. [2]
+
 - Target storage is established from effective explicit settings. [3]
 - Shared committing explicitly excludes the consumer cache. [4]
+
 
 - Public legacy carryover asserts conversion guidance and no observed ref/index/content/cache mutation; the prior successful-attribution test is retired [5]
 
 
-- A converted target is refused, and an unconverted one takes the cutover lock. [6]
-- Carryover never writes converted memory and takes the cutover lock. [7]
+
 
 ### Cross-Repo References
 

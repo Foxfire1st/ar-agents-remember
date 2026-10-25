@@ -3,12 +3,12 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The Panda entry + layer order it loads.\n\nAnchor: \"@layer reset\"",
+      "note": "The Panda entry + layer order it loads.",
       "targets": [
         {
           "anchor": {
-            "blob": "f6f4905f6238821e495131ba80290cba55ca4a21",
-            "content": "sha256:d60672d97d7348ea7c088e8a2f419f15b7e9315a72449a636c2fab1bf82c599b",
+            "blob": "319b14c211d7a499f34bc89014be9d0a17ca8dea",
+            "content": "sha256:ae8ab7ccc591d8558fd685842b936a9ce59236d5fea5cbeb119c4cc4174220e4",
             "locator": {
               "end": 10,
               "kind": "line_range",

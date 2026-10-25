@@ -3,12 +3,12 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The package map and the rule that no writer writes the index and it is never merged.\n\nAnchor: \"No knowledge writer writes the index\"",
+      "note": "The package map and the rule that no writer writes the index and it is never merged.",
       "targets": [
         {
           "anchor": {
-            "blob": "06d446de04c0b58ae1a17c8e951a920fdfb5153d",
-            "content": "sha256:b1e2432911d6550cb930405787f44718e8d3ebe8e6f231895c3aba86cac50a2b",
+            "blob": "182c0249a52e698fae419d0bcb62f5d1aa2f9fb2",
+            "content": "sha256:374bb7e0d66d35ebed39fbb232d121de0519c377827d6366bcca5f911d83d100",
             "locator": {
               "end": 20,
               "kind": "line_range",
@@ -20,15 +20,14 @@
       ]
     },
     "2": {
-      "note": "The re-exported public surface.",
+      "note": "The re-exported public surface.\n\nAnchor: `__all__`",
       "targets": [
         {
           "anchor": {
-            "blob": "06d446de04c0b58ae1a17c8e951a920fdfb5153d",
-            "content": "sha256:fb4326a172bc87b8da2d3de6c32b73d322c6938b9ef80b9f0e2acd81d8774af9",
+            "blob": "182c0249a52e698fae419d0bcb62f5d1aa2f9fb2",
+            "content": "sha256:40126f7d99d856728e6ac58dc95361e8077ef10d615cb2d00aa9ce20a84e81c9",
             "locator": {
-              "kind": "symbol",
-              "name": "__all__"
+              "kind": "file"
             }
           },
           "kind": "code"

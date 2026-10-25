@@ -180,7 +180,7 @@
       ]
     },
     "5": {
-      "note": "Vitest collects the route's script tests. Current package commands wire the bundle checker into build and the suite-result writer after successful coverage. The checker enforces the default or configured raw-byte budget; the writer records command-chain provenance, its coverage path, optional rounded totals, and its report destination.\n\nAnchor: script-test include; build and coverage commands; bundle budget and traversal; suite-result construction and write",
+      "note": "Vitest collects the route's script tests. The build chain runs the bundle checker, which fails above the default 32 MB raw-byte budget (or `AR_DASHBOARD_BUNDLE_BUDGET_BYTES`), and a successful coverage run writes `dashboard-suite-result.json` with the pass fact, the coverage path and rounded coverage totals.",
       "targets": [
         {
           "anchor": {
@@ -197,8 +197,8 @@
         },
         {
           "anchor": {
-            "blob": "6bbab49242bdd8b7a6a463576c69ac229ec7255b",
-            "content": "sha256:b28b6476b26c9a1a016564342fd67645316ed9b772aec8d398d3c688bbf6b269",
+            "blob": "e640511ffad3eb7e67c1de5b38581748a9214a53",
+            "content": "sha256:99faebf32a5ae25404b4ad8052eda09db4dd65543263cde07bacfd46392f6015",
             "locator": {
               "end": 24,
               "kind": "line_range",

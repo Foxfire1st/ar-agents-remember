@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/application/skill_resources/catalog.py",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
@@ -205,13 +206,53 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4711076cfdc3f6e76f4324a817886749f227a084",
-            "content": "sha256:8c299ac6f68f2b81ecbd0b9a131c0e8608296939f5b0afb935e41bdec2a8afc9",
+            "blob": "7016203837db907490d39c45cdae36cf39d35288",
+            "content": "sha256:547998cfaff795e86c9f2e2e3875d470ddc56280bd71591ff5304d6bfddf048d",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_catalog_record_that_escapes_its_skill_directory_is_refused"
+              "end": 463,
+              "kind": "line_range",
+              "start": 437
+            },
+            "path": "mcp/tests/test_capsule_serving_surface.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "231672944ca7b848d89e9ce82d950d95d92e5cc2",
+            "content": "sha256:151cf1b44b57d4d43437aecaf75e7c3230b8c28deab6f47b4336fa20e0263673",
+            "locator": {
+              "end": 819,
+              "kind": "line_range",
+              "start": 807
             },
             "path": "mcp/tests/test_capsule_serving.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "7016203837db907490d39c45cdae36cf39d35288",
+            "content": "sha256:a93325d13b2b79be21da00cdf92251a99a5306c5430cfb4898da9b6681a8fe86",
+            "locator": {
+              "end": 481,
+              "kind": "line_range",
+              "start": 466
+            },
+            "path": "mcp/tests/test_capsule_serving_surface.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "7016203837db907490d39c45cdae36cf39d35288",
+            "content": "sha256:b175fb6a2862de7ee5cc857bfda9588d95617311782fb2dd9914a9456440719a",
+            "locator": {
+              "end": 662,
+              "kind": "line_range",
+              "start": 614
+            },
+            "path": "mcp/tests/test_capsule_serving_surface.py"
           },
           "kind": "test"
         },
@@ -222,43 +263,6 @@
             "locator": {
               "kind": "symbol",
               "name": "test_a_read_refuses_a_body_whose_bytes_changed_since_the_catalog"
-            },
-            "path": "mcp/tests/test_capsule_serving.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "4711076cfdc3f6e76f4324a817886749f227a084",
-            "content": "sha256:a93325d13b2b79be21da00cdf92251a99a5306c5430cfb4898da9b6681a8fe86",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_the_index_reader_refuses_while_a_skill_cannot_be_served"
-            },
-            "path": "mcp/tests/test_capsule_serving.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "4711076cfdc3f6e76f4324a817886749f227a084",
-            "content": "sha256:a44f494a228af6482216dcdec687a84d4102fb7523d1fe43b4d9fa1d94200b89",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_a_nested_skill_is_published_flat_like_any_other"
-            },
-            "path": "mcp/tests/test_capsule_serving.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "4711076cfdc3f6e76f4324a817886749f227a084",
-            "content": "sha256:01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
-            "locator": {
-              "end": 1321,
-              "kind": "line_range",
-              "start": 1321
             },
             "path": "mcp/tests/test_capsule_serving.py"
           },
@@ -279,32 +283,6 @@
         },
         {
           "anchor": {
-            "blob": "4711076cfdc3f6e76f4324a817886749f227a084",
-            "content": "sha256:fc2652a8be8116ab280c5971eeb1c405daf416d653176ae6f6f45ffed27651f1",
-            "locator": {
-              "end": 1489,
-              "kind": "line_range",
-              "start": 1489
-            },
-            "path": "mcp/tests/test_capsule_serving.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "4711076cfdc3f6e76f4324a817886749f227a084",
-            "content": "sha256:becf51c3bef5b058b4cb0339e76bec529111010ffdfecbc93e26f7ae957c89b0",
-            "locator": {
-              "end": 1349,
-              "kind": "line_range",
-              "start": 1325
-            },
-            "path": "mcp/tests/test_capsule_serving.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
             "blob": "231672944ca7b848d89e9ce82d950d95d92e5cc2",
             "content": "sha256:7d10bda865879e1f2d451ede7b79f3594c5fb78dba139d0e47b217332d062ff3",
             "locator": {
@@ -318,12 +296,12 @@
         },
         {
           "anchor": {
-            "blob": "4711076cfdc3f6e76f4324a817886749f227a084",
-            "content": "sha256:c44d7746fe38276eae7f14af9331ab42e5ced91b43e1b307f3210505528521db",
+            "blob": "231672944ca7b848d89e9ce82d950d95d92e5cc2",
+            "content": "sha256:a3df3d3d3f04bcf64b5525058a4f19ae1933648b0fa07b921b1edcd46c663771",
             "locator": {
-              "end": 1367,
+              "end": 775,
               "kind": "line_range",
-              "start": 1352
+              "start": 775
             },
             "path": "mcp/tests/test_capsule_serving.py"
           },
@@ -331,12 +309,12 @@
         },
         {
           "anchor": {
-            "blob": "4711076cfdc3f6e76f4324a817886749f227a084",
-            "content": "sha256:438566dcb866e954ea963e41284ac4363533c5c59cd38f377ac7b3f4b1f03c49",
+            "blob": "231672944ca7b848d89e9ce82d950d95d92e5cc2",
+            "content": "sha256:0799206e92148af6b6e2884f45688f09cb055ceee2bd4a49edfd1e0462ae765e",
             "locator": {
-              "end": 1542,
+              "end": 791,
               "kind": "line_range",
-              "start": 1496
+              "start": 779
             },
             "path": "mcp/tests/test_capsule_serving.py"
           },
@@ -349,26 +327,14 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4711076cfdc3f6e76f4324a817886749f227a084",
-            "content": "sha256:29abe39404e8e3d0e624d5a5a0dcc63bee02fac8f9c793602eb5f1582bf7d4a2",
+            "blob": "7016203837db907490d39c45cdae36cf39d35288",
+            "content": "sha256:72779b94833275f73878d3c0aa0679f275ad91dd51e5ec859a712dfff4ac142d",
             "locator": {
-              "kind": "symbol",
-              "name": "test_the_server_process_never_serves_a_file_outside_a_skill_directory"
-            },
-            "path": "mcp/tests/test_capsule_serving.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "4711076cfdc3f6e76f4324a817886749f227a084",
-            "content": "sha256:9e51e617d8b80854aade610ddf36be3629d5aef53c203a8e9d1722855ee2d878",
-            "locator": {
-              "end": 1302,
+              "end": 414,
               "kind": "line_range",
-              "start": 1271
+              "start": 384
             },
-            "path": "mcp/tests/test_capsule_serving.py"
+            "path": "mcp/tests/test_capsule_serving_surface.py"
           },
           "kind": "test"
         }

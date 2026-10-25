@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/serving/heap_diag.py",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
@@ -8,11 +9,37 @@
         {
           "anchor": {
             "blob": "fb417e233674d6d9e471a591b5c9c081da7cf2b6",
+            "content": "sha256:cfef1cb0d286dbaa9301a0b4e04d791ca3c8f47fe6740c332bc66c32300bf2b5",
+            "locator": {
+              "end": 237,
+              "kind": "line_range",
+              "start": 237
+            },
+            "path": "mcp/src/agents_remember/serving/_app_lifespan.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fb417e233674d6d9e471a591b5c9c081da7cf2b6",
             "content": "sha256:9f91f08e1abd86715bc1d8eadca91c9dc43002d75ef4ddf6056d6d0a460aef6d",
             "locator": {
               "end": 254,
               "kind": "line_range",
               "start": 254
+            },
+            "path": "mcp/src/agents_remember/serving/_app_lifespan.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fb417e233674d6d9e471a591b5c9c081da7cf2b6",
+            "content": "sha256:01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+            "locator": {
+              "end": 376,
+              "kind": "line_range",
+              "start": 376
             },
             "path": "mcp/src/agents_remember/serving/_app_lifespan.py"
           },

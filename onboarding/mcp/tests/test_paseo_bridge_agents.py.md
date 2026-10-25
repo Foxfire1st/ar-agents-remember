@@ -49,6 +49,10 @@ the production ones — the fake is only the daemon behind them.
 
 ## Evidence
 
+
 - Workspace, creation, message, get and archive commands against the real script and fake client. [1]
+
+
 - Feature discovery may precede a refusal, but refused features send no agent create or message. [2]
+
 - Keyed completed-creation replay, pre-refresh current identity and a selectively hidden live listing support the archive cases. [3]

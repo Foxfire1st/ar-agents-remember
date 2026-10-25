@@ -102,7 +102,9 @@ None.
 
 ### Repo-Internal References
 
+
 - Task document topology is centralized in one typed resolver. [1]
+
 - The shared atomic segment-node-kind refusal used by the final validator and the authoring draft check (L15-R8 F6 / L15-FIX-1). [3]
 - Leaf placement builds its blocking set from terminal masters (`Completed` or `abandoned`) through the shared readiness judgement. [4]
 

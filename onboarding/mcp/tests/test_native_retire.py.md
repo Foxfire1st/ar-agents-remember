@@ -10,6 +10,9 @@ The record-write fault test distinguishes a host already archived from a receipt
 
 ## Evidence
 
+
 - The original starter archives its agent without a child turn and records retirement provenance. [1]
+
 - Current plus historical receipt duplication refuses through the entry point without effects. [2]
+
 - A failed final receipt write reports the split and an identical retry converges. [3]

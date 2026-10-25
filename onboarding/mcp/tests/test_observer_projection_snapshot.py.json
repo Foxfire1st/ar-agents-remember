@@ -1,17 +1,17 @@
 {
   "path": "mcp/tests/test_observer_projection_snapshot.py",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
-      "note": "Project and write end to end.",
+      "note": "Project and write end to end.\n\nAnchor: `test_project_and_write_end_to_end`",
       "targets": [
         {
           "anchor": {
-            "blob": "2584f15da7623be2953198a2ac1eb5430a55ddff",
-            "content": "sha256:17c51e52de74505774eb5a73f0b2c23f1d8273812a180fc2d1c909df69bbe926",
+            "blob": "c888bf171bd8a7a46bd3ae40a97178ad4779147f",
+            "content": "sha256:07366bc040e0d73c3a2bb5fc6295df29834d1d766b1bbea7b506eea85b401f6e",
             "locator": {
-              "kind": "symbol",
-              "name": "test_project_and_write_end_to_end"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -23,8 +23,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "44ca4f75e77c0eaae9b55adbed9b6ad299bbad2b",
-            "content": "sha256:4cdc091931c7a05337d9d823028f44dd1b5fc2cf0799d563ac36d95bd43967b0",
+            "blob": "c888bf171bd8a7a46bd3ae40a97178ad4779147f",
+            "content": "sha256:dcd59cdac739e1000cdf5c848da6bb325a11950933a7304a10f9223ec73acf7c",
             "locator": {
               "kind": "symbol",
               "name": "test_reopened_enclosure_is_not_runtime_work_but_pending_is"

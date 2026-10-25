@@ -92,14 +92,20 @@ No external source is required for this repository-owned path vocabulary.
 
 - The layout constants and slug rule decide enclosure directory names. [1]
 - The two path builders the derived-master-link binding calls. [2]
+
 - The archive/enclosure-position predicates remain, while the iterator excludes notes and archives before descent. [3]
 
+
+
 - The explicit re-export list and imports keep the path rules single-defined in the task domain. [4]
+
 - The consumer whose binding need created this module. [5]
 - The package order that makes this module the correct home, with no baseline and no exception. [6]
 - The armed rail step that measures it. [7]
 
+
 - The traversal prunes notes and archive descent but preserves a leaf directory named notes. [8]
+
 - Physical, filesystem-resolved task membership rejects foreign artifacts and resolution failures. [9]
 
 ### Cross-Repo References

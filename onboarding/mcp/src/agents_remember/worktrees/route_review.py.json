@@ -150,12 +150,12 @@
       ]
     },
     "4": {
-      "note": "CCR-R25 maps observed route-review refusals into bounded structured recovery guidance.\n\nAnchor: \"def route_review_refusal_projection(\"; \"def route_review_refusal_fields(\"",
+      "note": "CCR-R25 maps observed route-review refusals into bounded structured recovery guidance.",
       "targets": [
         {
           "anchor": {
-            "blob": "0949ba0ebbf02b7ceccbe81478df2eabe7073177",
-            "content": "sha256:8010452ad22462d155eb6c552e294c2f0ca595c4e45246167bd254c939fcac73",
+            "blob": "f77659efee8d80f8c6cfa6dab23a63501ab76013",
+            "content": "sha256:4778720b359f5a687cb5cde88a581f4504fb43fea9379b03d92723aa20e864b6",
             "locator": {
               "end": 253,
               "kind": "line_range",
@@ -179,15 +179,14 @@
       ]
     },
     "5": {
-      "note": "The route-review record's content-addressed fields and self-digest validator.",
+      "note": "The route-review record's content-addressed fields and self-digest validator.\n\nAnchor: `RouteReviewRecord`",
       "targets": [
         {
           "anchor": {
-            "blob": "4e29dc59b541ab3eab9fbf66832372abe20353ef",
-            "content": "sha256:12f59076c4a930fa1b31117b0ca7b7b0d476d705d0de00a07975e53bbc6cc986",
+            "blob": "c2275b9792d563997e82c391c04d0f6d885acd58",
+            "content": "sha256:dec1e870f6476ae35e3eb90c61301c71553bf75141daf92defe26a0422a24f71",
             "locator": {
-              "kind": "symbol",
-              "name": "RouteReviewRecord"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/tasks/route_review.py"
           },
@@ -200,8 +199,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d5e95ad7ec9dd109087e19f54bf649eb0bfe4e3e",
-            "content": "sha256:7d0675ce4e26e43ac3461f9d85d560068cf7a9ffc9652ad55f7a1a07ce70ccd8",
+            "blob": "f77659efee8d80f8c6cfa6dab23a63501ab76013",
+            "content": "sha256:28f91e1f645dd0e8946a9e15c5b3dcd0fd513bc4342a259de6fcc55edc1a594f",
             "locator": {
               "kind": "file"
             }

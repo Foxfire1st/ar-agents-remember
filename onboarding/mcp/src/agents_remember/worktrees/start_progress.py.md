@@ -60,7 +60,9 @@ a dict carrying the exact `START_PROGRESS_SCHEMA`.
 
 - Schema tag gating reads [1]
 - Path layout under `temp/worktree-start/<repo>/<worktree>.json` [2]
+
 - Best-effort write that never raises [3]
+
 - `blockedReason` only emitted when present [4]
 - Clear on contract supersession [5]
 - Schema-gated read returning `None` on miss [6]

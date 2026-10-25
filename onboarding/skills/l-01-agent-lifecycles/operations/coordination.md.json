@@ -1,5 +1,6 @@
 {
   "path": "skills/l-01-agent-lifecycles/operations/coordination.md",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
@@ -141,8 +142,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "65a10dcac925975e4ae642d264a343857bdae9c4",
-            "content": "sha256:4d0e8fe886c1806091a9355cad05d3d28199bf7b5bd9d1f5d4283c0ee015b2be",
+            "blob": "dee346f3da2aa768e464f5895f9489da5f4ad6bd",
+            "content": "sha256:396d52c1c19866d0c91fd23179093b44677c779ac0096b05ad0fa7243c985af3",
             "locator": {
               "end": 29,
               "kind": "line_range",
@@ -158,8 +159,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "65a10dcac925975e4ae642d264a343857bdae9c4",
-            "content": "sha256:4d0e8fe886c1806091a9355cad05d3d28199bf7b5bd9d1f5d4283c0ee015b2be",
+            "blob": "dee346f3da2aa768e464f5895f9489da5f4ad6bd",
+            "content": "sha256:18410397f62207e8cffc50b1391e63c1048cf0d523fb03af8c3fd54737e827be",
             "locator": {
               "kind": "file"
             }
@@ -173,8 +174,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f17aa445d3c5fc1b8b1f18ed2be48b8be8b6df7d",
-            "content": "sha256:e497fd94657888e298d67de9330ce81b8ff1c74eeb20bab68f309e7a0b37d303",
+            "blob": "dee346f3da2aa768e464f5895f9489da5f4ad6bd",
+            "content": "sha256:dfca8b4325f63597c26c181e0554d354ee33a054777e3d028f092bf66304c32d",
             "locator": {
               "end": 20,
               "kind": "line_range",

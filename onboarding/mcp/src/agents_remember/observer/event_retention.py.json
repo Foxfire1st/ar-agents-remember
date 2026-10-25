@@ -76,12 +76,12 @@
   ],
   "references": {
     "1": {
-      "note": "Fresh offsets use dormant EOF, active first-not-provably-old physical offset and workspace virtual base plus TTL-selected physical offset. Active/workspace physical starts can be zero (the returned workspace cursor is then its base); this is a time-selection policy, not a strict byte/count bound.",
+      "note": "`initial_event_offsets` gives a fresh `/api/events` connection the workspace river's start: the stored virtual base plus the first row still inside the replay TTL. The river is also cut by size on admission — a ceiling and a trim level — so the retained window is bounded by age and bytes.",
       "targets": [
         {
           "anchor": {
-            "blob": "4ddf17f4c8fb8920fadc24e6df279efe803cdf01",
-            "content": "sha256:3b9c29afc4a0daa8da1baaf95c98f7888fa0257b17cc1507c58426eb6a075145",
+            "blob": "09233476d16c71cbf49d5a0cd2ff8ac5ec38c348",
+            "content": "sha256:4c811488788858c53be0a13a1bd3bcc7240419b3f11f8ea516a6f423a1351a53",
             "locator": {
               "kind": "file"
             }

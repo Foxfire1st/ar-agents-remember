@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/application/skill_resources/capsule.py",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
@@ -58,12 +59,22 @@
   ],
   "references": {
     "1": {
-      "note": "The four refusal-capable steps and the outcome that carries the binding in both shapes.",
+      "note": "The four refusal-capable steps and the outcome that carries the binding in both shapes.\n\nAnchor: `compile_task_capsule` `CapsuleCompileOutcome`",
       "targets": [
         {
           "anchor": {
-            "blob": "b0366122dbbd5a11a6263852dc3086926059871c",
-            "content": "sha256:c3d2144310d2a38eeed8be4d4c358291431cf1e2cd8b6b4b0fd84182fd42189c",
+            "blob": "c6a03cb33adb566e7cf8b84f07ab8c3061e46a19",
+            "content": "sha256:3a9901a2e97f135d22cf248feb567981637b66d0a9ba6b12f5af46ddaf87ad90",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c6a03cb33adb566e7cf8b84f07ab8c3061e46a19",
+            "content": "sha256:52a746fc00ed66cb97e7e3436f817ed49c9e0a99dfc8ff19563f50e15c7c8fc5",
             "locator": {
               "kind": "symbol",
               "name": "compile_task_capsule"
@@ -73,8 +84,8 @@
         },
         {
           "anchor": {
-            "blob": "b0366122dbbd5a11a6263852dc3086926059871c",
-            "content": "sha256:148ccdc25c930326ea0a87fda84c78b9a655d10fd52a4a76c60b3e65c6b81857",
+            "blob": "c6a03cb33adb566e7cf8b84f07ab8c3061e46a19",
+            "content": "sha256:7a9a1cb753c86d86273fd2f436b02c9b4a22c96aa32b1e77df9b363fafa354f3",
             "locator": {
               "kind": "symbol",
               "name": "CapsuleCompileOutcome"
@@ -101,12 +112,23 @@
       ]
     },
     "11": {
-      "note": "The advertised roster the tool policy snapshots.",
+      "note": "The advertised roster the tool policy snapshots.\n\nAnchor: `PUBLIC_TOOLS`",
       "targets": [
         {
           "anchor": {
-            "blob": "37b01ee751f37d46d0fa1d6ea4c24e5aff5f1200",
-            "content": "sha256:7d00533fe5fe98c6953fcd37b7f70fe04e7a048b82aa53b8da59ffa147469646",
+            "blob": "d0b0ddd9f150e32116b430ecc74907fcf68fee97",
+            "content": "sha256:fdef15e2ca9d39f66c8570a7147cb894dda16f47c7d3558bb4454e5b4714875f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/models/tools/public_roster.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d0b0ddd9f150e32116b430ecc74907fcf68fee97",
+            "content": "sha256:77300d3d8d990814a8c85c25a0c314254dde308fd394c4a03ff87c1fd34e2cb3",
             "locator": {
               "kind": "symbol",
               "name": "PUBLIC_TOOLS"
@@ -202,12 +224,12 @@
       ]
     },
     "16": {
-      "note": "The current response registry omits former capsule/catalog tools; retained response types are not public tool exposure.\n\nAnchor: L79–L120",
+      "note": "The current response registry omits former capsule/catalog tools; retained response types are not public tool exposure.",
       "targets": [
         {
           "anchor": {
-            "blob": "1d7b6b69cc65c65e39b0a04924fe472490bd1e90",
-            "content": "sha256:c49dc78f5be62ee03bd76da98386d5e55a47bc03e67f5f35427aeec11f18fb8f",
+            "blob": "ca5af906298a90f3101a98a5542005e3549b3c0a",
+            "content": "sha256:447db71870a2cf788771e1a7b2511377a7a18a3c05043d7f2c4b499fa6734137",
             "locator": {
               "end": 120,
               "kind": "line_range",
@@ -242,8 +264,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "90b609572aa48fb2a5e13fbf13040c2f337839b0",
-            "content": "sha256:54e6493669a47ba6cf13fdf525c739de4a1ac59255c99f635a7398b21561700d",
+            "blob": "9f6e5640683f5837e056f35ab36b73d582df963d",
+            "content": "sha256:1370d89348c253989e44556933ef532f9e18cb312db58b4d7c604dea6da98bb4",
             "locator": {
               "end": 101,
               "kind": "line_range",
@@ -266,6 +288,19 @@
               "end": 129,
               "kind": "line_range",
               "start": 114
+            },
+            "path": "mcp/src/agents_remember/cli/role_handover_artifacts.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a25806bf819c4fcfb46827a42776588021e88e7a",
+            "content": "sha256:9547b7be9bd2f586a180d1d62b4fee64954578e37d52d3d35ec172d0d273a9c5",
+            "locator": {
+              "end": 74,
+              "kind": "line_range",
+              "start": 59
             },
             "path": "mcp/src/agents_remember/cli/role_handover_artifacts.py"
           },
@@ -304,6 +339,18 @@
     "20": {
       "note": "File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence.\n\nAnchor: L533–L583",
       "targets": [
+        {
+          "anchor": {
+            "blob": "c6a03cb33adb566e7cf8b84f07ab8c3061e46a19",
+            "content": "sha256:4f7354dade5abbc60f214cbf6e36e6a874de4cf8af7eec8f736b15a77f4b4c00",
+            "locator": {
+              "end": 583,
+              "kind": "line_range",
+              "start": 533
+            }
+          },
+          "kind": "code"
+        },
         {
           "anchor": {
             "blob": "c6a03cb33adb566e7cf8b84f07ab8c3061e46a19",
@@ -351,12 +398,23 @@
       ]
     },
     "4": {
-      "note": "The role/altitude rule the operation checks against.\n\nAnchor: `TaskDocumentTopology.validate_role`",
+      "note": "The role/altitude rule the operation checks against.\n\nAnchor: `TaskDocumentTopology`",
       "targets": [
         {
           "anchor": {
-            "blob": "4726f82955a9d9fa8749b5d07b038240fe039acb",
-            "content": "sha256:73d23ab4a1404cf3bba554d9ac6c1d23eca46cb8b732a50e1a96924ed62d8853",
+            "blob": "8e7a9eac75417f2c2bf003612d5c62cfc540661a",
+            "content": "sha256:6128cde80120b1453092e64570b36beec886f302204e049e82779bc2277c9489",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/tasks/document_refs.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8e7a9eac75417f2c2bf003612d5c62cfc540661a",
+            "content": "sha256:76321fe013755208406f51b2919f00181be275ec94d76eb82bcd62488d3e9a84",
             "locator": {
               "kind": "symbol",
               "name": "TaskDocumentTopology"
@@ -395,12 +453,12 @@
       ]
     },
     "6": {
-      "note": "The seat-addressed form of the same routing rule, for a caller with no task document.",
+      "note": "The seat-addressed form of the same routing rule, for a caller with no task document.\n\nAnchor: `CapsuleSeatAddress` `routed_admission_for`",
       "targets": [
         {
           "anchor": {
-            "blob": "b0366122dbbd5a11a6263852dc3086926059871c",
-            "content": "sha256:a72993a1f642f47a8445a8cb32389440f5fb220c1d4d771763a2da49f1e209ef",
+            "blob": "c6a03cb33adb566e7cf8b84f07ab8c3061e46a19",
+            "content": "sha256:2fc0ddd70f0cb4f47ffefa11dc976d9c8774b1f751c12f76414b41f37dbca5b7",
             "locator": {
               "kind": "symbol",
               "name": "CapsuleSeatAddress"
@@ -410,11 +468,21 @@
         },
         {
           "anchor": {
-            "blob": "497182eddd472d861bd107fd62aaaae0e0e82067",
-            "content": "sha256:4b7ba4689b56507f70c5d55a82df8bbe6965ad4e6f484bd7a0a551cf1d5a8fd6",
+            "blob": "c6a03cb33adb566e7cf8b84f07ab8c3061e46a19",
+            "content": "sha256:08ad34f57e19dac00b4031487a9b97943c36606399db81cc1cf4a53f6f8afd0b",
             "locator": {
               "kind": "symbol",
               "name": "routed_admission_for"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c6a03cb33adb566e7cf8b84f07ab8c3061e46a19",
+            "content": "sha256:3a9901a2e97f135d22cf248feb567981637b66d0a9ba6b12f5af46ddaf87ad90",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -438,8 +506,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "eb52d7f13cbceca0492d661ba9ffa5ce3cff99b7",
-            "content": "sha256:d894e33e9c1370fad5e1185ba814b7e379c6b8c4663f2eb16319d755f40aaaf6",
+            "blob": "c6a03cb33adb566e7cf8b84f07ab8c3061e46a19",
+            "content": "sha256:df6167884a180469951c209d5120c996dab5d1171e3eb7c3f928a860137fece9",
             "locator": {
               "kind": "symbol",
               "name": "_declared_repository_root"
@@ -472,40 +540,16 @@
       ]
     },
     "8": {
-      "note": "The registered boundary the repair makes usable, and the case that fails if the declared schema loses the field the resolution depends on.",
+      "note": "The wiring case asserts role_capsule_compile is absent from registered tools, then verifies the direct capsule entry point resolves its real enclosure through CapsuleCompileRequest and returns instructions.",
       "targets": [
         {
           "anchor": {
-            "blob": "0797a9a6277fe708624936c2b633d2baecfb8883",
-            "content": "sha256:2a778309bf92a9929919ae0209c369036fd2adf9dca6c28339059322f38c4320",
+            "blob": "5d6364a3e0174cccc37d69d4ad9edcb9a76681c2",
+            "content": "sha256:af27fde7487ee67b2e71605cfa7ca885cd4879ae255ababe3680924461021d3e",
             "locator": {
-              "kind": "symbol",
-              "name": "role_capsule_compile_tool"
-            },
-            "path": "mcp/src/agents_remember/application/skill_resources/operation.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "a394a0118291b39041956b48e3cb24b44176fab3",
-            "content": "sha256:1da30b548faaf479ac900db05bca426b879c58bf5c89fb0d399ebb1fe11c189c",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_the_registered_capsule_operation_resolves_a_repository_through_its_schema"
-            },
-            "path": "mcp/tests/test_capsule_launch_wiring.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "a394a0118291b39041956b48e3cb24b44176fab3",
-            "content": "sha256:714ddb1e69f13697fd821f42d8f345e62454511765669a50e80acaa3357628c9",
-            "locator": {
-              "end": 1022,
+              "end": 414,
               "kind": "line_range",
-              "start": 975
+              "start": 380
             },
             "path": "mcp/tests/test_capsule_launch_wiring.py"
           },
@@ -514,12 +558,23 @@
       ]
     },
     "9": {
-      "note": "The launch compiler that consumes the seat-addressed routing entry point for a taskless seat.",
+      "note": "The launch compiler that consumes the seat-addressed routing entry point for a taskless seat.\n\nAnchor: `compile_launch_capsule`",
       "targets": [
         {
           "anchor": {
-            "blob": "838f90d2714796c9f9094c21e07c15d8cf8e1854",
-            "content": "sha256:e547e6b962de7fa542862c7e7d7772e5c7348c6aed1f92359037acec68719f01",
+            "blob": "9ed77cba4caacd019fd87b683ea11e0653cb7ad1",
+            "content": "sha256:14ab14f52fec4b2de32246118b9db9e7feaaf031a28803f9105bd460b527b419",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/role_capsules/launch.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9ed77cba4caacd019fd87b683ea11e0653cb7ad1",
+            "content": "sha256:c50c7ecd23847fd84872c128c914ad5909f82a26145ba3ff51ece2f0aff6d330",
             "locator": {
               "kind": "symbol",
               "name": "compile_launch_capsule"

@@ -61,6 +61,8 @@ None.
 
 This module defines the top-level symbols cited below; each row points at the exact source range holding the anchor.
 
-- Defines the function `run_configured_watchers` (lines 16-43) — Run one watcher action against temporary settings derived from live config.. [1]
+
+- Defines the function `run_configured_watchers` — run one watcher action against temporary settings derived from live config. [1]
+
 
 </details>

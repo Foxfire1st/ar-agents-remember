@@ -77,7 +77,9 @@ calls without relying on browser playback that jsdom does not implement.
 
 - `matchMedia` stub consumed by the honest-motion gate. [1]
 - Wired as the vitest setup file. [2]
+
 - The render test that depends on these stubs. [3]
+
 
 
 ### Clock And Settlement Evidence

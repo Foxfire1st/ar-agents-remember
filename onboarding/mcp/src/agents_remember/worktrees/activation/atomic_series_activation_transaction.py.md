@@ -100,7 +100,9 @@ No Domain Documentation source is configured for this memory root.
 - Selector publication and this contract's exact continuation/cancellation ownership live in the activation authority. [1]
 - The transaction translates expected activation errors through the shared structured admission projection. [2]
 - The selecting entry point refuses invalid inputs first, then re-reads the exact contract before reconciliation. [3]
+
 - The internal sync driver publishes reconciling, proves continue/cancel ownership, and advances only this contract to active. [4]
+
 - A mid-flight selection reports the stuck contract and both exits, and a succeeding pass beside it never reports its own success state. [5]
 - The sync driver admits, resumes, continues, cancels, or recovers one exact journal generation. [6]
 

@@ -1,9 +1,29 @@
 {
   "path": "mcp/src/agents_remember/cli/knowledge_validate.py",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
-        "blob": "151403083daa285dde3b0cbff00801440a07f954",
+        "blob": "0b1b129b84a4201b1f747ddfe2b049e3f00bd347",
+        "content": "sha256:e479ae517e071d308e6961387e9d0d8c6b1d61b0d35bbf4c1f809705b02ffc4e",
+        "locator": {
+          "end": 77,
+          "kind": "line_range",
+          "start": 74
+        }
+      },
+      "id": "RLZ-3461JV",
+      "invariant": "INV-033XSD",
+      "origin": {
+        "handoffEntry": "curator-support-2",
+        "leaf": "260928-MIK-L191"
+      },
+      "rationale": "The command help identifies R198.1-reference-anchor and distinguishes publication/full-quality refusals from authoring/sync reporting. It presents the guard without deciding or performing validation.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "0b1b129b84a4201b1f747ddfe2b049e3f00bd347",
         "content": "sha256:096f6e8a0dbc99005240f7b0fa61dbe2ef28decdc7a64acc48a54ed3a77d01fb",
         "locator": {
           "kind": "symbol",
@@ -22,12 +42,12 @@
   ],
   "references": {
     "1": {
-      "note": "Arguments, RawDescriptionHelpFormatter and the ten-rule reason/refusing-route table.",
+      "note": "The argument parser keeps RawDescriptionHelpFormatter so the rule table's line breaks survive, and its epilog names each decided rule with the route that refuses it, adding R198.1-reference-anchor.",
       "targets": [
         {
           "anchor": {
-            "blob": "754bd9162775645ee6e3e707b0b4e4b948882a98",
-            "content": "sha256:06c425496dd9b7bc16f4ea0a4b554518c1486ca45a3026bf1438746d289b826d",
+            "blob": "0b1b129b84a4201b1f747ddfe2b049e3f00bd347",
+            "content": "sha256:35404b63f18e9f20b375f1495d0a3ea5d09bc527f68fb6a1b07ba7d68f937b90",
             "locator": {
               "end": 83,
               "kind": "line_range",
@@ -38,8 +58,8 @@
         },
         {
           "anchor": {
-            "blob": "151403083daa285dde3b0cbff00801440a07f954",
-            "content": "sha256:880023ef4bc6d8dfbb8c07e043ee8c8e70bfd19563a7abf3faa4c634c80cb8bf",
+            "blob": "0b1b129b84a4201b1f747ddfe2b049e3f00bd347",
+            "content": "sha256:bf512bc79265e1e02e87de4986332d1550f780e67c9c2a9a26dcc0712470aac6",
             "locator": {
               "end": 49,
               "kind": "line_range",
@@ -50,7 +70,7 @@
         },
         {
           "anchor": {
-            "blob": "151403083daa285dde3b0cbff00801440a07f954",
+            "blob": "0b1b129b84a4201b1f747ddfe2b049e3f00bd347",
             "content": "sha256:14a91b42ad95453579bdeeb465127a77eceafe856afab80c4c6e31223b20a18a",
             "locator": {
               "end": 62,
@@ -62,8 +82,8 @@
         },
         {
           "anchor": {
-            "blob": "151403083daa285dde3b0cbff00801440a07f954",
-            "content": "sha256:25d2c13d16f57f101fb9280d22903dfedf7bc98eab7b65e3cb7efd3a5d6a2a3f",
+            "blob": "0b1b129b84a4201b1f747ddfe2b049e3f00bd347",
+            "content": "sha256:878a087ac8076f5d3cde482ab6e0ebe7225cc2ea7812537b5ef3f0ee31b43570",
             "locator": {
               "end": 72,
               "kind": "line_range",
@@ -74,12 +94,12 @@
         },
         {
           "anchor": {
-            "blob": "96a8f88b672003959586599c7c8b8849e9b062da",
+            "blob": "3768b4016fd921a34a69b6dcfcf2df78901c48a7",
             "content": "sha256:8b988f8c6609629b959976cbbbf8e3e81d41c98a61c810caee5f4ab898518292",
             "locator": {
-              "end": 514,
+              "end": 516,
               "kind": "line_range",
-              "start": 514
+              "start": 516
             },
             "path": "mcp/tests/test_knowledge_validator_routes.py"
           },
@@ -88,15 +108,14 @@
       ]
     },
     "2": {
-      "note": "Printing the report or its JSON.",
+      "note": "Printing the report or its JSON.\n\nAnchor: `_print`",
       "targets": [
         {
           "anchor": {
-            "blob": "754bd9162775645ee6e3e707b0b4e4b948882a98",
-            "content": "sha256:9afaba359c8b7c508b842a1137620cfcd784997afb2ab4b940041b9e0601c199",
+            "blob": "0b1b129b84a4201b1f747ddfe2b049e3f00bd347",
+            "content": "sha256:6b94c5dbdefe533e1807da03bad4ecf713d20c810fe68ed4183a5fcc36d3bd0a",
             "locator": {
-              "kind": "symbol",
-              "name": "_print"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -104,15 +123,14 @@
       ]
     },
     "3": {
-      "note": "Inputs, the out-of-scope answer and the exit statuses.",
+      "note": "Inputs, the out-of-scope answer and the exit statuses.\n\nAnchor: `run`",
       "targets": [
         {
           "anchor": {
-            "blob": "754bd9162775645ee6e3e707b0b4e4b948882a98",
-            "content": "sha256:06be4b3199ce3222e2e93f1a7329db8933d229b79644d4923dfc7fdbbe291163",
+            "blob": "0b1b129b84a4201b1f747ddfe2b049e3f00bd347",
+            "content": "sha256:6b94c5dbdefe533e1807da03bad4ecf713d20c810fe68ed4183a5fcc36d3bd0a",
             "locator": {
-              "kind": "symbol",
-              "name": "run"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -120,12 +138,12 @@
       ]
     },
     "4": {
-      "note": "Registration in the umbrella.\n\nAnchor: \"knowledge-validate\"",
+      "note": "Registration in the umbrella.",
       "targets": [
         {
           "anchor": {
-            "blob": "f2a43436f14b0bddc355c2234535b9c400967fe5",
-            "content": "sha256:493a2172319b24b380d5ff89c7cb14a358a561e5425a5e891c106bb0e9602f14",
+            "blob": "6e7bd5a18da5ea781594e67999b9b01f305937d4",
+            "content": "sha256:87ecdb9f4bba092dff1bef5157bee2844aebe3dce637dca5c25e9337a3c43346",
             "locator": {
               "end": 92,
               "kind": "line_range",
@@ -142,12 +160,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "96a8f88b672003959586599c7c8b8849e9b062da",
+            "blob": "3768b4016fd921a34a69b6dcfcf2df78901c48a7",
             "content": "sha256:4f0adf7e76356668861fdbafaf5028f592f47b86b055ae658a3e439e74825d0d",
             "locator": {
-              "end": 522,
+              "end": 524,
               "kind": "line_range",
-              "start": 494
+              "start": 496
             },
             "path": "mcp/tests/test_knowledge_validator_routes.py"
           },
@@ -155,8 +173,8 @@
         },
         {
           "anchor": {
-            "blob": "151403083daa285dde3b0cbff00801440a07f954",
-            "content": "sha256:880023ef4bc6d8dfbb8c07e043ee8c8e70bfd19563a7abf3faa4c634c80cb8bf",
+            "blob": "0b1b129b84a4201b1f747ddfe2b049e3f00bd347",
+            "content": "sha256:bf512bc79265e1e02e87de4986332d1550f780e67c9c2a9a26dcc0712470aac6",
             "locator": {
               "end": 49,
               "kind": "line_range",
@@ -167,7 +185,7 @@
         },
         {
           "anchor": {
-            "blob": "151403083daa285dde3b0cbff00801440a07f954",
+            "blob": "0b1b129b84a4201b1f747ddfe2b049e3f00bd347",
             "content": "sha256:14a91b42ad95453579bdeeb465127a77eceafe856afab80c4c6e31223b20a18a",
             "locator": {
               "end": 62,
@@ -179,8 +197,8 @@
         },
         {
           "anchor": {
-            "blob": "151403083daa285dde3b0cbff00801440a07f954",
-            "content": "sha256:25d2c13d16f57f101fb9280d22903dfedf7bc98eab7b65e3cb7efd3a5d6a2a3f",
+            "blob": "0b1b129b84a4201b1f747ddfe2b049e3f00bd347",
+            "content": "sha256:878a087ac8076f5d3cde482ab6e0ebe7225cc2ea7812537b5ef3f0ee31b43570",
             "locator": {
               "end": 72,
               "kind": "line_range",
@@ -191,12 +209,12 @@
         },
         {
           "anchor": {
-            "blob": "96a8f88b672003959586599c7c8b8849e9b062da",
+            "blob": "3768b4016fd921a34a69b6dcfcf2df78901c48a7",
             "content": "sha256:8b988f8c6609629b959976cbbbf8e3e81d41c98a61c810caee5f4ab898518292",
             "locator": {
-              "end": 514,
+              "end": 516,
               "kind": "line_range",
-              "start": 514
+              "start": 516
             },
             "path": "mcp/tests/test_knowledge_validator_routes.py"
           },
@@ -209,8 +227,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "151403083daa285dde3b0cbff00801440a07f954",
-            "content": "sha256:880023ef4bc6d8dfbb8c07e043ee8c8e70bfd19563a7abf3faa4c634c80cb8bf",
+            "blob": "0b1b129b84a4201b1f747ddfe2b049e3f00bd347",
+            "content": "sha256:bf512bc79265e1e02e87de4986332d1550f780e67c9c2a9a26dcc0712470aac6",
             "locator": {
               "end": 49,
               "kind": "line_range",
@@ -221,7 +239,7 @@
         },
         {
           "anchor": {
-            "blob": "151403083daa285dde3b0cbff00801440a07f954",
+            "blob": "0b1b129b84a4201b1f747ddfe2b049e3f00bd347",
             "content": "sha256:14a91b42ad95453579bdeeb465127a77eceafe856afab80c4c6e31223b20a18a",
             "locator": {
               "end": 62,
@@ -233,8 +251,8 @@
         },
         {
           "anchor": {
-            "blob": "151403083daa285dde3b0cbff00801440a07f954",
-            "content": "sha256:25d2c13d16f57f101fb9280d22903dfedf7bc98eab7b65e3cb7efd3a5d6a2a3f",
+            "blob": "0b1b129b84a4201b1f747ddfe2b049e3f00bd347",
+            "content": "sha256:878a087ac8076f5d3cde482ab6e0ebe7225cc2ea7812537b5ef3f0ee31b43570",
             "locator": {
               "end": 72,
               "kind": "line_range",
@@ -245,12 +263,12 @@
         },
         {
           "anchor": {
-            "blob": "96a8f88b672003959586599c7c8b8849e9b062da",
+            "blob": "3768b4016fd921a34a69b6dcfcf2df78901c48a7",
             "content": "sha256:8b988f8c6609629b959976cbbbf8e3e81d41c98a61c810caee5f4ab898518292",
             "locator": {
-              "end": 514,
+              "end": 516,
               "kind": "line_range",
-              "start": 514
+              "start": 516
             },
             "path": "mcp/tests/test_knowledge_validator_routes.py"
           },
@@ -263,12 +281,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "151403083daa285dde3b0cbff00801440a07f954",
+            "blob": "0b1b129b84a4201b1f747ddfe2b049e3f00bd347",
             "content": "sha256:62d18c550d762f6304a7dca09042c5ac3118eb294fe2aae83e6cee8c8d2617b0",
             "locator": {
-              "end": 127,
+              "end": 132,
               "kind": "line_range",
-              "start": 82
+              "start": 87
             }
           },
           "kind": "code"
@@ -280,12 +298,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "151403083daa285dde3b0cbff00801440a07f954",
+            "blob": "0b1b129b84a4201b1f747ddfe2b049e3f00bd347",
             "content": "sha256:f601beddd89ff1d203ad0783b31793f54c0060a98187fa6d94b685dae71306de",
             "locator": {
-              "end": 159,
+              "end": 164,
               "kind": "line_range",
-              "start": 130
+              "start": 135
             }
           },
           "kind": "code"

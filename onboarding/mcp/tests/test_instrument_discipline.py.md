@@ -152,7 +152,14 @@ re-derived against the current 537-line source.
 - The transcription is the one the record carries, checked against the record where it still exists. [12]
 - The module whose admissibility conditions these cases pin. [13]
 - The narrow exit-status rule and the vacuity rule's non-zero quantity. [14]
-- The lane this module is registered in, so the fail-closed manifest admits it. [15]
+
+
+
+
+> Retained earlier citation wording: - The lane this module is registered in, so the fail-closed manifest admits it. Source caption: "mcp/tests/test_instrument_discipline.py" [15]
+
+
+
 
 ### Cross-Repo References
 
@@ -160,3 +167,5 @@ No separate cross-repository protocol is established by this file. The configure
 allowance is empty and no external source is relied upon here.
 
 No cross-repository evidence is required for these file-local claims.
+
+- The lane this module is registered in, so the fail-closed manifest admits it. Source caption: "mcp/tests/test_instrument_discipline.py" [15]

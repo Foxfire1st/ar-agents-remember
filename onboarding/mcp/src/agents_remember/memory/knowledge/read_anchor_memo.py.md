@@ -89,7 +89,9 @@ No configured domain documentation could be checked.
 - The definitions value shape and the two weigh functions. [4]
 - **The three tables, their keys and capacities, and the approximate-weight statement above them.** [5]
 - The complete-id pattern is the storage models' own object-id pattern (imported from `models/knowledge/base.py`), compiled once for the admission test. [6]
+
 - The consumer that decides what is put, keyed by root plus ids, and only after Git or the parser answered. [7]
+
 - **The cases that pin the bound and concurrency.** [8]
 
 ### Cross-Repo References

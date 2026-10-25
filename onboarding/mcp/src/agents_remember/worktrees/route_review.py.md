@@ -104,8 +104,12 @@ No configured Domain Documentation source applies.
 
 - Series altitude is excluded before leaf resolution; changed leaves require a passing record for the current candidate tree. [2]
 
+
 - CCR-R25 maps observed route-review refusals into bounded structured recovery guidance. [4]
+
+
 - The route-review record's content-addressed fields and self-digest validator. [5]
+
 
 ### Cross-Repo References
 
@@ -127,5 +131,6 @@ Route review now stamps and re-verifies the exact SHA-256 of every evidence file
 direct dependencies (code tree, task intent, evidence bytes, validator), and self-addresses the
 record; the closeout door fingerprints review provenance as `recordDigest` instead of a
 recomputed evidence tuple (worker handover: notes/reports/260902-CCR-L03-worker-delivery.md).
+
 
 - Inspection guidance and mutation guidance are separate. inspect_task_document for a task_doc plan names taskDocumentPath and file-reading prose, with no nextTool/nextArgs invoking a removed read. record_route_review alone carries the mutating task_doc address and required review value. Currentness and developer-decision mappings remain governed by their existing owners; file reading does not record an intent verdict. [6]

@@ -64,9 +64,13 @@ worktree-group name.
 
 ## Evidence
 
+
 - The candidate order, the recorded resolution and existence probe, and the three empty answers. [4]
+
 - The recorded resolution keeps the absolute, unresolved path as its key. [5]
+
 - A contract link retargeted during a computation is recorded as a conflict and the result is not kept. [6]
+
 
 ### Docs References
 

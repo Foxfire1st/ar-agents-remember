@@ -29,5 +29,8 @@ The watch reads no Git objects or knowledge index, stores no projection state, a
 - Nonrecursive native handles are installed and event-reconciled with replacement-before-retirement ordering. [5]
 - The native wait uses a zero timeout and no filesystem polling loop. [6]
 - Readiness is separate from coalesced updates; revisions are connection-local and close joins the worker. [7]
+
 - The source regression queues a genuine native edit during registration and asserts distinct baseline/update events. [8]
+
+
 - The source HTTP-disconnect regression requires worker exit before serving shutdown. [9]

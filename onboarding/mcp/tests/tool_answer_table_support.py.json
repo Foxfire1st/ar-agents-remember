@@ -1,5 +1,6 @@
 {
   "path": "mcp/tests/tool_answer_table_support.py",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
@@ -26,8 +27,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bd2c592c65a90d9e59fa45854795d1572149106e",
-            "content": "sha256:96800e114b0dcf31d7d5ef9d5eb682e91f10ef8931a6823b9de0aa9411faecf2",
+            "blob": "30cc33614b7ad9177eb2b105ce504bb1808b5c2e",
+            "content": "sha256:e9b41d5b0a10196c01095cdc3a74bc0604be2950e927c44964569be1d656649e",
             "locator": {
               "kind": "file"
             }
@@ -41,8 +42,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bd2c592c65a90d9e59fa45854795d1572149106e",
-            "content": "sha256:96800e114b0dcf31d7d5ef9d5eb682e91f10ef8931a6823b9de0aa9411faecf2",
+            "blob": "30cc33614b7ad9177eb2b105ce504bb1808b5c2e",
+            "content": "sha256:e9b41d5b0a10196c01095cdc3a74bc0604be2950e927c44964569be1d656649e",
             "locator": {
               "kind": "file"
             }
@@ -56,8 +57,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bd2c592c65a90d9e59fa45854795d1572149106e",
-            "content": "sha256:96800e114b0dcf31d7d5ef9d5eb682e91f10ef8931a6823b9de0aa9411faecf2",
+            "blob": "30cc33614b7ad9177eb2b105ce504bb1808b5c2e",
+            "content": "sha256:e9b41d5b0a10196c01095cdc3a74bc0604be2950e927c44964569be1d656649e",
             "locator": {
               "kind": "file"
             }

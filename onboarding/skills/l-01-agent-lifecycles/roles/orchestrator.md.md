@@ -163,11 +163,18 @@ write undone because a closeout generation exists and forbids mutating an old qu
 
 The Orchestrator coordinates concurrent masters through their Managers and may start Investigator under its own sprint for a concern or check belonging to no leaf. Leaf checks stay with their Worker and Reviewer. A refusal preserves actual parent routing or the parentless blocker; no invented Architect or recipient identity replaces it.
 
+
 - The Orchestrator may start Investigator under its own sprint as a child concern and report carrier. [19]
+
 
 
 ## Evidence
 
+
 - The seat coordinates one sprint above Managers and verifies delivery without taking over the loop. [16]
+
+
 - The owed result is collected whole in the Result contract. [17]
+
+
 - Developer questions go to the parent Architect; children's questions are answered or passed up. [18]

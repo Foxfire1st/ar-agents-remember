@@ -19,5 +19,7 @@ The layout keeps 6820/9797 as the default port numbers and now carries them as t
 - The reserved port defaults. [2]
 - The dashboard port default. [3]
 
+
 - The scoped current source carries the module/document behavior described above. [1]
+
 - The shared live-port constant is the single definition of the developer's ports that the CLI and the helper refuse. [4]

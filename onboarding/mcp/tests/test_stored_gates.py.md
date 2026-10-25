@@ -34,4 +34,5 @@ No Domain Documentation source is configured for this repository-specific bounda
 - Stored-gate refusal preservation: implementation/assertion boundary described above. [1]
 
 
+
 - The stored-gate refusal matrix now includes closeout-preview and integration-dry-run alongside real integration and prior refusal cases. Each requires the removed-stores way out and forbids removed tools/new gate channels; direct handover refusal retains its exact coded blocker, reason and non-tool nextOperation. These are source/assertion facts, not new executed evidence. [2]

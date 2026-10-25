@@ -3,15 +3,14 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "Log fields, redaction and write-failure behavior are checked.",
+      "note": "Log fields, redaction and write-failure behavior are checked.\n\nAnchor: `ToolAnswerLogTests`",
       "targets": [
         {
           "anchor": {
-            "blob": "d579599624877743880ab9658fd31f3cdb2eaedf",
-            "content": "sha256:cd3bf0e406cd6d794df8978a8cb46d496462097ee865ee797f041776e440bbd3",
+            "blob": "fcbbd0bdc215fb2585e27524cc905716187800ae",
+            "content": "sha256:9d0394939bf75a2c361c77b1c53a1a0458be63e8e84c327a41913b290451ea5c",
             "locator": {
-              "kind": "symbol",
-              "name": "ToolAnswerLogTests"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -19,15 +18,14 @@
       ]
     },
     "2": {
-      "note": "Raised and refused calls keep real entry logging.",
+      "note": "Raised and refused calls keep real entry logging.\n\nAnchor: `ToolRaisedCallLoggingTests`",
       "targets": [
         {
           "anchor": {
-            "blob": "d7ec13e3a24ae84172ae886dbf01c2b0cf735c94",
-            "content": "sha256:55a294ea804b53d35dd3586e907f035e6fc38c403460d8e6947826d594beef2e",
+            "blob": "fcbbd0bdc215fb2585e27524cc905716187800ae",
+            "content": "sha256:9d0394939bf75a2c361c77b1c53a1a0458be63e8e84c327a41913b290451ea5c",
             "locator": {
-              "kind": "symbol",
-              "name": "ToolRaisedCallLoggingTests"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -35,15 +33,14 @@
       ]
     },
     "3": {
-      "note": "Hermetic enclosure log placement and cleanup are asserted.",
+      "note": "Hermetic enclosure log placement and cleanup are asserted.\n\nAnchor: `ToolAnswerEnclosureTests`",
       "targets": [
         {
           "anchor": {
-            "blob": "d579599624877743880ab9658fd31f3cdb2eaedf",
-            "content": "sha256:1c298fe5368552152f43d345df3d2858aa259f1cbc4fa12ee51bad557ea5591e",
+            "blob": "fcbbd0bdc215fb2585e27524cc905716187800ae",
+            "content": "sha256:9d0394939bf75a2c361c77b1c53a1a0458be63e8e84c327a41913b290451ea5c",
             "locator": {
-              "kind": "symbol",
-              "name": "ToolAnswerEnclosureTests"
+              "kind": "file"
             }
           },
           "kind": "test"

@@ -3,15 +3,14 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "Imported by the DEV harness router.",
+      "note": "Imported by the DEV harness router.\n\nAnchor: `DevApp`",
       "targets": [
         {
           "anchor": {
-            "blob": "37b397a99f95bcfe6333670161837e13c86b3f28",
-            "content": "sha256:e9ee5ee8783428393b02b8b62f9fb25a5b89ddcff99a1ecacd735124dd5b8beb",
+            "blob": "1fef46d2a2bd69da100ec62b64aa4237c6ead793",
+            "content": "sha256:e4227fa03a7aa9b3acec21774a08c1b118b164947b0977c6b1ffe7e514e34a45",
             "locator": {
-              "kind": "symbol",
-              "name": "DevApp"
+              "kind": "file"
             },
             "path": "dashboard/src/dev/DevApp.tsx"
           },

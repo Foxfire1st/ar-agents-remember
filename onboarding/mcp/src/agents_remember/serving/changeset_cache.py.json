@@ -76,12 +76,12 @@
   ],
   "references": {
     "1": {
-      "note": "New results are admitted only when all captured inputs remain readable and equal after the request.\n\nAnchor: `_Read.finish`",
+      "note": "New results are admitted only when all captured inputs remain readable and equal after the request.",
       "targets": [
         {
           "anchor": {
-            "blob": "fd2e21cf15548f5d312e19dede561f645cac01df",
-            "content": "sha256:ed0baf6a887ccec1d1be2f92113fc5df888b49833f50ba9af8996280965747a6",
+            "blob": "9361e1cdbce3684c70b9b2927c33e4a95ef03c91",
+            "content": "sha256:b40a1e47df8d94fe81fafecfe7544769a1fbe8501a29723b7bfbad6051560669",
             "locator": {
               "end": 92,
               "kind": "line_range",
@@ -93,15 +93,14 @@
       ]
     },
     "2": {
-      "note": "All three retained tables are bounded and LRU.",
+      "note": "All three retained tables are bounded and LRU.\n\nAnchor: `ChangesetCache`",
       "targets": [
         {
           "anchor": {
-            "blob": "fd2e21cf15548f5d312e19dede561f645cac01df",
-            "content": "sha256:169f1464d130b73cfd7185885fee84764bf147cdc4a92feef92c86339e338f14",
+            "blob": "9361e1cdbce3684c70b9b2927c33e4a95ef03c91",
+            "content": "sha256:f39dcc62bada377cf7074131dc6f49096ce489f8b0761a24163bdee2b54af29a",
             "locator": {
-              "kind": "symbol",
-              "name": "ChangesetCache"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -109,15 +108,14 @@
       ]
     },
     "3": {
-      "note": "Reuse requires exact observed generations and returns isolated copies; otherwise native computation runs.",
+      "note": "Reuse requires exact observed generations and returns isolated copies; otherwise native computation runs.\n\nAnchor: `cached_read`",
       "targets": [
         {
           "anchor": {
-            "blob": "fd2e21cf15548f5d312e19dede561f645cac01df",
-            "content": "sha256:c33609e42cf46025ca9c8376a8bbc40e8c5dd70d94b2a117c4085574e2268b0b",
+            "blob": "9361e1cdbce3684c70b9b2927c33e4a95ef03c91",
+            "content": "sha256:f39dcc62bada377cf7074131dc6f49096ce489f8b0761a24163bdee2b54af29a",
             "locator": {
-              "kind": "symbol",
-              "name": "cached_read"
+              "kind": "file"
             }
           },
           "kind": "code"

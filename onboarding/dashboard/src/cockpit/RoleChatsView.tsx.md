@@ -28,7 +28,9 @@ The frame's shown-chat report is separate from the launcher's current execution.
 
 ## Evidence
 
+
 - RoleChatsView composes the shared launcher, optional native frame, conditional dock and report reader. [1]
+
 - The presentation hook supplies the frame target and scope through chatFrameTarget/chatFrameScope, preferring the named chat and otherwise using the current scoped execution and document selection; this request is separate from observed shown-chat identity. [2]
 
 - The Chats pane publishes only the agent ID its active, unbound frame reports showing. Until a string report arrives, and while a report takeover or bound launcher owns the surface, it publishes no shown-chat identity. [3]

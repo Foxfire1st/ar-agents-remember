@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/tasks/master_sync.py",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
@@ -59,12 +60,22 @@
   ],
   "references": {
     "1": {
-      "note": "Same-root parent planning uses the shared named-master refusal rule; unnamed leaves retain folder fallback.",
+      "note": "Same-root parent planning uses the shared named-master refusal rule; unnamed leaves retain folder fallback.\n\nAnchor: `plan_master_sync` `master_json_path_from_ref` `_master_json_path`",
       "targets": [
         {
           "anchor": {
-            "blob": "6a9f8b91641c869b1c20b3bcf11d566744f94855",
-            "content": "sha256:1410479f56ef2858bc0f794bfb74c0822dde19fa6436d5c14f8883b7560bea46",
+            "blob": "4568c29f3b900b0d0b94dce225776b17f1e981be",
+            "content": "sha256:c096ad39e2e33809b65b91ec66a656449d35e7b27b6bffe8ecedee0f5c4d7893",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4568c29f3b900b0d0b94dce225776b17f1e981be",
+            "content": "sha256:f35b07f664cde35ec08c5843108af88899efc3ac60edacf32f84d26f9763f638",
             "locator": {
               "kind": "symbol",
               "name": "plan_master_sync"
@@ -114,12 +125,22 @@
       ]
     },
     "2": {
-      "note": "The one rule for a leaf naming no master: `None` for a named master or a non-`subTask`, else the folder's `task.json` when it exists.",
+      "note": "The one rule for a leaf naming no master: `None` for a named master or a non-`subTask`, else the folder's `task.json` when it exists.\n\nAnchor: `folder_master_json_path`",
       "targets": [
         {
           "anchor": {
-            "blob": "7195f7a23e7076e9d15fbe5274adc0871808e54e",
-            "content": "sha256:1202a5579f27d46c6907c585195ae7023a0c0a42d6f60a32036777084991cdde",
+            "blob": "4568c29f3b900b0d0b94dce225776b17f1e981be",
+            "content": "sha256:c096ad39e2e33809b65b91ec66a656449d35e7b27b6bffe8ecedee0f5c4d7893",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4568c29f3b900b0d0b94dce225776b17f1e981be",
+            "content": "sha256:96671ed994257a3923b79e9c35e5009a7c8acac5ce32657d139952b9bb364a38",
             "locator": {
               "kind": "symbol",
               "name": "folder_master_json_path"
@@ -130,12 +151,34 @@
       ]
     },
     "3": {
-      "note": "The finalizer and reopen resolve an unnamed leaf through the same helper.",
+      "note": "The finalizer and reopen resolve an unnamed leaf through the same helper.\n\nAnchor: `_folder_parent` `_reopen_master_path`",
       "targets": [
         {
           "anchor": {
-            "blob": "471082802727d562a439135d2393de74c82bc831",
-            "content": "sha256:97d7d439c49779161d3656f6b2b73ecca61271b27d675c63e4c74d8680162d84",
+            "blob": "b8bda143860aa43bd6865974d210d639a5ffe665",
+            "content": "sha256:dae78692c3f880a9249afa60c0944470b31b3405c308e45b8f77235c248a2a2a",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/finalize_task_documents.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "eb7f219c54077c4961695239a2bdaf7de1332e9c",
+            "content": "sha256:f798f8b474c24ccf0049bcc21a17d966f51f6bb4cb2afe7b876f5b82d3285be8",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/worktrees/reopen.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b8bda143860aa43bd6865974d210d639a5ffe665",
+            "content": "sha256:f0f80037ed6b27ed55c27287495e1f6316b673120cc9900124efa61a89b1a260",
             "locator": {
               "kind": "symbol",
               "name": "_folder_parent"
@@ -233,12 +276,34 @@
             }
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4568c29f3b900b0d0b94dce225776b17f1e981be",
+            "content": "sha256:bc652016d21e4f1fb0619202970d680e46beec4256dacfb1f1c7e5f0dee6c83c",
+            "locator": {
+              "end": 47,
+              "kind": "line_range",
+              "start": 47
+            }
+          },
+          "kind": "code"
         }
       ]
     },
     "8": {
-      "note": "The current module exposes `MasterSyncError`, `MasterSyncPlan`, `plan_master_sync` at this ownership boundary.",
+      "note": "The current module exposes `MasterSyncError`, `MasterSyncPlan`, `plan_master_sync` at this ownership boundary.\n\nAnchor: `MasterSyncError` `MasterSyncPlan` `plan_master_sync`",
       "targets": [
+        {
+          "anchor": {
+            "blob": "4568c29f3b900b0d0b94dce225776b17f1e981be",
+            "content": "sha256:c096ad39e2e33809b65b91ec66a656449d35e7b27b6bffe8ecedee0f5c4d7893",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
         {
           "anchor": {
             "blob": "4568c29f3b900b0d0b94dce225776b17f1e981be",
@@ -263,8 +328,8 @@
         },
         {
           "anchor": {
-            "blob": "6a9f8b91641c869b1c20b3bcf11d566744f94855",
-            "content": "sha256:1410479f56ef2858bc0f794bfb74c0822dde19fa6436d5c14f8883b7560bea46",
+            "blob": "4568c29f3b900b0d0b94dce225776b17f1e981be",
+            "content": "sha256:f35b07f664cde35ec08c5843108af88899efc3ac60edacf32f84d26f9763f638",
             "locator": {
               "kind": "symbol",
               "name": "plan_master_sync"
@@ -285,6 +350,18 @@
               "end": 223,
               "kind": "line_range",
               "start": 205
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4568c29f3b900b0d0b94dce225776b17f1e981be",
+            "content": "sha256:9088b84a19015a1c79d2a52ddc77cfec084c3f0aa4fe087ff1223d471cde5d34",
+            "locator": {
+              "end": 190,
+              "kind": "line_range",
+              "start": 172
             }
           },
           "kind": "code"

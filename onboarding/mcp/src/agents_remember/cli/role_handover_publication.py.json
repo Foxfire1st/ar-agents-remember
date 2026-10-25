@@ -39,15 +39,14 @@
   ],
   "references": {
     "1": {
-      "note": "Both files are published as one act, and every target is preflighted before the first write.",
+      "note": "Both files are published as one act, and every target is preflighted before the first write.\n\nAnchor: `publish_handover_files`",
       "targets": [
         {
           "anchor": {
-            "blob": "185c92fc0b914807833c6d68054454f3490b58a7",
-            "content": "sha256:6b1802c7b2476786db0030699ee634e06cd31b3709c47067b1ff331b256696a6",
+            "blob": "f3b3bcd9898dad62e47fc188cbdd75f18ca1a458",
+            "content": "sha256:d000e185ce36c7e2711e15ad5e32b2f5241d345ab5b57f0833e5568c62ec16c2",
             "locator": {
-              "kind": "symbol",
-              "name": "publish_handover_files"
+              "kind": "file"
             }
           },
           "kind": "code"

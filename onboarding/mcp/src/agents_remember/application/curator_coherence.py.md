@@ -52,8 +52,12 @@ No external documentation is required for the configured-contract translation.
 
 ### Repo-Internal References
 
+
 - One admitted contract executes the coherence action and translates the complete domain family. [1]
+
+
 - Configured admission is the shared lower-level API rather than repeated exception lists. [2]
+
 
 ### Cross-Repo References
 

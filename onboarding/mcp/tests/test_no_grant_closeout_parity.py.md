@@ -35,5 +35,5 @@ Uses the existing `QueueFixture` and public closeout/integration services for cu
 - Conversion-marker row/count/gate handling and baseline-only four-seat-field removal are separately attributed test scaffolding, not generic current-answer metadata suppression. [2]
 
 
-- The baseline-only subprocess maps its own written/unchanged/staleIndexes facts onto L110 count keys; no current/grant response is copied and the original comparisons remain. [3]
 
+- The baseline-only subprocess maps its own written/unchanged/staleIndexes facts onto L110 count keys; no current/grant response is copied and the original comparisons remain. [3]

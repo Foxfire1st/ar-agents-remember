@@ -77,48 +77,14 @@
       ]
     },
     "3": {
-      "note": "The fixture converter and its head selection.",
+      "note": "The fixture converter and its head selection.\n\nAnchor: `convert_dataset` `_convert` `_heads` `_convert_realizations`",
       "targets": [
         {
           "anchor": {
             "blob": "91a458aeeb1ea642a75f5bcbc6490d09fa0cfc1e",
-            "content": "sha256:bce115e814f888e929ad982ba066fed481f1779fb35c29a5d87c8dd7d393a99d",
+            "content": "sha256:82f46e87d3e1f76e27eb9117b0ed6aac7a4435061036490cc2913cb4d9b45bb9",
             "locator": {
-              "kind": "symbol",
-              "name": "convert_dataset"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "91a458aeeb1ea642a75f5bcbc6490d09fa0cfc1e",
-            "content": "sha256:6d36cc6ce6c1c73f9a3f36dcf6a9a2431bd6c312bcac26feede347bf548a562a",
-            "locator": {
-              "kind": "symbol",
-              "name": "_convert"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "1f4baeff00e1723d71bec4ae04d0e25599fc7763",
-            "content": "sha256:b0665e526b395e8a62634e006314b58e198f0f70e5b86b5e064017036ab5d96b",
-            "locator": {
-              "kind": "symbol",
-              "name": "_heads"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "91a458aeeb1ea642a75f5bcbc6490d09fa0cfc1e",
-            "content": "sha256:1aebeb9406c4c9fad8b19a0e50b46d4f0f4e6b5f7fe79bb984a45a4b0d87b6ac",
-            "locator": {
-              "kind": "symbol",
-              "name": "_convert_realizations"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -126,12 +92,12 @@
       ]
     },
     "4": {
-      "note": "The test-row-builder parity database and the extra candidate claim.\n\nAnchor: `build_parity_dataset`, `add_parity_claim`",
+      "note": "The test-row-builder parity database and the extra candidate claim.",
       "targets": [
         {
           "anchor": {
-            "blob": "1f4baeff00e1723d71bec4ae04d0e25599fc7763",
-            "content": "sha256:af857952ae71359890231ae11dcc0f41108d127511e875babfa0834d2b3c3506",
+            "blob": "91a458aeeb1ea642a75f5bcbc6490d09fa0cfc1e",
+            "content": "sha256:82f46e87d3e1f76e27eb9117b0ed6aac7a4435061036490cc2913cb4d9b45bb9",
             "locator": {
               "kind": "file"
             }
@@ -141,12 +107,12 @@
       ]
     },
     "5": {
-      "note": "A same-size rewrite placed in the second of the index write.\n\nAnchor: `rewrite_in_the_second_of_the_index_write`",
+      "note": "A same-size rewrite placed in the second of the index write.",
       "targets": [
         {
           "anchor": {
-            "blob": "1f4baeff00e1723d71bec4ae04d0e25599fc7763",
-            "content": "sha256:af857952ae71359890231ae11dcc0f41108d127511e875babfa0834d2b3c3506",
+            "blob": "91a458aeeb1ea642a75f5bcbc6490d09fa0cfc1e",
+            "content": "sha256:82f46e87d3e1f76e27eb9117b0ed6aac7a4435061036490cc2913cb4d9b45bb9",
             "locator": {
               "kind": "file"
             }

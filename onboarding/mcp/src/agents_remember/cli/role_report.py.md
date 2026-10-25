@@ -56,4 +56,5 @@ Task-bound Investigator report lookup requires its exact request UUID and follow
 - The recorded file must be the launch-derived name directly under the root. [2]
 - The read-only regular-file read with bounded size. [4]
 - The canonical file serves when the access alias is absent. [5]
+
 - The file's Investigator boundary and request identity. [6]

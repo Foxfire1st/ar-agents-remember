@@ -37,12 +37,12 @@
       ]
     },
     "13": {
-      "note": "The curation-doctrine registry and the statements a canonical instruction source must make.\n\nAnchor: curation_doctrine.py",
+      "note": "The curation-doctrine registry and the statements a canonical instruction source must make.",
       "targets": [
         {
           "anchor": {
-            "blob": "4ca283a6e70de51aba22a2a26dfe036ace2cffcc",
-            "content": "sha256:ffe2c82fae8262e8bb35c0d90ff7b6304a03c8e0831808d31bdeb3698b1c5ed4",
+            "blob": "6ec48bd8ac8d9672d246206cd96626ca39960e19",
+            "content": "sha256:bd5eaeccab20cf440b49f03f82b4da4aa1d57faa241444f87db7f6de5da67f43",
             "locator": {
               "kind": "file"
             },
@@ -118,15 +118,14 @@
       ]
     },
     "17": {
-      "note": "The registry of retired curation sentences.",
+      "note": "The registry of retired curation sentences.\n\nAnchor: `RETIRED_CURATION_STATEMENTS`",
       "targets": [
         {
           "anchor": {
-            "blob": "4ca283a6e70de51aba22a2a26dfe036ace2cffcc",
-            "content": "sha256:f83316ddddc0183a1c86c688bf4fe3a2f639fa8a39192d7d622a4320f315d3b5",
+            "blob": "6ec48bd8ac8d9672d246206cd96626ca39960e19",
+            "content": "sha256:bd5eaeccab20cf440b49f03f82b4da4aa1d57faa241444f87db7f6de5da67f43",
             "locator": {
-              "kind": "symbol",
-              "name": "RETIRED_CURATION_STATEMENTS"
+              "kind": "file"
             },
             "path": "mcp/test_support/agents_remember_test_support/testing/curation_doctrine.py"
           },
@@ -152,15 +151,14 @@
       ]
     },
     "19": {
-      "note": "The register assigns distinct reset, restored and constant treatments.",
+      "note": "**Historical source-bound reference account, not an operative override:** The register assigns distinct reset, restored and constant treatments.\n\nAnchor: `PROCESS_MUTABLE_STATES`",
       "targets": [
         {
           "anchor": {
-            "blob": "d576cee120863a47cf54be4129b79182b670a99c",
-            "content": "sha256:c888cdda4aabdabf8588725d5f23286295f19ec55431ea1899924dbce233b2f7",
+            "blob": "d422851710478deaa848eb88666bbae572b1b623",
+            "content": "sha256:c95dbcc59b62cef3c7553e0a6ba259c6eba305e927db53a4810d7d5c96b11b50",
             "locator": {
-              "kind": "symbol",
-              "name": "PROCESS_MUTABLE_STATES"
+              "kind": "file"
             },
             "path": "mcp/test_support/agents_remember_test_support/testing/global_state.py"
           },
@@ -266,7 +264,7 @@
       ]
     },
     "24": {
-      "note": "Retired handover wording is source/sentence data; affirmative wording uses normalized clause alternatives.\n\nAnchor: handover and instruction wording helpers",
+      "note": "Retired handover wording is source/sentence data; affirmative wording uses normalized clause alternatives.",
       "targets": [
         {
           "anchor": {
@@ -283,8 +281,8 @@
         },
         {
           "anchor": {
-            "blob": "8f1f34fc0112cdf2edbdac3aa4eb8b918fad0325",
-            "content": "sha256:fb7fcc772848743403a58b32f17116d3b714aaa358e7f0aa67501afbab152ac6",
+            "blob": "446dd8459833bdf3c6d25cfedf8dd4cec8518c14",
+            "content": "sha256:a3d12ed2d8ccfcec4113037210bd63e477dbae3e54a77e1b531a4e632ad41323",
             "locator": {
               "end": 100,
               "kind": "line_range",
@@ -296,8 +294,8 @@
         },
         {
           "anchor": {
-            "blob": "c129f21c7486cf378a2a50d8bc53c753eb1a2a6d",
-            "content": "sha256:d1d14736bff0740fd3df7da15dddd64048c8879e9d2af3f873a72ddb7eb4b9c9",
+            "blob": "3af4872c490802df8eb1c9bcb5cb7985aef87f11",
+            "content": "sha256:d6f8558b175b3bb31a05e03e747273e3b9fb3530c489c8c7cfcb4e953e79d5a0",
             "locator": {
               "end": 69,
               "kind": "line_range",
@@ -328,15 +326,14 @@
       ]
     },
     "26": {
-      "note": "The closed product-process register now includes agents_remember.kernel.primitives.runtime_config._LEGACY_GATE_DELEGATION_WARNED with the default reset treatment and existing _clear resetter between test modules. It is not a per-test-restored lock. The shared guard and treatment rules remain unchanged; registration is not execution of the reset control.",
+      "note": "The closed product-process register now includes agents_remember.kernel.primitives.runtime_config._LEGACY_GATE_DELEGATION_WARNED with the default reset treatment and existing _clear resetter between test modules. It is not a per-test-restored lock. The shared guard and treatment rules remain unchanged; registration is not execution of the reset control.\n\nAnchor: `PROCESS_MUTABLE_STATES`",
       "targets": [
         {
           "anchor": {
-            "blob": "3007b1080588e8baa67a2353791d8715f232f416",
-            "content": "sha256:45e97a83a26b557d41cf4f209513b506399f6a711e351f838ff6a95b6459168d",
+            "blob": "d422851710478deaa848eb88666bbae572b1b623",
+            "content": "sha256:c95dbcc59b62cef3c7553e0a6ba259c6eba305e927db53a4810d7d5c96b11b50",
             "locator": {
-              "kind": "symbol",
-              "name": "PROCESS_MUTABLE_STATES"
+              "kind": "file"
             },
             "path": "mcp/test_support/agents_remember_test_support/testing/global_state.py"
           },
@@ -345,15 +342,14 @@
       ]
     },
     "27": {
-      "note": "The closed register also gives the existing closeout digest-file stats, lifecycle location cache and lifecycle operation-record cache ordinary `_clear` resets at module boundaries. It adds no scanner exemption or production reset; restored rows retain their per-test treatment.",
+      "note": "The closed register also gives the existing closeout digest-file stats, lifecycle location cache and lifecycle operation-record cache ordinary `_clear` resets at module boundaries. It adds no scanner exemption or production reset; restored rows retain their per-test treatment.\n\nAnchor: `PROCESS_MUTABLE_STATES`",
       "targets": [
         {
           "anchor": {
-            "blob": "3007b1080588e8baa67a2353791d8715f232f416",
-            "content": "sha256:45e97a83a26b557d41cf4f209513b506399f6a711e351f838ff6a95b6459168d",
+            "blob": "d422851710478deaa848eb88666bbae572b1b623",
+            "content": "sha256:c95dbcc59b62cef3c7553e0a6ba259c6eba305e927db53a4810d7d5c96b11b50",
             "locator": {
-              "kind": "symbol",
-              "name": "PROCESS_MUTABLE_STATES"
+              "kind": "file"
             },
             "path": "mcp/test_support/agents_remember_test_support/testing/global_state.py"
           },
@@ -362,15 +358,14 @@
       ]
     },
     "28": {
-      "note": "The current closed register omits retired ambient-session/log owners while retaining closeout and worktree landing-chain cache resets.",
+      "note": "The current closed register omits retired ambient-session/log owners while retaining closeout and worktree landing-chain cache resets.\n\nAnchor: `PROCESS_MUTABLE_STATES`",
       "targets": [
         {
           "anchor": {
-            "blob": "f4aaacfcd15bb64cc5150682f4748512e07174bf",
-            "content": "sha256:7beed00ba2a1a811cef48ee655b56bf0a4ecd5c7987bab19ae9371f43ebabe01",
+            "blob": "d422851710478deaa848eb88666bbae572b1b623",
+            "content": "sha256:c95dbcc59b62cef3c7553e0a6ba259c6eba305e927db53a4810d7d5c96b11b50",
             "locator": {
-              "kind": "symbol",
-              "name": "PROCESS_MUTABLE_STATES"
+              "kind": "file"
             },
             "path": "mcp/test_support/agents_remember_test_support/testing/global_state.py"
           },

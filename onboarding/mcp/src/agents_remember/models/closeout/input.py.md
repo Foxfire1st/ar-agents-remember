@@ -51,15 +51,21 @@ No configured external domain-documentation source applies.
 
 ### Repo-Internal References
 
+
 - Raw input, resolved plans, effective input, and message-field vocabulary contain code and memory only. [1]
+
 - Raw observations and typed refusal vocabulary are public data. [2]
 - Effective legs are a discriminated union. [3]
 - Only enabled legs can return a raw commit message; this stays the public echo. [4]
 - The model imports and calls the kernel renderer; the key and trailer rendering have one kernel definition. [5]
 - The layer contract that fixes the import direction: `kernel` ranks below `models`, so the model may import the renderer and not the reverse. [6]
 - The round trip that proves this module's rendered trailer is the one the kernel reader parses, rather than two keys that merely look alike. [7]
+
 - The census that enforces the one definition this route now depends on — the key identifier and its interpolation in exactly one production module, and all five producers reaching a shared renderer entry, this model's method included. [8]
+
+
 - The worktree and direct routes render attributed memory messages at their real commit seams (since MIK-R09 the worktree route first validates a converted leaf's exact tree); no ledger commit is produced. [9]
+
 - None [10]
 - None [11]
 

@@ -57,6 +57,9 @@ No external Domain Documentation source governs these repository-owned cases.
 
 The module's own cases are the evidence; each class covers one arm of the reopen and start path.
 
+
 - The archived-leaf class drives reopen, the named start arguments, a repeated reopen and three cycles. [1]
+
+
 
 - The master class drives the self-named parent, the master reopen from its sprint line, and the refusal that names the missing file. [2]

@@ -41,7 +41,9 @@ No configured domain documentation was available.
 ### Repo-Internal References
 
 - The package's `typecheck` script invokes this no-emit configuration. [1]
+
 - Protocol code and tests are the complete included TypeScript source set. [2]
+
 
 ### Cross-Repo References
 

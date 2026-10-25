@@ -112,10 +112,12 @@ extension specification, SEP-2640).
 - The frontmatter reader this module refuses a non-conforming skill through, and the verbatim map it returns. [12]
 - The served corpus and its publishing origin, bound together. [13]
 - The registration layer that turns these values into MCP resources and the two protocol methods. [14]
-- The cases that execute the containment, revision, unreadable-refusal and nesting rules. [15]
-- The traversal case that reads a path outside a skill directory from a live process. [16]
 
 ### Cross-Repo References
 
 No meaningful cross-repository reference applies. The served tree is this repository's own generated
 package-data copy of its canonical `skills/` tree.
+
+- The cases that execute the containment, revision, unreadable-refusal and nesting rules. [15]
+
+- The traversal case that reads a path outside a skill directory from a live process. [16]

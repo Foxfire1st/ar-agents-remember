@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/cli/knowledge_format.py",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
@@ -34,7 +35,7 @@
         },
         {
           "anchor": {
-            "blob": "9442b951a34eebaa1610f814f4e269611930b242",
+            "blob": "f42b73b25d4034dd173d1c95d74c2b16ba88de6c",
             "content": "sha256:312f01489db650ccd1a6f99d36ea871efa7ddecdf6df5314c968292a8ec2e31a",
             "locator": {
               "kind": "symbol",
@@ -73,6 +74,19 @@
               "end": 92,
               "kind": "line_range",
               "start": 92
+            },
+            "path": "mcp/src/agents_remember/cli/__main__.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6e7bd5a18da5ea781594e67999b9b01f305937d4",
+            "content": "sha256:9433d0ea9ecf2f39c9a50407395ee41172fe682c9c885a3508f75bdee151efff",
+            "locator": {
+              "end": 78,
+              "kind": "line_range",
+              "start": 78
             },
             "path": "mcp/src/agents_remember/cli/__main__.py"
           },

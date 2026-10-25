@@ -37,15 +37,14 @@
       ]
     },
     "10": {
-      "note": "Defines the class `TerminalNamespaceGuard` (lines 178-384) — One exact-leaf terminal reservation held through mutation and publication.",
+      "note": "Defines the class `TerminalNamespaceGuard` - one exact-leaf terminal reservation held through mutation and publication.\n\nAnchor: `TerminalNamespaceGuard`",
       "targets": [
         {
           "anchor": {
-            "blob": "974432fd338690f4774b5ef4cb749bfe0895f213",
-            "content": "sha256:df97c611f7c8e11546ba582cb8329e001c828b1ed2041c45c57eafbe57de3648",
+            "blob": "10b3d2f2f0e2260e325f16a13904d95cc21c17dd",
+            "content": "sha256:5948de9e1d08b7fa447479b5525f1476e9918ffe7eb838459200904696c53ffb",
             "locator": {
-              "kind": "symbol",
-              "name": "TerminalNamespaceGuard"
+              "kind": "file"
             }
           },
           "kind": "code"

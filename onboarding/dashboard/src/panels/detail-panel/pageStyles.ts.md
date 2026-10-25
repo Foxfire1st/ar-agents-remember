@@ -23,4 +23,6 @@ These are CSS recipes, not document semantic state or measured browser acceptanc
 - The root scopes proposal ground/code/link styling to an inline-size page container. [1]
 - All three form badges share one scoped recipe with distinct state colours. [2]
 
-- Order work/ready/waits and legend accents retain relation marks; task-status words still use the common table. [3]
+
+
+- Task-status words still come from the shared STATUS_WORDS tone/word table, while the order work/ready/waits legend keeps its relation marks in the order-graph panel. [3]

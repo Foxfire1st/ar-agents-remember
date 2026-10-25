@@ -25,7 +25,9 @@
 - `R22.6-anchor-path`: an anchor with no equal counterpart in any base must name a file in the paired code tree. For an entry the counterpart is the same entry ID; for a reference target, the same sidecar path. Skipped for a standalone conversion.
 - `R22.6-carried-stale` (**merge_reports**, writer-reported): a carried anchor at an absent code path
   refuses commit/landing, reports at sync/standalone conversion, and is reported by the writer for
-  repair. No code tree means no path check; this does not make every content-stale reference refusing.
+  repair. No code tree means no path check; content-stale anchors are refused by
+  `R198.1-reference-anchor` in `rules_reference_anchors.py`, which the same validator registers
+  (MIK-R198 rule 5).
 
 ### Conventions
 
@@ -44,7 +46,8 @@
 
 The historical worker gap 10 anticipated MIK-R24/MIK-R03 stale-reference maintenance. The current
 absent-path finding already carries MIK-R53's merge_reports reason and names repair before the next
-refusing publication/landing; other content-only staleness keeps its separate currentness treatment.
+refusing publication/landing; other content-only staleness is refused by `R198.1-reference-anchor` at
+every publication route and in the full quality run, and reported to the writer and at a sync merge.
 
 Literal text that is not a marker receives three recovery choices in `_ESCAPE_HINT`: escaped bracket spelling, a fenced code block, or a code span. The hint changes presentation, not marker grammar or the separate absent-path/reporting rules.
 
@@ -66,8 +69,12 @@ The reference rules and their registration.
 
 - Markers and references are paired both ways. [1]
 - Record links, entry invariants, supersedes and family members must exist. [2]
+
 - A hand-added marker without a reference is refused. [5]
+
+
 - The boundary example: one parent deleted a file the other's card cites. [6]
+
 
 ### Cross-Repo References
 

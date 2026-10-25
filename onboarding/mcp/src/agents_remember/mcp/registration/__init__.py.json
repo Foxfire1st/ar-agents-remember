@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/mcp/registration/__init__.py",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
@@ -22,15 +23,14 @@
   ],
   "references": {
     "1": {
-      "note": "The `create_server` consumer iterates `TOOL_REGISTRARS`.",
+      "note": "The `create_server` consumer iterates `TOOL_REGISTRARS`.\n\nAnchor: `create_server`",
       "targets": [
         {
           "anchor": {
-            "blob": "f307a8adb3d7fc51aeb3c776f4593c9b2517412d",
-            "content": "sha256:71d47f4c57afe64bde317fd506eb089eb32b746ce2e130e5732824d6c3fcd1fe",
+            "blob": "04fe591490945dea61eca1af410ae2553d95ea05",
+            "content": "sha256:cc3a440dce07a6635e86d3b3c0bd4747a332896e3470112e376449434e08b69a",
             "locator": {
-              "kind": "symbol",
-              "name": "create_server"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/mcp/server.py"
           },
@@ -54,20 +54,8 @@
       ]
     },
     "2": {
-      "note": "The advertised tool-name list's one definition, re-exported unchanged by the adapter.\n\nAnchor: \"__all__ = [\\\"PUBLIC_TOOLS\\\", \\\"RESERVED_TOOLS\\\", \\\"TRANSPORT\\\"]\"",
+      "note": "The advertised tool-name list's one definition, re-exported unchanged by the adapter.\n\nAnchor: `PUBLIC_TOOLS`",
       "targets": [
-        {
-          "anchor": {
-            "blob": "11f7b63ef890f294ec645cb0a18372190e239551",
-            "content": "sha256:68e903ed4eb01e85a91b74875abc196a300101695c83e602e2fcf8a2d0805c21",
-            "locator": {
-              "kind": "symbol",
-              "name": "PUBLIC_TOOLS"
-            },
-            "path": "mcp/src/agents_remember/models/tools/public_roster.py"
-          },
-          "kind": "code"
-        },
         {
           "anchor": {
             "blob": "bbd96445dae6e10e1c4052722fab1b614aafedfe",
@@ -78,6 +66,17 @@
               "start": 19
             },
             "path": "mcp/src/agents_remember/mcp/tools/base.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d0b0ddd9f150e32116b430ecc74907fcf68fee97",
+            "content": "sha256:fdef15e2ca9d39f66c8570a7147cb894dda16f47c7d3558bb4454e5b4714875f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/models/tools/public_roster.py"
           },
           "kind": "code"
         }
@@ -102,15 +101,14 @@
       ]
     },
     "5": {
-      "note": "The registrar appended immediately before it, which established the same append-only precedent.",
+      "note": "The capsule registrar historically appended immediately before knowledge, before the role-agent insertion.\n\nAnchor: `register_capsule_and_skill_tools`",
       "targets": [
         {
           "anchor": {
-            "blob": "6047b268d9f925ebce5535a63f38066cf908c1e9",
-            "content": "sha256:2f45c654bbec0d447d009eb6b10b263566657ec1f3f95f63f0afc3195330d00e",
+            "blob": "5865a5625745237980b5f2727a2b258b47488104",
+            "content": "sha256:e599d213ee8a82d54eb3535c16767e98a907ef2191dd8819d3f9c007367f5466",
             "locator": {
-              "kind": "symbol",
-              "name": "register_capsule_and_skill_tools"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/mcp/registration/capsule_serving.py"
           },
@@ -118,34 +116,15 @@
         }
       ]
     },
-    "6": {
-      "note": "The three advertised names the capsule/skill registrar publishes, immediately before the knowledge tail.\n\nAnchor: `role_capsule_compile`; `skill_catalog_list`; `skill_catalog_read`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "aac03e58e85406466eb074f35a87baaad2b51e30",
-            "content": "sha256:a3e47ab388213b4a1d29e82854bdf9947f0ce1be15289b541d5a0170ab3eb531",
-            "locator": {
-              "end": 91,
-              "kind": "line_range",
-              "start": 89
-            },
-            "path": "mcp/src/agents_remember/models/tools/public_roster.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "7": {
-      "note": "The live registered-order comparison that makes a registrar-without-roster-name a surface violation.",
+      "note": "The live registered-order comparison that makes a registrar-without-roster-name a surface violation.\n\nAnchor: `PublicSurfaceInventoryTests`",
       "targets": [
         {
           "anchor": {
-            "blob": "3ab0d44d1db2a5d0385439309040570f61329bc5",
-            "content": "sha256:2ebc14b18d51623f784392c927ed0622576181781cf21bbf6c445a50ea2d9ae9",
+            "blob": "d0620d3a6b3d0466f16d6b6d715eb161641e387f",
+            "content": "sha256:a1e4d314feb531d1035a87ca865b4aec6d628128b791f4f2639ff61a7399da89",
             "locator": {
-              "kind": "symbol",
-              "name": "PublicSurfaceInventoryTests"
+              "kind": "file"
             },
             "path": "mcp/tests/test_tools.py"
           },
@@ -154,15 +133,14 @@
       ]
     },
     "8": {
-      "note": "Frozen implementation of TOOL_REGISTRARS supporting the stated file behavior.",
+      "note": "Frozen implementation of TOOL_REGISTRARS supporting the stated file behavior.\n\nAnchor: `TOOL_REGISTRARS`",
       "targets": [
         {
           "anchor": {
-            "blob": "1992fb7acf8e245685369d397149006982245cfa",
-            "content": "sha256:ece5180bbddb3a1dc607a955576509259061fa0039df7da124a37ac6d91d3156",
+            "blob": "de6a43ed2001fc740bfc55163c3d1a0d70ae39bb",
+            "content": "sha256:a745162e8d77df72379e28b49e4dacde7a65f41774cbd89653b9ab790c0174e3",
             "locator": {
-              "kind": "symbol",
-              "name": "TOOL_REGISTRARS"
+              "kind": "file"
             }
           },
           "kind": "code"

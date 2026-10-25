@@ -59,12 +59,20 @@ No configured external domain-documentation source applies.
 ### Repo-Internal References
 
 - Raw closeout/control messages and landed commits contain only code/memory values. [1]
+
 - Task-start concepts and shared defaults have one definition. [2]
+
 - Lifecycle control reconstructs only canonical typed public values. [3]
 - Closeout approval, messages, and finalization documents remain separate concepts. [4]
+
 - Start consumes its extracted request type. [5]
+
+
 - Operation control consumes its extracted request type. [6]
+
+
 - The start tool consumes the request types this module extracts. [7]
+
 - Closeout apply consumes its extracted request type. [8]
 
 ### Cross-Repo References

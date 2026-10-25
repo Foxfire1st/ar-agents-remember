@@ -49,8 +49,11 @@ exists only in the test would not pass.
 - Two repository ids cannot share one git common dir. [1]
 - External memory cannot alias another configured code repo. [2]
 - Config must not live inside the coordination root. [3]
+
 - The authority settings load. [4]
+
 - A repository certification profile reference fails closed. [5]
 - A repository contract path cannot escape the coordination root. [6]
 - A human-pinned kind in the global file fails boot. [7]
+
 - The optional `paseoRuntime` block's exactness and fail-loud behaviour, including the tolerated retired skill root. [8]

@@ -40,12 +40,12 @@
   ],
   "references": {
     "1": {
-      "note": "Current source owner or exact assertion described above.\n\nAnchor: `ar-plugin`",
+      "note": "Current source owner or exact assertion described above.",
       "targets": [
         {
           "anchor": {
-            "blob": "ad807480ade26be8b178323b62b5a82b4a2c20e8",
-            "content": "sha256:63f92462a2194c23e274b09cf6fb556f284d70ffc303d5c64263fbdee302fd2c",
+            "blob": "24412411496b5a9bebf3d5bace8701d8bd5192cb",
+            "content": "sha256:b23fd5ca7947429b9fe8cb65ac2378dddb38f253cc1683a00ab2555cf5c4ea44",
             "locator": {
               "end": 7,
               "kind": "line_range",
@@ -57,12 +57,12 @@
       ]
     },
     "2": {
-      "note": "The plugin manifest requires Paseo >=0.11.1.\n\nAnchor: `>=0.11.1`",
+      "note": "The plugin manifest requires Paseo >=0.12.0.",
       "targets": [
         {
           "anchor": {
-            "blob": "ad807480ade26be8b178323b62b5a82b4a2c20e8",
-            "content": "sha256:63f92462a2194c23e274b09cf6fb556f284d70ffc303d5c64263fbdee302fd2c",
+            "blob": "24412411496b5a9bebf3d5bace8701d8bd5192cb",
+            "content": "sha256:b23fd5ca7947429b9fe8cb65ac2378dddb38f253cc1683a00ab2555cf5c4ea44",
             "locator": {
               "end": 7,
               "kind": "line_range",

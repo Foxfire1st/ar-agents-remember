@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/tasks/task_intent.py",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
@@ -174,8 +175,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4c5e5fc888093eb6dee75afa52e42637bda68200",
-            "content": "sha256:067652ced50745112919ca49b6558bc0a71f3328e23c505d06ad37bcd26b76c6",
+            "blob": "677ef0d057fea2af70dbd317e35f4f66b1539221",
+            "content": "sha256:05a9e6a01cd46ec9ad0cc6f216abef0b4ae37aae1c04006de51413792ccbbbe7",
             "locator": {
               "end": 156,
               "kind": "line_range",
@@ -186,8 +187,8 @@
         },
         {
           "anchor": {
-            "blob": "fde5524639c0730cc86d3f2603b24a53f4cd6d61",
-            "content": "sha256:f5bcd889dc61ec577832233796c75e049452fc1c855b0af143bba71b22e3e5be",
+            "blob": "9fd75d5e4d6c3ddd6368df459517c5de74099533",
+            "content": "sha256:da29e572316bf1ad53a864d6c7ab899e91629c97f6d1ddfa0be41d5d04d4701c",
             "locator": {
               "end": 189,
               "kind": "line_range",
@@ -293,15 +294,14 @@
       ]
     },
     "19": {
-      "note": "The packet owner: recorded resolutions, confinement before reading, one read recorded under the caller's locator, identity check.",
+      "note": "The packet owner: recorded resolutions, confinement before reading, one read recorded under the caller's locator, identity check.\n\nAnchor: `_approved_packet_ref`",
       "targets": [
         {
           "anchor": {
-            "blob": "4ba15e660a1afe8f592f7615a9e4e461ca6fc6fd",
-            "content": "sha256:b55241a4f83bc87f16238ed1c0f091b37ce877051505834afabba6aba24018b4",
+            "blob": "677ef0d057fea2af70dbd317e35f4f66b1539221",
+            "content": "sha256:9dd05c561299097e2391331336cbf06a3036cc935f4a44f59b73bcb3897ed15f",
             "locator": {
-              "kind": "symbol",
-              "name": "_approved_packet_ref"
+              "kind": "file"
             }
           },
           "kind": "code"

@@ -41,7 +41,7 @@ The instruction owns the selected curation workflow, full quality check and cohe
 Converted-memory closeout additionally requires a non-author second reader. That seat checks every changed card, sidecar and record statement against final code, every history disposition/effect/reason against the diff, and important omissions. Blocking findings are repaired, with a full curation-operation rerun after each repair. This is a lifecycle duty, explicitly not an automated closeout predicate or a Curator-helper self-check.
 
 
-- Raw clean curation and the independent second-reader fact-check have separate obligations. The intake sentence names the task-read arguments by their dotted path, `documents[0].taskDocReadArgs`, which is where a first message's projection carries them. [2]
+- Raw clean curation and the independent second-reader fact-check have separate obligations. The intake sentence names the task-read arguments by their dotted path, `documents.taskDocReadArgs`, which is where a first message's projection carries them. [2]
 
 
 ## Current composition and authoring contract
@@ -59,21 +59,21 @@ No separate reference list: the file's sidecar carries the realization entries f
 
 
 
-- Partitions all-role versus Curator/Manager text, consolidates inputs/output in the role, extracts named-step authoring details and states the post-landing recorded memory-review lane. [4]
+> Retained earlier citation wording: - Partitions all-role versus Curator/Manager text, consolidates inputs/output in the role, extracts named-step authoring details and states the post-landing recorded memory-review lane. [4]
 
 
 - Partitions all-role versus Curator/Manager text, consolidates inputs/output in the role, extracts named-step authoring details and states the post-landing recorded memory-review lane. [5]
 
 
-- Partitions all-role versus Curator/Manager text, consolidates inputs/output in the role, extracts named-step authoring details and states the post-landing recorded memory-review lane. [6]
+> Retained earlier citation wording: - Partitions all-role versus Curator/Manager text, consolidates inputs/output in the role, extracts named-step authoring details and states the post-landing recorded memory-review lane. [6]
 
 
 
-- Partitions all-role versus Curator/Manager text, consolidates inputs/output in the role, extracts named-step authoring details and states the post-landing recorded memory-review lane. [7]
+> Retained earlier citation wording: - Partitions all-role versus Curator/Manager text, consolidates inputs/output in the role, extracts named-step authoring details and states the post-landing recorded memory-review lane. [7]
 
 
 
-- Partitions all-role versus Curator/Manager text, consolidates inputs/output in the role, extracts named-step authoring details and states the post-landing recorded memory-review lane. [8]
+> Retained earlier citation wording: - Partitions all-role versus Curator/Manager text, consolidates inputs/output in the role, extracts named-step authoring details and states the post-landing recorded memory-review lane. [8]
 
 
 - Partitions all-role versus Curator/Manager text, consolidates inputs/output in the role, extracts named-step authoring details and states the post-landing recorded memory-review lane. [9]
@@ -83,4 +83,18 @@ No separate reference list: the file's sidecar carries the realization entries f
 - Partitions all-role versus Curator/Manager text, consolidates inputs/output in the role, extracts named-step authoring details and states the post-landing recorded memory-review lane. [11]
 
 
+> Retained earlier citation wording: - Partitions all-role versus Curator/Manager text, consolidates inputs/output in the role, extracts named-step authoring details and states the post-landing recorded memory-review lane. [12]
+
 - Partitions all-role versus Curator/Manager text, consolidates inputs/output in the role, extracts named-step authoring details and states the post-landing recorded memory-review lane. [12]
+
+
+- Partitions all-role versus Curator/Manager text, consolidates inputs/output in the role, extracts named-step authoring details and states the post-landing recorded memory-review lane. [4]
+
+
+- Partitions all-role versus Curator/Manager text, consolidates inputs/output in the role, extracts named-step authoring details and states the post-landing recorded memory-review lane. [6]
+
+
+- Partitions all-role versus Curator/Manager text, consolidates inputs/output in the role, extracts named-step authoring details and states the post-landing recorded memory-review lane. [7]
+
+
+- Partitions all-role versus Curator/Manager text, consolidates inputs/output in the role, extracts named-step authoring details and states the post-landing recorded memory-review lane. [8]

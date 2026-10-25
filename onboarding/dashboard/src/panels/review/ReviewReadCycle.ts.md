@@ -339,9 +339,13 @@ No domain documentation is configured for this repository; the current account i
 - **The read state and its mapper: the four phases this module sets, and the client's typed answer projected into them.** [18]
 - **The client's ninth argument and the one query string it is assembled into, with the empty/undefined spellings collapsed once.** [19]
 - **The one spelling of the query parameter the server admits, named once so a call site cannot silently stop carrying the identity.** [20]
+
 - The surface calls the shared read cycle, checks its retained target key, and supplies the resulting generation to refresh. [21]
+
 - **The generation claim that consumes `carried`: it renders nothing unless the read that carried the identity has answered.** [22]
+
 - Stored stubbed surface cases assert same-flush subject/refresh isolation and that the displayed identity is carried only by its replacement, never by another subject or live/recorded question. These assertions have not been executed by this curation. [23]
+
 - The stored slow-subject surface case releases the superseded response after the newer subject and asserts that comparison and subject remain newer; this is source evidence, not a fresh test run. [24]
 - Rejected continuation becomes a failed read without installing the raw response. [25]
 - Sparse updates preserve exact content and claim identity within independent walks (moved unchanged to `familyWalkMerge.ts` by L48). [26]

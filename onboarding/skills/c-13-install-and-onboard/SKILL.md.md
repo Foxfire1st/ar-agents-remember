@@ -18,8 +18,26 @@ The source retains older provider-indexing phrases in its description, early sta
 
 ## Evidence
 
+
+
+
 - Adds migration-author use of the shared writing profile and independent meaning review; it changes authoring guidance, not converter admission or publication authority. [1]
+
+
+
+
+
 - Adds migration-author use of the shared writing profile and independent meaning review; it changes authoring guidance, not converter admission or publication authority. [2]
+
+
 - Adds migration-author use of the shared writing profile and independent meaning review; it changes authoring guidance, not converter admission or publication authority. [3]
+
+
+
 - Adds migration-author use of the shared writing profile and independent meaning review; it changes authoring guidance, not converter admission or publication authority. [4]
+
+
+
+
+
 - Adds migration-author use of the shared writing profile and independent meaning review; it changes authoring guidance, not converter admission or publication authority. [5]

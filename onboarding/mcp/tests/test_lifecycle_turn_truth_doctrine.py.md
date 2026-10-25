@@ -95,16 +95,22 @@ No configured `Domain Documentation` source applies; the doctrine under test is 
 
 ### Repo-Internal References
 
+
 - The common home owns terminal-only truth, recipient validation and the separate acceptance authority. [1]
+
 - The declared roster and vocabulary must equal the actual canonical speakers in both directions. [2]
 - The whole-corpus contradiction sweep and three-state classifier retain the declared retired-claim vocabulary and explicit-denial handling. [4]
 - Silence/contradiction controls, detector teeth and declared limits distinguish equivalent turn-end-only wording from acceptance; the compact and expanded state-plus-acceptance controls remain. [5]
 
 
+
 - The per-surface owed clauses, and the relay-mechanics surfaces the corpus still names. [3]
 
 
-- The projection-side sibling that re-asserts the same clauses against canonical plus the nine generated copies. [6]
+
+
+- The projection-side sibling that re-asserts the boundary clauses against the canonical doctrine tree and its one declared packaged copy. [6]
+
 
 ### Cross-Repo References
 

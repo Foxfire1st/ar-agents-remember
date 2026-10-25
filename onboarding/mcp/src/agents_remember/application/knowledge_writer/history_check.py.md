@@ -67,7 +67,9 @@ a file closed in the base is frozen, so the existing frozen-history text carries
 refusal instead; a hand-closed file the base still holds open keeps the re-authoring
 remedy and gains the reopen step.
 
+
 - Drift refuses until the row is named again at the current revision. [9]
+
 
 ### Writable-history item validation
 
@@ -95,19 +97,29 @@ The check and its per-row messages.
 
 - The two remedies. [1]
 
+
 - Every row of the owner's file, as problems. [2]
+
+
 - Invariant and family row checks. [3]
 
+
+
 - A contradicted row refuses until it is named again; a base-closed file is frozen, while a hand-closed file gains the reopen step with the re-authoring remedy. [4]
+
 
 - The revision a row's change counts from: the higher merge side's for an unmerged record. [5]
 
 - The owner's earlier attempts as the base holds them. [6]
 - The revision a changed row may restate: the leaf's latest earlier row, when it is a changed row. [7]
 
+
 - A change already on the parent line may be answered by a later row; the leaf-owned changed-record rule remains distinct. [8]
 
+
+
 - Every non-base-frozen history row reports invalid item tokens with the row identity and current re-authoring remedy; base-frozen rows skip this added token check. [10]
+
 
 ### Cross-Repo References
 

@@ -1,13 +1,15 @@
 {
-  "path": "mcp/src/agents_remember/providers/cgc/lifecycle",
+  "path": "mcp/src/agents_remember/providers/cgc/lifecycle/overview",
+  "proves": [],
+  "realizes": [],
   "references": {
     "1": {
       "note": "The parent lifecycle facade imports the CGC package facade.",
       "targets": [
         {
           "anchor": {
-            "blob": "64f3e53835d6dbd3615ec0b3880db5a5d3e73268",
-            "content": "sha256:a57ad661be626d167f0cda87aabcb671f1a1bef3b19fa3c4e7d6910e002c7349",
+            "blob": "bda51957bb81b9b0ad79a645e8e538384ea9bf33",
+            "content": "sha256:bc63a6437806a3f421be48164f69798b40ad7bd2d307c45a66416364e9b5c921",
             "locator": {
               "kind": "symbol",
               "name": "_EXPORT_MODULES"
@@ -60,5 +62,5 @@
       ]
     }
   },
-  "schema": "ar-onboarding-route/v1"
+  "schema": "ar-onboarding-file/v1"
 }

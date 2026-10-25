@@ -58,15 +58,14 @@
   ],
   "references": {
     "1": {
-      "note": "Current file-writer arguments.",
+      "note": "Current file-writer arguments.\n\nAnchor: `add_arguments`",
       "targets": [
         {
           "anchor": {
-            "blob": "1380179eda1ec1b9ba3615182ae59bfb91d1394f",
-            "content": "sha256:c8616f04528800757c08b7cd9099409a6fcc63c00345e90af86e0a6a475b1731",
+            "blob": "17a7fa6f65e138b2e9443d952932013a30658963",
+            "content": "sha256:11cc051886f07abab366b3c18cfbf5f009536cb2e7c4328260f8ff83732b5397",
             "locator": {
-              "kind": "symbol",
-              "name": "add_arguments"
+              "kind": "file"
             }
           },
           "kind": "code"

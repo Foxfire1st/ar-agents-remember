@@ -45,7 +45,9 @@ The exact functions below establish the tested boundary and its test doubles.
 - Proves selected-case budget admission without recursive pytest collection, over a synthetic population. [1]
 - Proves the enforced inifile and the running configuration's values are the root `pyproject.toml`'s own declarations. [2]
 
+
 - Refuses a default on either budget declaration, so a dead number cannot return to the tree. [3]
+
 - States that an absent rail resolves to `0` and is refused by name instead of running unbounded. [4]
 
 ### Cross-Repo References

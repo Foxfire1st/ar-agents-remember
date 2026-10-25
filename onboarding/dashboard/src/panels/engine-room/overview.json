@@ -45,7 +45,7 @@
         },
         {
           "anchor": {
-            "blob": "1969c4569f3ea48f24b8aa282de33b8166cb8f3b",
+            "blob": "dc7a6d1a7b42e9f22d3b82ddcee7e044cd9d7cb5",
             "content": "sha256:1dea019ad356aa7df62d82195273725cf7c6d95221aeeb6e35b6f16bbc66023b",
             "locator": {
               "end": 13,
@@ -58,12 +58,12 @@
         },
         {
           "anchor": {
-            "blob": "7137fb6b1d0cd4fbee647c82ab46c5710cf1bafe",
+            "blob": "2d2ad899f0adbf93abb10fb821fee28e8801cae3",
             "content": "sha256:23dc6cc4bffbb9f8686a5bd39c41d5511db1a4b6243f8637d0e1bf0448b137e6",
             "locator": {
-              "end": 124,
+              "end": 98,
               "kind": "line_range",
-              "start": 124
+              "start": 98
             },
             "path": "mcp/src/agents_remember/observer/reducer_impl/_processes.py"
           },
@@ -71,12 +71,12 @@
         },
         {
           "anchor": {
-            "blob": "7137fb6b1d0cd4fbee647c82ab46c5710cf1bafe",
+            "blob": "2d2ad899f0adbf93abb10fb821fee28e8801cae3",
             "content": "sha256:a4f266f5dd15d6d2cf7e9bd92bb9f928fe1a0b05e166728552c4523c59af83da",
             "locator": {
-              "end": 543,
+              "end": 374,
               "kind": "line_range",
-              "start": 543
+              "start": 374
             },
             "path": "mcp/src/agents_remember/observer/reducer_impl/_processes.py"
           },
@@ -89,8 +89,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "596dec5c6c7c633b293640144a05def6c8ef4578",
-            "content": "sha256:0b75b11bb39be418cd7ac4a0f535284d932b9e1757e220fc93b14bbb10461c2c",
+            "blob": "053b605eb77ad20fed2c08ede3c3caabf4fc3cf6",
+            "content": "sha256:82d50fd5ae48a6139e3c3eb50ee4e6e7c37f96d64b3ac53904f7f726a623ae3c",
             "locator": {
               "end": 252,
               "kind": "line_range",
@@ -121,14 +121,66 @@
       ]
     },
     "12": {
-      "note": "Route still owns enclosure visualization, model/types, branch/coupler/ledger, straight worktree/sync/integration conduit — source ownership, not executed visual proof.\n\nAnchor: `it(\"reads a provider-plan block as the pre-contract fleeting state — no engine-anchored block, no dropout, no provider gate\", () => {`",
+      "note": "Route still owns enclosure visualization, model/types, branch/coupler/ledger, straight worktree/sync/integration conduit — source ownership, not executed visual proof.",
       "targets": [
         {
           "anchor": {
-            "blob": "4b5841a80afd1c24f5c4591cd1c03f80465df6fb",
-            "content": "sha256:d6d744c77f67bb72dcba7f28b1ff179a09ee53b36bece00a42eb0a286aad8c68",
+            "blob": "6c81634e51615e483399292e3462c23681ff3f39",
+            "content": "sha256:11435a3178df88ef447007e28d0ecf2fdffdacaec000133a9e549d1c1876c1f2",
             "locator": {
-              "end": 555,
+              "end": 9,
+              "kind": "line_range",
+              "start": 5
+            },
+            "path": "dashboard/src/panels/engine-room/EnclosureProcessMap.test.tsx"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "6c81634e51615e483399292e3462c23681ff3f39",
+            "content": "sha256:9effedaf0257b7453234f1d383042c3fb4f5721404a4e664c28adfb723b53763",
+            "locator": {
+              "end": 99,
+              "kind": "line_range",
+              "start": 93
+            },
+            "path": "dashboard/src/panels/engine-room/EnclosureProcessMap.test.tsx"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "6c81634e51615e483399292e3462c23681ff3f39",
+            "content": "sha256:f85ab62386f37aca0671da9ecd1cc060de954391dee2bbbe59d0ce76532d8c7e",
+            "locator": {
+              "end": 228,
+              "kind": "line_range",
+              "start": 166
+            },
+            "path": "dashboard/src/panels/engine-room/EnclosureProcessMap.test.tsx"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "6c81634e51615e483399292e3462c23681ff3f39",
+            "content": "sha256:3b7214d844933f22f434c49e6dbd562bcea97fc71c79743d46edc8d9f6a4e1fb",
+            "locator": {
+              "end": 269,
+              "kind": "line_range",
+              "start": 263
+            },
+            "path": "dashboard/src/panels/engine-room/EnclosureProcessMap.test.tsx"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "6c81634e51615e483399292e3462c23681ff3f39",
+            "content": "sha256:648417a8b0d3aa15b3a4eb71c10c429a44b967c80a6fb1adc16d4ac69f9ccef4",
+            "locator": {
+              "end": 550,
               "kind": "line_range",
               "start": 533
             },
@@ -155,8 +207,8 @@
         },
         {
           "anchor": {
-            "blob": "bad0be86dae1aed46744012ec801cf83eccc8277",
-            "content": "sha256:4bfa8e024c7cdd1d3df1964521866e0686f43c426311412575cf353d467f200f",
+            "blob": "96aec8b27873ce7787e5ed066e0b68e34d739955",
+            "content": "sha256:24b1ceb88b39058cc9aa4856479c2cf094c901ceafb573accf03f7baff352b36",
             "locator": {
               "end": 60,
               "kind": "line_range",
@@ -203,8 +255,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "87821aabab3b972a5513d33de296765a0bab6d47",
-            "content": "sha256:095133070ad5e8d0007456e58e6eb5dc3a6e4b93aff55dbd77e9bdddb5e33bf2",
+            "blob": "97051d4d41f68adb2f44945b0980df38f23ad791",
+            "content": "sha256:e712b54a11506fa0f03a113d472eca167d46571d81144300006c5e365d92df41",
             "locator": {
               "end": 151,
               "kind": "line_range",
@@ -262,8 +314,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f23ae83b49025d9b10e7b6bc846ede9a6d48563e",
-            "content": "sha256:2b2820cb214df32a336ee7fcae8d5de9400d01fc6ea2f10aafa7cc40c458bc3a",
+            "blob": "0a3de3f86452a06356eee661d5e4bbdc7ccdf5eb",
+            "content": "sha256:97b1d32acbe5a3c866b61ae80830913b4de58375b86bdeaf7ea3f412391f41df",
             "locator": {
               "end": 118,
               "kind": "line_range",
@@ -337,12 +389,12 @@
         },
         {
           "anchor": {
-            "blob": "f8ad48a347daa49891021703a6fc3241f89b3787",
+            "blob": "8be3f293c9a38e01524f4b0f2f2252f9b0d2aecc",
             "content": "sha256:4cb79f14498dbfbce7c40621369d4e0cd436cf31478ef10bac72e56ddab48d6c",
             "locator": {
-              "end": 323,
+              "end": 240,
               "kind": "line_range",
-              "start": 277
+              "start": 194
             },
             "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_analytics.py"
           },
@@ -350,12 +402,12 @@
         },
         {
           "anchor": {
-            "blob": "f8ad48a347daa49891021703a6fc3241f89b3787",
+            "blob": "8be3f293c9a38e01524f4b0f2f2252f9b0d2aecc",
             "content": "sha256:b063990cd0cfb8c932c34618afc3e5b3b0b6e9418accc7c3fb827a6143c3608c",
             "locator": {
-              "end": 403,
+              "end": 320,
               "kind": "line_range",
-              "start": 336
+              "start": 253
             },
             "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_analytics.py"
           },
@@ -364,15 +416,14 @@
       ]
     },
     "2": {
-      "note": "The served `EngineProcessNode` / `Analytics.engineProcesses` contract.",
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The served `EngineProcessNode` / `Analytics.engineProcesses` contract.\n\nAnchor: `EngineProcessNode`",
       "targets": [
         {
           "anchor": {
-            "blob": "0d04955cbb250322e2ad17081008246b0664ce85",
-            "content": "sha256:5928daf0403f755979bda3cda9b61eb1d9c27cfd81859767f54cf24f13a69593",
+            "blob": "fd0cd6ba53b5d874adfcb26807b26ab92e77d56e",
+            "content": "sha256:8f897ee97a5df4ec6bc2cdb53e32669158ad72e83b1d826e0af636eb31908a32",
             "locator": {
-              "kind": "symbol",
-              "name": "EngineProcessNode"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/observer/projection.py"
           },
@@ -445,8 +496,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fc93bae691a82da28bef3516bc6b7b8a85af6db8",
-            "content": "sha256:bab90421ecbc4d29e1531dc6bfdb63fdeb29501bb42094964614d6f639be991d",
+            "blob": "fd0cd6ba53b5d874adfcb26807b26ab92e77d56e",
+            "content": "sha256:0a35ca704e6f95e4f1e3ead2ac775ceb1457d96888de21bf0fbaf449e015f2f8",
             "locator": {
               "end": 455,
               "kind": "line_range",
@@ -463,8 +514,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "33e18afe1b7a4d27a0a989faa241924eb5afc6ef",
-            "content": "sha256:7fac60d94d8c55461ec1b3b5547f818242ceb82a11d3f6840da24cc8eef27114",
+            "blob": "6c6fb3353eaaf5c876e680e34783ef2a1b24b47f",
+            "content": "sha256:1403058305cd2d20f85308eec3b6742b7e6e94db1b319234489878c0b3c5e191",
             "locator": {
               "end": 115,
               "kind": "line_range",
@@ -481,8 +532,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a5f4ae8184249b0af91433e1c8892c6dc9713e32",
-            "content": "sha256:ed306a367ccf998264a92f03640990df03491a65a104219da50204f201d02220",
+            "blob": "b655ff830c5a9c45e80be3c51bbd8390324add5b",
+            "content": "sha256:e1cdbdaf8407848910aa6566aabf918401673b88df39c60ff44782c3fa4e4737",
             "locator": {
               "kind": "symbol",
               "name": "DiagnosticsPanel"
@@ -555,16 +606,16 @@
       ]
     },
     "28": {
-      "note": "EngineRoom conditionally mounted, contrary to inherited keep-alive account\n\nAnchor: cockpit main composition",
+      "note": "EngineRoom conditionally mounted, contrary to inherited keep-alive account",
       "targets": [
         {
           "anchor": {
-            "blob": "01fba3cb6e8f87f6cb5855729b1ff805ef49457e",
-            "content": "sha256:4fd079a0a7750da80249c1ea20769e65714a652b6e4bdbd862a01b45162c4e2c",
+            "blob": "1b839113b8d511b4a8343230e70a8de0be01b79f",
+            "content": "sha256:ef994385c0e5979faa5c487f5bbd45afb4839c57ba0a50e02af80f8d4c7c2883",
             "locator": {
-              "end": 754,
+              "end": 778,
               "kind": "line_range",
-              "start": 747
+              "start": 771
             },
             "path": "dashboard/src/cockpit/Cockpit.tsx"
           },
@@ -767,16 +818,16 @@
       ]
     },
     "4": {
-      "note": "The cockpit shell that hides the rails for the Engine Room view (§4.1).\n\nAnchor: \"const fullBleed =\"",
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The cockpit shell that hides the rails for the Engine Room view (§4.1).",
       "targets": [
         {
           "anchor": {
-            "blob": "dcd4d37492e0e72ee11236832351c749877e357a",
-            "content": "sha256:5a69db71ffed9224fc4adf25b7d0d0b64cdd00c15f0ad9673b9521607bf7f2e0",
+            "blob": "1b839113b8d511b4a8343230e70a8de0be01b79f",
+            "content": "sha256:0f469e6b992308afc228aac4b72debc3ac8e5fd34deedd109fe0a75719e44bcf",
             "locator": {
-              "end": 463,
+              "end": 464,
               "kind": "line_range",
-              "start": 457
+              "start": 458
             },
             "path": "dashboard/src/cockpit/Cockpit.tsx"
           },
@@ -789,8 +840,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fc93bae691a82da28bef3516bc6b7b8a85af6db8",
-            "content": "sha256:9438263648732139f82abce5f76d8ba78adf95de1b686cc1f01565f11d9c9810",
+            "blob": "fd0cd6ba53b5d874adfcb26807b26ab92e77d56e",
+            "content": "sha256:4b31b460cf2bfd78dc4589df8a552c328a633762e9e07d658f5db4e360b63935",
             "locator": {
               "kind": "symbol",
               "name": "EngineProcessEdge"
@@ -802,7 +853,7 @@
       ]
     },
     "6": {
-      "note": "The former _seed_edge_state/_DECISIVE_SETUP_EDGE_STATES seed-lane account is historical. The current process reducer emits enclosure materialisation and sync edges with no provider seed/clone state reducer.",
+      "note": "The former _seed_edge_state/_DECISIVE_SETUP_EDGE_STATES seed-lane account is historical. The current process reducer emits enclosure materialisation and sync edges with no provider seed/clone state reducer.\n\nRetired anchor: mcp/src/agents_remember/observer/reducer_impl/_processes.py:631 — the file holds 490 lines, so the cited location no longer exists; the code this note is about is cited by the reference that carries it.\n\nRetired anchor: mcp/src/agents_remember/observer/reducer_impl/_processes.py:638 — the file holds 490 lines, so the cited location no longer exists; the code this note is about is cited by the reference that carries it.",
       "targets": [
         {
           "anchor": {
@@ -830,34 +881,8 @@
         },
         {
           "anchor": {
-            "blob": "7137fb6b1d0cd4fbee647c82ab46c5710cf1bafe",
-            "content": "sha256:c0f47225fc146990c9c9b8ce66c9716b9dc57f863a26a68e7296590bcee6216f",
-            "locator": {
-              "end": 631,
-              "kind": "line_range",
-              "start": 631
-            },
-            "path": "mcp/src/agents_remember/observer/reducer_impl/_processes.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "7137fb6b1d0cd4fbee647c82ab46c5710cf1bafe",
-            "content": "sha256:2e916c163864333f653579c3520968a76f3842c03f3d3ba6bd92d819f91d26fc",
-            "locator": {
-              "end": 638,
-              "kind": "line_range",
-              "start": 638
-            },
-            "path": "mcp/src/agents_remember/observer/reducer_impl/_processes.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "5358ff5616073b47b6512df0ba615bb582352133",
-            "content": "sha256:6eba7edf8588a5e95c8141ba9c92d8aac4c2703e87b482e9152164fbffaf3024",
+            "blob": "904affccf65ef0037d48637edd0a3e5fe519ec38",
+            "content": "sha256:b9ed06ad72f6362152ab656a657b39bee623eb96dc5fbb2653139841fef4f711",
             "locator": {
               "end": 27,
               "kind": "line_range",
@@ -886,7 +911,7 @@
         },
         {
           "anchor": {
-            "blob": "fddde3fe60faa2d9374405b9676016ab026af1b6",
+            "blob": "d71e9db1948f52b82bd84b2348775f13ac9b57e7",
             "content": "sha256:21cac9e0ab2bd51c63ac823fa1d60ca86b9759849b9cbd5ccabcdb3bd7aa8072",
             "locator": {
               "kind": "symbol",
@@ -899,18 +924,31 @@
       ]
     },
     "8": {
-      "note": "Route still owns enclosure visualization, model/types, branch/coupler/ledger, straight worktree/sync/integration conduit — source ownership, not executed visual proof.\n\nAnchor: `/**`",
+      "note": "The Engine Room model consumes server-composed enclosure process nodes without a client session join or safety inference and sorts them by phase then leaf/task identity. EngineRoom composes their stack, process-map stage with ledger input and diagnostics layout; these are source responsibilities, not executed visual proof.",
       "targets": [
         {
           "anchor": {
-            "blob": "17b5df5bbd40a7851bc8af3aa48a9c214f8d7bed",
-            "content": "sha256:47a2fa749c01368bcf4c9c1ae687629c064281b1f05da19c65317b9bc516d9ef",
+            "blob": "ab7f380552d2c5c141cd55b980ed509244b01f6e",
+            "content": "sha256:8676a7512c767fa359421941f48b6bdd0679d0b362e99c3cb18366695812eefd",
             "locator": {
-              "end": 54,
+              "end": 43,
               "kind": "line_range",
-              "start": 21
+              "start": 18
             },
             "path": "dashboard/src/panels/engine-room/buildEngineRoomModel.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c89382b7530853796de958e287f52a05bf0222f3",
+            "content": "sha256:15f33449c1269b15bc35c17365fdcf7cf2858257483642bb3b7c707fc82b6a51",
+            "locator": {
+              "end": 176,
+              "kind": "line_range",
+              "start": 114
+            },
+            "path": "dashboard/src/panels/EngineRoom.tsx"
           },
           "kind": "code"
         }
@@ -921,8 +959,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "87821aabab3b972a5513d33de296765a0bab6d47",
-            "content": "sha256:e9e8e787363c60741961873934c51da146d412b09bad46bd4ec2313a5b312d3b",
+            "blob": "97051d4d41f68adb2f44945b0980df38f23ad791",
+            "content": "sha256:89fe850d92faaf4c5a5f686873215820829a6ef94b95a68855a6c0fca0866479",
             "locator": {
               "end": 120,
               "kind": "line_range",

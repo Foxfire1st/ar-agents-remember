@@ -1,5 +1,6 @@
 {
   "path": "dashboard/src/cockpit/Cockpit.tsx",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
@@ -559,8 +560,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "863c0388a46f3b3c4b285766c4a7de1db780c00e",
-            "content": "sha256:9f1c945f1539454a0ac04e0ac823caab49d867384ef56e6f9dd9f07060f5a35a",
+            "blob": "1b839113b8d511b4a8343230e70a8de0be01b79f",
+            "content": "sha256:706985c016d1d38383287db3f07ddf082653c552d1f92c4418f91cf74e34615e",
             "locator": {
               "end": 546,
               "kind": "line_range",
@@ -606,16 +607,16 @@
       ]
     },
     "104": {
-      "note": "Tray button outside the view group and layer outside railed body.\n\nAnchor: \"export function CockpitShell({ initialView = 'chats' }: { initialView?: CockpitView } = {}) {\"",
+      "note": "Tray button outside the view group and layer outside railed body.",
       "targets": [
         {
           "anchor": {
-            "blob": "e6f341599ab594a4a3b9a451a9ccdfec9b2ab411",
-            "content": "sha256:0cf6f97ddcbe66c9d34850176faec5a0542e4428233e791ac1636ed11b5fea83",
+            "blob": "1b839113b8d511b4a8343230e70a8de0be01b79f",
+            "content": "sha256:144bdfbdb2fa6e9c8c7201c6b286cf245208a255dd13a82176c40b45642a02fd",
             "locator": {
-              "end": 756,
+              "end": 780,
               "kind": "line_range",
-              "start": 706
+              "start": 730
             }
           },
           "kind": "code"
@@ -654,28 +655,28 @@
       ]
     },
     "33": {
-      "note": "The shell defaults to Chats; a valid review hash selects Operations and a valid knowledge-reader hash selects Knowledge. Persistent product layers remain mounted independently of takeover selection.\n\nAnchor: \"export function CockpitShell({ initialView = 'chats' }: { initialView?: CockpitView } = {}) {\"; \"function useCockpitShellState(initialView: CockpitView): CockpitShellState {\"",
+      "note": "The shell defaults to Chats; a valid review hash selects Operations and a valid knowledge-reader hash selects Knowledge. Persistent product layers remain mounted independently of takeover selection.",
       "targets": [
         {
           "anchor": {
-            "blob": "e6f341599ab594a4a3b9a451a9ccdfec9b2ab411",
-            "content": "sha256:0cf6f97ddcbe66c9d34850176faec5a0542e4428233e791ac1636ed11b5fea83",
+            "blob": "1b839113b8d511b4a8343230e70a8de0be01b79f",
+            "content": "sha256:144bdfbdb2fa6e9c8c7201c6b286cf245208a255dd13a82176c40b45642a02fd",
             "locator": {
-              "end": 756,
+              "end": 780,
               "kind": "line_range",
-              "start": 706
+              "start": 730
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "e6f341599ab594a4a3b9a451a9ccdfec9b2ab411",
-            "content": "sha256:31c056f53f88cad3ccc0b4f18818b123151393cd184dea85f62e56c7cc7e8266",
+            "blob": "1b839113b8d511b4a8343230e70a8de0be01b79f",
+            "content": "sha256:17d8fe1ca64dc924832c20b1ae2a5253c105f5c8f01404ab91e2bff84bb1ddb1",
             "locator": {
-              "end": 243,
+              "end": 244,
               "kind": "line_range",
-              "start": 181
+              "start": 182
             }
           },
           "kind": "code"
@@ -683,12 +684,12 @@
       ]
     },
     "34": {
-      "note": "Knowledge is a full-bleed, hidden-not-unmounted layer.\n\nAnchor: \"function MainLayers({\"",
+      "note": "Knowledge is a full-bleed, hidden-not-unmounted layer.",
       "targets": [
         {
           "anchor": {
-            "blob": "e6f341599ab594a4a3b9a451a9ccdfec9b2ab411",
-            "content": "sha256:e1172a9da835d878078bad29b39655dda8bf1c99d3104a0ee9cd85f8f13636e0",
+            "blob": "1b839113b8d511b4a8343230e70a8de0be01b79f",
+            "content": "sha256:17309ad8951aec21bb84c484a76f9bc6a40a21d478f4e7da65ba914282531fde",
             "locator": {
               "end": 604,
               "kind": "line_range",
@@ -700,16 +701,16 @@
       ]
     },
     "35": {
-      "note": "Full-bleed is derived for the product and retained machine-map views.\n\nAnchor: \"function useCockpitShellState(initialView: CockpitView): CockpitShellState {\"",
+      "note": "Full-bleed is derived for the product and retained machine-map views.",
       "targets": [
         {
           "anchor": {
-            "blob": "e6f341599ab594a4a3b9a451a9ccdfec9b2ab411",
-            "content": "sha256:31c056f53f88cad3ccc0b4f18818b123151393cd184dea85f62e56c7cc7e8266",
+            "blob": "1b839113b8d511b4a8343230e70a8de0be01b79f",
+            "content": "sha256:17d8fe1ca64dc924832c20b1ae2a5253c105f5c8f01404ab91e2bff84bb1ddb1",
             "locator": {
-              "end": 243,
+              "end": 244,
               "kind": "line_range",
-              "start": 181
+              "start": 182
             }
           },
           "kind": "code"
@@ -717,12 +718,12 @@
       ]
     },
     "36": {
-      "note": "A page outside the bar mounts only through an injected view.\n\nAnchor: \"function MainLayers({\"",
+      "note": "A page outside the bar mounts only through an injected view.",
       "targets": [
         {
           "anchor": {
-            "blob": "e6f341599ab594a4a3b9a451a9ccdfec9b2ab411",
-            "content": "sha256:e1172a9da835d878078bad29b39655dda8bf1c99d3104a0ee9cd85f8f13636e0",
+            "blob": "1b839113b8d511b4a8343230e70a8de0be01b79f",
+            "content": "sha256:17309ad8951aec21bb84c484a76f9bc6a40a21d478f4e7da65ba914282531fde",
             "locator": {
               "end": 604,
               "kind": "line_range",
@@ -766,12 +767,12 @@
       ]
     },
     "39": {
-      "note": "The Knowledge reader the retained layer mounts.\n\nAnchor: \"function MainLayers({\"",
+      "note": "The Knowledge reader the retained layer mounts.",
       "targets": [
         {
           "anchor": {
-            "blob": "e6f341599ab594a4a3b9a451a9ccdfec9b2ab411",
-            "content": "sha256:e1172a9da835d878078bad29b39655dda8bf1c99d3104a0ee9cd85f8f13636e0",
+            "blob": "1b839113b8d511b4a8343230e70a8de0be01b79f",
+            "content": "sha256:17309ad8951aec21bb84c484a76f9bc6a40a21d478f4e7da65ba914282531fde",
             "locator": {
               "end": 604,
               "kind": "line_range",
@@ -783,16 +784,16 @@
       ]
     },
     "64": {
-      "note": "The revalidation provider is shown only for ordinary Operations outside takeover and review.\n\nAnchor: \"export function CockpitShell({ initialView = 'chats' }: { initialView?: CockpitView } = {}) {\"",
+      "note": "The revalidation provider is shown only for ordinary Operations outside takeover and review.",
       "targets": [
         {
           "anchor": {
-            "blob": "e6f341599ab594a4a3b9a451a9ccdfec9b2ab411",
-            "content": "sha256:0cf6f97ddcbe66c9d34850176faec5a0542e4428233e791ac1636ed11b5fea83",
+            "blob": "1b839113b8d511b4a8343230e70a8de0be01b79f",
+            "content": "sha256:144bdfbdb2fa6e9c8c7201c6b286cf245208a255dd13a82176c40b45642a02fd",
             "locator": {
-              "end": 756,
+              "end": 780,
               "kind": "line_range",
-              "start": 706
+              "start": 730
             }
           },
           "kind": "code"
@@ -846,16 +847,16 @@
       ]
     },
     "67": {
-      "note": "Rail fade properties are selected by the animation permission.\n\nAnchor: \"function useCockpitShellState(initialView: CockpitView): CockpitShellState {\"",
+      "note": "Rail fade properties are selected by the animation permission.",
       "targets": [
         {
           "anchor": {
-            "blob": "e6f341599ab594a4a3b9a451a9ccdfec9b2ab411",
-            "content": "sha256:31c056f53f88cad3ccc0b4f18818b123151393cd184dea85f62e56c7cc7e8266",
+            "blob": "1b839113b8d511b4a8343230e70a8de0be01b79f",
+            "content": "sha256:17d8fe1ca64dc924832c20b1ae2a5253c105f5c8f01404ab91e2bff84bb1ddb1",
             "locator": {
-              "end": 243,
+              "end": 244,
               "kind": "line_range",
-              "start": 181
+              "start": 182
             }
           },
           "kind": "code"
@@ -863,7 +864,7 @@
       ]
     },
     "68": {
-      "note": "The `chatsLayer` keep-alive class used by the Chats layer.\n\nAnchor: \"export const chatsLayer = css({\"; \"function MainLayers({\"",
+      "note": "The `chatsLayer` keep-alive class used by the Chats layer.",
       "targets": [
         {
           "anchor": {
@@ -880,8 +881,8 @@
         },
         {
           "anchor": {
-            "blob": "e6f341599ab594a4a3b9a451a9ccdfec9b2ab411",
-            "content": "sha256:e1172a9da835d878078bad29b39655dda8bf1c99d3104a0ee9cd85f8f13636e0",
+            "blob": "1b839113b8d511b4a8343230e70a8de0be01b79f",
+            "content": "sha256:17309ad8951aec21bb84c484a76f9bc6a40a21d478f4e7da65ba914282531fde",
             "locator": {
               "end": 604,
               "kind": "line_range",
@@ -998,8 +999,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fddde3fe60faa2d9374405b9676016ab026af1b6",
-            "content": "sha256:f9a19a7892f0158c23e95cfd6ab503f54db40e03f0c9abf5756ec75ea2194a70",
+            "blob": "d71e9db1948f52b82bd84b2348775f13ac9b57e7",
+            "content": "sha256:d178e2984cfafab2c14c74e8af6380ead9d9ae54ad2fa9379c5cc43ee16cb881",
             "locator": {
               "end": 40,
               "kind": "line_range",
@@ -1012,12 +1013,12 @@
       ]
     },
     "88": {
-      "note": "The reviewed UI contract owner `MainLayers`.\n\nAnchor: \"function MainLayers({\"",
+      "note": "The reviewed UI contract owner `MainLayers`.",
       "targets": [
         {
           "anchor": {
-            "blob": "e6f341599ab594a4a3b9a451a9ccdfec9b2ab411",
-            "content": "sha256:e1172a9da835d878078bad29b39655dda8bf1c99d3104a0ee9cd85f8f13636e0",
+            "blob": "1b839113b8d511b4a8343230e70a8de0be01b79f",
+            "content": "sha256:17309ad8951aec21bb84c484a76f9bc6a40a21d478f4e7da65ba914282531fde",
             "locator": {
               "end": 604,
               "kind": "line_range",
@@ -1033,8 +1034,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "863c0388a46f3b3c4b285766c4a7de1db780c00e",
-            "content": "sha256:81c99cfb78c7f83b32a8f3d71c305eca70432cfbde0b5c79898a1c83fe6f1285",
+            "blob": "1b839113b8d511b4a8343230e70a8de0be01b79f",
+            "content": "sha256:d650683c78dff6baeabd0c329391fa137a5bc97ac87990cf38fd717ab56cbc1c",
             "locator": {
               "end": 663,
               "kind": "line_range",
@@ -1045,8 +1046,8 @@
         },
         {
           "anchor": {
-            "blob": "863c0388a46f3b3c4b285766c4a7de1db780c00e",
-            "content": "sha256:39d9ae4832f645e400e7c08ea5624241486b2184004689716819bc2647ba8936",
+            "blob": "1b839113b8d511b4a8343230e70a8de0be01b79f",
+            "content": "sha256:2c829187fe107ced70a5e688a7c985bcad4e8a4db9ca659a0f865b3589a585be",
             "locator": {
               "end": 711,
               "kind": "line_range",
@@ -1090,8 +1091,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "179bdf56092d03a6ed7c1f6b76a0c3f0df227faf",
-            "content": "sha256:42cbb7ec6424d4e486c006f8cfde71b46aa1b5aae6d0663b601c83a9d3079f8a",
+            "blob": "d49c4b3ee776a1dadfa652fbc14bdb3765457d06",
+            "content": "sha256:deae18ea7822780299f344dc6ec912cbea3bb5e0345d2a8c3ff2692eae15f972",
             "locator": {
               "kind": "file"
             },
@@ -1106,8 +1107,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "863c0388a46f3b3c4b285766c4a7de1db780c00e",
-            "content": "sha256:9f1c945f1539454a0ac04e0ac823caab49d867384ef56e6f9dd9f07060f5a35a",
+            "blob": "1b839113b8d511b4a8343230e70a8de0be01b79f",
+            "content": "sha256:706985c016d1d38383287db3f07ddf082653c552d1f92c4418f91cf74e34615e",
             "locator": {
               "end": 546,
               "kind": "line_range",
@@ -1123,8 +1124,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "863c0388a46f3b3c4b285766c4a7de1db780c00e",
-            "content": "sha256:9f1c945f1539454a0ac04e0ac823caab49d867384ef56e6f9dd9f07060f5a35a",
+            "blob": "1b839113b8d511b4a8343230e70a8de0be01b79f",
+            "content": "sha256:706985c016d1d38383287db3f07ddf082653c552d1f92c4418f91cf74e34615e",
             "locator": {
               "end": 546,
               "kind": "line_range",
@@ -1152,16 +1153,16 @@
       ]
     },
     "95": {
-      "note": "Native task selection and memoization are separate from the Engine Room stable-empty fallback.\n\nAnchor: \"function useCockpitShellState(initialView: CockpitView): CockpitShellState {\"",
+      "note": "Native task selection and memoization are separate from the Engine Room stable-empty fallback.",
       "targets": [
         {
           "anchor": {
-            "blob": "e6f341599ab594a4a3b9a451a9ccdfec9b2ab411",
-            "content": "sha256:31c056f53f88cad3ccc0b4f18818b123151393cd184dea85f62e56c7cc7e8266",
+            "blob": "1b839113b8d511b4a8343230e70a8de0be01b79f",
+            "content": "sha256:17d8fe1ca64dc924832c20b1ae2a5253c105f5c8f01404ab91e2bff84bb1ddb1",
             "locator": {
-              "end": 243,
+              "end": 244,
               "kind": "line_range",
-              "start": 181
+              "start": 182
             }
           },
           "kind": "code"
@@ -1169,16 +1170,16 @@
       ]
     },
     "96": {
-      "note": "The shell starts the screen wake lock once on mount; the wake-lock helper follows document visibility and releases its held sentinel on stop.\n\nAnchor: \"export function CockpitShell({ initialView = 'chats' }: { initialView?: CockpitView } = {}) {\"; \"export function startScreenWakeLock(\"",
+      "note": "The shell starts the screen wake lock once on mount; the wake-lock helper follows document visibility and releases its held sentinel on stop.",
       "targets": [
         {
           "anchor": {
-            "blob": "e6f341599ab594a4a3b9a451a9ccdfec9b2ab411",
-            "content": "sha256:0cf6f97ddcbe66c9d34850176faec5a0542e4428233e791ac1636ed11b5fea83",
+            "blob": "1b839113b8d511b4a8343230e70a8de0be01b79f",
+            "content": "sha256:144bdfbdb2fa6e9c8c7201c6b286cf245208a255dd13a82176c40b45642a02fd",
             "locator": {
-              "end": 756,
+              "end": 780,
               "kind": "line_range",
-              "start": 706
+              "start": 730
             }
           },
           "kind": "code"
@@ -1199,16 +1200,16 @@
       ]
     },
     "97": {
-      "note": "Base review navigation names repo/master/leaf and recorded history. Separate reviewer hash helpers persist selection/comparison through replaceState without changing that target or adding browser-history entries.\n\nAnchor: \"function useCockpitShellState(initialView: CockpitView): CockpitShellState {\"; \"export function parseReviewHash(hash: string): ChangeSetTarget \\| null {\"; \"export function useReviewHash(\"; \"export function readReviewHashState(hash: string = window.location.hash): ReviewHashState {\"; \"export function writeReviewHashState(state: ReviewHashState): void {\"",
+      "note": "Base review navigation names repo/master/leaf and recorded history. Separate reviewer hash helpers persist selection/comparison through replaceState without changing that target or adding browser-history entries.",
       "targets": [
         {
           "anchor": {
-            "blob": "e6f341599ab594a4a3b9a451a9ccdfec9b2ab411",
-            "content": "sha256:31c056f53f88cad3ccc0b4f18818b123151393cd184dea85f62e56c7cc7e8266",
+            "blob": "1b839113b8d511b4a8343230e70a8de0be01b79f",
+            "content": "sha256:17d8fe1ca64dc924832c20b1ae2a5253c105f5c8f01404ab91e2bff84bb1ddb1",
             "locator": {
-              "end": 243,
+              "end": 244,
               "kind": "line_range",
-              "start": 181
+              "start": 182
             }
           },
           "kind": "code"
@@ -1268,7 +1269,7 @@
       ]
     },
     "98": {
-      "note": "At at-most40rem the shell admits vertical overflow and single-column railed content. The ordinary change-set takeover uses the fixed takeover body; review is rendered in the railed body.\n\nAnchor: \"export const shell = css({\"; \"export const takeoverBody = css({\"; \"function RailedBody({\"; \"function ChangeSetTakeover({\"; \"function railedColumns(state: CockpitShellState, narrow: boolean): CSSProperties {\"",
+      "note": "At at-most40rem the shell admits vertical overflow and single-column railed content. The ordinary change-set takeover uses the fixed takeover body; review is rendered in the railed body.",
       "targets": [
         {
           "anchor": {
@@ -1298,8 +1299,8 @@
         },
         {
           "anchor": {
-            "blob": "e6f341599ab594a4a3b9a451a9ccdfec9b2ab411",
-            "content": "sha256:8c02e170c558c96b54d23a5b1bae6ec0e977fda9de5aef1a181cb850c73ab0ab",
+            "blob": "1b839113b8d511b4a8343230e70a8de0be01b79f",
+            "content": "sha256:07306e81f9d0d65931bbfc7bb38a9cbf6a12c57b34ad3116edbb66d7c4c396aa",
             "locator": {
               "end": 675,
               "kind": "line_range",

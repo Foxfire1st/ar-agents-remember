@@ -55,21 +55,29 @@ Direct landing is one of MIK-R09's leaf-publication routes, but its preview bran
   another-generation (N12), crash-before-create (N05), unreadable-receipt (R2-5), exact-tree (N09) and
   already-landed (R3-1, SHA-1 and SHA-256) cases in `test_knowledge_gate_routes.py`.
 
-- The module docstring's gate and closing paragraphs. [1]
-
-- Preview and apply share the removed/non-external-mode refusal; direct-create preview does not perform apply's exact memory-pair gate judgment. [2]
+- The module docstring's gate and closing paragraphs.
 
 
-- Exact in-flight retry reuses the retained record without preparation or admission; other requests prepare and admit, then execution settles receipts. [3]
+- Preview and apply share the removed/non-external-mode refusal; direct-create preview does not perform apply's exact memory-pair gate judgment.
 
 
-- Only a created generation keeps the closing. [4]
 
 
-- Preparation takes identity and enforce_owner, selects/closes/judges before retaining the exact admitted snapshot, and restores on failure. [5]
+- Exact in-flight retry reuses the retained record without preparation or admission; other requests prepare and admit, then execution settles receipts.
 
 
-- Apply selects the history source, closes it, judges the exact retained closed tree and validates that same tree as leaf publication, restoring on refusal. [6]
+
+- Only a created generation keeps the closing.
+
+
+
+- Preparation takes identity and enforce_owner, selects/closes/judges before retaining the exact admitted snapshot, and restores on failure.
+
+
+
+
+- Apply selects the history source, closes it, judges the exact retained closed tree and validates that same tree as leaf publication, restoring on refusal.
+
 
 
 ### Conventions
@@ -103,16 +111,24 @@ No configured external domain-documentation evidence.
 
 References 3, 5 and 6 below are re-authored for the current retained-record retry and select → close → judge implementation. Reference 7 and the create-mode reference retain the landed L94 account. Other original L9 references and test descriptions retain their original historical evidence scope; they are not fresh execution or current gate-order certification.
 
+
 - Current direct request, canonical-leaf grant admission, verify-existing code proof and pure pair preview; the retired settings gate is not current. [7]
+
 - Memory admission captures the prepared content snapshot and typed candidate (since MIK-R09 in `_operation_candidate`, after the gate's closing). [8]
+
 
 
 - Generation creation and action-required public projection. [9]
 
 
+
+
 - The application owns configured admission and execution serialization. [10]
 
+
+
 - The focused integration scenario verifies cache-independent publication and recovery. [11]
+
 
 
 
@@ -129,6 +145,9 @@ source is configured for this file's claims.
 
 No additional configured cross-repository evidence is claimed.
 
+
 - Direct landing separates verify-existing from pre-code judged create mode and same-generation paired recovery. [13]
+
+
 
 - Exact direct replay retains its generation; only a changed request may replace retired completed evidence. [14]

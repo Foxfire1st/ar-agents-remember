@@ -22,26 +22,14 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "Missing/zero state starts round one and pending replay is idempotent.",
+      "note": "Missing/zero state starts round one and pending replay is idempotent.\n\nAnchor: `test_missing_state_starts_round_one_and_replay_is_pending_idempotent` `test_explicit_zero_state_starts_round_one`",
       "targets": [
         {
           "anchor": {
-            "blob": "8c88a767b5075f2bfc9209f767460a63b36a537e",
-            "content": "sha256:a22f5ee9e2cc6f4951c07ff03a41fca3c2476bdbba504c19af4b774b870eeb10",
+            "blob": "a73df28f30c70ae3eed1ab9d528460feaf6d6c40",
+            "content": "sha256:242f919996ec867008449e3168a9d8c1c8936df2bf65acfac2f1f8fdc0aab64b",
             "locator": {
-              "kind": "symbol",
-              "name": "test_missing_state_starts_round_one_and_replay_is_pending_idempotent"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "8c88a767b5075f2bfc9209f767460a63b36a537e",
-            "content": "sha256:d8c13db110af8cca666290d3927a05b8de8b595269c98eef9b01f5f4be274a63",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_explicit_zero_state_starts_round_one"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -49,15 +37,14 @@
       ]
     },
     "2": {
-      "note": "Baseline sealing and successor rounds only shrink remaining IDs.",
+      "note": "Baseline sealing and successor rounds only shrink remaining IDs.\n\nAnchor: `test_baseline_seals_findings_and_successors_only_shrink_remaining`",
       "targets": [
         {
           "anchor": {
-            "blob": "8c88a767b5075f2bfc9209f767460a63b36a537e",
-            "content": "sha256:c47662482b9ad4f72d1b5c5d4d76b91e2d7156ce8154ae350cc897a4fc35bd68",
+            "blob": "a73df28f30c70ae3eed1ab9d528460feaf6d6c40",
+            "content": "sha256:242f919996ec867008449e3168a9d8c1c8936df2bf65acfac2f1f8fdc0aab64b",
             "locator": {
-              "kind": "symbol",
-              "name": "test_baseline_seals_findings_and_successors_only_shrink_remaining"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -97,15 +84,14 @@
       ]
     },
     "5": {
-      "note": "Ordinary exhaustion refuses a fourth round with count and limit.",
+      "note": "Ordinary exhaustion refuses the sixth round at the default five-round limit, naming the count and the limit.\n\nAnchor: `test_default_three_round_limit_refuses_fourth_with_actionable_count`",
       "targets": [
         {
           "anchor": {
-            "blob": "8c88a767b5075f2bfc9209f767460a63b36a537e",
-            "content": "sha256:d580e0b3bccaf61dded7bed7c1aebc1740ffae60b72e55280c1c02d67bbfbb84",
+            "blob": "a73df28f30c70ae3eed1ab9d528460feaf6d6c40",
+            "content": "sha256:242f919996ec867008449e3168a9d8c1c8936df2bf65acfac2f1f8fdc0aab64b",
             "locator": {
-              "kind": "symbol",
-              "name": "test_default_three_round_limit_refuses_fourth_with_actionable_count"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -113,15 +99,14 @@
       ]
     },
     "6": {
-      "note": "A direct developer permission adds cumulative rounds only after exhaustion and preserves findings.",
+      "note": "Recorded architect/developer approval adds cumulative rounds only at exhaustion and preserves findings; legacy developer words stay readable.\n\nAnchor: `test_one_explicit_extra_round_preserves_count_and_issue_list_then_refuses_fifth`",
       "targets": [
         {
           "anchor": {
-            "blob": "8c88a767b5075f2bfc9209f767460a63b36a537e",
-            "content": "sha256:10187e285a1af47d1b6bdf3d0f884418bb4a5d3909235180880ae118f4c3e643",
+            "blob": "a73df28f30c70ae3eed1ab9d528460feaf6d6c40",
+            "content": "sha256:242f919996ec867008449e3168a9d8c1c8936df2bf65acfac2f1f8fdc0aab64b",
             "locator": {
-              "kind": "symbol",
-              "name": "test_one_explicit_extra_round_preserves_count_and_issue_list_then_refuses_fifth"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -129,15 +114,14 @@
       ]
     },
     "7": {
-      "note": "Malformed permission payloads leave exhausted state unchanged.",
+      "note": "Malformed approval payloads leave exhausted state unchanged.\n\nAnchor: `test_invalid_developer_exception_leaves_exhausted_state_unchanged`",
       "targets": [
         {
           "anchor": {
-            "blob": "8c88a767b5075f2bfc9209f767460a63b36a537e",
-            "content": "sha256:1923f9a90d5f0e857eb56aa357ee967cdee0b429f335d05c0c75a10a8d2478a6",
+            "blob": "a73df28f30c70ae3eed1ab9d528460feaf6d6c40",
+            "content": "sha256:242f919996ec867008449e3168a9d8c1c8936df2bf65acfac2f1f8fdc0aab64b",
             "locator": {
-              "kind": "symbol",
-              "name": "test_invalid_developer_exception_leaves_exhausted_state_unchanged"
+              "kind": "file"
             }
           },
           "kind": "test"

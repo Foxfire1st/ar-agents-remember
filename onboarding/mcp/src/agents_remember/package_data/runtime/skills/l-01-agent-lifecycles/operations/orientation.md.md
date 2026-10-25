@@ -47,9 +47,11 @@ No relevant documentation found after checking live sources.
 
 ### Repo-Internal References
 
-- Investigator takes any scoped concern from the actual parent, uses the developer request only without a parent, and never synthesizes task identity; developer decisions follow the parent channel with the stated parentless and unreachable exceptions. \[2] [2]
+
+
 
 - The operation block's declared purpose, source path, and applicable roles. [3]
+
 - The canonical source of this block. [4]
 
 ### Role launcher and alias
@@ -66,9 +68,12 @@ No meaningful cross-repo references found.
 
 Parentless Projects Investigator intake asks only for the missing concern/report scope from the developer request. Selected sprint/master intake uses the supplied actual references and concern channel. No repository, task or parent is synthesized; reconnecting preserves durable approvals and evidence.
 
+
 - This source owns the stated current Investigator scope or canonical vocabulary. [1]
+
 
 
 ## Current intake and developer-question evidence
 
-- Investigator takes any scoped concern from the actual parent, uses the developer request only without a parent, and never synthesizes task identity; developer decisions follow the parent channel with the stated parentless and unreachable exceptions. [2] [2]
+
+- Investigator takes any scoped concern from the actual parent, uses the developer request only without a parent, and never synthesizes task identity; developer decisions follow the parent channel with the stated parentless and unreachable exceptions. [2]

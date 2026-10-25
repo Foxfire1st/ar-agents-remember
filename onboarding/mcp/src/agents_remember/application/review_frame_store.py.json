@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/application/review_frame_store.py",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
@@ -106,7 +107,7 @@
         "handoffEntry": "L183-A-8",
         "leaf": "260928-MIK-L183"
       },
-      "rationale": "Publication under the task lock, where nothing is removed silently and the per-revision bytes are re-checked.",
+      "rationale": "`_publish_locked` runs with the task lock held and removes nothing on its own: a superseded revision stays and only the developer's removal control deletes one.",
       "role": "unclassified"
     },
     {
@@ -124,7 +125,7 @@
         "handoffEntry": "L102-F10",
         "leaf": "260928-MIK-L102"
       },
-      "rationale": "Every stored metadata read now goes through a finite sentinel read; manifests and pointer/draft/reclamation/archive metadata use MAX_MANIFEST_BYTES, digest uses64, assets use admitted byte_size. Descriptor population/aggregate bound is validated before opening asset payloads. The old2097189-byte corrupt manifest now reads exactly1048577 bytes under1048576 cap then refuses. Four corrupt-store controls cover manifest/digest/asset/pointer; over-cap descriptor control proves zero asset opens. A4 capacity/reservation/lock and at-cap preservation logic is unchanged.",
+      "rationale": "`_check_capacity` at C still performs the task-total check and leaves the per-revision bounds to the staged-asset stage, which is exactly the exclusion the statement keeps.",
       "role": "enforcement"
     },
     {
@@ -286,7 +287,7 @@
         "handoffEntry": "L183-CUR-FE-ATTACH-explicit-revision-removal",
         "leaf": "260928-MIK-L183"
       },
-      "rationale": "The frame store preserves named per-revision/draft byte-limit reasons in public refusal data; it does not reduce all publication failures to a generic error.",
+      "rationale": "`FrameRefused` still carries the named reason in public refusal data (`frame-store-full` for the total), so no publication failure collapses into a generic error.",
       "role": "enforcement"
     },
     {
@@ -304,7 +305,7 @@
         "handoffEntry": "L102-F10",
         "leaf": "260928-MIK-L102"
       },
-      "rationale": "Every stored metadata read now goes through a finite sentinel read; manifests and pointer/draft/reclamation/archive metadata use MAX_MANIFEST_BYTES, digest uses64, assets use admitted byte_size. Descriptor population/aggregate bound is validated before opening asset payloads. The old2097189-byte corrupt manifest now reads exactly1048577 bytes under1048576 cap then refuses. Four corrupt-store controls cover manifest/digest/asset/pointer; over-cap descriptor control proves zero asset opens. A4 capacity/reservation/lock and at-cap preservation logic is unchanged.",
+      "rationale": "`_manifest_bytes` still reads a manifest under the finite manifest bound, so the metadata side of the total cannot be inflated by a corrupt file.",
       "role": "enforcement"
     },
     {
@@ -520,7 +521,7 @@
         "handoffEntry": "L183-CUR-FE-ATTACH-explicit-revision-removal",
         "leaf": "260928-MIK-L183"
       },
-      "rationale": "The frame store preserves named per-revision/draft byte-limit reasons in public refusal data; it does not reduce all publication failures to a generic error.",
+      "rationale": "`_check_assets` still checks the per-revision asset bytes on the staged assets before the lock, which is the bound the statement leaves outside the task total.",
       "role": "enforcement"
     },
     {
@@ -592,7 +593,7 @@
         "handoffEntry": "L102-F10",
         "leaf": "260928-MIK-L102"
       },
-      "rationale": "Every stored metadata read now goes through a finite sentinel read; manifests and pointer/draft/reclamation/archive metadata use MAX_MANIFEST_BYTES, digest uses64, assets use admitted byte_size. Descriptor population/aggregate bound is validated before opening asset payloads. The old2097189-byte corrupt manifest now reads exactly1048577 bytes under1048576 cap then refuses. Four corrupt-store controls cover manifest/digest/asset/pointer; over-cap descriptor control proves zero asset opens. A4 capacity/reservation/lock and at-cap preservation logic is unchanged.",
+      "rationale": "`_snapshot` still reads stored metadata through the finite sentinel read, so the usage the total is measured from is bounded.",
       "role": "enforcement"
     },
     {
@@ -719,7 +720,7 @@
         "handoffEntry": "L183-A-8",
         "leaf": "260928-MIK-L183"
       },
-      "rationale": "The one remaining total check: the task's bytes, refused by name, with nothing reclaimed.",
+      "rationale": "`_check_capacity` is the one remaining total check: the task's bytes refused by name with nothing reclaimed, exactly as the entry and the statement say.",
       "role": "unclassified"
     }
   ],
@@ -761,8 +762,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f1433de0b652876cfc25126eddd3153395b97aed",
-            "content": "sha256:54c65133461eae4535b3d3a53ce9fa375446824569169c752df75eca4bd59b35",
+            "blob": "481092ccde6a8549077dd274c776c0d640ff0c96",
+            "content": "sha256:628ebe951311c57fd5e729e688b7fb65b0434eb5236ed6459cdcf148746ecdeb",
             "locator": {
               "kind": "symbol",
               "name": "publish_revision"
@@ -841,8 +842,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f1433de0b652876cfc25126eddd3153395b97aed",
-            "content": "sha256:5cd1de4415c35469f49e57be050dc3d8a7ba1505f4b5c2df25a1573933b85c7d",
+            "blob": "481092ccde6a8549077dd274c776c0d640ff0c96",
+            "content": "sha256:37055b3fc76d584d864ed070707f5e7b6f930b57f7bdf42b9fb39e746c747927",
             "locator": {
               "kind": "file"
             }

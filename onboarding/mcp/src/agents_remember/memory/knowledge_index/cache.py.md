@@ -50,7 +50,9 @@ No configured live documentation source was available for this pass.
 
 The cache location, the reuse-or-build rule and eviction.
 
+
 - Lookups recompute the key and reuse or build. [4]
+
 - Eviction by age, then size, keeping the file just built. [5]
 - Reuse only for the matching key and format; build through a temporary file and a rename. [6]
 - The cache cases: reuse, rebuild and deletion, eviction, and the working-tree refusal. [7]

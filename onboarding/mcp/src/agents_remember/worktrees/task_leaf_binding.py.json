@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/worktrees/task_leaf_binding.py",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
@@ -109,12 +110,22 @@
       ]
     },
     "4": {
-      "note": "The registration planner this module delegates to, and the admission gate that now names the missing master link instead of reading it as present.",
+      "note": "The registration planner this module delegates to, and the admission gate that now names the missing master link instead of reading it as present.\n\nAnchor: `plan_current_leaf_enclosure_registration` `require_current_leaf_enclosure_binding`",
       "targets": [
         {
           "anchor": {
-            "blob": "751fd4312a5ebc3c45b5175dd45690d0b6d87c7b",
-            "content": "sha256:0ffd79b744b7109023faaac368528614523a417295e9b5a447af892600b67003",
+            "blob": "cd710bd6a033d75cf06cff17f62b2844f8fc6bdd",
+            "content": "sha256:f5b4acb27fe33e47a48ba7ff762ff9cb8d9d2d88ba98c8a17a256ac4185ac3dd",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cd710bd6a033d75cf06cff17f62b2844f8fc6bdd",
+            "content": "sha256:55c8f671a3b4681213619790a40780443701a006a878f56ae6b232a18a3c8b97",
             "locator": {
               "kind": "symbol",
               "name": "plan_current_leaf_enclosure_registration"
@@ -181,15 +192,16 @@
       ]
     },
     "7": {
-      "note": "The start/attach publisher that is the named recovery, and therefore the operation that actually binds the field.",
+      "note": "The start/attach publisher that is the named recovery, and therefore the operation that actually binds the field.  Historical anchor: `_publish_leaf_task_enclosure_binding`. Current start/attach publication calls delegate to `publish_start_task_facts` in `worktrees/start_task_publication.py`.",
       "targets": [
         {
           "anchor": {
-            "blob": "dfc56ac646754ed443e017689871871e79b81d90",
-            "content": "sha256:8af478d5fd0c649ee215e10416d04cbaf1110d83d672561697f4ddf107ebb15d",
+            "blob": "2ca78649db203d17f9087e7728f77b20e3a1d144",
+            "content": "sha256:a4fb1ff1dcd89084856ab84df820601580497b0be814131bba61ecd9df91cb9c",
             "locator": {
-              "kind": "symbol",
-              "name": "_publish_leaf_task_enclosure_binding"
+              "end": 741,
+              "kind": "line_range",
+              "start": 217
             },
             "path": "mcp/src/agents_remember/worktrees/modules/start.py"
           },
@@ -198,8 +210,30 @@
       ]
     },
     "8": {
-      "note": "The two shared fixtures that had to carry the derived fields once this refusal existed, because they were modelling the damage state.",
+      "note": "The two shared fixtures that had to carry the derived fields once this refusal existed, because they were modelling the damage state.\n\nAnchor: `_leaf` `_bind_task_without_review`",
       "targets": [
+        {
+          "anchor": {
+            "blob": "2b8ac1d7c5b42f4e303e64468765ece62af300ee",
+            "content": "sha256:6015f871ee523f0a8919a87fca29440181c1603d508f6a11e2ca99d2a8f01e1d",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_closeout_queue.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8a2d91358f72fe0c19192d61f3e1df91449d7061",
+            "content": "sha256:5a80340676011dfb942858443d99c5acd6bd593b04e383422aa5bf5436df2390",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_transaction_only_worktree_delivery.py"
+          },
+          "kind": "test"
+        },
         {
           "anchor": {
             "blob": "2b8ac1d7c5b42f4e303e64468765ece62af300ee",
@@ -211,18 +245,6 @@
             "path": "mcp/tests/test_closeout_queue.py"
           },
           "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "b83d8d5385c985ab6294cf29acae50c8250f6292",
-            "content": "sha256:ec84bd3f5d58f33e92c80b0126b61cb23655d9c8abf899d99b928c7e24fe1c38",
-            "locator": {
-              "kind": "symbol",
-              "name": "_bind_task_without_review"
-            },
-            "path": "mcp/tests/test_transaction_only_worktree_delivery.py"
-          },
-          "kind": "test"
         }
       ]
     },
@@ -231,8 +253,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "751fd4312a5ebc3c45b5175dd45690d0b6d87c7b",
-            "content": "sha256:32e87d66e0400e650236ff01076f6bd2c490d921cf5e4db6262da73e6cdff3a0",
+            "blob": "cd710bd6a033d75cf06cff17f62b2844f8fc6bdd",
+            "content": "sha256:f5b4acb27fe33e47a48ba7ff762ff9cb8d9d2d88ba98c8a17a256ac4185ac3dd",
             "locator": {
               "kind": "file"
             }

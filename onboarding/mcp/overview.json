@@ -1,13 +1,15 @@
 {
-  "path": "mcp",
+  "path": "mcp/overview",
+  "proves": [],
+  "realizes": [],
   "references": {
     "1": {
-      "note": "The facts and where they come from.\n\nAnchor: \"The facts are computed here, on\"",
+      "note": "**Retained historical source account — superseded by the current route account:** The facts and where they come from.",
       "targets": [
         {
           "anchor": {
-            "blob": "ed9d096aee0b281a72e27c202576c36a53b888e4",
-            "content": "sha256:9e5efdee50db1b31016c8d8c4dfed99b08bcfc8a152dcda368b635b848d3cfa5",
+            "blob": "81d2d1ce629a30d3d1ab1b7f31b7a1fa0506b924",
+            "content": "sha256:64f927a98d9a1e5fa4b6fb3e19ae42bf1de7b3557b2c9d966d0c341db1c3f764",
             "locator": {
               "end": 33,
               "kind": "line_range",
@@ -20,7 +22,7 @@
       ]
     },
     "10": {
-      "note": "The placement guard.\n\nAnchor: \"def require_task_document_in_place(\"",
+      "note": "**Retained historical source account — superseded by the current route account:** The placement guard.\n\nAnchor: \"def require_task_document_in_place(\"",
       "targets": [
         {
           "anchor": {
@@ -38,7 +40,7 @@
       ]
     },
     "100": {
-      "note": "The realization admission owner.",
+      "note": "**Retained historical source account — superseded by the current route account:** The realization admission owner.",
       "targets": [
         {
           "anchor": {
@@ -55,7 +57,7 @@
       ]
     },
     "102": {
-      "note": "The package-owned template copy stating the superseding target shape.\n\nAnchor: \"this file's element shape supersedes rule 1's\"",
+      "note": "**Retained historical source account — superseded by the current route account:** The package-owned template copy stating the superseding target shape.\n\nAnchor: \"this file's element shape supersedes rule 1's\"",
       "targets": [
         {
           "anchor": {
@@ -73,15 +75,14 @@
       ]
     },
     "103": {
-      "note": "The previously named comparison-record CLI producer is retired; the current umbrella parser registers converted file authoring and no review-record-comparison command.",
+      "note": "**Retained historical source account — superseded by the current route account:** The previously named comparison-record CLI producer is retired; the current umbrella parser registers converted file authoring and no review-record-comparison command.\n\nAnchor: `build_parser`",
       "targets": [
         {
           "anchor": {
-            "blob": "795c76ce7d91b24e1ccb5a252c6a07efcff9f2e5",
-            "content": "sha256:1424274f68ac0ee524f1237e2824a83c62c9e287997599156c3e1dba0a6239b2",
+            "blob": "6e7bd5a18da5ea781594e67999b9b01f305937d4",
+            "content": "sha256:57963a8c05a50b4d7b23ed1e71af1f6df4675bb345acf2864f756afcd68470ec",
             "locator": {
-              "kind": "symbol",
-              "name": "build_parser"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/cli/__main__.py"
           },
@@ -106,7 +107,7 @@
       ]
     },
     "106": {
-      "note": "**The seal's omission set, which is why naming a predecessor changes the derived id — the fact behind the carried non-idempotence limitation.**",
+      "note": "**Retained historical source account — superseded by the current route account:** **The seal's omission set, which is why naming a predecessor changes the derived id — the fact behind the carried non-idempotence limitation.**",
       "targets": [
         {
           "anchor": {
@@ -124,7 +125,7 @@
       ]
     },
     "11": {
-      "note": "The one classification and where it differs from the gate.\n\nAnchor: \"An entry supplies a range on a side only at its own recorded blob.\"",
+      "note": "**Retained historical source account — superseded by the current route account:** The one classification and where it differs from the gate.\n\nAnchor: \"An entry supplies a range on a side only at its own recorded blob.\"",
       "targets": [
         {
           "anchor": {
@@ -141,37 +142,8 @@
         }
       ]
     },
-    "112": {
-      "note": "Actual absent/unreadable authority and task-context matrix cases",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "6869acb809e665d1e753cce0c3398b2070a791a1",
-            "content": "sha256:cc5279a0f0c6f49373dd26621e00b4342f8ea1a80505d72b3bbacba22e6bba5e",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_an_unpublished_authority_is_a_measured_absence_and_a_corrupt_one_is_unavailable"
-            },
-            "path": "mcp/tests/test_knowledge_review_evidence_channels.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "6869acb809e665d1e753cce0c3398b2070a791a1",
-            "content": "sha256:22e107241235e49af0b1566eeebaa5cc62cd838aeedfb39e5b984c4a847e8de0",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_a_task_context_review_reports_the_matrix_collection_as_not_selected"
-            },
-            "path": "mcp/tests/test_knowledge_review_evidence_channels.py"
-          },
-          "kind": "test"
-        }
-      ]
-    },
     "118": {
-      "note": "Custody and release remain; creation is retired",
+      "note": "**Retained historical source account — superseded by the current route account:** Custody and release remain; creation is retired",
       "targets": [
         {
           "anchor": {
@@ -200,7 +172,7 @@
       ]
     },
     "12": {
-      "note": "The three reads.\n\nAnchor: \"Three reads over one comparison of four Git trees, all through the one classification of\"",
+      "note": "**Retained historical source account — superseded by the current route account:** The three reads.\n\nAnchor: \"Three reads over one comparison of four Git trees, all through the one classification of\"",
       "targets": [
         {
           "anchor": {
@@ -218,39 +190,14 @@
       ]
     },
     "121": {
-      "note": "Exact retained comparison after cleanup/restart/later landing",
+      "note": "**Retained historical source account — superseded by the current route account:** Exact retained comparison after cleanup/restart/later landing\n\nAnchor: `test_a_closed_leaf_serves_its_recorded_comparison_byte_for_byte` `test_a_fresh_process_reconstructs_the_same_recorded_comparison` `test_a_later_task_does_not_contaminate_the_recorded_comparison`",
       "targets": [
         {
           "anchor": {
-            "blob": "54409ce22bd53dc028665e19480da6f524f27a61",
-            "content": "sha256:6b0c898d00655e49fbc5cada3d22143be3f12de967a3d039a0fe4dbb383f8850",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_a_closed_leaf_serves_its_recorded_comparison_byte_for_byte"
-            },
-            "path": "mcp/tests/test_historical_committed_leaf_review.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
             "blob": "1bf677c509c7087fa3731c5839a4b1fe95e06e1f",
-            "content": "sha256:04e8055bea0e55512a30f7180869204f0ac58e8cc22163086695a58ab010404a",
+            "content": "sha256:56b5e27f222e481d77c5760b238104d27c95262040c09905bc27cd95c3f5b0a3",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_fresh_process_reconstructs_the_same_recorded_comparison"
-            },
-            "path": "mcp/tests/test_historical_committed_leaf_review.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "1bf677c509c7087fa3731c5839a4b1fe95e06e1f",
-            "content": "sha256:13019ce5e337dbce16ab2984912d5c3aee6d8eebb485398f648afec896e33698",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_a_later_task_does_not_contaminate_the_recorded_comparison"
+              "kind": "file"
             },
             "path": "mcp/tests/test_historical_committed_leaf_review.py"
           },
@@ -259,63 +206,14 @@
       ]
     },
     "122": {
-      "note": "The new module's whole surface, and the rule that a side's state is read rather than inferred from an empty string.",
+      "note": "**Retained historical source account — superseded by the current route account:** The new module's whole surface, and the rule that a side's state is read rather than inferred from an empty string.\n\nAnchor: `side_content` `side_conditions` `read_side` `field_changes` `field_text`",
       "targets": [
         {
           "anchor": {
-            "blob": "321fc3b9e4dae852de22da94711a422fd4dcbcee",
-            "content": "sha256:3961a4b6c72c5b4f477246be4d13d7fb03c0863553354df84c2b61b548e189b2",
-            "locator": {
-              "kind": "symbol",
-              "name": "side_content"
-            },
-            "path": "mcp/src/agents_remember/application/review_statement_sides.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
             "blob": "a2cdf1b16e61a977a5f7246ee6647b6114f1413d",
-            "content": "sha256:3f19cfeb02bbec3766ec744b6426efe09af811dd27f20ef1a1014d89dd5a1006",
+            "content": "sha256:77b2dd0bb6c24c9d35c29ad70bec1e7b9d25270df8c4c135d518fef6673f6ecf",
             "locator": {
-              "kind": "symbol",
-              "name": "side_conditions"
-            },
-            "path": "mcp/src/agents_remember/application/review_statement_sides.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "a2cdf1b16e61a977a5f7246ee6647b6114f1413d",
-            "content": "sha256:b9182ee878ed39b1fd4a95c52ba6f67e7e29c93050f62b302c9153abdfc13dd0",
-            "locator": {
-              "kind": "symbol",
-              "name": "read_side"
-            },
-            "path": "mcp/src/agents_remember/application/review_statement_sides.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "a2cdf1b16e61a977a5f7246ee6647b6114f1413d",
-            "content": "sha256:63c876c85da7d7d52abf2d333852a02da92549c9693da36cc76a1eb8a21eaa48",
-            "locator": {
-              "kind": "symbol",
-              "name": "field_changes"
-            },
-            "path": "mcp/src/agents_remember/application/review_statement_sides.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "a2cdf1b16e61a977a5f7246ee6647b6114f1413d",
-            "content": "sha256:6119907c61bad0863b3c1c4e7978f606575f1c85694222883b6857d0b5cff36a",
-            "locator": {
-              "kind": "symbol",
-              "name": "field_text"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/review_statement_sides.py"
           },
@@ -324,7 +222,7 @@
       ]
     },
     "123": {
-      "note": "**The projection that keeps a present structured value out of the absence slot, and the contract that makes `None` mean absence.**",
+      "note": "**Retained historical source account — superseded by the current route account:** **The projection that keeps a present structured value out of the absence slot, and the contract that makes `None` mean absence.**",
       "targets": [
         {
           "anchor": {
@@ -357,11 +255,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6d7ca4345e18c4dd21a1dc2cde146f53513626f9",
-            "content": "sha256:5c68824fa9e8bb09303d0bab0d25b0f72df9699b6ee62135eea518500358d0e2",
+            "blob": "1c9f8394dfb38bee67a5da3b90ace66147bd5334",
+            "content": "sha256:c3a849b6a80521931156dd368d425ad86151eaf3d3ba401f3fe52aa40d39a585",
             "locator": {
-              "kind": "symbol",
-              "name": "_knowledge_pane"
+              "end": 162,
+              "kind": "line_range",
+              "start": 134
             },
             "path": "mcp/src/agents_remember/application/knowledge_review.py"
           },
@@ -369,12 +268,37 @@
         },
         {
           "anchor": {
-            "blob": "6d7ca4345e18c4dd21a1dc2cde146f53513626f9",
-            "content": "sha256:fe4bfd205f76e260cf686fe778c5bd53a019d389ab07cba93b192b67576e1f32",
+            "blob": "1c9f8394dfb38bee67a5da3b90ace66147bd5334",
+            "content": "sha256:b89852bc347da4192928083ff335e2fd89d63f78f7f4c82dece29643115c5d0d",
             "locator": {
-              "end": 945,
+              "end": 310,
               "kind": "line_range",
-              "start": 922
+              "start": 299
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_review.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1c9f8394dfb38bee67a5da3b90ace66147bd5334",
+            "content": "sha256:f6090577325430e6989102201e2a0f58a4d27ab97a11b4560e13cabaebb5a1b5",
+            "locator": {
+              "end": 852,
+              "kind": "line_range",
+              "start": 822
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_review.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1c9f8394dfb38bee67a5da3b90ace66147bd5334",
+            "content": "sha256:f6090577325430e6989102201e2a0f58a4d27ab97a11b4560e13cabaebb5a1b5",
+            "locator": {
+              "kind": "symbol",
+              "name": "_knowledge_pane"
             },
             "path": "mcp/src/agents_remember/application/knowledge_review.py"
           },
@@ -400,7 +324,7 @@
       ]
     },
     "126": {
-      "note": "The added and the removed statement, each keeping its complete available text beside the named absent side.",
+      "note": "**Retained historical source account — superseded by the current route account:** The added and the removed statement, each keeping its complete available text beside the named absent side.",
       "targets": [
         {
           "anchor": {
@@ -429,7 +353,7 @@
       ]
     },
     "127": {
-      "note": "The renderer that decides the four branches from declared state.",
+      "note": "**Retained historical source account — superseded by the current route account:** The renderer that decides the four branches from declared state.",
       "targets": [
         {
           "anchor": {
@@ -446,7 +370,7 @@
       ]
     },
     "128": {
-      "note": "Published intent selects converted memory and its derived index",
+      "note": "**Retained historical source account — superseded by the current route account:** Published intent selects converted memory and its derived index",
       "targets": [
         {
           "anchor": {
@@ -475,7 +399,7 @@
       ]
     },
     "13": {
-      "note": "The lane's shapes and validators.\n\nAnchor: \"fixes the three shapes the lane is served in\"",
+      "note": "**Retained historical source account — superseded by the current route account:** The lane's shapes and validators.\n\nAnchor: \"fixes the three shapes the lane is served in\"",
       "targets": [
         {
           "anchor": {
@@ -493,27 +417,14 @@
       ]
     },
     "131": {
-      "note": "File-only ingest arguments/dispatch",
+      "note": "**Retained historical source account — superseded by the current route account:** File-only ingest arguments/dispatch\n\nAnchor: `add_arguments` `run`",
       "targets": [
         {
           "anchor": {
-            "blob": "1380179eda1ec1b9ba3615182ae59bfb91d1394f",
-            "content": "sha256:c8616f04528800757c08b7cd9099409a6fcc63c00345e90af86e0a6a475b1731",
-            "locator": {
-              "kind": "symbol",
-              "name": "add_arguments"
-            },
-            "path": "mcp/src/agents_remember/cli/knowledge_ingest.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
             "blob": "17a7fa6f65e138b2e9443d952932013a30658963",
-            "content": "sha256:2e6d62d0e4049d61bf1de35ae1926de164c87e91ca3637a7fa0377c193d089cb",
+            "content": "sha256:11cc051886f07abab366b3c18cfbf5f009536cb2e7c4328260f8ff83732b5397",
             "locator": {
-              "kind": "symbol",
-              "name": "run"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/cli/knowledge_ingest.py"
           },
@@ -522,15 +433,14 @@
       ]
     },
     "133": {
-      "note": "Only three mounted operations",
+      "note": "Four mounted knowledge operations are registered here: the read, the diff, the integrity check and the write.\n\nAnchor: `register_knowledge_tools`",
       "targets": [
         {
           "anchor": {
-            "blob": "b2b780dd761b42b26eca880adb422539c5b5e50a",
-            "content": "sha256:75e6ff162f472186848c092bbe1d1742318ddba247e8f802c97094a5d2a5262d",
+            "blob": "b7ef5fc94fc32347b301880b444fe2a2f85775a9",
+            "content": "sha256:0d9ea0a0c1efae38c0f2bddbff7f150e27f5bb25ef1d000544c38fd164d10b78",
             "locator": {
-              "kind": "symbol",
-              "name": "register_knowledge_tools"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/mcp/registration/knowledge.py"
           },
@@ -539,12 +449,12 @@
       ]
     },
     "14": {
-      "note": "The worklist registrant: what is read, the triggers, route and superseded rulings, the items.\n\nAnchor: \"item kind: a decision whose reconsider target changed\"",
+      "note": "**Retained historical source account — superseded by the current route account:** The worklist registrant: what is read, the triggers, route and superseded rulings, the items.",
       "targets": [
         {
           "anchor": {
-            "blob": "ea51676a33303a26fde5b2cba46ac9740e00c257",
-            "content": "sha256:cec5784e9a60da8fd08dbcbb3d50bb123a59be08dd5fa8246bf21f521828ab99",
+            "blob": "61c506dfcd093f09a94571716d7c351b56906af2",
+            "content": "sha256:9775c934ec37b706cb94c1b9b1631ce2f08317168a0a76232d878fdbcd90b11d",
             "locator": {
               "end": 39,
               "kind": "line_range",
@@ -557,7 +467,7 @@
       ]
     },
     "142": {
-      "note": "Read-side index preflight without canonical placement",
+      "note": "**Retained historical source account — superseded by the current route account:** Read-side index preflight without canonical placement",
       "targets": [
         {
           "anchor": {
@@ -586,12 +496,12 @@
       ]
     },
     "147": {
-      "note": "Current four-tree capture",
+      "note": "**Retained historical source account — superseded by the current route account:** Current four-tree capture",
       "targets": [
         {
           "anchor": {
-            "blob": "a8c549d7aa5d2f56bc5614861becb2e15e431dc7",
-            "content": "sha256:5c6a4532e5e103cadf907bc05e730ae5677a8947c046d2101c577e69d9d1e506",
+            "blob": "2afe4df9e979efb37c12c123b75809a993a53534",
+            "content": "sha256:eef3723faa3c9c44666fa63c9d49ddca12310fe2e44e1c665f022de519a6cc0d",
             "locator": {
               "kind": "symbol",
               "name": "live_review_trees"
@@ -603,12 +513,12 @@
       ]
     },
     "15": {
-      "note": "The writer's rows, the refresh and its link states.\n\nAnchor: \"The writer's reconsideration rows (MIK-R14 rule 4)\"",
+      "note": "**Retained historical source account — superseded by the current route account:** The writer's rows, the refresh and its link states.",
       "targets": [
         {
           "anchor": {
-            "blob": "f452f46fdef8cb23f0c6665b8d5b0bb5b73b98d2",
-            "content": "sha256:c11efe85cd07693214c50f241491634b19586d49ee1cbfc99c91ea369321eb77",
+            "blob": "a9640d916bc1fb5ff79c2a85ca957b2ed07fccfb",
+            "content": "sha256:34c779c42613615167bbf6a607ab8c05e4b7aaeeeee18deb9e84573e487212a5",
             "locator": {
               "end": 54,
               "kind": "line_range",
@@ -621,12 +531,12 @@
       ]
     },
     "150": {
-      "note": "Development commands, budgets, diagnostic metrics and isolation.\n\nAnchor: `# Python test policy and commands`",
+      "note": "**Retained historical source account — superseded by the current route account:** Development commands, budgets, diagnostic metrics and isolation.",
       "targets": [
         {
           "anchor": {
-            "blob": "6321de43731f72b2d339bd70b4d96eab67a7217b",
-            "content": "sha256:a85123f9aa59b6340adbb9b5d50e1b882ce06b6073b4e7076fb3814d9b2ba330",
+            "blob": "7ffa056cff009f353268195182f04dbb00fde93b",
+            "content": "sha256:167a1ab938d79a1cb88e126e0af8a72debe760638d1de4d11e6ef5ec82a95362",
             "locator": {
               "end": 53,
               "kind": "line_range",
@@ -639,7 +549,7 @@
       ]
     },
     "151": {
-      "note": "Certifying publication and accepting consumers.\n\nAnchor: `# Python Test Evidence Authority`",
+      "note": "**Retained historical source account — superseded by the current route account:** Certifying publication and accepting consumers.\n\nAnchor: `# Python Test Evidence Authority`",
       "targets": [
         {
           "anchor": {
@@ -657,39 +567,14 @@
       ]
     },
     "152": {
-      "note": "Exact contract scope, full check and curator worklist publication.",
+      "note": "**Retained historical source account — superseded by the current route account:** Exact contract scope, full check and curator worklist publication.\n\nAnchor: `_resolve_execution` `_execute_memory_quality` `_attach_curator_checklist`",
       "targets": [
         {
           "anchor": {
-            "blob": "5f33ff79cde087bea8dd9d8ebc62a85698440f9a",
-            "content": "sha256:44671be30cf39c48813ad1a0aabde13337fac138ae37390c2bbf93dc915da8d4",
+            "blob": "a4cb0ce3f5f3f488c8ad8313b8063d4a8218871e",
+            "content": "sha256:a2df6307f79b0a5282c67184a98d37a2d5fb71ad24fefd455d684627e7c5a73c",
             "locator": {
-              "kind": "symbol",
-              "name": "_resolve_execution"
-            },
-            "path": "mcp/src/agents_remember/application/memory_quality/controller.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "a6eadd9ff1cf0a28a7754688d343ff8f802d2f04",
-            "content": "sha256:a615899736aae3f8c317123c8f935e70b75405d00193ba9fb8691d63cd70a36a",
-            "locator": {
-              "kind": "symbol",
-              "name": "_execute_memory_quality"
-            },
-            "path": "mcp/src/agents_remember/application/memory_quality/controller.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "fa00445485d3ab76d4abd9e139d985ed865101c4",
-            "content": "sha256:99cfde61e42d627b8d73dd704177aeb225106816b4c826ffbfdf3b7bd319c4f4",
-            "locator": {
-              "kind": "symbol",
-              "name": "_attach_curator_checklist"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/memory_quality/controller.py"
           },
@@ -698,7 +583,7 @@
       ]
     },
     "153": {
-      "note": "Interactive catalog names missing authority without eligibility.",
+      "note": "**Retained historical source account — superseded by the current route account:** Interactive catalog names missing authority without eligibility.",
       "targets": [
         {
           "anchor": {
@@ -715,7 +600,7 @@
       ]
     },
     "156": {
-      "note": "A ledger view is derived from Git and cache write failure is only an availability result.",
+      "note": "**Retained historical source account — superseded by the current route account:** A ledger view is derived from Git and cache write failure is only an availability result.",
       "targets": [
         {
           "anchor": {
@@ -744,7 +629,7 @@
       ]
     },
     "157": {
-      "note": "Existing preparation retains actual Git binding and allows a distinct memory content view.",
+      "note": "**Retained historical source account — superseded by the current route account:** Existing preparation retains actual Git binding and allows a distinct memory content view.",
       "targets": [
         {
           "anchor": {
@@ -761,27 +646,16 @@
       ]
     },
     "158": {
-      "note": "Baseline adoption commits memory content and returns a cache observation.",
+      "note": "**Retained historical source account — superseded by the current route account:** Baseline adoption commits memory content and returns a cache observation. Source caption: `adopt_initial_baseline` `memory_content_commit`",
       "targets": [
         {
           "anchor": {
-            "blob": "2224d77730508917cec7472ef2059c00bf3196e4",
-            "content": "sha256:71930f2857c3aaf6e9c1da5b17f5b2fdaf3f8ed1ca90e4a432b752b23d9bdc86",
+            "blob": "c72c2b159123047c79c15fc46fd02991f16ef41b",
+            "content": "sha256:e6efde98dbdc142eac05f01d17a88f64b2fe8efe87801079040c749718685126",
             "locator": {
-              "kind": "symbol",
-              "name": "adopt_initial_baseline"
-            },
-            "path": "mcp/src/agents_remember/memory/baseline.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "2224d77730508917cec7472ef2059c00bf3196e4",
-            "content": "sha256:4e858fd81559f8dd606e25a34f609903cc9afa414d3d1de08c66beaba0366abf",
-            "locator": {
-              "kind": "symbol",
-              "name": "memory_content_commit"
+              "end": 562,
+              "kind": "line_range",
+              "start": 511
             },
             "path": "mcp/src/agents_remember/memory/baseline.py"
           },
@@ -790,27 +664,14 @@
       ]
     },
     "159": {
-      "note": "The one decision point every launch point calls, with its three answers and named refusals.",
+      "note": "The launch's instruction value: one of exactly two modes, a capsule compiled for the seat or a named refusal.\n\nAnchor: `resolve_launch_capsule` `LaunchCapsuleMode`",
       "targets": [
         {
           "anchor": {
-            "blob": "07dbb4559839c3bb99d5e22b19ab0aeffde8d577",
-            "content": "sha256:b078024718ecb17ceaac272f3c33c7e6951de04fc083356f008b91cc408c21b5",
+            "blob": "29fcf81063bb258507e45da4a75c16d0a9db554f",
+            "content": "sha256:125b72817befd46674986f2091bb50b1b3f062c29eac249e0d0ebf42addd173a",
             "locator": {
-              "kind": "symbol",
-              "name": "resolve_launch_capsule"
-            },
-            "path": "mcp/src/agents_remember/serving/launch_capsule.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "07dbb4559839c3bb99d5e22b19ab0aeffde8d577",
-            "content": "sha256:b190e4936151386a15119132d254bbafcec9da1060dce8e578404695177166e0",
-            "locator": {
-              "kind": "symbol",
-              "name": "LaunchCapsuleMode"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/serving/launch_capsule.py"
           },
@@ -819,7 +680,7 @@
       ]
     },
     "16": {
-      "note": "The manifest lookup.",
+      "note": "**Retained historical source account — superseded by the current route account:** The manifest lookup.",
       "targets": [
         {
           "anchor": {
@@ -835,31 +696,17 @@
         }
       ]
     },
-    "160": {
-      "note": "The one workspace rule and the selection that follows it.\n\nAnchor: `selection_for_workspace`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "07dbb4559839c3bb99d5e22b19ab0aeffde8d577",
-            "content": "sha256:afb17ffcc0ff5249714b7eeab87c1305b9a62aa91a6a213afac5ac8a3efae210",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "mcp/src/agents_remember/serving/launch_capsule.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "161": {
-      "note": "The compiler the port is bound to, including the eve path that reads the admitted workspace back out of the carrier.\n\nAnchor: `compile_launch_capsule`, `_compile_eve_task`",
+      "note": "The launch compiler routes task-attached requests through _compile_admitted_task, resolves the canonical task document, and compiles the admitted task capsule.",
       "targets": [
         {
           "anchor": {
-            "blob": "2fe7dfb2eb71bff7df6212a18cebbf6783b51133",
-            "content": "sha256:292bdeee9180cce86c10b790e09669c79ab79e90d2a47a40d5e6c3639f2845bf",
+            "blob": "9ed77cba4caacd019fd87b683ea11e0653cb7ad1",
+            "content": "sha256:ce9d58363d3568e0eece010236a2df93db9d15abfa0ae13ef0ee455e4fe35955",
             "locator": {
-              "kind": "file"
+              "end": 359,
+              "kind": "line_range",
+              "start": 293
             },
             "path": "mcp/src/agents_remember/application/role_capsules/launch.py"
           },
@@ -868,12 +715,12 @@
       ]
     },
     "162": {
-      "note": "D13's repair, on the registered operation's own resolution path.\n\nAnchor: `_declared_repository_root`",
+      "note": "**Retained historical source account — superseded by the current route account:** D13's repair, on the registered operation's own resolution path.",
       "targets": [
         {
           "anchor": {
-            "blob": "497182eddd472d861bd107fd62aaaae0e0e82067",
-            "content": "sha256:56ca123ffd3d27fe5b12e16460c77abfc7f91b55b1ef573d4c01e2cff1cba15f",
+            "blob": "c6a03cb33adb566e7cf8b84f07ab8c3061e46a19",
+            "content": "sha256:3a9901a2e97f135d22cf248feb567981637b66d0a9ba6b12f5af46ddaf87ad90",
             "locator": {
               "kind": "file"
             },
@@ -930,12 +777,12 @@
       ]
     },
     "168": {
-      "note": "The exact binary-wheel pin and the in-file reason tying it to the session build option.\n\nAnchor: \"apsw==3.53.4.0\"",
+      "note": "**Retained historical source account — superseded by the current route account:** The exact binary-wheel pin and the in-file reason tying it to the session build option.",
       "targets": [
         {
           "anchor": {
-            "blob": "cd34ba7224618224d7bda60be1a80b2c77a16860",
-            "content": "sha256:44db4b85a586f86da2ed7cc34e2a6af28fb512217074dfad5d406fb14c8c83fe",
+            "blob": "3f30237a53623bb13be7bf1d5d8dc8413ba64f6c",
+            "content": "sha256:896fdd7b511626d78b5cabb93db1be4c16a9e801b46276eef3d039c681d2cdbb",
             "locator": {
               "end": 26,
               "kind": "line_range",
@@ -966,15 +813,14 @@
       ]
     },
     "17": {
-      "note": "The reorder guard, registered on import.",
+      "note": "**Retained historical source account — superseded by the current route account:** The reorder guard, registered on import.\n\nAnchor: `RECONSIDERATION_RULES`",
       "targets": [
         {
           "anchor": {
-            "blob": "d53d75c0de9f4b7c54edf3c96142cdcd1f4c9cc2",
-            "content": "sha256:c962509826d8cf9ec6d6e7b4dc521b4e938f3d5260c34807a622c2d7089e2815",
+            "blob": "9852c4fa906f02f3ecb23e4e745cc44de82d82ae",
+            "content": "sha256:7dc5c973932d0b73a66a3d59f0da70245c5457734900871232b8b563571ad96f",
             "locator": {
-              "kind": "symbol",
-              "name": "RECONSIDERATION_RULES"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/rules_reconsideration.py"
           },
@@ -983,12 +829,12 @@
       ]
     },
     "170": {
-      "note": "The storage home and the one-way import direction, declared as charter wording only.\n\nAnchor: \"[package.memory]\"",
+      "note": "**Retained historical source account — superseded by the current route account:** The storage home and the one-way import direction, declared as charter wording only.",
       "targets": [
         {
           "anchor": {
-            "blob": "e5cc0505fe75d722ace00b9cec0f32fb339ffe8f",
-            "content": "sha256:b5ce22a2976bf73fd6222714f81e28174f2c7891749a7920868bca582ddb0163",
+            "blob": "94d6fc691485163fc02f117a88b8cd350ecc9889",
+            "content": "sha256:00d440558bd114fff2b419abbdeeb9bb03fa80ef5048aa4a8cb0484ea4784960",
             "locator": {
               "end": 222,
               "kind": "line_range",
@@ -1001,12 +847,12 @@
       ]
     },
     "171": {
-      "note": "The storage package's own boundary statement.\n\nAnchor: \"The package owns the schema, the row codecs and the insert-only revision operation.\"",
+      "note": "**Retained historical source account — superseded by the current route account:** The storage package's own boundary statement.",
       "targets": [
         {
           "anchor": {
-            "blob": "c05f97f3b944fd2bdb7b9be6682048cfb4cc2042",
-            "content": "sha256:6a00b9c4d1223d6ca9a265d51d404779317f756bae5868b5ab125b6be0681d9c",
+            "blob": "efc073000dc65803fb024200db57f962af308567",
+            "content": "sha256:ee8ffd9a51b84cc6138fed06297f9b25583673f7597668a3798f346156d48821",
             "locator": {
               "end": 7,
               "kind": "line_range",
@@ -1052,12 +898,38 @@
       "targets": [
         {
           "anchor": {
-            "blob": "11ba98ff63f4a4815985ac51e2c0c7b5a48556a4",
-            "content": "sha256:b170672021e87a55cb733387c7330e6f1a1c68970520ee51d580f14a35fbc940",
+            "blob": "102c4550ab6429f44c8fb543d1d0662de66a1b8c",
+            "content": "sha256:4a39e0fccce5a736c9676f5d0015441e750f88931a3e36276047ee371e324a1e",
             "locator": {
-              "end": 337,
+              "end": 324,
               "kind": "line_range",
-              "start": 337
+              "start": 324
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "102c4550ab6429f44c8fb543d1d0662de66a1b8c",
+            "content": "sha256:b6cc1ca0fd0d7aa788517485aee9f2b5ec3d520f9b000ecb2f8d2321e4271e33",
+            "locator": {
+              "end": 340,
+              "kind": "line_range",
+              "start": 340
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "102c4550ab6429f44c8fb543d1d0662de66a1b8c",
+            "content": "sha256:f9dc9014637fcd247260c1e316f01404266fd5552dc69a4aae4268b8d42dc66f",
+            "locator": {
+              "end": 321,
+              "kind": "line_range",
+              "start": 321
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -1070,8 +942,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a8c549d7aa5d2f56bc5614861becb2e15e431dc7",
-            "content": "sha256:5c6a4532e5e103cadf907bc05e730ae5677a8947c046d2101c577e69d9d1e506",
+            "blob": "2afe4df9e979efb37c12c123b75809a993a53534",
+            "content": "sha256:eef3723faa3c9c44666fa63c9d49ddca12310fe2e44e1c665f022de519a6cc0d",
             "locator": {
               "kind": "symbol",
               "name": "live_review_trees"
@@ -1129,7 +1001,7 @@
       ]
     },
     "19": {
-      "note": "The reader's entry point: one read-only question per call, the envelope and the typed failures.",
+      "note": "**Retained historical source account — superseded by the current route account:** The reader's entry point: one read-only question per call, the envelope and the typed failures.",
       "targets": [
         {
           "anchor": {
@@ -1168,12 +1040,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a63806f02dcb39f57b535017de881cd393e6655c",
-            "content": "sha256:aef6d729f229f751f5ff23cdbff5f304c2b760486886343bf4c954cb536ee981",
+            "blob": "3f0a6693c859f3300eb3e4a2ed3439fb33e1d04f",
+            "content": "sha256:244ad766686eeed2f6a112545749588636636b277f39697fd6d4fe1db07bfe7b",
             "locator": {
-              "end": 477,
+              "end": 188,
               "kind": "line_range",
-              "start": 468
+              "start": 179
             },
             "path": "mcp/src/agents_remember/serving/_app_common.py"
           },
@@ -1186,8 +1058,21 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6577555f1e999bbd273e7cf52324244d2b863929",
-            "content": "sha256:6c9f0b508c6761d91dc59b44c289511fb9a5a67eecd54aa2ff8d11addefa7801",
+            "blob": "d60acd0e4be738b9a9a33eb9f333fa6c53974f2b",
+            "content": "sha256:e669e0d6d224ab2ead67e219cbde590be1a3421836c5127052544722903612f9",
+            "locator": {
+              "end": 183,
+              "kind": "line_range",
+              "start": 177
+            },
+            "path": "mcp/src/agents_remember/serving/app.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d60acd0e4be738b9a9a33eb9f333fa6c53974f2b",
+            "content": "sha256:8799ab5f946f88897082b48845edb7765e952ce9b376663a4451f91412100bdf",
             "locator": {
               "end": 229,
               "kind": "line_range",
@@ -1200,32 +1085,14 @@
       ]
     },
     "193": {
-      "note": "The composition root's two adapter functions.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "e8cc72095ab2776b399324509f546821f1e0b683",
-            "content": "sha256:5a958343dd1f4bae5f93de39abaa4cee0b08588e7bbc6f4b847e4577bfdceac4",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "mcp/src/agents_remember/cli/dashboard.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "194": {
-      "note": "The shared collaborators bind the knowledge-review and entry-list ports and the listed source-content port.",
+      "note": "The composition root's adapters for the review, the entry list, the source-content read, the tree view and the knowledge reader, each bound to this configuration.",
       "targets": [
         {
           "anchor": {
             "blob": "126d045c43fbd830d1f124ab63fee6589db5d1ff",
-            "content": "sha256:f8d2f4f48a6c2d3de5e22aea3cc9ccff969f7a04cb1869dee82016b3ff19cdc9",
+            "content": "sha256:46c5e49607dc31e2f7cc4d0109b23ffcf419a4a9b04c24d0af483843012913b4",
             "locator": {
-              "end": 249,
-              "kind": "line_range",
-              "start": 247
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/cli/dashboard.py"
           },
@@ -1252,16 +1119,16 @@
       ]
     },
     "196": {
-      "note": "**The two ports passed into the shared collaborators.**",
+      "note": "The shared collaborators bind the knowledge-review and entry-list adapters, beside the source-content, tree, intent-summary and knowledge-reader ports.",
       "targets": [
         {
           "anchor": {
             "blob": "126d045c43fbd830d1f124ab63fee6589db5d1ff",
-            "content": "sha256:f8d2f4f48a6c2d3de5e22aea3cc9ccff969f7a04cb1869dee82016b3ff19cdc9",
+            "content": "sha256:58071675058e5737a8512c8e1647006f41f1c45c56deed2619a6b180cbe5571b",
             "locator": {
-              "end": 249,
+              "end": 242,
               "kind": "line_range",
-              "start": 247
+              "start": 240
             },
             "path": "mcp/src/agents_remember/cli/dashboard.py"
           },
@@ -1269,8 +1136,8 @@
         },
         {
           "anchor": {
-            "blob": "1d44f615bfc4501ef26607c59032d9f62b6744a3",
-            "content": "sha256:0842b0d5a8dabc1b8b8a717367399c24ae8c7a62ae6cf6f7ec67ceffd533dcb3",
+            "blob": "126d045c43fbd830d1f124ab63fee6589db5d1ff",
+            "content": "sha256:2ae84bf02d4917068fac7f807949b1d007aa893573b898f6f6a53eb82989c86f",
             "locator": {
               "end": 153,
               "kind": "line_range",
@@ -1305,8 +1172,34 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1380179eda1ec1b9ba3615182ae59bfb91d1394f",
-            "content": "sha256:c8616f04528800757c08b7cd9099409a6fcc63c00345e90af86e0a6a475b1731",
+            "blob": "17a7fa6f65e138b2e9443d952932013a30658963",
+            "content": "sha256:8f70903f732859313070f6cf1eee4f88dec77f529f2c81e923771510bf4f213c",
+            "locator": {
+              "end": 88,
+              "kind": "line_range",
+              "start": 52
+            },
+            "path": "mcp/src/agents_remember/cli/knowledge_ingest.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "17a7fa6f65e138b2e9443d952932013a30658963",
+            "content": "sha256:2e6d62d0e4049d61bf1de35ae1926de164c87e91ca3637a7fa0377c193d089cb",
+            "locator": {
+              "end": 103,
+              "kind": "line_range",
+              "start": 91
+            },
+            "path": "mcp/src/agents_remember/cli/knowledge_ingest.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "17a7fa6f65e138b2e9443d952932013a30658963",
+            "content": "sha256:8f70903f732859313070f6cf1eee4f88dec77f529f2c81e923771510bf4f213c",
             "locator": {
               "kind": "symbol",
               "name": "add_arguments"
@@ -1330,15 +1223,14 @@
       ]
     },
     "199": {
-      "note": "Current contract-scoped file writing",
+      "note": "**Retained historical source account — superseded by the current route account:** Current contract-scoped file writing\n\nAnchor: `run_leaf_write`",
       "targets": [
         {
           "anchor": {
-            "blob": "7ff293540604ee769a7f545fdcb04d064dc22ca5",
-            "content": "sha256:762bedcfa33c21a7d3ab12f1388230b4f7a87d636294ad507755d89baebcecf7",
+            "blob": "f8295e26dca6a63ac93655d7708654f113aaa4ec",
+            "content": "sha256:33eb4259f1dfc5a821acd3c34d1aadf64da274e8087a33af926776ee50a0207d",
             "locator": {
-              "kind": "symbol",
-              "name": "run_leaf_write"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/cli/knowledge_write_route.py"
           },
@@ -1347,7 +1239,7 @@
       ]
     },
     "2": {
-      "note": "Their vocabulary.\n\nAnchor: \"The **primary** kind is the highest established fact in the precedence\"",
+      "note": "**Retained historical source account — superseded by the current route account:** Their vocabulary.\n\nAnchor: \"The **primary** kind is the highest established fact in the precedence\"",
       "targets": [
         {
           "anchor": {
@@ -1365,7 +1257,7 @@
       ]
     },
     "20": {
-      "note": "The route: 200 for typed answers, 400 for invalid requests, 503 unwired.",
+      "note": "**Retained historical source account — superseded by the current route account:** The route: 200 for typed answers, 400 for invalid requests, 503 unwired.",
       "targets": [
         {
           "anchor": {
@@ -1386,8 +1278,34 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1380179eda1ec1b9ba3615182ae59bfb91d1394f",
-            "content": "sha256:c8616f04528800757c08b7cd9099409a6fcc63c00345e90af86e0a6a475b1731",
+            "blob": "17a7fa6f65e138b2e9443d952932013a30658963",
+            "content": "sha256:8f70903f732859313070f6cf1eee4f88dec77f529f2c81e923771510bf4f213c",
+            "locator": {
+              "end": 88,
+              "kind": "line_range",
+              "start": 52
+            },
+            "path": "mcp/src/agents_remember/cli/knowledge_ingest.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "17a7fa6f65e138b2e9443d952932013a30658963",
+            "content": "sha256:2e6d62d0e4049d61bf1de35ae1926de164c87e91ca3637a7fa0377c193d089cb",
+            "locator": {
+              "end": 103,
+              "kind": "line_range",
+              "start": 91
+            },
+            "path": "mcp/src/agents_remember/cli/knowledge_ingest.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "17a7fa6f65e138b2e9443d952932013a30658963",
+            "content": "sha256:8f70903f732859313070f6cf1eee4f88dec77f529f2c81e923771510bf4f213c",
             "locator": {
               "kind": "symbol",
               "name": "add_arguments"
@@ -1411,15 +1329,14 @@
       ]
     },
     "208": {
-      "note": "**The new application module on this package's route, and the shipped read it delegates to rather than duplicating.**",
+      "note": "**Retained historical source account — superseded by the current route account:** **The new application module on this package's route, and the shipped read it delegates to rather than duplicating.**\n\nAnchor: `published_intent_block` `open_read_context` `read_knowledge_scope`",
       "targets": [
         {
           "anchor": {
-            "blob": "4be19bfc4f0db366151478c0195bb8e5278c7351",
-            "content": "sha256:62604cfa37b04d4736ba44eec3c0c18a9febf5ba9a6a0e05dfac1c0538c6c677",
+            "blob": "e2257653c8f42c1861ece020b7afb0ebe068ff1e",
+            "content": "sha256:ed945298901c54ce9411f7391b4d3b19bb0e13b0f246be1cbad4704f98383880",
             "locator": {
-              "kind": "symbol",
-              "name": "published_intent_block"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/published_intent.py"
           },
@@ -1427,23 +1344,10 @@
         },
         {
           "anchor": {
-            "blob": "b71c42f66555bf28336d90d4449c7f9b2aaede25",
-            "content": "sha256:6b25c5ae9bc387cc07259a2f7f75a5be091b9d352b392c4a435b056f1a50eed5",
-            "locator": {
-              "kind": "symbol",
-              "name": "open_read_context"
-            },
-            "path": "mcp/src/agents_remember/application/knowledge_read.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
             "blob": "9d2460c7b39373ba3a888ebd88da47468cc93266",
-            "content": "sha256:b63a68e41ef6db74862e53d25e91c96ee6b4250062950b7ff58d84dca362f25e",
+            "content": "sha256:ca739f3b2996c442fd9c6e03488e5ff8b46ff05da0437375a48061f73df7d72f",
             "locator": {
-              "kind": "symbol",
-              "name": "read_knowledge_scope"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/knowledge_read.py"
           },
@@ -1479,7 +1383,7 @@
       ]
     },
     "21": {
-      "note": "The Knowledge area's own statement.\n\nAnchor: \"The Knowledge area (MIK-R29)\"",
+      "note": "**Retained historical source account — superseded by the current route account:** The Knowledge area's own statement.\n\nAnchor: \"The Knowledge area (MIK-R29)\"",
       "targets": [
         {
           "anchor": {
@@ -1501,8 +1405,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7605d50d6ffbce4881f82fd897f28b964a1a3c80",
-            "content": "sha256:6cb8fb66c96de79e348be5ebde90bc0cf2c6d6b6f21e4fe3b8c10bc3ed6fe4cc",
+            "blob": "6048ab1024ddfdbf9af5ed71fb6abcfb07b6128d",
+            "content": "sha256:82a1494dd64dfb44897c6139d8c81207aaaf4543e441b6f95020ca80551cec9c",
             "locator": {
               "kind": "file"
             },
@@ -1561,7 +1465,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e2f1038f8f99aa45375bfa21ef0e369c5639cc46",
+            "blob": "3f0a6693c859f3300eb3e4a2ed3439fb33e1d04f",
             "content": "sha256:61ab9618cee15153fbd10da2e576ebdcb9311a459ce7184dce1f543f61ad02ac",
             "locator": {
               "kind": "symbol",
@@ -1616,15 +1520,14 @@
       ]
     },
     "215": {
-      "note": "**The application owner the port carries: the admitted paths (a changed path of a measured change set, or unchanged context a recorded realization of the same comparison links — decided by the admission owner), both bound trees read by object id, and the per-side states.**",
+      "note": "**Retained historical source account — superseded by the current route account:** **The application owner the port carries: the admitted paths (a changed path of a measured change set, or unchanged context a recorded realization of the same comparison links — decided by the admission owner), both bound trees read by object id, and the per-side states.**\n\nAnchor: `read_review_source_content` `admit_source_path`",
       "targets": [
         {
           "anchor": {
-            "blob": "bb34bd25afcf45ac4905cf56ba55f8595a612b79",
-            "content": "sha256:dd9c9685ddbd2a1538eee6c37c80ce168bbd04f1084ce9b67bf3c48c6eef0e79",
+            "blob": "86818db1da3ffa24ccd6e04e62006ebf22897723",
+            "content": "sha256:dd8d91a91cd65fe4c2def41a42ee2ec108b32ed9ee94f9ca75321c0bc43b28c1",
             "locator": {
-              "kind": "symbol",
-              "name": "read_review_source_content"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/review_source_content.py"
           },
@@ -1633,10 +1536,9 @@
         {
           "anchor": {
             "blob": "bd53a560b89553bb10e18692e31319e6d580a0cc",
-            "content": "sha256:38e8843a8cebfb16f766d607a7dee7674eb699fa1a559e313a7a5af4a6d746fb",
+            "content": "sha256:fb8ebcbda1f115906d1c9fc1d958e558c3fe21bdab2a41779c4ed901c3be5e02",
             "locator": {
-              "kind": "symbol",
-              "name": "admit_source_path"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/review_source_admission.py"
           },
@@ -1645,30 +1547,29 @@
       ]
     },
     "216": {
-      "note": "The composition root's third review port, and the registration call that passes all three collaborators.\n\nAnchor: `register_review_routes`",
+      "note": "**Retained historical source account — superseded by the current route account:** The composition root's third review port, and the registration call that passes all three collaborators.\n\nAnchor: `review_source_content_port`",
       "targets": [
         {
           "anchor": {
-            "blob": "126d045c43fbd830d1f124ab63fee6589db5d1ff",
-            "content": "sha256:64f996fc0ef576998b70475499dfe493ca03ceafeb0f1e7e4a979aa8b21b075c",
-            "locator": {
-              "kind": "symbol",
-              "name": "review_source_content_port"
-            },
-            "path": "mcp/src/agents_remember/cli/dashboard.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "58281d9cb62afbcee6f8b6ad2efb331bb29b98e4",
-            "content": "sha256:f6b2ed0a0e622e2d1e72c9b3eb9b8afd1c08d34e729d979097d3fa2d3143e963",
+            "blob": "d60acd0e4be738b9a9a33eb9f333fa6c53974f2b",
+            "content": "sha256:0040e48daaeae2e64a9bbd610c309fc149e048df9d9363102a69e8432222bbb4",
             "locator": {
               "end": 175,
               "kind": "line_range",
               "start": 169
             },
             "path": "mcp/src/agents_remember/serving/app.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "126d045c43fbd830d1f124ab63fee6589db5d1ff",
+            "content": "sha256:46c5e49607dc31e2f7cc4d0109b23ffcf419a4a9b04c24d0af483843012913b4",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/dashboard.py"
           },
           "kind": "code"
         }
@@ -1787,12 +1688,12 @@
       ]
     },
     "22": {
-      "note": "The entries module statement.\n\nAnchor: \"Every entry of a tree comparison, located on both code sides for the reviewer's cards (MIK-R31).\"",
+      "note": "**Retained historical source account — superseded by the current route account:** The entries module statement.",
       "targets": [
         {
           "anchor": {
-            "blob": "39e3e6eaa30da5f4d82197fa4e6166bb3dd7f256",
-            "content": "sha256:29ccb59d3a26b5e7c5e58a78ad6d5cf88930d48b270467c6c163c008e70d67ac",
+            "blob": "7237b0af5c95b86b89ce3574fae21d7bce0a3f8f",
+            "content": "sha256:c56b60809d8b723995fe5062aeadb76116d6af82dd95b56671609a622684ea22",
             "locator": {
               "end": 19,
               "kind": "line_range",
@@ -1851,15 +1752,14 @@
       ]
     },
     "222": {
-      "note": "The crossing owner's route of knowledge-ingest.",
+      "note": "**Retained historical source account — superseded by the current route account:** The crossing owner's route of knowledge-ingest.\n\nAnchor: `run_crossing_write`",
       "targets": [
         {
           "anchor": {
-            "blob": "3112016849b0fb58bbce31cb4a148873dadf7564",
-            "content": "sha256:fcf9fcbf0507fd7f2b936c120777391bbf3940ee45e05155575f5d86fdd525f5",
+            "blob": "f8295e26dca6a63ac93655d7708654f113aaa4ec",
+            "content": "sha256:33eb4259f1dfc5a821acd3c34d1aadf64da274e8087a33af926776ee50a0207d",
             "locator": {
-              "kind": "symbol",
-              "name": "run_crossing_write"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/cli/knowledge_write_route.py"
           },
@@ -1884,12 +1784,12 @@
       ]
     },
     "224": {
-      "note": "The converted-card workflow's opening.",
+      "note": "**Retained historical source account — superseded by the current route account:** The converted-card workflow's opening.",
       "targets": [
         {
           "anchor": {
-            "blob": "e071ead508fb6ee46a9f883dc3a5bf12260ebd28",
-            "content": "sha256:50d560d22966ea1ea8c1d76d872ec7d244bed31e7297f75a33f1302e97fd987f",
+            "blob": "07f4fbb59134af0846462f3929091464962f171f",
+            "content": "sha256:6e18a2ceb104df56df4b5f463662bf5fb6a85a5911185802174cfb4cef8d71eb",
             "locator": {
               "end": 6,
               "kind": "line_range",
@@ -1902,15 +1802,14 @@
       ]
     },
     "225": {
-      "note": "The lock every memory route asks.",
+      "note": "**Retained historical source account — superseded by the current route account:** The lock every memory route asks.\n\nAnchor: `cutover_lock_refusal`",
       "targets": [
         {
           "anchor": {
-            "blob": "34b7a01a614d6f22e1f7c233039dae49cb34ce72",
-            "content": "sha256:a7f9c48faf4f72c578dbc863e14dcbcaca7ea1d8f16fbdb2634512794cda9bd1",
+            "blob": "a6ae7d18931f91de5fcc3383a5a141ac40859c74",
+            "content": "sha256:588da5b8cf608f58098c5ab14c21c3367c04ad71c8faa96969f7916282235724",
             "locator": {
-              "kind": "symbol",
-              "name": "cutover_lock_refusal"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/worktrees/cutover_lock.py"
           },
@@ -1936,15 +1835,14 @@
       ]
     },
     "227": {
-      "note": "The cache's ignore rule alone.",
+      "note": "**Retained historical source account — superseded by the current route account:** The cache's ignore rule alone.\n\nAnchor: `ignore_memory_cache`",
       "targets": [
         {
           "anchor": {
-            "blob": "7b0e0cf051f1af1ab86b6c19ab4289849110df85",
-            "content": "sha256:7a231597db49f78ca1a9edfcf838bbd74e6aa9dfda7401fdb613fb0825448cf1",
+            "blob": "7a62e25249db9a1da4bcc623e29b4af7faaf91e9",
+            "content": "sha256:7edb99bff655b5ba7073667066063848e24048529c772ae1cfd26434f166a906",
             "locator": {
-              "kind": "symbol",
-              "name": "ignore_memory_cache"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/kernel/memory_cache.py"
           },
@@ -1953,14 +1851,29 @@
       ]
     },
     "228": {
-      "note": "Current imported source owns this scoped route boundary.",
+      "note": "The Paseo runtime CLI requires an explicit config for provision, status and stop, loads that config's host settings, and returns a single JSON report with defined refusal and failure exits.",
       "targets": [
         {
           "anchor": {
-            "blob": "2a46dbc2164109cbf32259c21cdb2921b5d666ec",
-            "content": "sha256:3d2c22e1ea64a6c056a13201b7c675bb7917cc9171ee5865e0255eb8b1994012",
+            "blob": "aa98e3d9b5888c5861b82f0806e3a4e0e2e8a1c4",
+            "content": "sha256:b9bd3f96c119c7ac88191d12c2eacb335297ca860b069ff5f543025127aee33f",
             "locator": {
-              "kind": "file"
+              "end": 14,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_runtime.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "aa98e3d9b5888c5861b82f0806e3a4e0e2e8a1c4",
+            "content": "sha256:3ea98597d3e5f3f26732d0999c895e503bc9c5034fe94e6b52614dcaa0c2dbde",
+            "locator": {
+              "end": 90,
+              "kind": "line_range",
+              "start": 52
             },
             "path": "mcp/src/agents_remember/cli/paseo_runtime.py"
           },
@@ -1969,14 +1882,29 @@
       ]
     },
     "229": {
-      "note": "Current imported source owns this scoped route boundary.",
+      "note": "The Paseo launch adapter builds the repeatable role-launch call with the chosen agent identity, workspace, first-message data, parent identity and this build's task tool-server binding.",
       "targets": [
         {
           "anchor": {
-            "blob": "d57949b8574bdf280c23f7d8c15d4c28634a0097",
-            "content": "sha256:a4912eae284efe96d08a973094c328b40762b32a24be21103cd63fe0075a89c9",
+            "blob": "e41b09f9728125e4e62b2317995c3401783e8b62",
+            "content": "sha256:290c955dc3743a6fab8d2304e9b725f35b2bfac10fe043d38420c070940a6642",
             "locator": {
-              "kind": "file"
+              "end": 430,
+              "kind": "line_range",
+              "start": 396
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_launch.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e41b09f9728125e4e62b2317995c3401783e8b62",
+            "content": "sha256:bd3463851f2f456aa68f5813a450c69e2f6a8ec844daad2c0fd47aa518cb705d",
+            "locator": {
+              "end": 466,
+              "kind": "line_range",
+              "start": 446
             },
             "path": "mcp/src/agents_remember/cli/paseo_launch.py"
           },
@@ -1985,7 +1913,7 @@
       ]
     },
     "23": {
-      "note": "The on-demand cards read at the route.",
+      "note": "**Retained historical source account — superseded by the current route account:** The on-demand cards read at the route.",
       "targets": [
         {
           "anchor": {
@@ -2014,14 +1942,29 @@
       ]
     },
     "230": {
-      "note": "Current imported source owns this scoped route boundary.",
+      "note": "Task-scoped MCP reader configuration derives a call-local repository entry only from the admitted canonical task and enclosure contract; a reader without task_context retains the configured Projects roots.",
       "targets": [
         {
           "anchor": {
-            "blob": "a16d61fab1c533b0b101b675bdd8a7b79fc491cd",
-            "content": "sha256:efa68e8081960f183be7f5037244291a471decef1050c6c46d8d6af7e084ed83",
+            "blob": "9dfc1293d27d539ce40fd6f6e61b4e4093dc2d01",
+            "content": "sha256:37a3af3bba723c50b0c708deb69aa49e5ef7cab6deba4ffcc67f430c3519ef0d",
             "locator": {
-              "kind": "file"
+              "end": 75,
+              "kind": "line_range",
+              "start": 25
+            },
+            "path": "mcp/src/agents_remember/application/task_scoped_mcp.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9dfc1293d27d539ce40fd6f6e61b4e4093dc2d01",
+            "content": "sha256:0a854a9697a0201e89c3d1e9fd7b73fde65bc8acdc1aa31cca7cd242f3b30263",
+            "locator": {
+              "end": 107,
+              "kind": "line_range",
+              "start": 78
             },
             "path": "mcp/src/agents_remember/application/task_scoped_mcp.py"
           },
@@ -2030,14 +1973,29 @@
       ]
     },
     "231": {
-      "note": "Current imported source owns this scoped route boundary.",
+      "note": "The knowledge-write CLI adapter validates the explicit authorization and hand-off input, then submits the leaf write to the shared application route and prints that route's report.",
       "targets": [
         {
           "anchor": {
-            "blob": "3112016849b0fb58bbce31cb4a148873dadf7564",
-            "content": "sha256:3130ddb07b0eaef76c7b89799befa83a7971ac0b119546f5be141e2c23a03434",
+            "blob": "f8295e26dca6a63ac93655d7708654f113aaa4ec",
+            "content": "sha256:59d11e3a4d9698c6fdaac1d4e945e2b2abd8a621adeada9fc1ecb6c3581d0f50",
             "locator": {
-              "kind": "file"
+              "end": 30,
+              "kind": "line_range",
+              "start": 19
+            },
+            "path": "mcp/src/agents_remember/cli/knowledge_write_route.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f8295e26dca6a63ac93655d7708654f113aaa4ec",
+            "content": "sha256:b14ab972d1ae2deeae394903120b0286f3014e94b8a489b939aac1c9ba2d98cc",
+            "locator": {
+              "end": 126,
+              "kind": "line_range",
+              "start": 94
             },
             "path": "mcp/src/agents_remember/cli/knowledge_write_route.py"
           },
@@ -2067,12 +2025,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "11ba98ff63f4a4815985ac51e2c0c7b5a48556a4",
-            "content": "sha256:2fa53d75d1a4d6ef8e4c45600fb5f9678bb7206ba3b69dd24ee8963593f7ebfd",
+            "blob": "102c4550ab6429f44c8fb543d1d0662de66a1b8c",
+            "content": "sha256:65870d8bf072581aae2e74e46f3f91600d874e4babbd72a6acac9137900ba98a",
             "locator": {
-              "end": 151,
+              "end": 138,
               "kind": "line_range",
-              "start": 151
+              "start": 138
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -2080,12 +2038,64 @@
         },
         {
           "anchor": {
-            "blob": "11ba98ff63f4a4815985ac51e2c0c7b5a48556a4",
+            "blob": "102c4550ab6429f44c8fb543d1d0662de66a1b8c",
+            "content": "sha256:55aae7f94adeaee949444718419adb19e16cc7f7312f0ed50d8c4db0f98dc21f",
+            "locator": {
+              "end": 156,
+              "kind": "line_range",
+              "start": 156
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "102c4550ab6429f44c8fb543d1d0662de66a1b8c",
+            "content": "sha256:2fa53d75d1a4d6ef8e4c45600fb5f9678bb7206ba3b69dd24ee8963593f7ebfd",
+            "locator": {
+              "end": 154,
+              "kind": "line_range",
+              "start": 154
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "102c4550ab6429f44c8fb543d1d0662de66a1b8c",
             "content": "sha256:ef900a5b38b3a4393ac60a6d42f336d540dcb806538d4acca19a65c9c1fc194c",
             "locator": {
-              "end": 169,
+              "end": 172,
               "kind": "line_range",
-              "start": 169
+              "start": 172
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "102c4550ab6429f44c8fb543d1d0662de66a1b8c",
+            "content": "sha256:69d8280dc81168ccad9bbfe29ba5f03699c91984d70f014cb8aaa09868400e4d",
+            "locator": {
+              "end": 135,
+              "kind": "line_range",
+              "start": 135
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "102c4550ab6429f44c8fb543d1d0662de66a1b8c",
+            "content": "sha256:94735bcffa1378ed55669798460b785212b5c930b61021035296bb635c9050c0",
+            "locator": {
+              "end": 153,
+              "kind": "line_range",
+              "start": 153
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -2198,12 +2208,12 @@
       ]
     },
     "24": {
-      "note": "The card component's own statement.\n\nAnchor: \"one focused\"",
+      "note": "**Retained historical source account — superseded by the current route account:** The card component's own statement.",
       "targets": [
         {
           "anchor": {
-            "blob": "19834e770c2eb7af4e574ccb2385b6ce01dff0f9",
-            "content": "sha256:71e72d631291a9c3106907b7abffd659342f5b69d70d88f09431e0a090ae3a23",
+            "blob": "f004efc247fbe02ff63076ce1476bca8a7b4ad94",
+            "content": "sha256:21ceee1a7e928822b003a059be69fcb6364a266cd84e023fa8544ca4b8a06e0d",
             "locator": {
               "end": 7,
               "kind": "line_range",
@@ -2216,12 +2226,12 @@
       ]
     },
     "240": {
-      "note": "The composition root creates the process owner.",
+      "note": "**Retained historical source account — superseded by the current route account:** The composition root creates the process owner.",
       "targets": [
         {
           "anchor": {
-            "blob": "1d44f615bfc4501ef26607c59032d9f62b6744a3",
-            "content": "sha256:01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+            "blob": "126d045c43fbd830d1f124ab63fee6589db5d1ff",
+            "content": "sha256:d708711af3ec0cc5ee281a0ac8dfb225d985a1b81896621096e6312099a6f299",
             "locator": {
               "end": 110,
               "kind": "line_range",
@@ -2239,6 +2249,19 @@
         {
           "anchor": {
             "blob": "126d045c43fbd830d1f124ab63fee6589db5d1ff",
+            "content": "sha256:3ce6e2ce5893f52beeade15ff77aa40f240316dcaf727cbea92ff98459104072",
+            "locator": {
+              "end": 245,
+              "kind": "line_range",
+              "start": 245
+            },
+            "path": "mcp/src/agents_remember/cli/dashboard.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "126d045c43fbd830d1f124ab63fee6589db5d1ff",
             "content": "sha256:24184649da213fc6afc51b9082b0ff905798fe89459e305b08f32f82e44a62f0",
             "locator": {
               "end": 252,
@@ -2252,12 +2275,12 @@
       ]
     },
     "242": {
-      "note": "The waiting bound counts computations, not the requests sharing them.",
+      "note": "**Retained historical source account — superseded by the current route account:** The waiting bound counts computations, not the requests sharing them.",
       "targets": [
         {
           "anchor": {
-            "blob": "dcea734d01a9e0e0e0f63ee8bfbf5ce1d40ee24d",
-            "content": "sha256:443c00ec3df518b067e0b38db098cc33a978d3f32f9dfbfab3e7fc022f1787d4",
+            "blob": "27133970f3efd75083fdda0b036762cfe19db511",
+            "content": "sha256:0d5dcf1893f5dd43166d599a4319981049775a685e6d32beb6c990ad5663ab30",
             "locator": {
               "kind": "file"
             },
@@ -2319,15 +2342,14 @@
       ]
     },
     "246": {
-      "note": "A recording block collects the rows of one computation.",
+      "note": "**Retained historical source account — superseded by the current route account:** A recording block collects the rows of one computation.\n\nAnchor: `recorded_reads`",
       "targets": [
         {
           "anchor": {
-            "blob": "51f9b6abddfd252e7608a114af2561ae130b078b",
-            "content": "sha256:808519e75b00af64073d3a9736f796e1d5051a0e6f917b58f3f2a361c27d125e",
+            "blob": "8e5fe3cc06555aa24b7a8353a5a2649d6e080876",
+            "content": "sha256:574d273db8bc349dc8ece9848026ece0a58843d54edd522c348c35d4ff5b22e9",
             "locator": {
-              "kind": "symbol",
-              "name": "recorded_reads"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/kernel/recorded_reads.py"
           },
@@ -2336,12 +2358,12 @@
       ]
     },
     "247": {
-      "note": "A kept set is checked with its path selections first.\n\nAnchor: `changed_observations`",
+      "note": "**Retained historical source account — superseded by the current route account:** A kept set is checked with its path selections first.",
       "targets": [
         {
           "anchor": {
-            "blob": "51f9b6abddfd252e7608a114af2561ae130b078b",
-            "content": "sha256:b90c0bd2ed41e0964ad329cc48e9fec1be531b7698d388df2ea8b0330acc2d93",
+            "blob": "8e5fe3cc06555aa24b7a8353a5a2649d6e080876",
+            "content": "sha256:574d273db8bc349dc8ece9848026ece0a58843d54edd522c348c35d4ff5b22e9",
             "locator": {
               "kind": "file"
             },
@@ -2369,15 +2391,16 @@
       ]
     },
     "249": {
-      "note": "The contract loader reads through the recorder.",
+      "note": "**Retained historical source account — superseded by the current route account:** The contract loader reads through the recorder.  Anchor: `load_contract`",
       "targets": [
         {
           "anchor": {
-            "blob": "10fc96becf7770c443afcc8cee7888254836cc69",
-            "content": "sha256:dfa776e8c904c68a07307656bf919d2e921a20cdbe101c1ecec2079130988058",
+            "blob": "c9e2847f64ca428bdc799c8173b43aa736f4b0e9",
+            "content": "sha256:bfec3a3775045fe3fe7e3a92d32691cdcd15bb5f228b4411aa801ec873ff97a9",
             "locator": {
-              "kind": "symbol",
-              "name": "load_contract"
+              "end": 491,
+              "kind": "line_range",
+              "start": 460
             },
             "path": "mcp/src/agents_remember/worktrees/worktree_contract.py"
           },
@@ -2386,12 +2409,12 @@
       ]
     },
     "25": {
-      "note": "The chain module statement.\n\nAnchor: \"Route-chain families of a seed path\"",
+      "note": "**Retained historical source account — superseded by the current route account:** The chain module statement.",
       "targets": [
         {
           "anchor": {
-            "blob": "00f92c33cea00e38dd04cbc1196de10fb4ec129f",
-            "content": "sha256:b75c30bc501f36414e7e2c2c0cb511b50ab4dfbca30c16d86162809dcd9e3f51",
+            "blob": "eb894372006811f11309935ff863c9c9fe7e4639",
+            "content": "sha256:20a8c999d4e7c1b3685657a9422be222a6347b1838f3b27518443c68d8d26eea",
             "locator": {
               "end": 26,
               "kind": "line_range",
@@ -2473,15 +2496,14 @@
       ]
     },
     "255": {
-      "note": "The layout-marker test both commands use.",
+      "note": "**Retained historical source account — superseded by the current route account:** The layout-marker test both commands use.\n\nAnchor: `is_converted`",
       "targets": [
         {
           "anchor": {
-            "blob": "034702acb1217ed379f0fc5ec0d2ba979494d1a4",
-            "content": "sha256:a112b2c3820ab58c029bff65415f3dd36e0fdcb72fc9d69ca74a838382440604",
+            "blob": "f8295e26dca6a63ac93655d7708654f113aaa4ec",
+            "content": "sha256:33eb4259f1dfc5a821acd3c34d1aadf64da274e8087a33af926776ee50a0207d",
             "locator": {
-              "kind": "symbol",
-              "name": "is_converted"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/cli/knowledge_write_route.py"
           },
@@ -2490,11 +2512,11 @@
       ]
     },
     "256": {
-      "note": "The writer refuses an unconverted memory tree.",
+      "note": "**Retained historical source account — superseded by the current route account:** The writer refuses an unconverted memory tree.",
       "targets": [
         {
           "anchor": {
-            "blob": "1a2649c3264339377226860bbd12a87c8b3f2f65",
+            "blob": "f8c3ebb0fba1a81fe6fad47e544b6183713f1019",
             "content": "sha256:ddc54a1d609b26aa73aab617bb80e631c4b24c0510c9aa059a1015bb8f084f8c",
             "locator": {
               "kind": "symbol",
@@ -2507,15 +2529,14 @@
       ]
     },
     "258": {
-      "note": "**The production port the cases drive, and the two states F09 collapsed.**",
+      "note": "**Retained historical source account — superseded by the current route account:** **The production port the cases drive, and the two states F09 collapsed.**\n\nAnchor: `review_port`",
       "targets": [
         {
           "anchor": {
-            "blob": "74a2c8422da853d4c0d2ea2aa2fd1e259f9e204b",
-            "content": "sha256:b19bc1c2ad3bb2179ea145e7449539dad4eea4ad52e8c276200482e5793a0c88",
+            "blob": "126d045c43fbd830d1f124ab63fee6589db5d1ff",
+            "content": "sha256:46c5e49607dc31e2f7cc4d0109b23ffcf419a4a9b04c24d0af483843012913b4",
             "locator": {
-              "kind": "symbol",
-              "name": "review_port"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/cli/dashboard.py"
           },
@@ -2541,7 +2562,7 @@
       ]
     },
     "26": {
-      "note": "The compact row with its family seed.",
+      "note": "**Retained historical source account — superseded by the current route account:** The compact row with its family seed.",
       "targets": [
         {
           "anchor": {
@@ -2698,11 +2719,25 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e8cc72095ab2776b399324509f546821f1e0b683",
-            "content": "sha256:f52fafd5838afa3ab615762f3c9e2e4af18e0c0e0dfe454aa13dfdcc4f34ef49",
+            "blob": "126d045c43fbd830d1f124ab63fee6589db5d1ff",
+            "content": "sha256:58071675058e5737a8512c8e1647006f41f1c45c56deed2619a6b180cbe5571b",
             "locator": {
-              "kind": "symbol",
-              "name": "serving_collaborators"
+              "end": 242,
+              "kind": "line_range",
+              "start": 240
+            },
+            "path": "mcp/src/agents_remember/cli/dashboard.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "126d045c43fbd830d1f124ab63fee6589db5d1ff",
+            "content": "sha256:f8d2f4f48a6c2d3de5e22aea3cc9ccff969f7a04cb1869dee82016b3ff19cdc9",
+            "locator": {
+              "end": 249,
+              "kind": "line_range",
+              "start": 247
             },
             "path": "mcp/src/agents_remember/cli/dashboard.py"
           },
@@ -2711,15 +2746,14 @@
       ]
     },
     "269": {
-      "note": "The four-tree comparison, pinned and recorded.",
+      "note": "**Retained historical source account — superseded by the current route account:** The four-tree comparison, pinned and recorded.\n\nAnchor: `ComparisonRecordBinding`",
       "targets": [
         {
           "anchor": {
-            "blob": "5f1fb1992640a2805521f2956bf943694e352894",
-            "content": "sha256:48bc28937f9fac151427b26afeccc3f2d466171b95da0a6565b2d4a1df523d57",
+            "blob": "251e7c89eb87aa6086e0059351fa20f921d94638",
+            "content": "sha256:c9150b4c6814ed6e50f4c4cea4115c966d2881137f619f854fab26b2d0b943a0",
             "locator": {
-              "kind": "symbol",
-              "name": "ComparisonRecordBinding"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/review_comparison_generation.py"
           },
@@ -2728,7 +2762,7 @@
       ]
     },
     "27": {
-      "note": "The family seed on the mounted read.",
+      "note": "**Retained historical source account — superseded by the current route account:** The family seed on the mounted read.",
       "targets": [
         {
           "anchor": {
@@ -2749,8 +2783,21 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b8476720a5b70cf8f7e8577c7680ed8e26d3d079",
-            "content": "sha256:62053a4a3e8b2b719dc2f2929d0043fe15e429e73171aef402b509709047c059",
+            "blob": "2c338bc95b7c3356425cae3d82c0c83cf08a2667",
+            "content": "sha256:4fcc8dbd244f2419df8a21fcee9e51c7523355c7dbf5278ebc782d917b2ae157",
+            "locator": {
+              "end": 141,
+              "kind": "line_range",
+              "start": 101
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/requirement_endpoint.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2c338bc95b7c3356425cae3d82c0c83cf08a2667",
+            "content": "sha256:4fcc8dbd244f2419df8a21fcee9e51c7523355c7dbf5278ebc782d917b2ae157",
             "locator": {
               "kind": "symbol",
               "name": "resolve_requirement_endpoint"
@@ -2779,7 +2826,7 @@
       ]
     },
     "273": {
-      "note": "The one workspace rule and the selection that follows it.",
+      "note": "**Retained historical source account — superseded by the current route account:** The one workspace rule and the selection that follows it.",
       "targets": [
         {
           "anchor": {
@@ -2792,19 +2839,31 @@
             "path": "mcp/src/agents_remember/application/role_capsules/launch.py"
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "29fcf81063bb258507e45da4a75c16d0a9db554f",
+            "content": "sha256:125b72817befd46674986f2091bb50b1b3f062c29eac249e0d0ebf42addd173a",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/serving/launch_capsule.py"
+          },
+          "kind": "code"
         }
       ]
     },
     "274": {
-      "note": "The compiler the port is bound to, including the eve path that reads the admitted workspace back out of the carrier.",
+      "note": "The launch compiler routes task-attached requests through _compile_admitted_task, resolves the canonical task document, and compiles the admitted task capsule.",
       "targets": [
         {
           "anchor": {
-            "blob": "2fe7dfb2eb71bff7df6212a18cebbf6783b51133",
-            "content": "sha256:a047988a95deaee7185ff0ea6748162488468f56117074eebf5276a70934d158",
+            "blob": "9ed77cba4caacd019fd87b683ea11e0653cb7ad1",
+            "content": "sha256:ce9d58363d3568e0eece010236a2df93db9d15abfa0ae13ef0ee455e4fe35955",
             "locator": {
-              "kind": "symbol",
-              "name": "compile_launch_capsule"
+              "end": 359,
+              "kind": "line_range",
+              "start": 293
             },
             "path": "mcp/src/agents_remember/application/role_capsules/launch.py"
           },
@@ -2817,12 +2876,38 @@
       "targets": [
         {
           "anchor": {
-            "blob": "11ba98ff63f4a4815985ac51e2c0c7b5a48556a4",
-            "content": "sha256:fab46d2a17b3a29cb28a509254c759df122390dcbb1ce6233793dbfcd0452542",
+            "blob": "102c4550ab6429f44c8fb543d1d0662de66a1b8c",
+            "content": "sha256:4a39e0fccce5a736c9676f5d0015441e750f88931a3e36276047ee371e324a1e",
             "locator": {
-              "end": 205,
+              "end": 324,
               "kind": "line_range",
-              "start": 205
+              "start": 324
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "102c4550ab6429f44c8fb543d1d0662de66a1b8c",
+            "content": "sha256:b6cc1ca0fd0d7aa788517485aee9f2b5ec3d520f9b000ecb2f8d2321e4271e33",
+            "locator": {
+              "end": 340,
+              "kind": "line_range",
+              "start": 340
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "102c4550ab6429f44c8fb543d1d0662de66a1b8c",
+            "content": "sha256:f9dc9014637fcd247260c1e316f01404266fd5552dc69a4aae4268b8d42dc66f",
+            "locator": {
+              "end": 321,
+              "kind": "line_range",
+              "start": 321
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -2831,15 +2916,14 @@
       ]
     },
     "285": {
-      "note": "The task reopening tool on the registration surface.",
+      "note": "**Retained historical source account — superseded by the current route account:** The task reopening tool on the registration surface.\n\nAnchor: `task_reopen`",
       "targets": [
         {
           "anchor": {
-            "blob": "8ab149b388e11912041dbd480da7855a7de32451",
-            "content": "sha256:0b577f5b35f84416a2985a23adecad90b0a80f8026f8111afedd5d1e3b7b1ee0",
+            "blob": "593a85bdc8b09268d79cfe0abc62be5957330709",
+            "content": "sha256:dcf9e9c7c5d77f335952069c99aa9a5cb7c999a29eb3e965e6ee9f296a078e89",
             "locator": {
-              "kind": "symbol",
-              "name": "task_reopen"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/mcp/registration/tasks.py"
           },
@@ -2866,12 +2950,12 @@
       ]
     },
     "287": {
-      "note": "The enforced collected-case pair is 5000 unit/1000 integration; the unit-only policy raise leaves the guard unchanged.",
+      "note": "The enforced collected-case pair is 10000 unit/1000 integration; the unit-only policy raise leaves the collection guard unchanged.",
       "targets": [
         {
           "anchor": {
-            "blob": "6fdaf3bc5c0ebf2ced1c450d5973ed55b2515f3c",
-            "content": "sha256:ce36f45d8abc47ff28e835599564f9783a30a7b30220e19ba24e701ff8307f49",
+            "blob": "0b550ee3cda163c8b451cb06a4fb69b489c4686d",
+            "content": "sha256:24329980c91722cff083957188e3f6e6de6c7f24a81a62f06db77bd5fafa166d",
             "locator": {
               "end": 299,
               "kind": "line_range",
@@ -2884,15 +2968,16 @@
       ]
     },
     "288": {
-      "note": "Current single literal PUBLIC_TOOLS contains 40 public names and excludes dispatch_agent; native role, retirement and knowledge vocabulary remains. Source census only, no live advertisement, new CODE grade or MEMORY acceptance. The grouped bounded-landing answer and role-duty witnesses remain distinct co-targets.\n\nAnchor: lines 202-239; lines 111-114; lines 159-160; lines 105-111",
+      "note": "Historical L113 source census recorded 40 public names after dispatch removal; its grouped bounded-landing and role-duty co-targets retain that source epoch. PUBLIC_TOOLS is one literal tuple of 44 public names, including native role, retirement and knowledge operations and excluding dispatch_agent. This source census does not establish live advertisement, a CODE grade or MEMORY acceptance. The landing-answer helper separately keeps cut/added counts and bounds inline rows; the Curator instructions require an independent statement-by-statement fact-check before closeout.",
       "targets": [
         {
           "anchor": {
-            "blob": "5513557eb2dc04aa2b84f23689eb4e367aad2939",
-            "content": "sha256:b678282dd750b710810314db6feaaf211093143603358f8d45d2b8a724220219",
+            "blob": "d0b0ddd9f150e32116b430ecc74907fcf68fee97",
+            "content": "sha256:0d731cd02507c25dba76b038b516d902c22734acdcc5dcca4de245a6b6becbed",
             "locator": {
-              "kind": "symbol",
-              "name": "PUBLIC_TOOLS"
+              "end": 72,
+              "kind": "line_range",
+              "start": 22
             },
             "path": "mcp/src/agents_remember/models/tools/public_roster.py"
           },
@@ -2914,46 +2999,20 @@
         {
           "anchor": {
             "blob": "c2d38cd0a82b9efe96a765c4512f2242c6a9d3e6",
-            "content": "sha256:c9769217d4accd69822b53e04ce60b3bfa49aabd23f5d4655d2e6b5b0b9c693f",
+            "content": "sha256:006998f4326f6357c25938af51c81492ce4a0552ebd2d9001099108d42a2bcaa",
             "locator": {
-              "end": 61,
+              "end": 64,
               "kind": "line_range",
               "start": 58
             },
             "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/curator.md"
           },
           "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "e0b3bcfc145479a365a748510d7bd04490842c91",
-            "content": "sha256:15f8b61308c9ed2e5dc642f492248186c41cac664098e57c5c1f3ba307b73d3f",
-            "locator": {
-              "end": 187,
-              "kind": "line_range",
-              "start": 186
-            },
-            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/curator.md"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "5a6e224b39172bf86db6ced53b92788fbb4a318d",
-            "content": "sha256:b4dafc8a8b1a2f1c64cff7f454c512410a4eaa6582e470c72b0f1a3551f5a2c0",
-            "locator": {
-              "end": 110,
-              "kind": "line_range",
-              "start": 104
-            },
-            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md"
-          },
-          "kind": "code"
         }
       ]
     },
     "289": {
-      "note": "Skills registrar installs resources and mandatory methods; no tools or capability grant",
+      "note": "**Retained historical source account — superseded by the current route account:** Skills registrar installs resources and mandatory methods; no tools or capability grant",
       "targets": [
         {
           "anchor": {
@@ -2983,12 +3042,12 @@
       ]
     },
     "29": {
-      "note": "The two kinds and the coverage lookup.\n\nAnchor: \"MIK-R10's unexplained changes\"",
+      "note": "**Retained historical source account — superseded by the current route account:** The two kinds and the coverage lookup.",
       "targets": [
         {
           "anchor": {
-            "blob": "b4b5af83970320975a67685a916fedb49b483a5b",
-            "content": "sha256:07f36e49a86b1cf195be2a8ee607c684ea05259f9ad442272f644fbb550c2489",
+            "blob": "62a9874eea7180a43ff42b31d50d47fc23a761ec",
+            "content": "sha256:bc94153dc45ded3d55492c1ee3f241b5b7e8d7b3b040200079337486a47cc163",
             "locator": {
               "end": 35,
               "kind": "line_range",
@@ -3001,15 +3060,14 @@
       ]
     },
     "290": {
-      "note": "Dispatch advertisement is closed and undeclared inputs refuse before handler",
+      "note": "**Retained historical source account — superseded by the current route account:** Dispatch advertisement is closed and undeclared inputs refuse before handler\n\nAnchor: `AgentsRememberMCP`",
       "targets": [
         {
           "anchor": {
-            "blob": "0e5fca4f5809ae7204baa1edf8daee0d1048fdee",
-            "content": "sha256:5a7e85ecb1b69f93b2ddabb216604296c1db63aaa61b6171554cacd1b9a4a525",
+            "blob": "04fe591490945dea61eca1af410ae2553d95ea05",
+            "content": "sha256:cc3a440dce07a6635e86d3b3c0bd4747a332896e3470112e376449434e08b69a",
             "locator": {
-              "kind": "symbol",
-              "name": "AgentsRememberMCP"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/mcp/server.py"
           },
@@ -3018,11 +3076,11 @@
       ]
     },
     "291": {
-      "note": "Generated lifecycle providers are empty independently of configuration",
+      "note": "**Retained historical source account — superseded by the current route account:** Generated lifecycle providers are empty independently of configuration",
       "targets": [
         {
           "anchor": {
-            "blob": "6ebb200020acfc5c807c9619d18ce2d89b4fb555",
+            "blob": "d2b3ea0cd51a15c2ec8828868eb9c03a98b0991b",
             "content": "sha256:ed908d4b26865a91717a59fb120b1ce44121b9f55e8aa502f7a3623e5584ba55",
             "locator": {
               "kind": "symbol",
@@ -3035,7 +3093,7 @@
       ]
     },
     "292": {
-      "note": "Old-watcher stop failure is reported and installation continues",
+      "note": "**Retained historical source account — superseded by the current route account:** Old-watcher stop failure is reported and installation continues",
       "targets": [
         {
           "anchor": {
@@ -3052,12 +3110,12 @@
       ]
     },
     "293": {
-      "note": "Retrieval uses harness search and bounded source confirmation",
+      "note": "**Retained historical source account — superseded by the current route account:** Retrieval uses harness search and bounded source confirmation",
       "targets": [
         {
           "anchor": {
-            "blob": "9497a2a6d77f0ed77aecb6974b68c559795a7bbd",
-            "content": "sha256:1b1b287d394bd2fdcead3117fd12705300525b6a571d96b71eed1742e810af4a",
+            "blob": "6048ab1024ddfdbf9af5ed71fb6abcfb07b6128d",
+            "content": "sha256:86447dadb33ef748fa23894b7037250b272d37a93482b9afd4172f3e63355be1",
             "locator": {
               "end": 53,
               "kind": "line_range",
@@ -3070,7 +3128,7 @@
       ]
     },
     "294": {
-      "note": "Ingest plans by default, writes files only, and refuses unconverted memory",
+      "note": "**Retained historical source account — superseded by the current route account:** Ingest plans by default, writes files only, and refuses unconverted memory",
       "targets": [
         {
           "anchor": {
@@ -3101,7 +3159,7 @@
       ]
     },
     "295": {
-      "note": "Worklist scope is one-pass and insertion/deletion linkage is side-specific",
+      "note": "**Retained historical source account — superseded by the current route account:** Worklist scope is one-pass and insertion/deletion linkage is side-specific",
       "targets": [
         {
           "anchor": {
@@ -3119,7 +3177,7 @@
       ]
     },
     "296": {
-      "note": "Closeout invokes mandatory candidate gate before publication",
+      "note": "**Retained historical source account — superseded by the current route account:** Closeout invokes mandatory candidate gate before publication",
       "targets": [
         {
           "anchor": {
@@ -3135,8 +3193,8 @@
         },
         {
           "anchor": {
-            "blob": "d1209e8d11ad679ddb63c09500733154b49ffc65",
-            "content": "sha256:9d1eb1610879be90797c11fd23bcb208c65c95e43cb9c46650015ac0cbd3a8b2",
+            "blob": "16170495bfefc7b4695e565427ce20e47d6cf726",
+            "content": "sha256:5efb6f0492fecfca6112b104aed53bfcd7f1b0c33d11ebe518fb908e4f1d9351",
             "locator": {
               "end": 912,
               "kind": "line_range",
@@ -3145,11 +3203,22 @@
             "path": "mcp/src/agents_remember/worktrees/modules/closeout.py"
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "16170495bfefc7b4695e565427ce20e47d6cf726",
+            "content": "sha256:a11094f88726f11a7585137e1178fc6dcf269a675547ec964b8021ff835a467d",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/closeout.py"
+          },
+          "kind": "code"
         }
       ]
     },
     "297": {
-      "note": "Exact memory output is validated/gated against parent tip with leaf-publication context",
+      "note": "**Retained historical source account — superseded by the current route account:** Exact memory output is validated/gated against parent tip with leaf-publication context",
       "targets": [
         {
           "anchor": {
@@ -3165,8 +3234,8 @@
         },
         {
           "anchor": {
-            "blob": "12eb97789e3b5b076082ea8c463b176ac39fed14",
-            "content": "sha256:a3dfff9a80ab61dac7ec8d6e71c9b8dcc5b75fc736832cd9dd532921a2a28ced",
+            "blob": "eecdaff3bad79ebac4230c53a03b1b6e2e47c1cf",
+            "content": "sha256:81159ff785258e3f528aa8dbc719294f99aa3a918805f0e81fc758cd92f8bf6d",
             "locator": {
               "end": 493,
               "kind": "line_range",
@@ -3175,24 +3244,23 @@
             "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "eecdaff3bad79ebac4230c53a03b1b6e2e47c1cf",
+            "content": "sha256:b4b64e690f1183dff4dd72d8c7499aa007f8a2bb01db4e82338a750dd4f62f15",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
+          },
+          "kind": "code"
         }
       ]
     },
     "298": {
-      "note": "Integration/checkpoint preview and apply encounter knowledge boundary; leaf and series predicates differ",
+      "note": "**Retained historical source account — superseded by the current route account:** Integration/checkpoint preview and apply encounter knowledge boundary; leaf and series predicates differ\n\nAnchor: `integration_gate_block`",
       "targets": [
-        {
-          "anchor": {
-            "blob": "b7c1cdbb6b82fa751e51722404352099fba9aa25",
-            "content": "sha256:ba0f45687a8d0a9c237f8191b49fee25aef4d9515b6f927ee7e37a2a5006f76e",
-            "locator": {
-              "kind": "symbol",
-              "name": "integration_gate_block"
-            },
-            "path": "mcp/src/agents_remember/worktrees/modules/integration_gate.py"
-          },
-          "kind": "code"
-        },
         {
           "anchor": {
             "blob": "1f67d47b47455dbb360a0884ecaa0e4aa1da3383",
@@ -3205,11 +3273,22 @@
             "path": "mcp/src/agents_remember/worktrees/modules/integrate.py"
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d2f3e6ac1adf4ec90ff5a8150cb65d2e46941403",
+            "content": "sha256:db02717153d515bdeec918a67b65300e96933de2ae80a8197b0525e3b7819cd1",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/integration_gate.py"
+          },
+          "kind": "code"
         }
       ]
     },
     "299": {
-      "note": "Raw quality status and combined coherence readiness remain distinct; a coherence refusal retains its code and next action",
+      "note": "**Retained historical source account — superseded by the current route account:** Raw quality status and combined coherence readiness remain distinct; a coherence refusal retains its code and next action",
       "targets": [
         {
           "anchor": {
@@ -3226,27 +3305,14 @@
       ]
     },
     "3": {
-      "note": "The gate over a leaf's exact candidate.",
+      "note": "**Retained historical source account — superseded by the current route account:** The gate over a leaf's exact candidate.\n\nAnchor: `evaluate_leaf_gate` `judge`",
       "targets": [
         {
           "anchor": {
-            "blob": "6d9044763997b7c562f1dce7c4f8beb226668066",
-            "content": "sha256:02f37ffbb9758065d669c38ff5c5f43942e4e1fe7040701a89c7e717f55c3e3c",
+            "blob": "c7ee6796c238d63d1e061ee0c8c1c84b4b214cec",
+            "content": "sha256:f9dcdd0f960f2e21d31bc302d3c6aa8539197d87f2d3bd4ba5ff7049b88bb623",
             "locator": {
-              "kind": "symbol",
-              "name": "evaluate_leaf_gate"
-            },
-            "path": "mcp/src/agents_remember/application/knowledge_gate/gate.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "ea0d8c54155a5b5f0bc6a7cef7dd021b8138b53a",
-            "content": "sha256:3af1450a2461edec9852f158e36e1ee5bcb7bc8b28bc87377fa717436d877abd",
-            "locator": {
-              "kind": "symbol",
-              "name": "judge"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/knowledge_gate/gate.py"
           },
@@ -3255,15 +3321,14 @@
       ]
     },
     "30": {
-      "note": "The subjects and the gate predicate.",
+      "note": "**Retained historical source account — superseded by the current route account:** The subjects and the gate predicate.\n\nAnchor: `unexplained_satisfied_by`",
       "targets": [
         {
           "anchor": {
-            "blob": "8f2ab5cc79f6dbb52aeb6c4f674ae9e8e5b970d2",
-            "content": "sha256:39b0cd7ac374c1852152d8a2f8d1f26352994393969238aa7eaf9bd728aeca33",
+            "blob": "cb79edf633cadb4bd29fd54e3d43c163348e7cff",
+            "content": "sha256:5116f7604155cb1f7a59b53a4fb841dd6a27b74e687f387a5fe6fb250474be98",
             "locator": {
-              "kind": "symbol",
-              "name": "unexplained_satisfied_by"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/models/knowledge_files/unexplained.py"
           },
@@ -3272,15 +3337,14 @@
       ]
     },
     "301": {
-      "note": "Investigator refuses leaf selection and validates canonical topology",
+      "note": "**Retained historical source account — superseded by the current route account:** Investigator refuses leaf selection and validates canonical topology\n\nAnchor: `resolve_role_launch_context`",
       "targets": [
         {
           "anchor": {
-            "blob": "2262f26dcddb19591ea6feba223461b2d573a099",
-            "content": "sha256:4a5595cdfe5a617431ca8f703459fb54a5eaf6f7c4cb81ccdaf8f60cabe45398",
+            "blob": "caa8c6e923b4efaeb1c61856c613d10771f7a6c3",
+            "content": "sha256:f7b28dd7554d05981e89e904bb1db6628663c831c79ffc5af1491a7ee2840c22",
             "locator": {
-              "kind": "symbol",
-              "name": "resolve_role_launch_context"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/role_launch_context.py"
           },
@@ -3289,8 +3353,21 @@
       ]
     },
     "302": {
-      "note": "Leaf sibling handover supplies canonical role/task arguments",
+      "note": "**Retained historical source account — superseded by the current route account:** Leaf sibling handover supplies canonical role/task arguments",
       "targets": [
+        {
+          "anchor": {
+            "blob": "22c18d8af149dc6c56458157e5fc782db0309e51",
+            "content": "sha256:42ad021e4f065aa293c21e685e4f12f72b40de8cf09456ad8dd82a5881f41574",
+            "locator": {
+              "end": 858,
+              "kind": "line_range",
+              "start": 845
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
+          },
+          "kind": "code"
+        },
         {
           "anchor": {
             "blob": "22c18d8af149dc6c56458157e5fc782db0309e51",
@@ -3307,7 +3384,7 @@
       ]
     },
     "303": {
-      "note": "Replay retains agent identity and typed created/refused/no-answer outcomes; held launch calls omit the first host prompt",
+      "note": "**Retained historical source account — superseded by the current route account:** Replay retains agent identity and typed created/refused/no-answer outcomes; held launch calls omit the first host prompt\n\nAnchor: `LaunchOutcome` `build_launch_call`",
       "targets": [
         {
           "anchor": {
@@ -3323,8 +3400,8 @@
         },
         {
           "anchor": {
-            "blob": "fcf59cc63bd67401f035bd26fe21e6018d385cb5",
-            "content": "sha256:c327cf439bbbe64126236f89ce74fe605de29465d19085f2f677cae5c31e7d5b",
+            "blob": "e41b09f9728125e4e62b2317995c3401783e8b62",
+            "content": "sha256:ba9d39e2949e95a2002085a1b7006f129472b2e6bd5f2c6f0c97e04af7c64e22",
             "locator": {
               "kind": "symbol",
               "name": "build_launch_call"
@@ -3345,11 +3422,22 @@
             "path": "mcp/src/agents_remember/cli/paseo_launch.py"
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e41b09f9728125e4e62b2317995c3401783e8b62",
+            "content": "sha256:61baace6ce450066ae3245a1bfe0307f23e5e45eccf075fbb3f7a49fb628c161",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_launch.py"
+          },
+          "kind": "code"
         }
       ]
     },
     "304": {
-      "note": "Candidate environment setup and interpreter disclosure are repository-tool-note obligations",
+      "note": "**Retained historical source account — superseded by the current route account:** Candidate environment setup and interpreter disclosure are repository-tool-note obligations",
       "targets": [
         {
           "anchor": {
@@ -3367,7 +3455,7 @@
       ]
     },
     "305": {
-      "note": "Read revalidation checks selections first and excludes failed observations from memo reuse",
+      "note": "**Retained historical source account — superseded by the current route account:** Read revalidation checks selections first and excludes failed observations from memo reuse",
       "targets": [
         {
           "anchor": {
@@ -3384,7 +3472,7 @@
       ]
     },
     "306": {
-      "note": "Worklist limits count shared computations and deliberately omit an arbitrary result-byte cap",
+      "note": "**Retained historical source account — superseded by the current route account:** Worklist limits count shared computations and deliberately omit an arbitrary result-byte cap",
       "targets": [
         {
           "anchor": {
@@ -3415,7 +3503,7 @@
       ]
     },
     "307": {
-      "note": "Git includes a fourth bulk-remote timeout and fixed parsed-diff options",
+      "note": "**Retained historical source account — superseded by the current route account:** Git includes a fourth bulk-remote timeout and fixed parsed-diff options",
       "targets": [
         {
           "anchor": {
@@ -3437,11 +3525,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "dec31ccdcb591d5166431d390ccbbd2612e63565",
-            "content": "sha256:5c666937acc20101aa93a1c7218fd85e9ec69b47641ee6d9b49abf18935c45df",
+            "blob": "dcbcb92eb8805a1f241603ea248fdac21fb64a9d",
+            "content": "sha256:b28201e37edc84ad3d469c3fc9825fdd6e6605b505dd2f65425503a2c469f0bb",
             "locator": {
-              "kind": "symbol",
-              "name": "finalize_result"
+              "end": 133,
+              "kind": "line_range",
+              "start": 73
             },
             "path": "mcp/src/agents_remember/worktrees/modules/finalize.py"
           },
@@ -3459,11 +3548,23 @@
             "path": "mcp/src/agents_remember/worktrees/modules/finalize.py"
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "dcbcb92eb8805a1f241603ea248fdac21fb64a9d",
+            "content": "sha256:0afd302bcef7414ad5aad30607ccc626405b2bcf3f9caf16f217482702c319f9",
+            "locator": {
+              "kind": "symbol",
+              "name": "finalize_result"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/finalize.py"
+          },
+          "kind": "code"
         }
       ]
     },
     "309": {
-      "note": "Current declared collected-case budgets supersede historical totals",
+      "note": "**Retained historical source account — superseded by the current route account:** Current declared collected-case budgets supersede historical totals",
       "targets": [
         {
           "anchor": {
@@ -3481,25 +3582,25 @@
       ]
     },
     "31": {
-      "note": "A delete-only hunk is linked only by a K_B range (and, since MIK-R09, an insertion-only hunk only by a K_C range).\n\nAnchor: \"def _linked(\"; \"hunk.new_count > 0 and any(hits_new(hunk, span) for span in candidate_spans)\"",
+      "note": "A delete-only hunk is linked only by a K_B range (and, since MIK-R09, an insertion-only hunk only by a K_C range).  Anchor: \"def _linked(\"; \"hunk.new_count > 0 and any(hits_new(hunk, span) for span in candidate_spans)\"  The Anchor caption above records the historical `_linked`/`candidate_spans` spelling. Current enforcement is `linkage._classify_hunk`: the before and after comprehensions require changed lines on their own side (`old_count > 0` with `hits_old`, and `new_count > 0` with `hits_new`).",
       "targets": [
         {
           "anchor": {
-            "blob": "a9361b86286bca9cc42dd02954bfb370d3f6ac13",
-            "content": "sha256:033e36db176b1d3e36a27335c39eddedf3572b96f51e878f34855cdadfc20170",
+            "blob": "6d7207b62870c112ca4f25941c37846c0152a38a",
+            "content": "sha256:8912f9f67746b904bd5a452b7503ed165cd7c2e8ac09e8ead7b4c1a83286919b",
             "locator": {
-              "end": 635,
+              "end": 126,
               "kind": "line_range",
-              "start": 623
+              "start": 102
             },
-            "path": "mcp/src/agents_remember/application/knowledge_worklist/compute.py"
+            "path": "mcp/src/agents_remember/application/knowledge_worklist/linkage.py"
           },
           "kind": "code"
         }
       ]
     },
     "310": {
-      "note": "Native tree preload and correcting single-document HTTP authority, paged live-ID census, and settings-bound explicit provision notice without execution.",
+      "note": "The bridge's internal daemon client and its first-message delivery, and the two chat routes over them: the tree's preloaded live-agent answer and the single-document read that corrects it.",
       "targets": [
         {
           "anchor": {
@@ -3516,8 +3617,8 @@
         },
         {
           "anchor": {
-            "blob": "de7fbf7d79fa0c64e418ea0db6062ed02bd1e403",
-            "content": "sha256:465653b6f37b69218e1c13a896dbe02d5ce69bcec9d126fabbb11b2daf737d02",
+            "blob": "d567e4338eff6de6f22fe372f65b92ef650658d0",
+            "content": "sha256:44a4a3c46c23bb58709ed5a5622cc1fd4d8a18c4400f8d5214151d68a146c18d",
             "locator": {
               "end": 248,
               "kind": "line_range",
@@ -3529,8 +3630,8 @@
         },
         {
           "anchor": {
-            "blob": "de7fbf7d79fa0c64e418ea0db6062ed02bd1e403",
-            "content": "sha256:b6baa17f873e054de1e17daa3038a235883d45284cf322049de8378983281834",
+            "blob": "d567e4338eff6de6f22fe372f65b92ef650658d0",
+            "content": "sha256:07107728aaac2fd5b429aacacfaae0cce32c6156b7a8da8a80e5c859560b5c09",
             "locator": {
               "end": 757,
               "kind": "line_range",
@@ -3555,8 +3656,8 @@
         },
         {
           "anchor": {
-            "blob": "a92df2426bda17e9a9f64039b6e73de6b2a7a15b",
-            "content": "sha256:59101bb7c6b33ee7f1b00bdd594a31430e49add45e200baf4d5c12b759f017a1",
+            "blob": "b160c3eb913163895e071cef3c99a8a2b98c2976",
+            "content": "sha256:35df5ff345f8b2ac16b5d235c1830c4b76602f7b909b62ea51c1a3a42b80f757",
             "locator": {
               "kind": "file"
             },
@@ -3566,8 +3667,8 @@
         },
         {
           "anchor": {
-            "blob": "55ebe83d1d9bc7b363420e0887b3831b6f268132",
-            "content": "sha256:a57843180e95c0f93a7f2eb39a75dfa992fbf8d50097a72bff67070cc7637b3b",
+            "blob": "edf0fbb7f0b42b3939d6da42c0b98a6cbb49f988",
+            "content": "sha256:5c135f9257d645c1b7fec5ef80e91e56cb912e6a500ae07f9aa549146aae1737",
             "locator": {
               "kind": "file"
             },
@@ -3589,14 +3690,16 @@
       ]
     },
     "311": {
-      "note": "The runtime synchronizer declares five targets without docs; retained packaged tool details do not add a sixth generator target.",
+      "note": "The runtime synchronizer declares four targets without docs; retained packaged tool details do not add a fifth generator target.",
       "targets": [
         {
           "anchor": {
             "blob": "3b1bd6f7b950d2b87c86a701ba2c3ed2619de251",
-            "content": "sha256:5efbfb3083d10851ac6be03d408d2938bb2df9a29cb46ac6ac4f6727f26b365e",
+            "content": "sha256:04ddc6cc8299200d61a26dccfee7637f3d665d13efcad88e7fe24920d3ebe004",
             "locator": {
-              "kind": "file"
+              "end": 62,
+              "kind": "line_range",
+              "start": 53
             },
             "path": "scripts/sync-runtime.py"
           },
@@ -3604,10 +3707,12 @@
         },
         {
           "anchor": {
-            "blob": "ec9e8600bf2db7e6d40f038dbac22650c7fdce36",
-            "content": "sha256:4037e580c7e88b75ace538ea2b3bde769e708346f1189d3c82a7b5a103ef5024",
+            "blob": "2b635ee176f4fb5b39f31f5a621e0169376a6fc0",
+            "content": "sha256:31cacb87830e073b464b4e469eb42cea522da5139af0f2d7ce654c9ccaa25442",
             "locator": {
-              "kind": "file"
+              "end": 8,
+              "kind": "line_range",
+              "start": 1
             },
             "path": "mcp/src/agents_remember/package_data/runtime/docs/tool-details.md"
           },
@@ -3620,8 +3725,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "151403083daa285dde3b0cbff00801440a07f954",
-            "content": "sha256:fec8891762c5537c1e16720e764bd2a32b52558071de152afd39b6d36546c80c",
+            "blob": "0b1b129b84a4201b1f747ddfe2b049e3f00bd347",
+            "content": "sha256:f9c53cd2c1c681a3c237c83a169afba1086a1306246f597fab8b838d55c2c4a7",
             "locator": {
               "end": 73,
               "kind": "line_range",
@@ -3716,8 +3821,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4bfc02956d94b6b490c6ccdcd5a93694127f5cca",
-            "content": "sha256:13d1cecbfa436c465d32b52131c227d7c6ca23396dbef1096e35df37ec54608d",
+            "blob": "d0b0ddd9f150e32116b430ecc74907fcf68fee97",
+            "content": "sha256:1fb6648038747e81d570f9ad351220a00136d0b755b7e968bc05d1bba6bcf351",
             "locator": {
               "end": 73,
               "kind": "line_range",
@@ -3730,12 +3835,12 @@
       ]
     },
     "317": {
-      "note": "**Retained historical source account — superseded by the current route account:** The mounted read's leaf response, of a path or (since MIK-R05) a family seed.\n\nAnchor: `_leaf_response`",
+      "note": "**Retained historical source account — superseded by the current route account:** The mounted read's leaf response, of a path or (since MIK-R05) a family seed.",
       "targets": [
         {
           "anchor": {
-            "blob": "f88bb661f85cb46755bade8be26469270181b8e7",
-            "content": "sha256:6663f74a814545efd5290af88c056a6a0fc1640b5a00b2b0dec9104312f73238",
+            "blob": "2e48a7f6cc081b63ab5137fc50e99d764788f520",
+            "content": "sha256:e19c94b6f01431198d3ed4919b379a66f760aa92c5e528c0ec635c8a82d1d9b8",
             "locator": {
               "kind": "file"
             },
@@ -3746,12 +3851,12 @@
       ]
     },
     "318": {
-      "note": "**Retained historical source account — superseded by the current route account:** **The response field the block travels on, carried by the strict response model rather than re-declared.**\n\nAnchor: `published_intent`",
+      "note": "**Retained historical source account — superseded by the current route account:** **The response field the block travels on, carried by the strict response model rather than re-declared.**",
       "targets": [
         {
           "anchor": {
-            "blob": "f16f2fa511a8c67df58358ea6370a27900307caa",
-            "content": "sha256:0b663e87d455e3a199959cbbd6280f3bb08829e83bc16529db52ee6204e56a64",
+            "blob": "ef10b35504e856788e45bc5b3988c4bab198da2f",
+            "content": "sha256:c6d5370cb33984aa7c8997c56fe3af7e65b2ada4e24f4414e62fb0636600b25b",
             "locator": {
               "kind": "file"
             },
@@ -3766,8 +3871,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c4b8e1c904ac33eee8cefc18a6449f9ef43e381b",
-            "content": "sha256:d9d6a52ebdded4a88e5fecea5f55eeccbab5b880a4785692488bb01efc186ef4",
+            "blob": "6048ab1024ddfdbf9af5ed71fb6abcfb07b6128d",
+            "content": "sha256:82a1494dd64dfb44897c6139d8c81207aaaf4543e441b6f95020ca80551cec9c",
             "locator": {
               "kind": "file"
             },
@@ -3782,12 +3887,38 @@
       "targets": [
         {
           "anchor": {
-            "blob": "11ba98ff63f4a4815985ac51e2c0c7b5a48556a4",
-            "content": "sha256:ec0dd1c1505d15aa1f5a2934d145bf3a19e9bcb63677bac088f2d5dd07452164",
+            "blob": "102c4550ab6429f44c8fb543d1d0662de66a1b8c",
+            "content": "sha256:4a39e0fccce5a736c9676f5d0015441e750f88931a3e36276047ee371e324a1e",
             "locator": {
-              "end": 476,
+              "end": 324,
               "kind": "line_range",
-              "start": 476
+              "start": 324
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "102c4550ab6429f44c8fb543d1d0662de66a1b8c",
+            "content": "sha256:b6cc1ca0fd0d7aa788517485aee9f2b5ec3d520f9b000ecb2f8d2321e4271e33",
+            "locator": {
+              "end": 340,
+              "kind": "line_range",
+              "start": 340
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "102c4550ab6429f44c8fb543d1d0662de66a1b8c",
+            "content": "sha256:f9dc9014637fcd247260c1e316f01404266fd5552dc69a4aae4268b8d42dc66f",
+            "locator": {
+              "end": 321,
+              "kind": "line_range",
+              "start": 321
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -3796,12 +3927,12 @@
       ]
     },
     "320": {
-      "note": "**Retained historical source account — superseded by the current route account:** **The case that holds the carrier to the payload's real field spellings instead of a second vocabulary.**\n\nAnchor: `test_the_carrier_uses_the_field_spellings_the_payload_actually_returns`",
+      "note": "**Retained historical source account — superseded by the current route account:** **The case that holds the carrier to the payload's real field spellings instead of a second vocabulary.**",
       "targets": [
         {
           "anchor": {
-            "blob": "d1b12eae446c7b5bdf3c25826915274bc695f9f6",
-            "content": "sha256:2515b79eb10278f0c3e45076e4c215f7136f78a3d890c9ab8dfdb28c7d344a8a",
+            "blob": "e338a878b22250c3dafb8dd92f83643e5293f3f6",
+            "content": "sha256:533e17a7865c395755ed010c160ea9501769b2e4e2ec02b5a5ae889d92f45c30",
             "locator": {
               "kind": "file"
             },
@@ -3874,12 +4005,23 @@
       ]
     },
     "324": {
-      "note": "Task stage is authored; only started tasks receive known bound host activity and contributing event time.",
+      "note": "Task stage is authored; only started tasks receive known bound host activity and contributing event time.\n\nAnchor: `task_state`",
       "targets": [
         {
           "anchor": {
-            "blob": "564349efd6690c9aeb0774d8b9484607bea28578",
-            "content": "sha256:783b529697ba77a51d7a461d01e8d1538029804c7b26b6b2df00a5559bd61163",
+            "blob": "26edfc879fceb5c3c0c071a8bf8d54180caebe20",
+            "content": "sha256:510623323eed533a9a5132dda425f0d11dcfeeb2aedc68924e039a62d60ebf87",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/observer/task_entries.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "26edfc879fceb5c3c0c071a8bf8d54180caebe20",
+            "content": "sha256:c5dd1e2305a20ba936649eb75ff0d84791f7f60e558984b8d5069b5a4aae7318",
             "locator": {
               "kind": "symbol",
               "name": "task_state"
@@ -3891,12 +4033,23 @@
       ]
     },
     "325": {
-      "note": "Complete current-boot host reconciliation and the supervisor subscription precede binding activity to tasks.",
+      "note": "Complete current-boot host reconciliation and the supervisor subscription precede binding activity to tasks.\n\nAnchor: `read`",
       "targets": [
         {
           "anchor": {
-            "blob": "61d4f481e3ba6249ed57a34960988f5602893271",
-            "content": "sha256:f6473ce2a17e8469b121feada1d4dbfad57696bc1feffd780fd6b4c0980362fe",
+            "blob": "0ce1357b19b87897a111544e0477ef1d7bb1450f",
+            "content": "sha256:bdff12ea41d26dcc2816d777441d8833df29687f28f3ba4c08c94a05d7897673",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/serving/projections/host_activity.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0ce1357b19b87897a111544e0477ef1d7bb1450f",
+            "content": "sha256:df2d59936624d3cd1d59a7b6615ca58d30c8b6ae4b0021a6bb4218781d78f63e",
             "locator": {
               "kind": "symbol",
               "name": "read"
@@ -3910,6 +4063,19 @@
     "326": {
       "note": "Replayed role launch publishes receipt identity before invoking its host launch call.",
       "targets": [
+        {
+          "anchor": {
+            "blob": "12aab96f86c33555f5973aa2e4fc3cf0a6b827b4",
+            "content": "sha256:3cefb35aac64c3af861a9ed705c8e1b98dabcb4009fc97a9ed9b18591136b342",
+            "locator": {
+              "end": 130,
+              "kind": "line_range",
+              "start": 95
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_receipts.py"
+          },
+          "kind": "code"
+        },
         {
           "anchor": {
             "blob": "12aab96f86c33555f5973aa2e4fc3cf0a6b827b4",
@@ -3978,16 +4144,16 @@
       ]
     },
     "33": {
-      "note": "The four-tree comparison, pinned and recorded.",
+      "note": "**Retained historical source account — superseded by the current route account:** The four-tree comparison, pinned and recorded.\n\nAnchor: `ComparisonRecordBinding`",
       "targets": [
         {
           "anchor": {
-            "blob": "25ccba8ee5a4be236b2383b588f11bc1d1c259bc",
-            "content": "sha256:877612ca9d29d80b2ea0b9c614fda61f6b617340f8d3286969eff953370c6123",
+            "blob": "251e7c89eb87aa6086e0059351fa20f921d94638",
+            "content": "sha256:c9150b4c6814ed6e50f4c4cea4115c966d2881137f619f854fab26b2d0b943a0",
             "locator": {
               "kind": "file"
             },
-            "path": "mcp/src/agents_remember/application/review_tree_comparison.py"
+            "path": "mcp/src/agents_remember/application/review_comparison_generation.py"
           },
           "kind": "code"
         }
@@ -4184,12 +4350,12 @@
       ]
     },
     "34": {
-      "note": "The archive hook's identity sources and confinement.\n\nAnchor: \"Where every target's identity comes from\"",
+      "note": "**Retained historical source account — superseded by the current route account:** The archive hook's identity sources and confinement.",
       "targets": [
         {
           "anchor": {
-            "blob": "1129a2652b027f80486312b85456316b0b5352bd",
-            "content": "sha256:65b3cdb9f8d5ecc4e630765490d24cf32505c709dec9762a31420d44b271e929",
+            "blob": "f95b27fce734207dfed095fef56f3046175557a2",
+            "content": "sha256:d20e718fe4ac01af4f9d62935a22f0f41513ae0fb5d3eb4f399c4c6e81d3c919",
             "locator": {
               "end": 41,
               "kind": "line_range",
@@ -4277,11 +4443,11 @@
         {
           "anchor": {
             "blob": "126d045c43fbd830d1f124ab63fee6589db5d1ff",
-            "content": "sha256:9bbb915b34641b1b996d8cd679b5bbff623d351540c344306961f66c4ae770d5",
+            "content": "sha256:e1727558bc399ae17878c0fed039f0cd70ce35670de1bfb80b9a09af461dceb2",
             "locator": {
-              "end": 200,
+              "end": 196,
               "kind": "line_range",
-              "start": 184
+              "start": 180
             },
             "path": "mcp/src/agents_remember/cli/dashboard.py"
           },
@@ -4289,12 +4455,25 @@
         },
         {
           "anchor": {
-            "blob": "ce97943bcb1ef376a409533fe918f3be400d6681",
-            "content": "sha256:f898d47ab1ca1dc5147f59c57ca4b7a8115f118142130e73cc4eaac78420cd53",
+            "blob": "126d045c43fbd830d1f124ab63fee6589db5d1ff",
+            "content": "sha256:7a7e0b8f83b0d4094797cc1d3004a09431a4348d802ff49ed2f3967d07c45cb9",
             "locator": {
               "end": 248,
               "kind": "line_range",
               "start": 226
+            },
+            "path": "mcp/src/agents_remember/cli/dashboard.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "126d045c43fbd830d1f124ab63fee6589db5d1ff",
+            "content": "sha256:9bbb915b34641b1b996d8cd679b5bbff623d351540c344306961f66c4ae770d5",
+            "locator": {
+              "end": 200,
+              "kind": "line_range",
+              "start": 184
             },
             "path": "mcp/src/agents_remember/cli/dashboard.py"
           },
@@ -4367,6 +4546,45 @@
     "347": {
       "note": "The request-head bound is 64 KiB in both foreground and reload serving.\n\nAnchor: \"DASHBOARD_H11_MAX_INCOMPLETE_EVENT_SIZE = 64 * 1024\"; \"def run(\"; \"def _run_reload_server(\"",
       "targets": [
+        {
+          "anchor": {
+            "blob": "126d045c43fbd830d1f124ab63fee6589db5d1ff",
+            "content": "sha256:0646fa469573ee43c8513cae3562d1583576da52dc0603c63ac09499fcf165d4",
+            "locator": {
+              "end": 79,
+              "kind": "line_range",
+              "start": 73
+            },
+            "path": "mcp/src/agents_remember/cli/dashboard.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "126d045c43fbd830d1f124ab63fee6589db5d1ff",
+            "content": "sha256:79cb70b54ede6744f89414c495d975be20a4230a892b343561c1ab574852e4ea",
+            "locator": {
+              "end": 404,
+              "kind": "line_range",
+              "start": 366
+            },
+            "path": "mcp/src/agents_remember/cli/dashboard.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "126d045c43fbd830d1f124ab63fee6589db5d1ff",
+            "content": "sha256:4f3a1f484435bf108edd6b0d6dbb72b6de0615c58d9f69f62f25c9c1f8420c34",
+            "locator": {
+              "end": 446,
+              "kind": "line_range",
+              "start": 424
+            },
+            "path": "mcp/src/agents_remember/cli/dashboard.py"
+          },
+          "kind": "code"
+        },
         {
           "anchor": {
             "blob": "126d045c43fbd830d1f124ab63fee6589db5d1ff",
@@ -4458,7 +4676,7 @@
       ]
     },
     "35": {
-      "note": "The tree view route.",
+      "note": "**Retained historical source account — superseded by the current route account:** The tree view route.",
       "targets": [
         {
           "anchor": {
@@ -4542,6 +4760,19 @@
         {
           "anchor": {
             "blob": "d567e4338eff6de6f22fe372f65b92ef650658d0",
+            "content": "sha256:c968c1884cff2af1a86b7b33d364870c7af2cc16de93126ea32c6bee30f4b8f2",
+            "locator": {
+              "end": 1140,
+              "kind": "line_range",
+              "start": 1079
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_bridge.mjs"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d567e4338eff6de6f22fe372f65b92ef650658d0",
             "content": "sha256:14a3c70b338ddd80b68af4f59bec9ef9c5cc6d9b2408feb2ae6ed36e86d8ed28",
             "locator": {
               "end": 1169,
@@ -4557,6 +4788,19 @@
     "353": {
       "note": "Filing removes only newly created orphan pick blobs on pre-message failure.\n\nAnchor: \"def _save_blob(\"; \"def message_filing(\"",
       "targets": [
+        {
+          "anchor": {
+            "blob": "ac827458f27200ce6218cfa709586ce7030bae64",
+            "content": "sha256:e9015389eab393192320f05a59f1d0684335fb58c5214d27178d162a70fae7ec",
+            "locator": {
+              "end": 172,
+              "kind": "line_range",
+              "start": 97
+            },
+            "path": "mcp/src/agents_remember/cli/developer_message_files.py"
+          },
+          "kind": "code"
+        },
         {
           "anchor": {
             "blob": "ac827458f27200ce6218cfa709586ce7030bae64",
@@ -4577,8 +4821,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "86947944f54b6b0791bb41a6fb5035f041075466",
-            "content": "sha256:770a8f991d9f97ff414ce10a52e6f887ca8daafe1554641d19d69443154e68e5",
+            "blob": "ac827458f27200ce6218cfa709586ce7030bae64",
+            "content": "sha256:18a4d30d220ba47deaa283d75c77573fd043b107ee50bbbc0d544d5441094af4",
             "locator": {
               "end": 398,
               "kind": "line_range",
@@ -4667,12 +4911,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e2f1038f8f99aa45375bfa21ef0e369c5639cc46",
-            "content": "sha256:6d425e49eba09ed484545ec3fa44ce69efc1c51b40a65bd72e535bb227904e5a",
+            "blob": "3f0a6693c859f3300eb3e4a2ed3439fb33e1d04f",
+            "content": "sha256:244ad766686eeed2f6a112545749588636636b277f39697fd6d4fe1db07bfe7b",
             "locator": {
-              "end": 189,
+              "end": 188,
               "kind": "line_range",
-              "start": 180
+              "start": 179
             },
             "path": "mcp/src/agents_remember/serving/_app_common.py"
           },
@@ -4681,15 +4925,14 @@
       ]
     },
     "36": {
-      "note": "The index format bump for the seal fix.",
+      "note": "**Retained historical source account — superseded by the current route account:** The index format bump for the seal fix.\n\nAnchor: `INDEX_FORMAT`",
       "targets": [
         {
           "anchor": {
-            "blob": "25a4d3da22648c0f7b11b574ec74e61b563af4c9",
-            "content": "sha256:5392692d6a6a2570b31cdaf3b8d399e101d0744d18a05ce4f0edab23e736301a",
+            "blob": "bf115f8935703beea2dfd4c3c075be4d6f0472d9",
+            "content": "sha256:225b1df15aad79eab4e226c496599c6d2a83746f1d8d4d02f2d3a1771313c432",
             "locator": {
-              "kind": "symbol",
-              "name": "INDEX_FORMAT"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/memory/knowledge_index/schema.py"
           },
@@ -4702,8 +4945,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ce97943bcb1ef376a409533fe918f3be400d6681",
-            "content": "sha256:9823d10da1160dc6fcf88f852c8fea599e434556904e8bb0c6f12e419d6b22ff",
+            "blob": "126d045c43fbd830d1f124ab63fee6589db5d1ff",
+            "content": "sha256:46c5e49607dc31e2f7cc4d0109b23ffcf419a4a9b04c24d0af483843012913b4",
             "locator": {
               "kind": "file"
             },
@@ -4719,11 +4962,11 @@
         {
           "anchor": {
             "blob": "126d045c43fbd830d1f124ab63fee6589db5d1ff",
-            "content": "sha256:f8d2f4f48a6c2d3de5e22aea3cc9ccff969f7a04cb1869dee82016b3ff19cdc9",
+            "content": "sha256:58071675058e5737a8512c8e1647006f41f1c45c56deed2619a6b180cbe5571b",
             "locator": {
-              "end": 249,
+              "end": 242,
               "kind": "line_range",
-              "start": 247
+              "start": 240
             },
             "path": "mcp/src/agents_remember/cli/dashboard.py"
           },
@@ -4731,12 +4974,12 @@
         },
         {
           "anchor": {
-            "blob": "ce97943bcb1ef376a409533fe918f3be400d6681",
-            "content": "sha256:7ca7863630b02f951726cf398e667e9a3030537bb387228196de990fddc405bf",
+            "blob": "126d045c43fbd830d1f124ab63fee6589db5d1ff",
+            "content": "sha256:f8d2f4f48a6c2d3de5e22aea3cc9ccff969f7a04cb1869dee82016b3ff19cdc9",
             "locator": {
-              "end": 248,
+              "end": 249,
               "kind": "line_range",
-              "start": 119
+              "start": 247
             },
             "path": "mcp/src/agents_remember/cli/dashboard.py"
           },
@@ -4747,6 +4990,32 @@
     "362": {
       "note": "The composition root binds distinct knowledge-review and entry-list ports through their application adapters.",
       "targets": [
+        {
+          "anchor": {
+            "blob": "126d045c43fbd830d1f124ab63fee6589db5d1ff",
+            "content": "sha256:58071675058e5737a8512c8e1647006f41f1c45c56deed2619a6b180cbe5571b",
+            "locator": {
+              "end": 242,
+              "kind": "line_range",
+              "start": 240
+            },
+            "path": "mcp/src/agents_remember/cli/dashboard.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "126d045c43fbd830d1f124ab63fee6589db5d1ff",
+            "content": "sha256:de465d436faf68a495c7f7fe4997d3e0322d0133143f10c79b9dab3dea8221d8",
+            "locator": {
+              "end": 195,
+              "kind": "line_range",
+              "start": 155
+            },
+            "path": "mcp/src/agents_remember/cli/dashboard.py"
+          },
+          "kind": "code"
+        },
         {
           "anchor": {
             "blob": "126d045c43fbd830d1f124ab63fee6589db5d1ff",
@@ -4879,12 +5148,25 @@
         },
         {
           "anchor": {
-            "blob": "6577555f1e999bbd273e7cf52324244d2b863929",
-            "content": "sha256:6c9f0b508c6761d91dc59b44c289511fb9a5a67eecd54aa2ff8d11addefa7801",
+            "blob": "d60acd0e4be738b9a9a33eb9f333fa6c53974f2b",
+            "content": "sha256:e669e0d6d224ab2ead67e219cbde590be1a3421836c5127052544722903612f9",
             "locator": {
-              "end": 229,
+              "end": 183,
               "kind": "line_range",
-              "start": 223
+              "start": 177
+            },
+            "path": "mcp/src/agents_remember/serving/app.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d60acd0e4be738b9a9a33eb9f333fa6c53974f2b",
+            "content": "sha256:0040e48daaeae2e64a9bbd610c309fc149e048df9d9363102a69e8432222bbb4",
+            "locator": {
+              "end": 175,
+              "kind": "line_range",
+              "start": 169
             },
             "path": "mcp/src/agents_remember/serving/app.py"
           },
@@ -4948,12 +5230,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "11ba98ff63f4a4815985ac51e2c0c7b5a48556a4",
-            "content": "sha256:d23e1716307e9592d3a5ec1ca9f7c2495a349f8e5ca88d6c0026e6c2ad5c72a2",
+            "blob": "102c4550ab6429f44c8fb543d1d0662de66a1b8c",
+            "content": "sha256:65870d8bf072581aae2e74e46f3f91600d874e4babbd72a6acac9137900ba98a",
             "locator": {
-              "end": 369,
+              "end": 138,
               "kind": "line_range",
-              "start": 369
+              "start": 138
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -4961,12 +5243,64 @@
         },
         {
           "anchor": {
-            "blob": "11ba98ff63f4a4815985ac51e2c0c7b5a48556a4",
-            "content": "sha256:526a643244ab1dbb0d8f374c24e9047cc62d337dcb37d130f76a0ab5725ee5b5",
+            "blob": "102c4550ab6429f44c8fb543d1d0662de66a1b8c",
+            "content": "sha256:55aae7f94adeaee949444718419adb19e16cc7f7312f0ed50d8c4db0f98dc21f",
             "locator": {
-              "end": 347,
+              "end": 156,
               "kind": "line_range",
-              "start": 347
+              "start": 156
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "102c4550ab6429f44c8fb543d1d0662de66a1b8c",
+            "content": "sha256:2fa53d75d1a4d6ef8e4c45600fb5f9678bb7206ba3b69dd24ee8963593f7ebfd",
+            "locator": {
+              "end": 154,
+              "kind": "line_range",
+              "start": 154
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "102c4550ab6429f44c8fb543d1d0662de66a1b8c",
+            "content": "sha256:ef900a5b38b3a4393ac60a6d42f336d540dcb806538d4acca19a65c9c1fc194c",
+            "locator": {
+              "end": 172,
+              "kind": "line_range",
+              "start": 172
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "102c4550ab6429f44c8fb543d1d0662de66a1b8c",
+            "content": "sha256:69d8280dc81168ccad9bbfe29ba5f03699c91984d70f014cb8aaa09868400e4d",
+            "locator": {
+              "end": 135,
+              "kind": "line_range",
+              "start": 135
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "102c4550ab6429f44c8fb543d1d0662de66a1b8c",
+            "content": "sha256:94735bcffa1378ed55669798460b785212b5c930b61021035296bb635c9050c0",
+            "locator": {
+              "end": 153,
+              "kind": "line_range",
+              "start": 153
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -4990,8 +5324,8 @@
         },
         {
           "anchor": {
-            "blob": "7f03063f7a685853a1858eee6bc1b53d21e83816",
-            "content": "sha256:e9be333954c67ceb9a6ec49c61e85555765f0816f8ab55a6879022d13dee1752",
+            "blob": "e41b09f9728125e4e62b2317995c3401783e8b62",
+            "content": "sha256:61baace6ce450066ae3245a1bfe0307f23e5e45eccf075fbb3f7a49fb628c161",
             "locator": {
               "kind": "file"
             },
@@ -5026,6 +5360,19 @@
     "371": {
       "note": "The composition root creates the reviewer worklist process owner.",
       "targets": [
+        {
+          "anchor": {
+            "blob": "126d045c43fbd830d1f124ab63fee6589db5d1ff",
+            "content": "sha256:95169baf663c27f1f7975242016b3fbdef81f05891a606186ba9a3d9020a81a4",
+            "locator": {
+              "end": 150,
+              "kind": "line_range",
+              "start": 150
+            },
+            "path": "mcp/src/agents_remember/cli/dashboard.py"
+          },
+          "kind": "code"
+        },
         {
           "anchor": {
             "blob": "126d045c43fbd830d1f124ab63fee6589db5d1ff",
@@ -5146,8 +5493,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "56347c4b09f5f0338f5f534cc4a623e36d623ebb",
-            "content": "sha256:3eadd907ab41db85a83ef351c133e769852b8521a82d22d8951771af2830c192",
+            "blob": "593a85bdc8b09268d79cfe0abc62be5957330709",
+            "content": "sha256:c5bc77cdd7a53e761d15e7bf5b1347498bff52a547dede0a3b5671c8b005c345",
             "locator": {
               "kind": "symbol",
               "name": "task_reopen"
@@ -5176,12 +5523,12 @@
       ]
     },
     "38": {
-      "note": "The content rules and derived reads.\n\nAnchor: \"MIK-R13's content rules for decision records, and the reads they make possible.\"",
+      "note": "**Retained historical source account — superseded by the current route account:** The content rules and derived reads.",
       "targets": [
         {
           "anchor": {
-            "blob": "4808d0caf492ad9fd7c23dd4450965297e5c7bad",
-            "content": "sha256:b24c7b5193965e0bccd38ba66a9384b37cf69e00661d180ee6347bf12a5e3d05",
+            "blob": "aa48f8380a2084f6763db85c434d6acd394a2d0f",
+            "content": "sha256:e5c452e79e68b4dab2e311d2b26087ed9027dfc4a3165f61750aa6da2d28364b",
             "locator": {
               "end": 25,
               "kind": "line_range",
@@ -5196,6 +5543,32 @@
     "380": {
       "note": "Knowledge ingest is the contract-scoped converted file writer; unconverted memory is refused with conversion guidance, not a callable prior-task database publication route.",
       "targets": [
+        {
+          "anchor": {
+            "blob": "17a7fa6f65e138b2e9443d952932013a30658963",
+            "content": "sha256:8f70903f732859313070f6cf1eee4f88dec77f529f2c81e923771510bf4f213c",
+            "locator": {
+              "end": 88,
+              "kind": "line_range",
+              "start": 52
+            },
+            "path": "mcp/src/agents_remember/cli/knowledge_ingest.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "17a7fa6f65e138b2e9443d952932013a30658963",
+            "content": "sha256:2e6d62d0e4049d61bf1de35ae1926de164c87e91ca3637a7fa0377c193d089cb",
+            "locator": {
+              "end": 103,
+              "kind": "line_range",
+              "start": 91
+            },
+            "path": "mcp/src/agents_remember/cli/knowledge_ingest.py"
+          },
+          "kind": "code"
+        },
         {
           "anchor": {
             "blob": "17a7fa6f65e138b2e9443d952932013a30658963",
@@ -5231,6 +5604,19 @@
             "content": "sha256:e1eb3c665fa26e64abcff2123dd22809a70aa098bdea7aac256523986c3af816",
             "locator": {
               "end": 5,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/c-05-create-or-update-onboarding-files/workflows/converted-card-workflow.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "07f4fbb59134af0846462f3929091464962f171f",
+            "content": "sha256:6e18a2ceb104df56df4b5f463662bf5fb6a85a5911185802174cfb4cef8d71eb",
+            "locator": {
+              "end": 6,
               "kind": "line_range",
               "start": 1
             },
@@ -5373,15 +5759,14 @@
       ]
     },
     "39": {
-      "note": "The five registered decision rules.",
+      "note": "**Retained historical source account — superseded by the current route account:** The five registered decision rules.\n\nAnchor: `DECISION_RULES`",
       "targets": [
         {
           "anchor": {
-            "blob": "a67c0d07daf87d4039de8f7fb590ad4f125349f0",
-            "content": "sha256:48d5ebed88d5412d0bcb2cff3bb954c4afbd2d2323bdbeec03c7fe53103ca818",
+            "blob": "0dc8698f6b27df068fed1ae69ebc0dc3dc618b5a",
+            "content": "sha256:9d5e7c536a108e9dd131f56de232a8614e961caa1b3f47bba2ad85207eb22547",
             "locator": {
-              "kind": "symbol",
-              "name": "DECISION_RULES"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/rules_decisions.py"
           },
@@ -5390,12 +5775,12 @@
       ]
     },
     "4": {
-      "note": "Each kind's own predicate, registered beside the kind.\n\nAnchor: \"register_gate_predicate(\\\"touched_invariant\\\", invariant_row_open)\"",
+      "note": "**Retained historical source account — superseded by the current route account:** Each kind's own predicate, registered beside the kind.",
       "targets": [
         {
           "anchor": {
-            "blob": "4e30c21d7d4d45c8dc277c76b63ad78a79157eda",
-            "content": "sha256:a9a7031e241d1184ae2773c87a9d12712b2b74147d3674cc5de3e714ed58b238",
+            "blob": "f312d2bd30e408565bad26d89ed227a954d4cd8a",
+            "content": "sha256:e649894afd7b9e62df54a712b563d037ff37d821a56d18025254434e4d13f71b",
             "locator": {
               "end": 329,
               "kind": "line_range",
@@ -5408,14 +5793,28 @@
       ]
     },
     "40": {
-      "note": "The owner resolves each requirement endpoint; unresolved is reported.\n\nAnchor: `resolve_requirement_endpoint`",
+      "note": "The owner resolves each requirement endpoint; unresolved is reported.",
       "targets": [
         {
           "anchor": {
-            "blob": "b8476720a5b70cf8f7e8577c7680ed8e26d3d079",
-            "content": "sha256:013fa7df64a081a8bc1a451a553e8b7aa99f550141dcda76f71546102a47e900",
+            "blob": "2c338bc95b7c3356425cae3d82c0c83cf08a2667",
+            "content": "sha256:4fcc8dbd244f2419df8a21fcee9e51c7523355c7dbf5278ebc782d917b2ae157",
             "locator": {
-              "kind": "file"
+              "end": 141,
+              "kind": "line_range",
+              "start": 101
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/requirement_endpoint.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2c338bc95b7c3356425cae3d82c0c83cf08a2667",
+            "content": "sha256:4fcc8dbd244f2419df8a21fcee9e51c7523355c7dbf5278ebc782d917b2ae157",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_requirement_endpoint"
             },
             "path": "mcp/src/agents_remember/memory/knowledge/requirement_endpoint.py"
           },
@@ -5424,15 +5823,14 @@
       ]
     },
     "41": {
-      "note": "The writer reports each endpoint of the records the run touched.",
+      "note": "**Retained historical source account — superseded by the current route account:** The writer reports each endpoint of the records the run touched.\n\nAnchor: `requirement_endpoints`",
       "targets": [
         {
           "anchor": {
-            "blob": "9308bcce180144f9325e731ff2da7c4659162199",
-            "content": "sha256:9bb1294213cf33a4b1cdb5a94250bd0eb12a42d9650e3f39bd11d09267aed135",
+            "blob": "ca45c13cbedb2dcb7a89b993d6423e60ba43e1ff",
+            "content": "sha256:b57eb5f7305a3251302b60bd58e5f6215f016f40f02a593ba03fd0133b22e61b",
             "locator": {
-              "kind": "symbol",
-              "name": "requirement_endpoints"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/knowledge_writer/requirement_links.py"
           },
@@ -5441,7 +5839,7 @@
       ]
     },
     "42": {
-      "note": "A decision is never an export.\n\nAnchor: \"if isinstance(record, DecisionRecord):\"",
+      "note": "**Retained historical source account — superseded by the current route account:** A decision is never an export.\n\nAnchor: \"if isinstance(record, DecisionRecord):\"",
       "targets": [
         {
           "anchor": {
@@ -5459,7 +5857,7 @@
       ]
     },
     "43": {
-      "note": "The leaf package statement.\n\nAnchor: \"The family-complete leaf read of a converted memory tree\"",
+      "note": "**Retained historical source account — superseded by the current route account:** The leaf package statement.\n\nAnchor: \"The family-complete leaf read of a converted memory tree\"",
       "targets": [
         {
           "anchor": {
@@ -5477,7 +5875,7 @@
       ]
     },
     "44": {
-      "note": "The retained internal published-intent computation reads a path seed as a leaf. Mounted read_ar_files names locations and returns no such body.\n\nAnchor: `prepare_leaf`",
+      "note": "**Retained historical source account — superseded by the current route account:** A path seed of the published-intent block is read as a leaf.\n\nAnchor: `prepare_leaf`",
       "targets": [
         {
           "anchor": {
@@ -5509,8 +5907,8 @@
         },
         {
           "anchor": {
-            "blob": "fd8aafa42294297c2e90284fa42abb308a4dccf1",
-            "content": "sha256:b1f01c8de6d8d95bff80d63397658defa8e6c29b9d2c566acaf40bd32619d792",
+            "blob": "c608555cc3f6361621affb9e5e66d35c57c9aa0e",
+            "content": "sha256:58a863d9629d8136b4391ddbdcb60bda18d0b49a97546cd6562ad2367bfbf44e",
             "locator": {
               "kind": "file"
             },
@@ -5532,7 +5930,7 @@
       ]
     },
     "46": {
-      "note": "The module statement.\n\nAnchor: \"family routes maintained with the code\"",
+      "note": "**Retained historical source account — superseded by the current route account:** The module statement.\n\nAnchor: \"family routes maintained with the code\"",
       "targets": [
         {
           "anchor": {
@@ -5550,7 +5948,7 @@
       ]
     },
     "47": {
-      "note": "The stored predicate for the gate.",
+      "note": "**Retained historical source account — superseded by the current route account:** The stored predicate for the gate.",
       "targets": [
         {
           "anchor": {
@@ -5567,7 +5965,7 @@
       ]
     },
     "48": {
-      "note": "Step 6 of the run.",
+      "note": "**Retained historical source account — superseded by the current route account:** Step 6 of the run.",
       "targets": [
         {
           "anchor": {
@@ -5584,12 +5982,12 @@
       ]
     },
     "49": {
-      "note": "The admission rule's module statement.\n\nAnchor: \"MIK-R27's admission rules in the validator's registry (MIK-R22 rule 9).\"",
+      "note": "**Retained historical source account — superseded by the current route account:** The admission rule's module statement.",
       "targets": [
         {
           "anchor": {
-            "blob": "cb4586c75fdeb7896c5a826152612daf858fba56",
-            "content": "sha256:3d83c665001d0a94862d673a52c50da0792b0946cd1290524ee7c1fa0fc4b041",
+            "blob": "580402ce29576bd8bb6d7ab25bf09159c0512eb9",
+            "content": "sha256:685be5bc223b1cfeb78b0fb46e58fff95e4c815181d045b53bbf2f54342d7015",
             "locator": {
               "end": 37,
               "kind": "line_range",
@@ -5602,39 +6000,14 @@
       ]
     },
     "5": {
-      "note": "The worktree layer's probes, the unbound refusal and the closeout's own write.",
+      "note": "**Retained historical source account — superseded by the current route account:** The worktree layer's probes, the unbound refusal and the closeout's own write.\n\nAnchor: `GATE_UNBOUND` `leaf_gate_refusal` `close_owner_history`",
       "targets": [
         {
           "anchor": {
             "blob": "8c8023bb3a59c12b7c1099777b123d40bf7deb6c",
-            "content": "sha256:9fab263729d6a821fd2a2abc36eb155b36b1c3a1dd2be7b047d9f901b65f8ae6",
+            "content": "sha256:b1e557792c411356882132a3a924065201ef785ec9d460d05479740ad13966b2",
             "locator": {
-              "kind": "symbol",
-              "name": "GATE_UNBOUND"
-            },
-            "path": "mcp/src/agents_remember/worktrees/knowledge_gate.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "d9aff968808173dc448e4c355b2ec47353fa2974",
-            "content": "sha256:aee4471ced60a9248a73cdf4e1df84840633a438e3dc8a82d042f2f836e7cfe5",
-            "locator": {
-              "kind": "symbol",
-              "name": "leaf_gate_refusal"
-            },
-            "path": "mcp/src/agents_remember/worktrees/knowledge_gate.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "603a6ba770e0ebedb221654036de15088ca011c8",
-            "content": "sha256:3f171dd8d666b8f0fc674c793f43c18ff0b3c945dec82e61e4337bb3a4e8b474",
-            "locator": {
-              "kind": "symbol",
-              "name": "close_owner_history"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/worktrees/knowledge_gate.py"
           },
@@ -5643,15 +6016,14 @@
       ]
     },
     "50": {
-      "note": "The three registered rules.",
+      "note": "The four registered admission rules.\n\nAnchor: `ADMISSION_RULES`",
       "targets": [
         {
           "anchor": {
-            "blob": "cb4586c75fdeb7896c5a826152612daf858fba56",
-            "content": "sha256:edc351652f7665c162a1e202b27a4f5647d0f505295f45f2634f4d819701e41f",
+            "blob": "580402ce29576bd8bb6d7ab25bf09159c0512eb9",
+            "content": "sha256:b861cad2faba52457bfa0d524e9caad4df16f8878f7bd30fc124b3950f778a0f",
             "locator": {
-              "kind": "symbol",
-              "name": "ADMISSION_RULES"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/rules_admission.py"
           },
@@ -5660,7 +6032,7 @@
       ]
     },
     "51": {
-      "note": "The export test.",
+      "note": "**Retained historical source account — superseded by the current route account:** The export test.",
       "targets": [
         {
           "anchor": {
@@ -5677,7 +6049,7 @@
       ]
     },
     "52": {
-      "note": "The reconciliation module statement.\n\nAnchor: \"Planned invariant effects reconciliation (MIK-R11@v2)\"",
+      "note": "**Retained historical source account — superseded by the current route account:** The reconciliation module statement.\n\nAnchor: \"Planned invariant effects reconciliation (MIK-R11@v2)\"",
       "targets": [
         {
           "anchor": {
@@ -5695,7 +6067,7 @@
       ]
     },
     "53": {
-      "note": "The declaration on the task document.",
+      "note": "**Retained historical source account — superseded by the current route account:** The declaration on the task document.",
       "targets": [
         {
           "anchor": {
@@ -5712,7 +6084,7 @@
       ]
     },
     "54": {
-      "note": "The planned row.",
+      "note": "**Retained historical source account — superseded by the current route account:** The planned row.",
       "targets": [
         {
           "anchor": {
@@ -5729,12 +6101,12 @@
       ]
     },
     "55": {
-      "note": "The task owner's strict lookup and decision answer.\n\nAnchor: `strict_leaf_doc`, `leaf_decision_refusal`",
+      "note": "**Retained historical source account — superseded by the current route account:** The task owner's strict lookup and decision answer.",
       "targets": [
         {
           "anchor": {
-            "blob": "b94b7d6ed08322fa953eb25e1ea853fde4711c83",
-            "content": "sha256:953e253535971803dc10c1e6910bb53cbb9cbaf8ea2c1cba146d74a5762ee5f3",
+            "blob": "aadce53774c779828d6dcfc8549d40e01f2cdd89",
+            "content": "sha256:31b1d56fe14ad5162059be5041627e59c48322ef9dd4fb51c2ca83bef9b6656a",
             "locator": {
               "kind": "file"
             },
@@ -5745,7 +6117,7 @@
       ]
     },
     "56": {
-      "note": "The paging package statement.\n\nAnchor: \"Bounded pages of a memory tree's knowledge\"",
+      "note": "**Retained historical source account — superseded by the current route account:** The paging package statement.\n\nAnchor: \"Bounded pages of a memory tree's knowledge\"",
       "targets": [
         {
           "anchor": {
@@ -5763,15 +6135,14 @@
       ]
     },
     "57": {
-      "note": "The mounted read's converted-tree branch.",
+      "note": "**Retained historical source account — superseded by the current route account:** The mounted read's converted-tree branch.\n\nAnchor: `read_tree_page`",
       "targets": [
         {
           "anchor": {
-            "blob": "b4fb3c6660f8614143e3526477bf733ef8f58d20",
-            "content": "sha256:5d5b0a1f3ef99ef70850f6c59d2ea1e778efc30f4d6e35bc27f7cd3121a28cae",
+            "blob": "2e48a7f6cc081b63ab5137fc50e99d764788f520",
+            "content": "sha256:e19c94b6f01431198d3ed4919b379a66f760aa92c5e528c0ec635c8a82d1d9b8",
             "locator": {
-              "kind": "symbol",
-              "name": "read_tree_page"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/knowledge_paging/tree_read.py"
           },
@@ -5780,7 +6151,7 @@
       ]
     },
     "58": {
-      "note": "The retained internal published-intent block bound, not a field or body delivered by current mounted read_ar_files.",
+      "note": "**Retained historical source account — superseded by the current route account:** The whole-block bound of the published-intent block.",
       "targets": [
         {
           "anchor": {
@@ -5797,12 +6168,12 @@
       ]
     },
     "59": {
-      "note": "The rule's statement for converted trees.\n\nAnchor: \"The onboarding refresh gate on history files (MIK-R30), for converted memory trees.\"",
+      "note": "**Retained historical source account — superseded by the current route account:** The rule's statement for converted trees.",
       "targets": [
         {
           "anchor": {
-            "blob": "08aade274f0a3e2f5a72d0966cfeb37650178b95",
-            "content": "sha256:acbf64ed5d78dabbff7e86498796fec04ef4002ece4a8b2263a3af5eaec0e34e",
+            "blob": "f6091818f7a3fdfaef7337e48da6b832bbe01f71",
+            "content": "sha256:68496a976de08c95ef5dfc14f6d119503805006ec3079b584ac23c4dcb2180c9",
             "locator": {
               "end": 27,
               "kind": "line_range",
@@ -5815,27 +6186,14 @@
       ]
     },
     "6": {
-      "note": "The history-row rule over every file's subjects and the leaf's own file.",
+      "note": "**Retained historical source account — superseded by the current route account:** The history-row rule over every file's subjects and the leaf's own file.\n\nAnchor: `checked_history_files` `check_history_rows`",
       "targets": [
         {
           "anchor": {
             "blob": "52e4e48a805e1d81f5d7ca9c2042cd3ec786e249",
-            "content": "sha256:b30cea9a1da16d6d79ceae4fcc28e1f7337335326592c19da6e69fdcde1134e7",
+            "content": "sha256:96a01230a80ddd527233066dd4251774b2aa624fa41913d0210d0f50e5b817e8",
             "locator": {
-              "kind": "symbol",
-              "name": "checked_history_files"
-            },
-            "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/rules_history.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "3274f2b5b02128a98741ec4f1ebe84bd8285eb04",
-            "content": "sha256:ee0eabc38a03a35c93292319a8cba532ef6494c923682d7e705123b17ffbb69a",
-            "locator": {
-              "kind": "symbol",
-              "name": "check_history_rows"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/rules_history.py"
           },
@@ -5844,15 +6202,14 @@
       ]
     },
     "60": {
-      "note": "The memory-quality dispatch between the two gates.",
+      "note": "**Retained historical source account — superseded by the current route account:** The memory-quality dispatch between the two gates.\n\nAnchor: `_onboarding_refresh_gate`",
       "targets": [
         {
           "anchor": {
-            "blob": "fa00445485d3ab76d4abd9e139d985ed865101c4",
-            "content": "sha256:d1d84de99bef2d8de31b440791aad3947b5f3687812f74f97d09bb4397a674e3",
+            "blob": "a4cb0ce3f5f3f488c8ad8313b8063d4a8218871e",
+            "content": "sha256:a2df6307f79b0a5282c67184a98d37a2d5fb71ad24fefd455d684627e7c5a73c",
             "locator": {
-              "kind": "symbol",
-              "name": "_onboarding_refresh_gate"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/memory_quality/controller.py"
           },
@@ -5865,12 +6222,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "77376323a176d7d1420028a64afdb47d2d043475",
-            "content": "sha256:3a0ff7d45c303a7d5c8e1d43dbe4893d136b4118fd400207a1d4f7dd411262ea",
+            "blob": "ad49bbea3aa27328b16a81b38c0fac81b3448485",
+            "content": "sha256:7ee2da3127a980defd0eff7f9137d74b8b4bbbd1949ecfcebf4c4c1000696a28",
             "locator": {
-              "end": 674,
+              "end": 435,
               "kind": "line_range",
-              "start": 640
+              "start": 429
             },
             "path": "mcp/src/agents_remember/application/knowledge_worklist/leaf.py"
           },
@@ -5879,7 +6236,7 @@
       ]
     },
     "62": {
-      "note": "The package statement.\n\nAnchor: \"Stale invariants flagged at read time\"",
+      "note": "**Retained historical source account — superseded by the current route account:** The package statement.\n\nAnchor: \"Stale invariants flagged at read time\"",
       "targets": [
         {
           "anchor": {
@@ -5897,7 +6254,7 @@
       ]
     },
     "63": {
-      "note": "The `knowledge_read` surface, reached through the per-page extras since MIK-R02.\n\nAnchor: `WalkCurrentness`",
+      "note": "**Retained historical source account — superseded by the current route account:** The `knowledge_read` surface, reached through the per-page extras since MIK-R02.\n\nAnchor: `WalkCurrentness`",
       "targets": [
         {
           "anchor": {
@@ -5914,27 +6271,14 @@
       ]
     },
     "64": {
-      "note": "Retained internal published-intent/currentness computation; it does not restore a published_intent field to the current names-only mounted response.",
+      "note": "**Retained historical source account — superseded by the current route account:** The published-intent surface.\n\nAnchor: `read_published_intent` `_TREE_SCOPE`",
       "targets": [
         {
           "anchor": {
-            "blob": "4be19bfc4f0db366151478c0195bb8e5278c7351",
-            "content": "sha256:fe62f6922d09b0a8c45d7735d9da499c5892065318fec4509b85124eac79ef8d",
+            "blob": "e2257653c8f42c1861ece020b7afb0ebe068ff1e",
+            "content": "sha256:ed945298901c54ce9411f7391b4d3b19bb0e13b0f246be1cbad4704f98383880",
             "locator": {
-              "kind": "symbol",
-              "name": "read_published_intent"
-            },
-            "path": "mcp/src/agents_remember/application/published_intent.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "bda6abac209b8bb555561b79169c66526d769437",
-            "content": "sha256:5fcf47b9070212571bbc40e7eb7f4ecafa3728f5b06c5f8c87e9f8efc2491c24",
-            "locator": {
-              "kind": "symbol",
-              "name": "_TREE_SCOPE"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/published_intent.py"
           },
@@ -5943,16 +6287,29 @@
       ]
     },
     "65": {
-      "note": "The one recompute entry point L08's triggers call (since MIK-R09 a Git failure is named `git`; the gate recomputes over its exact candidate instead).",
+      "note": "The leaf imports the single recomputation owner from leaf_completion: it computes and persists the worklist, names Git failures as git and turns other failures into an incomplete result; leaf_worklist can receive the gate's exact candidate trees.",
       "targets": [
         {
           "anchor": {
-            "blob": "77376323a176d7d1420028a64afdb47d2d043475",
-            "content": "sha256:f1624d51df2f35ecd557f8151caf9ce68c81c7d0e17b607110f9fe43467a9d0a",
+            "blob": "cc3ddad2210e25566378995fa748618b9afcee64",
+            "content": "sha256:ce681f4fd09d0de71efa95ae304fc495f8970483ed933c442157bd847e9e83a4",
             "locator": {
-              "end": 738,
+              "end": 202,
               "kind": "line_range",
-              "start": 703
+              "start": 165
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_worklist/leaf_completion.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ad49bbea3aa27328b16a81b38c0fac81b3448485",
+            "content": "sha256:de5f1accf54aee06c2ed765ab5a05273dddebce8973c798c3f8d32b3ec9f5db5",
+            "locator": {
+              "end": 449,
+              "kind": "line_range",
+              "start": 438
             },
             "path": "mcp/src/agents_remember/application/knowledge_worklist/leaf.py"
           },
@@ -5961,7 +6318,7 @@
       ]
     },
     "66": {
-      "note": "The CLI subcommand.\n\nAnchor: `leaf_worklist`",
+      "note": "**Retained historical source account — superseded by the current route account:** The CLI subcommand.\n\nAnchor: `leaf_worklist`",
       "targets": [
         {
           "anchor": {
@@ -5978,7 +6335,7 @@
       ]
     },
     "67": {
-      "note": "The two readings of proofs.",
+      "note": "**Retained historical source account — superseded by the current route account:** The two readings of proofs.",
       "targets": [
         {
           "anchor": {
@@ -6007,12 +6364,12 @@
       ]
     },
     "68": {
-      "note": "The package template copy's proof guidance.\n\nAnchor: \"Proofs are shown and counted (MIK-R28).\"",
+      "note": "**Retained historical source account — superseded by the current route account:** The package template copy's proof guidance.",
       "targets": [
         {
           "anchor": {
-            "blob": "46471ae05e047488c29a112e5a03f699ee7b9d1d",
-            "content": "sha256:93a7d20c309ec3e66a8f8df1fbc11cacbd6461a865950cf49b10a5c39c262722",
+            "blob": "00c3e00784503e851d2ca11c94f62d0c2576a160",
+            "content": "sha256:3036d35c0169811212acfe132b77455cfc0f0fa7d4517379835586eb24be9b2e",
             "locator": {
               "end": 454,
               "kind": "line_range",
@@ -6025,12 +6382,12 @@
       ]
     },
     "69": {
-      "note": "The umbrella registers the conversion command.\n\nAnchor: `knowledge_convert`; \"knowledge-convert\"",
+      "note": "**Retained historical source account — superseded by the current route account:** The umbrella registers the conversion command.",
       "targets": [
         {
           "anchor": {
-            "blob": "b51476f4480f30475c670c28cb88802ba8b600f4",
-            "content": "sha256:78bf7ea52798639925cff6048b1f51e086ddb12d000042dd4f29bea084924d52",
+            "blob": "6e7bd5a18da5ea781594e67999b9b01f305937d4",
+            "content": "sha256:bb18696d259d64016fee4989761364cc24939165e8776f2a56fa25407b61992b",
             "locator": {
               "end": 101,
               "kind": "line_range",
@@ -6043,7 +6400,7 @@
       ]
     },
     "70": {
-      "note": "The command converts, validates before writing, and commits nothing.",
+      "note": "**Retained historical source account — superseded by the current route account:** The command converts, validates before writing, and commits nothing.",
       "targets": [
         {
           "anchor": {
@@ -6060,7 +6417,7 @@
       ]
     },
     "71": {
-      "note": "The pinned conversion-format version.",
+      "note": "**Retained historical source account — superseded by the current route account:** The pinned conversion-format version.",
       "targets": [
         {
           "anchor": {
@@ -6077,7 +6434,7 @@
       ]
     },
     "72": {
-      "note": "A raw three-way line merge that writes nothing.",
+      "note": "**Retained historical source account — superseded by the current route account:** A raw three-way line merge that writes nothing.",
       "targets": [
         {
           "anchor": {
@@ -6094,7 +6451,7 @@
       ]
     },
     "73": {
-      "note": "A new memory repository is created with the layout marker.",
+      "note": "**Retained historical source account — superseded by the current route account:** A new memory repository is created with the layout marker.",
       "targets": [
         {
           "anchor": {
@@ -6123,7 +6480,7 @@
       ]
     },
     "74": {
-      "note": "A converted overview's sidecar feeds the hot-path hints.",
+      "note": "**Retained historical source account — superseded by the current route account:** A converted overview's sidecar feeds the hot-path hints.",
       "targets": [
         {
           "anchor": {
@@ -6140,15 +6497,14 @@
       ]
     },
     "75": {
-      "note": "The rule 9 refusal for a leaf whose official line is converted and, since L37, the cutover lock for every other unconverted tree.",
+      "note": "**Retained historical source account — superseded by the current route account:** The rule 9 refusal for a leaf whose official line is converted and, since L37, the cutover lock for every other unconverted tree.\n\nAnchor: `unconverted_line_refusal`",
       "targets": [
         {
           "anchor": {
-            "blob": "e26aec15ae66d43787698d534743bda3fa5463ef",
-            "content": "sha256:124f5c9e6a34a3f01b3fd5a8d70f161ef7e4d775864fbd5b8db7ccadc105e44a",
+            "blob": "ef6345d05ffe2c156f9923c9abef905ee5bb31ef",
+            "content": "sha256:0860cab26f7e5d70b2a1f337343d94382f3e23a8bc1411dfcd644d11cfd5b007",
             "locator": {
-              "kind": "symbol",
-              "name": "unconverted_line_refusal"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/worktrees/knowledge_crossing.py"
           },
@@ -6157,12 +6513,12 @@
       ]
     },
     "8": {
-      "note": "The one rule, named for its three writers.\n\nAnchor: \"ONE RULE FOR EVERY WRITER OF A LEAF'S MASTER ROW (MIK-R38).\"",
+      "note": "**Retained historical source account — superseded by the current route account:** The one rule, named for its three writers.",
       "targets": [
         {
           "anchor": {
-            "blob": "55abfd6f453d2c1fd50283bd978936948b9367b2",
-            "content": "sha256:b71097f7db9038140b56ed2d23976c5a1d5c73fdf20acbc9a80f91d78a42e5a5",
+            "blob": "4568c29f3b900b0d0b94dce225776b17f1e981be",
+            "content": "sha256:9088b84a19015a1c79d2a52ddc77cfec084c3f0aa4fe087ff1223d471cde5d34",
             "locator": {
               "end": 190,
               "kind": "line_range",
@@ -6175,16 +6531,16 @@
       ]
     },
     "80": {
-      "note": "The subcommand registration.\n\nAnchor: `knowledge_census`; \"knowledge-census\"",
+      "note": "**Retained historical source account — superseded by the current route account:** The subcommand registration.",
       "targets": [
         {
           "anchor": {
             "blob": "6e7bd5a18da5ea781594e67999b9b01f305937d4",
-            "content": "sha256:15831c158ad1e92f6f34cd93ecbe3810ff52be2bc4199aac54bcb568f24b877c",
+            "content": "sha256:9e73f573ed34af7fd155142465f2f3e40de38dde47eadd3e2514c947bb702428",
             "locator": {
-              "end": 146,
+              "end": 106,
               "kind": "line_range",
-              "start": 141
+              "start": 95
             },
             "path": "mcp/src/agents_remember/cli/__main__.py"
           },
@@ -6193,7 +6549,7 @@
       ]
     },
     "81": {
-      "note": "Inventory pins the baseline and writes through the census writer.",
+      "note": "**Retained historical source account — superseded by the current route account:** Inventory pins the baseline and writes through the census writer.",
       "targets": [
         {
           "anchor": {
@@ -6210,33 +6566,33 @@
       ]
     },
     "82": {
-      "note": "The writer refuses an unconverted memory tree.",
+      "note": "**Retained historical source account — superseded by the current route account:** The writer refuses an unconverted memory tree.",
       "targets": [
         {
           "anchor": {
-            "blob": "2a6f82256da61aa22b75e1a4c71ff3a15ac92726",
-            "content": "sha256:b14cdc614f1dc39add7007101a0e2c061a6106c535e029f67dc9652d407d5d5f",
+            "blob": "f8c3ebb0fba1a81fe6fad47e544b6183713f1019",
+            "content": "sha256:ddc54a1d609b26aa73aab617bb80e631c4b24c0510c9aa059a1015bb8f084f8c",
             "locator": {
               "kind": "symbol",
-              "name": "_tree"
+              "name": "UNCONVERTED"
             },
-            "path": "mcp/src/agents_remember/memory/knowledge_census/writer.py"
+            "path": "mcp/src/agents_remember/application/knowledge_writer/writer.py"
           },
           "kind": "code"
         }
       ]
     },
     "83": {
-      "note": "The subcommand registration.\n\nAnchor: `knowledge_routes`; \"knowledge-routes\"",
+      "note": "**Retained historical source account — superseded by the current route account:** The subcommand registration.",
       "targets": [
         {
           "anchor": {
             "blob": "6e7bd5a18da5ea781594e67999b9b01f305937d4",
-            "content": "sha256:3cd02b3a87c4067c5071de1c2f26065d96e6d02d4593f5fd040732f5e6fa5fc1",
+            "content": "sha256:9e73f573ed34af7fd155142465f2f3e40de38dde47eadd3e2514c947bb702428",
             "locator": {
-              "end": 140,
+              "end": 106,
               "kind": "line_range",
-              "start": 135
+              "start": 95
             },
             "path": "mcp/src/agents_remember/cli/__main__.py"
           },
@@ -6245,15 +6601,14 @@
       ]
     },
     "84": {
-      "note": "The command reads the families and prints them; it writes nothing.",
+      "note": "**Retained historical source account — superseded by the current route account:** The command reads the families and prints them; it writes nothing.\n\nAnchor: `run`",
       "targets": [
         {
           "anchor": {
-            "blob": "a263ad6bd08ee2674636d69051f84aff784bbcea",
-            "content": "sha256:05d149fe34766d0365173618cebaa58f8fe6416162f5ae43e84f7918e93903d1",
+            "blob": "7fd56cd4af2c83f48b6525b91c15a7c1327483db",
+            "content": "sha256:36bcb102793793f05f9237b0828f328ad9885d6aa069b3e107e38ec8cfa5ab6d",
             "locator": {
-              "kind": "symbol",
-              "name": "run"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/cli/knowledge_routes.py"
           },
@@ -6262,15 +6617,14 @@
       ]
     },
     "85": {
-      "note": "The six route rules in the registry.",
+      "note": "The seven route rules in the registry.\n\nAnchor: `ROUTE_RULES`",
       "targets": [
         {
           "anchor": {
-            "blob": "cc200af6047d796b28cbf2c7fa300c747581c70a",
-            "content": "sha256:3bac0ea2049cfa7256b321605d02cf1d685f28583a58cb62d16a9ac158079dd3",
+            "blob": "9d0fd44f3dd129ddde8d51e1df229c8c44f0e57a",
+            "content": "sha256:ae9be8bfcb816227d42ccdf313e7ac0bafcf7b30f789e22d3a8e42ab4954a41d",
             "locator": {
-              "kind": "symbol",
-              "name": "ROUTE_RULES"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/rules_routes.py"
           },
@@ -6279,16 +6633,16 @@
       ]
     },
     "86": {
-      "note": "The subcommand registration.\n\nAnchor: `knowledge_index`; \"knowledge-index\"",
+      "note": "**Retained historical source account — superseded by the current route account:** The subcommand registration.",
       "targets": [
         {
           "anchor": {
             "blob": "6e7bd5a18da5ea781594e67999b9b01f305937d4",
-            "content": "sha256:089d9a356d65210680825e8cacc93ca21948351ebcb197953ec848b3746427c1",
+            "content": "sha256:9e73f573ed34af7fd155142465f2f3e40de38dde47eadd3e2514c947bb702428",
             "locator": {
-              "end": 128,
+              "end": 106,
               "kind": "line_range",
-              "start": 123
+              "start": 95
             },
             "path": "mcp/src/agents_remember/cli/__main__.py"
           },
@@ -6297,15 +6651,14 @@
       ]
     },
     "87": {
-      "note": "The command's report and exit statuses.",
+      "note": "**Retained historical source account — superseded by the current route account:** The command's report and exit statuses.\n\nAnchor: `run`",
       "targets": [
         {
           "anchor": {
-            "blob": "6dac04491dc3e36d2f4f587923556d007147948d",
-            "content": "sha256:d1011d9fef67ab244f9a31d25895681b7aa4e54d42b5a76b2ac54468c52ee265",
+            "blob": "6f8a1b5f2e12e8aabdd86ebd9ce6cd08658bed0d",
+            "content": "sha256:8fa8066f8dd699a35d0ec87335fe4b84391e0176bd5d71accbcd722b2b10701b",
             "locator": {
-              "kind": "symbol",
-              "name": "run"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/cli/knowledge_index.py"
           },
@@ -6314,15 +6667,14 @@
       ]
     },
     "88": {
-      "note": "The one dataset resolution every knowledge read applies.",
+      "note": "**Retained historical source account — superseded by the current route account:** The one dataset resolution every knowledge read applies.\n\nAnchor: `select_knowledge_dataset`",
       "targets": [
         {
           "anchor": {
-            "blob": "4be19bfc4f0db366151478c0195bb8e5278c7351",
-            "content": "sha256:84f17e36045a6cafa1d747e119c0e701016e8c78e1cd298a3115c8a6456ffbe5",
+            "blob": "e2257653c8f42c1861ece020b7afb0ebe068ff1e",
+            "content": "sha256:ed945298901c54ce9411f7391b4d3b19bb0e13b0f246be1cbad4704f98383880",
             "locator": {
-              "kind": "symbol",
-              "name": "select_knowledge_dataset"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/published_intent.py"
           },
@@ -6331,7 +6683,7 @@
       ]
     },
     "89": {
-      "note": "The cache that refuses any location inside a Git working tree.",
+      "note": "**Retained historical source account — superseded by the current route account:** The cache that refuses any location inside a Git working tree.",
       "targets": [
         {
           "anchor": {
@@ -6348,15 +6700,14 @@
       ]
     },
     "9": {
-      "note": "The finalizer dispatches a leaf with a named master to _named_parent and a leaf without that name to _folder_parent.",
+      "note": "**Retained historical source account — superseded by the current route account:** The finalizer dispatches a leaf with a named master to _named_parent and a leaf without that name to _folder_parent.\n\nAnchor: `_resolve_parent_target`",
       "targets": [
         {
           "anchor": {
-            "blob": "47c3c6c1197098901dd9e1a004bd32a2c2617454",
-            "content": "sha256:c8c988d7e04421d3e7aaefade1ae1b426920b034706406b43892eeb448465447",
+            "blob": "b8bda143860aa43bd6865974d210d639a5ffe665",
+            "content": "sha256:dae78692c3f880a9249afa60c0944470b31b3405c308e45b8f77235c248a2a2a",
             "locator": {
-              "kind": "symbol",
-              "name": "_resolve_parent_target"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/worktrees/modules/finalize_task_documents.py"
           },
@@ -6365,12 +6716,12 @@
       ]
     },
     "90": {
-      "note": "The subcommand registration.\n\nAnchor: `knowledge_validate`; \"knowledge-validate\"",
+      "note": "**Retained historical source account — superseded by the current route account:** The subcommand registration.",
       "targets": [
         {
           "anchor": {
-            "blob": "b51476f4480f30475c670c28cb88802ba8b600f4",
-            "content": "sha256:a9aeb39006838a84b0d0c86fcb2c9eee2f1e512d399f495311cc99061ee90c85",
+            "blob": "6e7bd5a18da5ea781594e67999b9b01f305937d4",
+            "content": "sha256:9e73f573ed34af7fd155142465f2f3e40de38dde47eadd3e2514c947bb702428",
             "locator": {
               "end": 106,
               "kind": "line_range",
@@ -6383,15 +6734,14 @@
       ]
     },
     "91": {
-      "note": "The command's inputs, scope answer and exit statuses.",
+      "note": "**Retained historical source account — superseded by the current route account:** The command's inputs, scope answer and exit statuses.\n\nAnchor: `run`",
       "targets": [
         {
           "anchor": {
-            "blob": "754bd9162775645ee6e3e707b0b4e4b948882a98",
-            "content": "sha256:06be4b3199ce3222e2e93f1a7329db8933d229b79644d4923dfc7fdbbe291163",
+            "blob": "0b1b129b84a4201b1f747ddfe2b049e3f00bd347",
+            "content": "sha256:6b94c5dbdefe533e1807da03bad4ecf713d20c810fe68ed4183a5fcc36d3bd0a",
             "locator": {
-              "kind": "symbol",
-              "name": "run"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/cli/knowledge_validate.py"
           },
@@ -6400,11 +6750,11 @@
       ]
     },
     "92": {
-      "note": "The shared exclusion predicate.",
+      "note": "**Retained historical source account — superseded by the current route account:** The shared exclusion predicate.",
       "targets": [
         {
           "anchor": {
-            "blob": "9442b951a34eebaa1610f814f4e269611930b242",
+            "blob": "f42b73b25d4034dd173d1c95d74c2b16ba88de6c",
             "content": "sha256:312f01489db650ccd1a6f99d36ea871efa7ddecdf6df5314c968292a8ec2e31a",
             "locator": {
               "kind": "symbol",
@@ -6417,15 +6767,14 @@
       ]
     },
     "93": {
-      "note": "The batch blob reader.",
+      "note": "**Retained historical source account — superseded by the current route account:** The batch blob reader.\n\nAnchor: `read_git_blobs_bytes`",
       "targets": [
         {
           "anchor": {
-            "blob": "cebb73b6be7b8f1829e91c3404632496f92dd7e1",
-            "content": "sha256:b72c1a4870f5a00b969c783678127cfd4352c2d8c36351418bde1e26bc826827",
+            "blob": "07979a6e10a7cde98e4a4ce1dcaca7a203241e3f",
+            "content": "sha256:6e94e3f710e3074a2f9def9a24032a21aee42476e665e4ea421cba0067b627bb",
             "locator": {
-              "kind": "symbol",
-              "name": "read_git_blobs_bytes"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/kernel/git_command.py"
           },
@@ -6434,7 +6783,7 @@
       ]
     },
     "94": {
-      "note": "The format package's own map and its shape-only boundary.\n\nAnchor: \"The text knowledge format\"",
+      "note": "**Retained historical source account — superseded by the current route account:** The format package's own map and its shape-only boundary.\n\nAnchor: \"The text knowledge format\"",
       "targets": [
         {
           "anchor": {
@@ -6452,16 +6801,16 @@
       ]
     },
     "95": {
-      "note": "The subcommand registration.\n\nAnchor: `knowledge_format`; \"knowledge-format\"",
+      "note": "**Retained historical source account — superseded by the current route account:** The subcommand registration.",
       "targets": [
         {
           "anchor": {
             "blob": "6e7bd5a18da5ea781594e67999b9b01f305937d4",
-            "content": "sha256:4882b931be12a8501fe1007eb16cc7765d08dc1d28120f616393848497663c9f",
+            "content": "sha256:9e73f573ed34af7fd155142465f2f3e40de38dde47eadd3e2514c947bb702428",
             "locator": {
-              "end": 95,
+              "end": 106,
               "kind": "line_range",
-              "start": 90
+              "start": 95
             },
             "path": "mcp/src/agents_remember/cli/__main__.py"
           },
@@ -6470,7 +6819,7 @@
       ]
     },
     "96": {
-      "note": "The command's exit statuses.\n\nAnchor: \"Exit status: 0 when every file is canonical\"",
+      "note": "**Retained historical source account — superseded by the current route account:** The command's exit statuses.\n\nAnchor: \"Exit status: 0 when every file is canonical\"",
       "targets": [
         {
           "anchor": {
@@ -6488,12 +6837,12 @@
       ]
     },
     "97": {
-      "note": "The template's informational section.\n\nAnchor: \"Nothing here changes what a producer emits today.\"",
+      "note": "**Retained historical source account — superseded by the current route account:** The template's informational section.",
       "targets": [
         {
           "anchor": {
-            "blob": "5df4d8e3b98501161d08a2e1f9822cd492b94ae4",
-            "content": "sha256:d9bcb72f21c35eb0055f33cc4f420fa6f7c42da872369d523b0501f2f0c7a1e9",
+            "blob": "00c3e00784503e851d2ca11c94f62d0c2576a160",
+            "content": "sha256:f060a5ac2d68c0ce8d70ec4137ed10046106d237d0cc5ee8abac2a03303d7488",
             "locator": {
               "end": 427,
               "kind": "line_range",
@@ -6506,5 +6855,5 @@
       ]
     }
   },
-  "schema": "ar-onboarding-route/v1"
+  "schema": "ar-onboarding-file/v1"
 }

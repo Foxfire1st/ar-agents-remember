@@ -3,12 +3,12 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "New step-2 worklist/target/proof/link repair detail plus same-ID target rationale/role correction.\n\nAnchor: Candidate instruction body, lines 3–32",
+      "note": "New step-2 worklist/target/proof/link repair detail plus same-ID target rationale/role correction.",
       "targets": [
         {
           "anchor": {
-            "blob": "703dd2c81c3b958c48a60dcec16affe0918006d3",
-            "content": "sha256:dbbb3011c5c035ef1a891e473853bdc223fb0189ab072918b658acf379ba9d63",
+            "blob": "7a78bd431734fd758e40bbd22a3dbcad0d2810a8",
+            "content": "sha256:60f401a3392a30e228db35561232a58c88d348a8d026fba6027e62196c16a440",
             "locator": {
               "end": 32,
               "kind": "line_range",

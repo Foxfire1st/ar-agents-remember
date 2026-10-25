@@ -62,7 +62,9 @@ None.
 
 ## Evidence
 
+
 - Whole-result validation/logging and explicit or default tool-specific projected-answer guarding remain distinct. [4]
+
 
 ### Repo-Internal References
 
@@ -70,7 +72,9 @@ This module defines the top-level symbols cited below; each row points at the ex
 
 - Exact-contract enrichment preserves explicit recovery guidance, with guarded preview stops from the call argument. [2]
 
+
 - The completion choke validates the whole, selects the answer, retains available caller diff reports, measures final delivery and emits one event through its existing owner. [3]
+
 
 ## L23 Final Candidate Disposition
 

@@ -16,5 +16,7 @@ This is a current source account, not an executed test, CODE/MEMORY grade, live 
 
 ## Evidence
 
+
 - A removed symbol opens the item, an empty hand-off answers nothing, and a judged row with `repoint` closes it [1]
+
 - The re-authored refusal's advice — restoring the base target byte for byte — admits the row it refused [2]

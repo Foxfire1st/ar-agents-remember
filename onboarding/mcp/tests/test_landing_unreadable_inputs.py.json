@@ -22,15 +22,14 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "Unreadable recorded code blocks without publication.",
+      "note": "Unreadable recorded code blocks without publication.\n\nAnchor: `test_record_landing_with_unreadable_recorded_code_refuses_without_writing`",
       "targets": [
         {
           "anchor": {
-            "blob": "53bfec79b09da24e16f2b31a18330498b9723b3b",
-            "content": "sha256:b39a641f80d19e8ffd7bb06416dbdf6e0eaf12cf9f23f3d92b3d857a94c9a1e4",
+            "blob": "d177d20c709dd35f86d4abc3d9b6c0d0b201ff65",
+            "content": "sha256:4b1371f5c36b9eda00272fb09f2a6494e839f693f90411e4fd17032fb857c84b",
             "locator": {
-              "kind": "symbol",
-              "name": "test_record_landing_with_unreadable_recorded_code_refuses_without_writing"
+              "kind": "file"
             }
           },
           "kind": "test"

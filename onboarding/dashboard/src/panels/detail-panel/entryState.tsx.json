@@ -54,15 +54,14 @@
       ]
     },
     "3": {
-      "note": "The brief word per shared token.\n\nAnchor: \"no knowledge yet\"; \"offline\"",
+      "note": "The brief word per shared token.\n\nAnchor: `briefProblem`",
       "targets": [
         {
           "anchor": {
-            "blob": "08b834804e69b920387becdd55cd9cb21a584689",
-            "content": "sha256:55614d11c93c21ea706b6586989d20ee5a10b9e74c627d7613e9102629f2c9bc",
+            "blob": "cc94281379ec05363f5271bd286a082c5e8529ae",
+            "content": "sha256:3de84b38e0e1422fa4594d95415e2537c1121d622ea23a03aaf4ab37e2998ebc",
             "locator": {
-              "kind": "symbol",
-              "name": "briefProblem"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -70,15 +69,14 @@
       ]
     },
     "4": {
-      "note": "The owner's full sentence, with nothing invented.\n\nAnchor: \"offending input: \"",
+      "note": "The owner's full sentence, with nothing invented.\n\nAnchor: `problemSentence`",
       "targets": [
         {
           "anchor": {
-            "blob": "08b834804e69b920387becdd55cd9cb21a584689",
-            "content": "sha256:99c3ed0cc1ea5ac520ebcd472aa1bd2052e105e2d3f42141ad6c611fa131923e",
+            "blob": "cc94281379ec05363f5271bd286a082c5e8529ae",
+            "content": "sha256:3de84b38e0e1422fa4594d95415e2537c1121d622ea23a03aaf4ab37e2998ebc",
             "locator": {
-              "kind": "symbol",
-              "name": "problemSentence"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -86,39 +84,14 @@
       ]
     },
     "5": {
-      "note": "The disclosure styles.",
+      "note": "The disclosure styles.\n\nAnchor: `entryStateDetails` `entryStateSummary` `entryStateBody`",
       "targets": [
         {
           "anchor": {
-            "blob": "27e37add168df29a60e5bdd5bd620141e925bb22",
-            "content": "sha256:2063c5121eb7c1c49b39b37f93a47cce83512d06e61daee202f060cdcd469669",
+            "blob": "d19f997fc5ce9cd991b0eb7b4f8b24c36ef9eea2",
+            "content": "sha256:4eed52431310247cf3a11bea879b6f5e33cf92916025760dcbcca66d136907ce",
             "locator": {
-              "kind": "symbol",
-              "name": "entryStateDetails"
-            },
-            "path": "dashboard/src/panels/detail-panel/styles.ts"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "27e37add168df29a60e5bdd5bd620141e925bb22",
-            "content": "sha256:546ce106c54de41bb5fffa39ab5f6e482d7472db352483c39e6ce9d46a44ff44",
-            "locator": {
-              "kind": "symbol",
-              "name": "entryStateSummary"
-            },
-            "path": "dashboard/src/panels/detail-panel/styles.ts"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "27e37add168df29a60e5bdd5bd620141e925bb22",
-            "content": "sha256:03f9427fcb001c9bd73da7812fdff4877fda682f17dd9d20f6957af4c6ad1fe0",
-            "locator": {
-              "kind": "symbol",
-              "name": "entryStateBody"
+              "kind": "file"
             },
             "path": "dashboard/src/panels/detail-panel/styles.ts"
           },
@@ -127,12 +100,12 @@
       ]
     },
     "6": {
-      "note": "The two consumers.\n\nAnchor: `EntryStateDetails`; `briefProblem`; `problemSentence`",
+      "note": "The two consumers.",
       "targets": [
         {
           "anchor": {
-            "blob": "9f16a4ea899010aae0203cfd8712a007026dabf6",
-            "content": "sha256:b14fdede4bb0673a06842fcc47ac5d60bfd27a6a326b7b9c6f0b3db26c71a80c",
+            "blob": "7589f63f1bb655f537e84d56ad377746d725da2b",
+            "content": "sha256:db1440661bc2c5df6a6ed652788d9257bdc43f36a023f5155b9bfdd26df11a7b",
             "locator": {
               "end": 129,
               "kind": "line_range",
@@ -144,8 +117,8 @@
         },
         {
           "anchor": {
-            "blob": "931da72d87f38045efdb2c747a84167042b89f79",
-            "content": "sha256:b8e1fc0a245c08028b372dd146912592f7375ebee62528ff1bdaaffcf5a0a65d",
+            "blob": "dc229d234ae888019f18a20c91a1cd0135ada287",
+            "content": "sha256:9f2d92e61273758bdd54bb863e89cc2198feaded093ea7f4f132c5567e680449",
             "locator": {
               "end": 259,
               "kind": "line_range",

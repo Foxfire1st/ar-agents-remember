@@ -130,7 +130,9 @@ engine-room renderer. The two cross-links below are the proving pair: the protot
 renderer it governs.
 
 - The companion prototype / scenario player this spec distils into a primitives library; the spec's CSS classes mirror it 1:1. [2]
+
 - The React engine-room renderer implements these primitives in `EnclosureCanvas.tsx`. [3]
+
 - The React engine-room renderer drives the GSAP timeline from `useEngineTimeline.ts`. [4]
 - The React engine-room renderer's static styles live in `engineRoomStyles.ts`. [5]
 - The React engine-room renderer's boot timeline lives in `BootTimeline.tsx`. [6]

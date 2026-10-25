@@ -3,15 +3,14 @@
   "realizes": [],
   "references": {
     "7": {
-      "note": "Current review composition supplies judgment/proofs and no supporting-record bundle or applicability call.",
+      "note": "Current review composition supplies judgment/proofs and no supporting-record bundle or applicability call.\n\nAnchor: `compose_review`",
       "targets": [
         {
           "anchor": {
-            "blob": "ac739bfed6942a8a7b701200421aa16e48d35463",
-            "content": "sha256:47fb36bd3b80dcd4fa28db9cad57e12495004dbe4f20c91814d5c7d8d56bf80c",
+            "blob": "1c9f8394dfb38bee67a5da3b90ace66147bd5334",
+            "content": "sha256:bc9aed0908cabfef3b176f1734ea114458607fab1f9bf612787eace2cfa4d0c0",
             "locator": {
-              "kind": "symbol",
-              "name": "compose_review"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/knowledge_review.py"
           },

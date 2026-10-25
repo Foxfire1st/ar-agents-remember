@@ -55,12 +55,12 @@
       ]
     },
     "2": {
-      "note": "Frozen implementation of _parse_roles supporting the stated file behavior.\n\nAnchor: `_parse_roles`",
+      "note": "Frozen implementation of _parse_roles supporting the stated file behavior.",
       "targets": [
         {
           "anchor": {
-            "blob": "d6e208ea879ab718e0cae47f0ad5209853b107b9",
-            "content": "sha256:3b92fb928c75572100af0bfd84a9b22d0134097b03d72f968d25a0b0b71fe9ed",
+            "blob": "d3b92b15b04467dce898722fe980347aee339810",
+            "content": "sha256:a8e3cc2e0dbf594097b2d171715ea7216ee1c8168be98e43d7ea1fa3099a83f5",
             "locator": {
               "kind": "file"
             }
@@ -74,8 +74,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d6e208ea879ab718e0cae47f0ad5209853b107b9",
-            "content": "sha256:3b92fb928c75572100af0bfd84a9b22d0134097b03d72f968d25a0b0b71fe9ed",
+            "blob": "d3b92b15b04467dce898722fe980347aee339810",
+            "content": "sha256:d888970bf9ce4dcff0e02989b4d291dbd019ce654faf3b940371cb9045a7ea46",
             "locator": {
               "end": 435,
               "kind": "line_range",
@@ -87,15 +87,14 @@
       ]
     },
     "4": {
-      "note": "Existing role parsing attaches one typed alternative.",
+      "note": "Existing role parsing attaches one typed alternative.\n\nAnchor: `_parse_roles`",
       "targets": [
         {
           "anchor": {
-            "blob": "87f02f4e0cd8794a4b65bb733206c164a7809c1a",
-            "content": "sha256:ff57bae570babe3015cc12b2bac603c06454fb8d8941e740de6cba12987eaef8",
+            "blob": "d3b92b15b04467dce898722fe980347aee339810",
+            "content": "sha256:a8e3cc2e0dbf594097b2d171715ea7216ee1c8168be98e43d7ea1fa3099a83f5",
             "locator": {
-              "kind": "symbol",
-              "name": "_parse_roles"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -103,15 +102,14 @@
       ]
     },
     "5": {
-      "note": "Ordinary shape parsing is shared without adding a new execution adapter.",
+      "note": "Ordinary shape parsing is shared without adding a new execution adapter.\n\nAnchor: `_role_choices`",
       "targets": [
         {
           "anchor": {
-            "blob": "87f02f4e0cd8794a4b65bb733206c164a7809c1a",
-            "content": "sha256:e9de7e7b7f8d5ad2afffb4a765665320a67f91d145aa7235347502f253882624",
+            "blob": "d3b92b15b04467dce898722fe980347aee339810",
+            "content": "sha256:a8e3cc2e0dbf594097b2d171715ea7216ee1c8168be98e43d7ea1fa3099a83f5",
             "locator": {
-              "kind": "symbol",
-              "name": "_role_choices"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -119,15 +117,14 @@
       ]
     },
     "6": {
-      "note": "Counted-role-only threshold defaults to three and refuses nested/unknown fields.",
+      "note": "Counted-role-only threshold defaults to three and refuses nested/unknown fields.\n\nAnchor: `_parse_step_up`",
       "targets": [
         {
           "anchor": {
-            "blob": "87f02f4e0cd8794a4b65bb733206c164a7809c1a",
-            "content": "sha256:334a42eb2560a9bc948417c6465a22b915f7282c2fb77ac65ffd8818fd6e0cd3",
+            "blob": "d3b92b15b04467dce898722fe980347aee339810",
+            "content": "sha256:a8e3cc2e0dbf594097b2d171715ea7216ee1c8168be98e43d7ea1fa3099a83f5",
             "locator": {
-              "kind": "symbol",
-              "name": "_parse_step_up"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -169,12 +166,12 @@
       ]
     },
     "9": {
-      "note": "`_resolve_role_keys` admits `CAPABILITY_IDS` keys beside the role keys, which is how a capability's launch block passes the unknown-key refusal without becoming a dispatchable seat. [9]\n\nAnchor: `_resolve_role_keys`",
+      "note": "`_resolve_role_keys` admits `CAPABILITY_IDS` keys beside the role keys, which is how a capability's launch block passes the unknown-key refusal without becoming a dispatchable seat. \\[9]",
       "targets": [
         {
           "anchor": {
-            "blob": "87f02f4e0cd8794a4b65bb733206c164a7809c1a",
-            "content": "sha256:ec35cbc980c80f75b8b8c165b133a51b3cf48cb306a9d34c873da9edf21eb5dd",
+            "blob": "d3b92b15b04467dce898722fe980347aee339810",
+            "content": "sha256:a8e3cc2e0dbf594097b2d171715ea7216ee1c8168be98e43d7ea1fa3099a83f5",
             "locator": {
               "kind": "file"
             }

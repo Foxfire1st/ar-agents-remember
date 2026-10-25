@@ -37,7 +37,7 @@
       ]
     },
     "3": {
-      "note": "The Panel shell uses the `bgPanel` background and `grid` border tokens in its styles.\n\nAnchor: \"background: \\\"bgPanel\\\"\"; \"borderColor: \\\"grid\\\"\"; \"bgPanel: { value:\"; \"grid: { value:\"",
+      "note": "The Panel shell uses the `bgPanel` background and `grid` border tokens in its styles.",
       "targets": [
         {
           "anchor": {
@@ -65,8 +65,8 @@
         },
         {
           "anchor": {
-            "blob": "2d002381552f3f01089d532f37d06ef61b9ab5c1",
-            "content": "sha256:158fb2b47e39ee5c150cae896c1c04114cd5a55d5d96792c49d2f9330565b8d0",
+            "blob": "90e8e5f30e2b11529dc15cae0f19b20a9cf4be1c",
+            "content": "sha256:ff4b1d48aa95eab76de2c295dcd9d8caa79fd7e4543a9fb707bca5e7ada7961d",
             "locator": {
               "end": 38,
               "kind": "line_range",

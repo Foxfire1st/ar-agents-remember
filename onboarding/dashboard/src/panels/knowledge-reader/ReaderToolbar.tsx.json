@@ -216,12 +216,12 @@
       ]
     },
     "8": {
-      "note": "The parent’s single records acquisition feeds lookup and the Records loader.\n\nAnchor: current parent/consumer wiring",
+      "note": "The parent’s single records acquisition feeds lookup and the Records loader.",
       "targets": [
         {
           "anchor": {
-            "blob": "994adf251ec2014e1a65503fb22e08f41948bf96",
-            "content": "sha256:d18713ade55909472b2c303833d774305a4bffe8b61c447dce90dfd4b9c5657b",
+            "blob": "a4f07bffe14341a99eb320bdf2a28ac21454914a",
+            "content": "sha256:20a230bc9ef376838caf15c2a0ca90fbe00012cbc9b6f82959ede26c793017c2",
             "locator": {
               "end": 281,
               "kind": "line_range",

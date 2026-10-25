@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/worktrees/integration/closeout/task_intent_identity.py",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {

@@ -46,4 +46,5 @@ base class and the kernel's read recorder it uses only the standard library.
 - Writing serializes the given ledger and touches no Git state. [10]
 - The first-row lookup of a code commit. [11]
 - The exact-pair lookup. [12]
+
 - A ledger read by the reviewer's worklist is recorded with the bytes read, its absence and its read failure. [13]

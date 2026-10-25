@@ -108,10 +108,15 @@ No configured domain documentation could be checked.
 - **The measured L14 shape: a preview over a live drift snapshot reports no blocker.** [10]
 - **Preview and apply are the same judgement, asserted from four directions in one case.** [11]
 - **The other half of the contract: the fix may not swallow a real failure.** [12]
-- The lane row this module was appended to. [13]
+
+
+> Retained earlier citation wording: - The lane manifest registers mcp/tests/test_terminal_preview_expectation.py in unit-regression. Membership selects evidence and does not establish execution. [13]
+
 
 ### Cross-Repo References
 
 No cross-repository behavior is implemented or measured in this file.
 
 No meaningful cross-repo references found.
+
+- The lane manifest registers mcp/tests/test_terminal_preview_expectation.py in unit-regression. Membership selects evidence and does not establish execution. [13]

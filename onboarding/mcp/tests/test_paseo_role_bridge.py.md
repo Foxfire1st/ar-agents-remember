@@ -51,5 +51,7 @@ of calls as well as on the command's answer.
 
 ## Evidence
 
+
 - Send eligibility, steering versus holding, attachment payloads, waits and parent naming run against the real script. [1]
+
 - Native image and text attachments travel only when given, and a malformed payload fails before any recorded operation. [2]

@@ -62,15 +62,14 @@
       ]
     },
     "4": {
-      "note": "The census rules are registered and refusing.",
+      "note": "The census rules are registered and refusing.\n\nAnchor: `test_census_rules_are_registered_and_refusing`",
       "targets": [
         {
           "anchor": {
-            "blob": "dfff8113f603a70767d8f1bdfacdb2e9ada4afa1",
-            "content": "sha256:673551a40c3f29c8d9e18ec289d241016bfb0899696740c0f4ee4a65e8beebb7",
+            "blob": "ffd3c2e7aac2133d497ddf8e91591bd95510a953",
+            "content": "sha256:b40ae183cb29323e6722290d48381090cdf2409a64257c867483bc9824419d43",
             "locator": {
-              "kind": "symbol",
-              "name": "test_census_rules_are_registered_and_refusing"
+              "kind": "file"
             },
             "path": "mcp/tests/test_knowledge_census_files.py"
           },
@@ -79,15 +78,14 @@
       ]
     },
     "5": {
-      "note": "The cache keeps no tree after validation.",
+      "note": "The cache keeps no tree after validation.\n\nAnchor: `test_the_census_rule_cache_keeps_no_tree_after_validation`",
       "targets": [
         {
           "anchor": {
-            "blob": "dfff8113f603a70767d8f1bdfacdb2e9ada4afa1",
-            "content": "sha256:f178d0834b744dcd945aab9228dea13c8e8172e45f41047fdd519cab3b0d0c58",
+            "blob": "ffd3c2e7aac2133d497ddf8e91591bd95510a953",
+            "content": "sha256:b40ae183cb29323e6722290d48381090cdf2409a64257c867483bc9824419d43",
             "locator": {
-              "kind": "symbol",
-              "name": "test_the_census_rule_cache_keeps_no_tree_after_validation"
+              "kind": "file"
             },
             "path": "mcp/tests/test_knowledge_census_files.py"
           },

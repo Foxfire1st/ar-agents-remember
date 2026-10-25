@@ -1,9 +1,10 @@
 {
   "path": "mcp/src/agents_remember/worktrees/sync_transaction.py",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
-        "blob": "8a9babc9b20c6761c07440ac22d8adeba24ef3c2",
+        "blob": "42cfc78baa34c9c1a83d133d2c91d7c588856b83",
         "content": "sha256:6964c31aea8dcd1eaf734faa0adbd3b10dbef51ef2017c86083c46ae0dbb7f9e",
         "locator": {
           "kind": "symbol",
@@ -21,7 +22,24 @@
     },
     {
       "anchor": {
-        "blob": "8a9babc9b20c6761c07440ac22d8adeba24ef3c2",
+        "blob": "42cfc78baa34c9c1a83d133d2c91d7c588856b83",
+        "content": "sha256:734543c289eb7ebce638ed57575804fc53606470587e4bd9dba4546347d83898",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-YA5QN6",
+      "invariant": "INV-033XSD",
+      "origin": {
+        "handoffEntry": "MIK-R198@v2 §5-§7 publication-refuses-stale-anchor",
+        "leaf": "260928-MIK-L191"
+      },
+      "rationale": "Carries the merge's repair debt into the sync record and the operator answer, so the debt survives the transaction rather than living only in a log line.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "42cfc78baa34c9c1a83d133d2c91d7c588856b83",
         "content": "sha256:113301394597b4d19db7b2b9bc73bb804db9c2b1b67170e9dbb1d32ec5d37625",
         "locator": {
           "kind": "symbol",
@@ -39,7 +57,7 @@
     },
     {
       "anchor": {
-        "blob": "8a9babc9b20c6761c07440ac22d8adeba24ef3c2",
+        "blob": "42cfc78baa34c9c1a83d133d2c91d7c588856b83",
         "content": "sha256:63a4e1542652988032beed8286ebf4684f786c3df106a5d9c9d11f3444e8fc9b",
         "locator": {
           "kind": "symbol",
@@ -62,7 +80,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8a9babc9b20c6761c07440ac22d8adeba24ef3c2",
+            "blob": "42cfc78baa34c9c1a83d133d2c91d7c588856b83",
             "content": "sha256:ce81740d2e4cb263c942716af0d464e2cbb0d81cb98bf15d04ba52d79ae18843",
             "locator": {
               "kind": "symbol",
@@ -73,7 +91,7 @@
         },
         {
           "anchor": {
-            "blob": "8a9babc9b20c6761c07440ac22d8adeba24ef3c2",
+            "blob": "42cfc78baa34c9c1a83d133d2c91d7c588856b83",
             "content": "sha256:3474f6117cc9dda982d19d77ab73e840fcdfb94704416d82a3db2c61815cc2ed",
             "locator": {
               "kind": "symbol",
@@ -103,12 +121,22 @@
       ]
     },
     "2": {
-      "note": "Moving candidate park.",
+      "note": "Moving candidate park.\n\nAnchor: `_park_participating_wip`",
       "targets": [
         {
           "anchor": {
-            "blob": "19a9717f0813cbe1190345be140dd5f29802a3c1",
-            "content": "sha256:9a256efa5662efe9387d2df37e2e7f62046c1a898d666e4952a253e7dfb12a0f",
+            "blob": "42cfc78baa34c9c1a83d133d2c91d7c588856b83",
+            "content": "sha256:734543c289eb7ebce638ed57575804fc53606470587e4bd9dba4546347d83898",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "42cfc78baa34c9c1a83d133d2c91d7c588856b83",
+            "content": "sha256:92d23997eb86530bb097cff3f3ccffdddc4f2a505247fc200d8f337aa83443bf",
             "locator": {
               "kind": "symbol",
               "name": "_park_participating_wip"
@@ -123,7 +151,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8a9babc9b20c6761c07440ac22d8adeba24ef3c2",
+            "blob": "42cfc78baa34c9c1a83d133d2c91d7c588856b83",
             "content": "sha256:62aba0b180a8f1b6001cffa1b31603f3265ea4feb0fe7c169651b20c8e8d88af",
             "locator": {
               "kind": "symbol",
@@ -139,7 +167,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8a9babc9b20c6761c07440ac22d8adeba24ef3c2",
+            "blob": "42cfc78baa34c9c1a83d133d2c91d7c588856b83",
             "content": "sha256:8ccac97f465884f7607ec1c26427a1efcac405a4d1b6f00a2a914985b4480d46",
             "locator": {
               "kind": "symbol",
@@ -151,12 +179,22 @@
       ]
     },
     "35": {
-      "note": "The validator's refusal is mapped to its own state with a recovery line, on the automatic path and the retained-conflict continuation.",
+      "note": "The validator's refusal is mapped to its own state with a recovery line, on the automatic path and the retained-conflict continuation.\n\nAnchor: `_knowledge_validation_refused`",
       "targets": [
         {
           "anchor": {
-            "blob": "19a9717f0813cbe1190345be140dd5f29802a3c1",
-            "content": "sha256:250e1605930397e93f18590afa307339b1a45d00c5fc586793809a0517d23a95",
+            "blob": "42cfc78baa34c9c1a83d133d2c91d7c588856b83",
+            "content": "sha256:734543c289eb7ebce638ed57575804fc53606470587e4bd9dba4546347d83898",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "42cfc78baa34c9c1a83d133d2c91d7c588856b83",
+            "content": "sha256:82c6d7eb7c3e2f115405f8cf3889199508b3c167a3bed2e2423c1e6d7692aeca",
             "locator": {
               "kind": "symbol",
               "name": "_knowledge_validation_refused"
@@ -167,12 +205,22 @@
       ]
     },
     "36": {
-      "note": "The side run names the crossing owner (leaf or master, and the task ID) and journals the crossing report path.",
+      "note": "The side run names the crossing owner (leaf or master, and the task ID) and journals the crossing report path.\n\nAnchor: `_run_side`",
       "targets": [
         {
           "anchor": {
-            "blob": "19a9717f0813cbe1190345be140dd5f29802a3c1",
-            "content": "sha256:ada82135373beb1ac3bfa2f2a6bb21ff6c9cd51cbb183b1149a8a531bdeac9e0",
+            "blob": "42cfc78baa34c9c1a83d133d2c91d7c588856b83",
+            "content": "sha256:734543c289eb7ebce638ed57575804fc53606470587e4bd9dba4546347d83898",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "42cfc78baa34c9c1a83d133d2c91d7c588856b83",
+            "content": "sha256:9a348bca310d3d428e5a10574ae36e955eb456a7da08c082b576db2439f651e3",
             "locator": {
               "kind": "symbol",
               "name": "_run_side"
@@ -187,7 +235,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8a9babc9b20c6761c07440ac22d8adeba24ef3c2",
+            "blob": "42cfc78baa34c9c1a83d133d2c91d7c588856b83",
             "content": "sha256:97b81cfa5cd6e45aa35d1ff91ce30f43bf8612d3fed020071686df908aa1eefc",
             "locator": {
               "kind": "symbol",
@@ -203,7 +251,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "96a8f88b672003959586599c7c8b8849e9b062da",
+            "blob": "3768b4016fd921a34a69b6dcfcf2df78901c48a7",
             "content": "sha256:926929a9c6f4048837c859485bfb3575a1284c9a0147ad8e00cbb7a2902c4474",
             "locator": {
               "kind": "symbol",
@@ -220,7 +268,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8a9babc9b20c6761c07440ac22d8adeba24ef3c2",
+            "blob": "42cfc78baa34c9c1a83d133d2c91d7c588856b83",
             "content": "sha256:66f1907419c78fceb9cc49ea83d87125315e740fd76bcf790c5fab51376e788a",
             "locator": {
               "kind": "symbol",
@@ -232,12 +280,22 @@
       ]
     },
     "4": {
-      "note": "Validator refusal retains repair state.",
+      "note": "Validator refusal retains repair state.\n\nAnchor: `_knowledge_validation_refused`",
       "targets": [
         {
           "anchor": {
-            "blob": "19a9717f0813cbe1190345be140dd5f29802a3c1",
-            "content": "sha256:250e1605930397e93f18590afa307339b1a45d00c5fc586793809a0517d23a95",
+            "blob": "42cfc78baa34c9c1a83d133d2c91d7c588856b83",
+            "content": "sha256:734543c289eb7ebce638ed57575804fc53606470587e4bd9dba4546347d83898",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "42cfc78baa34c9c1a83d133d2c91d7c588856b83",
+            "content": "sha256:82c6d7eb7c3e2f115405f8cf3889199508b3c167a3bed2e2423c1e6d7692aeca",
             "locator": {
               "kind": "symbol",
               "name": "_knowledge_validation_refused"
@@ -265,12 +323,23 @@
       ]
     },
     "42": {
-      "note": "Terminal finalization/cancellation and damaged-journal recovery are delegated.",
+      "note": "Terminal finalization/cancellation and damaged-journal recovery are delegated.\n\nAnchor: `finalize_sync`",
       "targets": [
         {
           "anchor": {
-            "blob": "774e8afb4d4159f3b486f89016308dd3f74ffe7f",
-            "content": "sha256:777bc7bc2f7c00451f9793cef42271f3e4d684a8b65d5dce201efc8aaef6d920",
+            "blob": "006b53d8a89f8d25905a57c1f9796ccb0e8b364a",
+            "content": "sha256:464cef0149eaefc6549938e0b95690aec3c55ad996b31418e8ed6d19c4209acd",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_recovery.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "006b53d8a89f8d25905a57c1f9796ccb0e8b364a",
+            "content": "sha256:4a20700f7445f55ac59ee738348942f2e772f97ab41ad56cad6dddd6da8a8eae",
             "locator": {
               "kind": "symbol",
               "name": "finalize_sync"
@@ -286,7 +355,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8a9babc9b20c6761c07440ac22d8adeba24ef3c2",
+            "blob": "42cfc78baa34c9c1a83d133d2c91d7c588856b83",
             "content": "sha256:113301394597b4d19db7b2b9bc73bb804db9c2b1b67170e9dbb1d32ec5d37625",
             "locator": {
               "kind": "symbol",
@@ -302,7 +371,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8a9babc9b20c6761c07440ac22d8adeba24ef3c2",
+            "blob": "42cfc78baa34c9c1a83d133d2c91d7c588856b83",
             "content": "sha256:ada8cfd1332459e1aaebfca5cf8e6236b6160be56d5f371a63034cde921741e5",
             "locator": {
               "kind": "symbol",
@@ -318,12 +387,24 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8a9babc9b20c6761c07440ac22d8adeba24ef3c2",
+            "blob": "42cfc78baa34c9c1a83d133d2c91d7c588856b83",
+            "content": "sha256:014d77063b1026da79799b7df9202e2b3b4b41d23a9b41fd8660668d8619a276",
+            "locator": {
+              "end": 120,
+              "kind": "line_range",
+              "start": 111
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "42cfc78baa34c9c1a83d133d2c91d7c588856b83",
             "content": "sha256:acc855fe5d75e72a8ca098aa863a98c24a403411eb429660cf0e4172abdaf9f8",
             "locator": {
-              "end": 118,
+              "end": 119,
               "kind": "line_range",
-              "start": 109
+              "start": 110
             }
           },
           "kind": "code"
@@ -335,12 +416,24 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8a9babc9b20c6761c07440ac22d8adeba24ef3c2",
+            "blob": "42cfc78baa34c9c1a83d133d2c91d7c588856b83",
+            "content": "sha256:99095d287c043c28135de915a791ee18daa955fa8630be9bb9d867a11e54f0e2",
+            "locator": {
+              "end": 1006,
+              "kind": "line_range",
+              "start": 1000
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "42cfc78baa34c9c1a83d133d2c91d7c588856b83",
             "content": "sha256:4caaaa389f18cf48a1a623f92f8eb4ba77a07ad24b324f34e93105d1a7a61d00",
             "locator": {
-              "end": 998,
+              "end": 1002,
               "kind": "line_range",
-              "start": 992
+              "start": 996
             }
           },
           "kind": "code"
@@ -348,12 +441,22 @@
       ]
     },
     "47": {
-      "note": "The driver uses one paired-code/owner context for merge and resumed capture.",
+      "note": "The driver uses one paired-code/owner context for merge and resumed capture.\n\nAnchor: `_run_side`",
       "targets": [
         {
           "anchor": {
-            "blob": "19a9717f0813cbe1190345be140dd5f29802a3c1",
-            "content": "sha256:ada82135373beb1ac3bfa2f2a6bb21ff6c9cd51cbb183b1149a8a531bdeac9e0",
+            "blob": "42cfc78baa34c9c1a83d133d2c91d7c588856b83",
+            "content": "sha256:734543c289eb7ebce638ed57575804fc53606470587e4bd9dba4546347d83898",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "42cfc78baa34c9c1a83d133d2c91d7c588856b83",
+            "content": "sha256:9a348bca310d3d428e5a10574ae36e955eb456a7da08c082b576db2439f651e3",
             "locator": {
               "kind": "symbol",
               "name": "_run_side"
@@ -368,7 +471,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8a9babc9b20c6761c07440ac22d8adeba24ef3c2",
+            "blob": "42cfc78baa34c9c1a83d133d2c91d7c588856b83",
             "content": "sha256:6964c31aea8dcd1eaf734faa0adbd3b10dbef51ef2017c86083c46ae0dbb7f9e",
             "locator": {
               "kind": "symbol",
@@ -380,12 +483,22 @@
       ]
     },
     "5": {
-      "note": "Structural report journaling.",
+      "note": "Structural report journaling.\n\nAnchor: `_run_side`",
       "targets": [
         {
           "anchor": {
-            "blob": "19a9717f0813cbe1190345be140dd5f29802a3c1",
-            "content": "sha256:ada82135373beb1ac3bfa2f2a6bb21ff6c9cd51cbb183b1149a8a531bdeac9e0",
+            "blob": "42cfc78baa34c9c1a83d133d2c91d7c588856b83",
+            "content": "sha256:734543c289eb7ebce638ed57575804fc53606470587e4bd9dba4546347d83898",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "42cfc78baa34c9c1a83d133d2c91d7c588856b83",
+            "content": "sha256:9a348bca310d3d428e5a10574ae36e955eb456a7da08c082b576db2439f651e3",
             "locator": {
               "kind": "symbol",
               "name": "_run_side"
@@ -400,7 +513,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8a9babc9b20c6761c07440ac22d8adeba24ef3c2",
+            "blob": "42cfc78baa34c9c1a83d133d2c91d7c588856b83",
             "content": "sha256:97b81cfa5cd6e45aa35d1ff91ce30f43bf8612d3fed020071686df908aa1eefc",
             "locator": {
               "kind": "symbol",
@@ -412,12 +525,22 @@
       ]
     },
     "9": {
-      "note": "Current continuation.\n\nAnchor: `_continue_resolution`, `_finish_retained_merge`",
+      "note": "Current continuation.\n\nAnchor: `_continue_resolution` `_finish_retained_merge`",
       "targets": [
         {
           "anchor": {
-            "blob": "19a9717f0813cbe1190345be140dd5f29802a3c1",
-            "content": "sha256:1aa70f6f5944ba4764b0db71e424337932290a52b4f5365d33771736b650de3e",
+            "blob": "42cfc78baa34c9c1a83d133d2c91d7c588856b83",
+            "content": "sha256:734543c289eb7ebce638ed57575804fc53606470587e4bd9dba4546347d83898",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "42cfc78baa34c9c1a83d133d2c91d7c588856b83",
+            "content": "sha256:7e86b24da48a20b7357c75bbaaa5ed143d11ab7a568c4b7b3bc15287750baad6",
             "locator": {
               "kind": "symbol",
               "name": "_continue_resolution"
@@ -427,8 +550,8 @@
         },
         {
           "anchor": {
-            "blob": "19a9717f0813cbe1190345be140dd5f29802a3c1",
-            "content": "sha256:a80333450aa234831dc2da47c2f60b196054b232b1439b05643750d03dfaf4b2",
+            "blob": "42cfc78baa34c9c1a83d133d2c91d7c588856b83",
+            "content": "sha256:27263045c63dce8ebca834cad04afc20cbff97d45266c1e9c9724c18d3d87c14",
             "locator": {
               "kind": "symbol",
               "name": "_finish_retained_merge"

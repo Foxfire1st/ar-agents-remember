@@ -252,15 +252,14 @@
       ]
     },
     "7": {
-      "note": "Cancellation restores already-restored sides and supports pre-sync reapply retry.",
+      "note": "Cancellation restores already-restored sides and supports pre-sync reapply retry.\n\nAnchor: `restore_cancelled_wip`",
       "targets": [
         {
           "anchor": {
-            "blob": "7941dbcd694249b239e395eac42b9de8a9a004c0",
-            "content": "sha256:9a3a1bdcf5c7a7fae0702925a9bc0ca32d70df6f0ee3a3a986ccc4856994057b",
+            "blob": "92fee70bb3beb08af1a5a758bd7bebda384cdb9c",
+            "content": "sha256:909c5c90cb36d2a10983aaa829421ad83371f0a5d5f5b27fdb08fd400053c90a",
             "locator": {
-              "kind": "symbol",
-              "name": "restore_cancelled_wip"
+              "kind": "file"
             }
           },
           "kind": "code"

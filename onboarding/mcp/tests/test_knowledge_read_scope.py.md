@@ -115,11 +115,15 @@ No Domain Documentation source is configured for this slice.
 ### Repo-Internal References
 
 - `test_an_exact_family_revision_seed_stops_after_its_own_members` supplies the current fixture or assertion described above. [19]
+
 - `test_an_identity_seed_returns_the_retained_revision_as_its_own_group` supplies the current fixture or assertion described above. [20]
+
 - `test_every_page_declares_the_same_snapshot_and_manifest_and_the_union_equals_the_selection` supplies the current fixture or assertion described above. [21]
 - `test_a_refused_read_leaves_every_table_and_the_logical_digest_unchanged` supplies the current fixture or assertion described above. [22]
 - The shared read-scope builder uses test-only text/row construction, not the retired canonical writer. [23]
+
 - RowStore writes text-tree fixture rows without the retired production admission plane. [24]
+
 
 ### Docs References
 
@@ -130,25 +134,38 @@ No configured domain documentation could be checked.
 
 - **The node the requirement's non-conformance example points at: a one-item page still advertises the second location, with the corrected counts.** [25]
 - **The completeness node that compares the walk against the mandatory set derived from recorded rows rather than against the implementation's own page manifest.** [26]
+
 - **The ordering node the review sealed as HIGH, and the fixture repair that made it deterministic.** [27]
+
 
 - The packet's stopping-rule nodes, including the explicit `G` expansion that reaches K1. [28]
 
 - The two equivalence nodes (invariant versus family seed; path versus exact revision seed). [29]
 
+
 - The revision-grouping nodes. [30]
+
 
 - The count-separation and multi-family-membership nodes. [31]
 
 - The truncation, too-small-budget, execution-bound and absence nodes. [32]
 
+
 - The persisted-nothing and current file-isolation nodes; the old requested-namespace fixture is not current coverage. [33]
 
+
 - The lane row this module occupies. [34]
-- The support artifacts and contracts this module is a declared consumer of (entries at `:254`, `:1171`, `:1693`, `:1758` and `:2021`). [35]
+
+
+
+> Retained earlier citation wording: - The support artifacts and contracts the evidence-lifecycle catalog declares this module a consumer of. [35]
+
+
 
 ### Cross-Repo References
 
 No cross-repository behavior is implemented in this file.
 
 No meaningful cross-repo references found.
+
+- The support artifacts and contracts the evidence-lifecycle catalog declares this module a consumer of. [35]

@@ -1,5 +1,6 @@
 {
   "path": "dashboard/src/grammar/referenceMarkers.ts",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
@@ -53,12 +54,12 @@
       ]
     },
     "3": {
-      "note": "The shared renderer includes the plugins only when its caller asks for them.\n\nAnchor: `Markdown`",
+      "note": "The shared renderer includes the plugins only when its caller asks for them.",
       "targets": [
         {
           "anchor": {
-            "blob": "b4c74c37212e432009df876b3276beea828250fa",
-            "content": "sha256:bc43508e5e9614897d5cc5c61ee66424045ef4aeb4dbdb3e53be476b95279558",
+            "blob": "1a65bd4444779518a555e2e38d8ca30fa0df9f3a",
+            "content": "sha256:dbbcb27210f3e352d08d6ba242aaa61621f03500d95beccbb45dbe266bda2ae3",
             "locator": {
               "kind": "file"
             },

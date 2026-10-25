@@ -44,11 +44,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4a177dd386845d2f9f41c60ac7884e3644bbad24",
-            "content": "sha256:15de6b181acfaacae9313a07c413776d4e8d0bf123771ea719f74878d22e7651",
+            "blob": "ea9892bb5d4717dcf27606f3fc6ca8694ad0419b",
+            "content": "sha256:7f018d8406443dcf8b4c9e0c9254e8427362d1a36e4e2d6a2d8fb56ef5b5b2e2",
             "locator": {
-              "kind": "symbol",
-              "name": "test_candidate_accounting_excludes_worktree_environments"
+              "end": 123,
+              "kind": "line_range",
+              "start": 102
             },
             "path": "mcp/tests/test_worktree_own_environment.py"
           },

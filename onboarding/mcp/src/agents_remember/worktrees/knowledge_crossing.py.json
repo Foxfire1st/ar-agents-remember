@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/worktrees/knowledge_crossing.py",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
@@ -73,15 +74,14 @@
       ]
     },
     "14": {
-      "note": "`apply_crossing` implements the retained boundary described above.",
+      "note": "`apply_crossing` implements the retained boundary described above.\n\nAnchor: `apply_crossing`",
       "targets": [
         {
           "anchor": {
-            "blob": "e26aec15ae66d43787698d534743bda3fa5463ef",
-            "content": "sha256:9cee7d39379888cd18794013dfc40a3cf9db0a4917edfdcb14e84e2cc389c7d9",
+            "blob": "ef6345d05ffe2c156f9923c9abef905ee5bb31ef",
+            "content": "sha256:0860cab26f7e5d70b2a1f337343d94382f3e23a8bc1411dfcd644d11cfd5b007",
             "locator": {
-              "kind": "symbol",
-              "name": "apply_crossing"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -153,15 +153,14 @@
       ]
     },
     "19": {
-      "note": "The merge's knowledge and onboarding paths become the plan; conflicted paths are unmerged with three stages.",
+      "note": "The merge's knowledge and onboarding paths become the plan; conflicted paths are unmerged with three stages.\n\nAnchor: `apply_crossing`",
       "targets": [
         {
           "anchor": {
-            "blob": "e26aec15ae66d43787698d534743bda3fa5463ef",
-            "content": "sha256:9cee7d39379888cd18794013dfc40a3cf9db0a4917edfdcb14e84e2cc389c7d9",
+            "blob": "ef6345d05ffe2c156f9923c9abef905ee5bb31ef",
+            "content": "sha256:0860cab26f7e5d70b2a1f337343d94382f3e23a8bc1411dfcd644d11cfd5b007",
             "locator": {
-              "kind": "symbol",
-              "name": "apply_crossing"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -169,15 +168,14 @@
       ]
     },
     "20": {
-      "note": "The rule 9 refusal when the official line is converted; every other unconverted tree is left to the cutover lock.",
+      "note": "The shared legacy refusal names crossing sync for a converted official line and first conversion otherwise.\n\nAnchor: `unconverted_line_refusal`",
       "targets": [
         {
           "anchor": {
-            "blob": "e26aec15ae66d43787698d534743bda3fa5463ef",
-            "content": "sha256:124f5c9e6a34a3f01b3fd5a8d70f161ef7e4d775864fbd5b8db7ccadc105e44a",
+            "blob": "ef6345d05ffe2c156f9923c9abef905ee5bb31ef",
+            "content": "sha256:0860cab26f7e5d70b2a1f337343d94382f3e23a8bc1411dfcd644d11cfd5b007",
             "locator": {
-              "kind": "symbol",
-              "name": "unconverted_line_refusal"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -217,15 +215,14 @@
       ]
     },
     "23": {
-      "note": "Rule 9, then the cutover lock for every other unconverted tree.",
+      "note": "Legacy refusal is unconditional; converted candidates retain their gate route.\n\nAnchor: `unconverted_line_refusal`",
       "targets": [
         {
           "anchor": {
-            "blob": "e26aec15ae66d43787698d534743bda3fa5463ef",
-            "content": "sha256:124f5c9e6a34a3f01b3fd5a8d70f161ef7e4d775864fbd5b8db7ccadc105e44a",
+            "blob": "ef6345d05ffe2c156f9923c9abef905ee5bb31ef",
+            "content": "sha256:0860cab26f7e5d70b2a1f337343d94382f3e23a8bc1411dfcd644d11cfd5b007",
             "locator": {
-              "kind": "symbol",
-              "name": "unconverted_line_refusal"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -283,15 +280,14 @@
       ]
     },
     "27": {
-      "note": "The refusal fires on legacy leaf memory independent of converted memory elsewhere.",
+      "note": "The refusal fires on legacy leaf memory independent of converted memory elsewhere.\n\nAnchor: `test_an_unconverted_leaf_is_refused_with_the_conversion_step_on_any_line`",
       "targets": [
         {
           "anchor": {
-            "blob": "737a38f7aeef4298e5aca6f39699b7bf4e717303",
-            "content": "sha256:2b85249b3238ebc5abd9cc91235c1d1eff333e9d01335ccff476a44ff9241bad",
+            "blob": "c1c7d17344cd9be8f9ea3dbac4d826343761c185",
+            "content": "sha256:28fd122ff2c33d1107d06aa386bb795f4dba57257da61e80f4c61dd118335d22",
             "locator": {
-              "kind": "symbol",
-              "name": "test_an_unconverted_leaf_is_refused_with_the_conversion_step_on_any_line"
+              "kind": "file"
             },
             "path": "mcp/tests/test_knowledge_conversion_toolchain.py"
           },

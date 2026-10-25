@@ -38,9 +38,15 @@ No configured external domain documentation applies.
 
 ### Repo-Internal References
 
+
 - Source scope and role routing. [1]
+
+
 - Resolved memory and retrieval strategy. [2]
+
+
 - Canonical sources and generated-copy boundaries. [3]
+
 - Current testing, diagnostic and enforcing policy. [4]
 
 ### Cross-Repo References

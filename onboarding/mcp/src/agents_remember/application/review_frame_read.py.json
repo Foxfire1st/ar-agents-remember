@@ -16,7 +16,7 @@
         "handoffEntry": "L102-F10",
         "leaf": "260928-MIK-L102"
       },
-      "rationale": "Every stored metadata read now goes through a finite sentinel read; manifests and pointer/draft/reclamation/archive metadata use MAX_MANIFEST_BYTES, digest uses64, assets use admitted byte_size. Descriptor population/aggregate bound is validated before opening asset payloads. The old2097189-byte corrupt manifest now reads exactly1048577 bytes under1048576 cap then refuses. Four corrupt-store controls cover manifest/digest/asset/pointer; over-cap descriptor control proves zero asset opens. A4 capacity/reservation/lock and at-cap preservation logic is unchanged.",
+      "rationale": "`validate_asset_read_bounds` still bounds every stored metadata read and validates the descriptor population and aggregate before any asset payload is opened, so a corrupt store cannot authorise an over-cap read.",
       "role": "enforcement"
     },
     {
@@ -34,7 +34,7 @@
         "handoffEntry": "L102-F10",
         "leaf": "260928-MIK-L102"
       },
-      "rationale": "Every stored metadata read now goes through a finite sentinel read; manifests and pointer/draft/reclamation/archive metadata use MAX_MANIFEST_BYTES, digest uses64, assets use admitted byte_size. Descriptor population/aggregate bound is validated before opening asset payloads. The old2097189-byte corrupt manifest now reads exactly1048577 bytes under1048576 cap then refuses. Four corrupt-store controls cover manifest/digest/asset/pointer; over-cap descriptor control proves zero asset opens. A4 capacity/reservation/lock and at-cap preservation logic is unchanged.",
+      "rationale": "`read_frame_bytes` still refuses an over-cap or over-population read, which is what keeps the byte accounting honest.",
       "role": "enforcement"
     }
   ],

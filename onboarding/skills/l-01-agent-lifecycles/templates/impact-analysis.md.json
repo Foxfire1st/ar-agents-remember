@@ -1,5 +1,6 @@
 {
   "path": "skills/l-01-agent-lifecycles/templates/impact-analysis.md",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
@@ -7,7 +8,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "910af33fc50b7d56d066afd9ecfb2cdb82ac151a",
+            "blob": "04517415093319b6e7ffec33e218c7006efc7aea",
             "content": "sha256:d31037b2aa934d884a162e310e39f156e6f389494eddeadfd6b7b41fad33f302",
             "locator": {
               "end": 6,
@@ -24,7 +25,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "910af33fc50b7d56d066afd9ecfb2cdb82ac151a",
+            "blob": "04517415093319b6e7ffec33e218c7006efc7aea",
             "content": "sha256:e00b5e72dc13ed931504ca2f0521f81510ba5ad2546d28239d7fd987657cd016",
             "locator": {
               "end": 17,
@@ -41,7 +42,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "910af33fc50b7d56d066afd9ecfb2cdb82ac151a",
+            "blob": "04517415093319b6e7ffec33e218c7006efc7aea",
             "content": "sha256:a0700fb05d3de17ab2f6b11ff0ffc575e5bb07b1d13265cd9c4e85ec5bcf0d8d",
             "locator": {
               "end": 29,
@@ -58,8 +59,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "910af33fc50b7d56d066afd9ecfb2cdb82ac151a",
-            "content": "sha256:a7b9067d6e82cc3f1619ae43f28a0209912963d287081d7de11745f3cb4ea041",
+            "blob": "04517415093319b6e7ffec33e218c7006efc7aea",
+            "content": "sha256:68580573afcc25c1f5ff40a9f52614cc58ba70a185e0e60289ba92649cec6ce9",
             "locator": {
               "end": 42,
               "kind": "line_range",
@@ -75,7 +76,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "910af33fc50b7d56d066afd9ecfb2cdb82ac151a",
+            "blob": "04517415093319b6e7ffec33e218c7006efc7aea",
             "content": "sha256:a1897b233b03e39514b5b02d184f341839009baed0def2cb276916ab55d174a6",
             "locator": {
               "end": 50,

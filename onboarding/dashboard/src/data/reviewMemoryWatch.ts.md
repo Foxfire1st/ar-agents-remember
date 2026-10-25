@@ -16,15 +16,20 @@ publishReviewMemory ignores a different scope and a non-string revision. The fir
 
 useReviewMemoryWatch derives liveness from an enclosure matching repoName/taskName/leafId whose worktree-group basename is in activeWorktreeGroups; recorded history never registers. A latest ref supplies current cycle/entry callbacks without resubscribing on every render. A matching change first retains/engages the visible selection, then calls memoryChanged and the shared entry revalidate. A failure calls memoryWatchFailed, not a success or empty result. Cleanup reclaims the registration. This does not promise watches for every detail panel or parallel transport scopes, a fixed publication latency, or current tests.
 
+The same module also has a separate moved-notice subscriber set keyed by exact repository/master/leaf. publishReviewExplainerMoved accepts the host's repo/repository, master/task and leaf/leaf_id spellings, rejects an unaddressed payload and notifies only matching subscriptions. It carries comparison/master moves and cleared notices without opening an EventSource, re-reading state or waking an agent itself.
+
 ## Evidence
 
 - First effective registration owns the scope and scope changes reset the baseline. [1]
-- First/reconnect baseline reconciles once; unchanged matching revisions then stay quiet. [2]
-- Errors are matched to the effective scope and forwarded as named failures. [3]
-- Only live non-recorded reviews register; matching changes retain selection then refresh cycle/entry. [4]
-- Existing state transport carries scope query and both memory event types. [5]
-- Actual ReviewSurface supplies the cycle and navigation.engage callback. [6]
 
-The same module also has a separate moved-notice subscriber set keyed by exact repository/master/leaf. publishReviewExplainerMoved accepts the host's repo/repository, master/task and leaf/leaf_id spellings, rejects an unaddressed payload and notifies only matching subscriptions. It carries comparison/master moves and cleared notices without opening an EventSource, re-reading state or waking an agent itself.
+- First/reconnect baseline reconciles once; unchanged matching revisions then stay quiet. [2]
+
+- Errors are matched to the effective scope and forwarded as named failures. [3]
+
+- Only live non-recorded reviews register; matching changes retain selection then refresh cycle/entry. [4]
+
+- Existing state transport carries scope query and both memory event types. [5]
+
+- ReviewSurface supplies the watch its scope and cycle only: `useReviewMemoryWatch({ repo, master, leaf, history }, cycle)`; no retain-selection callback travels with it. [6]
 
 - The same module also has a separate moved-notice subscriber set keyed by exact repository/master/leaf. publishReviewExplainerMoved accepts the host's repo/repository, master/task and leaf/leaf_id spellings, rejects an unaddressed payload and notifies only matching subscriptions. It carries comparison/master moves and cleared notices without opening an EventSource, re-reading state or waking an agent itself. [7]

@@ -74,8 +74,10 @@ No relevant domain documentation was found.
 
 ### Repo-Internal References
 
+
 - The scene-wide coordinate constants and conduit-path builder consumed by the layers. [1]
-- The runtime/state vocabulary narrowing shared by gauges and conduits. [2]
+
+- `runtimeState` and the gauge runtime vocabulary are removed; only the conduit narrowing survives. [2]
 - The materialisation/block derivations this module feeds. [3]
 
 ### Cross-Repo References

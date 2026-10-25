@@ -169,15 +169,14 @@
       ]
     },
     "15": {
-      "note": "A master line's crossing records its rows through the writer.",
+      "note": "A master line's crossing records its rows through the writer.\n\nAnchor: `test_a_master_line_crossing_records_its_rows_through_the_writer`",
       "targets": [
         {
           "anchor": {
-            "blob": "d49726185fab50f4f489c3a385786402b6b57f1d",
-            "content": "sha256:09e5da1f57c2822063e408a1639fa81a660d26a982d1ed628fa8a27aca1ae25c",
+            "blob": "1a6235931c50a4a8f6b146a51598cdff7f55a233",
+            "content": "sha256:075ff4475087a14dafb700ce617d28082fae430f3313c7e64333ca644f5dc9fe",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_master_line_crossing_records_its_rows_through_the_writer"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -260,15 +259,14 @@
       ]
     },
     "2": {
-      "note": "Every kind through the command line.",
+      "note": "Every kind through the command line.\n\nAnchor: `test_the_command_line_round_trips_every_kind`",
       "targets": [
         {
           "anchor": {
-            "blob": "d49726185fab50f4f489c3a385786402b6b57f1d",
-            "content": "sha256:2c59d62ee361274b1da8e1047eff38794efaa3060578094aebad1f517d7aa5ea",
+            "blob": "1a6235931c50a4a8f6b146a51598cdff7f55a233",
+            "content": "sha256:075ff4475087a14dafb700ce617d28082fae430f3313c7e64333ca644f5dc9fe",
             "locator": {
-              "kind": "symbol",
-              "name": "test_the_command_line_round_trips_every_kind"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -324,15 +322,14 @@
       ]
     },
     "6": {
-      "note": "The bootstrap command dispatch.",
+      "note": "The bootstrap command dispatch.\n\nAnchor: `test_the_bootstrap_command_dispatches_converted_memory_to_the_file_writer`",
       "targets": [
         {
           "anchor": {
-            "blob": "087f86b0f5ccb42c7a61d639d9e8e2fc0bb83461",
-            "content": "sha256:9233667de56acf8ae662f0bcf5fb4c318fd5385e54eae25e96d6143e74b2a052",
+            "blob": "1a6235931c50a4a8f6b146a51598cdff7f55a233",
+            "content": "sha256:075ff4475087a14dafb700ce617d28082fae430f3313c7e64333ca644f5dc9fe",
             "locator": {
-              "kind": "symbol",
-              "name": "test_the_bootstrap_command_dispatches_converted_memory_to_the_file_writer"
+              "kind": "file"
             }
           },
           "kind": "test"

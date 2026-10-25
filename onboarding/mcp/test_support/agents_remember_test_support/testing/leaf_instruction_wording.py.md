@@ -20,7 +20,9 @@ The Worker and coordination positive obligations now require the one `role_start
 
 ## Evidence
 
+
 - The affirmative clause tables are the wording guards' data. [1]
+
 
 
 - Adds delivered_step, which parses the manifest, routes real admission/compilation, selects exactly one detail with exact source/step/bytes, composes launch instructions, asserts one recorded artifact, a resolved Markdown pointer, no unresolved detail token and exact stored bytes. Reviewer and Curator tables gain role-scoped accepted rewordings; memory clauses now allow the separate recorded memory lane while preserving code-state isolation and approval/limit facets. Existing Worker/set-start clauses remain. [2]

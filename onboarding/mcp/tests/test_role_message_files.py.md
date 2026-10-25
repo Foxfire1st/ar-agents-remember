@@ -52,10 +52,19 @@ returned text alone.
 
 ## Evidence
 
+
 - Boundary settings and reload assertions separate the bounded wake text from the file payload. [1]
+
+
 - Message fixtures inspect stored payloads, pointers, reply files and workspace links. [2]
+
 - Faults and collisions exercise rollback and retained concurrent payloads. [3]
+
 - Successor guidance and strict refusal fields stay separate from automatic retargeting. [4]
+
+
 - The composed fixtures pin retained refusal files on a non-holdable unresumable session and archive the old holder before successor fixtures. [5]
+
+
 
 - The former fifty-character wait-reply truncation control is retired with that subject. Reply-file content and bound/refusal assertions remain; current source retains the full reply instead of claiming the old lower cut is still enforced — mcp/tests/test_role_message_files.py. [6]

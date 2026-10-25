@@ -1,5 +1,6 @@
 {
   "path": "mcp/tests/test_review_unexplained_lane.py",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
@@ -115,12 +116,38 @@
       "targets": [
         {
           "anchor": {
-            "blob": "11ba98ff63f4a4815985ac51e2c0c7b5a48556a4",
-            "content": "sha256:afa9ba5d9de9791c0e5df1a308e5de0eb4617bffeab123813814dc56a6f1fac2",
+            "blob": "102c4550ab6429f44c8fb543d1d0662de66a1b8c",
+            "content": "sha256:16ddbce4256d21c34536ab3e4aa0e2d936b073ec9d3b41fae81bda53679563b9",
             "locator": {
-              "end": 336,
+              "end": 372,
               "kind": "line_range",
-              "start": 336
+              "start": 372
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "102c4550ab6429f44c8fb543d1d0662de66a1b8c",
+            "content": "sha256:b34bbdec272097516c3b3ffd0bf331f6681c0aa06369cfb0a16028b08c8f5ee8",
+            "locator": {
+              "end": 339,
+              "kind": "line_range",
+              "start": 339
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "102c4550ab6429f44c8fb543d1d0662de66a1b8c",
+            "content": "sha256:482fe26ba62372f2f3f20486f9e04b14be91cf1fb189702a58d90a48583faf82",
+            "locator": {
+              "end": 282,
+              "kind": "line_range",
+              "start": 282
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -307,8 +334,18 @@
       ]
     },
     "9": {
-      "note": "An unread side and a partial index (review F3).",
+      "note": "An unread side and a partial index (review F3).\n\nAnchor: `test_an_unreadable_side_is_never_unexplained_and_the_readable_side_still_links` `test_a_partial_index_makes_only_its_unparsed_files_unknown` `_gate_unknown_on_a_partial_side`",
       "targets": [
+        {
+          "anchor": {
+            "blob": "07c3794ccbb87694674d2cbeddbf9e7f93466f8f",
+            "content": "sha256:a3e8a467806f302764bd0b2c032757b58d7e1b00972be98f432fab2d7fa35764",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        },
         {
           "anchor": {
             "blob": "07c3794ccbb87694674d2cbeddbf9e7f93466f8f",
@@ -322,8 +359,8 @@
         },
         {
           "anchor": {
-            "blob": "ac17d01cdad88f377b74201f5f7e00a6e83d2bc7",
-            "content": "sha256:6aac683aae1ffc076fd275fd883c8bfb3ea60340194fad762d9f730e0b2ee620",
+            "blob": "07c3794ccbb87694674d2cbeddbf9e7f93466f8f",
+            "content": "sha256:f5559547a3250a476c35ded6e7d9c56e4c3eaebd8e114b2bc0de6cfd9194d15b",
             "locator": {
               "kind": "symbol",
               "name": "test_a_partial_index_makes_only_its_unparsed_files_unknown"

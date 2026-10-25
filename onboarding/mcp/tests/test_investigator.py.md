@@ -16,4 +16,5 @@ The completed-recipient message case covers sprint/master crossed with idle/clos
 
 ## Evidence
 
+
 - The source owns the documented investigation, identity or request boundary. [1]

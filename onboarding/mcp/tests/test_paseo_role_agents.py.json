@@ -19,15 +19,14 @@
       ]
     },
     "2": {
-      "note": "Start hooks publish only when required runtime/report facts exist.",
+      "note": "The start hooks publish only when the runtime and the report facts exist.\n\nAnchor: `RoleStartPublishesForPluginTests`",
       "targets": [
         {
           "anchor": {
-            "blob": "37f3a95fcca67d1d7b98e09655ad32f2d1dfec31",
-            "content": "sha256:4252ae60b5bc1413303593cbed96c27a16ced92762547ac62f567a7f14389eda",
+            "blob": "b790812b7fd8b9dda8310afaf6b27e4e1e720038",
+            "content": "sha256:b91265be81d154f0adfa5bdfc7bab065f3ce7c38cdc454cd8e89e28ed7cbaf9f",
             "locator": {
-              "kind": "symbol",
-              "name": "RoleStartPublishesForPluginTests"
+              "kind": "file"
             }
           },
           "kind": "test"

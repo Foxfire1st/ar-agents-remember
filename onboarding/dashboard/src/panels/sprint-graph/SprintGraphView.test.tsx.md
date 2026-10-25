@@ -35,10 +35,16 @@ ellipsized leaf line's ch-based growth is pinned against `leafLineStyles`.
 
 ### Repo-Internal References
 
+
 - The component forcing suite. [1]
 
+
+
 - The component under test. [2]
+
+
 - The style contracts asserted. [3]
+
 
 ### Cross-Repo References
 

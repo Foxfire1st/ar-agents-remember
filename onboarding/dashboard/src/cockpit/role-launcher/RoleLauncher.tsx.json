@@ -191,11 +191,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "01dce06e4fa9d67a182271cf2b78c81f0124ff12",
-            "content": "sha256:5c043292819f5ee221a1c2febb277fa9a80e8e9f7e3627652829136e40cf5a02",
+            "blob": "7fd286e8f506c4eda1b00757ae2dcc75194bab80",
+            "content": "sha256:b1bb4a25b25a077f144005d93d9649d2ab97891acec17f0926c6b522308d3ce3",
             "locator": {
-              "kind": "symbol",
-              "name": "startButtonDisabled"
+              "end": 835,
+              "kind": "line_range",
+              "start": 825
             }
           },
           "kind": "code"
@@ -276,12 +277,75 @@
       "targets": [
         {
           "anchor": {
-            "blob": "01dce06e4fa9d67a182271cf2b78c81f0124ff12",
-            "content": "sha256:e3e8710314ea65b6238f5c89c5c6bcdcef478aedc0b04716e092b75e60c3768b",
+            "blob": "7fd286e8f506c4eda1b00757ae2dcc75194bab80",
+            "content": "sha256:8b6e5f5f4a4cc02e4f7d96f245b49676c3521fc8e31461166314907a0e6f041a",
             "locator": {
-              "kind": "symbol",
-              "name": "launcherRow"
+              "end": 183,
+              "kind": "line_range",
+              "start": 181
             }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7fd286e8f506c4eda1b00757ae2dcc75194bab80",
+            "content": "sha256:e6d5ccc8b69c02c2baa25b2e5923c3e44b90539dfc1eed2f2993db9403ca70c4",
+            "locator": {
+              "end": 1103,
+              "kind": "line_range",
+              "start": 1096
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7fd286e8f506c4eda1b00757ae2dcc75194bab80",
+            "content": "sha256:b0201fef76b6892d4c564eefa2790b83e008d8d3486c79c9c75ba4c52c7f678c",
+            "locator": {
+              "end": 1176,
+              "kind": "line_range",
+              "start": 1138
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7fd286e8f506c4eda1b00757ae2dcc75194bab80",
+            "content": "sha256:baa3abb391c852a10d677fc4938c0b37bb9f094f2dc039344dd5d7d05868b439",
+            "locator": {
+              "end": 1053,
+              "kind": "line_range",
+              "start": 967
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8434598e9ac8d189927a8bed217cf6eee18dca61",
+            "content": "sha256:ce16c59c2649fa33167f2c81c8025461773340bcc70fe36bb3537dc38cee50af",
+            "locator": {
+              "end": 38,
+              "kind": "line_range",
+              "start": 7
+            },
+            "path": "dashboard/src/cockpit/RoleExecutionStatus.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "49001f5ff9548e3c0b4a3ba3b69a05fb6fc8646f",
+            "content": "sha256:8b3204f9cfaa0b96877dbe0e13f93cbf23ac7aa0b4568643a0820c8145c0e554",
+            "locator": {
+              "end": 24,
+              "kind": "line_range",
+              "start": 18
+            },
+            "path": "dashboard/src/cockpit/role-launcher/StepUpControl.tsx"
           },
           "kind": "code"
         }
@@ -292,11 +356,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "01dce06e4fa9d67a182271cf2b78c81f0124ff12",
-            "content": "sha256:a5ec52f9863b0e14fd179dd2c894e727f1033ebf1f0784d2da202ecfdda1571f",
+            "blob": "7fd286e8f506c4eda1b00757ae2dcc75194bab80",
+            "content": "sha256:1712214cf009a7918411578e039ea7a6aa287c819078d4bc0250eee59ee9790a",
             "locator": {
-              "kind": "symbol",
-              "name": "RoleLauncher"
+              "end": 1176,
+              "kind": "line_range",
+              "start": 1096
             }
           },
           "kind": "code"
@@ -325,11 +390,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "01dce06e4fa9d67a182271cf2b78c81f0124ff12",
-            "content": "sha256:18e3536e6f348422306c2cf062f46b8f825a76a9b851c875a0abbac15532992e",
+            "blob": "7fd286e8f506c4eda1b00757ae2dcc75194bab80",
+            "content": "sha256:1b82c274556b2944144ea73674c31503477db1b7786ae43f615e1ee735c9f4c4",
             "locator": {
-              "kind": "symbol",
-              "name": "roleLauncherGrid"
+              "end": 56,
+              "kind": "line_range",
+              "start": 42
             }
           },
           "kind": "code"
@@ -341,11 +407,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "01dce06e4fa9d67a182271cf2b78c81f0124ff12",
-            "content": "sha256:7c92b67fc525f745f827a36d355664f07c534d0fc2dc95014268956909730ff1",
+            "blob": "7fd286e8f506c4eda1b00757ae2dcc75194bab80",
+            "content": "sha256:05331be8d9ead03bbfb923615d590e1096e6b46362fd4eddc413b73934d8d931",
             "locator": {
-              "kind": "symbol",
-              "name": "docSelectTitle"
+              "end": 171,
+              "kind": "line_range",
+              "start": 157
             }
           },
           "kind": "code"

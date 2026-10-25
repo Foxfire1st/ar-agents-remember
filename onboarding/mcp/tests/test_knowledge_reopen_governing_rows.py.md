@@ -12,8 +12,8 @@ This source-bound correction covers the described L54 seams only. Unrelated inhe
 
 ## Current evidence
 
-- Writer refusal is retained before the independent hand-written counterexample. \[2] [2]
-- Missing/malformed worklists do not publish a first history file. \[3] [3]
+- Writer refusal is retained before the independent hand-written counterexample. [2]
+- Missing/malformed worklists do not publish a first history file. [3]
 
 ## Inherited source-epoch account (non-operative)
 

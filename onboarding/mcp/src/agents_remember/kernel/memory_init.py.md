@@ -113,12 +113,18 @@ when this run would have created the marker (nothing was written), and the case'
 
 - `memory_init` is wired through the Phase 04 application entry point. [1]
 - A new memory repository is created with the layout marker; an existing or legacy root is never marked. [2]
+
 - The marker case: only a new root is created in the text format. [3]
+
+
 - MCP config defines repository memory roots. [4]
+
 - The branch resolution this file performs: explicit argument, code-repository branch, or a refusal. [5]
 - The bounded unborn-repository repair path and its refusal. [6]
 - The recorded authority's consumers: first-baseline adoption and branch mutation. [7]
 - The branches case set that holds this behavior end to end. [8]
-- The one git runner this module's `git init` goes through: `git_environment` scrubs `GIT_REPOSITORY_SELECTOR_ENV` (L56-L72), `GIT_LOCAL_TIMEOUT_SECONDS = 300` is the default bound (L93-L93), and `run_git` applies both (L150-L215). [9]
+
+- The one git runner this module's `git init` goes through: `git_environment` strips `GIT_REPOSITORY_SELECTOR_ENV`, `GIT_LOCAL_TIMEOUT_SECONDS = 300` is the default bound, and `run_git` applies both. [9]
+
 
 - The failed-Git early return reports the marker as not created. [10]

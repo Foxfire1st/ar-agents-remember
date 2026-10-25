@@ -106,7 +106,9 @@ No configured live documentation source was available for this pass.
 
 ### Repo-Internal References
 
+
 - One record's truth view carries its links, kind part and timeline, now forwarding a continuation and lazy history callback. [2]
+
 - Invariant and family parts expose their own currentness, entries and locations; the invariant's dedicated membership array queries history independently of the timeline cache. [5]
 - Invariant truth retains its dedicated membership projection, while the timeline callback includes membership-subject rows alongside record history. [10]
 - Membership projections carry owner, owner kind, closed flag, path, row ID, subject, disposition and document. [11]
@@ -115,7 +117,9 @@ No configured live documentation source was available for this pass.
 
 - The module's own statement of the truth views per kind and the census view. [1]
 - The kind's own part, and the entries that feed its timeline. [3]
+
 - Outgoing links, or the reason they could not be read (F11). [4]
+
 - Every record by kind. [6]
 - MIK-R20's census report; an unknown census by membership. [7]
 - A code file at a locator; a malformed locator is a bad request (F3). [8]

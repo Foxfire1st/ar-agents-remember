@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/worktrees/modules/onboarding.py",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
@@ -394,12 +395,44 @@
       ]
     },
     "13": {
-      "note": "The surviving curator trace entry takes the candidate blobs and the run's identical-copy groups through one inputs value and requires current eligible answers; missing converted sides are incomplete.",
+      "note": "The surviving curator trace entry takes the candidate blobs and the run's identical-copy groups through one inputs value and requires current eligible answers; missing converted sides are incomplete.\n\nAnchor: `onboarding_trace_gate_for_context` `_onboarding_trace_open` `OnboardingTraceInputs` `_worklist_identical_changes`",
       "targets": [
         {
           "anchor": {
-            "blob": "19659a8152534b0927a9d2298a478ff3b25bff56",
-            "content": "sha256:537b38f3884456932f7aae28f4b53e20bd0ecb8c42f9665105854221363a6ac5",
+            "blob": "80a4a1aa9ecd845e13f6f600c46560e34da8ce15",
+            "content": "sha256:18d5ebbea3a05ed4ec5591770b5c64663f584dbb94a405c0d12d7e7aebe6a8dc",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f312d2bd30e408565bad26d89ed227a954d4cd8a",
+            "content": "sha256:fe0280b08b4ea7b0e88aab3497f039783cbab20591f724696c0547175e9c231c",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_gate/predicates.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a4cb0ce3f5f3f488c8ad8313b8063d4a8218871e",
+            "content": "sha256:a2df6307f79b0a5282c67184a98d37a2d5fb71ad24fefd455d684627e7c5a73c",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/memory_quality/controller.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "80a4a1aa9ecd845e13f6f600c46560e34da8ce15",
+            "content": "sha256:b3b3c880f3d968f51fa56d6131b9233363d37388ca4337c3934ecffe0899ed17",
             "locator": {
               "kind": "symbol",
               "name": "onboarding_trace_gate_for_context"
@@ -445,7 +478,7 @@
       ]
     },
     "14": {
-      "note": "The gate reads a run's identical-copy groups through one strict reader: a malformed group or one that omits its representative raises rather than shortening into a single-source item.",
+      "note": "The gate reads a run's groups through one strict reader: a malformed or representative-omitting group raises rather than shortening into a single source. (`identical_changes_from_run`; `IdenticalChangesUnreadable`)",
       "targets": [
         {
           "anchor": {
@@ -573,12 +606,22 @@
       ]
     },
     "3": {
-      "note": "The helper raises for missing/unsupported cards; the trace wrapper catches that RuntimeError and prepends the finding while retaining trace findings.",
+      "note": "The helper raises for missing/unsupported cards; the trace wrapper catches that RuntimeError and prepends the finding while retaining trace findings.\n\nAnchor: `_require_onboarded_sources` `onboarding_trace_gate_for_context`",
       "targets": [
         {
           "anchor": {
-            "blob": "19659a8152534b0927a9d2298a478ff3b25bff56",
-            "content": "sha256:06fc863fe4decebb91d1de5aa02faf3a57bd90ba97b65f559fbb9a97289b78ce",
+            "blob": "80a4a1aa9ecd845e13f6f600c46560e34da8ce15",
+            "content": "sha256:18d5ebbea3a05ed4ec5591770b5c64663f584dbb94a405c0d12d7e7aebe6a8dc",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "80a4a1aa9ecd845e13f6f600c46560e34da8ce15",
+            "content": "sha256:ecbd425ae860e645c5b916baf385258745c9cc1fe5c7262f4c9e30c17f16c3b2",
             "locator": {
               "kind": "symbol",
               "name": "_require_onboarded_sources"
@@ -588,8 +631,8 @@
         },
         {
           "anchor": {
-            "blob": "19659a8152534b0927a9d2298a478ff3b25bff56",
-            "content": "sha256:537b38f3884456932f7aae28f4b53e20bd0ecb8c42f9665105854221363a6ac5",
+            "blob": "80a4a1aa9ecd845e13f6f600c46560e34da8ce15",
+            "content": "sha256:b3b3c880f3d968f51fa56d6131b9233363d37388ca4337c3934ecffe0899ed17",
             "locator": {
               "kind": "symbol",
               "name": "onboarding_trace_gate_for_context"
@@ -600,15 +643,14 @@
       ]
     },
     "4": {
-      "note": "The converted memory-quality entry point requires and forwards candidate code_blobs; it returns trace repair findings.",
+      "note": "The converted memory-quality entry point requires one inputs value and forwards the candidate blobs and the run's identical-copy groups; it returns trace repair findings.\n\nAnchor: `onboarding_trace_gate_for_context`",
       "targets": [
         {
           "anchor": {
-            "blob": "19659a8152534b0927a9d2298a478ff3b25bff56",
-            "content": "sha256:537b38f3884456932f7aae28f4b53e20bd0ecb8c42f9665105854221363a6ac5",
+            "blob": "80a4a1aa9ecd845e13f6f600c46560e34da8ce15",
+            "content": "sha256:18d5ebbea3a05ed4ec5591770b5c64663f584dbb94a405c0d12d7e7aebe6a8dc",
             "locator": {
-              "kind": "symbol",
-              "name": "onboarding_trace_gate_for_context"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -616,12 +658,23 @@
       ]
     },
     "7": {
-      "note": "Source-current rows govern converted onboarding; updated needs a counted Markdown/reference edit and current candidate blob binding.",
+      "note": "Source-current rows govern converted onboarding; updated needs a counted Markdown/reference edit and current candidate blob binding.\n\nAnchor: `onboarding_trace_result`",
       "targets": [
         {
           "anchor": {
-            "blob": "0921ffa900bd3bbaa170662ce74d5914de793998",
-            "content": "sha256:ce40cdb84e422e6ec6c6092b2af488a602aaacd6693964de6f7f446bbb5331d5",
+            "blob": "f6091818f7a3fdfaef7337e48da6b832bbe01f71",
+            "content": "sha256:03c5c38551d226a35e616eecb92955463412ef3dd7d176f0ebda53d699fbe1ea",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/onboarding_trace.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f6091818f7a3fdfaef7337e48da6b832bbe01f71",
+            "content": "sha256:b1117e446ea8341b70f9b249e6aca37a7d07749fd711bed19b7a630d17305bf4",
             "locator": {
               "kind": "symbol",
               "name": "onboarding_trace_result"

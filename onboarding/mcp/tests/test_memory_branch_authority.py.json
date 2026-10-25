@@ -111,12 +111,38 @@
       "targets": [
         {
           "anchor": {
-            "blob": "11ba98ff63f4a4815985ac51e2c0c7b5a48556a4",
-            "content": "sha256:b20b064c91520d94fcdf7dc82d5b2995f278685264e074f07a9a11eef4d4addf",
+            "blob": "102c4550ab6429f44c8fb543d1d0662de66a1b8c",
+            "content": "sha256:7e5c92f9cbc6be7f6b5353b78e378bc201224e129ed0cab7abb36c09e58234f1",
             "locator": {
-              "end": 234,
+              "end": 221,
               "kind": "line_range",
-              "start": 234
+              "start": 221
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "102c4550ab6429f44c8fb543d1d0662de66a1b8c",
+            "content": "sha256:897fdc3168c0a98cb0d1c1ed0aa5d148fe5822e3bc2484f24a0228ea2152f33c",
+            "locator": {
+              "end": 237,
+              "kind": "line_range",
+              "start": 237
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "102c4550ab6429f44c8fb543d1d0662de66a1b8c",
+            "content": "sha256:a3eb2d9a5729e7ae15ee83368041e3670c063c5122f172d793bafd8bb4485581",
+            "locator": {
+              "end": 179,
+              "kind": "line_range",
+              "start": 179
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -228,12 +254,22 @@
       ]
     },
     "4": {
-      "note": "Group 1 — adoption follows the recorded branch, and the default-branch accessor validates it.",
+      "note": "Group 1 — adoption follows the recorded branch, and the default-branch accessor validates it.\n\nAnchor: `test_baseline_adoption_follows_the_configured_branch`",
       "targets": [
         {
           "anchor": {
-            "blob": "0e11591cec358a67825c52b305c68dcf074de793",
-            "content": "sha256:9ac3e3ceae2126bbbc623424c4ec0dba619f83c6607bbd9107f93e731c4b0111",
+            "blob": "9861c72ac24c02e19b7fd2360ac95be1a6d9e5c3",
+            "content": "sha256:2ae7c934fafec721e261d8bfd2c2dd34c36a578c0a95b51eac5771947f12bec6",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "9861c72ac24c02e19b7fd2360ac95be1a6d9e5c3",
+            "content": "sha256:9a6581dc4ea512b8600b701417a4a0a0c9f28c7745ea334f0be67f026d2dcce7",
             "locator": {
               "kind": "symbol",
               "name": "test_baseline_adoption_follows_the_configured_branch"
@@ -351,7 +387,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "63231e18a2ea7fe60b5e8d8df3eaf437680f2429",
+            "blob": "c72c2b159123047c79c15fc46fd02991f16ef41b",
             "content": "sha256:ae0d53d8ece2974def4f707eff77ab5d8955a1b916fbfa0cd0bf4b88e11fd199",
             "locator": {
               "kind": "symbol",

@@ -24,4 +24,5 @@ No Domain Documentation sources are configured; the evidence below is repository
 
 ### Current Source-Inspection References
 
+
 - Source cases assert sync/start/poll row shapes and bounded blocking samples; converted missing-anchor sidecars seed the largest sync expectation. [1]

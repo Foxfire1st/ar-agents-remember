@@ -20,15 +20,14 @@
       ]
     },
     "2": {
-      "note": "Mirrors the observer event store (same append / read / JSONL shape).",
+      "note": "Mirrors the observer event store (same append / read / JSONL shape).\n\nAnchor: `EventStore`",
       "targets": [
         {
           "anchor": {
-            "blob": "8a3dfefc6e514100ec12c4c4caf1f06c21ea51de",
-            "content": "sha256:2f08443e4f411f7c837987e255aae726e8836daa769647e940a28b25c78f1a4d",
+            "blob": "44d27a65dd2c90b37ee5338cafbd1564796e6c80",
+            "content": "sha256:bc35ba1f447541caad2fc7353d2d428aa512bca66f5d4e586f1068835945e599",
             "locator": {
-              "kind": "symbol",
-              "name": "EventStore"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/observer/store.py"
           },
@@ -140,8 +139,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "098584045028586661c04fda59d447990277db8a",
-            "content": "sha256:941902f334ff927c68a2ebb1eed0c3f018dbfcb68dda3401c30bf7c086083335",
+            "blob": "ce5957cd60d790dc89aa33796a021dd2bf70c7f7",
+            "content": "sha256:415d5409eace1e446d68f06b3e37d95ee9d4508da20c4c50e19e926d01f28cf1",
             "locator": {
               "kind": "file"
             },
@@ -151,8 +150,8 @@
         },
         {
           "anchor": {
-            "blob": "9c27b8b2a33c1a8572d039c05fd546bd961a30d1",
-            "content": "sha256:adcba957fab9542a3a0f7f72ca4916dc23a192e84bffe984980a7a4bed1942d2",
+            "blob": "bbb005d14f4c90cbe56e3aecbbd4e5ca9cf52cd5",
+            "content": "sha256:c0f20674e1759946a2826b30eb5b3cfb1a8b459d30ae01035400f7bc41b50deb",
             "locator": {
               "kind": "file"
             }
@@ -166,8 +165,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "802ed699950e60bab929aba61d6f4448a274f20a",
-            "content": "sha256:5ac3b4a3af2ac8ef1bbe8401254d12192a9e98d431009101de0d48591a1d9a65",
+            "blob": "16170495bfefc7b4695e565427ce20e47d6cf726",
+            "content": "sha256:a28310bac12091c1f5e8870ff34f8bcc442f82b6f21c1ef16ff82ee02341ddd1",
             "locator": {
               "kind": "symbol",
               "name": "_claim_closeout_gate"
@@ -178,12 +177,10 @@
         },
         {
           "anchor": {
-            "blob": "802ed699950e60bab929aba61d6f4448a274f20a",
-            "content": "sha256:16f4f5a341af61fbe46985ec477056a2017e65c0078aa3f0192d12ee8c92d182",
+            "blob": "16170495bfefc7b4695e565427ce20e47d6cf726",
+            "content": "sha256:a11094f88726f11a7585137e1178fc6dcf269a675547ec964b8021ff835a467d",
             "locator": {
-              "end": 663,
-              "kind": "line_range",
-              "start": 612
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/worktrees/modules/closeout.py"
           },

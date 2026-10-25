@@ -3,15 +3,14 @@
   "realizes": [],
   "references": {
     "14": {
-      "note": "Disabled contract refused before the kind check",
+      "note": "Disabled contract refused before the kind check\n\nAnchor: `pause_result`",
       "targets": [
         {
           "anchor": {
-            "blob": "8458f1fd16eafbea5e304d0cec0514bcbe8b0da0",
-            "content": "sha256:08afa883f71e5aba7caf05ed93df1ddd7f130b486b759f1b3fdc49c0b8343908",
+            "blob": "8d04298e98df4d5f82d3f636b06a324307aff3ac",
+            "content": "sha256:f3b7b1b5f3399297953ade6c23f1e975da21c5d4a0a7570b2b06066c3dab1b0a",
             "locator": {
-              "kind": "symbol",
-              "name": "pause_result"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -19,15 +18,14 @@
       ]
     },
     "15": {
-      "note": "Only a re-observed vacant record reports stopped",
+      "note": "Only a re-observed vacant record reports stopped\n\nAnchor: `_already_stopped_result`",
       "targets": [
         {
           "anchor": {
-            "blob": "8458f1fd16eafbea5e304d0cec0514bcbe8b0da0",
-            "content": "sha256:be8ef36ce51fa9483a23838076371def6eeaed7e42576161d3273b2170fb4d96",
+            "blob": "8d04298e98df4d5f82d3f636b06a324307aff3ac",
+            "content": "sha256:f3b7b1b5f3399297953ade6c23f1e975da21c5d4a0a7570b2b06066c3dab1b0a",
             "locator": {
-              "kind": "symbol",
-              "name": "_already_stopped_result"
+              "kind": "file"
             }
           },
           "kind": "code"

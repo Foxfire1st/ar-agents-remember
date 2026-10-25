@@ -1,5 +1,7 @@
 {
-  "path": "dashboard/src/panels/changeset",
+  "path": "dashboard/src/panels/changeset/overview",
+  "proves": [],
+  "realizes": [],
   "references": {
     "1": {
       "note": "The optional marks and the marked pane.\n\nAnchor: \"marks?: PaneMarks;\"; \"const { portals, placement, gutterFor, drawn } = useMarkedPane(marks);\"",
@@ -24,8 +26,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ed265675478575ff8a4d1556006a4a3afd4aa87a",
-            "content": "sha256:a85e2cc9a5a731afed4fd8049a86cb9be07af2b3948fb6ceefd4894695138bed",
+            "blob": "ad784b1c6e63764e2f4437c99f28a2b9bd553703",
+            "content": "sha256:ab38ac33f4e1353dc181a904b1062896f0247eda64e4bce498866dc8d2ede5bc",
             "locator": {
               "kind": "symbol",
               "name": "taskChangeset"
@@ -59,16 +61,38 @@
             "path": "dashboard/src/data/changeset.ts"
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ad784b1c6e63764e2f4437c99f28a2b9bd553703",
+            "content": "sha256:3991a7839bfcafd1a3534c2bdaebb09629138b26ca05dc63a7ee0778f9280d22",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/data/changeset.ts"
+          },
+          "kind": "code"
         }
       ]
     },
     "11": {
-      "note": "The shell that hosts the takeover + restores the rails.",
+      "note": "The shell that hosts the takeover + restores the rails.\n\nAnchor: `CockpitShell`",
       "targets": [
         {
           "anchor": {
-            "blob": "f0c0a6b35e01547908dcf3f4feb27ba092dde069",
-            "content": "sha256:19ba28765718f373b4b70dd594224499bd1aeb2c6cf77d848967a7e4dc4ade1f",
+            "blob": "1b839113b8d511b4a8343230e70a8de0be01b79f",
+            "content": "sha256:a8152c8952fadad87a17271c8a6febccb6420f118def2bd84f341dab609d41c2",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1b839113b8d511b4a8343230e70a8de0be01b79f",
+            "content": "sha256:1ac52653a51e3f6baa0cd6d608709287a3c4c3f8e993d65d3bf8e2170c817edc",
             "locator": {
               "kind": "symbol",
               "name": "CockpitShell"
@@ -80,12 +104,23 @@
       ]
     },
     "12": {
-      "note": "The detail panel button + counters that open this screen.",
+      "note": "The detail panel button + counters that open this screen.\n\nAnchor: `ChangeSetButton`",
       "targets": [
         {
           "anchor": {
-            "blob": "931da72d87f38045efdb2c747a84167042b89f79",
-            "content": "sha256:e35cabbbff34cd2a8ca427ea32bb54c51df1efc804f65d529106da5de03ea2a8",
+            "blob": "dc229d234ae888019f18a20c91a1cd0135ada287",
+            "content": "sha256:71fa11b449377ad53a5ea1f8709e31ba8dc17859a548994c22ea9e683b519a62",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/detail-panel/changeSetBar.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "dc229d234ae888019f18a20c91a1cd0135ada287",
+            "content": "sha256:6f640529aca56df417ad6a75d78987e55f89c11fe190faf5fd0f8d05d23058c0",
             "locator": {
               "kind": "symbol",
               "name": "ChangeSetButton"
@@ -97,12 +132,23 @@
       ]
     },
     "13": {
-      "note": "The reused read-only CodeMirror pane + theme + lang map.",
+      "note": "The reused read-only CodeMirror pane + theme + lang map.\n\nAnchor: `FilePane`",
       "targets": [
         {
           "anchor": {
-            "blob": "51f94729899f48cef6ffa98458e7c097fa30497e",
-            "content": "sha256:6c1ef40b74941e5bc4e8f9a286aefb833f98a00d211239b487d8009b8f9f6887",
+            "blob": "dbbb34c143ffd24687f884bd401852c94fb43a96",
+            "content": "sha256:4381a6ac5fd2d1fed3c3059c96f97e25dc55475450953631d92a8d35b059cd90",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/file-viewer/FilePane.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "dbbb34c143ffd24687f884bd401852c94fb43a96",
+            "content": "sha256:b4f0fa722858614070b5ee9b0052b829b6b4e5f1b4265c214c5c69cc468bb1a3",
             "locator": {
               "kind": "symbol",
               "name": "FilePane"
@@ -114,12 +160,23 @@
       ]
     },
     "14": {
-      "note": "The markdown renderer the sidecar column + rendered-markdown toggle reuse.",
+      "note": "The markdown renderer the sidecar column + rendered-markdown toggle reuse.\n\nAnchor: `Markdown`",
       "targets": [
         {
           "anchor": {
-            "blob": "b4c74c37212e432009df876b3276beea828250fa",
-            "content": "sha256:e65a77e2d635bfba5d57e537277bdfe467525e8ee50a1074c263649cbf815cc2",
+            "blob": "1a65bd4444779518a555e2e38d8ca30fa0df9f3a",
+            "content": "sha256:dbbcb27210f3e352d08d6ba242aaa61621f03500d95beccbb45dbe266bda2ae3",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/grammar/Markdown.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1a65bd4444779518a555e2e38d8ca30fa0df9f3a",
+            "content": "sha256:eff54d0360b790954af018d92a06694c3a335b1849a5d2a028b89a7d2a0e225b",
             "locator": {
               "kind": "symbol",
               "name": "Markdown"
@@ -148,12 +205,23 @@
       ]
     },
     "16": {
-      "note": "The target variant this route's type gained.",
+      "note": "The target variant this route's type gained.\n\nAnchor: `ChangeSetTarget`",
       "targets": [
         {
           "anchor": {
-            "blob": "86545416eae45e7557f551de907178a8e9174476",
-            "content": "sha256:783de6c89bb80598c0e1943b0ee2df78df68bd18e6ad233d217e4e8e08be8c63",
+            "blob": "0f255485bc9dc7fc49932bd57f66ff49c8a4564c",
+            "content": "sha256:a07755e77404e8354fd4134325908235f10bd244bb5049776b162574c8bb6473",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/changeset/ChangeSetViewer.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0f255485bc9dc7fc49932bd57f66ff49c8a4564c",
+            "content": "sha256:3f13ccac412f23f05699ce7cdae5be8adb30a1b2e71ece5c69d6b8ca0c2a8925",
             "locator": {
               "kind": "symbol",
               "name": "ChangeSetTarget"
@@ -201,12 +269,12 @@
       ]
     },
     "19": {
-      "note": "**The identity the entry carries instead of a filesystem path (since `260921-ICR-L47`): the task context only, `review: {}` for a live leaf and `{ historical: true }` for a closed one — no subject.**\n\nAnchor: \"export function IntentReviewEntry({\"; \"review: live ? {} : { historical: true }\"",
+      "note": "**The identity the entry carries instead of a filesystem path: the task context only — `review: {}` for every leaf, live or closed, so a landed leaf opens the review on the pair it delivered rather than its own numbered record.**",
       "targets": [
         {
           "anchor": {
-            "blob": "9f16a4ea899010aae0203cfd8712a007026dabf6",
-            "content": "sha256:087f9600600b0b76e0eb0c421d8a83a2909722e81f9467a1d97d0ecba7029bf3",
+            "blob": "7589f63f1bb655f537e84d56ad377746d725da2b",
+            "content": "sha256:6ebaef16adb123fdbc9dfce0ae41188fc9e522428ad43e1ff2348ab0fcfdd31e",
             "locator": {
               "end": 171,
               "kind": "line_range",
@@ -219,12 +287,23 @@
       ]
     },
     "2": {
-      "note": "The two extracted view builders, each with its marks gutter.",
+      "note": "The two extracted view builders, each with its marks gutter.\n\nAnchor: `splitView` `inlineView`",
       "targets": [
         {
           "anchor": {
-            "blob": "1752cf61fa7a9a49f17cd1ed32b0deae8a280df5",
-            "content": "sha256:e7cec30cbd96c803a638f2abb67208cddabb5fbbd936951407407511d7ce016b",
+            "blob": "6d63658ca060662a6573338fbb1d786371af0633",
+            "content": "sha256:09f6564ee645059d8278ba07ff08790fb6ccf152a71fd8fb1b4d7ff1fadea023",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/changeset/DiffPane.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6d63658ca060662a6573338fbb1d786371af0633",
+            "content": "sha256:95bbf5594d45ccadc1950df5823abe984257e70ca4e16b9fa7daf998486cd330",
             "locator": {
               "kind": "symbol",
               "name": "splitView"
@@ -235,8 +314,8 @@
         },
         {
           "anchor": {
-            "blob": "1752cf61fa7a9a49f17cd1ed32b0deae8a280df5",
-            "content": "sha256:031af190906ad6ef40e704e316cf9ba5776dcd6232a59f546f4dbe5a11291fc4",
+            "blob": "6d63658ca060662a6573338fbb1d786371af0633",
+            "content": "sha256:4521265281717798c3c1bd0ffb97d3c6ec0547122dc8c551b76af2b7349ebe24",
             "locator": {
               "kind": "symbol",
               "name": "inlineView"
@@ -248,12 +327,34 @@
       ]
     },
     "20": {
-      "note": "**The read that supplies the subject now belongs to the reviewer, taking the comparison's task context and nothing else.**",
+      "note": "**The read that supplies the subject now belongs to the reviewer, taking the comparison's task context and nothing else.**\n\nAnchor: `useReviewCatalogue` `intentReviewEntries`",
       "targets": [
         {
           "anchor": {
-            "blob": "e909f979eb2190c3b85bf937b44cd14ced1daf09",
-            "content": "sha256:768e2e576f530a3e1d136bcf62bd446489dcd0c3850cb75b2791d5b3ce93eb4e",
+            "blob": "421fcf655416c82d0bd4d4e7c4e93a8449682d08",
+            "content": "sha256:4c3fd11e4b0a15e8e0fe08a126594e4cf000fb021985f67854c1fb7d71e06619",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/data/useReviewCatalogue.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5e94e860bdcfd117a4e496db152da5bfdb241e53",
+            "content": "sha256:65b7f98cb5ff7962303f5258fab14cfff5acc73adf5a464ce722d0a3f9fa800f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/data/review.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "421fcf655416c82d0bd4d4e7c4e93a8449682d08",
+            "content": "sha256:c79eab348993831ae8a2c377487e00c4ccd5c8922fe6b5f9eda102e8cc01f51f",
             "locator": {
               "kind": "symbol",
               "name": "useReviewCatalogue"
@@ -264,8 +365,8 @@
         },
         {
           "anchor": {
-            "blob": "923faffc20359156074cf02aed9860c41b8b29dd",
-            "content": "sha256:cc0642b46db423ef16f86484fedbf882b3cb90e88fc204e9762472d6dbb9a084",
+            "blob": "5e94e860bdcfd117a4e496db152da5bfdb241e53",
+            "content": "sha256:a9f299815da9664a1cafce6e7affbb659fe91d282a219f3a20695c8a73f48425",
             "locator": {
               "kind": "symbol",
               "name": "intentReviewEntries"
@@ -295,8 +396,19 @@
       ]
     },
     "22": {
-      "note": "**The generation the open series view is bound to, and the caption that renders it.**",
+      "note": "**The generation the open series view is bound to, and the caption that renders it.**\n\nAnchor: `boundSeriesGeneration` `SeriesGenerationTag`",
       "targets": [
+        {
+          "anchor": {
+            "blob": "0f255485bc9dc7fc49932bd57f66ff49c8a4564c",
+            "content": "sha256:a07755e77404e8354fd4134325908235f10bd244bb5049776b162574c8bb6473",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/changeset/ChangeSetViewer.tsx"
+          },
+          "kind": "code"
+        },
         {
           "anchor": {
             "blob": "0f255485bc9dc7fc49932bd57f66ff49c8a4564c",
@@ -311,8 +423,8 @@
         },
         {
           "anchor": {
-            "blob": "86545416eae45e7557f551de907178a8e9174476",
-            "content": "sha256:94c76e4569bbafb5e455aac24f07dfdfbb7210cb66c3244bf7da528fa552c9f4",
+            "blob": "0f255485bc9dc7fc49932bd57f66ff49c8a4564c",
+            "content": "sha256:c27bb80c4a6f9e89adbe34eca635c499102cdead03c0c0e59ae699a078de13cc",
             "locator": {
               "kind": "symbol",
               "name": "SeriesGenerationTag"
@@ -324,12 +436,12 @@
       ]
     },
     "23": {
-      "note": "**The entry button threading the published generation into the viewer target.**\n\nAnchor: \"onClick={() => onOpen(generation ? { ...target, generation } : target)}\"",
+      "note": "**The entry button threading the published generation into the viewer target.**",
       "targets": [
         {
           "anchor": {
-            "blob": "cb170808c1e7ad3aa75e0bfd0860f2206b2291c8",
-            "content": "sha256:b36d13058eb8d6367c672f9857f4b4d248d9152e4085fd36681eb1724395bcf0",
+            "blob": "dc229d234ae888019f18a20c91a1cd0135ada287",
+            "content": "sha256:115e8df7981508f680edc20c3cff4c49ab18168bf3e2da754089a4a2607fd0d1",
             "locator": {
               "end": 125,
               "kind": "line_range",
@@ -342,12 +454,23 @@
       ]
     },
     "24": {
-      "note": "**The target type whose review field may carry no selector, with presence as the marker and an empty object as the task context.**",
+      "note": "**The target type whose review field may carry no selector, with presence as the marker and an empty object as the task context.**\n\nAnchor: `ChangeSetTarget`",
       "targets": [
         {
           "anchor": {
-            "blob": "86545416eae45e7557f551de907178a8e9174476",
-            "content": "sha256:783de6c89bb80598c0e1943b0ee2df78df68bd18e6ad233d217e4e8e08be8c63",
+            "blob": "0f255485bc9dc7fc49932bd57f66ff49c8a4564c",
+            "content": "sha256:a07755e77404e8354fd4134325908235f10bd244bb5049776b162574c8bb6473",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/changeset/ChangeSetViewer.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0f255485bc9dc7fc49932bd57f66ff49c8a4564c",
+            "content": "sha256:3f13ccac412f23f05699ce7cdae5be8adb30a1b2e71ece5c69d6b8ca0c2a8925",
             "locator": {
               "kind": "symbol",
               "name": "ChangeSetTarget"
@@ -359,15 +482,14 @@
       ]
     },
     "25": {
-      "note": "The entry that produces the empty target for a live leaf the server offers no subject for.",
+      "note": "The detail-panel entry that hands the viewer this leaf's targets: the committed change set and the Intent review entry, whose target carries the task context and no subject.\n\nAnchor: `useReviewCatalogue` `DocChangeSetBar`",
       "targets": [
         {
           "anchor": {
-            "blob": "e909f979eb2190c3b85bf937b44cd14ced1daf09",
-            "content": "sha256:768e2e576f530a3e1d136bcf62bd446489dcd0c3850cb75b2791d5b3ce93eb4e",
+            "blob": "421fcf655416c82d0bd4d4e7c4e93a8449682d08",
+            "content": "sha256:4c3fd11e4b0a15e8e0fe08a126594e4cf000fb021985f67854c1fb7d71e06619",
             "locator": {
-              "kind": "symbol",
-              "name": "useReviewCatalogue"
+              "kind": "file"
             },
             "path": "dashboard/src/data/useReviewCatalogue.ts"
           },
@@ -375,11 +497,10 @@
         },
         {
           "anchor": {
-            "blob": "931da72d87f38045efdb2c747a84167042b89f79",
-            "content": "sha256:c587ea8deb1c6a365edf8c2412dd58d0e6264ad04b1c3ba77b176f34246f8d27",
+            "blob": "dc229d234ae888019f18a20c91a1cd0135ada287",
+            "content": "sha256:71fa11b449377ad53a5ea1f8709e31ba8dc17859a548994c22ea9e683b519a62",
             "locator": {
-              "kind": "symbol",
-              "name": "DocChangeSetBar"
+              "kind": "file"
             },
             "path": "dashboard/src/panels/detail-panel/changeSetBar.tsx"
           },
@@ -388,8 +509,19 @@
       ]
     },
     "26": {
-      "note": "The surface that receives it and asks for the task's own review.",
+      "note": "The surface that receives it and asks for the task's own review.\n\nAnchor: `ReviewTarget` `ReviewSurface`",
       "targets": [
+        {
+          "anchor": {
+            "blob": "6f30efcbe166c0fe854c1de9cde75a444ff9c5a5",
+            "content": "sha256:f5925b247bc0b3f32fd03a1d161cce6b638234ad4531a1d9d6053f9309a26368",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.tsx"
+          },
+          "kind": "code"
+        },
         {
           "anchor": {
             "blob": "6f30efcbe166c0fe854c1de9cde75a444ff9c5a5",
@@ -404,8 +536,8 @@
         },
         {
           "anchor": {
-            "blob": "f7e576bc05a33889caaab2fe6c0396c6d8805922",
-            "content": "sha256:218ee1a1f3fdf06979bf7cc3815ca96c127497b4116dc8f5145cc72917612792",
+            "blob": "6f30efcbe166c0fe854c1de9cde75a444ff9c5a5",
+            "content": "sha256:db585453c685064d18640a2e2ef9666a96e574154b1b5cd813aa5491ca4476b6",
             "locator": {
               "kind": "symbol",
               "name": "ReviewSurface"
@@ -417,12 +549,12 @@
       ]
     },
     "27": {
-      "note": "Comparison requests are built for the recorded trees\n\nAnchor: `comparisonChangeset`",
+      "note": "Comparison requests are built for the recorded trees",
       "targets": [
         {
           "anchor": {
-            "blob": "d0e0f3a0a209313492e7cb61a2066cf40519f66e",
-            "content": "sha256:87dd373ebbe17730c5b9b58709d917d86c1216b96016fc924b1a41c634e35117",
+            "blob": "0f255485bc9dc7fc49932bd57f66ff49c8a4564c",
+            "content": "sha256:c85cc26f9319a41b5cbe45cb2c2cd40c0ee01407c2e505aa102f51a8105d0c4b",
             "locator": {
               "end": 275,
               "kind": "line_range",
@@ -469,12 +601,23 @@
       ]
     },
     "3": {
-      "note": "The optional first lines and the content-sized host.",
+      "note": "The optional first lines and the content-sized host.\n\nAnchor: `DiffPane` `fitHost`",
       "targets": [
         {
           "anchor": {
-            "blob": "1752cf61fa7a9a49f17cd1ed32b0deae8a280df5",
-            "content": "sha256:f4d312256407639d3ae3c1d5cb6906e9ebd06073837ff9ca1f628fe4a150e0ab",
+            "blob": "6d63658ca060662a6573338fbb1d786371af0633",
+            "content": "sha256:09f6564ee645059d8278ba07ff08790fb6ccf152a71fd8fb1b4d7ff1fadea023",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/changeset/DiffPane.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6d63658ca060662a6573338fbb1d786371af0633",
+            "content": "sha256:2d6a34ecfb274dc8ef1cd0faee5668fdb037cf3e5b3426d76f74797e40bfb94e",
             "locator": {
               "kind": "symbol",
               "name": "DiffPane"
@@ -485,8 +628,8 @@
         },
         {
           "anchor": {
-            "blob": "1752cf61fa7a9a49f17cd1ed32b0deae8a280df5",
-            "content": "sha256:6f1675bccb6158f8bc5b35b471847f9ae0477a2731275a8d91bb06999abf54e7",
+            "blob": "6d63658ca060662a6573338fbb1d786371af0633",
+            "content": "sha256:7ec3ff6e32895e04f7809d9becea7c0193adcc73c867ccfb106b4966deac3eab",
             "locator": {
               "kind": "symbol",
               "name": "fitHost"
@@ -587,8 +730,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1752cf61fa7a9a49f17cd1ed32b0deae8a280df5",
-            "content": "sha256:738b6d5a1fd08fcacef9f3aa8a770722573f168d128564cc65a7be68eb3f0448",
+            "blob": "6d63658ca060662a6573338fbb1d786371af0633",
+            "content": "sha256:ea618bb7a7cac1d052a3b7f17c14544c3e1200fcc1a4de4d4470b21b8cc18ab7",
             "locator": {
               "end": 60,
               "kind": "line_range",
@@ -600,8 +743,8 @@
         },
         {
           "anchor": {
-            "blob": "1752cf61fa7a9a49f17cd1ed32b0deae8a280df5",
-            "content": "sha256:2b9eaaf15fdef8b0f3395cc87d3b9005d25b8dab869cd109325aadd5f1e90df1",
+            "blob": "6d63658ca060662a6573338fbb1d786371af0633",
+            "content": "sha256:f1afeb8ca78e3f0724595d31b548648b05c249c6087984b1209abd22f358d44b",
             "locator": {
               "end": 193,
               "kind": "line_range",
@@ -685,8 +828,8 @@
         },
         {
           "anchor": {
-            "blob": "ed2dc3fce7532d17eb6bc8d965c8db487feda835",
-            "content": "sha256:2616f966a81149cdf8f38471c10a544a70e65f76433bc4a4f5ad5311c5b0c9ce",
+            "blob": "8bdffe4683b00da6aed0b4f57d68f0689505bb48",
+            "content": "sha256:bbf0e326902093c6e00715ba998657d468b896fade9c2f76f2e83d38b23eb81b",
             "locator": {
               "end": 342,
               "kind": "line_range",
@@ -711,8 +854,8 @@
         },
         {
           "anchor": {
-            "blob": "2186995d20205912e217dc39a14fa95fcb0e42f3",
-            "content": "sha256:168dd7a898bd1e847e3acb1b7e9b977104ba26f20d4128cda74e9db7299b7329",
+            "blob": "8bdffe4683b00da6aed0b4f57d68f0689505bb48",
+            "content": "sha256:4ebbb4e7c06359999d1dfb915f86ca73c9c38f39f0d25028ef50c6be0b72bcfc",
             "locator": {
               "end": 634,
               "kind": "line_range",
@@ -729,8 +872,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1b23f34074e609afd5c6c30cbb6f0cbb5c272771",
-            "content": "sha256:d3207e1d77ab72b1aec5d380d8573b0b31b8352e386de6d85612c79647761f21",
+            "blob": "48e667c9305d3cf101beae36d282b6f77fd8ca28",
+            "content": "sha256:90a5d6d825d371701506f0fb9bffa52eaf0459540cae8e15c3acb2f363b11bf4",
             "locator": {
               "end": 139,
               "kind": "line_range",
@@ -761,12 +904,12 @@
       ]
     },
     "38": {
-      "note": "The counters control distinguishes loading, unrecorded, empty and failure and discloses the reason.",
+      "note": "The counters control distinguishes loading, unrecorded, unmeasured, empty and failure and discloses the reason.",
       "targets": [
         {
           "anchor": {
-            "blob": "931da72d87f38045efdb2c747a84167042b89f79",
-            "content": "sha256:b8e1fc0a245c08028b372dd146912592f7375ebee62528ff1bdaaffcf5a0a65d",
+            "blob": "dc229d234ae888019f18a20c91a1cd0135ada287",
+            "content": "sha256:9f2d92e61273758bdd54bb863e89cc2198feaded093ea7f4f132c5567e680449",
             "locator": {
               "end": 259,
               "kind": "line_range",
@@ -783,8 +926,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "28a553162d8583c99cf81ed215fbf5a71bfae016",
-            "content": "sha256:c2ce512e7fcb78faa6be95eb5fe0fcebb5d19fdf8ea947902c8c72892aa28828",
+            "blob": "7b01935005181d83e987ed1f852a8c2b0191e73e",
+            "content": "sha256:67be749ff63d91613b7a356da05eeeb61fc9fcf8113841760f22bcf503bdf653",
             "locator": {
               "end": 552,
               "kind": "line_range",
@@ -797,12 +940,23 @@
       ]
     },
     "4": {
-      "note": "The card that passes them.",
+      "note": "The card that passes them.\n\nAnchor: `ChangedExcerpt`",
       "targets": [
         {
           "anchor": {
-            "blob": "7df7fdf55ac873fb7b9cc26e52cdf9a9797977fc",
-            "content": "sha256:bcfcd413d2155f23a718cd535411c888e89f3efe5399a0c04b6fb8421a82be23",
+            "blob": "f004efc247fbe02ff63076ce1476bca8a7b4ad94",
+            "content": "sha256:2c770a9ba73686f8a8fbfc07cec28f365bcbfa3e28b53aee67d01f15e5df2d23",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/ExpressionCards.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f004efc247fbe02ff63076ce1476bca8a7b4ad94",
+            "content": "sha256:5dfbf6c619285d9a59309e872adbb815a3e6e2b306d8aa212ef96019ed3a3045",
             "locator": {
               "kind": "symbol",
               "name": "ChangedExcerpt"
@@ -818,8 +972,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "931da72d87f38045efdb2c747a84167042b89f79",
-            "content": "sha256:dc269d6fcfef9dc5a7fbdc2664891ad9f13178ca7bc1ff8e4a588cd7ff127c14",
+            "blob": "dc229d234ae888019f18a20c91a1cd0135ada287",
+            "content": "sha256:5ec32ffc224d7bdd61ff6f72f219a87972640a97f4f841158855d44e4a82af62",
             "locator": {
               "end": 365,
               "kind": "line_range",
@@ -836,8 +990,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f0c0a6b35e01547908dcf3f4feb27ba092dde069",
-            "content": "sha256:0c3449aa7ae8ed9ca2727691af99376c4cc88c6268425f7549c641786c214c3e",
+            "blob": "1b839113b8d511b4a8343230e70a8de0be01b79f",
+            "content": "sha256:066e1ba744f447f5596af0199d84b3d2111430af05a087a1367f60369cbd2598",
             "locator": {
               "end": 546,
               "kind": "line_range",
@@ -849,8 +1003,8 @@
         },
         {
           "anchor": {
-            "blob": "f0c0a6b35e01547908dcf3f4feb27ba092dde069",
-            "content": "sha256:ea065f272b3b692965637c9f2ca0d88c16be7429343546823736e7af29b84873",
+            "blob": "1b839113b8d511b4a8343230e70a8de0be01b79f",
+            "content": "sha256:db618817521d3e708a84294f9ed3d808e5f7393ec300458c7ba28d9130cf029a",
             "locator": {
               "end": 615,
               "kind": "line_range",
@@ -862,8 +1016,8 @@
         },
         {
           "anchor": {
-            "blob": "f0c0a6b35e01547908dcf3f4feb27ba092dde069",
-            "content": "sha256:3d98197b5dded885fffd269532adbf5dff975bfde321b905905a589b855540bd",
+            "blob": "1b839113b8d511b4a8343230e70a8de0be01b79f",
+            "content": "sha256:818b0b30224ef435a70f7804361132a5b03b88214aff9ff126db238f88027704",
             "locator": {
               "end": 940,
               "kind": "line_range",
@@ -880,12 +1034,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9583164e407b2b0ceb6df90ee3694633f7ca74a1",
-            "content": "sha256:1c18878ba6ba29af469e97217f541c327d96875773b067320e6d3816047656b1",
+            "blob": "b87c6e5d5e3a7ab5cc242cc08bb5346a018eeb4d",
+            "content": "sha256:6049d62ac59090a2802737684c68740b10088e8afb867f789df48d2bef706334",
             "locator": {
-              "end": 245,
+              "end": 115,
               "kind": "line_range",
-              "start": 183
+              "start": 61
             },
             "path": "dashboard/src/panels/review/ReviewNavigation.tsx"
           },
@@ -893,8 +1047,21 @@
         },
         {
           "anchor": {
-            "blob": "f7e576bc05a33889caaab2fe6c0396c6d8805922",
-            "content": "sha256:43c9ca493f23145d2acc138984b64cee5708bc1037045975f6e9b3d5f4846fb3",
+            "blob": "6f30efcbe166c0fe854c1de9cde75a444ff9c5a5",
+            "content": "sha256:a03796fed7ff96ce5fad19273f4fe10a4bd0b0f8d821651454a11befe47cb890",
+            "locator": {
+              "end": 680,
+              "kind": "line_range",
+              "start": 625
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6f30efcbe166c0fe854c1de9cde75a444ff9c5a5",
+            "content": "sha256:3ef3de389f7b19645c6803a4881207eee30b7fc0487b7255c9dee63335398da3",
             "locator": {
               "end": 542,
               "kind": "line_range",
@@ -911,8 +1078,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d0e0f3a0a209313492e7cb61a2066cf40519f66e",
-            "content": "sha256:72a3ccd5a67e100b2469a0c91cd4d928075d8ccbc44c4a9cf9b0f2a9b096a6cd",
+            "blob": "0f255485bc9dc7fc49932bd57f66ff49c8a4564c",
+            "content": "sha256:4845eb8b7fea2f65cc3c55219abf835e15f62615e6e96d82463e98d93442d28d",
             "locator": {
               "end": 295,
               "kind": "line_range",
@@ -924,8 +1091,8 @@
         },
         {
           "anchor": {
-            "blob": "0e992022b063f62ec9f96f68da3bfe3ff7408c46",
-            "content": "sha256:49f0cb6417b8048bbfff12bc45c26a239d2ba952a3029a936487cb034131f467",
+            "blob": "d5135eb9e9a5b59401def9955ed068665b05a4ea",
+            "content": "sha256:a06d4a4640727c74f707f98d5265f1a7098f61b9ad3c130b102f50a89429b8f4",
             "locator": {
               "end": 75,
               "kind": "line_range",
@@ -942,8 +1109,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "30971ab15c58d068972151ebe7526002779182d5",
-            "content": "sha256:202d9a3870de8eff5e4d556e779d0a89b138aa8a6377c1ca234ff60e31787195",
+            "blob": "e20d8d9082d46c768c1c8a0e24561733469b5394",
+            "content": "sha256:ac5ebd9a1ca53dc02261f7adb8b724d6663fbab9eadbd9e46d34cc6802ed1fff",
             "locator": {
               "end": 153,
               "kind": "line_range",
@@ -956,8 +1123,30 @@
       ]
     },
     "45": {
-      "note": "Target-addressed list loads share the current request/cache owner, and an available cached answer can be restored at selection.",
+      "note": "Target-addressed list loads share the current request/cache owner, and an available cached answer can be restored at selection.\n\nAnchor: `peekChangeSet` `loadChangeSet` `useChangesetLoad`",
       "targets": [
+        {
+          "anchor": {
+            "blob": "ad784b1c6e63764e2f4437c99f28a2b9bd553703",
+            "content": "sha256:3991a7839bfcafd1a3534c2bdaebb09629138b26ca05dc63a7ee0778f9280d22",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/data/changeset.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0f255485bc9dc7fc49932bd57f66ff49c8a4564c",
+            "content": "sha256:a07755e77404e8354fd4134325908235f10bd244bb5049776b162574c8bb6473",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/changeset/ChangeSetViewer.tsx"
+          },
+          "kind": "code"
+        },
         {
           "anchor": {
             "blob": "ad784b1c6e63764e2f4437c99f28a2b9bd553703",
@@ -972,8 +1161,8 @@
         },
         {
           "anchor": {
-            "blob": "8d239fc2e55f0351e0ed72114b79b8048a172148",
-            "content": "sha256:49597522fe4480b3e4e1a2f7715c0bb1b13a59a7a335a5abca23cf1a5542075c",
+            "blob": "ad784b1c6e63764e2f4437c99f28a2b9bd553703",
+            "content": "sha256:1353e8dabc40db1564c9fa6400aa2fbf25f36ea57c65eb39f91948b700b21c10",
             "locator": {
               "kind": "symbol",
               "name": "loadChangeSet"
@@ -1026,12 +1215,23 @@
       ]
     },
     "47": {
-      "note": "A list problem and selected-file problem have distinct display owners rather than silently leaving a stale successful pane.",
+      "note": "A list problem and selected-file problem have distinct display owners rather than silently leaving a stale successful pane.\n\nAnchor: `ChangeSetWorkspace` `ChangeSetMainPane`",
       "targets": [
         {
           "anchor": {
-            "blob": "6993a184aeaa068823584aaf01432b6cb2a43a80",
-            "content": "sha256:a2404de56cc8ff34fa1806257de3e9f76a05ea6dd8b7db911f5510bf0020ca46",
+            "blob": "0f255485bc9dc7fc49932bd57f66ff49c8a4564c",
+            "content": "sha256:a07755e77404e8354fd4134325908235f10bd244bb5049776b162574c8bb6473",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/changeset/ChangeSetViewer.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0f255485bc9dc7fc49932bd57f66ff49c8a4564c",
+            "content": "sha256:afd812289d9346c54374fd2414f7fad7759ff57442ca8ccdfaffaf3b4072579b",
             "locator": {
               "kind": "symbol",
               "name": "ChangeSetWorkspace"
@@ -1123,12 +1323,12 @@
       ]
     },
     "5": {
-      "note": "The master request now asks for the per-leaf breakdown; presence of `leaves` is the discriminant.\n\nAnchor: `includeLeaves`",
+      "note": "The master request now asks for the per-leaf breakdown; presence of `leaves` is the discriminant.",
       "targets": [
         {
           "anchor": {
-            "blob": "86545416eae45e7557f551de907178a8e9174476",
-            "content": "sha256:c9d86d8b727ec2e2f7874d14dd6cbd6bac26ced7e2dddee775f1a24539495455",
+            "blob": "0f255485bc9dc7fc49932bd57f66ff49c8a4564c",
+            "content": "sha256:bbce21b1cf31263372bdf0805a8a3ee41e0796fc4f9d95fab50def4d1d247b59",
             "locator": {
               "kind": "symbol",
               "name": "seriesLeaves"
@@ -1139,12 +1339,23 @@
         },
         {
           "anchor": {
-            "blob": "86545416eae45e7557f551de907178a8e9174476",
-            "content": "sha256:2c0278c9021c1dcd6880b7e2f577ee855a3747055483582d8110e6ef8c812a21",
+            "blob": "0f255485bc9dc7fc49932bd57f66ff49c8a4564c",
+            "content": "sha256:375ab7c0989e23b48683816b617ec27067d2b95ac1bc3ef722f1563e0b061856",
             "locator": {
               "end": 222,
               "kind": "line_range",
               "start": 222
+            },
+            "path": "dashboard/src/panels/changeset/ChangeSetViewer.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0f255485bc9dc7fc49932bd57f66ff49c8a4564c",
+            "content": "sha256:a07755e77404e8354fd4134325908235f10bd244bb5049776b162574c8bb6473",
+            "locator": {
+              "kind": "file"
             },
             "path": "dashboard/src/panels/changeset/ChangeSetViewer.tsx"
           },
@@ -1200,12 +1411,12 @@
       ]
     },
     "6": {
-      "note": "The rendered rail and its per-leaf counters, and the click that opens one leaf's own range.\n\nAnchor: `onOpenLeaf`",
+      "note": "The rendered rail and its per-leaf counters, and the click that opens one leaf's own range.",
       "targets": [
         {
           "anchor": {
-            "blob": "86545416eae45e7557f551de907178a8e9174476",
-            "content": "sha256:0846cde134a51e804cdcf97c268f83cfcda9ae1db548fc05ff9e0048b0691ee6",
+            "blob": "0f255485bc9dc7fc49932bd57f66ff49c8a4564c",
+            "content": "sha256:d0d69d2bd4ad7e19443d8c39e35a3e01e08cf8d037e8ec1ad55150ab28dbe8b0",
             "locator": {
               "kind": "symbol",
               "name": "LeafBreakdown"
@@ -1216,8 +1427,8 @@
         },
         {
           "anchor": {
-            "blob": "86545416eae45e7557f551de907178a8e9174476",
-            "content": "sha256:656a2e690992b4cd3c9d4ccc34d3565bc44c43101d95c97773d63d5d7fa8db6a",
+            "blob": "0f255485bc9dc7fc49932bd57f66ff49c8a4564c",
+            "content": "sha256:5611ac33e542ac5c58b051e77b25e9569281fbf36974e50e1f170e858dafaeeb",
             "locator": {
               "end": 721,
               "kind": "line_range",
@@ -1226,16 +1437,38 @@
             "path": "dashboard/src/panels/changeset/ChangeSetViewer.tsx"
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0f255485bc9dc7fc49932bd57f66ff49c8a4564c",
+            "content": "sha256:a07755e77404e8354fd4134325908235f10bd244bb5049776b162574c8bb6473",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/changeset/ChangeSetViewer.tsx"
+          },
+          "kind": "code"
         }
       ]
     },
     "7": {
-      "note": "The named refusal and the named measured-empty pane, i.e. the two states that are not a missing selection.",
+      "note": "The named refusal and the named measured-empty pane, i.e. the two states that are not a missing selection.\n\nAnchor: `ChangeSetRefusal` `ChangeSetMainPane`",
       "targets": [
         {
           "anchor": {
-            "blob": "86545416eae45e7557f551de907178a8e9174476",
-            "content": "sha256:e9e6a748e8910e1f666dd80af9cb8eb286c4035b744ddf6f258f50e458cf48aa",
+            "blob": "0f255485bc9dc7fc49932bd57f66ff49c8a4564c",
+            "content": "sha256:a07755e77404e8354fd4134325908235f10bd244bb5049776b162574c8bb6473",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/changeset/ChangeSetViewer.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0f255485bc9dc7fc49932bd57f66ff49c8a4564c",
+            "content": "sha256:cf43fee00e16b78d7ea5f392865ee87d6e0cd886d93c65ac825449aa77144cc2",
             "locator": {
               "kind": "symbol",
               "name": "ChangeSetRefusal"
@@ -1246,8 +1479,8 @@
         },
         {
           "anchor": {
-            "blob": "86545416eae45e7557f551de907178a8e9174476",
-            "content": "sha256:53cb8f15809c09e81c3df1b68504652105e2c5dc67def37496eab939d900f261",
+            "blob": "0f255485bc9dc7fc49932bd57f66ff49c8a4564c",
+            "content": "sha256:c11005854198bb34a597f4a8554884b7a70ab19b0ed7aa7e5324dd998a9d47f1",
             "locator": {
               "kind": "symbol",
               "name": "ChangeSetMainPane"
@@ -1259,12 +1492,12 @@
       ]
     },
     "8": {
-      "note": "The cockpit re-target that keeps the opened leaf inside this route's takeover.\n\nAnchor: `onOpenLeaf`",
+      "note": "The cockpit re-target that keeps the opened leaf inside this route's takeover.",
       "targets": [
         {
           "anchor": {
-            "blob": "9dffc6e41bb9701b7a33ff1b82335a087c154484",
-            "content": "sha256:85e80caa936efbd23fff96182adecab5dbeff27055922e16a62abdf4ce25692a",
+            "blob": "1b839113b8d511b4a8343230e70a8de0be01b79f",
+            "content": "sha256:81dbe576e0a23727344ff68b5e387620f5f1f8f5dc1c54ab78ce36d58096ff1e",
             "locator": {
               "end": 313,
               "kind": "line_range",
@@ -1294,5 +1527,5 @@
       ]
     }
   },
-  "schema": "ar-onboarding-route/v1"
+  "schema": "ar-onboarding-file/v1"
 }

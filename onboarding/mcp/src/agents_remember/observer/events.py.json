@@ -3,39 +3,14 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The store serializes and reads these events.\n\nAnchor: `append`, `read`, `read_log`",
+      "note": "The store serializes and reads these events.\n\nAnchor: `append` `read` `read_log`",
       "targets": [
         {
           "anchor": {
-            "blob": "8a3dfefc6e514100ec12c4c4caf1f06c21ea51de",
-            "content": "sha256:8d19221c32f845a5880c5b755a0f2009c3a577f65f773cfd1db2d9f252eba2ae",
+            "blob": "44d27a65dd2c90b37ee5338cafbd1564796e6c80",
+            "content": "sha256:bc35ba1f447541caad2fc7353d2d428aa512bca66f5d4e586f1068835945e599",
             "locator": {
-              "kind": "symbol",
-              "name": "append"
-            },
-            "path": "mcp/src/agents_remember/observer/store.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "972bfe128d72a489b3cdb2563a352563c594856e",
-            "content": "sha256:613fd1501d79b0d6b15be616bdc48eceb92f222df970f211e1629ab0a188260a",
-            "locator": {
-              "kind": "symbol",
-              "name": "read"
-            },
-            "path": "mcp/src/agents_remember/observer/store.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "972bfe128d72a489b3cdb2563a352563c594856e",
-            "content": "sha256:c644418cbf19d594055229ae6272fafdba6864a4130d403c425a4fa1dacbe07f",
-            "locator": {
-              "kind": "symbol",
-              "name": "read_log"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/observer/store.py"
           },
@@ -61,15 +36,14 @@
       ]
     },
     "4": {
-      "note": "Persisted Event uses strict extras and the schema alias, not the tool-response registry or token envelope.",
+      "note": "Persisted Event uses strict extras and the schema alias, not the tool-response registry or token envelope.\n\nAnchor: `Event`",
       "targets": [
         {
           "anchor": {
-            "blob": "31f34dadebf6c89b987bcc33fb85dd72d7281f94",
-            "content": "sha256:ed4664f0abb424733ffd8244a3394e5158c3c5c5989b80dd8a67f4ff4290bc27",
+            "blob": "b5f4a15e3c26371377e98403ffbb1c7888478853",
+            "content": "sha256:518bd25c4403f72a906def18c2fb03586944d8cf73cc0928f2e644ec98c2be22",
             "locator": {
-              "kind": "symbol",
-              "name": "Event"
+              "kind": "file"
             }
           },
           "kind": "code"

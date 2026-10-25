@@ -234,7 +234,9 @@ No cross-repository claim is made.
 
 
 
+
 - The nine-step route — reopen, author the new row with its `file` cell, start, work, close out, integrate, finalize, close the master out, land it — runs in order and records completion on its last line. [1]
+
 - The documented fallback from the closeout cell to the integration cell carries the code landing. [10]
 - The same fallback carries the memory landing. [11]
 - A missing master document no longer blocks: the reopen proceeds and reports the missing path. [12]
@@ -260,6 +262,8 @@ No cross-repository claim is made.
 - The reachability proof runs on the memory side too, and the two sides' actions are asserted independently so a one-sided mutation cannot satisfy it. [9]
 
 
-- The integration lane contains test_task_reopen_series_extension.py at the current declaration location, line470. Integration membership and the nine-step route are unchanged; a stale historical row number is not a semantic reopen change or an executed result. [26]
+
+- The integration lane in `mcp/tests/test-evidence-lanes.toml` lists `mcp/tests/test_task_reopen_series_extension.py`, and its nine-step route case still runs the whole route in order. [26]
+
 
 - The current root declaration is 10,000 unit/1,000 integration; the conditional ruling/screen assertions use the corresponding current threshold. [25]

@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/cli/role_message_delivery.py",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
@@ -216,32 +217,15 @@
         }
       ]
     },
-    "3": {
-      "note": "Prepare/file before send, preserve capacity and revive boundaries, and retain attempted refusals.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "37290aaa6b6611755ea8749e5de9e8fb7ffca04c",
-            "content": "sha256:9e00ed02f3ee8d633407c10d6e903098e8704420f304b1acf41ba895c9e30a28",
-            "locator": {
-              "kind": "symbol",
-              "name": "_deliver"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "4": {
-      "note": "Long replies are filed whole or explicitly disclose the failed filing while returning only the prefix.",
+      "note": "**Retained historical source account — superseded by the current contract:** When invoked with a filed message, the long-reply helper files the whole reply or discloses failed filing while returning the prefix; held-drain waits do not invoke it.\n\nAnchor: `_file_long_reply`",
       "targets": [
         {
           "anchor": {
-            "blob": "99e7d6b59b88100fdc246465bc2708e38b610add",
-            "content": "sha256:bf857446a1db2cdadcb598d7e15f2be034bf154432ca5c4d616788550eb9d646",
+            "blob": "172582d0fa923e1f58c9e5a9f77301aa49a39a77",
+            "content": "sha256:246670d69d6203f7d3fbd4d49ad7fd65a421932606219acd7b88bb8facfc2c2b",
             "locator": {
-              "kind": "symbol",
-              "name": "_file_long_reply"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -269,8 +253,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1f9c363b2c575dd25751ffb2f43527fc7959b492",
-            "content": "sha256:5ac5d7814fa8365906b0ec0d93e7dd5c7bbc7dfe2fd22796b6043fb4b9713c72",
+            "blob": "172582d0fa923e1f58c9e5a9f77301aa49a39a77",
+            "content": "sha256:246670d69d6203f7d3fbd4d49ad7fd65a421932606219acd7b88bb8facfc2c2b",
             "locator": {
               "kind": "file"
             }

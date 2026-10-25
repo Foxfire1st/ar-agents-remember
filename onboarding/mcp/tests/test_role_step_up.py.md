@@ -70,5 +70,7 @@ state and the settings file rather than on internal call order.
 - The launch-review fallback keeps the raw evidence and the other validation. [16]
 - A step-up replay reconciles the decision before the host and survives receipt loss. [17]
 - A host default successor model is observed without losing the requested provenance. [18]
+
 - An incomplete historical count warns without inventing tries. [19]
+
 - A repository cannot supply a step-up. [20]

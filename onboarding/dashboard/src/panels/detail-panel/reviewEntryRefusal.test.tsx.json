@@ -76,12 +76,12 @@
       ]
     },
     "10": {
-      "note": "**Missing knowledge stated briefly, never as `+0 −0`, with the refusal in a closed disclosure.**\n\nAnchor: \"states missing knowledge briefly, never as +0 −0, with the owner's refusal in the disclosure\"",
+      "note": "**Missing knowledge stated briefly, never as `+0 −0`, with the refusal in a closed disclosure.**",
       "targets": [
         {
           "anchor": {
-            "blob": "ccaecf3c76ce6bf357fe47964866e2133c36eb42",
-            "content": "sha256:abffe14419e4e7726a20364d99a98ec86189881050ad4084b44e7e7861a0ed2f",
+            "blob": "56e48c445177308f7420c6a934e402bebf797664",
+            "content": "sha256:2e200eb0047d2afec45799f1cb6c2fefbda9989e152efbb6a4e1563fd249c110",
             "locator": {
               "end": 198,
               "kind": "line_range",
@@ -93,12 +93,12 @@
       ]
     },
     "11": {
-      "note": "An unreadable answer, with no invented refusal.\n\nAnchor: \"says a response the route did not produce is unreadable, and invents no refusal for it\"",
+      "note": "An unreadable answer, with no invented refusal.",
       "targets": [
         {
           "anchor": {
-            "blob": "ccaecf3c76ce6bf357fe47964866e2133c36eb42",
-            "content": "sha256:797cc70c93b4df5169d3a6ce8e5205cdfe3137646e49cb553e5c9ac3b0cd1b18",
+            "blob": "56e48c445177308f7420c6a934e402bebf797664",
+            "content": "sha256:7a6aa010e6371c3e149d98d4bd4b738e247bbca820d229140276ed050cc8ab34",
             "locator": {
               "end": 213,
               "kind": "line_range",
@@ -110,12 +110,12 @@
       ]
     },
     "12": {
-      "note": "Partial counts marked and explained.\n\nAnchor: \"marks partial counts as partial and explains what they leave out\"",
+      "note": "Partial counts marked and explained.",
       "targets": [
         {
           "anchor": {
-            "blob": "ccaecf3c76ce6bf357fe47964866e2133c36eb42",
-            "content": "sha256:cfd150bb85dcc0b503717bb6401f34ddfa90342ca180dcf8291926ef35a37b3d",
+            "blob": "56e48c445177308f7420c6a934e402bebf797664",
+            "content": "sha256:d3e2448e4301622a878c6625d8c5e89c150e17c9379c472c4eb25d34e54ac8bc",
             "locator": {
               "end": 226,
               "kind": "line_range",
@@ -144,12 +144,12 @@
       ]
     },
     "14": {
-      "note": "A previous leaf's late answer is dropped.\n\nAnchor: \"never lets an answer for a previous leaf overwrite the leaf on screen now\"",
+      "note": "A previous leaf's late answer is dropped.",
       "targets": [
         {
           "anchor": {
-            "blob": "ccaecf3c76ce6bf357fe47964866e2133c36eb42",
-            "content": "sha256:09575a13f5d306bd2bd8785daffcb523031e152bbd703a0bbd9aa56dc6a81b20",
+            "blob": "56e48c445177308f7420c6a934e402bebf797664",
+            "content": "sha256:cd5147b1a363258e0a73bdd78b1951bbfd24b4355cb04203c25a8d1cb5d8b3c5",
             "locator": {
               "end": 339,
               "kind": "line_range",
@@ -161,12 +161,12 @@
       ]
     },
     "15": {
-      "note": "**260921-ICR-L25, register B6: the unrecorded committed range shown briefly, its sentence on demand, never its zero as a total, and kept apart from measured-empty and from a refusal.**\n\nAnchor: \"changeset-state\"; \"unrecorded\"",
+      "note": "**260921-ICR-L25, register B6: the unrecorded committed range shown briefly, its sentence on demand, never its zero as a total, and kept apart from measured-empty and from a refusal.**",
       "targets": [
         {
           "anchor": {
-            "blob": "ccaecf3c76ce6bf357fe47964866e2133c36eb42",
-            "content": "sha256:6e388ef6192e015a79877e740a5c9c5668c874eea77f31b6bf3b90c48b6c93e0",
+            "blob": "56e48c445177308f7420c6a934e402bebf797664",
+            "content": "sha256:a8c5e60286c7fa8aae7d7226c57bd9372a489aeaaa519cabac4ed8a7091b7fda",
             "locator": {
               "kind": "symbol",
               "name": "UNRECORDED_BODY"
@@ -176,8 +176,8 @@
         },
         {
           "anchor": {
-            "blob": "ccaecf3c76ce6bf357fe47964866e2133c36eb42",
-            "content": "sha256:86110b617f612befca3857cf82c01dff0f89961446eac1950e84c33dce03a586",
+            "blob": "56e48c445177308f7420c6a934e402bebf797664",
+            "content": "sha256:2a9c99e4e58f36e3acb5e44cac09b41b1f6de6f3009fdad01a1bcd3f9fe918c8",
             "locator": {
               "end": 387,
               "kind": "line_range",
@@ -185,19 +185,28 @@
             }
           },
           "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "56e48c445177308f7420c6a934e402bebf797664",
+            "content": "sha256:1b989469b86cd3e1a511b04f5a44bd7cae959c99e77eced6ca28718ea0ee9c8e",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
         }
       ]
     },
     "16": {
-      "note": "The control, its summary read and the disclosure these cases drive.",
+      "note": "The control, its summary read and the disclosure these cases drive.\n\nAnchor: `IntentReviewEntry` `useIntentReviewSummary` `EntryStateDetails`",
       "targets": [
         {
           "anchor": {
-            "blob": "9f16a4ea899010aae0203cfd8712a007026dabf6",
-            "content": "sha256:087f9600600b0b76e0eb0c421d8a83a2909722e81f9467a1d97d0ecba7029bf3",
+            "blob": "7589f63f1bb655f537e84d56ad377746d725da2b",
+            "content": "sha256:2d7f4935f88d2401d98cb7d831ecccab0c534bc6477233cd179cbd540e8fbb0a",
             "locator": {
-              "kind": "symbol",
-              "name": "IntentReviewEntry"
+              "kind": "file"
             },
             "path": "dashboard/src/panels/detail-panel/intentReviewEntry.tsx"
           },
@@ -205,11 +214,10 @@
         },
         {
           "anchor": {
-            "blob": "cdc2029bbb7da71feb49f14ec9d60611087b8410",
-            "content": "sha256:2c2f13de9b2747a0cb5b73e3de999c831e5a9998999a146030f4f95c02d5dca6",
+            "blob": "1b88a5d8391b7e00d3ee0155a662a004bca0654c",
+            "content": "sha256:d941fa3af6524428310e539882abc72e61a348d7a29ec299cb6ad5888fdab8fb",
             "locator": {
-              "kind": "symbol",
-              "name": "useIntentReviewSummary"
+              "kind": "file"
             },
             "path": "dashboard/src/data/reviewIntentSummary.ts"
           },
@@ -218,10 +226,9 @@
         {
           "anchor": {
             "blob": "cc94281379ec05363f5271bd286a082c5e8529ae",
-            "content": "sha256:f9bee20c58215c2a0bcb4de3f55e334d2587834852f74a1e57c9597a58c3f820",
+            "content": "sha256:3de84b38e0e1422fa4594d95415e2537c1121d622ea23a03aaf4ab37e2998ebc",
             "locator": {
-              "kind": "symbol",
-              "name": "EntryStateDetails"
+              "kind": "file"
             },
             "path": "dashboard/src/panels/detail-panel/entryState.tsx"
           },
@@ -263,12 +270,12 @@
       ]
     },
     "2": {
-      "note": "The real bar and the shipped store-seeding helpers.\n\nAnchor: `DocChangeSetBar`; `enclosure`; `seedProjection`",
+      "note": "The real bar and the shipped store-seeding helpers.",
       "targets": [
         {
           "anchor": {
-            "blob": "ccaecf3c76ce6bf357fe47964866e2133c36eb42",
-            "content": "sha256:ba1b3a61721cee81fa50a02145e579cb5bd93e22e4cd26eacc41c89aca1a59e7",
+            "blob": "56e48c445177308f7420c6a934e402bebf797664",
+            "content": "sha256:4e22e1e60ca4fef12c1e09744ad62d21df2dffde6395815e287c25de0abd5219",
             "locator": {
               "end": 22,
               "kind": "line_range",
@@ -280,37 +287,14 @@
       ]
     },
     "3": {
-      "note": "**The summary route's unavailable answer with the owner's refusal verbatim.**",
+      "note": "**The summary route's unavailable answer with the owner's refusal verbatim.**\n\nAnchor: `UNAVAILABLE` `ABSENT_DETAIL` `ABSENT_NEXT`",
       "targets": [
         {
           "anchor": {
-            "blob": "ccaecf3c76ce6bf357fe47964866e2133c36eb42",
-            "content": "sha256:252baef9c1255bde6325d713eaf19fd0e973eeb59b01880875fdc1cf9ae76c07",
+            "blob": "56e48c445177308f7420c6a934e402bebf797664",
+            "content": "sha256:1b989469b86cd3e1a511b04f5a44bd7cae959c99e77eced6ca28718ea0ee9c8e",
             "locator": {
-              "kind": "symbol",
-              "name": "UNAVAILABLE"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "ccaecf3c76ce6bf357fe47964866e2133c36eb42",
-            "content": "sha256:3abfd317706c52be3c110381901e86ae9c67cb20c5f25239b8a0edc5f9fe5540",
-            "locator": {
-              "kind": "symbol",
-              "name": "ABSENT_DETAIL"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "ccaecf3c76ce6bf357fe47964866e2133c36eb42",
-            "content": "sha256:2043a749b36c91331a998ac50f489d7b86669c69f6bb2a9bf591af728e9a3507",
-            "locator": {
-              "kind": "symbol",
-              "name": "ABSENT_NEXT"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -318,15 +302,14 @@
       ]
     },
     "4": {
-      "note": "A counted or partial body whose parts sum to its totals.",
+      "note": "A counted or partial body whose parts sum to its totals.\n\nAnchor: `counted`",
       "targets": [
         {
           "anchor": {
-            "blob": "ccaecf3c76ce6bf357fe47964866e2133c36eb42",
-            "content": "sha256:42c386f5613043307239cec27dc0d7d0fb27d129835f9e406c99de775e61b59f",
+            "blob": "56e48c445177308f7420c6a934e402bebf797664",
+            "content": "sha256:1b989469b86cd3e1a511b04f5a44bd7cae959c99e77eced6ca28718ea0ee9c8e",
             "locator": {
-              "kind": "symbol",
-              "name": "counted"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -350,26 +333,14 @@
       ]
     },
     "6": {
-      "note": "The one stub and the per-route request counter.",
+      "note": "The one stub and the per-route request counter.\n\nAnchor: `serve` `urlsOf`",
       "targets": [
         {
           "anchor": {
-            "blob": "ccaecf3c76ce6bf357fe47964866e2133c36eb42",
-            "content": "sha256:d54423f0fe2c0f0abf0d512386842da8463c3974b13e2c4d33e4220aea881f21",
-            "locator": {
-              "kind": "symbol",
-              "name": "serve"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
             "blob": "56e48c445177308f7420c6a934e402bebf797664",
-            "content": "sha256:c171f6e8de83b4eb62460e114bd8014e432e189de07bde13f9711bb544f8578d",
+            "content": "sha256:1b989469b86cd3e1a511b04f5a44bd7cae959c99e77eced6ca28718ea0ee9c8e",
             "locator": {
-              "kind": "symbol",
-              "name": "urlsOf"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -392,12 +363,12 @@
       ]
     },
     "8": {
-      "note": "**One control with intent counts and nothing beside it; the click opens the task context.**\n\nAnchor: \"is one control with the comparison's changed-intent counts and nothing beside it\"",
+      "note": "**One control with intent counts and nothing beside it; the click opens the task context.**",
       "targets": [
         {
           "anchor": {
-            "blob": "ccaecf3c76ce6bf357fe47964866e2133c36eb42",
-            "content": "sha256:46bfd4743067f13b1f3d46b57c9e21f8cd1db58079f97f14d3cd4ba61d97b76e",
+            "blob": "56e48c445177308f7420c6a934e402bebf797664",
+            "content": "sha256:44eae62e41696a77bcb63476b1340e5aedc677aefd4dfe689c0987b64591d06d",
             "locator": {
               "end": 150,
               "kind": "line_range",
@@ -409,12 +380,12 @@
       ]
     },
     "9": {
-      "note": "**One summary read, no catalogue read, one committed read.**\n\nAnchor: \"makes one summary read, no catalogue read and one committed change-set read\"",
+      "note": "**One summary read, no catalogue read, one committed read.**",
       "targets": [
         {
           "anchor": {
-            "blob": "ccaecf3c76ce6bf357fe47964866e2133c36eb42",
-            "content": "sha256:5c58a33f6b8294557f19143782143fadf93148ac970ae24a55086d43154b1582",
+            "blob": "56e48c445177308f7420c6a934e402bebf797664",
+            "content": "sha256:9fd009a58ad156196053399755da94effb34fd6cf245da76b68b294647d3aea5",
             "locator": {
               "end": 168,
               "kind": "line_range",

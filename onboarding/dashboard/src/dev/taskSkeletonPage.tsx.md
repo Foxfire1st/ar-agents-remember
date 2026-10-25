@@ -21,4 +21,5 @@ This developer page is not a production route, older-server proof, real native t
 ## Evidence
 
 
+
 - The selected projection precedes reader mount, the rich fetch override is restored, and local artifact state switches between DetailPanel and NotesReaderViewer. [1]

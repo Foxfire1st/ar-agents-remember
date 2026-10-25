@@ -29,4 +29,5 @@ A cross-folder prerequisite keeps nested/b.json rather than collapsing to the ca
 - Full relative prerequisite address and child stage survive projection/body joins. [2]
 
 
+
 - Real task_doc writes and separate pure/projection assertions cover exact dependency/prose predicates, RF01 omitted-replacement refresh, candidate-aware dry-runs, fixed-field section preservation and Completed-cycle identity; none is an execution result or universal no-write/schema-less-parity claim. [1]

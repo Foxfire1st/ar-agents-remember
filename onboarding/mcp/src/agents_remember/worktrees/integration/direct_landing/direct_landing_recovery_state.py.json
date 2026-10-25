@@ -113,27 +113,14 @@
       ]
     },
     "5": {
-      "note": "Recovery tests reject code/ref/content drift and accept cache absence or damage.",
+      "note": "Recovery tests reject code/ref/content drift and accept cache absence or damage.\n\nAnchor: `_recover_after_interrupted_receipt` `test_direct_landing_publishes_memory_and_recovers_independently_of_cache`",
       "targets": [
         {
           "anchor": {
-            "blob": "e026cb197331402f445ffac02968faac936c15d0",
-            "content": "sha256:a096b135eb3b68c3bc32a895b09cee585bd9ba58dc7052409b1a8045464334ac",
+            "blob": "e5e2ee915969059ef9c62381725c0e2f73f229d0",
+            "content": "sha256:6e58c8410298d7d88cd213b6be058805b71d47020449fc6d3fcc168bdcce4564",
             "locator": {
-              "kind": "symbol",
-              "name": "_recover_after_interrupted_receipt"
-            },
-            "path": "mcp/tests/test_direct_landing.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "e026cb197331402f445ffac02968faac936c15d0",
-            "content": "sha256:04010af4035543f16e10e1a085e08495cb9f7a998f349c69adf9950414a4cf4f",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_direct_landing_publishes_memory_and_recovers_independently_of_cache"
+              "kind": "file"
             },
             "path": "mcp/tests/test_direct_landing.py"
           },

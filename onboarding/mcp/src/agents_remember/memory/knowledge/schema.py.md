@@ -14,6 +14,6 @@
 
 ## Evidence
 
-- The index owns exactly eight logical tables in manifest order \[9] [9]
-- The one schema is composed, pinned, and drift fails instead of re-pinning \[10] [10]
-- Any other declared version is refused, never migrated \[11] [11]
+- The index owns exactly eight logical tables in manifest order [9]
+- The one schema is composed, pinned, and drift fails instead of re-pinning [10]
+- Any other declared version is refused, never migrated [11]

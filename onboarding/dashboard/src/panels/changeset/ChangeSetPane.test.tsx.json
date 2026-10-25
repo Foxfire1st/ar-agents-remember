@@ -70,15 +70,14 @@
       ]
     },
     "5": {
-      "note": "Subject under test: the diff column + its rendered-markdown toggle.",
+      "note": "Subject under test: the diff column + its rendered-markdown toggle.\n\nAnchor: `ChangeSetPane`",
       "targets": [
         {
           "anchor": {
-            "blob": "25c49cf6ee2dbf0428790acb516b69ee13c75ab9",
-            "content": "sha256:e5714cd8acc86de919bd14fa0b6a98406e1bfe7bb28c3c1925a88e7897ea6ab4",
+            "blob": "48d2681013595d0c214aa1dad92fe4c6829747d3",
+            "content": "sha256:448d21db7f329cfabb94f17e943383f27d9f868c65fc937a457b060e0c07c9d8",
             "locator": {
-              "kind": "symbol",
-              "name": "ChangeSetPane"
+              "kind": "file"
             },
             "path": "dashboard/src/panels/changeset/ChangeSetPane.tsx"
           },
@@ -87,15 +86,14 @@
       ]
     },
     "6": {
-      "note": "The markdown renderer the rendered view mounts.",
+      "note": "The markdown renderer the rendered view mounts.\n\nAnchor: `Markdown`",
       "targets": [
         {
           "anchor": {
-            "blob": "6eca2dd9be19afabd89fc0f1946d9d5f3bdcf41c",
-            "content": "sha256:073bc6db74059e4fc0b2f55f44b3351d596649087b6d94924759282acbccd7d2",
+            "blob": "1a65bd4444779518a555e2e38d8ca30fa0df9f3a",
+            "content": "sha256:dbbcb27210f3e352d08d6ba242aaa61621f03500d95beccbb45dbe266bda2ae3",
             "locator": {
-              "kind": "symbol",
-              "name": "Markdown"
+              "kind": "file"
             },
             "path": "dashboard/src/grammar/Markdown.tsx"
           },

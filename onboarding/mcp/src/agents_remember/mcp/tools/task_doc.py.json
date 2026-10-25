@@ -1,17 +1,17 @@
 {
   "path": "mcp/src/agents_remember/mcp/tools/task_doc.py",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
-      "note": "The application entry point this builder forwards to.",
+      "note": "The application entry point this builder forwards to.\n\nAnchor: `task_doc_tool`",
       "targets": [
         {
           "anchor": {
-            "blob": "95185967dd7ca4326d7c22ffeb56416e31f26d89",
-            "content": "sha256:96d91386dd747620af7cd049c59642c34a2a858dda54f25f0f85386615e35bd6",
+            "blob": "f174a79f72375a38aa57f50907312424f3fc2c3c",
+            "content": "sha256:4639ac7fede07fbf8fd4a606e94345d3e15fdc3bc40ee0f57fba307bccd95505",
             "locator": {
-              "kind": "symbol",
-              "name": "task_doc_tool"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/task_docs/task_doc_tools.py"
           },
@@ -20,15 +20,14 @@
       ]
     },
     "2": {
-      "note": "The shared validation/emission choke point.",
+      "note": "The shared validation/emission choke point.\n\nAnchor: `_tool_payload`",
       "targets": [
         {
           "anchor": {
-            "blob": "cf09680d5bb09436a9d3afb73da9cbd60f1af5fc",
-            "content": "sha256:35b48e3f7dcb68f7a66dcb72920ee84b9b6dd535711731b79de1596a0e2239fa",
+            "blob": "bbd96445dae6e10e1c4052722fab1b614aafedfe",
+            "content": "sha256:e65598ad08d511a5ffa26a3099d273596eea7844d5c2a00685c2ccb183271c43",
             "locator": {
-              "kind": "symbol",
-              "name": "_tool_payload"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/mcp/tools/base.py"
           },
@@ -37,15 +36,14 @@
       ]
     },
     "3": {
-      "note": "The response model the payload validates against.",
+      "note": "The response model the payload validates against.\n\nAnchor: `TaskDocResponse`",
       "targets": [
         {
           "anchor": {
-            "blob": "581ea09baaa29d1364eae092a37cbc33bc91add3",
-            "content": "sha256:a702139e50d61c9b98c12a747fb18cb0e93c32525fa32686f99df0b8574c9704",
+            "blob": "e7d80ed372402d196e9af03c6aa40d32a018d7e2",
+            "content": "sha256:c7dc3ccede6258becfe2c8d886d1ef79e04279f32d2f56f30d6d1c8fd90242c4",
             "locator": {
-              "kind": "symbol",
-              "name": "TaskDocResponse"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/models/task_doc.py"
           },

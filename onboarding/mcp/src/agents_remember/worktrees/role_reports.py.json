@@ -196,15 +196,14 @@
       ]
     },
     "4": {
-      "note": "Folder removal collects first and only then deletes.",
+      "note": "Folder removal collects first and only then deletes.\n\nAnchor: `remove_group_role_folders`",
       "targets": [
         {
           "anchor": {
-            "blob": "7d4880cb19dc0dff6c3fd42b3dbfc8a91a33da38",
-            "content": "sha256:38155957269ffa0a86e5e07b6ef1f83ee8eb4fa9976f8903ab0fb85ebec6ac87",
+            "blob": "7e0a8d845635d5d0d3a1061a113d2c01687d655b",
+            "content": "sha256:725585688b760e5247852a20d50e3cef020e41db6fa871005d737ba11f408c5f",
             "locator": {
-              "kind": "symbol",
-              "name": "remove_group_role_folders"
+              "kind": "file"
             }
           },
           "kind": "code"

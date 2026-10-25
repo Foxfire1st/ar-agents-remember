@@ -44,7 +44,6 @@ No configured domain documentation applies.
 - Snapshots verify exact bytes and mutation authority requires a complete memory pair. [1]
 - Source and worktree contracts retain explicit tips, physical identities and preparation observations. [2]
 - Generated-input declarations do not claim freshness; the aggregate validates its semantic digest and snapshot order. [3]
-- The production observer derives records from current task, door, worktree, lineage and contract owners. [4]
 
 ### Cross-Repo References
 

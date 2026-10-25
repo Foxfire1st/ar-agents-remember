@@ -140,15 +140,14 @@
       ]
     },
     "4": {
-      "note": "The accounting case requires a built venv and excludes either environment directory from the working inventory; it does not run the lifecycle.",
+      "note": "The accounting case requires a built venv and excludes either environment directory from the working inventory; it does not run the lifecycle.\n\nAnchor: `test_candidate_accounting_excludes_worktree_environments`",
       "targets": [
         {
           "anchor": {
-            "blob": "4a177dd386845d2f9f41c60ac7884e3644bbad24",
-            "content": "sha256:15de6b181acfaacae9313a07c413776d4e8d0bf123771ea719f74878d22e7651",
+            "blob": "ea9892bb5d4717dcf27606f3fc6ca8694ad0419b",
+            "content": "sha256:f19692b4590a1616b1dbd5a0d8027ff7796e0c2f7ab054334f90c0315ad42bc2",
             "locator": {
-              "kind": "symbol",
-              "name": "test_candidate_accounting_excludes_worktree_environments"
+              "kind": "file"
             }
           },
           "kind": "test"

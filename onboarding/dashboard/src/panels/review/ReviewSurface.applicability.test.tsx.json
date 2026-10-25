@@ -3,16 +3,29 @@
   "realizes": [],
   "references": {
     "16": {
-      "note": "Current details/facts rendering and judgment identifiers are a different owner than the retired assessment labels.\n\nAnchor: Surviving-source boundary only",
+      "note": "ReviewMainFacts renders changed fields, unresolved references, remaining counts, staleness and submission facts; ReviewRecordIdentities renders comparison, retained revision, expansion and judgment identifiers in Technical details.",
       "targets": [
         {
           "anchor": {
-            "blob": "eedfb233fe4b10b4fff9859dc898b4e7f5210460",
-            "content": "sha256:77f0179716f7cd1af783adede664af8a8c739c092c776cef97f0869a9fc52066",
+            "blob": "49343b438babb334380943fd5a5b14179143b0fe",
+            "content": "sha256:60beda532f522ae1f9cb7eb98ca79ef70e6311dac829a3a6e1ca1e6dfd8d0695",
             "locator": {
-              "end": 174,
+              "end": 96,
               "kind": "line_range",
-              "start": 32
+              "start": 34
+            },
+            "path": "dashboard/src/panels/review/ReviewRecordPanes.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "49343b438babb334380943fd5a5b14179143b0fe",
+            "content": "sha256:917c026631dfd4c2823996d7f7719305986fb068cd3454434462ff7a8a899d0c",
+            "locator": {
+              "end": 141,
+              "kind": "line_range",
+              "start": 98
             },
             "path": "dashboard/src/panels/review/ReviewRecordPanes.tsx"
           },

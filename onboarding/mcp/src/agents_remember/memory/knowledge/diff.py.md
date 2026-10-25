@@ -134,23 +134,41 @@ No configured domain documentation could be checked.
 - **The declared field projection: which `ReadItem` field carries each compared record field.** [1]
 - **The five anchor fields an observation is compared on, with `detail` deliberately absent.** [2]
 - The declared union stream order and the read-kind mapping, and the advertised-pair identity. [3]
-- The per-side view and the pair of them as one value. [4]
+
+- The per-side view — one snapshot's connection, selected scope and claims — and the pair of them as one value. [4]
+
 - **One union item: both payloads, its coverage, its transition, its changed fields, its reachability and its source comparison.** [5]
 - **The whole comparison value, including the four per-side selected sets a caller compares the union against.** [6]
+
 - **The one entry point: the two sides, the union, the order and the aggregate counts.** [7]
+
 - The union construction, its stable key, and the claims map the source half reads. [8]
+
 - **The per-item comparison: coverage, projection, the record half and the source half.** [9]
-- **The four record transitions, with no succession stated.** [10]
+
+
+- **The four record transitions — added, removed, changed and unchanged — read from the two payloads and nothing else: no authored predecessor edge names one revision as another's replacement.** [10]
+
+
 - **The coverage decision: the two rules and the measured reason they are not one.** [11]
+
 - **The existence question each kind asks of the other snapshot, by its own key.** [12]
 - The projection, the field comparison that runs only when both sides hold the record, and the claim's own two authored fields. [13]
 - The content comparison and the anchor signature the source half is built on. [14]
 - **The source comparison, the four booleans, and `missing_side` as the reason they are all false.** [15]
 - The reachability labels and the declared stream order's implementation. [16]
-- The existence probes this module consumes. [17]
+
+- The diff module consumes four existence probes for invariant revisions, family revisions, memberships and realization claims. The former predecessor-edge union is absent; numbered text revisions carry no predecessor edges. [17]
+
+
 - **The node that owns the union-side property the two rules serve, and the removed-realization node whose failing assertion is the load-bearing `assert 'unchanged' == 'removed'`.** [18]
-- **The nodes that hold the two change statements apart and measure the record comparison field by field.** [19]
+
+
+- The source-only node: the candidate rewrote one attributed file while the claim naming it did not move, so no record field changed and the item reports the source observation alone. The two change statements' own nodes now sit in `test_knowledge_diff_boundaries.py`. [19]
+
+
 - The fixture's two snapshots and the transitions between them that this module's states are measured against. [20]
+
 
 ### Cross-Repo References
 

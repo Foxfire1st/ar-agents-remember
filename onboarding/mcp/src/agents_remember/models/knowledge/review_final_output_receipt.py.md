@@ -32,9 +32,13 @@ FinalOutputReceipt binds the recorded code and knowledge trees and their compari
 - The single verdict expression both the writer and the validator call, so they cannot disagree (v1 `final_output_verdict`; v2 calls `tree_output_verdict`). [37]
 - The validator that refuses a record whose verdicts do not follow from the identities it carries (v1 `_the_receipt_agrees_with_itself`; v2 validates tree binding in `_validate_tree_binding`). [38]
 
+
 - `FinalOutputReceipt` owns the current boundary described above. [19]
+
 - `tree_comparison_digest` owns the current boundary described above. [20]
+
 - `tree_output_verdict` owns the current boundary described above. [21]
+
 - `LegacyFinalOutputReceipt` owns the current boundary described above. [22]
 
 ### Docs References
@@ -58,7 +62,9 @@ No meaningful cross-repo references found.
 - **In v1 `LegacyFinalOutputReceipt`, the two phases are separate measurements and the historical published dataset can move between them.** [24]
 - **The v1 dataset channel's `not-comparable` means one side cannot be compared; this historical state does not make that receipt `moved`.** [25]
 - The v1 legacy dataset publication-location states, in the resolving route's vocabulary. [26]
+
 - The code channel's comparison: delivered tree against reviewed candidate tree. [28]
+
 - **The v1 legacy knowledge channel is `not-comparable` when one side is not a dataset and never claims a match without comparison.** [29]
 - The record itself: the generation's identities, the delivered commits and trees, the published identity, the two match verdicts and the one state. [31]
 - **The one sentence the record publishes, derived from its own fields, one clause per verdict.** [33]

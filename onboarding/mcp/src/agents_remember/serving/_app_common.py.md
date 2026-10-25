@@ -27,23 +27,84 @@ This is current-source interpretation of the A9 candidate, not a new test result
 
 ## Source-bound reference inputs
 
-- [12]
-- [13]
-- [14]
+
+
+
+- Anchor: Optional review/reader collaborators, distinct missing-port capabilities. [12]
+
+
+
+
+
+- Anchor: Current tree-child shutdown hook on collaborator and runtime. [13]
+
+
+
+
+
+- Anchor: Runtime without a terminal host or inbox registrar. [14]
+
+
 - [15]
-- [16]
-- [17]
-- [21]
-- [22]
-- [23]
-- [24]
-- [27]
-- [28]
-- [30]
+
+
+
+- Anchor: Projection memo keyed by published instance, not content revision. [16]
+
+
+
+
+
+- Anchor: SSE snapshots copy the memo and inject the serve-time build tail; deltas stay bare. [17]
+
+
+
+
+
+- Anchor: Remaining collaborator fields, not the removed compiler/terminal seams. [21]
+
+
+
+
+
+- Anchor: Distinct optional intent-summary port. [22]
+
+
+
+
+
+- Anchor: Distinct tree-view port and its shutdown hook. [23]
+
+
+
+
+
+- Anchor: Path-reader capability separate from task review. [24]
+
+
+
+
+
+- Anchor: The retained runtime bundle shared by routes and loops. [27]
+
+
+
+
+
+- Anchor: Snapshot-only volatile serving build tail. [28]
+
+
+
+
+
+- Anchor: Source-content capability is not an empty-content fallback. [30]
+
+
 
 ## Evidence
 
 - Serving lifespan teardown invokes a supplied review_trees_shutdown hook through the startup-owned worker helper before canceling and draining background tasks. [20]
+
 - ServingCollaborators and _ServingRuntime newly declare optional review_memory_root defaulting to None. ReviewMemoryRootPort is only a callable type alias. The projection stream route explicitly passes the runtime field to multiplex_review_memory. That helper skips root resolution for absent review identity, validates supplied selectors, resolves the port and reports missing adapter/root errors. The native worker enforces its own root-shape checks. These bodies do not prove the composition root's full leaf-admission policy. [31]
 
 - Composition carries application-tier explainer ports, native host and master-contract resolver without a serving-to-cli/application import; absence is surfaced as a named unavailable route rather than partial composition. [32]

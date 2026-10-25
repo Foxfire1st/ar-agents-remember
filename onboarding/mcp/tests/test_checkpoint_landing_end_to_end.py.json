@@ -41,70 +41,14 @@
       ]
     },
     "2": {
-      "note": "Retry, continued work, and final-route completion semantics.",
+      "note": "**Retained historical source account — superseded by the current contract:** Retry, continued work, and final-route completion semantics.\n\nAnchor: `test_retry_is_idempotent_and_continued_work_checkpoints_again` `test_the_checkpoint_is_the_only_route_that_admits_an_unclosed_master` `test_the_closeout_preview_refuses_what_the_closeout_apply_refuses` `test_a_leaf_closeout_preview_is_untouched_by_the_series_completion_gate` `test_a_leaf_that_has_not_closed_out_is_still_refused_by_integrate` `test_the_open_master_refusal_names_the_route_that_can_land_it`",
       "targets": [
         {
           "anchor": {
             "blob": "cc77ba298b7490c140a1ea88a143cf2c5edc1c04",
-            "content": "sha256:926a9a2efad134bfad57c8fc20801929bf01022715c17e6c2f6324abe61dc8cc",
+            "content": "sha256:62fc1958b02ed49fd1481b49e4e613b4f6782f656912ff96039a5af881427370",
             "locator": {
-              "kind": "symbol",
-              "name": "test_retry_is_idempotent_and_continued_work_checkpoints_again"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "0ca217cc0d2110ed2f3fcbd85f533018b49af39b",
-            "content": "sha256:9e81cc18f2bea233a2b97069eabc0ba12d7ce5a60094c6f37c7ff9f8c048ed23",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_the_checkpoint_is_the_only_route_that_admits_an_unclosed_master"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "0ca217cc0d2110ed2f3fcbd85f533018b49af39b",
-            "content": "sha256:f7974e2accc8911a74eb051b30d2959425e656898c0d3c2b35b3bac7e641b717",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_the_closeout_preview_refuses_what_the_closeout_apply_refuses"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "cc77ba298b7490c140a1ea88a143cf2c5edc1c04",
-            "content": "sha256:dc7b615860987c8324de1ad54311b1b5675e4c8fe023617e0bf4d5103b544aee",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_a_leaf_closeout_preview_is_untouched_by_the_series_completion_gate"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "0ca217cc0d2110ed2f3fcbd85f533018b49af39b",
-            "content": "sha256:f8c3155737093ffb0f1f773bff599021acd477323696198efa01a812d8950a77",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_a_leaf_that_has_not_closed_out_is_still_refused_by_integrate"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "0ca217cc0d2110ed2f3fcbd85f533018b49af39b",
-            "content": "sha256:8da8083ecade4efde29236081b1b170e7ca079f6efdcbd376787637d4ed80d41",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_the_open_master_refusal_names_the_route_that_can_land_it"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -139,48 +83,14 @@
       ]
     },
     "4": {
-      "note": "Source-cache damage does not block; real approval/master/race guards survive.",
+      "note": "**Retained historical source account — superseded by the current contract:** Source-cache damage does not block; real approval/master/race guards survive.\n\nAnchor: `test_missing_stale_or_malformed_source_cache_cannot_block_checkpoint` `test_a_completed_master_is_still_refused_by_the_checkpoint` `test_a_ref_race_names_the_checkpoint_as_the_tool_to_rerun` `test_checkpoint_landing_requires_explicit_developer_approval`",
       "targets": [
         {
           "anchor": {
             "blob": "cc77ba298b7490c140a1ea88a143cf2c5edc1c04",
-            "content": "sha256:1c0c261f03d34ffa9b9b490f52d261f2281be4bb7710b24b9d519ee2ffc59c9d",
+            "content": "sha256:62fc1958b02ed49fd1481b49e4e613b4f6782f656912ff96039a5af881427370",
             "locator": {
-              "kind": "symbol",
-              "name": "test_missing_stale_or_malformed_source_cache_cannot_block_checkpoint"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "0ca217cc0d2110ed2f3fcbd85f533018b49af39b",
-            "content": "sha256:df0be504c1bd2468d05689efa3a77ed826349b2e0681549df8a3ee7b65f18e03",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_a_completed_master_is_still_refused_by_the_checkpoint"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "cc77ba298b7490c140a1ea88a143cf2c5edc1c04",
-            "content": "sha256:860312c008f3ee43fffba3b0a1c6701969ef8ce6117282b0c983162d8e611adf",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_a_ref_race_names_the_checkpoint_as_the_tool_to_rerun"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "cc77ba298b7490c140a1ea88a143cf2c5edc1c04",
-            "content": "sha256:2de865c2b550d9a9b8db83f51fc8ad2503269a12c6d621d76484132ea4b8dbfc",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_checkpoint_landing_requires_explicit_developer_approval"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -188,26 +98,14 @@
       ]
     },
     "5": {
-      "note": "Checkpoint publication remains distinct from pause.",
+      "note": "**Retained historical source account — superseded by the current contract:** Checkpoint publication remains distinct from pause.\n\nAnchor: `test_the_landing_does_not_pose_as_a_pause` `CheckpointPausesAnUnfinishedMasterTests`",
       "targets": [
         {
           "anchor": {
             "blob": "cc77ba298b7490c140a1ea88a143cf2c5edc1c04",
-            "content": "sha256:e8deed6f7bc066eb66549d736775fee04632c74c4e6f4d27f88a320ea8a44519",
+            "content": "sha256:62fc1958b02ed49fd1481b49e4e613b4f6782f656912ff96039a5af881427370",
             "locator": {
-              "kind": "symbol",
-              "name": "test_the_landing_does_not_pose_as_a_pause"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "0ca217cc0d2110ed2f3fcbd85f533018b49af39b",
-            "content": "sha256:e5fd8a4277a32af66bf6aa61661c22233b81307578ee2b759ba65178d84fd8af",
-            "locator": {
-              "kind": "symbol",
-              "name": "CheckpointPausesAnUnfinishedMasterTests"
+              "kind": "file"
             }
           },
           "kind": "test"

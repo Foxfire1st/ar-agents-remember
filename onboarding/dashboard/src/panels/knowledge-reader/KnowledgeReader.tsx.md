@@ -79,9 +79,13 @@ No configured live documentation source was available for this pass.
 
 ### Repo-Internal References
 
+
 - One selection-local records acquisition is created here and shared with the tree and toolbar. [13]
+
 - The tree receives the shared records loader. [17]
+
 - The outline that navigates the document's chapters. [18]
+
 - The cited code pane that renders the File Viewer's code primitive. [19]
 
 ### Cross-Repo References

@@ -1,5 +1,6 @@
 {
   "path": "mcp/tests/test_fresh_user_harness.py",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
@@ -101,8 +102,18 @@
       ]
     },
     "5": {
-      "note": "Every governed harness module this suite answers for exists.",
+      "note": "Every governed harness module this suite answers for exists.\n\nAnchor: `test_every_governed_harness_module_this_suite_answers_for_exists` `GOVERNED_HARNESS_MODULES`",
       "targets": [
+        {
+          "anchor": {
+            "blob": "7e009d4b32c2f82a0a22371f55a3f93aaf5906d1",
+            "content": "sha256:4ee16273b01c1a9d9db5ea4c5319fbb5153f8407f03a53b915d9a88d9be4accf",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        },
         {
           "anchor": {
             "blob": "7e009d4b32c2f82a0a22371f55a3f93aaf5906d1",
@@ -116,8 +127,8 @@
         },
         {
           "anchor": {
-            "blob": "39908cacff69050094a07c31513a9fd08e6e768d",
-            "content": "sha256:c2b14f481d7cb6dbb5baa66e33194d2a06a05154ef0d49bd209ab3176d0fb76f",
+            "blob": "7e009d4b32c2f82a0a22371f55a3f93aaf5906d1",
+            "content": "sha256:bb855847aae5de0d2d11982a02647fd6c86c592820983fcc06b17a44cc790bbf",
             "locator": {
               "kind": "symbol",
               "name": "GOVERNED_HARNESS_MODULES"

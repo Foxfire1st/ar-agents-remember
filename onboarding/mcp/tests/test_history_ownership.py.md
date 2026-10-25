@@ -17,5 +17,7 @@ A newly closed file must match its owner publication byte-for-byte. Edited/fabri
 No external Domain Documentation source is configured for this repository. The following source witnesses establish the contract, not a new execution receipt.
 
 - Recorded owner publication admits byte-identical newly closed history. [1]
+
 - Changed closed history is refused by file. [2]
+
 - An unreadable enclosure is not silently skipped. [3]

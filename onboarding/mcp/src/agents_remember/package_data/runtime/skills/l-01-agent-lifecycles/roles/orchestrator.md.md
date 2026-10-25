@@ -103,4 +103,5 @@ own lifecycle owner.
 
 This packaged copy derives from the canonical roles/orchestrator.md. The Orchestrator coordinates concurrent masters through their Managers and may start Investigator under its own sprint for a concern/check belonging to no leaf. Leaf checks stay with their Worker/Reviewer. A refusal preserves actual parent routing or the parentless blocker; no invented Architect or recipient identity replaces it. Investigator is a child concern/report carrier, not a leaf transaction owner. Mirror synchronization remains the owner; this file adds no independent instruction.
 
+
 - This source owns the stated current Investigator scope or canonical vocabulary. [1]

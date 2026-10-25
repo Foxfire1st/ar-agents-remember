@@ -3,12 +3,12 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The pipeline (Stage 4) that consumes this delegation map.\n\nAnchor: \"Stage 4\"",
+      "note": "The pipeline (Stage 4) that consumes this delegation map.",
       "targets": [
         {
           "anchor": {
-            "blob": "9d9675efec08314d237737fc275cadad172934ec",
-            "content": "sha256:3e5052ad84e0a8430c57a8e61336f025c0c97e8095f915e710ef8b7d7966850d",
+            "blob": "bf05b5698702f61d5cdb2c079ccbc59c881a89a8",
+            "content": "sha256:1604452f424c11ffd94a94a4ca1f93294852009ef804e125e011f1795b62ec60",
             "locator": {
               "end": 106,
               "kind": "line_range",

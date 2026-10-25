@@ -3,12 +3,12 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The scoped current source carries the module/document behavior described above, and the projection case's prepared dictionary now carries the complete hand-over's reference and content as the builder returns them.",
+      "note": "Report links, projection reuse, the public execution result, dispatch and taskless identity are asserted through the routes.",
       "targets": [
         {
           "anchor": {
-            "blob": "5d1d37fe2eea3aa93dd4c0457ffae1f63ac98e1d",
-            "content": "sha256:4322e82a325f1d1162907ea64266b024d608afcbe4471a06237f1846a440ab40",
+            "blob": "40b341f366d59e2108c5f4dd63eca10db01ee9f6",
+            "content": "sha256:3bff29767d75a18277b9e7f66a0fe1ae1f51003c101e4e41332503100e30c2ee",
             "locator": {
               "kind": "file"
             }

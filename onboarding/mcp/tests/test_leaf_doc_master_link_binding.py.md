@@ -22,7 +22,9 @@ Start publishes `inProgress` on the leaf and exact parent row without marking th
 
 
 - Start runs with external memory [16]
+
 - Pre-contract leaf gains its link at start [17]
+
 - Damaged document repaired additively by its next start [18]
 - Master-first planning leaves stay unstamped until start [20]
 

@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/application/read_files.py",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
@@ -40,12 +41,23 @@
   ],
   "references": {
     "1": {
-      "note": "The thin payload wrapper that returns this application entry point's dict through the token choke point.",
+      "note": "The thin payload wrapper that returns this application entry point's dict through the token choke point.\n\nAnchor: `read_ar_files_payload`",
       "targets": [
         {
           "anchor": {
-            "blob": "a7e1c91942f0b2cea533bee9af29d5869b17f9bc",
-            "content": "sha256:c6602883c1f6cc5db28df7c688257563ce2ed6b901465af9d63cbd66825a2372",
+            "blob": "51b276452da0ab3a2641006c43d8d668f4b9eae1",
+            "content": "sha256:a4d551b212d541a2081c10c0ac75510824aec6cff5e1d0c5b7da1ebe7adc1641",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/read_files.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "51b276452da0ab3a2641006c43d8d668f4b9eae1",
+            "content": "sha256:c7655e0400019bf4eed28ab2247d04ba6fe6d4707d672bcb3e4d8e36138b8450",
             "locator": {
               "kind": "symbol",
               "name": "read_ar_files_payload"
@@ -57,12 +69,12 @@
       ]
     },
     "2": {
-      "note": "**The published-intent half this entry point attaches: the owning module's public surface, the import it arrives through, and the assembly line it is attached at.**\n\nAnchor: \"published_intent\"",
+      "note": "**The published-intent half this entry point attaches: the owning module's public surface, the import it arrives through, and the assembly line it is attached at.**",
       "targets": [
         {
           "anchor": {
-            "blob": "4be19bfc4f0db366151478c0195bb8e5278c7351",
-            "content": "sha256:62604cfa37b04d4736ba44eec3c0c18a9febf5ba9a6a0e05dfac1c0538c6c677",
+            "blob": "e2257653c8f42c1861ece020b7afb0ebe068ff1e",
+            "content": "sha256:033f68c14d8a8997ddbf56030258113ab31200940fc576288a9391fab6e12b2f",
             "locator": {
               "kind": "symbol",
               "name": "published_intent_block"
@@ -73,8 +85,8 @@
         },
         {
           "anchor": {
-            "blob": "4be19bfc4f0db366151478c0195bb8e5278c7351",
-            "content": "sha256:cab2ff8fd613e943210ccc87819562eec5f87eb2edbfac4a50b42bab964afcbd",
+            "blob": "e2257653c8f42c1861ece020b7afb0ebe068ff1e",
+            "content": "sha256:84426b6dcc3c72cd05a065cc1fd1929477a38d39c765d56d2dbb8447cef3b233",
             "locator": {
               "end": 461,
               "kind": "line_range",
@@ -86,8 +98,8 @@
         },
         {
           "anchor": {
-            "blob": "44a4837c014364afc6109be5aec371fe8ba6f721",
-            "content": "sha256:a1668f40a36918e7d16511503f4cf7f4f1ab15b5a0e31f86dfe953bd40362f99",
+            "blob": "235bbb664d2f527abfdfa47f8cbbcb96c8714650",
+            "content": "sha256:048dd0d1084c9dbcb8e77dba4137be7b072b38600f6a3fb2b52fb7adb6edc416",
             "locator": {
               "end": 36,
               "kind": "line_range",
@@ -98,8 +110,8 @@
         },
         {
           "anchor": {
-            "blob": "44a4837c014364afc6109be5aec371fe8ba6f721",
-            "content": "sha256:b843fc5d205e51414827e73a11fb76b3396c10d08b4458bee1fcbe7348819416",
+            "blob": "235bbb664d2f527abfdfa47f8cbbcb96c8714650",
+            "content": "sha256:5005b565176015cba9f5fffb5bef63f9a9d20405e45db1972de0fdbe25babce4",
             "locator": {
               "end": 155,
               "kind": "line_range",
@@ -107,19 +119,29 @@
             }
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e2257653c8f42c1861ece020b7afb0ebe068ff1e",
+            "content": "sha256:ed945298901c54ce9411f7391b4d3b19bb0e13b0f246be1cbad4704f98383880",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/published_intent.py"
+          },
+          "kind": "code"
         }
       ]
     },
     "3": {
-      "note": "**The format switch (MIK-R24 rules 5 and 9): a converted tree's file results carry the sidecar and resolved references, and an unconverted tree's are marked `legacy-format`.**\n\nAnchor: \"legacy-format\"",
+      "note": "**The memory-format switch: a tree counts as converted only when it carries the layout marker, a readable dataset selection and the text format; anything else is `unconverted` and names no card.**\n\nAnchor: `_read_one` `converted_card_parts`",
       "targets": [
         {
           "anchor": {
-            "blob": "44a4837c014364afc6109be5aec371fe8ba6f721",
-            "content": "sha256:074fc5111cf95faca8cad270b11cfafbfb7ce428f884ea288abb35e0290a20ec",
+            "blob": "235bbb664d2f527abfdfa47f8cbbcb96c8714650",
+            "content": "sha256:6eccfc7bad90429057021cc74333df2047d6908f67136c2d9faf1624ddae3a75",
             "locator": {
-              "kind": "symbol",
-              "name": "_read_one"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -127,10 +149,9 @@
         {
           "anchor": {
             "blob": "e205b6901715509bfd25313dc4a389e5a7f45427",
-            "content": "sha256:8135a1645c156c32cd131dc041fe9b689c02dae9d8bd898ca235b326c67fddf2",
+            "content": "sha256:0ca57880f59cc9f8021c933139b5d8db9d88b2d816febfdd48165479aeb8a7b7",
             "locator": {
-              "kind": "symbol",
-              "name": "converted_card_parts"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/read_files_format.py"
           },
@@ -139,12 +160,12 @@
       ]
     },
     "4": {
-      "note": "The import of the format helpers.\n\nAnchor: `TEXT_FORMAT`; `memory_format`",
+      "note": "The import of the format helpers.",
       "targets": [
         {
           "anchor": {
-            "blob": "44a4837c014364afc6109be5aec371fe8ba6f721",
-            "content": "sha256:2a3aaad2b9e669c90696d2ba2250dc2a3d75fe2d374f2d45f06204955d2a000e",
+            "blob": "235bbb664d2f527abfdfa47f8cbbcb96c8714650",
+            "content": "sha256:130c097d6557419be46eb765137e0adf91bc26c50c8db90e662a20cea5931a77",
             "locator": {
               "end": 42,
               "kind": "line_range",
@@ -155,55 +176,15 @@
         }
       ]
     },
-    "5": {
-      "note": "**MIK-R05: a chain entry already served to this lifecycle is shortened to `served_earlier` through the served ledger, under its own kind; the rendering is imported from the chain module.**\n\nAnchor: `shorten_served`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "44a4837c014364afc6109be5aec371fe8ba6f721",
-            "content": "sha256:1b9074eed8dc40a09a932f74fc30a81a93f2abf322f480e1548b3ac6b03cc8e4",
-            "locator": {
-              "kind": "symbol",
-              "name": "_chain_rendered"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "44a4837c014364afc6109be5aec371fe8ba6f721",
-            "content": "sha256:feb5f6de23da5454d47cd564a4141169a21ca4afc32a34a8c9b38352ac17d1f0",
-            "locator": {
-              "kind": "symbol",
-              "name": "_KIND_CHAIN_FAMILY"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "44a4837c014364afc6109be5aec371fe8ba6f721",
-            "content": "sha256:05611a572bb11a6b6ca98f47b4d6d68595d82dc3355a4ff2b14ed2f5621af19f",
-            "locator": {
-              "end": 35,
-              "kind": "line_range",
-              "start": 35
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "6": {
-      "note": "The strict response contract this dict validates against; `FileRead.status` is typed by the `FileReadStatus` alias declared in that model.",
+      "note": "The strict response contract this result validates against: `ReadArFilesResponse`, whose per-path `NamedFile` types the card location, the record counts, the action-needed records and the refusals.\n\nAnchor: `FileReadStatus`",
       "targets": [
         {
           "anchor": {
-            "blob": "7d25a2e02bdb37246754a3e63616de2e7abc66b1",
-            "content": "sha256:ac1125f4a56d881f04ef17d073c178bfb568f4282248ca0de6e8f81a4a40417a",
+            "blob": "ef10b35504e856788e45bc5b3988c4bab198da2f",
+            "content": "sha256:c6d5370cb33984aa7c8997c56fe3af7e65b2ada4e24f4414e62fb0636600b25b",
             "locator": {
-              "kind": "symbol",
-              "name": "FileReadStatus"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/models/read_files.py"
           },
@@ -212,60 +193,14 @@
       ]
     },
     "7": {
-      "note": "Frozen implementation of _overview_scope_key supporting the stated file behavior.",
+      "note": "The batch's overview locations: each named path contributes its ancestor chain, every overview is listed once for the call, and deeper chains sort before their ancestors.\n\nAnchor: `_overview_scope_key`",
       "targets": [
         {
           "anchor": {
-            "blob": "44a4837c014364afc6109be5aec371fe8ba6f721",
-            "content": "sha256:ce51e5df51f054d6a1188ae3e0cff0ea2a004eb5d117d12710e6eadaa46caa75",
+            "blob": "235bbb664d2f527abfdfa47f8cbbcb96c8714650",
+            "content": "sha256:6eccfc7bad90429057021cc74333df2047d6908f67136c2d9faf1624ddae3a75",
             "locator": {
-              "kind": "symbol",
-              "name": "_overview_scope_key"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "8": {
-      "note": "Frozen implementation of _attach_front_door supporting the stated file behavior.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "44a4837c014364afc6109be5aec371fe8ba6f721",
-            "content": "sha256:1a2c8b0653d371ff26564fb07e8615013e2fee14fd22dbb934bd38df4d57db83",
-            "locator": {
-              "kind": "symbol",
-              "name": "_attach_front_door"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "9": {
-      "note": "The addressed read names governing knowledge only; it emits no ambient read.packet or source/card content.\n\nAnchor: current owner",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "2f532024331db6212eee182a74888735f2460aae",
-            "content": "sha256:90421f7d6c5b13cee6234af98618e2748e39197a7d923652a501dc98fc3a8e6b",
-            "locator": {
-              "end": 173,
-              "kind": "line_range",
-              "start": 87
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "2f532024331db6212eee182a74888735f2460aae",
-            "content": "sha256:6ac3b3c9cf146137339b4cb4f9c4a80d45943a770ad17f00258fb8f81ac39e8b",
-            "locator": {
-              "end": 343,
-              "kind": "line_range",
-              "start": 260
+              "kind": "file"
             }
           },
           "kind": "code"

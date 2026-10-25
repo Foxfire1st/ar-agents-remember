@@ -99,15 +99,14 @@
       ]
     },
     "3": {
-      "note": "One page: the resume, the binding, the envelope counted inside the bound, and the measured selection returned (R3-1).",
+      "note": "One page: the resume, the binding, the envelope counted inside the bound, and the measured selection returned (R3-1).\n\nAnchor: `subtree_page`",
       "targets": [
         {
           "anchor": {
-            "blob": "ce0ac969ac0e3d28191611edeeb233f372185feb",
-            "content": "sha256:b01a4e2ebdf1f63bfcc5944b2125a94b7af149708508678ede7524076819911e",
+            "blob": "a83380d5f62ba2d3de463374e6cae852ef42c87c",
+            "content": "sha256:5400e10ffe80363a293448653e1d7d3f74bf3624160fe8529532423daf4f30b7",
             "locator": {
-              "kind": "symbol",
-              "name": "subtree_page"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -206,12 +205,12 @@
       ]
     },
     "9": {
-      "note": "The shared pager and continuation this view uses.\n\nAnchor: \"from agents_remember.application.knowledge_paging.bindings import (\"",
+      "note": "The shared pager and continuation this view uses.",
       "targets": [
         {
           "anchor": {
-            "blob": "ce0ac969ac0e3d28191611edeeb233f372185feb",
-            "content": "sha256:a0260134caf20e76c0832f1baa893b3cf07b359f492fa0a0b0f6d962239a240b",
+            "blob": "a83380d5f62ba2d3de463374e6cae852ef42c87c",
+            "content": "sha256:a00da6d7343efbe4371779313af9903acf8846e2ea65938f2cca4b16e4b0a028",
             "locator": {
               "end": 38,
               "kind": "line_range",

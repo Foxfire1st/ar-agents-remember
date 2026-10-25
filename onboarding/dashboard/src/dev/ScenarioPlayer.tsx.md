@@ -47,6 +47,9 @@ content (projections/captions/durations) lives in `scenarios.ts`.
 ### Repo-Internal References
 
 - `applyFrame` snapshots + replays a frame into the real store. [1]
+
 - The `Scenario`/`ScenarioFrame` model it walks. [2]
+
 - The real store it drives (`applySnapshot` / `pushEvent`). [3]
+
 - Mounted (keyed by scenario) beneath the cockpit by the bench. [4]

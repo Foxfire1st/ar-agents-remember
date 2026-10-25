@@ -69,8 +69,12 @@ No relevant domain documentation was found.
 
 ### Repo-Internal References
 
+
 - The scene packet and its resolving entry point. [1]
+
+
 - The per-aspect resolvers consumed by the layers. [2]
+
 
 ### Cross-Repo References
 

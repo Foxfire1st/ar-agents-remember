@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/application/task_docs/task_doc_discard.py",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
@@ -30,8 +31,18 @@
       ]
     },
     "2": {
-      "note": "The apply and resume paths publish the parent audit and exact child removals.",
+      "note": "The apply and resume paths publish the parent audit and exact child removals.\n\nAnchor: `_discard_publication` `_resume_discard_unstarted`",
       "targets": [
+        {
+          "anchor": {
+            "blob": "3a7be537ed0736785c1cae2541486c59a55e5861",
+            "content": "sha256:a39d171d7f347ff3ab6b65cd6fb8a68d6e2699afeefbdadfc81f3faaa55003a5",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
         {
           "anchor": {
             "blob": "3a7be537ed0736785c1cae2541486c59a55e5861",
@@ -45,8 +56,8 @@
         },
         {
           "anchor": {
-            "blob": "b1ba34c542eaee03182d6649e6b10c4d49a55982",
-            "content": "sha256:ec0330f9026f3c996c8660f858116241fa3c0ea8b5394fc9e89ea8a925db13a2",
+            "blob": "3a7be537ed0736785c1cae2541486c59a55e5861",
+            "content": "sha256:e4daeab15b2a0aa76a609ec4d58e547f310324f00533209f324dea8065046dc0",
             "locator": {
               "kind": "symbol",
               "name": "_resume_discard_unstarted"

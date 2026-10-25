@@ -57,7 +57,9 @@ No external Domain Documentation entries are configured. Source and test asserti
 
 - Failed proof retains ten-inline/full-name-log, readable-rule, stash/cancel/no-edit boundaries; native command/exit/reason appears only when recomputing the named sample requires a native merge and captures a fault. [6]
 
+
 - Cancellation restores already-restored sides and supports pre-sync reapply retry. [7]
+
 
 ### Cross-Repo References
 

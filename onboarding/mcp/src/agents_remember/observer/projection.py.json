@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/observer/projection.py",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
@@ -20,8 +21,8 @@
     },
     {
       "anchor": {
-        "blob": "4c2b3ccd9f114336d8e1b1a5ece3671ebd90c587",
-        "content": "sha256:7ba004b6f06cc48e74594f77172fbe54cfa0a29bf33016e5c99b1c95129cc68a",
+        "blob": "fd0cd6ba53b5d874adfcb26807b26ab92e77d56e",
+        "content": "sha256:8f897ee97a5df4ec6bc2cdb53e32669158ad72e83b1d826e0af636eb31908a32",
         "locator": {
           "kind": "file"
         }
@@ -32,7 +33,7 @@
         "handoffEntry": "L192-W-R199-02",
         "leaf": "260928-MIK-L192"
       },
-      "rationale": "The served projection declares no search-provider node, boot record, setup summary or progress entry; the only provider-shaped field left is `providerLimit` on a task entry, which is L184's model-provider usage limit shown to a person, not a running CGC/GrepAI engine, and the two must not be read as one.",
+      "rationale": "The served projection at C declares no search-provider node, boot record, setup summary or progress entry; the lone providerLimit field on a task entry is the excluded usage limit.",
       "role": "primary-authority"
     },
     {
@@ -77,8 +78,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "382dde142bea5ed15623ddf66bea97d062d113b3",
-            "content": "sha256:59956047c687b6708ef1f4bb004e02daa0660300e9c1447b342e097492ee70c7",
+            "blob": "fd0cd6ba53b5d874adfcb26807b26ab92e77d56e",
+            "content": "sha256:8f897ee97a5df4ec6bc2cdb53e32669158ad72e83b1d826e0af636eb31908a32",
             "locator": {
               "kind": "file"
             }
@@ -92,8 +93,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b77591cc3b1feea945b7cdfbdd5a7bb910565636",
-            "content": "sha256:d7fb2dddc8bf5031b984dc305e85acfd56a98935064f9ec6609eea2df705f64e",
+            "blob": "4edaf532df1504b4615adce69ce3442646938c12",
+            "content": "sha256:1b2121050ac859fba069b8a31c406503ca1fe317d23d7d606e7fff640743eda4",
             "locator": {
               "end": 404,
               "kind": "line_range",
@@ -105,8 +106,8 @@
         },
         {
           "anchor": {
-            "blob": "bba48b7fdd013a1ad1cee94f907890109b34bba9",
-            "content": "sha256:de79c4a33aa4606e79cab9e24fe885dc53cacd4eeea2535d9d0f674139e3cddf",
+            "blob": "fd0cd6ba53b5d874adfcb26807b26ab92e77d56e",
+            "content": "sha256:a25989e6aa4539760acc3b11e8950c2fe1a7353d777744e746512b11d49d9990",
             "locator": {
               "end": 67,
               "kind": "line_range",
@@ -136,15 +137,14 @@
       ]
     },
     "4": {
-      "note": "Workspace projection is the schema authority consumed by generation.",
+      "note": "Workspace projection is the schema authority consumed by generation.\n\nAnchor: `WorkspaceProjection`",
       "targets": [
         {
           "anchor": {
-            "blob": "bba48b7fdd013a1ad1cee94f907890109b34bba9",
-            "content": "sha256:301ef8d70dd58cfea37fec34be64e52db39dffa54148fef28bedb99d169f90f3",
+            "blob": "fd0cd6ba53b5d874adfcb26807b26ab92e77d56e",
+            "content": "sha256:8f897ee97a5df4ec6bc2cdb53e32669158ad72e83b1d826e0af636eb31908a32",
             "locator": {
-              "kind": "symbol",
-              "name": "WorkspaceProjection"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -201,24 +201,24 @@
       ]
     },
     "7": {
-      "note": "TaskState carries stage, activity and eventAt, without a served task-event age; the browser derives display age.\n\nAnchor: task state and display age",
+      "note": "TaskState carries stage, activity and eventAt, without a served task-event age; the browser derives display age.",
       "targets": [
         {
           "anchor": {
-            "blob": "067465c785daba374dbccfbc6ddf3efb62611ed4",
-            "content": "sha256:e345bcf52910f1d43fcff54700f85ea691a6b896120f54a78d4be96269c1b309",
+            "blob": "fd0cd6ba53b5d874adfcb26807b26ab92e77d56e",
+            "content": "sha256:74b6d2bc32f7c5defcf55e18c1c7e18630664a09e53a4c268f3af883041c8114",
             "locator": {
-              "end": 529,
+              "end": 441,
               "kind": "line_range",
-              "start": 522
+              "start": 434
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "901cf61d779e58bf30849e0eea78a9123b9792fd",
-            "content": "sha256:73f45554796ee15769aee751c8a9f37a53c8aecd7cd5bd6b09a933b2b36ab464",
+            "blob": "bc164a94462c83d4491167bce3b58a8ce7003b54",
+            "content": "sha256:5d52b165e8e79110a60086bd568de20f412567a469d0be57ebb1d9c2d725caf2",
             "locator": {
               "end": 156,
               "kind": "line_range",
@@ -235,12 +235,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fc93bae691a82da28bef3516bc6b7b8a85af6db8",
+            "blob": "fd0cd6ba53b5d874adfcb26807b26ab92e77d56e",
             "content": "sha256:2764a95cb17241c31d76be029b1693d4c7b55233a550d07f9241889f4c326a55",
             "locator": {
-              "end": 608,
+              "end": 520,
               "kind": "line_range",
-              "start": 571
+              "start": 483
             }
           },
           "kind": "code"

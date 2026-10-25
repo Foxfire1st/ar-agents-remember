@@ -38,12 +38,12 @@
       ]
     },
     "3": {
-      "note": "The diff pane's use, one first line per side.\n\nAnchor: \"numberedFrom(beforeFirst)\"; \"numberedFrom(afterFirst)\"",
+      "note": "The diff pane's use, one first line per side.",
       "targets": [
         {
           "anchor": {
-            "blob": "1752cf61fa7a9a49f17cd1ed32b0deae8a280df5",
-            "content": "sha256:4ff2fa5cca9ae4a6038f9edff7a924bcdfa57be21bd3b85683b5882c3724896c",
+            "blob": "6d63658ca060662a6573338fbb1d786371af0633",
+            "content": "sha256:b88a7d7d75284f3cb992d91bdebd8579329c9ba9e3eea6467190d1ef0e17e6d1",
             "locator": {
               "end": 82,
               "kind": "line_range",
@@ -55,8 +55,8 @@
         },
         {
           "anchor": {
-            "blob": "1752cf61fa7a9a49f17cd1ed32b0deae8a280df5",
-            "content": "sha256:73677b36d5e1927b4e9224feb335bde3a15ed9b8bf5dfe033345766fd8e9f230",
+            "blob": "6d63658ca060662a6573338fbb1d786371af0633",
+            "content": "sha256:859d2d5bfe3ffae74d5f84c096f56bc751b91d93ac72f278f3bd809ac9b26902",
             "locator": {
               "end": 86,
               "kind": "line_range",

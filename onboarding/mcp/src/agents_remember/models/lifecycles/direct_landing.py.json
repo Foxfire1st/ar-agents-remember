@@ -36,15 +36,14 @@
       ]
     },
     "3": {
-      "note": "The coordinator captures the accepted candidate from actual Git facts.",
+      "note": "The coordinator captures the accepted candidate from actual Git facts.\n\nAnchor: `_prepare_direct_landing_candidate`",
       "targets": [
         {
           "anchor": {
-            "blob": "fbf5d24148b7b54165d4139154db5fe28aa19800",
-            "content": "sha256:47a5fea09f62e34b6e2a1f2790f3d0ef5f664d34589b807e89dfb9a42f00950b",
+            "blob": "ae56f6c72b4720e9cd1ae2abdd42551a79d4c1d4",
+            "content": "sha256:46ea685defa6d5a6c2ae12d11cd38463eb2b01a2fef1c6a4899f85adfe84c08c",
             "locator": {
-              "kind": "symbol",
-              "name": "_prepare_direct_landing_candidate"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/worktrees/direct_landing.py"
           },
@@ -107,8 +106,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8bd4bc6d4bdbf03d9c42e54ca14745ce1a38aab0",
-            "content": "sha256:d32a022a9a32da9658783d7e763301dfc55301e8aa966013dbd05e797c86989c",
+            "blob": "240d0d7e0bfd980047dd994e1bc8d9216ab385de",
+            "content": "sha256:81b222ea318e318af44b6c2f957469b36eed15159669880ac96b2b5f3f79d73e",
             "locator": {
               "end": 45,
               "kind": "line_range",

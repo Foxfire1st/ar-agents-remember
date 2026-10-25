@@ -101,8 +101,12 @@ advance). All helpers are pure.
 
 ### Repo-Internal References
 
+
 - Mirrors the observer event envelope (camelCase, `extra="forbid"`, schema alias). [1]
+
+
 - The append-only store that serializes and folds these snapshots. [2]
+
 - Ids come from the local ULID mint. [3]
 - `GateRecord` now subclasses `DurableRecord` and its docstring states why `schema` and `schemaVersion` answer different questions. [4]
 

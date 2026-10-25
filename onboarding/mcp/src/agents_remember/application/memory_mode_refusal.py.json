@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/application/memory_mode_refusal.py",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
@@ -34,11 +35,24 @@
             "path": "mcp/src/agents_remember/application/lifecycle/direct_landing.py"
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1de673c8175f9a7c79e3ffec19987cd26c195f52",
+            "content": "sha256:7c9ddaa4b2e962329297f01d911fe750993aa5f57c4d0f3aeda06090b75f068d",
+            "locator": {
+              "end": 228,
+              "kind": "line_range",
+              "start": 228
+            },
+            "path": "mcp/src/agents_remember/application/lifecycle/direct_landing.py"
+          },
+          "kind": "code"
         }
       ]
     },
     "11": {
-      "note": "Surface 6 reports the removal as its own fact in the unstarted-evidence answer.\n\nAnchor: \"except MemoryModeUnsupportedError\"",
+      "note": "Surface 6 reports the removal as its own fact in the unstarted-evidence answer.  > Retained earlier citation wording: - Surface 7 keeps the worktree-start payload typed instead of falling through to the generic clause.\n\nAnchor: \"except MemoryModeUnsupportedError\"",
       "targets": [
         {
           "anchor": {
@@ -52,20 +66,33 @@
             "path": "mcp/src/agents_remember/application/task_docs/task_unstarted_evidence.py"
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3a5b76f8edef3f6348d35d03c421fa11f0458b9c",
+            "content": "sha256:226f95bc004c035c7506cf6657ec391c76a7509dd3feb37548f5e77b7c98a7cc",
+            "locator": {
+              "end": 276,
+              "kind": "line_range",
+              "start": 276
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_unstarted_evidence.py"
+          },
+          "kind": "code"
         }
       ]
     },
     "12": {
-      "note": "Surface 7 keeps the worktree-start payload typed instead of falling through to the generic clause.\n\nAnchor: \"except MemoryModeUnsupportedError\"",
+      "note": "Surface 7 keeps the worktree-status payload typed instead of falling through to the generic clause.  Anchor: \"except MemoryModeUnsupportedError\"",
       "targets": [
         {
           "anchor": {
             "blob": "2ca78649db203d17f9087e7728f77b20e3a1d144",
-            "content": "sha256:734b03d77233375f10187194389a855e055ef9f481ea92b7f7fc42c1d8f9cea2",
+            "content": "sha256:fe7b5716bb71ebea2b9be65e9d8d4217e941b2ae5f125d3d557c96893559ae22",
             "locator": {
-              "end": 175,
+              "end": 214,
               "kind": "line_range",
-              "start": 175
+              "start": 168
             },
             "path": "mcp/src/agents_remember/worktrees/modules/start.py"
           },
@@ -182,6 +209,19 @@
               "end": 422,
               "kind": "line_range",
               "start": 407
+            },
+            "path": "mcp/src/agents_remember/application/worktree_status.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "16d78e38cc8ac2f8fe9aeec56ac35b664c5e8988",
+            "content": "sha256:f548afc2524459e69b525ab5f6e0ae736c7e422cced79b9a2b09719b3b9dcf63",
+            "locator": {
+              "end": 432,
+              "kind": "line_range",
+              "start": 417
             },
             "path": "mcp/src/agents_remember/application/worktree_status.py"
           },

@@ -47,11 +47,21 @@ None.
 
 ### Repo-Internal References
 
+
 - The responsive grid contract (≤3 per row, narrow single column). [1]
+
+
 - The ellipsized, viewport-growing leaf line contract. [2]
+
+
 - Dependency readiness/cycle styling is separate from the shared task-state presentation; the former task-frontier palette is removed. [3]
+
+
 - The component consuming these styles. [4]
+
+
 - The responsive-contract forcing tests. [5]
+
 
 ### Cross-Repo References
 

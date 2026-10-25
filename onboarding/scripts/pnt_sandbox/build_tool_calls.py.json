@@ -242,8 +242,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e2ceb23b98e7d1149f8eaace70c805193b869e6e",
-            "content": "sha256:3b61a18eaf2c7340ea94791c76b68aa8fa43aefaf86f177c7ddf3d4aac020e10",
+            "blob": "b70b6f22ed51dd03cb6b615e6f649b69bad9674a",
+            "content": "sha256:5c625ad250686b39a563f201c89e330939329a0ddfd27b498497f3306dc5257c",
             "locator": {
               "kind": "file"
             }
@@ -285,15 +285,14 @@
       ]
     },
     "4": {
-      "note": "The build's own settings resolution is read under the server's environment, so the comparison is not made with the caller's environment.",
+      "note": "The build's own settings resolution is read under the server's environment, so the comparison is not made with the caller's environment.\n\nAnchor: `_resolved_host`",
       "targets": [
         {
           "anchor": {
-            "blob": "e2ceb23b98e7d1149f8eaace70c805193b869e6e",
-            "content": "sha256:a74c34fb5fece8b46467b3206d10ff2759aa86a3e9d9af82d0e3c77da3f8bd91",
+            "blob": "b70b6f22ed51dd03cb6b615e6f649b69bad9674a",
+            "content": "sha256:5c625ad250686b39a563f201c89e330939329a0ddfd27b498497f3306dc5257c",
             "locator": {
-              "kind": "symbol",
-              "name": "_resolved_host"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -301,15 +300,14 @@
       ]
     },
     "5": {
-      "note": "The sandbox's layout pair is the admitted host; a recorded settings host that differs, or a resolved host that differs, refuses before any call.",
+      "note": "The sandbox's layout pair is the admitted host; a recorded settings host that differs, or a resolved host that differs, refuses before any call.\n\nAnchor: `_admitted`",
       "targets": [
         {
           "anchor": {
-            "blob": "e2ceb23b98e7d1149f8eaace70c805193b869e6e",
-            "content": "sha256:df593a17636c31088c4f4862b8621b23a7f32c3a390164749b7334b63600235d",
+            "blob": "b70b6f22ed51dd03cb6b615e6f649b69bad9674a",
+            "content": "sha256:5c625ad250686b39a563f201c89e330939329a0ddfd27b498497f3306dc5257c",
             "locator": {
-              "kind": "symbol",
-              "name": "_admitted"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -349,15 +347,14 @@
       ]
     },
     "8": {
-      "note": "The unconfigured state is admitted and named by condition, not by build freshness, and a foreign resolved host refuses.",
+      "note": "The unconfigured state is admitted and named by condition, not by build freshness, and a foreign resolved host refuses.\n\nAnchor: `test_a_sandbox_that_records_no_host_yet_is_admitted_only_without_one`",
       "targets": [
         {
           "anchor": {
-            "blob": "e4e1d8a038d1c6b077c70f3a93ed08c50ffb0ca6",
-            "content": "sha256:920fab14c0ada4d3665736cae5feb7a56d7dd4532a25e427c57c37f037b4b2a6",
+            "blob": "5c5436de50d469ed4969524c38a6a5e461a23473",
+            "content": "sha256:7c158657e98b3a6cc0754446ad3e1143822e7e51793d157309b1c3112ccd4fa7",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_sandbox_that_records_no_host_yet_is_admitted_only_without_one"
+              "kind": "file"
             },
             "path": "mcp/tests/test_pnt_sandbox.py"
           },

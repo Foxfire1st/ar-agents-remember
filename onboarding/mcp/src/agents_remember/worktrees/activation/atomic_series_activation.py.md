@@ -111,8 +111,12 @@ No Domain Documentation source is configured for this memory root.
 
 ### Repo-Internal References
 
+
 - Strict Pydantic records define the contract-keyed selector state and archive evidence consumed here. [1]
+
+
 - The fingerprinted record is keyed by the canonical series contract path and stores no source-pair field. [2]
+
 - A sha256 of the canonical contract path is the per-contract identity that names one activation record. [3]
 - The strict observation carries the contract path and fingerprint for every read. [4]
 - Any record that is not this exact contract is refused as a mismatch instead of adopted. [5]

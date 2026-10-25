@@ -97,12 +97,12 @@
   ],
   "references": {
     "1": {
-      "note": "Same-facts sharing and bounded pending replacement.\n\nAnchor: `ConditionalReads.load`",
+      "note": "Same-facts sharing and bounded pending replacement.",
       "targets": [
         {
           "anchor": {
-            "blob": "d64c2458cf4416a842ef1eff840bbf025ac0a5a9",
-            "content": "sha256:ec6b17d4b6a918923f7e5eaa7a6e4b544d11cc3c183d3fd6e64649c2f3c53e11",
+            "blob": "bf1cda5edde56c5b7be27ecd4232e531a9fe9da0",
+            "content": "sha256:52333615bf6f2ffa4e93f734721ecc5b49388954b2c1a49c549ed05e1d3fbc13",
             "locator": {
               "end": 47,
               "kind": "line_range",

@@ -67,7 +67,7 @@ No external domain claim is required.
 Each current definition below can be inspected in the exact source file. Historical references
 to removed methods are superseded by this current inventory.
 
-- Ping payload [1]
+- Ping payload — the case was deleted at C with the ping tool; no ping payload remains.
 - Server info payload reports safe config summary [2]
 - Memory init repairs authority after config write failure [3]
 - Typed cgc payloads reject invalid inputs before provider execution [4]
@@ -103,7 +103,7 @@ lookup made the tool unable to return a payload at all.
 FastMCP publishes in registration order, so a misplaced row is a reordering bug rather than a
 missing one. `test_worktree_record_landing_has_a_response_model_that_validates` asserts
 `set(PUBLIC_TOOL_RESPONSE_MODELS) == set(PUBLIC_TOOLS)` and then drives one
-`finalize_tool_response("worktree_record_landing", ...)` call — the call a missing registry row
+`finalize_tool_response("worktree_record_landing",...)` call — the call a missing registry row
 raises on, which the surface comparison alone cannot see.
 
 `_permissive_registration_config()` is the stub both cases need. Every registrar only closes over
@@ -163,18 +163,18 @@ and a model-level validator reports `loc: ()`, so the message was the caller's o
 missing field. Two disagreements, pinned separately because either can regress alone:
 
 - `test_the_description_names_every_field_publish_requires` registers every `TOOL_REGISTRARS` entry
-  against a probe `FastMCP("curator-coherence-description-probe")`, reads the advertised
-  `curator_coherence` text, and asserts each of the nine names appears in it. In the same case
-  `CuratorCoherenceRequest.model_json_schema()["required"]` must stay
-  `["action", "contract_path"]` — **the schema cannot carry the requirement**, because it is
-  conditional on `action == "publish"`, and the pin stops someone "moving the repair into the
-  schema" on the assumption that it could.
+ against a probe `FastMCP("curator-coherence-description-probe")`, reads the advertised
+ `curator_coherence` text, and asserts each of the nine names appears in it. In the same case
+ `CuratorCoherenceRequest.model_json_schema()["required"]` must stay
+ `["action", "contract_path"]` — **the schema cannot carry the requirement**, because it is
+ conditional on `action == "publish"`, and the pin stops someone "moving the repair into the
+ schema" on the assumption that it could.
 - `test_publish_refuses_by_naming_every_missing_field` builds the complete nine-field request and
-  asserts it is accepted **first**, as the positive control: without that arm a mistyped field name
-  would make every later assertion pass for a reason unrelated to the repair. Then, one omission per
-  field, it asserts `missing: <field>` is in `errors()[0]["msg"]` — never `str(error)`, because the
-  rendered error echoes `input_value` and a substring check against the echo reports "named" for a
-  message that names nothing, which is the instrument fault this case exists to catch.
+ asserts it is accepted **first**, as the positive control: without that arm a mistyped field name
+ would make every later assertion pass for a reason unrelated to the repair. Then, one omission per
+ field, it asserts `missing: <field>` is in `errors()["msg"]` — never `str(error)`, because the
+ rendered error echoes `input_value` and a substring check against the echo reports "named" for a
+ message that names nothing, which is the instrument fault this case exists to catch.
 
 `PUBLISH_REQUIRED_FIELDS` spells the nine once so both arms compare against one list. The two cases
 belong to the **integration** lane because that is where the two existing published-description pins

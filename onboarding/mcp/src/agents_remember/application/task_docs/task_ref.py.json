@@ -3,15 +3,14 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "Attach consumes the supplied TaskRef.",
+      "note": "Attach consumes the supplied TaskRef.\n\nAnchor: `worktree_attach_tool`",
       "targets": [
         {
           "anchor": {
-            "blob": "dfa2872ad0a9789182edbd48e33d561d9929e0ba",
-            "content": "sha256:9045d7762dda44815f54b0ba65315dd11009f8f1f7cc823307ad9885aa439e3b",
+            "blob": "f70e3d124e543009c5876c7472ccdb85120ff60c",
+            "content": "sha256:bbb78251410816eadf042a2a830aa80b49cba552da4ddedc15da284b6fb36888",
             "locator": {
-              "kind": "symbol",
-              "name": "worktree_attach_tool"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/worktree_tools.py"
           },
@@ -71,8 +70,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ee94de2fda380ffd2af74d9c5b4bac3c947ca754",
-            "content": "sha256:d7f8d7badb1fde99fb950dbf85d2116f58310b6dddcf3e9b7d64e28d8ddd3e44",
+            "blob": "1b5b6819f2e8e4aa3cd02b9e26d6dc1b5e1d0614",
+            "content": "sha256:472e59581e2d31b9d9eecafe0dff6390563fbb71514a931da9ade35fed9fffba",
             "locator": {
               "kind": "symbol",
               "name": "resolve_context_tool"
@@ -83,8 +82,8 @@
         },
         {
           "anchor": {
-            "blob": "ee94de2fda380ffd2af74d9c5b4bac3c947ca754",
-            "content": "sha256:8949cee6796831ea4905816368f8a80da32c1266a852725d81deb24b3f92dce0",
+            "blob": "1b5b6819f2e8e4aa3cd02b9e26d6dc1b5e1d0614",
+            "content": "sha256:5335ef1e0774281709ef0711b2639ff9a4608348d43cfbb2998fa57415be0586",
             "locator": {
               "end": 50,
               "kind": "line_range",
@@ -93,19 +92,29 @@
             "path": "mcp/src/agents_remember/application/coordination_tools.py"
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1b5b6819f2e8e4aa3cd02b9e26d6dc1b5e1d0614",
+            "content": "sha256:5f87dec67cff6e8215ddf9208627e0abee5bb6df918e15a54b315773da41d3ef",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/coordination_tools.py"
+          },
+          "kind": "code"
         }
       ]
     },
     "5": {
-      "note": "Context resolution accepts the common task locators.",
+      "note": "Context resolution accepts the common task locators.\n\nAnchor: `resolve_context_tool`",
       "targets": [
         {
           "anchor": {
-            "blob": "ee94de2fda380ffd2af74d9c5b4bac3c947ca754",
-            "content": "sha256:d7f8d7badb1fde99fb950dbf85d2116f58310b6dddcf3e9b7d64e28d8ddd3e44",
+            "blob": "1b5b6819f2e8e4aa3cd02b9e26d6dc1b5e1d0614",
+            "content": "sha256:5f87dec67cff6e8215ddf9208627e0abee5bb6df918e15a54b315773da41d3ef",
             "locator": {
-              "kind": "symbol",
-              "name": "resolve_context_tool"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/coordination_tools.py"
           },
@@ -114,15 +123,14 @@
       ]
     },
     "6": {
-      "note": "Attach accepts the common task reference.",
+      "note": "Attach accepts the common task reference.\n\nAnchor: `worktree_attach_tool`",
       "targets": [
         {
           "anchor": {
-            "blob": "dfa2872ad0a9789182edbd48e33d561d9929e0ba",
-            "content": "sha256:9045d7762dda44815f54b0ba65315dd11009f8f1f7cc823307ad9885aa439e3b",
+            "blob": "f70e3d124e543009c5876c7472ccdb85120ff60c",
+            "content": "sha256:bbb78251410816eadf042a2a830aa80b49cba552da4ddedc15da284b6fb36888",
             "locator": {
-              "kind": "symbol",
-              "name": "worktree_attach_tool"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/worktree_tools.py"
           },

@@ -6,7 +6,7 @@ The current source facts below replace the former operative inventory. The separ
 
 - Current generator takes no config and returns enabled=false with providers={}.
 - No detailed Docker settings helper remains: the module is that empty generator
-  and the temporary-file writer.
+ and the temporary-file writer.
 
 ### Superseded inventory
 
@@ -70,20 +70,20 @@ file for lower-level lifecycle functions that already accept `--from-settings`.
 
 - Do not read coordinator `system/settings.json` here.
 - Do not accept provider path overrides from MCP settings; paths are derived by
-  the server.
+ the server.
 - Keep generated settings complete enough for dry-run and real install paths,
-  including backend images and image lock paths.
+ including backend images and image lock paths.
 - `grepai-memory` generated settings must be complete enough for Docker to own
-  the runner, Postgres backend, and Ollama embedder without requiring host
-  GrepAI or Ollama binaries.
+ the runner, Postgres backend, and Ollama embedder without requiring host
+ GrepAI or Ollama binaries.
 - `codegraphcontext-code` generated settings must be complete enough for Docker
-  to own the runner image/container and FalkorDB backend without requiring a
-  host Python virtual environment.
+ to own the runner image/container and FalkorDB backend without requiring a
+ host Python virtual environment.
 - The CGC backend network name in generated settings is part of the Docker-owned
-  runtime contract; runner containers use it to reach FalkorDB by container
-  name instead of host loopback.
+ runtime contract; runner containers use it to reach FalkorDB by container
+ name instead of host loopback.
 - Delete temporary settings files in the caller after lifecycle operations
-  finish.
+ finish.
 
 ## Evidence
 
@@ -92,8 +92,10 @@ file for lower-level lifecycle functions that already accept `--from-settings`.
 
 - MCP config derives allowed repositories/providers and provider runtime roots from trusted settings. [1]
 
-- Provider status writes generated lifecycle settings before calling `watchers_run`. [2]
+- Provider status no longer writes generated lifecycle settings: at C `status.py` reports configured/enabled plus `skipped` and calls no `watchers_run`; the writer this entry recorded is gone.
+
 - Runtime install uses generated lifecycle settings when installing provider dependencies from the MCP tool. [3]
+
 - GrepAI lifecycle settings define Docker mode, shared network, runner image/container, Postgres backend, and Ollama embedder backend. [4]
 - CodeGraphContext lifecycle settings define Docker runner image/build/lock/container settings and FalkorDB backend settings. [5]
 

@@ -132,15 +132,14 @@
       ]
     },
     "19": {
-      "note": "- The declared `family_member` table, its unique tuple, its index and its no-repoint trigger.",
+      "note": "- The declared `family_member` table, its unique tuple, its index and its no-repoint trigger.\n\nAnchor: `TABLE_DDL`",
       "targets": [
         {
           "anchor": {
-            "blob": "5e27550d32bfd12f38a8b3393ad8622114eb677a",
-            "content": "sha256:1efcb530f1e377466f79224937603ba0b0bc9f31377d471199e8f89853430953",
+            "blob": "ec5bf0677108161ea883091d9613a34d21a3697c",
+            "content": "sha256:9e10ce1d79604d8957a14bb7d9e140464ea4f5b91ed4cd87a5b76d911c6490a5",
             "locator": {
-              "kind": "symbol",
-              "name": "TABLE_DDL"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/memory/knowledge/schema.py"
           },

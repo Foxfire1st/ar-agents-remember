@@ -199,7 +199,9 @@ provider stack is POSIX-hosted anyway.
 
 ### Repo-Internal References
 
-- Worktree start calls provider setup with MCP-derived provider settings. [1]
+
+> Retained earlier citation wording: - Worktree start calls provider setup with MCP-derived provider settings. [1]
+
 - Benchmark preparation calls package-local provider setup instead of a source script. [2]
 - Provider lifecycle calls are captured through package-local command capture. [3]
 - CGC seed orchestration and bundle rewriting now live outside the facade. [4]
@@ -207,5 +209,7 @@ provider stack is POSIX-hosted anyway.
 - Setup payload summaries and failed-phase compaction live in the setup reporting module. [6]
 
 | The index-state metrics rows the catch-up stage records best-effort. | `record_index_state` | mcp/src/agents_remember/providers/metrics.py:269-283 |
+
+- Worktree start calls provider setup with MCP-derived provider settings.  Anchor: `run_or_launch_provider_setup` `_provider_setup_request` [1]
 
 </details>

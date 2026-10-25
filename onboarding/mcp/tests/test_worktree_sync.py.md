@@ -62,8 +62,12 @@ No domain-documentation source is configured for this slice. The behavior descri
 
 These current source spans identify the implementation owners and the specific assertions supporting the file's behavior. A test definition is evidence of its assertions, not an execution or certification receipt.
 
+
 - `SyncFixture` owns the current boundary described above. [12]
+
+
 - `WorktreeSyncTests` owns the current boundary described above. [13]
+
 
 
 - Tracked, missing, staged and untracked caches do not prevent memory removal; real memory and code files remain protected. [14]

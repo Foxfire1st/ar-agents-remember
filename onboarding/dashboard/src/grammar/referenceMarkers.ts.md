@@ -17,7 +17,7 @@ requirement links keep their existing rendering.
 ### Logic
 
 - `remarkReferenceMarkers` walks the parsed tree and rewrites `[n]` only inside text nodes: a
-  `reports[0]` inside a code span or a fenced block is never rewritten, and a real link or link
+  `reports` inside a code span or a fenced block is never rewritten, and a real link or link
   definition that happens to be numbered is left as authored. A rewritten marker becomes a link to
   `#reference-<n>`.
 - `remarkHeadingIds` assigns a slug id per heading text, suffixing repeated titles (`chapter`,
@@ -55,7 +55,9 @@ No configured live documentation source was available for this pass.
 
 - Prose `[n]` markers become links to the reference list, in text nodes only. [1]
 - Repeated headings receive distinct stable ids for the outline and fragment links. [2]
+
 - The shared renderer includes the plugins only when its caller asks for them. [3]
+
 
 ### Cross-Repo References
 

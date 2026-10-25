@@ -6,7 +6,9 @@ Delta scope remains monotonic over the preceding rejected set. Rounds within the
 
 This account controls the named changed seams; contradictory earlier card wording below is retained only as historical evidence. Unchanged role duties and R117 file-only wake/report transport are preserved. Source inspection supplies no new runtime test, CODE verdict, review counter or acceptance.
 
+
 - Delta scope remains monotonic over the preceding rejected set. Rounds within the settings limit are ordinary; beyond it requires recorded approval under the review operation. This changes no target-only dispatch authority, role write boundary, requirement or acceptance owner. [1]
+
 
 
 ## Message/file transport

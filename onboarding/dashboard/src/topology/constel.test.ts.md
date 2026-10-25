@@ -79,8 +79,9 @@ The suite is the runtime half of a claim the type system already makes, so both 
 
 - The three `constelColors` cases cover vocabulary colors, undefined for unknown status, and themed tokens with concrete fallbacks. [1]
 - `constelColors(cssVar): Record<ConstelStatus, string>` and the `CssVarReader` type are extracted from `mountConstel` for jsdom. [2]
-- `col` indexes the palette with no `??` fallback, which makes test 2's `undefined` expectation correct. [3]
+
 - `CONSTEL_STATUSES` is the `as const` tuple from which `ConstelStatus` is derived. [4]
+
 - The topology resolves a task entry through the common task-status tone, while the constellation keeps its own colour vocabulary. [5]
 
 ### Cross-Repo References

@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/models/knowledge_files/records.py",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
@@ -40,12 +41,22 @@
   ],
   "references": {
     "1": {
-      "note": "The per-kind relation vocabulary.",
+      "note": "The per-kind relation vocabulary.\n\nAnchor: `RELATIONS_BY_KIND`",
       "targets": [
         {
           "anchor": {
-            "blob": "80a46b4a973050dcbea27c42e098e302a0e8694f",
-            "content": "sha256:312e549242e6e49a9af1129ab618ed4a46f1426f3443d134fc883f79cbd4d32d",
+            "blob": "66f8f78abd64e53edd4c0ca7b61e6ede5b7bc299",
+            "content": "sha256:b51180cbaba8ce9fa1b0ab758d2abbaffa1f7f8c674904f0cda2e8259e354f87",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "66f8f78abd64e53edd4c0ca7b61e6ede5b7bc299",
+            "content": "sha256:07f5c8b787fdff65b3fba9967c05a07727bde68039063217217f3f85ee7471f9",
             "locator": {
               "kind": "symbol",
               "name": "RELATIONS_BY_KIND"
@@ -112,6 +123,18 @@
             }
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "66f8f78abd64e53edd4c0ca7b61e6ede5b7bc299",
+            "content": "sha256:efd799ab5acc74501035383a431dbf1636073e15bfcb93fb7fab31e8af1bd1b8",
+            "locator": {
+              "end": 50,
+              "kind": "line_range",
+              "start": 50
+            }
+          },
+          "kind": "code"
         }
       ]
     },
@@ -120,7 +143,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2b48e8684df88aa39e033120aedd762f0377f38a",
+            "blob": "57a9d02cb9368158ac152ea6010b478c2a5bf7ed",
             "content": "sha256:eb5df9ab7ae8e5abfc55ac2de0582778f39aeb2501ff8d4ba0cf8aa4d255fe86",
             "locator": {
               "kind": "symbol",
@@ -132,12 +155,38 @@
         },
         {
           "anchor": {
-            "blob": "2b48e8684df88aa39e033120aedd762f0377f38a",
+            "blob": "57a9d02cb9368158ac152ea6010b478c2a5bf7ed",
+            "content": "sha256:bfd9fbd01fa7d4862b964a6d3801cdfd5a5902e569236eb0120dc0ed7f5ff9b0",
+            "locator": {
+              "end": 326,
+              "kind": "line_range",
+              "start": 320
+            },
+            "path": "mcp/tests/test_knowledge_family_routes.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "57a9d02cb9368158ac152ea6010b478c2a5bf7ed",
             "content": "sha256:fc856e8bb98681b86e48c955807b0a040f5f1bdcf626ec61ced69f938bd1eddf",
             "locator": {
-              "end": 322,
+              "end": 324,
               "kind": "line_range",
-              "start": 316
+              "start": 318
+            },
+            "path": "mcp/tests/test_knowledge_family_routes.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "57a9d02cb9368158ac152ea6010b478c2a5bf7ed",
+            "content": "sha256:0c8e60d1d8aa00fd5145ec67d858f6f5d4c8b3f92d639936d073c7b24256ffc1",
+            "locator": {
+              "end": 284,
+              "kind": "line_range",
+              "start": 278
             },
             "path": "mcp/tests/test_knowledge_family_routes.py"
           },
@@ -178,12 +227,22 @@
       ]
     },
     "8": {
-      "note": "The kind → model table.",
+      "note": "The kind → model table.\n\nAnchor: `RECORD_MODELS`",
       "targets": [
         {
           "anchor": {
-            "blob": "80a46b4a973050dcbea27c42e098e302a0e8694f",
-            "content": "sha256:640fa49e83eaa5e5443098cd700572883ce9c1733dcdd4e1b430d5230aa0019e",
+            "blob": "66f8f78abd64e53edd4c0ca7b61e6ede5b7bc299",
+            "content": "sha256:b51180cbaba8ce9fa1b0ab758d2abbaffa1f7f8c674904f0cda2e8259e354f87",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "66f8f78abd64e53edd4c0ca7b61e6ede5b7bc299",
+            "content": "sha256:252f543ea4ffa1f120e1a718e8c5e9bfdf8b1e287611fb97bc16e0bd6f091aea",
             "locator": {
               "kind": "symbol",
               "name": "RECORD_MODELS"

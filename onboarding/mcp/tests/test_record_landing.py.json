@@ -3,15 +3,14 @@
   "realizes": [],
   "references": {
     "10": {
-      "note": "Nowhere-landed commit refused, cell untouched",
+      "note": "Nowhere-landed commit refused, cell untouched\n\nAnchor: `test_commit_that_landed_nowhere_is_refused`",
       "targets": [
         {
           "anchor": {
-            "blob": "9608d304ddb6400f44f4c9be6e03ccf51e9ac658",
-            "content": "sha256:0f9898da052dfd031c1562176e498fa65e249d674f25e5a201848ce6665d188a",
+            "blob": "993371cd6de2eee7ee14e16291fee164fd2f1764",
+            "content": "sha256:4e4d866b3428e2209155e6d7906e9642b5a2ed1502e96a5ef83ba58e63cbaab3",
             "locator": {
-              "kind": "symbol",
-              "name": "test_commit_that_landed_nowhere_is_refused"
+              "kind": "file"
             }
           },
           "kind": "test"

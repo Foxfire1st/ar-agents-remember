@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/serving/review_memory_watch.py",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
@@ -115,15 +116,14 @@
       ]
     },
     "8": {
-      "note": "The source regression queues a genuine native edit during registration and asserts distinct baseline/update events.",
+      "note": "The source regression queues a genuine native edit during registration and asserts distinct baseline/update events.\n\nAnchor: `test_change_during_registration_is_not_swallowed_by_baseline`",
       "targets": [
         {
           "anchor": {
-            "blob": "5a6589b8799d54e15d7fd0e0c8df3b818bdce528",
-            "content": "sha256:cae448067041841627413c6e473395097692755453ef31185af116c6191f155a",
+            "blob": "1a6140554ebe69d0d46765d8062068d9065096cb",
+            "content": "sha256:7c93a4fb5f596dc0da5a86626d51e57d4c1cd0fe8b64789c8b6384c0be0f155d",
             "locator": {
-              "kind": "symbol",
-              "name": "test_change_during_registration_is_not_swallowed_by_baseline"
+              "kind": "file"
             },
             "path": "mcp/tests/test_review_memory_watch.py"
           },
@@ -132,15 +132,14 @@
       ]
     },
     "9": {
-      "note": "The source HTTP-disconnect regression requires worker exit before serving shutdown.",
+      "note": "The source HTTP-disconnect regression requires worker exit before serving shutdown.\n\nAnchor: `test_real_http_disconnect_retires_native_watch_before_server_shutdown`",
       "targets": [
         {
           "anchor": {
-            "blob": "5a6589b8799d54e15d7fd0e0c8df3b818bdce528",
-            "content": "sha256:18ad055ac80e481a4935e35b34c73e51efcb3a2491627c5ed481148ab3b08565",
+            "blob": "1a6140554ebe69d0d46765d8062068d9065096cb",
+            "content": "sha256:7c93a4fb5f596dc0da5a86626d51e57d4c1cd0fe8b64789c8b6384c0be0f155d",
             "locator": {
-              "kind": "symbol",
-              "name": "test_real_http_disconnect_retires_native_watch_before_server_shutdown"
+              "kind": "file"
             },
             "path": "mcp/tests/test_review_memory_watch.py"
           },

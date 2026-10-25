@@ -20,9 +20,13 @@ The classifier is one implementation, so a control that passes proves the sweep 
 
 ### Repo-Internal References
 
+
 - One classifier assigns the declared arms, separating the two raise shapes by model identity rather than by wording. [1]
 
+
+
 - The census reads the world by digest, with the coordination boundary split by declared write zone. [2]
+
 
 - A usable logged whole-result mapping is read from disk; an absent, unreadable or non-mapping log leaves the delivered payload as the classifier input. [3]
 

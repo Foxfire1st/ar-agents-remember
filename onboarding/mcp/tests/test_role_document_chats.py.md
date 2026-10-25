@@ -16,15 +16,26 @@ Focused route/reader tests cover correcting single-document discovery, pre-click
 
 ## Evidence
 
+
 - The exact started Projects request is read without substituting an Architect; archived targets disappear. [1]
+
+
 - Archival and missing-agent filtering keeps only live document agents. [2]
+
 - The taskless walk uses the last started live Architect and pages older records. [3]
 - A master recording its own folder as parent is read but not fed back — the enclosure nests under the sprint — and a repeated request reuses it. [9]
 - A recorded parent that names another folder is the folder the leaf's enclosure nests under. [10]
+
 - Refusals preserve the native status, reason and owner repair on the role_start answer. [5]
+
+
 - A masterless start reports the opened Projects workspace without a creation guess. [6]
+
+
 - The progress notice is single-request and cleared through begin/starting/finish by the cited test; the dispatcher's finally-path reclamation is separate source wiring. [7]
 
+
 ## Current contract evidence
+
 
 - Focused route/reader tests cover correcting single-document discovery, pre-click tree discovery and first-start preparation on the shared stateful fake runtime; they do not contact a live host. [8]

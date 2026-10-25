@@ -167,7 +167,14 @@ certification pass. Every range was derived against the current 1110-line source
 - The run that joins the figure comparison only when claims are supplied. [23]
 - The runner, its repeatable inputs, and the exit status that reports a finding. [24]
 - The 37 cases that pin these behaviours against the historical artifacts, in both directions. [25]
-- The lane this module's contract suite is registered in, so the fail-closed manifest admits it. [26]
+
+
+
+
+> Retained earlier citation wording: - The lane this module's contract suite is registered in, so the fail-closed manifest admits it. Source caption: "mcp/tests/test_record_integrity.py" [26]
+
+
+
 
 ### Cross-Repo References
 
@@ -179,3 +186,5 @@ which are task-local evidence rather than repository boundaries; the contract su
 path and **skips with the reason named** when they are absent.
 
 No cross-repository evidence is required for these file-local claims.
+
+- The lane this module's contract suite is registered in, so the fail-closed manifest admits it. Source caption: "mcp/tests/test_record_integrity.py" [26]

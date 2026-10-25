@@ -52,5 +52,7 @@ The rows cite canonical source text and narrowly relevant neighbor definitions. 
 - The feature account uses a w-02 artifact or a master/sub-task series, not a chat build. [2]
 - The job table retains four lens defaults and named retrieval leans. [3]
 - Triage permits cheapest-place build escalation, while research recommends follow-up work without doing it. [4]
+
 - The current router composes role and operation, not a universal shared lifecycle spine. [5]
+
 - The manifest explicitly marks lenses as non-injected reference material. [6]

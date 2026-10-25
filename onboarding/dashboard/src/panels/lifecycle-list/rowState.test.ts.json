@@ -21,12 +21,12 @@
   ],
   "references": {
     "1": {
-      "note": "The assertions exercise document/lifecycle truth, priority and retained hover information on synthetic row facts.",
+      "note": "Synthetic native entry facts drive identity shortening, progress and shared status/hover assertions only.",
       "targets": [
         {
           "anchor": {
-            "blob": "c9f6e84711d045aaf00f19479f922e49bd2868a1",
-            "content": "sha256:b2a4258ce86e6dedb49690d4f2942c66f7e9b620905dd545b07b2fcc7f974788",
+            "blob": "ca02aa4b18e46df36732b01380eed7c3d59819b3",
+            "content": "sha256:514062d73d00a0a8327d738ed86629cef4294224e60e4297898f9ce8a6b60fc2",
             "locator": {
               "kind": "file"
             }

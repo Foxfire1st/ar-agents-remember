@@ -164,15 +164,14 @@
       ]
     },
     "7": {
-      "note": "A leaf scope derives the report path from the contract's worktree group; only a full scoped check requests rows and writes the checklist, and since MIK-R28 it also hands the checklist the \"without proof\" list (`None` for an unconverted tree).",
+      "note": "A leaf scope derives the report path from the contract's worktree group; only a full scoped check requests rows and writes the checklist, and since MIK-R28 it also hands the checklist the \"without proof\" list (`None` for an unconverted tree).\n\nAnchor: `resolve_leaf_memory_scope` `_resolve_execution` `_execute_memory_quality` `_attach_curator_checklist`",
       "targets": [
         {
           "anchor": {
             "blob": "7e2b0e1dad3f95e1d6d6d33bde4ac8878fb77983",
-            "content": "sha256:a6fcc7a15019b01f3e3984df1fa653a8ff8650070ac1d0b537f19b24797e8249",
+            "content": "sha256:a9b5bf86d991de4050804e2263855e4126d2f150446b64fc6feaebe635b5253e",
             "locator": {
-              "kind": "symbol",
-              "name": "resolve_leaf_memory_scope"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/memory_scope.py"
           },
@@ -180,35 +179,10 @@
         },
         {
           "anchor": {
-            "blob": "a6eadd9ff1cf0a28a7754688d343ff8f802d2f04",
-            "content": "sha256:44671be30cf39c48813ad1a0aabde13337fac138ae37390c2bbf93dc915da8d4",
+            "blob": "a4cb0ce3f5f3f488c8ad8313b8063d4a8218871e",
+            "content": "sha256:a2df6307f79b0a5282c67184a98d37a2d5fb71ad24fefd455d684627e7c5a73c",
             "locator": {
-              "kind": "symbol",
-              "name": "_resolve_execution"
-            },
-            "path": "mcp/src/agents_remember/application/memory_quality/controller.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "b08b9b7458c251363aaa1c9e87c0c3a8f3aaa67f",
-            "content": "sha256:33a5cefae860c2d3581e7d004bc05c2861e17dc5f7884f0a308b31a48a92dd33",
-            "locator": {
-              "kind": "symbol",
-              "name": "_execute_memory_quality"
-            },
-            "path": "mcp/src/agents_remember/application/memory_quality/controller.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "fa00445485d3ab76d4abd9e139d985ed865101c4",
-            "content": "sha256:99cfde61e42d627b8d73dd704177aeb225106816b4c826ffbfdf3b7bd319c4f4",
-            "locator": {
-              "kind": "symbol",
-              "name": "_attach_curator_checklist"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/memory_quality/controller.py"
           },
@@ -217,15 +191,16 @@
       ]
     },
     "8": {
-      "note": "Cleanup removes the reserved reports directory before it attempts to remove the enclosure.",
+      "note": "Cleanup removes the reserved reports directory before it attempts to remove the enclosure.  Anchor: `_removed_directories`",
       "targets": [
         {
           "anchor": {
-            "blob": "4553df1a09b4e5397ea5df322777351fc8345de0",
-            "content": "sha256:9f0a09a50da6b6d36933cb0a4e5280da5cf0c72afea5bb729a0fadd4d74f88e4",
+            "blob": "38b1dccdd3748dc7d095c969fb81d964e1075f11",
+            "content": "sha256:25e998f3f16f213c9d25c733eca9fd492a0e7d89763ecd2663869b70fb163d43",
             "locator": {
-              "kind": "symbol",
-              "name": "_removed_directories"
+              "end": 408,
+              "kind": "line_range",
+              "start": 352
             },
             "path": "mcp/src/agents_remember/worktrees/modules/cleanup.py"
           },
@@ -234,15 +209,14 @@
       ]
     },
     "9": {
-      "note": "The checklist writer owns the enclosure report projection; deleted regression fixtures do not supply a current pass.",
+      "note": "The checklist writer owns the enclosure report projection; deleted regression fixtures do not supply a current pass.\n\nAnchor: `write_curator_checklist`",
       "targets": [
         {
           "anchor": {
-            "blob": "cd98867bca76ef800dd2b0dfbc80232971044bb5",
-            "content": "sha256:f9fb57f1aa32f4a75466c8dd3449b67f263f6df7a6656f2c79e17cedf593a5d8",
+            "blob": "16bc720d447857303959d9881c8624f6aab9b7fd",
+            "content": "sha256:3951da961cb844d8a05185f577ec46129fb6687d31bdf33036bc929fb39c8dbd",
             "locator": {
-              "kind": "symbol",
-              "name": "write_curator_checklist"
+              "kind": "file"
             }
           },
           "kind": "code"

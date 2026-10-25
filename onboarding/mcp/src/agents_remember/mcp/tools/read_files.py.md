@@ -6,7 +6,9 @@
 
 ## Current source contract evidence
 
+
 - Current candidate source supports the operative account; historical sections grant no current tool or execution acceptance. [6]
+
 
 ## Purpose
 
@@ -34,11 +36,20 @@ Optional task_context is admitted to a call-local config, without mutating the s
 
 ### Repo-Internal References
 
+
 - The application entry point that does the actual resolution. [1]
-- The shared choke point that validates the response and stamps tokens. [2]
+
+
+- The shared choke point every tool's payload passes through: an adapter that hands the tool's whole result, and its compact answer when one is projected, to the application's response completion, where the response is validated and the answer's token count stamped. [2]
+
+
 - The strict response model `read_ar_files` validates against. [3]
+
 
 ### Runtime Source References
 
+
 - Frozen implementation of read_ar_files_payload supporting the stated file behavior. [4]
+
+
 - Alternating/concurrent registered base and leaf calls preserve their source/memory roots; wrong repository, canonical contract and malformed pairs refuse. [5]

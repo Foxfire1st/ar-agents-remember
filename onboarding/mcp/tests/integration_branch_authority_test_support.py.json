@@ -3,15 +3,14 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "Closed external leaves are backed by two actual commits and a disposable cache.",
+      "note": "Closed external leaves are backed by two actual commits and a disposable cache.\n\nAnchor: `_closed_external_leaf_worktrees`",
       "targets": [
         {
           "anchor": {
-            "blob": "dfe4805c633116b9b893b93fcaefc5567196737e",
-            "content": "sha256:8f527dcea9f8ae2d26df0a019823d846d30382e6eb8fcffd641e12c976b34e68",
+            "blob": "c5d65d4784a7f3f6f66c3e2e40f0a70bd6cebcfe",
+            "content": "sha256:76c0424bf11aec97a0ee9c6038dfc300a65ef31a19e041bd0a418255e6ae9d35",
             "locator": {
-              "kind": "symbol",
-              "name": "_closed_external_leaf_worktrees"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -19,15 +18,14 @@
       ]
     },
     "2": {
-      "note": "Optional lifecycle admission precedes fixture finalization.",
+      "note": "Optional lifecycle admission precedes fixture finalization.\n\nAnchor: `_publish_completed_closeout_fixture`",
       "targets": [
         {
           "anchor": {
-            "blob": "c48b664720569b4958a21f715f732b6b4d196176",
-            "content": "sha256:37f86b938dbb9ed42e341fec15d0412bc699d498e57d4fbfd639de200688ba3a",
+            "blob": "c5d65d4784a7f3f6f66c3e2e40f0a70bd6cebcfe",
+            "content": "sha256:76c0424bf11aec97a0ee9c6038dfc300a65ef31a19e041bd0a418255e6ae9d35",
             "locator": {
-              "kind": "symbol",
-              "name": "_publish_completed_closeout_fixture"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -35,15 +33,14 @@
       ]
     },
     "3": {
-      "note": "Configured repository, profile, protected branches, and task topology.",
+      "note": "Configured repository, profile, protected branches, and task topology.\n\nAnchor: `_authority_fixture`",
       "targets": [
         {
           "anchor": {
-            "blob": "cadd35406295cd69abbc8b3421a95b34b800a923",
-            "content": "sha256:81fe9c58ed01adf62e4575fd28fd8e920a7081a780c560226b8bc9e3515cf174",
+            "blob": "c5d65d4784a7f3f6f66c3e2e40f0a70bd6cebcfe",
+            "content": "sha256:76c0424bf11aec97a0ee9c6038dfc300a65ef31a19e041bd0a418255e6ae9d35",
             "locator": {
-              "kind": "symbol",
-              "name": "_authority_fixture"
+              "kind": "file"
             }
           },
           "kind": "test"

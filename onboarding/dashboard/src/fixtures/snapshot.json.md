@@ -128,26 +128,42 @@ absent from the file rather than present as `null`.
 
 - The manual payload retains representative enclosure rows and the activeWorktreeGroups join value; the enclosure carries the same sim-group identity. [5]
 
+
 - Manual decision and task-reader values are sample data, not source-derived provenance. [6]
+
+
 
 
 
 - The writer of the persisted payload this file is shaped like: `write_projection` dumps with `by_alias=True, exclude_none=True` into `latest-state.json`. [8]
 
+
+
 - The core root plus extracted task DTOs declare strict wire shapes; TaskDependencyNode is display data, distinct from sample values and execution. [9]
 
 
+
+
 - The three-direction guard: `mirror ⊇ served`, `served ⊇ mirror`, and `fixture ⊇ mirror` — the last of which exists because this payload is the oracle. Anchor: "served ⊇ mirror" [10]
+
+
 - The derived `VOCABULARIES` registry and its non-vacuous sampled-value membership assertion. [11]
+
+
 
 - INDEX_SIGNATURE_SITES exhaustively names the current absorbing nodes and reasons; the old seven-node census is historical. [12]
 
 
+
+
 - KnownUnsampled contains only projection.servingBuild; the manual sample carries watcherHealth, and the served tail declares servingBuild and watcherHealth. [13]
+
 
 - The snapshot is manual; the projection command generates and stale-checks the schema and TypeScript mirror. Anchor: `generated` [14]
 - The narrowing every reader comes through, and why a second `as unknown as` elsewhere would re-open the hole. Anchor: "as unknown as" [16]
+
 - The store suite consumes the manual fixture and explicitly exercises servingBuild, whose absence in the fixture is separately admitted by KnownUnsampled. [17]
+
 
 ### Cross-Repo References
 
@@ -186,11 +202,17 @@ exercises the product-record marking the projection serves: authored decisions s
 while writer constants mark records.
 
 
+
 - Manual fixture includes native operation/source-lineage wire samples, not live operation evidence. [19]
 
+
 - Ledger analytics remain a consumer sample after the retired Git-operation phase is removed. Anchor: `observer`; "ledgers" [1]
+
 - Removed the retired ledger-commit operation sample while preserving downstream ledger analytics and real publication phases. Anchor: `lifecycle`; "commit-approval-pending" [2]
+
+
 - `exclude_none=True` omits fields whose value is `None` from the serialized output — the rule that makes an omitted key here indistinguishable from a field the server does not have. Anchor: `None` [3]
+
 
 - The manual master sample carries three disagreement shapes and the unresolvable literal; this is sample coverage, not live membership evidence. [20]
 

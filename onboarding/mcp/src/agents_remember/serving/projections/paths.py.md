@@ -49,14 +49,20 @@ between the two sides (North-Star #5).
 
 ### Repo-Internal References
 
-- The application startup writer installs workspace-river ToolEventWriter, using observer_root imported from the observer facade rather than this serving module. [1]
+> Retained earlier citation wording: - The application startup writer installs workspace-river ToolEventWriter, using observer_root imported from the observer facade rather than this serving module. [1]
 - create_server invokes the application startup owner; it does not install an ambient lifecycle. [6]
 - The observer facade re-exports the kernel observer_root definition used by startup. [7]
 - The kernel observer_root delegates to the kernel observer_logs_root; this is separate from the serving module definition. [8]
 
+
 - The projection I/O edge imports this serving module's observer_root and calls it for the projection store root. [2]
+
+
 - The drift snapshot reader using `drift_snapshot_dir` + the schema (3b). [3]
+
 - The drift-run producer that writes the snapshot to `drift_snapshot_dir` (3b). [4]
 - The store-layout + one-read-abstraction design. [5]
 
 - The serving module separately defines observer_logs_root, observer_root and drift_snapshot_dir; its single-owner docstring is not an importer inventory. [9]
+
+- The application startup writer installs workspace-river ToolEventWriter, using observer_root imported from the observer facade rather than this serving module.  Anchor: startup import and writer initialization [1]

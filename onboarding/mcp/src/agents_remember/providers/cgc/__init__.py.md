@@ -26,4 +26,4 @@ modules such as `providers.cgc.setup`, `providers.cgc.context`, or
 
 ### Repo-Internal References
 
-- The package overview describes the provider-owned CGC route. [1]
+- The package overview describes the provider-owned CGC route. 

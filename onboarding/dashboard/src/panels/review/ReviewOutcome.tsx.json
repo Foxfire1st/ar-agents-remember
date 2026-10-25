@@ -1,5 +1,6 @@
 {
   "path": "dashboard/src/panels/review/ReviewOutcome.tsx",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
@@ -126,12 +127,23 @@
       ]
     },
     "13": {
-      "note": "The surface wires the outcome region to the target-bound read and appropriate retry/source actions.",
+      "note": "The surface wires the outcome region to the target-bound read and appropriate retry/source actions.\n\nAnchor: `useSurface` `ReviewSurface` `readingStatusOf`",
       "targets": [
         {
           "anchor": {
-            "blob": "bb94e003292e3a408d3607472dacd850e1f8da65",
-            "content": "sha256:f0203df5014bb49872c33405cfcec900dbf91c93c1501fce9ee3d899ae9e042d",
+            "blob": "6f30efcbe166c0fe854c1de9cde75a444ff9c5a5",
+            "content": "sha256:f5925b247bc0b3f32fd03a1d161cce6b638234ad4531a1d9d6053f9309a26368",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6f30efcbe166c0fe854c1de9cde75a444ff9c5a5",
+            "content": "sha256:051725227fe4220602c84f0c8d3f3256077664ced2285c6ff8bbf329759e3f80",
             "locator": {
               "kind": "symbol",
               "name": "useSurface"
@@ -142,8 +154,8 @@
         },
         {
           "anchor": {
-            "blob": "bb94e003292e3a408d3607472dacd850e1f8da65",
-            "content": "sha256:ceb3fbb910fe4c87d1148f93e07b23d24ff2a190a43ce694e9ecc1629f7121d5",
+            "blob": "6f30efcbe166c0fe854c1de9cde75a444ff9c5a5",
+            "content": "sha256:db585453c685064d18640a2e2ef9666a96e574154b1b5cd813aa5491ca4476b6",
             "locator": {
               "kind": "symbol",
               "name": "ReviewSurface"

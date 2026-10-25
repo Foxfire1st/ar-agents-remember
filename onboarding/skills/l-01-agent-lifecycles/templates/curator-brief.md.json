@@ -20,12 +20,12 @@
       ]
     },
     "2": {
-      "note": "Exact requirement packets and adjudications are mandatory task inputs.\n\nAnchor: \"## Task inputs\"",
+      "note": "Exact requirement packets and adjudications are mandatory task inputs.",
       "targets": [
         {
           "anchor": {
-            "blob": "d77a7bc1b3691682787edd9ef4ad5e1a041e2250",
-            "content": "sha256:e4444b193ca705d126d0145e7c1ef3f1abcf290e7658f10f1b612d80e31ac110",
+            "blob": "37ba5fc7aa32f1b6099fa654c50be7f6b35cbb2e",
+            "content": "sha256:c87c57b5425d4fa25a4e1bbde1b8445f219ace81262554905cd216d83c722ff8",
             "locator": {
               "end": 54,
               "kind": "line_range",
@@ -54,12 +54,12 @@
       ]
     },
     "4": {
-      "note": "Manager compiler notes require status before dispatch and the transaction repeats the proof before process creation.\n\nAnchor: \"Immediately before compiling this brief\"",
+      "note": "Manager compiler notes require status before dispatch and the transaction repeats the proof before process creation.",
       "targets": [
         {
           "anchor": {
-            "blob": "9ed3eed183138140309e8b6704ff47c697f7ee3c",
-            "content": "sha256:7c0d49416af51e866359ef52a10e1ec3694a9d9c21f6d6f53072aaa6e0b5bca4",
+            "blob": "37ba5fc7aa32f1b6099fa654c50be7f6b35cbb2e",
+            "content": "sha256:8b58f41a2f1a8d8b2dfef11fdffe760fc9650e36cf5da371c0afc0660ba95770",
             "locator": {
               "end": 116,
               "kind": "line_range",
@@ -70,33 +70,15 @@
         }
       ]
     },
-    "5": {
-      "note": "Manager doctrine owns the ordered pre-curator gate, exact packet/adjudication inputs, and complete brief.\n\nAnchor: \"Hand the curator its brief\"; \"curator-brief.md\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "a8c018ac7f3418f94c02d59b03dc7882f4e8d033",
-            "content": "sha256:d93a243b0e3ef14a8a2569a9b86053eccfab1a993d87f75ef004a5afdd46f8e6",
-            "locator": {
-              "end": 112,
-              "kind": "line_range",
-              "start": 109
-            },
-            "path": "skills/l-01-agent-lifecycles/roles/manager.md"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "6": {
       "note": "The brief retains exact paired roots, producer fields and source-lineage requirements. Its MEMORY review is separately sealed/counted; beyond-settings authority is architect/developer approval recorded by Manager, not a fresh CODE baseline. File-only report material, passed-candidate evidence and independent acceptance are distinct.",
       "targets": [
         {
           "anchor": {
-            "blob": "9ed3eed183138140309e8b6704ff47c697f7ee3c",
-            "content": "sha256:f899ad49f60b3ed23ffe08b60022d66029714f29df767d418beb8f2784f533bc",
+            "blob": "37ba5fc7aa32f1b6099fa654c50be7f6b35cbb2e",
+            "content": "sha256:cae4a1dfc94cf7870c6d0e84974798001e7cdb8573ee204c0510373e99b825e3",
             "locator": {
-              "end": 128,
+              "end": 123,
               "kind": "line_range",
               "start": 1
             }
@@ -125,10 +107,65 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9ed3eed183138140309e8b6704ff47c697f7ee3c",
-            "content": "sha256:f899ad49f60b3ed23ffe08b60022d66029714f29df767d418beb8f2784f533bc",
+            "blob": "37ba5fc7aa32f1b6099fa654c50be7f6b35cbb2e",
+            "content": "sha256:cae4a1dfc94cf7870c6d0e84974798001e7cdb8573ee204c0510373e99b825e3",
             "locator": {
               "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The Manager starts a leaf’s Worker, Reviewer and Curator as one `role_start_set` and refers leaf coordination to `operations/coordination.md`. That procedure starts the Curator held until its first message and routes the frozen change set, hand-off lists and passed code verdict directly from the Worker and Reviewer. The Curator brief carries the leaf task, approved requirement-corpus ruling, exact requirement revision and packet, and requested requirement-adjudication inputs.  Historical note (superseded Manager-owned ordering and complete-brief claim): Manager doctrine owns the ordered pre-curator gate, exact packet/adjudication inputs, and complete brief.  Anchor: \"Hand the curator its brief\"; \"curator-brief.md\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3c2cfd97c8d64a0cd6245c1b87c6f6bd45457380",
+            "content": "sha256:9b1c4aeb1b3b1e2f52fde083443798cbc1b42f8573a9867a6bc8413434c2211a",
+            "locator": {
+              "end": 22,
+              "kind": "line_range",
+              "start": 18
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/manager.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "dee346f3da2aa768e464f5895f9489da5f4ad6bd",
+            "content": "sha256:c87d7cac77783aa1e85b122f3f27ca5e1eea1756352508f6ab0b9776e9dbc120",
+            "locator": {
+              "end": 12,
+              "kind": "line_range",
+              "start": 12
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/coordination.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "37ba5fc7aa32f1b6099fa654c50be7f6b35cbb2e",
+            "content": "sha256:070bfe8eb685b5f51aeabf72ddca3ffd0df207bd0ffd3c6c6f5cd77e413a88ad",
+            "locator": {
+              "end": 10,
+              "kind": "line_range",
+              "start": 3
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "37ba5fc7aa32f1b6099fa654c50be7f6b35cbb2e",
+            "content": "sha256:37fd4709c2192ce74c35dd0afe409ba3715c3e8271eb6f554e82bee1dcb0e80d",
+            "locator": {
+              "end": 58,
+              "kind": "line_range",
+              "start": 47
             }
           },
           "kind": "code"

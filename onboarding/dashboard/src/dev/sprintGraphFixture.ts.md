@@ -35,8 +35,12 @@ It seeds a disposable scheduling view; it does not model a mutable blocker or ca
 ### Repo-Internal References
 
 - The seeded native sprint entry carries the segmented execution graph in its summary. [1]
+
 - The seeded sprint queue. [2]
+
+
 - The page that consumes the fixture. [3]
+
 - The wire model the fixture shapes. [4]
 
 ### Cross-Repo References

@@ -3,15 +3,14 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The opened read store holds path, namespace, validated schema and read connection.",
+      "note": "The opened read store holds path, namespace, validated schema and read connection.\n\nAnchor: `OpenedKnowledgeStore`",
       "targets": [
         {
           "anchor": {
-            "blob": "e4fc1a849557a256d000a2a4f98c444ef5400e7d",
-            "content": "sha256:7adb5813b2c4b3f7d3c4a71123b785c87374e1dc0d4e5c7c0279967d0db724c6",
+            "blob": "18bf95513cea9638fc5f978e605aa03076a27454",
+            "content": "sha256:06f9fa0b997c9bd42569065fb5f62ea39d370764509c8c2467b0985cdde68958",
             "locator": {
-              "kind": "symbol",
-              "name": "OpenedKnowledgeStore"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -62,15 +61,14 @@
       ]
     },
     "17": {
-      "note": "The read surface, including the seal-verifying single-revision read.",
+      "note": "The read surface, including the seal-verifying single-revision read.\n\nAnchor: `get_revision`",
       "targets": [
         {
           "anchor": {
-            "blob": "e4fc1a849557a256d000a2a4f98c444ef5400e7d",
-            "content": "sha256:233b5e39d22a77c1490a468223a647da8f638bd0614e927fda725edc73b0e9aa",
+            "blob": "18bf95513cea9638fc5f978e605aa03076a27454",
+            "content": "sha256:06f9fa0b997c9bd42569065fb5f62ea39d370764509c8c2467b0985cdde68958",
             "locator": {
-              "kind": "symbol",
-              "name": "get_revision"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -111,29 +109,28 @@
       ]
     },
     "3": {
-      "note": "The exact revision read decodes the stored row and predecessor set.\n\nAnchor: `OpenedKnowledgeStore.get_revision`",
+      "note": "`get_revision` reads one revision row by repository and revision id and decodes it with the stored seal verified; a text record holds no predecessor edge, so the decoded revision carries no predecessors.\n\nAnchor: `decode_revision_row`",
       "targets": [
         {
           "anchor": {
-            "blob": "4a64ad09c79633786d6408b2e814119580ad51e7",
-            "content": "sha256:11b77cf7357bb9e6ed51fc7a1c09f7f8ed251370838f7e0d6467f84a0d37d6e3",
-            "locator": {
-              "kind": "symbol",
-              "name": "decode_revision_row"
-            },
-            "path": "mcp/src/agents_remember/memory/knowledge/records.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "e4fc1a849557a256d000a2a4f98c444ef5400e7d",
-            "content": "sha256:233b5e39d22a77c1490a468223a647da8f638bd0614e927fda725edc73b0e9aa",
+            "blob": "18bf95513cea9638fc5f978e605aa03076a27454",
+            "content": "sha256:4d67cf075d6c300945eb4d42eeae768b15118046370b46da3c2227fc57a0dc7a",
             "locator": {
               "end": 173,
               "kind": "line_range",
               "start": 158
             }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4a64ad09c79633786d6408b2e814119580ad51e7",
+            "content": "sha256:92d4353cb71f442af226829358fd09ea8dd54591ffed608d4b7a3779190116b8",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/records.py"
           },
           "kind": "code"
         }

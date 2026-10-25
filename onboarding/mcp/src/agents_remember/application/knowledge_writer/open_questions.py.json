@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/application/knowledge_writer/open_questions.py",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
@@ -39,15 +40,14 @@
       ]
     },
     "10": {
-      "note": "The owner replaces the matching keyed question or appends to its current list without replacing unrelated entries.",
+      "note": "The owner replaces the matching keyed question or appends to its current list without replacing unrelated entries.\n\nAnchor: `put_open_question`",
       "targets": [
         {
           "anchor": {
-            "blob": "75c0e1d109bc254efc2fbb0a504090a983b0499a",
-            "content": "sha256:f2813b2efb99a4e3f45159a20f4bf8c8934200a62e201ac301ca32bc87ca2c41",
+            "blob": "d23a63f7d815ca9e9c26fee40476b6115b9e9de3",
+            "content": "sha256:aaf55c1658d9fba7455c6f2511501a6b3cdb40851e6166ce9ffa5b8d2cd2ccc0",
             "locator": {
-              "kind": "symbol",
-              "name": "put_open_question"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/task_docs/task_flat_list_edits.py"
           },
@@ -90,15 +90,14 @@
       ]
     },
     "2": {
-      "note": "The port over `task_doc`: `check` is the dry run, `append` the publication.\n\nAnchor: \"dry_run=True\"; \"dry_run=False\"",
+      "note": "The port over `task_doc`: `check` is the dry run, `append` the publication.\n\nAnchor: `TaskDocOpenQuestions`",
       "targets": [
         {
           "anchor": {
-            "blob": "2d0b6d2a16d3fb736655ef2f71a8f54013ddeb8a",
-            "content": "sha256:a5a1338288881e7ad1ab7768f9fd118908e91d28aff0c4f37cb1bfa7e152aac2",
+            "blob": "0e1c84f88f3d212ffcd4d47b3b346de09d7e1da6",
+            "content": "sha256:df908eb452352c1f9c4762a47ef4f428098237a49131cf67ee1db60542354a3a",
             "locator": {
-              "kind": "symbol",
-              "name": "TaskDocOpenQuestions"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -122,12 +121,12 @@
       ]
     },
     "4": {
-      "note": "The adapter submits put_open_question with key and text; dry-run and refusal-return behavior remain explicit.\n\nAnchor: `TaskDocOpenQuestions._edit`",
+      "note": "The adapter submits put_open_question with key and text; dry-run and refusal-return behavior remain explicit.",
       "targets": [
         {
           "anchor": {
-            "blob": "9c458237d43a988471be17f4cf3df8aa4383aeeb",
-            "content": "sha256:4bc04aa8b40e234fbabf1387bfd945d63c1096d181159e11104f96dcc293e42a",
+            "blob": "0e1c84f88f3d212ffcd4d47b3b346de09d7e1da6",
+            "content": "sha256:1780f1410c86cde4c1c7292e7a4d84ea194f4dfe89aa4f93a69fc45e21bbb44a",
             "locator": {
               "end": 84,
               "kind": "line_range",
@@ -139,15 +138,14 @@
       ]
     },
     "5": {
-      "note": "No task owner: every question refused with the reason.",
+      "note": "No task owner: every question refused with the reason.\n\nAnchor: `UnavailableOpenQuestions`",
       "targets": [
         {
           "anchor": {
-            "blob": "9c458237d43a988471be17f4cf3df8aa4383aeeb",
-            "content": "sha256:c37f4436d3d00b4542bb6f47e22d0609d5669b4e1c27e0c40bf744608258bcda",
+            "blob": "0e1c84f88f3d212ffcd4d47b3b346de09d7e1da6",
+            "content": "sha256:df908eb452352c1f9c4762a47ef4f428098237a49131cf67ee1db60542354a3a",
             "locator": {
-              "kind": "symbol",
-              "name": "UnavailableOpenQuestions"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -155,15 +153,14 @@
       ]
     },
     "6": {
-      "note": "The strict leaf-document lookup it reuses (L11).",
+      "note": "The strict leaf-document lookup it reuses (L11).\n\nAnchor: `strict_leaf_doc`",
       "targets": [
         {
           "anchor": {
-            "blob": "63c7c1ec142ee661c381e8117d71a420df73db90",
-            "content": "sha256:ba00d32e44dd1fa790aa0be86d08a64c069ab896a62f3feff3010ea2290f3aec",
+            "blob": "aadce53774c779828d6dcfc8549d40e01f2cdd89",
+            "content": "sha256:31b1d56fe14ad5162059be5041627e59c48322ef9dd4fb51c2ca83bef9b6656a",
             "locator": {
-              "kind": "symbol",
-              "name": "strict_leaf_doc"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/tasks/leaf_decisions.py"
           },
@@ -172,15 +169,14 @@
       ]
     },
     "7": {
-      "note": "The task owner's tool entry point.",
+      "note": "The task owner's tool entry point.\n\nAnchor: `task_doc_tool`",
       "targets": [
         {
           "anchor": {
-            "blob": "95185967dd7ca4326d7c22ffeb56416e31f26d89",
-            "content": "sha256:96d91386dd747620af7cd049c59642c34a2a858dda54f25f0f85386615e35bd6",
+            "blob": "f174a79f72375a38aa57f50907312424f3fc2c3c",
+            "content": "sha256:4639ac7fede07fbf8fd4a606e94345d3e15fdc3bc40ee0f57fba307bccd95505",
             "locator": {
-              "kind": "symbol",
-              "name": "task_doc_tool"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/task_docs/task_doc_tools.py"
           },
@@ -189,15 +185,14 @@
       ]
     },
     "8": {
-      "note": "A real `task_doc` append that keeps the earlier question, re-renders, is idempotent and refuses a missing leaf.",
+      "note": "A real `task_doc` append that keeps the earlier question, re-renders, is idempotent and refuses a missing leaf.\n\nAnchor: `test_the_task_document_append_preserves_questions_through_task_doc`",
       "targets": [
         {
           "anchor": {
-            "blob": "e499f1cf47ad6bc42fb86c1314767b975f0653ac",
-            "content": "sha256:18cadce21e717b36e983598598a333e126050d8df920d77a42d0c3fb69753d33",
+            "blob": "1176f3ca1d7d895f188bac1a18b73621a5897e93",
+            "content": "sha256:4fa400abd88a6eb9621bd613d566fd441ba1d9c4b81fdd60498b49bfe5748bd5",
             "locator": {
-              "kind": "symbol",
-              "name": "test_the_task_document_append_preserves_questions_through_task_doc"
+              "kind": "file"
             },
             "path": "mcp/tests/test_reconsideration_surfacing.py"
           },
@@ -206,12 +201,12 @@
       ]
     },
     "9": {
-      "note": "The edit is addressed by repository, contract path and slug.\n\nAnchor: \"TaskDocTarget(self.repo_id, contract_path=str(self.contract_path), slug=slug)\"",
+      "note": "The edit is addressed by repository, contract path and slug.",
       "targets": [
         {
           "anchor": {
-            "blob": "2d0b6d2a16d3fb736655ef2f71a8f54013ddeb8a",
-            "content": "sha256:0c2bfc7d4d76bc3e056aa4bcf2caf3f68d43505898abe90f39b8829f9bdf7aca",
+            "blob": "0e1c84f88f3d212ffcd4d47b3b346de09d7e1da6",
+            "content": "sha256:47229adb9bfcf9e862f9a331e7402c7433f19e125b4a06a8af05166c08950a3f",
             "locator": {
               "end": 84,
               "kind": "line_range",

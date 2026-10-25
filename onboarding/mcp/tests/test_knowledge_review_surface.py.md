@@ -247,13 +247,13 @@ shares a dataset with another.
 
 
 
-- The three input builders that produce records through the seams that own them rather than by constructing stored rows. [7]
+- The three input builders that produce records through the seams that own them rather than by constructing stored rows.
 
-- The state cases: unassessed is unassessed; no evidence records reads `none_recorded` with source inspection still available; a passing observation is never invariant-satisfied; a signal carries no severity. [14]
+- The state cases: unassessed is unassessed; no evidence records reads `none_recorded` with source inspection still available; a passing observation is never invariant-satisfied; a signal carries no severity.
 
-- The two-disagreeing-assessments case and the measured matching-binding case — the currentness axis from both directions, and the case `260921-ICR-L15` renamed so its name and its input agree. [17]
+- The two-disagreeing-assessments case and the measured matching-binding case — the currentness axis from both directions, and the case `260921-ICR-L15` renamed so its name and its input agree.
 
-- **The worked review of the design's §8 journey, and the case that closes it: a stale assessment is never reused.** [18]
+- **The worked review of the design's §8 journey, and the case that closes it: a stale assessment is never reused.**
 
 | The lane row this module occupies. | "mcp/tests/test_knowledge_review_surface.py" | mcp/tests/test-evidence-lanes.toml:111-113 |
 
@@ -279,11 +279,17 @@ evidence; source inspection supplies no new execution or acceptance grade.
 - The leaf id the resolution reports. [3]
 - The config that names no real root, so only the resolution's own refusals can answer. [4]
 - The fresh two-snapshot fixture per case, and the resolution assembled without a contract so the composition can be driven without a coordination tree. [5]
+
 - The one request shape, the narrowing helper the optional selector obliged, and the one failing-loudly render helper every pane case goes through. [6]
+
+
 - The shipped two-snapshot support the whole module is built on, with the independent byte-safe Git observation this leaf's inventory cases compare against. [8]
+
 - **The missing-role display case: reported roles are None or a permitted value.** [10]
 - **The selects-nothing case, comparing the payload's identity and counts against the shipped comparison value for value.** [13]
+
 - **The staleness pair, asserted from both directions, plus the absent-submission-path case.** [15]
+
 - The surviving state case renders with its removed-field assertion, and the missing-side case mixes constructor refusals with rendering. [16]
 
 
@@ -294,7 +300,12 @@ evidence; source inspection supplies no new execution or acceptance grade.
 - The rendering case compares both fixture indexes row-for-row by count before and after composition; it is not a general filesystem-write audit. [12]
 - Distinct knowledge/source/judgment pane types, no authored_effects/signals, typed labelled catalogue entries, retry identity present on both sides, a direct retry comparison with a page and one absent identity excluded are asserted. The body does not compare every catalogue identity or open an unanswerable subject to assert its reason. [19]
 - A knowledge-only change retains a compared selected pair while its inventory is measured empty; malformed inventory combinations are rejected and unrepresentable names require a partial measured inventory. [20]
-- The module is selected once in the unit-regression lane and named by seven exact-scope lifecycle artifact records; registration is not execution. [21]
+
+
+
+> Retained earlier citation wording: - The module is selected once in the unit-regression lane and named by seven exact-scope lifecycle artifact records; registration is not execution. [21]
+
+
 
 ### Cross-Repo References
 
@@ -320,3 +331,5 @@ rather than passing a parallel keyword beside the request".
 `test_the_previous_binding_identity_reaches_the_port_and_is_compared_against_the_read` there verbatim;
 its account of the three requests (refresh, plain read, malformed spelling) moved with it. `render`
 stays here, and that module imports it.
+
+- The module is selected once in the unit-regression lane and named by seven exact-scope lifecycle artifact records; registration is not execution. [21]

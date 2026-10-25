@@ -18,7 +18,9 @@ holds `knowledge/layout.json`.
 
 The converted check optionally joins landing observations to `reportOnlyFindings` and exposes cut-card counts/rows plus added-file counts/bytes/rows. Its `landing_base` is separate from the validator `base`: admitted leaves use the contract base so committed leaf progress remains visible. `include_landing=False` lets the drift summary measure only validator/reference state without acquiring the landing census. Landing rows never enter `findings`, change `ok`, or count as actionable.
 
-- Landing facts join only the report-only population; their leaf base is independent from the validator base. [9]
+
+- Landing facts join only the report-only population; their leaf base is independent from the validator base.
+
 
 
 
@@ -31,14 +33,17 @@ The converted check optionally joins landing observations to `reportOnlyFindings
   (L37 review R3-1), whatever the `KnowledgeBasePort` returns, which the application binds to `HEAD` or, when
   `HEAD` is unconverted, to its conversion from the shared converted-base cache (MIK-R24 rule 7). A base the
   port cannot build is one refusing finding, `R24.7-converted-base` at `knowledge/layout.json`
-  (`_unbuildable_base`), never a comparison against nothing. So anchors carried unchanged from `HEAD` are reported only when their path is gone
-  (MIK-R22 rule 6). Refusing violations are findings. Report-only violations and every stale reference
-  (`reference_state.check_references`) are report-only. The check name is `knowledge.converted`, and the
+  (`_unbuildable_base`), never a comparison against nothing. The base decides only the base-dependent
+  `R22.6-anchor-path` refusal; `R198.1-reference-anchor` is base-independent, so a carried anchor whose
+  blob or content identity does not hold at the paired code tree is a finding (MIK-R198 rule 5).
+  Refusing violations are findings, stale reference anchors among them; validator reports are
+  report-only. The check name is `knowledge.converted`, and the
   result also carries the reference state counts.
 - When the base cannot be built, carried-vs-new classification is unknown, so the base-dependent
   anchor-path refusals are withheld instead of being decided against an invented empty base: the named
   unbuildable-base refusal is recorded, every independently measurable reference state keeps being
-  reported, and no new/carried refusal fires. The result also carries `sidecarCount` and
+  reported, and no new/carried base-dependent refusal fires; `R198.1-reference-anchor` reads only the
+  candidate and the paired code tree, so it keeps refusing. The result also carries `sidecarCount` and
   `unreadableSidecars` for the drift summary to name what it measured.
 
 ### Conventions
@@ -47,8 +52,8 @@ The converted check optionally joins landing observations to `reportOnlyFindings
 
 ### Invariants And Boundaries
 
-- A stale reference is never a finding here; it is refreshed through the onboarding gate (MIK-R30).
-- `ok` is exactly `not findings`; report-only reference and landing observations do not change it. Historical run counts are not a measurement of this candidate.
+- A stale reference anchor is a finding here, the validator's `R198.1-reference-anchor` refusal; `citation_fix` or curator re-authoring refreshes it.
+- `ok` is exactly `not findings`; stale reference anchors change it, and only landing observations stay report-only. Historical run counts are not a measurement of this candidate.
 
 ### Todos
 
@@ -82,7 +87,9 @@ The converted validator/reference result and its dispatch boundary.
 - The validator's bases, and why a converted base could not be built. [6]
 
 
+
 - An unbuildable base withholds base-dependent refusals; measurable states keep reporting. [8]
+
 
 
 ### Cross-Repo References
@@ -91,6 +98,7 @@ No meaningful cross-repo references found: the file reads and writes only the me
 
 No cross-repo boundary is crossed by this file.
 
-- The validator's refusals are findings; its reports and stale references are report-only. [3]
+- The validator's refusals are findings, and a stale reference anchor is one of them; only its reports stay report-only. [3]
+
 
 - The check takes the base port and reports an unbuildable base as a finding. [7]

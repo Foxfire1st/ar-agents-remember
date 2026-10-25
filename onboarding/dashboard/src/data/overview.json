@@ -79,8 +79,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cdc2029bbb7da71feb49f14ec9d60611087b8410",
-            "content": "sha256:94efe0fd1739c69fe70c229f98dbcecfd5d0e46a2afdc9d687a2ac9690047e72",
+            "blob": "1b88a5d8391b7e00d3ee0155a662a004bca0654c",
+            "content": "sha256:e3e29f1ee56ea27d732abf6b5417cb2c0e5b5c420834d3cdb951f6990ccc4a89",
             "locator": {
               "end": 119,
               "kind": "line_range",
@@ -110,8 +110,8 @@
         },
         {
           "anchor": {
-            "blob": "da67c316868268721cc115696463cc89de324ae5",
-            "content": "sha256:aae510af6583f8533b03a8a96ddd0c155f1a072687398cc8168535f19ea0738c",
+            "blob": "bab377598568b8e05a49c6269ef6aa6a559f6c83",
+            "content": "sha256:ee49e333c946209a5254c5e837616aa3e0be21d463f6b1508c2f851253cc5231",
             "locator": {
               "end": 241,
               "kind": "line_range",
@@ -128,8 +128,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cbed0390f38016f95305efebdb03f84ca9393d30",
-            "content": "sha256:a15a1cfa7b84440b7ed139b286a6af30096c6457d526a316063e1689cf35c831",
+            "blob": "182e7b6b618f5f3485b278a84d16dc19f7e720a6",
+            "content": "sha256:5fad02ef64ffbff2c42ad214d1bed81138203b4377a90464ca2eebb99beac421",
             "locator": {
               "kind": "file"
             },
@@ -187,7 +187,7 @@
         },
         {
           "anchor": {
-            "blob": "957bde915fa92fda0bbc6ed7afa2b580166c2603",
+            "blob": "dba4715382062ade57f75405fa7fcae034b1953f",
             "content": "sha256:7167d802018c691c0cc3de7659d70516afa06d247e39775df693b559b3dd7148",
             "locator": {
               "end": 53,
@@ -205,12 +205,25 @@
       "targets": [
         {
           "anchor": {
-            "blob": "58da7fa42d298082dc58aa54d76c04312d8559fd",
-            "content": "sha256:28b595c83a96c7b18d9bc02829adf4efa4312501045f8ca644461be681b58613",
+            "blob": "57b40a28ef6817c4a90d64069b26a67fb7ed47eb",
+            "content": "sha256:6ae77bdf6abb146eeb71ad12c45aa458951015f18c3e53cf3fa6a85396de8a63",
             "locator": {
-              "end": 411,
+              "end": 317,
               "kind": "line_range",
-              "start": 393
+              "start": 298
+            },
+            "path": "dashboard/src/data/store.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "57b40a28ef6817c4a90d64069b26a67fb7ed47eb",
+            "content": "sha256:ae5ff59699df0618b75b26c987e3744acc4f393fec19459e2afe9c42067e0d2b",
+            "locator": {
+              "end": 355,
+              "kind": "line_range",
+              "start": 351
             },
             "path": "dashboard/src/data/store.ts"
           },
@@ -224,10 +237,24 @@
         {
           "anchor": {
             "blob": "45703aad8672ac0bd3f53a1e3be16aef2ad16336",
-            "content": "sha256:4c0fb7c43778f84379248a5e9c2dcccaf4baf74975385a21d6539f52be823e57",
+            "content": "sha256:da5a35423042928d46a28f0316f729fec9e6f690b6e9b0163724db2fdd19532a",
             "locator": {
-              "kind": "symbol",
-              "name": "driftSegments"
+              "end": 113,
+              "kind": "line_range",
+              "start": 61
+            },
+            "path": "dashboard/src/data/selectors.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "45703aad8672ac0bd3f53a1e3be16aef2ad16336",
+            "content": "sha256:c4350d4ce7d697996903291c68a6930ec392c097d56c81080de3fa3cbbff1301",
+            "locator": {
+              "end": 102,
+              "kind": "line_range",
+              "start": 72
             },
             "path": "dashboard/src/data/selectors.ts"
           },
@@ -240,8 +267,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e696c956756f8e506411a473a7778e5a2afc9bfb",
-            "content": "sha256:79e265ba1c0dff3d6818c191e7366898deed8ab3e5712e09514ae56b63dd286b",
+            "blob": "57b40a28ef6817c4a90d64069b26a67fb7ed47eb",
+            "content": "sha256:f2b14004aa4613d15666d94db12a551e971e847e2b91dbb805f57febe58a229f",
             "locator": {
               "kind": "symbol",
               "name": "emptyWorkspace"
@@ -253,15 +280,14 @@
       ]
     },
     "109": {
-      "note": "The leaf-wide tree answer carries optional currentness, worklist, implementation facts and focused entries, not an aggregate memory-diff field.",
+      "note": "The leaf-wide tree answer carries optional currentness, worklist, implementation facts and focused entries, not an aggregate memory-diff field.\n\nAnchor: `ReviewTreesResult`",
       "targets": [
         {
           "anchor": {
-            "blob": "65f556826a27183db12af6615005dd85432e3a8c",
-            "content": "sha256:42f0823901d29770f566e9c1f30512a5e2f10583c142102195d1d2c5cfb8f01e",
+            "blob": "182e7b6b618f5f3485b278a84d16dc19f7e720a6",
+            "content": "sha256:5fad02ef64ffbff2c42ad214d1bed81138203b4377a90464ca2eebb99beac421",
             "locator": {
-              "kind": "symbol",
-              "name": "ReviewTreesResult"
+              "kind": "file"
             },
             "path": "dashboard/src/data/reviewTrees.ts"
           },
@@ -465,8 +491,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "dbfd24c6c0ed9fe4eebd91abdf09a989e9fc6840",
-            "content": "sha256:69b9010873fc85badf3b7169e12b59f01d248674c7ff10d7563fa1131764c3c7",
+            "blob": "e759eb54b9cbb7db614234415ff2c56f1d345e2c",
+            "content": "sha256:eee51c3781c7dc641d9a571568caab5341d83b8dfb50133f24064e92cd7223f3",
             "locator": {
               "kind": "file"
             },
@@ -523,15 +549,14 @@
       ]
     },
     "17": {
-      "note": "`useReviewCatalogue` owns the behavior described above.",
+      "note": "`useReviewCatalogue` owns the behavior described above.\n\nAnchor: `useReviewCatalogue`",
       "targets": [
         {
           "anchor": {
-            "blob": "e909f979eb2190c3b85bf937b44cd14ced1daf09",
-            "content": "sha256:768e2e576f530a3e1d136bcf62bd446489dcd0c3850cb75b2791d5b3ce93eb4e",
+            "blob": "421fcf655416c82d0bd4d4e7c4e93a8449682d08",
+            "content": "sha256:4c3fd11e4b0a15e8e0fe08a126594e4cf000fb021985f67854c1fb7d71e06619",
             "locator": {
-              "kind": "symbol",
-              "name": "useReviewCatalogue"
+              "kind": "file"
             },
             "path": "dashboard/src/data/useReviewCatalogue.ts"
           },
@@ -540,15 +565,14 @@
       ]
     },
     "18": {
-      "note": "The entry's summary read and its re-validation generation.",
+      "note": "The entry's summary read and its re-validation generation.\n\nAnchor: `useIntentReviewSummary` `IntentEntryRevalidation`",
       "targets": [
         {
           "anchor": {
-            "blob": "cdc2029bbb7da71feb49f14ec9d60611087b8410",
-            "content": "sha256:2c2f13de9b2747a0cb5b73e3de999c831e5a9998999a146030f4f95c02d5dca6",
+            "blob": "1b88a5d8391b7e00d3ee0155a662a004bca0654c",
+            "content": "sha256:d941fa3af6524428310e539882abc72e61a348d7a29ec299cb6ad5888fdab8fb",
             "locator": {
-              "kind": "symbol",
-              "name": "useIntentReviewSummary"
+              "kind": "file"
             },
             "path": "dashboard/src/data/reviewIntentSummary.ts"
           },
@@ -557,10 +581,9 @@
         {
           "anchor": {
             "blob": "d3feb8a1751db6eca58b6b0be0a1878f10d95367",
-            "content": "sha256:495395edc9c750eb467c472c50a53c55ea59ed7ef0bff8c01a6b1faf156710f8",
+            "content": "sha256:4486c07e2039f9d8c818172245856b6ded5424acdccaf459a890889d823bf8b1",
             "locator": {
-              "kind": "symbol",
-              "name": "IntentEntryRevalidation"
+              "kind": "file"
             },
             "path": "dashboard/src/data/intentEntryRevalidation.tsx"
           },
@@ -586,15 +609,14 @@
       ]
     },
     "24": {
-      "note": "The server builds one native task forest from declared child rows; the browser no longer runs the removed creation-order hierarchy helper.",
+      "note": "The server builds one native task forest from declared child rows; the browser no longer runs the removed creation-order hierarchy helper.\n\nAnchor: `build_task_entries`",
       "targets": [
         {
           "anchor": {
-            "blob": "9e4b2543510affa9e5cc0d4f7e4ee8b261894051",
-            "content": "sha256:b925dcd46887d9d1f145bcfbf499a5ead0e8ae231c2927f6bb436051d0c3534b",
+            "blob": "26edfc879fceb5c3c0c071a8bf8d54180caebe20",
+            "content": "sha256:510623323eed533a9a5132dda425f0d11dcfeeb2aedc68924e039a62d60ebf87",
             "locator": {
-              "kind": "symbol",
-              "name": "build_task_entries"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/observer/task_entries.py"
           },
@@ -603,27 +625,14 @@
       ]
     },
     "25": {
-      "note": "The one full scenario-store reset restores every projected collection, including `closeoutQueues`, in one transaction and is invoked by the development scenario player.",
+      "note": "The one full scenario-store reset restores every projected collection, including `closeoutQueues`, in one transaction and is invoked by the development scenario player.\n\nAnchor: `dashboardStore` `reset` `ScenarioPlayer`",
       "targets": [
         {
           "anchor": {
-            "blob": "f98d8c6a89931775693af8e1c31cf9dafd5a7589",
-            "content": "sha256:a481771a6a1f49857fdf4bab41702258222f16824150f29d9da3b3906411dccd",
-            "locator": {
-              "kind": "symbol",
-              "name": "dashboardStore"
-            },
-            "path": "dashboard/src/data/store.ts"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
             "blob": "57b40a28ef6817c4a90d64069b26a67fb7ed47eb",
-            "content": "sha256:cced200f36c56e8c93fbe17acab52d082f0cf155115644acc4f21d0020efd118",
+            "content": "sha256:e6bf93bba9343c7e5745a763afa66ba650cdd0e61f20ce4f6595c1eddd38f132",
             "locator": {
-              "kind": "symbol",
-              "name": "reset"
+              "kind": "file"
             },
             "path": "dashboard/src/data/store.ts"
           },
@@ -632,10 +641,9 @@
         {
           "anchor": {
             "blob": "8a496ea3787ae9c16702581c81e2793eb459d67e",
-            "content": "sha256:c67b646a46bed2de12342c2fe18e6db41a3d5641dc6c6242b9202e85db1a7e71",
+            "content": "sha256:838e060d2d5550940c54e73ce183cc8ebdc6990d13e71fb25f059f3d5c707b1b",
             "locator": {
-              "kind": "symbol",
-              "name": "ScenarioPlayer"
+              "kind": "file"
             },
             "path": "dashboard/src/dev/ScenarioPlayer.tsx"
           },
@@ -644,15 +652,14 @@
       ]
     },
     "26": {
-      "note": "The served TaskEntry mirror carries optional document reference, identity, state, parent/children and counts; the old separate series-child consumer union is not the native entry model.",
+      "note": "The served TaskEntry mirror carries optional document reference, identity, state, parent/children and counts; the old separate series-child consumer union is not the native entry model.\n\nAnchor: `TaskEntry`",
       "targets": [
         {
           "anchor": {
-            "blob": "8774e82c7f7a93dda014fdb8b987e2391fd21fd1",
-            "content": "sha256:51d0432de61b27fb95ce483e9491b0e76d8c8b399982ca329a0a8591145e909e",
+            "blob": "d71e9db1948f52b82bd84b2348775f13ac9b57e7",
+            "content": "sha256:daaaf9f80d95ac50acc42b4097c5fcc9293b51a91e135d7b45f3ae87ee7e947f",
             "locator": {
-              "kind": "symbol",
-              "name": "TaskEntry"
+              "kind": "file"
             },
             "path": "dashboard/src/types/projection.ts"
           },
@@ -661,15 +668,14 @@
       ]
     },
     "27": {
-      "note": "Membership links each child to one deterministic parent and rejects a cycle; the removed series creation-sort builder is not the current producer.",
+      "note": "Membership links each child to one deterministic parent and rejects a cycle; the removed series creation-sort builder is not the current producer.\n\nAnchor: `_Membership`",
       "targets": [
         {
           "anchor": {
-            "blob": "9e4b2543510affa9e5cc0d4f7e4ee8b261894051",
-            "content": "sha256:89ccdac2a602d1f3e4194569c47009daa62a60e2b5da13dfc5c6df65682c504a",
+            "blob": "26edfc879fceb5c3c0c071a8bf8d54180caebe20",
+            "content": "sha256:510623323eed533a9a5132dda425f0d11dcfeeb2aedc68924e039a62d60ebf87",
             "locator": {
-              "kind": "symbol",
-              "name": "_Membership"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/observer/task_entries.py"
           },
@@ -747,7 +753,7 @@
         },
         {
           "anchor": {
-            "blob": "1acfa30a3d49af71983046497da65be4299e1951",
+            "blob": "609ce5dbd44b34a6cdfe57060a562b9a58283df8",
             "content": "sha256:1b22f1cce75f1642901ce4793b6c0b4c0ae87371505e3f2ad2e3e20c7362a7e5",
             "locator": {
               "end": 43,
@@ -760,7 +766,7 @@
         },
         {
           "anchor": {
-            "blob": "8bacf923a1a9b77562130bce9a5c3c707b4e4fcf",
+            "blob": "67bd836a126c87cce7dd24fb8f82a699decf8e4f",
             "content": "sha256:f69a6b22129dca8243632068064d9b6114a4fe667815ec9360a06735a3657769",
             "locator": {
               "end": 38,
@@ -773,7 +779,7 @@
         },
         {
           "anchor": {
-            "blob": "fddde3fe60faa2d9374405b9676016ab026af1b6",
+            "blob": "d71e9db1948f52b82bd84b2348775f13ac9b57e7",
             "content": "sha256:278e8f8d38ff16a96bd0f517049952be7cf84b529f633413369ad76d2d713420",
             "locator": {
               "end": 8,
@@ -882,15 +888,14 @@
       ]
     },
     "32": {
-      "note": "**The entry read's typed envelope, whose refused form carries a refusal and no entries rather than throwing, and whose answered form carries the labelled totals of the whole catalogue.**",
+      "note": "**The entry read's typed envelope, whose refused form carries a refusal and no entries rather than throwing, and whose answered form carries the labelled totals of the whole catalogue.**\n\nAnchor: `ReviewEntryListResult`",
       "targets": [
         {
           "anchor": {
-            "blob": "923faffc20359156074cf02aed9860c41b8b29dd",
-            "content": "sha256:aac475366b1dc09b26851e65ea398b4b510aa661d0f863f7e5d1124d07525bc5",
+            "blob": "5e94e860bdcfd117a4e496db152da5bfdb241e53",
+            "content": "sha256:65b7f98cb5ff7962303f5258fab14cfff5acc73adf5a464ce722d0a3f9fa800f",
             "locator": {
-              "kind": "symbol",
-              "name": "ReviewEntryListResult"
+              "kind": "file"
             },
             "path": "dashboard/src/data/review.ts"
           },
@@ -917,12 +922,12 @@
       ]
     },
     "34": {
-      "note": "The closed selector union, the two kinds the server admits.\n\nAnchor: \"export type ReviewSelectorKind\"",
+      "note": "The closed selector union, the two kinds the server admits.",
       "targets": [
         {
           "anchor": {
-            "blob": "923faffc20359156074cf02aed9860c41b8b29dd",
-            "content": "sha256:9daf565c79e7e6a62f9f974f16a82498eb785ee7a24bc6f88a24e2a5075bc7a9",
+            "blob": "5e94e860bdcfd117a4e496db152da5bfdb241e53",
+            "content": "sha256:c6674657db0814be58796a9bc79afe11430ad85e446b4dcbb9ede76ed2ef88a9",
             "locator": {
               "end": 67,
               "kind": "line_range",
@@ -1087,8 +1092,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "88413807ae37c2090f387e7240b7777c106afbf7",
-            "content": "sha256:ed505ec47b788133675374579a5a550f1e6cf56418799e02d1e4efcbcc200d64",
+            "blob": "42427cf2c755ff5dd21db48d8561569ecc82c094",
+            "content": "sha256:e3e612114faf1e0e5a02a7cf6829e77627e7d4f9bd8ceaef6d3e943393d47b1a",
             "locator": {
               "end": 16,
               "kind": "line_range",
@@ -1101,27 +1106,14 @@
       ]
     },
     "40": {
-      "note": "The payload whose comparison may be absent, and the pane that says which question was answered.",
+      "note": "The payload whose comparison may be absent, and the pane that says which question was answered.\n\nAnchor: `ReviewPayload` `ReviewKnowledgePane`",
       "targets": [
         {
           "anchor": {
-            "blob": "c1c7c67ada2e84e90b5ac05efb33bdb19e6951a4",
-            "content": "sha256:7e4c0ce4bbe39799ee714e0b38f6c7de88371a6748771b95b10117f0b6c3f2c6",
+            "blob": "5e94e860bdcfd117a4e496db152da5bfdb241e53",
+            "content": "sha256:65b7f98cb5ff7962303f5258fab14cfff5acc73adf5a464ce722d0a3f9fa800f",
             "locator": {
-              "kind": "symbol",
-              "name": "ReviewPayload"
-            },
-            "path": "dashboard/src/data/review.ts"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "c1c7c67ada2e84e90b5ac05efb33bdb19e6951a4",
-            "content": "sha256:5a9fad2941727c8a91d16d06d6f40a6464ec5c3d266a7e668cf13aff791e4473",
-            "locator": {
-              "kind": "symbol",
-              "name": "ReviewKnowledgePane"
+              "kind": "file"
             },
             "path": "dashboard/src/data/review.ts"
           },
@@ -1130,15 +1122,14 @@
       ]
     },
     "41": {
-      "note": "**The request that omits the selector when there is none — the task-context entry.**",
+      "note": "**The request that omits the selector when there is none — the task-context entry.**\n\nAnchor: `intentReview`",
       "targets": [
         {
           "anchor": {
-            "blob": "923faffc20359156074cf02aed9860c41b8b29dd",
-            "content": "sha256:a152f07db96bb7862f632571fd4595a32ef8103c304bc492ba591d2efacc3ba0",
+            "blob": "5e94e860bdcfd117a4e496db152da5bfdb241e53",
+            "content": "sha256:65b7f98cb5ff7962303f5258fab14cfff5acc73adf5a464ce722d0a3f9fa800f",
             "locator": {
-              "kind": "symbol",
-              "name": "intentReview"
+              "kind": "file"
             },
             "path": "dashboard/src/data/review.ts"
           },
@@ -1438,24 +1429,12 @@
       ]
     },
     "55": {
-      "note": "**The new family mirror module, and the re-export that keeps `data/review.ts` the route's one public entry.**\n\nAnchor: `reviewFamily`",
+      "note": "**The new family mirror module, and the re-export that keeps `data/review.ts` the route's one public entry.**\n\nAnchor: `ReviewFamilyContext`",
       "targets": [
         {
           "anchor": {
-            "blob": "bab377598568b8e05a49c6269ef6aa6a559f6c83",
-            "content": "sha256:394328357c2e3b05e2777722c87ca0301cc3b5283ef8893394e67378c6a39910",
-            "locator": {
-              "kind": "symbol",
-              "name": "ReviewFamilyContext"
-            },
-            "path": "dashboard/src/data/reviewFamily.ts"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "923faffc20359156074cf02aed9860c41b8b29dd",
-            "content": "sha256:85e00e1978ca8cb39f2ab494637d5b7cbb5801984f9767a63c0f721cb143d224",
+            "blob": "5e94e860bdcfd117a4e496db152da5bfdb241e53",
+            "content": "sha256:114a20ea3c0c3d3fa220bd8e7c7a5daa2f3ef8dc752f24577b7d6d4dfac5dc82",
             "locator": {
               "end": 61,
               "kind": "line_range",
@@ -1464,19 +1443,29 @@
             "path": "dashboard/src/data/review.ts"
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bab377598568b8e05a49c6269ef6aa6a559f6c83",
+            "content": "sha256:46f2c4cf33f251383273f11b9ffa08c0bd7027a890dff7ad4c6e33f4082c2316",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/data/reviewFamily.ts"
+          },
+          "kind": "code"
         }
       ]
     },
     "56": {
-      "note": "**The bounded-collection union that lists `family_members` because the server accepts it, and the mirror that never narrows it.**\n\nAnchor: `family_members`",
+      "note": "**The bounded-collection union that lists `family_members` because the server accepts it, and the mirror that never narrows it.**\n\nAnchor: `ReviewPagedCollection`",
       "targets": [
         {
           "anchor": {
-            "blob": "923faffc20359156074cf02aed9860c41b8b29dd",
-            "content": "sha256:ebf43ed1519de788e906ed176606a0951358dd73b859f6384b7330fa6b4ad0d9",
+            "blob": "5e94e860bdcfd117a4e496db152da5bfdb241e53",
+            "content": "sha256:65b7f98cb5ff7962303f5258fab14cfff5acc73adf5a464ce722d0a3f9fa800f",
             "locator": {
-              "kind": "symbol",
-              "name": "ReviewPagedCollection"
+              "kind": "file"
             },
             "path": "dashboard/src/data/review.ts"
           },
@@ -1538,12 +1527,12 @@
       ]
     },
     "6": {
-      "note": "The summary carries the lane's count on both answered states.\n\nAnchor: \"const attribution = result.attribution ? { attribution: result.attribution } : {};\"",
+      "note": "The summary carries the lane's count on both answered states.",
       "targets": [
         {
           "anchor": {
-            "blob": "cdc2029bbb7da71feb49f14ec9d60611087b8410",
-            "content": "sha256:71bd18dfcd12161f2db4ebc7bf6983acc2d14d5baf4bed1af5a3d40e2c52a4f0",
+            "blob": "1b88a5d8391b7e00d3ee0155a662a004bca0654c",
+            "content": "sha256:0f36c0ea9e663573f6d0914c1295d9108cb9b49078c0f9bdfbb9d299c436014e",
             "locator": {
               "end": 90,
               "kind": "line_range",
@@ -1560,8 +1549,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cbed0390f38016f95305efebdb03f84ca9393d30",
-            "content": "sha256:f8d2f2474da63691f741b3f50f0616627b666f9a853c16db22daff59b6637a04",
+            "blob": "182e7b6b618f5f3485b278a84d16dc19f7e720a6",
+            "content": "sha256:cf5519e02414956742c682ebaa184de29ca2a1237035f55f7b64e0df2eeab89e",
             "locator": {
               "end": 24,
               "kind": "line_range",
@@ -1574,12 +1563,12 @@
       ]
     },
     "61": {
-      "note": "The answer of the route.\n\nAnchor: `ReviewTreesResult`",
+      "note": "The answer of the route.",
       "targets": [
         {
           "anchor": {
-            "blob": "cbed0390f38016f95305efebdb03f84ca9393d30",
-            "content": "sha256:a15a1cfa7b84440b7ed139b286a6af30096c6457d526a316063e1689cf35c831",
+            "blob": "182e7b6b618f5f3485b278a84d16dc19f7e720a6",
+            "content": "sha256:5fad02ef64ffbff2c42ad214d1bed81138203b4377a90464ca2eebb99beac421",
             "locator": {
               "kind": "file"
             },
@@ -1590,12 +1579,12 @@
       ]
     },
     "62": {
-      "note": "One entry on both code sides.\n\nAnchor: `ReviewTreeEntry`",
+      "note": "One entry on both code sides.",
       "targets": [
         {
           "anchor": {
-            "blob": "cbed0390f38016f95305efebdb03f84ca9393d30",
-            "content": "sha256:a15a1cfa7b84440b7ed139b286a6af30096c6457d526a316063e1689cf35c831",
+            "blob": "182e7b6b618f5f3485b278a84d16dc19f7e720a6",
+            "content": "sha256:5fad02ef64ffbff2c42ad214d1bed81138203b4377a90464ca2eebb99beac421",
             "locator": {
               "kind": "file"
             },
@@ -1606,12 +1595,12 @@
       ]
     },
     "63": {
-      "note": "The request, addressed by number, recorded or invariants, with the optional signal.\n\nAnchor: `reviewTrees`",
+      "note": "The request, addressed by number, recorded or invariants, with the optional signal.",
       "targets": [
         {
           "anchor": {
-            "blob": "cbed0390f38016f95305efebdb03f84ca9393d30",
-            "content": "sha256:a15a1cfa7b84440b7ed139b286a6af30096c6457d526a316063e1689cf35c831",
+            "blob": "182e7b6b618f5f3485b278a84d16dc19f7e720a6",
+            "content": "sha256:5fad02ef64ffbff2c42ad214d1bed81138203b4377a90464ca2eebb99beac421",
             "locator": {
               "kind": "file"
             },
@@ -1640,12 +1629,12 @@
       ]
     },
     "65": {
-      "note": "The bounded retry of a transient refusal.\n\nAnchor: `reviewTreesRetryingBusy`",
+      "note": "The bounded retry of a transient refusal.",
       "targets": [
         {
           "anchor": {
-            "blob": "cbed0390f38016f95305efebdb03f84ca9393d30",
-            "content": "sha256:a15a1cfa7b84440b7ed139b286a6af30096c6457d526a316063e1689cf35c831",
+            "blob": "182e7b6b618f5f3485b278a84d16dc19f7e720a6",
+            "content": "sha256:5fad02ef64ffbff2c42ad214d1bed81138203b4377a90464ca2eebb99beac421",
             "locator": {
               "kind": "file"
             },
@@ -1656,12 +1645,12 @@
       ]
     },
     "66": {
-      "note": "One answer as a read state.\n\nAnchor: `reviewTreesRead`",
+      "note": "One answer as a read state.",
       "targets": [
         {
           "anchor": {
-            "blob": "cbed0390f38016f95305efebdb03f84ca9393d30",
-            "content": "sha256:a15a1cfa7b84440b7ed139b286a6af30096c6457d526a316063e1689cf35c831",
+            "blob": "182e7b6b618f5f3485b278a84d16dc19f7e720a6",
+            "content": "sha256:5fad02ef64ffbff2c42ad214d1bed81138203b4377a90464ca2eebb99beac421",
             "locator": {
               "kind": "file"
             },
@@ -1672,12 +1661,12 @@
       ]
     },
     "67": {
-      "note": "The comparison a payload names; without it no tree read is made.\n\nAnchor: `treeComparisonNumber`",
+      "note": "The comparison a payload names; without it no tree read is made.",
       "targets": [
         {
           "anchor": {
-            "blob": "cbed0390f38016f95305efebdb03f84ca9393d30",
-            "content": "sha256:a15a1cfa7b84440b7ed139b286a6af30096c6457d526a316063e1689cf35c831",
+            "blob": "182e7b6b618f5f3485b278a84d16dc19f7e720a6",
+            "content": "sha256:5fad02ef64ffbff2c42ad214d1bed81138203b4377a90464ca2eebb99beac421",
             "locator": {
               "kind": "file"
             },
@@ -1718,12 +1707,12 @@
       ]
     },
     "69": {
-      "note": "The leaf-wide hook: abort on cleanup, sequence number, retry, and the enabled flag.\n\nAnchor: `useReviewTrees`",
+      "note": "The leaf-wide hook: abort on cleanup, sequence number, retry, and the enabled flag.",
       "targets": [
         {
           "anchor": {
-            "blob": "cbed0390f38016f95305efebdb03f84ca9393d30",
-            "content": "sha256:a15a1cfa7b84440b7ed139b286a6af30096c6457d526a316063e1689cf35c831",
+            "blob": "182e7b6b618f5f3485b278a84d16dc19f7e720a6",
+            "content": "sha256:5fad02ef64ffbff2c42ad214d1bed81138203b4377a90464ca2eebb99beac421",
             "locator": {
               "kind": "file"
             },
@@ -1803,8 +1792,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "719979b8229e1d3760dbee3ef65e5be048719724",
-            "content": "sha256:411d05d18f06c35a44fb4bae12566019d4441e6c5899aaaac3ea7005027f592a",
+            "blob": "65199f438a6c465e47d5f0ebcc5fc45567949ba4",
+            "content": "sha256:b6818013d07cbbdb1e24315b2a7fc49d274c35a2fecb9239429abca70d563ef4",
             "locator": {
               "end": 127,
               "kind": "line_range",
@@ -1821,8 +1810,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "719979b8229e1d3760dbee3ef65e5be048719724",
-            "content": "sha256:a164e7330cc42a01c80d1400078bfc890e3b074fe2ca910280b3a83a273717e0",
+            "blob": "65199f438a6c465e47d5f0ebcc5fc45567949ba4",
+            "content": "sha256:3f96c4620e98330349b152c75a905e3983c3942a7d131963b5aafec57657c3b5",
             "locator": {
               "end": 149,
               "kind": "line_range",
@@ -1871,15 +1860,14 @@
       ]
     },
     "76": {
-      "note": "The tokens a reader can be shown.",
+      "note": "The tokens a reader can be shown.\n\nAnchor: `ReviewFailureToken`",
       "targets": [
         {
           "anchor": {
-            "blob": "25250cf4f41daf7721dd292a421845d64fefdd4c",
-            "content": "sha256:7e50f05031835d108310e3392553c5e2cda7fd4ac8ddcd687c34dc04726cd7a1",
+            "blob": "944960a629ae679b6412bdfdc583c9a18b17dfc3",
+            "content": "sha256:505328199b8aa8063d5f3edf27599d3d5c66658a4db5f530607c9b55c3511dff",
             "locator": {
-              "kind": "symbol",
-              "name": "ReviewFailureToken"
+              "kind": "file"
             },
             "path": "dashboard/src/data/reviewTransport.ts"
           },
@@ -1888,15 +1876,14 @@
       ]
     },
     "77": {
-      "note": "The codes and their tokens, with the two transient codes of the leaf-wide view.",
+      "note": "The codes and their tokens, with the two transient codes of the leaf-wide view.\n\nAnchor: `TOKEN_BY_CODE`",
       "targets": [
         {
           "anchor": {
-            "blob": "25250cf4f41daf7721dd292a421845d64fefdd4c",
-            "content": "sha256:0629df989dcc8c29ec8f443b780af0a6f666210482b5b2f9c393cb2e5a6336fa",
+            "blob": "944960a629ae679b6412bdfdc583c9a18b17dfc3",
+            "content": "sha256:505328199b8aa8063d5f3edf27599d3d5c66658a4db5f530607c9b55c3511dff",
             "locator": {
-              "kind": "symbol",
-              "name": "TOKEN_BY_CODE"
+              "kind": "file"
             },
             "path": "dashboard/src/data/reviewTransport.ts"
           },
@@ -1905,15 +1892,14 @@
       ]
     },
     "78": {
-      "note": "An unknown code is carried as domain-refused.",
+      "note": "An unknown code is carried as domain-refused.\n\nAnchor: `reviewFailureToken`",
       "targets": [
         {
           "anchor": {
-            "blob": "25250cf4f41daf7721dd292a421845d64fefdd4c",
-            "content": "sha256:271d6b7623337a09551756c4d7ab7ae9e32ec8f92f20d40bf9ff29ed2769205b",
+            "blob": "944960a629ae679b6412bdfdc583c9a18b17dfc3",
+            "content": "sha256:505328199b8aa8063d5f3edf27599d3d5c66658a4db5f530607c9b55c3511dff",
             "locator": {
-              "kind": "symbol",
-              "name": "reviewFailureToken"
+              "kind": "file"
             },
             "path": "dashboard/src/data/reviewTransport.ts"
           },
@@ -1922,15 +1908,14 @@
       ]
     },
     "79": {
-      "note": "The one GET: the optional abort signal, the body read whatever the status, and the two failures.",
+      "note": "The one GET: the optional abort signal, the body read whatever the status, and the two failures.\n\nAnchor: `getReviewJson`",
       "targets": [
         {
           "anchor": {
-            "blob": "25250cf4f41daf7721dd292a421845d64fefdd4c",
-            "content": "sha256:6e85817cf7adc12d0e32445415755453f931e8ce8e584541b8cedd7c69732b0f",
+            "blob": "944960a629ae679b6412bdfdc583c9a18b17dfc3",
+            "content": "sha256:505328199b8aa8063d5f3edf27599d3d5c66658a4db5f530607c9b55c3511dff",
             "locator": {
-              "kind": "symbol",
-              "name": "getReviewJson"
+              "kind": "file"
             },
             "path": "dashboard/src/data/reviewTransport.ts"
           },
@@ -1960,8 +1945,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "923faffc20359156074cf02aed9860c41b8b29dd",
-            "content": "sha256:3981bba7b9db0b4a64dad6464f34b35f14cf140a5d8dcdd763af043b42728498",
+            "blob": "5e94e860bdcfd117a4e496db152da5bfdb241e53",
+            "content": "sha256:b71314fb5e5acaa72506630b980bfc48c5715f9e6250aaa6030c670511ec0301",
             "locator": {
               "end": 32,
               "kind": "line_range",
@@ -2010,16 +1995,16 @@
       ]
     },
     "83": {
-      "note": "selectors.ts changes only the memory-mirror comment from drift_check to drift reporting. driftSegments still uses projec — source ownership, not executed visual proof.\n\nAnchor: `// ── Engine room (note 08: two engines per pod = CGC + GrepAI) ──────────────────`",
+      "note": "driftSegments reads snapshot counts, returns no segments for a zero total, orders known classifications before unanticipated ones, and emits counts with rounded percentages. This is source ownership, not executed visual proof.",
       "targets": [
         {
           "anchor": {
-            "blob": "b130c9f33b2078e3adf38d6e87cde8c376ba65b9",
-            "content": "sha256:73baf9f583b0eefeca66d7142f703463cc5270d692f125353b4821f87c106d62",
+            "blob": "45703aad8672ac0bd3f53a1e3be16aef2ad16336",
+            "content": "sha256:c4350d4ce7d697996903291c68a6930ec392c097d56c81080de3fa3cbbff1301",
             "locator": {
-              "end": 188,
+              "end": 102,
               "kind": "line_range",
-              "start": 116
+              "start": 72
             },
             "path": "dashboard/src/data/selectors.ts"
           },
@@ -2028,16 +2013,29 @@
       ]
     },
     "84": {
-      "note": "selectors.ts changes only the memory-mirror comment from drift_check to drift reporting. driftSegments still uses projec — source ownership, not executed visual proof.\n\nAnchor: `function EngineRoomImpl() {`",
+      "note": "driftSegments reads snapshot counts, orders known classifications before additional supplied classes and computes rounded percentages. EngineRoomImpl separately consumes stable process and ledger slices; this is source ownership, not fresh executed visual proof.",
       "targets": [
         {
           "anchor": {
-            "blob": "b967c7e758ed50c05ed177e1eca3ae5771f9e0eb",
-            "content": "sha256:65f2267c684137e9bbe30efdfeef61786eee83328daa7341dabee3c2e8c30532",
+            "blob": "45703aad8672ac0bd3f53a1e3be16aef2ad16336",
+            "content": "sha256:c4e790c693c8e625cadede8d9d2c21c7aa4ed08fff32e5b36b8d64347cd73295",
             "locator": {
-              "end": 121,
+              "end": 101,
               "kind": "line_range",
-              "start": 93
+              "start": 72
+            },
+            "path": "dashboard/src/data/selectors.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c89382b7530853796de958e287f52a05bf0222f3",
+            "content": "sha256:134c99fa47cf8e4962b59a99cda4f61bbdc6088fee960e16bce22c8180394b8b",
+            "locator": {
+              "end": 130,
+              "kind": "line_range",
+              "start": 107
             },
             "path": "dashboard/src/panels/EngineRoom.tsx"
           },
@@ -2050,8 +2048,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c1c7c67ada2e84e90b5ac05efb33bdb19e6951a4",
-            "content": "sha256:8c9c34025ed20acee37538e90719ba45449db08fa37c427bd2fd99ceba9208d5",
+            "blob": "5e94e860bdcfd117a4e496db152da5bfdb241e53",
+            "content": "sha256:65b7f98cb5ff7962303f5258fab14cfff5acc73adf5a464ce722d0a3f9fa800f",
             "locator": {
               "kind": "file"
             },
@@ -2066,10 +2064,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "25250cf4f41daf7721dd292a421845d64fefdd4c",
-            "content": "sha256:8bc56e9418acbb3e0b959b4915225a3270cab3198a99e46846c2149e4e9911a9",
+            "blob": "944960a629ae679b6412bdfdc583c9a18b17dfc3",
+            "content": "sha256:9fa07a9fa80b8efa9dd375036002d801dc4ee1efbf4dab73ac3ebb406cc18507",
             "locator": {
-              "end": 177,
+              "end": 183,
               "kind": "line_range",
               "start": 162
             },
@@ -2079,12 +2077,12 @@
         },
         {
           "anchor": {
-            "blob": "c1c7c67ada2e84e90b5ac05efb33bdb19e6951a4",
-            "content": "sha256:2e85080d0afdf4756e5a5ec38c385a70d81dfef4fd10255d5cee102791c487cb",
+            "blob": "5e94e860bdcfd117a4e496db152da5bfdb241e53",
+            "content": "sha256:1b0ba6ded67ab3766300e0dea9ad82553875fd843dd265dabad3cab47290aa26",
             "locator": {
-              "end": 838,
+              "end": 460,
               "kind": "line_range",
-              "start": 820
+              "start": 435
             },
             "path": "dashboard/src/data/review.ts"
           },
@@ -2115,12 +2113,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c1c7c67ada2e84e90b5ac05efb33bdb19e6951a4",
-            "content": "sha256:e872f6e3cba80fe4ec8d0113b68f3786b40102e29d5e9a5f1023ad5c0617f8c9",
+            "blob": "5e94e860bdcfd117a4e496db152da5bfdb241e53",
+            "content": "sha256:8c6a46bb92828c59be722a66bdb2ad5413906cc3679f4d507ac4803b7a915687",
             "locator": {
-              "end": 808,
+              "end": 673,
               "kind": "line_range",
-              "start": 793
+              "start": 649
             },
             "path": "dashboard/src/data/review.ts"
           },
@@ -2185,8 +2183,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1da3bab20ae2b0b070c790c820476038d043758c",
-            "content": "sha256:8f234685209a5c5a50b4d4c36e0ab50995f96b8fe7769754659f1fb5bad6fa16",
+            "blob": "ad784b1c6e63764e2f4437c99f28a2b9bd553703",
+            "content": "sha256:ac8d022d7e770b84eaf514687701d00d66ee5bf7bdff00f0963ed28381e70877",
             "locator": {
               "end": 163,
               "kind": "line_range",

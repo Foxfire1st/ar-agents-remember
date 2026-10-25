@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/models/core.py",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
@@ -22,7 +23,7 @@
   ],
   "references": {
     "1": {
-      "note": "Core payload builders serialize these models.",
+      "note": "Core payload builders serialize these models.\n\nAnchor: `server_info_payload` `TOOL_RESPONSE_MODELS`",
       "targets": [
         {
           "anchor": {
@@ -33,18 +34,6 @@
               "name": "server_info_payload"
             },
             "path": "mcp/src/agents_remember/mcp/tools/core.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "04979be62d9e43e81fabc9c8503cdd958c109214",
-            "content": "sha256:7961cf857a4dcfda690e311e7f9b94b1466c113114eda2ef1611ad880425931f",
-            "locator": {
-              "kind": "symbol",
-              "name": "TOOL_RESPONSE_MODELS"
-            },
-            "path": "mcp/src/agents_remember/models/tools/tool_registry.py"
           },
           "kind": "code"
         },
@@ -71,6 +60,28 @@
               "start": 31
             },
             "path": "mcp/src/agents_remember/mcp/tools/core.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6b123c608ce155f50f62249a98196f1b0e80ed08",
+            "content": "sha256:33a7112467f0720462329fcd72b5b7cf94fc062499c3a8a146aca89e054bb04d",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/core.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ca5af906298a90f3101a98a5542005e3549b3c0a",
+            "content": "sha256:10aa450f5caa463f1fe75eabf3cdf642c485bc41fe35884de37c4765dece2359",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/models/tools/tool_registry.py"
           },
           "kind": "code"
         }

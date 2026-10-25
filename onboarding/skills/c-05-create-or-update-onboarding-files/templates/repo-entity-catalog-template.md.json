@@ -1,5 +1,6 @@
 {
   "path": "skills/c-05-create-or-update-onboarding-files/templates/repo-entity-catalog-template.md",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
@@ -58,7 +59,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "286f2bdd8ea0869bbbd819a609489e6b1ef9f5e3",
+            "blob": "7544470421d07347f2127e91131a701490676138",
             "content": "sha256:da92a848d2152e556c2ab883600ffd54517e1438322474a68d73b651c8daa8bb",
             "locator": {
               "end": 11,

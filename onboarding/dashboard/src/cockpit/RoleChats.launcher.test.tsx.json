@@ -21,12 +21,12 @@
   ],
   "references": {
     "1": {
-      "note": "The launch-lock reread case enables fake time before mount, flushes the initial reply, then advances the 1,500 ms product reread in async `act`. Its no-status/no-alert and restored-Start assertions follow the actual reread opportunity; teardown restores real timers.\n\nAnchor: `rereads a launch in progress without an ordinary status line`",
+      "note": "The launch-lock reread case enables fake time before mount, flushes the initial reply, then advances the 1,500 ms product reread in async `act`. Its no-status/no-alert and restored-Start assertions follow the actual reread opportunity; teardown restores real timers.",
       "targets": [
         {
           "anchor": {
-            "blob": "c7db7d4dfd7a54b42ffc35bee11fd41e26b4e4a8",
-            "content": "sha256:ca33f44bbe08e113c00a54a9be92f5690050d95355a3af301fca4f73861c5619",
+            "blob": "80d56a08ad0b7d9e77ee548e18b8de161301d9ce",
+            "content": "sha256:17be3c090d1fb2451483e4bd738d2fa3addc4e634f3de2eb70fd28a866d9cdad",
             "locator": {
               "end": 168,
               "kind": "line_range",
@@ -38,12 +38,12 @@
       ]
     },
     "2": {
-      "note": "Configured tier, incompatible-model refusal and foreign-agent default disclosure remain asserted.\n\nAnchor: \"displays the configured tier\"",
+      "note": "Configured tier, incompatible-model refusal and foreign-agent default disclosure remain asserted.",
       "targets": [
         {
           "anchor": {
-            "blob": "c7db7d4dfd7a54b42ffc35bee11fd41e26b4e4a8",
-            "content": "sha256:7251097b30db71f94077c3daf95778cb7e45cf8de0b34743b7111a1a092da2e8",
+            "blob": "80d56a08ad0b7d9e77ee548e18b8de161301d9ce",
+            "content": "sha256:a2ae369fd05974f67c97e4bfc0d5230fe7c250c894a763f6dcee7862b08c6bc6",
             "locator": {
               "end": 80,
               "kind": "line_range",
@@ -55,12 +55,12 @@
       ]
     },
     "3": {
-      "note": "Current source owner or exact assertion described above.\n\nAnchor: \"mirrors the backend\"",
+      "note": "Current source owner or exact assertion described above.",
       "targets": [
         {
           "anchor": {
-            "blob": "c7db7d4dfd7a54b42ffc35bee11fd41e26b4e4a8",
-            "content": "sha256:42790e822f1ead18a7f00796fc2a24f117677da62ee7dfe4407b4836b74b7400",
+            "blob": "80d56a08ad0b7d9e77ee548e18b8de161301d9ce",
+            "content": "sha256:413ad7073a78fdb2cbd6e5963df05d9a04fd9a2f18f23eb0e4845a62daf20153",
             "locator": {
               "end": 198,
               "kind": "line_range",
@@ -72,12 +72,12 @@
       ]
     },
     "4": {
-      "note": "Mounted R71 assertions read mode/instruction chips and their source hovers while retaining explicit-only feature submission and feature preservation.\n\nAnchor: \"submits only an explicit speed feature\"",
+      "note": "Mounted R71 assertions read mode/instruction chips and their source hovers while retaining explicit-only feature submission and feature preservation.",
       "targets": [
         {
           "anchor": {
-            "blob": "c7db7d4dfd7a54b42ffc35bee11fd41e26b4e4a8",
-            "content": "sha256:e896540db9ccd286928e6fe82b382fa53379b4bb37a2af577d3689a0f670172f",
+            "blob": "80d56a08ad0b7d9e77ee548e18b8de161301d9ce",
+            "content": "sha256:a896582639d1f296d7cc640534e25b566cc36e2f60b6bad67ffcc0c508d0302d",
             "locator": {
               "end": 250,
               "kind": "line_range",

@@ -15,7 +15,7 @@ This source-bound correction covers the described L54 seams only. Unrelated inhe
 The named-master happy-path case calls the native `finalize_result` over a landed, cleaned fixture. It asserts Completed leaf and immediate parent row while the master stays inProgress with no completedAt. Leaf completedAt is bracketed by actual before/after clock readings. Both decision arrays retain their preexisting authored and legacy product-record entries exactly: finalization adds no decision. Returned landedCommit, targetBranch, taskUpdates and summary are asserted, and a retry preserves leaf/master JSON and Markdown bytes. A separate already-Completed legacy case asserts no timestamp backfill/migration or byte changes. The retained injected second-document publication failure compares rollback bytes.
 
 - The retained test name now encloses four fail-closed ownership cases and byte-preservation assertions. \[10] [12]
-- Asserted master-without-row is also refused with the named repair route. \[11] [11]
+- Asserted master-without-row is also refused with the named repair route. [11]
 
 ## Inherited source-epoch account (non-operative)
 
@@ -56,7 +56,7 @@ No file-local implementation change is requested by this reconciliation.
 
 Already-Completed legacy documents remain unchanged; no completedAt is synthesized and the captured JSON/Markdown bytes remain identical.
 
-- Already-Completed leaf and parent row are not migrated during a native finalization call. \[10] [10]
+- Already-Completed leaf and parent row are not migrated during a native finalization call. [10]
 
 ## Evidence
 
@@ -73,12 +73,18 @@ The retained source anchors below support the fixture roles and assertion bounda
 - Native finalization case asserts status/time, unchanged leaf/master decisions including legacy product records, exact return fields and byte-stable retry; authored assertions, not an executed result. [1]
 
 - Second document publish failure rolls back leaf and parent. [2]
+
 - The shared fixtures: the landed contract, the folder master and leaf pair, and the byte capture. [3]
+
 - A named master the store would write elsewhere is refused before any write. [4]
 - The folder master's row completes under the demotion rule. [5]
 - A dry run reports the folder master's row and accepts its assertion. [6]
+
 - Without a listing folder master the leaf finalizes standalone. [7]
+
+
 - A folder master is refused exactly as a named master, before any write. [8]
+
 - A leaf the store would write elsewhere is refused before any write. [9]
 
 ### Cross-Repo References

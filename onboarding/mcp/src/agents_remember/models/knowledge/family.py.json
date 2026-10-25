@@ -63,26 +63,14 @@
       ]
     },
     "4": {
-      "note": "The sealed revision and its stored read shape.",
+      "note": "The sealed revision and its stored read shape.\n\nAnchor: `FamilyRevision` `StoredFamilyRevision`",
       "targets": [
         {
           "anchor": {
             "blob": "e0475c07db7f98c04497445589d9a2a30aa0089b",
-            "content": "sha256:f7dc8a9853d9b7f7760131731ccb7a767af8a95db9c8ad498153b9d7c9fc90f1",
+            "content": "sha256:d02c1ee41a6e2c65a1fbc9b6a7ac864504eb48c48d805a63429cfb48f92d9470",
             "locator": {
-              "kind": "symbol",
-              "name": "FamilyRevision"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "bc5e885909bc1a6d98b3285a861c6d4b9c8cfdf4",
-            "content": "sha256:f28d8258683cae840272652f732b316ec568881fddb128c51a3e0f6d912b4b54",
-            "locator": {
-              "kind": "symbol",
-              "name": "StoredFamilyRevision"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -153,39 +141,14 @@
       ]
     },
     "8": {
-      "note": "The production reader retrieves family identities and exact sealed revisions from the derived index; it writes nothing.",
+      "note": "The production reader retrieves family identities and exact sealed revisions from the derived index; it writes nothing.\n\nAnchor: `get_family` `get_family_revision` `list_family_revision_ids`",
       "targets": [
         {
           "anchor": {
             "blob": "fafa18088da97ad02199d8d81db836c10e274a58",
-            "content": "sha256:c51a165b94e9dd6de79384fdbe979368a7dc0a52f33cd560713ccc13b1c1a432",
+            "content": "sha256:57f72baf8adc3f53f857c90088fe3142582d1c875cdce06320c91253b8665a11",
             "locator": {
-              "kind": "symbol",
-              "name": "get_family"
-            },
-            "path": "mcp/src/agents_remember/memory/knowledge/families.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "66102e9850b5f1c88cdba3b4cbd1af7d321197e8",
-            "content": "sha256:be4b89a03071dfec313b2a235a46f08cf7115843cc9c516c6f0287f5b35be4c0",
-            "locator": {
-              "kind": "symbol",
-              "name": "get_family_revision"
-            },
-            "path": "mcp/src/agents_remember/memory/knowledge/families.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "fafa18088da97ad02199d8d81db836c10e274a58",
-            "content": "sha256:8efde8a6ffa20dfab43f421de39f55bccfb3cd8f9f7b726e5a5c635dee4daf87",
-            "locator": {
-              "kind": "symbol",
-              "name": "list_family_revision_ids"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/memory/knowledge/families.py"
           },

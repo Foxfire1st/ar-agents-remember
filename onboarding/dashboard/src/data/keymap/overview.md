@@ -18,15 +18,22 @@ Static source/intent inspection only. The removal inventory and Git history, not
 
 ## Evidence
 
+
 - The reviewer's zone and chords. [1]
 
+
+
 - The reviewer's own binding on its zone. [2]
+
 
 - The effective-keymap preference and validation boundary. [3]
 - The readonly BROWSER_FORBIDDEN tuple lists browser exclusions; no PTY table or matcher remains. [9]
 - Chrome/review marker resolution and generic printable/editable passthrough; no slash predicate. [10]
+
 - REVIEW_CHORDS alone supplies default review commands; invalid and colliding overrides fall back silently to those defaults. [11]
+
 - EffectiveKeymap has bindings only, a native cross-tab storage subscription and aria conversion; no profile/activity/signature or same-tab notifier. [12]
 
 - Remaining routing and preference test sources assert their pure keyboard contracts; removed focus/binding/composer tests are not current witnesses. No new test execution. [14]
+
 - Effective review traversal wiring and its root marker. [15]

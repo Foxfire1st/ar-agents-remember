@@ -85,7 +85,9 @@ protocol.
 
 ### Repo-Internal References
 
+
 - CLI dispatch (`--daemon`/`--status`/`--stop`) and the `--no-access-log` child flag. [1]
+
 - The `dashboard` settings key (`DashboardSettings`: autoStart, port) it consumes. [2]
 - The MCP boot seam calling `maybe_autostart_dashboard`. [3]
 - The version comparator (`SERVER_VERSION`, kernel-owned since L9). [4]

@@ -1,5 +1,6 @@
 {
   "path": "docs/reference/mcp-tools.md",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
@@ -76,7 +77,7 @@
   ],
   "references": {
     "1": {
-      "note": "Current reference header states 40 public tools while the literal roster declares 42; older header38 and 40/41-name roster statements are historical, not live advertisement.",
+      "note": "The reference header states 40 public tools while the literal roster declares 43; the older header and roster counts are historical, not live advertisement.",
       "targets": [
         {
           "anchor": {
@@ -92,8 +93,8 @@
         },
         {
           "anchor": {
-            "blob": "44df3f0a99fa590ada490ba3e7629b32bd9e30b0",
-            "content": "sha256:df4e3da6e3d5b67023b5f5dcbba937d93c8aa8714beba6e7c0f21dbfbde9ef7e",
+            "blob": "d0b0ddd9f150e32116b430ecc74907fcf68fee97",
+            "content": "sha256:fdef15e2ca9d39f66c8570a7147cb894dda16f47c7d3558bb4454e5b4714875f",
             "locator": {
               "kind": "file"
             },
@@ -108,8 +109,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d93840fa8cc7f6e72ab17255969dcbb59db8296b",
-            "content": "sha256:91c579107def14c0ab455a006adbfd978c4c56660e810bd5b0cfc04c282999f0",
+            "blob": "4d099561f10d1ae73b6b908557fd452c7252bfbc",
+            "content": "sha256:2a4c8021b7444978b780c206fcd9c885cf96287c42a92a55b0024fdd5f58706e",
             "locator": {
               "kind": "file"
             }

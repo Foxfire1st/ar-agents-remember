@@ -24,5 +24,7 @@ Held is not delivered. The UI never resends from a log or infers a terminal resu
 ## Evidence
 
 - Makes per-target send and sent-log outcomes readable. [1]
+
 - Makes per-target send and sent-log outcomes readable. [2]
+
 - Makes per-target send and sent-log outcomes readable. [3]

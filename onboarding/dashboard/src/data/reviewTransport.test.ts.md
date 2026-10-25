@@ -112,7 +112,9 @@ and every non-answer. Every anchor in a row occurs inside the range that row cit
 - The one spelled URL, which is the literal the route serves. [5]
 - **The one stub, replacing the global `fetch` with a real-shaped response so status, body and decode all travel the real path.** [6]
 - **The one way a failure is read, which fails loudly if the read resolves instead.** [7]
+
 - The restore of the global fetch between cases. [8]
+
 - **The defect as a pair over one identical response: the review client resolves with the refusal intact, and `getJson` still throws with the body dropped.** [9]
 - **The transport-level body carried whole: token, code, status, reason, offending input, expected and next action.** [11]
 - The unwired adapter as unavailable history, with the action that wires it. [12]
@@ -120,9 +122,13 @@ and every non-answer. Every anchor in a row occurs inside the range that row cit
 - **A response this route did not produce is `unreadable`, with the HTTP status as its code and a detail saying no reason was published.** [14]
 - **A socket that never answered is `network`, carrying no status and no invented next action.** [15]
 - **The thrown error stays a `FilesApiError` with the older message idiom, so an existing catcher keeps working.** [16]
+
 - The decode these cases pin, and the error whose type the existing catchers keep. [17]
+
 - **The shared client the control case proves unchanged: it still reads only `body.status` and still throws on a non-2xx.** [18]
+
 - **The mounted counterpart that consumes the same classification, so the transport contract and the rendered states are pinned against one table.** [19]
+
 
 - **The measured bodies, each carrying the digest of the run that produced it.** [3]
 - Entry typed refusal and ordinary success use the shared decode. [10]

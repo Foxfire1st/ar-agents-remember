@@ -41,15 +41,14 @@
       ]
     },
     "2": {
-      "note": "External-memory fixture supplies real isolated Git repositories and current contract inputs.",
+      "note": "External-memory fixture supplies real isolated Git repositories and current contract inputs.\n\nAnchor: `open_external_contract_fixture`",
       "targets": [
         {
           "anchor": {
-            "blob": "069c1a517ae15e4ed31b45486b24f1b59666ea8c",
-            "content": "sha256:abb34f7796a8b17e8baa7ff0e5051c0da8e5e337e409a388f72c3ca2db2f0d39",
+            "blob": "18fe6f617413cf0af2643fdf3a5cf1aa3b699523",
+            "content": "sha256:5b54eb32cd5b2b15245fc005bd1e39228f10742c25db404f458fc570c334624d",
             "locator": {
-              "kind": "symbol",
-              "name": "open_external_contract_fixture"
+              "kind": "file"
             }
           },
           "kind": "test"

@@ -12,8 +12,12 @@ This source-bound correction covers the described L54 seams only. Unrelated inhe
 
 ## Current evidence
 
-- Actual cache-build summary distinguishes built, stale and error populations. \[5] [5]
-- The two public build modes share survey and per-cache handling, but missing-only mode preserves stale bytes. \[6] [6]
+- Actual cache-build summary distinguishes built, stale and error populations.
+- The two public build modes share survey and per-cache handling, but missing-only mode preserves stale bytes.
+- The census exposes Git source-snapshot, tracked-candidate, and untracked-candidate entry points.
+- A converted overview's sidecar reference targets feed the same hint extraction; nothing is added without a sidecar.
+- MCP refresh supplies resolved repository and storage authority.
+- Closeout preview/apply expose route-index refresh planning entry points.
 
 ## Inherited source-epoch account (non-operative)
 
@@ -94,10 +98,10 @@ The following complete predecessor retains useful explanations, old observations
 >
 > ### Repo-Internal References
 >
-> - The census exposes Git source-snapshot, tracked-candidate, and untracked-candidate entry points. [1]
-> - A converted overview's sidecar reference targets feed the same hint extraction; nothing is added without a sidecar. [2]
-> - MCP refresh supplies resolved repository and storage authority. [3]
-> - Closeout preview/apply expose route-index refresh planning entry points. [4]
+> - The census exposes Git source-snapshot, tracked-candidate, and untracked-candidate entry points.
+> - A converted overview's sidecar reference targets feed the same hint extraction; nothing is added without a sidecar.
+> - MCP refresh supplies resolved repository and storage authority.
+> - Closeout preview/apply expose route-index refresh planning entry points.
 >
 > ### Cross-Repo References
 >

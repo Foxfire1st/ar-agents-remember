@@ -7,12 +7,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "17205ed0b1b0bb073866d3e7718e5db5a2e60a15",
-            "content": "sha256:c89d650d60dfea3d98aff420302dbce81d7cf5dfb743d8932accee53b525fab6",
+            "blob": "972379661df5248133ad722ce2285f700ca00755",
+            "content": "sha256:0d135dbf0fbe04047a225908ccef11f0edef61aab9a03a46c6e6cdf8750ddbad",
             "locator": {
-              "end": 185,
+              "end": 117,
               "kind": "line_range",
-              "start": 112
+              "start": 48
             }
           },
           "kind": "test"

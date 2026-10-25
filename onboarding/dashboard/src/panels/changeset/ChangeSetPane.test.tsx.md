@@ -43,5 +43,8 @@ swap — not the live `<Markdown>` styling or the CodeMirror diff (both covered 
 - Markdown diff fixture + per-case localStorage reset. [2]
 - Rendered toggle swaps the diff for the `<Markdown>` prose view. [3]
 - Non-markdown files do not offer the rendered toggle. [4]
+
 - Subject under test: the diff column + its rendered-markdown toggle. [5]
+
+
 - The markdown renderer the rendered view mounts. [6]

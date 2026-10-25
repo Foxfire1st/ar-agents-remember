@@ -69,11 +69,16 @@ No relevant documentation found after checking the configured sources.
 The two tables, the refusal that guards the operation vocabulary, and the enforcement point that
 consumes the plan.
 
+
+
 - The total altitude table — the load-bearing rule that a leaf never reads a sprint. [1]
+
 - Who admits portfolio facts, and the launcher's thin channel set. [2]
 - The per-operation channel table and the refusal that guards it. [3]
 - The plan builder that resolves the plan with no default branch. [4]
+
 - The frozen operation and role vocabularies this table must cover exactly. [5]
+
 - The single enforcement point that hands the projection only the planned documents. [6]
 - The case that proves sprint history reaches an orchestrator but never a leaf. [7]
 - The case that proves each frozen operation selects its own channels and its own document. [8]

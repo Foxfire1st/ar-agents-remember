@@ -117,12 +117,12 @@
       ]
     },
     "5": {
-      "note": "Git commit attribution stays with its existing owner; this leaf read it for context and copied nothing.\n\nAnchor: \"# contract at the moment it is armed. And this module is the reader of a hashed object, which is\"",
+      "note": "Git commit attribution stays with its existing owner; this leaf read it for context and copied nothing.",
       "targets": [
         {
           "anchor": {
-            "blob": "ae1966638f820f5da97451ffeb4f48b62e757831",
-            "content": "sha256:813ca0c54706c022240c93c97353e0a11adb4c3f3a33fdb7ab00fa7f30a8ffea",
+            "blob": "2ec6a4844bc78d46a50f54f10b97d1ea2d328aba",
+            "content": "sha256:739ec6e45f31b35483288c8ff306cdfc590f7439b7759413bdadfa8371c30f4d",
             "locator": {
               "end": 227,
               "kind": "line_range",

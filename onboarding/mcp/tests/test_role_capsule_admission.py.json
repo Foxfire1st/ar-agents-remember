@@ -1,29 +1,17 @@
 {
   "path": "mcp/tests/test_role_capsule_admission.py",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
-      "note": "The frozen vocabulary and its completeness guard the vocabulary group pins.",
+      "note": "The frozen vocabulary and its completeness guard the vocabulary group pins.\n\nAnchor: `CAPSULE_ROLES` `CAPSULE_OPERATIONS` `CAPSULE_STATUSES`",
       "targets": [
         {
           "anchor": {
-            "blob": "cae83c767e4181dfaf6e8e45ad3efc05ef5fa9be",
-            "content": "sha256:f43459d304c6190880a186bea3b98bf494287d7777ff024c41bd43c8d7990ca8",
-            "locator": {
-              "kind": "symbol",
-              "name": "CAPSULE_ROLES"
-            },
-            "path": "mcp/src/agents_remember/models/role_capsules/vocabulary.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
             "blob": "f82bdc4007083ae4dad1686445d94d0c7e33d03b",
-            "content": "sha256:635d6f43e11c20c185494fde019595d0988f977d19d5804a267a56e1a43a727c",
+            "content": "sha256:b6de98e8985e330ee99310530410ec3d4d9da72620da822d7be82e3a611f4cd7",
             "locator": {
-              "kind": "symbol",
-              "name": "CAPSULE_OPERATIONS"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/models/role_capsules/vocabulary.py"
           },
@@ -32,10 +20,9 @@
         {
           "anchor": {
             "blob": "4e74de6d641b1a3997bee7dcafc5b4da6821b2c8",
-            "content": "sha256:fcfcd052a7e3b10ed2c740f5f529182d7b3148edf830db0c4174057719602d4e",
+            "content": "sha256:7288b24c31b5717b8f06cb534d84acd27c7c2c0783a9072fa383594c9434a104",
             "locator": {
-              "kind": "symbol",
-              "name": "CAPSULE_STATUSES"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/models/role_capsules/statuses.py"
           },
@@ -44,51 +31,14 @@
       ]
     },
     "2": {
-      "note": "The manifest parser the shipped-manifest group exercises against the real file.",
+      "note": "The manifest parser the shipped-manifest group exercises against the real file.\n\nAnchor: `parse_composition_manifest` `_require_one_path_serves_one_identity` `_require_operation_applicability_agrees` `_require_role_skills_are_declared`",
       "targets": [
         {
           "anchor": {
-            "blob": "96753fd67b5fc1c702ebbcc0f89dab1182db7156",
-            "content": "sha256:d3e6eee279eafcfca161291cb247167af728e57159bcf6e30031ef5a16653f19",
-            "locator": {
-              "kind": "symbol",
-              "name": "parse_composition_manifest"
-            },
-            "path": "mcp/src/agents_remember/models/role_capsules/manifest.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
             "blob": "cd8a486213211e6be0e506486402269997de9b68",
-            "content": "sha256:70cb6e8181c52a286806bbf286ed853dc14e21dbff7c6e46073921b8a5f30b3c",
+            "content": "sha256:9e72f69c7d30b140570b8095c2756eefda32d61086f0928b95fbd99ff46d676f",
             "locator": {
-              "kind": "symbol",
-              "name": "_require_one_path_serves_one_identity"
-            },
-            "path": "mcp/src/agents_remember/models/role_capsules/manifest.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "cd8a486213211e6be0e506486402269997de9b68",
-            "content": "sha256:9128e49587a934636fc7f5a88063b9b6a16a85d90840452fb3e618399482b9de",
-            "locator": {
-              "kind": "symbol",
-              "name": "_require_operation_applicability_agrees"
-            },
-            "path": "mcp/src/agents_remember/models/role_capsules/manifest.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "cd8a486213211e6be0e506486402269997de9b68",
-            "content": "sha256:d9ebe0c01225ff5c3367abc7ff71348cad9b820eeca4ee81a7871f376414497f",
-            "locator": {
-              "kind": "symbol",
-              "name": "_require_role_skills_are_declared"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/models/role_capsules/manifest.py"
           },
@@ -184,7 +134,7 @@
       ]
     },
     "6": {
-      "note": "The application entry point that converts an admission refusal into an outcome value — including an **emptied source**, whose refusal reaches the caller as a value rather than as an escaping exception (D25).\n\nAnchor: `CapsuleSourceError`",
+      "note": "The application entry point that converts an admission refusal into an outcome value — including an **emptied source**, whose refusal reaches the caller as a value rather than as an escaping exception (D25).\n\nAnchor: `compile_admitted_capsule` `CapsuleCompilationOutcome`",
       "targets": [
         {
           "anchor": {
@@ -200,24 +150,11 @@
         },
         {
           "anchor": {
-            "blob": "8f55401b7e0afa34d4cc0cc01d77d2aa95c1a3b7",
-            "content": "sha256:4aae10481d05e43d7a434e93ae593f4f4643d82811f592c85432b658c5def51e",
+            "blob": "0de84f83644c391b29759b1623034309cabc8c72",
+            "content": "sha256:7b16c4a32019a3e8f4ccf82b15f964d954f4c2df5c97d530d7128a382caa421b",
             "locator": {
               "kind": "symbol",
               "name": "CapsuleCompilationOutcome"
-            },
-            "path": "mcp/src/agents_remember/application/role_capsules/compilation.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "8f55401b7e0afa34d4cc0cc01d77d2aa95c1a3b7",
-            "content": "sha256:890ae5d28141750c1f331f5741092fc292b0d05127e02b5d8d667323dfe0b1ad",
-            "locator": {
-              "end": 88,
-              "kind": "line_range",
-              "start": 46
             },
             "path": "mcp/src/agents_remember/application/role_capsules/compilation.py"
           },
@@ -235,16 +172,27 @@
             "path": "mcp/src/agents_remember/models/role_capsules/sources.py"
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0de84f83644c391b29759b1623034309cabc8c72",
+            "content": "sha256:fa7dbb04c116a8a6d6767c3d85c3b723091f0af5bfd84f27ffc91b7b7e9f8f52",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/role_capsules/compilation.py"
+          },
+          "kind": "code"
         }
       ]
     },
     "7": {
-      "note": "The real corpus this module and the distinct audience/launch/manifest-edge modules read.\n\nAnchor: Current substantive owner; original historical evidence remains in the memory base",
+      "note": "The real corpus this module and the distinct audience/launch/manifest-edge modules read.",
       "targets": [
         {
           "anchor": {
-            "blob": "4da7f03059708d2c36a166a0b1371b8e30be2932",
-            "content": "sha256:82f4d67a23206f0ba6f7a64d6bb1e2b5c1e8445444d44cba7e91daecc897a2f6",
+            "blob": "2f3ce46a32a38d86f474252bb23d8081e91f0a6e",
+            "content": "sha256:cbf26cab740735f3a3593cad98d629089c14dfa4f3359d8ffd05f34c9de25862",
             "locator": {
               "end": 723,
               "kind": "line_range",
@@ -281,8 +229,8 @@
         },
         {
           "anchor": {
-            "blob": "b76721ef5dfd38359d7165436cf269a657bde04d",
-            "content": "sha256:067a5653b83ef2cff719aecbfac9f86512f739702fb4103beede92b36a562d57",
+            "blob": "ee20e82cebeed3333d4831fe27894c9806cfb48c",
+            "content": "sha256:d87f67060ec4aae6bd743a75ae789a746cf8385dc7dcf7c42d48cdbf115109c1",
             "locator": {
               "end": 804,
               "kind": "line_range",

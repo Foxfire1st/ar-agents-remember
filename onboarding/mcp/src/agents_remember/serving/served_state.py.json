@@ -40,15 +40,14 @@
   ],
   "references": {
     "1": {
-      "note": "Optional servingBuild and watcherHealth extend the observer projection; notifier, supervisor and terminal-health tails remain removed.",
+      "note": "Optional servingBuild and watcherHealth extend the observer projection; notifier, supervisor and terminal-health tails remain removed.\n\nAnchor: `ServedWorkspaceProjection`",
       "targets": [
         {
           "anchor": {
-            "blob": "fb6624fd88b109b0c342c8e6cdec3d91daa3fe68",
-            "content": "sha256:482ef4f3d1fa7dd0e45118a18b64d3cdbdfd2c76e22282ce97b1f66391af522a",
+            "blob": "8a75a033367fd982c56bdaad17eb8acef03a1887",
+            "content": "sha256:417c2431a934da24b20f221e9f0a06d716367d668c4bf1661c7df98f40533c1a",
             "locator": {
-              "kind": "symbol",
-              "name": "ServedWorkspaceProjection"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -56,15 +55,14 @@
       ]
     },
     "2": {
-      "note": "Absent build or watcher facts are omitted; a supplied watcher reading is validated and an invalid reading is omitted.",
+      "note": "Absent build or watcher facts are omitted; a supplied watcher reading is validated and an invalid reading is omitted.\n\nAnchor: `served_state_tail`",
       "targets": [
         {
           "anchor": {
-            "blob": "fb6624fd88b109b0c342c8e6cdec3d91daa3fe68",
-            "content": "sha256:a59dc76e2252180bac54d810a0a0005a5db0436cc7bee4983796d965e3778b4b",
+            "blob": "8a75a033367fd982c56bdaad17eb8acef03a1887",
+            "content": "sha256:417c2431a934da24b20f221e9f0a06d716367d668c4bf1661c7df98f40533c1a",
             "locator": {
-              "kind": "symbol",
-              "name": "served_state_tail"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -72,12 +70,12 @@
       ]
     },
     "3": {
-      "note": "The current tail vocabulary is exactly servingBuild and watcherHealth.",
+      "note": "The current tail vocabulary is exactly servingBuild, watcherHealth and checkoutBinding.",
       "targets": [
         {
           "anchor": {
-            "blob": "fb6624fd88b109b0c342c8e6cdec3d91daa3fe68",
-            "content": "sha256:37fb13b405084c654be9385c4310541c1bc9aa14db597ddc3871060a7eccdb18",
+            "blob": "8a75a033367fd982c56bdaad17eb8acef03a1887",
+            "content": "sha256:d283df1699a79f263206566f44140a110617baba1d881df0cc7cdda399228560",
             "locator": {
               "end": 68,
               "kind": "line_range",

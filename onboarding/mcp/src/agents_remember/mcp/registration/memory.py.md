@@ -4,6 +4,8 @@
 
 Memory health, baseline and carryover declarations retain their models and request discriminators, but payloads and operation-only memory request types are resolved on the matching call.
 
+The baseline adapter forwards the explicitly selected `accept_drift` value to the application owner. That option bypasses only the actionable-drift check; it does not waive legacy-card or validator refusal. A stale code/test reference is still rejected by paired staged-tree validation. The flag is not publication authority.
+
 The current source facts below replace the former operative inventory. The separately labelled superseded claims describe only the pre-repair card. Original paragraphs, dated closures, evidence and citation identities remain intact in the explicitly historical section; they grant no current call, restored route or fresh execution acceptance.
 
 - drift_check is no longer a registered memory tool.
@@ -14,8 +16,8 @@ The current source facts below replace the former operative inventory. The separ
 - Typed MQC sync/start/poll and baseline boundaries survive. Carryover keeps flat selection inputs: plan advertises equal-version converted pairs/records, official-code anchor observation and curator-authored history with no commit/report; apply requires `intent_note`, reanchors/indexes/validates the recovery worktree, restores bytes on refusal, skips edited targets and imports no history or commit. `memory_commit_message` and `CarryoverCommitMessages` are removed. `citation_fix` retains finite `documents`/singleton `document`, optional `contract_path` and `dry_run`; `expected_snapshot` and caller `exclude` are absent from its signature and scope construction.
 - `citation_fix` exposes optional `contract_path`; the short description names the ordinary leaf call and points to shipped tool-details for the full ordinary/pre-baseline admissions. The application guard still permits the configured converted root before its attributed baseline with no linked worktree. Route-index apply uses the same measured exception; other unscoped index calls remain read-only previews. Transport declarations do not bypass the application guard.
 
-- The public fixer signature makes `contract_path` optional; its short description gives leaf-call cues and points to `docs/tool-details.md`, but does not state the ordinary/pre-baseline admissions. [17]
-- The index description retains pre-baseline apply and qualifies other unscoped calls as read-only previews. [18]
+- The public fixer signature makes `contract_path` optional; its short description gives leaf-call cues and points to `docs/tool-details.md`, but does not state the ordinary/pre-baseline admissions. Source caption: `citation_fix`
+- The index description names the pre-baseline admission an unscoped write needs and leaves the rest to the shipped tool-details; the read-only preview other unscoped calls get is the application guard's behaviour, not a qualification the description states. Source caption: `route_index_refresh`
 
 ### Source and authority bounds
 
@@ -125,18 +127,17 @@ No configured external domain source applies.
 - The payload builders for the carryover plan and report-filing apply pair. [2]
 - The typed sync/start/poll payload builders. [3]
 
-- Carryover registration declares one memory subject and describes the computed cache refresh. [1]
+- Carryover registration declares a leaf-bound recovery application that reanchors, indexes and validates, requires intent_note, and carries no commit or imported history. Source caption: `memory_carryover_apply` [1]
 - The `MemoryBranches` parameter object. [4]
 - The `CarryoverSelection` parameter object. [5]
-- The `CarryoverCommitMessages` parameter object. [6]
-- The payload builder for the carryover plan. [7]
-- The payload builder for the report-filing apply. [8]
-- The typed sync payload builder. [9]
-- The typed start payload builder. [10]
-- The typed poll payload builder. [11]
-- The `citation_fix` registration and its caller-exclude parameter. [12]
-- The scope object the excludes ride with. [13]
-- The one construction point that carries them into every citation operation. [14]
+- The payload builder for the carryover plan. [6]
+- The payload builder for the report-filing apply. [7]
+- The typed sync payload builder. [8]
+- The typed start payload builder. [9]
+- The typed poll payload builder. [10]
+- The `citation_fix` registration with its one-card or bounded-card selectors, optional `contract_path` and `dry_run`; no caller exclude is declared. Source caption: `citation_fix` [11]
+- The scope object the citation operations share: it carries one named document or a bounded list of them, and refuses both selectors, an empty list, or a list outside `citation_fix`. [12]
+- The one scope value the citation operations share: the application entry points default to `DEFAULT_CITATION_OPERATION_SCOPE`, and the registration constructs the named-document scope it passes in. [13]
 
 ### Cross-Repo References
 
@@ -205,11 +206,11 @@ The registration advertises repository-only calls as official diagnostics and re
 polls to repeat the original contract path. It does not imply that repository id can select an
 acceptance pair.
 
-- The drift description states the anchor measurement, the non-blocking stale rule, and the no-repair boundary. [15]
-- The adoption description states that accept_drift clears stale anchors only and the first baseline is validated. [16]
+- The drift description states the anchor measurement, the non-blocking stale rule, and the no-repair boundary. [14]
+- Baseline adoption forwards accept_drift without bypassing legacy-card or validator refusal; stale code/test references still fail exact paired staged-tree validation before any baseline is published. [15]
 
 </details>
 
-- Registration exposes converted worktree-only carryover and finite citation selectors without retired commit-message, caller-exclude or expected-snapshot arguments. [19]
+- Registration exposes converted worktree-only carryover and finite citation selectors without retired commit-message, caller-exclude or expected-snapshot arguments. [18]
 
-- Memory health, baseline and carryover declarations retain their models and request discriminators, but payloads and operation-only memory request types are resolved on the matching call. [20]
+- Memory health, baseline and carryover declarations retain their models and request discriminators, but payloads and operation-only memory request types are resolved on the matching call. [19]

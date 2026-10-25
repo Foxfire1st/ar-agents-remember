@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/worktrees/task_fact_publication.py",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
@@ -30,12 +31,22 @@
       ]
     },
     "2": {
-      "note": "Contract scope and task-fact adapters share the task-first owner; contract scope short-circuits when no override invalidates a projection.",
+      "note": "Contract scope and task-fact adapters share the task-first owner; contract scope short-circuits when no override invalidates a projection.\n\nAnchor: `contract_projection_scopes` `publish_contract_task_facts` `preview_contract_task_facts`",
       "targets": [
         {
           "anchor": {
-            "blob": "10e812f1f833b1b85b91249f1f1e9a49c9705556",
-            "content": "sha256:16a0a716bd61cb4314d54c76d96343028502dee62843d4dce65ccfc985d57483",
+            "blob": "476c1c24ac02e05fb96b654322bf771287e6cbff",
+            "content": "sha256:01f109ef017b4d93df5f9a496e587aec0a19137d0413abfa231310af55099a44",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "476c1c24ac02e05fb96b654322bf771287e6cbff",
+            "content": "sha256:f683765b809d8ed03750b515fa64cfe32532e72dc5f5af77bcdefffa7c5c8e12",
             "locator": {
               "kind": "symbol",
               "name": "contract_projection_scopes"
@@ -45,8 +56,8 @@
         },
         {
           "anchor": {
-            "blob": "10e812f1f833b1b85b91249f1f1e9a49c9705556",
-            "content": "sha256:ed69405f1735e82ceff7b31dc51443dac66df59b3549c22848235bc01d7c8755",
+            "blob": "476c1c24ac02e05fb96b654322bf771287e6cbff",
+            "content": "sha256:911681b1ee2bdad037787f258361da75af32146634bec4c58ca8822f3293436b",
             "locator": {
               "kind": "symbol",
               "name": "publish_contract_task_facts"
@@ -56,8 +67,8 @@
         },
         {
           "anchor": {
-            "blob": "10e812f1f833b1b85b91249f1f1e9a49c9705556",
-            "content": "sha256:a0bb2d61ff9317968aae14d1523dfefcabb0b2f26ee5e68e7c6d36c2efd52106",
+            "blob": "476c1c24ac02e05fb96b654322bf771287e6cbff",
+            "content": "sha256:ae61694687bba7b0681cb42b430d0d9ba7aea680d424d9e5b2531bfdcb09ad36",
             "locator": {
               "kind": "symbol",
               "name": "preview_contract_task_facts"

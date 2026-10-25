@@ -88,14 +88,17 @@ after checking live sources.
 
 ### Repo-Internal References
 
-- The capsule entry point re-shapes the flat tool parameters into the enclosure selector the coordination layer accepts. [1]
-- The three skill entry points build one catalog, with the shipped corpus as the default and a caller-supplied tree as the test override. [2]
+
+- `skill_catalog_registry` builds one catalog from `SkillCatalogRequest`: the shipped corpus by default, and a caller-supplied origin and root when a test drives a different tree. [2]
+
 - Delivery refuses while any discovered skill is unreadable, checked before the read. [3]
 - The request records both entry-point families take. [4]
 - The frozen operation vocabulary the capsule request carries. [5]
 
 - The consumer obligations recorded for a non-MCP caller of these entry points. [7]
+
 - The case that executes the discovery-registry-versus-body separation. [8]
+
 
 ### Cross-Repo References
 

@@ -61,7 +61,9 @@ No configured domain documentation could be checked.
 - The retained typed-JSON provenance decoder reads Authorship; its former encoder is fixture support only. [3]
 
 - The envelope is part of the sealed revision payload, so provenance is inside the digest. [4]
+
 - Git commit attribution stays with its existing owner; this leaf read it for context and copied nothing. [5]
+
 
 ### Cross-Repo References
 

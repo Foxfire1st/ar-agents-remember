@@ -1,5 +1,6 @@
 {
   "path": "dashboard/src/panels/MemoryMirror.tsx",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
@@ -7,7 +8,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2ec9093820c8c56fe734ba2d14e274bc7c792589",
+            "blob": "45703aad8672ac0bd3f53a1e3be16aef2ad16336",
             "content": "sha256:4c0fb7c43778f84379248a5e9c2dcccaf4baf74975385a21d6539f52be823e57",
             "locator": {
               "kind": "symbol",
@@ -20,20 +21,8 @@
       ]
     },
     "2": {
-      "note": "The panel reads only driftSnapshots and ledgers from Analytics; the retired stalest-sidecar list is not rendered.",
+      "note": "The panel reads only driftSnapshots and ledgers from Analytics; the retired stalest-sidecar list is not rendered.\n\nAnchor: `Analytics`",
       "targets": [
-        {
-          "anchor": {
-            "blob": "1c93a3cfc20a23e78c37a94c82f1c267d32a474a",
-            "content": "sha256:d1955ad39e540d3e858b0a0f29b84727dcfe59052e79701346b07919d3bf6dc6",
-            "locator": {
-              "kind": "symbol",
-              "name": "Analytics"
-            },
-            "path": "mcp/src/agents_remember/observer/projection.py"
-          },
-          "kind": "code"
-        },
         {
           "anchor": {
             "blob": "c95a109ddbcfdc43cc3f0268d17ef24c38aef450",
@@ -43,6 +32,17 @@
               "kind": "line_range",
               "start": 57
             }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fd0cd6ba53b5d874adfcb26807b26ab92e77d56e",
+            "content": "sha256:8f897ee97a5df4ec6bc2cdb53e32669158ad72e83b1d826e0af636eb31908a32",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/observer/projection.py"
           },
           "kind": "code"
         }
@@ -69,7 +69,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2ec9093820c8c56fe734ba2d14e274bc7c792589",
+            "blob": "45703aad8672ac0bd3f53a1e3be16aef2ad16336",
             "content": "sha256:4c0fb7c43778f84379248a5e9c2dcccaf4baf74975385a21d6539f52be823e57",
             "locator": {
               "kind": "symbol",

@@ -1,5 +1,6 @@
 {
   "path": "mcp/tests/test_knowledge_read_boundaries.py",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
@@ -24,12 +25,38 @@
       "targets": [
         {
           "anchor": {
-            "blob": "11ba98ff63f4a4815985ac51e2c0c7b5a48556a4",
-            "content": "sha256:880007e41d5dfbf20a7f1934769d322cff9249e28958935577fcc45b1c15aba0",
+            "blob": "102c4550ab6429f44c8fb543d1d0662de66a1b8c",
+            "content": "sha256:fb909eced8d9b74a706a254a7d5461bf2ba4ed61033189f73c83d38b55f7c535",
             "locator": {
-              "end": 547,
+              "end": 538,
               "kind": "line_range",
-              "start": 547
+              "start": 538
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "102c4550ab6429f44c8fb543d1d0662de66a1b8c",
+            "content": "sha256:ac94ce324d5907a812017f86b219447c842da60fe8a595de393e92ada9ade9dc",
+            "locator": {
+              "end": 556,
+              "kind": "line_range",
+              "start": 556
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "102c4550ab6429f44c8fb543d1d0662de66a1b8c",
+            "content": "sha256:bfd236e434e81538028483be4c24c3c7337389a8ed48d14984c6c30c44e52311",
+            "locator": {
+              "end": 474,
+              "kind": "line_range",
+              "start": 474
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -319,12 +346,34 @@
       ]
     },
     "9": {
-      "note": "Controlled non-zero lookup exit asserts unavailable resolution and exit-status detail; historical withdrawn kill and natural-path nonreachability are separate.",
+      "note": "Controlled non-zero lookup exit asserts unavailable resolution and exit-status detail; historical withdrawn kill and natural-path nonreachability are separate.\n\nAnchor: `_tree_entry` `_TreeLookupFailed` `test_a_lookup_that_answered_non_zero_is_unavailable_rather_than_an_absent_path`",
       "targets": [
         {
           "anchor": {
-            "blob": "24c7f2718e93cdc31278f980928b3ae205aa8c86",
-            "content": "sha256:98ad77f96dbefbe914ffd43fd0d599365cc160d6938b470fef4d3183f09f0708",
+            "blob": "d8f46ee1c5404cab224a76e01020e735b06cdc76",
+            "content": "sha256:b47621a27defc5426917edd8933fd829b1d411ddc075e4511d57c563d9bf660f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/read_anchors.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "50b41aa7749feb4071dda7fd3d204a4cd8475cd7",
+            "content": "sha256:ea9a54781eb6b85fc2cf5d61b9163238de12743aa4f3056b738e9670d3a888cf",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_knowledge_read_paths.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "d8f46ee1c5404cab224a76e01020e735b06cdc76",
+            "content": "sha256:62cf932e19d9cc3abd4240c043a0c4f0d7ad0f9f5a39d59002b045cce748f5fc",
             "locator": {
               "kind": "symbol",
               "name": "_tree_entry"
@@ -347,8 +396,8 @@
         },
         {
           "anchor": {
-            "blob": "d3aff0e96bc5b889c22b50c0e0b2888133963c9c",
-            "content": "sha256:e04d37ea6b3a2403b9a46559e9711d1081b0155dc7e4535b59ffabb25668a116",
+            "blob": "50b41aa7749feb4071dda7fd3d204a4cd8475cd7",
+            "content": "sha256:a72bee8a2ef688cfec02937354f31ea3fe0d26ee72f51f0166a6c2c6242390ee",
             "locator": {
               "kind": "symbol",
               "name": "test_a_lookup_that_answered_non_zero_is_unavailable_rather_than_an_absent_path"

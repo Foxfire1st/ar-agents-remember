@@ -21,15 +21,14 @@
   ],
   "references": {
     "1": {
-      "note": "The four refusals in their fixed order.\n\nAnchor: `closed_leaf_dataset_refusal`; `unreadable_half_refusal`; `candidate_receipt_refusal`",
+      "note": "The pair's refusals in their fixed order: an unavailable knowledge selection, the closed leaf's dataset, an absent half, an unreadable half, and the candidate receipt.\n\nAnchor: `pair_preflight_refusal`",
       "targets": [
         {
           "anchor": {
-            "blob": "203d4e6f04bde4d519e649b0319edf2388ca3460",
-            "content": "sha256:075c9360f3cbc7bf7f22503dc169467135f7990dbe6bc32133557e18e25d0ee8",
+            "blob": "e35a60680f871cd002ce6b1ccd3a831d69561ae2",
+            "content": "sha256:efdfb539992923159232373adc01d19a3c62af719ae1b993671c6090aa4c4986",
             "locator": {
-              "kind": "symbol",
-              "name": "pair_preflight_refusal"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -37,15 +36,14 @@
       ]
     },
     "2": {
-      "note": "The live pair's absent-half refusal, naming the half and the file.\n\nAnchor: \"candidate_dataset_absent\"",
+      "note": "The live pair's absent-half refusal, naming the half and the file.\n\nAnchor: `absent_pair_refusal`",
       "targets": [
         {
           "anchor": {
-            "blob": "203d4e6f04bde4d519e649b0319edf2388ca3460",
-            "content": "sha256:0cc85c48aef232bb5d5e23a8b427b1abe601d1e6818921109e34a7af86377805",
+            "blob": "e35a60680f871cd002ce6b1ccd3a831d69561ae2",
+            "content": "sha256:efdfb539992923159232373adc01d19a3c62af719ae1b993671c6090aa4c4986",
             "locator": {
-              "kind": "symbol",
-              "name": "absent_pair_refusal"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -53,15 +51,14 @@
       ]
     },
     "3": {
-      "note": "The catalogue caller: one call, refused before any subject is listed.\n\nAnchor: `pair_preflight_refusal`",
+      "note": "The catalogue caller: one call, refused before any subject is listed.\n\nAnchor: `list_knowledge_review_entries`",
       "targets": [
         {
           "anchor": {
-            "blob": "e82e48a3fe51cf1b33e2db3907db00759c429781",
-            "content": "sha256:6e165a86999d36d0d5734a5226bf7e2bf05a2b32e87e4ccf9b8425735205e194",
+            "blob": "1c9f8394dfb38bee67a5da3b90ace66147bd5334",
+            "content": "sha256:bc9aed0908cabfef3b176f1734ea114458607fab1f9bf612787eace2cfa4d0c0",
             "locator": {
-              "kind": "symbol",
-              "name": "list_knowledge_review_entries"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/knowledge_review.py"
           },

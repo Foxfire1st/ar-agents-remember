@@ -55,33 +55,77 @@ consumes, and in the cases that drive the shipped review read. The three details
 **`unavailable` is a third fact, not a flavour of absence or of measurement**; and **only a `stale`
 movement is folded into the staleness the review publishes**, while an absence stays visible beside it.
 
-- **The module's own statement of the requirement, the read-half gap it closes, and the "measures, owns no verdict" boundary.** [1]
-- The published surface: exactly the two operations, and the routing that keeps the R17 fold callable beside the movement read. [2]
+
+- The module's own statement of purpose: it renders exact managed-sync tree measurements on the live review surface (ICR-R22). [1]
+
+
+- The module publishes three public names — the movement read, the sync-movement fold and the external-movement fold — and declares no `__all__`. [2]
+
+
 - The two channels a moved identity can belong to, and the `channel:identity` spelling. [3]
-- **The verdict-to-state mapping stated as a table, and the comment that records why a two-way channel reading would promote `unmeasured` to agreement (G1).** [4]
+
+
+- The verdict-to-state mapping, declared inside the projection: `current` stays `current`, `moved` becomes `stale` and `unmeasured` becomes `not-measured`. [4]
+
+
 - The remedy stated once: the successor generation the record itself names, not an action this module performs. [5]
-- **The never-raising read: no leaf contract, or any store read error, answers `None` so the live review read cannot fail on a measurement.** [6]
-- **The three outcomes and the middle one's own reason for existing — an unusable record is neither an absence nor a measurement.** [7]
+
+
+- The never-raising read: no leaf contract, a closed leaf or a pair that is no longer live answers `None`, and any store or read error answers an `unavailable` movement instead of raising. [6]
+
+
+- The measurement's outcomes: a missing or unrecorded comparison is no movement at all, a selection or record that cannot be used is `unavailable` with its detail, and an accepted record is projected. [7]
+
+
 - The `unavailable` value: its own state, `record_readable=False`, the reason, and the absence sentence. [8]
-- The reviewed dataset identity read off the generation's own after side, or `None` when it retained none. [9]
+
+
+- The reviewed identities the movement carries — the comparison digest and the reviewed code and memory candidate trees — read off the retained source comparison. [9]
+
+
 - **The projection: the state taken from the record's verdict, moved identities named only on a moving channel, resolved identities only where one moved.** [10]
-- **The absence reason built from the record's own values, including the location's own state and sentence.** [11]
-- **One sentence per state, with the agreement sentence reachable only from `current`.** [12]
-- The agreement clause that names only the channels actually compared and matched. [13]
+
+
+- An `unmeasured` projection publishes the record's own `memory_detail` as its reason; every measured state carries none. [11]
+
+
+- The statement the movement publishes is the rebinding record's own `statement()`: one sentence per state, with the agreement sentence reachable only from `current`. [12]
+
+
+- The projection adds no clause of its own: the statement, including the clause naming the channels compared and their matches, comes from the rebinding record. [13]
+
+
 - **The fold: a `stale` movement outranks the reader's carried identity, and the previous input is always one somebody held.** [14]
+
 
 - Selection of the exact retained tree comparison, with explicit unavailable and historical-limit states. [15]
 
-- **The record read as a state rather than an exception, with its three read states.** [16]
+
+- The record read as a state rather than an exception, with four read states: `recorded`, `legacy-limit`, `not-recorded` and `unreadable`. [16]
+
+
 - **The check that a record describes *this* generation, which is what makes a foreign record `unavailable` instead of a measurement.** [17]
+
 - The record's own three verdicts, and the seven channel matches the projection reads for identity naming only. [18]
 - The sealed manifest this module reads and never rewrites, its knowledge sides, and the binding each side reports. [19]
+
 - The resolution whose `contract` decides whether a generation can be resolved at all. [20]
+
+
 - **The movement model whose validator the projection must satisfy, and the clause that ties `record_readable` to `unavailable`.** [21]
+
+
 - **The live read that consumes both operations and folds the movement into the staleness it publishes.** [22]
+
+
 - The payload field the movement is published on, beside the staleness it is folded into. [23]
+
+
 - **The reopen channel reading the same durable record for itself, with the same location-then-generation order.** [24]
+
+
 - The sync tool's projection point, where the write half is attached after the Git work has finished. [25]
+
 
 - The live review labels the exact memory input a sync moved. [26]
 

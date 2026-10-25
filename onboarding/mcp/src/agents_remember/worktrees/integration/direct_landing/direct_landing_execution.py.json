@@ -58,12 +58,12 @@
   ],
   "references": {
     "1": {
-      "note": "Execution publishes or reuses real memory output and refreshes the cache afterward.\n\nAnchor: \"ledgerCache\"",
+      "note": "Execution publishes or reuses real memory output and refreshes the cache afterward.",
       "targets": [
         {
           "anchor": {
-            "blob": "71f832a845ba7f4e7e47de4c6929d9ffa42c2495",
-            "content": "sha256:82f07877e1f8720099fb74a1d5d1acd9ff514510dd660e8033ef4876211a130d",
+            "blob": "6c7d29157526ef2aafde959c4a7507881596815e",
+            "content": "sha256:bd8451039a34cb7ca620810fe40f034694ff2e8ac3eef1cf374ad2ec292443fa",
             "locator": {
               "kind": "symbol",
               "name": "execute_direct_landing"
@@ -73,8 +73,8 @@
         },
         {
           "anchor": {
-            "blob": "71f832a845ba7f4e7e47de4c6929d9ffa42c2495",
-            "content": "sha256:2ed178292059a03b2e80e88e5d8e1130489d02eafe95ee8b3fe93e7fb31c1073",
+            "blob": "6c7d29157526ef2aafde959c4a7507881596815e",
+            "content": "sha256:70bf0ee2bd1ec49f073707599b09390037f6bec1bd460d4fb3020c09beefda3e",
             "locator": {
               "end": 75,
               "kind": "line_range",
@@ -82,11 +82,21 @@
             }
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6c7d29157526ef2aafde959c4a7507881596815e",
+            "content": "sha256:41d08a6dbcb3eb262f4bd5a757022983784d0b77e9cc89108038789754647e50",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
         }
       ]
     },
     "2": {
-      "note": "Prepared attempts preserve repository and exact pre-commit tree evidence.",
+      "note": "Prepared attempts preserve repository and exact pre-commit tree evidence.\n\nAnchor: `_require_accepted_memory_prestate` `_require_prepared_direct_attempt`",
       "targets": [
         {
           "anchor": {
@@ -112,12 +122,22 @@
         },
         {
           "anchor": {
-            "blob": "71f832a845ba7f4e7e47de4c6929d9ffa42c2495",
-            "content": "sha256:0ed8353a9586779f617bc7248025bce64917f6ce15fd1308ee70b80df2629275",
+            "blob": "6c7d29157526ef2aafde959c4a7507881596815e",
+            "content": "sha256:7f06d053086fcdd8b0384f1aaf6b06bed18c8e89141b2b8750c7c2139386189e",
             "locator": {
               "end": 255,
               "kind": "line_range",
               "start": 239
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6c7d29157526ef2aafde959c4a7507881596815e",
+            "content": "sha256:41d08a6dbcb3eb262f4bd5a757022983784d0b77e9cc89108038789754647e50",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -154,15 +174,14 @@
       ]
     },
     "4": {
-      "note": "The lifecycle recovery owner resumes the generation before execution.\n\nAnchor: \"lifecycle-generation-changed\"",
+      "note": "The lifecycle recovery owner resumes the generation before execution.\n\nAnchor: `recover_direct_landing_under_authority`",
       "targets": [
         {
           "anchor": {
-            "blob": "36a18c6b680b5bde6ccdb2b4dde4028933dd85f1",
-            "content": "sha256:3d903382f2d942483703b354899fdadf37cdc45b4e74b348cf98cb2cf4e6b17a",
+            "blob": "4b458a3bcd123b06f0fe42ba8cbba04d34e3c277",
+            "content": "sha256:c21dac48de58598b7a2ce95207e878e025ab9be68c8b77e297fa84ad9d728911",
             "locator": {
-              "kind": "symbol",
-              "name": "recover_direct_landing_under_authority"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_recovery.py"
           },
@@ -171,27 +190,14 @@
       ]
     },
     "5": {
-      "note": "Lost-receipt recovery and clean reuse are exercised with real temporary repositories.",
+      "note": "Lost-receipt recovery and clean reuse are exercised with real temporary repositories.\n\nAnchor: `_recover_after_interrupted_receipt` `test_direct_landing_publishes_memory_and_recovers_independently_of_cache`",
       "targets": [
         {
           "anchor": {
-            "blob": "3cfecb05bacb0de3e8bc95f4d1c5d3351845c269",
-            "content": "sha256:a096b135eb3b68c3bc32a895b09cee585bd9ba58dc7052409b1a8045464334ac",
+            "blob": "e5e2ee915969059ef9c62381725c0e2f73f229d0",
+            "content": "sha256:6e58c8410298d7d88cd213b6be058805b71d47020449fc6d3fcc168bdcce4564",
             "locator": {
-              "kind": "symbol",
-              "name": "_recover_after_interrupted_receipt"
-            },
-            "path": "mcp/tests/test_direct_landing.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "e026cb197331402f445ffac02968faac936c15d0",
-            "content": "sha256:04010af4035543f16e10e1a085e08495cb9f7a998f349c69adf9950414a4cf4f",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_direct_landing_publishes_memory_and_recovers_independently_of_cache"
+              "kind": "file"
             },
             "path": "mcp/tests/test_direct_landing.py"
           },
@@ -204,8 +210,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e5ae5eefb286d1ed5f276795f7511e15efc5a81b",
-            "content": "sha256:64f7982459a74d6267d7124932b1e5fe231f666e8c19ec82e9173a0210830a4f",
+            "blob": "6c7d29157526ef2aafde959c4a7507881596815e",
+            "content": "sha256:ab336136d1a2dfe8751145a58984c8589d195939ce3998202c7bc6fe362a7c45",
             "locator": {
               "end": 520,
               "kind": "line_range",

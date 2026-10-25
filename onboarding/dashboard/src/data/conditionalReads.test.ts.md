@@ -21,4 +21,5 @@ the same-facts case now pins an owner's wait as its own: two `load` calls for on
 
 - Facts-qualified 304 identity with no body decode. [1]
 - Actual-store entry and byte bounds over growing histories. [2]
+
 - Oversize, same-facts pending sharing, abort and current failure. [3]

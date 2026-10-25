@@ -34,4 +34,5 @@ metadata admits the same major-version range in its `dev` extra.
 - The checkout pins pytest-xdist 3.8.0 with the other quality tools. [1]
 - Root pytest configuration selects four workers by default. [2]
 - The checkout requirements pin Ruff 0.16.1 exactly. [3]
+
 - The package development extra independently pins the same Ruff release. [4]

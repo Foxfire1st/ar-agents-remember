@@ -7,8 +7,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6b96781639df87007cc9f21053f8ee41599c89d8",
-            "content": "sha256:0c93e4a3c1295d6c2ece2fccc8cb2ada94db4a94d4c17f0bb32685fc37616566",
+            "blob": "f70e3d124e543009c5876c7472ccdb85120ff60c",
+            "content": "sha256:f3ed2e52076e73a9b6230c5dee0b28cff962c346883dabf2f6f3ce005823b347",
             "locator": {
               "end": 311,
               "kind": "line_range",
@@ -135,25 +135,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a7b238883ac81b8560b5e31890a05d9d253fd689",
-            "content": "sha256:875cbb062bb8e01255e5935e57d3bda65f140198acc470119e125108ccb398c8",
+            "blob": "c9e2847f64ca428bdc799c8173b43aa736f4b0e9",
+            "content": "sha256:b52ed062161b9c5d45e5088c38146ca084ceadd5859e230bf977b07b67cffe05",
             "locator": {
-              "end": 849,
+              "end": 874,
               "kind": "line_range",
-              "start": 798
-            },
-            "path": "mcp/src/agents_remember/worktrees/worktree_contract.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "a7b238883ac81b8560b5e31890a05d9d253fd689",
-            "content": "sha256:e716b22e10ba0963ceb1a6133816bc238c956f11486fc189e1a1aed31552f78b",
-            "locator": {
-              "end": 839,
-              "kind": "line_range",
-              "start": 788
+              "start": 822
             },
             "path": "mcp/src/agents_remember/worktrees/worktree_contract.py"
           },
@@ -212,12 +199,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "dec31ccdcb591d5166431d390ccbbd2612e63565",
-            "content": "sha256:5c666937acc20101aa93a1c7218fd85e9ec69b47641ee6d9b49abf18935c45df",
+            "blob": "dcbcb92eb8805a1f241603ea248fdac21fb64a9d",
+            "content": "sha256:52b5c0761eb8d202bf1a85e9e7aee1041bb145fcefaa0de93e0be6ea0a9c9664",
             "locator": {
-              "end": 123,
+              "end": 133,
               "kind": "line_range",
-              "start": 63
+              "start": 40
             },
             "path": "mcp/src/agents_remember/worktrees/modules/finalize.py"
           },

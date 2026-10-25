@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/cli/paseo_catalog.py",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
@@ -268,12 +269,22 @@
       ]
     },
     "2": {
-      "note": "Frozen implementation of resolve_agent_selection supporting the stated file behavior.",
+      "note": "Frozen implementation of resolve_agent_selection supporting the stated file behavior.\n\nAnchor: `resolve_agent_selection`",
       "targets": [
         {
           "anchor": {
-            "blob": "56fd9c6668fd2e3fad073af42f3532c9db66a3eb",
-            "content": "sha256:6d9ea8093f9a0e130c4a8ec9ccddad6e21bb2fa707586e25774debb36148798e",
+            "blob": "f65bc41685229d76a9af0e644b2b9b2f17f5579f",
+            "content": "sha256:a3ba2f8ef38f4bb239f47600bc8078388bf576b7d68bbba7991f1bc139d24801",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f65bc41685229d76a9af0e644b2b9b2f17f5579f",
+            "content": "sha256:f2137421ead3ed7011fe470b12a190f5aa3a1862b743bc636ac3623b16b4b804",
             "locator": {
               "kind": "symbol",
               "name": "resolve_agent_selection"
@@ -284,15 +295,14 @@
       ]
     },
     "3": {
-      "note": "Frozen implementation of _tier_refusal supporting the stated file behavior.",
+      "note": "Frozen implementation of _selection_refusal supporting the stated file behavior.\n\nAnchor: `_tier_refusal`",
       "targets": [
         {
           "anchor": {
-            "blob": "56fd9c6668fd2e3fad073af42f3532c9db66a3eb",
-            "content": "sha256:eed98bb1f187b87ecad5c5666ec4f21d67a643b7e6db34c1cdae025616f1efee",
+            "blob": "f65bc41685229d76a9af0e644b2b9b2f17f5579f",
+            "content": "sha256:a3ba2f8ef38f4bb239f47600bc8078388bf576b7d68bbba7991f1bc139d24801",
             "locator": {
-              "kind": "symbol",
-              "name": "_tier_refusal"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -300,12 +310,12 @@
       ]
     },
     "4": {
-      "note": "Checks reuse, explicit refresh and changed daemon home in the key.\n\nAnchor: `LauncherOptionsTests.test_catalog_is_cached_per_runtime_and_only_a_refresh_rediscovers`",
+      "note": "Checks reuse, explicit refresh and changed daemon home in the key.",
       "targets": [
         {
           "anchor": {
-            "blob": "13a429f43e0bf5d2238a11cbb32f724ffa98056f",
-            "content": "sha256:0f4ba21a61cf802e6c6f510b5e605fecc7389b684c7708f0c3b9d2d1aa91e056",
+            "blob": "970bac1a296488d06bea9315fb0a241d33dd8744",
+            "content": "sha256:1fbb034e76bb8e5f34e3440e7d408d0ccd0260d92d701d20aad6a39452f02d82",
             "locator": {
               "end": 224,
               "kind": "line_range",
@@ -318,12 +328,12 @@
       ]
     },
     "5": {
-      "note": "Checks rejected choices create no receipt, workspace, agent or enclosure.\n\nAnchor: `LaunchValidationTests.test_a_launch_is_validated_against_the_catalog_before_anything_is_created`",
+      "note": "Checks rejected choices create no receipt, workspace, agent or enclosure.",
       "targets": [
         {
           "anchor": {
-            "blob": "74d6da3fea4daae707be4261ebe77b2c66206029",
-            "content": "sha256:d375ad52fb95f55321174a0c7bcfabc618077684c2fb29ade637d48dc0029286",
+            "blob": "970bac1a296488d06bea9315fb0a241d33dd8744",
+            "content": "sha256:b8568d36b5a5d050388be5fa3e39a1f762704ec5eff70c90635f5d57a0b19938",
             "locator": {
               "end": 437,
               "kind": "line_range",
@@ -352,12 +362,22 @@
       ]
     },
     "7": {
-      "note": "Host catalog validation and step-up provenance share the existing resolver.",
+      "note": "Host catalog validation and step-up provenance share the existing resolver.\n\nAnchor: `resolve_agent_selection`",
       "targets": [
         {
           "anchor": {
-            "blob": "8a9a70a8d78188803743060a92166f0028b70d86",
-            "content": "sha256:cbf3f160756de1839dd4a7dfc62850475caaa39151e4de3d28ad0c5ded1df7c7",
+            "blob": "f65bc41685229d76a9af0e644b2b9b2f17f5579f",
+            "content": "sha256:a3ba2f8ef38f4bb239f47600bc8078388bf576b7d68bbba7991f1bc139d24801",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f65bc41685229d76a9af0e644b2b9b2f17f5579f",
+            "content": "sha256:f2137421ead3ed7011fe470b12a190f5aa3a1862b743bc636ac3623b16b4b804",
             "locator": {
               "kind": "symbol",
               "name": "resolve_agent_selection"

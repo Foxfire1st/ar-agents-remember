@@ -3,15 +3,14 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "Boundary settings and reload assertions distinguish bounded wake text from file payload.",
+      "note": "Boundary settings and reload assertions separate the bounded wake text from the file payload.\n\nAnchor: `MessageLimitTests`",
       "targets": [
         {
           "anchor": {
-            "blob": "7fb28d2fe8c6ea2789be445debc7814b2e600856",
-            "content": "sha256:7da92962a58b0a3c52b928ce56a133952cc04697af02ef4348185c05e0ea4306",
+            "blob": "35eee9358ff5b6e22cf0bf1fc65e91e7bb8ebdd7",
+            "content": "sha256:ecaedac99e048db46db6fb6642ff948784d1c41e74010f0fe053e70db989216a",
             "locator": {
-              "kind": "symbol",
-              "name": "MessageLimitTests"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -19,15 +18,14 @@
       ]
     },
     "2": {
-      "note": "Message fixtures inspect stored payloads, pointers, reply files and workspace links.",
+      "note": "Message fixtures inspect stored payloads, pointers, reply files and workspace links.\n\nAnchor: `MessageFileTests`",
       "targets": [
         {
           "anchor": {
-            "blob": "1f5aac227185888ad902cd1c256dea4999fdc024",
-            "content": "sha256:c2e99627c2467be4042ae7aaf184519d5bbab8f123953745263b649e16e59eb4",
+            "blob": "35eee9358ff5b6e22cf0bf1fc65e91e7bb8ebdd7",
+            "content": "sha256:ecaedac99e048db46db6fb6642ff948784d1c41e74010f0fe053e70db989216a",
             "locator": {
-              "kind": "symbol",
-              "name": "MessageFileTests"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -62,26 +60,14 @@
       ]
     },
     "4": {
-      "note": "Successor guidance and strict refusal fields remain separate from automatic retargeting.",
+      "note": "Successor guidance and strict refusal fields stay separate from automatic retargeting.\n\nAnchor: `SuccessorAndReturnTests` `RegisteredRefusalTests`",
       "targets": [
         {
           "anchor": {
-            "blob": "1f5aac227185888ad902cd1c256dea4999fdc024",
-            "content": "sha256:a38c525b5384cef537177a2e29943a50727a2b8a628345c08f7f3981ed9e6ad9",
+            "blob": "35eee9358ff5b6e22cf0bf1fc65e91e7bb8ebdd7",
+            "content": "sha256:ecaedac99e048db46db6fb6642ff948784d1c41e74010f0fe053e70db989216a",
             "locator": {
-              "kind": "symbol",
-              "name": "SuccessorAndReturnTests"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "1f5aac227185888ad902cd1c256dea4999fdc024",
-            "content": "sha256:d29eca0ce59213e66b462404ee66651e14b069f29f50974367875a4647cc6f55",
-            "locator": {
-              "kind": "symbol",
-              "name": "RegisteredRefusalTests"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -89,12 +75,12 @@
       ]
     },
     "5": {
-      "note": "The composed file fixtures patch facade utc_stem, pin retained refusal files on a non-holdable unresumable session instead of busy holding, and archive the old holder before constructing successor fixtures. Full-payload/collision/rollback/strict-response checks remain controlled in-process cases; currentness does not claim a runtime pass or promote an old busy-refusal case.",
+      "note": "The composed fixtures pin retained refusal files on a non-holdable unresumable session and archive the old holder before successor fixtures.",
       "targets": [
         {
           "anchor": {
-            "blob": "694ad09985aa2a08b420012645a2d3412a0da4c7",
-            "content": "sha256:a2c04da78896a7e664491b1b3cbac7802881c63d935d84e78fe0b4304738ce72",
+            "blob": "35eee9358ff5b6e22cf0bf1fc65e91e7bb8ebdd7",
+            "content": "sha256:ecaedac99e048db46db6fb6642ff948784d1c41e74010f0fe053e70db989216a",
             "locator": {
               "end": 670,
               "kind": "line_range",
@@ -106,12 +92,12 @@
       ]
     },
     "6": {
-      "note": "The former fifty-character wait-reply truncation control is retired with that subject. Reply-file content and bound/refusal assertions remain; current source retains the full reply instead of claiming the old lower cut is still enforced.\n\nAnchor: Current STOP-delta source carrier",
+      "note": "The former fifty-character wait-reply truncation control is retired with that subject. Reply-file content and bound/refusal assertions remain; current source retains the full reply instead of claiming the old lower cut is still enforced — mcp/tests/test_role_message_files.py.",
       "targets": [
         {
           "anchor": {
-            "blob": "7fb28d2fe8c6ea2789be445debc7814b2e600856",
-            "content": "sha256:1554bb630b9f68fb16ceb7ea8fdc6f781eac83a8a77f7b6ada8fc87df3b829ae",
+            "blob": "35eee9358ff5b6e22cf0bf1fc65e91e7bb8ebdd7",
+            "content": "sha256:ecaedac99e048db46db6fb6642ff948784d1c41e74010f0fe053e70db989216a",
             "locator": {
               "kind": "file"
             }

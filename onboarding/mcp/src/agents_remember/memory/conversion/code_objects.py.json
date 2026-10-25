@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/memory/conversion/code_objects.py",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
@@ -40,12 +41,22 @@
   ],
   "references": {
     "1": {
-      "note": "The read-only class retains raw blobs and instance-local blob-keyed split lines; no persistent worklist is stored.",
+      "note": "The read-only class retains raw blobs and instance-local blob-keyed split lines; no persistent worklist is stored.\n\nAnchor: `CodeObjects`",
       "targets": [
         {
           "anchor": {
-            "blob": "7a1bc697c90301cd12a587a99b0fc71d2bce4c75",
-            "content": "sha256:a10eb80d41000ab131efe21a67ad278956c3d4ae71bdfc5af10778d615d140c1",
+            "blob": "2f417db25d3f58c21b8baeca43751c69834ddffb",
+            "content": "sha256:184d7d998fa9a29cb587269d6487a85c33d81910f62fa4496e7521ce36d67b9f",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2f417db25d3f58c21b8baeca43751c69834ddffb",
+            "content": "sha256:9eaba6b973e6bbe72972f0b305998c0eec18c279e979c4140b679ddd92b94177",
             "locator": {
               "kind": "symbol",
               "name": "CodeObjects"
@@ -55,47 +66,13 @@
         }
       ]
     },
-    "10": {
-      "note": "Tree inventory and mode snapshots retain symlink entry blobs, with link_paths supplying explicit symbol-extraction context.\n\nAnchor: `CodeObjects.tree`; `CodeObjects.tree_modes`; `CodeObjects.link_paths`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "7a1bc697c90301cd12a587a99b0fc71d2bce4c75",
-            "content": "sha256:b70809620025174f4dcb3fcfa30de5f463ce55016cd72b93bcf896eb3fe3e520",
-            "locator": {
-              "end": 157,
-              "kind": "line_range",
-              "start": 118
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "11": {
-      "note": "Symbol and content locators use explicit symlink context.\n\nAnchor: `CodeObjects.symbol_span`; `CodeObjects.content`",
+    "12": {
+      "note": "Exact nonrecursive entry-mode observation distinguishes present empty trees from absence without broadening recursive source inventory.",
       "targets": [
         {
           "anchor": {
             "blob": "2f417db25d3f58c21b8baeca43751c69834ddffb",
-            "content": "sha256:edfe914755e7333810261c7555580118cdaaf8572fe49f1a01537aa736e028e9",
-            "locator": {
-              "end": 304,
-              "kind": "line_range",
-              "start": 219
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "12": {
-      "note": "Exact nonrecursive entry-mode observation distinguishes present empty trees from absence without broadening recursive source inventory.\n\nAnchor: `CodeObjects.tree_entry_mode`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "7a1bc697c90301cd12a587a99b0fc71d2bce4c75",
-            "content": "sha256:8a563d2dbba88ee1e753a308ffe54c534ade411f77c97c5e979261cb0e0541f8",
+            "content": "sha256:da0b54225087c70b68ff362613557c5860bca7d5204c26c5b19d565be6316b87",
             "locator": {
               "end": 151,
               "kind": "line_range",
@@ -107,12 +84,22 @@
       ]
     },
     "2": {
-      "note": "A commit by exact name.",
+      "note": "A commit by exact name.\n\nAnchor: `commit`",
       "targets": [
         {
           "anchor": {
-            "blob": "7a1bc697c90301cd12a587a99b0fc71d2bce4c75",
-            "content": "sha256:51eac2097846b98da2d5b910557d344a3566ae28c85ccc15643ed91cc2afd83f",
+            "blob": "2f417db25d3f58c21b8baeca43751c69834ddffb",
+            "content": "sha256:184d7d998fa9a29cb587269d6487a85c33d81910f62fa4496e7521ce36d67b9f",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2f417db25d3f58c21b8baeca43751c69834ddffb",
+            "content": "sha256:02c474b75b6e42c4f52083441dae6f6218246dd838d51dc6d10241594784e5ec",
             "locator": {
               "kind": "symbol",
               "name": "commit"
@@ -123,12 +110,22 @@
       ]
     },
     "3": {
-      "note": "Every commit with a prefix, so ambiguity is seen.",
+      "note": "Every commit with a prefix, so ambiguity is seen.\n\nAnchor: `commits_with_prefix`",
       "targets": [
         {
           "anchor": {
-            "blob": "7a1bc697c90301cd12a587a99b0fc71d2bce4c75",
-            "content": "sha256:8ae960f3597ab9bf56e7c9d1d40d6deadbaea5e38ad3691da134ff12516df22b",
+            "blob": "2f417db25d3f58c21b8baeca43751c69834ddffb",
+            "content": "sha256:184d7d998fa9a29cb587269d6487a85c33d81910f62fa4496e7521ce36d67b9f",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2f417db25d3f58c21b8baeca43751c69834ddffb",
+            "content": "sha256:cf677fe3ee94908c5ef8f3ebe2cf220a323494e3d2e1c53c96aecbe87e0e0c16",
             "locator": {
               "kind": "symbol",
               "name": "commits_with_prefix"
@@ -139,12 +136,12 @@
       ]
     },
     "4": {
-      "note": "A commit's regular-file and symlink blob map remains read-only and mode-aware.\n\nAnchor: `CodeObjects.tree`",
+      "note": "A commit's regular-file and symlink blob map remains read-only and mode-aware.",
       "targets": [
         {
           "anchor": {
-            "blob": "7a1bc697c90301cd12a587a99b0fc71d2bce4c75",
-            "content": "sha256:8e9c6ebda3259450e41ab1cfdaad8272db8614ec3a39900b94eab44c5ccaf4d6",
+            "blob": "2f417db25d3f58c21b8baeca43751c69834ddffb",
+            "content": "sha256:456988b59ee57b545888a5d5731ce707ca867cc13013072dfa328ac68917bb9a",
             "locator": {
               "end": 134,
               "kind": "line_range",
@@ -156,7 +153,7 @@
       ]
     },
     "5": {
-      "note": "Git's not-found exit, and a Git failure named rather than read as absent (R3-2).\n\nAnchor: \"def has_blob(self, blob_id: str) -> bool:\"; \"the object store cannot say whether it holds\"",
+      "note": "Git's not-found exit, and a Git failure named rather than read as absent (R3-2).",
       "targets": [
         {
           "anchor": {
@@ -171,8 +168,8 @@
         },
         {
           "anchor": {
-            "blob": "7a1bc697c90301cd12a587a99b0fc71d2bce4c75",
-            "content": "sha256:661c59ba6d84d2c519f21e3f21fcd824a8fe73348aae8310e3d880d9a79b5d3f",
+            "blob": "2f417db25d3f58c21b8baeca43751c69834ddffb",
+            "content": "sha256:9da8fd69e568c75166f6dcec7e1e29ffa2f564261d2e5ea5cf11451f1ec0bb91",
             "locator": {
               "end": 201,
               "kind": "line_range",
@@ -180,16 +177,36 @@
             }
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2f417db25d3f58c21b8baeca43751c69834ddffb",
+            "content": "sha256:184d7d998fa9a29cb587269d6487a85c33d81910f62fa4496e7521ce36d67b9f",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
         }
       ]
     },
     "6": {
-      "note": "Batched blob reads.",
+      "note": "Batched blob reads.\n\nAnchor: `prefetch` `CodeObjectError`",
       "targets": [
         {
           "anchor": {
-            "blob": "7a1bc697c90301cd12a587a99b0fc71d2bce4c75",
-            "content": "sha256:f0fef503a4a201278ce39c9440b4486925c3f6392ff7ca3a82f1922aa9b23efa",
+            "blob": "2f417db25d3f58c21b8baeca43751c69834ddffb",
+            "content": "sha256:184d7d998fa9a29cb587269d6487a85c33d81910f62fa4496e7521ce36d67b9f",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2f417db25d3f58c21b8baeca43751c69834ddffb",
+            "content": "sha256:8086904047170a3aabae0fb3104cbf1f536f808476b0d88b4fc7077976755046",
             "locator": {
               "kind": "symbol",
               "name": "prefetch"
@@ -224,6 +241,18 @@
             }
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2f417db25d3f58c21b8baeca43751c69834ddffb",
+            "content": "sha256:5bb3584ec165acf2a4eb7e39597f6ab0789a5e2919ba4ddcff68c2ae7ab0c4bd",
+            "locator": {
+              "end": 244,
+              "kind": "line_range",
+              "start": 203
+            }
+          },
+          "kind": "code"
         }
       ]
     },
@@ -238,6 +267,18 @@
               "end": 304,
               "kind": "line_range",
               "start": 272
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2f417db25d3f58c21b8baeca43751c69834ddffb",
+            "content": "sha256:025e7cc702700bb82b7f08da13b5103747daa97d9687f4574e678dcb50e6c827",
+            "locator": {
+              "end": 288,
+              "kind": "line_range",
+              "start": 256
             }
           },
           "kind": "code"

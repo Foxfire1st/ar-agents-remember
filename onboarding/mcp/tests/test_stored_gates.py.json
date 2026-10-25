@@ -19,12 +19,12 @@
       ]
     },
     "2": {
-      "note": "The stored-gate refusal matrix now includes closeout-preview and integration-dry-run alongside real integration and prior refusal cases. Each requires the removed-stores way out and forbids removed tools/new gate channels; direct handover refusal retains its exact coded blocker, reason and non-tool nextOperation. These are source/assertion facts, not new executed evidence.",
+      "note": "The stored-gate refusal matrix now includes closeout-preview and integration-dry-run alongside real integration and prior refusal cases. Each requires the removed-stores way out and forbids removed tools/new gate channels; direct handover refusal retains its exact coded blocker, reason and non-tool nextOperation. These are source/assertion facts, not new executed evidence.\n\nAnchor: `REFUSALS` `test_a_refusal_by_a_stored_gate_names_the_way_out_and_no_removed_tool` `test_an_integration_refused_by_a_stored_handover_gate_names_no_next_tool`",
       "targets": [
         {
           "anchor": {
-            "blob": "b28cef119c370c63e8c82509116309b631f9e9bc",
-            "content": "sha256:a65288d941158785adb44ce246d96b33eac44ffc20d869d0c58ce291644c110e",
+            "blob": "a6aba75c6b1c883ea06ccb9308b890b0fb46cea0",
+            "content": "sha256:6583539e8dcfb693f1ff5b7eb29c0b118b006f5b138c91355ba854ed96adc291",
             "locator": {
               "kind": "symbol",
               "name": "REFUSALS"
@@ -56,12 +56,22 @@
         },
         {
           "anchor": {
-            "blob": "b28cef119c370c63e8c82509116309b631f9e9bc",
-            "content": "sha256:28195778a917d6c4760fe29a71a54f6ee3027b33de814894fedf99c15210f007",
+            "blob": "a6aba75c6b1c883ea06ccb9308b890b0fb46cea0",
+            "content": "sha256:999bdb7975365f379c3498fc4472c1605a79356831cd722b74c41df694591784",
             "locator": {
               "end": 265,
               "kind": "line_range",
               "start": 251
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "a6aba75c6b1c883ea06ccb9308b890b0fb46cea0",
+            "content": "sha256:4acfeb0c62fbcf3de5a63c9e1a4fc2c4443eedfa3757c5cff107fbaae756026d",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "test"

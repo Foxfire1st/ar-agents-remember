@@ -44,5 +44,7 @@ The retained specimens still contain contradictions: the failure-section introdu
 
 ## Evidence
 
+
 - The React engine-room renderer realizes the two-world canvas and lifecycle overlays, but its current official-line and worktree layers retain couplers rather than provider engines. [1]
+
 - The Engine-Room Visual Language document declares its living-spec purpose, colour and motion doctrine, retirement boundary, specimen organization, timing/legibility rules and implementation mapping; the companion prototype preserves its scenarios with a retirement notice. [2]

@@ -46,7 +46,9 @@ No configured domain-documentation source applies to this repository-internal ro
 ### Repo-Internal References
 
 - Publication returns the committed value plus per-scope effects; the injected `validate` callable and scope resolution both run before the publication write, and the former `validate_task_fact_mutation` seam no longer exists. [1]
+
 - Contract scope and task-fact adapters share the task-first owner; contract scope short-circuits when no override invalidates a projection. [2]
+
 - Invalidation and rebuild failures become bounded per-scope effects. [3]
 - The schema-owned classifier decides whether an override invalidates projections. [4]
 

@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/serving/requirements.py",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
@@ -129,15 +130,16 @@
       ]
     },
     "5": {
-      "note": "Composition: the app registers this surface.\n\nAnchor: `register_requirements_routes`",
+      "note": "Composition: the app registers this surface.",
       "targets": [
         {
           "anchor": {
-            "blob": "3fb8342710d4c656f6b96db95aff3098c253d0ef",
-            "content": "sha256:bffd39a29cd154172442a8af607e5d23dd7e8ff3e4d8e7eaabc99ed40e06092c",
+            "blob": "d60acd0e4be738b9a9a33eb9f333fa6c53974f2b",
+            "content": "sha256:3599f15e9dc10a35df95730936a73b46267c1b6c4b9f9137904be8408328550b",
             "locator": {
-              "kind": "symbol",
-              "name": "create_app"
+              "end": 202,
+              "kind": "line_range",
+              "start": 140
             },
             "path": "mcp/src/agents_remember/serving/app.py"
           },
@@ -145,12 +147,12 @@
         },
         {
           "anchor": {
-            "blob": "3fb8342710d4c656f6b96db95aff3098c253d0ef",
-            "content": "sha256:f17ff362e409ed00184a4b1a3744c094c8f40e961d08441052353c447f8117cd",
+            "blob": "d60acd0e4be738b9a9a33eb9f333fa6c53974f2b",
+            "content": "sha256:2da2759c665b18799fab4514768ebbccecc025d8b46e04b825cc9a1e203cb2c4",
             "locator": {
-              "end": 315,
+              "end": 220,
               "kind": "line_range",
-              "start": 254
+              "start": 220
             },
             "path": "mcp/src/agents_remember/serving/app.py"
           },

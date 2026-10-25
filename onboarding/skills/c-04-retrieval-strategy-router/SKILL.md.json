@@ -1,10 +1,11 @@
 {
   "path": "skills/c-04-retrieval-strategy-router/SKILL.md",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
-        "blob": "fecebef566013755d94a74b218e2baf8769e46f1",
-        "content": "sha256:8590855edb5c5fc618a9562be260c09ec397e186d20d9c361d904860a2a1ae55",
+        "blob": "6048ab1024ddfdbf9af5ed71fb6abcfb07b6128d",
+        "content": "sha256:82a1494dd64dfb44897c6139d8c81207aaaf4543e441b6f95020ca80551cec9c",
         "locator": {
           "kind": "file"
         }
@@ -15,7 +16,7 @@
         "handoffEntry": "L192-W-R199-11",
         "leaf": "260928-MIK-L192"
       },
-      "rationale": "The router's preference, routing and query-syntax sections now describe native search and named reads, with the retired strategies marked retired rather than preferred.",
+      "rationale": "The router's preference and routing sections at C describe native search, Intent and named-file reads with the retired strategies labelled retired rather than preferred.",
       "role": "primary-authority"
     },
     {
@@ -38,12 +39,12 @@
   ],
   "references": {
     "1": {
-      "note": "Authored identity and retrieval-contract-first purpose\n\nAnchor: \"# c-04-retrieval-strategy-router Retrieval Strategy Router\"",
+      "note": "Authored identity and retrieval-contract-first purpose  Anchor: \"# c-04-retrieval-strategy-router Retrieval Strategy Router\"",
       "targets": [
         {
           "anchor": {
-            "blob": "c4b8e1c904ac33eee8cefc18a6449f9ef43e381b",
-            "content": "sha256:27e704fb265a03f2612556efcd494950a36de4d16535c52e2ebca85875784bac",
+            "blob": "6048ab1024ddfdbf9af5ed71fb6abcfb07b6128d",
+            "content": "sha256:69c271df12894238fc394cc92e1e5837b547c5939f3c6e71899bdfec81de1950",
             "locator": {
               "end": 11,
               "kind": "line_range",
@@ -140,12 +141,12 @@
       ]
     },
     "2": {
-      "note": "Substrate labels, retirement and introductory tension\n\nAnchor: \"## Retrieval Substrates\"",
+      "note": "Substrate labels, retirement and introductory tension  Anchor: \"## Retrieval Substrates\"",
       "targets": [
         {
           "anchor": {
-            "blob": "c4b8e1c904ac33eee8cefc18a6449f9ef43e381b",
-            "content": "sha256:7b1dd401ed733cddf4e2efbc8d481608375855a763df4b813482d7504338362e",
+            "blob": "6048ab1024ddfdbf9af5ed71fb6abcfb07b6128d",
+            "content": "sha256:d6892ea4e5d8f98ec7783534d89e5f2107ca4db04161ec7baf9590c1c960769f",
             "locator": {
               "end": 29,
               "kind": "line_range",
@@ -157,16 +158,28 @@
       ]
     },
     "3": {
-      "note": "Retired GrepAI route and synthetic catalog examples\n\nAnchor: \"## Semantics: GrepAI (retired)\"",
+      "note": "Historical source note (retained verbatim):  Retired GrepAI route and synthetic catalog examples  Anchor: \"## Semantics: GrepAI (retired)\"  Current qualification: The former GrepAI section and its synthetic catalog examples are absent from the current router. GrepAI remains retired. Semantics questions now start with context_packet when configured, then the route index and a capped native search over onboarding and knowledge text; the sidecar mapping gives the source path.",
       "targets": [
         {
           "anchor": {
-            "blob": "c4b8e1c904ac33eee8cefc18a6449f9ef43e381b",
-            "content": "sha256:e5fa5f75a89ddb703c68ef60aecdb74642450c4580f29f58acc4dec4f65c7701",
+            "blob": "6048ab1024ddfdbf9af5ed71fb6abcfb07b6128d",
+            "content": "sha256:f4a36431a96b290b8b5b207d3ec19dd0f3be90493b0cb0e5750c084a16ac192a",
             "locator": {
-              "end": 72,
+              "end": 19,
               "kind": "line_range",
-              "start": 30
+              "start": 17
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6048ab1024ddfdbf9af5ed71fb6abcfb07b6128d",
+            "content": "sha256:5938eb35ed8a05ca3d2a4516dcd3d795a43d922c84db0fa405c0818664c3410f",
+            "locator": {
+              "end": 41,
+              "kind": "line_range",
+              "start": 31
             }
           },
           "kind": "code"
@@ -174,16 +187,28 @@
       ]
     },
     "4": {
-      "note": "Retired relationship route, synthetic shapes and native search\n\nAnchor: \"## Relationship: CodeGraphContext (retired)\"",
+      "note": "Historical source note (retained verbatim):  Retired relationship route, synthetic shapes and native search  Anchor: \"## Relationship: CodeGraphContext (retired)\"  Current qualification: The former CodeGraphContext section and its synthetic impact/complexity shapes are absent from the current router. The relationship-query tool remains retired. Relationship questions now follow native symbol hits one call or import level at a time; native risk triage is a bounded early map rather than a completeness claim.",
       "targets": [
         {
           "anchor": {
-            "blob": "c4b8e1c904ac33eee8cefc18a6449f9ef43e381b",
-            "content": "sha256:a96fd86e2a1de22809d7b776780dfe50e4eee6cda1bc45e65733c8078dba17b5",
+            "blob": "6048ab1024ddfdbf9af5ed71fb6abcfb07b6128d",
+            "content": "sha256:78e81ac824a6a2cb80eac46b8230fef8eb22a465efe619e668139940a6091d80",
             "locator": {
-              "end": 120,
+              "end": 21,
               "kind": "line_range",
-              "start": 73
+              "start": 20
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6048ab1024ddfdbf9af5ed71fb6abcfb07b6128d",
+            "content": "sha256:e0793c048fb4bb74174976aabfb072f7e290a6d0e8971ed2bbdfd0adef696e8b",
+            "locator": {
+              "end": 56,
+              "kind": "line_range",
+              "start": 43
             }
           },
           "kind": "code"
@@ -191,16 +216,16 @@
       ]
     },
     "5": {
-      "note": "Location-only read_ar_files and argument refusals\n\nAnchor: \"## Intent: Onboarding And Source\"",
+      "note": "Location-only read_ar_files and argument refusals  Anchor: \"## Intent: Onboarding And Source\"",
       "targets": [
         {
           "anchor": {
-            "blob": "c4b8e1c904ac33eee8cefc18a6449f9ef43e381b",
-            "content": "sha256:4e7309921a5557fb1898dd9faefb9885f073b870a4e0921dc083eb56cd7a1755",
+            "blob": "6048ab1024ddfdbf9af5ed71fb6abcfb07b6128d",
+            "content": "sha256:ccec5aba2d488c7c35c318ee4510dd2a23a1993bce1ef9dc99064b55ae3f21c3",
             "locator": {
-              "end": 139,
+              "end": 72,
               "kind": "line_range",
-              "start": 121
+              "start": 59
             }
           },
           "kind": "code"
@@ -208,16 +233,16 @@
       ]
     },
     "6": {
-      "note": "Bounded route confirmation and native research reads\n\nAnchor: \"### Rules:\"",
+      "note": "Bounded route confirmation and native research reads  Anchor: \"### Rules:\"",
       "targets": [
         {
           "anchor": {
-            "blob": "c4b8e1c904ac33eee8cefc18a6449f9ef43e381b",
-            "content": "sha256:f0a015b9254b8178c2a6b28b597a30548789ac7fc31386f170dbbeb909f0e2f0",
+            "blob": "6048ab1024ddfdbf9af5ed71fb6abcfb07b6128d",
+            "content": "sha256:3ea16566290443fee1ab809c4f42f715e04a66e2942ed223e19a2a4c26dc93bf",
             "locator": {
-              "end": 171,
+              "end": 108,
               "kind": "line_range",
-              "start": 140
+              "start": 74
             }
           },
           "kind": "code"
@@ -225,14 +250,14 @@
       ]
     },
     "7": {
-      "note": "Recorded text, derived index and exact memory-root scope\n\nAnchor: \"## Recorded Intent Before Planning\"",
+      "note": "Recorded text, derived index and exact memory-root scope",
       "targets": [
         {
           "anchor": {
-            "blob": "fecebef566013755d94a74b218e2baf8769e46f1",
-            "content": "sha256:b6c026235f185e3e9e54f6602cd3d6d071446c6f7f433f5a66c5c6214f216977",
+            "blob": "6048ab1024ddfdbf9af5ed71fb6abcfb07b6128d",
+            "content": "sha256:0c70a89d201ee5499618815ae70929eb4b8cf617dfccea3d06ceb3b4b6e8895b",
             "locator": {
-              "end": 131,
+              "end": 132,
               "kind": "line_range",
               "start": 110
             }
@@ -242,16 +267,16 @@
       ]
     },
     "8": {
-      "note": "Named records, legacy format and seed absences\n\nAnchor: \"A `knowledge_read` answer names records; it does not carry them. A row holds the\"",
+      "note": "Named records, legacy format and seed absences",
       "targets": [
         {
           "anchor": {
-            "blob": "c4b8e1c904ac33eee8cefc18a6449f9ef43e381b",
-            "content": "sha256:ec8c0346cce5ce605e1c1eb4962033196e70aaffbda38249d23bbae8a8947669",
+            "blob": "6048ab1024ddfdbf9af5ed71fb6abcfb07b6128d",
+            "content": "sha256:1474647582043788aa184f5f2410fe5871156db1ba2fe91c3a7e41f8f202a7c6",
             "locator": {
-              "end": 213,
+              "end": 156,
               "kind": "line_range",
-              "start": 194
+              "start": 134
             }
           },
           "kind": "code"

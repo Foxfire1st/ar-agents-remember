@@ -38,9 +38,13 @@ No configured domain evidence applies to the file-local claims above.
 
 The retained source anchors below support the fixture roles and assertion boundaries described above. They identify current behavior, not a request to restore historical test counts or percentage targets.
 
+
 - Exact staged candidate is passed to one pinned dagger pipeline. [1]
+
 - Exported failure is the authoritative pipeline exit. [2]
+
 - Invalid or unowned exports never replace durable evidence. [3]
+
 - Report generation pointer never exposes a partial copy. [4]
 
 ### Cross-Repo References

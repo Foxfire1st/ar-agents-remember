@@ -1,10 +1,11 @@
 {
   "path": "docs/FAQ.md",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
-        "blob": "17adb1817b95675239c17f19d5114e9457c8f057",
-        "content": "sha256:e91e75e5d8a67e6e68fe72a16a9d883a28671bf6408e9e7d8634b1eb47f2c0e2",
+        "blob": "6d3bb450277e99822a3a610280d73979a097ec1c",
+        "content": "sha256:91173dabebf0533c6055eb010ba1f5761395012721eb71a9791f9b371f67df86",
         "locator": {
           "kind": "file"
         }
@@ -15,7 +16,7 @@
         "handoffEntry": "L192-W-R199-12",
         "leaf": "260928-MIK-L192"
       },
-      "rationale": "The FAQ entry no longer presents provider setup as available.",
+      "rationale": "docs/FAQ.md at C answers the provider question as a retirement ('the providers page is now a retirement and old-install cleanup account') and presents no setup as available.",
       "role": "presentation"
     }
   ],

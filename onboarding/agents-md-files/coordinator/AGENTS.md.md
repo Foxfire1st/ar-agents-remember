@@ -18,5 +18,7 @@ The file routes repository and memory reads through the resolver and repository-
 
 - Role handovers and free-chat managed-work routing have separate applicability. [1]
 - Plan, task-change and transaction authority remain explicit. [2]
-- Before the build decision, bounded source/card paths are named before native file reads. [3]
+> Retained earlier citation wording: - Before the build decision, bounded source/card paths are named before native file reads. [3]
 - The repository and memory context resolve before repository-specific system instructions are used. [4]
+
+- Before the build decision, bounded source/card paths are named before native file reads. [3]

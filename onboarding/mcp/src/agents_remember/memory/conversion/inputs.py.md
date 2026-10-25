@@ -55,7 +55,9 @@ No configured live documentation source was available for this pass.
 The two readers and the writer.
 
 - A working tree and its database. [1]
+
 - A Git tree, with its database blob copied to scratch. [2]
+
 - Writing a finished conversion through a temporary file and a rename. [3]
 
 ### Cross-Repo References

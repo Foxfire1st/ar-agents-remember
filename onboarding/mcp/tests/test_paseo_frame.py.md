@@ -51,5 +51,8 @@ the runtime block with `write_runtime_block` from `paseo_runtime_test_support`.
 
 ## Evidence
 
+
 - Origin selection, unlisted-origin refusal, the named unavailable states, workspace-less availability, route header handling and origin normalisation are asserted in this file. [1]
+
+
 - The origin case pins `provisionCommand` to the active fixture settings file; the wired host-facts case copies that field from the answer, so command construction is asserted by the origin case alone. [2]

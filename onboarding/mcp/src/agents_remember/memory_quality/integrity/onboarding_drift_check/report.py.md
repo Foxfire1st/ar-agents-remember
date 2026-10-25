@@ -30,6 +30,8 @@ at durable memory, so temporary drift reports never land inside a memory repo.
 
 ### Repo-Internal References
 
+
 - The converted summary resolves its operational report path through the retained path helper; legacy renderer/CLI facade APIs are absent. [1]
+
 
 - Branch facts (`current_branch_name`, for the default report filename) come from `git_ops`. [2]

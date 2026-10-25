@@ -1,5 +1,6 @@
 {
   "path": "skills/c-03-repo-bootstrap/templates/onboarding-wave-template.md",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
@@ -108,16 +109,16 @@
       ]
     },
     "7": {
-      "note": "c-05 is the onboarding entry point; its converted-memory branch overrides the legacy workflow/template routing below it.\n\nAnchor: `## Converted Memory`",
+      "note": "c-05 remains the public onboarding entry point. A knowledge/layout.json marker selects its converted-card workflow and admitted citation/trace writers; old-format memory is refused pending conversion.",
       "targets": [
         {
           "anchor": {
-            "blob": "4d90c238185e61a3bec8347aa1f8b50292cbc1dd",
-            "content": "sha256:80219a419f14067d44583e8d0c5b2d46c2fe3ff3d963c72077f892ecbd011ffb",
+            "blob": "7544470421d07347f2127e91131a701490676138",
+            "content": "sha256:ded0a37646f5bb829be12c1751d4585cb778a01b2f287e72f482b1320661e732",
             "locator": {
-              "end": 68,
+              "end": 57,
               "kind": "line_range",
-              "start": 40
+              "start": 46
             },
             "path": "skills/c-05-create-or-update-onboarding-files/SKILL.md"
           },

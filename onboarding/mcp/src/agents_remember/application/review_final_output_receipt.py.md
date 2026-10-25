@@ -51,7 +51,9 @@ delivered **when it was read**.
 Phase measurement can replace the same phase receipt; retained comparison records are not rewritten. Exact source selection and both delivered trees remain separate from transaction acceptance.
 
 - `select_review_comparison` supplies the current exact-tree receipt boundary described above. [33]
+
 - `record_final_output_receipt` supplies the current exact-tree receipt boundary described above. [34]
+
 - `_read_receipt` supplies the current exact-tree receipt boundary described above. [35]
 - `final_output_selection_block` supplies the current exact-tree receipt boundary described above. [36]
 - `final_output_result_block` supplies the current exact-tree receipt boundary described above. [37]
@@ -75,7 +77,9 @@ No cross-repository behavior is implemented in this file. It reads a task root a
 - The one durable file-name prefix, one file per leaf, generation and phase. [40]
 - One published receipt: the durable artifact, the record, and the read-back that proves it. [41]
 - The one durable destination a phase publishes to. [42]
+
 - **Measuring one phase and publishing it: the owners' values, the read-back, and `replaced_existing` rather than a hidden rewrite.** [43]
+
 - **The prepared-work projection: the one comparison it makes, and `None` rather than `True` when either side is unknown.** [44]
 - **The three attachments and the `ok`-plus-a-real-commit gate that keeps a failed transaction from carrying a receipt.** [45]
 - **The never-raising entry point and its three states, including `not-applicable` for a series contract.** [46]

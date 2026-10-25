@@ -20,5 +20,7 @@ Locks the pull-request landing route and the ways it must refuse, and the termin
 - External-memory series contract over real code and memory repos [7]
 - Approved-call shorthand with typed arguments [8]
 - Landed commit sets the terminal cell with the pr label [9]
+
 - Nowhere-landed commit refused, cell untouched [10]
+
 - Checkpointed series never upgraded into a reclaimable integration [11]

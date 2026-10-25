@@ -50,7 +50,20 @@ No relevant external documentation is needed for the local filesystem wrapper.
 
 Same-repository closeout code and tests are the direct evidence for this helper.
 
-- `c-09-git-worktree-manager` skill closeout planning uses the helper for changed-file filtering and onboarding metadata/catalog reads and writes; since MIK-R30 the card metadata refresh returns before any read or write on a converted memory tree. [1]
+
+
+
+
+
+- Worktree closeout planning uses the helper to filter changed worktree and committed paths, to plan sidecar refreshes over working and committed-range paths, and to recompute the changed entity fingerprints in the onboarding catalog. Source caption: `onboarding_refresh_plan_for_context` `refresh_entity_fingerprints_for_context` `refresh_onboarding_metadata_for_context` [1]
+
+
+
+
+> Retained earlier card wording; superseded by the current account above:
+> - `c-09-git-worktree-manager` skill closeout planning uses the helper to filter changed worktree and committed paths, to plan sidecar refreshes over working and committed-range paths, and to recompute the changed entity fingerprints in the onboarding catalog. [1]
+
+
 - The missing-onboarding pre-commit check uses the helper for sidecar existence and inline source reads. [2]
 
 | The `read_ar_files` application entry point calls `read_text` for full reads and `read_text_range` for line-range reads. | `_read_source`; "filesystem.read_text(source_path)"; "filesystem.read_text_range(" | mcp/src/agents_remember/application/read_files.py:188-206; mcp/src/agents_remember/application/read_files.py:207-207; mcp/src/agents_remember/application/read_files.py:209-209; mcp/src/agents_remember/application/read_files.py:224-224; mcp/src/agents_remember/application/read_files.py:226-226 |

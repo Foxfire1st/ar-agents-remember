@@ -110,16 +110,29 @@ The README routes readers into the split documentation tree and gives the curren
 - The README now has a `## Core Features` section that replaces `## Core Model`; it shows the source-file to onboarding-unit mapping, pitches path-addressed memory, Git-proven freshness, external-memory ledgers and dual worktrees, repo-owned `system/` behavior, and harness-ready first-run packages, then links to `docs/features.md`. Its optional semantic/code-graph discovery and its Docker/provider wording are residual source text: the two search providers are retired, so neither describes an available capability. Its retained `Harness-ready first run` bullet still says starter packages carry skills, hooks, rules and instruction files, which the Quickstart's no-copied-package statement contradicts. Anchor: `## Core Features` [1]
 - The README shows a `## What It Looks Like In Practice` mini-transcript: a source file's by-path onboarding note, the task-start `context_packet`/`memory_quality_check` calls, and the read-then-propose-then-refresh loop. [2]
 - The README has a `## Live Demo` section stating Agents Remember runs on itself and linking the project's own published memory repo (`Foxfire1st/ar-agents-remember`) as a live, inspectable by-path onboarding example. [3]
+
 - The Requirements section names Python 3.14, the bounded package range, the historical published 3.13 artifact, and the canonical repository-development runtime documentation. [4]
+
 - The quickstart is a short, harness-agnostic three-step agent-driven flow: write the MCP authority settings file from `examples/mcp/settings.example.json`, register the locally built wheel with `uvx --config` and restart the harness once, then make one `role_start(role="bootstrap", request_id="<UUID>")` call whose dashboard chat continues setup; no starter package, rendered settings or skill folder is copied. Anchor: `## Quickstart`; `uvx`; `role_start`; `bootstrap` [5]
+
 - The README routes readers first to the new Features tour, then to setup, concepts, workflows, benchmark methodology, guides, settings, and skills documentation under `docs/`. [6]
+
+
 - The `## Run The Dashboard` section: local-wheel build/sync and install first-class, discovery-backed flag-free `dashboard`, daemon mode + autoStart, and the historical published pin named as the 3.13 artifact. [7]
+
 - The README keeps the source checkout layout distinct from the installed runtime layout, exposes root `skills/` as canonical, identifies `scripts/sync-skills.py` as the helper that refreshes the one served package copy, exposes root `agents-md-files/`, `benchmarks/`, `providers/` and `system/` as canonical runtime assets refreshed by `scripts/sync-runtime.py`, states that the self-hosted harness trees are maintained in place without a renderer and that the installed runtime carries no `skills/` folder, and notes the workspace-first `<workspace>/ar-coordination/` default. Anchor: `## Repository Layout`; `skills/`; `scripts/sync-skills.py`; `agents-md-files/`; `scripts/sync-runtime.py`; `<workspace>/ar-coordination/` [8]
 - The README's Status first paragraph distinguishes the Python 3.14 source candidate from the historical Python 3.13 artifact at the same `3.0.0rc8` version, states core-path and harness maturity, and sends stability guarantees to Stability and release notes to GitHub Releases, the canonical changelog rather than a local CHANGELOG.md. Its second paragraph retains the historical observable/steerable-session and durable-gate 3.0 account with the rc settling caveat. MIK-R113 removed the product-owned session/gate surfaces: that retained source paragraph is not authority to restore them or a claim that the current product still hosts chats. Native host role agents and the dashboard remain. [9]
 - The Stability section is the semver promise: skill IDs, MCP tool names and their inputs/outputs, the `ar-coordination/` and `memory-repos/ar-<repo>/` layout, and the settings schema do not change without a major version bump; internals/provider internals/prompt wording may change in minor releases. The range was re-anchored by `CAPS-R12@v1`: the section still opens at `## Stability` and its body is now the single line that follows, and the promised layout no longer names `ar-memory/` because the internal mode was removed. [10]
 - The Contributing section points contributors at CONTRIBUTING.md, restates the core rules, and tells contributors to download/clone the project's own published memory (Foxfire1st/ar-agents-remember) and use it as the active Agents Remember memory for their checkout while contributing (dogfooding the by-path onboarding loop). [11]
-- The docs index now includes `docs/features.md` as the concentrated product tour alongside getting-started, concepts, workflows, install guides, guides, and reference pages. [12]
-- `docs/features.md` carries the full feature tour, including the new table of contents plus harness-native setup and operational guardrails for MCP authority, baseline adoption, branch carryover, cross-repo gates, benchmarks, and source quality tooling. [13]
+
+> Retained earlier citation wording: - The docs index now includes `docs/features.md` as the concentrated product tour alongside getting-started, concepts, workflows, install guides, guides, and reference pages. [12]
+
+
+
+
+> Retained earlier citation wording: - `docs/features.md` carries the full feature tour, including the new table of contents plus harness-native setup and operational guardrails for MCP authority, baseline adoption, branch carryover, cross-repo gates, benchmarks, and source quality tooling. [13]
+
+
 
 ### Cross-Repo References
 
@@ -200,7 +213,10 @@ Vitest remains the only supported host test diagnostic.
 
 The product's install brings the Paseo host: the `runtime_install` step fetches the build's own Node, installs the host release the packaged contract names and starts it, so a user who follows the install types no host command. `agents-remember dashboard --daemon` makes sure the host runs; stopping or restarting the dashboard never stops it, and `agents-remember paseo stop --config <file>` remains the one host-stop command. `agents-remember dashboard --status` prints one line for the dashboard and one for the host.
 
+
 - The install procedure the readme mirrors. [14]
+
+
 - The dashboard start that ensures the host. [15]
 
 ## Historical provider account
@@ -219,3 +235,8 @@ The following source-epoch wording is retained as history. It does not restore a
 > pitches path-addressed memory, Git-proven freshness, optional semantic/code-graph discovery, external-memory ledgers
 
 </details>
+
+- The docs index now includes `docs/features.md` as the concentrated product tour alongside getting-started, concepts, workflows, install guides, guides, and reference pages. [12]
+
+
+- `docs/features.md` carries the full feature tour, including the new table of contents plus harness-native setup and operational guardrails for MCP authority, baseline adoption, branch carryover, cross-repo gates, benchmarks, and source quality tooling. [13]

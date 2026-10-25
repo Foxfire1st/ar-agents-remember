@@ -1,29 +1,17 @@
 {
   "path": "dashboard/src/panels/engine-room/EngineFxOverlay.tsx",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
-      "note": "Timeline selectors and choreography.",
+      "note": "Timeline selectors and choreography.\n\nAnchor: `useEngineTimeline` `buildFx`",
       "targets": [
         {
           "anchor": {
             "blob": "745dcb2438f071de87e63481375c2c3790c15d3b",
-            "content": "sha256:42a580b2d43b802623baf299778905d1334edb1f54d8b1592e27ab5d14b54b64",
+            "content": "sha256:82c690fd7471b9257e5261727d2d052ab81ac1eb4725670708637e6bedfc22f6",
             "locator": {
-              "kind": "symbol",
-              "name": "useEngineTimeline"
-            },
-            "path": "dashboard/src/panels/engine-room/useEngineTimeline.ts"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "73cc62598a7f61bfef776bc2393a2b4bf0f56edd",
-            "content": "sha256:9cf0093e3e87ad76663804c28440bca8e102dd9acea312982b0e343bd1660863",
-            "locator": {
-              "kind": "symbol",
-              "name": "buildFx"
+              "kind": "file"
             },
             "path": "dashboard/src/panels/engine-room/useEngineTimeline.ts"
           },
@@ -32,12 +20,12 @@
       ]
     },
     "2": {
-      "note": "Visual isolation regressions.\n\nAnchor: \"isolates repeating transforms from the text-heavy structural SVG\"",
+      "note": "Visual isolation regressions.",
       "targets": [
         {
           "anchor": {
-            "blob": "f4ae80e7d4e2eb6857f7a0dddfd26bb36e176178",
-            "content": "sha256:4c25ce97c8d3a896496af811378cebacdf80602342e2a268c2970ea352324571",
+            "blob": "6c81634e51615e483399292e3462c23681ff3f39",
+            "content": "sha256:35808bb5b8bf713bc5c4fb94b68b0781f50226043fe85b83001b092fd8d007b9",
             "locator": {
               "end": 89,
               "kind": "line_range",
@@ -88,12 +76,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "596dec5c6c7c633b293640144a05def6c8ef4578",
+            "blob": "053b605eb77ad20fed2c08ede3c3caabf4fc3cf6",
             "content": "sha256:5660a844685d16a7fcb82d0bc89bb5f6cc1e64cda592fe4e844c558948fa0f5e",
             "locator": {
-              "end": 555,
+              "end": 553,
               "kind": "line_range",
-              "start": 527
+              "start": 525
             },
             "path": "dashboard/src/panels/engine-room/sceneLayers.tsx"
           },

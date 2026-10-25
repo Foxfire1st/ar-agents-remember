@@ -129,7 +129,9 @@ moment the flight is created until its thread has reaped the child.
 - The reply checks its exact protocol including nullable review facts, identity, process, time and consumed reads. [9]
 - The checks of the returned document and error. [10]
 - One request: digest, join, wait, leave, and a copy for a sharer. [11]
+
 - Joining: a cancelled flight is absent, and the bound applies only to a new flight. [12]
+
 - Leaving: the last requester of an unfinished flight cancels it. [13]
 - Waiting: cancellation, the request's deadline and the flight's error. [14]
 - One thread per flight admits, runs, validates and always reaps. [15]
@@ -137,16 +139,30 @@ moment the flight is created until its thread has reaped the child.
 - The one command line of a child, in its own session. [17]
 - Draining the pipes in slices, the deadline, and the exit statuses. [18]
 - Shutdown stops every active child. [19]
+
 - The deadline is overload while waiting and a failure once a child ran. [20]
+
 - The child ends its whole group, or itself alone when it leads none. [21]
 - The child's handlers, alarm, parent-death signal and parent check. [22]
+
 - Four identical requests get one child; three other computations get one each, and at most two children run at once. [23]
+
 
 - The controlled test starts twelve requesters for one flight, including eleven additional sharers, and seven other computations. It expects refusal of a ninth distinct computation, then nineteen answers and eight children after release. These are stored assertions, not a fresh timing measurement. [24]
 
+
 - Overload is raised at once past the bound and at the deadline for a flight without a child. [25]
+
+
 - A leaving requester does not stop a shared child; the last one reaps it before returning. [26]
+
+
 - A request that arrives while a cancelled flight is reaped starts its own computation. [27]
+
+
 - A killed parent takes the child and its Git process with it. [28]
+
+
 - The child's own alarm ends it and its Git process. [29]
+
 - Malformed, truncated, misidentified and non-finite replies are refused and nothing is kept. [30]

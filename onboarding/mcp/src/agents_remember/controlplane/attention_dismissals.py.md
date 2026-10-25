@@ -81,5 +81,8 @@ Rule 10's bounds are enforced on the one write path. `_bounded` (:265-279) order
 
 ### Repo-Internal References
 
-- Projection input refreshers collect native per-kind AttentionObservations and reconcile acknowledgements through AttentionDismissalStore. A record can be reclaimed for source absence, healthy recovery or a changed known fingerprint only when the observation is complete and started no earlier than its dismissal; the first complete fingerprint can instead be adopted. Unread/incomplete kinds retain their acknowledgements. Reconciliation is locked, avoids unchanged physical writes and returns prior current acknowledgements if cleanup fails; this is not prune_lifecycles after a lifecycle fold. [1]
+
+- Projection input refreshers collect native per-kind AttentionObservations and reconcile acknowledgements through AttentionDismissalStore. A record is reclaimed for source absence, healthy recovery or a changed known fingerprint only when the observation is complete and started no earlier than its dismissal, and the first complete fingerprint is instead adopted; unread or incomplete kinds retain their acknowledgements. Reconciliation is locked, skips unchanged physical writes, returns the prior current set if the rewrite fails, and then bounds the kept rows, the oldest leaving first. [1]
+
+
 - Whole read/rewrite exclusion and cleanup-failure retention preserve concurrent acknowledgements. [5]

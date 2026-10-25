@@ -3,12 +3,12 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The provenance: the re-capture, the scratch commits, the source and the trims.\n\nAnchor: \"review fix round R1 (bounded directory view, subtree pages, re-anchored label, pinnedCommit/codeSource)\"; \"code-integrate.text to 240 lines\"",
+      "note": "The provenance: the re-capture, the scratch commits, the source and the trims.",
       "targets": [
         {
           "anchor": {
-            "blob": "f7b6e1c06d6cbaffca3d88d4a3be2a2deccf6d75",
-            "content": "sha256:a484aa47ea881832af89dd233e26102ff42990e5fca46129cf4710f39d72830b",
+            "blob": "7c79e2d4145a5b38fcd45d80502c27c2d19d79bf",
+            "content": "sha256:1be9c56a2741fe02a550433faf5c6c93293dfe2faea5ea34286ff8201956923d",
             "locator": {
               "end": 11,
               "kind": "line_range",
@@ -105,15 +105,14 @@
       ]
     },
     "7": {
-      "note": "The test that reads it.",
+      "note": "The test that reads it.\n\nAnchor: `captured`",
       "targets": [
         {
           "anchor": {
-            "blob": "7c0ee7d6761555dd18780788ef43832cdd742902",
-            "content": "sha256:200a934aefc9e25938bd7d14fc63fa985f347902fa40c7b73c3327226373c21e",
+            "blob": "15e507a03300de2994d51d3c9ef5f0c0f92757e2",
+            "content": "sha256:7e5f5382edf3b6093e6d6a282c15b2858a653702572ed29b7e8f38010b446185",
             "locator": {
-              "kind": "symbol",
-              "name": "captured"
+              "kind": "file"
             },
             "path": "dashboard/src/panels/knowledge-reader/KnowledgeReader.test.tsx"
           },

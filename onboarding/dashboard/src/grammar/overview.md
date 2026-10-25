@@ -52,7 +52,9 @@ Test descriptions above report assertions present in source, not test execution 
 - The Panda runtime these primitives import (`css`/`cva`/`cx`). [1]
 - The React Aria condition reconciliation (data-hovered/-focused). [2]
 - The route's React Aria owner wraps the viewport toggle group with the shared visual class. [3]
+
 - ModeBar and the launcher's controls share the visual definition without sharing selection or permission policy. [10]
+
 - The action-availability shape `Affordance` renders. [5]
 - Dot covers the queue's attention severities, with a recipe-derived vocabulary, typed glyph table and resting-appearance assertions; not the removed lifecycle-state vocabulary. [6]
 
@@ -60,7 +62,9 @@ Test descriptions above report assertions present in source, not test execution 
 
 - Alarm Dot uses pulse with reduced-motion suppression; shared CSS defines that pulse and the effects-off freeze, not a current awaiting-developer Dot animation. [8]
 
+
 - The task column's pivot header mounts AttentionQueue; a severity mark is not an old handoff/lifecycle state mark. [9]
+
 
 
 - Eligible large Markdown uses shared retained syntax, clones before later transforms, and opts out for short text or supplied component overrides. [11]

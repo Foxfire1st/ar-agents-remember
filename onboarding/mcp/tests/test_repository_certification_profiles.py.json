@@ -145,22 +145,6 @@
           "kind": "test"
         }
       ]
-    },
-    "9": {
-      "note": "Repository profile teardown adapter requires a passing cleanup checkpoint",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "c8457f054e57aed4169ee6499b79c827770ef1ad",
-            "content": "sha256:e805a1232cdc9e052b9402d4cbda707aabb2971e3cba33b59eb246f67fb86943",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_repository_profile_teardown_adapter_requires_a_passing_cleanup_checkpoint"
-            }
-          },
-          "kind": "test"
-        }
-      ]
     }
   },
   "schema": "ar-onboarding-file/v1"

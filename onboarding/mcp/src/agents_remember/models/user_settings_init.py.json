@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/models/user_settings_init.py",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
@@ -19,15 +20,14 @@
       ]
     },
     "2": {
-      "note": "The registry binds the tool name to this response model.",
+      "note": "The registry binds the tool name to this response model.\n\nAnchor: `TOOL_RESPONSE_MODELS`",
       "targets": [
         {
           "anchor": {
-            "blob": "04979be62d9e43e81fabc9c8503cdd958c109214",
-            "content": "sha256:7961cf857a4dcfda690e311e7f9b94b1466c113114eda2ef1611ad880425931f",
+            "blob": "ca5af906298a90f3101a98a5542005e3549b3c0a",
+            "content": "sha256:10aa450f5caa463f1fe75eabf3cdf642c485bc41fe35884de37c4765dece2359",
             "locator": {
-              "kind": "symbol",
-              "name": "TOOL_RESPONSE_MODELS"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/models/tools/tool_registry.py"
           },

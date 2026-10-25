@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
@@ -106,12 +107,22 @@
       ]
     },
     "4": {
-      "note": "The internal sync driver publishes reconciling, proves continue/cancel ownership, and advances only this contract to active.",
+      "note": "The internal sync driver publishes reconciling, proves continue/cancel ownership, and advances only this contract to active.\n\nAnchor: `_sync_selected_atomic_series_under_authority`",
       "targets": [
         {
           "anchor": {
-            "blob": "ff96dbc4a7bc81bcfcaaa7eaae871eff3d759b82",
-            "content": "sha256:d7396696dcaf00edbb1527f2ab42a13ab21e0aff701abf80c6ad60218ec15497",
+            "blob": "62bf48665f1375408886ec0c3c4e30c5fd58a172",
+            "content": "sha256:a9b15768aaeddcc49e9ac662237ac67cd5fff449295a8849a2cb2f97d84d2f95",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "62bf48665f1375408886ec0c3c4e30c5fd58a172",
+            "content": "sha256:e370a21edb86ff0f1d487a2fed9f7cca1822251cc79b10321aaa4baceb876842",
             "locator": {
               "kind": "symbol",
               "name": "_sync_selected_atomic_series_under_authority"
@@ -153,7 +164,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8a9babc9b20c6761c07440ac22d8adeba24ef3c2",
+            "blob": "42cfc78baa34c9c1a83d133d2c91d7c588856b83",
             "content": "sha256:ce81740d2e4cb263c942716af0d464e2cbb0d81cb98bf15d04ba52d79ae18843",
             "locator": {
               "kind": "symbol",

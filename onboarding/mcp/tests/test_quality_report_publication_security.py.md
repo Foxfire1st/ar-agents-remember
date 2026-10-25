@@ -47,7 +47,9 @@ Each current definition below can be inspected in the exact source file. Histori
 to removed methods are superseded by this current inventory.
 
 - Export cannot publish an artifact outside the profile inventory [1]
+
 - Nested legacy directory symlink cannot delete external reports [2]
+
 - Generation symlink cannot substitute external evidence [3]
 
 ### Cross-Repo References

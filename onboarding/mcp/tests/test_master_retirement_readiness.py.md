@@ -42,7 +42,14 @@ cases decide whether the directory or unlanded branch actually exists.
 - Derived leaves keep explicit memory cells and fill missing external-memory worktree and ledger paths. [5]
 
 
+
 - Owned unfinished or unreadable operations refuse; the operation-record and real paired-enclosure controls execute their remedies and repeat retirement. [1]
+
+
 - A leaf worktree directory that exists and a leaf branch with unlanded commits are open work. [2]
+
+
 - The master's own branch and worktree never refuse and are listed with their state; an older-layout operation report stays a fact. [3]
+
+
 - Raw application readiness facts remain direct. Registered-adapter state uses its retained log, while the advertised retry action is addressed through nextArgs.contract_path. Existing command and branch assertions remain. [6]

@@ -68,22 +68,37 @@ No configured live documentation source was available for this pass.
 ### Repo-Internal References
 
 - The task owner publishes a keyed append or replacement and preserves intervening questions. [1]
+
 - The port over `task_doc`: `check` is the dry run, `append` the publication. [2]
+
 - The leaf's one document found strictly, with its questions. [3]
+
 - The adapter submits put_open_question with key and text; dry-run and refusal-return behavior remain explicit. [4]
 
+
+
 - The owner replaces the matching keyed question or appends to its current list without replacing unrelated entries. [10]
+
 - A multi-raise submits one keyed batch to the same task owner, not a stale whole-list replacement. [11]
 - Task-owner entry acquires the task-root file lock before preparation; active nested publication refuses before invoking the edit body. [12]
 
+
 - No task owner: every question refused with the reason. [5]
+
+
 - The strict leaf-document lookup it reuses (L11). [6]
+
+
 - The task owner's tool entry point. [7]
+
+
 - A real `task_doc` append that keeps the earlier question, re-renders, is idempotent and refuses a missing leaf. [8]
+
 
 ### Cross-Repo References
 
 The task document lives under the coordination root (`tasks/<repository>/<task>/`), outside the code and memory
 repositories; this module reaches it only through `task_doc`.
+
 
 - The edit is addressed by repository, contract path and slug. [9]

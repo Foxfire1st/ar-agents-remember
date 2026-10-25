@@ -1,22 +1,11 @@
 {
   "path": "mcp/src/agents_remember/serving/build_info.py",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
-      "note": "Current HTTP state and SSE snapshot assembly add served_state_tail onto a copied projection body, with the wire checker allowing only that tail owner.\n\nAnchor: lines 12-15; lines 114-126",
+      "note": "Current HTTP state and SSE snapshot assembly add served_state_tail onto a copied projection body, with the wire checker allowing only that tail owner.\n\nAnchor: `_state_response`",
       "targets": [
-        {
-          "anchor": {
-            "blob": "bcadca1a12cda0f8f1fb6d1e92f0116f8f5cfd6c",
-            "content": "sha256:809ddeb1544c1e0c0f0fb5ffa25e10a9d8e106278a9aeb347d99cb1db4a7a829",
-            "locator": {
-              "kind": "symbol",
-              "name": "_state_response"
-            },
-            "path": "mcp/src/agents_remember/serving/_app_routes.py"
-          },
-          "kind": "code"
-        },
         {
           "anchor": {
             "blob": "774a0f8612b76b00dccec2b920f251f4f0c79132",
@@ -32,14 +21,37 @@
         },
         {
           "anchor": {
-            "blob": "50caa42c56ebc702bcbec8e9cb06472cefba74d7",
-            "content": "sha256:180c8ba0b515930b7f8e19db5ebb47f230528e669b0c76ae50a9ed876d33f9a8",
+            "blob": "3f0a6693c859f3300eb3e4a2ed3439fb33e1d04f",
+            "content": "sha256:0c33b3574513955b82f51166a5d8d552d25038948c7c79932f36ecacca63a7a0",
             "locator": {
               "end": 126,
               "kind": "line_range",
               "start": 114
             },
             "path": "mcp/src/agents_remember/serving/_app_common.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "00dbff88a35b8e2bcb41c27d8fd4dbb239decc67",
+            "content": "sha256:8f89c82c843251008faf48e5e755d90a8e824c4c99d29caed57c71eb612d9aa3",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/serving/_app_routes.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "00dbff88a35b8e2bcb41c27d8fd4dbb239decc67",
+            "content": "sha256:c3bdcba4db1b4ad82b9b5000aeb373e95df540a6ffd10a4d9d48b30252e01e03",
+            "locator": {
+              "kind": "symbol",
+              "name": "_state_response"
+            },
+            "path": "mcp/src/agents_remember/serving/_app_routes.py"
           },
           "kind": "code"
         }
@@ -50,8 +62,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cd35c66bb9c9d8af0f23fd2579f5e610cf4ee8da",
-            "content": "sha256:60788cf6b3cf57e313ccacab456fb49fd9601a1930fa8f8de28c01088b22a2af",
+            "blob": "07979a6e10a7cde98e4a4ce1dcaca7a203241e3f",
+            "content": "sha256:2581abe22f96abd5eed654d6bbd4024993314e94a5eb2eae6b9f4df000dcba6c",
             "locator": {
               "kind": "symbol",
               "name": "run_git"
@@ -62,8 +74,8 @@
         },
         {
           "anchor": {
-            "blob": "cd35c66bb9c9d8af0f23fd2579f5e610cf4ee8da",
-            "content": "sha256:25f3731d7eb981c6583df927b9c4a1742b18ec9e96ed7271aff4ce079be6026e",
+            "blob": "07979a6e10a7cde98e4a4ce1dcaca7a203241e3f",
+            "content": "sha256:5736f26e501829b927f3ec0a34e374e5efc5a275e4525a777ce9ab8182fc831a",
             "locator": {
               "end": 230,
               "kind": "line_range",
@@ -72,16 +84,27 @@
             "path": "mcp/src/agents_remember/kernel/git_command.py"
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "07979a6e10a7cde98e4a4ce1dcaca7a203241e3f",
+            "content": "sha256:6e94e3f710e3074a2f9def9a24032a21aee42476e665e4ea421cba0067b627bb",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/kernel/git_command.py"
+          },
+          "kind": "code"
         }
       ]
     },
     "2": {
-      "note": "The declaration of the `servingBuild` key, and the tail builder that applies this module's honest-unknown rule with `exclude_none=True`.",
+      "note": "The declaration of the `servingBuild` key, and the tail builder that applies this module's honest-unknown rule with `exclude_none=True`.\n\nAnchor: `ServedWorkspaceProjection` `served_state_tail`",
       "targets": [
         {
           "anchor": {
-            "blob": "def86399004da6b4dbc00d4c95968a784a23306a",
-            "content": "sha256:c7a650fc8418729b75834341247c3ad77d5644b3bc0f545327e636fbf292cbff",
+            "blob": "8a75a033367fd982c56bdaad17eb8acef03a1887",
+            "content": "sha256:639642fcb905682d12c2b03101b68b2ef748173f2b0e04fd302dff194b0b6f71",
             "locator": {
               "kind": "symbol",
               "name": "ServedWorkspaceProjection"
@@ -92,8 +115,8 @@
         },
         {
           "anchor": {
-            "blob": "def86399004da6b4dbc00d4c95968a784a23306a",
-            "content": "sha256:b25506b3516db7bd29cf86e398cba73c3eb89f9ee23ea438eb6e4463798e7c82",
+            "blob": "8a75a033367fd982c56bdaad17eb8acef03a1887",
+            "content": "sha256:d5b14e0dd89daf242a1a210997442450ae72426379f0b1e3114e4493a3eb4826",
             "locator": {
               "kind": "symbol",
               "name": "served_state_tail"
@@ -104,8 +127,8 @@
         },
         {
           "anchor": {
-            "blob": "def86399004da6b4dbc00d4c95968a784a23306a",
-            "content": "sha256:9d70b5b9f54920a07b87a5a5feeffa099621b31d1c627f8239ca92f6528a2196",
+            "blob": "8a75a033367fd982c56bdaad17eb8acef03a1887",
+            "content": "sha256:ba2ac51148c3514136559662808aa4f64706af7a822c9513f1f6bb156d355f15",
             "locator": {
               "end": 55,
               "kind": "line_range",
@@ -117,8 +140,19 @@
         },
         {
           "anchor": {
-            "blob": "def86399004da6b4dbc00d4c95968a784a23306a",
-            "content": "sha256:796331f542348ec7745610bb6371a006272289d4318461c7d1cbfe4e67d82220",
+            "blob": "8a75a033367fd982c56bdaad17eb8acef03a1887",
+            "content": "sha256:417c2431a934da24b20f221e9f0a06d716367d668c4bf1661c7df98f40533c1a",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/serving/served_state.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8a75a033367fd982c56bdaad17eb8acef03a1887",
+            "content": "sha256:6b5366ce2c0a1056d30ff6ed07c45e97d349efaa02098ae8f03c03c2c491d141",
             "locator": {
               "end": 78,
               "kind": "line_range",
@@ -153,11 +187,37 @@
         {
           "anchor": {
             "blob": "1b839113b8d511b4a8343230e70a8de0be01b79f",
+            "content": "sha256:95ef01bc08dbc3b63e4e75ea3d26a5b941891877e27ad891329c8411d7d8dc4d",
+            "locator": {
+              "end": 841,
+              "kind": "line_range",
+              "start": 841
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1b839113b8d511b4a8343230e70a8de0be01b79f",
             "content": "sha256:16b7e04c86239d1c5c424b197eeaba2da0b85f887bd40656a19ba632c58f015e",
             "locator": {
               "end": 865,
               "kind": "line_range",
               "start": 865
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1b839113b8d511b4a8343230e70a8de0be01b79f",
+            "content": "sha256:2ea20b9fad0a2284125d64fec94ea523b14972c82d552e9ecea9f4de49f81d2d",
+            "locator": {
+              "end": 909,
+              "kind": "line_range",
+              "start": 909
             },
             "path": "dashboard/src/cockpit/Cockpit.tsx"
           },
@@ -256,6 +316,19 @@
             "path": "mcp/src/agents_remember/kernel/git_command.py"
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "07979a6e10a7cde98e4a4ce1dcaca7a203241e3f",
+            "content": "sha256:a39cce29374f23fdd8e37ac828f3e731b6a622fe8a690067591eaee9add399b6",
+            "locator": {
+              "end": 66,
+              "kind": "line_range",
+              "start": 57
+            },
+            "path": "mcp/src/agents_remember/kernel/git_command.py"
+          },
+          "kind": "code"
         }
       ]
     },
@@ -264,8 +337,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0add0d691edd9fadf0873b47c05c3556c94fb585",
-            "content": "sha256:9a5c584084f2d3c5b2f922be34cc829903d4c855e354a734263febd5289b334b",
+            "blob": "07979a6e10a7cde98e4a4ce1dcaca7a203241e3f",
+            "content": "sha256:86485973cec1b30881a8538bc29f5f42f53066c3901c053eb5c3b164acaf512d",
             "locator": {
               "kind": "symbol",
               "name": "git_environment"
@@ -276,8 +349,19 @@
         },
         {
           "anchor": {
-            "blob": "0add0d691edd9fadf0873b47c05c3556c94fb585",
-            "content": "sha256:83a6aa98bf51bfa8d57260e32ecd8689b4d1a5511cdc63e9d03bb0447431d18b",
+            "blob": "07979a6e10a7cde98e4a4ce1dcaca7a203241e3f",
+            "content": "sha256:6e94e3f710e3074a2f9def9a24032a21aee42476e665e4ea421cba0067b627bb",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/kernel/git_command.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "07979a6e10a7cde98e4a4ce1dcaca7a203241e3f",
+            "content": "sha256:3a65f1712894f28e00fe1248124b625f52415d557bf203b7adfc9d043476ca63",
             "locator": {
               "end": 156,
               "kind": "line_range",

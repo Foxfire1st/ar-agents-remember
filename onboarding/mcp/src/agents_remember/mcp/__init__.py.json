@@ -3,24 +3,12 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "`ping_payload()` and `server_info_payload()` report `SERVER_VERSION`.",
+      "note": "`server_info_payload()` reports `SERVER_VERSION`.\n\nAnchor: `ping_payload` `server_info_payload`",
       "targets": [
         {
           "anchor": {
-            "blob": "29bbb7423fed083253d12410a9ebd95c64a4f961",
-            "content": "sha256:a3d78685f5ea3ed471635079f69344d46d3bfde27099ecfd596e2745ac0d631a",
-            "locator": {
-              "kind": "symbol",
-              "name": "ping_payload"
-            },
-            "path": "mcp/src/agents_remember/mcp/tools/core.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "cb474a77476383adeb45f04026f765bfe86d62d7",
-            "content": "sha256:e52508120ec07cfe784de617e0341f5ee52c25dcc23d4445f7e8117081d9431b",
+            "blob": "6b123c608ce155f50f62249a98196f1b0e80ed08",
+            "content": "sha256:99cced187a183a7906f8169567798687950c73ca8a0ad29ba52b338214de7446",
             "locator": {
               "kind": "symbol",
               "name": "server_info_payload"
@@ -31,8 +19,8 @@
         },
         {
           "anchor": {
-            "blob": "29bbb7423fed083253d12410a9ebd95c64a4f961",
-            "content": "sha256:38c242ecda5acf9b1767448a02c3e5bb99e2b75362eea0eb1006bde004928e2d",
+            "blob": "6b123c608ce155f50f62249a98196f1b0e80ed08",
+            "content": "sha256:3dac1809e31b19e52cf548b1fdddd896cc1c6351d1d6b748470cb4f51bd981ee",
             "locator": {
               "end": 31,
               "kind": "line_range",
@@ -44,8 +32,8 @@
         },
         {
           "anchor": {
-            "blob": "cb474a77476383adeb45f04026f765bfe86d62d7",
-            "content": "sha256:057f79d4fdc541c348796ba7e1a192e61187974461445b2a075f94c3a4ad4fdd",
+            "blob": "6b123c608ce155f50f62249a98196f1b0e80ed08",
+            "content": "sha256:1ec90aba43b5f76d9be2c25b951262b491fc5413ce956389925fe3d24c5684a3",
             "locator": {
               "end": 51,
               "kind": "line_range",
@@ -54,19 +42,31 @@
             "path": "mcp/src/agents_remember/mcp/tools/core.py"
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6b123c608ce155f50f62249a98196f1b0e80ed08",
+            "content": "sha256:33a7112467f0720462329fcd72b5b7cf94fc062499c3a8a146aca89e054bb04d",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/core.py"
+          },
+          "kind": "code"
         }
       ]
     },
     "2": {
-      "note": "Tool tests assert the public version reported by `ping_payload()`.",
+      "note": "Tool tests assert the public version through `server_info_payload`: the safe-config-summary case compares the served build's version to `SERVER_VERSION`.\n\nAnchor: `test_ping_payload`",
       "targets": [
         {
           "anchor": {
-            "blob": "3ab0d44d1db2a5d0385439309040570f61329bc5",
-            "content": "sha256:bc3523be0c26fbd36b7da7ba6d31cfcd23532281978cbcc1dcf5ce29237da720",
+            "blob": "d0620d3a6b3d0466f16d6b6d715eb161641e387f",
+            "content": "sha256:014a31e91261ac251849113bdbf98d769ce65b64bb6d214f453ac0cb2189c083",
             "locator": {
-              "kind": "symbol",
-              "name": "test_ping_payload"
+              "end": 61,
+              "kind": "line_range",
+              "start": 52
             },
             "path": "mcp/tests/test_tools.py"
           },
@@ -74,12 +74,10 @@
         },
         {
           "anchor": {
-            "blob": "3ab0d44d1db2a5d0385439309040570f61329bc5",
-            "content": "sha256:f95127468f61ce53a075c201e6af30f729c9a631e414e8112c84bd81d2ae87bc",
+            "blob": "d0620d3a6b3d0466f16d6b6d715eb161641e387f",
+            "content": "sha256:a1e4d314feb531d1035a87ca865b4aec6d628128b791f4f2639ff61a7399da89",
             "locator": {
-              "end": 61,
-              "kind": "line_range",
-              "start": 52
+              "kind": "file"
             },
             "path": "mcp/tests/test_tools.py"
           },

@@ -66,7 +66,9 @@ No configured external domain-documentation evidence.
 These repository-relative targets and exact ranges were checked against the L9 working source.
 Source declarations and test assertions are distinguished from execution and acceptance evidence.
 
+
 - Typed admission evidence and bounded refusal projection. [1]
+
 - Existing contracts are classified before the separate edge checks. [2]
 - External memory is checked through real repository/worktree identity without a ledger-path argument. [3]
 
@@ -76,6 +78,7 @@ The code/memory or fixture-repository boundaries above are established by packag
 No additional configured external or sibling-repository evidence is claimed.
 
 No additional configured cross-repository evidence.
+
 
 
 - Stable status-specific reason sentences are separate from bounded parser/admission detail and the addressed next operation. [4]

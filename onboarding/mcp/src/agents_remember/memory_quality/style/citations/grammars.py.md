@@ -12,8 +12,13 @@ This source-bound correction covers the described L54 seams only. Unrelated inhe
 
 ## Current evidence
 
-- Bindings add recognized named non-Python test cases while retaining normal declaration semantics. \[16] [16]
-- Specialized unresolved-case diagnostics are restricted to script test files. \[17] [17]
+- Bindings add recognized named non-Python test cases while retaining normal declaration semantics. [16]
+
+
+
+- Specialized unresolved-case diagnostics are restricted to script test files. [17]
+
+
 
 ## Inherited source-epoch account (non-operative)
 
@@ -69,11 +74,9 @@ The following complete predecessor retains useful explanations, old observations
 >
 > This module defines the top-level symbols cited below; each row points at the exact source range holding the anchor.
 >
-> - Defines the class `Binding` (lines 124-133) — One name a construct binds and the line its declaration begins on; the extent and the declaration differ for a decorated definition. [1]
 > - Defines the function `grammar_of` (lines 134-136) — The grammar that reads ``path``, or ``None`` when nothing does.. [2]
 > - Defines the function `parsed` (lines 139-141) — Whether a definition in ``path`` is distinguishable from a mention of it.. [3]
 > - Defines the function `typescript_anchor_identifier` (lines 144-185) — The direct identifier rooted by a complete TS call or generic type spelling.. [4]
-> - Defines the function `call_argument_literals` (lines 188-213) — Every direct string argument and the call it belongs to, in document order.. [5]
 > - Defines the function `language` (lines 216-228) — The loaded grammar, built once. A failure to load is fatal, never a fallback.. [6]
 > - Defines the function `definitions` (lines 231-256) — Every name ``path`` binds, and the line span of the construct that binds it.. [7]
 > - Defines the function `_walk` (lines 259-272) — Every node in the tree, at any depth, in DOCUMENT ORDER.. [8]
@@ -91,3 +94,112 @@ The following complete predecessor retains useful explanations, old observations
 
 - The one new grammar entry answers the case a range is or why the lines are none, using the caller's name resolver. [18]
 - Every extent in this module is measured by the case module's one rule. [19]
+
+
+- Defines the function `grammar_of` — The grammar that reads ``path``, or ``None`` when nothing does.. [2]
+
+
+> Retained earlier card wording; superseded by the current account above:
+> - Defines the function `grammar_of` (lines 134-136) — The grammar that reads ``path``, or ``None`` when nothing does.. [2]
+
+
+
+- Defines the function `parsed` — Whether a definition in ``path`` is distinguishable from a mention of it.. [3]
+
+
+> Retained earlier card wording; superseded by the current account above:
+> - Defines the function `parsed` (lines 139-141) — Whether a definition in ``path`` is distinguishable from a mention of it.. [3]
+
+
+
+
+- Defines the function `typescript_anchor_identifier` — The direct identifier rooted by a complete TS call or generic type spelling.. [4]
+
+
+> Retained earlier card wording; superseded by the current account above:
+> - Defines the function `typescript_anchor_identifier` (lines 144-185) — The direct identifier rooted by a complete TS call or generic type spelling.. [4]
+
+
+
+
+- Defines the function `language` — The loaded grammar, built once. A failure to load is fatal, never a fallback.. [6]
+
+
+> Retained earlier card wording; superseded by the current account above:
+> - Defines the function `language` (lines 216-228) — The loaded grammar, built once. A failure to load is fatal, never a fallback.. [6]
+
+
+
+
+
+
+- `definitions` is not defined in this module any more: the walk lives in `memory_quality/style/citations/extents.py`, returning every name a file binds at any depth with the extent of the construct that binds it. Source caption: `definitions` [7]
+
+
+
+
+
+
+- Defines the function `_walk` — Every node in the tree, at any depth, in DOCUMENT ORDER.. [8]
+
+
+> Retained earlier card wording; superseded by the current account above:
+> - Defines the function `_walk` (lines 259-272) — Every node in the tree, at any depth, in DOCUMENT ORDER.. [8]
+
+
+
+- Defines the function `_widened` — ``node`` grown outwards through the syntax that decorates or exports it.. [9]
+
+
+> Retained earlier card wording; superseded by the current account above:
+> - Defines the function `_widened` (lines 275-279) — ``node`` grown outwards through the syntax that decorates or exports it.. [9]
+
+
+
+
+- Defines the function `_span` — The one-based line range ``node`` occupies.. [10]
+
+
+> Retained earlier card wording; superseded by the current account above:
+> - Defines the function `_span` (lines 282-286) — The one-based line range ``node`` occupies.. [10]
+
+
+
+
+- Defines the function `_text`. [11]
+
+
+> Retained earlier card wording; superseded by the current account above:
+> - Defines the function `_text` (lines 289-290). [11]
+
+
+
+- Defines the function `_python_names` — The names one Python construct binds.. [12]
+
+
+> Retained earlier card wording; superseded by the current account above:
+> - Defines the function `_python_names` (lines 293-299) — The names one Python construct binds.. [12]
+
+
+
+- Defines the function `_python_targets` — The plain names an assignment target binds, unpacking nested tuples and lists.. [13]
+
+
+> Retained earlier card wording; superseded by the current account above:
+> - Defines the function `_python_targets` (lines 302-314) — The plain names an assignment target binds, unpacking nested tuples and lists.. [13]
+
+
+
+- Defines the function `_script_names` — The names one JavaScript or TypeScript construct binds.. [14]
+
+
+> Retained earlier card wording; superseded by the current account above:
+> - Defines the function `_script_names` (lines 317-323) — The names one JavaScript or TypeScript construct binds.. [14]
+
+
+
+- Defines the function `_script_targets` — The names a declarator binds, unpacking destructuring one alternative at a time.. [15]
+
+
+> Retained earlier card wording; superseded by the current account above:
+> - Defines the function `_script_targets` (lines 326-343) — The names a declarator binds, unpacking destructuring one alternative at a time.. [15]

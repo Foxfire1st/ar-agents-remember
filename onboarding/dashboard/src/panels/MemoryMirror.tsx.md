@@ -31,7 +31,9 @@ Read-only analytics; the segmented bar reads left→right good→actionable (hea
 
 - `driftSegments` + the `DRIFT_ORDER`. [1]
 
+
 - The panel reads only driftSnapshots and ledgers from Analytics; the retired stalest-sidecar list is not rendered. [2]
+
 
 
 

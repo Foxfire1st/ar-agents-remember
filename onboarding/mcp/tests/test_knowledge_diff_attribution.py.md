@@ -93,8 +93,12 @@ No Domain Documentation source is configured for this slice.
 - `test_a_registered_mapping_that_did_not_resolve_does_not_establish_attribution` supplies the current fixture or assertion described above. [15]
 - `test_one_uninspected_snapshot_turns_every_unmapped_change_into_undetermined_attribution` supplies the current fixture or assertion described above. [16]
 - `test_an_unavailable_partition_states_no_total_and_never_a_measured_zero` supplies the current fixture or assertion described above. [17]
+
 - Fixture construction imports test-only row constructors; it does not call the retired canonical writer. [18]
+
+
 - RowStore writes text-tree fixture rows without the retired production admission plane. [19]
+
 
 ### Docs References
 
@@ -103,29 +107,46 @@ repository source only.
 
 No configured domain documentation could be checked.
 
+
 - The unit marker and the per-case fixture. [20]
+
 - The sibling's comparison helpers these cases reuse. [21]
 - **The partition case: the measured changes divided once into attributed, confirmed unregistered and undetermined, with the buckets disjoint and exhaustive.** [22]
 
 - The boundary case: a change mapped only to another invariant is outside selection, never unregistered. [23]
 
+
 - **The family-subject case: a family's members' own links count as selected attribution.** [24]
+
+
 
 - The precedence cases: a registered mapping that did not resolve — stale or unresolvable — does not establish attribution. [25]
 
+
+
 - The production-composition helpers the stale-mapping case authors and reads claims through. [26]
+
 
 - The incompleteness cases: one uninspected snapshot turns every unmapped change undetermined; a legitimately empty side counts as completely inspected. [27]
 
 - The honesty cases: an unavailable partition states no total and never a measured zero; a partial observation states its denominator's scope. [28]
 
+
 - The arithmetic cases' two input builders. [29]
+
 - The unit-regression lane row, beside its sibling's. [30]
 
-- The support artifacts whose exact `consumers` lists declare this module — `diff_scope_test_support` and `read_scope_test_support` — with the other declaring entries at `:243`, `:1155`, `:1682` and `:1747`. [31]
+
+
+
+> Retained earlier citation wording: - The unit-regression lane registers test_knowledge_diff_attribution.py. Seven lifecycle artifact lists declare it as a consumer: _user_settings_guard.py, anchor_fixture_models.py, diff_scope_test_support.py, the Node package-lock fixture, knowledge_row_codec_test_support.py, knowledge_rows_test_support.py and read_scope_test_support.py. Declaration is not execution. [31]
+
+
 
 ### Cross-Repo References
 
 No cross-repository behaviour is exercised here. The fixture's Git trees are temporary and local.
 
 No configured cross-repository evidence is claimed.
+
+- The unit-regression lane registers test_knowledge_diff_attribution.py. Seven lifecycle artifact lists declare it as a consumer: _user_settings_guard.py, anchor_fixture_models.py, diff_scope_test_support.py, the Node package-lock fixture, knowledge_row_codec_test_support.py, knowledge_rows_test_support.py and read_scope_test_support.py. Declaration is not execution. [31]

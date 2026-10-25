@@ -1,5 +1,6 @@
 {
   "path": "mcp/tests/test_review_memory_watch.py",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
@@ -7,8 +8,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0d883c62f0c87eebef9e5015817759f032a1af5f",
-            "content": "sha256:f1747a00cef17a6bfd7dfe72e0116456e80527e9b6cdaf0118c011f3c9d4b354",
+            "blob": "1a6140554ebe69d0d46765d8062068d9065096cb",
+            "content": "sha256:7c93a4fb5f596dc0da5a86626d51e57d4c1cd0fe8b64789c8b6384c0be0f155d",
             "locator": {
               "kind": "file"
             }

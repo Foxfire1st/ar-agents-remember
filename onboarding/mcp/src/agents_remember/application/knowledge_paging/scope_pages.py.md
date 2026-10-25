@@ -50,8 +50,12 @@ No configured live documentation source was available for this pass.
 - The module statement: one rule for page 1 and later pages. [1]
 - The resuming view by seed kind. [2]
 - Items as rows; a family revision heads its memberships. [3]
+
 - A prepared seed, deferred or collapsed. [4]
+
+
 - Selecting and checking a resumed position. [5]
+
 - The next token, or the move on to a queued seed. [6]
 
 ### Cross-Repo References

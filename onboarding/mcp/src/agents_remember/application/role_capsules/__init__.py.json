@@ -1,9 +1,10 @@
 {
   "path": "mcp/src/agents_remember/application/role_capsules/__init__.py",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
-      "note": "The admitted compile entry point this package exports.",
+      "note": "The admitted compile entry point this package exports.\n\nAnchor: `compile_admitted_capsule` `CapsuleCompilationOutcome`",
       "targets": [
         {
           "anchor": {
@@ -19,8 +20,8 @@
         },
         {
           "anchor": {
-            "blob": "8f55401b7e0afa34d4cc0cc01d77d2aa95c1a3b7",
-            "content": "sha256:4aae10481d05e43d7a434e93ae593f4f4643d82811f592c85432b658c5def51e",
+            "blob": "0de84f83644c391b29759b1623034309cabc8c72",
+            "content": "sha256:7b16c4a32019a3e8f4ccf82b15f964d954f4c2df5c97d530d7128a382caa421b",
             "locator": {
               "kind": "symbol",
               "name": "CapsuleCompilationOutcome"
@@ -31,8 +32,19 @@
         },
         {
           "anchor": {
-            "blob": "8f55401b7e0afa34d4cc0cc01d77d2aa95c1a3b7",
-            "content": "sha256:890ae5d28141750c1f331f5741092fc292b0d05127e02b5d8d667323dfe0b1ad",
+            "blob": "0de84f83644c391b29759b1623034309cabc8c72",
+            "content": "sha256:fa7dbb04c116a8a6d6767c3d85c3b723091f0af5bfd84f27ffc91b7b7e9f8f52",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/role_capsules/compilation.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0de84f83644c391b29759b1623034309cabc8c72",
+            "content": "sha256:44b7b0e2bbd5167de246c297f3e1fc598638b1ecf36348770e53421b8e779e14",
             "locator": {
               "end": 88,
               "kind": "line_range",
@@ -91,8 +103,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e0c363f53732c65054fa825f478956800f102db7",
-            "content": "sha256:d1502ab73ec7a0c2f3607cb0f65c326092b8f83aa9d9d5fbab123774326f3f90",
+            "blob": "762c104a0bcdc0375416163993d106dc37c5fb18",
+            "content": "sha256:1887eaccb5d5f005cb1e74f059d46449876977184df1293db4f51a2b4c61e567",
             "locator": {
               "kind": "symbol",
               "name": "compile_role_capsule"
@@ -103,8 +115,8 @@
         },
         {
           "anchor": {
-            "blob": "e0c363f53732c65054fa825f478956800f102db7",
-            "content": "sha256:40e34ffd4e456f90c078e20a0cb2511078ac5d9f00c4b001142ea4965a8b5020",
+            "blob": "762c104a0bcdc0375416163993d106dc37c5fb18",
+            "content": "sha256:b7786fb728c8a55c4f219b3bf8efa56d9f72e9170cc9d65a851a5a3384c48b86",
             "locator": {
               "end": 139,
               "kind": "line_range",
@@ -113,11 +125,22 @@
             "path": "mcp/src/agents_remember/models/role_capsules/compiler.py"
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "762c104a0bcdc0375416163993d106dc37c5fb18",
+            "content": "sha256:157949db0f9acdf0d70ebbd6959fb382dccab34600bf2e6cfd9b12f0b9079a74",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/compiler.py"
+          },
+          "kind": "code"
         }
       ]
     },
     "4": {
-      "note": "The sibling model package whose contract this boundary resolves inputs for.",
+      "note": "The sibling model package whose contract this boundary resolves inputs for.\n\nAnchor: `CapsuleBinding` `CapsuleSource`",
       "targets": [
         {
           "anchor": {
@@ -133,18 +156,6 @@
         },
         {
           "anchor": {
-            "blob": "1752ee10c2dd4ba370a7c7aea69a29d6f35f52b2",
-            "content": "sha256:d464added16b1b2082a4125e9703f5bedd93e564691bc9254aefa030163dfae9",
-            "locator": {
-              "kind": "symbol",
-              "name": "CapsuleSource"
-            },
-            "path": "mcp/src/agents_remember/models/role_capsules/sources.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
             "blob": "3283618c85b66070d98755f6d21a3f2e66f407ff",
             "content": "sha256:da228ad4d9aa6db3d88b70dee03b08c94ddbd5ab36bbef511cc168171aeecaa5",
             "locator": {
@@ -153,6 +164,40 @@
               "start": 283
             },
             "path": "mcp/src/agents_remember/models/role_capsules/types.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3283618c85b66070d98755f6d21a3f2e66f407ff",
+            "content": "sha256:db8b77de969e266050b3045291a29cc618317ce8aa109f2a18da3344072c7ad0",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/types.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "11345e10ceb2c3818e6f7ad4790607a78658f59b",
+            "content": "sha256:6d7bbe33782fa39237e1aa8f4de060589f9ebc094a702bfe22cb95ef8ff39680",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/sources.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "11345e10ceb2c3818e6f7ad4790607a78658f59b",
+            "content": "sha256:f5f3ac449878a4e5e5a4fedea401c505803868766c9be6b437e5f68ac6755006",
+            "locator": {
+              "kind": "symbol",
+              "name": "CapsuleSource"
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/sources.py"
           },
           "kind": "code"
         }

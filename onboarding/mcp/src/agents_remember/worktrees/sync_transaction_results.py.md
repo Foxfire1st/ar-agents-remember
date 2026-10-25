@@ -62,10 +62,14 @@ No domain-documentation source is configured for this slice. The behavior descri
 ### Repo-Internal References
 
 
+
 - Retained conflict shapes. [1]
 
 
+
+
 - Structural/crossing report guidance. [2]
+
 
 
 - Current continuation guidance. [3]
@@ -80,11 +84,15 @@ No domain-documentation source is configured for this slice. The behavior descri
 - Terminal replay/worklist. [11]
 
 
-- Current file-based resolution model. [13]
+
+> Retained earlier citation wording: - Current file-based resolution model. [13]
+
+
 
 
 
 - A nonempty structural memory-merge report adds resolution.crossing and a named report summary, including all-converted diagnostics; converted selects crossing wording. With no report, no report-derived block or sentence is added. [19]
+
 - Parked-candidate reapply preview. [20]
 - Policy choice and non-mutating initial/active/cancel previews. [21]
 - Terminal and no-authority replay results remain distinct; the `continue` replay of a completed generation recomputes the worklist. [22]
@@ -98,3 +106,5 @@ The operation and fixture boundaries described here are defined by same-reposito
 
 
 No cross-repository contract is established by this file.
+
+- Current file-based resolution model.  Anchor: `SyncResolutionProjection` [13]

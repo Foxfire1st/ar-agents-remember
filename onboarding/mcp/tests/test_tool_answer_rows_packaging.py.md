@@ -17,7 +17,9 @@ The initialization/baseline, carryover and integrity row cases author a constant
 ## Evidence
 
 - Packaging imports the surviving fixture owner directly; this replaces only the removed test-module provider edge. [7]
+
 - The actual fixture builder composes its review world and owned topology; packaging's coherence case exercises real service actions over forty constructed candidates without changing guard assertions. [8]
+
 
 No Domain Documentation sources are configured; the evidence below is repository implementation or test assertions, not a new execution attestation.
 
@@ -29,7 +31,9 @@ No Domain Documentation sources are configured; the evidence below is repository
 - A constructed forty-path population survives compaction with and without a supplied report path; the retained real carryover case derives plan only. [1]
 
 - Refresh and stale-preview results derive the route row. [2]
+
 - Actual validator results derive integrity answer cases. [3]
+
 
 - Real coherence responses use a uniquely owned fixture whose actual encoded root has a 160-byte minimum; XDG and finally cleanup remain, with unchanged emitted responses, 850 bound and density floor. [4]
 

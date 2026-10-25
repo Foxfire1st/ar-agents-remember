@@ -76,14 +76,18 @@ No Domain Documentation source is configured.
 ### Repo-Internal References
 
 
+
 - Retained task-document projection models carry canonical task references; pickup and expectation analytics DTOs are removed. [1]
+
 
 
 - Lump/segment nodes and sampling endpoints retain strict served shapes and bare-ref lifting in the extracted DTO owner. [3]
 
 
 
+
 - Workspace projection is the schema authority consumed by generation. [4]
+
 
 
 ### Cross-Repo References
@@ -137,10 +141,13 @@ by that number.
 
 
 
+
 - Task documents remain the projected hierarchy; the actual TaskDocNode/dependency definitions live in projection_task_documents, while projection re-exports them. [2]
 
 
 
+
 - TaskSummary and its TaskDocNode extension carry optional directGrant display evidence. TaskDocNode.subTasks holds TaskSubTaskRefNode drill-in references, which do not carry that grant. These are read models, not authorization. [6]
+
 
 - TaskState carries stage, activity and eventAt, without a served task-event age; the browser derives display age. [7]

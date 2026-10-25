@@ -149,9 +149,12 @@ path and its resolved target; `observed_path_exists` records both present and ab
 - The states of an adjacent repository's code side. [15]
 - The states of its memory side. [16]
 - The ledger state of an included memory repository. [17]
+
 - An explicit contract candidate is resolved through the recorder; candidate absence is recorded. [18]
+
 
 
 - A path resolution as a recorded selection row. [19]
 - A path's existence as a recorded selection row. [20]
+
 - A skipped settings file of higher priority and a JSON-only settings file are recorded. [21]

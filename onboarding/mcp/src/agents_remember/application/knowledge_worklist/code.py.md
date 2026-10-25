@@ -113,17 +113,27 @@ locator lands in a blob, which lines two blobs differ in, and which file of C bi
 
 ## Evidence
 
+
 - The pinned options of the blob diff. [16]
+
 - Whether a hunk hits a range on one side. [17]
 - Hunk headers are parsed; a binary pair has none. [18]
 - The image of a line range through a diff. [19]
 - The read-ahead of both sides' blobs, with read failures suppressed. [21]
+
 - The blob diff with its failure and cache. [22]
+
+
 - The one path that binds a name once. [24]
+
 - A changed path's hunks, or none for a file-level change. [25]
+
 - The object reader's batched prefetch. [26]
+
 - One batch for the changed blobs, answers from the cache afterwards, and a missing tree reported where it is used. [27]
+
 - The blob diff carries its own prefixes, colour and driver options. [28]
+
 
 ### Docs References
 
@@ -138,14 +148,20 @@ No configured live documentation source was available for this pass.
 
 ### Repo-Internal References
 
+
 - The hunk, range, content-identity and hit rules. [29]
+
 - The pinned zero-context blob diff. [30]
 - One hunk and its document form. [31]
 - The strict-inside rule for an empty side. [32]
 - Binary pairs give `None`. [33]
 - The image of a line range, or no mapping. [34]
+
 - The hunks of a blob pair, cached, with a named failure. [35]
+
+
 - Whether the store holds a blob; a Git failure is a `CodeReadError`, never absent (R3-2). [36]
+
 - A line range mapped from its recorded blob; an unknown blob has no mapping. [38]
 - The mechanical unique match of definition 6. [39]
 - A changed path's hunks, shared by the gate and the lane (moved from `_path_hunks`). [40]
@@ -160,7 +176,14 @@ through Git.
 
 No cross-repo boundary is crossed by this file.
 
+
 - The two trees, the object reader, hunk cache and independent B/C symlink-mode caches. [20]
+
+
 - Where a locator lands in a blob; selected-side symlink symbols refuse before extraction. [23]
+
+
 - Resolution by locator kind and side, with cached mode reads and named symlink-symbol refusal. [37]
+
+
 - Current source delta inspected statically: Fix side-aware symlink resolution/caches and entry-blob maps; retain diff and range rules. [44]

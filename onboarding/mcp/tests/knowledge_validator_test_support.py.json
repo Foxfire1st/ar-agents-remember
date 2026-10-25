@@ -1,5 +1,6 @@
 {
   "path": "mcp/tests/knowledge_validator_test_support.py",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
@@ -7,7 +8,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fe8d91c5906a9a7de3962f685120cc2066dabdc9",
+            "blob": "4d9d6893681f254b50613d353e3db9f1e71d6800",
             "content": "sha256:629222de358d15ab365f73e25d414003888b0f3c05caa0001a76ace1a9393892",
             "locator": {
               "kind": "symbol",
@@ -18,7 +19,7 @@
         },
         {
           "anchor": {
-            "blob": "fe8d91c5906a9a7de3962f685120cc2066dabdc9",
+            "blob": "4d9d6893681f254b50613d353e3db9f1e71d6800",
             "content": "sha256:2c3e3bf254dfe78f1a853d1b51e33829e987c2dec2618013d2e3889e48d5fff9",
             "locator": {
               "kind": "symbol",
@@ -30,12 +31,22 @@
       ]
     },
     "2": {
-      "note": "The real code paths the anchors name, the family's realization files included.",
+      "note": "The real code paths the anchors name, the family's realization files included.\n\nAnchor: `CODE_PATHS`",
       "targets": [
         {
           "anchor": {
-            "blob": "52314a77129425d1507120bbdbb5d6abaa829659",
-            "content": "sha256:93b0cb4776ab122030160db30727f6936ff57a4573b1fae0a6b098d1160cc8cd",
+            "blob": "4d9d6893681f254b50613d353e3db9f1e71d6800",
+            "content": "sha256:78798a65c5a04cbafbcc854574867950c163059fac2c1e77cf8bd2b578873692",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "4d9d6893681f254b50613d353e3db9f1e71d6800",
+            "content": "sha256:d61addbb166ac5eed02599e94bd23031b4b40062161c488b1d148ab3cf0aa16f",
             "locator": {
               "kind": "symbol",
               "name": "CODE_PATHS"
@@ -50,7 +61,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fe8d91c5906a9a7de3962f685120cc2066dabdc9",
+            "blob": "4d9d6893681f254b50613d353e3db9f1e71d6800",
             "content": "sha256:8e13ce7929262d972717ccfb775f3469d94581b658d6f5880390861deb860cdd",
             "locator": {
               "kind": "symbol",
@@ -61,7 +72,7 @@
         },
         {
           "anchor": {
-            "blob": "fe8d91c5906a9a7de3962f685120cc2066dabdc9",
+            "blob": "4d9d6893681f254b50613d353e3db9f1e71d6800",
             "content": "sha256:bc39888ee61cc2c0ba4de3cc9f385ffdf99ef24fad8e6aac3af1bf1711433459",
             "locator": {
               "kind": "symbol",
@@ -77,7 +88,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fe8d91c5906a9a7de3962f685120cc2066dabdc9",
+            "blob": "4d9d6893681f254b50613d353e3db9f1e71d6800",
             "content": "sha256:7d0d11925878898294f32b36a0f838b8082ec6e056d082b5cece1cf52a967c1f",
             "locator": {
               "kind": "symbol",
@@ -93,7 +104,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fe8d91c5906a9a7de3962f685120cc2066dabdc9",
+            "blob": "4d9d6893681f254b50613d353e3db9f1e71d6800",
             "content": "sha256:6a19a599a9376155c1319a8b76cf8e64b6468bc38a32810c1fb01df247a51495",
             "locator": {
               "kind": "symbol",
@@ -105,12 +116,22 @@
       ]
     },
     "6": {
-      "note": "The converted fixture tree, with a sidecar and card for each family realization.",
+      "note": "The converted fixture tree, with a sidecar and card for each family realization.\n\nAnchor: `fixture_tree_files`",
       "targets": [
         {
           "anchor": {
-            "blob": "52314a77129425d1507120bbdbb5d6abaa829659",
-            "content": "sha256:10ef770da38f2daba4b6ea610b88a2afd9cecb8300ffb24a63bf3d757877ae38",
+            "blob": "4d9d6893681f254b50613d353e3db9f1e71d6800",
+            "content": "sha256:78798a65c5a04cbafbcc854574867950c163059fac2c1e77cf8bd2b578873692",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "4d9d6893681f254b50613d353e3db9f1e71d6800",
+            "content": "sha256:cea6c3aaa6fb48845772b5d90dab7ff0f7ad55caeaa2bb396b7e031d5d6e3a81",
             "locator": {
               "kind": "symbol",
               "name": "fixture_tree_files"
@@ -125,7 +146,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fe8d91c5906a9a7de3962f685120cc2066dabdc9",
+            "blob": "4d9d6893681f254b50613d353e3db9f1e71d6800",
             "content": "sha256:bd42b3795e457b4caea90cbcabec7f72b62031241e62384a12b5096c62f99b41",
             "locator": {
               "kind": "symbol",
@@ -136,7 +157,7 @@
         },
         {
           "anchor": {
-            "blob": "fe8d91c5906a9a7de3962f685120cc2066dabdc9",
+            "blob": "4d9d6893681f254b50613d353e3db9f1e71d6800",
             "content": "sha256:5f63186672503e141e7c81092e19b136e3eb8bac711dee7bcb9fb03f81aadcf2",
             "locator": {
               "kind": "symbol",

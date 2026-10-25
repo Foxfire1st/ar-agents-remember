@@ -1,5 +1,6 @@
 {
   "path": "mcp/tests/test_response_address_binding.py",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
@@ -35,12 +36,23 @@
       ]
     },
     "11": {
-      "note": "The guard these cases pin, and the two rules it applies.",
+      "note": "The guard these cases pin, and the two rules it applies.\n\nAnchor: `bound_next_step`",
       "targets": [
         {
           "anchor": {
-            "blob": "6e543ebaf84c3983b3c351d22984396e40a497d5",
-            "content": "sha256:f0688ad773a589f140c01f1a6a70fa5088d8ca7c30ef383f7dca90b8f6eee32a",
+            "blob": "e0e46bc6a90dd3b9da4bab12c43f61d1e4e71a70",
+            "content": "sha256:611cce8419f2f98ceb4edd0b31ea0dc5fe740280eed2d76a3dce05c98fa22b14",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/tool_response.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e0e46bc6a90dd3b9da4bab12c43f61d1e4e71a70",
+            "content": "sha256:129afbc7db95453225dc24dc3d91b07668c255b319898fb911556658fe5c0777",
             "locator": {
               "kind": "symbol",
               "name": "bound_next_step"
@@ -103,16 +115,16 @@
       ]
     },
     "16": {
-      "note": "The lane row that keeps this module in the default selection.\n\nAnchor: \"mcp/tests/test_response_address_binding.py\"",
+      "note": "The lane row that keeps this module in the default selection. Source caption: \"mcp/tests/test_response_address_binding.py\"",
       "targets": [
         {
           "anchor": {
-            "blob": "11ba98ff63f4a4815985ac51e2c0c7b5a48556a4",
-            "content": "sha256:f176b16c2afbd14618bc048ea73d4b31a20898a9e7f85cac3869f6f76c354ada",
+            "blob": "102c4550ab6429f44c8fb543d1d0662de66a1b8c",
+            "content": "sha256:8d94a320f75678548208ea337a9217608dda4eadd49abaccfb2f028005a6688c",
             "locator": {
-              "end": 343,
+              "end": 334,
               "kind": "line_range",
-              "start": 343
+              "start": 334
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },

@@ -52,7 +52,9 @@ No relevant external documentation was available after checking the configured s
 The source and focused application tests prove the raw-shape and no-write boundary.
 
 - The helper validates the entire raw list before copying and scaffolding only missing registers. [1]
+
 - `_build_doc` routes create and replace candidates through this helper (after the `kind` default) and only then through `_validate`, the canonical model validation. [2]
+
 - Register section scaffolding has one production entry point and validates the supplied section collection. [3]
 
 ### Cross-Repo References

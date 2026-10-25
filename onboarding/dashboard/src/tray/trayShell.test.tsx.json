@@ -1,5 +1,6 @@
 {
   "path": "dashboard/src/tray/trayShell.test.tsx",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
@@ -58,8 +59,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ec661a3a419488a801058c8a66d14b7f7e881d50",
-            "content": "sha256:bee3289f08eb9cf4129abe9a50cef82ef440d0b310274bfad4dc8c9374f9e01c",
+            "blob": "5282a752da51ba67382691fdda972d90e98fd9f7",
+            "content": "sha256:6432d3fe402af4293d2e1e79f5b2a3e80493d226cd890040db2796f5116b3309",
             "locator": {
               "end": 190,
               "kind": "line_range",

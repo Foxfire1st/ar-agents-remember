@@ -93,11 +93,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a15ac74370e273b2d4c9511191164cb23e46ad5f",
-            "content": "sha256:dc7eb669fc01a1e64364da80808afa2897ccce4091249ab1a6d15d107ac43859",
+            "blob": "4b951246c7fde0b145aac05a589c5d0d1bc1574c",
+            "content": "sha256:00b756eaa7901627221708c9551fc11690b19e365a2f6c79287b198dc5e3a36e",
             "locator": {
               "kind": "symbol",
-              "name": "cgc_start"
+              "name": "cgc_stop"
             },
             "path": "mcp/src/agents_remember/providers/cgc/lifecycle/process_control.py"
           },

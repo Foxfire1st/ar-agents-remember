@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/rules_history.py",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
@@ -204,7 +205,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "96a8f88b672003959586599c7c8b8849e9b062da",
+            "blob": "3768b4016fd921a34a69b6dcfcf2df78901c48a7",
             "content": "sha256:ca8026f753e814efb423427ba9db47666900ae917825a632db04f9b936f8b72c",
             "locator": {
               "kind": "symbol",
@@ -297,12 +298,23 @@
       ]
     },
     "16": {
-      "note": "Changed row remains governing in every attempt.",
+      "note": "Changed row remains governing in every attempt.\n\nAnchor: `test_a_changed_record_is_governed_by_its_changed_row_in_every_attempt`",
       "targets": [
         {
           "anchor": {
-            "blob": "893ba0db963594518ddb991ce2e7b485b2dc03c1",
-            "content": "sha256:5ce8a0a8766fccf1b060bbf7966774c165b00a39ff4cc8a760284830ebf8adbe",
+            "blob": "edad7b9d825ab3a241a0917f1627d688e34954f3",
+            "content": "sha256:e791cf309e2f6ef9f2d1f7830a3cf0973f031617f8d7b50e028f35d6453d5381",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_knowledge_reopen_governing_rows.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "edad7b9d825ab3a241a0917f1627d688e34954f3",
+            "content": "sha256:f2a5c13392eeade1234e4d59cd16af5174bf19c290178548d516c53824edff65",
             "locator": {
               "kind": "symbol",
               "name": "test_a_changed_record_is_governed_by_its_changed_row_in_every_attempt"
@@ -314,12 +326,23 @@
       ]
     },
     "17": {
-      "note": "Parent-line change may be answered by any later row.",
+      "note": "Parent-line change may be answered by any later row.\n\nAnchor: `test_a_change_on_the_parent_line_may_be_answered_by_any_later_row`",
       "targets": [
         {
           "anchor": {
-            "blob": "996b57288ef3f907186b1a856b06344c82397c9d",
-            "content": "sha256:69883e85fe870d7806d4f8a576dffdcdafb12630f38f5cb1211d8c18c681b500",
+            "blob": "edad7b9d825ab3a241a0917f1627d688e34954f3",
+            "content": "sha256:e791cf309e2f6ef9f2d1f7830a3cf0973f031617f8d7b50e028f35d6453d5381",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_knowledge_reopen_governing_rows.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "edad7b9d825ab3a241a0917f1627d688e34954f3",
+            "content": "sha256:a3a0d63304851da3ceea90d1d419269335170667886b9dce1105ee1a7a809a62",
             "locator": {
               "kind": "symbol",
               "name": "test_a_change_on_the_parent_line_may_be_answered_by_any_later_row"
@@ -330,29 +353,23 @@
         }
       ]
     },
-    "18": {
-      "note": "Only route-published new or edited rows are judged.",
+    "19": {
+      "note": "Leaf publication refuses every merged-row mismatch, while the `merge_reports` finding defers only at a non-publication sync merge and names the next refusing publication or landing.\n\nAnchor: `check_history_rows` `check_merged_history_rows`",
       "targets": [
         {
           "anchor": {
             "blob": "52e4e48a805e1d81f5d7ca9c2042cd3ec786e249",
-            "content": "sha256:c2f8e85a76746c05fbabcc6b2888b462de8d083de39f167c1a37c5be4512be48",
+            "content": "sha256:96a01230a80ddd527233066dd4251774b2aa624fa41913d0210d0f50e5b817e8",
             "locator": {
-              "kind": "symbol",
-              "name": "check_family_judgments"
+              "kind": "file"
             }
           },
           "kind": "code"
-        }
-      ]
-    },
-    "19": {
-      "note": "Leaf publication refuses every merged-row mismatch, while the `merge_reports` finding defers only at a non-publication sync merge and names the next refusing publication or landing.",
-      "targets": [
+        },
         {
           "anchor": {
-            "blob": "7ffaef8b58255dfc3467752fe1cda9d82a13be34",
-            "content": "sha256:8a0b8746cd68f22807648e94f41704cccbc8c7c1abc64ad7a815e39e7d7a081c",
+            "blob": "52e4e48a805e1d81f5d7ca9c2042cd3ec786e249",
+            "content": "sha256:03d2aadbda30c0e741a8ad8b4aef566f1b184b0f7826c097285e1188ff4e99dd",
             "locator": {
               "kind": "symbol",
               "name": "check_history_rows"
@@ -440,16 +457,75 @@
             "path": "mcp/src/agents_remember/models/knowledge_files/history.py"
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "52e4e48a805e1d81f5d7ca9c2042cd3ec786e249",
+            "content": "sha256:6fd6e75f62b2330f958fbfdd27c8d147e95b911c2269d25d9ef3eadfe7162248",
+            "locator": {
+              "end": 290,
+              "kind": "line_range",
+              "start": 288
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "52e4e48a805e1d81f5d7ca9c2042cd3ec786e249",
+            "content": "sha256:df46988f18894eadf365fbbb08e826a99a2125d53f3fab018eace0dfb0d95477",
+            "locator": {
+              "end": 321,
+              "kind": "line_range",
+              "start": 318
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "52e4e48a805e1d81f5d7ca9c2042cd3ec786e249",
+            "content": "sha256:71b9f7ff22b302552165bcd74700aa499f6ac7a54ef7834ec006db1d33529f5f",
+            "locator": {
+              "end": 406,
+              "kind": "line_range",
+              "start": 402
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d7c13e7df1327acccc4ecd9c10b2da7c4c70c59b",
+            "content": "sha256:f34d645788bbd9ce2f25603b43d5c2d0b1d6beaad31d18efea2d2aee994b55ac",
+            "locator": {
+              "end": 756,
+              "kind": "line_range",
+              "start": 754
+            },
+            "path": "mcp/src/agents_remember/models/knowledge_files/history.py"
+          },
+          "kind": "code"
         }
       ]
     },
     "21": {
-      "note": "Item tokens are judged only in the files the re-anchor check reads; a closed file outside that population is not item-judged here.",
+      "note": "Item tokens are judged only in the files the re-anchor check reads; a closed file outside that population is not item-judged here.\n\nAnchor: `check_history_rows`",
       "targets": [
         {
           "anchor": {
-            "blob": "7ffaef8b58255dfc3467752fe1cda9d82a13be34",
-            "content": "sha256:8a0b8746cd68f22807648e94f41704cccbc8c7c1abc64ad7a815e39e7d7a081c",
+            "blob": "52e4e48a805e1d81f5d7ca9c2042cd3ec786e249",
+            "content": "sha256:96a01230a80ddd527233066dd4251774b2aa624fa41913d0210d0f50e5b817e8",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "52e4e48a805e1d81f5d7ca9c2042cd3ec786e249",
+            "content": "sha256:03d2aadbda30c0e741a8ad8b4aef566f1b184b0f7826c097285e1188ff4e99dd",
             "locator": {
               "kind": "symbol",
               "name": "check_history_rows"
@@ -492,12 +568,22 @@
       ]
     },
     "5": {
-      "note": "The refusing check rejects all mismatches at a leaf publication and only unmoved mismatches at a non-publication merge.",
+      "note": "The refusing check rejects all mismatches at a leaf publication and only unmoved mismatches at a non-publication merge.\n\nAnchor: `check_history_rows`",
       "targets": [
         {
           "anchor": {
-            "blob": "0963684e441d8b3abc82f5e031afe6964134530e",
-            "content": "sha256:fb11df46c544eeaa363e2cb8d85d9ced4e92400c17a8043e23fdaf9a84719948",
+            "blob": "52e4e48a805e1d81f5d7ca9c2042cd3ec786e249",
+            "content": "sha256:96a01230a80ddd527233066dd4251774b2aa624fa41913d0210d0f50e5b817e8",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "52e4e48a805e1d81f5d7ca9c2042cd3ec786e249",
+            "content": "sha256:03d2aadbda30c0e741a8ad8b4aef566f1b184b0f7826c097285e1188ff4e99dd",
             "locator": {
               "kind": "symbol",
               "name": "check_history_rows"
@@ -555,12 +641,25 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6cf0f93cec095913e9f6675b6797d147529e4399",
+            "blob": "5ce8409da114e35f69fddf1a11a39bd5a42dac49",
+            "content": "sha256:49bdb69b04d940bd2a58bf1ce6eada9e10055e8505ba45b5e33c39642538577e",
+            "locator": {
+              "end": 332,
+              "kind": "line_range",
+              "start": 332
+            },
+            "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/registry.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5ce8409da114e35f69fddf1a11a39bd5a42dac49",
             "content": "sha256:d2f3d96dd8948e4416449730447149f27c8cf5b9d69b79f5949fa145243ee771",
             "locator": {
-              "end": 308,
+              "end": 320,
               "kind": "line_range",
-              "start": 308
+              "start": 320
             },
             "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/registry.py"
           },

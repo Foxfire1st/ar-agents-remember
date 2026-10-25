@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/application/knowledge_writer/carry.py",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
@@ -85,15 +86,14 @@
       ]
     },
     "6": {
-      "note": "Only the owner's open row with the old `after` is updated.\n\nAnchor: `history_path`",
+      "note": "Only the owner's open row with the old `after` is updated.\n\nAnchor: `_carry_rows`",
       "targets": [
         {
           "anchor": {
-            "blob": "4fbfa3dc5dacd3634a20aaecc958d22b187b2a22",
-            "content": "sha256:f9399201af02ec2c10a7aa0cb7bdc1c1009a94e5087d29635f0d9b0ff96aaed1",
+            "blob": "57755dbe9aff5204421da8c3384af01e2d9f142d",
+            "content": "sha256:dce89ad61ebb4a5ed4e78cf6bda9a1bc7bc9ab0825964ff24eb45888833ebb2f",
             "locator": {
-              "kind": "symbol",
-              "name": "_carry_rows"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -101,15 +101,14 @@
       ]
     },
     "7": {
-      "note": "The call in every writer operation.\n\nAnchor: `carry_entries`",
+      "note": "The call in every writer operation.\n\nAnchor: `write_knowledge`",
       "targets": [
         {
           "anchor": {
-            "blob": "dd6cf1d01b81aad12a4d1e9d8815046cd441dffe",
-            "content": "sha256:357ec0bb032b4a3d1e7affcdfdac35ec1f39ddc73624a3d818d8441d2bbba737",
+            "blob": "f8c3ebb0fba1a81fe6fad47e544b6183713f1019",
+            "content": "sha256:7fdd22a5c098b7645dcbb18b54f3ed58f98b8504c69bc155a9e3493e0e3e44d0",
             "locator": {
-              "kind": "symbol",
-              "name": "write_knowledge"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/knowledge_writer/writer.py"
           },
@@ -118,15 +117,14 @@
       ]
     },
     "8": {
-      "note": "Blobs and covering rows are carried.",
+      "note": "Blobs and covering rows are carried.\n\nAnchor: `test_the_writer_carries_moved_blobs_and_the_rows_that_cover_them`",
       "targets": [
         {
           "anchor": {
-            "blob": "bb33d32e66cacf8fa81aad1a23356a78e271e230",
-            "content": "sha256:f2ab56e2b5b537001c07008dc9577493f986db58f2841cf8129d3eb17317a987",
+            "blob": "e159e3fdc8444fdd57cce28d9f770103e7ac3cb6",
+            "content": "sha256:bbcba9e57b03794900e6df5024bc17408af317e3896a1eff84d4042f64e3e44e",
             "locator": {
-              "kind": "symbol",
-              "name": "test_the_writer_carries_moved_blobs_and_the_rows_that_cover_them"
+              "kind": "file"
             },
             "path": "mcp/tests/test_knowledge_worklist_leaf.py"
           },
@@ -135,15 +133,14 @@
       ]
     },
     "9": {
-      "note": "Another owner's row and a closed file are untouched.",
+      "note": "Another owner's row and a closed file are untouched.\n\nAnchor: `test_carrying_never_edits_another_owners_row_or_a_closed_history_file`",
       "targets": [
         {
           "anchor": {
-            "blob": "30a7a2a8d8ec537425cdc4652a376dea8effdce8",
-            "content": "sha256:2d0d37e9629db5c447406e19ecb7c5c0431d725c380abb86739332459cbd8349",
+            "blob": "e159e3fdc8444fdd57cce28d9f770103e7ac3cb6",
+            "content": "sha256:bbcba9e57b03794900e6df5024bc17408af317e3896a1eff84d4042f64e3e44e",
             "locator": {
-              "kind": "symbol",
-              "name": "test_carrying_never_edits_another_owners_row_or_a_closed_history_file"
+              "kind": "file"
             },
             "path": "mcp/tests/test_knowledge_worklist_leaf.py"
           },

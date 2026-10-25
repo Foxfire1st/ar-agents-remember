@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/application/task_docs/task_doc_publication.py",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
@@ -94,8 +95,18 @@
   ],
   "references": {
     "1": {
-      "note": "The module defines the exact task publication request, transaction, and result models.",
+      "note": "The module defines the exact task publication request, transaction, and result models.\n\nAnchor: `TaskDocPublicationConflict` `TaskDocPublication` `TaskDocPublicationTransaction` `TaskDocPublicationResult`",
       "targets": [
+        {
+          "anchor": {
+            "blob": "3cdbb47739fd9663671343886ca7985545584789",
+            "content": "sha256:6543e82cfa71a38f1f0ddb4c92ba517cdd337bf181e07c119bc10b368774263e",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
         {
           "anchor": {
             "blob": "3cdbb47739fd9663671343886ca7985545584789",
@@ -109,8 +120,8 @@
         },
         {
           "anchor": {
-            "blob": "eb17f15ae8c3ab296c94191b81ec35737c0625e8",
-            "content": "sha256:ce3f71f959c82159c1d56cd7d9aedfec2a471d105e557bf4093b35527533492e",
+            "blob": "3cdbb47739fd9663671343886ca7985545584789",
+            "content": "sha256:fc8e94630e2c131bf31b7b415eb66b7d1915330351c09c494347f018579b8e8d",
             "locator": {
               "kind": "symbol",
               "name": "TaskDocPublication"
@@ -202,16 +213,38 @@
             }
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3cdbb47739fd9663671343886ca7985545584789",
+            "content": "sha256:dd5fde3c1d4b889cb103ec43ed2efd67b65210a654beb10c1cd285ee22d7a1cc",
+            "locator": {
+              "end": 208,
+              "kind": "line_range",
+              "start": 160
+            }
+          },
+          "kind": "code"
         }
       ]
     },
     "3": {
-      "note": "Graph cardinality is checked before transaction construction while disk title reads remain inside the publisher callback.",
+      "note": "Graph cardinality is checked before transaction construction while disk title reads remain inside the publisher callback.\n\nAnchor: `task_doc_publication_transaction`",
       "targets": [
         {
           "anchor": {
-            "blob": "eb17f15ae8c3ab296c94191b81ec35737c0625e8",
-            "content": "sha256:382ac1c56b0075ab841e4b01ce53a94985b33f5cb6b60e4726e6bf3f0c0240b9",
+            "blob": "3cdbb47739fd9663671343886ca7985545584789",
+            "content": "sha256:6543e82cfa71a38f1f0ddb4c92ba517cdd337bf181e07c119bc10b368774263e",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3cdbb47739fd9663671343886ca7985545584789",
+            "content": "sha256:2f67119657d5277a452af212cbd58e79ac3ed07930b8c8ec2eab3d4404ed023e",
             "locator": {
               "kind": "symbol",
               "name": "task_doc_publication_transaction"
@@ -263,16 +296,51 @@
             }
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3cdbb47739fd9663671343886ca7985545584789",
+            "content": "sha256:56bd49002b57862e9dae6d8872328efec7d78f052d6c2e50bd98d61daa0a9506",
+            "locator": {
+              "end": 339,
+              "kind": "line_range",
+              "start": 311
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3cdbb47739fd9663671343886ca7985545584789",
+            "content": "sha256:ee543dd949305f389072f39048b03134fbce7d75711543198a135942bbea7797",
+            "locator": {
+              "end": 208,
+              "kind": "line_range",
+              "start": 198
+            }
+          },
+          "kind": "code"
         }
       ]
     },
     "6": {
-      "note": "Focused proof refuses two graph documents before publisher/projection mutation and preserves sentinel bytes.",
+      "note": "Focused proof refuses two graph documents before publisher/projection mutation and preserves sentinel bytes.\n\nAnchor: `TaskDocGraphPublicationTests`",
       "targets": [
         {
           "anchor": {
-            "blob": "56afdabb8daf6d4f55f78484a975fdd60e99601b",
-            "content": "sha256:bc41f407e5e432caa4afc030e851385ffe5f0e3276e64ff6a3768eefbc05629e",
+            "blob": "b2d4da2d1b3bc34a082fe573f4ee00c4bc28c358",
+            "content": "sha256:5a795415a1209966fed669e92c835ce1585bfb9a821b3108f4f42d7152d6e9d7",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_task_doc_graph_publication.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b2d4da2d1b3bc34a082fe573f4ee00c4bc28c358",
+            "content": "sha256:ab8eb3ab42384d46d82c119c732c64fba66dd16f820a57ffaac6b25e8f90b4c3",
             "locator": {
               "kind": "symbol",
               "name": "TaskDocGraphPublicationTests"
@@ -300,12 +368,23 @@
       ]
     },
     "8": {
-      "note": "The kernel primitive uses a sibling lock file, a per-resource thread mutex and flock, with same-thread re-entry sharing the outer hold.",
+      "note": "The kernel primitive uses a sibling lock file, a per-resource thread mutex and flock, with same-thread re-entry sharing the outer hold.\n\nAnchor: `exclusive_file_lock`",
       "targets": [
         {
           "anchor": {
-            "blob": "5801a3451a06ef3ec426db8cf0c48e06147bb8c4",
-            "content": "sha256:dd8d3d0f95aedef79978e2d0f55d8bcb30dde228556a7c232ba96ba8b21d9e36",
+            "blob": "1c8709e75ca22ed12ab5182e676a05d389075a96",
+            "content": "sha256:e6215a71b64bbbaf314085e12c561af5ab131b13a04ff6e28d38b951f6922140",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/kernel/file_lock.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1c8709e75ca22ed12ab5182e676a05d389075a96",
+            "content": "sha256:b5fbc44c9c78607266f10080567a3c94aa2aedcb0a0937fb7c8e3faf7d10509e",
             "locator": {
               "kind": "symbol",
               "name": "exclusive_file_lock"

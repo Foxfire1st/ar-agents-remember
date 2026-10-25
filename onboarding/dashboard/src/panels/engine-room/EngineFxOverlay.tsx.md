@@ -66,8 +66,12 @@ No Domain Documentation source is configured.
 
 ### Repo-Internal References
 
+
 - Timeline selectors and choreography. [1]
+
+
 - Visual isolation regressions. [2]
+
 
 ### Cross-Repo References
 

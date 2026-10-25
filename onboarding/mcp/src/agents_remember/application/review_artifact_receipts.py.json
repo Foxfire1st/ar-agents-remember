@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/application/review_artifact_receipts.py",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
@@ -63,8 +64,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "60455ec5f2544afad8a1cc9f43e1b38bce7e613f",
-            "content": "sha256:b172fc179762a6681abf37b35940c150eaef9852587f9242ecab2df2ca49b651",
+            "blob": "17c9281c987d9e0331f14f43597a02542b38c479",
+            "content": "sha256:f4ad59dfbae9c71913fdddede30a42fd9ba357cb63baa9b378c18d399dd8d933",
             "locator": {
               "kind": "file"
             }
@@ -78,8 +79,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "60455ec5f2544afad8a1cc9f43e1b38bce7e613f",
-            "content": "sha256:b172fc179762a6681abf37b35940c150eaef9852587f9242ecab2df2ca49b651",
+            "blob": "17c9281c987d9e0331f14f43597a02542b38c479",
+            "content": "sha256:f4ad59dfbae9c71913fdddede30a42fd9ba357cb63baa9b378c18d399dd8d933",
             "locator": {
               "kind": "file"
             }
@@ -93,8 +94,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "60455ec5f2544afad8a1cc9f43e1b38bce7e613f",
-            "content": "sha256:b172fc179762a6681abf37b35940c150eaef9852587f9242ecab2df2ca49b651",
+            "blob": "17c9281c987d9e0331f14f43597a02542b38c479",
+            "content": "sha256:f4ad59dfbae9c71913fdddede30a42fd9ba357cb63baa9b378c18d399dd8d933",
             "locator": {
               "kind": "file"
             }
@@ -108,8 +109,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "60455ec5f2544afad8a1cc9f43e1b38bce7e613f",
-            "content": "sha256:b172fc179762a6681abf37b35940c150eaef9852587f9242ecab2df2ca49b651",
+            "blob": "17c9281c987d9e0331f14f43597a02542b38c479",
+            "content": "sha256:f4ad59dfbae9c71913fdddede30a42fd9ba357cb63baa9b378c18d399dd8d933",
             "locator": {
               "kind": "file"
             }
@@ -123,8 +124,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1bbd29671c9645e75997b17b6e736154af3cf8ed",
-            "content": "sha256:29bac4d436ae4748dd44f328b7ff13216e5ec4514404aad449fd20436bcfc20a",
+            "blob": "17c9281c987d9e0331f14f43597a02542b38c479",
+            "content": "sha256:e6419d1439d236d2f73546299011f638ec8ced3b3e772d0bf67fb7bf1a1831a7",
             "locator": {
               "kind": "symbol",
               "name": "_ARTIFACT_KEYS"

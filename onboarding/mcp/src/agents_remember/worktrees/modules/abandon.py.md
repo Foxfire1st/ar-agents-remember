@@ -101,7 +101,9 @@ blocker and contract-stamp behavior.
 No external Domain Documentation source is configured for this memory repo.
 
 
-- Successful abandon and exact terminal replay are wrapped with exact source-pair release. [1]
+
+> Retained earlier citation wording: - Successful abandon and exact terminal replay are wrapped with exact source-pair release. [1]
+
 
 - The terminal bridge preserves missing, unreadable, or different selection and never clears a newer owner. [2]
 No relevant external documentation found.
@@ -119,7 +121,9 @@ No relevant external documentation found.
 - `remove_registered_worktree` (from cleanup), `delete_branch_if_merged`, `delete_branch_force` (from `terminal_branch_retirement`), and `remove_empty_dir` are reused through the terminal owners. [13]
 
 
-- `remove_registered_worktree` (from cleanup), `delete_branch_if_merged`, `delete_branch_force` (from `terminal_branch_retirement`), and `remove_empty_dir` are reused through the terminal owners. [14]
+
+> Retained earlier citation wording: - `remove_registered_worktree` (from cleanup), `delete_branch_if_merged`, `delete_branch_force` (from `terminal_branch_retirement`), and `remove_empty_dir` are reused through the terminal owners. [14]
+
 
 
 - `WorktreeArgs` types the abandon input. [6]
@@ -130,11 +134,15 @@ No relevant external documentation found.
 - The closeout registrar exposes `worktree_abandon` with `force` forwarded from the MCP layer. [7]
 - Series reports-tree preservation is decided by the legacy child-enclosure guard imported from terminal validation. [8]
 
-- The cleanup vocabulary includes abandoned and reopened as declared terminal/reopen states. [9]
+
+> Retained earlier citation wording: - The cleanup vocabulary includes abandoned and reopened as declared terminal/reopen states. [9]
+
 
 - The typed contract amendment record holds the six optional vocabulary cells. [10]
 
-- The typed amendment helper preserves unspecified cells and applies supplied vocabulary values. [11]
+
+> Retained earlier citation wording: - The typed amendment helper preserves unspecified cells and applies supplied vocabulary values. [11]
+
 
 
 ### Cross-Repo References
@@ -159,7 +167,9 @@ The current source seams include `abandon_result`. The public module consumes cl
 ### Reconciled Source Evidence
 
 
-- The current module exposes `abandon_result` at this ownership boundary. [12]
+
+> Retained earlier citation wording: - The current module exposes `abandon_result` at this ownership boundary. [12]
+
 
 
 ## 260821-CLIVE Archive-Before-Abandon
@@ -177,12 +187,35 @@ Rule 5 no-remains exception: with no locator, no worktree folder, no work branch
 
 [governing overview](overview.md)
 
-- Abandon evaluates provider liveness and terminal blockers for dry run as well as apply. A blocked preview returns abandon-blocked/blocked with the original coded blockers rather than would-abandon where the real call refuses. Force keeps its existing discard override; explicit approval, check order and unrecognized fail-closed exceptions retain their owners. Recognized terminal-state failures are answered before mutation, not generalized to every RuntimeError. [16]
+
+> Retained earlier citation wording: - Abandon evaluates provider liveness and terminal blockers for dry run as well as apply. A blocked preview returns abandon-blocked/blocked with the original coded blockers rather than would-abandon where the real call refuses. Force keeps its existing discard override; explicit approval, check order and unrecognized fail-closed exceptions retain their owners. Recognized terminal-state failures are answered before mutation, not generalized to every RuntimeError. [16]
+
 
 - No-remains abandon validates task-stage authority before teardown. [17]
-- The normal publication returns shared task/contract projection effects. [18]
+> Retained earlier citation wording: - The normal publication returns shared task/contract projection effects. [18]
+
 - One shared owner publishes/restores task stage and contract under the terminal guard. [19]
 
 ## 260928-MIK-L198 — Abandon removes the root and records its completion
 
 `abandon_result` is now a wrapper that returns `with_outside_scratch_reconcile(_abandon_result(args), dry_run=args.dry_run)`, so an abandon run also sweeps the product parent and carries `outsideScratchReconcile` when the sweep removed or reported a root. `_abandon_directories` publishes the root's entry under the `outside_scratch` key through `outside_scratch.removal_entry_for(contract, dry_run=dry_run)` on the series path, the leaf path and the `force` path. `_already_abandoned` now takes `dry_run` and asks `outside_scratch.terminal_blocker`; a root it could not remove returns return code 2 with state `abandon-blocked`, the summary "The worktree is already recorded as abandoned but its outside scratch root could not be removed." and the failure under `blockers`, while a removed or already-absent root is carried as `outsideScratch`. After the abandoned contract and task row are published and read back, `_publish_abandon` calls `write_completion_record(contract, updated, operation="worktree_abandon")`.
+
+- Successful abandon and exact terminal replay are wrapped with exact source-pair release.  Anchor: `abandon_result` [1]
+
+
+- The typed amendment helper preserves unspecified cells and applies supplied vocabulary values. [11]
+
+
+- The current module exposes `abandon_result` at this ownership boundary.  Anchor: `abandon_result` [12]
+
+
+- `remove_registered_worktree` (from cleanup), `delete_branch_if_merged`, `delete_branch_force` (from `terminal_branch_retirement`), and `remove_empty_dir` are reused through the terminal owners. [14]
+
+
+- Abandon evaluates provider liveness and terminal blockers for dry run as well as apply. A blocked preview returns abandon-blocked/blocked with the original coded blockers rather than would-abandon where the real call refuses. Force keeps its existing discard override; explicit approval, check order and unrecognized fail-closed exceptions retain their owners. Recognized terminal-state failures are answered before mutation, not generalized to every RuntimeError. [16]
+
+
+- The normal publication returns shared task/contract projection effects. [18]
+
+
+- The cleanup vocabulary includes abandoned and reopened as declared terminal/reopen states. [9]

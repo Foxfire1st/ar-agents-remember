@@ -278,27 +278,14 @@
       ]
     },
     "9": {
-      "note": "Retired invariants and families are never selected as live and are answered as retired.",
+      "note": "Retired invariants and families are never selected as live and are answered as retired.\n\nAnchor: `test_a_retired_record_is_never_selected_as_live_and_is_answered_as_retired` `test_a_retired_family_is_never_selected_as_live`",
       "targets": [
         {
           "anchor": {
-            "blob": "9ca8a915fc0011e8ee8f280439e1cad09171468c",
-            "content": "sha256:4be154412171cb8e4ec07dad7a2f9dd37772f0a5c2e41abc3e3ddd91d7a29cc3",
+            "blob": "bc2b134a1ee2b8958e995038dec519a5af1d7b69",
+            "content": "sha256:ea95bfa599e174f1929e6b7796658990bfd638ff2f8acaf153a5687b24b5c5cf",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_retired_record_is_never_selected_as_live_and_is_answered_as_retired"
-            },
-            "path": "mcp/tests/test_knowledge_index_surfaces.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "9ca8a915fc0011e8ee8f280439e1cad09171468c",
-            "content": "sha256:ac87d0a2e38b1b64b1b02a28e18a0c52d2d7f710196ba4675a84fc3ed1ad6fd5",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_a_retired_family_is_never_selected_as_live"
+              "kind": "file"
             },
             "path": "mcp/tests/test_knowledge_index_surfaces.py"
           },

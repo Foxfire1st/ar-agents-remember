@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/cli/role_launch_outcome.py",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
@@ -35,15 +36,14 @@
       ]
     },
     "3": {
-      "note": "The caller saves and reconciles task metadata around the host outcome.",
+      "note": "The caller saves and reconciles task metadata around the host outcome.\n\nAnchor: `_execute_prepared_launch`",
       "targets": [
         {
           "anchor": {
-            "blob": "5017d88ddb594f7f312e0a0098abec8585b38244",
-            "content": "sha256:5b3ef33fe5f69861582551142ecbe7c40b25b6309a8b72837eb3963208ef59a2",
+            "blob": "12aab96f86c33555f5973aa2e4fc3cf0a6b827b4",
+            "content": "sha256:d29a14c737179cb2f058fccfd1316555ad121cd67d113239d7e90ff025fcf3d1",
             "locator": {
-              "kind": "symbol",
-              "name": "_execute_prepared_launch"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/cli/role_launch_receipts.py"
           },

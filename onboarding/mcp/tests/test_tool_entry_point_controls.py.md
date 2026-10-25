@@ -26,9 +26,15 @@ The argument-versus-response validation control calls `citation_fix` with no `re
 
 ## Evidence
 
+
 - A delivered answer that keeps an envelope field is unvalidatable, each field on its own subTest. [2]
+
+
 - An answer without a readable whole-result file is unvalidatable, and the detail says which. [3]
+
+
 - A handler that goes round the choke point arrives as unvalidatable with its key named. [4]
+
 
 - The retained handler deadline control names server_info and checks cleanup plus the next call. [6]
 

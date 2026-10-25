@@ -45,12 +45,12 @@
       ]
     },
     "2": {
-      "note": "Explicit cancellation refuses an absent exact selection and a record that selects another contract.\n\nAnchor: `atomic-series-activation-selection-missing`; `atomic-series-activation-selected-contract-mismatch`",
+      "note": "Explicit cancellation refuses an absent exact selection and a record that selects another contract.",
       "targets": [
         {
           "anchor": {
-            "blob": "d5a990a37573009efcc6b9e64a03a90705368ce4",
-            "content": "sha256:b72a92de1e17269d0df6e9df39b32068f257c2283c7577c93ef639e5144d3821",
+            "blob": "72f8c66d6a44ab2bf2cdf025440751ba09ee6772",
+            "content": "sha256:35ea902206168b4965ef7890468937294948c45cf922c6f286f0b92a6e23f247",
             "locator": {
               "kind": "symbol",
               "name": "release_atomic_series_selection"
@@ -60,8 +60,8 @@
         },
         {
           "anchor": {
-            "blob": "d5a990a37573009efcc6b9e64a03a90705368ce4",
-            "content": "sha256:5a0ba86a5ca71f56205cc05690fe6389091a0b2052e5d566d36fa3284eff5d8c",
+            "blob": "72f8c66d6a44ab2bf2cdf025440751ba09ee6772",
+            "content": "sha256:5590425d03d225065e8a4f2a4a676d61db3640e7a40f103fd2aa2dd4492946a2",
             "locator": {
               "end": 53,
               "kind": "line_range",
@@ -69,11 +69,21 @@
             }
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "72f8c66d6a44ab2bf2cdf025440751ba09ee6772",
+            "content": "sha256:d6a46a7553240d9a912a468027c8664a01349d4281eacebc2e8f8de3d491bf07",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
         }
       ]
     },
     "3": {
-      "note": "Exact-owner proof and the revision-incremented vacant replacement retain the last selected master/contract.",
+      "note": "Exact-owner proof and the revision-incremented vacant replacement retain the last selected master/contract.\n\nAnchor: `_record_selects_contract` `_release_record`",
       "targets": [
         {
           "anchor": {
@@ -88,8 +98,8 @@
         },
         {
           "anchor": {
-            "blob": "d5a990a37573009efcc6b9e64a03a90705368ce4",
-            "content": "sha256:63d6ff82bae19511ab1e49b5be5ebe1fae21fde83bf0bbfe4c4dd94151e05dac",
+            "blob": "72f8c66d6a44ab2bf2cdf025440751ba09ee6772",
+            "content": "sha256:45439c79107d619acb8ba73f82bb42d3809aebe675fab622d6bd4e6f0ba4a8fe",
             "locator": {
               "kind": "symbol",
               "name": "_release_record"
@@ -111,12 +121,10 @@
         },
         {
           "anchor": {
-            "blob": "d5a990a37573009efcc6b9e64a03a90705368ce4",
-            "content": "sha256:699ef1acc1af8a0c80083b5929d04972ec60cba10956acf00f1fb3feb1c74268",
+            "blob": "72f8c66d6a44ab2bf2cdf025440751ba09ee6772",
+            "content": "sha256:d6a46a7553240d9a912a468027c8664a01349d4281eacebc2e8f8de3d491bf07",
             "locator": {
-              "end": 118,
-              "kind": "line_range",
-              "start": 91
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -172,27 +180,14 @@
       ]
     },
     "6": {
-      "note": "The stop-only pause is the third caller of the strict explicit release, and it adds no authority of its own.",
+      "note": "The stop-only pause is the third caller of the strict explicit release, and it adds no authority of its own.\n\nAnchor: `pause_result` `_already_stopped_result`",
       "targets": [
         {
           "anchor": {
-            "blob": "74f71ebfe48f6760b4c87c1bcd00e51baeb09358",
-            "content": "sha256:84fafdf9ffdd37a4b4147001d8b5e46c26385abec50dcc60edc1628ff2e1d51d",
+            "blob": "8d04298e98df4d5f82d3f636b06a324307aff3ac",
+            "content": "sha256:f3b7b1b5f3399297953ade6c23f1e975da21c5d4a0a7570b2b06066c3dab1b0a",
             "locator": {
-              "kind": "symbol",
-              "name": "pause_result"
-            },
-            "path": "mcp/src/agents_remember/worktrees/modules/pause.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "8458f1fd16eafbea5e304d0cec0514bcbe8b0da0",
-            "content": "sha256:be8ef36ce51fa9483a23838076371def6eeaed7e42576161d3273b2170fb4d96",
-            "locator": {
-              "kind": "symbol",
-              "name": "_already_stopped_result"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/worktrees/modules/pause.py"
           },

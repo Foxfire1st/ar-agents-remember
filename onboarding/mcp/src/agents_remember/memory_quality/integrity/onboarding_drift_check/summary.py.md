@@ -72,11 +72,15 @@ The concrete snapshot filename is derived by the shared `drift_snapshot_path` he
 - A converted tree is measured from the converted check alone; legacy discovery never runs there. [10]
 
 
+
 - The converted summary exposes measured counts, roots and unreadable sidecars; zero alone does not prove the entire memory tree was readable. [11]
 
 
 
+
+
 - The converted branch gates report, observer snapshot and reportPath together; unfiled reads retain the same measured packet. [12]
+
 
 
 
@@ -90,7 +94,10 @@ The concrete snapshot filename is derived by the shared `drift_snapshot_path` he
 
 
 
+
 - Explicit snapshots fingerprint complete actionable findings, with unknown identity for unreadable converted sidecars. [14]
+
+
 
 
 - Current source account and its stated boundaries. [15]

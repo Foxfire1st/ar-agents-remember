@@ -42,7 +42,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8bacf923a1a9b77562130bce9a5c3c707b4e4fcf",
+            "blob": "67bd836a126c87cce7dd24fb8f82a699decf8e4f",
             "content": "sha256:a92eb4045a39968fbc72ac369963f8dcb6636c870da9512cd4f60357431dabd9",
             "locator": {
               "kind": "symbol",
@@ -59,7 +59,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8bacf923a1a9b77562130bce9a5c3c707b4e4fcf",
+            "blob": "67bd836a126c87cce7dd24fb8f82a699decf8e4f",
             "content": "sha256:a92eb4045a39968fbc72ac369963f8dcb6636c870da9512cd4f60357431dabd9",
             "locator": {
               "kind": "symbol",
@@ -89,15 +89,14 @@
       ]
     },
     "8": {
-      "note": "The `ObserverEvent` shape (trust/actor/kind/data) the helper builds.",
+      "note": "The `ObserverEvent` shape (trust/actor/kind/data) the helper builds.\n\nAnchor: `ObserverEvent`",
       "targets": [
         {
           "anchor": {
-            "blob": "505b38f7f19667fa0c0cc4caca3e8a966d548e1d",
-            "content": "sha256:8b045c8da2fe34c0eebd21a36174eb5c131119422538977de690652191a5fae3",
+            "blob": "25b46051e848ed30ec884515068da4de250b2117",
+            "content": "sha256:ad737b334a9d79e13b1ab2b81a6e1a25a8ccc71cfb4c4f2a07ca3e974d61049e",
             "locator": {
-              "kind": "symbol",
-              "name": "ObserverEvent"
+              "kind": "file"
             },
             "path": "dashboard/src/types/event.ts"
           },

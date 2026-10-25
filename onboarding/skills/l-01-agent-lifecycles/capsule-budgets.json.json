@@ -71,8 +71,8 @@
         },
         {
           "anchor": {
-            "blob": "356a833b0ccb85f77570fc70bdd1e2b5e432a2e8",
-            "content": "sha256:c94c3a9e543bae6420b040b2e2bd94008cd36996a71e824c80207698ffd807b4",
+            "blob": "32588f695124b7d325ef8e5c24ad430a9a85ee81",
+            "content": "sha256:9b4f53f7128be9858aae9424b703b202681907bad92e097164204b7ea02ade3a",
             "locator": {
               "end": 193,
               "kind": "line_range",
@@ -132,16 +132,16 @@
       ]
     },
     "3": {
-      "note": "The registry retains 38 capped capsule rows and fifteen step-file rows; its decisions retain the provenance of their own measured changes.\n\nAnchor: current definitions",
+      "note": "The registry retains 38 capped capsule rows and fifteen step-file rows; its decisions retain the provenance of their own measured changes.  Anchor: current definitions",
       "targets": [
         {
           "anchor": {
-            "blob": "356a833b0ccb85f77570fc70bdd1e2b5e432a2e8",
-            "content": "sha256:dc5924603eeec94da382e70c285b3eedcbc6661194609aa20a7e4ccb8ab4abeb",
+            "blob": "32588f695124b7d325ef8e5c24ad430a9a85ee81",
+            "content": "sha256:8f2cb7756b51b80dbabced1f249a44c45c78c7456f9f6c4c6e880a10b10b6889",
             "locator": {
               "end": 255,
               "kind": "line_range",
-              "start": 25
+              "start": 40
             }
           },
           "kind": "code"
@@ -153,10 +153,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "356a833b0ccb85f77570fc70bdd1e2b5e432a2e8",
-            "content": "sha256:a5be43c3751cd0f4cc44794ff1b1622c06294643ea5e5a022c4b9c9e86e6e468",
+            "blob": "32588f695124b7d325ef8e5c24ad430a9a85ee81",
+            "content": "sha256:4fce5f17e755b648d4cec0100701b681c91d7b1a57b77072390293a1f005cf82",
             "locator": {
-              "kind": "file"
+              "end": 3440,
+              "kind": "line_range",
+              "start": 1
             }
           },
           "kind": "code"
@@ -243,10 +245,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "356a833b0ccb85f77570fc70bdd1e2b5e432a2e8",
-            "content": "sha256:b6dac2cc9b669bc9d6a289eff1fe70f58449096d4fdd0670707434e9d6e7fba2",
+            "blob": "32588f695124b7d325ef8e5c24ad430a9a85ee81",
+            "content": "sha256:e52a28f644fe8f3a0ad84b71f4db3ee6a0ad779043123feb3a11b9c1c26232ec",
             "locator": {
-              "end": 3069,
+              "end": 3440,
               "kind": "line_range",
               "start": 256
             }

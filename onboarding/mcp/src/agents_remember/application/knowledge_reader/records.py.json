@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/application/knowledge_reader/records.py",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
@@ -56,12 +57,22 @@
       ]
     },
     "11": {
-      "note": "A history row's incoming link carries the record the row is about.",
+      "note": "A history row's incoming link carries the record the row is about.\n\nAnchor: `link_document`",
       "targets": [
         {
           "anchor": {
-            "blob": "bf690d9e513cb94247e3a2446f5ff32114c5088e",
-            "content": "sha256:a2b44f7e9ac54ac4d4d9249551a686502595146d83ff510877fabe5db5027fdb",
+            "blob": "186b665d605f7702f9f91f53299c6efdd391c9e5",
+            "content": "sha256:aba14d715f01f4152b97bc311c7b04e038e7db5df1048b1861c79e521ceac62a",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "186b665d605f7702f9f91f53299c6efdd391c9e5",
+            "content": "sha256:36a847a85ccccd7b7b93c3c4b089bec7b5b2c5871ebcd72b99ea69f0b8acc202",
             "locator": {
               "kind": "symbol",
               "name": "link_document"
@@ -177,12 +188,34 @@
             }
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "186b665d605f7702f9f91f53299c6efdd391c9e5",
+            "content": "sha256:2e88b79808999444921f96c32a21d6342ce5a109a85a8bbe7a2f30499b0e6a1b",
+            "locator": {
+              "end": 34,
+              "kind": "line_range",
+              "start": 29
+            }
+          },
+          "kind": "code"
         }
       ]
     },
     "7": {
-      "note": "A link target's kind; one indexed link with its record ends summarised.",
+      "note": "A link target's kind; one indexed link with its record ends summarised.\n\nAnchor: `record_link_target` `link_document`",
       "targets": [
+        {
+          "anchor": {
+            "blob": "186b665d605f7702f9f91f53299c6efdd391c9e5",
+            "content": "sha256:aba14d715f01f4152b97bc311c7b04e038e7db5df1048b1861c79e521ceac62a",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
         {
           "anchor": {
             "blob": "186b665d605f7702f9f91f53299c6efdd391c9e5",
@@ -196,8 +229,8 @@
         },
         {
           "anchor": {
-            "blob": "bf690d9e513cb94247e3a2446f5ff32114c5088e",
-            "content": "sha256:a2b44f7e9ac54ac4d4d9249551a686502595146d83ff510877fabe5db5027fdb",
+            "blob": "186b665d605f7702f9f91f53299c6efdd391c9e5",
+            "content": "sha256:36a847a85ccccd7b7b93c3c4b089bec7b5b2c5871ebcd72b99ea69f0b8acc202",
             "locator": {
               "kind": "symbol",
               "name": "link_document"

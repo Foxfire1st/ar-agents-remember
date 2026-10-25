@@ -22,12 +22,12 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The scoped current source carries the module/document behavior described above.",
+      "note": "State reads without a timeline, pagination bounds, archived filtering and resume are covered here.",
       "targets": [
         {
           "anchor": {
-            "blob": "113286d928e06819c3548f6ca5d89888bcd4c7b2",
-            "content": "sha256:5934eb8f0b3b7a4e82ed7e5bfd970d5192d21449d75e4ca647f30386b8911dc9",
+            "blob": "ac044c2fe8117ba5c815b7a06aaf07b51d057268",
+            "content": "sha256:98d8a99adf75000433e09ab0a43b9c78682e55b51d03ccf8dc65d518ee2b9e82",
             "locator": {
               "kind": "file"
             }
@@ -37,12 +37,12 @@
       ]
     },
     "2": {
-      "note": "The real Node bridge script also runs against a scripted daemon client that enforces 200-entry listing pages. Cases pin complete pagination, archived-ID filtering, the ten-page bound and `hasMore` without a next cursor. A tree-reader composition proves missing IDs from an incomplete census stay `agents: null`, while a completed listing resolves the recorded live/archived agents. This is native-script/controlled-client evidence, not installed-host consumption.",
+      "note": "The scripted daemon client enforces 200-entry pages, `hasMore` without a cursor, archived filtering and the ten-page bound.",
       "targets": [
         {
           "anchor": {
-            "blob": "113286d928e06819c3548f6ca5d89888bcd4c7b2",
-            "content": "sha256:5934eb8f0b3b7a4e82ed7e5bfd970d5192d21449d75e4ca647f30386b8911dc9",
+            "blob": "ac044c2fe8117ba5c815b7a06aaf07b51d057268",
+            "content": "sha256:98d8a99adf75000433e09ab0a43b9c78682e55b51d03ccf8dc65d518ee2b9e82",
             "locator": {
               "kind": "file"
             }
@@ -52,8 +52,20 @@
       ]
     },
     "3": {
-      "note": "The same complete/incomplete census is applied to the document tree and developer seat list.\n\nAnchor: \"def test_a_recorded_agent_a_listing_did_not_reach_is_unknown_to_the_tree_and_not_gone(\"",
+      "note": "Complete and incomplete listings are applied to the document tree and the developer seat list alike.\n\nAnchor: \"def test_a_recorded_agent_a_listing_did_not_reach_is_unknown_to_the_tree_and_not_gone(\"",
       "targets": [
+        {
+          "anchor": {
+            "blob": "ac044c2fe8117ba5c815b7a06aaf07b51d057268",
+            "content": "sha256:0f323e399faab1a46d28c9384d8a0d313747138bb890dd3afd5a3ff8e74217e0",
+            "locator": {
+              "end": 448,
+              "kind": "line_range",
+              "start": 400
+            }
+          },
+          "kind": "test"
+        },
         {
           "anchor": {
             "blob": "ac044c2fe8117ba5c815b7a06aaf07b51d057268",
@@ -69,8 +81,20 @@
       ]
     },
     "4": {
-      "note": "The scripted native listing retains its page and termination bounds.\n\nAnchor: \"def test_agents_live_lists_in_pages_and_says_when_the_listing_did_not_end(self) -> None:\"",
+      "note": "The native listing's page and termination bounds.\n\nAnchor: \"def test_agents_live_lists_in_pages_and_says_when_the_listing_did_not_end(self) -> None:\"",
       "targets": [
+        {
+          "anchor": {
+            "blob": "ac044c2fe8117ba5c815b7a06aaf07b51d057268",
+            "content": "sha256:32da7dfd170f15bde5d90f7e810d6c69a8c8a12ebec048615d3ffe9d1d6d449d",
+            "locator": {
+              "end": 398,
+              "kind": "line_range",
+              "start": 351
+            }
+          },
+          "kind": "test"
+        },
         {
           "anchor": {
             "blob": "ac044c2fe8117ba5c815b7a06aaf07b51d057268",

@@ -76,15 +76,14 @@
   ],
   "references": {
     "1": {
-      "note": "Integration admission preserves the no-write refusal boundary.",
+      "note": "Integration admission preserves the no-write refusal boundary.\n\nAnchor: `integration_gate_block`",
       "targets": [
         {
           "anchor": {
-            "blob": "b7c1cdbb6b82fa751e51722404352099fba9aa25",
-            "content": "sha256:ba0f45687a8d0a9c237f8191b49fee25aef4d9515b6f927ee7e37a2a5006f76e",
+            "blob": "d2f3e6ac1adf4ec90ff5a8150cb65d2e46941403",
+            "content": "sha256:db02717153d515bdeec918a67b65300e96933de2ae80a8197b0525e3b7819cd1",
             "locator": {
-              "kind": "symbol",
-              "name": "integration_gate_block"
+              "kind": "file"
             }
           },
           "kind": "code"

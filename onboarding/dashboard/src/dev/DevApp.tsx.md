@@ -4,9 +4,9 @@
 
 The App.tsx DEV ternary/lazy import still gates this router. Its retained pathname prefixes mount Reference, SprintGraphPage, TaskSkeletonPage, Bench, DocumentChatHarness and FakePaseoHost, otherwise the small index. The pty-bench and flows branches/imports and flows index entry are removed. Retained sprint-graph/task-skeleton route intent remains; the old renderer/design-canvas accounts below are dated source, not current mounts or new mounted-UI acceptance.
 
-- The current DEV router retains the six listed prefixes and index, without pty-bench or flows branches. \[5] [5]
+- The current DEV router retains the six listed prefixes and index, without pty-bench or flows branches. [5]
 
-- The App source keeps the dev router behind import.meta.env.DEV, a lazy import and the /dev/ pathname gate. \[6] [6]
+- The App source keeps the dev router behind import.meta.env.DEV, a lazy import and the /dev/ pathname gate. [6]
 
 ## Historical original source account — retained, not authority for removed behavior
 
@@ -47,8 +47,9 @@ chunk). Its CSS is co-located in `dev.css`, loaded only here.
 ### Repo-Internal References
 
 - The DEV-only route gate that drops this chunk in prod. [1]
+
 - The co-located dev-gallery styles it imports. [2]
-- The L6 renderer measurement harness mounted at `/dev/pty-bench`. [3]
+
 
 As of cycle 5 the /dev/flows index label lists the converged model set (router first; build job and frame gone).
 

@@ -193,4 +193,30 @@ None.
 [21] mcp/src/agents_remember/kernel/primitives/paseo_runtime_settings.py — symbol DEFAULT_HOST_LISTEN
 [22] mcp/src/agents_remember/kernel/primitives/fresh_host.py — symbol fresh_host_block
 
+
+- Checkout policy derives from the loaded package path, separates coordination rows from enclosure reports, and centrally refuses targets outside both exact leaf-local roots. [1]
+- The layering contract loader establishes package ranks; the checker enforces their order on imports between distinct packages. [2]
+- Structural gate models import the producer-owned gate vocabulary from kernel. [3]
+- Paseo settings own strict nested runtime fields and the explicit unconfigured-runtime refusal. [4]
+- Runtime configuration owns repository/profile parsing and reads shared host authority per use. [5]
+- Agentic settings keep model, effort and service tier separate and resolve role settings precedence; this file also contains the disclosed upward model import. [6]
+- Role settings parsers shape-check independent fields; quality-gate caps remain optional. [7]
+
+- The authority reader reads the block of the MCP settings file on each use. [8]
+
+- The session environment filter delegates to named-variable and prefix predicates. [9]
+- The five-fact settings parse accepts an optional non-selecting version key. [10]
+- Checkout modes, leaf-local roots and daemon-role narrowing define the execution boundary. [11]
+- Gate policy is human-first and rejects non-human delegation of pinned kinds; gate vocabulary is kernel-owned. [12]
+- Command capture, snapshot removal, observer paths and provider naming are shared primitive operations. [13]
+- Remaining opt-in memory-cap planning, provider-degradation settings parsing, report retention/redaction and package/source version resolution keep their primitive owners; removed inbox backoff supplies no current scheduler. [14]
+- Packaged host pins, Linux x86_64 Node selection and the user-settings location supply shared host primitives. [15]
+- Configured-contract authority checks repository identities, memory mode and canonical task/enclosure paths at its mutation boundary. [16]
+- Native launch construction and replay belong to the CLI launch owner; catalog selection refuses unsupported model, effort and feature selections. [17]
+- The kernel validates the optional certification-profile path; requested certification loads that profile, freezes exact admission and executes the selected quality plan through its own owner, independently of ordinary closeout. [18]
+- Legacy gateDelegation migration warnings are deduplicated per authority-file-path/shadowed-state pair in the process, rather than on every re-resolution. The downstream direct-leaf authority, ignored directExecutionEnabled input, configured policy precedence and host/readiness boundaries are unchanged. The provider-degradation parser's actual source owner is provider_degradation_settings.py; retained primitives do not restore removed provider tools. [19]
+- The once-only establishment of the host block. [20]
+- The default listen address a fresh block carries. [21]
+- The five-key host block a cold settings file receives. [22]
+
 - Control vocabulary is a zero-internal-import owner of receipt/store/log names and bridge outcome bytes shared by execution, application, explainer and serving seams. [23]

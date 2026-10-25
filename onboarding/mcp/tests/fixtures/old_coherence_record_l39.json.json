@@ -18,15 +18,14 @@
       ]
     },
     "2": {
-      "note": "The production record model parses this exact fixture.",
+      "note": "The production record model parses this exact fixture.\n\nAnchor: `test_old_coherence_record_still_loads`",
       "targets": [
         {
           "anchor": {
-            "blob": "76762884376cd597ed838c578114a6a87afe0b75",
-            "content": "sha256:9d09b49479a9cc27a5cf74d5048e42cd4d828b4179857182bd6ae6dbcef2aa25",
+            "blob": "c9b187d1789b1bcd27e27139879beeb3df25a676",
+            "content": "sha256:cd2bd5fe14bd055965d51de153965cd718f5bee2fa1ca6056944f276c92ff562",
             "locator": {
-              "kind": "symbol",
-              "name": "test_old_coherence_record_still_loads"
+              "kind": "file"
             },
             "path": "mcp/tests/test_evidence_dependency_bounds.py"
           },

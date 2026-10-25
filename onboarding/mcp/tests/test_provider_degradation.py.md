@@ -62,7 +62,9 @@ No relevant documentation found after checking; the protocol is repo-internal do
 
 ### Repo-Internal References
 
+
 - The detector and evaluator under test. [1]
+
 - The settings dataclass this suite constructs directly to tune thresholds per test. [2]
 - The metrics store/schema rows the classifier tests construct as fixtures. [3]
 - The three current evaluator cases pin one-shot injected failsafe/event/state persistence, stop-failure durability, and degraded/healthy event ordering, with no terminal catalog/inbox/delivery assertions. [6]

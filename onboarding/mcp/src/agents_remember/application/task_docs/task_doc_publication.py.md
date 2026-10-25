@@ -67,15 +67,23 @@ No configured Domain Documentation source applies to this repository-internal li
 
 The source file itself is the current evidence for this file-specific contract.
 
+
 - The module defines the exact task publication request, transaction, and result models. [1]
+
 - One task-root file lock and the call-scoped active marker surround central publication; the private body performs exact validation, source publication, copy refresh/rollback and per-scope projection work. [2]
 - The outer task-doc call holds the same repository lock before reading/preparing the edit and refuses a nested publication before invoking the callback. [7]
+
 - The kernel primitive uses a sibling lock file, a per-resource thread mutex and flock, with same-thread re-entry sharing the outer hold. [8]
+
 - Native nested-refusal fixtures cover append and replacement and require task-source and memory bytes to equal their pre-batch values after failed refresh. [9]
+
 - Graph cardinality is checked before transaction construction while disk title reads remain inside the publisher callback. [3]
+
 - Scope changes bind each candidate to its exact accepted original bytes. [4]
 - Dry-run and protected publication share exact source-currentness, conditional folder-master/matching-row validation with prepared overrides, and classifier-scoped union resolution. [5]
+
 - Focused proof refuses two graph documents before publisher/projection mutation and preserves sentinel bytes. [6]
+
 
 ### Cross-Repo References
 

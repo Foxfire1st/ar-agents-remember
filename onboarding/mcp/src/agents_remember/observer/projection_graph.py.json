@@ -70,15 +70,14 @@
       ]
     },
     "3": {
-      "note": "Public projection forcing proves duplicate local numbers retain the owning master's title.",
+      "note": "Public projection forcing proves duplicate local numbers retain the owning master's title.\n\nAnchor: `TaskDocumentsGraphViewProjectionTests`",
       "targets": [
         {
           "anchor": {
-            "blob": "9bed61ca73d766e293e06dc77a62f9c8282da047",
-            "content": "sha256:6406eca38995a7a001b21f87b56665b9066358483da932e82a40d01795e7ac5e",
+            "blob": "530630f996ef1314283d863c5361689f84cbeeb4",
+            "content": "sha256:6a3b48bc9ef52f06442aef7657efb1ad51a1dd39f97da1c614ea36a860220190",
             "locator": {
-              "kind": "symbol",
-              "name": "TaskDocumentsGraphViewProjectionTests"
+              "kind": "file"
             },
             "path": "mcp/tests/test_task_documents_graph_projection.py"
           },

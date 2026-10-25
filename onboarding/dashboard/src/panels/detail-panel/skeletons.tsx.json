@@ -151,15 +151,14 @@
       ]
     },
     "3": {
-      "note": "Short and long register previews retain a link to every original section byte.",
+      "note": "Short and long register previews retain a link to every original section byte.\n\nAnchor: `RegistersBlock`",
       "targets": [
         {
           "anchor": {
-            "blob": "f6529ed9614c2c5b19d9b9a0050bcb2e4f544603",
-            "content": "sha256:fc46c907550740bec26d3cb7b0b6419bbee705d7d7d973aa0046113dce77f808",
+            "blob": "8bdfed60355162c97f6db2e53d9d0ab3543220a5",
+            "content": "sha256:35c516f68ed6755678538f560d1e4951a7508066e5a69e2b821413cf9ce85e16",
             "locator": {
-              "kind": "symbol",
-              "name": "RegistersBlock"
+              "kind": "file"
             }
           },
           "kind": "code"

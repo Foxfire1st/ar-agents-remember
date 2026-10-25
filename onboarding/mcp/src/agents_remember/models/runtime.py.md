@@ -6,7 +6,7 @@
 
 ## Current source contract evidence
 
-- Current candidate source supports the operative account; historical sections grant no current tool or execution acceptance. [5]
+- Current candidate source supports the operative account; historical sections grant no current tool or execution acceptance.
 
 ## Purpose
 
@@ -39,8 +39,12 @@ historical provenance; it is not a callable recovery path or current model.
 
 ### Repo-Internal References
 
+
 - Runtime install application entry point produces the installer response payload. [1]
-- Former coordination application entry point exposed resolver output through MCP; this retired producer citation is archival, not current capability. [2]
+
+
+- The retired coordination tool's former computation, kept for its one remaining script caller and not registered as an MCP tool. [2]
+
 
 ## 260928-MIK-L96 The host part of the install response
 

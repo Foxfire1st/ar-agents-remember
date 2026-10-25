@@ -95,7 +95,9 @@ The quotations below preserve the earlier packaged card’s account. They are hi
 
 The rows cite canonical source text and narrowly relevant neighbor definitions. A historical example or declared check remains distinct from a check result. The packaged source is a propagation twin, not an independent authority.
 
+
 - The manifest declares rationale reference-only and non-injected. [1]
+
 - The current manifest order is role then operation; the old core-first manifest claim is historical. [2]
 - The compiler vocabulary retains the older generic composition order without proving a current role capsule used it. [3]
 - The role-specific vocabulary separately declares role plus operation, not injected shared core. [4]
@@ -105,11 +107,15 @@ The rows cite canonical source text and narrowly relevant neighbor definitions. 
 - Nine files is historical consolidation wording, not a role or operation registry total. [8]
 - The launcher section describes a routing condition rather than a registry role. [9]
 - The reference retains ten-role/bootstrap session-open history separately from launcher identity. [10]
+
 - The manifest retains bootstrap as a free-agent registry entry; this does not prove current native launchability. [11]
+
 - The source heading concerns launcher identity, not whether the native launcher exposes ten roles. [12]
 - Canonical skill ownership remains explicit in the generator. [13]
 - The generator has a read-only check implementation; its presence does not prove a check passed. [14]
 - The --check command branch dispatches to the check implementation, not a synchronization write. [15]
-- The current thin router exposes seven role IDs and distinguishes retained registry entries. [16]
+
+- The current thin router exposes eight role IDs and distinguishes retained registry entries. [16]
+
 - Consolidation provenance, excluded LOCR runtime changes and the later-compiler account are historical reference content. [17]
 - Template categories, credits and historical notes remain reference prose, not universal role injection. [18]

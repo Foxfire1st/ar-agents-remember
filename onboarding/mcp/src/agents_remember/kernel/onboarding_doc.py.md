@@ -38,6 +38,8 @@ No external Domain Documentation source is configured for this memory repo.
 
 - History extraction and history-line delta parsing survive; metadata-row rewriting was removed. [1]
 
+
 - The onboarding owner imports retained Markdown table parsing, not the removed body/history classifiers. [2]
+
 
 - The public worktree facade still imports and exports source-onboarding plans and entity/index refresh helpers; metadata-row rewriting was removed. [5]

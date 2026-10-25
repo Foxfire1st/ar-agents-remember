@@ -37,12 +37,12 @@
       ]
     },
     "3": {
-      "note": "One file and turn-start age through permission/reconciliation.\n\nAnchor: a turn keeps its host start through permission requests and resolutions, including reconciliation",
+      "note": "One file and turn-start age through permission/reconciliation.",
       "targets": [
         {
           "anchor": {
-            "blob": "c99c43d87281f3ca4df3726664649bda1251d349",
-            "content": "sha256:cdcce1a47e289372c6bf81747d3c88302b641cd821c94fce6c263641b44c9523",
+            "blob": "9f6f43f81cf6508be294eac2fb6696065021ddf4",
+            "content": "sha256:fcf8584d489d34fc37400b89162483f884ee011fb689150d2b23d10d4bd3d9c6",
             "locator": {
               "end": 144,
               "kind": "line_range",

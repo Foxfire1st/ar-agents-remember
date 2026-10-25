@@ -1,5 +1,6 @@
 {
   "path": "mcp/tests/test_curator_coherence_publication_discoverability.py",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
@@ -137,12 +138,38 @@
       "targets": [
         {
           "anchor": {
-            "blob": "11ba98ff63f4a4815985ac51e2c0c7b5a48556a4",
+            "blob": "102c4550ab6429f44c8fb543d1d0662de66a1b8c",
+            "content": "sha256:cffee1d52b97cdd97039f1de2618d9b5346f9d6eb99403169779b4348b84f481",
+            "locator": {
+              "end": 89,
+              "kind": "line_range",
+              "start": 89
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "102c4550ab6429f44c8fb543d1d0662de66a1b8c",
             "content": "sha256:0060146bbb3b5c2baa12506a71304262d78a482eab41c6ba94c0e2a6d3c2b0b5",
             "locator": {
-              "end": 87,
+              "end": 90,
               "kind": "line_range",
-              "start": 87
+              "start": 90
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "102c4550ab6429f44c8fb543d1d0662de66a1b8c",
+            "content": "sha256:639eccd49bef1ff83a5a44ab8d24fe7d2591d2f61b89a2a1cf8578f640859878",
+            "locator": {
+              "end": 77,
+              "kind": "line_range",
+              "start": 77
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },

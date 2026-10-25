@@ -42,7 +42,7 @@ No relevant external documentation is configured.
 
 - The live repository catalog fetchRepos uses shareInflight for its request; no removed terminal catalog is a current consumer. [2]
 
-- The retained File Viewer repository-catalog read shares its in-flight callback and bounds its fetch; removed terminal/catalog-poll callers are not current consumers. \[4] [4]
+- The retained File Viewer repository-catalog read shares its in-flight callback and bounds its fetch; removed terminal/catalog-poll callers are not current consumers. [4]
 
 ### Cross-Repo References
 

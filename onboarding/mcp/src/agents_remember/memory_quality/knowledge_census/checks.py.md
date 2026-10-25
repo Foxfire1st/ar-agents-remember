@@ -72,10 +72,18 @@ The rule table, the pinning, the claim and route checks and the append-only comp
 - Stable claim fields and append-only assessments. [6]
 - Append-only route status histories. [7]
 - The entry point. [8]
+
 - A recorded assessment is never edited; a correction appends. [9]
+
+
 - Status histories are append-only; merges keep both parents. [10]
+
+
 - Routes whose slug ends like a pinned file still append. [11]
+
+
 - A recorded claim's identity and cohort fields are stable. [12]
+
 
 ### Cross-Repo References
 

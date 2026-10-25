@@ -37,12 +37,12 @@
       ]
     },
     "2": {
-      "note": "The shared pane that marks the cited lines.\n\nAnchor: `FilePane`",
+      "note": "The shared pane that marks the cited lines.",
       "targets": [
         {
           "anchor": {
-            "blob": "51f94729899f48cef6ffa98458e7c097fa30497e",
-            "content": "sha256:4a43e1fb816be365d60b18535505d03053665d9c2b70be574c717a4968b19539",
+            "blob": "dbbb34c143ffd24687f884bd401852c94fb43a96",
+            "content": "sha256:4381a6ac5fd2d1fed3c3059c96f97e25dc55475450953631d92a8d35b059cd90",
             "locator": {
               "kind": "file"
             },

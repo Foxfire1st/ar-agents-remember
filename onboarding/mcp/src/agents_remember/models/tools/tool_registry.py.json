@@ -1,10 +1,11 @@
 {
   "path": "mcp/src/agents_remember/models/tools/tool_registry.py",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
-        "blob": "6e899d62b7f0436c47e344dc1c5d6661a07ffee1",
-        "content": "sha256:8f6515f305e8abc2d5e4b09b187fa4fd9de0525146ebfcc8aa0969e79284f36b",
+        "blob": "ca5af906298a90f3101a98a5542005e3549b3c0a",
+        "content": "sha256:10aa450f5caa463f1fe75eabf3cdf642c485bc41fe35884de37c4765dece2359",
         "locator": {
           "kind": "file"
         }
@@ -15,13 +16,30 @@
         "handoffEntry": "L192-W-R199-09",
         "leaf": "260928-MIK-L192"
       },
-      "rationale": "The registry's live diagnostic-provider claims are gone while the tool contracts it still describes are unchanged.",
+      "rationale": "The registry docstring at C describes the tool tiers and keeps the retired provider tools out of them (11-22) without claiming a diagnostic provider query, while the contracts it describes are unchanged; that is the base card's content, which C still holds, whereas the candidate re-recorded the uncommitted registry.",
       "role": "presentation"
     },
     {
       "anchor": {
-        "blob": "6e899d62b7f0436c47e344dc1c5d6661a07ffee1",
-        "content": "sha256:37e5198896617b0c1f01c8e1a91cfce0eff37f97a5a1a964f9b70fc01b2a5f00",
+        "blob": "ca5af906298a90f3101a98a5542005e3549b3c0a",
+        "content": "sha256:10aa450f5caa463f1fe75eabf3cdf642c485bc41fe35884de37c4765dece2359",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-ADD5KY",
+      "invariant": "INV-Q7KYQH",
+      "origin": {
+        "handoffEntry": "MIK-R198@v2 §8 reference-note-revision",
+        "leaf": "260928-MIK-L191"
+      },
+      "rationale": "Maps citation_note_revision to CitationNoteRevisionResponse so its public answer is validated by the shared response registry; registration grants no write authority.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "ca5af906298a90f3101a98a5542005e3549b3c0a",
+        "content": "sha256:e32d72e73c43c68526666e351964e31154f7ccc5f262554de0776dac177d9e07",
         "locator": {
           "kind": "symbol",
           "name": "TOOL_RESPONSE_MODELS"
@@ -33,13 +51,13 @@
         "handoffEntry": "L183-CUR-ET01-bound-explainer-roster",
         "leaf": "260928-MIK-L183"
       },
-      "rationale": "The public response registry maps explainer_control to its strict response model; it does not weaken existing responses.",
+      "rationale": "TOOL_RESPONSE_MODELS still maps `explainer_control` to `ExplainerControlResponse` (127) and leaves every other response model as it was, so the registry gained one strict model and weakened none.",
       "role": "enforcement"
     }
   ],
   "references": {
     "10": {
-      "note": "The five strict response contracts those rows map to, in the module that declares them and exports exactly those five names.",
+      "note": "The three strict response contracts those rows map to, in the module that declares them.",
       "targets": [
         {
           "anchor": {
@@ -101,24 +119,36 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c2f2a68ee84ec48aad55956ebf5a6719371ce655",
-            "content": "sha256:feafaa1915c69eb54f168301c3ff246e8b008b7b18bfc9bb106e34e34e68866d",
+            "blob": "ca5af906298a90f3101a98a5542005e3549b3c0a",
+            "content": "sha256:bc52d590affca24af1af1614179744bbdab687ac29aa0b313a625b0964b9ae39",
             "locator": {
-              "end": 119,
+              "end": 122,
               "kind": "line_range",
-              "start": 98
+              "start": 101
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "04979be62d9e43e81fabc9c8503cdd958c109214",
-            "content": "sha256:feafaa1915c69eb54f168301c3ff246e8b008b7b18bfc9bb106e34e34e68866d",
+            "blob": "ca5af906298a90f3101a98a5542005e3549b3c0a",
+            "content": "sha256:4e406a2a4e88d1984affa80abe04eb1d3611b57920176b5e58e272c064171cc9",
             "locator": {
-              "end": 118,
+              "end": 121,
               "kind": "line_range",
-              "start": 97
+              "start": 100
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ca5af906298a90f3101a98a5542005e3549b3c0a",
+            "content": "sha256:1b17ac742337dc7af3061eb1da0a0b5c6fc7c68a95b048dea6cdfa00f0b3666a",
+            "locator": {
+              "end": 120,
+              "kind": "line_range",
+              "start": 99
             }
           },
           "kind": "code"
@@ -126,12 +156,22 @@
       ]
     },
     "13": {
-      "note": "Frozen implementation of TOOL_RESPONSE_MODELS supporting the stated file behavior.",
+      "note": "Frozen implementation of TOOL_RESPONSE_MODELS supporting the stated file behavior.\n\nAnchor: `TOOL_RESPONSE_MODELS`",
       "targets": [
         {
           "anchor": {
-            "blob": "04979be62d9e43e81fabc9c8503cdd958c109214",
-            "content": "sha256:7961cf857a4dcfda690e311e7f9b94b1466c113114eda2ef1611ad880425931f",
+            "blob": "ca5af906298a90f3101a98a5542005e3549b3c0a",
+            "content": "sha256:10aa450f5caa463f1fe75eabf3cdf642c485bc41fe35884de37c4765dece2359",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ca5af906298a90f3101a98a5542005e3549b3c0a",
+            "content": "sha256:e32d72e73c43c68526666e351964e31154f7ccc5f262554de0776dac177d9e07",
             "locator": {
               "kind": "symbol",
               "name": "TOOL_RESPONSE_MODELS"
@@ -141,28 +181,23 @@
         }
       ]
     },
-    "14": {
-      "note": "Current synced source supports the qualified account; declarations, mirrors and fixture assertions are not executed acceptance.",
+    "15": {
+      "note": "The by-name response-model registry, which carries the settings initializer.\n\nAnchor: `TOOL_RESPONSE_MODELS`",
       "targets": [
         {
           "anchor": {
-            "blob": "04979be62d9e43e81fabc9c8503cdd958c109214",
-            "content": "sha256:7be9c99a567f5b369affaf3f339a250cca3667e761945bb540d788680260c203",
+            "blob": "ca5af906298a90f3101a98a5542005e3549b3c0a",
+            "content": "sha256:10aa450f5caa463f1fe75eabf3cdf642c485bc41fe35884de37c4765dece2359",
             "locator": {
               "kind": "file"
             }
           },
           "kind": "code"
-        }
-      ]
-    },
-    "15": {
-      "note": "The by-name response-model registry, which carries the settings initializer.",
-      "targets": [
+        },
         {
           "anchor": {
-            "blob": "04979be62d9e43e81fabc9c8503cdd958c109214",
-            "content": "sha256:7961cf857a4dcfda690e311e7f9b94b1466c113114eda2ef1611ad880425931f",
+            "blob": "ca5af906298a90f3101a98a5542005e3549b3c0a",
+            "content": "sha256:e32d72e73c43c68526666e351964e31154f7ccc5f262554de0776dac177d9e07",
             "locator": {
               "kind": "symbol",
               "name": "TOOL_RESPONSE_MODELS"
@@ -177,8 +212,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c2f2a68ee84ec48aad55956ebf5a6719371ce655",
-            "content": "sha256:bcdc83585768a9512a8a4a9d26c6ef6cbc97379320d945d7804124d2705da028",
+            "blob": "ca5af906298a90f3101a98a5542005e3549b3c0a",
+            "content": "sha256:10aa450f5caa463f1fe75eabf3cdf642c485bc41fe35884de37c4765dece2359",
             "locator": {
               "kind": "file"
             }

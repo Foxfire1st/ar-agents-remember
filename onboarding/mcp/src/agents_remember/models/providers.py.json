@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/models/providers.py",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
@@ -7,66 +8,13 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5fed969801e59c3f21496bdd6c76892ccdc0b659",
-            "content": "sha256:9b75fc51024e52cf656e3fc4635a6db52d830f02d726fb72adc9564d39e57b8a",
+            "blob": "70fe9d0307f25c7b326ed501f72e43a98d56bbe6",
+            "content": "sha256:88480e4f37225ec608700e748f757c3fc12db4425665426b5f8fb53136147c61",
             "locator": {
               "kind": "symbol",
-              "name": "ProviderStatusProjection"
+              "name": "provider_summary_packet"
             },
             "path": "mcp/src/agents_remember/providers/status.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "3": {
-      "note": "Current source section contains excerpt `class ContextProviderItem(StrictResponseModel):`; DTO/control ownership is not execution acceptance.\n\nAnchor: `class ContextProviderItem(StrictResponseModel):`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "76d162bfaeab38e222b5da3c9e97bc32131187a4",
-            "content": "sha256:08ea7207830ec723dbe3d618fb20c162d56dc12020fd54118bef116fd779f8f4",
-            "locator": {
-              "end": 62,
-              "kind": "line_range",
-              "start": 62
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "4": {
-      "note": "Current source section contains excerpt `TOOL_RESPONSE_MODELS: dict[str, type[ResponseEnvelope]] = {`; DTO/control ownership is not execution acceptance.\n\nAnchor: `TOOL_RESPONSE_MODELS: dict[str, type[ResponseEnvelope]] = {`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "c2f2a68ee84ec48aad55956ebf5a6719371ce655",
-            "content": "sha256:3bb09ecb0aebeae29da82c2d5b6c45ccf7c13b8c1be6d94a97836db12fd0c65b",
-            "locator": {
-              "end": 82,
-              "kind": "line_range",
-              "start": 82
-            },
-            "path": "mcp/src/agents_remember/models/tools/tool_registry.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "5": {
-      "note": "Current source section contains excerpt `providers=ProviderSummary.model_validate(`; DTO/control ownership is not execution acceptance.\n\nAnchor: `providers=ProviderSummary.model_validate(`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "8189a91f17a9062872de4283e541094ec1484f70",
-            "content": "sha256:ca1f2d5ddcfdca18ff9054e581b7d7450df06afcc1935a74fea4a38a1d2153d8",
-            "locator": {
-              "end": 113,
-              "kind": "line_range",
-              "start": 113
-            },
-            "path": "mcp/src/agents_remember/application/context_packet.py"
           },
           "kind": "code"
         }

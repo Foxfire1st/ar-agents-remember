@@ -70,8 +70,12 @@ No configured domain evidence applies to the file-local claims above.
 
 The retained source anchors below support the fixture roles and assertion boundaries described above. They identify current behavior, not a request to restore historical test counts or percentage targets.
 
+
 - Retired the unused three-commit close_contract helper while retaining historical cache seeds and task/door fixture behavior. [1]
+
+
 - The retired three-commit `close_contract` convenience method is gone; what remains is the fixture class the non-queue lifecycle suites build their task, door and projection state from. [2]
+
 - Master. [3]
 - The master builder writes a canonical atomic master document with the given execution nature and one commanded subtask row. [4]
 - Leaf, carrying both derived fields exactly as `task_doc` stamps them against a leaf contract. [5]
@@ -83,11 +87,21 @@ The retained source anchors below support the fixture roles and assertion bounda
 - Priority table. [11]
 - Grade. [12]
 - The grade builder returns the priority and judgment id pair the register rows reference. [13]
+
 - Queuefixture. [14]
+
+
 - The retained task/door/projection fixture class that non-queue lifecycle suites construct. [15]
-- Command a canonical leaf with no work started: subtask row, leaf document, judgment and priority rows only. [16]
+
+
+- Start a canonical leaf with no work started: the master's subtask, judgment and priority rows, the leaf document with its route review, and -- on converted memory -- the fixture change row its own code change needs. [16]
+
+
 - Start an authored leaf from its master's current tips, creating the enclosure, worktrees and branches. [17]
+
+
 - Declare the closeout door for a leaf that is not yet the master's current one, with its own authored grade. [18]
+
 
 ### Cross-Repo References
 

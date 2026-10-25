@@ -3,15 +3,14 @@
   "realizes": [],
   "references": {
     "17": {
-      "note": "One traversal over the union both snapshots record",
+      "note": "One traversal over the union both snapshots record\n\nAnchor: `relationship_movements`",
       "targets": [
         {
           "anchor": {
-            "blob": "ef187decf43719b1a1570c5972cac7257604534b",
-            "content": "sha256:2ea2f46af9e05187675e949ead20622fa59dfd6719e7e95a65adecfcb72cb8c2",
+            "blob": "8810b5f2e85378847113d9ea6246a4fb96def91f",
+            "content": "sha256:31b4506c1ef62e6c77c68efb52f668b00415b0725a84ff746be8e9adbd222cae",
             "locator": {
-              "kind": "symbol",
-              "name": "relationship_movements"
+              "kind": "file"
             }
           },
           "kind": "code"

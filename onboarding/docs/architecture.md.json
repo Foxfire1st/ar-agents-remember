@@ -1,10 +1,11 @@
 {
   "path": "docs/architecture.md",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
-        "blob": "42fafd00fc8e80fba28e8ec939f24272c1c1a94d",
-        "content": "sha256:6cca1269fc4a173b8c060453cc2d7c97aa0fb520798a161a51b484e3b24a791b",
+        "blob": "b3181fbe25f6169b3f1271484242227b99b4855d",
+        "content": "sha256:354e4d10004a32eeb09b0fd8f15f5a5afeef40deae700d355e68b8ca77dd98bb",
         "locator": {
           "kind": "file"
         }
@@ -15,7 +16,7 @@
         "handoffEntry": "L192-W-R199-12",
         "leaf": "260928-MIK-L192"
       },
-      "rationale": "The architecture page describes removal and retained cleanup, not a live provider tier.",
+      "rationale": "docs/architecture.md at C still presents both substrates as retired and the providers guide as 'a retirement and old-install cleanup account' (91-93), with the leftover tree described as what an older installation left behind.",
       "role": "presentation"
     }
   ],

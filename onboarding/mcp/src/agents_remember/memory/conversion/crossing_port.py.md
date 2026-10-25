@@ -55,7 +55,9 @@ The adapter and the port it implements.
 
 - The adapter. [1]
 - The port, its request and its view. [2]
+
 - The default composition binds it. [3]
+
 
 ### Cross-Repo References
 

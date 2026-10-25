@@ -118,7 +118,9 @@ No configured live documentation source was available for this pass.
 - The state table, the check order, the no-fallback rule and the cache contract. [1]
 - The extractor version, the supported kinds and the 8,192-entry bound with its memory estimate. [2]
 - The process-wide observation cache. [3]
+
 - The requested tree, and one read of its file list with a named problem for none or an unreadable tree. [4]
+
 - One entry's observation and its wire shape. [5]
 - The cache key. [6]
 - The verdict: the checks that need no resolution, then resolution and comparison; since MIK-R09 its read errors propagate to `observe_entry`. [7]
@@ -129,12 +131,20 @@ The retained ruling-N1 summary below describes the earlier ordering. The current
 the symbol UTF-8 check between absent-path handling and the unchanged-blob shortcut; the historical
 summary is not an unconditional unchanged-blob guarantee.
 
+
 - The ruling-N1 order: no tree, absent path, unchanged blob, then an unsupported kind. [11]
+
 - Which locator kinds cannot be re-resolved in a changed blob. [12]
 - Resolution through the worklist's resolver; a missing line-range blob is raised as `CodeObjectUnavailable`, and only answers are put in the cache. [13]
+
 - The reused resolver: the worklist's tree reader and its `resolve`. [14]
+
+
 - The order cases: unchanged Markdown is current, changed is unverifiable, deleted is stale. [15]
+
+
 - A timed-out Git call is unverifiable and is not cached. [16]
+
 - The cache key's contents and its reuse. [17]
 
 - Symbol UTF-8 decoding precedes the unchanged-blob shortcut and names invalid bytes as unverifiable. [18]

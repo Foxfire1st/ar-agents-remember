@@ -12,8 +12,33 @@ This source-bound correction covers the described L54 seams only. Unrelated inhe
 
 ## Current evidence
 
-- Document packet/version validation and exact family effect matching are distinct assertions. \[10] [10]
-- The mounted task_doc declaration reaches worklist marks and the gate, then a deferred row answers it. \[11] [11]
+- Document packet/version validation and exact family effect matching are distinct assertions.
+- The mounted task_doc declaration reaches worklist marks and the gate, then a deferred row answers it.
+- The module docstring: the reused worklist world.
+- The field, its class, `set_field`, the intent digest, render and the refusals.
+- The declarations the matching case uses.
+
+- Matching, marks, the undeclared run, the reordering and the F3 branches.
+
+- A planned row answers its item; the predicate agrees.
+
+- The writer's planned rows, its refusals and the strict lookup.
+
+- The leaf route, the checklist, the tool rows and the fail-closed run.
+
+
+
+
+> Retained earlier citation wording: - The unit-lane row. Source caption: "mcp/tests/test_planned_knowledge_effects.py"
+
+
+
+
+
+
+> Retained earlier citation wording: - The census-derived consumer row.
+
+
 
 ## Inherited source-epoch account (non-operative)
 
@@ -93,15 +118,15 @@ The following complete predecessor retains useful explanations, old observations
 >
 > ### Repo-Internal References
 >
-> - The module docstring: the reused worklist world. [1]
-> - The field, its class, `set_field`, the intent digest, render and the refusals. [2]
-> - The declarations the matching case uses. [3]
-> - Matching, marks, the undeclared run, the reordering and the F3 branches. [4]
-> - A planned row answers its item; the predicate agrees. [5]
-> - The writer's planned rows, its refusals and the strict lookup. [6]
-> - The leaf route, the checklist, the tool rows and the fail-closed run. [7]
-> - The unit-lane row. [8]
-> - The census-derived consumer row. [9]
+> - The module docstring: the reused worklist world.
+> - The field, its class, `set_field`, the intent digest, render and the refusals.
+> - The declarations the matching case uses.
+> - Matching, marks, the undeclared run, the reordering and the F3 branches.
+> - A planned row answers its item; the predicate agrees.
+> - The writer's planned rows, its refusals and the strict lookup.
+> - The leaf route, the checklist, the tool rows and the fail-closed run.
+> - The unit-lane row.
+> - The census-derived consumer row.
 >
 > ### Cross-Repo References
 >
@@ -109,3 +134,8 @@ The following complete predecessor retains useful explanations, old observations
 > task root.
 >
 > No cross-repo boundary is crossed by this file.
+
+- The unit-lane row. Source caption: "mcp/tests/test_planned_knowledge_effects.py"
+
+
+- The census-derived consumer row.

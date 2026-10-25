@@ -1,5 +1,6 @@
 {
   "path": "dashboard/src/test/fixtures/wire.ts",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
@@ -38,15 +39,14 @@
       ]
     },
     "15": {
-      "note": "EMPTY_ANALYTICS carries every current analytics key as an empty list, without the retired stalestSidecars key.",
+      "note": "EMPTY_ANALYTICS carries every current analytics key as an empty list, without the retired stalestSidecars key.\n\nAnchor: `EMPTY_ANALYTICS`",
       "targets": [
         {
           "anchor": {
-            "blob": "07647ac2bcbf6d8b9eb51aac0b1f1f031e3ef8a8",
-            "content": "sha256:b80813900048fdf6d35494289c521329d455eb830df54c58313eb453d848b345",
+            "blob": "67bd836a126c87cce7dd24fb8f82a699decf8e4f",
+            "content": "sha256:fa043074e33f2bf4c2dc606a7bc5c1664ed3d52c09af65f3df1e2986be56ce79",
             "locator": {
-              "kind": "symbol",
-              "name": "EMPTY_ANALYTICS"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -116,16 +116,16 @@
       ]
     },
     "20": {
-      "note": "The fixture bases draw their enclosure sample from the same oracle.\n\nAnchor: \"\\\"enclosures\\\": [\"",
+      "note": "The fixture bases draw their enclosure sample from the same oracle.",
       "targets": [
         {
           "anchor": {
-            "blob": "0c7de2582838ad68a1af9f3f234188bd0b9dfe13",
-            "content": "sha256:5fb6ad954b1a0bd3ba3d34687846f71ff36db17c7d589c2306150cc3a615c229",
+            "blob": "40e0d9e4a1a7dcf17a7264a394299e3ee3b020d1",
+            "content": "sha256:0de4b39e321f1100f1a868ff3d4bc28433945437b62ad749fac3727114969976",
             "locator": {
-              "end": 1890,
+              "end": 1804,
               "kind": "line_range",
-              "start": 1234
+              "start": 1148
             },
             "path": "dashboard/src/fixtures/snapshot.json"
           },
@@ -133,8 +133,8 @@
         },
         {
           "anchor": {
-            "blob": "0c7de2582838ad68a1af9f3f234188bd0b9dfe13",
-            "content": "sha256:d308383dc412c0d14eb7f1fa510a6fccdbbf242ad86bfaccfa571cabacd0740a",
+            "blob": "40e0d9e4a1a7dcf17a7264a394299e3ee3b020d1",
+            "content": "sha256:fd844a94f0df0cb3b6403e4eae5f6c768c9cfd184e219d2211b327c409814cd0",
             "locator": {
               "end": 55,
               "kind": "line_range",
@@ -151,8 +151,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0c7de2582838ad68a1af9f3f234188bd0b9dfe13",
-            "content": "sha256:c5611a2ea3f51c483f16ef8c91271e58f57a55c47d0ff372b132c107dc23d9f9",
+            "blob": "40e0d9e4a1a7dcf17a7264a394299e3ee3b020d1",
+            "content": "sha256:9dd7595ae252103b646e3c43eca51203f5dbba8407504429e616c502435f55ee",
             "locator": {
               "end": 1180,
               "kind": "line_range",
@@ -182,12 +182,12 @@
       ]
     },
     "25": {
-      "note": "The engine-process builder takes its sample from analytics.\n\nAnchor: \"\\\"engineProcesses\\\": [\"",
+      "note": "The engine-process builder takes its sample from analytics.",
       "targets": [
         {
           "anchor": {
-            "blob": "4a2c1434933a8d753cb19c6bd2347805bdeacc94",
-            "content": "sha256:18e98b68664b63d9530a3549bec6222b6f240bf33443f83a1f2f5c31a3a3820e",
+            "blob": "40e0d9e4a1a7dcf17a7264a394299e3ee3b020d1",
+            "content": "sha256:76f4bba25921a170cf4794a40f63ddb0b477af01c3e612fa787f7555a95100e1",
             "locator": {
               "end": 531,
               "kind": "line_range",
@@ -199,8 +199,8 @@
         },
         {
           "anchor": {
-            "blob": "c9b65d9877cdc2f9732fff8390cf9319481cd743",
-            "content": "sha256:d308383dc412c0d14eb7f1fa510a6fccdbbf242ad86bfaccfa571cabacd0740a",
+            "blob": "40e0d9e4a1a7dcf17a7264a394299e3ee3b020d1",
+            "content": "sha256:fd844a94f0df0cb3b6403e4eae5f6c768c9cfd184e219d2211b327c409814cd0",
             "locator": {
               "end": 55,
               "kind": "line_range",
@@ -246,16 +246,16 @@
       ]
     },
     "29": {
-      "note": "The guard that catches the residue `Overrides` cannot — the smuggled field with no assertion to ban, and the `any` rule whose comment names `fixtures/wire.ts::reparsed` as the site that was making exactly that mistake.\n\nAnchor: \"catches a smuggled field where there is no assertion to ban\"; \"fixtures/wire.ts::reparsed\"",
+      "note": "The guard that catches the residue `Overrides` cannot — the smuggled field with no assertion to ban, and the `any` rule whose comment names `fixtures/wire.ts::reparsed` as the site that was making exactly that mistake.",
       "targets": [
         {
           "anchor": {
-            "blob": "d739fec054cf031cd6388b9c34dc903fb98c8b60",
-            "content": "sha256:237b3e8f2302974ca5a2ed5c3bd6676c8e3cea8f8cd844556d2e4305a669fb72",
+            "blob": "a638463e5b64ab2206752784eae0cb1426ad8637",
+            "content": "sha256:3569702045788c7a64cae206b544c6f6de7f778aa13270134929ab0988d7c7b8",
             "locator": {
-              "end": 443,
+              "end": 445,
               "kind": "line_range",
-              "start": 421
+              "start": 423
             },
             "path": "dashboard/src/test/wireFixtureGuard.test.ts"
           },
@@ -292,15 +292,14 @@
       ]
     },
     "31": {
-      "note": "`ObserverEvent` — the separate event contract this module's `observerEvent` builder targets, mirroring `observer/events.py` rather than `projection.py`.",
+      "note": "`ObserverEvent` — the separate event contract this module's `observerEvent` builder targets, mirroring `observer/events.py` rather than `projection.py`.\n\nAnchor: `ObserverEvent`",
       "targets": [
         {
           "anchor": {
-            "blob": "505b38f7f19667fa0c0cc4caca3e8a966d548e1d",
-            "content": "sha256:8b045c8da2fe34c0eebd21a36174eb5c131119422538977de690652191a5fae3",
+            "blob": "25b46051e848ed30ec884515068da4de250b2117",
+            "content": "sha256:ad737b334a9d79e13b1ab2b81a6e1a25a8ccc71cfb4c4f2a07ca3e974d61049e",
             "locator": {
-              "kind": "symbol",
-              "name": "ObserverEvent"
+              "kind": "file"
             },
             "path": "dashboard/src/types/event.ts"
           },
@@ -313,24 +312,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7a174e5b073b289a2626845ef1821cda230d1723",
-            "content": "sha256:301ef8d70dd58cfea37fec34be64e52db39dffa54148fef28bedb99d169f90f3",
+            "blob": "fd0cd6ba53b5d874adfcb26807b26ab92e77d56e",
+            "content": "sha256:9d00407991a5ac2ae6112d754bf7c6f06f544820a425de0cb7b78edc726abb74",
             "locator": {
               "kind": "symbol",
               "name": "WorkspaceProjection"
-            },
-            "path": "mcp/src/agents_remember/observer/projection.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "7a174e5b073b289a2626845ef1821cda230d1723",
-            "content": "sha256:39f472cfada99fc40b77caa93bbd20fb4863311c11ceed498bc3d54f3f270cce",
-            "locator": {
-              "end": 1123,
-              "kind": "line_range",
-              "start": 1101
             },
             "path": "mcp/src/agents_remember/observer/projection.py"
           },
@@ -464,16 +450,16 @@
       ]
     },
     "9": {
-      "note": "The sample covers declared structural paths except explicit residue.\n\nAnchor: \"reaches every declared path except the named residue\"",
+      "note": "The sample covers declared structural paths except explicit residue.",
       "targets": [
         {
           "anchor": {
-            "blob": "64d36bbd8b2f66b79eab4166dd578cab277c875a",
-            "content": "sha256:d6c0ad2ecf61ded8cec4675948e5fee874c2e09d5da705cdcc73bf125e507b70",
+            "blob": "609ce5dbd44b34a6cdfe57060a562b9a58283df8",
+            "content": "sha256:19922f32b9e9180636154c914a77a88da08b07435095801f086b88d7b4cb977a",
             "locator": {
-              "end": 497,
+              "end": 494,
               "kind": "line_range",
-              "start": 493
+              "start": 490
             },
             "path": "dashboard/src/test/contract.test.ts"
           },

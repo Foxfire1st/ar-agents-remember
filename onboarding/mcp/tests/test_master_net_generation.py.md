@@ -103,8 +103,13 @@ No configured Domain Documentation source exists for this file.
 - The evidence lane the module runs in. [1]
 - The shared master-shaped world (series + two leaf contracts, real code/memory repos) and its builder. [2]
 - The conforming add-then-remove case and the F1 diff-failure refusal case. [3]
-- The lane row that makes these cases run. [4]
+
+
+- The lane manifest registers mcp/tests/test_master_net_generation.py in unit-regression. Membership selects evidence and does not establish execution. [4]
+
+
 - The selection under test (endpoint binding, digest, currentness, refusal) and the thin entry that publishes it. [5]
+
 
 ### Cross-Repo References
 

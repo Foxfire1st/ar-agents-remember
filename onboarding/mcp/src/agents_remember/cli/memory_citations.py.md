@@ -47,7 +47,9 @@ None.
 
 Inherited numbered findings [1], [3] retain their separate historical custody; no currentness is inferred from those inherited targets. The source-bound account below distinguishes surviving owners from the legacy implementation removed by this task. Removed projection, source-index and prepared-continuation captions are not retained as executable behavior.
 
+
 - The CLI declares report/fix and optional contract with repeatable document selection. [6]
+
 
 - Citation scope carries only singleton or finite document-list selection. [7]
 
@@ -56,8 +58,15 @@ Inherited numbered findings [1], [3] retain their separate historical custody; n
 
 This module defines the top-level symbols cited below; each row points at the exact source range holding the anchor.
 
-- CLI declarations make --contract optional for the two-admission fixer route and preserve the repeatable per-call exclusion option. [1]
+
+- CLI declarations make --contract optional for the two fixer admissions and keep --document as a repeatable per-call selection. [1]
+
+
 - Dispatch requires a contract for modes other than fix and forwards the fixer's optional contract to its application owner. [2]
-- The scope that carries the caller's excludes and refuses a meaningless pattern. [3]
+
+
+- The scope that carries the caller’s named documents and refuses both selectors, an empty list, and a list outside citation_fix. [3]
+
+
 
 - The --document help states the converted form: --document alone. [5]

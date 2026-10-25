@@ -86,27 +86,41 @@ The generated route index lists the source files of this route and their cards.
 - The union merge attribute for both catalogs. [8]
 - A leaked change of owned module-level state fails the test after restoration. [9]
 - Seeded ordering uses its own random generator. [10]
+
 - The curation-doctrine registry and the statements a canonical instruction source must make. [13]
+
 
 - The lifecycle loader starts with canonical-form findings and then validates against the source tree. [15]
 - The lane loader reports noncanonical lane lists and compares declared files with test modules. [16]
+
 - The registry of retired curation sentences. [17]
+
 - The shared parse refusal explains possible row interleaving and restoration of the landed file. [18]
 - Condition readiness is separate from the shared hang guard. [20]
 - Content identities reuse per-file facts without freezing current graph membership. [21]
 - The rewrite preserves an entirely missing consumer list when no nonempty derived replacement exists. [22]
 - Cached facts are checked for shape and reused under their content key, without a fresh-parse equality check. [23]
+
 - Retired handover wording is source/sentence data; affirmative wording uses normalized clause alternatives. [24]
+
 
 - The deterministic Git hook fast tier invokes the lifecycle-catalog command; the targeted tier calls that same fast tier. [25]
 
+
 - The closed product-process register now includes agents_remember.kernel.primitives.runtime_config._LEGACY_GATE_DELEGATION_WARNED with the default reset treatment and existing _clear resetter between test modules. It is not a per-test-restored lock. The shared guard and treatment rules remain unchanged; registration is not execution of the reset control. [26]
+
+
 
 - **Historical source-bound reference account, not an operative override:** The register assigns distinct reset, restored and constant treatments. [19]
 
+
+
 - The closed register also gives the existing closeout digest-file stats, lifecycle location cache and lifecycle operation-record cache ordinary `_clear` resets at module boundaries. It adds no scanner exemption or production reset; restored rows retain their per-test treatment. [27]
 
+
+
 - The current closed register omits retired ambient-session/log owners while retaining closeout and worktree landing-chain cache resets. [28]
+
 
 - The synchronization owner projects canonical skills to the sole declared package target, preserving every declared-copy check without harness mirrors. [14]
 

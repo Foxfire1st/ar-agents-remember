@@ -84,7 +84,7 @@ No configured live documentation source was available for this pass.
 - Never raises; a refused generation is held. [5]
 - A planted foreign manifest releases nothing. [6]
 - Symlinks: the scan, the notes root, the generation directory. [7]
-- The lane row. [8]
+- The lane row. Source caption: "mcp/tests/test_review_artifact_cleanup.py" [8]
 
 ### Cross-Repo References
 

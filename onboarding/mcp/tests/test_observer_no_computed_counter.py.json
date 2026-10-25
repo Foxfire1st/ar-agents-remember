@@ -144,15 +144,14 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "Projection models carry no token fields.",
+      "note": "Projection models carry no token fields.\n\nAnchor: `test_projection_models_carry_no_token_fields`",
       "targets": [
         {
           "anchor": {
-            "blob": "a1af00a919e1a3084e9e5d8788a69ae2017e6c8c",
-            "content": "sha256:2b7181100b85a1dfefbcbc5a7ca1937dce7d0fa95bdc03d6f0ca1177a7b30ece",
+            "blob": "577dcb560836fbefdd9db7c7eed9f5b446ada486",
+            "content": "sha256:1356e42483f6031f2035419ca9c289d5f9a4c9c6819870444b80931ef19520f1",
             "locator": {
-              "kind": "symbol",
-              "name": "test_projection_models_carry_no_token_fields"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -164,7 +163,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1ee290eb50d8892bc4ad338c55793256995d804f",
+            "blob": "577dcb560836fbefdd9db7c7eed9f5b446ada486",
             "content": "sha256:3a7c685e81fb3fcc7ce858169a1d5839677a608e229f558774a290c701750267",
             "locator": {
               "kind": "symbol",
@@ -176,15 +175,14 @@
       ]
     },
     "4": {
-      "note": "A store write over an old-field file reads back clean.",
+      "note": "A store write over an old-field file reads back clean.\n\nAnchor: `test_store_write_over_old_field_file_reads_back_clean`",
       "targets": [
         {
           "anchor": {
-            "blob": "a1af00a919e1a3084e9e5d8788a69ae2017e6c8c",
-            "content": "sha256:0ab0eeb41b8fcd2cfc902f6ae379099494a04435b7ed465c91b4337fcbc69297",
+            "blob": "577dcb560836fbefdd9db7c7eed9f5b446ada486",
+            "content": "sha256:1356e42483f6031f2035419ca9c289d5f9a4c9c6819870444b80931ef19520f1",
             "locator": {
-              "kind": "symbol",
-              "name": "test_store_write_over_old_field_file_reads_back_clean"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -192,15 +190,14 @@
       ]
     },
     "5": {
-      "note": "Workspace metrics carry no token total.",
+      "note": "Workspace metrics carry no token total.\n\nAnchor: `test_workspace_metrics_carry_no_token_total`",
       "targets": [
         {
           "anchor": {
-            "blob": "a1af00a919e1a3084e9e5d8788a69ae2017e6c8c",
-            "content": "sha256:37d2f03c741020a899691d2fbab3033c3ae4bcc1a0df1c4cb6e5fe45823ecbef",
+            "blob": "577dcb560836fbefdd9db7c7eed9f5b446ada486",
+            "content": "sha256:1356e42483f6031f2035419ca9c289d5f9a4c9c6819870444b80931ef19520f1",
             "locator": {
-              "kind": "symbol",
-              "name": "test_workspace_metrics_carry_no_token_total"
+              "kind": "file"
             }
           },
           "kind": "test"

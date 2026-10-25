@@ -92,7 +92,9 @@ This module defines the top-level symbols cited below; each row points at the ex
 - Defines the function `_name_of` (lines 241-246). [17]
 - Defines the function `is_protocol` (lines 249-251) — Whether the class declares a structural TYPE rather than an implementation.. [18]
 - Defines the function `_is_stub` (lines 254-270) — Whether the def has no body: only ``...``, optionally under a docstring.. [19]
+
 - Defines the function `declares_field` (lines 273-298) — Whether the member declares a read-only FIELD rather than an operation.. [20]
+
 - Defines the function `public_method_names` (lines 301-315) — The class's public surface: distinct non-underscore method names, overloads folded.. [21]
 - Defines the function `_first_parameter` (lines 318-320). [22]
 - Defines the function `_attributes_on` (lines 323-335) — Attributes touched on the name ``subject``, and the subset assigned to.. [23]

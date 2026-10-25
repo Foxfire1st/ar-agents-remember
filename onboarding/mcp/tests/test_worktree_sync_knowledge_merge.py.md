@@ -18,5 +18,7 @@ carries the journaled report and counts.
 
 - Both lines added one reference each: the merge aligns them to a fresh number. [2]
 - The report seam keeps every nonzero alignment population. [3]
+
 - Evidence-only and skip-only plans write a report. [4]
+
 - A successful sync carries the journaled report and counts. [5]

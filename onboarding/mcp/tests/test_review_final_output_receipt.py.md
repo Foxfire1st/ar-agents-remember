@@ -28,7 +28,9 @@ No Domain Documentation source is configured for this slice.
 
 - `TreeReceiptFixture` supplies the current fixture or assertion described above. [19]
 - `test_receipts_bind_both_delivered_trees_and_keep_both_result_keys` supplies the current fixture or assertion described above. [20]
+
 - `test_memory_movement_and_absent_memory_never_claim_delivered_coverage` supplies the current fixture or assertion described above. [21]
+
 - `test_source_forgery_is_refused_and_receipts_are_leaf_scoped` supplies the current fixture or assertion described above. [22]
 - `test_historical_v1_receipt_remains_readable_without_claiming_memory_tree_proof` supplies the current fixture or assertion described above. [23]
 
@@ -39,8 +41,15 @@ No domain documentation source is configured for this repository (`system/source
 
 No configured domain documentation could be checked.
 
-- The lane row and the exact-scope consumer row this module is registered in. [24]
+
+
+
+> Retained earlier citation wording: - The lane row and the exact-scope consumer row this module is registered in. [24]
+
+
 
 ### Cross-Repo References
 
 No meaningful cross-repo references found.
+
+- The lane row and the exact-scope consumer row this module is registered in. [24]

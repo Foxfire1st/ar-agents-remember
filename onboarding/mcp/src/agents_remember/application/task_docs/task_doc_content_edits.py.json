@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/application/task_docs/task_doc_content_edits.py",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
@@ -26,8 +27,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2d7806b5114e1fcbb76736d7f767de0ae406955d",
-            "content": "sha256:ef2160c480fb0c5403ccea3bf9325f9d8b565c933f537ef240d2731e9be132ca",
+            "blob": "715d185a5e3d1fbbc097f731d4726964d8ee63e4",
+            "content": "sha256:cd7eb493edc2b82b07398a765c56434db8f2f72a8dd8389430242212bc55c467",
             "locator": {
               "kind": "file"
             }

@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/serving/files.py",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
@@ -24,8 +25,21 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6577555f1e999bbd273e7cf52324244d2b863929",
-            "content": "sha256:07522a90260bdb0ea2933792c872f0766427c32c177f22badf066d95f17402e9",
+            "blob": "d60acd0e4be738b9a9a33eb9f333fa6c53974f2b",
+            "content": "sha256:f1db24f3991040c0972bce367f03946a9c1e572104143b564792425e4c6972e9",
+            "locator": {
+              "end": 170,
+              "kind": "line_range",
+              "start": 170
+            },
+            "path": "mcp/src/agents_remember/serving/app.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d60acd0e4be738b9a9a33eb9f333fa6c53974f2b",
+            "content": "sha256:27f6d2dab206e2569bfd327f5b82ed3e30f9cbb7ba0ae424701d962facad308f",
             "locator": {
               "end": 216,
               "kind": "line_range",
@@ -60,6 +74,19 @@
               "end": 48,
               "kind": "line_range",
               "start": 36
+            },
+            "path": "mcp/src/agents_remember/kernel/sidecar_pairing.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2705131141c595386bfe5506c4ccabd7a5792892",
+            "content": "sha256:161f64c3b63e563d95f509fa25e0a2008491c9dc00ea1751de29abd2719928db",
+            "locator": {
+              "end": 47,
+              "kind": "line_range",
+              "start": 35
             },
             "path": "mcp/src/agents_remember/kernel/sidecar_pairing.py"
           },
@@ -133,12 +160,23 @@
       ]
     },
     "7": {
-      "note": "The leaf-enclosure contract enumerator the catalog walks.",
+      "note": "The leaf-enclosure contract enumerator the catalog walks.\n\nAnchor: `iter_leaf_enclosure_contracts`",
       "targets": [
         {
           "anchor": {
-            "blob": "4a28c7892ba5c9c680f2935747fb0edd11dab426",
-            "content": "sha256:47e5201e5b1d133febcbb89eefa6f0ca7e1473347442477513ad46e266e91d2b",
+            "blob": "396f581aa13672645248ee4b089011b1ca781c1b",
+            "content": "sha256:a1e25e610b89188c8b8ee96186b79376eb9947c515ae118097c7dee9e073a595",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/tasks/task_paths.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "396f581aa13672645248ee4b089011b1ca781c1b",
+            "content": "sha256:d86ba7e7cf7f74c5b8c19d590f8b1d4fabb228ba633bfef6358e894af37792b5",
             "locator": {
               "kind": "symbol",
               "name": "iter_leaf_enclosure_contracts"
@@ -150,16 +188,16 @@
       ]
     },
     "8": {
-      "note": "The `WorktreeContract` (`code_worktree`, `worktree_group`, `cleanup`) + `load_contract`/`ContractError`.\n\nAnchor: \"coordination.worktree_group\"",
+      "note": "The `WorktreeContract` (`code_worktree`, `worktree_group`, `cleanup`) + `load_contract`/`ContractError`.  Anchor: \"coordination.worktree_group\"",
       "targets": [
         {
           "anchor": {
             "blob": "c9e2847f64ca428bdc799c8173b43aa736f4b0e9",
-            "content": "sha256:147f3a13ca15b4b7a46682cb3829e94f974866ff9c13b54854be3f643a9e67d4",
+            "content": "sha256:e1a34064026cc365304c132cb521e64e16a7c18f2b46777311eb9ac5cf545991",
             "locator": {
-              "end": 1179,
+              "end": 1215,
               "kind": "line_range",
-              "start": 1179
+              "start": 97
             },
             "path": "mcp/src/agents_remember/worktrees/worktree_contract.py"
           },
@@ -168,15 +206,14 @@
       ]
     },
     "9": {
-      "note": "The `table_metadata` drift reader + the `mirror_onboarding_path` sidecar mapper.",
+      "note": "The `table_metadata` drift reader + the `mirror_onboarding_path` sidecar mapper.\n\nAnchor: `discover_route_overviews`",
       "targets": [
         {
           "anchor": {
-            "blob": "f1d3ffb64372f087a642e851e92c17912398e955",
-            "content": "sha256:f1915524f01a1ba3f36260c3f0691ef0d6dfcff21095b266f47595050f7b10a1",
+            "blob": "67a2ea5e0dc585ffaf0b58510d28387af2701164",
+            "content": "sha256:ef16e3d181bff438b06d21342ea3a7ca19450b970a8167b389bf5c8eeb47f3cc",
             "locator": {
-              "kind": "symbol",
-              "name": "discover_route_overviews"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/kernel/onboarding_doc.py"
           },

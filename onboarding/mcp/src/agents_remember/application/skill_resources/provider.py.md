@@ -76,10 +76,14 @@ live sources.
 - The corpus root, its manifest and its publishing origin travel together as one admission. [2]
 - The publishing origin is both the URI prefix and the identity half that keeps two servers' same-named skills distinct. [3]
 - The packaging helper both managers open, which may materialize the package data for the duration of the call. [4]
+
 - The generated package-data copy the served tree is read from. [5]
+
 - The canonical skills source tree the package copy is generated from. [6]
 - The consumer obligation stated for a caller supplying a corpus root without its origin. [7]
+
 - The case that keeps same-named skills from two servers distinct. [8]
+
 
 ### Cross-Repo References
 

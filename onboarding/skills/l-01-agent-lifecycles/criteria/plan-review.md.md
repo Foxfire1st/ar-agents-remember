@@ -62,8 +62,12 @@ No Domain Documentation source is configured for this memory root.
 
 ### Repo-Internal References
 
+
 - PR-4 defines both explicit-graph and graph-less activation review. [1]
+
+
 - Strategist doctrine authors the topology choice under review. [2]
+
 - The template renders the graph-less activation walk explicitly. [3]
 
 ### Cross-Repo References

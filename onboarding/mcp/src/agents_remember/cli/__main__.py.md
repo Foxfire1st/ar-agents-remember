@@ -108,15 +108,23 @@ The paseo command group joins existing knowledge-ingest, taskless bootstrap and 
 
 ### Repo-Internal References
 
+
 - The `dashboard` subcommand adapter this dispatches to. [1]
+
+
 - The peer CLI adapter pattern. [2]
+
+
 - The memory-citations adapter, registered the same declarative way. [3]
+
 - The memory-backfill adapter: its `--contract` is the write guard that keeps a history rewrite off the official memory repository. [4]
 - The separate MCP server console entry that stays standalone. [5]
 - The `knowledge-ingest` subparser this umbrella registers for a leaf's curator hand-off list. [6]
 - **The `knowledge-bootstrap` subparser this leaf adds: the taskless entry, registered the same declarative way.** [7]
 - **The `knowledge-format` subparser `260928-MIK-L21` adds: the text knowledge files' canonical formatter, the umbrella's sixth registered subcommand.** [8]
+
 - **The `knowledge-convert` subparser `260928-MIK-L24` adds: the conversion of a memory tree and its database into the text format.** [9]
+
 - **The `knowledge-validate` subparser `260928-MIK-L22` adds: the curator's standalone run of the knowledge validator.** [10]
 - **The `knowledge-index` subparser `260928-MIK-L23` adds: the derived knowledge index of one memory tree, built or reused and reported.** [11]
 - **The `knowledge-worklist` subparser `260928-MIK-L08` adds: the change-to-knowledge worklist of a leaf or of four named sides.** [12]
@@ -124,11 +132,15 @@ The paseo command group joins existing knowledge-ingest, taskless bootstrap and 
 - **The `knowledge-census` subparser `260928-MIK-L20` adds: the migration census's inventory and report.** [14]
 - The `knowledge-copies` subparser adds: retired knowledge-database leftover copies listed with their deciding rule (`--apply` deletes MIK-R26 rule 6 names), registered the same declarative way. [15]
 
+
 - The `upgrade-user-settings` subparser this leaf adds: the explicit whole-file move from the old coordination settings file to the user configuration directory, with `--coordination-root` and `--dry-run`. [18]
+
 
 ### Runtime Source References
 
+
 - Frozen implementation of build_parser supporting the stated file behavior. [16]
+
 - Frozen implementation of main supporting the stated file behavior. [17]
 
 - The current umbrella additionally registers providers-remove as an explicit operator command; it does not restore any provider setup or MCP provider tool. [19]

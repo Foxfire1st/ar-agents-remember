@@ -22,7 +22,11 @@ Preparation calls composition; the receipt restoration path and delayed held-sea
 
 - Freeze and substitute pointers before existing user-note composition. [1]
 - Every saved detail is shape/identity/type/revision checked. [2]
+
 - The detail keeps its deterministic report sibling name and resolves beside the saved handover's canonical path, not the report's collection destination. [3]
+
+
 - Receipt restoration invokes the detail validator. [4]
+
 
 - The replay regression refuses a rebound canonical folder despite equal detail bytes and restores a missing valid legacy access link. [5]

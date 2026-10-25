@@ -24,7 +24,11 @@ The task-document illustration now includes `put_open_question` in `_L111_TASK_D
 - Mapping values are split recursively; bare list strings remain content. [2]
 - Content target, distinct locations and whole delivered bound are three independent measures. [3]
 - The spy captures independent validated wholes at the real finalizer seam. [4]
+
 - Detail identity is complete parsed-mapping equality under the file's byte budget. [5]
+
+
 - Owned tool/operation rows retain fields, uses and product bounds without an L111 interim entry. [6]
+
 
 - The updated-answer illustration supplies the put_open_question operation text; it is not a live task-document publication result. [7]

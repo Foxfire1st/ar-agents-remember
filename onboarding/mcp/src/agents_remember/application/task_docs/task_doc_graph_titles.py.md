@@ -59,8 +59,12 @@ No relevant external documentation was available after checking the configured s
 The source, its ordinary-publication consumer, and focused forcing suite define the contract.
 
 - The central owner refuses more than one graph document and builds the one in-memory title context. [1]
+
 - Ordinary publication checks the same cardinality before it constructs the task transaction. [2]
-- Focused proof covers zero/one support, two-graph no-write refusal, and order-independent errors. [3]
+
+
+- Focused proof covers the plain-or-single-graph batch shape and the two-graph refusal, which leaves task and projection bytes untouched. [3]
+
 
 ### Cross-Repo References
 

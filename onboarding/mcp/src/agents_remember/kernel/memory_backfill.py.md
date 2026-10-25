@@ -84,7 +84,9 @@ Source declarations and test assertions are distinguished from execution and acc
 
 - Typed request and plan reporting distinguish work, losses, and an empty plan. [1]
 - Selection preserves available memory attributions and reports unrepresentable claims. [2]
+
 - Apply orders digest/rescue/rewrite/publication and frames every target update correctly. [3]
+
 - Historical table reads/carry remain explicit migration helpers. [4]
 - The apply regression now moves two named refs and verifies the rescue tip. [5]
 - Native topological traversal visits parents before their children during replay. [6]

@@ -44,6 +44,8 @@ Cases build their own `McpRuntimeConfig` in a temporary root, write the runtime 
 ## Evidence
 
 - Publish/read round trip, unchanged republish and cross-agent merging. [1]
+
 - The start hooks publish only when the runtime and the report facts exist. [2]
+
 - Only an authoritative ended occurrence reclaims a registration; a revival supersedes an older end. [3]
 - Concurrent registrations retain every published agent's facts. [4]

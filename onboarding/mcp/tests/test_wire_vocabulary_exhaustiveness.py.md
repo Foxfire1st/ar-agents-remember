@@ -47,7 +47,9 @@ Each current definition below can be inspected in the exact source file. Histori
 to removed methods are superseded by this current inventory.
 
 - Shared helper worktree_summary_accepts [1]
+
 - Shared helper _contract [2]
+
 
 ### Cross-Repo References
 

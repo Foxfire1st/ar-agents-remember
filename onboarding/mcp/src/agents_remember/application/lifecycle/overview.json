@@ -1,5 +1,7 @@
 {
-  "path": "mcp/src/agents_remember/application/lifecycle",
+  "path": "mcp/src/agents_remember/application/lifecycle/overview",
+  "proves": [],
+  "realizes": [],
   "references": {
     "1": {
       "note": "The bounded read-only observer validates the cursor, polls the exact generation, and returns change or timeout.\n\nAnchor: \"def validate_wait_cursor(after_revision: int)\"; \"def wait_for_lifecycle_change(\"",
@@ -62,12 +64,34 @@
       ]
     },
     "3": {
-      "note": "Ordinary converted-leaf closeout checks its mandatory gate before approval or code publication and validates its exact memory output and recovered output before memory publication.",
+      "note": "Ordinary converted-leaf closeout checks its mandatory gate before approval or code publication and validates its exact memory output and recovered output before memory publication.\n\nAnchor: `closeout_result` `_refuse_ungated_memory` `require_gated_recovery`",
       "targets": [
         {
           "anchor": {
-            "blob": "61e52f411994bdcb2c1e96c787359a908e0b3a6b",
-            "content": "sha256:98fa383b62c19d6ef178e589f5847970d21801a8296fbd8ba421f1a92dc882e7",
+            "blob": "16170495bfefc7b4695e565427ce20e47d6cf726",
+            "content": "sha256:a11094f88726f11a7585137e1178fc6dcf269a675547ec964b8021ff835a467d",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/closeout.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "eecdaff3bad79ebac4230c53a03b1b6e2e47c1cf",
+            "content": "sha256:b4b64e690f1183dff4dd72d8c7499aa007f8a2bb01db4e82338a750dd4f62f15",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "16170495bfefc7b4695e565427ce20e47d6cf726",
+            "content": "sha256:edee97bbd27e310531ad25d8367e1ce1b68d4f32c367d57c4290d56452db3d99",
             "locator": {
               "kind": "symbol",
               "name": "closeout_result"
@@ -90,8 +114,8 @@
         },
         {
           "anchor": {
-            "blob": "1a31dae5cb0e746d7093a7225a558928989e3519",
-            "content": "sha256:8d4fef8bd6c5c58914c6af197676edd4695b894527205834a84265c711ebfc2b",
+            "blob": "eecdaff3bad79ebac4230c53a03b1b6e2e47c1cf",
+            "content": "sha256:182a12a341a97c4b5960eff651b8e356bdecaad0f4fa29123c64b60c55d961ef",
             "locator": {
               "kind": "symbol",
               "name": "require_gated_recovery"
@@ -136,8 +160,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e20f740e4bfd122c85ee0915d77bf8df43010cce",
-            "content": "sha256:ebe65138228550c44640e9d00045d1b09378ba225f6823710c23e30afc2cd880",
+            "blob": "bd9a97a282d11cd2d4057401a89ff0acb81a8bfb",
+            "content": "sha256:e81502e1221125c131449ae84aee06e4a770bef2bfac2292d4723b34ad424416",
             "locator": {
               "kind": "symbol",
               "name": "observe_contract_read_failure"
@@ -149,5 +173,5 @@
       ]
     }
   },
-  "schema": "ar-onboarding-route/v1"
+  "schema": "ar-onboarding-file/v1"
 }

@@ -1,5 +1,6 @@
 {
   "path": "dashboard/src/panels/review/laneFocus.ts",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
@@ -39,20 +40,8 @@
       ]
     },
     "10": {
-      "note": "IntentMarkers imports and actually calls spanLabel for hunk names/attributes and sideLines for full-side/excerpt extent measurement.",
+      "note": "IntentMarkers imports and actually calls spanLabel for hunk names/attributes and sideLines for full-side/excerpt extent measurement.\n\nAnchor: `sideWindow`",
       "targets": [
-        {
-          "anchor": {
-            "blob": "35af2c8458b2bd51d363ec1f220ab9e592467e3d",
-            "content": "sha256:d5a0dfe4bebe923b687f00c0e8d64894170f2c4d23408f70045727f55ff5a91e",
-            "locator": {
-              "kind": "symbol",
-              "name": "sideWindow"
-            },
-            "path": "dashboard/src/panels/review/IntentMarkers.tsx"
-          },
-          "kind": "code"
-        },
         {
           "anchor": {
             "blob": "2f1e83eab894e2eb7b32234d42d08a44c4ec7040",
@@ -91,16 +80,77 @@
             "path": "dashboard/src/panels/review/IntentMarkers.tsx"
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2f1e83eab894e2eb7b32234d42d08a44c4ec7040",
+            "content": "sha256:e7e364e5cf8ccb3da6543fb31e688181e11ebd6c50ae38107cba5763f0d20cbd",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/IntentMarkers.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2f1e83eab894e2eb7b32234d42d08a44c4ec7040",
+            "content": "sha256:e8200964a978635522b2ab090c65065d8ef8e85c4730bb2eb0460d34c677ddbb",
+            "locator": {
+              "end": 34,
+              "kind": "line_range",
+              "start": 34
+            },
+            "path": "dashboard/src/panels/review/IntentMarkers.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2f1e83eab894e2eb7b32234d42d08a44c4ec7040",
+            "content": "sha256:a89a642d481153ab5818140b6a3607e95c588e087377768c9b6a2f5adf3385eb",
+            "locator": {
+              "end": 218,
+              "kind": "line_range",
+              "start": 207
+            },
+            "path": "dashboard/src/panels/review/IntentMarkers.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2f1e83eab894e2eb7b32234d42d08a44c4ec7040",
+            "content": "sha256:bd6f3d761ee3a68336722a9e696b4717a7596476181ffddf0a3c2528570ae6cf",
+            "locator": {
+              "end": 462,
+              "kind": "line_range",
+              "start": 460
+            },
+            "path": "dashboard/src/panels/review/IntentMarkers.tsx"
+          },
+          "kind": "code"
         }
       ]
     },
     "11": {
-      "note": "The current ReviewMainFacts—not the closed technical details—uses held lane facts for openly marked remaining counts and preserves fallback for unowned names.",
+      "note": "The current ReviewMainFacts—not the closed technical details—uses held lane facts for openly marked remaining counts and preserves fallback for unowned names.\n\nAnchor: `ReviewMainFacts`",
       "targets": [
         {
           "anchor": {
-            "blob": "eedfb233fe4b10b4fff9859dc898b4e7f5210460",
-            "content": "sha256:8b9b8599730a5dd94caaebd0d7b60551bad13034dd2de7ec6f342984f18a5fd8",
+            "blob": "49343b438babb334380943fd5a5b14179143b0fe",
+            "content": "sha256:293d6027f0781d8a974b7456c9c890c384a984e0e96c589b1fea64664d82fe7d",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/ReviewRecordPanes.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "49343b438babb334380943fd5a5b14179143b0fe",
+            "content": "sha256:6bc18cc2b58532671b3002c46206e70f3fb4c93f59af848d4862c09aceea4ee4",
             "locator": {
               "kind": "symbol",
               "name": "ReviewMainFacts"

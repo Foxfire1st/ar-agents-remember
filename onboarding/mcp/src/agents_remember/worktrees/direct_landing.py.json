@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/worktrees/direct_landing.py",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
@@ -165,30 +166,24 @@
     }
   ],
   "references": {
-    "1": {
-      "note": "The module docstring's gate and closing paragraphs.\n\nAnchor: \"On converted memory (the layout marker on either side) the mandatory\"",
+    "10": {
+      "note": "The application owns configured admission and execution serialization.\n\nAnchor: `direct_landing_tool`",
       "targets": [
         {
           "anchor": {
-            "blob": "ae56f6c72b4720e9cd1ae2abdd42551a79d4c1d4",
-            "content": "sha256:226918613a75e04cd32e6b90bec4ee4d823624e4295bf7fe67b83e93cf02e26e",
+            "blob": "1de673c8175f9a7c79e3ffec19987cd26c195f52",
+            "content": "sha256:c2597afcc61ebcd3d7cc8b9fdf12ee3f4da3903a42846ca6e6130894e5a199a4",
             "locator": {
-              "end": 44,
-              "kind": "line_range",
-              "start": 29
-            }
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/lifecycle/direct_landing.py"
           },
           "kind": "code"
-        }
-      ]
-    },
-    "10": {
-      "note": "The application owns configured admission and execution serialization.",
-      "targets": [
+        },
         {
           "anchor": {
-            "blob": "1b1e56a216f8de1aeedbede51a4f99cc0adad64f",
-            "content": "sha256:78c74a4b32d669f36c6d7f8717b87ecc767f4b88c97ea3e30bd9310be9572e0c",
+            "blob": "1de673c8175f9a7c79e3ffec19987cd26c195f52",
+            "content": "sha256:da51a3b4104ea40afb6ecf52c69e917bef536ed04b7761f03a8a10b5c29e4c5b",
             "locator": {
               "kind": "symbol",
               "name": "direct_landing_tool"
@@ -200,12 +195,23 @@
       ]
     },
     "11": {
-      "note": "The focused integration scenario verifies cache-independent publication and recovery.",
+      "note": "The focused integration scenario verifies cache-independent publication and recovery.\n\nAnchor: `test_direct_landing_publishes_memory_and_recovers_independently_of_cache`",
       "targets": [
         {
           "anchor": {
-            "blob": "e026cb197331402f445ffac02968faac936c15d0",
-            "content": "sha256:04010af4035543f16e10e1a085e08495cb9f7a998f349c69adf9950414a4cf4f",
+            "blob": "e5e2ee915969059ef9c62381725c0e2f73f229d0",
+            "content": "sha256:6e58c8410298d7d88cd213b6be058805b71d47020449fc6d3fcc168bdcce4564",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_direct_landing.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e5e2ee915969059ef9c62381725c0e2f73f229d0",
+            "content": "sha256:8fb6b4289189e9188bfb6056c89b20f4cddddf96a9319910523aba1c732a42e4",
             "locator": {
               "kind": "symbol",
               "name": "test_direct_landing_publishes_memory_and_recovers_independently_of_cache"
@@ -237,8 +243,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cfb3589f6c0f974ae6d08af779bf4311e5c839d2",
-            "content": "sha256:fc3a682a687556e6c2d59fd0b30c669eddebea98bc666f202abdd383ab1f3f61",
+            "blob": "ae56f6c72b4720e9cd1ae2abdd42551a79d4c1d4",
+            "content": "sha256:9611485929cd770f125cd4a39248e8dc99e2cda94db390c1c0ba5874a4e10246",
             "locator": {
               "end": 1694,
               "kind": "line_range",
@@ -250,100 +256,12 @@
       ]
     },
     "14": {
-      "note": "Exact direct replay retains its generation; only a changed request may replace retired completed evidence.\n\nAnchor: `_create_direct_landing`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "020fb46d0ab2336fe443a13f3f6f30fc5241036d",
-            "content": "sha256:f7d8b360c199eaeae8a94f3bbeb67495c0ff42a6cc15971007fbece89fc20e4e",
-            "locator": {
-              "kind": "file"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "2": {
-      "note": "For the invariant's non-external-memory refusal, preview and apply refuse the same mode. This is not whole-admission parity: create preview derives prospective pair facts without the actual validator/gate judgment that apply performs.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "fbf5d24148b7b54165d4139154db5fe28aa19800",
-            "content": "sha256:1fa08c18de287310d98cea90b25a7e7e068fc1423cbd3b55d3edaab5face30bf",
-            "locator": {
-              "kind": "symbol",
-              "name": "_direct_landing_preview"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "3": {
-      "note": "Exact in-flight retry reuses the retained record without preparation or admission; other requests prepare and admit, then execution settles receipts.\n\nAnchor: `_start_or_observe_direct_landing`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "020fb46d0ab2336fe443a13f3f6f30fc5241036d",
-            "content": "sha256:f7d8b360c199eaeae8a94f3bbeb67495c0ff42a6cc15971007fbece89fc20e4e",
-            "locator": {
-              "kind": "file"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "4": {
-      "note": "Only a created generation keeps the closing.",
+      "note": "Exact direct replay retains its generation; only a changed request may replace retired completed evidence.",
       "targets": [
         {
           "anchor": {
             "blob": "ae56f6c72b4720e9cd1ae2abdd42551a79d4c1d4",
-            "content": "sha256:988da272ae7a8e1d44b72def9c990e3f3c6b6bfa0d0efb8c3fc1db6206076dc6",
-            "locator": {
-              "kind": "symbol",
-              "name": "_admit_direct_landing"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "ae56f6c72b4720e9cd1ae2abdd42551a79d4c1d4",
-            "content": "sha256:e8a26a75453fa0e1653775a4bd163f8313dd06687528ce34ec70128419ac5ca9",
-            "locator": {
-              "kind": "symbol",
-              "name": "_undo_closing"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "5": {
-      "note": "Preparation takes identity and enforce_owner, selects/closes/judges before retaining the exact admitted snapshot, and restores on failure.\n\nAnchor: `_prepare_direct_landing_candidate`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "020fb46d0ab2336fe443a13f3f6f30fc5241036d",
-            "content": "sha256:f7d8b360c199eaeae8a94f3bbeb67495c0ff42a6cc15971007fbece89fc20e4e",
-            "locator": {
-              "kind": "file"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "6": {
-      "note": "Apply selects the history source, closes it, judges the exact retained closed tree and validates that same tree as leaf publication, restoring on refusal.\n\nAnchor: `_close_gated_leaf`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "020fb46d0ab2336fe443a13f3f6f30fc5241036d",
-            "content": "sha256:f7d8b360c199eaeae8a94f3bbeb67495c0ff42a6cc15971007fbece89fc20e4e",
+            "content": "sha256:46ea685defa6d5a6c2ae12d11cd38463eb2b01a2fef1c6a4899f85adfe84c08c",
             "locator": {
               "kind": "file"
             }
@@ -353,12 +271,22 @@
       ]
     },
     "7": {
-      "note": "Current direct request, canonical-leaf grant admission, verify-existing code proof and pure pair preview; the retired settings gate is not current.",
+      "note": "Current direct request, canonical-leaf grant admission, verify-existing code proof and pure pair preview; the retired settings gate is not current.\n\nAnchor: `DirectLandingRequest` `require_direct_grant` `_verify_code_commit` `_direct_landing_preview`",
       "targets": [
         {
           "anchor": {
-            "blob": "cfb3589f6c0f974ae6d08af779bf4311e5c839d2",
-            "content": "sha256:482e76ca2e7f8b2ee5ad6a3e1c0d745b3e3eb21175e4e85fdc9533819f4a0c5e",
+            "blob": "ae56f6c72b4720e9cd1ae2abdd42551a79d4c1d4",
+            "content": "sha256:46ea685defa6d5a6c2ae12d11cd38463eb2b01a2fef1c6a4899f85adfe84c08c",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ae56f6c72b4720e9cd1ae2abdd42551a79d4c1d4",
+            "content": "sha256:ff1fdf2b23e012096961aa03d65bd7bc33bf3fbe5b6da15e403574ad63ee89c3",
             "locator": {
               "kind": "symbol",
               "name": "DirectLandingRequest"
@@ -390,8 +318,8 @@
         },
         {
           "anchor": {
-            "blob": "cfb3589f6c0f974ae6d08af779bf4311e5c839d2",
-            "content": "sha256:6064306f286379066fc9b5fdb2d0eb5a452c9452195a4244145f7459a9d45477",
+            "blob": "ae56f6c72b4720e9cd1ae2abdd42551a79d4c1d4",
+            "content": "sha256:99844e8600b6361d2825639d9792f596ebc4428074127e4296da39948792cc2a",
             "locator": {
               "kind": "symbol",
               "name": "_direct_landing_preview"
@@ -418,12 +346,22 @@
       ]
     },
     "9": {
-      "note": "Generation creation and action-required public projection.",
+      "note": "Generation creation and action-required public projection.\n\nAnchor: `_create_direct_landing` `_direct_landing_observation`",
       "targets": [
         {
           "anchor": {
-            "blob": "fbf5d24148b7b54165d4139154db5fe28aa19800",
-            "content": "sha256:d85e7f6536918fdb6c270a6f9b47dc8188d65a098f09f248a88ba19d785dd45c",
+            "blob": "ae56f6c72b4720e9cd1ae2abdd42551a79d4c1d4",
+            "content": "sha256:46ea685defa6d5a6c2ae12d11cd38463eb2b01a2fef1c6a4899f85adfe84c08c",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ae56f6c72b4720e9cd1ae2abdd42551a79d4c1d4",
+            "content": "sha256:42142156f8934a41dd1df920ed0da657c720f8b1315cb768325673bd8652165e",
             "locator": {
               "kind": "symbol",
               "name": "_create_direct_landing"

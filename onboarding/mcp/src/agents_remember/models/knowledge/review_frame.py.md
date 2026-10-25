@@ -24,8 +24,6 @@ The durable frame's shapes: one presentation lineage, its immutable revisions an
 - A draft is a leased attempt, separate from the ready pointer. [3]
 - A reclamation record is written as intent before removal and as outcome after it. [4]
 
-- `_suffix` maps a kit licence's extensionless `LICENSE` basename to `.txt`, so a pinned licence is served under the plain-text type its manifest entry declares. \[5] [5]
-
-- Recorded and planned bindings retain distinct owners and addresses. Limits omit revision-count and lineage-byte eviction thresholds; part maps keep each revision’s own claims and supplemental receipts match the packet exactly. Stale-part reasons are present only on stale revisions. [6]
+- `_suffix` maps a kit licence's extensionless `LICENSE` basename to `.txt`, so a pinned licence is served under the plain-text type its manifest entry declares. [5]
 
 - Recorded and planned bindings retain distinct owners and addresses. Limits omit revision-count and lineage-byte eviction thresholds; part maps keep each revision’s own claims and supplemental receipts match the packet exactly. Stale-part reasons are present only on stale revisions. [6]

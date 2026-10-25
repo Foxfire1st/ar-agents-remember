@@ -1,14 +1,15 @@
 {
   "path": "mcp/tests/test_models.py",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
-      "note": "Public tool metadata lives in the `mcp/tools/` package.\n\nAnchor: \"def _tool_payload\"",
+      "note": "Public tool metadata lives in the `mcp/tools/` package.",
       "targets": [
         {
           "anchor": {
-            "blob": "cf09680d5bb09436a9d3afb73da9cbd60f1af5fc",
-            "content": "sha256:99fcc8b8517d59f1b701140ddf00c842b539245f7a74358c3785a061633b7d23",
+            "blob": "bbd96445dae6e10e1c4052722fab1b614aafedfe",
+            "content": "sha256:02861ec722ea4c0fc6571e07ac18f67ec72c64be18bf5754811b91af64bbe1f4",
             "locator": {
               "end": 22,
               "kind": "line_range",
@@ -25,24 +26,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8c2e4699aae0165b9cf73eb87c8893483de2c903",
-            "content": "sha256:5e15c91b59b90db38d3db51fbe86a1dcff207b43893ad43aabd56cf3e6e099e3",
+            "blob": "ca5af906298a90f3101a98a5542005e3549b3c0a",
+            "content": "sha256:d4fef661ce5a33268862987769ddd3aaea489ee273318cafde9fed592a35d561",
             "locator": {
-              "kind": "symbol",
-              "name": "INTERNAL_COMPAT_TOOL_NAMES"
-            },
-            "path": "mcp/src/agents_remember/models/tools/tool_registry.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "217ff46ba831274f6cea94641a60077c17749cf0",
-            "content": "sha256:44c479df08f64f889b58153fa17569bf0b269ede2f80a9fdab3ebc5906a41d87",
-            "locator": {
-              "end": 135,
+              "end": 126,
               "kind": "line_range",
-              "start": 114
+              "start": 82
             },
             "path": "mcp/src/agents_remember/models/tools/tool_registry.py"
           },
@@ -51,25 +40,14 @@
       ]
     },
     "3": {
-      "note": "Existing whole-result model validation remains, with explicit absence pins for fields omitted by shaped answers. No synthetic field is injected to make a compact projection satisfy a whole-result predicate.\n\nAnchor: Current STOP-delta source carrier Current public-tool registry/model/schema equality and the terminal series-release emitter-to-wire-to-caller payload assertions are distinct retained cases.",
+      "note": "Existing whole-result model validation remains, with explicit absence pins for fields omitted by shaped answers. No synthetic field is injected to make a compact projection satisfy a whole-result predicate.\n\nAnchor: `PublicToolResponseModelTests`",
       "targets": [
         {
           "anchor": {
-            "blob": "f9b404f047b5827e4efbeac17d9028c2f67fc004",
-            "content": "sha256:521acdbb2d91e077cca4412ef12b25cc72a3f627badae1c27a404721f1170ccb",
+            "blob": "764873bf029b5872776c2c3f7064484f7fc52c21",
+            "content": "sha256:afdc2e9c83e083fe25de3e15162fe37554c2d346843b839d0b614a1889f5b0b0",
             "locator": {
               "kind": "file"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "2d4019b70f9b6752903cf3bd4d74a161a072de1e",
-            "content": "sha256:5bd42c28c05d4ae498e083b3c8b06f254feb921b71e317e976df487a97546605",
-            "locator": {
-              "kind": "symbol",
-              "name": "PublicToolResponseModelTests"
             }
           },
           "kind": "test"

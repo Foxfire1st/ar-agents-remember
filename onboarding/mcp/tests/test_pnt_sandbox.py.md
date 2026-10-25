@@ -59,17 +59,30 @@ assumption.
 
 ## Evidence
 
+
 - The sandbox safety check, build inputs, tool-server environment and admission. [1]
+
+
 - The safety case for the product Node and cache roots. [2]
+
 - The public install receipt cases. [3]
 - The foreign-package admission case. [4]
+
 - The real resolver command returns empty errors, every expected non-null root and five resolver keys. [5]
+
 - Compact report fallback and inline-host precedence determine started bookkeeping without changing retained receipt bytes. [6]
 - The tool server is started with the sandbox's own environment, including its own XDG roots and no runtime selector. [7]
+
 - A resolved host outside the sandbox is refused before any call, naming both hosts. [8]
+
 - A request that names no sandbox is refused before anything starts. [9]
 - The admission refuses a server with configured providers after the `server_info` read. [10]
+
 - A sandbox whose own settings select another home or the live port refuses. [11]
+
+
 - The unconfigured state refuses a foreign resolved host. [12]
+
 - A request port that is not a sandbox port is refused. [13]
+
 - The unconfigured state is admitted and named, and a settings host the build cannot resolve refuses. [14]

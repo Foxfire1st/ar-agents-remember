@@ -71,7 +71,9 @@ No configured live documentation source was available for this pass.
 ### Repo-Internal References
 
 - Options, linked indexes and the raw decision files of a tree. [2]
+
 - The rule registered on import. [5]
+
 - Swap refused twice; reword and append pass; moves into a linked index refused from either side. [6]
 
 ### Cross-Repo References

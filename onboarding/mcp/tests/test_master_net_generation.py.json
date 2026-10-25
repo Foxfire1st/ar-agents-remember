@@ -121,16 +121,16 @@
       ]
     },
     "4": {
-      "note": "The lane row that makes these cases run.\n\nAnchor: `test_master_net_generation`",
+      "note": "The lane manifest registers mcp/tests/test_master_net_generation.py in unit-regression. Membership selects evidence and does not establish execution.",
       "targets": [
         {
           "anchor": {
-            "blob": "11ba98ff63f4a4815985ac51e2c0c7b5a48556a4",
-            "content": "sha256:5411749dbd3b184fb122907bb2b8bcf744cb6f96b7f6b3bb3af87b6b3157ba5b",
+            "blob": "102c4550ab6429f44c8fb543d1d0662de66a1b8c",
+            "content": "sha256:0010ff07ac9e45875eff98c991fb5b4f265ed5a8f7b831fadd99c78ca12a2244",
             "locator": {
-              "end": 230,
+              "end": 217,
               "kind": "line_range",
-              "start": 230
+              "start": 217
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -139,8 +139,30 @@
       ]
     },
     "5": {
-      "note": "The selection under test (endpoint binding, digest, currentness, refusal) and the thin entry that publishes it.",
+      "note": "The selection under test (endpoint binding, digest, currentness, refusal) and the thin entry that publishes it.\n\nAnchor: `select_master_net` `master_changeset`",
       "targets": [
+        {
+          "anchor": {
+            "blob": "6c4737de45af72f420304b097f27413a794c58d4",
+            "content": "sha256:bb1552b9990cab8eab03e22d7d2af20357f59ad042a1edfbbd537312c727a338",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/serving/master_net_generation.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8bdffe4683b00da6aed0b4f57d68f0689505bb48",
+            "content": "sha256:f05ce5d43215c150714cb107c391f4592af84fb36288fe206c9be422c0a5cb60",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/serving/changeset.py"
+          },
+          "kind": "code"
+        },
         {
           "anchor": {
             "blob": "6c4737de45af72f420304b097f27413a794c58d4",
@@ -155,8 +177,8 @@
         },
         {
           "anchor": {
-            "blob": "2186995d20205912e217dc39a14fa95fcb0e42f3",
-            "content": "sha256:c05746a0396ad5a7276164066781be3b539a8381708540ffb470ea6c4e9937a3",
+            "blob": "8bdffe4683b00da6aed0b4f57d68f0689505bb48",
+            "content": "sha256:c0ad04ef56c199e4145dee058c921ac7700e48c5b6c2392b857c0c04641fe5b9",
             "locator": {
               "kind": "symbol",
               "name": "master_changeset"

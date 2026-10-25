@@ -49,7 +49,9 @@ No relevant domain documentation was found.
 
 - The direct CLI refusal occurs before base-resolution output. [1]
 - The pure executable-statement helpers remain directly importable and tested. [2]
+
 - Vitest includes script tests in its declared test population. [3]
+
 
 ### Cross-Repo References
 

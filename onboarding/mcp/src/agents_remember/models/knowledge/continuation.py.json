@@ -82,15 +82,14 @@
       ]
     },
     "4": {
-      "note": "The bound fields and their short aliases.",
+      "note": "The bound fields and their short aliases.\n\nAnchor: `KnowledgeContinuation`",
       "targets": [
         {
           "anchor": {
-            "blob": "aff47fae108a67ab7543a3fa660d5861015d97d8",
-            "content": "sha256:f00e3ff744e1e5d1c9ef7a4c1389e8b615169f75f901fff6d1167fda9b442fae",
+            "blob": "c9ee896d7f0fda0c9ef3bf516a3aafd8278d6076",
+            "content": "sha256:ee8f8d59b1a604820ccee09e8554fbdd84dd42fbc6ba7a9c37b9d94ac907d651",
             "locator": {
-              "kind": "symbol",
-              "name": "KnowledgeContinuation"
+              "kind": "file"
             }
           },
           "kind": "code"

@@ -28,7 +28,9 @@ record's own revision with the curator's authored effect label, and refuses
 unsupported input (missing or invalid effect, curator-supplied revision, member
 revision, effect on another disposition) before anything is written.
 
+
 - One constructor stores the family revision with the authored effect. [2]
+
 
 ### History cover destinations and planned-reference ownership
 
@@ -43,8 +45,12 @@ A reconsideration `raise` checks the task-owner question port before changing th
 
 ### Repo-Internal References
 
+
 - Source-inspected authoring: onboarding rows fill candidate source bindings and require counted change for `updated`; canonical membership and decision/facet constructors preserve rerun IDs and foreign evidence. This is static implementation evidence, not a fresh run or acceptance. [1]
+
+
 - Current source delta inspected statically: Add membership/record constructors, onboarding source/base precedence and foreign-evidence preservation; retain the family section, propose no judgment rows. [3]
+
 
 - Invariant covers admit destination paths on moved, extended, changed and deleted rows; the helper refusal wording is narrower than its caller allowlist. [4]
 - Validated planned rows delegate reference resolution before returning an authored row. [5]

@@ -5,6 +5,8 @@
 
 ## Purpose
 
+The note-only revision has a registered `CitationNoteRevisionResponse` carrying the selected card/reference, repairing leaf, preview/change state, target/reference counts and before/after digests. `tool_answer` gives it a 1,200-token shaped bound, and `public_roster` advertises its name. These declarations describe response and delivery contracts, not a performed write.
+
 Capsule operation selection now carries an explicit all/sections audience contract. Sections-mode validation examines the complete source before projecting common and addressed text. Declared step-detail references carry source, revision, bytes and named step separately from inline blocks; the selected-content seal does not change their original source revisions or tool grants.
 
 `mcp/src/agents_remember/models/` owns named contracts shared by MCP responses, serving projections, task and lifecycle owners, capsule compilation, and knowledge readers. It supplies strict package-owned shapes, deliberately flexible detail envelopes, closed vocabularies, immutable identities, and pure construction predicates. Model validation establishes the declared shape and the consistency checks actually implemented; it does not establish observed runtime authority, successful execution, semantic truth, publication approval, or recovery.
@@ -19,9 +21,9 @@ MIK-R109 wire contracts name knowledge, not its text. `NamedFile` carries existe
 
 A tool result is first validated through `tools/tool_registry.py::TOOL_RESPONSE_MODELS`. `tools/tool_response.py::finalize_tool_response` optionally enriches the validated envelope, serializes it with absent optional fields omitted, and finalizes token accounting. The application boundary then constructs the answer delivered to an agent: `application/tool_response.py::complete_tool_response` selects a supplied compact answer or, by default, strips `tokens`, `tokenizer`, `tokenCountExact`, and `operation` and truncates long lists from the finalized whole result. It translates the selected answer's `nextStep` into `next`, records the whole result where possible, and applies the delivered-answer bound. A supplied projection does not automatically inherit whole-result enrichment. Dashboard and command-line consumers retain the whole-result path. Consequently, token fields belong to the modeled whole result and log accounting; they are not promised on the delivered agent answer.
 
-tools/public_roster.py owns the advertised 43-name ordinary tuple and tools/tool_registry.py maps current names to their response models. Both are model-layer wire vocabulary, not live execution or advertisement. Native role start/set/message, receipt-tracked retirement and knowledge read/diff/integrity remain; removed terminal, inbox, gate, readiness, manager-nudge and internal spawn response registrations do not survive here.
+tools/public_roster.py owns the advertised 44-name ordinary tuple and tools/tool_registry.py maps current names to their response models. Both are model-layer wire vocabulary, not live execution or advertisement. Native role start/set/message, receipt-tracked retirement and knowledge read/diff/integrity remain; removed terminal, inbox, gate, readiness, manager-nudge and internal spawn response registrations do not survive here.
 
-The current ordinary public source roster has 43 names, including mounted knowledge_write, user_settings_init and explainer_control; the earlier41-name and pre-sync R11142-name compositions remain historical source epochs. SHAPED_TOOL_BOUNDS carries final task/landing/role delivery rows, including direct_execution_grant at150 tokens with no raw interim-map entry. Some other shaped tools retain raw L111 interim-map spellings, so final assembled rows, bound lookup and interim_leaf_for are not interchangeable observations. TaskDocResponse is the rich whole model: removed-read refusal alone may lack parsed identity, successful writes still require it, checklist-read models/steps are gone, and optional phrase, by-file, synchronization-error and fact-report fields support surviving operations. WorktreeSummary adds an optional taskDocumentCopies notice, not exhaustive copy equality or mutation permission. Model declarations and illustration labels are not universal observed maxima or acceptance.
+The current ordinary public source roster has 44 names, including mounted knowledge_write, user_settings_init, citation_note_revision and explainer_control; the earlier41-name and pre-sync R11142-name compositions remain historical source epochs. SHAPED_TOOL_BOUNDS carries final task/landing/role delivery rows, including direct_execution_grant at150 tokens with no raw interim-map entry. Some other shaped tools retain raw L111 interim-map spellings, so final assembled rows, bound lookup and interim_leaf_for are not interchangeable observations. TaskDocResponse is the rich whole model: removed-read refusal alone may lack parsed identity, successful writes still require it, checklist-read models/steps are gone, and optional phrase, by-file, synchronization-error and fact-report fields support surviving operations. WorktreeSummary adds an optional taskDocumentCopies notice, not exhaustive copy equality or mutation permission. Model declarations and illustration labels are not universal observed maxima or acceptance.
 
 > **Retained historical source account — superseded by the current route account:**
 > A tool result is first validated through `tools/tool_registry.py::TOOL_RESPONSE_MODELS`. `tools/tool_response.py::finalize_tool_response` optionally enriches the validated envelope, serializes it with absent optional fields omitted, and finalizes token accounting. The application boundary then constructs the answer delivered to an agent: `application/tool_response.py::complete_tool_response` selects a supplied compact answer or, by default, strips `tokens`, `tokenizer`, `tokenCountExact`, and `operation` and truncates long lists from the finalized whole result. It translates the selected answer's `nextStep` into `next`, records the whole result where possible, and applies the delivered-answer bound. A supplied projection does not automatically inherit whole-result enrichment. Dashboard and command-line consumers retain the whole-result path. Consequently, token fields belong to the modeled whole result and log accounting; they are not promised on the delivered agent answer.
@@ -179,8 +181,6 @@ These retired source accounts preserve earlier intent only. Their former citatio
 
 - **The refusal record the new code travels in, and the result that carries it as one of exactly two outcomes.** [2]
 - The surface version that stays `/1`, with the reasoning recorded beside the constant. [3] [252]
-- **The field the evidence pane gained, and the re-export that keeps the vocabulary reachable through the payload module.** [5]
-- The cases that measure the vocabulary's refusals and its presence in the served wire schema. [7]
 - The anchor observation and its region validator. [8]
 - The member-source reference and its one locator-state rule. [9]
 - **The vocabulary module's own statement of the five rules its shape enforces, and the movement with its four validators.** [10]
@@ -205,12 +205,11 @@ These retired source accounts preserve earlier intent only. Their former citatio
 - The range's bytes. [27]
 - The content identity. [28]
 - The onboarding-trace row and its `markers` list. [29]
-- The file result's format fields. [30]
 - The optional field (beside the later `currentness`, `families` and, since MIK-R05, `routeChain`) and the docstring boundary. [31]
 - The one continuation token and what it binds. [32]
 - The read response's page state and fields, re-read when MIK-R05 added `routeChain`. [33]
 - The integrity response's optional fields. [35]
-- The sync response's worklist summary. [36]
+- The sync response's worklist summary.  Anchor: "class WorktreeSyncResponse(WorktreeCommandResponse):"; "MIK-R08 rule 8: a completed sync recomputes the leaf's worklist" [36]
 - The optional field and its docstring paragraph. [37]
 - The row kind's docstring with MIK-R30's meaning. [38]
 - The planned forms, the key and the gate predicate. [39]
@@ -239,13 +238,13 @@ These retired source accounts preserve earlier intent only. Their former citatio
 - The reconsideration row retains its own subject and disposition grammar. [66]
 - Public MCP payload builders validate through the response model registry. [67]
 - The advertised public roster's single definition, in this route's zero-import `tools/` leaf; the adapter re-exports the identical object. [68]
-- The response model that reads the roster to enforce the worktree surface's next move against `PUBLIC_TOOLS`. [69]
+- The response model that reads the roster to enforce the worktree surface's next move against `PUBLIC_TOOLS`.  Anchor: "# The next-move triple, declared here so the worktree surface's guidance is part of"; "def _require_registered_public_next_tool" [69]
 
 - The registry maps every modeled builder and the advertised public subset to response models. [70]
 
 - Contract tests prove public tool coverage and schema generation. [71] [77]
-- The record-landing envelope is declared on this route. [72]
-- The checkpoint-landing envelope is declared on this route. [73]
+- The record-landing envelope is declared on this route.  Anchor: "class WorktreeRecordLandingResponse(WorktreeCommandResponse):" [72]
+- The checkpoint-landing envelope is declared on this route.  Anchor: "class WorktreeCheckpointLandingResponse(WorktreeCommandResponse):" [73]
 - The checkpoint registry row sits between the integrate and record-landing rows; the record-landing row follows it. [74]
 - Lifecycle finalizer response model covers the terminal task finalization payload. [79]
 - Next-step computation consumes the resolved worktree contract and retains its landing approval stops, not ambient session state. [81]
@@ -268,7 +267,7 @@ These retired source accounts preserve earlier intent only. Their former citatio
 - The sealed payload, with the predecessor set inside the digest and the digest field excluded. [97]
 - The provenance envelope and its normalized-UTC requirement. [98]
 - The typed operation, refusal-code and result contract — re-cited against the working tree, which the graph, candidate-change, snapshot, merge, authored-judgment and detection halves have each extended since. [100]
-- The storage owner that writes this vocabulary. [102]
+- OpenedKnowledgeStore binds a validated derived-index connection to a repository namespace and reads identities and sealed revisions. It writes no knowledge rows; the former canonical-database writers were retired. [102]
 - The capsule envelope keeps one shape for success and refusal, with the seat facts it established. [103]
 - The requested-versus-granted split that makes the compiler's narrowing auditable. [104]
 - Identity is origin plus name, and a listing cannot reach a body. [105]
@@ -283,7 +282,6 @@ These retired source accounts preserve earlier intent only. Their former citatio
 - KnowledgeLane retains reader-context spellings; the old tuple constant is retired. [122] [130]
 - The resolved context and its two consistency validators. [123] [131]
 - The module-level digest the validator calls and the operation re-derives. [124] [132]
-- The resolution shape that deliberately omits the dataset identity. [128] [135] [136]
 - The two candidate-boundary codes and the three operations that leaf added to the served vocabulary. [138]
 - The served operation union the candidate-boundary leaf joined. [139]
 - The operation and refusal vocabulary this leaf extended. [153] [164]
@@ -314,13 +312,11 @@ These retired source accounts preserve earlier intent only. Their former citatio
 
 - **The six operations this leaf added to the shared vocabulary, and the unchanged code union.** [205]
 - Condition/input-set vocabulary remains as Literal types. [207]
-- **The closed conclusion-name list and the declared-field-set review that makes "no conclusion is representable" checkable rather than asserted.** [208]
 - Retained mechanical observation vocabulary names granularity, scope and limitations. [209]
 - **The declared-input-set discriminator contract: two sides and no probe, both sides and the probe, or one side and no probe.** [210]
 - **The manifest reference and its two-state resolution, which reports an unresolvable reference with what would resolve it rather than as an empty manifest.** [211]
 - **The all-required signal field set, and the `detail`-equals-rendering rule that refuses a verdict in prose as it refuses a verdict field.** [212]
 - **The two operations and the one refusal code this leaf added to the shared vocabulary.** [216]
-- **The recorded quotation-degree ruling, and the absence it turns on: no payload field is the operative obligation.** [221]
 - The two operation members the requirement record group added, and the fact that no refusal code was added with them. [222]
 - The module's own non-definition: it defines no record kind. [227]
 - The three pane names, declared once. [228]
@@ -390,7 +386,8 @@ These retired source accounts preserve earlier intent only. Their former citatio
 - The one spelling of a link target, and the gate's predicate. [65]
 - Curator coherence keeps semantic revision, attempt, immutable record, stable authority, snapshot, and action request identities separate and exact. [75]
 
-- Current single literal PUBLIC_TOOLS contains 43 ordinary public names (including knowledge_write, user_settings_init and explainer_control) and excludes dispatch_agent; native role, retirement and knowledge vocabulary remains. Source census only, no live advertisement, new CODE grade or MEMORY acceptance. [294]
+- Current single literal PUBLIC_TOOLS contains 44 ordinary public names (including knowledge_write, user_settings_init, citation_note_revision and explainer_control) and excludes dispatch_agent; native role, retirement and knowledge vocabulary remains. Source census only, no live advertisement, new CODE grade or MEMORY acceptance. [294]
+- One current tool-response registry: `TOOL_RESPONSE_MODELS` holds the same 44 public names as `PUBLIC_TOOLS`, including `knowledge_write`, `user_settings_init`, `citation_note_revision` and `explainer_control`, and excludes `dispatch_agent`; the former internal-compat/public split (`INTERNAL_COMPAT_TOOL_NAMES`, `PUBLIC_TOOL_RESPONSE_MODELS`) is retired and is retained as history only. This is a source-shape census, not a live advertisement or acceptance. [295]
 - Whole-result validation/enrichment precedes serialization and token finalization. [296]
 - Completion validates the whole result, selects a supplied/default answer and translates the selected answer's lifecycle guidance. [297]
 - L110 shaped bounds and L112 final bounds coexist with interim rows and exceptions. [298]
@@ -418,7 +415,6 @@ These retired source accounts preserve earlier intent only. Their former citatio
 - **Retained historical source account — superseded by the current route account:** Refusal declarations live in a focused module and are re-exported. [301]
 - **Retained historical source account — superseded by the current route account:** Activation record state includes vacant; selection and observed vocabularies differ. [302]
 - **Retained historical source account — superseded by the current route account:** Text schema dispatch is distinct from legacy writer exports. [303]
-- **Retained historical source account — superseded by the current route account:** Shared worklist predicates preserve different covered/uncovered answers. [304]
 - **Retained historical source account — superseded by the current route account:** Measurement coverage and measured disagreement determine assessment binding status. [305]
 - **Retained historical source account — superseded by the current route account:** Tree comparison equality includes repository identity; local side fields do not implement exclusive commit/ref validation. [306]
 - **Retained historical source account — superseded by the current route account:** V2 receipt admits only measured bound/moved states; helper also represents unmeasured. [307]
@@ -436,7 +432,7 @@ These retired source accounts preserve earlier intent only. Their former citatio
 - Membership and decision/facet record forms. [313]
 - Each winning row retains its own closed-file provenance. [314]
 
-- **Retained historical source account — superseded by the current route account:** Historical L111 predecessor source account (not current R113 roster); composed R113 PUBLIC_TOOLS has40 names, and no new module/handler census is asserted here. Current composed literal public roster has41 names after L109 removes resolve_context; direct_execution_grant is included in those41. The earlier42-name caption and its epoch labels below are historical, not current source counts. Earlier Curator caption retained as historical/withdrawn where it contradicts these current populations: The current public source roster has42 names. SHAPED_TOOL_BOUNDS carries final task/landing/role delivery rows, including direct_execution_grant at150 tokens with no raw interim-map entry. Some other shaped tools retain raw L111 interim-map spellings, so final assembled rows, bound lookup and interim_leaf_for are not interchangeable observations. TaskDocResponse is the rich whole model: removed-read refusal alone may lack parsed identity, successful writes still require it, checklist-read models/steps are gone, and optional phrase, by-file, synchronization-error and fact-report fields support surviving operations. WorktreeSummary adds an optional taskDocumentCopies notice, not exhaustive copy equality or mutation permission. Model declarations and illustration labels are not universal observed maxima or acceptance. [315]
+- **Retained historical source account — superseded by the current route account:** Historical L111 predecessor account, not the current roster: the composed PUBLIC_TOOLS now declares 44 names and SHAPED_TOOL_BOUNDS carries the final task/landing/role delivery rows including direct_execution_grant at 150 tokens; the earlier 41- and 42-name captions here are historical, not current source counts. [315]
 
 - Capsule operation selection now carries an explicit all/sections audience contract. Sections-mode validation examines the complete source before projecting common and addressed text. Declared step-detail references carry source, revision, bytes and named step separately from inline blocks; the selected-content seal does not change their original source revisions or tool grants. [319]
 
@@ -458,9 +454,8 @@ These retired source accounts preserve earlier intent only. Their former citatio
 
 - The start answer that declares the seat's continuation. [334]
 
-- The current literal ordinary public roster declares 43 names, including knowledge_write, user_settings_init and explainer_control; this source census is not live advertisement or acceptance. [335]
+- The current literal ordinary public roster declares 44 names, including knowledge_write, user_settings_init, citation_note_revision and explainer_control; this source census is not live advertisement or acceptance. [335]
 
 - Launcher selections include Bootstrap, normalize the earlier system-specialist spelling to Investigator, and carry the caller harness as separate request data. [336]
 
 - The ordinary roster adds explainer_control, whose strict result keeps ownership, state and optional action records; admitted results validate the action and refusals retain an unknown rejected action. [337]
-- The single current response registry maps all43 ordinary public tool names, including knowledge_write, user_settings_init and explainer_control, and excludes dispatch_agent. This is a source-shape census, not a live advertisement or acceptance. [295]

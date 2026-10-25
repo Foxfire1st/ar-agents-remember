@@ -123,14 +123,25 @@ A frontend component test; nothing crosses repositories.
 ### Repo-Internal References
 
 
+
 - Current whole-log assertions cover authored numbering/times/formatted text/rationale, muted counted product-record end disclosure, input preservation and no fetch; seeded cases are not execution. [8]
+
 
 
 - The viewer routes takeover content through the shared pane without a second reader. [9]
 
-- Retained folder/content viewer and shell takeover owners remain. [17] [18]
-- masterDoc/seedMaster publish one typed native entry/summary. [19]
-- The old TaskDocNode seed claim is retired. [20]
+> Retained earlier citation wording: - Retained folder/content viewer and shell takeover owners remain. [17] [18]
+
+- `masterDoc` and `seedMaster` — the cast-free seed, which builds its entry through the shared `taskEntry` builder instead of a double cast. [19]
+
+
+- The cast-free seed builds its master entry through the shared `taskEntry` builder, so the seed is typed against the task mirror with no cast. [20]
+
+
 
 - Shared builders provide generated WorkspaceProjection. [22]
+
+- The shell driven by the takeover-wiring test. [18]
+
+
 - Obsolete Analytics collection/metricsFor lifecycle reference claims are retired.

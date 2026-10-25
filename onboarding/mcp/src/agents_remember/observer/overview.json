@@ -2,7 +2,7 @@
   "path": "mcp/src/agents_remember/observer",
   "references": {
     "2": {
-      "note": "`Event` is the observer event model.",
+      "note": "`Event` is the observer event model.\n\nAnchor: `Event`",
       "targets": [
         {
           "anchor": {
@@ -50,7 +50,7 @@
       ]
     },
     "36": {
-      "note": "Completed history without trusted finals receives bounded once-per-key finishing probes, including at startup; freeze requires observed rows and trusted reads additionally validate exact contract participants, labels and reducer shape.  Anchor: `_needs_live_probe`, `_maybe_freeze`; `LandingStateRefresher._needs_live_probe`; `LandingStateRefresher._maybe_freeze`",
+      "note": "Completed history without trusted finals receives bounded once-per-key finishing probes, including at startup; freeze requires observed rows and trusted reads additionally validate exact contract participants, labels and reducer shape. Anchor: `_needs_live_probe`, `_maybe_freeze`; `LandingStateRefresher._needs_live_probe`; `LandingStateRefresher._maybe_freeze`",
       "targets": [
         {
           "anchor": {
@@ -66,7 +66,7 @@
       ]
     },
     "38": {
-      "note": "The native workspace fold consumes supplied structural, task and host facts and publishes one TaskEntry collection with counts.",
+      "note": "The native workspace fold consumes supplied structural, task and host facts and publishes one TaskEntry collection with counts.\n\nAnchor: `project_workspace`",
       "targets": [
         {
           "anchor": {
@@ -83,7 +83,7 @@
       ]
     },
     "39": {
-      "note": "Native state separates canonical stage, optional host activity and contributing eventAt.",
+      "note": "Native state separates canonical stage, optional host activity and contributing eventAt.\n\nAnchor: `TaskState`",
       "targets": [
         {
           "anchor": {
@@ -100,7 +100,7 @@
       ]
     },
     "40": {
-      "note": "Terminal/planned stage wins; an unknown host cannot establish paused, and timestamp selection uses the contributing agents.",
+      "note": "Terminal/planned stage wins; an unknown host cannot establish paused, and timestamp selection uses the contributing agents.\n\nAnchor: `task_state`",
       "targets": [
         {
           "anchor": {
@@ -117,7 +117,7 @@
       ]
     },
     "41": {
-      "note": "The one task join creates native identity/membership and binds contracts by exact task identity.",
+      "note": "The one task join creates native identity/membership and binds contracts by exact task identity.\n\nAnchor: `build_task_entries`",
       "targets": [
         {
           "anchor": {
@@ -134,7 +134,7 @@
       ]
     },
     "42": {
-      "note": "Published host states admit only the declared vocabulary and timezone-aware event timestamps.",
+      "note": "Published host states admit only the declared vocabulary and timezone-aware event timestamps.\n\nAnchor: `PublishedAgentActivity`",
       "targets": [
         {
           "anchor": {
@@ -431,12 +431,12 @@
       ]
     },
     "51": {
-      "note": "Master validation in placement applies only to documented subTasks; other listed kinds retain list placement under existing identity/cycle guards, not a kind-rejection or own-master-validation rule.\n\nAnchor: Exact producer admission boundary",
+      "note": "Master validation in placement applies only to documented subTasks; other listed kinds retain list placement under existing identity/cycle guards, not a kind-rejection or own-master-validation rule.",
       "targets": [
         {
           "anchor": {
-            "blob": "d37db285155926a5393191721b105ab17f124661",
-            "content": "sha256:ea350afcbd90c38b00424aee31a6a7a46519c7bdff16982cada2efbe3293bd44",
+            "blob": "26edfc879fceb5c3c0c071a8bf8d54180caebe20",
+            "content": "sha256:e04b243dd9746767c6c473a927163ae99b97875eaf72233b43fe6dc5b43f456c",
             "locator": {
               "end": 219,
               "kind": "line_range",
@@ -490,11 +490,10 @@
         },
         {
           "anchor": {
-            "blob": "a57241d40018faab0653508e3bee2b113308af12",
-            "content": "sha256:971aac8fab740fef0829ff52b5068a0f8a13ba5611810f706362a35146ea8022",
+            "blob": "dc7a6d1a7b42e9f22d3b82ddcee7e044cd9d7cb5",
+            "content": "sha256:bde726e93efe7ef8244710df716b85856e4098d733522c36dcd6c57f033a528e",
             "locator": {
-              "kind": "symbol",
-              "name": "_metrics"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/observer/reducer_impl/_metrics.py"
           },
@@ -502,11 +501,10 @@
         },
         {
           "anchor": {
-            "blob": "a57241d40018faab0653508e3bee2b113308af12",
-            "content": "sha256:06e642ef9e699c3302d7cfcd7227332256f2ad862f684c07f7534497b59d364a",
+            "blob": "dc7a6d1a7b42e9f22d3b82ddcee7e044cd9d7cb5",
+            "content": "sha256:bde726e93efe7ef8244710df716b85856e4098d733522c36dcd6c57f033a528e",
             "locator": {
-              "kind": "symbol",
-              "name": "build_analytics"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/observer/reducer_impl/_metrics.py"
           },

@@ -21,9 +21,13 @@ The application migration reachability case and legacy migration routine were re
 
 ## Current evidence
 
+
 - Negative registration/roster/model assertions for citation_migrate. [9]
 
+
+
 - Retained citation_fix-only configured-contract-authority refusal assertions. [10]
+
 
 - Retained citation_fix-only same-exception propagation assertion. [11]
 
@@ -68,13 +72,21 @@ No configured `Domain Documentation` source applies; the subject is the reposito
 
 
 
+
 - The registration source is tested to leave citation_migrate absent. [4]
+
+
 
 - The public roster is tested to leave citation_migrate absent. [5]
 
+
+
 - The response-model registry is tested to leave citation_migrate absent. [6]
 
+
+
 - The source assertion checks the surviving citation_fix schema has neither expected_snapshot nor exclude. [7]
+
 
 
 - The two citation_fix-only cases pin the exact configured-contract refusal and unchanged propagation of unrelated authority errors. [8]

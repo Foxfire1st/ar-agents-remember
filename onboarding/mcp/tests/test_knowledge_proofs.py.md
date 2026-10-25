@@ -29,7 +29,7 @@ covered here: by architect ruling they belong to L08 and L03.
   facet; an absent `-k` test and a bare file are `unresolvable`, and the rendered report says so. A proof
   waits for the curator's facet: no sidecar is written until it is authored, the report offers the
   statement as a draft, and a blank facet is refused and writes nothing.
-- **Rule 4.** Converted invariant and family views name PRF-T3ST0K; the invariant view asserts its invariant ID, memory sidecar location, code file and symbol locator, and explicitly excludes facet and passed/status/result/satisfied keys. An unproven invariant and a family without proofs show an empty list. The current other-views case asserts no top-level proofs on source_context and an unknown_view refusal for curation_queue; it has no database parity fixture. [8] [9] [10]
+> - **Rule 4.** Converted invariant and family views name PRF-T3ST0K; the invariant view asserts its invariant ID, memory sidecar location, code file and symbol locator, and explicitly excludes facet and passed/status/result/satisfied keys. An unproven invariant and a family without proofs show an empty list. The current other-views case asserts no top-level proofs on source_context and an unknown_view refusal for curation_queue; it has no database parity fixture. [8] [9] [10]
 - **Rules 5 and 6.** The index lists live invariants without proof and excludes a retired one. The
   checklist renders the section as information: the summaries differ in informational `invariantsWithoutProofCount` after normalizing artifact paths;
   `curatorActionableCount` stays 0, and an unconverted checklist has no section. Migrated evidence is listed with its
@@ -69,17 +69,35 @@ The cases, by rule.
 
 - The module's statement of the rules it covers. [1]
 - The writer runs as this leaf's owner. [2]
+
 - The parser's forms, expressions and helper modules. [3]
+
+
 - No bare row for a file named with a test elsewhere. [4]
+
+
 - Both forms become proofs once faceted; unresolvable evidence is reported. [5]
+
 - A proof waits for the curator's facet. [6]
+
 - The view cases' tree and read helper. [7]
+
+
 - Invariant and family views carry their proofs. [8]
-- Source_context has no top-level proofs, and curation_queue is refused unknown_view; no database-read case remains here. [9]
+
+
+- Source_context has no top-level proofs, and curation_queue is refused with unknown_view; no database-read case remains here. [9]
+
+
 - A family with no proof shows `[]`. [10]
+
 - Live invariants without proof; a retired one is excluded. [11]
+
 - Migrated evidence is listed, then a curator pass writes the proof. [13]
+
+
 - The cached index is reused and an unreadable one reported. [14]
+
 
 ### Cross-Repo References
 

@@ -178,7 +178,14 @@ durable memory. Every range was derived against the current 1140-line source.
 - A prose figure is compared with its source at the revision the prose describes. [14]
 - Every comparison states its two populations, and the CLI writes nothing. [15]
 - The module whose four comparisons these cases pin. [16]
-- The lane this module is registered in, so the fail-closed manifest admits it. [17]
+
+
+
+
+> Retained earlier citation wording: - The lane this module is registered in, so the fail-closed manifest admits it. Source caption: "mcp/tests/test_record_integrity.py" [17]
+
+
+
 
 ### Cross-Repo References
 
@@ -186,3 +193,5 @@ No separate cross-repository protocol is established by this file. The configure
 allowance is empty and no external source is relied upon here.
 
 No cross-repository evidence is required for these file-local claims.
+
+- The lane this module is registered in, so the fail-closed manifest admits it. Source caption: "mcp/tests/test_record_integrity.py" [17]
