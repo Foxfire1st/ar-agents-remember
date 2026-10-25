@@ -195,15 +195,14 @@
       ]
     },
     "20": {
-      "note": "Defines the function `declares_field` (lines 273-298) — Whether the member declares a read-only FIELD rather than an operation..",
+      "note": "Defines the function `declares_field` (lines 273-298) — Whether the member declares a read-only FIELD rather than an operation..\n\nAnchor: `declares_field`",
       "targets": [
         {
           "anchor": {
-            "blob": "fcc6f7a17ec87f383cef8ccfc39c9cbf39498048",
-            "content": "sha256:0191657ff61e07b6caf07c2e8fad49d633362d3c3013c953e49f00ce351efa59",
+            "blob": "726a5360a838e9e7ac50a1d35da79be307171369",
+            "content": "sha256:d2380935ec9724e7d01465872f54a35c13ab5c46e2b2077850d9057e63928938",
             "locator": {
-              "kind": "symbol",
-              "name": "declares_field"
+              "kind": "file"
             }
           },
           "kind": "code"

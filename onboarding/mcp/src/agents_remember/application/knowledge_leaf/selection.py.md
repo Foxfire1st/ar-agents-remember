@@ -84,7 +84,9 @@ No configured live documentation source was available for this pass.
 - One renderer per row kind, the chain row's included. [13]
 - The chain row's renderer (MIK-R05): the compact entry of the family the row names. [14]
 - The derived title: the first sentence, at most 80 characters (ruling Q1). [15]
+
 - The member, entry and header rows with their fields. [16]
+
 - The counts of rule 8, with the chain families. [17]
 - The family names of rule 7. [18]
 

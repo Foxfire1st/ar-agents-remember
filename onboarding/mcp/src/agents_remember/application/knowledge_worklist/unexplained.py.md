@@ -129,8 +129,12 @@ No configured live documentation source was available for this pass.
 
 ### Repo-Internal References
 
+
 - The module docstring: registration, what is raised, coverage and satisfaction. [1]
+
+
 - The one satisfying-row text over both kinds and the coverage split. [2]
+
 - A hunk item's row is found by its item ID. [3]
 - Both kinds registered on import with their facts and owner. [4]
 - An unreadable census makes coverage undecidable. [5]
@@ -144,19 +148,29 @@ No configured live documentation source was available for this pass.
 
 - A side's identity; an out-of-range read is a named problem. [10]
 - What an item admits. [11]
+
 - Unlinked hunks and non-text changes collected; identical lines share a subject. [12]
+
 - A symlink's or submodule's object from its tree entry. [13]
 - The file item bound to its C-side object. [14]
+
 - The answering set from covered items only; stray `no_invariant` rows are unnecessary. [16]
+
 - The onboarding subjects an uncovered item needs. [18]
 - Open unexplained items. [19]
+
 - Step 7 of the run: the items join the one sorted list. [20]
-- Per-change linkage belongs to linkage._Linkage._change; linkage._linked symmetrically requires changed lines on the side supplying coverage: delete-only B, insertion-only C. [21]
+
+
+- Per-change linkage belongs to linkage._Linkage._change; linkage._classify_hunk symmetrically requires changed lines on the side supplying coverage: delete-only B, insertion-only C. [21]
+
 
 - leaf_completion settles uncovered items after worklist_onboarding and recomputes their digest and unnecessary-row projection. [22]
 - Covered hunk: no_invariant, attach or author; never onboarding. [23]
 - Delete-only hunk: only no_invariant. [24]
+
 - An uncovered file: its onboarding trace; its no_invariant row is unnecessary. [25]
+
 
 ### Cross-Repo References
 
@@ -183,12 +197,16 @@ No cross-repo boundary is crossed by this file.
 
 ## Current counted-change evidence
 
+
 - The initial uncovered-item fact and its answer use one actual counted card change; settlement may still replace both from the trace item. A counted edit alone does not answer the item. [27]
+
 
 
 ## Current generated-copy and grouped-source contract
 
 The generated-copy declaration is an equality test against the candidate, not a waiver based on a folder name. Only proven matching projections disappear before collection. Equal uncovered changes share their chosen representative and complete base/candidate source maps; a source-current onboarding row must bind that map. Card edits alone remain insufficient, and covered hunks retain their no-invariant/attach/author domain. No group or copy card is edited by this trace judgment.
 
+
 - Exact generated-copy filtering, representative collection and complete source/base maps precede item settlement. [28]
+
 - Current onboarding row selection consumes the complete source blob map, never a counted edit alone. [29]

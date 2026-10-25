@@ -123,15 +123,14 @@
       ]
     },
     "4": {
-      "note": "One listing level: real directories only; an unreadable folder contributes nothing.",
+      "note": "One listing level: real directories only; an unreadable folder contributes nothing.\n\nAnchor: `_walked_directories`",
       "targets": [
         {
           "anchor": {
-            "blob": "37cd61129911b6adcb58b188b89c24f3848bea28",
-            "content": "sha256:b330b52ec65ce86590b3609895dbaf3eb5e8cb65c923cf59d2e3bac94f65c0b1",
+            "blob": "0729e2487febb7fcc3087bbe5a033d9a994ed5b9",
+            "content": "sha256:51493ab31c58ab71b2e04913a4d3293939a25d137a3cbda818c91aaf2996a797",
             "locator": {
-              "kind": "symbol",
-              "name": "_walked_directories"
+              "kind": "file"
             }
           },
           "kind": "code"

@@ -1,14 +1,15 @@
 {
   "path": "skills/w-02-light-task-workflow/SKILL.md",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
-      "note": "The source defines the resolved task wrapper and task.md, naming, scaffold, live checklist, distinct code examples and minute-precision timestamps.\n\nAnchor: `## Task Artifact`",
+      "note": "The source defines the resolved task wrapper and task.md, naming, scaffold, live checklist, distinct code examples and minute-precision timestamps.",
       "targets": [
         {
           "anchor": {
-            "blob": "f8f69e05dfb985510893fb3e92a78747bdea7609",
-            "content": "sha256:53c80ea8b2f588f6ff2e058914f8d1b7e27f02a7bc5a8086a32ef0d40a5a27b5",
+            "blob": "ce6937648798654f3fbdd402aa69032a62de7c05",
+            "content": "sha256:5bcd9a26b733e78be9ebccb191bcdeb942e74a493413d9411cfbdd919a000b80",
             "locator": {
               "end": 37,
               "kind": "line_range",
@@ -20,12 +21,24 @@
       ]
     },
     "2": {
-      "note": "Agent responsibilities separate implementation approval and commit approval, include onboarding/check cycles, and leave completion to exact step accounting and lifecycle finalization after landing.\n\nAnchor: `## Agent Responsibilities`",
+      "note": "Agent responsibilities separate implementation approval and commit approval, include onboarding/check cycles, and leave completion to exact step accounting and lifecycle finalization after landing.",
       "targets": [
         {
           "anchor": {
-            "blob": "f8f69e05dfb985510893fb3e92a78747bdea7609",
-            "content": "sha256:0b34290c39f508f78534f418da70ea99aa56b7ff31c8bd54fa55c0006faddd27",
+            "blob": "ce6937648798654f3fbdd402aa69032a62de7c05",
+            "content": "sha256:780adb8b9fb5238d1cc2437b354146dc0929fbdc846be3867e8ca3ff39aa1b71",
+            "locator": {
+              "end": 82,
+              "kind": "line_range",
+              "start": 68
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ce6937648798654f3fbdd402aa69032a62de7c05",
+            "content": "sha256:da052368bda13bcf9037bfc5c653af0ce919abd3eff166ceab16e33363240abc",
             "locator": {
               "end": 75,
               "kind": "line_range",
@@ -37,12 +50,12 @@
       ]
     },
     "3": {
-      "note": "Invariants preserve wrapper/checklist/design intent and the committed external-memory baseline with computed ledger excluded; new light-document authoring and legacy transition wording remain bounded by the actual task construction guard.\n\nAnchor: `## Invariants`",
+      "note": "Invariants preserve wrapper/checklist/design intent and the committed external-memory baseline with computed ledger excluded; new light-document authoring and legacy transition wording remain bounded by the actual task construction guard.",
       "targets": [
         {
           "anchor": {
-            "blob": "f8f69e05dfb985510893fb3e92a78747bdea7609",
-            "content": "sha256:c577e7493a61d301f3777c94e4d212c9b78646815bb1e8f2d9f6b6b7e0936160",
+            "blob": "ce6937648798654f3fbdd402aa69032a62de7c05",
+            "content": "sha256:247a2fd3702ad96a2f979b851a0d810d0896d69d84afdf20c2332dbe56c3f176",
             "locator": {
               "end": 111,
               "kind": "line_range",
@@ -54,12 +67,12 @@
       ]
     },
     "4": {
-      "note": "JSON-primary describes deterministic renders, explicit noncascading skip, deferred code examples, extensible fields and dry-run loss checking; light/master shipment claims are retained transition text, not current admission.\n\nAnchor: `## Task Document Format (JSON-Primary)`",
+      "note": "JSON-primary describes deterministic renders, explicit noncascading skip, deferred code examples, extensible fields and dry-run loss checking; light/master shipment claims are retained transition text, not current admission.",
       "targets": [
         {
           "anchor": {
-            "blob": "f8f69e05dfb985510893fb3e92a78747bdea7609",
-            "content": "sha256:79725005088d77b5804e34f989e4be7285a218cc190daf78ae82a2c69ab23f85",
+            "blob": "ce6937648798654f3fbdd402aa69032a62de7c05",
+            "content": "sha256:21e0b7f9913ba05aad73b0e3122477d21e5bed5c6344046963dd0d8a8c928aaf",
             "locator": {
               "end": 45,
               "kind": "line_range",
@@ -88,12 +101,12 @@
       ]
     },
     "6": {
-      "note": "Canonical series guidance assigns one master integration branch and one leaf enclosure/worktree per slice, with per-leaf closeout/integration/finalization and final master release.\n\nAnchor: `## Master-Task Composition (task series)`",
+      "note": "Canonical series guidance assigns one master integration branch and one leaf enclosure/worktree per slice, with per-leaf closeout/integration/finalization and final master release.",
       "targets": [
         {
           "anchor": {
-            "blob": "f8f69e05dfb985510893fb3e92a78747bdea7609",
-            "content": "sha256:658164e9b7febdfc3825376e2f70e468f65aba12409a108d807fdb0a3e12a0a1",
+            "blob": "ce6937648798654f3fbdd402aa69032a62de7c05",
+            "content": "sha256:97d9eadc5c7ef02c449fefa0942c188880b997ee0af2b790dc36cbbc622340d6",
             "locator": {
               "end": 59,
               "kind": "line_range",
@@ -105,12 +118,12 @@
       ]
     },
     "7": {
-      "note": "The companion series convention keeps flat stable file IDs, master-owned ordering, per-leaf publication and test verification, and one final master release.\n\nAnchor: `## The series convention`",
+      "note": "The companion series convention keeps flat stable file IDs, master-owned ordering, per-leaf publication and test verification, and one final master release.",
       "targets": [
         {
           "anchor": {
-            "blob": "93a4dd48bb8793d97d3c48d293ff9f4feb35682d",
-            "content": "sha256:25bc53f0b874eb30a761cfd48ecdda79b67d49f1ef36827126df58bb25e19dc4",
+            "blob": "6ee5e5492ec25fc73bbfc78f1deb6b7015a86b4f",
+            "content": "sha256:331be33c49a6d096895b0dce6b248663ec06426dc6db4f8131770c4db9abc28f",
             "locator": {
               "end": 33,
               "kind": "line_range",
@@ -123,12 +136,12 @@
       ]
     },
     "8": {
-      "note": "The workflow’s master-series section separates durable requirement/attempt records from disposable summary and assigns leaf enclosure integration and finalization.\n\nAnchor: `series-contract.md`",
+      "note": "The workflow’s master-series section separates durable requirement/attempt records from disposable summary and assigns leaf enclosure integration and finalization.",
       "targets": [
         {
           "anchor": {
-            "blob": "3418e1537501d916cc328862570c72992ae7a62d",
-            "content": "sha256:65105c8faff65a82695ffe63bf7eed631c1f13d3c3833a24412163bb57b8ab63",
+            "blob": "dd7163001634a6ba0ec87c6ea5e932bde08784c5",
+            "content": "sha256:ecab4dd7e23fb2e3407f3884158d0151416031bca42653df0a81008ced470b35",
             "locator": {
               "end": 367,
               "kind": "line_range",

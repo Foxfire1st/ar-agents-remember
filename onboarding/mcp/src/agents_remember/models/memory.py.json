@@ -1,6 +1,25 @@
 {
   "path": "mcp/src/agents_remember/models/memory.py",
-  "realizes": [],
+  "proves": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "bf6833bf5d456b21488675f40c54e8fe67c5c011",
+        "content": "sha256:021780c76752acd66ed811b49eed917c54094fc3454a1b67bc914b19d3765a7c",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-7TARQ0",
+      "invariant": "INV-Q7KYQH",
+      "origin": {
+        "handoffEntry": "MIK-R198@v2 §8 reference-note-revision",
+        "leaf": "260928-MIK-L191"
+      },
+      "rationale": "Carries the request and answer models whose declared fields are the tool's contract.",
+      "role": "unclassified"
+    }
+  ],
   "references": {
     "1": {
       "note": "Memory-quality requests are executed by the focused controller.",
@@ -83,15 +102,14 @@
       ]
     },
     "2": {
-      "note": "Other memory MCP application entry points retain drift, citation, route-index, init, baseline, and carryover ownership.",
+      "note": "Other memory MCP application entry points retain drift, citation, route-index, init, baseline, and carryover ownership.\n\nAnchor: `drift_check_tool`",
       "targets": [
         {
           "anchor": {
-            "blob": "c66952b4cab2bf41fa7e6636635d90d35ec32ead",
-            "content": "sha256:9f12995207aee0994148f303ede553344bb2fd8c44561370b44bdef062c0e956",
+            "blob": "d9169328f4aefb6445b7866c552597f00ff49f5a",
+            "content": "sha256:6245c0fad1ad37363ec36508b7e32f67104a8b9143178bc7e8c18a0856de40bb",
             "locator": {
-              "kind": "symbol",
-              "name": "drift_check_tool"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/memory_tools.py"
           },
@@ -104,7 +122,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "167c28bf3a5d1b7ea0ee02e83892bf55ee9a32aa",
+            "blob": "bf6833bf5d456b21488675f40c54e8fe67c5c011",
             "content": "sha256:775235fb1f42f9630eb54a53efe600111eeefbd90e72692d1202abd3725bb2ac",
             "locator": {
               "kind": "symbol",
@@ -115,7 +133,7 @@
         },
         {
           "anchor": {
-            "blob": "167c28bf3a5d1b7ea0ee02e83892bf55ee9a32aa",
+            "blob": "bf6833bf5d456b21488675f40c54e8fe67c5c011",
             "content": "sha256:c530441aca764d26912f99f7d4144edce303ef641e01dc21ceab0c40f8fcea42",
             "locator": {
               "kind": "symbol",
@@ -126,7 +144,7 @@
         },
         {
           "anchor": {
-            "blob": "167c28bf3a5d1b7ea0ee02e83892bf55ee9a32aa",
+            "blob": "bf6833bf5d456b21488675f40c54e8fe67c5c011",
             "content": "sha256:38dd3e642d96d2d197c1c9d8d5ddb9b0404157d1a5ebbf65fa4ce3b6d7bc9d55",
             "locator": {
               "kind": "symbol",
@@ -137,7 +155,7 @@
         },
         {
           "anchor": {
-            "blob": "167c28bf3a5d1b7ea0ee02e83892bf55ee9a32aa",
+            "blob": "bf6833bf5d456b21488675f40c54e8fe67c5c011",
             "content": "sha256:20510de9fed7583f74b4605066ac827c276aba64e69757e2cf2655aa6586375d",
             "locator": {
               "end": 158,
@@ -154,7 +172,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "167c28bf3a5d1b7ea0ee02e83892bf55ee9a32aa",
+            "blob": "bf6833bf5d456b21488675f40c54e8fe67c5c011",
             "content": "sha256:5defc592c4ead496c0d96b2b8a314b6a884ae178e845fb42f98657c6140395ee",
             "locator": {
               "kind": "symbol",
@@ -204,7 +222,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "167c28bf3a5d1b7ea0ee02e83892bf55ee9a32aa",
+            "blob": "bf6833bf5d456b21488675f40c54e8fe67c5c011",
             "content": "sha256:5defc592c4ead496c0d96b2b8a314b6a884ae178e845fb42f98657c6140395ee",
             "locator": {
               "kind": "symbol",
@@ -216,15 +234,14 @@
       ]
     },
     "8": {
-      "note": "Memory-quality codes reach the shared guard without a model length rejection.",
+      "note": "Memory-quality codes reach the shared guard without a model length rejection.\n\nAnchor: `MemoryQualityCheckResponse`",
       "targets": [
         {
           "anchor": {
-            "blob": "93cde78e1cfbadf26596b1da769dfad9109abdd6",
-            "content": "sha256:acf4d645c68b36bba237d8de9d3be44486cab17fefd3c6d73d05babf42af8430",
+            "blob": "bf6833bf5d456b21488675f40c54e8fe67c5c011",
+            "content": "sha256:021780c76752acd66ed811b49eed917c54094fc3454a1b67bc914b19d3765a7c",
             "locator": {
-              "kind": "symbol",
-              "name": "MemoryQualityCheckResponse"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -236,7 +253,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "167c28bf3a5d1b7ea0ee02e83892bf55ee9a32aa",
+            "blob": "bf6833bf5d456b21488675f40c54e8fe67c5c011",
             "content": "sha256:51dc539bb93ec14158b4e050897b5328286ad7978c7888c28e7e23e758ddcbce",
             "locator": {
               "end": 121,

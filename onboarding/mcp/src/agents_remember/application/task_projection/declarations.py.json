@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/application/task_projection/declarations.py",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
@@ -126,12 +127,23 @@
       ]
     },
     "5": {
-      "note": "The task-intent owner that confines a declared packet path, reads it and verifies its header.",
+      "note": "The task-intent owner that confines a declared packet path, reads it and verifies its header.\n\nAnchor: `task_intent_projection` `task_intent_master_projection` `TaskIntentRequirementPacket` `TaskIntentRequirementText`",
       "targets": [
         {
           "anchor": {
-            "blob": "aa8a422af6c17568acd7a89dbd33e0cce7f13bbe",
-            "content": "sha256:6e58a02fbd0380d57e8620d30ad3a21bf22358c0dc26135bbbaae90eef02f8f2",
+            "blob": "677ef0d057fea2af70dbd317e35f4f66b1539221",
+            "content": "sha256:9dd05c561299097e2391331336cbf06a3036cc935f4a44f59b73bcb3897ed15f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/tasks/task_intent.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "677ef0d057fea2af70dbd317e35f4f66b1539221",
+            "content": "sha256:2a70823b6fcbaac6b53faf06e6bc8fabff91aaa0530b4e089bb8e3e1f9f98ef0",
             "locator": {
               "kind": "symbol",
               "name": "task_intent_projection"
@@ -142,8 +154,8 @@
         },
         {
           "anchor": {
-            "blob": "aa8a422af6c17568acd7a89dbd33e0cce7f13bbe",
-            "content": "sha256:4a80d0b20bfe67867f452f5f5e4dea705df1607c1f4e1f14072f769e46275f32",
+            "blob": "677ef0d057fea2af70dbd317e35f4f66b1539221",
+            "content": "sha256:6191af59d49f6b911565b097ac156b6be95343e2ba33b495b938234e24bc5403",
             "locator": {
               "kind": "symbol",
               "name": "task_intent_master_projection"

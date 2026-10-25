@@ -16,12 +16,19 @@ The request also supplies the `expect` roots and `config`/`cwd` the helper passe
 
 ## Evidence
 
+
 - The scoped current source carries the module/document behavior described above. [1]
+
 - The request's sandbox is required, absolute, and its port must be a sandbox port other than the live ports. [2]
 - The tool server's environment is the sandbox's, and a surviving selector refuses before the server starts. [3]
+
 - The build's own settings resolution is read under the server's environment, so the comparison is not made with the caller's environment. [4]
+
+
 - The sandbox's layout pair is the admitted host; a recorded settings host that differs, or a resolved host that differs, refuses before any call. [5]
+
 - A request refused by the admission answers with no host and no call; a refusal from the `server_info` checks is returned after that read, with the admitted host in the report. [6]
 - The provider check reads the field `server_info` sends for configured providers. [7]
+
 
 - The unconfigured state is admitted and named by condition, not by build freshness, and a foreign resolved host refuses. [8]

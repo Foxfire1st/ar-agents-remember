@@ -85,11 +85,19 @@ No relevant documentation found after checking live sources.
 ### Repo-Internal References
 
 - The literal/tuple agreement guard, the launcher-is-not-a-role guard, and the ten-role/nine-operation census the leaf extended. [1]
+
 - The independent role census this module's runtime tuple is compared against. [2]
+
+
 - The parser that is handed this vocabulary and refuses a manifest that disagrees. [3]
+
+
 - The narrowing helpers that turn an untrusted string into a role or refuse it. [4]
+
 - The canonical authored metadata that must agree with these tuples. [5]
+
 - The settings registry kept in step with this vocabulary, so a published role is configurable. [6]
+
 
 - The retained capsule role registry ends with bootstrap; the removed task-binding set supplies no current admission. [7]
 

@@ -3,15 +3,14 @@
   "realizes": [],
   "references": {
     "10": {
-      "note": "`test_a_member_identities_moved_realization_is_displayed_at_its_own_head` supplies the current fixture or assertion described above.",
+      "note": "`test_a_member_identities_moved_realization_is_a_retraction_with_no_read_continuation` supplies the current fixture or assertion described above.\n\nAnchor: `test_a_member_identities_moved_realization_is_displayed_at_its_own_head`",
       "targets": [
         {
           "anchor": {
-            "blob": "c78b77e8fcfad5e154ea2c3872161c04594b8d11",
-            "content": "sha256:e4dbb54d8a15ee68d463c40cd0bce76d95c017f50d04a4ec650abb459d82514c",
+            "blob": "87ba047e94315cf62e8f34142ded4c8da7211351",
+            "content": "sha256:3bdaa13b032985077defad8bee5a7c7c95cf0b869fd1402f6c14d63de6739ae1",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_member_identities_moved_realization_is_displayed_at_its_own_head"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -35,15 +34,14 @@
       ]
     },
     "12": {
-      "note": "`test_a_pairing_is_qualified_and_an_address_resemblance_never_pairs` supplies the current fixture or assertion described above.",
+      "note": "`test_a_row_at_a_matching_address_with_no_recorded_relation_is_only_an_addition` supplies the current fixture or assertion described above.\n\nAnchor: `test_a_pairing_is_qualified_and_an_address_resemblance_never_pairs`",
       "targets": [
         {
           "anchor": {
-            "blob": "c78b77e8fcfad5e154ea2c3872161c04594b8d11",
-            "content": "sha256:a233254a6f74fa66fce0f8af2fba90246d5e64ec4e4a5c39159a127bb39c6393",
+            "blob": "87ba047e94315cf62e8f34142ded4c8da7211351",
+            "content": "sha256:3bdaa13b032985077defad8bee5a7c7c95cf0b869fd1402f6c14d63de6739ae1",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_pairing_is_qualified_and_an_address_resemblance_never_pairs"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -51,15 +49,14 @@
       ]
     },
     "13": {
-      "note": "`test_the_rename_inference_separates_a_measured_absence_from_a_measurement_never_made` supplies the current fixture or assertion described above.",
+      "note": "`test_a_family_revision_that_keeps_its_members_displays_each_membership_once` supplies the current fixture or assertion described above.\n\nAnchor: `test_the_rename_inference_separates_a_measured_absence_from_a_measurement_never_made`",
       "targets": [
         {
           "anchor": {
-            "blob": "c78b77e8fcfad5e154ea2c3872161c04594b8d11",
-            "content": "sha256:0010043d06f95f115b79c57b11a2f871aee3ba05636fcbc1095ac379bb20019c",
+            "blob": "87ba047e94315cf62e8f34142ded4c8da7211351",
+            "content": "sha256:3bdaa13b032985077defad8bee5a7c7c95cf0b869fd1402f6c14d63de6739ae1",
             "locator": {
-              "kind": "symbol",
-              "name": "test_the_rename_inference_separates_a_measured_absence_from_a_measurement_never_made"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -67,12 +64,12 @@
       ]
     },
     "14": {
-      "note": "Fixture construction imports test-only row constructors; it does not call the retired canonical writer.",
+      "note": "`test_every_two_sided_movement_names_the_recorded_row_it_was_paired_on` supplies the current fixture or assertion described above.",
       "targets": [
         {
           "anchor": {
-            "blob": "c78b77e8fcfad5e154ea2c3872161c04594b8d11",
-            "content": "sha256:3903e4d09d7ed1ce287942ad68eb1ad2bad1eceebc1de7671f94dac80aca158a",
+            "blob": "87ba047e94315cf62e8f34142ded4c8da7211351",
+            "content": "sha256:c04d192a617592482636cca0f53c16bde2de0f31d3cdd6c14a3bfb48fce0a9ae",
             "locator": {
               "end": 46,
               "kind": "line_range",
@@ -84,15 +81,14 @@
       ]
     },
     "15": {
-      "note": "RowStore inserts index-shaped fixture rows without the retired production admission plane.",
+      "note": "`test_a_row_at_a_matching_address_with_no_recorded_relation_is_only_an_addition` supplies the current fixture or assertion described above.\n\nAnchor: `RowStore`",
       "targets": [
         {
           "anchor": {
-            "blob": "25497ca2fe27297d4ac750d338e86962058a76f1",
-            "content": "sha256:041b3cc8ba5b2d4ef617d3c837e60d9fdc1aca5a8c4787a0854ce08e91e91eee",
+            "blob": "62e692c8ea18903861ec2efddd03c884ed14f818",
+            "content": "sha256:43a32e8370a3aa07c1e8247bd8b4d445a42caab3b630d2ed5783e663bc3c824e",
             "locator": {
-              "kind": "symbol",
-              "name": "RowStore"
+              "kind": "file"
             },
             "path": "mcp/tests/knowledge_rows_test_support.py"
           },
@@ -101,15 +97,14 @@
       ]
     },
     "16": {
-      "note": "The module's own statement of the five states the ruling turns on, and the candidate-only paths the cases author.",
+      "note": "The fixture that withdraws a member identity's realization with no continuation the union can read, and the candidate-only paths the cases author.\n\nAnchor: `build_member_move_fixture`",
       "targets": [
         {
           "anchor": {
-            "blob": "c78b77e8fcfad5e154ea2c3872161c04594b8d11",
-            "content": "sha256:003510327cb24af1c8665b37b829bf730b8eb2702248ec4a2932af48cf713bc2",
+            "blob": "87ba047e94315cf62e8f34142ded4c8da7211351",
+            "content": "sha256:3bdaa13b032985077defad8bee5a7c7c95cf0b869fd1402f6c14d63de6739ae1",
             "locator": {
-              "kind": "symbol",
-              "name": "build_member_move_fixture"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -117,15 +112,14 @@
       ]
     },
     "17": {
-      "note": "**The ruling measured: a member identity's movement displayed at its own established head, with the new address displayed and the old one still listed.**",
+      "note": "**The ruling measured: a member identity's withdrawn realization is a retraction stating what it searched, and the moved-to address outside the reviewed union is not displayed as a movement.**\n\nAnchor: `test_a_member_identities_moved_realization_is_displayed_at_its_own_head`",
       "targets": [
         {
           "anchor": {
-            "blob": "c78b77e8fcfad5e154ea2c3872161c04594b8d11",
-            "content": "sha256:e4dbb54d8a15ee68d463c40cd0bce76d95c017f50d04a4ec650abb459d82514c",
+            "blob": "87ba047e94315cf62e8f34142ded4c8da7211351",
+            "content": "sha256:3bdaa13b032985077defad8bee5a7c7c95cf0b869fd1402f6c14d63de6739ae1",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_member_identities_moved_realization_is_displayed_at_its_own_head"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -133,15 +127,14 @@
       ]
     },
     "18": {
-      "note": "**The multi-ended line unresolved with its reason and never a denial.**",
+      "note": "**The two-unpaired-revisions line stated as a retraction with its reason, and never a denial.**\n\nAnchor: `test_a_member_line_with_no_single_head_is_unresolved_and_never_denied`",
       "targets": [
         {
           "anchor": {
-            "blob": "c78b77e8fcfad5e154ea2c3872161c04594b8d11",
-            "content": "sha256:63587cf3ad5d27d687240c0b146377141a407c975c485896eca1fea42f300397",
+            "blob": "87ba047e94315cf62e8f34142ded4c8da7211351",
+            "content": "sha256:3bdaa13b032985077defad8bee5a7c7c95cf0b869fd1402f6c14d63de6739ae1",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_member_line_with_no_single_head_is_unresolved_and_never_denied"
+              "kind": "file"
             }
           },
           "kind": "test"

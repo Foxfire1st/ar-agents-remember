@@ -1,14 +1,15 @@
 {
   "path": "mcp/src/agents_remember/tasks/serving_preflight.py",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
-      "note": "The operator contract for served-build preflight (section 4): run authoring through the deployed serving server; refresh the rc7 venv.\n\nAnchor: \"## 4. Served-build preflight (blocks the rc7 failure class)\"",
+      "note": "The operator contract for served-build preflight (section 4): run authoring through the deployed serving server; refresh the rc7 venv.",
       "targets": [
         {
           "anchor": {
-            "blob": "188f9b929aa304df597d52e21416c311032288da",
-            "content": "sha256:e089db2dfd12f416070a5182ec8c086597073d6f1d8a8e7d22bf2b2aee34b02b",
+            "blob": "0afe846e601ec587092028c0f996dada84326c66",
+            "content": "sha256:cce043ca4c4cebb2e3e47de56b6a8699ad23120ca577a5a1797ca3d70d015f03",
             "locator": {
               "end": 95,
               "kind": "line_range",
@@ -83,8 +84,30 @@
       ]
     },
     "5": {
-      "note": "Wired into sprint attach/detach through the linkage wrapper.",
+      "note": "Wired into sprint attach/detach through the linkage wrapper.\n\nAnchor: `_require_serving_topology_schema` `attach_master` `detach_master`",
       "targets": [
+        {
+          "anchor": {
+            "blob": "3eac2f250183dcad51cc9ef6846d7f4053faf7de",
+            "content": "sha256:3256aebe343be59dfaacad233edb618791ab8f162665152f9f77588e57a3c9e9",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_sprint_context.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a0b5ad238d8c829320217d9994826ecc6c88a546",
+            "content": "sha256:dd847fac2054b56fec8c6aafd65ddde455cec04d2d3a8376a61d1425c527e52a",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_sprint_linkage.py"
+          },
+          "kind": "code"
+        },
         {
           "anchor": {
             "blob": "3eac2f250183dcad51cc9ef6846d7f4053faf7de",
@@ -99,8 +122,8 @@
         },
         {
           "anchor": {
-            "blob": "7a91c99e84345b557fc31722f7ab1d5e0dafa4b8",
-            "content": "sha256:057e2bb5efb8d09de97164f8521914f20500976c97dcd06dce41cc971261c2cf",
+            "blob": "a0b5ad238d8c829320217d9994826ecc6c88a546",
+            "content": "sha256:393877c0e1e64555cf962130e7e0fb578829342498f1400a58e16c45c3739b0d",
             "locator": {
               "kind": "symbol",
               "name": "attach_master"
@@ -111,8 +134,8 @@
         },
         {
           "anchor": {
-            "blob": "7a91c99e84345b557fc31722f7ab1d5e0dafa4b8",
-            "content": "sha256:520a6289d5d2283283cac74da1f9212f7ea38b0d22d3931c4093ec7f25a03142",
+            "blob": "a0b5ad238d8c829320217d9994826ecc6c88a546",
+            "content": "sha256:11f4304273aa5fe945df91e055c91fdd2cc2c7b9d77262802d2b9ff81bf05b56",
             "locator": {
               "kind": "symbol",
               "name": "detach_master"

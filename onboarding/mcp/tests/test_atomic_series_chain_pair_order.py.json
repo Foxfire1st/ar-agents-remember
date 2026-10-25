@@ -67,15 +67,14 @@
       ]
     },
     "18": {
-      "note": "Leaf-level sync positions admitted, silent ones refused",
+      "note": "Leaf-level sync positions admitted, silent ones refused\n\nAnchor: `AtomicSeriesLeafSyncPositionTests`",
       "targets": [
         {
           "anchor": {
-            "blob": "639ee5c05808f6f02e2c9c291fa075b37391013d",
-            "content": "sha256:b0c224b141b9ca847e7515bb0db8237ca0c95650b263a0759b716a260ae5c255",
+            "blob": "4916f04b8b3de1b829daa61ae1fdaebcd4d9266b",
+            "content": "sha256:0b338c822941b12225cd603622e90638d7dd9692c21eb8e32d41352b71e7b5f1",
             "locator": {
-              "kind": "symbol",
-              "name": "AtomicSeriesLeafSyncPositionTests"
+              "kind": "file"
             }
           },
           "kind": "test"

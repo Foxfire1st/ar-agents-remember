@@ -30,59 +30,14 @@
       ]
     },
     "2": {
-      "note": "Start, sync, attach, pause, and status payload builders preserve typed application inputs, and the sync builder now takes one paired resolution value instead of a bare action.",
+      "note": "Start, sync, attach, pause, and status payload builders preserve typed application inputs, and the sync builder now takes one paired resolution value instead of a bare action.\n\nAnchor: `worktree_start_payload` `worktree_sync_payload` `worktree_attach_payload` `worktree_pause_payload` `worktree_status_payload`",
       "targets": [
         {
           "anchor": {
             "blob": "23805a3cc7fbb5f58d96584b7b4e3ce915c3eab9",
-            "content": "sha256:2b847500664473175ea92a4548ade845951dba95a788ead27cf7fe91848f8656",
+            "content": "sha256:bd54ab06900e44d01f7c6896a7dec04efe52b635e22e5e581c83ffb954c4c9f3",
             "locator": {
-              "kind": "symbol",
-              "name": "worktree_start_payload"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "23805a3cc7fbb5f58d96584b7b4e3ce915c3eab9",
-            "content": "sha256:ae6cb82d5e791a7b026ecb8d24ae9a225c235975d4419bcbe185298739f6eddb",
-            "locator": {
-              "kind": "symbol",
-              "name": "worktree_sync_payload"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "20ca5f754679645c69bfde58ceaec70643364e95",
-            "content": "sha256:24f5b939d518454425a77bfb5a5c3677ae00e221e19549011e903310f3e00041",
-            "locator": {
-              "kind": "symbol",
-              "name": "worktree_attach_payload"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "23805a3cc7fbb5f58d96584b7b4e3ce915c3eab9",
-            "content": "sha256:aa7c1297237bb04b40f015fb1ba2b13bceb6458435bf6a7cb003ba16baaa3104",
-            "locator": {
-              "kind": "symbol",
-              "name": "worktree_pause_payload"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "23805a3cc7fbb5f58d96584b7b4e3ce915c3eab9",
-            "content": "sha256:98a0731236b1324e9ba5a929d30f44bb240d14d8678cf4121394b5034e360c1c",
-            "locator": {
-              "kind": "symbol",
-              "name": "worktree_status_payload"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -122,15 +77,16 @@
       ]
     },
     "5": {
-      "note": "**The paired resolution value this builder forwards, and the application entry point that unpacks it into the driver's two arguments.**",
+      "note": "**The current resolution value this builder forwards, and the application entry point that reads its action for the driver's resolution_action argument. The memory_sync_choice argument is passed independently.**  Anchor: `SyncResolutionInput` `worktree_sync_tool`",
       "targets": [
         {
           "anchor": {
-            "blob": "7857d0160aedd94f75387bdfec39592e8cbb316a",
-            "content": "sha256:dfd90727d7d8cee7c5348fb4ab7714cf8495238a806a05c40c8f3564aa3a0454",
+            "blob": "b4bf02afeb62c71b1a3333562b505eeb244d637e",
+            "content": "sha256:3bb1db0cf79e680c28ede9577bb884ad984242f4be8d086307df0b299e70c7ff",
             "locator": {
-              "kind": "symbol",
-              "name": "SyncResolutionInput"
+              "end": 165,
+              "kind": "line_range",
+              "start": 162
             },
             "path": "mcp/src/agents_remember/models/worktree.py"
           },
@@ -138,11 +94,12 @@
         },
         {
           "anchor": {
-            "blob": "bf6704ff23e690879f0fcbb2068d42baef021a42",
-            "content": "sha256:2f73b9f24fe05f16cd970aeb0fa4ea954267df9f5bedea3a81f0b090c848ebaa",
+            "blob": "f70e3d124e543009c5876c7472ccdb85120ff60c",
+            "content": "sha256:8e0d747e51053cb3f8f394cc56e2231d82dc661c50824500a0efd4ed322b4af4",
             "locator": {
-              "kind": "symbol",
-              "name": "worktree_sync_tool"
+              "end": 370,
+              "kind": "line_range",
+              "start": 349
             },
             "path": "mcp/src/agents_remember/application/worktree_tools.py"
           },
@@ -253,7 +210,7 @@
         },
         {
           "anchor": {
-            "blob": "2a30f40dedc072fef25b7f1cec5e8a8d7ed1d9db",
+            "blob": "2ca78649db203d17f9087e7728f77b20e3a1d144",
             "content": "sha256:26d119dadfd7cf660efe2d092075d933047bcd63b1d1d3d6b4141d1830ced3ec",
             "locator": {
               "kind": "symbol",
@@ -265,7 +222,7 @@
         },
         {
           "anchor": {
-            "blob": "2a30f40dedc072fef25b7f1cec5e8a8d7ed1d9db",
+            "blob": "2ca78649db203d17f9087e7728f77b20e3a1d144",
             "content": "sha256:707f8430d994b394092dfbc59090e97fd43a07f459d652099c251568f3c6aa22",
             "locator": {
               "kind": "symbol",
@@ -277,12 +234,12 @@
         },
         {
           "anchor": {
-            "blob": "2a30f40dedc072fef25b7f1cec5e8a8d7ed1d9db",
+            "blob": "2ca78649db203d17f9087e7728f77b20e3a1d144",
             "content": "sha256:d93c5f3f4079fb7169efe9b9520fa508e0d013976ed095a2c33281816c1a71f9",
             "locator": {
-              "end": 978,
+              "end": 1095,
               "kind": "line_range",
-              "start": 959
+              "start": 1076
             },
             "path": "mcp/src/agents_remember/worktrees/modules/start.py"
           },

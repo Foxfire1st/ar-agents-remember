@@ -46,15 +46,14 @@
       ]
     },
     "3": {
-      "note": "The converted tree with a pinned census.",
+      "note": "The converted tree with a pinned census.\n\nAnchor: `census_tree_files`",
       "targets": [
         {
           "anchor": {
-            "blob": "3ca4c00c50175eed7741c0c264cc970c4bd59bb6",
-            "content": "sha256:8d1e10acdd37f5c66720849de3e517fa7b09d1bd35167dd16c50a3d48638e643",
+            "blob": "1371867243e3d5db880eca9ee06e32d30ddb0cbe",
+            "content": "sha256:a55cf7a39e6e270b522a245ec97dd79b7b5e8238f8df17d7f9e296ef17eed9e4",
             "locator": {
-              "kind": "symbol",
-              "name": "census_tree_files"
+              "kind": "file"
             }
           },
           "kind": "test"

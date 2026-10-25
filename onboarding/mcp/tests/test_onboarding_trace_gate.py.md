@@ -41,10 +41,17 @@ call the trace gate and memory-quality controller; they do not exercise a closeo
   writes a `knowledge-worklist-base/v1` cache file and shows it is ignored and rewritten as v2.
 - **Enforcement.** `test_the_memory_quality_run_counts_each_missing_trace_toward_the_actionable_count`
   drives the controller (`_run_controller`). Since MIK-R09 (leaf 260928-MIK-L09) `_run_controller` captures the real
-  candidate trees (the gate judges exact trees), and the case asserts `curatorActionableCount` 3 and
-  `knowledgeGate.openItemCount` 3, not 2: the gate counts each open item once, so the card's and the route's traces
-  are joined by the uncovered file's `unexplained_hunk` (MIK-R10), which the card's own trace answers once it is
-  written; `onboardingTrace.open` still names the two traces; `test_the_persisted_worklist_carries_the_onboarding_items_in_its_one_list`
+  candidate trees (the gate judges exact trees), and the case asserts `curatorActionableCount` 4 beside
+  `knowledgeGate.openItemCount` 3: the card's and the route's traces are joined by the uncovered file's
+  `unexplained_hunk` (MIK-R10), and the appended source also makes the card's reference anchor stale. After
+  writing the traces, the stale reference remains one actionable item;
+
+> Retained earlier card wording; superseded by the current account above:
+>   candidate trees (the gate judges exact trees), and the case asserts `curatorActionableCount` 3 and
+>   `knowledgeGate.openItemCount` 3, not 2: the gate counts each open item once, so the card's and the route's traces
+>   are joined by the uncovered file's `unexplained_hunk` (MIK-R10), which the card's own trace answers once it is
+>   written;
+ `onboardingTrace.open` still names the two traces; `test_the_persisted_worklist_carries_the_onboarding_items_in_its_one_list`
   pins ruling Q2 and the `(kind, subject)` order; the gate-message case independently checks that trace names remain visible when the gate’s changed paths exceed the reported census; `test_an_unconverted_leaf_is_refused_before_any_gate_runs` asserts that sides and worklist remain `None`, but the controller refuses (`state: refused`, `code: unconverted-memory`) with the central `legacy-format` message and conversion command before either gate runs; the legacy gate is not called and no `onboardingTrace` is delivered.
 - **L37 (review R3-1).** `_run_controller` patches `run_memory_quality_check` with the module-level mock
   `_QUALITY_RUN`, and `test_the_memory_quality_run_counts_each_missing_trace_toward_the_actionable_count` now also
@@ -87,14 +94,20 @@ No configured live documentation source was available for this pass.
 
 - The fixture builds real code and converted memory repositories plus a leaf contract; the executable cases call the trace gate and controller, not a closeout trace entry. [1]
 
+
 - The leaf fixture. [2]
+
+
 
 
 - A missing trace produces named open findings, result.ok=false and refusal() naming both file and route. [5]
 
+
 - The writer's carry is not a trace. [6]
 
+
 - Mixed-format sides return not-ok gate results with named refusal and persist incomplete worklists, never vacuous success. [9]
+
 
 - An unreadable K_C sidecar keeps its item open. [10]
 - An unreadable K_B sidecar is an input problem; a repair counts. [11]
@@ -105,14 +118,25 @@ No configured live documentation source was available for this pass.
 - The conversion counts for nothing; a v1 cache file is rewritten. [13]
 
 
-- Each open item counts once toward `curatorActionableCount`: since MIK-R09 the two traces and the uncovered file's `unexplained_hunk` (3). [15]
+
+- Each open item counts once toward `curatorActionableCount`: the three gate items — the two traces and the uncovered file's `unexplained_hunk` — plus the card's reference anchor that the appended source makes stale, so four beside a gate `openItemCount` of three. [15]
+
 
 - The items are in the persisted worklist. [16]
 - An unconverted leaf is refused before either gate runs, with the conversion step. [17]
-- The unit-lane registration. [18]
+
+
+
+
+- The unit-lane registration. Source caption: "mcp/tests/test_onboarding_trace_gate.py" [18]
+
+
+
+
 
 
 - The memory-quality run gives the converted check its comparison base. [19]
+
 
 
 ### Cross-Repo References

@@ -39,12 +39,12 @@
   ],
   "references": {
     "1": {
-      "note": "RoleChatsView composes the shared launcher, optional native frame, conditional dock and report reader.\n\nAnchor: \"export function RoleChatsView(props: RoleChatsViewProps) {\"",
+      "note": "RoleChatsView composes the shared launcher, optional native frame, conditional dock and report reader.",
       "targets": [
         {
           "anchor": {
-            "blob": "1321bad4ddf72db0e5ab8637a08f820af27dc11e",
-            "content": "sha256:2a1aadcae53756baef800dffef007e25daddc856fc94f94734ce04e94eeb41c2",
+            "blob": "84550a276c2350aa700370967d9509160521edc2",
+            "content": "sha256:4ce27d4ddf3fab5abfa5266d9878fede16e6515e5c1f50e5b1e601c8b24ffd5d",
             "locator": {
               "end": 252,
               "kind": "line_range",

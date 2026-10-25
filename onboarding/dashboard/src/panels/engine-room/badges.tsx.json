@@ -1,5 +1,6 @@
 {
   "path": "dashboard/src/panels/engine-room/badges.tsx",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
@@ -117,8 +118,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f23ae83b49025d9b10e7b6bc846ede9a6d48563e",
-            "content": "sha256:2b2820cb214df32a336ee7fcae8d5de9400d01fc6ea2f10aafa7cc40c458bc3a",
+            "blob": "0a3de3f86452a06356eee661d5e4bbdc7ccdf5eb",
+            "content": "sha256:97b1d32acbe5a3c866b61ae80830913b4de58375b86bdeaf7ea3f412391f41df",
             "locator": {
               "end": 118,
               "kind": "line_range",

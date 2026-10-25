@@ -57,7 +57,9 @@ The following current source boundaries establish the ledger-retirement behavior
 
 The source file is the direct evidence for this unit; its governing overview records adjacent owners.
 
+
 - Missing compatible taskIntent withholds legacy reuse only when admitted direct leaf input is also absent; direct canonical-leaf binding preserves controls. [5]
+
 
 ### Cross-Repo References
 
@@ -78,7 +80,9 @@ Per the ordinary CCR intent boundary, legacy absence alone cannot authorize reus
 
 Public controls now use `resume` for a closeout successor: recovery-required closeouts offer resume, failed or input-required closeouts expose resume before cancel when eligible, and cancelled closeouts expose resume. Non-closeout recovery and direct-landing successor semantics remain independent; no revise alias is introduced.
 
-- Direct-create recoverability is classified from persisted same-generation code/ref/memory evidence. [6]
+
+- Direct-landing recoverability is classified from the persisted generation's typed accepted input, exact code commit/tree, memory repository/ref and accepted or intended live memory evidence. [6]
+
 
 - Exact completed direct owners are offered retire subject to disposition eligibility; direct supersede is unavailable. [7]
 - Earlier door-bearing direct records remain readable but offer no controls. [8]

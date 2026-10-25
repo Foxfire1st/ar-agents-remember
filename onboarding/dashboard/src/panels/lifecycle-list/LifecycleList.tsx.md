@@ -59,7 +59,9 @@ MIK-R175 rules 1-2: neither the row line nor the figure box carries a `title`, b
 
 ## Evidence
 
+
 - The row's native title is gone from every ancestor of a step mark, while its own cells keep the hover text. [40]
+
 
 - columnPresentation supplies 0.72rem group headings and 0.8rem ordinary row text. [34]
 
@@ -107,15 +109,23 @@ MIK-R175 rules 1-2: neither the row line nor the figure box carries a `title`, b
 
 
 
+
 - Typeahead preserves title-only matching and the displayed prefix for numbered rows. [27]
+
+
 
 
 
 
 - Pure row state/word/hover and pure tree flattening own the presentation derivation. [29]
 
+
+
 - The remaining component behavioral suites hold row admission, hierarchy and independent Operations signals; this is source inspection, not a new run. [30]
 
+
+
 - Non-task forms suppress child works/paused figures when the served unknown-activity count is nonzero; BY PHASE keeps the explicit works-to-aborted order through its group comparator. [38]
+
 
 - Explicit disclosure releases a drawn-open parent or fold, while every selection transition expires prior release keys. [39]

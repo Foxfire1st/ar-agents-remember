@@ -1,10 +1,50 @@
 {
   "path": "mcp/src/agents_remember/kernel/authority.py",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
-      "note": "`RepositoryScope`, `McpRuntimeConfig`, `allowed_repo_ids`, `coordination_root`, and `path_is_relative_to` are defined here.\n\nAnchor: \"class RepositoryScope:\"",
+      "note": "`RepositoryScope`, `McpRuntimeConfig`, `allowed_repo_ids`, `coordination_root`, and `path_is_relative_to` are defined here.",
       "targets": [
+        {
+          "anchor": {
+            "blob": "d29d100ea200d65a695333b54064543d7833f90e",
+            "content": "sha256:623455a6b5c1361ad50c867ba6d6866e3c38bfb5543c2b8f6f663c143f95d57a",
+            "locator": {
+              "end": 98,
+              "kind": "line_range",
+              "start": 93
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d29d100ea200d65a695333b54064543d7833f90e",
+            "content": "sha256:c90cac040a733bfc63e51fcd3c0a0b3a37fc212164a39f627f6cae383ef31f0a",
+            "locator": {
+              "end": 224,
+              "kind": "line_range",
+              "start": 191
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d29d100ea200d65a695333b54064543d7833f90e",
+            "content": "sha256:034c7e359c605efda03d85d4b7bd1aded24ca7f3d65e4e37234ebb131288dffa",
+            "locator": {
+              "end": 868,
+              "kind": "line_range",
+              "start": 863
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
+          },
+          "kind": "code"
+        },
         {
           "anchor": {
             "blob": "d29d100ea200d65a695333b54064543d7833f90e",
@@ -20,8 +60,8 @@
         },
         {
           "anchor": {
-            "blob": "e0e3901879af6c975558c5c4eb31d6cdf14c5fb4",
-            "content": "sha256:767ec0cac7ee1e6b71bc9428106181d3988c47f96da0d118b96995e6cf37d579",
+            "blob": "d29d100ea200d65a695333b54064543d7833f90e",
+            "content": "sha256:e82cd501e4b61d960ef5a51a952128a6f6b53499bcead0053daa862d85efc556",
             "locator": {
               "end": 141,
               "kind": "line_range",
@@ -39,6 +79,32 @@
               "end": 751,
               "kind": "line_range",
               "start": 746
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d29d100ea200d65a695333b54064543d7833f90e",
+            "content": "sha256:70b77aaaa9172f4547610f9ed1d10e405becd21def18820bf60e722d04352d0b",
+            "locator": {
+              "end": 95,
+              "kind": "line_range",
+              "start": 90
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d29d100ea200d65a695333b54064543d7833f90e",
+            "content": "sha256:c2929bb65af28128b07f8adfb97de31a5b0325f2b109d08ac1078646871eae70",
+            "locator": {
+              "end": 740,
+              "kind": "line_range",
+              "start": 735
             },
             "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
           },
@@ -63,8 +129,8 @@
         },
         {
           "anchor": {
-            "blob": "68e62a4e78041f271e927977fa67c79ca74c18b7",
-            "content": "sha256:7f26b29a1f0b715def1de7f7d30a324a15e3f00cce6914d124078511b7b7f2c5",
+            "blob": "806f87dacbd41bb3a7c9c2fa4c012db6332d673b",
+            "content": "sha256:fb800266240f36af9f14de537ed4d581198f01f8f68c8fb12005119ee5900e72",
             "locator": {
               "end": 116,
               "kind": "line_range",
@@ -73,16 +139,27 @@
             "path": "mcp/src/agents_remember/errors.py"
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "806f87dacbd41bb3a7c9c2fa4c012db6332d673b",
+            "content": "sha256:63e6dd3c2a1da05c6bfc50b4ab760bf26a30d93b5dec100bd558d7d615b5ad8b",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/errors.py"
+          },
+          "kind": "code"
         }
       ]
     },
     "3": {
-      "note": "Worktree application entry points consume these guards for repo resolution and path confinement.\n\nAnchor: \"from agents_remember.kernel.authority import require_repo\"",
+      "note": "Worktree application entry points consume these guards for repo resolution and path confinement.",
       "targets": [
         {
           "anchor": {
-            "blob": "e77dbabae8b914a6fd3fd7a8b12467c3c5055259",
-            "content": "sha256:5f05fa8f39116c592d415766a4c44d247bd90b906a9280cb2b396dfde4ecaed0",
+            "blob": "f70e3d124e543009c5876c7472ccdb85120ff60c",
+            "content": "sha256:c2026a3cc06cfa67cc32c457f98bf58411bb7fa1df8898f49e584c738effe2bd",
             "locator": {
               "end": 21,
               "kind": "line_range",

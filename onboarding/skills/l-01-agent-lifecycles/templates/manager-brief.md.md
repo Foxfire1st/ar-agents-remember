@@ -8,8 +8,12 @@ The requested baseline-review clause now names organizational leaf code-change s
 
 This qualification governs the named current seams; incompatible earlier generalizations remain historical, not restored authority. No source inspection here establishes execution, a launch, a test result, a CODE/MEMORY grade or a completed closeout.
 
+
 - Master input values preserve role_start/set, primary-revision ownership, sealed review and the complete-curation transaction boundary. [6]
-- The Curator owner requires the complete curation operation; optional full-quality/test requests do not waive it. [7]
+
+
+> Retained earlier citation wording: - The Curator owner requires the complete curation operation; optional full-quality/test requests do not waive it. [7]
+
 
 
 ## Current supported-pair account — R100/R116 composition
@@ -18,7 +22,9 @@ The compiled master brief preserves the monotonic sealed finding list across rou
 
 This account controls the named changed seams; contradictory earlier card wording below is retained only as historical evidence. Unchanged role duties and R117 file-only wake/report transport are preserved. Source inspection supplies no new runtime test, CODE verdict, review counter or acceptance.
 
+
 - The compiled master brief preserves the monotonic sealed finding list across rounds within the settings limit and names recorded architect/developer approval beyond it. Values in the brief cannot create a routine transaction gate or alter role/operation authority; direct peer file packages and Manager transaction ordering remain separate. [5]
+
 
 
 ## Current Source Qualification
@@ -108,10 +114,14 @@ No external Domain Documentation source governs this dispatch template.
 
 ### Repo-Internal References
 
+
 - The source edge and every requirement revision are compiled before worker dispatch. [1]
+
 - Master exit carries the full revision set and independent adjudications. [2]
 
+
 - Attempt dispatch, bounded invalidation, and the non-gating master summary are explicit manager obligations. [3]
+
 
 ### Cross-Repo References
 
@@ -131,7 +141,9 @@ This template now sends each leaf role through `role_start` as the operation tha
 
 ## Current Source Evidence
 
+
 - Current settings-budget, recorded approval and preserved stage/ownership boundaries are carried by this canonical instruction source. [4]
+
 
 
 ## Inherited Distribution Commentary
@@ -346,3 +358,5 @@ Inherited reference 2 commentary (not a revalidated target):
 ## Canonical Source Ownership
 
 The verified byte-equal package copy is derived output, not an independent role/task/permission authority. Whole-source evidence does not certify inherited statements or a whole requirement.
+
+- The Curator owner requires the complete curation operation; optional full-quality/test requests do not waive it. [7]

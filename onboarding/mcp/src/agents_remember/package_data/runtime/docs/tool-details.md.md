@@ -13,12 +13,15 @@ making the same relative explanation pointer openable in both layouts. It is
 documentation, not another callable interface.
 
 The drift account distinguishes anchor assessment from invariant currentness. A stale
-reference generally reports without blocking by itself. A carried anchor at a path the
-leaf deleted is the exception: `R22.6-carried-stale` refuses closeout and landing, and
-reports only at a sync merge. This replaces the earlier zero-violation boundary for
-that kind, not the reporting treatment of other stale references.
+reference anchor refuses closeout/APPLY, integration, direct and recorded landing and the
+full quality run as `R198.1-reference-anchor`, and only the drift summary, the writer and
+a sync merge report it for repair. A carried anchor at a path the leaf deleted keeps its
+`R22.6-carried-stale` route. This replaces the earlier reporting treatment of stale
+references for every kind, not only the gone-path one.
 
 ## Code Commentary
+
+The baseline-adoption explanation now distinguishes the actionable-drift gate from paired-tree validation. `accept_drift` can lift only the former; a stale code/test reference still refuses as `R198.1-reference-anchor`, and the first converted baseline is validated before commitment. The option does not make an invalid paired tree adoptable.
 
 The canonical and packaged document carry long explanations for `citation_fix`, `context_packet`, `curator_coherence`, baseline adoption, carryover planning, memory quality, child retirement, role-set start and route-index refresh. Short registration descriptions point here, but callable signatures remain defined by registration, not this document. The citation explanation now replaces source-index snapshot options with unconditional old-format refusal and conversion, while preserving finite card selection, measured admissions, sidecar authoring and full logged detail. The installer-owned documentation-copy route is unchanged.
 
@@ -61,5 +64,11 @@ cross-repository acceptance evidence is inferred.
 
 - Skills are package-served in both install modes and host facts come from active MCP authority per use. [3]
 
-- The complete document defines build/install explanations and the gone-path carried-anchor exception; documentation is not fresh execution evidence. [1]
+
+
+- The document defines build/install explanations and distinguishes read-only drift reporting from exact-pair stale-anchor publication refusal, with an additional carried-deleted-path refusal; documentation is not fresh execution evidence. [1]
+
+
+
+
 - The shipped explanation states citation admission and old-format refusal and distinguishes anchor measurement from currentness; registration remains the callable-signature owner. [2]

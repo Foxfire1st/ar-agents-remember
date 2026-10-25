@@ -1,14 +1,15 @@
 {
   "path": "mcp/src/agents_remember/application/knowledge_reader/__init__.py",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
-      "note": "The module's own statement of the views, read-only reads and named failures.\n\nAnchor: \"**Read-only** (rule 6): the reader never writes a repository.\"",
+      "note": "The module's own statement of the views, read-only reads and named failures.",
       "targets": [
         {
           "anchor": {
-            "blob": "ecf10889cc0c7393315d79e8ceaae8dbf63899c0",
-            "content": "sha256:513eaa04a678e7d4df642ff7fb392b1b94e632a455248e71c41d1fde4373c7e9",
+            "blob": "57eae152b75c3cf71ceefce6627a0696f14fdb51",
+            "content": "sha256:af1f47c8dbd32960b0ecf36305758cd1c98a58e0077b4c6ff5d4c73ce3c5c07f",
             "locator": {
               "end": 24,
               "kind": "line_range",
@@ -68,12 +69,22 @@
       ]
     },
     "4": {
-      "note": "Dispatch by view; a record the tree does not hold is `not-found`.",
+      "note": "Dispatch by view; a record the tree does not hold is `not-found`.\n\nAnchor: `_answer` `_record`",
       "targets": [
         {
           "anchor": {
-            "blob": "ecf10889cc0c7393315d79e8ceaae8dbf63899c0",
-            "content": "sha256:bd5faddd826ecddbf234fe6d96caa91fc27c3819cb715a87df913e52105b6b12",
+            "blob": "57eae152b75c3cf71ceefce6627a0696f14fdb51",
+            "content": "sha256:5e1a75e4ca191da584a202ac86c9ad409e6148f3e207af23416665b1b8438a3b",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "57eae152b75c3cf71ceefce6627a0696f14fdb51",
+            "content": "sha256:aab44dd1b7f8dc945ca043ff4fd05f6acf8c977f9372efcfd0ec1478bd3576cc",
             "locator": {
               "kind": "symbol",
               "name": "_answer"
@@ -83,8 +94,8 @@
         },
         {
           "anchor": {
-            "blob": "ecf10889cc0c7393315d79e8ceaae8dbf63899c0",
-            "content": "sha256:38874c83740e243dc0f787784750dce65e8c52bca4d1489bf883a34ce3e3aa1d",
+            "blob": "57eae152b75c3cf71ceefce6627a0696f14fdb51",
+            "content": "sha256:fdebb2e84cf8b426e7929f1f46bffff7ade77db07ac3116c137fca1d9fb3a3d8",
             "locator": {
               "kind": "symbol",
               "name": "_record"
@@ -121,6 +132,19 @@
               "end": 113,
               "kind": "line_range",
               "start": 113
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_reader/subtree.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a83380d5f62ba2d3de463374e6cae852ef42c87c",
+            "content": "sha256:9d463f4b021f385ab079e5a7ad3524c0ac5b67ee488d61eb94e9ef3fba56f47f",
+            "locator": {
+              "end": 112,
+              "kind": "line_range",
+              "start": 112
             },
             "path": "mcp/src/agents_remember/application/knowledge_reader/subtree.py"
           },

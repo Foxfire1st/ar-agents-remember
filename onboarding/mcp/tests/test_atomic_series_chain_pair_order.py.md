@@ -18,4 +18,5 @@ The fixtures build real Git state instead of fabricating commit ids. `_contract`
 - Shared code plus ordered memory is a chain step [15]
 - Code ancestry still orders when the code position moved [16]
 - An identical pair stays unordered over both fixture memories [17]
+
 - Leaf-level sync positions admitted, silent ones refused [18]

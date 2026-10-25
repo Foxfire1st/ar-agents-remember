@@ -1,5 +1,6 @@
 {
   "path": "skills/l-01-agent-lifecycles/templates/architect-brief.md",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
@@ -21,33 +22,16 @@
   ],
   "references": {
     "1": {
-      "note": "The launcher submits one complete identity-free architect dispatch.\n\nAnchor: `# Template — Architect Brief`",
+      "note": "The launcher writes the sprint request from durable truth into the canonical sprint document, then starts Architect once with role_start carrying no brief or document reference; the developer names the sprint in the dashboard.",
       "targets": [
         {
           "anchor": {
-            "blob": "6911f4e91b865b417e527ca7e981e32791b8022a",
-            "content": "sha256:5435dccb3334bda8a6528f218deaa9ae72c3f25a488101ec37b0d2a7cf8b1bd3",
+            "blob": "8efa7f111f0097556ba44ada42513af10cd44a0b",
+            "content": "sha256:ee40bc61d39a4dfdedf1df9d792ddf1e4a9875bde0946daa1fe062690d8404ac",
             "locator": {
-              "end": 10,
+              "end": 11,
               "kind": "line_range",
-              "start": 1
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "2": {
-      "note": "The resulting architect uses plane-hosted child authority without ambient fallback.\n\nAnchor: \"This architect seat is now plane-hosted.\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "6911f4e91b865b417e527ca7e981e32791b8022a",
-            "content": "sha256:01cdacc64123d8d2b1c8c6fad5c3859df5e808aed2d3c719f87f021947c27fc3",
-            "locator": {
-              "end": 61,
-              "kind": "line_range",
-              "start": 61
+              "start": 3
             }
           },
           "kind": "code"
@@ -55,16 +39,16 @@
       ]
     },
     "3": {
-      "note": "Placeholder, canonical-address, durable-handoff, and refusal recovery rules are explicit.\n\nAnchor: \"Compiler notes for the launcher.\"",
+      "note": "Placeholder, canonical-address, durable-handoff, and refusal recovery rules are explicit.",
       "targets": [
         {
           "anchor": {
-            "blob": "29aeaa8008c172e1821e394f03454eadd16dd0a2",
-            "content": "sha256:233848da4ce427bf1dac888bdcf87b0c06a183ed017e8a250d27f287fec89501",
+            "blob": "8efa7f111f0097556ba44ada42513af10cd44a0b",
+            "content": "sha256:2a80f202fcd972e01e3255322373720e5874977c5fa8ed1048c93188936bae01",
             "locator": {
-              "end": 84,
+              "end": 82,
               "kind": "line_range",
-              "start": 72
+              "start": 73
             }
           },
           "kind": "code"
@@ -76,34 +60,42 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6911f4e91b865b417e527ca7e981e32791b8022a",
-            "content": "sha256:7480ca74ce7c7d68939f5e55ce47e2b2d5c47c786ba58e24b5ad2e09fd610457",
+            "blob": "8efa7f111f0097556ba44ada42513af10cd44a0b",
+            "content": "sha256:f77a6c9edaf0e2d1cf11a5081bd62a44cf6d6678db12e490514fe4b3d7d68277",
             "locator": {
-              "kind": "file"
+              "end": 11,
+              "kind": "line_range",
+              "start": 8
             }
           },
           "kind": "code"
-        }
-      ]
-    },
-    "5": {
-      "note": "The sprint document holds the request before one role_start; Architect start carries no brief or document and the developer selects the sprint in the dashboard.\n\nAnchor: current qualified source",
-      "targets": [
+        },
         {
           "anchor": {
-            "blob": "8efa7f111f0097556ba44ada42513af10cd44a0b",
-            "content": "sha256:d2db485228e6ff58b3dcbd890303bf38fdd3433f0f745a4933252d080f2a4d16",
+            "blob": "00b5dd8aa2698993636ba72c416beaf0d07dff3f",
+            "content": "sha256:984c36d0632964f106f9d74ad420a9fe892e29c4e89cde55740b33d25768b47b",
             "locator": {
-              "kind": "file"
-            }
+              "end": 17,
+              "kind": "line_range",
+              "start": 16
+            },
+            "path": "scripts/sync-skills.py"
           },
           "kind": "code"
-        }
-      ]
-    },
-    "6": {
-      "note": "Starting agents uses role_start/role_message and forbids fallback after refusal, not the retired hosted dispatch transaction.\n\nAnchor: current qualified source",
-      "targets": [
+        },
+        {
+          "anchor": {
+            "blob": "74a8d41dcbdc4e464b14c732a08b61f0b89ceda9",
+            "content": "sha256:a8269d77ff04383c8f99546b76d35f94d616e3bb91b96a61d3634cb5b8a85c95",
+            "locator": {
+              "end": 10,
+              "kind": "line_range",
+              "start": 3
+            },
+            "path": "generated-copies.json"
+          },
+          "kind": "code"
+        },
         {
           "anchor": {
             "blob": "8efa7f111f0097556ba44ada42513af10cd44a0b",
@@ -117,57 +109,57 @@
       ]
     },
     "7": {
-      "note": "The canonical skill tree is synchronized into package data and harness mirrors.",
+      "note": "The canonical root skills tree is synchronized into the MCP package-data runtime skill tree; current generated-copies.json declares that sole skills target.",
       "targets": [
         {
           "anchor": {
             "blob": "00b5dd8aa2698993636ba72c416beaf0d07dff3f",
-            "content": "sha256:556c2515bac2a5348f19a93d199ce8620848ee26c5e67dea565240287f582394",
+            "content": "sha256:984c36d0632964f106f9d74ad420a9fe892e29c4e89cde55740b33d25768b47b",
             "locator": {
-              "kind": "symbol",
-              "name": "CANONICAL_SKILLS"
-            },
-            "path": "scripts/sync-skills.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "52ead88df5abcc06f44245c1a48ebae0f190b1a6",
-            "content": "sha256:749faa913fd02887de600f0c5da29e8e5d815d3ab4936ea5bb847d1a302f9b7d",
-            "locator": {
-              "kind": "symbol",
-              "name": "sync_targets"
-            },
-            "path": "scripts/sync-skills.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "52ead88df5abcc06f44245c1a48ebae0f190b1a6",
-            "content": "sha256:8fbd9ebfe0acdf40f935fe337d0cddb9b12b37bdefd46155ad53f319f950f16f",
-            "locator": {
-              "end": 203,
+              "end": 17,
               "kind": "line_range",
-              "start": 195
+              "start": 16
             },
             "path": "scripts/sync-skills.py"
           },
           "kind": "code"
-        }
-      ]
-    },
-    "8": {
-      "note": "Messages wake; complete payloads and evidence travel as files.\n\nAnchor: current qualified source",
-      "targets": [
+        },
         {
           "anchor": {
-            "blob": "8efa7f111f0097556ba44ada42513af10cd44a0b",
-            "content": "sha256:d2db485228e6ff58b3dcbd890303bf38fdd3433f0f745a4933252d080f2a4d16",
+            "blob": "00b5dd8aa2698993636ba72c416beaf0d07dff3f",
+            "content": "sha256:85a6ecbf26f073eb808b51188d26c5a82d2fab9a4fe948b844219a67de9e60c5",
             "locator": {
-              "kind": "file"
-            }
+              "end": 59,
+              "kind": "line_range",
+              "start": 56
+            },
+            "path": "scripts/sync-skills.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "00b5dd8aa2698993636ba72c416beaf0d07dff3f",
+            "content": "sha256:8a708c228cb1c5ae2d195b62d9f39f63c6cf457f6fee943a1a36015a3f79dd99",
+            "locator": {
+              "end": 243,
+              "kind": "line_range",
+              "start": 232
+            },
+            "path": "scripts/sync-skills.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "74a8d41dcbdc4e464b14c732a08b61f0b89ceda9",
+            "content": "sha256:a8269d77ff04383c8f99546b76d35f94d616e3bb91b96a61d3634cb5b8a85c95",
+            "locator": {
+              "end": 10,
+              "kind": "line_range",
+              "start": 3
+            },
+            "path": "generated-copies.json"
           },
           "kind": "code"
         }

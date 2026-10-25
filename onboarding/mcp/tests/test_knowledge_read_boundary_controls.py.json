@@ -3,15 +3,14 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "A real unauthorized object write fails the oracle",
+      "note": "A real unauthorized object write fails the oracle\n\nAnchor: `test_a_real_unauthorized_object_write_fails_the_oracle`",
       "targets": [
         {
           "anchor": {
-            "blob": "905ec3fff937f941c81795239277081dba0b1a3b",
-            "content": "sha256:4418d7ecaf03a9a1467d9f4188564f542973640e298fa7bbcd53277fa3a9d2ae",
+            "blob": "b018487eeba72cd5c2c9862327212c26d295d8fe",
+            "content": "sha256:4ae8e3e029ca21c2ec5e51ce35da971329c4f9821f0074d39544bd3b972c2cf7",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_real_unauthorized_object_write_fails_the_oracle"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -35,15 +34,14 @@
       ]
     },
     "3": {
-      "note": "Inside-root chain to outside lender is inventoried",
+      "note": "Inside-root chain to outside lender is inventoried\n\nAnchor: `test_inside_root_chain_to_outside_lender_is_inventoried`",
       "targets": [
         {
           "anchor": {
-            "blob": "905ec3fff937f941c81795239277081dba0b1a3b",
-            "content": "sha256:7d8fb7f72fde0ecf5631524ff3dcbe0738958466828017ed8ddca72431569faa",
+            "blob": "b018487eeba72cd5c2c9862327212c26d295d8fe",
+            "content": "sha256:4ae8e3e029ca21c2ec5e51ce35da971329c4f9821f0074d39544bd3b972c2cf7",
             "locator": {
-              "kind": "symbol",
-              "name": "test_inside_root_chain_to_outside_lender_is_inventoried"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -51,15 +49,14 @@
       ]
     },
     "4": {
-      "note": "Refs are keyed by name, never collapsed",
+      "note": "Refs are keyed by name, never collapsed\n\nAnchor: `test_refs_are_keyed_by_name_so_a_shared_object_never_collapses_two_refs`",
       "targets": [
         {
           "anchor": {
-            "blob": "905ec3fff937f941c81795239277081dba0b1a3b",
-            "content": "sha256:a08592eea30bd7b164e989560418325313fbcc3f29169a6e7ece0c9740356745",
+            "blob": "b018487eeba72cd5c2c9862327212c26d295d8fe",
+            "content": "sha256:4ae8e3e029ca21c2ec5e51ce35da971329c4f9821f0074d39544bd3b972c2cf7",
             "locator": {
-              "kind": "symbol",
-              "name": "test_refs_are_keyed_by_name_so_a_shared_object_never_collapses_two_refs"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -67,15 +64,14 @@
       ]
     },
     "5": {
-      "note": "A moved pin fails, an attested pin passes",
+      "note": "A moved pin fails, an attested pin passes\n\nAnchor: `test_a_moved_pin_is_a_finding_but_an_attested_pin_is_allowed`",
       "targets": [
         {
           "anchor": {
-            "blob": "905ec3fff937f941c81795239277081dba0b1a3b",
-            "content": "sha256:5bafa2ac8b8cc26f228baafcdceeb07a52bd8c80dca0ac92feffbcfdeb34d77a",
+            "blob": "b018487eeba72cd5c2c9862327212c26d295d8fe",
+            "content": "sha256:4ae8e3e029ca21c2ec5e51ce35da971329c4f9821f0074d39544bd3b972c2cf7",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_moved_pin_is_a_finding_but_an_attested_pin_is_allowed"
+              "kind": "file"
             }
           },
           "kind": "test"

@@ -64,11 +64,18 @@ task document, no entry at `at`, or several entries at `at`.
 - Strict lookup replays the claimant and failed observations while recording readable ruled-out siblings as examined, outside kept dependencies. [17]
 
 
+
 - The module docstring: the strict lookup and what it records as read. [9]
+
+
 - The lookup inside a nested recording, and the rows it replays to the caller. [10]
+
+
 - Every JSON file of the folder is read; a broken file that names the leaf is collected. [11]
+
 - A raw document names the leaf by its id or an enclosure's leafId; a master never does. [12]
 - Exactly one decision entry at the cited time resolves. [13]
 - The recorded reads hold the leaf's document and not the master's; sibling writes leave a kept view in place. [14]
 - A second claimant makes the next lookup ambiguous. [15]
+
 - A sibling file that is read at two identities during the lookup stays recorded as a conflict, and the view is refused. [16]

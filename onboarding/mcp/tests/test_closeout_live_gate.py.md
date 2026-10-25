@@ -18,4 +18,5 @@ Local implementation and executable evidence do not replace requirement authorit
 
 ## Evidence
 
+
 - MIK-R81 rules 2+3 (F09/F13): the closeout gate watches code/memory/source-tip inputs. [1]

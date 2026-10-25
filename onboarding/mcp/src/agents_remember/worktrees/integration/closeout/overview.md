@@ -92,14 +92,22 @@ The closeout door first allows the recorded candidate tree itself. For a differe
 
 
 
+
 - The closeout validator's gate over the authority's exact candidate. [1]
+
 - Door source facts use current Git and task authority. [2]
 - Coherence observes exact candidates, validates current identities and dependencies, and shares per-record measurement projection. [3]
+
 - Publication derives the input statement, files prepared candidates, binds assessment authorship and verifies generations before pointer replacement; optional file transport preserves the required identities. [4]
+
 - Assessment evidence has a task-root destination and mandatory retained-byte read-back; immutable generation reads verify structured and projected content. [5]
+
 - Preparation selection requires original certificates and retains command starts, outcomes and selected outputs. [6]
+
 - The curator checklist supplies scope, its worklist-backed `_OnboardingGateInputs` and response to the onboarding refresh gate; that gate dispatches converted history-file traces. It accepts no separate no-impact identities. [7]
 
+
 - Converted leaf closeout evaluates its exact candidate through the mandatory invariant gate and refuses an unbound gate; unconverted memory uses the central cutover refusal. No removed prepared-certification adapter is an alternate route. [8]
+
 - Exact accepted and recovered pair identities and source-branch reintegration predicates have shared owners. [9]
 - Both coherence assessment projections delegate supplied per-record measurements to the binding owner. [10]

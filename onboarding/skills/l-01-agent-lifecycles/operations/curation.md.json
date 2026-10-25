@@ -1,5 +1,6 @@
 {
   "path": "skills/l-01-agent-lifecycles/operations/curation.md",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
@@ -290,16 +291,16 @@
       ]
     },
     "11": {
-      "note": "Partitions all-role versus Curator/Manager text, consolidates inputs/output in the role, extracts named-step authoring details and states the post-landing recorded memory-review lane.\n\nAnchor: Current source; preserved L88 property 8",
+      "note": "Partitions all-role versus Curator/Manager text, consolidates inputs/output in the role, extracts named-step authoring details and states the post-landing recorded memory-review lane.\n\nAnchor: Current source; preserved L88 property 7",
       "targets": [
         {
           "anchor": {
             "blob": "145be631612f52c363b97b82d253839028ebc907",
-            "content": "sha256:bd10a9540198bfe178e1703d816516cb5cc1f9854bef4eb283f4037199bfd609",
+            "content": "sha256:1b60529184401258f1c835939cabbc6e3d6598c745cb18abda44c4c6285eacb2",
             "locator": {
-              "end": 198,
+              "end": 146,
               "kind": "line_range",
-              "start": 152
+              "start": 117
             }
           },
           "kind": "code"
@@ -307,80 +308,16 @@
       ]
     },
     "12": {
-      "note": "Partitions all-role versus Curator/Manager text, consolidates inputs/output in the role, extracts named-step authoring details and states the post-landing recorded memory-review lane.",
+      "note": "Partitions all-role versus Curator/Manager text, consolidates inputs/output in the role, extracts named-step authoring details and states the post-landing recorded memory-review lane.\n\nAnchor: Current source; preserved L88 property 7",
       "targets": [
         {
           "anchor": {
-            "blob": "c2d38cd0a82b9efe96a765c4512f2242c6a9d3e6",
-            "content": "sha256:5a96babfe9299f78aa12153d071535e122b336baeb2fee0e23de698ceb49292b",
-            "locator": {
-              "end": 45,
-              "kind": "line_range",
-              "start": 21
-            },
-            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
             "blob": "145be631612f52c363b97b82d253839028ebc907",
-            "content": "sha256:d4fb461c60892c5604a2ff0097daff3daba25f1d0b0c2a291a1f124472d7c662",
+            "content": "sha256:1b60529184401258f1c835939cabbc6e3d6598c745cb18abda44c4c6285eacb2",
             "locator": {
-              "end": 49,
+              "end": 146,
               "kind": "line_range",
-              "start": 6
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "65ce2a9cb31855e3babcd27aff8cadee4339db25",
-            "content": "sha256:81076687fc3f9b94782400b92f20e1616386b7a941d8e0be96bfefc6f7eadf58",
-            "locator": {
-              "end": 109,
-              "kind": "line_range",
-              "start": 76
-            },
-            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "a5e74f1a57f73c4f392379af6fbbb06b2e82f1e7",
-            "content": "sha256:d4537745beb68ed73fba890fab4db1b43d796fa1332b0c0ce1394ec10e2d490f",
-            "locator": {
-              "end": 44,
-              "kind": "line_range",
-              "start": 8
-            },
-            "path": "skills/l-01-agent-lifecycles/reference/curator-writer-details.md"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "c2d38cd0a82b9efe96a765c4512f2242c6a9d3e6",
-            "content": "sha256:02f6355270ee6a13f643557da11cccf7067d022e7f01f054bf3554808246da5e",
-            "locator": {
-              "end": 83,
-              "kind": "line_range",
-              "start": 78
-            },
-            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "145be631612f52c363b97b82d253839028ebc907",
-            "content": "sha256:c4268316f0022b4d969e4a7085e749bcc04011b15cdc648c2b3649bd35c9ae00",
-            "locator": {
-              "end": 176,
-              "kind": "line_range",
-              "start": 172
+              "start": 117
             }
           },
           "kind": "code"
@@ -433,30 +370,6 @@
       "targets": [
         {
           "anchor": {
-            "blob": "145be631612f52c363b97b82d253839028ebc907",
-            "content": "sha256:57094b9332d237ab9a19e1025661d6824a50c45b5b29b120a895e53d03487ddf",
-            "locator": {
-              "end": 10,
-              "kind": "line_range",
-              "start": 6
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "145be631612f52c363b97b82d253839028ebc907",
-            "content": "sha256:29079d1c484d414bed82fcae1a5878428ec9a62d4df0fe74fb49a2d57dbfae9f",
-            "locator": {
-              "end": 32,
-              "kind": "line_range",
-              "start": 26
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
             "blob": "c2d38cd0a82b9efe96a765c4512f2242c6a9d3e6",
             "content": "sha256:0c8d7ab6901498a84ffa765a41a0743c1724128e79ccbb8ee9479ba1cc5e89e0",
             "locator": {
@@ -484,80 +397,16 @@
       ]
     },
     "4": {
-      "note": "Partitions all-role versus Curator/Manager text, consolidates inputs/output in the role, extracts named-step authoring details and states the post-landing recorded memory-review lane.",
+      "note": "Partitions all-role versus Curator/Manager text, consolidates inputs/output in the role, extracts named-step authoring details and states the post-landing recorded memory-review lane.\n\nAnchor: Current source; preserved L88 property 7",
       "targets": [
         {
           "anchor": {
-            "blob": "65ce2a9cb31855e3babcd27aff8cadee4339db25",
-            "content": "sha256:81076687fc3f9b94782400b92f20e1616386b7a941d8e0be96bfefc6f7eadf58",
-            "locator": {
-              "end": 109,
-              "kind": "line_range",
-              "start": 76
-            },
-            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
             "blob": "145be631612f52c363b97b82d253839028ebc907",
-            "content": "sha256:d4fb461c60892c5604a2ff0097daff3daba25f1d0b0c2a291a1f124472d7c662",
+            "content": "sha256:1b60529184401258f1c835939cabbc6e3d6598c745cb18abda44c4c6285eacb2",
             "locator": {
-              "end": 49,
+              "end": 146,
               "kind": "line_range",
-              "start": 6
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "c2d38cd0a82b9efe96a765c4512f2242c6a9d3e6",
-            "content": "sha256:5a96babfe9299f78aa12153d071535e122b336baeb2fee0e23de698ceb49292b",
-            "locator": {
-              "end": 45,
-              "kind": "line_range",
-              "start": 21
-            },
-            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "a5e74f1a57f73c4f392379af6fbbb06b2e82f1e7",
-            "content": "sha256:d4537745beb68ed73fba890fab4db1b43d796fa1332b0c0ce1394ec10e2d490f",
-            "locator": {
-              "end": 44,
-              "kind": "line_range",
-              "start": 8
-            },
-            "path": "skills/l-01-agent-lifecycles/reference/curator-writer-details.md"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "c2d38cd0a82b9efe96a765c4512f2242c6a9d3e6",
-            "content": "sha256:02f6355270ee6a13f643557da11cccf7067d022e7f01f054bf3554808246da5e",
-            "locator": {
-              "end": 83,
-              "kind": "line_range",
-              "start": 78
-            },
-            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "145be631612f52c363b97b82d253839028ebc907",
-            "content": "sha256:c4268316f0022b4d969e4a7085e749bcc04011b15cdc648c2b3649bd35c9ae00",
-            "locator": {
-              "end": 176,
-              "kind": "line_range",
-              "start": 172
+              "start": 117
             }
           },
           "kind": "code"
@@ -565,98 +414,33 @@
       ]
     },
     "5": {
-      "note": "Partitions all-role versus Curator/Manager text, consolidates inputs/output in the role, extracts named-step authoring details and states the post-landing recorded memory-review lane.\n\nAnchor: Current source; preserved L88 property 11",
+      "note": "Partitions all-role versus Curator/Manager text, consolidates inputs/output in the role, extracts named-step authoring details and states the post-landing recorded memory-review lane.\n\nAnchor: Current source; preserved L88 property 7",
       "targets": [
         {
           "anchor": {
-            "blob": "69517ee942d200d941aa32f6439d9be3dec88d70",
-            "content": "sha256:8e1c77434d9c4f1a59e0cbeae45782dad3332b830aeacdfe1cd438fd4da1fbda",
+            "blob": "145be631612f52c363b97b82d253839028ebc907",
+            "content": "sha256:1b60529184401258f1c835939cabbc6e3d6598c745cb18abda44c4c6285eacb2",
             "locator": {
-              "end": 82,
+              "end": 146,
               "kind": "line_range",
-              "start": 19
-            },
-            "path": "skills/l-01-agent-lifecycles/reference/curator-authoring-d301.md"
+              "start": 117
+            }
           },
           "kind": "code"
         }
       ]
     },
     "6": {
-      "note": "Partitions all-role versus Curator/Manager text, consolidates inputs/output in the role, extracts named-step authoring details and states the post-landing recorded memory-review lane.",
+      "note": "Partitions all-role versus Curator/Manager text, consolidates inputs/output in the role, extracts named-step authoring details and states the post-landing recorded memory-review lane.\n\nAnchor: Current source; preserved L88 property 7",
       "targets": [
         {
           "anchor": {
-            "blob": "a5e74f1a57f73c4f392379af6fbbb06b2e82f1e7",
-            "content": "sha256:d4537745beb68ed73fba890fab4db1b43d796fa1332b0c0ce1394ec10e2d490f",
-            "locator": {
-              "end": 44,
-              "kind": "line_range",
-              "start": 8
-            },
-            "path": "skills/l-01-agent-lifecycles/reference/curator-writer-details.md"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
             "blob": "145be631612f52c363b97b82d253839028ebc907",
-            "content": "sha256:d4fb461c60892c5604a2ff0097daff3daba25f1d0b0c2a291a1f124472d7c662",
+            "content": "sha256:1b60529184401258f1c835939cabbc6e3d6598c745cb18abda44c4c6285eacb2",
             "locator": {
-              "end": 49,
+              "end": 146,
               "kind": "line_range",
-              "start": 6
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "c2d38cd0a82b9efe96a765c4512f2242c6a9d3e6",
-            "content": "sha256:5a96babfe9299f78aa12153d071535e122b336baeb2fee0e23de698ceb49292b",
-            "locator": {
-              "end": 45,
-              "kind": "line_range",
-              "start": 21
-            },
-            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "65ce2a9cb31855e3babcd27aff8cadee4339db25",
-            "content": "sha256:81076687fc3f9b94782400b92f20e1616386b7a941d8e0be96bfefc6f7eadf58",
-            "locator": {
-              "end": 109,
-              "kind": "line_range",
-              "start": 76
-            },
-            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "c2d38cd0a82b9efe96a765c4512f2242c6a9d3e6",
-            "content": "sha256:02f6355270ee6a13f643557da11cccf7067d022e7f01f054bf3554808246da5e",
-            "locator": {
-              "end": 83,
-              "kind": "line_range",
-              "start": 78
-            },
-            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "145be631612f52c363b97b82d253839028ebc907",
-            "content": "sha256:c4268316f0022b4d969e4a7085e749bcc04011b15cdc648c2b3649bd35c9ae00",
-            "locator": {
-              "end": 176,
-              "kind": "line_range",
-              "start": 172
+              "start": 117
             }
           },
           "kind": "code"
@@ -664,80 +448,16 @@
       ]
     },
     "7": {
-      "note": "Partitions all-role versus Curator/Manager text, consolidates inputs/output in the role, extracts named-step authoring details and states the post-landing recorded memory-review lane.",
+      "note": "Partitions all-role versus Curator/Manager text, consolidates inputs/output in the role, extracts named-step authoring details and states the post-landing recorded memory-review lane.\n\nAnchor: Current source; preserved L88 property 7",
       "targets": [
         {
           "anchor": {
             "blob": "145be631612f52c363b97b82d253839028ebc907",
-            "content": "sha256:d4fb461c60892c5604a2ff0097daff3daba25f1d0b0c2a291a1f124472d7c662",
+            "content": "sha256:1b60529184401258f1c835939cabbc6e3d6598c745cb18abda44c4c6285eacb2",
             "locator": {
-              "end": 49,
+              "end": 146,
               "kind": "line_range",
-              "start": 6
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "c2d38cd0a82b9efe96a765c4512f2242c6a9d3e6",
-            "content": "sha256:5a96babfe9299f78aa12153d071535e122b336baeb2fee0e23de698ceb49292b",
-            "locator": {
-              "end": 45,
-              "kind": "line_range",
-              "start": 21
-            },
-            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "65ce2a9cb31855e3babcd27aff8cadee4339db25",
-            "content": "sha256:81076687fc3f9b94782400b92f20e1616386b7a941d8e0be96bfefc6f7eadf58",
-            "locator": {
-              "end": 109,
-              "kind": "line_range",
-              "start": 76
-            },
-            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "a5e74f1a57f73c4f392379af6fbbb06b2e82f1e7",
-            "content": "sha256:d4537745beb68ed73fba890fab4db1b43d796fa1332b0c0ce1394ec10e2d490f",
-            "locator": {
-              "end": 44,
-              "kind": "line_range",
-              "start": 8
-            },
-            "path": "skills/l-01-agent-lifecycles/reference/curator-writer-details.md"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "c2d38cd0a82b9efe96a765c4512f2242c6a9d3e6",
-            "content": "sha256:02f6355270ee6a13f643557da11cccf7067d022e7f01f054bf3554808246da5e",
-            "locator": {
-              "end": 83,
-              "kind": "line_range",
-              "start": 78
-            },
-            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "145be631612f52c363b97b82d253839028ebc907",
-            "content": "sha256:c4268316f0022b4d969e4a7085e749bcc04011b15cdc648c2b3649bd35c9ae00",
-            "locator": {
-              "end": 176,
-              "kind": "line_range",
-              "start": 172
+              "start": 117
             }
           },
           "kind": "code"
@@ -745,92 +465,16 @@
       ]
     },
     "8": {
-      "note": "Partitions all-role versus Curator/Manager text, consolidates inputs/output in the role, extracts named-step authoring details and states the post-landing recorded memory-review lane.",
+      "note": "Partitions all-role versus Curator/Manager text, consolidates inputs/output in the role, extracts named-step authoring details and states the post-landing recorded memory-review lane.\n\nAnchor: Current source; preserved L88 property 7",
       "targets": [
         {
           "anchor": {
             "blob": "145be631612f52c363b97b82d253839028ebc907",
-            "content": "sha256:7bf5147cc2f9bd8c55af0f8d7937e15d1784656895c80983e323dcd3d72f39de",
+            "content": "sha256:1b60529184401258f1c835939cabbc6e3d6598c745cb18abda44c4c6285eacb2",
             "locator": {
-              "end": 79,
+              "end": 146,
               "kind": "line_range",
-              "start": 54
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "145be631612f52c363b97b82d253839028ebc907",
-            "content": "sha256:d4fb461c60892c5604a2ff0097daff3daba25f1d0b0c2a291a1f124472d7c662",
-            "locator": {
-              "end": 49,
-              "kind": "line_range",
-              "start": 6
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "c2d38cd0a82b9efe96a765c4512f2242c6a9d3e6",
-            "content": "sha256:5a96babfe9299f78aa12153d071535e122b336baeb2fee0e23de698ceb49292b",
-            "locator": {
-              "end": 45,
-              "kind": "line_range",
-              "start": 21
-            },
-            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "65ce2a9cb31855e3babcd27aff8cadee4339db25",
-            "content": "sha256:81076687fc3f9b94782400b92f20e1616386b7a941d8e0be96bfefc6f7eadf58",
-            "locator": {
-              "end": 109,
-              "kind": "line_range",
-              "start": 76
-            },
-            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "a5e74f1a57f73c4f392379af6fbbb06b2e82f1e7",
-            "content": "sha256:d4537745beb68ed73fba890fab4db1b43d796fa1332b0c0ce1394ec10e2d490f",
-            "locator": {
-              "end": 44,
-              "kind": "line_range",
-              "start": 8
-            },
-            "path": "skills/l-01-agent-lifecycles/reference/curator-writer-details.md"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "c2d38cd0a82b9efe96a765c4512f2242c6a9d3e6",
-            "content": "sha256:02f6355270ee6a13f643557da11cccf7067d022e7f01f054bf3554808246da5e",
-            "locator": {
-              "end": 83,
-              "kind": "line_range",
-              "start": 78
-            },
-            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "145be631612f52c363b97b82d253839028ebc907",
-            "content": "sha256:c4268316f0022b4d969e4a7085e749bcc04011b15cdc648c2b3649bd35c9ae00",
-            "locator": {
-              "end": 176,
-              "kind": "line_range",
-              "start": 172
+              "start": 117
             }
           },
           "kind": "code"
@@ -838,16 +482,16 @@
       ]
     },
     "9": {
-      "note": "Partitions all-role versus Curator/Manager text, consolidates inputs/output in the role, extracts named-step authoring details and states the post-landing recorded memory-review lane.\n\nAnchor: Current source; preserved L88 property 6",
+      "note": "Partitions all-role versus Curator/Manager text, consolidates inputs/output in the role, extracts named-step authoring details and states the post-landing recorded memory-review lane.\n\nAnchor: Current source; preserved L88 property 7",
       "targets": [
         {
           "anchor": {
             "blob": "145be631612f52c363b97b82d253839028ebc907",
-            "content": "sha256:b922cafea1846d0be2be00c38cfff93f416721f2dc29030c331a6b4ef3b08276",
+            "content": "sha256:1b60529184401258f1c835939cabbc6e3d6598c745cb18abda44c4c6285eacb2",
             "locator": {
-              "end": 111,
+              "end": 146,
               "kind": "line_range",
-              "start": 74
+              "start": 117
             }
           },
           "kind": "code"

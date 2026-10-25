@@ -1,10 +1,11 @@
 {
   "path": "docs/llms.txt",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
-        "blob": "47e641e2847eb375846bd69ef40f2f149f5b9133",
-        "content": "sha256:7538177030a0f03ff8b62131621f0b484b2b72c7fb416c7887c9cd1ae4363b68",
+        "blob": "24ae5ecc1c485103ade43601a1a6b742f33be711",
+        "content": "sha256:2465e879a084250b052d460dce0d700670b3833dc21fcc9835773971c823bdd6",
         "locator": {
           "kind": "file"
         }
@@ -15,7 +16,7 @@
         "handoffEntry": "L192-W-R199-12",
         "leaf": "260928-MIK-L192"
       },
-      "rationale": "The machine-facing index caption matches the retirement page.",
+      "rationale": "docs/llms.txt at C is the machine-facing copy of the same feature text and still carries the retirement wording, so an agent reading the index is told the same thing as a human reader.",
       "role": "presentation"
     }
   ],
@@ -25,7 +26,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5b8375d35e22f89861f6e6b54a24e3fcf7961803",
+            "blob": "24ae5ecc1c485103ade43601a1a6b742f33be711",
             "content": "sha256:ee9b486b27b677e0bfd84cfd64a13ed90f249ab24e4c9d5615e04f4712f7e96a",
             "locator": {
               "end": 1,
@@ -42,7 +43,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5b8375d35e22f89861f6e6b54a24e3fcf7961803",
+            "blob": "24ae5ecc1c485103ade43601a1a6b742f33be711",
             "content": "sha256:4471d88d00d6c4bb54b28c5a0a84642d2c5fde141700d52716f19a36dfaee521",
             "locator": {
               "end": 478,
@@ -59,7 +60,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5b8375d35e22f89861f6e6b54a24e3fcf7961803",
+            "blob": "24ae5ecc1c485103ade43601a1a6b742f33be711",
             "content": "sha256:8e8d46784b43ac71b9922bb65c81149bea6f0cbd976ec360d2d21b5b919203bf",
             "locator": {
               "end": 33,
@@ -76,7 +77,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5b8375d35e22f89861f6e6b54a24e3fcf7961803",
+            "blob": "24ae5ecc1c485103ade43601a1a6b742f33be711",
             "content": "sha256:2824265b587c4a40ec4d5a5dc92350d91fa19fe15b5ab43e2eb073355c3c6f84",
             "locator": {
               "end": 78,
@@ -93,7 +94,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5b8375d35e22f89861f6e6b54a24e3fcf7961803",
+            "blob": "24ae5ecc1c485103ade43601a1a6b742f33be711",
             "content": "sha256:766f3196063e4e1a9cd8bfd24537188b18bb65907632c0051964f82cae91dbd2",
             "locator": {
               "end": 220,
@@ -110,7 +111,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5b8375d35e22f89861f6e6b54a24e3fcf7961803",
+            "blob": "24ae5ecc1c485103ade43601a1a6b742f33be711",
             "content": "sha256:99eb37adddcf99eebcd5217f97af1a6d28fe8ad9c00816681388628a9c1030d7",
             "locator": {
               "end": 350,
@@ -127,7 +128,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5b8375d35e22f89861f6e6b54a24e3fcf7961803",
+            "blob": "24ae5ecc1c485103ade43601a1a6b742f33be711",
             "content": "sha256:71796918acdd434aa0feb6687cfbf1d16d3a3aa174e7c3c87ada33532278c3f1",
             "locator": {
               "end": 407,
@@ -144,7 +145,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5b8375d35e22f89861f6e6b54a24e3fcf7961803",
+            "blob": "24ae5ecc1c485103ade43601a1a6b742f33be711",
             "content": "sha256:79e5ce7d24272aff523cc00607bc931381eb1ec3d9955cca662dbf47daca35db",
             "locator": {
               "end": 423,
@@ -161,7 +162,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5b8375d35e22f89861f6e6b54a24e3fcf7961803",
+            "blob": "24ae5ecc1c485103ade43601a1a6b742f33be711",
             "content": "sha256:2ab26ae67e99c02b6183948272a21ddc06b712ecc029748be1bf01446ba513cd",
             "locator": {
               "end": 294,
@@ -178,7 +179,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5b8375d35e22f89861f6e6b54a24e3fcf7961803",
+            "blob": "24ae5ecc1c485103ade43601a1a6b742f33be711",
             "content": "sha256:6fe28ae1575865ec66f03e483e1255c0bbcfe9a6bcf0356f551bffdbc1d04a7a",
             "locator": {
               "end": 453,

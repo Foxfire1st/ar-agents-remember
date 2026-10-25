@@ -3,15 +3,14 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The projection-side pruning policy consumes these primitives.",
+      "note": "The projection-side pruning policy prunes only after a complete native branch census, with its own snapshot reader and removal; worktree cleanup and the onboarding drift summary and report take these path and removal primitives.\n\nAnchor: `prune_orphaned_drift_snapshots`",
       "targets": [
         {
           "anchor": {
-            "blob": "961e017d2fec8aa78f12d63a50c578f900693806",
-            "content": "sha256:2f8d306e049220a2aa893df0c9dd64963eaf9559cdca1e78d2069128a07eb1f6",
+            "blob": "dddcce3e33bed7ffbd8bec7c711954dc794d4e8d",
+            "content": "sha256:540e66199e6c2b997835cc079421ad4395816766d16dfe5c6a7ca12e848bd2b7",
             "locator": {
-              "kind": "symbol",
-              "name": "prune_orphaned_drift_snapshots"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/serving/projections/drift_snapshots.py"
           },

@@ -14,10 +14,14 @@ The native retirement archives before `_record_retirement` writes the launch rec
 
 ## Evidence
 
+
 - The native entry checks original-starter authority before idempotent success or archive. [1]
+
 
 - Unknown and ambiguous native targets refuse before retirement. [2]
 
+
 - Host archive precedes receipt recording; failure is reported rather than rounded up. [3]
+
 
 **L184 — INV-ECNV2S.** The retirement route is where the refusal is raised, so the naming of the subagent belongs here. The obligation this leaf records for this place is stated in the invariant named here; the card's earlier account of this file stands, and this paragraph adds what the change made true.

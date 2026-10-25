@@ -112,20 +112,34 @@ No configured domain documentation could be checked.
 ### Repo-Internal References
 
 - The unit marker, the fixture, the seed and the public-seam driver every case uses. [1]
+
 - The two readers that let a case name a record rather than a position. [2]
+
+
 - **The revised statement as removal beside unrelated addition, and the divergent revision groups an identity seed retains per side.** [3]
+
+
 - **The source-only change: `record_field_changed=False` with `source_observation_changed=True`, on identical recorded anchors.** [4]
+
 - The statement-only change that still returns the attributed code. [5]
 - **The unchanged sibling returned on both sides rather than omitted, with one item each way across the record/source split.** [6]
 - **The packet's first non-conforming example, and the node `M1`/`M2` kill.** [7]
+
 - **The explicit per-side selectors addressing two different exact revisions of one identity.** [8]
-- **The present-outside-versus-absent distinction side by side.** [9]
+
+
+- The present-outside-versus-absent distinction asserted side by side, and the coverage decision's two selection- and probe-based rules -- another exact revision selected, or the record held by the other side's tables -- with no authored edge participating. [9]
+
+
 - **The filter narrowing the display and never the comparison, and the filter bound into the comparison identity.** [10]
+
 - **`M26`'s node: the limitation validator, whose failing assertion on the frozen file is at `:658`.** [11]
 - **`M25`'s node: the truncated comparison, whose failing assertion on the frozen file is at `:716`.** [12]
 - The no-trees expansion that claims no change set. [13]
+
 - The fixture these cases run on. [14]
-- **The unit-lane row this module occupies, and the governed support artifact it consumes.** [15]
+
+> Retained earlier citation wording: - **The unit-lane row this module occupies, and the governed support artifact it consumes.** [15]
 
 ### Cross-Repo References
 
@@ -133,4 +147,9 @@ No cross-repository behaviour is exercised here. The fixture's Git trees are tem
 the comparison's source resolution is driven through the fixture's own committed trees.
 
 No configured cross-repository evidence is claimed.
+> Retained earlier citation wording: - **The unit-lane row this module occupies, and the governed support artifact it consumes.** [16]
+
+- **The unit-lane row this module occupies, and the governed support artifact it consumes.** [15]
+
+
 - **The unit-lane row this module occupies, and the governed support artifact it consumes.** [16]

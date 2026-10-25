@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/providers/metrics.py",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
@@ -55,12 +56,12 @@
       ]
     },
     "3": {
-      "note": "The serving daemon's lifespan runs the 30s sampling loop into this store.\n\nAnchor: \"async def _metrics_loop(config: McpRuntimeConfig\"",
+      "note": "The serving daemon's lifespan runs the 30s sampling loop into this store.",
       "targets": [
         {
           "anchor": {
-            "blob": "d39e4bbddf8ce6294103fcfb45ac4757adc1d5c6",
-            "content": "sha256:2e09a4f75ec282ec2e3357dae728a08d2ac14b514ac51b4a02189c39d0f17058",
+            "blob": "fb417e233674d6d9e471a591b5c9c081da7cf2b6",
+            "content": "sha256:91c292c84f0a7901d8e121d05862aca24e61feb10f88b17e93771b2826178e13",
             "locator": {
               "end": 161,
               "kind": "line_range",

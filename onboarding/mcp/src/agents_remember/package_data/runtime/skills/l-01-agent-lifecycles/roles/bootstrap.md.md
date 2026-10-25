@@ -28,7 +28,9 @@ Source inspection supplies no new test, native-host, whole-build, landing or mem
 
 ## Current source contract evidence
 
+
 - Current synced source supports the qualified account; declarations, mirrors and fixture assertions are not executed acceptance. [16]
+
 
 
 ## Synced current-source qualification
@@ -38,7 +40,9 @@ The read surface names context_packet, server_info and read_ar_files; resolve_co
 The source-owner repair restored the explicit workspace.scratchRoot temporary-file boundary, with report/evidence collection separately owned. It is present in canonical and generated copies; the earlier missing-paragraph observation is superseded, not a removal authority or a live launch measurement.
 
 
-- The packaged Bootstrap copy retains the canonical naming-reader retirement and forbids retire_child outside setup powers. \[17] [17]
+
+- The packaged Bootstrap copy retains the canonical naming-reader retirement and forbids retire_child outside setup powers. [17]
+
 
 ## Historical original card — preserved, not the current operative account
 
@@ -162,19 +166,35 @@ No relevant documentation found after checking live sources.
 ### Repo-Internal References
 
 - Canonical source this package-data copy is sync-propagated from. [1]
+
 - The role declares no inherited core blocks — it is a free agent, not a task seat, and is started by a call. [2]
+
+
 - The role's start is a call rather than a dispatch: nothing dispatches this agent, and nothing names its report path. [3]
+
+
 - The seat sits outside the task-dispatch transaction as its shape: a task document, gate, packet, or compiled brief is not an input, and its absence is not an error. [4]
+
+
 - The role's instructions are the capsule itself — this page plus the bootstrap operation — and its brief is not a brief. [5]
+
+
 - The permitted-write surface, the stop-and-report cases, and the report's own inline shape, which no template file owns. [6]
+
 - The operation block the role carries: workflow, failure inventory and authority gates. [7]
 - The manifest entry declaring the free-agent altitude, its five tools and its three operations. [8]
+
 - The frozen vocabulary extension that publishes the role and its operation. [11]
-- The shipped checks: free-agent shape, taskless admission, no altitude, and the manifest declaration. [12]
+
+
+- The shipped source checks publish bootstrap as a free-agent role while excluding it from sprint/master/leaf role sets, inspect the source declarations for the same exclusion, and require a nonblank manifest altitude outside those task altitudes. These three cases do not assert a taskless launch/admission route. [12]
+
 
 - The current corpus check explicitly supersedes fixed section order and minimum length with concise, well-formed, self-contained source checks. [13]
 
+
 - The generated copies this file is one of, proved current by the generator's own check. [14]
+
 
 ### Cross-Repo References
 

@@ -33,7 +33,10 @@ No Domain Documentation source is configured for this slice.
 ### Repo-Internal References
 
 
+
 - `test_counts_statement_and_guarantee_heads_and_keeps_other_changes_apart` supplies the current fixture or assertion described above. [9]
+
+
 
 
 
@@ -43,22 +46,46 @@ No Domain Documentation source is configured for this slice.
 - `test_missing_knowledge_is_unavailable_with_its_refusal_never_zero` supplies the current fixture or assertion described above. [12]
 
 
+
+
 - The route test verifies counted and unavailable bodies with HTTP 200 and an unwired process with 503; the removed partial-state measurement is not exercised. [13]
+
 
 
 - Fixture construction imports test-only row constructors; it does not call the retired canonical writer. [14]
 
 
+
 - Test-only RowStore mutates text-tree fixture rows and rebuilds their derived index without a shipped production admission plane. [15]
 
 
+
+
 - _shared_base carries the directory used to build independent before/after sides from shared specifications. [16]
+
+
 - Added/revised/removed as +/−, relationship-only as typed counts. [17]
+
+
 - A shared revised member counts once per side. [18]
+
+
 - Record-only successors count; a same-guarantee member change stays typed. [19]
+
+
 - Absent knowledge is `unavailable`, never zero. [21]
+
+
 - The route test verifies counted and unavailable bodies with HTTP 200 and an unwired process with 503; the removed partial-state measurement is not exercised. [22]
-- The evidence-lane catalogue registers test_review_intent_summary.py. [23]
+
+
+
+
+
+> Retained earlier citation wording: - The lane registration. Source caption: `test_review_intent_summary` [23]
+
+
+
 
 - A revised statement shared by two families counts once on each side without a membership-only change. [10]
 - Record-only status/version changes count as revisions; a same-guarantee member change remains membership-only. The removed partial-summary helper is not assertion evidence for this property. [11]
@@ -69,3 +96,5 @@ No Domain Documentation source is configured for this slice.
 The route fixture's summary callback accepts the optional comparison-number argument before the read observer. Its counted and absent requests omit a number and select canned answers by leaf. The existing 200 counted/unavailable and 503 unwired assertions are unchanged; this callback adaptation supplies no separate numbered-comparison selection proof.
 
 - The comparison-shaped callback retains counted/unavailable 200 and unwired 503 assertions. [25]
+
+- The lane registration. Source caption: `test_review_intent_summary` [23]

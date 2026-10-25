@@ -76,12 +76,38 @@
       "targets": [
         {
           "anchor": {
-            "blob": "11ba98ff63f4a4815985ac51e2c0c7b5a48556a4",
+            "blob": "102c4550ab6429f44c8fb543d1d0662de66a1b8c",
+            "content": "sha256:7cd6eca5c0e08d858b3f7c7a4643016321862cf75c45f6c984a8d39543a1a4ff",
+            "locator": {
+              "end": 157,
+              "kind": "line_range",
+              "start": 157
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "102c4550ab6429f44c8fb543d1d0662de66a1b8c",
             "content": "sha256:2625134fcfb83406e5b418d78ad93206a4edd00e8b5bd448da21ece7e92e0138",
             "locator": {
-              "end": 170,
+              "end": 173,
               "kind": "line_range",
-              "start": 170
+              "start": 173
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "102c4550ab6429f44c8fb543d1d0662de66a1b8c",
+            "content": "sha256:5286bbe75886238f9a0f6229adf74bc6c4da36b9031038c3fa9433b955483e13",
+            "locator": {
+              "end": 142,
+              "kind": "line_range",
+              "start": 142
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -151,7 +177,7 @@
       ]
     },
     "14": {
-      "note": "Stored closed comparison-base legacy items parse, validate and round-trip unchanged. [22]",
+      "note": "Stored closed comparison-base legacy items parse, validate and round-trip unchanged. \\",
       "targets": [
         {
           "anchor": {
@@ -167,7 +193,7 @@
       ]
     },
     "15": {
-      "note": "Item tokens are judged only in the files the re-anchor check reads: five file/base/route shapes. [23]",
+      "note": "Item tokens are judged only in the files the re-anchor check reads: five file/base/route shapes. \\",
       "targets": [
         {
           "anchor": {
@@ -183,12 +209,22 @@
       ]
     },
     "2": {
-      "note": "File shape, owner and uniqueness.",
+      "note": "File shape, owner and uniqueness.\n\nAnchor: `test_file_shape_owner_and_row_uniqueness_are_enforced`",
       "targets": [
         {
           "anchor": {
-            "blob": "9a5bc7b26670aada8eeea7d89ca9a4c58ef634f4",
-            "content": "sha256:86548a37579d7f5f68203c6416188e2614906e615b77da5a50fe7d8a9a4982af",
+            "blob": "f3ea385c073b1b0ac82157d901dc5a333c2b7d76",
+            "content": "sha256:80099bd1895ac78f78af99defb2566178b0475eb3e251b105839ab62ea68e626",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f3ea385c073b1b0ac82157d901dc5a333c2b7d76",
+            "content": "sha256:d322e562e45f7898083e943e51f7cb2a7f00c2ec3fba081467cfe5c11e5506c9",
             "locator": {
               "kind": "symbol",
               "name": "test_file_shape_owner_and_row_uniqueness_are_enforced"
@@ -256,12 +292,22 @@
       ]
     },
     "5": {
-      "note": "Family rows.",
+      "note": "Family rows.\n\nAnchor: `test_family_row_dispositions_and_examined_members`",
       "targets": [
         {
           "anchor": {
-            "blob": "8370b1a402d5622a06e1b30f950330c04fe69c54",
-            "content": "sha256:f0bb710c4af7ff2a0e92f96a74df6c2b2c7ba20a51a50e631f66684529edde35",
+            "blob": "f3ea385c073b1b0ac82157d901dc5a333c2b7d76",
+            "content": "sha256:80099bd1895ac78f78af99defb2566178b0475eb3e251b105839ab62ea68e626",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f3ea385c073b1b0ac82157d901dc5a333c2b7d76",
+            "content": "sha256:5a1fe6d3b0cad1619b4fb2facb8483a8c36255275a9f3ddbe85db6be2f62d677",
             "locator": {
               "kind": "symbol",
               "name": "test_family_row_dispositions_and_examined_members"

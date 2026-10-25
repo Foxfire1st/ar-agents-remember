@@ -1,5 +1,6 @@
 {
   "path": "mcp/tests/test_terminal_blocker_reasons.py",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
@@ -83,8 +84,18 @@
       ]
     },
     "14": {
-      "note": "The landed fixture and the public calls the whole-tool cases drive.",
+      "note": "The landed fixture and the public calls the whole-tool cases drive.\n\nAnchor: `_landed_leaf` `_landed_leaf_config` `_landed_leaf_document` `_finalize`",
       "targets": [
+        {
+          "anchor": {
+            "blob": "92648ac628a92b6576d03fa288851f25c0d4876c",
+            "content": "sha256:a597f33e530c15659f6dfd7f7d422799d8992abcacef8b04e558e5fde41dfbcf",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        },
         {
           "anchor": {
             "blob": "92648ac628a92b6576d03fa288851f25c0d4876c",
@@ -98,8 +109,8 @@
         },
         {
           "anchor": {
-            "blob": "98c620167fdb936e67188e92cb3354f3d91d3f42",
-            "content": "sha256:037d393cc19865f992e5635efc601ff6fca6c47e92eb5d7d1f251c9a09ed66de",
+            "blob": "92648ac628a92b6576d03fa288851f25c0d4876c",
+            "content": "sha256:fb48a76e166387c83128805390f4c481147ddd7e2db41f5c251fe79cd586bb7e",
             "locator": {
               "kind": "symbol",
               "name": "_landed_leaf_config"
@@ -132,8 +143,18 @@
       ]
     },
     "15": {
-      "note": "The service rebinding and the citation-guard double the whole-tool cases run against.",
+      "note": "The service rebinding and the citation-guard double the whole-tool cases run against.\n\nAnchor: `bound_worktree_services` `_NoManagedCitationCache`",
       "targets": [
+        {
+          "anchor": {
+            "blob": "92648ac628a92b6576d03fa288851f25c0d4876c",
+            "content": "sha256:a597f33e530c15659f6dfd7f7d422799d8992abcacef8b04e558e5fde41dfbcf",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        },
         {
           "anchor": {
             "blob": "92648ac628a92b6576d03fa288851f25c0d4876c",
@@ -147,8 +168,8 @@
         },
         {
           "anchor": {
-            "blob": "6b51af08c017f9ead395326bd7fee6fefeac4e9f",
-            "content": "sha256:e0438be6f703a53004e80efab2ac0387474a282bb375e5a1fb041d4b017573b5",
+            "blob": "92648ac628a92b6576d03fa288851f25c0d4876c",
+            "content": "sha256:1e2ca2291c3e156561001938afa139bbd2c34a8b278152778f54ed4c0ddd226d",
             "locator": {
               "kind": "symbol",
               "name": "_NoManagedCitationCache"
@@ -255,8 +276,30 @@
       ]
     },
     "20": {
-      "note": "The port the L6 teardown answer is substituted on, and the services builder the fixture rebinds.",
+      "note": "The port the L6 teardown answer is substituted on, and the services builder the fixture rebinds.\n\nAnchor: `ProviderLifecyclePort` `build_default_worktree_services`",
       "targets": [
+        {
+          "anchor": {
+            "blob": "04542ceda7ef4559f29f3c1241a1d65ea7972a8f",
+            "content": "sha256:2665ec8d8057f17cb77be87f4eb3f548215b155e7de4e990a0c253336cfbc4d1",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/worktrees/services.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9cfe5fc779f3234e5cf2d83eee7be9897b4668cb",
+            "content": "sha256:a219236a73954634734073e091b79e55d120b08e493a482435b84adb37cc3092",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/worktree_services.py"
+          },
+          "kind": "code"
+        },
         {
           "anchor": {
             "blob": "04542ceda7ef4559f29f3c1241a1d65ea7972a8f",
@@ -271,8 +314,8 @@
         },
         {
           "anchor": {
-            "blob": "ee679e2f089eb160dd19292309619814bc037124",
-            "content": "sha256:c50b90ee75f0791f8982bfa60c92c574fd2a3d011b518ab667d2a35f5fd057fb",
+            "blob": "9cfe5fc779f3234e5cf2d83eee7be9897b4668cb",
+            "content": "sha256:f1ac9e4c9ca53c18f1cb7439db85510df5446e1e4a2a18e12523d8e4fb0cd1a8",
             "locator": {
               "kind": "symbol",
               "name": "build_default_worktree_services"
@@ -284,12 +327,23 @@
       ]
     },
     "21": {
-      "note": "The public terminal route the whole-tool cases call.",
+      "note": "The public terminal route the whole-tool cases call.\n\nAnchor: `lifecycle_finalize_task_tool`",
       "targets": [
         {
           "anchor": {
-            "blob": "dfa2872ad0a9789182edbd48e33d561d9929e0ba",
-            "content": "sha256:04d588697a60102cb96b6cf63363498e99e180b6e2eb93a23e493ae0ff667bbb",
+            "blob": "f70e3d124e543009c5876c7472ccdb85120ff60c",
+            "content": "sha256:bbb78251410816eadf042a2a830aa80b49cba552da4ddedc15da284b6fb36888",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/worktree_tools.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f70e3d124e543009c5876c7472ccdb85120ff60c",
+            "content": "sha256:4e8196e941fb43e63fb6854a5666176542e8a6ae1c28085ce979fa1f060ee59d",
             "locator": {
               "kind": "symbol",
               "name": "lifecycle_finalize_task_tool"
@@ -301,12 +355,34 @@
       ]
     },
     "22": {
-      "note": "The landing fixture and the public configuration the whole-tool cases build on.",
+      "note": "The landing fixture and the public configuration the whole-tool cases build on.\n\nAnchor: `_authority_fixture` `_closed_external_leaf_worktrees` `_public_config`",
       "targets": [
         {
           "anchor": {
-            "blob": "cadd35406295cd69abbc8b3421a95b34b800a923",
-            "content": "sha256:81fe9c58ed01adf62e4575fd28fd8e920a7081a780c560226b8bc9e3515cf174",
+            "blob": "c5d65d4784a7f3f6f66c3e2e40f0a70bd6cebcfe",
+            "content": "sha256:76c0424bf11aec97a0ee9c6038dfc300a65ef31a19e041bd0a418255e6ae9d35",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/integration_branch_authority_test_support.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8a2d91358f72fe0c19192d61f3e1df91449d7061",
+            "content": "sha256:5a80340676011dfb942858443d99c5acd6bd593b04e383422aa5bf5436df2390",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_transaction_only_worktree_delivery.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "c5d65d4784a7f3f6f66c3e2e40f0a70bd6cebcfe",
+            "content": "sha256:1b0e14efb0ce8099a1d12cfa226a6526329fbe743227ca4cdb7db15b99a2e56f",
             "locator": {
               "kind": "symbol",
               "name": "_authority_fixture"
@@ -317,8 +393,8 @@
         },
         {
           "anchor": {
-            "blob": "dfe4805c633116b9b893b93fcaefc5567196737e",
-            "content": "sha256:8f527dcea9f8ae2d26df0a019823d846d30382e6eb8fcffd641e12c976b34e68",
+            "blob": "c5d65d4784a7f3f6f66c3e2e40f0a70bd6cebcfe",
+            "content": "sha256:72074ef59564f7876078c9cccdd5397989718b3d2f0741923ae1683aa2e6c5cd",
             "locator": {
               "kind": "symbol",
               "name": "_closed_external_leaf_worktrees"
@@ -326,32 +402,20 @@
             "path": "mcp/tests/integration_branch_authority_test_support.py"
           },
           "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "3cb51d6a619167b107b8c8836f89bd51831af1ed",
-            "content": "sha256:eeec7be4db988721c953a7e363735d77309cbced45f956c0c3e1b7bbf3e21f9d",
-            "locator": {
-              "kind": "symbol",
-              "name": "_public_config"
-            },
-            "path": "mcp/tests/test_transaction_only_worktree_delivery.py"
-          },
-          "kind": "test"
         }
       ]
     },
     "23": {
-      "note": "The integration lane row the fail-closed manifest requires.\n\nAnchor: \"integration = [\"",
+      "note": "The integration lane declares test_terminal_blocker_reasons.py; membership is not execution evidence.",
       "targets": [
         {
           "anchor": {
-            "blob": "11ba98ff63f4a4815985ac51e2c0c7b5a48556a4",
-            "content": "sha256:313ed0aea69f94d6889c191e0ef012ae79630aae743f75e7373d0b3122379659",
+            "blob": "102c4550ab6429f44c8fb543d1d0662de66a1b8c",
+            "content": "sha256:0e4a3c6eb5c62a89d5592e86f0532240e69c3a84489994daa649ab37b1751999",
             "locator": {
-              "end": 506,
+              "end": 593,
               "kind": "line_range",
-              "start": 506
+              "start": 593
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -360,16 +424,14 @@
       ]
     },
     "24": {
-      "note": "The landing fixture and the public configuration the whole-tool cases build on.\n\nAnchor: \"def _authority_fixture(\"; \"def _closed_external_leaf_worktrees(\"; \"def _public_config(\"",
+      "note": "The landing fixture and the public configuration the whole-tool cases build on.\n\nAnchor: `_authority_fixture` `_closed_external_leaf_worktrees` `_public_config`",
       "targets": [
         {
           "anchor": {
-            "blob": "dfe4805c633116b9b893b93fcaefc5567196737e",
-            "content": "sha256:8f527dcea9f8ae2d26df0a019823d846d30382e6eb8fcffd641e12c976b34e68",
+            "blob": "c5d65d4784a7f3f6f66c3e2e40f0a70bd6cebcfe",
+            "content": "sha256:76c0424bf11aec97a0ee9c6038dfc300a65ef31a19e041bd0a418255e6ae9d35",
             "locator": {
-              "end": 91,
-              "kind": "line_range",
-              "start": 48
+              "kind": "file"
             },
             "path": "mcp/tests/integration_branch_authority_test_support.py"
           },
@@ -377,57 +439,19 @@
         },
         {
           "anchor": {
-            "blob": "cadd35406295cd69abbc8b3421a95b34b800a923",
-            "content": "sha256:0914398b103f25bd04817aa9f92f84bdd9c6f95f36a2d12edf6aed7ff3332af9",
+            "blob": "8a2d91358f72fe0c19192d61f3e1df91449d7061",
+            "content": "sha256:5a80340676011dfb942858443d99c5acd6bd593b04e383422aa5bf5436df2390",
             "locator": {
-              "end": 296,
-              "kind": "line_range",
-              "start": 129
-            },
-            "path": "mcp/tests/integration_branch_authority_test_support.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "3cb51d6a619167b107b8c8836f89bd51831af1ed",
-            "content": "sha256:eeec7be4db988721c953a7e363735d77309cbced45f956c0c3e1b7bbf3e21f9d",
-            "locator": {
-              "end": 88,
-              "kind": "line_range",
-              "start": 64
+              "kind": "file"
             },
             "path": "mcp/tests/test_transaction_only_worktree_delivery.py"
           },
           "kind": "test"
-        }
-      ]
-    },
-    "25": {
-      "note": "The integration lane row the fail-closed manifest requires.\n\nAnchor: \"integration = [\"",
-      "targets": [
+        },
         {
           "anchor": {
-            "blob": "11ba98ff63f4a4815985ac51e2c0c7b5a48556a4",
-            "content": "sha256:313ed0aea69f94d6889c191e0ef012ae79630aae743f75e7373d0b3122379659",
-            "locator": {
-              "end": 506,
-              "kind": "line_range",
-              "start": 506
-            },
-            "path": "mcp/tests/test-evidence-lanes.toml"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "27": {
-      "note": "The landing world each whole-tool case builds is a real temporary repository pair.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "cadd35406295cd69abbc8b3421a95b34b800a923",
-            "content": "sha256:81fe9c58ed01adf62e4575fd28fd8e920a7081a780c560226b8bc9e3515cf174",
+            "blob": "c5d65d4784a7f3f6f66c3e2e40f0a70bd6cebcfe",
+            "content": "sha256:1b0e14efb0ce8099a1d12cfa226a6526329fbe743227ca4cdb7db15b99a2e56f",
             "locator": {
               "kind": "symbol",
               "name": "_authority_fixture"
@@ -438,8 +462,66 @@
         },
         {
           "anchor": {
-            "blob": "dfe4805c633116b9b893b93fcaefc5567196737e",
-            "content": "sha256:8f527dcea9f8ae2d26df0a019823d846d30382e6eb8fcffd641e12c976b34e68",
+            "blob": "c5d65d4784a7f3f6f66c3e2e40f0a70bd6cebcfe",
+            "content": "sha256:72074ef59564f7876078c9cccdd5397989718b3d2f0741923ae1683aa2e6c5cd",
+            "locator": {
+              "kind": "symbol",
+              "name": "_closed_external_leaf_worktrees"
+            },
+            "path": "mcp/tests/integration_branch_authority_test_support.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "25": {
+      "note": "The lane manifest declares test_terminal_blocker_reasons.py in integration. Membership selects evidence and establishes no invocation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "102c4550ab6429f44c8fb543d1d0662de66a1b8c",
+            "content": "sha256:0e4a3c6eb5c62a89d5592e86f0532240e69c3a84489994daa649ab37b1751999",
+            "locator": {
+              "end": 593,
+              "kind": "line_range",
+              "start": 593
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "27": {
+      "note": "The landing world each whole-tool case builds is a real temporary repository pair.\n\nAnchor: `_authority_fixture` `_closed_external_leaf_worktrees`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c5d65d4784a7f3f6f66c3e2e40f0a70bd6cebcfe",
+            "content": "sha256:76c0424bf11aec97a0ee9c6038dfc300a65ef31a19e041bd0a418255e6ae9d35",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/integration_branch_authority_test_support.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "c5d65d4784a7f3f6f66c3e2e40f0a70bd6cebcfe",
+            "content": "sha256:1b0e14efb0ce8099a1d12cfa226a6526329fbe743227ca4cdb7db15b99a2e56f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_authority_fixture"
+            },
+            "path": "mcp/tests/integration_branch_authority_test_support.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "c5d65d4784a7f3f6f66c3e2e40f0a70bd6cebcfe",
+            "content": "sha256:72074ef59564f7876078c9cccdd5397989718b3d2f0741923ae1683aa2e6c5cd",
             "locator": {
               "kind": "symbol",
               "name": "_closed_external_leaf_worktrees"
@@ -455,8 +537,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a5f192eab30c0690503cac2428a24f5023624f4c",
-            "content": "sha256:876a387f9a0d6904fef7bd7fadd03506ddedbafbb89433f4a19cc847e45a27a8",
+            "blob": "82360cec3b9a90193f4e9d7dbdf68cf5340dabb6",
+            "content": "sha256:0e731958b83fac41f0f763efd42be7ae979cbc685606300b198461b8fc42a12b",
             "locator": {
               "end": 176,
               "kind": "line_range",
@@ -517,7 +599,7 @@
       ]
     },
     "6": {
-      "note": "Public abandon preview is non-mutating and does not invent a removal failure.",
+      "note": "Public abandon preview is non-mutating and does not invent a removal failure.\n\nAnchor: \"would-abandon\"",
       "targets": [
         {
           "anchor": {

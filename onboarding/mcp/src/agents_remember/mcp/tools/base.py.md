@@ -75,11 +75,19 @@ No Domain Documentation source is configured.
 
 ### Repo-Internal References
 
+
 - The advertised tuple names the structural public surface, and is now defined in the `models` leaf. [1]
+
 - The adapter re-exports the roster through `__all__` instead of declaring its own copy. [2]
+
 - The live registration is compared to this tuple, in order, by the inventory suite. [3]
+
+
 - The shared adapter finalizes one application result. [4]
+
+
 - Registrars are the only published declaration family. [5]
+
 
 ### Cross-Repo References
 
@@ -99,7 +107,9 @@ The current source seams include the module-level vocabulary. The public schema/
 - The shared protocol vocabulary declares stdio transport. [6]
 - The public tool-name tuple's one definition, moved out of this adapter by 260831-LOCR-L32. [7]
 - The reserved-tool tuple is explicitly empty. [8]
+
 - The protocol adapter delegates response completion to the application boundary. [9]
+
 
 ## 260821-CLIVE Public Tool Census
 

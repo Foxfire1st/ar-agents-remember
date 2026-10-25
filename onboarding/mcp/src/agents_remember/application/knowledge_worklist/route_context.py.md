@@ -22,4 +22,5 @@ This source account is not a test result or an execution, permission, CODE/MEMOR
 
 ## Evidence
 
+
 - Attaches mechanical governing-family route context using the worklist’s already parsed candidate knowledge. The runtime selector import avoids the leaf/currentness/worklist import cycle. Route context supplies retrieval information; it must not alter worklist item identity, trigger reach or acceptance. [1]

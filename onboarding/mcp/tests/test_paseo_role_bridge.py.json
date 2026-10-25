@@ -22,12 +22,12 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The scoped current source carries the module/document behavior described above.",
+      "note": "Send eligibility, steering versus holding, attachment payloads, waits and parent naming run against the real script.",
       "targets": [
         {
           "anchor": {
-            "blob": "73cb89aefb03968fedec229be50c50c6522eb984",
-            "content": "sha256:0507b6d04258071b10fbcb9ca68f446746dff7ca3cd0887ee30982dd19d42183",
+            "blob": "ca85a1ad170b08f1bfb5282712bfa51a969ffab3",
+            "content": "sha256:5038d8d3afe7e6e9aec4a2ed3e4fb67bf7596b7852aa218dd6bb5a162d316c4d",
             "locator": {
               "kind": "file"
             }

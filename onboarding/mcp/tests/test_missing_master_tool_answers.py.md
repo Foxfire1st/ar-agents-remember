@@ -20,7 +20,11 @@ Refusals about a master reach the operator through the public tools with the rep
 
 ## Evidence
 
+
 - A sprint that commands a master archived by hand is answered by curator_coherence and closeout_queue with the master, the archive location and the retire operation. [1]
+
+
 - Every other topology failure stays a bounded record, and a recorded worktree group of another layout does not refuse a retirement. [2]
+
 
 - The long repair guidance control uses the staying closeout_queue application/validation boundary. Other registered adapter calls remain adapter controls; application facts and concise delivery are not conflated. [3]

@@ -6,14 +6,34 @@
 
 ## Current source account — Standalone validator input and observation contract
 
+The help table includes `R198.1-reference-anchor`: code/test anchors must name the paired blob and resolve there to recorded content. This rule refuses publication and full quality, with writer and sync-merge reporting dispositions. The table describes eleven decided rules and six writer-reported refusing rules; arguments and exit behavior remain as described below.
+
 The standalone command accepts optional --coordination-root for requirement endpoint observations. It judges every authored record as new without --base and exposes that fact in text/JSON notes. A working code checkout is read through code_tree_from_working_directory, while --code-commit uses the named Git tree. Endpoint observations never themselves refuse; validator refusal still decides exit1, unreadable inputs exit2, and passing or out-of-scope inputs exit0. No command execution is claimed here.
 
 This source-bound correction covers the described L54 seams only. Unrelated inherited prose and references below are preserved, not recertified; no installed behavior, test execution, permission, landing or MEMORY acceptance is inferred.
 
 ## Current evidence
 
-- Optional root and baseless notes are explicit CLI output, not validator task-plane mutation. \[7] [7]
-- The code working-directory reader, validation and optional endpoint observation are composed before the exit decision. \[8] [8]
+- Optional root and baseless notes are explicit CLI output, not validator task-plane mutation. [7]
+- The code working-directory reader, validation and optional endpoint observation are composed before the exit decision. [8]
+
+- The argument parser keeps RawDescriptionHelpFormatter so the rule table's line breaks survive, and its epilog names each decided rule with the route that refuses it, adding R198.1-reference-anchor. [1]
+
+
+- Printing the report or its JSON. [2]
+
+
+- Inputs, the out-of-scope answer and the exit statuses. [3]
+
+
+- Registration in the umbrella. [4]
+
+
+- Current source assertions distinguish the fixture pass with `--base` (carried legacy report) from the baseless malformed-marker JSON refusal (both marker and legacy debt refuse); no command was run for this account. [5]
+
+
+- Current source delta inspected statically: Add the preserved help-table policy and correct the stale blanket fixture-pass caption while retaining arguments, read-only/no-skip behavior and exit codes. [6]
+
 
 ## Inherited source-epoch account (non-operative)
 

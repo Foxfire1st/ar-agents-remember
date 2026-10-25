@@ -49,10 +49,19 @@ The implementation and explicit lane declaration are the load-bearing same-repos
 
 - The hook narrows executable items after canonical collection and distinguishes passing zero-body collection from an absent path. [1]
 - The suite covers narrow selection, zero-body collection, and all configured-path refusal shapes. [2]
-- The suite has explicit unit-regression membership. [3]
+
+
+
+
+> Retained earlier citation wording: - The suite has explicit unit-regression membership. Source caption: "mcp/tests/test_retry_selection.py" [3]
+
+
+
 
 ### Cross-Repo References
 
 No meaningful cross-repository boundary is involved.
 
 Temporary paths and mocks remain local to the test process.
+
+- The suite has explicit unit-regression membership. Source caption: "mcp/tests/test_retry_selection.py" [3]

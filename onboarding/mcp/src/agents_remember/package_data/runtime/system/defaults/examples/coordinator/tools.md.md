@@ -30,7 +30,9 @@ managed configuration because an old command shape appears in this template.
 
 ## Current evidence
 
-- Current instruction contract and retained-read replacement, not historical provider/tool examples. [6]
+
+- The coordinator-level tools example: global commands, the MCP status and install entry points, the managed provider lifecycle, and the containment checks that keep provider output as discovery evidence. [6]
+
 
 ## Historical superseded body (non-operative)
 
@@ -105,7 +107,9 @@ No relevant external documentation found.
 
 ### Repo-Internal References
 
+
 - The coordinator tools example separates global commands from repository-specific checks, branch workflow, and code quality tools. [1]
+
 - The provider command section records MCP runtime install, `grepai_search`, aggregate provider status/watcher flows, and CGC bounded `run -- ...` plus long-running `visualize --port 8000` command shapes. [2]
 - The provider notes say GrepAI lifecycle commands expand `grepai-memory` workspace roots, ensure Docker network/PostgreSQL/Ollama health, bind-mount and index the live memory roots in place, write provider-owned workspace config/state, and use the Docker runner container instead of host binaries; CGC lifecycle commands expand the configured `roots` array, ensure FalkorDB Docker, start/stop every configured root unless `--repo-id` narrows it, pass post-`--` arguments to native CGC for bounded queries, and expose the visualizer as a separate long-running lifecycle command. [3]
 - The process namespace note says long-running daemon actions such as watcher start/stop/shutdown, CGC start/stop/visualize, and GrepAI watcher start/stop/refresh must run from a durable host namespace, while lifecycle status reports `processNamespace` diagnostics and refuses `--die-with-parent` sandboxes. [4]

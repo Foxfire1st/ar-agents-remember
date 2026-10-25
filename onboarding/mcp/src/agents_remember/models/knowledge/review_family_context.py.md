@@ -336,9 +336,13 @@ and the named stored value assertion were inspected; no test execution is assert
 - Context checks compare returned counts and roster sums, and compute unique member-revision total from a set; this local arithmetic is not proof that input identities were authenticated or unique. [25]
 - The family-context composition owner supplies its comparison-bound result from the selected records and roster owner. [26]
 - The roster read that supplies each side's guarantee, its members and its page. [27]
+
 - The review composition carries the family-context result on its payload; this reference is static composition structure, not an executed read count. [28]
+
 - The payload field itself, required rather than optional so an absent field can never be read as a measured zero. [29]
+
 - The task-context review, which states `no_subject_selected` because it compared no knowledge operand. [30]
+
 - The stored value regression rejects a recorded family selection naming a revision outside the recorded list; this is an inspected assertion, not fresh execution. [31]
 - The local change-facts guard compares the returned/described member-ID sets; that comparison alone does not establish occurrence multiplicity or measured code classification. [32]
 - The facts' model. [33]

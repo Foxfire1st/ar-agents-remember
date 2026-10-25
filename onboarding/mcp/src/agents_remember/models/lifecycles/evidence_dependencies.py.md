@@ -94,7 +94,9 @@ matrix in the evidence-dependency test suite fixes the contract.
 - The memory-quality attestation binds candidate-state, code/memory trees, report bytes, and validators. [2]
 - The closeout door binds code/memory candidate trees, topology, intent, and the review/memory/admission/scheduling provenance records. [3]
 - Lifecycle operations declare the admitted candidate, door, plan, and normalized operation input. [4]
+
 - Route review binds code tree, task intent, per-evidence-file SHA-256, and validator. [5]
+
 
 
 ### Cross-Repo References

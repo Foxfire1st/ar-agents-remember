@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/application/runtime/startup.py",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
@@ -141,17 +142,6 @@
             }
           },
           "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "186284cc5a3f3e1d6a49a2378e0605ddfc5b1724",
-            "content": "sha256:883820f44db3e589d0d39935430a9aeb1c38331b86496c2268875938ac2a1a85",
-            "locator": {
-              "kind": "symbol",
-              "name": "initialize_mcp_application"
-            }
-          },
-          "kind": "code"
         }
       ]
     },
@@ -251,8 +241,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "aeab03b3c308198c2963d276ea785d00e4877e01",
-            "content": "sha256:ce064755a94ca3cb1d2bd48b679cf49b802392d7fe1db070179431e101fe82fd",
+            "blob": "186284cc5a3f3e1d6a49a2378e0605ddfc5b1724",
+            "content": "sha256:3c50eca9ecb4285b8aae618987a0451c15475bfd0478c335fa60a636e8b48f9e",
             "locator": {
               "kind": "file"
             }

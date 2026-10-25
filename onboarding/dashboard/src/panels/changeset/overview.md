@@ -105,55 +105,121 @@ The following reference captions describe the prior source epoch. They are prese
 
 ## Evidence
 - The optional marks and the marked pane. [1]
+
 - The two extracted view builders, each with its marks gutter. [2]
+
+
 - The optional first lines and the content-sized host. [3]
+
+
 - The card that passes them. [4]
+
+
 - The master request now asks for the per-leaf breakdown; presence of `leaves` is the discriminant. [5]
+
+
 - The rendered rail and its per-leaf counters, and the click that opens one leaf's own range. [6]
+
+
 - The named refusal and the named measured-empty pane, i.e. the two states that are not a missing selection. [7]
+
+
 - The cockpit re-target that keeps the opened leaf inside this route's takeover. [8]
+
 - The L3 read-only change-set API this screen consumes. [9]
+
 - The same-origin client wrapping that API. [10]
+
+
 - The shell that hosts the takeover + restores the rails. [11]
+
+
 - The detail panel button + counters that open this screen. [12]
+
+
 - The reused read-only CodeMirror pane + theme + lang map. [13]
+
+
 - The markdown renderer the sidecar column + rendered-markdown toggle reuse. [14]
+
 - The siege-tank empty-state backdrop shown until a file is picked. [15]
+
 - The target variant this route's type gained. [16]
+
 - The declaration's own statement that no change-set request comes from a review, and that an empty object on the field is the task-context entry rather than a missing selector. [17]
 - **The reviewer entry: offered for every leaf beside the working/committed actions (the recorded comparison for a closed leaf, `ICR-R12`).** [18]
-- **The identity the entry carries instead of a filesystem path (since `260921-ICR-L47`): the task context only, `review: {}` for a live leaf and `{ historical: true }` for a closed one — no subject.** [19]
+
+- **The identity the entry carries instead of a filesystem path: the task context only — `review: {}` for every leaf, live or closed, so a landed leaf opens the review on the pair it delivered rather than its own numbered record.** [19]
+
+
 - **The read that supplies the subject now belongs to the reviewer, taking the comparison's task context and nothing else.** [20]
+
 - **The entry’s code-or-memory worktree existence flags select the working control and live-versus-recorded review context.** [21]
+
 - **The generation the open series view is bound to, and the caption that renders it.** [22]
+
+
 - **The entry button threading the published generation into the viewer target.** [23]
+
+
 - **The target type whose review field may carry no selector, with presence as the marker and an empty object as the task context.** [24]
-- The entry that produces the empty target for a live leaf the server offers no subject for. [25]
+
+
+- The detail-panel entry that hands the viewer this leaf's targets: the committed change set and the Intent review entry, whose target carries the task context and no subject. [25]
+
+
 - The surface that receives it and asks for the task's own review. [26]
+
+
 - Comparison requests are built for the recorded trees [27]
+
 - One file's diff reads on the comparison's trees [28]
 - Lane filters apply over the held lane facts [29]
 
 - Persisted flags use component state and localStorage. [30]
 - Shared numbering, theme and language construction. [31]
 - No-mark gutters, collapsed-run expansion and marked-pane construction. [32]
+
 - Diff highlight styling, fitting and effect teardown. [33]
+
+
 - The net and leaf summaries are computed separately, over different ranges; leaf working reads require a live worktree, and committed lists publish unrecorded state. [35]
+
+
 - Recorded leaf endpoints use closeout cells or their recorded integrated equivalents. [36]
+
 - Master generation digest, selection and currentness use declared or pinned endpoint pairs. [37]
-- The counters control distinguishes loading, unrecorded, empty and failure and discloses the reason. [38]
+
+- The counters control distinguishes loading, unrecorded, unmeasured, empty and failure and discloses the reason. [38]
+
+
 - The existing refusal case checks the reason and clicks the control; no execution is asserted. [39]
+
+
 - Leaf entry construction gates working reads, not Intent Review. [40]
+
+
 - Review dispatch, back, mode switches and node opens clear or replace the cockpit takeover. [41]
+
+
 - The reviewer catalogue remains task-bound; navigation threads recorded history and current generation. [42]
 
+
+
 - Comparison takes precedence in list and file requests, and the held-lane filter does not classify hunks. [43]
+
+
 - Recorded comparison ranges retain exact code/memory operands and named unavailable-tree states. [44]
 
 
+
+
 - Target-addressed list loads share the current request/cache owner, and an available cached answer can be restored at selection. [45]
+
 - Working refresh does not require hasData, excludes comparisons and handles list/diff fulfillment and failure independently before scheduling its next timer. [46]
+
 - A list problem and selected-file problem have distinct display owners rather than silently leaving a stale successful pane. [47]
+
 
 - The existing viewer composes delegated filters and one badge map from held facts; same-generation comparison context can accept late matching worklist/lane data without reopening another comparison. [48]
 

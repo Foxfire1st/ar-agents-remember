@@ -16,7 +16,9 @@ Two readers take the publication as it is, without the projection's boot reconci
 
 ## Evidence
 
+
 - Intake the plugin’s event-driven host publication only at startup or host invalidation, reconciling boot identity before exposing known activity. [1]
+
 
 ## 260928-MIK-L177 The Held-Delivery Tick Parses Only New Publication Bytes
 

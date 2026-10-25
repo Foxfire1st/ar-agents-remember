@@ -74,9 +74,13 @@ No relevant domain documentation was found.
 ### Repo-Internal References
 
 
+
 - The primary cockpit e2e source; the earlier 202-expectations fix-round caption is historical, not a current reached-assertion count. [1]
 
+
+
 - The dev fixture gallery and scenarios the suite drives. [2]
+
 
 ### Cross-Repo References
 

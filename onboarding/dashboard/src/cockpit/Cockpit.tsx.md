@@ -357,7 +357,9 @@ No configured domain documentation; source owners support this current account.
 
 
 - The reviewed UI contract owner `ViewLayer`. [90]
+
 - Stored cockpit regression source covering retained product views; it is source evidence, not a fresh test, browser or performance result. [91]
+
 
 
 - The header uses shared labels for served taskCounts, omits works/paused words when host observation is unknown, and reports host activity unavailable once rather than drawing an unknown-count bucket. [94]
@@ -369,31 +371,58 @@ No configured domain documentation; source owners support this current account.
 
 No separate cross-repository implementation claim.
 
+
 - The shell defaults to Chats; a valid review hash selects Operations and a valid knowledge-reader hash selects Knowledge. Persistent product layers remain mounted independently of takeover selection. [33]
+
+
 - Knowledge is a full-bleed, hidden-not-unmounted layer. [34]
+
+
 - Full-bleed is derived for the product and retained machine-map views. [35]
+
+
 - A page outside the bar mounts only through an injected view. [36]
+
+
 - The Knowledge reader the retained layer mounts. [39]
+
+
 - The revalidation provider is shown only for ordinary Operations outside takeover and review. [64]
+
 - RailedBody applies saved Operations sidebar widths or the review's reading/chat tracks; its narrow path uses one column. [65]
 - Files, Engine Room, Topology, Knowledge, and Chats request the full-bleed layout. [66]
+
 - Rail fade properties are selected by the animation permission. [67]
+
+
 - The `chatsLayer` keep-alive class used by the Chats layer. [68]
+
 - A `#knowledge?…` reader URL selects the Knowledge view as the shell's initial view. [73]
 - The frontend `Analytics` projection includes the `engineProcesses` process-map collection. [79]
+
 - The reviewed UI contract owner `MainLayers`. [88]
+
 - MainLayers mounts the persistent RoleChatsPane with tasks and the visible/non-takeover active predicate, forwarding agentChat as openChat. RailedBody passes shell agentChat to MainLayers and openAgentChat to LeftRail; LeftRail forwards that handler to LifecycleList. Native host transport remains separately owned. [89]
 - The right rail keeps one unkeyed chat wrapper across Operations and review; Operations' River still mounts conditionally. [92]
 - The hidden chat side stays mounted but out of reach behind display:none and aria-hidden. [93]
+
 - Native task selection and memoization are separate from the Engine Room stable-empty fallback. [95]
+
+
 - The shell starts the screen wake lock once on mount; the wake-lock helper follows document visibility and releases its held sentinel on stop. [96]
+
+
 - Base review navigation names repo/master/leaf and recorded history. Separate reviewer hash helpers persist selection/comparison through replaceState without changing that target or adding browser-history entries. [97]
+
+
 - At at-most40rem the shell admits vertical overflow and single-column railed content. The ordinary change-set takeover uses the fixed takeover body; review is rendered in the railed body. [98]
+
 - Review is explicitly excluded from takeover. [99]
 - Independent Operations sidebar toggles outside DetailPanel. [100]
 - Review column shares the right rail and DocumentChat wrapper. [101]
 - Operations/sidebar and review/chat column sizing. [102]
 - Shown page/repository provenance values. [103]
+
 - Tray button outside the view group and layer outside railed body. [104]
 
 The shared RightRail now forwards the review leaf's explainer target into the same DocumentChat wrapper. Operations still uses its ordinary document chat; its active leaf document also mounts ViewedLeafExplainerControl, which can read and retire an existing explainer without visiting Review. The Operations active predicate is shared with DetailPanel, and switching pages adds neither a frame wrapper nor a frame key.

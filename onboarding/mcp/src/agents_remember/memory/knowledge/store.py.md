@@ -69,13 +69,17 @@ No configured domain documentation could be checked.
 ### Repo-Internal References
 
 
+
 - The opened read store holds path, namespace, validated schema and read connection. [1]
+
 
 
 - Closing the owned read handle unlinks no cache peers. [2]
 
 
-- The exact revision read decodes the stored row. [3]
+
+- `get_revision` reads one revision row by repository and revision id and decodes it with the stored seal verified; a text record holds no predecessor edge, so the decoded revision carries no predecessors. [3]
+
 
 
 - Every invariant and family identity is enumerated in stable order. [4]
@@ -88,7 +92,9 @@ No configured domain documentation could be checked.
 
 
 - **The close that unlinks nothing**, and the reason the peer unlink was removed rather than made conditional. [16]
+
 - The read surface, including the seal-verifying single-revision read. [17]
+
 - **The two enumerating reads the Intent Reviewer's entry list is built on: every recorded invariant and family identity, ordered by the identity's own column, with no filter and no count — because a reader that must be handed a subject cannot enumerate a candidate it was not pointed at.** [18]
 
 ### Cross-Repo References

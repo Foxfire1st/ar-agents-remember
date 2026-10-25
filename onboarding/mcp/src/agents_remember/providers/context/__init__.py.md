@@ -57,8 +57,8 @@ No relevant external documentation is needed to prove the current package-local 
 Same-repository source defines the active provider layout and patch behavior.
 
 - Shared provider context helpers live in the common context module. [1]
-- CGC provider context constants, layout, cleanup, and patches live under the CGC provider package. [2]
-- GrepAI provider context layout, live-root workspace config, and artifact cleanup live under the GrepAI provider package. [3]
+- CGC provider context constants, layout, cleanup, and patches live under the CGC provider package. 
+- GrepAI provider context layout, live-root workspace config, and artifact cleanup live under the GrepAI provider package. 
 
 ### Cross-Repo References
 

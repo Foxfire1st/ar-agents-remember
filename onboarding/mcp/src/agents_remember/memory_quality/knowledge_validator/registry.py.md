@@ -61,7 +61,9 @@ The registry, the context and the carried-anchor computation.
 
 
 
+
 - The refusing route rules are reported inside the writer, and still refuse in `validate_tree`. [4]
+
 
 
 
@@ -76,10 +78,14 @@ No cross-repo boundary is crossed by this file.
 - Each ID registers once; rules run in registration order. [2]
 - The refusing rules a writer reports instead; the docstring states the contract. [3]
 - The anchor comparison key and the base anchors. [5]
+
 - The shared context includes `is_sync_merge` and cached migration state over census and actual onboarding routes, beside candidate/bases/code/publication. [6]
+
 - The flag a leaf-publication commit sets (MIK-R09). [7]
 - Every registered check runs; per-finding report/refuse depends on sync-merge/standalone-conversion context or carried debt and migration completeness, never a blanket report-only registration. [8]
+
 - The context's frozen trees, and every tree whose closed history files are frozen. [9]
+
 - Migration completeness uses the lower census reader and the same actual-route/status union. [11]
 
 - Rule-local carried-only merge reporting and shared per-validation family states remain separate from writer reporting. [12]

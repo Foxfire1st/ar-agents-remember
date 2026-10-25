@@ -40,9 +40,15 @@ No configured domain evidence applies to the file-local claims above.
 
 The retained source anchors below support the fixture roles and assertion boundaries described above. They identify current behavior, not a request to restore historical test counts or percentage targets.
 
+
 - No record is lost when an append races a compaction. [1]
+
+
 - Gate enforcement fold refuses a torn line. [2]
+
+
 - Gate projection fold degrades instead of crashing. [3]
+
 
 ### Cross-Repo References
 

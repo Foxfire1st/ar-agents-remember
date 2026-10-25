@@ -1,5 +1,7 @@
 {
-  "path": "mcp/src/agents_remember/controlplane",
+  "path": "mcp/src/agents_remember/controlplane/overview",
+  "proves": [],
+  "realizes": [],
   "references": {
     "1": {
       "note": "Retained gate logs have strict authority reads and a separate tolerant projection reader; their namespace is not a current lifecycle event stream.",
@@ -31,15 +33,16 @@
       ]
     },
     "10": {
-      "note": "Durable-store role declaration follows application entry paths: `prepare_mcp_process` declares the MCP role, while dashboard `_dev_app` declares in the reload worker and `run` declares on the foreground/daemon command path.",
+      "note": "Retained reference account (no fresh execution or acceptance inferred): Durable-store role declaration follows application entry paths: `prepare_mcp_process` declares the MCP role, while dashboard `_dev_app` declares in the reload worker and `run` declares on the foreground/daemon command path.  Anchor: `prepare_mcp_process` `_dev_app` `run`",
       "targets": [
         {
           "anchor": {
-            "blob": "611e5a498e074d169eccd6fffb1ac9327bdf7b8a",
-            "content": "sha256:1b2d95322d48ce113abe68a45f6f0f6691c8177f8e35ed2ec4f1fca4abbf552b",
+            "blob": "186284cc5a3f3e1d6a49a2378e0605ddfc5b1724",
+            "content": "sha256:ee65e93de17de38b602990c4a3f36b247b8d652b2458858ede7aac7f91050fad",
             "locator": {
-              "kind": "symbol",
-              "name": "prepare_mcp_process"
+              "end": 89,
+              "kind": "line_range",
+              "start": 80
             },
             "path": "mcp/src/agents_remember/application/runtime/startup.py"
           },
@@ -47,11 +50,12 @@
         },
         {
           "anchor": {
-            "blob": "b35e4df4d1e763b1effeac08f9cdc9de7ff5a284",
-            "content": "sha256:6d643cca1c271c4348c3e038e4ce99044a65c6826e858291f7dca7eeb55dcad5",
+            "blob": "126d045c43fbd830d1f124ab63fee6589db5d1ff",
+            "content": "sha256:1575f0df50485d6f27827a60d26428c5347e77d042624540b01e4f00586319b2",
             "locator": {
-              "kind": "symbol",
-              "name": "_dev_app"
+              "end": 285,
+              "kind": "line_range",
+              "start": 251
             },
             "path": "mcp/src/agents_remember/cli/dashboard.py"
           },
@@ -59,11 +63,12 @@
         },
         {
           "anchor": {
-            "blob": "b35e4df4d1e763b1effeac08f9cdc9de7ff5a284",
-            "content": "sha256:19f9b7165341d3052d1b1125a87d54dbda0cec85951ef043f790dd6075630b36",
+            "blob": "126d045c43fbd830d1f124ab63fee6589db5d1ff",
+            "content": "sha256:cbf84bdba619aefa1d80c91f3328f9ffb27e17ec2e2442228904a3f88f4f2067",
             "locator": {
-              "kind": "symbol",
-              "name": "run"
+              "end": 409,
+              "kind": "line_range",
+              "start": 366
             },
             "path": "mcp/src/agents_remember/cli/dashboard.py"
           },
@@ -71,8 +76,8 @@
         },
         {
           "anchor": {
-            "blob": "b35e4df4d1e763b1effeac08f9cdc9de7ff5a284",
-            "content": "sha256:1090f706fded8f1cb7c1100e85ee76d80c23fda78fea0a4b00ec708969080f43",
+            "blob": "126d045c43fbd830d1f124ab63fee6589db5d1ff",
+            "content": "sha256:73c79f2e55097c316c1f58bce935563e2be3df65391837be6f4e7fd36ffdf7c9",
             "locator": {
               "end": 166,
               "kind": "line_range",
@@ -84,8 +89,8 @@
         },
         {
           "anchor": {
-            "blob": "7d5073fe88bde3e92fffa7108228d97077f479ee",
-            "content": "sha256:01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+            "blob": "126d045c43fbd830d1f124ab63fee6589db5d1ff",
+            "content": "sha256:b2a07885fecc6dc8c7ace0056428751a0b66df82ecebe6e26a1f7df04dbdc0f9",
             "locator": {
               "end": 120,
               "kind": "line_range",
@@ -118,6 +123,19 @@
               "start": 1
             },
             "path": "mcp/src/agents_remember/application/runtime/startup.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "126d045c43fbd830d1f124ab63fee6589db5d1ff",
+            "content": "sha256:a2af8b9844717427d3f0e00fa1f32fc098185fa8a0cd7501acef2f6159c81557",
+            "locator": {
+              "end": 553,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/src/agents_remember/cli/dashboard.py"
           },
           "kind": "code"
         }
@@ -188,8 +206,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5801a3451a06ef3ec426db8cf0c48e06147bb8c4",
-            "content": "sha256:b5cf7baf3c789db26567aacc88353e8a12e91738afc3938a6677b02a863946ea",
+            "blob": "1c8709e75ca22ed12ab5182e676a05d389075a96",
+            "content": "sha256:d34fcbf6bdb4b23193f38e66001e94fe3281de57fb127a1d782435db350a406b",
             "locator": {
               "end": 202,
               "kind": "line_range",
@@ -220,12 +238,12 @@
       ]
     },
     "18": {
-      "note": "Undeclared checkout targets are restricted; primary checkout is refused\n\nAnchor: checkout_cli_location; require_durable_write_target",
+      "note": "Undeclared checkout targets are restricted; primary checkout is refused",
       "targets": [
         {
           "anchor": {
-            "blob": "b34c1e5974f6955bad288d8dd1a542473be46f29",
-            "content": "sha256:7ca65454323d50336f9ce3e780b2a9e9bf519a7ba8ab4db77edff2741c7a7745",
+            "blob": "f46c901c30e3cecad97dcf399005a5a768c8eb61",
+            "content": "sha256:d78b11204602a0c8f95a38201fcf0f286c7b0c3b69cbab9dd8d5afe9b9629f5b",
             "locator": {
               "end": 155,
               "kind": "line_range",
@@ -242,8 +260,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1574b0cc1fc1982c2bd71b972f67235385cedcfe",
-            "content": "sha256:68a7c9b3fe2dc4def5adf883b8f4d04ac604b712c5f840585026984d93cc3d2b",
+            "blob": "bbb005d14f4c90cbe56e3aecbbd4e5ca9cf52cd5",
+            "content": "sha256:1f37488773028038d8a93b9643a944a273b0867d67c6043fdfb14bd88974ad33",
             "locator": {
               "end": 249,
               "kind": "line_range",
@@ -256,7 +274,7 @@
       ]
     },
     "2": {
-      "note": "Gate policy validation and delegated decision checks.\n\nAnchor: \"class GatePolicy:\"",
+      "note": "Retained reference account (no fresh execution or acceptance inferred): Gate policy validation and delegated decision checks.\n\nAnchor: \"class GatePolicy:\"",
       "targets": [
         {
           "anchor": {
@@ -274,12 +292,12 @@
       ]
     },
     "20": {
-      "note": "Applied gate permits only matching exact-operation recovery\n\nAnchor: evaluate_gate",
+      "note": "Applied gate permits only matching exact-operation recovery",
       "targets": [
         {
           "anchor": {
-            "blob": "098584045028586661c04fda59d447990277db8a",
-            "content": "sha256:e414445ab0bacda5f51e7a532caeb3f5209888a68ae89ecd5fea945db1c8035e",
+            "blob": "ce5957cd60d790dc89aa33796a021dd2bf70c7f7",
+            "content": "sha256:c496a545fd9a3235a1308d6072b37585f76eea468ecbc7b8b7d501994ddef554",
             "locator": {
               "end": 107,
               "kind": "line_range",
@@ -514,12 +532,12 @@
       ]
     },
     "6": {
-      "note": "Workspace acknowledgements admit only published kinds and reclaim only with complete, time-qualified native observations; partial/unread kinds and newer clicks remain protected.",
+      "note": "Workspace acknowledgements admit only published kinds and reclaim only with complete, time-qualified native observations; partial/unread kinds and newer clicks remain protected.\n\nAnchor: `AttentionDismissalRecord` `AttentionObservation` `reconcile`",
       "targets": [
         {
           "anchor": {
-            "blob": "7f26c932e6a31d8da2e9f2593954cde82ea1b9ff",
-            "content": "sha256:bf2b292a04660e076aed7253cc2c4d5b67f9934c0d255594ff542cb6218f3008",
+            "blob": "b8fc8a5487a7d0bfd52efcf027cbcd3607d671f9",
+            "content": "sha256:a8b3b787b3be3c08fb2dbdd08f5d83e98edf0ee1b488790f6543ebb22b427dfc",
             "locator": {
               "kind": "symbol",
               "name": "AttentionDismissalRecord"
@@ -542,8 +560,8 @@
         },
         {
           "anchor": {
-            "blob": "7f26c932e6a31d8da2e9f2593954cde82ea1b9ff",
-            "content": "sha256:503187d3d3034f9c234c22145dd5e8b9898cf62ec8911984541e6154b0824586",
+            "blob": "b8fc8a5487a7d0bfd52efcf027cbcd3607d671f9",
+            "content": "sha256:3b08dcaeba81c516d6d4b82e8ed1b16408e50c635d09faedd0f4c450d88176a4",
             "locator": {
               "kind": "symbol",
               "name": "reconcile"
@@ -560,6 +578,17 @@
               "end": 150,
               "kind": "line_range",
               "start": 139
+            },
+            "path": "mcp/src/agents_remember/controlplane/attention_dismissals.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b8fc8a5487a7d0bfd52efcf027cbcd3607d671f9",
+            "content": "sha256:27613be17c429e3017b4b88958e9ae658e9c81d1993c1d424ecf5ca8002c0c0b",
+            "locator": {
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/controlplane/attention_dismissals.py"
           },
@@ -628,12 +657,23 @@
       ]
     },
     "9": {
-      "note": "Shared kernel exclusion is independent of caller authorization.",
+      "note": "Shared kernel exclusion is independent of caller authorization.\n\nAnchor: `exclusive_file_lock` `lock_held`",
       "targets": [
         {
           "anchor": {
-            "blob": "5801a3451a06ef3ec426db8cf0c48e06147bb8c4",
-            "content": "sha256:dd8d3d0f95aedef79978e2d0f55d8bcb30dde228556a7c232ba96ba8b21d9e36",
+            "blob": "1c8709e75ca22ed12ab5182e676a05d389075a96",
+            "content": "sha256:e6215a71b64bbbaf314085e12c561af5ab131b13a04ff6e28d38b951f6922140",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/kernel/file_lock.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1c8709e75ca22ed12ab5182e676a05d389075a96",
+            "content": "sha256:b5fbc44c9c78607266f10080567a3c94aa2aedcb0a0937fb7c8e3faf7d10509e",
             "locator": {
               "kind": "symbol",
               "name": "exclusive_file_lock"
@@ -657,5 +697,5 @@
       ]
     }
   },
-  "schema": "ar-onboarding-route/v1"
+  "schema": "ar-onboarding-file/v1"
 }

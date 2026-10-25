@@ -79,7 +79,9 @@ No configured domain documentation could be checked.
 
 ### Repo-Internal References
 
+
 - Converted target parsing collects the pure guard's named problems and the writer refuses the whole handoff before its physical write step. [8]
+
 
 
 - **The module's own statement: per target first, checked at admission, no route spelled by a placeholder, and what it does not cover.** [1]

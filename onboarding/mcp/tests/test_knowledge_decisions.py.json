@@ -1,5 +1,6 @@
 {
   "path": "mcp/tests/test_knowledge_decisions.py",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
@@ -114,12 +115,38 @@
       "targets": [
         {
           "anchor": {
-            "blob": "11ba98ff63f4a4815985ac51e2c0c7b5a48556a4",
+            "blob": "102c4550ab6429f44c8fb543d1d0662de66a1b8c",
+            "content": "sha256:3e2d3bf1cd55c642d3a3038ab1d5452853452bbd3666bc8ba9fb671acd3661da",
+            "locator": {
+              "end": 149,
+              "kind": "line_range",
+              "start": 149
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "102c4550ab6429f44c8fb543d1d0662de66a1b8c",
             "content": "sha256:fde5414644db933687ef3dc92a72c705e41bb48100b4411cf4d910e62dc8d752",
             "locator": {
-              "end": 162,
+              "end": 165,
               "kind": "line_range",
-              "start": 162
+              "start": 165
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "102c4550ab6429f44c8fb543d1d0662de66a1b8c",
+            "content": "sha256:db00c91d497407b57dc46960e9726f481bfbe04183cdaa43f1f43453e1578bac",
+            "locator": {
+              "end": 134,
+              "kind": "line_range",
+              "start": 134
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },

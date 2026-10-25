@@ -120,8 +120,12 @@ No configured live documentation source was available for this pass.
 - The per-file response, or the typed refusal with clipped input (review F2). [7]
 - Both sides, every entry's range or reason, and every hunk. [8]
 - The membership states (ruling Q5). [10]
+
 - The lane and file reads dispatched. [11]
+
+
 - The entry's count carried on the summary. [12]
+
 - Destinations and reconciliation; the entry count reads no hunk. [13]
 - Links, revisions, proofs and membership states. [14]
 - Unmeasured change sets, and long paths answered typed. [15]

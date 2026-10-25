@@ -21,12 +21,12 @@
       ]
     },
     "2": {
-      "note": "The engine-room usage of the same backdrop pattern (effects-gated, aria-hidden video).\n\nAnchor: \"export function EnclosureProcessMap\"",
+      "note": "The engine-room usage of the same backdrop pattern (effects-gated, aria-hidden video).",
       "targets": [
         {
           "anchor": {
-            "blob": "47bb1a1d99e74706dc8a827331db4352c0f6cebc",
-            "content": "sha256:a5e17e7e06809939cbac00f4393e72a742d469beea2875cf821988533825c6dc",
+            "blob": "36b5e603bb19a454ad4bb9b945985124b4ec175b",
+            "content": "sha256:5e3aa61932c0212fd7f1f8a184fb97138ee3d95aff696fe35de5ae67322e273e",
             "locator": {
               "end": 67,
               "kind": "line_range",
@@ -61,7 +61,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1b073b40c856a543a8a8616ba9888a747125bdf7",
+            "blob": "502be409c27eb74c17f996f378046fc8adcb252e",
             "content": "sha256:ec573cff53f154d2a9eb7c68b3c09300bab15d36ca8a9d123ec6affa32909ddb",
             "locator": {
               "end": 43,
@@ -75,15 +75,14 @@
       ]
     },
     "5": {
-      "note": "File-viewer `DualPane` mounts the siege-tank clip and passes `opacity={0.18}`.",
+      "note": "File-viewer `DualPane` mounts the siege-tank clip and passes `opacity={0.18}`.\n\nAnchor: `DualPane`",
       "targets": [
         {
           "anchor": {
-            "blob": "5e1f3e3243fe21af63d66c6fafc9829e9fa50166",
-            "content": "sha256:b7d09e1dfa9ff6cfed47c439a853ed250342a83c8124fff97f051031b7146d28",
+            "blob": "2a8233f6878d1f710c5879a2464418c11ea9627e",
+            "content": "sha256:36e3128196752e9703f3acf1ea2f7c8f051c50523594dc0e8cf635f32dc51433",
             "locator": {
-              "kind": "symbol",
-              "name": "DualPane"
+              "kind": "file"
             },
             "path": "dashboard/src/panels/file-viewer/DualPane.tsx"
           },
@@ -92,15 +91,14 @@
       ]
     },
     "6": {
-      "note": "Change-set `ChangeSetViewer` mounts the siege-tank clip and passes `opacity={0.18}`.",
+      "note": "Change-set `ChangeSetViewer` mounts the siege-tank clip and passes `opacity={0.18}`.\n\nAnchor: `ChangeSetViewer`",
       "targets": [
         {
           "anchor": {
-            "blob": "86545416eae45e7557f551de907178a8e9174476",
-            "content": "sha256:1f10a3128c89a000c85fb61ae59c98da7ad64e75ad46dcb85d1202e1bf163cdd",
+            "blob": "0f255485bc9dc7fc49932bd57f66ff49c8a4564c",
+            "content": "sha256:a07755e77404e8354fd4134325908235f10bd244bb5049776b162574c8bb6473",
             "locator": {
-              "kind": "symbol",
-              "name": "ChangeSetViewer"
+              "kind": "file"
             },
             "path": "dashboard/src/panels/changeset/ChangeSetViewer.tsx"
           },

@@ -106,15 +106,14 @@
       ]
     },
     "2": {
-      "note": "The retained scenario proves one content commit and reads its attribution from Git.",
+      "note": "The retained scenario proves one content commit and reads its attribution from Git.\n\nAnchor: `test_direct_landing_publishes_memory_and_recovers_independently_of_cache`",
       "targets": [
         {
           "anchor": {
-            "blob": "84eb71228c85d20aa1580b6e8f54478efa659d4c",
-            "content": "sha256:b191f935bf7b7600d95f30bc7d670d532d5dcd61b113bb401d437607d3594dea",
+            "blob": "e5e2ee915969059ef9c62381725c0e2f73f229d0",
+            "content": "sha256:6e58c8410298d7d88cd213b6be058805b71d47020449fc6d3fcc168bdcce4564",
             "locator": {
-              "kind": "symbol",
-              "name": "test_direct_landing_publishes_memory_and_recovers_independently_of_cache"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -138,8 +137,8 @@
         },
         {
           "anchor": {
-            "blob": "84eb71228c85d20aa1580b6e8f54478efa659d4c",
-            "content": "sha256:2c3bf4d09ac0023059c5ba57ae933411165beee201e97a409c03c011a2d5e60f",
+            "blob": "e5e2ee915969059ef9c62381725c0e2f73f229d0",
+            "content": "sha256:2fc2a0195a767b1af8fed1ebb5286a0f1850a2b12aee75fb92c60a12415b59cc",
             "locator": {
               "end": 2394,
               "kind": "line_range",
@@ -151,15 +150,14 @@
       ]
     },
     "4": {
-      "note": "The lifecycle recovery owner performs the required same-generation resumption.",
+      "note": "The lifecycle recovery owner performs the required same-generation resumption.\n\nAnchor: `recover_direct_landing_under_authority`",
       "targets": [
         {
           "anchor": {
-            "blob": "36a18c6b680b5bde6ccdb2b4dde4028933dd85f1",
-            "content": "sha256:3d903382f2d942483703b354899fdadf37cdc45b4e74b348cf98cb2cf4e6b17a",
+            "blob": "4b458a3bcd123b06f0fe42ba8cbba04d34e3c277",
+            "content": "sha256:c21dac48de58598b7a2ce95207e878e025ab9be68c8b77e297fa84ad9d728911",
             "locator": {
-              "kind": "symbol",
-              "name": "recover_direct_landing_under_authority"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_recovery.py"
           },

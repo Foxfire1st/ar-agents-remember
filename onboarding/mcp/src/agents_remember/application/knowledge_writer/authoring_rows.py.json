@@ -152,8 +152,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1383451e6102e01df27008e884aab7c74077cae3",
-            "content": "sha256:8212f9a8c4eab9fd94e0294a80213a9b0b076c55167d5448e18fdc97917c1d80",
+            "blob": "979669ccbd307af1ad584ba86815c1d1100f9896",
+            "content": "sha256:fcdab3d118135e6affc8fc2928e02152ac9ffd84f16c1cb2d278bf368ee2ddd2",
             "locator": {
               "end": 411,
               "kind": "line_range",
@@ -285,12 +285,12 @@
       ]
     },
     "2": {
-      "note": "One constructor stores the family revision with the authored effect.\n\nAnchor: `HistoryRowAuthoring._family_row`",
+      "note": "One constructor stores the family revision with the authored effect.",
       "targets": [
         {
           "anchor": {
-            "blob": "0da229d30cce73e704722fc74dd76c9efa524b2e",
-            "content": "sha256:574d76b827f82d1cd81e4b098a372a4f5640c31fdab0fe813ff8fa60c643051a",
+            "blob": "979669ccbd307af1ad584ba86815c1d1100f9896",
+            "content": "sha256:7d5e29ae5df1f17b304e34b1fc4f2f25900dc0e93db664b99d3c41037ae5fdb7",
             "locator": {
               "end": 1138,
               "kind": "line_range",
@@ -306,8 +306,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1383451e6102e01df27008e884aab7c74077cae3",
-            "content": "sha256:8212f9a8c4eab9fd94e0294a80213a9b0b076c55167d5448e18fdc97917c1d80",
+            "blob": "979669ccbd307af1ad584ba86815c1d1100f9896",
+            "content": "sha256:fcdab3d118135e6affc8fc2928e02152ac9ffd84f16c1cb2d278bf368ee2ddd2",
             "locator": {
               "end": 411,
               "kind": "line_range",

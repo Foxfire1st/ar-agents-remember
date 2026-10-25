@@ -3,15 +3,14 @@
   "realizes": [],
   "references": {
     "22": {
-      "note": "The tokens a reader can be shown.",
+      "note": "The tokens a reader can be shown.\n\nAnchor: `ReviewFailureToken`",
       "targets": [
         {
           "anchor": {
-            "blob": "25250cf4f41daf7721dd292a421845d64fefdd4c",
-            "content": "sha256:7e50f05031835d108310e3392553c5e2cda7fd4ac8ddcd687c34dc04726cd7a1",
+            "blob": "944960a629ae679b6412bdfdc583c9a18b17dfc3",
+            "content": "sha256:505328199b8aa8063d5f3edf27599d3d5c66658a4db5f530607c9b55c3511dff",
             "locator": {
-              "kind": "symbol",
-              "name": "ReviewFailureToken"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -19,15 +18,14 @@
       ]
     },
     "23": {
-      "note": "The codes and their tokens, with the two transient codes of the leaf-wide view.",
+      "note": "The codes and their tokens, with the two transient codes of the leaf-wide view.\n\nAnchor: `TOKEN_BY_CODE`",
       "targets": [
         {
           "anchor": {
-            "blob": "25250cf4f41daf7721dd292a421845d64fefdd4c",
-            "content": "sha256:0629df989dcc8c29ec8f443b780af0a6f666210482b5b2f9c393cb2e5a6336fa",
+            "blob": "944960a629ae679b6412bdfdc583c9a18b17dfc3",
+            "content": "sha256:505328199b8aa8063d5f3edf27599d3d5c66658a4db5f530607c9b55c3511dff",
             "locator": {
-              "kind": "symbol",
-              "name": "TOKEN_BY_CODE"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -35,15 +33,14 @@
       ]
     },
     "24": {
-      "note": "The refusals of the intent half alone.",
+      "note": "The refusals of the intent half alone.\n\nAnchor: `INTENT_ONLY_CODES`",
       "targets": [
         {
           "anchor": {
-            "blob": "25250cf4f41daf7721dd292a421845d64fefdd4c",
-            "content": "sha256:17910ece273ff0424b72ce445ec320a5875fb0b32eed9f98cdbde5fa171c5551",
+            "blob": "944960a629ae679b6412bdfdc583c9a18b17dfc3",
+            "content": "sha256:505328199b8aa8063d5f3edf27599d3d5c66658a4db5f530607c9b55c3511dff",
             "locator": {
-              "kind": "symbol",
-              "name": "INTENT_ONLY_CODES"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -51,15 +48,14 @@
       ]
     },
     "25": {
-      "note": "The error a review read throws.",
+      "note": "The error a review read throws.\n\nAnchor: `ReviewTransportError`",
       "targets": [
         {
           "anchor": {
-            "blob": "25250cf4f41daf7721dd292a421845d64fefdd4c",
-            "content": "sha256:499bcbcd05724dcb2ba554a23c69c05a530465d4e4be674fbcb1fc9ae139017d",
+            "blob": "944960a629ae679b6412bdfdc583c9a18b17dfc3",
+            "content": "sha256:505328199b8aa8063d5f3edf27599d3d5c66658a4db5f530607c9b55c3511dff",
             "locator": {
-              "kind": "symbol",
-              "name": "ReviewTransportError"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -102,15 +98,14 @@
       ]
     },
     "29": {
-      "note": "**The header's own record of the defect this module exists for, and of its two boundaries: the body is the answer whatever the status, and the shared client keeps throwing for the routes that use it.**",
+      "note": "**The header's own record of the defect this module exists for, and of its two boundaries: the body is the answer whatever the status, and the shared client keeps throwing for the routes that use it.**\n\nAnchor: `getReviewJson`",
       "targets": [
         {
           "anchor": {
-            "blob": "25250cf4f41daf7721dd292a421845d64fefdd4c",
-            "content": "sha256:6e85817cf7adc12d0e32445415755453f931e8ce8e584541b8cedd7c69732b0f",
+            "blob": "944960a629ae679b6412bdfdc583c9a18b17dfc3",
+            "content": "sha256:505328199b8aa8063d5f3edf27599d3d5c66658a4db5f530607c9b55c3511dff",
             "locator": {
-              "kind": "symbol",
-              "name": "getReviewJson"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -135,15 +130,14 @@
       ]
     },
     "31": {
-      "note": "**The failure vocabulary: one token per answer that is not a review, including the two honest fallbacks, and the explicit statement that `loading`/`known-empty` are not members.**",
+      "note": "**The failure vocabulary: one token per answer that is not a review, including the two honest fallbacks, and the explicit statement that `loading`/`known-empty` are not members.**\n\nAnchor: `ReviewFailureToken`",
       "targets": [
         {
           "anchor": {
-            "blob": "25250cf4f41daf7721dd292a421845d64fefdd4c",
-            "content": "sha256:7e50f05031835d108310e3392553c5e2cda7fd4ac8ddcd687c34dc04726cd7a1",
+            "blob": "944960a629ae679b6412bdfdc583c9a18b17dfc3",
+            "content": "sha256:505328199b8aa8063d5f3edf27599d3d5c66658a4db5f530607c9b55c3511dff",
             "locator": {
-              "kind": "symbol",
-              "name": "ReviewFailureToken"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -183,15 +177,14 @@
       ]
     },
     "34": {
-      "note": "**The only code→state table in the dashboard, and the classifier that carries an unknown code verbatim rather than guessing it into a state.**",
+      "note": "**The only code→state table in the dashboard, and the classifier that carries an unknown code verbatim rather than guessing it into a state.**\n\nAnchor: `TOKEN_BY_CODE`",
       "targets": [
         {
           "anchor": {
-            "blob": "25250cf4f41daf7721dd292a421845d64fefdd4c",
-            "content": "sha256:0629df989dcc8c29ec8f443b780af0a6f666210482b5b2f9c393cb2e5a6336fa",
+            "blob": "944960a629ae679b6412bdfdc583c9a18b17dfc3",
+            "content": "sha256:505328199b8aa8063d5f3edf27599d3d5c66658a4db5f530607c9b55c3511dff",
             "locator": {
-              "kind": "symbol",
-              "name": "TOKEN_BY_CODE"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -199,15 +192,14 @@
       ]
     },
     "35": {
-      "note": "**The refusals that answer for the intent half alone, which is what licenses offering the task's source inventory as a separate question.**",
+      "note": "**The refusals that answer for the intent half alone, which is what licenses offering the task's source inventory as a separate question.**\n\nAnchor: `INTENT_ONLY_CODES`",
       "targets": [
         {
           "anchor": {
-            "blob": "25250cf4f41daf7721dd292a421845d64fefdd4c",
-            "content": "sha256:17910ece273ff0424b72ce445ec320a5875fb0b32eed9f98cdbde5fa171c5551",
+            "blob": "944960a629ae679b6412bdfdc583c9a18b17dfc3",
+            "content": "sha256:505328199b8aa8063d5f3edf27599d3d5c66658a4db5f530607c9b55c3511dff",
             "locator": {
-              "kind": "symbol",
-              "name": "INTENT_ONLY_CODES"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -215,15 +207,14 @@
       ]
     },
     "36": {
-      "note": "The one error, staying a `FilesApiError` for existing catchers while carrying the whole failure.",
+      "note": "The one error, staying a `FilesApiError` for existing catchers while carrying the whole failure.\n\nAnchor: `ReviewTransportError`",
       "targets": [
         {
           "anchor": {
-            "blob": "25250cf4f41daf7721dd292a421845d64fefdd4c",
-            "content": "sha256:499bcbcd05724dcb2ba554a23c69c05a530465d4e4be674fbcb1fc9ae139017d",
+            "blob": "944960a629ae679b6412bdfdc583c9a18b17dfc3",
+            "content": "sha256:505328199b8aa8063d5f3edf27599d3d5c66658a4db5f530607c9b55c3511dff",
             "locator": {
-              "kind": "symbol",
-              "name": "ReviewTransportError"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -247,15 +238,14 @@
       ]
     },
     "38": {
-      "note": "**A failure with no HTTP response is its own token and carries no status.**",
+      "note": "**A failure with no HTTP response is its own token and carries no status.**\n\nAnchor: `networkFailure`",
       "targets": [
         {
           "anchor": {
-            "blob": "25250cf4f41daf7721dd292a421845d64fefdd4c",
-            "content": "sha256:8213dfd5d70eb9132176eba4a2757beb64c601667fe832a27c1dda9c75e08f22",
+            "blob": "944960a629ae679b6412bdfdc583c9a18b17dfc3",
+            "content": "sha256:505328199b8aa8063d5f3edf27599d3d5c66658a4db5f530607c9b55c3511dff",
             "locator": {
-              "kind": "symbol",
-              "name": "networkFailure"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -279,15 +269,14 @@
       ]
     },
     "41": {
-      "note": "An answer whose `state` this client does not admit is named, never rendered as a review.",
+      "note": "An answer whose `state` this client does not admit is named, never rendered as a review.\n\nAnchor: `unreadableAnswer`",
       "targets": [
         {
           "anchor": {
-            "blob": "25250cf4f41daf7721dd292a421845d64fefdd4c",
-            "content": "sha256:a4a9a040ef418cee03f357b4ac33faecdccc395803768ba94d91004fe8bf8122",
+            "blob": "944960a629ae679b6412bdfdc583c9a18b17dfc3",
+            "content": "sha256:505328199b8aa8063d5f3edf27599d3d5c66658a4db5f530607c9b55c3511dff",
             "locator": {
-              "kind": "symbol",
-              "name": "unreadableAnswer"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -311,15 +300,14 @@
       ]
     },
     "43": {
-      "note": "The three public client reads use the shared review transport.",
+      "note": "The review client's two public reads — the review and the entry catalogue — both go through the shared review transport, which this module re-exports.\n\nAnchor: `intentReview`",
       "targets": [
         {
           "anchor": {
-            "blob": "923faffc20359156074cf02aed9860c41b8b29dd",
-            "content": "sha256:a152f07db96bb7862f632571fd4595a32ef8103c304bc492ba591d2efacc3ba0",
+            "blob": "5e94e860bdcfd117a4e496db152da5bfdb241e53",
+            "content": "sha256:65b7f98cb5ff7962303f5258fab14cfff5acc73adf5a464ce722d0a3f9fa800f",
             "locator": {
-              "kind": "symbol",
-              "name": "intentReview"
+              "kind": "file"
             },
             "path": "dashboard/src/data/review.ts"
           },
@@ -345,15 +333,14 @@
       ]
     },
     "45": {
-      "note": "The task entry's brief word for the same tokens (`briefProblem`), shown on a control that never disappears, with the owner's full sentence in the disclosure beside it (`problemSentence`, since `260921-ICR-L47`).",
+      "note": "The task entry's brief word for the same tokens (`briefProblem`), shown on a control that never disappears, with the owner's full sentence in the disclosure beside it (`problemSentence`, since `260921-ICR-L47`).\n\nAnchor: `briefProblem`",
       "targets": [
         {
           "anchor": {
-            "blob": "08b834804e69b920387becdd55cd9cb21a584689",
-            "content": "sha256:55614d11c93c21ea706b6586989d20ee5a10b9e74c627d7613e9102629f2c9bc",
+            "blob": "cc94281379ec05363f5271bd286a082c5e8529ae",
+            "content": "sha256:3de84b38e0e1422fa4594d95415e2537c1121d622ea23a03aaf4ab37e2998ebc",
             "locator": {
-              "kind": "symbol",
-              "name": "briefProblem"
+              "kind": "file"
             },
             "path": "dashboard/src/panels/detail-panel/entryState.tsx"
           },
@@ -362,15 +349,14 @@
       ]
     },
     "46": {
-      "note": "The change-set client and the route the routed debt belongs to — a different client, a different route and a different owner from the review transport, which is why this leaf leaves it untouched.",
+      "note": "The change-set client and the route the routed debt belongs to — a different client, a different route and a different owner from the review transport, which is why this leaf leaves it untouched.\n\nAnchor: `taskChangeset`",
       "targets": [
         {
           "anchor": {
-            "blob": "ed265675478575ff8a4d1556006a4a3afd4aa87a",
-            "content": "sha256:a85e2cc9a5a731afed4fd8049a86cb9be07af2b3948fb6ceefd4894695138bed",
+            "blob": "ad784b1c6e63764e2f4437c99f28a2b9bd553703",
+            "content": "sha256:3991a7839bfcafd1a3534c2bdaebb09629138b26ca05dc63a7ee0778f9280d22",
             "locator": {
-              "kind": "symbol",
-              "name": "taskChangeset"
+              "kind": "file"
             },
             "path": "dashboard/src/data/changeset.ts"
           },

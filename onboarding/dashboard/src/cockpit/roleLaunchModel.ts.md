@@ -29,9 +29,15 @@ This account is bound to the candidate source, not a claim of a running serving 
 
 The current source and test assertions below establish the documented ownership; test citations do not claim a rerun in this pass.
 
+
 - Current source owner or exact assertion described above. [1]
+
+
 - Current source owner or exact assertion described above. [2]
+
+
 - Current source owner or exact assertion described above. [3]
+
 
 ## MIK-R95 Bound Selection Helpers
 
@@ -42,7 +48,9 @@ The current source and test assertions below establish the documented ownership;
 usesRequestReceipts separates per-request execution cardinality from isTasklessRole altitude. Investigator uses exact request identity at Projects and selected sprint/master scopes. Task-bound storage includes canonical selection scope; the earlier Projects system-specialist storage key remains unchanged for original saved retries. Restoring a selected UUID does not choose a newer sibling or manufacture a new request.
 
 
+
 - The current source implements this file’s stated Investigator boundary. [4]
+
 
 - File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence. [5]
 

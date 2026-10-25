@@ -85,14 +85,18 @@ No configured live documentation source was available for this pass.
 - A decision in full: alternatives, stored and derived status, supersession, governs. [5]
 - The L13 helpers every decision field is read through. [6]
 
+
 - A link target's kind; one indexed link with its record ends summarised. [7]
+
 
 - Numbered references, every target resolved. [8]
 - Linking records, each once. [9]
 
 - The decision case: alternatives, and superseded derived at the later commit. [10]
 
+
 - A history row's incoming link carries the record the row is about. [11]
+
 - A decision's incoming link from a history row names the row's subject. [12]
 
 ### Cross-Repo References

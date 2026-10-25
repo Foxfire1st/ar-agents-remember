@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/application/skill_resources/provider.py",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
@@ -98,12 +99,12 @@
       ]
     },
     "5": {
-      "note": "The generated package-data copy the served tree is read from.\n\nAnchor: \"ar-role-capsule-composition/v1\"",
+      "note": "The generated package-data copy the served tree is read from.",
       "targets": [
         {
           "anchor": {
-            "blob": "44fc0778eafc508eb0171dad824d435e6cf95374",
-            "content": "sha256:ed0968c56e210e3a3f5ca7e43da46a85eaf7168353b63081db06af2f9ef2622d",
+            "blob": "2f3ce46a32a38d86f474252bb23d8081e91f0a6e",
+            "content": "sha256:eb872cf7266eee92478bade771cd2a52d631a8387228cb01e1509650288f081b",
             "locator": {
               "end": 6,
               "kind": "line_range",
@@ -167,12 +168,23 @@
         },
         {
           "anchor": {
-            "blob": "1d6d4c77ad41eb2f9783975d929a3519d218f22f",
-            "content": "sha256:8d6df0233db28dae8af94ba99886353a17a1b6ec20716662319b91b6643ee7b6",
+            "blob": "231672944ca7b848d89e9ce82d950d95d92e5cc2",
+            "content": "sha256:06d910b89a8081450ae654ab5eba3a4a881dfc95bf80632d62b69de86e5e4504",
             "locator": {
               "end": 858,
               "kind": "line_range",
               "start": 841
+            },
+            "path": "mcp/tests/test_capsule_serving.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "231672944ca7b848d89e9ce82d950d95d92e5cc2",
+            "content": "sha256:ad3d94e6364f84bb66c0c762b33c3ee884d2fb94066e18b3964f3c9321ecec05",
+            "locator": {
+              "kind": "file"
             },
             "path": "mcp/tests/test_capsule_serving.py"
           },

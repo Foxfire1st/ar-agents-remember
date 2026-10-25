@@ -56,8 +56,12 @@ The problem categories, the parser and its entry points.
 - The parsed result, including unparsed record IDs that still resolve. [2]
 - Location dispatch, canonical check, relation attribution and sidecar placement. [3]
 - The tree entry point and the lenient base reader. [4]
+
 - A disallowed relation is refused under the relations rule with its field. [5]
+
+
 - A non-canonical file names the formatter command. [6]
+
 
 ### Cross-Repo References
 

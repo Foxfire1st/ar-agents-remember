@@ -117,8 +117,12 @@ Readable launch binding supplies one canonical launched-server instruction line.
 
 ### Repo-Internal References
 
+
 - `create_server` builds the FastMCP instance and invokes the registered tool families. [1]
+
+
 - The registration package imports each family registrar, collects them in `TOOL_REGISTRARS`, and exports that collection for server wiring. [2]
+
 - The stable tools package declares the public import surface for payload builders. [3]
 - The package imports worktree payload builders from the owning module. [4]
 - The package explicitly exports its builder vocabulary. [5]
@@ -132,7 +136,9 @@ No meaningful cross-repo references found.
 ### Runtime Source References
 
 - Frozen implementation of launched_server_instructions supporting the stated file behavior. [6]
+
 - Frozen implementation of create_server supporting the stated file behavior. [7]
+
 
 ## L23 Runtime Package Review
 

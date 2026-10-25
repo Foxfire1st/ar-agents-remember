@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/application/review_source_content.py",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
@@ -513,12 +514,23 @@
       ]
     },
     "26": {
-      "note": "The resolution this module re-uses to bind the leaf, and the shipped recheck it calls for currentness rather than inventing a second capture.",
+      "note": "The resolution this module re-uses to bind the leaf, and the shipped recheck it calls for currentness rather than inventing a second capture.\n\nAnchor: `resolve_review_candidate` `require_current_candidate_identity`",
       "targets": [
         {
           "anchor": {
-            "blob": "c8319fb42311c030f1339a491c666d1eea5f271d",
-            "content": "sha256:15c85cc33f1e7e214573b6ddb4d8135b307f5327ab47e100509cac8056ff3c39",
+            "blob": "e3af58a3091d7364172ee73c5443ed98c970efa1",
+            "content": "sha256:7e9ac77f2f5915763ef1f783b4f702cb301873552bf902458c10e481c3590527",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/review_candidate_resolution.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e3af58a3091d7364172ee73c5443ed98c970efa1",
+            "content": "sha256:08e0849315ec773c9bb78b7819bfb8660701cc99de5aa6b2258c355a972dfa06",
             "locator": {
               "kind": "symbol",
               "name": "resolve_review_candidate"
@@ -529,8 +541,8 @@
         },
         {
           "anchor": {
-            "blob": "c8319fb42311c030f1339a491c666d1eea5f271d",
-            "content": "sha256:ce8f7f96670ebbce089661807af6837f837d52158ab3d9d35da87fa703b518b1",
+            "blob": "e3af58a3091d7364172ee73c5443ed98c970efa1",
+            "content": "sha256:7d917ad76d87397bbf5e02bff49cf9c74122a645e26f0f24f1dfc6ab8882771a",
             "locator": {
               "kind": "symbol",
               "name": "require_current_candidate_identity"
@@ -542,7 +554,7 @@
       ]
     },
     "27": {
-      "note": "**The transport that reaches this owner: the third route, its selector value, its unwired answer and its incomplete-generation body.**",
+      "note": "**The transport that reaches this owner: the third route, its selector value, its unwired answer and its incomplete-generation body.**\n\nAnchor: `KNOWLEDGE_REVIEW_SOURCE_CONTENT_ROUTE` `SourceContentRef` `source_content_request_from_query` `_source_content_response` `_incomplete_generation`",
       "targets": [
         {
           "anchor": {
@@ -606,12 +618,23 @@
         },
         {
           "anchor": {
-            "blob": "f586b37f58f8578b6d886336ff8945ad4d88ac29",
-            "content": "sha256:f2463a7eb78ed3144ff8acd8d1fa3fdb73ddf9266e6d2c0e8304158c20413705",
+            "blob": "6add444a4a97d7a6620d640d6ffd27c4b3ec8734",
+            "content": "sha256:a65da3510c2fa9d405d5a81f7d08fd4d02db1ca8739b3fe7107f2863d17f720f",
             "locator": {
               "end": 653,
               "kind": "line_range",
               "start": 635
+            },
+            "path": "mcp/src/agents_remember/serving/review.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6add444a4a97d7a6620d640d6ffd27c4b3ec8734",
+            "content": "sha256:be76df9bb0c0e05f941397f214226d9d6338317e6ffca04c2ba890a9997fd41f",
+            "locator": {
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/serving/review.py"
           },
@@ -624,7 +647,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e2f1038f8f99aa45375bfa21ef0e369c5639cc46",
+            "blob": "3f0a6693c859f3300eb3e4a2ed3439fb33e1d04f",
             "content": "sha256:61ab9618cee15153fbd10da2e576ebdcb9311a459ce7184dce1f543f61ad02ac",
             "locator": {
               "kind": "symbol",
@@ -649,12 +672,12 @@
       ]
     },
     "29": {
-      "note": "The refusal code this read publishes, added to the review vocabulary without changing how an unknown code maps.\n\nAnchor: `source_content_unresolved`",
+      "note": "The refusal code this read publishes, added to the review vocabulary without changing how an unknown code maps.",
       "targets": [
         {
           "anchor": {
-            "blob": "889df3540da11d28e4b0bef1fe9c557748e265d4",
-            "content": "sha256:bd6c5bf6eca62d44c807319571d642d9c42dffef1af37cc88ba79a795855c8f6",
+            "blob": "e298bc656619aa09b3566b8e7baeb7a8453b656f",
+            "content": "sha256:c8003c553976dee6510cac9e1c0cf9acf5858e1891a8e822a757a9b313528fad",
             "locator": {
               "end": 161,
               "kind": "line_range",

@@ -56,11 +56,17 @@ This entry supersedes any earlier description in this sidecar that conflicts wit
 
 Successful atomic replacement of a final file invalidates the writer's parsed-final cache for that exact path, including an equal old/new mtime. The next read serves the new valid facts without an additional observation or historical retry; failed writes keep the existing reported failure path.
 
+
 - Projector owns startup and cancellation. [1]
+
 - Landing facts are merged into projected status.  Anchor: "def _safe_status_payload(  # pragma: no cover"; "def refresh_engine_process_landing(  # pragma: no cover" [2]
 - Exact completed arcs with no valid final are eligible once, including startup, under bounded admissions. [3]
+
 - A terminal finishing attempt remains consumed after success, failure and subsequent final loss until reopen. [4]
+
+
 - Final facts are served only after complete matching reducer/participant validation, otherwise as honest missing. [5]
+
 
 - Bound interest gates discovery, due selection, publication-driven schedule advance and probe admission; unbound callers retain explicit refresh behavior. [7]
 - Current-identity retention and semantic-answer age determine transient due times. [8]

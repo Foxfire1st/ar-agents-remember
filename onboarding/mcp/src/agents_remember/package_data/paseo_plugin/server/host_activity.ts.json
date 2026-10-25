@@ -73,12 +73,12 @@
   ],
   "references": {
     "1": {
-      "note": "Host event transitions and exact registered-agent admission.\n\nAnchor: `HostActivityPublisher.note`",
+      "note": "Host event transitions and exact registered-agent admission.",
       "targets": [
         {
           "anchor": {
-            "blob": "908cd59d77b69bd40d9bc75fa6187363fbbf7d53",
-            "content": "sha256:99d3539af5b140f6d63be9d5b4eff64b1a0960cb6837667c024145fb93352b29",
+            "blob": "0b031f5a97d1b56192251c36fe822a3882198843",
+            "content": "sha256:46f09631fe83ff27c8e641f6c2645b7a37306d573906f43f7fc7ba94b315b495",
             "locator": {
               "end": 138,
               "kind": "line_range",
@@ -90,12 +90,12 @@
       ]
     },
     "2": {
-      "note": "Full paginated reconciliation and event-wins ordering.\n\nAnchor: `HostActivityPublisher.reconcile`",
+      "note": "Full paginated reconciliation and event-wins ordering.",
       "targets": [
         {
           "anchor": {
-            "blob": "908cd59d77b69bd40d9bc75fa6187363fbbf7d53",
-            "content": "sha256:ed31b11ba8a6a9e5ada0f44bc2cedb95d8ce56cb6dec6a44fe2a6a70c61db644",
+            "blob": "0b031f5a97d1b56192251c36fe822a3882198843",
+            "content": "sha256:36bc49ebe22f72a71be95d08297724854cd2b2d73a332a5e3e0e184477ffaa8a",
             "locator": {
               "end": 177,
               "kind": "line_range",
@@ -107,12 +107,12 @@
       ]
     },
     "3": {
-      "note": "Bound population, published timestamps and snapshot provenance.\n\nAnchor: `HostActivityPublisher.publish`",
+      "note": "Bound population, published timestamps and snapshot provenance.",
       "targets": [
         {
           "anchor": {
-            "blob": "908cd59d77b69bd40d9bc75fa6187363fbbf7d53",
-            "content": "sha256:d3a7d92fd093f1385f8c34986f170a9f7fb25984545b845d4098a220a1d3f412",
+            "blob": "0b031f5a97d1b56192251c36fe822a3882198843",
+            "content": "sha256:e2c43e0d39c5ad7cbbb554f536c7124bee0ad338d0cc1ecca2208920e1150846",
             "locator": {
               "end": 212,
               "kind": "line_range",
@@ -124,15 +124,14 @@
       ]
     },
     "4": {
-      "note": "One replacement file and independent activity handlers.",
+      "note": "One replacement file and independent activity handlers.\n\nAnchor: `createHostActivityPublisher`",
       "targets": [
         {
           "anchor": {
-            "blob": "908cd59d77b69bd40d9bc75fa6187363fbbf7d53",
-            "content": "sha256:3cc34e0b081169b3736ca498bfbacae6f2a0f9c9df0d7af5a8da6f4eb4b81b2c",
+            "blob": "0b031f5a97d1b56192251c36fe822a3882198843",
+            "content": "sha256:85e79187becdd644146a83bc7be1c9e55cd253f4ce275c1bb6d64f2e19f75fd2",
             "locator": {
-              "kind": "symbol",
-              "name": "createHostActivityPublisher"
+              "kind": "file"
             }
           },
           "kind": "code"

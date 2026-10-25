@@ -67,7 +67,9 @@ Markdown publication reads the external grant census once per batch and coordina
 ### Repo-Internal References
 
 
+
 - The TaskDocument class is the JSON-primary schema the store serializes with aliases/exclude_none and reads through model_validate_json. [1]
+
 
 
 
@@ -75,7 +77,9 @@ Markdown publication reads the external grant census once per batch and coordina
 
 
 
+
 - Application publication batches the leaf and resolved parent when sync changed or waitsFor was explicitly supplied by create/replace/set_field; parent accepted source bytes are required. [3]
+
 
 
 - Publishability gate refusing legacy review intent. [4]

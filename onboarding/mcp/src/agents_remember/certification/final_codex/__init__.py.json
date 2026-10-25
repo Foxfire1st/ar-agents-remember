@@ -290,7 +290,7 @@
       ]
     },
     "8": {
-      "note": "The outer certification facade re-exports the same final-codex surface.\n\nAnchor: `final_codex`",
+      "note": "The outer certification facade re-exports the same final-codex surface.",
       "targets": [
         {
           "anchor": {
@@ -307,8 +307,8 @@
         },
         {
           "anchor": {
-            "blob": "eb3d1d5c1a4bbc17ea60d6d609efb68cbedd3018",
-            "content": "sha256:58797594fb55c7fab17a0d276e65e86b9cbf3680afc66a4d1e2fd78d73c22fa6",
+            "blob": "04d023138a7dc257185ea1caa76dd9ec1b513d59",
+            "content": "sha256:6531c25db2abd72da8a9d566dec13c19f76d6b055fe00862f60f74534feca6c6",
             "locator": {
               "end": 277,
               "kind": "line_range",

@@ -1,5 +1,6 @@
 {
   "path": "mcp/tests/fixtures/knowledge_files/4.1-worktrees-overview.json",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
@@ -7,7 +8,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5f6d3ca47e13ce661216d254ef5f6c7b5a6a1e71",
+            "blob": "7be697bb6d4a715509e66dcec9c7163fe2179fab",
             "content": "sha256:c4147ff3d09c7ff9723bd3a5a1b9fe2af341c0e8020a5fea74c7686608d79d4b",
             "locator": {
               "end": 33,
@@ -24,7 +25,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5f6d3ca47e13ce661216d254ef5f6c7b5a6a1e71",
+            "blob": "7be697bb6d4a715509e66dcec9c7163fe2179fab",
             "content": "sha256:c8e4b0c6871c4e20e1ef92da8d59d0586fdb4aaa2494cbaeffb9191ca763c96b",
             "locator": {
               "end": 2,

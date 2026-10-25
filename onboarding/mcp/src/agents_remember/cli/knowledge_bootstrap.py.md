@@ -30,7 +30,9 @@ traceback.
 
 - `add_arguments` owns the current boundary described above. [27]
 - `run` owns the current boundary described above. [28]
+
 - `_run` owns the current boundary described above. [29]
+
 
 ### Repo-Internal References
 
@@ -39,6 +41,8 @@ traceback.
 - The typed refusal payload a refusal is rendered from. [32]
 - The `--wave` argument, required only for converted memory. [33]
 - **The admission resolver this entry point is the public face of.** [34]
+
 - The wave passes the admitted authority's coordination root, so requirement endpoints resolve (MIK-R13, review F4). [35]
+
 
 - knowledge-bootstrap refuses unconverted memory whether or not the repository holds converted memory elsewhere, naming crossing sync or the first-conversion procedure. [36]

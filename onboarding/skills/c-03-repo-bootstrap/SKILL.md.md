@@ -16,7 +16,9 @@ Resolve context and source eligibility before building root and route-local over
 
 The byte-equal packaged skill is a distribution carrier, not an independent role, task or permission authority. The current source account above does not certify inherited prose, actual execution, launch delivery or grading.
 
+
 - The canonical source supplies the current instruction or template contract described above; the package copy is derived. [1]
+
 
 ## Current Source Qualification
 

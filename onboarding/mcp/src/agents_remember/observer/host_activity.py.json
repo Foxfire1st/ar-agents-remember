@@ -38,15 +38,14 @@
   ],
   "references": {
     "1": {
-      "note": "Define the shared validated host publication and default-unknown retained activity facts.",
+      "note": "Define the shared validated host publication and default-unknown retained activity facts.\n\nAnchor: `PublishedAgentActivity`",
       "targets": [
         {
           "anchor": {
-            "blob": "892f1ad6351be996d466f5d33cf1e4b69efcee8f",
-            "content": "sha256:84dbf28f470e2d02f803d64bd0c81d1da5312073ac4e18d1063dd9376ffd5330",
+            "blob": "da618388bae65920ebfc8a4d5defdc152336df08",
+            "content": "sha256:7f02ea0213c25d1b3bdf2f04eec18a794d20c6eae41b394c36935d320c0d415b",
             "locator": {
-              "kind": "symbol",
-              "name": "PublishedAgentActivity"
+              "kind": "file"
             }
           },
           "kind": "code"

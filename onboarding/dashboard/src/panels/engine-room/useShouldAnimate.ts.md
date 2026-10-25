@@ -29,5 +29,7 @@ Two exports.
 
 - `shouldAnimate()` reads data-effects + prefers-reduced-motion [1]
 - `useShouldAnimate()` reactive hook (media query + MutationObserver) [2]
+
 - The main entry checks `?effects=off` or `calm-cockpit` and sets `document.documentElement.dataset.effects` to `off`. [3]
+
 - The prior inline freeze check this generalizes [4]

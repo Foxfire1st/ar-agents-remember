@@ -39,9 +39,11 @@ tests govern this internal durability boundary.
 ### Repo-Internal References
 
 - Binding identity and payload fields are closed and predecessor-aware. [1]
-- Canonical digests, serialization, and bounded conflicts are pure helpers. [2]
-- Enclosure publication consumes the binding and digest API before any publication. [3]
-- Readback verification re-derives the same binding and request identity. [4]
+> Retained earlier citation wording: - Canonical digests, serialization, and bounded conflicts are pure helpers. [2]
+> Retained earlier citation wording: - Enclosure publication consumes the binding and digest API before any publication. [3]
+
+> Retained earlier citation wording: - Readback verification re-derives the same binding and request identity. [4]
+
 
 ### Cross-Repo References
 
@@ -50,3 +52,11 @@ No cross-repository authority is owned here.
 ## 260928-MIK-L198 — Exact bytes leave a null root out, the binding does not carry it
 
 `model_text` now omits each of `predecessorTerminal` and `outsideScratch` that is null, and passes `exclude=None` when neither is null, so a manifest published before the root record existed re-serialises to the same bytes. That is what keeps `expectedManifestSha256`, the terminal archive's manifest entry and every readback proof stable across the change. The binding payload is untouched: `enclosure_binding_payload` still holds the nine address fields plus the `predecessorTerminal` proof, and it names nothing about the root. The root is covered by the manifest digest and not by the binding fingerprint, so recording it does not change a published enclosure's binding identity. `EnclosureBindingIdentity` gains no field either, and `locator_binding` still excludes mutable state and proof fields.
+
+- Canonical digests, serialization, and bounded conflicts are pure helpers.  Anchor: `locator_id` [2]
+
+
+- Enclosure publication consumes the binding and digest API before any publication.  Anchor: "def prepare_enclosure_publication("; "binding = enclosure_binding_payload("; "binding_fingerprint = sha256_payload(binding)" [3]
+
+
+- Readback verification re-derives the same binding and request identity. [4]

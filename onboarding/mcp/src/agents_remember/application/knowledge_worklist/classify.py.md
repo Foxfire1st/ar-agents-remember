@@ -104,7 +104,9 @@ No configured live documentation source was available for this pass.
 ### Repo-Internal References
 
 - Raising and covering classes. [2]
+
 - One entry's class and facts; the per-side content identity. [3]
+
 - Classify once per run. [4]
 
 

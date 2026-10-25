@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/models/drift.py",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
@@ -23,8 +24,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8189a91f17a9062872de4283e541094ec1484f70",
-            "content": "sha256:179ff2277dbc9f31b6dcc07320f7d791f765304c67a1149cfb37cc5dbad06d37",
+            "blob": "37b2aac34d912943eff6a629b0d6906b3df837f0",
+            "content": "sha256:30c1f188f142ed7a824680b207172c5519bc614a48fda7cf167edb8ddf79956c",
             "locator": {
               "end": 120,
               "kind": "line_range",
@@ -36,8 +37,8 @@
         },
         {
           "anchor": {
-            "blob": "8189a91f17a9062872de4283e541094ec1484f70",
-            "content": "sha256:b600923b643228d39c596fce21ff38f86699563149c22fbbed582024d0a31874",
+            "blob": "37b2aac34d912943eff6a629b0d6906b3df837f0",
+            "content": "sha256:42dc01e6a5b3c6e6acd56fd8b693dc265774948e58ae547146c624a40b1ee2e3",
             "locator": {
               "end": 423,
               "kind": "line_range",
@@ -49,12 +50,51 @@
         },
         {
           "anchor": {
-            "blob": "8189a91f17a9062872de4283e541094ec1484f70",
-            "content": "sha256:42dc01e6a5b3c6e6acd56fd8b693dc265774948e58ae547146c624a40b1ee2e3",
+            "blob": "37b2aac34d912943eff6a629b0d6906b3df837f0",
+            "content": "sha256:31c600d2f9b2d4d43d26092a825f042c693d4f34efaf34aff27818aceecf2333",
             "locator": {
               "end": 427,
               "kind": "line_range",
               "start": 427
+            },
+            "path": "mcp/src/agents_remember/application/context_packet.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "37b2aac34d912943eff6a629b0d6906b3df837f0",
+            "content": "sha256:076b41541537dfb038105a4df9772b7ff18fc9576011fe16b792812be8beab0a",
+            "locator": {
+              "end": 107,
+              "kind": "line_range",
+              "start": 107
+            },
+            "path": "mcp/src/agents_remember/application/context_packet.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "37b2aac34d912943eff6a629b0d6906b3df837f0",
+            "content": "sha256:738ccd6022d5a7b9d08c84d6909d5f341bcbe79b1cf3b738d11b083e9268a564",
+            "locator": {
+              "end": 194,
+              "kind": "line_range",
+              "start": 194
+            },
+            "path": "mcp/src/agents_remember/application/context_packet.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "37b2aac34d912943eff6a629b0d6906b3df837f0",
+            "content": "sha256:035ddf3cc6c2c36dffc84abaf1a424d593d1d21d5daea44b5e022152c80ea836",
+            "locator": {
+              "end": 198,
+              "kind": "line_range",
+              "start": 198
             },
             "path": "mcp/src/agents_remember/application/context_packet.py"
           },
@@ -96,7 +136,7 @@
         },
         {
           "anchor": {
-            "blob": "167c28bf3a5d1b7ea0ee02e83892bf55ee9a32aa",
+            "blob": "bf6833bf5d456b21488675f40c54e8fe67c5c011",
             "content": "sha256:9006b7b69dc5a39ca0854598cd817087bc4cd69dadbaeac832c91843fde0f9e7",
             "locator": {
               "end": 15,

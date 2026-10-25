@@ -33,7 +33,7 @@ is what one case measures rather than asserts.
 **`_PUBLICATION_INPUT_NAMES` (`:55-65`) and `_MEMBER_VALUES` (`:67-80`) are the module's own
 mirrors** of the declaration and of a request carrying every member. `_publication_request` (`:92-95`)
 composes the full request before overrides, `_refusal_message` (`:98-101`) returns
-`errors()[0]["msg"]` from `CuratorCoherenceRequest.model_validate`, and `_missing_detail` (`:104-108`)
+`errors()["msg"]` from `CuratorCoherenceRequest.model_validate`, and `_missing_detail` (`:104-108`)
 strips the shipped opening sentence — asserted present first, so a refusal that dropped it fails here
 rather than silently matching. The docstring on the first case records why the assertion reads the
 detail rather than whole-message substrings: the shipped opening sentence contains "caller" as prose

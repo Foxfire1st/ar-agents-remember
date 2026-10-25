@@ -4,12 +4,22 @@
   "realizes": [],
   "references": {
     "11": {
-      "note": "`build_read_scope_fixture` supplies the current fixture or assertion described above.",
+      "note": "`build_read_scope_fixture` supplies the current fixture or assertion described above.\n\nAnchor: `build_read_scope_fixture`",
       "targets": [
         {
           "anchor": {
-            "blob": "9f0492ab5aba8203333707f64fbc4914d432963f",
-            "content": "sha256:1c1cc0d822b84b2e2bc2985992d154d169a88e6928a5f1b59eaf352820ef9079",
+            "blob": "0d327ce3b9436eec25a74e5548e566bfbde89c7e",
+            "content": "sha256:f8b2b68d3a4084309c854c774b870c585832b99c522189ececf823a1ec098a67",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "0d327ce3b9436eec25a74e5548e566bfbde89c7e",
+            "content": "sha256:269b1bb5848bfa06ae7f0b5f2138690cc4cc9475afc3d513873e274139d3eeea",
             "locator": {
               "kind": "symbol",
               "name": "build_read_scope_fixture"
@@ -20,12 +30,22 @@
       ]
     },
     "12": {
-      "note": "`_create_invariant` supplies the current fixture or assertion described above.",
+      "note": "`_create_invariant` supplies the current fixture or assertion described above.\n\nAnchor: `_create_invariant`",
       "targets": [
         {
           "anchor": {
-            "blob": "9f0492ab5aba8203333707f64fbc4914d432963f",
-            "content": "sha256:cff1a7d55500d7060ad93fdfa9c3791b7159abbf11879b10882b91fc8155b594",
+            "blob": "0d327ce3b9436eec25a74e5548e566bfbde89c7e",
+            "content": "sha256:f8b2b68d3a4084309c854c774b870c585832b99c522189ececf823a1ec098a67",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "0d327ce3b9436eec25a74e5548e566bfbde89c7e",
+            "content": "sha256:0b4b9a24c819c309d232fd28b1da29b73393da00bb72eef164aaabe98091ed11",
             "locator": {
               "kind": "symbol",
               "name": "_create_invariant"
@@ -36,12 +56,22 @@
       ]
     },
     "13": {
-      "note": "`_create_revision` supplies the current fixture or assertion described above.",
+      "note": "`_create_revision` supplies the current fixture or assertion described above.\n\nAnchor: `_create_revision`",
       "targets": [
         {
           "anchor": {
-            "blob": "9f0492ab5aba8203333707f64fbc4914d432963f",
-            "content": "sha256:8e19c585cf7695583db3bb2526f72578aadcfa28fd3b7b9d053e89f36980e1cc",
+            "blob": "0d327ce3b9436eec25a74e5548e566bfbde89c7e",
+            "content": "sha256:f8b2b68d3a4084309c854c774b870c585832b99c522189ececf823a1ec098a67",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "0d327ce3b9436eec25a74e5548e566bfbde89c7e",
+            "content": "sha256:6a0c27e80328207e8564e15764e72846cbf58f23dc640b5061230e7e3127e219",
             "locator": {
               "kind": "symbol",
               "name": "_create_revision"
@@ -52,12 +82,22 @@
       ]
     },
     "14": {
-      "note": "`_create_realization` supplies the current fixture or assertion described above.",
+      "note": "`_create_realization` supplies the current fixture or assertion described above.\n\nAnchor: `_create_realization`",
       "targets": [
         {
           "anchor": {
-            "blob": "9f0492ab5aba8203333707f64fbc4914d432963f",
-            "content": "sha256:b57db64f31c3d5a073a032f1b77a783c98c37a6c9a65be3417f44d99eb90fcdf",
+            "blob": "0d327ce3b9436eec25a74e5548e566bfbde89c7e",
+            "content": "sha256:f8b2b68d3a4084309c854c774b870c585832b99c522189ececf823a1ec098a67",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "0d327ce3b9436eec25a74e5548e566bfbde89c7e",
+            "content": "sha256:2fb1bf8fd32ac947b76e7fa7e90d425cca5b0d601e9edd567054de1011858116",
             "locator": {
               "kind": "symbol",
               "name": "_create_realization"
@@ -72,8 +112,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9f0492ab5aba8203333707f64fbc4914d432963f",
-            "content": "sha256:1a37d7dc8d9c57d32b3de022e6b5ed7c861a0fd8f617701a5f3da3f62efe3d4d",
+            "blob": "0d327ce3b9436eec25a74e5548e566bfbde89c7e",
+            "content": "sha256:6944c5ca42f8f65fe37a818c5878a505920138f6df200c9affbc53899dce1c63",
             "locator": {
               "end": 61,
               "kind": "line_range",
@@ -85,15 +125,14 @@
       ]
     },
     "16": {
-      "note": "RowStore inserts index-shaped fixture rows without the retired production admission plane.",
+      "note": "RowStore writes text-tree fixture rows without the retired production admission plane.\n\nAnchor: `RowStore`",
       "targets": [
         {
           "anchor": {
-            "blob": "25497ca2fe27297d4ac750d338e86962058a76f1",
-            "content": "sha256:041b3cc8ba5b2d4ef617d3c837e60d9fdc1aca5a8c4787a0854ce08e91e91eee",
+            "blob": "62e692c8ea18903861ec2efddd03c884ed14f818",
+            "content": "sha256:43a32e8370a3aa07c1e8247bd8b4d445a42caab3b630d2ed5783e663bc3c824e",
             "locator": {
-              "kind": "symbol",
-              "name": "RowStore"
+              "kind": "file"
             },
             "path": "mcp/tests/knowledge_rows_test_support.py"
           },
@@ -102,12 +141,22 @@
       ]
     },
     "17": {
-      "note": "**The fixture's declared topology and why this graph and not the shared branching one.**",
+      "note": "**The fixture's declared topology and why this graph and not the shared branching one.**\n\nAnchor: `build_read_scope_fixture`",
       "targets": [
         {
           "anchor": {
-            "blob": "9f0492ab5aba8203333707f64fbc4914d432963f",
-            "content": "sha256:1c1cc0d822b84b2e2bc2985992d154d169a88e6928a5f1b59eaf352820ef9079",
+            "blob": "0d327ce3b9436eec25a74e5548e566bfbde89c7e",
+            "content": "sha256:f8b2b68d3a4084309c854c774b870c585832b99c522189ececf823a1ec098a67",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "0d327ce3b9436eec25a74e5548e566bfbde89c7e",
+            "content": "sha256:269b1bb5848bfa06ae7f0b5f2138690cc4cc9475afc3d513873e274139d3eeea",
             "locator": {
               "kind": "symbol",
               "name": "build_read_scope_fixture"
@@ -118,81 +167,14 @@
       ]
     },
     "18": {
-      "note": "The graph constants: the labels, statements, conditions and the four direct family guarantees.",
+      "note": "The graph constants: the invariant labels and statements, the applicability, conditions and exclusions, and the three direct family guarantees.\n\nAnchor: `RETRY_LABEL` `BATCH_LABEL` `RESOLUTION_LABEL` `SHARED_SUCCESSOR_LABEL` `FAMILY_LABEL` `OVERLAPPING_FAMILY_LABEL` `DIRECT_FAMILY_LABEL`",
       "targets": [
         {
           "anchor": {
             "blob": "0d327ce3b9436eec25a74e5548e566bfbde89c7e",
-            "content": "sha256:ad679459dab5c2a84e88aa007ca1ff7991d2f7b4e12468d39d6e6dd8d70cf7da",
+            "content": "sha256:f8b2b68d3a4084309c854c774b870c585832b99c522189ececf823a1ec098a67",
             "locator": {
-              "kind": "symbol",
-              "name": "RETRY_LABEL"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "0d327ce3b9436eec25a74e5548e566bfbde89c7e",
-            "content": "sha256:e0aaeab559961677d040e05cfb3e9c9618f232238087944f80a0f7bb869cf72d",
-            "locator": {
-              "kind": "symbol",
-              "name": "BATCH_LABEL"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "0d327ce3b9436eec25a74e5548e566bfbde89c7e",
-            "content": "sha256:7633f099fdba63fb16e8f14ec87229e741b1f8582cd227650747290af3931796",
-            "locator": {
-              "kind": "symbol",
-              "name": "RESOLUTION_LABEL"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "9f0492ab5aba8203333707f64fbc4914d432963f",
-            "content": "sha256:b081be6e423b89978cd024b7efb50d8ac2d782b89577a5dca9b71350fb18dd43",
-            "locator": {
-              "kind": "symbol",
-              "name": "SHARED_SUCCESSOR_LABEL"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "0d327ce3b9436eec25a74e5548e566bfbde89c7e",
-            "content": "sha256:aa31a30134ac48b4e2fa021ba12348952bc175109748677b0055eda78b00c6b9",
-            "locator": {
-              "kind": "symbol",
-              "name": "FAMILY_LABEL"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "0d327ce3b9436eec25a74e5548e566bfbde89c7e",
-            "content": "sha256:234438e92bcdfd40b01a8e0668ddc7fb72f2107a495439a2b632080f58dfb96e",
-            "locator": {
-              "kind": "symbol",
-              "name": "OVERLAPPING_FAMILY_LABEL"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "0d327ce3b9436eec25a74e5548e566bfbde89c7e",
-            "content": "sha256:4199685d04e067a3f2cdb58ae0fdc6ed3fe8b96153affd7023008949c814ef55",
-            "locator": {
-              "kind": "symbol",
-              "name": "DIRECT_FAMILY_LABEL"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -276,12 +258,22 @@
       ]
     },
     "21": {
-      "note": "The public builder and the value types a case reads.",
+      "note": "The public builder and the value types a case reads.\n\nAnchor: `build_read_scope_fixture` `ReadScopeFixture` `RevisionSeed` `RealizationSeed` `ReadFixtureFamily` `ReadFixtureRealization`",
       "targets": [
         {
           "anchor": {
-            "blob": "9f0492ab5aba8203333707f64fbc4914d432963f",
-            "content": "sha256:1c1cc0d822b84b2e2bc2985992d154d169a88e6928a5f1b59eaf352820ef9079",
+            "blob": "0d327ce3b9436eec25a74e5548e566bfbde89c7e",
+            "content": "sha256:f8b2b68d3a4084309c854c774b870c585832b99c522189ececf823a1ec098a67",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "0d327ce3b9436eec25a74e5548e566bfbde89c7e",
+            "content": "sha256:269b1bb5848bfa06ae7f0b5f2138690cc4cc9475afc3d513873e274139d3eeea",
             "locator": {
               "kind": "symbol",
               "name": "build_read_scope_fixture"
@@ -291,8 +283,8 @@
         },
         {
           "anchor": {
-            "blob": "9f0492ab5aba8203333707f64fbc4914d432963f",
-            "content": "sha256:0e3fa5e93f9ddb49990b81cd2e85b8ab0aad1ef6d4c4a5d0711dfb0f60693de3",
+            "blob": "0d327ce3b9436eec25a74e5548e566bfbde89c7e",
+            "content": "sha256:41cd5ec8cdecaaf838b95079b0239b3e1803add55b6b39c6095b56ba680b4b8f",
             "locator": {
               "kind": "symbol",
               "name": "ReadScopeFixture"
@@ -302,8 +294,8 @@
         },
         {
           "anchor": {
-            "blob": "9f0492ab5aba8203333707f64fbc4914d432963f",
-            "content": "sha256:da3e9dc37310d0e025b34d586655ae8443525adfb045348805671488037e3fa4",
+            "blob": "0d327ce3b9436eec25a74e5548e566bfbde89c7e",
+            "content": "sha256:9c3f5174d936051cbfb01a4d599b12bc0c3bee8c3da457e4120d5307552d26a8",
             "locator": {
               "kind": "symbol",
               "name": "RevisionSeed"
@@ -313,8 +305,8 @@
         },
         {
           "anchor": {
-            "blob": "9f0492ab5aba8203333707f64fbc4914d432963f",
-            "content": "sha256:6dd84021c8ba8166aaea5c8e62a973612acc3de23f0f1d070be0f57db5f03d1f",
+            "blob": "0d327ce3b9436eec25a74e5548e566bfbde89c7e",
+            "content": "sha256:0e65fe094cddd8b14e038587ba6a3c65c078b302ee298a86f656a243bc4f534b",
             "locator": {
               "kind": "symbol",
               "name": "RealizationSeed"
@@ -324,8 +316,8 @@
         },
         {
           "anchor": {
-            "blob": "9f0492ab5aba8203333707f64fbc4914d432963f",
-            "content": "sha256:077b2ba130e176f3daf7d3ed117f0c969aeeca677520880af5a1ba93fd5f10f7",
+            "blob": "0d327ce3b9436eec25a74e5548e566bfbde89c7e",
+            "content": "sha256:35614aaf90ab2004e52a0520c3156a231dfc4d218358797c7be3659d7b14f825",
             "locator": {
               "kind": "symbol",
               "name": "ReadFixtureFamily"
@@ -335,8 +327,8 @@
         },
         {
           "anchor": {
-            "blob": "9f0492ab5aba8203333707f64fbc4914d432963f",
-            "content": "sha256:c369d899b31fa70f78489ddb6406ce57679539e0d5335f148232313fad758572",
+            "blob": "0d327ce3b9436eec25a74e5548e566bfbde89c7e",
+            "content": "sha256:7bb106e1f2d6ed2f0bfe315fff53054ecfe4a7316244057e229fce63821848d7",
             "locator": {
               "kind": "symbol",
               "name": "ReadFixtureRealization"
@@ -347,16 +339,29 @@
       ]
     },
     "22": {
-      "note": "**The governed-artifact and contract rows that make this module part of the catalog.**\n\nAnchor: `read_scope_test_support`",
+      "note": "**The governed-artifact and contract rows that make this module part of the catalog.** Source caption: `read_scope_test_support`",
       "targets": [
         {
           "anchor": {
-            "blob": "5b85740d9ae416814196e4c0ca40c2bab4419451",
-            "content": "sha256:1ee3acb2ab43db1554c9afb0bf7495e701a128cd330d8b564d140f73eba5b034",
+            "blob": "3c5993c94cf78973b3b39cfe7de9774c8aea6d1a",
+            "content": "sha256:e9f15c6737a72ff1bff8332a4b85f43f25af3ff018c4b2ae0f06200aa8721828",
             "locator": {
-              "end": 3280,
+              "end": 3335,
               "kind": "line_range",
-              "start": 3277
+              "start": 3322
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "3c5993c94cf78973b3b39cfe7de9774c8aea6d1a",
+            "content": "sha256:cb641267e11b8aec644ea6ca3e0ee68f833e7a2d4d2c480e3ee02aba12f59d59",
+            "locator": {
+              "end": 32,
+              "kind": "line_range",
+              "start": 29
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },

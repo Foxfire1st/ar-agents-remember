@@ -67,15 +67,14 @@
       ]
     },
     "2": {
-      "note": "Preparation validates accepted output and source/checkout state.",
+      "note": "Preparation validates accepted output and source/checkout state.\n\nAnchor: `prepare_integration_ref_move`",
       "targets": [
         {
           "anchor": {
-            "blob": "1eae755ed66c1ea3e4359823c50bc121bebca0e0",
-            "content": "sha256:151351600c0a9a60f6881259fc9496650076dbbe07175f8b54cb75c03e32e920",
+            "blob": "e45cbd6127d560f2f834a2b326c1f9a481c697ac",
+            "content": "sha256:4c7e812c2c7354177f641404d5386348bf60c07ef0ee34b6268efa6bb047d5bc",
             "locator": {
-              "kind": "symbol",
-              "name": "prepare_integration_ref_move"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -148,8 +147,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8e933a00fdcd9afb26300173ae9b763daacb0f21",
-            "content": "sha256:92012e8476b0abb4889b0da149cf5697104050bf3578224931e15cd6b2dc1dad",
+            "blob": "e45cbd6127d560f2f834a2b326c1f9a481c697ac",
+            "content": "sha256:8d76a99de912734f83a1e91e6efb0a60a15bbf6cb1b1d7c8c3805793f8175c42",
             "locator": {
               "end": 377,
               "kind": "line_range",

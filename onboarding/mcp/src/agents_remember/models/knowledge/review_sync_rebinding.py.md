@@ -76,7 +76,9 @@ constructed.
 - The actual source-bound producer captures owner inputs and constructs the v2 value. [18]
 
 - The durable publication and read-back the record travels through. [19]
+
 - **The read half that projects this record's own verdict into the review's measured-currentness vocabulary.** [20]
+
 
 - Tests measure exact pair, memory-only movement, capture absence and legacy noncoverage. [22]
 

@@ -71,9 +71,15 @@ No configured live documentation source was available for this pass.
 
 ### Repo-Internal References
 
+
 - The optional knowledge-presence and coverage fields of a tree row. [15]
+
+
 - The shareable address, read and written. [16]
+
+
 - The address a code citation opens. [18]
+
 - The tree that renders the optional fields without claiming an unknown. [19]
 
 ### Cross-Repo References

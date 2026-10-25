@@ -67,11 +67,19 @@ No configured live documentation source was available for this pass.
 
 ### Repo-Internal References
 
+
 - The renderer mounts its plugins only when the caller asks for markers or heading ids. [7]
+
+
 - The requirement anchor resolves registered packets and refuses unregistered addresses. [8]
+
+
 - The document typing used by the Knowledge reader is one opt-in block. [9]
+
 - The marker and heading plugins the Knowledge reader opts into. [10]
+
 - The reader's document text renders through this primitive. [11]
+
 
 ### Cross-Repo References
 

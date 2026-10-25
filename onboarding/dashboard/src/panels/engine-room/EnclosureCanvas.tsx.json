@@ -1,5 +1,6 @@
 {
   "path": "dashboard/src/panels/engine-room/EnclosureCanvas.tsx",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
@@ -7,8 +8,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3e8bac7662cfcef7ae4bddc696e4824dcde4491f",
-            "content": "sha256:9074e8c83128d82ecfa8eefd5437dd80da8bf4fdb3f36ba8a9c452d165ff034e",
+            "blob": "15444872a266d89123558da6eb8909e81fe96665",
+            "content": "sha256:61dad35722af28683f5dd111cfd1ad5ead8c30d26187d06a74b0a80da28d5996",
             "locator": {
               "kind": "symbol",
               "name": "EnclosureCanvas"
@@ -23,7 +24,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f23ae83b49025d9b10e7b6bc846ede9a6d48563e",
+            "blob": "0a3de3f86452a06356eee661d5e4bbdc7ccdf5eb",
             "content": "sha256:96ae224a660d306e828d63dac5c820748e724ec62b58b9affa6c2b6db358a4e8",
             "locator": {
               "kind": "symbol",
@@ -40,7 +41,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "596dec5c6c7c633b293640144a05def6c8ef4578",
+            "blob": "053b605eb77ad20fed2c08ede3c3caabf4fc3cf6",
             "content": "sha256:2491f0e8fe78d3ad5c0685f0f524570eb80490167132d6ea70461cdaacafee3e",
             "locator": {
               "end": 26,
@@ -84,8 +85,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f23ae83b49025d9b10e7b6bc846ede9a6d48563e",
-            "content": "sha256:01ba4509f31fe8778b87627f2ca5e73f17a9de32f15699d24d87f9997bcbdc15",
+            "blob": "0a3de3f86452a06356eee661d5e4bbdc7ccdf5eb",
+            "content": "sha256:3042ace3141cad314d947b04a7a1c7829090430c0e7b96ee21ad4ca03d6e9f61",
             "locator": {
               "end": 109,
               "kind": "line_range",
@@ -97,8 +98,8 @@
         },
         {
           "anchor": {
-            "blob": "f23ae83b49025d9b10e7b6bc846ede9a6d48563e",
-            "content": "sha256:9de7b5259c1101ca01ed494e61c6e5222637b655b061c4c38878ed904145a16b",
+            "blob": "0a3de3f86452a06356eee661d5e4bbdc7ccdf5eb",
+            "content": "sha256:63488e35d19e0f2fcab1b292f2335adfc573743ebe2daab409213fe611b3dc9c",
             "locator": {
               "end": 95,
               "kind": "line_range",
@@ -115,8 +116,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b2ee2d1b311af75a312cadbd27cbc68256a08eab",
-            "content": "sha256:c02df1bbf869b332eef2a6b354c56982ebf7ea1447ba1777b798d1afbed742d4",
+            "blob": "15444872a266d89123558da6eb8909e81fe96665",
+            "content": "sha256:bb141884d6ac7ade00ad73b850f5e429eeda266f85ea58ca96653ebbe9e22853",
             "locator": {
               "end": 74,
               "kind": "line_range",
@@ -141,12 +142,23 @@
       ]
     },
     "14": {
-      "note": "`Conduit` carries `data-kind`/`data-state`/`data-strategy`/`data-ghosted` and no polarity attribute.",
+      "note": "`Conduit` carries `data-kind`/`data-state`/`data-strategy`/`data-ghosted` and no polarity attribute.\n\nAnchor: `Conduit`",
       "targets": [
         {
           "anchor": {
-            "blob": "06fce412d2ac099ba308eb4c54b879d98bd0c879",
-            "content": "sha256:6b2fcb94d5c53a6612cd32a073a743cda530b30ea6472dc176ecb8876ec93433",
+            "blob": "20ebb84787f6b5ab1be931ed6560c0e33431166b",
+            "content": "sha256:d5fa783d009b0e0459cdab4d92fdbe7b6a075b5400ffee3bd0999a1e271f2309",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/engine-room/conduits.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "20ebb84787f6b5ab1be931ed6560c0e33431166b",
+            "content": "sha256:6e2c4be8e44d914cc8cad1e80191de429c77b636eecbd86082652d72ddcd28f7",
             "locator": {
               "kind": "symbol",
               "name": "Conduit"
@@ -162,8 +174,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fc93bae691a82da28bef3516bc6b7b8a85af6db8",
-            "content": "sha256:9438263648732139f82abce5f76d8ba78adf95de1b686cc1f01565f11d9c9810",
+            "blob": "fd0cd6ba53b5d874adfcb26807b26ab92e77d56e",
+            "content": "sha256:4b31b460cf2bfd78dc4589df8a552c328a633762e9e07d658f5db4e360b63935",
             "locator": {
               "kind": "symbol",
               "name": "EngineProcessEdge"
@@ -179,12 +191,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7137fb6b1d0cd4fbee647c82ab46c5710cf1bafe",
+            "blob": "2d2ad899f0adbf93abb10fb821fee28e8801cae3",
             "content": "sha256:a4f266f5dd15d6d2cf7e9bd92bb9f928fe1a0b05e166728552c4523c59af83da",
             "locator": {
-              "end": 543,
+              "end": 374,
               "kind": "line_range",
-              "start": 543
+              "start": 374
             },
             "path": "mcp/src/agents_remember/observer/reducer_impl/_processes.py"
           },
@@ -197,8 +209,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7137fb6b1d0cd4fbee647c82ab46c5710cf1bafe",
-            "content": "sha256:23dc6cc4bffbb9f8686a5bd39c41d5511db1a4b6243f8637d0e1bf0448b137e6",
+            "blob": "2d2ad899f0adbf93abb10fb821fee28e8801cae3",
+            "content": "sha256:50c623d5e8c97a3a2abaff722e6ad114a8dfddff6c0162050aa67b796be34a01",
             "locator": {
               "end": 124,
               "kind": "line_range",
@@ -215,8 +227,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4e83bb517f26e2a722b4e82f19d3f979305039bc",
-            "content": "sha256:e2058382d28335ebb45fc03e08d8897f32a4e49d2d0148ecd1912aead2a843c0",
+            "blob": "df68c2254ed8f38e966883668dcf5caea64390d7",
+            "content": "sha256:414997fa28e3969b712f9ece1630a2f0dd217a72f7707e092c0d6fa9ec5f01b4",
             "locator": {
               "kind": "symbol",
               "name": "EngineFxOverlay"
@@ -227,20 +239,8 @@
         },
         {
           "anchor": {
-            "blob": "71425687075f4a988fd84c19d4d0f5b5809980fb",
-            "content": "sha256:a71608de6369d15bed0fe0b61ee92d3a631a0892e7f24cc5da99294a0cd36efd",
-            "locator": {
-              "kind": "symbol",
-              "name": "EngineGauge"
-            },
-            "path": "dashboard/src/panels/engine-room/engines.tsx"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "06fce412d2ac099ba308eb4c54b879d98bd0c879",
-            "content": "sha256:6b2fcb94d5c53a6612cd32a073a743cda530b30ea6472dc176ecb8876ec93433",
+            "blob": "20ebb84787f6b5ab1be931ed6560c0e33431166b",
+            "content": "sha256:6e2c4be8e44d914cc8cad1e80191de429c77b636eecbd86082652d72ddcd28f7",
             "locator": {
               "kind": "symbol",
               "name": "Conduit"
@@ -276,17 +276,43 @@
       ]
     },
     "19": {
-      "note": "`AnimatePresence` enter/exit (05k) on the feat-tier source nodes + the landing dock + the closeout train.\n\nAnchor: \"export function EnclosureCanvas({\"; \"export function CloseoutTrain({ x\"",
+      "note": "`AnimatePresence` enter/exit (05k) on the feat-tier source nodes + the landing dock + the closeout train.",
       "targets": [
         {
           "anchor": {
-            "blob": "3e8bac7662cfcef7ae4bddc696e4824dcde4491f",
-            "content": "sha256:9074e8c83128d82ecfa8eefd5437dd80da8bf4fdb3f36ba8a9c452d165ff034e",
+            "blob": "15444872a266d89123558da6eb8909e81fe96665",
+            "content": "sha256:11f1eded18df4fc4ec30e8b8d2a9ee9e5c06b42a3d0c9f118134d762c95633c6",
             "locator": {
-              "end": 93,
+              "end": 71,
               "kind": "line_range",
-              "start": 42
+              "start": 64
             }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "053b605eb77ad20fed2c08ede3c3caabf4fc3cf6",
+            "content": "sha256:4636a30d8af95f346eea85606907ac35acd088c8ef36c7ae302441cbffb9daf3",
+            "locator": {
+              "end": 178,
+              "kind": "line_range",
+              "start": 139
+            },
+            "path": "dashboard/src/panels/engine-room/sceneLayers.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "053b605eb77ad20fed2c08ede3c3caabf4fc3cf6",
+            "content": "sha256:7f039086f5a0dadbfbe0b4bfebd019da2e99ac7149b9e92e55ccf3485f088b42",
+            "locator": {
+              "end": 366,
+              "kind": "line_range",
+              "start": 308
+            },
+            "path": "dashboard/src/panels/engine-room/sceneLayers.tsx"
           },
           "kind": "code"
         },
@@ -305,12 +331,24 @@
         },
         {
           "anchor": {
-            "blob": "b2ee2d1b311af75a312cadbd27cbc68256a08eab",
-            "content": "sha256:cff6b6de4ab221332cb1d50852c6e5d0a188b992c1acc75ac119155c88344862",
+            "blob": "15444872a266d89123558da6eb8909e81fe96665",
+            "content": "sha256:a847d5a4e304e5486bdab853bee75821f98fba154a761a70d83cacdbea4f4a7b",
             "locator": {
               "end": 17,
               "kind": "line_range",
               "start": 17
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "15444872a266d89123558da6eb8909e81fe96665",
+            "content": "sha256:089cb23c81bdfe20d8c1a3fbcde1f1eccea6361a066684fc5a07c168e44fd4d5",
+            "locator": {
+              "end": 21,
+              "kind": "line_range",
+              "start": 21
             }
           },
           "kind": "code"
@@ -334,18 +372,6 @@
         },
         {
           "anchor": {
-            "blob": "71425687075f4a988fd84c19d4d0f5b5809980fb",
-            "content": "sha256:a71608de6369d15bed0fe0b61ee92d3a631a0892e7f24cc5da99294a0cd36efd",
-            "locator": {
-              "kind": "symbol",
-              "name": "EngineGauge"
-            },
-            "path": "dashboard/src/panels/engine-room/engines.tsx"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
             "blob": "f8c77203e752ccbf10a6c27855eed358fd6b1448",
             "content": "sha256:b00fadf504908f1fa37a2bdf3a4d1cf3b2629ad41601c1b32062ed193df228c4",
             "locator": {
@@ -358,8 +384,8 @@
         },
         {
           "anchor": {
-            "blob": "06fce412d2ac099ba308eb4c54b879d98bd0c879",
-            "content": "sha256:6b2fcb94d5c53a6612cd32a073a743cda530b30ea6472dc176ecb8876ec93433",
+            "blob": "20ebb84787f6b5ab1be931ed6560c0e33431166b",
+            "content": "sha256:6e2c4be8e44d914cc8cad1e80191de429c77b636eecbd86082652d72ddcd28f7",
             "locator": {
               "kind": "symbol",
               "name": "Conduit"
@@ -414,19 +440,6 @@
         },
         {
           "anchor": {
-            "blob": "71425687075f4a988fd84c19d4d0f5b5809980fb",
-            "content": "sha256:bbe26c43c28b2267e4f4ff3baf8be86cc7ff48dc720da5cd2f1c893a7591b4e2",
-            "locator": {
-              "end": 136,
-              "kind": "line_range",
-              "start": 136
-            },
-            "path": "dashboard/src/panels/engine-room/engines.tsx"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
             "blob": "20ebb84787f6b5ab1be931ed6560c0e33431166b",
             "content": "sha256:9ea55aa4d0e2f00594c7716f5205a8f4a5e7c52b56f90340af61c21c32a6e163",
             "locator": {
@@ -458,8 +471,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3e8bac7662cfcef7ae4bddc696e4824dcde4491f",
-            "content": "sha256:9074e8c83128d82ecfa8eefd5437dd80da8bf4fdb3f36ba8a9c452d165ff034e",
+            "blob": "15444872a266d89123558da6eb8909e81fe96665",
+            "content": "sha256:61dad35722af28683f5dd111cfd1ad5ead8c30d26187d06a74b0a80da28d5996",
             "locator": {
               "kind": "symbol",
               "name": "EnclosureCanvas"
@@ -470,15 +483,14 @@
       ]
     },
     "22": {
-      "note": "The `engineState` selector that derives each workspace engine's runtime.",
+      "note": "The `engineState` selector that derives each workspace engine's runtime.\n\nAnchor: `engineState`",
       "targets": [
         {
           "anchor": {
-            "blob": "b130c9f33b2078e3adf38d6e87cde8c376ba65b9",
-            "content": "sha256:7c8d459bab45b55e012757985b0777a92df02785f6c09e2ae35eb93eb4a80bbc",
+            "blob": "45703aad8672ac0bd3f53a1e3be16aef2ad16336",
+            "content": "sha256:f9a468be21f745ce68abb4692d7cff78eddbba96844874c4ee80194c83731e5e",
             "locator": {
-              "kind": "symbol",
-              "name": "engineState"
+              "kind": "file"
             },
             "path": "dashboard/src/data/selectors.ts"
           },
@@ -491,43 +503,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cd5c184afd89ddd45144be1d679d04bd09da6b9c",
-            "content": "sha256:273f84a0b06634aacccc3558a19f7083c0cb2abaf0775661f21bbbe5cb242861",
-            "locator": {
-              "kind": "symbol",
-              "name": "engineSpine"
-            },
-            "path": "dashboard/src/panels/engine-room/stage.styles.ts"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "cd5c184afd89ddd45144be1d679d04bd09da6b9c",
-            "content": "sha256:80488ae02a206c5982dbcf46cd3e1423af64d0407b76371f89f3402c275d2692",
-            "locator": {
-              "kind": "symbol",
-              "name": "enginePetal"
-            },
-            "path": "dashboard/src/panels/engine-room/stage.styles.ts"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "cd5c184afd89ddd45144be1d679d04bd09da6b9c",
-            "content": "sha256:41d3723c7adff40f3942041f556aeb140e9fb2b01375cedb4cccdcf99d323515",
-            "locator": {
-              "kind": "symbol",
-              "name": "officialWire"
-            },
-            "path": "dashboard/src/panels/engine-room/stage.styles.ts"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "cd5c184afd89ddd45144be1d679d04bd09da6b9c",
+            "blob": "5705ba6821a3de4af9781d63732e0300475af6a6",
             "content": "sha256:f7e2ae04a80b2f3f5489cae89d7cb9f7804463b1f2c5ede9c005c48cb584141e",
             "locator": {
               "kind": "symbol",
@@ -539,7 +515,7 @@
         },
         {
           "anchor": {
-            "blob": "cd5c184afd89ddd45144be1d679d04bd09da6b9c",
+            "blob": "5705ba6821a3de4af9781d63732e0300475af6a6",
             "content": "sha256:bfa051c06960387994b20a585a56f610a8cc03318edd5f1ea6eac285a7051132",
             "locator": {
               "kind": "symbol",
@@ -556,7 +532,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fddde3fe60faa2d9374405b9676016ab026af1b6",
+            "blob": "d71e9db1948f52b82bd84b2348775f13ac9b57e7",
             "content": "sha256:21cac9e0ab2bd51c63ac823fa1d60ca86b9759849b9cbd5ccabcdb3bd7aa8072",
             "locator": {
               "kind": "symbol",
@@ -568,8 +544,8 @@
         },
         {
           "anchor": {
-            "blob": "fddde3fe60faa2d9374405b9676016ab026af1b6",
-            "content": "sha256:db0f63a67e32561c8d0d178904d2e3ed60574e0643583158dd20b2c7cd5c625f",
+            "blob": "d71e9db1948f52b82bd84b2348775f13ac9b57e7",
+            "content": "sha256:8ad3ab8e99817b1e4b23b7b6259fc08e02b0810861d5f984fa3479bfc83258a5",
             "locator": {
               "kind": "symbol",
               "name": "EngineProcessNode"
@@ -585,12 +561,25 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fddde3fe60faa2d9374405b9676016ab026af1b6",
-            "content": "sha256:e70cf099277a6914738e9d67848df6e2d2809e37bccc432d720290da6b6c288d",
+            "blob": "d71e9db1948f52b82bd84b2348775f13ac9b57e7",
+            "content": "sha256:407beea369f329c1ee37299cf65f5684b3934b5a70a6cc82bf178a2ed77a5834",
             "locator": {
               "end": 103,
               "kind": "line_range",
               "start": 103
+            },
+            "path": "dashboard/src/types/projection.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d71e9db1948f52b82bd84b2348775f13ac9b57e7",
+            "content": "sha256:01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+            "locator": {
+              "end": 154,
+              "kind": "line_range",
+              "start": 154
             },
             "path": "dashboard/src/types/projection.ts"
           },
@@ -603,12 +592,25 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fddde3fe60faa2d9374405b9676016ab026af1b6",
-            "content": "sha256:93989e8e181b5574d50acf8854db460c4667a801ee95bd797056c7225d268385",
+            "blob": "d71e9db1948f52b82bd84b2348775f13ac9b57e7",
+            "content": "sha256:e689f6a5a54fde85422b822245b860021c45e208e01310e4195b668a0e515aab",
             "locator": {
               "end": 390,
               "kind": "line_range",
               "start": 390
+            },
+            "path": "dashboard/src/types/projection.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d71e9db1948f52b82bd84b2348775f13ac9b57e7",
+            "content": "sha256:01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+            "locator": {
+              "end": 502,
+              "kind": "line_range",
+              "start": 502
             },
             "path": "dashboard/src/types/projection.ts"
           },
@@ -621,12 +623,25 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fddde3fe60faa2d9374405b9676016ab026af1b6",
-            "content": "sha256:685b1a601f96c39ebd49592dbede3fd6603545dd639984459aa2e4be3d05a873",
+            "blob": "d71e9db1948f52b82bd84b2348775f13ac9b57e7",
+            "content": "sha256:01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
             "locator": {
               "end": 231,
               "kind": "line_range",
               "start": 231
+            },
+            "path": "dashboard/src/types/projection.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d71e9db1948f52b82bd84b2348775f13ac9b57e7",
+            "content": "sha256:397e3d2420eb398a0853c67b0004ceff2425c88096a5333a71cefbe3cc471d21",
+            "locator": {
+              "end": 301,
+              "kind": "line_range",
+              "start": 301
             },
             "path": "dashboard/src/types/projection.ts"
           },
@@ -639,8 +654,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fddde3fe60faa2d9374405b9676016ab026af1b6",
-            "content": "sha256:166d2ecbb0660b6f73e4497602a536512544817207b812a075559071aa49a387",
+            "blob": "d71e9db1948f52b82bd84b2348775f13ac9b57e7",
+            "content": "sha256:01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
             "locator": {
               "end": 403,
               "kind": "line_range",
@@ -649,27 +664,29 @@
             "path": "dashboard/src/types/projection.ts"
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d71e9db1948f52b82bd84b2348775f13ac9b57e7",
+            "content": "sha256:01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+            "locator": {
+              "end": 509,
+              "kind": "line_range",
+              "start": 509
+            },
+            "path": "dashboard/src/types/projection.ts"
+          },
+          "kind": "code"
         }
       ]
     },
     "29": {
-      "note": "05o T3B — `checking`/`memGated` derivations + the `scanRing` `<circle data-fx=\"scan\">` + `Conduit ghosted` (the `ghostedLane` inner-`<path>` ghost).\n\nAnchor: \"flowConduit\"",
+      "note": "05o T3B — `checking`/`memGated` derivations + the `scanRing` `<circle data-fx=\"scan\">` + `Conduit ghosted` (the `ghostedLane` inner-`<path>` ghost).\n\nAnchor: `EnclosureCanvas`",
       "targets": [
         {
           "anchor": {
-            "blob": "3e8bac7662cfcef7ae4bddc696e4824dcde4491f",
-            "content": "sha256:9074e8c83128d82ecfa8eefd5437dd80da8bf4fdb3f36ba8a9c452d165ff034e",
-            "locator": {
-              "kind": "symbol",
-              "name": "EnclosureCanvas"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "06fce412d2ac099ba308eb4c54b879d98bd0c879",
-            "content": "sha256:6b2fcb94d5c53a6612cd32a073a743cda530b30ea6472dc176ecb8876ec93433",
+            "blob": "20ebb84787f6b5ab1be931ed6560c0e33431166b",
+            "content": "sha256:6cb3d25286d689effb21e4b36e9f9cd7bbd2e4206f661994e9d0f3c2f69e837c",
             "locator": {
               "end": 136,
               "kind": "line_range",
@@ -689,6 +706,27 @@
               "start": 8
             },
             "path": "dashboard/src/panels/engine-room/conduits.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "15444872a266d89123558da6eb8909e81fe96665",
+            "content": "sha256:dc5f212cb9ccbe8d35a4d690d984bb4f5b0b8b5f7e72042f1368075db707b271",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "15444872a266d89123558da6eb8909e81fe96665",
+            "content": "sha256:61dad35722af28683f5dd111cfd1ad5ead8c30d26187d06a74b0a80da28d5996",
+            "locator": {
+              "kind": "symbol",
+              "name": "EnclosureCanvas"
+            }
           },
           "kind": "code"
         }
@@ -724,12 +762,12 @@
       ]
     },
     "30": {
-      "note": "The `scanRing` recipe is the full cyan stroked, transparent, glow style; `ghostedLane` is the full dim/desaturate style; `Conduit` applies `ghostedLane` to the inner path through `cx(flowConduit(...), ghosted && ghostedLane)`.\n\nAnchor: \"export const scanRing = css({\"; \"export const ghostedLane = css({ opacity: \\\"0.32\\\", filter: \\\"grayscale(0.45)\\\" });\"",
+      "note": "The `scanRing` recipe is the full cyan stroked, transparent, glow style; `ghostedLane` is the full dim/desaturate style; `Conduit` applies `ghostedLane` to the inner path through `cx(flowConduit(...), ghosted && ghostedLane)`.",
       "targets": [
         {
           "anchor": {
-            "blob": "06fce412d2ac099ba308eb4c54b879d98bd0c879",
-            "content": "sha256:6b2fcb94d5c53a6612cd32a073a743cda530b30ea6472dc176ecb8876ec93433",
+            "blob": "20ebb84787f6b5ab1be931ed6560c0e33431166b",
+            "content": "sha256:6cb3d25286d689effb21e4b36e9f9cd7bbd2e4206f661994e9d0f3c2f69e837c",
             "locator": {
               "end": 136,
               "kind": "line_range",
@@ -741,7 +779,7 @@
         },
         {
           "anchor": {
-            "blob": "36146708015b9475196ccf76dc85168aae56a77d",
+            "blob": "cd0b56b4d75340a645116b7357c2d0b4c954dea3",
             "content": "sha256:349e7444ebd586b64f76d82a2594d11322ddc6d0206d525eae4a33341db534e5",
             "locator": {
               "end": 46,
@@ -754,7 +792,7 @@
         },
         {
           "anchor": {
-            "blob": "36146708015b9475196ccf76dc85168aae56a77d",
+            "blob": "cd0b56b4d75340a645116b7357c2d0b4c954dea3",
             "content": "sha256:8129a3102604ce3b905cc6b6ae9186971e9ed54a05358aeba9363daae315be8b",
             "locator": {
               "end": 54,
@@ -876,84 +914,13 @@
         }
       ]
     },
-    "32": {
-      "note": "Canvas accepts node, gateNode, officialLedger and resolves resolveScene(node). It still composes branches, shell, worktr — source ownership, not executed visual proof.\n\nAnchor: `export function EnclosureCanvas({`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "e496e2924af2443fe26b4b8712a14c6cadf07d7c",
-            "content": "sha256:afaedef990ec259adf1c701d501e8d6bc19c4a4b0f43c664a97395ef438b4bbf",
-            "locator": {
-              "end": 85,
-              "kind": "line_range",
-              "start": 40
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "33": {
-      "note": "Canvas accepts node, gateNode, officialLedger and resolves resolveScene(node). It still composes branches, shell, worktr — source ownership, not executed visual proof.\n\nAnchor: `export function resolveEngines(node: EngineProcessNode) {`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "87821aabab3b972a5513d33de296765a0bab6d47",
-            "content": "sha256:e9e8e787363c60741961873934c51da146d412b09bad46bd4ec2313a5b312d3b",
-            "locator": {
-              "end": 120,
-              "kind": "line_range",
-              "start": 52
-            },
-            "path": "dashboard/src/panels/engine-room/scene.ts"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "34": {
-      "note": "Canvas accepts node, gateNode, officialLedger and resolves resolveScene(node). It still composes branches, shell, worktr — source ownership, not executed visual proof.\n\nAnchor: `export function OfficialLineLayer({`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "596dec5c6c7c633b293640144a05def6c8ef4578",
-            "content": "sha256:0b75b11bb39be418cd7ac4a0f535284d932b9e1757e220fc93b14bbb10461c2c",
-            "locator": {
-              "end": 252,
-              "kind": "line_range",
-              "start": 187
-            },
-            "path": "dashboard/src/panels/engine-room/sceneLayers.tsx"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "35": {
-      "note": "Canvas accepts node, gateNode, officialLedger and resolves resolveScene(node). It still composes branches, shell, worktr — source ownership, not executed visual proof.\n\nAnchor: `export const EDGE_GEOM: Record<string, readonly [number, number, number, number]> = {`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f23ae83b49025d9b10e7b6bc846ede9a6d48563e",
-            "content": "sha256:08637b0be18477ff7379995dd690b3a5a93b5459302261b5a2809394edeec517",
-            "locator": {
-              "end": 90,
-              "kind": "line_range",
-              "start": 68
-            },
-            "path": "dashboard/src/panels/engine-room/geometry.ts"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "4": {
       "note": "`RemoteStrip` / `RemoteChip` / `PrBadge` + `remoteTone` — the remote/landing dock (`landing[]` refs; 5i positions them by `REMOTE_POS`, PR as a merge-arrow).\n\nAnchor: \"export function RemoteChip({ refNode }: { refNode: LandingRefNode }) {\"; \"export function PrBadge({ refNode }: { refNode: LandingRefNode }) {\"; \"export function RemoteStrip({ refs }: { refs: LandingRefNode[] }) {\"; \"export function remoteTone(ref: LandingRefNode): RemoteTone {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "f23ae83b49025d9b10e7b6bc846ede9a6d48563e",
-            "content": "sha256:48e4471c46c5e77b156cddce3896f776b78fceec4a14beb69aa7811ee0e0787b",
+            "blob": "0a3de3f86452a06356eee661d5e4bbdc7ccdf5eb",
+            "content": "sha256:11c7579cd0a31086e65420921b3134b5394c4700761e1cc8806765c7a4509bf8",
             "locator": {
               "end": 199,
               "kind": "line_range",
@@ -965,8 +932,8 @@
         },
         {
           "anchor": {
-            "blob": "f23ae83b49025d9b10e7b6bc846ede9a6d48563e",
-            "content": "sha256:05f0730014fa8f578250c620537d569878dd9613341a9e9aa949945aca5ab9a1",
+            "blob": "0a3de3f86452a06356eee661d5e4bbdc7ccdf5eb",
+            "content": "sha256:532dda8971ff6f295f9fabb3a935e5760e7a5b255e125ea017d56038ef02857a",
             "locator": {
               "end": 211,
               "kind": "line_range",
@@ -1062,11 +1029,22 @@
       ]
     },
     "6": {
-      "note": "`COL_MAIN_CX`/`COL_FEAT_CX`/`COL_WT_CX` define the main, feat, and worktree column centres; `ENGINE` declares the fixed engine-pod positions in the geometry constants.",
+      "note": "`COL_MAIN_CX`/`COL_FEAT_CX`/`COL_WT_CX` define the main, feat, and worktree column centres; `ENGINE` declares the fixed engine-pod positions in the geometry constants.\n\nAnchor: `COL_MAIN_CX` `COL_FEAT_CX` `COL_WT_CX` `ENGINE`",
       "targets": [
         {
           "anchor": {
-            "blob": "f23ae83b49025d9b10e7b6bc846ede9a6d48563e",
+            "blob": "0a3de3f86452a06356eee661d5e4bbdc7ccdf5eb",
+            "content": "sha256:365b253c3e90e5835d307f1d009eb2ab7507d7e5a5bb2915712c70c1c7e57607",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/engine-room/geometry.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0a3de3f86452a06356eee661d5e4bbdc7ccdf5eb",
             "content": "sha256:90c16dfc396d21ee0a085a71634a4c56c6d84875cd5a754a95bece8cc000f5c9",
             "locator": {
               "kind": "symbol",
@@ -1078,7 +1056,7 @@
         },
         {
           "anchor": {
-            "blob": "f23ae83b49025d9b10e7b6bc846ede9a6d48563e",
+            "blob": "0a3de3f86452a06356eee661d5e4bbdc7ccdf5eb",
             "content": "sha256:5166e294340ce58f455f399c2243cee796943b0f1d66393864174f2c847ce040",
             "locator": {
               "kind": "symbol",
@@ -1090,23 +1068,11 @@
         },
         {
           "anchor": {
-            "blob": "f23ae83b49025d9b10e7b6bc846ede9a6d48563e",
+            "blob": "0a3de3f86452a06356eee661d5e4bbdc7ccdf5eb",
             "content": "sha256:ff6911f85df31bad4de0da609cc4d401fe65ca495ea6edfda6dcacc3d2ee1897",
             "locator": {
               "kind": "symbol",
               "name": "COL_WT_CX"
-            },
-            "path": "dashboard/src/panels/engine-room/geometry.ts"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "eea270bf10b885af35285fb98b6205dcb491dd5c",
-            "content": "sha256:b6201fb66289d49b434c607a068fd53118e02fe675b2101425ddf12082a474f4",
-            "locator": {
-              "kind": "symbol",
-              "name": "ENGINE"
             },
             "path": "dashboard/src/panels/engine-room/geometry.ts"
           },
@@ -1117,18 +1083,6 @@
     "7": {
       "note": "The consumer sites apply those centres to remote chips and PR placement, landing-flow paths, official/worktree wires and couplers, and the enclosure border.\n\nAnchor: \"export function RemoteStrip({ refs }: { refs: LandingRefNode[] }) {\"; \"export function LandingFlows({ refs }: { refs: LandingRefNode[] }) {\"; \"export function EnclosureCanvas({\"",
       "targets": [
-        {
-          "anchor": {
-            "blob": "3e8bac7662cfcef7ae4bddc696e4824dcde4491f",
-            "content": "sha256:9074e8c83128d82ecfa8eefd5437dd80da8bf4fdb3f36ba8a9c452d165ff034e",
-            "locator": {
-              "end": 93,
-              "kind": "line_range",
-              "start": 42
-            }
-          },
-          "kind": "code"
-        },
         {
           "anchor": {
             "blob": "20ebb84787f6b5ab1be931ed6560c0e33431166b",
@@ -1162,8 +1116,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f23ae83b49025d9b10e7b6bc846ede9a6d48563e",
-            "content": "sha256:f820aa981797fc47b54c59e4e731d9a78554a5af157170480df6886681bb6fab",
+            "blob": "0a3de3f86452a06356eee661d5e4bbdc7ccdf5eb",
+            "content": "sha256:a3467be00290fbd3635b3f407aa8000de41ffeb4ccdfca46751d07f6449fcdb3",
             "locator": {
               "end": 68,
               "kind": "line_range",
@@ -1175,7 +1129,7 @@
         },
         {
           "anchor": {
-            "blob": "f23ae83b49025d9b10e7b6bc846ede9a6d48563e",
+            "blob": "0a3de3f86452a06356eee661d5e4bbdc7ccdf5eb",
             "content": "sha256:b51ae28f444ac35f5bf668478a310540b3da583b088f3d67ef117135bd9deda0",
             "locator": {
               "end": 12,
@@ -1219,53 +1173,14 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cd5c184afd89ddd45144be1d679d04bd09da6b9c",
-            "content": "sha256:1198d5d8bdc2891a9fec4db3ba0737fa670766d3b950812619981156edcc6378",
+            "blob": "5705ba6821a3de4af9781d63732e0300475af6a6",
+            "content": "sha256:24c5f270a0a8faef1b77594fc19aa21aedef6f41ee6013e51c1d9b8d701e1c33",
             "locator": {
               "end": 125,
               "kind": "line_range",
               "start": 125
             },
             "path": "dashboard/src/panels/engine-room/stage.styles.ts"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "f23ae83b49025d9b10e7b6bc846ede9a6d48563e",
-            "content": "sha256:bc3ef64fcc0bd157d1be0a685b53a99a4bfe0ccec456b8086cdc40d2a00947cf",
-            "locator": {
-              "end": 253,
-              "kind": "line_range",
-              "start": 253
-            },
-            "path": "dashboard/src/panels/engine-room/geometry.ts"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "71425687075f4a988fd84c19d4d0f5b5809980fb",
-            "content": "sha256:4239ca8ae60888b8480a7af29b9a85be4e3dd7b4612d94b61187245e42dae98e",
-            "locator": {
-              "end": 151,
-              "kind": "line_range",
-              "start": 151
-            },
-            "path": "dashboard/src/panels/engine-room/engines.tsx"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "71425687075f4a988fd84c19d4d0f5b5809980fb",
-            "content": "sha256:bbe26c43c28b2267e4f4ff3baf8be86cc7ff48dc720da5cd2f1c893a7591b4e2",
-            "locator": {
-              "end": 136,
-              "kind": "line_range",
-              "start": 136
-            },
-            "path": "dashboard/src/panels/engine-room/engines.tsx"
           },
           "kind": "code"
         }

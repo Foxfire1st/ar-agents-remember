@@ -40,11 +40,16 @@ No relevant external documentation is configured.
 
 ### Repo-Internal References
 
+
 - Liveness tuning, one-shot backstop, and visibility handling. [1]
-- Conversation and state streams both install this watchdog. [2]
+
+
+- The state stream installs this watchdog on an open channel; the raw events stream deliberately does not, since a fresh subscribe cannot carry its `Last-Event-ID` cursor. [2]
+
 
 ### Cross-Repo References
 
 No meaningful cross-repository references found.
+
 
 - The watchdog is local browser transport policy. [3]

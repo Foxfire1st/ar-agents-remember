@@ -52,10 +52,16 @@ None.
 
 ### Repo-Internal References
 
+
 - The wave-grid component and box renderer. [1]
+
 - The wire model consumed. [2]
+
 - The responsive grid/leaf contracts. [3]
+
+
 - The component forcing suite. [4]
+
 - The sprint Order own view mounts this complete graph rather than a second inline wave-grid list. [5]
 
 ### Cross-Repo References

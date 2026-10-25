@@ -20,9 +20,13 @@ Source inspection only: no fresh test, native producer/server request or accepta
 
 ## Evidence
 
+
 - Operand declarations, four-case parameterization and same-revision/missing-summary-field assertions. Source-defined assertions; not fresh execution. [1]
 
+
+
 - Stubbed body-request path assertion and mounted exact selection key. Source-defined assertions; not fresh execution. [2]
+
 
 - Body-only fixed prose and design restoration assertions. Source-defined assertions; not fresh execution. [3]
 

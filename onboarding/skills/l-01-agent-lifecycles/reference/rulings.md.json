@@ -27,8 +27,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f5230b3d5e7b2d983b12d10682b67f9983a414a4",
-            "content": "sha256:ef7357a3df7f67fb19c58c3494b79c0e79d38477415b7c894a58e1d907cb3e7e",
+            "blob": "ca1d395cf7e725912554c31768bfaa3f59eca851",
+            "content": "sha256:9e7efed9f900793cc4b24d0b65ce60a32be44c7807010bd2d18f02228a2b426c",
             "locator": {
               "kind": "file"
             }
@@ -42,8 +42,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f5230b3d5e7b2d983b12d10682b67f9983a414a4",
-            "content": "sha256:ef7357a3df7f67fb19c58c3494b79c0e79d38477415b7c894a58e1d907cb3e7e",
+            "blob": "ca1d395cf7e725912554c31768bfaa3f59eca851",
+            "content": "sha256:9e7efed9f900793cc4b24d0b65ce60a32be44c7807010bd2d18f02228a2b426c",
             "locator": {
               "kind": "file"
             }
@@ -57,8 +57,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "12233802168a4fbcc739126cb74dce8be8b9db1c",
-            "content": "sha256:dba289ae416cae22588527dde26b6c2a6f3cec0c0b0f5fd2646f913f75849c70",
+            "blob": "ca1d395cf7e725912554c31768bfaa3f59eca851",
+            "content": "sha256:9e7efed9f900793cc4b24d0b65ce60a32be44c7807010bd2d18f02228a2b426c",
             "locator": {
               "kind": "file"
             }
@@ -72,8 +72,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "12233802168a4fbcc739126cb74dce8be8b9db1c",
-            "content": "sha256:dba289ae416cae22588527dde26b6c2a6f3cec0c0b0f5fd2646f913f75849c70",
+            "blob": "ca1d395cf7e725912554c31768bfaa3f59eca851",
+            "content": "sha256:9e7efed9f900793cc4b24d0b65ce60a32be44c7807010bd2d18f02228a2b426c",
             "locator": {
               "kind": "file"
             }

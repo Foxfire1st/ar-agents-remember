@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/models/lifecycles/finalize.py",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
@@ -58,29 +59,16 @@
       ]
     },
     "2": {
-      "note": "Public response registry maps `lifecycle_finalize_task` to this model.\n\nAnchor: `lifecycle_finalize_task`",
+      "note": "Public response registry maps `lifecycle_finalize_task` to this model. Anchor: `lifecycle_finalize_task`  The deleted representative-payload cases are historical and provide no current pass.",
       "targets": [
         {
           "anchor": {
-            "blob": "c2f2a68ee84ec48aad55956ebf5a6719371ce655",
-            "content": "sha256:5d46671ecd79e0acc904880abe8870161af57ce9eaf44442dd4531d16456bb3d",
+            "blob": "ca5af906298a90f3101a98a5542005e3549b3c0a",
+            "content": "sha256:0db325a8ce4ad401b18bedd0cf6ab450be2014fd8159b67ba98db9dfe0f1ec54",
             "locator": {
-              "end": 111,
+              "end": 114,
               "kind": "line_range",
-              "start": 111
-            },
-            "path": "mcp/src/agents_remember/models/tools/tool_registry.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "656fef29fff22fd4ab47bcc5f1d6866919deb08e",
-            "content": "sha256:5d46671ecd79e0acc904880abe8870161af57ce9eaf44442dd4531d16456bb3d",
-            "locator": {
-              "end": 112,
-              "kind": "line_range",
-              "start": 112
+              "start": 114
             },
             "path": "mcp/src/agents_remember/models/tools/tool_registry.py"
           },
@@ -93,8 +81,20 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0acadadf7d340bd8e01e8ca3cd1491d045ccb136",
-            "content": "sha256:f92c115ae913a644e337f0b3c315b69884feb14a30909dc7edff8f0763b4c0ae",
+            "blob": "577a92e863791fec4b42d0d4c2079abb25ba454c",
+            "content": "sha256:3aee53ff2f2525db01a482f8878179a23c701b66f05645a38d36c3af0cb997dc",
+            "locator": {
+              "end": 56,
+              "kind": "line_range",
+              "start": 18
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "577a92e863791fec4b42d0d4c2079abb25ba454c",
+            "content": "sha256:3aee53ff2f2525db01a482f8878179a23c701b66f05645a38d36c3af0cb997dc",
             "locator": {
               "kind": "symbol",
               "name": "LifecycleFinalizeTaskResponse"
@@ -105,36 +105,18 @@
       ]
     },
     "4": {
-      "note": "`lifecycle_finalize_task_tool` populates `autoLandedSeats` from `_auto_land_completed_seats`, gated by `config.retirement.auto_land_on_finalize`.\n\nAnchor: \"def lifecycle_finalize_task_tool(\"",
+      "note": "`lifecycle_finalize_task_tool` confines the contract and any named task or master document path, finalizes with the call's dry-run and provider-teardown flags, and answers that result.",
       "targets": [
         {
           "anchor": {
-            "blob": "6dc4f1b8b3367b70d63bc4ff2a3983ea2199a42d",
-            "content": "sha256:f6d066ed830a743ac850c9150d2e1aef3a625454194bd6cb4ccda4e5099bbb20",
+            "blob": "f70e3d124e543009c5876c7472ccdb85120ff60c",
+            "content": "sha256:b8faaf2501a5033229fa895857ad0fa63834078ab0ae0949c4f02042f7dff1ee",
             "locator": {
-              "end": 917,
+              "end": 861,
               "kind": "line_range",
-              "start": 897
+              "start": 835
             },
             "path": "mcp/src/agents_remember/application/worktree_tools.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "5": {
-      "note": "`RetirementSettings.auto_land_on_finalize` is the config gate this field's population depends on.\n\nAnchor: \"class RetirementSettings:\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "08fa67e7d17028c0392d8c20bf1c9499b0681f8f",
-            "content": "sha256:a540dfa0c5117e86fd9eaf02cb7d5c530569236ac65b792e6855272119a8b40d",
-            "locator": {
-              "end": 126,
-              "kind": "line_range",
-              "start": 126
-            },
-            "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
           },
           "kind": "code"
         }

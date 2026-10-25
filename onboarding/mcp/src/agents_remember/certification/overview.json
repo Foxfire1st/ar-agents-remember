@@ -103,7 +103,7 @@
       ]
     },
     "11": {
-      "note": "Certification is a rank-3 generic contract below its lifecycle consumers; architecture is a declared direction, not an execution report.\n\nAnchor: Package charter and strict rule",
+      "note": "Certification is a rank-3 generic contract below its lifecycle consumers; architecture is a declared direction, not an execution report.",
       "targets": [
         {
           "anchor": {
@@ -120,8 +120,8 @@
         },
         {
           "anchor": {
-            "blob": "fc7e84684d806b4888cf351ade0259f92571b5ee",
-            "content": "sha256:284320b1b8a960a85cb3a6cf706fce8e7f644467227204b2761b5e7ef7af8854",
+            "blob": "94d6fc691485163fc02f117a88b8cd350ecc9889",
+            "content": "sha256:b35aac839e0f72e0abbda765a747cd634564302d12129ddacc80cc4062bccf9e",
             "locator": {
               "end": 125,
               "kind": "line_range",
@@ -393,12 +393,12 @@
       ]
     },
     "2": {
-      "note": "The adjacent control-plane charter remains the lowest stateful interaction service, so the lower generic contract does not absorb its record or policy ownership.\n\nAnchor: \"[package.controlplane]\"",
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The adjacent control-plane charter remains the lowest stateful interaction service, so the lower generic contract does not absorb its record or policy ownership.",
       "targets": [
         {
           "anchor": {
-            "blob": "fc7e84684d806b4888cf351ade0259f92571b5ee",
-            "content": "sha256:51cc53d95bac0ecce46723a4f7acec7b77ccf91bc968f9027716c316af2dfd2b",
+            "blob": "94d6fc691485163fc02f117a88b8cd350ecc9889",
+            "content": "sha256:48a6fe4315a114455364609ee650ff807fb63d712f92dba50d27faacf4dbc6e2",
             "locator": {
               "end": 126,
               "kind": "line_range",
@@ -472,8 +472,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0f02f7c4c7584cea4e5e966eff0bd4906b882b5d",
-            "content": "sha256:6ead679e951a61ef0472da274f0489435e380fc0471bdd01093ed97b71e515fd",
+            "blob": "a4cb0ce3f5f3f488c8ad8313b8063d4a8218871e",
+            "content": "sha256:bd89a9e178c1778b73741a5cf6e26333f4eec24343652d03001c7576c40a55f7",
             "locator": {
               "end": 944,
               "kind": "line_range",
@@ -485,8 +485,8 @@
         },
         {
           "anchor": {
-            "blob": "4c7e45a4112f26b6977cdbb4c826bd75817f44c1",
-            "content": "sha256:349c41dad2b6b9ff3a88169d701dd67cce2c41d742cb515776d176bbe1fda1b6",
+            "blob": "80a4a1aa9ecd845e13f6f600c46560e34da8ce15",
+            "content": "sha256:310fd305075fa63647eed336a751579c11a6b80e5e89640ebf26a28897522997",
             "locator": {
               "end": 315,
               "kind": "line_range",

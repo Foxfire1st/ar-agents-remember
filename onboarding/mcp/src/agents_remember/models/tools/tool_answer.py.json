@@ -1,9 +1,10 @@
 {
   "path": "mcp/src/agents_remember/models/tools/tool_answer.py",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
-        "blob": "6886781334954f937c6bcd390b33841da83c8e04",
+        "blob": "1ba41e6adae7f4dd9700742a2ff8052d78865ae0",
         "content": "sha256:cc62b700fb11a48a3b0b1adf6196bf409d6ac82aded0d52d74a25a436b7840fc",
         "locator": {
           "kind": "symbol",
@@ -21,7 +22,7 @@
     },
     {
       "anchor": {
-        "blob": "6886781334954f937c6bcd390b33841da83c8e04",
+        "blob": "1ba41e6adae7f4dd9700742a2ff8052d78865ae0",
         "content": "sha256:08eff577329ef1b462a5cca5cccfc934ef341470b6f6da717523d618ae3571fc",
         "locator": {
           "kind": "symbol",
@@ -39,7 +40,24 @@
     },
     {
       "anchor": {
-        "blob": "6886781334954f937c6bcd390b33841da83c8e04",
+        "blob": "1ba41e6adae7f4dd9700742a2ff8052d78865ae0",
+        "content": "sha256:3928dc7286631ed6f0f447d9c406201da902895761c897cff651fee3db69dc5f",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-ASGW6W",
+      "invariant": "INV-Q7KYQH",
+      "origin": {
+        "handoffEntry": "MIK-R198@v2 §8 reference-note-revision",
+        "leaf": "260928-MIK-L191"
+      },
+      "rationale": "Lets the answer state the refusal in the shared tool-answer shape instead of a private error string.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "1ba41e6adae7f4dd9700742a2ff8052d78865ae0",
         "content": "sha256:dba96b8c08af914511729e5126b08cd46a0f5a6b454fceb6d5edc330361a2f0e",
         "locator": {
           "kind": "symbol",
@@ -57,7 +75,7 @@
     },
     {
       "anchor": {
-        "blob": "6886781334954f937c6bcd390b33841da83c8e04",
+        "blob": "1ba41e6adae7f4dd9700742a2ff8052d78865ae0",
         "content": "sha256:0c62c6e66b6c2221581f305c6b13a1ad415712f4221e4a0f70bca68bbd907758",
         "locator": {
           "kind": "symbol",
@@ -75,7 +93,7 @@
     },
     {
       "anchor": {
-        "blob": "6886781334954f937c6bcd390b33841da83c8e04",
+        "blob": "1ba41e6adae7f4dd9700742a2ff8052d78865ae0",
         "content": "sha256:33e4ed2d3861fd039a9f96d63057667271d5c333e3cbda21457c31bf87a263fe",
         "locator": {
           "kind": "symbol",
@@ -88,12 +106,12 @@
         "handoffEntry": "L183-CUR-ET01-bound-explainer-roster",
         "leaf": "260928-MIK-L183"
       },
-      "rationale": "explainer_control is attributed to L183 in the retained interim answer vocabulary while its leaf is unlanded; existing tool limits are unchanged.",
+      "rationale": "`INTERIM_TOOL_LEAF` still names `\"explainer_control\": \"L183\"` (221) with no shaped bound or exception row for the tool, so its answer rides the interim bound exactly as the entry says. Its 'until its leaf lands' framing is the code's own comment (219-220): L183's code is in C and the table still lists L183 in INTERIM_LEAVES, as it does the landed L111.",
       "role": "enforcement"
     },
     {
       "anchor": {
-        "blob": "6886781334954f937c6bcd390b33841da83c8e04",
+        "blob": "1ba41e6adae7f4dd9700742a2ff8052d78865ae0",
         "content": "sha256:b8d99303481809c049f573d0bee3c0f80dbe790543257fbc06276db6d40cbc14",
         "locator": {
           "kind": "symbol",
@@ -111,8 +129,8 @@
     },
     {
       "anchor": {
-        "blob": "046b25d9e2e598af13380e75d0cd61eb27513b36",
-        "content": "sha256:02d1c63ebde308d32d8b316a5a3ab98f2510aa1b2adc6ad65598004489b75583",
+        "blob": "1ba41e6adae7f4dd9700742a2ff8052d78865ae0",
+        "content": "sha256:e631bdc8a4c9fcab371427777b9139400aace8d80ffd6e2bd681fc8f28773f66",
         "locator": {
           "end": 494,
           "kind": "line_range",
@@ -125,12 +143,12 @@
         "handoffEntry": "MIK-R108@v1 §4 error-cut",
         "leaf": "260928-MIK-L108"
       },
-      "rationale": "_fit_error owns error trimming from the end, so the measured error share is enforced wherever a short form is built, including the re-guarded retry.",
+      "rationale": "The entry says `_fit_error` owns the error trimming from the end wherever a short form is built; at C that function is 461-497 and does exactly the 600-character cut, the end reduction to a measured 400, and the `errorCut` marker. The recorded 458-494 holds C's content only because it starts in `_attach_log_location` and stops at line 494, inside the search, so 461-497 is the extent that shows the claimed behaviour.",
       "role": "enforcement"
     },
     {
       "anchor": {
-        "blob": "6886781334954f937c6bcd390b33841da83c8e04",
+        "blob": "1ba41e6adae7f4dd9700742a2ff8052d78865ae0",
         "content": "sha256:e6bab7b8ca5f483bc4622bbaee7fbaafdc33c4221e6716cb90615ae71b30806d",
         "locator": {
           "kind": "symbol",
@@ -153,7 +171,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6886781334954f937c6bcd390b33841da83c8e04",
+            "blob": "1ba41e6adae7f4dd9700742a2ff8052d78865ae0",
             "content": "sha256:08eff577329ef1b462a5cca5cccfc934ef341470b6f6da717523d618ae3571fc",
             "locator": {
               "kind": "symbol",
@@ -169,8 +187,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6886781334954f937c6bcd390b33841da83c8e04",
-            "content": "sha256:37f2480a45e300312e6885478bf1c229ef4284c692741c28ee7943640682e39d",
+            "blob": "1ba41e6adae7f4dd9700742a2ff8052d78865ae0",
+            "content": "sha256:3928dc7286631ed6f0f447d9c406201da902895761c897cff651fee3db69dc5f",
             "locator": {
               "kind": "file"
             }
@@ -184,7 +202,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6886781334954f937c6bcd390b33841da83c8e04",
+            "blob": "1ba41e6adae7f4dd9700742a2ff8052d78865ae0",
             "content": "sha256:cc62b700fb11a48a3b0b1adf6196bf409d6ac82aded0d52d74a25a436b7840fc",
             "locator": {
               "kind": "symbol",
@@ -200,7 +218,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6886781334954f937c6bcd390b33841da83c8e04",
+            "blob": "1ba41e6adae7f4dd9700742a2ff8052d78865ae0",
             "content": "sha256:dba96b8c08af914511729e5126b08cd46a0f5a6b454fceb6d5edc330361a2f0e",
             "locator": {
               "kind": "symbol",
@@ -212,11 +230,11 @@
       ]
     },
     "4": {
-      "note": "Each tool resolves its own bound from the exception table or the default.",
+      "note": "A tool resolves operation/tool exceptions, shaped bounds, explicit interim ownership and final rows before the fallback ceiling.",
       "targets": [
         {
           "anchor": {
-            "blob": "6886781334954f937c6bcd390b33841da83c8e04",
+            "blob": "1ba41e6adae7f4dd9700742a2ff8052d78865ae0",
             "content": "sha256:2e99ebc88b34119361b6f1e751e9d985b9048cc76430a5c331272b689bb45d44",
             "locator": {
               "kind": "symbol",
@@ -228,12 +246,12 @@
       ]
     },
     "5": {
-      "note": "The grant tool has explicit L111 interim ownership.",
+      "note": "**Retained historical source account — superseded by the current contract:** The grant tool has explicit L111 interim ownership.",
       "targets": [
         {
           "anchor": {
-            "blob": "046b25d9e2e598af13380e75d0cd61eb27513b36",
-            "content": "sha256:9bd2525fa397025a89de6e07dad88fc0b01649e8cdbd64b93b32013df9139a01",
+            "blob": "1ba41e6adae7f4dd9700742a2ff8052d78865ae0",
+            "content": "sha256:33e4ed2d3861fd039a9f96d63057667271d5c333e3cbda21457c31bf87a263fe",
             "locator": {
               "kind": "symbol",
               "name": "INTERIM_TOOL_LEAF"
@@ -248,8 +266,32 @@
       "targets": [
         {
           "anchor": {
-            "blob": "046b25d9e2e598af13380e75d0cd61eb27513b36",
-            "content": "sha256:5833237c0827b83b67893b9c212e8a872c6fc7da88e13e9ae4c3fea3695a9b20",
+            "blob": "1ba41e6adae7f4dd9700742a2ff8052d78865ae0",
+            "content": "sha256:e5639cff8348ca42dbcd284c125ffce7ed0a3ccfd2bb8853f71f4667db65b792",
+            "locator": {
+              "end": 660,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1ba41e6adae7f4dd9700742a2ff8052d78865ae0",
+            "content": "sha256:468fd1fbdb3ea15ffcb8cbdf5a6e0fc636dde3828211d1c92416d70a2096a8db",
+            "locator": {
+              "end": 234,
+              "kind": "line_range",
+              "start": 232
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1ba41e6adae7f4dd9700742a2ff8052d78865ae0",
+            "content": "sha256:3928dc7286631ed6f0f447d9c406201da902895761c897cff651fee3db69dc5f",
             "locator": {
               "kind": "file"
             }
@@ -258,7 +300,7 @@
         },
         {
           "anchor": {
-            "blob": "6886781334954f937c6bcd390b33841da83c8e04",
+            "blob": "1ba41e6adae7f4dd9700742a2ff8052d78865ae0",
             "content": "sha256:468fd1fbdb3ea15ffcb8cbdf5a6e0fc636dde3828211d1c92416d70a2096a8db",
             "locator": {
               "kind": "symbol",
@@ -269,45 +311,23 @@
         }
       ]
     },
-    "7": {
-      "note": "The installation projection retains removedPartStores rather than suppressing its report.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "6886781334954f937c6bcd390b33841da83c8e04",
-            "content": "sha256:f8beb8d2cc44c00be4c6ae8cd7e96bdd70289c926d7bb5ab42162901fd429403",
-            "locator": {
-              "kind": "symbol",
-              "name": "RUNTIME_INSTALL_ANSWER_FIELDS"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "8": {
-      "note": "Removed notifier/supervisor banners are absent from the framework allowed keys.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "6886781334954f937c6bcd390b33841da83c8e04",
-            "content": "sha256:df48dcc63910c583d3a558832c76c5dba90dda04d0b683514cac44fe80e4dab3",
-            "locator": {
-              "kind": "symbol",
-              "name": "FRAMEWORK_ANSWER_KEYS"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "9": {
-      "note": "The shaped-bound table, which carries the settings answer's ceiling.",
+      "note": "The shaped-bound table, which carries the settings answer's ceiling.\n\nAnchor: `SHAPED_TOOL_BOUNDS`",
       "targets": [
         {
           "anchor": {
-            "blob": "6886781334954f937c6bcd390b33841da83c8e04",
-            "content": "sha256:b92eaced20571d60e5e359822a26763bc78f3c3109d0aeaf6314fb03dd03ae38",
+            "blob": "1ba41e6adae7f4dd9700742a2ff8052d78865ae0",
+            "content": "sha256:3928dc7286631ed6f0f447d9c406201da902895761c897cff651fee3db69dc5f",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1ba41e6adae7f4dd9700742a2ff8052d78865ae0",
+            "content": "sha256:073375c21901f5c3efc5913b9f4c23941b7904ce8c52cad35aba88ac01eda632",
             "locator": {
               "kind": "symbol",
               "name": "SHAPED_TOOL_BOUNDS"

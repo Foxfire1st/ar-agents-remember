@@ -1,5 +1,7 @@
 {
-  "path": "dashboard/src/panels/file-viewer",
+  "path": "dashboard/src/panels/file-viewer/overview",
+  "proves": [],
+  "realizes": [],
   "references": {
     "1": {
       "note": "The marks gutter a pane hosts: portals, placement, the gutter per editor and `drawn`.",
@@ -152,8 +154,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "51f94729899f48cef6ffa98458e7c097fa30497e",
-            "content": "sha256:cd433a00be120e723d2d87d91a2fa26f258a63bd5dea0aa1ba18599cb3f8655a",
+            "blob": "dbbb34c143ffd24687f884bd401852c94fb43a96",
+            "content": "sha256:3fcdf8f870acaceb60f98e0b757a3cb5e2c03dbfdbc59c6ae16d8303c89a72f0",
             "locator": {
               "end": 70,
               "kind": "line_range",
@@ -183,12 +185,12 @@
       ]
     },
     "5": {
-      "note": "The code pane's optional first line and content-sized host.\n\nAnchor: \"numberedFrom(firstLine),\"",
+      "note": "The code pane's optional first line and content-sized host.",
       "targets": [
         {
           "anchor": {
-            "blob": "51f94729899f48cef6ffa98458e7c097fa30497e",
-            "content": "sha256:c9e32361cf60eb0b551c53b41d01e7c593dded2d497861e48c62f9cfc5c6a5a8",
+            "blob": "dbbb34c143ffd24687f884bd401852c94fb43a96",
+            "content": "sha256:f73551aaf0c5b4e81cbd03bce90454f01e1267efd9abb4b4657b0a2c163463b5",
             "locator": {
               "kind": "symbol",
               "name": "fitHost"
@@ -205,6 +207,17 @@
               "end": 71,
               "kind": "line_range",
               "start": 71
+            },
+            "path": "dashboard/src/panels/file-viewer/FilePane.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "dbbb34c143ffd24687f884bd401852c94fb43a96",
+            "content": "sha256:4381a6ac5fd2d1fed3c3059c96f97e25dc55475450953631d92a8d35b059cd90",
+            "locator": {
+              "kind": "file"
             },
             "path": "dashboard/src/panels/file-viewer/FilePane.tsx"
           },
@@ -252,11 +265,11 @@
         {
           "anchor": {
             "blob": "1b839113b8d511b4a8343230e70a8de0be01b79f",
-            "content": "sha256:872cd410448e56a9478c502e6001bff04706a81fcd559a8e2b426284aed25ff3",
+            "content": "sha256:52b08d60b309c3dda6a0349577b96c3ebe2f1390414d68edcb6e9dc0b7ee250a",
             "locator": {
-              "end": 82,
+              "end": 81,
               "kind": "line_range",
-              "start": 79
+              "start": 78
             },
             "path": "dashboard/src/cockpit/Cockpit.tsx"
           },
@@ -264,12 +277,38 @@
         },
         {
           "anchor": {
-            "blob": "f0c0a6b35e01547908dcf3f4feb27ba092dde069",
-            "content": "sha256:fc2f52eab54cccf3c64e9cab4a8eefa1623a34fc09e96a0a0705272b86893314",
+            "blob": "1b839113b8d511b4a8343230e70a8de0be01b79f",
+            "content": "sha256:5f9bebc0a4bf3a820a52a396bf0d1e83c152bae918ef9f7e70b4ed545b229d9b",
             "locator": {
               "end": 807,
               "kind": "line_range",
               "start": 802
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1b839113b8d511b4a8343230e70a8de0be01b79f",
+            "content": "sha256:3c93dc7f2fe3857b8a3f711ea54983fa385dbb79b676d1a3e1b127209dea89cc",
+            "locator": {
+              "end": 81,
+              "kind": "line_range",
+              "start": 81
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1b839113b8d511b4a8343230e70a8de0be01b79f",
+            "content": "sha256:872cd410448e56a9478c502e6001bff04706a81fcd559a8e2b426284aed25ff3",
+            "locator": {
+              "end": 82,
+              "kind": "line_range",
+              "start": 79
             },
             "path": "dashboard/src/cockpit/Cockpit.tsx"
           },
@@ -287,16 +326,53 @@
             "path": "dashboard/src/cockpit/Cockpit.tsx"
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1b839113b8d511b4a8343230e70a8de0be01b79f",
+            "content": "sha256:702b2c2e1862fc60409c48f729e89dc75f68be9c596c3cff68d7d516447731e5",
+            "locator": {
+              "end": 78,
+              "kind": "line_range",
+              "start": 75
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1b839113b8d511b4a8343230e70a8de0be01b79f",
+            "content": "sha256:01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+            "locator": {
+              "end": 78,
+              "kind": "line_range",
+              "start": 78
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "kind": "code"
         }
       ]
     },
     "9": {
-      "note": "The markdown renderer the sidecar pane reuses.",
+      "note": "The markdown renderer the sidecar pane reuses.\n\nAnchor: `Markdown`",
       "targets": [
         {
           "anchor": {
-            "blob": "b4c74c37212e432009df876b3276beea828250fa",
-            "content": "sha256:e65a77e2d635bfba5d57e537277bdfe467525e8ee50a1074c263649cbf815cc2",
+            "blob": "1a65bd4444779518a555e2e38d8ca30fa0df9f3a",
+            "content": "sha256:dbbcb27210f3e352d08d6ba242aaa61621f03500d95beccbb45dbe266bda2ae3",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/grammar/Markdown.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1a65bd4444779518a555e2e38d8ca30fa0df9f3a",
+            "content": "sha256:eff54d0360b790954af018d92a06694c3a335b1849a5d2a028b89a7d2a0e225b",
             "locator": {
               "kind": "symbol",
               "name": "Markdown"
@@ -308,5 +384,5 @@
       ]
     }
   },
-  "schema": "ar-onboarding-route/v1"
+  "schema": "ar-onboarding-file/v1"
 }

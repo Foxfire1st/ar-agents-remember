@@ -71,10 +71,18 @@ No configured live documentation source was available for this pass.
 - The mapping at a new blob, with the mapped span and the content there; `None` when it does not resolve (reused by MIK-R14's refresh). [3]
 - The refresh maps a line range through the diff with this function. [4]
 - Every carried entry of the tree is re-recorded. [5]
+
 - Only the owner's open row with the old `after` is updated. [6]
+
+
 - The call in every writer operation. [7]
+
+
 - Blobs and covering rows are carried. [8]
+
+
 - Another owner's row and a closed file are untouched. [9]
+
 
 ### Cross-Repo References
 

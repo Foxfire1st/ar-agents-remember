@@ -129,9 +129,13 @@ and the cases that measure the three states.
 - **The three states as sentences: the pairing that states it is not proof, the measured non-pairing that names every pair asked about, and the unmeasured one that claims no inference either way.** [36]
 - The declared record format reader that refuses an output which is not this interface's. [37]
 - The wire value, whose validator keeps a pairing and its state one fact and refuses a similarity word on an unmeasured inference. [38]
+
 - The traversal that calls this module last, after the movements exist. [39]
+
 - The Git runner the measurement goes through. [40]
-- **The cases that measure the inference: a source rename displayed as a labelled Git inference, the same rename with no authored edge producing a retraction and an addition rather than a movement, and the separation of a measured absence from a measurement never made.** [41]
+
+- The cases that measure the movement inference: a source rename is never a recorded movement and carries no inference, the same rename with no authored edge is a retraction and an addition, and a side that did not resolve exactly keeps its own state and reason. [41]
+
 
 ### Cross-Repo References
 

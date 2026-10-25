@@ -72,12 +72,12 @@
       ]
     },
     "2": {
-      "note": "Bootstrap reads through the retained naming surface, identifies resolve_context as removed and forbids retire_child beyond its setup powers. [2]\n\nAnchor: Current read surface and prohibited mutations",
+      "note": "Bootstrap reads through the retained naming surface, identifies resolve_context as removed and forbids retire_child beyond its setup powers. \\[2]",
       "targets": [
         {
           "anchor": {
-            "blob": "4c63ecfe34377812e17da8bcc7e8ff6ed032bfd5",
-            "content": "sha256:3bcf1aa6a0cf11d1aca9e62fc716944735838d36b9e9c3555dfdc16214dc3031",
+            "blob": "fde55d2ad1129fead83a4561a005af560d720d55",
+            "content": "sha256:2bfbb93222d3d945ff90d4d37b0562dea61cd20c1edf7eec5981426a5af88e87",
             "locator": {
               "end": 117,
               "kind": "line_range",

@@ -104,7 +104,9 @@ No configured live documentation source was available for this pass.
 
 - The route dispositions and the decision prefix of the one-hop guard. [2]
 - The kind registered with its facts, satisfying row and owner. [3]
+
 - What the triggers read: both sides, the anchor classifier, the owner and the coordination root. [4]
+
 - The run's items and link summary. [5]
 
 - A superseded link reports skipped, null trigger and successor IDs. [6]
@@ -138,7 +140,7 @@ No configured live documentation source was available for this pass.
 - `touched` and `moved_or_absent` fire, `carried` does not, and the link joins no entries. [17]
 - Only a newer approved version fires; no manifest, an unresolved endpoint or no root never does. [18]
 - One hop: D12 raises nothing when D18 changes. [19]
-The predecessor route-row-only regression caption is historical; the now-released test source asserts route_absent without a row. Its original group remains inherited custody, not the old proposition renewed. [20]
+> Retained historical citation wording: The predecessor route-row-only regression caption is historical; the now-released test source asserts route_absent without a row. Its original group remains inherited custody, not the old proposition renewed. [20]
 - A superseded decision raises nothing and its links are listed skipped. [21]
 - A stale link anchor raises `anchor_stale`. [22]
 
@@ -193,3 +195,15 @@ These spans and input-card identities were independently rechecked after the sup
 - A noncurrent refresh remains open even with an ordinary answering row, except superseded decisions. [33]
 
 - The gate independently observes restoration/currentness before judging remaining triggers. [34]
+
+
+
+
+
+- The route-target test checks that `no_impact` and unchanged-route `changed` family rows do not fire, a `retired` family row does, and directory absence without a history row fires `route_absent`. Source caption: `test_a_route_target_fires_only_through_a_rerouting_or_retiring_row` [20]
+
+
+
+
+> Retained earlier card wording; superseded by the current account above:
+> - A route target fires only through a rerouting or retiring row; a route whose files are gone and which no history row records fires a `route_absent` change rather than nothing. [20]

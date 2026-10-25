@@ -75,17 +75,25 @@ After the nested gate-key construction recording closes, `leaf_view_key` replays
 
 - The two bounds. [5]
 - The key's fields. [6]
+
 - The key is built with the task lookup's reads recorded; several conditions give no key. [7]
+
 - A kept view is served only when young enough and unchanged, and its rows are replayed. [8]
 - A read with other bytes or an unnamed read is a move; a named document that was not read is not. [9]
 - Task reads are the JSON files directly in the task folder. [10]
 - Failed, absent or moved inputs keep the parts out of the memo. [11]
+
 - The recheck repeats selections before it reads bytes. [12]
+
 - Another leaf's document appearing, changing or vanishing, and a newline in task.json, leave the kept view in place; the leaf's own document recomputes. [13]
 - A second document that claims the leaf is computed again and answers incomplete. [14]
 - Not read, same bytes, other bytes, a conflict and an unnamed document, each judged. [15]
+
 - Count and age bounds, and no answer for another key. [16]
+
+
 - A view behind which a read failed is not kept. [17]
+
 
 
 - The kept value includes the worklist and its optional code-change facts; the actual caller propagates those facts. [18]

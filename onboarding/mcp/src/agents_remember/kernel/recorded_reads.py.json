@@ -130,15 +130,14 @@
   ],
   "references": {
     "10": {
-      "note": "One read is recorded with the passed identity or the file's identity.",
+      "note": "One read is recorded with the passed identity or the file's identity.\n\nAnchor: `record_read`",
       "targets": [
         {
           "anchor": {
-            "blob": "51f9b6abddfd252e7608a114af2561ae130b078b",
-            "content": "sha256:2386444c174f88811d5e65a03ef802dfa71d7f77f5165fff52b227adb7da3897",
+            "blob": "8e5fe3cc06555aa24b7a8353a5a2649d6e080876",
+            "content": "sha256:574d273db8bc349dc8ece9848026ece0a58843d54edd522c348c35d4ff5b22e9",
             "locator": {
-              "kind": "symbol",
-              "name": "record_read"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -146,15 +145,14 @@
       ]
     },
     "11": {
-      "note": "Two different identities for one key become a conflict.",
+      "note": "Two different identities for one key become a conflict.\n\nAnchor: `_record`",
       "targets": [
         {
           "anchor": {
-            "blob": "51f9b6abddfd252e7608a114af2561ae130b078b",
-            "content": "sha256:7dfa227508e4be0f1137aed1a08ba77e43f752625279ba3111b076d13c0d3b18",
+            "blob": "8e5fe3cc06555aa24b7a8353a5a2649d6e080876",
+            "content": "sha256:574d273db8bc349dc8ece9848026ece0a58843d54edd522c348c35d4ff5b22e9",
             "locator": {
-              "kind": "symbol",
-              "name": "_record"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -178,15 +176,14 @@
       ]
     },
     "13": {
-      "note": "The validation of a row that arrives from another process.",
+      "note": "The validation of a row that arrives from another process.\n\nAnchor: `valid_observation`",
       "targets": [
         {
           "anchor": {
-            "blob": "a969ca4a3e6f9573376dc23de7876cccfaa59f78",
-            "content": "sha256:932513d253a2175d0ae05064f6617d94b40f20172040bbcda21bde4c0e91593e",
+            "blob": "8e5fe3cc06555aa24b7a8353a5a2649d6e080876",
+            "content": "sha256:574d273db8bc349dc8ece9848026ece0a58843d54edd522c348c35d4ff5b22e9",
             "locator": {
-              "kind": "symbol",
-              "name": "valid_observation"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -306,15 +303,14 @@
       ]
     },
     "21": {
-      "note": "The absent higher-priority settings file, the absent JSON sibling and the consumed Markdown file are rows of one recording.",
+      "note": "The absent higher-priority settings file, the absent JSON sibling and the consumed Markdown file are rows of one recording.\n\nAnchor: `_settings_selection`",
       "targets": [
         {
           "anchor": {
-            "blob": "947c83735c58429e61de59ea7777ebe2d820eb43",
-            "content": "sha256:54cd0323dc5864b3ff153fca9cff84183f28bd090410d30c20ace01307cd1487",
+            "blob": "9719c9159d392a3e5377a242638474a1a15b1f37",
+            "content": "sha256:c081cf381bb3f13633d7bf5418bc9534212e3a89628153ff30047098d9b0be43",
             "locator": {
-              "kind": "symbol",
-              "name": "_settings_selection"
+              "kind": "file"
             },
             "path": "mcp/tests/test_reviewer_worklist_reads.py"
           },
@@ -374,15 +370,14 @@
       ]
     },
     "25": {
-      "note": "Every file the gate reads is in its read set, and a conflicting read is never kept.",
+      "note": "Every file the gate reads is in its read set, and a conflicting read is never kept.\n\nAnchor: `test_every_file_read_is_in_the_read_set_and_a_conflicting_read_is_never_kept`",
       "targets": [
         {
           "anchor": {
-            "blob": "eb09cafb934fb0c88cea5c10dc2ceaeb9342f5fe",
-            "content": "sha256:3ef91152cfd63b59ac7c8cc0f8fcc5975e9cc8121e1e82d3fce9471a024c66c9",
+            "blob": "cd9c5537287afcf467e163d880cd215185351a3f",
+            "content": "sha256:e6e886652be10fbe00a654d24ab251858ba9d00e64b0aa84004afa1ddddc11e3",
             "locator": {
-              "kind": "symbol",
-              "name": "test_every_file_read_is_in_the_read_set_and_a_conflicting_read_is_never_kept"
+              "kind": "file"
             },
             "path": "mcp/tests/test_knowledge_gate_routes.py"
           },
@@ -481,15 +476,14 @@
       ]
     },
     "9": {
-      "note": "The recording block sets and restores the context variable.",
+      "note": "The recording block sets and restores the context variable.\n\nAnchor: `recorded_reads`",
       "targets": [
         {
           "anchor": {
-            "blob": "51f9b6abddfd252e7608a114af2561ae130b078b",
-            "content": "sha256:808519e75b00af64073d3a9736f796e1d5051a0e6f917b58f3f2a361c27d125e",
+            "blob": "8e5fe3cc06555aa24b7a8353a5a2649d6e080876",
+            "content": "sha256:574d273db8bc349dc8ece9848026ece0a58843d54edd522c348c35d4ff5b22e9",
             "locator": {
-              "kind": "symbol",
-              "name": "recorded_reads"
+              "kind": "file"
             }
           },
           "kind": "code"

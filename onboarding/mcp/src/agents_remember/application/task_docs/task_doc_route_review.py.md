@@ -87,14 +87,24 @@ No configured Domain Documentation source applies.
 
 ### Repo-Internal References
 
+
 - Call-level knobs and the branch-addressed policy gate. [1]
+
+
 - The binding form that records a review over the resolved candidate document and re-validates. [2]
+
 - The legacy positional recorder passing the resolved leaf document. [3]
 - Exact-binding refusal with the L16-R9 recovery dialect. [4]
+
 - The route-review authority rule (create/replace cannot author or change evidence). [5]
+
+
 - The stamping owner it delegates to; now takes the resolved candidate document. [6]
+
 - The typed candidate ref derived from the selected path. [7]
+
 - The facade that dispatches into this module. [8]
+
 
 ### Cross-Repo References
 
@@ -107,5 +117,6 @@ to normative task intent: the recorders now pass the exact `ResolvedTaskDocument
 `build_route_review` stamps the current `task-intent/v1` digest, and a review whose intent is
 missing/stale refuses. The application seam itself performs no review and owns no intent
 semantics. Part of the landed L25 candidate `99dc249b`.
+
 
 - Branch review is canonical-leaf opt-in under the live grant, not a runtime setting. [9]

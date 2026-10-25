@@ -21,15 +21,14 @@
   ],
   "references": {
     "1": {
-      "note": "Filesystem generations include directory names, symlinks, ctime and unskipped descendants.",
+      "note": "Filesystem generations include directory names, symlinks, ctime and unskipped descendants.\n\nAnchor: `tree_identity`",
       "targets": [
         {
           "anchor": {
-            "blob": "1fb98f3ca4f6017420325669a1b89d7c8473c3d4",
-            "content": "sha256:0a74e153b8110aa29cb76f7b4f019e20cfbdc954e93c0fad4140098b2e75f155",
+            "blob": "d023d83adaf5c952b460485f75bb778c9bfa20ad",
+            "content": "sha256:33df90592127b06a825813e14f29156510da59665366badce8c53e7693f95ffc",
             "locator": {
-              "kind": "symbol",
-              "name": "tree_identity"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -37,15 +36,14 @@
       ]
     },
     "2": {
-      "note": "Object observations distinguish stable existing objects from revoked content and absence proofs.",
+      "note": "Object observations distinguish stable existing objects from revoked content and absence proofs.\n\nAnchor: `ObjectGeneration`",
       "targets": [
         {
           "anchor": {
-            "blob": "1fb98f3ca4f6017420325669a1b89d7c8473c3d4",
-            "content": "sha256:9a6273c70f5e9c02f2a8488c3263f133e9c597d4eefc6104dfa8c5788a921e5e",
+            "blob": "d023d83adaf5c952b460485f75bb778c9bfa20ad",
+            "content": "sha256:33df90592127b06a825813e14f29156510da59665366badce8c53e7693f95ffc",
             "locator": {
-              "kind": "symbol",
-              "name": "ObjectGeneration"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -69,15 +67,14 @@
       ]
     },
     "4": {
-      "note": "Only directory-level native ignore proof permits skipping a working subtree.",
+      "note": "The working view's generation is Git's own `status --porcelain=v2` answer with each changed path's identity folded in; no part of the module walks the worktree.\n\nAnchor: `working_manifest`",
       "targets": [
         {
           "anchor": {
-            "blob": "1fb98f3ca4f6017420325669a1b89d7c8473c3d4",
-            "content": "sha256:2ff300417cf5bf8ea6d286f93d52a025795898f5681444b79623c7a5bc44fa50",
+            "blob": "d023d83adaf5c952b460485f75bb778c9bfa20ad",
+            "content": "sha256:33df90592127b06a825813e14f29156510da59665366badce8c53e7693f95ffc",
             "locator": {
-              "kind": "symbol",
-              "name": "working_manifest"
+              "kind": "file"
             }
           },
           "kind": "code"

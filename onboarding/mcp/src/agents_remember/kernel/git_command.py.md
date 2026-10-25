@@ -97,25 +97,39 @@ The shared runner accepts a cancellation event through `_GIT_CANCELLATION` and `
 ## Evidence
 
 - The byte runner bypasses text decoding and universal-newline conversion. [54]
+
 - Both public transports share environment scrubbing, identity validation and execution options. [55]
+
+
 - The existing general runner remains text-mode through the shared setup. [34]
+
 
 
 - The eight repository selectors that are removed from the environment. [31]
 - The scrubbed environment every runner starts from. [32]
+
 - The options object: work directory, input, timeout and identity. [33]
 
+
 - The one argv: work directory, long paths and the exact safe directory. [35]
+
 - The one spawn: captured output, no check, input or DEVNULL, text or raw bytes. [36]
+
 - The four timeout classes. [37]
 - The option tuples for parsed diffs and the settings they override. [38]
 - The runner with one explicit index. [39]
 - The runner with a disposable index and object directory. [40]
 - The index copy keeps the source file's times, read from one open file. [41]
+
 - The shared-read block: one dictionary per block, reset on exit. [42]
+
+
 - The batched reader answers held blobs from the block and reads only the others. [43]
+
 - Held blobs are looked up by repository path and blob ID. [44]
+
 - One cat-file batch; a header that is not the requested blob raises. [45]
+
 - The three-way merge prints its result and returns the conflict count. [46]
 - The existing-output proof runs before and after the raw commit read. [47]
 - A repeated blob read inside the block starts no Git process and never crosses repositories. [51]

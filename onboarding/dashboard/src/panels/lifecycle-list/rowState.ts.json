@@ -76,15 +76,14 @@
   ],
   "references": {
     "1": {
-      "note": "The hover explicitly selects its actual rendered fields; scope and full reference path are not among them. This corrects an earlier Curator wording overstatement, not product behavior.",
+      "note": "The hover explicitly selects its actual rendered fields; scope and full reference path are not among them. This corrects an earlier Curator wording overstatement, not product behavior.\n\nAnchor: `rowHover`",
       "targets": [
         {
           "anchor": {
-            "blob": "e056e6b3c7dce2893c53dc856efab571863169a2",
-            "content": "sha256:138750683e397e1e702b20af58432227a0213665386e2b2699d9fc529e8f7d92",
+            "blob": "f87a9fe11dcdc7e7e2e1e463684b59e7bced0564",
+            "content": "sha256:47a9c12fb366e47e94ebf7e04005bffe23591f7eeda0fa804df279c8104b962d",
             "locator": {
-              "kind": "symbol",
-              "name": "rowHover"
+              "kind": "file"
             }
           },
           "kind": "code"

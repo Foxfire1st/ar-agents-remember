@@ -80,13 +80,17 @@ No configured live documentation source was available for this pass.
 
 - The module's own statement of the selection, the cut and the continuation. [1]
 - The view name, the policy and its version. [2]
+
 - One page: the resume, the binding, the envelope counted inside the bound, and the measured selection returned (R3-1). [3]
+
 - A refusal with no rows. [4]
 - A resumed page at the walk's code tree, or a tree no longer held refused (F16). [5]
 - Live entries by path then ID; the code tree ID bound into the token. [6]
 - Another walk, tree, policy, path or position refused. [7]
 - The rows and the renderer the pager measures, with states per page. [8]
+
 - The shared pager and continuation this view uses. [9]
+
 - The paging, walk-tree and refusal cases. [10]
 
 ### Cross-Repo References

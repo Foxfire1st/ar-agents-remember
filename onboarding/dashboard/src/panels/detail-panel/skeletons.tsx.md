@@ -30,5 +30,7 @@ ReaderHead passes the addressed entry directly to its change-set bar rather than
 - The preview shows five newest authored decisions, excludes product records from counts/numbering and links to the records-retaining whole log with an authored-only label. [2]
 
 
+
 - Short and long register previews retain a link to every original section byte. [3]
+
 - Complete register section prose is rendered in its own view, not reconstructed from preview rows. [4]

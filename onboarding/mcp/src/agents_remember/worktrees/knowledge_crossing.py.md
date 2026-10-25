@@ -75,7 +75,9 @@ None recorded. The closeout refusal of rule 9 is wired (L09's gate plus L37's cu
 
 - `merge_structure` implements the retained boundary described above. [12]
 - `crossing_plan` implements the retained boundary described above. [13]
+
 - `apply_crossing` implements the retained boundary described above. [14]
+
 
 - The curator text forbids hand renumbering: the merge aligns numbers itself. [15]
 - The summary carries the alignment counts with zero defaults. [16]
@@ -97,15 +99,22 @@ No meaningful cross-repo references found: the file reads and writes only the me
 No cross-repo boundary is crossed by this file.
 - A crossing sync: one tree unconverted and one converted. [17]
 - The plan through the bound port, refused without a paired code commit or a bound crossing. [18]
+
 - The merge's knowledge and onboarding paths become the plan; conflicted paths are unmerged with three stages. [19]
+
+
 - The shared legacy refusal names crossing sync for a converted official line and first conversion otherwise. [20]
+
 - A master-line crossing history file is closed in the merge commit. [21]
 - The durable report and its bounded summary, with the how-to. [22]
+
 - Legacy refusal is unconditional; converted candidates retain their gate route. [23]
+
 
 - No branch or unresolved tip returns False; a resolved tip whose marker object is unreadable returns its named LayoutProbeError [24]
 
 - The managed sync crosses an unconverted leaf into a converted line. [25]
 - Overlapping edits go to the curator with markers; a failed step changes nothing. [26]
+
 
 - The refusal fires on legacy leaf memory independent of converted memory elsewhere. [27]

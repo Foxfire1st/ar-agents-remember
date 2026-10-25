@@ -14,4 +14,5 @@ Mounted DocumentChat cases keep the earlier frame visible/inert during unknown l
 
 ## Evidence
 
+
 - The suite checks mounted retention, immediate known switching, both caps and visibility cleanup with explicit assertions. [1]

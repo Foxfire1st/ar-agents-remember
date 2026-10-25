@@ -74,12 +74,12 @@
       ]
     },
     "2": {
-      "note": "Makes per-target send and sent-log outcomes readable.\n\nAnchor: \"export function outcomeSummary(outcome: TraySendOutcome, name: (agentId: string) => ChatName): string {\"",
+      "note": "Makes per-target send and sent-log outcomes readable.",
       "targets": [
         {
           "anchor": {
-            "blob": "c28683ed6bcf71fbdb53317b32a19c3e13565c64",
-            "content": "sha256:aa9ff29d4cf0283f43e9cda5f601928703a88a9d0c746a11062e854e26086450",
+            "blob": "92917da81f2177ada0a154e972c0bd5fa4bb2104",
+            "content": "sha256:74b9e487b47a16c73fb2274a007dcbc8d64073485e50f4dfb65a6e548d8144cf",
             "locator": {
               "end": 52,
               "kind": "line_range",

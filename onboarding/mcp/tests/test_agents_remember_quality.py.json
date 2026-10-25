@@ -3,15 +3,14 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "Gate four not applicable result does not claim real codex execution.",
+      "note": "Gate four not applicable result does not claim real codex execution.\n\nAnchor: `test_gate_four_not_applicable_result_does_not_claim_real_codex_execution`",
       "targets": [
         {
           "anchor": {
-            "blob": "ccc77772a6cde812e7d5004d4a2138b83f7223de",
-            "content": "sha256:14dd04062d8394f37c8a9fc3a162e7a0d3fdbbf2520d50f30ffba474d0793b15",
+            "blob": "4e7bc5592cb3ced8c27b836edaa44997d05ca5d6",
+            "content": "sha256:ebb3406aee072b3429e2fa816ce2a0630dba224f599e76b8e862c756e6180c41",
             "locator": {
-              "kind": "symbol",
-              "name": "test_gate_four_not_applicable_result_does_not_claim_real_codex_execution"
+              "kind": "file"
             }
           },
           "kind": "test"

@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/serving/daemon.py",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
@@ -7,8 +8,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2066b4ba787438d5c04bc970fcd0310977657ae1",
-            "content": "sha256:ec8ebb319a6713fe13f79587a01c9dd27c0033151ad9d4937e40d29f69e71ed2",
+            "blob": "126d045c43fbd830d1f124ab63fee6589db5d1ff",
+            "content": "sha256:2e5a3f6a67c7eedf93890c6d22d619be978f54bef2bf8e73188ba49749236aab",
             "locator": {
               "kind": "symbol",
               "name": "add_arguments"
@@ -19,12 +20,23 @@
         },
         {
           "anchor": {
-            "blob": "b35e4df4d1e763b1effeac08f9cdc9de7ff5a284",
-            "content": "sha256:636d999cef4a193ded08e18ac24d52d12ef182cb4be5eef56b4294f46229215e",
+            "blob": "126d045c43fbd830d1f124ab63fee6589db5d1ff",
+            "content": "sha256:ed50a6ffe6d4953255a112f223876f44520dd00b4f09e24ef9985ccc84ad338a",
             "locator": {
-              "end": 189,
+              "end": 193,
               "kind": "line_range",
-              "start": 93
+              "start": 97
+            },
+            "path": "mcp/src/agents_remember/cli/dashboard.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "126d045c43fbd830d1f124ab63fee6589db5d1ff",
+            "content": "sha256:46c5e49607dc31e2f7cc4d0109b23ffcf419a4a9b04c24d0af483843012913b4",
+            "locator": {
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/cli/dashboard.py"
           },

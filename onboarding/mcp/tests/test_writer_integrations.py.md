@@ -22,7 +22,9 @@ No test execution, CODE/MEMORY grade, new producer capability or landing is clai
 
 ## Evidence
 
+
 - Describes bounded writer anchor-resolution integration assertions, explicitly not acceptance. The line-range fallback is not a license to invent a symbol proof. These are synthetic source cases, not a test run or live writer witness. [1]
+
 
 ## Current account — the renamed title-refusal case
 

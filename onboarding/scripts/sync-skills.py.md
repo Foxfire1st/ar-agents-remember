@@ -58,9 +58,15 @@ No relevant external documentation found.
 ### Repo-Internal References
 
 - The script defines `skills/` as canonical and derives the sole MCP package-data serving target. [1]
+
 - `--check` compares canonical and target file digests, reports missing/extra/changed paths, and exits non-zero when a target is out of sync. [2]
+
+
 - Normal sync mode refuses self-sync, replaces each target skill folder, copies canonical skills into place, and then reruns the check. [3]
+
+
 - The root AGENTS instructions tell contributors to edit root `skills/` first and run `python3 scripts/sync-skills.py` rather than editing generated skill copies directly. [4]
+
 
 ### Cross-Repo References
 

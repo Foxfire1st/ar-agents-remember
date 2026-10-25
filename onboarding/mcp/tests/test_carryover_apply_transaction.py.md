@@ -20,6 +20,6 @@ The direct-engine fixtures use real official-memory Code-Commit pairing, validat
 - The plan reuses exact warm cache bytes/mtime; a real scratch build followed by injected refusal cleans scratch storage and reports index-incomplete. [4]
 - Five public record cuts complete only missing canonical members, preserve staged equal bytes/modes and HEAD/index, omit optional absent prose and repeat as nothing-to-carryover. [5]
 - Differing JSON, Markdown or wrong-ID existing members remain conflicts; even explicitly included review-required apply refuses with no writes and identical observed state. [6]
-- JSON/Markdown partial record retry reaches whole-tree validation; unrelated \[999] refusal restores state, reports rolled-back refresh and only preexisting carried members in diagnostics. [7]
+- JSON/Markdown partial record retry reaches whole-tree validation; unrelated \ refusal restores state, reports rolled-back refresh and only preexisting carried members in diagnostics. [7]
 - Record dependency admission accepts same-path equal subsets or exact prose-only cuts; payload preparation includes complete needed units so equal members are checked but not rewritten. [8]
 - The transaction skips equal writes, refreshes indexes and validates the whole memory tree before success; refusal restores the saved write extent and reports surviving differences against HEAD. [9]

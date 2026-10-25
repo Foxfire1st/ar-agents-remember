@@ -19,15 +19,14 @@
       ]
     },
     "2": {
-      "note": "Two graph documents refuse before task or projection publication",
+      "note": "Two graph documents refuse before task or projection publication\n\nAnchor: `test_two_graph_documents_refuse_before_task_or_projection_publication`",
       "targets": [
         {
           "anchor": {
-            "blob": "56afdabb8daf6d4f55f78484a975fdd60e99601b",
-            "content": "sha256:8bc1c7e8e814a672e336c116cd13da72161eedab92b3706cd0cda2be8d092b88",
+            "blob": "b2d4da2d1b3bc34a082fe573f4ee00c4bc28c358",
+            "content": "sha256:5a795415a1209966fed669e92c835ce1585bfb9a821b3108f4f42d7152d6e9d7",
             "locator": {
-              "kind": "symbol",
-              "name": "test_two_graph_documents_refuse_before_task_or_projection_publication"
+              "kind": "file"
             }
           },
           "kind": "test"

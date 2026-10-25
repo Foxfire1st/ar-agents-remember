@@ -7,8 +7,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f3c0ef303bc63a8b914f9d3807ebc2ede7604248",
-            "content": "sha256:830f1542909523cd66f2ac3066644baae1328fb04d626557cc814dcfc04ce678",
+            "blob": "c8f5a6768124af30c08124f542f31b5f7e5b7403",
+            "content": "sha256:ecf9c99fe3e48aa01739b7918bc6e74307913a1b91baaf36c13b3c42976ec7cb",
             "locator": {
               "kind": "file"
             }
@@ -18,15 +18,14 @@
       ]
     },
     "2": {
-      "note": "Operation identity is read from the whole result while dry-run and next-action assertions remain.",
+      "note": "Operation identity is read from the whole result while dry-run and next-action assertions remain.\n\nAnchor: `test_dry_run_is_the_default_and_writes_nothing`",
       "targets": [
         {
           "anchor": {
-            "blob": "df58dee6a89d40c7370dcbfb281a6e3842ff9906",
-            "content": "sha256:aa8595be7d1f50f16e27729919bde6ab3e7db01c81ef98330f0b080cfce78271",
+            "blob": "c8f5a6768124af30c08124f542f31b5f7e5b7403",
+            "content": "sha256:ecf9c99fe3e48aa01739b7918bc6e74307913a1b91baaf36c13b3c42976ec7cb",
             "locator": {
-              "kind": "symbol",
-              "name": "test_dry_run_is_the_default_and_writes_nothing"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -34,12 +33,12 @@
       ]
     },
     "3": {
-      "note": "Existing _adopt_tool application controls remain. Registered adapter details such as the adoption artifact use the retained log. Identity, receipt, no-write and move comparisons remain intact; no second mutator is called merely to obtain whole facts.\n\nAnchor: Current STOP-delta source carrier",
+      "note": "Existing _adopt_tool application controls remain. Registered adapter details such as the adoption artifact use the retained log. Identity, receipt, no-write and move comparisons remain intact; no second mutator is called merely to obtain whole facts.",
       "targets": [
         {
           "anchor": {
-            "blob": "9f89d833442627c4b8e63cb92ca236ca28230551",
-            "content": "sha256:a9f1defbbe26152f6222a5c23ee99da730abb52f4efa57dd25e4e92744014d75",
+            "blob": "c8f5a6768124af30c08124f542f31b5f7e5b7403",
+            "content": "sha256:ecf9c99fe3e48aa01739b7918bc6e74307913a1b91baaf36c13b3c42976ec7cb",
             "locator": {
               "kind": "file"
             }

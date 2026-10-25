@@ -113,15 +113,21 @@ No external Domain Documentation entries are configured. Source and test asserti
 
 - Real content conflict continuation scenario. [18]
 
+
 - Moving candidate park. [2]
+
 
 - Dirty work admission and parking use complete typed side records. [33]
 
 - Currentness and continuation use Git facts and content-only conflicts. [34]
 
+
 - The validator's refusal is mapped to its own state with a recovery line, on the automatic path and the retained-conflict continuation. [35]
 
+
+
 - The side run names the crossing owner (leaf or master, and the task ID) and journals the crossing report path. [36]
+
 
 - The memory merge is paired with the code side's settled result commit, or with nothing before it settles. [37]
 
@@ -129,11 +135,15 @@ No external Domain Documentation entries are configured. Source and test asserti
 
 - **The side the retained phase names is read in one place, so phase and side cannot disagree.** [39]
 
+
 - Validator refusal retains repair state. [4]
+
 
 - Pinned authority and parked-work restoration remain separate owners. [41]
 
+
 - Terminal finalization/cancellation and damaged-journal recovery are delegated. [42]
+
 
 - Fresh sync judges exact moving-side formats independent of converted memory elsewhere; retained transaction recovery is separate [43]
 
@@ -143,15 +153,21 @@ No external Domain Documentation entries are configured. Source and test asserti
 
 - The one continuation a hand-staged resolution ends in; no authored decision is stored. [46]
 
+
 - The driver uses one paired-code/owner context for merge and resumed capture. [47]
+
 
 - Fresh validator-stop output is captured without blessing an owner window. [48]
 
+
 - Structural report journaling. [5]
+
 
 - Settled code pairing. [6]
 
+
 - Current continuation. [9]
+
 
 ### Cross-Repo References
 

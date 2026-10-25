@@ -15,7 +15,7 @@ which lives here, beside its only consumer, rather than in the product (review R
 ### Logic
 
 - `test_a_card_becomes_prose_one_evidence_section_and_numbered_references` checks:
-  - metadata, Update History and tables are gone, and `signals[0]` is escaped;
+  - metadata, Update History and tables are gone, and `signals` is escaped;
   - there is one `## Evidence` section, and placeholder sentences stay as prose;
   - symbol targets with covered ranges, a quoted anchor's range, the unresolved removed path and the range
     past the end;
@@ -81,7 +81,9 @@ The cases and the renderer.
 - Rule 4, the export. [2]
 - A refused conversion writes nothing. [4]
 - Back to prose. [5]
+
 - The version 1 golden digest. [6]
+
 - Its lane row. [7]
 
 ### Cross-Repo References

@@ -40,6 +40,9 @@ Python attribute name — so records must be dumped with
 
 ### Repo-Internal References
 
+
 - The store serializes and reads these events. [1]
+
 - Ids come from the local ULID mint. [2]
+
 - Persisted Event uses strict extras and the schema alias, not the tool-response registry or token envelope. [4]

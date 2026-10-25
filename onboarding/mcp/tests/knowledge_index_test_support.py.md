@@ -50,7 +50,9 @@ The test-only fixture row builders and the converter.
 
 - The two fixture kinds and the converter's limits. [1]
 - The conforming-example tree. [2]
+
 - The fixture converter and its head selection. [3]
+
 
 
 ### Cross-Repo References
@@ -59,5 +61,8 @@ No meaningful cross-repo references found: the fixtures are written under the ca
 
 No cross-repo boundary is crossed by this file.
 
+
 - The test-row-builder parity database and the extra candidate claim. [4]
+
+
 - A same-size rewrite placed in the second of the index write. [5]

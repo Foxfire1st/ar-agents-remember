@@ -18,4 +18,5 @@ The on-demand adapter uses the requested ordinary master, or the requested leafâ
 
 ## Evidence
 
+
 - Named ordinary-master/listed-child reads derive informational dependency fields, explicitly filter newly read dicts by raw task schema before tolerant parsing, and index graph ready membership once. These predicates are not universal body-byte parity or start authority. [1]

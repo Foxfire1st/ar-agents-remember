@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/mcp/tools/lifecycle_finalize.py",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
@@ -7,8 +8,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "dfa2872ad0a9789182edbd48e33d561d9929e0ba",
-            "content": "sha256:04d588697a60102cb96b6cf63363498e99e180b6e2eb93a23e493ae0ff667bbb",
+            "blob": "f70e3d124e543009c5876c7472ccdb85120ff60c",
+            "content": "sha256:4e8196e941fb43e63fb6854a5666176542e8a6ae1c28085ce979fa1f060ee59d",
             "locator": {
               "kind": "symbol",
               "name": "lifecycle_finalize_task_tool"
@@ -19,8 +20,8 @@
         },
         {
           "anchor": {
-            "blob": "e77dbabae8b914a6fd3fd7a8b12467c3c5055259",
-            "content": "sha256:bd615bf9cee99101d5cf2868864ff94f4300bf4f1365528dac1f7a8e0c6c1feb",
+            "blob": "f70e3d124e543009c5876c7472ccdb85120ff60c",
+            "content": "sha256:a2e06d4e0f56f44fcbc6df5216e5af4ce622a968e1b8e934b6a9a97777c8c880",
             "locator": {
               "end": 904,
               "kind": "line_range",
@@ -29,16 +30,38 @@
             "path": "mcp/src/agents_remember/application/worktree_tools.py"
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f70e3d124e543009c5876c7472ccdb85120ff60c",
+            "content": "sha256:bbb78251410816eadf042a2a830aa80b49cba552da4ddedc15da284b6fb36888",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/worktree_tools.py"
+          },
+          "kind": "code"
         }
       ]
     },
     "2": {
-      "note": "The shared payload helper is `_tool_payload`.",
+      "note": "The shared payload helper is `_tool_payload`.\n\nAnchor: `_tool_payload`",
       "targets": [
         {
           "anchor": {
-            "blob": "cf09680d5bb09436a9d3afb73da9cbd60f1af5fc",
-            "content": "sha256:35b48e3f7dcb68f7a66dcb72920ee84b9b6dd535711731b79de1596a0e2239fa",
+            "blob": "bbd96445dae6e10e1c4052722fab1b614aafedfe",
+            "content": "sha256:e65598ad08d511a5ffa26a3099d273596eea7844d5c2a00685c2ccb183271c43",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/base.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bbd96445dae6e10e1c4052722fab1b614aafedfe",
+            "content": "sha256:c0e54f12b9211f7fb26dd24d118a8562de4972ce6d7beb7a43b920a7fc979f42",
             "locator": {
               "kind": "symbol",
               "name": "_tool_payload"
@@ -50,12 +73,25 @@
       ]
     },
     "3": {
-      "note": "The response boundary is `complete_tool_response`.\n\nAnchor: \"def complete_tool_response\"",
+      "note": "The response boundary is `complete_tool_response`.",
       "targets": [
         {
           "anchor": {
-            "blob": "9908eea537fbd4a7b15c1a0ed275bee8388ffc72",
-            "content": "sha256:0adcc22acd173d20fcefd6623029adb43b369f2cccbff8eb2a5a3b69a05c721b",
+            "blob": "e0e46bc6a90dd3b9da4bab12c43f61d1e4e71a70",
+            "content": "sha256:fa035cd072435d9389f5b3b0ea910cc8097887cebfb1f1c1cefb3c7a630c04f3",
+            "locator": {
+              "end": 509,
+              "kind": "line_range",
+              "start": 388
+            },
+            "path": "mcp/src/agents_remember/application/tool_response.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e0e46bc6a90dd3b9da4bab12c43f61d1e4e71a70",
+            "content": "sha256:8f58a59dd927e2dbbb576bf82611e6bced2dab7e3b4b9dfda59266f466da7f96",
             "locator": {
               "end": 131,
               "kind": "line_range",
@@ -72,12 +108,25 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c2f2a68ee84ec48aad55956ebf5a6719371ce655",
-            "content": "sha256:5d46671ecd79e0acc904880abe8870161af57ce9eaf44442dd4531d16456bb3d",
+            "blob": "ca5af906298a90f3101a98a5542005e3549b3c0a",
+            "content": "sha256:0db325a8ce4ad401b18bedd0cf6ab450be2014fd8159b67ba98db9dfe0f1ec54",
             "locator": {
-              "end": 111,
+              "end": 114,
               "kind": "line_range",
-              "start": 111
+              "start": 114
+            },
+            "path": "mcp/src/agents_remember/models/tools/tool_registry.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ca5af906298a90f3101a98a5542005e3549b3c0a",
+            "content": "sha256:33d6c58f39c87f30ca185fdb27af02e2d8badbc7690dae27e10695cd10c82b4b",
+            "locator": {
+              "end": 113,
+              "kind": "line_range",
+              "start": 113
             },
             "path": "mcp/src/agents_remember/models/tools/tool_registry.py"
           },

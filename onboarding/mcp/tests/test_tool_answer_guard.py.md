@@ -22,9 +22,13 @@ Cases pin exact envelope stripping, recursive list caps, code validation, fixed 
 
 No Domain Documentation sources are configured; the evidence below is repository implementation or test assertions, not a new execution attestation.
 
+
 - Shaping and failure preservation are asserted at the choke. [1]
+
+
 - Final delivered measurements include bookkeeping. [2]
+
 - Partial and concurrent writes preserve record boundaries and counted losses. [3]
 
-- The shaped start row has the explicit six-hundred-character bound. The existing central choke guard and every other tool bound remain; this is a source-declared row constraint, not a new runtime size census. [4]
 
+- The shaped start row has the explicit six-hundred-character bound. The existing central choke guard and every other tool bound remain; this is a source-declared row constraint, not a new runtime size census. [4]

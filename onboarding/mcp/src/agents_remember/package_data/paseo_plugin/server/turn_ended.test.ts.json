@@ -499,12 +499,12 @@
   ],
   "references": {
     "1": {
-      "note": "The host-free suite retains suppression/deferral/retry/restart controls and adds actual parent-wake registration against a mock registry with explicit steer sends.\n\nAnchor: current owner",
+      "note": "The host-free suite retains suppression/deferral/retry/restart controls and adds actual parent-wake registration against a mock registry with explicit steer sends.",
       "targets": [
         {
           "anchor": {
-            "blob": "23a7a378c6566e2edaf7f39fdc25a5c70fe4e3cd",
-            "content": "sha256:bcab5c00be234dfdfa2f54c68133971194e79dfdd2d710f66569ccaa22342d7d",
+            "blob": "80d62e3db4fa4e21a28aaf5b5fad7ca249158989",
+            "content": "sha256:87fedb3db52a9940b9209e7f49296f56a8071925eb9e8801eb82631c6fac8f4f",
             "locator": {
               "end": 375,
               "kind": "line_range",

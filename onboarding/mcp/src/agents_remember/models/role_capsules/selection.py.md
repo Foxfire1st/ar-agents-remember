@@ -67,8 +67,12 @@ No relevant documentation found after checking live sources.
 
 - The frozen vocabularies membership is tested against: `capsule_role_or_none` answers by exact membership in the frozen registry. [1]
 - The three selection refusals this module's callers branch on. [2]
+
 - The parsed manifest and its per-role applicability entries. [3]
+
+
 - The compiler step that calls this selection first. [4]
+
 - The unknown-role, unknown-operation, non-applicable-operation and launcher cases. [5]
 
 ### Cross-Repo References

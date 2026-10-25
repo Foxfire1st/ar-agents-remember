@@ -49,27 +49,14 @@
       ]
     },
     "11": {
-      "note": "The R03 dependency vocabulary is shared by these record types.",
+      "note": "The R03 dependency vocabulary is shared by these record types.\n\nAnchor: `EvidenceRecordType` `EVIDENCE_DEPENDENCY_POLICIES`",
       "targets": [
         {
           "anchor": {
-            "blob": "4a83bf32ba6af80f5dd06860a4e7a0332913809c",
-            "content": "sha256:691a1226e5ed295b83f147dbed7b0f63d611d94781a738c0a0b1a6a6e497c7a5",
+            "blob": "d641c183171962d4b4496d7d8daaa1f74b440e10",
+            "content": "sha256:4ebc3a89d0db8236a5e514dd8b929911f4700ef533acb0a50a91edde8f779e67",
             "locator": {
-              "kind": "symbol",
-              "name": "EvidenceRecordType"
-            },
-            "path": "mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "4a83bf32ba6af80f5dd06860a4e7a0332913809c",
-            "content": "sha256:1ebe9e346661801b2b8f725837b8e1699f5cbfc26f6531e61a1a3397ea42f035",
-            "locator": {
-              "kind": "symbol",
-              "name": "EVIDENCE_DEPENDENCY_POLICIES"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py"
           },

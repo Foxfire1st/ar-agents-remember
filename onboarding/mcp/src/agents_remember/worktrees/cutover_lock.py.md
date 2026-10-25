@@ -52,7 +52,7 @@ converted candidate or replace its ordinary gate/coherence checks.
 
 - The central legacy refusal and conversion guidance survive retirement of the separate prepared-certification adapter. [13]
 
-- The central legacy refusal and conversion guidance survive retirement of the separate prepared-certification adapter. \[13] [13]
+- The central legacy refusal and conversion guidance survive retirement of the separate prepared-certification adapter. [13]
 
 ### Docs References
 
@@ -71,7 +71,9 @@ which deliberately supersedes the earlier cutover-window exception. No live exte
 - Failed or timed-out Git probes stay named. [8]
 - Leaf route names its own memory line. [9]
 - Public routes refuse with or without converted memory elsewhere. [10]
+
 - A converting candidate is gated, not legacy-locked. [11]
+
 - Plain directory and unanswered repository probes have distinct outcomes. [12]
 
 ### Cross-Repo References

@@ -38,17 +38,34 @@ The inherited card records no current todo for this workflow. It also records th
 
 ## Evidence
 
+
 - Inline onboarding is source-embedded storage reusing the file-level content model the adapter's source defines, with no independent semantic model; the file-level template it once reused is retired with no redirect. [1]
+
 - Adapter steps choose comments and safe placement, preserve markers, remove the block from digest input and fall back to sidecars. [2]
 - Verification specifies timestamp format and SHA-256, classifies missing markers or digest, and falls back on unsupported text parsing. [3]
+
 - The block template declares markers and inline fields, including a Markdown governing link, without defining converted-card metadata. [4]
+
 - Template guidelines keep keys and markers stable and adapt only comment syntax while preserving leading syntax and excluding the block from the digest. [5]
+
+
+
 
 - Inline onboarding reuses the semantic file-level content model; converted memory follows its own citation-authored card workflow instead of removed legacy metadata templates. [6]
 
+
+
+
 - The canonical skill identifies inline as an adapter and gives converted-card precedence over retained unconverted instructions. [7]
+
+
+
+
 
 - The current onboarding entry point explicitly dispatches converted memory to the converted-card workflow and forbids hand-written sidecar JSON. [8]
 
+
+
 - Converted cards use the mirrored prose/companion pair and owner-authored references and typed entries, not inline-template metadata. [9]
+
 - Converted creation accepts temporary evidence tables; the workflow forbids legacy metadata/history and hand-authored references. [10]

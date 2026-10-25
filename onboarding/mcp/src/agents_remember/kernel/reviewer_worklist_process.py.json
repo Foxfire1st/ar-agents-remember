@@ -305,15 +305,14 @@
       ]
     },
     "12": {
-      "note": "Joining: a cancelled flight is absent, and the bound applies only to a new flight.",
+      "note": "Joining: a cancelled flight is absent, and the bound applies only to a new flight.\n\nAnchor: `_join`",
       "targets": [
         {
           "anchor": {
-            "blob": "a555e9a9abeaf5f9e28273ddd2ac14cec79ec9f9",
-            "content": "sha256:c6d81149cb83aee6f86b643f2d670e4bb50fda16a605c243a9b74ee1584b2b86",
+            "blob": "21a424c0ceba2885a766a768450e734806b787e5",
+            "content": "sha256:300ec6439567403db2cc5f43cb5d335522c27a97e1bd13886cb1d97ce1724868",
             "locator": {
-              "kind": "symbol",
-              "name": "_join"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -449,15 +448,14 @@
       ]
     },
     "20": {
-      "note": "The deadline is overload while waiting and a failure once a child ran.",
+      "note": "The deadline is overload while waiting and a failure once a child ran.\n\nAnchor: `_deadline`",
       "targets": [
         {
           "anchor": {
-            "blob": "a555e9a9abeaf5f9e28273ddd2ac14cec79ec9f9",
-            "content": "sha256:d7c0c61d9c3b8425baf45d30bb9e72f3896ab173f576516b827871f8b954fded",
+            "blob": "21a424c0ceba2885a766a768450e734806b787e5",
+            "content": "sha256:300ec6439567403db2cc5f43cb5d335522c27a97e1bd13886cb1d97ce1724868",
             "locator": {
-              "kind": "symbol",
-              "name": "_deadline"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -497,15 +495,14 @@
       ]
     },
     "23": {
-      "note": "Four identical requests get one child; three other computations get one each, and at most two children run at once.",
+      "note": "Four identical requests get one child; three other computations get one each, and at most two children run at once.\n\nAnchor: `test_identical_requests_share_one_child_and_others_wait_for_one_of_two_slots`",
       "targets": [
         {
           "anchor": {
-            "blob": "ede6e5022f731d49e9f93adcd04f7eb551be9bad",
-            "content": "sha256:db2645fb63f906f46efad7548a6f0cb776b99d8f009ba9ee0abc0d903771ed6b",
+            "blob": "27133970f3efd75083fdda0b036762cfe19db511",
+            "content": "sha256:0d5dcf1893f5dd43166d599a4319981049775a685e6d32beb6c990ad5663ab30",
             "locator": {
-              "kind": "symbol",
-              "name": "test_identical_requests_share_one_child_and_others_wait_for_one_of_two_slots"
+              "kind": "file"
             },
             "path": "mcp/tests/test_reviewer_worklist_process.py"
           },
@@ -543,15 +540,14 @@
       ]
     },
     "25": {
-      "note": "Overload is raised at once past the bound and at the deadline for a flight without a child.",
+      "note": "Overload is raised at once past the bound and at the deadline for a flight without a child.\n\nAnchor: `test_overload_is_refused_only_past_the_waiting_bound_or_the_deadline_and_says_so`",
       "targets": [
         {
           "anchor": {
-            "blob": "ede6e5022f731d49e9f93adcd04f7eb551be9bad",
-            "content": "sha256:fe041c8ec1c4f09cd7def9211e262f8188d840da11da1bad3cf9e7677b3d6e55",
+            "blob": "27133970f3efd75083fdda0b036762cfe19db511",
+            "content": "sha256:0d5dcf1893f5dd43166d599a4319981049775a685e6d32beb6c990ad5663ab30",
             "locator": {
-              "kind": "symbol",
-              "name": "test_overload_is_refused_only_past_the_waiting_bound_or_the_deadline_and_says_so"
+              "kind": "file"
             },
             "path": "mcp/tests/test_reviewer_worklist_process.py"
           },
@@ -560,15 +556,14 @@
       ]
     },
     "26": {
-      "note": "A leaving requester does not stop a shared child; the last one reaps it before returning.",
+      "note": "A leaving requester does not stop a shared child; the last one reaps it before returning.\n\nAnchor: `test_a_cancelled_requester_leaves_the_shared_child_to_the_others_and_the_last_reaps_it`",
       "targets": [
         {
           "anchor": {
-            "blob": "fc2f318d24af7c5975edd95387985683c84e9a7d",
-            "content": "sha256:7af958e39778c833eac83ac09c125579da710a652e117aed5e0523eaee6aa61e",
+            "blob": "27133970f3efd75083fdda0b036762cfe19db511",
+            "content": "sha256:0d5dcf1893f5dd43166d599a4319981049775a685e6d32beb6c990ad5663ab30",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_cancelled_requester_leaves_the_shared_child_to_the_others_and_the_last_reaps_it"
+              "kind": "file"
             },
             "path": "mcp/tests/test_reviewer_worklist_process.py"
           },
@@ -577,15 +572,14 @@
       ]
     },
     "27": {
-      "note": "A request that arrives while a cancelled flight is reaped starts its own computation.",
+      "note": "A request that arrives while a cancelled flight is reaped starts its own computation.\n\nAnchor: `test_a_request_arriving_while_a_cancelled_flight_is_reaped_starts_its_own_computation`",
       "targets": [
         {
           "anchor": {
-            "blob": "fc2f318d24af7c5975edd95387985683c84e9a7d",
-            "content": "sha256:27731608a288aa2ee5654a57799aa38b7064e3958eb4b2745c7b256e8e1ae459",
+            "blob": "27133970f3efd75083fdda0b036762cfe19db511",
+            "content": "sha256:0d5dcf1893f5dd43166d599a4319981049775a685e6d32beb6c990ad5663ab30",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_request_arriving_while_a_cancelled_flight_is_reaped_starts_its_own_computation"
+              "kind": "file"
             },
             "path": "mcp/tests/test_reviewer_worklist_process.py"
           },
@@ -594,15 +588,14 @@
       ]
     },
     "28": {
-      "note": "A killed parent takes the child and its Git process with it.",
+      "note": "A killed parent takes the child and its Git process with it.\n\nAnchor: `test_a_killed_dashboard_takes_the_child_blocked_in_git_and_its_git_process_with_it`",
       "targets": [
         {
           "anchor": {
-            "blob": "fc2f318d24af7c5975edd95387985683c84e9a7d",
-            "content": "sha256:971faf1d98da641b241b055a189b4b4f144feb7b85e60997487e757c2aaf4444",
+            "blob": "27133970f3efd75083fdda0b036762cfe19db511",
+            "content": "sha256:0d5dcf1893f5dd43166d599a4319981049775a685e6d32beb6c990ad5663ab30",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_killed_dashboard_takes_the_child_blocked_in_git_and_its_git_process_with_it"
+              "kind": "file"
             },
             "path": "mcp/tests/test_reviewer_worklist_process.py"
           },
@@ -611,15 +604,14 @@
       ]
     },
     "29": {
-      "note": "The child's own alarm ends it and its Git process.",
+      "note": "The child's own alarm ends it and its Git process.\n\nAnchor: `test_the_child_and_its_git_children_end_at_its_own_deadline`",
       "targets": [
         {
           "anchor": {
-            "blob": "fc2f318d24af7c5975edd95387985683c84e9a7d",
-            "content": "sha256:2dfb98e6adce971ee3aca8f017deeb418b3eba8d1dfa2dff97fd2607408e415e",
+            "blob": "27133970f3efd75083fdda0b036762cfe19db511",
+            "content": "sha256:0d5dcf1893f5dd43166d599a4319981049775a685e6d32beb6c990ad5663ab30",
             "locator": {
-              "kind": "symbol",
-              "name": "test_the_child_and_its_git_children_end_at_its_own_deadline"
+              "kind": "file"
             },
             "path": "mcp/tests/test_reviewer_worklist_process.py"
           },

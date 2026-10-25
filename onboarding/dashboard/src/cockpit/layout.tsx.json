@@ -1,5 +1,6 @@
 {
   "path": "dashboard/src/cockpit/layout.tsx",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
@@ -148,11 +149,37 @@
         {
           "anchor": {
             "blob": "1b839113b8d511b4a8343230e70a8de0be01b79f",
+            "content": "sha256:a2527e955c251d00eb9aae9b449b11d8bff7d9861e780cff1923cab996e256e2",
+            "locator": {
+              "end": 754,
+              "kind": "line_range",
+              "start": 743
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1b839113b8d511b4a8343230e70a8de0be01b79f",
             "content": "sha256:d757d00659c1317b8fae09d60622d196a804ee9b0b139793a76dbba455db824d",
             "locator": {
               "end": 778,
               "kind": "line_range",
               "start": 767
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1b839113b8d511b4a8343230e70a8de0be01b79f",
+            "content": "sha256:8de58d233a75f528a2c98b44eef26a891f8089ee72c75943086c2b7f81d0c61a",
+            "locator": {
+              "end": 693,
+              "kind": "line_range",
+              "start": 682
             },
             "path": "dashboard/src/cockpit/Cockpit.tsx"
           },

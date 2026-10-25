@@ -91,22 +91,29 @@ No configured domain documentation could be checked.
 must not duplicate their implementation; this card records which half of the responsibility landed
 where.
 
+
 - **The module's own statement of what it owns, of the one cursor authority it reuses, and of the reset rule.** [1]
+
 - **The one moved-snapshot code: the owners' own binding mismatch, and the two directions told apart by the owner's decoder.** [2]
 - The refusal for a cursor that is not this collection's cursor at all, keeping the owner's own words and remedy. [3]
+
 - **The matrix refusal: the binding mismatch takes the surface's action, every other view refusal keeps the owner's, and the presented token is named rather than the view.** [4]
-- The four fields of one page's position in its walk, as one value. [5]
+
 - **The comparison window stated as the surface's page: `total_basis="selection"`, cumulative `returned`.** [6]
-- **The view window stated as the surface's page: `total_basis="walk"`, and the returned rows checked against the bound the caller asked for.** [7]
 - **The reset page: the current comparison's first page served beside the refusal, with the refused cursor named on the refusal.** [8]
-- The one reader of a view quantity, so a page can never publish an unmeasured count. [9]
 - **The published page value this module builds, with the constructor check that refuses a remainder without a cursor.** [10]
 - The surface's own new-generation action and the maximum page size the request model admits. [11]
 - **The three bounded collections named once, because their cursors are different documents — the family roster joining the two this module pages (`ICR-R31@v1`).** [12]
+
 - The two page refusal codes on the closed refusal-code union. [13]
+
+
 - The one consumer: the adapter offers a request's cursor to the collection it names and states the page this module returns. [14]
+
 - **The route that admits the page size in its own vocabulary before the request model sees it.** [15]
+
 - The client that renders these pages without ever constructing a cursor. [16]
+
 
 ### Cross-Repo References
 

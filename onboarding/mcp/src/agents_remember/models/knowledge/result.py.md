@@ -47,7 +47,6 @@ No configured domain documentation could be checked.
 
 - A typed refusal carries code, operation, offending facts and required next action. [12]
 
-- The graph's request vocabulary and the anchor-endpoint union. [14]
 
 
 - The remaining constructors serve index reads. [34]

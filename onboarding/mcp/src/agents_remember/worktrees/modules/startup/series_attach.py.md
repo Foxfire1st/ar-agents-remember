@@ -73,7 +73,9 @@ No configured Domain Documentation source applies to this repository-internal at
 ### Repo-Internal References
 
 - The one exported helper: the series branch of attach, with its two named refusals and the lineage refusal it splices in. [2]
-- The caller this module was extracted from, which still owns the rest of the attach route and now delegates its series branch here. [3]
+
+> Retained earlier citation wording: - The caller this module was extracted from, which still owns the rest of the attach route and now delegates its series branch here. [3]
+
 - The terminal-cleanup vocabulary that decides the first refusal. [4]
 - The branch liveness probe and the command-result type every return uses. [5]
 - The atomic-series status projection spliced into every payload, and the source-lineage proof whose refusal is the third refusal. [6]
@@ -84,3 +86,5 @@ No configured Domain Documentation source applies to this repository-internal at
 No meaningful cross-repository boundary is owned by this file.
 
 - No applicable cross-repository source was found. [8]
+
+- The caller this module was extracted from, which still owns the rest of the attach route and now delegates its series branch here.  Anchor: `attach_result` [3]

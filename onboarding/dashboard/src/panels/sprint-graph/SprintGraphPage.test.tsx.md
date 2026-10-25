@@ -60,11 +60,17 @@ No relevant external documentation source is configured for this repository-loca
 
 ### Repo-Internal References
 
+
 - The shell-level suite pins graph/queue reachability, sprint scoping, graphless queue reachability, and mounted canonical-reset clearance. [1]
+
 - The real sprint page surface rendered. [2]
+
 - The master reader mounts the queue independently of the optional graph section. [3]
+
 - The sprint-scoped queue implementation reads the authoritative store and renders nothing when no matching queue remains. [4]
+
 - The canonical store reset clears all scenario projections, including `closeoutQueues`, in one transaction. [5]
+
 
 ### Cross-Repo References
 

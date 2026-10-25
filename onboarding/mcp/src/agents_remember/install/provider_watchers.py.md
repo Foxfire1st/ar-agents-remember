@@ -101,9 +101,11 @@ regression suite.
 
 - The rebind report stores lifecycle runs, readiness, recovery actions, messages, and the MCP payload shape. [1]
 - Watcher lifecycle calls use temporary provider settings, `lifecycle.watchers_run`, and per-phase result recording. [2]
-- The pre-refresh stop aborts on non-ok/partial watcher stop before runtime provider refresh proceeds. [3]
-- The post-install path starts watchers, checks status, and attempts one non-destructive restart/rebind before adding recovery guidance. [4]
+
+- A pre-refresh stop that is not ok or is partial is recorded on the rebind report with recovery guidance, and the install continues rather than aborting. [3]
+
 - Runtime install creates and attaches the report, stops watchers before provider refresh, and completes rebind/recovery before returning. [5]
+
 
 ### Cross-Repo References
 

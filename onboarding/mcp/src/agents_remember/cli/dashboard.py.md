@@ -197,7 +197,9 @@ current complete-review, tree and reader semantics; these quotations do not over
 
 - The finite64KiB incomplete-header allowance is an explicit serving constant. [65]
 - The root admits only the matching canonical external live-leaf memory directory. [66]
+
 - Numbered catalogue questions and developer-tray routes use configuration-scoped owners. [67]
+
 - Reload workers declare their own role and bind archive-aware services. [68]
 - Foreground serving passes the finite header limit and cleans sim state. [69]
 - Reload passes the same header/shutdown settings through its factory path. [70]

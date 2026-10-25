@@ -153,23 +153,58 @@ No Domain Documentation source is configured for this memory root.
 ### Repo-Internal References
 
 - The measurement helpers: byte digest of a tree, one repository's full ref and object state, and a task document's status. [1]
+
 - The one-world-per-case fixture: two atomic masters on one shared source pair, each with its own contract-keyed record. [2]
+
 - The public pause and the public select/resume route the module drives instead of inner helpers. [3]
 - The measurement composite, the branch tips, the task-document walk, and the per-contract record read that make "nothing else moved" assertable. [4]
 - The never-selected case succeeds with an explicit vacant record carrying pausedAt, exactly one activation file and unchanged remaining world, tips, documents and ledger. The other pause and refusal cases retain their separate assertions. [5]
+
 - The public operation under test and the release it performs, including the already-stopped branch the never-selected case now reaches. [6]
+
 - The per-contract address and the observation the cases read to prove the released state is the existing `vacant`. [7]
 - The observation's own guard the *active* foreign record meets before the release's exact-owner guard, which is why the two foreign-record cases produce different refusal statuses. [8]
+
 - The exact-owner guard the *vacant* foreign record reaches, and the release that refuses it as a contract mismatch. [9]
+
+
 - The shared closeout fixture this module builds its real Git world from, and the Git helper it measures with. [10]
-- The lane this module is registered in. [11]
+
+
+
+
+
+> Retained earlier citation wording: - The lane this module is registered in. Source caption: "mcp/tests/test_pause_stop_only_end_to_end.py" [11]
+
+
+
 - The shared closeout fixture this module builds its real Git world from, and the Git helper it measures with. [12]
-- The lane this module is registered in. [13]
-- The shared-support artifact whose exact consumer list carries this module (its entry is at `:369` in the block). [14]
+
+
+
+
+> Retained earlier citation wording: - The lane this module is registered in. Source caption: "mcp/tests/test_pause_stop_only_end_to_end.py" [13]
+
+
+
+
+
+> Retained earlier citation wording: - The curator-coherence shared-support artifact declares test_pause_stop_only_end_to_end.py as an exact consumer; declaration does not establish invocation. [14]
+
+
 - The separate publication no case here reaches. [15]
+
 - The integration-case budget this module's membership is accounted against. [16]
 - The end-to-end playthrough that exercises pause and resume in lifecycle order and proves the master a pause stops still admits a leaf. [17]
 
 ### Cross-Repo References
 
 No meaningful cross-repository reference applies to this repository-owned boundary proof.
+
+- The lane this module is registered in. Source caption: "mcp/tests/test_pause_stop_only_end_to_end.py" [11]
+
+
+- The lane this module is registered in. Source caption: "mcp/tests/test_pause_stop_only_end_to_end.py" [13]
+
+
+- The curator-coherence shared-support artifact declares test_pause_stop_only_end_to_end.py as an exact consumer; declaration does not establish invocation. [14]

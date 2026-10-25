@@ -120,18 +120,26 @@ too; correctly placed documents pass unchanged (review R2's read-only sweep of t
 - The atomic reopen plan refuses a leaf the store would write to another file, then clears the doc's stamp before the next start restamps it. [1]
 - The placement guard: the store's write target for the document must be the path it was read from, or the caller's refusal is raised. [2]
 - Its four call sites: the leaf and every master in finalize, the leaf and the master in reopen. [3]
-- Post-contract start revalidates and publishes the lifecycle restamp through the task-first mutation owner. [4]
+
+> Retained earlier citation wording: - Post-contract start revalidates and publishes the lifecycle restamp through the task-first mutation owner. [4]
+
 - Start and attach now publish leaf enclosure registration and task stage through publish_start_task_facts; dry-run returns without publication, and the persisted leaf binding is rechecked. The earlier start.py publisher is historical. [5]
+
 - The worktree-side wrapper that resolves the canonical parent row and delegates to this module's enclosure-registration planner. [6]
-- Start's read-only terminal-blocker preflight calls `plan_leaf_doc_lifecycle_restamp`; the unused restamp publisher also calls that planner internally. [7]
+
+> Retained earlier citation wording: - Start's read-only terminal-blocker preflight calls `plan_leaf_doc_lifecycle_restamp`; the unused restamp publisher also calls that planner internally. [7]
 - The two derived-field computations: absent-only binding, never a rewire. [8]
 - The start/reopen planner that now returns a candidate when only a derived field is missing, and the publisher it feeds. [9]
 - The enclosure-registration planner whose exact no-op now requires the derived link, plus the candidate builder and the state classifier that names `master-link-missing`. [10]
 - The path helpers this module imports — now from the task domain, which is what keeps the package order intact. [11]
+
 - The worktrees-side re-export surface those helpers used to be imported from, and which still publishes them to its own callers. [12]
+
 - The package order this module's import direction must respect, with no baseline and no exception. [13]
 - The armed rail step that runs the layering fitness function on every check — the measurement that found and then confirmed the fix. [14]
-- The observer joins this lookup mirrors (doc id → enclosures[] refs → stem). [15]
+
+- The summary read that projects the full pass and a path-directed read through one canonical source builder, with full bodies read on demand. [15]
+
 
 ## 260815-DAG-L3 Governed Lifecycle Restamp
 
@@ -204,3 +212,8 @@ Re-measured after the fix with the same command from the leaf root: exit 1, **16
 cycle** (`memory_quality <-> worktrees`), with no `tasks`-related finding at all — the base state, since
 those 16 are pre-existing and the rail was already red before this change set existed. `layers.toml` is
 untouched, and there is no `# noqa`, per-file ignore or widened limit anywhere in the resolution.
+
+- Post-contract start revalidates and publishes the lifecycle restamp through the task-first mutation owner.  Anchor: `_create_start_enclosure` [4]
+
+
+- Start's read-only terminal-blocker preflight calls `plan_leaf_doc_lifecycle_restamp`; the unused restamp publisher also calls that planner internally. [7]

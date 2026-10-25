@@ -63,15 +63,6 @@
           "kind": "code"
         }
       ]
-    },
-    "2": {
-      "note": "Docker-owned GrepAI lifecycle behavior lives in the GrepAI lifecycle modules.\n\nAnchor: \"Docker-owned\"",
-      "targets": [
-        {
-          "kind": "unresolved",
-          "text": "onboarding/mcp/src/agents_remember/providers/grepai/lifecycle/core.py.md:17-20"
-        }
-      ]
     }
   },
   "schema": "ar-onboarding-file/v1"

@@ -7,11 +7,21 @@
 ## Purpose
 
 Checks sync-runtime target replacement removes stale files and excludes cache directories. The
-default target roster — which since 260915-CAPS-L9 includes the `eve-runtime` target — is confined
-to MCP package data rather than harness starter directories. Since 260915-CAPS-L9 it also pins the
-**per-target** ignore rule (only the eve application target ignores `node_modules`/`.eve`/
-`.output`/`.vercel`) and the refusal to report an absent canonical source in sync. It is an actual
-temporary-tree copy test, not proof that installed runtime projections have just been refreshed.
+current target roster is exactly `agents-md-files`, `benchmarks`, `providers` and `system`, confined
+to MCP package data rather than harness starter directories. The missing-canonical-source case
+refuses to call two absent trees synchronized and accepts matching present trees. The earlier
+`eve-runtime` target and its per-target ignore case were removed; their CAPS-L9 account is historical.
+These are temporary-tree fixture assertions, not proof that installed runtime projections have
+just been refreshed.
+
+> Retained earlier card wording; superseded by the current account above:
+> Checks sync-runtime target replacement removes stale files and excludes cache directories. The
+> default target roster — which since 260915-CAPS-L9 includes the `eve-runtime` target — is confined
+> to MCP package data rather than harness starter directories. Since 260915-CAPS-L9 it also pins the
+> **per-target** ignore rule (only the eve application target ignores `node_modules`/`.eve`/
+> `.output`/`.vercel`) and the refusal to report an absent canonical source in sync. It is an actual
+> temporary-tree copy test, not proof that installed runtime projections have just been refreshed.
+
 
 ## Code Commentary
 
@@ -52,9 +62,10 @@ Each current definition below can be inspected in the exact source file. Histori
 to removed methods are superseded by this current inventory.
 
 - Sync target replaces target with source tree [1]
+
 - Default targets only write to mcp package data [2]
+
 - A missing canonical source is never reported in sync [3]
-- Only the eve application target ignores machine-local trees [4]
 
 ### Cross-Repo References
 

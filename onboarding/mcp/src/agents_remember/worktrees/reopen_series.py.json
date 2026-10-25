@@ -16,7 +16,7 @@
         "handoffEntry": "L198-INV-A",
         "leaf": "260928-MIK-L198"
       },
-      "rationale": "The fold that reads the tombstone's generation.",
+      "rationale": "the realization the corpus carries for this invariant at the current code, which the row does not yet name",
       "role": "primary-authority"
     },
     {
@@ -77,8 +77,8 @@
     },
     {
       "anchor": {
-        "blob": "e4124ae832c5caaba0d03a1ff64188ce9c3f1221",
-        "content": "sha256:a5d34c153aa28db1395b3747d3ce9af437ddc831626b934ab9204b134f568fa3",
+        "blob": "dfe0753185e5a094aa76840372354516987503d5",
+        "content": "sha256:085db177cc7067417623b6fb0e224ad1d02252266fe00a0e3c12999b5ab7a7be",
         "locator": {
           "kind": "file"
         }
@@ -89,7 +89,7 @@
         "handoffEntry": "L198-F-mcp-src-agents_remember-worktrees-reopen_series",
         "leaf": "260928-MIK-L198"
       },
-      "rationale": "A reopened series publishes a new generation with its own outside scratch root, and proves its predecessor only through the predecessor's completion.",
+      "rationale": "the realization the corpus carries for this invariant at the current code, which the row does not yet name",
       "role": "support"
     },
     {
@@ -118,10 +118,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bd0e5988aafc6934c4ce78d7a1b7424c9cb205ad",
-            "content": "sha256:fd63083bc96cc9e604fb66e66620a6050b579a8c9316e71460377e660303ffb2",
+            "blob": "dfe0753185e5a094aa76840372354516987503d5",
+            "content": "sha256:085db177cc7067417623b6fb0e224ad1d02252266fe00a0e3c12999b5ab7a7be",
             "locator": {
-              "kind": "file"
+              "end": 985,
+              "kind": "line_range",
+              "start": 1
             }
           },
           "kind": "code"

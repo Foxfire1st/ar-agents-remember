@@ -44,8 +44,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "90d0e2a70ed4f9b3c23a1465b0bed91600d810df",
-            "content": "sha256:af419059a10bda4a648f7dd256c9f8c0b9bbe410ba0962516cbfb335b33368cd",
+            "blob": "3e0f4e53174db2486464c2bd82745ae4feb8d387",
+            "content": "sha256:8ee46540770891de1b0c855b3e246282462b4f07da29cfbc78f7c3a00cf5ccf1",
             "locator": {
               "kind": "file"
             }
@@ -55,14 +55,50 @@
       ]
     },
     "10": {
-      "note": "Adds all-role marking, compresses existing prose and extracts step-7 detail, while making curator-run occurrence explicit in the inline final report. Setup boundaries remain inline.\n\nAnchor: Candidate instruction body, lines 153–157",
+      "note": "The operation retains all-role marking and named-step detail. Current setup reads and reports the knowledge foundation state; onboarding and foundation authoring belong to a later Architect task through the Curator route. The earlier curator-run wording is historical and does not establish that a Curator ran during setup. Setup boundaries remain inline.",
       "targets": [
         {
           "anchor": {
-            "blob": "4bcd108017d4bca572ea8ab13288826dee5c1ab0",
-            "content": "sha256:addae8c10246d2287dd1d50bc5b1d9255b2e2114cd2572924386c267c9bc7a99",
+            "blob": "3e0f4e53174db2486464c2bd82745ae4feb8d387",
+            "content": "sha256:aa80e8ef6408db3454d8527c5e528cb8c7aa2893f13d9fbd93e9e2f8acf729fc",
             "locator": {
               "end": 157,
+              "kind": "line_range",
+              "start": 153
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3e0f4e53174db2486464c2bd82745ae4feb8d387",
+            "content": "sha256:670007992bc77a0deb89e33ca60bd2bd4cbb880ba68df0f441c6bcab21e3e073",
+            "locator": {
+              "end": 4,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3e0f4e53174db2486464c2bd82745ae4feb8d387",
+            "content": "sha256:78e6683599d450cfd8d19548cb8ed0a6ab216444e3fdeb52769cb7a31946fee7",
+            "locator": {
+              "end": 79,
+              "kind": "line_range",
+              "start": 71
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3e0f4e53174db2486464c2bd82745ae4feb8d387",
+            "content": "sha256:b19c3e7d349b86a1829e770cf79d389f01929ffd56721b1097e7c989458ee427",
+            "locator": {
+              "end": 161,
               "kind": "line_range",
               "start": 153
             }
@@ -72,12 +108,12 @@
       ]
     },
     "11": {
-      "note": "Adds all-role marking, compresses existing prose and extracts step-7 detail, while making curator-run occurrence explicit in the inline final report. Setup boundaries remain inline.\n\nAnchor: Candidate instruction body, lines 3–13",
+      "note": "The step-8 handover in its own words: the knowledge foundation is the curator's c-14-knowledge-bootstrap procedure run inside a task the Architect organises, and this seat reads its state — not-recorded, recorded at an exact identity, unusable, or a refused admission — reports it and authors no record.",
       "targets": [
         {
           "anchor": {
-            "blob": "ace4771286e68fd5987f369e62d6db1e1304c44f",
-            "content": "sha256:2bf8faf107e1b5d5cde539821d3af19fe01489ed4eedbc6f6ad5e11617ec183b",
+            "blob": "1a969e658eb6bf16c5762b123a0d9df57192cae8",
+            "content": "sha256:e7b8dc44b1eb7b759262123bc0d5a0c7ab662f375819b9bf3b2c7caa8f04a664",
             "locator": {
               "end": 13,
               "kind": "line_range",
@@ -90,12 +126,12 @@
       ]
     },
     "2": {
-      "note": "The eight setup steps run through their owning surfaces, ending in baseline adoption.",
+      "note": "The nine setup steps run through their owning surfaces, from stating what the setup will change to configuring indexing or naming it deferred, with first baseline adoption at step 7 and the knowledge foundation handed to the Architect at step 8.",
       "targets": [
         {
           "anchor": {
-            "blob": "90d0e2a70ed4f9b3c23a1465b0bed91600d810df",
-            "content": "sha256:af419059a10bda4a648f7dd256c9f8c0b9bbe410ba0962516cbfb335b33368cd",
+            "blob": "3e0f4e53174db2486464c2bd82745ae4feb8d387",
+            "content": "sha256:8ee46540770891de1b0c855b3e246282462b4f07da29cfbc78f7c3a00cf5ccf1",
             "locator": {
               "kind": "file"
             }
@@ -109,8 +145,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "90d0e2a70ed4f9b3c23a1465b0bed91600d810df",
-            "content": "sha256:af419059a10bda4a648f7dd256c9f8c0b9bbe410ba0962516cbfb335b33368cd",
+            "blob": "3e0f4e53174db2486464c2bd82745ae4feb8d387",
+            "content": "sha256:8ee46540770891de1b0c855b3e246282462b4f07da29cfbc78f7c3a00cf5ccf1",
             "locator": {
               "kind": "file"
             }
@@ -141,8 +177,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5d110691b9c4137135b9f2a39752d21bf8a86588",
-            "content": "sha256:4d75362596111c5ee9fe9b7245af9dbabc77442d731f220882789fa1605bf432",
+            "blob": "3e0f4e53174db2486464c2bd82745ae4feb8d387",
+            "content": "sha256:8ee46540770891de1b0c855b3e246282462b4f07da29cfbc78f7c3a00cf5ccf1",
             "locator": {
               "kind": "file"
             }
@@ -152,12 +188,12 @@
       ]
     },
     "6": {
-      "note": "Adds all-role marking, compresses existing prose and extracts step-7 detail, while making curator-run occurrence explicit in the inline final report. Setup boundaries remain inline.\n\nAnchor: Candidate instruction body, lines 1–39",
+      "note": "The operation retains all-role marking and named-step detail. Current setup reads and reports the knowledge foundation state; onboarding and foundation authoring belong to a later Architect task through the Curator route. The earlier curator-run wording is historical and does not establish that a Curator ran during setup. Setup boundaries remain inline.",
       "targets": [
         {
           "anchor": {
-            "blob": "4bcd108017d4bca572ea8ab13288826dee5c1ab0",
-            "content": "sha256:8d6b8c5a033d86c60228dfdb508b492b571bee82cbcb06abd13713e6effc0d2b",
+            "blob": "3e0f4e53174db2486464c2bd82745ae4feb8d387",
+            "content": "sha256:f823820b500e56f783f1a3022e3bd03c308b4c7310dfdfbd1c491349ce971a28",
             "locator": {
               "end": 39,
               "kind": "line_range",
@@ -165,16 +201,52 @@
             }
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3e0f4e53174db2486464c2bd82745ae4feb8d387",
+            "content": "sha256:670007992bc77a0deb89e33ca60bd2bd4cbb880ba68df0f441c6bcab21e3e073",
+            "locator": {
+              "end": 4,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3e0f4e53174db2486464c2bd82745ae4feb8d387",
+            "content": "sha256:78e6683599d450cfd8d19548cb8ed0a6ab216444e3fdeb52769cb7a31946fee7",
+            "locator": {
+              "end": 79,
+              "kind": "line_range",
+              "start": 71
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3e0f4e53174db2486464c2bd82745ae4feb8d387",
+            "content": "sha256:b19c3e7d349b86a1829e770cf79d389f01929ffd56721b1097e7c989458ee427",
+            "locator": {
+              "end": 161,
+              "kind": "line_range",
+              "start": 153
+            }
+          },
+          "kind": "code"
         }
       ]
     },
     "7": {
-      "note": "Adds all-role marking, compresses existing prose and extracts step-7 detail, while making curator-run occurrence explicit in the inline final report. Setup boundaries remain inline.\n\nAnchor: Candidate instruction body, lines 54–70",
+      "note": "The operation retains all-role marking and named-step detail. Current setup reads and reports the knowledge foundation state; onboarding and foundation authoring belong to a later Architect task through the Curator route. The earlier curator-run wording is historical and does not establish that a Curator ran during setup. Setup boundaries remain inline.",
       "targets": [
         {
           "anchor": {
-            "blob": "4bcd108017d4bca572ea8ab13288826dee5c1ab0",
-            "content": "sha256:2c9aba9996806ce906abf0f0ea7ad270968e8ab5a3241aa28823da7f59eedb83",
+            "blob": "3e0f4e53174db2486464c2bd82745ae4feb8d387",
+            "content": "sha256:d9e819f9404d295d78ea4b58ce75511d25c4915c43b61661e1cc5174f9c99b46",
             "locator": {
               "end": 70,
               "kind": "line_range",
@@ -182,16 +254,52 @@
             }
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3e0f4e53174db2486464c2bd82745ae4feb8d387",
+            "content": "sha256:670007992bc77a0deb89e33ca60bd2bd4cbb880ba68df0f441c6bcab21e3e073",
+            "locator": {
+              "end": 4,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3e0f4e53174db2486464c2bd82745ae4feb8d387",
+            "content": "sha256:78e6683599d450cfd8d19548cb8ed0a6ab216444e3fdeb52769cb7a31946fee7",
+            "locator": {
+              "end": 79,
+              "kind": "line_range",
+              "start": 71
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3e0f4e53174db2486464c2bd82745ae4feb8d387",
+            "content": "sha256:b19c3e7d349b86a1829e770cf79d389f01929ffd56721b1097e7c989458ee427",
+            "locator": {
+              "end": 161,
+              "kind": "line_range",
+              "start": 153
+            }
+          },
+          "kind": "code"
         }
       ]
     },
     "8": {
-      "note": "Adds all-role marking, compresses existing prose and extracts step-7 detail, while making curator-run occurrence explicit in the inline final report. Setup boundaries remain inline.\n\nAnchor: Candidate instruction body, lines 77–106",
+      "note": "The operation retains all-role marking and named-step detail. Current setup reads and reports the knowledge foundation state; onboarding and foundation authoring belong to a later Architect task through the Curator route. The earlier curator-run wording is historical and does not establish that a Curator ran during setup. Setup boundaries remain inline.",
       "targets": [
         {
           "anchor": {
-            "blob": "4bcd108017d4bca572ea8ab13288826dee5c1ab0",
-            "content": "sha256:fe20e6a0b0c0eb404dad8bd2bc2cade5ebe08d0ab95c9a376e4d676846e30f78",
+            "blob": "3e0f4e53174db2486464c2bd82745ae4feb8d387",
+            "content": "sha256:f07c217fb2588656eb3a7281dbe4d9777486e58211c62dca460676a40c144993",
             "locator": {
               "end": 106,
               "kind": "line_range",
@@ -199,20 +307,92 @@
             }
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3e0f4e53174db2486464c2bd82745ae4feb8d387",
+            "content": "sha256:670007992bc77a0deb89e33ca60bd2bd4cbb880ba68df0f441c6bcab21e3e073",
+            "locator": {
+              "end": 4,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3e0f4e53174db2486464c2bd82745ae4feb8d387",
+            "content": "sha256:78e6683599d450cfd8d19548cb8ed0a6ab216444e3fdeb52769cb7a31946fee7",
+            "locator": {
+              "end": 79,
+              "kind": "line_range",
+              "start": 71
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3e0f4e53174db2486464c2bd82745ae4feb8d387",
+            "content": "sha256:b19c3e7d349b86a1829e770cf79d389f01929ffd56721b1097e7c989458ee427",
+            "locator": {
+              "end": 161,
+              "kind": "line_range",
+              "start": 153
+            }
+          },
+          "kind": "code"
         }
       ]
     },
     "9": {
-      "note": "Adds all-role marking, compresses existing prose and extracts step-7 detail, while making curator-run occurrence explicit in the inline final report. Setup boundaries remain inline.\n\nAnchor: Candidate instruction body, lines 108–125",
+      "note": "The operation retains all-role marking and named-step detail. Current setup reads and reports the knowledge foundation state; onboarding and foundation authoring belong to a later Architect task through the Curator route. The earlier curator-run wording is historical and does not establish that a Curator ran during setup. Setup boundaries remain inline.",
       "targets": [
         {
           "anchor": {
-            "blob": "4bcd108017d4bca572ea8ab13288826dee5c1ab0",
-            "content": "sha256:f1531535e662c1652d7eb96a9881e7be9afe97c302dc3cb0a285d347d00e955b",
+            "blob": "3e0f4e53174db2486464c2bd82745ae4feb8d387",
+            "content": "sha256:64f70e17b3d7cedea1208b71edeb267341a28b725e2014eee726b834ee2d663d",
             "locator": {
               "end": 125,
               "kind": "line_range",
               "start": 108
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3e0f4e53174db2486464c2bd82745ae4feb8d387",
+            "content": "sha256:670007992bc77a0deb89e33ca60bd2bd4cbb880ba68df0f441c6bcab21e3e073",
+            "locator": {
+              "end": 4,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3e0f4e53174db2486464c2bd82745ae4feb8d387",
+            "content": "sha256:78e6683599d450cfd8d19548cb8ed0a6ab216444e3fdeb52769cb7a31946fee7",
+            "locator": {
+              "end": 79,
+              "kind": "line_range",
+              "start": 71
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3e0f4e53174db2486464c2bd82745ae4feb8d387",
+            "content": "sha256:b19c3e7d349b86a1829e770cf79d389f01929ffd56721b1097e7c989458ee427",
+            "locator": {
+              "end": 161,
+              "kind": "line_range",
+              "start": 153
             }
           },
           "kind": "code"

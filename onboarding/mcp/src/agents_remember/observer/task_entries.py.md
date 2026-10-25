@@ -15,10 +15,16 @@ The declaring master receives structured `disagreements` for a documented subTas
 ## Evidence
 
 - The source distinguishes an absent master from a present unresolvable master and carries the original literal into list/record reconciliation. [3]
+
 - Documented-subTask admission respects its own master, reports its contrary/unresolvable input and deduplicates complete reports; other listed kinds use list placement under identity/cycle guards. [4]
+
+
 
 - Produce the single server-side join of authored task stage, worktree binding, host activity, membership and counts. [1]
 
+
+
 - Task event time is served; display age is computed by the browser. [2]
+
 
 **L184 — INV-VDWN33.** The task entry is computed here, so the rule that makes a task limited is realized here. The obligation this leaf records for this place is stated in the invariant named here; the card's earlier account of this file stands, and this paragraph adds what the change made true.

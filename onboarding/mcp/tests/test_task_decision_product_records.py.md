@@ -16,8 +16,8 @@ The retained `test_writer_constants_are_marked_and_authored_text_is_not` case ch
 
 Current native finalization assertions live in the lifecycle/series suites: they preserve existing decision arrays while recording completion time on the completed document. These distinct witnesses do not inherit or silently rebind the retired finalizer-append proof.
 
-- Leaf/native finalization preserves authored and legacy decisions and stable retry bytes. \[3] [3]
-- Master completion preserves its decisions and the sprint decisions while only the completed master receives time. \[4] [4]
+- Leaf/native finalization preserves authored and legacy decisions and stable retry bytes. [3]
+- Master completion preserves its decisions and the sprint decisions while only the completed master receives time. [4]
 
 ## Evidence
 

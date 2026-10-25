@@ -3,15 +3,14 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "Mirrors the observer event envelope (camelCase, `extra=\"forbid\"`, schema alias).",
+      "note": "Mirrors the observer event envelope (camelCase, `extra=\"forbid\"`, schema alias).\n\nAnchor: `Event`",
       "targets": [
         {
           "anchor": {
-            "blob": "5f8e07469944c4ce00a3b6c6682130855c7ba8a3",
-            "content": "sha256:ed4664f0abb424733ffd8244a3394e5158c3c5c5989b80dd8a67f4ff4290bc27",
+            "blob": "b5f4a15e3c26371377e98403ffbb1c7888478853",
+            "content": "sha256:518bd25c4403f72a906def18c2fb03586944d8cf73cc0928f2e644ec98c2be22",
             "locator": {
-              "kind": "symbol",
-              "name": "Event"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/observer/events.py"
           },
@@ -24,8 +23,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b9ed5a1b2e7fadbbbf2ee1215d43e2a45f088206",
-            "content": "sha256:875d8c2001dd8671d1d77b40f8b60ec15d0301937d920cfe18a9437366bb168c",
+            "blob": "bbb005d14f4c90cbe56e3aecbbd4e5ca9cf52cd5",
+            "content": "sha256:9f24c794129ed2f1561cab7af2168d354922b82d488e59294d9ca82615c46e7e",
             "locator": {
               "kind": "symbol",
               "name": "GateStore"
@@ -36,12 +35,23 @@
         },
         {
           "anchor": {
-            "blob": "b9ed5a1b2e7fadbbbf2ee1215d43e2a45f088206",
-            "content": "sha256:69d07c0d453c7c96499ebe567b2d47e9567d48a93510888616a6ca8257e2f413",
+            "blob": "bbb005d14f4c90cbe56e3aecbbd4e5ca9cf52cd5",
+            "content": "sha256:f6dbab14b864183989aece451d6d42b60d9b277a0cc04a1cbe830462e4e266f3",
             "locator": {
               "end": 325,
               "kind": "line_range",
               "start": 96
+            },
+            "path": "mcp/src/agents_remember/controlplane/store.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bbb005d14f4c90cbe56e3aecbbd4e5ca9cf52cd5",
+            "content": "sha256:c0f20674e1759946a2826b30eb5b3cfb1a8b459d30ae01035400f7bc41b50deb",
+            "locator": {
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/controlplane/store.py"
           },

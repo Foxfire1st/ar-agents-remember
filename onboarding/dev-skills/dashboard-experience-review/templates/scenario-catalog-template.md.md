@@ -37,7 +37,9 @@ No relevant external documentation found.
 
 ### Repo-Internal References
 
+
 - The live catalog instantiated from this template. [1]
+
 
 ### Cross-Repo References
 

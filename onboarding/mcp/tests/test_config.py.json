@@ -104,15 +104,14 @@
       ]
     },
     "4": {
-      "note": "Loads authority settings.",
+      "note": "The authority settings load.\n\nAnchor: `test_loads_authority_settings`",
       "targets": [
         {
           "anchor": {
-            "blob": "edcb10e84b723a413147780f285ac074c1da4fe7",
-            "content": "sha256:4a066b62a3131e3ad3ef7164f19419770b73526a30baa7f6d16794647d92de9c",
+            "blob": "bc6db38680e6f27f2053901e91f1193df790f2bd",
+            "content": "sha256:caadc970655e2d8b874bdf4dca4da0997ee689991e88d98475d0e1a6ecd6e6a4",
             "locator": {
-              "kind": "symbol",
-              "name": "test_loads_authority_settings"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -168,15 +167,14 @@
       ]
     },
     "8": {
-      "note": "The optional-block cases this module owns.",
+      "note": "The optional `paseoRuntime` block's exactness and fail-loud behaviour, including the tolerated retired skill root.\n\nAnchor: `McpConfigTests`",
       "targets": [
         {
           "anchor": {
-            "blob": "678e59f79b8f730a0205993cf785a96fdbf441e1",
-            "content": "sha256:78ca9ef3553cc85f5540b588d2a2ca81e13743d96b20288adaa42b8139c4e568",
+            "blob": "bc6db38680e6f27f2053901e91f1193df790f2bd",
+            "content": "sha256:caadc970655e2d8b874bdf4dca4da0997ee689991e88d98475d0e1a6ecd6e6a4",
             "locator": {
-              "kind": "symbol",
-              "name": "McpConfigTests"
+              "kind": "file"
             }
           },
           "kind": "test"

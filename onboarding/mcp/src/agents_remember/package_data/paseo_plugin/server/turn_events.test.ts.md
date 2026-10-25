@@ -14,6 +14,8 @@ The test registers the real adapter on a mock event registry and host sender, wi
 
 ## Evidence
 
+
 - The contributed adapter admits a seat wake only from an exhausted host listing; every incomplete walk leaves the seat alone and preserves the parent's line. [1]
+
 
 **L184 — INV-1ZKP4R.** The event handler's cost bound is asserted here, which is where a write for timeline traffic would show. The obligation this leaf records for this place is stated in the invariant named here; the card's earlier account of this file stands, and this paragraph adds what the change made true.

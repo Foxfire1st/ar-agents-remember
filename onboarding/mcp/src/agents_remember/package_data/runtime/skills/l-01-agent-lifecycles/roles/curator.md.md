@@ -6,14 +6,16 @@ Batch changed-card citation previews and repairs with one documents list per wav
 
 This account controls the named changed seams; contradictory earlier card wording below is retained only as historical evidence. Unchanged role duties and R117 file-only wake/report transport are preserved. Source inspection supplies no new runtime test, CODE verdict, review counter or acceptance.
 
+
 - Batch changed-card citation previews and repairs with one documents list per wave. The stage writes, checks and publishes task knowledge with the installed build and a clean quality check; own-input/coherence faults are corrected through the same admitted tool, never relabeled or bypassed. Valid product/permission/authority/out-of-ground blockers stop dependent work. MEMORY beyond-settings authority comes from architect/developer through the recorded Manager act; independent review and publication are not acceptance. [9]
+
 
 
 ## Message/file transport
 
 This packaged copy makes role messages short wake-ups naming requested work or a handover and its files. Complete report, verdict, list and evidence contents travel through file-only `body` or existing-file `attach`, never pasted into message text. Within a shared task, message files remain with its record and a leaf workspace exposes the message-folder link. Wake text uses the effective settings limit, not a number pinned in this role/template. This transport account changes neither the file's existing role/write boundaries nor requirement, review, curation or landing authority.
 
-- Messages wake; complete payloads and evidence travel as files. [8]
+- Messages wake; complete payloads and evidence travel as files.
 
 
 ## Governing Overview
@@ -73,7 +75,9 @@ with its card and the governing history rows carries it.
 
 Normal converted curation requires current source-bound updated/no_impact onboarding judgments, with counted Markdown/nonmechanical reference change supporting updated; mechanical or realizes/proves-only edits never stand for authored review. Amended rule1 separately permits this L53 rollout's own counted-card answers without updated rows/backfill. Before closeout a non-author second reader checks every changed card/sidecar/record statement, row disposition/effect/reason and important omission against final code/diff; blocking findings are repaired. The independent check is lifecycle evidence, not automated transaction acceptance.
 
+
 - Current curation contract separates normal judgment domains from rollout and lifecycle ownership. [12]
+
 
 ### Logic
 
@@ -137,16 +141,25 @@ A cut-card observation calls for a causal account: the handover names the change
 | --- | --- | --- |
 | Turn truth, permitted memory surface and prohibited source/task/Git writes. | lines 178-247 | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/curator.md:178-247 |
 
-- The mirror carries the same effect contract as the canonical role. [1]
+
 - Three-way reconciliation, explicit retention, writer/readback and full quality duties. [2]
-- Process step 3 requires an authored rationale on every hand-off target before ingest (generated copy). [4]
+
+
 - On converted memory knowledge-ingest is the file writer and publishes no dataset. [7]
+
+
 - Current stage boundaries, settings-owned review budget and recorded approval duties are carried by these instruction sources. [8]
 
-- The curator’s prohibited writes and source-stamp boundary.  Anchor: `enclosure_in_scope` [3]
-- Process step 3 lifts the decisions that keep governing code, on converted memory (MIK-R13).  Anchor: `MIK-R13` [5]
-- Converted cards need current content-bound onboarding rows, and an independent nonauthor checks curated statements and row judgments before closeout. [6]
-- Overview authoring is purpose-first, changes belong in their body section, and citation lines terminate the overview. [10]
 
-- Evidence and working files stay outside the memory worktree. [10]
-- Every reported cut has task-change causality; finding-clearing deletion is forbidden. [11]
+
+- The curator’s prohibited writes and source-stamp boundary. [3]
+
+
+- Converted cards need current content-bound onboarding rows, and an independent nonauthor checks curated statements and row judgments before closeout. [6]
+
+
+
+
+- Evidence and working files stay outside the memory worktree.  Overview authoring is purpose-first, changes belong in their body section, and citation lines terminate the overview. [10]
+
+- Every reported cut has task-change causality; finding-clearing deletion is forbidden.  Historical source caption: "Anchor: lines 141-148" [14]

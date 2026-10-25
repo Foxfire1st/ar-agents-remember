@@ -210,8 +210,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "dcea734d01a9e0e0e0f63ee8bfbf5ce1d40ee24d",
-            "content": "sha256:443c00ec3df518b067e0b38db098cc33a978d3f32f9dfbfab3e7fc022f1787d4",
+            "blob": "27133970f3efd75083fdda0b036762cfe19db511",
+            "content": "sha256:0d5dcf1893f5dd43166d599a4319981049775a685e6d32beb6c990ad5663ab30",
             "locator": {
               "kind": "file"
             },
@@ -594,15 +594,14 @@
       ]
     },
     "60": {
-      "note": "The adapter's composition: the observation made once and handed to both renderings, before any dataset is opened and before the selector branch, and its limits declared at the top level.",
+      "note": "The adapter's composition: the observation made once and handed to both renderings, before any dataset is opened and before the selector branch, and its limits declared at the top level.\n\nAnchor: `compose_review`",
       "targets": [
         {
           "anchor": {
-            "blob": "6d7ca4345e18c4dd21a1dc2cde146f53513626f9",
-            "content": "sha256:8e3d359536a44431fb6bdcbd18b3bc00dc6a64e4da43b6a8a920f2ea31b5a35e",
+            "blob": "1c9f8394dfb38bee67a5da3b90ace66147bd5334",
+            "content": "sha256:bc9aed0908cabfef3b176f1734ea114458607fab1f9bf612787eace2cfa4d0c0",
             "locator": {
-              "kind": "symbol",
-              "name": "compose_review"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/knowledge_review.py"
           },
@@ -645,15 +644,14 @@
       ]
     },
     "63": {
-      "note": "**The cases that measure the inventory through the real composition and the real route: no knowledge at all, an unusual name carried by the shipped capture, non-text and mode-changed paths, and a non-UTF-8 name that leaves the review openable and partial.**",
+      "note": "**The cases that measure the inventory through the real composition and the real route: no knowledge at all, an unusual name carried by the shipped capture, non-text and mode-changed paths, and a non-UTF-8 name that leaves the review openable and partial.**\n\nAnchor: `test_a_task_context_review_lists_the_complete_source_inventory_with_no_knowledge_at_all`",
       "targets": [
         {
           "anchor": {
-            "blob": "9e20905eb809b4c5f200ca75c6298b7d0af0165d",
-            "content": "sha256:b68bf652eb5ef6f597dec0fa6645f944b25bdcfea03dd859fa980cf7d57540da",
+            "blob": "bcbcc496c1dec9b0ec440122d7a990d82dcb69a1",
+            "content": "sha256:154d84ed29279279b9c392a02851fadf228ee0d19619acb50fe961e9174d8dc2",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_task_context_review_lists_the_complete_source_inventory_with_no_knowledge_at_all"
+              "kind": "file"
             },
             "path": "mcp/tests/test_knowledge_review_source_endpoints.py"
           },
@@ -666,8 +664,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d0e0f3a0a209313492e7cb61a2066cf40519f66e",
-            "content": "sha256:b2ec49d2f92bf5284cf495d38922a0cf1f413a850af10d33bde03a59bc2198a7",
+            "blob": "0f255485bc9dc7fc49932bd57f66ff49c8a4564c",
+            "content": "sha256:efc0292005a5152b8ad840c06eb567691b6b60bb4e1eeb25cbc719653528349c",
             "locator": {
               "end": 447,
               "kind": "line_range",
@@ -684,8 +682,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d0e0f3a0a209313492e7cb61a2066cf40519f66e",
-            "content": "sha256:a639c15f49843ec3b8f34eac2a4600ce8c364f779e7c13383656a8ccb261498e",
+            "blob": "0f255485bc9dc7fc49932bd57f66ff49c8a4564c",
+            "content": "sha256:c7b730b60ff8dedd4eb1c16a15ed423aff51f17d2696c3e1f494f1ccfdd326b1",
             "locator": {
               "end": 294,
               "kind": "line_range",

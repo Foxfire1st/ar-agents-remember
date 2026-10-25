@@ -19,10 +19,14 @@ This is current-source interpretation of the A9 candidate, not a new test result
 ## Source-bound reference inputs
 
 - [1]
-- [3]
+
+
+
+- Anchor: Only capsule/refused modes and their result carrier. [3]
+
+
 - [4]
 - [7]
 - [11]
 - [15]
 - [17]
-

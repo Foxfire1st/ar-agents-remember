@@ -3,15 +3,14 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "No external domain source is required to establish this repository-owned implementation.",
+      "note": "No external domain source is required to establish this repository-owned implementation.\n\nAnchor: `direct_landing_tool`",
       "targets": [
         {
           "anchor": {
-            "blob": "8b386e9074f7f7e40dd308cb4a35ad1a34d5c168",
-            "content": "sha256:16182a70a535e68c325ce3c6b0650ea2d3f987887d6e428d6cefb15b0742cfee",
+            "blob": "1de673c8175f9a7c79e3ffec19987cd26c195f52",
+            "content": "sha256:c2597afcc61ebcd3d7cc8b9fdf12ee3f4da3903a42846ca6e6130894e5a199a4",
             "locator": {
-              "kind": "symbol",
-              "name": "direct_landing_tool"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -19,15 +18,14 @@
       ]
     },
     "2": {
-      "note": "The module's concrete API, control flow, and validation boundary are implemented here.",
+      "note": "The module's concrete API, control flow, and validation boundary are implemented here.\n\nAnchor: `direct_landing_tool`",
       "targets": [
         {
           "anchor": {
-            "blob": "8b386e9074f7f7e40dd308cb4a35ad1a34d5c168",
-            "content": "sha256:16182a70a535e68c325ce3c6b0650ea2d3f987887d6e428d6cefb15b0742cfee",
+            "blob": "1de673c8175f9a7c79e3ffec19987cd26c195f52",
+            "content": "sha256:c2597afcc61ebcd3d7cc8b9fdf12ee3f4da3903a42846ca6e6130894e5a199a4",
             "locator": {
-              "kind": "symbol",
-              "name": "direct_landing_tool"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -62,15 +60,14 @@
       ]
     },
     "4": {
-      "note": "No meaningful cross-repository reference applies.",
+      "note": "No meaningful cross-repository reference applies.\n\nAnchor: `direct_landing_tool`",
       "targets": [
         {
           "anchor": {
-            "blob": "8b386e9074f7f7e40dd308cb4a35ad1a34d5c168",
-            "content": "sha256:16182a70a535e68c325ce3c6b0650ea2d3f987887d6e428d6cefb15b0742cfee",
+            "blob": "1de673c8175f9a7c79e3ffec19987cd26c195f52",
+            "content": "sha256:c2597afcc61ebcd3d7cc8b9fdf12ee3f4da3903a42846ca6e6130894e5a199a4",
             "locator": {
-              "kind": "symbol",
-              "name": "direct_landing_tool"
+              "kind": "file"
             }
           },
           "kind": "code"

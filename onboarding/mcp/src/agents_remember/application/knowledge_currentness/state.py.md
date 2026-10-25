@@ -75,13 +75,17 @@ No configured live documentation source was available for this pass.
 - The one function, its consumers, the rule-2 order and the visibility rule. [1]
 - The state vocabulary in count order. [2]
 - Rule 2: stale, then unverifiable, then unrealized (proofs do not count), then current. [3]
+
 - One invariant's complete observed entry list, compact when a read-wide reason explains it; `differing` remains the non-current subset. [4]
+
 - The family header with its stale members. [5]
 - The block, its counts and the read-wide reason. [6]
 - The function: family members expanded, realizations and proofs observed alike. [7]
 - Unknown IDs are left out. [8]
 - Precedence cases. [9]
+
 - The stale-proof cases. [10]
+
 - The per-side computation. [11]
 
 ### Cross-Repo References

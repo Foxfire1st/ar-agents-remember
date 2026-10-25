@@ -54,8 +54,8 @@
     },
     {
       "anchor": {
-        "blob": "643d3010c1fc3af542650e4ea271f1c2019d4cc4",
-        "content": "sha256:3520149758545390c4194dae0e5c571f76dca7107d2a0932454a4318d083ddfc",
+        "blob": "fb97a77f84daaaa046467094d301350bc4e97ec6",
+        "content": "sha256:3845b080d5b3571edde300a55f0730270bafab063f1af74623c0676cf0ce359d",
         "locator": {
           "kind": "symbol",
           "name": "test_a_case_that_does_not_run_is_refused_with_its_real_modifier"
@@ -123,15 +123,14 @@
       ]
     },
     "2": {
-      "note": "Each blocking modifier is refused with its own name and text, on the case and on an enclosing suite",
+      "note": "Each blocking modifier is refused with its own name and text, on the case and on an enclosing suite\n\nAnchor: `test_a_case_that_does_not_run_is_refused_with_its_real_modifier`",
       "targets": [
         {
           "anchor": {
-            "blob": "643d3010c1fc3af542650e4ea271f1c2019d4cc4",
-            "content": "sha256:3520149758545390c4194dae0e5c571f76dca7107d2a0932454a4318d083ddfc",
+            "blob": "fb97a77f84daaaa046467094d301350bc4e97ec6",
+            "content": "sha256:90a559550f8203c077b1455d663168b34a07798fc08cebe5af79d9a927e76e03",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_case_that_does_not_run_is_refused_with_its_real_modifier"
+              "kind": "file"
             }
           },
           "kind": "test"

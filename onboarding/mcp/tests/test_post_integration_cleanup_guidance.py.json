@@ -58,8 +58,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9d18347f5e86ad09f7aee456760812eaead4cefc",
-            "content": "sha256:bed6b4a3fd67105d46c67f019f143988f0646c47b20731e04a123696e73c563e",
+            "blob": "d4d550c6fb2e3a7576ca7fd91c7112a14e21c7c8",
+            "content": "sha256:53d5d8d3a38ad5cb5af0ff5849a5b63dd92f2fb581b55dba3b4bac1e37b916ff",
             "locator": {
               "kind": "symbol",
               "name": "test_external_completion_proves_landed_commits_without_reading_the_cache"
@@ -69,12 +69,22 @@
         },
         {
           "anchor": {
-            "blob": "9d18347f5e86ad09f7aee456760812eaead4cefc",
-            "content": "sha256:760a46cf6be785dc3c5c006f8f47fa0f673fc86cc2c8986b307c93c83a64e404",
+            "blob": "d4d550c6fb2e3a7576ca7fd91c7112a14e21c7c8",
+            "content": "sha256:622c182548b6ebb0259cc46e9da9bd3ec06a2f0e89d36f5ef9f35a4a27ca158c",
             "locator": {
               "end": 119,
               "kind": "line_range",
               "start": 84
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "d4d550c6fb2e3a7576ca7fd91c7112a14e21c7c8",
+            "content": "sha256:6251c44c1f10bb7dec214700eee8037c935da57560346eab3b97d13a0942b9f6",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -110,7 +120,7 @@
       ]
     },
     "4": {
-      "note": "Production completion and post-integration guidance owner.",
+      "note": "Production completion and post-integration guidance owner.\n\nAnchor: `carryover_done` `_post_integration_phase`",
       "targets": [
         {
           "anchor": {
@@ -138,12 +148,23 @@
         },
         {
           "anchor": {
-            "blob": "2e1832a7e5f574066e78c4bf63f69851a912ddf2",
-            "content": "sha256:b7a56934e8c671c2399fc9a8409212ce02831ef4a8fdee76e29d21b7e4eb92ba",
+            "blob": "97d891cffc76560263390fb8f9b22f38c8260a8b",
+            "content": "sha256:7fff4b3465baa07e6dae5115eee16c20b09b2bc149171d7d1689bbcdb507e476",
             "locator": {
               "end": 328,
               "kind": "line_range",
               "start": 245
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/guidance.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "97d891cffc76560263390fb8f9b22f38c8260a8b",
+            "content": "sha256:c5a2fd084e668cadc10135510d3635ab841914e4f4cfafe640271cfe0bf18e67",
+            "locator": {
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/worktrees/modules/guidance.py"
           },

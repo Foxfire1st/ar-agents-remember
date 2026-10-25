@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/application/knowledge_paging/bindings.py",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
@@ -20,26 +21,14 @@
       ]
     },
     "2": {
-      "note": "The refusal and its three codes.",
+      "note": "The refusal and its four codes.\n\nAnchor: `PagingRefusal` `PagingRefusalCode`",
       "targets": [
         {
           "anchor": {
             "blob": "34a11077bdec2560694bd4050ffa1a2fcc5056a5",
-            "content": "sha256:e07d7436c6e55007a3a759cca7e8801331e756c1124c12b127808351511d4273",
+            "content": "sha256:01d535f1643cdce703c2a383e50b5c2a2223af400b15c3a4de300c4013796e65",
             "locator": {
-              "kind": "symbol",
-              "name": "PagingRefusal"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "ded892f60518629e46a721cbe1ce332ae474bee8",
-            "content": "sha256:7c7d2511fb2d449ead244b44f25a4bf4d2238c332f13388798c74bc78a31edba",
-            "locator": {
-              "kind": "symbol",
-              "name": "PagingRefusalCode"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -47,12 +36,22 @@
       ]
     },
     "3": {
-      "note": "Minting binds the build's threshold and queues the rest.",
+      "note": "Minting binds the build's threshold and queues the rest.\n\nAnchor: `mint_continuation`",
       "targets": [
         {
           "anchor": {
-            "blob": "ded892f60518629e46a721cbe1ce332ae474bee8",
-            "content": "sha256:9c49bf3dadcf9dc7c4eb9f0595834ca43f8ec6a82f3c4e252c6b49e87a5e0e91",
+            "blob": "34a11077bdec2560694bd4050ffa1a2fcc5056a5",
+            "content": "sha256:01d535f1643cdce703c2a383e50b5c2a2223af400b15c3a4de300c4013796e65",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "34a11077bdec2560694bd4050ffa1a2fcc5056a5",
+            "content": "sha256:095d62f121163a878731862b65e562d86984e00787a1655e352c532920e4e968",
             "locator": {
               "kind": "symbol",
               "name": "mint_continuation"

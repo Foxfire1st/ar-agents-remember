@@ -64,10 +64,14 @@ No configured external domain-documentation evidence.
 These repository-relative targets were checked in the L9 code checkout. The cited ranges support
 the current working-candidate behavior; historical entries below retain their original scope.
 
+
 - The runtime validates and publishes progress, completion, and input-required evidence. [1]
+
 - Request-owned generation construction and memory-only output reconciliation. [2]
 - Recovery cells are derived from authoritative mutation evidence. [3]
+
 - The classifier supplies exact memory output evidence. [4]
+
 
 ### Cross-Repo References
 

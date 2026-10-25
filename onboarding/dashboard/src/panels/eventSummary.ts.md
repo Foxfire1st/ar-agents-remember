@@ -53,8 +53,12 @@ repository's observer event contract.
 
 ### Repo-Internal References
 
+
 - The raw observer event envelope rendered by this formatter. [1]
+
+
 - The Event River component consumes these summaries for rendering. [4]
+
 
 - Unknown-event context prefers the explicit enclosure and otherwise the repository; the existing assertion checks enclosure presence and repository absence. [14]
 

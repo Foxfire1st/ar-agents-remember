@@ -76,10 +76,17 @@ widens that exception.
 - The four roots a selection starts from. [6]
 - Explicit settings must imply an existing memory root. [7]
 - The public entry requires a contract reader and branches on the onboarding-root hint. [8]
+
 - The selection path of the context. [9]
+
 - The coordination root of a selected contract, with the path probe and resolution recorded. [10]
+
 - The context is filled from roots, settings and the optional contract. [11]
+
 - Root absence, appearance, retargeting and removal each recompute a kept view; a present removed root is refused by name. [12]
 - A root probe that raises is recorded as unreadable and nothing is kept. [13]
+
 - The fallback context reads the contract and records the bytes consumed. [14]
+
+
 - The onboarding gate's settings resolution records the absent memory settings and the contract it read, and no file it did not open. [15]

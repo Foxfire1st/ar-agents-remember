@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/serving/projections/landing_state.py",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
@@ -170,26 +171,37 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1d44f615bfc4501ef26607c59032d9f62b6744a3",
-            "content": "sha256:e29ba003cb25f1db27fe31175afb1aa5dc9c2f4e58c4cd274653c99d4f80c0fb",
+            "blob": "f8278dbb21252d1ffb0922f6be85733f1ccb7d2e",
+            "content": "sha256:c52d2078d26138a4597480b9927d42db90c5b019174b217c604124fbfca9813f",
             "locator": {
               "kind": "symbol",
               "name": "run"
             },
-            "path": "mcp/src/agents_remember/cli/dashboard.py"
+            "path": "mcp/src/agents_remember/serving/projector.py"
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "941a70a1df5c5222acbc4406144f6ef096c74b18",
-            "content": "sha256:e325202903387414b02bb568217d1189ed01385915a408b5f85ffae378d9a031",
+            "blob": "f8278dbb21252d1ffb0922f6be85733f1ccb7d2e",
+            "content": "sha256:b46854bf74894141a3e0b8814921ecd36c7a2542fd06a6f140b464fc066271fb",
             "locator": {
-              "end": 326,
+              "end": 323,
               "kind": "line_range",
-              "start": 223
+              "start": 220
             },
             "path": "mcp/src/agents_remember/serving/projector.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "126d045c43fbd830d1f124ab63fee6589db5d1ff",
+            "content": "sha256:46c5e49607dc31e2f7cc4d0109b23ffcf419a4a9b04c24d0af483843012913b4",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/dashboard.py"
           },
           "kind": "code"
         }
@@ -248,8 +260,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a1430c54022a8369724801f3da1da693a7e07bf2",
-            "content": "sha256:46043561710a433d5c44864184c45da44891740213368e4dbda8393ba7fb0117",
+            "blob": "f78cd0b0ccc7bef3d26f33529137c09da56e2e03",
+            "content": "sha256:16153579d3b813003348d3e755c33bdaa0239102b2a2907bd7c5760fa633cc5d",
             "locator": {
               "end": 272,
               "kind": "line_range",
@@ -265,8 +277,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a1430c54022a8369724801f3da1da693a7e07bf2",
-            "content": "sha256:0452a030da34a19bff29ef09220fb2679d8858259bae1ffe54b2c618282dd360",
+            "blob": "f78cd0b0ccc7bef3d26f33529137c09da56e2e03",
+            "content": "sha256:8a0d599737888d59bf57d9e097931365fcfc01ff03e3c29c77b76e96d0d57808",
             "locator": {
               "end": 211,
               "kind": "line_range",

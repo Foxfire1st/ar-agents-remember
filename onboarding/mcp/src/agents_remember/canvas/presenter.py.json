@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/canvas/presenter.py",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
@@ -116,8 +117,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a51dc44c033b40965f0541aa9d90c2c8b96736f4",
-            "content": "sha256:809f9a7bfd0c1225671d90ccddbd5a93ef87b81ffb6e8f61f1ef447227423427",
+            "blob": "b660b126885ae705cd1c9da3ed54888d2a767d2f",
+            "content": "sha256:a89ba86e6ce3f4fc1fdef5d30245f3c36b56a17c6d3f753332462de2b90b5c37",
             "locator": {
               "kind": "symbol",
               "name": "Presenter"
@@ -148,8 +149,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a51dc44c033b40965f0541aa9d90c2c8b96736f4",
-            "content": "sha256:6cc7f87dcd47da37468e28991c8c08b9c01fd06f76da8789b75bab8213479178",
+            "blob": "b660b126885ae705cd1c9da3ed54888d2a767d2f",
+            "content": "sha256:dc0a32d4caa7c4f178ae8af02dee0e0cdfe9d9163155a3e093e1ae9de56e6c41",
             "locator": {
               "kind": "symbol",
               "name": "UnconfiguredPresenterRunner"

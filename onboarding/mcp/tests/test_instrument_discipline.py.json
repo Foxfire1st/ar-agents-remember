@@ -1,5 +1,6 @@
 {
   "path": "mcp/tests/test_instrument_discipline.py",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
@@ -149,16 +150,16 @@
       ]
     },
     "15": {
-      "note": "The lane this module is registered in, so the fail-closed manifest admits it.\n\nAnchor: \"mcp/tests/test_instrument_discipline.py\"",
+      "note": "The lane this module is registered in, so the fail-closed manifest admits it. Source caption: \"mcp/tests/test_instrument_discipline.py\"",
       "targets": [
         {
           "anchor": {
-            "blob": "11ba98ff63f4a4815985ac51e2c0c7b5a48556a4",
-            "content": "sha256:ee4eb7586ba07eecc385389cc326ab1d5410e536abb37587aa94612e2f21128e",
+            "blob": "102c4550ab6429f44c8fb543d1d0662de66a1b8c",
+            "content": "sha256:453e17bbeef1e7a19b6419ffdb81230d76dc5941533136deeb0e8af0bf9c540b",
             "locator": {
-              "end": 617,
+              "end": 615,
               "kind": "line_range",
-              "start": 617
+              "start": 615
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },

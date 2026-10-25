@@ -37,15 +37,14 @@
       ]
     },
     "11": {
-      "note": "The served projection's own definitions are folded into the same generated module, and the definition set is compared exactly.",
+      "note": "The served projection's own definitions are folded into the same generated module, and the definition set is compared exactly.\n\nAnchor: `render_typescript`",
       "targets": [
         {
           "anchor": {
-            "blob": "377b835dfe3e3720bcc09d6ef4daaf2c94aa924d",
-            "content": "sha256:2a11615adab5fa9a588b04d68eb64aaafe0fc08d2af7b7cfee396f2fbe2fb0e8",
+            "blob": "8ad4fad6abd9bf98c265168c8b63d6f2fce0aeac",
+            "content": "sha256:9b066e1d136c1c7e91470d66a0fadca820095b4afa462abacc8a89da3d80ef87",
             "locator": {
-              "kind": "symbol",
-              "name": "render_typescript"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -96,15 +95,14 @@
       ]
     },
     "14": {
-      "note": "Only remaining attention and process vocabularies are emitted.",
+      "note": "Only remaining attention and process vocabularies are emitted.\n\nAnchor: `_vocabulary_block`",
       "targets": [
         {
           "anchor": {
-            "blob": "27a538af0bc1ef798d4b4413fbd4b8b0acf7436a",
-            "content": "sha256:22374a8ce25ea6c53eeb0392d7ef2748d4b7e5ca32f7621079739625f1a866f6",
+            "blob": "8ad4fad6abd9bf98c265168c8b63d6f2fce0aeac",
+            "content": "sha256:9b066e1d136c1c7e91470d66a0fadca820095b4afa462abacc8a89da3d80ef87",
             "locator": {
-              "kind": "symbol",
-              "name": "_vocabulary_block"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -144,15 +142,14 @@
       ]
     },
     "17": {
-      "note": "Runtime refinements are shape-checked and unsupported keywords refuse.",
+      "note": "Runtime refinements are shape-checked and unsupported keywords refuse.\n\nAnchor: `_schema_allowed_keywords`",
       "targets": [
         {
           "anchor": {
-            "blob": "27a538af0bc1ef798d4b4413fbd4b8b0acf7436a",
-            "content": "sha256:1f76fdea101e866911425e4fc2eb970b39cc5dd5157c4c8a187c4fc0ce2f1298",
+            "blob": "8ad4fad6abd9bf98c265168c8b63d6f2fce0aeac",
+            "content": "sha256:9b066e1d136c1c7e91470d66a0fadca820095b4afa462abacc8a89da3d80ef87",
             "locator": {
-              "kind": "symbol",
-              "name": "_schema_allowed_keywords"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -208,26 +205,14 @@
       ]
     },
     "5": {
-      "note": "The exact declaration sets the renderer folds into TypeScript, including the served projection's payload rename.",
+      "note": "The exact declaration sets the renderer folds into TypeScript, including the served projection's payload rename.\n\nAnchor: `DEFINITION_RENAMES` `NAMED_VOCABULARIES`",
       "targets": [
         {
           "anchor": {
-            "blob": "377b835dfe3e3720bcc09d6ef4daaf2c94aa924d",
-            "content": "sha256:d79fe177a36add3aa81104333f6e308bd0e8941d01fa4c3fce7c323e5ad0e3bd",
+            "blob": "8ad4fad6abd9bf98c265168c8b63d6f2fce0aeac",
+            "content": "sha256:9b066e1d136c1c7e91470d66a0fadca820095b4afa462abacc8a89da3d80ef87",
             "locator": {
-              "kind": "symbol",
-              "name": "DEFINITION_RENAMES"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "377b835dfe3e3720bcc09d6ef4daaf2c94aa924d",
-            "content": "sha256:028b3aa12f7a3f7f4606704e79c2b5590225ecf09772db51b5069b4e99caff31",
-            "locator": {
-              "kind": "symbol",
-              "name": "NAMED_VOCABULARIES"
+              "kind": "file"
             }
           },
           "kind": "code"

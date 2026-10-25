@@ -1,5 +1,6 @@
 {
   "path": "mcp/tests/fixtures/knowledge_files/4.1-direct_landing.py.json",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
@@ -7,7 +8,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "81504a0f5a6fb647272395ded8628fb951aafbbd",
+            "blob": "3cd0e7e26a8b12373b6087d19f3f38496ab06a56",
             "content": "sha256:30ab7f8679dc27777066d17178e55bcc5b043e1dd4c681f06a041ce9796ae30b",
             "locator": {
               "end": 125,
@@ -24,7 +25,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "81504a0f5a6fb647272395ded8628fb951aafbbd",
+            "blob": "3cd0e7e26a8b12373b6087d19f3f38496ab06a56",
             "content": "sha256:934118d77a3166370e877e6930f9f2905f7a5ce4f8696f9f21d1a1e7d48de3a0",
             "locator": {
               "end": 13,

@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/worktrees/modules/landing_record.py",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
@@ -19,12 +20,22 @@
       ]
     },
     "2": {
-      "note": "`record_landed_integration` writes the same actual outputs for final and checkpoint landing states.",
+      "note": "`record_landed_integration` writes the same actual outputs for final and checkpoint landing states.\n\nAnchor: `record_landed_integration`",
       "targets": [
         {
           "anchor": {
-            "blob": "5ce07976f06d314990369996912d3c5b84189410",
-            "content": "sha256:918866a94e6e1728f25cf722b59f70e381c35f294f453e3de8df76b06011cdf5",
+            "blob": "ebbbfe201ea75726d7329b0f6630e0492b26acfe",
+            "content": "sha256:e5008e969eaed1fd2ba9adec9aead3037c5aa22d02b71cddd993131f9f1d04a9",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ebbbfe201ea75726d7329b0f6630e0492b26acfe",
+            "content": "sha256:7fd8930b7266dacdcc697badbaef5cfc5bd6cb7c8a107ebdb0fb8538c23ab6ba",
             "locator": {
               "kind": "symbol",
               "name": "record_landed_integration"
@@ -68,12 +79,23 @@
       ]
     },
     "5": {
-      "note": "The local final route calls this writer instead of amending the contract inline. (`_integrated_result`)",
+      "note": "The local final route calls this writer instead of amending the contract inline. (`_integrated_result`)\n\nAnchor: `_integrated_result`",
       "targets": [
         {
           "anchor": {
-            "blob": "6cfdec1af86890182716df842f338bd4955bda31",
-            "content": "sha256:9b0569f5ca05d19067afede918008bfa44c9c8bb9da3886a679c479845156ce7",
+            "blob": "1f67d47b47455dbb360a0884ecaa0e4aa1da3383",
+            "content": "sha256:27fad559a8b42dd8535ce73c5eba0d269dafc45e5e0cc300ab1fbd175477a587",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/integrate.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1f67d47b47455dbb360a0884ecaa0e4aa1da3383",
+            "content": "sha256:7e0afbd8d9e318e9847056e83dfe8a8bc0e578ad69976f341a823b0ae146dbc4",
             "locator": {
               "kind": "symbol",
               "name": "_integrated_result"
@@ -85,12 +107,23 @@
       ]
     },
     "6": {
-      "note": "The local checkpoint route calls the same writer with `checkpoint=True`. (`_checkpoint_result`)",
+      "note": "The local checkpoint route calls the same writer with `checkpoint=True`. (`_checkpoint_result`)\n\nAnchor: `_checkpoint_result`",
       "targets": [
         {
           "anchor": {
-            "blob": "6cfdec1af86890182716df842f338bd4955bda31",
-            "content": "sha256:d7d91b4512ce137d8eb97c97d1387b517a258a8685570a07895fd244916c4b5c",
+            "blob": "1f67d47b47455dbb360a0884ecaa0e4aa1da3383",
+            "content": "sha256:27fad559a8b42dd8535ce73c5eba0d269dafc45e5e0cc300ab1fbd175477a587",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/integrate.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1f67d47b47455dbb360a0884ecaa0e4aa1da3383",
+            "content": "sha256:834b50635720414156aad7ce60d8689a5d5c0077188e1d782679d4b640d55ddd",
             "locator": {
               "kind": "symbol",
               "name": "_checkpoint_result"
@@ -106,7 +139,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "91f485befad957f48164fc37cb49a6b5478067d9",
+            "blob": "94685bc678c71945d51aad8a4f89fceafe0d1de7",
             "content": "sha256:e48aaf9bc549d584a0580f17396c05c85eebc18d0944c0c30f91973c40dc8126",
             "locator": {
               "kind": "symbol",
@@ -119,12 +152,25 @@
       ]
     },
     "8": {
-      "note": "Cleanup refuses until this cell reads completed — which is what keeps a checkpoint from being reclaimed. (`integration_status`)\n\nAnchor: `integration_status`",
+      "note": "Cleanup refuses until this cell reads completed — which is what keeps a checkpoint from being reclaimed. (`integration_status`)",
       "targets": [
         {
           "anchor": {
-            "blob": "fb8d1849ead7e158ccd58f0407524b04db70976e",
-            "content": "sha256:2d5849f73154971574d26c12a7104ae79292669db7434e318fbf051acb2c1903",
+            "blob": "38b1dccdd3748dc7d095c969fb81d964e1075f11",
+            "content": "sha256:5b2dabcf533809bbd3c64a97e487ce0364eb6080680d2d7beb4f356a27723862",
+            "locator": {
+              "end": 800,
+              "kind": "line_range",
+              "start": 779
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/cleanup.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "38b1dccdd3748dc7d095c969fb81d964e1075f11",
+            "content": "sha256:4c86521612be2517f89c2085c7b3a5bed24d086752973b41125c1a4071905a2f",
             "locator": {
               "end": 680,
               "kind": "line_range",

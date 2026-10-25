@@ -67,7 +67,15 @@ No cross-repository behavior.
 No meaningful cross-repo references found.
 
 - The local provider increments generation on a false-to-true shown transition and on revalidate. useReviewMemoryWatch registers only for an active live enclosure and non-recorded history, invokes shared entry revalidation alongside review invalidation/refresh, and filters notifications by exact registered scope. publishReviewMemory reconciles first/initial baselines and changed revisions. connectState carries that scope and dispatches memory events through its existing SSE connection. The original header-only no-signal account is superseded. [1]
-- The cockpit shell wraps its body in IntentEntryRevalidation with shown true exactly for Operations view without takeover. [4]
+
+
+
+- The cockpit shell wraps its body in `IntentEntryRevalidation`, shown true for the Operations view only while neither a takeover nor the in-grid review page is showing. [4]
+
+
+
 - DocChangeSetBar appends context generation to leaf facts and passes them to LeafEntries; IntentReviewEntry passes facts to useIntentReviewSummary, whose key/effect includes facts. ChangeSetButton separately consumes the same generation in its load effect dependencies. Generation is not a summary-only input. [6]
+
 - The current stored test bodies assert summary-read counts and catalogue isolation for re-show/task switching, opening from another view, reviewer return and explicit refresh. These are static assertions, not new execution or proof of memory-event/reconnect request counts. Both former target ranges are replaced by the current complete scenario extents. [7]
+
 - ReviewRefresh obtains the shared entry revalidation callback, and its actual button onClick calls onRefresh followed by revalidateEntry. The callback declaration alone is not the invocation witness. [5]

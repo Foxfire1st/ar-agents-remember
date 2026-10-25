@@ -127,7 +127,9 @@ No configured live documentation source was available for this pass.
 - The ambiguous-rename checklist line: no suggestion, every candidate named. [14]
 - The checklist and the tool show the marks. [15]
 - The checklist renders it only when a worklist exists. [16]
+
 - The controller renders the section; since MIK-R09 its four open items count (`curatorActionableCount` 4). [17]
+
 
 ### Cross-Repo References
 

@@ -1,5 +1,6 @@
 {
   "path": "dashboard/src/data/intentEntryRevalidation.tsx",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
@@ -63,8 +64,8 @@
         },
         {
           "anchor": {
-            "blob": "9f7f7e826fed6b4eee1642c20e2953c6908a50ae",
-            "content": "sha256:f3d10344cb95e226690f1b00dd53b2598eb11d8f2b4e9a72a81fea114702bf9a",
+            "blob": "e759eb54b9cbb7db614234415ff2c56f1d345e2c",
+            "content": "sha256:593acea3169a61949df9bff6881f0002878ad9cdd5d5c65429e108d0de2bf99d",
             "locator": {
               "end": 65,
               "kind": "line_range",
@@ -131,16 +132,16 @@
       ]
     },
     "4": {
-      "note": "The cockpit shell wraps its body in IntentEntryRevalidation with shown true exactly for Operations view without takeover.\n\nAnchor: inclusive source ranges",
+      "note": "The cockpit shell wraps its body in `IntentEntryRevalidation`, shown true for the Operations view only while neither a takeover nor the in-grid review page is showing.",
       "targets": [
         {
           "anchor": {
-            "blob": "9dffc6e41bb9701b7a33ff1b82335a087c154484",
-            "content": "sha256:76cc503132fa72f30c20517804080714b2f6536d062c87aabd81e47a9c0d2ccf",
+            "blob": "1b839113b8d511b4a8343230e70a8de0be01b79f",
+            "content": "sha256:0115639032ffd490ae135b20a696dfc9a7f6b046acc4c0d0a72b48a6d2a0a8ad",
             "locator": {
-              "end": 621,
+              "end": 841,
               "kind": "line_range",
-              "start": 596
+              "start": 804
             },
             "path": "dashboard/src/cockpit/Cockpit.tsx"
           },
@@ -149,12 +150,12 @@
       ]
     },
     "5": {
-      "note": "ReviewRefresh obtains the shared entry revalidation callback, and its actual button onClick calls onRefresh followed by revalidateEntry. The callback declaration alone is not the invocation witness.\n\nAnchor: inclusive source ranges",
+      "note": "ReviewRefresh obtains the shared entry revalidation callback, and its actual button onClick calls onRefresh followed by revalidateEntry. The callback declaration alone is not the invocation witness.",
       "targets": [
         {
           "anchor": {
-            "blob": "08e0c87565275401e0c5e2b30a49075fca660f5d",
-            "content": "sha256:850633923a93a1bca2fcd1e63f1ab1447f7ab6c8a7ba5df52d8dd502b6bb34ed",
+            "blob": "3e475efda7ef790e1fd6b2326f2b7bc1b264aaa9",
+            "content": "sha256:8658db4b92cc71e6f4a9057a8fa3e960dbfa823baf44abe7beba324da2ca9115",
             "locator": {
               "end": 74,
               "kind": "line_range",
@@ -167,7 +168,7 @@
       ]
     },
     "6": {
-      "note": "DocChangeSetBar appends context generation to leaf facts and passes them to LeafEntries; IntentReviewEntry passes facts to useIntentReviewSummary, whose key/effect includes facts. ChangeSetButton separately consumes the same generation in its load effect dependencies. Generation is not a summary-only input.\n\nAnchor: inclusive source ranges",
+      "note": "DocChangeSetBar appends context generation to leaf facts and passes them to LeafEntries; IntentReviewEntry passes facts to useIntentReviewSummary, whose key/effect includes facts. ChangeSetButton separately consumes the same generation in its load effect dependencies. Generation is not a summary-only input.",
       "targets": [
         {
           "anchor": {
@@ -184,8 +185,8 @@
         },
         {
           "anchor": {
-            "blob": "cb170808c1e7ad3aa75e0bfd0860f2206b2291c8",
-            "content": "sha256:63b94c7c8e26448217c6dc19baf678a0007b3de3c5b6fd202a06e1d1554141ba",
+            "blob": "dc229d234ae888019f18a20c91a1cd0135ada287",
+            "content": "sha256:a0af81e8313924e66d4d190167762cb5ee0c471fd27ee587aa66f09ca9adb4ad",
             "locator": {
               "end": 108,
               "kind": "line_range",
@@ -197,8 +198,8 @@
         },
         {
           "anchor": {
-            "blob": "e7a6bf60038ae40902f419fca145a006573f1587",
-            "content": "sha256:84d64497fac09430505de1e4d6b2b314752a5bf9c2dd8b490516c17093e80f56",
+            "blob": "7589f63f1bb655f537e84d56ad377746d725da2b",
+            "content": "sha256:61594614662970fe60970b4470b9f15ccacfe8ce3609734137a466abad325d13",
             "locator": {
               "end": 170,
               "kind": "line_range",
@@ -210,8 +211,8 @@
         },
         {
           "anchor": {
-            "blob": "aa37dc151156c900a476667b0cbba310a971e51a",
-            "content": "sha256:aa7680d6cb1d873601292f3fd8441a448e4d47ca93eb6ceedc649be043c44888",
+            "blob": "1b88a5d8391b7e00d3ee0155a662a004bca0654c",
+            "content": "sha256:3d0e3eb5cc6fc52075663761aa1ced3977748f9005902052290037c5f99274b3",
             "locator": {
               "end": 139,
               "kind": "line_range",

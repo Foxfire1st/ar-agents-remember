@@ -19,12 +19,12 @@
       ]
     },
     "11": {
-      "note": "The application constructs ContextPacketV2 from Git, resolved paths, memory, worktree, provider, drift and freshness facts.\n\nAnchor: `ContextPacketV2 construction`",
+      "note": "The application constructs ContextPacketV2 from Git, resolved paths, memory, worktree, provider, drift and freshness facts.",
       "targets": [
         {
           "anchor": {
-            "blob": "1b1b9671292115c6dd9de74936534444e0f8affe",
-            "content": "sha256:dc135d824f6cf2d0bef71424650c9b9e0d0d7e64aff4674f84ea456e84860ea7",
+            "blob": "37b2aac34d912943eff6a629b0d6906b3df837f0",
+            "content": "sha256:a391e07837b89474fd8ac6fe5fd6665c65a9cbc9eff8ec5fc9e3db2912a85cdc",
             "locator": {
               "end": 111,
               "kind": "line_range",
@@ -158,15 +158,16 @@
       ]
     },
     "15": {
-      "note": "ReadableMemoryMode is external/disabled for persisted reads; the startable MemoryMode is external only. Packet memory.mode and worktree.memoryMode use the readable alias.",
+      "note": "ReadableMemoryMode is external/disabled for persisted reads; the startable MemoryMode is external only. Packet memory.mode and worktree.memoryMode use the readable alias.  Anchor: `ReadableMemoryMode` `MemorySummary` `WorktreeSummary`",
       "targets": [
         {
           "anchor": {
             "blob": "78d1d271f759310ef0703c1bd3d090cc691975db",
-            "content": "sha256:0ab91f6651c0b75ef9521ae37583791f356c1d9cfc048daed07d26989df17dff",
+            "content": "sha256:2b4818134f49410d6832ecc39e5708273fe0459f5e8c220db2c72c90aba12c3f",
             "locator": {
-              "kind": "symbol",
-              "name": "ReadableMemoryMode"
+              "end": 299,
+              "kind": "line_range",
+              "start": 1
             },
             "path": "mcp/src/agents_remember/kernel/memory_mode.py"
           },
@@ -175,21 +176,23 @@
         {
           "anchor": {
             "blob": "f161c87a3f3abab5c89216ea2b32aed0387c906d",
-            "content": "sha256:d5f2b1e90a27e0837f372df75428fc9ecd1eaa950ff7c04a03ff3fde4674393a",
+            "content": "sha256:ec6a43c10031afafbadf524019e10c4e54aed4192c4b75c206c49a4d6d629f9e",
             "locator": {
-              "kind": "symbol",
-              "name": "MemorySummary"
+              "end": 167,
+              "kind": "line_range",
+              "start": 1
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "3ff8738a74b90a9cde9779804b87b348f22f8127",
-            "content": "sha256:42e9ad3f73ef20b9a4b7ea28756b32d3e08d8b6992ab8a1afeebf70a5a3ebb29",
+            "blob": "b4bf02afeb62c71b1a3333562b505eeb244d637e",
+            "content": "sha256:30279b1752e0553b54475d9df98e562424f5f4fbde36428d0533666e1482106d",
             "locator": {
-              "kind": "symbol",
-              "name": "WorktreeSummary"
+              "end": 335,
+              "kind": "line_range",
+              "start": 276
             },
             "path": "mcp/src/agents_remember/models/worktree.py"
           },

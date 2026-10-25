@@ -136,12 +136,12 @@
       ]
     },
     "7": {
-      "note": "The node that proves each sealed field is load-bearing rather than incidentally covered.\n\nAnchor: \"test_an_invariant_revision_digest_seals_its_predecessor_set\"",
+      "note": "The node that proves each sealed field is load-bearing rather than incidentally covered.",
       "targets": [
         {
           "anchor": {
-            "blob": "1e0935a2ceb8a3fb4e25545502124b9a1b61fe43",
-            "content": "sha256:e8b325b40d5b5cbece8f5fa54a814f0da30bbe7437fce5b9ea0887c6f96e8d5d",
+            "blob": "15ae9eaacc0cf4a348b42f767bc4c766f36c5e41",
+            "content": "sha256:70df648e200218ec63c68df203a8431e36a88aa48993c3762972465e6a7320c1",
             "locator": {
               "end": 95,
               "kind": "line_range",

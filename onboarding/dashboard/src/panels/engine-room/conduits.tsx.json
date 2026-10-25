@@ -3,15 +3,14 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The per-edge conduit renderer with replay/ghost handling.",
+      "note": "The per-edge conduit renderer with replay/ghost handling.\n\nAnchor: `Conduit`",
       "targets": [
         {
           "anchor": {
-            "blob": "06fce412d2ac099ba308eb4c54b879d98bd0c879",
-            "content": "sha256:6b2fcb94d5c53a6612cd32a073a743cda530b30ea6472dc176ecb8876ec93433",
+            "blob": "20ebb84787f6b5ab1be931ed6560c0e33431166b",
+            "content": "sha256:d5fa783d009b0e0459cdab4d92fdbe7b6a075b5400ffee3bd0999a1e271f2309",
             "locator": {
-              "kind": "symbol",
-              "name": "Conduit"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -73,12 +72,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f23ae83b49025d9b10e7b6bc846ede9a6d48563e",
+            "blob": "0a3de3f86452a06356eee661d5e4bbdc7ccdf5eb",
             "content": "sha256:08637b0be18477ff7379995dd690b3a5a93b5459302261b5a2809394edeec517",
             "locator": {
-              "end": 90,
+              "end": 77,
               "kind": "line_range",
-              "start": 68
+              "start": 55
             },
             "path": "dashboard/src/panels/engine-room/geometry.ts"
           },

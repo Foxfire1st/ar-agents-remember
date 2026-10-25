@@ -51,7 +51,9 @@ These current source spans identify the implementation owners and the specific a
 - A competing memory CAS is preserved after code has landed. [2]
 - Cache absence/corruption cannot affect the accepted pair or create another memory commit. [3]
 - Real accepted-object and source-ancestry failures remain enforced. [4]
+
 - Production ref preparation and publication proof. [5]
+
 
 ### Cross-Repo References
 

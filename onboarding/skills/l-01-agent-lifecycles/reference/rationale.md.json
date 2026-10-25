@@ -3,12 +3,12 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The manifest declares rationale reference-only and non-injected.\n\nAnchor: `\"rationale\"`",
+      "note": "The manifest declares rationale reference-only and non-injected.",
       "targets": [
         {
           "anchor": {
-            "blob": "2d42ad92abef03a1873de4fd715985616f122689",
-            "content": "sha256:46cf9abcabb71f0d575741d738e327c06b92a104a33db0ca4777fa8344228ab9",
+            "blob": "2f3ce46a32a38d86f474252bb23d8081e91f0a6e",
+            "content": "sha256:fcf49be53196b5ca2dc6f048d106d691918e2d180ffb7a5fcbc2bc057fc12243",
             "locator": {
               "end": 563,
               "kind": "line_range",
@@ -38,16 +38,16 @@
       ]
     },
     "11": {
-      "note": "The manifest retains bootstrap as a free-agent registry entry; this does not prove current native launchability.\n\nAnchor: `\"bootstrap\"`",
+      "note": "The manifest retains bootstrap as a free-agent registry entry; this does not prove current native launchability.",
       "targets": [
         {
           "anchor": {
-            "blob": "2d42ad92abef03a1873de4fd715985616f122689",
-            "content": "sha256:561cb05064c9529b4853daa32f263fb73e79a4411b29448bbd25e20a83f787b3",
+            "blob": "2f3ce46a32a38d86f474252bb23d8081e91f0a6e",
+            "content": "sha256:b1bdcda378b2c9ed67c0a782d1b21eef6e1014734f26c3762775c5a3b51d12c0",
             "locator": {
-              "end": 520,
+              "end": 530,
               "kind": "line_range",
-              "start": 508
+              "start": 518
             },
             "path": "skills/l-01-agent-lifecycles/composition-manifest.json"
           },
@@ -126,12 +126,12 @@
       ]
     },
     "16": {
-      "note": "The current thin router exposes seven role IDs and distinguishes retained registry entries.\n\nAnchor: `The role launcher supports these seven role IDs`",
+      "note": "The current thin router exposes eight role IDs and distinguishes retained registry entries.",
       "targets": [
         {
           "anchor": {
-            "blob": "a8e2b869f7f277422f7b891f9c31efa0b3c45d4c",
-            "content": "sha256:3113377b9afc7711187a0731e67c7dd3abc4a91833280f7ce60eec772bbc83ae",
+            "blob": "69334b6b2698ef70a7bbf579aa1c1883b95d11d4",
+            "content": "sha256:7c9ae60e608becc7b0babce2efcf0a5f4d849aa34d90bc1949af9848a3d7fde9",
             "locator": {
               "end": 12,
               "kind": "line_range",

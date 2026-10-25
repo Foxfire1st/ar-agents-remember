@@ -79,5 +79,7 @@ This file owns no ambient cross-repository authority. Any external-memory reposi
 ### Current Source-Inspection References
 
 - The fixture queue and early refusal helpers retain typed inputs and exact bindings. [1]
+
 - The retained lifecycle scenario preserves the parent through start/attach/abandon. [2]
+
 - Shared closeout-input helpers are background support, not called by this retained scenario. [3]

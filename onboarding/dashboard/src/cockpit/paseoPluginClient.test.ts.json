@@ -41,12 +41,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f35554b84dfd9d05f9382dc8c85d29f138b43d9f",
-            "content": "sha256:9c1dd9bf4aecfb0c8e65b3fd42ed9a967d965d2f0320a8c57f1e3cabde538351",
+            "blob": "e0f80e06ab1d7d0ce090e56d8267067d1c954b9f",
+            "content": "sha256:810dfe7292eda39b9930af02aee6e12aab2b0c22b2b704d8daff898e25f3d485",
             "locator": {
-              "end": 1303,
+              "end": 889,
               "kind": "line_range",
-              "start": 1204
+              "start": 684
             }
           },
           "kind": "test"

@@ -1,5 +1,7 @@
 {
-  "path": "mcp/src/agents_remember/kernel/primitives",
+  "path": "mcp/src/agents_remember/kernel/primitives/overview",
+  "proves": [],
+  "realizes": [],
   "references": {
     "1": {
       "note": "Checkout policy derives from the loaded package path, separates coordination rows from enclosure reports, and centrally refuses targets outside both exact leaf-local roots.",
@@ -283,6 +285,71 @@
         {
           "anchor": {
             "blob": "e41b09f9728125e4e62b2317995c3401783e8b62",
+            "content": "sha256:48a7da1e139ee8cc00e913bd6606d7834e6f2765f915639956bf38963cdb69f3",
+            "locator": {
+              "end": 452,
+              "kind": "line_range",
+              "start": 375
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_launch.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e41b09f9728125e4e62b2317995c3401783e8b62",
+            "content": "sha256:b6a9728759b3b83a650e9a7f53cb5990c101eaada5ad8ba57ff933b96c8bdc28",
+            "locator": {
+              "end": 601,
+              "kind": "line_range",
+              "start": 551
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_launch.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f65bc41685229d76a9af0e644b2b9b2f17f5579f",
+            "content": "sha256:c24e2502bff061522a869968fb91275aa44a20c5dc8dbe6a422ff06757f8b3a0",
+            "locator": {
+              "end": 365,
+              "kind": "line_range",
+              "start": 175
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_catalog.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f65bc41685229d76a9af0e644b2b9b2f17f5579f",
+            "content": "sha256:2fd96e648185b50c1a7cf0596be4d11ab9d55d0af656967247dcad27762af32c",
+            "locator": {
+              "end": 535,
+              "kind": "line_range",
+              "start": 479
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_catalog.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f65bc41685229d76a9af0e644b2b9b2f17f5579f",
+            "content": "sha256:e6578e791324819780d29e9293e53ad0ae2479323c224fd03a737fa508810c2d",
+            "locator": {
+              "end": 623,
+              "kind": "line_range",
+              "start": 585
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_catalog.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e41b09f9728125e4e62b2317995c3401783e8b62",
             "content": "sha256:7d4a024a5a8845a08d1c137f9f5334067997df37718ca9f090339767da1fa896",
             "locator": {
               "end": 457,
@@ -340,6 +407,71 @@
               "end": 624,
               "kind": "line_range",
               "start": 586
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_catalog.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e41b09f9728125e4e62b2317995c3401783e8b62",
+            "content": "sha256:0dfd107c250fc5dcb334f24d01b22e2d3e5ef3a59d3443184a440b9c9446970e",
+            "locator": {
+              "end": 448,
+              "kind": "line_range",
+              "start": 371
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_launch.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e41b09f9728125e4e62b2317995c3401783e8b62",
+            "content": "sha256:c82ab383cb045dcd946e56f2f14f663ff264c8a1925c6606697e753e2775cfb7",
+            "locator": {
+              "end": 597,
+              "kind": "line_range",
+              "start": 547
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_launch.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f65bc41685229d76a9af0e644b2b9b2f17f5579f",
+            "content": "sha256:08bc1b97dff86367df5267b2727fd9c997766e2fc85a277e3a861e0b77685f4a",
+            "locator": {
+              "end": 346,
+              "kind": "line_range",
+              "start": 156
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_catalog.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f65bc41685229d76a9af0e644b2b9b2f17f5579f",
+            "content": "sha256:bea4c26c95cfdf8a40cc72ed2dffe4d7f4bc184151c215119db98970619d09fc",
+            "locator": {
+              "end": 516,
+              "kind": "line_range",
+              "start": 460
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_catalog.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f65bc41685229d76a9af0e644b2b9b2f17f5579f",
+            "content": "sha256:9ecb4fb3ec62682f4786f5d6f510d6712a3a85879d184cab60962844e53c9442",
+            "locator": {
+              "end": 604,
+              "kind": "line_range",
+              "start": 566
             },
             "path": "mcp/src/agents_remember/cli/paseo_catalog.py"
           },
@@ -611,12 +743,23 @@
       ]
     },
     "8": {
-      "note": "The authority reader reads the block of the MCP settings file on each use.",
+      "note": "The authority reader reads the block of the MCP settings file on each use.\n\nAnchor: `load_authority_paseo_runtime`",
       "targets": [
         {
           "anchor": {
-            "blob": "90c9b6e5110d8f9eb830f5b573de66250fb2e9b7",
-            "content": "sha256:3cfc871f9f8493dbaa4b11e825bfa4064aed6e67d8b83790b416fab6cc20b54d",
+            "blob": "f5e98565595261000309d4af6931b1bd494a558b",
+            "content": "sha256:6e66c6a6fc0331c7d2cda8334a9c9a331e39d6425882035cea80deb4967893ab",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/paseo_authority.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f5e98565595261000309d4af6931b1bd494a558b",
+            "content": "sha256:74e3852e55b91ab7fbf8dde243da165660d8d747d4452c86c2d4f237e8863ee0",
             "locator": {
               "kind": "symbol",
               "name": "load_authority_paseo_runtime"
@@ -658,5 +801,5 @@
       ]
     }
   },
-  "schema": "ar-onboarding-route/v1"
+  "schema": "ar-onboarding-file/v1"
 }

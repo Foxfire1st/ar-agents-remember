@@ -121,9 +121,13 @@ The cases and the plan check.
 - Both-added evidence lines are kept in order. [19]
 - The pure crossing plan report counts aligned cards, renumbered references, kept evidence lines, and marker-incomplete skips. [20]
 - The same three trees merge to identical bytes. [21]
+
 - For 2000 fully paired monotone references, pairing returns the exact identity map and asserts `elapsed < 10` seconds. [22]
 
+
+
 - Markers first, conversion, then structural merge and validation in a pure `cross` plan, not a managed transaction. [4]
+
 - The master-line crossing history file. [6]
 
 - Managed crossing sync follows an all-unconverted preflight refusal without a journal, commits the exact two-parent merge, and persists its complete worklist at the new base pair. [8]
@@ -145,7 +149,14 @@ No meaningful cross-repo references found: the fixtures are `tmp_path` Git repos
 
 No cross-repo boundary is crossed by this file.
 
+
 - Pure plan step 5 with both converted merge-side bases; `merge_reports` findings report in sync context, distinct from real transaction validation. [1]
+
+
 - Long markers in one valid row with paired source blobs supplied to marker transport. [5]
+
+
 - Base conversion uses the base's own code commit and removes base-converted refusal, while the non-merge commit still refuses carried-stale. [7]
-- Current source delta inspected statically: Separate pure-plan sync context and real managed transaction evidence; replace whole-route conversion-pass claim with successful base conversion plus carried-stale refusal, preserving L46 legacy-lock assertions and bounded recovery commentary. [23]
+
+
+- The real managed route rather than the pure plan: the fixture's sync crosses an unconverted leaf into a converted line, lands `synced`, and persists the worklist recomputed at its new base pair. [23]

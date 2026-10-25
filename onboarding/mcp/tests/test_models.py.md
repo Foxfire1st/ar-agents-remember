@@ -32,10 +32,14 @@ a response contract and catches model definitions that are not schema-safe. The 
 
 ### Repo-Internal References
 
-- Current public-tool registry/model/schema equality and the terminal series-release emitter-to-wire-to-caller payload assertions are distinct retained cases. [3]
+
 
 
 - Public tool metadata lives in the `mcp/tools/` package. [1]
+
+
 - Response model registry lives in the models package. [2]
+
+
 
 - Existing whole-result model validation remains, with explicit absence pins for fields omitted by shaped answers. No synthetic field is injected to make a compact projection satisfy a whole-result predicate. [3]

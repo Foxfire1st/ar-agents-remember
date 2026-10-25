@@ -1,5 +1,6 @@
 {
   "path": "mcp/tests/test_worktree_status_terminal_next_tool.py",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
@@ -54,12 +55,11 @@
       ]
     },
     "6": {
-      "note": "Anchor: Actual advertised public roster.",
       "targets": [
         {
           "anchor": {
-            "blob": "5513557eb2dc04aa2b84f23689eb4e367aad2939",
-            "content": "sha256:b678282dd750b710810314db6feaaf211093143603358f8d45d2b8a724220219",
+            "blob": "d0b0ddd9f150e32116b430ecc74907fcf68fee97",
+            "content": "sha256:9589d91c36d15391c80bcaa19173b5a51d24b37a9b32fdda64ec1784ec8d51b5",
             "locator": {
               "end": 67,
               "kind": "line_range",
@@ -90,16 +90,15 @@
       ]
     },
     "8": {
-      "note": "Anchor: Archive-ready status projection.",
       "targets": [
         {
           "anchor": {
-            "blob": "46a12c7934e0919dd09738a5ee7b0a84ab152085",
-            "content": "sha256:c9958666764ea6263bf1a7ac0bd142cc5d8ccb1629a3a7cc51a0b313e3e6de8d",
+            "blob": "16d78e38cc8ac2f8fe9aeec56ac35b664c5e8988",
+            "content": "sha256:f9c6fe6cc18a0be6c7b1c1d6d07d9c34fb92caec9d7ecef8bdaadf7257355af3",
             "locator": {
-              "end": 500,
+              "end": 501,
               "kind": "line_range",
-              "start": 458
+              "start": 459
             },
             "path": "mcp/src/agents_remember/application/worktree_status.py"
           },

@@ -1,5 +1,6 @@
 {
   "path": "mcp/tests/_store_durability.py",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
@@ -7,7 +8,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d138b2796349dac3ec56575aa588c30fb5846b2d",
+            "blob": "511fb98f1bd9953467ee6ed8f10d9e729740156e",
             "content": "sha256:04253362ae56d4951bd47365265ccfe3a320d3da957e96470811924d297c9d1e",
             "locator": {
               "kind": "symbol",
@@ -19,15 +20,14 @@
       ]
     },
     "2": {
-      "note": "Provider stores share the same instrument",
+      "note": "Provider stores share the same instrument\n\nAnchor: `ProviderStoreAdapter`",
       "targets": [
         {
           "anchor": {
-            "blob": "9cad5989f5c12f2aff56f4d897c6ca0683142313",
-            "content": "sha256:10f6b859ecbec67484b3d8310e7c465cf6355c0a01f4a2854363e147e930a853",
+            "blob": "511fb98f1bd9953467ee6ed8f10d9e729740156e",
+            "content": "sha256:34bef176eecf1cfb69ab1e739dcb24648c4bf0c18427f4be138a448cad6c0646",
             "locator": {
-              "kind": "symbol",
-              "name": "ProviderStoreAdapter"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -39,7 +39,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d138b2796349dac3ec56575aa588c30fb5846b2d",
+            "blob": "511fb98f1bd9953467ee6ed8f10d9e729740156e",
             "content": "sha256:d6ab85159789f8902d00dcef5cfec0420febc9ee1ceed4a964f2d78a08a05eaa",
             "locator": {
               "kind": "symbol",
@@ -51,15 +51,14 @@
       ]
     },
     "4": {
-      "note": "Controlled actual rewrite rendezvous",
+      "note": "Controlled actual rewrite rendezvous\n\nAnchor: `parked_rewrite`",
       "targets": [
         {
           "anchor": {
-            "blob": "fd57af35dc5fcb84222c6203ae1114567d01c521",
-            "content": "sha256:23546e321d59a5b4a33e5614097f8d71c91fdf2682a5aa18dca1e01ed989abd1",
+            "blob": "511fb98f1bd9953467ee6ed8f10d9e729740156e",
+            "content": "sha256:34bef176eecf1cfb69ab1e739dcb24648c4bf0c18427f4be138a448cad6c0646",
             "locator": {
-              "kind": "symbol",
-              "name": "parked_rewrite"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -71,7 +70,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d138b2796349dac3ec56575aa588c30fb5846b2d",
+            "blob": "511fb98f1bd9953467ee6ed8f10d9e729740156e",
             "content": "sha256:30483abc80c455fd11df5722abe606f61ca5018bb45da3644762f17a8697e6d0",
             "locator": {
               "kind": "symbol",
@@ -83,15 +82,14 @@
       ]
     },
     "6": {
-      "note": "Forked append/reclaim orchestration and bounded joins",
+      "note": "Forked append/reclaim orchestration and bounded joins\n\nAnchor: `run_forced_lost_update`",
       "targets": [
         {
           "anchor": {
-            "blob": "fd57af35dc5fcb84222c6203ae1114567d01c521",
-            "content": "sha256:bea110730ed26779d99af061be2f4477a9b6489af99d1ce00e37a7aa234f72ec",
+            "blob": "511fb98f1bd9953467ee6ed8f10d9e729740156e",
+            "content": "sha256:34bef176eecf1cfb69ab1e739dcb24648c4bf0c18427f4be138a448cad6c0646",
             "locator": {
-              "kind": "symbol",
-              "name": "run_forced_lost_update"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -103,7 +101,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d138b2796349dac3ec56575aa588c30fb5846b2d",
+            "blob": "511fb98f1bd9953467ee6ed8f10d9e729740156e",
             "content": "sha256:a6189e690f55500a298bd9d4634e49fc0d908d3285a377df7b6db6b2a2682445",
             "locator": {
               "kind": "symbol",
@@ -114,7 +112,7 @@
         },
         {
           "anchor": {
-            "blob": "d138b2796349dac3ec56575aa588c30fb5846b2d",
+            "blob": "511fb98f1bd9953467ee6ed8f10d9e729740156e",
             "content": "sha256:6582b0fe72095c06c1d6c94eafec320ae56c0952b899f4de164a155f604ddaf7",
             "locator": {
               "end": 440,

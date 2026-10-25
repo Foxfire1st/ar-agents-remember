@@ -1,9 +1,27 @@
 {
   "path": "mcp/src/agents_remember/worktrees/sync_transaction_git/_base.py",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
-        "blob": "6d33c8c01ef76b1b875429cc52adbcc7e0e2a6e2",
+        "blob": "8ef609ef616e41d1e2b6d0dfe336e1672a0918b5",
+        "content": "sha256:3bff9663b9e2a498ecd9201e10afc56746ccf9a6f963dcd3a7f46c8d33ca96e0",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-1WYQEQ",
+      "invariant": "INV-033XSD",
+      "origin": {
+        "handoffEntry": "MIK-R198@v2 §5-§7 publication-refuses-stale-anchor",
+        "leaf": "260928-MIK-L191"
+      },
+      "rationale": "Carries named repair-debt rule IDs in SideMergeOutcome.repair_debt, so callers can retain and report a sync merge's anchor debt instead of dropping it from the merge answer.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "8ef609ef616e41d1e2b6d0dfe336e1672a0918b5",
         "content": "sha256:c753c76b82ecbd9f4cf4fa83f7019149bbbc9ae4b476454a90720543b76764a9",
         "locator": {
           "kind": "symbol",
@@ -26,7 +44,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6d33c8c01ef76b1b875429cc52adbcc7e0e2a6e2",
+            "blob": "8ef609ef616e41d1e2b6d0dfe336e1672a0918b5",
             "content": "sha256:6508ef4680f64e01842873a126da83a6825a46f2fae7a2caf28c659bb0ccc31e",
             "locator": {
               "kind": "symbol",
@@ -42,7 +60,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6d33c8c01ef76b1b875429cc52adbcc7e0e2a6e2",
+            "blob": "8ef609ef616e41d1e2b6d0dfe336e1672a0918b5",
             "content": "sha256:c753c76b82ecbd9f4cf4fa83f7019149bbbc9ae4b476454a90720543b76764a9",
             "locator": {
               "kind": "symbol",
@@ -58,7 +76,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6d33c8c01ef76b1b875429cc52adbcc7e0e2a6e2",
+            "blob": "8ef609ef616e41d1e2b6d0dfe336e1672a0918b5",
             "content": "sha256:10d691ea942699bad6c7ea325310a36c8b56eef36d52dcb8454c95907ce7aadf",
             "locator": {
               "kind": "symbol",
@@ -74,7 +92,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6d33c8c01ef76b1b875429cc52adbcc7e0e2a6e2",
+            "blob": "8ef609ef616e41d1e2b6d0dfe336e1672a0918b5",
             "content": "sha256:aaa5550ce1bc4dadf6c6b437d32b31534628e9a6c1a1c98aa173ce468fb9efb2",
             "locator": {
               "kind": "symbol",
@@ -86,15 +104,14 @@
       ]
     },
     "5": {
-      "note": "SideMergeOutcome: qualified source contract.",
+      "note": "SideMergeOutcome: qualified source contract.\n\nAnchor: `SideMergeOutcome`",
       "targets": [
         {
           "anchor": {
-            "blob": "6d33c8c01ef76b1b875429cc52adbcc7e0e2a6e2",
-            "content": "sha256:eae90dcc8a2a6a06d92f50b61d9799cfa4a70e854f7ef61eeb503de1337d18d1",
+            "blob": "8ef609ef616e41d1e2b6d0dfe336e1672a0918b5",
+            "content": "sha256:3bff9663b9e2a498ecd9201e10afc56746ccf9a6f963dcd3a7f46c8d33ca96e0",
             "locator": {
-              "kind": "symbol",
-              "name": "SideMergeOutcome"
+              "kind": "file"
             }
           },
           "kind": "code"

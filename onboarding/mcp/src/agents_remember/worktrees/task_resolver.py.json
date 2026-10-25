@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/worktrees/task_resolver.py",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
@@ -58,12 +59,12 @@
   ],
   "references": {
     "1": {
-      "note": "The explicit import/re-export surface publishes the task-layout vocabulary without defining it.\n\nAnchor: `__all__`, \"from agents_remember.tasks.task_paths import (\"",
+      "note": "The explicit import/re-export surface publishes the task-layout vocabulary without defining it.",
       "targets": [
         {
           "anchor": {
-            "blob": "1052a563780ee71a5917ad475556a86011ea53b6",
-            "content": "sha256:8a8e10fe5aace37ca8171b2085e64aad8e981c7be9cdcc0092946525f084f437",
+            "blob": "0a6426966075d0545fc7e6ffea623bf8eebc99c4",
+            "content": "sha256:511ceadb3777e9a37069b1f067794fb603c9488efd0156426a1951596e23640f",
             "locator": {
               "kind": "symbol",
               "name": "__all__"
@@ -73,12 +74,22 @@
         },
         {
           "anchor": {
-            "blob": "1052a563780ee71a5917ad475556a86011ea53b6",
-            "content": "sha256:fa03b8dd3ff6624e5f6dcf676751ab7e7f04e048423a466d1b48f75dbff06d97",
+            "blob": "0a6426966075d0545fc7e6ffea623bf8eebc99c4",
+            "content": "sha256:96285c443184013595b9a200b7f36c870cef58fbf7b7e458978967c41478a3ec",
             "locator": {
               "end": 55,
               "kind": "line_range",
               "start": 19
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0a6426966075d0545fc7e6ffea623bf8eebc99c4",
+            "content": "sha256:38d894cb7f0ff3160facb1e8fa82e1e8ab696e770b25008299f3e729761c8ac6",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -153,8 +164,19 @@
       ]
     },
     "2": {
-      "note": "The existing slug, path-builder and enclosure/archive rules remain single-defined; the iterator now excludes notes as well.\n\nAnchor: `slugify`, `series_contract_path`, `leaf_enclosure_path`, `is_archived_path`, `is_enclosure_contract`, `iter_leaf_enclosure_contracts`",
+      "note": "The existing slug, path-builder and enclosure/archive rules remain single-defined; the iterator now excludes notes as well.\n\nAnchor: `slugify` `series_contract_path` `leaf_enclosure_path` `is_archived_path` `is_enclosure_contract` `iter_leaf_enclosure_contracts`",
       "targets": [
+        {
+          "anchor": {
+            "blob": "396f581aa13672645248ee4b089011b1ca781c1b",
+            "content": "sha256:a1e25e610b89188c8b8ee96186b79376eb9947c515ae118097c7dee9e073a595",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/tasks/task_paths.py"
+          },
+          "kind": "code"
+        },
         {
           "anchor": {
             "blob": "396f581aa13672645248ee4b089011b1ca781c1b",
@@ -217,8 +239,8 @@
         },
         {
           "anchor": {
-            "blob": "ea5a1d83e55e71447ccf114937714f3e9275c8fe",
-            "content": "sha256:3694617e0ce7715963085263eb45c152a95fe8c57f1250bc25db3e4cbd7c9b3e",
+            "blob": "396f581aa13672645248ee4b089011b1ca781c1b",
+            "content": "sha256:d86ba7e7cf7f74c5b8c19d590f8b1d4fabb228ba633bfef6358e894af37792b5",
             "locator": {
               "kind": "symbol",
               "name": "iter_leaf_enclosure_contracts"
@@ -306,12 +328,22 @@
       ]
     },
     "5": {
-      "note": "Active series discovery excludes archived task folders and leaf enclosure contracts; active task resolution can be constrained by `parent_task` and errors on ambiguous task names.",
+      "note": "Active series discovery excludes archived task folders and leaf enclosure contracts; active task resolution can be constrained by `parent_task` and errors on ambiguous task names.\n\nAnchor: `iter_active_series_contracts` `resolve_active_task_root`",
       "targets": [
         {
           "anchor": {
-            "blob": "1052a563780ee71a5917ad475556a86011ea53b6",
-            "content": "sha256:903dc79a8da1037a774bfb5cfba02c333c12fc3081873d11e0206db7ac756a33",
+            "blob": "0a6426966075d0545fc7e6ffea623bf8eebc99c4",
+            "content": "sha256:38d894cb7f0ff3160facb1e8fa82e1e8ab696e770b25008299f3e729761c8ac6",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0a6426966075d0545fc7e6ffea623bf8eebc99c4",
+            "content": "sha256:ea4add3934644ce814d9fd46bad3e4480407475df9ad5d57cf68884e34e5d2fb",
             "locator": {
               "kind": "symbol",
               "name": "iter_active_series_contracts"
@@ -349,7 +381,7 @@
       ]
     },
     "7": {
-      "note": "`leaf_refs.py` owns qualified/doc-id/legacy-stem leaf-ref validation and alias-aware legacy enclosure lookup.\n\nAnchor: \"def resolve_leaf_ref\"",
+      "note": "`leaf_refs.py` owns qualified/doc-id/legacy-stem leaf-ref validation and alias-aware legacy enclosure lookup.  > Retained earlier citation wording: - `start.py` uses the resolver to load a leaf contract from `task_name` / `leaf_id` and to build starts under the resolved parent task root.\n\nAnchor: \"def resolve_leaf_ref\"",
       "targets": [
         {
           "anchor": {
@@ -363,20 +395,33 @@
             "path": "mcp/src/agents_remember/worktrees/leaf_refs.py"
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b555b5f62a631803d7a2e8a66f6f1fc85a305913",
+            "content": "sha256:01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+            "locator": {
+              "end": 88,
+              "kind": "line_range",
+              "start": 88
+            },
+            "path": "mcp/src/agents_remember/worktrees/leaf_refs.py"
+          },
+          "kind": "code"
         }
       ]
     },
     "8": {
-      "note": "`start.py` uses the resolver to load a leaf contract from `task_name` / `leaf_id` and to build starts under the resolved parent task root.\n\nAnchor: \"def load_contract_from_args\"",
+      "note": "`start.py` uses the resolver to load a leaf contract from `task_name` / `leaf_id` and to build starts under the resolved parent task root.  Anchor: \"def load_contract_from_args\"",
       "targets": [
         {
           "anchor": {
             "blob": "2ca78649db203d17f9087e7728f77b20e3a1d144",
-            "content": "sha256:c83906b1f553b7f7a1f792344ed620bf82001a89caa56a3f68ce007474628ab6",
+            "content": "sha256:9ab16fc26f934c5e47684cfeba501df083e453eb77d02c681871ad3716de9d5b",
             "locator": {
-              "end": 139,
+              "end": 165,
               "kind": "line_range",
-              "start": 139
+              "start": 136
             },
             "path": "mcp/src/agents_remember/worktrees/modules/start.py"
           },

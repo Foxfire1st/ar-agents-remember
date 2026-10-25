@@ -103,7 +103,9 @@ The current source cases below replace the retired source-pair cases. They estab
 shared-pair premise and each contract-scoped behaviour, not a request to restore historical test counts
 or percentage targets.
 
+
 - One sprint commands both masters, so both series contracts share one protected source pair. [1]
+
 - Contracts sharing one source pair hold independent selection. [2]
 - Vacant and active are never waiting states. [3]
 - A release addresses only the released contract and still requires its exact selection. [4]

@@ -87,13 +87,21 @@ No configured live documentation source was available for this pass.
 Capture and resolution.
 
 - A locator that does not resolve at C. [1]
+
 - The captured tree C and its blobs. [2]
+
 - A `file:` row subject must name the path's object at C, or `absent` (MIK-R10). [3]
 - Capture through the private-index candidate tree. [4]
+
 - A symbol must bind exactly once. [6]
+
+
 - A qualified name's last part must sit inside its parents: the writer delegates to the one shared rule. [7]
 
+
+
 - The snapshot of a committed code state, for a master line's crossing. [8]
+
 
 - Symbol extraction rejects invalid UTF-8 with a named anchor error and uses case-specific diagnostics when no definition binds. [11]
 - Symlink symbols refuse before blob parsing; file and line-range anchors still hash the selected entry bytes. [12]
@@ -105,6 +113,11 @@ worktree of one repository.
 
 No cross-repo boundary is crossed by this file.
 
+
 - Resolve file/line-range locators against entry bytes; refuse symlink symbols before parsing. [5]
+
+
 - Both constructors read regular files and symlink entries of one tree, retaining a symlink path set. [9]
+
+
 - Current source delta inspected statically: Fix regular-file/symlink snapshot scope and early symbol refusal; retain ordinary symbol/range binding. [10]

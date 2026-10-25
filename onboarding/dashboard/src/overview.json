@@ -1,13 +1,15 @@
 {
-  "path": "dashboard/src",
+  "path": "dashboard/src/overview",
+  "proves": [],
+  "realizes": [],
   "references": {
     "1": {
       "note": "The Knowledge destination in the registry.",
       "targets": [
         {
           "anchor": {
-            "blob": "dbd3ef46e609e178b20798093e2c399bdf3e9b0f",
-            "content": "sha256:ba7d7fa6dca9b6458857973791fd7d36f6bb3a55568a13be15d803afb65e0ef9",
+            "blob": "1b839113b8d511b4a8343230e70a8de0be01b79f",
+            "content": "sha256:a8152c8952fadad87a17271c8a6febccb6420f118def2bd84f341dab609d41c2",
             "locator": {
               "kind": "file"
             },
@@ -18,12 +20,12 @@
       ]
     },
     "11": {
-      "note": "Fixture-honesty sweep, its five rules, its scanned roots, and the unmarked-module blind spot. The third anchor is the guard header's own question, quoted as it is written; this row previously carried a paraphrase that occurs in no file.\n\nAnchor: \"the five rules\"; \"can a test assert against a payload the server could never send?\"",
+      "note": "Fixture-honesty sweep, its five rules, its scanned roots, and the unmarked-module blind spot. The third anchor is the guard header's own question, quoted as it is written; this row previously carried a paraphrase that occurs in no file.",
       "targets": [
         {
           "anchor": {
-            "blob": "bb7efca63cba441712648f4b743dbb34d8d27d85",
-            "content": "sha256:f1ede68aba1103e1ae8c3357c7a2c3934d1e44e55f06bdf7abe8588442b5eede",
+            "blob": "e87c7782c9414ddd44713084a9a37d1b860749ab",
+            "content": "sha256:3d749a3bd1af25ed418d7774a2209c8c2c6cf0a8136d2bf4d524fc62aad15ac4",
             "locator": {
               "kind": "symbol",
               "name": "SCANNED_ROOTS"
@@ -57,16 +59,27 @@
             "path": "dashboard/src/test/wireFixtureGuard.ts"
           },
           "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e87c7782c9414ddd44713084a9a37d1b860749ab",
+            "content": "sha256:e4fe33b5ab72d1e360b6cfbbd87f7bd59677a983c32e6ab2acded3d1af7a2105",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/test/wireFixtureGuard.ts"
+          },
+          "kind": "test"
         }
       ]
     },
     "12": {
-      "note": "State/phase/severity vocabularies and the derived `Metrics` bucket fields.\n\nAnchor: `Metrics`",
+      "note": "The vocabulary tuples and their derived types are generated from the producer schema; `Metrics` carries only the ignored-host-agent count, and the per-stage and per-activity buckets are the `TaskCounts` fields the projection and each task entry carry.",
       "targets": [
         {
           "anchor": {
-            "blob": "515f0ba8c943b7277a947fc67dd4459490674de3",
-            "content": "sha256:cf758045089f0c1f5cd5dbd9870dbe1a7464a70448c82f34b89873dd83b10907",
+            "blob": "d71e9db1948f52b82bd84b2348775f13ac9b57e7",
+            "content": "sha256:daaaf9f80d95ac50acc42b4097c5fcc9293b51a91e135d7b45f3ae87ee7e947f",
             "locator": {
               "kind": "file"
             },
@@ -77,24 +90,12 @@
       ]
     },
     "13": {
-      "note": "Total state-to-status and status-to-colour grammars; the load-bearing unclassified fallback.",
+      "note": "Historical lifecycle topology grammar: the former unclassified-state fallback is not the current TaskEntry status algorithm; the constellation palette is a separate retained concern.",
       "targets": [
         {
           "anchor": {
-            "blob": "59f64541870e7ff5dc2349ca590ec159703d74d1",
-            "content": "sha256:94db2618aaf24dd20956df08690ad730be78d11b5a801a1710f1f094ab67bf65",
-            "locator": {
-              "kind": "symbol",
-              "name": "UNCLASSIFIED_STATUS"
-            },
-            "path": "dashboard/src/topology/model.ts"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "9cf8c0f5572eef476907ba10a4bfef8669303116",
-            "content": "sha256:b8b519048d8a46d111901e761469e9220916486b24bb1b8ff1e8d520cbf64252",
+            "blob": "235b077ab68b7adfffa2b675a339fb346dca83c1",
+            "content": "sha256:f53636330ee7ec12551b481449425862fa552d1c9deca278efcf4998770d6ee5",
             "locator": {
               "kind": "symbol",
               "name": "constelColors"
@@ -152,7 +153,7 @@
       ]
     },
     "16": {
-      "note": "The generated lifecycle mirror carries the cursor beside coherent identity and version fields.\n\nAnchor: \"export interface LifecycleOperationProjection {\"",
+      "note": "The generated lifecycle mirror carries the cursor beside coherent identity and version fields. Anchor: \"export interface LifecycleOperationProjection {\"\n\nAnchor: \"export interface LifecycleOperationProjection {\"",
       "targets": [
         {
           "anchor": {
@@ -169,8 +170,8 @@
         },
         {
           "anchor": {
-            "blob": "fddde3fe60faa2d9374405b9676016ab026af1b6",
-            "content": "sha256:46894d777463298a1a95031da8c618c203b9bf1480eda1c328419e41a1166d1d",
+            "blob": "d71e9db1948f52b82bd84b2348775f13ac9b57e7",
+            "content": "sha256:516e1efcab915cbb3d91c8d2699f5aa34c47dd203545c1688e71b29b0b6880d1",
             "locator": {
               "end": 293,
               "kind": "line_range",
@@ -183,12 +184,12 @@
       ]
     },
     "17": {
-      "note": "The fixture supplies a meaningful revision for the sample operation.\n\nAnchor: \"\\\"meaningfulRevision\\\": 1,\"",
+      "note": "The fixture supplies a meaningful revision for the sample operation.  Anchor: \"\\\"meaningfulRevision\\\": 1,\"",
       "targets": [
         {
           "anchor": {
-            "blob": "36ed9d8160ca59f109bcf4b2fdfbf014692826c1",
-            "content": "sha256:560447f96afcb217ab90fa5111598800172021ef00f1a20cde938fe0254d9cc0",
+            "blob": "40e0d9e4a1a7dcf17a7264a394299e3ee3b020d1",
+            "content": "sha256:c3a793e90b55340a7a8e14448885f302b3921b243cc63d5669a6c779903dc7bc",
             "locator": {
               "end": 1308,
               "kind": "line_range",
@@ -201,12 +202,12 @@
       ]
     },
     "18": {
-      "note": "Presence of ChangeSetTarget.review selects the Operations review page, including the empty task-context target.\n\nAnchor: `RailedBody`; `CockpitShell`; `ReviewMain`",
+      "note": "Presence of ChangeSetTarget.review selects the Operations review page, including the empty task-context target.",
       "targets": [
         {
           "anchor": {
-            "blob": "e6f341599ab594a4a3b9a451a9ccdfec9b2ab411",
-            "content": "sha256:94a1b1275085f14ae722723587f5599a8b94df8f417b55bacda3e2f1fa4bd9d0",
+            "blob": "1b839113b8d511b4a8343230e70a8de0be01b79f",
+            "content": "sha256:a8152c8952fadad87a17271c8a6febccb6420f118def2bd84f341dab609d41c2",
             "locator": {
               "kind": "file"
             },
@@ -216,8 +217,8 @@
         },
         {
           "anchor": {
-            "blob": "735a5434ed9fafad191bc359177f5dd45f7560cd",
-            "content": "sha256:0c544035b495b0075765df42b82b10f3ae29a78672357028ea98aa0a75a2593c",
+            "blob": "5e5b19dcdfa5159c8bc8ad80687697f01049b10e",
+            "content": "sha256:74dc247e015d86be22004a163281b621873af6e3d40c1d16b2782f390038cb5f",
             "locator": {
               "kind": "file"
             },
@@ -228,12 +229,12 @@
       ]
     },
     "19": {
-      "note": "ReviewMain forwards task-context or named-subject targets to ReviewSurface; its retained comparison overlay separately mounts ChangeSetViewer.\n\nAnchor: `RailedBody`; `CockpitShell`; `ReviewMain`",
+      "note": "ReviewMain forwards task-context or named-subject targets to ReviewSurface; its retained comparison overlay separately mounts ChangeSetViewer.",
       "targets": [
         {
           "anchor": {
-            "blob": "e6f341599ab594a4a3b9a451a9ccdfec9b2ab411",
-            "content": "sha256:94a1b1275085f14ae722723587f5599a8b94df8f417b55bacda3e2f1fa4bd9d0",
+            "blob": "1b839113b8d511b4a8343230e70a8de0be01b79f",
+            "content": "sha256:a8152c8952fadad87a17271c8a6febccb6420f118def2bd84f341dab609d41c2",
             "locator": {
               "kind": "file"
             },
@@ -243,8 +244,8 @@
         },
         {
           "anchor": {
-            "blob": "735a5434ed9fafad191bc359177f5dd45f7560cd",
-            "content": "sha256:0c544035b495b0075765df42b82b10f3ae29a78672357028ea98aa0a75a2593c",
+            "blob": "5e5b19dcdfa5159c8bc8ad80687697f01049b10e",
+            "content": "sha256:74dc247e015d86be22004a163281b621873af6e3d40c1d16b2782f390038cb5f",
             "locator": {
               "kind": "file"
             },
@@ -255,12 +256,12 @@
       ]
     },
     "2": {
-      "note": "A reader URL opens the shell on the Knowledge view.\n\nAnchor: \"parseReaderHash(window.location.hash) ? \\\"knowledge\\\" : undefined\"",
+      "note": "A reader URL opens the shell on the Knowledge view.",
       "targets": [
         {
           "anchor": {
-            "blob": "01fba3cb6e8f87f6cb5855729b1ff805ef49457e",
-            "content": "sha256:c85239fff8d91f8454fdbeaf8b8863fb9f8ad9198a009b0d1fcb32a7814d6513",
+            "blob": "1b839113b8d511b4a8343230e70a8de0be01b79f",
+            "content": "sha256:2904cbaaef74b12270b2eeea27b4484ce6d496cea04f23f964364e6adec9c0a3",
             "locator": {
               "end": 363,
               "kind": "line_range",
@@ -273,12 +274,12 @@
       ]
     },
     "20": {
-      "note": "Operations’ conditional ReviewMain forwards optional subject/history; non-review change sets retain ChangeSetTakeover.\n\nAnchor: `RailedBody`; `CockpitShell`; `ReviewMain`",
+      "note": "Operations’ conditional ReviewMain forwards optional subject/history; non-review change sets retain ChangeSetTakeover.",
       "targets": [
         {
           "anchor": {
-            "blob": "e6f341599ab594a4a3b9a451a9ccdfec9b2ab411",
-            "content": "sha256:94a1b1275085f14ae722723587f5599a8b94df8f417b55bacda3e2f1fa4bd9d0",
+            "blob": "1b839113b8d511b4a8343230e70a8de0be01b79f",
+            "content": "sha256:a8152c8952fadad87a17271c8a6febccb6420f118def2bd84f341dab609d41c2",
             "locator": {
               "kind": "file"
             },
@@ -288,8 +289,8 @@
         },
         {
           "anchor": {
-            "blob": "735a5434ed9fafad191bc359177f5dd45f7560cd",
-            "content": "sha256:0c544035b495b0075765df42b82b10f3ae29a78672357028ea98aa0a75a2593c",
+            "blob": "5e5b19dcdfa5159c8bc8ad80687697f01049b10e",
+            "content": "sha256:74dc247e015d86be22004a163281b621873af6e3d40c1d16b2782f390038cb5f",
             "locator": {
               "kind": "file"
             },
@@ -349,7 +350,7 @@
       ]
     },
     "22": {
-      "note": "Every leaf’s entry opens task context and shows changed-intent counts; the reviewer opens unselected unless explicitly addressed.\n\nAnchor: `useReviewNavigation`; `initialSubject`; `useReviewPage`",
+      "note": "Every leaf’s entry opens task context and shows changed-intent counts; the reviewer opens unselected unless explicitly addressed.",
       "targets": [
         {
           "anchor": {
@@ -364,8 +365,8 @@
         },
         {
           "anchor": {
-            "blob": "c80cceb9aec9faece401c997f1c251fe4584a7c4",
-            "content": "sha256:e130583090bf679f916f28c9017752d26e9d3bdb849b519b1b565683098a6353",
+            "blob": "c6b8e96b4754cb08807babd1483628c20ec09d33",
+            "content": "sha256:5ae94ed2ddbbaec574aaf0bf3efcc5fb17d939098df1bab2fb7fc5216310804b",
             "locator": {
               "kind": "file"
             },
@@ -376,12 +377,12 @@
       ]
     },
     "23": {
-      "note": "**The shared liveness predicate gates Working and labels the Intent Review (recorded) for a closed leaf; it selects no different review record and does not gate Intent Review availability.**",
+      "note": "**The shared liveness predicate gates Working and labels the Intent Review `(recorded)` for a closed leaf; it selects no different review record and does not gate Intent Review availability.**",
       "targets": [
         {
           "anchor": {
-            "blob": "316629d0c8fb07af90b3b3526997da60f2a46898",
-            "content": "sha256:353a1e8a0d421d610e212ec654f56ba695e3ce09af5895c9d4cae37128106d6d",
+            "blob": "dc229d234ae888019f18a20c91a1cd0135ada287",
+            "content": "sha256:71fa11b449377ad53a5ea1f8709e31ba8dc17859a548994c22ea9e683b519a62",
             "locator": {
               "kind": "file"
             },
@@ -396,8 +397,34 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e909f979eb2190c3b85bf937b44cd14ced1daf09",
-            "content": "sha256:768e2e576f530a3e1d136bcf62bd446489dcd0c3850cb75b2791d5b3ce93eb4e",
+            "blob": "421fcf655416c82d0bd4d4e7c4e93a8449682d08",
+            "content": "sha256:c79eab348993831ae8a2c377487e00c4ccd5c8922fe6b5f9eda102e8cc01f51f",
+            "locator": {
+              "end": 144,
+              "kind": "line_range",
+              "start": 93
+            },
+            "path": "dashboard/src/data/useReviewCatalogue.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5e94e860bdcfd117a4e496db152da5bfdb241e53",
+            "content": "sha256:8c6a46bb92828c59be722a66bdb2ad5413906cc3679f4d507ac4803b7a915687",
+            "locator": {
+              "end": 673,
+              "kind": "line_range",
+              "start": 649
+            },
+            "path": "dashboard/src/data/review.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "421fcf655416c82d0bd4d4e7c4e93a8449682d08",
+            "content": "sha256:c79eab348993831ae8a2c377487e00c4ccd5c8922fe6b5f9eda102e8cc01f51f",
             "locator": {
               "kind": "symbol",
               "name": "useReviewCatalogue"
@@ -408,24 +435,11 @@
         },
         {
           "anchor": {
-            "blob": "923faffc20359156074cf02aed9860c41b8b29dd",
-            "content": "sha256:cc0642b46db423ef16f86484fedbf882b3cb90e88fc204e9762472d6dbb9a084",
+            "blob": "5e94e860bdcfd117a4e496db152da5bfdb241e53",
+            "content": "sha256:a9f299815da9664a1cafce6e7affbb659fe91d282a219f3a20695c8a73f48425",
             "locator": {
               "kind": "symbol",
               "name": "intentReviewEntries"
-            },
-            "path": "dashboard/src/data/review.ts"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "6aef8710047677b74fa337e6c4e2b6df948df099",
-            "content": "sha256:81e9e12c0c00606d352fdec65d8459fe7a8f3fffe284126ac6f40d3945762837",
-            "locator": {
-              "end": 707,
-              "kind": "line_range",
-              "start": 701
             },
             "path": "dashboard/src/data/review.ts"
           },
@@ -434,12 +448,34 @@
       ]
     },
     "25": {
-      "note": "**The entry that is offered for every leaf; since `260921-ICR-L47` the subject catalogue is read by the reviewer on entry (not by the task entry), and never gates it.**",
+      "note": "**The entry that is offered for every leaf; since `260921-ICR-L47` the subject catalogue is read by the reviewer on entry (not by the task entry), and never gates it.**\n\nAnchor: `useReviewCatalogue` `DocChangeSetBar`",
       "targets": [
         {
           "anchor": {
-            "blob": "e909f979eb2190c3b85bf937b44cd14ced1daf09",
-            "content": "sha256:768e2e576f530a3e1d136bcf62bd446489dcd0c3850cb75b2791d5b3ce93eb4e",
+            "blob": "421fcf655416c82d0bd4d4e7c4e93a8449682d08",
+            "content": "sha256:4c3fd11e4b0a15e8e0fe08a126594e4cf000fb021985f67854c1fb7d71e06619",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/data/useReviewCatalogue.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "dc229d234ae888019f18a20c91a1cd0135ada287",
+            "content": "sha256:71fa11b449377ad53a5ea1f8709e31ba8dc17859a548994c22ea9e683b519a62",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/detail-panel/changeSetBar.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "421fcf655416c82d0bd4d4e7c4e93a8449682d08",
+            "content": "sha256:c79eab348993831ae8a2c377487e00c4ccd5c8922fe6b5f9eda102e8cc01f51f",
             "locator": {
               "kind": "symbol",
               "name": "useReviewCatalogue"
@@ -450,8 +486,8 @@
         },
         {
           "anchor": {
-            "blob": "316629d0c8fb07af90b3b3526997da60f2a46898",
-            "content": "sha256:c587ea8deb1c6a365edf8c2412dd58d0e6264ad04b1c3ba77b176f34246f8d27",
+            "blob": "dc229d234ae888019f18a20c91a1cd0135ada287",
+            "content": "sha256:c9916dfeff8632353c5ff9e5577530b17de00762552e772fd092288914935ec3",
             "locator": {
               "kind": "symbol",
               "name": "DocChangeSetBar"
@@ -463,12 +499,23 @@
       ]
     },
     "26": {
-      "note": "**The review target whose selector is optional, with presence marking a review and an empty object meaning the task context.**",
+      "note": "**The review target whose selector is optional, with presence marking a review and an empty object meaning the task context.**\n\nAnchor: `ChangeSetTarget`",
       "targets": [
         {
           "anchor": {
-            "blob": "86545416eae45e7557f551de907178a8e9174476",
-            "content": "sha256:783de6c89bb80598c0e1943b0ee2df78df68bd18e6ad233d217e4e8e08be8c63",
+            "blob": "0f255485bc9dc7fc49932bd57f66ff49c8a4564c",
+            "content": "sha256:a07755e77404e8354fd4134325908235f10bd244bb5049776b162574c8bb6473",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/changeset/ChangeSetViewer.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0f255485bc9dc7fc49932bd57f66ff49c8a4564c",
+            "content": "sha256:3f13ccac412f23f05699ce7cdae5be8adb30a1b2e71ece5c69d6b8ca0c2a8925",
             "locator": {
               "kind": "symbol",
               "name": "ChangeSetTarget"
@@ -480,12 +527,12 @@
       ]
     },
     "27": {
-      "note": "ReviewMain mounts ReviewSurface for a target with or without a selector.\n\nAnchor: `RailedBody`; `CockpitShell`; `ReviewMain`",
+      "note": "ReviewMain mounts ReviewSurface for a target with or without a selector.",
       "targets": [
         {
           "anchor": {
-            "blob": "e6f341599ab594a4a3b9a451a9ccdfec9b2ab411",
-            "content": "sha256:94a1b1275085f14ae722723587f5599a8b94df8f417b55bacda3e2f1fa4bd9d0",
+            "blob": "1b839113b8d511b4a8343230e70a8de0be01b79f",
+            "content": "sha256:a8152c8952fadad87a17271c8a6febccb6420f118def2bd84f341dab609d41c2",
             "locator": {
               "kind": "file"
             },
@@ -495,8 +542,8 @@
         },
         {
           "anchor": {
-            "blob": "735a5434ed9fafad191bc359177f5dd45f7560cd",
-            "content": "sha256:0c544035b495b0075765df42b82b10f3ae29a78672357028ea98aa0a75a2593c",
+            "blob": "5e5b19dcdfa5159c8bc8ad80687697f01049b10e",
+            "content": "sha256:74dc247e015d86be22004a163281b621873af6e3d40c1d16b2782f390038cb5f",
             "locator": {
               "kind": "file"
             },
@@ -507,12 +554,23 @@
       ]
     },
     "28": {
-      "note": "**The client's inventory types and the request that omits the selector when there is none.**",
+      "note": "**The client's inventory types and the request that omits the selector when there is none.**\n\nAnchor: `ReviewSourceInventory` `intentReview`",
       "targets": [
         {
           "anchor": {
-            "blob": "923faffc20359156074cf02aed9860c41b8b29dd",
-            "content": "sha256:86f1b75ddb3214a95c982e72c4025dbfed303e4ec5b5a4d69d2d7115e6a6d1e5",
+            "blob": "5e94e860bdcfd117a4e496db152da5bfdb241e53",
+            "content": "sha256:65b7f98cb5ff7962303f5258fab14cfff5acc73adf5a464ce722d0a3f9fa800f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/data/review.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5e94e860bdcfd117a4e496db152da5bfdb241e53",
+            "content": "sha256:950d3b870b93a5113e6a5ee6a9023583438a80b65df212ca5ca4dbe31e289909",
             "locator": {
               "kind": "symbol",
               "name": "ReviewSourceInventory"
@@ -523,8 +581,8 @@
         },
         {
           "anchor": {
-            "blob": "923faffc20359156074cf02aed9860c41b8b29dd",
-            "content": "sha256:a152f07db96bb7862f632571fd4595a32ef8103c304bc492ba591d2efacc3ba0",
+            "blob": "5e94e860bdcfd117a4e496db152da5bfdb241e53",
+            "content": "sha256:1b0ba6ded67ab3766300e0dea9ad82553875fd843dd265dabad3cab47290aa26",
             "locator": {
               "kind": "symbol",
               "name": "intentReview"
@@ -540,8 +598,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "01fba3cb6e8f87f6cb5855729b1ff805ef49457e",
-            "content": "sha256:54e7d063e5ed2db70b84ca8cc17247ef519a4a9a03e43c29ac0480dd70c88d2a",
+            "blob": "1b839113b8d511b4a8343230e70a8de0be01b79f",
+            "content": "sha256:d3cd82a04dab366b0e7ba554d8a187a7f36ec5cdac27f85ee13fa6dae914a435",
             "locator": {
               "end": 770,
               "kind": "line_range",
@@ -601,12 +659,12 @@
       ]
     },
     "32": {
-      "note": "**The review route's own decode: the body is the answer whatever the status.**\n\nAnchor: `getReviewJson`, `reviewFailureToken`",
+      "note": "**The review route's own decode: the body is the answer whatever the status.**",
       "targets": [
         {
           "anchor": {
-            "blob": "25250cf4f41daf7721dd292a421845d64fefdd4c",
-            "content": "sha256:aa4a4272fb0a9304c6d8356b90127e46d5ecf04e88fd32c12c24b34a5559ec20",
+            "blob": "944960a629ae679b6412bdfdc583c9a18b17dfc3",
+            "content": "sha256:505328199b8aa8063d5f3edf27599d3d5c66658a4db5f530607c9b55c3511dff",
             "locator": {
               "kind": "file"
             },
@@ -617,8 +675,19 @@
       ]
     },
     "33": {
-      "note": "**The one renderer every non-review state goes through.**",
+      "note": "**The one renderer every non-review state goes through.**\n\nAnchor: `ReviewOutcomeRegion` `ReviewProblemBlock`",
       "targets": [
+        {
+          "anchor": {
+            "blob": "4dda0f8e45d38b01cd7700d66b0a93e90ef87991",
+            "content": "sha256:640ebe01c24104c561f4b394efb8ce1124b7113cad8614ebd4a746652b38c400",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/ReviewOutcome.tsx"
+          },
+          "kind": "code"
+        },
         {
           "anchor": {
             "blob": "4dda0f8e45d38b01cd7700d66b0a93e90ef87991",
@@ -633,8 +702,8 @@
         },
         {
           "anchor": {
-            "blob": "9c563bdc8c08ff9ac7ad435c187715c423a9cffb",
-            "content": "sha256:6b9166d8315b9240e5c6e3daa4d1335413bf9f4ac740c62439f47fa3c1ee6e85",
+            "blob": "4dda0f8e45d38b01cd7700d66b0a93e90ef87991",
+            "content": "sha256:5f92f2865c97e98c45bd53aac3a91bae430ec443ba8b3144489a6a5af0ca080f",
             "locator": {
               "kind": "symbol",
               "name": "ReviewProblemBlock"
@@ -650,8 +719,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "dbd3ef46e609e178b20798093e2c399bdf3e9b0f",
-            "content": "sha256:ba7d7fa6dca9b6458857973791fd7d36f6bb3a55568a13be15d803afb65e0ef9",
+            "blob": "1b839113b8d511b4a8343230e70a8de0be01b79f",
+            "content": "sha256:a8152c8952fadad87a17271c8a6febccb6420f118def2bd84f341dab609d41c2",
             "locator": {
               "kind": "file"
             },
@@ -666,8 +735,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8dee58022ce2193b105b962037942a63b007a3b7",
-            "content": "sha256:d6f868e87652596fc252ab04422fc202cb55453799acb3d497166563d8b0aa1a",
+            "blob": "23061a7413ce30005806ccc7de11a018fd262e79",
+            "content": "sha256:75963cacf0433c265325b78bc40b9a20945fdbed2896e5536b9636c1e4567617",
             "locator": {
               "kind": "file"
             },
@@ -682,8 +751,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "30a4e1199324d773e4b19ec734f75103f710a5c8",
-            "content": "sha256:b0f807e0a514e2cc383dcd7f40d155171dbfdb10ddb0dcb9590c8e7c2d94a008",
+            "blob": "5a3bb6c6a5382877125ddc2272f02996a5d6ecc2",
+            "content": "sha256:011f51091c3826cba23b53b50b6b8895f19e466aa1f445f4eeb6a35a49890ef2",
             "locator": {
               "kind": "file"
             },
@@ -748,12 +817,12 @@
       ]
     },
     "4": {
-      "note": "The header count itself. **Withdrawn in part:** this row cited a tooltip that stated *what* the count counts (\"task entries this list carries\"), and the L33 revert removed that tooltip with the landed-leaf change, so the h2 is again a bare `Tasks · {count}`. A reader must not read the number as \"task entries\" on the strength of this card.\n\nAnchor: \"Tasks · {count}\"",
+      "note": "The header count itself. **Withdrawn in part:** this row cited a tooltip that stated *what* the count counts (\"task entries this list carries\"), and the L33 revert removed that tooltip with the landed-leaf change, so the h2 is again a bare `Tasks · {count}`. A reader must not read the number as \"task entries\" on the strength of this card.",
       "targets": [
         {
           "anchor": {
-            "blob": "68c6cd1eb2126a860653ef723eb6a2ba2afb4762",
-            "content": "sha256:8b757399da4e112d5124db74fe382507568aded023a23e103e1156ae7202ce7a",
+            "blob": "8835407060216b31d4e3a7c45f4cb3e631551701",
+            "content": "sha256:27e5788d5d9d73d24a81dbc0a5a74bfa82c9c3b3af99e52af796e90b468a8a3d",
             "locator": {
               "end": 655,
               "kind": "line_range",
@@ -766,16 +835,16 @@
       ]
     },
     "40": {
-      "note": "This source owns the route’s Investigator selection or execution boundary.",
+      "note": "RoleChatsPane binds the current role-launch selection to document/options scopes, request controls and the options loader, then passes that state to RoleChatsView. This composition is shared across roles; it does not itself implement an Investigator-specific selection or execution rule.",
       "targets": [
         {
           "anchor": {
-            "blob": "8dee58022ce2193b105b962037942a63b007a3b7",
-            "content": "sha256:d6f868e87652596fc252ab04422fc202cb55453799acb3d497166563d8b0aa1a",
+            "blob": "23061a7413ce30005806ccc7de11a018fd262e79",
+            "content": "sha256:d4a5a6d2f5856f7d4d85efc44dcfa1cee26f6b7b1a6ac13adaca495a102a34ea",
             "locator": {
-              "end": 628,
+              "end": 133,
               "kind": "line_range",
-              "start": 1
+              "start": 48
             },
             "path": "dashboard/src/cockpit/RoleChats.tsx"
           },
@@ -788,8 +857,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bf8a8ae986fdd8988d313e83df48c377386c48b5",
-            "content": "sha256:a2ac11ed1b55413d56fa1567c5596a5e15e8997affd98f7e4a990231a183818a",
+            "blob": "58403a8e3f376b93e6cea8747e0d8ecdb222dd8c",
+            "content": "sha256:437ea35d69b1f71eec7c9cecad85849b51f6643335af985a47323391103b8bfd",
             "locator": {
               "end": 112,
               "kind": "line_range",
@@ -807,6 +876,19 @@
         {
           "anchor": {
             "blob": "c89382b7530853796de958e287f52a05bf0222f3",
+            "content": "sha256:aa8eeae3a915f870dcca67708e5a28b6f7bca6db3f044e696cc9ecce45f21bac",
+            "locator": {
+              "end": 177,
+              "kind": "line_range",
+              "start": 119
+            },
+            "path": "dashboard/src/panels/EngineRoom.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c89382b7530853796de958e287f52a05bf0222f3",
             "content": "sha256:2aede7278b5afa2f34d995f55e47a09251c5042e5d230c595155d47469266519",
             "locator": {
               "kind": "symbol",
@@ -819,18 +901,44 @@
       ]
     },
     "43": {
-      "note": "The root already says Engine Room has no product-bar entry and is exercised through injected initialView. The changed so — source ownership, not executed visual proof.\n\nAnchor: `export function EnclosureCanvas({`",
+      "note": "The cockpit retains Engine Room for injected initialView tests, gives it no dashboard/product-bar entry, and mounts its layout only when the selected view is engine. This is source ownership, not executed visual proof.",
       "targets": [
         {
           "anchor": {
-            "blob": "e496e2924af2443fe26b4b8712a14c6cadf07d7c",
-            "content": "sha256:afaedef990ec259adf1c701d501e8d6bc19c4a4b0f43c664a97395ef438b4bbf",
+            "blob": "1b839113b8d511b4a8343230e70a8de0be01b79f",
+            "content": "sha256:8189ecde22980bf4a90f4c94bce16f262bb8a98345963d38eeecf48644d80b3a",
             "locator": {
-              "end": 85,
+              "end": 89,
               "kind": "line_range",
-              "start": 40
+              "start": 87
             },
-            "path": "dashboard/src/panels/engine-room/EnclosureCanvas.tsx"
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1b839113b8d511b4a8343230e70a8de0be01b79f",
+            "content": "sha256:4c059057ea4e82331815ca502e0e6c3410ba875340c5569c75d7aa10d7ed62b7",
+            "locator": {
+              "end": 635,
+              "kind": "line_range",
+              "start": 628
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1b839113b8d511b4a8343230e70a8de0be01b79f",
+            "content": "sha256:771f677b03ec8454b57f83a55b6e2b3e41b143e066ef988539cdab6591d75dbe",
+            "locator": {
+              "end": 772,
+              "kind": "line_range",
+              "start": 767
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
           },
           "kind": "code"
         }
@@ -841,35 +949,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "863c0388a46f3b3c4b285766c4a7de1db780c00e",
-            "content": "sha256:29d3d4539fa8862f31ceefba386db2c2bb6805610e1898aeb18a22f4b2ab535f",
+            "blob": "1b839113b8d511b4a8343230e70a8de0be01b79f",
+            "content": "sha256:a8152c8952fadad87a17271c8a6febccb6420f118def2bd84f341dab609d41c2",
             "locator": {
-              "kind": "symbol",
-              "name": "VIEWS"
-            },
-            "path": "dashboard/src/cockpit/Cockpit.tsx"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "7b84a649c5063db2bcee67dbb98c03b8620ac814",
-            "content": "sha256:500525aaa1c27e09b36993a4b253f9914e9624131e35ced3f05cd8a96c06cf2f",
-            "locator": {
-              "kind": "symbol",
-              "name": "MainLayers"
-            },
-            "path": "dashboard/src/cockpit/Cockpit.tsx"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "9dffc6e41bb9701b7a33ff1b82335a087c154484",
-            "content": "sha256:e50724c1a1f5636830f4077e385677a323da62eafcfd01aaf41535596248780d",
-            "locator": {
-              "kind": "symbol",
-              "name": "useCockpitShellState"
+              "kind": "file"
             },
             "path": "dashboard/src/cockpit/Cockpit.tsx"
           },
@@ -882,6 +965,30 @@
             "locator": {
               "kind": "symbol",
               "name": "VIEWS"
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1b839113b8d511b4a8343230e70a8de0be01b79f",
+            "content": "sha256:60bc25696b100ddfbef71aa797ce37aced694af3c96337092f369c0042e28c6f",
+            "locator": {
+              "kind": "symbol",
+              "name": "MainLayers"
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1b839113b8d511b4a8343230e70a8de0be01b79f",
+            "content": "sha256:364f49b3f7cbff6503f4db5cb05982e536b899368e91df5dcf48578ccb67c4c0",
+            "locator": {
+              "kind": "symbol",
+              "name": "useCockpitShellState"
             },
             "path": "dashboard/src/cockpit/Cockpit.tsx"
           },
@@ -917,30 +1024,43 @@
       ]
     },
     "46": {
-      "note": "Native execution results are scoped by document and request identity\n\nAnchor: isCurrentExecutionTarget; selectedRequestExecution",
+      "note": "Native execution results are scoped by document identity and, for selections using request receipts, by the active request ID. Stored/saved receipts are selected only under those scopes.",
       "targets": [
         {
           "anchor": {
-            "blob": "8dee58022ce2193b105b962037942a63b007a3b7",
-            "content": "sha256:bcd9b2ece357c94ae7f1bbc20ae10256199c0fdce44d7d333ed359a9ef4b6ba0",
+            "blob": "e4e171e7cca2fec0b1fd921c915a36af2fb0c591",
+            "content": "sha256:18122260b28f99ef258102b738664a036a7a0066b9b75fc900944f7f066903e4",
             "locator": {
-              "end": 203,
+              "end": 125,
               "kind": "line_range",
-              "start": 94
+              "start": 117
             },
-            "path": "dashboard/src/cockpit/RoleChats.tsx"
+            "path": "dashboard/src/cockpit/roleChatControls.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "06abcf50e960083f414831b75302d1ec30aad2e5",
+            "content": "sha256:b092cafb815fd85b0f00794dcbf5206b8e2ca9f8dfe5c72030d845b316f0a735",
+            "locator": {
+              "end": 85,
+              "kind": "line_range",
+              "start": 54
+            },
+            "path": "dashboard/src/cockpit/roleChatExecutionView.ts"
           },
           "kind": "code"
         }
       ]
     },
     "47": {
-      "note": "Frame descriptor activation and explicit retry are separate from retained frame identity\n\nAnchor: useFrameController; useFrameDescriptor",
+      "note": "Frame descriptor activation and explicit retry are separate from retained frame identity",
       "targets": [
         {
           "anchor": {
-            "blob": "e56f69d4c04fe4fd3fa4c346a4cb2b61d15aaeb7",
-            "content": "sha256:0c0be0a2179c98564825d4d3ad1976c1f0d4520fe423cacc944fb15d86d01186",
+            "blob": "5a3bb6c6a5382877125ddc2272f02996a5d6ecc2",
+            "content": "sha256:8523a9c4686ee2b6788e4aff3f1fd88e135c8a61103da57f7c79bfd835730fa1",
             "locator": {
               "end": 207,
               "kind": "line_range",
@@ -953,7 +1073,7 @@
       ]
     },
     "48": {
-      "note": "Every leaf's review entry opens the page's own default comparison independently of summary availability: the entry supplies `review: {}` for a live and a closed leaf alike (`intentReviewEntry.tsx:169`) and liveness reaches only the `(recorded)` label (`:179`). Anchor: IntentReviewEntry",
+      "note": "Every leaf's review entry opens the page's own default comparison — the live candidate for a live leaf, the delivered recorded pair for a closed one — independently of summary availability",
       "targets": [
         {
           "anchor": {
@@ -971,12 +1091,12 @@
       ]
     },
     "49": {
-      "note": "Intent and attribution counts have separate partial/unavailable treatment\n\nAnchor: IntentCounts; attributionText; IntentDetails",
+      "note": "Intent and attribution counts have separate partial/unavailable treatment",
       "targets": [
         {
           "anchor": {
-            "blob": "78855920faa4d3b0902e62b1fe548015cb9bb2a0",
-            "content": "sha256:c38ab296fb553ba25b829153e309bc21da142b530d311af53b0e11448e4c1015",
+            "blob": "7589f63f1bb655f537e84d56ad377746d725da2b",
+            "content": "sha256:6e8ac5418ae5e6e7cf8523783226c6c09c7a9f1033308ab0ed2dfd7cf7991bf3",
             "locator": {
               "end": 24,
               "kind": "line_range",
@@ -988,8 +1108,8 @@
         },
         {
           "anchor": {
-            "blob": "78855920faa4d3b0902e62b1fe548015cb9bb2a0",
-            "content": "sha256:1b3cb07a22b970b77f6a18032c14bb84ce7d7be70739ca461609866c2e366c44",
+            "blob": "7589f63f1bb655f537e84d56ad377746d725da2b",
+            "content": "sha256:988598071ca473174a2b97b5fcc8a66088f0b3ec670e2764e2ad551141a42a66",
             "locator": {
               "end": 137,
               "kind": "line_range",
@@ -1002,12 +1122,12 @@
       ]
     },
     "5": {
-      "note": "Both master readers now ask for the per-leaf breakdown.\n\nAnchor: `includeLeaves`",
+      "note": "Both master readers now ask for the per-leaf breakdown.",
       "targets": [
         {
           "anchor": {
-            "blob": "86545416eae45e7557f551de907178a8e9174476",
-            "content": "sha256:2c0278c9021c1dcd6880b7e2f577ee855a3747055483582d8110e6ef8c812a21",
+            "blob": "0f255485bc9dc7fc49932bd57f66ff49c8a4564c",
+            "content": "sha256:375ab7c0989e23b48683816b617ec27067d2b95ac1bc3ef722f1563e0b061856",
             "locator": {
               "end": 222,
               "kind": "line_range",
@@ -1020,12 +1140,12 @@
       ]
     },
     "50": {
-      "note": "Review transport reads route-state bodies irrespective of HTTP status\n\nAnchor: getReviewJson",
+      "note": "Review transport reads route-state bodies irrespective of HTTP status",
       "targets": [
         {
           "anchor": {
-            "blob": "25250cf4f41daf7721dd292a421845d64fefdd4c",
-            "content": "sha256:0fcf0bc31e22898ab21ab09f61a0c35bc2a303c3791ffffddfca318bc0b4d50f",
+            "blob": "944960a629ae679b6412bdfdc583c9a18b17dfc3",
+            "content": "sha256:c9a84fad7a3709c14f6b921bc5618a972575474954600fdc29a907c3083ff222",
             "locator": {
               "end": 190,
               "kind": "line_range",
@@ -1040,6 +1160,28 @@
     "51": {
       "note": "Question/read identity and memory-input epoch prevent superseded responses from display or inappropriate unshown reuse; live-watch notification is separately wired by the surface.\n\nAnchor: `startRead` `memoryWatchActions` `useSurface`",
       "targets": [
+        {
+          "anchor": {
+            "blob": "ea4a25a184fd55e7859a3d6c4589e75d6646e280",
+            "content": "sha256:713b539c516b368e8508835ebd03b3c8ba9f84992957f5a5970ee06573fac1c3",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/ReviewReadCycle.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6f30efcbe166c0fe854c1de9cde75a444ff9c5a5",
+            "content": "sha256:f5925b247bc0b3f32fd03a1d161cce6b638234ad4531a1d9d6053f9309a26368",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.tsx"
+          },
+          "kind": "code"
+        },
         {
           "anchor": {
             "blob": "ea4a25a184fd55e7859a3d6c4589e75d6646e280",
@@ -1066,8 +1208,8 @@
         },
         {
           "anchor": {
-            "blob": "bb94e003292e3a408d3607472dacd850e1f8da65",
-            "content": "sha256:f0203df5014bb49872c33405cfcec900dbf91c93c1501fce9ee3d899ae9e042d",
+            "blob": "6f30efcbe166c0fe854c1de9cde75a444ff9c5a5",
+            "content": "sha256:051725227fe4220602c84f0c8d3f3256077664ced2285c6ff8bbf329759e3f80",
             "locator": {
               "kind": "symbol",
               "name": "useSurface"
@@ -1079,12 +1221,12 @@
       ]
     },
     "52": {
-      "note": "Current operations projection uses physical live-worktree admission and a bare count header\n\nAnchor: operationRows; appendLifecycleRows; TaskPivotBar",
+      "note": "The operations list shows every served task entry, including one with no worktree, and its head is a bare `Tasks · {count}` beside the BY REPO / BY PHASE switch.",
       "targets": [
         {
           "anchor": {
-            "blob": "ecdae05db864c7b971d33f96f89359d5c51988bc",
-            "content": "sha256:cb7acd1dff1cfef7da490a1000aa96b958c555567c87b1097f3bb82c037a1313",
+            "blob": "8835407060216b31d4e3a7c45f4cb3e631551701",
+            "content": "sha256:dc88ca3d4bb9dd699d740c6d174486df5b39c42d3ff177499814549e0ebba7e2",
             "locator": {
               "end": 440,
               "kind": "line_range",
@@ -1096,8 +1238,8 @@
         },
         {
           "anchor": {
-            "blob": "ecdae05db864c7b971d33f96f89359d5c51988bc",
-            "content": "sha256:6405589abab9f9e98efa10215d42a7f0a99fccc35c72b7eae5656fa8a74d255b",
+            "blob": "8835407060216b31d4e3a7c45f4cb3e631551701",
+            "content": "sha256:ad104269db910e347acf3dbe04a95b9159c52db3e845ffa6869aad0aed2ef546",
             "locator": {
               "end": 575,
               "kind": "line_range",
@@ -1110,12 +1252,12 @@
       ]
     },
     "53": {
-      "note": "Collapse state has one persisted collapsed set\n\nAnchor: useCollapsedTaskGroups",
+      "note": "Collapse state has one persisted collapsed set",
       "targets": [
         {
           "anchor": {
-            "blob": "84947fcc60779543954199ce7869abc2cc6eabe4",
-            "content": "sha256:0da47a931af4d167fa12d46645cbb7d534fce20120f031a19625c1ae9c094b4c",
+            "blob": "e9a764615275cf934b43c9b1a0a07a0675e00d4c",
+            "content": "sha256:395acc600cd7427c247fbe457e04057c4bdde34e795b947fd35795daa52158f3",
             "locator": {
               "end": 28,
               "kind": "line_range",
@@ -1128,12 +1270,12 @@
       ]
     },
     "55": {
-      "note": "Generated partition comes from producer state/metrics schema and stale comparison covers generated outputs  Anchor: _state_partition; _vocabulary_block; stale_generated_files",
+      "note": "Historical lifecycle partition generator account: the retired state/metrics partition is not the present task model. Generated schema/TypeScript stale comparison remains a distinct source responsibility.",
       "targets": [
         {
           "anchor": {
-            "blob": "072e0a3e6d9a0f3bcc8a2e0a2257f1618d41c10f",
-            "content": "sha256:e5812badcd58e830abed9d82f1362cda405cac5459b89e800b4a4bac73bddff0",
+            "blob": "8ad4fad6abd9bf98c265168c8b63d6f2fce0aeac",
+            "content": "sha256:61f4119dc547de7388a12cc2047abdf3393b90ab2c79160ba4fff37be16691c2",
             "locator": {
               "end": 449,
               "kind": "line_range",
@@ -1145,8 +1287,8 @@
         },
         {
           "anchor": {
-            "blob": "072e0a3e6d9a0f3bcc8a2e0a2257f1618d41c10f",
-            "content": "sha256:70a30a4be0351dd0d5b082d0bb6c37d14c28e2fdb3e54354d9951caa84e3c0b2",
+            "blob": "8ad4fad6abd9bf98c265168c8b63d6f2fce0aeac",
+            "content": "sha256:de6218b26cd4693cba6753856b42753af4f2a95cc8ba1bcee4f4d7252b6ee9e3",
             "locator": {
               "end": 500,
               "kind": "line_range",
@@ -1172,12 +1314,12 @@
       ]
     },
     "56": {
-      "note": "Wire discovery and fixture scope retain named blind spots\n\nAnchor: declaresItselfAMirror; isFixtureSurface; guard header",
+      "note": "Wire discovery and fixture scope retain named blind spots",
       "targets": [
         {
           "anchor": {
-            "blob": "bb7efca63cba441712648f4b743dbb34d8d27d85",
-            "content": "sha256:48ced1ee25af2463465fc49328fa8d419391823ae6287f95ef470402eb19ff1a",
+            "blob": "e87c7782c9414ddd44713084a9a37d1b860749ab",
+            "content": "sha256:cd99619b8c11a2f3cf8c7f93950be821424904ec1e24b7282d47a9efc94f4b15",
             "locator": {
               "end": 75,
               "kind": "line_range",
@@ -1189,8 +1331,8 @@
         },
         {
           "anchor": {
-            "blob": "bb7efca63cba441712648f4b743dbb34d8d27d85",
-            "content": "sha256:42b27b147952f0d989f1389b7d9239ff2843ab150d7578e69cb886ac6d36d5d4",
+            "blob": "e87c7782c9414ddd44713084a9a37d1b860749ab",
+            "content": "sha256:d31aaf51c9f02260f177528e626cee7093e4672f88a33e47ce74e6ea9530279c",
             "locator": {
               "end": 136,
               "kind": "line_range",
@@ -1203,16 +1345,16 @@
       ]
     },
     "57": {
-      "note": "Required-field override protection has explicit fresh-literal/depth/module limits\n\nAnchor: Overrides",
+      "note": "Required-field override protection applies to fresh override literals at the call site and only to top-level keys in the fixtures/wire.ts builders. Widened Partial values, nested values and other modules remain outside this mapped-type guard.",
       "targets": [
         {
           "anchor": {
-            "blob": "14d1d7f2a400188ffa96f8722f3d64fd9d085ccc",
-            "content": "sha256:6bfd1efefa047efcb6efea9a3000c78f6a1d0203fe9a917650c12d04112a76b5",
+            "blob": "c1728908f2e1d3aa121a935b106bb55590cb0bbc",
+            "content": "sha256:6b52920f4413d542897cbd86e64b1c9cd84ef0f30e237f0d9c521d5870358d62",
             "locator": {
-              "end": 65,
+              "end": 59,
               "kind": "line_range",
-              "start": 23
+              "start": 22
             },
             "path": "dashboard/src/test/fixtures/overrides.ts"
           },
@@ -1221,12 +1363,12 @@
       ]
     },
     "58": {
-      "note": "Unknown lifecycle state warns; inferred healthy state degrades\n\nAnchor: lifecycleStatus",
+      "note": "A worktree node's constellation status comes from the task entry's own status tone: a waiting task warns, a finished one idles, and an enclosure with no entry idles.",
       "targets": [
         {
           "anchor": {
-            "blob": "59f64541870e7ff5dc2349ca590ec159703d74d1",
-            "content": "sha256:2fc77bee99c86d525336ac23406de3fda389c6a97d2296c09b454dc7541092f8",
+            "blob": "046383e5c526185a26684c0f11200956456de65e",
+            "content": "sha256:69eaf23af5108dc2733475877d8b523c22c0c5b790a04f32dbccdbc24c443063",
             "locator": {
               "end": 92,
               "kind": "line_range",
@@ -1239,12 +1381,12 @@
       ]
     },
     "59": {
-      "note": "Engine Room's present body composes enclosure map, stack, boot and diagnostics\n\nAnchor: EngineRoomImpl",
+      "note": "Engine Room's present body composes enclosure map, stack, boot and diagnostics",
       "targets": [
         {
           "anchor": {
-            "blob": "20386ce24dbf50d2623c264f361b4a10dff165c5",
-            "content": "sha256:f4ab1c90d9929275a97a8d0b49974149ee57fa99ffef5ce6bac0243de71c121d",
+            "blob": "c89382b7530853796de958e287f52a05bf0222f3",
+            "content": "sha256:4897c0f84e170f3cbbf725160849ab497538ac71b4134750aa67c46b6ac21882",
             "locator": {
               "end": 177,
               "kind": "line_range",
@@ -1257,12 +1399,23 @@
       ]
     },
     "6": {
-      "note": "Shell navigation, persistent layers and shared drivers.",
+      "note": "Shell navigation, persistent layers and shared drivers.\n\nAnchor: `CockpitShell`",
       "targets": [
         {
           "anchor": {
-            "blob": "76c1e952f0b6c4c9d708c3edf4cd8b28c0f764ff",
-            "content": "sha256:19ba28765718f373b4b70dd594224499bd1aeb2c6cf77d848967a7e4dc4ade1f",
+            "blob": "1b839113b8d511b4a8343230e70a8de0be01b79f",
+            "content": "sha256:a8152c8952fadad87a17271c8a6febccb6420f118def2bd84f341dab609d41c2",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1b839113b8d511b4a8343230e70a8de0be01b79f",
+            "content": "sha256:1ac52653a51e3f6baa0cd6d608709287a3c4c3f8e993d65d3bf8e2170c817edc",
             "locator": {
               "kind": "symbol",
               "name": "CockpitShell"
@@ -1345,8 +1498,19 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d9ead04d699c465f6ffb8a1ab78bc3558b7fee4b",
-            "content": "sha256:c67dcfd5536dbfed4298e5964e3afd7a57103d211840c0f44e825a00006a93b6",
+            "blob": "549cf610137c56828d056d1a3b11a3818c82bbd1",
+            "content": "sha256:83efbfa27503cc53b64b97313ff2352ded9f2c92796d8b787affe1783fe7da70",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/cockpit/document-chat/state.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "549cf610137c56828d056d1a3b11a3818c82bbd1",
+            "content": "sha256:8ba560f316f457667f7257445e0b57a1068febe45836a462fa0efd2c99b5f6d4",
             "locator": {
               "kind": "symbol",
               "name": "chatPresentation"
@@ -1402,12 +1566,23 @@
       ]
     },
     "65": {
-      "note": "Authored stage wins over host observation; only started tasks receive bound contributor activity and eventAt.",
+      "note": "Authored stage wins over host observation; only started tasks receive bound contributor activity and eventAt.\n\nAnchor: `task_state`",
       "targets": [
         {
           "anchor": {
-            "blob": "d37db285155926a5393191721b105ab17f124661",
-            "content": "sha256:348ca25847f5af1de648007ac662ec749f8e0b70d74d88d9bdf446f78299339e",
+            "blob": "26edfc879fceb5c3c0c071a8bf8d54180caebe20",
+            "content": "sha256:510623323eed533a9a5132dda425f0d11dcfeeb2aedc68924e039a62d60ebf87",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/observer/task_entries.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "26edfc879fceb5c3c0c071a8bf8d54180caebe20",
+            "content": "sha256:c5dd1e2305a20ba936649eb75ff0d84791f7f60e558984b8d5069b5a4aae7318",
             "locator": {
               "kind": "symbol",
               "name": "task_state"
@@ -1419,12 +1594,23 @@
       ]
     },
     "66": {
-      "note": "Declared task sources become one entry forest with worktree binding kept separate from task admission.",
+      "note": "Declared task sources become one entry forest with worktree binding kept separate from task admission.\n\nAnchor: `build_task_entries`",
       "targets": [
         {
           "anchor": {
-            "blob": "9e4b2543510affa9e5cc0d4f7e4ee8b261894051",
-            "content": "sha256:b925dcd46887d9d1f145bcfbf499a5ead0e8ae231c2927f6bb436051d0c3534b",
+            "blob": "26edfc879fceb5c3c0c071a8bf8d54180caebe20",
+            "content": "sha256:510623323eed533a9a5132dda425f0d11dcfeeb2aedc68924e039a62d60ebf87",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/observer/task_entries.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "26edfc879fceb5c3c0c071a8bf8d54180caebe20",
+            "content": "sha256:613fe3ed19e28d70036cee9fdfa7e9139b0d357f28aba2346a9e61d6df6a2771",
             "locator": {
               "kind": "symbol",
               "name": "build_task_entries"
@@ -1440,8 +1626,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "901cf61d779e58bf30849e0eea78a9123b9792fd",
-            "content": "sha256:bec535690b5faf1601fe89c5a7f5d82293bac62ca9b92f69bc74eb4b140f1f54",
+            "blob": "bc164a94462c83d4491167bce3b58a8ce7003b54",
+            "content": "sha256:50ba2324b13d627caa87ce9cea377110f794bead4ecfc7ed8e08c5336bbd0c8a",
             "locator": {
               "kind": "symbol",
               "name": "TaskStatusWord"
@@ -1452,8 +1638,8 @@
         },
         {
           "anchor": {
-            "blob": "901cf61d779e58bf30849e0eea78a9123b9792fd",
-            "content": "sha256:73f45554796ee15769aee751c8a9f37a53c8aecd7cd5bd6b09a933b2b36ab464",
+            "blob": "bc164a94462c83d4491167bce3b58a8ce7003b54",
+            "content": "sha256:5d52b165e8e79110a60086bd568de20f412567a469d0be57ebb1d9c2d725caf2",
             "locator": {
               "end": 156,
               "kind": "line_range",
@@ -1462,16 +1648,38 @@
             "path": "dashboard/src/panels/detail-panel/pageParts.tsx"
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bc164a94462c83d4491167bce3b58a8ce7003b54",
+            "content": "sha256:2e0f64ef8e149dfef57069eff8723865c1949bbe856be810d1395b3f36d09d09",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/detail-panel/pageParts.tsx"
+          },
+          "kind": "code"
         }
       ]
     },
     "68": {
-      "note": "Retained body responses are keyed by the revision actually returned, not the requested revision.",
+      "note": "Retained body responses are keyed by the revision actually returned, not the requested revision.\n\nAnchor: `load`",
       "targets": [
         {
           "anchor": {
-            "blob": "cb56539089a61b868c10348e34bfac4506eac81b",
-            "content": "sha256:57960419e280e7f91b3aacaa56bbbf5946052af1a838ce6d58cab4261c9c92de",
+            "blob": "91a45a737a391b17be5e44f0de88da7af08dc61c",
+            "content": "sha256:47df2d81e453a6579042dff7f941e53c0a6c344e821447974664f4f2d2100f2b",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/data/taskDocuments.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "91a45a737a391b17be5e44f0de88da7af08dc61c",
+            "content": "sha256:726947bc1372ae3dede8142c02fdc08ce36876f12045a7500ed20ebf9ccf77a6",
             "locator": {
               "kind": "symbol",
               "name": "load"
@@ -1513,18 +1721,6 @@
             "path": "dashboard/src/test/fixtures/wire.ts"
           },
           "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "8bacf923a1a9b77562130bce9a5c3c707b4e4fcf",
-            "content": "sha256:f6b5bf5a981ee7a6120113585214555db8fbb1e14381b488209bca7a7fddd52a",
-            "locator": {
-              "kind": "symbol",
-              "name": "BASE_TASK_ENTRY"
-            },
-            "path": "dashboard/src/test/fixtures/wire.ts"
-          },
-          "kind": "test"
         }
       ]
     },
@@ -1546,7 +1742,7 @@
       ]
     },
     "72": {
-      "note": "A configured Step up action stays in the shared wrapping launcher and sends canonical selection plus a reason, not preview permission overrides. The original request identity and trimmed reason survive saved taskless requests, remount and retry. A stepped-up receipt labels base mode, notes and feature chips non-applied and names the model the step-up carries — `execution.stepUp.model`, else `host default` — with `execution.stepUp.source` in the chip's title (`StepUpControl.tsx:14-21`); the configured step-up itself asks for a model and a harness (`roleLaunchModel.ts:68`), so the receipt is not a promise that only observed model/source is reported. This adds no chat navigation or acceptance authority.\n\nAnchor: Current source; preserved L88 property 65",
+      "note": "A configured Step up action stays in the shared wrapping launcher and sends canonical selection plus a reason, not preview permission overrides. The original request identity and trimmed reason survive saved taskless requests, remount and retry. A stepped-up receipt labels base mode, notes and feature chips non-applied and reports the request's selected model plus its step-up source — the host's observed model replaces it only when the host reports an applied model — with unreported mode/features explicit. This adds no chat navigation or acceptance authority.\n\nAnchor: Current source; preserved L88 property 65",
       "targets": [
         {
           "anchor": {
@@ -1577,12 +1773,12 @@
       ]
     },
     "73": {
-      "note": "Master validation in placement applies only to documented subTasks; other listed kinds retain list placement under existing identity/cycle guards, not a kind-rejection or own-master-validation rule.\n\nAnchor: Exact producer admission boundary",
+      "note": "Master validation in placement applies only to documented subTasks; other listed kinds retain list placement under existing identity/cycle guards, not a kind-rejection or own-master-validation rule.",
       "targets": [
         {
           "anchor": {
-            "blob": "d37db285155926a5393191721b105ab17f124661",
-            "content": "sha256:ea350afcbd90c38b00424aee31a6a7a46519c7bdff16982cada2efbe3293bd44",
+            "blob": "26edfc879fceb5c3c0c071a8bf8d54180caebe20",
+            "content": "sha256:e04b243dd9746767c6c473a927163ae99b97875eaf72233b43fe6dc5b43f456c",
             "locator": {
               "end": 219,
               "kind": "line_range",
@@ -1612,8 +1808,30 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bd38e5290e2843a3c4222a6e381b949b47d32e28",
-            "content": "sha256:a2ebce6047039f8694e3ff8d9c840c2ce1a89dfef4384b83555ad3c8b830dc97",
+            "blob": "269029073b4592e81229eed6cbcae8eb1df77b5c",
+            "content": "sha256:02d7a66ba412684679f12e38224087695dba6d0ca84b73e921c353290813ee81",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/cockpit/layout.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1b839113b8d511b4a8343230e70a8de0be01b79f",
+            "content": "sha256:a8152c8952fadad87a17271c8a6febccb6420f118def2bd84f341dab609d41c2",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "269029073b4592e81229eed6cbcae8eb1df77b5c",
+            "content": "sha256:c688a9d5c0ad3d4db07f8f6744f1c7420309636a4a1a0130efdf84e274954380",
             "locator": {
               "kind": "symbol",
               "name": "shell"
@@ -1624,8 +1842,8 @@
         },
         {
           "anchor": {
-            "blob": "7b84a649c5063db2bcee67dbb98c03b8620ac814",
-            "content": "sha256:f8bd185be1707e5e1fc67dab55f01a9a03153e41ee3b33d54658d3ce68684cf8",
+            "blob": "1b839113b8d511b4a8343230e70a8de0be01b79f",
+            "content": "sha256:bc2f3f591e183226894d9292f2021436008b7224c69cd40407ecb2c618e9b5d8",
             "locator": {
               "kind": "symbol",
               "name": "RailedBody"
@@ -1636,8 +1854,8 @@
         },
         {
           "anchor": {
-            "blob": "7b84a649c5063db2bcee67dbb98c03b8620ac814",
-            "content": "sha256:f25b2b3c3741760705bda321539bf5b1f56bb7804f74be4a246497ac98eb7a86",
+            "blob": "1b839113b8d511b4a8343230e70a8de0be01b79f",
+            "content": "sha256:c6d8679bc2ab3dfcca99e099a16580215951cfd6bf0ab93b32263f14e9d81f76",
             "locator": {
               "kind": "symbol",
               "name": "ChangeSetTakeover"
@@ -1649,12 +1867,12 @@
       ]
     },
     "75": {
-      "note": "Current shell owners for the review page account.\n\nAnchor: `RailedBody`; `CockpitShell`; `ReviewMain`",
+      "note": "Current shell owners for the review page account.",
       "targets": [
         {
           "anchor": {
-            "blob": "e6f341599ab594a4a3b9a451a9ccdfec9b2ab411",
-            "content": "sha256:94a1b1275085f14ae722723587f5599a8b94df8f417b55bacda3e2f1fa4bd9d0",
+            "blob": "1b839113b8d511b4a8343230e70a8de0be01b79f",
+            "content": "sha256:a8152c8952fadad87a17271c8a6febccb6420f118def2bd84f341dab609d41c2",
             "locator": {
               "kind": "file"
             },
@@ -1664,8 +1882,8 @@
         },
         {
           "anchor": {
-            "blob": "735a5434ed9fafad191bc359177f5dd45f7560cd",
-            "content": "sha256:0c544035b495b0075765df42b82b10f3ae29a78672357028ea98aa0a75a2593c",
+            "blob": "5e5b19dcdfa5159c8bc8ad80687697f01049b10e",
+            "content": "sha256:74dc247e015d86be22004a163281b621873af6e3d40c1d16b2782f390038cb5f",
             "locator": {
               "kind": "file"
             },
@@ -1702,8 +1920,8 @@
         },
         {
           "anchor": {
-            "blob": "735a5434ed9fafad191bc359177f5dd45f7560cd",
-            "content": "sha256:0c544035b495b0075765df42b82b10f3ae29a78672357028ea98aa0a75a2593c",
+            "blob": "5e5b19dcdfa5159c8bc8ad80687697f01049b10e",
+            "content": "sha256:74dc247e015d86be22004a163281b621873af6e3d40c1d16b2782f390038cb5f",
             "locator": {
               "kind": "file"
             },
@@ -1790,12 +2008,12 @@
       ]
     },
     "79": {
-      "note": "Current chat owners for the review page account.\n\nAnchor: `RightRail`; `RailedBody`; `reviewRailView`; `useReviewChat`; `reviewChatTask`",
+      "note": "Current chat owners for the review page account.",
       "targets": [
         {
           "anchor": {
-            "blob": "e6f341599ab594a4a3b9a451a9ccdfec9b2ab411",
-            "content": "sha256:94a1b1275085f14ae722723587f5599a8b94df8f417b55bacda3e2f1fa4bd9d0",
+            "blob": "1b839113b8d511b4a8343230e70a8de0be01b79f",
+            "content": "sha256:a8152c8952fadad87a17271c8a6febccb6420f118def2bd84f341dab609d41c2",
             "locator": {
               "kind": "file"
             },
@@ -1805,8 +2023,8 @@
         },
         {
           "anchor": {
-            "blob": "735a5434ed9fafad191bc359177f5dd45f7560cd",
-            "content": "sha256:0c544035b495b0075765df42b82b10f3ae29a78672357028ea98aa0a75a2593c",
+            "blob": "5e5b19dcdfa5159c8bc8ad80687697f01049b10e",
+            "content": "sha256:74dc247e015d86be22004a163281b621873af6e3d40c1d16b2782f390038cb5f",
             "locator": {
               "kind": "file"
             },
@@ -1816,8 +2034,8 @@
         },
         {
           "anchor": {
-            "blob": "6330263423e190a761f9ec40f2605c8c5e3e58cd",
-            "content": "sha256:45bc1bb6ca70fd9c8e730710c34fa22f33fbb377fba1d0f9074156b775a3886f",
+            "blob": "54c712c28a98c98014150a7e80fe4b316267704c",
+            "content": "sha256:efd5b315ea5cb4588aa3b6155e8accdac1f01a80c4de37935e478eb91b1c2cac",
             "locator": {
               "kind": "file"
             },
@@ -1828,12 +2046,12 @@
       ]
     },
     "80": {
-      "note": "Current tray owners for the review page account.\n\nAnchor: `CockpitShell`; `TrayLayer`; `TrayButton`; `useTrayOpensColumn`",
+      "note": "Current tray owners for the review page account.",
       "targets": [
         {
           "anchor": {
-            "blob": "e6f341599ab594a4a3b9a451a9ccdfec9b2ab411",
-            "content": "sha256:94a1b1275085f14ae722723587f5599a8b94df8f417b55bacda3e2f1fa4bd9d0",
+            "blob": "1b839113b8d511b4a8343230e70a8de0be01b79f",
+            "content": "sha256:a8152c8952fadad87a17271c8a6febccb6420f118def2bd84f341dab609d41c2",
             "locator": {
               "kind": "file"
             },
@@ -1865,8 +2083,8 @@
         },
         {
           "anchor": {
-            "blob": "6330263423e190a761f9ec40f2605c8c5e3e58cd",
-            "content": "sha256:45bc1bb6ca70fd9c8e730710c34fa22f33fbb377fba1d0f9074156b775a3886f",
+            "blob": "54c712c28a98c98014150a7e80fe4b316267704c",
+            "content": "sha256:efd5b315ea5cb4588aa3b6155e8accdac1f01a80c4de37935e478eb91b1c2cac",
             "locator": {
               "kind": "file"
             },
@@ -1877,7 +2095,7 @@
       ]
     },
     "81": {
-      "note": "Current lane owners for the review page account.\n\nAnchor: `LaneSection`; `laneFiles`; `FullPageLinks`; `useReviewChangePage`",
+      "note": "Current lane owners for the review page account.",
       "targets": [
         {
           "anchor": {
@@ -1892,8 +2110,8 @@
         },
         {
           "anchor": {
-            "blob": "aab19c668bc860807d186ba6ea5c23e5f8ee034d",
-            "content": "sha256:dbd5b7fea46777a1a3ebb2947c79e2430f33265a9459166b5c94f27c34cb8923",
+            "blob": "6f30efcbe166c0fe854c1de9cde75a444ff9c5a5",
+            "content": "sha256:f5925b247bc0b3f32fd03a1d161cce6b638234ad4531a1d9d6053f9309a26368",
             "locator": {
               "kind": "file"
             },
@@ -1904,7 +2122,7 @@
       ]
     },
     "82": {
-      "note": "Current navigation owners for the review page account.\n\nAnchor: `useReviewNavigation`; `initialSubject`; `useReviewPage`",
+      "note": "Current navigation owners for the review page account.",
       "targets": [
         {
           "anchor": {
@@ -1919,8 +2137,8 @@
         },
         {
           "anchor": {
-            "blob": "c80cceb9aec9faece401c997f1c251fe4584a7c4",
-            "content": "sha256:e130583090bf679f916f28c9017752d26e9d3bdb849b519b1b565683098a6353",
+            "blob": "c6b8e96b4754cb08807babd1483628c20ec09d33",
+            "content": "sha256:5ae94ed2ddbbaec574aaf0bf3efcc5fb17d939098df1bab2fb7fc5216310804b",
             "locator": {
               "kind": "file"
             },
@@ -1958,12 +2176,12 @@
       ]
     },
     "84": {
-      "note": "Current watch owners for the review page account.\n\nAnchor: `useSurface`; `useReviewMemoryWatch`",
+      "note": "Current watch owners for the review page account.",
       "targets": [
         {
           "anchor": {
-            "blob": "aab19c668bc860807d186ba6ea5c23e5f8ee034d",
-            "content": "sha256:dbd5b7fea46777a1a3ebb2947c79e2430f33265a9459166b5c94f27c34cb8923",
+            "blob": "6f30efcbe166c0fe854c1de9cde75a444ff9c5a5",
+            "content": "sha256:f5925b247bc0b3f32fd03a1d161cce6b638234ad4531a1d9d6053f9309a26368",
             "locator": {
               "kind": "file"
             },
@@ -1973,8 +2191,8 @@
         },
         {
           "anchor": {
-            "blob": "a6a7b8ec91405392b2bff6759bb5d4dc1b6d7c46",
-            "content": "sha256:2ea3d598d5cc9f48e02e9f7e78816d46ecbe3ba71d87f0bac3cb237647164acc",
+            "blob": "f31d34a7cf4ef5cb486ed71488966d951d9dd35f",
+            "content": "sha256:c1f406754e7c98d6d2a1010f18a240b64ecf9e2fd1d13c8f8fdde50507696947",
             "locator": {
               "kind": "file"
             },
@@ -2016,8 +2234,8 @@
         },
         {
           "anchor": {
-            "blob": "6b6f4a6e893bce45268b0721139aff18238f0ee4",
-            "content": "sha256:9abc04d51ca09c38bcd5c12c22cd25ac32ab26fc82198bfbdffab6030ed736fc",
+            "blob": "bd48e580c968c34e672390cb42eb1b93db809799",
+            "content": "sha256:a81ab35d289657f389b32403b42b5612f777b149ff2b770f5ae7a331051221e4",
             "locator": {
               "kind": "file"
             },
@@ -2028,12 +2246,12 @@
       ]
     },
     "87": {
-      "note": "Current composition owners for the review page account.\n\nAnchor: `ReviewSurface`; `PageReading`; `ReadingColumn`",
+      "note": "Current composition owners for the review page account.",
       "targets": [
         {
           "anchor": {
-            "blob": "aab19c668bc860807d186ba6ea5c23e5f8ee034d",
-            "content": "sha256:dbd5b7fea46777a1a3ebb2947c79e2430f33265a9459166b5c94f27c34cb8923",
+            "blob": "6f30efcbe166c0fe854c1de9cde75a444ff9c5a5",
+            "content": "sha256:f5925b247bc0b3f32fd03a1d161cce6b638234ad4531a1d9d6053f9309a26368",
             "locator": {
               "kind": "file"
             },
@@ -2059,8 +2277,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9254d8683eaeafd7801cca7eff45250eeac1a3aa",
-            "content": "sha256:4f233324ecfd18c67eb6611ff77585b3ef57306be5a1b4cbbf4646e0cb00c6e6",
+            "blob": "8eb051387c16afe11160ad0c3dae3acd22e02e31",
+            "content": "sha256:2de77a3cfd3d2fbca92f7d9f6a44701a4dd48e918e3c4e0552d981f5a9bc6e5f",
             "locator": {
               "kind": "file"
             },
@@ -2093,12 +2311,12 @@
       ]
     },
     "89": {
-      "note": "Current details owners for the review page account.\n\nAnchor: `TechnicalDetails`; `PageDetails`; `ReviewRecordIdentities`",
+      "note": "Current details owners for the review page account.",
       "targets": [
         {
           "anchor": {
-            "blob": "7d93eb292cff4db200e775504be284256f58938e",
-            "content": "sha256:a87433a26cf3510092e00849078ba9b03ea8058542e4660d188f0e4313c7c9f1",
+            "blob": "3e14fb1fccef577763fb2c32feedf9053f59214f",
+            "content": "sha256:f8ac5f7415df00bda1947850c5bcb35dfb420f58774a430705b00e970b42176d",
             "locator": {
               "kind": "file"
             },
@@ -2108,8 +2326,8 @@
         },
         {
           "anchor": {
-            "blob": "aab19c668bc860807d186ba6ea5c23e5f8ee034d",
-            "content": "sha256:dbd5b7fea46777a1a3ebb2947c79e2430f33265a9459166b5c94f27c34cb8923",
+            "blob": "6f30efcbe166c0fe854c1de9cde75a444ff9c5a5",
+            "content": "sha256:f5925b247bc0b3f32fd03a1d161cce6b638234ad4531a1d9d6053f9309a26368",
             "locator": {
               "kind": "file"
             },
@@ -2131,7 +2349,7 @@
       ]
     },
     "90": {
-      "note": "Opt-in hidden preload starts the client without an agent URL; the descriptor answer uses current visibility. [90]\n\nAnchor: `if`; `const named = !preload &&`",
+      "note": "Opt-in hidden preload starts the client without an agent URL; the descriptor answer uses current visibility.\n\nAnchor: `if`; `const named = !preload &&`",
       "targets": [
         {
           "anchor": {
@@ -2267,5 +2485,5 @@
       ]
     }
   },
-  "schema": "ar-onboarding-route/v1"
+  "schema": "ar-onboarding-file/v1"
 }

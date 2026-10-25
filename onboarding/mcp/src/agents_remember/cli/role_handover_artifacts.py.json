@@ -111,15 +111,14 @@
   ],
   "references": {
     "1": {
-      "note": "Frozen implementation of write_handover_artifact supporting the stated file behavior.",
+      "note": "Frozen implementation of write_handover_artifact supporting the stated file behavior.\n\nAnchor: `write_handover_artifact`",
       "targets": [
         {
           "anchor": {
-            "blob": "85b470bea18f2548365b969746fd9e7ef5ea00cf",
-            "content": "sha256:8e25c8959d3e9788f2045e1b977523336d8613b098f6b2ad053c25a9a924858d",
+            "blob": "a25806bf819c4fcfb46827a42776588021e88e7a",
+            "content": "sha256:94ad19414a723cec114d8614cd62cb4725235023dd00f52100f22520efe37873",
             "locator": {
-              "kind": "symbol",
-              "name": "write_handover_artifact"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -127,15 +126,14 @@
       ]
     },
     "10": {
-      "note": "Descriptor-level regular-file and no-follow checks protect exact reuse.",
+      "note": "Exact reuse is protected by `cli/immutable_artifact`'s descriptor-level regular-file and no-follow checks, imported here as the write-once and preflight seams.\n\nAnchor: `_matches`",
       "targets": [
         {
           "anchor": {
-            "blob": "85b470bea18f2548365b969746fd9e7ef5ea00cf",
-            "content": "sha256:c6c3dc0e18bbb06a56594672d944cc570eedc938bca150bd10975d42eb65a3a2",
+            "blob": "a25806bf819c4fcfb46827a42776588021e88e7a",
+            "content": "sha256:94ad19414a723cec114d8614cd62cb4725235023dd00f52100f22520efe37873",
             "locator": {
-              "kind": "symbol",
-              "name": "_matches"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -160,15 +158,14 @@
       ]
     },
     "2": {
-      "note": "Frozen implementation of restore_handover_artifact supporting the stated file behavior.",
+      "note": "Frozen implementation of restore_handover_artifact supporting the stated file behavior.\n\nAnchor: `restore_handover_artifact`",
       "targets": [
         {
           "anchor": {
-            "blob": "85b470bea18f2548365b969746fd9e7ef5ea00cf",
-            "content": "sha256:d511c296efb2f506a713204e19ca5f85845323e27cc8b30ba8f41d6cd4296903",
+            "blob": "a25806bf819c4fcfb46827a42776588021e88e7a",
+            "content": "sha256:94ad19414a723cec114d8614cd62cb4725235023dd00f52100f22520efe37873",
             "locator": {
-              "kind": "symbol",
-              "name": "restore_handover_artifact"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -176,15 +173,14 @@
       ]
     },
     "3": {
-      "note": "Frozen implementation of _write_once supporting the stated file behavior.",
+      "note": "`write_once`, imported from `cli/immutable_artifact` as `_write_once`, is how this module's artifacts are created once and reused only when they already hold the same bytes.\n\nAnchor: `_write_once`",
       "targets": [
         {
           "anchor": {
-            "blob": "85b470bea18f2548365b969746fd9e7ef5ea00cf",
-            "content": "sha256:11201fa4812cd40bba10bc1e30029075c24e47cb6e611e89157cf5d07407560b",
+            "blob": "a25806bf819c4fcfb46827a42776588021e88e7a",
+            "content": "sha256:94ad19414a723cec114d8614cd62cb4725235023dd00f52100f22520efe37873",
             "locator": {
-              "kind": "symbol",
-              "name": "_write_once"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -228,16 +224,16 @@
       ]
     },
     "6": {
-      "note": "Through leaf/taskless routes checks restoration/refusal, exact advice and unchanged receipt/foreign link target.\n\nAnchor: `HandoverArtifactOnTheRouteTests.test_a_retry_over_a_changed_or_lost_artifact_says_and_does_what_gets_it_through`",
+      "note": "Through leaf/taskless routes checks restoration/refusal, exact advice and unchanged receipt/foreign link target.",
       "targets": [
         {
           "anchor": {
-            "blob": "1286fc84d39d0e81938bcda1ebb5c4b643e60e7d",
-            "content": "sha256:65ad1467aef8ea195a3ffcccddcd7da5bd76f7a14f4c6258b3614869b2a9a4f9",
+            "blob": "cfd95f0c56ed965a4f09d45ba05ac7b22d817eca",
+            "content": "sha256:4dc722dec514ba85baeea7792421fe2c1886339d093bdbad55cb3e1da156fdef",
             "locator": {
-              "end": 874,
+              "end": 875,
               "kind": "line_range",
-              "start": 836
+              "start": 837
             },
             "path": "mcp/tests/test_paseo_agent_tools.py"
           },
@@ -278,15 +274,14 @@
       ]
     },
     "9": {
-      "note": "Replay binds takeover bytes to the saved report and primary handover.",
+      "note": "Replay binds takeover bytes to the saved report and primary handover.\n\nAnchor: `restore_step_up_artifact`",
       "targets": [
         {
           "anchor": {
-            "blob": "85b470bea18f2548365b969746fd9e7ef5ea00cf",
-            "content": "sha256:5098b3b1fe731a9a1fc025f2a9466f2e6aa51def5dac261ff3fd4d313f2a4ea0",
+            "blob": "a25806bf819c4fcfb46827a42776588021e88e7a",
+            "content": "sha256:94ad19414a723cec114d8614cd62cb4725235023dd00f52100f22520efe37873",
             "locator": {
-              "kind": "symbol",
-              "name": "restore_step_up_artifact"
+              "kind": "file"
             }
           },
           "kind": "code"

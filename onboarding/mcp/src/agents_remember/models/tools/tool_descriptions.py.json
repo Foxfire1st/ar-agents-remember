@@ -38,12 +38,12 @@
       ]
     },
     "3": {
-      "note": "Current candidate source supports the operative account; historical sections grant no current tool or execution acceptance.",
+      "note": "Historical incoming L109 declaration account: Current candidate source supports the operative account; historical sections grant no current tool or execution acceptance.",
       "targets": [
         {
           "anchor": {
-            "blob": "00ab47b327996a59f586552b30e94ba026265adf",
-            "content": "sha256:110711239d772df29e09e93a1005eacd5c910d0b0ab03bf88d0361788c32b554",
+            "blob": "9875988923bdb6a043d745ece4855ace2a45f9ec",
+            "content": "sha256:02ff06687d66f14521a7dbb5daebd501729b4bd20593f10e8e1e2501dbf0b7ae",
             "locator": {
               "kind": "file"
             }
@@ -53,15 +53,14 @@
       ]
     },
     "4": {
-      "note": "Current interim ownership declaration contains retained reader/memory/task tools, not a dispatch_agent length exception.",
+      "note": "Historical A7 interim ownership declaration contains retained reader/memory/task tools, not a dispatch_agent length exception.\n\nAnchor: `INTERIM_DESCRIPTION_OWNERS`",
       "targets": [
         {
           "anchor": {
-            "blob": "254df877af9f10be16bfdb52f43794668edd6691",
-            "content": "sha256:ad3cdeb9ebc0491edb24b1abbb4931440ca828bc4ee460c5c39deb908f375a1e",
+            "blob": "9875988923bdb6a043d745ece4855ace2a45f9ec",
+            "content": "sha256:02ff06687d66f14521a7dbb5daebd501729b4bd20593f10e8e1e2501dbf0b7ae",
             "locator": {
-              "kind": "symbol",
-              "name": "INTERIM_DESCRIPTION_OWNERS"
+              "kind": "file"
             }
           },
           "kind": "code"

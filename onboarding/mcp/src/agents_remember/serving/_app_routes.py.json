@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/serving/_app_routes.py",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
@@ -112,15 +113,14 @@
   ],
   "references": {
     "1": {
-      "note": "The state response uses projector revision weak ETags, refuses an absent snapshot, returns bodyless 304 on a match, otherwise copies the memoized projection and adds the served-state tail.",
+      "note": "The state response uses projector revision weak ETags, refuses an absent snapshot, returns bodyless 304 on a match, otherwise copies the memoized projection and adds the served-state tail.\n\nAnchor: `_state_response`",
       "targets": [
         {
           "anchor": {
-            "blob": "a0509af9d207b37ed234ce926f06d5bb4f1e7755",
-            "content": "sha256:fc8981be863b67f3c879c77c9d99d0f4b04cbdcf06e0e3128e612b4b122185b4",
+            "blob": "00dbff88a35b8e2bcb41c27d8fd4dbb239decc67",
+            "content": "sha256:8f89c82c843251008faf48e5e755d90a8e824c4c99d29caed57c71eb612d9aa3",
             "locator": {
-              "kind": "symbol",
-              "name": "_state_response"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -128,16 +128,16 @@
       ]
     },
     "2": {
-      "note": "The state SSE route passes ordinary snapshot/delta events through the optional review-memory multiplexer under aclosing; the distinct raw-event route still forwards observer records and its own ready marker.\n\nAnchor: inclusive source ranges",
+      "note": "The state SSE route passes ordinary snapshot/delta events through the optional review-memory multiplexer under aclosing; the distinct raw-event route still forwards observer records and its own ready marker.",
       "targets": [
         {
           "anchor": {
-            "blob": "a0509af9d207b37ed234ce926f06d5bb4f1e7755",
-            "content": "sha256:aadd342e2f3f79e9982698d25fb884bfca6519e662b4e3ecca58af70f7297bb5",
+            "blob": "00dbff88a35b8e2bcb41c27d8fd4dbb239decc67",
+            "content": "sha256:63f413dcd93928ce66ba1b3ae312e3b86dbfd14febe9e72ede0c34466b8d4baf",
             "locator": {
-              "end": 174,
+              "end": 274,
               "kind": "line_range",
-              "start": 135
+              "start": 235
             }
           },
           "kind": "code"
@@ -170,16 +170,16 @@
       ]
     },
     "3": {
-      "note": "All omitted review selectors opt out; any supplied selector forms a normalized three-string identity for the resolver. The multiplexer—not normalization—checks segments/root admission, emits review.memory.error on admitted failure paths and keeps ordinary events flowing.\n\nAnchor: inclusive source ranges",
+      "note": "All omitted review selectors opt out; any supplied selector forms a normalized three-string identity for the resolver. The multiplexer—not normalization—checks segments/root admission, emits review.memory.error on admitted failure paths and keeps ordinary events flowing.",
       "targets": [
         {
           "anchor": {
-            "blob": "a0509af9d207b37ed234ce926f06d5bb4f1e7755",
-            "content": "sha256:afe6bb71f23799aae2bf916c71f57ff971b2fd4fca1a69d7520a4e6b3c33f809",
+            "blob": "00dbff88a35b8e2bcb41c27d8fd4dbb239decc67",
+            "content": "sha256:b64bb4012eeadd576aa78fc64d01b827dfae256c3bd78e0cd8cc5a226bdb9239",
             "locator": {
-              "end": 174,
+              "end": 274,
               "kind": "line_range",
-              "start": 146
+              "start": 246
             }
           },
           "kind": "code"

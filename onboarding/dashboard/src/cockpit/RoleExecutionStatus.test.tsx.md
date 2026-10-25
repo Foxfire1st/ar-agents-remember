@@ -20,11 +20,18 @@ These fixtures prove UI behavior rather than native actor resume or task accepta
 
 The current source and test assertions below establish the documented ownership; test citations do not claim a rerun in this pass.
 
+
 - Current source owner or exact assertion described above. [2]
+
+
 - Current source owner or exact assertion described above. [3]
+
+
 - Current source owner or exact assertion described above. [4]
 
 
+
 ### Clock And Settlement Evidence
+
 
 - The held Result case enables fake time before mount, flushes each initial/result reply and advances the 1,500 ms reread in async `act`. It preserves the exact read count, absent report request and cleared failure/Start assertions after the reread opportunity; teardown restores real timers. [1]

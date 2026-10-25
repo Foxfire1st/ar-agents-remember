@@ -1,5 +1,6 @@
 {
   "path": "dashboard/src/panels/detail-panel/DetailPanel.tsx",
+  "proves": [],
   "realizes": [],
   "references": {
     "15": {
@@ -7,8 +8,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5e434ed6c33ca44970d70d4e8993c2b2503f6a01",
-            "content": "sha256:b43400968169e015481971573da83fe96ab81365f9632679748447252c70b999",
+            "blob": "d2888af16213c962443c354697eb0c58e39858e2",
+            "content": "sha256:bb82e1249772ef0845067bca1adf6419eda4ba270fefc7bd9a3beb3d91f7e3ba",
             "locator": {
               "end": 35,
               "kind": "line_range",
@@ -21,36 +22,18 @@
       ]
     },
     "16": {
-      "note": "The shared qualified key is repo/master/leaf-id and requires all three parts.\n\nAnchor: \"export function qualifiedLeafKey(\"",
+      "note": "The shared qualified leaf key uses reference.repository, the reference path's master folder and the durable entry.id; it returns undefined when the reference, master folder or ID is absent.",
       "targets": [
         {
           "anchor": {
-            "blob": "710a1d75cc385faadcf7afac002db588615367d6",
-            "content": "sha256:70418e203a9f57b52f54550a3ff365787aed2a0d79ec3c3e9f6dd5f8bac5acbb",
+            "blob": "da9a50c94331d5aa3aa473423509ecc387aa825a",
+            "content": "sha256:f579e2b56fd9f694db9efa4bda89739264b099e3d4ac8548b2e376b65f17d8a9",
             "locator": {
-              "end": 58,
+              "end": 16,
               "kind": "line_range",
-              "start": 52
+              "start": 11
             },
             "path": "dashboard/src/data/taskIdentity.ts"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "28": {
-      "note": "Task progress forwards the projected done and total counts.\n\nAnchor: \"export const taskStepProgress =\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "c4e00cbb4f6be81d5574f9cc52c2222df8d6ec2a",
-            "content": "sha256:4d79d537a9b34271fb683f713a1792480d2c04674283b0477b82cbcebbd4b6a7",
-            "locator": {
-              "end": 199,
-              "kind": "line_range",
-              "start": 196
-            },
-            "path": "dashboard/src/panels/detail-panel/model.ts"
           },
           "kind": "code"
         }
@@ -61,8 +44,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6efdc61b786238f579fd3ace8a14f62f02924c3f",
-            "content": "sha256:ad913a7b3fab83e42b74f3339ab8a3eddad1277e3966e6244b87a7b43bb86ef4",
+            "blob": "771c4aa9ca9066f422f5ee6445d94ade8dcbe3f8",
+            "content": "sha256:b2ea6b65deb2081695921a0e3bc1fd4504e8b1176022792b7dff98696032ac99",
             "locator": {
               "kind": "file"
             },
@@ -73,15 +56,14 @@
       ]
     },
     "31": {
-      "note": "Task step progress/count is placed in the Steps table block, not a duplicate ProgressFill page header.",
+      "note": "Task step progress/count is placed in the Steps table block, not a duplicate ProgressFill page header.\n\nAnchor: `StepsBlock`",
       "targets": [
         {
           "anchor": {
-            "blob": "035a8819910ff79d930445ffcf00c6c478a0bfea",
-            "content": "sha256:26d3dff86249e34f6b6edebcca896f1362d60989feff255fcccdff8376fffe3f",
+            "blob": "cfa90f06e4586e011e00707422154dfc77cce5a0",
+            "content": "sha256:adc44e360658873af21f7327e0dd12bfddfe1d21078e62e2b9f117e0ec706b6b",
             "locator": {
-              "kind": "symbol",
-              "name": "StepsBlock"
+              "kind": "file"
             },
             "path": "dashboard/src/panels/detail-panel/taskBlocks.tsx"
           },
@@ -108,15 +90,16 @@
       ]
     },
     "33": {
-      "note": "Full-index one-based positions stay stable across groups without generating visible task numbers.",
+      "note": "Index rows are positioned by their one-based place in the parent's child list, and the row uses that position only as its test identity.  Historical card provenance: the previous caption was `fullOrderPositions`. Source caption: `IndexRows` `TaskIndexRow`",
       "targets": [
         {
           "anchor": {
-            "blob": "1f9dad72cdf0c77c398edacdc6921195efd2025f",
-            "content": "sha256:17d85c3f420aa2919e40576d82e8768c1858b8a155212f70b009662821f11ee1",
+            "blob": "1554453f4bf62ac7a5c7a56e91240e1015a0ef44",
+            "content": "sha256:44eb80d9665239c003af3353cb1ff4c140bd28a2f21d2fa155b48998c7035606",
             "locator": {
-              "kind": "symbol",
-              "name": "fullOrderPositions"
+              "end": 500,
+              "kind": "line_range",
+              "start": 1
             },
             "path": "dashboard/src/panels/detail-panel/task-groups.tsx"
           },
@@ -125,27 +108,16 @@
       ]
     },
     "35": {
-      "note": "Each index row uses its full-index position for test identity and the resolved qualified target for navigation.\n\nAnchor: `IndexLink`, `resolveRowTarget`",
+      "note": "Each index row resolves its test identity from the row position and navigates by the served entry's task key.  Historical card provenance: the previous caption was `IndexLink` `resolveRowTarget`. Source caption: `TaskIndexRow` `RowLink` `IndexRows`",
       "targets": [
         {
           "anchor": {
-            "blob": "1f9dad72cdf0c77c398edacdc6921195efd2025f",
-            "content": "sha256:2fc69c7b65d238e867e29413438a1222b54f228cc425e2146602a09631ae41b6",
+            "blob": "1554453f4bf62ac7a5c7a56e91240e1015a0ef44",
+            "content": "sha256:44eb80d9665239c003af3353cb1ff4c140bd28a2f21d2fa155b48998c7035606",
             "locator": {
-              "kind": "symbol",
-              "name": "IndexLink"
-            },
-            "path": "dashboard/src/panels/detail-panel/task-groups.tsx"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "1f9dad72cdf0c77c398edacdc6921195efd2025f",
-            "content": "sha256:aba38f42661a875610cbed5400f820a24b1ddfe100be1eae71e4172339a646d1",
-            "locator": {
-              "kind": "symbol",
-              "name": "resolveRowTarget"
+              "end": 500,
+              "kind": "line_range",
+              "start": 1
             },
             "path": "dashboard/src/panels/detail-panel/task-groups.tsx"
           },
@@ -154,15 +126,14 @@
       ]
     },
     "37": {
-      "note": "The fixed page uses StepsBlock for its table/count; standalone ProgressFill remains a separate grammar primitive, not mounted as a duplicate task-page header.\n\nAnchor: `StepsBlock`, `ProgressFill`",
+      "note": "The fixed page uses StepsBlock for its table/count; standalone ProgressFill remains a separate grammar primitive, not mounted as a duplicate task-page header.\n\nAnchor: `StepsBlock` `ProgressFill`",
       "targets": [
         {
           "anchor": {
-            "blob": "035a8819910ff79d930445ffcf00c6c478a0bfea",
-            "content": "sha256:26d3dff86249e34f6b6edebcca896f1362d60989feff255fcccdff8376fffe3f",
+            "blob": "cfa90f06e4586e011e00707422154dfc77cce5a0",
+            "content": "sha256:adc44e360658873af21f7327e0dd12bfddfe1d21078e62e2b9f117e0ec706b6b",
             "locator": {
-              "kind": "symbol",
-              "name": "StepsBlock"
+              "kind": "file"
             },
             "path": "dashboard/src/panels/detail-panel/taskBlocks.tsx"
           },
@@ -171,10 +142,9 @@
         {
           "anchor": {
             "blob": "ad05c38ca3832a638191efb24ae51a8736d76deb",
-            "content": "sha256:422ebdab208e4913ead2eccbfc4d2b7ce8891880a61ae3c54fe041da9f52ce01",
+            "content": "sha256:27b1ce7c5112d328546cf0e714d8e3e93eca7c6943912e2aaacbbee11009dc50",
             "locator": {
-              "kind": "symbol",
-              "name": "ProgressFill"
+              "kind": "file"
             },
             "path": "dashboard/src/grammar/ProgressFill.tsx"
           },
@@ -183,15 +153,14 @@
       ]
     },
     "44": {
-      "note": "Shared block text remains Markdown and the relocated decision preview retains newest-authored semantics.",
+      "note": "Shared block text remains Markdown and the relocated decision preview retains newest-authored semantics.\n\nAnchor: `DecisionPreview`",
       "targets": [
         {
           "anchor": {
-            "blob": "2cfe44885acf4c60972ed065009b87a482d3b20f",
-            "content": "sha256:9e5060df5ed7f24433425132325bf4cdf358d354da4db8e768c9c329966d26cd",
+            "blob": "8bdfed60355162c97f6db2e53d9d0ab3543220a5",
+            "content": "sha256:35c516f68ed6755678538f560d1e4951a7508066e5a69e2b821413cf9ce85e16",
             "locator": {
-              "kind": "symbol",
-              "name": "DecisionPreview"
+              "kind": "file"
             },
             "path": "dashboard/src/panels/detail-panel/skeletons.tsx"
           },

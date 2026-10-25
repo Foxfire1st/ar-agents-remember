@@ -55,15 +55,14 @@
       ]
     },
     "10": {
-      "note": "The closeout validator refuses until the gate passes and never runs ungated.",
+      "note": "The closeout validator refuses until the gate passes and never runs ungated.\n\nAnchor: `test_the_closeout_validator_refuses_until_the_gate_passes_and_never_runs_ungated`",
       "targets": [
         {
           "anchor": {
-            "blob": "b9719b5efabdc26fc1a71bcb0c782a05fc77d182",
-            "content": "sha256:cfe113e57b1695454646631dfbbc5289a1dcaa436245cdbcfc5f611a0d1362ca",
+            "blob": "754f5981f53a328207787e95a418cba548656f97",
+            "content": "sha256:0283002eb1b377ea448ed0788be1eaac3a8a21dbdd2a605f78630d24ae2b6971",
             "locator": {
-              "kind": "symbol",
-              "name": "test_the_closeout_validator_refuses_until_the_gate_passes_and_never_runs_ungated"
+              "kind": "file"
             },
             "path": "mcp/tests/test_knowledge_closeout_gate.py"
           },
@@ -263,15 +262,14 @@
       ]
     },
     "9": {
-      "note": "The closeout validator's gate over the exact candidate, refusing with every finding (MIK-R09).\n\nAnchor: \"curator-coherence-knowledge-gate-refused\"",
+      "note": "The closeout validator's gate over the exact candidate, refusing with every finding (MIK-R09).\n\nAnchor: `_require_knowledge_gate`",
       "targets": [
         {
           "anchor": {
-            "blob": "10081759c2352c391ba3ab5713f24de7f02d16c6",
-            "content": "sha256:6772ad476d6034ab968dd523ccb86bc0f93ee4372cdfa9b4e5cc52e06e2f85b3",
+            "blob": "a61bb8710773ccee56c8016d87b57de1d750388c",
+            "content": "sha256:3ea7b2f02a294a5fea2dc010c849cac60fe37d3309a27bfc7b9cbda1dddef791",
             "locator": {
-              "kind": "symbol",
-              "name": "_require_knowledge_gate"
+              "kind": "file"
             }
           },
           "kind": "code"

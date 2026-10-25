@@ -41,8 +41,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a51dc44c033b40965f0541aa9d90c2c8b96736f4",
-            "content": "sha256:809f9a7bfd0c1225671d90ccddbd5a93ef87b81ffb6e8f61f1ef447227423427",
+            "blob": "b660b126885ae705cd1c9da3ed54888d2a767d2f",
+            "content": "sha256:a89ba86e6ce3f4fc1fdef5d30245f3c36b56a17c6d3f753332462de2b90b5c37",
             "locator": {
               "kind": "symbol",
               "name": "Presenter"
@@ -75,8 +75,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "974e15cbec1e41734012d6ce3a11b9edb0dca65f",
-            "content": "sha256:37742ed31535a5edc81a7b683180caec795cdc2f532f9f2e6de1ebebafbbebe9",
+            "blob": "923c43f47e920930d325fc082182d3c934a16de0",
+            "content": "sha256:de3a88264aaed8d46e8c01191923f4836e40e77394e485e7e38271f786b90190",
             "locator": {
               "kind": "symbol",
               "name": "check_page"
@@ -92,8 +92,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "84fc5213f67cdf09816ba50e14d09728d1f3bf31",
-            "content": "sha256:d13ad7c0afad7655dc1def72056f04e4eae6db7764fa56b73540f597d48092f9",
+            "blob": "5ca2ca69a99e69ac35709a756f52967e156695f9",
+            "content": "sha256:9f84c0afc5857072563b76a82a109406b8aea689fa6608c334a0c3e5d3bbf643",
             "locator": {
               "kind": "symbol",
               "name": "BrowserProspectiveLoad"
@@ -177,8 +177,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "07aabb56414a17aa6b0ab2a858526689f888f09c",
-            "content": "sha256:30f8f272fdf0ce27858a05d0be46054059a214892560dfc1c930b1c017bcff7b",
+            "blob": "0e8924061ad376de479020d84377b3ccc75d78ca",
+            "content": "sha256:85b2dbd643babe2e5185e0bc149d0a8821003ba348957b8e1012661287b32cb6",
             "locator": {
               "kind": "symbol",
               "name": "register_canvas_routes"
@@ -372,8 +372,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9176cadb4b92d322e3e9356fea92ef7bb5e5ede3",
-            "content": "sha256:4c374e200eb5282a37fa8e04dfe24775b210b27c1401fd53162060e5c8addded",
+            "blob": "e3f614c4ac0fc8d46256b5ee81754cc35115f8bd",
+            "content": "sha256:a79488ab4244bfe4a1a65c712a6422d069a8812e011daafe4162ec35886243e4",
             "locator": {
               "kind": "symbol",
               "name": "bound_document"
@@ -406,8 +406,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4e843505300eca82d83e98f7f01d37d43c7af271",
-            "content": "sha256:0ce612b1982ae978bcfe81011a96916ddcbf5b72f61e123afebc87998c51357b",
+            "blob": "7dce59b9b16e5cc0a57665565dc026afedcd294d",
+            "content": "sha256:8b0e2f4f9efa469fae3d6cb78edfabed12987f113ab7c36bd0c85426157d380b",
             "locator": {
               "kind": "symbol",
               "name": "RequestLedger"

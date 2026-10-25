@@ -21,7 +21,6 @@ The admission registry pin includes refusing `R27.4-record-kept`; named sync/con
   that already holds the actual finding; these are not no-base passes.
 - **Rule 1:** a bad field, a non-canonical file (naming the formatter), a file outside the layout, and a misplaced sidecar.
 - **Rule 2:** the filename prefix, duplicate IDs after a merge (`merge conflict:` naming both files), the packet's conforming parallel-mint example, and duplicate entry IDs across sidecars.
-- **Rule 3:** the packet's non-conforming hand-added `[4]`, an unused reference, Markdown without a sidecar, a file sidecar without Markdown (actual base-carried migration debt reports while incomplete; it holds no references), record links, a retired record, an unresolved target (actual base-carried migration debt reports while incomplete), a disallowed relation by field, and a dot-named card with its sidecar.
 - **Rules 4 and 5:** an invariant that lists its realizations; a missing family member.
 - **Rule 6, relocated definitions:** the six anchor-path cases now live in `test_validator_link_targets.py`, not this module. That owner checks an added anchor at a missing path, a carried anchor at a deleted path (refused off merge under `R22.6-carried-stale`; with an empty code tree the family's carried routes also refuse under `R04.1-carried-route-absent`; the boundary sync merge reports), the packet's boundary merge example, re-anchored and moved entries, locator and content rules, and an unconverted base with the standalone conversion.
 - **Rule 7:** a closed history file is frozen (edited, deleted, closed in one merge parent); an open one may change; history is shape-only (the packet's rename boundary example).
@@ -86,12 +85,20 @@ No configured live documentation source was available for this pass.
 Representative cases; the full list is in the module.
 
 - Merge duplicates are conflicts naming both files; parallel mints merge cleanly. [2]
+
 - The hand-added marker is refused. [3]
+
+
 - A dot-named card and its sidecar are validated. [4]
+
 - The retired record the history fixtures keep in every tree (records are never deleted, MIK-R22 rule 3; L09 R2-1). [6]
 - A closed history file is frozen. [7]
+
 - MIK-R27: reference-only justifications are refused, real prose is admitted. [8]
+
+
 - MIK-R27: a forged legacy ID does not make a record exported. [11]
+
 
 ### Cross-Repo References
 
@@ -99,13 +106,27 @@ No meaningful cross-repo references found: the cases run over in-memory trees.
 
 No cross-repo boundary is crossed by this file.
 
+
 - A based fixture passes with carried incomplete legacy debt; merge_reports/migration_debt sets and absence of plain report-only rules are pinned. [1]
+
+
 - MIK-R27: test_an_existing_record_whose_test_was_deleted_refuses_off_merge distinguishes leaf refusal from sync reporting. [9]
+
+
 - MIK-R27: test_exported_retired_and_merged_records_refuse_off_merge retains retired exemption and sync reporting, not an export waiver. [10]
+
+
 - MIK-R27: actual base-held legacy debt, new-finding counterexamples and merge_reports/migration_debt/writer flags. [12]
+
+
 - test_a_later_packets_rule_runs_everywhere_and_plain_report_only_is_refused rejects plain report-only registration and exercises a later refusing rule. [13]
+
+
 - Five negative/combined R80 assertions use genuine comparison bases and explicit leaf publication, retaining exact offending-heading/rule checks and the shared default. [14]
+
+
 - Current source delta inspected statically: Repair baseline/admission/reporting and registry/R80 witnesses; preserve genuine new-admission bases, finding-based debt and retirement. [15]
-- The root-named positive control actually edits the nested worktrees overview via _route_overview/ROUTE_CARD and asserts no R80 findings there; it is not a repository-root control. \[16] [16]
+
+- The root-named positive control actually edits the nested worktrees overview via _route_overview/ROUTE_CARD and asserts no R80 findings there; it is not a repository-root control. [16]
 
 - The boundary merge keeps the same three-stale-report assertion in its relocated definition. [5]

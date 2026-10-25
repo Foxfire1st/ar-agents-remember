@@ -10,7 +10,9 @@ The scrub removes AR/Paseo/source/former-host prefixes and exact Python/Git/call
 
 ## Evidence
 
+
 - The scoped current source carries the module/document behavior described above. [1]
+
 
 ## 260928-MIK-L96 The product session list and sandbox XDG roots
 

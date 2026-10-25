@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/application/knowledge_worklist/base_cache.py",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
@@ -71,26 +72,14 @@
       ]
     },
     "12": {
-      "note": "Atomic writes and eviction.",
+      "note": "Atomic writes and eviction.\n\nAnchor: `store` `_evict`",
       "targets": [
         {
           "anchor": {
             "blob": "ae57afe1c74336cfdb85cc88d70b5350558272fa",
-            "content": "sha256:d2406b1caa514d069518dad8fb59ecb4705a890147d9734b1aced4e3850b030e",
+            "content": "sha256:a68ec8a94397a2c1258d20f73a41c1d75ecdd1add50c68a5b70a3250e57c6fee",
             "locator": {
-              "kind": "symbol",
-              "name": "store"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "239c1a6746ae2341c455c16e8a305b94b10d7cba",
-            "content": "sha256:84461939e5ac38c95ca22cff6f82b87d02815d5d6768d01273b83255467c983f",
-            "locator": {
-              "kind": "symbol",
-              "name": "_evict"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -210,15 +199,14 @@
       ]
     },
     "5": {
-      "note": "The gate reads its converted K_B through it.\n\nAnchor: `converted_base_files`",
+      "note": "The gate reads its converted K_B through it.\n\nAnchor: `onboarding_trace_sides`",
       "targets": [
         {
           "anchor": {
-            "blob": "82fcb9bf0a1dc76ab7b353137aec29f6e401ef29",
-            "content": "sha256:f2cafb6c0039ad2f87571f81a79a4dde7059d784c680947c99a17740ab0cae69",
+            "blob": "255aedff14033a59a3efacf0f35afacec2578d89",
+            "content": "sha256:7a4151aef2bc152e140033c8836aa7b4d889ddd8c9f5f5eb9b4f554c9c31b011",
             "locator": {
-              "kind": "symbol",
-              "name": "onboarding_trace_sides"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/knowledge_worklist/onboarding_trace.py"
           },
@@ -227,15 +215,14 @@
       ]
     },
     "6": {
-      "note": "The cache holds the Markdown, and a v1 file is ignored and rewritten.",
+      "note": "The cache holds the Markdown, and a v1 file is ignored and rewritten.\n\nAnchor: `test_the_conversion_itself_counts_for_nothing_at_the_converting_leaf`",
       "targets": [
         {
           "anchor": {
-            "blob": "467daeec96b849b586a8065cb3b35d3958a59b89",
-            "content": "sha256:14f47d6fa0fb748e5c188d64817f0ad33a30eba23455e719b04b98f5d73a6ad3",
+            "blob": "7af13aa07c1543371cdd9dbf1bb97c2299b1447d",
+            "content": "sha256:006050f548e527e4b63776577bda4bc91d61ddb3c0fe28708754169dcb8a4a71",
             "locator": {
-              "kind": "symbol",
-              "name": "test_the_conversion_itself_counts_for_nothing_at_the_converting_leaf"
+              "kind": "file"
             },
             "path": "mcp/tests/test_onboarding_trace_gate.py"
           },

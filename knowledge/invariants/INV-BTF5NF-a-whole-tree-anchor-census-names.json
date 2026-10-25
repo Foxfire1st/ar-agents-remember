@@ -1,0 +1,37 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "The walk, the input resolver and the artifact writer are separate owners of one count, and seven named assertion units prove the promise, the incompleteness and the population."
+  },
+  "applicability": "Any whole-tree anchor census of a converted memory tree, run for a stage boundary.",
+  "conditions": [
+    "The census states the pair it measured and its population before its classes.",
+    "A promised mechanical repair is the fixer's own rule, not the census's opinion.",
+    "Incomplete input is reported as incomplete input."
+  ],
+  "exclusions": [
+    "The census decides no requirement disposition; it classifies anchors and counts repairs.",
+    "It writes no card and no record."
+  ],
+  "id": "INV-BTF5NF",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_reference_note_revision.py (leaf candidate, read by this seat; no run)",
+        "Current code e04d5476; worklist item(s) sha256:82a19c94803d1224d8bb1c1bebe2ab427ade55b505f17e14180a7ab5475720a5. This ceiling bounds the per-target rows returned by citation_census_tool; it is a presentation limit, while that caller still writes and names the complete census artifact. The numeric bound does not narrow the invariant's measured population."
+      ],
+      "path": "l191-main"
+    },
+    "handoffEntry": "MIK-R198@v2 §2 anchor-census",
+    "leaf": "260928-MIK-L191",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A whole-tree anchor census names its population, classifies every code and test reference anchor at one stated pair, promises a mechanical repair only where the shipped fixer performs one, and reports every unreadable or rejected sidecar as incomplete input rather than as a clean result.",
+  "status": "proposed",
+  "supersedes": []
+}

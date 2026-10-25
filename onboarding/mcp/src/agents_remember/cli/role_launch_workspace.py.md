@@ -27,13 +27,13 @@ In the enclosed-leaf branch, the real leaf-workspace owner creates the group's `
 
 ## Evidence
 
-- The recorded master contract supplies the parent hint unless it names the master itself, where the commanding sprint supplies it; an absent contract falls back to the sprint to bootstrap. [1]
+- The recorded master contract supplies the parent hint unless it names the master itself, where the commanding sprint supplies it; an absent contract falls back to the sprint to bootstrap.  Anchor: `_recorded_parent` [1]
 - A refusal keeps the native status and reason and names an owner-derived next action. [2]
 - The canonical enclosure path is derived from the leaf document and conflicting bindings are refused. [3]
 
 - The common resolver creates or finds the enclosure and returns its validated roots and preparation outcome. [4]
 
-- Terminal generations refuse before any root use or materialization, and a missing or reopened enclosure is created through the child — a reopened one under the worktree name its contract already owns. [5]
+- Terminal generations refuse before any root use or materialization, and a missing or reopened enclosure is created through the child — a reopened one under the worktree name its contract already owns.  Anchor: `_ensure_leaf_enclosure` [5]
 
 - Both role-start entry points use the existing checked preparation child for this operation, retaining its root, writer-admission and cut-off checks; public worktree_start retains its caller semantics. [6]
 

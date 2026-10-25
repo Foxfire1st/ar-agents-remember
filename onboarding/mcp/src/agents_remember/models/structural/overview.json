@@ -2,15 +2,14 @@
   "path": "mcp/src/agents_remember/models/structural",
   "references": {
     "2": {
-      "note": "The record carries the fingerprint, canonical path, selected master, record state, positive revision and selection time.",
+      "note": "The record carries the fingerprint, canonical path, selected master, record state, positive revision and selection time.\n\nAnchor: `AtomicSeriesActivationRecord`",
       "targets": [
         {
           "anchor": {
-            "blob": "4d8d2b8672e40bb74d872381d4750f94605ca226",
-            "content": "sha256:39bfe87ee76b966b89c56559a309084c50575c93658ea6df389137d13b9c3556",
+            "blob": "001fa8a374f859c5ea85997053f826c5a3f06f23",
+            "content": "sha256:370e42bfb4c36180e5f33c5b29f18bbb17ae3b49c6b2ba83a09cb828ceaeeef2",
             "locator": {
-              "kind": "symbol",
-              "name": "AtomicSeriesActivationRecord"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/models/structural/atomic_series_activation.py"
           },

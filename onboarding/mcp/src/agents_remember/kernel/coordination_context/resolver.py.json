@@ -19,15 +19,14 @@
       ]
     },
     "11": {
-      "note": "The context is filled from roots, settings and the optional contract.",
+      "note": "The context is filled from roots, settings and the optional contract.\n\nAnchor: `build_coordination_context`",
       "targets": [
         {
           "anchor": {
-            "blob": "3898819544cfb496d93c82138ac0c14cbf890049",
-            "content": "sha256:bb7b9186ab81a004eb8bcb47dae78f103a00e5c1bd53febee7739f01465ad6f4",
+            "blob": "18ebd60503c22a2cb5045ed6a52a134d2a16549c",
+            "content": "sha256:ab165177414de65c8e5269b54f628ddc28fd94bd7bdb2a73507fdcc7e4bd9359",
             "locator": {
-              "kind": "symbol",
-              "name": "build_coordination_context"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -69,15 +68,14 @@
       ]
     },
     "14": {
-      "note": "The fallback context reads the contract and records the bytes consumed.",
+      "note": "The fallback context reads the contract and records the bytes consumed.\n\nAnchor: `_fallback_reads`",
       "targets": [
         {
           "anchor": {
-            "blob": "947c83735c58429e61de59ea7777ebe2d820eb43",
-            "content": "sha256:c48cbe7e5aee25ee87ff2d812887b9cdfbbbaf7e9204f155abd4e60f4c45f1e1",
+            "blob": "9719c9159d392a3e5377a242638474a1a15b1f37",
+            "content": "sha256:c081cf381bb3f13633d7bf5418bc9534212e3a89628153ff30047098d9b0be43",
             "locator": {
-              "kind": "symbol",
-              "name": "_fallback_reads"
+              "kind": "file"
             },
             "path": "mcp/tests/test_reviewer_worklist_reads.py"
           },
@@ -86,15 +84,14 @@
       ]
     },
     "15": {
-      "note": "The onboarding gate's settings resolution records the absent memory settings and the contract it read, and no file it did not open.",
+      "note": "The onboarding gate's settings resolution records the absent memory settings and the contract it read, and no file it did not open.\n\nAnchor: `test_every_file_read_is_in_the_read_set_and_a_conflicting_read_is_never_kept`",
       "targets": [
         {
           "anchor": {
-            "blob": "eb09cafb934fb0c88cea5c10dc2ceaeb9342f5fe",
-            "content": "sha256:3ef91152cfd63b59ac7c8cc0f8fcc5975e9cc8121e1e82d3fce9471a024c66c9",
+            "blob": "cd9c5537287afcf467e163d880cd215185351a3f",
+            "content": "sha256:e6e886652be10fbe00a654d24ab251858ba9d00e64b0aa84004afa1ddddc11e3",
             "locator": {
-              "kind": "symbol",
-              "name": "test_every_file_read_is_in_the_read_set_and_a_conflicting_read_is_never_kept"
+              "kind": "file"
             },
             "path": "mcp/tests/test_knowledge_gate_routes.py"
           },
@@ -183,15 +180,14 @@
       ]
     },
     "9": {
-      "note": "The selection path of the context.",
+      "note": "The selection path of the context.\n\nAnchor: `_context_from_selection`",
       "targets": [
         {
           "anchor": {
-            "blob": "3898819544cfb496d93c82138ac0c14cbf890049",
-            "content": "sha256:968118d1c4be9dc1c159f9d3dfe6fb8c9d5bcb07b671936bad8bd12c29969ca5",
+            "blob": "18ebd60503c22a2cb5045ed6a52a134d2a16549c",
+            "content": "sha256:ab165177414de65c8e5269b54f628ddc28fd94bd7bdb2a73507fdcc7e4bd9359",
             "locator": {
-              "kind": "symbol",
-              "name": "_context_from_selection"
+              "kind": "file"
             }
           },
           "kind": "code"

@@ -421,15 +421,14 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The river test class pins each feed behavior end to end.",
+      "note": "The river test class pins each feed behavior end to end.\n\nAnchor: `ToolEventRiverTests`",
       "targets": [
         {
           "anchor": {
-            "blob": "8e4d1a648c715b67f34830af9cd622d8471f01ed",
-            "content": "sha256:b03a9464ffac61aa8cb92a23a60152b9d5954254e6660c749dde36ed082bb639",
+            "blob": "8c2b9f24d1ab504624a29f41aba6a73668f15b81",
+            "content": "sha256:f17b5cb1bb06ef892201b2d90aaf2d2b35db896426c214e5b877ffb2a6347bff",
             "locator": {
-              "kind": "symbol",
-              "name": "ToolEventRiverTests"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -437,15 +436,14 @@
       ]
     },
     "2": {
-      "note": "Bound first call writes one event with caller and facts.",
+      "note": "Bound first call writes one event with caller and facts.\n\nAnchor: `test_bound_first_call_writes_one_workspace_event_with_caller_and_facts`",
       "targets": [
         {
           "anchor": {
-            "blob": "a54a32a6e0b8da7cff5dc4e949b2bd1e98b428ad",
-            "content": "sha256:25267c701e945b77701bdc195b4378de0c9841ec83aa66ef50219e20b017fddb",
+            "blob": "8c2b9f24d1ab504624a29f41aba6a73668f15b81",
+            "content": "sha256:f17b5cb1bb06ef892201b2d90aaf2d2b35db896426c214e5b877ffb2a6347bff",
             "locator": {
-              "kind": "symbol",
-              "name": "test_bound_first_call_writes_one_workspace_event_with_caller_and_facts"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -453,15 +451,14 @@
       ]
     },
     "3": {
-      "note": "Every append lands at or under the ceiling.",
+      "note": "Every append lands at or under the ceiling.\n\nAnchor: `test_every_append_lands_at_or_under_the_ceiling`",
       "targets": [
         {
           "anchor": {
-            "blob": "a54a32a6e0b8da7cff5dc4e949b2bd1e98b428ad",
-            "content": "sha256:6d2141526622729c651574b46751484f9a011a038877a84d810cc10ff830affb",
+            "blob": "8c2b9f24d1ab504624a29f41aba6a73668f15b81",
+            "content": "sha256:f17b5cb1bb06ef892201b2d90aaf2d2b35db896426c214e5b877ffb2a6347bff",
             "locator": {
-              "kind": "symbol",
-              "name": "test_every_append_lands_at_or_under_the_ceiling"
+              "kind": "file"
             }
           },
           "kind": "test"

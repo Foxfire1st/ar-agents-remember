@@ -61,7 +61,9 @@ has a real auto-carry candidate. A `ping` test proves the harness itself.
 
 ### Repo-Internal References
 
+
 - The fixed subprocess boundary used by carryover. [1]
+
 
 ## 260815-DAG-L4 Integration-Authority Forcing
 

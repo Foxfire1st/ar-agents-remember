@@ -47,4 +47,5 @@ No configured external source applies to this slice. Queue producers and applica
 ## Evidence
 
 - Accepted closeout message input contains only code and memory. [1]
+
 - The effective two-leg input renders memory attribution through the kernel. [2]

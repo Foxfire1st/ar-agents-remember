@@ -75,6 +75,10 @@ run in parallel with the rest of the unit population.
 - The walk scope is pinned so a widened root would red the case. [4]
 - The single seam that materialises a seeded card, with `section=False` selecting the no-heading template. [5]
 - The check under test, its three-bases field probe, and the observation classification. [6]
+
 - The second half of the same defect: a dead governing overview must arrive in the gated repair set the curator's loop reads. [7]
+
+
 - The population ceiling the module's one-case budget was measured against. [8]
+
 - The collector that refuses the entire run when the population exceeds that ceiling. [9]

@@ -1,9 +1,29 @@
 {
   "path": "mcp/src/agents_remember/application/memory_tools.py",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
-        "blob": "418f56cddea13a857e15e32f93c11db719101459",
+        "blob": "d9169328f4aefb6445b7866c552597f00ff49f5a",
+        "content": "sha256:887ce8a68fba17a39475a93b7d8417fb39e5ba4d9708cdae05e2865e2519aef5",
+        "locator": {
+          "end": 65,
+          "kind": "line_range",
+          "start": 64
+        }
+      },
+      "id": "RLZ-1J7B0N",
+      "invariant": "INV-BTF5NF",
+      "origin": {
+        "handoffEntry": "curator-support-1",
+        "leaf": "260928-MIK-L191"
+      },
+      "rationale": "This ceiling bounds the per-target rows returned by citation_census_tool; it is a presentation limit, while that caller still writes and names the complete census artifact. The numeric bound does not narrow the invariant's measured population.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "d9169328f4aefb6445b7866c552597f00ff49f5a",
         "content": "sha256:129a1b47f142a1adf1eba27fb36b455eaa37075548562f131998e10cb12d93d5",
         "locator": {
           "kind": "symbol",
@@ -21,7 +41,7 @@
     },
     {
       "anchor": {
-        "blob": "418f56cddea13a857e15e32f93c11db719101459",
+        "blob": "d9169328f4aefb6445b7866c552597f00ff49f5a",
         "content": "sha256:dedad5329b7d2d542e7d04a186c6869a311fc5167b1e47add81c4277e8bf5156",
         "locator": {
           "kind": "symbol",
@@ -39,7 +59,25 @@
     },
     {
       "anchor": {
-        "blob": "418f56cddea13a857e15e32f93c11db719101459",
+        "blob": "d9169328f4aefb6445b7866c552597f00ff49f5a",
+        "content": "sha256:8b5883f160e78969aa44c39e139897297d96aebecd17b2391d059c91d3eefe10",
+        "locator": {
+          "kind": "symbol",
+          "name": "citation_note_revision_tool"
+        }
+      },
+      "id": "RLZ-C0NK6V",
+      "invariant": "INV-Q7KYQH",
+      "origin": {
+        "handoffEntry": "MIK-R198@v2 §8 reference-note-revision",
+        "leaf": "260928-MIK-L191"
+      },
+      "rationale": "The curator's mounted route to that owner, which refuses an operand outside the admitted memory tree and records the contract's leaf as author.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "d9169328f4aefb6445b7866c552597f00ff49f5a",
         "content": "sha256:e07c88ae05c8a689fa70c027d0e146b9b069b245e945fc5195b544ad73dbe235",
         "locator": {
           "kind": "symbol",
@@ -57,12 +95,12 @@
     },
     {
       "anchor": {
-        "blob": "418f56cddea13a857e15e32f93c11db719101459",
+        "blob": "d9169328f4aefb6445b7866c552597f00ff49f5a",
         "content": "sha256:ae5997c75a3f9b9702040723b9c6b0a30ddef7a3a651258c3b1344406c65d441",
         "locator": {
-          "end": 758,
+          "end": 924,
           "kind": "line_range",
-          "start": 754
+          "start": 920
         }
       },
       "id": "RLZ-GFATR9",
@@ -76,7 +114,7 @@
     },
     {
       "anchor": {
-        "blob": "418f56cddea13a857e15e32f93c11db719101459",
+        "blob": "d9169328f4aefb6445b7866c552597f00ff49f5a",
         "content": "sha256:9de9f4e5133226cbb72cb3625c3dda0fb110f0642c9b8eeed1a06438b8a81007",
         "locator": {
           "kind": "symbol",
@@ -89,17 +127,17 @@
         "handoffEntry": "L56-CUR-final-facet-INV-1V9ARB",
         "leaf": "260928-MIK-L56"
       },
-      "rationale": "Preserves citation-fix complete selected-population rewritten/stale/unreadable/refused counts after removing the unreachable legacy branch; carryover is not added to this invariant scope.",
+      "rationale": "`_citation_fix_status` at C still counts rewritten/stale/unreadable/refused over the complete selected populations, including the refused list taken from the authoring report, so the claim holds; only its blob had to move to C's.",
       "role": "enforcement"
     },
     {
       "anchor": {
-        "blob": "418f56cddea13a857e15e32f93c11db719101459",
+        "blob": "d9169328f4aefb6445b7866c552597f00ff49f5a",
         "content": "sha256:910178dbc0247244e141b02e44b602b499401c0af9db5b9fa94e9d992bb89e05",
         "locator": {
-          "end": 662,
+          "end": 828,
           "kind": "line_range",
-          "start": 658
+          "start": 824
         }
       },
       "id": "RLZ-MF9P9F",
@@ -113,7 +151,7 @@
     },
     {
       "anchor": {
-        "blob": "418f56cddea13a857e15e32f93c11db719101459",
+        "blob": "d9169328f4aefb6445b7866c552597f00ff49f5a",
         "content": "sha256:b138d8d6c8cc66ad7f51dad3972cb2d9fc8732425e5b8d4983ba5e762944a940",
         "locator": {
           "kind": "symbol",
@@ -131,12 +169,12 @@
     },
     {
       "anchor": {
-        "blob": "418f56cddea13a857e15e32f93c11db719101459",
+        "blob": "d9169328f4aefb6445b7866c552597f00ff49f5a",
         "content": "sha256:7ef380476ad350970442b0914c3a71a14bb4114fe50df852a1834179bc78e67f",
         "locator": {
-          "end": 730,
+          "end": 896,
           "kind": "line_range",
-          "start": 722
+          "start": 888
         }
       },
       "id": "RLZ-PCQR3A",
@@ -150,7 +188,7 @@
     },
     {
       "anchor": {
-        "blob": "418f56cddea13a857e15e32f93c11db719101459",
+        "blob": "d9169328f4aefb6445b7866c552597f00ff49f5a",
         "content": "sha256:b138d8d6c8cc66ad7f51dad3972cb2d9fc8732425e5b8d4983ba5e762944a940",
         "locator": {
           "kind": "symbol",
@@ -168,7 +206,7 @@
     },
     {
       "anchor": {
-        "blob": "418f56cddea13a857e15e32f93c11db719101459",
+        "blob": "d9169328f4aefb6445b7866c552597f00ff49f5a",
         "content": "sha256:c7784311ae347dfa345d80e854bb875d9f8fc138ef0cc315a4e0e53976866813",
         "locator": {
           "kind": "symbol",
@@ -186,7 +224,7 @@
     },
     {
       "anchor": {
-        "blob": "418f56cddea13a857e15e32f93c11db719101459",
+        "blob": "d9169328f4aefb6445b7866c552597f00ff49f5a",
         "content": "sha256:20715addb462bc44fb693c9aedfe978d20f77305d2676685c56bbe2d1c386530",
         "locator": {
           "kind": "symbol",
@@ -204,7 +242,7 @@
     },
     {
       "anchor": {
-        "blob": "418f56cddea13a857e15e32f93c11db719101459",
+        "blob": "d9169328f4aefb6445b7866c552597f00ff49f5a",
         "content": "sha256:b9330db4676ef731cd95886e9ad74664f430ed48bd0b1054011157379721166f",
         "locator": {
           "kind": "symbol",
@@ -227,7 +265,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "418f56cddea13a857e15e32f93c11db719101459",
+            "blob": "d9169328f4aefb6445b7866c552597f00ff49f5a",
             "content": "sha256:c4a9538003f50940143bb235c8446534f9c76b0b3a1c28b61f8cace48655ef48",
             "locator": {
               "kind": "symbol",
@@ -243,7 +281,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "418f56cddea13a857e15e32f93c11db719101459",
+            "blob": "d9169328f4aefb6445b7866c552597f00ff49f5a",
             "content": "sha256:c4a9538003f50940143bb235c8446534f9c76b0b3a1c28b61f8cace48655ef48",
             "locator": {
               "kind": "symbol",
@@ -259,7 +297,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "63231e18a2ea7fe60b5e8d8df3eaf437680f2429",
+            "blob": "c72c2b159123047c79c15fc46fd02991f16ef41b",
             "content": "sha256:a0bf2c3889850dab1979e16c2e436db1829b62d71562a6cf60052a3cfee09baf",
             "locator": {
               "kind": "symbol",
@@ -272,15 +310,14 @@
       ]
     },
     "12": {
-      "note": "Carryover has one memory subject and forwards it without a ledger-message option.",
+      "note": "Carryover's options carry the approval intent and the explicit review selections, not a memory commit subject, and the apply adapter forwards those fields.\n\nAnchor: `CarryoverCommitMessages`",
       "targets": [
         {
           "anchor": {
-            "blob": "9eef4f32926a879ed8247e97f14685ba3a469031",
-            "content": "sha256:fb8ceefb686b824a7cb0fa229a36df02de76b9182621156d94032651e48368f0",
+            "blob": "d9169328f4aefb6445b7866c552597f00ff49f5a",
+            "content": "sha256:6245c0fad1ad37363ec36508b7e32f67104a8b9143178bc7e8c18a0856de40bb",
             "locator": {
-              "kind": "symbol",
-              "name": "CarryoverCommitMessages"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -288,15 +325,14 @@
       ]
     },
     "13": {
-      "note": "The apply entry point that forwards that subject and nothing else.",
+      "note": "The apply entry point that forwards that subject and nothing else.\n\nAnchor: `memory_carryover_apply_tool`",
       "targets": [
         {
           "anchor": {
-            "blob": "9eef4f32926a879ed8247e97f14685ba3a469031",
-            "content": "sha256:57d1fab3bdebb122ed2a92a3f7778fcb019ebd45a7490d46a54c91b676b1a160",
+            "blob": "d9169328f4aefb6445b7866c552597f00ff49f5a",
+            "content": "sha256:6245c0fad1ad37363ec36508b7e32f67104a8b9143178bc7e8c18a0856de40bb",
             "locator": {
-              "kind": "symbol",
-              "name": "memory_carryover_apply_tool"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -376,7 +412,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "418f56cddea13a857e15e32f93c11db719101459",
+            "blob": "d9169328f4aefb6445b7866c552597f00ff49f5a",
             "content": "sha256:6a04802ea6586dd0e323bb3072fa8615e8bea72dc3298eeef2972754f9982cbb",
             "locator": {
               "kind": "symbol",
@@ -387,7 +423,7 @@
         },
         {
           "anchor": {
-            "blob": "291bc4d7b0c07f2ce0ef62152c72d94fc5aa7a89",
+            "blob": "92307a15e76cc80cb4f56af2bc448df86c7bceab",
             "content": "sha256:5222022946ed0872ef074f7f24e823e660c3d191c7983b3bdcd3731db2da5b2f",
             "locator": {
               "kind": "symbol",
@@ -404,7 +440,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "418f56cddea13a857e15e32f93c11db719101459",
+            "blob": "d9169328f4aefb6445b7866c552597f00ff49f5a",
             "content": "sha256:e07c88ae05c8a689fa70c027d0e146b9b069b245e945fc5195b544ad73dbe235",
             "locator": {
               "kind": "symbol",
@@ -420,7 +456,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "63231e18a2ea7fe60b5e8d8df3eaf437680f2429",
+            "blob": "c72c2b159123047c79c15fc46fd02991f16ef41b",
             "content": "sha256:f4919bee988d4473dce9ce42789930a3b179417eb1c07e1d5ba1f0c40270d283",
             "locator": {
               "kind": "symbol",
@@ -432,32 +468,15 @@
         }
       ]
     },
-    "20": {
-      "note": "The shared construction point applies caller excludes to legacy Trees branches, not converted check/fix.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "9eef4f32926a879ed8247e97f14685ba3a469031",
-            "content": "sha256:88d9294a6341261126fa2bd4111f7a9d9401d41930bee82161559219259a0e16",
-            "locator": {
-              "kind": "symbol",
-              "name": "_citation_trees"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "21": {
-      "note": "The scope object the caller's excludes ride with, validated at construction.",
+      "note": "The scope object the caller's named documents ride with, validated at construction.\n\nAnchor: `CitationOperationScope`",
       "targets": [
         {
           "anchor": {
-            "blob": "9eef4f32926a879ed8247e97f14685ba3a469031",
-            "content": "sha256:b0a40b5c6b8ac07cffa80174d81e2d954545f3602139c8a1aebb27c82e5dc4e9",
+            "blob": "d9169328f4aefb6445b7866c552597f00ff49f5a",
+            "content": "sha256:6245c0fad1ad37363ec36508b7e32f67104a8b9143178bc7e8c18a0856de40bb",
             "locator": {
-              "kind": "symbol",
-              "name": "CitationOperationScope"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -469,7 +488,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "418f56cddea13a857e15e32f93c11db719101459",
+            "blob": "d9169328f4aefb6445b7866c552597f00ff49f5a",
             "content": "sha256:7b520fc9b22cbf25310bc93079df0b862908d53ceb2833165f870ee544025537",
             "locator": {
               "kind": "symbol",
@@ -539,15 +558,14 @@
       ]
     },
     "26": {
-      "note": "One document with no frozen generation is admitted for converted memory; legacy operations validate strictly.",
+      "note": "The scope's own check: one named `document`, or a `documents` list only for `citation_fix`, refused before the memory tree is resolved.\n\nAnchor: `validate`",
       "targets": [
         {
           "anchor": {
-            "blob": "9eef4f32926a879ed8247e97f14685ba3a469031",
-            "content": "sha256:08ccfc7f882a91bd029c829b20ddc5837accc8fb3529e3b31dc9fca44a75f268",
+            "blob": "d9169328f4aefb6445b7866c552597f00ff49f5a",
+            "content": "sha256:6245c0fad1ad37363ec36508b7e32f67104a8b9143178bc7e8c18a0856de40bb",
             "locator": {
-              "kind": "symbol",
-              "name": "validate"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -555,37 +573,14 @@
       ]
     },
     "27": {
-      "note": "The three card writers, which ask no cutover lock.\n\nAnchor: `citation_fix_tool`, `citation_migrate_tool`, `route_index_refresh_tool`",
+      "note": "The two card writers, which ask no cutover lock. Anchor: `citation_fix_tool`, `route_index_refresh_tool`\n\nAnchor: `citation_fix_tool` `citation_migrate_tool` `route_index_refresh_tool`",
       "targets": [
         {
           "anchor": {
-            "blob": "9eef4f32926a879ed8247e97f14685ba3a469031",
-            "content": "sha256:5f821e64096023ecdaed1c77401a5d02d1fbbcd3fc3d5b41e2d14c6b4a0e9017",
+            "blob": "d9169328f4aefb6445b7866c552597f00ff49f5a",
+            "content": "sha256:6245c0fad1ad37363ec36508b7e32f67104a8b9143178bc7e8c18a0856de40bb",
             "locator": {
-              "kind": "symbol",
-              "name": "citation_fix_tool"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "9eef4f32926a879ed8247e97f14685ba3a469031",
-            "content": "sha256:a50d2c3e7bb227cf80120eb7e2169138ffa607f5301aaad6b7a227d9aa93a372",
-            "locator": {
-              "kind": "symbol",
-              "name": "citation_migrate_tool"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "418f56cddea13a857e15e32f93c11db719101459",
-            "content": "sha256:20715addb462bc44fb693c9aedfe978d20f77305d2676685c56bbe2d1c386530",
-            "locator": {
-              "kind": "symbol",
-              "name": "route_index_refresh_tool"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -597,7 +592,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "418f56cddea13a857e15e32f93c11db719101459",
+            "blob": "d9169328f4aefb6445b7866c552597f00ff49f5a",
             "content": "sha256:752848b4867967cdcbbc2e0bbbead222c7bf0b552f0d9e8fe80885e9c83e785d",
             "locator": {
               "kind": "symbol",
@@ -613,7 +608,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "418f56cddea13a857e15e32f93c11db719101459",
+            "blob": "d9169328f4aefb6445b7866c552597f00ff49f5a",
             "content": "sha256:a7b0a1176435d908d3ae89aa58f11a71872c9f42db473b2e31b7a6f04ed254a9",
             "locator": {
               "kind": "symbol",
@@ -625,15 +620,14 @@
       ]
     },
     "3": {
-      "note": "Carryover has one memory subject and forwards it without a ledger-message option.",
+      "note": "Carryover's options carry the approval intent and the explicit review selections, not a memory commit subject, and the apply adapter forwards those fields.\n\nAnchor: `CarryoverCommitMessages`",
       "targets": [
         {
           "anchor": {
-            "blob": "9eef4f32926a879ed8247e97f14685ba3a469031",
-            "content": "sha256:fb8ceefb686b824a7cb0fa229a36df02de76b9182621156d94032651e48368f0",
+            "blob": "d9169328f4aefb6445b7866c552597f00ff49f5a",
+            "content": "sha256:6245c0fad1ad37363ec36508b7e32f67104a8b9143178bc7e8c18a0856de40bb",
             "locator": {
-              "kind": "symbol",
-              "name": "CarryoverCommitMessages"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -645,7 +639,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "418f56cddea13a857e15e32f93c11db719101459",
+            "blob": "d9169328f4aefb6445b7866c552597f00ff49f5a",
             "content": "sha256:f763db344a416efd66bbb0d3414cfd2cfcf00cfec743dabcb71778a18ef92f63",
             "locator": {
               "kind": "symbol",
@@ -661,7 +655,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "418f56cddea13a857e15e32f93c11db719101459",
+            "blob": "d9169328f4aefb6445b7866c552597f00ff49f5a",
             "content": "sha256:129a1b47f142a1adf1eba27fb36b455eaa37075548562f131998e10cb12d93d5",
             "locator": {
               "kind": "symbol",
@@ -677,7 +671,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "418f56cddea13a857e15e32f93c11db719101459",
+            "blob": "d9169328f4aefb6445b7866c552597f00ff49f5a",
             "content": "sha256:b138d8d6c8cc66ad7f51dad3972cb2d9fc8732425e5b8d4983ba5e762944a940",
             "locator": {
               "kind": "symbol",
@@ -693,7 +687,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "418f56cddea13a857e15e32f93c11db719101459",
+            "blob": "d9169328f4aefb6445b7866c552597f00ff49f5a",
             "content": "sha256:20715addb462bc44fb693c9aedfe978d20f77305d2676685c56bbe2d1c386530",
             "locator": {
               "kind": "symbol",
@@ -709,7 +703,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "418f56cddea13a857e15e32f93c11db719101459",
+            "blob": "d9169328f4aefb6445b7866c552597f00ff49f5a",
             "content": "sha256:b9330db4676ef731cd95886e9ad74664f430ed48bd0b1054011157379721166f",
             "locator": {
               "kind": "symbol",
@@ -725,7 +719,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "418f56cddea13a857e15e32f93c11db719101459",
+            "blob": "d9169328f4aefb6445b7866c552597f00ff49f5a",
             "content": "sha256:0ad4605217085ded778cd1fafd60116a0873ead51fdde2374479e3ee480c2c64",
             "locator": {
               "kind": "symbol",
@@ -737,15 +731,14 @@
       ]
     },
     "36": {
-      "note": "The public apply catches only the recognized legacy refusal; success and converted-target refusal remain distinct.",
+      "note": "The public apply catches only the recognized legacy refusal; success and converted-target refusal remain distinct.\n\nAnchor: `memory_carryover_apply_tool`",
       "targets": [
         {
           "anchor": {
-            "blob": "9eef4f32926a879ed8247e97f14685ba3a469031",
-            "content": "sha256:57d1fab3bdebb122ed2a92a3f7778fcb019ebd45a7490d46a54c91b676b1a160",
+            "blob": "d9169328f4aefb6445b7866c552597f00ff49f5a",
+            "content": "sha256:6245c0fad1ad37363ec36508b7e32f67104a8b9143178bc7e8c18a0856de40bb",
             "locator": {
-              "kind": "symbol",
-              "name": "memory_carryover_apply_tool"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -757,7 +750,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "418f56cddea13a857e15e32f93c11db719101459",
+            "blob": "d9169328f4aefb6445b7866c552597f00ff49f5a",
             "content": "sha256:dedad5329b7d2d542e7d04a186c6869a311fc5167b1e47add81c4277e8bf5156",
             "locator": {
               "kind": "symbol",
@@ -785,7 +778,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "418f56cddea13a857e15e32f93c11db719101459",
+            "blob": "d9169328f4aefb6445b7866c552597f00ff49f5a",
             "content": "sha256:dedad5329b7d2d542e7d04a186c6869a311fc5167b1e47add81c4277e8bf5156",
             "locator": {
               "kind": "symbol",
@@ -801,7 +794,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "418f56cddea13a857e15e32f93c11db719101459",
+            "blob": "d9169328f4aefb6445b7866c552597f00ff49f5a",
             "content": "sha256:e07c88ae05c8a689fa70c027d0e146b9b069b245e945fc5195b544ad73dbe235",
             "locator": {
               "kind": "symbol",
@@ -846,7 +839,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "418f56cddea13a857e15e32f93c11db719101459",
+            "blob": "d9169328f4aefb6445b7866c552597f00ff49f5a",
             "content": "sha256:b9330db4676ef731cd95886e9ad74664f430ed48bd0b1054011157379721166f",
             "locator": {
               "kind": "symbol",
@@ -862,7 +855,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "418f56cddea13a857e15e32f93c11db719101459",
+            "blob": "d9169328f4aefb6445b7866c552597f00ff49f5a",
             "content": "sha256:b138d8d6c8cc66ad7f51dad3972cb2d9fc8732425e5b8d4983ba5e762944a940",
             "locator": {
               "kind": "symbol",
@@ -873,7 +866,7 @@
         },
         {
           "anchor": {
-            "blob": "418f56cddea13a857e15e32f93c11db719101459",
+            "blob": "d9169328f4aefb6445b7866c552597f00ff49f5a",
             "content": "sha256:20715addb462bc44fb693c9aedfe978d20f77305d2676685c56bbe2d1c386530",
             "locator": {
               "kind": "symbol",
@@ -889,7 +882,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "418f56cddea13a857e15e32f93c11db719101459",
+            "blob": "d9169328f4aefb6445b7866c552597f00ff49f5a",
             "content": "sha256:7b520fc9b22cbf25310bc93079df0b862908d53ceb2833165f870ee544025537",
             "locator": {
               "kind": "symbol",
@@ -900,7 +893,7 @@
         },
         {
           "anchor": {
-            "blob": "418f56cddea13a857e15e32f93c11db719101459",
+            "blob": "d9169328f4aefb6445b7866c552597f00ff49f5a",
             "content": "sha256:ff465974c2ff2904981ae7f7b0fe9990369387c39693b2aad43fa9ae5f18cb61",
             "locator": {
               "kind": "symbol",
@@ -945,7 +938,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "418f56cddea13a857e15e32f93c11db719101459",
+            "blob": "d9169328f4aefb6445b7866c552597f00ff49f5a",
             "content": "sha256:20715addb462bc44fb693c9aedfe978d20f77305d2676685c56bbe2d1c386530",
             "locator": {
               "kind": "symbol",
@@ -991,15 +984,14 @@
       ]
     },
     "9": {
-      "note": "The apply entry point that forwards that subject and nothing else.",
+      "note": "The apply entry point that forwards that subject and nothing else.\n\nAnchor: `memory_carryover_apply_tool`",
       "targets": [
         {
           "anchor": {
-            "blob": "9eef4f32926a879ed8247e97f14685ba3a469031",
-            "content": "sha256:57d1fab3bdebb122ed2a92a3f7778fcb019ebd45a7490d46a54c91b676b1a160",
+            "blob": "d9169328f4aefb6445b7866c552597f00ff49f5a",
+            "content": "sha256:6245c0fad1ad37363ec36508b7e32f67104a8b9143178bc7e8c18a0856de40bb",
             "locator": {
-              "kind": "symbol",
-              "name": "memory_carryover_apply_tool"
+              "kind": "file"
             }
           },
           "kind": "code"

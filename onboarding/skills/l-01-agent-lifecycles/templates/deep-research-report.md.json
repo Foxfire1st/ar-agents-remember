@@ -37,12 +37,12 @@
       ]
     },
     "3": {
-      "note": "The full report supplies frame, findings, ledger, proof inventory, gaps and artifact-shape decision fields.\n\nAnchor: `Suggested artifact shape if spawned`",
+      "note": "The full report supplies frame, findings, ledger, proof inventory, gaps and artifact-shape decision fields.  Anchor: `Suggested artifact shape if spawned`",
       "targets": [
         {
           "anchor": {
-            "blob": "ee9711668ce01ae6eda8285a9c976a13a45a3e7f",
-            "content": "sha256:8af7033b73425eaab68787313bc99772cfe77d9e8012f812062f2d913d56c9d0",
+            "blob": "2740f2fafd273b0c0fe89c3e06c0778359e4ea7b",
+            "content": "sha256:24aff1b2584e5d55dcd9a640b488695b759a338bdf0d8452e8331606e89ec63b",
             "locator": {
               "end": 73,
               "kind": "line_range",
@@ -54,12 +54,12 @@
       ]
     },
     "4": {
-      "note": "Compact research retains answer, evidence, proof inventory, gaps and decision.\n\nAnchor: `## Compact Shape`",
+      "note": "Compact research retains answer, evidence, proof inventory, gaps and decision.  Anchor: `## Compact Shape`",
       "targets": [
         {
           "anchor": {
-            "blob": "ee9711668ce01ae6eda8285a9c976a13a45a3e7f",
-            "content": "sha256:deaae2036da1a7a6184dacac5eac0b7f78fd836a9e210cb0f1807796a895f929",
+            "blob": "2740f2fafd273b0c0fe89c3e06c0778359e4ea7b",
+            "content": "sha256:0a18ce18e0809b8e7eb8fb0094cc3d67b7921ae45d2b3976a8e2c20481d41fce",
             "locator": {
               "end": 100,
               "kind": "line_range",

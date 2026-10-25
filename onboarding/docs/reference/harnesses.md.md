@@ -19,4 +19,5 @@ Explains host-owned agent kinds and the settings-owned role and per-level knobs.
 
 The registered source inventory supplies no external Domain Documentation authority. These are statically inspected current source facts, not new execution or CODE grades.
 
+
 - Current settings core deep-merges per-level role knobs over flat defaults and keeps repository-local versus user settings path boundaries. [1]

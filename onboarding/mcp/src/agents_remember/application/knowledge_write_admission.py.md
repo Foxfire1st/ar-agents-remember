@@ -57,7 +57,9 @@ No external documentation is required for the write-admission value.
 
 - The one current admission kind is repository-bootstrap. [3]
 
+
 - **Provenance as a value: what admitted the write, from which document, and the one fact that made it an admission.** [4]
+
 
 - The taskless operation is bound to its exact code/memory roots and admitted source commits. [5]
 

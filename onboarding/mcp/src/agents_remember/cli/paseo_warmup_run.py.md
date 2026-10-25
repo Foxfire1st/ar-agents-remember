@@ -18,4 +18,5 @@ Local implementation and executable evidence do not replace requirement authorit
 
 ## Evidence
 
+
 - Run one memory-gated, two-lane loading pass in tree order, promoting clicked pending agents without displacing already-running work. Unknown or below6GiB available memory waits and may give up with a truthful click-load reason. Individual failures do not stop the remaining list, and cancelled resumes drain. [1]

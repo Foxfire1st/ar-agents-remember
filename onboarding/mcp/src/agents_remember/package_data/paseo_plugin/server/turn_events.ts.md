@@ -19,4 +19,5 @@ The adapter owns the log sink: `createTurnEndLog` from `turn_log.ts` is created 
 
 ## Evidence
 
+
 - Native host handlers and explicit steering sends. [1]

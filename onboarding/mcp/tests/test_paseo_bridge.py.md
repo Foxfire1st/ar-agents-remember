@@ -45,5 +45,11 @@ stdout, stderr and exit status through the same `bridge_call` boundary productio
 
 - The wrapper's process boundary: unconfigured refusal, the configured runtime as the only target, named
   failures, undecodable output and an unterminated call. [1]
+
 - Process-level refuse-before-spawn and single-target behaviour of `bridge_call`. [2]
+
+
 - Catalog shape, script failures and provider-option naming against the real script and fake client. [3]
+
+
+- The scoped current source carries the module/document behavior described above. [1]

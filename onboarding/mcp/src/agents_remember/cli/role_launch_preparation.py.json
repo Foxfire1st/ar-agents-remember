@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/cli/role_launch_preparation.py",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
@@ -347,8 +348,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bf7e91802eee40eba1f1c84829cdc723d9009689",
-            "content": "sha256:237673a528d937eb5338d2f91e0c17b914cdc712b6128eb3f1565a1f5d23d2c7",
+            "blob": "22c18d8af149dc6c56458157e5fc782db0309e51",
+            "content": "sha256:bcecc2254166a1e0338ea422190a021fa0c23fa4c89ee681767aee8de2abc3c6",
             "locator": {
               "end": 1065,
               "kind": "line_range",
@@ -473,16 +474,16 @@
       ]
     },
     "3": {
-      "note": "The `_resolve_workspace` implementation now lives in its extracted owner.\n\nAnchor: actual current supporting source",
+      "note": "The `_resolve_workspace` implementation now lives in its extracted owner.  Anchor: actual current supporting source",
       "targets": [
         {
           "anchor": {
-            "blob": "a0ed662a42a3b5b6c0fec263b6c9d5eb5f77fa83",
-            "content": "sha256:94e6b420c05d940e37bafcec32fddb20cf0fe89a2f660e6a203c6f8061cdc174",
+            "blob": "72075734fbef78540ef61ec74cf4e43c21260b72",
+            "content": "sha256:8349e16a09c44ce4b7b9136ec3e1b8f44c1150b019f241a4b0ab8c22db0c6cb3",
             "locator": {
-              "end": 253,
+              "end": 272,
               "kind": "line_range",
-              "start": 202
+              "start": 220
             },
             "path": "mcp/src/agents_remember/cli/role_launch_workspace.py"
           },
@@ -495,8 +496,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bf7e91802eee40eba1f1c84829cdc723d9009689",
-            "content": "sha256:9595301803f0a4ef782a9ee761920c9ed93315af8353d86a2d74b40dddda3d77",
+            "blob": "22c18d8af149dc6c56458157e5fc782db0309e51",
+            "content": "sha256:e17e9179619486b93fb4f51348083b30761ba19a06cd23c86050b7d323221a49",
             "locator": {
               "kind": "file"
             }
@@ -562,8 +563,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bf7e91802eee40eba1f1c84829cdc723d9009689",
-            "content": "sha256:00bdcecaa012cfd7fa09baf47ca6246f2513a591bfa66cb9b31f1dfcf63a22be",
+            "blob": "22c18d8af149dc6c56458157e5fc782db0309e51",
+            "content": "sha256:c60cd5f5af93a1020eee824b6057836ad145299d87a2026124c432db4170367c",
             "locator": {
               "end": 752,
               "kind": "line_range",
@@ -579,8 +580,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bf7e91802eee40eba1f1c84829cdc723d9009689",
-            "content": "sha256:f20932273b09f043bd4049130ba23e7a3f9afa1af842a02fc2ae9c3c79d13847",
+            "blob": "22c18d8af149dc6c56458157e5fc782db0309e51",
+            "content": "sha256:502fcae38f39c0c54b05ae1b7db68f67cda6b7eaf38e5611279b71090183d522",
             "locator": {
               "end": 963,
               "kind": "line_range",

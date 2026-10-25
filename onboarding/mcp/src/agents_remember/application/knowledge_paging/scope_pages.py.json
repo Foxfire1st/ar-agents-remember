@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/application/knowledge_paging/scope_pages.py",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
@@ -52,12 +53,22 @@
       ]
     },
     "4": {
-      "note": "A prepared seed, deferred or collapsed.",
+      "note": "A prepared seed, deferred or collapsed.\n\nAnchor: `PreparedScope` `collapsed`",
       "targets": [
         {
           "anchor": {
-            "blob": "ad3bcad79b2048e3d1f3ef71252570ca64879c74",
-            "content": "sha256:40a975eda6d83da1a3259bbc2324c6a6b6fcc2d8fee5d229374079e222e5566f",
+            "blob": "2e3abbc1d2c0d01ee2a5efdff1eede74c656c9d4",
+            "content": "sha256:f57878fc228e4ece58cc143ea8e0402f51a183d914918ba1cff98acd77685153",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2e3abbc1d2c0d01ee2a5efdff1eede74c656c9d4",
+            "content": "sha256:e7ff9460988b1df3d4b8588988c1878c6edea418500d602ccf6faa1ce8ef33ac",
             "locator": {
               "kind": "symbol",
               "name": "PreparedScope"
@@ -67,8 +78,8 @@
         },
         {
           "anchor": {
-            "blob": "ad3bcad79b2048e3d1f3ef71252570ca64879c74",
-            "content": "sha256:3c9fbdbc25796414910357fcbb6d22f208d08f886679610c8b8c793418068194",
+            "blob": "2e3abbc1d2c0d01ee2a5efdff1eede74c656c9d4",
+            "content": "sha256:7038f66056379dc7bdf81941cb6151d71c62d4c4e6213bf47841411cc6799712",
             "locator": {
               "kind": "symbol",
               "name": "collapsed"
@@ -79,12 +90,22 @@
       ]
     },
     "5": {
-      "note": "Selecting and checking a resumed position.",
+      "note": "Selecting and checking a resumed position.\n\nAnchor: `prepare_scope` `_next_manifest`",
       "targets": [
         {
           "anchor": {
-            "blob": "ad3bcad79b2048e3d1f3ef71252570ca64879c74",
-            "content": "sha256:8b62f61d6ad3393ee022df1a720e9fa5089377302eb21cdb643dc701e6a1c07e",
+            "blob": "2e3abbc1d2c0d01ee2a5efdff1eede74c656c9d4",
+            "content": "sha256:f57878fc228e4ece58cc143ea8e0402f51a183d914918ba1cff98acd77685153",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2e3abbc1d2c0d01ee2a5efdff1eede74c656c9d4",
+            "content": "sha256:01c51272cf483d1d010cb119188371873e667079041c1cc69bb2cabe1ab294ca",
             "locator": {
               "kind": "symbol",
               "name": "prepare_scope"

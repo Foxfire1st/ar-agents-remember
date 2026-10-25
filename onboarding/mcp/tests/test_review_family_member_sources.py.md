@@ -64,11 +64,17 @@ No Domain Documentation source is configured for this slice.
 
 - `test_two_members_in_one_file_carry_their_own_locators_ranges_and_rationale` supplies the current fixture or assertion described above. [15]
 - `test_a_changed_file_keeps_its_unchanged_attributed_range_on_each_side` supplies the current fixture or assertion described above. [16]
+
 - `test_an_unresolved_locator_is_stated_with_its_recorded_locator_and_no_range` supplies the current fixture or assertion described above. [17]
+
 - `test_a_symbol_defined_twice_carries_every_defining_range` supplies the current fixture or assertion described above. [18]
 - `test_the_existing_source_fields_keep_their_published_values` supplies the current fixture or assertion described above. [19]
+
 - Fixture construction imports test-only row constructors; it does not call the retired canonical writer. [20]
+
+
 - RowStore writes text-tree fixture rows without the retired production admission plane. [21]
+
 
 The rows name the fixture, the reader and each case, plus the owners they drive.
 
@@ -81,21 +87,42 @@ No configured domain documentation could be checked.
 
 - The two texts, their attributed lines, the double definition and the past-end range the fixture writes. [22]
 - **The legacy source fields whose values must not change.** [23]
+
 - **The fixture: seven before claims, an independently built matching after population and the re-recorded alpha claim over two real commits.** [24]
+
 - **One side's roster read through the production owners, indexed by claim.** [25]
 - Two members in one file, and the line-range and file-locator states. [26]
 - The unchanged attributed range on both sides of a changed file. [27]
+
 - Unresolved locators keep their recorded value and carry no range. [28]
+
 - A range past the blob end is unresolved on the exact blob. [29]
 - A doubly-defined symbol carries both ranges. [30]
 - The legacy fields keep their values. [31]
 - The projection under test. [32]
 - The resolver that fills the ranges. [33]
-- The lane registration. [34]
-- The shared-fixture consumer registration. [35]
+
+
+
+
+> Retained earlier citation wording: - The lane registration. Source caption: `test_review_family_member_sources` [34]
+
+
+
+
+
+
+> Retained earlier citation wording: - The shared-fixture consumer registration. [35]
+
+
 
 ### Cross-Repo References
 
 No cross-repository behavior is exercised; the Git repository and datasets are temporary.
 
 No meaningful cross-repo references found.
+
+- The lane registration. Source caption: `test_review_family_member_sources` [34]
+
+
+- The shared-fixture consumer registration. [35]

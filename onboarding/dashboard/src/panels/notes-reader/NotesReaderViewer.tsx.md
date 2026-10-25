@@ -112,7 +112,9 @@ A same-origin view over the local notes API; nothing crosses repositories.
 
 - The `FileContent` type the text path maps a note into. [2]
 
+
 - Cockpit owns the artifact target and open flag, preserves the target on Back, updates note paths and hosts the controlled viewer takeover. [4]
+
 
 
 
@@ -121,7 +123,9 @@ A same-origin view over the local notes API; nothing crosses repositories.
 
 
 
+
 - The component test suite covers the tree, open path, parts and depth. [7]
+
 
 
 

@@ -1,5 +1,6 @@
 {
   "path": "dashboard/src/panels/Hangar.tsx",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
@@ -7,8 +8,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f2e7fe58c2b1df6c0dc6fddecd7cf6177bf4c0e6",
-            "content": "sha256:1c2b73cbaa53b79c6703aeaff311bf6895a12ca8fd7c17c97fc3f1541418ffb4",
+            "blob": "fd0cd6ba53b5d874adfcb26807b26ab92e77d56e",
+            "content": "sha256:6675e6e29ad874b2806a74cb669fc11217d9577fe7d301d9c1488b8659a5560e",
             "locator": {
               "kind": "symbol",
               "name": "EnclosureNode"
@@ -19,8 +20,8 @@
         },
         {
           "anchor": {
-            "blob": "8535427e164854d7dadb366fd583408b98d5f38b",
-            "content": "sha256:e07a507c93da8bfbb113914034d33d9da09abc1040c2f0965f1827491f1b1eb4",
+            "blob": "fd0cd6ba53b5d874adfcb26807b26ab92e77d56e",
+            "content": "sha256:56ea6fd8e514b3c904078b28103192f1143ce8bcf6150d62159037f4610e3c57",
             "locator": {
               "end": 178,
               "kind": "line_range",
@@ -29,16 +30,27 @@
             "path": "mcp/src/agents_remember/observer/projection.py"
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fd0cd6ba53b5d874adfcb26807b26ab92e77d56e",
+            "content": "sha256:8f897ee97a5df4ec6bc2cdb53e32669158ad72e83b1d826e0af636eb31908a32",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/observer/projection.py"
+          },
+          "kind": "code"
         }
       ]
     },
     "5": {
-      "note": "The running-operation regression proves the durable command is visible and preserved as the full badge title.\n\nAnchor: \"shows the durable live command for a running lifecycle operation\"",
+      "note": "The running-operation regression proves the durable command is visible and preserved as the full badge title.",
       "targets": [
         {
           "anchor": {
-            "blob": "9e6916d2f8f9bb833336da8e02a252b323215190",
-            "content": "sha256:5ce92ce202bb4f537abcf81579a645d61e39ba9f7be6c8f65f5f3309f2790168",
+            "blob": "9d424691e3a6ac196a136276f1575955a48f0c53",
+            "content": "sha256:6dabd4b0f55b4c7a9ee0806691010d2397b71502f2b851a78be018092be76c8c",
             "locator": {
               "end": 165,
               "kind": "line_range",

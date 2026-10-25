@@ -54,12 +54,12 @@
       ]
     },
     "4": {
-      "note": "The implementation operation's marker check composes the delivered Worker text (that operation file plus roles/worker.md); every other surface file's markers are read from its own text, with two standing exceptions this leaf did not touch - operations/curation.md is compiled as the Curator's and Manager's addressed capsules, and roles/curator.md's body/attach may be satisfied by the Curator's workflow-1 message detail - and the forbidden-directive scan reads each file's own lines together with the two compiled curation capsule texts and that message detail.",
+      "note": "The implementation operation's markers are read from the delivered Worker text; every other surface states them in its own words.",
       "targets": [
         {
           "anchor": {
-            "blob": "33282a6f83b2ed2de4799c277711903bdd4a7f42",
-            "content": "sha256:f82a04f603467762c53222a7f4a65357a6029439eeed8356d501bdfc8c228a15",
+            "blob": "fd950b5bddb08db7f5a90d98012137aa487537aa",
+            "content": "sha256:0731e5b0209a14f28ce360ba8bca387e861ecbe151854fe8af6c457e30d2f672",
             "locator": {
               "kind": "file"
             }

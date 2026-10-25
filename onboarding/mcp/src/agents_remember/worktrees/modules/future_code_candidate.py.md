@@ -67,13 +67,19 @@ No meaningful cross-repository boundary applies.
 This owner acts only inside the contract-resolved code worktree.
 
 - The frozen strict route model prohibits mutation and undeclared identity fields. [1]
+
 - Capture observes HEAD around the one canonical isolated-index add-all tree calculation. [2]
+
 - Reuse requires exact equality of the complete bound route identity. [3]
+
 
 - Each capture gives the canonical helper a private index inside `TemporaryDirectory(prefix=".future-code-candidate-")` without an explicit `dir=`. Its root follows the process default temporary-directory selection, rather than being explicitly allocated under enclosure reports. [4]
 
 
+
+
 - The helper first copies/normalizes the real index, clears trust flags, adds all and writes the tree; on _IndexCopyUnusable it instead seeds an empty private index from HEAD. Both scratch indices are cleaned on exit. [6]
+
 
 ## 260928-MIK-L177 The Proof Keeps The Capture's Own Census
 

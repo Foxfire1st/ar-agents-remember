@@ -77,21 +77,25 @@ The following coverage statuses are retained metadata, outside the operative pro
 
 - The receipt check before anything moves, and the restore after publication. [1]
 - Recovery state contains the actual two commit outputs. [2]
-- Locator and manifest determine per-kind journal addresses independently of task-document reads. [5]
+> Retained earlier citation wording: - Locator and manifest determine per-kind journal addresses independently of task-document reads. [5]
 - Generation construction is in memory; retained resume preserves evidence and requires recorded exit; durable creation owns initial certification selection. [6]
 - No-output cancellation preserves successor candidate differences and refuses moved protected output identities. [10]
 - Direct-closing receipts precede journal admission, preserve later edits, and preserve closings already landed in HEAD. [11]
 
 - Historical pre-change completed-disposition diagnosis: the former direct-owner tuple had unequal lengths. Current disposition delegates to lifecycle_operation_identity.completed_direct_owner and retains integration/publication-claim/worker-exit restrictions.  Anchor: lifecycle_completed_disposition.py [13]
 
-- The sidecar/route body-gate composition was removed; converted memory is judged by the onboarding-trace gate, and the external-memory refresh keeps only entity-fingerprint and route-index refresh. [14]
+
+- Converted memory is judged through the onboarding-trace gate, which reports missing traces and incomplete sides while unnecessary rows report only. External-memory helpers separately plan entity fingerprints and refresh route indexes; they do not restore the removed sidecar/route-body gate. [14]
+
 
 - Default production services bind the ordinary memory-quality, citation, certification-memory, knowledge validation/crossing/gate and archive adapters; they do not install the removed prepared-closeout continuation or selected certificate producer. [15]
 
 
 - The exact-generation observer returns bounded change/timeout outcomes. [4]
 
-- Direct recovery is admitted independently of closeout doors and settles its retained receipt on completion. [5]
+
+> Retained earlier citation wording: - Direct recovery is admitted independently of closeout doors and settles its retained receipt on completion.  Locator and manifest determine per-kind journal addresses independently of task-document reads. [5]
+
 - Completed direct retire is offered using the shared record-based owner predicate. [6]
 
 - Store transition validation requires recordRevision to advance once and meaningfulRevision to advance only when semantic state changes. [3]
@@ -99,3 +103,5 @@ The following coverage statuses are retained metadata, outside the operative pro
 - Failed-generation replacement is explicit; cancelled closeout succession uses the current door, journal disposition, and exit proof.  Anchor: lifecycle_operations.py; lifecycle_operation_store.py [8]
 - Closeout admission binds task intent; direct-landing writes are exempt from that leaf-intent requirement, although shared legacy predicates still mention direct landing.  Anchor: lifecycle_operations.py; lifecycle_operation_store.py [9]
 - Current store mutation serialization and waiting-door claims contradict the blanket plane-deletion account.  Anchor: lifecycle_operation_store.py; lifecycle_operations.py [12]
+
+- Direct recovery is admitted independently of closeout doors and settles its retained receipt on completion.  Locator and manifest determine per-kind journal addresses independently of task-document reads. [5]

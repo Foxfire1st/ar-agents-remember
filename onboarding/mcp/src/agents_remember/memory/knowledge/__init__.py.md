@@ -68,7 +68,9 @@ No configured domain documentation could be checked.
 - The served surface is one schema, its pin, and the read opens [2]
 - The read-only open joins the surface [4]
 - The connection contract re-exported here. [3]
+
 - The layer charter paragraph that records this storage home in `[package.memory]`. [6]
+
 
 ### Cross-Repo References
 

@@ -3,15 +3,14 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "Unit under test.",
+      "note": "Unit under test.\n\nAnchor: `resolveKeymap`",
       "targets": [
         {
           "anchor": {
-            "blob": "f8358886e1f6bdefb7a98b6697db164a2a4a504d",
-            "content": "sha256:b88df79f032b176d4f5e5f8effac280aa1e7ca4905433b16cb42cc6e2eefdf53",
+            "blob": "d98525da56809e763a8e2125dab624fa6c3f32a9",
+            "content": "sha256:6b2735b7ed8a068f45f99e3223853589238def143ade2b515ad2fa7eebfb023b",
             "locator": {
-              "kind": "symbol",
-              "name": "resolveKeymap"
+              "kind": "file"
             },
             "path": "dashboard/src/data/keymap/preferences.ts"
           },

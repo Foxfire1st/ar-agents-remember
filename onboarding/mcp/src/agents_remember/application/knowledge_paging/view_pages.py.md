@@ -46,7 +46,9 @@ No configured live documentation source was available for this pass.
 ### Repo-Internal References
 
 - The module statement: the whole row list, cut by tokens. [1]
+
 - The manifest digest over each row's identity. [2]
+
 - Walking the renderer's slices to the end. [3]
 - A family view's rows and its reference row. [4]
 - The page as the view's own payload. [5]

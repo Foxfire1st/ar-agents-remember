@@ -79,8 +79,12 @@ K_B on every run (about 30 s on the real tree):
 - The v2 format constant. [2]
 - What the cache holds. [3]
 - The one read-or-convert path both consumers use. [4]
+
 - The gate reads its converted K_B through it. [5]
+
+
 - The cache holds the Markdown, and a v1 file is ignored and rewritten. [6]
+
 
 ### Best-effort eviction under per-file races
 
@@ -113,7 +117,9 @@ No configured live documentation source was available for this pass.
 - The default directory and the key. [9]
 - A location inside a working tree is refused before anything is created. [10]
 - A hit only for this format and key. [11]
+
 - Atomic writes and eviction. [12]
+
 - The worklist's converted K_B, now read through the shared read-or-convert path. [13]
 - Cached by commit, version and code commit; a refused location converts and creates nothing. [14]
 

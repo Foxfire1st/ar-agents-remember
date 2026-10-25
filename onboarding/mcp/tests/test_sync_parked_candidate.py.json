@@ -426,12 +426,12 @@
       ]
     },
     "6": {
-      "note": "An identical-byte carried line is tested through the public sync tool with an exact current-block assertion.\n\nAnchor: `ResumedConvertedMemoryMergeTests.test_07c_identical_bytes_carried_line_measures_current`",
+      "note": "An identical-byte carried line is tested through the public sync tool with an exact current-block assertion.",
       "targets": [
         {
           "anchor": {
-            "blob": "fac092cb6e4ddb1c7600181176b8a7a984fcc173",
-            "content": "sha256:0df5be11264665a25947c2c45fb0d64598fd0b290f43895e4e6c90d015d072ef",
+            "blob": "d3d9a6a89ff491b5dae7bc9fc2a999051aa2136a",
+            "content": "sha256:0b971661f1e091df188670d8b9d84350b385aa3495e42904069966cd4047cac5",
             "locator": {
               "kind": "file"
             }

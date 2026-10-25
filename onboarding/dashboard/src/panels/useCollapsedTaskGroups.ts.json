@@ -3,15 +3,14 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The parent list applies the hook only to BY REPO hierarchy visibility and leaves selection/detail separate.",
+      "note": "The parent list applies the hook only to BY REPO hierarchy visibility and leaves selection/detail separate.\n\nAnchor: `LifecycleListImpl`",
       "targets": [
         {
           "anchor": {
-            "blob": "ecdae05db864c7b971d33f96f89359d5c51988bc",
-            "content": "sha256:5b487559c73456bae39b7786613a353219273ea6f3723c6f4f972a9411df18c8",
+            "blob": "8835407060216b31d4e3a7c45f4cb3e631551701",
+            "content": "sha256:dc09e97aa36b6f85702e098e15f9afa4678107ca1a3e2e736a686e0c233052b2",
             "locator": {
-              "kind": "symbol",
-              "name": "LifecycleListImpl"
+              "kind": "file"
             },
             "path": "dashboard/src/panels/lifecycle-list/LifecycleList.tsx"
           },
@@ -20,12 +19,12 @@
       ]
     },
     "2": {
-      "note": "Focused tests verify stable storage keys, remount persistence, independent nested state, and expanded defaults. The landed-master cases this row used to name (`holds a fully landed master closed by default…`, `never closes a row that carries OTHER rows…`) **were deleted with the L33 revert** and no longer exist in `hierarchy.test.tsx`; the row now names the three cases the reverted file really carries.\n\nAnchor: \"operations.tasks.collapsed.v1\"; \"defaults hierarchy disclosures to expanded and renders controls only for parents\"; \"keeps sprint and master collapse independent without changing selection or BY PHASE\"; \"persists stable sprint and master keys across remounts\"",
+      "note": "Focused tests pin the stable `operations.tasks.collapsed.v1` keys, independent sprint and master disclosures that stay collapsed across a remount, and BY PHASE grouping that stays flat and never changes selection.",
       "targets": [
         {
           "anchor": {
-            "blob": "8671cd99dcae37b8d97153e71fab82f968db6230",
-            "content": "sha256:68392e15d4774c60ba481fc00408e731f83b9168593e00969a4ca1ed5b3e3ad3",
+            "blob": "949bce364ba34ad511722513cdeb6698679ab7f4",
+            "content": "sha256:648d3641cadb9afc8afaddac6940016d27c0ba30a09753d59372d058ed087123",
             "locator": {
               "end": 220,
               "kind": "line_range",
@@ -37,8 +36,8 @@
         },
         {
           "anchor": {
-            "blob": "8671cd99dcae37b8d97153e71fab82f968db6230",
-            "content": "sha256:dcc80aa9a03a9687b86dbc7dbff48bc469e8ca5f3feb6f076877966256be6d74",
+            "blob": "949bce364ba34ad511722513cdeb6698679ab7f4",
+            "content": "sha256:6198e7d7d209fd8f98d52de7e1f0b1c85e6a8dd8f2742785ddf335c6546114b8",
             "locator": {
               "end": 262,
               "kind": "line_range",
@@ -50,8 +49,8 @@
         },
         {
           "anchor": {
-            "blob": "8671cd99dcae37b8d97153e71fab82f968db6230",
-            "content": "sha256:bbdfb0639f6bfcf6687b0b3eac53ebb9f7fe32bb1be7c28fafa610bfabfdf3b6",
+            "blob": "949bce364ba34ad511722513cdeb6698679ab7f4",
+            "content": "sha256:cbd0c9f6d01c7469fac5c917796c998fb9fdbbd793bde6564b4bb34d70f2fd4e",
             "locator": {
               "end": 285,
               "kind": "line_range",

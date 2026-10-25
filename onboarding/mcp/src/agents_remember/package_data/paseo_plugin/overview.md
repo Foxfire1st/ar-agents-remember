@@ -50,11 +50,19 @@ The client also carries the tray channel. `index.client.tsx` keeps supported the
 
 ## Evidence
 
+
 - The client bridge negotiates display replies while keeping native navigation, selected-screen admission and drawing/failure distinct. [3]
+
+
 - Keep embed RPC while wiring turn, permission and archive events to product-owned decisions; asynchronous handler failures are logged. [1]
+
 - Read current role/task/report registrations through one replaceable stat-generation cache; absence clears it and malformed content remains visible. [2]
+
 - Host activity is boot-qualified, record-bounded and event-driven; concurrent events win over the whole host read and no idle event time is invented. [4]
+
+
 - Parent-wake handlers retain the existing gates: any admitted send asks the host for a steer, a free parent takes the line at once, and only a parent that is already in a turn is withheld unless the product knows its provider keeps that turn. [5]
+
 
 - Supported client contributions remain separate from explicitly pinned DOM adapters. [6]
 - The displayed chat is observed independently and published only to a dashboard that negotiates showing. [7]

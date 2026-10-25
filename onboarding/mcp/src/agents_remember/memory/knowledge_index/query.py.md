@@ -50,7 +50,9 @@ None recorded.
 - Both answers carry the index state like every other lookup, so a partial index is never read as a
   complete "without proof" list.
 
+
 - The proofs of a set of invariants. [1]
+
 - The live invariants no proof names; information, not a gate. [2]
 - A retired invariant is excluded from the list. [3]
 
@@ -77,11 +79,15 @@ The unused `outgoing_links` the first version added was removed (review F12). Th
 `_split` are module-level and private.
 
 - Entries at or under a directory; a sibling sharing the prefix is never matched. [4]
+
 - Entries of the files directly in a directory (F2). [5]
+
 - Live entry paths under a directory, for the reader's counts. [6]
 - Links to a path's anchors or route; every record of one kind. [7]
 - `_incoming` delegating to the shared link query, same SQL and order. [8]
+
 - The directory condition and the prefix it is built from. [9]
+
 - The sibling-prefix, own-level, retired-count and route-link cases. [10]
 
 
@@ -116,11 +122,15 @@ The index handle, the answer types and the lookups.
 
 - The reused read code opens the index file under the index namespace. [15]
 - The rule-3 lookups. [16]
-- The reverse identity lookup and the ancestor match that never matches on a name prefix and ends with the root route. [17]
+
+- The reverse lookup from a projected UUID to the text ID it stands for (rule 6's reverse map). [17]
+
 - A family routed at the root governs a root-level file and a deep file. [18]
 - The answer cases: path lookups, invariant, family and route, incoming links, and history rows by subject and by leaf (the index query moved here from MIK-R07). [19]
 
+
 - One history row by its ID. [20]
+
 
 ### Cross-Repo References
 

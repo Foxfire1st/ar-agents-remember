@@ -10,7 +10,7 @@
 
 ## Current source contract evidence
 
-- The current candidate source supports the operative account — the four registrations and the mounted read's description naming both public writer commands — while the historical sections grant no current tool or execution acceptance. [21]
+- The current candidate source supports the operative account — the four registrations and the mounted read's description naming both public writer commands — while the historical sections grant no current tool or execution acceptance.
 
 ## Historical original card — all remaining original prose and evidence are non-operative
 
@@ -74,7 +74,6 @@ families come one compact `chain_family` row per family routed at the path's dir
 argument, and the registrar still forwards it without interpreting it.
 
 
-- The docstring sentences on the chain rows and the family seed. [1]
 
 
 ## 260928-MIK-L01 The Read Docstring Names The Family-Complete Leaf Read
@@ -88,16 +87,17 @@ takes `sourcePath` and `continuation`, and a non-default `orderingInput` on a fr
 the tree read (ruling Q7, 2026-09-29 23:21:57).
 
 
-- The docstring sentences on the leaf read and, after MIK-R05's chain sentences, the `invariant` view's families. [2]
 
 
 ## 260928-MIK-L08 The Integrity Check Takes A Leaf's Contract
 
 
-- The integrity handler names a leaf contract or an explicit memory/code tree with comparison bases, forwards one IntegrityCheckRequest, and returns the validator report and persisted leaf worklist; no database pair or recorded-run selector survives. [3]
+- The integrity handler names a leaf contract or an explicit memory/code tree with comparison bases, forwards one IntegrityCheckRequest, and returns the validator report and persisted leaf worklist; no database pair or recorded-run selector survives.
 
 
-- The builder that decides the accepted combinations. [4]
+
+- The builder that decides the accepted combinations.
+
 
 
 ## 260928-MIK-L03 The Read Docstring Names `currentness`
@@ -110,10 +110,11 @@ the caller's `repositoryRoot` untouched and the workspace root separately, which
 `requested_code_tree` treat a `repositoryRoot` alone as no request (architect ruling 2, 2026-09-29T18:42:37).
 
 
-- The read docstring's `currentness` sentence, now at the walk's code tree. [5]
 
 
-- Only a named tree ID (or the continuation's) is the walk's code tree; `HEAD` is never used. [6]
+
+- Only a named tree ID (or the continuation's) is the walk's code tree; `HEAD` is never used.
+
 
 
 ## 260928-MIK-L02 The Read Docstring Names The Page, The Threshold And The Continuation
@@ -133,10 +134,9 @@ the walk's code tree: the one named by `codeTreeId`, or the continuation's on a 
   store when the caller names no `repositoryRoot` (ruling F4, 20:40:40).
 
 
-- The docstring sentences on the page, the threshold and the cross-surface continuation. [7]
 
 
-- The ordering argument that is `None` unless the caller names one. [8]
+- The ordering argument that is `None` unless the caller names one.
 
 
 ## Evidence
@@ -150,31 +150,47 @@ No configured domain documentation could be checked.
 ### Repo-Internal References
 
 
-- The family module's own statement of its scope — appended rather than inserted, the three operations in the design's spelling, no domain reasoning and nothing mounted for the reviewer — together with the one entry point whose three `_register_*` calls are made in the declared read, diff, integrity order. [9]
+
+- The family module's own statement of its scope — appended rather than inserted, the three operations in the design's spelling, no domain reasoning and nothing mounted for the reviewer — together with the one entry point whose four `_register_*` calls are made in the read, diff, integrity, write order. [9]
+
+
 
 
 - The statement of what the runtime configuration supplies to this family — the workspace root a read falls back to as a **default repository**, never half of a resolution pair, and the coordination root under which a converted memory tree's derived index is cached — and the configuration type whose `workspace_root` is the first value. [10]
 
 
-- The three registered handlers: the read registrar that forwards the caller's own root and the configured workspace root as two separate arguments plus the configured coordination root, and the diff and integrity registrars that take the server alone. [11]
 
 
-- The published read contract: the three views, the attributed records, the rule that an unclassifiable value is an unresolved limitation rather than an empty class, and the optional `sourcePath` seed the signature carries into `ReadToolRequest.source_path`. [12]
+- The four registered handlers: the read registrar that forwards the caller's own root and the configured workspace root as two separate arguments plus the configured coordination root, the write and diff registrars that take the configuration beside the server, and the integrity registrar that takes the server alone. [11]
+
+
+
+
+- The published read contract: the named views with their filters, rows that name ID, kind, state and location and never text, and the optional `sourcePath` seed the signature carries into `ReadToolRequest.source_path`. [12]
+
+
 
 
 - The family entry point as the package door's contract requires it: one `register_*_tools(server, config)` public function for this family, delegating to the payload builders. [13]
 
 
+
+
 - The comparison registrar and handler return the knowledge files' Git diff, grouped by record and source path, without inferring a semantic effect label. [14]
+
 
 
 - The integrity registrar and handler report validator counts and violations and add a leaf's latest worklist when contractPath is named; runId, inputDigest and compatible are not fields of the current registered contract. [15]
 
 
+
 - The request value objects and payload builders this module delegates to, imported rather than re-declared here. [16]
 
 
+
+
 - The registry the family is appended to, where the import and the tail tuple entry are the family's whole integration, and the live-registration test that compares the resulting order against the advertised roster. [17]
+
 
 
 - The three advertised names this registrar publishes, appended at the roster tail in the same order the handlers are registered in. [18]
@@ -183,7 +199,9 @@ No configured domain documentation could be checked.
 - The three response-model rows that validate these operations' payloads, added at the registry's own tail. [19]
 
 
+
 - The strict response classes preserve the read view's payload, the diff's file changes and the validator's report/worklist as distinct responsibilities; the current integrity response has no compatible field. [20]
+
 
 
 ### Cross-Repo References

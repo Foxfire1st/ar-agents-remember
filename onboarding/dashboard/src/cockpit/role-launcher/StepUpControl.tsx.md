@@ -22,6 +22,8 @@ This is candidate-source onboarding, not execution, CODE/MEMORY acceptance, serv
 
 - Worker/Curator typed review census, record-only exclusion and unknown history. [1]
 - Reason admission, threshold and differing-harness/model inheritance boundary. [2]
+
 - Saved taskless UUID/pending plus trimmed reason/override restoration keeps the legacy Investigator storage slot. [3]
+
 - The same start-only reason enters saved retry payload and POST body. [4]
 - File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence. [5]

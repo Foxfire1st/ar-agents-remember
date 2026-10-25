@@ -1,5 +1,6 @@
 {
   "path": "mcp/tests/test_knowledge_currentness.py",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
@@ -52,12 +53,22 @@
       ]
     },
     "12": {
-      "note": "`knowledge_read` with a named tree.",
+      "note": "`knowledge_read` with a named tree.\n\nAnchor: `test_knowledge_read_flags_a_stale_invariant_and_keeps_it_visible`",
       "targets": [
         {
           "anchor": {
-            "blob": "85c55f2eaf44e11e20283306277a55040b2fa8a1",
-            "content": "sha256:d4b9911b1395ec1a3b7268944d57fc41447f34349a1bbe67a23351679e305dcc",
+            "blob": "035d30df74bd1bad93ddc28456d591c1024b28d2",
+            "content": "sha256:58f2f830be97427187427103b14ba610b4a99dad8ba64e42c299bd5fd25f7478",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "035d30df74bd1bad93ddc28456d591c1024b28d2",
+            "content": "sha256:9efc720ab517913f39dcd59be2b27eca879b03cf17bfded52ea1f46f0339d7c0",
             "locator": {
               "kind": "symbol",
               "name": "test_knowledge_read_flags_a_stale_invariant_and_keeps_it_visible"
@@ -68,12 +79,22 @@
       ]
     },
     "13": {
-      "note": "`knowledge_read` without one.",
+      "note": "`knowledge_read` without one.\n\nAnchor: `test_knowledge_read_without_a_named_tree_is_unverifiable_and_never_reads_head`",
       "targets": [
         {
           "anchor": {
-            "blob": "85c55f2eaf44e11e20283306277a55040b2fa8a1",
-            "content": "sha256:a5a23df64e8b4bd5366430a3e80d049b43770ee44894375733f350207e20d399",
+            "blob": "035d30df74bd1bad93ddc28456d591c1024b28d2",
+            "content": "sha256:58f2f830be97427187427103b14ba610b4a99dad8ba64e42c299bd5fd25f7478",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "035d30df74bd1bad93ddc28456d591c1024b28d2",
+            "content": "sha256:f661cccb6214678afe8e668525b5f561ef5c285207806be7772f5e89089c066c",
             "locator": {
               "kind": "symbol",
               "name": "test_knowledge_read_without_a_named_tree_is_unverifiable_and_never_reads_head"
@@ -84,12 +105,22 @@
       ]
     },
     "14": {
-      "note": "The published-intent block.",
+      "note": "The published-intent block.\n\nAnchor: `test_the_published_intent_block_flags_returned_invariants_at_its_resolved_tree`",
       "targets": [
         {
           "anchor": {
-            "blob": "85c55f2eaf44e11e20283306277a55040b2fa8a1",
-            "content": "sha256:09c279f2f41db323726fa3e4a6d6054c028eeb2e2e05087fbc6d087fbe2e8ee2",
+            "blob": "035d30df74bd1bad93ddc28456d591c1024b28d2",
+            "content": "sha256:58f2f830be97427187427103b14ba610b4a99dad8ba64e42c299bd5fd25f7478",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "035d30df74bd1bad93ddc28456d591c1024b28d2",
+            "content": "sha256:5888a3849044750fc90692e577d0dcdb3379c238072c72637419ac0ab3d79988",
             "locator": {
               "kind": "symbol",
               "name": "test_the_published_intent_block_flags_returned_invariants_at_its_resolved_tree"
@@ -100,12 +131,22 @@
       ]
     },
     "15": {
-      "note": "A failing step never refuses.",
+      "note": "A failing step never refuses.\n\nAnchor: `test_a_failing_currentness_step_degrades_to_a_reason_and_never_refuses_the_read`",
       "targets": [
         {
           "anchor": {
-            "blob": "85c55f2eaf44e11e20283306277a55040b2fa8a1",
-            "content": "sha256:e183a2d74a57440dfd414fdac038941d816a450c2727f7809775ad31ab88d2a7",
+            "blob": "035d30df74bd1bad93ddc28456d591c1024b28d2",
+            "content": "sha256:58f2f830be97427187427103b14ba610b4a99dad8ba64e42c299bd5fd25f7478",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "035d30df74bd1bad93ddc28456d591c1024b28d2",
+            "content": "sha256:8eafa74e77e1208a1bc9f6b56f8deb48035926357fd13502a59e0e4d8f265a4d",
             "locator": {
               "kind": "symbol",
               "name": "test_a_failing_currentness_step_degrades_to_a_reason_and_never_refuses_the_read"
@@ -120,12 +161,38 @@
       "targets": [
         {
           "anchor": {
-            "blob": "11ba98ff63f4a4815985ac51e2c0c7b5a48556a4",
+            "blob": "102c4550ab6429f44c8fb543d1d0662de66a1b8c",
+            "content": "sha256:37ef1f10db420bf2f737a1dad465b7b2f934b2075cdcfe7a056eabd040680f53",
+            "locator": {
+              "end": 146,
+              "kind": "line_range",
+              "start": 146
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "102c4550ab6429f44c8fb543d1d0662de66a1b8c",
             "content": "sha256:ea533393f6ab58b54c02b6526a92b2a9d597d162f1fd77dbfe7a1fbceab5cbb8",
             "locator": {
-              "end": 159,
+              "end": 162,
               "kind": "line_range",
-              "start": 159
+              "start": 162
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "102c4550ab6429f44c8fb543d1d0662de66a1b8c",
+            "content": "sha256:f22c5587cdba13791c35bdef4b19f3db6cf9729d219adddc9945a04599ddbc70",
+            "locator": {
+              "end": 131,
+              "kind": "line_range",
+              "start": 131
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -133,28 +200,23 @@
         }
       ]
     },
-    "17": {
-      "note": "Current source declarations support the qualified naming or fixture account; no executed test or acceptance is inferred.",
+    "2": {
+      "note": "The fixture world, with a fresh private cache by default.\n\nAnchor: `World` `world`",
       "targets": [
         {
           "anchor": {
-            "blob": "4b4bfdf197a50f071c185d1276e71aca2471d717",
-            "content": "sha256:399edb6bd2fa27089ba29faddba4055191fea4bee9adecc6c4e13c8c66dc6b7b",
+            "blob": "035d30df74bd1bad93ddc28456d591c1024b28d2",
+            "content": "sha256:58f2f830be97427187427103b14ba610b4a99dad8ba64e42c299bd5fd25f7478",
             "locator": {
               "kind": "file"
             }
           },
           "kind": "test"
-        }
-      ]
-    },
-    "2": {
-      "note": "The fixture world, with a fresh private cache by default.",
-      "targets": [
+        },
         {
           "anchor": {
-            "blob": "85c55f2eaf44e11e20283306277a55040b2fa8a1",
-            "content": "sha256:9c14e9208b0fd4c0282ec3be55ba93734b00d5f1dd65370b18b10fe928962164",
+            "blob": "035d30df74bd1bad93ddc28456d591c1024b28d2",
+            "content": "sha256:410632331ef1e9f1c8ad1513eb5d56649053efa76a2ecca824efaf7bc158d963",
             "locator": {
               "kind": "symbol",
               "name": "World"
@@ -176,12 +238,22 @@
       ]
     },
     "3": {
-      "note": "The packet's conforming example.",
+      "note": "The packet's conforming example.\n\nAnchor: `test_a_raw_git_body_edit_flags_only_its_invariant_and_names_the_entry`",
       "targets": [
         {
           "anchor": {
-            "blob": "85c55f2eaf44e11e20283306277a55040b2fa8a1",
-            "content": "sha256:1332a7b1518ea7a268cc9cc4a6637b6319e256878f218877646f9989f62c21eb",
+            "blob": "035d30df74bd1bad93ddc28456d591c1024b28d2",
+            "content": "sha256:58f2f830be97427187427103b14ba610b4a99dad8ba64e42c299bd5fd25f7478",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "035d30df74bd1bad93ddc28456d591c1024b28d2",
+            "content": "sha256:7ed03d37ccbd9c5de8cb51062107e433f2bc446f3a90c8fed9932877dfc34ccc",
             "locator": {
               "kind": "symbol",
               "name": "test_a_raw_git_body_edit_flags_only_its_invariant_and_names_the_entry"
@@ -208,12 +280,22 @@
       ]
     },
     "5": {
-      "note": "Unverifiable reasons and the N1 order.",
+      "note": "Unverifiable reasons and the N1 order.\n\nAnchor: `test_unverifiable_names_why_for_no_tree_an_unreadable_tree_and_an_unsupported_locator`",
       "targets": [
         {
           "anchor": {
-            "blob": "85c55f2eaf44e11e20283306277a55040b2fa8a1",
-            "content": "sha256:76f360523e4d81230992fb73e53e75815f37025d3a7be3c3f97d1654bb032aa3",
+            "blob": "035d30df74bd1bad93ddc28456d591c1024b28d2",
+            "content": "sha256:58f2f830be97427187427103b14ba610b4a99dad8ba64e42c299bd5fd25f7478",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "035d30df74bd1bad93ddc28456d591c1024b28d2",
+            "content": "sha256:cda3d34f58560584f2afc46023aa50b6b813fe885530ca364cd9c3e79d65ddc1",
             "locator": {
               "kind": "symbol",
               "name": "test_unverifiable_names_why_for_no_tree_an_unreadable_tree_and_an_unsupported_locator"
@@ -224,12 +306,22 @@
       ]
     },
     "6": {
-      "note": "Git failures and no caching of them.",
+      "note": "Git failures and no caching of them.\n\nAnchor: `test_a_failed_or_timed_out_git_call_is_unverifiable_with_its_reason`",
       "targets": [
         {
           "anchor": {
-            "blob": "85c55f2eaf44e11e20283306277a55040b2fa8a1",
-            "content": "sha256:b4b5303e01008d309a914dfee70cce629dc9ec69fdc15264cf4c27442b77bab0",
+            "blob": "035d30df74bd1bad93ddc28456d591c1024b28d2",
+            "content": "sha256:58f2f830be97427187427103b14ba610b4a99dad8ba64e42c299bd5fd25f7478",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "035d30df74bd1bad93ddc28456d591c1024b28d2",
+            "content": "sha256:e6a12fb3e414bb8b9b3d368a8c6b5a5a4cb475722ec9f460b65408220f29d169",
             "locator": {
               "kind": "symbol",
               "name": "test_a_failed_or_timed_out_git_call_is_unverifiable_with_its_reason"
@@ -272,12 +364,22 @@
       ]
     },
     "9": {
-      "note": "Stale proofs.",
+      "note": "Stale proofs.\n\nAnchor: `test_a_proof_whose_test_changed_or_disappeared_is_flagged_stale`",
       "targets": [
         {
           "anchor": {
-            "blob": "85c55f2eaf44e11e20283306277a55040b2fa8a1",
-            "content": "sha256:292b4b48d8b864b1f75ccd356fed044b251c6890bf93c054653477fc4cb53783",
+            "blob": "035d30df74bd1bad93ddc28456d591c1024b28d2",
+            "content": "sha256:58f2f830be97427187427103b14ba610b4a99dad8ba64e42c299bd5fd25f7478",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "035d30df74bd1bad93ddc28456d591c1024b28d2",
+            "content": "sha256:4038fa75f9c49e9de6d94aa1bf5a2a167bee1665fe447f1631ef584d26315ac1",
             "locator": {
               "kind": "symbol",
               "name": "test_a_proof_whose_test_changed_or_disappeared_is_flagged_stale"

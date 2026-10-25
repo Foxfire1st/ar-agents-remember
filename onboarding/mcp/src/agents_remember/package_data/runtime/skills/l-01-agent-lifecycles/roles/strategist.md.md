@@ -6,14 +6,15 @@ Delta scope remains monotonic over the preceding rejected set. Rounds within the
 
 This account controls the named changed seams; contradictory earlier card wording below is retained only as historical evidence. Unchanged role duties and R117 file-only wake/report transport are preserved. Source inspection supplies no new runtime test, CODE verdict, review counter or acceptance.
 
-- Delta scope remains monotonic over the preceding rejected set. Rounds within the settings limit are ordinary; beyond it requires recorded approval under the review operation. This changes no target-only dispatch authority, role write boundary, requirement or acceptance owner. [10]
+
+- Delta scope remains monotonic over the preceding rejected set. Rounds within the settings limit are ordinary; beyond it requires recorded approval under the review operation. This changes no target-only dispatch authority, role write boundary, requirement or acceptance owner.
+
 
 
 ## Message/file transport
 
 This packaged copy makes role messages short wake-ups naming requested work or a handover and its files. Complete report, verdict, list and evidence contents travel through file-only `body` or existing-file `attach`, never pasted into message text. Within a shared task, message files remain with its record and a leaf workspace exposes the message-folder link. Wake text uses the effective settings limit, not a number pinned in this role/template. This transport account changes neither the file's existing role/write boundaries nor requirement, review, curation or landing authority.
 
-- Messages wake; complete payloads and evidence travel as files. [9]
 
 
 ## Current operative account — MIK-R112
@@ -38,7 +39,9 @@ Source inspection supplies no new test, native-host, whole-build, landing or mem
 
 ## Current source contract evidence
 
-- Current source declarations support the qualified naming or fixture account; no executed test or acceptance is inferred. [11]
+
+- Current source declarations support the qualified naming or fixture account; no executed test or acceptance is inferred.
+
 
 
 ## Current naming and source qualification
@@ -52,7 +55,9 @@ Read route indexes, overviews and source in the worktrees; use read_ar_files to 
 
 The strategist source retains its planning/design artifact boundary. It forbids worktree_start/worktree_attach; lifecycle_finalize_task and other owning-seat machinery remain prohibited. No removed session-adoption inference is made from that prohibition. Harness/model/effort are settings, not role-selected launch commands. Earlier dispatch_agent readiness/transaction vocabulary is historical, not a current callable or a launch claim.
 
-- The current strategist role owns its artifacts, not worktree/lifecycle or role-start authority; operator knobs remain settings. \[12] [12]
+
+- The current strategist role owns its artifacts, not worktree/lifecycle or role-start authority; operator knobs remain settings.
+
 
 ## Historical original card — preserved, not the current operative account
 
@@ -152,12 +157,21 @@ adoption.
 
 - Canonical source this bundle copy is sync-propagated from. [1]
 - The role declares the readable order — Inputs, Process, Outputs — with no inherited-sources line and no operator-knob block. [2]
+
 - The reader-not-mutator boundary the role must preserve. [3]
-- The strategist names `roles/manager.md` only to name the seat it hands to, which is its one sanctioned sibling reference. [4]
-- The router's role registry still names the strategist row, and the loop doctrine now has its single home in `core/`. [5]
-- The orchestrator that adopts the ruled topology or authors the same complete orchestration task after a sanctioned strategist skip. [6]
+
+
+- The strategist names no sibling role file at all: the corpus test's sanctioned-sibling map has entries for the architect and the orchestrator only. [4]
+
+
+- The orchestrator coordinates one selected sprint through role agents and task owners; the same complete orchestration task after a sanctioned strategist skip is stated in the orchestration-task template. [6]
+
+
 - The deliverable's template separates mandatory planning from optional persisted graph structure and defines complete graph bootstrap. [7]
+
+
 - The plan-review criteria re-derive effective priority and validate either topology choice. [8]
+
 
 ### Cross-Repo References
 
@@ -220,4 +234,7 @@ A successor strategy review now carries the sealed issue list, fixed/unfixed dis
 
 ## Current Contract Evidence
 
+
 - Current stage boundaries, settings-owned review budget and recorded approval duties are carried by these instruction sources. [9]
+
+- The composition manifest retains a `strategist` entry, but the thin router’s supported eight-role launch set excludes it; loop doctrine retains its single home in `core/loop.md`.  Historical source caption: "Anchor: `## The Role Registry`; `# Core — The Three-Party Loop (one home — this file owns the loop doctrine)`" [13]

@@ -87,4 +87,8 @@ No meaningful cross-repo references found.
 - Weight-bounded LRU eviction, refusal of oversized values, and the concurrent bound.  Anchor: "test_the_memo_evicts_the_least_recently_used_past_its_weight_bound"; "test_concurrent_readers_share_answers_and_the_bound_holds" [6]
 - **A pruned or revoked tree reported unavailable for every anchor, not answered from memory.**  Anchor: "test_a_tree_that_stops_being_available_is_reported_unavailable_not_remembered" [7]
 - **No repository's answers served for another, and one parse per grammar.**  Anchor: "test_one_repositorys_answers_are_never_served_for_another"; "test_one_blob_is_parsed_per_grammar_whichever_is_asked_first" [8]
+
+
+> Retained earlier citation wording: - The lane registration.  Anchor: "mcp/tests/test_read_anchor_memo.py" [9]
+
 - The lane registration.  Anchor: "mcp/tests/test_read_anchor_memo.py" [9]

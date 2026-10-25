@@ -133,18 +133,49 @@ No external domain claim is required.
 - The one-class, one-case fixture: one real temporary Git world per case, master-b's canonical series contract, external memory. [2]
 - The six public drivers the run is expressed in, each a registered tool call. [3]
 - The ordered run and the eight beats, including step 8 — a leaf commanded after the checkpoint landing still starts on a new base. [4]
-- The deleted child-admission seal this module is the regression proof for: its module and call sites are gone, and masters are no longer locked by their own landing. The stop the module plays is `pause_result`, whose already-stopped branch answers an unselected master. [5]
-- The public tools the master-level beats drive. [6]
-- The one eligibility decision the checkpoint preview and apply both read, and the `checkpointed` cell this module asserts after the landing. [7]
-- The shared world fixture and Git helper this module composes instead of re-implementing. [8]
-- The leaf closeout recording it imports rather than duplicating. [9]
-- The integration lane row the fail-closed manifest requires. [10]
 
-- The lifecycle catalog lists this suite under checkpoint-landing and curator-coherence shared support. [11]
+- The deleted child-admission seal this module is the regression proof for: its module and call sites are gone, and masters are no longer locked by their own landing. The stop the module plays is `pause_result`, whose already-stopped branch answers an unselected master. [5]
+
+
+- The public tools the master-level beats drive. [6]
+
+
+- The one eligibility decision the checkpoint preview and apply both read, and the `checkpointed` cell this module asserts after the landing. [7]
+
+
+- The shared world fixture and Git helper this module composes instead of re-implementing. [8]
+
+
+- The leaf closeout recording it imports rather than duplicating. [9]
+
+
+
+
+
+> Retained earlier citation wording: - The integration lane row the fail-closed manifest requires. Source caption: "mcp/tests/test_lifecycle_playthrough_end_to_end.py" [10]
+
+
+
+
+
+
+
+> Retained earlier citation wording: - The lifecycle catalog lists this suite under checkpoint-landing and curator-coherence shared support. [11]
+
+
 
 - The integration-case budget this module's membership is accounted against. [12]
-- The integration lane row the fail-closed manifest requires. [13]
-- The two shared-support consumer edges this module adds to the lifecycle catalog, one in each artifact block. [14]
+
+
+
+
+> Retained earlier citation wording: - The integration lane row the fail-closed manifest requires. Source caption: "mcp/tests/test_lifecycle_playthrough_end_to_end.py" [13]
+
+
+
+
+- The lifecycle catalog names this suite among the consumers of the checkpoint-landing and curator-coherence shared-support artifacts. [14]
+
 - The integration-case budget this module's membership is accounted against. [15]
 
 ### Cross-Repo References
@@ -153,3 +184,11 @@ These are contract, ref and ledger assertions against repositories created in a 
 by the module's own fixture; no sibling repository or external system participates.
 
 No meaningful cross-repo references found.
+
+- The integration lane row the fail-closed manifest requires. Source caption: "mcp/tests/test_lifecycle_playthrough_end_to_end.py" [10]
+
+
+- The lifecycle catalog lists this suite under checkpoint-landing and curator-coherence shared support. [11]
+
+
+- The integration lane row the fail-closed manifest requires. Source caption: "mcp/tests/test_lifecycle_playthrough_end_to_end.py" [13]

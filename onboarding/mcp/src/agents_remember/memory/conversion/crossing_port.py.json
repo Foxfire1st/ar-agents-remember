@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/memory/conversion/crossing_port.py",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
@@ -26,8 +27,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4bf1f63e5d4894418f9652c59aecbefc1b32b0ef",
-            "content": "sha256:0806ff8159b28f075cd569c53575cab2a083401a53dda313678ac0e7fb47fce1",
+            "blob": "ecf97d719a2ae7eb21bbef87608f77daabb9841a",
+            "content": "sha256:afe3a4f71dacf61278c5951dcccd26adb05431c4fbb4f02e6fe8ed9549c246b5",
             "locator": {
               "kind": "symbol",
               "name": "GitKnowledgeCrossing"
@@ -79,12 +80,23 @@
       ]
     },
     "3": {
-      "note": "The default composition binds it.",
+      "note": "The default composition binds it.\n\nAnchor: `build_default_worktree_services`",
       "targets": [
         {
           "anchor": {
-            "blob": "ee679e2f089eb160dd19292309619814bc037124",
-            "content": "sha256:c50b90ee75f0791f8982bfa60c92c574fd2a3d011b518ab667d2a35f5fd057fb",
+            "blob": "9cfe5fc779f3234e5cf2d83eee7be9897b4668cb",
+            "content": "sha256:a219236a73954634734073e091b79e55d120b08e493a482435b84adb37cc3092",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/worktree_services.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9cfe5fc779f3234e5cf2d83eee7be9897b4668cb",
+            "content": "sha256:f1ac9e4c9ca53c18f1cb7439db85510df5446e1e4a2a18e12523d8e4fb0cd1a8",
             "locator": {
               "kind": "symbol",
               "name": "build_default_worktree_services"

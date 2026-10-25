@@ -30,7 +30,9 @@ No configured Domain Documentation source was available; current boundaries belo
 
 ### Repo-Internal References
 
-- Current details/facts rendering and judgment identifiers are a different owner than the retired assessment labels. [16]
+
+- ReviewMainFacts renders changed fields, unresolved references, remaining counts, staleness and submission facts; ReviewRecordIdentities renders comparison, retained revision, expansion and judgment identifiers in Technical details. [16]
+
 
 - The controlled current sibling test filters leaf judgment rows and excludes the sibling row; it does not revive the removed applicability surface. [17]
 

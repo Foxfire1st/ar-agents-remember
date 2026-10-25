@@ -1,16 +1,17 @@
 {
   "path": "mcp/src/agents_remember/package_data/runtime/docs/tool-details.md",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
-      "note": "The complete document defines build/install explanations and the gone-path carried-anchor exception; documentation is not fresh execution evidence.",
+      "note": "The document defines build/install explanations and distinguishes read-only drift reporting from exact-pair stale-anchor publication refusal, with an additional carried-deleted-path refusal; documentation is not fresh execution evidence.",
       "targets": [
         {
           "anchor": {
-            "blob": "ec9e8600bf2db7e6d40f038dbac22650c7fdce36",
-            "content": "sha256:f064b8cbfc99cde602e43b42bfbbd56b9c4fc8cd65d44d876951b51f705d1214",
+            "blob": "2b635ee176f4fb5b39f31f5a621e0169376a6fc0",
+            "content": "sha256:896e30c87965527164fb3a5da91f5f7f18798424669f113b527fa7f24a007dae",
             "locator": {
-              "end": 118,
+              "end": 121,
               "kind": "line_range",
               "start": 1
             }
@@ -24,12 +25,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ec9e8600bf2db7e6d40f038dbac22650c7fdce36",
-            "content": "sha256:5835d671370afc534e495be902dbf291eb1b4baba3d5953dc9a2c348f4af2483",
+            "blob": "2b635ee176f4fb5b39f31f5a621e0169376a6fc0",
+            "content": "sha256:4610e225642db196e321c2d33d1126d29c2dca1779adf775a419d05e2abf9311",
             "locator": {
-              "end": 160,
+              "end": 163,
               "kind": "line_range",
-              "start": 121
+              "start": 124
             }
           },
           "kind": "code"
@@ -41,7 +42,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ec9e8600bf2db7e6d40f038dbac22650c7fdce36",
+            "blob": "2b635ee176f4fb5b39f31f5a621e0169376a6fc0",
             "content": "sha256:587fd50aef8cf94f65d8c0119390ffc913c3628342eaf1a598204bf3d36f603d",
             "locator": {
               "end": 84,

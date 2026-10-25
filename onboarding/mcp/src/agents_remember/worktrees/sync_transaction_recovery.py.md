@@ -91,7 +91,9 @@ No external Domain Documentation entries are configured. Source and test asserti
 
 - Rollback proof is centralized in the Git module. [3]
 
+
 - Finalization refuses while a side still parks its candidate, and cancellation clears a conflicted reapply, rolls back, and returns the parked candidate or reports a typed manual repair. [4]
+
 
 - The completed result gains the recomputed worklist summary; every failure leaves it unchanged. [5]
 

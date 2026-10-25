@@ -1,18 +1,19 @@
 {
   "path": "mcp/src/agents_remember/serving/projections/paths.py",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
-      "note": "The application startup writer installs workspace-river ToolEventWriter, using observer_root imported from the observer facade rather than this serving module.\n\nAnchor: startup import and writer initialization",
+      "note": "The application startup writer installs workspace-river ToolEventWriter, using observer_root imported from the observer facade rather than this serving module.  Anchor: startup import and writer initialization",
       "targets": [
         {
           "anchor": {
-            "blob": "f68931da55ba1536e026c86cfa5c4eec8af1e0d6",
-            "content": "sha256:b9a37510447e127c4a067e0e437faf6d9fe945d7f9eda660b598fe3cd1abab0a",
+            "blob": "186284cc5a3f3e1d6a49a2378e0605ddfc5b1724",
+            "content": "sha256:d657a2ec8cf5d09aafddd1e10402884520cf0ab82ecb906d5b4fb9a4cefde757",
             "locator": {
-              "end": 46,
+              "end": 53,
               "kind": "line_range",
-              "start": 8
+              "start": 10
             },
             "path": "mcp/src/agents_remember/application/runtime/startup.py"
           },
@@ -21,12 +22,12 @@
       ]
     },
     "2": {
-      "note": "The projection I/O edge imports this serving module's observer_root and calls it for the projection store root.\n\nAnchor: projection import and call",
+      "note": "The projection I/O edge imports this serving module's observer_root and calls it for the projection store root.",
       "targets": [
         {
           "anchor": {
-            "blob": "cb0ab4cb5e3a37ea0377727c5e29c1744b0d162b",
-            "content": "sha256:3fbbeece077c1c4ee787909915fd927787269d107d6b5cce2a87b85d66517772",
+            "blob": "80f68a14806839156738f156091e776e566e18b6",
+            "content": "sha256:3505c112f9fe4696f1966ff15044ae19bdacbcd36874ce5f891c083f612aacb5",
             "locator": {
               "end": 168,
               "kind": "line_range",
@@ -39,12 +40,12 @@
       ]
     },
     "3": {
-      "note": "The drift snapshot reader using `drift_snapshot_dir` + the schema (3b).\n\nAnchor: \"def read_drift_snapshots(coordination_root: Path\"",
+      "note": "The drift snapshot reader using `drift_snapshot_dir` + the schema (3b).",
       "targets": [
         {
           "anchor": {
-            "blob": "b50634a5bbb0c8632b1fb1b39504d9d38fedec89",
-            "content": "sha256:9c1266de9b259213b383f4567ce484dd6b3387dc84c17b25cc2330477bb95adf",
+            "blob": "8be3f293c9a38e01524f4b0f2f2252f9b0d2aecc",
+            "content": "sha256:01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
             "locator": {
               "end": 79,
               "kind": "line_range",
@@ -107,8 +108,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3ce87362f44ca376e33cad8872407ae5fb0d4be9",
-            "content": "sha256:848d2b3e00cd76172e93493f1417ab28e5f59cbb112b88b0810780836e67f92f",
+            "blob": "04fe591490945dea61eca1af410ae2553d95ea05",
+            "content": "sha256:e2669e785e5838f22e405f93315bbeabb44c6d22606a145d7c021a074a2d2f31",
             "locator": {
               "end": 160,
               "kind": "line_range",
@@ -125,7 +126,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e911c7b3c02dee11b93eba46500c5e702dec8905",
+            "blob": "90cdaabb8a2503d6feaa2452fea8963f7c486bf9",
             "content": "sha256:c8c4fe8051d441d0b103143f578f4ce016591a65a288ee50f1b4741f22c9d048",
             "locator": {
               "end": 5,

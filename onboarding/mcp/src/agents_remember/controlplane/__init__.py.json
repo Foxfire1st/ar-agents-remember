@@ -75,15 +75,14 @@
       ]
     },
     "6": {
-      "note": "The durable-store contract exports: the package-docstring paragraph stating the contract at L15-L21, the import block at L26-L36, and the matching `__all__` entries at L73-L108.",
+      "note": "The durable-store contract exports: the package-docstring paragraph stating the contract, the import block, and the matching `__all__` entries.\n\nAnchor: `__all__`",
       "targets": [
         {
           "anchor": {
-            "blob": "1b593b3aa9aa815db062537f953c38806dbf2373",
-            "content": "sha256:1adda3270a1b5edbcbe8de33bdcd811ae5d4677b5774cb353c41e211e5e00e2f",
+            "blob": "ee455c6ec7168da8ea70b3238c695f3b671052a0",
+            "content": "sha256:98c357627a3b6aebda7a8c8f572d6ccbe30a314083c6886279122c279d1e245f",
             "locator": {
-              "kind": "symbol",
-              "name": "__all__"
+              "kind": "file"
             }
           },
           "kind": "code"

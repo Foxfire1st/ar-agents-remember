@@ -138,13 +138,21 @@ the adapter that delegates to it, and the ten-case module that measures it.
 
 - **The module's own statement of the contract: both snapshots, no comparison, no silent drops, zero subjects an empty catalogue.** [1]
 - The published surface: one name. [2]
+
 - The one entry point: both stores opened under the record-beside-the-bytes namespace, each read and closed, then merged. [3]
+
 - The per-side read through the store's own two list operations, with each label travelling beside its side. [4]
 - **The globally kind-grouped union: the outer loop is the subject kind, the after label wins on overlap, and retired rows keep the before snapshot's own wording.** [5]
 - The candidate's rows of one kind with the presence both snapshots give them, and the baseline's retired rows of one kind in the before snapshot's own order. [6]
+
 - The vocabulary the rows fill: presence per entry and the entry list's labelled totals with their agreement validators. [7]
+
+
 - The adapter that delegates: the entry half resolves, calls this module, fills the totals and assembles — no enumeration logic of its own. [8]
-- **The ten cases that measure the catalogue: the union, the kind grouping with retired subjects, the retired and added rows, the statement-free family, the whole-row traversal, the unselectable subject's reason, the totals, the zero-subject boundary, and the no-comparison tripwire.** [9]
+
+
+- The nine cases that measure the catalogue: the union, the kind grouping with retired subjects, the retired and added rows, the family subject's recorded guarantee sides, the whole-row traversal, the totals, the zero-subject boundary, and the no-comparison tripwire. [9]
+
 
 ### Cross-Repo References
 

@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/cli/role_instructions.py",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
@@ -146,8 +147,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8bce101920d5e32ffb04dd652600f772a0554a5e",
-            "content": "sha256:4d8761a408301b584006b5cff6ab5ae76a55fe5cc49c1f03249314d388d58345",
+            "blob": "af3fab55a9f4604e38edf89e3e26dc4055afbe97",
+            "content": "sha256:1f48ff021683abea6ea6f71d4d5313451b4c5db62aa6a07a68ce9083bdc6fc34",
             "locator": {
               "kind": "file"
             }

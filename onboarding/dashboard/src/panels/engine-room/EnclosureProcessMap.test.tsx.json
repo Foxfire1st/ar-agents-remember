@@ -1,14 +1,15 @@
 {
   "path": "dashboard/src/panels/engine-room/EnclosureProcessMap.test.tsx",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
-      "note": "`EnclosureProcessMap` + `EnclosureCanvas` under test (fleeting + scene + decals).\n\nAnchor: \"export function EnclosureProcessMap\"",
+      "note": "`EnclosureProcessMap` + `EnclosureCanvas` under test (fleeting + scene + decals).",
       "targets": [
         {
           "anchor": {
-            "blob": "47bb1a1d99e74706dc8a827331db4352c0f6cebc",
-            "content": "sha256:a5e17e7e06809939cbac00f4393e72a742d469beea2875cf821988533825c6dc",
+            "blob": "36b5e603bb19a454ad4bb9b945985124b4ec175b",
+            "content": "sha256:5e3aa61932c0212fd7f1f8a184fb97138ee3d95aff696fe35de5ae67322e273e",
             "locator": {
               "end": 67,
               "kind": "line_range",
@@ -89,15 +90,14 @@
       ]
     },
     "2": {
-      "note": "The scenario fixtures it renders; `engine-cgc-seed-refused` now seeds `edges({ cgc: \"stale\", … })`.",
+      "note": "The scenario fixtures it renders; `engine-cgc-seed-refused` now seeds `edges({ cgc: \"stale\", … })`.\n\nAnchor: `ENGINE_ROOM_SCENARIOS`",
       "targets": [
         {
           "anchor": {
-            "blob": "727a12ef1854578e89447d0ece47aaf2cf78225b",
-            "content": "sha256:fcdfb5fed7ecad411da4df17dbae7d1a8bc4fdc2afb4627e81d05383d7823d93",
+            "blob": "8e709ead155da60c76cf2682665cc540e1219207",
+            "content": "sha256:32cf712b9c7b122379105031817441971f436256ea62140649c48161267282cd",
             "locator": {
-              "kind": "symbol",
-              "name": "ENGINE_ROOM_SCENARIOS"
+              "kind": "file"
             },
             "path": "dashboard/src/panels/engine-room/fixtures.ts"
           },
@@ -127,31 +127,13 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f23ae83b49025d9b10e7b6bc846ede9a6d48563e",
-            "content": "sha256:521843cc89ecb7ccc1a3e9ff68b46d002a1a62ccc357caad545cc1093ebb3ae7",
+            "blob": "0a3de3f86452a06356eee661d5e4bbdc7ccdf5eb",
+            "content": "sha256:7a4dda1e37c1500d1e8f572c5fd5f02aac6a8037f6a885e76727b27bb8690d53",
             "locator": {
               "kind": "symbol",
               "name": "refusedPolarityOf"
             },
             "path": "dashboard/src/panels/engine-room/geometry.ts"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "5": {
-      "note": "`_seed_edge_state` — why `stale` is the honest reroute state to assert.\n\nAnchor: \"def _seed_edge_state(\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "7137fb6b1d0cd4fbee647c82ab46c5710cf1bafe",
-            "content": "sha256:2e916c163864333f653579c3520968a76f3842c03f3d3ba6bd92d819f91d26fc",
-            "locator": {
-              "end": 638,
-              "kind": "line_range",
-              "start": 638
-            },
-            "path": "mcp/src/agents_remember/observer/reducer_impl/_processes.py"
           },
           "kind": "code"
         }
@@ -175,12 +157,12 @@
         },
         {
           "anchor": {
-            "blob": "fddde3fe60faa2d9374405b9676016ab026af1b6",
+            "blob": "d71e9db1948f52b82bd84b2348775f13ac9b57e7",
             "content": "sha256:a638b2d5ffd49759707403c35afb2c49fff0c98265a9482b5cc5acf02927ccce",
             "locator": {
-              "end": 732,
+              "end": 682,
               "kind": "line_range",
-              "start": 732
+              "start": 682
             },
             "path": "dashboard/src/types/projection.ts"
           },

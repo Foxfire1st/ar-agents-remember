@@ -30,12 +30,12 @@
       ]
     },
     "2": {
-      "note": "The retained lifecycle scenario preserves the parent through start/attach/abandon.\n\nAnchor: `WorktreeSupport1.test_master_start_and_abandon_preserve_parent_series`",
+      "note": "The retained lifecycle scenario preserves the parent through start/attach/abandon.",
       "targets": [
         {
           "anchor": {
-            "blob": "f936979ad3d5b97619f2cb56377dddea2f6698ee",
-            "content": "sha256:0c4caa35a4514fefbd75e702327aaf4a9a287d3880dbc1285219eb4a298ad290",
+            "blob": "6794415cc0b78d9be5edd11c10451f475acd1b2a",
+            "content": "sha256:8d5e59f9305196e7f0bf075bf857953a1575fc07ad1481051162638c1e25f9fa",
             "locator": {
               "end": 379,
               "kind": "line_range",

@@ -15,6 +15,8 @@ Seeded addressless rows remain visible/counted/inert with no body request; addre
 ## Evidence
 
 - Addressless and unauthored row/page boundaries [1]
+
 - Shared served word [2]
+
 - Bounded preview construction [3]
 - Document-first availability [4]

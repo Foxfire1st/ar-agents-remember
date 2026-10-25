@@ -72,15 +72,14 @@
       ]
     },
     "17": {
-      "note": "Pre-contract leaf gains its link at start",
+      "note": "Pre-contract leaf gains its link at start\n\nAnchor: `test_leaf_authored_before_its_series_contract_gets_its_link_at_start`",
       "targets": [
         {
           "anchor": {
-            "blob": "4b7b032032dc3795f44c8326828808db69738894",
-            "content": "sha256:14ad26c78eee8aa35b72079cd0a8f38cf0b9a81fda210b17f5895e199b75fa0b",
+            "blob": "d3d93b10ae91b4749bacacc39767a559fe5c4e61",
+            "content": "sha256:449529a6d1801d547e9a77b8f2e3d686473c652364bf7baccf70f3d6bb11c14d",
             "locator": {
-              "kind": "symbol",
-              "name": "test_leaf_authored_before_its_series_contract_gets_its_link_at_start"
+              "kind": "file"
             }
           },
           "kind": "test"

@@ -38,17 +38,31 @@
       ]
     },
     "2": {
-      "note": "Workflow step 3 requires an authored rationale on every hand-off target (generated copy).\n\nAnchor: `realization_rationale_absent`",
+      "note": "Before ingest, each hand-off target requires an authored rationale, directly or through an applicable entry-level default; the writer refuses unexplained targets on every run, before any file is written.",
       "targets": [
         {
           "anchor": {
-            "blob": "dfff2166cfd50ada8f20c83d1a2a030379df4511",
-            "content": "sha256:7609bf9bf533d1d97de5ff66a239816226b4fe6de5e422dedb3d30e9947b32ce",
+            "blob": "69517ee942d200d941aa32f6439d9be3dec88d70",
+            "content": "sha256:238b8063355de4192d07169863f62548470ccc19e96ebe99ad9d443d54dc273b",
             "locator": {
-              "end": 109,
+              "end": 38,
               "kind": "line_range",
-              "start": 105
-            }
+              "start": 31
+            },
+            "path": "skills/l-01-agent-lifecycles/reference/curator-authoring-d301.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "00c3e00784503e851d2ca11c94f62d0c2576a160",
+            "content": "sha256:fabced34aaf165f9975802e2ae32495d811219355df71ece172ceb5004438235",
+            "locator": {
+              "end": 148,
+              "kind": "line_range",
+              "start": 142
+            },
+            "path": "skills/l-01-agent-lifecycles/templates/curator-handoff-list.md"
           },
           "kind": "code"
         }
@@ -59,11 +73,27 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7d45989aa2a810edb7efe59ec07fd9350438bc9f",
-            "content": "sha256:b452f9d492d739ac5d896f41fc8f6c4fde43983f9bb1d5548a80fb721f3912c2",
+            "blob": "145be631612f52c363b97b82d253839028ebc907",
+            "content": "sha256:f46dcb1a56028f631a030ff88a0c28e75e84188d1d91b2acb12af3f7d2fe9450",
             "locator": {
-              "kind": "file"
-            }
+              "end": 29,
+              "kind": "line_range",
+              "start": 26
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/curation.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "145be631612f52c363b97b82d253839028ebc907",
+            "content": "sha256:37acace39292198a835dda5aaac31a302750023a2974d39086c18f9f26a3d5c0",
+            "locator": {
+              "end": 176,
+              "kind": "line_range",
+              "start": 176
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/curation.md"
           },
           "kind": "code"
         }
@@ -74,10 +104,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1060ffa0e57f77e37902afeb00b2e97c2111208b",
-            "content": "sha256:9b7afe1fc87811e3660c8ed578e1f87b1719dd4525d650ef4b6f27bad05c6006",
+            "blob": "145be631612f52c363b97b82d253839028ebc907",
+            "content": "sha256:7506db63d2859ad92c4253de6434644d804afd2902e09a42ccda9e72b3f59f3b",
             "locator": {
-              "end": 302,
+              "end": 198,
               "kind": "line_range",
               "start": 1
             }
@@ -87,27 +117,18 @@
       ]
     },
     "5": {
-      "note": "Current source declarations support the qualified naming or fixture account; no executed test or acceptance is inferred.\n\nL53 account: An independent nonauthor fact-checks changed curated statements and judgment rows before converted-memory closeout; blocking repairs rerun full quality, and closeout does not mechanically run the check.\n\nAnchor: lines 155-163",
+      "note": "An independent nonauthor fact-checks every changed curated statement and history-row judgment before converted-memory closeout; blocking repairs rerun full quality. The check is a lifecycle step that closeout does not mechanically perform.",
       "targets": [
         {
           "anchor": {
-            "blob": "a127e98f913ab00c9fde4b282f53204e6235beec",
-            "content": "sha256:4e121e6ef663e6240193d9d395fe4aedf2c1103a099224cee8227b984bc2c1c4",
+            "blob": "145be631612f52c363b97b82d253839028ebc907",
+            "content": "sha256:cd9fd56d57e1b04b0b88fc0a79ba5daaf1d59ccb825726ceedc673449e7956c0",
             "locator": {
-              "kind": "file"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "79b6458f44e14d66a0e48b4f16d91348378ba8c2",
-            "content": "sha256:1611a8d6acf1e2a3d9d4a818b1d53e1675733aea4de8ebb9775c9ee997291f79",
-            "locator": {
-              "end": 163,
+              "end": 100,
               "kind": "line_range",
-              "start": 155
-            }
+              "start": 93
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/curation.md"
           },
           "kind": "code"
         }
@@ -118,13 +139,40 @@
       "targets": [
         {
           "anchor": {
-            "blob": "79b6458f44e14d66a0e48b4f16d91348378ba8c2",
-            "content": "sha256:1a9a834d781429351fcc9552db4464987aec6b8861372fdd7bd8c983262637dc",
+            "blob": "145be631612f52c363b97b82d253839028ebc907",
+            "content": "sha256:f46dcb1a56028f631a030ff88a0c28e75e84188d1d91b2acb12af3f7d2fe9450",
             "locator": {
-              "end": 163,
+              "end": 29,
               "kind": "line_range",
-              "start": 149
-            }
+              "start": 26
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/curation.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "145be631612f52c363b97b82d253839028ebc907",
+            "content": "sha256:a8e1d190918d1438f9d67e211ee09809dfcae576409a9ee14a60fde969c1c74d",
+            "locator": {
+              "end": 100,
+              "kind": "line_range",
+              "start": 75
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/curation.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "145be631612f52c363b97b82d253839028ebc907",
+            "content": "sha256:c49a27f05bdf3b87d666fb6a88ad454a3992d44d087e2362e2d006bb03b7711a",
+            "locator": {
+              "end": 111,
+              "kind": "line_range",
+              "start": 111
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/curation.md"
           },
           "kind": "code"
         }

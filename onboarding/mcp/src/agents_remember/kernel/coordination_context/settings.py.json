@@ -21,15 +21,16 @@
   ],
   "references": {
     "4": {
-      "note": "The JSON sibling first, then the default, then the fenced Markdown blocks, all through the recorder.",
+      "note": "The JSON sibling first, then the default, then the fenced Markdown blocks, all through the recorder. Source caption: `parse_coordination_settings`",
       "targets": [
         {
           "anchor": {
-            "blob": "86702aa0d4bd6b3a45a377ca08d3802ecbe0ddc6",
-            "content": "sha256:d31874c74805bc1d66b8665beecce86e564558de60825ab7357194f2806a0e60",
+            "blob": "7b8f0ba2f80cb5650c2f5e806ad9d0dbab9c09a8",
+            "content": "sha256:c7ced00e2f88651401c0f3a38fc3add0dbc0b25152dd8057562b12ffbd7c29f5",
             "locator": {
-              "kind": "symbol",
-              "name": "parse_coordination_settings"
+              "end": 105,
+              "kind": "line_range",
+              "start": 83
             }
           },
           "kind": "code"
@@ -37,15 +38,14 @@
       ]
     },
     "5": {
-      "note": "The absent JSON sibling and the consumed Markdown bytes are recorded; a JSON file that appears is a change.",
+      "note": "The absent JSON sibling and the consumed Markdown bytes are recorded; a JSON file that appears is a change.\n\nAnchor: `_settings_selection`",
       "targets": [
         {
           "anchor": {
-            "blob": "947c83735c58429e61de59ea7777ebe2d820eb43",
-            "content": "sha256:54cd0323dc5864b3ff153fca9cff84183f28bd090410d30c20ace01307cd1487",
+            "blob": "9719c9159d392a3e5377a242638474a1a15b1f37",
+            "content": "sha256:c081cf381bb3f13633d7bf5418bc9534212e3a89628153ff30047098d9b0be43",
             "locator": {
-              "kind": "symbol",
-              "name": "_settings_selection"
+              "kind": "file"
             },
             "path": "mcp/tests/test_reviewer_worklist_reads.py"
           },

@@ -23,15 +23,14 @@
   ],
   "references": {
     "1": {
-      "note": "Archival runs inside the admitted publish step before destructive outputs.",
+      "note": "Archival runs inside the admitted publish step before destructive outputs.\n\nAnchor: `_abandon_with_guard`",
       "targets": [
         {
           "anchor": {
-            "blob": "a317d7e35d03f98d28edc93201671b5b93a91a8c",
-            "content": "sha256:ecb9aa5f8defae1b6b1ad0098ff1996fe38ae0ea94a0357fd038c028f779f601",
+            "blob": "9a20c2d840a674e9af23f219556692a7667e192e",
+            "content": "sha256:d7a26b4d3935deb36e439715b3ab89596278fe380dd694a2cda1ea18149b9ec9",
             "locator": {
-              "kind": "symbol",
-              "name": "_abandon_with_guard"
+              "kind": "file"
             }
           },
           "kind": "code"

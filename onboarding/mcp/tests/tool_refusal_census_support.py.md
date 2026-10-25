@@ -23,9 +23,8 @@ The refusal driver supplies the canonical absent-task grant failure input withou
 
 ## Current source contract evidence
 
-- The driver checks failure_invocations against PUBLIC_TOOLS for missing and extra names before calling each roster tool, then records kind, delivered payload and logged whole result; it arranges no session lifecycle. [2]
+- The driver checks failure_invocations against PUBLIC_TOOLS for missing and extra names before calling each roster tool, then records kind, delivered payload and logged whole result; it arranges no session lifecycle.
 
-- Current synced source supports the qualified account; declarations, mirrors and fixture assertions are not executed acceptance. [9]
 
 
 ## Synced current-source qualification
@@ -122,14 +121,24 @@ No configured domain evidence applies to the file-local claims above.
 The anchors below identify current behaviour of this module; they are not execution evidence and
 they make no acceptance claim.
 
-- The 67 production failure invocations, one per advertised tool. [1]
+
+- One production failure invocation per advertised tool, keyed by tool name and asserted equal to the roster in both directions. [1]
+
 - The driver: roster equality first, then one drive per tool, with the lifecycle arranged so `lifecycle_start`'s own failure path is measured. (Historical caption; obsolete.)
 - An absent contract path inside the coordination root, for the contract-address family. [3]
 - A contract-shaped path outside the coordination root, for the confinement refusals. [4]
+
 - The fixture document addresses a tool must resolve to reach a later refusal. [5]
+
+
 - The advertised roster the table is asserted equal to before anything is driven. [6]
+
+
 - The hermetic world every invocation addresses, shared with the benign sweep. [7]
-- The conformance check that drives this census and asserts the three-shape partition. [8]
+
+
+- The conformance check that drives the refusal table and asserts every failure path answers in one of the four named shapes: typed refusal, stateful refusal, always-answer or raiser. [8]
+
 
 ### Cross-Repo References
 
@@ -140,8 +149,11 @@ No repository or external-system boundary is proved by this module.
 
 </details>
 
+
 - The direct-landing failure input includes its explicit absent canonical leaf. [9]
 
+
 ## Current source evidence
+
 
 - The failure table includes user_settings_init with target host-authority as a refusal input, not successful host or settings execution. [10]

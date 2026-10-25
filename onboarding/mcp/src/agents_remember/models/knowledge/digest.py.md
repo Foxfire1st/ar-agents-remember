@@ -54,7 +54,9 @@ No configured domain documentation could be checked.
 
 - Index decoders recompute seals on read; draft-sealing writers are retired. [6]
 
+
 - The node that proves each sealed field is load-bearing rather than incidentally covered. [7]
+
 - The canonical encoder the digest is computed through. [8]
 
 ### Cross-Repo References

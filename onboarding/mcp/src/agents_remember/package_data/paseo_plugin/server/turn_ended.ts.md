@@ -32,9 +32,17 @@ The implementation caps a line at `TURN_ENDED_LINE_LIMIT`, the carried last line
 
 ## Evidence
 
+
 - Timeline tool-call recipients, not sibling traffic, decide which call is a return and which is only a hand-off. [1]
+
+
 - Descendant restart removes held lines and invalidates claimed ancestor lines. [2]
+
+
 - Synchronous claim ownership and send-point rechecks prevent overlapping flushes owning one deferred line. [3]
+
+
 - Role/parent facts, return and permission state decide whether a silent end produces, holds or drops the parent's line. [4]
+
 
 **L184 — INV-1ZKP4R.** The turn-end decision lives here, so the bounded read is realized here. The obligation this leaf records for this place is stated in the invariant named here; the card's earlier account of this file stands, and this paragraph adds what the change made true.

@@ -93,18 +93,24 @@ TaskDependencyNode requires id/title; its canonical reference is optional. A fil
 
 
 
-- Core nullable properties are emitted as optional non-null output properties, except explicitly null-preserving models. [15] [15]
-- Current CloseoutCandidateNode uses string classification/priority; queue members reference that interface. [16] [16]
+
+- Core nullable properties are emitted as optional non-null output properties; non-null defaults remain required on the output contract. [15]
+
+- Current CloseoutCandidateNode uses string classification/priority; queue members reference that interface. [16]
 
 ## Evidence
 
+
 - The generated TaskEntry wire type carries optional structured list disagreements beside its canonical membership and cached summary. [22]
+
 
 - TaskSummary separates required reader fields from optional branch/note/review, content and graph additions. [19]
 - TaskStepNode requires note/outcome truncation booleans beside optional prose; TaskSubStepNode has optional note without a truncation flag. [20]
 - A present TaskReviewStateNode requires openFindings and totalFindings independently of its findings array. [21]
 
+
 - A dependency keeps id/title without inventing a reference; TaskEntry event time is not a served age. [18]
+
 
 
 
@@ -221,15 +227,8 @@ The generated `LifecycleOperationProjection` interface gains the optional
 dashboard mirror of the durable CCR-R15 wait cursor that the lifecycle status-change wait tool
 returns on snapshots.
 
-- The lifecycle phase union mirrors the code/memory-only vocabulary. Anchor: `refinements` [1]
-- Execution nodes retain kind/leafIds/ref; display nodes add cycle?: boolean and retain graph-rendering fields. Shared DTO declarations are not order derivation. [4]
-- An execution endpoint carries a task reference and optional leaf id. [5]
-- Execution edges bind predecessor and successor endpoints with a reason and optional judgment id. [6]
-- The graph contains typed node and edge arrays. [7]
-- The optional canonical task-intent identity on lifecycle operations. [9]
-- The generated `task-intent/v1` identity interface. Anchor: "task-intent/v1" [10]
-- The generated closeout-queue node carries an unbounded `members` array beside its 256-bounded `sourceProblems`. Anchor: `string` [11]
 - The lifecycle operation wire type keeps generation optional, controls opaque, and kind/status vocabularies closed. Anchor: `string` [12]
 - The queue members remain unbounded while sourceProblems and candidate reasons retain their bounds. Anchor: `string`; "sourceProblems: CloseoutProjectionProblemNode[]" [13]
+
 
 - Generated TaskEntry retains stage/activity and eventAt without a task-event ageSeconds field. [17]

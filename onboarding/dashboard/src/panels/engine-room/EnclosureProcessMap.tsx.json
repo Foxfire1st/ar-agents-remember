@@ -1,17 +1,17 @@
 {
   "path": "dashboard/src/panels/engine-room/EnclosureProcessMap.tsx",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
-      "note": "`EnclosureProcessMap` — `motion.div` shell (gated enter + `layout` morph) that delegates the scene.",
+      "note": "`EnclosureProcessMap` — `motion.div` shell (gated enter + `layout` morph) that delegates the scene.\n\nAnchor: `EnclosureProcessMap`",
       "targets": [
         {
           "anchor": {
-            "blob": "47bb1a1d99e74706dc8a827331db4352c0f6cebc",
-            "content": "sha256:cec9c550d3f4c699993b06f0054dba89098b68ba3c11d3e5658e1c72d4dc5305",
+            "blob": "36b5e603bb19a454ad4bb9b945985124b4ec175b",
+            "content": "sha256:5fe3c34f2cdb5a7bf6fc4407ecf7745cbdf14d114adbb31afe6ad359d251ab86",
             "locator": {
-              "kind": "symbol",
-              "name": "EnclosureProcessMap"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -19,30 +19,42 @@
       ]
     },
     "10": {
-      "note": "GateNode is the generated projection contract consumed by this surface.\n\nAnchor: \"export interface GateNode {\"",
+      "note": "The surface consumes the generated `EngineProcessNode` and `LedgerNode` records; no separate gate contract is read.",
       "targets": [
         {
           "anchor": {
-            "blob": "32f61ad92158b8a4519a35f725ce765c87f2ec99",
-            "content": "sha256:1659a39f586e65fdece7d624073c4e4dcd732ecc12ed908c63e0bd1a1eb5a0e7",
+            "blob": "d71e9db1948f52b82bd84b2348775f13ac9b57e7",
+            "content": "sha256:b9f12efffa9bc01eba2239a37d0e44c42c4d2e8ff6a837c2cf3fd59ec966bc3c",
             "locator": {
-              "end": 289,
+              "end": 249,
               "kind": "line_range",
-              "start": 289
+              "start": 188
             },
             "path": "dashboard/src/types/projection.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "36b5e603bb19a454ad4bb9b945985124b4ec175b",
+            "content": "sha256:aab6558d1c8509adccc7221d48e77010e3fc66cd7f41c52f5b605e8d7ab97fde",
+            "locator": {
+              "end": 70,
+              "kind": "line_range",
+              "start": 1
+            }
           },
           "kind": "code"
         }
       ]
     },
     "11": {
-      "note": "EnclosureProcessMap no longer accepts/forwards workspaceEngines or imports ProviderNode. It forwards node/gateNode/offic — source ownership, not executed visual proof.\n\nAnchor: `import type { EngineProcessNode, GateNode, LedgerNode } from \"../../types/projection\";`",
+      "note": "`EnclosureProcessMap` takes `node` and an optional `officialLedger` and forwards both to `EnclosureCanvas`; it reads no workspace engines or provider nodes.",
       "targets": [
         {
           "anchor": {
-            "blob": "0bbede40e541c0026ac63a08ee51b0efc835be77",
-            "content": "sha256:abd6c0945ead32ce03294304c52c36b1ea99e97685c5e0561edf350442fa3f2d",
+            "blob": "36b5e603bb19a454ad4bb9b945985124b4ec175b",
+            "content": "sha256:9ddc3570fdb88d35b2eb1f8a4fe83dd3a745c45b0631d33f2ca5d7d66e80ea10",
             "locator": {
               "end": 16,
               "kind": "line_range",
@@ -54,16 +66,40 @@
       ]
     },
     "12": {
-      "note": "EnclosureProcessMap no longer accepts/forwards workspaceEngines or imports ProviderNode. It forwards node/gateNode/offic — source ownership, not executed visual proof.\n\nAnchor: `function teardownKind(phase: EngineProcessNode[\"phase\"]): \"abandon\"   \"cleanup\"   null {`",
+      "note": "EnclosureProcessMap accepts node and optional officialLedger, forwards them to EnclosureCanvas, and selects abandon/cleanup presentation from teardownKind. Its source imports and props contain no workspaceEngines or ProviderNode; this is source ownership, not executed visual proof.",
       "targets": [
         {
           "anchor": {
-            "blob": "0bbede40e541c0026ac63a08ee51b0efc835be77",
-            "content": "sha256:02515d81f0ab5bf469dca6c76f6f07947e66223e7fbb622ac1a2c031e46e32e8",
+            "blob": "36b5e603bb19a454ad4bb9b945985124b4ec175b",
+            "content": "sha256:7ad7d40e577d391d831350e949b9721438598fa289902411230b07d51bd888ac",
             "locator": {
-              "end": 149,
+              "end": 25,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "36b5e603bb19a454ad4bb9b945985124b4ec175b",
+            "content": "sha256:fd1f8cd61d3756f5c65c48d225f8f5a68cc60642d999d42bcdedaff4c2652d7b",
+            "locator": {
+              "end": 70,
               "kind": "line_range",
               "start": 62
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "36b5e603bb19a454ad4bb9b945985124b4ec175b",
+            "content": "sha256:05d1f3f6b04c4f0234956b37ab5213e2d758d304adb8d2d179e82d1d7bebfc7b",
+            "locator": {
+              "end": 146,
+              "kind": "line_range",
+              "start": 119
             }
           },
           "kind": "code"
@@ -71,16 +107,16 @@
       ]
     },
     "13": {
-      "note": "EnclosureProcessMap no longer accepts/forwards workspaceEngines or imports ProviderNode. It forwards node/gateNode/offic — source ownership, not executed visual proof.\n\nAnchor: `export function EnclosureCanvas({`",
+      "note": "`EnclosureProcessMap` takes `node` and an optional `officialLedger` and forwards both to `EnclosureCanvas`; it reads no workspace engines or provider nodes.",
       "targets": [
         {
           "anchor": {
-            "blob": "e496e2924af2443fe26b4b8712a14c6cadf07d7c",
-            "content": "sha256:8799864ca72f6ce73efb11dd677d640dd7b6c2492dd97a26e7d15e2bf48ed86c",
+            "blob": "15444872a266d89123558da6eb8909e81fe96665",
+            "content": "sha256:26585d6162d50aa2fa970bbcf562ea559c0cba5b2a3776d9e3d0babd4eeb4f3f",
             "locator": {
-              "end": 48,
+              "end": 47,
               "kind": "line_range",
-              "start": 40
+              "start": 39
             },
             "path": "dashboard/src/panels/engine-room/EnclosureCanvas.tsx"
           },
@@ -130,15 +166,14 @@
       ]
     },
     "3": {
-      "note": "The shell renders no HTML fleeting banner and delegates every live scene branch to `EnclosureCanvas`.",
+      "note": "The shell renders no HTML fleeting banner and delegates every live scene branch to `EnclosureCanvas`.\n\nAnchor: `EnclosureProcessMap`",
       "targets": [
         {
           "anchor": {
-            "blob": "47bb1a1d99e74706dc8a827331db4352c0f6cebc",
-            "content": "sha256:cec9c550d3f4c699993b06f0054dba89098b68ba3c11d3e5658e1c72d4dc5305",
+            "blob": "36b5e603bb19a454ad4bb9b945985124b4ec175b",
+            "content": "sha256:5fe3c34f2cdb5a7bf6fc4407ecf7745cbdf14d114adbb31afe6ad359d251ab86",
             "locator": {
-              "kind": "symbol",
-              "name": "EnclosureProcessMap"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -146,15 +181,14 @@
       ]
     },
     "4": {
-      "note": "The canvas derives its `fleeting` predicate and renders `FleetingEnclosure` for the born-blocked case.",
+      "note": "The canvas derives its `fleeting` predicate and renders `FleetingEnclosure` for the born-blocked case.\n\nAnchor: `EnclosureCanvas`",
       "targets": [
         {
           "anchor": {
-            "blob": "3e8bac7662cfcef7ae4bddc696e4824dcde4491f",
-            "content": "sha256:9074e8c83128d82ecfa8eefd5437dd80da8bf4fdb3f36ba8a9c452d165ff034e",
+            "blob": "15444872a266d89123558da6eb8909e81fe96665",
+            "content": "sha256:dc5f212cb9ccbe8d35a4d690d984bb4f5b0b8b5f7e72042f1368075db707b271",
             "locator": {
-              "kind": "symbol",
-              "name": "EnclosureCanvas"
+              "kind": "file"
             },
             "path": "dashboard/src/panels/engine-room/EnclosureCanvas.tsx"
           },
@@ -167,12 +201,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c79d43b0288a8e6cb720b2654b7ae74b85989dee",
+            "blob": "6c81634e51615e483399292e3462c23681ff3f39",
             "content": "sha256:08d8e3e098f8e770d4dc28221e0bc00012794c953b8fdda3d9498dc2aa484f18",
             "locator": {
-              "end": 335,
+              "end": 338,
               "kind": "line_range",
-              "start": 327
+              "start": 330
             },
             "path": "dashboard/src/panels/engine-room/EnclosureProcessMap.test.tsx"
           },
@@ -181,15 +215,14 @@
       ]
     },
     "6": {
-      "note": "The bird's-eye scene (the render body, given `workspaceEngines`).",
+      "note": "The bird's-eye scene (the render body, given `node` and the optional official ledger).  Earlier card anchor caption (historical provenance): `workspaceEngines` Source caption: `EnclosureCanvas`",
       "targets": [
         {
           "anchor": {
-            "blob": "3e8bac7662cfcef7ae4bddc696e4824dcde4491f",
-            "content": "sha256:527ca3f4e48fb88589b82dd337b16814a56955cb380809fb46de2f1e589724c4",
+            "blob": "15444872a266d89123558da6eb8909e81fe96665",
+            "content": "sha256:dc5f212cb9ccbe8d35a4d690d984bb4f5b0b8b5f7e72042f1368075db707b271",
             "locator": {
-              "kind": "symbol",
-              "name": "workspaceEngines"
+              "kind": "file"
             },
             "path": "dashboard/src/panels/engine-room/EnclosureCanvas.tsx"
           },
@@ -219,12 +252,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fddde3fe60faa2d9374405b9676016ab026af1b6",
+            "blob": "d71e9db1948f52b82bd84b2348775f13ac9b57e7",
             "content": "sha256:adc5e70699b6beb4f6da806e367cc006d742e94259f35a0eafbb048349540fd4",
             "locator": {
-              "end": 188,
+              "end": 185,
               "kind": "line_range",
-              "start": 188
+              "start": 185
             },
             "path": "dashboard/src/types/projection.ts"
           },
@@ -237,8 +270,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fddde3fe60faa2d9374405b9676016ab026af1b6",
-            "content": "sha256:166d2ecbb0660b6f73e4497602a536512544817207b812a075559071aa49a387",
+            "blob": "d71e9db1948f52b82bd84b2348775f13ac9b57e7",
+            "content": "sha256:01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
             "locator": {
               "end": 403,
               "kind": "line_range",

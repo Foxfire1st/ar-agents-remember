@@ -138,27 +138,14 @@
       ]
     },
     "8": {
-      "note": "The statement label and body that use it.",
+      "note": "The statement label and body that use it.\n\nAnchor: `statementLabel` `StatementBody`",
       "targets": [
         {
           "anchor": {
-            "blob": "a5275eb0e1935676698eadc6ddd1e957136f6dc1",
-            "content": "sha256:890a70ebd74a50031ee37e0394e60826f070db5123fab5e27a02664a6cfc2b78",
+            "blob": "65da80233c61fee36508e14b7c87ed65437a34a7",
+            "content": "sha256:b9c5a10b14f877688caa72fb3a2ee6248b43005dc3fcd20eac47e4496bc67037",
             "locator": {
-              "kind": "symbol",
-              "name": "statementLabel"
-            },
-            "path": "dashboard/src/panels/review/SubjectReview.tsx"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "a5275eb0e1935676698eadc6ddd1e957136f6dc1",
-            "content": "sha256:cc46312e35c341cf69249f197c5030aa1dce8928010081b98258cb9838de6834",
-            "locator": {
-              "kind": "symbol",
-              "name": "StatementBody"
+              "kind": "file"
             },
             "path": "dashboard/src/panels/review/SubjectReview.tsx"
           },
@@ -167,12 +154,12 @@
       ]
     },
     "9": {
-      "note": "The cases.\n\nAnchor: \"renders two revisions with identical authored text once, with the revisions as metadata\"; \"never labels a condition-only revision unchanged: the changed condition is named\"",
+      "note": "The cases.",
       "targets": [
         {
           "anchor": {
-            "blob": "cb1c42c74a23b9615f66c6e0f0032de15ad8e008",
-            "content": "sha256:dcbb7d8f067692ee960e22a675736f6cd711c6378a7969d682414516e1167ce2",
+            "blob": "393286192fd2a77e1277da4052cf16455daf1f40",
+            "content": "sha256:fb9d47816b05611107bc2d9266957664a6bf0473c446034e4d0f5fbed9e14451",
             "locator": {
               "end": 84,
               "kind": "line_range",

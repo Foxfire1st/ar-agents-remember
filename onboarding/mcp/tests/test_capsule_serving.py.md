@@ -18,11 +18,15 @@ The synthetic manifest now declares `audience: all` for each operation. Its unse
 
 ## Evidence
 
+
 - Fixture world with external contract and synthetic corpus [14]
+
 - Contract text is external-memory with a ledger [15]
 - Capsule carries routed blocks with the fixture's own bytes [16]
 - Moved task bytes are re-read versus refused as separate behaviours [17]
+
 - Non-conforming skill directory is recorded, never served [18]
+
 - Shipped-surface, exchange and guard cases moved to the surface module [19]
 
 

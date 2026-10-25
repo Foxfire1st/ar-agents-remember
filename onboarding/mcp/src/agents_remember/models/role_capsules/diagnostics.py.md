@@ -65,10 +65,16 @@ No relevant documentation found after checking live sources.
 
 ### Repo-Internal References
 
+
 - The content half whose digest must stay independent of these shapes. [1]
+
 - The builder that fills the success-shaped manifest, and the two refusal-shaped builders. [2]
+
 - The digest document that must not reference any field of this module. [3]
+
+
 - The application outcome that pairs a capsule or a refusal with this manifest. [4]
+
 - The conflict kind vocabulary these rows are expressed in. [5]
 
 ### Cross-Repo References

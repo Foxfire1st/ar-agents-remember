@@ -49,7 +49,9 @@ No configured live documentation source was available for this pass.
 - The module statement: every binding the token carries. [1]
 - The format, prefix and bounds; the queue cap public since MIK-R01. [2]
 - The paged responses, `leaf` added by MIK-R01. [3]
+
 - The bound fields and their short aliases. [4]
+
 - Encoding and bounded decoding. [5]
 
 ### Cross-Repo References

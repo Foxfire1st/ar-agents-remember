@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/application/role_launch_context.py",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
@@ -21,8 +22,8 @@
     },
     {
       "anchor": {
-        "blob": "1a56d5bfe28b81799bb5cb14f93128769604e14a",
-        "content": "sha256:5e6fb6711e209c70e086fdb2264c6005606d1b967419decd3efa149c98a39d40",
+        "blob": "caa8c6e923b4efaeb1c61856c613d10771f7a6c3",
+        "content": "sha256:a5a369b4f36497af151dfba14dd2bdb80bee688683ab36da6f3d2361ef16dafb",
         "locator": {
           "end": 110,
           "kind": "line_range",
@@ -35,7 +36,7 @@
         "handoffEntry": "MIK-R98@v1 §7",
         "leaf": "260928-MIK-L98"
       },
-      "rationale": "The launch resolver admits only the three valid Investigator selections.",
+      "rationale": "The entry says the launch resolver admits only the three valid investigator selections; `resolve_role_launch_context` at C calls `parentless_selection_violation` before resolving anything (102-109), and that function refuses a leaf-carrying investigator while requiring at least one of sprint/master (62-74).",
       "role": "enforcement"
     },
     {
@@ -82,8 +83,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1a56d5bfe28b81799bb5cb14f93128769604e14a",
-            "content": "sha256:33bb11d89392b2002216579ca55faae9e0c5c14722b2d48e00a1bc455f7088ef",
+            "blob": "caa8c6e923b4efaeb1c61856c613d10771f7a6c3",
+            "content": "sha256:f7b28dd7554d05981e89e904bb1db6628663c831c79ffc5af1491a7ee2840c22",
             "locator": {
               "kind": "file"
             }
@@ -113,8 +114,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1a56d5bfe28b81799bb5cb14f93128769604e14a",
-            "content": "sha256:2707c1a1adec25477388ca75ea6c1189bdbad6517bba744d44e0dd308f6496cc",
+            "blob": "caa8c6e923b4efaeb1c61856c613d10771f7a6c3",
+            "content": "sha256:b390c458d2a65bbbe11f6e2937f9130a4b30dd35273e6394c991fb98ba7ee31a",
             "locator": {
               "end": 111,
               "kind": "line_range",
@@ -130,12 +131,13 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1a56d5bfe28b81799bb5cb14f93128769604e14a",
+            "blob": "3a7f93e5f50bcda7643c1a230a560a3da46ba374",
             "content": "sha256:d49a923e52a43539c1c40ef136cb3a70bcb028c9ecbcea4a5444f8e65aa8d50e",
             "locator": {
               "kind": "symbol",
               "name": "ROLE_LEVELS"
-            }
+            },
+            "path": "mcp/src/agents_remember/models/role_identity.py"
           },
           "kind": "code"
         }
@@ -146,12 +148,13 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1a56d5bfe28b81799bb5cb14f93128769604e14a",
+            "blob": "3a7f93e5f50bcda7643c1a230a560a3da46ba374",
             "content": "sha256:b4d998c454a1ab4b666d9fefe473a52c921b55000f5e9b301ee264eab2c13a3b",
             "locator": {
               "kind": "symbol",
               "name": "TASKLESS_ROLES"
-            }
+            },
+            "path": "mcp/src/agents_remember/models/role_identity.py"
           },
           "kind": "code"
         }

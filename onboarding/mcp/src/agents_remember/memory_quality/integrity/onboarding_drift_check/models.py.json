@@ -1,13 +1,14 @@
 {
   "path": "mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/models.py",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
-      "note": "not_checked, run_drift_summary and _run_converted_summary produce shared typed summary packets.",
+      "note": "not_checked, run_drift_summary and _run_converted_summary produce shared typed summary packets.\n\nAnchor: `not_checked` `run_drift_summary` `_run_converted_summary`",
       "targets": [
         {
           "anchor": {
-            "blob": "50c44347b736cefc3992b2164fed6315ca4040e9",
+            "blob": "a720a45eb42c920a7a873e768d3f2ffc1052178c",
             "content": "sha256:8f0c78909c98191b6046d39ddedf7d4eaa25fd71f9dd3a5bf6615fc4ee0eb9e4",
             "locator": {
               "kind": "symbol",
@@ -19,7 +20,7 @@
         },
         {
           "anchor": {
-            "blob": "50c44347b736cefc3992b2164fed6315ca4040e9",
+            "blob": "a720a45eb42c920a7a873e768d3f2ffc1052178c",
             "content": "sha256:3e9a916ba90afd210ad99829837375542936074de9cf0f334b1611456150a733",
             "locator": {
               "kind": "symbol",
@@ -31,8 +32,8 @@
         },
         {
           "anchor": {
-            "blob": "8b518f87cc2e461510ec19693ec31e895b3b9ae8",
-            "content": "sha256:da4bc7efb0ad4cf8c7d6d7a6013669d4841d237ce37efec5ef2b9371ec55b19f",
+            "blob": "a720a45eb42c920a7a873e768d3f2ffc1052178c",
+            "content": "sha256:415a06f75b30c318fcc94f41bc47a9f4e244c7a5639e7233bc05b5fb1ea6c254",
             "locator": {
               "kind": "symbol",
               "name": "_run_converted_summary"
@@ -43,12 +44,49 @@
         },
         {
           "anchor": {
-            "blob": "50c44347b736cefc3992b2164fed6315ca4040e9",
+            "blob": "a720a45eb42c920a7a873e768d3f2ffc1052178c",
+            "content": "sha256:1ec899b6ff5d8b313f3ee910624e8d2acd61d88a596306cf851e2a411e5eb59b",
+            "locator": {
+              "end": 42,
+              "kind": "line_range",
+              "start": 41
+            },
+            "path": "mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/summary.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a720a45eb42c920a7a873e768d3f2ffc1052178c",
+            "content": "sha256:ab519e5c7b3ac50307e78163aef14d1d777585b7c6f7ce352a5af81e674f87b0",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/summary.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a720a45eb42c920a7a873e768d3f2ffc1052178c",
             "content": "sha256:26c1c4f6dfc976407a946dd1c877931ac154aceee412dc06fb07f1f50f8df632",
             "locator": {
-              "end": 40,
+              "end": 41,
               "kind": "line_range",
-              "start": 39
+              "start": 40
+            },
+            "path": "mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/summary.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a720a45eb42c920a7a873e768d3f2ffc1052178c",
+            "content": "sha256:f75a01f12ef827189946e7a00f92bf7215d6120c3c773cac45891c5265978d91",
+            "locator": {
+              "end": 39,
+              "kind": "line_range",
+              "start": 38
             },
             "path": "mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/summary.py"
           },
@@ -78,7 +116,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "167c28bf3a5d1b7ea0ee02e83892bf55ee9a32aa",
+            "blob": "bf6833bf5d456b21488675f40c54e8fe67c5c011",
             "content": "sha256:5defc592c4ead496c0d96b2b8a314b6a884ae178e845fb42f98657c6140395ee",
             "locator": {
               "kind": "symbol",
@@ -90,7 +128,7 @@
         },
         {
           "anchor": {
-            "blob": "167c28bf3a5d1b7ea0ee02e83892bf55ee9a32aa",
+            "blob": "bf6833bf5d456b21488675f40c54e8fe67c5c011",
             "content": "sha256:17ddd1488f5007b833cbf58560083764457499bcab9586b9c65dd8c458b54f48",
             "locator": {
               "end": 45,

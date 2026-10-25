@@ -1,5 +1,6 @@
 {
   "path": "dashboard/src/test/fixtures/overrides.ts",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
@@ -20,16 +21,16 @@
       ]
     },
     "10": {
-      "note": "Import and boundary review found the same-repository `wire.ts` consumer.\n\nAnchor: \"import type { NoOverrides, Overrides } from \\\"./overrides\\\";\"",
+      "note": "Import and boundary review found the same-repository `wire.ts` consumer.",
       "targets": [
         {
           "anchor": {
-            "blob": "65809f6f38b77f999a84c8301057ae9615842df0",
-            "content": "sha256:925a3664c4031608dd0ee5f13515498697685e319ea523dc680512f4f95fff32",
+            "blob": "67bd836a126c87cce7dd24fb8f82a699decf8e4f",
+            "content": "sha256:46bf4443d82132cdf1ef00be30eb49fc847bc27ba13257847c6d58d1f419e8f4",
             "locator": {
-              "end": 62,
+              "end": 61,
               "kind": "line_range",
-              "start": 62
+              "start": 61
             },
             "path": "dashboard/src/test/fixtures/wire.ts"
           },
@@ -38,12 +39,12 @@
       ]
     },
     "2": {
-      "note": "The measured rejection of `exactOptionalPropertyTypes` (222 errors / 71 files) and the call-site property the narrow fix has instead.\n\nAnchor: `exactOptionalPropertyTypes`",
+      "note": "The measured rejection of `exactOptionalPropertyTypes` — 381 errors across 107 files on this tree — and the call-site property the narrow fix has instead.  Anchor: `exactOptionalPropertyTypes`",
       "targets": [
         {
           "anchor": {
-            "blob": "14d1d7f2a400188ffa96f8722f3d64fd9d085ccc",
-            "content": "sha256:70ac436c9f4723fb92b8917fc9c25cb770103903f58f4b828bb80331886a47e8",
+            "blob": "c1728908f2e1d3aa121a935b106bb55590cb0bbc",
+            "content": "sha256:782945b27878e525e80127dec7ce6bc9826cf7431e7c45941b25b77b45ec66af",
             "locator": {
               "end": 21,
               "kind": "line_range",
@@ -92,8 +93,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4d075a3b14a63e51fde0521c960138addc02ad48",
-            "content": "sha256:6b6d8ca4cd7524d55a67081c6c6d3bdb0a1dba1ebde0c15aa834b64f8a34b620",
+            "blob": "a8e7c68ec7ffbfd48d47afb359d1fee9f46db41f",
+            "content": "sha256:7ca09dbdd351354a71f1cc7306f2e2911583d6bac1cb637a2a6f78155dad3530",
             "locator": {
               "kind": "symbol",
               "name": "diagnosticsFor"
@@ -104,8 +105,8 @@
         },
         {
           "anchor": {
-            "blob": "4d075a3b14a63e51fde0521c960138addc02ad48",
-            "content": "sha256:2ad8cd1d8da993eb5bb244f6479871bfc6cd35e9e7585b1e773d7a7aaaa00e35",
+            "blob": "a8e7c68ec7ffbfd48d47afb359d1fee9f46db41f",
+            "content": "sha256:90b7b81cde51b2c5f0ca5a224093d6ac6f264100165168f2f43dc4709b274a6d",
             "locator": {
               "end": 70,
               "kind": "line_range",
@@ -114,20 +115,31 @@
             "path": "dashboard/src/test/fixtureOverrides.test.ts"
           },
           "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "a8e7c68ec7ffbfd48d47afb359d1fee9f46db41f",
+            "content": "sha256:1c8e89d576fa911d1745c142a49830526eeda7a4e1042f3a3bdf5c358624f25b",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/test/fixtureOverrides.test.ts"
+          },
+          "kind": "test"
         }
       ]
     },
     "6": {
-      "note": "Consumer: every projection builder takes `Overrides<O, Node>`.\n\nAnchor: \"export function lifecycle<O extends Partial<LifecycleProjection> = NoOverrides>(\"; \"export function projection<O extends Partial<WorkspaceProjection> = NoOverrides>(\"",
+      "note": "Consumer: every projection builder takes `Overrides<O, Node>`.",
       "targets": [
         {
           "anchor": {
-            "blob": "9748f432f9443a640ef5221d0bace3f986bed50e",
-            "content": "sha256:db252c0fae8ad5bc90e596829d614d60d3f0d9606d977f2a7afa960f7dd6a9d8",
+            "blob": "67bd836a126c87cce7dd24fb8f82a699decf8e4f",
+            "content": "sha256:aad797a272bbf088f71bebd450c912d579e5b6bc920e080ea5ff3fac42e7882c",
             "locator": {
-              "end": 226,
+              "end": 203,
               "kind": "line_range",
-              "start": 224
+              "start": 201
             },
             "path": "dashboard/src/test/fixtures/wire.ts"
           },
@@ -148,12 +160,12 @@
         },
         {
           "anchor": {
-            "blob": "8bacf923a1a9b77562130bce9a5c3c707b4e4fcf",
+            "blob": "67bd836a126c87cce7dd24fb8f82a699decf8e4f",
             "content": "sha256:6eee35b108fa6595aa8e2d09a8729ae69e8e45f84511998c39e6462db6bea1e1",
             "locator": {
-              "end": 271,
+              "end": 248,
               "kind": "line_range",
-              "start": 269
+              "start": 246
             },
             "path": "dashboard/src/test/fixtures/wire.ts"
           },
@@ -180,16 +192,16 @@
       ]
     },
     "9": {
-      "note": "`tsconfig.driver.json` covers the Playwright suites (`e2e`, `e2e-chats`, `e2e-production`, `perf`) and also omits the flag, which is why a call-site constraint reaches further than the flag would have.\n\nAnchor: \"e2e-chats\"",
+      "note": "tsconfig.driver.json currently enables strict driver checks for e2e and playwright.config.ts; its compilerOptions omit exactOptionalPropertyTypes.",
       "targets": [
         {
           "anchor": {
-            "blob": "7bdc0b3732020bde09dc1498306cabdf10d0262d",
-            "content": "sha256:57ca7f6629714240791396d1d7ddf8ce447e3a5868892f4d8226456b65d6dd9c",
+            "blob": "c1ea2e6f91bd3c1c003efdfca601339ed02b9a2f",
+            "content": "sha256:c78171de288e4e746010720618cb435cc63bf9bb901d3b0463b9678aed5f42f7",
             "locator": {
-              "end": 30,
+              "end": 24,
               "kind": "line_range",
-              "start": 2
+              "start": 1
             },
             "path": "dashboard/tsconfig.driver.json"
           },

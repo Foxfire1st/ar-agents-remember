@@ -14,4 +14,5 @@ Focused tests exercise the two permitted product writers, nonarchitect/unbound r
 
 ## Evidence
 
+
 - Pins shared grant authority, startedness, concurrency, census, reclamation and plan projection contracts [1]

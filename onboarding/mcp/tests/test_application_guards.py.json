@@ -1,5 +1,6 @@
 {
   "path": "mcp/tests/test_application_guards.py",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
@@ -58,12 +59,12 @@
       ]
     },
     "2": {
-      "note": "AuthorityError is the typed repository/path refusal used by application guards.\n\nAnchor: \"class AuthorityError(\"",
+      "note": "AuthorityError is the typed repository/path refusal used by application guards.",
       "targets": [
         {
           "anchor": {
-            "blob": "68e62a4e78041f271e927977fa67c79ca74c18b7",
-            "content": "sha256:22a5bfd02ad906e768ce552a2c7ba811dd149e56d73de2f5588ab3cc54cbae5f",
+            "blob": "806f87dacbd41bb3a7c9c2fa4c012db6332d673b",
+            "content": "sha256:70861dfe62d814ce4a80c45b9acc983195298990e68c02373e0190608b90ed26",
             "locator": {
               "end": 117,
               "kind": "line_range",
@@ -94,12 +95,12 @@
       ]
     },
     "4": {
-      "note": "`McpRuntimeConfig`, `RepositoryScope`, and `path_is_relative_to` define the config and confinement primitives the guards rely on.",
+      "note": "`McpRuntimeConfig`, `RepositoryScope`, and `path_is_relative_to` define the config and confinement primitives the guards rely on.\n\nAnchor: `McpRuntimeConfig` `RepositoryScope` `path_is_relative_to`",
       "targets": [
         {
           "anchor": {
-            "blob": "2d0c60d2df2abaa3c483fb0f63bfd7c0b107ddfe",
-            "content": "sha256:0d3b1a86df3de4b2b7f81828fd3dc25bd588d932ed545f8863363d4d68b777e5",
+            "blob": "d29d100ea200d65a695333b54064543d7833f90e",
+            "content": "sha256:e7791119b1e18159ebfbbbd83a14da6aa29442e78892e2f9d570688969689704",
             "locator": {
               "kind": "symbol",
               "name": "McpRuntimeConfig"
@@ -147,8 +148,8 @@
         },
         {
           "anchor": {
-            "blob": "e0e3901879af6c975558c5c4eb31d6cdf14c5fb4",
-            "content": "sha256:0bec4fffe9579bc1784fbfa72119dd5a2b8debd760b6752a985c7700e0a98608",
+            "blob": "d29d100ea200d65a695333b54064543d7833f90e",
+            "content": "sha256:49a31fde82caa7dea80cc9298edf31de6a4134128ea27ec4325b6ea6e8b2ebf6",
             "locator": {
               "end": 155,
               "kind": "line_range",
@@ -166,6 +167,43 @@
               "end": 857,
               "kind": "line_range",
               "start": 852
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d29d100ea200d65a695333b54064543d7833f90e",
+            "content": "sha256:e2d83560666924530b06c82fcd178952932211795b5d29970b35d162ce3a4e47",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d29d100ea200d65a695333b54064543d7833f90e",
+            "content": "sha256:6468a6b11e8178c60ad33f3e09feaac5cabe4f72739cbfa089c511bc073c58c9",
+            "locator": {
+              "end": 92,
+              "kind": "line_range",
+              "start": 88
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d29d100ea200d65a695333b54064543d7833f90e",
+            "content": "sha256:2de83bf327d4f8dd28e0a7fc45619ba2a9df9d0433bc3c7f116130b9ee8cdc8c",
+            "locator": {
+              "end": 835,
+              "kind": "line_range",
+              "start": 830
             },
             "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
           },

@@ -7,8 +7,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8bc2c61cdabc99dacfce3aa69e91a028f3d8eb20",
-            "content": "sha256:a18296a1e39924b94137ce6ae35eae386ee8b188d71d0b58c04f473092ee0add",
+            "blob": "51df804526b093b0732b0df91f4d6c76d901809d",
+            "content": "sha256:1dad9d119c4085695e3c5652424a79c0e462c19f7bdb8a59f388ec3da74139cb",
             "locator": {
               "kind": "symbol",
               "name": "TaskDocumentRef"
@@ -18,12 +18,22 @@
         },
         {
           "anchor": {
-            "blob": "8bc2c61cdabc99dacfce3aa69e91a028f3d8eb20",
-            "content": "sha256:a4597f436dcf216add0c6ec4619551d556385d6169d6b5163a208cea5d204bf9",
+            "blob": "51df804526b093b0732b0df91f4d6c76d901809d",
+            "content": "sha256:74f674ce46bbd42d381cfd16b61f0989ee5b22f95c8df8253776c41be94980e6",
             "locator": {
               "end": 57,
               "kind": "line_range",
               "start": 15
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "51df804526b093b0732b0df91f4d6c76d901809d",
+            "content": "sha256:ee8893d75473a9a15cc15df725ef0642a6be56f513b8f8ecb752a94e96a099ca",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -35,8 +45,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5fb0a67ae4a1fb1f4587cdf5c5bb6cf9365ab69d",
-            "content": "sha256:cc9bc8b4533e2aed384342b0c40b913847a79cdf24d4d55f317decf7a14be0f9",
+            "blob": "8e7a9eac75417f2c2bf003612d5c62cfc540661a",
+            "content": "sha256:76321fe013755208406f51b2919f00181be275ec94d76eb82bcd62488d3e9a84",
             "locator": {
               "kind": "symbol",
               "name": "TaskDocumentTopology"
@@ -47,12 +57,23 @@
         },
         {
           "anchor": {
-            "blob": "5fb0a67ae4a1fb1f4587cdf5c5bb6cf9365ab69d",
-            "content": "sha256:383138a391cc8a6f8bd14cb8178a0994cc78c96292e2bad7722a9057406913ec",
+            "blob": "8e7a9eac75417f2c2bf003612d5c62cfc540661a",
+            "content": "sha256:90e3767b10d9f7be202a89acd610abee88eaa3f9da2c33cccd88ddf6ad709412",
             "locator": {
               "end": 252,
               "kind": "line_range",
               "start": 26
+            },
+            "path": "mcp/src/agents_remember/tasks/document_refs.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8e7a9eac75417f2c2bf003612d5c62cfc540661a",
+            "content": "sha256:6128cde80120b1453092e64570b36beec886f302204e049e82779bc2277c9489",
+            "locator": {
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/tasks/document_refs.py"
           },
@@ -77,15 +98,14 @@
       ]
     },
     "4": {
-      "note": "Frozen implementation of TaskDocumentRef supporting the stated file behavior.",
+      "note": "Frozen implementation of TaskDocumentRef supporting the stated file behavior.\n\nAnchor: `TaskDocumentRef`",
       "targets": [
         {
           "anchor": {
-            "blob": "8bc2c61cdabc99dacfce3aa69e91a028f3d8eb20",
-            "content": "sha256:a18296a1e39924b94137ce6ae35eae386ee8b188d71d0b58c04f473092ee0add",
+            "blob": "51df804526b093b0732b0df91f4d6c76d901809d",
+            "content": "sha256:ee8893d75473a9a15cc15df725ef0642a6be56f513b8f8ecb752a94e96a099ca",
             "locator": {
-              "kind": "symbol",
-              "name": "TaskDocumentRef"
+              "kind": "file"
             }
           },
           "kind": "code"

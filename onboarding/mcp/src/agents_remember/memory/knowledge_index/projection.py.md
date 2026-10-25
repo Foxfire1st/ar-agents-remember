@@ -59,7 +59,9 @@ The projection constants, the identity map and the table writers.
 - The invariant, family and realization writers. [6]
 - The seal of each projected revision row is the store's own digest over the projected cells. [7]
 - Parity: the reused selection selects the same set over the index as over the database. [8]
+
 - Retired invariants and families are never selected as live and are answered as retired. [9]
+
 
 ### Cross-Repo References
 

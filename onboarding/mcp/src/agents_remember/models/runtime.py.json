@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/models/runtime.py",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
@@ -7,8 +8,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "10ffef7f8dfe40ebf25ce46db7d11c2f8d75c181",
-            "content": "sha256:467f4a6a564822c9967d0253e2cb876837e10d04373f708da2679f96482fb423",
+            "blob": "b1427e42477cfac7dfd4ed6432d00c2e4acad567",
+            "content": "sha256:8c4ac97d90059ad425122346e9b05a36e6a8ca869d587c0af7ea12c958af0b3a",
             "locator": {
               "kind": "symbol",
               "name": "run_runtime_install"
@@ -29,16 +30,40 @@
             "path": "mcp/src/agents_remember/application/runtime/install.py"
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b1427e42477cfac7dfd4ed6432d00c2e4acad567",
+            "content": "sha256:605d91fbf6762a608b9b89a2528b094ea700a34cf8d0ba2937553c2103c3cef7",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/runtime/install.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b1427e42477cfac7dfd4ed6432d00c2e4acad567",
+            "content": "sha256:0b827771026610af608d65d896e1ff9caffcf85e036bf08c2a679d1c086966b7",
+            "locator": {
+              "end": 18,
+              "kind": "line_range",
+              "start": 14
+            },
+            "path": "mcp/src/agents_remember/application/runtime/install.py"
+          },
+          "kind": "code"
         }
       ]
     },
     "2": {
-      "note": "Coordination application entry point exposes resolver output through MCP.",
+      "note": "The retired coordination tool's former computation, kept for its one remaining script caller and not registered as an MCP tool.",
       "targets": [
         {
           "anchor": {
-            "blob": "ee94de2fda380ffd2af74d9c5b4bac3c947ca754",
-            "content": "sha256:d7f8d7badb1fde99fb950dbf85d2116f58310b6dddcf3e9b7d64e28d8ddd3e44",
+            "blob": "1b5b6819f2e8e4aa3cd02b9e26d6dc1b5e1d0614",
+            "content": "sha256:472e59581e2d31b9d9eecafe0dff6390563fbb71514a931da9ade35fed9fffba",
             "locator": {
               "kind": "symbol",
               "name": "resolve_context_tool"
@@ -49,12 +74,23 @@
         },
         {
           "anchor": {
-            "blob": "ee94de2fda380ffd2af74d9c5b4bac3c947ca754",
-            "content": "sha256:8949cee6796831ea4905816368f8a80da32c1266a852725d81deb24b3f92dce0",
+            "blob": "1b5b6819f2e8e4aa3cd02b9e26d6dc1b5e1d0614",
+            "content": "sha256:5335ef1e0774281709ef0711b2639ff9a4608348d43cfbb2998fa57415be0586",
             "locator": {
               "end": 50,
               "kind": "line_range",
               "start": 20
+            },
+            "path": "mcp/src/agents_remember/application/coordination_tools.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1b5b6819f2e8e4aa3cd02b9e26d6dc1b5e1d0614",
+            "content": "sha256:5f87dec67cff6e8215ddf9208627e0abee5bb6df918e15a54b315773da41d3ef",
+            "locator": {
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/coordination_tools.py"
           },
@@ -88,21 +124,6 @@
             "locator": {
               "kind": "symbol",
               "name": "RuntimeInstallResponse"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "5": {
-      "note": "Current candidate source supports the operative account; historical sections grant no current tool or execution acceptance.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "3f8d5b093f58eb7b6874c014a91a48d876459c65",
-            "content": "sha256:5ff1ff6ef8b7747d30d43a705f0821d0f3bbd6719483aa94e0427fe74d1c42a4",
-            "locator": {
-              "kind": "file"
             }
           },
           "kind": "code"

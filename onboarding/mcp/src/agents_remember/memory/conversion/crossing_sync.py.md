@@ -92,7 +92,9 @@ No configured live documentation source was available for this pass.
 
 ### Repo-Internal References
 
+
 - The crossing result carries the alignment counts beside conflicts and cards. [14]
+
 
 - `_convert_sides` owns the current boundary described above. [12]
 - `next_crossing_owner` owns the current boundary described above. [13]
@@ -104,8 +106,12 @@ The steps and their helpers.
 - - Markers go into the leaf's history file; a subject with a row is reported, not dropped. [18]
 - - The master-line crossing history file's name. [19]
 - - Cards counted by side. [21]
+
 - - The markers move, each side converts, and the trees merge. [22]
+
+
 - - Many long markers fit one valid row. [23]
+
 - - A master-line record conflict opens a crossing history file, closed at commit. [24]
 
 ### Cross-Repo References

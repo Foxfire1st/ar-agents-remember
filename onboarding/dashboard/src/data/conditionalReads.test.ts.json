@@ -73,12 +73,12 @@
       ]
     },
     "3": {
-      "note": "Oversize, same-facts pending sharing, abort and current failure.\n\nAnchor: bounds retained bytes and keeps an oversized active result out of history",
+      "note": "Oversize, same-facts pending sharing, abort and current failure.",
       "targets": [
         {
           "anchor": {
-            "blob": "a9b54b688602506f5ce6ad230ba00c36bd9dc05a",
-            "content": "sha256:86e2cfee79b387c0059f675fb4ebe138d443c37b71ce247eb622b5b7a1d9b8e4",
+            "blob": "0664e76469b7fd63cd8e3da581d1b99a59d8d550",
+            "content": "sha256:abe189f94073f6e2683767a0d13236756b06b51a6aeccbb7bcdff65d6db9dbaf",
             "locator": {
               "end": 132,
               "kind": "line_range",

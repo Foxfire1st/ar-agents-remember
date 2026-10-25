@@ -50,12 +50,20 @@ No domain-documentation source is configured for this slice. The behavior descri
 
 These current source spans identify the implementation owners and the specific assertions supporting the file's behavior. A test definition is evidence of its assertions, not an execution or certification receipt.
 
+
 - Independent activation, private content, and sibling leaf landing. [1]
+
+
 - Release and conflicting publication preserve sibling state. [2]
+
+
 - Ordinary resume/reconciliation/completion preserves actual histories. [3]
+
 - The stopped interval is represented by snapshots, not a pause-tool call. [4]
 - Checkpoint and authored/absent dependency behavior remain distinct. [5]
+
 - Fixture commits are two actual outputs with Git-owned attribution. [6]
+
 
 ### Cross-Repo References
 

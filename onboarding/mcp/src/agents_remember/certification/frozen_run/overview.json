@@ -120,15 +120,14 @@
       ]
     },
     "5": {
-      "note": "Memory refresh composition checks sidecars and route overviews; converted trees use the trace gate instead.",
+      "note": "Historical pre-R65 refresh composition checked sidecars and route overviews; that legacy composition is removed. The surviving converted controller uses its trace gate.\n\nAnchor: `validate_memory_refresh_attestations` `_onboarding_refresh_gate`",
       "targets": [
         {
           "anchor": {
-            "blob": "92153a583a3f119a02cba25ddf722a99e3b54c8f",
-            "content": "sha256:34b68b21fbe2ebfb14563f10424ab75e5206ec6befd64444856573161247cbaa",
+            "blob": "80a4a1aa9ecd845e13f6f600c46560e34da8ce15",
+            "content": "sha256:18d5ebbea3a05ed4ec5591770b5c64663f584dbb94a405c0d12d7e7aebe6a8dc",
             "locator": {
-              "kind": "symbol",
-              "name": "validate_memory_refresh_attestations"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/worktrees/modules/onboarding.py"
           },
@@ -136,11 +135,10 @@
         },
         {
           "anchor": {
-            "blob": "a6eadd9ff1cf0a28a7754688d343ff8f802d2f04",
-            "content": "sha256:69a50a47232dddef1e59ab63aec78d762e988240c68e7067dc60f910aeb6870e",
+            "blob": "a4cb0ce3f5f3f488c8ad8313b8063d4a8218871e",
+            "content": "sha256:a2df6307f79b0a5282c67184a98d37a2d5fb71ad24fefd455d684627e7c5a73c",
             "locator": {
-              "kind": "symbol",
-              "name": "_onboarding_refresh_gate"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/memory_quality/controller.py"
           },

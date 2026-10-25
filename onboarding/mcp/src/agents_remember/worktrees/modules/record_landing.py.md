@@ -74,25 +74,25 @@ and apply branches. The retained gate judge supplies its complete refusal; the p
   step 3.
 
 
-- The module docstring's gate and probe-first paragraphs. [1]
+- The module docstring's gate and probe-first paragraphs.
 
-- Probe the line first; an unconverted line's commit is only probed. [2]
-
-
-- The gate's request over the landed commit, based on the task's memory base. [3]
+- Probe the line first; an unconverted line's commit is only probed.
 
 
+- The gate's request over the landed commit, based on the task's memory base.
 
-- The gate runs before the dry-run and apply branches. [4]
+
+
+- The gate runs before the dry-run and apply branches.
 
 
 - **Recorded-closeout freezing.** The shared pair judge freezes history files closed in the parents of the contract's recorded closeout memory commit when the judged commit is that commit or descends from it, including a later merge. It freezes nothing for a commit outside that ancestry; newly added rows remain checked. This deliberately supersedes the former exact-recorded-commit-only limit.
 
 
-- The recorded closeout and its descendants use the recorded-closeout parent freezing policy. [16]
+- The recorded closeout and its descendants use the recorded-closeout parent freezing policy.
 
 
-- Newly added or hand-closed history is still judged on the actual landed tree. [17]
+- Newly added or hand-closed history is still judged on the actual landed tree.
 
 
 ### Conventions
@@ -173,7 +173,7 @@ The following current source boundaries establish the ledger-retirement behavior
 - The application-layer entry point that confines the contract and builds the arguments. (`worktree_record_landing_tool`) [13]
 
 
-- The PR landing-tail recording step in operator doctrine, a verified local memory document rather than a code-source anchor. [14]
+- The PR landing-tail recording step in operator doctrine, a verified local memory document rather than a code-source anchor.
 
 
 

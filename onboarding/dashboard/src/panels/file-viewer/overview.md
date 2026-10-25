@@ -46,14 +46,22 @@ The File Viewer's DualPane also supplies a tray target from its repository and t
 
 - The marks gutter a pane hosts: portals, placement, the gutter per editor and `drawn`. [1]
 - The bounded, passive hold released by the reader's pointer, key or wheel. [2]
+
 - The code pane's optional marks. [3]
+
 - The excerpt gutter. [4]
+
 - The code pane's optional first line and content-sized host. [5]
+
 - The L1 read-only files API this view consumes. [6]
 - The same-origin client wrapping that API. [7]
+
 - The shell registers and keeps the file view mounted. [8]
 
+
+
 - The markdown renderer the sidecar pane reuses. [9]
+
 
 - Fitted excerpts grow without an internal maximum-height scrolling box. [10]
 - Only a fully specified tray file target installs the line-pick gutter. [11]

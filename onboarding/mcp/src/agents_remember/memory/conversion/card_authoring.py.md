@@ -80,19 +80,25 @@ No configured live documentation source was available for this pass.
 
 ### Repo-Internal References
 
+
 - The module docstring: the grammar, re-authoring by number, sidecar creation, and the refusals, two touching tables among them. [1]
+
 
 - The entry: author in memory first, then write the cards that passed. [2]
 - One card: its tables removed, its rows authored, a leftover line refused, unused references removed for the named card. [3]
 - A re-authoring is refused while another evidence line still cites its number. [5]
 - The sidecar a card without one gets. [6]
+
 - The fixer calls this module on a converted tree, scoped to one document when one is named. [7]
+
 
 - Tree-wide enumeration excludes hidden entries relative to the memory root, not hidden ancestors outside that root. [11]
 
 - Two tables with no blank line between them are refused when either holds citations. [8]
 - A delimiter row: every cell three dashes or more. [9]
+
 - Merged tables are refused by name and nothing is written; a single-dash row is a placeholder. [10]
+
 
 ### Cross-Repo References
 

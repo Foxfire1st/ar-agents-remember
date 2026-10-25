@@ -118,7 +118,7 @@ flag says; closed files are never judged at master or checkpoint landing or in a
 validation without a base. Rows unchanged at the same path in a base or frozen
 file are exempt inside a judged file.
 
-- Only route-published new or edited rows are judged. [18]
+- Only route-published new or edited rows are judged.
 
 History item-token validation reads the same population as re-anchor checking, named once by
 `checked_history_files` (MIK-R180): every open history file is judged, and at a leaf publication the
@@ -158,7 +158,9 @@ No configured live documentation source was available for this pass.
 
 - Every disagreeing row that no later attempt of its owner answers again, and whether the merge moved it. [4]
 
+
 - The refusing check rejects all mismatches at a leaf publication and only unmoved mismatches at a non-publication merge. [5]
+
 
 
 
@@ -174,12 +176,16 @@ No configured live documentation source was available for this pass.
 - The refusal names the changed row it replaces. [15]
 
 
+
 - Changed row remains governing in every attempt. [16]
 
 
 
 
+
+
 - Parent-line change may be answered by any later row. [17]
+
 
 
 
@@ -191,7 +197,10 @@ No cross-repo boundary is crossed by this file.
 
 - Moved-row findings are bounded `merge_reports` at non-publication sync merges; the finding's message explains the deferral and names the next refusing publication or landing. [6]
 - The history-row registrations: `R09-history-rows` carries `writer_reports=True` while `R09-history-rows-merged` carries `merge_reports=True`, not plain report-only. [7]
+
 - Leaf publication refuses every merged-row mismatch, while the `merge_reports` finding defers only at a non-publication sync merge and names the next refusing publication or landing. [19]
+
 - Current source delta inspected statically: Extend subject resolution and bounded merge reporting; keep R52 leaf refusal, frozen-attempt scope, independent retention and gate-owned currentness. [20]
+
 
 - Item tokens are judged only in the files the re-anchor check reads; a closed file outside that population is not item-judged here. [21]

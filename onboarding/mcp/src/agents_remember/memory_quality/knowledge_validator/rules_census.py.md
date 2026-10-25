@@ -53,8 +53,12 @@ The cache and the registration.
 - One check per validation, cached by context identity with a weak reference. [1]
 - Each rule yields its own findings. [2]
 - The registration, one rule per census rule. [3]
+
 - The census rules are registered and refusing. [4]
+
+
 - The cache keeps no tree after validation. [5]
+
 
 ### Cross-Repo References
 

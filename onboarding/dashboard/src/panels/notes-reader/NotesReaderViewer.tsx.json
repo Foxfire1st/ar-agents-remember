@@ -1,5 +1,6 @@
 {
   "path": "dashboard/src/panels/notes-reader/NotesReaderViewer.tsx",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
@@ -232,12 +233,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f2a0c19687a17a6ccf7f4639369c323139256b91",
-            "content": "sha256:4a501001c9a3ceb59fba94a41c863cd694ee6e32519f522134cd2193193bc088",
+            "blob": "1b839113b8d511b4a8343230e70a8de0be01b79f",
+            "content": "sha256:193b38b88b7b4238b7eb03a106438537d045002b7edf06f5992c45a9be97e96c",
             "locator": {
-              "end": 433,
+              "end": 434,
               "kind": "line_range",
-              "start": 428
+              "start": 429
             },
             "path": "dashboard/src/cockpit/Cockpit.tsx"
           },
@@ -245,8 +246,8 @@
         },
         {
           "anchor": {
-            "blob": "f2a0c19687a17a6ccf7f4639369c323139256b91",
-            "content": "sha256:4227521a559393760676d9097170c3c3da8434f47b9ab6605f72c4a09775a8c9",
+            "blob": "1b839113b8d511b4a8343230e70a8de0be01b79f",
+            "content": "sha256:7e438d5636b15d2a961cb9e57d65ebb98e0e17002be074e86370c618d8d7b292",
             "locator": {
               "end": 552,
               "kind": "line_range",
@@ -258,8 +259,8 @@
         },
         {
           "anchor": {
-            "blob": "f2a0c19687a17a6ccf7f4639369c323139256b91",
-            "content": "sha256:6276dba8eb48e7c6196cd7acd930da937fbdad3be83702719acce18304041f1f",
+            "blob": "1b839113b8d511b4a8343230e70a8de0be01b79f",
+            "content": "sha256:bdfdf878e5e71fd1b1fa153085d244809693d5bcca50927f722579d7bcfb243b",
             "locator": {
               "end": 650,
               "kind": "line_range",
@@ -337,8 +338,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f6072ed9607e28a959d4a183a2129c2e86dbb163",
-            "content": "sha256:34bb73219d94dff2366c248e703c25b0bbf0bbb3e25dc65568c9f48baed11105",
+            "blob": "6e4fa860ed82c382b919d20a08e564ea69c9f2f4",
+            "content": "sha256:03e3c301f302e5a9f9a018a62b682cb232d944b516731c65b285b88018a36549",
             "locator": {
               "kind": "file"
             },

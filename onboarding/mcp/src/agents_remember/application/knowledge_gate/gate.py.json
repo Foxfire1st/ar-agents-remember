@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/application/knowledge_gate/gate.py",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
@@ -58,12 +59,12 @@
   ],
   "references": {
     "1": {
-      "note": "The module docstring: the rule, always recomputed, applicability and what is not wired.\n\nAnchor: \"The gate never reads a persisted worklist or trusts its digest\"",
+      "note": "The module docstring: the rule, that the gate always recomputes and never reads a persisted worklist or trusts its digest, and the gate's applicability.",
       "targets": [
         {
           "anchor": {
-            "blob": "8c4a9c988250c29d23f6ac74838fe8a92a2feb4c",
-            "content": "sha256:f161eb79947e4084920a054dbe824abb852518985e3aa8c96fd0b1ffeb65e04d",
+            "blob": "c7ee6796c238d63d1e061ee0c8c1c84b4b214cec",
+            "content": "sha256:831cc31c08e674b4d71a967474f97204273e02af3673f5b6c526c855df3d2875",
             "locator": {
               "end": 28,
               "kind": "line_range",
@@ -92,12 +93,23 @@
       ]
     },
     "11": {
-      "note": "A failed Git read inside a predicate or the validator is never a verdict.",
+      "note": "A failed Git read inside a predicate or the validator is never a verdict.\n\nAnchor: `test_a_git_read_that_fails_inside_a_predicate_or_the_validator_is_never_a_verdict`",
       "targets": [
         {
           "anchor": {
-            "blob": "2a5929aad150b20ced228f2051c3e4fd06322f62",
-            "content": "sha256:781254a9aa437829fc461e3dcb967d7c727b953ae73a55cccb2d7e10287e72d0",
+            "blob": "cd9c5537287afcf467e163d880cd215185351a3f",
+            "content": "sha256:e6e886652be10fbe00a654d24ab251858ba9d00e64b0aa84004afa1ddddc11e3",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_knowledge_gate_routes.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "cd9c5537287afcf467e163d880cd215185351a3f",
+            "content": "sha256:0e425bdd1f448a42d7ae12f7f58516db125ab0941ec2f5b2ee4c6d0d6223bae1",
             "locator": {
               "kind": "symbol",
               "name": "test_a_git_read_that_fails_inside_a_predicate_or_the_validator_is_never_a_verdict"
@@ -158,12 +170,22 @@
       ]
     },
     "15": {
-      "note": "The gate reads the leaf's memory HEAD beside the parent tip, and keys its memo on both.",
+      "note": "The gate reads the leaf's memory HEAD beside the parent tip, and keys its memo on both.\n\nAnchor: `evaluate_leaf_gate`",
       "targets": [
         {
           "anchor": {
-            "blob": "560551a2058c73a9283f51e12e765737384373cb",
-            "content": "sha256:50b4a89682d20db503757a52458d9974314fca51e3c32432f866c171181c119b",
+            "blob": "c7ee6796c238d63d1e061ee0c8c1c84b4b214cec",
+            "content": "sha256:f9dcdd0f960f2e21d31bc302d3c6aa8539197d87f2d3bd4ba5ff7049b88bb623",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c7ee6796c238d63d1e061ee0c8c1c84b4b214cec",
+            "content": "sha256:067ab8a8ca9e3383a2c81592c90d0bb97dc556787c82f1288f1c8ebb39c2eda9",
             "locator": {
               "kind": "symbol",
               "name": "evaluate_leaf_gate"
@@ -222,12 +244,23 @@
       ]
     },
     "19": {
-      "note": "A leaf that continues after its closeout is refused while an item is open, and the refusal names attempt 2.",
+      "note": "A leaf that continues after its closeout is refused while an item is open, and the refusal names attempt 2.\n\nAnchor: `test_a_leaf_that_continues_after_its_closeout_writes_its_next_attempt`",
       "targets": [
         {
           "anchor": {
-            "blob": "43c3ce60b302f5e61445491c0fe97a0fd7d84a69",
-            "content": "sha256:4151f5dc1641778cc3806eff75c09e9d7e0d4120a9c9ad92e0dc67c28ac929ae",
+            "blob": "fab9c050d0fb6bc1c2f06b575252bcc0a3a6fe93",
+            "content": "sha256:81dfba7f6f3c245fe35c30f25383b666c6fc0c3745a716991863dbe0cfe9149f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_knowledge_reopen.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "fab9c050d0fb6bc1c2f06b575252bcc0a3a6fe93",
+            "content": "sha256:940aec90e9ea7497e04672b139fdab524843739e360e88f8440515dfcd16ea83",
             "locator": {
               "kind": "symbol",
               "name": "test_a_leaf_that_continues_after_its_closeout_writes_its_next_attempt"
@@ -380,12 +413,22 @@
       ]
     },
     "6": {
-      "note": "Probe, tip, memo, then the recorded evaluation.",
+      "note": "Probe, tip, memo, then the recorded evaluation.\n\nAnchor: `evaluate_leaf_gate` `_applies` `_resolved_tip`",
       "targets": [
         {
           "anchor": {
-            "blob": "560551a2058c73a9283f51e12e765737384373cb",
-            "content": "sha256:50b4a89682d20db503757a52458d9974314fca51e3c32432f866c171181c119b",
+            "blob": "c7ee6796c238d63d1e061ee0c8c1c84b4b214cec",
+            "content": "sha256:f9dcdd0f960f2e21d31bc302d3c6aa8539197d87f2d3bd4ba5ff7049b88bb623",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c7ee6796c238d63d1e061ee0c8c1c84b4b214cec",
+            "content": "sha256:067ab8a8ca9e3383a2c81592c90d0bb97dc556787c82f1288f1c8ebb39c2eda9",
             "locator": {
               "kind": "symbol",
               "name": "evaluate_leaf_gate"
@@ -418,8 +461,18 @@
       ]
     },
     "7": {
-      "note": "The evaluation and the judgment.",
+      "note": "The evaluation and the judgment.\n\nAnchor: `_evaluate` `judge`",
       "targets": [
+        {
+          "anchor": {
+            "blob": "c7ee6796c238d63d1e061ee0c8c1c84b4b214cec",
+            "content": "sha256:f9dcdd0f960f2e21d31bc302d3c6aa8539197d87f2d3bd4ba5ff7049b88bb623",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
         {
           "anchor": {
             "blob": "c7ee6796c238d63d1e061ee0c8c1c84b4b214cec",
@@ -433,8 +486,8 @@
         },
         {
           "anchor": {
-            "blob": "ea0d8c54155a5b5f0bc6a7cef7dd021b8138b53a",
-            "content": "sha256:3af1450a2461edec9852f158e36e1ee5bcb7bc8b28bc87377fa717436d877abd",
+            "blob": "c7ee6796c238d63d1e061ee0c8c1c84b4b214cec",
+            "content": "sha256:1f8e30f43f1c0818821330f258498c1adbcf39d6d74ff4a2ce4cc093ce10bc74",
             "locator": {
               "kind": "symbol",
               "name": "judge"
@@ -445,12 +498,22 @@
       ]
     },
     "8": {
-      "note": "K_C and C read once; the invariant kinds first; a failed read is incomplete.",
+      "note": "K_C and C read once; the invariant kinds first; a failed read is incomplete.\n\nAnchor: `_candidate` `_item_findings` `_decided`",
       "targets": [
         {
           "anchor": {
-            "blob": "7d84e7737b95e1959b2d2e7b08c35395c662367f",
-            "content": "sha256:17037a175f4593b8725b96f39919c45e55126337a9a2eb70e4be495d849db0f8",
+            "blob": "c7ee6796c238d63d1e061ee0c8c1c84b4b214cec",
+            "content": "sha256:f9dcdd0f960f2e21d31bc302d3c6aa8539197d87f2d3bd4ba5ff7049b88bb623",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c7ee6796c238d63d1e061ee0c8c1c84b4b214cec",
+            "content": "sha256:de1e268abf9a2c9f80232d76b7be928515b6ae508688c43839522b509547e036",
             "locator": {
               "kind": "symbol",
               "name": "_candidate"
@@ -460,8 +523,8 @@
         },
         {
           "anchor": {
-            "blob": "ea0d8c54155a5b5f0bc6a7cef7dd021b8138b53a",
-            "content": "sha256:db034f419381cdeaaae2de3db0235fd24e8c1790df7b66963a6d0848f2e9b589",
+            "blob": "c7ee6796c238d63d1e061ee0c8c1c84b4b214cec",
+            "content": "sha256:c8506aa6a32c0ae8ac1124ea18bf048a1d1f51e2bf59de2195d0e0499beb70a8",
             "locator": {
               "kind": "symbol",
               "name": "_item_findings"
@@ -471,8 +534,8 @@
         },
         {
           "anchor": {
-            "blob": "ea0d8c54155a5b5f0bc6a7cef7dd021b8138b53a",
-            "content": "sha256:6c218e48ab1053e4ab0d65a1ea4e7486a8768d8badb050a32279c09fa393bc3f",
+            "blob": "c7ee6796c238d63d1e061ee0c8c1c84b4b214cec",
+            "content": "sha256:15e4109da4c18ecb3ae57aca4269ee660bb93f8af9032624151dcba152be5af5",
             "locator": {
               "kind": "symbol",
               "name": "_decided"

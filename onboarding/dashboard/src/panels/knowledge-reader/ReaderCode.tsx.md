@@ -51,7 +51,9 @@ No configured live documentation source was available for this pass.
 ### Repo-Internal References
 
 - The cited code opens in the File Viewer's code pane at its lines. [1]
+
 - The shared pane that marks the cited lines. [2]
+
 - The unresolved locator is named, not guessed. [3]
 
 ### Cross-Repo References

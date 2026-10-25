@@ -14,8 +14,12 @@
 
 ## Evidence
 
+
 - The oracle snapshots files, refs, admin dirs and alternates chains [1]
+
 - Alternates pointers are followed before the containment skip [2]
 - Pointer discovery accepts any store directory name [3]
+
 - Classification is one entry point over Git and file findings [4]
+
 - Hand-built world states for the controls [5]

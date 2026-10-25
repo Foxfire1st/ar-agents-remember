@@ -1,14 +1,15 @@
 {
   "path": "skills/c-05-create-or-update-onboarding-files/workflows/inline-onboarding-workflow.md",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
-      "note": "Inline onboarding is source-embedded storage reusing the file-level content model the adapter's source defines, with no independent semantic model; the file-level template it once reused is retired with no redirect.\n\nAnchor: `# Inline Onboarding Workflow`",
+      "note": "Inline onboarding is source-embedded storage reusing the file-level content model the adapter's source defines, with no independent semantic model; the file-level template it once reused is retired with no redirect.",
       "targets": [
         {
           "anchor": {
-            "blob": "50c21244c8115542ab8552830ef03ec3a902d1e2",
-            "content": "sha256:6ab102bd1fe0a60c68b4f5c5223312591f566b648d495c4249dbacb9628b5dc8",
+            "blob": "51623997daaabb869d4b9913ab873897e1447ea2",
+            "content": "sha256:fbcdb94e56d713f30562d4ce5ded571a9332192f73421cb504974c5cd28ede62",
             "locator": {
               "end": 9,
               "kind": "line_range",
@@ -20,7 +21,7 @@
       ]
     },
     "10": {
-      "note": "Converted creation accepts temporary evidence tables; the workflow forbids legacy metadata/history and hand-authored references.\n\nAnchor: `## Create a card for a new source file`; `## Never on converted memory`",
+      "note": "Converted creation accepts temporary evidence tables; the workflow forbids legacy metadata/history and hand-authored references.",
       "targets": [
         {
           "anchor": {
@@ -37,8 +38,8 @@
         },
         {
           "anchor": {
-            "blob": "e071ead508fb6ee46a9f883dc3a5bf12260ebd28",
-            "content": "sha256:c9a1af82d877a8223f23b4b97336284a5d93454493fa1ed768042b208e68651b",
+            "blob": "07f4fbb59134af0846462f3929091464962f171f",
+            "content": "sha256:275798929b48c1cff7c3ad600c444388bef8b72b94ca154d0aabf924e74a2844",
             "locator": {
               "end": 183,
               "kind": "line_range",
@@ -85,12 +86,12 @@
       ]
     },
     "4": {
-      "note": "The block template declares markers and inline fields, including a Markdown governing link, without defining converted-card metadata.\n\nAnchor: `# Inline Onboarding Block Template`",
+      "note": "The block template declares markers and inline fields, including a Markdown governing link, without defining converted-card metadata.",
       "targets": [
         {
           "anchor": {
-            "blob": "80e865858386a4b52c71367b215e08eeba959df7",
-            "content": "sha256:e0efb7f3a1307127311b05a2e870b3b53d4168ccfce2e334ed2bee99cfc4375f",
+            "blob": "290f58d6ab15f79efe1a94aa276e64b88567f187",
+            "content": "sha256:b99ff0746ec17a886979218186f257e6bd04257fec3933a640a594663ebeb83f",
             "locator": {
               "end": 43,
               "kind": "line_range",
@@ -125,34 +126,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2402e3a7fb35fe2eeee50102ee86c1354e216a5b",
-            "content": "sha256:8473803499e0af51b9ab60e0b4327e3d2335fb1657bee3ec968f2076a43059e7",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "skills/c-05-create-or-update-onboarding-files/SKILL.md"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "6f67bb038ad8fbe809c2027b6b98879459a2e1ce",
-            "content": "sha256:2ce77f99d363de2e86b7363d1728ecedfa524c0311fa0cb21dba831bfa104af2",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "skills/c-05-create-or-update-onboarding-files/workflows/converted-card-workflow.md"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "7": {
-      "note": "The canonical skill identifies inline as an adapter and gives converted-card precedence over retained unconverted instructions.\n\nAnchor: \"Inline onboarding does not replace the file-level content model.\"; `## Converted Memory`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "286f2bdd8ea0869bbbd819a609489e6b1ef9f5e3",
+            "blob": "7544470421d07347f2127e91131a701490676138",
             "content": "sha256:a0b73a113d0a93d9298988c987656bf2953dc012b534baada30846f83b1be99a",
             "locator": {
               "end": 15,
@@ -165,8 +139,74 @@
         },
         {
           "anchor": {
-            "blob": "4d90c238185e61a3bec8347aa1f8b50292cbc1dd",
-            "content": "sha256:af15e8a2eefaf79a119062872a1813e646d8259e28b6f8cdebc52ccb3bdff965",
+            "blob": "7544470421d07347f2127e91131a701490676138",
+            "content": "sha256:94b74f2e0b77aec344ec5066148cfccfbafd096e3e10a72a7d04706142d161f3",
+            "locator": {
+              "end": 57,
+              "kind": "line_range",
+              "start": 48
+            },
+            "path": "skills/c-05-create-or-update-onboarding-files/SKILL.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "07f4fbb59134af0846462f3929091464962f171f",
+            "content": "sha256:4e96ce5e2d8df463581dd6b7b389e93a5d177d57aac6a52ca881e431b29307fc",
+            "locator": {
+              "end": 185,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "skills/c-05-create-or-update-onboarding-files/workflows/converted-card-workflow.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7544470421d07347f2127e91131a701490676138",
+            "content": "sha256:9b7249977226db7f5b8e497bed9af2158d278894adaa101801c2a5215d670d9f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/c-05-create-or-update-onboarding-files/SKILL.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "07f4fbb59134af0846462f3929091464962f171f",
+            "content": "sha256:4e96ce5e2d8df463581dd6b7b389e93a5d177d57aac6a52ca881e431b29307fc",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/c-05-create-or-update-onboarding-files/workflows/converted-card-workflow.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The canonical skill identifies inline as an adapter and gives converted-card precedence over retained unconverted instructions.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7544470421d07347f2127e91131a701490676138",
+            "content": "sha256:a0b73a113d0a93d9298988c987656bf2953dc012b534baada30846f83b1be99a",
+            "locator": {
+              "end": 15,
+              "kind": "line_range",
+              "start": 8
+            },
+            "path": "skills/c-05-create-or-update-onboarding-files/SKILL.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7544470421d07347f2127e91131a701490676138",
+            "content": "sha256:1c045e540713a3e7db5175f055905952a1496dcc9afd3b2f72fb87ffbf340f02",
             "locator": {
               "end": 53,
               "kind": "line_range",
@@ -183,8 +223,21 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2402e3a7fb35fe2eeee50102ee86c1354e216a5b",
-            "content": "sha256:8473803499e0af51b9ab60e0b4327e3d2335fb1657bee3ec968f2076a43059e7",
+            "blob": "7544470421d07347f2127e91131a701490676138",
+            "content": "sha256:94b74f2e0b77aec344ec5066148cfccfbafd096e3e10a72a7d04706142d161f3",
+            "locator": {
+              "end": 57,
+              "kind": "line_range",
+              "start": 48
+            },
+            "path": "skills/c-05-create-or-update-onboarding-files/SKILL.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7544470421d07347f2127e91131a701490676138",
+            "content": "sha256:9b7249977226db7f5b8e497bed9af2158d278894adaa101801c2a5215d670d9f",
             "locator": {
               "kind": "file"
             },

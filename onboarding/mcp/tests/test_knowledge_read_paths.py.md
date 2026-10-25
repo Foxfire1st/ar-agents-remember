@@ -25,7 +25,11 @@ repository's 1 200-line hard limit in fix round 2; the cases moved here rather t
 
 Leading-colon pathspec magic is refused at the test anchor-draft and production PathSeed boundaries; literal glob characters remain addressable. Fixture rows come from the test-only builder, not a canonical writer. [1] [2] [7]
 
-Unsupported stored spelling is unsupported_locator. Missing tree objects, a Git process that cannot start, and non-zero lookup results are recorded_object_unavailable, never path_absent. The non-zero branch now has its own case. [3] [4] [5] [9]
+The current cases assert typed path-spelling refusal separately from lookup availability. Missing tree objects, a Git process that cannot start, and non-zero lookup results are recorded_object_unavailable, never path_absent. The non-zero branch has its own case. The removed hand-inserted stored-spelling node is historical coverage only. [3] [4] [5] [9]
+
+> Retained earlier card wording; superseded by the current account above:
+> Unsupported stored spelling is unsupported_locator. Missing tree objects, a Git process that cannot start, and non-zero lookup results are recorded_object_unavailable, never path_absent. The non-zero branch now has its own case. [3] [4] [5] [9]
+
 
 ### Invariants And Boundaries
 
@@ -48,9 +52,15 @@ ordinary store operation, (3) constructs `PathSeed(path="src/a[1].py")`, and (4)
 **The mutation that inverts this result is the read path re-admitting a glob refusal**, which flips the
 outcome to `unsupported_locator` — the exact flip the reviewer measured on the pre-fix candidate.
 
-**`test_a_stored_path_that_cannot_be_addressed_is_refused_rather_than_reported_absent`** (`:370`) — a row
-written by something other than the typed API is reported `unsupported_locator` with the spelling refusal
-in `detail`, **not** `path_absent`.
+> Historical removed-case account: **`test_a_stored_path_that_cannot_be_addressed_is_refused_rather_than_reported_absent`**
+> (`:370`) formerly inserted a row outside the typed API and asserted `unsupported_locator` with the spelling
+> refusal in `detail`, **not** `path_absent`. L74 removed this node; it is not current executable coverage.
+
+> Retained earlier card wording; superseded by the current account above:
+> **`test_a_stored_path_that_cannot_be_addressed_is_refused_rather_than_reported_absent`** (`:370`) — a row
+> written by something other than the typed API is reported `unsupported_locator` with the spelling refusal
+> in `detail`, **not** `path_absent`.
+
 
 **`test_a_failed_tree_lookup_is_unavailable_rather_than_an_absent_path`** (`:445`) and
 **`test_a_git_that_cannot_run_is_unavailable_rather_than_an_absent_path`** (`:539`) — the two producers of
@@ -95,22 +105,30 @@ None recorded.
 - Magic spelling refused at both typed boundaries. [1]
 
 
+
 - Literal glob characters are addressable. [2]
+
+
 
 
 - Unsupported stored spelling is not absence. [3]
 
 
+
 - Unavailable tree is not absence. [4]
+
 
 
 - Spawn failure is unavailable. [5]
 
 
+
 - Anchor draft now belongs to test support. [7]
 
 
+
 - Non-zero Git lookup has its own current case. [9]
+
 
 
 ### Cross-Repo References
@@ -125,17 +143,34 @@ No domain documentation source is configured for this repository (`system/source
 No configured domain documentation could be checked.
 
 - **The pathspec-magic boundary node: a leading-`:` spelling refused at both typed boundaries, with the Git facts measured by the module itself.** [10]
+
 - **The glob-character node the review's correction rests on: authored, stored, seeded and resolved to its own blob.** [11]
+
+
 - **The unaddressable-stored-spelling node: a refusal of the spelling, never an absence from the tree.** [12]
+
 - **The lookup that ran and could not answer, refused as unavailable rather than absent.** [13]
+
 - **The lookup that could not be run at all, reported as the same fact.** [14]
+
+
 - **The corrected predicate this module measures: leading `:` refused; `*`, `?` and `[` admitted as literal characters.** [15]
+
 - **The write-path boundary that applies the shared rule, so a malformed anchor cannot be authored.** [16]
 - **The seed boundary that applies the same rule, so a refused spelling cannot be presented as a seed.** [17]
-- The lane row this module occupies. [18]
+
+
+
+
+> Retained earlier citation wording: - The lane row this module occupies. Source caption: `test_knowledge_read_paths` [18]
+
+
+
 
 ### Cross-Repo References
 
 No cross-repository behavior is implemented in this file.
 
 No meaningful cross-repo references found.
+
+- The lane row this module occupies. Source caption: `test_knowledge_read_paths` [18]

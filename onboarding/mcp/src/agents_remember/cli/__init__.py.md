@@ -23,6 +23,11 @@ This package marker is documented by the nearest mcp route overview and the real
 
 - The package docstring names the CLI adapter role. [1]
 The nearest route overview documents the umbrella CLI under `cli/`.
+
 - The umbrella entrypoint dispatches subcommands for this package. [2]
+
+
 - The dashboard subcommand adapter registered by the umbrella parser. [3]
+
+
 - The context-packet CLI adapter peer. [4]

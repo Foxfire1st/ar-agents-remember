@@ -22,7 +22,9 @@ The added occupied-seat case protects reasoned `stepUp` transport through `dispa
 
 ## Evidence
 
+
 - The test file asserts the cases and limitations described above. [1]
+
 
 
 - The new case dispatches start from an occupied completed task seat with a stepUp reason, captures the exact role/task/request/action payload and excludes agentOverride even when the stub dispatch returns 409. Existing mismatched-receipt, offline-scope and current-notification cases remain. [2]

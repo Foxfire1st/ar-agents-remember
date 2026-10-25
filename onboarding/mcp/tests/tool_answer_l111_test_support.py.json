@@ -103,15 +103,14 @@
       ]
     },
     "5": {
-      "note": "Detail identity is complete parsed-mapping equality under the file's byte budget.",
+      "note": "Detail identity is complete parsed-mapping equality under the file's byte budget.\n\nAnchor: `assert_detail_holds_whole_result`",
       "targets": [
         {
           "anchor": {
-            "blob": "cfdcf36450d941a1612a221be72fab4c2be3c96e",
-            "content": "sha256:76ad6405d6df171d0cd82c4b49f39d9b1336620175df96683a9fcb2531b45629",
+            "blob": "21b59be05d2c75fdeffe4fd8d18ccb85c6626d6a",
+            "content": "sha256:e6d3291cb569f8c3c672416459815aed297355d7866816e2b9880f5c67ad69fc",
             "locator": {
-              "kind": "symbol",
-              "name": "assert_detail_holds_whole_result"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -119,15 +118,14 @@
       ]
     },
     "6": {
-      "note": "Owned tool/operation rows retain fields, uses and product bounds without an L111 interim entry.",
+      "note": "Owned tool/operation rows retain fields, uses and product bounds without an L111 interim entry.\n\nAnchor: `_apply_l111_shaped_rows`",
       "targets": [
         {
           "anchor": {
-            "blob": "cfdcf36450d941a1612a221be72fab4c2be3c96e",
-            "content": "sha256:84c701617c89244be9fa522961b7392a8da9e6c060a9bd65b096fc4d784346b6",
+            "blob": "21b59be05d2c75fdeffe4fd8d18ccb85c6626d6a",
+            "content": "sha256:e6d3291cb569f8c3c672416459815aed297355d7866816e2b9880f5c67ad69fc",
             "locator": {
-              "kind": "symbol",
-              "name": "_apply_l111_shaped_rows"
+              "kind": "file"
             }
           },
           "kind": "test"

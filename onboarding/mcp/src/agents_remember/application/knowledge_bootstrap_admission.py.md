@@ -141,4 +141,5 @@ No meaningful cross-repo references found.
 - **The settings document and repository entry that are the authority here.** [47]
 - The shipped Git runner every revision read goes through. [48]
 - The contract reader the resolver is given, which answers an empty selector with no contract. [49]
+
 - The memory initializer this module's authority document is shared with (since MIK-R24 it also writes `knowledge/layout.json` for a brand-new root, and never for an existing one). [50]

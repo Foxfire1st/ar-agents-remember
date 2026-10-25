@@ -52,7 +52,7 @@
       ]
     },
     "16": {
-      "note": "`test_the_previous_binding_identity_reaches_the_port_and_is_compared_against_the_read` owns the current boundary described above.",
+      "note": "`test_the_previous_binding_identity_reaches_the_port_and_is_compared_against_the_read` owns the current boundary described above.  > Retained earlier citation wording: - The module's own statement of the boundary it measures, and the import of the surface helpers it reuses.  > Retained earlier citation wording: - The unit marker and the per-case fixture.  > Retained earlier citation wording: - The surface module's config that names no real root, and the render helper that puts the previous identity on the request.",
       "targets": [
         {
           "anchor": {
@@ -73,6 +73,30 @@
         {
           "anchor": {
             "blob": "5326dde5297deef1bfee2f628ae5f7843ca2e89d",
+            "content": "sha256:de47ef836017e9fc616116f0f70fe4c3a082bf413c999a6a64c2b96c1e9912bc",
+            "locator": {
+              "end": 15,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5326dde5297deef1bfee2f628ae5f7843ca2e89d",
+            "content": "sha256:f48d09e218cef8aeb209b98ec641a01280b63de861763fefca0a1c844f028cc8",
+            "locator": {
+              "end": 48,
+              "kind": "line_range",
+              "start": 42
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5326dde5297deef1bfee2f628ae5f7843ca2e89d",
             "content": "sha256:56299469c3e2434944f5157681e18984be911b07bc2e0a9f54fe35a9082b58da",
             "locator": {
               "kind": "symbol",
@@ -89,6 +113,18 @@
         {
           "anchor": {
             "blob": "5326dde5297deef1bfee2f628ae5f7843ca2e89d",
+            "content": "sha256:bc213a49f9818620e188fd6aa5e77fce8983e24db8cd128a6fe7755fb23c4c7a",
+            "locator": {
+              "end": 58,
+              "kind": "line_range",
+              "start": 51
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5326dde5297deef1bfee2f628ae5f7843ca2e89d",
             "content": "sha256:569502bf735b86e9d8cd035fd0e1c66865de363e3f3ada6a426801b336a9f01b",
             "locator": {
               "kind": "symbol",
@@ -102,6 +138,32 @@
     "19": {
       "note": "The surface module's config that names no real root, and the render helper that puts the previous identity on the request.",
       "targets": [
+        {
+          "anchor": {
+            "blob": "08bea4f9b3ca380cc4c3bb5a101b29d3db8479d2",
+            "content": "sha256:b3290840b99d08ae6a117d1c7919fb91f00139d0bccaded62a144e46cd57c223",
+            "locator": {
+              "end": 110,
+              "kind": "line_range",
+              "start": 102
+            },
+            "path": "mcp/tests/test_knowledge_review_surface.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "08bea4f9b3ca380cc4c3bb5a101b29d3db8479d2",
+            "content": "sha256:a9d72066544a8b45d64b5b4db6086c40cfbc12b665a8abb1f0bf81d5158ccd35",
+            "locator": {
+              "end": 176,
+              "kind": "line_range",
+              "start": 158
+            },
+            "path": "mcp/tests/test_knowledge_review_surface.py"
+          },
+          "kind": "test"
+        },
         {
           "anchor": {
             "blob": "5326dde5297deef1bfee2f628ae5f7843ca2e89d",
@@ -206,7 +268,7 @@
       ]
     },
     "24": {
-      "note": "**The previous identity driven through every hop: carried by a refresh to the port and compared, absent on a plain read, and refused by name when malformed.**",
+      "note": "**The previous identity driven through every hop: carried by a refresh to the port and compared, absent on a plain read, and refused by name when malformed.**  > Retained earlier citation wording: - The unit-regression lane row, beside its sibling's. Anchor: `test_knowledge_review_resolution_and_route`",
       "targets": [
         {
           "anchor": {
@@ -226,12 +288,51 @@
       "targets": [
         {
           "anchor": {
-            "blob": "11ba98ff63f4a4815985ac51e2c0c7b5a48556a4",
+            "blob": "102c4550ab6429f44c8fb543d1d0662de66a1b8c",
+            "content": "sha256:7700d68dcf4855295d022fa726b30b7d6da58a42755ce8d37843d680b6327b07",
+            "locator": {
+              "end": 5,
+              "kind": "line_range",
+              "start": 4
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "102c4550ab6429f44c8fb543d1d0662de66a1b8c",
+            "content": "sha256:f5faf5337e9e5acf18cbe81ed994d84f9fc9e7dda56aa275b66a3577f562422a",
+            "locator": {
+              "end": 186,
+              "kind": "line_range",
+              "start": 184
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "102c4550ab6429f44c8fb543d1d0662de66a1b8c",
             "content": "sha256:6eb103c9adf088b7abdaba12fa109e0f524f026fe6bf1494f32570981972150f",
             "locator": {
-              "end": 182,
+              "end": 185,
               "kind": "line_range",
-              "start": 182
+              "start": 185
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "102c4550ab6429f44c8fb543d1d0662de66a1b8c",
+            "content": "sha256:2fa53d75d1a4d6ef8e4c45600fb5f9678bb7206ba3b69dd24ee8963593f7ebfd",
+            "locator": {
+              "end": 154,
+              "kind": "line_range",
+              "start": 154
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },

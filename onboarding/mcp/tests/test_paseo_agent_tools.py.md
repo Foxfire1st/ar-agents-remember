@@ -17,7 +17,10 @@ The launch-definition case pins `AR_PLAYWRIGHT` in the explicit carried-environm
 
 ## Evidence
 
+
 - The scoped current source carries the module/document behavior described above. [1]
+
+
 
 - New real report folders and retained alias receipts have distinct retry controls. [2]
 

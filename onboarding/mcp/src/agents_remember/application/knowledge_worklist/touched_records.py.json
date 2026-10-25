@@ -51,15 +51,14 @@
       ]
     },
     "4": {
-      "note": "Exact JSON/prose comparison of base records emits revision/status facts and leaves structural deletion elsewhere.",
+      "note": "Exact JSON/prose comparison of base records emits revision/status facts and leaves structural deletion elsewhere.\n\nAnchor: `touched_record_items`",
       "targets": [
         {
           "anchor": {
-            "blob": "a214b740792f6a87880323825baf71d02b4fbe19",
-            "content": "sha256:5871450f23f032597d78c2aa532da470bead7987e9251f0ec991a7442db1208c",
+            "blob": "f4089ef4000f032319b75b9e827ce11f709f17c5",
+            "content": "sha256:307151ae2b70c42156cb458a1195bb84d53c7ef04ed3e2406f61161559cdb1d1",
             "locator": {
-              "kind": "symbol",
-              "name": "touched_record_items"
+              "kind": "file"
             }
           },
           "kind": "code"

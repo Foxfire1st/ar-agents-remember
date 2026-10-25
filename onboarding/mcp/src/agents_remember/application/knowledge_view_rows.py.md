@@ -14,4 +14,5 @@ The module turns the stored records of a knowledge view into the rows the read s
 
 ## Evidence
 
+
 - The file realizes its current contract at the corrected candidate. [1]

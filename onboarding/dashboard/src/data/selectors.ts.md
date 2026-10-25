@@ -52,9 +52,13 @@ No relevant documentation found after checking live sources.
 
 - Host-observation availability is read from the served unknown count, not recomputed from agents or elapsed time. [4]
 
-- selectQueue caches filtered queue arrays by queue and suppression-map identity and suppresses every row whose id is present in the local map, whatever its kind. [1]
+
+- selectQueue caches the visible queue by the queue array's identity and the suppression map's identity, and hides every row whose id is in that map, whatever the entry's kind. [1]
+
+
 
 - The converted drift names order with the legacy classifications, healthy first. [3]
+
 
 
 ### Cross-Repo References

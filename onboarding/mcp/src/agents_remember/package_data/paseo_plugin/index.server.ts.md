@@ -26,4 +26,5 @@ The server does not infer parent trust, poll another registry or gain dashboard 
 The current source and test assertions below establish the documented ownership; test citations do not claim a rerun in this pass.
 
 - The server entry reads the embed list at load and registers the existing embed RPC. [1]
+
 - The entry composes independent activity publication/RPC and parent-wake registration, with explicit initialization and unload failure handling. [2]

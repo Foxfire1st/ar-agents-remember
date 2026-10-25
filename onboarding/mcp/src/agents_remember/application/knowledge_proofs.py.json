@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/application/knowledge_proofs.py",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
@@ -20,12 +21,23 @@
       ]
     },
     "10": {
-      "note": "The index lookups it reads.",
+      "note": "The index lookups it reads.\n\nAnchor: `proofs_of` `invariants_without_proof`",
       "targets": [
         {
           "anchor": {
-            "blob": "b3ce6d4c0ba10e9e0b9db33ea9cb60baf7c0f4ed",
-            "content": "sha256:851e491f99f981c033839274a2e88756ba2d7c4987f775789fa66aa9cd97a0a7",
+            "blob": "86f24d733e3cbbc5a513f6cfb86d2c0849c8dd3e",
+            "content": "sha256:0c4dab1d4a2c67f0f014cfa7ded80d40b73cb3e3155a74ac5fc761b257b34a30",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge_index/query.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "86f24d733e3cbbc5a513f6cfb86d2c0849c8dd3e",
+            "content": "sha256:180f6b20120e23836587447f5aca479a3d6eaad25b8250f9e364bdcb2086892e",
             "locator": {
               "kind": "symbol",
               "name": "proofs_of"
@@ -49,12 +61,23 @@
       ]
     },
     "11": {
-      "note": "Migrated evidence is listed, then a curator pass writes the proof and the list empties.",
+      "note": "Migrated evidence is listed, then a curator pass writes the proof and the list empties.\n\nAnchor: `test_migrated_evidence_is_listed_then_turned_into_a_proof_by_a_curator_pass`",
       "targets": [
         {
           "anchor": {
-            "blob": "598b84d6b63c399c08e71e94ec6d7c3ea806afeb",
-            "content": "sha256:2ea418d939b9272380e2fde90df33c48fd5e5cd4099b15a2025e9b4d00725bdf",
+            "blob": "0256098f652dc34be5986d7dcab77243a655f959",
+            "content": "sha256:ebb05908d076c74907bac8a22bfb3c2902b74eb2329c114409ae4e9ab1aba461",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_knowledge_proofs.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "0256098f652dc34be5986d7dcab77243a655f959",
+            "content": "sha256:2ad896c89f900e65c36f4115a348f0fc0bc68410ffa14b847ca9ace63663669d",
             "locator": {
               "kind": "symbol",
               "name": "test_migrated_evidence_is_listed_then_turned_into_a_proof_by_a_curator_pass"
@@ -66,12 +89,23 @@
       ]
     },
     "12": {
-      "note": "The cache is reused, and an unreadable cache is reported, not raised.",
+      "note": "The cache is reused, and an unreadable cache is reported, not raised.\n\nAnchor: `test_the_list_reuses_the_cached_index_and_reports_an_unreadable_one`",
       "targets": [
         {
           "anchor": {
-            "blob": "598b84d6b63c399c08e71e94ec6d7c3ea806afeb",
-            "content": "sha256:60ee6df7b32247359d10474dd664e0a131554f14e888a43526363c188abc64e0",
+            "blob": "0256098f652dc34be5986d7dcab77243a655f959",
+            "content": "sha256:ebb05908d076c74907bac8a22bfb3c2902b74eb2329c114409ae4e9ab1aba461",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_knowledge_proofs.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "0256098f652dc34be5986d7dcab77243a655f959",
+            "content": "sha256:012da4baaaa18bd21045b5c96a299bd30671cec5316b01266d174e59bf6558ea",
             "locator": {
               "kind": "symbol",
               "name": "test_the_list_reuses_the_cached_index_and_reports_an_unreadable_one"
@@ -229,15 +263,14 @@
       ]
     },
     "9": {
-      "note": "The checklist consumer.\n\nAnchor: `invariants_without_proof`",
+      "note": "The checklist consumer.\n\nAnchor: `_without_proof`",
       "targets": [
         {
           "anchor": {
-            "blob": "a6eadd9ff1cf0a28a7754688d343ff8f802d2f04",
-            "content": "sha256:e8b26e89b7081e4a34d185bda2198f8cb1b1d124a25104055eca841e18724bb5",
+            "blob": "a4cb0ce3f5f3f488c8ad8313b8063d4a8218871e",
+            "content": "sha256:a2df6307f79b0a5282c67184a98d37a2d5fb71ad24fefd455d684627e7c5a73c",
             "locator": {
-              "kind": "symbol",
-              "name": "_without_proof"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/memory_quality/controller.py"
           },

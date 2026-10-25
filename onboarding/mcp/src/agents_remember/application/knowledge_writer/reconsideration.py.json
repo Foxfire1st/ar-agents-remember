@@ -22,12 +22,12 @@
   ],
   "references": {
     "1": {
-      "note": "The module docstring: both rows, the refresh, and the five link states it names.\n\nAnchor: \"The writer's reconsideration rows (MIK-R14 rule 4)\"",
+      "note": "The module docstring: both rows, the refresh, and the five link states it names.",
       "targets": [
         {
           "anchor": {
-            "blob": "f452f46fdef8cb23f0c6665b8d5b0bb5b73b98d2",
-            "content": "sha256:c11efe85cd07693214c50f241491634b19586d49ee1cbfc99c91ea369321eb77",
+            "blob": "a9640d916bc1fb5ff79c2a85ca957b2ed07fccfb",
+            "content": "sha256:34c779c42613615167bbf6a607ab8c05e4b7aaeeeee18deb9e84573e487212a5",
             "locator": {
               "end": 54,
               "kind": "line_range",
@@ -39,26 +39,14 @@
       ]
     },
     "10": {
-      "note": "One fired link to a target or a refusal; the new-change refusals.",
+      "note": "One fired link to a target or a refusal; the new-change refusals.\n\nAnchor: `_outcome` `_new_change`",
       "targets": [
         {
           "anchor": {
-            "blob": "f452f46fdef8cb23f0c6665b8d5b0bb5b73b98d2",
-            "content": "sha256:5641ef1cef2c834a9f40350fec50e19603f3114435cb09eb88ea118e0e116e7a",
-            "locator": {
-              "kind": "symbol",
-              "name": "_outcome"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
             "blob": "a9640d916bc1fb5ff79c2a85ca957b2ed07fccfb",
-            "content": "sha256:c0cd9b4c1893b0aa22c82e1afa516e4af100f353d69c374622599c0757b871d5",
+            "content": "sha256:d0bca122ebef0c33f99ef85f387b13787a358f63c3542a0636d73d00c519a579",
             "locator": {
-              "kind": "symbol",
-              "name": "_new_change"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -66,15 +54,14 @@
       ]
     },
     "11": {
-      "note": "The K_B target: the base record's link, the facts' anchor, or the key alone.",
+      "note": "The K_B target: the base record's link, the facts' anchor, or the key alone.\n\nAnchor: `_fired_target`",
       "targets": [
         {
           "anchor": {
-            "blob": "f452f46fdef8cb23f0c6665b8d5b0bb5b73b98d2",
-            "content": "sha256:104393d072b1f5a8c92703c72d9b164e080f2def7f9c41a4dc1895cf57ab1750",
+            "blob": "a9640d916bc1fb5ff79c2a85ca957b2ed07fccfb",
+            "content": "sha256:d0bca122ebef0c33f99ef85f387b13787a358f63c3542a0636d73d00c519a579",
             "locator": {
-              "kind": "symbol",
-              "name": "_fired_target"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -82,37 +69,14 @@
       ]
     },
     "12": {
-      "note": "The state dispatch and the requirement states, with the R5-2 upper bound.",
+      "note": "The state dispatch and the requirement states, with the R5-2 upper bound.\n\nAnchor: `_link_state` `_requirement_state` `_newer`",
       "targets": [
         {
           "anchor": {
-            "blob": "f452f46fdef8cb23f0c6665b8d5b0bb5b73b98d2",
-            "content": "sha256:10da8e89a804e33bff6186d782d1d0df90e43814a835788f93d3c04eb98f44d1",
-            "locator": {
-              "kind": "symbol",
-              "name": "_link_state"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
             "blob": "a9640d916bc1fb5ff79c2a85ca957b2ed07fccfb",
-            "content": "sha256:6109a34b42564f2cdf678eae2e30aa3027d414fbba3392d43eced1bb2f04a385",
+            "content": "sha256:d0bca122ebef0c33f99ef85f387b13787a358f63c3542a0636d73d00c519a579",
             "locator": {
-              "kind": "symbol",
-              "name": "_requirement_state"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "a9640d916bc1fb5ff79c2a85ca957b2ed07fccfb",
-            "content": "sha256:e2c6987e58029a719a609a25940ea9347f0b769487d0b7f1660754a62df8001d",
-            "locator": {
-              "kind": "symbol",
-              "name": "_newer"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -120,37 +84,14 @@
       ]
     },
     "13": {
-      "note": "The anchor states: stale item, unchanged, carried only when the content survives, changed again.",
+      "note": "The anchor states: stale item, unchanged, carried only when the content survives, changed again.\n\nAnchor: `_anchor_state` `_refreshed_anchor_state` `_seen_content`",
       "targets": [
         {
           "anchor": {
-            "blob": "f452f46fdef8cb23f0c6665b8d5b0bb5b73b98d2",
-            "content": "sha256:7865becd2cc64eca103b6a53f1dd3255ae1a0305d93f6b3232149e5b6edbc218",
-            "locator": {
-              "kind": "symbol",
-              "name": "_anchor_state"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "f452f46fdef8cb23f0c6665b8d5b0bb5b73b98d2",
-            "content": "sha256:30d967a0ba8ce3eb6ef0b6314452a321d14eae5e393bdf49633c011353637c1c",
-            "locator": {
-              "kind": "symbol",
-              "name": "_refreshed_anchor_state"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
             "blob": "a9640d916bc1fb5ff79c2a85ca957b2ed07fccfb",
-            "content": "sha256:e60bdd95d2a197ee2c69412bba5f5752d1e5ba605ba304f43e2b1d9ea214506c",
+            "content": "sha256:d0bca122ebef0c33f99ef85f387b13787a358f63c3542a0636d73d00c519a579",
             "locator": {
-              "kind": "symbol",
-              "name": "_seen_content"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -158,15 +99,14 @@
       ]
     },
     "14": {
-      "note": "The refresh target: the item's version and packet, or the anchor mapped to C.",
+      "note": "The refresh target: the item's version and packet, or the anchor mapped to C.\n\nAnchor: `_refreshed_target`",
       "targets": [
         {
           "anchor": {
-            "blob": "f452f46fdef8cb23f0c6665b8d5b0bb5b73b98d2",
-            "content": "sha256:bbe5a0a084090dceecaeea5030adaf96631a6a1c46609a48c0e441c7ba7abe22",
+            "blob": "a9640d916bc1fb5ff79c2a85ca957b2ed07fccfb",
+            "content": "sha256:d0bca122ebef0c33f99ef85f387b13787a358f63c3542a0636d73d00c519a579",
             "locator": {
-              "kind": "symbol",
-              "name": "_refreshed_target"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -242,15 +182,14 @@
       ]
     },
     "19": {
-      "note": "An unmappable range, or a row naming another item, refuses.",
+      "note": "An unmappable range, or a row naming another item, refuses.\n\nAnchor: `test_a_range_that_cannot_be_mapped_refuses_the_row_naming_the_link`",
       "targets": [
         {
           "anchor": {
-            "blob": "e1b050eefa6faeac6a1313ba1100336442c14936",
-            "content": "sha256:3b68be4fd0495ce700868c1d852ccfdf93978a4cea77af7f6b281a69da66f60e",
+            "blob": "1176f3ca1d7d895f188bac1a18b73621a5897e93",
+            "content": "sha256:4fa400abd88a6eb9621bd613d566fd441ba1d9c4b81fdd60498b49bfe5748bd5",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_range_that_cannot_be_mapped_refuses_the_row_naming_the_link"
+              "kind": "file"
             },
             "path": "mcp/tests/test_reconsideration_surfacing.py"
           },
@@ -259,15 +198,14 @@
       ]
     },
     "2": {
-      "note": "The task owner's `openQuestions` port.",
+      "note": "The task owner's `openQuestions` port.\n\nAnchor: `OpenQuestions`",
       "targets": [
         {
           "anchor": {
-            "blob": "260f534668abd2bcbf36b3ac6d677b9b1e87892c",
-            "content": "sha256:0bb2a834a098b021fac670c32ab1dc2c82732c85763a85f5eca2e11386acca4a",
+            "blob": "a9640d916bc1fb5ff79c2a85ca957b2ed07fccfb",
+            "content": "sha256:d0bca122ebef0c33f99ef85f387b13787a358f63c3542a0636d73d00c519a579",
             "locator": {
-              "kind": "symbol",
-              "name": "OpenQuestions"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -600,15 +538,14 @@
       ]
     },
     "5": {
-      "note": "The append in a committing run; every refusal is returned.",
+      "note": "The append in a committing run; every refusal is returned.\n\nAnchor: `append_questions`",
       "targets": [
         {
           "anchor": {
-            "blob": "260f534668abd2bcbf36b3ac6d677b9b1e87892c",
-            "content": "sha256:65533e8f1833890161e3deee51a35c44b0826278e313040bf99c8a7f9291a59c",
+            "blob": "a9640d916bc1fb5ff79c2a85ca957b2ed07fccfb",
+            "content": "sha256:d0bca122ebef0c33f99ef85f387b13787a358f63c3542a0636d73d00c519a579",
             "locator": {
-              "kind": "symbol",
-              "name": "append_questions"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -697,15 +634,14 @@
       ]
     },
     "9": {
-      "note": "Only fired, refreshable links; each judged against its K_B target.",
+      "note": "Only fired, refreshable links; each judged against its K_B target.\n\nAnchor: `refreshed_links`",
       "targets": [
         {
           "anchor": {
-            "blob": "f452f46fdef8cb23f0c6665b8d5b0bb5b73b98d2",
-            "content": "sha256:94e3b9178537e1589de688465b05b04cb177c9570e61f2380d49a0da1839ceea",
+            "blob": "a9640d916bc1fb5ff79c2a85ca957b2ed07fccfb",
+            "content": "sha256:d0bca122ebef0c33f99ef85f387b13787a358f63c3542a0636d73d00c519a579",
             "locator": {
-              "kind": "symbol",
-              "name": "refreshed_links"
+              "kind": "file"
             }
           },
           "kind": "code"

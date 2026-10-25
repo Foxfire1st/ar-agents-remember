@@ -32,7 +32,9 @@ Source inspection supplies no new test, native-host, whole-build, landing or mem
 
 ## Current source contract evidence
 
-- Current source declarations support the qualified naming or fixture account; no executed test or acceptance is inferred. [17]
+
+- The current `BARE_RAISERS` declaration has ten entries and `ALWAYS_ANSWERS` four, with four named shapes across sixteen test definitions. Current source pins and fixture assertions are not a fresh live advertisement or execution census.
+
 
 
 ## Historical original card — preserved, not the current operative account
@@ -159,21 +161,48 @@ The anchors below identify current behaviour of this module; they are not execut
 they make no acceptance claim.
 
 - The three axes of a typed refusal, read from the payload itself. [1]
-- The seventeen invocations that legitimately answer `ok: true`, each with its reason. [2]
-- The eighteen tools that still lose the envelope, grouped in the source by the mechanism that raises. [3]
-- The census: one world, one run, and the assertions that bind both pins in both directions. [4]
+
+- The four invocations that legitimately answer `ok: true`, each with its reason. [2]
+
+
+- The ten tools that still lose the envelope, grouped in the source by the mechanism that raises. [3]
+
+
+- The census: one world, one run, and the assertions that bind all three pins in both directions. [4]
+
 - The population is derived from the live advertisement and the roster, never a literal count. [5]
 - The **four** shapes partition the population: a typed refusal, a stateful refusal, an always-answer and a raiser — there is no fifth answer. `260918-TSIP-L10` renamed this case from `..._three_named_shapes` in the change that added the fourth, because the name states the claim and the claim changed. [6]
+
 - Each refusal axis asserted by name, so a regression says which one it broke. [7]
+
 - `T34`'s nine answer in the envelope at the entry point, read from the sweep's single source of truth. [8]
+
 - The executed control: each axis stripped from a real refusal, and the predicate required to reject it. [9]
+
 - The hermeticity statement the module is held to: every fixture root inside the disposable world, no provider configured. [10]
+
 - The measured population and the production invocation per tool, kept in a support module so a probe can drive the same census. [11]
+
+
 - The driver that refuses a table which is not the roster before it drives anything. [12]
-- The nine tools `T34` repaired, owned by the sweep module beside the pin they left. [13]
+
+
+- The one `T34` tool the sweep still repairs — `memory_baseline_adopt` — re-exported by the sweep module beside the pin it left. [13]
+
+
 - The sweep whose benign half this module completes, and the world both share. [14]
+
+
 - The advertised roster the population is derived from and asserted equal to. [15]
-- The lane row that keeps this module in the default selection. [16]
+
+
+
+
+
+> Retained earlier citation wording: - The lane row that keeps this module in the default selection. Source caption: "mcp/tests/test_tool_refusal_conformance.py" [16]
+
+
+
 
 ### Cross-Repo References
 
@@ -188,5 +217,7 @@ No repository or external-system boundary is proved by this module.
 - Removed-tool guidance remains invalid even though the obsolete switch-refusal fixture is deleted. [19]
 - Identity, reason and navigation stripping still fail the real refusal completeness predicate. [20]
 
-- Only the repaired enclosure_adopt bare-raiser exclusion is removed. The declared bare-raiser set now has ten names. Both-direction census and invocation of actual failure cases remain source assertions, not this Curator's execution. [18]
 
+- The declared bare-raiser set has ten names: `memory_baseline_adopt` and `task_doc` left it with their repairs. Both-direction census and invocation of actual failure cases remain source assertions, not this Curator's execution. [18]
+
+- The lane row that keeps this module in the default selection. Source caption: "mcp/tests/test_tool_refusal_conformance.py" [16]

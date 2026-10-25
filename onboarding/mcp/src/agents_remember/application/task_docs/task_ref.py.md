@@ -48,11 +48,19 @@ tools share.
 
 ### Repo-Internal References
 
+
 - Attach consumes the supplied TaskRef. [1]
+
 - Status consumes the supplied TaskRef. [2]
 - The facade projects TaskRef locators into the resolver namespace. [3]
+
 - `resolve_context_tool` takes a `TaskRef`. [4]
+
+
 - Context resolution accepts the common task locators. [5]
+
+
 - Attach accepts the common task reference. [6]
+
 - Status accepts the common task reference. [7]
 - The frozen task reference carries repo and optional task/contract/leaf/parent locators; precedence remains resolver-owned. [8]

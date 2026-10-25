@@ -57,15 +57,14 @@
       ]
     },
     "2": {
-      "note": "Facts-only row: fixed answer keys plus caller, never content.",
+      "note": "Facts-only row: fixed answer keys plus caller, never content.\n\nAnchor: `build_tool_event`",
       "targets": [
         {
           "anchor": {
-            "blob": "1ce75e52bb168b85b81156109a18ca23cfa7b801",
-            "content": "sha256:4df9c65351acc712ebc4c0aba6e6bb6025088057261411aee8d6912b05c0d911",
+            "blob": "fa329467be28b558f2516086c2e67a82ec134f26",
+            "content": "sha256:4e53d58ec737ed4e7dbb8e4e3a9cf80ebb66e99d6e502056baa04cc4ab17c9e9",
             "locator": {
-              "kind": "symbol",
-              "name": "build_tool_event"
+              "kind": "file"
             }
           },
           "kind": "code"

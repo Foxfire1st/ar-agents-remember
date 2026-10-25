@@ -1,14 +1,15 @@
 {
   "path": "mcp/tests/test_knowledge_revision_seals.py",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
-      "note": "Why this module owns the shared seal evidence rather than either single-graph module.\n\nAnchor: \"neither single-graph module owns the shared mechanism\"",
+      "note": "Why this module owns the shared seal evidence rather than either single-graph module.",
       "targets": [
         {
           "anchor": {
-            "blob": "8364233d971ce61861a0dcef211d9c4cea533bde",
-            "content": "sha256:45bc1250b958e8cc900d18752a6fba5a5df858c759780695aace98de64c269b5",
+            "blob": "15ae9eaacc0cf4a348b42f767bc4c766f36c5e41",
+            "content": "sha256:d2fd2497ccf76e2867930bb35af0ba2f03f03adc482a4bad36d800179ea4a2fc",
             "locator": {
               "end": 5,
               "kind": "line_range",
@@ -20,16 +21,16 @@
       ]
     },
     "10": {
-      "note": "The fixture contract that names this module as an exact consumer.\n\nAnchor: \"contract:knowledge-identity-branching-fixture\"",
+      "note": "The knowledge identity-branching fixture artifact names contract:knowledge-identity-branching-fixture as its replacement and test_knowledge_revision_seals.py as an exact consumer. These declarations do not establish execution.",
       "targets": [
         {
           "anchor": {
-            "blob": "5b85740d9ae416814196e4c0ca40c2bab4419451",
-            "content": "sha256:674cc0e45bcaa39e972d5253c4e0a4e204d360ea774269c0c705222b6bb574fe",
+            "blob": "3c5993c94cf78973b3b39cfe7de9774c8aea6d1a",
+            "content": "sha256:488b9bfcdccf242fd7af12dbe17433a89132051dab4f1480f073ccd543caf1f8",
             "locator": {
-              "end": 2662,
+              "end": 2705,
               "kind": "line_range",
-              "start": 2662
+              "start": 2688
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -37,62 +38,13 @@
         }
       ]
     },
-    "2": {
-      "note": "The four raw edge statements the read nodes mutate with.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "8364233d971ce61861a0dcef211d9c4cea533bde",
-            "content": "sha256:141edd6c2de51e07f54d559a6ec176565dd7286e3087af5ff3d3d166006fb296",
-            "locator": {
-              "kind": "symbol",
-              "name": "_FAMILY_EDGE_INSERT"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "8364233d971ce61861a0dcef211d9c4cea533bde",
-            "content": "sha256:99f5ca77adacf14e74b4c0ba073d3c660eca60fb58396a4670a8dfcfe45798b8",
-            "locator": {
-              "kind": "symbol",
-              "name": "_FAMILY_EDGE_DELETE"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "8364233d971ce61861a0dcef211d9c4cea533bde",
-            "content": "sha256:4fe136f0db52f6c84302414ffdbb748da4e0057a47844e1fb13b57c5061f61ab",
-            "locator": {
-              "kind": "symbol",
-              "name": "_INVARIANT_EDGE_INSERT"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "8364233d971ce61861a0dcef211d9c4cea533bde",
-            "content": "sha256:94b098bc05038edc0f5e998126b9319e6bc9e2e3c4e11c360a04224e4ff0b292",
-            "locator": {
-              "kind": "symbol",
-              "name": "_INVARIANT_EDGE_DELETE"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
     "3": {
-      "note": "The field-isolating digest node for the invariant payload.\n\nAnchor: \"test_an_invariant_revision_digest_seals_its_predecessor_set\"",
+      "note": "The field-isolating digest node for the invariant payload.",
       "targets": [
         {
           "anchor": {
-            "blob": "1e0935a2ceb8a3fb4e25545502124b9a1b61fe43",
-            "content": "sha256:e8b325b40d5b5cbece8f5fa54a814f0da30bbe7437fce5b9ea0887c6f96e8d5d",
+            "blob": "15ae9eaacc0cf4a348b42f767bc4c766f36c5e41",
+            "content": "sha256:70df648e200218ec63c68df203a8431e36a88aa48993c3762972465e6a7320c1",
             "locator": {
               "end": 95,
               "kind": "line_range",
@@ -104,28 +56,16 @@
       ]
     },
     "4": {
-      "note": "The two family read nodes (added and removed edge behind the seal).\n\nAnchor: \"test_a_family_revision_read_refuses_after_a_predecessor_edge_is_added\"; \"test_a_family_revision_read_refuses_after_a_predecessor_edge_is_deleted\"",
+      "note": "The family revision test detects a stored guarantee cell rewritten behind its seal and requires decode_family_revision_row to refuse with payload digest.",
       "targets": [
         {
           "anchor": {
-            "blob": "1e0935a2ceb8a3fb4e25545502124b9a1b61fe43",
-            "content": "sha256:514e30e06203fb9c576ffab81e949360a1074c5c9c71f823d4536d66a803994a",
+            "blob": "15ae9eaacc0cf4a348b42f767bc4c766f36c5e41",
+            "content": "sha256:751c3a23516ea55d8e89f96036e9d894ba7aa1fb7ba9e3b745682d3f6d30e076",
             "locator": {
-              "end": 123,
+              "end": 209,
               "kind": "line_range",
-              "start": 96
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "8364233d971ce61861a0dcef211d9c4cea533bde",
-            "content": "sha256:1a00496407f1632af3cd57a1d72ce924a6cf9deef9a0702b2a634829f9785e7c",
-            "locator": {
-              "end": 217,
-              "kind": "line_range",
-              "start": 193
+              "start": 184
             }
           },
           "kind": "test"
@@ -133,28 +73,16 @@
       ]
     },
     "5": {
-      "note": "The two invariant read nodes (added and removed edge behind the seal).\n\nAnchor: \"test_an_invariant_revision_read_refuses_after_a_predecessor_edge_is_added\"; \"test_an_invariant_revision_read_refuses_after_a_predecessor_edge_is_deleted\"",
+      "note": "The invariant revision test detects a stored statement cell rewritten behind its seal and requires decode_revision_row to refuse with payload digest.",
       "targets": [
         {
           "anchor": {
-            "blob": "1e0935a2ceb8a3fb4e25545502124b9a1b61fe43",
-            "content": "sha256:97685b646f86792fb755a8ed2d06f5c53ebd71626d5c6ca53a744f9d127c66af",
+            "blob": "15ae9eaacc0cf4a348b42f767bc4c766f36c5e41",
+            "content": "sha256:08f23a567e91b79e33c0065a58a891a4811bad3e18d7523f553b9f3d4bf17e26",
             "locator": {
-              "end": 170,
+              "end": 181,
               "kind": "line_range",
-              "start": 149
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "8364233d971ce61861a0dcef211d9c4cea533bde",
-            "content": "sha256:71ee1f58b69a5b59cb31a0ed226527c064d3e1dcda134b19d0bf0720a111ba6c",
-            "locator": {
-              "end": 257,
-              "kind": "line_range",
-              "start": 240
+              "start": 150
             }
           },
           "kind": "test"
@@ -191,27 +119,14 @@
       ]
     },
     "8": {
-      "note": "The read-path recomputation that turns a tampered edge into a storage defect.",
+      "note": "The read-path recomputation that turns a row whose stored cells were rewritten behind its seal into a storage defect.\n\nAnchor: `decode_revision_row` `decode_family_revision_row`",
       "targets": [
         {
           "anchor": {
-            "blob": "121c4afa09ae47ad7908ca98c752895684e7232f",
-            "content": "sha256:f485c9e10fbdbf67fbb1f9abe067aa8ef97cd202d31a69d8bfc42e32e611f493",
+            "blob": "4a64ad09c79633786d6408b2e814119580ad51e7",
+            "content": "sha256:92d4353cb71f442af226829358fd09ea8dd54591ffed608d4b7a3779190116b8",
             "locator": {
-              "kind": "symbol",
-              "name": "decode_revision_row"
-            },
-            "path": "mcp/src/agents_remember/memory/knowledge/records.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "121c4afa09ae47ad7908ca98c752895684e7232f",
-            "content": "sha256:4b0ed64815e7d60e1a581661f2c7c349172981afe5ddfc43689a1083643702da",
-            "locator": {
-              "kind": "symbol",
-              "name": "decode_family_revision_row"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/memory/knowledge/records.py"
           },
@@ -224,12 +139,38 @@
       "targets": [
         {
           "anchor": {
-            "blob": "11ba98ff63f4a4815985ac51e2c0c7b5a48556a4",
+            "blob": "102c4550ab6429f44c8fb543d1d0662de66a1b8c",
+            "content": "sha256:9e9c992f7dd9525c9b9a27f054bc9266542c4580bdeb8ce762a620bb0d0b25d9",
+            "locator": {
+              "end": 191,
+              "kind": "line_range",
+              "start": 191
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "102c4550ab6429f44c8fb543d1d0662de66a1b8c",
             "content": "sha256:b7b1484eb0fa1e1fb3744e4db9c6a29b9026c328733a26254ee84d07cde416e7",
             "locator": {
-              "end": 204,
+              "end": 207,
               "kind": "line_range",
-              "start": 204
+              "start": 207
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "102c4550ab6429f44c8fb543d1d0662de66a1b8c",
+            "content": "sha256:7ed6d2ea1379d55b9a055c3301c21735631cf3baf1f8d8f8533ab8e8043731c2",
+            "locator": {
+              "end": 176,
+              "kind": "line_range",
+              "start": 176
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },

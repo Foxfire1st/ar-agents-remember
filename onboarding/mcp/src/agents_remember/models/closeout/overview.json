@@ -32,15 +32,14 @@
       ]
     },
     "2": {
-      "note": "The effective two-leg input renders memory attribution through the kernel.",
+      "note": "The effective two-leg input renders memory attribution through the kernel.\n\nAnchor: `memory_content_message` `EffectiveCloseoutInput` `render_memory_content_message`",
       "targets": [
         {
           "anchor": {
             "blob": "55d70d4c4f5afc640625e66189bae6733fc902fd",
-            "content": "sha256:27080a1f03fa1174fbaf751a244ae5e116cb782523bded9c4b4c60e60c3f17f3",
+            "content": "sha256:8e7a43288932c874261fa782a5f1e091f46de297584a499b2f623b8d4da4525d",
             "locator": {
-              "kind": "symbol",
-              "name": "memory_content_message"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/models/closeout/input.py"
           },
@@ -48,23 +47,10 @@
         },
         {
           "anchor": {
-            "blob": "55d70d4c4f5afc640625e66189bae6733fc902fd",
-            "content": "sha256:457b9ce311765d89fa23812aeecfe4ef682abdaf9bab7db651d5350730d5ccf0",
+            "blob": "2ec6a4844bc78d46a50f54f10b97d1ea2d328aba",
+            "content": "sha256:739ec6e45f31b35483288c8ff306cdfc590f7439b7759413bdadfa8371c30f4d",
             "locator": {
-              "kind": "symbol",
-              "name": "EffectiveCloseoutInput"
-            },
-            "path": "mcp/src/agents_remember/models/closeout/input.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "ae1966638f820f5da97451ffeb4f48b62e757831",
-            "content": "sha256:7dfaeda4b482976051b933ca036ea3320e85eee5a37e226b97f384cf38d89ed8",
-            "locator": {
-              "kind": "symbol",
-              "name": "render_memory_content_message"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/kernel/memory_attribution.py"
           },

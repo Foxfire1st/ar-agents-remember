@@ -22,15 +22,14 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "Bound first call through the registered handler carries caller and facts.",
+      "note": "A bound first call through the registered handler carries the caller and its facts.\n\nAnchor: `test_f08_bound_first_call_through_registered_handler`",
       "targets": [
         {
           "anchor": {
-            "blob": "f4c1e790e40b463afc085e45eaa3aafa8fc36823",
-            "content": "sha256:a16ded8ded9e5a0cb72b14e6519f0a7f81b9765fb9a1147ef8866109d0cdd826",
+            "blob": "7482011323a9cd0b5d9d11481c1508e9944e7e67",
+            "content": "sha256:91a1512b9992f6786821aabc6baa09ebfdead6627dc06381caba51b509aca8c3",
             "locator": {
-              "kind": "symbol",
-              "name": "test_f08_bound_first_call_through_registered_handler"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -38,15 +37,14 @@
       ]
     },
     "2": {
-      "note": "A fresh process writes its first call through startup.",
+      "note": "A fresh process writes its first call through startup.\n\nAnchor: `test_f08_fresh_process_first_call_through_registered_handler`",
       "targets": [
         {
           "anchor": {
-            "blob": "f4c1e790e40b463afc085e45eaa3aafa8fc36823",
-            "content": "sha256:55166cdd4c4fd695a0e530a748d8236382f82e8ac1e333ced96f848f818be256",
+            "blob": "7482011323a9cd0b5d9d11481c1508e9944e7e67",
+            "content": "sha256:91a1512b9992f6786821aabc6baa09ebfdead6627dc06381caba51b509aca8c3",
             "locator": {
-              "kind": "symbol",
-              "name": "test_f08_fresh_process_first_call_through_registered_handler"
+              "kind": "file"
             }
           },
           "kind": "test"

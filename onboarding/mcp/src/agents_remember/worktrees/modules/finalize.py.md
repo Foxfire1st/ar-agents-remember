@@ -118,25 +118,33 @@ No external Domain Documentation source is configured for this memory repo.
 
 - The archive hook is carried for an archived task only; unbound is `not-bound`, and an exception is a `failed` report, never raised. [2]
 - Exact terminal release is independent of queue/task scheduling state. [3]
-- Cleanup behavior and branch/worktree removal are delegated here. [4]
 
-- The cleanup seam that runs reclamation, short-circuits an already-completed cell, and shapes a real successful reclamation through the report shaper — deliberately not on a dry run or a nonzero return code. A completed cleanup cell still archives its recorded terminal agents. [5]
+> Retained earlier citation wording: - Cleanup behavior and branch/worktree removal are delegated here. [4]
 
-- The operator-facing report shape this module restores for a completed reclamation, and its `already-clean` rule. [6]
+
+> Retained earlier citation wording: - The cleanup seam that runs reclamation, short-circuits an already-completed cell, and shapes a real successful reclamation through the report shaper — deliberately not on a dry run or a nonzero return code. A completed cleanup cell still archives its recorded terminal agents. [5]
+
+> Retained earlier citation wording: - The operator-facing report shape this module restores for a completed reclamation, and its `already-clean` rule. [6]
 - Carryover completion is proven against the official memory ledger here. [7]
 - Git ancestry proof uses the worktree module Git adapter. [8]
 - Task document JSON/markdown reconciliation uses the task document service. [9]
+
 - Focused tests pin a named master's row completion and two-document rollback and the misplaced-master refusal, and (MIK-R38) the folder master's row under the demotion rule, the dry run, the standalone cases and every refusal before any write. [10]
+
 
 ### Cross-Repo References
 
 No meaningful cross-repository reference applies to this repository-owned terminal operation.
 
-- Finalization resolves the document targets before cleanup, blocks on unresolved work units, and reconciles the documents after cleanup. [17]
+
+> Retained earlier citation wording: - Finalization resolves the document targets before cleanup, blocks on unresolved work units, and reconciles the documents after cleanup. [17]
+
 
 - The archive step runs for a series contract and its result is passed to the review-artifact hook, which acts only on an archived or would-archive task. [18]
 
+
 - Series finalization selects the master and any proven typed or correlated seat row; absent or ambiguous correlation is reported as skipped unless a parent was asserted. [19]
+
 
 - The selected master-only or master-plus-sprint documents are previewed or published atomically after source rechecks. [20]
 
@@ -207,17 +215,37 @@ with the existing finalize cases (ruling Q1). Review R1 passed with notes, R2 pa
 (`59daf505`) with a clean 3-way apply, and its finalize, reopen and dependency-ownership tests pass on the synced
 tree.
 
-- Parent resolution dispatches on the leaf's `master`; with no target the leaf finalizes standalone, and an asserted parent is refused. [11]
+
+- Parent resolution dispatches on the leaf’s `master`; a leaf naming none is resolved through the folder master, and a leaf with no folder master or leaf row is refused rather than finalized alone. [11]
+
+
 
 - A named master: expected path, assertions, read, exactly one row. [12]
 
-- A leaf naming none: the master sync's helper, the named-master checks, standalone without a row, and the named cause when a parent was asserted. [13]
+
+
+- A leaf naming none: the master sync’s helper, the same named-master checks, and the named refusal when the folder master or its row is absent. [13]
+
 
 - Every master read refuses a non-master and a document the store would write elsewhere; the leaf gets the same check before its parent is resolved. [14]
 
+
 - The completed row goes through the master demotion rule. [15]
+
+
 - The one rule for a leaf naming no master, shared with the master sync and reopen. [16]
 
 ## 260928-MIK-L198 — A cleaned contract still reclaims a leftover root
 
 `finalize_result` now returns `with_outside_scratch_reconcile(_finalize_result(args), dry_run=args.dry_run)`, so a finalize run also sweeps the product parent and carries `outsideScratchReconcile` when the sweep removed or reported a root. In `_run_or_verify_cleanup`, the `contract.cleanup == "completed"` branch no longer answers `already-completed` unconditionally: it asks `outside_scratch.terminal_blocker(contract, dry_run=args.dry_run)`, which removes a recorded root still on disk, and a root it could not remove returns return code 2 with state `blocked` and the summary "Cleanup is recorded as completed but the enclosure's outside scratch root could not be removed." beside `blockers`. When the root is removed or already absent, the `already-completed` payload carries the entry as `outsideScratch`. The branch that has not completed cleanup is unchanged: it still delegates to `cleanup_result`, which now removes the root and runs the sweep itself.
+
+- Finalization resolves the document targets before cleanup, blocks on unresolved work units, and reconciles the documents after cleanup.  Anchor: `finalize_result` [17]
+
+
+- The cleanup seam that runs reclamation, short-circuits an already-completed cell, and shapes a real successful reclamation through the report shaper — deliberately not on a dry run or a nonzero return code. A completed cleanup cell still archives its recorded terminal agents. [5]
+
+
+- The operator-facing report shape this module restores for a completed reclamation, and its `already-clean` rule.  Anchor: "ALREADY_CLEAN = \"already-clean\"" [6]
+
+
+- Cleanup behavior and branch/worktree removal are delegated here. [4]

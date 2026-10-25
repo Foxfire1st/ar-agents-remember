@@ -14,4 +14,5 @@ The tests distinguish off/on planning switches, giver words, granted non-plannin
 
 ## Evidence
 
+
 - The mounted suite asserts switch state, row absence, canonical route and refusal/pending behavior. [1]

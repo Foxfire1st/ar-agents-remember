@@ -22,7 +22,9 @@ OM-4 evaluates plausibility of admission justifications beyond structural presen
 
 - Current body claims are checked against shipped code under OM-1. [1]
 - OM-2 requires a non-author second reader for final statements, history meanings and omissions before closeout. [2]
+
 - Plausible admission, baseline exploration and the promotion/fix-verification boundaries remain distinct. [3]
+
 
 ## Inherited Source-Epoch Commentary
 
@@ -149,7 +151,9 @@ Inherited reference 4 commentary (not a revalidated target):
 
 The authored file is the canonical contract; its measured byte-equal package copy is a distribution carrier, not an independent role, task or permission authority. The following whole-file reference locates that authored contract; it does not convert inherited statements into executed or whole-card acceptance.
 
+
 - The authored source owns this contract; the distribution copy is not a separate authority. [4]
+
 
 ## Current account — OM-5, what a re-point and a reconsidered revision judge
 

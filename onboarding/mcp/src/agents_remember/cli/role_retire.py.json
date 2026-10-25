@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/cli/role_retire.py",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
@@ -40,12 +41,22 @@
   ],
   "references": {
     "1": {
-      "note": "The native entry checks original-starter authority before idempotent success or archive.",
+      "note": "The native entry checks original-starter authority before idempotent success or archive.\n\nAnchor: `_retire_seat`",
       "targets": [
         {
           "anchor": {
-            "blob": "5e5213b418e557c9da4b543d0669c0905d1af51b",
-            "content": "sha256:dbadc38790da980e77dbdf1e5514b45ca03dd21f73253d539c6fbba07f844821",
+            "blob": "6cb5e8c97bb1ea609b49e05eb121bed2052e9732",
+            "content": "sha256:6f1a509d11221bfc9038ef7359142c729050755eda691fbd85bc4e08ecab4536",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6cb5e8c97bb1ea609b49e05eb121bed2052e9732",
+            "content": "sha256:c05f7267fdfe015a986a183e561a3117e2221d6df436c3d10dabf4c247cd8d80",
             "locator": {
               "kind": "symbol",
               "name": "_retire_seat"
@@ -72,12 +83,22 @@
       ]
     },
     "3": {
-      "note": "Host archive precedes receipt recording; failure is reported rather than rounded up.\n\nAnchor: `_archive_retiree`, `_record_retirement`",
+      "note": "Host archive precedes receipt recording; failure is reported rather than rounded up.\n\nAnchor: `_archive_retiree` `_record_retirement`",
       "targets": [
         {
           "anchor": {
-            "blob": "5e5213b418e557c9da4b543d0669c0905d1af51b",
-            "content": "sha256:2b780c8e92bc6e501dd3d3d184a6e7a10c00e1adb6b25966ea70f70b59d6ea87",
+            "blob": "6cb5e8c97bb1ea609b49e05eb121bed2052e9732",
+            "content": "sha256:6f1a509d11221bfc9038ef7359142c729050755eda691fbd85bc4e08ecab4536",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6cb5e8c97bb1ea609b49e05eb121bed2052e9732",
+            "content": "sha256:c589d0e9a62cc6ae9ce1deaecd882d5b3e906574609c79f4695af942b1f8a81b",
             "locator": {
               "kind": "symbol",
               "name": "_archive_retiree"

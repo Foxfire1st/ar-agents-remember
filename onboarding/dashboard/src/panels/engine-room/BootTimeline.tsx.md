@@ -17,8 +17,7 @@ Source/test/fixture inspection is not a fresh mounted capture or a passing test 
 Historical provider-shaped input data and retained compatibility definitions do not
 restore removed provider visuals or tool exposure.
 
-- bootSteps now returns Contract anchor (complete), Code worktree (exists-derived), then Ledger-map · memory worktree for  — source ownership, not executed visual proof. [5]
-- bootSteps now returns Contract anchor (complete), Code worktree (exists-derived), then Ledger-map · memory worktree for  — source ownership, not executed visual proof. [6]
+- bootSteps now returns Contract anchor (complete), Code worktree (exists-derived), then Ledger-map · memory worktree for  — source ownership, not executed visual proof.
 
 ## Historical superseded account (non-operative)
 
@@ -57,7 +56,8 @@ The `BootTimeline({ node })` component maps the selected steps to `<li>` rows st
 
 ### Repo-Internal References
 
-- Consumes the `EngineProcessNode` projection shape (`edges`, `health`, `providers`, `memoryMode`, `codeWorktree`/`memoryWorktree`). [1]
-- `EngineProcessEdge.state` is mapped through the known `EDGE_TO_STEP` values. [2]
+
+- Consumes the `EngineProcessNode` projection shape (`phase`, `landing`, `memoryMode`, `codeWorktree`/`memoryWorktree`). [1]
+
 - `DISPOSE_PHASES`, `disposeFrontier(node)`, and `teardownSteps(node)` drive tear-down mode. [3]
 - `timeline`, `timelineStep`, `timelineMark`, and `sectionLabel` are the state-keyed timeline style recipes declared in the engine-room layout styles. [4]

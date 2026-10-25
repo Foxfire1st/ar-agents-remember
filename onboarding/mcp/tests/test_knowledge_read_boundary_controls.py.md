@@ -14,8 +14,15 @@ A real unauthorized object write fails; borrowed alternate objects answer to the
 
 ## Evidence
 
+
 - A real unauthorized object write fails the oracle [1]
+
 - Borrowed alternates answer to the same attribution [2]
+
 - Inside-root chain to outside lender is inventoried [3]
+
+
 - Refs are keyed by name, never collapsed [4]
+
+
 - A moved pin fails, an attested pin passes [5]

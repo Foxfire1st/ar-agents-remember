@@ -81,12 +81,12 @@
       ]
     },
     "6": {
-      "note": "The layer charter paragraph that records this storage home in `[package.memory]`.\n\nAnchor: \"[package.memory]\"",
+      "note": "The layer charter paragraph that records this storage home in `[package.memory]`.",
       "targets": [
         {
           "anchor": {
-            "blob": "e5cc0505fe75d722ace00b9cec0f32fb339ffe8f",
-            "content": "sha256:b5ce22a2976bf73fd6222714f81e28174f2c7891749a7920868bca582ddb0163",
+            "blob": "94d6fc691485163fc02f117a88b8cd350ecc9889",
+            "content": "sha256:00d440558bd114fff2b419abbdeeb9bb03fa80ef5048aa4a8cb0484ea4784960",
             "locator": {
               "end": 222,
               "kind": "line_range",

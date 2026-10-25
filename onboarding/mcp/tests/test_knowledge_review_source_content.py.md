@@ -145,8 +145,12 @@ served body together.
 - The module's own statement of the requirement it is the production-composition evidence for, and of the load-bearing property behind each case. [1]
 - The lane marker and the content-class constants, one path per class the packet names. [2]
 - **The content classes materialized for real: a blob, a symlink, a gitlink, a mode change, a type change, an oversized document and a name that is not a line.** [4]
+
 - **The shared R01 production fixture these cases extend rather than duplicate.** [5]
+
+
 - **The routes wired as the composition root wires them, over the real application owners.** [6]
+
 - The listing read and the expansion read, with the status carried beside the body so a refusal is asserted as one. [7]
 - The falsifiers for path confinement: the recorded base's paths that no change set contains. [8]
 - **The modified path opens both bound objects' own bytes, each against an independent observation.** [9]
@@ -160,8 +164,7 @@ served body together.
 - **The refusal family: an unconfined path, a substituted baseline, an incomplete query and an unwired process.** [18]
 - The closing identity case: what was opened is what was listed. [19]
 - **The transport this module drives: the third route constant, the selector that carries the caller's generation, and the port the composition supplies.** [20]
-- The refusal code the route answers with, added to the review vocabulary in the same change. [21]
-- **The lane row and the two consumer rows this module's registration produced, with the counts they do not move.** [22]
+> Retained earlier citation wording: - **The lane row and the two consumer rows this module's registration produced, with the counts they do not move.** [22]
 
 ### Cross-Repo References
 
@@ -179,3 +182,5 @@ No meaningful cross-repo references found.
 
 - The entry callback forwards the optional comparison number to the comparison-aware owner. [23]
 - The content request still names the listed before/after tree ids. [24]
+
+- **The lane row and the two consumer rows this module's registration produced, with the counts they do not move.** [22]

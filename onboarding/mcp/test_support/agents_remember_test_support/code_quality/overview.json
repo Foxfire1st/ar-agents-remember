@@ -1,13 +1,15 @@
 {
-  "path": "mcp/test_support/agents_remember_test_support/code_quality",
+  "path": "mcp/test_support/agents_remember_test_support/code_quality/overview",
+  "proves": [],
+  "realizes": [],
   "references": {
     "1": {
       "note": "Development commands, diagnostic metrics and isolation; the current policy document states 10,000/1,000 budgets.",
       "targets": [
         {
           "anchor": {
-            "blob": "8527778e192cdd31589a2e41e7824e9afdc01c38",
-            "content": "sha256:1029d4dfd37571ed8f360d3d28e1fd4db037f934901867c0c9303763798d6549",
+            "blob": "7ffa056cff009f353268195182f04dbb00fde93b",
+            "content": "sha256:167a1ab938d79a1cb88e126e0af8a72debe760638d1de4d11e6ef5ec82a95362",
             "locator": {
               "end": 53,
               "kind": "line_range",
@@ -20,12 +22,23 @@
       ]
     },
     "10": {
-      "note": "Exact contract scope, the full check and curator worklist publication, including the informational without-proof list.",
+      "note": "Exact contract scope, the full check and curator worklist publication, including the informational without-proof list.\n\nAnchor: `_execute_memory_quality` `_answered_quality_response` `_attach_curator_checklist`",
       "targets": [
         {
           "anchor": {
-            "blob": "f5c17fb7f80b774e5cb4ba1a1d1dd4340013f711",
-            "content": "sha256:1112e7a5628a65ec3d1817c89eebef70dfb87d0abc685ab8bdbc3e1fd8c61817",
+            "blob": "a4cb0ce3f5f3f488c8ad8313b8063d4a8218871e",
+            "content": "sha256:a2df6307f79b0a5282c67184a98d37a2d5fb71ad24fefd455d684627e7c5a73c",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/memory_quality/controller.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a4cb0ce3f5f3f488c8ad8313b8063d4a8218871e",
+            "content": "sha256:306f6286876759fdd98fa31ee60140a06b129e5d528ab0d843fc5dcea6300b09",
             "locator": {
               "kind": "symbol",
               "name": "_execute_memory_quality"
@@ -36,8 +49,8 @@
         },
         {
           "anchor": {
-            "blob": "5f33ff79cde087bea8dd9d8ebc62a85698440f9a",
-            "content": "sha256:f0d72d875a77d26f93a2c1a4b88cc00562d87972f736101cdd967f9f92fbd7c0",
+            "blob": "a4cb0ce3f5f3f488c8ad8313b8063d4a8218871e",
+            "content": "sha256:5c9b45625663660f99651d8387a558ef0278c93f7c8334755e066b490ff8366d",
             "locator": {
               "kind": "symbol",
               "name": "_answered_quality_response"
@@ -48,8 +61,8 @@
         },
         {
           "anchor": {
-            "blob": "5f33ff79cde087bea8dd9d8ebc62a85698440f9a",
-            "content": "sha256:58e8c91c8feedbc98c6a19b9fdec899cbebfae418d48356e4a2d633700a31a97",
+            "blob": "a4cb0ce3f5f3f488c8ad8313b8063d4a8218871e",
+            "content": "sha256:9e419dfdd31128ccf5ceac3e59beb60b4635163009e3fb334f5fa77592dc182c",
             "locator": {
               "kind": "symbol",
               "name": "_attach_curator_checklist"
@@ -82,8 +95,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6fdaf3bc5c0ebf2ced1c450d5973ed55b2515f3c",
-            "content": "sha256:ce36f45d8abc47ff28e835599564f9783a30a7b30220e19ba24e701ff8307f49",
+            "blob": "0b550ee3cda163c8b451cb06a4fb69b489c4686d",
+            "content": "sha256:24329980c91722cff083957188e3f6e6de6c7f24a81a62f06db77bd5fafa166d",
             "locator": {
               "end": 299,
               "kind": "line_range",
@@ -126,24 +139,6 @@
               "start": 100
             },
             "path": "mcp/test_support/agents_remember_test_support/code_quality/quality_plan.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "15": {
-      "note": "Teardown proof from source applicability and exact result bytes.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "d7dc9165fb505bba7813d3c69626f48ce2423b77",
-            "content": "sha256:2be5546aef0f74415275fdd9010b327d57dd4d936f33b281dab7c2c8bcb7b817",
-            "locator": {
-              "end": 359,
-              "kind": "line_range",
-              "start": 253
-            },
-            "path": "mcp/test_support/agents_remember_test_support/code_quality/profile_rails.py"
           },
           "kind": "code"
         }
@@ -195,6 +190,19 @@
             "path": "mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py"
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "82360cec3b9a90193f4e9d7dbdf68cf5340dabb6",
+            "content": "sha256:e5c9620c73f693b131c938929b6eeacd1c6aaa1e2786d27d944afe1ff7ba3bcc",
+            "locator": {
+              "end": 551,
+              "kind": "line_range",
+              "start": 541
+            },
+            "path": "mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py"
+          },
+          "kind": "code"
         }
       ]
     },
@@ -203,12 +211,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "377b835dfe3e3720bcc09d6ef4daaf2c94aa924d",
-            "content": "sha256:158bf1da5b8b90226cc614de3120775d95e6ce13c2c609447275f87d72195d82",
+            "blob": "8ad4fad6abd9bf98c265168c8b63d6f2fce0aeac",
+            "content": "sha256:1d40fc985363eda8db8df6e94ff60adbb8380e4ca3f2f9b8fdbc7e003b1b7a7b",
             "locator": {
-              "end": 237,
+              "end": 331,
               "kind": "line_range",
-              "start": 205
+              "start": 299
             },
             "path": "mcp/test_support/agents_remember_test_support/code_quality/projection_types.py"
           },
@@ -229,12 +237,25 @@
         },
         {
           "anchor": {
-            "blob": "377b835dfe3e3720bcc09d6ef4daaf2c94aa924d",
-            "content": "sha256:ba9201cd6c238b7c7657711235e9eae0c48fe32e9b15736d0aa7b4d0af5da270",
+            "blob": "8ad4fad6abd9bf98c265168c8b63d6f2fce0aeac",
+            "content": "sha256:9e779eec0a5bb3435a4889ad985fe339292f653ed4f4a290181666889168dc56",
             "locator": {
-              "end": 612,
+              "end": 496,
               "kind": "line_range",
-              "start": 570
+              "start": 470
+            },
+            "path": "mcp/test_support/agents_remember_test_support/code_quality/projection_types.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8ad4fad6abd9bf98c265168c8b63d6f2fce0aeac",
+            "content": "sha256:11ba019d483d09639cdc09632faf5bb3dd5601b68999e1a2f18558829c021821",
+            "locator": {
+              "end": 237,
+              "kind": "line_range",
+              "start": 205
             },
             "path": "mcp/test_support/agents_remember_test_support/code_quality/projection_types.py"
           },
@@ -302,6 +323,32 @@
               "end": 499,
               "kind": "line_range",
               "start": 473
+            },
+            "path": "mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "82360cec3b9a90193f4e9d7dbdf68cf5340dabb6",
+            "content": "sha256:f1e356b2057fff39f8274cdaf5e2e7a65264a98c3e79681f447fce1340906199",
+            "locator": {
+              "end": 392,
+              "kind": "line_range",
+              "start": 346
+            },
+            "path": "mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "82360cec3b9a90193f4e9d7dbdf68cf5340dabb6",
+            "content": "sha256:4e5e66a6c439182ba025f9382125b693b97fa420ac9b49f2a24263dc45bf9caf",
+            "locator": {
+              "end": 494,
+              "kind": "line_range",
+              "start": 468
             },
             "path": "mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py"
           },
@@ -529,12 +576,38 @@
         },
         {
           "anchor": {
-            "blob": "11ba98ff63f4a4815985ac51e2c0c7b5a48556a4",
-            "content": "sha256:ca0ba3c61f2c30f9e2eb61c29c37ab7e76c0384cf2c48824a19964705030991b",
+            "blob": "102c4550ab6429f44c8fb543d1d0662de66a1b8c",
+            "content": "sha256:3865e31403f332d567614607ba2d6086df788491641c9dbef1db971da2313df1",
             "locator": {
-              "end": 617,
+              "end": 629,
               "kind": "line_range",
-              "start": 604
+              "start": 1
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "102c4550ab6429f44c8fb543d1d0662de66a1b8c",
+            "content": "sha256:9a07fce23808b431009c2389495b888beeed94b8ae3091bec11318b199e6de9a",
+            "locator": {
+              "end": 629,
+              "kind": "line_range",
+              "start": 616
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "102c4550ab6429f44c8fb543d1d0662de66a1b8c",
+            "content": "sha256:5f93792a232a3c681c99a7d4224a8d7b8322cf51db3145ca2f6cc3946c5e7b78",
+            "locator": {
+              "end": 555,
+              "kind": "line_range",
+              "start": 542
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -667,15 +740,14 @@
       ]
     },
     "30": {
-      "note": "The retained named vocabularies are attention severity/lane and process fact/health, not removed session state/phase.",
+      "note": "The retained named vocabularies are attention severity, lane and item class, plus process fact state and process health; the removed session state and phase vocabularies are not among them.\n\nAnchor: `NAMED_VOCABULARIES`",
       "targets": [
         {
           "anchor": {
-            "blob": "dc945479ebe390b18ebdf4a65c8fa3483cab0983",
-            "content": "sha256:eba3c55cf4b81ad365144e350b08a71c116e8a889d16929011467149d0bb9d75",
+            "blob": "8ad4fad6abd9bf98c265168c8b63d6f2fce0aeac",
+            "content": "sha256:9b066e1d136c1c7e91470d66a0fadca820095b4afa462abacc8a89da3d80ef87",
             "locator": {
-              "kind": "symbol",
-              "name": "NAMED_VOCABULARIES"
+              "kind": "file"
             },
             "path": "mcp/test_support/agents_remember_test_support/code_quality/projection_types.py"
           },
@@ -701,5 +773,5 @@
       ]
     }
   },
-  "schema": "ar-onboarding-route/v1"
+  "schema": "ar-onboarding-file/v1"
 }

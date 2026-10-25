@@ -142,15 +142,14 @@
       ]
     },
     "4": {
-      "note": "`accepted_code_commit` commits or reuses the exact accepted code tree and records its proof.",
+      "note": "`accepted_code_commit` commits or reuses the exact accepted code tree and records its proof.\n\nAnchor: `accepted_code_commit`",
       "targets": [
         {
           "anchor": {
-            "blob": "c5f34b8b6a5ee25c9afbf87e648d086979f7f057",
-            "content": "sha256:a95110a112274d9ee175790ec88d0d8aa1831e86be1b02f8bfd1937d32c1e649",
+            "blob": "087633e817b9197311ac844320b1bc70e48c0288",
+            "content": "sha256:bcba18d10ee8657c7388d046f618a17d2e60dde2fa141df01607d61149bd8bcc",
             "locator": {
-              "kind": "symbol",
-              "name": "accepted_code_commit"
+              "kind": "file"
             }
           },
           "kind": "code"

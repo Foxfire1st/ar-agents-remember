@@ -22,12 +22,12 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The scoped current source carries the module/document behavior described above.",
+      "note": "Origin selection, unlisted-origin refusal, the named unavailable states, workspace-less availability, route header handling and origin normalisation are asserted in this file.",
       "targets": [
         {
           "anchor": {
-            "blob": "d38bdbad3119bc1749114531d8439c95c0f7296b",
-            "content": "sha256:54ac0e3ff204d411d2fdba4e6b2eba754904d8f53be02d340253e9347b8012b4",
+            "blob": "4da3e9d5b285f90b38283cf3a371cb1e55632c97",
+            "content": "sha256:15ad82e3eb4b48ba855bec084f5c7b83145274d825f55e26729439a41e00b054",
             "locator": {
               "kind": "file"
             }
@@ -37,12 +37,12 @@
       ]
     },
     "2": {
-      "note": "The origin/embed descriptor case now also pins `provisionCommand` to the active fixture settings file. The wired host-facts case includes that field in its expected answer but copies its value from the answer, so command construction is independently asserted by the origin case, not by that copy. These remain descriptor/protocol tests, not browser Retry, plugin upgrade or live provision execution.",
+      "note": "The origin case pins `provisionCommand` to the active fixture settings file; the wired host-facts case copies that field from the answer, so command construction is asserted by the origin case alone.",
       "targets": [
         {
           "anchor": {
-            "blob": "6f2772e4ab22e5d6b13ea28359059e1c9b01e900",
-            "content": "sha256:caab73360069ec94956f60db215db3c230ef4de3a68177c85a8ec132c5228060",
+            "blob": "4da3e9d5b285f90b38283cf3a371cb1e55632c97",
+            "content": "sha256:15ad82e3eb4b48ba855bec084f5c7b83145274d825f55e26729439a41e00b054",
             "locator": {
               "kind": "file"
             }

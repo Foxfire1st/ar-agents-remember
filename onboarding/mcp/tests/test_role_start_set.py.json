@@ -56,12 +56,12 @@
       ]
     },
     "2": {
-      "note": "A partial creation completes with the same set identities and held seats intact.\n\nAnchor: `SetStartTests.test_a_failed_seat_leaves_the_others_and_a_repeat_completes`",
+      "note": "A partial creation completes with the same set identities and held seats intact.",
       "targets": [
         {
           "anchor": {
-            "blob": "7f63515259405ee21542fdc391e7dd94504104c1",
-            "content": "sha256:17072231a64839c6fb4a3a2dc9080c731066bb5811bd5182a2f7fa53f268a69b",
+            "blob": "5024a7ad33c837d26fe69debaa4da32cf2b3bfa8",
+            "content": "sha256:8414939b149a6e946d06b851dd74f172e086d06c3a8a81200abde78257745eae",
             "locator": {
               "end": 119,
               "kind": "line_range",

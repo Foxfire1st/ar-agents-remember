@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/worktrees/knowledge_validation.py",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
@@ -83,7 +84,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ad8f2c2994a58d6b30409cfa13e222fb164efdeb",
+            "blob": "a63984305b167f217f656a85724a6f70fad04702",
             "content": "sha256:3a20c476b4a05e39bde63fb4fdfa2181f4fc1b6ef772829bf6e7a2c479190ca6",
             "locator": {
               "kind": "symbol",
@@ -100,7 +101,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "96a8f88b672003959586599c7c8b8849e9b062da",
+            "blob": "3768b4016fd921a34a69b6dcfcf2df78901c48a7",
             "content": "sha256:62151ea2bf987bce7d8838359f0c442a79464ef9234f04006c48193750924082",
             "locator": {
               "kind": "symbol",

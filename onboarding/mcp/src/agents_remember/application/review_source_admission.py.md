@@ -112,15 +112,23 @@ No configured domain documentation could be checked.
 - **The fixed order: requested inventory, then the recorded link for a measured pair, then the leaf change set for an unmeasured one.** [4]
 - **Linked admits (a realization, or a proof of a tree comparison), established negative refuses, unread knowledge refuses as undetermined.** [5]
 - The three refusals: unmeasured pair with no admitting change set, measured pair with no link, and a link that could not be determined. [6]
+
 - The two remedies: initialize never-created knowledge, restore or repair a damaged snapshot. [7]
+
 - Exact-string inventory match and the bounded offending input. [8]
+
 - **The link owner this module consumes.** [9]
+
 - The one caller: the content read hands its inventory here before reading any byte. [10]
 - The inventory owner re-used for the leaf change set. [11]
 - The wire literals this module fills and the validator that ties attributed context to `unchanged` and `requested_generation`. [12]
+
 - **The cases: attributed admission without counting, unlinked refusal, and undetermined refusal.** [13]
 
+
+
 - Unconverted knowledge states its unavailability without canonical initialization; tree proof entries still admit their exact unchanged path. [14]
+
 
 - Ruling Q1 at the route: an unchanged test file only a proof names is refused before the proof exists and admitted with the new sentence after. [15]
 

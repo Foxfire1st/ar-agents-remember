@@ -2,15 +2,14 @@
   "path": "mcp/src/agents_remember/models/lifecycles",
   "references": {
     "1": {
-      "note": "Native task stage/activity/eventAt is declared separately; the removed session response/state vocabulary is not an operative model in this route.",
+      "note": "Native task stage/activity/eventAt is declared separately; the removed session response/state vocabulary is not an operative model in this route.\n\nAnchor: `TaskState`",
       "targets": [
         {
           "anchor": {
-            "blob": "067465c785daba374dbccfbc6ddf3efb62611ed4",
-            "content": "sha256:e345bcf52910f1d43fcff54700f85ea691a6b896120f54a78d4be96269c1b309",
+            "blob": "fd0cd6ba53b5d874adfcb26807b26ab92e77d56e",
+            "content": "sha256:8f897ee97a5df4ec6bc2cdb53e32669158ad72e83b1d826e0af636eb31908a32",
             "locator": {
-              "kind": "symbol",
-              "name": "TaskState"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/observer/projection.py"
           },
@@ -205,8 +204,8 @@
         },
         {
           "anchor": {
-            "blob": "6417eae61914675261b64fc0873dea8c2e563fa3",
-            "content": "sha256:cfd3b1c6a0cb93b8836679c0ac623ef502826d800bdbeba4f2a1c23e2cd2378c",
+            "blob": "7e534abbc8eddc596c09dd188591a8e33755c064",
+            "content": "sha256:097ade6e8d464732e7968df7af2e5261ab0216a62fb62b688461a0a38b22bbe9",
             "locator": {
               "end": 529,
               "kind": "line_range",
@@ -218,8 +217,8 @@
         },
         {
           "anchor": {
-            "blob": "6417eae61914675261b64fc0873dea8c2e563fa3",
-            "content": "sha256:12832d0bbc110489864ac934fb181df8635b25611d617b7aa6cb078d07565a88",
+            "blob": "7e534abbc8eddc596c09dd188591a8e33755c064",
+            "content": "sha256:35dacfffc99536e3e5996f55a166b35f36000117dd3d0c3c390709745796d59c",
             "locator": {
               "end": 616,
               "kind": "line_range",
@@ -236,8 +235,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "217e5c86649db8bdbc5bf71011f0c8aa5f83f928",
-            "content": "sha256:10f0b08d9ba2b82692df2251f88521a6ab8d0e74ee36710f8fa3c15eff948017",
+            "blob": "8e48e38066874b65d5c7dec91535af65a658fbe4",
+            "content": "sha256:0fc4f7db715df6de213021a5700532f7b61407603c51711cb511e761dccd2f4f",
             "locator": {
               "end": 165,
               "kind": "line_range",
@@ -299,21 +298,8 @@
       ]
     },
     "18": {
-      "note": "Currentness partitions entries while unresolvedCount independently equals their unresolved dispositions; status follows the actual recorded population.",
+      "note": "Currentness partitions entries while unresolvedCount independently equals their unresolved dispositions; status follows the actual recorded population.\n\nAnchor: `SubjectAssessmentState` `assessment_state_for`",
       "targets": [
-        {
-          "anchor": {
-            "blob": "f0a20f3f2923693dfd1ba1d7a1edaba1cf49e5f8",
-            "content": "sha256:fbfa2df47bcf6a46ff495a6abe11dd1827b98ab79e82215da0dc35538d4d574f",
-            "locator": {
-              "end": 560,
-              "kind": "line_range",
-              "start": 460
-            },
-            "path": "mcp/src/agents_remember/models/lifecycles/review_assessment.py"
-          },
-          "kind": "code"
-        },
         {
           "anchor": {
             "blob": "4fd1f27d3283052427f6944c13312ee2c3991752",
@@ -333,6 +319,30 @@
             "locator": {
               "kind": "symbol",
               "name": "assessment_state_for"
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/review_assessment.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4fd1f27d3283052427f6944c13312ee2c3991752",
+            "content": "sha256:6399322e4397e38742fcebb30fb6b4e5bc7da61248fdb21176ebc2bbd8677e6f",
+            "locator": {
+              "end": 560,
+              "kind": "line_range",
+              "start": 460
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/review_assessment.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4fd1f27d3283052427f6944c13312ee2c3991752",
+            "content": "sha256:19247bbdc8b6343e6275d489cd9f4773e6c9348ec6ef69e33f94de93bc61354f",
+            "locator": {
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/models/lifecycles/review_assessment.py"
           },
@@ -372,26 +382,16 @@
       ]
     },
     "2": {
-      "note": "Finalization declares terminal facts, cleanup/archive and activation facts; it declares neither edge proof nor completion-seat result sets.\n\nAnchor: `LifecycleFinalizeTaskResponse`",
+      "note": "Finalization declares terminal facts, cleanup/archive and activation facts; it declares neither edge proof nor completion-seat result sets.  Anchor: `LifecycleFinalizeTaskResponse`",
       "targets": [
         {
           "anchor": {
-            "blob": "4a8bad95a8ce2bb91f9b627103d767d6537085b9",
-            "content": "sha256:cb67fa9fd82141384f080fb614f4bc6bf53123093893769620d484c1b0d26387",
+            "blob": "577a92e863791fec4b42d0d4c2079abb25ba454c",
+            "content": "sha256:3aee53ff2f2525db01a482f8878179a23c701b66f05645a38d36c3af0cb997dc",
             "locator": {
-              "kind": "symbol",
-              "name": "LifecycleFinalizeTaskResponse"
-            },
-            "path": "mcp/src/agents_remember/models/lifecycles/finalize.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "0acadadf7d340bd8e01e8ca3cd1491d045ccb136",
-            "content": "sha256:dd0efba7750af6e0ddd82d4a931c5efe4d5792a32f350a66d1f892e7e0ee1608",
-            "locator": {
-              "kind": "file"
+              "end": 56,
+              "kind": "line_range",
+              "start": 18
             },
             "path": "mcp/src/agents_remember/models/lifecycles/finalize.py"
           },

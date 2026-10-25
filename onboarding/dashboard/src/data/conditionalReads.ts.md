@@ -21,6 +21,8 @@ the pending entry is now `{facts, controller, promise, waiters}` (`:10-18`). `lo
 
 ## Evidence
 
+
 - Same-facts sharing and bounded pending replacement. [1]
+
 - Retained values are facts-qualified. [2]
 - Conditional validation and late-abort retention guards. [3]

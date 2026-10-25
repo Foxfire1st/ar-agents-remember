@@ -96,14 +96,18 @@ No configured live documentation source was available for this pass.
 
 The facet payload models this mirrors live in the shipped knowledge vocabulary.
 
+
 - The per-kind relation vocabulary. [1]
+
 - Prefix and relation checks shared by every record. [2]
 - Revision and status on incident and facet records. [3]
 - The family record: members and routes, a route being a repository directory or `.`. [4]
 - A family route is a repository path or the root route. [5]
 - The invariant record: no second-owner fields. [6]
 - Incident recovery is required once not unresolved. [7]
+
 - The kind → model table. [8]
+
 
 - Text facet records declare their own fields, with current kind parsing and malformed-field checks. [9]
 

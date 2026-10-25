@@ -71,12 +71,12 @@
       ]
     },
     "5": {
-      "note": "The current router composes role and operation, not a universal shared lifecycle spine.\n\nAnchor: `# Role-capsule router`",
+      "note": "The current router composes role and operation, not a universal shared lifecycle spine.",
       "targets": [
         {
           "anchor": {
-            "blob": "6ad3461df40df313b315fdae9146c2fa44a20c76",
-            "content": "sha256:3113377b9afc7711187a0731e67c7dd3abc4a91833280f7ce60eec772bbc83ae",
+            "blob": "69334b6b2698ef70a7bbf579aa1c1883b95d11d4",
+            "content": "sha256:7c9ae60e608becc7b0babce2efcf0a5f4d849aa34d90bc1949af9848a3d7fde9",
             "locator": {
               "end": 12,
               "kind": "line_range",

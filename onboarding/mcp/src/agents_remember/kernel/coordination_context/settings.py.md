@@ -32,6 +32,17 @@ is recorded and the answers are the same. The text is decoded as UTF-8 with `\r\
 
 ## Evidence
 
-- The JSON sibling first, then the default, then the fenced Markdown blocks, all through the recorder. [4]
+
+
+
+
+
+- The JSON sibling first, then the default, then the fenced Markdown blocks, all through the recorder. Source caption: `parse_coordination_settings` [4]
+
+
+
+
+
 - The absent JSON sibling and the consumed Markdown bytes are recorded; a JSON file that appears is a change. [5]
+
 - A settings file changed and restored while a worklist child reads it is seen with the bytes actually parsed. [6]

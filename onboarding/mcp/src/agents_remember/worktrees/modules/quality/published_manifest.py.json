@@ -132,12 +132,12 @@
       ]
     },
     "7": {
-      "note": "Render an exact journal selection after full original-object and artifact readback.\n\nAnchor: \"def render_selected_code_certification\"",
+      "note": "Render an exact journal selection after full original-object and artifact readback.",
       "targets": [
         {
           "anchor": {
-            "blob": "cc8f1228605ceccc1731e4d02052461e8cceedc6",
-            "content": "sha256:b7adf1a60cc7819601454d18810f9674861a36ed7952a4b3efee3c9797f0dd59",
+            "blob": "b2f9f1624c63b2e7e58d9486c5d024f84fd7903e",
+            "content": "sha256:af3a9b4766b6df328cdebef6e4d11339739a75e7caf23abc579476b435a5db87",
             "locator": {
               "end": 395,
               "kind": "line_range",

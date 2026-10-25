@@ -1,0 +1,335 @@
+{
+  "path": "mcp/src/agents_remember/application/census_artifacts.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "cba779bccb880b054329b536fc826d77db9d454d",
+        "content": "sha256:8a01948bdf831c9442ff5512eccd1cf7db60f98789820ba7ab8788946340c2b1",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-0G25DR",
+      "invariant": "INV-BTF5NF",
+      "origin": {
+        "handoffEntry": "MIK-R198@v2 §2 anchor-census",
+        "leaf": "260928-MIK-L191"
+      },
+      "rationale": "Writes the census as data a reader can re-derive: the pair it measured, the population and each class.",
+      "role": "unclassified"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The entry point writes the whole population and answers its path, digest, target count, input identities, stability and retention.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cba779bccb880b054329b536fc826d77db9d454d",
+            "content": "sha256:d0cd839778cd79f91248e0a9e2b7fb9ed7079d13863414ecc3e9f48d9f3d7d33",
+            "locator": {
+              "kind": "symbol",
+              "name": "write_census_artifact"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "Reclamation keeps the newest owned artifacts, reclaims the rest and never the file just written.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cba779bccb880b054329b536fc826d77db9d454d",
+            "content": "sha256:9cbe0e7bc58ee8629a44a53ec0a8ca98aec5c55619344ab476dac4ae8c8defcd",
+            "locator": {
+              "kind": "symbol",
+              "name": "reclaim_census_artifacts"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The pair identity composes one identity per side.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cba779bccb880b054329b536fc826d77db9d454d",
+            "content": "sha256:4e3c5a7cffa760da9f6c568e1977c310926ac98b64cd05ab7b7fb8571e562b40",
+            "locator": {
+              "kind": "symbol",
+              "name": "pair_identities"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "A Git tree identity is built through a throwaway index; absent and unreadable roots are named kinds.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cba779bccb880b054329b536fc826d77db9d454d",
+            "content": "sha256:db4cf4b761ad52a11c889c94d9311ae275464042c539613b7f92082243b827b8",
+            "locator": {
+              "kind": "symbol",
+              "name": "tree_identity"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "A plain directory is captured once into a path-keyed byte map.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cba779bccb880b054329b536fc826d77db9d454d",
+            "content": "sha256:89dc0511d04fbdfad8ae9ed2faf0492a0489e61fab7a9e142452243660d5ee02",
+            "locator": {
+              "kind": "symbol",
+              "name": "directory_files"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "The content digest covers each path and its bytes in sorted order.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cba779bccb880b054329b536fc826d77db9d454d",
+            "content": "sha256:25b2e6506338e6a1c3b6a3354e5c28eb88d699206cf610ba5dcbdfb94542a4f4",
+            "locator": {
+              "kind": "symbol",
+              "name": "directory_digest"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "Two populations measured in one second keep two retrievable addresses.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8acba1a92c6b295d1bc7728f6a7a815396c09a36",
+            "content": "sha256:8a5edbf4834c9fd987751e5d8db57ed56e237bf3a432bf7c49eb7c0458b99d84",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_two_populations_in_one_second_keep_two_retrievable_addresses"
+            },
+            "path": "mcp/tests/test_citation_census_artifact.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "16": {
+      "note": "The bounded store names every retirement, under concurrent writes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8acba1a92c6b295d1bc7728f6a7a815396c09a36",
+            "content": "sha256:a54dce7fe1e11e9b31dd879fd202aa5d855fc4443655180d2c9b57f3b9db147a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_artifact_store_is_bounded_and_reclaims_oldest_first"
+            },
+            "path": "mcp/tests/test_citation_census_artifact.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "17": {
+      "note": "A relative root measures the same identity as an absolute one.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8acba1a92c6b295d1bc7728f6a7a815396c09a36",
+            "content": "sha256:a39f6a3aa9fb0c55ec79b63031e6be14267f3148790162350384459c90f3d200",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_relative_root_is_measured_the_same_as_an_absolute_one"
+            },
+            "path": "mcp/tests/test_citation_census_artifact.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "18": {
+      "note": "A named path holding other bytes is replaced so the advertised digest resolves.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8acba1a92c6b295d1bc7728f6a7a815396c09a36",
+            "content": "sha256:c8e98e6550da073c55ab2b7c7e1c825e1fdc546b4f4fe1af559d656c362542cc",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_named_path_holding_other_bytes_is_replaced_so_the_digest_resolves"
+            },
+            "path": "mcp/tests/test_citation_census_artifact.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "19": {
+      "note": "A caller-named artifact in the store folder is never reclaimed, including a former default's transfer to the caller.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8acba1a92c6b295d1bc7728f6a7a815396c09a36",
+            "content": "sha256:b7e2d9c9098862b7f9e82d7c9fc46b5e1c012890d10b40da52eafcbbb2c1b15f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_caller_named_artifact_in_the_store_folder_is_never_reclaimed"
+            },
+            "path": "mcp/tests/test_citation_census_artifact.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The store retains twenty default artifacts before reclaiming the oldest.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cba779bccb880b054329b536fc826d77db9d454d",
+            "content": "sha256:a5be40b452618235e8ab4ba1bd5e2d2aa1f09520cf5bf1d0e3cf7e954b6efd62",
+            "locator": {
+              "kind": "symbol",
+              "name": "CENSUS_ARTIFACT_KEEP"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The store's ownership ledger is its own file in the store folder.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cba779bccb880b054329b536fc826d77db9d454d",
+            "content": "sha256:71e5b9f2e381e032c681a039a1b1b37b3c92d3b0a598647412786a2cb30929ba",
+            "locator": {
+              "kind": "symbol",
+              "name": "OWNED_ARTIFACTS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The typed capture the answer reports as its input identities.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cba779bccb880b054329b536fc826d77db9d454d",
+            "content": "sha256:c41b46ed4d88ff63a93f49e06e60c975c9f65e92b9507a011cfcdab3346c5a24",
+            "locator": {
+              "kind": "symbol",
+              "name": "CensusInputs"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "A caller-named path outside the coordination root is refused by name.\n\nAnchor: `require_within_coordination`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cba779bccb880b054329b536fc826d77db9d454d",
+            "content": "sha256:38ecdd64e32771c3cec05d10b11f52f8834a3ec7e22012f5174b595caa18c357",
+            "locator": {
+              "end": 78,
+              "kind": "line_range",
+              "start": 74
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The retention answer a caller-named artifact receives.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cba779bccb880b054329b536fc826d77db9d454d",
+            "content": "sha256:01fc2ed30ab258d0c571a87032db3a275eb0a12594e183dc39dbc1ee5f73f29e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_caller_retention"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The store write under the lock: digest-named address, identical-remeasurement reuse, refusal to overwrite a caller's still-valid receipt.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cba779bccb880b054329b536fc826d77db9d454d",
+            "content": "sha256:3de340bfa3bc004e1d9c4920ee0fce0bd592cce1e6ee61128eedabf75f4958d1",
+            "locator": {
+              "kind": "symbol",
+              "name": "_write_in_store"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The ledger names only what this store wrote as a default.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cba779bccb880b054329b536fc826d77db9d454d",
+            "content": "sha256:d93242c084fa666c401565d74f56f858a24711e49acc4e8f5c6111824426c825",
+            "locator": {
+              "kind": "symbol",
+              "name": "_owned_ledger"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Ownership is granted or relinquished without rewriting an unchanged ledger.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cba779bccb880b054329b536fc826d77db9d454d",
+            "content": "sha256:68d1151e891329f8349d769c1de455d37edf10adabb0895a92a53ab879a17159",
+            "locator": {
+              "kind": "symbol",
+              "name": "_set_ownership"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

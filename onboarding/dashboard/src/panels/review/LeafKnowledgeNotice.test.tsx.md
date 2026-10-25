@@ -24,11 +24,21 @@ This is standalone jsdom component/callback evidence, not mounted-surface status
 
 ## Evidence
 
-- Pending, unavailable and unconverted worklist states, including subject-item loading. [1]
-- Delivered worklist items, file links and callback invocations with identifiers-only disclosures. [2]
-- Record-specific items, honest empty wording and comparison mismatch. [3]
-- The current worklist components under test. [4]
-- Historical removed notice/surface-continuity account; no current mounted-surface proof is claimed. [5]
+
+- The pending, unavailable and unconverted worklist reads, each shown through a status role. [1]
+
+
+- The delivered worklist items and file links, with the identifiers-only disclosure and the click callbacks the case invokes. [2]
+
+
+- Record-specific items, the honest empty wording and the comparison-mismatch refusal. [3]
+
+
+- The components under test: `LeafWorklistView` and `SubjectWorklistItems`. [4]
+
+
+- The current worklist-view case renders loading, unavailable and not-converted inputs directly and checks their visible status text. The earlier held-read and mounted-surface continuity account is historical; this case does not assert it. [5]
+
 - Leaf-wide tree fixture for notice states [6]
 - Notice mount helper for read states [7]
 - Changed paths with items for file links [8]

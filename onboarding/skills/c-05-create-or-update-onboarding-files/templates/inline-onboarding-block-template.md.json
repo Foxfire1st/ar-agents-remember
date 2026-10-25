@@ -1,14 +1,15 @@
 {
   "path": "skills/c-05-create-or-update-onboarding-files/templates/inline-onboarding-block-template.md",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
-      "note": "The inline adapter source reuses the file-level semantic model and describes storage, syntax, placement, metadata and digest differences.\n\nAnchor: \"It reuses the same semantic content model\"",
+      "note": "The inline adapter source reuses the file-level semantic model and describes storage, syntax, placement, metadata and digest differences.",
       "targets": [
         {
           "anchor": {
-            "blob": "80e865858386a4b52c71367b215e08eeba959df7",
-            "content": "sha256:c7b900b5eedb3458dfab97f4d7e270770e8079594f85b7963e63f8bcef1fe014",
+            "blob": "290f58d6ab15f79efe1a94aa276e64b88567f187",
+            "content": "sha256:0dd76905d954a55587fd0d4fdc556163efdce2cac868a600679433cb96affd37",
             "locator": {
               "end": 5,
               "kind": "line_range",
@@ -75,7 +76,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "286f2bdd8ea0869bbbd819a609489e6b1ef9f5e3",
+            "blob": "7544470421d07347f2127e91131a701490676138",
             "content": "sha256:a0b73a113d0a93d9298988c987656bf2953dc012b534baada30846f83b1be99a",
             "locator": {
               "end": 15,
@@ -89,12 +90,12 @@
       ]
     },
     "6": {
-      "note": "The c-05 converted-memory branch selects the converted workflow rather than legacy metadata and history rules.\n\nAnchor: \"## Converted Memory\"",
+      "note": "The c-05 converted-memory branch selects the converted workflow rather than legacy metadata and history rules.",
       "targets": [
         {
           "anchor": {
-            "blob": "4d90c238185e61a3bec8347aa1f8b50292cbc1dd",
-            "content": "sha256:af15e8a2eefaf79a119062872a1813e646d8259e28b6f8cdebc52ccb3bdff965",
+            "blob": "7544470421d07347f2127e91131a701490676138",
+            "content": "sha256:1c045e540713a3e7db5175f055905952a1496dcc9afd3b2f72fb87ffbf340f02",
             "locator": {
               "end": 53,
               "kind": "line_range",

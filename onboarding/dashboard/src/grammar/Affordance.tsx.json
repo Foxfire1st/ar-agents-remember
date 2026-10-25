@@ -1,5 +1,6 @@
 {
   "path": "dashboard/src/grammar/Affordance.tsx",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
@@ -7,7 +8,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fc93bae691a82da28bef3516bc6b7b8a85af6db8",
+            "blob": "fd0cd6ba53b5d874adfcb26807b26ab92e77d56e",
             "content": "sha256:94d8ede398dc9d392cd88616bba2585f18a5b2371222324d5462a93590296c7c",
             "locator": {
               "kind": "symbol",
@@ -19,12 +20,23 @@
         },
         {
           "anchor": {
-            "blob": "8535427e164854d7dadb366fd583408b98d5f38b",
-            "content": "sha256:eed351cbda9244f240cc624060a7a508a534566532d5567159abd3f48f472244",
+            "blob": "fd0cd6ba53b5d874adfcb26807b26ab92e77d56e",
+            "content": "sha256:8f41b84692b48f12e7db7bf67c22f4acec8e58a06fbc0e5dba3b5e8470b2cc92",
             "locator": {
               "end": 83,
               "kind": "line_range",
               "start": 70
+            },
+            "path": "mcp/src/agents_remember/observer/projection.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fd0cd6ba53b5d874adfcb26807b26ab92e77d56e",
+            "content": "sha256:8f897ee97a5df4ec6bc2cdb53e32669158ad72e83b1d826e0af636eb31908a32",
+            "locator": {
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/observer/projection.py"
           },

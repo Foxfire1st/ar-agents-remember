@@ -87,12 +87,12 @@
       ]
     },
     "3": {
-      "note": "The shared fixtures: the landed contract, the folder master and leaf pair, and the byte capture.\n\nAnchor: \"class _FinalizeFixtures(unittest.TestCase):\"; \"def _sources(*paths: Path) -> dict[Path, bytes]:\"",
+      "note": "The shared fixtures: the landed contract, the folder master and leaf pair, and the byte capture.",
       "targets": [
         {
           "anchor": {
-            "blob": "27dce0428e0b78344cc446de30c489c5a09e2ceb",
-            "content": "sha256:bf8e7035ebbc6238c1bed845719e9e335d6745722bfe75df19b18e09dfeb8d07",
+            "blob": "89659796b2834dc723959513e9f107b2823ba7a0",
+            "content": "sha256:a61e48270381c493065e250457d4c794dd4a95bfb9479a1d82718f5de6651d75",
             "locator": {
               "end": 152,
               "kind": "line_range",
@@ -167,12 +167,12 @@
       ]
     },
     "7": {
-      "note": "Without a listing folder master the leaf finalizes standalone.\n\nAnchor: \"def test_without_a_listing_folder_master_the_leaf_finalizes_standalone(self) -> None:\"; \"for case in (\\\"no-task-json\\\", \\\"no-row\\\", \\\"leaf-is-the-light-task-json\\\"):\"",
+      "note": "Without a listing folder master the leaf finalizes standalone.",
       "targets": [
         {
           "anchor": {
-            "blob": "e2dce3b365c62b9ccb8b26962ee2a4b8d85d1ea8",
-            "content": "sha256:06dcd1564f87968496dfa27e879e80103d21f2d5e52b95842af363c324aeae26",
+            "blob": "89659796b2834dc723959513e9f107b2823ba7a0",
+            "content": "sha256:815ebb4c227c280a4e8ba1c69b6b0d68dccd325ced246f9f22bd219e2f02d87e",
             "locator": {
               "end": 390,
               "kind": "line_range",
@@ -184,12 +184,12 @@
       ]
     },
     "8": {
-      "note": "A folder master is refused exactly as a named master, before any write.\n\nAnchor: \"def test_a_folder_master_is_refused_exactly_as_a_named_master(self) -> None:\"; \"\\\"asserted-master-without-row\\\": \\\"lists no row '14'; the leaf finalizes standalone\\\",\"",
+      "note": "A folder master is refused exactly as a named master, before any write.",
       "targets": [
         {
           "anchor": {
-            "blob": "e2dce3b365c62b9ccb8b26962ee2a4b8d85d1ea8",
-            "content": "sha256:5314e77d86d4fc66111a4950a81d6b13b4517bac6b45a7c959ec9f418cfa06df",
+            "blob": "89659796b2834dc723959513e9f107b2823ba7a0",
+            "content": "sha256:c89adf6ceff28e631774e511d4170becaf69f77a871fd46894cb3b8ac4cf3584",
             "locator": {
               "end": 436,
               "kind": "line_range",

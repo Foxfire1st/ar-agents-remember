@@ -3,15 +3,14 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "Every route names its outcome",
+      "note": "Every route names its outcome\n\nAnchor: `test_the_protected_read_roster_names_every_route_with_its_outcome`",
       "targets": [
         {
           "anchor": {
-            "blob": "6ccc55e68c174e0f1a134f030fc0317a4b4789b2",
-            "content": "sha256:97844e5eff79488b8c27984742f7b6d9e26097a0954115cc7414cfcedf9d70e4",
+            "blob": "329b4205031e24890a7146ab2dcf5bf47d238505",
+            "content": "sha256:c8753ad7d33571319a6750c64cef759b87a9702f16a53ff351a4a44dc38f6a44",
             "locator": {
-              "kind": "symbol",
-              "name": "test_the_protected_read_roster_names_every_route_with_its_outcome"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -28,22 +27,6 @@
             "locator": {
               "kind": "symbol",
               "name": "test_the_cockpit_boundary_names_its_outcomes_without_a_live_lifetime"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "3": {
-      "note": "Terminal and harness GETs read without live actors",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "d498f8db6d4f13ada279603d98f233ebe3ba1088",
-            "content": "sha256:ccbb47a333dd83c862994470b0c770ceccf6d84e2c0873f50c71b04263d4ba9a",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_terminal_and_harness_gets_read_without_live_actors"
             }
           },
           "kind": "test"

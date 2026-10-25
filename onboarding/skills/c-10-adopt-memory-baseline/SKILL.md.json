@@ -1,10 +1,11 @@
 {
   "path": "skills/c-10-adopt-memory-baseline/SKILL.md",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
-        "blob": "d83bf0d948ea90e2f80dd09f33352f96622e84be",
-        "content": "sha256:fe0b35d4b26352c1acba4f7c6b061d4c6d5f89507586d45732ac2cfffc34b3ba",
+        "blob": "748239e38d02837ae6b2ede8b668a3907208419c",
+        "content": "sha256:522e47b865dcc0ab9716ed544bdcbb7e12d5b80d49919ab173fae34485f778cd",
         "locator": {
           "kind": "file"
         }
@@ -21,12 +22,12 @@
   ],
   "references": {
     "1": {
-      "note": "Existing-onboarding use case and explicit trust boundary\n\nAnchor: \"# c-10-adopt-memory-baseline Adopt Memory Baseline\"",
+      "note": "Existing-onboarding use case and explicit trust boundary",
       "targets": [
         {
           "anchor": {
-            "blob": "bf84465586d4cb55a2d3257543ea1a9085b51d5f",
-            "content": "sha256:53bc5616043eb7aeff3e824c5ec5aa0809432659b024e54dea435383a9b6dbd4",
+            "blob": "748239e38d02837ae6b2ede8b668a3907208419c",
+            "content": "sha256:8c555c54cb34f2b94152dc8a7a3baf151ea62742198e403c44a1f29ca8a5f52b",
             "locator": {
               "end": 11,
               "kind": "line_range",
@@ -42,7 +43,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d83bf0d948ea90e2f80dd09f33352f96622e84be",
+            "blob": "748239e38d02837ae6b2ede8b668a3907208419c",
             "content": "sha256:adc9739ae2627821fa3c6421dcfd9ca85b40f13e819d1cf395a16c4af4d6c0e6",
             "locator": {
               "end": 34,
@@ -51,16 +52,28 @@
             }
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "748239e38d02837ae6b2ede8b668a3907208419c",
+            "content": "sha256:906966add1bf256dbdd1acaec57e73926979d54f4edea1b1f91a6a2cd3d724fa",
+            "locator": {
+              "end": 30,
+              "kind": "line_range",
+              "start": 12
+            }
+          },
+          "kind": "code"
         }
       ]
     },
     "3": {
-      "note": "External context, drift, attribution and validated content commit\n\nAnchor: \"## Workflow\"",
+      "note": "External context, drift, attribution and validated content commit",
       "targets": [
         {
           "anchor": {
-            "blob": "bf84465586d4cb55a2d3257543ea1a9085b51d5f",
-            "content": "sha256:42b6b44dc02aea27325488f3aa898f10f1281c2bd3d6aa6a594c4a2586aa339f",
+            "blob": "748239e38d02837ae6b2ede8b668a3907208419c",
+            "content": "sha256:48f3c59274f6f91251ff354370d435c45706aacfc32947428ae2d6602e04b9af",
             "locator": {
               "end": 39,
               "kind": "line_range",
@@ -76,12 +89,24 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d83bf0d948ea90e2f80dd09f33352f96622e84be",
+            "blob": "748239e38d02837ae6b2ede8b668a3907208419c",
             "content": "sha256:a78413d47b2b853579b40687993b51545b58142c0eb8d8a7175ee4fc7aafa385",
             "locator": {
               "end": 53,
               "kind": "line_range",
               "start": 44
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "748239e38d02837ae6b2ede8b668a3907208419c",
+            "content": "sha256:4f86f15081869996af08873bbd4d5e8a6e84cff7bb9f5d40945af3474589bd31",
+            "locator": {
+              "end": 49,
+              "kind": "line_range",
+              "start": 40
             }
           },
           "kind": "code"
@@ -93,7 +118,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d83bf0d948ea90e2f80dd09f33352f96622e84be",
+            "blob": "748239e38d02837ae6b2ede8b668a3907208419c",
             "content": "sha256:c12edb53a662b562ff961bdaad66c2f83cfe5b55c26e58ff8ebe4794d45e3204",
             "locator": {
               "end": 63,
@@ -102,16 +127,28 @@
             }
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "748239e38d02837ae6b2ede8b668a3907208419c",
+            "content": "sha256:e01a003ab4eefcc1658f6fa107b932032ddf98ee381cf7e970a58e10711a01f2",
+            "locator": {
+              "end": 59,
+              "kind": "line_range",
+              "start": 50
+            }
+          },
+          "kind": "code"
         }
       ]
     },
     "6": {
-      "note": "Cache exclusion, separate refresh and non-waivable validator\n\nAnchor: \"## Boundaries\"",
+      "note": "Cache exclusion, separate refresh and non-waivable validator",
       "targets": [
         {
           "anchor": {
-            "blob": "bf84465586d4cb55a2d3257543ea1a9085b51d5f",
-            "content": "sha256:e246e34b9123490a2ca9d3d9b2e9b21c9c8bad9748436266c79e5603a6692327",
+            "blob": "748239e38d02837ae6b2ede8b668a3907208419c",
+            "content": "sha256:f1aeabf8afe34e3ab983ff154e7f286846e4c7b92a58765890c956f5886c7520",
             "locator": {
               "end": 65,
               "kind": "line_range",

@@ -1,5 +1,6 @@
 {
   "path": "dashboard/src/panels/Hangar.test.tsx",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
@@ -21,12 +22,23 @@
       ]
     },
     "2": {
-      "note": "The shared existence-truth visibility selector.",
+      "note": "The shared existence-truth visibility selector.\n\nAnchor: `hasLiveWorktree`",
       "targets": [
         {
           "anchor": {
-            "blob": "30cb14732f6d4d548c1ee9550ab342b849d1eb10",
-            "content": "sha256:11343a45a01ef202166e96ededd7d402cf42e7ea3465e4f17e95fb9e94f4812b",
+            "blob": "45703aad8672ac0bd3f53a1e3be16aef2ad16336",
+            "content": "sha256:f9a468be21f745ce68abb4692d7cff78eddbba96844874c4ee80194c83731e5e",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/data/selectors.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "45703aad8672ac0bd3f53a1e3be16aef2ad16336",
+            "content": "sha256:80b78b095e9be7afa61f1488a31a3fa5a225e37b9c7b49921030df3526df6afd",
             "locator": {
               "kind": "symbol",
               "name": "hasLiveWorktree"
@@ -40,6 +52,32 @@
     "3": {
       "note": "Hangar tests seed and reset the shared dashboard store: existence cases set enclosures directly, while the owning-task case applies a snapshot with native task entries and their bound worktrees. The store carries tasks keyed by entry.key and enclosures keyed by enclosure, applies snapshots through applySnapshotState and resets through emptyWorkspace; it has no lifecycles store.",
       "targets": [
+        {
+          "anchor": {
+            "blob": "57b40a28ef6817c4a90d64069b26a67fb7ed47eb",
+            "content": "sha256:4eaeacc9f5579463943c795a1791ff028f0003b88613ad1f1180f4c8042dfc35",
+            "locator": {
+              "end": 64,
+              "kind": "line_range",
+              "start": 26
+            },
+            "path": "dashboard/src/data/store.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "57b40a28ef6817c4a90d64069b26a67fb7ed47eb",
+            "content": "sha256:ed1840c692704f7de124bf28b8ecc4e2d9fc5677485df9556bc99ac5466e258f",
+            "locator": {
+              "end": 274,
+              "kind": "line_range",
+              "start": 231
+            },
+            "path": "dashboard/src/data/store.ts"
+          },
+          "kind": "code"
+        },
         {
           "anchor": {
             "blob": "9d424691e3a6ac196a136276f1575955a48f0c53",
@@ -75,45 +113,6 @@
             }
           },
           "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "e696c956756f8e506411a473a7778e5a2afc9bfb",
-            "content": "sha256:9c8cc6fc73334bcb43cb9c20f9ca7f21cb45be87fa03bddc18c7864a292a3fef",
-            "locator": {
-              "end": 64,
-              "kind": "line_range",
-              "start": 26
-            },
-            "path": "dashboard/src/data/store.ts"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "e696c956756f8e506411a473a7778e5a2afc9bfb",
-            "content": "sha256:41e34c047e42f60857bf7b0892f4df206359cfb4f04e5788cd2849fbbfbd5d5a",
-            "locator": {
-              "end": 274,
-              "kind": "line_range",
-              "start": 231
-            },
-            "path": "dashboard/src/data/store.ts"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "e696c956756f8e506411a473a7778e5a2afc9bfb",
-            "content": "sha256:8886b3f70cd1cfa6788a2642ee77a29e659e6523d769ea59e2eeb754f4cdb99c",
-            "locator": {
-              "end": 374,
-              "kind": "line_range",
-              "start": 298
-            },
-            "path": "dashboard/src/data/store.ts"
-          },
-          "kind": "code"
         }
       ]
     },
@@ -122,7 +121,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fddde3fe60faa2d9374405b9676016ab026af1b6",
+            "blob": "d71e9db1948f52b82bd84b2348775f13ac9b57e7",
             "content": "sha256:5e7617b273ad3b1f42e12a7e7ad04fdc602557ac4de78278b73514a2327c4656",
             "locator": {
               "kind": "symbol",

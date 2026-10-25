@@ -3,12 +3,12 @@
   "realizes": [],
   "references": {
     "15": {
-      "note": "The optional knowledge-presence and coverage fields of a tree row.\n\nAnchor: `TreeChild`",
+      "note": "The optional knowledge-presence and coverage fields of a tree row.",
       "targets": [
         {
           "anchor": {
-            "blob": "8491fd4fd23fcb220157d46e63d31917682590df",
-            "content": "sha256:a68a57075aa0fc9dd4df992c3dc42cf2f980cb71f77d295acba58ba7f09e9853",
+            "blob": "8ec5f222a6d97528f9484c56a1ff060446b461ff",
+            "content": "sha256:c7c3d28b442b6b5ca17aad3033694ea831c537fb259aa319e63ec29a2e8adfff",
             "locator": {
               "kind": "file"
             }
@@ -18,12 +18,12 @@
       ]
     },
     "16": {
-      "note": "The shareable address, read and written.\n\nAnchor: `parseReaderHash`",
+      "note": "The shareable address, read and written.",
       "targets": [
         {
           "anchor": {
-            "blob": "8491fd4fd23fcb220157d46e63d31917682590df",
-            "content": "sha256:a68a57075aa0fc9dd4df992c3dc42cf2f980cb71f77d295acba58ba7f09e9853",
+            "blob": "8ec5f222a6d97528f9484c56a1ff060446b461ff",
+            "content": "sha256:c7c3d28b442b6b5ca17aad3033694ea831c537fb259aa319e63ec29a2e8adfff",
             "locator": {
               "kind": "file"
             }
@@ -50,12 +50,12 @@
       ]
     },
     "18": {
-      "note": "The address a code citation opens.\n\nAnchor: `codeAddress`",
+      "note": "The address a code citation opens.",
       "targets": [
         {
           "anchor": {
-            "blob": "8491fd4fd23fcb220157d46e63d31917682590df",
-            "content": "sha256:a68a57075aa0fc9dd4df992c3dc42cf2f980cb71f77d295acba58ba7f09e9853",
+            "blob": "8ec5f222a6d97528f9484c56a1ff060446b461ff",
+            "content": "sha256:c7c3d28b442b6b5ca17aad3033694ea831c537fb259aa319e63ec29a2e8adfff",
             "locator": {
               "kind": "file"
             }

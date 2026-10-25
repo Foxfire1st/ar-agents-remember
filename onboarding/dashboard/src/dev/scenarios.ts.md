@@ -74,7 +74,7 @@ upstream: the main node prunes/dormant and a fleeting enclosure is born blocked,
 now-current main) → F5 `engine-boot-2-memory-contract` (memory worktree copies in, the coupler binds) → **F6**
 `engine-boot-3-providers-dim` + **F7** `engine-boot-4-seeding` (the provider clone **copy-arrows** sweep + engines
 charge cyan on recover — NOT a teleport to nominal) → F8 `engine-boot-5-nominal`. The export `SCENARIOS` is
-`[buildUp, tearDown, seedFault, memoryBlock, staleBase, ...restingScenarios]` — timelines first (with `staleBase`
+`[buildUp, tearDown, seedFault, memoryBlock, staleBase,...restingScenarios]` — timelines first (with `staleBase`
 inserted after `memoryBlock`), then the resting frames.
 
 **Slice 05o** then expanded the failure-mode set to a full eight modes. `seedFault` was **rewritten** as the
@@ -94,7 +94,7 @@ moved to `engine-sync-moved` → `engine-sync-memory-blocked` gate on the memory
 tail, source branch unmoved); and `abandon` (**T18**, TERMINAL — X0 working `engine-boot-5-nominal` →
 `engine-boot-abandoned` dissolves the live enclosure with no landing, the X0→X2 step IS the Motion dissolve).
 The export is `[buildUp, tearDown, seedFault, reindexReroute, memoryBlock, staleBase, providerBlock,
-liveSync, integrationConflict, abandon, ...cockpitScenarios, ...restingScenarios]` — every recoverable mode
+liveSync, integrationConflict, abandon,...cockpitScenarios,...restingScenarios]` — every recoverable mode
 passes through the provider clone beats (except the ff-only `liveSync`), the two terminal modes end on a
 STOP/dissolve, and the FEUI-L8 Chats catalog spreads in ahead of the resting frames.
 
@@ -140,14 +140,24 @@ No configured Domain Documentation source exists for this file.
 ### Repo-Internal References
 
 - `erFrame` wraps a named engine-room scenario into a full projection and throws on an unknown name. [1]
+
 - The `reindexReroute` timeline, whose R4 caption now reads `CGC seed STALE → reindex reroute`. [2]
+
+
 - `SCENARIOS` — timelines first, then the folded-in resting frames. [3]
-- The `engine-cgc-seed-refused` fixture drives a `stale` `cgc-seed` edge; the fixture NAME is unchanged, only the caption moved. [4]
-- `_seed_edge_state` is the reducer function that produces seed-edge states; `stale` is one of its decisive answers and `refused` is not among them. [5]
+
+- The `engine-cgc-seed-refused` fixture drives a `stale` `cgc-seed` edge; the fixture NAME is unchanged, only the caption moved. 
+- `_seed_edge_state` is the reducer function that produces seed-edge states; `stale` is one of its decisive answers and `refused` is not among them. 
 - `EngineProcessEdge.state` documents the served vocabulary — nine states, `stale` among them and `refused` not — on an `extra="forbid"` model. [6]
+
 - `engineRoomProjection` (the shared wrap) + `GALLERY` (folded-in resting states). [7]
+
+
 - Consumed by the player transport + the bench picker. [8]
+
+
 - `WorkspaceProjection` / `ObserverEvent` types each frame carries. [9]
+
 
 ### Cross-Repo References
 

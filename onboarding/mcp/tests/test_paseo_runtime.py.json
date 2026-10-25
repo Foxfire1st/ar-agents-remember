@@ -56,12 +56,12 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The scoped current source carries the module/document behavior described above.",
+      "note": "Provision, reload, restart, failure, rollback, process-record, status and stop behaviour is asserted in this file.",
       "targets": [
         {
           "anchor": {
-            "blob": "d5306ab8d01a98ab7f9e9a792e9522d07889e6f8",
-            "content": "sha256:d39bb1fef9dce215313c524d958eb99029f50cc60d1ef5296cdccc7837a1b03f",
+            "blob": "57540506ed4b10fafddbee539fa6c2f9694244a9",
+            "content": "sha256:b373e25f6cc968bf705c800070fb810233eee04c7ed9a7f999cd479feef86bb6",
             "locator": {
               "kind": "file"
             }
@@ -71,12 +71,12 @@
       ]
     },
     "2": {
-      "note": "The runtime tests' contract-sourced cases.",
+      "note": "The runtime cases are contract-sourced: each recorded call is checked against what the pass was allowed to do.",
       "targets": [
         {
           "anchor": {
-            "blob": "68e9def1959971a0f5ceedffc1ec2f01408849e1",
-            "content": "sha256:84842ae171063630f82450e961124b3583a440b4416b240f0d4e14518850cb16",
+            "blob": "57540506ed4b10fafddbee539fa6c2f9694244a9",
+            "content": "sha256:41e1127542f894ff3b6a9dec2153ed0b93846c4547115449d35a280aa9b0b011",
             "locator": {
               "kind": "symbol",
               "name": "PaseoRuntimeTests"
@@ -86,12 +86,22 @@
         },
         {
           "anchor": {
-            "blob": "68e9def1959971a0f5ceedffc1ec2f01408849e1",
-            "content": "sha256:de4373110ef151e16262ae4981ce3406d8a918e8c1b0f5156cb95ffeef0f8e8b",
+            "blob": "57540506ed4b10fafddbee539fa6c2f9694244a9",
+            "content": "sha256:38d2150088ce4db950d4017d0aef1ec4c29e13f3fec00d28643d7487883640b9",
             "locator": {
               "end": 260,
               "kind": "line_range",
               "start": 1
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "57540506ed4b10fafddbee539fa6c2f9694244a9",
+            "content": "sha256:b373e25f6cc968bf705c800070fb810233eee04c7ed9a7f999cd479feef86bb6",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "test"

@@ -15,4 +15,5 @@ The fixture preserves the original record encoding, typed leaf identity and depe
 ## Evidence
 
 - Complete historical encoding is retained as an eight-path translated compatibility derivative, not original bytes. [1]
+
 - The production record model parses this exact fixture. [2]

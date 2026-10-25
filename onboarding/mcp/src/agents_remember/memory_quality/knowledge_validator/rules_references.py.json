@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/rules_references.py",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
@@ -140,12 +141,12 @@
         },
         {
           "anchor": {
-            "blob": "6cf0f93cec095913e9f6675b6797d147529e4399",
+            "blob": "5ce8409da114e35f69fddf1a11a39bd5a42dac49",
             "content": "sha256:60d20ae02f06dfcb8d5ac2d168cd459b2680bc40bd667edaf4effa47e4c0c7db",
             "locator": {
-              "end": 278,
+              "end": 290,
               "kind": "line_range",
-              "start": 278
+              "start": 290
             },
             "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/registry.py"
           },
@@ -153,12 +154,12 @@
         },
         {
           "anchor": {
-            "blob": "6cf0f93cec095913e9f6675b6797d147529e4399",
+            "blob": "5ce8409da114e35f69fddf1a11a39bd5a42dac49",
             "content": "sha256:5610e49d8b7983b6d483140ffd4eb8471d1dbf28c37d0169e8649481f3d4af3e",
             "locator": {
-              "end": 291,
+              "end": 303,
               "kind": "line_range",
-              "start": 289
+              "start": 301
             },
             "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/registry.py"
           },
@@ -219,12 +220,12 @@
         },
         {
           "anchor": {
-            "blob": "6cf0f93cec095913e9f6675b6797d147529e4399",
+            "blob": "5ce8409da114e35f69fddf1a11a39bd5a42dac49",
             "content": "sha256:60d20ae02f06dfcb8d5ac2d168cd459b2680bc40bd667edaf4effa47e4c0c7db",
             "locator": {
-              "end": 278,
+              "end": 290,
               "kind": "line_range",
-              "start": 278
+              "start": 290
             },
             "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/registry.py"
           },
@@ -232,12 +233,12 @@
         },
         {
           "anchor": {
-            "blob": "6cf0f93cec095913e9f6675b6797d147529e4399",
+            "blob": "5ce8409da114e35f69fddf1a11a39bd5a42dac49",
             "content": "sha256:5610e49d8b7983b6d483140ffd4eb8471d1dbf28c37d0169e8649481f3d4af3e",
             "locator": {
-              "end": 291,
+              "end": 303,
               "kind": "line_range",
-              "start": 289
+              "start": 301
             },
             "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/registry.py"
           },
@@ -258,15 +259,14 @@
       ]
     },
     "5": {
-      "note": "A hand-added marker without a reference is refused.",
+      "note": "A hand-added marker without a reference is refused.\n\nAnchor: `test_a_hand_added_marker_without_a_reference_is_refused`",
       "targets": [
         {
           "anchor": {
-            "blob": "5567548fd4e80a404eda206045c2ebae9d085c88",
-            "content": "sha256:0670aeda506e093647aaa77c8d54dbb1a253b430f599a95c3e7b6531e682acd9",
+            "blob": "922080aa70ed74fa611b56de473a1398e4e6ec6d",
+            "content": "sha256:2872079c064fd035ad0a25e8d43839a5893228d43b3b62f0c5e5de769d3b1504",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_hand_added_marker_without_a_reference_is_refused"
+              "kind": "file"
             },
             "path": "mcp/tests/test_knowledge_validator.py"
           },
@@ -275,15 +275,14 @@
       ]
     },
     "6": {
-      "note": "The boundary example: one parent deleted a file the other's card cites.",
+      "note": "The boundary example: one parent deleted a file the other's card cites.\n\nAnchor: `test_merge_where_one_parent_deleted_a_file_the_other_parents_card_cites`",
       "targets": [
         {
           "anchor": {
-            "blob": "5cfaba0452820d0166d819685dc9bcb29d054ff9",
-            "content": "sha256:0c4aded6e6bee9ab9a6f2722c21400cdba03cd92aaf1e76e624559b12aa402c6",
+            "blob": "922080aa70ed74fa611b56de473a1398e4e6ec6d",
+            "content": "sha256:2872079c064fd035ad0a25e8d43839a5893228d43b3b62f0c5e5de769d3b1504",
             "locator": {
-              "kind": "symbol",
-              "name": "test_merge_where_one_parent_deleted_a_file_the_other_parents_card_cites"
+              "kind": "file"
             },
             "path": "mcp/tests/test_knowledge_validator.py"
           },
@@ -332,12 +331,12 @@
         },
         {
           "anchor": {
-            "blob": "6cf0f93cec095913e9f6675b6797d147529e4399",
+            "blob": "5ce8409da114e35f69fddf1a11a39bd5a42dac49",
             "content": "sha256:60d20ae02f06dfcb8d5ac2d168cd459b2680bc40bd667edaf4effa47e4c0c7db",
             "locator": {
-              "end": 278,
+              "end": 290,
               "kind": "line_range",
-              "start": 278
+              "start": 290
             },
             "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/registry.py"
           },
@@ -345,12 +344,12 @@
         },
         {
           "anchor": {
-            "blob": "6cf0f93cec095913e9f6675b6797d147529e4399",
+            "blob": "5ce8409da114e35f69fddf1a11a39bd5a42dac49",
             "content": "sha256:5610e49d8b7983b6d483140ffd4eb8471d1dbf28c37d0169e8649481f3d4af3e",
             "locator": {
-              "end": 291,
+              "end": 303,
               "kind": "line_range",
-              "start": 289
+              "start": 301
             },
             "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/registry.py"
           },

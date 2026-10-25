@@ -20,12 +20,12 @@
       ]
     },
     "2": {
-      "note": "The re-exported names.\n\nAnchor: `KNOWLEDGE_PAGE_THRESHOLD_TOKENS`; `cut_page`",
+      "note": "The re-exported names.",
       "targets": [
         {
           "anchor": {
-            "blob": "67e38141462a005c3f1c11cc524db2804e99b0de",
-            "content": "sha256:e4e335cfcb66c0d6375a31821fb3d175d0af81dcc77ffd0c4f3198e9a7469eb8",
+            "blob": "9971a9a20ea8939e5551d9ebc3877799e6fad18a",
+            "content": "sha256:359ad7a2825b62051bf6e5125458f8452cc05cb03a9eead9fea1f8eba5919754",
             "locator": {
               "end": 55,
               "kind": "line_range",

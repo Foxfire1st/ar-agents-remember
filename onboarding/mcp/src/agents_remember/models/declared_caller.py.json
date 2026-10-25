@@ -3,26 +3,14 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The strict bounded shape of a request-carried ambient identity.",
+      "note": "The strict bounded shape of a request-carried ambient identity.\n\nAnchor: `DeclaredCaller` `_nonblank_role`",
       "targets": [
         {
           "anchor": {
-            "blob": "b4499edddcf83900d7abb9aab8491368bbab61a5",
-            "content": "sha256:df9115c51bc12940e623696e4be44ca56e837b1e05d749f85903c5fa25ced201",
-            "locator": {
-              "kind": "symbol",
-              "name": "DeclaredCaller"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
             "blob": "fb536beb1fbe2309c6ef176e7a9a34dfb2987275",
-            "content": "sha256:c3817024f064d41aa2a0620edbdcfb5c726f98ee98704854435c458c673ae5e5",
+            "content": "sha256:184ed5e31a83c2c5ee4fd6134a45cde8ca9527848e3e2c3e6bfb13da8ad4de2f",
             "locator": {
-              "kind": "symbol",
-              "name": "_nonblank_role"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -30,15 +18,14 @@
       ]
     },
     "2": {
-      "note": "Consumed by the closeout-queue ambient fallback.",
+      "note": "Consumed by the closeout-queue ambient fallback.\n\nAnchor: `_declared_queue_actor`",
       "targets": [
         {
           "anchor": {
-            "blob": "9aac119d67a3ecb1fa36686d0a40c54128f52f99",
-            "content": "sha256:805425d263cb7891eda9a9426a666be6b68561c3d3c1a54a5c37ba18b483ffd9",
+            "blob": "722fb3802ab8976d280ff37de4824015cd5bece7",
+            "content": "sha256:28fb60f2f8125ed4ae12e9f761bd073e3cea5e7f11f08600eed04187dccfb216",
             "locator": {
-              "kind": "symbol",
-              "name": "_declared_queue_actor"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/closeout_queue.py"
           },

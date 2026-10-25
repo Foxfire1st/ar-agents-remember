@@ -80,18 +80,26 @@ No configured live documentation source was available for this pass.
 
 ### Repo-Internal References
 
+
 - The module statement: returned records are the UUIDs the index translates, and the answer is never edited. [1]
+
 - Every failure class the step degrades on, now public for the paged caller. [2]
 - The records an answer returns, built on the per-UUID helper. [3]
 - The UUIDs an answer carries, and the index's reverse map for one. [4]
+
 - The one evaluation a paged caller cuts candidates from; it raises instead of degrading. [5]
-- Only a named tree ID is a request; `HEAD` is never substituted. [6]
-- The block, which degrades to the failure document and never raises. [7]
+
 - The degraded block's reason text. [8]
 - The `knowledge_read` consumer since MIK-R02: currentness once per page at the walk's code tree. [9]
+
 - The published-intent consumer since MIK-R02, at its resolved source tree and inside the bounded block. [10]
+
+
 - No tree, or only a repository, is unverifiable and never reads `HEAD`. [11]
+
+
 - A failing step degrades to a reason and never refuses the read. [12]
+
 
 ### Cross-Repo References
 

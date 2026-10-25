@@ -7,8 +7,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4d255c0cc0d254cbe667fecf7df539ac8ed919dc",
-            "content": "sha256:207e6927224a647a34825691b0ee3d2fad3379fe01fff16e59ab1feb0ee1b759",
+            "blob": "3d1cbdca7d45691523302bf0a86eaa2aa2a6d5b9",
+            "content": "sha256:6cad05bae17ad1674b5e62aae392cd561f1b3b2780d8f386373c64382db312cf",
             "locator": {
               "kind": "file"
             }
@@ -18,12 +18,12 @@
       ]
     },
     "2": {
-      "note": "Public subset/full requests preserve scope authority, actual builds, stale bytes and write errors. [2]",
+      "note": "Public subset/full requests preserve scope authority, actual builds, stale bytes and write errors. \\[2]",
       "targets": [
         {
           "anchor": {
-            "blob": "a12c5455e172d62b6688f5bd7ac4ad1a3bf44029",
-            "content": "sha256:c098e2620b92f41c59d00e057f8fc4ecde6a5d5291f3aa2639383e4830c657d1",
+            "blob": "3d1cbdca7d45691523302bf0a86eaa2aa2a6d5b9",
+            "content": "sha256:1eddc13ae15b41801b15a3b770e29b37b080a7f476f77249658a0b621d93bc01",
             "locator": {
               "end": 128,
               "kind": "line_range",

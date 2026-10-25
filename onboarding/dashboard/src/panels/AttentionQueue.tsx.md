@@ -26,12 +26,16 @@ The layer's cause/title uses 0.8rem, matching task-page row text. Its item base,
 
 ## Evidence
 
+
 - Entry titles use 0.8rem; item-base, age and location text use 0.72rem, with dismissal inheriting the base. [16]
+
 - Bell and Clear all take the column-specific 0.72rem tab recipe. [17]
 - Task-page rows and smaller labels/counts supply the two text sizes. [18]
 
 
+
 - Source-scoped dismissal and failed-response restoration remain explicit helpers. [11]
+
 
 - The layer bound is a proportion of its owning column. [12]
 
@@ -40,4 +44,5 @@ The layer's cause/title uses 0.8rem, matching task-page row text. Its item base,
 
 - Queue wait labels advance server-served values from applied-object arrival, without inventing missing ages. [15]
 
-- Rows render their location, render dismissal on every row whatever the served `dismissible` flag says, and delegate available task and agent controls to SubjectLinks. A taskless agent row can offer only its agent control; a row without a subject or opening handler offers no subject control. [19]
+
+- Rows render their location and a dismissal control on every entry - the published queue marks each row dismissible - and delegate task and agent controls to SubjectLinks only when the row names that subject and a handler is supplied. [19]

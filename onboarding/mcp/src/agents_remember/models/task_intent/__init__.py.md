@@ -69,7 +69,9 @@ The configured Domain Documentation registry is empty; no external documentation
 - Typed acceptance-obligation question. [3]
 - Canonical schema-plus-digest identity and the legacy absence sentinel union. [4]
 - The single currentness/reuse/publication rejection seam. [5]
+
 - The projection owner built on this vocabulary. [6]
+
 - The field taxonomy that classifies which slots are normative. [7]
 
 

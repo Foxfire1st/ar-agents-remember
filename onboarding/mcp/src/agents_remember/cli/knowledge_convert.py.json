@@ -35,12 +35,12 @@
       ]
     },
     "3": {
-      "note": "The umbrella registration.\n\nAnchor: `knowledge_convert`; \"knowledge-convert\"",
+      "note": "The umbrella registration.",
       "targets": [
         {
           "anchor": {
-            "blob": "f2a43436f14b0bddc355c2234535b9c400967fe5",
-            "content": "sha256:78bf7ea52798639925cff6048b1f51e086ddb12d000042dd4f29bea084924d52",
+            "blob": "6e7bd5a18da5ea781594e67999b9b01f305937d4",
+            "content": "sha256:3c7ace315318f5dc1f8c0aef38783e2cb58b51979b34305f12c7fd1099e92959",
             "locator": {
               "end": 88,
               "kind": "line_range",

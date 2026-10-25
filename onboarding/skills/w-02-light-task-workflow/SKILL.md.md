@@ -62,12 +62,26 @@ The inherited series-contract note agrees with the current canonical skill’s m
 
 ## Evidence
 
+
 - The source defines the resolved task wrapper and task.md, naming, scaffold, live checklist, distinct code examples and minute-precision timestamps. [1]
+
+
 - Agent responsibilities separate implementation approval and commit approval, include onboarding/check cycles, and leave completion to exact step accounting and lifecycle finalization after landing. [2]
+
+
 - Invariants preserve wrapper/checklist/design intent and the committed external-memory baseline with computed ledger excluded; new light-document authoring and legacy transition wording remain bounded by the actual task construction guard. [3]
+
+
 - JSON-primary describes deterministic renders, explicit noncascading skip, deferred code examples, extensible fields and dry-run loss checking; light/master shipment claims are retained transition text, not current admission. [4]
+
 - The current construction definition refuses kind light and derives master/subTask defaults from contract altitude. [5]
+
 - Canonical series guidance assigns one master integration branch and one leaf enclosure/worktree per slice, with per-leaf closeout/integration/finalization and final master release. [6]
+
+
 - The companion series convention keeps flat stable file IDs, master-owned ordering, per-leaf publication and test verification, and one final master release. [7]
+
+
 - The workflow’s master-series section separates durable requirement/attempt records from disposable summary and assigns leaf enclosure integration and finalization. [8]
+
 - Converted onboarding follows a metadata-free card/reference model instead of inheriting legacy task-era verification mechanics. [9]

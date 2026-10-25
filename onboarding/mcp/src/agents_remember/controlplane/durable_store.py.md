@@ -283,7 +283,9 @@ No configured external domain documentation source.
 
 ### Repo-Internal References
 
+
 - Current attention writes read and replace under one store hold; reconciliation uses actual observations rather than lifecycle pruning. [12]
+
 - The lock-at-replacement check cannot prove the earlier read was inside the same hold; retained gate delete/compact do hold across the full sequence. [13]
 - The current read-policy split is strict gate authority versus tolerant non-authoritative attention acknowledgements. [14]
 
@@ -292,7 +294,9 @@ The current owner map is verified against the prepared source. Kernel mechanics,
 
 
 - The host registry has its own domain policy over the same exclusion primitive. [9]
+
 - Undeclared host admission leaves live coordinator lock and append writes refused. [11]
+
 
 ### Cross-Repo References
 
@@ -315,9 +319,12 @@ longer rely on the earlier undeclared-process bypass.
 
 - Guarded coordinator entry translates the shared capability failure. [3]
 
+
 - The kernel owns lock naming, thread mutexes, nesting, capability and hold observation. [4]
+
 - Rewrite refuses without a hold; append and rewrite targets retain containment. [5]
 - Current raw read, single/batched durable append and atomic rewrite. [6]
 Historical reference 7 in the preserved F001 card records the removed explicit migration helper; it is not a current callable or migration instruction.
 - Per-call temporary names and atomic publication have one kernel owner. [8]
+
 - Watcher exclusion derives the shared lock suffix and filters every directory. [10]

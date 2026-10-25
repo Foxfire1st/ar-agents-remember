@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/application/knowledge_leaf/pages.py",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
@@ -22,12 +23,12 @@
   ],
   "references": {
     "1": {
-      "note": "The module statement: one prepared leaf for both surfaces, and the header reference as a literal first row.\n\nAnchor: \"Pages of the family-complete leaf read\"",
+      "note": "The module statement: one prepared leaf for both surfaces, and the header reference as a literal first row.",
       "targets": [
         {
           "anchor": {
-            "blob": "6d18ecd82232b0f1423b91d7f41555f6dbf77fbc",
-            "content": "sha256:c5f80a1ddb2e5e89edd7212991f5cfa053fe4818662f8602a847f64b822d6d75",
+            "blob": "25d868aca47bdabb0b5cae2ac0067ad887023dac",
+            "content": "sha256:12b252098f1340adb99eaf49e5eab3e80218ec072adaf358b589539e13530e4b",
             "locator": {
               "end": 16,
               "kind": "line_range",
@@ -66,12 +67,22 @@
       ]
     },
     "3": {
-      "note": "The prepared leaf with its page, deferred and collapsed forms, each minting a `leaf` token.",
+      "note": "The prepared leaf with its page, deferred and collapsed forms, each minting a `leaf` token.\n\nAnchor: `PreparedLeaf` `_first_continuation`",
       "targets": [
         {
           "anchor": {
-            "blob": "6d18ecd82232b0f1423b91d7f41555f6dbf77fbc",
-            "content": "sha256:64e49ae618416d37597370012cf1c6b3c1139fd0bf710b494ab268c3668e0c29",
+            "blob": "25d868aca47bdabb0b5cae2ac0067ad887023dac",
+            "content": "sha256:7a6897f2e96f09cce6da7031d7b7736b580fc0d1f10518fb20c64d7f1b7b654a",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "25d868aca47bdabb0b5cae2ac0067ad887023dac",
+            "content": "sha256:c0634309d2a38af9d7986dd7bf55233589a5114a96d805707ed0933d7e733ec0",
             "locator": {
               "kind": "symbol",
               "name": "PreparedLeaf"
@@ -93,12 +104,22 @@
       ]
     },
     "4": {
-      "note": "The preparation: `selector_absent` for an unknown family seed, `registration_absent` (naming proof claims too) for a path with no entry and no governing family, the binding, and the position check of a resumed walk.\n\nAnchor: `registration_absent_refusal`; `selector_absent_refusal`",
+      "note": "The preparation: `selector_absent` for an unknown family seed, `registration_absent` (naming proof claims too) for a path with no entry and no governing family, the binding, and the position check of a resumed walk.\n\nAnchor: `prepare_leaf`",
       "targets": [
         {
           "anchor": {
-            "blob": "6d18ecd82232b0f1423b91d7f41555f6dbf77fbc",
-            "content": "sha256:ca3591de45f564d9a2abe9b1dff8963951f34c14a0f43e21e68b0e5a793ba3f1",
+            "blob": "25d868aca47bdabb0b5cae2ac0067ad887023dac",
+            "content": "sha256:7a6897f2e96f09cce6da7031d7b7736b580fc0d1f10518fb20c64d7f1b7b654a",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "25d868aca47bdabb0b5cae2ac0067ad887023dac",
+            "content": "sha256:b6a46c894a9866e4f65f79623d7aea18bd811fcbf51e5046c4219b7332797e47",
             "locator": {
               "kind": "symbol",
               "name": "prepare_leaf"

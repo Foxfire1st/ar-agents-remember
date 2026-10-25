@@ -216,9 +216,15 @@ is inferred from this source-only addition.
 - The entry point and the three failures it turns into an incomplete document. [36]
 - The change inventory and the renames, each named when unavailable. [37]
 - Classification, knowledge changes, reached families and their members, once. [39]
+
 - A changed path's hunks with their linkage, or its file-level linkage. [40]
+
+
 - A hunk is linked by changed lines on their own side only. [41]
+
+
 - A non-text change is linked by a file-locator entry. [42]
+
 - A failed or timed-out Git call is the input named git. [43]
 - The read-ahead is one batch and never fails the run. [44]
 
@@ -235,27 +241,41 @@ No configured live documentation source was available for this pass.
 
 ### Repo-Internal References
 
+
 - Step 7 in the docstring: the linkage marking, the delete-only rule and MIK-R10's items. [45]
+
 - The schema name. [46]
 - One item, its ID from the registry, and `extra` for a registrant's top-level fields (MIK-R06 `satisfiedBy`). [47]
 - The run's inputs, with MIK-R10's route coverage and MIK-R14's coordination root last. [48]
 - The one representation of unreadable input. [49]
 - Inventory and renames; a partial inventory is incomplete, naming the paths. [50]
+
 - The document: the items of every step, one sort and the digest. [51]
+
 - Steps 1 to 4, split out of `document` at the L06/L11 merge. [52]
 - The persisted `scope` and `entries`. [53]
 - Step 3: families reached by a touched member or a changed record. [54]
 - The `touched_invariant` facts and identities. [55]
+
 - The `stale_invariant` item. [56]
+
 - The `reached_family` items and their member identities. [57]
 - The leaf's declarations, one input of the run. [58]
 - Step 6: the route items, with `satisfiedBy` carried in `extra`. [61]
+
 - Step 8 in the docstring: MIK-R14's reconsideration candidates. [63]
+
+
 - A hunk links only through a side where it changes lines: a delete-only hunk only by a K_B range (L10 ruling Q2), an insertion-only hunk only by a K_C range (MIK-R09, the L10 N3 carry). [65]
+
 - A Git call that failed or timed out is `incomplete` naming `git` (MIK-R09). [66]
 - The insertion-only symmetry at the gate. [67]
+
 - Gate linkage, text and file level. [68]
+
+
 - The non-text predicate the gate and the lane share (MIK-L32). [69]
+
 - A body edit raises one invariant and its family and carries the rest of the file. [70]
 - A comment between functions raises nothing; one inside raises. [71]
 - A binary change touches a file anchor and links at file level. [72]
@@ -270,17 +290,31 @@ No meaningful cross-repo references found: the run reads one code repository and
 
 No cross-repo boundary is crossed by this file.
 
+
 - The module docstring: the historical eight-step outline and the incomplete rule; current assembly also includes R53 items and marks the combined list. [33]
+
+
 
 
 - Current orchestration includes link-target items, grouped-change facts and selective mechanical route context [38]
 
 
+
+
 - Planned reconciliation and the final combined-list marks, `planned_untouched`, sort and summary. [59]
+
+
 - Historical step 6 outline: route conditions of reached families and killed routes; current assembly also marks route items. [60]
+
+
 - Step 7: one linkage, marked unexplained items in the one sort, `changes` and `unexplained`. [62]
+
+
 - Step 8: the run's classifier bound once and reused; marked candidates join the one sort; the `reconsideration` key. [64]
+
+
 - Current source delta inspected statically: Replace stale no-mark and blanket new-record exemptions with the executable combined-list contract; preserve deterministic identity, one-pass family reach and named incomplete-input behavior. [77]
+
 
 
 ## Current source contract
@@ -292,15 +326,21 @@ Link-target work is not a row-answerable kind and is not passed through planned.
 These spans and input-card identities were independently rechecked after the supported L61 sync. Source observation supplies no test execution, installed-host acceptance or semantic verdict for unrelated inherited material.
 
 
+
 - Current assembly includes removed-link-target items, equal-change groups and selected mechanical route context. [78]
+
 
 - Stale-entry facts preserve the optional unavailable recorded-blob reason. [79]
 
+
 - The extracted linkage owner keeps per-side changed-line intersection and file-locator nontext coverage. [80]
+
 
 - Retained persistent link targets surface removed route, path or symbol observations. [81]
 
 - Route-chain context is a mechanical projection over the parsed candidate. [82]
 
+
 - The orchestrator shares its actual classifier, exact pairing and candidate knowledge side with the active request-scoped classification owner before computing scope/linkage. [83]
+
 - The classification context clears classifier, candidate, pairing and path references on exit, including failures; no active context makes share_classifier inert. [84]

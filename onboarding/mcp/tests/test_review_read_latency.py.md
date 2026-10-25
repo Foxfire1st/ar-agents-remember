@@ -51,19 +51,29 @@ The same-size, same-second Git rewrite scenario imports the single `rewrite_in_t
 - The shared owner establishes a same-size rewrite in the index-write second. [19]
 
 - The module docstring: the port every case enters through and the machine-independent counts. [6]
+
 - The four review ports as the routes call them. [7]
+
 - The recheck refuses a moved candidate. [9]
 - A held converted base tree is not written again. [10]
+
 - The leaf-wide view passes the captured trees and base commits and is computed once. [11]
 
+
+
 - An incomplete worklist recomputes and is not kept; the next complete worklist may be memoized, while changed/conflicting external-input observations cause misses. No memory-patch failure/recovery is asserted. [12]
+
 
 - An unreadable or absent task input is observed and nothing is kept. [13]
 - An edit restored during the computation is computed twice and answered as inputs_changing. [14]
 - The memo's bounds and keys. [15]
+
 - A read after an edit shows the new content.  Anchor: `test_a_read_after_an_edit_shows_the_new_content_and_nothing_composed_is_kept` [18]
 
+
+
 - The subject read matches direct read_knowledge_review composition, carries judgment, resolves once and captures each worktree once. [8]
+
 - The live leaf view computes once for an unchanged exact comparison, with subsequent edits changing the computation key. [20]
 - An explicit negative assertion forbids a diff invocation containing both comparison memory trees. [21]
 - The worklist receives the comparison's candidate trees and base commits; it performs no directory snapshot or code capture of its own. [22]

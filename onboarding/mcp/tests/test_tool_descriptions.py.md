@@ -18,8 +18,11 @@ The pointer recognizer accepts documentation files, named skills and skill URIs.
 
 ## Evidence
 
+
 - The registered description check compares the actual advertised roster, preserves transition length pins and checks the ordinary ceiling and longer-explanation pointer. [1]
+
 - Published input schemas are inspected recursively, checking each node including model/composition/container descriptions. [2]
 - The pure model control rejects 121 characters and accepts the 120-character boundary, separately from the live whole-schema assertion. [3]
 - Pointer interpretation distinguishes local documentation/skill paths from the recognized URI spelling without a local filesystem target. [4]
+
 - Moved material, packaged byte equality and disposable installed-reference read-back protect the longer explanation; the install probe patches watcher operations. [5]

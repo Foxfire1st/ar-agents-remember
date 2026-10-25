@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/application/task_docs/task_reopen.py",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
@@ -19,12 +20,23 @@
       ]
     },
     "2": {
-      "note": "The worktree owner dispatches series separately and performs admitted leaf reset, leaving worktree recreation to start.",
+      "note": "The worktree owner dispatches series separately and performs admitted leaf reset, leaving worktree recreation to start.\n\nAnchor: `reopen_task`",
       "targets": [
         {
           "anchor": {
-            "blob": "d58c63ecee8f999fb207fe2c6b4fd35956213d82",
-            "content": "sha256:1cbe90be5cd321c244ae936a34438999e3f74f3a1c4851876fde8d25c8d99a66",
+            "blob": "eb7f219c54077c4961695239a2bdaf7de1332e9c",
+            "content": "sha256:f798f8b474c24ccf0049bcc21a17d966f51f6bb4cb2afe7b876f5b82d3285be8",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/worktrees/reopen.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "eb7f219c54077c4961695239a2bdaf7de1332e9c",
+            "content": "sha256:5bcd1f9c16dc59b1bf7173183eb918811780f83c060dcbb8b4e862160e40cf98",
             "locator": {
               "kind": "symbol",
               "name": "reopen_task"
@@ -41,11 +53,37 @@
         {
           "anchor": {
             "blob": "f174a79f72375a38aa57f50907312424f3fc2c3c",
+            "content": "sha256:ec31505c30bb916d352c10fd5caf27ff799adeab4f6140ec198e1b366df14b89",
+            "locator": {
+              "end": 120,
+              "kind": "line_range",
+              "start": 116
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_doc_tools.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f174a79f72375a38aa57f50907312424f3fc2c3c",
             "content": "sha256:5404d8f594b8635610d5cafae8b3ff70ae6d8fccc7b30298283c9b89f2e9a1c6",
             "locator": {
               "end": 123,
               "kind": "line_range",
               "start": 119
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_doc_tools.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f174a79f72375a38aa57f50907312424f3fc2c3c",
+            "content": "sha256:0194f5b4c621e19b9e6ed3a46a6db6434edc57c3cd44a53a50dc44a6739fa4e6",
+            "locator": {
+              "end": 121,
+              "kind": "line_range",
+              "start": 117
             },
             "path": "mcp/src/agents_remember/application/task_docs/task_doc_tools.py"
           },

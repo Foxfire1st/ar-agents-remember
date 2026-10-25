@@ -178,14 +178,20 @@ The detector, novelty, the entry facts, the three rules and their proofs.
 
 
 - The derivation the conversion writes and the export test reuses. [13]
+
 - Reference-only justifications are refused, and real prose is admitted. [14]
+
 - An unsupported checkable criterion on a new record is refused, naming it. [15]
+
 - A forged legacy ID does not make a record exported. [17]
+
 - The writer refuses a new invariant whose claim the tree does not support, and writes nothing. [18]
 
 - A decision is never an export, so a legacy ID exempts it from nothing (L13 review F6). [19]
 
+
 - A decision whose legacy ID derives its own ID, marked legacy-unassessed, is refused as new. [20]
+
 
 ### Cross-Repo References
 

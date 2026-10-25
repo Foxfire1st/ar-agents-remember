@@ -1,5 +1,6 @@
 {
   "path": "dashboard/src/panels/engine-room/useShouldAnimate.ts",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
@@ -35,12 +36,12 @@
       ]
     },
     "3": {
-      "note": "The main entry checks `?effects=off` or `calm-cockpit` and sets `document.documentElement.dataset.effects` to `off`.\n\nAnchor: \"effects=off\"; \"window.localStorage.getItem(\\\"calm-cockpit\\\")\"; \"document.documentElement.dataset.effects = \\\"off\\\"\"",
+      "note": "The main entry checks `?effects=off` or `calm-cockpit` and sets `document.documentElement.dataset.effects` to `off`.",
       "targets": [
         {
           "anchor": {
-            "blob": "7b235ae6d40f2ffc6897ad451c87b3bae5b873e9",
-            "content": "sha256:3374a1678a3eb112da42b76d5f2b828e711a93cd668bda51b141cbecfcd92430",
+            "blob": "bfa67cd00c85c1ea3eda8dec05ee8089f3eae10e",
+            "content": "sha256:fa650027ad8844a86e53a9373f311d916fd0e2e978b4626154fe082faecc6c0f",
             "locator": {
               "end": 12,
               "kind": "line_range",
@@ -70,8 +71,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9cf8c0f5572eef476907ba10a4bfef8669303116",
-            "content": "sha256:1cdd58c292429d5b544ac150cc706f587d9a4c30410eb81af1c423e20be10719",
+            "blob": "235b077ab68b7adfffa2b675a339fb346dca83c1",
+            "content": "sha256:e01d375c5487b04ae8462b795a076f8cd749832339025551285bf5068e95d767",
             "locator": {
               "kind": "symbol",
               "name": "mountConstel"

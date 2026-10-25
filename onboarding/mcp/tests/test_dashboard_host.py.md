@@ -49,5 +49,8 @@ depends on ordering waits on the real helper rather than sleeping.
 
 - Status, adoption and stop, and foreground, reload and simulation keep host ownership and dispatch. [5]
 - The 500-invariant head and the two-read parser exercise the configured and the default finite limits. [6]
+
 - The real background helper returns before its controlled host outcome, then logs it. [7]
+
+
 - A supervised child avoids a duplicate start, and a discovered settings path stays explicit in guidance. [8]

@@ -221,12 +221,11 @@
       ]
     },
     "5": {
-      "note": "Anchor: Absent settings retain parser defaults.",
       "targets": [
         {
           "anchor": {
-            "blob": "9bbccbbf280dcd5c044d083f866d1b451ecd7a4d",
-            "content": "sha256:5093cd32b6294c6afed9b99c8095dd225e3f158a1a10bb478ccfcd7b52091c5f",
+            "blob": "626a707b4783bda6fd170ed6f47fa593ed1c5925",
+            "content": "sha256:4fac267a38ca61e0595d3a12654a9e5cb73798b1d77eb2663cd561806a77def4",
             "locator": {
               "end": 125,
               "kind": "line_range",

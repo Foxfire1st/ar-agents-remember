@@ -6,7 +6,9 @@
 
 ## Current source contract evidence
 
-- Say-once refusal checks message, detail and nextAction before real conversion and successful first adoption; direct naming separately asserts existence and omission of one known statement after fixture conversion, not executed general no-text proof. [15]
+
+- Say-once refusal checks message, detail and nextAction before real conversion and successful first adoption; direct naming separately asserts existence and omission of one known statement after fixture conversion, not executed general no-text proof.
+
 
 
 
@@ -119,7 +121,9 @@ No cross-repo boundary is crossed by this file.
 ### Current Source-Inspection References
 
 
+
 - Direct read_ar_files names converted records, reports source existence and omits the fixture Alpha adds one. statement; no general no-text or registered-handler execution is claimed. [1]
+
 
 
 - The reference check and fixer. [2]
@@ -153,9 +157,12 @@ No cross-repo boundary is crossed by this file.
 - Converted quality asserts ok=false for one deleted-path carried-stale refusal; catalog drift is fail/1. [3]
 
 
+
 - The converted HEAD base distinguishes carried deleted/moved-path refusals from new anchors; no-base migration debt also refuses and closeout quality agrees. [10]
+
 
 - `test_one_documents_fix_reports_its_own_stale_references_and_the_status_counts` asserts selected-document stale scope and, with a prepared producer result, delivered counts, the first 10 stale entries and exclusion of authoring/rewritten-sidecar material; it has no log-readback or custody assertion. [13]
 - Current source delta inspected statically: Repair converted quality/catalog outcome, carried/new classifications and 10-entry delivery; preserve L46 and content-only advisory cases. [17]
 
-- Separate implementation custody path: producer whole/result projection, finalized whole-result detail input, redaction, destination and size/budget/write controls; not a log-readback assertion in the conversion test. \[18] [18]
+
+- Separate implementation custody path: producer whole/result projection, finalized whole-result detail input, redaction, destination and size/budget/write controls; not a log-readback assertion in the conversion test. \ [18]

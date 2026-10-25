@@ -100,7 +100,9 @@ No configured live documentation source was available for this pass.
 
 ### Repo-Internal References
 
+
 - The explorer listing case that now expects the presence mark. [14]
+
 - The listing entry point the route uses. [15]
 
 - The module's own statement of the fixture's two converted commits. [29]
@@ -119,5 +121,6 @@ No configured live documentation source was available for this pass.
 ### Cross-Repo References
 
 No cross-repo boundary is crossed by this file.
+
 
 - Published selection reads uncommitted memory without writes and pins only clean state; live-leaf selection names excluded uncommitted code; partial-index and missing-code-tree notices remain covered. The hexadecimal-name selection test is absent. [38]

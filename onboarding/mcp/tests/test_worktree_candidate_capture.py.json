@@ -110,8 +110,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "20234077acca3ab886afa190c6bb468a9097063a",
-            "content": "sha256:e7d3a0fb3f5177bec0c04775a97115be7140f9303668346e3fc76847ab9c3fd6",
+            "blob": "33f69742fc96c1f9e2cf4232a6cf9a3e1c4579f8",
+            "content": "sha256:da5c01c419e61c5c4d410e87fd8f1011fc9b47d78500a27fd599ca776b481522",
             "locator": {
               "kind": "file"
             }
@@ -137,15 +137,14 @@
       ]
     },
     "4": {
-      "note": "Unusable copied-index capture recovers through the original full owner.",
+      "note": "Unusable copied-index capture recovers through the original full owner.\n\nAnchor: `test_a_copy_git_cannot_use_falls_back_to_the_full_capture_and_the_same_tree`",
       "targets": [
         {
           "anchor": {
-            "blob": "20234077acca3ab886afa190c6bb468a9097063a",
-            "content": "sha256:f7b3566bc4dd507d0bfe02b837f9457baccae05f76be5a24662b433915f68ea1",
+            "blob": "33f69742fc96c1f9e2cf4232a6cf9a3e1c4579f8",
+            "content": "sha256:da5c01c419e61c5c4d410e87fd8f1011fc9b47d78500a27fd599ca776b481522",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_copy_git_cannot_use_falls_back_to_the_full_capture_and_the_same_tree"
+              "kind": "file"
             }
           },
           "kind": "test"

@@ -261,9 +261,9 @@ This account is bound to the candidate source, not a claim of a running serving 
 - Create and replace share `_build_doc`, which invokes the raw-section scaffolding boundary before task-model validation. [16]
 - The extracted helper atomically validates list/member shape and appends only missing canonical register scaffolds. [17]
 
-- The fail-closed leaf-authoring guard: refuses a leaf whose derived master link nothing would ever bind, and states the planning allowance as a guarantee. [18]
+- The fail-closed guard refuses a subTask whose folder master document is absent or does not carry its row, refusing publication with its remedy. [18]
 
-- The `elif` arm that reaches the guard from the shared create/replace builder. [19]
+- The `replace` arm of candidate preparation, which builds its candidate through the shared create/replace builder. [19]
 - The two end-to-end cases that pin the refusal's message and the still-working planning flow. [20]
 
 - Task edits are prepared with exact accepted sources before candidate validation/publication; removed scaffolding tests are not current execution evidence. [21]

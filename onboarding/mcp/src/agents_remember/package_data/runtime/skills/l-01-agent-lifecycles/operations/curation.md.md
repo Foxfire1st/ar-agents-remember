@@ -6,14 +6,16 @@ MEMORY review stays separately sealed/counted and never opens or resets CODE rev
 
 This account controls the named changed seams; contradictory earlier card wording below is retained only as historical evidence. Unchanged role duties and R117 file-only wake/report transport are preserved. Source inspection supplies no new runtime test, CODE verdict, review counter or acceptance.
 
+
 - MEMORY review stays separately sealed/counted and never opens or resets CODE review. Beyond the settings limit the architect or developer authorizes the pass and Manager records it. Curator owns corrected input/body/coherence work; transaction steps and external effects stay with their owners. The installed-build quality/coherence outcome and direct Reviewer handover remain separate from independent acceptance. [4]
+
 
 
 ## Message/file transport
 
 This packaged copy makes role messages short wake-ups naming requested work or a handover and its files. Complete report, verdict, list and evidence contents travel through file-only `body` or existing-file `attach`, never pasted into message text. Within a shared task, message files remain with its record and a leaf workspace exposes the message-folder link. Wake text uses the effective settings limit, not a number pinned in this role/template. This transport account changes neither the file's existing role/write boundaries nor requirement, review, curation or landing authority.
 
-- Messages wake; complete payloads and evidence travel as files. [3]
+- Messages wake; complete payloads and evidence travel as files.
 
 
 ## Governing Overview
@@ -26,7 +28,7 @@ Name immutable baseline/candidate records with scoped knowledge_read, open the n
 
 ## Current source contract evidence
 
-- Current source declarations support the qualified naming or fixture account; no executed test or acceptance is inferred. [5]
+
 
 ## Purpose
 
@@ -76,7 +78,9 @@ surface with its card and the governing history rows carries it.
 
 Before converted-memory closeout, a seat that authored none of the leaf cards or records independently checks every changed statement against final code, each history disposition/effect/reason against the diff and important omissions. Blocking findings are repaired with a full curation-operation rerun. This is a lifecycle duty, not a new closeout predicate or helper self-check; neither raw quality nor coherence substitutes for the second reader.
 
+
 - Current curation contract separates normal judgment domains from rollout and lifecycle ownership. [6]
+
 
 ### Logic
 
@@ -106,7 +110,9 @@ No additional work is asserted by this card. Actual project publication and sema
 | Exact family/sibling/source coverage and admitted comparison producer. | lines 114-179 | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/operations/curation.md:114-179 |
 | Complete normal curation guards, role/write prohibitions and handoff. | lines 181-310 | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/operations/curation.md:181-310 |
 
-- An independent nonauthor fact-checks changed curated statements and judgment rows before converted-memory closeout; blocking repairs rerun full quality, and closeout does not mechanically run the check. [5]
+
+- An independent nonauthor fact-checks every changed curated statement and history-row judgment before converted-memory closeout; blocking repairs rerun full quality. The check is a lifecycle step that closeout does not mechanically perform. [5]
+
 
 ### Docs References
 
@@ -118,7 +124,6 @@ The operative contract is defined by the repository sources cited below.
 
 These references name the current owners and the behavior they establish.
 
-- Workflow step 3 requires an authored rationale on every hand-off target (generated copy). [2]
 
 ### Cross-Repo References
 
@@ -128,7 +133,12 @@ No meaningful cross-repository implementation dependency.
 
 ## Current Contract Evidence
 
+
 - Current review-budget and preserved ownership obligations are defined by these source instructions. [3]
+
+
+- Before ingest, each hand-off target requires an authored rationale, directly or through an applicable entry-level default; the writer refuses unexplained targets on every run, before any file is written. [2]
+
 
 
 - Bound curation intake reads supplied canonical files; knowledge_read uses memoryRoot and only read_ar_files uses task_context.

@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/mcp/registration/seat_retirement.py",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
@@ -22,15 +23,14 @@
   ],
   "references": {
     "1": {
-      "note": "Native child retirement registration: implementation/assertion boundary described above.",
+      "note": "Native child retirement registration: implementation/assertion boundary described above.\n\nAnchor: `register_seat_retirement_tools`",
       "targets": [
         {
           "anchor": {
-            "blob": "563fbcdfbb0a941bba4d5924edf0d6917ebb3d4e",
-            "content": "sha256:023866fca584202bc568a7f914d77dbb06392ee2dbd6b1f1a4b4f47b06dfa888",
+            "blob": "78d1d879651aca07ed8ab09f7022678801d0b38d",
+            "content": "sha256:10a78c48b534f636c8f1f8fdb9e6203f398e4cffc98292334dc6153d9050d1f3",
             "locator": {
-              "kind": "symbol",
-              "name": "register_seat_retirement_tools"
+              "kind": "file"
             }
           },
           "kind": "code"

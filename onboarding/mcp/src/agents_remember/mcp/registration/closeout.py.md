@@ -211,11 +211,15 @@ No configured external domain source applies.
 ### Repo-Internal References
 
 
+
 - Registered direct/ordinary closeout and integration tools expose no ledger message or landed-ledger argument. [1]
+
 
 - The payload builders these forward to. [2]
 
+
 - The checkpoint-landing tool declaration and the payload builder it forwards to. [3]
+
 
 - `CloseoutCommitMessages` and `CloseoutApproval` remain distinct request concepts. [4]
 - Refuse to stage anywhere except a task's own throwaway worktree. [5]

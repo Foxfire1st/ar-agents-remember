@@ -87,14 +87,18 @@ The error families preserve distinct authority, recovery and transport meanings.
 - Immutable certification findings and pre-execution statuses. [2]
 - Bounded configured-contract authority and reread errors. [3]
 - Separate coherence, exact-pair and final-certification response shapes. [4]
-- Composition, integrity, harness retry safety and history failures. [5]
+
+- **The tokenizer vocabulary and the grammar an install cannot supply: the counter's missing vendored vocabulary and a citation check's missing grammar, each raised rather than downloaded or approximated.** [5]
+
 
 - Control-plane translation preserves the durable-store error family. [6]
 
 - Host registry translation preserves typed pre-launch authority refusal. [7]
 - Role-capsule compilation refusal with its stable status, remedy and frozen conflict rows. [8]
 - The two capsule subclasses that mark which boundary refused. `CapsuleBindingError` was removed on the A3 candidate and must not be cited. [9]
+
 - The consumer that turns this family into a value with an explanation instead of an escaping exception. [10]
+
 - The registered refusal-code vocabulary these errors carry. [11]
 - The failure cases that assert a refusal advertises its own reason and remedy. [12]
 - The task-context projection refusal: complete-or-refused, with the wrapped owner's status preserved. It subclasses `AgentsRememberError` directly, so it is **not** in the `Capsule*` family and is not covered by `except CapsuleCompilationError`. [13]
@@ -102,12 +106,16 @@ The error families preserve distinct authority, recovery and transport meanings.
 - The refusal that proves `None` is never a substitute for an unprojectable admitted task. [15]
 - The case that pins the failure taxonomy: each unresolvable input returns its own status. [16]
 - The typed failure of a two-leg atomic publish, subclassing both the domain family and `OSError` so existing `except OSError` call sites keep observing it. [17]
-- **The retention owner's typed failure, whose five statuses distinguish an invalid ref, a missing object, an occupied ref, an unwritable ref and a moved ref.** [18]
+
+- **The retention owner's typed failure, whose status distinguishes a ref the record never held, a ref that has moved and a ref that could not be deleted.** [18]
+
 - **The deletion owner's typed failure, raised before anything is recorded or removed.** [19]
 
 - Current release refuses a moved pin or failed exact deletion. [20]
 
+
 - **The deletion owner that raises the second, and the two raise sites that keep the mismatch from recording a deletion.** [21]
+
 - The publisher whose two legs raise it, one label per leg, with the destination's state. [23]
 
 ### Cross-Repo References

@@ -71,13 +71,17 @@ No configured Domain Documentation source exists for this file.
 
 - Typed result contracts mirror the L1 endpoints' camelCase JSON (catalog, dir listing, file content, forward/reverse pairing). [1]
 - `getJson` maps every non-ok response to a thrown `FilesApiError` carrying the server status code. [2]
+
 - Five `base`-arg GET helpers build the `/repos`, `/list`, `/read`, and `/onboarding` (forward+reverse) URLs. [3]
+
 - The serving layer registers the four `/api/files/*` endpoints this client calls. [4]
 - `run_scoped` maps domain errors to the status idiom this client surfaces (`unknown-repo`/`unknown-scope` 404, `bad-path` 400, `not-found` 404). [5]
 - `FileViewer` orchestrates `fetchRepos`/`readFile`/`resolveForward`/`resolveReverse` and renders `FilesApiError.code`. [6]
 - The File Viewer's tree loader calls `listDir` per directory level from the shared adapter. [7]
 - `FileTree` consumes the `DirEntry` and `Scope` types. [8]
-- `DualPane` consumes the `FileContent` type for its code side. [9]
+
+- `DualPane` consumes the `FileContent` type for its code side. Source caption: `FileContent` [9]
+
 - The vitest contract test pins the endpoint URLs and the `FilesApiError` mapping. [10]
 
 ### Cross-Repo References

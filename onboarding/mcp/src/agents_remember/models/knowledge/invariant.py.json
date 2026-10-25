@@ -74,15 +74,14 @@
       ]
     },
     "4": {
-      "note": "The read-back shape that pins the sorted predecessor set.",
+      "note": "The read-back shape that pins the sorted predecessor set.\n\nAnchor: `StoredInvariantRevision`",
       "targets": [
         {
           "anchor": {
-            "blob": "3b7ad1362b3430ee3f4feb81ed08bec1b5cd75b5",
-            "content": "sha256:926be26caf1b07a6e17a4af4e40598a2553f4ff4937d3f58b7c26678e011f095",
+            "blob": "8bb5ffe981f83aa58ff262974a165fd286c14bef",
+            "content": "sha256:971fcb1ae80d4ea0b79533167b3bb74bffae8e1a98eb2fc7ed2dc4864e9ad267",
             "locator": {
-              "kind": "symbol",
-              "name": "StoredInvariantRevision"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -90,7 +89,7 @@
       ]
     },
     "5": {
-      "note": "The stored `invariant_revision` table this aggregate is written to, with its immutability triggers.\n\nAnchor: `invariant_revision`; `invariant_revision_no_update`; `invariant_revision_no_delete`",
+      "note": "The stored `invariant_revision` table this aggregate is written to, with its immutability triggers.",
       "targets": [
         {
           "anchor": {
@@ -107,8 +106,8 @@
         },
         {
           "anchor": {
-            "blob": "5e27550d32bfd12f38a8b3393ad8622114eb677a",
-            "content": "sha256:aeaac578e16cdd30c07ea3d949c822616d1ae680b152f3467cdf369f5f5ad6e3",
+            "blob": "ec5bf0677108161ea883091d9613a34d21a3697c",
+            "content": "sha256:6c8f88cecd16447744536c141916dc4325c42c3f4d8f9222f307950beab6ca2c",
             "locator": {
               "end": 361,
               "kind": "line_range",
@@ -121,30 +120,29 @@
       ]
     },
     "6": {
-      "note": "The current exact revision read and decoder verify a retained aggregate rather than writing it.\n\nAnchor: `OpenedKnowledgeStore.get_revision`",
+      "note": "The current exact revision read and decoder verify a retained aggregate rather than writing it.\n\nAnchor: `decode_revision_row`",
       "targets": [
         {
           "anchor": {
-            "blob": "4a64ad09c79633786d6408b2e814119580ad51e7",
-            "content": "sha256:11b77cf7357bb9e6ed51fc7a1c09f7f8ed251370838f7e0d6467f84a0d37d6e3",
-            "locator": {
-              "kind": "symbol",
-              "name": "decode_revision_row"
-            },
-            "path": "mcp/src/agents_remember/memory/knowledge/records.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "e4fc1a849557a256d000a2a4f98c444ef5400e7d",
-            "content": "sha256:233b5e39d22a77c1490a468223a647da8f638bd0614e927fda725edc73b0e9aa",
+            "blob": "18bf95513cea9638fc5f978e605aa03076a27454",
+            "content": "sha256:4d67cf075d6c300945eb4d42eeae768b15118046370b46da3c2227fc57a0dc7a",
             "locator": {
               "end": 173,
               "kind": "line_range",
               "start": 158
             },
             "path": "mcp/src/agents_remember/memory/knowledge/store.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4a64ad09c79633786d6408b2e814119580ad51e7",
+            "content": "sha256:92d4353cb71f442af226829358fd09ea8dd54591ffed608d4b7a3779190116b8",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/records.py"
           },
           "kind": "code"
         }

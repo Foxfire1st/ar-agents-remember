@@ -1,5 +1,6 @@
 {
   "path": "dashboard/src/test/wireFixtureGuard.ts",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
@@ -7,8 +8,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8c5f7681dcafb9d4dd5b7ff4e210297999ca4fcc",
-            "content": "sha256:12f22383f66f393cca622bd5a6c7e1ab667e3f36b1fe13b852c4b073d60e0165",
+            "blob": "e87c7782c9414ddd44713084a9a37d1b860749ab",
+            "content": "sha256:03b8725b27766b3eae262bd6a4689ffc0d729cd27acab3227429afc701906257",
             "locator": {
               "end": 10,
               "kind": "line_range",
@@ -95,12 +96,23 @@
       ]
     },
     "14": {
-      "note": "The registry, planted bypasses and vacuity checks this module deliberately does not own.",
+      "note": "The registry, planted bypasses and vacuity checks this module deliberately does not own.\n\nAnchor: `SANCTIONED_WIRE_SITES`",
       "targets": [
         {
           "anchor": {
-            "blob": "422820d3b137d6391b4633f25bc2bee615473d94",
-            "content": "sha256:6fb3069befefdbf0b993642000d2799d21ed30e2d0319e6c669b5c44fc852211",
+            "blob": "a638463e5b64ab2206752784eae0cb1426ad8637",
+            "content": "sha256:8c574945484876085ce2c0a763e3e28e1c157d90bddede766c1192d225eb6e6d",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/test/wireFixtureGuard.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "a638463e5b64ab2206752784eae0cb1426ad8637",
+            "content": "sha256:5402c58fb9157f5c0f6f1cfe48c98da4fe05f9996a471b5d6577f8457181aae8",
             "locator": {
               "kind": "symbol",
               "name": "SANCTIONED_WIRE_SITES"
@@ -112,8 +124,21 @@
       ]
     },
     "15": {
-      "note": "The current TaskEntry/TaskSummary pair illustrates why every union member is checked independently.\n\nAnchor: current union example and generated member shapes",
+      "note": "The current TaskEntry/TaskSummary pair illustrates why every union member is checked independently.",
       "targets": [
+        {
+          "anchor": {
+            "blob": "d71e9db1948f52b82bd84b2348775f13ac9b57e7",
+            "content": "sha256:854496aae40093e3268f94ebe54716fcb9770b38fbc20a6b0514c5ff671a751a",
+            "locator": {
+              "end": 522,
+              "kind": "line_range",
+              "start": 506
+            },
+            "path": "dashboard/src/types/projection.ts"
+          },
+          "kind": "code"
+        },
         {
           "anchor": {
             "blob": "e87c7782c9414ddd44713084a9a37d1b860749ab",
@@ -125,19 +150,6 @@
             }
           },
           "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "8774e82c7f7a93dda014fdb8b987e2391fd21fd1",
-            "content": "sha256:51d0432de61b27fb95ce483e9491b0e76d8c8b399982ca329a0a8591145e909e",
-            "locator": {
-              "end": 522,
-              "kind": "line_range",
-              "start": 506
-            },
-            "path": "dashboard/src/types/projection.ts"
-          },
-          "kind": "code"
         }
       ]
     },
@@ -176,15 +188,14 @@
       ]
     },
     "18": {
-      "note": "Same, for the coordination-notes API client.",
+      "note": "Same, for the coordination-notes API client: the types it declares are `FolderEntry`, `NotesFolder` and `NoteContent`, under the same \"Same-origin client for …\" header.\n\nAnchor: `NoteEntry`",
       "targets": [
         {
           "anchor": {
-            "blob": "43bffd67009f4cebf8c15adbb66d797fc0c20155",
-            "content": "sha256:d796d7020f69bd9fe3480f24e64393b5d647fa55be86395394125a7b5e16cc7d",
+            "blob": "db4ee81eefe2ea8e744d09543e10feec070a2b46",
+            "content": "sha256:1c1e47b037c0ea2d513ce72bada4469a15726501e1873ab0781739fce9b1dfe5",
             "locator": {
-              "kind": "symbol",
-              "name": "NoteEntry"
+              "kind": "file"
             },
             "path": "dashboard/src/data/notes.ts"
           },
@@ -214,7 +225,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1cd6a799aed038536e2536abe036b5244179c48f",
+            "blob": "c1728908f2e1d3aa121a935b106bb55590cb0bbc",
             "content": "sha256:6f0551e6feea6c5ac5293a4de3eb72fdfe92c5864c12eb7f96bba1c5da212696",
             "locator": {
               "kind": "symbol",
@@ -231,8 +242,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bb7efca63cba441712648f4b743dbb34d8d27d85",
-            "content": "sha256:f1ede68aba1103e1ae8c3357c7a2c3934d1e44e55f06bdf7abe8588442b5eede",
+            "blob": "e87c7782c9414ddd44713084a9a37d1b860749ab",
+            "content": "sha256:3d749a3bd1af25ed418d7774a2209c8c2c6cf0a8136d2bf4d524fc62aad15ac4",
             "locator": {
               "kind": "symbol",
               "name": "SCANNED_ROOTS"
@@ -285,8 +296,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bb7efca63cba441712648f4b743dbb34d8d27d85",
-            "content": "sha256:308eff8594dec5810cdb8bb28c36063d1f78cd17b168379e89e1b8a0db42c1c0",
+            "blob": "e87c7782c9414ddd44713084a9a37d1b860749ab",
+            "content": "sha256:bfd215215fadf859c32fbce793a6edf12e0b518a69b7c139241025a43677cff3",
             "locator": {
               "kind": "symbol",
               "name": "isFixtureSurface"

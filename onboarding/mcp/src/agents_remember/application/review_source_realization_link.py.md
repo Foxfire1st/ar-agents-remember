@@ -103,16 +103,28 @@ No configured domain documentation could be checked.
 - **The module's own statement of which comparison, which fact, what is not a criterion, and why unreadable knowledge is undetermined.** [1]
 - The published surface and the half order. [2]
 - **The answer value: linking halves, the stated sentence, whether the negative was established, and whether the unread knowledge was never created.** [3]
+
 - **The entry point: bind the comparison, check the spelling, read the namespace, ask each half; the halves' answer composed apart.** [4]
+
 - **Exact-spelling check: the validated seed must equal the request string.** [5]
+
 - **Comparison binding: current pair, recorded superseded pair, or nothing — never the leaf's current knowledge.** [6]
+
 - Halves a closed leaf's generation did not retain are not read. [7]
 - **One half asked by the exact claim-at-path query, with unreadable kept apart from not linked, and an absent snapshot marked.** [8]
 - A tree index's proof entry at the path links it; a dataset (no `ix_entry`) answers nothing. [9]
+
 - The read owner's identity resolution and exact claim-at-path query this module re-uses. [10]
+
+
 - The generation owners that bind a superseded pair to its retained knowledge. [11]
+
+
 - The namespace record (the record beside the bytes, or, since MIK-R25, a derived knowledge index's own namespace) and the path-seed shape rule. [12]
+
+
 - **Cases: cross-comparison refusal, recorded historical bytes after the tree moves, closed leaf, padded spellings, and the lowered selection bound.** [13]
+
 
 ### Cross-Repo References
 

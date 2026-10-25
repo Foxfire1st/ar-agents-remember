@@ -134,19 +134,39 @@ No external source is required for this repository-owned blocker contract.
 - A blank producer reason cannot reach an operator as `reason: ""`. [11]
 - The sole provider-runtime producer answers with a reason whenever it reclaimed nothing. [12]
 - The post-reclaim branch that could answer silently now names its own cause. [13]
+
 - The landed fixture and the public calls the whole-tool cases drive. [14]
+
+
 - The service rebinding and the citation-guard double the whole-tool cases run against. [15]
+
 - The only construction path for a terminal blockage; it refuses a missing, blank or non-string reason. [16]
 - The operator-language answer for a reasonless or malformed result item. [17]
 - The bundle and the builder the invariant-owner cases drive directly. [18]
 - The producer whose reason the refusal carries, including the post-reclaim branch this module forces. [19]
+
 - The port the L6 teardown answer is substituted on, and the services builder the fixture rebinds. [20]
+
+
 - The public terminal route the whole-tool cases call. [21]
+
+
 - The landing fixture and the public configuration the whole-tool cases build on. [22]
-- The integration lane row the fail-closed manifest requires. [23]
+
+
+
+> Retained earlier citation wording: - The integration lane declares test_terminal_blocker_reasons.py; membership is not execution evidence. [23]
+
+
 - The landing fixture and the public configuration the whole-tool cases build on. [24]
-- The integration lane row the fail-closed manifest requires. [25]
+
+
+
+> Retained earlier citation wording: - The lane manifest declares test_terminal_blocker_reasons.py in integration. Membership selects evidence and establishes no invocation. [25]
+
+
 - The exact-consumer declaration that gives this module ownership for targeted selection: this module's entry inside the ownership catalog's repository-test-input mapping. [28]
+
 
 ### Cross-Repo References
 
@@ -154,7 +174,9 @@ Each case builds its own disposable code repository and external memory reposito
 Git repositories under `tmp_path`, which is what lets the landing, integration and finalization
 routes run at all. No production cross-repository authority is claimed by this focused module.
 
+
 - The landing world each whole-tool case builds is a real temporary repository pair. [27]
+
 
 ## 260918-TSIP-L6 The Drift-Snapshot Preview Cases
 
@@ -179,3 +201,8 @@ not shifted: the module's definitions moved because the new cases are appended a
 `test_a_reclaimed_but_surviving_provider_runtime_reports_why_it_survived` `:341-381`. The module
 now has **ten** cases, not seven, and its lane row is
 `mcp/tests/test-evidence-lanes.toml:220` (it read `:177` when this card was written).
+
+- The integration lane declares test_terminal_blocker_reasons.py; membership is not execution evidence. [23]
+
+
+- The lane manifest declares test_terminal_blocker_reasons.py in integration. Membership selects evidence and establishes no invocation. [25]

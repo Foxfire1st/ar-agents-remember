@@ -60,9 +60,13 @@ No configured live documentation source was available for this pass.
 
 The cases and their keys.
 
+
 - The parity keys on each side. [10]
+
 - The reused selection selects the same set over the index as over the database. [11]
+
 - Views and the comparison over index files. [12]
+
 - The lane row. [13]
 
 ### Cross-Repo References

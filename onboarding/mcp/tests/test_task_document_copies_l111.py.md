@@ -20,4 +20,5 @@ Helper-seam controls and registered-tool cases have different proof scopes. Thes
 
 - Typed references produce a real requirement copy and a nonmissing index row. [1]
 - An injected INDEX failure restores the admitted large copy-tree snapshot. [2]
+
 - Clearing leaf requirements reclaims their copies while retaining only the leaf document. [3]

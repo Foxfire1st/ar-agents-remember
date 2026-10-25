@@ -19,15 +19,14 @@
       ]
     },
     "2": {
-      "note": "The fixture installs the repository profile and declares a changed candidate.",
+      "note": "The fixture installs the repository profile and declares a changed candidate.\n\nAnchor: `_fixture`",
       "targets": [
         {
           "anchor": {
-            "blob": "2932505da9d30c65f6cd0effb72f18b5d729870f",
-            "content": "sha256:69ef8cb0c05995cc6d37c789b160a584039b67ed7ab2f4d8598cfbf81007b945",
+            "blob": "0d3e60e0695b95a532607a1961682d008e13a5c5",
+            "content": "sha256:490c5e0139c6908114b99703fb373ad48e31d5ead9d5fff3bd5df5933c8080b0",
             "locator": {
-              "kind": "symbol",
-              "name": "_fixture"
+              "kind": "file"
             }
           },
           "kind": "test"

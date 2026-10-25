@@ -156,27 +156,14 @@
       ]
     },
     "13": {
-      "note": "The review vocabulary it re-uses rather than duplicating: the change status an expansion reports and the typed refusal a refused read carries.",
+      "note": "The review vocabulary it re-uses rather than duplicating: the change status an expansion reports and the typed refusal a refused read carries.\n\nAnchor: `ReviewFileStatus` `ReviewRefusal`",
       "targets": [
         {
           "anchor": {
-            "blob": "f9105a09d9fdee4eeed9ab2b715723940337949e",
-            "content": "sha256:6af67a522332b0455da52c28225dd9bfad84ecdffd3fec21b3f1131b920e4a39",
+            "blob": "e298bc656619aa09b3566b8e7baeb7a8453b656f",
+            "content": "sha256:4d0b65fa6dad1cd50ffccbef6a9438db99bd5d650c265f6820bac0cf5e6bf315",
             "locator": {
-              "kind": "symbol",
-              "name": "ReviewFileStatus"
-            },
-            "path": "mcp/src/agents_remember/models/knowledge/review.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "005c44f99677f29c3777322502b77b732a3a0252",
-            "content": "sha256:d7bb856b30683703482162fa47440e480ed5957164a1923ea79f1d9fd4623268",
-            "locator": {
-              "kind": "symbol",
-              "name": "ReviewRefusal"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/models/knowledge/review.py"
           },
@@ -185,27 +172,14 @@
       ]
     },
     "14": {
-      "note": "**The read that fills these values in: the six states produced from real Git objects, the admission named on every expansion, and the generation statement measured after the bytes.**",
+      "note": "**The read that fills these values in: the six states produced from real Git objects, the admission named on every expansion, and the generation statement measured after the bytes.**\n\nAnchor: `read_review_source_content` `_side_content` `admit_source_path` `_currentness`",
       "targets": [
         {
           "anchor": {
-            "blob": "bb34bd25afcf45ac4905cf56ba55f8595a612b79",
-            "content": "sha256:dd9c9685ddbd2a1538eee6c37c80ce168bbd04f1084ce9b67bf3c48c6eef0e79",
-            "locator": {
-              "kind": "symbol",
-              "name": "read_review_source_content"
-            },
-            "path": "mcp/src/agents_remember/application/review_source_content.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
             "blob": "86818db1da3ffa24ccd6e04e62006ebf22897723",
-            "content": "sha256:103ec757f203445b2f0689d878c3ca2af1f58bea986b1bc09b54a2b8285f8fa5",
+            "content": "sha256:dd8d91a91cd65fe4c2def41a42ee2ec108b32ed9ee94f9ca75321c0bc43b28c1",
             "locator": {
-              "kind": "symbol",
-              "name": "_side_content"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/review_source_content.py"
           },
@@ -214,24 +188,11 @@
         {
           "anchor": {
             "blob": "bd53a560b89553bb10e18692e31319e6d580a0cc",
-            "content": "sha256:38e8843a8cebfb16f766d607a7dee7674eb699fa1a559e313a7a5af4a6d746fb",
+            "content": "sha256:fb8ebcbda1f115906d1c9fc1d958e558c3fe21bdab2a41779c4ed901c3be5e02",
             "locator": {
-              "kind": "symbol",
-              "name": "admit_source_path"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/review_source_admission.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "86818db1da3ffa24ccd6e04e62006ebf22897723",
-            "content": "sha256:e7f82746491e11a15a321f83abc0a40f2a79458cebea620dff21a3a6ee48c073",
-            "locator": {
-              "kind": "symbol",
-              "name": "_currentness"
-            },
-            "path": "mcp/src/agents_remember/application/review_source_content.py"
           },
           "kind": "code"
         }

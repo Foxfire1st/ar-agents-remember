@@ -1,14 +1,15 @@
 {
   "path": "dashboard/src/panels/sprint-graph/SprintGraphPage.test.tsx",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
-      "note": "The shell-level suite pins graph/queue reachability, sprint scoping, graphless queue reachability, and mounted canonical-reset clearance.\n\nAnchor: \"sprint page shell (L12-R5)\"",
+      "note": "The shell-level suite pins graph/queue reachability, sprint scoping, graphless queue reachability, and mounted canonical-reset clearance.",
       "targets": [
         {
           "anchor": {
-            "blob": "b1b733ab38f367f1c6ed72ba59926c718fb1860e",
-            "content": "sha256:ff353cc0dd6338a7111856285952b326b785485d0e559fc0c6d877c84142ddf9",
+            "blob": "a97a91b414fa03d0b57576be7f306eb7cca5ce6b",
+            "content": "sha256:84d5be783113c7dcbce4e208b5168700df8679ee77ed942226bc0932af3d1a93",
             "locator": {
               "end": 174,
               "kind": "line_range",
@@ -24,7 +25,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1b073b40c856a543a8a8616ba9888a747125bdf7",
+            "blob": "502be409c27eb74c17f996f378046fc8adcb252e",
             "content": "sha256:ec573cff53f154d2a9eb7c68b3c09300bab15d36ca8a9d123ec6affa32909ddb",
             "locator": {
               "kind": "symbol",
@@ -37,27 +38,14 @@
       ]
     },
     "3": {
-      "note": "The master reader mounts the queue independently of the optional graph section.",
+      "note": "The master reader mounts the queue independently of the optional graph section.\n\nAnchor: `MasterOverview` `SprintGraphSection`",
       "targets": [
         {
           "anchor": {
-            "blob": "d2ced2a394867efd5853cfc0ab0f1144bf890d0c",
-            "content": "sha256:48f3e8fea100eb5135c8242d28f742dab7740b66acfbe1bfc8ced2a0a6778c48",
+            "blob": "d25262c3e75cb900805602c122e9f8f6605ec733",
+            "content": "sha256:82805ff8a3713ade6c30508c8f06281896b47515419deb4f756aec756a13228a",
             "locator": {
-              "kind": "symbol",
-              "name": "MasterOverview"
-            },
-            "path": "dashboard/src/panels/detail-panel/taskReader.tsx"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "5010f4f41e7f40f48b178e0039b7fe40a77875c2",
-            "content": "sha256:a69d6c3ed7680a2369192bb27d9a48da292c1e4a4d1b59b7116126ca9d20e2ca",
-            "locator": {
-              "kind": "symbol",
-              "name": "SprintGraphSection"
+              "kind": "file"
             },
             "path": "dashboard/src/panels/detail-panel/taskReader.tsx"
           },
@@ -87,11 +75,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e696c956756f8e506411a473a7778e5a2afc9bfb",
-            "content": "sha256:cced200f36c56e8c93fbe17acab52d082f0cf155115644acc4f21d0020efd118",
+            "blob": "57b40a28ef6817c4a90d64069b26a67fb7ed47eb",
+            "content": "sha256:6ae77bdf6abb146eeb71ad12c45aa458951015f18c3e53cf3fa6a85396de8a63",
             "locator": {
-              "kind": "symbol",
-              "name": "reset"
+              "end": 317,
+              "kind": "line_range",
+              "start": 298
             },
             "path": "dashboard/src/data/store.ts"
           },
@@ -99,12 +88,11 @@
         },
         {
           "anchor": {
-            "blob": "f98d8c6a89931775693af8e1c31cf9dafd5a7589",
-            "content": "sha256:a3c946229c56406848990af56afd233dc972a7d0f8fbf043b4531ba94ef6904c",
+            "blob": "57b40a28ef6817c4a90d64069b26a67fb7ed47eb",
+            "content": "sha256:cced200f36c56e8c93fbe17acab52d082f0cf155115644acc4f21d0020efd118",
             "locator": {
-              "end": 400,
-              "kind": "line_range",
-              "start": 382
+              "kind": "symbol",
+              "name": "reset"
             },
             "path": "dashboard/src/data/store.ts"
           },

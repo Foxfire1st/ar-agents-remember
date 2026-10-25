@@ -3,15 +3,14 @@
   "realizes": [],
   "references": {
     "13": {
-      "note": "`test_a_forty_member_family_pages_from_read_ar_files_through_knowledge_read_exactly_once` supplies the current fixture or assertion described above.",
+      "note": "`test_a_forty_member_family_pages_from_read_ar_files_through_knowledge_read_exactly_once` supplies the current fixture or assertion described above.\n\nAnchor: `test_a_forty_member_family_pages_from_read_ar_files_through_knowledge_read_exactly_once`",
       "targets": [
         {
           "anchor": {
-            "blob": "af2757afcee6583006c748e2e644424e21532c78",
-            "content": "sha256:6cafc2738e20e584d62fa7b0726e02d38222a4ae6bf59062282ff30f0debf692",
+            "blob": "10e509c9a1f107e5fd47ad23a0aa985becb4f0d8",
+            "content": "sha256:f2f3488328213746b59dbe9a3b42ce4958c9ed180a8d0ce30eb6923ded697605",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_forty_member_family_pages_from_read_ar_files_through_knowledge_read_exactly_once"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -19,15 +18,14 @@
       ]
     },
     "14": {
-      "note": "`test_a_row_larger_than_the_threshold_is_returned_alone_and_flagged` supplies the current fixture or assertion described above.",
+      "note": "`test_a_row_larger_than_the_threshold_is_returned_alone_and_flagged` supplies the current fixture or assertion described above.\n\nAnchor: `test_a_row_larger_than_the_threshold_is_returned_alone_and_flagged`",
       "targets": [
         {
           "anchor": {
-            "blob": "af2757afcee6583006c748e2e644424e21532c78",
-            "content": "sha256:e3188f67f72458c4153592d60a58a4b1ef8e9963fd0f78e3f940fbec2a199b95",
+            "blob": "10e509c9a1f107e5fd47ad23a0aa985becb4f0d8",
+            "content": "sha256:f2f3488328213746b59dbe9a3b42ce4958c9ed180a8d0ce30eb6923ded697605",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_row_larger_than_the_threshold_is_returned_alone_and_flagged"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -51,15 +49,14 @@
       ]
     },
     "16": {
-      "note": "`test_a_view_walk_is_bound_to_its_named_code_tree` supplies the current fixture or assertion described above.",
+      "note": "`test_a_view_walk_is_bound_to_its_named_code_tree` supplies the current fixture or assertion described above.\n\nAnchor: `test_a_view_walk_is_bound_to_its_named_code_tree`",
       "targets": [
         {
           "anchor": {
-            "blob": "af2757afcee6583006c748e2e644424e21532c78",
-            "content": "sha256:3856a4399522bc17dff9b60b749779cb0c164294f420a5a9cb1966188ce964e4",
+            "blob": "10e509c9a1f107e5fd47ad23a0aa985becb4f0d8",
+            "content": "sha256:f2f3488328213746b59dbe9a3b42ce4958c9ed180a8d0ce30eb6923ded697605",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_view_walk_is_bound_to_its_named_code_tree"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -83,15 +80,14 @@
       ]
     },
     "18": {
-      "note": "The cross-surface 40-member walk, exactly once.",
+      "note": "Forty-member direct knowledge_read walk, exactly once; the historical test name does not describe its current first call.\n\nAnchor: `test_a_forty_member_family_pages_from_read_ar_files_through_knowledge_read_exactly_once`",
       "targets": [
         {
           "anchor": {
-            "blob": "af2757afcee6583006c748e2e644424e21532c78",
-            "content": "sha256:6cafc2738e20e584d62fa7b0726e02d38222a4ae6bf59062282ff30f0debf692",
+            "blob": "10e509c9a1f107e5fd47ad23a0aa985becb4f0d8",
+            "content": "sha256:f2f3488328213746b59dbe9a3b42ce4958c9ed180a8d0ce30eb6923ded697605",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_forty_member_family_pages_from_read_ar_files_through_knowledge_read_exactly_once"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -99,15 +95,14 @@
       ]
     },
     "19": {
-      "note": "Threshold adherence over randomized families.",
+      "note": "Threshold adherence over randomized families.\n\nAnchor: `test_pages_stay_within_the_threshold_over_randomized_families`",
       "targets": [
         {
           "anchor": {
-            "blob": "af2757afcee6583006c748e2e644424e21532c78",
-            "content": "sha256:f8205d3ffb4c56bbfbfc8f365bf0d5e70d9e6e8184f1b004e736bbf106906aaa",
+            "blob": "10e509c9a1f107e5fd47ad23a0aa985becb4f0d8",
+            "content": "sha256:f2f3488328213746b59dbe9a3b42ce4958c9ed180a8d0ce30eb6923ded697605",
             "locator": {
-              "kind": "symbol",
-              "name": "test_pages_stay_within_the_threshold_over_randomized_families"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -115,15 +110,14 @@
       ]
     },
     "20": {
-      "note": "An oversized row alone and flagged, as the page's one counted leaf row.",
+      "note": "Large prose is not carried in projected rows and produces no oversized-row flag.\n\nAnchor: `test_a_row_larger_than_the_threshold_is_returned_alone_and_flagged`",
       "targets": [
         {
           "anchor": {
-            "blob": "af2757afcee6583006c748e2e644424e21532c78",
-            "content": "sha256:e3188f67f72458c4153592d60a58a4b1ef8e9963fd0f78e3f940fbec2a199b95",
+            "blob": "10e509c9a1f107e5fd47ad23a0aa985becb4f0d8",
+            "content": "sha256:f2f3488328213746b59dbe9a3b42ce4958c9ed180a8d0ce30eb6923ded697605",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_row_larger_than_the_threshold_is_returned_alone_and_flagged"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -131,15 +125,14 @@
       ]
     },
     "21": {
-      "note": "Binding refusals with no page.",
+      "note": "Binding refusals with no page.\n\nAnchor: `test_a_continuation_whose_binding_does_not_hold_is_refused_with_no_page`",
       "targets": [
         {
           "anchor": {
-            "blob": "af2757afcee6583006c748e2e644424e21532c78",
-            "content": "sha256:a0c773f95a4dc62a494b3c2b6cc3f496405b5b48fa2f47087e4a8b084e66f6c3",
+            "blob": "10e509c9a1f107e5fd47ad23a0aa985becb4f0d8",
+            "content": "sha256:f2f3488328213746b59dbe9a3b42ce4958c9ed180a8d0ce30eb6923ded697605",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_continuation_whose_binding_does_not_hold_is_refused_with_no_page"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -163,15 +156,14 @@
       ]
     },
     "23": {
-      "note": "A view walk keeps its ordering.",
+      "note": "A view walk keeps its ordering.\n\nAnchor: `test_a_view_walk_resumes_in_its_own_ordering_and_refuses_another`",
       "targets": [
         {
           "anchor": {
-            "blob": "af2757afcee6583006c748e2e644424e21532c78",
-            "content": "sha256:26efc006f9757c2bf3280e96723b520d08e0835c304b9e207f7476789a3747bd",
+            "blob": "10e509c9a1f107e5fd47ad23a0aa985becb4f0d8",
+            "content": "sha256:f2f3488328213746b59dbe9a3b42ce4958c9ed180a8d0ce30eb6923ded697605",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_view_walk_resumes_in_its_own_ordering_and_refuses_another"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -179,26 +171,14 @@
       ]
     },
     "24": {
-      "note": "Resumed pages stay at page 1's code tree: a leaf walk's entries are current at T1 and stale at T2, and a named view walk keeps its tree.",
+      "note": "Resumed pages stay at page 1's code tree: a leaf walk's entries are current at T1 and stale at T2, and a named view walk keeps its tree.\n\nAnchor: `test_a_resumed_leaf_walk_observes_entries_at_page_one_code_tree` `test_a_view_walk_is_bound_to_its_named_code_tree`",
       "targets": [
         {
           "anchor": {
-            "blob": "af2757afcee6583006c748e2e644424e21532c78",
-            "content": "sha256:300a4289ad4787259981d02f0229ea8254116af868d81b56b463f32a23e5084f",
+            "blob": "10e509c9a1f107e5fd47ad23a0aa985becb4f0d8",
+            "content": "sha256:f2f3488328213746b59dbe9a3b42ce4958c9ed180a8d0ce30eb6923ded697605",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_resumed_leaf_walk_observes_entries_at_page_one_code_tree"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "af2757afcee6583006c748e2e644424e21532c78",
-            "content": "sha256:c4ad15e71f6a60d87bc85c4dfe5fe43aa537b7141833442962fbbf80a784cc98",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_a_view_walk_is_bound_to_its_named_code_tree"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -206,26 +186,14 @@
       ]
     },
     "25": {
-      "note": "The leaf-row helpers: the counted rows, and the key that identifies each row once.",
+      "note": "The leaf-row helpers: the counted rows, and the key that identifies each row once.\n\nAnchor: `_counted` `_leaf_key`",
       "targets": [
         {
           "anchor": {
-            "blob": "af2757afcee6583006c748e2e644424e21532c78",
-            "content": "sha256:e91fd1eecbf0bba9dc72be92c6c6dac0849439d3ebdd209c557d21a309d697f1",
+            "blob": "10e509c9a1f107e5fd47ad23a0aa985becb4f0d8",
+            "content": "sha256:f2f3488328213746b59dbe9a3b42ce4958c9ed180a8d0ce30eb6923ded697605",
             "locator": {
-              "kind": "symbol",
-              "name": "_counted"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "af2757afcee6583006c748e2e644424e21532c78",
-            "content": "sha256:ace129c2b646f706ade6816442bf056a44318dd0108abd6e2172d859da1f0ccb",
-            "locator": {
-              "kind": "symbol",
-              "name": "_leaf_key"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -233,15 +201,14 @@
       ]
     },
     "26": {
-      "note": "An empty ordering is refused on every path.",
+      "note": "An empty ordering is refused on every path.\n\nAnchor: `test_an_empty_ordering_is_refused_not_defaulted_on_every_path`",
       "targets": [
         {
           "anchor": {
-            "blob": "af2757afcee6583006c748e2e644424e21532c78",
-            "content": "sha256:b296b7ec76e5dc0bfb1a4beffb17ec15b88592c4cea58dbd218af78523279110",
+            "blob": "10e509c9a1f107e5fd47ad23a0aa985becb4f0d8",
+            "content": "sha256:f2f3488328213746b59dbe9a3b42ce4958c9ed180a8d0ce30eb6923ded697605",
             "locator": {
-              "kind": "symbol",
-              "name": "test_an_empty_ordering_is_refused_not_defaulted_on_every_path"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -253,8 +220,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8bc70ba3cb21695b6dc67ae3033596df88286e95",
-            "content": "sha256:42441febfa498fd9d9d54172712e37213973864af15966b1b623b90ad92bb14e",
+            "blob": "10e509c9a1f107e5fd47ad23a0aa985becb4f0d8",
+            "content": "sha256:f2f3488328213746b59dbe9a3b42ce4958c9ed180a8d0ce30eb6923ded697605",
             "locator": {
               "kind": "file"
             }

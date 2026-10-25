@@ -1,5 +1,6 @@
 {
   "path": "mcp/tests/test_automatic_post_integration_cleanup.py",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
@@ -20,28 +21,16 @@
       ]
     },
     "10": {
-      "note": "The fail-closed lane this module must be listed in, and the dependency-classification entry that also names it.",
+      "note": "The dependency-classification entry that names this module as a consumer of the certification profile. Source caption: `AMBIENT_ROLE_RUNNER_PATH`",
       "targets": [
         {
           "anchor": {
-            "blob": "714e1a18805fd6467245ba071ddbe401644984a3",
-            "content": "sha256:41dd89d4992a4269cb1237b53c9769192514a29aaa88e34c87fb51369805b58d",
+            "blob": "102c4550ab6429f44c8fb543d1d0662de66a1b8c",
+            "content": "sha256:72cf239a42d6d0450e87e4af1bbf17006485882ebed6036192f3b7cec96adb0b",
             "locator": {
-              "kind": "symbol",
-              "name": "AMBIENT_ROLE_RUNNER_PATH"
-            },
-            "path": "mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "11ba98ff63f4a4815985ac51e2c0c7b5a48556a4",
-            "content": "sha256:06edb6007a03cdef8c64af3cd106e79e2263d4c2f3422ec37daf71bfcd756851",
-            "locator": {
-              "end": 513,
+              "end": 504,
               "kind": "line_range",
-              "start": 513
+              "start": 504
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -49,8 +38,8 @@
         },
         {
           "anchor": {
-            "blob": "714e1a18805fd6467245ba071ddbe401644984a3",
-            "content": "sha256:897882c3038c0de191da0cb816e367f1b392e6b18e447492545c793454c28f7c",
+            "blob": "82360cec3b9a90193f4e9d7dbdf68cf5340dabb6",
+            "content": "sha256:d1706225e3330ea7427589740d67552f2e806f92580656af2b16f3ec068974c9",
             "locator": {
               "end": 61,
               "kind": "line_range",
@@ -72,93 +61,19 @@
             "path": "mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py"
           },
           "kind": "code"
-        }
-      ]
-    },
-    "11": {
-      "note": "The fail-closed lane this module must be listed in, and the dependency-classification entry that also names it.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "714e1a18805fd6467245ba071ddbe401644984a3",
-            "content": "sha256:41dd89d4992a4269cb1237b53c9769192514a29aaa88e34c87fb51369805b58d",
-            "locator": {
-              "kind": "symbol",
-              "name": "AMBIENT_ROLE_RUNNER_PATH"
-            },
-            "path": "mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "11ba98ff63f4a4815985ac51e2c0c7b5a48556a4",
-            "content": "sha256:06edb6007a03cdef8c64af3cd106e79e2263d4c2f3422ec37daf71bfcd756851",
-            "locator": {
-              "end": 513,
-              "kind": "line_range",
-              "start": 513
-            },
-            "path": "mcp/tests/test-evidence-lanes.toml"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "714e1a18805fd6467245ba071ddbe401644984a3",
-            "content": "sha256:897882c3038c0de191da0cb816e367f1b392e6b18e447492545c793454c28f7c",
-            "locator": {
-              "end": 61,
-              "kind": "line_range",
-              "start": 61
-            },
-            "path": "mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py"
-          },
-          "kind": "code"
         },
         {
           "anchor": {
             "blob": "82360cec3b9a90193f4e9d7dbdf68cf5340dabb6",
-            "content": "sha256:7563e9fddebd3b6233c4bff75d8bbaf9be3e65bf0f01dd625cbb0983ed38b2a3",
+            "content": "sha256:688e510f7c8a2009c8e5c645b5af61c473a862c7b104020ac037246da8e91cab",
             "locator": {
-              "end": 76,
+              "end": 594,
               "kind": "line_range",
-              "start": 76
+              "start": 1
             },
             "path": "mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py"
           },
           "kind": "code"
-        }
-      ]
-    },
-    "12": {
-      "note": "The fail-closed lane this module must be listed in, and the dependency-classification entry that also names it.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "714e1a18805fd6467245ba071ddbe401644984a3",
-            "content": "sha256:897882c3038c0de191da0cb816e367f1b392e6b18e447492545c793454c28f7c",
-            "locator": {
-              "end": 61,
-              "kind": "line_range",
-              "start": 61
-            },
-            "path": "mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "11ba98ff63f4a4815985ac51e2c0c7b5a48556a4",
-            "content": "sha256:06edb6007a03cdef8c64af3cd106e79e2263d4c2f3422ec37daf71bfcd756851",
-            "locator": {
-              "end": 513,
-              "kind": "line_range",
-              "start": 513
-            },
-            "path": "mcp/tests/test-evidence-lanes.toml"
-          },
-          "kind": "test"
         }
       ]
     },
@@ -167,8 +82,21 @@
       "targets": [
         {
           "anchor": {
-            "blob": "dec31ccdcb591d5166431d390ccbbd2612e63565",
-            "content": "sha256:46e710059fa3fcc62979171c9b45c62888fc179687f8a1e92e0cfb670917a1b7",
+            "blob": "dcbcb92eb8805a1f241603ea248fdac21fb64a9d",
+            "content": "sha256:0ca1fc1d90191c59879780dfa605be2927cea690034f76e7255aff81f1bd1cf7",
+            "locator": {
+              "end": 371,
+              "kind": "line_range",
+              "start": 312
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/finalize.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "dcbcb92eb8805a1f241603ea248fdac21fb64a9d",
+            "content": "sha256:0ca1fc1d90191c59879780dfa605be2927cea690034f76e7255aff81f1bd1cf7",
             "locator": {
               "kind": "symbol",
               "name": "_run_or_verify_cleanup"
@@ -180,15 +108,16 @@
       ]
     },
     "3": {
-      "note": "The report shaper whose exact sentence and inventory the first case asserts.\n\nAnchor: \"ALREADY_CLEAN = \\\"already-clean\\\"\"",
+      "note": "The report shaper whose exact sentence and inventory the first case asserts.  Anchor: \"ALREADY_CLEAN = \\\"already-clean\\\"\"",
       "targets": [
         {
           "anchor": {
-            "blob": "505f89641c3d479ee1c8304b064d4d3d832165cf",
-            "content": "sha256:5639d25df486b875d0fc0f50cfba0741b129eedf7856fbb199ed17283850a0e5",
+            "blob": "3b7f427a2911b1e7d510e47ddbe5ed92a231af77",
+            "content": "sha256:f71d558a0c6fad3a909c9c129f0e4eff665a1a5e33dee3b11049d8e307514cd9",
             "locator": {
-              "kind": "symbol",
-              "name": "cleanup_report"
+              "end": 69,
+              "kind": "line_range",
+              "start": 29
             },
             "path": "mcp/src/agents_remember/worktrees/modules/cleanup_report.py"
           },
@@ -210,12 +139,23 @@
       ]
     },
     "4": {
-      "note": "The landing route whose no-reclamation the cases assert, including the payload's untouched `cleanup` cell.",
+      "note": "The landing route whose no-reclamation the cases assert, including the payload's untouched `cleanup` cell.\n\nAnchor: `_integrated_result`",
       "targets": [
         {
           "anchor": {
-            "blob": "6cfdec1af86890182716df842f338bd4955bda31",
-            "content": "sha256:9b0569f5ca05d19067afede918008bfa44c9c8bb9da3886a679c479845156ce7",
+            "blob": "1f67d47b47455dbb360a0884ecaa0e4aa1da3383",
+            "content": "sha256:27fad559a8b42dd8535ce73c5eba0d269dafc45e5e0cc300ab1fbd175477a587",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/integrate.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1f67d47b47455dbb360a0884ecaa0e4aa1da3383",
+            "content": "sha256:7e0afbd8d9e318e9847056e83dfe8a8bc0e578ad69976f341a823b0ae146dbc4",
             "locator": {
               "kind": "symbol",
               "name": "_integrated_result"
@@ -244,12 +184,23 @@
       ]
     },
     "6": {
-      "note": "The terminal operation the first case calls.",
+      "note": "The terminal operation the first case calls.\n\nAnchor: `lifecycle_finalize_task_tool`",
       "targets": [
         {
           "anchor": {
-            "blob": "dfa2872ad0a9789182edbd48e33d561d9929e0ba",
-            "content": "sha256:04d588697a60102cb96b6cf63363498e99e180b6e2eb93a23e493ae0ff667bbb",
+            "blob": "f70e3d124e543009c5876c7472ccdb85120ff60c",
+            "content": "sha256:bbb78251410816eadf042a2a830aa80b49cba552da4ddedc15da284b6fb36888",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/worktree_tools.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f70e3d124e543009c5876c7472ccdb85120ff60c",
+            "content": "sha256:4e8196e941fb43e63fb6854a5666176542e8a6ae1c28085ce979fa1f060ee59d",
             "locator": {
               "kind": "symbol",
               "name": "lifecycle_finalize_task_tool"

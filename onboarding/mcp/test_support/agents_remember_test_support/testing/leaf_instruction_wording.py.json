@@ -23,15 +23,14 @@
   ],
   "references": {
     "1": {
-      "note": "The affirmative clause tables are the wording guards' data.",
+      "note": "The affirmative clause tables are the wording guards' data.\n\nAnchor: `autonomy_clauses`",
       "targets": [
         {
           "anchor": {
-            "blob": "8f1f34fc0112cdf2edbdac3aa4eb8b918fad0325",
-            "content": "sha256:ba411ec6775c52084f5766fb233ba276d24d0fa5343085ec7a574750c4810e4a",
+            "blob": "446dd8459833bdf3c6d25cfedf8dd4cec8518c14",
+            "content": "sha256:5dc9310e27291c58aa9730209dd98899aebe332b431538fef8938b191714df06",
             "locator": {
-              "kind": "symbol",
-              "name": "autonomy_clauses"
+              "kind": "file"
             }
           },
           "kind": "code"

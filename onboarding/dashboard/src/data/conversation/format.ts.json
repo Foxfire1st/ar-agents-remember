@@ -1,5 +1,6 @@
 {
   "path": "dashboard/src/data/conversation/format.ts",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
@@ -19,12 +20,12 @@
       ]
     },
     "3": {
-      "note": "ServingBuildStamp uses humanizeDuration for uptime; no notifier consumer remains.\n\nAnchor: `ServingBuildStamp`",
+      "note": "ServingBuildStamp uses humanizeDuration for uptime; no notifier consumer remains.",
       "targets": [
         {
           "anchor": {
-            "blob": "01fba3cb6e8f87f6cb5855729b1ff805ef49457e",
-            "content": "sha256:e7ea9f946b6ed2b2d854b1b0daa61cd6e81737a10799c6ff17ae34d05f5951fe",
+            "blob": "1b839113b8d511b4a8343230e70a8de0be01b79f",
+            "content": "sha256:a8152c8952fadad87a17271c8a6febccb6420f118def2bd84f341dab609d41c2",
             "locator": {
               "kind": "file"
             },

@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/application/knowledge_currentness/observe.py",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
@@ -39,7 +40,7 @@
       ]
     },
     "10": {
-      "note": "A persistent unavailability is not a Git failure.",
+      "note": "A persistent unavailability is not a Git failure.  The retained ruling-N1 summary below describes the earlier ordering. The current ordering inserts the symbol UTF-8 check between absent-path handling and the unchanged-blob shortcut; the historical summary is not an unconditional unchanged-blob guarantee.",
       "targets": [
         {
           "anchor": {
@@ -66,12 +67,22 @@
       ]
     },
     "11": {
-      "note": "The ruling-N1 order: no tree, absent path, unchanged blob, then an unsupported kind.",
+      "note": "The ruling-N1 order: no tree, absent path, unchanged blob, then an unsupported kind.\n\nAnchor: `_decided_without_resolving`",
       "targets": [
         {
           "anchor": {
-            "blob": "81dcea1b16208c6b059f61fbe255476540bce8f2",
-            "content": "sha256:7ac87a67709e922ea13ad89963a250dca297b002f56046e699fb2dbf64ce8d54",
+            "blob": "14c36233cc407eb063ea278c91cbec6ae3a40f9e",
+            "content": "sha256:85bc164fdbd51e0c08e705ded0b91d4ad34b447bb2bf211f11714dfc2bd3abd3",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "14c36233cc407eb063ea278c91cbec6ae3a40f9e",
+            "content": "sha256:07b81f0136f2f18fe7a929ff4408d7777e26872918dbb99868c2e519ac3597c1",
             "locator": {
               "kind": "symbol",
               "name": "_decided_without_resolving"
@@ -114,12 +125,23 @@
       ]
     },
     "14": {
-      "note": "The reused resolver: the worklist's tree reader and its `resolve`.",
+      "note": "The reused resolver: the worklist's tree reader and its `resolve`.\n\nAnchor: `CodeTrees` `has_blob`",
       "targets": [
         {
           "anchor": {
-            "blob": "2fd41127da6e3a6af1dd01f319f5c60b6f2a6d37",
-            "content": "sha256:f70beddff6b31e691412efeded570e9743aaf0353948b9d35b6f5bc32f9a2b3e",
+            "blob": "6255576ebc9394ffd9e9e8a1dd0ca50a787028ab",
+            "content": "sha256:c2debfa8c5e3aed6a462b9680912cd4404f584e032fad7d4c3b0cd02741e7615",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_worklist/code.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6255576ebc9394ffd9e9e8a1dd0ca50a787028ab",
+            "content": "sha256:1dd5cd437f7039596d4ac6898e638976865eba00154855e8dd9e666665e39b24",
             "locator": {
               "kind": "symbol",
               "name": "CodeTrees"
@@ -143,12 +165,23 @@
       ]
     },
     "15": {
-      "note": "The order cases: unchanged Markdown is current, changed is unverifiable, deleted is stale.",
+      "note": "The order cases: unchanged Markdown is current, changed is unverifiable, deleted is stale.\n\nAnchor: `test_unverifiable_names_why_for_no_tree_an_unreadable_tree_and_an_unsupported_locator`",
       "targets": [
         {
           "anchor": {
-            "blob": "85c55f2eaf44e11e20283306277a55040b2fa8a1",
-            "content": "sha256:76f360523e4d81230992fb73e53e75815f37025d3a7be3c3f97d1654bb032aa3",
+            "blob": "035d30df74bd1bad93ddc28456d591c1024b28d2",
+            "content": "sha256:58f2f830be97427187427103b14ba610b4a99dad8ba64e42c299bd5fd25f7478",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_knowledge_currentness.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "035d30df74bd1bad93ddc28456d591c1024b28d2",
+            "content": "sha256:cda3d34f58560584f2afc46023aa50b6b813fe885530ca364cd9c3e79d65ddc1",
             "locator": {
               "kind": "symbol",
               "name": "test_unverifiable_names_why_for_no_tree_an_unreadable_tree_and_an_unsupported_locator"
@@ -160,12 +193,23 @@
       ]
     },
     "16": {
-      "note": "A timed-out Git call is unverifiable and is not cached.",
+      "note": "A timed-out Git call is unverifiable and is not cached.\n\nAnchor: `test_a_failed_or_timed_out_git_call_is_unverifiable_with_its_reason`",
       "targets": [
         {
           "anchor": {
-            "blob": "85c55f2eaf44e11e20283306277a55040b2fa8a1",
-            "content": "sha256:b4b5303e01008d309a914dfee70cce629dc9ec69fdc15264cf4c27442b77bab0",
+            "blob": "035d30df74bd1bad93ddc28456d591c1024b28d2",
+            "content": "sha256:58f2f830be97427187427103b14ba610b4a99dad8ba64e42c299bd5fd25f7478",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_knowledge_currentness.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "035d30df74bd1bad93ddc28456d591c1024b28d2",
+            "content": "sha256:e6a12fb3e414bb8b9b3d368a8c6b5a5a4cb475722ec9f460b65408220f29d169",
             "locator": {
               "kind": "symbol",
               "name": "test_a_failed_or_timed_out_git_call_is_unverifiable_with_its_reason"
@@ -204,6 +248,18 @@
               "end": 303,
               "kind": "line_range",
               "start": 276
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "14c36233cc407eb063ea278c91cbec6ae3a40f9e",
+            "content": "sha256:847f7690b50dc800ed5e7d0dfa87e4094546d60f56d410a3f76acfbef98f343c",
+            "locator": {
+              "end": 299,
+              "kind": "line_range",
+              "start": 272
             }
           },
           "kind": "code"
@@ -282,12 +338,22 @@
       ]
     },
     "4": {
-      "note": "The requested tree, and one read of its file list with a named problem for none or an unreadable tree.",
+      "note": "The requested tree, and one read of its file list with a named problem for none or an unreadable tree.\n\nAnchor: `CodeTree` `open_code_tree`",
       "targets": [
         {
           "anchor": {
-            "blob": "5eb7e050a738069eb8cf1e63657644af42af5922",
-            "content": "sha256:0abe2ee4e0d31421a27d15f6fb73c3c8f8876489bcf8630ae37920345e2797a3",
+            "blob": "14c36233cc407eb063ea278c91cbec6ae3a40f9e",
+            "content": "sha256:85bc164fdbd51e0c08e705ded0b91d4ad34b447bb2bf211f11714dfc2bd3abd3",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "14c36233cc407eb063ea278c91cbec6ae3a40f9e",
+            "content": "sha256:f00e625851e27a0f13b38dfd51d145de2906fb737037ce50343737e6689ae918",
             "locator": {
               "kind": "symbol",
               "name": "CodeTree"
@@ -297,8 +363,8 @@
         },
         {
           "anchor": {
-            "blob": "5eb7e050a738069eb8cf1e63657644af42af5922",
-            "content": "sha256:35abf4a195263604c455c0d071fa1789f6dcf70c87d486e04374c7b0e0272a13",
+            "blob": "14c36233cc407eb063ea278c91cbec6ae3a40f9e",
+            "content": "sha256:590a26b861f4be1e55a3327efec14c950fc26492b25dd21dd494d819be049f27",
             "locator": {
               "kind": "symbol",
               "name": "open_code_tree"
@@ -395,6 +461,18 @@
               "end": 156,
               "kind": "line_range",
               "start": 156
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "14c36233cc407eb063ea278c91cbec6ae3a40f9e",
+            "content": "sha256:96026934b67e32405909caa6656627d2af0c59c5c81fb299bb8689a771387a76",
+            "locator": {
+              "end": 152,
+              "kind": "line_range",
+              "start": 152
             }
           },
           "kind": "code"

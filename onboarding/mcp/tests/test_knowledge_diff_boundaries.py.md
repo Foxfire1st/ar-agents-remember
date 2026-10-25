@@ -144,7 +144,9 @@ No configured domain documentation could be checked.
 - The two readers that let a case name a record rather than a position. [34]
 
 
+
 - Expansion asserts requested trees/roots and delimiter-safe command without HEAD; authored changed paths are an attributed subset, disjoint from the singleton unattributed gap, not an exact attributed-set census. [35]
+
 
 - **The changed path no recorded realization attributes, listed as a visible gap that survives a filter.** [36]
 - The moved obligation's source observed on the side that claims it. [37]
@@ -177,7 +179,12 @@ No configured domain documentation could be checked.
 
 
 
-- The module is registered in the integration lane and the current support-artifact consumer lists; catalog declaration is not execution evidence. [50]
+
+
+
+> Retained earlier citation wording: - The module is registered in the integration lane and the current support-artifact consumer lists; catalog declaration is not execution evidence. [50]
+
+
 
 
 
@@ -188,3 +195,5 @@ The module commits two real temporary Git repositories and points one at the oth
 under `tmp_path`. No configured remote, protected branch or sibling repository is touched.
 
 No configured cross-repository evidence is claimed.
+
+- The module is registered in the integration lane and the current support-artifact consumer lists; catalog declaration is not execution evidence. [50]

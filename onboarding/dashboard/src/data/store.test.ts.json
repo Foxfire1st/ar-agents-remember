@@ -1,14 +1,26 @@
 {
   "path": "dashboard/src/data/store.test.ts",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
-      "note": "System under test: the Zustand store these reducers belong to, including its one full reset transaction.",
+      "note": "System under test: the Zustand store these reducers belong to, including its one full reset transaction.\n\nAnchor: `dashboardStore` `reset`",
       "targets": [
         {
           "anchor": {
-            "blob": "f98d8c6a89931775693af8e1c31cf9dafd5a7589",
-            "content": "sha256:a481771a6a1f49857fdf4bab41702258222f16824150f29d9da3b3906411dccd",
+            "blob": "57b40a28ef6817c4a90d64069b26a67fb7ed47eb",
+            "content": "sha256:e6bf93bba9343c7e5745a763afa66ba650cdd0e61f20ce4f6595c1eddd38f132",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/data/store.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "57b40a28ef6817c4a90d64069b26a67fb7ed47eb",
+            "content": "sha256:7d848921fbedbcb47a35a4619f64fd504a105dcf4386c364e35bccd9755eefb5",
             "locator": {
               "kind": "symbol",
               "name": "dashboardStore"
@@ -19,7 +31,7 @@
         },
         {
           "anchor": {
-            "blob": "e696c956756f8e506411a473a7778e5a2afc9bfb",
+            "blob": "57b40a28ef6817c4a90d64069b26a67fb7ed47eb",
             "content": "sha256:cced200f36c56e8c93fbe17acab52d082f0cf155115644acc4f21d0020efd118",
             "locator": {
               "kind": "symbol",
@@ -36,7 +48,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e696c956756f8e506411a473a7778e5a2afc9bfb",
+            "blob": "57b40a28ef6817c4a90d64069b26a67fb7ed47eb",
             "content": "sha256:2f18f6e7b4d67baf5a8247a5f1b7ef458b6058c1f0ed8858151d5ad447397bbb",
             "locator": {
               "kind": "symbol",
@@ -49,12 +61,12 @@
       ]
     },
     "3": {
-      "note": "Snapshot fold + named-delta upsert/removed + wholesale metrics/analytics + conn channel.\n\nAnchor: \"folds a snapshot into id-keyed maps and goes live\"",
+      "note": "Snapshot fold + named-delta upsert/removed + wholesale metrics/analytics + conn channel.",
       "targets": [
         {
           "anchor": {
-            "blob": "37d6067ffde2ebebbddb7257ae4a7a9413852bd0",
-            "content": "sha256:80082b9b7adca79128e1c4a9355a18b37596ca7fea3aa40ad3cc36af32281ac1",
+            "blob": "2ba1bc3b3c854df3202c4331b0326069119557ec",
+            "content": "sha256:8585842d4ef1b3a534314f6064cbb930f26b7f7d35c0e238aa439e63b7154e21",
             "locator": {
               "end": 102,
               "kind": "line_range",
@@ -66,12 +78,12 @@
       ]
     },
     "4": {
-      "note": "The typed nonempty queue fixture and direct canonical-reset regression force exact queue clearance plus one generation increment.\n\nAnchor: \"clears a seeded closeout queue and increments generation exactly once on reset\"",
+      "note": "The typed nonempty queue fixture and direct canonical-reset regression force exact queue clearance plus one generation increment.",
       "targets": [
         {
           "anchor": {
-            "blob": "26e6936b4a667f530ee7c6844814d6f8236857d6",
-            "content": "sha256:7764cdc7395b1f2fcbf09e7ebdc4a64059b6f44f382b1026db90c4e5494e1fad",
+            "blob": "2ba1bc3b3c854df3202c4331b0326069119557ec",
+            "content": "sha256:f54d4c21495daf07f4f9a1e67127b1ec6c93177752ca158a003031ae2c2f5c57",
             "locator": {
               "kind": "symbol",
               "name": "RESET_QUEUE"
@@ -81,8 +93,8 @@
         },
         {
           "anchor": {
-            "blob": "26e6936b4a667f530ee7c6844814d6f8236857d6",
-            "content": "sha256:2ddace034235d12de83acf23a4332c1410aff7ccf933f340caf39996f613a624",
+            "blob": "2ba1bc3b3c854df3202c4331b0326069119557ec",
+            "content": "sha256:b7926dc9634c2c242fbc14aee408525a68994a92a9fa05a2597a0d3826af0fb2",
             "locator": {
               "end": 114,
               "kind": "line_range",
@@ -90,11 +102,21 @@
             }
           },
           "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "2ba1bc3b3c854df3202c4331b0326069119557ec",
+            "content": "sha256:02f42c0508842019120e2f9b79377807c075084fc29fcfe67b916dcaaa704a32",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
         }
       ]
     },
     "6": {
-      "note": "The fixture narrowing and the fixture-derived lifecycle count.\n\nAnchor: \"export function asServedProjection\"",
+      "note": "Fixture narrowing and task-derived keys/count replace lifecycle population.\n\nAnchor: \"export function asServedProjection\"",
       "targets": [
         {
           "anchor": {
@@ -158,15 +180,14 @@
       ]
     },
     "9": {
-      "note": "Projection / observer-event types the store maps over.",
+      "note": "The projection mirror the store folds into its id-keyed maps on each snapshot.\n\nAnchor: `WorkspaceProjection`",
       "targets": [
         {
           "anchor": {
-            "blob": "32f61ad92158b8a4519a35f725ce765c87f2ec99",
-            "content": "sha256:0f6e963168be5aeccb761d64603f4c4f77cace12721e5e7ca5d9f1e8e26a1ebd",
+            "blob": "d71e9db1948f52b82bd84b2348775f13ac9b57e7",
+            "content": "sha256:daaaf9f80d95ac50acc42b4097c5fcc9293b51a91e135d7b45f3ae87ee7e947f",
             "locator": {
-              "kind": "symbol",
-              "name": "WorkspaceProjection"
+              "kind": "file"
             },
             "path": "dashboard/src/types/projection.ts"
           },

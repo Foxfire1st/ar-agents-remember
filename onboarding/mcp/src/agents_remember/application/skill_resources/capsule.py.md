@@ -112,9 +112,13 @@ This account is bound to the candidate source, not a claim of a running serving 
 ## Evidence
 
 
+
 - The current response registry omits former capsule/catalog tools; retained response types are not public tool exposure. [16]
+
 - Launch copies detail files, substitutes paths, and records frozen revisions. [17]
+
 - Replay validates regular opened files and frozen revisions at deterministic detail names beside the saved handover in its recorded canonical folder, not mutable corpus sources. [18]
+
 - Per-request detail artifacts use exact admitted bytes beside the handover and write-once publication. [19]
 - File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence. [20]
 
@@ -127,17 +131,29 @@ sources.
 
 ### Repo-Internal References
 
+
 - The four refusal-capable steps and the outcome that carries the binding in both shapes. [1]
+
 - The seat is derived from the document's altitude and the role string is validated against it, never used as authority. [2]
 - The admitted revision is the digest of the JSON bytes the task store handed over. [3]
+
 - The role/altitude rule the operation checks against. [4]
+
 - Selection comes from the manifest, and the declared skill `source` is the admitted path while the `uri` is provenance. [5]
+
 - The seat-addressed form of the same routing rule, for a caller with no task document. [6]
+
 - D13's repair: the root read out of the contract the request names, and carried onto the enclosure so the projection uses the same one. [7]
-- Historical D13 registered-boundary repair and its then-current schema test; this is not evidence that the removed capsule tool is currently advertised. [8]
+
+- The wiring case asserts role_capsule_compile is absent from registered tools, then verifies the direct capsule entry point resolves its real enclosure through CapsuleCompileRequest and returns instructions. [8]
+
+
 - The launch compiler that consumes the seat-addressed routing entry point for a taskless seat. [9]
+
 - The tool policy is a snapshot of the published roster, so a capsule requests tools and never grants them. [10]
+
 - The advertised roster the tool policy snapshots. [11]
+
 - The corpus root, its manifest and its publishing origin travel together as one admission. [12]
 - The composition manifest that routes the admitted source set. [13]
 - The consumer the operation compiles through. [14]

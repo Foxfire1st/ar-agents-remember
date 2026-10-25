@@ -45,16 +45,26 @@ only draws what it is given. The no-marks gutter remains empty. Fitted statement
 
 ### Repo-Internal References
 
+
 - Reuses FilePane's read-only extension set + theme + lang so tokens match plain vs diff. [1]
+
 - The shared CodeMirror theme (chrome + syntax `HighlightStyle`). [2]
 - The lazy language-by-extension map it awaits. [3]
+
 - `split` = MergeView (a=before, b=after, no revertControls); `inline` = unifiedMergeView (mergeControls:false); each side numbered from its own first line when an excerpt is shown. [4]
+
 - What both builders share, including the marked pane's gutter and `drawn` hooks (MIK-L34). [5]
 - The marks gutter, its portals and the reveal this pane hosts. [7]
 - The gutter that keeps a file's own numbering for an excerpt. [9]
+
 - The focused card that passes `firstLine` and `fit`. [10]
+
+
 - The column wrapper that mounts it and supplies `mode`/`collapse`. [11]
+
+
 - The `FileDiff` (before/after content) the caller passes through. [12]
+
 
 - Fitted panes reconfigure marks in existing editors; content changes and ordinary mark changes rebuild with guarded teardown. [6]
 - The content-sized host an expression card uses (MIK-L31). [8]

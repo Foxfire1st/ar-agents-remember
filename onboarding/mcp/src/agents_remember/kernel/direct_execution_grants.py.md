@@ -14,4 +14,5 @@ A grant carries a canonical leaf reference, giver, time and optional architect a
 
 ## Evidence
 
+
 - Owns the shared file representation, addressing, live reads and publication primitives for direct-execution grants [1]

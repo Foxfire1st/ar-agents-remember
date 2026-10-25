@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/worktrees/modules/git.py",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
@@ -309,12 +310,22 @@
   ],
   "references": {
     "10": {
-      "note": "`worktree_candidate_tree` implements the retained boundary described above.",
+      "note": "`worktree_candidate_tree` implements the retained boundary described above.\n\nAnchor: `worktree_candidate_tree`",
       "targets": [
         {
           "anchor": {
-            "blob": "b3c14f345cc4ad43e07c0d782328e7e381496691",
-            "content": "sha256:ccba9d0b6b768614d7f5c1fc35d1d2b82d509157ec7803f38873ec29dbfeaa2a",
+            "blob": "9cfaea0658dd0c7c7e4ab655d0031da3b206961d",
+            "content": "sha256:4a019192b889ba5cf0845cd636dced6093f739b662c16ac927926c9bf4d0472f",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9cfaea0658dd0c7c7e4ab655d0031da3b206961d",
+            "content": "sha256:464218c7cff86018061e344e5d5a53fd14ad3754b647e995dd80144b4559fdcb",
             "locator": {
               "kind": "symbol",
               "name": "worktree_candidate_tree"
@@ -341,12 +352,22 @@
       ]
     },
     "12": {
-      "note": "`publish_tree_commit` implements the retained boundary described above.",
+      "note": "`publish_tree_commit` implements the retained boundary described above.\n\nAnchor: `publish_tree_commit`",
       "targets": [
         {
           "anchor": {
-            "blob": "dac9461da555a17e7e1718931011a29553718739",
-            "content": "sha256:242527322f3b98a8d9bc518d4882927d59bac7af2602d8c92bc0e85fd484dbfc",
+            "blob": "9cfaea0658dd0c7c7e4ab655d0031da3b206961d",
+            "content": "sha256:4a019192b889ba5cf0845cd636dced6093f739b662c16ac927926c9bf4d0472f",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9cfaea0658dd0c7c7e4ab655d0031da3b206961d",
+            "content": "sha256:a5c1ee4adf4c1c93f7e11dc1cf2c29ffdc506405cc4c3272db2c584f0f8c04a6",
             "locator": {
               "kind": "symbol",
               "name": "publish_tree_commit"
@@ -389,12 +410,22 @@
       ]
     },
     "15": {
-      "note": "Staging writes a private index file when asked; otherwise the worktree's own index.",
+      "note": "Staging writes a private index file when asked; otherwise the worktree's own index.\n\nAnchor: `stage_worktree_content`",
       "targets": [
         {
           "anchor": {
-            "blob": "b3c14f345cc4ad43e07c0d782328e7e381496691",
-            "content": "sha256:3fa4853e3ba5d58ec94dc90ca426452fba3a8ed627b5dadcd585e2d4b0d39b25",
+            "blob": "9cfaea0658dd0c7c7e4ab655d0031da3b206961d",
+            "content": "sha256:4a019192b889ba5cf0845cd636dced6093f739b662c16ac927926c9bf4d0472f",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9cfaea0658dd0c7c7e4ab655d0031da3b206961d",
+            "content": "sha256:f3289bb535ddc8dac5e1c007bfbee06aeb8a0fda33591b76a15080ad8550e442",
             "locator": {
               "kind": "symbol",
               "name": "stage_worktree_content"
@@ -421,12 +452,22 @@
       ]
     },
     "20": {
-      "note": "Candidate trees use private indices and exact derived-path exclusions.",
+      "note": "Candidate trees use private indices and exact derived-path exclusions.\n\nAnchor: `worktree_candidate_tree`",
       "targets": [
         {
           "anchor": {
-            "blob": "b3c14f345cc4ad43e07c0d782328e7e381496691",
-            "content": "sha256:ccba9d0b6b768614d7f5c1fc35d1d2b82d509157ec7803f38873ec29dbfeaa2a",
+            "blob": "9cfaea0658dd0c7c7e4ab655d0031da3b206961d",
+            "content": "sha256:4a019192b889ba5cf0845cd636dced6093f739b662c16ac927926c9bf4d0472f",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9cfaea0658dd0c7c7e4ab655d0031da3b206961d",
+            "content": "sha256:464218c7cff86018061e344e5d5a53fd14ad3754b647e995dd80144b4559fdcb",
             "locator": {
               "kind": "symbol",
               "name": "worktree_candidate_tree"
@@ -474,12 +515,22 @@
       "targets": [
         {
           "anchor": {
-            "blob": "dac9461da555a17e7e1718931011a29553718739",
-            "content": "sha256:37357789d44d1201177e052b41719e02dbe3aa01d803158c900849ca6f96ca85",
+            "blob": "9cfaea0658dd0c7c7e4ab655d0031da3b206961d",
+            "content": "sha256:bd0cfb45af719e50c0af82bc21deb1cf32751ffe7543dffd0e6d693878866898",
             "locator": {
-              "end": 1135,
+              "end": 200,
               "kind": "line_range",
-              "start": 1
+              "start": 160
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9cfaea0658dd0c7c7e4ab655d0031da3b206961d",
+            "content": "sha256:4a019192b889ba5cf0845cd636dced6093f739b662c16ac927926c9bf4d0472f",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -487,12 +538,33 @@
       ]
     },
     "25": {
-      "note": "Capture orchestration delegates private-copy materialization and exclusion pathspecs to their actual owner.",
+      "note": "Capture orchestration delegates private-copy materialization and exclusion pathspecs to their actual owner.\n\nAnchor: `worktree_candidate_tree` `_tree_from_index_copy` `_add_all_args`",
       "targets": [
         {
           "anchor": {
-            "blob": "74952d968257b03b14368884a05d6c3ee73c74f8",
-            "content": "sha256:457bf2374ac715bd7a283bd847f4954e5a05883d3b7990fc10a17ccd5e5fe20f",
+            "blob": "9cfaea0658dd0c7c7e4ab655d0031da3b206961d",
+            "content": "sha256:4a019192b889ba5cf0845cd636dced6093f739b662c16ac927926c9bf4d0472f",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8f53c952d51eb1b83c2d97993768dbc0809cc6ea",
+            "content": "sha256:0a06f9c025ff6aa48b239ca0893bc992df4b397782bb8e5930acf3f69bed7c7b",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/capture_index.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9cfaea0658dd0c7c7e4ab655d0031da3b206961d",
+            "content": "sha256:464218c7cff86018061e344e5d5a53fd14ad3754b647e995dd80144b4559fdcb",
             "locator": {
               "kind": "symbol",
               "name": "worktree_candidate_tree"
@@ -502,8 +574,8 @@
         },
         {
           "anchor": {
-            "blob": "a955cc499935e7a7f74d9dc2c41622e55df65c98",
-            "content": "sha256:4f7f5821a91ff126170485cc55eb81dfbead67fc107bae7dba9c0521632c4abc",
+            "blob": "8f53c952d51eb1b83c2d97993768dbc0809cc6ea",
+            "content": "sha256:8699b57a3d2f03599cb0115133681e0e30af288ae093b1ac52d64d5f24cd62f6",
             "locator": {
               "kind": "symbol",
               "name": "_tree_from_index_copy"
@@ -527,12 +599,23 @@
       ]
     },
     "26": {
-      "note": "The serving count reader retains deletion/rename/binary path facts outside this mutation module.",
+      "note": "The serving count reader retains deletion/rename/binary path facts outside this mutation module.\n\nAnchor: `changed_files_with_counts`",
       "targets": [
         {
           "anchor": {
-            "blob": "5c5bad11e569807e1f8ac3f6b751e29506700331",
-            "content": "sha256:9bd1058368a641b153f336e91799b4bbcc487930c3c224d971f824b3df7de61e",
+            "blob": "92ae1bfa857dbaf808ea47e97592015fb49a034e",
+            "content": "sha256:810f4e3750a0365227a2cb677133ef85646d2923fca5c5e03a2a61e4ecddf3f0",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/serving/changeset_reads.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "92ae1bfa857dbaf808ea47e97592015fb49a034e",
+            "content": "sha256:466d3853142e9f8f7eba582f33a15200367fc6e2f56ca624340d62ab1df1d47d",
             "locator": {
               "kind": "symbol",
               "name": "changed_files_with_counts"
@@ -548,11 +631,35 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7811241b103c8c1b3f9f931a62c42f51a8bc3742",
-            "content": "sha256:868cceba358df705e894864d6ecc17a750a328ae788c89cc4fb803b32930a54f",
+            "blob": "92ae1bfa857dbaf808ea47e97592015fb49a034e",
+            "content": "sha256:466d3853142e9f8f7eba582f33a15200367fc6e2f56ca624340d62ab1df1d47d",
             "locator": {
               "kind": "symbol",
               "name": "changed_files_with_counts"
+            },
+            "path": "mcp/src/agents_remember/serving/changeset_reads.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "92ae1bfa857dbaf808ea47e97592015fb49a034e",
+            "content": "sha256:ad4b61e7390a940b0e324744a2f640308551f688bf3169ed1a26bf50c26fdd1b",
+            "locator": {
+              "end": 48,
+              "kind": "line_range",
+              "start": 25
+            },
+            "path": "mcp/src/agents_remember/serving/changeset_reads.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7811241b103c8c1b3f9f931a62c42f51a8bc3742",
+            "content": "sha256:78b91576ec7a8c2a2ff860653666904d8cc35881aea13fa3d1d2695dbff5b579",
+            "locator": {
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/worktrees/modules/git_changes.py"
           },
@@ -560,14 +667,13 @@
         },
         {
           "anchor": {
-            "blob": "5c5bad11e569807e1f8ac3f6b751e29506700331",
-            "content": "sha256:9bd1058368a641b153f336e91799b4bbcc487930c3c224d971f824b3df7de61e",
+            "blob": "7811241b103c8c1b3f9f931a62c42f51a8bc3742",
+            "content": "sha256:868cceba358df705e894864d6ecc17a750a328ae788c89cc4fb803b32930a54f",
             "locator": {
-              "end": 48,
-              "kind": "line_range",
-              "start": 25
+              "kind": "symbol",
+              "name": "changed_files_with_counts"
             },
-            "path": "mcp/src/agents_remember/serving/changeset_reads.py"
+            "path": "mcp/src/agents_remember/worktrees/modules/git_changes.py"
           },
           "kind": "code"
         }
@@ -636,16 +742,52 @@
             "path": "mcp/tests/test_changeset_cache.py"
           },
           "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "07979a6e10a7cde98e4a4ce1dcaca7a203241e3f",
+            "content": "sha256:ede69db9a6a83701b6ff1391da1e3ff7578f3387510f13def4187f7a7af9d53b",
+            "locator": {
+              "end": 149,
+              "kind": "line_range",
+              "start": 137
+            },
+            "path": "mcp/src/agents_remember/kernel/git_command.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9b90e039ac7b04b6ea75036e5c171b3f53590a62",
+            "content": "sha256:0d534bb3f33fe58247a8a23e5caead8e79c523ecc16d7605730a86464bdb15ea",
+            "locator": {
+              "end": 559,
+              "kind": "line_range",
+              "start": 547
+            },
+            "path": "mcp/tests/test_changeset_cache.py"
+          },
+          "kind": "test"
         }
       ]
     },
     "7": {
-      "note": "One shared entry owns copied-index and existing full capture.",
+      "note": "One shared entry owns copied-index and existing full capture.\n\nAnchor: `worktree_candidate_tree`",
       "targets": [
         {
           "anchor": {
-            "blob": "b3c14f345cc4ad43e07c0d782328e7e381496691",
-            "content": "sha256:ccba9d0b6b768614d7f5c1fc35d1d2b82d509157ec7803f38873ec29dbfeaa2a",
+            "blob": "9cfaea0658dd0c7c7e4ab655d0031da3b206961d",
+            "content": "sha256:4a019192b889ba5cf0845cd636dced6093f739b662c16ac927926c9bf4d0472f",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9cfaea0658dd0c7c7e4ab655d0031da3b206961d",
+            "content": "sha256:464218c7cff86018061e344e5d5a53fd14ad3754b647e995dd80144b4559fdcb",
             "locator": {
               "kind": "symbol",
               "name": "worktree_candidate_tree"
@@ -656,12 +798,23 @@
       ]
     },
     "8": {
-      "note": "The copied index is normalized without changing real-index state.",
+      "note": "The copied index is normalized without changing real-index state.\n\nAnchor: `_tree_from_index_copy`",
       "targets": [
         {
           "anchor": {
-            "blob": "a955cc499935e7a7f74d9dc2c41622e55df65c98",
-            "content": "sha256:4f7f5821a91ff126170485cc55eb81dfbead67fc107bae7dba9c0521632c4abc",
+            "blob": "8f53c952d51eb1b83c2d97993768dbc0809cc6ea",
+            "content": "sha256:0a06f9c025ff6aa48b239ca0893bc992df4b397782bb8e5930acf3f69bed7c7b",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/capture_index.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8f53c952d51eb1b83c2d97993768dbc0809cc6ea",
+            "content": "sha256:8699b57a3d2f03599cb0115133681e0e30af288ae093b1ac52d64d5f24cd62f6",
             "locator": {
               "kind": "symbol",
               "name": "_tree_from_index_copy"
@@ -673,12 +826,23 @@
       ]
     },
     "9": {
-      "note": "Flag clearing uses the worktree top-level and one option per command.",
+      "note": "Flag clearing uses the worktree top-level and one option per command.\n\nAnchor: `_clear_trust_flags`",
       "targets": [
         {
           "anchor": {
-            "blob": "b3c14f345cc4ad43e07c0d782328e7e381496691",
-            "content": "sha256:871ced845e63cf0bf18fccb80718dc23b8d58fe694660bf8aa0c7e4abae3c42c",
+            "blob": "8f53c952d51eb1b83c2d97993768dbc0809cc6ea",
+            "content": "sha256:0a06f9c025ff6aa48b239ca0893bc992df4b397782bb8e5930acf3f69bed7c7b",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/capture_index.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8f53c952d51eb1b83c2d97993768dbc0809cc6ea",
+            "content": "sha256:ea47180569e725ae23c44efa5a74e06605bcc0927ae0a399577b870c77652032",
             "locator": {
               "kind": "symbol",
               "name": "_clear_trust_flags"

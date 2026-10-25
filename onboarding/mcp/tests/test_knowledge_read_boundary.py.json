@@ -3,15 +3,14 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "Selected knowledge reads, refusals, diff, integrity and published intent leave only the allowed footprint.",
+      "note": "Selected knowledge reads, refusals, diff, integrity and published intent leave only the allowed footprint.\n\nAnchor: `test_every_registered_read_leaves_nothing_but_cache`",
       "targets": [
         {
           "anchor": {
-            "blob": "0c67077cbd94cacbe8f28924d4a86ef35dbfd607",
-            "content": "sha256:e8e6b7e5ab47b425340bf9438926dcae1aa60e65eafd8e6bdd5c8416424573fa",
+            "blob": "e08265d997aed2eebd1c08f3c51604da78148c91",
+            "content": "sha256:e4da051ef659645dd219c71c4abb872e01ff4861353d2ccdba85ba8ee5af2a15",
             "locator": {
-              "kind": "symbol",
-              "name": "test_every_registered_read_leaves_nothing_but_cache"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -35,15 +34,14 @@
       ]
     },
     "11": {
-      "note": "Freshness is opt-in: no unrequested fetch, and a requested fetch changes only its bounded Git footprint.",
+      "note": "Freshness is opt-in: no unrequested fetch, and a requested fetch changes only its bounded Git footprint.\n\nAnchor: `test_context_packet_freshness_fetch_is_bounded`",
       "targets": [
         {
           "anchor": {
-            "blob": "0c67077cbd94cacbe8f28924d4a86ef35dbfd607",
-            "content": "sha256:8e2de195edb8ac16e76eea4ae2a2f5aa82ef4d8fa1b60da4f1e784f2e637dca4",
+            "blob": "e08265d997aed2eebd1c08f3c51604da78148c91",
+            "content": "sha256:e4da051ef659645dd219c71c4abb872e01ff4861353d2ccdba85ba8ee5af2a15",
             "locator": {
-              "kind": "symbol",
-              "name": "test_context_packet_freshness_fetch_is_bounded"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -67,15 +65,14 @@
       ]
     },
     "13": {
-      "note": "Remaining preview, carryover and queue paths answer or name their refusals without landing or protected-state mutation.",
+      "note": "Remaining preview, carryover and queue paths answer or name their refusals without landing or protected-state mutation.\n\nAnchor: `test_remaining_preview_plan_and_queue_reads_write_nothing`",
       "targets": [
         {
           "anchor": {
-            "blob": "0c67077cbd94cacbe8f28924d4a86ef35dbfd607",
-            "content": "sha256:700fa8242f83ad1fa20292ff05bdd4c120317928976140ef8a34757e99f3c534",
+            "blob": "e08265d997aed2eebd1c08f3c51604da78148c91",
+            "content": "sha256:e4da051ef659645dd219c71c4abb872e01ff4861353d2ccdba85ba8ee5af2a15",
             "locator": {
-              "kind": "symbol",
-              "name": "test_remaining_preview_plan_and_queue_reads_write_nothing"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -83,12 +80,12 @@
       ]
     },
     "14": {
-      "note": "Current source declarations support the qualified naming or fixture account; no executed test or acceptance is inferred.\n\nAnchor: file",
+      "note": "Current source declarations support the qualified naming or fixture account; no executed test or acceptance is inferred — mcp/tests/test_knowledge_read_boundary.py:1-1037.",
       "targets": [
         {
           "anchor": {
-            "blob": "015929e0ec228216ddc1086336baff53f14766c7",
-            "content": "sha256:9f431f1461fb6c3adece90f6d33bb358beedc9e5f8b92c90e5ad62f7abfbb387",
+            "blob": "e08265d997aed2eebd1c08f3c51604da78148c91",
+            "content": "sha256:24f536192dbb0406753d7eefa8308a049036e7d494249a7adb3c3352bbc21d24",
             "locator": {
               "end": 1037,
               "kind": "line_range",
@@ -100,12 +97,12 @@
       ]
     },
     "15": {
-      "note": "Two formerly raised boundary cases now assert their exact returned refusal codes. Unrelated AuthorityError and CloseoutQueueError controls remain raised; the port is not a blanket catch or exception suppression.\n\nAnchor: Current STOP-delta source carrier",
+      "note": "Two formerly raised boundary cases assert their exact returned refusal codes, while unrelated authority and queue errors still raise.",
       "targets": [
         {
           "anchor": {
-            "blob": "faa2d230b8baa35bdf194ddcef4337ca069003e6",
-            "content": "sha256:c7069fb6fdf1867f9cbee14e3364dc0bf25f9ac2daff080a4c448c578396b2b6",
+            "blob": "e08265d997aed2eebd1c08f3c51604da78148c91",
+            "content": "sha256:e4da051ef659645dd219c71c4abb872e01ff4861353d2ccdba85ba8ee5af2a15",
             "locator": {
               "kind": "file"
             }
@@ -180,15 +177,14 @@
       ]
     },
     "4": {
-      "note": "Review GET routes read without other protected-state changes.",
+      "note": "Review GET routes read without other protected-state changes.\n\nAnchor: `test_review_get_routes_read_without_writing`",
       "targets": [
         {
           "anchor": {
-            "blob": "ca90cf963accfb9a020d0034126399ba21a7aa04",
-            "content": "sha256:8460630c6d8c83890cd4226572ca95b031344da703be088de7d94be5b9c5d763",
+            "blob": "e08265d997aed2eebd1c08f3c51604da78148c91",
+            "content": "sha256:e4da051ef659645dd219c71c4abb872e01ff4861353d2ccdba85ba8ee5af2a15",
             "locator": {
-              "kind": "symbol",
-              "name": "test_review_get_routes_read_without_writing"
+              "kind": "file"
             }
           },
           "kind": "test"

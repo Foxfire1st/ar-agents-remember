@@ -101,14 +101,22 @@ No configured external source applies.
 The following current source boundaries establish the ledger-retirement behavior.
 
 - `LandedIntegration` contains strategy, code commit, and optional memory-content commit. [1]
+
 - `record_landed_integration` writes the same actual outputs for final and checkpoint landing states. [2]
+
 
 - The cell, code/memory commit pair, and strategy this function writes are declared here. (`integration_strategy`; `integrated_code_commit`; `integrated_memory_content_commit`) [3]
 - The landed facts this writer now takes as one frozen record. (`LandedIntegration`) [4]
+
 - The local final route calls this writer instead of amending the contract inline. (`_integrated_result`) [5]
+
+
 - The local checkpoint route calls the same writer with `checkpoint=True`. (`_checkpoint_result`) [6]
+
 - The pull-request route calls the same writer. (`record_landed_integration(`) [7]
-- Cleanup refuses until this cell reads completed — which is what keeps a checkpoint from being reclaimed. (`integration_status`) [8]
+
+> Retained earlier citation wording: - Cleanup refuses until this cell reads completed — which is what keeps a checkpoint from being reclaimed. (`integration_status`) [8]
+
 - The series abandon guard reads the same cell before retiring a master's branch, and since 260831-LOCR-L30 refuses on `checkpointed` as well as `completed`. (`_require_series_task_terminal`) [9]
 
 ### Cross-Repo References
@@ -117,3 +125,5 @@ This is an in-process contract write with no separate repository or external-sys
 there is no cross-repository protocol to cite.
 
 No additional cross-repository evidence applies.
+
+- Cleanup refuses until this cell reads completed — which is what keeps a checkpoint from being reclaimed. (`integration_status`) [8]

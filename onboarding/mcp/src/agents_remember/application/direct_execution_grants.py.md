@@ -14,4 +14,5 @@ direct_execution_grant_tool admits only a launch-bound architect and implements 
 
 ## Evidence
 
+
 - Owns architect grant authority, pre-start mutation, reclamation and the open-direct-sibling guard [1]

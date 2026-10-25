@@ -24,7 +24,11 @@ This account is current source interpretation only. It creates no executed test/
 
 ## Evidence
 
-- One task-source/host join supplies state/membership/counts; action and analytics assembly remain pure. [1]
+
+- Anchor: Current output projection shape. [1]
+
+
+- The facade composes metrics and the narrowed analytical bundle, including closeout queue input, without verification-age rollups. Current counts are task-entry-owned; lifecycle-only counting describes the predecessor, not the current native task fold. [18]
 
 - The current WorkspaceProjection constructor publishes native tasks/counts, unbound enclosures, active groups, queues, host metric and analytics, with no providers collection. [19]
 

@@ -122,12 +122,12 @@
       ]
     },
     "8": {
-      "note": "Downstream quality, retrieval and worktree consumers\n\nAnchor: \"## Consumers\"",
+      "note": "Downstream quality, retrieval and worktree consumers",
       "targets": [
         {
           "anchor": {
-            "blob": "087f2ea84a096539969bb76988efab2c66b869f5",
-            "content": "sha256:e63a98b25c8475d63fa74d9fc96c41e088cd8911d15428dc5b57cadcd9ef014d",
+            "blob": "4cb42479fd1ba4263d792153cfa74b354f7d5aa6",
+            "content": "sha256:075b21c5064c9f107163900f7b9bddd65392697ea7a8ea713666683e8e38fd2b",
             "locator": {
               "end": 123,
               "kind": "line_range",
@@ -139,12 +139,12 @@
       ]
     },
     "9": {
-      "note": "Single resolver ownership and creation/mutation exclusions\n\nAnchor: \"## Boundaries\"",
+      "note": "Single resolver ownership and creation/mutation exclusions",
       "targets": [
         {
           "anchor": {
-            "blob": "087f2ea84a096539969bb76988efab2c66b869f5",
-            "content": "sha256:c032807168c6ee965e4946a760f280914b0b757aa6663af6a9cd50561d861037",
+            "blob": "4cb42479fd1ba4263d792153cfa74b354f7d5aa6",
+            "content": "sha256:434d154f2009ec39d1031ca91af95a5f792ddfc51c1da0c90add868a9c8f1fe8",
             "locator": {
               "end": 129,
               "kind": "line_range",

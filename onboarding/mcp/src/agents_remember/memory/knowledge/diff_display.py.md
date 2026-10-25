@@ -140,9 +140,15 @@ No configured domain documentation could be checked.
 - **The partition arithmetic, re-exported at this seam: the reader, the mapping fact, the side inspection, the partition and the licensing predicate.** [4]
 - **The deleted selection-only calculation, deliberately not replaced: what replaces it is the partition value's own bucket.** [11]
 - The production probe, and the read-only handle the row counts are taken through. [14]
+
 - **The node that measures the expansion naming both trees and every differing path, and the node that measures the unattributed gap surviving a filter.** [15]
+
+
 - **The node that measures the filter narrowing the display and never the comparison.** [16]
+
+
 - The two nodes that measure an unavailable observation reported as unavailable and a real probe making the gap visible. [17]
+
 
 ### Cross-Repo References
 

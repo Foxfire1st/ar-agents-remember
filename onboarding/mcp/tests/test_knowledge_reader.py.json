@@ -1,14 +1,15 @@
 {
   "path": "mcp/tests/test_knowledge_reader.py",
+  "proves": [],
   "realizes": [],
   "references": {
     "14": {
-      "note": "The explorer listing case that now expects the presence mark.\n\nAnchor: `test_the_explorer_lists_code_and_onboarding_children_with_entry_counts`",
+      "note": "The explorer listing case that now expects the presence mark.",
       "targets": [
         {
           "anchor": {
-            "blob": "4ec4c95baf015b3298eca6db77c2a032c0632a63",
-            "content": "sha256:a5c8b0f2ecd42df2805cc5bd15f36edf8030a5e146dfa1365b256354d4c35824",
+            "blob": "52c612f24f8a11ebd50a596cfdad580c051603b7",
+            "content": "sha256:a0f4bc1d383ae0a8f1e04025944cc3e4c1d8d07bab81485616fa4f19d5e79332",
             "locator": {
               "kind": "file"
             }
@@ -191,7 +192,7 @@
       ]
     },
     "38": {
-      "note": "Published selection reads uncommitted memory without writes and pins only clean state; live-leaf selection names excluded uncommitted code; partial-index and missing-code-tree notices remain covered. The hexadecimal-name selection test is absent.\n\nAnchor: inclusive source ranges",
+      "note": "Published selection reads uncommitted memory without writes and pins only clean state; live-leaf selection names excluded uncommitted code; partial-index and missing-code-tree notices remain covered. The hexadecimal-name selection test is absent.",
       "targets": [
         {
           "anchor": {
@@ -207,8 +208,8 @@
         },
         {
           "anchor": {
-            "blob": "19db6df367f5fbe794e1baed60f7491c416043eb",
-            "content": "sha256:d64bbdc08aca662eaea96d5e531025d449cbf9b84099f74f1caff203b52605c6",
+            "blob": "52c612f24f8a11ebd50a596cfdad580c051603b7",
+            "content": "sha256:fba8f37d564116326c7b8ed79a0c0fba2659a0142f01e5d7b282117a4f26124d",
             "locator": {
               "end": 1008,
               "kind": "line_range",
@@ -252,12 +253,38 @@
       "targets": [
         {
           "anchor": {
-            "blob": "11ba98ff63f4a4815985ac51e2c0c7b5a48556a4",
+            "blob": "102c4550ab6429f44c8fb543d1d0662de66a1b8c",
+            "content": "sha256:0e608abff77a6d0c8beda795077995a8f75aebc3828fd8d52e78839c70c12568",
+            "locator": {
+              "end": 172,
+              "kind": "line_range",
+              "start": 170
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "102c4550ab6429f44c8fb543d1d0662de66a1b8c",
             "content": "sha256:86fe9b8f2b0353c4665e60b9f1389fc40bbcf6a102595bb2fcadbb4907b648d6",
             "locator": {
-              "end": 185,
+              "end": 188,
               "kind": "line_range",
-              "start": 183
+              "start": 186
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "102c4550ab6429f44c8fb543d1d0662de66a1b8c",
+            "content": "sha256:82569f82b61a9ceefdf00aa1e61a7128cf1d68c9f70fddc672bd3e975049d762",
+            "locator": {
+              "end": 157,
+              "kind": "line_range",
+              "start": 155
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },

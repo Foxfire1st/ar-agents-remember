@@ -295,15 +295,14 @@
       ]
     },
     "22": {
-      "note": "The carried L04 decision: a killed route is a mandatory item.",
+      "note": "The carried L04 decision: a killed route is a mandatory item.\n\nAnchor: `test_a_carried_dead_route_the_validator_only_reports_is_a_mandatory_item`",
       "targets": [
         {
           "anchor": {
-            "blob": "60e379181fa5ed1b2b1e809a2ecc36bf67caaeee",
-            "content": "sha256:4f279716c5ff49dc5944c00779e9b1bb1d14e4f47b416eb9d59fab74426ccd1f",
+            "blob": "07dbc8795c33b5fe4b412750c5a33e9699c1915c",
+            "content": "sha256:859cb3de84ee5a82c41c22d76a1f661236e2b22d83ed062cc8008162eba4032f",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_carried_dead_route_the_validator_only_reports_is_a_mandatory_item"
+              "kind": "file"
             },
             "path": "mcp/tests/test_family_route_conditions.py"
           },

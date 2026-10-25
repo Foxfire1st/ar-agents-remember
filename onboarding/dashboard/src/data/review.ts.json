@@ -204,29 +204,28 @@
   ],
   "references": {
     "1": {
-      "note": "The header states a same-origin read-only client and delegated typed-result transport. The actual shared getReviewJson owns body classification; the header is not independent runtime schema validation.",
+      "note": "The header states a same-origin read-only client and delegated typed-result transport. The actual shared getReviewJson owns body classification; the header is not independent runtime schema validation.\n\nAnchor: `getReviewJson`",
       "targets": [
         {
           "anchor": {
-            "blob": "944960a629ae679b6412bdfdc583c9a18b17dfc3",
-            "content": "sha256:fdf6c5e56b973711e955fe2c843d265cfb95e64e3a956f4dd9a226e56739cc8d",
-            "locator": {
-              "kind": "symbol",
-              "name": "getReviewJson"
-            },
-            "path": "dashboard/src/data/reviewTransport.ts"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "6aef8710047677b74fa337e6c4e2b6df948df099",
-            "content": "sha256:8ed0ee7c6b7e5d7789a3eb707806793fab790b53ad73ef48c07c1e16b2dcf7f7",
+            "blob": "5e94e860bdcfd117a4e496db152da5bfdb241e53",
+            "content": "sha256:b02e2d052a2a14009605be103124d4c77e95ea04f02bac000a234e637e4e56be",
             "locator": {
               "end": 17,
               "kind": "line_range",
               "start": 1
             }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "944960a629ae679b6412bdfdc583c9a18b17dfc3",
+            "content": "sha256:505328199b8aa8063d5f3edf27599d3d5c66658a4db5f530607c9b55c3511dff",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/data/reviewTransport.ts"
           },
           "kind": "code"
         }
@@ -509,15 +508,14 @@
       ]
     },
     "27": {
-      "note": "**The catalogue consumer: since `260921-ICR-L47` the reviewer (not the task entry) reads this client's subject catalogue when it opens, keyed on the comparison's identity; the task entry reads the changed-intent summary instead, and a refused or empty catalogue still leaves the task-context review available.**",
+      "note": "**The catalogue consumer: since `260921-ICR-L47` the reviewer (not the task entry) reads this client's subject catalogue when it opens, keyed on the comparison's identity; the task entry reads the changed-intent summary instead, and a refused or empty catalogue still leaves the task-context review available.**\n\nAnchor: `useReviewCatalogue`",
       "targets": [
         {
           "anchor": {
-            "blob": "44ae9bdf5a3c32b1ef555c6ff2548e53ee1a9cac",
-            "content": "sha256:e7c544b6a2b7d51c734c050e7f3fe41e86c0c16c6b46f6e79ee65286a8ccca99",
+            "blob": "421fcf655416c82d0bd4d4e7c4e93a8449682d08",
+            "content": "sha256:4c3fd11e4b0a15e8e0fe08a126594e4cf000fb021985f67854c1fb7d71e06619",
             "locator": {
-              "kind": "symbol",
-              "name": "useReviewCatalogue"
+              "kind": "file"
             },
             "path": "dashboard/src/data/useReviewCatalogue.ts"
           },
@@ -641,8 +639,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6aef8710047677b74fa337e6c4e2b6df948df099",
-            "content": "sha256:e3efc7780f114bf3444ca0c08b64c1ccb9d15cfa21d74e48fb6027b4e8f64807",
+            "blob": "5e94e860bdcfd117a4e496db152da5bfdb241e53",
+            "content": "sha256:65b7f98cb5ff7962303f5258fab14cfff5acc73adf5a464ce722d0a3f9fa800f",
             "locator": {
               "kind": "file"
             }
@@ -656,8 +654,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6aef8710047677b74fa337e6c4e2b6df948df099",
-            "content": "sha256:e3efc7780f114bf3444ca0c08b64c1ccb9d15cfa21d74e48fb6027b4e8f64807",
+            "blob": "5e94e860bdcfd117a4e496db152da5bfdb241e53",
+            "content": "sha256:65b7f98cb5ff7962303f5258fab14cfff5acc73adf5a464ce722d0a3f9fa800f",
             "locator": {
               "kind": "file"
             }

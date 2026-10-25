@@ -126,7 +126,7 @@ extension specification, SEP-2640) — the URL the leaf's own `notes/source-evid
 - The two planes stay separate in the compiled capsule: a declared skill becomes a reference, not instruction content. [7]
 - The application entry points the MCP registration layer calls. [8]
 - How the boundary is registered: three public MCP tools, the resource set, and the two mandatory protocol methods. [9]
-- The governing section separates per-task capsule composition from stable reusable skill delivery and states the admission and provenance boundary between them. [10]
+- The governing section separates per-task capsule composition from stable reusable skill delivery and states the admission and provenance boundary between them.
 
 ### Cross-Repo References
 

@@ -12,7 +12,7 @@
 
 ### Logic
 
-- `mint_continuation(binding, *, response, view, seeds, position)`: the token that resumes a walk at `position` of `seeds[0]`, with the rest queued (a collapsed block tail); it binds the build's threshold and the walk's code tree.
+- `mint_continuation(binding, *, response, view, seeds, position)`: the token that resumes a walk at `position` of `seeds`, with the rest queued (a collapsed block tail); it binds the build's threshold and the walk's code tree.
 - `read_continuation(token, *, view)`: not this format, or another view's walk, is `continuation_unreadable` (the meaning the view codec already gives it).
 - `request_binding_refusal`: a changed memory tree (naming both the minted and the now-selected tree), another threshold, or another policy/version is `continuation_binding_mismatch`.
 - `resolution_refusal`: a caller-named `codeTreeId` other than the walk's is a mismatch naming both trees (ruling Q6, 19:56:40).
@@ -49,8 +49,12 @@ No configured live documentation source was available for this pass.
 ### Repo-Internal References
 
 - The module statement: two halves of checks, and no rows on a refusal. [1]
-- The refusal and its three codes. [2]
+
+- The refusal and its four codes. [2]
+
+
 - Minting binds the build's threshold and queues the rest. [3]
+
 - Not this format, or another view's walk, is unreadable. [4]
 - A changed tree names both trees; threshold and policy are bound. [5]
 - A named code tree or ordering other than the walk's is refused. [6]

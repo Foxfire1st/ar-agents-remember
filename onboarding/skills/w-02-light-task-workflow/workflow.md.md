@@ -8,8 +8,12 @@ The current Phase 0 wording names sprint, master or leaf documents after corpus 
 
 This qualification governs the named current seams; incompatible earlier generalizations remain historical, not restored authority. No source inspection here establishes execution, a launch, a test result, a CODE/MEMORY grade or a completed closeout.
 
+
 - Light-task workflow preserves corpus approval, one primary revision, exact handoff attempts, non-gating summaries and explicit finalization/cleanup order. [8]
-- The Curator owner requires the complete curation operation; optional full-quality/test requests do not waive it. [7]
+
+
+> Retained earlier citation wording: - The Curator owner requires the complete curation operation; optional full-quality/test requests do not waive it. [7]
+
 
 
 ## Current Source Qualification
@@ -84,7 +88,9 @@ No external Domain Documentation source governs this workflow.
 
 ### Repo-Internal References
 
+
 - Requirement compilation, cold read, and approval precede topology. [1]
+
 
 - Tasks carry filtered projections rather than rewritten contracts. [2]
 
@@ -280,3 +286,5 @@ Inherited reference 9 commentary (not a revalidated target):
 ## Canonical Source Ownership
 
 The verified byte-equal package copy is derived output, not an independent role/task/permission authority. Whole-source evidence does not certify inherited statements or a whole requirement.
+
+- The Curator owner requires the complete curation operation; optional full-quality/test requests do not waive it. [7]

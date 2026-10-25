@@ -15,7 +15,9 @@ The census parses every module under `mcp/tests` and `mcp/test_support` as AST a
 ## Evidence
 
 - No test/support module holds an executable index-table insert [1]
+
 - Retired detector vectors are inert data, never called [2]
+
 - The detector module holds no execute call to feed [3]
 - Assigned and subscripted vectors still count as executed [4]
 - The census exception is exactly the one rule 3 names [5]

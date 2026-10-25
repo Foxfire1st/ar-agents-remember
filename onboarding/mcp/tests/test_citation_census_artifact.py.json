@@ -1,0 +1,106 @@
+{
+  "path": "mcp/tests/test_citation_census_artifact.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "8acba1a92c6b295d1bc7728f6a7a815396c09a36",
+        "content": "sha256:301a4e1533f73b5ed59e7bb0bc2f1b4647163657f58da618bb878d64a4645c5e",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_artifact_carries_the_measured_identities_of_both_trees"
+        }
+      },
+      "facet": "The artifact states the pair it measured, so a reader can re-derive the classes.",
+      "id": "PRF-FQS8E1",
+      "invariant": "INV-BTF5NF",
+      "origin": {
+        "handoffEntry": "MIK-R198@v2 §2 anchor-census",
+        "leaf": "260928-MIK-L191"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "An over-bound population is written whole and the bounded answer names the omission, the artifact and its digest",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8acba1a92c6b295d1bc7728f6a7a815396c09a36",
+            "content": "sha256:ea7287089c9cf1984f77e0172eea3cf7459b24032f46ca744b02996b85eae758",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_over_bound_population_is_written_whole_and_the_answer_names_it"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Returned plus omitted rows reconcile with the artifact's denominator and route totals at every boundary",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8acba1a92c6b295d1bc7728f6a7a815396c09a36",
+            "content": "sha256:5fcac352819dd435e2374596471822e66ff4dcf16a86200e5d2fc122240afaab",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_answer_and_its_artifact_reconcile_at_every_boundary"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Two populations measured in one second keep two retrievable addresses instead of replacing each other",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8acba1a92c6b295d1bc7728f6a7a815396c09a36",
+            "content": "sha256:8a5edbf4834c9fd987751e5d8db57ed56e237bf3a432bf7c49eb7c0458b99d84",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_two_populations_in_one_second_keep_two_retrievable_addresses"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Re-measuring the same population resolves the artifact already written and stores no second file",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8acba1a92c6b295d1bc7728f6a7a815396c09a36",
+            "content": "sha256:db13b31834b8af3b235ec30a9d66b9419f4ac807fd246888f63d323128db1e8f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_re_measuring_the_same_population_resolves_the_artifact_it_already_wrote"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "A caller-named artifact in the store folder survives every default reclamation, and each retired receipt is named",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8acba1a92c6b295d1bc7728f6a7a815396c09a36",
+            "content": "sha256:b7e2d9c9098862b7f9e82d7c9fc46b5e1c012890d10b40da52eafcbbb2c1b15f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_caller_named_artifact_in_the_store_folder_is_never_reclaimed"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

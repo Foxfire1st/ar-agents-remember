@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/application/read_files_format.py",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
@@ -41,15 +42,14 @@
       ]
     },
     "2": {
-      "note": "An unconverted tree's knowledge section names both conversion routes.",
+      "note": "An unconverted tree's knowledge section names both conversion routes.\n\nAnchor: `legacy_published_intent`",
       "targets": [
         {
           "anchor": {
-            "blob": "09343f2e3a96434d893cbc90c2d4eec775a56055",
-            "content": "sha256:a3a13fce2f411e43fd4609617a39be3ded2a075d67558b1a5712f88434ecca43",
+            "blob": "e205b6901715509bfd25313dc4a389e5a7f45427",
+            "content": "sha256:0ca57880f59cc9f8021c933139b5d8db9d88b2d816febfdd48165479aeb8a7b7",
             "locator": {
-              "kind": "symbol",
-              "name": "legacy_published_intent"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -84,15 +84,14 @@
       ]
     },
     "4": {
-      "note": "The call site in the entry point.",
+      "note": "The call site in the entry point.\n\nAnchor: `_read_one`",
       "targets": [
         {
           "anchor": {
-            "blob": "44a4837c014364afc6109be5aec371fe8ba6f721",
-            "content": "sha256:074fc5111cf95faca8cad270b11cfafbfb7ce428f884ea288abb35e0290a20ec",
+            "blob": "235bbb664d2f527abfdfa47f8cbbcb96c8714650",
+            "content": "sha256:6eccfc7bad90429057021cc74333df2047d6908f67136c2d9faf1624ddae3a75",
             "locator": {
-              "kind": "symbol",
-              "name": "_read_one"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/read_files.py"
           },
@@ -101,15 +100,14 @@
       ]
     },
     "5": {
-      "note": "`read_ar_files` returns legacy-format or resolved references, and the converted tree's knowledge section through the tool.",
+      "note": "read_ar_files names the converted records that govern a path - existence, the card's location and the records' states - and carries none of their text; an unconverted tree is answered as unconverted rather than with a knowledge section.\n\nAnchor: `test_read_ar_files_returns_legacy_format_or_resolved_references`",
       "targets": [
         {
           "anchor": {
-            "blob": "75d574105370812c82dbe4c677b0075e2c9d5e15",
-            "content": "sha256:5f31dbb4d8fa6b8c3328c7042404d1d2920f4a659c6f4a471242d53ee00db72d",
+            "blob": "c1c7d17344cd9be8f9ea3dbac4d826343761c185",
+            "content": "sha256:28fd122ff2c33d1107d06aa386bb795f4dba57257da61e80f4c61dd118335d22",
             "locator": {
-              "kind": "symbol",
-              "name": "test_read_ar_files_returns_legacy_format_or_resolved_references"
+              "kind": "file"
             },
             "path": "mcp/tests/test_knowledge_conversion_toolchain.py"
           },

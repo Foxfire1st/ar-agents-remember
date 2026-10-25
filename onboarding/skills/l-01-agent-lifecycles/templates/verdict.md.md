@@ -6,8 +6,12 @@ The verdict is an independent evidence artifact and recommendation, never the de
 
 This qualification governs the named current seams; incompatible earlier generalizations remain historical, not restored authority. No source inspection here establishes execution, a launch, a test result, a CODE/MEMORY grade or a completed closeout.
 
+
 - The verdict keeps exact-candidate independent evidence, monotonic sealed-ID successor scope and separate CODE/MEMORY lanes without deciding a gate. [6]
-- The Curator owner requires the complete curation operation; optional full-quality/test requests do not waive it. [7]
+
+
+> Retained earlier citation wording: - The Curator owner requires the complete curation operation; optional full-quality/test requests do not waive it. [7]
+
 
 
 ## Current supported-pair account — R100/R116 composition
@@ -16,7 +20,9 @@ The Reviewer records ordinary CODE round/result; the task document and recorded 
 
 This account controls the named changed seams; contradictory earlier card wording below is retained only as historical evidence. Unchanged role duties and R117 file-only wake/report transport are preserved. Source inspection supplies no new runtime test, CODE verdict, review counter or acceptance.
 
+
 - The Reviewer records ordinary CODE round/result; the task document and recorded architect/developer approval govern beyond-settings work. Fix verification is an ordinary round, not an unqualified D107 extra look. Verdict content is carried as a file, and remains evidence for the gate owner rather than a decision. The supported-sync source had a disclosed trailing stashed-change marker absent from K_B; that static composition observation was sent to Worker and Reviewer for the assigned D140, not silently adopted as clean source or a new CODE PASS. [5]
+
 
 
 ## Current Source Qualification
@@ -104,11 +110,17 @@ No external Domain Documentation source governs this verdict template.
 
 ### Repo-Internal References
 
+
 - Independent exact-attempt/candidate adjudication is mandatory in every variant. [1]
+
+
 
 - Leaf review accounts for every material route and returns a recordable packet. [2]
 
-- Delta review retains accepted rows and rechecks rejected rows plus direct regressions. [3]
+
+
+- A delta review appends a dated delta section to the same verdict artifact, rechecks only the sealed outstanding IDs and their worker fixes, and retains earlier accepted adjudications instead of opening a new full review. [3]
+
 
 ### Cross-Repo References
 
@@ -124,7 +136,9 @@ independent reviewer rejection permits a successor.
 
 ## Current Source Evidence
 
+
 - Current settings-budget, recorded approval and preserved stage/ownership boundaries are carried by this canonical instruction source. [4]
+
 
 
 ## Inherited Distribution Commentary
@@ -328,3 +342,5 @@ Inherited reference 9 commentary (not a revalidated target):
 ## Canonical Source Ownership
 
 The verified byte-equal package copy is derived output, not an independent role/task/permission authority. Whole-source evidence does not certify inherited statements or a whole requirement.
+
+- The Curator owner requires the complete curation operation; optional full-quality/test requests do not waive it. [7]

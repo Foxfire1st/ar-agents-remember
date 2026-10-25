@@ -93,7 +93,9 @@ reach the parent, the answer the reader gets, and that nothing wrong is kept. Th
 ## Evidence
 
 - The long case: the leaf's document, then settings, contract, packet, root, ledger and gate parts. [1]
+
 - The external ledger's bytes, change, absence and failure. [10]
+
 - A failed contract read behind the gate keeps nothing. [11]
 - Documents the view did not read do not invalidate it. [12]
 - A second claimant is computed again. [13]
@@ -104,8 +106,12 @@ reach the parent, the answer the reader gets, and that nothing wrong is kept. Th
 - Canonical decision bytes and parent-tip carriage establish the real packet-gate prerequisites. [18]
 - The launch replacement for faulty children. [2]
 - Settings changed, restored and unreadable during the child's read. [3]
+
 - The rows of the settings selection. [4]
+
+
 - The fallback contract read and a sibling read at two identities. [5]
+
 - Packet bytes, a link retargeted during the read, and a failed manifest read. [6]
 - The packet link outside, inside and outside again, for the view and the gate. [7]
 - A contract link retargeted during the read. [8]

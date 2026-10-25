@@ -12,27 +12,27 @@ The named changed seams supersede the older accounts below. Unchanged duties rem
 
 ## Current source evidence
 
-- Affected-sidecar/route checks and only requested full-suite/drift reporting remain distinct from Curator-owned complete MQC; drift_check is not restored. [16]
 
-- Current stage boundaries, settings-owned review budget and recorded approval duties are carried by these instruction sources. Messages wake and complete payloads travel as files; retained operator knobs are harness, model, effort and serviceTier. [31]
 
-- The reviewer is short-lived and self-contained. [2]
 
-- The reviewer receives the brief as its session start. [3]
 
-- The scoped-implementation lens checks the builder's targeted tests and the repository-prescribed lint, formatting, typing and structural checks. [13]
 
-- The role's tools are the review surface. [22]
 
-- The role declares the readable order — Inputs, Process, Outputs — with no inherited-sources line and no operator-knob block. [23]
 
-- Bound explicit review intake and parent/dashboard transport. [26]
 
-- Complete diff, required evidence, standing criteria, exact attempts and sealed findings. [27]
 
-- Permitted read surface, role/recording prohibitions and retained seam duties. [28]
 
-- The whole requirement verdict, findings and coverage ends this independent stage. Reviewer records ordinary begin/result within the actual review-state settings limit; Manager records architect/developer authorization beyond it. A record-only check preserves the last round only on byte-identical candidate with all candidate findings closed. A finding states the broken required property; a case is its proof, not a replacement finding or automatic new round. MEMORY stays a separate sealed lane. [32]
+
+
+
+
+
+
+
+
+
+
+
 
 ## Historical predecessor accounts — preserved, not current instructions for changed seams
 
@@ -45,20 +45,24 @@ The whole requirement verdict, findings and coverage ends this independent stage
 
 This account controls the named changed seams; contradictory earlier card wording below is retained only as historical evidence. Unchanged role duties and R117 file-only wake/report transport are preserved. Source inspection supplies no new runtime test, CODE verdict, review counter or acceptance.
 
-- The whole requirement verdict, findings and coverage ends this independent stage. Reviewer records ordinary begin/result within the actual review-state settings limit; Manager records architect/developer authorization beyond it. A record-only check preserves the last round only on byte-identical candidate with all candidate findings closed. A finding states the broken required property; a case is its proof, not a replacement finding or automatic new round. MEMORY stays a separate sealed lane. \[32]
+
+- The whole requirement verdict, findings and coverage ends this independent stage. Reviewer records ordinary begin/result within the actual review-state settings limit; Manager records architect/developer authorization beyond it. A record-only check preserves the last round only on byte-identical candidate with all candidate findings closed. A finding states the broken required property; a case is its proof, not a replacement finding or automatic new round. MEMORY stays a separate sealed lane. [32]
+
 
 
 ## Landing evidence in the independent memory lane
 
 The independent MEMORY review reads both landing populations in the quality result. Removed text without a named task change is a finding; an added file outside the knowledge without a place in the task requirement is a finding. These are human judgments, not automatic refusing diagnostics. CODE evidence, MEMORY findings/pass count and Manager acceptance/transaction authority stay separate.
 
+
 - The separate memory review judges cut reasons and requirement ownership of outside-knowledge additions. [33]
+
 
 ## Message/file transport
 
 This packaged copy makes role messages short wake-ups naming requested work or a handover and its files. Complete report, verdict, list and evidence contents travel through file-only `body` or existing-file `attach`, never pasted into message text. Within a shared task, message files remain with its record and a leaf workspace exposes the message-folder link. Wake text uses the effective settings limit, not a number pinned in this role/template. This transport account changes neither the file's existing role/write boundaries nor requirement, review, curation or landing authority.
 
-- Messages wake; complete payloads and evidence travel as files. \[31]
+- Messages wake; complete payloads and evidence travel as files.
 
 
 ## Current operative account — MIK-R112
@@ -195,35 +199,70 @@ Agent-authored temporary files, experiments and working copies live only in the 
 
 ### Repo-Internal References
 
-- Bound explicit review intake and parent/dashboard transport. \[26]
-- Complete diff, required evidence, standing criteria, exact attempts and sealed findings. \[27]
-- Permitted read surface, role/recording prohibitions and retained seam duties. \[28]
-- Reviewer communications use role_message for delivery to another role agent, named by agent id or by role plus task references. [29]
+
+> Retained earlier citation wording: - Bound explicit review intake and parent/dashboard transport. [26]
+
+
+- Complete diff, required evidence, standing criteria, exact attempts and sealed findings. [27]
+
+
+- Permitted read surface, role/recording prohibitions and retained seam duties. [28]
+
+
+> Retained earlier citation wording: - Reviewer leaf communications use role_message on agents-remember-task with the handover's sibling role and exact leaf task references; product-supplied IDs remain whole and unchanged. [29]
+
 - The reviewer returns fix leaves to the seat it reports to. [30]
 
-- A leaf's declared knowledge effects are checked against its packet; a mismatch is a finding (MIK-R11). [1]
-- The reviewer is short-lived and self-contained. \[2]
-- The reviewer receives the brief as its session start. \[3]
+
+- The Reviewer scopes one seam or loop round, refutes or confirms against brief-bound catalogs, writes its verdict and ends. [2]
+
+
+- The reviewer receives the brief as its session start. [3]
+
+
 - Dashboard-owned sessions keep this seat's role fixed for the session lifetime. [4]
-- A pasted brief for another role is refused and reported through the inbox. [5]
+
+
+- A pasted brief for another seat is refused and reported to the seam's decider; the Reviewer never absorbs the other seat's work. [5]
+
+
 - Review retrieval is refute-or-confirm, and findings must survive attempted refutation. [6]
+
 - Review criteria are not made up on the spot. [7]
+
 - A first review runs the standing catalogs its review type binds. [8]
-- The exploratory mandate defaults to two lenses. [9]
+
+
 - The completion lens accounts for every master requirement, leaf, substep, and accepted blank-fill. [10]
-- Skipped or reshaped work has a decision-log trail. [11]
+
+
 - No unfinished leaf work is hidden inside the handover packet. [12]
-- The scoped-implementation lens checks the builder's targeted tests and the repository-prescribed lint, formatting, typing and structural checks. \[13]
+
+
+- The scoped evidence checks the Worker's targeted tests and regressions and uses resolved system/tools.md for repository-specific check commands; unrequested full suites and drift reporting remain excluded. [13]
+
+
 - The onboarding-vs-code lens diffs sidecars and route overviews against as-landed code and rejects history-only refreshes. [14]
+
 - Route overviews are among the memory surfaces the onboarding-vs-code lens diffs against as-landed code. [15]
-- The reviewer's evidence reports the affected-sidecar and route-overview checks; full suites and `drift_check` run only on an explicit developer request, and the complete `memory_quality_check` is the curator's own operation. \[16]
+
+- Repository-scoped review checks and explicitly requested full suites or drift reporting remain distinct from the Curator's mandatory complete memory_quality_check; the review surface names requested drift reporting, not a drift_check tool. [16]
+
 - A master-exit block returns to the owning manager as fix leaves. [17]
 - A super-exit block returns to the orchestrator as fix leaves. [18]
+
 - Reviewer duties include writing the verdict artifact and returning a baseline block as decomposable fix leaves. [19]
+
 - The verdict artifact and terminal/finalizer truth are the completion signal; the reviewer does not author a duplicate completion row. [21]
-- The role's tools are the review surface. \[22]
-- The role declares the readable order — Inputs, Process, Outputs — with no inherited-sources line and no operator-knob block. \[23]
+
+- The permitted review surface is read-only retrieval and scoped checks, report/journal artifacts, bound leaf messages, and ordinary review-round begin/result recording. [22]
+
+
+- The role presents Inputs, Process and Outputs in order. Its operator-knob passage is a prohibition on setting harness, model, effort and serviceTier, not a launch-default block. [23]
+
+
 - The role keeps the two seam rubrics and the three review lenses. [24]
+
 
 ### Cross-Repo References
 
@@ -273,8 +312,19 @@ a malformed handed-off attempt requires independent rejection before successor h
 
 ## Current Contract Evidence
 
-- Current stage boundaries, settings-owned review budget and recorded approval duties are carried by these instruction sources. \[31]
+
+- Current stage boundaries, settings-owned review budget and recorded approval duties are carried by these instruction sources. Messages wake and complete payloads travel as files; retained operator knobs are harness, model, effort and serviceTier. [31]
+
 
 </details>
+
+
+> Retained earlier citation wording: - Reviewer opens supplied canonical file locations; independent authority and no-alternate-server/read-scope boundaries remain. [34]
+
+- Bound explicit review intake and parent/dashboard transport. [26]
+
+
+- Reviewer leaf communications use role_message on agents-remember-task with the handover's sibling role and exact leaf task references; product-supplied IDs remain whole and unchanged. [29]
+
 
 - Reviewer opens supplied canonical file locations; independent authority and no-alternate-server/read-scope boundaries remain. [34]

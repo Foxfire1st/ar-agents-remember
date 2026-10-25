@@ -75,8 +75,12 @@ No configured live documentation source was available for this pass.
 - The tree comparison's text-first decision: the bytes decide even at one revision. [5]
 - The compact metadata. [6]
 - The guarantee's compact revision labels, moved here and shared. [7]
+
 - The statement label and body that use it. [8]
+
+
 - The cases. [9]
+
 
 ### Cross-Repo References
 

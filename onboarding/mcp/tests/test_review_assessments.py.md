@@ -68,11 +68,24 @@ serves the cases that need a stored projection.
 
 ### Repo-Internal References
 
-- The lane row this module's classification rests on, and the lane header that declares the classification. [1]
+
+
+
+
+> Retained earlier citation wording: - The lane row this module's classification rests on, and the lane header that declares the classification. Source caption: "mcp/tests/test_review_assessments.py"; "unit-regression = [" [1]
+
+
+
+
 - The record, its submission shape and the validator the shape cases drive. [2]
+
 - The equality comparison and the stale-marking the binding cases drive. [3]
+
 - The state projection the read cases drive. [4]
+
+
 - The report-only section the checklist cases assert. [5]
+
 
 ## KS-R15@v1 Unit Protection
 
@@ -85,3 +98,5 @@ leaving the gap silent: §3.2's "a citation keeps both types" is a structural pr
 function taking a signal and returning an assessment), and asserting the absence of an operation
 would be a source census rather than a behavioural check; and §6.9's scope refusal is the shipped,
 unmodified `_require_leaf_external_memory`, so a case would assert a rail this leaf did not touch.
+
+- The lane row this module's classification rests on, and the lane header that declares the classification. Source caption: "mcp/tests/test_review_assessments.py"; "unit-regression = [" [1]

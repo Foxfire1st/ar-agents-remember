@@ -6,7 +6,9 @@
 
 ## Current source contract evidence
 
+
 - Current candidate source supports the operative account; historical sections grant no current tool or execution acceptance. [7]
+
 
 ## Purpose
 
@@ -61,12 +63,20 @@ No configured live documentation source was available for this pass.
 
 ### Repo-Internal References
 
+
 - The module docstring explains unheld-seed refusal; its database-preservation sentence is historical, not the mounted contract. [1]
+
+
 - Why a named seed names no revision the tree holds; a bare held ID is told its seed. [2]
+
 - The reason for the first seed the tree does not hold. [3]
+
 - Where current seeds come from, as every refusal says. [4]
 
+
+
 - Converted trees refuse unheld seeds; the former database control is replaced by explicit mounted legacy-format refusal. [5]
+
 
 
 ### Cross-Repo References
@@ -74,5 +84,6 @@ No configured live documentation source was available for this pass.
 No meaningful cross-repo references found: the module reads one derived index.
 
 No cross-repo boundary is crossed by this file.
+
 
 - A held text record refusal names its current revision UUID; seed sources use the refusal or source_context text IDs. [6]

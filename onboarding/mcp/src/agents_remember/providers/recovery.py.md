@@ -46,9 +46,9 @@ non-destructive recovery action.
 ### Invariants And Boundaries
 
 - Restart/rebind guidance must preserve indexes and must not suggest
-  `invalidate-indexes`.
+ `invalidate-indexes`.
 - This module holds shared wording only; status classification and watcher
-  lifecycle execution live in their respective modules.
+ lifecycle execution live in their respective modules.
 
 ### Todos
 
@@ -69,7 +69,7 @@ watcher rebind reporting.
 
 - The shared recovery constant names `provider_watchers(action='restart')`, current runner roots, preserved indexes, and follow-up status/diagnostics checks. [1]
 - Runtime-install watcher recovery actions use the shared restart/rebind text when provider watchers remain degraded. [2]
-- Provider status adds the same shared recovery text for GrepAI `noWorkspace`. [3]
+- Provider status carried the same shared recovery text for GrepAI `noWorkspace`; both that status recovery text and `noWorkspace` are gone at C, where the two providers are retired.
 
 ### Cross-Repo References
 

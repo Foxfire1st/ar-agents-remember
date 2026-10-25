@@ -30,7 +30,7 @@ No external Domain Documentation source is configured for this memory repo.
 ### Repo-Internal References
 
 - The public benchmark facade re-exports this module's public functions and classes for compatibility. [1]
-- The route-local overview summarizes how this module fits into the benchmark runner split. [2]
+- The route-local overview summarizes how this module fits into the benchmark runner split. 
 
 ### Cross-Repo References
 

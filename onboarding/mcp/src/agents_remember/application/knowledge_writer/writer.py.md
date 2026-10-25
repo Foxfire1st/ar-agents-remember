@@ -123,12 +123,16 @@ The operation and its stages.
 
 - The refusal text for an unconverted memory tree. [1]
 
+
 - Read, author, check history, render, validate, then finish or refuse. [3]
+
 - A leaf requires the persisted worklist before capture; question publication has its separate task-owner port [4]
 
 
 
+
 - After validation, committing runs publish raised questions before knowledge files. [28]
+
 - Committing question append returns published keys and refusals [6]
 
 
@@ -143,13 +147,17 @@ The operation and its stages.
 - Route rules are reports in the writer and refusals at a commit route. [14]
 
 
+
 - New or changed unresolved requirement links refuse when the coordination root is supplied; absent-root observations do not [15]
 
 
 
 
 
+
+
 - Endpoints are resolved with stored prior-link identity before the pre-publication refusal check [16]
+
 
 
 
@@ -177,12 +185,16 @@ No cross-repo boundary is crossed by this file.
 
 - Well-formed worklist items, trace links and onboarding source/count projections feed authoring with the paired memory base. [35]
 
+
 - Paired-base/source projection and registry-driven writer reports retain validation, carry and conversion; later refusal preserves actual question effects and distinguishes verified from incomplete file restoration. [36]
+
 ## Current writer publication and refusal contract
 
 The current converted writer checks persisted leaf worklist shape and authored item applicability, admits only resolvable newly changed task links when the root is supplied, and refuses a physically stored derived superseded decision. All knowledge-file publication remains after whole-tree validation. Task question publication is a separate durable effect, reported honestly on later refusal; file rollback is verified rather than presumed. These are source observations of the candidate, not self-use of its repaired writer or an executed fault-injection grade.
 
+
 - Worklist and changed-link admission precede validation and file publication. [37]
+
 - File publication reports actual restoration and already-published question recovery. [24]
 
 - A stored derived superseded field refuses before canonical rendering. [25]

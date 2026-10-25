@@ -121,8 +121,12 @@ Read the focused model card, then its producer and consumer references. Use the 
 
 
 
+
 - Native task stage/activity/eventAt is declared separately; the removed session response/state vocabulary is not an operative model in this route. [1]
-- Finalization declares terminal facts, cleanup/archive and activation facts; it declares neither edge proof nor completion-seat result sets. [2]
+
+
+> Retained earlier citation wording: - Finalization declares terminal facts, cleanup/archive and activation facts; it declares neither edge proof nor completion-seat result sets. [2]
+
 - Asynchronous operation records keep private execution identity out of the declared public projection fields. [3]
 - Recovery records have code and memory-content output-commit fields. [4]
 - A filtered content head does not replace actual Git head/tree facts. [5]
@@ -134,8 +138,12 @@ Read the focused model card, then its producer and consumer references. Use the 
 - The durable record owns both revisions; its meaningful subset includes both selected certification cells. [11]
 - The public envelope carries the wait cursor beside versioned identity and component bindings. [12]
 - Strict operation decoding explicitly represents missing legacy task intent. [13]
+
 - Publication inputs, refusal text, record coverage and evidence custody have deciding predicates. [14]
+
+
 - Prepare consumes the shared publication input statement. [15]
+
 - Preparation output-command requirements are conditional on retained command history; transitions preserve original observations. [16]
 - Measured binding status separates failure, disagreement and incomplete coverage. [17]
 
@@ -144,5 +152,9 @@ Read the focused model card, then its producer and consumer references. Use the 
 - The exact assessment dependency policy and record-to-assessment edge are separately constructed. [20]
 - The memory mutation snapshot preserves actual Git head and headTree while computing cache-excluded contentHeadTree, indexTree, candidateTree and status; removed prepared-memory reuse/output consumers are not current callers. [21]
 
+
 - Currentness partitions entries while unresolvedCount independently equals their unresolved dispositions; status follows the actual recorded population. [18]
+
 - ComparisonAssessmentAvailability is a retained manifest descriptor, not a current reviewer channel: answered counts and recovery requirements are structurally checked, not independently measured or semantically endorsed. [22]
+
+- Finalization declares terminal facts, cleanup/archive and activation facts; it declares neither edge proof nor completion-seat result sets.  Anchor: `LifecycleFinalizeTaskResponse` [2]

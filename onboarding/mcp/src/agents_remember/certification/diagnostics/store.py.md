@@ -48,7 +48,9 @@ No Domain Documentation source is configured for this memory root. CCR-R13@v2 (f
 ### Repo-Internal References
 
 
+
 - Atomic read-modify-write uses the shared kernel atomic writer. [2]
+
 
 - Digest helpers and typed findings come from the certification contract foundation. [3]
 - The store revalidates the frozen records defined in the diagnostics models. [4]

@@ -124,15 +124,14 @@
       ]
     },
     "11": {
-      "note": "The Intent review control and its summary read.\n\nAnchor: `useIntentReviewSummary`",
+      "note": "The Intent review control and its summary read.\n\nAnchor: `IntentReviewEntry`",
       "targets": [
         {
           "anchor": {
-            "blob": "9f16a4ea899010aae0203cfd8712a007026dabf6",
-            "content": "sha256:087f9600600b0b76e0eb0c421d8a83a2909722e81f9467a1d97d0ecba7029bf3",
+            "blob": "7589f63f1bb655f537e84d56ad377746d725da2b",
+            "content": "sha256:2d7f4935f88d2401d98cb7d831ecccab0c534bc6477233cd179cbd540e8fbb0a",
             "locator": {
-              "kind": "symbol",
-              "name": "IntentReviewEntry"
+              "kind": "file"
             },
             "path": "dashboard/src/panels/detail-panel/intentReviewEntry.tsx"
           },
@@ -141,39 +140,14 @@
       ]
     },
     "12": {
-      "note": "The shared brief-state and disclosure helpers.",
+      "note": "The shared brief-state and disclosure helpers.\n\nAnchor: `EntryStateDetails` `briefProblem` `problemSentence`",
       "targets": [
         {
           "anchor": {
             "blob": "cc94281379ec05363f5271bd286a082c5e8529ae",
-            "content": "sha256:f9bee20c58215c2a0bcb4de3f55e334d2587834852f74a1e57c9597a58c3f820",
+            "content": "sha256:3de84b38e0e1422fa4594d95415e2537c1121d622ea23a03aaf4ab37e2998ebc",
             "locator": {
-              "kind": "symbol",
-              "name": "EntryStateDetails"
-            },
-            "path": "dashboard/src/panels/detail-panel/entryState.tsx"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "08b834804e69b920387becdd55cd9cb21a584689",
-            "content": "sha256:55614d11c93c21ea706b6586989d20ee5a10b9e74c627d7613e9102629f2c9bc",
-            "locator": {
-              "kind": "symbol",
-              "name": "briefProblem"
-            },
-            "path": "dashboard/src/panels/detail-panel/entryState.tsx"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "08b834804e69b920387becdd55cd9cb21a584689",
-            "content": "sha256:99c3ed0cc1ea5ac520ebcd472aa1bd2052e105e2d3f42141ad6c611fa131923e",
-            "locator": {
-              "kind": "symbol",
-              "name": "problemSentence"
+              "kind": "file"
             },
             "path": "dashboard/src/panels/detail-panel/entryState.tsx"
           },
@@ -199,27 +173,14 @@
       ]
     },
     "14": {
-      "note": "The change-set client the counter read belongs to.",
+      "note": "The change-set client the counter read belongs to.\n\nAnchor: `taskChangeset` `TaskChangeset`",
       "targets": [
         {
           "anchor": {
-            "blob": "ed265675478575ff8a4d1556006a4a3afd4aa87a",
-            "content": "sha256:a85e2cc9a5a731afed4fd8049a86cb9be07af2b3948fb6ceefd4894695138bed",
+            "blob": "ad784b1c6e63764e2f4437c99f28a2b9bd553703",
+            "content": "sha256:3991a7839bfcafd1a3534c2bdaebb09629138b26ca05dc63a7ee0778f9280d22",
             "locator": {
-              "kind": "symbol",
-              "name": "taskChangeset"
-            },
-            "path": "dashboard/src/data/changeset.ts"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "ed265675478575ff8a4d1556006a4a3afd4aa87a",
-            "content": "sha256:1d08d2d1e3b9ee475152be5029ffa52b02d3079169aeca5d205633f21c468331",
-            "locator": {
-              "kind": "symbol",
-              "name": "TaskChangeset"
+              "kind": "file"
             },
             "path": "dashboard/src/data/changeset.ts"
           },
@@ -228,12 +189,12 @@
       ]
     },
     "15": {
-      "note": "The compact entry's cases: one control, request economy, brief states, leaf-scoped invalidation.\n\nAnchor: \"is one control with the comparison's changed-intent counts and nothing beside it\"; \"makes one summary read, no catalogue read and one committed change-set read\"",
+      "note": "The compact entry's cases: one control, request economy, brief states, leaf-scoped invalidation.",
       "targets": [
         {
           "anchor": {
-            "blob": "ccaecf3c76ce6bf357fe47964866e2133c36eb42",
-            "content": "sha256:46bfd4743067f13b1f3d46b57c9e21f8cd1db58079f97f14d3cd4ba61d97b76e",
+            "blob": "56e48c445177308f7420c6a934e402bebf797664",
+            "content": "sha256:44eae62e41696a77bcb63476b1340e5aedc677aefd4dfe689c0987b64591d06d",
             "locator": {
               "end": 150,
               "kind": "line_range",
@@ -245,8 +206,8 @@
         },
         {
           "anchor": {
-            "blob": "ccaecf3c76ce6bf357fe47964866e2133c36eb42",
-            "content": "sha256:5c58a33f6b8294557f19143782143fadf93148ac970ae24a55086d43154b1582",
+            "blob": "56e48c445177308f7420c6a934e402bebf797664",
+            "content": "sha256:9fd009a58ad156196053399755da94effb34fd6cf245da76b68b294647d3aea5",
             "locator": {
               "end": 168,
               "kind": "line_range",
@@ -259,12 +220,12 @@
       ]
     },
     "16": {
-      "note": "The closed leaf's recorded entry and the failed-summary case.\n\nAnchor: \"offers the Intent review for a closed leaf, bound to its recorded comparison\"; \"keeps the entry when the summary read itself fails\"",
+      "note": "The closed leaf's recorded entry and the failed-summary case.",
       "targets": [
         {
           "anchor": {
-            "blob": "28a553162d8583c99cf81ed215fbf5a71bfae016",
-            "content": "sha256:3fcf1b2573650edcce603f253bec296ab4b8a12b77dfc1b60a968486d45f6718",
+            "blob": "7b01935005181d83e987ed1f852a8c2b0191e73e",
+            "content": "sha256:4f6c68b28c8b9600fe3036f05fc024127d4be3a03afb903830a5e53158f6806a",
             "locator": {
               "end": 99,
               "kind": "line_range",
@@ -276,8 +237,8 @@
         },
         {
           "anchor": {
-            "blob": "28a553162d8583c99cf81ed215fbf5a71bfae016",
-            "content": "sha256:50400ccb8e1d9b1c18d05b3784cc1ecdf638fd7058afeef210de5bee7472cc3f",
+            "blob": "7b01935005181d83e987ed1f852a8c2b0191e73e",
+            "content": "sha256:acda4470f6b12da359781f42ad1f817d8d8c414bcf1710a152cbad3d21c8d469",
             "locator": {
               "end": 444,
               "kind": "line_range",
@@ -317,15 +278,14 @@
       ]
     },
     "3": {
-      "note": "The total withheld for an unrecorded range.",
+      "note": "The total withheld for an unrecorded range.\n\nAnchor: `changesetTotal`",
       "targets": [
         {
           "anchor": {
-            "blob": "cb170808c1e7ad3aa75e0bfd0860f2206b2291c8",
-            "content": "sha256:14900451fbebe4f90a222b189a32d495f591e4fa898838cb6a4ac457812006e8",
+            "blob": "dc229d234ae888019f18a20c91a1cd0135ada287",
+            "content": "sha256:71fa11b449377ad53a5ea1f8709e31ba8dc17859a548994c22ea9e683b519a62",
             "locator": {
-              "kind": "symbol",
-              "name": "changesetTotal"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -333,15 +293,14 @@
       ]
     },
     "5": {
-      "note": "The counter read's brief states.\n\nAnchor: `briefProblem`; \"unrecorded\"; \"known-empty\"",
+      "note": "The counter read's brief states.\n\nAnchor: `ChangeSetReadState`",
       "targets": [
         {
           "anchor": {
-            "blob": "931da72d87f38045efdb2c747a84167042b89f79",
-            "content": "sha256:b538defda103ff9349badef81ccce44b1f1b5010a275ef703559a6ed173b56ff",
+            "blob": "dc229d234ae888019f18a20c91a1cd0135ada287",
+            "content": "sha256:71fa11b449377ad53a5ea1f8709e31ba8dc17859a548994c22ea9e683b519a62",
             "locator": {
-              "kind": "symbol",
-              "name": "ChangeSetReadState"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -349,15 +308,14 @@
       ]
     },
     "6": {
-      "note": "The explanation in a closed disclosure: the refusal sentence or the unrecorded sentence.\n\nAnchor: `problemSentence`",
+      "note": "The explanation in a closed disclosure: the refusal sentence, the unmeasured-series sentence or the unrecorded sentence.\n\nAnchor: `ChangeSetStateDetails`",
       "targets": [
         {
           "anchor": {
-            "blob": "931da72d87f38045efdb2c747a84167042b89f79",
-            "content": "sha256:09659e029445bf166a6e1e57f33f02d73696b73e28229fca4462ee6475d3331c",
+            "blob": "dc229d234ae888019f18a20c91a1cd0135ada287",
+            "content": "sha256:71fa11b449377ad53a5ea1f8709e31ba8dc17859a548994c22ea9e683b519a62",
             "locator": {
-              "kind": "symbol",
-              "name": "ChangeSetStateDetails"
+              "kind": "file"
             }
           },
           "kind": "code"

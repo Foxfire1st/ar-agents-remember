@@ -71,5 +71,15 @@ No configured domain documentation could be checked.
 - The lane row this module was appended to, in the lane list — appended rather than inserted mid-list. [25]
 - The two exact-scope consumer registrations this module obliged. [26]
 
-- The lane row this module was appended to, in the lane list — appended rather than inserted mid-list. [27]
-- The two exact-scope consumer registrations this module obliged. [28]
+
+
+
+- The lane row this module holds in the sorted `unit-regression` list.  Anchor: "mcp/tests/test_evidence_catalog_gate_boundaries.py" [27]
+
+
+
+
+
+> Retained earlier citation wording: - The catalog declares test_evidence_catalog_gate_boundaries.py as an exact consumer on the evidence-catalog fixture, settings-guard and Node-lockfile artifact rows. These three declarations do not establish invocation. [28]
+
+- The catalog declares test_evidence_catalog_gate_boundaries.py as an exact consumer on the evidence-catalog fixture, settings-guard and Node-lockfile artifact rows. These three declarations do not establish invocation. [28]

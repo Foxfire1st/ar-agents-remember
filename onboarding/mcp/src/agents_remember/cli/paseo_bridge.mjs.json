@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/cli/paseo_bridge.mjs",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
@@ -223,6 +224,18 @@
         {
           "anchor": {
             "blob": "d567e4338eff6de6f22fe372f65b92ef650658d0",
+            "content": "sha256:dc4b0ba7d331f26aac77692912e4b0a24eb1526a7618e6d7b3d902492fb188a0",
+            "locator": {
+              "end": 1356,
+              "kind": "line_range",
+              "start": 1346
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d567e4338eff6de6f22fe372f65b92ef650658d0",
             "content": "sha256:7a10d57d523966bba3cebe6f4f6b5dd321cc23e068c9c8daf909957b772839ae",
             "locator": {
               "end": 1385,
@@ -231,11 +244,23 @@
             }
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d567e4338eff6de6f22fe372f65b92ef650658d0",
+            "content": "sha256:0d5e445b019128ecebe46e232d30f49c6695f2761a825540af92458db1082715",
+            "locator": {
+              "end": 1118,
+              "kind": "line_range",
+              "start": 1108
+            }
+          },
+          "kind": "code"
         }
       ]
     },
     "2": {
-      "note": "`agents-live` reads unarchived agent IDs through `daemon.fetchAgents`, at most ten pages of 200 entries. It reports `complete` only when the runtime explicitly says `hasMore: false`; a bound or missing next cursor ends the read without establishing absence. It neither resumes agents nor reads their timelines. Whole-reply transport remains separately owned by `closingText`.\n\nAnchor: \"const LIVE_PAGE_LIMIT = 200\"; \"const COMMANDS = {\"",
+      "note": "`agents-live` reads unarchived agent IDs through `daemon.fetchAgents`, at most ten pages of 200 entries. It reports `complete` only when the runtime explicitly says `hasMore: false`; a bound or missing next cursor ends the read without establishing absence. It neither resumes agents nor reads their timelines. Whole-reply transport remains separately owned by `closingText`.",
       "targets": [
         {
           "anchor": {
@@ -252,8 +277,8 @@
         },
         {
           "anchor": {
-            "blob": "6c184cae813ec7dae487cabc75c7ae57cc2e4537",
-            "content": "sha256:e0b8675cd96ce4385a714394cd267bbba1a44ad39510265bb5e37af76cdee29b",
+            "blob": "d567e4338eff6de6f22fe372f65b92ef650658d0",
+            "content": "sha256:80f6449fd43c2ba54bc140818c827de48a6769a360d8f11d04c7b1c77c65f6a2",
             "locator": {
               "end": 263,
               "kind": "line_range",
@@ -270,6 +295,18 @@
         {
           "anchor": {
             "blob": "d567e4338eff6de6f22fe372f65b92ef650658d0",
+            "content": "sha256:1db0135c43deffcfa02b14c079a1777249a95a51994584c1ae5dda3d9ad0645a",
+            "locator": {
+              "end": 458,
+              "kind": "line_range",
+              "start": 447
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d567e4338eff6de6f22fe372f65b92ef650658d0",
             "content": "sha256:8f20824ca1a7a145e73b03e91e72398a6f2cd96399fd7b08e9f62071199336c3",
             "locator": {
               "end": 464,
@@ -278,16 +315,28 @@
             }
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d567e4338eff6de6f22fe372f65b92ef650658d0",
+            "content": "sha256:743401a284cf1e5f32351eb76cb3bd19b2088aeb154ebc1442c6e8499b96c389",
+            "locator": {
+              "end": 420,
+              "kind": "line_range",
+              "start": 409
+            }
+          },
+          "kind": "code"
         }
       ]
     },
     "4": {
-      "note": "The command table delegates workspace-open to the imported workspace owner while retaining the bridge command surface.\n\nAnchor: \"const COMMANDS = {\"",
+      "note": "The command table delegates workspace-open to the imported workspace owner while retaining the bridge command surface.",
       "targets": [
         {
           "anchor": {
-            "blob": "6c184cae813ec7dae487cabc75c7ae57cc2e4537",
-            "content": "sha256:e0b8675cd96ce4385a714394cd267bbba1a44ad39510265bb5e37af76cdee29b",
+            "blob": "d567e4338eff6de6f22fe372f65b92ef650658d0",
+            "content": "sha256:80f6449fd43c2ba54bc140818c827de48a6769a360d8f11d04c7b1c77c65f6a2",
             "locator": {
               "end": 263,
               "kind": "line_range",
@@ -319,11 +368,11 @@
         {
           "anchor": {
             "blob": "d567e4338eff6de6f22fe372f65b92ef650658d0",
-            "content": "sha256:14a3c70b338ddd80b68af4f59bec9ef9c5cc6d9b2408feb2ae6ed36e86d8ed28",
+            "content": "sha256:c968c1884cff2af1a86b7b33d364870c7af2cc16de93126ea32c6bee30f4b8f2",
             "locator": {
-              "end": 1169,
+              "end": 1140,
               "kind": "line_range",
-              "start": 1108
+              "start": 1079
             }
           },
           "kind": "code"
@@ -351,6 +400,30 @@
               "start": 23
             },
             "path": "mcp/src/agents_remember/cli/paseo_send_attachments.mjs"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d567e4338eff6de6f22fe372f65b92ef650658d0",
+            "content": "sha256:14a3c70b338ddd80b68af4f59bec9ef9c5cc6d9b2408feb2ae6ed36e86d8ed28",
+            "locator": {
+              "end": 1169,
+              "kind": "line_range",
+              "start": 1108
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d567e4338eff6de6f22fe372f65b92ef650658d0",
+            "content": "sha256:79f661991e690849ccb2d5b6898eb397f91902939448c06b6d26f075a3c1541a",
+            "locator": {
+              "end": 902,
+              "kind": "line_range",
+              "start": 841
+            }
           },
           "kind": "code"
         }

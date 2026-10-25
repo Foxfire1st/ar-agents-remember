@@ -76,18 +76,33 @@ No configured domain documentation could be checked.
 
 ### Repo-Internal References
 
+
 - Why this module owns the shared seal evidence rather than either single-graph module. [1]
-- The four raw edge statements the read nodes mutate with. [2]
+
+
 - The field-isolating digest node for the invariant payload. [3]
-- The two family read nodes (added and removed edge behind the seal). [4]
-- The two invariant read nodes (added and removed edge behind the seal). [5]
+
+
+- The family revision test detects a stored guarantee cell rewritten behind its seal and requires decode_family_revision_row to refuse with payload digest. [4]
+
+
+- The invariant revision test detects a stored statement cell rewritten behind its seal and requires decode_revision_row to refuse with payload digest. [5]
+
 - The payloads that seal the predecessor set, one per revision kind. [7]
-- The read-path recomputation that turns a tampered edge into a storage defect. [8]
+
+- The read-path recomputation that turns a row whose stored cells were rewritten behind its seal into a storage defect. [8]
+
 - The unit-regression lane row this module is registered by. [9]
-- The fixture contract that names this module as an exact consumer. [10]
+
+
+> Retained earlier citation wording: - The knowledge identity-branching fixture artifact names contract:knowledge-identity-branching-fixture as its replacement and test_knowledge_revision_seals.py as an exact consumer. These declarations do not establish execution. [10]
+
+
 
 ### Cross-Repo References
 
 No cross-repository behavior is implemented in this file.
 
 No meaningful cross-repo references found.
+
+- The knowledge identity-branching fixture artifact names contract:knowledge-identity-branching-fixture as its replacement and test_knowledge_revision_seals.py as an exact consumer. These declarations do not establish execution. [10]

@@ -20,6 +20,9 @@ A file may trip a rule exactly as often as its entry says. One use more is a sec
 
 ### Repo-Internal References
 
+
 - Every allowance is a count and a written reason, per rule and per file, in the one table. [1]
+
+
 
 - The three path prefixes and the nine rule names are the vocabulary the scan reports in. [2]

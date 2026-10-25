@@ -20,4 +20,5 @@ MIK-R175 rule 3: `stepTipStyles` stops the box breaking words anywhere (`overflo
 
 - The tooltip's box breaks no word, and the parts that must stay whole say so themselves. [2]
 
+
 - Pointer-inert fixed tooltip styles and ordered nested-row layout remain separate from interaction/data ownership. [1]

@@ -1,5 +1,6 @@
 {
   "path": "dashboard/src/data/reviewMemoryWatch.ts",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
@@ -144,8 +145,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "832a3b6755f8ae5bab9c16223b544d9aa0c8f761",
-            "content": "sha256:2f23951616c27989b3f12f307fdfbe0261488f13f80daa810c6c7082a00ed794",
+            "blob": "e759eb54b9cbb7db614234415ff2c56f1d345e2c",
+            "content": "sha256:409a7431e06691789ab881a398eafaf586cff9796ac6794bd491a066157c8617",
             "locator": {
               "kind": "symbol",
               "name": "connectState"
@@ -157,16 +158,16 @@
       ]
     },
     "6": {
-      "note": "Actual ReviewSurface supplies the cycle and navigation.engage callback.\n\nAnchor: inclusive source span",
+      "note": "ReviewSurface supplies the watch its scope and cycle only: `useReviewMemoryWatch({ repo, master, leaf, history }, cycle)`; no retain-selection callback travels with it.",
       "targets": [
         {
           "anchor": {
-            "blob": "bb94e003292e3a408d3607472dacd850e1f8da65",
-            "content": "sha256:98fcc6d0202bc8f7feace48fede3bee258f896587558eb3bb20226c24a07dfbd",
+            "blob": "6f30efcbe166c0fe854c1de9cde75a444ff9c5a5",
+            "content": "sha256:45739110f03a94e625ba9331da1fa946f408304f6402c099b30b20924756ca44",
             "locator": {
-              "end": 710,
+              "end": 608,
               "kind": "line_range",
-              "start": 684
+              "start": 596
             },
             "path": "dashboard/src/panels/review/ReviewSurface.tsx"
           },

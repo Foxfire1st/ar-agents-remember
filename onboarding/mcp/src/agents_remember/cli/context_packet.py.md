@@ -69,8 +69,12 @@ No relevant external documentation found.
 
 ### Repo-Internal References
 
+
 - The application entry point that builds the printed packet and owns request semantics. [1]
+
+
 - CLI JSON output is covered by the context packet tests. [2]
+
 
 ### Cross-Repo References
 

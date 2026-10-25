@@ -3,15 +3,14 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "Four persisted toggles map onto the change-set / full-file / highlight-off / rendered states.",
+      "note": "Four persisted toggles map onto the change-set / full-file / highlight-off / rendered states.\n\nAnchor: `ChangeSetPane`",
       "targets": [
         {
           "anchor": {
-            "blob": "25c49cf6ee2dbf0428790acb516b69ee13c75ab9",
-            "content": "sha256:e5714cd8acc86de919bd14fa0b6a98406e1bfe7bb28c3c1925a88e7897ea6ab4",
+            "blob": "48d2681013595d0c214aa1dad92fe4c6829747d3",
+            "content": "sha256:448d21db7f329cfabb94f17e943383f27d9f868c65fc937a457b060e0c07c9d8",
             "locator": {
-              "kind": "symbol",
-              "name": "ChangeSetPane"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -68,15 +67,14 @@
       ]
     },
     "2": {
-      "note": "Highlight-off renders the plain L2 FilePane on the after-content.",
+      "note": "Highlight-off renders the plain L2 FilePane on the after-content.\n\nAnchor: `ChangeSetPane`",
       "targets": [
         {
           "anchor": {
-            "blob": "25c49cf6ee2dbf0428790acb516b69ee13c75ab9",
-            "content": "sha256:e5714cd8acc86de919bd14fa0b6a98406e1bfe7bb28c3c1925a88e7897ea6ab4",
+            "blob": "48d2681013595d0c214aa1dad92fe4c6829747d3",
+            "content": "sha256:448d21db7f329cfabb94f17e943383f27d9f868c65fc937a457b060e0c07c9d8",
             "locator": {
-              "kind": "symbol",
-              "name": "ChangeSetPane"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -113,15 +111,14 @@
       ]
     },
     "4": {
-      "note": "The markdown renderer reused for the rendered-markdown view.",
+      "note": "The markdown renderer reused for the rendered-markdown view.\n\nAnchor: `Markdown`",
       "targets": [
         {
           "anchor": {
-            "blob": "b4c74c37212e432009df876b3276beea828250fa",
-            "content": "sha256:e65a77e2d635bfba5d57e537277bdfe467525e8ee50a1074c263649cbf815cc2",
+            "blob": "1a65bd4444779518a555e2e38d8ca30fa0df9f3a",
+            "content": "sha256:dbbcb27210f3e352d08d6ba242aaa61621f03500d95beccbb45dbe266bda2ae3",
             "locator": {
-              "kind": "symbol",
-              "name": "Markdown"
+              "kind": "file"
             },
             "path": "dashboard/src/grammar/Markdown.tsx"
           },
@@ -130,12 +127,12 @@
       ]
     },
     "5": {
-      "note": "Otherwise it mounts the DiffPane with mode/collapse.\n\nAnchor: \"export function DiffPane({\"",
+      "note": "Otherwise it mounts the DiffPane with mode/collapse.",
       "targets": [
         {
           "anchor": {
-            "blob": "1752cf61fa7a9a49f17cd1ed32b0deae8a280df5",
-            "content": "sha256:f4d312256407639d3ae3c1d5cb6906e9ebd06073837ff9ca1f628fe4a150e0ab",
+            "blob": "6d63658ca060662a6573338fbb1d786371af0633",
+            "content": "sha256:e749f4bd84e3ae25fd6b36153e00e322c169e23163767e5255cf1d79e498cea7",
             "locator": {
               "end": 193,
               "kind": "line_range",
@@ -165,15 +162,14 @@
       ]
     },
     "7": {
-      "note": "The plain read-only pane reused for highlight-off / full-file-plain.",
+      "note": "The plain read-only pane reused for highlight-off / full-file-plain.\n\nAnchor: `FilePane`",
       "targets": [
         {
           "anchor": {
-            "blob": "51f94729899f48cef6ffa98458e7c097fa30497e",
-            "content": "sha256:6c1ef40b74941e5bc4e8f9a286aefb833f98a00d211239b487d8009b8f9f6887",
+            "blob": "dbbb34c143ffd24687f884bd401852c94fb43a96",
+            "content": "sha256:4381a6ac5fd2d1fed3c3059c96f97e25dc55475450953631d92a8d35b059cd90",
             "locator": {
-              "kind": "symbol",
-              "name": "FilePane"
+              "kind": "file"
             },
             "path": "dashboard/src/panels/file-viewer/FilePane.tsx"
           },
@@ -182,15 +178,14 @@
       ]
     },
     "8": {
-      "note": "The `FileDiff` shape it renders.",
+      "note": "The `FileDiff` shape it renders.\n\nAnchor: `FileDiff`",
       "targets": [
         {
           "anchor": {
-            "blob": "ed265675478575ff8a4d1556006a4a3afd4aa87a",
-            "content": "sha256:e2bd5054ddc3d96a280a97eb71993abb8ce521baaa0fc07d3a3c1ed7e2a6d8d7",
+            "blob": "ad784b1c6e63764e2f4437c99f28a2b9bd553703",
+            "content": "sha256:3991a7839bfcafd1a3534c2bdaebb09629138b26ca05dc63a7ee0778f9280d22",
             "locator": {
-              "kind": "symbol",
-              "name": "FileDiff"
+              "kind": "file"
             },
             "path": "dashboard/src/data/changeset.ts"
           },
@@ -199,15 +194,14 @@
       ]
     },
     "9": {
-      "note": "The screen that mounts it for the file + partner columns.",
+      "note": "The screen that mounts it for the file + partner columns.\n\nAnchor: `ChangeSetViewer`",
       "targets": [
         {
           "anchor": {
-            "blob": "86545416eae45e7557f551de907178a8e9174476",
-            "content": "sha256:1f10a3128c89a000c85fb61ae59c98da7ad64e75ad46dcb85d1202e1bf163cdd",
+            "blob": "0f255485bc9dc7fc49932bd57f66ff49c8a4564c",
+            "content": "sha256:a07755e77404e8354fd4134325908235f10bd244bb5049776b162574c8bb6473",
             "locator": {
-              "kind": "symbol",
-              "name": "ChangeSetViewer"
+              "kind": "file"
             },
             "path": "dashboard/src/panels/changeset/ChangeSetViewer.tsx"
           },

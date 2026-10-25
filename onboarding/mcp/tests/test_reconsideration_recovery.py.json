@@ -3,8 +3,8 @@
   "proves": [
     {
       "anchor": {
-        "blob": "77a2299ac39b573d6e0a4333fdc7a4017f6ac3d6",
-        "content": "sha256:e28e5b22c458d8a9734cf23ebd3ac2788511f1b445c54ee4884d7ce5ce1a8669",
+        "blob": "2743ff9bd106812ba2c85e77f85b47621a937e0e",
+        "content": "sha256:47f30516c51d770bbe254cf1e229a50215c848da0ffc769dc779b3494b794456",
         "locator": {
           "kind": "symbol",
           "name": "test_the_d430_sequence_opens_the_item_and_a_curator_row_closes_it"
@@ -20,8 +20,8 @@
     },
     {
       "anchor": {
-        "blob": "77a2299ac39b573d6e0a4333fdc7a4017f6ac3d6",
-        "content": "sha256:54c02a8a07744a59b20665565bdf34db967790dbbf1642bba353c0c2a22088a1",
+        "blob": "2743ff9bd106812ba2c85e77f85b47621a937e0e",
+        "content": "sha256:ac779b19a6111d95fb0eed67a5a8de5db04eb6268dec5b291e41798031975ac0",
         "locator": {
           "kind": "symbol",
           "name": "test_the_refresh_refusals_advice_names_a_route_that_works"
@@ -56,15 +56,14 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "A removed symbol opens the item, an empty hand-off answers nothing, and a judged row with `repoint` closes it",
+      "note": "A removed symbol opens the item, an empty hand-off answers nothing, and a judged row with `repoint` closes it\n\nAnchor: `test_the_d430_sequence_opens_the_item_and_a_curator_row_closes_it`",
       "targets": [
         {
           "anchor": {
-            "blob": "77a2299ac39b573d6e0a4333fdc7a4017f6ac3d6",
-            "content": "sha256:e28e5b22c458d8a9734cf23ebd3ac2788511f1b445c54ee4884d7ce5ce1a8669",
+            "blob": "2743ff9bd106812ba2c85e77f85b47621a937e0e",
+            "content": "sha256:80f9173cbf91d85d55600fd45d7a0fbf8a5d1f4527f664ad5d639b4a68cd3e59",
             "locator": {
-              "kind": "symbol",
-              "name": "test_the_d430_sequence_opens_the_item_and_a_curator_row_closes_it"
+              "kind": "file"
             }
           },
           "kind": "test"

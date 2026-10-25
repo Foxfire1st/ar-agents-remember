@@ -55,12 +55,24 @@ No configured Domain Documentation source exists for this file.
 
 ### Repo-Internal References
 
+
 - Stubs `fetch` and unstubs globals after each test. [1]
+
+
 - Asserts the task / file-diff / master URLs (including `%2F` path encoding). [2]
+
+
 - Asserts generation pins ride the master URLs and unset pins are omitted. [3]
+
+
 - Asserts a non-ok (404) response throws `FilesApiError`. [4]
+
+
 - The test imports and exercises taskChangeset and FilesApiError in its URL and error cases. [5]
+
+
 - Contract counterpart: the serving layer emits the 404/400 codes this test stubs. [6]
+
 
 ### Cross-Repo References
 

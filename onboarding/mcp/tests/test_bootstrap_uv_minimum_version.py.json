@@ -206,15 +206,14 @@
       ]
     },
     "4": {
-      "note": "A failed sync names both versions and restores an existing environment when the checker-valid runtime prerequisite is met.",
+      "note": "A failed sync names both versions and restores an existing environment when the checker-valid runtime prerequisite is met.\n\nAnchor: `test_sync_failure_names_both_uv_versions`",
       "targets": [
         {
           "anchor": {
-            "blob": "47d5630cf129aba00d36b74b9d5788f635542297",
-            "content": "sha256:da4c143dda2accfc333596e6eaf0c2b6c05829fc30e3a0279485f81c255e9955",
+            "blob": "50a91a1c05c76b1008887c7d842760bcbdd10f5f",
+            "content": "sha256:b730503cb7df034657838d5dd51fbef13421afd67d5619ee2fb190a07641e20f",
             "locator": {
-              "kind": "symbol",
-              "name": "test_sync_failure_names_both_uv_versions"
+              "kind": "file"
             }
           },
           "kind": "test"

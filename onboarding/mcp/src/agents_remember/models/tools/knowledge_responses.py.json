@@ -1,17 +1,17 @@
 {
   "path": "mcp/src/agents_remember/models/tools/knowledge_responses.py",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
-      "note": "The current read response carries its named view/page and optional reader-owned tree, proof, currentness, family and route blocks.",
+      "note": "The current read response carries its named view/page and optional reader-owned tree, proof, currentness, family and route blocks.\n\nAnchor: `KnowledgeReadResponse`",
       "targets": [
         {
           "anchor": {
-            "blob": "b95b845d5f59e720f11bbf5f0f21d0f8d620ea5a",
-            "content": "sha256:cd0bb85b2d3107913e3eaf8924705f554fed961e044ae925d976bd7e75b28a0b",
+            "blob": "0b97b80d44d3d0a2bd5e469d8c0c966b71f28fa7",
+            "content": "sha256:160816c7bee58615d164d30b3d62b33d769e45d203cc1ff66445ac3f3619cef5",
             "locator": {
-              "kind": "symbol",
-              "name": "KnowledgeReadResponse"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -19,15 +19,14 @@
       ]
     },
     "10": {
-      "note": "The current read response carries its named view/page and optional reader-owned tree, proof, currentness, family and route blocks.",
+      "note": "The current read response carries its named view/page and optional reader-owned tree, proof, currentness, family and route blocks.\n\nAnchor: `KnowledgeReadResponse`",
       "targets": [
         {
           "anchor": {
-            "blob": "b95b845d5f59e720f11bbf5f0f21d0f8d620ea5a",
-            "content": "sha256:cd0bb85b2d3107913e3eaf8924705f554fed961e044ae925d976bd7e75b28a0b",
+            "blob": "0b97b80d44d3d0a2bd5e469d8c0c966b71f28fa7",
+            "content": "sha256:160816c7bee58615d164d30b3d62b33d769e45d203cc1ff66445ac3f3619cef5",
             "locator": {
-              "kind": "symbol",
-              "name": "KnowledgeReadResponse"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -35,15 +34,14 @@
       ]
     },
     "11": {
-      "note": "The current read response carries its named view/page and optional reader-owned tree, proof, currentness, family and route blocks.",
+      "note": "The current read response carries its named view/page and optional reader-owned tree, proof, currentness, family and route blocks.\n\nAnchor: `KnowledgeReadResponse`",
       "targets": [
         {
           "anchor": {
-            "blob": "b95b845d5f59e720f11bbf5f0f21d0f8d620ea5a",
-            "content": "sha256:cd0bb85b2d3107913e3eaf8924705f554fed961e044ae925d976bd7e75b28a0b",
+            "blob": "0b97b80d44d3d0a2bd5e469d8c0c966b71f28fa7",
+            "content": "sha256:160816c7bee58615d164d30b3d62b33d769e45d203cc1ff66445ac3f3619cef5",
             "locator": {
-              "kind": "symbol",
-              "name": "KnowledgeReadResponse"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -51,15 +49,14 @@
       ]
     },
     "13": {
-      "note": "The current read response carries its named view/page and optional reader-owned tree, proof, currentness, family and route blocks.",
+      "note": "The current read response carries its named view/page and optional reader-owned tree, proof, currentness, family and route blocks.\n\nAnchor: `KnowledgeReadResponse`",
       "targets": [
         {
           "anchor": {
-            "blob": "b95b845d5f59e720f11bbf5f0f21d0f8d620ea5a",
-            "content": "sha256:cd0bb85b2d3107913e3eaf8924705f554fed961e044ae925d976bd7e75b28a0b",
+            "blob": "0b97b80d44d3d0a2bd5e469d8c0c966b71f28fa7",
+            "content": "sha256:160816c7bee58615d164d30b3d62b33d769e45d203cc1ff66445ac3f3619cef5",
             "locator": {
-              "kind": "symbol",
-              "name": "KnowledgeReadResponse"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -67,15 +64,14 @@
       ]
     },
     "14": {
-      "note": "The current read response carries its named view/page and optional reader-owned tree, proof, currentness, family and route blocks.",
+      "note": "The current read response carries its named view/page and optional reader-owned tree, proof, currentness, family and route blocks.\n\nAnchor: `KnowledgeReadResponse`",
       "targets": [
         {
           "anchor": {
-            "blob": "b95b845d5f59e720f11bbf5f0f21d0f8d620ea5a",
-            "content": "sha256:cd0bb85b2d3107913e3eaf8924705f554fed961e044ae925d976bd7e75b28a0b",
+            "blob": "0b97b80d44d3d0a2bd5e469d8c0c966b71f28fa7",
+            "content": "sha256:160816c7bee58615d164d30b3d62b33d769e45d203cc1ff66445ac3f3619cef5",
             "locator": {
-              "kind": "symbol",
-              "name": "KnowledgeReadResponse"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -99,15 +95,14 @@
       ]
     },
     "17": {
-      "note": "The current read response carries its named view/page and optional reader-owned tree, proof, currentness, family and route blocks.",
+      "note": "The current read response carries its named view/page and optional reader-owned tree, proof, currentness, family and route blocks.\n\nAnchor: `KnowledgeReadResponse`",
       "targets": [
         {
           "anchor": {
-            "blob": "b95b845d5f59e720f11bbf5f0f21d0f8d620ea5a",
-            "content": "sha256:cd0bb85b2d3107913e3eaf8924705f554fed961e044ae925d976bd7e75b28a0b",
+            "blob": "0b97b80d44d3d0a2bd5e469d8c0c966b71f28fa7",
+            "content": "sha256:160816c7bee58615d164d30b3d62b33d769e45d203cc1ff66445ac3f3619cef5",
             "locator": {
-              "kind": "symbol",
-              "name": "KnowledgeReadResponse"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -131,15 +126,14 @@
       ]
     },
     "2": {
-      "note": "The current read response carries its named view/page and optional reader-owned tree, proof, currentness, family and route blocks.",
+      "note": "The current read response carries its named view/page and optional reader-owned tree, proof, currentness, family and route blocks.\n\nAnchor: `KnowledgeReadResponse`",
       "targets": [
         {
           "anchor": {
-            "blob": "b95b845d5f59e720f11bbf5f0f21d0f8d620ea5a",
-            "content": "sha256:cd0bb85b2d3107913e3eaf8924705f554fed961e044ae925d976bd7e75b28a0b",
+            "blob": "0b97b80d44d3d0a2bd5e469d8c0c966b71f28fa7",
+            "content": "sha256:160816c7bee58615d164d30b3d62b33d769e45d203cc1ff66445ac3f3619cef5",
             "locator": {
-              "kind": "symbol",
-              "name": "KnowledgeReadResponse"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -147,33 +141,15 @@
       ]
     },
     "20": {
-      "note": "The integrity response carries the text-tree validator report.",
+      "note": "The integrity response carries the text-tree validator report.\n\nAnchor: `KnowledgeIntegrityCheckResponse`",
       "targets": [
         {
           "anchor": {
-            "blob": "b95b845d5f59e720f11bbf5f0f21d0f8d620ea5a",
-            "content": "sha256:485cfa3bb9afd5ca691bc3c15251a93b9dce8f2a1a756474ab312f717954cb3d",
+            "blob": "0b97b80d44d3d0a2bd5e469d8c0c966b71f28fa7",
+            "content": "sha256:160816c7bee58615d164d30b3d62b33d769e45d203cc1ff66445ac3f3619cef5",
             "locator": {
-              "kind": "symbol",
-              "name": "KnowledgeIntegrityCheckResponse"
+              "kind": "file"
             }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "25": {
-      "note": "The projection of the registry that the public surface pin compares against the advertised roster.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "8c2e4699aae0165b9cf73eb87c8893483de2c903",
-            "content": "sha256:b0f056003cfce510855c7b66dfeaeebebcd86c393fee53b96f267dea414e1223",
-            "locator": {
-              "kind": "symbol",
-              "name": "PUBLIC_TOOL_RESPONSE_MODELS"
-            },
-            "path": "mcp/src/agents_remember/models/tools/tool_registry.py"
           },
           "kind": "code"
         }
@@ -197,15 +173,14 @@
       ]
     },
     "28": {
-      "note": "The read builder returns the reader-owned payload and read extras.",
+      "note": "The read builder returns the reader-owned payload and read extras.\n\nAnchor: `_read_result`",
       "targets": [
         {
           "anchor": {
-            "blob": "12b2d18549a3d15a005d7fe16fc4b6f3dbc25be1",
-            "content": "sha256:3e2727fb0993b347c3826f27dcf1f18beb611f1296087f36aa0312a4d73596d0",
+            "blob": "c608555cc3f6361621affb9e5e66d35c57c9aa0e",
+            "content": "sha256:58a863d9629d8136b4391ddbdcb60bda18d0b49a97546cd6562ad2367bfbf44e",
             "locator": {
-              "kind": "symbol",
-              "name": "_read_result"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/mcp/tools/knowledge.py"
           },
@@ -214,15 +189,14 @@
       ]
     },
     "3": {
-      "note": "The current read response carries its named view/page and optional reader-owned tree, proof, currentness, family and route blocks.",
+      "note": "The current read response carries its named view/page and optional reader-owned tree, proof, currentness, family and route blocks.\n\nAnchor: `KnowledgeReadResponse`",
       "targets": [
         {
           "anchor": {
-            "blob": "b95b845d5f59e720f11bbf5f0f21d0f8d620ea5a",
-            "content": "sha256:cd0bb85b2d3107913e3eaf8924705f554fed961e044ae925d976bd7e75b28a0b",
+            "blob": "0b97b80d44d3d0a2bd5e469d8c0c966b71f28fa7",
+            "content": "sha256:160816c7bee58615d164d30b3d62b33d769e45d203cc1ff66445ac3f3619cef5",
             "locator": {
-              "kind": "symbol",
-              "name": "KnowledgeReadResponse"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -230,27 +204,14 @@
       ]
     },
     "30": {
-      "note": "The tree-diff and validator-report builders produce factual outputs, neither a semantic verdict.",
+      "note": "The tree-diff and validator-report builders produce factual outputs, neither a semantic verdict.\n\nAnchor: `_diff_result` `_integrity_check_result`",
       "targets": [
         {
           "anchor": {
-            "blob": "91582d2f9125dba48448aa71b5cc9ec39517dc98",
-            "content": "sha256:c822f8bb3e797ed97516cc27dae6fc0bc0458221a5922f599c5e422e0d11b474",
+            "blob": "c608555cc3f6361621affb9e5e66d35c57c9aa0e",
+            "content": "sha256:58a863d9629d8136b4391ddbdcb60bda18d0b49a97546cd6562ad2367bfbf44e",
             "locator": {
-              "kind": "symbol",
-              "name": "_diff_result"
-            },
-            "path": "mcp/src/agents_remember/mcp/tools/knowledge.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "3639d1b611da3713eb7f4619e381959ff1727679",
-            "content": "sha256:363e6a9ffe6358e4560a55aa5313a21d0d48275c11cf337e166d3cf9c600fe90",
-            "locator": {
-              "kind": "symbol",
-              "name": "_integrity_check_result"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/mcp/tools/knowledge.py"
           },
@@ -276,15 +237,14 @@
       ]
     },
     "34": {
-      "note": "The current read response carries its named view/page and optional reader-owned tree, proof, currentness, family and route blocks.",
+      "note": "The current read response carries its named view/page and optional reader-owned tree, proof, currentness, family and route blocks.\n\nAnchor: `KnowledgeReadResponse`",
       "targets": [
         {
           "anchor": {
-            "blob": "b95b845d5f59e720f11bbf5f0f21d0f8d620ea5a",
-            "content": "sha256:cd0bb85b2d3107913e3eaf8924705f554fed961e044ae925d976bd7e75b28a0b",
+            "blob": "0b97b80d44d3d0a2bd5e469d8c0c966b71f28fa7",
+            "content": "sha256:160816c7bee58615d164d30b3d62b33d769e45d203cc1ff66445ac3f3619cef5",
             "locator": {
-              "kind": "symbol",
-              "name": "KnowledgeReadResponse"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -308,12 +268,12 @@
       ]
     },
     "36": {
-      "note": "Where the four classes are imported and mapped to their tool names in the registry.\n\nAnchor: `KnowledgeWriteResponse`",
+      "note": "Where the four classes are imported and mapped to their tool names in the registry.",
       "targets": [
         {
           "anchor": {
-            "blob": "f22561c4fc8fe67d3b83091f44dd37e323124fbd",
-            "content": "sha256:7892d45dfdde8e6454442e939f32c6565e4f67d3f10bbd1fae777f18afb59998",
+            "blob": "ca5af906298a90f3101a98a5542005e3549b3c0a",
+            "content": "sha256:10aa450f5caa463f1fe75eabf3cdf642c485bc41fe35884de37c4765dece2359",
             "locator": {
               "kind": "file"
             },
@@ -324,12 +284,12 @@
       ]
     },
     "37": {
-      "note": "The four advertised knowledge tool names in the public roster. The module's own `__all__` re-exports three of them, and `KnowledgeWriteResponse` is defined and registered without being listed there.\n\nAnchor: `PUBLIC_TOOLS`",
+      "note": "The four advertised knowledge tool names in the public roster. The module's own `__all__` re-exports three of them, and `KnowledgeWriteResponse` is defined and registered without being listed there.",
       "targets": [
         {
           "anchor": {
-            "blob": "322a01b7560d7402dc0daa221e3f5d430a0ae448",
-            "content": "sha256:b86d6afd30bac3e1e8d2ecc1ee4724a5ea439e35a044ed9e3830fd43e40dc5c7",
+            "blob": "d0b0ddd9f150e32116b430ecc74907fcf68fee97",
+            "content": "sha256:fdef15e2ca9d39f66c8570a7147cb894dda16f47c7d3558bb4454e5b4714875f",
             "locator": {
               "kind": "file"
             },
@@ -340,12 +300,12 @@
       ]
     },
     "38": {
-      "note": "The docstring paragraph on the route-chain rows, `routeChain` and the family seed.\n\nAnchor: `knowledge_responses`",
+      "note": "The docstring paragraph on the route-chain rows, `routeChain` and the family seed.",
       "targets": [
         {
           "anchor": {
-            "blob": "d28c1c31547ed5820af67ea2fb3476dcb3959dda",
-            "content": "sha256:0bb764809d268b1241a7f9ad6de39d1effd8662ca2284ad12825da6368309198",
+            "blob": "0b97b80d44d3d0a2bd5e469d8c0c966b71f28fa7",
+            "content": "sha256:9ee8b471f0b95c456599695ba98ec742061906fd02621c2b9428049911d031f8",
             "locator": {
               "end": 55,
               "kind": "line_range",
@@ -357,12 +317,12 @@
       ]
     },
     "39": {
-      "note": "The docstring paragraph on the leaf read and family names.\n\nAnchor: `knowledge_responses`",
+      "note": "The docstring paragraph on the leaf read and family names.",
       "targets": [
         {
           "anchor": {
-            "blob": "d28c1c31547ed5820af67ea2fb3476dcb3959dda",
-            "content": "sha256:37b5280d3f42bdd814c28bb869ba5c26683643da9d274ed28224afedd4a8d48e",
+            "blob": "0b97b80d44d3d0a2bd5e469d8c0c966b71f28fa7",
+            "content": "sha256:fbd01d0c7c951913f1e136c887504d64992f022dab4d5997529d09d349d3cc8f",
             "locator": {
               "end": 49,
               "kind": "line_range",
@@ -374,15 +334,14 @@
       ]
     },
     "4": {
-      "note": "The current read response carries its named view/page and optional reader-owned tree, proof, currentness, family and route blocks.",
+      "note": "The current read response carries its named view/page and optional reader-owned tree, proof, currentness, family and route blocks.\n\nAnchor: `KnowledgeReadResponse`",
       "targets": [
         {
           "anchor": {
-            "blob": "b95b845d5f59e720f11bbf5f0f21d0f8d620ea5a",
-            "content": "sha256:cd0bb85b2d3107913e3eaf8924705f554fed961e044ae925d976bd7e75b28a0b",
+            "blob": "0b97b80d44d3d0a2bd5e469d8c0c966b71f28fa7",
+            "content": "sha256:160816c7bee58615d164d30b3d62b33d769e45d203cc1ff66445ac3f3619cef5",
             "locator": {
-              "kind": "symbol",
-              "name": "KnowledgeReadResponse"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -458,15 +417,14 @@
       ]
     },
     "44": {
-      "note": "The optional `proofs` field on the read response, beside L03's `currentness`, since MIK-R02 the `page` and `threshold` fields, since MIK-R01 the optional `families`, and since MIK-R05 the optional `routeChain`.",
+      "note": "The optional `proofs` field on the read response, beside L03's `currentness`, since MIK-R02 the `page` and `threshold` fields, since MIK-R01 the optional `families`, and since MIK-R05 the optional `routeChain`.\n\nAnchor: `KnowledgeReadResponse`",
       "targets": [
         {
           "anchor": {
-            "blob": "b95b845d5f59e720f11bbf5f0f21d0f8d620ea5a",
-            "content": "sha256:cd0bb85b2d3107913e3eaf8924705f554fed961e044ae925d976bd7e75b28a0b",
+            "blob": "0b97b80d44d3d0a2bd5e469d8c0c966b71f28fa7",
+            "content": "sha256:160816c7bee58615d164d30b3d62b33d769e45d203cc1ff66445ac3f3619cef5",
             "locator": {
-              "kind": "symbol",
-              "name": "KnowledgeReadResponse"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -474,15 +432,14 @@
       ]
     },
     "45": {
-      "note": "The optional `currentness` field on the read response, after `proofs`, re-read at MIK-R02 when the model gained `page` and `threshold`, at MIK-R01 when it gained `families`, and at MIK-R05 when it gained `routeChain`.",
+      "note": "The optional `currentness` field on the read response, after `proofs`, re-read at MIK-R02 when the model gained `page` and `threshold`, at MIK-R01 when it gained `families`, and at MIK-R05 when it gained `routeChain`.\n\nAnchor: `KnowledgeReadResponse`",
       "targets": [
         {
           "anchor": {
-            "blob": "b95b845d5f59e720f11bbf5f0f21d0f8d620ea5a",
-            "content": "sha256:cd0bb85b2d3107913e3eaf8924705f554fed961e044ae925d976bd7e75b28a0b",
+            "blob": "0b97b80d44d3d0a2bd5e469d8c0c966b71f28fa7",
+            "content": "sha256:160816c7bee58615d164d30b3d62b33d769e45d203cc1ff66445ac3f3619cef5",
             "locator": {
-              "kind": "symbol",
-              "name": "KnowledgeReadResponse"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -490,15 +447,14 @@
       ]
     },
     "46": {
-      "note": "The `page` state (which since MIK-R01 also answers a leaf read, and since MIK-R05 a family seed) and the optional `page` and `threshold` fields on the read model.",
+      "note": "The `page` state (which since MIK-R01 also answers a leaf read, and since MIK-R05 a family seed) and the optional `page` and `threshold` fields on the read model.\n\nAnchor: `KnowledgeReadResponse`",
       "targets": [
         {
           "anchor": {
-            "blob": "b95b845d5f59e720f11bbf5f0f21d0f8d620ea5a",
-            "content": "sha256:cd0bb85b2d3107913e3eaf8924705f554fed961e044ae925d976bd7e75b28a0b",
+            "blob": "0b97b80d44d3d0a2bd5e469d8c0c966b71f28fa7",
+            "content": "sha256:160816c7bee58615d164d30b3d62b33d769e45d203cc1ff66445ac3f3619cef5",
             "locator": {
-              "kind": "symbol",
-              "name": "KnowledgeReadResponse"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -506,15 +462,14 @@
       ]
     },
     "47": {
-      "note": "The read response: which view and which snapshot it was read at, echoed beside the payload verbatim, plus the optional memory-tree binding and index completeness when the read went through a converted tree's index.",
+      "note": "The read response: which view and which snapshot it was read at, echoed beside the payload verbatim, plus the optional memory-tree binding and index completeness when the read went through a converted tree's index.\n\nAnchor: `KnowledgeReadResponse`",
       "targets": [
         {
           "anchor": {
-            "blob": "b95b845d5f59e720f11bbf5f0f21d0f8d620ea5a",
-            "content": "sha256:cd0bb85b2d3107913e3eaf8924705f554fed961e044ae925d976bd7e75b28a0b",
+            "blob": "0b97b80d44d3d0a2bd5e469d8c0c966b71f28fa7",
+            "content": "sha256:160816c7bee58615d164d30b3d62b33d769e45d203cc1ff66445ac3f3619cef5",
             "locator": {
-              "kind": "symbol",
-              "name": "KnowledgeReadResponse"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -522,15 +477,14 @@
       ]
     },
     "48": {
-      "note": "The read handler that stores the view payload's own JSON and echoes the snapshot, the completeness statement (forced to `false` by a partial index) and the continuation token, beside `memoryTree` and `indexComplete`.",
+      "note": "The read handler that stores the view payload's own JSON and echoes the snapshot, the completeness statement (forced to `false` by a partial index) and the continuation token, beside `memoryTree` and `indexComplete`.\n\nAnchor: `KnowledgeReadResponse`",
       "targets": [
         {
           "anchor": {
-            "blob": "b95b845d5f59e720f11bbf5f0f21d0f8d620ea5a",
-            "content": "sha256:cd0bb85b2d3107913e3eaf8924705f554fed961e044ae925d976bd7e75b28a0b",
+            "blob": "0b97b80d44d3d0a2bd5e469d8c0c966b71f28fa7",
+            "content": "sha256:160816c7bee58615d164d30b3d62b33d769e45d203cc1ff66445ac3f3619cef5",
             "locator": {
-              "kind": "symbol",
-              "name": "KnowledgeReadResponse"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -554,15 +508,14 @@
       ]
     },
     "5": {
-      "note": "The current read response carries its named view/page and optional reader-owned tree, proof, currentness, family and route blocks.",
+      "note": "The current read response carries its named view/page and optional reader-owned tree, proof, currentness, family and route blocks.\n\nAnchor: `KnowledgeReadResponse`",
       "targets": [
         {
           "anchor": {
-            "blob": "b95b845d5f59e720f11bbf5f0f21d0f8d620ea5a",
-            "content": "sha256:cd0bb85b2d3107913e3eaf8924705f554fed961e044ae925d976bd7e75b28a0b",
+            "blob": "0b97b80d44d3d0a2bd5e469d8c0c966b71f28fa7",
+            "content": "sha256:160816c7bee58615d164d30b3d62b33d769e45d203cc1ff66445ac3f3619cef5",
             "locator": {
-              "kind": "symbol",
-              "name": "KnowledgeReadResponse"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -586,15 +539,14 @@
       ]
     },
     "51": {
-      "note": "A family whose members have no proof shows `[]`.",
+      "note": "A family whose members have no proof shows `[]`.\n\nAnchor: `test_a_family_whose_members_have_no_proof_shows_an_empty_list`",
       "targets": [
         {
           "anchor": {
-            "blob": "598b84d6b63c399c08e71e94ec6d7c3ea806afeb",
-            "content": "sha256:3ca50d3f9ee1a02287b076df8a2ab5873b77daabc19839e6208d443fbca3df22",
+            "blob": "0256098f652dc34be5986d7dcab77243a655f959",
+            "content": "sha256:ebb05908d076c74907bac8a22bfb3c2902b74eb2329c114409ae4e9ab1aba461",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_family_whose_members_have_no_proof_shows_an_empty_list"
+              "kind": "file"
             },
             "path": "mcp/tests/test_knowledge_proofs.py"
           },
@@ -620,12 +572,12 @@
       ]
     },
     "53": {
-      "note": "The registry entry point itself, whose docstring states that a package-owned response shape uses a strict model so the field set is a drift-proof contract.\n\nAnchor: lines 3-9",
+      "note": "The registry entry point itself, whose docstring states that a package-owned response shape uses a strict model so the field set is a drift-proof contract.",
       "targets": [
         {
           "anchor": {
-            "blob": "97539a1d3035c51bdfc8174a6c7de015195b7f61",
-            "content": "sha256:e89530603afbbcb72dd29a9e296e44e817ee7c358074d3843cbcaef53789a28f",
+            "blob": "ca5af906298a90f3101a98a5542005e3549b3c0a",
+            "content": "sha256:8af865ea41b45df06899c6d12c5a8bbc7542f17572f8c28c292b432361963ffa",
             "locator": {
               "end": 9,
               "kind": "line_range",
@@ -642,8 +594,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d28c1c31547ed5820af67ea2fb3476dcb3959dda",
-            "content": "sha256:81f3f9cd3c3cc247c54d68ef6059a42f8e550cdad816a09aa2e5614e591520dc",
+            "blob": "0b97b80d44d3d0a2bd5e469d8c0c966b71f28fa7",
+            "content": "sha256:160816c7bee58615d164d30b3d62b33d769e45d203cc1ff66445ac3f3619cef5",
             "locator": {
               "kind": "file"
             }
@@ -653,15 +605,14 @@
       ]
     },
     "6": {
-      "note": "The current read response carries its named view/page and optional reader-owned tree, proof, currentness, family and route blocks.",
+      "note": "The current read response carries its named view/page and optional reader-owned tree, proof, currentness, family and route blocks.\n\nAnchor: `KnowledgeReadResponse`",
       "targets": [
         {
           "anchor": {
-            "blob": "b95b845d5f59e720f11bbf5f0f21d0f8d620ea5a",
-            "content": "sha256:cd0bb85b2d3107913e3eaf8924705f554fed961e044ae925d976bd7e75b28a0b",
+            "blob": "0b97b80d44d3d0a2bd5e469d8c0c966b71f28fa7",
+            "content": "sha256:160816c7bee58615d164d30b3d62b33d769e45d203cc1ff66445ac3f3619cef5",
             "locator": {
-              "kind": "symbol",
-              "name": "KnowledgeReadResponse"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -669,15 +620,14 @@
       ]
     },
     "8": {
-      "note": "The integrity model carries validator inputs, report and optional leaf worklist fields.",
+      "note": "The integrity model carries validator inputs, report and optional leaf worklist fields.\n\nAnchor: `KnowledgeIntegrityCheckResponse`",
       "targets": [
         {
           "anchor": {
-            "blob": "b95b845d5f59e720f11bbf5f0f21d0f8d620ea5a",
-            "content": "sha256:485cfa3bb9afd5ca691bc3c15251a93b9dce8f2a1a756474ab312f717954cb3d",
+            "blob": "0b97b80d44d3d0a2bd5e469d8c0c966b71f28fa7",
+            "content": "sha256:160816c7bee58615d164d30b3d62b33d769e45d203cc1ff66445ac3f3619cef5",
             "locator": {
-              "kind": "symbol",
-              "name": "KnowledgeIntegrityCheckResponse"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -685,15 +635,14 @@
       ]
     },
     "9": {
-      "note": "The integrity handler reports text-tree validation.",
+      "note": "The integrity handler reports text-tree validation.\n\nAnchor: `_integrity_check_result`",
       "targets": [
         {
           "anchor": {
-            "blob": "3639d1b611da3713eb7f4619e381959ff1727679",
-            "content": "sha256:363e6a9ffe6358e4560a55aa5313a21d0d48275c11cf337e166d3cf9c600fe90",
+            "blob": "c608555cc3f6361621affb9e5e66d35c57c9aa0e",
+            "content": "sha256:58a863d9629d8136b4391ddbdcb60bda18d0b49a97546cd6562ad2367bfbf44e",
             "locator": {
-              "kind": "symbol",
-              "name": "_integrity_check_result"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/mcp/tools/knowledge.py"
           },

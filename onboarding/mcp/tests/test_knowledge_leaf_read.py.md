@@ -6,7 +6,7 @@
 
 ## Current source contract evidence
 
-- The public leaf-tail premise measures a within-bound text-free page with continuation; rich domain-unit rows preserve selection/continued-family identities, not pointer retrieval or an execution verdict. [38]
+- The public leaf-tail premise measures a within-bound text-free page with continuation; rich domain-unit rows preserve selection/continued-family identities, not pointer retrieval or an execution verdict.
 
 ## Purpose
 
@@ -64,10 +64,18 @@ No Domain Documentation source is configured for this slice.
 
 ### Repo-Internal References
 
+
 - `test_a_path_selects_one_family_hop_in_the_declared_order` supplies the current fixture or assertion described above. [20]
+
+
 - `test_both_surfaces_return_one_selection_under_one_manifest` supplies the current fixture or assertion described above. [21]
+
+
 - `test_a_leaf_walk_resumes_at_its_code_tree_from_the_named_repository` supplies the current fixture or assertion described above. [22]
+
+
 - `test_identity_seeds_on_a_tree_keep_the_scope_read_beside_the_leaf` supplies the current fixture or assertion described above. [23]
+
 
 ### Docs References
 
@@ -80,19 +88,39 @@ code and memory repositories, so they are named here and not cited as rows.
 
 No configured live documentation source was available for this pass.
 
+
 - The converted-tree world written through the text-file layout. [24]
+
+
 - Selection, order, reference row, frontier, the chain rows after it, counts and policy. [25]
+
+
 - Same manifest, ordered IDs and mapped kind/role pairs between the internal block and knowledge_read, not identical full rows. [26]
+
+
 - Family IDs in the invariant view, with the fixture title excluded. [27]
+
+
 - Name-only conforming page with admitted states/kinds and existing location files. [28]
+
 - MIK-R05: a path without entries under a route is a page of its chain rows, stating `registration_absent`. [29]
+
 - A path with no entry and no governing family refused on both surfaces with its `routeChain`, and refusals naming the tree. [30]
+
+
 - A partial index named on both surfaces. [31]
+
+
 - A root with no commit refused by name. [32]
+
+
 - A leaf walk resumes at its code tree, with no path in the token. [33]
+
 - More than one queue of seeds refused by name within the threshold. [34]
 - The derived reference title. [35]
+
 - Identity seeds keep the scope read beside the leaf, and the mixed-block policy. [36]
+
 - The lane row. [37]
 
 ### Cross-Repo References

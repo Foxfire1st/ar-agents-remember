@@ -3,16 +3,28 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The coordinator tools example separates global commands from repository-specific checks, branch workflow, and code quality tools.\n\nAnchor: `# Coordinator Tools Example`",
+      "note": "The coordinator tools example separates global commands from repository-specific checks, branch workflow, and code quality tools.",
       "targets": [
         {
           "anchor": {
-            "blob": "50f1f044fc74b316290010e6c58cc5acab8d47e8",
-            "content": "sha256:e8200b76e6c82e2112a55edccb076190b6caf43128c6cee4ed1c622328fda8b0",
+            "blob": "deed7164e9a358f0993b870c8855bde3192ea17c",
+            "content": "sha256:444ce029c41b88d2d1bb06d74621d4535fcb84c2d03d5ea3a186bbba76a63e9e",
             "locator": {
-              "end": 91,
+              "end": 7,
               "kind": "line_range",
               "start": 1
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "deed7164e9a358f0993b870c8855bde3192ea17c",
+            "content": "sha256:f09e59011fab7f3ba74273fe57154afda12198c6f6786196dd7897adbc003817",
+            "locator": {
+              "end": 88,
+              "kind": "line_range",
+              "start": 84
             }
           },
           "kind": "code"
@@ -88,12 +100,12 @@
       ]
     },
     "6": {
-      "note": "Current instruction contract and retained-read replacement, not historical provider/tool examples.\n\nAnchor: # Coordinator Tools Example",
+      "note": "The coordinator-level tools example: global commands, the MCP status and install entry points, the managed provider lifecycle, and the containment checks that keep provider output as discovery evidence.",
       "targets": [
         {
           "anchor": {
-            "blob": "8808e0d416208721b7111c768defa77dea8537d0",
-            "content": "sha256:6e625afe6aaff7c24e43232f03444b839d91fc757c63005b6b9147f22ddf1b04",
+            "blob": "deed7164e9a358f0993b870c8855bde3192ea17c",
+            "content": "sha256:3216ac60c840c2eb9d0be7cfd5438cedbcd849bcb10f96087904fd67b3f7abb5",
             "locator": {
               "end": 88,
               "kind": "line_range",

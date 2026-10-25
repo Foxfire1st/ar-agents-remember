@@ -141,12 +141,22 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The archived-leaf class drives reopen, the named start arguments, a repeated reopen and three cycles.",
+      "note": "The archived-leaf class drives reopen, the named start arguments, a repeated reopen and three cycles.\n\nAnchor: `ArchivedLeafReopenTests`",
       "targets": [
         {
           "anchor": {
-            "blob": "30874c4160882f320c40f3ec9c620293c7e4619e",
-            "content": "sha256:5120dd697b9332d3905a6d6ea01ed08c4cef9aa6b3c00439bde2ebf0ca73fee2",
+            "blob": "471376ebcea20071d0596bf86e5386fb6fce3fd4",
+            "content": "sha256:17ff93bb15abde4be401e01142802f9084911d2f73c93a31a029429545d6ff80",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "471376ebcea20071d0596bf86e5386fb6fce3fd4",
+            "content": "sha256:f3d92a07ba9923f01369bd32cd1283809a221db88aeb739176718596da4d77ea",
             "locator": {
               "kind": "symbol",
               "name": "ArchivedLeafReopenTests"
@@ -157,12 +167,22 @@
       ]
     },
     "2": {
-      "note": "The master class drives the self-named parent, the master reopen from its sprint line, and the refusal that names the missing file.",
+      "note": "The master class drives the self-named parent, the master reopen from its sprint line, and the refusal that names the missing file.\n\nAnchor: `MasterReopenTests`",
       "targets": [
         {
           "anchor": {
-            "blob": "30874c4160882f320c40f3ec9c620293c7e4619e",
-            "content": "sha256:e706fc4b11a0159c2201c031e6560ea188248e26e27a399bb8e8a8543994e156",
+            "blob": "471376ebcea20071d0596bf86e5386fb6fce3fd4",
+            "content": "sha256:17ff93bb15abde4be401e01142802f9084911d2f73c93a31a029429545d6ff80",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "471376ebcea20071d0596bf86e5386fb6fce3fd4",
+            "content": "sha256:990c0a7f3d1c51fb748fd702671ec8eb2690073a57182cfc6412104c13ca7977",
             "locator": {
               "kind": "symbol",
               "name": "MasterReopenTests"

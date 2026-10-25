@@ -30,15 +30,14 @@
       ]
     },
     "2": {
-      "note": "Atomic manifest writes reuse the kernel atomic-write helper.",
+      "note": "Atomic manifest writes reuse the kernel atomic-write helper.\n\nAnchor: `atomic_write_bytes`",
       "targets": [
         {
           "anchor": {
-            "blob": "efbf061d25e4bd4e1cd1e0a31153581ca01d3912",
-            "content": "sha256:ce7c891bd0acb0bdef2e379547bb884fdc58ad8b6633f6b83480ca1110be5a98",
+            "blob": "89d28e15fd681587d33624b1665393538e1957ec",
+            "content": "sha256:0d39c408c8aeab5e6a05b206e425027381fa898ef96c19be56040e6ec972b839",
             "locator": {
-              "kind": "symbol",
-              "name": "atomic_write_bytes"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/kernel/atomic_write.py"
           },

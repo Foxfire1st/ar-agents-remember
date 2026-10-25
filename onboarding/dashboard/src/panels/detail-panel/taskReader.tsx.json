@@ -414,7 +414,7 @@
       ]
     },
     "4": {
-      "note": "StepsBlock owns the task’s full step table and receives cached major-step payloads for header marks; reader composition only supplies served steps and counts.",
+      "note": "StepsBlock owns the full served step table and derives its header marks from those steps; taskReader supplies doc.steps and the served done/total counts.",
       "targets": [
         {
           "anchor": {
@@ -431,12 +431,12 @@
         },
         {
           "anchor": {
-            "blob": "29a2217745a3ef92625b3283471bf70a9453482f",
-            "content": "sha256:910c7fcfbadcea54c94c5330574519dd5d7e2459a58bfe17fd0c4c2c4ef9eb87",
+            "blob": "d25262c3e75cb900805602c122e9f8f6605ec733",
+            "content": "sha256:699e74cdadc822c77251af1b359c923d31cb14a6a5cae3e498725bd093eeac4f",
             "locator": {
-              "end": 795,
+              "end": 191,
               "kind": "line_range",
-              "start": 791
+              "start": 191
             }
           },
           "kind": "code"
@@ -461,12 +461,12 @@
         },
         {
           "anchor": {
-            "blob": "29a2217745a3ef92625b3283471bf70a9453482f",
-            "content": "sha256:888fa610f5d1acafc89aa9d7ca03fb356010584af5183e55dd6b83b05696785f",
+            "blob": "d25262c3e75cb900805602c122e9f8f6605ec733",
+            "content": "sha256:142b95df43e29ac717fa1fbbe927f86aa2fd59addc78039791a0d5e50b4a5269",
             "locator": {
-              "end": 986,
+              "end": 305,
               "kind": "line_range",
-              "start": 984
+              "start": 305
             }
           },
           "kind": "code"
@@ -478,28 +478,66 @@
       "targets": [
         {
           "anchor": {
-            "blob": "29a2217745a3ef92625b3283471bf70a9453482f",
-            "content": "sha256:65057cee68f645165f00c0c22bd77372014ccc54cc26f79fd6ddd61b6031af0b",
+            "blob": "d25262c3e75cb900805602c122e9f8f6605ec733",
+            "content": "sha256:00860c2065654aad86d3187cba51a24f52550de5a26d304c4b2b58872bb8baa0",
             "locator": {
-              "end": 649,
+              "end": 114,
               "kind": "line_range",
-              "start": 619
+              "start": 114
             }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8727e6986904131489c13104c706b28a118acb8a",
+            "content": "sha256:d64f365cefe7a023e10b154b9963bc92faf3980666dcc39df6fcf368207ec901",
+            "locator": {
+              "end": 49,
+              "kind": "line_range",
+              "start": 20
+            },
+            "path": "dashboard/src/panels/detail-panel/directGrant.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8727e6986904131489c13104c706b28a118acb8a",
+            "content": "sha256:cae4c26ac5c74e3fc873c7fc326efc564171e20986a44db4b865963e8f1a7361",
+            "locator": {
+              "end": 71,
+              "kind": "line_range",
+              "start": 64
+            },
+            "path": "dashboard/src/panels/detail-panel/directGrant.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8727e6986904131489c13104c706b28a118acb8a",
+            "content": "sha256:fb0c0af5160e84432658d148d9c438ae93bda9126762c6336a4909df69ce9c1f",
+            "locator": {
+              "end": 139,
+              "kind": "line_range",
+              "start": 125
+            },
+            "path": "dashboard/src/panels/detail-panel/directGrant.tsx"
           },
           "kind": "code"
         }
       ]
     },
     "8": {
-      "note": "Only a planning subTask receives the switch; other granted states receive bare words.",
+      "note": "Only a planning subTask receives the switch; other granted states receive bare words.\n\nAnchor: `TaskDirectGrant`",
       "targets": [
         {
           "anchor": {
-            "blob": "29a2217745a3ef92625b3283471bf70a9453482f",
-            "content": "sha256:f2c021e8f2b02c9377f08cea5db588e0297f34094d730d93b901f251c8b22e77",
+            "blob": "d25262c3e75cb900805602c122e9f8f6605ec733",
+            "content": "sha256:82805ff8a3713ade6c30508c8f06281896b47515419deb4f756aec756a13228a",
             "locator": {
-              "kind": "symbol",
-              "name": "TaskDirectGrant"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -507,12 +545,12 @@
       ]
     },
     "9": {
-      "note": "TaskPage identity is the canonical entry key; the surrounding clock observes only shown entry event times.\n\nAnchor: Entry-keyed page",
+      "note": "TaskPage identity is the canonical entry key; the surrounding clock runs for shown entries that carry an event time or a served limited status.",
       "targets": [
         {
           "anchor": {
-            "blob": "66607c8748bbb4f94154ffd1893a44a92f9486e8",
-            "content": "sha256:670847d540f0f43726ac3c7d39f7605969e5bf50813769234c99c03f5f453988",
+            "blob": "d25262c3e75cb900805602c122e9f8f6605ec733",
+            "content": "sha256:dad2bacbc309bc8ab455958696611f13997f7ad84148c986036a00053000ad0e",
             "locator": {
               "end": 78,
               "kind": "line_range",

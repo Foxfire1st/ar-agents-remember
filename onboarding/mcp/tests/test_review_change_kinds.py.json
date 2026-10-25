@@ -297,12 +297,38 @@
       "targets": [
         {
           "anchor": {
-            "blob": "11ba98ff63f4a4815985ac51e2c0c7b5a48556a4",
-            "content": "sha256:fa377eaa04ac949870887763adda65172a739965e8babc52a2d5204e9546d7f9",
+            "blob": "102c4550ab6429f44c8fb543d1d0662de66a1b8c",
+            "content": "sha256:6389a4bae14d3ffef42e5c4d6ab9bbe3138659ddce6374270829781d0260d022",
             "locator": {
-              "end": 308,
+              "end": 344,
               "kind": "line_range",
-              "start": 308
+              "start": 344
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "102c4550ab6429f44c8fb543d1d0662de66a1b8c",
+            "content": "sha256:43f2314a00430f3aa25646e4e94034fc6fa5d7653b4a947b384f45ce94206311",
+            "locator": {
+              "end": 311,
+              "kind": "line_range",
+              "start": 311
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "102c4550ab6429f44c8fb543d1d0662de66a1b8c",
+            "content": "sha256:4d6e69d9fd05501b061d825eaf9b33c5cdd662dbe6534a04a2747e06940f35cf",
+            "locator": {
+              "end": 261,
+              "kind": "line_range",
+              "start": 261
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -311,12 +337,22 @@
       ]
     },
     "8": {
-      "note": "The outline reads indexes only and keeps catalogue bytes",
+      "note": "The outline reads indexes only and keeps catalogue bytes\n\nAnchor: `test_the_outline_reads_only_indexes_and_preserves_catalogue_fields`",
       "targets": [
         {
           "anchor": {
-            "blob": "dfbe096adabbc51c06241ec10f75fabdf9ff4ad5",
-            "content": "sha256:b89943cde40c8d4eea4d96ec97ea8e931bbc2e55c5cce26b2d3246359c9ad193",
+            "blob": "b76a4b0f533b10441728d647d34bd83bea491279",
+            "content": "sha256:966169a3024abbf7ec236cb2cc396a1ed6183da344f1db2cefb1180ff04ea3a0",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b76a4b0f533b10441728d647d34bd83bea491279",
+            "content": "sha256:7720b213152f6e6c666d4a0257f80b956520198ecf8900eede5e861fe41bccd4",
             "locator": {
               "kind": "symbol",
               "name": "test_the_outline_reads_only_indexes_and_preserves_catalogue_fields"

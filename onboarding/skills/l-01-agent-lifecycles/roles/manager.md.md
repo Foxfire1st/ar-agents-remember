@@ -181,20 +181,38 @@ independent reviewer rejection permits a successor.
 
 The Manager retains its master’s leaf diff, direct repair and transaction ownership. A check or investigation belonging to no leaf may be assigned to Investigator within the Manager’s admitted master; leaf checks remain with the actual Worker or Reviewer. A forbidden start is sent to the known parent, or named as a blocker without one. This added delegation permission does not require an Orchestrator above one master or transfer onboarding/code ownership.
 
+
 - This source owns the stated current Investigator scope or canonical vocabulary. [7]
+
 ## Refreshed current evidence
+
 
 - One manager owns one canonical master and the complete leaf closeout chain. [1]
 
-- Hosted child dispatch uses leaf document, role, and complete brief without retained occupant ids. [2]
 
-- The leaf loop sequences builder, reviewer, exact-packet/adjudication curator intake, closeout, integration, and cleanup duties. [3]
+> Retained historical citation wording: - Hosted child dispatch uses leaf document, role, and complete brief without retained occupant ids. [2]
+
+
+- Manager starts permitted roles on its own canonical master through role_start; a leaf's Worker, Reviewer and Curator start together through role_start_set. Canonical task references and the chosen request ID select the assignment, and the start writes the complete handover and returns the agent ID and artifact paths for retained addressing. [2]
+
+
+> Retained historical citation wording: - The leaf loop sequences builder, reviewer, exact-packet/adjudication curator intake, closeout, integration, and cleanup duties. [3]
+
+
+- The Manager starts the Worker, Reviewer and Curator as one role_start_set; their freeze, finding, passed-code input and memory-verdict handovers run directly between the three seats. Curator intake remains bound to the leaf task, approved version-bound requirement packets, the exact passed freeze and both producers' requirement-shaped hand-off items. Manager reads the reports and both verdicts, decides the gate and retains closeout, integration, task-stage publication, acceptance and landing order. [3]
+
+
 
 - Master exit and handover use durable verdict/packet evidence and structural ownership. [4]
 
+
+
 - Structural parent/child messages are the role's communication path. [5]
 
-- Manager dispatch compiles and preserves the exact per-ID acceptance set through reviewer and curator handoffs. [6]
+
+
+- Manager dispatch carries each leaf's one primary requirement revision, with inherited or adjacent requirements remaining constraints, and preserves stable requirement and finding IDs while keeping implementation, review, curation and publication status distinct. [6]
+
 ## Stage Boundary
 
 The Manager hands a whole stage with its end state to its owner, not a chain of steps; its exactness is at sync, closeout, integration, task end and agent starts.
@@ -205,7 +223,9 @@ The review budget is the settings number `orchestration.loops.defaults.maxRounds
 
 ## Current Source Evidence
 
+
 - Current settings-budget, recorded approval and preserved stage/ownership boundaries are carried by this canonical instruction source. [8]
+
 
 - Native operations publish mirrored task stage; explicit correction and organizational-master completion retain task_doc ownership. [10]
 

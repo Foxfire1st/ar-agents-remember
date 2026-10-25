@@ -107,7 +107,9 @@ No configured Domain Documentation source exists for this file.
 
 ### Repo-Internal References
 
+
 - The serving cache delegates native file statuses and counts to `git_changes`, not the removed function in `git`. [14]
+
 
 - The one scope the selection ever serves, and the three-state request contract (live / pinned / absent) with the digest and currentness rules. [1]
 - The named refusal for a missing master endpoint, as the committed-range vocabulary applied to the master's base and result. [2]
@@ -119,7 +121,9 @@ No configured Domain Documentation source exists for this file.
 - The selector: `None` for an unknown master, named refusal for missing code endpoints, memory degradation for an absent leg. [8]
 - Independent half resolution: required code pair vs degradable memory leg, and the `cat-file` resolve check with its two broken-state kinds. [9]
 - Currentness measured against the live integrated tips in the same call. [10]
+
 - The thin delegating entry that consumes the selection and publishes `generation` + `currentness` + `scope`. [11]
+
 - The committed-range refusal vocabulary this module subclasses, with its three absence kinds. [12]
 - The nine cases that measure the selection (eight plus the F1 diff-failure case) through real contracts, repos and routes. [13]
 

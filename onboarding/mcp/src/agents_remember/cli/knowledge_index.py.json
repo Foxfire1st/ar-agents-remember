@@ -22,12 +22,12 @@
   ],
   "references": {
     "1": {
-      "note": "The command line and the exit statuses.\n\nAnchor: \"Exit status: 0 for a complete index\"",
+      "note": "The command line and the exit statuses.",
       "targets": [
         {
           "anchor": {
-            "blob": "3f57a18d7b9c660aa16e15076b98e96ebacf9a79",
-            "content": "sha256:0907370cdd8b80009b632fae50228a3a69a51898b09564a5f886b8d8a0f78ff1",
+            "blob": "6f8a1b5f2e12e8aabdd86ebd9ce6cd08658bed0d",
+            "content": "sha256:93dc888ffd7fe61f1fa2fb0176a9409d4237b3d4c3bf5d309294646ee4e8227a",
             "locator": {
               "end": 14,
               "kind": "line_range",
@@ -39,15 +39,14 @@
       ]
     },
     "2": {
-      "note": "Arguments.",
+      "note": "Arguments.\n\nAnchor: `add_arguments`",
       "targets": [
         {
           "anchor": {
-            "blob": "6dac04491dc3e36d2f4f587923556d007147948d",
-            "content": "sha256:6c326abfb8ca490077e1c2c925d28385e2740164b5eb1d4adc81b32ff6795088",
+            "blob": "6f8a1b5f2e12e8aabdd86ebd9ce6cd08658bed0d",
+            "content": "sha256:8fa8066f8dd699a35d0ec87335fe4b84391e0176bd5d71accbcd722b2b10701b",
             "locator": {
-              "kind": "symbol",
-              "name": "add_arguments"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -55,15 +54,14 @@
       ]
     },
     "3": {
-      "note": "The build or reuse, the JSON report and the exit status by state.",
+      "note": "The build or reuse, the JSON report and the exit status by state.\n\nAnchor: `run`",
       "targets": [
         {
           "anchor": {
-            "blob": "6dac04491dc3e36d2f4f587923556d007147948d",
-            "content": "sha256:d1011d9fef67ab244f9a31d25895681b7aa4e54d42b5a76b2ac54468c52ee265",
+            "blob": "6f8a1b5f2e12e8aabdd86ebd9ce6cd08658bed0d",
+            "content": "sha256:8fa8066f8dd699a35d0ec87335fe4b84391e0176bd5d71accbcd722b2b10701b",
             "locator": {
-              "kind": "symbol",
-              "name": "run"
+              "kind": "file"
             }
           },
           "kind": "code"

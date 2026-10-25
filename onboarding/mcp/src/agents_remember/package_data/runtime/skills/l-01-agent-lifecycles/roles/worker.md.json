@@ -23,12 +23,12 @@
   ],
   "references": {
     "1": {
-      "note": "The packaged worker declares its seat purpose, authority boundary, and no-commit contract.\n\nAnchor: `# Worker`",
+      "note": "The packaged worker declares its seat purpose, authority boundary, and no-commit contract.",
       "targets": [
         {
           "anchor": {
-            "blob": "7ef8f7882d406362133d4f880ea9426d61473e9a",
-            "content": "sha256:49be23014dba0b8542d32bae234c60fd500f75078f92117ffb61841ecd2b58e5",
+            "blob": "e9cdae3d6c37b0b2b5b725d99d3dba0218b0822f",
+            "content": "sha256:a5eb4e0652510068a91419176ce8ff8bfec77c79a11a686de3cb00a90fe830c8",
             "locator": {
               "end": 8,
               "kind": "line_range",
@@ -40,12 +40,12 @@
       ]
     },
     "2": {
-      "note": "The role is a self-contained capsule — everything this seat does is on this page — and it declares no inherited shared sources.\n\nAnchor: `handover`",
+      "note": "The role is a self-contained capsule — everything this seat does is on this page — and it declares no inherited shared sources.",
       "targets": [
         {
           "anchor": {
-            "blob": "7ef8f7882d406362133d4f880ea9426d61473e9a",
-            "content": "sha256:d75d887dd8ef78b99003fc620a6197d4420347f3a0917663df648070964f51ac",
+            "blob": "e9cdae3d6c37b0b2b5b725d99d3dba0218b0822f",
+            "content": "sha256:c661956f16ca4d2976257208691e0519a39d9b7a8be8fdd3ceeec432287cde95",
             "locator": {
               "end": 8,
               "kind": "line_range",
@@ -95,10 +95,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "66c08f5e3dfef4d20032c78eef3074203be6cd11",
-            "content": "sha256:f2ce8ad198de33e2d9d18cea99af65996e13aa486402c1e6e5635f4436e760b9",
+            "blob": "e9cdae3d6c37b0b2b5b725d99d3dba0218b0822f",
+            "content": "sha256:b95f84c8f907eeebadf154a945e500d8093e2a963c023c1e6ac5f6a6d9559dba",
             "locator": {
-              "kind": "file"
+              "end": 68,
+              "kind": "line_range",
+              "start": 1
             }
           },
           "kind": "code"
@@ -110,8 +112,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9a1a94bce648addb46d0c0aeb66232634c3b06c9",
-            "content": "sha256:9b5e86f4b8ae371a8083b1657da4e7b6ef2c81cad98ae7b123d61fecc9766dc7",
+            "blob": "e9cdae3d6c37b0b2b5b725d99d3dba0218b0822f",
+            "content": "sha256:be8b1d53999f724b9657042a21820ee639927b4b1394ff2e61b6ceed46134443",
             "locator": {
               "end": 60,
               "kind": "line_range",
@@ -127,10 +129,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "409f4dd5ade11fbbb036c7c6b41ea95d57c6aade",
-            "content": "sha256:e1d5345a4957f6906c35403d7859b6df6796f4322a6d6fb2a5fa29d673ade2c5",
+            "blob": "e9cdae3d6c37b0b2b5b725d99d3dba0218b0822f",
+            "content": "sha256:b95f84c8f907eeebadf154a945e500d8093e2a963c023c1e6ac5f6a6d9559dba",
             "locator": {
-              "kind": "file"
+              "end": 68,
+              "kind": "line_range",
+              "start": 1
             }
           },
           "kind": "code"
@@ -142,10 +146,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d6fc9c48cab61bddf2118950eb2e1c6de48ff308",
-            "content": "sha256:0048df9616e2543f4e413bee9b4777e503666899a2ad0406f427c443009f61e0",
+            "blob": "e9cdae3d6c37b0b2b5b725d99d3dba0218b0822f",
+            "content": "sha256:4192f34748d86789f90c318a977aeb04a6fae73c97228180287046787af8b98e",
             "locator": {
-              "kind": "file"
+              "end": 14,
+              "kind": "line_range",
+              "start": 12
             }
           },
           "kind": "code"
@@ -157,10 +163,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "63a70b856ad6d75ee43c1c61d581a300035ce5a8",
-            "content": "sha256:71f74224f3bd0cca5410b6a493f7ee77b7f25b5177904b3a6d53c8a98310a327",
+            "blob": "e9cdae3d6c37b0b2b5b725d99d3dba0218b0822f",
+            "content": "sha256:df6aaf0a5cc5aa43727d0ceb6110a8b583cc5cd55c3c502641074246681d2816",
             "locator": {
-              "kind": "file"
+              "end": 62,
+              "kind": "line_range",
+              "start": 36
             }
           },
           "kind": "code"

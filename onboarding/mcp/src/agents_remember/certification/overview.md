@@ -117,7 +117,9 @@ These inherited tables are retained verbatim for navigation and custody. Their s
 
 - Retained reference account (no fresh execution or acceptance inferred): `certification` is a present rank-3 package between `models` and `controlplane`; its charter excludes concrete profiles, executors, lifecycle terminalization, and memory gates. [1]
 
+
 - Retained reference account (no fresh execution or acceptance inferred): The adjacent control-plane charter remains the lowest stateful interaction service, so the lower generic contract does not absorb its record or policy ownership. [2]
+
 
 - Retained reference account (no fresh execution or acceptance inferred): The strict checker derives direction from the declared order and refuses undeclared packages rather than using a baseline or fallback. [3]
 
@@ -129,7 +131,9 @@ These inherited tables are retained verbatim for navigation and custody. Their s
 
 - Retained reference account (no fresh execution or acceptance inferred): Persist complete actual terminal catalogs, including red and interrupted gates. [9]
 
+
 - Certification is a rank-3 generic contract below its lifecycle consumers; architecture is a declared direction, not an execution report. [11]
+
 
 - Explicit not-applicable repository gates contribute bounded applicability authority; applicable rail contracts are preserved. [12]
 
@@ -158,5 +162,6 @@ These inherited tables are retained verbatim for navigation and custody. Their s
 - Memory rails remain a required catalog-derived port; default composition retains knowledge services without prepared-memory or continuation bindings. [15]
 
 - A published terminal generation is processed before nonzero run refusal; supplied catalogs remain distinct from missing publication. [16]
+
 
 - Curator preparation uses source-bound converted onboarding traces; missing converted sides are incomplete, with no legacy body/history fallback. [21]

@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_task_document_closure.py",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
@@ -36,8 +37,8 @@
         },
         {
           "anchor": {
-            "blob": "b3d51ffe112d7e27dcffec411eafdb57b3e349a2",
-            "content": "sha256:c82729d19808c4d95d6bb4e986b7ad6aab4ed2693719ac9d0789b544afc73780",
+            "blob": "e1d561eb43926925f6fefc875db17155ef322eb4",
+            "content": "sha256:b587decdc4759fbe040b7cad855befcc7b342d9523ac108060ef6932868ced65",
             "locator": {
               "kind": "file"
             },

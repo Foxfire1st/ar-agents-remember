@@ -169,15 +169,14 @@
       ]
     },
     "7": {
-      "note": "The heal runs the ordinary public sync result for the owning contract.",
+      "note": "The heal runs the ordinary public sync result for the owning contract.\n\nAnchor: `sync_result`",
       "targets": [
         {
           "anchor": {
-            "blob": "21969ed5fdd3d0a96855f1d252badef880c5febc",
-            "content": "sha256:263b46b9addc50759981f98b71636c39f48bd59bdaf15b6e5bee6459c680afe3",
+            "blob": "66921e3196ecd77e8387e26544dd70bc51daef3e",
+            "content": "sha256:8be9196d3fb9fa962b306e3329f9776f3da2c3586027e9329b75433af82258e0",
             "locator": {
-              "kind": "symbol",
-              "name": "sync_result"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/worktrees/modules/sync.py"
           },

@@ -113,8 +113,12 @@ The entry point, its version pin and its steps.
 - Exported entries join their file's sidecar; a path without a card gets a sidecar without Markdown. [7]
 - The whole tree is validated before anything is returned for writing. [8]
 - The conversion's steps, the no-op and the marker. [9]
+
 - Determinism, the version refusal and the no-op. [11]
+
+
 - Version 1's pinned bytes. [12]
+
 - A refused conversion writes nothing and names what failed. [13]
 
 ### Cross-Repo References

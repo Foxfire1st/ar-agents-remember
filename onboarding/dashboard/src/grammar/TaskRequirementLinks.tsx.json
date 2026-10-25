@@ -20,15 +20,14 @@
       ]
     },
     "2": {
-      "note": "The artifact target the `open` callback lifts.",
+      "note": "The artifact target the `open` callback lifts.\n\nAnchor: `TaskArtifactReaderTarget`",
       "targets": [
         {
           "anchor": {
-            "blob": "63e409de6f0777f70c752a04cf186a7f910b158b",
-            "content": "sha256:5bd7f8dca22cf06dd249a8f12cfcabc24ae2ad0617e42c379c23366fa5dcdeb5",
+            "blob": "f433d3c79bfc376fb5c5b05f30f881a81adced4d",
+            "content": "sha256:1a9d922d69816dce4e479ac405b4e6cb4057800b23d006c3c7f3e1443d80a695",
             "locator": {
-              "kind": "symbol",
-              "name": "TaskArtifactReaderTarget"
+              "kind": "file"
             },
             "path": "dashboard/src/data/taskArtifacts.ts"
           },
@@ -37,15 +36,16 @@
       ]
     },
     "3": {
-      "note": "The markdown consumer that renders registered addresses as buttons.",
+      "note": "The markdown consumer that renders registered addresses as buttons.\n\nAnchor: `requirementAnchor`",
       "targets": [
         {
           "anchor": {
-            "blob": "b4c74c37212e432009df876b3276beea828250fa",
-            "content": "sha256:05be57e678d8a1e5344116182c17cb38b244ccccd5f68c44775d35bb98e50e57",
+            "blob": "1a65bd4444779518a555e2e38d8ca30fa0df9f3a",
+            "content": "sha256:53c3c42e8e266135ca62efba2df1a04f8a772831910cd7c246fbadc4c9d3103e",
             "locator": {
-              "kind": "symbol",
-              "name": "requirementAnchor"
+              "end": 172,
+              "kind": "line_range",
+              "start": 170
             },
             "path": "dashboard/src/grammar/Markdown.tsx"
           },
@@ -53,12 +53,10 @@
         },
         {
           "anchor": {
-            "blob": "b4c74c37212e432009df876b3276beea828250fa",
-            "content": "sha256:7bf5be7697c92195aee2aa16bff015e2725a50da8bddb016dd77981eca43b460",
+            "blob": "1a65bd4444779518a555e2e38d8ca30fa0df9f3a",
+            "content": "sha256:dbbcb27210f3e352d08d6ba242aaa61621f03500d95beccbb45dbe266bda2ae3",
             "locator": {
-              "end": 172,
-              "kind": "line_range",
-              "start": 170
+              "kind": "file"
             },
             "path": "dashboard/src/grammar/Markdown.tsx"
           },

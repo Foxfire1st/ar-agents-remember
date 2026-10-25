@@ -120,10 +120,14 @@ extension specification, SEP-2640).
 - The reading half that builds these values and re-checks the revision on delivery. [14]
 - The two mandatory methods that return these entries. [15]
 - The response contracts that project these values onto this server's own tool surface. [16]
+
 - The same no-`mcp`-import constraint recorded for the roster leaf. [17]
-- The cases that execute the entry completeness, verbatim-frontmatter and no-grant guarantees. [18]
-- The case that pins this server's own index as the Agent Skills discovery shape. [19]
+
 
 ### Cross-Repo References
 
 No meaningful cross-repository reference applies.
+
+- The cases that execute the entry completeness, verbatim-frontmatter and no-grant guarantees. [18]
+
+- The case that pins this server's own index as the Agent Skills discovery shape. [19]

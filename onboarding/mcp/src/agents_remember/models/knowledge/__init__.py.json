@@ -92,27 +92,14 @@
       ]
     },
     "7": {
-      "note": "The production store consumes these retained values through read-only operations.",
+      "note": "The production store consumes these retained values through read-only operations.\n\nAnchor: `OpenedKnowledgeStore` `open_read_only_store`",
       "targets": [
         {
           "anchor": {
-            "blob": "e4fc1a849557a256d000a2a4f98c444ef5400e7d",
-            "content": "sha256:7adb5813b2c4b3f7d3c4a71123b785c87374e1dc0d4e5c7c0279967d0db724c6",
-            "locator": {
-              "kind": "symbol",
-              "name": "OpenedKnowledgeStore"
-            },
-            "path": "mcp/src/agents_remember/memory/knowledge/store.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
             "blob": "18bf95513cea9638fc5f978e605aa03076a27454",
-            "content": "sha256:5a7d444f6d5aa6950d3170e1dfb74ced2b56bfcb496f38dd0485d8bcd71c6898",
+            "content": "sha256:06f9fa0b997c9bd42569065fb5f62ea39d370764509c8c2467b0985cdde68958",
             "locator": {
-              "kind": "symbol",
-              "name": "open_read_only_store"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/memory/knowledge/store.py"
           },
@@ -121,15 +108,14 @@
       ]
     },
     "8": {
-      "note": "The shared branching fixture authors its identity and graph halves from these same models.",
+      "note": "The shared branching fixture authors its identity and graph halves from these same models.\n\nAnchor: `build_branching_knowledge_fixture`",
       "targets": [
         {
           "anchor": {
-            "blob": "3c16a4dfa4da992adf2a51310c127fb399544c1f",
-            "content": "sha256:436356d85a5375cb2207b22f622dc232bca56ceeaa44d4663d8a070d19627e85",
+            "blob": "f2402b1efd9ec499e9d11653fe3e1f29141cedef",
+            "content": "sha256:f48cfad6729c67949acad349d305eff6b5f50b11ea2060dbcbe021a18de9548d",
             "locator": {
-              "kind": "symbol",
-              "name": "build_branching_knowledge_fixture"
+              "kind": "file"
             },
             "path": "mcp/tests/knowledge_fixture_test_support.py"
           },

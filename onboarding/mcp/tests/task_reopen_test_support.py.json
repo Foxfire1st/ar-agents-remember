@@ -1,10 +1,21 @@
 {
   "path": "mcp/tests/task_reopen_test_support.py",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
-      "note": "The helper publishes an exact terminal predecessor and real super-to-leaf branch chain.",
+      "note": "The helper publishes an exact terminal predecessor and real super-to-leaf branch chain.\n\nAnchor: `_publish_terminal_reopen_predecessor` `_completed_leaf_contract`",
       "targets": [
+        {
+          "anchor": {
+            "blob": "611d97a1b073e03553eab7a68ca9ae653670fbc8",
+            "content": "sha256:3aa73b7113401585fdde8a72d0b4e86eea10d22e25503ab0b0e9b005e2ec4b0e",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        },
         {
           "anchor": {
             "blob": "611d97a1b073e03553eab7a68ca9ae653670fbc8",
@@ -18,8 +29,8 @@
         },
         {
           "anchor": {
-            "blob": "9d510cfb2de084848f938db4f5b61827ca10b54f",
-            "content": "sha256:0e6d3934f64a5eb04dd383715bd95c6571187a35242f405116ef9b67d751b426",
+            "blob": "611d97a1b073e03553eab7a68ca9ae653670fbc8",
+            "content": "sha256:01ce64c4a6f6ead2073ff7321f951c72e40fde1f9d6637b9d8e63271a9058636",
             "locator": {
               "kind": "symbol",
               "name": "_completed_leaf_contract"

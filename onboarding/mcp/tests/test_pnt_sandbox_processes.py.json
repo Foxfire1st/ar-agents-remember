@@ -209,12 +209,12 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The scoped current source carries the module/document behavior described above.",
+      "note": "Start, stop, reset, the lock and the process records through the real tooling.",
       "targets": [
         {
           "anchor": {
-            "blob": "7c5f635724910b3bca1e3b6641abb2b19c320de2",
-            "content": "sha256:58116bc6e1c17ca7b637be597e01ad819048ec9a7123a80c96eebaffaa72b1f5",
+            "blob": "a7bccb86e33a4b5599c8e3a279e5f23edd1e706f",
+            "content": "sha256:01e25b6cb852852b2762ab28d69e5b41dd9f1b87417bc782f34367dce396ea15",
             "locator": {
               "kind": "file"
             }
@@ -224,15 +224,14 @@
       ]
     },
     "2": {
-      "note": "The old-layout rebuild case.",
+      "note": "The rebuild case over the sandbox layout.\n\nAnchor: `StartAndStopTests`",
       "targets": [
         {
           "anchor": {
-            "blob": "ec1d0ae05b8f205404b23216b55a0567a22e968f",
-            "content": "sha256:026ebbc7725ecab5964ca74d651e0821ef13aa3e9f9fedb5352bafa81228e5f3",
+            "blob": "a7bccb86e33a4b5599c8e3a279e5f23edd1e706f",
+            "content": "sha256:01e25b6cb852852b2762ab28d69e5b41dd9f1b87417bc782f34367dce396ea15",
             "locator": {
-              "kind": "symbol",
-              "name": "StartAndStopTests"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -240,15 +239,14 @@
       ]
     },
     "3": {
-      "note": "The deferred-install reporting case.",
+      "note": "The deferred-install reporting case.\n\nAnchor: `StartAndStopTests`",
       "targets": [
         {
           "anchor": {
-            "blob": "ec1d0ae05b8f205404b23216b55a0567a22e968f",
-            "content": "sha256:026ebbc7725ecab5964ca74d651e0821ef13aa3e9f9fedb5352bafa81228e5f3",
+            "blob": "a7bccb86e33a4b5599c8e3a279e5f23edd1e706f",
+            "content": "sha256:01e25b6cb852852b2762ab28d69e5b41dd9f1b87417bc782f34367dce396ea15",
             "locator": {
-              "kind": "symbol",
-              "name": "StartAndStopTests"
+              "kind": "file"
             }
           },
           "kind": "test"

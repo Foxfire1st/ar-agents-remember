@@ -21,11 +21,11 @@ No promise of current provider_diagnostics compaction is inferred from a retaine
 
 ## Current model evidence
 
-- Current source section contains excerpt `class ContextProviderItem(StrictResponseModel):`; DTO/control ownership is not execution acceptance. [3]
+- Current source section contains excerpt `class ContextProviderItem(StrictResponseModel):`; DTO/control ownership is not execution acceptance.
 
-- Current source section contains excerpt `TOOL_RESPONSE_MODELS: dict[str, type[ResponseEnvelope]] = {`; DTO/control ownership is not execution acceptance. [4]
+- Current source section contains excerpt `TOOL_RESPONSE_MODELS: dict[str, type[ResponseEnvelope]] = {`; DTO/control ownership is not execution acceptance.
 
-- Current source section contains excerpt `providers=ProviderSummary.model_validate(`; DTO/control ownership is not execution acceptance. [5]
+- Current source section contains excerpt `providers=ProviderSummary.model_validate(`; DTO/control ownership is not execution acceptance.
 
 ## Historical superseded account (non-operative)
 

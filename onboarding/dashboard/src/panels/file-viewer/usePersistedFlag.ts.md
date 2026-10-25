@@ -41,5 +41,8 @@ are caller-owned and global to the origin (e.g. `fileviewer.split`,
 ### Repo-Internal References
 
 - `FileViewer` persists its split/single toggle through this hook. [1]
+
 - `Cockpit` persists its left/right rail pixel widths via `usePersistedNumber`. [2]
+
+
 - The calm-cockpit `localStorage` flag pattern this mirrors. [3]

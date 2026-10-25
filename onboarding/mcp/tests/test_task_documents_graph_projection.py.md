@@ -58,11 +58,19 @@ No external domain claim is required.
 Each current definition below can be inspected in the exact source file. Historical references
 to removed methods are superseded by this current inventory.
 
+
 - Segmented master scenario projects titles and predecessors [1]
+
+
 - An abandoned master reads `abandoned` and no longer gates its successor, whose frontier becomes ready [2]
+
+
 - Duplicate local leaf numbers keep master qualified titles [3]
+
 - The dashboard's own index rule, reproduced: a row drills in only when the pool holds a document in the master's own directory whose file stem is the row's `file`. [4]
+
 - The reachability contract: a completed leaf written by a newer build stays reachable, an unstarted one stays reachable, and a broken document is still withheld. [5]
+
 
 ### Cross-Repo References
 

@@ -47,4 +47,5 @@ No external Domain Documentation source is configured for this memory repo.
 
 - The top-level checker enforces section presence and one-to-one entity alignment. [1]
 - Inventory and fingerprint parsing is shared with drift classification. [2]
+
 - The registry places this check first in closeout's pre-metadata phase. [3]

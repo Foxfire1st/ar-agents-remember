@@ -85,26 +85,14 @@
       ]
     },
     "4": {
-      "note": "Lookups recompute the key and reuse or build.",
+      "note": "Lookups recompute the key and reuse or build.\n\nAnchor: `for_directory` `for_git_tree`",
       "targets": [
         {
           "anchor": {
             "blob": "865fcec1dc0e560d592557629c3b7cded3b2af7d",
-            "content": "sha256:02e94e270206fcff7c9c8d2b8fbfc3482a7a4773d9ac9f8f5e4aaba68a4629b8",
+            "content": "sha256:fd7d67f13fbf69eb8ca0c941b66758303e6f9b77a951d3ea93d76bad1d58d314",
             "locator": {
-              "kind": "symbol",
-              "name": "for_directory"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "0721040e488da3b69aebfbf15a90fbb73d47db99",
-            "content": "sha256:71f7bb6b72c2fd0173b07df64c66c13865cf9bb79681c6b35e0e3b9f344d21c6",
-            "locator": {
-              "kind": "symbol",
-              "name": "for_git_tree"
+              "kind": "file"
             }
           },
           "kind": "code"

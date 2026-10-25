@@ -10,7 +10,9 @@ The new-base direct_execution_grant_payload import/export survives the native co
 
 ## Current source contract evidence
 
-- Current synced source supports the qualified account; declarations, mirrors and fixture assertions are not executed acceptance. [19]
+
+- Current synced source supports the qualified account; declarations, mirrors and fixture assertions are not executed acceptance.
+
 
 ## Purpose
 
@@ -35,7 +37,9 @@ behavior; this facade does not confer authority or replace registration/roster p
 
 ## Current evidence
 
-- Current source excerpt `from .base import PUBLIC_TOOLS, RESERVED_TOOLS, TRANSPORT` identifies this section's adapter/control owner, not an executed success. [17]
+
+- Current source excerpt `from .base import PUBLIC_TOOLS, RESERVED_TOOLS, TRANSPORT` identifies this section's adapter/control owner, not an executed success.
+
 
 ## Grant payload adapter
 
@@ -95,17 +99,15 @@ Re-export role_start_payload and role_message_payload through the same package s
 
 ### Repo-Internal References
 
-- `gate_response_wait_payload` is imported from `gates`. [1]
 - `gate_response_wait_payload` is listed in `__all__`. [2]
-- The inbox payload builders (post/poll/consume/supersede since 260713-TES-L4) are re-exported by this facade. [7]
-- The orchestration nudge payload builder is re-exported by this facade. [9]
 - The lifecycle finalizer payload builder is owned by the `lifecycle_finalize` submodule. [10]
 - The lifecycle finalizer payload builder is re-exported by this facade. [11]
-- The terminal payload builders are re-exported by this facade. [13]
 
 ### Runtime Source References
 
+
 - Frozen implementation of __all__ supporting the stated file behavior. [16]
+
 
 ## 260712-TRH-L4 Final Candidate
 
@@ -128,8 +130,12 @@ The current source seams include the module-level vocabulary. The public schema/
 
 ### Reconciled Source Evidence
 
-- The current module exposes the module-level vocabulary at this ownership boundary; the anchor is the stop builder's own `__all__` entry, which pins the list this claim is about. [14]
+
+- The pure payload facade includes worktree_pause_payload in __all__; that exports its builder, rather than independently advertising or authorizing a tool. [14]
+
+
 - The pause payload builder is re-exported by this facade from the `.worktree` import block and listed in the `__all__` extent, exactly per the documented pattern. [15]
+
 
 ## 260821-CLIVE Closeout-Door Export
 
@@ -148,6 +154,7 @@ second action implementation.
 
 **Superseded.** The `worktree_status_wait_payload` builder and its tool were removed; this facade
 re-exports no wait payload today. Recorded so the paragraph above is not read as current.
+
 
 - The pure payload facade now exports direct_execution_grant_payload. [18]
 

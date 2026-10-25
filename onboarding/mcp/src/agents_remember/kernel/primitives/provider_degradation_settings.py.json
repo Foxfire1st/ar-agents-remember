@@ -1,14 +1,15 @@
 {
   "path": "mcp/src/agents_remember/kernel/primitives/provider_degradation_settings.py",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
-      "note": "The `providerDegradation` settings block is documented with its full key list, defaults, and behavior in the settings reference.\n\nAnchor: `# settings.json Reference`",
+      "note": "The `providerDegradation` settings block is documented with its full key list, defaults, and behavior in the settings reference.",
       "targets": [
         {
           "anchor": {
-            "blob": "5acadb42437e991d1a7edb7e7a874cb22ab12b21",
-            "content": "sha256:0b7adfbbe76999adf22a24c02a7751ad0eb408346b21bbe582e2c39f46753410",
+            "blob": "ef1c4f3765418edbd7e43d5d502aad8c39a44749",
+            "content": "sha256:505f109a8af4bdc46cc0094a439e2c82cda2a3f6a4856f4196566986e418ef28",
             "locator": {
               "end": 526,
               "kind": "line_range",
@@ -21,16 +22,55 @@
       ]
     },
     "2": {
-      "note": "`mcp/config.py` imports this module's `ProviderDegradationSettings`/`ProviderDegradationSettingsError`/`parse_provider_degradation_settings`, wraps parse errors into `ConfigError`, and stores the result on `McpRuntimeConfig.provider_degradation`.\n\nAnchor: \"class McpRuntimeConfig\"",
+      "note": "`kernel/primitives/runtime_config.py` imports this module's `ProviderDegradationSettings`/`ProviderDegradationSettingsError`/`parse_provider_degradation_settings`, wraps parse errors into `ConfigError`, and stores the result on `McpRuntimeConfig.provider_degradation`. Source caption: \"class McpRuntimeConfig\"",
       "targets": [
         {
           "anchor": {
             "blob": "d29d100ea200d65a695333b54064543d7833f90e",
-            "content": "sha256:ecc3c3c8f78a3ede9ad1e547359d16fd6cec6adb344ad3557c5576b198e5f830",
+            "content": "sha256:c9227149e90ef130b709f739c6b478fa432f45e49db5a1674a7ff27e162b2cd8",
             "locator": {
-              "end": 191,
+              "end": 47,
+              "kind": "line_range",
+              "start": 43
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d29d100ea200d65a695333b54064543d7833f90e",
+            "content": "sha256:5de183139073ffe8a9e489986c560a4804d5ea9a8c2382f4d37f5e1ab3dfb908",
+            "locator": {
+              "end": 204,
               "kind": "line_range",
               "start": 191
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d29d100ea200d65a695333b54064543d7833f90e",
+            "content": "sha256:0ac152efd34bd15a55ea73e61f6c62b9fac0f79275f4e01847ce05e967832dee",
+            "locator": {
+              "end": 355,
+              "kind": "line_range",
+              "start": 349
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d29d100ea200d65a695333b54064543d7833f90e",
+            "content": "sha256:92ef2fe02c6af05fc1cc9712701adee240ad6fe1bc100ab1b89ee59a5f140485",
+            "locator": {
+              "end": 375,
+              "kind": "line_range",
+              "start": 365
             },
             "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
           },
@@ -49,6 +89,19 @@
               "end": 134,
               "kind": "line_range",
               "start": 134
+            },
+            "path": "mcp/src/agents_remember/providers/degradation.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2edff51be75051062a682ac9a09910ffdb4db13a",
+            "content": "sha256:01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+            "locator": {
+              "end": 171,
+              "kind": "line_range",
+              "start": 171
             },
             "path": "mcp/src/agents_remember/providers/degradation.py"
           },

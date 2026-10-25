@@ -113,8 +113,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ada223b3a8283f105d8a9fd4a4ee2a9b915f0115",
-            "content": "sha256:9dee1270100f78df8c7b1c6db6fa1cf5ede8bf09651af1087d322c46e3a76489",
+            "blob": "b85c922723254d922712cc3f24a42ae192ff9566",
+            "content": "sha256:49f750781eb156ac1952010c3c98f57fc72f769e34495b63c8a25806c8768de0",
             "locator": {
               "end": 99,
               "kind": "line_range",
@@ -126,15 +126,14 @@
       ]
     },
     "2": {
-      "note": "Every row of the owner's file, as problems.",
+      "note": "Every row of the owner's file, as problems.\n\nAnchor: `owner_history_problems`",
       "targets": [
         {
           "anchor": {
-            "blob": "5a75886e15c710f4b78138ae24142e48486de9ed",
-            "content": "sha256:6e3ea3044e5ad749eb217d8b1d2056bb4ab7edc73087e2290b23a58122d65299",
+            "blob": "b85c922723254d922712cc3f24a42ae192ff9566",
+            "content": "sha256:2d12ce7edfb35595c9ca6bcc57efbef29516212b0d0d51d3703d3def04f13812",
             "locator": {
-              "kind": "symbol",
-              "name": "owner_history_problems"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -142,15 +141,14 @@
       ]
     },
     "3": {
-      "note": "Invariant and family row checks.",
+      "note": "Invariant and family row checks.\n\nAnchor: `_row_messages`",
       "targets": [
         {
           "anchor": {
-            "blob": "5a75886e15c710f4b78138ae24142e48486de9ed",
-            "content": "sha256:75f0a1aeed257770a8b86882ca462f21c05b0bdcf7df337a2bd16666143240c8",
+            "blob": "b85c922723254d922712cc3f24a42ae192ff9566",
+            "content": "sha256:2d12ce7edfb35595c9ca6bcc57efbef29516212b0d0d51d3703d3def04f13812",
             "locator": {
-              "kind": "symbol",
-              "name": "_row_messages"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -158,15 +156,14 @@
       ]
     },
     "4": {
-      "note": "A contradicted row refuses until it is named again; a base-closed file is frozen, while a hand-closed file gains the reopen step with the re-authoring remedy.",
+      "note": "A contradicted row refuses until it is named again; a base-closed file is frozen, while a hand-closed file gains the reopen step with the re-authoring remedy.\n\nAnchor: `owner_history_problems`",
       "targets": [
         {
           "anchor": {
-            "blob": "e653d144087d2870170ba2bb24f20b6514eb46ac",
-            "content": "sha256:ff72ddefd2aa6f5a09b880445b5007ea83b951c0ed16d885a579ee75430a88e9",
+            "blob": "b85c922723254d922712cc3f24a42ae192ff9566",
+            "content": "sha256:2d12ce7edfb35595c9ca6bcc57efbef29516212b0d0d51d3703d3def04f13812",
             "locator": {
-              "kind": "symbol",
-              "name": "owner_history_problems"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -222,15 +219,14 @@
       ]
     },
     "8": {
-      "note": "A change already on the parent line may be answered by a later row; the leaf-owned changed-record rule remains distinct.",
+      "note": "A change already on the parent line may be answered by a later row; the leaf-owned changed-record rule remains distinct.\n\nAnchor: `test_a_change_on_the_parent_line_may_be_answered_by_any_later_row`",
       "targets": [
         {
           "anchor": {
-            "blob": "3e5fee6e11a1a75881f6b906e164fc998ab050c8",
-            "content": "sha256:eed46188fc2716f74becc34b0d56746240e72145e7dbab72e5518fd729886a65",
+            "blob": "edad7b9d825ab3a241a0917f1627d688e34954f3",
+            "content": "sha256:e791cf309e2f6ef9f2d1f7830a3cf0973f031617f8d7b50e028f35d6453d5381",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_change_on_the_parent_line_may_be_answered_by_any_later_row"
+              "kind": "file"
             },
             "path": "mcp/tests/test_knowledge_reopen_governing_rows.py"
           },
@@ -239,15 +235,14 @@
       ]
     },
     "9": {
-      "note": "Drift refuses until the row is named again at the current revision.",
+      "note": "Drift refuses until the row is named again at the current revision.\n\nAnchor: `owner_history_problems`",
       "targets": [
         {
           "anchor": {
-            "blob": "e653d144087d2870170ba2bb24f20b6514eb46ac",
-            "content": "sha256:ff72ddefd2aa6f5a09b880445b5007ea83b951c0ed16d885a579ee75430a88e9",
+            "blob": "b85c922723254d922712cc3f24a42ae192ff9566",
+            "content": "sha256:2d12ce7edfb35595c9ca6bcc57efbef29516212b0d0d51d3703d3def04f13812",
             "locator": {
-              "kind": "symbol",
-              "name": "owner_history_problems"
+              "kind": "file"
             }
           },
           "kind": "code"

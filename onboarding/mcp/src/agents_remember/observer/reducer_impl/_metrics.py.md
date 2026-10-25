@@ -20,8 +20,9 @@ Analytics retains supplied drift, route coverage, tool reports and ledgers, with
 
 ## Evidence
 
-- Historical predecessor only: lifecycle metrics derived vocabulary-owned counts without age histograms; that `_metrics` target is no longer in this module. [1]
+
 - Analytics assembles retained feeds and caller-derived overrides without sidecar ranking. [2]
+
 
 
 

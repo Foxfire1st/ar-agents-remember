@@ -22,15 +22,14 @@
   ],
   "references": {
     "1": {
-      "note": "Each requirement link target of the run's records, with the owner's resolution.",
+      "note": "Each requirement link target of the run's records, with the owner's resolution.\n\nAnchor: `requirement_endpoints`",
       "targets": [
         {
           "anchor": {
-            "blob": "9308bcce180144f9325e731ff2da7c4659162199",
-            "content": "sha256:9bb1294213cf33a4b1cdb5a94250bd0eb12a42d9650e3f39bd11d09267aed135",
+            "blob": "ca45c13cbedb2dcb7a89b993d6423e60ba43e1ff",
+            "content": "sha256:b57eb5f7305a3251302b60bd58e5f6215f016f40f02a593ba03fd0133b22e61b",
             "locator": {
-              "kind": "symbol",
-              "name": "requirement_endpoints"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -38,15 +37,14 @@
       ]
     },
     "2": {
-      "note": "A lifted decision round-trips; one endpoint resolved, one reported unresolved; the rerun is unchanged.",
+      "note": "A lifted decision round-trips; one endpoint resolved, one reported unresolved; the rerun is unchanged.\n\nAnchor: `test_a_lifted_decision_round_trips_and_its_requirement_endpoints_are_reported`",
       "targets": [
         {
           "anchor": {
-            "blob": "cfed40211fab111f80a08b412d6b6deaa63639a0",
-            "content": "sha256:c3f9e8959460806f9fabd77bc3d0db4dfa0972fdd61e4b08dc2f12363642b97b",
+            "blob": "1a6235931c50a4a8f6b146a51598cdff7f55a233",
+            "content": "sha256:075ff4475087a14dafb700ce617d28082fae430f3313c7e64333ca644f5dc9fe",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_lifted_decision_round_trips_and_its_requirement_endpoints_are_reported"
+              "kind": "file"
             },
             "path": "mcp/tests/test_knowledge_writer.py"
           },

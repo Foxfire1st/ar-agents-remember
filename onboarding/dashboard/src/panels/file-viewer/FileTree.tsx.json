@@ -18,12 +18,12 @@
       ]
     },
     "6": {
-      "note": "The loader reads one directory listing and returns the requested side.\n\nAnchor: `listDir`",
+      "note": "The loader reads one directory listing and returns the requested side.",
       "targets": [
         {
           "anchor": {
-            "blob": "69f443587646541eb1434c6090c484772f0ac10a",
-            "content": "sha256:21e301544d49be010f51003d31bb08864cd9278339a44c6bc79625fca5a851cb",
+            "blob": "05420e58f22ada25400406ce21f18491119d64da",
+            "content": "sha256:5bc1a08e5b79445259a58e95eab4400ca1cb769e51344240adeb08cc359848a2",
             "locator": {
               "kind": "file"
             },
@@ -50,12 +50,12 @@
       ]
     },
     "8": {
-      "note": "The page that mounts the tree twice (code and onboarding sides).\n\nAnchor: `FileViewer`",
+      "note": "The page that mounts the tree twice (code and onboarding sides).",
       "targets": [
         {
           "anchor": {
-            "blob": "17e3d12d252e214305fe04d6109ac533785766da",
-            "content": "sha256:b912e8f586f56ef02b1f4e575d5fed1667b5e4da2c797cb5e2bdc9ad946490fc",
+            "blob": "a34e748d74bbd03ce1ffd35fe6d4b719b434cd55",
+            "content": "sha256:ebac7e86f0373cc77040c74c9d3842c5f1cd232b4b05d87d73e7baf2afe0b5d1",
             "locator": {
               "kind": "file"
             },

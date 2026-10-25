@@ -1,5 +1,6 @@
 {
   "path": "mcp/tests/test_terminal_preview_expectation.py",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
@@ -68,16 +69,16 @@
       ]
     },
     "13": {
-      "note": "The lane row this module was appended to.\n\nAnchor: \"mcp/tests/test_terminal_preview_expectation.py\"",
+      "note": "The lane manifest registers mcp/tests/test_terminal_preview_expectation.py in unit-regression. Membership selects evidence and does not establish execution.",
       "targets": [
         {
           "anchor": {
-            "blob": "11ba98ff63f4a4815985ac51e2c0c7b5a48556a4",
-            "content": "sha256:11dc123b5aea780e250e25816f2595c33acabe2cfa9800b858604e73a3abe0c0",
+            "blob": "102c4550ab6429f44c8fb543d1d0662de66a1b8c",
+            "content": "sha256:29af3a2646f71b1c991601cc6d2d3737e15234f3d7fd08e479d94bff29e5d21b",
             "locator": {
-              "end": 450,
+              "end": 440,
               "kind": "line_range",
-              "start": 450
+              "start": 440
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },

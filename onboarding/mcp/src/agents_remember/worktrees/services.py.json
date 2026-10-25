@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/worktrees/services.py",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
@@ -79,8 +80,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e47d5cc7e437fd7a83dd6cf764c684665b385061",
-            "content": "sha256:853073a5d90275ebb179de448ac9f8811be1c2af6c6fd42b279669d6084bc6ea",
+            "blob": "04542ceda7ef4559f29f3c1241a1d65ea7972a8f",
+            "content": "sha256:2665ec8d8057f17cb77be87f4eb3f548215b155e7de4e990a0c253336cfbc4d1",
             "locator": {
               "kind": "file"
             }
@@ -94,8 +95,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e47d5cc7e437fd7a83dd6cf764c684665b385061",
-            "content": "sha256:853073a5d90275ebb179de448ac9f8811be1c2af6c6fd42b279669d6084bc6ea",
+            "blob": "04542ceda7ef4559f29f3c1241a1d65ea7972a8f",
+            "content": "sha256:2665ec8d8057f17cb77be87f4eb3f548215b155e7de4e990a0c253336cfbc4d1",
             "locator": {
               "kind": "file"
             }
@@ -109,8 +110,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e47d5cc7e437fd7a83dd6cf764c684665b385061",
-            "content": "sha256:853073a5d90275ebb179de448ac9f8811be1c2af6c6fd42b279669d6084bc6ea",
+            "blob": "04542ceda7ef4559f29f3c1241a1d65ea7972a8f",
+            "content": "sha256:2665ec8d8057f17cb77be87f4eb3f548215b155e7de4e990a0c253336cfbc4d1",
             "locator": {
               "kind": "file"
             }
@@ -154,12 +155,22 @@
       ]
     },
     "16": {
-      "note": "`TerminalGuard` owns the corresponding behavior described above.",
+      "note": "`TerminalGuard` owns the corresponding behavior described above.\n\nAnchor: `TerminalGuard`",
       "targets": [
         {
           "anchor": {
-            "blob": "1ed6df983ba83a5dca67863f17dade9ab2d875aa",
-            "content": "sha256:1aed6a1e87df5f7bddf8eec989339481d54e83b78dcd61eac26269dccfc2a45c",
+            "blob": "04542ceda7ef4559f29f3c1241a1d65ea7972a8f",
+            "content": "sha256:2665ec8d8057f17cb77be87f4eb3f548215b155e7de4e990a0c253336cfbc4d1",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "04542ceda7ef4559f29f3c1241a1d65ea7972a8f",
+            "content": "sha256:774ed4fe90d7a1dd742542f22c931116c0a696fa4f034b23a48945f16ebc45ca",
             "locator": {
               "kind": "symbol",
               "name": "TerminalGuard"
@@ -190,12 +201,13 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1ed6df983ba83a5dca67863f17dade9ab2d875aa",
+            "blob": "d1dd581ce7a39878387a2f6a26246563ee31c405",
             "content": "sha256:05447aa55479275f4cd335c71bd9b8c8c2dd01144fd2c30a8fe404dab23e38df",
             "locator": {
               "kind": "symbol",
               "name": "WorktreeServicesUnboundError"
-            }
+            },
+            "path": "mcp/src/agents_remember/kernel/worktree_service_binding.py"
           },
           "kind": "code"
         }
@@ -206,8 +218,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e47d5cc7e437fd7a83dd6cf764c684665b385061",
-            "content": "sha256:853073a5d90275ebb179de448ac9f8811be1c2af6c6fd42b279669d6084bc6ea",
+            "blob": "04542ceda7ef4559f29f3c1241a1d65ea7972a8f",
+            "content": "sha256:2665ec8d8057f17cb77be87f4eb3f548215b155e7de4e990a0c253336cfbc4d1",
             "locator": {
               "kind": "file"
             }
@@ -237,12 +249,13 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1ed6df983ba83a5dca67863f17dade9ab2d875aa",
-            "content": "sha256:acbf13b8b425b2355344994e59db2aea50017b8f97260572ff910bf0fa72106e",
+            "blob": "d1dd581ce7a39878387a2f6a26246563ee31c405",
+            "content": "sha256:df4e9f4174d0511ace4f7789030d2b0857e130995ac3ac65724b0e657ecca6a1",
             "locator": {
               "kind": "symbol",
               "name": "reset_worktree_services"
-            }
+            },
+            "path": "mcp/src/agents_remember/kernel/worktree_service_binding.py"
           },
           "kind": "code"
         }
@@ -253,12 +266,13 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1ed6df983ba83a5dca67863f17dade9ab2d875aa",
-            "content": "sha256:b7a1ea036b791642e8a770c435a22aae154f6eb3c1992eb5636260a18a57fec7",
+            "blob": "d1dd581ce7a39878387a2f6a26246563ee31c405",
+            "content": "sha256:ae24711ffa2588e8c5b4bfee02e4cbf71befeb53805469bfd229a1beca397c13",
             "locator": {
               "kind": "symbol",
               "name": "worktree_services"
-            }
+            },
+            "path": "mcp/src/agents_remember/kernel/worktree_service_binding.py"
           },
           "kind": "code"
         }
@@ -340,10 +354,10 @@
         {
           "anchor": {
             "blob": "04542ceda7ef4559f29f3c1241a1d65ea7972a8f",
-            "content": "sha256:32d6fd551b98997870315bbf955597a3eec2d7c4a9f12a6465d7ae97698a4129",
+            "content": "sha256:050d5e4f0f7cb511a00d47698ee2686aee290a3b4753f81a85e46c2a407bf3fc",
             "locator": {
               "kind": "symbol",
-              "name": "DirectGateVerdict"
+              "name": "KnowledgeGatePort"
             }
           },
           "kind": "code"
@@ -431,8 +445,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1ed6df983ba83a5dca67863f17dade9ab2d875aa",
-            "content": "sha256:fd53af8b68a80c1646b90147bf2fe634886be0a8ddcadad224cf33b809455558",
+            "blob": "04542ceda7ef4559f29f3c1241a1d65ea7972a8f",
+            "content": "sha256:78c2fc03754e60799b7b340e453b7d27c2a418c9e2c5107fd7eabba637286785",
             "locator": {
               "kind": "symbol",
               "name": "ReviewArtifactCleanupRequest"
@@ -454,7 +468,7 @@
       ]
     },
     "7": {
-      "note": "Registry population and task/memory observations have distinct service ports.",
+      "note": "Registry population and task/memory observations have distinct service ports.  The removed certification continuation is not a current service capability; surviving gate and validation ports retain their own owners and refusal boundaries.",
       "targets": [
         {
           "anchor": {
@@ -481,12 +495,22 @@
       ]
     },
     "9": {
-      "note": "The bundle exposes optional capabilities, including `knowledge_validation`, `knowledge_crossing`, `knowledge_worklist`, (since MIK-R25) `review_artifact_cleanup` and (since MIK-R09) `knowledge_gate`; provider setup inputs stay opaque.",
+      "note": "The bundle exposes optional capabilities, including `knowledge_validation`, `knowledge_crossing`, `knowledge_worklist`, (since MIK-R25) `review_artifact_cleanup` and (since MIK-R09) `knowledge_gate`; provider setup inputs stay opaque.\n\nAnchor: `WorktreeServices`",
       "targets": [
         {
           "anchor": {
-            "blob": "e47d5cc7e437fd7a83dd6cf764c684665b385061",
-            "content": "sha256:3330a43216cdda3dfa74b3caff28fbaf10147b8b672b1b32c74476fcf5fb6429",
+            "blob": "04542ceda7ef4559f29f3c1241a1d65ea7972a8f",
+            "content": "sha256:2665ec8d8057f17cb77be87f4eb3f548215b155e7de4e990a0c253336cfbc4d1",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "04542ceda7ef4559f29f3c1241a1d65ea7972a8f",
+            "content": "sha256:57c894abc17b2773c86c15a32c05bb51199ee51147994c13de93d4c43cf9e031",
             "locator": {
               "kind": "symbol",
               "name": "WorktreeServices"

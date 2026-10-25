@@ -1,5 +1,6 @@
 {
   "path": "dashboard/src/panels/TaskNotes.tsx",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
@@ -113,7 +114,7 @@
       ]
     },
     "10": {
-      "note": "Reference resolution keeps the old joined-text key and reads the current list through useEffectEvent, without treating array identity as another trigger. [11]",
+      "note": "Reference resolution keeps the old joined-text key and reads the current list through useEffectEvent, without treating array identity as another trigger. \\",
       "targets": [
         {
           "anchor": {
@@ -150,8 +151,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4fd13392ee64ff470abdcce77426d87eb9f9a55b",
-            "content": "sha256:c9b54ab3ac2e7bbd6c12add13be75e7eb51d5c58a87e780ff70e442323b462e6",
+            "blob": "1d06daecf8740ea6de32c4565dc4d24506617c0d",
+            "content": "sha256:40d20102cd94a91b127838a0ee32e7e23ff85564542f9374d67f8267f7e2e7db",
             "locator": {
               "end": 23,
               "kind": "line_range",
@@ -167,8 +168,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b4c74c37212e432009df876b3276beea828250fa",
-            "content": "sha256:e65a77e2d635bfba5d57e537277bdfe467525e8ee50a1074c263649cbf815cc2",
+            "blob": "1a65bd4444779518a555e2e38d8ca30fa0df9f3a",
+            "content": "sha256:eff54d0360b790954af018d92a06694c3a335b1849a5d2a028b89a7d2a0e225b",
             "locator": {
               "kind": "symbol",
               "name": "Markdown"
@@ -185,6 +186,17 @@
               "end": 122,
               "kind": "line_range",
               "start": 119
+            },
+            "path": "dashboard/src/grammar/Markdown.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1a65bd4444779518a555e2e38d8ca30fa0df9f3a",
+            "content": "sha256:dbbcb27210f3e352d08d6ba242aaa61621f03500d95beccbb45dbe266bda2ae3",
+            "locator": {
+              "kind": "file"
             },
             "path": "dashboard/src/grammar/Markdown.tsx"
           },
@@ -245,8 +257,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8ec686675f29a48b9d12f158ee6a4c76a1d67b3b",
-            "content": "sha256:5938f2b5ed535510f8ec42eda1bb50b1d52110fa83419545ad2fb3f4b84cb994",
+            "blob": "6750d1d06d2d778b6dd37df6689771e9b0ae6b6f",
+            "content": "sha256:8280aa4a7fcde4ee60537f6f70929c4028123e0295c8673bde2258576074e133",
             "locator": {
               "kind": "file"
             },
@@ -261,8 +273,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4fd13392ee64ff470abdcce77426d87eb9f9a55b",
-            "content": "sha256:19d59d8bb1924194adca2e83f7c75750415b180dea906466d8a9643fba277bfe",
+            "blob": "1d06daecf8740ea6de32c4565dc4d24506617c0d",
+            "content": "sha256:d60d750a89d77ac02d7426bd0146003ebc9b949f939a9914c705ae02294ded7d",
             "locator": {
               "kind": "symbol",
               "name": "TaskNotes"
@@ -277,8 +289,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4fd13392ee64ff470abdcce77426d87eb9f9a55b",
-            "content": "sha256:8474ef72b3e86cff14b6f8c8800f1d7037ee7a42adf1bff057a86441fc1d92ca",
+            "blob": "1d06daecf8740ea6de32c4565dc4d24506617c0d",
+            "content": "sha256:16777e69212429051dac863d0dff5e83ccbce71dafed078bec65a573f52c3072",
             "locator": {
               "kind": "file"
             }

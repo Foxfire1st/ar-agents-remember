@@ -55,7 +55,9 @@ No configured live documentation source was available for this pass.
 - The two prepared kinds, and the refusal code a tail too long for one queue earns. [4]
 - Each kind's tail collapsed into one entry, or refused `seed_queue_exceeded` beyond `MAX_QUEUED_SEEDS`. [5]
 - A leaf's or a scope's next row, and the smallest form of a later entry. [6]
+
 - The envelope the block is measured in. [7]
+
 
 ### Cross-Repo References
 

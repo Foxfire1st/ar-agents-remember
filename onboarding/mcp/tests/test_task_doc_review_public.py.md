@@ -75,7 +75,9 @@ No external documentation source was configured for this test module.
 - Absent-state projection, begin replay, sealed baseline, shrink-only successors, and final pass. [2]
 - Recording without a prior begin starts the baseline, and replacement can reset the projected state. [3]
 - New successor finding refusal after the baseline is sealed. [4]
+
 - Settings-budget exhaustion, recorded architect/developer approval, cumulative extra rounds and pending replay. [5]
+
 - The master document the fixture now writes first, without which the leaf the review API is exercised on could not be authored at all. [6]
 
 ### Cross-Repo References
@@ -100,7 +102,9 @@ operation proof with exhaustion-only direct permission and cumulative round-four
 behavior. No focused pass, landed commit identity, independent review, or acceptance is asserted;
 verification metadata remains blank until governed closeout stamps a genuine code commit.
 
+
 - Canonical JSON is read through _leaf_doc; absent-state projection uses review_state_payload, and _effective_limit combines settings with additionalRounds. Legacy get-named methods no longer call get. Begin/record responses still expose reviewState/limit, while mutation/refusal assertions reread stored state. These helper/application seams preserve rounds, count, sealed findings and budget rules without claiming a removed read operation remains supported. [7]
+
 
 
 - Only the tools alias changes from task_doc_tools to task_doc_route_review. The unchanged test_failed_identity_reads_refuse_around_a_real_mutation monkeypatches tools.resolve_candidate_identity, which is now the actual owner consulted by review candidate admission. Its tracked mutation/unproven binding refusals and persisted round/findings checks are unchanged. [8]

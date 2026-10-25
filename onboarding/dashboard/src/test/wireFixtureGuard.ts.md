@@ -124,9 +124,9 @@ was reproduced against this tree; none is fixed.
 
 1. **Rule 4 reads four node kinds.** `Identifier`, `CallExpression`, `PropertyAccessExpression`, and
    (for the union case only) `ObjectLiteralExpression` — see cit:([`isCandidateForExcessCheck`], dashboard/src/test/wireFixtureGuard.ts:594-601).
-   `ElementAccessExpression` (`rows[0]`) escapes, and so do `AwaitExpression`, `NewExpression` and
+   `ElementAccessExpression` (`rows`) escapes, and so do `AwaitExpression`, `NewExpression` and
    `NonNullExpression` (`rows.at(0)!`). **This is the widest of the holes**, because array indexing and
-   `await` are the two most idiomatic fixture accessors in this suite: `const row = rows[0]` reaching a
+   `await` are the two most idiomatic fixture accessors in this suite: `const row = rows` reaching a
    wire slot is unread today, and so is `sink(await built())`.
 2. **A generic helper defeats rules 1 and 4 together.** `function make<T>(shape: object): T { return
    shape as T; }` names no wire type at the assertion (rule 1 sees a type PARAMETER, not vocabulary), and
@@ -166,10 +166,14 @@ External language references retained for reading only: [TypeScript Wiki — Usi
 
 ### Repo-Internal References
 
+
 - The header: seven one-token opt-outs, why three of them carry no assertion at all, what makes the sweep fail-closed, and the rule scopes. [1]
+
 - `WHAT THIS DOES NOT COVER`, items 1-5. [2]
 - `MIRROR_MARKER`, `declaresItselfAMirror`, `isWireModule` — the discovered vocabulary. [3]
+
 - `isFixtureSurface` — the surface rules 2-5 are strict on. [4]
+
 - `GUARD_COMPILER_OPTIONS` (strict, bundler, `resolveJsonModule`, and no `exactOptionalPropertyTypes`). [5]
 - `buildProgramWithVirtualFiles`, including the `directoryExists` override without which a two-module planted case silently degrades to `any`. [6]
 - `mentionedByTypeNode` / `mentionedByType`, and `UNRESOLVED` as a finding rather than a skip. [7]
@@ -179,11 +183,17 @@ External language references retained for reading only: [TypeScript Wiki — Usi
 - `directiveLines` + `DIRECTIVE` — suppressions read as comment trivia, not raw lines. [11]
 - `excessPropertyVerdict` — undeclared properties, and the union blend no single member declares. [12]
 - `reconcileWithRegistry` — unregistered / spent / miscounted / unreasoned. [13]
+
 - The registry, planted bypasses and vacuity checks this module deliberately does not own. [14]
+
+
 - The current TaskEntry/TaskSummary pair illustrates why every union member is checked independently. [15]
+
 - Gap 3, live: the first line is a "Same-origin client for …" header, not a `mirror of` marker, so nothing this module declares enters the vocabulary. [16]
 - Same, for the read-only files API client. [17]
-- Same, for the coordination-notes API client. [18]
+
+- Same, for the coordination-notes API client: the types it declares are `FolderEntry`, `NotesFolder` and `NoteContent`, under the same "Same-origin client for …" header. [18]
+
 - Gap 5's answer: the call-site constraint the builders carry instead of the project-wide flag. [21]
 
 ### Cross-Repo References
@@ -191,5 +201,6 @@ External language references retained for reading only: [TypeScript Wiki — Usi
 No cross-repository boundary. The sweep runs entirely over `dashboard/` sources in this repository; the
 "wire" it polices is a Python↔TypeScript seam inside `agents-remember`, and the TypeScript compiler is a
 devDependency rather than a system boundary.
+
 
 - The scanned roots are all inside `dashboard/`; nothing outside this repository is read. [22]

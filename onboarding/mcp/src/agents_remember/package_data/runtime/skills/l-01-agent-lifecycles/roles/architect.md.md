@@ -6,14 +6,15 @@ Architect may grant a beyond-settings round for a concrete shrinking repair set;
 
 This account controls the named changed seams; contradictory earlier card wording below is retained only as historical evidence. Unchanged role duties and R117 file-only wake/report transport are preserved. Source inspection supplies no new runtime test, CODE verdict, review counter or acceptance.
 
+
 - Architect may grant a beyond-settings round for a concrete shrinking repair set; an unchanged failed repair or disputed requirement meaning needs a ruling instead of another round. Permission/non-finished starts are held by the product, and held permission notices propagate without message resubmission. Scope/parent identity and orchestration release stay distinct from native transport and AR acceptance. [5]
+
 
 
 ## Message/file transport
 
 This packaged copy makes role messages short wake-ups naming requested work or a handover and its files. Complete report, verdict, list and evidence contents travel through file-only `body` or existing-file `attach`, never pasted into message text. Within a shared task, message files remain with its record and a leaf workspace exposes the message-folder link. Wake text uses the effective settings limit, not a number pinned in this role/template. This transport account changes neither the file's existing role/write boundaries nor requirement, review, curation or landing authority.
 
-- Messages wake; complete payloads and evidence travel as files. [4]
 
 
 ## Governing Overview
@@ -26,7 +27,9 @@ Before planning repository work, name relevant records through knowledge_read on
 
 ## Current source contract evidence
 
+
 - Current source declarations support the qualified naming or fixture account; no executed test or acceptance is inferred. [6]
+
 
 ## Purpose
 
@@ -81,9 +84,12 @@ No meaningful cross-repo references found.
 
 This packaged copy derives from the canonical roles/architect.md. The Architect keeps the developer conversation and may check, measure, run tests and builds, read the code and sources of the product, the host and the harnesses, and try things out in a sandbox himself, on a copy; that work never stands in for a leaf's build, review, curation or gate, and a check before a landing is not a landing step. Checks he does not do himself go under delegation through the actual Manager or Orchestrator; developer-chosen direct coordination assigns a leaf check to Worker/Reviewer and a non-leaf concern to Investigator. Investigator starts remain within admitted Projects, sprint or master containment, and still-forbidden starts route to the actual parent or a parentless blocker. One Manager remains the default for one master. Mirror synchronization remains the owner; this file adds no independent instruction.
 
+
 - This source owns the stated current Investigator scope or canonical vocabulary. [1]
 
+
 ## Current Contract Evidence
+
 
 
 - Current stage boundaries, settings-owned review budget and recorded approval duties are carried by these instruction sources. [4]

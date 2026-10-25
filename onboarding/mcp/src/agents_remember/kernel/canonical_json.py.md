@@ -62,7 +62,9 @@ No configured domain documentation could be checked.
 
 - The retained typed-column decoder shares duplicate-key-refusing JSON policy; canonical row encoding is retired. [5]
 
+
 - The schema fingerprint computed through this encoder. [6]
+
 
 ### Cross-Repo References
 

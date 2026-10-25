@@ -69,6 +69,9 @@ future code candidate capture, R02 task intent, R01 topology fingerprint, and th
 helpers.
 
 - Pair identity and roots come from the canonical memory candidate pair owner. [1]
+
 - Code candidate tree comes from the memory-quality future-code capture. [2]
+
 - Intent identity and topology fingerprint come from R02/R01 owners. [3]
+
 - Candidate observation owns exact code/memory identity and typed refusal; deleted tests provide no current execution proof. [4]

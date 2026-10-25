@@ -328,15 +328,16 @@
   ],
   "references": {
     "10": {
-      "note": "Partial-bootstrap preview and actual apply use the same journal.",
+      "note": "Partial-bootstrap preview and actual apply use the same journal.  Anchor: `test_public_partial_bootstrap_preview_is_read_only_then_apply_recovers_same_journal`",
       "targets": [
         {
           "anchor": {
-            "blob": "24239b505070ed258c21b3f296b52977c0715fd2",
-            "content": "sha256:90d0149fc87b77f37cd34bfd00738d6959638577e1aa591223b2b8f546fc1094",
+            "blob": "6f1c1332855742f33a42427582b074c430695e4a",
+            "content": "sha256:4b86d25b3cc452ff2f653026c226afad1c47956a77c15c70692b76c8e9b480a4",
             "locator": {
-              "kind": "symbol",
-              "name": "test_public_partial_bootstrap_preview_is_read_only_then_apply_recovers_same_journal"
+              "end": 728,
+              "kind": "line_range",
+              "start": 661
             }
           },
           "kind": "test"
@@ -364,12 +365,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "34efef63b8b8a88b5224420b4f7bfacca40cedeb",
-            "content": "sha256:2100a38524c2f907e2c0b30529d7ce71ddebdbc3cfb628a63a8decfb1b34a5a3",
+            "blob": "6f1c1332855742f33a42427582b074c430695e4a",
+            "content": "sha256:56275bf5b4609b89b6074d0cf83efa2a610055f8d37c99ac0f3204b3d991959f",
             "locator": {
-              "end": 883,
+              "end": 874,
               "kind": "line_range",
-              "start": 743
+              "start": 738
             }
           },
           "kind": "test"
@@ -409,15 +410,16 @@
       ]
     },
     "15": {
-      "note": "Same journal/ref states and real apply/recovery remain truthful.",
+      "note": "Same journal/ref states and real apply/recovery remain truthful.  Anchor: `test_public_partial_bootstrap_preview_is_read_only_then_apply_recovers_same_journal`",
       "targets": [
         {
           "anchor": {
-            "blob": "24239b505070ed258c21b3f296b52977c0715fd2",
-            "content": "sha256:90d0149fc87b77f37cd34bfd00738d6959638577e1aa591223b2b8f546fc1094",
+            "blob": "6f1c1332855742f33a42427582b074c430695e4a",
+            "content": "sha256:4b86d25b3cc452ff2f653026c226afad1c47956a77c15c70692b76c8e9b480a4",
             "locator": {
-              "kind": "symbol",
-              "name": "test_public_partial_bootstrap_preview_is_read_only_then_apply_recovers_same_journal"
+              "end": 728,
+              "kind": "line_range",
+              "start": 661
             }
           },
           "kind": "test"
@@ -425,15 +427,16 @@
       ]
     },
     "17": {
-      "note": "Actual apply re-resolves current source; fresh-session persisted-parent preview preserves startup/Git state and checks its call records.",
+      "note": "Actual apply re-resolves current source; fresh-session persisted-parent preview preserves startup/Git state and checks its call records.  Anchor: `test_public_apply_re_resolves_source_and_persisted_parent_preview_stays_read_only`",
       "targets": [
         {
           "anchor": {
-            "blob": "24239b505070ed258c21b3f296b52977c0715fd2",
-            "content": "sha256:0d90764695b5032a1d7278a61ef654296e8a001ea22357e567d6e348fad7b2a5",
+            "blob": "6f1c1332855742f33a42427582b074c430695e4a",
+            "content": "sha256:ebc3e5d8445732b38d109d03ffd984cb0a0711086022ba273727731986d3376e",
             "locator": {
-              "kind": "symbol",
-              "name": "test_public_apply_re_resolves_source_and_persisted_parent_preview_stays_read_only"
+              "end": 434,
+              "kind": "line_range",
+              "start": 384
             }
           },
           "kind": "test"
@@ -445,10 +448,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "986a28a64629cd9408b8cbc7bb446a27c0917af5",
-            "content": "sha256:87332d4c9a198ec8e04acef51dd559e67bc67d87a2af9dc731fdf8fcc31a3e18",
+            "blob": "6f1c1332855742f33a42427582b074c430695e4a",
+            "content": "sha256:f19addd277973e293c9dac65d7f6c767bfe43ee25afa336577edee7220d58d74",
             "locator": {
-              "kind": "file"
+              "end": 623,
+              "kind": "line_range",
+              "start": 562
             }
           },
           "kind": "test"
@@ -489,15 +494,16 @@
       ]
     },
     "7": {
-      "note": "Fixture world is always external-memory.",
+      "note": "Fixture world is always external-memory.  Anchor: `PreviewFixture`",
       "targets": [
         {
           "anchor": {
-            "blob": "34efef63b8b8a88b5224420b4f7bfacca40cedeb",
-            "content": "sha256:f78eccb29e35c8aa73f6612012f0fcc28c01990aab8ec80aae4d4415dec1d400",
+            "blob": "6f1c1332855742f33a42427582b074c430695e4a",
+            "content": "sha256:958750e9b559631f06dbf7a647ec57e513014e9c08cf45c61dd9b1c5a948edba",
             "locator": {
-              "kind": "symbol",
-              "name": "PreviewFixture"
+              "end": 263,
+              "kind": "line_range",
+              "start": 45
             }
           },
           "kind": "test"
@@ -505,15 +511,16 @@
       ]
     },
     "8": {
-      "note": "First-leaf preview repeats without startup publication while checking its call records, commanded or not.",
+      "note": "First-leaf preview repeats without startup publication while checking its call records, commanded or not.  Anchor: `test_registered_first_leaf_preview_is_repeatable_without_publication`",
       "targets": [
         {
           "anchor": {
-            "blob": "24239b505070ed258c21b3f296b52977c0715fd2",
-            "content": "sha256:e9dceee757cfcac7831e050a9891e08a2c25113a34449a9761e670cb13982470",
+            "blob": "6f1c1332855742f33a42427582b074c430695e4a",
+            "content": "sha256:f9b0ff1c796c84cacf9b2008984d93638cac24ca8d520264c2ebd1b1190f35a8",
             "locator": {
-              "kind": "symbol",
-              "name": "test_registered_first_leaf_preview_is_repeatable_without_publication"
+              "end": 300,
+              "kind": "line_range",
+              "start": 271
             }
           },
           "kind": "test"

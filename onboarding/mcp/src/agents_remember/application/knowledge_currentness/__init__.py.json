@@ -20,12 +20,12 @@
       ]
     },
     "2": {
-      "note": "The re-exported names.\n\nAnchor: `invariant_currentness`; `read_currentness`",
+      "note": "The re-exported names: the observation, state and surface helpers - `invariant_currentness`, `invariant_state`, `observe_entry`, `returned_records` and their types.",
       "targets": [
         {
           "anchor": {
-            "blob": "e01b2307db0a23288f34d1d2e45912738a3758f3",
-            "content": "sha256:c16f58046aac03f00e24d719ac05072523ba3b93134b9a9bcb2f36d9d016b6d1",
+            "blob": "aa930a22add4a3e8f46e5b28649a097faca20b21",
+            "content": "sha256:d4b667155dea3ad37d8149604ce2edcfc03267ff05fba7d871cc943912f2c8cd",
             "locator": {
               "end": 39,
               "kind": "line_range",
@@ -37,12 +37,12 @@
       ]
     },
     "3": {
-      "note": "The two consumers import through the package.\n\nAnchor: \"from agents_remember.application.knowledge_currentness import\"",
+      "note": "The two consumers import through the package.",
       "targets": [
         {
           "anchor": {
-            "blob": "a3937ed80c8c13005aa0074d8c34ff108b57099e",
-            "content": "sha256:0b0be195023b4e17a04e87ead82e84d2c6bc1af697fba1772c01b3b409da6ef0",
+            "blob": "e2257653c8f42c1861ece020b7afb0ebe068ff1e",
+            "content": "sha256:e32e0bb827c32493b023e557552a82fe7fe17d28e3e2cb7a856a70ea1c9cb857",
             "locator": {
               "end": 91,
               "kind": "line_range",
@@ -54,12 +54,12 @@
         },
         {
           "anchor": {
-            "blob": "090fa35ed33c2e4b6288527b91e25bfa11320575",
-            "content": "sha256:9d276ed3bd2f724b81e2711bbc572475c956ce1303154fc62077edb6105ad74f",
+            "blob": "c608555cc3f6361621affb9e5e66d35c57c9aa0e",
+            "content": "sha256:743f049aba6d5abca28357856acd4baaeafa9ce3daf96dbc151efb622ddd2731",
             "locator": {
-              "end": 44,
+              "end": 45,
               "kind": "line_range",
-              "start": 41
+              "start": 42
             },
             "path": "mcp/src/agents_remember/mcp/tools/knowledge.py"
           },

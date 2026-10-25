@@ -39,11 +39,17 @@ The shared `_init` and `_commit` fixtures live in `agents_remember_test_support.
 - A repeated blob read inside the block starts no Git process and never crosses repositories. [12]
 - An explicit timeout bounds a stalled command. [13]
 - Concurrent candidate captures are isolated. [14]
+
 - The private preparation cases. [15]
+
+
 - The block under test. [16]
 
 
+
+
 - Tree publication now runs pre-commit before ref movement and records Commit-Check-Pass. Ref-transaction refusal remains native Git evidence after that check. Message comparison strips only the required pass trailer before comparison with porcelain; it does not assert raw equality of a stamped message to an unstamped argument. The removed private-commit executor supplies no live hook policy; retained spelling is data, never a skip on surviving routes. [17]
+
 
 
 - Shared real-Git fixtures and replacement-freshness cases have direct owners, with no duplicated helper or re-export. [18]

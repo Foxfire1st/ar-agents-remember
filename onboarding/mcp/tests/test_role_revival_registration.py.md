@@ -17,5 +17,7 @@ The fixture runs the real TypeScript HostActivityPublisher in a disposable Node 
 - Warmup after the new boot listing preserves reopened registration until native activity. [1]
 - Warmup registration before late listing preserves the same role facts. [2]
 - Explicit revive before late listing uses the same protection. [3]
+
 - Shared composition drives actual Node publisher, injected listings/resume and first-turn task activity. [4]
+
 - Later close/archive and new-boot ended evidence reclaim the registered role. [5]

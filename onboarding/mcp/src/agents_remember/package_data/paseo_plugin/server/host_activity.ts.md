@@ -17,10 +17,18 @@ A publisher has a boot identity and remains incomplete until every host-list pag
 
 ## Evidence
 
+
 - Host event transitions and exact registered-agent admission. [1]
+
+
 - Full paginated reconciliation and event-wins ordering. [2]
+
+
 - Bound population, published timestamps and snapshot provenance. [3]
+
+
 - One replacement file and independent activity handlers. [4]
+
 
 
 - Per-agent overflow keeps first-32 sorted serialization but denies whole-publication completeness; omission is not native-resolution evidence. [5]

@@ -20,6 +20,8 @@ Local implementation and executable evidence do not replace requirement authorit
 
 ## Evidence
 
+
 - One request makes the same Git lookup of the same object once (MIK-R81 rule 7). [1]
+
 
 - Replacement-sensitive freshness remains executable in its moved test class; shared fixture helpers keep their own direct owner. [2]

@@ -48,7 +48,9 @@ Read-only: trust colour never promotes declared evidence to observed. Raw events
 ### Repo-Internal References
 
 - The raw event channel (single-encoded) it consumes. [1]
+
 - The `ObserverEvent` shape (trust/actor/kind/data). [2]
+
 
 - The formatter layer that owns per-kind Event River copy. [3]
 

@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/worktrees/task_document_copies.py",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
@@ -326,15 +327,14 @@
       ]
     },
     "2": {
-      "note": "Public writes select the written task's copies before staging and atomic publication.",
+      "note": "**Retained historical source account — superseded by the current contract:** Public writes select the written task's copies before staging and atomic publication.\n\nAnchor: `refresh_task_document_copies`",
       "targets": [
         {
           "anchor": {
-            "blob": "8d83e9ec73c4091ac69e5118a1ca7b080efb19a2",
-            "content": "sha256:7d8a3842914592b8d0d375b28f3d85f48f8e34317603d0407dc19c619ffda3bc",
+            "blob": "c0dd4c37619f916f75c34be98b90018a3ccb6061",
+            "content": "sha256:01c9eca1b5b80bee68f3aaaa3e5c14d8529f479bf0441e4a7449987145ced87a",
             "locator": {
-              "kind": "symbol",
-              "name": "refresh_task_document_copies"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -342,15 +342,14 @@
       ]
     },
     "3": {
-      "note": "Copy writes publish through the real destination guard.",
+      "note": "**Retained historical source account — superseded by the current contract:** Atomic copy publication restores prior copied bytes if publication fails.\n\nAnchor: `_publish_copy_writes`",
       "targets": [
         {
           "anchor": {
-            "blob": "8d83e9ec73c4091ac69e5118a1ca7b080efb19a2",
-            "content": "sha256:deffa6a40689dd41cf6286fad081e7f5fb0ea18ee97ec96610c63adf73cd86e6",
+            "blob": "c0dd4c37619f916f75c34be98b90018a3ccb6061",
+            "content": "sha256:01c9eca1b5b80bee68f3aaaa3e5c14d8529f479bf0441e4a7449987145ced87a",
             "locator": {
-              "kind": "symbol",
-              "name": "_publish_copy_writes"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -358,15 +357,14 @@
       ]
     },
     "4": {
-      "note": "Raw artifact selection excludes readable siblings and foreign nonmembers before full contract loading.",
+      "note": "**Retained historical source account — superseded by the current contract:** Raw artifact selection excludes readable siblings and foreign nonmembers before full contract loading.\n\nAnchor: `_select_refresh_contract`",
       "targets": [
         {
           "anchor": {
-            "blob": "8d83e9ec73c4091ac69e5118a1ca7b080efb19a2",
-            "content": "sha256:1bd9ef7e652806e2424a6513bcec31f3fe01ed91ee38650b05c51d9a5be35d81",
+            "blob": "c0dd4c37619f916f75c34be98b90018a3ccb6061",
+            "content": "sha256:01c9eca1b5b80bee68f3aaaa3e5c14d8529f479bf0441e4a7449987145ced87a",
             "locator": {
-              "kind": "symbol",
-              "name": "_select_refresh_contract"
+              "kind": "file"
             }
           },
           "kind": "code"

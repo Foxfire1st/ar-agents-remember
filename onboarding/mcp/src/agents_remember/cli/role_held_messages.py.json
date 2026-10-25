@@ -298,15 +298,14 @@
   ],
   "references": {
     "1": {
-      "note": "Admission appends under the store lock and refuses overflow without dropping text.",
+      "note": "Admission appends under the store lock and refuses overflow without dropping text.\n\nAnchor: `hold_message`",
       "targets": [
         {
           "anchor": {
-            "blob": "4a8b3dce81d0edf2c9378ff9949386fae16c4cae",
-            "content": "sha256:2a9a09a4734dcd36cf53f50564b67039f00fc3011f99af0c5c4a9e6266384aed",
+            "blob": "415add043434de3e1c7793d20a52ddfa0cdd80af",
+            "content": "sha256:8ceb3d298f16d0c77cf05fb369513138eeb768e32ec374e8d139ad944b2c21bc",
             "locator": {
-              "kind": "symbol",
-              "name": "hold_message"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -314,26 +313,14 @@
       ]
     },
     "2": {
-      "note": "A drain delegates claim/readiness checks and whole-first FIFO delivery.\n\nAnchor: `drain_held`, `_deliver_waiting`",
+      "note": "A drain delegates claim/readiness checks and whole-first FIFO delivery.\n\nAnchor: `drain_held` `_deliver_waiting`",
       "targets": [
         {
           "anchor": {
-            "blob": "4a8b3dce81d0edf2c9378ff9949386fae16c4cae",
-            "content": "sha256:3586b8567ef61568d042f6d0dbd9b648fc1d2cc56d040bbcf88c080ca0d0fddc",
+            "blob": "415add043434de3e1c7793d20a52ddfa0cdd80af",
+            "content": "sha256:8ceb3d298f16d0c77cf05fb369513138eeb768e32ec374e8d139ad944b2c21bc",
             "locator": {
-              "kind": "symbol",
-              "name": "drain_held"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "4a8b3dce81d0edf2c9378ff9949386fae16c4cae",
-            "content": "sha256:aff90a2262b69173c8b753fb409d7ceb8be5e2a60229ac16c4532cb4624f2152",
-            "locator": {
-              "kind": "symbol",
-              "name": "_deliver_waiting"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -341,15 +328,14 @@
       ]
     },
     "3": {
-      "note": "Terminal lines are published separately from ended text and retain failure state.",
+      "note": "Terminal lines are published separately from ended text and retain failure state.\n\nAnchor: `apply_drain_to_receipt`",
       "targets": [
         {
           "anchor": {
-            "blob": "4a8b3dce81d0edf2c9378ff9949386fae16c4cae",
-            "content": "sha256:4b27071f93f0065dbdfdf3201d3b1dd7d22d3de4c08715bdb1374f4d2cef1d8f",
+            "blob": "415add043434de3e1c7793d20a52ddfa0cdd80af",
+            "content": "sha256:8ceb3d298f16d0c77cf05fb369513138eeb768e32ec374e8d139ad944b2c21bc",
             "locator": {
-              "kind": "symbol",
-              "name": "apply_drain_to_receipt"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -417,16 +403,16 @@
       ]
     },
     "6": {
-      "note": "Common restoration also validates instruction details and takeover references.\n\nAnchor: Current source; preserved L88 property 6",
+      "note": "Common restoration also validates instruction details and takeover references.",
       "targets": [
         {
           "anchor": {
-            "blob": "ce3562637ef9146c730bbacc243e73efb61ace86",
-            "content": "sha256:b5a859b60be97ef213c9d51289edeff5ceb68c0498bb005434e341ae666af600",
+            "blob": "12aab96f86c33555f5973aa2e4fc3cf0a6b827b4",
+            "content": "sha256:6a0633a405546e45da352e8eb35965d47a2fa74f630c2a3fe17c1eb85bbfacd6",
             "locator": {
-              "end": 174,
+              "end": 172,
               "kind": "line_range",
-              "start": 149
+              "start": 147
             },
             "path": "mcp/src/agents_remember/cli/role_launch_receipts.py"
           },

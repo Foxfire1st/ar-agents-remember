@@ -73,21 +73,30 @@ These current source spans identify the implementation owners and the specific a
 
 - **Retained historical source account — superseded by the current contract:** Addressed handover gates and publication preserve the operation's real identity. [4]
 
+
 - **Retained historical source account — superseded by the current contract:** Admission before ancestry and publication judges leaf or master pairs without writing refused state. [5]
 
+
+
 - **Retained historical source account — superseded by the current contract:** Final and checkpoint result publication differ without performing reclamation. [6]
+
+
 - **Retained historical source account — superseded by the current contract:** The shared writer records the two accepted output commits. [7]
+
 
 
 - **Retained historical source account — superseded by the current contract:** The converted leaf rejudges its exact closeout pair; unconverted memory keeps the cutover lock. [8]
 
 
 
+
 - **Retained historical source account — superseded by the current contract:** One admission owner dispatches leaf pair judgment or master validator/staleness/history and chain judgment. [9]
+
 
 
 ### Cross-Repo References
 
 The operation and fixture boundaries described here are defined by same-repository contracts and Git helpers. No separate cross-repository document is used as evidence for this card.
+
 
 - Integration preserves invariant judgment and ref-publication order. Handover-gate blockers and incomplete closeout preconditions are answered in both dry and real calls; checkpoint on a non-series contract returns contract-not-a-series, and recognized CloseoutQueueError retains its code/sentence. Checkpoints keep a still-open master open. No arbitrary RuntimeError is silently converted and no bounded next-step presentation grants publication. [10]

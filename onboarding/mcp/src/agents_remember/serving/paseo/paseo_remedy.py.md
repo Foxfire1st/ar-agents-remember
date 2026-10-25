@@ -14,7 +14,9 @@ The explicit configured terminal transition when a live host cannot migrate in p
 
 ## Evidence
 
+
 - The terminal remedy text. [1]
+
 
 ## Current contract evidence
 

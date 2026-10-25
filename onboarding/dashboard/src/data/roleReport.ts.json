@@ -50,12 +50,12 @@
       ]
     },
     "2": {
-      "note": "A report read failure reaches the launcher as a readable line instead of `[object Object]`, a JSON parse error or `Failed to fetch`.\n\nAnchor: `the report could not be opened`",
+      "note": "A report read failure reaches the launcher as a readable line instead of `[object Object]`, a JSON parse error or `Failed to fetch`.",
       "targets": [
         {
           "anchor": {
-            "blob": "762704569fb205c645f778f52e0d31afa916dffd",
-            "content": "sha256:11a9083f74e6b3e3b1140c1a89aa23dfbc93529150531817604726c5f73b918b",
+            "blob": "ae9ec1fe165557e0d4e3e35fe738736122a1ed32",
+            "content": "sha256:e6d9fd136fd360c53d9d36f86d608e5800bf735fcbf92f6569b369f819952223",
             "locator": {
               "end": 344,
               "kind": "line_range",

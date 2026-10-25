@@ -78,7 +78,7 @@ file-size budgets, function/class budgets, split triggers, responsibility rules,
 and anti-patterns — written language-general for teams to adapt.
 
 - The full guidelines body (design philosophy, budget tables, split triggers, responsibility rules, anti-patterns, naming, boolean-flag rule) lives in the source example. [1]
-- The example sits in the `examples/mcp` route governed by the route overview, alongside `settings.example.json`. [2]
+- The example sits in the `examples/mcp` route governed by the route overview, alongside `settings.example.json`. 
 
 ### Cross-Repo References
 

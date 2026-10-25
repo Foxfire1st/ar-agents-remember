@@ -160,15 +160,14 @@
       ]
     },
     "14": {
-      "note": "The key from contract bytes, the strict task lookup and the build stamp.",
+      "note": "The key from contract bytes, the strict task lookup and the build stamp.\n\nAnchor: `memo_key`",
       "targets": [
         {
           "anchor": {
-            "blob": "fc1b6b690406fd769aa648ac04acf77e2d181e1c",
-            "content": "sha256:7550da317fce3e4ae2a2e43b8712295bb8f965eb8568fb9cc638fb373dec96d9",
+            "blob": "3757f3ea9584a7d0d02c49e3df9d27e0590b50a6",
+            "content": "sha256:fa702b8e116561c2083bc3fe3c53c602dc889160847ea403fec4b3f35052fcb7",
             "locator": {
-              "kind": "symbol",
-              "name": "memo_key"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -176,15 +175,14 @@
       ]
     },
     "15": {
-      "note": "A kept verdict is served only when young enough and unchanged.",
+      "note": "A kept verdict is served only when young enough and unchanged.\n\nAnchor: `remembered`",
       "targets": [
         {
           "anchor": {
-            "blob": "fc1b6b690406fd769aa648ac04acf77e2d181e1c",
-            "content": "sha256:30ee54a0949b5d8e434add6a188d8fab6cb75d013e454a2c954de9067bf3383d",
+            "blob": "3757f3ea9584a7d0d02c49e3df9d27e0590b50a6",
+            "content": "sha256:fa702b8e116561c2083bc3fe3c53c602dc889160847ea403fec4b3f35052fcb7",
             "locator": {
-              "kind": "symbol",
-              "name": "remembered"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -208,15 +206,14 @@
       ]
     },
     "17": {
-      "note": "The gate asks the memo, records its reads and offers the verdict.",
+      "note": "The gate asks the memo, records its reads and offers the verdict.\n\nAnchor: `evaluate_leaf_gate`",
       "targets": [
         {
           "anchor": {
-            "blob": "6d9044763997b7c562f1dce7c4f8beb226668066",
-            "content": "sha256:02f37ffbb9758065d669c38ff5c5f43942e4e1fe7040701a89c7e717f55c3e3c",
+            "blob": "c7ee6796c238d63d1e061ee0c8c1c84b4b214cec",
+            "content": "sha256:f9dcdd0f960f2e21d31bc302d3c6aa8539197d87f2d3bd4ba5ff7049b88bb623",
             "locator": {
-              "kind": "symbol",
-              "name": "evaluate_leaf_gate"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/knowledge_gate/gate.py"
           },
@@ -276,15 +273,14 @@
       ]
     },
     "21": {
-      "note": "Every file read is in the read set and a conflicting read is never kept.",
+      "note": "Every file read is in the read set and a conflicting read is never kept.\n\nAnchor: `test_every_file_read_is_in_the_read_set_and_a_conflicting_read_is_never_kept`",
       "targets": [
         {
           "anchor": {
-            "blob": "eb09cafb934fb0c88cea5c10dc2ceaeb9342f5fe",
-            "content": "sha256:3ef91152cfd63b59ac7c8cc0f8fcc5975e9cc8121e1e82d3fce9471a024c66c9",
+            "blob": "cd9c5537287afcf467e163d880cd215185351a3f",
+            "content": "sha256:e6e886652be10fbe00a654d24ab251858ba9d00e64b0aa84004afa1ddddc11e3",
             "locator": {
-              "kind": "symbol",
-              "name": "test_every_file_read_is_in_the_read_set_and_a_conflicting_read_is_never_kept"
+              "kind": "file"
             },
             "path": "mcp/tests/test_knowledge_gate_routes.py"
           },
@@ -310,15 +306,14 @@
       ]
     },
     "23": {
-      "note": "The worktree layer's gate port calls the gate.",
+      "note": "The worktree layer's gate port calls the gate.\n\nAnchor: `leaf_refusal`",
       "targets": [
         {
           "anchor": {
-            "blob": "6de8211023be496991a77c1083363a6e426e0d20",
-            "content": "sha256:6ea914dcd8d6ab1ac157d74afc565ebfb96445f80c1813ed3ebdde6444f0cc1f",
+            "blob": "6230c3e5be5c089ead09c2ad0f4823e17d7002ca",
+            "content": "sha256:f224a678847d934667500b2c69209c217c2d7113c4f49614e40712875215c2e1",
             "locator": {
-              "kind": "symbol",
-              "name": "leaf_refusal"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/knowledge_gate/adapter.py"
           },

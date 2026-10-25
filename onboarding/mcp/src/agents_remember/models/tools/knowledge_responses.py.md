@@ -6,7 +6,9 @@
 
 ## Current source contract evidence
 
+
 - Current candidate source supports the operative account; historical sections grant no current tool or execution acceptance. [54]
+
 
 ## Purpose
 
@@ -140,12 +142,19 @@ No configured domain documentation could be checked.
 
 - The envelope every one of the four derives from — a strict response plus the single required `operation` string each model then pins to a literal — and the shared header it inherits rather than redeclares. [35]
 
+
 - Where the four classes are imported and mapped to their tool names in the registry. [36]
+
+
 
 - The four advertised knowledge tool names in the public roster. The module's own `__all__` re-exports three of them, and `KnowledgeWriteResponse` is defined and registered without being listed there. [37]
 
 
+
+
 - The integrity handler reports text-tree validation. [9]
+
+
 
 
 
@@ -153,7 +162,11 @@ No configured domain documentation could be checked.
 
 
 
+
+
 - The current read response carries its named view/page and optional reader-owned tree, proof, currentness, family and route blocks. [14]
+
+
 
 
 
@@ -161,7 +174,11 @@ No configured domain documentation could be checked.
 
 
 
+
+
 - The current read response carries its named view/page and optional reader-owned tree, proof, currentness, family and route blocks. [11]
+
+
 
 
 
@@ -169,7 +186,11 @@ No configured domain documentation could be checked.
 
 
 
+
+
 - The current read response carries its named view/page and optional reader-owned tree, proof, currentness, family and route blocks. [6]
+
+
 
 
 
@@ -177,7 +198,11 @@ No configured domain documentation could be checked.
 
 
 
+
+
 - The current read response carries its named view/page and optional reader-owned tree, proof, currentness, family and route blocks. [4]
+
+
 
 
 
@@ -185,11 +210,16 @@ No configured domain documentation could be checked.
 
 
 
+
+
 - The current read response carries its named view/page and optional reader-owned tree, proof, currentness, family and route blocks. [2]
 
 
 
+
+
 - The current read response carries its named view/page and optional reader-owned tree, proof, currentness, family and route blocks. [1]
+
 
 
 The four models are two declarations in one: the operation column and the base envelope. The module's `__all__`
@@ -205,28 +235,39 @@ in the working candidate.
 - The module's `__all__` re-exports three of the four mounted knowledge response models; `KnowledgeWriteResponse` is defined here and registered without being listed there. [16]
 
 
+
 - The current read response carries its named view/page and optional reader-owned tree, proof, currentness, family and route blocks. [17]
+
 
 
 - The strict Git-tree diff response names revisions, trees, counts, bounded decision records and their total beside a report, without carried patch/completeness/omission fields. [19]
 
 
+
 - The integrity response carries the text-tree validator report. [20]
+
+
 
 - The registry entry point itself, whose docstring states that a package-owned response shape uses a strict model so the field set is a drift-proof contract. [53]
 
-- The projection of the registry that the public surface pin compares against the advertised roster. [25]
+
 - The choke point that validates a handler's plain dict against the registered model, so an undeclared key is a validation error. [27]
 
+
 - The read builder returns the reader-owned payload and read extras. [28]
+
+
 
 
 - The tree-diff and validator-report builders produce factual outputs, neither a semantic verdict. [30]
 
 
+
 - The closed view refusal vocabulary the read handler's `unknown_view` code comes from, which these models carry as a plain string rather than re-declare. [33]
 
+
 - The current read response carries its named view/page and optional reader-owned tree, proof, currentness, family and route blocks. [34]
+
 
 
 ### Cross-Repo References
@@ -237,18 +278,34 @@ value this package writes, and the module imports no store, no transport, no pro
 repository's vocabulary.
 
 No meaningful cross-repo references found.
+
 - The docstring paragraph on the route-chain rows, `routeChain` and the family seed. [38]
+
+
 - The docstring paragraph on the leaf read and family names. [39]
+
 - The docstring paragraph on proofs beside the view. [40]
 - The docstring paragraph on currentness beside the view. [41]
 - The docstring paragraph on a memory tree's bounded page. [42]
 - The module docstring's statement that a memory tree is named, never hidden, and that a partial index is never presented as complete. [43]
+
 - The optional `proofs` field on the read response, beside L03's `currentness`, since MIK-R02 the `page` and `threshold` fields, since MIK-R01 the optional `families`, and since MIK-R05 the optional `routeChain`. [44]
+
+
 - The optional `currentness` field on the read response, after `proofs`, re-read at MIK-R02 when the model gained `page` and `threshold`, at MIK-R01 when it gained `families`, and at MIK-R05 when it gained `routeChain`. [45]
+
+
 - The `page` state (which since MIK-R01 also answers a leaf read, and since MIK-R05 a family seed) and the optional `page` and `threshold` fields on the read model. [46]
+
+
 - The read response: which view and which snapshot it was read at, echoed beside the payload verbatim, plus the optional memory-tree binding and index completeness when the read went through a converted tree's index. [47]
+
+
 - The read handler that stores the view payload's own JSON and echoes the snapshot, the completeness statement (forced to `false` by a partial index) and the continuation token, beside `memoryTree` and `indexComplete`. [48]
+
 - The optional `routeChain` field on the read model, for a path's refusal. [49]
 - The optional `families` field on the read model. [50]
+
 - A family whose members have no proof shows `[]`. [51]
+
 - The builder that fills them. [52]

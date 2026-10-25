@@ -27,7 +27,9 @@
 
 ### Repo-Internal References
 
+
 - not_checked, run_drift_summary and _run_converted_summary produce shared typed summary packets. [1]
+
 
 - The context-packet wire model that reads `DriftStatus` and gained the matching `error` field. [2]
 

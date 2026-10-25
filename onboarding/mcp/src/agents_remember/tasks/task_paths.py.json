@@ -145,37 +145,14 @@
       ]
     },
     "3": {
-      "note": "The archive/enclosure-position predicates remain, while the iterator excludes notes and archives before descent.\n\nAnchor: `is_archived_path`, `is_enclosure_contract`, `iter_leaf_enclosure_contracts`",
+      "note": "The archive/enclosure-position predicates remain, while the iterator excludes notes and archives before descent.\n\nAnchor: `is_archived_path` `is_enclosure_contract` `iter_leaf_enclosure_contracts`",
       "targets": [
         {
           "anchor": {
             "blob": "396f581aa13672645248ee4b089011b1ca781c1b",
-            "content": "sha256:e07e641d796aeeb13604649d1ecb9e06d86bd62be213e0871a97dcb5537226b7",
+            "content": "sha256:a1e25e610b89188c8b8ee96186b79376eb9947c515ae118097c7dee9e073a595",
             "locator": {
-              "kind": "symbol",
-              "name": "is_archived_path"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "396f581aa13672645248ee4b089011b1ca781c1b",
-            "content": "sha256:b1fc657481ff3d993c7c2dde2401eb14736d0560ba8f6baf96e92931ec2a0b2b",
-            "locator": {
-              "kind": "symbol",
-              "name": "is_enclosure_contract"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "ea5a1d83e55e71447ccf114937714f3e9275c8fe",
-            "content": "sha256:3694617e0ce7715963085263eb45c152a95fe8c57f1250bc25db3e4cbd7c9b3e",
-            "locator": {
-              "kind": "symbol",
-              "name": "iter_leaf_enclosure_contracts"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -183,12 +160,12 @@
       ]
     },
     "4": {
-      "note": "The explicit re-export list and imports keep the path rules single-defined in the task domain.\n\nAnchor: `__all__`, \"from agents_remember.tasks.task_paths import (\"",
+      "note": "The explicit re-export list and imports keep the path rules single-defined in the task domain.",
       "targets": [
         {
           "anchor": {
-            "blob": "1052a563780ee71a5917ad475556a86011ea53b6",
-            "content": "sha256:8a8e10fe5aace37ca8171b2085e64aad8e981c7be9cdcc0092946525f084f437",
+            "blob": "0a6426966075d0545fc7e6ffea623bf8eebc99c4",
+            "content": "sha256:511ceadb3777e9a37069b1f067794fb603c9488efd0156426a1951596e23640f",
             "locator": {
               "kind": "symbol",
               "name": "__all__"
@@ -199,12 +176,23 @@
         },
         {
           "anchor": {
-            "blob": "1052a563780ee71a5917ad475556a86011ea53b6",
-            "content": "sha256:fa03b8dd3ff6624e5f6dcf676751ab7e7f04e048423a466d1b48f75dbff06d97",
+            "blob": "0a6426966075d0545fc7e6ffea623bf8eebc99c4",
+            "content": "sha256:96285c443184013595b9a200b7f36c870cef58fbf7b7e458978967c41478a3ec",
             "locator": {
               "end": 55,
               "kind": "line_range",
               "start": 19
+            },
+            "path": "mcp/src/agents_remember/worktrees/task_resolver.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0a6426966075d0545fc7e6ffea623bf8eebc99c4",
+            "content": "sha256:38d894cb7f0ff3160facb1e8fa82e1e8ab696e770b25008299f3e729761c8ac6",
+            "locator": {
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/worktrees/task_resolver.py"
           },
@@ -277,15 +265,14 @@
       ]
     },
     "8": {
-      "note": "The traversal prunes notes and archive descent but preserves a leaf directory named notes.",
+      "note": "The traversal prunes notes and archive descent but preserves a leaf directory named notes.\n\nAnchor: `_iter_enclosure_contract_candidates`",
       "targets": [
         {
           "anchor": {
-            "blob": "ea5a1d83e55e71447ccf114937714f3e9275c8fe",
-            "content": "sha256:f9dbf0d9e59eea5cbe98bd7ee90dc76703dfade8cb1314057e56b7cb4a0cadaa",
+            "blob": "396f581aa13672645248ee4b089011b1ca781c1b",
+            "content": "sha256:a1e25e610b89188c8b8ee96186b79376eb9947c515ae118097c7dee9e073a595",
             "locator": {
-              "kind": "symbol",
-              "name": "_iter_enclosure_contract_candidates"
+              "kind": "file"
             }
           },
           "kind": "code"

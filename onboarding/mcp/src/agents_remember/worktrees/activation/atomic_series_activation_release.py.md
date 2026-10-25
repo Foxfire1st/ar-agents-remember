@@ -86,11 +86,17 @@ No Domain Documentation source is configured for this memory root.
 ### Repo-Internal References
 
 - The selector authority supplies the per-contract activation path, strict observation, and canonical master reference. [1]
+
 - Explicit cancellation refuses an absent exact selection and a record that selects another contract. [2]
+
+
 - Exact-owner proof and the revision-incremented vacant replacement retain the last selected master/contract. [3]
+
 - The terminal bridge translates exact, absent, unreadable, and different-selection outcomes. [4]
 - Tests prove exact release addresses only the released contract and that another contract's record is never adopted. [5]
+
 - The stop-only pause is the third caller of the strict explicit release, and it adds no authority of its own. [6]
+
 - The pause's boundary proof shows that releasing one master leaves the other master's record byte-identical, which is this file's per-contract isolation observed from the caller's side. [7]
 - The two foreign-record shapes, proved apart through the public route: the **vacant** foreign record reaches this file's exact-owner guard and is refused as a contract mismatch, while an **active** one is refused by the observation's earlier guard and reports as unreadable. [8]
 - The pause's structural guard proves the stop's static import closure cannot reach a publication module, so the third caller releases through this strict path only. [9]

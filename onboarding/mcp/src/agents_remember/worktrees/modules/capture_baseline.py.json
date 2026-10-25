@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/worktrees/modules/capture_baseline.py",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
@@ -100,8 +101,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "38423e04feedc1824e017110ec9f4cd40eaf5917",
-            "content": "sha256:aa1492025dfd9094508e76444d640608731c94ef9881937c0ab339d4844c199c",
+            "blob": "517c52d2bf14b9587f91d75a20f13b98c9662b02",
+            "content": "sha256:d387064b4daa305628eb532ca7b1a1a136112e2de6f7ce3b4b35bb30aaa5e8a2",
             "locator": {
               "kind": "file"
             }
@@ -110,8 +111,8 @@
         },
         {
           "anchor": {
-            "blob": "25ccba8ee5a4be236b2383b588f11bc1d1c259bc",
-            "content": "sha256:877612ca9d29d80b2ea0b9c614fda61f6b617340f8d3286969eff953370c6123",
+            "blob": "2afe4df9e979efb37c12c123b75809a993a53534",
+            "content": "sha256:3147e28937d48faa64e30fd683f95e0496c974813d839c8d7d75ca0108f40eda",
             "locator": {
               "kind": "file"
             },
@@ -121,8 +122,8 @@
         },
         {
           "anchor": {
-            "blob": "f05d84859486eb5dca5644e4abc64199acc6779e",
-            "content": "sha256:167424acbfe005f3d28eff9f03fc7e2d3e764fd2493123fe008fa1aed8dbb5c7",
+            "blob": "a7ffdba484f4eaafa7f3a0a0860e045504f33755",
+            "content": "sha256:e43779b643a5347584f7acf8bdbaafaaf2b0969fd5de3af06b46da3195049899",
             "locator": {
               "kind": "file"
             },
@@ -133,12 +134,12 @@
       ]
     },
     "2": {
-      "note": "Capture dependency observation is request-local and restored on every scope exit.\n\nAnchor: memo observer scope",
+      "note": "Capture dependency observation is request-local and restored on every scope exit.",
       "targets": [
         {
           "anchor": {
-            "blob": "f87e4882334717b4528aa4384f167e1d68686821",
-            "content": "sha256:6aebb57026d25f72d8427bf2bf9e32811fda32b0e55e192baa18b4419d8d13fc",
+            "blob": "517c52d2bf14b9587f91d75a20f13b98c9662b02",
+            "content": "sha256:6c8902c2a035ed84ea69922a645285c3a4be490b7f607dd66b6ded01a60d1719",
             "locator": {
               "end": 58,
               "kind": "line_range",
@@ -149,8 +150,8 @@
         },
         {
           "anchor": {
-            "blob": "f87e4882334717b4528aa4384f167e1d68686821",
-            "content": "sha256:8dfc8d85beaedf8809130c94f03ed4d3b1e2023e66474b2cac04cc0be082e393",
+            "blob": "517c52d2bf14b9587f91d75a20f13b98c9662b02",
+            "content": "sha256:975f27257b471924152a2d6b051720002d75b2b3cbfdaf29b7e9dccc8a90c693",
             "locator": {
               "end": 84,
               "kind": "line_range",

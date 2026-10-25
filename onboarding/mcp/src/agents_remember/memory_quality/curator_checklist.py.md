@@ -116,9 +116,15 @@ No configured domain documentation could be checked.
 
 The application layer decides when the report exists, and worktree cleanup owns its lifecycle.
 
+
 - A leaf scope derives the report path from the contract's worktree group; only a full scoped check requests rows and writes the checklist, and since MIK-R28 it also hands the checklist the "without proof" list (`None` for an unconverted tree). [7]
-- Cleanup removes the reserved reports directory before it attempts to remove the enclosure. [8]
+
+
+> Retained earlier citation wording: - Cleanup removes the reserved reports directory before it attempts to remove the enclosure. [8]
+
+
 - The checklist writer owns the enclosure report projection; deleted regression fixtures do not supply a current pass. [9]
+
 - R03 attestation dependency declaration source. [10]
 
 ### Cross-Repo References
@@ -185,3 +191,5 @@ routing report calls this function, so the report cannot drift from the checklis
 The `knowledgeReview` section remains outside it, for the same reason as before.
 
 - The proof-coverage count is informational in the summary; after normalizing that count and artifact paths, actionable count still stays zero. [3]
+
+- Cleanup removes the reserved reports directory before it attempts to remove the enclosure.  Anchor: `_removed_directories` [8]

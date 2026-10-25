@@ -32,12 +32,12 @@
       ]
     },
     "2": {
-      "note": "The actionable-drift case asserts itemId/kind without target; the old stale-gate locator is not the current proving body.\n\nAnchor: Targetless assertion body",
+      "note": "The actionable-drift case asserts itemId/kind without target; the old stale-gate locator is not the current proving body.",
       "targets": [
         {
           "anchor": {
-            "blob": "2f7372c16a1997c0d021be2a35f3f10bdeae96c7",
-            "content": "sha256:4bb75363843680c2e6c1330d751ecf941f486332dcf48b0fdada87acf68ed6c3",
+            "blob": "7032e6b6b7a77e05da8eb6339324557f60c73700",
+            "content": "sha256:a0d38d1b154ed6e3f98ee2b0f972f6ec07f5b35fdd12aceeb217daced2dd95cc",
             "locator": {
               "end": 47,
               "kind": "line_range",

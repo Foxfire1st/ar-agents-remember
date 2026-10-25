@@ -46,4 +46,5 @@ their own layout props.
 
 - `Panel` is the shared panel chrome primitive. [1]
 - The Engine Room passes `fill` to bound its 3-zone grid. [2]
+
 - The Panel shell uses the `bgPanel` background and `grid` border tokens in its styles. [3]

@@ -98,15 +98,14 @@
       ]
     },
     "3": {
-      "note": "The compiler step that calls gathering and resolution in this order.",
+      "note": "The compiler step that calls gathering and resolution in this order.\n\nAnchor: `compile_role_capsule`",
       "targets": [
         {
           "anchor": {
-            "blob": "e0c363f53732c65054fa825f478956800f102db7",
-            "content": "sha256:d1502ab73ec7a0c2f3607cb0f65c326092b8f83aa9d9d5fbab123774326f3f90",
+            "blob": "762c104a0bcdc0375416163993d106dc37c5fb18",
+            "content": "sha256:157949db0f9acdf0d70ebbd6959fb382dccab34600bf2e6cfd9b12f0b9079a74",
             "locator": {
-              "kind": "symbol",
-              "name": "compile_role_capsule"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/models/role_capsules/compiler.py"
           },

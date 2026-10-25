@@ -52,14 +52,22 @@ the port answers 503 with `status: unavailable`.
 
 ## Evidence
 
+
 - The module docstring: transport only, the query's meaning and the status codes. [8]
+
 - The route path, the bounds of a selection and the size of the route's thread pool. [9]
 - The query handed to the port. [10]
 - The selection and the reasons it is refused. [11]
 - The port runs on the route's executor inside the request's context; disconnect and cancellation set the event. [12]
 - The route: own executor, 503 without a port, 400 for a refused selection, one serialized result. [13]
 - The request context that binds cancellation and arrival. [14]
+
 - A tree read answers in under a second while the default executor is full. [15]
+
+
 - A client disconnect and a shutdown each stop the child and its Git process through the real route. [16]
+
+
 - The deadline runs from the request's arrival, so work before the child spends it. [17]
+
 - The route serves the port and refuses when it is not wired. [18]

@@ -55,7 +55,9 @@ No domain-documentation source is configured for this slice. The behavior descri
 These current source spans identify the implementation owners and the specific assertions supporting the file's behavior. A test definition is evidence of its assertions, not an execution or certification receipt.
 
 - Two-output and route-specific candidate data. [1]
+
 - Preparation validates accepted output and source/checkout state. [2]
+
 - Ordered expected-old CAS retains a torn pair on a memory race. [3]
 - Owned checkout refresh excludes only memory cache state. [4]
 - Real Git regression for cache independence and competing memory CAS. [5]
@@ -63,5 +65,6 @@ These current source spans identify the implementation owners and the specific a
 ### Cross-Repo References
 
 The operation and fixture boundaries described here are defined by same-repository contracts and Git helpers. No separate cross-repository document is used as evidence for this card.
+
 
 - The dirty shared checkout guard names an occupying granted leaf, including a qualifying Completed dirty/incomplete sibling. [6]

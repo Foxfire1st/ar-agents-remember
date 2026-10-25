@@ -1,9 +1,10 @@
 {
   "path": "mcp/src/agents_remember/worktrees/modules/landing.py",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
-      "note": "`status_payload` calls `landing_refs` and emits its result as the `landing` block.\n\nAnchor: \"def _status_payload_with_landing\"",
+      "note": "`status_payload` calls `landing_refs` and emits its result as the `landing` block.\n\nAnchor: `status_payload` `_status_payload_with_landing`",
       "targets": [
         {
           "anchor": {
@@ -19,8 +20,8 @@
         },
         {
           "anchor": {
-            "blob": "f2ae7719181b7b041a6701c88f53f37f4d2c8cf1",
-            "content": "sha256:f09781b9b50eefc7f8332ae44dc6a8101dce980484769d31fb4653344425c70c",
+            "blob": "97d891cffc76560263390fb8f9b22f38c8260a8b",
+            "content": "sha256:ff12b80ddb03add068e5173a44c5f21a5a600780e4a45d57fe014df1943fc06e",
             "locator": {
               "kind": "symbol",
               "name": "_status_payload_with_landing"
@@ -41,6 +42,17 @@
             "path": "mcp/src/agents_remember/worktrees/modules/guidance.py"
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "97d891cffc76560263390fb8f9b22f38c8260a8b",
+            "content": "sha256:c5a2fd084e668cadc10135510d3635ab841914e4f4cfafe640271cfe0bf18e67",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/guidance.py"
+          },
+          "kind": "code"
         }
       ]
     },
@@ -49,7 +61,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fc93bae691a82da28bef3516bc6b7b8a85af6db8",
+            "blob": "fd0cd6ba53b5d874adfcb26807b26ab92e77d56e",
             "content": "sha256:be2b0955bbe767a5616d8badba2144b66a3a28fffa78a35c2c03fbf32fadfb2f",
             "locator": {
               "kind": "symbol",
@@ -66,8 +78,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7137fb6b1d0cd4fbee647c82ab46c5710cf1bafe",
-            "content": "sha256:566d7693c7cd2ef482c368cf1d84c825815128ebcca5327b374967adf7a4b800",
+            "blob": "2d2ad899f0adbf93abb10fb821fee28e8801cae3",
+            "content": "sha256:2af21bdce5cc2df634ce0cc9cda58f7f18d0b6649e678c2ff289aaef83ad9835",
             "locator": {
               "end": 304,
               "kind": "line_range",
@@ -80,8 +92,19 @@
       ]
     },
     "4": {
-      "note": "The shared `run_git` runner supplies the `safe.directory` override, DEVNULL stdin, the `GIT_DIR`-family scrub, and its local timeout default; both probes here override that default through `GitRunnerOptions(timeout=...)`.",
+      "note": "The shared `run_git` runner supplies the `safe.directory` override, DEVNULL stdin, the `GIT_DIR`-family scrub, and its local timeout default; both probes here override that default through `GitRunnerOptions(timeout=...)`.\n\nAnchor: `GIT_REPOSITORY_SELECTOR_ENV` `GIT_LOCAL_TIMEOUT_SECONDS` `git_environment` `run_git`",
       "targets": [
+        {
+          "anchor": {
+            "blob": "07979a6e10a7cde98e4a4ce1dcaca7a203241e3f",
+            "content": "sha256:6e94e3f710e3074a2f9def9a24032a21aee42476e665e4ea421cba0067b627bb",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/kernel/git_command.py"
+          },
+          "kind": "code"
+        },
         {
           "anchor": {
             "blob": "07979a6e10a7cde98e4a4ce1dcaca7a203241e3f",
@@ -120,8 +143,8 @@
         },
         {
           "anchor": {
-            "blob": "af8d0af3c1cdbec034b7f460d8b013e802e8163e",
-            "content": "sha256:60788cf6b3cf57e313ccacab456fb49fd9601a1930fa8f8de28c01088b22a2af",
+            "blob": "07979a6e10a7cde98e4a4ce1dcaca7a203241e3f",
+            "content": "sha256:2581abe22f96abd5eed654d6bbd4024993314e94a5eb2eae6b9f4df000dcba6c",
             "locator": {
               "kind": "symbol",
               "name": "run_git"
@@ -133,12 +156,23 @@
       ]
     },
     "5": {
-      "note": "The bounded off-tick caller: `LandingStateRefresher(observe=landing_refs)`, and the `unobserved_landing_refs` shape the recurring projection renders instead.  Anchor: \"observe: LandingObserver = landing_refs\"",
+      "note": "The bounded off-tick caller: `LandingStateRefresher(observe=landing_refs)`, and the `unobserved_landing_refs` shape the recurring projection renders instead.  Anchor: \"observe: LandingObserver = landing_refs\"\n\nAnchor: `LandingStateRefresher`",
       "targets": [
         {
           "anchor": {
-            "blob": "a1430c54022a8369724801f3da1da693a7e07bf2",
-            "content": "sha256:78e3c9c0518417175047233e93b70c83216915d72427f6ef48572090be89180a",
+            "blob": "f78cd0b0ccc7bef3d26f33529137c09da56e2e03",
+            "content": "sha256:b7acb5c9e29678903fd8aa3465439733a65b3dc299929f00382f206c28744686",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/serving/projections/landing_state.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f78cd0b0ccc7bef3d26f33529137c09da56e2e03",
+            "content": "sha256:e01373ae11178325df0b1efd197377b0233472f0ad6b92e5ee6ef3826f66b106",
             "locator": {
               "kind": "symbol",
               "name": "LandingStateRefresher"

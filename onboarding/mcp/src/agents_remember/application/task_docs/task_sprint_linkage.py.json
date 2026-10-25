@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/application/task_docs/task_sprint_linkage.py",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
@@ -57,12 +58,22 @@
       ]
     },
     "10": {
-      "note": "The operation tuple lists the five linkage operations and the dispatcher sends `retire_master` to the retirement module.",
+      "note": "The operation tuple lists the five linkage operations and the dispatcher sends `retire_master` to the retirement module.\n\nAnchor: `sprint_linkage_operation`",
       "targets": [
         {
           "anchor": {
-            "blob": "7a91c99e84345b557fc31722f7ab1d5e0dafa4b8",
-            "content": "sha256:2c2077f82c4b06d1c681fc1baebf1f5f42484543d7a895bc1f88d050cdc733c7",
+            "blob": "a0b5ad238d8c829320217d9994826ecc6c88a546",
+            "content": "sha256:dd847fac2054b56fec8c6aafd65ddde455cec04d2d3a8376a61d1425c527e52a",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a0b5ad238d8c829320217d9994826ecc6c88a546",
+            "content": "sha256:19f9f54154deb69ffcb7a3037341c5b442103c17feeb857d7197dd9fc83f76d0",
             "locator": {
               "kind": "symbol",
               "name": "sprint_linkage_operation"
@@ -73,12 +84,22 @@
       ]
     },
     "11": {
-      "note": "Attach validates its full candidate before preview or apply and calls the shared graph-title cardinality owner before publication.",
+      "note": "Attach validates its full candidate before preview or apply and calls the shared graph-title cardinality owner before publication.\n\nAnchor: `attach_master`",
       "targets": [
         {
           "anchor": {
-            "blob": "7a91c99e84345b557fc31722f7ab1d5e0dafa4b8",
-            "content": "sha256:057e2bb5efb8d09de97164f8521914f20500976c97dcd06dce41cc971261c2cf",
+            "blob": "a0b5ad238d8c829320217d9994826ecc6c88a546",
+            "content": "sha256:dd847fac2054b56fec8c6aafd65ddde455cec04d2d3a8376a61d1425c527e52a",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a0b5ad238d8c829320217d9994826ecc6c88a546",
+            "content": "sha256:393877c0e1e64555cf962130e7e0fb578829342498f1400a58e16c45c3739b0d",
             "locator": {
               "kind": "symbol",
               "name": "attach_master"
@@ -89,12 +110,22 @@
       ]
     },
     "12": {
-      "note": "Detach builds its candidate from the shared pure `_detach_candidate`, validates it, and publishes through `_publish`.",
+      "note": "Detach builds its candidate from the shared pure `_detach_candidate`, validates it, and publishes through `_publish`.\n\nAnchor: `detach_master`",
       "targets": [
         {
           "anchor": {
-            "blob": "7a91c99e84345b557fc31722f7ab1d5e0dafa4b8",
-            "content": "sha256:520a6289d5d2283283cac74da1f9212f7ea38b0d22d3931c4093ec7f25a03142",
+            "blob": "a0b5ad238d8c829320217d9994826ecc6c88a546",
+            "content": "sha256:dd847fac2054b56fec8c6aafd65ddde455cec04d2d3a8376a61d1425c527e52a",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a0b5ad238d8c829320217d9994826ecc6c88a546",
+            "content": "sha256:11f4304273aa5fe945df91e055c91fdd2cc2c7b9d77262802d2b9ff81bf05b56",
             "locator": {
               "kind": "symbol",
               "name": "detach_master"
@@ -171,11 +202,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "37a6d9a09dc70a403256ede1f61da9a0fc093837",
-            "content": "sha256:f2facc296a553bfaa1e09dc8003c91147ba938a9850f85f2b3241256e2209a19",
+            "blob": "be6077cacddf1e01c108ee2a00fa606660e7034c",
+            "content": "sha256:f0c965110373c06c1ab75ce04c6788a02eb667d521394916c104f7bcf4989001",
             "locator": {
               "kind": "symbol",
-              "name": "TaskDocument"
+              "name": "SprintSeat"
             },
             "path": "mcp/src/agents_remember/tasks/document.py"
           },
@@ -188,8 +219,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "832fd9e72f4012320be42897be95764fcd17658e",
-            "content": "sha256:305adb6de5a7f5c8e6de4cf6a6e8febbb5e6507ab5ba4a47dd827cb00c5f6733",
+            "blob": "be6077cacddf1e01c108ee2a00fa606660e7034c",
+            "content": "sha256:fa8b044677dd79fab9c5621308c459f97c7d85686fbbbab4f54a2854f040241d",
             "locator": {
               "kind": "file"
             },
@@ -204,8 +235,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "656c29bb22ddbe2a3c789f7404a9e708473c3178",
-            "content": "sha256:8509935d7df82abf775da77f85d2768bfe6abd45d627b2839558a02185af267b",
+            "blob": "a0b5ad238d8c829320217d9994826ecc6c88a546",
+            "content": "sha256:dd847fac2054b56fec8c6aafd65ddde455cec04d2d3a8376a61d1425c527e52a",
             "locator": {
               "kind": "file"
             }
@@ -219,24 +250,35 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6564064f9d0f3df892c0a89e3d3132161aba54fa",
-            "content": "sha256:19978098d7deef86fbd188b2f33742b2ac7b23fcd90861c17eda888deb794cea",
+            "blob": "be6077cacddf1e01c108ee2a00fa606660e7034c",
+            "content": "sha256:fa8b044677dd79fab9c5621308c459f97c7d85686fbbbab4f54a2854f040241d",
             "locator": {
               "kind": "file"
             },
-            "path": "mcp/src/agents_remember/tasks/document_refs.py"
+            "path": "mcp/src/agents_remember/tasks/document.py"
           },
           "kind": "code"
         }
       ]
     },
     "3": {
-      "note": "The public tool-layer operation routing.",
+      "note": "The public tool-layer operation routing.\n\nAnchor: `task_doc_tool`",
       "targets": [
         {
           "anchor": {
-            "blob": "95185967dd7ca4326d7c22ffeb56416e31f26d89",
-            "content": "sha256:96d91386dd747620af7cd049c59642c34a2a858dda54f25f0f85386615e35bd6",
+            "blob": "f174a79f72375a38aa57f50907312424f3fc2c3c",
+            "content": "sha256:4639ac7fede07fbf8fd4a606e94345d3e15fdc3bc40ee0f57fba307bccd95505",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_doc_tools.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f174a79f72375a38aa57f50907312424f3fc2c3c",
+            "content": "sha256:da66207966111f9ba7d9196396a13f7c5325ea40eed2fe489f1170ec78500d91",
             "locator": {
               "kind": "symbol",
               "name": "task_doc_tool"
@@ -290,12 +332,34 @@
       ]
     },
     "5": {
-      "note": "The rollback-safe batch writer and exact task publication transaction.",
+      "note": "The rollback-safe batch writer and exact task publication transaction.\n\nAnchor: `write_task_doc_batch` `publish_task_doc_set`",
       "targets": [
         {
           "anchor": {
-            "blob": "cd24d245a0ef800a3673fd36ae43ad19a28af78a",
-            "content": "sha256:4f2b736aaa735f1bf37ecbd2b0a9c4a5c870fcd538adf3138433e5771f4f4f5a",
+            "blob": "2a64cde126895735be83f19ed1521595ea1c7a01",
+            "content": "sha256:b6d738f15bd22b7c1c14f2817770b650fdf53fe135338353fc70773d689f5e00",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/tasks/store.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3cdbb47739fd9663671343886ca7985545584789",
+            "content": "sha256:6543e82cfa71a38f1f0ddb4c92ba517cdd337bf181e07c119bc10b368774263e",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_doc_publication.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2a64cde126895735be83f19ed1521595ea1c7a01",
+            "content": "sha256:eeeebbb8b4116d017d45350c275b791151d4e162e8d14a9f65126227730694ca",
             "locator": {
               "kind": "symbol",
               "name": "write_task_doc_batch"
@@ -336,8 +400,29 @@
       ]
     },
     "7": {
-      "note": "The linkage preflight wraps the served-build check in the linkage error family (L15-R4).",
+      "note": "The linkage preflight wraps the served-build check in the linkage error family (L15-R4).\n\nAnchor: `_require_serving_topology_schema` `attach_master` `detach_master`",
       "targets": [
+        {
+          "anchor": {
+            "blob": "3eac2f250183dcad51cc9ef6846d7f4053faf7de",
+            "content": "sha256:3256aebe343be59dfaacad233edb618791ab8f162665152f9f77588e57a3c9e9",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_sprint_context.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a0b5ad238d8c829320217d9994826ecc6c88a546",
+            "content": "sha256:dd847fac2054b56fec8c6aafd65ddde455cec04d2d3a8376a61d1425c527e52a",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
         {
           "anchor": {
             "blob": "3eac2f250183dcad51cc9ef6846d7f4053faf7de",
@@ -352,8 +437,8 @@
         },
         {
           "anchor": {
-            "blob": "7a91c99e84345b557fc31722f7ab1d5e0dafa4b8",
-            "content": "sha256:057e2bb5efb8d09de97164f8521914f20500976c97dcd06dce41cc971261c2cf",
+            "blob": "a0b5ad238d8c829320217d9994826ecc6c88a546",
+            "content": "sha256:393877c0e1e64555cf962130e7e0fb578829342498f1400a58e16c45c3739b0d",
             "locator": {
               "kind": "symbol",
               "name": "attach_master"
@@ -363,8 +448,8 @@
         },
         {
           "anchor": {
-            "blob": "7a91c99e84345b557fc31722f7ab1d5e0dafa4b8",
-            "content": "sha256:520a6289d5d2283283cac74da1f9212f7ea38b0d22d3931c4093ec7f25a03142",
+            "blob": "a0b5ad238d8c829320217d9994826ecc6c88a546",
+            "content": "sha256:11f4304273aa5fe945df91e055c91fdd2cc2c7b9d77262802d2b9ff81bf05b56",
             "locator": {
               "kind": "symbol",
               "name": "detach_master"
@@ -375,12 +460,22 @@
       ]
     },
     "8": {
-      "note": "The F8 fact kinds: sprints excluded from the uncommanded-master scan; unresolved seat-doc rows named.",
+      "note": "The F8 fact kinds: sprints excluded from the uncommanded-master scan; unresolved seat-doc rows named.\n\nAnchor: `collect_linkage_facts` `_row_facts`",
       "targets": [
         {
           "anchor": {
-            "blob": "656c29bb22ddbe2a3c789f7404a9e708473c3178",
-            "content": "sha256:1cb72dc1f27f10067975d8cc3abe5d75855a3f04c57714bcbe59b424a73c2f0b",
+            "blob": "a0b5ad238d8c829320217d9994826ecc6c88a546",
+            "content": "sha256:dd847fac2054b56fec8c6aafd65ddde455cec04d2d3a8376a61d1425c527e52a",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a0b5ad238d8c829320217d9994826ecc6c88a546",
+            "content": "sha256:fe4caa0c6e5ef51f2b168b88005a15f99e4f46721c370ee8cdb67b8d6fb2c388",
             "locator": {
               "kind": "symbol",
               "name": "collect_linkage_facts"
@@ -402,15 +497,14 @@
       ]
     },
     "9": {
-      "note": "The current module exposes `SprintLinkageError`, `SprintLinkageRequest`, `SprintLinkageCall` at this ownership boundary.",
+      "note": "The current module exposes `SprintLinkageError` and `SprintLinkageRequest` at this ownership boundary; the call context `SprintLinkageCall` is declared in the linkage module.\n\nAnchor: `SprintLinkageError` `SprintLinkageRequest` `SprintLinkageCall`",
       "targets": [
         {
           "anchor": {
             "blob": "30d84dc5cdc2634aabe24bfa2c1935fe650b122e",
-            "content": "sha256:23301c947b085d47d44cc446e36f1535eb8ae8ad15c6f354c4e19c5c0af58189",
+            "content": "sha256:9041e41487456b36794daf760d52093587bfc568530d64d831cf9852f4f3015f",
             "locator": {
-              "kind": "symbol",
-              "name": "SprintLinkageError"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/task_docs/task_sprint_candidates.py"
           },
@@ -418,11 +512,10 @@
         },
         {
           "anchor": {
-            "blob": "7865ba58d82f4e42292d2c4a605da455f063da3e",
-            "content": "sha256:a2ca810cdbf23ad6439ed98afefa26114efdb4174ef59a00bdeef29c00baaf03",
+            "blob": "3eac2f250183dcad51cc9ef6846d7f4053faf7de",
+            "content": "sha256:3256aebe343be59dfaacad233edb618791ab8f162665152f9f77588e57a3c9e9",
             "locator": {
-              "kind": "symbol",
-              "name": "SprintLinkageRequest"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/task_docs/task_sprint_context.py"
           },
@@ -431,10 +524,9 @@
         {
           "anchor": {
             "blob": "a0b5ad238d8c829320217d9994826ecc6c88a546",
-            "content": "sha256:861e2cb48e41c0ef7371da5ec6ca7aed471730da035d21578deb6ca40ed1d44d",
+            "content": "sha256:dd847fac2054b56fec8c6aafd65ddde455cec04d2d3a8376a61d1425c527e52a",
             "locator": {
-              "kind": "symbol",
-              "name": "SprintLinkageCall"
+              "kind": "file"
             }
           },
           "kind": "code"

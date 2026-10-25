@@ -49,7 +49,9 @@ to removed methods are superseded by this current inventory.
 - A function returning a dump makes its callers taint sources [1]
 - A plain key assignment is caught [2]
 - A copy does not launder the dump [3]
+
 - Setting fields on the model before the dump is the sanctioned pattern [4]
+
 - Reading a dumped dict is not mutating it [5]
 
 ### Cross-Repo References

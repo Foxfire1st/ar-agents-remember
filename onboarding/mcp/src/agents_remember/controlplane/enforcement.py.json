@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/controlplane/enforcement.py",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
@@ -49,12 +50,12 @@
       ]
     },
     "3": {
-      "note": "The mutating tool that enforces this policy: `_refuse_unsatisfied_closeout_gate` at L350-L373 (deny-only, writes nothing) and `_claim_closeout_gate` at L376-L427 (the spend). It no longer appends an `applied` snapshot itself.",
+      "note": "The mutating tool that enforces this policy: `_refuse_unsatisfied_closeout_gate` (deny-only, writes nothing) and `_claim_closeout_gate`, which spends the approval through `GateStore.claim_approval`. It no longer appends an `applied` snapshot itself.\n\nAnchor: `_refuse_unsatisfied_closeout_gate` `_claim_closeout_gate`",
       "targets": [
         {
           "anchor": {
-            "blob": "b69299b3fd501f6e27e0fc57b804a6232ee33530",
-            "content": "sha256:2dfcdbf1f9ebdd29096ce07b263c4f6b8f1646a58baa22574093430dba611e92",
+            "blob": "16170495bfefc7b4695e565427ce20e47d6cf726",
+            "content": "sha256:cac6d7e8019eddb54904ef1e72757b19130d797910982b2981291bbcfa1d4ebc",
             "locator": {
               "kind": "symbol",
               "name": "_refuse_unsatisfied_closeout_gate"
@@ -65,8 +66,8 @@
         },
         {
           "anchor": {
-            "blob": "b69299b3fd501f6e27e0fc57b804a6232ee33530",
-            "content": "sha256:5ac3b4a3af2ac8ef1bbe8401254d12192a9e98d431009101de0d48591a1d9a65",
+            "blob": "16170495bfefc7b4695e565427ce20e47d6cf726",
+            "content": "sha256:a28310bac12091c1f5e8870ff34f8bcc442f82b6f21c1ef16ff82ee02341ddd1",
             "locator": {
               "kind": "symbol",
               "name": "_claim_closeout_gate"
@@ -87,6 +88,17 @@
             "path": "mcp/src/agents_remember/worktrees/modules/closeout.py"
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "16170495bfefc7b4695e565427ce20e47d6cf726",
+            "content": "sha256:a11094f88726f11a7585137e1178fc6dcf269a675547ec964b8021ff835a467d",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/closeout.py"
+          },
+          "kind": "code"
         }
       ]
     },
@@ -95,8 +107,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1574b0cc1fc1982c2bd71b972f67235385cedcfe",
-            "content": "sha256:68a7c9b3fe2dc4def5adf883b8f4d04ac604b712c5f840585026984d93cc3d2b",
+            "blob": "bbb005d14f4c90cbe56e3aecbbd4e5ca9cf52cd5",
+            "content": "sha256:4d6b9a16d976b064cf3916a01fcfcb59edaeed4b2143e8d016fc2b49ee434277",
             "locator": {
               "kind": "symbol",
               "name": "claim_approval"
@@ -113,6 +125,17 @@
               "end": 237,
               "kind": "line_range",
               "start": 193
+            },
+            "path": "mcp/src/agents_remember/controlplane/store.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bbb005d14f4c90cbe56e3aecbbd4e5ca9cf52cd5",
+            "content": "sha256:c0f20674e1759946a2826b30eb5b3cfb1a8b459d30ae01035400f7bc41b50deb",
+            "locator": {
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/controlplane/store.py"
           },

@@ -1,9 +1,63 @@
 {
-  "path": "mcp/src/agents_remember/application/runtime",
+  "path": "mcp/src/agents_remember/application/runtime/overview",
+  "proves": [],
+  "realizes": [],
   "references": {
     "1": {
       "note": "Startup owns MCP process declaration, collaborator installation, and the serving-build payload gateway.",
       "targets": [
+        {
+          "anchor": {
+            "blob": "186284cc5a3f3e1d6a49a2378e0605ddfc5b1724",
+            "content": "sha256:fc685c8578c3fcc6cce4e216c844c33d8abf7e956fdc8dcd6766fdc19812601d",
+            "locator": {
+              "end": 82,
+              "kind": "line_range",
+              "start": 80
+            },
+            "path": "mcp/src/agents_remember/application/runtime/startup.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "186284cc5a3f3e1d6a49a2378e0605ddfc5b1724",
+            "content": "sha256:553579e85307ac2eac6affc3d4a3f1ac99527514114e2607b3f2e71951689e83",
+            "locator": {
+              "end": 32,
+              "kind": "line_range",
+              "start": 30
+            },
+            "path": "mcp/src/agents_remember/application/runtime/startup.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "186284cc5a3f3e1d6a49a2378e0605ddfc5b1724",
+            "content": "sha256:fb2149031852b45ccbe40172a815eeb4e9b0e1fb335689d1d6fae187ca0f0289",
+            "locator": {
+              "end": 59,
+              "kind": "line_range",
+              "start": 56
+            },
+            "path": "mcp/src/agents_remember/application/runtime/startup.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "186284cc5a3f3e1d6a49a2378e0605ddfc5b1724",
+            "content": "sha256:ff38808a87bbb1e3af3728088e54a8f3edddd82f3dde9c8008a496f43e091a96",
+            "locator": {
+              "end": 89,
+              "kind": "line_range",
+              "start": 85
+            },
+            "path": "mcp/src/agents_remember/application/runtime/startup.py"
+          },
+          "kind": "code"
+        },
         {
           "anchor": {
             "blob": "186284cc5a3f3e1d6a49a2378e0605ddfc5b1724",
@@ -42,8 +96,8 @@
         },
         {
           "anchor": {
-            "blob": "611e5a498e074d169eccd6fffb1ac9327bdf7b8a",
-            "content": "sha256:1b2d95322d48ce113abe68a45f6f0f6691c8177f8e35ed2ec4f1fca4abbf552b",
+            "blob": "186284cc5a3f3e1d6a49a2378e0605ddfc5b1724",
+            "content": "sha256:7d6413b974ffaaa66867a98586801f29c5fbcba435bbd22a31f932018258dbc1",
             "locator": {
               "kind": "symbol",
               "name": "prepare_mcp_process"
@@ -248,5 +302,5 @@
       ]
     }
   },
-  "schema": "ar-onboarding-route/v1"
+  "schema": "ar-onboarding-file/v1"
 }

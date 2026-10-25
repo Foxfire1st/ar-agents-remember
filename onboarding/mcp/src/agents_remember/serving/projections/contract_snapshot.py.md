@@ -87,7 +87,9 @@ The snapshot reuses the worktree subsystem's own enumeration and parser (`iter_l
 `load_contract`) rather than re-implementing either; the projection store owns the shared task-refresh
 build; the three consumers accept the snapshot via keyword-only injection.
 
+
 - The immutable snapshot and builder hold only admitted members and name read/parse failures or foreign nonmembers in skipped. [2]
+
 
 
 ### Cross-Repo References
@@ -98,11 +100,16 @@ Same-repository projection concern only.
 
 - Module docstring: one pass per tick, three prior walks, stat-identity cache, and the serialized-tick concurrency discipline.  Anchor: "One immutable leaf-enclosure-contract snapshot per projection tick" [1]
 
+
 - Full builds enumerate/reconcile; scoped builds ignore archived/notes names, stat/parse other named paths and retain unrelated cached members. Failed or foreign parsed members are evicted; retry and live-set pruning claims require relevant/full builds. [3]
+
 
 - `_cached_contract` reuses a parse only while all three stat fields hold; `_safe_stat` failure falls through to the uncached parse instead of introducing a new skip path; `build_contract_snapshot` is the standalone one-shot.  Anchor: "def build_contract_snapshot" [4]
 - Snapshot construction uses the shared enclosure iterator and contract parser, rather than reimplementing either.  Anchor: "from agents_remember.tasks.task_paths import (", "from agents_remember.worktrees.worktree_contract import (" [5]
 - `projection_store` owns the module-level `_contract_snapshot_cache` (with the three-walks rationale) and injects it into the per-tick `ProjectionInputState`.  Anchor: "class ProjectionTickState" [6]
+
 - Task-domain refresh, first use or pending retry builds one snapshot; unaffected ticks retain it.  Anchor: `ProjectionInputState._refresh_tasks` [7]
+
 - `read_enclosures` and `read_engine_process_facts` take the keyword-only injected snapshot; `contracts=None` builds a local one with identical behavior.  Anchor: "def read_enclosures" [8]
+
 - Drift-snapshot pruning consumes the same snapshot, removing the third per-tick walk.  Anchor: "def prune_orphaned_drift_snapshots" [9]

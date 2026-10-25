@@ -72,7 +72,9 @@ The helper mirrors the production task-resolution and publication boundaries rat
 reimplementing their authority logic.
 
 - The fixture writes a complete leaf/master/sprint lineage and returns the architect's exact sprint reference. [1]
+
 - The fixture authors structured source evidence and routes prepare/publish through the production action owner with exact CAS identities. [2]
+
 - Production resolves the exact leaf, master, and sprint and rejects missing topology. [3]
 - Production publication refuses a changed contract under the task lock before atomically replacing the authority. [4]
 - R03 attestation declaration builder used by the fixture. [5]

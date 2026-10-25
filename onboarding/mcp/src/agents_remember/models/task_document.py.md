@@ -38,10 +38,14 @@ No configured domain documentation was available.
 
 ### Repo-Internal References
 
-- Response and task modules import the vocabulary from this module. [1]
+
+> Retained earlier citation wording: - Response and task modules import the vocabulary from this module. [1]
+
 
 ### Cross-Repo References
 
 No cross-repository implementation participates.
 
 No meaningful cross-repo references found.
+
+- Response and task modules import the vocabulary from this module. [1]

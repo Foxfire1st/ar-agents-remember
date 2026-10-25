@@ -74,12 +74,12 @@
       ]
     },
     "12": {
-      "note": "The docs index now includes `docs/features.md` as the concentrated product tour alongside getting-started, concepts, workflows, install guides, guides, and reference pages.\n\nAnchor: `# Agents Remember Documentation`",
+      "note": "The docs index now includes `docs/features.md` as the concentrated product tour alongside getting-started, concepts, workflows, install guides, guides, and reference pages.",
       "targets": [
         {
           "anchor": {
-            "blob": "42107d0e4efa5a3fd541524ef08a05945cb6865e",
-            "content": "sha256:5a02350458a4dd401fd3d639e5fa1fefb9e61051f4e34a5153ef4516a6063880",
+            "blob": "772aeac647052c221cd848d6c31765066c7dc5e2",
+            "content": "sha256:4fba5592a923fea636db4f8458fa4e95a700ca834b842f9dce30f0f0b189fe2f",
             "locator": {
               "end": 65,
               "kind": "line_range",
@@ -92,14 +92,14 @@
       ]
     },
     "13": {
-      "note": "`docs/features.md` carries the full feature tour, including the new table of contents plus harness-native setup and operational guardrails for MCP authority, baseline adoption, branch carryover, cross-repo gates, benchmarks, and source quality tooling.\n\nAnchor: `# Memory your coding agent can trust`",
+      "note": "`docs/features.md` carries the full feature tour, including the new table of contents plus harness-native setup and operational guardrails for MCP authority, baseline adoption, branch carryover, cross-repo gates, benchmarks, and source quality tooling.",
       "targets": [
         {
           "anchor": {
-            "blob": "2c83efc74d5cd38dedb23a2bf0bab8d6ac1b7afa",
-            "content": "sha256:a9c86b67f264f84fcc3de5cc583029cc43fdf4411f99eda322da555336773b0d",
+            "blob": "63b36c83fdfd0d75126ab6e73a7a3931e340b9ee",
+            "content": "sha256:bd42263a8a45e258f65e1e789c92eb632659ab611625e77ebeecab42eba436e9",
             "locator": {
-              "end": 484,
+              "end": 479,
               "kind": "line_range",
               "start": 1
             },
@@ -114,8 +114,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9d6aaef39fa8726993ecacea4eb791ee797892f5",
-            "content": "sha256:131bf15e0ce4474852f7641cab645c2fa9ac9a58b83d687207ff10b784df643c",
+            "blob": "9ba438896d80e98eccff21873058fdebd5b9bf63",
+            "content": "sha256:27c52961a8380a0380b308d5fcf1b9a33df0704bfb19b8544a3f6260443d4db4",
             "locator": {
               "kind": "file"
             },
@@ -130,11 +130,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9a206d3d815288a7126484f8f1ed32c00a634033",
-            "content": "sha256:64bda7d2542d6a0219c2ca768ea4c3000ae01babb83a4f46a5d05a87863b56cf",
+            "blob": "126d045c43fbd830d1f124ab63fee6589db5d1ff",
+            "content": "sha256:b4ad4c71a918e5f0be486f601582fb810d349496c065d01bf110b49328c0d563",
             "locator": {
-              "kind": "symbol",
-              "name": "_run_daemon_command"
+              "end": 577,
+              "kind": "line_range",
+              "start": 541
             },
             "path": "mcp/src/agents_remember/cli/dashboard.py"
           },
@@ -177,12 +178,12 @@
       ]
     },
     "4": {
-      "note": "The Requirements section names Python 3.14, the bounded package range, the historical published 3.13 artifact, and the canonical repository-development runtime documentation.\n\nAnchor: `## Requirements`",
+      "note": "The Requirements section names Python 3.14, the bounded package range, the historical published 3.13 artifact, and the canonical repository-development runtime documentation.",
       "targets": [
         {
           "anchor": {
-            "blob": "c26c20413f3c139dd465b0e928e4193e04cd458f",
-            "content": "sha256:364f154e3ff1548eedda192215df5e5295ec7094e5b68f065c3ed32ecd6f3526",
+            "blob": "2ed65e524afd1f228f7bab90bc65c309a6926862",
+            "content": "sha256:5bfbbc74bf4a199cbaa61d6cb6510c42b8cb3f04ddeb2f853c009f28b2ae931e",
             "locator": {
               "end": 101,
               "kind": "line_range",
@@ -211,12 +212,12 @@
       ]
     },
     "6": {
-      "note": "The README routes readers first to the new Features tour, then to setup, concepts, workflows, benchmark methodology, guides, settings, and skills documentation under `docs/`.\n\nAnchor: `## Documentation`",
+      "note": "The README routes readers first to the new Features tour, then to setup, concepts, workflows, benchmark methodology, guides, settings, and skills documentation under `docs/`.",
       "targets": [
         {
           "anchor": {
-            "blob": "c26c20413f3c139dd465b0e928e4193e04cd458f",
-            "content": "sha256:c6b5896537078fbcdde1d18b05ac9ea7fd2588da904239666153ad25f8864496",
+            "blob": "2ed65e524afd1f228f7bab90bc65c309a6926862",
+            "content": "sha256:caa098a3cfb4aa7cf0962c0cb4f6e447ff6ac19a6c0f105fbde44731b07dd0b2",
             "locator": {
               "end": 202,
               "kind": "line_range",
@@ -228,12 +229,12 @@
       ]
     },
     "7": {
-      "note": "The `## Run The Dashboard` section: local-wheel build/sync and install first-class, discovery-backed flag-free `dashboard`, daemon mode + autoStart, and the historical published pin named as the 3.13 artifact.\n\nAnchor: `## Run The Dashboard`; `uv tool install`; `autoStart`",
+      "note": "The `## Run The Dashboard` section: local-wheel build/sync and install first-class, discovery-backed flag-free `dashboard`, daemon mode + autoStart, and the historical published pin named as the 3.13 artifact.",
       "targets": [
         {
           "anchor": {
-            "blob": "bef304057d472fe41cfebec6cacaac3ea0ba2669",
-            "content": "sha256:6ab0a1919d02053629494b0397501fa4747f19ed3b95da19f9539625bc0f9c2a",
+            "blob": "2ed65e524afd1f228f7bab90bc65c309a6926862",
+            "content": "sha256:9ff24d32008702a166f7f672a63282996cba0367c7d1bab1bb47989ab2b92c69",
             "locator": {
               "end": 178,
               "kind": "line_range",

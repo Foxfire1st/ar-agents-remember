@@ -39,12 +39,12 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The scoped current source carries the module/document behavior described above.",
+      "note": "May-start rules, another starter's receipt, a reused request id and the registered tool surface are asserted here.",
       "targets": [
         {
           "anchor": {
-            "blob": "5a70a853d837fddb9bad651cdfee93218e014799",
-            "content": "sha256:96fe1b4aa6b7b31c4e9d327c2c422e18e7b492637d2087251c35f7031a5926ed",
+            "blob": "da1a4e05f314251af6a09d045d9928769f7ace3a",
+            "content": "sha256:5f2bf58baf35395376eaeb63ff6dceed72736be0ee78504e4dc2ba2b763560d4",
             "locator": {
               "kind": "file"
             }
@@ -70,12 +70,12 @@
       ]
     },
     "3": {
-      "note": "The controlled fixture patches facade-local bridge/resolve/topology names, plus the held-store and retirement bridge callers; the removed delivery-module names are no longer patched. Occupied-seat refusal names its holder; registered-tool assertions expect role_start, role_start_set and role_message and test unbound set refusal. Existing caller/scope/start-lock/override boundaries remain; source assertions and registration are not fresh execution acceptance.",
+      "note": "The controlled fixture patches facade-local bridge, resolve and topology names plus the held-store and retirement bridge callers. The registry assertion expects `role_start`, `role_start_set`, `user_settings_init` and `role_message`, and an unbound `role_start_set` call is refused.",
       "targets": [
         {
           "anchor": {
-            "blob": "ab5b086fa50534a6cfefd0d7ac1086a60419adff",
-            "content": "sha256:6529e6adf12712dca3416213983a697bd1f3106582fbb94485fed48f050c8ed4",
+            "blob": "da1a4e05f314251af6a09d045d9928769f7ace3a",
+            "content": "sha256:5f2bf58baf35395376eaeb63ff6dceed72736be0ee78504e4dc2ba2b763560d4",
             "locator": {
               "kind": "file"
             }
@@ -85,12 +85,12 @@
       ]
     },
     "4": {
-      "note": "Native binding refusals have no redundant operation envelope.",
+      "note": "A native binding refusal carries no redundant operation envelope.",
       "targets": [
         {
           "anchor": {
-            "blob": "5e63ffa5ccc128840c78020f3705c64b893d7329",
-            "content": "sha256:d19f69270314cfdddddf4a910647d51d70bc523d059ef715030c48117c937e8f",
+            "blob": "da1a4e05f314251af6a09d045d9928769f7ace3a",
+            "content": "sha256:5f2bf58baf35395376eaeb63ff6dceed72736be0ee78504e4dc2ba2b763560d4",
             "locator": {
               "kind": "file"
             }
@@ -100,12 +100,12 @@
       ]
     },
     "5": {
-      "note": "The concise role answer remains concise. A real fixture tool_call_context supplies the existing dispatch log for detailed controls; there is no producer-threading or worker-threading repair in this change.\n\nAnchor: Current STOP-delta source carrier",
+      "note": "The role answer stays concise while a real `tool_call_context` supplies the dispatch log for detailed controls.",
       "targets": [
         {
           "anchor": {
-            "blob": "040020c848dad2ac31a343e1022c3a7765a754b7",
-            "content": "sha256:f027d0b1419c5be3b3b45d4a2b1a0a4790edc060eee06e7fa010a82322b2a809",
+            "blob": "da1a4e05f314251af6a09d045d9928769f7ace3a",
+            "content": "sha256:5f2bf58baf35395376eaeb63ff6dceed72736be0ee78504e4dc2ba2b763560d4",
             "locator": {
               "kind": "file"
             }

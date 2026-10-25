@@ -18,4 +18,5 @@ Optional/defaulted fields distinguish omitted older reader content from present 
 
 ## Evidence
 
+
 - Extracted closed reader DTOs retain preview/count, legacy-reference, dependency and grant boundaries without semantic derivation. [1]

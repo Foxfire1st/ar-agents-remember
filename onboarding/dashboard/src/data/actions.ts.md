@@ -5,7 +5,9 @@
 The retained action client is `postAttentionDismiss`. Its input and JSON body contain only itemId and kind; it sends no lifecycle target or gateId. The literal same-origin route is /api/actions/dismiss. Only HTTP 202 returns dismissed; other statuses and fetch failures return error. It does not retry or mutate the store. AttentionQueue owns optimistic suppression and failed-result rollback.
 
 
-- The current AttentionQueue caller uses suppressAttention before posting and releaseAttention for failed results; this is caller behavior, not an execution or server-authority claim. \[5] [5]
+
+- The current AttentionQueue caller uses suppressAttention before posting and releaseAttention for failed results; this is caller behavior, not an execution or server-authority claim. [5]
+
 
 
 
@@ -44,7 +46,9 @@ No configured Domain Documentation source exists for this file.
 
 ### Repo-Internal References
 
+
 - The attention queue that calls `postAttentionDismiss`. [3]
+
 
 ### Cross-Repo References
 

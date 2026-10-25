@@ -40,4 +40,5 @@ The parser inspects no file other than the one it is given and starts no Git com
 - Storage mode and default. [5]
 - One path rule with its include and exclude lists. [6]
 - The cross-repository allow list. [7]
+
 - A JSON settings file is recorded with its bytes, also when it is not valid JSON. [8]

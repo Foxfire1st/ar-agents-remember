@@ -19,8 +19,8 @@
         },
         {
           "anchor": {
-            "blob": "627668dce374cd5ebd8fca644392303de17b6c66",
-            "content": "sha256:c6579af0e3c55d77ac612845e3d0b3f1360b53d99e11d2ca04057ed8e36fbd5a",
+            "blob": "6406e9c672efe030b99804ddf6ef6d1485a64bdc",
+            "content": "sha256:c714505d96dcd080377b6aef6b6c6ece2f53aa8a2dd33be67c9758d8eb2f05d8",
             "locator": {
               "end": 115,
               "kind": "line_range",
@@ -29,22 +29,15 @@
             "path": "mcp/src/agents_remember/controlplane/interaction_retention.py"
           },
           "kind": "code"
-        }
-      ]
-    },
-    "2": {
-      "note": "Projection readers apply interaction TTL and pickup feedback.\n\nAnchor: \"def read_agent_pickups(\"",
-      "targets": [
+        },
         {
           "anchor": {
-            "blob": "b27cfce20f47f603bf2ff8aedb02eaeaa7e7ac7c",
-            "content": "sha256:a74bcce477f5d5d2f9694ff30ac64ad5f009fdea7807a30bc56d13027ccb790c",
+            "blob": "6406e9c672efe030b99804ddf6ef6d1485a64bdc",
+            "content": "sha256:78a6e15f1636ab3ae951ce337cef9230e05eb676f42e24ed0a65e7b36bd4a930",
             "locator": {
-              "end": 144,
-              "kind": "line_range",
-              "start": 144
+              "kind": "file"
             },
-            "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_runtime.py"
+            "path": "mcp/src/agents_remember/controlplane/interaction_retention.py"
           },
           "kind": "code"
         }

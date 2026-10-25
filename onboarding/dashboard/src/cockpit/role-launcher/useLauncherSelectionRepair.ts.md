@@ -18,7 +18,13 @@ Two independent effects, not a combined callback arbiter. Explicit model/effort 
 
 ## Evidence
 
+
 - repairedSeededSelection is a current owner of the behavior described above. [1]
+
+
 - repairedOverride is a current owner of the behavior described above. [2]
+
+
 - usePruneSeededSelection is a current owner of the behavior described above. [3]
+
 - usePruneStaleOverride is a current owner of the behavior described above. [4]

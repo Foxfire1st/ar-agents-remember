@@ -38,12 +38,12 @@
       ]
     },
     "3": {
-      "note": "The React engine-room renderer built from this prototype — the same two-world canvas, scenario beats (B0→B5 / D0→D6), and failure scenes (t12b / t14c / t18) reproduced in GSAP + Motion.\n\nAnchor: \"export function EnclosureProcessMap({\"; \"export function EnclosureCanvas({\"; \"export const ENGINE_ROOM_SCENARIOS\"; \"export function useEngineTimeline(\"",
+      "note": "The React engine-room renderer built from this prototype — the same two-world canvas, scenario beats (B0→B5 / D0→D6), and failure scenes (t12b / t14c / t18) reproduced in GSAP + Motion.",
       "targets": [
         {
           "anchor": {
-            "blob": "47bb1a1d99e74706dc8a827331db4352c0f6cebc",
-            "content": "sha256:a5e17e7e06809939cbac00f4393e72a742d469beea2875cf821988533825c6dc",
+            "blob": "36b5e603bb19a454ad4bb9b945985124b4ec175b",
+            "content": "sha256:5e3aa61932c0212fd7f1f8a184fb97138ee3d95aff696fe35de5ae67322e273e",
             "locator": {
               "end": 67,
               "kind": "line_range",
@@ -55,12 +55,12 @@
         },
         {
           "anchor": {
-            "blob": "b2ee2d1b311af75a312cadbd27cbc68256a08eab",
+            "blob": "15444872a266d89123558da6eb8909e81fe96665",
             "content": "sha256:ac62ca54f0f1d04e921bbc2241972b186f60f8104ff4b1afe03fbe9467fe7079",
             "locator": {
-              "end": 36,
+              "end": 35,
               "kind": "line_range",
-              "start": 36
+              "start": 35
             },
             "path": "dashboard/src/panels/engine-room/EnclosureCanvas.tsx"
           },
@@ -68,12 +68,12 @@
         },
         {
           "anchor": {
-            "blob": "c25943bc8dde59686e3cd56112ad7650690f984c",
+            "blob": "8e709ead155da60c76cf2682665cc540e1219207",
             "content": "sha256:cfcf286dbea22ad8d8f3d75bee28e87a27f70af65204f235380322072d6ea62e",
             "locator": {
-              "end": 721,
+              "end": 486,
               "kind": "line_range",
-              "start": 721
+              "start": 486
             },
             "path": "dashboard/src/panels/engine-room/fixtures.ts"
           },

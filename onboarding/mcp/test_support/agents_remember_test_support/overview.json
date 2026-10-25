@@ -61,54 +61,13 @@
         }
       ]
     },
-    "11": {
-      "note": "Applicable teardown validates two fresh checkpoint reports; not-applicable teardown records zero starts and requires no summary.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "d7dc9165fb505bba7813d3c69626f48ce2423b77",
-            "content": "sha256:233488614c3706c839a726964993767f127b48fb20025aae4bbd926902994571",
-            "locator": {
-              "kind": "symbol",
-              "name": "_verify_teardown"
-            },
-            "path": "mcp/test_support/agents_remember_test_support/code_quality/profile_rails.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "d7dc9165fb505bba7813d3c69626f48ce2423b77",
-            "content": "sha256:d76260b1aa775928d439d2b393e85381ea3c187e9b3f75c4bc4db468ee1eb1f7",
-            "locator": {
-              "kind": "symbol",
-              "name": "_verify_started_teardown"
-            },
-            "path": "mcp/test_support/agents_remember_test_support/code_quality/profile_rails.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "12": {
-      "note": "Consumer-only catalog changes preserve old and new consumers; repository inputs use explicit consumer declarations.",
+      "note": "Consumer-only catalog changes preserve old and new consumers; repository inputs use explicit consumer declarations.\n\nAnchor: `changed_catalog_consumers`",
       "targets": [
         {
           "anchor": {
-            "blob": "a4145e3bfb88c4eb2ff3232e8dfbe207d7e66dc7",
-            "content": "sha256:7601efd9ed5fde34679dcc7b446ec068af1f7c705a0688407bf9c5cd31123ff1",
-            "locator": {
-              "kind": "symbol",
-              "name": "changed_catalog_consumers"
-            },
-            "path": "mcp/test_support/agents_remember_test_support/code_quality/catalog_selection.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "714e1a18805fd6467245ba071ddbe401644984a3",
-            "content": "sha256:963661a9edce3c8f7ab6f0e089a4319bc4333fc66e0a693191d80c3698ae2f34",
+            "blob": "82360cec3b9a90193f4e9d7dbdf68cf5340dabb6",
+            "content": "sha256:0e731958b83fac41f0f763efd42be7ae979cbc685606300b198461b8fc42a12b",
             "locator": {
               "end": 176,
               "kind": "line_range",
@@ -117,11 +76,22 @@
             "path": "mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py"
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a4145e3bfb88c4eb2ff3232e8dfbe207d7e66dc7",
+            "content": "sha256:5db21017679e10feef589354af3c3dec6f24a5225b91cdfa7897631c4731c40c",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/code_quality/catalog_selection.py"
+          },
+          "kind": "code"
         }
       ]
     },
     "14": {
-      "note": "Retired-wording checks are normalized and surface-specific; compact-policy helper and canonical test use different predicates.",
+      "note": "Retired-wording checks are normalized and surface-specific; compact-policy helper and canonical test use different predicates.\n\nAnchor: `normalize_statement` `retired_statement_findings` `missing_curation_policy_statements`",
       "targets": [
         {
           "anchor": {
@@ -161,8 +131,8 @@
         },
         {
           "anchor": {
-            "blob": "9345bfdd0441dceed1d649557b20183d31fe520a",
-            "content": "sha256:011882189a9bddb8d264807ae7bd704883b74273f8db6d73331f196839f827a3",
+            "blob": "6ec48bd8ac8d9672d246206cd96626ca39960e19",
+            "content": "sha256:b52a2c281e814bea8fa12049e72bdd1dfa031f39e30cd2326990d58e3c3d6391",
             "locator": {
               "end": 627,
               "kind": "line_range",
@@ -184,34 +154,44 @@
             "path": "mcp/tests/test_role_instruction_corpus.py"
           },
           "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "6ec48bd8ac8d9672d246206cd96626ca39960e19",
+            "content": "sha256:bd5eaeccab20cf440b49f03f82b4da4aa1d57faa241444f87db7f6de5da67f43",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/curation_doctrine.py"
+          },
+          "kind": "code"
         }
       ]
     },
     "15": {
-      "note": "Current projection generator derives serialized TypeScript/schema contracts from Pydantic declarations, including the servingBuild-only served extension; removed observer-health payloads are not current required fields.\n\nAnchor: lines 1-63",
+      "note": "The current projection generator derives the serialized TypeScript and schema contracts from the Pydantic declarations, folding the served tail fields (`servingBuild`, `watcherHealth`, `checkoutBinding`) that `ServedWorkspaceProjection` declares into the same generated output.\n\nAnchor: `ServedWorkspaceProjection`",
       "targets": [
         {
           "anchor": {
-            "blob": "7319fe4e1346d94724f564687f0c45909782ecfa",
-            "content": "sha256:85b9333537d5022672c28abcff27aa3aa53b098c7b4708352224df04787dceee",
-            "locator": {
-              "kind": "symbol",
-              "name": "ServedWorkspaceProjection"
-            },
-            "path": "mcp/src/agents_remember/serving/served_state.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "77617f9d9158ea1f55a8b3073f39955987e05382",
-            "content": "sha256:4388bee93dd5c81fc37ab6e5bc631c55ab7b0a8b27d3673eb563f801f8c96751",
+            "blob": "8ad4fad6abd9bf98c265168c8b63d6f2fce0aeac",
+            "content": "sha256:df4fd1e4005c972c35bc3ee807f55c44bd65516a99ab58f8c9559537e46172af",
             "locator": {
               "end": 63,
               "kind": "line_range",
               "start": 1
             },
             "path": "mcp/test_support/agents_remember_test_support/code_quality/projection_types.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8a75a033367fd982c56bdaad17eb8acef03a1887",
+            "content": "sha256:417c2431a934da24b20f221e9f0a06d716367d668c4bf1661c7df98f40533c1a",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/serving/served_state.py"
           },
           "kind": "code"
         }
@@ -332,8 +312,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6fdaf3bc5c0ebf2ced1c450d5973ed55b2515f3c",
-            "content": "sha256:ce36f45d8abc47ff28e835599564f9783a30a7b30220e19ba24e701ff8307f49",
+            "blob": "0b550ee3cda163c8b451cb06a4fb69b489c4686d",
+            "content": "sha256:24329980c91722cff083957188e3f6e6de6c7f24a81a62f06db77bd5fafa166d",
             "locator": {
               "end": 299,
               "kind": "line_range",

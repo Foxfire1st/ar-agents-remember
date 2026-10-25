@@ -162,15 +162,14 @@
       ]
     },
     "2": {
-      "note": "Composition binds the same landing instance to the Projector's real subscriber predicate.",
+      "note": "Composition binds the same landing instance to the Projector's real subscriber predicate.\n\nAnchor: `_build_serving_runtime`",
       "targets": [
         {
           "anchor": {
-            "blob": "58281d9cb62afbcee6f8b6ad2efb331bb29b98e4",
-            "content": "sha256:b42df87008df02e6b9183098c8b0d038d57846a31a02700689179eda34a11fdd",
+            "blob": "d60acd0e4be738b9a9a33eb9f333fa6c53974f2b",
+            "content": "sha256:b598dab3806164c780ac4f80371f262fa95fec0bd8d84052d94651de5f73c5d3",
             "locator": {
-              "kind": "symbol",
-              "name": "_build_serving_runtime"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/serving/app.py"
           },

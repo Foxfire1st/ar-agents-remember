@@ -123,13 +123,17 @@ extension specification, SEP-2640).
 - `skills/list` answers one page and omits `nextCursor`, which is the completion signal. [7]
 - `skills/get` answers for any served skill, listed or not, and refuses an absent URI with `-32602`. [8]
 - Both handlers answer from the same catalog the resources are registered from. [9]
+
 - The declaration beside it: the capability and the methods are installed together, so the advertisement cannot outrun the implementation. [10]
+
 - The entry shape the methods return: verbatim frontmatter plus per-file digest and size. [11]
 - The reading half both handlers depend on, including the containment and revision guards. [12]
-- The real-process exchange that exercises the declared capability and both methods against the shipped entry point. [13]
-- The case that pins the install-once idempotence of the declaration. [14]
 
 ### Cross-Repo References
 
 No cross-repository implementation dependency. `mcp==1.29.1` is a pinned external dependency this
 module extends additively without moving it.
+
+- The real-process exchange that exercises the declared capability and both methods against the shipped entry point. [13]
+
+- The case that pins the install-once idempotence of the declaration. [14]

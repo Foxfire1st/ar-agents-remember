@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/models/task_doc.py",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
@@ -7,12 +8,38 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c2f2a68ee84ec48aad55956ebf5a6719371ce655",
-            "content": "sha256:1b07e3a860d52c858396aa54385859cf4405abbbdb94a6ea3ba7fac33e7cbe88",
+            "blob": "ca5af906298a90f3101a98a5542005e3549b3c0a",
+            "content": "sha256:a3cfdc3dc0ff41d7674d4bf929c93574c9fb91987297d4fc04f8b5eacde3148c",
             "locator": {
-              "end": 106,
+              "end": 109,
               "kind": "line_range",
-              "start": 106
+              "start": 109
+            },
+            "path": "mcp/src/agents_remember/models/tools/tool_registry.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ca5af906298a90f3101a98a5542005e3549b3c0a",
+            "content": "sha256:1f09c3d97285c8257b4370e9e3a45d4cdd73659f40201cd348e0a09e8d7f530e",
+            "locator": {
+              "end": 108,
+              "kind": "line_range",
+              "start": 108
+            },
+            "path": "mcp/src/agents_remember/models/tools/tool_registry.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ca5af906298a90f3101a98a5542005e3549b3c0a",
+            "content": "sha256:ee8417feebfc3e86e1cab9834f91fdedb6974035ccf8db2d5114d5ffd6fb8184",
+            "locator": {
+              "end": 105,
+              "kind": "line_range",
+              "start": 105
             },
             "path": "mcp/src/agents_remember/models/tools/tool_registry.py"
           },
@@ -73,12 +100,12 @@
       ]
     },
     "3": {
-      "note": "The persisted task-document model this response describes (not returns), whose class body now ends at its integration-branch normaliser.\n\nAnchor: \"class TaskDocument(_Doc):\"",
+      "note": "The persisted task-document model this response describes (not returns), whose class body now ends at its integration-branch normaliser.",
       "targets": [
         {
           "anchor": {
-            "blob": "ef54a14f41a34d2429445ca5239646f05daf6eac",
-            "content": "sha256:bb2a5b99e2a3d919c309c6b4595e621a9ab9bd100439c8d876cae009b9a9cd34",
+            "blob": "be6077cacddf1e01c108ee2a00fa606660e7034c",
+            "content": "sha256:6eaa928fb670973674af4da511285c97ed6b1acbe4acb66d758ab21805e3bb29",
             "locator": {
               "end": 826,
               "kind": "line_range",
@@ -91,12 +118,23 @@
       ]
     },
     "4": {
-      "note": "The application entry point builds the optional `masterSync` payload for real and dry-run leaf writes.",
+      "note": "The application entry point builds the optional `masterSync` payload for real and dry-run leaf writes.\n\nAnchor: `task_doc_tool`",
       "targets": [
         {
           "anchor": {
-            "blob": "95185967dd7ca4326d7c22ffeb56416e31f26d89",
-            "content": "sha256:96d91386dd747620af7cd049c59642c34a2a858dda54f25f0f85386615e35bd6",
+            "blob": "f174a79f72375a38aa57f50907312424f3fc2c3c",
+            "content": "sha256:4639ac7fede07fbf8fd4a606e94345d3e15fdc3bc40ee0f57fba307bccd95505",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_doc_tools.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f174a79f72375a38aa57f50907312424f3fc2c3c",
+            "content": "sha256:da66207966111f9ba7d9196396a13f7c5325ea40eed2fe489f1170ec78500d91",
             "locator": {
               "kind": "symbol",
               "name": "task_doc_tool"
@@ -125,12 +163,22 @@
       ]
     },
     "6": {
-      "note": "The response model declares optional retirement record, state, readiness, preview and archive-result fields for retire_master.",
+      "note": "The response model declares optional retirement record, state, readiness, preview and archive-result fields for retire_master.\n\nAnchor: `TaskDocResponse`",
       "targets": [
         {
           "anchor": {
-            "blob": "6f54fd6f338847f19a73a83a3ee4294c2b44e009",
-            "content": "sha256:a512717403eb5fdd792218f47b4b637c4b205900f47056421158897254473934",
+            "blob": "e7d80ed372402d196e9af03c6aa40d32a018d7e2",
+            "content": "sha256:c7dc3ccede6258becfe2c8d886d1ef79e04279f32d2f56f30d6d1c8fd90242c4",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e7d80ed372402d196e9af03c6aa40d32a018d7e2",
+            "content": "sha256:f14d1dbb54c44b86dae12dbb5121f560f3dc931238a6c0c25900de4bb525ca70",
             "locator": {
               "kind": "symbol",
               "name": "TaskDocResponse"
@@ -145,8 +193,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0c4560da4c36a177144fa5dd4577e3defdc7a4e0",
-            "content": "sha256:c5779f725a1eea34d5ec9307e1ff541ca9754b0d3227392502e1e9e30763ef4c",
+            "blob": "e7d80ed372402d196e9af03c6aa40d32a018d7e2",
+            "content": "sha256:c7dc3ccede6258becfe2c8d886d1ef79e04279f32d2f56f30d6d1c8fd90242c4",
             "locator": {
               "kind": "file"
             }

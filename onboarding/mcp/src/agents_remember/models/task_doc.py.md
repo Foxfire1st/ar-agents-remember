@@ -101,12 +101,18 @@ This account is bound to the candidate source, not a claim of a running serving 
 
 - The registry row that maps `task_doc` to this model. [1]
 - The strict `ToolResponse` envelope base. [2]
+
 - The persisted task-document model this response describes (not returns), whose class body now ends at its integration-branch normaliser. [3]
+
+
 - The application entry point builds the optional `masterSync` payload for real and dry-run leaf writes. [4]
+
 
 - The special-op identity merge that pairs with the declared wire fields. [5]
 
+
 - The response model declares optional retirement record, state, readiness, preview and archive-result fields for retire_master. [6]
+
 
 ## 260815-DAG Master Full-Gate Repair
 
@@ -143,5 +149,6 @@ was retired; these model and application owners remain the current contract auth
 > `exclude_none` keeps it off the wire. Same class as `removedSubtask` above and `documents`
 > below it in this class. Pinned by
 > `mcp/tests/test_tool_response_conformance.py::test_task_doc_read_steps_validates_and_returns_the_checklist`.
+
 
 - TaskDocResponse remains the strict rich producer/result model, not a promise that every field appears in the bounded delivered answer. Removed-read refusal permits missing parsed identity only for ok=false/code=operation-removed; successful writes still require identity. TaskDocStepRead/TaskDocSubStepRead/steps are removed. Optional masterSync error/paths, updated/inputFile/inputFileSha256 and factKinds/reportPath support the surviving authoring/reporting routes. Generic undeclared fields remain refused. [7]

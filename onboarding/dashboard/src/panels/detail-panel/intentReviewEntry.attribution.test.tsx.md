@@ -53,8 +53,12 @@ No configured live documentation source was available for this pass.
 
 ### Repo-Internal References
 
+
 - The real summary, and the state table's derivation from it. [1]
+
+
 - The entry's count and its details under test. [5]
+
 
 ### Cross-Repo References
 

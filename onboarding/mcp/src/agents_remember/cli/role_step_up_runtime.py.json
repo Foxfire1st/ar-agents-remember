@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/cli/role_step_up_runtime.py",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
@@ -62,15 +63,14 @@
       ]
     },
     "12": {
-      "note": "The runtime reuses the receipt owner’s Architect/Investigator taskless classification; effective-master presence is not singleton receipt identity.\n\nAnchor: `TASKLESS_ROLES`, `_receipt_path`",
+      "note": "The runtime reuses the owner's shared taskless set — `architect`, `investigator` and `bootstrap` — for receipt identity; effective-master presence is not that identity.\n\nAnchor: `TASKLESS_ROLES` `_receipt_path`",
       "targets": [
         {
           "anchor": {
-            "blob": "542874bcabd656533eaefaee6f2312907bcd6696",
-            "content": "sha256:6883266cbd9c8856f160c1bf61e5a2079e8a45f84f82d8e206d2ea2768995274",
+            "blob": "caa8c6e923b4efaeb1c61856c613d10771f7a6c3",
+            "content": "sha256:f7b28dd7554d05981e89e904bb1db6628663c831c79ffc5af1491a7ee2840c22",
             "locator": {
-              "kind": "symbol",
-              "name": "TASKLESS_ROLES"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/role_launch_context.py"
           },
@@ -79,10 +79,9 @@
         {
           "anchor": {
             "blob": "12aab96f86c33555f5973aa2e4fc3cf0a6b827b4",
-            "content": "sha256:7d3cdaf7135863bfc5776c36729e5f79cec12b7752933bc0a7500e2338a446e9",
+            "content": "sha256:d29a14c737179cb2f058fccfd1316555ad121cd67d113239d7e90ff025fcf3d1",
             "locator": {
-              "kind": "symbol",
-              "name": "_receipt_path"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/cli/role_launch_receipts.py"
           },
@@ -171,12 +170,23 @@
       ]
     },
     "7": {
-      "note": "Test source exercises bounded partial inventory without blocking later seat start.",
+      "note": "Test source exercises bounded partial inventory without blocking later seat start.\n\nAnchor: `test_hung_git_is_reaped_under_start_lock_with_durable_partial_recovery`",
       "targets": [
         {
           "anchor": {
-            "blob": "61e380376e4feed4dcb6ae8653515246d8ee8388",
-            "content": "sha256:d2853e5bee34336266fec8884fbb16be184eeb7a98cf8172a3f527fc79cb1d9e",
+            "blob": "43773442dc036099b1e1b09e474d46b04e6b0be7",
+            "content": "sha256:03a51349cabeb5907792b2ffbfd8fc0c9514b8ca9ac643338a54fbd914ca7495",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_step_up_recovery.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "43773442dc036099b1e1b09e474d46b04e6b0be7",
+            "content": "sha256:6870e73174b4b30fab5423ef36fc6751dc7e316f4092e812059a82a9fd4a2059",
             "locator": {
               "kind": "symbol",
               "name": "test_hung_git_is_reaped_under_start_lock_with_durable_partial_recovery"

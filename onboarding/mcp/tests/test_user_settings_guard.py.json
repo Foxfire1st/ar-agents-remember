@@ -231,7 +231,7 @@
   ],
   "references": {
     "1": {
-      "note": "The guard refuses a made-up real path, permits moved XDG, and creates nothing.\n\nAnchor: `test_the_guard_refuses_the_made_up_real_path_and_creates_nothing`, `test_the_guard_allows_a_moved_configuration_folder_and_creates_nothing`",
+      "note": "The guard refuses a made-up real path, permits a moved `XDG_CONFIG_HOME`, and creates nothing.\n\nAnchor: `test_the_guard_refuses_the_made_up_real_path_and_creates_nothing`, `test_the_guard_allows_a_moved_configuration_folder_and_creates_nothing`",
       "targets": [
         {
           "anchor": {
@@ -258,7 +258,7 @@
       ]
     },
     "2": {
-      "note": "Unreadable-database cases check comparison and truthful observed-home reporting.\n\nAnchor: `test_the_guard_without_an_account_database_compares_and_refuses_a_match`, `test_the_guard_without_an_account_database_allows_a_moved_folder`, `test_the_guard_reports_the_home_it_actually_observed`",
+      "note": "Unreadable-database cases check the comparison and the truthful observed-home report.\n\nAnchor: `test_the_guard_without_an_account_database_compares_and_refuses_a_match`, `test_the_guard_without_an_account_database_allows_a_moved_folder`, `test_the_guard_reports_the_home_it_actually_observed`",
       "targets": [
         {
           "anchor": {
@@ -296,7 +296,7 @@
       ]
     },
     "3": {
-      "note": "The child executes the reviewed world source, refuses, and leaves the fake home empty.",
+      "note": "The child executes the world source, refuses, and leaves the fake home empty.",
       "targets": [
         {
           "anchor": {
@@ -312,12 +312,22 @@
       ]
     },
     "4": {
-      "note": "The recursive population and syntactic checker hold the shared-support boundary.\n\nAnchor: `_support_modules`, `_direct_user_settings_calls`, `test_every_support_write_of_the_user_settings_goes_through_the_guard`",
+      "note": "The recursive population and syntactic checker hold the shared-support boundary.\n\nAnchor: `_support_modules` `_direct_user_settings_calls` `test_every_support_write_of_the_user_settings_goes_through_the_guard`",
       "targets": [
         {
           "anchor": {
-            "blob": "b92f7935419bd59d0800b55710c876e9c4cbd114",
-            "content": "sha256:e8a2f377a2506f11a5ac57b794351955b13dca866d13907078331b7d03d1ef6b",
+            "blob": "125dbd7bb494997b684f79d63415482ecbdab0f3",
+            "content": "sha256:dbdb1c28a00b9672798dc11a72a053f5936e1c8918381fb76194ae8ad9e83921",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "125dbd7bb494997b684f79d63415482ecbdab0f3",
+            "content": "sha256:93959d3e46a4dc69bfab163444c6370319fb454ba4b17f7a896255bb5c5a1aa2",
             "locator": {
               "kind": "symbol",
               "name": "_support_modules"
@@ -350,7 +360,7 @@
       ]
     },
     "5": {
-      "note": "Direct, imported-alias and literal rebuild controls fail, while guarded controls pass.\n\nAnchor: `test_the_check_fails_a_support_module_that_writes_directly`, `test_the_check_fails_aliased_and_literal_bypasses`",
+      "note": "Direct, imported-alias and literal-rebuild controls fail while guarded controls pass.\n\nAnchor: `test_the_check_fails_a_support_module_that_writes_directly`, `test_the_check_fails_aliased_and_literal_bypasses`",
       "targets": [
         {
           "anchor": {

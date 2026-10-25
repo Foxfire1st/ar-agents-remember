@@ -70,8 +70,12 @@ These repository-relative targets and exact ranges were checked against the L9 w
 Source declarations and test assertions are distinguished from execution and acceptance evidence.
 
 - Flags, request resolution, and mode/directory refusal define the adapter scope. [1]
+
 - Planning and apply status/output remain separate. [2]
+
+
 - The kernel owns loss-aware planning and the explicit apply transaction. [3]
+
 - Actual branch-name invocation and retry behavior are tested through the CLI. [4]
 
 ### Cross-Repo References

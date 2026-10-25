@@ -196,15 +196,14 @@
       ]
     },
     "11": {
-      "note": "The leaf-wide view passes the captured trees and base commits and is computed once.",
+      "note": "The leaf-wide view passes the captured trees and base commits and is computed once.\n\nAnchor: `test_the_leaf_wide_view_captures_nothing_itself_and_is_computed_once_per_comparison`",
       "targets": [
         {
           "anchor": {
-            "blob": "b9fbd7174980d2bff06e48fcbb124f5605c0da61",
-            "content": "sha256:196f95ccb6ea59ed068e37704ba566888dabc1f4e932077ab56cd1c71bfcfae5",
+            "blob": "a936536068f5b5c599585cd9bc975e04e8906848",
+            "content": "sha256:4bc36d38c4fb8b8aa27abf2dc7591aeb566b0417f6db0b47bfcc4d2152a5b3e7",
             "locator": {
-              "kind": "symbol",
-              "name": "test_the_leaf_wide_view_captures_nothing_itself_and_is_computed_once_per_comparison"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -216,8 +215,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b9fbd7174980d2bff06e48fcbb124f5605c0da61",
-            "content": "sha256:04cd51107de3b151f71e86f5ed4d4e449f3c7e9d7b8a2d6cf1ee5054aa2b31c5",
+            "blob": "a936536068f5b5c599585cd9bc975e04e8906848",
+            "content": "sha256:4bc36d38c4fb8b8aa27abf2dc7591aeb566b0417f6db0b47bfcc4d2152a5b3e7",
             "locator": {
               "kind": "file"
             }
@@ -279,8 +278,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b9fbd7174980d2bff06e48fcbb124f5605c0da61",
-            "content": "sha256:04cd51107de3b151f71e86f5ed4d4e449f3c7e9d7b8a2d6cf1ee5054aa2b31c5",
+            "blob": "a936536068f5b5c599585cd9bc975e04e8906848",
+            "content": "sha256:4bc36d38c4fb8b8aa27abf2dc7591aeb566b0417f6db0b47bfcc4d2152a5b3e7",
             "locator": {
               "kind": "file"
             }
@@ -424,15 +423,14 @@
       ]
     },
     "7": {
-      "note": "The four review ports as the routes call them.",
+      "note": "The four review ports as the routes call them.\n\nAnchor: `Ports`",
       "targets": [
         {
           "anchor": {
-            "blob": "b9fbd7174980d2bff06e48fcbb124f5605c0da61",
-            "content": "sha256:48f9ee9256011b8a8b0332bf8612e863c8141989b64b25128b98eee398b4382e",
+            "blob": "a936536068f5b5c599585cd9bc975e04e8906848",
+            "content": "sha256:4bc36d38c4fb8b8aa27abf2dc7591aeb566b0417f6db0b47bfcc4d2152a5b3e7",
             "locator": {
-              "kind": "symbol",
-              "name": "Ports"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -440,15 +438,14 @@
       ]
     },
     "8": {
-      "note": "The subject read matches direct read_knowledge_review composition, carries judgment, resolves once and captures each worktree once.",
+      "note": "The subject read matches direct read_knowledge_review composition, carries judgment, resolves once and captures each worktree once.\n\nAnchor: `test_a_subject_read_resolves_once_and_captures_each_worktree_once_and_for_the_recheck`",
       "targets": [
         {
           "anchor": {
-            "blob": "05410847e15edb174cfb7c55ea920722adaa6102",
-            "content": "sha256:73d046db0e6e27ec07a0c50f96d7b55f90dc0a05152417f23bad3956ad08991d",
+            "blob": "a936536068f5b5c599585cd9bc975e04e8906848",
+            "content": "sha256:4bc36d38c4fb8b8aa27abf2dc7591aeb566b0417f6db0b47bfcc4d2152a5b3e7",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_subject_read_resolves_once_and_captures_each_worktree_once_and_for_the_recheck"
+              "kind": "file"
             }
           },
           "kind": "test"

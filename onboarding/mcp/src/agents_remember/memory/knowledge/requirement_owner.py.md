@@ -82,8 +82,12 @@ No configured domain documentation could be checked.
 - The owner's refusal carrier, whose `status` and `detail` travel verbatim into the resolution value. [4]
 - The substrate's resolution value: one outcome, and a refusal only in the unresolved outcome. [5]
 - The three components the owner reference carries, which this module re-types rather than re-spells. [6]
-- **The case that makes "the reference is never rewritten" total: four real owner refusals carried verbatim, with the stored reference byte-identical.** [7]
+
+- Four real owner-refusal cases assert unresolved state, the expected owner refusal code, a nonempty owner detail and an unchanged stored reference path. [7]
+
+
 - The case that keeps the refusal the owner's: paths the owner would refuse are still representable, so the answer cannot come from the substrate. [8]
+
 
 ### Cross-Repo References
 

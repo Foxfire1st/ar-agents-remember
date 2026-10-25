@@ -107,15 +107,14 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "Task/file/master routes retain exact native bytes and conditional responses without repeat Git children.",
+      "note": "Task/file/master routes retain exact native bytes and conditional responses without repeat Git children.\n\nAnchor: `test_landed_list_file_and_master_reuse_native_bytes_without_git`",
       "targets": [
         {
           "anchor": {
-            "blob": "68ace12aad0a8e57a12575a620a5640da7ef6e6e",
-            "content": "sha256:96a07b931e18d22f18d95fd2fd4ec02eec0405151b177caa9c206ad9a93f8160",
+            "blob": "9b90e039ac7b04b6ea75036e5c171b3f53590a62",
+            "content": "sha256:e8d4adbe622425265a61be97ef494bf05add8643e63881420a0d76af3a1d1a42",
             "locator": {
-              "kind": "symbol",
-              "name": "test_landed_list_file_and_master_reuse_native_bytes_without_git"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -123,15 +122,14 @@
       ]
     },
     "10": {
-      "note": "Unrelated sibling activity and packed-ref removal preserve relevant cached results.",
+      "note": "Unrelated sibling activity and packed-ref removal preserve relevant cached results.\n\nAnchor: `test_sibling_commit_and_unrelated_packed_ref_removal_keep_other_results`",
       "targets": [
         {
           "anchor": {
-            "blob": "68ace12aad0a8e57a12575a620a5640da7ef6e6e",
-            "content": "sha256:f25d4d4cb7c5787028ca920191037c6c81b7704b3b370f92d0d337b3f0defd5d",
+            "blob": "9b90e039ac7b04b6ea75036e5c171b3f53590a62",
+            "content": "sha256:e8d4adbe622425265a61be97ef494bf05add8643e63881420a0d76af3a1d1a42",
             "locator": {
-              "kind": "symbol",
-              "name": "test_sibling_commit_and_unrelated_packed_ref_removal_keep_other_results"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -139,15 +137,14 @@
       ]
     },
     "2": {
-      "note": "Working reads detect restored-mtime edits and leave native index bytes and identity unchanged.",
+      "note": "Working reads detect restored-mtime edits and leave native index bytes and identity unchanged.\n\nAnchor: `test_working_bytes_and_unchanged_poll_then_restored_mtime_edit`",
       "targets": [
         {
           "anchor": {
-            "blob": "68ace12aad0a8e57a12575a620a5640da7ef6e6e",
-            "content": "sha256:7849af570e3373124571e54edf0f1654df1cda9cb099956b64a8b354d879b85c",
+            "blob": "9b90e039ac7b04b6ea75036e5c171b3f53590a62",
+            "content": "sha256:e8d4adbe622425265a61be97ef494bf05add8643e63881420a0d76af3a1d1a42",
             "locator": {
-              "kind": "symbol",
-              "name": "test_working_bytes_and_unchanged_poll_then_restored_mtime_edit"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -155,15 +152,14 @@
       ]
     },
     "3": {
-      "note": "Rename/delete/replace/add/index/HEAD/symlink mutations force fresh native equality.",
+      "note": "Rename/delete/replace/add/index/HEAD/symlink mutations force fresh native equality.\n\nAnchor: `test_working_generation_covers_each_native_input`",
       "targets": [
         {
           "anchor": {
-            "blob": "68ace12aad0a8e57a12575a620a5640da7ef6e6e",
-            "content": "sha256:aa882c5ddb82c234e4ef14d70bb3fcf142b57db1bf2272d443d76fda947bb539",
+            "blob": "9b90e039ac7b04b6ea75036e5c171b3f53590a62",
+            "content": "sha256:e8d4adbe622425265a61be97ef494bf05add8643e63881420a0d76af3a1d1a42",
             "locator": {
-              "kind": "symbol",
-              "name": "test_working_generation_covers_each_native_input"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -171,15 +167,14 @@
       ]
     },
     "4": {
-      "note": "Missing commits preserve refusal and later restoration becomes visible.",
+      "note": "Missing commits preserve refusal and later restoration becomes visible.\n\nAnchor: `test_lost_recorded_commit_can_be_restored_after_repeated_refusals`",
       "targets": [
         {
           "anchor": {
-            "blob": "68ace12aad0a8e57a12575a620a5640da7ef6e6e",
-            "content": "sha256:8b6e2a1c73649e056abde754ef23ac349f8014079e40cf26f5fe855e5249d296",
+            "blob": "9b90e039ac7b04b6ea75036e5c171b3f53590a62",
+            "content": "sha256:e8d4adbe622425265a61be97ef494bf05add8643e63881420a0d76af3a1d1a42",
             "locator": {
-              "kind": "symbol",
-              "name": "test_lost_recorded_commit_can_be_restored_after_repeated_refusals"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -187,15 +182,14 @@
       ]
     },
     "5": {
-      "note": "Sidecar appearance/disappearance updates live without rerunning Git.",
+      "note": "Sidecar appearance/disappearance updates live without rerunning Git.\n\nAnchor: `test_sidecar_presence_stays_live_around_kept_git_list`",
       "targets": [
         {
           "anchor": {
-            "blob": "68ace12aad0a8e57a12575a620a5640da7ef6e6e",
-            "content": "sha256:49f072eb892b4453f377e91a468e99ff6296056b084789f95a65a1bd2b02b6f5",
+            "blob": "9b90e039ac7b04b6ea75036e5c171b3f53590a62",
+            "content": "sha256:e8d4adbe622425265a61be97ef494bf05add8643e63881420a0d76af3a1d1a42",
             "locator": {
-              "kind": "symbol",
-              "name": "test_sidecar_presence_stays_live_around_kept_git_list"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -251,15 +245,14 @@
       ]
     },
     "9": {
-      "note": "Worktree/info/XDG attributes affect committed native results.",
+      "note": "Worktree/info/XDG attributes affect committed native results.\n\nAnchor: `test_landed_attributes_use_every_native_source`",
       "targets": [
         {
           "anchor": {
-            "blob": "68ace12aad0a8e57a12575a620a5640da7ef6e6e",
-            "content": "sha256:3e02f9601bf1faf34cadaa1bf269396cb0c7ca7261f8c880343a382864d347cd",
+            "blob": "9b90e039ac7b04b6ea75036e5c171b3f53590a62",
+            "content": "sha256:e8d4adbe622425265a61be97ef494bf05add8643e63881420a0d76af3a1d1a42",
             "locator": {
-              "kind": "symbol",
-              "name": "test_landed_attributes_use_every_native_source"
+              "kind": "file"
             }
           },
           "kind": "test"

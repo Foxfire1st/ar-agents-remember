@@ -106,16 +106,24 @@ No Domain Documentation source is configured for this memory root.
 
 - **Retained historical source account — superseded by the current contract:** Status observes the stable sync journal before contract parsing and threads it through all result branches. [1]
 - **Retained historical source account — superseded by the current contract:** The journal observer returns a typed projection without reading task or queue state. [2]
-- **Retained historical source account — superseded by the current contract:** `SyncOperationProjection` is an explicit optional field on the context-facing worktree model. [3]
+
+> Retained earlier citation wording: - **Retained historical source account — superseded by the current contract:** `SyncOperationProjection` is an explicit optional field on the context-facing worktree model. [3]
+
 - **Retained historical source account — superseded by the current contract:** Worktree lifecycle status and next hints are composed by the worktree manager. [4]
 - **Retained historical source account — superseded by the current contract:** Worktree summary model constrains the context-facing shape, including the optional series activation fact. [5]
 - **Retained historical source account — superseded by the current contract:** Worktree summary model constrains the context-facing shape, including the optional series activation fact. [6]
 - **Retained historical source account — superseded by the current contract:** Context packet assembly consumes this read-only worktree projection — assigned directly, no longer `model_validate`d. [7]
 - **Retained historical source account — superseded by the current contract:** `WorktreeStatusPayload` (the `TypedDict` this projection consumes) and the phase/next-move vocabularies it is checked against (declared in `models/worktree.py` since L9). [8]
-- **Retained historical source account — superseded by the current contract:** `_vocabulary_cell` substitutes unknown vocabulary tokens and `WorktreeContract.unknown_cells` retains the raw diagnostics. [9]
+
+> Retained earlier citation wording: - **Retained historical source account — superseded by the current contract:** `_vocabulary_cell` substitutes unknown vocabulary tokens and `WorktreeContract.unknown_cells` retains the raw diagnostics. [9]
+
+
 - **Retained historical source account — superseded by the current contract:** The summary maps unknown_contract_cells and the optional atomic-series activation fact onto the typed response. [10]
+
+
 - **Retained historical source account — superseded by the current contract:** The public status projection, including the terminal archive-ready branch whose next move is now enforced downstream. [11]
-- **Retained historical source account — superseded by the current contract:** The envelope that declares the three keys this projector writes, and the `PUBLIC_TOOLS` membership validator that now refuses an out-of-roster next move. [12]
+
+> Retained earlier citation wording: - **Retained historical source account — superseded by the current contract:** The envelope that declares the three keys this projector writes, and the `PUBLIC_TOOLS` membership validator that now refuses an out-of-roster next move. [12]
 - **Retained historical source account — superseded by the current contract:** The suite that reaches the archive-ready state through this module's real `worktree_status_payload` call and pins the emitted next move against the real tool signatures. [13]
 - **Retained historical source account — superseded by the current contract:** `ContractBoundaryTests` pins the omitted next-move keys and the whole projection against the contracts on disk. [14]
 
@@ -145,7 +153,9 @@ The current source seams include `worktree_status_packet`. Status locates normal
 
 ### Reconciled Source Evidence
 
+
 - The current module exposes `worktree_status_packet` at this ownership boundary. [15]
+
 
 ## Current Landed Composition
 
@@ -192,4 +202,13 @@ the `task_doc` surface may name a non-public one (`session_retire`). That is why
 be the wrong fix. `mcp/tests/test_worktree_status_terminal_next_tool.py` drives this module's real
 `worktree_status_payload` into the archive-ready state for both cleanup verbs and pins all of it.
 
+
 - The context-facing WorktreeSummary also carries taskDocumentCopies from the producer's optional task_document_copies notice. That one-line copy drift/refresh notice is informational, not mutation, acceptance or proof that every copied byte was exhaustively hashed. Existing sync and source-lineage evidence remains a separate owner. [16]
+
+- The envelope that declares the three keys this projector writes, and the `PUBLIC_TOOLS` membership validator that now refuses an out-of-roster next move.  Anchor: "# The next-move triple, declared here so the worktree surface's guidance is part of"; "def _require_registered_public_next_tool" [12]
+
+
+- **Retained historical source account — superseded by the current contract:** `SyncOperationProjection` is an explicit optional field on the context-facing worktree model. [3]
+
+
+- **Retained historical source account — superseded by the current contract:** `_vocabulary_cell` substitutes unknown vocabulary tokens and `WorktreeContract.unknown_cells` retains the raw diagnostics. [9]

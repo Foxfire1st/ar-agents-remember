@@ -3,8 +3,8 @@
   "proves": [
     {
       "anchor": {
-        "blob": "64f031f0276562614d4b0c792ae756b4385acd96",
-        "content": "sha256:83c561d9802874c68047f61e75f7cb4be612bc45399a54ef50648e1491dce04c",
+        "blob": "c17c7f10f65a39025b5d67ddd571a3264de8526f",
+        "content": "sha256:5b772d9859ec8e32469fd97bf7b064e0df8a9e0e13b6a5275af0e4d033f4c0dc",
         "locator": {
           "kind": "symbol",
           "name": "test_the_real_command_writes_from_a_linked_checkout"
@@ -55,15 +55,14 @@
       ]
     },
     "2": {
-      "note": "A linked worktree refuses the batch on the disposable-root and contract-root mismatch, then the ordinary row alone commits and reads back",
+      "note": "A linked worktree refuses the batch on the disposable-root and contract-root mismatch, then the ordinary row alone commits and reads back\n\nAnchor: `test_the_real_command_writes_from_a_linked_checkout`",
       "targets": [
         {
           "anchor": {
-            "blob": "64f031f0276562614d4b0c792ae756b4385acd96",
-            "content": "sha256:83c561d9802874c68047f61e75f7cb4be612bc45399a54ef50648e1491dce04c",
+            "blob": "c17c7f10f65a39025b5d67ddd571a3264de8526f",
+            "content": "sha256:e2398f1f794b3e34d3e8e82b5d0dedcacdd54bbbde11aff05bdd87a8fb47b9ac",
             "locator": {
-              "kind": "symbol",
-              "name": "test_the_real_command_writes_from_a_linked_checkout"
+              "kind": "file"
             }
           },
           "kind": "test"

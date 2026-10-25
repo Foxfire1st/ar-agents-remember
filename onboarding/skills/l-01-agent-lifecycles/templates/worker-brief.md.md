@@ -6,8 +6,15 @@ This template feeds document values into the starting Worker's compiled first me
 
 This qualification governs the named current seams; incompatible earlier generalizations remain historical, not restored authority. No source inspection here establishes execution, a launch, a test result, a CODE/MEMORY grade or a completed closeout.
 
+
+
+
 - Worker input values preserve one primary revision, actual candidate environment, owner-separated sync and direct Curator producer-field handoff. [9]
-- The Curator owner requires the complete curation operation; optional full-quality/test requests do not waive it. [10]
+
+
+
+> Retained earlier citation wording: - The Curator owner requires the complete curation operation; optional full-quality/test requests do not waive it. [10]
+
 
 
 ## Message/file transport
@@ -124,14 +131,19 @@ No external Domain Documentation source governs this worker template.
 
 - The brief binds the exact owned requirement revision and evidence classes. [1]
 - The same block compiles leaf manifestation, attempt/predecessor lineage, and candidate identity before handoff. [2]
+
+
 - Repository-defined checks and artifact lifecycle remain separate obligations. [3]
+
 - The final report links attempt records, check outcomes, curator inputs and continuity state. [4]
 
 - The template declares itself an input-feeder whose stated rules live in the seat's own files. [5]
 
 - The brief carries the worker's curator hand-off list, producer fields filled and curator fields null. [6]
 
+
 - Curation is the standing complete operation; the curation owner, not the generic worker brief, carries that prerequisite. [7]
+
 
 - The candidate-environment input delegates the build command to repository tool notes and requires the run record's actual interpreter. [8]
 
@@ -365,3 +377,5 @@ Inherited reference 3 commentary (not a revalidated target):
 ## Canonical Source Ownership
 
 The verified byte-equal package copy is derived output, not an independent role/task/permission authority. Whole-source evidence does not certify inherited statements or a whole requirement.
+
+- The Curator owner requires the complete curation operation; optional full-quality/test requests do not waive it. [10]

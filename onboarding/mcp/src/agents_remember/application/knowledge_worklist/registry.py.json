@@ -70,15 +70,14 @@
       ]
     },
     "3": {
-      "note": "The kind declaration.",
+      "note": "The kind declaration.\n\nAnchor: `ItemKind`",
       "targets": [
         {
           "anchor": {
-            "blob": "fdbedf4ec1e984952a232e869ae4b6a3f70d5892",
-            "content": "sha256:057b23a4be21a6ff45fddb0618dfb44b177f2bf7123593abdc794aae4cc4689e",
+            "blob": "4d09d46688a0edd9240b5868622586bc0edf9a66",
+            "content": "sha256:8e1785313694c79c6817d1ebb2bc5dce190625077e1f81d571e969c5987a6a25",
             "locator": {
-              "kind": "symbol",
-              "name": "ItemKind"
+              "kind": "file"
             }
           },
           "kind": "code"

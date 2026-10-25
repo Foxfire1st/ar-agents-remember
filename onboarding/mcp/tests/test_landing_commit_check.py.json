@@ -83,15 +83,14 @@
       ]
     },
     "6": {
-      "note": "RoundOneFindingTests: qualified source contract.",
+      "note": "RoundOneFindingTests: qualified source contract — `RoundOneFindingTests` in mcp/tests/test_landing_commit_check.py.\n\nAnchor: `RoundOneFindingTests`",
       "targets": [
         {
           "anchor": {
-            "blob": "0ac7a77fb18fd24c2ce5add7bacf826eb7e8180d",
-            "content": "sha256:c311ddebd15494dc2c73b3dc9f20a848c30393321660bc7e66205a173ed31478",
+            "blob": "df605e1a1fff8faa14e3ea0becb50bf69a3bdb11",
+            "content": "sha256:fb390c72ae4ea2bd83c663b49ee214d3f663bc8aad75ab367481123da9b2bb41",
             "locator": {
-              "kind": "symbol",
-              "name": "RoundOneFindingTests"
+              "kind": "file"
             }
           },
           "kind": "test"

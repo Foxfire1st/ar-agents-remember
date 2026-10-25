@@ -1,5 +1,6 @@
 {
   "path": "dashboard/src/dev/ScenarioPlayer.tsx",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
@@ -19,11 +20,11 @@
       ]
     },
     "2": {
-      "note": "The `Scenario`/`ScenarioFrame` model it walks.\n\nAnchor: `ScenarioFrame`, `Scenario`",
+      "note": "The `Scenario`/`ScenarioFrame` model it walks.\n\nAnchor: `ScenarioFrame` `Scenario`",
       "targets": [
         {
           "anchor": {
-            "blob": "bf8a8ae986fdd8988d313e83df48c377386c48b5",
+            "blob": "58403a8e3f376b93e6cea8747e0d8ecdb222dd8c",
             "content": "sha256:9d5aa6f13b3a22ba56c5590d4d7b8a5e0aafd208e86b2448b59480799de56803",
             "locator": {
               "kind": "symbol",
@@ -35,8 +36,8 @@
         },
         {
           "anchor": {
-            "blob": "a487415b9d5df3f817b748f597c7ce8378b252f2",
-            "content": "sha256:e547a7f28653050027531809a0cdd1651a9030eb3b5fab8f6c9e468e76f6472c",
+            "blob": "58403a8e3f376b93e6cea8747e0d8ecdb222dd8c",
+            "content": "sha256:c64e9b751e592ad0eef1f4e09bc577f3c6c0c9b6a478e25c886670d0466497cf",
             "locator": {
               "kind": "symbol",
               "name": "Scenario"
@@ -47,12 +48,12 @@
         },
         {
           "anchor": {
-            "blob": "bf8a8ae986fdd8988d313e83df48c377386c48b5",
+            "blob": "58403a8e3f376b93e6cea8747e0d8ecdb222dd8c",
             "content": "sha256:1e34b86535b99692c1955e99ce5c8e51407251c660443732fb984cc5f21de303",
             "locator": {
-              "end": 16,
+              "end": 22,
               "kind": "line_range",
-              "start": 11
+              "start": 17
             },
             "path": "dashboard/src/dev/scenarios.ts"
           },
@@ -60,12 +61,23 @@
         },
         {
           "anchor": {
-            "blob": "a487415b9d5df3f817b748f597c7ce8378b252f2",
-            "content": "sha256:6c6e54fae9c9d54136f9529d57efc8d03833ffa72afc1233f5f69d5811f4369d",
+            "blob": "58403a8e3f376b93e6cea8747e0d8ecdb222dd8c",
+            "content": "sha256:a9aaa1d207ca963a1047a7d1efc6ae9bdc1c6a45cb7778519b876e78523ccb07",
             "locator": {
-              "end": 29,
+              "end": 35,
               "kind": "line_range",
-              "start": 24
+              "start": 30
+            },
+            "path": "dashboard/src/dev/scenarios.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "58403a8e3f376b93e6cea8747e0d8ecdb222dd8c",
+            "content": "sha256:0b399324a5b92b6875378f983347d8c30a4dd89938753534c6152123b46f4a9d",
+            "locator": {
+              "kind": "file"
             },
             "path": "dashboard/src/dev/scenarios.ts"
           },
@@ -78,7 +90,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e696c956756f8e506411a473a7778e5a2afc9bfb",
+            "blob": "57b40a28ef6817c4a90d64069b26a67fb7ed47eb",
             "content": "sha256:c0420b2dd5bea4a4f594d8ed95ced8b024a0ed142835e84b314d6e1d298ec012",
             "locator": {
               "kind": "symbol",
@@ -90,7 +102,7 @@
         },
         {
           "anchor": {
-            "blob": "e696c956756f8e506411a473a7778e5a2afc9bfb",
+            "blob": "57b40a28ef6817c4a90d64069b26a67fb7ed47eb",
             "content": "sha256:cfaa8c197ff248d56341c5e0bf820ac51ae5eb2ae7a67efbc825e67a3cf42274",
             "locator": {
               "kind": "symbol",
@@ -103,12 +115,12 @@
       ]
     },
     "4": {
-      "note": "Mounted (keyed by scenario) beneath the cockpit by the bench.\n\nAnchor: `ScenarioPlayer`",
+      "note": "Mounted (keyed by scenario) beneath the cockpit by the bench.",
       "targets": [
         {
           "anchor": {
-            "blob": "0a59c5c96cab39c54627f45a6b98a379b42906aa",
-            "content": "sha256:de95705a53f8072fcbd973e8e8d001910c2ae039845d4f2595ac347acf14c0bd",
+            "blob": "d5f2bb361853e599187ee262fe848316a9f46589",
+            "content": "sha256:46a86d68bfba577877424e1c657115b42f5ac92ba9feac92b5fc3ad18d1f7596",
             "locator": {
               "end": 43,
               "kind": "line_range",

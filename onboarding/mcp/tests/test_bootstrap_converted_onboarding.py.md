@@ -30,7 +30,7 @@ composed journey from init through a second refusal.
 - **Byte identity on refusal.** `test_refused_reauthor_card_and_sidecar_stay_byte_identical` compares digests:
   nothing of a refused card is written by either fixer stage.
 - **Old-format cards.** `test_each_old_format_sign_blocks_the_baseline` reports `blocked-legacy-cards` per
-  sign, `test_accept_drift_does_not_lift_blocked_legacy_cards` keeps `accept_drift` to stale anchors only,
+  sign, `test_accept_drift_does_not_lift_blocked_legacy_cards` requires `blocked-legacy-cards` with either `accept_drift` value,
   `test_prose_and_code_mentions_of_legacy_keys_are_not_legacy_cards` requires only a metadata-key first cell
   to count as a stamp row, `test_correcting_the_listed_cards_unblocks_adoption` shows the rerun adopting, and
   `test_legacy_cards_cannot_refuse_an_adopted_repository` keeps the rule an adoption gate rather than a

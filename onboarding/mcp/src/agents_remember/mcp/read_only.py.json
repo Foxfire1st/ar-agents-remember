@@ -1,10 +1,11 @@
 {
   "path": "mcp/src/agents_remember/mcp/read_only.py",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
-        "blob": "07dedef36e5ae1c34493c23c9c5a33513fcc1e3c",
-        "content": "sha256:d750d2cdcee63234ae9a03e1513da1a06aa9d10b07f1d837557fe944948feac9",
+        "blob": "2436ad0c802de13c39e81f6d1c55b911a4340d5a",
+        "content": "sha256:3c01394efd6cfd701df79d5a4e754885b8858ff983ebb77e99945f44bd1b6ab9",
         "locator": {
           "kind": "file"
         }
@@ -15,12 +16,12 @@
         "handoffEntry": "L109-source-read-only-annotations",
         "leaf": "260928-MIK-L109"
       },
-      "rationale": "The central classifier supplies the disjoint declared mark lists and refuses missing classifications.",
+      "rationale": "the realization entry the existing row records; unchanged by this landing",
       "role": "primary-authority"
     },
     {
       "anchor": {
-        "blob": "07dedef36e5ae1c34493c23c9c5a33513fcc1e3c",
+        "blob": "2436ad0c802de13c39e81f6d1c55b911a4340d5a",
         "content": "sha256:d8260c994fa518cd0167acf9f5c1a60be55c84f659414bd6bb9116f2d890ef22",
         "locator": {
           "kind": "symbol",
@@ -33,17 +34,27 @@
         "handoffEntry": "L183-CUR-ET01-bound-explainer-roster",
         "leaf": "260928-MIK-L183"
       },
-      "rationale": "The central vocabulary adds all 17 explainer reads and 5 writes, plus mutating explainer_control for ordinary surfaces. Unknown marks still raise instead of silently defaulting.",
+      "rationale": "`read_only_hint` at C still answers true for the 17 explainer reads (16 in EXPLAINER_READ_ONLY_TOOLS plus `knowledge_read` in READ_ONLY_TOOLS) and false for the 5 explainer writes and the mutating `explainer_control`, and still raises `UnknownReadOnlyMark` for anything unlisted (164-174), so the central marks describe capability without granting it.",
       "role": "enforcement"
     }
   ],
   "references": {
     "1": {
-      "note": "The current partition marks retained capabilities, including mutating retire_child, and omits retired dispatch_agent.",
+      "note": "The current partition marks retained capabilities, including mutating retire_child, and omits retired dispatch_agent.\n\nAnchor: `READ_ONLY_TOOLS` `MUTATING_TOOLS`",
       "targets": [
         {
           "anchor": {
-            "blob": "07dedef36e5ae1c34493c23c9c5a33513fcc1e3c",
+            "blob": "2436ad0c802de13c39e81f6d1c55b911a4340d5a",
+            "content": "sha256:3c01394efd6cfd701df79d5a4e754885b8858ff983ebb77e99945f44bd1b6ab9",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2436ad0c802de13c39e81f6d1c55b911a4340d5a",
             "content": "sha256:43a88c177efadc6cf26038e3781f459f92feb21e390f14cc927f3620fa8bed43",
             "locator": {
               "kind": "symbol",
@@ -54,8 +65,8 @@
         },
         {
           "anchor": {
-            "blob": "2bfdfd3ef91fab43dc83281090c7a2ecebf19617",
-            "content": "sha256:682cefe42c75f2c8d2684cca419fd8405af5c1043fc14335adf61c3ec0f698a3",
+            "blob": "2436ad0c802de13c39e81f6d1c55b911a4340d5a",
+            "content": "sha256:e15bd14d6fae65241195e320f48d6dfb262c43bb63b0d3c73d2e954366a4060a",
             "locator": {
               "kind": "symbol",
               "name": "MUTATING_TOOLS"
@@ -66,12 +77,12 @@
       ]
     },
     "2": {
-      "note": "An unknown registered name fails closed instead of receiving a default mark.\n\nAnchor: `read_only_hint`",
+      "note": "An unknown registered name fails closed instead of receiving a default mark.",
       "targets": [
         {
           "anchor": {
-            "blob": "2bfdfd3ef91fab43dc83281090c7a2ecebf19617",
-            "content": "sha256:65492d5153f0874416cf77be84852d2143a312a96c93814c06501a8c91634307",
+            "blob": "2436ad0c802de13c39e81f6d1c55b911a4340d5a",
+            "content": "sha256:3c01394efd6cfd701df79d5a4e754885b8858ff983ebb77e99945f44bd1b6ab9",
             "locator": {
               "kind": "file"
             }
@@ -81,12 +92,12 @@
       ]
     },
     "3": {
-      "note": "Annotations are applied after registrars from the same partition.\n\nAnchor: `apply_read_only_marks`",
+      "note": "Annotations are applied after registrars from the same partition.",
       "targets": [
         {
           "anchor": {
-            "blob": "2bfdfd3ef91fab43dc83281090c7a2ecebf19617",
-            "content": "sha256:65492d5153f0874416cf77be84852d2143a312a96c93814c06501a8c91634307",
+            "blob": "2436ad0c802de13c39e81f6d1c55b911a4340d5a",
+            "content": "sha256:3c01394efd6cfd701df79d5a4e754885b8858ff983ebb77e99945f44bd1b6ab9",
             "locator": {
               "kind": "file"
             }
@@ -96,12 +107,22 @@
       ]
     },
     "4": {
-      "note": "The mutating set that now carries the settings initializer.",
+      "note": "The mutating set that now carries the settings initializer.\n\nAnchor: `MUTATING_TOOLS`",
       "targets": [
         {
           "anchor": {
-            "blob": "2bfdfd3ef91fab43dc83281090c7a2ecebf19617",
-            "content": "sha256:682cefe42c75f2c8d2684cca419fd8405af5c1043fc14335adf61c3ec0f698a3",
+            "blob": "2436ad0c802de13c39e81f6d1c55b911a4340d5a",
+            "content": "sha256:3c01394efd6cfd701df79d5a4e754885b8858ff983ebb77e99945f44bd1b6ab9",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2436ad0c802de13c39e81f6d1c55b911a4340d5a",
+            "content": "sha256:e15bd14d6fae65241195e320f48d6dfb262c43bb63b0d3c73d2e954366a4060a",
             "locator": {
               "kind": "symbol",
               "name": "MUTATING_TOOLS"
@@ -116,8 +137,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "07dedef36e5ae1c34493c23c9c5a33513fcc1e3c",
-            "content": "sha256:d750d2cdcee63234ae9a03e1513da1a06aa9d10b07f1d837557fe944948feac9",
+            "blob": "2436ad0c802de13c39e81f6d1c55b911a4340d5a",
+            "content": "sha256:3c01394efd6cfd701df79d5a4e754885b8858ff983ebb77e99945f44bd1b6ab9",
             "locator": {
               "kind": "file"
             }

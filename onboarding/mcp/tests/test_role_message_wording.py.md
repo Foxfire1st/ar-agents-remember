@@ -54,5 +54,7 @@ controls; `scan_lines()`/`scan()` report a hit as `surface/relative: detail`, so
 - The product surface inventory and the positive and negative controls qualify the wording oracle. [1]
 - Roles, operations and templates must express the file-message contract. [2]
 - Parentless compiled capsules exercise the shared producer and keep its file-message markers. [3]
+
 - The implementation operation's markers are read from the delivered Worker text; every other surface states them in its own words. [4]
+
 - The oracle keeps role-specific Reviewer and Curator alternatives with deletion and cross-role controls, and reads curation as both Curator and Manager capsules. [5]

@@ -59,4 +59,5 @@ configured once rather than refused.
 
 ## Current source evidence
 
+
 - The sandbox MCP file owns host authority; developer user settings are input-only, checked for change before the sandbox write and recorded by before/after receipt digests. [1]

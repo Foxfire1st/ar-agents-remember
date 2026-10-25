@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/serving/projections/contract_snapshot.py",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
@@ -39,8 +40,18 @@
       ]
     },
     "2": {
-      "note": "The immutable snapshot and builder hold only admitted members and name read/parse failures or foreign nonmembers in skipped.\n\nAnchor: `ContractSnapshot`, `build`",
+      "note": "The immutable snapshot and builder hold only admitted members and name read/parse failures or foreign nonmembers in skipped.\n\nAnchor: `ContractSnapshot` `build`",
       "targets": [
+        {
+          "anchor": {
+            "blob": "b57a7faeabd73c5872db8d333a7970835083e727",
+            "content": "sha256:1821f42e5a6f397a1fdb8c7513b91772060d35c05cd7f5816d54f16b6bbad6f4",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
         {
           "anchor": {
             "blob": "b57a7faeabd73c5872db8d333a7970835083e727",
@@ -54,8 +65,8 @@
         },
         {
           "anchor": {
-            "blob": "83dd17a352b5292eba904d3ad3a081e7767cc88e",
-            "content": "sha256:2e30414d0e5676ee52b7538f321f94fdefb8f8af39d63e6bf44893f940e06ca1",
+            "blob": "b57a7faeabd73c5872db8d333a7970835083e727",
+            "content": "sha256:5b806fc7db0020a90078216e041a449dbd3a46410158b2fa9a941156ffd586cd",
             "locator": {
               "kind": "symbol",
               "name": "build"
@@ -66,12 +77,22 @@
       ]
     },
     "3": {
-      "note": "Full builds enumerate/reconcile; scoped builds ignore archived/notes names, stat/parse other named paths and retain unrelated cached members. Failed or foreign parsed members are evicted; retry and live-set pruning claims require relevant/full builds.",
+      "note": "Full builds enumerate/reconcile; scoped builds ignore archived/notes names, stat/parse other named paths and retain unrelated cached members. Failed or foreign parsed members are evicted; retry and live-set pruning claims require relevant/full builds.\n\nAnchor: `ContractSnapshotCache`",
       "targets": [
         {
           "anchor": {
-            "blob": "83dd17a352b5292eba904d3ad3a081e7767cc88e",
-            "content": "sha256:113e8645faa0d638108e5d43da58cbeb162494e04f411fecc8d14549488d9f00",
+            "blob": "b57a7faeabd73c5872db8d333a7970835083e727",
+            "content": "sha256:1821f42e5a6f397a1fdb8c7513b91772060d35c05cd7f5816d54f16b6bbad6f4",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b57a7faeabd73c5872db8d333a7970835083e727",
+            "content": "sha256:44c4cb5f4bc6789d4ef0d90decc659bd1afd279a48ccb1d0ce6f7d25ec7e4166",
             "locator": {
               "kind": "symbol",
               "name": "ContractSnapshotCache"
@@ -95,6 +116,18 @@
             }
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b57a7faeabd73c5872db8d333a7970835083e727",
+            "content": "sha256:01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+            "locator": {
+              "end": 185,
+              "kind": "line_range",
+              "start": 185
+            }
+          },
+          "kind": "code"
         }
       ]
     },
@@ -112,6 +145,18 @@
             }
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b57a7faeabd73c5872db8d333a7970835083e727",
+            "content": "sha256:166184f5c35df79934002fea51eb2611272069d750228f800b2a09cc3c756180",
+            "locator": {
+              "end": 39,
+              "kind": "line_range",
+              "start": 31
+            }
+          },
+          "kind": "code"
         }
       ]
     },
@@ -120,12 +165,25 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2497eca35695f895fd899b6722332e8e60fc9597",
-            "content": "sha256:f69a13975c256ec8320e2016083c96df637ca3d35bebde2314bee3a4711b56ca",
+            "blob": "80f68a14806839156738f156091e776e566e18b6",
+            "content": "sha256:d187b37145a351148be72c739a620daf84eea31a31394dea1c0d13b17cfeb6a9",
             "locator": {
               "end": 75,
               "kind": "line_range",
               "start": 75
+            },
+            "path": "mcp/src/agents_remember/serving/projections/projection_store.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "80f68a14806839156738f156091e776e566e18b6",
+            "content": "sha256:3d0ad71a54ccf641e0565304fc4d86db184b731ad6f8f04bf8a26beba9faf143",
+            "locator": {
+              "end": 146,
+              "kind": "line_range",
+              "start": 146
             },
             "path": "mcp/src/agents_remember/serving/projections/projection_store.py"
           },
@@ -138,8 +196,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bfb3484726b9f274ee80a628b242a9f2a0227e84",
-            "content": "sha256:bdffc67512ed2bc2934b76b9e771aa5c32b1c164dee37c616624b30ee383717d",
+            "blob": "e1d561eb43926925f6fefc875db17155ef322eb4",
+            "content": "sha256:9f48cc565b4f54100ed7a56c58f99c537e714c4ebea8ab36f7ed5cd3f1109419",
             "locator": {
               "end": 282,
               "kind": "line_range",
@@ -174,8 +232,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "39f4e13a9097020e58d0cf867a143026183b7e6d",
-            "content": "sha256:17d366d5a60720f4ff7013f661dedce028ee72f176348b3eac3ef3a0fa195df9",
+            "blob": "dddcce3e33bed7ffbd8bec7c711954dc794d4e8d",
+            "content": "sha256:fafba0527c3953c4b6e0e5b5739ba83612f8053bcdc9466730193cd1d590b408",
             "locator": {
               "end": 25,
               "kind": "line_range",

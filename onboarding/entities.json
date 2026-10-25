@@ -1,5 +1,6 @@
 {
   "path": "entities",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
@@ -36,10 +37,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a7b238883ac81b8560b5e31890a05d9d253fd689",
-            "content": "sha256:8c81c5963162fec8e00ad1c843f68d1ca665875f03ea6f904c25713748a13ec7",
+            "blob": "c9e2847f64ca428bdc799c8173b43aa736f4b0e9",
+            "content": "sha256:832e84a1b456f5a595dbb1c2ff54483d2b885160e03c4b0dbd2e6380b7a519f5",
             "locator": {
-              "end": 304,
+              "end": 311,
               "kind": "line_range",
               "start": 247
             },
@@ -196,11 +197,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "63231e18a2ea7fe60b5e8d8df3eaf437680f2429",
-            "content": "sha256:bc89365e4597d139bd67aa8bc5de94e80ae2b709f1713129da4483d7e4fa1545",
+            "blob": "c72c2b159123047c79c15fc46fd02991f16ef41b",
+            "content": "sha256:68c8dbf4770fad096b2383f484019fb1c79b1da618b51752f8312a96003b1b29",
             "locator": {
-              "kind": "symbol",
-              "name": "_converted_adopt_gate"
+              "end": 746,
+              "kind": "line_range",
+              "start": 591
             },
             "path": "mcp/src/agents_remember/memory/baseline.py"
           },
@@ -344,8 +346,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "564349efd6690c9aeb0774d8b9484607bea28578",
-            "content": "sha256:5bc2b65dbf22847c050c7d580b951d0ee2b85446a1effd675d03edc41bb5abb4",
+            "blob": "26edfc879fceb5c3c0c071a8bf8d54180caebe20",
+            "content": "sha256:866acdeee1ac3f85755b6632df5316ad5a43c37aee4eef0f76494e7c3bc278e3",
             "locator": {
               "end": 145,
               "kind": "line_range",
@@ -437,8 +439,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "156779ca466f0289eb12c8623810b3798a9ca962",
-            "content": "sha256:471a1e70b1b5ad16c47341831113689485549bee8319d85dd8d91a696ec960d3",
+            "blob": "ff9e4fca054c6ed5dc91a1d267603fc32236d8f9",
+            "content": "sha256:45037c06bc64eea050a8cdff48d66c4e0a4be04ba4ef9ef9e0d187b22ace8933",
             "locator": {
               "kind": "symbol",
               "name": "plan_task_stage"
@@ -472,8 +474,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "90b609572aa48fb2a5e13fbf13040c2f337839b0",
-            "content": "sha256:60db448ba40a154801956f91881edbd0000ce92f579646f22916a14e3ecd4c58",
+            "blob": "9f6e5640683f5837e056f35ab36b73d582df963d",
+            "content": "sha256:9ae1b010567a226d97a079177064a8aa48ac39f75842d9651fd07b8c036eae51",
             "locator": {
               "end": 110,
               "kind": "line_range",
@@ -707,7 +709,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "63231e18a2ea7fe60b5e8d8df3eaf437680f2429",
+            "blob": "c72c2b159123047c79c15fc46fd02991f16ef41b",
             "content": "sha256:e6efde98dbdc142eac05f01d17a88f64b2fe8efe87801079040c749718685126",
             "locator": {
               "end": 562,
@@ -720,7 +722,7 @@
         },
         {
           "anchor": {
-            "blob": "63231e18a2ea7fe60b5e8d8df3eaf437680f2429",
+            "blob": "c72c2b159123047c79c15fc46fd02991f16ef41b",
             "content": "sha256:974562a3cd9750ad0a9cc3f1a70581427003c81faa2bbad8837140eb6fc07428",
             "locator": {
               "end": 562,
@@ -733,7 +735,7 @@
         },
         {
           "anchor": {
-            "blob": "63231e18a2ea7fe60b5e8d8df3eaf437680f2429",
+            "blob": "c72c2b159123047c79c15fc46fd02991f16ef41b",
             "content": "sha256:3080713fc38cc6803cc646334343cdc8018c05d4c59a43cc6e515405f8293f2a",
             "locator": {
               "end": 580,
@@ -747,15 +749,16 @@
       ]
     },
     "9": {
-      "note": "Adoption status is derived from Git attribution.",
+      "note": "**Historical source-bound reference account, not an operative override:** Adoption status is derived from Git attribution. Source caption: `has_adopted_baseline` `ledger_status`",
       "targets": [
         {
           "anchor": {
-            "blob": "63231e18a2ea7fe60b5e8d8df3eaf437680f2429",
+            "blob": "c72c2b159123047c79c15fc46fd02991f16ef41b",
             "content": "sha256:bf362a4869836a58bd9398725054613b098abc324776ebd66726107f6b454efe",
             "locator": {
-              "kind": "symbol",
-              "name": "has_adopted_baseline"
+              "end": 568,
+              "kind": "line_range",
+              "start": 565
             },
             "path": "mcp/src/agents_remember/memory/baseline.py"
           },
@@ -763,11 +766,12 @@
         },
         {
           "anchor": {
-            "blob": "63231e18a2ea7fe60b5e8d8df3eaf437680f2429",
+            "blob": "c72c2b159123047c79c15fc46fd02991f16ef41b",
             "content": "sha256:f4919bee988d4473dce9ce42789930a3b179417eb1c07e1d5ba1f0c40270d283",
             "locator": {
-              "kind": "symbol",
-              "name": "ledger_status"
+              "end": 580,
+              "kind": "line_range",
+              "start": 571
             },
             "path": "mcp/src/agents_remember/memory/baseline.py"
           },
@@ -775,7 +779,7 @@
         },
         {
           "anchor": {
-            "blob": "63231e18a2ea7fe60b5e8d8df3eaf437680f2429",
+            "blob": "c72c2b159123047c79c15fc46fd02991f16ef41b",
             "content": "sha256:54db39c277083dab87a1a463a2d00dd6c303001aa204b4851452de4e461745cf",
             "locator": {
               "end": 610,
@@ -788,12 +792,25 @@
         },
         {
           "anchor": {
-            "blob": "270f5e2139bc6d77e9b3830019d960948454ba06",
-            "content": "sha256:5a6b1c2938cdd94d020e4577fede262e2d07ac0c0819d28ab391196777696fd2",
+            "blob": "c72c2b159123047c79c15fc46fd02991f16ef41b",
+            "content": "sha256:a38b006fa208d5b7b08c1be28979cfd217b1d8579a554fc8c910bb4f218144ed",
             "locator": {
               "end": 651,
               "kind": "line_range",
               "start": 642
+            },
+            "path": "mcp/src/agents_remember/memory/baseline.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c72c2b159123047c79c15fc46fd02991f16ef41b",
+            "content": "sha256:b5344ce16b76181101b0fc1f4b98ea59e464cbf1a314a25a84bb2650b3cd86a0",
+            "locator": {
+              "end": 623,
+              "kind": "line_range",
+              "start": 591
             },
             "path": "mcp/src/agents_remember/memory/baseline.py"
           },

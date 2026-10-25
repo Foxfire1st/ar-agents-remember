@@ -26,10 +26,7 @@ Source/test/fixture inspection is not a fresh mounted capture or a passing test 
 Historical provider-shaped input data and retained compatibility definitions do not
 restore removed provider visuals or tool exposure.
 
-- Canvas accepts node, gateNode, officialLedger and resolves resolveScene(node). It still composes branches, shell, worktr — source ownership, not executed visual proof. [32]
-- Canvas accepts node, gateNode, officialLedger and resolves resolveScene(node). It still composes branches, shell, worktr — source ownership, not executed visual proof. [33]
-- Canvas accepts node, gateNode, officialLedger and resolves resolveScene(node). It still composes branches, shell, worktr — source ownership, not executed visual proof. [34]
-- Canvas accepts node, gateNode, officialLedger and resolves resolveScene(node). It still composes branches, shell, worktr — source ownership, not executed visual proof. [35]
+- Canvas accepts node, gateNode, officialLedger and resolves resolveScene(node). It still composes branches, shell, worktr — source ownership, not executed visual proof.
 
 ## Historical superseded account (non-operative)
 

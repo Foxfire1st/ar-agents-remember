@@ -20,5 +20,7 @@ Unanswered outcomes remain unknown with HTTP 202 and the exact saved-call identi
 
 - Created/held/unknown results preserve prior lifecycle semantics. [1]
 - Only settled empty step-up refusals remain retryable. [2]
+
 - The caller saves and reconciles task metadata around the host outcome. [3]
+
 - Test source checks rejected empty seat and successful same-ID retry. [4]

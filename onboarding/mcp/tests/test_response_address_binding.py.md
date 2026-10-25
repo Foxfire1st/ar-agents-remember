@@ -110,11 +110,20 @@ they make no acceptance claim.
 - Guidance that names no artifact is kept; `None` stays `None`. [6]
 - `T71`: every counted refresh entry is named by its source path or its own document path. [7]
 - The producer half of `T54`: the closed payload declares its own address in the envelope spelling. [10]
+
 - The guard these cases pin, and the two rules it applies. [11]
+
 - The place comparison: the same file, or the directory that immediately contains it. [12]
 - The entry namer `T71` repaired: source path, or the document's own path. [13]
 - The bounded count that refuses to count a blank. [14]
-- The lane row that keeps this module in the default selection. [16]
+
+
+
+
+> Retained earlier citation wording: - The lane row that keeps this module in the default selection. Source caption: "mcp/tests/test_response_address_binding.py" [16]
+
+
+
 
 ### Cross-Repo References
 
@@ -122,3 +131,5 @@ No cross-repository implementation evidence is required for these local response
 The cases build no repository and touch no real coordination root.
 
 No repository or external-system boundary is proved by this module.
+
+- The lane row that keeps this module in the default selection. Source caption: "mcp/tests/test_response_address_binding.py" [16]

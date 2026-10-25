@@ -38,15 +38,14 @@
       ]
     },
     "2": {
-      "note": "A sync-recorded merge remains admissible.",
+      "note": "A sync-recorded merge remains admissible.\n\nAnchor: `test_an_admitted_sync_merge_passes`",
       "targets": [
         {
           "anchor": {
-            "blob": "e5318345905e4d7b2daee5e1c3032271c5b64a9e",
-            "content": "sha256:7aa2cafb882c1db3241c522b6855cdead29ad157b56382638a2f1e86cf038963",
+            "blob": "a66812400d3a534f8d54e02157dcd760834a3e26",
+            "content": "sha256:6173b15a3f6c9509a7e13a50faedf264b7c1de3896082f79a1b345a110cf46d6",
             "locator": {
-              "kind": "symbol",
-              "name": "test_an_admitted_sync_merge_passes"
+              "kind": "file"
             }
           },
           "kind": "test"

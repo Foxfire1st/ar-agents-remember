@@ -17,4 +17,5 @@ Real temporary Git histories distinguish six foreign commits, a hand merge with 
 No external Domain Documentation source is configured for this repository. The following source witnesses establish the contract, not a new execution receipt.
 
 - All foreign commits are named, not a five-entry sample. [1]
+
 - A sync-recorded merge remains admissible. [2]

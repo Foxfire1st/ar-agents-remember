@@ -67,23 +67,6 @@
         }
       ]
     },
-    "5": {
-      "note": "Retirement parsing preserves the two legacy aliases with current-key precedence.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "08fa67e7d17028c0392d8c20bf1c9499b0681f8f",
-            "content": "sha256:9c938db5b67784d917c8e44f6c00e607f4703bd404bc9bc264f172c0bbfe17b3",
-            "locator": {
-              "kind": "symbol",
-              "name": "parse_retirement_settings"
-            },
-            "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "6": {
       "note": "Gate delegation's standard settings home outranks the warning-bearing authority fallback.",
       "targets": [

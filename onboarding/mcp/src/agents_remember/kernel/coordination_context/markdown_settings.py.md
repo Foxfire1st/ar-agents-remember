@@ -48,7 +48,16 @@ No relevant external documentation is needed.
 
 ### Repo-Internal References
 
-- `parse_coordination_settings` selects JSON settings when present, parses Markdown settings blocks otherwise, and returns the `StorageSettings` defaults — `DEFAULT_STORAGE_MODE` = `"memory-repo"` — when no settings file exists. It takes no `topology` parameter any more. [1]
+
+
+
+
+
+- `parse_coordination_settings` selects JSON settings when present, parses Markdown settings blocks otherwise, and returns the `StorageSettings` defaults — `DEFAULT_STORAGE_MODE` = `"memory-repo"` — when no settings file exists. It takes no `topology` parameter any more. Source caption: `parse_coordination_settings` [1]
+
+
+
+
 - The topology-derived storage default is gone; `StorageSettings.mode`/`.default` are the one non-topology default. [2]
 
 ### Cross-Repo References

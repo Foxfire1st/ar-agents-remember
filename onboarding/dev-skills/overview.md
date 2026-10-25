@@ -75,4 +75,5 @@ The source skill identifies the scenario catalog and review doctrine under `docs
 
 ## Evidence
 
+
 - `sync-skills.py` copies only `REPO_ROOT/"skills"` into its fixed targets, so `dev-skills/` is outside this distribution flow. Checking compares the canonical tree with target contents, so an independently copied dev-skill inside a checked target can be reported as extra; this does not inspect the `dev-skills/` source tree. [1]

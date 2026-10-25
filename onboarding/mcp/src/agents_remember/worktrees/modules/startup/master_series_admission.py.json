@@ -22,7 +22,7 @@
   ],
   "references": {
     "1": {
-      "note": "Typed admission evidence and bounded refusal projection.",
+      "note": "Typed admission evidence and bounded refusal projection.\n\nAnchor: `MasterSeriesContractSpecLike` `_master_series_admission_refusal`",
       "targets": [
         {
           "anchor": {
@@ -37,8 +37,8 @@
         },
         {
           "anchor": {
-            "blob": "3f34335a7a7236e56d958412c6a9f89ff0059781",
-            "content": "sha256:af3b39c4475d9151f9751ce1c0d7e5885b45d1b79c13f7abe6e0329dc83e8507",
+            "blob": "c21ef23dc8e7179e020f7f27c3fe7cd4de3bc32e",
+            "content": "sha256:50d06d82fc874cf6c88c09317e4bdc17575cf1bb7a1e15aefac57527a411127c",
             "locator": {
               "kind": "symbol",
               "name": "_master_series_admission_refusal"
@@ -48,12 +48,22 @@
         },
         {
           "anchor": {
-            "blob": "93388b43355dd90752a5dfdefad1a7a7e2c5a426",
-            "content": "sha256:28084061e54e631af127dd307f85ad157061ab1428022a4dfb32c6c1f45f24d6",
+            "blob": "c21ef23dc8e7179e020f7f27c3fe7cd4de3bc32e",
+            "content": "sha256:d0d06c62665db6aeb1282e23f290d0d6f0e9580690e3b8afcb69933f77a9812e",
             "locator": {
               "end": 159,
               "kind": "line_range",
               "start": 100
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c21ef23dc8e7179e020f7f27c3fe7cd4de3bc32e",
+            "content": "sha256:5b0c776a0b51f18c73ab4c4f41f3e6993706cb4eaf1ea0876bac3648f1ea67d5",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -120,8 +130,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "37b4bd7f357724bb1073445157627e8922fac037",
-            "content": "sha256:ac7b764e7b4afef2d6f69da22fc7e6ee5339743a0d3387a191cbfbee6b7ae1fc",
+            "blob": "c21ef23dc8e7179e020f7f27c3fe7cd4de3bc32e",
+            "content": "sha256:5b0c776a0b51f18c73ab4c4f41f3e6993706cb4eaf1ea0876bac3648f1ea67d5",
             "locator": {
               "kind": "file"
             }

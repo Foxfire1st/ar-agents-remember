@@ -3,12 +3,12 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The series-notes suite.\n\nAnchor: `describe`",
+      "note": "The series-notes suite.",
       "targets": [
         {
           "anchor": {
-            "blob": "a07b55cb5d602765bc81c68472f0f5fb7bec03b6",
-            "content": "sha256:381f3feb08e9273813ad0803441a71b48ce4edb66a85fe040708433a221bc1bf",
+            "blob": "b050ea709017f098dd2219748cf6d0a938493e0f",
+            "content": "sha256:544fc8f82fb8f3196df8632fc06cc9abdbf58359d45f74ff4a9b4bbf937127c6",
             "locator": {
               "end": 80,
               "kind": "line_range",

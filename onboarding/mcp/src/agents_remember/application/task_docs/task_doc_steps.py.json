@@ -1,9 +1,10 @@
 {
   "path": "mcp/src/agents_remember/application/task_docs/task_doc_steps.py",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
-      "note": "The fields a caller may restate on an existing step; `note` is here for both levels because the top-level key set used to omit it.",
+      "note": "**Retained historical source account — superseded by the current contract:** The fields a caller may restate on an existing step; `note` is here for both levels because the top-level key set used to omit it.",
       "targets": [
         {
           "anchor": {
@@ -19,12 +20,12 @@
       ]
     },
     "10": {
-      "note": "The terminal-status guard that admits a reasoned `remove_step` on a `Completed` document.",
+      "note": "**Retained historical source account — superseded by the current contract:** The terminal-status guard that admits a reasoned `remove_step` on a `Completed` document.",
       "targets": [
         {
           "anchor": {
-            "blob": "51f3efd84d8b158c64a47ee0b4e18ed47338d050",
-            "content": "sha256:a7806c4defb9bc1dffb716132cb05a53234061061376e21ee257bad7db43ddee",
+            "blob": "f174a79f72375a38aa57f50907312424f3fc2c3c",
+            "content": "sha256:f94469e0c55bda0123006be476a24188d87f829519693d00c0add53493947960",
             "locator": {
               "kind": "symbol",
               "name": "_enforce_terminal_status"
@@ -36,7 +37,7 @@
       ]
     },
     "11": {
-      "note": "The schema field that made a top-level `note` storable at all.",
+      "note": "**Retained historical source account — superseded by the current contract:** The schema field that made a top-level `note` storable at all.",
       "targets": [
         {
           "anchor": {
@@ -53,39 +54,14 @@
       ]
     },
     "12": {
-      "note": "The executor that pins the addressing, create/delete, note-persistence, rendering, and Completed-document behaviours.",
+      "note": "The application test class that pins the addressing, create/edit/delete, rendering and Completed-document behaviours.\n\nAnchor: `test_set_step_updates_only_and_names_the_parent_of_a_bare_substep_id` `test_remove_step_deletes_a_done_step_and_repairs_a_completed_document` `test_read_steps_returns_the_checklist_and_changes_nothing`",
       "targets": [
         {
           "anchor": {
             "blob": "88c495f124574184e99e00613afe85497d2d39c2",
-            "content": "sha256:5642383be71a4ebcc2ca9f54b8a2b79260bde5ce0b1b55abfc0ca37c67d14406",
+            "content": "sha256:3246f80280324e70674b6b67d0078fff37ab151cdd8cd0b181fb72459c05db5c",
             "locator": {
-              "kind": "symbol",
-              "name": "test_set_step_updates_only_and_names_the_parent_of_a_bare_substep_id"
-            },
-            "path": "mcp/tests/test_task_document_application_1.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "88c495f124574184e99e00613afe85497d2d39c2",
-            "content": "sha256:84be54d9d7b5f41c029da7569215a1108e1963d7aedc745ac180b98fefdc9447",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_remove_step_deletes_a_done_step_and_repairs_a_completed_document"
-            },
-            "path": "mcp/tests/test_task_document_application_1.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "6a8efe4b54c895194466c508a18c24f534ba984e",
-            "content": "sha256:87a8b27badecfc12f99fb225a3d72b16163eaaf8aea11b8aa6057a166bd4f085",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_read_steps_returns_the_checklist_and_changes_nothing"
+              "kind": "file"
             },
             "path": "mcp/tests/test_task_document_application_1.py"
           },
@@ -109,7 +85,7 @@
       ]
     },
     "2": {
-      "note": "The shared nonblank-reason reader, also consumed by the tools module's terminal-status exemption.",
+      "note": "**Retained historical source account — superseded by the current contract:** The shared nonblank-reason reader, also consumed by the tools module's terminal-status exemption.",
       "targets": [
         {
           "anchor": {
@@ -125,7 +101,7 @@
       ]
     },
     "3": {
-      "note": "The single addressing rule every step operation shares, including the parent-naming miss hint.",
+      "note": "**Retained historical source account — superseded by the current contract:** The single addressing rule every step operation shares, including the parent-naming miss hint.",
       "targets": [
         {
           "anchor": {
@@ -163,7 +139,7 @@
       ]
     },
     "4": {
-      "note": "The create-only operation requires a title and refuses an existing id in its scope.",
+      "note": "**Retained historical source account — superseded by the current contract:** The create-only operation requires a title and refuses an existing id in its scope.",
       "targets": [
         {
           "anchor": {
@@ -190,15 +166,14 @@
       ]
     },
     "5": {
-      "note": "The delete-only operation requires a reason and appends the removal decision.",
+      "note": "**Retained historical source account — superseded by the current contract:** The delete-only operation requires a reason and appends the removal decision.\n\nAnchor: `remove_step`",
       "targets": [
         {
           "anchor": {
-            "blob": "3a657f7c68c085bd606e3e382032cb27b0ec04e2",
-            "content": "sha256:3b23579656b0b6cfe3c8433e55a50aa939a4316c3fc16a4c2e7d3174cef300df",
+            "blob": "cb6dc5c747288c4957f06245f18a89aee2f6abf9",
+            "content": "sha256:2da19a3da5937ff6dcb1f465f8a4b3ddb5c5c36dfbd5a070ddc448167a3811ea",
             "locator": {
-              "kind": "symbol",
-              "name": "remove_step"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -206,7 +181,7 @@
       ]
     },
     "6": {
-      "note": "The update-only operation and the fields it may copy.",
+      "note": "**Retained historical source account — superseded by the current contract:** The update-only operation and the fields it may copy.",
       "targets": [
         {
           "anchor": {
@@ -222,42 +197,14 @@
       ]
     },
     "7": {
-      "note": "`skip_step` moved here verbatim: keep the unit, mark it done, record `intentionalSkip`, do not cascade.",
+      "note": "**Retained historical source account — superseded by the current contract:** `skip_step` moved here verbatim: keep the unit, mark it done, record `intentionalSkip`, do not cascade.\n\nAnchor: `skip_step`",
       "targets": [
         {
           "anchor": {
-            "blob": "3a657f7c68c085bd606e3e382032cb27b0ec04e2",
-            "content": "sha256:ff668d270bc8de964b16aaf36625497c3b470dad58ac4061b574ad00df787feb",
+            "blob": "cb6dc5c747288c4957f06245f18a89aee2f6abf9",
+            "content": "sha256:2da19a3da5937ff6dcb1f465f8a4b3ddb5c5c36dfbd5a070ddc448167a3811ea",
             "locator": {
-              "kind": "symbol",
-              "name": "skip_step"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "8": {
-      "note": "The focused checklist read behind the `read_steps` special operation.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "587d8ac1d783ee53cfe3bcd9606019c82e4e4f6f",
-            "content": "sha256:b5efeb0ecc0551cda6ac5bc107af70b9350ff46c90db57b3a5ed72bcec624ad1",
-            "locator": {
-              "kind": "symbol",
-              "name": "step_payloads"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "587d8ac1d783ee53cfe3bcd9606019c82e4e4f6f",
-            "content": "sha256:cf202fc45b0b5a9930d78c8be6112ef64dffc09a0e6fbffeeaea215701b256ef",
-            "locator": {
-              "kind": "symbol",
-              "name": "_substep_payload"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -265,7 +212,7 @@
       ]
     },
     "9": {
-      "note": "The dispatcher that registers the operations and delegates through thin `_apply_*` adapters.",
+      "note": "**Retained historical source account — superseded by the current contract:** The dispatcher that registers the operations and delegates through thin `_apply_*` adapters.",
       "targets": [
         {
           "anchor": {
@@ -318,6 +265,58 @@
         {
           "anchor": {
             "blob": "f174a79f72375a38aa57f50907312424f3fc2c3c",
+            "content": "sha256:7044d9cb922eae28cad561ebb868d75a747e3e82fa1c91f8189f521ca0e2b75d",
+            "locator": {
+              "end": 831,
+              "kind": "line_range",
+              "start": 830
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_doc_tools.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f174a79f72375a38aa57f50907312424f3fc2c3c",
+            "content": "sha256:5b5417cda445d817ee0e468192c9f958de7d638afcfeb6db181af1714b668be3",
+            "locator": {
+              "end": 835,
+              "kind": "line_range",
+              "start": 834
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_doc_tools.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f174a79f72375a38aa57f50907312424f3fc2c3c",
+            "content": "sha256:06335310046314b2784aefb000dcccd4041cf7b53059a064c79906c1c746e186",
+            "locator": {
+              "end": 839,
+              "kind": "line_range",
+              "start": 838
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_doc_tools.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f174a79f72375a38aa57f50907312424f3fc2c3c",
+            "content": "sha256:32187c62da2ac5ef02e7729d7fda016edd5a9670ac22a12b2c44618597f72e63",
+            "locator": {
+              "end": 848,
+              "kind": "line_range",
+              "start": 842
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_doc_tools.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f174a79f72375a38aa57f50907312424f3fc2c3c",
             "content": "sha256:29a8547ba8a633f35d7d4079de11ad2bf2981cc9ea080da75c2bf88ed475a26a",
             "locator": {
               "end": 861,
@@ -362,6 +361,58 @@
               "end": 878,
               "kind": "line_range",
               "start": 872
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_doc_tools.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f174a79f72375a38aa57f50907312424f3fc2c3c",
+            "content": "sha256:ea1603f4cb4d246b1120b0b2bef516dcf2c4229c1401503debfb7d0c8d2b4b14",
+            "locator": {
+              "end": 837,
+              "kind": "line_range",
+              "start": 836
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_doc_tools.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f174a79f72375a38aa57f50907312424f3fc2c3c",
+            "content": "sha256:710a99f8dd8bcfabbc8639ffb3a72f8bdc0a3cfc5efa9a18670c48632c2d4b3a",
+            "locator": {
+              "end": 841,
+              "kind": "line_range",
+              "start": 840
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_doc_tools.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f174a79f72375a38aa57f50907312424f3fc2c3c",
+            "content": "sha256:3ea79c1e31af8c013c31f65bd7da54d5b08737eef47f421f881d5156d4e144f8",
+            "locator": {
+              "end": 845,
+              "kind": "line_range",
+              "start": 844
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_doc_tools.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f174a79f72375a38aa57f50907312424f3fc2c3c",
+            "content": "sha256:b6616c9c52cfffa0402e4b511c7ee686155b7557037ee0982d532b18782d27e2",
+            "locator": {
+              "end": 854,
+              "kind": "line_range",
+              "start": 848
             },
             "path": "mcp/src/agents_remember/application/task_docs/task_doc_tools.py"
           },

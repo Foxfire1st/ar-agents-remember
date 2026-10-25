@@ -148,9 +148,13 @@ rejected, never silently re-rooted).
 - The scope resolver + `CoordinationContext`/`MissingMemoryError` bridged here. [4]
 - The repo allow-list authority guard (`require_repo` → `RepositoryScope`). [5]
 - `McpRuntimeConfig` (`allowed_repo_ids`, `repositories`) + the `path_is_relative_to` guard. [6]
+
 - The leaf-enclosure contract enumerator the catalog walks. [7]
-- The `WorktreeContract` (`code_worktree`, `worktree_group`, `cleanup`) + `load_contract`/`ContractError`. [8]
+
+> Retained earlier citation wording: - The `WorktreeContract` (`code_worktree`, `worktree_group`, `cleanup`) + `load_contract`/`ContractError`. [8]
+
 - The `table_metadata` drift reader + the `mirror_onboarding_path` sidecar mapper. [9]
+
 
 | The declared response models and the shared `SCOPED_READ_RESPONSES` refusal table these four routes name (`RepoCatalog`, `DirectoryListing`, `FileContents`, `OnboardingResolution`). | `OnboardingResolution` | mcp/src/agents_remember/serving/response_contract.py:714-720 |
 | Current production declaration; the removed broad suite supplies no current execution proof. | `register_files_routes` | mcp/src/agents_remember/serving/files.py:303-325; mcp/src/agents_remember/serving/files.py:298-298 |
@@ -160,3 +164,5 @@ rejected, never silently re-rooted).
 `list_repos` now walks the task surface once, buckets entries by repository, and applies a short TTL memo. The repository-files API no longer repeats the same whole-task-tree traversal for each repository in one request.
 
 This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
+
+- The `WorktreeContract` (`code_worktree`, `worktree_group`, `cleanup`) + `load_contract`/`ContractError`.  Anchor: "coordination.worktree_group" [8]

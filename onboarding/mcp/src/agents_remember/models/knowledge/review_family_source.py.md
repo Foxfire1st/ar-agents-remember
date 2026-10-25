@@ -95,7 +95,9 @@ The rows name the declarations, the one producer that fills them and the cases t
 - The re-export that keeps every existing import from the family-context module working. [7]
 - The projection that fills a reference from one claim and its side's anchor observation. [8]
 - **The value case refusing a reference whose state, ranges or locator disagree, or that lacks role or rationale.** [9]
+
 - **The production-path cases for `resolved`, `whole_file` and `unresolved` on two real sides.** [10]
+
 - The dashboard's mirror of this reference. [11]
 
 ### Cross-Repo References

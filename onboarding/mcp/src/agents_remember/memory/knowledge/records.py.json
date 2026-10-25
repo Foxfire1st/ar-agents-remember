@@ -99,15 +99,14 @@
       ]
     },
     "18": {
-      "note": "- The predecessor edge rows and their sorted decode.",
+      "note": "- The predecessor edge tables are gone, so no edge rows are decoded and decoded predecessors are always ().\n\nAnchor: `decode_predecessor_rows`",
       "targets": [
         {
           "anchor": {
-            "blob": "0ee5929321e3f7a958a51aecc7f15c63d890c86c",
-            "content": "sha256:e9c1111ee6bf72be8101edf98ed111962667fec7a39cc1518757ec82902f2e62",
+            "blob": "4a64ad09c79633786d6408b2e814119580ad51e7",
+            "content": "sha256:92d4353cb71f442af226829358fd09ea8dd54591ffed608d4b7a3779190116b8",
             "locator": {
-              "kind": "symbol",
-              "name": "decode_predecessor_rows"
+              "kind": "file"
             }
           },
           "kind": "code"

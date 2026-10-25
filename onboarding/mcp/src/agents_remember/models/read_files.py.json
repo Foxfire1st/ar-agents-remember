@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/models/read_files.py",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
@@ -19,74 +20,15 @@
         }
       ]
     },
-    "2": {
-      "note": "**The new field, and the owning module that decides its shape.**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "7d25a2e02bdb37246754a3e63616de2e7abc66b1",
-            "content": "sha256:38ea8d8026bcdb87abd8f43c241b3b071dc3c7a09a95159c29de3edfcc619993",
-            "locator": {
-              "kind": "symbol",
-              "name": "published_intent"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "4be19bfc4f0db366151478c0195bb8e5278c7351",
-            "content": "sha256:62604cfa37b04d4736ba44eec3c0c18a9febf5ba9a6a0e05dfac1c0538c6c677",
-            "locator": {
-              "kind": "symbol",
-              "name": "published_intent_block"
-            },
-            "path": "mcp/src/agents_remember/application/published_intent.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "3": {
-      "note": "The application entry point producing the dict this validates; it imports `FileReadStatus` from this module, and `_resolve_onboarding` returns the narrowed type.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "44a4837c014364afc6109be5aec371fe8ba6f721",
-            "content": "sha256:6157b2420e3e8ea571063520975efc61eb411d5bd407360bc6b6d77d28fd30e3",
-            "locator": {
-              "kind": "symbol",
-              "name": "_resolve_onboarding"
-            },
-            "path": "mcp/src/agents_remember/application/read_files.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "44a4837c014364afc6109be5aec371fe8ba6f721",
-            "content": "sha256:c4a4bb6f2b0a7e1ffd4904f56fef1964293d4a9e69118fd0f172b3bcb90e300a",
-            "locator": {
-              "end": 275,
-              "kind": "line_range",
-              "start": 246
-            },
-            "path": "mcp/src/agents_remember/application/read_files.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "4": {
-      "note": "The three optional format fields a file result gains, and the module that fills them.",
+      "note": "The module that fills a read result's format fields: a converted tree's `text/v2` card format, sidecar and resolved references, and an unconverted tree's `legacy-format` knowledge section that resolves nothing from sidecars.\n\nAnchor: `FileRead` `converted_card_parts` `legacy_published_intent`",
       "targets": [
         {
           "anchor": {
-            "blob": "7d25a2e02bdb37246754a3e63616de2e7abc66b1",
-            "content": "sha256:201d42bd8ef81a981c642a3c51c90eb569dddd3c74df553f72e1601252af792d",
+            "blob": "ef10b35504e856788e45bc5b3988c4bab198da2f",
+            "content": "sha256:c6d5370cb33984aa7c8997c56fe3af7e65b2ada4e24f4414e62fb0636600b25b",
             "locator": {
-              "kind": "symbol",
-              "name": "FileRead"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -94,22 +36,9 @@
         {
           "anchor": {
             "blob": "e205b6901715509bfd25313dc4a389e5a7f45427",
-            "content": "sha256:8135a1645c156c32cd131dc041fe9b689c02dae9d8bd898ca235b326c67fddf2",
+            "content": "sha256:0ca57880f59cc9f8021c933139b5d8db9d88b2d816febfdd48165479aeb8a7b7",
             "locator": {
-              "kind": "symbol",
-              "name": "converted_card_parts"
-            },
-            "path": "mcp/src/agents_remember/application/read_files_format.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "09343f2e3a96434d893cbc90c2d4eec775a56055",
-            "content": "sha256:a3a13fce2f411e43fd4609617a39be3ded2a075d67558b1a5712f88434ecca43",
-            "locator": {
-              "kind": "symbol",
-              "name": "legacy_published_intent"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/read_files_format.py"
           },
@@ -122,12 +51,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c2f2a68ee84ec48aad55956ebf5a6719371ce655",
-            "content": "sha256:2767cb2360c4d99697b1247350242f02d4aa526cd27fc1f062c0b783c284935c",
+            "blob": "ca5af906298a90f3101a98a5542005e3549b3c0a",
+            "content": "sha256:3288c8742a935a86092795c9e6cb2278cf5decf5274226c2bc643cff00c18429",
             "locator": {
-              "end": 85,
+              "end": 86,
               "kind": "line_range",
-              "start": 85
+              "start": 86
             },
             "path": "mcp/src/agents_remember/models/tools/tool_registry.py"
           },
@@ -136,30 +65,25 @@
       ]
     },
     "6": {
-      "note": "Frozen implementation of ReadArFilesResponse supporting the stated file behavior.",
+      "note": "Frozen implementation of ReadArFilesResponse supporting the stated file behavior.\n\nAnchor: `ReadArFilesResponse`",
       "targets": [
         {
           "anchor": {
-            "blob": "7d25a2e02bdb37246754a3e63616de2e7abc66b1",
-            "content": "sha256:81e1ce3ef251132a3a24e406a453c81e614a65de550f234ccb38925f491f0089",
+            "blob": "ef10b35504e856788e45bc5b3988c4bab198da2f",
+            "content": "sha256:c6d5370cb33984aa7c8997c56fe3af7e65b2ada4e24f4414e62fb0636600b25b",
             "locator": {
-              "kind": "symbol",
-              "name": "ReadArFilesResponse"
+              "kind": "file"
             }
           },
           "kind": "code"
-        }
-      ]
-    },
-    "7": {
-      "note": "Current candidate source supports the operative account; historical sections grant no current tool or execution acceptance.",
-      "targets": [
+        },
         {
           "anchor": {
-            "blob": "f16f2fa511a8c67df58358ea6370a27900307caa",
-            "content": "sha256:0b663e87d455e3a199959cbbd6280f3bb08829e83bc16529db52ee6204e56a64",
+            "blob": "ef10b35504e856788e45bc5b3988c4bab198da2f",
+            "content": "sha256:3b5c7df8fc3fd18cbaf2b25613c6cc348de6fbb8fa153e6ccf3e3307af61f0b9",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "ReadArFilesResponse"
             }
           },
           "kind": "code"

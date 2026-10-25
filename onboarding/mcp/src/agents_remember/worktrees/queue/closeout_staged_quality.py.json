@@ -19,12 +19,23 @@
         },
         {
           "anchor": {
-            "blob": "f6650bb7d450287cab6ad239d276c815ea69ba0a",
-            "content": "sha256:0d470cbdd9e548292316309bbeabfbf9ec89a63d2ae18221a15c5635aece4905",
+            "blob": "b2f9f1624c63b2e7e58d9486c5d024f84fd7903e",
+            "content": "sha256:4e32a4467681e52e96db1ebbcaa00484efc4304fb67941857e9ffb0244b34ac4",
             "locator": {
               "end": 562,
               "kind": "line_range",
               "start": 548
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/quality/gate.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b2f9f1624c63b2e7e58d9486c5d024f84fd7903e",
+            "content": "sha256:3ab849260a52960a4ab8ac1cf2a6cab88fe6c349b1e5cae774746cc5905f0f23",
+            "locator": {
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/worktrees/modules/quality/gate.py"
           },

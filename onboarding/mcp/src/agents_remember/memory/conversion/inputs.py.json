@@ -38,15 +38,14 @@
       ]
     },
     "2": {
-      "note": "A Git tree, with its database blob copied to scratch.",
+      "note": "A Git tree, with its database blob copied to scratch.\n\nAnchor: `memory_from_git`",
       "targets": [
         {
           "anchor": {
-            "blob": "fff2f98f33f24eddf92fa9c0303c4146445047de",
-            "content": "sha256:ec28bf31657353edf13a81c5373ddeb2a623f8ee5a7ff16bc76c545d9b0f980b",
+            "blob": "bac2db1b4ec7034a89af7cff7887bdf71f8f37b4",
+            "content": "sha256:c798397e66324bae23cf9e1db7b029f3f4febaa2ef555d0ca50a93caf3a408a5",
             "locator": {
-              "kind": "symbol",
-              "name": "memory_from_git"
+              "kind": "file"
             }
           },
           "kind": "code"

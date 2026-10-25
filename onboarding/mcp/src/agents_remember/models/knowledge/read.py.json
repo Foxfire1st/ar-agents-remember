@@ -171,15 +171,14 @@
       ]
     },
     "2": {
-      "note": "**The read context and its two construction rules** (one namespace, and an all-or-nothing source resolution), with `task_ref=None` a supported state.",
+      "note": "**The read context and its two construction rules** (one namespace, and an all-or-nothing source resolution), with `task_ref=None` a supported state.\n\nAnchor: `KnowledgeReadContext`",
       "targets": [
         {
           "anchor": {
-            "blob": "1ef674f62b3c34b50d5240cd30a305b45f19b747",
-            "content": "sha256:1451c4c8bdaf6008308b301603f1897e473a9c954c1678f9207c71aab1944f8d",
+            "blob": "e3dd598b62290d22b1995fc556f1f6cc8ae0761f",
+            "content": "sha256:fbd98175de6f3059b83374833481f33639bdf4840ffee08959b2e96e4c46239f",
             "locator": {
-              "kind": "symbol",
-              "name": "KnowledgeReadContext"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -247,15 +246,14 @@
       ]
     },
     "4": {
-      "note": "**The correction this leaf's review sealed: the counts describe one walk, and the model refuses its own arithmetic contradiction.**",
+      "note": "**The correction this leaf's review sealed: the counts describe one walk, and the model refuses its own arithmetic contradiction.**\n\nAnchor: `KnowledgeReadCounts`",
       "targets": [
         {
           "anchor": {
-            "blob": "1ef674f62b3c34b50d5240cd30a305b45f19b747",
-            "content": "sha256:ad322a74d9200f564ac69b49ebde036ccc7fdbb3f8f96cdd77548304e55771bd",
+            "blob": "e3dd598b62290d22b1995fc556f1f6cc8ae0761f",
+            "content": "sha256:fbd98175de6f3059b83374833481f33639bdf4840ffee08959b2e96e4c46239f",
             "locator": {
-              "kind": "symbol",
-              "name": "KnowledgeReadCounts"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -388,41 +386,28 @@
       ]
     },
     "8": {
-      "note": "**The anchor observation, now declared in its own module with the structured `resolved_ranges` field, and the import that re-exports it here.**",
+      "note": "**The anchor observation, now declared in its own module with the structured `resolved_ranges` field, and the import that re-exports it here.**\n\nAnchor: `AnchorResolution` `resolved_ranges`",
       "targets": [
         {
           "anchor": {
-            "blob": "81c9e1852ad2d5926b77e5aebf0ef1df7caae2c6",
-            "content": "sha256:94101c434ec37600081cbe91b9d6a933676f9cd18397ca40c0d433c775a829d4",
-            "locator": {
-              "kind": "symbol",
-              "name": "AnchorResolution"
-            },
-            "path": "mcp/src/agents_remember/models/knowledge/read_anchor.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "81c9e1852ad2d5926b77e5aebf0ef1df7caae2c6",
-            "content": "sha256:00df60683c6562a39fed1cefd04740a3bdd3694504bcac425212fb50f8a370f4",
-            "locator": {
-              "kind": "symbol",
-              "name": "resolved_ranges"
-            },
-            "path": "mcp/src/agents_remember/models/knowledge/read_anchor.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "dfa378b1ad0369db827cbb8fe6d9b2e38296e7a4",
-            "content": "sha256:66cc3f65f03b02a10401d323c95df03ea60e255b5799c9aac7cb625631df15c7",
+            "blob": "e3dd598b62290d22b1995fc556f1f6cc8ae0761f",
+            "content": "sha256:cd42084679d5902d923a2a933251ad91fb412b12e9d123d35620e850294b4d5d",
             "locator": {
               "end": 51,
               "kind": "line_range",
               "start": 47
             }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "81c9e1852ad2d5926b77e5aebf0ef1df7caae2c6",
+            "content": "sha256:caf5ea39fb0824a0341eb53471ca97f16234f16c0ec22021f7c85744ce40c8e4",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/read_anchor.py"
           },
           "kind": "code"
         }

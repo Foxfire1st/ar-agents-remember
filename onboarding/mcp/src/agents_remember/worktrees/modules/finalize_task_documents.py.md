@@ -67,7 +67,9 @@ The leaf publication retains each owning `(path, document)` pair for the complet
 - Missing leaf/master/row authority refuses with repair guidance rather than standalone completion. [6]
 
 
+
 - Series finalization selects the master and any proven typed or correlated seat row; absent or ambiguous correlation is reported as skipped unless a parent was asserted. [1]
+
 - Targets are resolved by contract kind. [2]
 - The selected master-only or master-plus-sprint documents are previewed or published atomically after source rechecks. [3]
 

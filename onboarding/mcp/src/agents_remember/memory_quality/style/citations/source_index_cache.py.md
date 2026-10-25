@@ -82,7 +82,9 @@ This module defines the top-level symbols cited below; each row points at the ex
 
 
 
-- Defines the class `TerminalNamespaceGuard` (lines 182-388) — One exact-leaf terminal reservation held through mutation and publication. [10]
+
+- Defines the class `TerminalNamespaceGuard` - one exact-leaf terminal reservation held through mutation and publication. [10]
+
 
 - Defines the function `terminal_namespace_guard` (lines 391-429) — Reserve one exact contract namespace before any terminal mutation. [11]
 

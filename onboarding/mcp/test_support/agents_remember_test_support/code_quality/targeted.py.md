@@ -59,7 +59,9 @@ No external domain documentation governs this repository-local scope contract.
 - The result carries exact rail scope plus typed ownership evidence. [1]
 - The diff includes deletions and refuses Git failures. [2]
 - One graph derives closure and affected tests while explicit package authority derives product measurement scope. [3]
+
 - Consumer semantics, explicit global invalidation and unresolved-input decisions live at the canonical owner without deciding product ownership. [4]
+
 
 ### Cross-Repo References
 

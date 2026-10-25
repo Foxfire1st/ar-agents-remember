@@ -24,10 +24,15 @@ Pure selection and record-reading model for the document chat: which roles a sel
 Projects, sprint, commanded master and leaf roles retain explicit selection admission. Investigator is an additional explicit sprint/master launch choice, with leaf refusal and its own request identity; default documentChatAgent continues to select the Manager or Orchestrator rather than an Investigator.
 
 
+
 - The current source implements this file’s stated Investigator boundary. [4]
+
 
 
 ## Refreshed current evidence
 
+
 - An unsupported selection admits no start, and the ordinary Projects selection keeps its own role set. [5]
+
+
 - The agent pick matches the document key, skips archived records and picks the newest stable record. [2]

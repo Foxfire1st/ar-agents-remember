@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/worktrees/modules/integrate.py",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
@@ -70,8 +71,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f20ce65d92928ac53407197a9ce28d2197a9e42c",
-            "content": "sha256:b93c9b036f1d93a9f32ff95e9cce15ca814b5e19c0c781f51dd6d3d39553df2f",
+            "blob": "1f67d47b47455dbb360a0884ecaa0e4aa1da3383",
+            "content": "sha256:27fad559a8b42dd8535ce73c5eba0d269dafc45e5e0cc300ab1fbd175477a587",
             "locator": {
               "kind": "file"
             }
@@ -146,7 +147,7 @@
       ]
     },
     "4": {
-      "note": "Addressed handover gates and publication preserve the operation's real identity.",
+      "note": "**Retained historical source account — superseded by the current contract:** Addressed handover gates and publication preserve the operation's real identity.",
       "targets": [
         {
           "anchor": {
@@ -173,15 +174,14 @@
       ]
     },
     "5": {
-      "note": "Admission before ancestry and publication judges leaf or master pairs without writing refused state.\n\nAnchor: `integration_gate_block`, `_handover_or_apply_integration`",
+      "note": "**Retained historical source account — superseded by the current contract:** Admission before ancestry and publication judges leaf or master pairs without writing refused state.\n\nAnchor: `integration_gate_block` `_handover_or_apply_integration`",
       "targets": [
         {
           "anchor": {
-            "blob": "b7c1cdbb6b82fa751e51722404352099fba9aa25",
-            "content": "sha256:ba0f45687a8d0a9c237f8191b49fee25aef4d9515b6f927ee7e37a2a5006f76e",
+            "blob": "d2f3e6ac1adf4ec90ff5a8150cb65d2e46941403",
+            "content": "sha256:db02717153d515bdeec918a67b65300e96933de2ae80a8197b0525e3b7819cd1",
             "locator": {
-              "kind": "symbol",
-              "name": "integration_gate_block"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/worktrees/modules/integration_gate.py"
           },
@@ -189,11 +189,10 @@
         },
         {
           "anchor": {
-            "blob": "510ce3bd47c8e6687ab036ec8024f86be73694fb",
-            "content": "sha256:b96f886c56f695ec2ab36c6fa63344da1036cf866e5d23d81c5ed345b807c78b",
+            "blob": "1f67d47b47455dbb360a0884ecaa0e4aa1da3383",
+            "content": "sha256:27fad559a8b42dd8535ce73c5eba0d269dafc45e5e0cc300ab1fbd175477a587",
             "locator": {
-              "kind": "symbol",
-              "name": "_handover_or_apply_integration"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -201,26 +200,14 @@
       ]
     },
     "6": {
-      "note": "Final and checkpoint result publication differ without performing reclamation.",
+      "note": "**Retained historical source account — superseded by the current contract:** Final and checkpoint result publication differ without performing reclamation.\n\nAnchor: `_integrated_result` `_checkpoint_result`",
       "targets": [
         {
           "anchor": {
-            "blob": "f20ce65d92928ac53407197a9ce28d2197a9e42c",
-            "content": "sha256:9b0569f5ca05d19067afede918008bfa44c9c8bb9da3886a679c479845156ce7",
+            "blob": "1f67d47b47455dbb360a0884ecaa0e4aa1da3383",
+            "content": "sha256:27fad559a8b42dd8535ce73c5eba0d269dafc45e5e0cc300ab1fbd175477a587",
             "locator": {
-              "kind": "symbol",
-              "name": "_integrated_result"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "f20ce65d92928ac53407197a9ce28d2197a9e42c",
-            "content": "sha256:d7d91b4512ce137d8eb97c97d1387b517a258a8685570a07895fd244916c4b5c",
-            "locator": {
-              "kind": "symbol",
-              "name": "_checkpoint_result"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -228,27 +215,14 @@
       ]
     },
     "7": {
-      "note": "The shared writer records the two accepted output commits.",
+      "note": "**Retained historical source account — superseded by the current contract:** The shared writer records the two accepted output commits.\n\nAnchor: `LandedIntegration` `record_landed_integration`",
       "targets": [
         {
           "anchor": {
             "blob": "ebbbfe201ea75726d7329b0f6630e0492b26acfe",
-            "content": "sha256:f46a3881ddbfcf3bcca5dc6fc2e6126e4965b6d8371fe02cd53c5c4e658f3f81",
+            "content": "sha256:e5008e969eaed1fd2ba9adec9aead3037c5aa22d02b71cddd993131f9f1d04a9",
             "locator": {
-              "kind": "symbol",
-              "name": "LandedIntegration"
-            },
-            "path": "mcp/src/agents_remember/worktrees/modules/landing_record.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "5ce07976f06d314990369996912d3c5b84189410",
-            "content": "sha256:918866a94e6e1728f25cf722b59f70e381c35f294f453e3de8df76b06011cdf5",
-            "locator": {
-              "kind": "symbol",
-              "name": "record_landed_integration"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/worktrees/modules/landing_record.py"
           },
@@ -257,7 +231,7 @@
       ]
     },
     "8": {
-      "note": "The converted leaf rejudges its exact closeout pair; unconverted memory keeps the cutover lock.",
+      "note": "**Retained historical source account — superseded by the current contract:** The converted leaf rejudges its exact closeout pair; unconverted memory keeps the cutover lock.",
       "targets": [
         {
           "anchor": {
@@ -274,15 +248,14 @@
       ]
     },
     "9": {
-      "note": "One admission owner dispatches leaf pair judgment or master validator/staleness/history and chain judgment.",
+      "note": "**Retained historical source account — superseded by the current contract:** One admission owner dispatches leaf pair judgment or master validator/staleness/history and chain judgment.\n\nAnchor: `integration_gate_block`",
       "targets": [
         {
           "anchor": {
-            "blob": "b7c1cdbb6b82fa751e51722404352099fba9aa25",
-            "content": "sha256:ba0f45687a8d0a9c237f8191b49fee25aef4d9515b6f927ee7e37a2a5006f76e",
+            "blob": "d2f3e6ac1adf4ec90ff5a8150cb65d2e46941403",
+            "content": "sha256:db02717153d515bdeec918a67b65300e96933de2ae80a8197b0525e3b7819cd1",
             "locator": {
-              "kind": "symbol",
-              "name": "integration_gate_block"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/worktrees/modules/integration_gate.py"
           },

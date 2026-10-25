@@ -161,7 +161,9 @@ No configured live documentation source was available for this pass.
 - Held reuse admits only both exact candidate sides and the code repository. [23]
 
 
-- The module docstring: the rule, always recomputed, applicability and what is not wired. [1]
+
+- The module docstring: the rule, that the gate always recomputes and never reads a persisted worklist or trusts its digest, and the gate's applicability. [1]
+
 - The finding codes and the repair row. [2]
 
 - The exact candidate the gate judges. [3]
@@ -170,18 +172,26 @@ No configured live documentation source was available for this pass.
 - The recompute that never raises. [5]
 
 
+
 - Probe, tip, memo, then the recorded evaluation. [6]
+
+
 
 
 - The evaluation and the judgment. [7]
 
 
+
+
 - K_C and C read once; the invariant kinds first; a failed read is incomplete. [8]
+
 
 - The validator at the gate, as a leaf publication. [9]
 
 - The packet's examples: ready only once current rows answer every item, and its case asserts that a new edit reopens four items. [10]
+
 - A failed Git read inside a predicate or the validator is never a verdict. [11]
+
 
 - The file a row answering the leaf's items goes to: the latest attempt not closed in a base or in the leaf's memory HEAD. [12]
 
@@ -190,12 +200,16 @@ No configured live documentation source was available for this pass.
 - The gate names the attempt the writer writes. [14]
 
 
+
 - The gate reads the leaf's memory HEAD beside the parent tip, and keys its memo on both. [15]
+
 
 - The leaf's memory HEAD, or nothing when it cannot be read. [16]
 - The commits whose closed history files are frozen for the writer: the bases and HEAD. [17]
 - The validator inside the gate is handed the frozen commit's history files. [18]
+
 - A leaf that continues after its closeout is refused while an item is open, and the refusal names attempt 2. [19]
+
 
 - Cold evaluation replays its collected reads before memo admission; memo-hit worklist persistence remains optional. [20]
 - Applicability delegates to leaf_gate_applies and treats unreadable layout probes as applicable. [21]

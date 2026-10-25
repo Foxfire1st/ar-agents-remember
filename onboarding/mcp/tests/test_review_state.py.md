@@ -43,15 +43,25 @@ No configured external source applies.
 
 ### Repo-Internal References
 
+
 - Missing/zero state starts round one and pending replay is idempotent. [1]
+
+
 - Baseline sealing and successor rounds only shrink remaining IDs. [2]
+
 
 - Successor witnesses reject new and duplicate IDs and a PASS with unresolved IDs; this extent does not exercise reintroduction of an eliminated ID. [3]
 
 - Recording without begin starts the baseline and still requires a valid verdict. [4]
-- Ordinary exhaustion refuses the next round beyond the fallback budget with count and limit. [5]
+
+- Ordinary exhaustion refuses the sixth round at the default five-round limit, naming the count and the limit. [5]
+
+
 - Recorded architect/developer approval adds cumulative rounds only at exhaustion and preserves findings; legacy developer words stay readable. [6]
+
+
 - Malformed approval payloads leave exhausted state unchanged. [7]
+
 
 ## Historical L41 Source File Binding
 

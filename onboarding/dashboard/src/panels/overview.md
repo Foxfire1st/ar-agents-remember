@@ -197,36 +197,72 @@ MIK-R174 and MIK-R175 changed two visible Operations contracts. The started band
 ## Evidence
 
 - The started band orders host-timed rows newest first and leaves untimed rows in the server's order. [197]
+
 - The row's native title is gone from every ancestor of a step mark while its own cells keep the hover text. [198]
 
+
+
 - The list combines selection-episode releases with parent-only unmodified arrows and observes hidden selectedId changes. [194]
+
 - The shared master-page disagreement renderer draws served rows and offers jumps only to records in the task map. [195]
 - Marks only from the owner's response, placed on its side lines. [5]
+
 - Every owner hunk a pane draws is placed; the list and the reveal of a return. [6]
 
+
+
 - The unknown-membership state in the rail. [9]
+
+
 - The explorer's and the details' labels from the lane. [10]
 
+
+
 - The entry's count as its own element. [14]
+
+
 - The decision, the ratio and rule 1a. [15]
+
+
 - The tree-comparison scope, the statement area and the changed guarantee. [16]
+
+
 - Each side's text from its own row, the filtered field rows, and the text-first decision. [17]
-- On real bodies: a tree review word-diffed, a dataset review as landed, and one guarantee revision never called unchanged. [19]
+
+
+- The mounted tree-review cases word-diff member prose and the family guarantee, and never label one guarantee revision unchanged when its before/after texts differ. These source cases do not provide a dataset-review execution claim. [19]
+
 - The receipt of the captured bodies (five since L31). [29]
-- The receipt's MIK-L31 re-capture, which replaced the not-re-captured section. [30]
-- The case header stating which bodies were re-captured (both captures since MIK-L31's follow-up). [31]
+
 - The header count itself. **Withdrawn in part:** the tooltip this row cited stated *what* the count counts, and the L33 revert removed it with the landed-leaf change — the h2 is again a bare `Tasks · {count}`. [39]
+
+
 - The bar's request for the net's per-leaf attribution. [40]
+
+
 - The `Cockpit` view map contains the declared view map. [41]
+
+
 - The current Chats cockpit keeps RoleChatsPane mounted while hidden; the former SessionsView topology is historical, not a current mount. [42]
+
+
 - The current persistent Chats layer mounts one RoleChatsPane; the former SessionsView selected-context wiring is historical, not a current mount. [43]
+
+
 - Dashboard state authority is held by `DashboardState`, `dashboardStore`, and `applySnapshot`. [44]
+
 - The production application route is owned by `App`. [45]
+
 - The production route returns `Cockpit`, which wires the live streams and renders `CockpitShell`, opening it on the Knowledge view for a `#knowledge?…` reader URL (MIK-R29). [46]
+
+
 - `CockpitShell` defaults `initialView="chats"`; `VIEWS` is the four-entry product bar. [47]
 
 
+
+
 - LifecycleList consumes native entry rows and preserves grouping, selection and one-shot reveal without the removed lifecycle hierarchy adapter. [52]
+
 
 
 
@@ -234,7 +270,9 @@ MIK-R174 and MIK-R175 changed two visible Operations contracts. The started band
 
 
 
+
 - Native task stage/activity/eventAt replaces the removed session State/Phase live-terminal partition as the Operations state input. This is a distinct model, not a renamed session vocabulary. [54]
+
 
 
 
@@ -242,7 +280,10 @@ MIK-R174 and MIK-R175 changed two visible Operations contracts. The started band
 
 
 
+
 - The typed native projection factory supplies tasks/taskCounts and analytics defaults. Mirror-conforming sampled shape is not producer completeness or fresh test/runtime acceptance. [56]
+
+
 
 - `Dot` renders its state glyph inside `aria-hidden="true"`. [58]
 
@@ -253,34 +294,61 @@ MIK-R174 and MIK-R175 changed two visible Operations contracts. The started band
 
 
 
+
+
 - **The entry threading the published generation into the viewer target.** [63]
+
 - **The generation state the button carries from a successful master read.** [64]
 - Family excerpt arithmetic groups recorded addresses and distinguishes changed, resolved and unmeasured realization readings. [110]
 - Per-side resolution and observed identities attach to the same recorded-address key. [111]
-- **The mounted case: the rendered count is the body's distinct excerpt set, every row's collapse count is the body's own group size, and EVERY rendered row's `data-sides` is checked against the sides the body resolves that excerpt on — the page's own both-sides sentence verified row by row against the body, not read from the page.** [113]
 - **The new unit lane for the same arithmetic, its own statement of which inputs are constructed, and the pair of cases that state the whole key contract between them (recorded keeps two blobs at one path apart; observed may not, because two sides of one address legitimately see different bytes).** [114]
+
 - The compact control, its brief states and its disclosure (since MIK-L32 with the lane's count beside `+N −N`). [115]
+
 - The entry mounted in place of a change-set button. [116]
+
 - The leaf-scoped facts and re-validation generation. [117]
+
+
 - A history row's line: its effect, and its because targets as links. [120]
+
 - An incoming link from a history row names the record the row is about. [121]
-- The panel: status line, degraded sides, diff, currentness, worklist. [125]
-- The notice for a loading and for an unavailable read; nothing for any other phase. [126]
+
+- The worklist panel: status line, degraded knowledge sides, currentness, worklist groups and gate linkage, with changed knowledge files opened in the change-set viewer. [125]
+
+
+- The read notice states the loading read, the unavailable read's failure and next action, the not-converted explanation, and a fallback that the leaf's worklist is unavailable. [126]
+
+
 - The notice says that it is computing, as a status region. [128]
+
+
 - The notice names the failure and its action. [129]
+
+
 - The surface's hook composes navigation, read cycle, cache, selection, refresh and retry, and the reading status. [131]
+
+
 - The read cycle: the read state bound to its question, and the task-context frame. [133]
+
+
 - The bounded cache of one mounted surface and its generation test. [134]
+
+
 - The one failure and refusal block, with the retry control of a network failure. [135]
+
 
 
 
 - One step of the walk: an in-tree selection keeps, any other selection and another comparison replace. [144]
 - A refresh starts the tree afresh and asks only for a scroll; the retry of a failed refresh is the refresh again. [147]
 - The page controls: a next page only for a published cursor, and the refusal of a requested page. [151]
-- The mounted case of the key walk on real data. [152]
+
+- The mounted case on real data: the seven changes are listed first, each is selected by its row with one read apiece, and the first family is kept. [152]
+
+
 - The mounted cases of the reviewer between a selection and its answer. [153]
-- The notice draws nothing for a dataset review. [154]
+
 
 - Current ownership/control, without execution or runtime tool exposure inferred. [159]
 
@@ -290,85 +358,182 @@ MIK-R174 and MIK-R175 changed two visible Operations contracts. The started band
 
 
 
+
 - The recorded-history block owns full step fields, strict states and native keyboard explanations, not a computed verdict. [163]
 
+
 - The intent entry always opens task-context review, supplying `review: {}` for a live and a closed leaf alike; liveness reaches only the `(recorded)` label, while summary state labels rather than gates the button. [59]
+
 - The subject-catalogue hook serves reviewer navigation, not task-entry admission; the task entry reads a summary and no catalogue. [60]
+
 - `DocChangeSetBar` checks whether any entry worktree has `codeWorktreeExists` or `memoryWorktreeExists`; that liveness labels the entry context recorded rather than selecting it, and is not catalogue-subject admission. [61]
+
 - The catalogue client and subject shape serve reviewer subject navigation; task-entry summary and clickability are separate. [62]
-- Artifact reader includes task reports and whole decision logs [165]
-- Decision preview excludes product records and limits authored entries to five [166]
+
+> Retained earlier citation wording: - Artifact reader includes task reports and whole decision logs [165]
+
+
+
+
+
+- Non-authored field rows distinguish an absent value from a recorded empty string. The decision list and its preview number authored decisions from the oldest, draw the five newest, exclude product records, and keep the whole log one link away. Source caption: `fieldValue` [166]
+
+
+
+
+> Retained earlier card wording; superseded by the current account above: - The decision list and its preview: authored decisions numbered from the oldest, the five newest drawn, product records excluded, and the whole log one link away. [166]
+
+
+
 - Superseded successful whole-task reads have a guarded unshown-cache exception [167]
+
 - Continuation admission checks identity and cursor; sparse claims preserve earlier content [170]
 - Walked families preserve prior reads but reset across incompatible comparison/selection [171]
+
 - Semantic triage counts returned facts, states unknown totals and keeps scoped weight at least unknown [172]
+
 - Classification cache shares successful acquisition but releases non-ready attempts [174]
-- Excerpt marker loading states the `intent marks loading…` note rather than staying quiet. [175]
+
+
+
+- Unlisted reads render the partial-inventory explanation. Excerpt marker loading renders its own status paragraph: `data-marks-state="loading"` with `intent marks loading…` for an excerpt and `reading this file's intent marks…` otherwise. Unavailable reads render the owner's problem code and detail, and content mismatches render the not-placed explanation. When none of those states applies, it returns no paragraph. [175]
+
+
+> Retained earlier card wording; superseded by the current account above: - Excerpt marker loading states the `intent marks loading…` note rather than staying quiet. [175]
+
+
 
 - Family expression keys use recorded identity; observed readings stay per side [178]
 
 - Network-only retry and intent-only source alternative remain explicit [181]
+
 - The comparison page's All code list identifies byte-form inventory paths as explicitly nonopenable [182]
+
+
 - Current intent entry uses liveness for the `(recorded)` label rather than to hide the entry or to choose a different record [183]
+
+
 - Master change-set read includes leaves and carries published generation [184]
+
+
 - Collapse hook has one stored key set and toggle API [185]
+
 - Knowledge reads bind to address; reader shares records and responsive citation navigation [186]
 
-- Exact currentness mark words coexist with an open supplied-reason sibling. [165]
-- Non-authored field rows distinguish absent and recorded-empty values. [166]
+
+- Exact currentness mark words coexist with an open supplied-reason sibling.  Artifact reader includes task reports and whole decision logs [165]
+
+
 
 - The task list head owns the attention bell and the actual row renderer. [190]
+
+
 - The bounded Popover/Dialog retains source-scoped queue actions. [191]
 
+
+
 - The remaining Operations rowState and treeRows modules own task-row facts and hierarchy; the removed chat activity indicator supplies no current state owner. [192]
-- The conforming example on real data. [27]
+
+
+- The mounted family-tree example asks for sorted distinct subjects at the same comparison, renders changed proof/realization expression cards and unchanged location groups, and exposes the subject worklist separately. These are source assertions over served fixtures. [27]
+
+
 - The one case: the landed workspace over a converted leaf's trees. [28]
+
+
 - The hand-kept snapshot payload provides the generated timestamp. [57]
+
 - **The two readers share one hoisted helper — `unlistedPathNote` (`FamilyReviewCenter.tsx:87`), called by the member attribution at `:139` and by the family expression row at `:275` — while each renders a listed path separately: the attribution inlines its own branch and the family side uses `listedOrPlainPath` (`:286`), so no two-shared-owner guarantee holds.** [112]
 
 
+
 - Selected family and invariant centers join recorded steps to their own identities and preserve independent guarantee/statement/source/evidence content. [162]
+
+
 - Four product destinations, Chats default and retained Operations/File/Knowledge composition Family-center order shares the outline ranking while retaining the semantic revision roster. [164]
+
 
 
 
 - The task-page grant switch keys on native planned stage and the document subTask kind; other granted states show bare words. This does not move grant authority into the browser. [193]
 
 - Whitespace-only classification preserves ordered non-whitespace tokens; rewrite ratio is strict, and bounded list alignment is a separate no-guessed-pairs mechanism. [177]
+
 - Technical details projects the current payload without restoring retired assessment/evidence envelopes; open main facts remain a separate owner. [136]
+
+
 - Semantic statement states and selected-revision operands govern rendering; missing/unresolved is not known absence. [180]
 
+
+
 - Current composition owners for the review page account. [199]
+
+
 - Current shell owners for the review page account. [200]
+
+
 - Current navigation owners for the review page account. [201]
+
+
 - Current reads owners for the review page account. [202]
+
 - Current selection owners for the review page account. [203]
+
 - Current chat owners for the review page account. [204]
+
+
 - Current tray owners for the review page account. [205]
+
+
 - Current watch owners for the review page account. [206]
+
 - Current cache owners for the review page account. [207]
 - Current model owners for the review page account. [208]
+
 - Current markers owners for the review page account. [209]
+
 - Current tree owners for the review page account. [210]
 - Current family owners for the review page account. [211]
 - Current source owners for the review page account. [212]
+
 - Current lane owners for the review page account. [213]
+
+
 - Current details owners for the review page account. [214]
+
 - Current sort owners for the review page account. [215]
 - Current traversal owners for the review page account. [216]
+
 - Current worklist owners for the review page account. [217]
+
 - Current layout owners for the review page account. [218]
 - Current focus owners for the review page account. [219]
 - Family/member semantic slots preserve guarantees, meanings, realization resolution, evidence and subject worklist; the reading page owns code blocks. [109]
+
 - Inline lane content and Full page actions share one comparison-bound lane read and retained overlay filters. [11]
+
 - Selected semantic details retain the subject worklist/knowledge notice owner; page-level Worklist is separate. [122]
+
 - ReadingContext passes only the matching leaf-wide worklist to page cards and selected semantic content. [123]
+
+
 - PageReading places WorklistView in the reading-column replacement slot; selected semantic details retain their own subject worklist. [124]
+
+
 - useChangeSet owns leaf-wide trees, shown-invariant cards, summary and lane; one model feeds both columns. [127]
+
+
 - useChangeSet supplies one comparison-scoped lane read to page content and held comparison-page facts. [13]
+
+
 - Operations’ ReviewMain mounts the optional-subject/history reviewer beside the stable shared task chat. [130]
+
+
 - Page structure persists over an admitted frame; TechnicalDetails labels subject records from shown answers only. [132]
+
+
 - ReadingColumn is the persistent reading scrollport with page-level notes, summary, subject sections, lane, canvas and details. [137]
+
 - changeSetModel applies the shared sort to subjects/locations without inventing semantic or source facts. [138]
 - One Sort uses review.tree-order.v1; Priority defaults and legacy triage maps to Priority. [139]
 - Traversal follows displayed changed blocks then loaded lane hunks and excludes continuation controls. [140]
@@ -382,17 +547,29 @@ MIK-R174 and MIK-R175 changed two visible Operations contracts. The started band
 - Selection focus lands locally on the tree after the relevant answer, preserves moved focus and keeps failed/refused requests for retry. [150]
 - The page’s subject content renders recorded effect facts while compact tree rows keep their own single-line presentation. [160]
 - ReviewTree’s compact rows are navigation over the shared model; semantic records remain in reading subject slots. [161]
+
 - Reading page context remains mounted while selected answer status changes; the comparison overlay retains the hidden inert page underneath. [168]
+
 - ReviewSurface owns the keyboard zone; ReadingColumn or stacked ReviewMain owns vertical scrolling. [169]
 - Block traversal excludes unknown/unchanged blocks and admits loaded lane hunks in file order. [173]
+
 - Marker Back restores subject, family selection and worklist, then returns focus to the origin marker. [176]
+
+
 - Page cards and selected subject worklist content require the same comparison’s matching leaf-wide worklist. [179]
+
 - Compact tree row labels and reasons come from the shared model, preserving one line and complete accessible names. [18]
+
 - useChangeSet shares one leaf-wide comparison with model/cards/worklist; useSurface wires active live memory invalidation. [196]
+
 - ReviewBlockCard renders a shared region with entry-specific rationale and tray actions. [24]
 - changeSetModel groups shared regions and gives one order to tree and reading content. [25]
+
 - Page card reads are tree-comparison-bound; worklist marks use the matching leaf-wide comparison. [26]
+
+
 - ReviewSurface owns page markers around ReviewGrid and ReadingColumn; ReviewWorkspace supplies selected semantic content. [8]
+
 
 
 - The task document head offers one canonical-reference task pick only when that reference exists. [220]
@@ -401,3 +578,5 @@ MIK-R174 and MIK-R175 changed two visible Operations contracts. The started band
 - Knowledge sidebar toggles follow the responsive tree and aside layouts. [223]
 - The Knowledge toggles stay in the document column while the aside and its resize handle are hidden in place. [224]
 - The mounted citation case checks recovery from a hidden aside while retaining the same prose node, scroll position and path address. [225]
+
+- The mounted current capture renders four distinct family-expression rows for five recorded membership occurrences. The collapse counts sum to five, the largest is two, the verdict names both counts and distinguishes them from the comparison's measured change set, and five membership openers remain. This current case does not assert every row's data-sides or per-side readings. The former every-row side-check claim is superseded historical evidence, not current execution. Historical former note (superseded): **The mounted case: the rendered count is the body's distinct excerpt set, every row's collapse count is the body's own group size, and EVERY rendered row's `data-sides` is checked against the sides the body resolves that excerpt on — the page's own both-sides sentence verified row by row against the body, not read from the page.**  Anchor: "renders the family's changed expression excerpts, deduplicated, over the captured family"; `dataset.sides` [226]

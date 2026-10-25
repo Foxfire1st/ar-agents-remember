@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/application/knowledge_gate/landing.py",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
@@ -95,8 +96,18 @@
       ]
     },
     "3": {
-      "note": "The refusal and the named remedy.",
+      "note": "The refusal and the named remedy.\n\nAnchor: `landing_refusal` `_findings`",
       "targets": [
+        {
+          "anchor": {
+            "blob": "95eb2af092cad6e8624da3e1b504ce58c42d553c",
+            "content": "sha256:8697a207141cabd4ea8806b80a6dbfb7dbef2dd856c094a9d9ae86a462f51d6e",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
         {
           "anchor": {
             "blob": "95eb2af092cad6e8624da3e1b504ce58c42d553c",
@@ -110,8 +121,8 @@
         },
         {
           "anchor": {
-            "blob": "3213945d3a0e037c65ef4e711acaeabcf2b60d99",
-            "content": "sha256:ba40c799a94693f160b21cf415d9547e408c17f4859423985306d01434243396",
+            "blob": "95eb2af092cad6e8624da3e1b504ce58c42d553c",
+            "content": "sha256:6082768edc92293f96257f90e2d05f8ae876c3db9c13c0a7ca5dc3970c4cb3c8",
             "locator": {
               "kind": "symbol",
               "name": "_findings"
@@ -226,12 +237,22 @@
       ]
     },
     "9": {
-      "note": "Every newly closed master history file is authenticated against its owner publication.",
+      "note": "Every newly closed master history file is authenticated against its owner publication.\n\nAnchor: `_master_history_ownership`",
       "targets": [
         {
           "anchor": {
-            "blob": "e9ed87994a579daa9e148c94dbe0fe3961ea1271",
-            "content": "sha256:f918abeda974e84ceae8b7510a32b26d8a8abbbc869e18948bdc2d526bce6fca",
+            "blob": "95eb2af092cad6e8624da3e1b504ce58c42d553c",
+            "content": "sha256:8697a207141cabd4ea8806b80a6dbfb7dbef2dd856c094a9d9ae86a462f51d6e",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "95eb2af092cad6e8624da3e1b504ce58c42d553c",
+            "content": "sha256:2f51e40a66336e759050f935b44b06cdfea2b7c0403063630d84f84f3411907e",
             "locator": {
               "kind": "symbol",
               "name": "_master_history_ownership"

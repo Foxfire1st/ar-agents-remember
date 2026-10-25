@@ -182,16 +182,14 @@ make no acceptance claim.
 
 - The product citation-mutation guard refuses the official memory repository. [1]
 
-- The world: a code tree and the memory tree that documents it, both under one temporary root, with the citation cache slot its census was built in removed. [2]
 The product refusal is definition-addressed rather than the old module-header location; no fresh mutation execution is claimed.
 - The live tree, named by the run and skipped when no run names one. [3]
 - The escape resolved where cell text becomes anchor text, which is where the `T57` blind spot was. [9]
 
+
 - Both cells and the quote path preserve escaped/plain anchor agreement; the row case now derives text from live cell spans. [10]
 
-- Historical retired-class account only: the wrapped-`cit:` detector, proven by a planted shape so the corpus zero is measured. [11]
-- Historical retired-class account only: the code repository's own markdown, enumerated: zero wrapped constructs is the pin. [12]
-- Historical pair measurement only, not a live current pin: `T52` 130, enforced 97, `T58` 3 constructs in 2 documents, on the pair. [13]
+
 - Every stale site the sweep found, with the pair it states and the ceiling it was written against. [14]
 - The subset a repair moves, counted separately from the worklist the next curation inherits. [15]
 
@@ -205,13 +203,24 @@ The product refusal is definition-addressed rather than the old module-header lo
 - The live arm that reds when the pinned population moves in either direction. [22]
 - The two section-boundary bounds of the worklist rule, each with its direction, measured on planted documents. [23]
 
+
 - The budget screen dynamically reads declaration line positions, pins 10,000/1,000 and matching stubs, and bounds the live overview sentence check. [24]
 
+
+
 - The repaired sentence held by a case now that its stale entry is gone, so a repair is not a gap. [25]
+
 - Both figures asserted separately at every pinned site, so a site that has moved on is red. [26]
 - The two figure classes counted separately: a live claim is not a dated record, and the worklist is larger than the set a repair moves. [27]
 - The module's own mutation boundary, read from its own AST (`T114`'s bound). [28]
-- The lane row that keeps this module in the default selection. [29]
+
+
+
+
+- The lane row that keeps this module in the default selection. Source caption: "mcp/tests/test_memory_citation_agreement.py" [29]
+
+
+
 
 ### Cross-Repo References
 

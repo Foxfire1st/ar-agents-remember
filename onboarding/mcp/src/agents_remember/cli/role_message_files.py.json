@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/cli/role_message_files.py",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
@@ -94,15 +95,14 @@
   ],
   "references": {
     "1": {
-      "note": "Stage and sync the payload once, allocate with a bounded cache and atomic no-overwrite link.",
+      "note": "Stage and sync the payload once, allocate with a bounded cache and atomic no-overwrite link.\n\nAnchor: `store_message_file`",
       "targets": [
         {
           "anchor": {
-            "blob": "b88f616b0da5d17187a7a327472cdb88c372111a",
-            "content": "sha256:b53be49f492e169bb4e5f88aca08b26e74cfca4098733c021704f3d39cdc5d7e",
+            "blob": "d926d3af762b8b31579204690834fb6f694fae7f",
+            "content": "sha256:b84ab88000ba46ed36a76583e57cb373cc60f0f098d89d16c7090c49b56ae436",
             "locator": {
-              "kind": "symbol",
-              "name": "store_message_file"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -110,15 +110,14 @@
       ]
     },
     "2": {
-      "note": "Scope storage to the narrowest shared task, or the sender class's taskless execution record.",
+      "note": "Scope storage to the narrowest shared task, or the sender class's taskless execution record.\n\nAnchor: `narrowed_scope`",
       "targets": [
         {
           "anchor": {
-            "blob": "b88f616b0da5d17187a7a327472cdb88c372111a",
-            "content": "sha256:b7bf420db4ab0682673fe8a34f04f7b563888f25603a178af660630c0b51ad06",
+            "blob": "d926d3af762b8b31579204690834fb6f694fae7f",
+            "content": "sha256:b84ab88000ba46ed36a76583e57cb373cc60f0f098d89d16c7090c49b56ae436",
             "locator": {
-              "kind": "symbol",
-              "name": "narrowed_scope"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -158,15 +157,14 @@
       ]
     },
     "5": {
-      "note": "Failed copies remove their partial target and earlier message-owned copies.",
+      "note": "Failed copies remove their partial target and earlier message-owned copies.\n\nAnchor: `_copy_planned`",
       "targets": [
         {
           "anchor": {
-            "blob": "b88f616b0da5d17187a7a327472cdb88c372111a",
-            "content": "sha256:0e52eec2a28d3115dd168e02dc4289aead0b698d59bf3081d6de4dcd9a763b34",
+            "blob": "d926d3af762b8b31579204690834fb6f694fae7f",
+            "content": "sha256:b84ab88000ba46ed36a76583e57cb373cc60f0f098d89d16c7090c49b56ae436",
             "locator": {
-              "kind": "symbol",
-              "name": "_copy_planned"
+              "kind": "file"
             }
           },
           "kind": "code"

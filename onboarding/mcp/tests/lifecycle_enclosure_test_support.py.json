@@ -1,5 +1,6 @@
 {
   "path": "mcp/tests/lifecycle_enclosure_test_support.py",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
@@ -21,8 +22,8 @@
     },
     {
       "anchor": {
-        "blob": "cedc06c451be64665d2a9476587730918f4e088e",
-        "content": "sha256:99f0b1e2b5666b7a4b4b4787a5d39cbed4f703cf0a6c40f2c9461c4ad36162a9",
+        "blob": "550045e865c871fe9ee1356984795629372f872d",
+        "content": "sha256:389a917ed5a9019972defd3ce9593f8202f69c144c1aa715c7349c1cb08ac424",
         "locator": {
           "kind": "file"
         }
@@ -33,21 +34,22 @@
         "handoffEntry": "L198-F-mcp-tests-lifecycle_enclosure_test_support",
         "leaf": "260928-MIK-L198"
       },
-      "rationale": "The test support removes each published enclosure's outside scratch root when the run ends, reading it from the manifest or the contract.",
+      "rationale": "The support at C still removes a published enclosure's outside scratch root at run end, in the module whose parent/marker/ownership refusals the invariant states, and its whole-file anchor matches C.",
       "role": "support"
     }
   ],
   "references": {
     "1": {
-      "note": "No external domain source is required for this repository-owned test contract.",
+      "note": "No external domain source is required for this repository-owned test contract.  Anchor: `enclosure_contract`",
       "targets": [
         {
           "anchor": {
-            "blob": "5adf43fb3f43d10f20b90233a0f6a30032007863",
-            "content": "sha256:f070cf3c1b6247f330c44529cb342ebc172ca4cbf2fc62384aad6d5ab601a23f",
+            "blob": "550045e865c871fe9ee1356984795629372f872d",
+            "content": "sha256:389a917ed5a9019972defd3ce9593f8202f69c144c1aa715c7349c1cb08ac424",
             "locator": {
-              "kind": "symbol",
-              "name": "enclosure_contract"
+              "end": 191,
+              "kind": "line_range",
+              "start": 1
             }
           },
           "kind": "test"
@@ -55,15 +57,16 @@
       ]
     },
     "2": {
-      "note": "The selected scenarios and assertions implement this test unit's forcing proof.",
+      "note": "The selected scenarios and assertions implement this test unit's forcing proof.  Anchor: `enclosure_contract`",
       "targets": [
         {
           "anchor": {
-            "blob": "5adf43fb3f43d10f20b90233a0f6a30032007863",
-            "content": "sha256:f070cf3c1b6247f330c44529cb342ebc172ca4cbf2fc62384aad6d5ab601a23f",
+            "blob": "550045e865c871fe9ee1356984795629372f872d",
+            "content": "sha256:389a917ed5a9019972defd3ce9593f8202f69c144c1aa715c7349c1cb08ac424",
             "locator": {
-              "kind": "symbol",
-              "name": "enclosure_contract"
+              "end": 191,
+              "kind": "line_range",
+              "start": 1
             }
           },
           "kind": "test"
@@ -71,15 +74,16 @@
       ]
     },
     "3": {
-      "note": "No meaningful cross-repository reference applies.",
+      "note": "No meaningful cross-repository reference applies.  Anchor: `enclosure_contract`",
       "targets": [
         {
           "anchor": {
-            "blob": "5adf43fb3f43d10f20b90233a0f6a30032007863",
-            "content": "sha256:f070cf3c1b6247f330c44529cb342ebc172ca4cbf2fc62384aad6d5ab601a23f",
+            "blob": "550045e865c871fe9ee1356984795629372f872d",
+            "content": "sha256:389a917ed5a9019972defd3ce9593f8202f69c144c1aa715c7349c1cb08ac424",
             "locator": {
-              "kind": "symbol",
-              "name": "enclosure_contract"
+              "end": 191,
+              "kind": "line_range",
+              "start": 1
             }
           },
           "kind": "test"

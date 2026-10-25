@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/models/lifecycles/curator_coherence.py",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
@@ -241,12 +242,23 @@
       ]
     },
     "9": {
-      "note": "The R03 dependency vocabulary used by this record type.",
+      "note": "The R03 dependency vocabulary used by this record type.\n\nAnchor: `EvidenceDependencies` `dependency` `require_evidence_dependencies`",
       "targets": [
         {
           "anchor": {
-            "blob": "747ceef9f19039b540d51ee10fd567e30e334606",
-            "content": "sha256:3826a1bd503b7587de8e27dd199d947841406a701ee612631f92e3df23d9e493",
+            "blob": "d641c183171962d4b4496d7d8daaa1f74b440e10",
+            "content": "sha256:4ebc3a89d0db8236a5e514dd8b929911f4700ef533acb0a50a91edde8f779e67",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d641c183171962d4b4496d7d8daaa1f74b440e10",
+            "content": "sha256:d494eee35e72faaa38064fb46eed8c686a13113da442f34a75052a5faaeb04dc",
             "locator": {
               "kind": "symbol",
               "name": "EvidenceDependencies"

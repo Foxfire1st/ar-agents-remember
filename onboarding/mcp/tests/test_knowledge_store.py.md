@@ -49,22 +49,34 @@ one.
 
 ### Repo-Internal References
 
-- Three separately recorded single-revision records stay independently addressable. [1]
+
+- Three separately recorded single-revision records stay independently addressable with their exact statements. [1]
+
+
 
 
 - Identity/schema preserved on reopen. [2]
 
 
+
+
 - Stored revisions reject mutation. [6]
+
+
 
 
 - Decode verifies seal beyond statement. [7]
 
 
+
+
 - Schema drift and unsupported files refuse. [8]
 
 
+
+
 - Read-only production store and test-only builder. [13]
+
 
 ### Docs References
 
@@ -73,13 +85,28 @@ No domain documentation source is configured for this repository (`system/source
 
 No configured domain documentation could be checked.
 
-- The current separate-record revision read; the former divergent-successor population is not this text fixture's executable coverage. [14]
+
+- The current separate-record revision read: three single-revision records stay independently addressable, and the former divergent-successor population is not this fixture's executable coverage. [14]
+
+
 - The database-level immutability proof against the stored revision rows. [15]
+
+
 - The seal covering more than the statement. [16]
+
 - The layer-direction case. [17]
+
 - The shared fixture every case builds from. [18]
+
 - The lane registration that makes the repository's manifest load (this module's row inside the lane, after the `KS-R03` insertions). [19]
-- The fixture's registered stable contract and evidence node. [20]
+
+
+
+
+- The fixture's registered stable contract and evidence node. Source caption: `knowledge-identity-branching-fixture` [20]
+
+
+
 
 ### Cross-Repo References
 

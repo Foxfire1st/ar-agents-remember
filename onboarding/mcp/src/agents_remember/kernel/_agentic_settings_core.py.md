@@ -71,12 +71,18 @@ Existing review maxRounds, roleMessageLimit, landing timeout, optional profile-o
 
 ## Evidence
 
+
 - Separate ordinary launch vocabulary from outer stepUp. [3]
+
 - Typed alternative has choices, count and provenance. [4]
 - No-op validation normalizes native tier aliases. [5]
+
 - Effective flat/altitude merge rechecks distinctness. [6]
+
 - Test source checks no-op alternatives caused by altitude or alias equality. [7]
+
 - Three is the counted-role threshold default, not a new review budget. [8]
+
 - Worker and Curator read independent persisted lanes. [9]
 - Only recorded rounds ending with findings in the role’s kind count. [10]
 
@@ -86,8 +92,12 @@ The module's own top-level surface is listed in Code Commentary; no cross-file c
 
 ### Runtime Source References
 
+
 - Frozen implementation of RoleKnobs supporting the stated file behavior. [1]
+
+
 - Frozen implementation of AgenticSettings supporting the stated file behavior. [2]
+
 
 ## L23 Final Candidate Disposition
 
@@ -103,4 +113,5 @@ Executor identity belongs to the repository certification profile, not to these 
 
 The review budget uses the settings number `orchestration.loops.defaults.maxRounds`. `MAX_REVIEW_ROUNDS` is removed; `DEFAULT_LOOP_MAX_ROUNDS` is the fallback used by `LoopDefaults` and the reference seed when no number is named. Any positive whole number is accepted by the parser. The settings/transition owners, not role prose, determine the number in force.
 
-- `CAPABILITY_IDS` names the non-seat capabilities that carry a launch block (`review-presenter`): their choices live under `orchestration.roles.<capability>` with the same per-field provenance and refusal rules as a seat, while the capsule, dispatch and level tables stay seat-only. \[11] [11]
+
+- `CAPABILITY_IDS` names the non-seat capabilities that carry a launch block (`review-presenter`): their choices live under `orchestration.roles.<capability>` with the same per-field provenance and refusal rules as a seat, while the capsule, dispatch and level tables stay seat-only. [11]

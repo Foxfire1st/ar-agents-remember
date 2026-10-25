@@ -2,16 +2,16 @@
   "path": "mcp/src/agents_remember/memory_quality/style/citations/documents",
   "references": {
     "1": {
-      "note": "The surviving citation owner resolves one qualified construct through the shared symbol-span rule. [1]",
+      "note": "The surviving citation owner resolves one qualified construct through the shared symbol-span rule.",
       "targets": [
         {
           "anchor": {
-            "blob": "edef16dfd17ed00dbb39e69b7c00287e2d85c97c",
-            "content": "sha256:b2ced6307919efd33b944f30f6c6418bab915d3d05ad6b8ac6cb29f047a21ca0",
+            "blob": "00c487c023255a663f0ff6e9ffe68d65da3a8202",
+            "content": "sha256:44560f69157a8e4c415357e36a9724de9d9a3b03f7c865be19a5df27910960e3",
             "locator": {
-              "end": 74,
+              "end": 84,
               "kind": "line_range",
-              "start": 55
+              "start": 58
             },
             "path": "mcp/src/agents_remember/memory_quality/style/citations/extents.py"
           },

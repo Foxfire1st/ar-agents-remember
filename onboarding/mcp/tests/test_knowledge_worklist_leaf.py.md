@@ -80,7 +80,9 @@ The changed writer calls explicitly supply the current `leaf_worklist(load_contr
 
 ## Evidence
 
+
 - The controller source exercises a fresh shared clone, real index building, informational proof counts and distinct report modes; cache store tolerates listing/stat disappearance. [41]
+
 
 
 - The module docstring: the fixture's repositories and task root. [17]
@@ -108,24 +110,37 @@ No configured live documentation source was available for this pass.
 - The tool case counts two onboarding items. [25]
 - The cache case patches the conversion where it now lives. [26]
 
+
 - The leaf fixture: real repositories plus the task root and enclosure. [27]
+
 
 - The leaf's contract and task document. [28]
 - Pairing by trailer and persistence. [29]
 - The task document's maintenance scope. [30]
+
 - The writer's carry. [31]
+
 - The tool and the checklist section. [32]
 - Other owners' rows and closed files are untouched. [33]
+
 - A writer-authored proof raises its invariant. [34]
+
 - The bound sync port. [35]
 
+
 - The controller-level run; since MIK-R09 its four open items count (4). [36]
+
 
 - Never raises; never fails a completed sync. [37]
 - The `continue` replay. [38]
 - The converted-base cache. [39]
 
-- The census-derived consumer row. [40]
+
+
+
+> Retained earlier citation wording: - The census-derived consumer row. [40]
+
+
 
 
 ### Cross-Repo References
@@ -142,3 +157,5 @@ and in `test_the_memory_quality_controller_persists_the_worklist_and_renders_it_
 `onboarding_trace: 2`, the edited file's card and its root route. The cache case patches
 `base_cache.converted_base` instead of `leaf.converted_base`, because the conversion moved into
 `base_cache.converted_base_files` (ruling 18:49:50 (4)). The fixture and the other cases are unchanged.
+
+- The census-derived consumer row. [40]

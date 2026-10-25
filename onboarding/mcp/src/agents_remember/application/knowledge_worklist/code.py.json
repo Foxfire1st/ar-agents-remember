@@ -44,8 +44,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b3541599e0344753955c6de1d21ff483e2e715c4",
-            "content": "sha256:0ec0992a09c84f4454f291da2d4b64fb795acfb77d15c636ace5b0c4fc4d8025",
+            "blob": "6255576ebc9394ffd9e9e8a1dd0ca50a787028ab",
+            "content": "sha256:ae00e0685bf8c9f9974daec9e78bc5546df494eb188af7d4d186da9dfca04ae5",
             "locator": {
               "end": 78,
               "kind": "line_range",
@@ -109,8 +109,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f37070c96f3a4fed9384eaf18b66037e1403baaa",
-            "content": "sha256:4a1dd7a20212428799d02663364b2e16946905a8360d46f16621bdc126f9a495",
+            "blob": "6255576ebc9394ffd9e9e8a1dd0ca50a787028ab",
+            "content": "sha256:500913e6b6fa92fffdfdaf08f4cdae4cb2ba0804065918ca662f3761197daddb",
             "locator": {
               "end": 402,
               "kind": "line_range",
@@ -157,8 +157,8 @@
         },
         {
           "anchor": {
-            "blob": "45422df6652fbcb87bd257227ed2431d41af938d",
-            "content": "sha256:3e855da0152ba0cd4e22fd164d1afc8c4f72940d827bf5415f703ee071a400db",
+            "blob": "2f417db25d3f58c21b8baeca43751c69834ddffb",
+            "content": "sha256:708d35c136798f5a486975977485f4106e6093ff3364c864da6a84a83504a60c",
             "locator": {
               "end": 130,
               "kind": "line_range",
@@ -187,12 +187,12 @@
       ]
     },
     "22": {
-      "note": "The blob diff with its failure and cache.\n\nAnchor: `hunks`",
+      "note": "The blob diff with its failure and cache.",
       "targets": [
         {
           "anchor": {
-            "blob": "b3541599e0344753955c6de1d21ff483e2e715c4",
-            "content": "sha256:f9ffae1a4670467d40f9ce07ddfebf7d57f1b88982437080801fd20230644eb9",
+            "blob": "6255576ebc9394ffd9e9e8a1dd0ca50a787028ab",
+            "content": "sha256:94cf8d37f3e65249044b0f1c31e7844a3e1193e22c4e5c8fbbc3f7027efcd3bb",
             "locator": {
               "end": 261,
               "kind": "line_range",
@@ -244,8 +244,8 @@
         },
         {
           "anchor": {
-            "blob": "45422df6652fbcb87bd257227ed2431d41af938d",
-            "content": "sha256:3e855da0152ba0cd4e22fd164d1afc8c4f72940d827bf5415f703ee071a400db",
+            "blob": "2f417db25d3f58c21b8baeca43751c69834ddffb",
+            "content": "sha256:708d35c136798f5a486975977485f4106e6093ff3364c864da6a84a83504a60c",
             "locator": {
               "end": 130,
               "kind": "line_range",
@@ -258,15 +258,14 @@
       ]
     },
     "24": {
-      "note": "The one path that binds a name once.",
+      "note": "The one path that binds a name once.\n\nAnchor: `unique_binder`",
       "targets": [
         {
           "anchor": {
-            "blob": "b3541599e0344753955c6de1d21ff483e2e715c4",
-            "content": "sha256:52db5d07fa39a7d2cdd4e5134f164d345e99a3582561a1a74752f66b151d71dd",
+            "blob": "6255576ebc9394ffd9e9e8a1dd0ca50a787028ab",
+            "content": "sha256:c2debfa8c5e3aed6a462b9680912cd4404f584e032fad7d4c3b0cd02741e7615",
             "locator": {
-              "kind": "symbol",
-              "name": "unique_binder"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -290,15 +289,14 @@
       ]
     },
     "26": {
-      "note": "The object reader's batched prefetch.",
+      "note": "The object reader's batched prefetch.\n\nAnchor: `prefetch`",
       "targets": [
         {
           "anchor": {
-            "blob": "45422df6652fbcb87bd257227ed2431d41af938d",
-            "content": "sha256:f0fef503a4a201278ce39c9440b4486925c3f6392ff7ca3a82f1922aa9b23efa",
+            "blob": "2f417db25d3f58c21b8baeca43751c69834ddffb",
+            "content": "sha256:184d7d998fa9a29cb587269d6487a85c33d81910f62fa4496e7521ce36d67b9f",
             "locator": {
-              "kind": "symbol",
-              "name": "prefetch"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/memory/conversion/code_objects.py"
           },
@@ -324,15 +322,14 @@
       ]
     },
     "28": {
-      "note": "The blob diff carries its own prefixes, colour and driver options.",
+      "note": "The blob diff carries its own prefixes, colour and driver options.\n\nAnchor: `test_every_parsed_diff_names_its_own_prefix_colour_and_driver`",
       "targets": [
         {
           "anchor": {
-            "blob": "fc194aa17593ec2d603455736dcb23d65070cffc",
-            "content": "sha256:8b7d8c2c71b1e4ba6645618c7c548f5a017cb664da092acdb96be0dbdbbe25a0",
+            "blob": "27133970f3efd75083fdda0b036762cfe19db511",
+            "content": "sha256:0d5dcf1893f5dd43166d599a4319981049775a685e6d32beb6c990ad5663ab30",
             "locator": {
-              "kind": "symbol",
-              "name": "test_every_parsed_diff_names_its_own_prefix_colour_and_driver"
+              "kind": "file"
             },
             "path": "mcp/tests/test_reviewer_worklist_process.py"
           },
@@ -341,15 +338,14 @@
       ]
     },
     "29": {
-      "note": "The hunk, range, content-identity and hit rules.",
+      "note": "The hunk, range, content-identity and hit rules.\n\nAnchor: `CodeTrees`",
       "targets": [
         {
           "anchor": {
-            "blob": "172b440738a1d8071271d873fec1d5482306a954",
-            "content": "sha256:5a7fe9a4cdca5c887338cdd085aa1d9824402dd61470d26127b1e0ac17c88c6c",
+            "blob": "6255576ebc9394ffd9e9e8a1dd0ca50a787028ab",
+            "content": "sha256:c2debfa8c5e3aed6a462b9680912cd4404f584e032fad7d4c3b0cd02741e7615",
             "locator": {
-              "kind": "symbol",
-              "name": "CodeTrees"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -437,15 +433,14 @@
       ]
     },
     "35": {
-      "note": "The hunks of a blob pair, cached, with a named failure.",
+      "note": "The hunks of a blob pair, cached, with a named failure.\n\nAnchor: `CodeTrees`",
       "targets": [
         {
           "anchor": {
-            "blob": "172b440738a1d8071271d873fec1d5482306a954",
-            "content": "sha256:5a7fe9a4cdca5c887338cdd085aa1d9824402dd61470d26127b1e0ac17c88c6c",
+            "blob": "6255576ebc9394ffd9e9e8a1dd0ca50a787028ab",
+            "content": "sha256:c2debfa8c5e3aed6a462b9680912cd4404f584e032fad7d4c3b0cd02741e7615",
             "locator": {
-              "kind": "symbol",
-              "name": "CodeTrees"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -453,15 +448,14 @@
       ]
     },
     "36": {
-      "note": "Whether the store holds a blob; a Git failure is a `CodeReadError`, never absent (R3-2).",
+      "note": "Whether the store holds a blob; a Git failure is a `CodeReadError`, never absent (R3-2).\n\nAnchor: `CodeTrees`",
       "targets": [
         {
           "anchor": {
-            "blob": "172b440738a1d8071271d873fec1d5482306a954",
-            "content": "sha256:5a7fe9a4cdca5c887338cdd085aa1d9824402dd61470d26127b1e0ac17c88c6c",
+            "blob": "6255576ebc9394ffd9e9e8a1dd0ca50a787028ab",
+            "content": "sha256:c2debfa8c5e3aed6a462b9680912cd4404f584e032fad7d4c3b0cd02741e7615",
             "locator": {
-              "kind": "symbol",
-              "name": "CodeTrees"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -509,8 +503,8 @@
         },
         {
           "anchor": {
-            "blob": "45422df6652fbcb87bd257227ed2431d41af938d",
-            "content": "sha256:3e855da0152ba0cd4e22fd164d1afc8c4f72940d827bf5415f703ee071a400db",
+            "blob": "2f417db25d3f58c21b8baeca43751c69834ddffb",
+            "content": "sha256:708d35c136798f5a486975977485f4106e6093ff3364c864da6a84a83504a60c",
             "locator": {
               "end": 130,
               "kind": "line_range",
@@ -660,8 +654,8 @@
         },
         {
           "anchor": {
-            "blob": "45422df6652fbcb87bd257227ed2431d41af938d",
-            "content": "sha256:3e855da0152ba0cd4e22fd164d1afc8c4f72940d827bf5415f703ee071a400db",
+            "blob": "2f417db25d3f58c21b8baeca43751c69834ddffb",
+            "content": "sha256:708d35c136798f5a486975977485f4106e6093ff3364c864da6a84a83504a60c",
             "locator": {
               "end": 130,
               "kind": "line_range",

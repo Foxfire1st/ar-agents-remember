@@ -113,7 +113,9 @@ No meaningful cross-repo references found.
 ## Evidence
 
 - The skill initializes memory roots, not coordinator runtime assets, skill copies, task worktrees, or onboarding content. The tool server serves the canonical skill tree from its packaged copy, so the skill neither installs skills nor creates a skill folder anywhere; the prior reference's skills_install and starter-package claims are retained above only as superseded history. [1]
+
 - Repo-local ar-memory was removed and is reported by exact path with a route out, rather than created, read, or migrated; external memory resolves under coordination-root/memory-repos after runtime verification. Legacy content without the layout marker is refused, not initialized around. [2]
+
 - Starter settings examples keep storage and path rules under memory-layer system/settings.json and seed common generated/vendor/build/local excludes. [3]
 - Common outcomes preserve existing docs, system files, and onboarding content when a partial memory scaffold is repaired. [4]
 - Installed inputs, create-missing default, explicit repair, foundation-branch fallback/refusal and preview-before-effectful-apply are separate setup boundaries. [5]

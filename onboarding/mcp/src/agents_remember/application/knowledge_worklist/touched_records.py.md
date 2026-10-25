@@ -32,4 +32,5 @@ The only status-mark exemption is a JSON-only change to `under_reconsideration` 
 - The registered satisfying-row contract prioritizes newly retired status before revision growth. [1]
 - A qualifying raise must belong to the current owner and an open individual history file. [2]
 - The status-only exemption rejects other JSON field changes. [3]
+
 - Exact JSON/prose comparison of base records emits revision/status facts and leaves structural deletion elsewhere. [4]

@@ -52,13 +52,23 @@ The current source-backed Notes Reader integration is recorded by the repository
 
 - The read-only notes routes. [1]
 - The same-origin notes client (`listFolder`/`readNote`/`resolveNoteReferences`). [2]
+
 - The reused File Viewer content pane maps both notes and requirement packets to markdown/code/placeholder rendering. [3]
+
+
 - Cockpit defines the note-opening callback. [4]
+
+
 
 - Cockpit defines the note-selection callback. [5]
 
+
+
 - Cockpit renders NotesReaderViewer. [6]
+
+
 - TaskNotes resolves registered requirement references first; a requirement address never falls through to a note target. [7]
+
 
 - The task-body fixture returns the path-addressed native entry summary or 404; the cockpit seed uses canonical native wire fixture builders. [8]
 

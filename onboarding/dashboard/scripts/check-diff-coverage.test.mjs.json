@@ -61,12 +61,12 @@
       ]
     },
     "3": {
-      "note": "Vitest includes script tests in its declared test population.\n\nAnchor: \"scripts/**/*.test.mjs\"",
+      "note": "Vitest includes script tests in its declared test population.",
       "targets": [
         {
           "anchor": {
-            "blob": "bdea2611cc34a3c7063534e3318374cbb216bb09",
-            "content": "sha256:a476b0982c138a23b963d335f281549c5fe818d77c9459e951e82c34224c7aa8",
+            "blob": "3e11c5781a563030ed73ad70c65b5c1e87a440b6",
+            "content": "sha256:451866ef3c53d4eaec277c14dfca0e5241d2dc4893a5a0c630c0f07d79694dbc",
             "locator": {
               "end": 51,
               "kind": "line_range",

@@ -6,7 +6,7 @@
 
 ## Purpose
 
-**The two inputs the validator reads.** A `KnowledgeTree` is the exact bytes of every file under `knowledge/` and `onboarding/` of one memory tree, keyed by repository-relative POSIX path; it is *converted* exactly when it holds `knowledge/layout.json` (MIK-R21 rule 1). A `CodeTree` answers two questions: does the paired code tree hold a file at this path (anchor path existence, MIK-R22 rule 6), and, since MIK-R04, does it hold a directory at this path (a family route, MIK-R04 rule 1)? Both can be read from a working directory or from Git.
+**The two inputs the validator reads.** A `KnowledgeTree` is the exact bytes of every file under `knowledge/` and `onboarding/` of one memory tree, keyed by repository-relative POSIX path; it is *converted* exactly when it holds `knowledge/layout.json` (MIK-R21 rule 1). A `CodeTree` answers three questions: does the paired code tree hold a file at this path (anchor path existence, MIK-R22 rule 6), does it hold a directory at this path (a family route, MIK-R04 rule 1), and, since MIK-R198, what exact bytes does that file hold at the commit — `CodePathSet` carries them, so the anchor guard compares a recorded content identity with the paired tree's own bytes and reads each cited file once instead of once per anchor. All three can be read from a working directory or from Git.
 
 ## Code Commentary
 
@@ -59,20 +59,29 @@ The predicate, the tree types and the two readers.
 
 - The shared exclusion predicate: cache files and hidden directories only. [1]
 - A tree is converted exactly when it holds the layout marker. [2]
+
 - The code-tree protocol and its two implementations, each answering file and directory existence. [3]
+
 - Both code trees answer directory existence, the root route included. [4]
 - The directory reader prunes dot directories. [5]
+
 - The Git readers: regular files only, blobs read in one batch as exact bytes. [6]
+
 - The formatter shares the predicate. [7]
+
 - A dot-named card and its sidecar are validated. [8]
+
 - The Git reader reads exact bytes, ignores the cache, and matches the directory reader. [9]
 
+
 - Only the history files of a commit that is not a comparison base. [10]
+
 
 ### Cross-Repo References
 
 No meaningful cross-repo references found: the validator reads one memory tree and one paired code tree, both addressed explicitly by the caller.
 
 No cross-repo boundary is crossed by this file.
+
 
 - The working-directory validator input is Git-visible current regular non-symlink files, with named listing failure. [11]

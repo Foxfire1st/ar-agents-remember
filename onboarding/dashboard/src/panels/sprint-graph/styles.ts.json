@@ -3,15 +3,14 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The responsive grid contract (≤3 per row, narrow single column).",
+      "note": "The responsive grid contract (≤3 per row, narrow single column).\n\nAnchor: `waveGridStyles`",
       "targets": [
         {
           "anchor": {
-            "blob": "cc87a76606193c60a16b87908c901278951e8362",
-            "content": "sha256:c2a38597e09b2f1568795b2529db88b97948ec861b7950908616a9b62a923519",
+            "blob": "4e9801e315eb3e0cb3f9d8873ee957b31c30c2b6",
+            "content": "sha256:1745412435e7d451ae33aea1bfee4aef20a71146dc013e6e03f2acb387e52abb",
             "locator": {
-              "kind": "symbol",
-              "name": "waveGridStyles"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -19,15 +18,14 @@
       ]
     },
     "2": {
-      "note": "The ellipsized, viewport-growing leaf line contract.",
+      "note": "The ellipsized, viewport-growing leaf line contract.\n\nAnchor: `leafLineStyles`",
       "targets": [
         {
           "anchor": {
-            "blob": "cc87a76606193c60a16b87908c901278951e8362",
-            "content": "sha256:4607313f16f9a165f471221d4a4ff8727d45751431c806dbefbaafe1b809bda1",
+            "blob": "4e9801e315eb3e0cb3f9d8873ee957b31c30c2b6",
+            "content": "sha256:1745412435e7d451ae33aea1bfee4aef20a71146dc013e6e03f2acb387e52abb",
             "locator": {
-              "kind": "symbol",
-              "name": "leafLineStyles"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -35,7 +33,7 @@
       ]
     },
     "3": {
-      "note": "Dependency readiness/cycle styling is separate from the shared task-state presentation; the former task-frontier palette is removed.\n\nAnchor: dependency-only palette",
+      "note": "Dependency readiness/cycle styling is separate from the shared task-state presentation; the former task-frontier palette is removed.",
       "targets": [
         {
           "anchor": {
@@ -51,8 +49,8 @@
         },
         {
           "anchor": {
-            "blob": "17da14e723222a8d50b4ed6f0595390ab1fe1f6a",
-            "content": "sha256:bc4ae159d2c06abf5b3013b49558caef6bdd9ce2485a940130f171bf32322519",
+            "blob": "bc164a94462c83d4491167bce3b58a8ce7003b54",
+            "content": "sha256:a7d31073a2ef5dc9812fd57e66016ec03e020cdbe39dff625f6a30dcefcd76ee",
             "locator": {
               "end": 101,
               "kind": "line_range",
@@ -65,15 +63,14 @@
       ]
     },
     "4": {
-      "note": "The component consuming these styles.",
+      "note": "The component consuming these styles.\n\nAnchor: `SprintGraphView`",
       "targets": [
         {
           "anchor": {
-            "blob": "8829a127167d50f8d61ecb19931a9ea01f2a4cd4",
-            "content": "sha256:97a09c391790911e5e80370caa44a6c2d9109dc5b05ae4e03c253ecd36acb591",
+            "blob": "5a995ff889391494f6d68d05f4de87e3777f7460",
+            "content": "sha256:6f5a5c01e4363b57960c454e49402ef105205a13722bb291b90115ddf378c1a3",
             "locator": {
-              "kind": "symbol",
-              "name": "SprintGraphView"
+              "kind": "file"
             },
             "path": "dashboard/src/panels/sprint-graph/SprintGraphView.tsx"
           },
@@ -82,12 +79,12 @@
       ]
     },
     "5": {
-      "note": "The responsive-contract forcing tests.\n\nAnchor: `SprintGraphView` (describe)",
+      "note": "The responsive-contract forcing tests.",
       "targets": [
         {
           "anchor": {
-            "blob": "75b9603dea6ab8c4ee6ef96b0d6fc5091ee2ddc7",
-            "content": "sha256:ffaf564b4671e67bd70cf6bfe9278d13377108da992d08eed2ad5833bda699b2",
+            "blob": "62502853b1c6bb6eac0b6a35f5d7146e87255ee4",
+            "content": "sha256:aedb7a80865364699bc57c775b34a29f3c7582c8894aea19db83408b61248e5f",
             "locator": {
               "end": 163,
               "kind": "line_range",

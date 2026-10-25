@@ -184,6 +184,6 @@ call plus the import.
 - Current construction shares one landing instance, binds actual subscriber interest before startup and supplies the shared ledger. (historical reference 29)
 - Retained route registration and optional collaborator routes precede static delivery; removed terminal/notifier collaborators are absent. (historical reference 30)
 
-- `create_app` registers the canvas host and the presenter surface through `register_canvas_routes` after the API routes and before the static mount, then installs `RefuseCrossOriginWrites` and `RefuseForeignHosts`, so both surfaces sit behind the origin and host guards. \[35] [35]
+- `create_app` registers the canvas host and the presenter surface through `register_canvas_routes` after the API routes and before the static mount, then installs `RefuseCrossOriginWrites` and `RefuseForeignHosts`, so both surfaces sit behind the origin and host guards. [35]
 
 - Typed409 refusal routes are registered before canvas routes, so first-match routing refuses old authoring while retained reads keep their owners; explainer routes are wired only through explicit collaborators. [36]

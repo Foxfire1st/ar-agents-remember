@@ -723,15 +723,14 @@
   ],
   "references": {
     "1": {
-      "note": "Timeline tool-call recipients, not sibling traffic, determine whether the turn returned to its parent.",
+      "note": "Timeline tool-call recipients, not sibling traffic, decide which call is a return and which is only a hand-off.\n\nAnchor: `turnHasReturnToParent`",
       "targets": [
         {
           "anchor": {
-            "blob": "09f339b7c9d38caf120e180d2ae2331bdebc0bcb",
-            "content": "sha256:1b16087babfe019291dbc1298d8285f125485f1a7372d9d36f73465fd34fd954",
+            "blob": "be1ebf147c3b30ea711ce7117a9c6ca9c569e978",
+            "content": "sha256:bd2d57ecca6160cf48deb9766e0874515980e9762c84046a7b497b936d8bbe5a",
             "locator": {
-              "kind": "symbol",
-              "name": "turnHasReturnToParent"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -739,15 +738,14 @@
       ]
     },
     "2": {
-      "note": "Descendant restart removes held lines and invalidates claimed ancestor lines.",
+      "note": "Descendant restart removes held lines and invalidates claimed ancestor lines.\n\nAnchor: `noteTurnStarted`",
       "targets": [
         {
           "anchor": {
-            "blob": "09f339b7c9d38caf120e180d2ae2331bdebc0bcb",
-            "content": "sha256:0e6976c85db0f4b004ef7eb9adbf2fd71c7a4b4073fd30f63495d828b129ceb9",
+            "blob": "be1ebf147c3b30ea711ce7117a9c6ca9c569e978",
+            "content": "sha256:bd2d57ecca6160cf48deb9766e0874515980e9762c84046a7b497b936d8bbe5a",
             "locator": {
-              "kind": "symbol",
-              "name": "noteTurnStarted"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -755,15 +753,14 @@
       ]
     },
     "3": {
-      "note": "Synchronous claim ownership and send-point rechecks prevent overlapping flushes owning one deferred line.",
+      "note": "Synchronous claim ownership and send-point rechecks prevent overlapping flushes owning one deferred line.\n\nAnchor: `flushHeldLines`",
       "targets": [
         {
           "anchor": {
-            "blob": "09f339b7c9d38caf120e180d2ae2331bdebc0bcb",
-            "content": "sha256:09cfd507ab1eafdf2dc904cd5c5b9e3bca3fe88ff57a6e3746a2428ea406a0aa",
+            "blob": "be1ebf147c3b30ea711ce7117a9c6ca9c569e978",
+            "content": "sha256:bd2d57ecca6160cf48deb9766e0874515980e9762c84046a7b497b936d8bbe5a",
             "locator": {
-              "kind": "symbol",
-              "name": "flushHeldLines"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -771,15 +768,14 @@
       ]
     },
     "4": {
-      "note": "Role/parent facts, return and permission state decide whether a silent end produces, holds or drops its line.",
+      "note": "Role/parent facts, return and permission state decide whether a silent end produces, holds or drops the parent's line.\n\nAnchor: `noteTurnEnded`",
       "targets": [
         {
           "anchor": {
-            "blob": "09f339b7c9d38caf120e180d2ae2331bdebc0bcb",
-            "content": "sha256:9269a8f06d37cd197480018986cd10f245238a2c5f3f7aa6636bf66c02df565e",
+            "blob": "be1ebf147c3b30ea711ce7117a9c6ca9c569e978",
+            "content": "sha256:bd2d57ecca6160cf48deb9766e0874515980e9762c84046a7b497b936d8bbe5a",
             "locator": {
-              "kind": "symbol",
-              "name": "noteTurnEnded"
+              "kind": "file"
             }
           },
           "kind": "code"

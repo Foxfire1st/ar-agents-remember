@@ -102,9 +102,15 @@ approves.
 
 
 - The two root answers and the manifest constants. [15]
+
 - One endpoint with the owner's answer and its key. [16]
+
+
 - The owning task's root, or none for a repository that is not one directory name. [17]
+
+
 - Resolution hands the reference to the owner and reports an unresolved endpoint. [18]
+
 - The manifest is read once and recorded as bytes, absent or unreadable. [19]
 - The approval of one stable ID. [20]
 - The comparison of versions. [21]
@@ -127,16 +133,24 @@ The locator, the resolver and its proof.
 
 - The docstring's recording paragraph (MIK-R09). [23]
 - The two answers that are this module's own, both about the root. [24]
+
 - One endpoint, its state, its task root and the owner's answer; its index key. [25]
+
+
 - The owning task's root, or none when the repository is not one directory. [26]
+
+
 - No root, a root outside tasks, or the owner's answer verbatim. [27]
+
 - The manifest path, format and version pattern; the approval states. [28]
 - The integer after `v`. [29]
 - What the manifest says about one ID, and the newer-than comparison. [30]
 - The manifest read with its reasons, since MIK-R09 recording the exact bytes read; the approved entries of one ID. [31]
 - The highest approved version and its packet, `not_approved`, or `unknown`; the packet's named function. [32]
 - The lookup's cases. [33]
+
 - The owner the packet question is handed to. [34]
+
 - Resolved, version mismatch, missing, outside tasks and no root; the validator never resolves. [35]
 
 ### Cross-Repo References

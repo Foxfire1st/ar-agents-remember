@@ -163,15 +163,14 @@
       ]
     },
     "19": {
-      "note": "Source assertion: test_incomplete_historical_count_warns_without_inventing_tries. The declaration is not an execution receipt.",
+      "note": "An incomplete historical count warns without inventing tries.\n\nAnchor: `test_incomplete_historical_count_warns_without_inventing_tries`",
       "targets": [
         {
           "anchor": {
-            "blob": "ae9057ab6c1eea41f64b6351acaddfc7c720f7b9",
-            "content": "sha256:4606c69fc28d15e3fb0f12b5223bfd1789c834a6bf839644b8857d088323a913",
+            "blob": "ef9b506dfe0a2e307b86d233fbcfb496f35f7bad",
+            "content": "sha256:00f0606bfc46baa5e45d15e2528dd8e3d8445c2eb5fadda3864ae406f2b4aa3b",
             "locator": {
-              "kind": "symbol",
-              "name": "test_incomplete_historical_count_warns_without_inventing_tries"
+              "kind": "file"
             }
           },
           "kind": "test"

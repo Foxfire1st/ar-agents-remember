@@ -3,12 +3,12 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The loading notice and its status role.",
+      "note": "The pending, unavailable and unconverted worklist reads, each shown through a status role.",
       "targets": [
         {
           "anchor": {
-            "blob": "0a465c6d3fd211d0bd8b533f9b4d10a896c0fbc5",
-            "content": "sha256:706697df5eae0b852f7920d2b3077882845d83bd56dc61ddb1173e5b4b2735cf",
+            "blob": "a7a2dc69a4a6d5be62212e183d2e3cc81126a0db",
+            "content": "sha256:2ac24aeabf0e5114538cf4387b27267d9d974030f9edf0fd8864cbb275a23f0a",
             "locator": {
               "end": 33,
               "kind": "line_range",
@@ -20,12 +20,12 @@
       ]
     },
     "2": {
-      "note": "The unavailable notice with detail and action.",
+      "note": "The delivered worklist items and file links, with the identifiers-only disclosure and the click callbacks the case invokes.",
       "targets": [
         {
           "anchor": {
-            "blob": "0a465c6d3fd211d0bd8b533f9b4d10a896c0fbc5",
-            "content": "sha256:2875f02851ff5947ce0978133ad7b6ed696fde02bf5f900667cb54826b2bb9c4",
+            "blob": "a7a2dc69a4a6d5be62212e183d2e3cc81126a0db",
+            "content": "sha256:3620312307af2595afb1ee00495bc332de187cd2d81d5459b6899c271c3c3eaf",
             "locator": {
               "end": 54,
               "kind": "line_range",
@@ -37,12 +37,12 @@
       ]
     },
     "3": {
-      "note": "Nothing for a dataset review.",
+      "note": "Record-specific items, the honest empty wording and the comparison-mismatch refusal.",
       "targets": [
         {
           "anchor": {
-            "blob": "0a465c6d3fd211d0bd8b533f9b4d10a896c0fbc5",
-            "content": "sha256:0077891b52a65df0d56c592875455e61049c2c421b8b0b43a776def49e586c17",
+            "blob": "a7a2dc69a4a6d5be62212e183d2e3cc81126a0db",
+            "content": "sha256:c2f77980b754bf0ff59bcf44a5ad91f93c0feec30dfe9066fcb3817975ac925e",
             "locator": {
               "end": 59,
               "kind": "line_range",
@@ -54,15 +54,14 @@
       ]
     },
     "4": {
-      "note": "The component under test.",
+      "note": "The components under test: `LeafWorklistView` and `SubjectWorklistItems`.\n\nAnchor: `LeafKnowledgeNotice`",
       "targets": [
         {
           "anchor": {
-            "blob": "e8c0257428c9a11245182c1c13cd3b7fa863c4ec",
-            "content": "sha256:0ff6472b06d36482969fb5162321282ff6aca9fd7e10eeebe4bdb4d5712cccc3",
+            "blob": "08853db6854ab477ec058722dfab0bf4a553bd04",
+            "content": "sha256:a457c15f0fd46a72dcd8c6e05cd1a1e0afcb97fd1ae9ea96d2b4e3c93e967af3",
             "locator": {
-              "kind": "symbol",
-              "name": "LeafKnowledgeNotice"
+              "kind": "file"
             },
             "path": "dashboard/src/panels/review/LeafKnowledgeChanges.tsx"
           },
@@ -71,19 +70,19 @@
       ]
     },
     "5": {
-      "note": "The held read and its final failure through the mounted surface, for both selections.",
+      "note": "The current worklist-view case renders loading, unavailable and not-converted inputs directly and checks their visible status text. The earlier held-read and mounted-surface continuity account is historical; this case does not assert it.",
       "targets": [
         {
           "anchor": {
-            "blob": "0a465c6d3fd211d0bd8b533f9b4d10a896c0fbc5",
-            "content": "sha256:619791d0f4ee9a5474bc9352755c11cc16aa17cbb9644f90d3df36c63d976ed3",
+            "blob": "a7a2dc69a4a6d5be62212e183d2e3cc81126a0db",
+            "content": "sha256:0858d228e59987c048c9bb8b43dcba72c09681ec270167ccca0c3d9f2e84dc20",
             "locator": {
-              "end": 128,
+              "end": 44,
               "kind": "line_range",
-              "start": 62
+              "start": 1
             }
           },
-          "kind": "code"
+          "kind": "test"
         }
       ]
     },

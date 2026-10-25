@@ -68,10 +68,14 @@ No relevant external documentation found.
 
 
 
+
 - The backend exposes `activeWorktreeGroups` from the structural `active_worktree_groups` set via `project_workspace`. [5]
+
 - The projection store passes that structural set through to the served projection. [6]
 - `constelColors` keys the canvas palette by `ConstelStatus` declared here, and `col` indexes it with no `??` — the downstream half of the same grammar. [7]
+
 - `Topology.tsx` is the only caller: it runs `activeTopologyInputs` then `buildTopology` before handing the model to `mountConstel`. [9]
+
 
 ### Cross-Repo References
 

@@ -64,10 +64,16 @@ No configured live documentation source was available for this pass.
 
 The six rules, the carried-route computation and their registration.
 
+
 - Carried routes are the union of every base's family routes. [1]
+
 - Absent routes, skipped for a conversion, a missing code tree and a retired family. [2]
+
 - At a merge, a route carried by either parent is carried. [8]
+
+
 - A route holding only a proof entry violates Non-empty. [9]
+
 
 ### Cross-Repo References
 

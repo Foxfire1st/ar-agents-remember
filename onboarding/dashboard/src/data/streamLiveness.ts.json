@@ -3,15 +3,14 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "Liveness tuning, one-shot backstop, and visibility handling.",
+      "note": "Liveness tuning, one-shot backstop, and visibility handling.\n\nAnchor: `startStreamLivenessWatchdog`",
       "targets": [
         {
           "anchor": {
-            "blob": "74dddf1fe2fda16cede5a864d8ab3bbdeb0545f7",
-            "content": "sha256:39290241126049e95b8d9451f11c4639c8a0b7ed50b54dd60e3b8658062ea0a4",
+            "blob": "c7d1f72236133b5d0ae97c5be4d03f0b75f92450",
+            "content": "sha256:feb450ed0cc00f6b96af55a396f936bec5bbec336ac011f7b850e526338aaaeb",
             "locator": {
-              "kind": "symbol",
-              "name": "startStreamLivenessWatchdog"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -19,16 +18,16 @@
       ]
     },
     "2": {
-      "note": "Conversation and state streams both install this watchdog.\n\nAnchor: \"half-open-wedge\"",
+      "note": "The state stream installs this watchdog on an open channel; the raw events stream deliberately does not, since a fresh subscribe cannot carry its `Last-Event-ID` cursor.",
       "targets": [
         {
           "anchor": {
-            "blob": "02afc6e0851be4e730b3b9d0fa41c83479dcc1df",
-            "content": "sha256:c4855cc874514a7b33e3665fe099f1915bff4d785d26c3ec9b5b99cff6bd7d58",
+            "blob": "e759eb54b9cbb7db614234415ff2c56f1d345e2c",
+            "content": "sha256:9682654ab41bd5564bd9b29a18e8a5fedcea148d3c42c46fb82104d03611fbe7",
             "locator": {
-              "end": 94,
+              "end": 111,
               "kind": "line_range",
-              "start": 94
+              "start": 111
             },
             "path": "dashboard/src/data/stream.ts"
           },
@@ -37,15 +36,14 @@
       ]
     },
     "3": {
-      "note": "The watchdog is local browser transport policy.",
+      "note": "The watchdog is local browser transport policy.\n\nAnchor: `startStreamLivenessWatchdog`",
       "targets": [
         {
           "anchor": {
-            "blob": "74dddf1fe2fda16cede5a864d8ab3bbdeb0545f7",
-            "content": "sha256:39290241126049e95b8d9451f11c4639c8a0b7ed50b54dd60e3b8658062ea0a4",
+            "blob": "c7d1f72236133b5d0ae97c5be4d03f0b75f92450",
+            "content": "sha256:feb450ed0cc00f6b96af55a396f936bec5bbec336ac011f7b850e526338aaaeb",
             "locator": {
-              "kind": "symbol",
-              "name": "startStreamLivenessWatchdog"
+              "kind": "file"
             }
           },
           "kind": "code"

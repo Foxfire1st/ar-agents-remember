@@ -74,7 +74,9 @@ and its answers and errors are the same.
 
 
 
+
 - The root/nested allowlists consume normative fields, including fixed nonGoals/acceptance, not structural waitsFor or audit completedAt. [13]
+
 
 
 
@@ -85,7 +87,9 @@ and its answers and errors are the same.
 - The currentness assertion. [16]
 - The allowlist and the taxonomy must agree in both directions. [17]
 - Requirement text and packet references. [18]
+
 - The packet owner: recorded resolutions, confinement before reading, one read recorded under the caller's locator, identity check. [19]
+
 - The metadata table of a packet. [20]
 - The requirement owner calls the packet owner and carries its refusal back. [21]
 - A packet link retargeted outside the task and back is recorded by its resolve row; outside, no packet byte is read or recorded. [22]

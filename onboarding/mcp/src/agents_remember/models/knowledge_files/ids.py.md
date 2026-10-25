@@ -75,7 +75,9 @@ No configured live documentation source was available for this pass.
 
 The patterns built here are the only ID spellings the rest of the package accepts.
 
+
 - The kind tables, declared once. [1]
+
 - The entry and row ID patterns history rows use. [2]
 - The ID regex: six characters, optionally eight. [3]
 - Random minting, for record, entry and row kinds. [4]

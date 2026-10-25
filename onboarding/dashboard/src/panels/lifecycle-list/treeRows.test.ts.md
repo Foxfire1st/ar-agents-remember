@@ -18,6 +18,8 @@ A new case orders the started band by host time: a working master first, then th
 
 - The started band puts host-timed paused rows newest first and leaves untimed rows in the server's order. [3]
 
-- Native parent/children, lazy terminal folds, selected reach and authored root/child order are the current pure assertions. [1]
+
+- The tests protect authored ordering, fold scope and selected reach, and emit an unlisted or missing-parent record as a root once each in authored order. [1]
+
 
 - Pure tree inputs show a released fold or ancestor staying closed over the chosen child; no mounted keyboard or hook-lifetime execution is inferred. [2]

@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/cli/knowledge_routes.py",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
@@ -19,15 +20,14 @@
       ]
     },
     "2": {
-      "note": "The working tree's tracked and untracked, not ignored, files.",
+      "note": "The working tree's tracked and untracked, not ignored, files.\n\nAnchor: `_working_tree_files`",
       "targets": [
         {
           "anchor": {
-            "blob": "a263ad6bd08ee2674636d69051f84aff784bbcea",
-            "content": "sha256:ae41e128967fcf7fab5c986994e285f9683f8aa81c03908d2c054c90d6fc008e",
+            "blob": "7fd56cd4af2c83f48b6525b91c15a7c1327483db",
+            "content": "sha256:36bcb102793793f05f9237b0828f328ad9885d6aa069b3e107e38ec8cfa5ab6d",
             "locator": {
-              "kind": "symbol",
-              "name": "_working_tree_files"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -35,26 +35,14 @@
       ]
     },
     "3": {
-      "note": "Each family's routes, state and suggestion.",
+      "note": "Each family's routes, state and suggestion.\n\nAnchor: `_state_document` `_family_documents`",
       "targets": [
         {
           "anchor": {
-            "blob": "a263ad6bd08ee2674636d69051f84aff784bbcea",
-            "content": "sha256:851fb559ec6e8e1e4f7213953a6c9950fc30c5d14c56aceb48154ae759129112",
+            "blob": "7fd56cd4af2c83f48b6525b91c15a7c1327483db",
+            "content": "sha256:36bcb102793793f05f9237b0828f328ad9885d6aa069b3e107e38ec8cfa5ab6d",
             "locator": {
-              "kind": "symbol",
-              "name": "_state_document"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "68a6a8af7d012feb08dcf4e3e635b9d5ab6771de",
-            "content": "sha256:91de9ee6e67f8ef11a5b2cd02effc7e944496eba947e609b784027c5086d03a9",
-            "locator": {
-              "kind": "symbol",
-              "name": "_family_documents"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -62,26 +50,14 @@
       ]
     },
     "4": {
-      "note": "Reading, rendering, unknown families and the exit status.",
+      "note": "Reading, rendering, unknown families and the exit status.\n\nAnchor: `run` `_render`",
       "targets": [
         {
           "anchor": {
-            "blob": "a263ad6bd08ee2674636d69051f84aff784bbcea",
-            "content": "sha256:05d149fe34766d0365173618cebaa58f8fe6416162f5ae43e84f7918e93903d1",
+            "blob": "7fd56cd4af2c83f48b6525b91c15a7c1327483db",
+            "content": "sha256:36bcb102793793f05f9237b0828f328ad9885d6aa069b3e107e38ec8cfa5ab6d",
             "locator": {
-              "kind": "symbol",
-              "name": "run"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "68a6a8af7d012feb08dcf4e3e635b9d5ab6771de",
-            "content": "sha256:59c5eedf2cfcdf3ef5e6d67ed1fbc63a0ed5f50876314c54a636321ee1ee66f2",
-            "locator": {
-              "kind": "symbol",
-              "name": "_render"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -107,15 +83,14 @@
       ]
     },
     "6": {
-      "note": "The command offers the suggestion and writes nothing.",
+      "note": "The command offers the suggestion and writes nothing.\n\nAnchor: `test_the_routes_command_offers_the_suggestion_and_writes_nothing`",
       "targets": [
         {
           "anchor": {
-            "blob": "b82b15199ae3a85cf7b55e3bfca9ea85608e0759",
-            "content": "sha256:034c7db9f02a88cc7966b625b5aa237a6b8bc1ecb15dd5c9f9dd594086504cc6",
+            "blob": "57a9d02cb9368158ac152ea6010b478c2a5bf7ed",
+            "content": "sha256:0f161efb767870542be4e8ad99bea57bdd5b58ec7848bc5c4e2c621e36992a7a",
             "locator": {
-              "kind": "symbol",
-              "name": "test_the_routes_command_offers_the_suggestion_and_writes_nothing"
+              "kind": "file"
             },
             "path": "mcp/tests/test_knowledge_family_routes.py"
           },
@@ -128,18 +103,6 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a263ad6bd08ee2674636d69051f84aff784bbcea",
-            "content": "sha256:61f39d1e97a907ff095e7f8e66d5421992da130b633c41ff1353a0c2f83d8672",
-            "locator": {
-              "end": 116,
-              "kind": "line_range",
-              "start": 94
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
             "blob": "7fd56cd4af2c83f48b6525b91c15a7c1327483db",
             "content": "sha256:86e049af37bcd2acb0615d59cdaa9a5b5de47eb258e4aef581dc86c23deacc0c",
             "locator": {
@@ -147,6 +110,19 @@
               "kind": "line_range",
               "start": 41
             }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c0e6c270f37f8db079a3d634c5613fc7e0d79d98",
+            "content": "sha256:f9ba4b5c0d411e771e08790fa4a3ffb7311f6178ae66e221ac2d03665da88751",
+            "locator": {
+              "end": 94,
+              "kind": "line_range",
+              "start": 90
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_routes_report.py"
           },
           "kind": "code"
         }

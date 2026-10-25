@@ -1,5 +1,6 @@
 {
   "path": "mcp/test_support/agents_remember_test_support/testing/cadence_runner.py",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
@@ -24,10 +25,11 @@
         {
           "anchor": {
             "blob": "111d8758e5ed4bfec7bdc56c84cce997e7294e50",
-            "content": "sha256:b4a72efc959acef8e5f546c3abbea341a5b82739473f8c0264acc32af8e57a20",
+            "content": "sha256:df60f6fdac7a723a31e8e75b2077d0ae992f5b21585dfa1ec99aff2fb0882b85",
             "locator": {
-              "kind": "symbol",
-              "name": "cadence_evidence"
+              "end": 539,
+              "kind": "line_range",
+              "start": 471
             },
             "path": ".dagger/src/agents_remember_quality/main.py"
           },
@@ -35,12 +37,24 @@
         },
         {
           "anchor": {
-            "blob": "f9164eedd6d38059234d2abb288d6bd294325063",
-            "content": "sha256:21d767e59f78609072d95ae0eef9f058346af215556ef224804c8c00f9961aaa",
+            "blob": "111d8758e5ed4bfec7bdc56c84cce997e7294e50",
+            "content": "sha256:b4a72efc959acef8e5f546c3abbea341a5b82739473f8c0264acc32af8e57a20",
             "locator": {
-              "end": 540,
+              "end": 539,
               "kind": "line_range",
-              "start": 471
+              "start": 470
+            },
+            "path": ".dagger/src/agents_remember_quality/main.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "111d8758e5ed4bfec7bdc56c84cce997e7294e50",
+            "content": "sha256:b4a72efc959acef8e5f546c3abbea341a5b82739473f8c0264acc32af8e57a20",
+            "locator": {
+              "kind": "symbol",
+              "name": "cadence_evidence"
             },
             "path": ".dagger/src/agents_remember_quality/main.py"
           },

@@ -21,4 +21,5 @@ Both reclamation routes also remove the launches' locators, and only the aliases
 - Report folders copy safe regular files with stamp checks, fsynced staging and atomic replacement. [1]
 - Execution receipts collect through the same collector. [2]
 - Group collection serves terminal cleanup and abandon paths. [3]
+
 - Folder removal collects first and only then deletes. [4]

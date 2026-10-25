@@ -3,7 +3,7 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "One admitted contract executes the coherence action and translates the complete domain family.",
+      "note": "One admitted contract executes the coherence action and translates the complete domain family.\n\nAnchor: `curator_coherence_tool` `_domain_refusal` `_configured_refusal`",
       "targets": [
         {
           "anchor": {
@@ -29,8 +29,8 @@
         },
         {
           "anchor": {
-            "blob": "a14d1417c77430c1752a4f601d84fc01ff09a11e",
-            "content": "sha256:696a1a9f8b9bfc8bf658ceeac0b07287cd5874c3e820d02119ad5446e2a8ecf8",
+            "blob": "8a01c3f731c8dc69db8897fef8dea34efd31444d",
+            "content": "sha256:fb3e89c2165370a391a6c82e1bdcf1db7dddefedde93d2d192f0de04fcc840a0",
             "locator": {
               "kind": "symbol",
               "name": "_configured_refusal"
@@ -52,8 +52,8 @@
         },
         {
           "anchor": {
-            "blob": "a14d1417c77430c1752a4f601d84fc01ff09a11e",
-            "content": "sha256:5de26532a14d80d5dea97b9b22498f4606acd0c9ceeb49e932d716df14f62c5d",
+            "blob": "8a01c3f731c8dc69db8897fef8dea34efd31444d",
+            "content": "sha256:39fcbc43d530a94cd1f26251f4f1b500cb1ad57a04938c65f9073dd18a8bcfd8",
             "locator": {
               "end": 77,
               "kind": "line_range",
@@ -61,16 +61,26 @@
             }
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8a01c3f731c8dc69db8897fef8dea34efd31444d",
+            "content": "sha256:ad9eafd561eefc26bf209dd41132d5f2552e9ec627a85de6c0e5a3038aaffe82",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
         }
       ]
     },
     "2": {
-      "note": "Configured admission is the shared lower-level API rather than repeated exception lists.",
+      "note": "Configured admission is the shared lower-level API rather than repeated exception lists.\n\nAnchor: `admit_configured_contract` `execute_configured_contract_operation`",
       "targets": [
         {
           "anchor": {
-            "blob": "a24e42442bd78eda90e129f52de5de7d6548f602",
-            "content": "sha256:47c7281ec0415ef87b601a396b28a6754ba1dd72e5d02d18d71f503c2049fedb",
+            "blob": "dbad775386ff530ac950360a2ca49d6e9fc02678",
+            "content": "sha256:2cd629788561282f91ce2fb714dbb84d0af712c551874c021fb27516590b00ef",
             "locator": {
               "kind": "symbol",
               "name": "admit_configured_contract"
@@ -99,6 +109,17 @@
               "end": 402,
               "kind": "line_range",
               "start": 393
+            },
+            "path": "mcp/src/agents_remember/application/lifecycle/configured_contract_admission.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "dbad775386ff530ac950360a2ca49d6e9fc02678",
+            "content": "sha256:579b44b5511fc3a31adf41f56e4f5f9c97bf384bf2acf8ca12c8131a67c4df6f",
+            "locator": {
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/lifecycle/configured_contract_admission.py"
           },

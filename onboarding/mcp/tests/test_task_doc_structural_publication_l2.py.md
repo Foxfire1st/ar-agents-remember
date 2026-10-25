@@ -53,7 +53,9 @@ to removed methods are superseded by this current inventory.
 
 - Attach refuses json side drift across selected master batch [1]
 - Attach refuses markdown side drift across selected master batch [2]
+
 - Detach first allows later exact absence bound create [3]
+
 
 ### Cross-Repo References
 

@@ -3,15 +3,14 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "A retained real child exits and has already been reaped by its owner.",
+      "note": "A retained real child exits and has already been reaped by its owner.\n\nAnchor: `test_retained_worker_child_is_reaped_by_its_owner`",
       "targets": [
         {
           "anchor": {
-            "blob": "2757e2550cb9fe495c605576bbaf5f277f265412",
-            "content": "sha256:10b91fb642f080e9b541cbf4357f609f11e7ab7dd7665809cb939e74e734715c",
+            "blob": "1a7c87ced6cbcd55ddd83c1576a67ab943a4501f",
+            "content": "sha256:ef9ab2b54d0bbb0a1c172a558ffe5a867639187488f11860317cdda7f5992b55",
             "locator": {
-              "kind": "symbol",
-              "name": "test_retained_worker_child_is_reaped_by_its_owner"
+              "kind": "file"
             }
           },
           "kind": "test"

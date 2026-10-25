@@ -39,14 +39,14 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "New synthetic mounted reader controls cover commit/branch validation, prior-selection retention, bounded prose/whole-text single-read and deeper-family explanation, snapshot mismatch refusing mixed prose/references or timeline/record, 50-event continuation controls, attempt/path and legacy effect text, and late side-load suppression. These are controlled component assertions, not a server timing result.",
+      "note": "Mounted reader controls cover typed commit/branch resolution retaining the prior selection on invalid input, truncated summary prose loading its whole text once with omitted deeper families explained, changed-prose and timeline snapshot mismatches refusing the new tree's bytes, continuation controls that restart or drop late side-loads after navigation, and the chapters the whole text lists beside the summary's. These are controlled component assertions, not a server timing result.",
       "targets": [
         {
           "anchor": {
-            "blob": "bb5a38f6d255ec74610c824b80e0e24e6aab3564",
-            "content": "sha256:d7059aea166500ceec46c507c45d35e414efbb73c79db13da7882c87bb38bed9",
+            "blob": "72676dec254239a7466a9e79eb4e0af16323ebce",
+            "content": "sha256:5d8a6de388c14cb6fc757695efff94b38f83939c53ac741ae34c3d21014f0d65",
             "locator": {
-              "end": 356,
+              "end": 416,
               "kind": "line_range",
               "start": 1
             }

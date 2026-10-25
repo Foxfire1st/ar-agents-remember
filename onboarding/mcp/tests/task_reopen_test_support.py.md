@@ -55,6 +55,8 @@ No real adjacent repository is involved; all repositories are temporary test fix
 
 ### Current Source-Inspection References
 
+
 - The helper publishes an exact terminal predecessor and real super-to-leaf branch chain. [1]
+
 - Runtime configuration and external-memory directories are built from the contract identity. [2]
 - Leaf and master documents expose controlled lifecycle, topology, and row-status variants. [3]

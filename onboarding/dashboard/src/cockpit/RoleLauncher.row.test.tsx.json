@@ -7,8 +7,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1d5570fd7346333f8abeacc5dc55136bfdf6246b",
-            "content": "sha256:9ee4c58d75c77e0ce21fafaa6fcf956e4ad34a708fa4f502134ac1b2462b1578",
+            "blob": "7d629a482f75ed669ab4b420c7c29154d039c3b3",
+            "content": "sha256:0d10e9438d850c2e35a508af0b5afafb5a93f44cd6a9c0366883bacaf1fdf0c5",
             "locator": {
               "kind": "file"
             }
@@ -22,8 +22,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4e13f27347667fd31fb2f36947fc5bbeec7476f5",
-            "content": "sha256:45a90ddda2900fd23b3c2efac75e263c585e264fac18dbce2cedb555da4f7289",
+            "blob": "7d629a482f75ed669ab4b420c7c29154d039c3b3",
+            "content": "sha256:a88451883c11d0f73b0dbf50009758677ad534538385522f18aa643d126ca16a",
             "locator": {
               "kind": "symbol",
               "name": "roleDefaultsFixture"
@@ -33,8 +33,8 @@
         },
         {
           "anchor": {
-            "blob": "4e13f27347667fd31fb2f36947fc5bbeec7476f5",
-            "content": "sha256:56ec00729a200f32e02821e9c2ef76c89a889ae2e43aa567fabc04d6e310d6ec",
+            "blob": "7d629a482f75ed669ab4b420c7c29154d039c3b3",
+            "content": "sha256:5cb3e9725bb5c3c04b7c7e213e7a44ddcaabd094b0b2b653108271d5d5f852f8",
             "locator": {
               "end": 90,
               "kind": "line_range",
@@ -42,16 +42,26 @@
             }
           },
           "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "7d629a482f75ed669ab4b420c7c29154d039c3b3",
+            "content": "sha256:0d10e9438d850c2e35a508af0b5afafb5a93f44cd6a9c0366883bacaf1fdf0c5",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
         }
       ]
     },
     "3": {
-      "note": "Retains compact-row accessibility, source/label hovers, permission-owned chips, shared recipe and overfull DOM/source controls. The new case mounts RoleLauncher, prompts for a reason, asserts role plus stepUp only, and renders both status owners with host-default then observed-model text.\n\nAnchor: Current test/support source",
+      "note": "Retains compact-row accessibility, source/label hovers, permission-owned chips, shared recipe and overfull DOM/source controls. The new case mounts RoleLauncher, prompts for a reason, asserts role plus stepUp only, and renders both status owners with host-default then observed-model text.",
       "targets": [
         {
           "anchor": {
-            "blob": "4e13f27347667fd31fb2f36947fc5bbeec7476f5",
-            "content": "sha256:20a842ef174576308881eb1bfd0b45d5558ace9aae10f15bb0172170ab475b61",
+            "blob": "7d629a482f75ed669ab4b420c7c29154d039c3b3",
+            "content": "sha256:5f8f3de686f0284a12174794d4f5171dfe8eafb003925c8c051893321174fcb9",
             "locator": {
               "end": 367,
               "kind": "line_range",

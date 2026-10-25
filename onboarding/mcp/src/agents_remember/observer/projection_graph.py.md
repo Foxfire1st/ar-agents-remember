@@ -84,7 +84,9 @@ No relevant external documentation was available after checking the configured s
 
 - The structural title protocol requires master-qualified leaf keys. [1]
 - `_node_view` projects titles only through `(node.ref, leaf_id)` and retains local raw-id fallback. [2]
+
 - Public projection forcing proves duplicate local numbers retain the owning master's title. [3]
+
 
 ### Cross-Repo References
 

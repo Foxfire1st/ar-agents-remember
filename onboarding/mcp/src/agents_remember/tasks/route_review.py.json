@@ -79,26 +79,14 @@
       ]
     },
     "2": {
-      "note": "Fixed-list finding, round-cap permission fields, and review-state validation.",
+      "note": "Fixed-list finding, round-cap permission fields, and review-state validation.\n\nAnchor: `ReviewFinding` `ReviewState`",
       "targets": [
         {
           "anchor": {
             "blob": "c2275b9792d563997e82c391c04d0f6d885acd58",
-            "content": "sha256:123fbc9fd64a7c66b2da8b56cf2765e79813e71904565d8cb12358efd897d03f",
+            "content": "sha256:dec1e870f6476ae35e3eb90c61301c71553bf75141daf92defe26a0422a24f71",
             "locator": {
-              "kind": "symbol",
-              "name": "ReviewFinding"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "bee504e5f8e26eeb8b4de392655f249c35a0501e",
-            "content": "sha256:980ec3e3cb9884bccadd740d8473d00afb0315a9dced2c290aa88937320cbe4c",
-            "locator": {
-              "kind": "symbol",
-              "name": "ReviewState"
+              "kind": "file"
             }
           },
           "kind": "code"

@@ -12,9 +12,9 @@ This source-bound correction covers the described L54 seams only. Unrelated inhe
 
 ## Current evidence
 
-- Question publication has a batch fixture port and a root-aware writer request. \[27] [27]
-- Task-document question preservation/rewording is asserted through the real owner. \[28] [28]
-- Directory absence fires route_absent without a history row. \[29] [29]
+- Question publication has a batch fixture port and a root-aware writer request.
+- Task-document question preservation/rewording is asserted through the real owner.
+- Directory absence fires route_absent without a history row.
 
 ## Inherited source-epoch account (non-operative)
 
@@ -145,8 +145,8 @@ The following complete predecessor retains useful explanations, old observations
 >
 >
 >
-> - The unit-lane row. [19]
-> - The catalog consumer row. [20]
+> - The unit-lane row.
+> - The catalog consumer row.
 >
 > ### Cross-Repo References
 >
@@ -158,59 +158,59 @@ The following complete predecessor retains useful explanations, old observations
 >
 > ## Requalified checked-source evidence
 >
-> - The module docstring: the fixture's two decisions and the case shape. [1]
+> - The module docstring: the fixture's two decisions and the case shape.
 >
-> - The task-owner stand-in and the writer call. [10]
+> - The task-owner stand-in and the writer call.
 >
-> - Rules 4 and 5: `still_rejected`, `raise`, and the real `task_doc` append. [11]
+> - Rules 4 and 5: `still_rejected`, `raise`, and the real `task_doc` append.
 >
-> - The reorder guard and the registrations. [12]
+> - The reorder guard and the registrations.
 >
-> - Ruling 04:37:56: route targets, superseded decisions and the refresh. [13]
+> - Ruling 04:37:56: route targets, superseded decisions and the refresh.
 >
-> - Ruling 05:31:11: F1, the unmappable range, F3 and F4. [14]
+> - Ruling 05:31:11: F1, the unmappable range, F3 and F4.
 >
-> - Ruling 06:17:11: N1 and N2. [15]
+> - Ruling 06:17:11: N1 and N2.
 >
-> - R3-1: idempotent reruns. [16]
+> - R3-1: idempotent reruns.
 >
-> - R4: carried anchor, committed lookalikes, a reverted link, a newer approved version. [17]
+> - R4: carried anchor, committed lookalikes, a reverted link, a newer approved version.
 >
-> - R5: a second change in the range, an unapproved version, an anchor re-pointed to other code. [18]
->
->
-> - The unit-regression list includes this test module. [19]
+> - R5: a second change in the range, an unapproved version, an anchor re-pointed to other code.
 >
 >
->
->
-> - The evidence catalog consumer list includes this test module. [20]
+> - The unit-regression list includes this test module.
 >
 >
 >
 >
+> - The evidence catalog consumer list includes this test module.
 >
-> - A candidate successor suppresses the base decision and lists its ID; the stored rule requires supplied context. [21]
 >
-> - Without a successor the changed target still raises. [22]
 >
-> - An unrelated candidate decision suppresses nothing and raises no item itself. [23]
 >
-> - D18's three links: an assumption, a symbol anchor and a requirement endpoint. [2]
 >
-> - D12, reconsidered on a family and on D18. [3]
+> - A candidate successor suppresses the base decision and lists its ID; the stored rule requires supplied context.
 >
-> - The fixture world with both decisions and the assumption in K_B. [4]
+> - Without a successor the changed target still raises.
 >
-> - The manifest and the owning task. [5]
+> - An unrelated candidate decision suppresses nothing and raises no item itself.
 >
-> - Rule 2: the highest approved version by integer. [6]
+> - D18's three links: an assumption, a symbol anchor and a requirement endpoint.
 >
-> - Rule 1 and the conforming example. [7]
+> - D12, reconsidered on a family and on D18.
 >
-> - Rule 1: rows, anchors and requirement endpoints. [8]
+> - The fixture world with both decisions and the assumption in K_B.
 >
-> - Rule 3: one hop. [9]
+> - The manifest and the owning task.
+>
+> - Rule 2: the highest approved version by integer.
+>
+> - Rule 1 and the conforming example.
+>
+> - Rule 1: rows, anchors and requirement endpoints.
+>
+> - Rule 3: one hop.
 >
 >
 > ## Candidate-aware succession evidence
@@ -218,14 +218,64 @@ The following complete predecessor retains useful explanations, old observations
 > Inspected source assertions, not a fresh Curator test run or deployment of the
 > checked leaf repair to the serving build.
 >
-> - The candidate successor silences its changed base decision, names the successor and agrees with stored-item closure. [24]
+> - The candidate successor silences its changed base decision, names the successor and agrees with stored-item closure.
 >
-> - Without a successor the same changed target still raises. [25]
+> - Without a successor the same changed target still raises.
 >
-> - An unrelated supersedes target retains the base item; its fixture carries no reconsider_on link, limiting the new-decision absence assertion. [26]
+> - An unrelated supersedes target retains the base item; its fixture carries no reconsider_on link, limiting the new-decision absence assertion.
 
 ## Current account — the split refusal pins
 
 The re-authored refusal pins split into the three routes the writer now names: an unmappable target asks for `repoint` with its reason or a raise, a link the leaf re-authored asks to restore its base target or raise, and the cases that keep working say to recompute the worklist. A `still_rejected` row may carry `repoint`.
 
-- The surfacing pins hold the unmappable refusal's advice — `repoint` with its reason, or `raise` — and no longer the old re-author-the-target text. [30]
+- The surfacing pins hold the unmappable refusal's advice — `repoint` with its reason, or `raise` — and no longer the old re-author-the-target text.
+
+- The module docstring: MIK-R14@v2 over real paired Git trees, with D18/D12 reconsider links, worklists and writer rows.
+
+- D18's three links: an assumption, a symbol anchor and a requirement endpoint.
+- D12, reconsidered on a family and on D18.
+- The fixture world with both decisions and the assumption in K_B.
+- The manifest and the owning task.
+- Rule 2: the highest approved version by integer.
+- Rule 1 and the conforming example.
+- Rule 1: rows, anchors and requirement endpoints.
+- Rule 3: one hop.
+
+- The task-owner stand-in and the writer call.
+
+
+- Rules 4 and 5: `still_rejected`, `raise`, and the real `task_doc` append.
+
+- The reorder guard and the registrations.
+
+- Ruling 04:37:56: route targets, superseded decisions and the refresh.
+
+
+- Ruling 05:31:11: F1, the unmappable range, F3 and F4.
+
+- Ruling 06:17:11: N1 and N2.
+- R3-1: idempotent reruns.
+- R4: carried anchor, committed lookalikes, a reverted link, a newer approved version.
+- R5: a second change in the range, an unapproved version, an anchor re-pointed to other code.
+
+
+> Retained earlier citation wording: - The unit-regression list includes this test module.
+
+
+
+
+> Retained earlier citation wording: - The evidence catalog consumer list includes this test module.
+
+
+- A candidate successor suppresses the base decision and lists its ID; the stored rule requires supplied context.
+- Without a successor the changed target still raises.
+- An unrelated candidate decision suppresses nothing and raises no item itself.
+- The candidate successor silences its changed base decision, names the successor and agrees with stored-item closure.
+- Without a successor the same changed target still raises.
+
+- An unrelated supersedes target retains the base item; its fixture carries no reconsider_on link, limiting the new-decision absence assertion.
+
+- The unit-regression list includes this test module.
+
+
+- The evidence catalog consumer list includes this test module.

@@ -69,8 +69,12 @@ No relevant domain documentation was found.
 
 ### Repo-Internal References
 
+
 - The shell and wire/engine layer entry points. [1]
+
+
 - The overlay/failure layer entry points. [2]
+
 
 ### Cross-Repo References
 

@@ -263,25 +263,45 @@ differential in one test file and the ordering-and-admission cases in the other.
 renderer's docstring cites by path lives outside this code worktree, so it is quoted as the module's own
 statement rather than cited as a file.
 
+
 - The docstring that states the four properties together and the CR20-6 intake decision behind the authored side. [1]
+
 
 - The text-decision reader consumes recorded fields and canonical outcome prefixes; the canonical facet payload type is retired. [3]
 
+
 - The two generated-content rules the module classifies under: a recorded trigger identity and a payload byte-equality consequence. [4]
+
+
 - The three generated-content rules the module classifies under: a recorded trigger identity, a payload byte-equality consequence, and the registered rule a membership-derived row names. [5]
+
+
 - One authored determination read from a stored facet — the canonical-spelling rule that decides whether it is a priority at all, and the reader that turns one facet row into it with the envelope actor used only when the payload is silent. [6]
+
 - The pre-classification working type and the ordering pass's outcome, both frozen dataclasses rather than models. [7]
 - The declared key each admitted input produces (including the sentinel that orders an unprioritised row after every prioritised one and the rule that the priority is read from the candidate's own subject), and the exception that replaces a default order with its raise site and the two-member class closure the caller turns into a recorded limitation. [8]
 - The total sort key ending in record identity and the registered rule ids an ordering touched. [9]
 - The position that carries the class of the input, and the no-consequence statement built from either branch with its paging helper. [10]
 - The attachment read that fetches a subject's own decisions, and the rule that only one declared position may order. [11]
-- The per-view selection functions and the three renderers they feed, each returning rows with the limitations, the rule ids and the selection's own size. [12]
+
+- The per-view selection functions a view is built from: invariant, source-context and family candidates, each ordered and classified by the module's one ordering pass. [12]
+
+
 - The two projections that carry a row's recorded location into the response, the candidate builder each copies from rather than re-deriving, and the single decoder both share with the source-context view. [13]
-- The renderer's own ordering-and-paging step with the token-tail offset recovery, and the two views that carry the classification fields. [14]
+
+
+- Ordering and paging use admitted selection positions: the renderer slices the ordered selection at its supplied offset, and the application reads that position from its own admitted continuation. An unreadable cursor refuses instead of recovering a token-tail offset or returning position zero. The output retains rows, classification limitations, counts and continuation. [14]
+
 - The four admitted ordering inputs and the closed two-member class set the module imports instead of re-declaring, the registry holding one ordering rule per admitted input, and the declared stable tiebreak every position must name. [16]
-- The limitation record a withheld value becomes, the position shape, and the refusal of one subject at two positions. [17]
+
+- UnresolvedLimitation reports a withheld value without guessing its classification; OrderedPosition carries ordering input, provenance and the registered tiebreak, while require_distinct_row_subjects refuses one recorded subject at two positions. [17]
+
+
 - The reader port the module reads through and the store-side reader that answers it, including the per-kind row cache. [18]
+
+
 - The seam that calls the renderers, screens the ordering input before any read, and accounts withheld rows as unresolved references. [19]
+
 
 ### Cross-Repo References
 

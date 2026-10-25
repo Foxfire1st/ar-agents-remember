@@ -3,12 +3,12 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "Split contract: surface cases here, worlds and vocabularies imported",
+      "note": "The split contract: surface cases here, worlds and vocabularies imported.",
       "targets": [
         {
           "anchor": {
-            "blob": "af4221782a8d04e951bdbcffcc936f3ef22c6684",
-            "content": "sha256:4cd106ca70e3626d3e0f7e272722ff4a5b89ce947966faaca91fe9c34a78f067",
+            "blob": "7016203837db907490d39c45cdae36cf39d35288",
+            "content": "sha256:80280bcf4f61456a179bd741c6f552215d259233ce33db1c262d535047fe70b8",
             "locator": {
               "end": 697,
               "kind": "line_range",
@@ -20,12 +20,12 @@
       ]
     },
     "2": {
-      "note": "Shipped corpus, manifest identity, index shape, entry completeness",
+      "note": "Shipped corpus, manifest identity, index shape and entry completeness.",
       "targets": [
         {
           "anchor": {
-            "blob": "af4221782a8d04e951bdbcffcc936f3ef22c6684",
-            "content": "sha256:4cd106ca70e3626d3e0f7e272722ff4a5b89ce947966faaca91fe9c34a78f067",
+            "blob": "7016203837db907490d39c45cdae36cf39d35288",
+            "content": "sha256:80280bcf4f61456a179bd741c6f552215d259233ce33db1c262d535047fe70b8",
             "locator": {
               "end": 697,
               "kind": "line_range",
@@ -37,12 +37,12 @@
       ]
     },
     "3": {
-      "note": "Real stdio exchange and its eight client-observed checks",
+      "note": "The real stdio exchange and its client-observed checks.",
       "targets": [
         {
           "anchor": {
-            "blob": "af4221782a8d04e951bdbcffcc936f3ef22c6684",
-            "content": "sha256:4cd106ca70e3626d3e0f7e272722ff4a5b89ce947966faaca91fe9c34a78f067",
+            "blob": "7016203837db907490d39c45cdae36cf39d35288",
+            "content": "sha256:80280bcf4f61456a179bd741c6f552215d259233ce33db1c262d535047fe70b8",
             "locator": {
               "end": 697,
               "kind": "line_range",
@@ -54,12 +54,12 @@
       ]
     },
     "4": {
-      "note": "Live-server traversal refusal and harness-can-fail sanity",
+      "note": "Live-server traversal refusal and the harness-can-fail sanity check.",
       "targets": [
         {
           "anchor": {
-            "blob": "af4221782a8d04e951bdbcffcc936f3ef22c6684",
-            "content": "sha256:4cd106ca70e3626d3e0f7e272722ff4a5b89ce947966faaca91fe9c34a78f067",
+            "blob": "7016203837db907490d39c45cdae36cf39d35288",
+            "content": "sha256:80280bcf4f61456a179bd741c6f552215d259233ce33db1c262d535047fe70b8",
             "locator": {
               "end": 697,
               "kind": "line_range",
@@ -71,12 +71,12 @@
       ]
     },
     "5": {
-      "note": "Seeded-mutation guards: containment, index, name rule, idempotence",
+      "note": "Seeded-mutation guards: containment, index, name rule and idempotence.",
       "targets": [
         {
           "anchor": {
-            "blob": "af4221782a8d04e951bdbcffcc936f3ef22c6684",
-            "content": "sha256:4cd106ca70e3626d3e0f7e272722ff4a5b89ce947966faaca91fe9c34a78f067",
+            "blob": "7016203837db907490d39c45cdae36cf39d35288",
+            "content": "sha256:80280bcf4f61456a179bd741c6f552215d259233ce33db1c262d535047fe70b8",
             "locator": {
               "end": 697,
               "kind": "line_range",
@@ -88,12 +88,12 @@
       ]
     },
     "6": {
-      "note": "Altitude admission, capsule seats, nesting, legacy rename",
+      "note": "Altitude admission, capsule seats, nesting and the legacy rename.",
       "targets": [
         {
           "anchor": {
-            "blob": "af4221782a8d04e951bdbcffcc936f3ef22c6684",
-            "content": "sha256:4cd106ca70e3626d3e0f7e272722ff4a5b89ce947966faaca91fe9c34a78f067",
+            "blob": "7016203837db907490d39c45cdae36cf39d35288",
+            "content": "sha256:80280bcf4f61456a179bd741c6f552215d259233ce33db1c262d535047fe70b8",
             "locator": {
               "end": 697,
               "kind": "line_range",

@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/memory_quality/legacy_cards.py",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
@@ -58,8 +59,21 @@
       "targets": [
         {
           "anchor": {
-            "blob": "63231e18a2ea7fe60b5e8d8df3eaf437680f2429",
-            "content": "sha256:bc89365e4597d139bd67aa8bc5de94e80ae2b709f1713129da4483d7e4fa1545",
+            "blob": "c72c2b159123047c79c15fc46fd02991f16ef41b",
+            "content": "sha256:048cf3be161a39d78b024e226d6b771802e3c125f55e63739e5ba93284db829c",
+            "locator": {
+              "end": 746,
+              "kind": "line_range",
+              "start": 711
+            },
+            "path": "mcp/src/agents_remember/memory/baseline.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c72c2b159123047c79c15fc46fd02991f16ef41b",
+            "content": "sha256:048cf3be161a39d78b024e226d6b771802e3c125f55e63739e5ba93284db829c",
             "locator": {
               "kind": "symbol",
               "name": "_converted_adopt_gate"

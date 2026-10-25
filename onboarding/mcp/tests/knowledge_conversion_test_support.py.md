@@ -23,7 +23,7 @@ same queries it runs on a real `knowledge.sqlite`.
   - placeholder rows;
   - a quoted anchor, a removed path and a range past the end;
   - a URL, a whole-file source and a test source;
-  - marker-shaped prose (`signals[0]`) and an Update History;
+  - marker-shaped prose (`signals`) and an Update History;
   - a stray row appended below a table (`STRAY_ROW`).
 
   `other_card` has no evidence. `route_card` is a route overview with no verified commit, so it is a
@@ -70,13 +70,22 @@ The fixture builders.
 
 - The code repository. [1]
 - The card with every row case, and the stray row. [2]
+
 - The route overview and the evidence-free card. [3]
+
 - The legacy database in the real column spelling. [4]
 - The committed memory repository. [5]
-- Its catalog row. [6]
+
+
+
+> Retained earlier citation wording: - Its catalog row. [6]
+
+
 
 ### Cross-Repo References
 
 No meaningful cross-repo references found: the fixtures are `tmp_path` Git repositories built by the tests themselves.
 
 No cross-repo boundary is crossed by this file.
+
+- Its catalog row. [6]

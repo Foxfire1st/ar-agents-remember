@@ -310,10 +310,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "049227aeea85b68565e3a144f616be2f01186dc3",
-            "content": "sha256:e79f69a320047a9ff0ff3fb74868c934897b26b94cbaf5ad67ab98eaf2e49b71",
+            "blob": "c9e2847f64ca428bdc799c8173b43aa736f4b0e9",
+            "content": "sha256:15ff2b77804c98eb561cb5c8b92ae8240ddb9bce099af7731e8320f260faa919",
             "locator": {
-              "kind": "file"
+              "end": 243,
+              "kind": "line_range",
+              "start": 190
             },
             "path": "mcp/src/agents_remember/worktrees/worktree_contract.py"
           },
@@ -339,15 +341,16 @@
       ]
     },
     "2": {
-      "note": "Successful cleanup and exact terminal replay pass through the terminal activation-release bridge.",
+      "note": "**Retained historical source account — superseded by the current contract:** Successful cleanup and exact terminal replay pass through the terminal activation-release bridge.  Anchor: `cleanup_result`",
       "targets": [
         {
           "anchor": {
-            "blob": "6c144ebeaa236e2459b5aa2ff32fa15789eb6eb4",
-            "content": "sha256:8b22e4c1d88ed51d3e2763f6a1ec838a77ed6c30b1b6a976235bd6ed9c9686d4",
+            "blob": "38b1dccdd3748dc7d095c969fb81d964e1075f11",
+            "content": "sha256:f77562dce1c2e56ca319e100349ed8da9a715b6913b1eb242d871be982f32cb4",
             "locator": {
-              "kind": "symbol",
-              "name": "cleanup_result"
+              "end": 883,
+              "kind": "line_range",
+              "start": 685
             }
           },
           "kind": "code"
@@ -355,15 +358,16 @@
       ]
     },
     "22": {
-      "note": "A cleanup repeated after its terminal archive was written carries no rejudged record: the archive-ready branch binds `kept_line = None` and invents no `landedTips`.",
+      "note": "**Retained historical source account — superseded by the current contract:** A cleanup repeated after its terminal archive was written carries no rejudged record: the archive-ready branch binds `kept_line = None` and invents no `landedTips`.  Anchor: `cleanup_result`",
       "targets": [
         {
           "anchor": {
-            "blob": "6c144ebeaa236e2459b5aa2ff32fa15789eb6eb4",
-            "content": "sha256:8b22e4c1d88ed51d3e2763f6a1ec838a77ed6c30b1b6a976235bd6ed9c9686d4",
+            "blob": "38b1dccdd3748dc7d095c969fb81d964e1075f11",
+            "content": "sha256:42e1995b1dbf9c75210fb68edd1d6e05615f33159cb76f9985890d12d62902e8",
             "locator": {
-              "kind": "symbol",
-              "name": "cleanup_result"
+              "end": 851,
+              "kind": "line_range",
+              "start": 685
             }
           },
           "kind": "code"
@@ -409,10 +413,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b91ae98e4828a3de3510a5f6c36a47c76cf70ac7",
-            "content": "sha256:65bc2ae4744ab9977aa385f6c58bc6a54146fb9db8432180f605851963ee3387",
+            "blob": "38b1dccdd3748dc7d095c969fb81d964e1075f11",
+            "content": "sha256:844c0a4c09ae13603d4876a203380dad736797ba49c839b1b544bea3f4c2cfaa",
             "locator": {
-              "kind": "file"
+              "end": 883,
+              "kind": "line_range",
+              "start": 623
             }
           },
           "kind": "code"
@@ -488,15 +494,16 @@
       ]
     },
     "7": {
-      "note": "Terminal mutation capability binds every removable worktree and local/remote branch to the validated contract before cleanup delegates to the lowest writers.",
+      "note": "**Retained historical source account — superseded by the current contract:** Terminal mutation capability binds every removable worktree and local/remote branch to the validated contract before cleanup delegates to the lowest writers.  Anchor: `_terminal_mutation_authority`",
       "targets": [
         {
           "anchor": {
-            "blob": "6c144ebeaa236e2459b5aa2ff32fa15789eb6eb4",
-            "content": "sha256:e364d555946e1664facb9c6bc8d5655af03e34794f2208fe1633499b3c91a277",
+            "blob": "38b1dccdd3748dc7d095c969fb81d964e1075f11",
+            "content": "sha256:2368f70df2faf1324dd191deef40f750922150fbcd6151482a5e7525c4c22114",
             "locator": {
-              "kind": "symbol",
-              "name": "_terminal_mutation_authority"
+              "end": 168,
+              "kind": "line_range",
+              "start": 108
             }
           },
           "kind": "code"
@@ -525,10 +532,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "405fa3b75f6eb309ec9c929dbbe7439d4cd5b7b1",
-            "content": "sha256:c5383b90269522108ba9f5209ed37d341216d9ae0650066498ff855547a28e37",
+            "blob": "e5a10d614d0e28fb14c5e7a0703d8fb4ce35def4",
+            "content": "sha256:0cc7abbf055f6ec82fdb09ae3a167512e6cc5066d15c8fd6ab22645275e53dea",
             "locator": {
-              "kind": "file"
+              "end": 765,
+              "kind": "line_range",
+              "start": 593
             },
             "path": "mcp/src/agents_remember/worktrees/modules/abandon.py"
           },

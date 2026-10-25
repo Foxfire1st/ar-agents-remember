@@ -39,12 +39,12 @@
       ]
     },
     "3": {
-      "note": "Saved taskless UUID/pending plus trimmed reason/override restoration keeps the legacy Investigator storage slot.\n\nAnchor: L265–L303",
+      "note": "Saved taskless UUID/pending plus trimmed reason/override restoration keeps the legacy Investigator storage slot.",
       "targets": [
         {
           "anchor": {
-            "blob": "5afb423008b1b65fdb77e7f434136c58161a0a1a",
-            "content": "sha256:eee8a4575ac30b8aa5e2006cd3b14ba4d2ca4cf26fbcabc4eb35c268079145b0",
+            "blob": "3aa75e7e06e051f836a57a221e7f05a63b7b4a59",
+            "content": "sha256:6a359647fdb5a46a6831eb7f88dd5277938cca9b6db9bd0c01591b7b6367ba99",
             "locator": {
               "end": 303,
               "kind": "line_range",

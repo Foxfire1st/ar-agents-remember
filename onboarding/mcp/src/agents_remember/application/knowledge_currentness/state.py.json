@@ -20,15 +20,14 @@
       ]
     },
     "10": {
-      "note": "The stale-proof cases.",
+      "note": "The stale-proof cases.\n\nAnchor: `test_a_proof_whose_test_changed_or_disappeared_is_flagged_stale`",
       "targets": [
         {
           "anchor": {
-            "blob": "85c55f2eaf44e11e20283306277a55040b2fa8a1",
-            "content": "sha256:292b4b48d8b864b1f75ccd356fed044b251c6890bf93c054653477fc4cb53783",
+            "blob": "035d30df74bd1bad93ddc28456d591c1024b28d2",
+            "content": "sha256:58f2f830be97427187427103b14ba610b4a99dad8ba64e42c299bd5fd25f7478",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_proof_whose_test_changed_or_disappeared_is_flagged_stale"
+              "kind": "file"
             },
             "path": "mcp/tests/test_knowledge_currentness.py"
           },
@@ -112,26 +111,14 @@
       ]
     },
     "4": {
-      "note": "One invariant's differing entries, compact when a read-wide reason explains them.",
+      "note": "One invariant's complete observed entry list, compact when a read-wide reason explains it; `differing` remains the non-current subset.\n\nAnchor: `InvariantCurrentness` `differing`",
       "targets": [
         {
           "anchor": {
-            "blob": "d504af4df20e17280188e743d502c3b26d281d5e",
-            "content": "sha256:37d2997f7a692533bf697445c376b3a3b574d4704b451e0cd1c78b0931cef672",
-            "locator": {
-              "kind": "symbol",
-              "name": "InvariantCurrentness"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
             "blob": "e73fb9f42abfa199fbc018cba44b007c66975803",
-            "content": "sha256:8978f6d1f643db2c821b551be7355a3bab138faf41c702836e7d8279456f5659",
+            "content": "sha256:2ddba6c08e734d89c6b8fe972dc5efe1e8d9c1a852cb95bd483a47da7418f647",
             "locator": {
-              "kind": "symbol",
-              "name": "differing"
+              "kind": "file"
             }
           },
           "kind": "code"

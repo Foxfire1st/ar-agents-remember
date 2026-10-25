@@ -102,15 +102,27 @@ No configured Domain Documentation source exists for this file.
 
 - Generation pins, the published generation identity, and the `committed`/`working` leaf-row state the master client threads and mirrors. [1]
 - Typed result contracts mirror the L3 endpoints' camelCase JSON (changed files, counters, file-diff, master accumulation), and (260921-ICR-L25) the leaf view's `state`/`stateDetail` pair that keeps an unrecorded range apart from a measured-empty one. [2]
+
 - The `base`-arg GET helpers build the `/task`, `/file-diff`, `/master` URLs via the shared `qs`. [3]
+
+
 - Change-set reads use qs and their own refusal-preserving getChangeSetJson, throwing ReviewTransportError rather than discarding refusal detail. [4]
+
+
 - The serving layer that defines the endpoints + response shapes this client mirrors. [5]
+
 - The viewer's initial list request uses loadChangeSet, while its non-comparison working-leaf poll still calls leafChangeset and refreshes an active diff every 2.5 seconds. [6]
 
+
 - `DetailPanel`’s change-set button restores cached data through `peekChangeSet` and reads counters through `loadChangeSet`. [7]
+
+
 - The vitest contract test pins the endpoint URLs + the `FilesApiError` mapping. [8]
 
+
+
 - List addresses share one URL builder and store-backed peek/load API; the comparison list reuses the task endpoint with a number and no mode. [13]
+
 
 ### Cross-Repo References
 

@@ -24,7 +24,7 @@ rule) and re-exports the names those consumers need.
   history files, `ar-history/v1`, MIK-R07), `documents` (locations and the schema dispatch) and `canonical` (the formatting applied by `agents-remember knowledge-format`).
 - It states the Markdown marker rule once: a file's `[n]` markers are local numbers that resolve
   through the paired sidecar's `references`; text that merely looks like a marker sits in a code
-  span or is written `\[0]`. Parsing markers is the validator's job (MIK-R22), not this package's.
+  span or is written `\`. Parsing markers is the validator's job (MIK-R22), not this package's.
 - The body is imports plus `__all__`; no logic lives here. Since MIK-R07 the surface also carries
   `HISTORY_ROW_KINDS`, `HistoryFile`, `HistoryRow`, `InvariantRow`, `FamilyRow`,
   `frozen_history_violation`, `history_path` and `parse_history_document`; the finer history

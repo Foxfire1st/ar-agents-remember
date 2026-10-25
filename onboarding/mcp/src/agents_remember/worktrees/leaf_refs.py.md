@@ -42,6 +42,10 @@ No configured domain documentation was available.
 
 - Resolution returns canonical document identity or a typed not-found/ambiguous error. [1]
 - The bounded canonical-id skip index `canonical_leaf_doc_ids` is built per task root for contract healing. [2]
-- The heal sweep `heal_contract_leaf_ids` rewrites legacy leaf ids using that per-root index. [3]
+
+> Retained earlier citation wording: - The heal sweep `heal_contract_leaf_ids` rewrites legacy leaf ids using that per-root index. [3]
+
 - Worktree start is the live caller of leaf-document resolution. [4]
 - Existing enclosure contracts can still be found through proven aliases or the explicit raw legacy path. [5]
+
+- The heal sweep `heal_contract_leaf_ids` rewrites legacy leaf ids using that per-root index.  Anchor: `heal_contract_leaf_ids` [3]

@@ -1,9 +1,10 @@
 {
   "path": "mcp/src/agents_remember/application/knowledge_view_render.py",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
-      "note": "The docstring that states the four properties together and the CR20-6 intake decision behind the authored side.",
+      "note": "The docstring that states the four properties together and the CR20-6 intake decision behind the authored side.\n\nAnchor: `order_candidates` `_classified`",
       "targets": [
         {
           "anchor": {
@@ -29,12 +30,22 @@
         },
         {
           "anchor": {
-            "blob": "457bef31245f490ad7f0386cabe57f6f1c5494fc",
-            "content": "sha256:c2142804a36ee7d0162d0cdc5f5cfc54ec407f1cd06d84fdc36e45f06a467f9f",
+            "blob": "8ba11c0965aecef5b0befe6bd64bc4b5b6e3d23c",
+            "content": "sha256:48dc668a0cc9e9c60964ca739aa1497c629dd0e3c407c316037a0126301a0b76",
             "locator": {
               "end": 38,
               "kind": "line_range",
               "start": 1
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8ba11c0965aecef5b0befe6bd64bc4b5b6e3d23c",
+            "content": "sha256:ea7d133e39d68c8bd99b452414faa674c2d2d98bb19bf2ac82440d9c864edda8",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -107,81 +118,14 @@
       ]
     },
     "12": {
-      "note": "The per-view selection functions and the five renderers they feed, each returning rows with the limitations, the rule ids and the selection's own size.",
+      "note": "The per-view selection functions a view is built from: invariant, source-context and family candidates, each ordered and classified by the module's one ordering pass.\n\nAnchor: `_invariant_candidates` `_family_candidates` `_review_candidates` `_curation_candidates` `render_source_context` `render_invariant` `render_family`",
       "targets": [
         {
           "anchor": {
             "blob": "8ba11c0965aecef5b0befe6bd64bc4b5b6e3d23c",
-            "content": "sha256:d87c210aad6090315ac255cbf10e2fb1701ce4ce789540347780b533d13dce53",
+            "content": "sha256:ea7d133e39d68c8bd99b452414faa674c2d2d98bb19bf2ac82440d9c864edda8",
             "locator": {
-              "kind": "symbol",
-              "name": "_invariant_candidates"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "85cc2936642a3ec37ee69966adc55c9877cb37e0",
-            "content": "sha256:9708a0d5cfb5a310b91da89a7686787e39a34f30ffd7baf60f0d7dfc805cb92f",
-            "locator": {
-              "kind": "symbol",
-              "name": "_family_candidates"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "85cc2936642a3ec37ee69966adc55c9877cb37e0",
-            "content": "sha256:6cd3e6cf92ff0f59d0c73247519a35794e8381452aef28e1de2693c3f5f0e3f8",
-            "locator": {
-              "kind": "symbol",
-              "name": "_review_candidates"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "85cc2936642a3ec37ee69966adc55c9877cb37e0",
-            "content": "sha256:fb96e5bc2b6497893b3d20d81b30b532347ff182b09a6c5b6dfa591d383de4e2",
-            "locator": {
-              "kind": "symbol",
-              "name": "_curation_candidates"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "457bef31245f490ad7f0386cabe57f6f1c5494fc",
-            "content": "sha256:1faf569f5c0dbf928499fb983608cf29fe7b35ccf63915d1941290e345277ca4",
-            "locator": {
-              "kind": "symbol",
-              "name": "render_source_context"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "457bef31245f490ad7f0386cabe57f6f1c5494fc",
-            "content": "sha256:bf3b1ae436fb3ba0bb251abe794a811cc0f1d46dda33ccf7286c5e7bc07da8b1",
-            "locator": {
-              "kind": "symbol",
-              "name": "render_invariant"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "457bef31245f490ad7f0386cabe57f6f1c5494fc",
-            "content": "sha256:57281d5a3d5accea9d0e11cd6b3b8622e21d3e3ff4916adf131313d01b3bf2d0",
-            "locator": {
-              "kind": "symbol",
-              "name": "render_family"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -189,26 +133,14 @@
       ]
     },
     "13": {
-      "note": "The two projections that carry a row's recorded location into the response, the candidate builder each copies from rather than re-deriving, and the single decoder both share with the source-context view.",
+      "note": "The two projections that carry a row's recorded location into the response, the candidate builder each copies from rather than re-deriving, and the single decoder both share with the source-context view.\n\nAnchor: `render_invariant` `render_family` `_member_locations` `_invariant_candidates` `_LOCATOR_ADAPTER`",
       "targets": [
         {
           "anchor": {
-            "blob": "457bef31245f490ad7f0386cabe57f6f1c5494fc",
-            "content": "sha256:bf3b1ae436fb3ba0bb251abe794a811cc0f1d46dda33ccf7286c5e7bc07da8b1",
+            "blob": "8ba11c0965aecef5b0befe6bd64bc4b5b6e3d23c",
+            "content": "sha256:ea7d133e39d68c8bd99b452414faa674c2d2d98bb19bf2ac82440d9c864edda8",
             "locator": {
-              "kind": "symbol",
-              "name": "render_invariant"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "457bef31245f490ad7f0386cabe57f6f1c5494fc",
-            "content": "sha256:57281d5a3d5accea9d0e11cd6b3b8622e21d3e3ff4916adf131313d01b3bf2d0",
-            "locator": {
-              "kind": "symbol",
-              "name": "render_family"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -249,112 +181,42 @@
       ]
     },
     "14": {
-      "note": "The renderer's own ordering-and-paging step with the token-tail offset recovery, and the two views that carry the classification fields and the queue shapes.",
+      "note": "Ordering and paging use admitted selection positions: the renderer slices the ordered selection at its supplied offset, and the application reads that position from its own admitted continuation. An unreadable cursor refuses instead of recovering a token-tail offset or returning position zero. The output retains rows, classification limitations, counts and continuation.",
       "targets": [
         {
           "anchor": {
-            "blob": "457bef31245f490ad7f0386cabe57f6f1c5494fc",
-            "content": "sha256:a0a0df8e5bf65ecce2ed41f56b2b1c72bc8feac1e53e66b2137b62b0f895cef7",
+            "blob": "8ba11c0965aecef5b0befe6bd64bc4b5b6e3d23c",
+            "content": "sha256:bc9b80951185af41e5c125998e42999a503153545d459e06477e48313af5c462",
             "locator": {
-              "kind": "symbol",
-              "name": "_render"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "457bef31245f490ad7f0386cabe57f6f1c5494fc",
-            "content": "sha256:605fd15b4ac10223ccb78a0495931b25f81d79f1be9169344d549845fa1b5f33",
-            "locator": {
-              "kind": "symbol",
-              "name": "render_review_matrix"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "457bef31245f490ad7f0386cabe57f6f1c5494fc",
-            "content": "sha256:e459dfb71583c960da4a7908cd7779e8fd14c68369367b4c341604bb2c4abc14",
-            "locator": {
-              "kind": "symbol",
-              "name": "render_curation_queue"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "457bef31245f490ad7f0386cabe57f6f1c5494fc",
-            "content": "sha256:02d9cf35b1854f432741638c6c79d38517e891ec4143cef1e52543bf1aa87546",
-            "locator": {
-              "end": 1120,
+              "end": 302,
               "kind": "line_range",
-              "start": 1064
+              "start": 265
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "457bef31245f490ad7f0386cabe57f6f1c5494fc",
-            "content": "sha256:374c0fcc1305e06f63b794147119a861b06f172bf1ff8fce73960a74089ad8cb",
+            "blob": "8ba11c0965aecef5b0befe6bd64bc4b5b6e3d23c",
+            "content": "sha256:20a4256edcd8682911bc2f965815fe84cdf14e8af8f6bd314ac2e1037b333102",
             "locator": {
-              "end": 1158,
+              "end": 399,
               "kind": "line_range",
-              "start": 1129
+              "start": 376
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "457bef31245f490ad7f0386cabe57f6f1c5494fc",
-            "content": "sha256:30c1f188f142ed7a824680b207172c5519bc614a48fda7cf167edb8ddf79956c",
+            "blob": "5348eabe513b62ad118f8618a0082b954ba50c78",
+            "content": "sha256:f070b91cd586d81c7d4bb22f2e5ac3e31406edeb6405cc05fd0fc2b4f5132cdb",
             "locator": {
-              "end": 1083,
+              "end": 217,
               "kind": "line_range",
-              "start": 1083
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "37f41084b20d44aa6b734698e5cde4bd26d9ae63",
-            "content": "sha256:818b6ee1b3d10ee06623f62439c3cef0ce2225dc96c067ccc51b3408b64ced0e",
-            "locator": {
-              "end": 35,
-              "kind": "line_range",
-              "start": 35
+              "start": 152
             },
             "path": "mcp/src/agents_remember/application/knowledge_views.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "37f41084b20d44aa6b734698e5cde4bd26d9ae63",
-            "content": "sha256:500ecac3c6b7e3f5c296a690f2ccbd0784008a3c892a55623d05972666c971f8",
-            "locator": {
-              "end": 268,
-              "kind": "line_range",
-              "start": 268
-            },
-            "path": "mcp/src/agents_remember/application/knowledge_views.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "457bef31245f490ad7f0386cabe57f6f1c5494fc",
-            "content": "sha256:01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
-            "locator": {
-              "end": 1150,
-              "kind": "line_range",
-              "start": 1150
-            }
           },
           "kind": "code"
         }
@@ -472,19 +334,33 @@
             "path": "mcp/src/agents_remember/models/knowledge/view.py"
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4abe7242c8b69c0495b21f524532bbed0065f558",
+            "content": "sha256:509337d0aa52790b9f27f6e16cb523a7a91c8b844c71b9122b9e2f1e68d1686f",
+            "locator": {
+              "end": 631,
+              "kind": "line_range",
+              "start": 617
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/view.py"
+          },
+          "kind": "code"
         }
       ]
     },
     "17": {
-      "note": "The limitation record a withheld value becomes, the position shape, and the refusal of one subject at two positions.",
+      "note": "UnresolvedLimitation reports a withheld value without guessing its classification; OrderedPosition carries ordering input, provenance and the registered tiebreak, while require_distinct_row_subjects refuses one recorded subject at two positions.",
       "targets": [
         {
           "anchor": {
             "blob": "4abe7242c8b69c0495b21f524532bbed0065f558",
             "content": "sha256:299743c615d259ed7b09b8321534c39b46b9e6c20e1c02daf7c53cd6d207f3a2",
             "locator": {
-              "kind": "symbol",
-              "name": "UnresolvedLimitation"
+              "end": 586,
+              "kind": "line_range",
+              "start": 574
             },
             "path": "mcp/src/agents_remember/models/knowledge/view.py"
           },
@@ -495,8 +371,9 @@
             "blob": "4abe7242c8b69c0495b21f524532bbed0065f558",
             "content": "sha256:c4e5ca22e96637ac4929ed9ae607ee688c3a94c44cc62c79adb25641ad3ecb8e",
             "locator": {
-              "kind": "symbol",
-              "name": "OrderedPosition"
+              "end": 634,
+              "kind": "line_range",
+              "start": 602
             },
             "path": "mcp/src/agents_remember/models/knowledge/view.py"
           },
@@ -507,83 +384,9 @@
             "blob": "4abe7242c8b69c0495b21f524532bbed0065f558",
             "content": "sha256:0db1a5967a0ec9b3cb080b9610b756c82bcbdcc5fdd49d96edbb26cb26f96dbc",
             "locator": {
-              "kind": "symbol",
-              "name": "require_distinct_row_subjects"
-            },
-            "path": "mcp/src/agents_remember/models/knowledge/view.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "457bef31245f490ad7f0386cabe57f6f1c5494fc",
-            "content": "sha256:685d4f02d7094603c7d8bba8e62a07dcd9c17b8febae5bce99d2d165e1dc90ce",
-            "locator": {
-              "end": 67,
+              "end": 733,
               "kind": "line_range",
-              "start": 67
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "457bef31245f490ad7f0386cabe57f6f1c5494fc",
-            "content": "sha256:01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
-            "locator": {
-              "end": 363,
-              "kind": "line_range",
-              "start": 363
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "457bef31245f490ad7f0386cabe57f6f1c5494fc",
-            "content": "sha256:edcbf47f54a2a25df7466ca527cb632de99872c219519765cae3cbe6365ec078",
-            "locator": {
-              "end": 1019,
-              "kind": "line_range",
-              "start": 1019
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "4abe7242c8b69c0495b21f524532bbed0065f558",
-            "content": "sha256:802e61f55dac07278f8a01acb50dda6410e298b95c3b6989ba81d078045b002a",
-            "locator": {
-              "end": 796,
-              "kind": "line_range",
-              "start": 772
-            },
-            "path": "mcp/src/agents_remember/models/knowledge/view.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "4abe7242c8b69c0495b21f524532bbed0065f558",
-            "content": "sha256:9037564a3702d7c0a4ec0dd4350be0499787d7b49cbcc3e179e5cc432ab16256",
-            "locator": {
-              "end": 589,
-              "kind": "line_range",
-              "start": 584
-            },
-            "path": "mcp/src/agents_remember/models/knowledge/view.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "4abe7242c8b69c0495b21f524532bbed0065f558",
-            "content": "sha256:804222f6b2f1934d37a7af030a106bdbb577e81c3ee79ac70b771d769ab7c105",
-            "locator": {
-              "end": 599,
-              "kind": "line_range",
-              "start": 594
+              "start": 709
             },
             "path": "mcp/src/agents_remember/models/knowledge/view.py"
           },
@@ -596,8 +399,60 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bc391045efe2a2c2210873a09c33e180ed9fdab0",
-            "content": "sha256:c599c05b5ae516922b9cb6b2b4cdeb3d5ef1a57670c354289ab085e612c4e341",
+            "blob": "4abe7242c8b69c0495b21f524532bbed0065f558",
+            "content": "sha256:25e3782d225942f1a85b8e6ae5b029861a026d3555768e2fa434245f0a47718e",
+            "locator": {
+              "end": 1014,
+              "kind": "line_range",
+              "start": 972
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/view.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "62477ae2fb481bc7ea9762d2594fad4babc33bd3",
+            "content": "sha256:8b072d8f88112c0e5d5fc510697f8f58215dcb25f4be2f9081763112603b781a",
+            "locator": {
+              "end": 305,
+              "kind": "line_range",
+              "start": 127
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/view_source.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "62477ae2fb481bc7ea9762d2594fad4babc33bd3",
+            "content": "sha256:f30563b53bfcc5327203ee8ef47ed0b031346af44b2b1e2294b8beb53770330d",
+            "locator": {
+              "end": 332,
+              "kind": "line_range",
+              "start": 308
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/view_source.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "62477ae2fb481bc7ea9762d2594fad4babc33bd3",
+            "content": "sha256:bd17a3c8b2ee9792da8b2e3dd05cd86434dabd4342b07290ea357150f64523a1",
+            "locator": {
+              "end": 195,
+              "kind": "line_range",
+              "start": 152
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/view_source.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4abe7242c8b69c0495b21f524532bbed0065f558",
+            "content": "sha256:25e3782d225942f1a85b8e6ae5b029861a026d3555768e2fa434245f0a47718e",
             "locator": {
               "kind": "symbol",
               "name": "KnowledgeViewReader"
@@ -608,8 +463,8 @@
         },
         {
           "anchor": {
-            "blob": "4373f6a795d66534ed9b12f910c8ac565728f73f",
-            "content": "sha256:5ef0cca41ca67602fed83f265456f9747a1e1efdbf178552b7b1ef89cc73faf8",
+            "blob": "62477ae2fb481bc7ea9762d2594fad4babc33bd3",
+            "content": "sha256:8b072d8f88112c0e5d5fc510697f8f58215dcb25f4be2f9081763112603b781a",
             "locator": {
               "kind": "symbol",
               "name": "StoreViewReader"
@@ -629,55 +484,27 @@
             "path": "mcp/src/agents_remember/memory/knowledge/view_source.py"
           },
           "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "bc391045efe2a2c2210873a09c33e180ed9fdab0",
-            "content": "sha256:4a99a6d80610de16c1fbbd72d8f5aeee562a465cde7aed5980ab3cf1a4b560c6",
-            "locator": {
-              "end": 1086,
-              "kind": "line_range",
-              "start": 1041
-            },
-            "path": "mcp/src/agents_remember/models/knowledge/view.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "4373f6a795d66534ed9b12f910c8ac565728f73f",
-            "content": "sha256:f565f3793c03813d0ec1fcafc6a6a53a7f96123b71f06e4b10068b08125e57e1",
-            "locator": {
-              "end": 195,
-              "kind": "line_range",
-              "start": 152
-            },
-            "path": "mcp/src/agents_remember/memory/knowledge/view_source.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "c334540d7bf402dbd0b5b9fda4cf5cf8533153c6",
-            "content": "sha256:63eaf58cb488fbae5dd7c6129b62253f5b9e065350049ef115b62b2620ba1752",
-            "locator": {
-              "end": 428,
-              "kind": "line_range",
-              "start": 405
-            },
-            "path": "mcp/src/agents_remember/memory/knowledge/view_source.py"
-          },
-          "kind": "code"
         }
       ]
     },
     "19": {
-      "note": "The seam that calls the renderers, screens the ordering input before any read, and accounts withheld rows as unresolved references.",
+      "note": "The seam that calls the renderers, screens the ordering input before any read, and accounts withheld rows as unresolved references.\n\nAnchor: `_admit` `_render` `_counts`",
       "targets": [
         {
           "anchor": {
-            "blob": "721814af4b9ad2433aeced4ba0ed34e488afa210",
-            "content": "sha256:326d2db18004a908fe0b294f3a7d44bcd5da86397614f1eb50fb6d30af0e67e8",
+            "blob": "5348eabe513b62ad118f8618a0082b954ba50c78",
+            "content": "sha256:7387cf099c024719807719c72686407762efce1f73465ea9185cc4db65dc4fe0",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_views.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5348eabe513b62ad118f8618a0082b954ba50c78",
+            "content": "sha256:3e94692ef31c0f277434ec65433a6db34a74db56f5c1b01d8f341b5a948c78fd",
             "locator": {
               "kind": "symbol",
               "name": "_admit"
@@ -700,8 +527,8 @@
         },
         {
           "anchor": {
-            "blob": "37f41084b20d44aa6b734698e5cde4bd26d9ae63",
-            "content": "sha256:a8a024573d5d503271af6ec2f5af9563a16befa1487055705c9a1bcf2dd6ecda",
+            "blob": "5348eabe513b62ad118f8618a0082b954ba50c78",
+            "content": "sha256:04545a9f3293d416386a1cd170fe45e2b88636811edb62b91d52bae73a5ada8c",
             "locator": {
               "kind": "symbol",
               "name": "_counts"
@@ -778,15 +605,14 @@
       ]
     },
     "4": {
-      "note": "The two generated-content rules the module classifies under: a recorded trigger identity and a payload byte-equality consequence.",
+      "note": "The two generated-content rules the module classifies under: a recorded trigger identity and a payload byte-equality consequence.\n\nAnchor: `DETECTION_RULE` `CONSEQUENCE_RULE`",
       "targets": [
         {
           "anchor": {
-            "blob": "85cc2936642a3ec37ee69966adc55c9877cb37e0",
-            "content": "sha256:241f395d231f945efb74097064f6754592fd139de445414936a0bf4a0cccdbe4",
+            "blob": "8ba11c0965aecef5b0befe6bd64bc4b5b6e3d23c",
+            "content": "sha256:ea7d133e39d68c8bd99b452414faa674c2d2d98bb19bf2ac82440d9c864edda8",
             "locator": {
-              "kind": "symbol",
-              "name": "DETECTION_RULE"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -805,15 +631,14 @@
       ]
     },
     "5": {
-      "note": "The three generated-content rules the module classifies under: a recorded trigger identity, a payload byte-equality consequence, and the registered rule a membership-derived row names.",
+      "note": "The three generated-content rules the module classifies under: a recorded trigger identity, a payload byte-equality consequence, and the registered rule a membership-derived row names.\n\nAnchor: `DETECTION_RULE` `CONSEQUENCE_RULE` `REGISTERED_ROLE_RULE`",
       "targets": [
         {
           "anchor": {
-            "blob": "85cc2936642a3ec37ee69966adc55c9877cb37e0",
-            "content": "sha256:241f395d231f945efb74097064f6754592fd139de445414936a0bf4a0cccdbe4",
+            "blob": "8ba11c0965aecef5b0befe6bd64bc4b5b6e3d23c",
+            "content": "sha256:ea7d133e39d68c8bd99b452414faa674c2d2d98bb19bf2ac82440d9c864edda8",
             "locator": {
-              "kind": "symbol",
-              "name": "DETECTION_RULE"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -843,7 +668,7 @@
       ]
     },
     "6": {
-      "note": "One authored determination read from a stored facet — the canonical-spelling rule that decides whether it is a priority at all, and the reader that turns one facet row into it with the envelope actor used only when the payload is silent.",
+      "note": "One authored determination read from a stored facet — the canonical-spelling rule that decides whether it is a priority at all, and the reader that turns one facet row into it with the envelope actor used only when the payload is silent.\n\nAnchor: `AuthoredDecision` `priority_position` `is_no_consequence` `no_consequence_detail` `authored_decision`",
       "targets": [
         {
           "anchor": {
@@ -902,8 +727,18 @@
         },
         {
           "anchor": {
-            "blob": "457bef31245f490ad7f0386cabe57f6f1c5494fc",
-            "content": "sha256:01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+            "blob": "8ba11c0965aecef5b0befe6bd64bc4b5b6e3d23c",
+            "content": "sha256:ea7d133e39d68c8bd99b452414faa674c2d2d98bb19bf2ac82440d9c864edda8",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8ba11c0965aecef5b0befe6bd64bc4b5b6e3d23c",
+            "content": "sha256:f9c736b81b6a88a40f9d860214b6fe6ec38df1c4d0ce6f5eb6bd7617b7f1e8d3",
             "locator": {
               "end": 154,
               "kind": "line_range",

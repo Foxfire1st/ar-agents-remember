@@ -136,8 +136,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3ff77640f180c801e3c5bc0b92ec4a48842f339b",
-            "content": "sha256:f09d4f1b9bc435df5ad6bf1f5ddbb35404b8b8e618355e5fc0933f6c97149b5f",
+            "blob": "c12094244f7358af502e88ac603fcd73652b80ad",
+            "content": "sha256:2f448b0db5288201620100c695234789b68cfa9f881689decd9c45038d99251b",
             "locator": {
               "end": 297,
               "kind": "line_range",
@@ -169,7 +169,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "754144ee68eee146036d2850ccb3d1d0f2af8273",
+            "blob": "076d83315223337d2ae1069118fadbb14829c501",
             "content": "sha256:a42ab4dd3c0acbce74126258fef02da9750eb01d6a77ae906347127486ba1b66",
             "locator": {
               "kind": "symbol",
@@ -211,12 +211,12 @@
       ]
     },
     "16": {
-      "note": "Entry titles use 0.8rem; item-base, age and location/link text use 0.72rem, with dismissal inheriting the base.",
+      "note": "Entry titles use 0.8rem; item-base, age and location text use 0.72rem, with dismissal inheriting the base.",
       "targets": [
         {
           "anchor": {
-            "blob": "b62becb3d09abb72399bc323b751556cf8ffbff4",
-            "content": "sha256:e7391932a61d94f482c513c9016cf9ccf35022f2c1f20f3f3ac3ef4b3af3bf40",
+            "blob": "c12094244f7358af502e88ac603fcd73652b80ad",
+            "content": "sha256:4ef7ca8d65045442a128959bb01c16b4c8c41bf2bf6ff75de5926e902dab2790",
             "locator": {
               "end": 206,
               "kind": "line_range",
@@ -263,12 +263,12 @@
       ]
     },
     "19": {
-      "note": "Rows render their location, render dismissal only when the served row is dismissible, and delegate available task and agent controls to SubjectLinks. A taskless agent row can offer only its agent control; a row without a subject or opening handler offers no subject control.",
+      "note": "Rows render their location and a dismissal control on every entry - the published queue marks each row dismissible - and delegate task and agent controls to SubjectLinks only when the row names that subject and a handler is supplied.",
       "targets": [
         {
           "anchor": {
-            "blob": "ea11b3a098938d16bf70648beac6276b12f83d8f",
-            "content": "sha256:523c0604599f77d3c06053dcdd6a96a20b2e6f71c790a5cfbbc1a18c8ac0a7f9",
+            "blob": "c12094244f7358af502e88ac603fcd73652b80ad",
+            "content": "sha256:b49991a7e40365c4b5d48e563f2db0fb3cb095b993c32d958e80cb4afbcef964",
             "locator": {
               "end": 452,
               "kind": "line_range",

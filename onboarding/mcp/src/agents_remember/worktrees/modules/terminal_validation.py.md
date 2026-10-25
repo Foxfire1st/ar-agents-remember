@@ -114,22 +114,32 @@ None.
 
 This module defines the top-level symbols cited below; each row points at the exact source range holding the anchor.
 
+
 - External-memory preflight excludes the root cache while preserving other dirtiness. [1]
+
 - Defines the class `BranchTarget`. [2]
 - Defines the class `TerminalPreflight`. [3]
 - The series child census fails closed on a non-canonical worktree group; the legacy guard preserves a colliding child `reports` enclosure only for legacy-shape contracts. [4]
+
 - Defines the function `terminal_preflight`. [5]
+
 - `TerminalExpectation` states what one collection must show: the field that proves reclamation, whether it is a preview, and the benign reasons. [6]
 - `TerminalResult` bundles one terminal operation's output collections with whether they are a preview or what happened. [7]
 - Defines the function `terminal_result_blockers`. [8]
+
 - Defines the function `_worktree_preflight`. [9]
+
+
 - Builds the exact code and optional external-memory terminal branch targets owned by the validated contract. [10]
+
 - Defines the function `_branch_preflight`. [11]
 - Defines the function `_local_absent_remote_preflight`. [12]
 - Defines the function `_branch_identity_refusal`. [13]
 - Defines the function `_branch_refs_refusal`. [14]
 - Defines the function `_branch_checkout_refusal`. [15]
+
 - Defines the function `_cleanup_branch_preflight`. [16]
+
 - Defines the function `_abandon_branch_preflight`. [17]
 - Defines the function `_branch_presence`. [18]
 - Defines the function `_checked_out_paths`. [19]

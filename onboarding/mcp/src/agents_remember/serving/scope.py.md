@@ -88,8 +88,12 @@ modules.
 - The shared path-confinement helper (`confine_rel`) the scope uses. [3]
 - The scope resolver bridge + "MissingMemoryError,". [4]
 - The repo allow-list authority guard (`require_repo`). [5]
+
 - The catalog uses the notes/archive-excluding iterator and names foreign positional nonmembers before liveness filters. [6]
-- WorktreeContract retains the code-worktree, group and cleanup fields; its loader and named error own parsing. [7]
+
+
+> Retained earlier citation wording: - WorktreeContract retains the code-worktree, group and cleanup fields; its loader and named error own parsing. [7]
+
 
 
 ## 260718-CHATS-L5I Current Delta
@@ -105,3 +109,5 @@ The coordination-context call packages `CoordinationHints`, `EnclosureSelector` 
 missing-memory fallback are unchanged; loose `hints`/`selector` keywords are not the current call.
 
 This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
+
+- WorktreeContract retains the code-worktree, group and cleanup fields; its loader and named error own parsing.  Anchor: `WorktreeContract` `load_contract` `ContractError` [7]

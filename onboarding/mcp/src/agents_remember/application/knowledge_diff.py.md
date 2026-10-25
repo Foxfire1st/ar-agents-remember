@@ -163,13 +163,25 @@ No configured domain documentation could be checked.
 
 - **The row-count measurement, and the one statement shape this module runs that changes nothing.** [1]
 - **The side resolver: the identity comes from the file, and the root/tree pair is supplied together or not at all.** [2]
-- **The production probe, now a one-line delegation: the two trees addressed by object id, the never-substitute-`HEAD` rule, and the delimiter-safe observation the review's own inventory reads too.** [3]
+
+- The production observation the comparison's probe delegates to: two code trees addressed by object id and never by `HEAD`, reported as changed paths or as an observation this run could not make, and read by the review's own inventory too. [3]
+
+
 - **The one operation: the ordered sequence, the injectable probe default and the typed catch of selection/storage/SQLite/OS failures.** [4]
+
 - The four input classes a failed read is mapped onto, each naming its own fact. [5]
+
 - The binding computed before either file is opened, and the per-side effective selector it digests. [6]
+
+
 - The values that must not be crossed: the snapshot pair, the connection pair and the whole opened comparison. [7]
+
+
 - **The ordered body: verify both sides before either selection, select each side with R07's own policy, compare, collect absences, display with the comparison's own mapping reader, page.** [8]
+
+
 - **The registered-mapping reader over this comparison's own two open snapshots — the partition decided from exactly the bytes the selection was made from.** [9]
+
 - **Both sides verified before either is selected, and the three separate comparisons inside each.** [10]
 - **The page arithmetic: the comparison total on every page, the cumulative returned, the display's own two numbers, and no continuation a page cannot serve.** [11]
 - The per-side absence vocabulary and the recorded-but-empty selection served rather than refused. [12]
@@ -177,10 +189,14 @@ No configured domain documentation could be checked.
 - **The cursor check order: policy, selector, filter, then the snapshot pair.** [14]
 - The typed refusal constructors that bind a refusal to the comparison identity, and the one that cannot bind because a side never resolved. [15]
 - **The storage layer this seam delegates to: R07's one selection policy, applied per side.** [16]
+
 - **The union comparison and the display builder this seam calls.** [17]
+
 - **The display builder, which turns one comparison into a page's items, omissions, expansion and carried partition.** [18]
 - **The node that measures a real candidate write refusing its continuation, and the node that measures a side naming another snapshot of its own file refusing before any page.** [19]
+
 - The nodes that measure a missing side refusing without a substitute, a continuation against another selector returning no page, and a small budget not shrinking the totals. [20]
+
 - **The node that measures the paging rule through the public seam: a page of a selection is what the comparison displays, not what it selected.** [21]
 - The last nodes of the population: no mounted UI and no approval the comparison cannot make. [22]
 - The comparison request, the side that names one snapshot and its selector, and the typed result. [23]

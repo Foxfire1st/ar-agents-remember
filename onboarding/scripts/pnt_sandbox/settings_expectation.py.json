@@ -1,5 +1,6 @@
 {
   "path": "scripts/pnt_sandbox/settings_expectation.py",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
@@ -21,8 +22,8 @@
     },
     {
       "anchor": {
-        "blob": "da7241a039468b2532f5163e5494fd9e3c0c40a8",
-        "content": "sha256:a53cde74b76788adb5184a177dc9c5f9c0945e22dc7bae8947683673b106210d",
+        "blob": "9a88bb26742b51036c8f4c5fd980506eeb9f06b3",
+        "content": "sha256:bc3c3e2b5c131e042d8cdecc8b113a627b950204e206f14cd1b6e87e73972056",
         "locator": {
           "kind": "file"
         }
@@ -33,18 +34,18 @@
         "handoffEntry": "L188-B11",
         "leaf": "260928-MIK-L188"
       },
-      "rationale": "The surviving sandbox expectation owner preserves settings instead of reconstructing retired starters.",
+      "rationale": "The surviving sandbox expectation owner reads the live settings and the paseoRuntime block instead of rebuilding retired starters, as the condition requires, and its whole-file anchor matches C.",
       "role": "enforcement"
     }
   ],
   "references": {
     "1": {
-      "note": "The sandbox MCP file owns host authority; developer user settings are input-only, checked for change before the sandbox write and recorded by before/after receipt digests.\n\nAnchor: current definitions",
+      "note": "The sandbox MCP file owns host authority; developer user settings are input-only, checked for change before the sandbox write and recorded by before/after receipt digests.",
       "targets": [
         {
           "anchor": {
-            "blob": "da7241a039468b2532f5163e5494fd9e3c0c40a8",
-            "content": "sha256:98f036e56789d26505388383cbffc6ded06365deb3b6eeba62f1dab6c419a0da",
+            "blob": "9a88bb26742b51036c8f4c5fd980506eeb9f06b3",
+            "content": "sha256:f2331c45b75702b1effe07a4d4e44cab1794533c0e8340790c3a50b6b4efcef0",
             "locator": {
               "end": 228,
               "kind": "line_range",

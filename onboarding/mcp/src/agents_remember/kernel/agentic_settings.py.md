@@ -198,7 +198,7 @@ Current _parse_harnesses returns built-in IDs plus settings-added IDs together w
 > derivation, `_merged_harness` replace-over-fallback merge, `_refuse_unpaired_vehicles`) parses
 > `orchestration.harnesses` into the EFFECTIVE registry (`AgenticSettings.harnesses`, default the
 > builtin `HARNESSES`): entries merge over the builtin table by id — a NEW id must resolve
-> `command` and/or `argv` (`command` defaults to `argv[0]`, `argv` to `(command,)`) and is tagged
+> `command` and/or `argv` (`command` defaults to `argv`, `argv` to `(command,)`) and is tagged
 > `defined_in="settings"`; a builtin id overrides per field. Delivery-vehicle pairs must resolve
 > together post-merge (`effortFlag`+`effortFlagValues`, `effortSessionValues`+`effortSessionCommand`
 > — a flag without a vocabulary would reintroduce the silent-degrade risk). The
@@ -280,23 +280,32 @@ Absent input retains the typed defaults: all-human gate policy, maxRounds=5, rev
 
 ## Evidence
 
+
 - Per-use layering validates role features and effective alternative distinctness. [2]
+
 - Exact envelope source/key survives typed projection. [3]
 - Field origins bind provider/model and authored alternative path. [4]
+
 - Repository alternatives are refused, including altitude rows. [5]
+
 - Test source names user-only refusal and repository file. [6]
 - Removed execution families/fields remain accepted-unused vocabulary. [7]
 - Loop defaults remain separate from step-up thresholds. [8]
+
 - Typed settings retain their independent defaults. [9]
+
+
 - Only effective IDs and accepted-unused execution keys remain. [10]
+
+
 - Merged parsing assembles settings and checks spawn IDs, not executable registry completeness. [11]
+
 
 ### Docs References
 
 Historical schema-reference account, not current supervisor authority: the former defaults/floors are retained only as the earlier card’s reference custody.
 
 > **Historical pre-current-loader account — retained, not an operative parser/consumer promise:**
-> - The schema reference documents supervisor defaults and constraints, including redelivery budget `1`, escalation budget `250`, and the redelivery floor. [1]
 
 ### Repo-Internal References
 

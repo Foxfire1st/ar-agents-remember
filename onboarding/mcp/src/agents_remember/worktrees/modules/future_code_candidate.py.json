@@ -19,15 +19,14 @@
       ]
     },
     "2": {
-      "note": "Capture observes HEAD around the one canonical isolated-index add-all tree calculation.",
+      "note": "Capture observes HEAD around the one canonical isolated-index add-all tree calculation.\n\nAnchor: `capture_future_code_candidate`",
       "targets": [
         {
           "anchor": {
-            "blob": "f05d84859486eb5dca5644e4abc64199acc6779e",
-            "content": "sha256:92318cd71d737476df5117afaec83510a512e24e2c6c59d50aec1cbd8c211bbc",
+            "blob": "a7ffdba484f4eaafa7f3a0a0860e045504f33755",
+            "content": "sha256:e43779b643a5347584f7acf8bdbaafaaf2b0969fd5de3af06b46da3195049899",
             "locator": {
-              "kind": "symbol",
-              "name": "capture_future_code_candidate"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -55,8 +54,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f05d84859486eb5dca5644e4abc64199acc6779e",
-            "content": "sha256:167424acbfe005f3d28eff9f03fc7e2d3e764fd2493123fe008fa1aed8dbb5c7",
+            "blob": "a7ffdba484f4eaafa7f3a0a0860e045504f33755",
+            "content": "sha256:e43779b643a5347584f7acf8bdbaafaaf2b0969fd5de3af06b46da3195049899",
             "locator": {
               "kind": "file"
             }
@@ -100,8 +99,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "dac9461da555a17e7e1718931011a29553718739",
-            "content": "sha256:b5b19834000ff01b45fea75f1b92e93a2f535b772bb7f85deb7848327404b5c8",
+            "blob": "9cfaea0658dd0c7c7e4ab655d0031da3b206961d",
+            "content": "sha256:4a019192b889ba5cf0845cd636dced6093f739b662c16ac927926c9bf4d0472f",
             "locator": {
               "kind": "file"
             },

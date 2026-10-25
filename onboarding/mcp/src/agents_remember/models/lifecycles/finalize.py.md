@@ -38,10 +38,11 @@ No external Domain Documentation source is configured for this memory repo.
 ### Repo-Internal References
 
 - Strict tool response base class is defined here. [1]
-- Public response registry maps `lifecycle_finalize_task` to this model. [2]
+- Public response registry maps `lifecycle_finalize_task` to this model. Anchor: `lifecycle_finalize_task` [2]
 The deleted representative-payload cases are historical and provide no current pass.
-- Historical auto-land field/population witness; the current model declares no completion-seat list. [4]
-- Historical retirement-setting witness for that removed response field, not a current setting or execution claim. [5]
+- The strict finalizer wire declaration retains archive/projection and both optional atomic-series fields, and no auto-close/auto-land seat lists. [3]
+- `lifecycle_finalize_task_tool` confines the contract and any named task or master document path, finalizes with the call's dry-run and provider-teardown flags, and answers that result. [4]
+- Historical retirement witness: the retirement setting that gated this field's population and the finalize auto-land path is absent from the merged code, whose finalize model declares no completion-seat list and no retirement gate.
 
 ## Series-Contract Notes
 
@@ -56,7 +57,7 @@ This change preserves the file's existing authority boundary. No threshold excep
 fallback, or compatibility reader was added.
 ## Current optional atomic-series declaration
 
-The current class is at lines18-51 and imports `AtomicSeriesActivationFact` and `AtomicSeriesActivationRelease`. It declares both optional activation/release fields together. The retained two-key conformance method reads the registry/class fields and asserts their declaring sets match; this account does not claim a newly run test. Earlier type names, line counts and emitter excerpts in the dated D53 section below remain historical source-epoch prose.
+The current class is at lines18-56 and imports `AtomicSeriesActivationFact` and `AtomicSeriesActivationRelease`. It declares both optional activation/release fields together. The retained two-key conformance method reads the registry/class fields and asserts their declaring sets match; this account does not claim a newly run test. Earlier type names, line counts and emitter excerpts in the dated D53 section below remain historical source-epoch prose.
 
 ## 260918-TSIP-L4 — The Two Atomic-Series Projections Declared (`D53`)
 
@@ -88,8 +89,7 @@ Both are optional here for that reason. Pinned by
 `test_the_two_atomic_series_keys_are_declared_together` asserts the declaring set is exactly
 `{"lifecycle_finalize_task"}`.
 
-- The strict finalizer wire declaration retains archive/projection and both optional atomic-series fields, and no auto-close/auto-land seat lists. [3]
 
-## Outside scratch in the finalize response
+## 260928-MIK-L198 — the finalize response names the root and the sweep
 
-`LifecycleFinalizeTaskResponse` gains `outsideScratch`, naming the outside scratch root a completed-cleanup retry removed or the one that still remains and blocks the answer, and `outsideScratchReconcile`, carrying what the terminal sweep removed and the roots it left with their reason. The model defaults both fields to empty dictionaries. An enclosure without a recorded root has no own-root removal to report, while a non-preview terminal sweep can still populate `outsideScratchReconcile` with other roots it removed or reported, or with a reconciliation failure. A dry run skips that independent sweep, and a sweep with no findings leaves the result unchanged.
+`LifecycleFinalizeTaskResponse` gains `outsideScratch`, naming the outside scratch root a completed-cleanup retry removed or the one that still remains and blocks the answer, and `outsideScratchReconcile`, carrying what the terminal sweep removed and the roots it left with their reason. An enclosure published before root records existed supplies no per-enclosure `outsideScratch` record. Its finalize call can still carry `outsideScratchReconcile` when the independent product-parent sweep removes or reports roots, including a sweep failure. The model defaults both fields to empty dictionaries. A dry run skips that sweep, and a sweep with no findings leaves the result unchanged.

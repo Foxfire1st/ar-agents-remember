@@ -57,6 +57,9 @@ substring of each guard's message rather than the full string.
 ### Repo-Internal References
 
 - The two guards under test live in the application layer. [1]
+
 - AuthorityError is the typed repository/path refusal used by application guards. [2]
+
 - All such domain errors inherit ValueError through AgentsRememberError. [3]
+
 - `McpRuntimeConfig`, `RepositoryScope`, and `path_is_relative_to` define the config and confinement primitives the guards rely on. [4]

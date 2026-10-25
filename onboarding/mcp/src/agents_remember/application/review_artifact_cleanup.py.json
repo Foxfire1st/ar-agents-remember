@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/application/review_artifact_cleanup.py",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
@@ -207,8 +208,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a229e8c61b82f5545f7d8e6c3200e0e0f8fec939",
-            "content": "sha256:c2c31542704aa477012278c9591ce9008bbfabeeac5d6d18263eb62871de2b25",
+            "blob": "f95b27fce734207dfed095fef56f3046175557a2",
+            "content": "sha256:407072bf2486f51a0a0c386468059720492929438ecaaa71a0372489be499c4c",
             "locator": {
               "kind": "file"
             }
@@ -338,8 +339,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "60455ec5f2544afad8a1cc9f43e1b38bce7e613f",
-            "content": "sha256:b172fc179762a6681abf37b35940c150eaef9852587f9242ecab2df2ca49b651",
+            "blob": "17c9281c987d9e0331f14f43597a02542b38c479",
+            "content": "sha256:f4ad59dfbae9c71913fdddede30a42fd9ba357cb63baa9b378c18d399dd8d933",
             "locator": {
               "kind": "file"
             },
@@ -354,8 +355,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "60455ec5f2544afad8a1cc9f43e1b38bce7e613f",
-            "content": "sha256:b172fc179762a6681abf37b35940c150eaef9852587f9242ecab2df2ca49b651",
+            "blob": "17c9281c987d9e0331f14f43597a02542b38c479",
+            "content": "sha256:f4ad59dfbae9c71913fdddede30a42fd9ba357cb63baa9b378c18d399dd8d933",
             "locator": {
               "kind": "file"
             },
@@ -370,8 +371,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "60455ec5f2544afad8a1cc9f43e1b38bce7e613f",
-            "content": "sha256:b172fc179762a6681abf37b35940c150eaef9852587f9242ecab2df2ca49b651",
+            "blob": "17c9281c987d9e0331f14f43597a02542b38c479",
+            "content": "sha256:f4ad59dfbae9c71913fdddede30a42fd9ba357cb63baa9b378c18d399dd8d933",
             "locator": {
               "kind": "file"
             },
@@ -464,15 +465,14 @@
       ]
     },
     "3": {
-      "note": "The report, and holding a generation's pin and snapshots with the reason.",
+      "note": "The report, and holding a generation's pin and snapshots with the reason.\n\nAnchor: `_Report`",
       "targets": [
         {
           "anchor": {
-            "blob": "a229e8c61b82f5545f7d8e6c3200e0e0f8fec939",
-            "content": "sha256:63babcdfbaf10cc04be5675828a1628509a210ad19970e0ccef5df413662a155",
+            "blob": "f95b27fce734207dfed095fef56f3046175557a2",
+            "content": "sha256:407072bf2486f51a0a0c386468059720492929438ecaaa71a0372489be499c4c",
             "locator": {
-              "kind": "symbol",
-              "name": "_Report"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -496,15 +496,14 @@
       ]
     },
     "5": {
-      "note": "The whole hook: review refs by directory name, own retained-code refs, generations, copies, the report.",
+      "note": "The whole hook: review refs by directory name, own retained-code refs, generations, copies, the report.\n\nAnchor: `_sweep`",
       "targets": [
         {
           "anchor": {
-            "blob": "a229e8c61b82f5545f7d8e6c3200e0e0f8fec939",
-            "content": "sha256:cbf1f80de9f9a93f678e120e8f38a6f72ac429a279ed5cd5101caddea87309e5",
+            "blob": "f95b27fce734207dfed095fef56f3046175557a2",
+            "content": "sha256:407072bf2486f51a0a0c386468059720492929438ecaaa71a0372489be499c4c",
             "locator": {
-              "kind": "symbol",
-              "name": "_sweep"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -516,8 +515,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "60455ec5f2544afad8a1cc9f43e1b38bce7e613f",
-            "content": "sha256:b172fc179762a6681abf37b35940c150eaef9852587f9242ecab2df2ca49b651",
+            "blob": "17c9281c987d9e0331f14f43597a02542b38c479",
+            "content": "sha256:f4ad59dfbae9c71913fdddede30a42fd9ba357cb63baa9b378c18d399dd8d933",
             "locator": {
               "kind": "file"
             },

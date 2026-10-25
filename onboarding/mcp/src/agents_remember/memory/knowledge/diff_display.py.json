@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/memory/knowledge/diff_display.py",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
@@ -248,12 +249,12 @@
       ]
     },
     "15": {
-      "note": "**The node that measures the expansion naming both trees and every differing path, and the node that measures the unattributed gap surviving a filter.**\n\nAnchor: \"test_the_expansion_names_both_requested_trees_and_every_path_they_differ_at\"; \"test_a_changed_path_no_recorded_realization_attributes_is_listed_as_a_visible_gap\"",
+      "note": "**The node that measures the expansion naming both trees and every differing path, and the node that measures the unattributed gap surviving a filter.**",
       "targets": [
         {
           "anchor": {
-            "blob": "d007a9784b5cd8e74cc978725ce60f7c247d22b1",
-            "content": "sha256:ca55060dabee397d22bf4771569f14120fd68fa50027affc2efe2ac880d32657",
+            "blob": "61c763ff8430456602202b02310012b4437a4c44",
+            "content": "sha256:27f81d2201c884ecfcbc019e9f549b3a817b9f91da88416853792167cec65506",
             "locator": {
               "end": 178,
               "kind": "line_range",
@@ -275,16 +276,29 @@
             "path": "mcp/tests/test_knowledge_diff_boundaries.py"
           },
           "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "61c763ff8430456602202b02310012b4437a4c44",
+            "content": "sha256:3dd2a8c267eb383e48f5bda97a71763581163ce174f9e82e9afdc891cfdfd86e",
+            "locator": {
+              "end": 214,
+              "kind": "line_range",
+              "start": 181
+            },
+            "path": "mcp/tests/test_knowledge_diff_boundaries.py"
+          },
+          "kind": "test"
         }
       ]
     },
     "16": {
-      "note": "**The node that measures the filter narrowing the display and never the comparison.**\n\nAnchor: \"test_a_role_filter_narrows_the_display_and_never_the_comparison\"",
+      "note": "**The node that measures the filter narrowing the display and never the comparison.**",
       "targets": [
         {
           "anchor": {
-            "blob": "6839ec8adb0e987ab0ae64a2391cf27bc1cbd606",
-            "content": "sha256:50cfb2d3dc2b563edadc7a64d7da4c87938d75d3ace4287debc0222214872c56",
+            "blob": "f43f2cfeb97e1480b885bba3821e2ae00214aee4",
+            "content": "sha256:c4e91cfbcbae8e9710e5de1b04180655382b6759f662da261ce30fe38e147f40",
             "locator": {
               "end": 547,
               "kind": "line_range",
@@ -297,8 +311,21 @@
       ]
     },
     "17": {
-      "note": "The two nodes that measure an unavailable observation reported as unavailable and a real probe making the gap visible.\n\nAnchor: \"test_an_unavailable_observation_is_reported_as_unavailable_and_never_as_a_change_set\"; \"test_a_probe_that_measured_the_trees_is_what_makes_a_gap_visible\"",
+      "note": "The two nodes that measure an unavailable observation reported as unavailable and a real probe making the gap visible.",
       "targets": [
+        {
+          "anchor": {
+            "blob": "61c763ff8430456602202b02310012b4437a4c44",
+            "content": "sha256:51909276951004b2e5bcaad50d45107ccd53b73d4ef12e081fb3258b57f81783",
+            "locator": {
+              "end": 903,
+              "kind": "line_range",
+              "start": 821
+            },
+            "path": "mcp/tests/test_knowledge_diff_boundaries.py"
+          },
+          "kind": "test"
+        },
         {
           "anchor": {
             "blob": "61c763ff8430456602202b02310012b4437a4c44",
@@ -314,12 +341,12 @@
         },
         {
           "anchor": {
-            "blob": "16d9115005b531950418960f3030fb71e5e46490",
-            "content": "sha256:bf423cadf92bba52e1ebc26de5e9653afb8a42860c6d484059142f762ed13d17",
+            "blob": "61c763ff8430456602202b02310012b4437a4c44",
+            "content": "sha256:fdf9d32a64c65b7972af7e95f18009d17e9db3393b531d55431e671e7f8ec4c7",
             "locator": {
-              "end": 912,
+              "end": 860,
               "kind": "line_range",
-              "start": 850
+              "start": 804
             },
             "path": "mcp/tests/test_knowledge_diff_boundaries.py"
           },

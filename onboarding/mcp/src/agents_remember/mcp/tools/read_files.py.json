@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/mcp/tools/read_files.py",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
@@ -44,8 +45,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d3d5f5ff18990512223e1f4b8688594197e310cb",
-            "content": "sha256:72a13e66e6301e5866b57fd320680e70a97a1898bb0d4c4c4e89dbe456916dac",
+            "blob": "235bbb664d2f527abfdfa47f8cbbcb96c8714650",
+            "content": "sha256:13aef717a76a0b04deda44628d0f376574a6688d50f5279af8119a75234a7eda",
             "locator": {
               "kind": "symbol",
               "name": "read_ar_files_tool"
@@ -56,8 +57,8 @@
         },
         {
           "anchor": {
-            "blob": "d3d5f5ff18990512223e1f4b8688594197e310cb",
-            "content": "sha256:4382c85b06a94cdc6899656aff9e5ee1f450210eaca76052557a386e569db5d3",
+            "blob": "235bbb664d2f527abfdfa47f8cbbcb96c8714650",
+            "content": "sha256:ccfb04dd79543eabb345c2fa4041a7b53cad7e2a7155d43c251637dddbc2df86",
             "locator": {
               "end": 133,
               "kind": "line_range",
@@ -66,19 +67,29 @@
             "path": "mcp/src/agents_remember/application/read_files.py"
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "235bbb664d2f527abfdfa47f8cbbcb96c8714650",
+            "content": "sha256:6eccfc7bad90429057021cc74333df2047d6908f67136c2d9faf1624ddae3a75",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/read_files.py"
+          },
+          "kind": "code"
         }
       ]
     },
     "2": {
-      "note": "The shared choke point that validates the response and stamps tokens.",
+      "note": "The shared choke point every tool's payload passes through: an adapter that hands the tool's whole result, and its compact answer when one is projected, to the application's response completion, where the response is validated and the answer's token count stamped.\n\nAnchor: `_tool_payload`",
       "targets": [
         {
           "anchor": {
-            "blob": "cf09680d5bb09436a9d3afb73da9cbd60f1af5fc",
-            "content": "sha256:35b48e3f7dcb68f7a66dcb72920ee84b9b6dd535711731b79de1596a0e2239fa",
+            "blob": "bbd96445dae6e10e1c4052722fab1b614aafedfe",
+            "content": "sha256:e65598ad08d511a5ffa26a3099d273596eea7844d5c2a00685c2ccb183271c43",
             "locator": {
-              "kind": "symbol",
-              "name": "_tool_payload"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/mcp/tools/base.py"
           },
@@ -87,15 +98,14 @@
       ]
     },
     "3": {
-      "note": "The strict response model `read_ar_files` validates against.",
+      "note": "The strict response model `read_ar_files` validates against.\n\nAnchor: `ReadArFilesResponse`",
       "targets": [
         {
           "anchor": {
-            "blob": "083055f2c7d95a055184de187832ec0c0cb7a515",
-            "content": "sha256:49926087a6de95d2287e755c56e9716c8245b74b3627de8bb2fb5906f87e8a04",
+            "blob": "ef10b35504e856788e45bc5b3988c4bab198da2f",
+            "content": "sha256:c6d5370cb33984aa7c8997c56fe3af7e65b2ada4e24f4414e62fb0636600b25b",
             "locator": {
-              "kind": "symbol",
-              "name": "ReadArFilesResponse"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/models/read_files.py"
           },
@@ -104,15 +114,14 @@
       ]
     },
     "4": {
-      "note": "Frozen implementation of read_ar_files_payload supporting the stated file behavior.",
+      "note": "Frozen implementation of read_ar_files_payload supporting the stated file behavior.\n\nAnchor: `read_ar_files_payload`",
       "targets": [
         {
           "anchor": {
-            "blob": "553860afad7a577b5e9110d7672d5cbee7a963e1",
-            "content": "sha256:e7a5ea01465390dbec4a371cdb3a2167964bcf420eabf337b8bb49cbba1c3511",
+            "blob": "51b276452da0ab3a2641006c43d8d668f4b9eae1",
+            "content": "sha256:a4d551b212d541a2081c10c0ac75510824aec6cff5e1d0c5b7da1ebe7adc1641",
             "locator": {
-              "kind": "symbol",
-              "name": "read_ar_files_payload"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -120,15 +129,14 @@
       ]
     },
     "5": {
-      "note": "Alternating/concurrent registered base and leaf calls preserve their source/memory roots; wrong repository, canonical contract and malformed pairs refuse.",
+      "note": "Alternating/concurrent registered base and leaf calls preserve their source/memory roots; wrong repository, canonical contract and malformed pairs refuse.\n\nAnchor: `test_registered_readers_use_call_local_admitted_leaf_context`",
       "targets": [
         {
           "anchor": {
-            "blob": "0c75122a7ec9c252dbd7ec955ac8315c6a53ac1b",
-            "content": "sha256:0f651d353ac549ec8d4c8cea50b1708c6685ba7689a87c3d7d5ca9f55ec8d3ff",
+            "blob": "dc497e2837c489670650776c799b50df249c049f",
+            "content": "sha256:3d9f3de88b6f6e1fd6dcf3a8b699c0bbe77859c13612343566455ddc53eb2788",
             "locator": {
-              "kind": "symbol",
-              "name": "test_registered_readers_use_call_local_admitted_leaf_context"
+              "kind": "file"
             },
             "path": "mcp/tests/test_reader_task_context_protocol.py"
           },
@@ -141,8 +149,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c45bcef363709898681242b987c6c4bbf83a75c8",
-            "content": "sha256:78b889c616eef2fb65466ea3c88a05e7cb612c1e2a29eb508d04f36703f17986",
+            "blob": "51b276452da0ab3a2641006c43d8d668f4b9eae1",
+            "content": "sha256:a4d551b212d541a2081c10c0ac75510824aec6cff5e1d0c5b7da1ebe7adc1641",
             "locator": {
               "kind": "file"
             }

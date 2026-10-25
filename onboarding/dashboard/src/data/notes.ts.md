@@ -71,6 +71,8 @@ No configured Domain Documentation source exists for this file.
 ### Repo-Internal References
 
 - The folder, resolve and read endpoints this client wraps. [1]
+
 - The task page owns the Notes line and delegates reader opening. [3]
+
 - The test suite for this module. [4]
 - The shared transport (`getJson`, `qs`, `FilesApiError`) reused here. [2]

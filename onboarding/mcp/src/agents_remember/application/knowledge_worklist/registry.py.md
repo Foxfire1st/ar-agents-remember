@@ -81,7 +81,9 @@ No configured live documentation source was available for this pass.
 
 - The four declarations per kind, the later registrants and the item-identity rule. [1]
 - The common satisfying-row lookup. [2]
+
 - The kind declaration. [3]
+
 - A second registration is refused. [4]
 - The satisfying row of a kind. [5]
 - The stable item ID. [6]

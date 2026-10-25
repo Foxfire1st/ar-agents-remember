@@ -171,15 +171,14 @@
       ]
     },
     "15": {
-      "note": "The private preparation cases.",
+      "note": "The private preparation cases.\n\nAnchor: `PrivateGitPreparationTests`",
       "targets": [
         {
           "anchor": {
-            "blob": "7b8010656baf2e0d2a87dda95547fba741f68762",
-            "content": "sha256:64243f0733a88419f861b673add9b5553cb8a5576687a7f6500fbc16a3a8e2ee",
+            "blob": "6be6699be944142714bfb6d286ace562d78f9710",
+            "content": "sha256:5ce162812ff528cce3952f6b9243d2b5ba766c5642f7fc7a194e7c8c1e1ef34b",
             "locator": {
-              "kind": "symbol",
-              "name": "PrivateGitPreparationTests"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -187,15 +186,14 @@
       ]
     },
     "16": {
-      "note": "The block under test.",
+      "note": "The block under test.\n\nAnchor: `shared_blob_reads`",
       "targets": [
         {
           "anchor": {
-            "blob": "cb96525be294896525624afef669abf8fd942413",
-            "content": "sha256:41f1d184eae01373fe7f22e46f2d241c158d32e1d5d2338124d8498258276898",
+            "blob": "07979a6e10a7cde98e4a4ce1dcaca7a203241e3f",
+            "content": "sha256:6e94e3f710e3074a2f9def9a24032a21aee42476e665e4ea421cba0067b627bb",
             "locator": {
-              "kind": "symbol",
-              "name": "shared_blob_reads"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/kernel/git_command.py"
           },
@@ -208,8 +206,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6f763ee56447f6d927aa8481928efd6446607cad",
-            "content": "sha256:1a5b9efbaff102dabc3da4b3e915c66bb67f2a79e2222ea8f07e97da70ce3976",
+            "blob": "6be6699be944142714bfb6d286ace562d78f9710",
+            "content": "sha256:5ce162812ff528cce3952f6b9243d2b5ba766c5642f7fc7a194e7c8c1e1ef34b",
             "locator": {
               "kind": "file"
             }

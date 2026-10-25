@@ -16,7 +16,9 @@ The report gate selects real conflicts, a converted side, nonzero renumbered ref
 
 ## Evidence
 
+
 - validate_memory_fast_forward: qualified source contract. [1]
+
 - _knowledge_merge: qualified source contract. [2]
 - _apply_knowledge_merge: qualified source contract. [3]
 - _finish_staged_memory_merge: qualified source contract. [4]

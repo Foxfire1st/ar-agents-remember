@@ -14,4 +14,5 @@ Fixtures assert existing master code/memory checkouts, no leaf enclosure materia
 
 ## Evidence
 
+
 - Pins grant-backed direct workspace preparation and scoped-reader admission [1]

@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/models/knowledge/review_frame.py",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
@@ -153,8 +154,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ff629f268e2d63fe0398619d77f6058c25303b63",
-            "content": "sha256:013dde219368859eb2016fc3737fbfc47ade11c29593115aa424d0089949b321",
+            "blob": "e7e0791aea9cb42843e18e88261ef825afe9eca4",
+            "content": "sha256:802a8d3e2e20740c033353dd6a031c2839eb6b76f8057bf05e734d5068c5e9e7",
             "locator": {
               "kind": "symbol",
               "name": "FrameBinding"
@@ -169,8 +170,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ff629f268e2d63fe0398619d77f6058c25303b63",
-            "content": "sha256:84e892da9ad1741dacf7c094233c9b047800ed17379757009b077711053e33f3",
+            "blob": "e7e0791aea9cb42843e18e88261ef825afe9eca4",
+            "content": "sha256:0649f739fd7e33d9d79c3f7ea30dca4fde1aabc792b001e7c6a089bc05d84abb",
             "locator": {
               "kind": "symbol",
               "name": "FrameManifest"
@@ -217,8 +218,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ff629f268e2d63fe0398619d77f6058c25303b63",
-            "content": "sha256:b5817cae05f6dd1f5e5121f6fb10e392c9e5d9827659d09d9afd2c201e75b27f",
+            "blob": "e7e0791aea9cb42843e18e88261ef825afe9eca4",
+            "content": "sha256:0584e5d15cddfac7415057409f0fb277bb4cf86aae8e5ad35c9aca002b9f8efc",
             "locator": {
               "kind": "file"
             }

@@ -1,5 +1,7 @@
 {
-  "path": "docs/reference",
+  "path": "docs/reference/overview",
+  "proves": [],
+  "realizes": [],
   "references": {
     "1": {
       "note": "Retained reference account (no fresh execution or acceptance inferred): The normalized public input has only two commit legs.",
@@ -35,7 +37,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "167c28bf3a5d1b7ea0ee02e83892bf55ee9a32aa",
+            "blob": "bf6833bf5d456b21488675f40c54e8fe67c5c011",
             "content": "sha256:db2e5557cc428798a0a83e5f4d6a5a7b97ce6b56fc98780eac1d5e6b49eb4cc8",
             "locator": {
               "end": 161,
@@ -53,12 +55,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "06d9244972b16b13fb93aaa1664352175ac98876",
-            "content": "sha256:d4b6e09cbc46da433449c03580d64d39ef0c4034e9747324f89ec5239897bdb1",
+            "blob": "5dd2a44685920ec5d90e001beb9a4c0e14cf8c00",
+            "content": "sha256:50323426b09bb6a9583a12e6706421ccf7190bebd8b6815d833fcff219a782a6",
             "locator": {
-              "end": 67,
+              "end": 68,
               "kind": "line_range",
-              "start": 36
+              "start": 37
             },
             "path": "mcp/src/agents_remember/mcp/registration/memory.py"
           },
@@ -76,20 +78,33 @@
             "path": "mcp/src/agents_remember/application/memory_quality/controller.py"
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5dd2a44685920ec5d90e001beb9a4c0e14cf8c00",
+            "content": "sha256:112398a825f11b8035330e56e820b01c50af82bb68f94732d5ded8c7258b5620",
+            "locator": {
+              "end": 67,
+              "kind": "line_range",
+              "start": 36
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/memory.py"
+          },
+          "kind": "code"
         }
       ]
     },
     "12": {
-      "note": "Pre-baseline writes require the declared converted root, no baseline and no dependent linked worktree.\n\nAnchor: _pre_baseline_official_scope",
+      "note": "Pre-baseline writes require the declared converted root, no baseline and no dependent linked worktree.",
       "targets": [
         {
           "anchor": {
-            "blob": "536d026ee5c551dea3daf51ed3731520f4b16401",
-            "content": "sha256:5eb51bb0f75bb9bbc4037112040d28689dd7e72f767901e9fed98024bb44dbac",
+            "blob": "d9169328f4aefb6445b7866c552597f00ff49f5a",
+            "content": "sha256:76c945666bdffc5112a587bbf83394cd539519f2a468b7c0bd91e6f1578fe093",
             "locator": {
-              "end": 323,
+              "end": 328,
               "kind": "line_range",
-              "start": 272
+              "start": 277
             },
             "path": "mcp/src/agents_remember/application/memory_tools.py"
           },
@@ -102,12 +117,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "418f56cddea13a857e15e32f93c11db719101459",
-            "content": "sha256:e07c88ae05c8a689fa70c027d0e146b9b069b245e945fc5195b544ad73dbe235",
+            "blob": "d9169328f4aefb6445b7866c552597f00ff49f5a",
+            "content": "sha256:c1b6cb3485263ebe85ec249e0c701e36a601042d573e07f0198b27323cdaaeca",
             "locator": {
-              "end": 534,
+              "end": 866,
               "kind": "line_range",
-              "start": 466
+              "start": 798
             },
             "path": "mcp/src/agents_remember/application/memory_tools.py"
           },
@@ -115,12 +130,38 @@
         },
         {
           "anchor": {
-            "blob": "418f56cddea13a857e15e32f93c11db719101459",
+            "blob": "d9169328f4aefb6445b7866c552597f00ff49f5a",
+            "content": "sha256:8a143ef49da6be491da9780797ed900b2abaa49cc06929f69f5383be212beabe",
+            "locator": {
+              "end": 912,
+              "kind": "line_range",
+              "start": 897
+            },
+            "path": "mcp/src/agents_remember/application/memory_tools.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d9169328f4aefb6445b7866c552597f00ff49f5a",
+            "content": "sha256:e07c88ae05c8a689fa70c027d0e146b9b069b245e945fc5195b544ad73dbe235",
+            "locator": {
+              "end": 700,
+              "kind": "line_range",
+              "start": 632
+            },
+            "path": "mcp/src/agents_remember/application/memory_tools.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d9169328f4aefb6445b7866c552597f00ff49f5a",
             "content": "sha256:5341d23a5b03cdaf667bbe234478e3c94a2691baa313b75ef28be5ff47e59ab9",
             "locator": {
-              "end": 580,
+              "end": 746,
               "kind": "line_range",
-              "start": 565
+              "start": 731
             },
             "path": "mcp/src/agents_remember/application/memory_tools.py"
           },
@@ -133,12 +174,25 @@
       "targets": [
         {
           "anchor": {
-            "blob": "418f56cddea13a857e15e32f93c11db719101459",
+            "blob": "d9169328f4aefb6445b7866c552597f00ff49f5a",
+            "content": "sha256:40f58b50798c784f46a3cf2c30c107778cad7ece464e5926ad6799d5aedb719a",
+            "locator": {
+              "end": 950,
+              "kind": "line_range",
+              "start": 915
+            },
+            "path": "mcp/src/agents_remember/application/memory_tools.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d9169328f4aefb6445b7866c552597f00ff49f5a",
             "content": "sha256:f3a2d7cb0f2350a087df56ee847ea235331e3f4bf708dd240131a2cc4c3d6e63",
             "locator": {
-              "end": 618,
+              "end": 784,
               "kind": "line_range",
-              "start": 583
+              "start": 749
             },
             "path": "mcp/src/agents_remember/application/memory_tools.py"
           },
@@ -244,8 +298,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9843e9bf0035f3f971b17e9f1d8b091dbb3bc14d",
-            "content": "sha256:2e355dbb346c7dfb42267d5b78de2f494f4fb618173ddeaafad61f57082de1a4",
+            "blob": "4d099561f10d1ae73b6b908557fd452c7252bfbc",
+            "content": "sha256:2a4c8021b7444978b780c206fcd9c885cf96287c42a92a55b0024fdd5f58706e",
             "locator": {
               "kind": "file"
             },
@@ -284,6 +338,19 @@
               "end": 347,
               "kind": "line_range",
               "start": 335
+            },
+            "path": "mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "74c0cad8eea0efbf34e6484bc10c8d3f7324cb40",
+            "content": "sha256:aa67984d25eb8b150fb4366c16079ec69690c2b035aea5f6f5098715eaad634f",
+            "locator": {
+              "end": 287,
+              "kind": "line_range",
+              "start": 275
             },
             "path": "mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py"
           },
@@ -346,14 +413,14 @@
       ]
     },
     "25": {
-      "note": "Current literal public roster has 43 names, including knowledge_write, user_settings_init and explainer_control; historical populations retain their own epochs and supply no live-advertisement acceptance.",
+      "note": "Current literal public roster has 44 names, including knowledge_write, user_settings_init, explainer_control and citation_note_revision; historical populations retain their own epochs and supply no live-advertisement acceptance.",
       "targets": [
         {
           "anchor": {
-            "blob": "4bfc02956d94b6b490c6ccdcd5a93694127f5cca",
-            "content": "sha256:13d1cecbfa436c465d32b52131c227d7c6ca23396dbef1096e35df37ec54608d",
+            "blob": "d0b0ddd9f150e32116b430ecc74907fcf68fee97",
+            "content": "sha256:80377872702b56644d88e0950f44352601e8b003c926376d446829b06503f07b",
             "locator": {
-              "end": 73,
+              "end": 71,
               "kind": "line_range",
               "start": 22
             },
@@ -453,8 +520,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "792cf6ab378a93556fa2f8158e47c1f2aff5b46a",
-            "content": "sha256:63f167df54a9499eb698b580a807060fef1a217d1c6adf57e1ebd6878f4a286f",
+            "blob": "ef1c4f3765418edbd7e43d5d502aad8c39a44749",
+            "content": "sha256:49b9ac966a9cb45f776e0fc0da57ec1323c2ef2676a7f2fe04c4875e4cd37ad3",
             "locator": {
               "kind": "file"
             },
@@ -469,8 +536,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5c6c9d7cb373c5890bcc1ddd303f723e03e5575a",
-            "content": "sha256:bd31b3b5e57ae42772db1454312b9c62ef0983c21de76a756a90606ff44d095a",
+            "blob": "f65bc41685229d76a9af0e644b2b9b2f17f5579f",
+            "content": "sha256:a3ba2f8ef38f4bb239f47600bc8078388bf576b7d68bbba7991f1bc139d24801",
             "locator": {
               "kind": "file"
             },
@@ -485,8 +552,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "792cf6ab378a93556fa2f8158e47c1f2aff5b46a",
-            "content": "sha256:63f167df54a9499eb698b580a807060fef1a217d1c6adf57e1ebd6878f4a286f",
+            "blob": "ef1c4f3765418edbd7e43d5d502aad8c39a44749",
+            "content": "sha256:49b9ac966a9cb45f776e0fc0da57ec1323c2ef2676a7f2fe04c4875e4cd37ad3",
             "locator": {
               "kind": "file"
             },
@@ -501,8 +568,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ec2f49e928c4655185deae15db3e60c5fe0dc759",
-            "content": "sha256:39ec97c82087f8716caeb4f0c0dd7b24a04fd65ae0b3e95e93ea55d656f754e4",
+            "blob": "c7e4806f33bf2bfbce3dce4cd3a4645b5aa70cb3",
+            "content": "sha256:816795fe8b18d2fd6a28217cdb3f1b24863c36e25fe162fe2f0c3c0b4ff212dc",
             "locator": {
               "kind": "file"
             },
@@ -513,14 +580,14 @@
       ]
     },
     "7": {
-      "note": "Current literal public roster has 43 names, including knowledge_write, user_settings_init and explainer_control; historical populations retain their own epochs and supply no live-advertisement acceptance.",
+      "note": "Current literal public roster has 44 names, including knowledge_write, user_settings_init, explainer_control and citation_note_revision; historical populations retain their own epochs and supply no live-advertisement acceptance.",
       "targets": [
         {
           "anchor": {
-            "blob": "4bfc02956d94b6b490c6ccdcd5a93694127f5cca",
-            "content": "sha256:13d1cecbfa436c465d32b52131c227d7c6ca23396dbef1096e35df37ec54608d",
+            "blob": "d0b0ddd9f150e32116b430ecc74907fcf68fee97",
+            "content": "sha256:80377872702b56644d88e0950f44352601e8b003c926376d446829b06503f07b",
             "locator": {
-              "end": 73,
+              "end": 71,
               "kind": "line_range",
               "start": 22
             },
@@ -535,8 +602,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d50f977dccbc13a3efc34f7b6fb34083af34cb82",
-            "content": "sha256:3a21dad9d101ae64efe7a488da80fb0b2724cfb536ac2feb5531e126849440df",
+            "blob": "de6a43ed2001fc740bfc55163c3d1a0d70ae39bb",
+            "content": "sha256:1b1930ae58c63e45e791dee6b02997c58685781c9307f31c4dd81d4330978ce7",
             "locator": {
               "end": 43,
               "kind": "line_range",
@@ -553,8 +620,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "feb441f42445512bd07b4a92bcd0e55945b14d14",
-            "content": "sha256:6101a2e1740a76820bc7304e53f8fbd28a6edbd548d6f5365a674a76143b9026",
+            "blob": "d7a350b97b2ba83910cf0f815eef07fa8d044f8c",
+            "content": "sha256:1ae942a6dabcd6e3f71fa737bafeabd4e2ed2bdf9c37a04d659d43462026d525",
             "locator": {
               "end": 163,
               "kind": "line_range",
@@ -567,5 +634,5 @@
       ]
     }
   },
-  "schema": "ar-onboarding-route/v1"
+  "schema": "ar-onboarding-file/v1"
 }

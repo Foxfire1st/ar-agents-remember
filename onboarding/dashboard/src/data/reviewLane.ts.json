@@ -1,14 +1,15 @@
 {
   "path": "dashboard/src/data/reviewLane.ts",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
-      "note": "The adapter's own statement: the server classifies once and this file only carries the answer.\n\nAnchor: \"server classifies once and this adapter only carries the answer\"",
+      "note": "The adapter's own statement: the server classifies once and this file only carries the answer.",
       "targets": [
         {
           "anchor": {
-            "blob": "88413807ae37c2090f387e7240b7777c106afbf7",
-            "content": "sha256:ed505ec47b788133675374579a5a550f1e6cf56418799e02d1e4efcbcc200d64",
+            "blob": "42427cf2c755ff5dd21db48d8561569ecc82c094",
+            "content": "sha256:e3e612114faf1e0e5a02a7cf6829e77627e7d4f9bd8ceaef6d3e943393d47b1a",
             "locator": {
               "end": 16,
               "kind": "line_range",
@@ -20,16 +21,42 @@
       ]
     },
     "10": {
-      "note": "ReviewPanes calls useReviewLane once with the payload's parsed comparison number or undefined, then passes that read to the workspace, details and change-page owner. This does not assert a global count of every possible lane request.\n\nAnchor: inclusive source ranges",
+      "note": "The lane read is acquired once by the reading surface's change-set hook, with the comparison number that hook resolved or `undefined`, and the surface carries that one read into the open change page without asking for the lane itself.",
       "targets": [
         {
           "anchor": {
-            "blob": "bb94e003292e3a408d3607472dacd850e1f8da65",
-            "content": "sha256:144cb791808f89a3867436351e471f4881b1d10cc83fa97745cb58d8a64cf846",
+            "blob": "b43f30893a1d83f202278f31bcdc9bd4a68de218",
+            "content": "sha256:069a7e4d5aab908ff3d4e9642804f625af7f95494078809c428bac4e46c17385",
             "locator": {
-              "end": 355,
+              "end": 138,
               "kind": "line_range",
-              "start": 337
+              "start": 118
+            },
+            "path": "dashboard/src/panels/review/reading/useChangeSet.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c6b8e96b4754cb08807babd1483628c20ec09d33",
+            "content": "sha256:855f99bda2ad00c77fc1caef2d9fc15eb6ace783ba79cb46cbccca6c011865d4",
+            "locator": {
+              "end": 134,
+              "kind": "line_range",
+              "start": 125
+            },
+            "path": "dashboard/src/panels/review/reading/useReviewPage.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6f30efcbe166c0fe854c1de9cde75a444ff9c5a5",
+            "content": "sha256:313fa4a69697137aed00b1bb36c8488b397f5c2a97ac3999671c165d29265265",
+            "locator": {
+              "end": 849,
+              "kind": "line_range",
+              "start": 835
             },
             "path": "dashboard/src/panels/review/ReviewSurface.tsx"
           },
@@ -141,6 +168,19 @@
         {
           "anchor": {
             "blob": "8782327a6e099b3956ac7cc1f62a33f5e9f70502",
+            "content": "sha256:df7873d9ab22df6d1dd5c49440800c4f9488bac35cff9e03020372883a2044a3",
+            "locator": {
+              "end": 140,
+              "kind": "line_range",
+              "start": 122
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review_lane.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8782327a6e099b3956ac7cc1f62a33f5e9f70502",
             "content": "sha256:1407f9d97754446a05bcd2c403bac98a32765e839afbe3d809008474eba6f1c4",
             "locator": {
               "end": 143,
@@ -154,7 +194,7 @@
       ]
     },
     "16": {
-      "note": "treeComparisonNumber returns the number from the first matching review:trees:<digits> limitation token, otherwise undefined. The inspected surface uses that result as the lane comparison argument; it does not branch on dataset kind.\n\nAnchor: inclusive source ranges",
+      "note": "`treeComparisonNumber` returns the number in the first `review:trees:<digits>` limitation token and `undefined` when there is none; the surface uses it to number the comparison it shows and to check an evidence destination against it, never branching on dataset kind.",
       "targets": [
         {
           "anchor": {
@@ -171,12 +211,12 @@
         },
         {
           "anchor": {
-            "blob": "bb94e003292e3a408d3607472dacd850e1f8da65",
-            "content": "sha256:c0a3de7fe67b48f89e71059b05fe33dad9eb0330cae7845b7e3356b1a1751d68",
+            "blob": "6f30efcbe166c0fe854c1de9cde75a444ff9c5a5",
+            "content": "sha256:74f791c9c2a17ef8a71b0d42259665bb5ee89a007fbd371b054287a367fb0eba",
             "locator": {
-              "end": 345,
+              "end": 539,
               "kind": "line_range",
-              "start": 340
+              "start": 503
             },
             "path": "dashboard/src/panels/review/ReviewSurface.tsx"
           },
@@ -309,12 +349,12 @@
       ]
     },
     "7": {
-      "note": "The lane hook asks nothing without a comparison; one-file classification remains a single-shot marker read, not a hook.\n\nAnchor: file",
+      "note": "The lane hook asks nothing without a comparison; one-file classification remains a single-shot marker read, not a hook.",
       "targets": [
         {
           "anchor": {
-            "blob": "88413807ae37c2090f387e7240b7777c106afbf7",
-            "content": "sha256:c8b456228d52e3892e0765c8af2e0ad511d95bd9bce48223993b411f561ed60a",
+            "blob": "42427cf2c755ff5dd21db48d8561569ecc82c094",
+            "content": "sha256:50efbb66ae022fe895d52f3a09ddb3139654a65529b73a6048ca5896e0b48e63",
             "locator": {
               "kind": "file"
             }
@@ -363,6 +403,32 @@
               "end": 170,
               "kind": "line_range",
               "start": 152
+            },
+            "path": "dashboard/src/panels/review/intentMarkerScope.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "605d887c62f5bfc95cefbf1ab2b8fb104586d1cb",
+            "content": "sha256:0e0c83bce710a0117c7e5c084fac7971956bd0e8ee2a71fd67d7143b5ac2f381",
+            "locator": {
+              "end": 97,
+              "kind": "line_range",
+              "start": 90
+            },
+            "path": "dashboard/src/panels/review/intentMarkerScope.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "605d887c62f5bfc95cefbf1ab2b8fb104586d1cb",
+            "content": "sha256:4aa8eb9fc478a0bdd3077f1f0a73c9f41007b0eb04d7419ea36f80856ae2bc8a",
+            "locator": {
+              "end": 169,
+              "kind": "line_range",
+              "start": 151
             },
             "path": "dashboard/src/panels/review/intentMarkerScope.ts"
           },

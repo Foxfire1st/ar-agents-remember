@@ -416,15 +416,14 @@
       ]
     },
     "31": {
-      "note": "**The values this read states, whose validators refuse a truncated roster presented as a whole one.**",
+      "note": "**The values this read states, whose validators refuse a truncated roster presented as a whole one.**\n\nAnchor: `ReviewFamilyRosterPage`",
       "targets": [
         {
           "anchor": {
-            "blob": "a023a0f5281500828ef62e6ad51e262780da6f39",
-            "content": "sha256:0abb4c80f79538013981461ff09ef47792de46885cbf1851087cee2e00060ed3",
+            "blob": "a760407c0864bf5a01d8b9ddcfa0427f778aa47b",
+            "content": "sha256:57b183891ef1b3c82d5fe68a66f3a0c3bf99d51e3cd96954663532560942bac1",
             "locator": {
-              "kind": "symbol",
-              "name": "ReviewFamilyRosterPage"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/models/knowledge/review_family_context.py"
           },
@@ -433,15 +432,14 @@
       ]
     },
     "32": {
-      "note": "The production review read that asks for this roster and publishes its page.",
+      "note": "The production review read that asks for this roster and publishes its page.\n\nAnchor: `compose_review`",
       "targets": [
         {
           "anchor": {
-            "blob": "01a7ec69778cb2e0f7d25c08380baf296290e01b",
-            "content": "sha256:cccdeadc30f88b4527694d3c2e46f16c82c0784cb1d38b04bece61b9ec6bd1d8",
+            "blob": "1c9f8394dfb38bee67a5da3b90ace66147bd5334",
+            "content": "sha256:bc9aed0908cabfef3b176f1734ea114458607fab1f9bf612787eace2cfa4d0c0",
             "locator": {
-              "kind": "symbol",
-              "name": "compose_review"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/knowledge_review.py"
           },
@@ -450,15 +448,14 @@
       ]
     },
     "33": {
-      "note": "The cases that drive the roster read through the production review over a real enclosure.",
+      "note": "The cases that drive the roster read through the production review over a real enclosure.\n\nAnchor: `test_a_successor_family_revision_is_read_from_its_own_rows_not_inherited`",
       "targets": [
         {
           "anchor": {
-            "blob": "8383cab135e9e3d918c4b8bf59f0cd03435ac2b5",
-            "content": "sha256:d39754d6376ebea839ee166c5469ff4e28e0307a7c6e8b38d4e9120e22551726",
+            "blob": "ad638ac1b54db37d8ed4f7655ba8f7a94063bbec",
+            "content": "sha256:4a078d59f7bbd0a4200d4558e70c6a9acb1aa2a641ab803150b92035d440abae",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_successor_family_revision_is_read_from_its_own_rows_not_inherited"
+              "kind": "file"
             },
             "path": "mcp/tests/test_review_family_context.py"
           },
@@ -515,15 +512,14 @@
       ]
     },
     "7": {
-      "note": "One bound snapshot as this composition reads it, with the reason it could not be opened when it could not.",
+      "note": "One bound snapshot as this composition reads it, with the reason it could not be opened when it could not.\n\nAnchor: `FamilyRosterSide`",
       "targets": [
         {
           "anchor": {
-            "blob": "863986f5f429c7e0e5821471bcf7cd11a3543cbf",
-            "content": "sha256:2dc731dbf76c7b9b5a3733157d6c5dc0530f83ed4c0df707c47f0d2fc413c502",
+            "blob": "e671178c83020db94dbc2339e22ecd6dffa2f37a",
+            "content": "sha256:c9276516635b315a4692a313780b63656cc01ab142ef90f1f3e420fcccff7ed7",
             "locator": {
-              "kind": "symbol",
-              "name": "FamilyRosterSide"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -547,15 +543,14 @@
       ]
     },
     "9": {
-      "note": "**The opener that turns a storage, OS or value error into a stated unreadable side rather than an exception.**",
+      "note": "**The opener that turns a storage, OS or value error into a stated unreadable side rather than an exception.**\n\nAnchor: `open_family_side`",
       "targets": [
         {
           "anchor": {
-            "blob": "863986f5f429c7e0e5821471bcf7cd11a3543cbf",
-            "content": "sha256:ebadcf533a65b98151c519496cfa812846dd672ef7423f660d86cf64f3950daa",
+            "blob": "e671178c83020db94dbc2339e22ecd6dffa2f37a",
+            "content": "sha256:c9276516635b315a4692a313780b63656cc01ab142ef90f1f3e420fcccff7ed7",
             "locator": {
-              "kind": "symbol",
-              "name": "open_family_side"
+              "kind": "file"
             }
           },
           "kind": "code"

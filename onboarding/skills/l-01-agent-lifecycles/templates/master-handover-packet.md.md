@@ -19,8 +19,12 @@ Posted after the prepared transaction inputs and complete handoff reports exist,
 
 ## Evidence
 
+
 - The packet names the ready completion boundary with resolvable, revalidatable refs. [1]
+
+
 - Refs are immutable trees, evidence locations or stable pointers, never branch names. [2]
+
 
 ## Inherited Source-Epoch Commentary
 

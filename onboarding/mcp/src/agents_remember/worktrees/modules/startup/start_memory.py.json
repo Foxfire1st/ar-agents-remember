@@ -76,15 +76,14 @@
   ],
   "references": {
     "12": {
-      "note": "External-only preparation, exact source ref, no fallback",
+      "note": "External-only preparation, exact source ref, no fallback\n\nAnchor: `prepare_memory_for_start`",
       "targets": [
         {
           "anchor": {
-            "blob": "a98b12ff5a943308bc144baa76cfc82e02f78471",
-            "content": "sha256:728f791191fa4a90e2f876f59f19affd5ae534696241b56eb6be583adb11c41b",
+            "blob": "f86e02db6217486e39359736dd7ae043d6898830",
+            "content": "sha256:50945c5aa7c725d2fa1498d6458ee715d80245f34dbbcf68147165b0bc6e22ec",
             "locator": {
-              "kind": "symbol",
-              "name": "prepare_memory_for_start"
+              "kind": "file"
             }
           },
           "kind": "code"

@@ -20,6 +20,11 @@ Current source interpretation only; no fresh execution or grade.
 
 ## Source-bound reference inputs
 
+
 - Optional servingBuild and watcherHealth extend the observer projection; notifier, supervisor and terminal-health tails remain removed. [1]
+
+
 - Absent build or watcher facts are omitted; a supplied watcher reading is validated and an invalid reading is omitted. [2]
-- The current tail vocabulary is exactly servingBuild and watcherHealth. [3]
+
+
+- The current tail vocabulary is exactly servingBuild, watcherHealth and checkoutBinding. [3]

@@ -1,5 +1,6 @@
 {
   "path": "mcp/test_support/agents_remember_test_support/code_quality/record_integrity.py",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
@@ -420,16 +421,16 @@
       ]
     },
     "26": {
-      "note": "The lane this module's contract suite is registered in, so the fail-closed manifest admits it.\n\nAnchor: \"mcp/tests/test_record_integrity.py\"",
+      "note": "The lane this module's contract suite is registered in, so the fail-closed manifest admits it. Source caption: \"mcp/tests/test_record_integrity.py\"",
       "targets": [
         {
           "anchor": {
-            "blob": "11ba98ff63f4a4815985ac51e2c0c7b5a48556a4",
-            "content": "sha256:dd1150cac0a6e9fe146a70162940a8dfa3f1318cb72094a8f1f5af2e3294b878",
+            "blob": "102c4550ab6429f44c8fb543d1d0662de66a1b8c",
+            "content": "sha256:fdc128e6baddc85f485751c2d25d92366c1cba6bb1b4e7f04800d75d6af2ebae",
             "locator": {
-              "end": 623,
+              "end": 621,
               "kind": "line_range",
-              "start": 623
+              "start": 621
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },

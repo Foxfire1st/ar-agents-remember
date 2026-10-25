@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/models/role_capsules/selection.py",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
@@ -13,6 +14,19 @@
               "end": 181,
               "kind": "line_range",
               "start": 169
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/vocabulary.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f82bdc4007083ae4dad1686445d94d0c7e33d03b",
+            "content": "sha256:5920db69099c13c03c83f13e5f9ca7d41d5b7ca91a74858271b832790eab8c94",
+            "locator": {
+              "end": 183,
+              "kind": "line_range",
+              "start": 171
             },
             "path": "mcp/src/agents_remember/models/role_capsules/vocabulary.py"
           },
@@ -62,12 +76,12 @@
       ]
     },
     "3": {
-      "note": "The parsed manifest and its per-role applicability entries.",
+      "note": "The parsed manifest and its per-role applicability entries.\n\nAnchor: `CapsuleCompositionManifest` `CapsuleRoleEntry` `CapsuleLauncherEntry`",
       "targets": [
         {
           "anchor": {
-            "blob": "96753fd67b5fc1c702ebbcc0f89dab1182db7156",
-            "content": "sha256:7748628e3d06486fdf7e4f9d9c1a37b7c2269a66d99cb5aa2121c4f42e1b4d0b",
+            "blob": "cd8a486213211e6be0e506486402269997de9b68",
+            "content": "sha256:81595bdd4a6d47335acd0ece33105be3f7e203707fa1d7aaf5fe1451bf9127d7",
             "locator": {
               "kind": "symbol",
               "name": "CapsuleCompositionManifest"
@@ -102,8 +116,8 @@
         },
         {
           "anchor": {
-            "blob": "96753fd67b5fc1c702ebbcc0f89dab1182db7156",
-            "content": "sha256:3743b005b437aabf5b13f524f940664a1342e98cb3268f94915cc403f83af809",
+            "blob": "cd8a486213211e6be0e506486402269997de9b68",
+            "content": "sha256:bb6a4c94a8dbe2c322614f54db7322935c25b72d59f138d848c621ba11b609db",
             "locator": {
               "end": 167,
               "kind": "line_range",
@@ -138,16 +152,64 @@
             "path": "mcp/src/agents_remember/models/role_capsules/manifest.py"
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cd8a486213211e6be0e506486402269997de9b68",
+            "content": "sha256:9e72f69c7d30b140570b8095c2756eefda32d61086f0928b95fbd99ff46d676f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/manifest.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cd8a486213211e6be0e506486402269997de9b68",
+            "content": "sha256:c0944130b48b6c51f081948e2ee5fd7c70991354e2623bf84754d49152192bf7",
+            "locator": {
+              "end": 82,
+              "kind": "line_range",
+              "start": 63
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/manifest.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cd8a486213211e6be0e506486402269997de9b68",
+            "content": "sha256:e80df308fd34a69d64a5c5730e90300b3deb173b00d22b4cb2fab395acdaa0a6",
+            "locator": {
+              "end": 93,
+              "kind": "line_range",
+              "start": 83
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/manifest.py"
+          },
+          "kind": "code"
         }
       ]
     },
     "4": {
-      "note": "The compiler step that calls this selection first.",
+      "note": "The compiler step that calls this selection first.\n\nAnchor: `compile_role_capsule`",
       "targets": [
         {
           "anchor": {
-            "blob": "e0c363f53732c65054fa825f478956800f102db7",
-            "content": "sha256:d1502ab73ec7a0c2f3607cb0f65c326092b8f83aa9d9d5fbab123774326f3f90",
+            "blob": "762c104a0bcdc0375416163993d106dc37c5fb18",
+            "content": "sha256:157949db0f9acdf0d70ebbd6959fb382dccab34600bf2e6cfd9b12f0b9079a74",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/compiler.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "762c104a0bcdc0375416163993d106dc37c5fb18",
+            "content": "sha256:1887eaccb5d5f005cb1e74f059d46449876977184df1293db4f51a2b4c61e567",
             "locator": {
               "kind": "symbol",
               "name": "compile_role_capsule"

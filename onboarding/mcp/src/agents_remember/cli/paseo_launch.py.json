@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/cli/paseo_launch.py",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
@@ -397,15 +398,14 @@
       ]
     },
     "2": {
-      "note": "Frozen implementation of build_launch_call supporting the stated file behavior.",
+      "note": "Frozen implementation of build_launch_call supporting the stated file behavior.\n\nAnchor: `build_launch_call`",
       "targets": [
         {
           "anchor": {
-            "blob": "d57949b8574bdf280c23f7d8c15d4c28634a0097",
-            "content": "sha256:0ee7392fa4ef7fc72f185b7b22671c6ec9ada333ced852706ce7ae1767c6c093",
+            "blob": "e41b09f9728125e4e62b2317995c3401783e8b62",
+            "content": "sha256:61baace6ce450066ae3245a1bfe0307f23e5e45eccf075fbb3f7a49fb628c161",
             "locator": {
-              "kind": "symbol",
-              "name": "build_launch_call"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -413,54 +413,17 @@
       ]
     },
     "3": {
-      "note": "Frozen implementation of run_launch_call supporting the stated file behavior.",
+      "note": "Frozen implementation of run_launch_call supporting the stated file behavior.\n\nAnchor: `run_launch_call`",
       "targets": [
         {
           "anchor": {
-            "blob": "ed59283183fa798faf169ac6e8be476c40512457",
-            "content": "sha256:8b6d11aa47a5bb316f6ac9813610084d992622d2e20c26d64b4ba02f31f499e5",
+            "blob": "e41b09f9728125e4e62b2317995c3401783e8b62",
+            "content": "sha256:61baace6ce450066ae3245a1bfe0307f23e5e45eccf075fbb3f7a49fb628c161",
             "locator": {
-              "kind": "symbol",
-              "name": "run_launch_call"
+              "kind": "file"
             }
           },
           "kind": "code"
-        }
-      ]
-    },
-    "4": {
-      "note": "The launch observer checks complete receipt, stable UUID and stored call before runtime launch.\n\nAnchor: `RoleFolderAndIdentityTests.test_each_role_class_gets_one_agent_in_its_folder_with_title_and_labels`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "2225cf5324eeecfe5a0c3d30b7b47b2a09783c39",
-            "content": "sha256:9b00b7372134dc07e5ae6729937c7e4a9270661e51a1209cf89dad0bbe41fccc",
-            "locator": {
-              "end": 660,
-              "kind": "line_range",
-              "start": 502
-            },
-            "path": "mcp/tests/test_paseo_launch.py"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "5": {
-      "note": "Interrupts between receipt and call and checks retry retains one agent identity.\n\nAnchor: `RepeatAndConflictTests.test_a_repeated_request_converges_on_the_same_agent`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "02f4aff0bedbdec74f7ea67c71e8ae303cae7259",
-            "content": "sha256:2200041761481afb1a77501bfcdb24006626a7641f1a37c9bc4b85a1fc79e8d9",
-            "locator": {
-              "end": 1019,
-              "kind": "line_range",
-              "start": 979
-            },
-            "path": "mcp/tests/test_paseo_launch.py"
-          },
-          "kind": "test"
         }
       ]
     },

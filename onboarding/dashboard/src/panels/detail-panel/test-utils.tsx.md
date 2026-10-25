@@ -60,7 +60,9 @@ No relevant domain documentation was found.
 ### Repo-Internal References
 
 
+
 - The retained shared fixture builders include seedProjection, seedPromotedLeaf and stubCounters; the removed gallery seed helper is not a current owner. [1]
+
 
 
 ### Cross-Repo References
@@ -73,4 +75,5 @@ No applicable cross-repository source was found.
 
 `TaskSummary.discardedCount` and `discardedSubTasks` are optional; the shared summary builder does not install discarded-audit defaults. Cases that exercise discarded history supply it explicitly, separately from native child counts. No seriesNode builder remains.
 
-- The fetch route table delegates to named payload helpers; task body and empty recorded-report payloads have dedicated branches. \[2] [2]
+
+- The fetch route table delegates to named payload helpers; task body and empty recorded-report payloads have dedicated branches. [2]

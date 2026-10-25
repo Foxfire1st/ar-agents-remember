@@ -79,27 +79,14 @@
       ]
     },
     "5": {
-      "note": "The source census and behavioral renderer case keep the producer seam visible.",
+      "note": "The source census and behavioral renderer case keep the producer seam visible.\n\nAnchor: `test_the_attribution_key_is_named_and_rendered_in_exactly_one_module` `test_every_census_producer_reaches_the_shared_renderer`",
       "targets": [
         {
           "anchor": {
             "blob": "659c4e4b7b46e70bfdd7a52d67c89425345d4f8c",
-            "content": "sha256:2d54a909f329b7644cb4e9d713567c0c0efd8d0c4fd2b369998949e685d01a51",
+            "content": "sha256:c0f95d663316f578a2fdcc9fda38ac17dd4209e670da772d11647555eff9b14c",
             "locator": {
-              "kind": "symbol",
-              "name": "test_the_attribution_key_is_named_and_rendered_in_exactly_one_module"
-            },
-            "path": "mcp/tests/test_memory_attribution_producers.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "099211937d3cad09ea11f90a89074c9a08a5b415",
-            "content": "sha256:eebbd1e7d3bc3c69dd94ce1fae90d8fca19dbf187d18734f35d16dc1dcb4c116",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_every_census_producer_reaches_the_shared_renderer"
+              "kind": "file"
             },
             "path": "mcp/tests/test_memory_attribution_producers.py"
           },

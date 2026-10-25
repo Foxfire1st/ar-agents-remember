@@ -192,7 +192,7 @@ The process service binding lives in the neutral kernel holder and is re-exporte
 - The door keeps the original record-digest provenance while checking its other inputs. [105]
 
 - Retained reference account (no fresh execution or acceptance inferred): Current custody/release of historical pins; no creation. [1] [6]
-- Retained reference account (no fresh execution or acceptance inferred): Task observation, memory/finalization continuation, knowledge validation (since MIK-R22), the knowledge crossing (since MIK-R24), the worklist recompute (since MIK-R08), the review-artifact archive hook (since MIK-R25) and the mandatory invariant gate (since MIK-R09) use explicit service ports; `WorktreeServices` carries each as a field. [8]
+- Task observation, knowledge validation, the knowledge crossing, the worklist recompute, the review-artifact archive hook and the mandatory invariant gate use explicit service ports; `WorktreeServices` carries each as a field. [8]
 - Retained reference account (no fresh execution or acceptance inferred): The activation record is a strict per-contract fingerprinted snapshot with explicit selection states. [9]
 - Retained reference account (no fresh execution or acceptance inferred): The route's stop: release this contract's selection, refuse a non-series contract, report a released master as `paused` or a master that held no selection as `atomic-series-already-vacant`, and propose no next call in either success. [10]
 - Retained reference account (no fresh execution or acceptance inferred): The child-admission seal is deleted: the parent-series helper is now resolution only and no lifecycle cell refuses a leaf. [11]
@@ -214,10 +214,10 @@ The process service binding lives in the neutral kernel holder and is re-exporte
 - Converted memory uses structural file plan. [27]
 - Retained reference account (no fresh execution or acceptance inferred): Exact series rule retained in extracted owner. [28] [29] [30] [32]
 - Retained reference account (no fresh execution or acceptance inferred): Master review history reset in extracted series owner. [31]
-- Retained reference account (no fresh execution or acceptance inferred): Each landing is an ancestor of the ref, and each step is proved by enumeration against the positions the chain's own contracts record. [35]
-- Retained reference account (no fresh execution or acceptance inferred): Inside means strictly after the step's start and at or before its end, so a position that only descends from the step is outside it. [36]
+- Retained reference account (no fresh execution or acceptance inferred): Each landing is an ancestor of the ref, and each step is proved by enumeration against the positions the chain's own contracts record. Source caption: `_require_landing_spine_side` `_require_admitted_step` `_landing_source_positions` [35]
+- Retained reference account (no fresh execution or acceptance inferred): Inside means strictly after the step's start and at or before its end, so a position that only descends from the step is outside it. Source caption: `_positions_inside_the_step` `_reached_by_an_official_position` [36]
 - Retained reference account (no fresh execution or acceptance inferred): Both directions of the step rule are pinned by one collected case, because both lanes sit at exactly their budget, and the descending-position counter-case is untouched. [37]
-- Retained reference account (no fresh execution or acceptance inferred): The order the spine walk consumes: every leaf is proved landed first, then ordered by the pair predicate, refusing unless exactly one minimum exists. [38]
+- Retained reference account (no fresh execution or acceptance inferred): The order the spine walk consumes: non-empty leaves are proved landed before ordering by the pair predicate, refusing unless exactly one minimum exists; empty landings are excluded from that ordering and separately proved at a joint chain position. Source caption: `_require_exact_atomic_landing_chain` `_ordered_atomic_landing_chain` [38]
 - Retained reference account (no fresh execution or acceptance inferred): Continue/cancel inputs and specific old-journal read tolerance. [40]
 
 - Supported staged continuation and cancellation guidance. [41]
@@ -232,7 +232,7 @@ The process service binding lives in the neutral kernel holder and is re-exporte
 
 - Structural planning applies to all converted sides: conflicts, conversion, and since MIK-R66 the alignment diagnostics (aligned cards, renumbered references, kept evidence lines, skipped cards) are reported, even on a clean merge. [48]
 - Retained reference account (no fresh execution or acceptance inferred): The port and its request and view. [49]
-- Retained reference account (no fresh execution or acceptance inferred): The rule 9 refusal. [50]
+- The unconverted-line refusal (MIK-R46 rule 1): a tree whose official line is converted converts only through the crossing sync, and the cutover lock refuses any other attempt by name. [50]
 - Retained reference account (no fresh execution or acceptance inferred): The durable report and the master-line history file closed at commit. [51]
 - Retained reference account (no fresh execution or acceptance inferred): The port and the bundle field (which since MIK-R09 also carries `knowledge_gate`). [52]
 - Retained reference account (no fresh execution or acceptance inferred): The completed result gains the summary; every failure leaves it unchanged. [53]
@@ -282,7 +282,7 @@ The process service binding lives in the neutral kernel holder and is re-exporte
 - **Retained historical source account — superseded by the current route account:** Terminal archival is explicit, skipped on preview/non-leaf and best effort after admission [95]
 
 - Public direct recover completes the accepted generation and settles the retained receipt. [80]
-- An exact direct replay retains its generation; a changed request can replace retired terminal evidence. [81]
+- An exact direct replay retains its generation, except that an unpublished self-cancelled refusal starts a fresh generation; a changed request can replace retired terminal evidence. [81]
 
 - Cancellation proves ownership first and restores every parked side before terminal retirement. [80]
 
@@ -290,7 +290,7 @@ The process service binding lives in the neutral kernel holder and is re-exporte
 - Shared native reapply expectation uses the carried-head rule and effective worktree context, never an alternate or plain-file fallback. [96]
 
 - Binary staged bytes remain exact in cancellation ownership comparisons. [97]
-- Native merge faults are propagated before cancellation mutation. [98]
+- Native merge faults are propagated before any cancellation mutation, and later work the transaction does not own is saved and named rather than refused. [98]
 
 - Task recovery guidance never invokes removed get: an established safe leaf can offer task_doc.replace with the exact slug, contract and fields, while an unknown leaf or parent path offers file repair without a guessed mutation. Launch copies contain the own leaf plus declared local requirements, name missing sources without failing launch solely for absence, and refresh/reclaim on canonical publication under the existing rollback and copy budgets. Status copy drift is informational; missing notice is not universal byte equality. Packet-owned refusal presentation preserves the central conversion sentence and single probe-made case, with exact sync args or quoted separate first-conversion argv and no step for unknown. These accounts change neither canonical-file authority, checkpoint/pause distinction, cleanup/reclamation eligibility, paired source lineage nor sync behavior. [99]
 
@@ -299,5 +299,4 @@ The process service binding lives in the neutral kernel holder and is re-exporte
 - Start binds and mirrors admitted stage through task-fact publication; explicit attach preserves stage and dry-run publishes nothing. [101]
 - Native stage preparation preserves absent documents, promotes only admitted input stages and prepares matching master-row synchronization. [102]
 - Abandon publication restores task and contract sources on publication failure; this does not recreate prior reclaimed resources. [103]
-
 - The neutral process holder supports an explicitly named lazy supplier: first lookup retains its bundle and reset clears bundle and supplier. Start/creation checks every leaf stage, planning attach checks before re-entry, and task-stage publication refuses planning/abandoned-to-inProgress while intent review is open; existing later-stage attach remains separate. [106]

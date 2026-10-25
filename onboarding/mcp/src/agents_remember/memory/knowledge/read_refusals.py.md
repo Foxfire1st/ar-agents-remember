@@ -112,9 +112,13 @@ No configured domain documentation could be checked.
 - **The snapshot-unavailable refusal, which is also what an unreadable schema generation surfaces as.** [5]
 - The execution-bound refusal, so a partial selection with an invented total is unrepresentable. [6]
 - The shared factory and facts model this module composes rather than re-declares. [7]
+
 - **The six codes and the one operation this leaf added to the shared vocabulary.** [8]
+
 - **The node that measures the persisted-nothing property at a later page as well as at the first.** [9]
+
 - **The node that measures a refused read of a real database leaving the file byte-identical.** [10]
+
 - The absence nodes, one per absence code. [11]
 
 ### Cross-Repo References

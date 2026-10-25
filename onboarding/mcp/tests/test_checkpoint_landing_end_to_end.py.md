@@ -65,9 +65,15 @@ The operation and fixture boundaries described here are defined by same-reposito
 ### Current Source-Inspection References
 
 - **Retained historical source account — superseded by the current contract:** Initial live-pair capture, source merge, and source divergence. [1]
+
 - **Retained historical source account — superseded by the current contract:** Retry, continued work, and final-route completion semantics. [2]
+
 - **Retained historical source account — superseded by the current contract:** Ordinary leaf cache absence and bare code-advance leaf-chain refusal are asserted. [3]
+
 - **Retained historical source account — superseded by the current contract:** Source-cache damage does not block; real approval/master/race guards survive. [4]
+
+
 - **Retained historical source account — superseded by the current contract:** Checkpoint publication remains distinct from pause. [5]
+
 
 - The module defines 18 scenario methods. Its retained Git/ref/cache/approval checks now also assert answered closeout-incomplete, atomic-series-closeout-master-incomplete and checkpoint-master-complete outcomes, children-not-retired cleanup, and abandoned-master preview/apply refusal with worktree_abandon guidance. The repeated-checkpoint assertion remains in a genuinely still-unclosed frame. These are source assertions, not a newly run landing or a sync-behavior finding. [6]

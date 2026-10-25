@@ -1,13 +1,32 @@
 {
   "path": "mcp/src/agents_remember/worktrees/sync_transaction_state.py",
-  "realizes": [],
+  "proves": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "7fd71481555a021cfd7ecbf706ed50bac177e569",
+        "content": "sha256:05c16b51845de3b6eaba46fca3ced33e7a3d8c750e76362ca3ae97a3eb0db3ed",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-Z3NKMZ",
+      "invariant": "INV-033XSD",
+      "origin": {
+        "handoffEntry": "MIK-R198@v2 §5-§7 publication-refuses-stale-anchor",
+        "leaf": "260928-MIK-L191"
+      },
+      "rationale": "Stores the adopted side's repair debt in the sync record, which is what makes the debt readable after the merge and by the next publication.",
+      "role": "unclassified"
+    }
+  ],
   "references": {
     "11": {
       "note": "The driver treats this store as the sole current generation and routes recovery from its strict outcomes.",
       "targets": [
         {
           "anchor": {
-            "blob": "8a9babc9b20c6761c07440ac22d8adeba24ef3c2",
+            "blob": "42cfc78baa34c9c1a83d133d2c91d7c588856b83",
             "content": "sha256:a40c02202996c5392b3c97d7b5fc62421a46ff4db0d5a0db71efe9cbbbddc531",
             "locator": {
               "kind": "symbol",
@@ -20,15 +39,14 @@
       ]
     },
     "12": {
-      "note": "Recovery archives damaged entries, writes quarantine, or reconstructs cancellation from refs.",
+      "note": "Recovery archives damaged entries, writes quarantine, or reconstructs cancellation from refs.\n\nAnchor: `cancel_sync`",
       "targets": [
         {
           "anchor": {
-            "blob": "7545791df797c873830da51bc7e20d191ceaef7e",
-            "content": "sha256:98591220a756c2b7782927f39a31103529311ae02bbfc7defcc386628892dae0",
+            "blob": "006b53d8a89f8d25905a57c1f9796ccb0e8b364a",
+            "content": "sha256:464cef0149eaefc6549938e0b95690aec3c55ad996b31418e8ed6d19c4209acd",
             "locator": {
-              "kind": "symbol",
-              "name": "cancel_sync"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/worktrees/sync_transaction_recovery.py"
           },
@@ -37,15 +55,14 @@
       ]
     },
     "13": {
-      "note": "A nonempty crossingReport may name crossing or all-converted structural diagnostics; the serializer omits the empty value. N2 is historical; current retainedTreeDigests remains serialized, and old-journal defaults do not prove old-runtime forward compatibility.",
+      "note": "A nonempty crossingReport may name crossing or all-converted structural diagnostics; the serializer omits the empty value. N2 is historical; current retainedTreeDigests remains serialized, and old-journal defaults do not prove old-runtime forward compatibility.\n\nAnchor: `SyncSideRecord`",
       "targets": [
         {
           "anchor": {
-            "blob": "586e4067c8886bf8bd90489953714e07ab61b24f",
-            "content": "sha256:c6e26ed60b0be20b9427f3ace806e5df8419cba489534f3fb86a23c3c7b5b37e",
+            "blob": "7fd71481555a021cfd7ecbf706ed50bac177e569",
+            "content": "sha256:05c16b51845de3b6eaba46fca3ced33e7a3d8c750e76362ca3ae97a3eb0db3ed",
             "locator": {
-              "kind": "symbol",
-              "name": "SyncSideRecord"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -53,15 +70,14 @@
       ]
     },
     "14": {
-      "note": "retainedTreeDigests defaults empty; per-value worktree/index hashes have fixed-width digest or absent/unreadable representations, with no declared dictionary-cardinality or journal-byte cap.",
+      "note": "retainedTreeDigests defaults empty; per-value worktree/index hashes have fixed-width digest or absent/unreadable representations, with no declared dictionary-cardinality or journal-byte cap.\n\nAnchor: `SyncSideRecord`",
       "targets": [
         {
           "anchor": {
-            "blob": "586e4067c8886bf8bd90489953714e07ab61b24f",
-            "content": "sha256:c6e26ed60b0be20b9427f3ace806e5df8419cba489534f3fb86a23c3c7b5b37e",
+            "blob": "7fd71481555a021cfd7ecbf706ed50bac177e569",
+            "content": "sha256:05c16b51845de3b6eaba46fca3ced33e7a3d8c750e76362ca3ae97a3eb0db3ed",
             "locator": {
-              "kind": "symbol",
-              "name": "SyncSideRecord"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -69,26 +85,14 @@
       ]
     },
     "4": {
-      "note": "Current strict side/operation records.\n\nAnchor: `SyncSideRecord`, `SyncOperationRecord`",
+      "note": "Current strict side/operation records.\n\nAnchor: `SyncSideRecord` `SyncOperationRecord`",
       "targets": [
         {
           "anchor": {
-            "blob": "586e4067c8886bf8bd90489953714e07ab61b24f",
-            "content": "sha256:c6e26ed60b0be20b9427f3ace806e5df8419cba489534f3fb86a23c3c7b5b37e",
+            "blob": "7fd71481555a021cfd7ecbf706ed50bac177e569",
+            "content": "sha256:05c16b51845de3b6eaba46fca3ced33e7a3d8c750e76362ca3ae97a3eb0db3ed",
             "locator": {
-              "kind": "symbol",
-              "name": "SyncSideRecord"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "586e4067c8886bf8bd90489953714e07ab61b24f",
-            "content": "sha256:ee20da976b25c515162218fe7720d2b269c026f1b6ace32dd58143372c4f886e",
-            "locator": {
-              "kind": "symbol",
-              "name": "SyncOperationRecord"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -96,15 +100,14 @@
       ]
     },
     "5": {
-      "note": "Optional report serialization.",
+      "note": "Optional report serialization.\n\nAnchor: `SyncSideRecord`",
       "targets": [
         {
           "anchor": {
-            "blob": "586e4067c8886bf8bd90489953714e07ab61b24f",
-            "content": "sha256:c6e26ed60b0be20b9427f3ace806e5df8419cba489534f3fb86a23c3c7b5b37e",
+            "blob": "7fd71481555a021cfd7ecbf706ed50bac177e569",
+            "content": "sha256:05c16b51845de3b6eaba46fca3ced33e7a3d8c750e76362ca3ae97a3eb0db3ed",
             "locator": {
-              "kind": "symbol",
-              "name": "SyncSideRecord"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -112,15 +115,14 @@
       ]
     },
     "6": {
-      "note": "Retained phase/parked candidate projection.",
+      "note": "Retained phase/parked candidate projection.\n\nAnchor: `_active_sync_projection`",
       "targets": [
         {
           "anchor": {
-            "blob": "586e4067c8886bf8bd90489953714e07ab61b24f",
-            "content": "sha256:4a1ae1729e10fe5c05f99b59d55776454402983f2c53da45422f91495eb66ad1",
+            "blob": "7fd71481555a021cfd7ecbf706ed50bac177e569",
+            "content": "sha256:05c16b51845de3b6eaba46fca3ced33e7a3d8c750e76362ca3ae97a3eb0db3ed",
             "locator": {
-              "kind": "symbol",
-              "name": "_active_sync_projection"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -128,26 +130,28 @@
       ]
     },
     "7": {
-      "note": "Specific old-key adapter and current file resolution.\n\nAnchor: `SyncSideRecord`, `SyncResolutionProjection`",
+      "note": "Specific old-key adapter and current file resolution.  Anchor: `SyncSideRecord` `SyncResolutionProjection`",
       "targets": [
         {
           "anchor": {
-            "blob": "586e4067c8886bf8bd90489953714e07ab61b24f",
-            "content": "sha256:c6e26ed60b0be20b9427f3ace806e5df8419cba489534f3fb86a23c3c7b5b37e",
+            "blob": "7fd71481555a021cfd7ecbf706ed50bac177e569",
+            "content": "sha256:05c16b51845de3b6eaba46fca3ced33e7a3d8c750e76362ca3ae97a3eb0db3ed",
             "locator": {
-              "kind": "symbol",
-              "name": "SyncSideRecord"
+              "end": 619,
+              "kind": "line_range",
+              "start": 1
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "3ff8738a74b90a9cde9779804b87b348f22f8127",
-            "content": "sha256:7ee5b7aa48b2e692966b0d8f2ce90800290025dae7f0995044c9832235eb34f8",
+            "blob": "b4bf02afeb62c71b1a3333562b505eeb244d637e",
+            "content": "sha256:37d26dc6580a5156f8db068920c6b6bd8bf2336525e967f199ff2b34e0f481b5",
             "locator": {
-              "kind": "symbol",
-              "name": "SyncResolutionProjection"
+              "end": 188,
+              "kind": "line_range",
+              "start": 168
             },
             "path": "mcp/src/agents_remember/models/worktree.py"
           },

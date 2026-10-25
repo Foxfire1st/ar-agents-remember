@@ -101,7 +101,9 @@ The prototype sits between the living spec (which distils it) and the React rend
 The two cross-links below are that proving pair.
 
 - The living spec that distils this prototype's primitives into the canonical, parameterised visual language; its CSS classes mirror this file 1:1. [2]
+
 - The React engine-room renderer built from this prototype — the same two-world canvas, scenario beats (B0→B5 / D0→D6), and failure scenes (t12b / t14c / t18) reproduced in GSAP + Motion. [3]
+
 
 ### Cross-Repo References
 

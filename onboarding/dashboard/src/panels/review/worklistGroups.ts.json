@@ -155,15 +155,14 @@
       ]
     },
     "8": {
-      "note": "The server's matching row lookup.",
+      "note": "The server's matching row lookup.\n\nAnchor: `_row_subjects`",
       "targets": [
         {
           "anchor": {
-            "blob": "63b06ce06cdbb42cfbd708a236c0af1a6ffee709",
-            "content": "sha256:1868095f0bdbc8a5ab5c1a9ec35b3a48e57c7c38426fdc4adeaa43cefd1490e2",
+            "blob": "a956af1c8d6d0ae8752c70bec8277c64a19a3022",
+            "content": "sha256:6deabdb2f5186f865bde9fe961078af112af94670506384a38de1de1f782c13e",
             "locator": {
-              "kind": "symbol",
-              "name": "_row_subjects"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/review_tree_knowledge.py"
           },

@@ -427,8 +427,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b1e11e24577989dc6ddb4add1820c5591d0a50d6",
-            "content": "sha256:8b998afd67049ce295b2766b18e2452fbbcad780e3d981148e05f438e3351075",
+            "blob": "97433b82d0a14bd0dafb48329f8b88d5c8708b2d",
+            "content": "sha256:1485c5cf32e584c8b5c7728993c4d64c4c3529a9db77c1e2bef76581697e141b",
             "locator": {
               "kind": "symbol",
               "name": "test_the_recovery_loop_is_a_background_task_of_the_serving_lifespan_and_keeps_its_interval"
@@ -539,8 +539,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b1e11e24577989dc6ddb4add1820c5591d0a50d6",
-            "content": "sha256:43fd8200ce2c8997a4cc61a80be30984190a4ad0b8e3d79b8f4584807f3efbca",
+            "blob": "97433b82d0a14bd0dafb48329f8b88d5c8708b2d",
+            "content": "sha256:d8ab2a84cc04c231c3565768b9dc11f36c9e012a30d9f275201943f1a479bd27",
             "locator": {
               "end": 635,
               "kind": "line_range",

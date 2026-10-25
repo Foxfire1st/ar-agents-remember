@@ -40,6 +40,11 @@ two objects, because a model-typed tool parameter would republish `task_doc` as 
 
 ### Repo-Internal References
 
+
 - The application entry point this builder forwards to. [1]
+
+
 - The shared validation/emission choke point. [2]
+
+
 - The response model the payload validates against. [3]

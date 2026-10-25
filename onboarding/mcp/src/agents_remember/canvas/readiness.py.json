@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/canvas/readiness.py",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
@@ -81,8 +82,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "974e15cbec1e41734012d6ce3a11b9edb0dca65f",
-            "content": "sha256:37742ed31535a5edc81a7b683180caec795cdc2f532f9f2e6de1ebebafbbebe9",
+            "blob": "923c43f47e920930d325fc082182d3c934a16de0",
+            "content": "sha256:de3a88264aaed8d46e8c01191923f4836e40e77394e485e7e38271f786b90190",
             "locator": {
               "kind": "symbol",
               "name": "check_page"
@@ -97,8 +98,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "974e15cbec1e41734012d6ce3a11b9edb0dca65f",
-            "content": "sha256:24929849582bc54de43daca04007e41c3807bcea5a7984f08f10bc2145503135",
+            "blob": "923c43f47e920930d325fc082182d3c934a16de0",
+            "content": "sha256:87c4b7a2ab9bddcbc487dbf31f0164a3d3ce560ad4b64336ff201e79f358c39c",
             "locator": {
               "kind": "symbol",
               "name": "ReadinessReport"

@@ -1,0 +1,223 @@
+{
+  "path": "mcp/tests/test_reference_anchor_guard.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "041fd9c5267802eb7187afb788f50056d7ed7222",
+        "content": "sha256:61d5789da23780ebab59b54e5ef6ee42ef342df99249ef23a26de967fb946f3f",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_anchor_debt_reports_at_a_sync_merge_and_refuses_every_publication"
+        }
+      },
+      "facet": "The same anchors report at a sync merge and refuse at each publication route.",
+      "id": "PRF-56JMZB",
+      "invariant": "INV-033XSD",
+      "origin": {
+        "handoffEntry": "MIK-R198@v2 §5-§7 publication-refuses-stale-anchor",
+        "leaf": "260928-MIK-L191"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "041fd9c5267802eb7187afb788f50056d7ed7222",
+        "content": "sha256:65d28adebd8e8a070945899cc248bc5aa1c963d0b348ab811725050b7ae10d88",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_worktree_route_reports_at_a_sync_merge_and_refuses_a_publication"
+        }
+      },
+      "facet": "The worktree route reports the debt at a merge and refuses the publication.",
+      "id": "PRF-8CAF5B",
+      "invariant": "INV-033XSD",
+      "origin": {
+        "handoffEntry": "MIK-R198@v2 §5-§7 publication-refuses-stale-anchor",
+        "leaf": "260928-MIK-L191"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "041fd9c5267802eb7187afb788f50056d7ed7222",
+        "content": "sha256:4bb6cbf54f05fce3fb89392009b5634732c3d8b39e4aaaeefa3a95ff6270aa5d",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_changing_the_cited_source_refuses_publication_until_every_reference_is_repaired"
+        }
+      },
+      "facet": "Changing a cited source outside the leaf's authored closure refuses publication until every reference is repaired.",
+      "id": "PRF-9C1TKF",
+      "invariant": "INV-033XSD",
+      "origin": {
+        "handoffEntry": "MIK-R198@v2 §5-§7 publication-refuses-stale-anchor",
+        "leaf": "260928-MIK-L191"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "041fd9c5267802eb7187afb788f50056d7ed7222",
+        "content": "sha256:8cf53d7099518d18a64aa70e6a95ba01c26a3a83c2f9d13e161b4f277403eafe",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_stale_blob_with_identical_content_refuses_a_leaf_publication"
+        }
+      },
+      "facet": "A stale blob whose located bytes still match refuses a leaf publication.",
+      "id": "PRF-RM8H42",
+      "invariant": "INV-033XSD",
+      "origin": {
+        "handoffEntry": "MIK-R198@v2 §5-§7 publication-refuses-stale-anchor",
+        "leaf": "260928-MIK-L191"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "041fd9c5267802eb7187afb788f50056d7ed7222",
+        "content": "sha256:ac807743e3fe6e52ee65ec22152aad15dcc1e679869f4500b484b7e394559ae6",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_same_blob_anchor_with_the_wrong_recorded_content_refuses"
+        }
+      },
+      "facet": "An anchor whose blob matches but whose located bytes changed refuses as stale content.",
+      "id": "PRF-WCPZ4E",
+      "invariant": "INV-033XSD",
+      "origin": {
+        "handoffEntry": "MIK-R198@v2 §5-§7 publication-refuses-stale-anchor",
+        "leaf": "260928-MIK-L191"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "041fd9c5267802eb7187afb788f50056d7ed7222",
+        "content": "sha256:45918e0559b018ade144c03df75660291ade62d22248c90a4e3c08cd738581f6",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_recorded_landing_of_a_merge_commit_is_judged_with_one_base"
+        }
+      },
+      "facet": "A recorded landing of a merge commit is a leaf publication, so its stale anchors refuse it.",
+      "id": "PRF-YV44KK",
+      "invariant": "INV-033XSD",
+      "origin": {
+        "handoffEntry": "MIK-R198@v2 §5-§7 publication-refuses-stale-anchor",
+        "leaf": "260928-MIK-L191"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "A stale blob with identical content refuses a leaf publication and only the blob needs re-recording",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "041fd9c5267802eb7187afb788f50056d7ed7222",
+            "content": "sha256:8cf53d7099518d18a64aa70e6a95ba01c26a3a83c2f9d13e161b4f277403eafe",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_stale_blob_with_identical_content_refuses_a_leaf_publication"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "A same-blob anchor with the wrong recorded content identity refuses",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "041fd9c5267802eb7187afb788f50056d7ed7222",
+            "content": "sha256:ac807743e3fe6e52ee65ec22152aad15dcc1e679869f4500b484b7e394559ae6",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_same_blob_anchor_with_the_wrong_recorded_content_refuses"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "A sync merge reports the anchor debt while every publication refuses it",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "041fd9c5267802eb7187afb788f50056d7ed7222",
+            "content": "sha256:61d5789da23780ebab59b54e5ef6ee42ef342df99249ef23a26de967fb946f3f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_anchor_debt_reports_at_a_sync_merge_and_refuses_every_publication"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "A cited source moved outside the leaf's closure refuses until every reference is repaired",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "041fd9c5267802eb7187afb788f50056d7ed7222",
+            "content": "sha256:4bb6cbf54f05fce3fb89392009b5634732c3d8b39e4aaaeefa3a95ff6270aa5d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_changing_the_cited_source_refuses_publication_until_every_reference_is_repaired"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "A stale reference fails exact-pair quality and its readiness item, and clears when the anchor is repaired",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "041fd9c5267802eb7187afb788f50056d7ed7222",
+            "content": "sha256:50435002384fd6cf11d3a275417dbc86ba25c75e28f59796de29772272fc88ac",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_stale_reference_fails_the_exact_pair_quality_and_its_readiness_item"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "A recorded landing of a merge commit is judged with its first parent as the one base",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "041fd9c5267802eb7187afb788f50056d7ed7222",
+            "content": "sha256:45918e0559b018ade144c03df75660291ade62d22248c90a4e3c08cd738581f6",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_recorded_landing_of_a_merge_commit_is_judged_with_one_base"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "The worktree route reports the debt at a sync merge and refuses a leaf publication",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "041fd9c5267802eb7187afb788f50056d7ed7222",
+            "content": "sha256:65d28adebd8e8a070945899cc248bc5aa1c963d0b348ab811725050b7ae10d88",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_worktree_route_reports_at_a_sync_merge_and_refuses_a_publication"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

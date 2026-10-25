@@ -17,7 +17,9 @@ Unreadable/legacy after sides, incomplete indexes, unresolved identities and inv
 ## Evidence
 
 - The resolved after index and optional identity-only baseline feed one record projection. [1]
+
 - The same owner-filtered projection supplies outline labels. [2]
+
 - Only admitted dispositions form steps; old and half-recorded family cases remain distinct. [3]
 
 - The module delegates owner-row retrieval and raw-identity resolution to review_history. owner_rows uses the index's exact-owner query, refuses incomplete indexes and retains only admitted owner attempt paths. raw_subject checks the after identity map, optional baseline map and admitted raw identity; baseline supplies no history rows. These helper bodies preserve the removed local behavior. [4]

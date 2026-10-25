@@ -89,4 +89,5 @@ plan digest compilation.
 - `canonicalize_repository_profile` normalizes one profile and refuses a declared digest that does not match canonical content. [1]
 - The digest is computed by `repository_profile_digest` over normalized content in models. [2]
 - `load_repository_profile` calls canonicalization and converts digest refusal into a typed `profile-digest-mismatch` finding. [3]
+
 - The canonical profile is what planning digests into immutable per-gate plans. [4]

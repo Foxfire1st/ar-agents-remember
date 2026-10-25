@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/serving/knowledge_reader.py",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
@@ -83,8 +84,21 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e2f1038f8f99aa45375bfa21ef0e369c5639cc46",
-            "content": "sha256:965bfa6060b8167ce989db7d431a3b2b9ba136b474976e62d3ef8ea6696619a9",
+            "blob": "3f0a6693c859f3300eb3e4a2ed3439fb33e1d04f",
+            "content": "sha256:01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+            "locator": {
+              "end": 232,
+              "kind": "line_range",
+              "start": 232
+            },
+            "path": "mcp/src/agents_remember/serving/_app_common.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3f0a6693c859f3300eb3e4a2ed3439fb33e1d04f",
+            "content": "sha256:e2fcc3c5bb5b5225930914b07568fde357781f74d6e5fdb37420721454180aa0",
             "locator": {
               "end": 242,
               "kind": "line_range",
@@ -101,8 +115,21 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6577555f1e999bbd273e7cf52324244d2b863929",
-            "content": "sha256:c289c5fa2a0fbfb8ca80eee09a7ce0b2016670f24d9b4b3a80727d9be0919831",
+            "blob": "d60acd0e4be738b9a9a33eb9f333fa6c53974f2b",
+            "content": "sha256:12fb0a4620ed8c4684fef5acac66645bf959928ec37e03767772e8b033eff0f6",
+            "locator": {
+              "end": 186,
+              "kind": "line_range",
+              "start": 186
+            },
+            "path": "mcp/src/agents_remember/serving/app.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d60acd0e4be738b9a9a33eb9f333fa6c53974f2b",
+            "content": "sha256:9f9aa33d54ef0b0e89d87e0f1358270f73c8eea4a796023b80278d4d40bcd026",
             "locator": {
               "end": 232,
               "kind": "line_range",

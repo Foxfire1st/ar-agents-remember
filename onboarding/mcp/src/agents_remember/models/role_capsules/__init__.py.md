@@ -61,7 +61,9 @@ No relevant documentation found after checking live sources.
 
 ### Repo-Internal References
 
+
 - The frozen DTO surface this package re-exports. [1]
+
 - The I/O boundary this package deliberately does not contain. [2]
 - The sibling package that owns admitted-context resolution and reading. [3]
 - The layer contract that places these value types in `models` and the I/O in `application`; it declares the target order (`errors < kernel < models < … < application < mcp < cli`) and states that it fails against the tree until the named leaf moves the code. [4]

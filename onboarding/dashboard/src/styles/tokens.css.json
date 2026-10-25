@@ -3,12 +3,12 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The Panda token mirror declares the palette under `colors`, including `colors.well`.",
+      "note": "The Panda token mirror declares the podracer palette under `theme.extend.tokens.colors`, ported from the `:root` values in `styles/tokens.css`.",
       "targets": [
         {
           "anchor": {
-            "blob": "9965202883c4baa4fb3e80eb6e2843e695f8f5ef",
-            "content": "sha256:3f71d06bd0e2c7798d6e9212e6854d2c97921df1d9601ba55da96b3b90d223bb",
+            "blob": "90e8e5f30e2b11529dc15cae0f19b20a9cf4be1c",
+            "content": "sha256:e2c194906636fc2c6485462b545e839726dace1c3e909d739cb71b051f37a294",
             "locator": {
               "kind": "file"
             },

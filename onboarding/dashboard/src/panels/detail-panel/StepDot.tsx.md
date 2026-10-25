@@ -20,4 +20,5 @@ MIK-R175 rule 3: in the tooltip's head and in every substep row the id and the s
 
 - The tooltip's id and status word keep their full width while only the title wraps. [2]
 
+
 - Optional cached step details use a cancelable non-touch pointer-rest timer and a body portal, with no fetch or tab stop. [1]

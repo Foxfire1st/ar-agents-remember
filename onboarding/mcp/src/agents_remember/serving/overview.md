@@ -168,7 +168,9 @@ the change-set routes now run on a dedicated `_BoundedReads` scheduler: eight wo
 - Internal compile_launch_capsule admits task/free-agent seats through retained compiler ownership and returns a generic delivery/refusal. [13]
 
 - The shared naming primitive appends the same physical lock suffix. [21]
+
 - Every-directory filtering retains lock suffix exclusion. [22]
+
 
 - **The comparison route's handler over its injected port.**  Anchor: "def api_review_intent(" [29]
 
@@ -267,14 +269,18 @@ the change-set routes now run on a dedicated `_BoundedReads` scheduler: eight wo
 - The install host part. [106]
 - The host acquisition. [107]
 - A numbered recorded comparison is looked up exactly; code/memory ranges use its recorded sides (converted memory base when present), and the list returns those four tree operands. [108] [109]
-- App registers three intent handlers plus separate summary, tree and reader ports before static delivery. [110]
+
+- App registers three intent handlers plus separate summary, tree and reader ports before static delivery.  Anchor: create_app [110]
+
 - Startup ordering, native held-message sweep registration, worklist-first shutdown, and awaited background teardown are explicit.  Anchor: `_serving_lifespan`, `_held_delivery_loop`, `_to_thread_owned` (delegating to accounted cancellation-drained offload) [111]
 - Leaf-archive recovery alone uses the retained completion-relative background loop; no terminal-observation prime/poll remains. [112]
 
 - Live pacing adds post-completion rest, so interval/heartbeat alone is not a total freshness bound.  Anchor: projection_completed; _next_deadline [113]
 
 
+
 - Missing wheel exits degraded; watch establishment, retry and native-watch options are explicit.  Anchor: run; _watch_once [114]
+
 
 - Tick cancellation drains filesystem work; state commits before subscriber notification. [115]
 - Source content admits attributed unchanged context only with measured requested inventory. [120]
@@ -292,14 +298,18 @@ the change-set routes now run on a dedicated `_BoundedReads` scheduler: eight wo
 - Landing interest gates actual discovery and probe admission, while due policy retains exact identities. [130]
 - Provider safety remains an independent periodic sequence. [131]
 
+
 - Complete reconciled host input joins role-agent task identities only while its supervisor observation is armed. [132]
+
 - Native cache values reuse only complete matching input generations; additional consumed inputs must have pre-read observations. [133]
 - Pending cache results are retained only when fresh post-read input observations match their captured generation. [134]
 - Full TaskSummary preparation has separate bounded retention and generation checks, not a second task-status producer. [135]
 - Task-body 304 requires a still-current captured generation and matching content revision. [136]
 
 - The transport still maps the literal legacy candidate_dataset_absent refusal code to404; a status mapping does not establish a currently produced dataset candidate path. [51]
+
 - An enabled live leaf-wide tree read may start without a comparison number; focused card-entry reads require one. Absence of a number does not imply a dataset review. [96]
+
 - The injected canonical memory-root port is carried from collaborators into the shared serving runtime, not resolved from arbitrary client roots. [138]
 - The existing state stream opts into review-memory invalidations only through supplied review identity; no-selector streams retain their ordinary event path. [139]
 - The connection-owned watcher filters generated/temporary paths, separates ready from coalesced changes, emits invalidation revisions rather than tree identities and drains its worker/merge ownership on closure. [140]

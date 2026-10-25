@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/application/knowledge_writer/code_anchors.py",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
@@ -54,8 +55,8 @@
         },
         {
           "anchor": {
-            "blob": "971ce5978516219ef12fa09414e1223af629c9de",
-            "content": "sha256:c2c9577c63f07f36a7fd9c8f5362f7df756aa9c9e310c58085a075ac63ab1129",
+            "blob": "a03a0b82dff9f9649863950b2c61e647576b0674",
+            "content": "sha256:5cdb27f859a96c3284bca13edf53668ae1f8caa909e74d06d1aa9c8dd2344476",
             "locator": {
               "end": 102,
               "kind": "line_range",
@@ -72,6 +73,18 @@
               "end": 157,
               "kind": "line_range",
               "start": 153
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a03a0b82dff9f9649863950b2c61e647576b0674",
+            "content": "sha256:8d4274e183db709f5a69b1af8dfaba41f38f408f8859a19ad885b6f61e3e4a8e",
+            "locator": {
+              "end": 150,
+              "kind": "line_range",
+              "start": 146
             }
           },
           "kind": "code"
@@ -92,6 +105,18 @@
             }
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a03a0b82dff9f9649863950b2c61e647576b0674",
+            "content": "sha256:c39ddc525205fd57a6184c3cf8a1695493da405cfb43d1964cd7dd26a1a94ea2",
+            "locator": {
+              "end": 206,
+              "kind": "line_range",
+              "start": 181
+            }
+          },
+          "kind": "code"
         }
       ]
     },
@@ -109,16 +134,38 @@
             }
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a03a0b82dff9f9649863950b2c61e647576b0674",
+            "content": "sha256:a6847e38b650a836df48d6cae666de0bc5d6c4842f084d3ec5a541685bf8ff23",
+            "locator": {
+              "end": 160,
+              "kind": "line_range",
+              "start": 138
+            }
+          },
+          "kind": "code"
         }
       ]
     },
     "2": {
-      "note": "The captured tree C and its blobs.",
+      "note": "The captured tree C and its blobs.\n\nAnchor: `CodeSnapshot`",
       "targets": [
         {
           "anchor": {
-            "blob": "5e20674c1184914b1d449552cc09a38fe5416098",
-            "content": "sha256:4c29f26e3b561edc747abf182dbaf287157f726eaf25662d7d2be62451f30d14",
+            "blob": "a03a0b82dff9f9649863950b2c61e647576b0674",
+            "content": "sha256:d8f85fb13f5ac09188a39767e0204d0da4050b332872f905d6142721b0df53d8",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a03a0b82dff9f9649863950b2c61e647576b0674",
+            "content": "sha256:6470b981c92f94b696f29418f6f77189fa5aeb44ca43c902f91ccadd0f00a103",
             "locator": {
               "kind": "symbol",
               "name": "CodeSnapshot"
@@ -177,8 +224,8 @@
         },
         {
           "anchor": {
-            "blob": "971ce5978516219ef12fa09414e1223af629c9de",
-            "content": "sha256:c2c9577c63f07f36a7fd9c8f5362f7df756aa9c9e310c58085a075ac63ab1129",
+            "blob": "a03a0b82dff9f9649863950b2c61e647576b0674",
+            "content": "sha256:5cdb27f859a96c3284bca13edf53668ae1f8caa909e74d06d1aa9c8dd2344476",
             "locator": {
               "end": 102,
               "kind": "line_range",
@@ -198,16 +245,38 @@
             }
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a03a0b82dff9f9649863950b2c61e647576b0674",
+            "content": "sha256:8d4274e183db709f5a69b1af8dfaba41f38f408f8859a19ad885b6f61e3e4a8e",
+            "locator": {
+              "end": 150,
+              "kind": "line_range",
+              "start": 146
+            }
+          },
+          "kind": "code"
         }
       ]
     },
     "6": {
-      "note": "A symbol must bind exactly once.",
+      "note": "A symbol must bind exactly once.\n\nAnchor: `_symbol_range`",
       "targets": [
         {
           "anchor": {
-            "blob": "6edcd5be7b7e59e571a9f4381da938102e622331",
-            "content": "sha256:573bac58759240358706539e42e95eff1948766aa6a1ac4742e74e209eb3c224",
+            "blob": "a03a0b82dff9f9649863950b2c61e647576b0674",
+            "content": "sha256:d8f85fb13f5ac09188a39767e0204d0da4050b332872f905d6142721b0df53d8",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a03a0b82dff9f9649863950b2c61e647576b0674",
+            "content": "sha256:eb69d1e8e9988b94f59dc277e59e553a3ee941d554429560a4875d4f03bb7fdf",
             "locator": {
               "kind": "symbol",
               "name": "_symbol_range"
@@ -218,7 +287,7 @@
       ]
     },
     "7": {
-      "note": "A qualified name's last part must sit inside its parents: the writer delegates to the one shared rule.",
+      "note": "A qualified name's last part must sit inside its parents: the writer delegates to the one shared rule.\n\nAnchor: `_bound_spans` `qualified_spans`",
       "targets": [
         {
           "anchor": {
@@ -233,8 +302,41 @@
         },
         {
           "anchor": {
-            "blob": "4757f36e9a477d0e286dfcc9ea3e7446977a1821",
-            "content": "sha256:b2ced6307919efd33b944f30f6c6418bab915d3d05ad6b8ac6cb29f047a21ca0",
+            "blob": "a03a0b82dff9f9649863950b2c61e647576b0674",
+            "content": "sha256:ee8bea02f9640eba00856b87d932045c8764c2c74c9c60b3f3c94daa7200849f",
+            "locator": {
+              "end": 186,
+              "kind": "line_range",
+              "start": 183
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a03a0b82dff9f9649863950b2c61e647576b0674",
+            "content": "sha256:d8f85fb13f5ac09188a39767e0204d0da4050b332872f905d6142721b0df53d8",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "00c487c023255a663f0ff6e9ffe68d65da3a8202",
+            "content": "sha256:f9aeb8d32574f8ec2e8b27a39814340b8d823c6b1294c5ac6593466dce67314e",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/style/citations/extents.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "00c487c023255a663f0ff6e9ffe68d65da3a8202",
+            "content": "sha256:44560f69157a8e4c415357e36a9724de9d9a3b03f7c865be19a5df27910960e3",
             "locator": {
               "kind": "symbol",
               "name": "qualified_spans"
@@ -246,11 +348,11 @@
         {
           "anchor": {
             "blob": "a03a0b82dff9f9649863950b2c61e647576b0674",
-            "content": "sha256:ee8bea02f9640eba00856b87d932045c8764c2c74c9c60b3f3c94daa7200849f",
+            "content": "sha256:f81de8d06f2514a42b6faace4a673406d3bf4b225df1ad59bfee0d773c5533b6",
             "locator": {
-              "end": 186,
+              "end": 179,
               "kind": "line_range",
-              "start": 183
+              "start": 176
             }
           },
           "kind": "code"
@@ -258,12 +360,22 @@
       ]
     },
     "8": {
-      "note": "The snapshot of a committed code state, for a master line's crossing.",
+      "note": "The snapshot of a committed code state, for a master line's crossing.\n\nAnchor: `at_commit`",
       "targets": [
         {
           "anchor": {
-            "blob": "971ce5978516219ef12fa09414e1223af629c9de",
-            "content": "sha256:51bb53a56b198579fc9c5c2737fc2fa91c6acc3d918ddf929034da07024b7ee5",
+            "blob": "a03a0b82dff9f9649863950b2c61e647576b0674",
+            "content": "sha256:d8f85fb13f5ac09188a39767e0204d0da4050b332872f905d6142721b0df53d8",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a03a0b82dff9f9649863950b2c61e647576b0674",
+            "content": "sha256:01858768818f4afc53926c9df06dd582b43e15e3f3934c716ce020ccf82d7a35",
             "locator": {
               "kind": "symbol",
               "name": "at_commit"
@@ -290,8 +402,8 @@
         },
         {
           "anchor": {
-            "blob": "971ce5978516219ef12fa09414e1223af629c9de",
-            "content": "sha256:c2c9577c63f07f36a7fd9c8f5362f7df756aa9c9e310c58085a075ac63ab1129",
+            "blob": "a03a0b82dff9f9649863950b2c61e647576b0674",
+            "content": "sha256:5cdb27f859a96c3284bca13edf53668ae1f8caa909e74d06d1aa9c8dd2344476",
             "locator": {
               "end": 102,
               "kind": "line_range",
@@ -308,6 +420,18 @@
               "end": 157,
               "kind": "line_range",
               "start": 153
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a03a0b82dff9f9649863950b2c61e647576b0674",
+            "content": "sha256:8d4274e183db709f5a69b1af8dfaba41f38f408f8859a19ad885b6f61e3e4a8e",
+            "locator": {
+              "end": 150,
+              "kind": "line_range",
+              "start": 146
             }
           },
           "kind": "code"

@@ -79,21 +79,36 @@ No Domain Documentation source is configured for this slice.
 
 ### Repo-Internal References
 
+
 - `build_diff_fixture` supplies the current fixture or assertion described above. [40]
+
+
 - `rebuild_after_tree` supplies the current fixture or assertion described above. [41]
+
+
 - Fixture construction imports test-only row constructors; it does not call the retired canonical writer. [42]
+
+
 - RowStore writes text-tree fixture rows without the retired production admission plane. [43]
+
 
 - **The candidate's two new source paths, its revised statement and its authored words, and the whole candidate tree rebuilt by one call.** [56]
 - The three small value types: one candidate-only realization's identities, one side of the comparison, and the fixture with every identity a case asserts against. [57]
+
 - **The fixture builder: the shared baseline, the rebuilt candidate tree carrying the whole candidate-side delta, and the two live trees.** [58]
+
 - **The revised statement as removal beside unrelated addition: the candidate carries the same retry record with a different statement at another revision number, and text records hold no predecessor edge (rule 1), so the pair is never a succession.**
-- **A fourth retry revision neither side selects is gone with the multi-revision trees: one text record holds one revision (rule 3).** [60]
+
 - **The added claim, whose recorded identity is the blob the candidate tree really holds.** [61]
+
 - **The candidate tree, the object-store borrow that lets one repository name both trees, and the hermetic Git environment.** [62]
 - **The fixture's loud-failure rule: a building step that does not do what it says fails the fixture.** [63]
+
 - **The baseline fixture this module builds on.** [64]
+
+
 - The fixture value the baseline side is read from. [65]
+
 - **The contract this module's artifact row is registered under.** [66]
 - **The evidence node the contract names: the removed realization keeps its baseline source in the union.** [67]
 

@@ -35,27 +35,14 @@
       ]
     },
     "4": {
-      "note": "The schema generation this name is validated against at open and on reopen.",
+      "note": "The schema generation this name is validated against at open and on reopen.\n\nAnchor: `inspect_schema` `create_or_validate_schema`",
       "targets": [
         {
           "anchor": {
-            "blob": "5330296baa8cabeac31286bb196c70bcf2763703",
-            "content": "sha256:930d3a928f847e7604bbfec6b53ca6fe384a4611fa001211ae4f11be297e4d66",
+            "blob": "9c7a8f0bd625027cff8b6d9d775cae6526466089",
+            "content": "sha256:6103fb9c356387c002eb386f9eccd45c4d05899ecd91ba0e16bd14038f297f0d",
             "locator": {
-              "kind": "symbol",
-              "name": "inspect_schema"
-            },
-            "path": "mcp/src/agents_remember/memory/knowledge/connection.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "5330296baa8cabeac31286bb196c70bcf2763703",
-            "content": "sha256:53c6a302dae053cdcdc2b6cc13bf78624646239924382882de2449261f0f3090",
-            "locator": {
-              "kind": "symbol",
-              "name": "create_or_validate_schema"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/memory/knowledge/connection.py"
           },

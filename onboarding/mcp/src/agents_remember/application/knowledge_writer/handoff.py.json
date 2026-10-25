@@ -93,15 +93,14 @@
   ],
   "references": {
     "1": {
-      "note": "Both forms, the bare file, and expressions that are not read as one test.",
+      "note": "Both forms, the bare file, and expressions that are not read as one test.\n\nAnchor: `test_evidence_names_a_test_as_a_test_id_or_as_a_path_plus_symbol`",
       "targets": [
         {
           "anchor": {
-            "blob": "598b84d6b63c399c08e71e94ec6d7c3ea806afeb",
-            "content": "sha256:eabe6098adc9d27e81d976259bdf8d0ad5e0ef191d5182ec7d06b142e7e02299",
+            "blob": "0256098f652dc34be5986d7dcab77243a655f959",
+            "content": "sha256:ebb05908d076c74907bac8a22bfb3c2902b74eb2329c114409ae4e9ab1aba461",
             "locator": {
-              "kind": "symbol",
-              "name": "test_evidence_names_a_test_as_a_test_id_or_as_a_path_plus_symbol"
+              "kind": "file"
             },
             "path": "mcp/tests/test_knowledge_proofs.py"
           },
@@ -110,26 +109,14 @@
       ]
     },
     "10": {
-      "note": "An entry and its curator keys; a ruling authors no invariant; the tests its evidence cites come from `tests_named_in`.",
+      "note": "An entry and its curator keys; a ruling authors no invariant; the tests its evidence cites come from `tests_named_in`.\n\nAnchor: `EntryRequest` `cited_tests`",
       "targets": [
         {
           "anchor": {
-            "blob": "f5356f222b7f461ef3497e010c13dd91cd993c3e",
-            "content": "sha256:0e7d4f1bdd62e3600d5e13e3e6bcc5b69edb307fc0cf5c1f9a1af3664b6d4494",
-            "locator": {
-              "kind": "symbol",
-              "name": "EntryRequest"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
             "blob": "0fcaee614b530fbfb7a642fa65cbaf53214d3a9f",
-            "content": "sha256:5a4eeb43f6e1df60566fc85b8d167d48384f728950ca46d5659a2bf1586f30d4",
+            "content": "sha256:e479229e390480e45139ef071f72d388dcd648c2025f34f1cb08be559ada9ec9",
             "locator": {
-              "kind": "symbol",
-              "name": "cited_tests"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -137,48 +124,14 @@
       ]
     },
     "11": {
-      "note": "The two test forms and the bare test module, read in order and once each.",
+      "note": "The two test forms and the bare test module, read in order and once each.\n\nAnchor: `_SELECTED_TEST` `_TEST_FILE` `TestFileMention` `tests_named_in`",
       "targets": [
         {
           "anchor": {
             "blob": "0fcaee614b530fbfb7a642fa65cbaf53214d3a9f",
-            "content": "sha256:ed866a133fadb0588f8aec9fed155cf235a88c6bb7ed5e63ffb6b3472375a227",
+            "content": "sha256:e479229e390480e45139ef071f72d388dcd648c2025f34f1cb08be559ada9ec9",
             "locator": {
-              "kind": "symbol",
-              "name": "_SELECTED_TEST"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "0fcaee614b530fbfb7a642fa65cbaf53214d3a9f",
-            "content": "sha256:9191a0ddbb0072005166e005a805a6d007008fc634b5e3e7bdba4e8b16de7bb6",
-            "locator": {
-              "kind": "symbol",
-              "name": "_TEST_FILE"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "0fcaee614b530fbfb7a642fa65cbaf53214d3a9f",
-            "content": "sha256:23dfd8ed108bc3d03ae7f96897fd0d906f00d098127d0e14edabb5cf0ffa5c95",
-            "locator": {
-              "kind": "symbol",
-              "name": "TestFileMention"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "f5356f222b7f461ef3497e010c13dd91cd993c3e",
-            "content": "sha256:abdc20f508c2900520bc734d33d4ce561b683a76c694f9d4403fda1f733f8155",
-            "locator": {
-              "kind": "symbol",
-              "name": "tests_named_in"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -266,15 +219,14 @@
       ]
     },
     "17": {
-      "note": "An entry: new invariant needs scope, admission and a statement.",
+      "note": "An entry: new invariant needs scope, admission and a statement.\n\nAnchor: `_entry`",
       "targets": [
         {
           "anchor": {
-            "blob": "f5356f222b7f461ef3497e010c13dd91cd993c3e",
-            "content": "sha256:7ca1f7acc94b90d8af64a053ccc714097fca79fa8bc33271fdd31770c400c2dc",
+            "blob": "0fcaee614b530fbfb7a642fa65cbaf53214d3a9f",
+            "content": "sha256:e479229e390480e45139ef071f72d388dcd648c2025f34f1cb08be559ada9ec9",
             "locator": {
-              "kind": "symbol",
-              "name": "_entry"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -282,15 +234,14 @@
       ]
     },
     "18": {
-      "note": "A record: kind, fields, and the writer-owned fields refused.",
+      "note": "A record: kind, fields, and the writer-owned fields refused.\n\nAnchor: `_record`",
       "targets": [
         {
           "anchor": {
-            "blob": "8bae0255a0cdb444f02d53324e1e00debc2631e1",
-            "content": "sha256:3f725ee921e21afe75c10bd2f417888ad56980745c16483320eabcdb29297973",
+            "blob": "0fcaee614b530fbfb7a642fa65cbaf53214d3a9f",
+            "content": "sha256:e479229e390480e45139ef071f72d388dcd648c2025f34f1cb08be559ada9ec9",
             "locator": {
-              "kind": "symbol",
-              "name": "_record"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -298,15 +249,14 @@
       ]
     },
     "19": {
-      "note": "History input refuses caller-owned id/revision/sources and malformed considered examinations; the empty list remains intentional.",
+      "note": "History input refuses caller-owned id/revision/sources and malformed considered examinations; the empty list remains intentional.\n\nAnchor: `_row`",
       "targets": [
         {
           "anchor": {
-            "blob": "f5356f222b7f461ef3497e010c13dd91cd993c3e",
-            "content": "sha256:1f0f85ab20312a1d37115a93c5f3b47c35ca520954f553a5871391a7dcf66476",
+            "blob": "0fcaee614b530fbfb7a642fa65cbaf53214d3a9f",
+            "content": "sha256:e479229e390480e45139ef071f72d388dcd648c2025f34f1cb08be559ada9ec9",
             "locator": {
-              "kind": "symbol",
-              "name": "_row"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -314,15 +264,14 @@
       ]
     },
     "2": {
-      "note": "A file named with a test anywhere in the evidence is not also reported bare.",
+      "note": "A file named with a test anywhere in the evidence is not also reported bare.\n\nAnchor: `test_a_file_named_with_a_test_anywhere_in_the_evidence_is_not_also_reported_bare`",
       "targets": [
         {
           "anchor": {
-            "blob": "598b84d6b63c399c08e71e94ec6d7c3ea806afeb",
-            "content": "sha256:3ca0e8c0a11ce0c176107c858932f8fe5622442b29939ac04758cc50e45158d9",
+            "blob": "0256098f652dc34be5986d7dcab77243a655f959",
+            "content": "sha256:ebb05908d076c74907bac8a22bfb3c2902b74eb2329c114409ae4e9ab1aba461",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_file_named_with_a_test_anywhere_in_the_evidence_is_not_also_reported_bare"
+              "kind": "file"
             },
             "path": "mcp/tests/test_knowledge_proofs.py"
           },
@@ -331,26 +280,14 @@
       ]
     },
     "20": {
-      "note": "The row keys and the request field a planned row's `ref` travels in.",
+      "note": "The row keys and the request field a planned row's `ref` travels in.\n\nAnchor: `_ROW_KEYS` `RowRequest`",
       "targets": [
         {
           "anchor": {
-            "blob": "51bec83a0fb7d1d5f7feea7563ddfa0f4a69c131",
-            "content": "sha256:d54c2f26c04909f09d4f71769b461f9edfd89e7c67131415578b22eb67ae582b",
+            "blob": "0fcaee614b530fbfb7a642fa65cbaf53214d3a9f",
+            "content": "sha256:e479229e390480e45139ef071f72d388dcd648c2025f34f1cb08be559ada9ec9",
             "locator": {
-              "kind": "symbol",
-              "name": "_ROW_KEYS"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "82c72eaef5103fa3175bf0a9b69ac48d4cb1061c",
-            "content": "sha256:8b72b475e56d2db44f33d5fb2b54252cffcc093af8d717e1b8ca0270563d1507",
-            "locator": {
-              "kind": "symbol",
-              "name": "RowRequest"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -524,8 +461,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "82c72eaef5103fa3175bf0a9b69ac48d4cb1061c",
-            "content": "sha256:f24ed89c498f460061eebb68339039066a1c83a33ca05f9267023dfb7422684d",
+            "blob": "0fcaee614b530fbfb7a642fa65cbaf53214d3a9f",
+            "content": "sha256:36a005432e3e35fea0efbe95d6394ff1db316a4ada75900c733795db4a5b7e9b",
             "locator": {
               "end": 25,
               "kind": "line_range",
@@ -537,15 +474,14 @@
       ]
     },
     "30": {
-      "note": "A `repoint` row item names one fired link's position, the path and the locator, and is refused if it renames a link.",
+      "note": "A `repoint` row item names one fired link's position, the path and the locator, and is refused if it renames a link.\n\nAnchor: `_repoints`",
       "targets": [
         {
           "anchor": {
-            "blob": "81397006b8f0e0c437c4b481636eaf322a121cd3",
-            "content": "sha256:de4849be0adf4b48b14cd9dc3330bf81b4c5a4330b56ad996096647b41384b52",
+            "blob": "0fcaee614b530fbfb7a642fa65cbaf53214d3a9f",
+            "content": "sha256:e479229e390480e45139ef071f72d388dcd648c2025f34f1cb08be559ada9ec9",
             "locator": {
-              "kind": "symbol",
-              "name": "_repoints"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -612,15 +548,14 @@
       ]
     },
     "7": {
-      "note": "The four refusals and the relocation, end to end.",
+      "note": "The four refusals and the relocation, end to end.\n\nAnchor: `test_a_moved_row_whose_after_names_another_path_relocates_the_entry`",
       "targets": [
         {
           "anchor": {
-            "blob": "cfed40211fab111f80a08b412d6b6deaa63639a0",
-            "content": "sha256:52c82a8871830d881e7a452f143a08ddffba667aad44f387070c04f042a31bae",
+            "blob": "1a6235931c50a4a8f6b146a51598cdff7f55a233",
+            "content": "sha256:075ff4475087a14dafb700ce617d28082fae430f3313c7e64333ca644f5dc9fe",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_moved_row_whose_after_names_another_path_relocates_the_entry"
+              "kind": "file"
             },
             "path": "mcp/tests/test_knowledge_writer.py"
           },

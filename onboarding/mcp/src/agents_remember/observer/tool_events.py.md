@@ -27,6 +27,8 @@ server process there is no writer and the call is simply not observed. `ToolCall
 ## Evidence
 
 - One process-wide writer per tool server; record never raises, losses counted. [1]
+
 - Facts-only row: fixed answer keys plus caller, never content. [2]
+
 - The started/addressed role rides a context variable around the choke. [3]
 - The choke writes one river event per completed call. [4]

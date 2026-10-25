@@ -73,12 +73,12 @@
       ]
     },
     "2": {
-      "note": "Adapts filed developer messages to the existing native host send/held lane.\n\nAnchor: \"def deliver_or_hold(delivery: DeveloperDelivery) -> dict[str, Any]:\"",
+      "note": "Adapts filed developer messages to the existing native host send/held lane.",
       "targets": [
         {
           "anchor": {
-            "blob": "3b0840d10e6bfef4987ff7bf4e93f8d11362cdf2",
-            "content": "sha256:cf33b7b69802017ba63fd037463fc76bac41cbb872b45cc4745e6c424b29bcd3",
+            "blob": "75db1bc4e65a037c82c59c38a7322663634da334",
+            "content": "sha256:6f32425604de60849a6cc494970565c49550f2bef1355f0849f4944b402b5383",
             "locator": {
               "end": 108,
               "kind": "line_range",

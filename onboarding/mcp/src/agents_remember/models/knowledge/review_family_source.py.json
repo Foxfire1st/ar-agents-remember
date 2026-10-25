@@ -88,7 +88,7 @@
       ]
     },
     "10": {
-      "note": "**The production-path cases for `resolved`, `whole_file` and `unresolved` on two real sides.**\n\nAnchor: \"test_two_members_in_one_file_carry_their_own_locators_ranges_and_rationale\"; \"test_an_unresolved_locator_is_stated_with_its_recorded_locator_and_no_range\"",
+      "note": "**The production-path cases for `resolved`, `whole_file` and `unresolved` on two real sides.**",
       "targets": [
         {
           "anchor": {
@@ -105,8 +105,8 @@
         },
         {
           "anchor": {
-            "blob": "1863cffa06d71d79ae64ac0462a1fae69a504fd0",
-            "content": "sha256:b5c7289a9caaaff031a075dd6d77b6da46f251968d0c55544d3aeaf764754423",
+            "blob": "1a3f67ee67cb1020df64027cc09f2106124dc530",
+            "content": "sha256:ac8527d3dbac85f16c6e256b9c8e9b009d3d833ab0f55ef5362139aa17c177d4",
             "locator": {
               "end": 338,
               "kind": "line_range",

@@ -33,13 +33,48 @@ This is current-source interpretation of the A9 candidate, not a new test result
 
 ## Source-bound reference inputs
 
-- [11]
-- [16]
-- [20]
-- [22]
-- [24]
-- [25]
-- [26]
+
+
+
+- Anchor: Actual startup task set and shutdown order. [11]
+
+
+
+
+
+- Anchor: Shielded thread worker is drained before cancellation escapes. [16]
+
+
+
+
+
+- Anchor: The shared cancelled-worker drain boundary. [20]
+
+
+
+
+
+- Anchor: One completion-relative archive-recovery cadence, not terminal observation. [22]
+
+
+
+
+
+- Anchor: Retained metrics operations use the drained boundary. [24]
+
+
+
+
+
+- Anchor: Archive recovery sleeps using its imported tick constant after each attempt. [25]
+
+
+
+
+
+- Anchor: Initial river compaction, projector prime, background tasks, child shutdown and drain. [26]
+
+
 
 - Periodic safety samples, records, evaluates with its existing stop callback and compacts through accounted drained offload, with no page/authority gate. [27]
 - Controlled real-loop tests cover revoked, between-tick, restarted and malformed authority while keeping launch refusal separate. [28]

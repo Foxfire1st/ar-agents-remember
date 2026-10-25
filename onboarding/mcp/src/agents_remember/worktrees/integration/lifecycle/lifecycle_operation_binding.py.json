@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_binding.py",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
@@ -22,7 +23,7 @@
   ],
   "references": {
     "1": {
-      "note": "Binding identity and payload fields are closed and predecessor-aware.",
+      "note": "Binding identity and payload fields are closed and predecessor-aware.  > Retained earlier citation wording: - Canonical digests, serialization, and bounded conflicts are pure helpers.  > Retained earlier citation wording: - Enclosure publication consumes the binding and digest API before any publication.",
       "targets": [
         {
           "anchor": {
@@ -49,26 +50,28 @@
       ]
     },
     "2": {
-      "note": "Canonical digests, serialization, and bounded conflicts are pure helpers.\n\nAnchor: `locator_id`",
+      "note": "Canonical digests, serialization, and bounded conflicts are pure helpers.  Anchor: `locator_id`",
       "targets": [
         {
           "anchor": {
             "blob": "16bccaa6d9a7472d210b29dd83c7ddaf56d91ea7",
             "content": "sha256:1af3875eaabf5515397000923f0ebaa5dc7569bb850b7032e18e0072729b4403",
             "locator": {
-              "kind": "symbol",
-              "name": "sha256_payload"
+              "end": 132,
+              "kind": "line_range",
+              "start": 130
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "d36b36508d90a121ba28d65a83190366e9fca909",
-            "content": "sha256:57b39cf56c9bd27889292c30a52946da748602aa898e3d2007077145937e2546",
+            "blob": "16bccaa6d9a7472d210b29dd83c7ddaf56d91ea7",
+            "content": "sha256:ddcbb2033aa392eea562440dc552f1f75ab3c1d0329c42f578db593701f03fe6",
             "locator": {
-              "kind": "symbol",
-              "name": "model_text"
+              "end": 145,
+              "kind": "line_range",
+              "start": 135
             }
           },
           "kind": "code"
@@ -78,8 +81,9 @@
             "blob": "16bccaa6d9a7472d210b29dd83c7ddaf56d91ea7",
             "content": "sha256:30ded36bf353e0607f7329252356d33e66852229e20ac76eb112adb62483b762",
             "locator": {
-              "kind": "symbol",
-              "name": "location_conflict"
+              "end": 158,
+              "kind": "line_range",
+              "start": 148
             }
           },
           "kind": "code"
@@ -89,8 +93,9 @@
             "blob": "16bccaa6d9a7472d210b29dd83c7ddaf56d91ea7",
             "content": "sha256:0aa9a41c09eaf6b6cb2960d9a5c8f1578d67b87be26382161a4e9d3f320e5572",
             "locator": {
-              "kind": "symbol",
-              "name": "byte_conflict"
+              "end": 171,
+              "kind": "line_range",
+              "start": 161
             }
           },
           "kind": "code"
@@ -98,16 +103,16 @@
       ]
     },
     "3": {
-      "note": "Enclosure publication consumes the binding and digest API before any publication.\n\nAnchor: \"def prepare_enclosure_publication(\"; \"binding = enclosure_binding_payload(\"; \"binding_fingerprint = sha256_payload(binding)\"",
+      "note": "Enclosure publication consumes the binding and digest API before any publication.  Anchor: \"def prepare_enclosure_publication(\"; \"binding = enclosure_binding_payload(\"; \"binding_fingerprint = sha256_payload(binding)\"",
       "targets": [
         {
           "anchor": {
-            "blob": "495f04f963e675b400b30ad8337505f392842e6a",
-            "content": "sha256:11ff62b99ddf7f2dac49299d76f2d88db75c85912491a16a7c1264d48740e738",
+            "blob": "88ece6e1110590381723a65e8df129899ebd3266",
+            "content": "sha256:3946e9b6c55b8703e1aeb01a7b3cc6705cf6a0086b2b1becb330c9ba05f64137",
             "locator": {
-              "end": 275,
+              "end": 287,
               "kind": "line_range",
-              "start": 190
+              "start": 194
             },
             "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_location.py"
           },
@@ -116,16 +121,16 @@
       ]
     },
     "4": {
-      "note": "Readback verification re-derives the same binding and request identity.\n\nAnchor: \"def _validate_manifest(\"; \"class EnclosureBindingIdentity:\"; \"def enclosure_binding_payload(\"",
+      "note": "Readback verification re-derives the same binding and request identity.",
       "targets": [
         {
           "anchor": {
-            "blob": "5883f86f6d80a442b3eba941807ac137f7e546e3",
-            "content": "sha256:4733caa588e319da0b4226708af6d450a123a45b2f4725585bb811a13594d41b",
+            "blob": "88ece6e1110590381723a65e8df129899ebd3266",
+            "content": "sha256:a7d31c7e9b47c05144dfa52571a88570658936ab4b6c0babd1aca8e4ba524f72",
             "locator": {
-              "end": 1121,
+              "end": 1212,
               "kind": "line_range",
-              "start": 1045
+              "start": 1109
             },
             "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_location.py"
           },
@@ -152,6 +157,19 @@
               "kind": "line_range",
               "start": 95
             }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "88ece6e1110590381723a65e8df129899ebd3266",
+            "content": "sha256:47cb2d8a10dda04c45db74740e1f5f6fec6bf712af29963b3cd46cd67a12064f",
+            "locator": {
+              "end": 1121,
+              "kind": "line_range",
+              "start": 1045
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_location.py"
           },
           "kind": "code"
         }

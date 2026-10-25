@@ -40,5 +40,8 @@ simulated where the tooling inspects `/proc` or a process record.
 
 ## Evidence
 
+
 - The sandbox fixture, its real child processes, port claims and recorded fake operations. [1]
+
+
 - `SandboxCase` hides named harness configuration markers at ancestors outside its owned fixture through a scoped existence view, while the fixture's own paths and all others use the real filesystem. [2]

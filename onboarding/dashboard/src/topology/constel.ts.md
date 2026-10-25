@@ -15,7 +15,7 @@ Resize and data updates still paint synchronously, so an occluded tab does not d
 | Current claim | Source witness | Existing reference |
 | --- | --- | --- |
 | Four-colour total palette and direct lookup. | `dashboard/src/topology/constel.ts:31-37,73` | [1] [2] |
-| Only workspace/repository/worktree nodes and four statuses. | `dashboard/src/topology/model.ts:23-28,111-187` | [3] [4] |
+| Only workspace/repository/worktree nodes and four statuses; worktree label, word and limit detail stay model-owned. | `dashboard/src/topology/model.ts:23-28,82-109,111-188` | [3]  |
 | Uniform layout, two rings and ordinary edges, with no provider draw stage. | `dashboard/src/topology/constel.ts:90-98,189-225,291-305` | [2] |
 | Synchronous resize/update paint, teardown and model-owned tooltip data. | `dashboard/src/topology/constel.ts:321-349,381-449` | [2] [6] |
 
@@ -122,10 +122,16 @@ The renderer consumes the `ConstelStatus` produced by `model.ts`: the workspace 
 
 - `CssVarReader` and the total `constelColors(cssVar): Record<ConstelStatus, string>`, extracted from `mountConstel` so the palette is reachable without a canvas. [1]
 - `mountConstel` builds its token reader and stores `constelColors(v)` in the scene once; `statusColor` indexes the resulting total map without a fallback. [2]
+
 - `CONSTEL_STATUSES` and the derived `ConstelStatus` this palette is keyed by — the single vocabulary shared with the model. [3]
-> - `worktreeStatus` maps a bound TaskEntry through shared status/tone and returns `idle` when unbound; `buildTopology` separately supplies workspace/repository and provider statuses.
+
+
+> Retained earlier citation wording: - `worktreeStatus` maps a worktree row through the shared status and tone and returns `idle` when the row is unbound; `worktreeFields` supplies the node's label, word and limit detail, and `buildTopology` separately supplies workspace/repository and provider statuses. [4]
+
 - `constel.test.ts` executes the palette's totality, hue-uniqueness, and token/fallback shape without a canvas. [5]
+
 - The React wrapper that mounts this renderer once and pushes new models through `update()`. [6]
+
 
 ### Cross-Repo References
 
@@ -136,4 +142,4 @@ No meaningful cross-repo references found.
 
 </details>
 
-- worktreeStatus maps a bound TaskEntry through shared status/tone and returns idle when unbound; buildTopology supplies only workspace, repository and worktree nodes, without provider satellites. [4]
+- `worktreeStatus` maps a worktree row through shared `taskStatusKey`/`statusTone`, returns `idle` when unbound, and maps `wait` to `warn`, `gone` to `idle`, otherwise `ok`. `worktreeFields` supplies the label, status word and full limit detail using shared status/limit helpers; a limited node's detail contains the word plus every `limitLines` row, with no canvas clock. `buildTopology` creates only workspace, repository and worktree nodes: workspace is `core`, `addRepositories` supplies repository `ok`, and worktrees use that shared derived status and those fields. Search-provider satellites and their status mapping are absent. [4]

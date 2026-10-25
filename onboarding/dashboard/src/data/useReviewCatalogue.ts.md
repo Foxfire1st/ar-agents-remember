@@ -56,10 +56,18 @@ No configured domain source could be checked.
 
 The named constructs own this behavior; reads and validation use their existing callers and models.
 
+
 - Who owns the read (the reviewer, not the entry) and why the key is the comparison's identity. [1]
+
+
 - The read state, now without the analytics `facts`/`stale` fields. [2]
+
+
 - The answer mapping. [4]
+
+
 - Its caller, which bumps the generation on a new snapshot pair. [6]
+
 
 ### Cross-Repo References
 

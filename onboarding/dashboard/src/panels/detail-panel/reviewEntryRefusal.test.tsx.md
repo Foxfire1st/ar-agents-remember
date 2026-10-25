@@ -83,19 +83,43 @@ No configured domain documentation could be checked.
 Every anchor in a row occurs inside the range that row cites.
 
 - **The header: what is exercised and the measured pre-L47 defects (line totals, a second committed request, eager catalogue).** [1]
+
 - The real bar and the shipped store-seeding helpers. [2]
+
+
 - **The summary route's unavailable answer with the owner's refusal verbatim.** [3]
+
+
 - A counted or partial body whose parts sum to its totals. [4]
+
 - Line totals that must never appear on the Intent review control. [5]
+
 - The one stub and the per-route request counter. [6]
+
+
 - **One control with intent counts and nothing beside it; the click opens the task context.** [8]
+
+
 - **One summary read, no catalogue read, one committed read.** [9]
+
+
 - **Missing knowledge stated briefly, never as `+0 −0`, with the refusal in a closed disclosure.** [10]
+
+
 - An unreadable answer, with no invented refusal. [11]
+
+
 - Partial counts marked and explained. [12]
+
+
 - A previous leaf's late answer is dropped. [14]
+
+
 - **260921-ICR-L25, register B6: the unrecorded committed range shown briefly, its sentence on demand, never its zero as a total, and kept apart from measured-empty and from a refusal.** [15]
+
+
 - The control, its summary read and the disclosure these cases drive. [16]
+
 
 ### Cross-Repo References
 

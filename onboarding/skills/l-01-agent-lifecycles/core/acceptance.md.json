@@ -21,16 +21,16 @@
   ],
   "references": {
     "1": {
-      "note": "Mechanical completion, artifact-blind relay, owner validation and unchanged authority.\n\nAnchor: \"# Core — Completion Truth And Handoff Acceptance (one home — this file owns the truth boundary)\"",
+      "note": "Mechanical completion, artifact-blind relay, owner validation and unchanged authority.",
       "targets": [
         {
           "anchor": {
-            "blob": "eca15d36771f6cdd4ceabe7b07f0c4c93aa0cbdc",
-            "content": "sha256:348a2aa37bf4d5aa773be635ee9174d9bad0993a216145ee0facc0ad8bf73016",
+            "blob": "2a112bdb1148478a8a719636588cb908fab01cac",
+            "content": "sha256:5f751456b63f2e6f3938c662f9154b87dc851fd198fbe5b1db8c8940c9b355b6",
             "locator": {
               "end": 25,
               "kind": "line_range",
-              "start": 1
+              "start": 3
             }
           },
           "kind": "code"
@@ -192,16 +192,16 @@
       ]
     },
     "8": {
-      "note": "The host relays mechanical turn completion without inspecting acceptance artifacts. [8]\n\nAnchor: source extent 1–24",
+      "note": "The host relays mechanical turn completion without inspecting acceptance artifacts. [8]",
       "targets": [
         {
           "anchor": {
-            "blob": "4f6181bc4f0045bcaf1828fe6e777bf68c490a9a",
-            "content": "sha256:00302694781280b8459044cdaf73071f6ef8184eb4415254abd4e43b87adacf5",
+            "blob": "2a112bdb1148478a8a719636588cb908fab01cac",
+            "content": "sha256:3a072ccf201c1f7d8f62bae3fefbd240016ed62734efbe01bb42011761368191",
             "locator": {
-              "end": 24,
+              "end": 14,
               "kind": "line_range",
-              "start": 1
+              "start": 10
             }
           },
           "kind": "code"

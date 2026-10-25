@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/kernel/worktree_service_binding.py",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
@@ -106,8 +107,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4961b9dc90a6124fde95f3c8d258d1b8f9a6c0b3",
-            "content": "sha256:c97deba332ae39d0d1b28db993f97689e0cdedf2d69f42dd0dcdc006d809617f",
+            "blob": "d1dd581ce7a39878387a2f6a26246563ee31c405",
+            "content": "sha256:af555290ff06c3360dfa4de1f2135b02688f3cbb3cfb0a6fa16544bf367638c1",
             "locator": {
               "end": 48,
               "kind": "line_range",

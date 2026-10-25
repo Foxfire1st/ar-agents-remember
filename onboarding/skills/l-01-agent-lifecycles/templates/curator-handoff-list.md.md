@@ -260,22 +260,42 @@ The captions distinguish current guidance from explicitly historical witnesses.
 
 - **The MIK-R04 curator-guidance subsection: family routes, their rules, the root route `.` and the read-only `knowledge-routes` suggestion.** [1]
 
+
 - **The MIK-R12 section: the file writer's document, the curator keys and record, history and handle forms, what the writer fills in and what it checks; and the `incidental` → `support` decision.** [2]
 
+
+
 - **The informational MIK-R21 section: where an entry lands once knowledge is text, and that nothing changes before MIK-R37.** [3]
+
+
 - Curator-owned semantic scope remains required. [4]
+
+
 - Historical database-era `retain_memberships` input and exact published-roster readback, not the current file-family API. [5]
+
+
 - Historical per-target rationale/role and value/vocabulary/length rules, including the database writer's committed-retry exemption; the separate target-element supersession remains current. [6]
+
+
 - **The MIK-R28 additions: both evidence forms, the facet authored beside the statement draft, and the views, the informational "without proof" list and the migration pass.** [7]
-- Historical MIK-R30 onboarding-row form: `no_impact` only and no row for a counted card change, not the normal MIK-R53 source-bound contract or this leaf's amended rollout authority. [8]
+
+
+- The onboarding row for a source file or route overview: `updated` when a counted change brought the card up to date and `no_impact` when the reviewed file needs none, bound to its source files and reopened when one of them changes again. [8]
+
 - The MIK-R11 planned-row bullet: its subject, its three dispositions and the ref each takes, and what does and does not answer the item. [9]
+
 - The MIK-R10 no_invariant-row bullet: its subject, its one disposition, the answers that need no row, delete-only hunks and uncovered files. [10]
+
+
 - The MIK-R14 reconsideration-row bullet: its subject, `still_rejected` with the refresh and the new-item answer, `raise` with the task-document question, route targets, superseded decisions, never reversing, and linked alternatives kept at their index. [11]
+
 - The decision section's refusal list names the reorder of a linked alternative (MIK-R14). [12]
 - The MIK-R27 admission section: the criteria and their meanings, what is new, refused and reported, local stays local, demotion, and two admitted, two refused and one local example. [13]
 - The MIK-R13 decision-record section: the fields, the links and alternative indexes, requirement endpoints, the refusals, lifting at closeout and the D18 example. [14]
 
+
 - The History section: items filled by the writer, the rationale cover, the governing row of a changed invariant, naming a row again, and a family's one governing row. [15]
+
 
 ### Cross-Repo References
 
@@ -293,7 +313,9 @@ The current writer accepts an invariant_id handoff handle whose author runs firs
 
 A route trigger requires files at base and none at candidate, or the named rerouting-family scope. Superseded decisions on either memory side are not raised. If alternatives change, links follow exact unique old option text; missing/ambiguous text requires explicit links, never ordinal retargeting. An itemless same-leaf still_rejected refresh restores a current base link. Earlier pre-L54 writer-not-implemented, absolute linked-index refusal and route-trigger accounts elsewhere in this card are historical on these changed seams; unchanged scope/admission/provenance and producer-owned fields remain preserved.
 
+
 - The current file-writer/worklist contract defines row admission and refusal atomicity, equal-copy grouping, link/reconsideration repairs, handles/evidence replacement, test proof locators and option-text link preservation. [20]
+
 
 
 ## Inherited Source-Epoch Commentary
@@ -698,7 +720,9 @@ Inherited reference 9 commentary (not a revalidated target):
 
 The byte-equal package copy is a distribution carrier, not an independent role, task or permission authority. Whole-file source evidence does not certify inherited statements, execution, grading or the whole card.
 
+
 - The authored source owns this contract; the distribution copy is not a separate authority. [21]
+
 
 - Adds writing-profile and migration guidance without changing the thirteen-field producer schema or writer/history owners. [22]
 - Adds writing-profile and migration guidance without changing the thirteen-field producer schema or writer/history owners. [23]

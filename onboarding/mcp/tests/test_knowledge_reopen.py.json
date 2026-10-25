@@ -141,15 +141,14 @@
   "realizes": [],
   "references": {
     "25": {
-      "note": "`test_a_reopened_leaf_writes_its_next_attempt_and_its_history_is_every_file` owns the current boundary described above.",
+      "note": "`test_a_reopened_leaf_writes_its_next_attempt_and_its_history_is_every_file` owns the current boundary described above.\n\nAnchor: `test_a_reopened_leaf_writes_its_next_attempt_and_its_history_is_every_file`",
       "targets": [
         {
           "anchor": {
-            "blob": "6387b36e2c24752dfb658c7b5890981b23faf15f",
-            "content": "sha256:3e370e47e66672c9b03eca925c7712d6fd4c2146b89a4c289b629c5b03115e39",
+            "blob": "fab9c050d0fb6bc1c2f06b575252bcc0a3a6fe93",
+            "content": "sha256:81dfba7f6f3c245fe35c30f25383b666c6fc0c3745a716991863dbe0cfe9149f",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_reopened_leaf_writes_its_next_attempt_and_its_history_is_every_file"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -177,8 +176,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ee1b9d26dcd4a7c99c4fbf020b7fe1905533064c",
-            "content": "sha256:6fb9be5af0ab5523dd5d008285fab8858c71187bf0788b18fa91ef8c391f9d5f",
+            "blob": "fab9c050d0fb6bc1c2f06b575252bcc0a3a6fe93",
+            "content": "sha256:81dfba7f6f3c245fe35c30f25383b666c6fc0c3745a716991863dbe0cfe9149f",
             "locator": {
               "kind": "file"
             }
@@ -221,15 +220,14 @@
       ]
     },
     "30": {
-      "note": "The module docstring: reopen after a converted closeout.",
+      "note": "The module docstring: reopen after a converted closeout.\n\nAnchor: `test_a_reopened_leaf_writes_its_next_attempt_and_its_history_is_every_file`",
       "targets": [
         {
           "anchor": {
-            "blob": "6387b36e2c24752dfb658c7b5890981b23faf15f",
-            "content": "sha256:3e370e47e66672c9b03eca925c7712d6fd4c2146b89a4c289b629c5b03115e39",
+            "blob": "fab9c050d0fb6bc1c2f06b575252bcc0a3a6fe93",
+            "content": "sha256:81dfba7f6f3c245fe35c30f25383b666c6fc0c3745a716991863dbe0cfe9149f",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_reopened_leaf_writes_its_next_attempt_and_its_history_is_every_file"
+              "kind": "file"
             }
           },
           "kind": "test"

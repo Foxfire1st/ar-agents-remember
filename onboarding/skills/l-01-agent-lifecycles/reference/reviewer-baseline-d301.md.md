@@ -12,4 +12,5 @@ Rendering needs mounted UI evidence, scheduling operation-level evidence, persis
 
 ## Evidence
 
+
 - New steps-3–5 detail preserving independent evidence-class/lens inspection and empty-baseline termination. [1]

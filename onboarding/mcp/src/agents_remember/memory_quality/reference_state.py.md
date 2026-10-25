@@ -8,8 +8,9 @@
 
 **Reference currentness over sidecars, and the mechanical reference fixer (MIK-R24 rule 5).** On a
 converted memory tree the citation checker and fixer work over sidecar `references` instead of citation
-tables. `application/memory_tools` routes `citation_check` and `citation_fix` here, and the memory-quality
-run's converted check reports the same states.
+tables. `application/memory_tools` routes `citation_check` and `citation_fix` here; the memory-quality
+run's converted check measures the same states, and the validator's `R198.1-reference-anchor` rule
+refuses a non-current anchor at publication (MIK-R198 rule 5).
 
 ## Code Commentary
 
@@ -58,8 +59,9 @@ run's converted check reports the same states.
 
 ### Invariants And Boundaries
 
-- **A stale reference is reported, never a gate finding.** The onboarding gate (MIK-R30) is the route by
-  which a curator refreshes it (rule 5).
+- **A stale reference is reported here, and a gate finding wherever publication is judged.** The
+  onboarding gate (MIK-R30) is one route by which a curator refreshes it (rule 5); the validator's
+  `R198.1-reference-anchor` refuses it at publication and in the full quality run (MIK-R198 rule 5).
 - On the real converted copy at `cd3e943d`: 34,607 current and 476 stale references in 330 sidecars. A
   fixer dry run would refresh 1,303 mechanically moved anchors and leaves the 476 stale ones.
 
@@ -88,16 +90,22 @@ The format test, the anchor states, the check and the fixer.
 - The located bytes of a file, symbol or range locator. [2]
 - An anchor's state in the working tree. [3]
 
+
 - Only mechanical moves are re-recorded; a range is re-found only when its bytes occur exactly once. [5]
 
+
+
 - References are checked, and only mechanical moves are fixed. [6]
+
 
 - The mechanical fixer scopes one sidecar, names unreadable sidecars, and skips the explicit authoring-refused exclusion set before refresh or write. [7]
 
 
 
 - Only sidecars holding references are counted or observed; empty maps are skipped, malformed ones unreadable. [11]
+
 - One document's fix lists its own stale references. [10]
+
 
 ### Cross-Repo References
 
@@ -105,6 +113,7 @@ No meaningful cross-repo references found: the file reads and writes only the me
 
 No cross-repo boundary is crossed by this file.
 
-- Stale references are report-only findings naming the onboarding gate. [4]
+- A stale reference is reported to the curator and refused at publication by the validator's anchor guard. [4]
+
 - A sidecar that is not valid JSON is named and skipped. [8]
 - The reference check scoped to one sidecar. [9]

@@ -100,15 +100,25 @@ A same-origin view over the local notes API; nothing crosses repositories.
 - The folder, resolve and read endpoints behind the client. [6]
 
 
+
 - The component test suite. [7]
 
+
+
 - TaskNotes imports the shared target under its existing local NotesReaderTarget name. [3]
+
+
 - The shared markdown renderer (inline reference rendering). [4]
+
+
 
 
 - The page shows one Notes line with the root count and no tree. [8]
 
 
+
+
 - References resolve through one request; reports read newest-first capped at twenty. [9]
 
-- Reference resolution keeps the old joined-text key and reads the current list through useEffectEvent, without treating array identity as another trigger. \[11] [10]
+
+- Reference resolution keeps the old joined-text key and reads the current list through useEffectEvent, without treating array identity as another trigger. \ [10]

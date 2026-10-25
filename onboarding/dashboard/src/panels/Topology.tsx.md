@@ -41,4 +41,5 @@ for the wrap to fill its slot.
 ### Repo-Internal References
 
 - The imperative renderer (refs + `.style`, no className dep). [1]
+
 - The pure model adapter. [2]

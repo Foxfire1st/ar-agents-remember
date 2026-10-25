@@ -61,8 +61,12 @@ No external domain claim is required.
 Each current definition below can be inspected in the exact source file. Historical references
 to removed methods are superseded by this current inventory.
 
+
 - Snapshot subscription cannot lose an interleaved projection [1]
+
+
 - Etag 304 cycle then new etag on content change [2]
+
 
 ### Cross-Repo References
 
@@ -70,9 +74,15 @@ This card establishes test behavior, not a separate cross-repository protocol or
 
 No external evidence is needed for these assertions.
 
+
 - The unchanged ETag is checked after the volatile-only projection was actually published. [7]
 
+
+
 - The real native watcher observes the nested atomic rename.  Anchor: `BackgroundProjectionTests.test_native_watcher_observes_nested_atomic_writes_without_wsl_polling` [3]
+
+
 - Work/rest notifications and rest bounds share one timeline.  Anchor: `BackgroundProjectionTests.test_slow_tick_rest_is_capped_and_keeps_changes_received_during_work_and_rest` [4]
+
 - Terminal history and one in-flight finishing observation are distinguished.  Anchor: `BackgroundLandingTests.test_history_is_not_probed_and_open_landing_finishes_once_or_reopens` [5]
 - A failed finishing attempt stays honest missing and never retries history.  Anchor: `BackgroundLandingTests.test_failed_finishing_probe_stays_missing_and_does_not_retry_history` [6]

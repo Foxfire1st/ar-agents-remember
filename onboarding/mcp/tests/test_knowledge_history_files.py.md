@@ -87,9 +87,13 @@ No configured live documentation source was available for this pass.
 The cases cover `models/knowledge_files/history.py` and its registration in `documents.py`.
 
 - The conforming example and the owner path. [1]
+
 - File shape, owner and uniqueness. [2]
+
 - Invariant dispositions, covers and effects. [4]
+
 - Family rows. [5]
+
 - Re-anchoring against the candidate. [6]
 
 - The revision binding. [7]
@@ -110,5 +114,5 @@ No cross-repo boundary is crossed by this file.
 - Current source delta inspected statically: Repair six-kind registry and unclaimed-decision prose/caption against exact current assertions; retain set semantics, model/revision/freeze facets and historical execution limits. [12]
 
 - Writer and validator token tests distinguish new full-hash admission. [13]
-- Stored closed comparison-base legacy items parse, validate and round-trip unchanged. \[22] [14]
-- Item tokens are judged only in the files the re-anchor check reads: five file/base/route shapes. \[23] [15]
+- Stored closed comparison-base legacy items parse, validate and round-trip unchanged. \ [14]
+- Item tokens are judged only in the files the re-anchor check reads: five file/base/route shapes. \ [15]

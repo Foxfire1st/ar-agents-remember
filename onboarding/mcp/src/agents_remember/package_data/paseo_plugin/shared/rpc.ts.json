@@ -21,12 +21,12 @@
   ],
   "references": {
     "1": {
-      "note": "Embed-list and explicit host-snapshot transports have separate typed empty-input responses.\n\nAnchor: RPC definitions",
+      "note": "Embed-list and explicit host-snapshot transports have separate typed empty-input responses.",
       "targets": [
         {
           "anchor": {
-            "blob": "97e1e4c2c35db1e9886a33b12b805e873500679f",
-            "content": "sha256:d9b5a49adb38ff0eb195596928d36218619342c481d7e83f5e164e3f5d22cf41",
+            "blob": "7b4db747860e6c1a437c1648844c82abe83b1295",
+            "content": "sha256:e5e263fa6121fd0f8133f945a105cc641a2d9840f504ef4eeb0a698e8dbf91b8",
             "locator": {
               "end": 19,
               "kind": "line_range",

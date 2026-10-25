@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/application/__init__.py",
+  "proves": [],
   "realizes": [],
   "references": {
     "2": {
@@ -7,8 +8,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8f4b33122e8898b9c5af4392b612c31ee833ae3b",
-            "content": "sha256:9f418bf7499466aaf099e55979c6078522b9b8f489cff508400a7057b648da30",
+            "blob": "0a29daece8de46849bc5b8afc1f6e66a0b6a4f5c",
+            "content": "sha256:aa578b40dc13b92dd9bf5cc2590602caef0bb42b112d65332c57a8936d2fa36e",
             "locator": {
               "end": 18,
               "kind": "line_range",
@@ -20,8 +21,8 @@
         },
         {
           "anchor": {
-            "blob": "e669a850829d64077c748a66b6f13c25b6b47bea",
-            "content": "sha256:0ebcce5a81d98d61333df78d7f0c39d524c5936ceddf31024f5dd757a5e11261",
+            "blob": "6b123c608ce155f50f62249a98196f1b0e80ed08",
+            "content": "sha256:044759c5efc38b3fc03140fa337e5a130ab9efd17299c4705903faaf88b10bdf",
             "locator": {
               "end": 10,
               "kind": "line_range",

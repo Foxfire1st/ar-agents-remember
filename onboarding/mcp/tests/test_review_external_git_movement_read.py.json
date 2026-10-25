@@ -83,16 +83,16 @@
       ]
     },
     "27": {
-      "note": "**The lane registration that makes these cases part of the governed `integration` population.**\n\nAnchor: `test_review_external_git_movement_read`",
+      "note": "**The lane registration that makes these cases part of the governed `integration` population.** Source caption: `test_review_external_git_movement_read`",
       "targets": [
         {
           "anchor": {
-            "blob": "11ba98ff63f4a4815985ac51e2c0c7b5a48556a4",
-            "content": "sha256:8a4b6c56f0180bedc3c443a06d93c7c8674441a5c20feb3eac7e0f16dd5c29d4",
+            "blob": "102c4550ab6429f44c8fb543d1d0662de66a1b8c",
+            "content": "sha256:1d207f7d2930249781c43576862bf64c8bd1df3f4bac4491156a47e8f2753e02",
             "locator": {
-              "end": 574,
+              "end": 568,
               "kind": "line_range",
-              "start": 574
+              "start": 568
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -101,12 +101,25 @@
       ]
     },
     "28": {
-      "note": "**A lifecycle consumer row that names this module, so the artifact census still counts it.**\n\nAnchor: `test_review_external_git_movement_read`",
+      "note": "**A lifecycle consumer row that names this module, so the artifact census still counts it.**",
       "targets": [
         {
           "anchor": {
-            "blob": "008585e26ec337eafd1554ed18033421299bdc72",
-            "content": "sha256:8a4b6c56f0180bedc3c443a06d93c7c8674441a5c20feb3eac7e0f16dd5c29d4",
+            "blob": "3c5993c94cf78973b3b39cfe7de9774c8aea6d1a",
+            "content": "sha256:16234a39a37eb8b1eabc854ac56e12d9df97019c44de9c53dabe91af3146d1f8",
+            "locator": {
+              "end": 591,
+              "kind": "line_range",
+              "start": 591
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "3c5993c94cf78973b3b39cfe7de9774c8aea6d1a",
+            "content": "sha256:c4e85d64fdc7f29c7fda8e7aa62b309f8a5b467cb6434d6330fe919ddbe05f20",
             "locator": {
               "end": 1362,
               "kind": "line_range",
@@ -129,6 +142,19 @@
               "end": 163,
               "kind": "line_range",
               "start": 126
+            },
+            "path": "docs/reference/worktrees-c09.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "19698025360b6b65d8046dac5ec8bed5d54924a1",
+            "content": "sha256:ff656f445837fcfedeb695072fcd74b77342bd84dd98ade261644ca37b1d0aa4",
+            "locator": {
+              "end": 150,
+              "kind": "line_range",
+              "start": 113
             },
             "path": "docs/reference/worktrees-c09.md"
           },

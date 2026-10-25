@@ -105,7 +105,9 @@ The lifecycle schema has no external authority.
 - **Which publication fields a request supplied, `judgments` included, and the validator that refuses on it.** [8]
 
 
+
 - The R03 dependency vocabulary used by this record type. [9]
+
 
 
 The following declarations carry the changed boundary.

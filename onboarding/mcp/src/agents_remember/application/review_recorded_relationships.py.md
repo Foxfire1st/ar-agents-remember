@@ -14,8 +14,8 @@
 
 ## Evidence
 
-- The module owns the union items and the per-snapshot identity index \[14] [14]
-- One snapshot as the traversal reads it \[15] [15]
-- Three relationship kinds with the identity each sits under \[16] [16]
-- One union item's payload for one side \[17] [17]
-- The comparison's own change statement, carried verbatim \[18] [18]
+- The module owns the union items and the per-snapshot identity index [14]
+- One snapshot as the traversal reads it [15]
+- Three relationship kinds with the identity each sits under [16]
+- One union item's payload for one side [17]
+- The comparison's own change statement, carried verbatim [18]

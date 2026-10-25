@@ -73,15 +73,14 @@
       ]
     },
     "4": {
-      "note": "Replay uses Git facts and the retired recovery API remains absent.",
+      "note": "Replay uses Git facts and the retired recovery API remains absent.\n\nAnchor: `test_r4_integration_replay_requirement_is_git_ancestry_not_a_record`",
       "targets": [
         {
           "anchor": {
-            "blob": "70807703016f501584ae93946ce2e27bf9a601f9",
-            "content": "sha256:6614725601fc85047a3152e5dee803b674e21fc628d38d2928f0bd4347636eab",
+            "blob": "42e0f91dc064880de92ffa6afa868f10691d1a71",
+            "content": "sha256:91195111030853c37be8a5a86954e8c43af86270c266c3341a1090aa1321f018",
             "locator": {
-              "kind": "symbol",
-              "name": "test_r4_integration_replay_requirement_is_git_ancestry_not_a_record"
+              "kind": "file"
             }
           },
           "kind": "test"

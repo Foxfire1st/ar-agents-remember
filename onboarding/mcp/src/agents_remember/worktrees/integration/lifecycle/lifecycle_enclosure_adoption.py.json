@@ -3,7 +3,7 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The module defines `AdoptedLifecycleArtifact`; `LifecycleEnclosureAdoptionReceipt`; `LifecycleEnclosureAdoptionPreview` as its public seam.",
+      "note": "The module defines `AdoptedLifecycleArtifact`; `LifecycleEnclosureAdoptionReceipt`; `LifecycleEnclosureAdoptionPreview` as its public seam.\n\nAnchor: `AdoptedLifecycleArtifact` `LifecycleEnclosureAdoptionReceipt` `LifecycleEnclosureAdoptionPreview`",
       "targets": [
         {
           "anchor": {
@@ -18,8 +18,8 @@
         },
         {
           "anchor": {
-            "blob": "5045550dab828c7718f347d3ed2788d83ced6344",
-            "content": "sha256:e6b55eb427845fdd7fea0e8abc74c0cb5fc78229193b28d35321058731353917",
+            "blob": "5ae012f8e9f9ce4b94486fe78273ea2e00a2faf2",
+            "content": "sha256:25c6fd3a1bd4eecaa37010cae86bed2f78de53248defbeca4319a4df140ef9d4",
             "locator": {
               "kind": "symbol",
               "name": "LifecycleEnclosureAdoptionReceipt"
@@ -29,8 +29,8 @@
         },
         {
           "anchor": {
-            "blob": "5045550dab828c7718f347d3ed2788d83ced6344",
-            "content": "sha256:2e20b55ab4cc81503a195060505bdd2be3756c77162ef74163b67fa9b04678e3",
+            "blob": "5ae012f8e9f9ce4b94486fe78273ea2e00a2faf2",
+            "content": "sha256:b4ff770d9b110d671e0e58364c477295a334c9fc24634887ca24d6ef7b522b78",
             "locator": {
               "kind": "symbol",
               "name": "LifecycleEnclosureAdoptionPreview"
@@ -64,12 +64,22 @@
         },
         {
           "anchor": {
-            "blob": "5045550dab828c7718f347d3ed2788d83ced6344",
-            "content": "sha256:5e7bb773c1e7bd35b939c1f8877078d2201d4aa05cf78547051b16cb49815191",
+            "blob": "5ae012f8e9f9ce4b94486fe78273ea2e00a2faf2",
+            "content": "sha256:7209a8bf0a9258053a252d09c8768b3d0088d77e2a93a558908228e8114ffdd1",
             "locator": {
               "end": 79,
               "kind": "line_range",
               "start": 56
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5ae012f8e9f9ce4b94486fe78273ea2e00a2faf2",
+            "content": "sha256:51645ce2e53d28989d8f7a52a604b2fa2af9366ff37aafa9c64c392a23c7b76f",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "code"

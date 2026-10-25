@@ -1,10 +1,11 @@
 {
   "path": "skills/c-05-create-or-update-onboarding-files/workflows/memory-quality-control.md",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
-        "blob": "f68bd20148fed100cdeaf57772b8c94c53207df9",
-        "content": "sha256:8581c27f0de7275240258f637c7eb137b80bb5f7248ca2bbead7da15146a03e5",
+        "blob": "11a23237d5b050184f0e6b3bf2cc30958ed1f52c",
+        "content": "sha256:6f2699413e1e6fb3b17fa6c327c32dda041e8bd2db12f694bba9d4aa422eb0ce",
         "locator": {
           "kind": "file"
         }
@@ -20,8 +21,8 @@
     },
     {
       "anchor": {
-        "blob": "f68bd20148fed100cdeaf57772b8c94c53207df9",
-        "content": "sha256:8581c27f0de7275240258f637c7eb137b80bb5f7248ca2bbead7da15146a03e5",
+        "blob": "11a23237d5b050184f0e6b3bf2cc30958ed1f52c",
+        "content": "sha256:6f2699413e1e6fb3b17fa6c327c32dda041e8bd2db12f694bba9d4aa422eb0ce",
         "locator": {
           "kind": "file"
         }
@@ -42,8 +43,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f68bd20148fed100cdeaf57772b8c94c53207df9",
-            "content": "sha256:8581c27f0de7275240258f637c7eb137b80bb5f7248ca2bbead7da15146a03e5",
+            "blob": "11a23237d5b050184f0e6b3bf2cc30958ed1f52c",
+            "content": "sha256:6f2699413e1e6fb3b17fa6c327c32dda041e8bd2db12f694bba9d4aa422eb0ce",
             "locator": {
               "kind": "file"
             }
@@ -57,8 +58,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f68bd20148fed100cdeaf57772b8c94c53207df9",
-            "content": "sha256:8581c27f0de7275240258f637c7eb137b80bb5f7248ca2bbead7da15146a03e5",
+            "blob": "11a23237d5b050184f0e6b3bf2cc30958ed1f52c",
+            "content": "sha256:6f2699413e1e6fb3b17fa6c327c32dda041e8bd2db12f694bba9d4aa422eb0ce",
             "locator": {
               "kind": "file"
             }
@@ -72,8 +73,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f68bd20148fed100cdeaf57772b8c94c53207df9",
-            "content": "sha256:8581c27f0de7275240258f637c7eb137b80bb5f7248ca2bbead7da15146a03e5",
+            "blob": "11a23237d5b050184f0e6b3bf2cc30958ed1f52c",
+            "content": "sha256:6f2699413e1e6fb3b17fa6c327c32dda041e8bd2db12f694bba9d4aa422eb0ce",
             "locator": {
               "kind": "file"
             }

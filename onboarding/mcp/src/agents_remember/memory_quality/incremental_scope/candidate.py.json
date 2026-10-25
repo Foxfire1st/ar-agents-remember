@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/memory_quality/incremental_scope/candidate.py",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
@@ -20,12 +21,23 @@
       ]
     },
     "2": {
-      "note": "Code candidate tree comes from the memory-quality future-code capture.",
+      "note": "Code candidate tree comes from the memory-quality future-code capture.\n\nAnchor: `capture_future_code_candidate`",
       "targets": [
         {
           "anchor": {
-            "blob": "2d8e99cd79e804247722e6d5946bcdb5ca2717c3",
-            "content": "sha256:c28610a807f07eef9605c4d4d26582f6c12b09134c54dc26451500653d03b94b",
+            "blob": "a7ffdba484f4eaafa7f3a0a0860e045504f33755",
+            "content": "sha256:e43779b643a5347584f7acf8bdbaafaaf2b0969fd5de3af06b46da3195049899",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/future_code_candidate.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a7ffdba484f4eaafa7f3a0a0860e045504f33755",
+            "content": "sha256:1785d83ff9282e53fadba06e844d025fd5614f9552c3814b95612c977a17da0b",
             "locator": {
               "kind": "symbol",
               "name": "capture_future_code_candidate"
@@ -66,12 +78,22 @@
       ]
     },
     "4": {
-      "note": "Candidate observation owns exact code/memory identity and typed refusal; deleted tests provide no current execution proof.",
+      "note": "Candidate observation owns exact code/memory identity and typed refusal; deleted tests provide no current execution proof.\n\nAnchor: `observe_scope_candidate`",
       "targets": [
         {
           "anchor": {
-            "blob": "83645d4299cf3c462c00fffa485233322045f0c1",
-            "content": "sha256:52016d8063aabaa7c9273900ef2b1e959cb217cec094eabccbe73a0fbc8fbd3c",
+            "blob": "ce323691633a26d9c39b9df9a25bbde2874be060",
+            "content": "sha256:f571bc9a6a0003be7b2dd62cef2fe322a3f80e9588cadf2fedd0285c5b886388",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ce323691633a26d9c39b9df9a25bbde2874be060",
+            "content": "sha256:e8d687e46e04c2d1cd6428696e41ad5790667b4693f7498bbe892a5d9211138f",
             "locator": {
               "kind": "symbol",
               "name": "observe_scope_candidate"

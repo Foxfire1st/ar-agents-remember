@@ -17,4 +17,5 @@ A pure native-entry fixture pins actual-parent ID shortening, served paused/comp
 
 ## Evidence
 
+
 - Synthetic native entry facts drive identity shortening, progress and shared status/hover assertions only. [1]

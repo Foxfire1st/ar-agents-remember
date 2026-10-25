@@ -30,4 +30,7 @@ The source declares these checks. This card does not attest that pytest/Vitest, 
 
 ## Evidence
 
-- New synthetic mounted reader controls cover commit/branch validation, prior-selection retention, bounded prose/whole-text single-read and deeper-family explanation, snapshot mismatch refusing mixed prose/references or timeline/record, 50-event continuation controls, attempt/path and legacy effect text, and late side-load suppression, the outline's whole-prose chapter enrichment and its clearing when a ready pane renders none. These are controlled component assertions, not a server timing result. [1]
+
+
+
+- Mounted reader controls cover typed commit/branch resolution retaining the prior selection on invalid input, truncated summary prose loading its whole text once with omitted deeper families explained, changed-prose and timeline snapshot mismatches refusing the new tree's bytes, continuation controls that restart or drop late side-loads after navigation, and the chapters the whole text lists beside the summary's. These are controlled component assertions, not a server timing result. [1]

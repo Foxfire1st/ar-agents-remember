@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/mcp/tools/knowledge.py",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
@@ -88,7 +89,7 @@
         "handoffEntry": "L110-C-status",
         "leaf": "260928-MIK-L110"
       },
-      "rationale": "Keeps integrity counts and first violations with complete report custody.",
+      "rationale": "`_integrity_answer` at C still answers the integrity counts with the first violations and compact route rows while the full listing stays in the whole result the log records, which is the claim; its symbol anchor matches C.",
       "role": "presentation"
     },
     {
@@ -337,15 +338,14 @@
       ]
     },
     "4": {
-      "note": "Only admitted views carry proofs.",
+      "note": "Only admitted views carry proofs.\n\nAnchor: `test_the_other_views_carry_no_proofs`",
       "targets": [
         {
           "anchor": {
-            "blob": "21f99aa076f020f6ff937e97fa2cec6f87d0c9fe",
-            "content": "sha256:3b6d81cb85bf5d0389b1f6d2ccb641126d4758769aa9a9d2e1b4b1310538f18a",
+            "blob": "0256098f652dc34be5986d7dcab77243a655f959",
+            "content": "sha256:ebb05908d076c74907bac8a22bfb3c2902b74eb2329c114409ae4e9ab1aba461",
             "locator": {
-              "kind": "symbol",
-              "name": "test_the_other_views_carry_no_proofs"
+              "kind": "file"
             },
             "path": "mcp/tests/test_knowledge_proofs.py"
           },
@@ -354,15 +354,14 @@
       ]
     },
     "51": {
-      "note": "The strict integrity model carries validator totals, bounded violations and the optional persisted leaf worklist, not a CODE/currentness verdict.",
+      "note": "The strict integrity model carries validator totals, bounded violations and the optional persisted leaf worklist, not a CODE/currentness verdict.\n\nAnchor: `KnowledgeIntegrityCheckResponse`",
       "targets": [
         {
           "anchor": {
-            "blob": "d28c1c31547ed5820af67ea2fb3476dcb3959dda",
-            "content": "sha256:7f92e4c4b7b0dad6ec8e9778e2813447e4c5120534bfd487e98d72d156020ee0",
+            "blob": "0b97b80d44d3d0a2bd5e469d8c0c966b71f28fa7",
+            "content": "sha256:160816c7bee58615d164d30b3d62b33d769e45d203cc1ff66445ac3f3619cef5",
             "locator": {
-              "kind": "symbol",
-              "name": "KnowledgeIntegrityCheckResponse"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/models/tools/knowledge_responses.py"
           },
@@ -432,15 +431,14 @@
       ]
     },
     "59": {
-      "note": "- Invariant and family views of a tree carry their proofs; no pass or result key exists.",
+      "note": "- Invariant and family views of a tree carry their proofs; no pass or result key exists.\n\nAnchor: `test_the_invariant_and_family_views_carry_their_proofs`",
       "targets": [
         {
           "anchor": {
-            "blob": "598b84d6b63c399c08e71e94ec6d7c3ea806afeb",
-            "content": "sha256:56aad2e95f94971198ee2f83b8028706bd3e90b083bd5d0d640acf6a8e0b1896",
+            "blob": "0256098f652dc34be5986d7dcab77243a655f959",
+            "content": "sha256:ebb05908d076c74907bac8a22bfb3c2902b74eb2329c114409ae4e9ab1aba461",
             "locator": {
-              "kind": "symbol",
-              "name": "test_the_invariant_and_family_views_carry_their_proofs"
+              "kind": "file"
             },
             "path": "mcp/tests/test_knowledge_proofs.py"
           },
@@ -465,15 +463,14 @@
       ]
     },
     "61": {
-      "note": "- Dataset, leaf, both or neither; the leaf's worklist fields added when a contract is named.",
+      "note": "- Dataset, leaf, both or neither; the leaf's worklist fields added when a contract is named.\n\nAnchor: `knowledge_integrity_check_payload`",
       "targets": [
         {
           "anchor": {
-            "blob": "91582d2f9125dba48448aa71b5cc9ec39517dc98",
-            "content": "sha256:0b24a3fa35f7dfa0f5991e96ab2739c7b83316b42a48b79aafedaad56bdca22f",
+            "blob": "c608555cc3f6361621affb9e5e66d35c57c9aa0e",
+            "content": "sha256:58a863d9629d8136b4391ddbdcb60bda18d0b49a97546cd6562ad2367bfbf44e",
             "locator": {
-              "kind": "symbol",
-              "name": "knowledge_integrity_check_payload"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -531,15 +528,14 @@
       ]
     },
     "65": {
-      "note": "- A named tree flags the stale invariant and keeps it visible.",
+      "note": "- A named tree flags the stale invariant and keeps it visible.\n\nAnchor: `test_knowledge_read_flags_a_stale_invariant_and_keeps_it_visible`",
       "targets": [
         {
           "anchor": {
-            "blob": "85c55f2eaf44e11e20283306277a55040b2fa8a1",
-            "content": "sha256:d4b9911b1395ec1a3b7268944d57fc41447f34349a1bbe67a23351679e305dcc",
+            "blob": "035d30df74bd1bad93ddc28456d591c1024b28d2",
+            "content": "sha256:58f2f830be97427187427103b14ba610b4a99dad8ba64e42c299bd5fd25f7478",
             "locator": {
-              "kind": "symbol",
-              "name": "test_knowledge_read_flags_a_stale_invariant_and_keeps_it_visible"
+              "kind": "file"
             },
             "path": "mcp/tests/test_knowledge_currentness.py"
           },
@@ -548,15 +544,14 @@
       ]
     },
     "66": {
-      "note": "- Without `codeTreeId` it is unverifiable and never reads `HEAD`.",
+      "note": "- Without `codeTreeId` it is unverifiable and never reads `HEAD`.\n\nAnchor: `test_knowledge_read_without_a_named_tree_is_unverifiable_and_never_reads_head`",
       "targets": [
         {
           "anchor": {
-            "blob": "85c55f2eaf44e11e20283306277a55040b2fa8a1",
-            "content": "sha256:a5a23df64e8b4bd5366430a3e80d049b43770ee44894375733f350207e20d399",
+            "blob": "035d30df74bd1bad93ddc28456d591c1024b28d2",
+            "content": "sha256:58f2f830be97427187427103b14ba610b4a99dad8ba64e42c299bd5fd25f7478",
             "locator": {
-              "kind": "symbol",
-              "name": "test_knowledge_read_without_a_named_tree_is_unverifiable_and_never_reads_head"
+              "kind": "file"
             },
             "path": "mcp/tests/test_knowledge_currentness.py"
           },
@@ -565,15 +560,14 @@
       ]
     },
     "67": {
-      "note": "- A failing step never refuses the view.",
+      "note": "- A failing step never refuses the view.\n\nAnchor: `test_a_failing_currentness_step_degrades_to_a_reason_and_never_refuses_the_read`",
       "targets": [
         {
           "anchor": {
-            "blob": "85c55f2eaf44e11e20283306277a55040b2fa8a1",
-            "content": "sha256:e183a2d74a57440dfd414fdac038941d816a450c2727f7809775ad31ab88d2a7",
+            "blob": "035d30df74bd1bad93ddc28456d591c1024b28d2",
+            "content": "sha256:58f2f830be97427187427103b14ba610b4a99dad8ba64e42c299bd5fd25f7478",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_failing_currentness_step_degrades_to_a_reason_and_never_refuses_the_read"
+              "kind": "file"
             },
             "path": "mcp/tests/test_knowledge_currentness.py"
           },
@@ -582,15 +576,14 @@
       ]
     },
     "68": {
-      "note": "- A converted tree's read is handed to the paged tree read right after the selection.",
+      "note": "- A converted tree's read is handed to the paged tree read right after the selection.\n\nAnchor: `_read_result`",
       "targets": [
         {
           "anchor": {
-            "blob": "12b2d18549a3d15a005d7fe16fc4b6f3dbc25be1",
-            "content": "sha256:3e2727fb0993b347c3826f27dcf1f18beb611f1296087f36aa0312a4d73596d0",
+            "blob": "c608555cc3f6361621affb9e5e66d35c57c9aa0e",
+            "content": "sha256:58a863d9629d8136b4391ddbdcb60bda18d0b49a97546cd6562ad2367bfbf44e",
             "locator": {
-              "kind": "symbol",
-              "name": "_read_result"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -614,15 +607,14 @@
       ]
     },
     "70": {
-      "note": "- A converted-tree refusal states the threshold; a database refusal does not.",
+      "note": "- A refused read states the threshold block beside its refusal code and detail; a page states the same block in its own answer.\n\nAnchor: `knowledge_read_payload`",
       "targets": [
         {
           "anchor": {
-            "blob": "91582d2f9125dba48448aa71b5cc9ec39517dc98",
-            "content": "sha256:62a1299117348503e6a6bf61e906eb424b3adc6a2942c73814d29d008255ad4d",
+            "blob": "c608555cc3f6361621affb9e5e66d35c57c9aa0e",
+            "content": "sha256:58a863d9629d8136b4391ddbdcb60bda18d0b49a97546cd6562ad2367bfbf44e",
             "locator": {
-              "kind": "symbol",
-              "name": "knowledge_read_payload"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -630,15 +622,14 @@
       ]
     },
     "71": {
-      "note": "- The paged tree read this module hands a converted selection to.",
+      "note": "- The paged tree read this module hands a converted selection to.\n\nAnchor: `read_tree_page`",
       "targets": [
         {
           "anchor": {
-            "blob": "b4fb3c6660f8614143e3526477bf733ef8f58d20",
-            "content": "sha256:5d5b0a1f3ef99ef70850f6c59d2ea1e778efc30f4d6e35bc27f7cd3121a28cae",
+            "blob": "2e48a7f6cc081b63ab5137fc50e99d764788f520",
+            "content": "sha256:e19c94b6f01431198d3ed4919b379a66f760aa92c5e528c0ec635c8a82d1d9b8",
             "locator": {
-              "kind": "symbol",
-              "name": "read_tree_page"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/knowledge_paging/tree_read.py"
           },
@@ -679,15 +670,14 @@
       ]
     },
     "74": {
-      "note": "- The leaf read the tree read routes a `source_context` path read to (and, since MIK-R05, a read naming only `familyRevisionId`, as a family seed).",
+      "note": "- The leaf read the tree read routes a `source_context` path read to (and, since MIK-R05, a read naming only `familyRevisionId`, as a family seed).\n\nAnchor: `_leaf_response`",
       "targets": [
         {
           "anchor": {
-            "blob": "b4fb3c6660f8614143e3526477bf733ef8f58d20",
-            "content": "sha256:5680bcd9eb0d97cf2dc07777b851539d05de60a0e94221f8549a48bda238e663",
+            "blob": "2e48a7f6cc081b63ab5137fc50e99d764788f520",
+            "content": "sha256:e19c94b6f01431198d3ed4919b379a66f760aa92c5e528c0ec635c8a82d1d9b8",
             "locator": {
-              "kind": "symbol",
-              "name": "_leaf_response"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/knowledge_paging/tree_read.py"
           },
@@ -696,15 +686,14 @@
       ]
     },
     "75": {
-      "note": "- The flat read request as one frozen value: the continuation, the two revision selectors, the optional source roots, and an ordering left `None` unless the caller names one.",
+      "note": "- The flat read request as one frozen value: the continuation, the two revision selectors, the optional source roots, and an ordering left `None` unless the caller names one.\n\nAnchor: `ReadToolRequest`",
       "targets": [
         {
           "anchor": {
-            "blob": "3639d1b611da3713eb7f4619e381959ff1727679",
-            "content": "sha256:608f9b7fbe01c22a7f1523946877c9dcfeaec531d9b0e115b5ef2d38bda5ec95",
+            "blob": "c608555cc3f6361621affb9e5e66d35c57c9aa0e",
+            "content": "sha256:58a863d9629d8136b4391ddbdcb60bda18d0b49a97546cd6562ad2367bfbf44e",
             "locator": {
-              "kind": "symbol",
-              "name": "ReadToolRequest"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -712,15 +701,14 @@
       ]
     },
     "76": {
-      "note": "- The flat read request's optional source-path seed, beside the unnamed-by-default ordering MIK-R02 introduced.",
+      "note": "- The flat read request's optional source-path seed, beside the unnamed-by-default ordering MIK-R02 introduced.\n\nAnchor: `ReadToolRequest`",
       "targets": [
         {
           "anchor": {
-            "blob": "3639d1b611da3713eb7f4619e381959ff1727679",
-            "content": "sha256:608f9b7fbe01c22a7f1523946877c9dcfeaec531d9b0e115b5ef2d38bda5ec95",
+            "blob": "c608555cc3f6361621affb9e5e66d35c57c9aa0e",
+            "content": "sha256:58a863d9629d8136b4391ddbdcb60bda18d0b49a97546cd6562ad2367bfbf44e",
             "locator": {
-              "kind": "symbol",
-              "name": "ReadToolRequest"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -764,8 +752,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fd8aafa42294297c2e90284fa42abb308a4dccf1",
-            "content": "sha256:b1f01c8de6d8d95bff80d63397658defa8e6c29b9d2c566acaf40bd32619d792",
+            "blob": "c608555cc3f6361621affb9e5e66d35c57c9aa0e",
+            "content": "sha256:58a863d9629d8136b4391ddbdcb60bda18d0b49a97546cd6562ad2367bfbf44e",
             "locator": {
               "kind": "file"
             }
@@ -811,8 +799,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3639d1b611da3713eb7f4619e381959ff1727679",
-            "content": "sha256:f0f9d4b2a32d8b1fc3595c1933523ab92a8ad8d8edf544c224a41ee25829c0b4",
+            "blob": "c608555cc3f6361621affb9e5e66d35c57c9aa0e",
+            "content": "sha256:58a863d9629d8136b4391ddbdcb60bda18d0b49a97546cd6562ad2367bfbf44e",
             "locator": {
               "kind": "file"
             }

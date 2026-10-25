@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/application/knowledge_worklist/surface.py",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
@@ -52,15 +53,14 @@
       ]
     },
     "4": {
-      "note": "The tool's consumer of these fields.\n\nAnchor: `leaf_worklist_fields`",
+      "note": "The tool's consumer of these fields.\n\nAnchor: `knowledge_integrity_check_payload`",
       "targets": [
         {
           "anchor": {
-            "blob": "818bd342a257293e6efeb340effc8ec165f3cb54",
-            "content": "sha256:69e56216cfdcc2f473f6d4fd38c31d4bbe5ab314b316e3e0ba173f9b830957ac",
+            "blob": "c608555cc3f6361621affb9e5e66d35c57c9aa0e",
+            "content": "sha256:58a863d9629d8136b4391ddbdcb60bda18d0b49a97546cd6562ad2367bfbf44e",
             "locator": {
-              "kind": "symbol",
-              "name": "knowledge_integrity_check_payload"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/mcp/tools/knowledge.py"
           },
@@ -69,15 +69,14 @@
       ]
     },
     "5": {
-      "note": "The tool returns the latest worklist and the checklist shows it.",
+      "note": "The tool returns the latest worklist and the checklist shows it.\n\nAnchor: `test_the_tool_returns_the_latest_worklist_and_the_checklist_shows_it`",
       "targets": [
         {
           "anchor": {
-            "blob": "30a7a2a8d8ec537425cdc4652a376dea8effdce8",
-            "content": "sha256:39cd3e4bd5be71e49e30992579712cae4b348a04c4d7f5c9aae1e7ce439d1d73",
+            "blob": "e159e3fdc8444fdd57cce28d9f770103e7ac3cb6",
+            "content": "sha256:bbcba9e57b03794900e6df5024bc17408af317e3896a1eff84d4042f64e3e44e",
             "locator": {
-              "kind": "symbol",
-              "name": "test_the_tool_returns_the_latest_worklist_and_the_checklist_shows_it"
+              "kind": "file"
             },
             "path": "mcp/tests/test_knowledge_worklist_leaf.py"
           },

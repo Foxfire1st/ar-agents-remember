@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/kernel/agentic_settings.py",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
@@ -74,83 +75,24 @@
     }
   ],
   "references": {
-    "1": {
-      "note": "The schema reference documents supervisor defaults and constraints, including redelivery budget `1`, escalation budget `250`, and the redelivery floor.\n\nAnchor: `redeliverBudget`; `escalationBudget`; `redeliverRateLimitSeconds`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "bd134079aed2ff099e25965a51141a25050ebeb3",
-            "content": "sha256:ca3557a606e70c84a7687fbe09583e83d51c413d49c746db063042719f39d301",
-            "locator": {
-              "end": 779,
-              "kind": "line_range",
-              "start": 779
-            },
-            "path": "docs/reference/settings-json.md"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "bd134079aed2ff099e25965a51141a25050ebeb3",
-            "content": "sha256:0081f06e054264c050242318b0caed1fabfbd2fe75ffd1f11c7f3d4dcfb2cb3b",
-            "locator": {
-              "end": 780,
-              "kind": "line_range",
-              "start": 780
-            },
-            "path": "docs/reference/settings-json.md"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "bd134079aed2ff099e25965a51141a25050ebeb3",
-            "content": "sha256:53a36e24edb0ff49f02cf060ac301ef1ca0ecd269141943b764daf85070b2b89",
-            "locator": {
-              "end": 777,
-              "kind": "line_range",
-              "start": 777
-            },
-            "path": "docs/reference/settings-json.md"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "bd134079aed2ff099e25965a51141a25050ebeb3",
-            "content": "sha256:4fd1284e73f4971fa5d5fac063a5406894c0024ae7a0ba336b8ef95d3dffc560",
-            "locator": {
-              "end": 707,
-              "kind": "line_range",
-              "start": 706
-            },
-            "path": "docs/reference/settings-json.md"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "bd134079aed2ff099e25965a51141a25050ebeb3",
-            "content": "sha256:c0e4b7e1e2e7b83edf77c6914072fdbc3d7af119ac8995683cb5e0fdc7e902ae",
-            "locator": {
-              "end": 704,
-              "kind": "line_range",
-              "start": 704
-            },
-            "path": "docs/reference/settings-json.md"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "10": {
-      "note": "Only effective IDs and accepted-unused execution keys remain.",
+      "note": "Only effective IDs and accepted-unused execution keys remain.\n\nAnchor: `_parse_harnesses`",
       "targets": [
         {
           "anchor": {
-            "blob": "9dbb6bbbe22bedfb9a73df0815fd4a48fd2af7f8",
-            "content": "sha256:b7f96a9a0c1d4c4dd0a10c966f49e118ba228e6519bc59634d2a19a189da9995",
+            "blob": "d3b92b15b04467dce898722fe980347aee339810",
+            "content": "sha256:a8e3cc2e0dbf594097b2d171715ea7216ee1c8168be98e43d7ea1fa3099a83f5",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/kernel/_agentic_settings_sections.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d3b92b15b04467dce898722fe980347aee339810",
+            "content": "sha256:279eec2b84e1a34738d5aa671b2c797b80f76b01dd074c654e70c8a17206c7a8",
             "locator": {
               "kind": "symbol",
               "name": "_parse_harnesses"
@@ -166,8 +108,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ef574a64f9ec5521c39db2a70a97255951f02fef",
-            "content": "sha256:80617e5d6d0da8a18cd27c4487d6087b383b71d95e1b5a3b68da32f3e6580f2f",
+            "blob": "2672425710b97a49604ae997b9f1640a3bb55cec",
+            "content": "sha256:1f7d8cabdb66f9253762ba7529b1fae352e09021785e177ea484ca1762579593",
             "locator": {
               "kind": "symbol",
               "name": "_parse_orchestration"
@@ -182,8 +124,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ef574a64f9ec5521c39db2a70a97255951f02fef",
-            "content": "sha256:9cf05c1ed30880129ed3b8491527a1bb23af76ca84e4beb4725512b6918ea120",
+            "blob": "2672425710b97a49604ae997b9f1640a3bb55cec",
+            "content": "sha256:d709c4479088842b26eb621a81d5b87d5cbaaed0f4cbeb1813505a3c83b1ce59",
             "locator": {
               "kind": "symbol",
               "name": "load_agentic_settings"
@@ -230,8 +172,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ef574a64f9ec5521c39db2a70a97255951f02fef",
-            "content": "sha256:6d2e567bf558abc7dc40a5c381054ca64a0584d310a366e16513a38fb7af826d",
+            "blob": "2672425710b97a49604ae997b9f1640a3bb55cec",
+            "content": "sha256:0be9e9a1e1fe1bf57da33ce5b3b70802813ae8ad8b9a0f631090921b4498b4d2",
             "locator": {
               "kind": "symbol",
               "name": "_refuse_repository_role_authority"
@@ -293,12 +235,23 @@
       ]
     },
     "9": {
-      "note": "Typed settings retain their independent defaults.",
+      "note": "Typed settings retain their independent defaults.\n\nAnchor: `AgenticSettings`",
       "targets": [
         {
           "anchor": {
-            "blob": "dde4a9aebceeabecba20e971cbf210ca2e00e951",
-            "content": "sha256:4d1fc369130d355c0fa41fe1373ceebf71abc686c664d6fe43e53bdd21970c31",
+            "blob": "db5945e5f2851a76ce476f905684a268325b9442",
+            "content": "sha256:83f9ef3b3cacad9ff2e0d4ea57f0bdf33279b90ab372459a61f8a53536b2a19e",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/kernel/_agentic_settings_core.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "db5945e5f2851a76ce476f905684a268325b9442",
+            "content": "sha256:ef2bc14301ff63870a002e0102aef5094bb79e195d2e6597ac427533befd1194",
             "locator": {
               "kind": "symbol",
               "name": "AgenticSettings"

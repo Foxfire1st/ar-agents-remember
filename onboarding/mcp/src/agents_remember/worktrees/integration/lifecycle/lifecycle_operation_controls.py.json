@@ -40,15 +40,14 @@
   ],
   "references": {
     "1": {
-      "note": "`_resume` checks retained generation and exact publication evidence before worker relaunch.",
+      "note": "Direct recovery continues its retained generation and settles its closing receipt in the same call; the closeout path keeps its publication checks.\n\nAnchor: `_resume`",
       "targets": [
         {
           "anchor": {
-            "blob": "9377158492434b556178d2aa3c2b3fc0cd493aab",
-            "content": "sha256:ad8092a5e208d5e92db4a9c3ef0afb86c0b86d223a48990a5f7d59c53e9e8bfd",
+            "blob": "a80df4903ac866d31ac7495d03f6ca3827bc1ebf",
+            "content": "sha256:3f90c50c3cf755de33cd7969389cbafe4078f75f930504c6cdc2b24542b3dd9a",
             "locator": {
-              "kind": "symbol",
-              "name": "_resume"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -88,26 +87,14 @@
       ]
     },
     "4": {
-      "note": "The module defines `LifecycleControlCommand`; `control_operation` as its public seam.",
+      "note": "The module defines `LifecycleControlCommand`; `control_operation` as its public seam.\n\nAnchor: `LifecycleControlCommand` `control_operation`",
       "targets": [
         {
           "anchor": {
             "blob": "a80df4903ac866d31ac7495d03f6ca3827bc1ebf",
-            "content": "sha256:8f3776e30cd01a7e1671fdf78dde3e5df4be3a768fb0eb492282350ccfaf439e",
+            "content": "sha256:3f90c50c3cf755de33cd7969389cbafe4078f75f930504c6cdc2b24542b3dd9a",
             "locator": {
-              "kind": "symbol",
-              "name": "LifecycleControlCommand"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "add00f23b24a62ea4da4432333f99515e9aa6851",
-            "content": "sha256:7d6b10243a410be1f58ffdf3eb807b2bef65985c6bd6a66bc0c1ace4139e184b",
-            "locator": {
-              "kind": "symbol",
-              "name": "control_operation"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -119,8 +106,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "097acf0f6e38bfd7de39a0f16677ee30f8776efc",
-            "content": "sha256:7de41a274cf181014284d75e171589d951c4c062f0dfeb4b97af6da10d82106f",
+            "blob": "a80df4903ac866d31ac7495d03f6ca3827bc1ebf",
+            "content": "sha256:5aca7a7995eb342e0b044d89163a387024219ea561f578a12f4d2a94e8aad773",
             "locator": {
               "end": 1029,
               "kind": "line_range",

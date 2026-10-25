@@ -1,13 +1,35 @@
 {
   "path": "mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/report.py",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
-      "note": "The converted summary resolves its operational report path through the retained path helper; legacy renderer/CLI facade APIs are absent.",
+      "note": "The converted summary resolves its operational report path through the retained path helper; legacy renderer/CLI facade APIs are absent.\n\nAnchor: `run_drift_summary` `resolve_report_path` `_run_converted_summary`",
       "targets": [
         {
           "anchor": {
-            "blob": "50c44347b736cefc3992b2164fed6315ca4040e9",
+            "blob": "a720a45eb42c920a7a873e768d3f2ffc1052178c",
+            "content": "sha256:ab519e5c7b3ac50307e78163aef14d1d777585b7c6f7ce352a5af81e674f87b0",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/summary.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "42ab1d7d9a0c992e17040b6bb9b84279f371da75",
+            "content": "sha256:b9bbcb5e921a51b5927bf68914bda9f1741f21cc1d06758273698f494d1d2a57",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a720a45eb42c920a7a873e768d3f2ffc1052178c",
             "content": "sha256:3e9a916ba90afd210ad99829837375542936074de9cf0f334b1611456150a733",
             "locator": {
               "kind": "symbol",
@@ -30,8 +52,8 @@
         },
         {
           "anchor": {
-            "blob": "8b518f87cc2e461510ec19693ec31e895b3b9ae8",
-            "content": "sha256:da4bc7efb0ad4cf8c7d6d7a6013669d4841d237ce37efec5ef2b9371ec55b19f",
+            "blob": "a720a45eb42c920a7a873e768d3f2ffc1052178c",
+            "content": "sha256:415a06f75b30c318fcc94f41bc47a9f4e244c7a5639e7233bc05b5fb1ea6c254",
             "locator": {
               "kind": "symbol",
               "name": "_run_converted_summary"

@@ -121,20 +121,31 @@ No external domain claim is required.
 
 - The module docstring that records the ownership story and the historical name. [1]
 
-- The reclamation runner and report-shaping gate these cases exercise through `lifecycle_finalize_task`. A completed cleanup cell still archives its recorded terminal agents. [2]
+> Retained earlier citation wording: - The reclamation runner and report-shaping gate these cases exercise through `lifecycle_finalize_task`. A completed cleanup cell still archives its recorded terminal agents. [2]
 
-- The report shaper whose exact sentence and inventory the first case asserts. [3]
+> Retained earlier citation wording: - The report shaper whose exact sentence and inventory the first case asserts. [3]
+
 - The landing route whose no-reclamation the cases assert, including the payload's untouched `cleanup` cell. [4]
+
 - The projection that names the finalization move. [5]
+
 - The terminal operation the first case calls. [6]
 
-- The fail-closed lane this module must be listed in, and the dependency-classification entry that also names it. [10]
 
 
-- The fail-closed lane this module must be listed in, and the dependency-classification entry that also names it. [11]
 
 
-- The fail-closed lane this module must be listed in, and the dependency-classification entry that also names it. [12]
+
+
+> Retained earlier citation wording: - The dependency-classification entry that names this module as a consumer of the certification profile. Source caption: `AMBIENT_ROLE_RUNNER_PATH` [10]
+
+
+
+
+
+
+
+
 
 ### Cross-Repo References
 
@@ -142,3 +153,11 @@ These are in-process application-tool assertions against real repositories creat
 directory; no sibling repository or external system participates.
 
 No meaningful cross-repo references found.
+
+- The dependency-classification entry that names this module as a consumer of the certification profile. Source caption: `AMBIENT_ROLE_RUNNER_PATH` [10]
+
+
+- The reclamation runner and report-shaping gate these cases exercise through `lifecycle_finalize_task`. A completed cleanup cell still archives its recorded terminal agents. [2]
+
+
+- The report shaper whose exact sentence and inventory the first case asserts.  Anchor: "ALREADY_CLEAN = \"already-clean\"" [3]

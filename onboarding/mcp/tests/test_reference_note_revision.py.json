@@ -1,0 +1,275 @@
+{
+  "path": "mcp/tests/test_reference_note_revision.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "113f0270593bd9341e95409fafebbcaf36d1497b",
+        "content": "sha256:eb4d58a4f68762abe14dfacdd8abc6e79c8f5adc5b7c6675998c5da890c61c0e",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_table_row_re_resolves_where_the_revision_keeps_the_anchor"
+        }
+      },
+      "facet": "Table-row re-authoring re-resolves a moved source target while note-only revision preserves the original target and anchor.",
+      "id": "PRF-01XK11",
+      "invariant": "INV-Q7KYQH",
+      "origin": {
+        "handoffEntry": "MIK-R198@v2 §8 reference-note-revision",
+        "leaf": "260928-MIK-L191"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "113f0270593bd9341e95409fafebbcaf36d1497b",
+        "content": "sha256:793d297c0cd5623270cd0cbbdb404213122603104eb9eb4d739c434922831f89",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_tool_revises_one_note_and_records_the_contracts_leaf"
+        }
+      },
+      "facet": "The mounted tool revises exactly one note and records the contract's leaf as author.",
+      "id": "PRF-29VHBT",
+      "invariant": "INV-Q7KYQH",
+      "origin": {
+        "handoffEntry": "MIK-R198@v2 §8 reference-note-revision",
+        "leaf": "260928-MIK-L191"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "113f0270593bd9341e95409fafebbcaf36d1497b",
+        "content": "sha256:bc533feec7ed20cd49ae162c6f0cdba73d99c17af31605f092b1a739c6b11f7b",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_repoint_changes_the_anchor_and_not_the_note"
+        }
+      },
+      "facet": "On a pure source move, repointing changes the anchor blob while preserving the note text; note-only revision remains a separate act.",
+      "id": "PRF-3BS4RJ",
+      "invariant": "INV-Q7KYQH",
+      "origin": {
+        "handoffEntry": "MIK-R198@v2 §8 reference-note-revision",
+        "leaf": "260928-MIK-L191"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "113f0270593bd9341e95409fafebbcaf36d1497b",
+        "content": "sha256:be5185425f244ed6e9f80fcd7bb8085b2b6007d6a84dd2f7372568dbaf8177d3",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_stale_input_is_refused_and_the_sidecar_is_unchanged"
+        }
+      },
+      "facet": "An input that no longer matches the card is refused and the sidecar is left unchanged.",
+      "id": "PRF-A9F3W0",
+      "invariant": "INV-Q7KYQH",
+      "origin": {
+        "handoffEntry": "MIK-R198@v2 §8 reference-note-revision",
+        "leaf": "260928-MIK-L191"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "113f0270593bd9341e95409fafebbcaf36d1497b",
+        "content": "sha256:5b0141504af9d1169759c8db03639433cf012cb86b90d4d33a46dffbece2bb1c",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_every_other_reference_and_the_card_are_untouched"
+        }
+      },
+      "facet": "Every other reference and the card stay byte-identical, and no reference is minted.",
+      "id": "PRF-AY87M6",
+      "invariant": "INV-Q7KYQH",
+      "origin": {
+        "handoffEntry": "MIK-R198@v2 §8 reference-note-revision",
+        "leaf": "260928-MIK-L191"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "113f0270593bd9341e95409fafebbcaf36d1497b",
+        "content": "sha256:0396cf92c74de368cf88c8d14c1812080ecaec8429f8d2a544570bffc08e6803",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_an_absent_author_is_refused"
+        }
+      },
+      "facet": "A revision without an author is refused.",
+      "id": "PRF-G34PE1",
+      "invariant": "INV-Q7KYQH",
+      "origin": {
+        "handoffEntry": "MIK-R198@v2 §8 reference-note-revision",
+        "leaf": "260928-MIK-L191"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "113f0270593bd9341e95409fafebbcaf36d1497b",
+        "content": "sha256:f3aacb53ffbe120d215989aeeae9456a71ba1c05a3e71d4d658acc2437ddf498",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_missing_key_is_refused_and_the_sidecar_is_unchanged"
+        }
+      },
+      "facet": "A missing references key is refused and the sidecar is left unchanged.",
+      "id": "PRF-NA44Q0",
+      "invariant": "INV-Q7KYQH",
+      "origin": {
+        "handoffEntry": "MIK-R198@v2 §8 reference-note-revision",
+        "leaf": "260928-MIK-L191"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "113f0270593bd9341e95409fafebbcaf36d1497b",
+        "content": "sha256:2000282bdd0a19f9dd7c9f69bba45be4a7f8cc4caf3d0361eaa65e8f8c29bc9b",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_card_operand_cannot_leave_the_admitted_memory_tree"
+        }
+      },
+      "facet": "A card operand outside the admitted memory tree is refused.",
+      "id": "PRF-NQSJ21",
+      "invariant": "INV-Q7KYQH",
+      "origin": {
+        "handoffEntry": "MIK-R198@v2 §8 reference-note-revision",
+        "leaf": "260928-MIK-L191"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "113f0270593bd9341e95409fafebbcaf36d1497b",
+        "content": "sha256:88b6105c89d265f875a8d9e5f7b2d189f4432abfb9c9340f1662eaccb1b341c7",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_dry_run_writes_nothing_and_previews_the_digest"
+        }
+      },
+      "facet": "A dry run writes nothing and previews the resulting digest.",
+      "id": "PRF-RT2TTJ",
+      "invariant": "INV-Q7KYQH",
+      "origin": {
+        "handoffEntry": "MIK-R198@v2 §8 reference-note-revision",
+        "leaf": "260928-MIK-L191"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "113f0270593bd9341e95409fafebbcaf36d1497b",
+        "content": "sha256:05e73545c65751fe57377e58cef6278d380d0c1c37d16155cc3eb1de60b511bb",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_an_empty_note_is_refused"
+        }
+      },
+      "facet": "A whitespace-only replacement note is refused as note-empty.",
+      "id": "PRF-SBQM7P",
+      "invariant": "INV-Q7KYQH",
+      "origin": {
+        "handoffEntry": "MIK-R198@v2 §8 reference-note-revision",
+        "leaf": "260928-MIK-L191"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "A note revision keeps the recorded anchor the installed table-row route would have moved",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "113f0270593bd9341e95409fafebbcaf36d1497b",
+            "content": "sha256:eb4d58a4f68762abe14dfacdd8abc6e79c8f5adc5b7c6675998c5da890c61c0e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_table_row_re_resolves_where_the_revision_keeps_the_anchor"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Every other reference and the card are untouched and no number is minted",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "113f0270593bd9341e95409fafebbcaf36d1497b",
+            "content": "sha256:5b0141504af9d1169759c8db03639433cf012cb86b90d4d33a46dffbece2bb1c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_every_other_reference_and_the_card_are_untouched"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "A missing key, a stale base digest and an empty note are refused by name with the sidecar unchanged",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "113f0270593bd9341e95409fafebbcaf36d1497b",
+            "content": "sha256:f3aacb53ffbe120d215989aeeae9456a71ba1c05a3e71d4d658acc2437ddf498",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_missing_key_is_refused_and_the_sidecar_is_unchanged"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "A card operand cannot leave the admitted memory tree",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "113f0270593bd9341e95409fafebbcaf36d1497b",
+            "content": "sha256:2000282bdd0a19f9dd7c9f69bba45be4a7f8cc4caf3d0361eaa65e8f8c29bc9b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_card_operand_cannot_leave_the_admitted_memory_tree"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The tool revises one note and records the contract's leaf as author",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "113f0270593bd9341e95409fafebbcaf36d1497b",
+            "content": "sha256:793d297c0cd5623270cd0cbbdb404213122603104eb9eb4d739c434922831f89",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_tool_revises_one_note_and_records_the_contracts_leaf"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "A mechanical re-point changes the anchor and not the note",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "113f0270593bd9341e95409fafebbcaf36d1497b",
+            "content": "sha256:bc533feec7ed20cd49ae162c6f0cdba73d99c17af31605f092b1a739c6b11f7b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_repoint_changes_the_anchor_and_not_the_note"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

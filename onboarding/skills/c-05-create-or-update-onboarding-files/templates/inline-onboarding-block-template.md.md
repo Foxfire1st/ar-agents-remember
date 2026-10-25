@@ -40,12 +40,16 @@ The inherited documentation notes described no external domain-document need, no
 
 The inline sample proves markers, semantic-section alignment, overview placement and digest guidance. The current c-05 skill confirms that inline is a storage-specific adapter, while the converted workflow separately owns current card format and move sequencing.
 
+
 - The inline adapter source reuses the file-level semantic model and describes storage, syntax, placement, metadata and digest differences. [1]
+
 - The sample places governingOverview and the governing-overview link before purpose and the remaining semantic sections. [2]
 - The docs placeholder ties no-evidence wording to live-source checks and explicitly allows recording a retrieval blocker. [3]
 - The inline source guidelines preserve markers/keys, adapt outer delimiters, respect leading syntax and recompute the digest with the block removed. [4]
 - The current c-05 package treats inline as an adapter to the shared file-level semantic content model. [5]
+
 - The c-05 converted-memory branch selects the converted workflow rather than legacy metadata and history rules. [6]
+
 - The converted workflow, not the inline template, documents writer entry movement before card relocation and reference re-authoring. [7]
 - Converted cards have no legacy metadata table or in-card Update History and do not hand-author sidecars. [8]
 

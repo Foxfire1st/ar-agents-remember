@@ -42,9 +42,15 @@ A brief, ticket, leaf document, worktree contract or gate is not an input here, 
 
 ## Evidence
 
+
 - The bootstrap carrier is a taskless free agent whose capsule arrives as session environment. [1]
-- The eight setup steps run through their owning surfaces, ending in baseline adoption. [2]
+
+
+- The nine setup steps run through their owning surfaces, from stating what the setup will change to configuring indexing or naming it deferred, with first baseline adoption at step 7 and the knowledge foundation handed to the Architect at step 8. [2]
+
+
 - The seat reads and reports the knowledge foundation but never authors records. [3]
+
 
 </details>
 
@@ -348,11 +354,39 @@ Inherited reference 9 commentary (not a revalidated target):
 
 The byte-equal package copy is a distribution carrier, not an independent role, task or permission authority. Whole-file source evidence does not certify inherited statements, execution, grading or the whole card.
 
+
 - The authored source owns this contract; the distribution copy is not a separate authority. [5]
 
-- Adds all-role marking, compresses existing prose and extracts step-7 detail, while making curator-run occurrence explicit in the inline final report. Setup boundaries remain inline. [6]
-- Adds all-role marking, compresses existing prose and extracts step-7 detail, while making curator-run occurrence explicit in the inline final report. Setup boundaries remain inline. [7]
-- Adds all-role marking, compresses existing prose and extracts step-7 detail, while making curator-run occurrence explicit in the inline final report. Setup boundaries remain inline. [8]
-- Adds all-role marking, compresses existing prose and extracts step-7 detail, while making curator-run occurrence explicit in the inline final report. Setup boundaries remain inline. [9]
-- Adds all-role marking, compresses existing prose and extracts step-7 detail, while making curator-run occurrence explicit in the inline final report. Setup boundaries remain inline. [10]
-- Adds all-role marking, compresses existing prose and extracts step-7 detail, while making curator-run occurrence explicit in the inline final report. Setup boundaries remain inline. [11]
+
+
+> Retained historical citation wording: - Adds all-role marking, compresses existing prose and extracts step-7 detail, while making curator-run occurrence explicit in the inline final report. Setup boundaries remain inline. [6]
+
+- The operation retains all-role marking and named-step detail. Current setup reads and reports the knowledge foundation state; onboarding and foundation authoring belong to a later Architect task through the Curator route. The earlier curator-run wording is historical and does not establish that a Curator ran during setup. Setup boundaries remain inline. [6]
+
+
+
+> Retained historical citation wording: - Adds all-role marking, compresses existing prose and extracts step-7 detail, while making curator-run occurrence explicit in the inline final report. Setup boundaries remain inline. [7]
+
+- The operation retains all-role marking and named-step detail. Current setup reads and reports the knowledge foundation state; onboarding and foundation authoring belong to a later Architect task through the Curator route. The earlier curator-run wording is historical and does not establish that a Curator ran during setup. Setup boundaries remain inline. [7]
+
+
+
+> Retained historical citation wording: - Adds all-role marking, compresses existing prose and extracts step-7 detail, while making curator-run occurrence explicit in the inline final report. Setup boundaries remain inline. [8]
+
+- The operation retains all-role marking and named-step detail. Current setup reads and reports the knowledge foundation state; onboarding and foundation authoring belong to a later Architect task through the Curator route. The earlier curator-run wording is historical and does not establish that a Curator ran during setup. Setup boundaries remain inline. [8]
+
+
+
+> Retained historical citation wording: - Adds all-role marking, compresses existing prose and extracts step-7 detail, while making curator-run occurrence explicit in the inline final report. Setup boundaries remain inline. [9]
+
+- The operation retains all-role marking and named-step detail. Current setup reads and reports the knowledge foundation state; onboarding and foundation authoring belong to a later Architect task through the Curator route. The earlier curator-run wording is historical and does not establish that a Curator ran during setup. Setup boundaries remain inline. [9]
+
+
+
+> Retained historical citation wording: - Adds all-role marking, compresses existing prose and extracts step-7 detail, while making curator-run occurrence explicit in the inline final report. Setup boundaries remain inline. [10]
+
+- The operation retains all-role marking and named-step detail. Current setup reads and reports the knowledge foundation state; onboarding and foundation authoring belong to a later Architect task through the Curator route. The earlier curator-run wording is historical and does not establish that a Curator ran during setup. Setup boundaries remain inline. [10]
+
+
+
+- The step-8 handover in its own words: the knowledge foundation is the curator's c-14-knowledge-bootstrap procedure run inside a task the Architect organises, and this seat reads its state — not-recorded, recorded at an exact identity, unusable, or a refused admission — reports it and authors no record. [11]

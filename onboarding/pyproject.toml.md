@@ -45,7 +45,9 @@ No configured external domain documentation applies.
 ### Repo-Internal References
 
 
+
 - The enforced collected-case pair is 10,000 unit/1,000 integration under L193's D460; the earlier 6,000/1,000 and 5,000/1,000 pairs are historical, and the unchanged collection guard retains its own authority. [11]
+
 
 
 - Python lint policy and signature exception. [1]
@@ -54,13 +56,17 @@ No configured external domain documentation applies.
 - Radon reports. [4]
 - The pytest configuration section the budget pair lives in. [5]
 
+
 - **The declared budget pair as the file now declares it — `unit_case_budget` 10000 / `integration_case_budget` 1000, the latest unit ceiling raised from 6000 to 10000 by L193's D460 direction, following L54’s D299 raise from 5000 and the earlier D226 4000-to-5000 raise; the integration ceiling remains unchanged. The prior pair was raised from 3000 / 600 by `260918-TSIP-L13`'s second developer-ruled raise on 2026-09-20; that earlier pair had itself been raised from 2300 / 400 by `260918-TSIP-L7` on 2026-09-19, and from 2200 / 400 before that by the truth-coverage census and staged-migration leaf over its own measured 2206-case candidate.** The earlier raises this row has carried are retained as the history they are: this candidate's own owning seat moved 1500 -> 1600, the merge onto the moved super line moved it to 2200 over a 2035-case population, and `260915-KS-L21` moved it to **2300** over a 2206-case population. Earlier dated population measurements remain inherited history, not re-executed or newly certified here. [6]
+
 
 - **The dated merge entry that carries both lines' raise history verbatim — this master's `unit 1100 -> 1250`, then `1250 -> 1500` and `integration 300 -> 340`, then `1500 -> 1600` — beside the rule that each axis starts from the higher of the two lines' values and is then measured.** [7]
 - **The dated block `260915-KS-L21` added immediately above the pair — measured 2158 collected at the base `a7076008`, 48 unit cases added by this leaf, 2206 collected against 2200, and the raise to 2300 sized for L22/L23 rather than filled — together with the integration measurement (394 against 400, unchanged) that the same block reports.** [8]
 - Warning exceptions and current evidence markers; the anchor is one of the three third-party exceptions the setting carries, because the setting name itself occurs three times in the file (twice inside the comments explaining it) and cannot anchor a unique claim. [9]
 
+
 - Budgets, populations, collection and strictness, including the dated ceiling policy and tradeoff blocks. [10]
+
 
 ### Cross-Repo References
 

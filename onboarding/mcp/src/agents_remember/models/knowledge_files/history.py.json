@@ -165,15 +165,14 @@
   ],
   "references": {
     "1": {
-      "note": "The row kind's docstring, with MIK-R30's semantics and the root subject.\n\nAnchor: \"satisfies the onboarding gate's item\"",
+      "note": "The row-kind docstring: `updated`/`no_impact`, writer-filled sources and legacy closed/open distinction.\n\nAnchor: `OnboardingTraceRow`",
       "targets": [
         {
           "anchor": {
-            "blob": "8eddf9a60675e813e76cdffb4719bc8f0f565b78",
-            "content": "sha256:855ab7ba95c83a62a5bd9718e34b68e4af6847299fb4b7f68d0c1c2e53bf0679",
+            "blob": "d7c13e7df1327acccc4ecd9c10b2da7c4c70c59b",
+            "content": "sha256:4b7dffd4bda58cfd2a781cfb3b8de936e3c443882a44b44ea55838e1aeaecfdc",
             "locator": {
-              "kind": "symbol",
-              "name": "OnboardingTraceRow"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -198,12 +197,12 @@
       ]
     },
     "11": {
-      "note": "The row's subject pattern and dispositions come from the one spelling.\n\nAnchor: \"from agents_remember.models.knowledge_files.reconsideration import\"",
+      "note": "The row's subject pattern and dispositions come from the one spelling.",
       "targets": [
         {
           "anchor": {
-            "blob": "20ffe22ce0d6cd67b46ceb2b8c32a26b04c1f452",
-            "content": "sha256:22aeb49b7238f036e5aaebd57e767a81617373eca97f69d97c4a13a9e59d7ccc",
+            "blob": "d7c13e7df1327acccc4ecd9c10b2da7c4c70c59b",
+            "content": "sha256:1a92a53fbb3cecd841cca61447d7f1b1eb77df14460bbc3a00ac30eace0dde69",
             "locator": {
               "end": 80,
               "kind": "line_range",
@@ -215,15 +214,14 @@
       ]
     },
     "12": {
-      "note": "The reconsideration row: its kind, pattern and two dispositions.",
+      "note": "The reconsideration row: its kind, pattern and two dispositions.\n\nAnchor: `ReconsiderationRow`",
       "targets": [
         {
           "anchor": {
-            "blob": "20ffe22ce0d6cd67b46ceb2b8c32a26b04c1f452",
-            "content": "sha256:d3e54223a5cf8e1c583975d19d64357ac9e83e202c04e318830a33f39f3eb24a",
+            "blob": "d7c13e7df1327acccc4ecd9c10b2da7c4c70c59b",
+            "content": "sha256:4b7dffd4bda58cfd2a781cfb3b8de936e3c443882a44b44ea55838e1aeaecfdc",
             "locator": {
-              "kind": "symbol",
-              "name": "ReconsiderationRow"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -292,15 +290,14 @@
       ]
     },
     "16": {
-      "note": "The shared row shape and kind dispatch check.",
+      "note": "The shared row shape and kind dispatch check.\n\nAnchor: `HistoryRow`",
       "targets": [
         {
           "anchor": {
-            "blob": "c47e8a526d3f15b9a78b1cbbb323587e9a92aa20",
-            "content": "sha256:084aa0c61362ab18710ea938e228826703cff801b1282b8ac929601e409c1e3e",
+            "blob": "d7c13e7df1327acccc4ecd9c10b2da7c4c70c59b",
+            "content": "sha256:4b7dffd4bda58cfd2a781cfb3b8de936e3c443882a44b44ea55838e1aeaecfdc",
             "locator": {
-              "kind": "symbol",
-              "name": "HistoryRow"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -367,15 +364,14 @@
       ]
     },
     "2": {
-      "note": "The gate that reads these rows.",
+      "note": "The gate reads source currency, counted-change requirements and each winning row's own closure provenance.\n\nAnchor: `_history_rows`",
       "targets": [
         {
           "anchor": {
-            "blob": "08aade274f0a3e2f5a72d0966cfeb37650178b95",
-            "content": "sha256:0686ba178a4f325dbd09b7d19e76e76b89295b59ddeb42fe8071e31067b860e2",
+            "blob": "f6091818f7a3fdfaef7337e48da6b832bbe01f71",
+            "content": "sha256:03c5c38551d226a35e616eecb92955463412ef3dd7d176f0ebda53d699fbe1ea",
             "locator": {
-              "kind": "symbol",
-              "name": "_history_rows"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/worktrees/modules/onboarding_trace.py"
           },
@@ -384,26 +380,14 @@
       ]
     },
     "20": {
-      "note": "The family row and its examined members.",
+      "note": "The family row and its examined members.\n\nAnchor: `ExaminedMember` `FamilyRow`",
       "targets": [
         {
           "anchor": {
             "blob": "d7c13e7df1327acccc4ecd9c10b2da7c4c70c59b",
-            "content": "sha256:01949b2262a8695b23cb7eef1e0dcf1bec1ba15cbcc587210c08a5838c94eb1a",
+            "content": "sha256:4b7dffd4bda58cfd2a781cfb3b8de936e3c443882a44b44ea55838e1aeaecfdc",
             "locator": {
-              "kind": "symbol",
-              "name": "ExaminedMember"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "b7301ab8d7c0d460acaec4bc6051a0e07a8304a3",
-            "content": "sha256:86e26bc15b051a4d9f44ec05df7158e742042fe9b8ebc8dcf9c5176f6cc959a5",
-            "locator": {
-              "kind": "symbol",
-              "name": "FamilyRow"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -685,15 +669,14 @@
       ]
     },
     "23": {
-      "note": "Many long marker lines move into one valid row.",
+      "note": "Many long marker lines move into one valid row.\n\nAnchor: `test_many_long_markers_move_into_one_valid_history_row`",
       "targets": [
         {
           "anchor": {
-            "blob": "1b81505edc5c675ce2a6f1cdf92a60af07a2a634",
-            "content": "sha256:a4429208556043268c2b04d6fb8e5c19deb7da5d2d734fe98531175c83ec4064",
+            "blob": "fab936dda80543f94c1a840030ce192da6fa5616",
+            "content": "sha256:07fed5861f231d52ff62bc856eb238e5c79c21b8ff11c0e05dc0edadc6689d40",
             "locator": {
-              "kind": "symbol",
-              "name": "test_many_long_markers_move_into_one_valid_history_row"
+              "kind": "file"
             },
             "path": "mcp/tests/test_knowledge_crossing.py"
           },
@@ -834,12 +817,12 @@
       ]
     },
     "3": {
-      "note": "The docstring's list of landed row kinds (since MIK-R14 it names MIK-R10's and MIK-R14's, with MIK-R06 still to come).\n\nAnchor: \"MIK-R06 later\"",
+      "note": "The docstring's list of landed row kinds names MIK-R30 onboarding, MIK-R11 planned, MIK-R10 hunk/file, MIK-R14 reconsideration, and MIK-R53 membership and record rows.",
       "targets": [
         {
           "anchor": {
-            "blob": "c47e8a526d3f15b9a78b1cbbb323587e9a92aa20",
-            "content": "sha256:3b00505618007380f2f256308ac507ad66086806fcfe0ab459c47b78d9599caf",
+            "blob": "d7c13e7df1327acccc4ecd9c10b2da7c4c70c59b",
+            "content": "sha256:f4bd41bc8708d82df3c6f57b801023f4087a0116fcf0cb575bf9bf1381f5b629",
             "locator": {
               "end": 31,
               "kind": "line_range",
@@ -1220,15 +1203,14 @@
       ]
     },
     "6": {
-      "note": "The registry test, since MIK-R14 six kinds compared as a set.",
+      "note": "The registry test, since MIK-R53 eight kinds compared as a set.\n\nAnchor: `test_row_kind_registry_owns_disjoint_subject_forms`",
       "targets": [
         {
           "anchor": {
-            "blob": "8370b1a402d5622a06e1b30f950330c04fe69c54",
-            "content": "sha256:e22f532b1e78b5f7ca07006275cbd106aeacd7d80d7e515343bc1bb7a6aee0f9",
+            "blob": "f3ea385c073b1b0ac82157d901dc5a333c2b7d76",
+            "content": "sha256:80099bd1895ac78f78af99defb2566178b0475eb3e251b105839ab62ea68e626",
             "locator": {
-              "kind": "symbol",
-              "name": "test_row_kind_registry_owns_disjoint_subject_forms"
+              "kind": "file"
             },
             "path": "mcp/tests/test_knowledge_history_files.py"
           },

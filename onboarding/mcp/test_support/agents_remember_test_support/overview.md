@@ -26,7 +26,11 @@ The certification-profile path uses `code_quality/profile_selection.py` for cont
 
 The Python rail adapter independently rederives the selector result and compares lint, type, coverage, test, and size paths with the executable scope. Both use canonical POSIX-string order, including siblings such as `conversation/` and `conversation-library/`; sorting retains duplicate entries rather than discarding them.
 
-The Python suite adapter executes the pytest step constructed by the quality-plan owner. That step registers `testing.pytest_phase_reporter` when the explicit phase-report output path is supplied. For an applicable ambient scenario, the teardown adapter derives proof from the clean-room summary and both fresh replication reports with passing `L5-C10` checkpoints, bound to the frozen scenario selection. A declared not-applicable scenario instead requires the summary to be absent and publishes a zero-start proof. The focused code-quality overview owns the detailed adapter and selector contracts.
+The Python suite adapter executes the pytest step constructed by the quality-plan owner. That step registers `testing.pytest_phase_reporter` when the explicit phase-report output path is supplied. The earlier ambient teardown adapter and its two-replication `L5-C10`/zero-start proof protocol were removed with the old orchestration in MIK L113; they are historical evidence rules, not current rails. The focused code-quality overview owns the detailed adapter and selector contracts.
+
+> Retained earlier card wording; superseded by the current account above:
+> The Python suite adapter executes the pytest step constructed by the quality-plan owner. That step registers `testing.pytest_phase_reporter` when the explicit phase-report output path is supplied. For an applicable ambient scenario, the teardown adapter derives proof from the clean-room summary and both fresh replication reports with passing `L5-C10` checkpoints, bound to the frozen scenario selection. A declared not-applicable scenario instead requires the summary to be absent and publishes a zero-start proof. The focused code-quality overview owns the detailed adapter and selector contracts.
+
 
 `code_quality/catalog_selection.py` narrows consumer-list-only catalog edits to the union of old and new affected consumers. Changes to broader catalog semantics retain global invalidation; malformed catalog text refuses. `code_quality/dependency_ownership.py` supplies repository-input consumer declarations and retains unresolved ownership explicitly.
 
@@ -34,7 +38,11 @@ The Python suite adapter executes the pytest step constructed by the quality-pla
 
 `testing/curation_doctrine.py` owns normalized retired-wording checks and positive checks for compact curation policy. It strips Markdown emphasis and collapses wrapping before matching retired statements on the surfaces that shipped them. A separate registry checks the retired repair-loop field pairing and the corrected field names in declared documents. The module imports neither pytest nor a fixed repository root, so callers can supply staged or synthetic trees. Its retired-wording scan is a census, not a semantic check: fresh vocabulary can escape it. The compact-policy helper accepts any listed statement for each declared source; the direct canonical-source test requires every listed statement. Complete curation remains the stated intent, and those different deciding predicates must not be described as equivalent.
 
-`code_quality/projection_types.py` carries the served observer-health schema into the generated dashboard contract. It renames `TerminalObserverHealthPayload` to `TerminalObserverHealth`, preserves its nullable properties as required `T | null` output fields, and documents numeric `maximum` as well as `minimum`. The serving serializer preserves payload nulls when observer health is present; the record schema bounds both serving-lifetime counters as unsigned 32-bit values.
+`code_quality/projection_types.py` folds the served projection's `servingBuild`, `watcherHealth` and `checkoutBinding` definitions into the generated dashboard contract. Its supplemental renames are `ServingBuildPayload`, `WatcherHealthPayload` and `CheckoutBindingPayload`; nullable fields omitted by `exclude_none=True` become optional output properties. The declared refinement keywords include `minimum` but not `maximum`, and unsupported schema keywords refuse generation. The former terminal observer-health payload and counter account is historical; it does not describe this candidate's served tail.
+
+> Retained earlier card wording; superseded by the current account above:
+> `code_quality/projection_types.py` carries the served observer-health schema into the generated dashboard contract. It renames `TerminalObserverHealthPayload` to `TerminalObserverHealth`, preserves its nullable properties as required `T | null` output fields, and documents numeric `maximum` as well as `minimum`. The serving serializer preserves payload nulls when observer health is present; the record schema bounds both serving-lifetime counters as unsigned 32-bit values.
+
 
 Repository-owned design descriptions live in `docs/design/python-evidence-system.md` and `docs/design/python-test-evidence.md`. Candidate-specific task reports do not replace this source-paired behavior description. Historical commit and task identifiers are provenance, not current lifecycle or acceptance authority.
 
@@ -58,21 +66,30 @@ File-level onboarding is intended to cover every current Python source below thi
 
 - Canonical POSIX-string sorting retains duplicate path entries. [2]
 
+
 - The enforced collected-case pair is 10,000 unit/1,000 integration; the unit-only policy raises leave the guard unchanged. [3]
+
 
 - The adapter rederives the selector and compares each executable path population exactly. [1]
 - Development dependencies and checkout import paths are distinct from installed product-package discovery. [4]
-- Certifying pytest startup requires admission before preparing candidate state and loading the certifying plugin. [5]
+> Retained earlier citation wording: - Certifying pytest startup requires admission before preparing candidate state and loading the certifying plugin. [5]
 - The package initializer exports no facade; the certifying plugin composes shared services and worktree-service fixtures. [6]
 - Root configuration classifies product and verification packages; full static scope covers tracked Python while behavioral metrics use product roots. [7]
 - Targeted ownership remains typed-incomplete and refuses executable quality configuration when unresolved. [8]
 - Exact-candidate cache reuse checks selection identity. [9]
 - The adapter constructs an explicit phase-report path; the quality-plan owner registers its reporting plugin. [10]
-- Applicable teardown validates two fresh checkpoint reports; not-applicable teardown records zero starts and requires no summary. [11]
+
 - Consumer-only catalog changes preserve old and new consumers; repository inputs use explicit consumer declarations. [12]
+
+
 - Retired-wording checks are normalized and surface-specific; compact-policy helper and canonical test use different predicates. [14]
 
-- Current projection generator derives serialized TypeScript/schema contracts from Pydantic declarations, including the servingBuild-only served extension; removed observer-health payloads are not current required fields. [15]
+
+
+- The current projection generator derives the serialized TypeScript and schema contracts from the Pydantic declarations, folding the served tail fields (`servingBuild`, `watcherHealth`, `checkoutBinding`) that `ServedWorkspaceProjection` declares into the same generated output. [15]
+
 - Evidence design separates development and diagnostic artifacts from immutable certifying publication and records Candidate A retirement. [16]
 - Case budgets are root declarations rather than overview-owned constants. [17]
 - Dagger owns the retained build and retry cache bindings. [18]
+
+- Certifying pytest startup requires admission before preparing candidate state and loading the certifying plugin. [5]

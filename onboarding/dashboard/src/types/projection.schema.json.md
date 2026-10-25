@@ -85,12 +85,16 @@ TaskSummary carries optional fixed prose, completion time, waitsFor and resolved
 
 
 
-- Optional nullable graph cycle flag. \[11] [11]
-- Generator separates core JSON schema from served TypeScript tail; entry point can sync/check but was not invoked here. \[12] [12]
+- Optional nullable graph cycle flag. [11]
+
+- Generator separates core JSON schema from served TypeScript tail; entry point can sync/check but was not invoked here. [12]
+
 
 ## Evidence
 
+
 - The generated dependency requires id/title with optional reference, and TaskEntry retains eventAt without task-event ageSeconds. [13]
+
 
 
 

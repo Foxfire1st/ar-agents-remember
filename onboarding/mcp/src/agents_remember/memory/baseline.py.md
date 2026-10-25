@@ -81,9 +81,11 @@ Before first adoption, the converted payload also reports `blocked-legacy-cards`
 cards when a metadata-key first cell names `doc_type`, `lastVerifiedCommitHash` or
 `lastVerifiedCommitDate`, or a card has `## Update History`. Prose mentions do not count.
 On converted memory, existing attributed adoption retains `already-adopted` precedence. The other blocking states remain
-`blocked-invalid` for validator violations, `blocked-drift` for stale anchors and `unavailable`
-for unreadable existing history. `accept_drift` accepts stale anchors only: it never clears
-legacy-card or validator refusals. This is an adoption-only check, not a new ordinary-operation
+`blocked-invalid` for validator violations, `blocked-drift` for actionable drift and `unavailable`
+for unreadable existing history. `accept_drift` bypasses only the actionable-drift check; it never clears
+legacy-card or validator refusals. A stale code/test reference still fails paired staged-tree validation
+as `R198.1-reference-anchor`: the initial unaccepted-drift path may answer `blocked-drift`, but accepting
+drift does not turn that stale pair into an adoptable tree. This is an adoption-only check, not a new ordinary-operation
 validator rule for repositories that already have a baseline.
 With filing disabled, `run_drift` returns the measured summary and `None`: it still refuses a failed
 measurement, but does not raise merely because a read requested no report. Measured fields and the
@@ -122,8 +124,9 @@ cache computation, while the shared Git module owns content staging.
 - **The worktree's own index is never written before validation passes.** Prepare, stage and tree
   commands of the owned interval address the private copy; only the `.gitignore` file guard is kept,
   and only while its bytes are provably ours.
-- **`accept_drift` never clears a validator violation.** It accepts stale anchors only; a dry run
-  reports `would-adopt` only when the staged-tree validation would pass.
+- **`accept_drift` never clears a validator violation.** It bypasses only the actionable-drift check;
+  a stale code/test reference still refuses paired staged-tree validation. A dry run reports
+  `would-adopt` only when that validation passes.
 
 ### Todos
 
@@ -134,7 +137,7 @@ No new file-local follow-up is established by this documentation pass.
 Inherited numbered findings [9] retain their exact wording and full targets as historical custody where their candidate9 owner is retired or their account conflicts with the current route. They are not evidence that an absent legacy owner still executes. No guarantee is retired by this proposal; parent disposition remains required. The source-bound current account below is separate.
 
 
-- Private baseline staging applies the shared content exclusions and removes excluded entries before exact-tree validation/publication. \[21] [21]
+- Private baseline staging applies the shared content exclusions and removes excluded entries before exact-tree validation/publication. [21]
 
 
 
@@ -177,14 +180,23 @@ No additional configured cross-repository evidence is claimed.
 - Shared staging, and the re-stage that makes a bare `git add` exclusion inert. [9]
 - Drift is measured with the one shared summary; the memory layer classifies nothing by itself. [12]
 - Converted status preserves attributed-adoption precedence and reports legacyCards/blocked-legacy-cards before validator or stale-reference refusals. [13]
+
+
 - First adoption refuses listed old-format cards before validator/stale checks; accept_drift cannot clear either legacy-card or validator refusals. [14]
+
+
+
 
 - The owned prepare/stage/validate interval uses a private index. Restoration is called before re-raising, but unlink/write/chmod errors can replace the named validation error and leave owned state unrestored, contrary to INV-ZCRMS7 and INV-DZB7MC. [15]
 
 
+
+
+
 - Dry runs and validation refusals discard the private index and attempt restoration of provably-owned ignore bytes; concurrent or unreadable contents are preserved. The inherited restore-mutation failure violates the unchanged owned-state/named-error promise. [16]
+
 
 - Publication records exactly the validated tree; a moved branch refuses instead of publishing past validation. [17]
 - Converted adoption stages, validates with no bases paired with the code commit, and commits exactly that tree. [18]
-- Registered status requests select unfiled measurement; an absent report pointer is omitted while measurement and explicit producer behavior remain intact. \[19] [19]
+- Registered status requests select unfiled measurement; an absent report pointer is omitted while measurement and explicit producer behavior remain intact. [19]
 - Adoption previews select suppression before measuring; mutating adoption preserves its report-producing mode. [20]

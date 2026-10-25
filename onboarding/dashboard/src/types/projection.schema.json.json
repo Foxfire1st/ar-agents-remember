@@ -42,12 +42,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "aa67c5a03849e440ff3e65189b9b984b0f99da84",
+            "blob": "c4e1e6c7530e2b9455a68653f7a116d1cc7ed6f1",
             "content": "sha256:08fd4c678367505913cec7c8f518284e86983114365e0ace8fd824f4a5351510",
             "locator": {
-              "end": 1663,
+              "end": 1562,
               "kind": "line_range",
-              "start": 1626
+              "start": 1525
             }
           },
           "kind": "code"
@@ -59,12 +59,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "aa67c5a03849e440ff3e65189b9b984b0f99da84",
+            "blob": "c4e1e6c7530e2b9455a68653f7a116d1cc7ed6f1",
             "content": "sha256:de7a9a2b766a346bf335e024dd411cbde184c3bd15734856db8aa94b8382d688",
             "locator": {
-              "end": 3303,
+              "end": 2940,
               "kind": "line_range",
-              "start": 3288
+              "start": 2925
             }
           },
           "kind": "code"
@@ -72,7 +72,7 @@
       ]
     },
     "12": {
-      "note": "Generator separates core JSON schema from served TypeScript tail; entry point can sync/check but was not invoked here. [12]",
+      "note": "Generator separates core JSON schema from served TypeScript tail; entry point can sync/check but was not invoked here.",
       "targets": [
         {
           "anchor": {
@@ -89,12 +89,12 @@
         },
         {
           "anchor": {
-            "blob": "77617f9d9158ea1f55a8b3073f39955987e05382",
-            "content": "sha256:7393dc273f170b87eca4842c62a9f2f7fde41b310b5aed6985623cdea90ebac1",
+            "blob": "8ad4fad6abd9bf98c265168c8b63d6f2fce0aeac",
+            "content": "sha256:9e779eec0a5bb3435a4889ad985fe339292f653ed4f4a290181666889168dc56",
             "locator": {
-              "end": 591,
+              "end": 496,
               "kind": "line_range",
-              "start": 549
+              "start": 470
             },
             "path": "mcp/test_support/agents_remember_test_support/code_quality/projection_types.py"
           },
@@ -103,28 +103,28 @@
       ]
     },
     "13": {
-      "note": "The generated dependency requires id/title with optional reference, and TaskEntry retains eventAt without task-event ageSeconds.\n\nAnchor: current generated schema definitions",
+      "note": "The generated dependency requires id/title with optional reference, and TaskEntry retains eventAt without task-event ageSeconds.",
       "targets": [
         {
           "anchor": {
-            "blob": "aa67c5a03849e440ff3e65189b9b984b0f99da84",
+            "blob": "c4e1e6c7530e2b9455a68653f7a116d1cc7ed6f1",
             "content": "sha256:28ece8176b3079718fe68b53b0699ea398356ddeaa64ead23615cc7eb26b4d96",
             "locator": {
-              "end": 2901,
+              "end": 2538,
               "kind": "line_range",
-              "start": 2866
+              "start": 2503
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "eb94033bd3626255e42690157368bb5bbd08addc",
-            "content": "sha256:9060ad2e41bf062f2eb8a2dde87edbc1a0092b7f045add1172f5c59f417ef0d4",
+            "blob": "c4e1e6c7530e2b9455a68653f7a116d1cc7ed6f1",
+            "content": "sha256:e07f1bc0b3a5dec73a2cada7cc4431c192ea0eac6597c60ab10a9b440a0ed763",
             "locator": {
-              "end": 3021,
+              "end": 2658,
               "kind": "line_range",
-              "start": 2884
+              "start": 2521
             }
           },
           "kind": "code"
@@ -136,24 +136,24 @@
       "targets": [
         {
           "anchor": {
-            "blob": "aa67c5a03849e440ff3e65189b9b984b0f99da84",
+            "blob": "c4e1e6c7530e2b9455a68653f7a116d1cc7ed6f1",
             "content": "sha256:4fff23359a56b850b9fde5ac1cb651839f91cc207f9a5c1797a67d4f44eeac83",
             "locator": {
-              "end": 3045,
+              "end": 2682,
               "kind": "line_range",
-              "start": 3031
+              "start": 2668
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "aa67c5a03849e440ff3e65189b9b984b0f99da84",
+            "blob": "c4e1e6c7530e2b9455a68653f7a116d1cc7ed6f1",
             "content": "sha256:b0655f9af5de3025e2bcdd48921d052387ff776d332aa46dd99e0a51d1015b3c",
             "locator": {
-              "end": 3532,
+              "end": 3169,
               "kind": "line_range",
-              "start": 3461
+              "start": 3098
             }
           },
           "kind": "code"
@@ -165,7 +165,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "aa67c5a03849e440ff3e65189b9b984b0f99da84",
+            "blob": "c4e1e6c7530e2b9455a68653f7a116d1cc7ed6f1",
             "content": "sha256:3d163ef9c8b6f0b233ca0b1ea53c0aa93528cd28d158bfd8aaa82d3b800c0364",
             "locator": {
               "end": 2,
@@ -182,7 +182,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "aa67c5a03849e440ff3e65189b9b984b0f99da84",
+            "blob": "c4e1e6c7530e2b9455a68653f7a116d1cc7ed6f1",
             "content": "sha256:86fcac0c5945509626938cce67b13b16e99be6eae647e0eed2753d8448428d46",
             "locator": {
               "end": 46,
@@ -199,12 +199,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "aa67c5a03849e440ff3e65189b9b984b0f99da84",
+            "blob": "c4e1e6c7530e2b9455a68653f7a116d1cc7ed6f1",
             "content": "sha256:eb4f79755eff93d54725906fe8bf4c1690bbce5de6de74236e9e572c92fdf856",
             "locator": {
-              "end": 1749,
+              "end": 1648,
               "kind": "line_range",
-              "start": 1739
+              "start": 1638
             }
           },
           "kind": "code"
@@ -216,12 +216,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "aa67c5a03849e440ff3e65189b9b984b0f99da84",
+            "blob": "c4e1e6c7530e2b9455a68653f7a116d1cc7ed6f1",
             "content": "sha256:f96067877ac97df77c4da0cf77d05f0e0809220a9ece9807d98580c193fbed3e",
             "locator": {
-              "end": 476,
+              "end": 450,
               "kind": "line_range",
-              "start": 414
+              "start": 388
             }
           },
           "kind": "code"
@@ -233,12 +233,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "aa67c5a03849e440ff3e65189b9b984b0f99da84",
+            "blob": "c4e1e6c7530e2b9455a68653f7a116d1cc7ed6f1",
             "content": "sha256:71e5839fb83a7787d8ecf6c3ae6051dd016be94dc896294661d807999b936238",
             "locator": {
-              "end": 1771,
+              "end": 1670,
               "kind": "line_range",
-              "start": 1485
+              "start": 1384
             }
           },
           "kind": "code"
@@ -250,7 +250,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fddde3fe60faa2d9374405b9676016ab026af1b6",
+            "blob": "d71e9db1948f52b82bd84b2348775f13ac9b57e7",
             "content": "sha256:46894d777463298a1a95031da8c618c203b9bf1480eda1c328419e41a1166d1d",
             "locator": {
               "kind": "symbol",

@@ -22,7 +22,9 @@ The module now protects complete reapply proof, already-held edits, truly missin
 
 The same class's identical-byte carried-line case records a reviewed pair, parks `SAME = 1`, lands exactly those bytes, and invokes the real public sync tool. Its explicit assertion is that the returned `review_rebinding.state` is `current`; it does not assert `covers_resolved_pair` or every successful-response field. The sibling different-byte case retains the original refused-sync `not-measured` and non-covering assertions. These complementary scenarios do not change a production owner or strengthen the historical cancellation proof facets; execution evidence remains separately attributed.
 
+
 - An identical-byte carried line is tested through the public sync tool with an exact current-block assertion. [6]
+
 
 ### Conventions
 

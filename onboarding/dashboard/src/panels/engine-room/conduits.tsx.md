@@ -70,7 +70,9 @@ No relevant domain documentation was found.
 
 ### Repo-Internal References
 
+
 - The per-edge conduit renderer with replay/ghost handling. [1]
+
 - The landing-tier flow renderer and its ref resolution. [2]
 
 ### Cross-Repo References

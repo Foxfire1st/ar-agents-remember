@@ -174,6 +174,23 @@
     {
       "anchor": {
         "blob": "7f7c32320357ae0919b78be0b3a23c50ee0ef4f5",
+        "content": "sha256:1caa89eb557c20206d0a09870a35a34344138041369686eb157c545f42179cc5",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_f10_a_lineage_keeps_more_than_eight_revisions_and_counts_their_bytes"
+        }
+      },
+      "facet": "a lineage byte ceiling refuses before a revision is written, and usage accounts revision and metadata bytes",
+      "id": "PRF-BRRP5X",
+      "invariant": "INV-5VVSTD",
+      "origin": {
+        "handoffEntry": "L102-F10",
+        "leaf": "260928-MIK-L102"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "7f7c32320357ae0919b78be0b3a23c50ee0ef4f5",
         "content": "sha256:07aba459907b4c87c3564eebe78a699f9684a64b97eb9c814ab002731fcb18e2",
         "locator": {
           "kind": "symbol",
@@ -419,8 +436,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6101242266807cf543d12c9f6fe01b12ad3bf8f0",
-            "content": "sha256:534be29d51518ea8793cff15009df910b88ee87791842fb99d76f3889be123fe",
+            "blob": "7f7c32320357ae0919b78be0b3a23c50ee0ef4f5",
+            "content": "sha256:ba225698d0e263ab0275e22f3513bcd2ccc24cf79e8e29f4f1cbdd192b2dac8e",
             "locator": {
               "kind": "symbol",
               "name": "test_f01_a_revision_bound_to_a_foreign_comparison_is_stale"

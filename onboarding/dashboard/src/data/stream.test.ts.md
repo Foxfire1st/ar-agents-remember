@@ -44,12 +44,17 @@ No relevant external documentation is configured.
 
 ### Repo-Internal References
 
+
 - Controlled state-stream cases cover wake, hidden, error, and never-open paths. [1]
+
+
 - Production state-stream transport owns the deadline. [2]
+
 
 ### Cross-Repo References
 
 No meaningful cross-repository references found.
+
 
 - The test covers dashboard-local state transport. [3]
 

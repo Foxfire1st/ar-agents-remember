@@ -179,8 +179,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f051140d77425beded177a75f01550ae6f95d3c9",
-            "content": "sha256:c170c4bb90378dfdff40f69ad5ea26dbcc1d28ae51ef81f569b02b487400a789",
+            "blob": "fbc25154da8d6df93985d8a14a80f4ff2516dac2",
+            "content": "sha256:599e52379074cc76211c7125abcf10f1448dd868143db501ecd4c80300646065",
             "locator": {
               "kind": "symbol",
               "name": "test_cleanup_does_not_remove_a_click_newer_than_its_read"
@@ -206,8 +206,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f051140d77425beded177a75f01550ae6f95d3c9",
-            "content": "sha256:7b1199bede85c207133bbd65d0966c6e71d520a8d5b5b57d904a218134f06cba",
+            "blob": "fbc25154da8d6df93985d8a14a80f4ff2516dac2",
+            "content": "sha256:c920c206d335d9c660b1cfe75ba43582505a2fb5fe196673156917569e0f060a",
             "locator": {
               "kind": "symbol",
               "name": "test_long_history_reclaims_to_the_current_things_and_compacts_bad_rows"
@@ -233,8 +233,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f051140d77425beded177a75f01550ae6f95d3c9",
-            "content": "sha256:001d056d904703f9b58c9356f38f5a995dabfb457b106528ca7cb5c521af93cc",
+            "blob": "fbc25154da8d6df93985d8a14a80f4ff2516dac2",
+            "content": "sha256:12f6d3b551fc29bc0b371f60c15065f2c7bd269397d6c73ded14324867d739d3",
             "locator": {
               "kind": "symbol",
               "name": "test_actual_asgi_click_refresh_restart_and_write_failure"
@@ -260,7 +260,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f051140d77425beded177a75f01550ae6f95d3c9",
+            "blob": "fbc25154da8d6df93985d8a14a80f4ff2516dac2",
             "content": "sha256:cbca3a7a2d6c30cff7bcd1639c15fceb0aa82a8ab13f8285e6ed8bfc08ee5933",
             "locator": {
               "kind": "symbol",
@@ -315,8 +315,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f051140d77425beded177a75f01550ae6f95d3c9",
-            "content": "sha256:4c8b3cb68c0f141c88d92137179a1163a15792d86d0a059f7b72757331dff456",
+            "blob": "fbc25154da8d6df93985d8a14a80f4ff2516dac2",
+            "content": "sha256:36f3eae4a9369f399c7533e29ddb282e9471f07e5c91db4eb965d0a30408c544",
             "locator": {
               "kind": "symbol",
               "name": "test_dismiss_suppresses_actionable_drift_until_findings_change"
@@ -338,15 +338,14 @@
       ]
     },
     "7": {
-      "note": "Severity, wait and ID determine stable ranking.",
+      "note": "Severity leaves the ranking: the queue lists the newest entry first and breaks ties by id, and a drift entry that names no age counts as zero rather than sinking.\n\nAnchor: `test_attention_ranking_keeps_alarm_above_warning_and_then_wait_and_id`",
       "targets": [
         {
           "anchor": {
-            "blob": "e4b04878dc732a1b8b0df5e0fb1168b6fb06403f",
-            "content": "sha256:60890a9ddac4b3f31e422675349ccfb0513cca29b7429b156b419f1c131b6b30",
+            "blob": "fbc25154da8d6df93985d8a14a80f4ff2516dac2",
+            "content": "sha256:90c2c7d5c46245a6cd6554805f7dff1e52c75f1aab26a5316df75afb02ce63a2",
             "locator": {
-              "kind": "symbol",
-              "name": "test_attention_ranking_keeps_alarm_above_warning_and_then_wait_and_id"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -358,8 +357,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f051140d77425beded177a75f01550ae6f95d3c9",
-            "content": "sha256:7c656d7d30f9390938a4e7189637d252fe8a6b8d9ad1e6377a8df3b05bfccbd5",
+            "blob": "fbc25154da8d6df93985d8a14a80f4ff2516dac2",
+            "content": "sha256:d618a162f10665dd44db124901c6e8cb87595c030642111ab5ab3e4256ebb5a0",
             "locator": {
               "kind": "symbol",
               "name": "test_observed_recovery_ends_dismissal_and_only_a_later_failure_returns"
@@ -385,8 +384,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f051140d77425beded177a75f01550ae6f95d3c9",
-            "content": "sha256:34e44d6173fbd6f89e866bdbb87a43e6f30bd00feaeaf23c0e756b34ee8f51ed",
+            "blob": "fbc25154da8d6df93985d8a14a80f4ff2516dac2",
+            "content": "sha256:c727b4cd3795019640f816e8560e254e078c6cb0ac5fa687e4e283fa01e44c64",
             "locator": {
               "kind": "symbol",
               "name": "test_partial_or_failed_source_keeps_dismissal_but_a_complete_gone_read_reclaims"

@@ -36,12 +36,22 @@
       ]
     },
     "11": {
-      "note": "**The glob-character node the review's correction rests on: authored, stored, seeded and resolved to its own blob.**",
+      "note": "**The glob-character node the review's correction rests on: authored, stored, seeded and resolved to its own blob.**\n\nAnchor: `test_a_path_holding_glob_characters_is_authorable_seedable_and_observed_as_its_blob`",
       "targets": [
         {
           "anchor": {
-            "blob": "91e4a83282691ee1303a098b598590e266225430",
-            "content": "sha256:b32510a964ce1e216b287781c6a71349538f9103d3322f1ab9a9ef2d1b1f605d",
+            "blob": "50b41aa7749feb4071dda7fd3d204a4cd8475cd7",
+            "content": "sha256:ea9a54781eb6b85fc2cf5d61b9163238de12743aa4f3056b738e9670d3a888cf",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "50b41aa7749feb4071dda7fd3d204a4cd8475cd7",
+            "content": "sha256:1d39e7715c7a7699b57a1d399e3f338ffba892e99bef523ff7a54b21c6ea5994",
             "locator": {
               "kind": "symbol",
               "name": "test_a_path_holding_glob_characters_is_authorable_seedable_and_observed_as_its_blob"
@@ -52,15 +62,14 @@
       ]
     },
     "12": {
-      "note": "**The unaddressable-stored-spelling node: a refusal of the spelling, never an absence from the tree.**",
+      "note": "**The unaddressable-stored-spelling node: a refusal of the spelling, never an absence from the tree.**\n\nAnchor: `test_a_stored_path_that_cannot_be_addressed_is_refused_rather_than_reported_absent`",
       "targets": [
         {
           "anchor": {
-            "blob": "91e4a83282691ee1303a098b598590e266225430",
-            "content": "sha256:2e378e91f88d9ff9cbb71fab1b02d3c67f78d55a6e0f7780f22dd22d76613d39",
+            "blob": "50b41aa7749feb4071dda7fd3d204a4cd8475cd7",
+            "content": "sha256:ea9a54781eb6b85fc2cf5d61b9163238de12743aa4f3056b738e9670d3a888cf",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_stored_path_that_cannot_be_addressed_is_refused_rather_than_reported_absent"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -84,12 +93,22 @@
       ]
     },
     "14": {
-      "note": "**The lookup that could not be run at all, reported as the same fact.**",
+      "note": "**The lookup that could not be run at all, reported as the same fact.**\n\nAnchor: `test_a_git_that_cannot_run_is_unavailable_rather_than_an_absent_path`",
       "targets": [
         {
           "anchor": {
-            "blob": "d3aff0e96bc5b889c22b50c0e0b2888133963c9c",
-            "content": "sha256:0356438815abbe377617683c4af7689502abf0349a88b54e2183a58c988efe29",
+            "blob": "50b41aa7749feb4071dda7fd3d204a4cd8475cd7",
+            "content": "sha256:ea9a54781eb6b85fc2cf5d61b9163238de12743aa4f3056b738e9670d3a888cf",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "50b41aa7749feb4071dda7fd3d204a4cd8475cd7",
+            "content": "sha256:7699b5942dc509528967ae4e3d2742ca7f3af56f745c17b50d10965eb634b0db",
             "locator": {
               "kind": "symbol",
               "name": "test_a_git_that_cannot_run_is_unavailable_rather_than_an_absent_path"
@@ -107,6 +126,32 @@
             "blob": "d8f46ee1c5404cab224a76e01020e735b06cdc76",
             "content": "sha256:b3d613826a8ec1517125e0879403fe1c4aad88032371f0b956871b9ec1832875",
             "locator": {
+              "end": 607,
+              "kind": "line_range",
+              "start": 581
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/read_anchors.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "138358a5feab44724703f06dfe3ff24c231ee322",
+            "content": "sha256:715e7df48deebd5b3adef0d28b2c124ccca66442005bd3f27ddc5cab9e0cf8c9",
+            "locator": {
+              "end": 92,
+              "kind": "line_range",
+              "start": 59
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/base.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d8f46ee1c5404cab224a76e01020e735b06cdc76",
+            "content": "sha256:b3d613826a8ec1517125e0879403fe1c4aad88032371f0b956871b9ec1832875",
+            "locator": {
               "kind": "symbol",
               "name": "_confined_posix_relative"
             },
@@ -117,7 +162,7 @@
         {
           "anchor": {
             "blob": "138358a5feab44724703f06dfe3ff24c231ee322",
-            "content": "sha256:44e59ee23e75ec8ac8af261e1288670123b6cc1d40eae8e02ccc43e71e721ff7",
+            "content": "sha256:715e7df48deebd5b3adef0d28b2c124ccca66442005bd3f27ddc5cab9e0cf8c9",
             "locator": {
               "kind": "symbol",
               "name": "require_plain_git_path"
@@ -163,16 +208,16 @@
       ]
     },
     "18": {
-      "note": "The lane row this module occupies.\n\nAnchor: `test_knowledge_read_paths`",
+      "note": "The lane row this module occupies. Source caption: `test_knowledge_read_paths`",
       "targets": [
         {
           "anchor": {
-            "blob": "11ba98ff63f4a4815985ac51e2c0c7b5a48556a4",
-            "content": "sha256:6d72a03b51c229fc0032ede7d0676b5f68afcd6b9e47ae30601f6b28cfaed5e5",
+            "blob": "102c4550ab6429f44c8fb543d1d0662de66a1b8c",
+            "content": "sha256:f2f7882c560a46435e5dc6a031595cd7f97f4385083121decc311cfead18b409",
             "locator": {
-              "end": 548,
+              "end": 539,
               "kind": "line_range",
-              "start": 548
+              "start": 539
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -181,12 +226,22 @@
       ]
     },
     "2": {
-      "note": "Literal glob characters are addressable.",
+      "note": "Literal glob characters are addressable.\n\nAnchor: `test_a_path_holding_glob_characters_is_authorable_seedable_and_observed_as_its_blob`",
       "targets": [
         {
           "anchor": {
-            "blob": "91e4a83282691ee1303a098b598590e266225430",
-            "content": "sha256:b32510a964ce1e216b287781c6a71349538f9103d3322f1ab9a9ef2d1b1f605d",
+            "blob": "50b41aa7749feb4071dda7fd3d204a4cd8475cd7",
+            "content": "sha256:ea9a54781eb6b85fc2cf5d61b9163238de12743aa4f3056b738e9670d3a888cf",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "50b41aa7749feb4071dda7fd3d204a4cd8475cd7",
+            "content": "sha256:1d39e7715c7a7699b57a1d399e3f338ffba892e99bef523ff7a54b21c6ea5994",
             "locator": {
               "kind": "symbol",
               "name": "test_a_path_holding_glob_characters_is_authorable_seedable_and_observed_as_its_blob"
@@ -197,15 +252,14 @@
       ]
     },
     "3": {
-      "note": "Unsupported stored spelling is not absence.",
+      "note": "Unsupported stored spelling is not absence.\n\nAnchor: `test_a_stored_path_that_cannot_be_addressed_is_refused_rather_than_reported_absent`",
       "targets": [
         {
           "anchor": {
-            "blob": "91e4a83282691ee1303a098b598590e266225430",
-            "content": "sha256:2e378e91f88d9ff9cbb71fab1b02d3c67f78d55a6e0f7780f22dd22d76613d39",
+            "blob": "50b41aa7749feb4071dda7fd3d204a4cd8475cd7",
+            "content": "sha256:ea9a54781eb6b85fc2cf5d61b9163238de12743aa4f3056b738e9670d3a888cf",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_stored_path_that_cannot_be_addressed_is_refused_rather_than_reported_absent"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -229,12 +283,22 @@
       ]
     },
     "5": {
-      "note": "Spawn failure is unavailable.",
+      "note": "Spawn failure is unavailable.\n\nAnchor: `test_a_git_that_cannot_run_is_unavailable_rather_than_an_absent_path`",
       "targets": [
         {
           "anchor": {
-            "blob": "d3aff0e96bc5b889c22b50c0e0b2888133963c9c",
-            "content": "sha256:0356438815abbe377617683c4af7689502abf0349a88b54e2183a58c988efe29",
+            "blob": "50b41aa7749feb4071dda7fd3d204a4cd8475cd7",
+            "content": "sha256:ea9a54781eb6b85fc2cf5d61b9163238de12743aa4f3056b738e9670d3a888cf",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "50b41aa7749feb4071dda7fd3d204a4cd8475cd7",
+            "content": "sha256:7699b5942dc509528967ae4e3d2742ca7f3af56f745c17b50d10965eb634b0db",
             "locator": {
               "kind": "symbol",
               "name": "test_a_git_that_cannot_run_is_unavailable_rather_than_an_absent_path"
@@ -262,12 +326,22 @@
       ]
     },
     "9": {
-      "note": "Non-zero Git lookup has its own current case.",
+      "note": "Non-zero Git lookup has its own current case.\n\nAnchor: `test_a_lookup_that_answered_non_zero_is_unavailable_rather_than_an_absent_path`",
       "targets": [
         {
           "anchor": {
-            "blob": "d3aff0e96bc5b889c22b50c0e0b2888133963c9c",
-            "content": "sha256:e04d37ea6b3a2403b9a46559e9711d1081b0155dc7e4535b59ffabb25668a116",
+            "blob": "50b41aa7749feb4071dda7fd3d204a4cd8475cd7",
+            "content": "sha256:ea9a54781eb6b85fc2cf5d61b9163238de12743aa4f3056b738e9670d3a888cf",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "50b41aa7749feb4071dda7fd3d204a4cd8475cd7",
+            "content": "sha256:a72bee8a2ef688cfec02937354f31ea3fe0d26ee72f51f0166a6c2c6242390ee",
             "locator": {
               "kind": "symbol",
               "name": "test_a_lookup_that_answered_non_zero_is_unavailable_rather_than_an_absent_path"

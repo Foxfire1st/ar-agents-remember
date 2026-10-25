@@ -3,15 +3,14 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "Reuses FilePane's read-only extension set + theme + lang so tokens match plain vs diff.",
+      "note": "Reuses FilePane's read-only extension set + theme + lang so tokens match plain vs diff.\n\nAnchor: `FilePane`",
       "targets": [
         {
           "anchor": {
-            "blob": "51f94729899f48cef6ffa98458e7c097fa30497e",
-            "content": "sha256:6c1ef40b74941e5bc4e8f9a286aefb833f98a00d211239b487d8009b8f9f6887",
+            "blob": "dbbb34c143ffd24687f884bd401852c94fb43a96",
+            "content": "sha256:4381a6ac5fd2d1fed3c3059c96f97e25dc55475450953631d92a8d35b059cd90",
             "locator": {
-              "kind": "symbol",
-              "name": "FilePane"
+              "kind": "file"
             },
             "path": "dashboard/src/panels/file-viewer/FilePane.tsx"
           },
@@ -20,15 +19,14 @@
       ]
     },
     "10": {
-      "note": "The focused card that passes `firstLine` and `fit`.",
+      "note": "The focused card that passes `firstLine` and `fit`.\n\nAnchor: `ChangedExcerpt`",
       "targets": [
         {
           "anchor": {
-            "blob": "7df7fdf55ac873fb7b9cc26e52cdf9a9797977fc",
-            "content": "sha256:bcfcd413d2155f23a718cd535411c888e89f3efe5399a0c04b6fb8421a82be23",
+            "blob": "f004efc247fbe02ff63076ce1476bca8a7b4ad94",
+            "content": "sha256:2c770a9ba73686f8a8fbfc07cec28f365bcbfa3e28b53aee67d01f15e5df2d23",
             "locator": {
-              "kind": "symbol",
-              "name": "ChangedExcerpt"
+              "kind": "file"
             },
             "path": "dashboard/src/panels/review/ExpressionCards.tsx"
           },
@@ -37,15 +35,14 @@
       ]
     },
     "11": {
-      "note": "The column wrapper that mounts it and supplies `mode`/`collapse`.",
+      "note": "The column wrapper that mounts it and supplies `mode`/`collapse`.\n\nAnchor: `ChangeSetPane`",
       "targets": [
         {
           "anchor": {
-            "blob": "25c49cf6ee2dbf0428790acb516b69ee13c75ab9",
-            "content": "sha256:e5714cd8acc86de919bd14fa0b6a98406e1bfe7bb28c3c1925a88e7897ea6ab4",
+            "blob": "48d2681013595d0c214aa1dad92fe4c6829747d3",
+            "content": "sha256:448d21db7f329cfabb94f17e943383f27d9f868c65fc937a457b060e0c07c9d8",
             "locator": {
-              "kind": "symbol",
-              "name": "ChangeSetPane"
+              "kind": "file"
             },
             "path": "dashboard/src/panels/changeset/ChangeSetPane.tsx"
           },
@@ -54,15 +51,14 @@
       ]
     },
     "12": {
-      "note": "The `FileDiff` (before/after content) the caller passes through.",
+      "note": "The `FileDiff` (before/after content) the caller passes through.\n\nAnchor: `FileDiff`",
       "targets": [
         {
           "anchor": {
-            "blob": "ed265675478575ff8a4d1556006a4a3afd4aa87a",
-            "content": "sha256:e2bd5054ddc3d96a280a97eb71993abb8ce521baaa0fc07d3a3c1ed7e2a6d8d7",
+            "blob": "ad784b1c6e63764e2f4437c99f28a2b9bd553703",
+            "content": "sha256:3991a7839bfcafd1a3534c2bdaebb09629138b26ca05dc63a7ee0778f9280d22",
             "locator": {
-              "kind": "symbol",
-              "name": "FileDiff"
+              "kind": "file"
             },
             "path": "dashboard/src/data/changeset.ts"
           },
@@ -139,37 +135,14 @@
       ]
     },
     "4": {
-      "note": "`split` = MergeView (a=before, b=after, no revertControls); `inline` = unifiedMergeView (mergeControls:false); each side numbered from its own first line when an excerpt is shown.",
+      "note": "`split` = MergeView (a=before, b=after, no revertControls); `inline` = unifiedMergeView (mergeControls:false); each side numbered from its own first line when an excerpt is shown.\n\nAnchor: `DiffPane` `splitView` `inlineView`",
       "targets": [
         {
           "anchor": {
-            "blob": "1752cf61fa7a9a49f17cd1ed32b0deae8a280df5",
-            "content": "sha256:f4d312256407639d3ae3c1d5cb6906e9ebd06073837ff9ca1f628fe4a150e0ab",
+            "blob": "6d63658ca060662a6573338fbb1d786371af0633",
+            "content": "sha256:09f6564ee645059d8278ba07ff08790fb6ccf152a71fd8fb1b4d7ff1fadea023",
             "locator": {
-              "kind": "symbol",
-              "name": "DiffPane"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "1752cf61fa7a9a49f17cd1ed32b0deae8a280df5",
-            "content": "sha256:e7cec30cbd96c803a638f2abb67208cddabb5fbbd936951407407511d7ce016b",
-            "locator": {
-              "kind": "symbol",
-              "name": "splitView"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "1752cf61fa7a9a49f17cd1ed32b0deae8a280df5",
-            "content": "sha256:031af190906ad6ef40e704e316cf9ba5776dcd6232a59f546f4dbe5a11291fc4",
-            "locator": {
-              "kind": "symbol",
-              "name": "inlineView"
+              "kind": "file"
             }
           },
           "kind": "code"

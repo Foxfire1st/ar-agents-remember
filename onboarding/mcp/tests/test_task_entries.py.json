@@ -141,15 +141,14 @@
       ]
     },
     "3": {
-      "note": "A missing declared child has one entry, later authored in place, with shared count semantics.",
+      "note": "A missing declared child has one entry, later authored in place, with shared count semantics.\n\nAnchor: `test_one_declared_child_without_a_document_gets_one_entry_and_the_same_counts`",
       "targets": [
         {
           "anchor": {
-            "blob": "d96495cc0510c8cd93ed39cf34676741015b2f7d",
-            "content": "sha256:88f090a499c2a7a82e6b0579fb9f13248f118fb354c8a3e57e38ac1d9bb9b318",
+            "blob": "45ef0d9edb04c93587a47a16df7ad2b57e692a78",
+            "content": "sha256:aebfb406c1aaeb670dc932d18e485cab1741b162335cf3be57041ab7eed7256a",
             "locator": {
-              "kind": "symbol",
-              "name": "test_one_declared_child_without_a_document_gets_one_entry_and_the_same_counts"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -157,15 +156,14 @@
       ]
     },
     "4": {
-      "note": "Only reciprocal declared membership sets parent; all entries remain reachable once.",
+      "note": "Only reciprocal declared membership sets parent; all entries remain reachable once.\n\nAnchor: `test_only_declared_reciprocal_membership_sets_parent_and_all_tasks_are_reachable`",
       "targets": [
         {
           "anchor": {
-            "blob": "d96495cc0510c8cd93ed39cf34676741015b2f7d",
-            "content": "sha256:83a7b41bfe267c315f5f9f76c1091e777cb96699049cb0454105b238c790bd35",
+            "blob": "45ef0d9edb04c93587a47a16df7ad2b57e692a78",
+            "content": "sha256:aebfb406c1aaeb670dc932d18e485cab1741b162335cf3be57041ab7eed7256a",
             "locator": {
-              "kind": "symbol",
-              "name": "test_only_declared_reciprocal_membership_sets_parent_and_all_tasks_are_reachable"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -173,15 +171,14 @@
       ]
     },
     "5": {
-      "note": "A fileless plan has one opaque child identity without invented document/body.",
+      "note": "A fileless plan has one opaque child identity without invented document/body.\n\nAnchor: `test_addressless_declared_row_has_one_opaque_identity_and_no_document`",
       "targets": [
         {
           "anchor": {
-            "blob": "d96495cc0510c8cd93ed39cf34676741015b2f7d",
-            "content": "sha256:43c30836fd0bffbd52a110fddf46974f20d0d832838576d9eaa35476fe763f8f",
+            "blob": "45ef0d9edb04c93587a47a16df7ad2b57e692a78",
+            "content": "sha256:aebfb406c1aaeb670dc932d18e485cab1741b162335cf3be57041ab7eed7256a",
             "locator": {
-              "kind": "symbol",
-              "name": "test_addressless_declared_row_has_one_opaque_identity_and_no_document"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -189,15 +186,14 @@
       ]
     },
     "6": {
-      "note": "Two-parent/cycle/missing-parent conflicts remain deterministic, reciprocal and reachable with consistent counts.",
+      "note": "Two-parent/cycle/missing-parent conflicts remain deterministic, reciprocal and reachable with consistent counts.\n\nAnchor: `test_conflicting_membership_is_deterministic_reciprocal_and_reachable`",
       "targets": [
         {
           "anchor": {
-            "blob": "d96495cc0510c8cd93ed39cf34676741015b2f7d",
-            "content": "sha256:4e03dfbe17e36ecd16ecb292834f3a1f4f9cb96871d577fabdfee982dc322491",
+            "blob": "45ef0d9edb04c93587a47a16df7ad2b57e692a78",
+            "content": "sha256:aebfb406c1aaeb670dc932d18e485cab1741b162335cf3be57041ab7eed7256a",
             "locator": {
-              "kind": "symbol",
-              "name": "test_conflicting_membership_is_deterministic_reciprocal_and_reachable"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -221,12 +217,12 @@
       ]
     },
     "8": {
-      "note": "Master validation in placement applies only to documented subTasks; other listed kinds retain list placement under existing identity/cycle guards, not a kind-rejection or own-master-validation rule.\n\nAnchor: Exact producer admission boundary",
+      "note": "Master validation in placement applies only to documented subTasks; other listed kinds retain list placement under existing identity/cycle guards, not a kind-rejection or own-master-validation rule.",
       "targets": [
         {
           "anchor": {
-            "blob": "d37db285155926a5393191721b105ab17f124661",
-            "content": "sha256:ea350afcbd90c38b00424aee31a6a7a46519c7bdff16982cada2efbe3293bd44",
+            "blob": "26edfc879fceb5c3c0c071a8bf8d54180caebe20",
+            "content": "sha256:e04b243dd9746767c6c473a927163ae99b97875eaf72233b43fe6dc5b43f456c",
             "locator": {
               "end": 219,
               "kind": "line_range",

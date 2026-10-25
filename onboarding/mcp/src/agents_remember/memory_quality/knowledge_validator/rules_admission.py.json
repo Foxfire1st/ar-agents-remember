@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/rules_admission.py",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
@@ -102,12 +103,12 @@
         },
         {
           "anchor": {
-            "blob": "6cf0f93cec095913e9f6675b6797d147529e4399",
+            "blob": "5ce8409da114e35f69fddf1a11a39bd5a42dac49",
             "content": "sha256:60d20ae02f06dfcb8d5ac2d168cd459b2680bc40bd667edaf4effa47e4c0c7db",
             "locator": {
-              "end": 278,
+              "end": 290,
               "kind": "line_range",
-              "start": 278
+              "start": 290
             },
             "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/registry.py"
           },
@@ -115,12 +116,12 @@
         },
         {
           "anchor": {
-            "blob": "6cf0f93cec095913e9f6675b6797d147529e4399",
+            "blob": "5ce8409da114e35f69fddf1a11a39bd5a42dac49",
             "content": "sha256:5610e49d8b7983b6d483140ffd4eb8471d1dbf28c37d0169e8649481f3d4af3e",
             "locator": {
-              "end": 291,
+              "end": 303,
               "kind": "line_range",
-              "start": 289
+              "start": 301
             },
             "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/registry.py"
           },
@@ -205,12 +206,12 @@
         },
         {
           "anchor": {
-            "blob": "6cf0f93cec095913e9f6675b6797d147529e4399",
+            "blob": "5ce8409da114e35f69fddf1a11a39bd5a42dac49",
             "content": "sha256:60d20ae02f06dfcb8d5ac2d168cd459b2680bc40bd667edaf4effa47e4c0c7db",
             "locator": {
-              "end": 278,
+              "end": 290,
               "kind": "line_range",
-              "start": 278
+              "start": 290
             },
             "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/registry.py"
           },
@@ -218,12 +219,12 @@
         },
         {
           "anchor": {
-            "blob": "6cf0f93cec095913e9f6675b6797d147529e4399",
+            "blob": "5ce8409da114e35f69fddf1a11a39bd5a42dac49",
             "content": "sha256:5610e49d8b7983b6d483140ffd4eb8471d1dbf28c37d0169e8649481f3d4af3e",
             "locator": {
-              "end": 291,
+              "end": 303,
               "kind": "line_range",
-              "start": 289
+              "start": 301
             },
             "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/registry.py"
           },
@@ -296,12 +297,12 @@
         },
         {
           "anchor": {
-            "blob": "6cf0f93cec095913e9f6675b6797d147529e4399",
+            "blob": "5ce8409da114e35f69fddf1a11a39bd5a42dac49",
             "content": "sha256:60d20ae02f06dfcb8d5ac2d168cd459b2680bc40bd667edaf4effa47e4c0c7db",
             "locator": {
-              "end": 278,
+              "end": 290,
               "kind": "line_range",
-              "start": 278
+              "start": 290
             },
             "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/registry.py"
           },
@@ -309,12 +310,12 @@
         },
         {
           "anchor": {
-            "blob": "6cf0f93cec095913e9f6675b6797d147529e4399",
+            "blob": "5ce8409da114e35f69fddf1a11a39bd5a42dac49",
             "content": "sha256:5610e49d8b7983b6d483140ffd4eb8471d1dbf28c37d0169e8649481f3d4af3e",
             "locator": {
-              "end": 291,
+              "end": 303,
               "kind": "line_range",
-              "start": 289
+              "start": 301
             },
             "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/registry.py"
           },
@@ -352,15 +353,14 @@
       ]
     },
     "14": {
-      "note": "Reference-only justifications are refused, and real prose is admitted.",
+      "note": "Reference-only justifications are refused, and real prose is admitted.\n\nAnchor: `test_a_new_record_whose_justification_is_only_a_reference_is_refused`",
       "targets": [
         {
           "anchor": {
-            "blob": "32f0c163806fc1b594e6297dcb681cfa0f6cb3ea",
-            "content": "sha256:d7ef77f63545922409088ab8363e742a14519a896025bc46614a68e1efc312e7",
+            "blob": "922080aa70ed74fa611b56de473a1398e4e6ec6d",
+            "content": "sha256:2872079c064fd035ad0a25e8d43839a5893228d43b3b62f0c5e5de769d3b1504",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_new_record_whose_justification_is_only_a_reference_is_refused"
+              "kind": "file"
             },
             "path": "mcp/tests/test_knowledge_validator.py"
           },
@@ -438,12 +438,12 @@
         },
         {
           "anchor": {
-            "blob": "6cf0f93cec095913e9f6675b6797d147529e4399",
+            "blob": "5ce8409da114e35f69fddf1a11a39bd5a42dac49",
             "content": "sha256:60d20ae02f06dfcb8d5ac2d168cd459b2680bc40bd667edaf4effa47e4c0c7db",
             "locator": {
-              "end": 278,
+              "end": 290,
               "kind": "line_range",
-              "start": 278
+              "start": 290
             },
             "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/registry.py"
           },
@@ -451,12 +451,12 @@
         },
         {
           "anchor": {
-            "blob": "6cf0f93cec095913e9f6675b6797d147529e4399",
+            "blob": "5ce8409da114e35f69fddf1a11a39bd5a42dac49",
             "content": "sha256:5610e49d8b7983b6d483140ffd4eb8471d1dbf28c37d0169e8649481f3d4af3e",
             "locator": {
-              "end": 291,
+              "end": 303,
               "kind": "line_range",
-              "start": 289
+              "start": 301
             },
             "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/registry.py"
           },
@@ -477,15 +477,14 @@
       ]
     },
     "17": {
-      "note": "A forged legacy ID does not make a record exported.",
+      "note": "A forged legacy ID does not make a record exported.\n\nAnchor: `test_a_forged_legacy_id_does_not_make_a_record_exported`",
       "targets": [
         {
           "anchor": {
-            "blob": "32f0c163806fc1b594e6297dcb681cfa0f6cb3ea",
-            "content": "sha256:4523e9a98feb5acd66c7973b2b117b37d3f6ba13234dd455ce7c3648e09ac413",
+            "blob": "922080aa70ed74fa611b56de473a1398e4e6ec6d",
+            "content": "sha256:2872079c064fd035ad0a25e8d43839a5893228d43b3b62f0c5e5de769d3b1504",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_forged_legacy_id_does_not_make_a_record_exported"
+              "kind": "file"
             },
             "path": "mcp/tests/test_knowledge_validator.py"
           },
@@ -554,15 +553,14 @@
       ]
     },
     "20": {
-      "note": "A decision whose legacy ID derives its own ID, marked legacy-unassessed, is refused as new.",
+      "note": "A decision whose legacy ID derives its own ID, marked legacy-unassessed, is refused as new.\n\nAnchor: `test_a_decision_is_never_an_export_so_a_legacy_id_exempts_it_from_nothing`",
       "targets": [
         {
           "anchor": {
-            "blob": "5d61a0905f69494b5527cb7179246b4559cf8d2c",
-            "content": "sha256:0a49ae753910a15eea88f7e1ad72cb65d068f2edcb877f9afde23cbd83ecad1f",
+            "blob": "886a6295ef58c5cdbfa1e1682723c34ea51e94c1",
+            "content": "sha256:fadf12d280bbe806e3490fd01b800bba62ffb1bc6ee35e99da59287c2bfa6fb8",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_decision_is_never_an_export_so_a_legacy_id_exempts_it_from_nothing"
+              "kind": "file"
             },
             "path": "mcp/tests/test_knowledge_decisions.py"
           },
@@ -638,12 +636,12 @@
         },
         {
           "anchor": {
-            "blob": "6cf0f93cec095913e9f6675b6797d147529e4399",
+            "blob": "5ce8409da114e35f69fddf1a11a39bd5a42dac49",
             "content": "sha256:60d20ae02f06dfcb8d5ac2d168cd459b2680bc40bd667edaf4effa47e4c0c7db",
             "locator": {
-              "end": 278,
+              "end": 290,
               "kind": "line_range",
-              "start": 278
+              "start": 290
             },
             "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/registry.py"
           },
@@ -651,12 +649,12 @@
         },
         {
           "anchor": {
-            "blob": "6cf0f93cec095913e9f6675b6797d147529e4399",
+            "blob": "5ce8409da114e35f69fddf1a11a39bd5a42dac49",
             "content": "sha256:5610e49d8b7983b6d483140ffd4eb8471d1dbf28c37d0169e8649481f3d4af3e",
             "locator": {
-              "end": 291,
+              "end": 303,
               "kind": "line_range",
-              "start": 289
+              "start": 301
             },
             "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/registry.py"
           },

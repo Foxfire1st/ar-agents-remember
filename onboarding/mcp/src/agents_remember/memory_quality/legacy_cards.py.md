@@ -18,4 +18,6 @@ Enumeration returns sorted memory-relative Markdown paths under onboarding. It e
 
 - Legacy signs are metadata-key first cells or the Update History heading; later-cell prose mentions do not count. [1]
 - Discovery is root-relative, sorted, Markdown-only and leaves unreadable-file handling to its callers. [2]
+
+
 - First adoption refuses the listed cards without allowing accept_drift to lift that refusal. [3]

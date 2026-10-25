@@ -56,12 +56,12 @@
       ]
     },
     "2": {
-      "note": "One bounded nonrecursive Git entry read observes even a tree with no recursive leaves.\n\nAnchor: `CodeObjects.tree_entry_mode`",
+      "note": "One bounded nonrecursive Git entry read observes even a tree with no recursive leaves.",
       "targets": [
         {
           "anchor": {
-            "blob": "7ac14e416b82c9b4d3547ea9afcff041d038a511",
-            "content": "sha256:8a563d2dbba88ee1e753a308ffe54c534ade411f77c97c5e979261cb0e0541f8",
+            "blob": "2f417db25d3f58c21b8baeca43751c69834ddffb",
+            "content": "sha256:1d8638b4aab27aa8189c10d98425d4399028e8666f4277639b8513253ffae23c",
             "locator": {
               "end": 150,
               "kind": "line_range",

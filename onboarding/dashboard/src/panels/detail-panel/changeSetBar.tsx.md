@@ -110,16 +110,32 @@ Every anchor in a row occurs inside the range that row cites.
 
 - The module's own statement of which entries a master and a leaf get, and that the Intent review is its own component. [1]
 - The net's leaf attribution, rendered only when the answer carried a breakdown. [2]
+
 - The total withheld for an unrecorded range. [3]
+
+
 - The counter read's brief states. [5]
-- The explanation in a closed disclosure: the refusal sentence or the unrecorded sentence. [6]
+
+
+- The explanation in a closed disclosure: the refusal sentence, the unmeasured-series sentence or the unrecorded sentence. [6]
+
 - **A leaf's entries: working while live, then the Intent review control (not a change-set button).** [7]
+
 - The Intent review control and its summary read. [11]
+
+
 - The shared brief-state and disclosure helpers. [12]
+
 - The re-validation generation the facts carry. [13]
+
 - The change-set client the counter read belongs to. [14]
+
+
 - The compact entry's cases: one control, request economy, brief states, leaf-scoped invalidation. [15]
+
+
 - The closed leaf's recorded entry and the failed-summary case. [16]
+
 
 ### Cross-Repo References
 

@@ -63,7 +63,7 @@ while announcing phases (GitHub #53).
 
 ### Repo-Internal References
 
-- The provider setup facade re-exports these helpers for existing callers and tests. [1]
-- Lifecycle calls are dispatched through the direct lifecycle facade. [2]
+- The provider setup facade re-exports these helpers for existing callers and tests. 
+- Lifecycle calls are dispatched through the direct lifecycle facade. 
 
 </details>

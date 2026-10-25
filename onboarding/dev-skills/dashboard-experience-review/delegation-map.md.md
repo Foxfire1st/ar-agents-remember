@@ -43,7 +43,9 @@ No relevant external documentation found.
 
 ### Repo-Internal References
 
+
 - The pipeline (Stage 4) that consumes this delegation map. [1]
+
 
 ### Cross-Repo References
 

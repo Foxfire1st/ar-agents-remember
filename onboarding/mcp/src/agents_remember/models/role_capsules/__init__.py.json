@@ -1,9 +1,10 @@
 {
   "path": "mcp/src/agents_remember/models/role_capsules/__init__.py",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
-      "note": "The frozen DTO surface this package re-exports.",
+      "note": "The frozen DTO surface this package re-exports.\n\nAnchor: `CapsuleAdmittedFacts` `CapsuleCapsule` `CapsuleCompilationResult` `CapsuleBinding`",
       "targets": [
         {
           "anchor": {
@@ -19,8 +20,8 @@
         },
         {
           "anchor": {
-            "blob": "59951ae0d9258670a0277ede0b38068df22b48c3",
-            "content": "sha256:57b0718a3ae9e2c8769b9728d72996c910023d64d1b783d49aaf471a3ab4c350",
+            "blob": "3283618c85b66070d98755f6d21a3f2e66f407ff",
+            "content": "sha256:b57f9b8ad4c5d36d549f87b06c6f0e7292044d901dd037fd989d5da35b424e45",
             "locator": {
               "kind": "symbol",
               "name": "CapsuleCapsule"
@@ -81,12 +82,12 @@
         },
         {
           "anchor": {
-            "blob": "59951ae0d9258670a0277ede0b38068df22b48c3",
-            "content": "sha256:2b89c8b5b829b4c7aee6c3d04716f38516d808c54d06d59ddab700d15a20c067",
+            "blob": "3283618c85b66070d98755f6d21a3f2e66f407ff",
+            "content": "sha256:6911d0c7080958ba99c131184f8583b674a4559c02b336a3398998ba611347df",
             "locator": {
-              "end": 475,
+              "end": 318,
               "kind": "line_range",
-              "start": 451
+              "start": 299
             },
             "path": "mcp/src/agents_remember/models/role_capsules/types.py"
           },
@@ -95,11 +96,22 @@
         {
           "anchor": {
             "blob": "3283618c85b66070d98755f6d21a3f2e66f407ff",
-            "content": "sha256:6911d0c7080958ba99c131184f8583b674a4559c02b336a3398998ba611347df",
+            "content": "sha256:db8b77de969e266050b3045291a29cc618317ce8aa109f2a18da3344072c7ad0",
             "locator": {
-              "end": 318,
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/types.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3283618c85b66070d98755f6d21a3f2e66f407ff",
+            "content": "sha256:92887471c78ca2b2e1eed84222369b578c4f00d42bcd35d0b5afe527850d03df",
+            "locator": {
+              "end": 475,
               "kind": "line_range",
-              "start": 299
+              "start": 451
             },
             "path": "mcp/src/agents_remember/models/role_capsules/types.py"
           },

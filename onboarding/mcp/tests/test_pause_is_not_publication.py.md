@@ -100,10 +100,21 @@ No Domain Documentation source is configured for this memory root.
 - The walk itself, whose docstring records that expanding a module is what counts and that discovery must not stop it. [3]
 - The case: disjointness from every publication module, then the three non-vacuity checks and the two named witnesses. [4]
 - The method limits recorded in the module docstring: static AST graph, `TYPE_CHECKING` excluded, no dynamic imports, per-module rather than process-wide. [5]
+
 - The route this guard exists to keep the stop away from. [6]
+
 - The stop module whose closure is measured, and the release authority the closure is required to reach. [7]
-- The lane this module is registered in. [8]
+
+
+
+
+> Retained earlier citation wording: - The lane this module is registered in. Source caption: "mcp/tests/test_pause_is_not_publication.py" [8]
+
+
+
 
 ### Cross-Repo References
 
 No meaningful cross-repository reference applies to this repository-owned structural guard.
+
+- The lane this module is registered in. Source caption: "mcp/tests/test_pause_is_not_publication.py" [8]

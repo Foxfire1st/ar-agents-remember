@@ -261,23 +261,6 @@
         }
       ]
     },
-    "16": {
-      "note": "The workspace is the hook's one caller.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "79b9df933874721d54216189dfe94463118877aa",
-            "content": "sha256:50c44396aad87f3e222c99046d41890d9279b892e6d01eed5f3b59d01a244f8e",
-            "locator": {
-              "kind": "symbol",
-              "name": "useWalkedSelection"
-            },
-            "path": "dashboard/src/panels/review/ReviewWorkspace.tsx"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "17": {
       "note": "The unit cases over served bodies: idempotence, order, the kept answer, names, an outside selection, another comparison, and a family read twice.",
       "targets": [

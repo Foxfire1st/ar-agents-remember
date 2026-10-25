@@ -55,19 +55,40 @@ Fresh flat call sites only: pre-widened Partial<TaskEntry> remains a known pass.
 The assertions read TypeScript's own semantic diagnostics through the compiler API, and the behaviour
 being pinned is the `exactOptionalPropertyTypes`-off rule described in the TSConfig reference.
 
+
 - `ts.Program#getSemanticDiagnostics` and `ts.flattenDiagnosticMessageText` are the documented compiler-API surface these assertions read. [1]
+
 - With `exactOptionalPropertyTypes` off, an optional property implicitly admits `undefined` — the rule that makes a bare `Partial<T>` override able to state that a required field is absent. [2]
 
 ### Repo-Internal References
 
+
 - The header: what no guard rule can see, and why running over the guard's flag-free program is the point. [3]
-- Current native impossible/excess/honest call forms supply exact diagnostic-count controls. [4]
+
+
+- The four impossible calls, the two excess-property calls, and the nine honest shapes. [4]
+
+
 - The three exact-count assertions and their message checks. [5]
-- A pre-widened Partial<TaskEntry> override remains the documented known-pass residue. [6]
+
+
+- The residue asserted as a known pass: a pre-widened `Partial<TaskEntry>` override still compiles. [6]
+
 - The constraint under test, and the three limits it documents. [7]
 - `buildProgramWithVirtualFiles` and `GUARD_COMPILER_OPTIONS` — the harness these probes borrow, whose option set is strict/bundler/`resolveJsonModule` and contains no `exactOptionalPropertyTypes` entry. [8]
+
 - The guard's own statement of the same hole — item 5, "A VALUE" — which names this file as the answer. [9]
-- Current builders are provider, taskEntry, taskSummary and projection. [10]
+
+
+
+
+
+
+- The builders whose parameters are being pinned: `projection`, `taskEntry`, `taskSummary`, `action` and `observerEvent`, each taking an `Overrides<O, Node>`.  Earlier card anchor caption (historical provenance): `lifecycle` `taskDoc` `projection` Source caption: `projection` `taskEntry` `taskSummary` `provider` `action` `observerEvent` [10]
+
+
+
+
 - The excess-property probe supplies undeclared refusedPolarity to taskEntry and createdAtButMisspelled to taskSummary. Its regression expects exactly two diagnostics, checks each offending name and requires the unknown-property message for both; lifecycle/taskDoc are not the builders used in this probe. [12]
 
 
@@ -75,5 +96,6 @@ being pinned is the `exactOptionalPropertyTypes`-off rule described in the TSCon
 
 No cross-repository or external-system boundary is exercised. The probes import in-repo builders and
 the in-repo mirror; the compiler is a devDependency, not a system boundary.
+
 
 - Probe imports resolve to retained wire builders; the enclosure.repoName replacement preserves the required-undefined control. [14]

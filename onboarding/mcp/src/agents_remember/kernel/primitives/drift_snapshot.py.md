@@ -42,7 +42,9 @@ No configured domain documentation was available.
 
 ### Repo-Internal References
 
-- The projection-side pruning policy consumes these primitives. [1]
+
+- The projection-side pruning policy prunes only after a complete native branch census, with its own snapshot reader and removal; worktree cleanup and the onboarding drift summary and report take these path and removal primitives. [1]
+
 - Snapshot removal is owned by this primitive; no deleted-suite removal-edge coverage is asserted. [2]
 
 ### Cross-Repo References

@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/kernel/primitives/paseo_runtime_settings.py",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
@@ -92,8 +93,8 @@
     },
     {
       "anchor": {
-        "blob": "d8a2f76f043684e50e0ef631a1ef8f6f095f28a4",
-        "content": "sha256:cab565c0668ef60fae815dd1d5e8ca01a4971e4dd6c90f22aa2fabc30c27b1a3",
+        "blob": "f3b359cc760a49814e70319c5b4850eaa262351a",
+        "content": "sha256:7b8df97155eabd898fb95afc71d84ffed215b90ff1352424f0d47eb40e208537",
         "locator": {
           "kind": "file"
         }
@@ -104,7 +105,7 @@
         "handoffEntry": "L192-W-R199-06",
         "leaf": "260928-MIK-L192"
       },
-      "rationale": "The .paseoRuntime.providers contract is still required and validated; L184 extended this module with the extra-args provider ids and user-settings location, which is additive to the contract and not a search-provider surface.",
+      "rationale": "The .paseoRuntime providers contract is still required and validated at C, and the module exposes no path by which editing it activates a CGC/GrepAI install, start or watch.",
       "role": "primary-authority"
     }
   ],

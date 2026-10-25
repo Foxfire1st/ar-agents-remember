@@ -181,8 +181,12 @@ Current contract statements are grounded in this module's validators, its shared
 - The request that carries the task context, the path and the exact generation the caller read from the listing it is looking at. [10]
 - **One outcome per result, enforced: a content result carries its expansion and no refusal, a refused result its refusal and no expansion.** [11]
 - The base vocabulary this module extends rather than redeclares: the shared model base and the four length ceilings every field is bounded by. [12]
+
 - The review vocabulary it re-uses rather than duplicating: the change status an expansion reports and the typed refusal a refused read carries. [13]
+
+
 - **The read that fills these values in: the six states produced from real Git objects, the admission named on every expansion, and the generation statement measured after the bytes.** [14]
+
 - The transport that accepts this request and serializes this result: the third review route, the selector value and the port type. [15]
 - **The cases that hold the vocabulary to its own prohibitions over real objects: each non-text kind, a stated bounded expansion, the requested generation served after the branch advanced, and the two admitted measurements.** [18]
 

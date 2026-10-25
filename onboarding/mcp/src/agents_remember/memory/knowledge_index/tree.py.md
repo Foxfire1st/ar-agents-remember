@@ -75,5 +75,8 @@ No cross-repo boundary is crossed by this file.
 - The indexed JSON filter, sharing the validator's exclusion predicate. [3]
 - The Git-object reader: one batch read, nothing checked out. [4]
 - The directory reader and its key, with the blob-id check and retry. [5]
+
 - The isolated capture and the index-flag clearing on the scratch copy. [6]
+
+
 - The capture copies the index with its time. [9]

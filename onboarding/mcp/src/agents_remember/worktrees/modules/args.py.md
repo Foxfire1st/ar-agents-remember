@@ -86,7 +86,9 @@ The following current source boundaries establish the ledger-retirement behavior
 
 - Provider setup config is typed through the companion worktree models module. (`WorktreeProviderSetupConfig`) [15]
 
+
 - Worktree CLI builds argparse namespaces that this DTO adapts via `from_namespace`. [16]
+
 
 - Gate delegation policy model (kernel-owned since L9). [17]
 
@@ -113,7 +115,9 @@ The current source seams include `WorktreeArgs`, `report_operation_progress`. Th
 
 - Inputs shared by the worktree application layer, CLI, and domain functions. [11]
 
-- Advance the plane-owned operation when this call runs under its detached worker. [12]
+
+- Advance the plane-owned operation when this call runs under its detached worker. Source caption: `report_operation_progress` [12]
+
 
 ## Current Landed Composition
 

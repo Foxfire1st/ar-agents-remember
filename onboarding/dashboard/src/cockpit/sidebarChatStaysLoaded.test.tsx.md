@@ -14,8 +14,17 @@ The `Rig` mounts the real `RightRail` with a stubbed fetch backend (frame descri
 
 ## Evidence
 
+
 - The river toggle keeps the same frame element with the load count unchanged. [1]
+
+
 - Selection switches post ar.open with agent and workspace and never load again. [2]
+
+
 - The agentless selection hides the frame without unloading it and switches back. [3]
+
+
 - A not-ready burst loads nothing in between and brings only the latest selection forward. [4]
+
+
 - No focus stays inside the hidden chat. [5]

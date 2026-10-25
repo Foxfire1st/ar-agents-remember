@@ -64,14 +64,28 @@ The local recipe and glyph table govern severity marks, not a lifecycle vocabula
 
 - The suite declares `ALL_VARIANTS` with the explicit `FALLBACK` member. [1]
 - `markOf` renders one mark and returns the rendered element for assertions. [2]
+
 - `appearanceOf` derives the observable appearance key from the rendered mark. [3]
+
+
 - The vocabulary assertion requires exactly alarm/warn/info. [4]
+
+
 - The suite asserts distinct appearances for every variant and the fallback. [5]
+
+
 - The suite asserts that every variant carries its own ink. [6]
+
 - `DOT_VARIANTS = dot.variantMap.variant` is the derived vocabulary this suite imports rather than copying. [7]
+
 - `DOT_GLYPHS` is the glyph table used by the dot recipe. [8]
+
+
 - The `cva` base uses `color: "muted"`. [9]
+
+
 - The recipe defines attention-severity appearances, not task lifecycle marks. [10]
+
 
 
 
@@ -79,8 +93,12 @@ The local recipe and glyph table govern severity marks, not a lifecycle vocabula
 - The `html[data-effects="off"]` selector is declared here. [15]
 - The effects-off rule disables animation with `!important`. [16]
 - The effects-off rule disables transition with `!important`. [17]
-- `Cockpit.tsx` renders `AttentionQueue`. [18]
+
+- `Cockpit.tsx` mounts `LifecycleList` in its left rail, and that list's task-column pivot head (`TaskPivotBar`) renders `AttentionQueue`. [18]
+
+
 - `Cockpit.tsx` renders `LifecycleList`. [19]
+
 
 ### Cross-Repo References
 

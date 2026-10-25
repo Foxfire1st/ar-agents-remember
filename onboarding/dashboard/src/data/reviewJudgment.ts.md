@@ -21,4 +21,5 @@ SubjectJudgment rejects a missing pane or mismatched selected subject instead of
 - Row and structured requirement preserve history identity and because without conclusions. [1]
 - Proof entry state and pane history state remain independent. [2]
 - Producer says proof currentness is not a run result and validates rows-state correlation. [3]
+
 - Consumer rejects missing/misaddressed judgment and renders rows and proofs. [4]

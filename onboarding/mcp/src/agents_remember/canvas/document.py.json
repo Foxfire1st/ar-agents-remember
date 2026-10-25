@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/canvas/document.py",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
@@ -26,8 +27,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9176cadb4b92d322e3e9356fea92ef7bb5e5ede3",
-            "content": "sha256:4c374e200eb5282a37fa8e04dfe24775b210b27c1401fd53162060e5c8addded",
+            "blob": "e3f614c4ac0fc8d46256b5ee81754cc35115f8bd",
+            "content": "sha256:a79488ab4244bfe4a1a65c712a6422d069a8812e011daafe4162ec35886243e4",
             "locator": {
               "kind": "symbol",
               "name": "bound_document"
@@ -42,8 +43,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9176cadb4b92d322e3e9356fea92ef7bb5e5ede3",
-            "content": "sha256:2c754cd4a4d8df7167ed55b07a4a92a137b3596c3cd8284afcd8e51b51478f26",
+            "blob": "e3f614c4ac0fc8d46256b5ee81754cc35115f8bd",
+            "content": "sha256:c7c6c679ff1eb156b90ba17d3e2f31beee9b38e1ecf215dcb34fe10a4dc634f4",
             "locator": {
               "kind": "file"
             }

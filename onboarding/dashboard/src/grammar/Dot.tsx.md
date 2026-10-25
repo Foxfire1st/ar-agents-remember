@@ -75,14 +75,20 @@ No configured Domain Documentation source exists for this file.
 The severity vocabulary and treatments are independent of native task stage/activity.
 
 
+
 - The `cva` recipe, `DOT_VARIANTS`/`KNOWN`/`DotVariant`, the total `DOT_GLYPHS`, `UNKNOWN_DOT_GLYPH`, and the component. [1]
+
+
 
 - The unlayered `html[data-effects="off"]` rule that nulls `animation`/`transition` with `!important` — why motion can never carry identity here. [4]
 
 
 
 
+
+
 - `AttentionQueue` passes the raw `q.severity`. [7]
+
 
 
 

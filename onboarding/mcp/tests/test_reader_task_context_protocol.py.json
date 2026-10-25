@@ -133,8 +133,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f05395fd7ba340360fd7be7ca15839f0fb897916",
-            "content": "sha256:523596c9ffd84f527450ab5d2758ba93c5db1894d5a93b1f6a8ac0c040c8e135",
+            "blob": "dc497e2837c489670650776c799b50df249c049f",
+            "content": "sha256:3d9f3de88b6f6e1fd6dcf3a8b699c0bbe77859c13612343566455ddc53eb2788",
             "locator": {
               "kind": "file"
             }
@@ -144,15 +144,14 @@
       ]
     },
     "2": {
-      "note": "The factory that pairs the process-wide request union with its per-server dispatcher.",
+      "note": "The factory that pairs the process-wide request union with its per-server dispatcher.\n\nAnchor: `create_server`",
       "targets": [
         {
           "anchor": {
-            "blob": "933e9cccdeb8316ecccfe17da622e599700d0773",
-            "content": "sha256:c3ed0814fd9aa904bcb2ed946c4c6539a1be63e48e73b1f6bfa05d67b04c6813",
+            "blob": "04fe591490945dea61eca1af410ae2553d95ea05",
+            "content": "sha256:cc3a440dce07a6635e86d3b3c0bd4747a332896e3470112e376449434e08b69a",
             "locator": {
-              "kind": "symbol",
-              "name": "create_server"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/mcp/server.py"
           },
@@ -161,15 +160,14 @@
       ]
     },
     "3": {
-      "note": "The bounded driver and the 60-second Git observation limit.",
+      "note": "The bounded driver and the 60-second Git observation limit.\n\nAnchor: `_await_protocol`",
       "targets": [
         {
           "anchor": {
-            "blob": "0c75122a7ec9c252dbd7ec955ac8315c6a53ac1b",
-            "content": "sha256:8738ac3e5a80d294022c619428b4c74edb0b5d55a9101e12458c4b7ac10d9e80",
+            "blob": "dc497e2837c489670650776c799b50df249c049f",
+            "content": "sha256:3d9f3de88b6f6e1fd6dcf3a8b699c0bbe77859c13612343566455ddc53eb2788",
             "locator": {
-              "kind": "symbol",
-              "name": "_await_protocol"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -177,15 +175,14 @@
       ]
     },
     "4": {
-      "note": "The late-response case that holds its handler and starts its deadline after session initialization.",
+      "note": "The late-response case that holds its handler and starts its deadline after session initialization.\n\nAnchor: `test_late_tool_list_response_times_out_and_closes_the_handler`",
       "targets": [
         {
           "anchor": {
-            "blob": "0c75122a7ec9c252dbd7ec955ac8315c6a53ac1b",
-            "content": "sha256:f6349a5640d353aade56e3a4c400e736d4ba19370b2d9d1c31a0dfb541d77663",
+            "blob": "dc497e2837c489670650776c799b50df249c049f",
+            "content": "sha256:3d9f3de88b6f6e1fd6dcf3a8b699c0bbe77859c13612343566455ddc53eb2788",
             "locator": {
-              "kind": "symbol",
-              "name": "test_late_tool_list_response_times_out_and_closes_the_handler"
+              "kind": "file"
             }
           },
           "kind": "test"

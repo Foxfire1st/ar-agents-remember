@@ -19,59 +19,14 @@
       ]
     },
     "10": {
-      "note": "**The six record transitions, recognised from the authored predecessor edge and from nothing else.**",
+      "note": "**The four record transitions — added, removed, changed and unchanged — read from the two payloads and nothing else: no authored predecessor edge names one revision as another's replacement.**\n\nAnchor: `_record_transition` `_SUPERSEDABLE_KINDS` `_replaced_revision` `_supersedes` `_selected`",
       "targets": [
         {
           "anchor": {
-            "blob": "e00618928804650eeabd5ef862323284e1edfdc4",
-            "content": "sha256:49fb5db2ecc856b2ca8025c24d26974c53e2c21838568743d184dc4ada522b2f",
+            "blob": "ad181bee71830f01ceecfa0e450848eb85ae7902",
+            "content": "sha256:6edec7513bb2899e504b4decb67d19355339e61841648024c550c455296c616f",
             "locator": {
-              "kind": "symbol",
-              "name": "_record_transition"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "e00618928804650eeabd5ef862323284e1edfdc4",
-            "content": "sha256:15fa55c0bdff88a741efa1f8ffeb4c9dd8dd36a212d6ec05897670bb44471947",
-            "locator": {
-              "kind": "symbol",
-              "name": "_SUPERSEDABLE_KINDS"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "e00618928804650eeabd5ef862323284e1edfdc4",
-            "content": "sha256:d20aca77de37184a87cc538b2a02fc1542bb8ab3bdc1c69661a411ed91367525",
-            "locator": {
-              "kind": "symbol",
-              "name": "_replaced_revision"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "e00618928804650eeabd5ef862323284e1edfdc4",
-            "content": "sha256:cb6d7717d3962c7d60438952b166527e2c8ff2e12f2b84cdf6d7c7eaaf031c82",
-            "locator": {
-              "kind": "symbol",
-              "name": "_supersedes"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "e00618928804650eeabd5ef862323284e1edfdc4",
-            "content": "sha256:143579bcd0f39d7e924eb3e5910e17ccce21f29598d53e772ca235bbfbcf590f",
-            "locator": {
-              "kind": "symbol",
-              "name": "_selected"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -79,15 +34,14 @@
       ]
     },
     "11": {
-      "note": "**The coverage decision: the three rules, the direction each was measured in, and the family-half caveat.**",
+      "note": "**The coverage decision: the two rules and the measured reason they are not one.**\n\nAnchor: `_coverage`",
       "targets": [
         {
           "anchor": {
-            "blob": "e00618928804650eeabd5ef862323284e1edfdc4",
-            "content": "sha256:ed43de9ddd7a861acabb46882e0c9cdda4b49945a2948d518942d5bf256a60bd",
+            "blob": "ad181bee71830f01ceecfa0e450848eb85ae7902",
+            "content": "sha256:6edec7513bb2899e504b4decb67d19355339e61841648024c550c455296c616f",
             "locator": {
-              "kind": "symbol",
-              "name": "_coverage"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -230,89 +184,28 @@
       ]
     },
     "17": {
-      "note": "The existence probes and the predecessor-edge union this module consumes.",
+      "note": "The diff module consumes four existence probes for invariant revisions, family revisions, memberships and realization claims. The former predecessor-edge union is absent; numbered text revisions carry no predecessor edges.",
       "targets": [
         {
           "anchor": {
-            "blob": "8c1f6f5bcd3dd39fbd974373a48a8d714ddc8bec",
-            "content": "sha256:570172fcc27809b39793fa1b60194494ce489acf9006d272466f0182614cd896",
+            "blob": "ad181bee71830f01ceecfa0e450848eb85ae7902",
+            "content": "sha256:cff16a4815aa971b813043160c4a00ed54596c5f42650f94d3ebe6d1fa82d8de",
             "locator": {
-              "kind": "symbol",
-              "name": "invariant_revision_is_recorded"
-            },
-            "path": "mcp/src/agents_remember/memory/knowledge/read_queries.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "8c1f6f5bcd3dd39fbd974373a48a8d714ddc8bec",
-            "content": "sha256:e9c6c87e9404af3a7812c96cf385a5dd258dc627d2496bc69c76cc78c3bcb5a3",
-            "locator": {
-              "kind": "symbol",
-              "name": "family_revision_is_recorded"
-            },
-            "path": "mcp/src/agents_remember/memory/knowledge/read_queries.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "8c1f6f5bcd3dd39fbd974373a48a8d714ddc8bec",
-            "content": "sha256:4e457fbf5b7714b3ca61986ffd4d434c78a556bf3357fd337ca7601c4957b8a0",
-            "locator": {
-              "kind": "symbol",
-              "name": "membership_is_recorded"
-            },
-            "path": "mcp/src/agents_remember/memory/knowledge/read_queries.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "8c1f6f5bcd3dd39fbd974373a48a8d714ddc8bec",
-            "content": "sha256:9a35ba51f5644d3ec4a924fbaa0b1e63f57db834b3e42a28ea92f957205f2f13",
-            "locator": {
-              "kind": "symbol",
-              "name": "realization_claim_is_recorded"
-            },
-            "path": "mcp/src/agents_remember/memory/knowledge/read_queries.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "f783ca1e819eccb55dc08b0f536877e2e44005d4",
-            "content": "sha256:928c10d1c3169e0bd282510435796d3a8471aebe1f87804af0693ae1b903d413",
-            "locator": {
-              "kind": "symbol",
-              "name": "fetch_predecessor_edges"
-            },
-            "path": "mcp/src/agents_remember/memory/knowledge/read_queries.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "8c1f6f5bcd3dd39fbd974373a48a8d714ddc8bec",
-            "content": "sha256:b7b76e0d794b5961ee3fb00ba9b0696cb33f71d7759e227273e58aec36c0b083",
-            "locator": {
-              "end": 305,
+              "end": 43,
               "kind": "line_range",
-              "start": 296
-            },
-            "path": "mcp/src/agents_remember/memory/knowledge/read_queries.py"
+              "start": 37
+            }
           },
           "kind": "code"
         },
         {
           "anchor": {
             "blob": "8c1f6f5bcd3dd39fbd974373a48a8d714ddc8bec",
-            "content": "sha256:c7fe4aee1f95c678cdb608330bd674c63442a38827ff1edd486c2dcf30bc89db",
+            "content": "sha256:d7691bd6730d2013c268c961ac71e995d8f1d62c499745e54d66cbb7016f0075",
             "locator": {
-              "end": 317,
+              "end": 349,
               "kind": "line_range",
-              "start": 308
+              "start": 302
             },
             "path": "mcp/src/agents_remember/memory/knowledge/read_queries.py"
           },
@@ -320,52 +213,26 @@
         },
         {
           "anchor": {
-            "blob": "8c1f6f5bcd3dd39fbd974373a48a8d714ddc8bec",
-            "content": "sha256:c940f7d85074ce06ac5ae84abb499b3d31d3f425b2337aa20e13b395d29c4df9",
+            "blob": "18bf95513cea9638fc5f978e605aa03076a27454",
+            "content": "sha256:2e540ff07bf9ce6d5bb8729e6af47ad0bf61d92b8ffd4c791d267bd4a2ccad6c",
             "locator": {
-              "end": 327,
+              "end": 177,
               "kind": "line_range",
-              "start": 320
+              "start": 158
             },
-            "path": "mcp/src/agents_remember/memory/knowledge/read_queries.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "f783ca1e819eccb55dc08b0f536877e2e44005d4",
-            "content": "sha256:9262c9a76b60255a7fc62deeffb427a25faaa087d08356c557e5c6102e86ec65",
-            "locator": {
-              "end": 381,
-              "kind": "line_range",
-              "start": 368
-            },
-            "path": "mcp/src/agents_remember/memory/knowledge/read_queries.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "96b09bbc6e00b57ece0ff23b4270e9797026d780",
-            "content": "sha256:e1cb805ffe5994a9bf6cc674524de57e6f193a75082cbbca23d15d142f086ef5",
-            "locator": {
-              "end": 475,
-              "kind": "line_range",
-              "start": 455
-            },
-            "path": "mcp/src/agents_remember/memory/knowledge/read_queries.py"
+            "path": "mcp/src/agents_remember/memory/knowledge/store.py"
           },
           "kind": "code"
         }
       ]
     },
     "18": {
-      "note": "**The node that owns the union-side property the two rules serve, and the removed-realization node whose failing assertion is the load-bearing `assert 'unchanged' == 'removed'`.**\n\nAnchor: \"test_a_record_the_other_snapshot_holds_but_the_selection_missed_is_not_an_absence\"; \"test_a_realization_the_candidate_removed_keeps_its_baseline_source_in_the_union\"",
+      "note": "**The node that owns the union-side property the two rules serve, and the removed-realization node whose failing assertion is the load-bearing `assert 'unchanged' == 'removed'`.**",
       "targets": [
         {
           "anchor": {
-            "blob": "6839ec8adb0e987ab0ae64a2391cf27bc1cbd606",
-            "content": "sha256:81b010ef2c353f364db385bb89fd4931ca9d5fc9a672dc53c3b7e523d3862a36",
+            "blob": "f43f2cfeb97e1480b885bba3821e2ae00214aee4",
+            "content": "sha256:c54c7e8c89d37d07086c708d505d276719a4e0c6c067dffcc3c26b0d1b7a611a",
             "locator": {
               "end": 504,
               "kind": "line_range",
@@ -391,7 +258,7 @@
       ]
     },
     "19": {
-      "note": "**The nodes that hold the two change statements apart and measure the record comparison field by field.**\n\nAnchor: \"test_the_two_change_statements_are_separate_fields_and_neither_implies_the_other\"; \"test_the_record_comparison_reports_exactly_the_payload_field_that_changed\"; \"test_a_source_only_change_is_reported_as_a_source_observation_and_no_record_field_changed\"",
+      "note": "The source-only node: the candidate rewrote one attributed file while the claim naming it did not move, so no record field changed and the item reports the source observation alone. The two change statements' own nodes now sit in `test_knowledge_diff_boundaries.py`.",
       "targets": [
         {
           "anchor": {
@@ -421,8 +288,8 @@
         },
         {
           "anchor": {
-            "blob": "6839ec8adb0e987ab0ae64a2391cf27bc1cbd606",
-            "content": "sha256:a90102345b58e27b755615a2ab215d27b92c1fb90623fefe744224ec36ba55a1",
+            "blob": "f43f2cfeb97e1480b885bba3821e2ae00214aee4",
+            "content": "sha256:bb55581afadc33f565d5d5ff78784b89fca94e583f743848c06857a6cc22d4af",
             "locator": {
               "end": 193,
               "kind": "line_range",
@@ -451,12 +318,12 @@
       ]
     },
     "20": {
-      "note": "The fixture's two snapshots and the transitions between them that this module's states are measured against.",
+      "note": "The fixture's two snapshots and the transitions between them that this module's states are measured against.\n\nAnchor: `build_diff_fixture` `DiffFixture`",
       "targets": [
         {
           "anchor": {
-            "blob": "472aa6a95dbd78142b0e19f328d23e2e3d2d3026",
-            "content": "sha256:0e33a6818449f12402a8bb83520c99d0fd294d8c353a6afe9f326d22e3665449",
+            "blob": "f71d2f06be49d435153b9c1758713da504a05c2e",
+            "content": "sha256:93278447340ac95295f133b59e4f66156f4b6856936d678eeb57d00502567eda",
             "locator": {
               "kind": "symbol",
               "name": "build_diff_fixture"
@@ -467,8 +334,8 @@
         },
         {
           "anchor": {
-            "blob": "472aa6a95dbd78142b0e19f328d23e2e3d2d3026",
-            "content": "sha256:001584ab745e28afcd6f1111f23193c034a107b180674d07b25de79659af14a3",
+            "blob": "f71d2f06be49d435153b9c1758713da504a05c2e",
+            "content": "sha256:22dfb1ee84670abf255273f091ceecbfb65214bb1921d6f80fc131d2d651c6b7",
             "locator": {
               "kind": "symbol",
               "name": "DiffFixture"
@@ -479,8 +346,8 @@
         },
         {
           "anchor": {
-            "blob": "472aa6a95dbd78142b0e19f328d23e2e3d2d3026",
-            "content": "sha256:09483ea98a393005a338e66ad2b22f9316da1a8238a005d5cbfe7facd1667d00",
+            "blob": "f71d2f06be49d435153b9c1758713da504a05c2e",
+            "content": "sha256:31343f243cd725d90b72cddfc1d4474d1140464dc974f78a52aff054ca45d37d",
             "locator": {
               "end": 228,
               "kind": "line_range",
@@ -492,12 +359,23 @@
         },
         {
           "anchor": {
-            "blob": "472aa6a95dbd78142b0e19f328d23e2e3d2d3026",
-            "content": "sha256:4f35fe3fefcfe7467dbe42f57d671de1779be58a683811fbddd4c6dc8a74536e",
+            "blob": "f71d2f06be49d435153b9c1758713da504a05c2e",
+            "content": "sha256:3af23de501bf82d717a215ae9f16fc46671d1fa5218f289b8f74a3bb6af316f7",
             "locator": {
               "end": 181,
               "kind": "line_range",
               "start": 143
+            },
+            "path": "mcp/tests/diff_scope_test_support.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f71d2f06be49d435153b9c1758713da504a05c2e",
+            "content": "sha256:89e6a01e76fd13467e7a2ecb6f31901685045bb135f47e56e5dfb8f4a62a8fe8",
+            "locator": {
+              "kind": "file"
             },
             "path": "mcp/tests/diff_scope_test_support.py"
           },
@@ -555,37 +433,14 @@
       ]
     },
     "4": {
-      "note": "The per-side view, the per-side lineage and the pair of them as one value.",
+      "note": "The per-side view — one snapshot's connection, selected scope and claims — and the pair of them as one value.\n\nAnchor: `SideView` `SideLineage` `ComparisonView`",
       "targets": [
         {
           "anchor": {
             "blob": "ad181bee71830f01ceecfa0e450848eb85ae7902",
-            "content": "sha256:c13de18b8926b5aae359d7159ab485cc4dc392f92f312ab0d60dcd6b75c3ebd8",
+            "content": "sha256:6edec7513bb2899e504b4decb67d19355339e61841648024c550c455296c616f",
             "locator": {
-              "kind": "symbol",
-              "name": "SideView"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "e00618928804650eeabd5ef862323284e1edfdc4",
-            "content": "sha256:9c6c773e2d71f522c2eed476ebe189974d29e322a4b4da1da025b7c8e99a8edc",
-            "locator": {
-              "kind": "symbol",
-              "name": "SideLineage"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "e00618928804650eeabd5ef862323284e1edfdc4",
-            "content": "sha256:9d5a2df497aadc1d7b2faa572edbc691fcf4db084d185cb26df204a5493c471f",
-            "locator": {
-              "kind": "symbol",
-              "name": "ComparisonView"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -625,15 +480,14 @@
       ]
     },
     "7": {
-      "note": "**The one entry point: the two sides, the two lines, the union, the order and the aggregate counts.**",
+      "note": "**The one entry point: the two sides, the union, the order and the aggregate counts.**\n\nAnchor: `compare_selected_scopes`",
       "targets": [
         {
           "anchor": {
-            "blob": "e00618928804650eeabd5ef862323284e1edfdc4",
-            "content": "sha256:b31c1bc20fc116b9c05dc30a9c8b0c8abaa7295f2091e7b730c7291a233ac6b2",
+            "blob": "ad181bee71830f01ceecfa0e450848eb85ae7902",
+            "content": "sha256:6edec7513bb2899e504b4decb67d19355339e61841648024c550c455296c616f",
             "locator": {
-              "kind": "symbol",
-              "name": "compare_selected_scopes"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -679,15 +533,14 @@
       ]
     },
     "9": {
-      "note": "**The per-item comparison: coverage, projection, the record half and the source half.**",
+      "note": "**The per-item comparison: coverage, projection, the record half and the source half.**\n\nAnchor: `_compare_one`",
       "targets": [
         {
           "anchor": {
-            "blob": "e00618928804650eeabd5ef862323284e1edfdc4",
-            "content": "sha256:157760c3936f28ada41f2b980994cf05d3ad774f4f72a25d6a78b9ad10cd600d",
+            "blob": "ad181bee71830f01ceecfa0e450848eb85ae7902",
+            "content": "sha256:6edec7513bb2899e504b4decb67d19355339e61841648024c550c455296c616f",
             "locator": {
-              "kind": "symbol",
-              "name": "_compare_one"
+              "kind": "file"
             }
           },
           "kind": "code"

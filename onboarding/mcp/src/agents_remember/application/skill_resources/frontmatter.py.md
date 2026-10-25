@@ -94,7 +94,6 @@ extension specification, SEP-2640).
 - The scalar and flow forms the reader does implement. [8]
 - The consumer that turns a frontmatter refusal into a recorded unreadable skill and carries the verbatim map onto the entry. [9]
 - The frontmatter-derived tool names that reach the registry as declared, never granted. [10]
-- The case that executes the verbatim-frontmatter requirement end to end. [11]
 
 ### Cross-Repo References
 

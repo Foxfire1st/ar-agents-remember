@@ -25,10 +25,15 @@ answer. Failure composition, provision-once, idempotence and reload-without-stop
 ## Evidence
 
 
+
 - The one-provision call-time read case. [1]
 
 
+
+
 - The preview and failure-composition case. [2]
+
+
 
 
 - The build-pin-wins case. [3]

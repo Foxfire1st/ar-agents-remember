@@ -36,9 +36,9 @@ Vitest suite pinning the pure `buildEngineRoomModel` builder for the enclosure-c
 No exports; one `describe("buildEngineRoomModel")` block with five `it` cases plus three fixture factories.
 
 - `node(over)` returns a minimal `EngineProcessNode` (defaults `derived` code source, `external` memory, empty edges/providers/landing, `worktreeGroup: "/w/r/grp"`) merged with overrides; the `landing: []` default (slice 5h) satisfies the new required `EngineProcessNode.landing` field, and the `ledgerRows: []` / `ledgerRowCount: 0` defaults (5h ledger popover) satisfy the new required ledger fields; `lifecycle(over)` builds a `LifecycleProjection` requiring only `id`; `worktreeEngine(id, group)` builds a worktree-scoped `ProviderNode`, tagging `role: "memory"` when `id` contains `memory`/`grepai`.
-- "attaches each process to its lifecycle by lifecycleId" feeds one node with `lifecycleId: "L1"` and a matching lifecycle, asserting `processes[0].lifecycle.id === "L1"` and `usesFallback === false`.
+- "attaches each process to its lifecycle by lifecycleId" feeds one node with `lifecycleId: "L1"` and a matching lifecycle, asserting `processes.lifecycle.id === "L1"` and `usesFallback === false`.
 - "exposes the lifecycle gate on the process view" feeds a matching lifecycle with `gate.kind` and asserts
-  `processes[0].gate` carries it.
+  `processes.gate` carries it.
 - "lifts workspace-scoped providers into workspaceEngines" passes a `scope: "workspace"` provider and asserts it surfaces in `workspaceEngines`.
 - "falls back to groupEngines when worktree providers exist but no engineProcesses" asserts `usesFallback === true`, one `fallbackStacks` entry, zero `processes`; the converse case (a process present) asserts no fallback.
 - "exposes worktreeGroup as the enclosure key" builds two models from nodes with different `id`s (`start:demo` vs `/contract.md`) but the same `worktreeGroup`, asserting both yield `enclosureKey === "/w/r/grp"` — the morph-identity invariant.

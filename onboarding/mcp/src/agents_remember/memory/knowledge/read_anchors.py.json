@@ -188,8 +188,8 @@
         },
         {
           "anchor": {
-            "blob": "af8d0af3c1cdbec034b7f460d8b013e802e8163e",
-            "content": "sha256:74f71146a82599dfa15e44364a613f63ba58826c8ab12f0c547f9a448f407228",
+            "blob": "07979a6e10a7cde98e4a4ce1dcaca7a203241e3f",
+            "content": "sha256:6e94e3f710e3074a2f9def9a24032a21aee42476e665e4ea421cba0067b627bb",
             "locator": {
               "kind": "file"
             },
@@ -315,12 +315,12 @@
       ]
     },
     "17": {
-      "note": "**The case that pins the three facts apart: an unaddressable stored spelling refused rather than reported absent.**\n\nAnchor: \"test_a_stored_path_that_cannot_be_addressed_is_refused_rather_than_reported_absent\"",
+      "note": "**The case that pins the three facts apart: an unaddressable stored spelling refused rather than reported absent.**",
       "targets": [
         {
           "anchor": {
-            "blob": "696967d803d343179746b6660e6098a8ee1446d2",
-            "content": "sha256:9339d7116db3790f81930a608eddd1671996cb66bbc285553ea6bbbecd15f558",
+            "blob": "50b41aa7749feb4071dda7fd3d204a4cd8475cd7",
+            "content": "sha256:b507051bf18e150211c2b4c43a663e595ea20d53cbadb0257eae0df43ccab4f1",
             "locator": {
               "end": 444,
               "kind": "line_range",
@@ -333,12 +333,12 @@
       ]
     },
     "18": {
-      "note": "**The case that drives the second producer: a Git this process cannot run.**\n\nAnchor: \"test_a_git_that_cannot_run_is_unavailable_rather_than_an_absent_path\"",
+      "note": "**The case that drives the second producer: a Git this process cannot run.**",
       "targets": [
         {
           "anchor": {
-            "blob": "d3aff0e96bc5b889c22b50c0e0b2888133963c9c",
-            "content": "sha256:43dd430782d42ac17564c616c1abc263724d0267f34793bc7fbf2fb7bbb316ec",
+            "blob": "50b41aa7749feb4071dda7fd3d204a4cd8475cd7",
+            "content": "sha256:ca80b63fc8a397964fb740254ec164c5d18c7fed5c8e79292c7ef3aaf91c1e52",
             "locator": {
               "end": 570,
               "kind": "line_range",
@@ -351,12 +351,12 @@
       ]
     },
     "19": {
-      "note": "**The case that shows a failed lookup is unavailable rather than absent.**\n\nAnchor: \"test_a_failed_tree_lookup_is_unavailable_rather_than_an_absent_path\"",
+      "note": "**The case that shows a failed lookup is unavailable rather than absent.**",
       "targets": [
         {
           "anchor": {
-            "blob": "91e4a83282691ee1303a098b598590e266225430",
-            "content": "sha256:0658ec11fa1ada6392371208e51507415f1830d5b2bb9e102a6581ddf930e53c",
+            "blob": "50b41aa7749feb4071dda7fd3d204a4cd8475cd7",
+            "content": "sha256:45408a8a41c50a4d1dd31f130c04d843ace9717eb4bb1b0ff92a13b29c4d6bc3",
             "locator": {
               "end": 538,
               "kind": "line_range",
@@ -385,12 +385,12 @@
       ]
     },
     "20": {
-      "note": "**The case that authors, stores, seeds and resolves a path holding glob characters to its own blob, and measures the Git facts itself.**\n\nAnchor: \"test_a_path_holding_glob_characters_is_authorable_seedable_and_observed_as_its_blob\"",
+      "note": "**The case that authors, stores, seeds and resolves a path holding glob characters to its own blob, and measures the Git facts itself.**",
       "targets": [
         {
           "anchor": {
-            "blob": "91e4a83282691ee1303a098b598590e266225430",
-            "content": "sha256:4e3e98ce9d1253f673ce3d4968acd69c324444ce187eaafb23b0322918a7213b",
+            "blob": "50b41aa7749feb4071dda7fd3d204a4cd8475cd7",
+            "content": "sha256:e61b1cde9c86ba7c35063658bd2c047f6c3655127c80689c9103fdd400aa3801",
             "locator": {
               "end": 368,
               "kind": "line_range",
@@ -403,12 +403,12 @@
       ]
     },
     "21": {
-      "note": "The non-blob entry case, and the ordinary absent-path case.\n\nAnchor: \"test_a_non_blob_tree_entry_is_reported_as_an_entry_and_never_read_as_source_bytes\"; \"test_a_path_absent_from_the_requested_tree_keeps_the_claim_and_reports_the_absence\"",
+      "note": "The non-blob entry case, and the ordinary absent-path case.",
       "targets": [
         {
           "anchor": {
-            "blob": "beb6950c6a52b96e321ecc6a5edd6278cc6591c7",
-            "content": "sha256:4801f656e0af8f515cdf17268378304f2a795cdf7fafebf6ba2a5a98f641366a",
+            "blob": "b8b22ada1c4ed31896992818816752ec5841126e",
+            "content": "sha256:4a905dd0cb67021eb2e562d0b51e0ff3565f2f4417411f567c6a3383ea92acf7",
             "locator": {
               "end": 453,
               "kind": "line_range",

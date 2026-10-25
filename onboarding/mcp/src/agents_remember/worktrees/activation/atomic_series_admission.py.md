@@ -80,7 +80,9 @@ No Domain Documentation source is configured for this memory root.
 - The status action keeps the repository and exact contract path for a read-only `worktree_status` call. [5]
 - Retry guidance distinguishes vacant, unreadable, and general contract-scoped correction states. [6]
 - The response model carries the contract fingerprint, activation, retry precondition, and status action with no classification, blocking, or source-pair field. [7]
+
 - Registered forcing proves a sync refusal addresses only this contract's own state and bounds oversized unreadable detail. [8]
+
 
 ### Cross-Repo References
 

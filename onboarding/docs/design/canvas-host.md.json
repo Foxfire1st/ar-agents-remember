@@ -1,5 +1,6 @@
 {
   "path": "docs/design/canvas-host.md",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
@@ -7,8 +8,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a9ef17715cfab37a759bf26e5c18b7299c5de3d2",
-            "content": "sha256:36ed2cd6343c9e35522eca52f367af823fb6ca94d27f6f676abe40deaf1ac9f0",
+            "blob": "031915b0994761fccfa8eff3001dacd5e631f971",
+            "content": "sha256:4c87736c8a176160112013a2b093ec1276905e89d649c3a20d3ea489c215757c",
             "locator": {
               "kind": "file"
             }
@@ -22,8 +23,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a9ef17715cfab37a759bf26e5c18b7299c5de3d2",
-            "content": "sha256:36ed2cd6343c9e35522eca52f367af823fb6ca94d27f6f676abe40deaf1ac9f0",
+            "blob": "031915b0994761fccfa8eff3001dacd5e631f971",
+            "content": "sha256:4c87736c8a176160112013a2b093ec1276905e89d649c3a20d3ea489c215757c",
             "locator": {
               "kind": "file"
             }
@@ -37,8 +38,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a9ef17715cfab37a759bf26e5c18b7299c5de3d2",
-            "content": "sha256:36ed2cd6343c9e35522eca52f367af823fb6ca94d27f6f676abe40deaf1ac9f0",
+            "blob": "031915b0994761fccfa8eff3001dacd5e631f971",
+            "content": "sha256:4c87736c8a176160112013a2b093ec1276905e89d649c3a20d3ea489c215757c",
             "locator": {
               "kind": "file"
             }
@@ -52,8 +53,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a9ef17715cfab37a759bf26e5c18b7299c5de3d2",
-            "content": "sha256:36ed2cd6343c9e35522eca52f367af823fb6ca94d27f6f676abe40deaf1ac9f0",
+            "blob": "031915b0994761fccfa8eff3001dacd5e631f971",
+            "content": "sha256:4c87736c8a176160112013a2b093ec1276905e89d649c3a20d3ea489c215757c",
             "locator": {
               "kind": "file"
             }

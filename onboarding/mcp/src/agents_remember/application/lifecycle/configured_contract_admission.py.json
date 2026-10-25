@@ -22,7 +22,7 @@
   ],
   "references": {
     "1": {
-      "note": "The module defines `ConfiguredContractAccepted`; `ConfiguredContractRefused`; `admit_configured_contract` as its public seam.",
+      "note": "The module defines `ConfiguredContractAccepted`; `ConfiguredContractRefused`; `admit_configured_contract` as its public seam.\n\nAnchor: `ConfiguredContractAccepted` `ConfiguredContractRefused` `admit_configured_contract`",
       "targets": [
         {
           "anchor": {
@@ -48,8 +48,8 @@
         },
         {
           "anchor": {
-            "blob": "a24e42442bd78eda90e129f52de5de7d6548f602",
-            "content": "sha256:47c7281ec0415ef87b601a396b28a6754ba1dd72e5d02d18d71f503c2049fedb",
+            "blob": "dbad775386ff530ac950360a2ca49d6e9fc02678",
+            "content": "sha256:2cd629788561282f91ce2fb714dbb84d0af712c551874c021fb27516590b00ef",
             "locator": {
               "kind": "symbol",
               "name": "admit_configured_contract"
@@ -59,8 +59,8 @@
         },
         {
           "anchor": {
-            "blob": "a24e42442bd78eda90e129f52de5de7d6548f602",
-            "content": "sha256:655399d5ba2dd52cec49dea4aeecd11083dacb4612524bbbd960b25fbf9f1705",
+            "blob": "dbad775386ff530ac950360a2ca49d6e9fc02678",
+            "content": "sha256:5437f585bdb5d0a3e36076ded083366b8ef27137f68451d65b02094af990e31f",
             "locator": {
               "end": 64,
               "kind": "line_range",
@@ -77,6 +77,16 @@
               "end": 93,
               "kind": "line_range",
               "start": 83
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "dbad775386ff530ac950360a2ca49d6e9fc02678",
+            "content": "sha256:579b44b5511fc3a31adf41f56e4f5f9c97bf384bf2acf8ca12c8131a67c4df6f",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "code"

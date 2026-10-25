@@ -77,7 +77,7 @@ caught even when the answer is right.
 - A skip is exact, audited and does not cascade. [23]
 - The restamp decision table binds only the absent derived fields and overwrites a stale binding. [24]
 - The class-local helpers author the pre-contract state and plan against it. [25]
-- The removed-read refusal survives the declared response contract; an undeclared key still raises. [26] [27]
+> - The removed-read refusal survives the declared response contract; an undeclared key still raises. [26] [27]
 
 - The removal sweep covers the product source, the packaged skill copy, the canonical tree and `docs`, since the harness mirrors are gone. [28]
 
@@ -90,3 +90,5 @@ caught even when the answer is right.
 - Real create tool plus saved JSON declares five-major/eight-child count assertions; source inspection is not a test run or acceptance — mcp/tests/test_task_document_application_1.py:111-136; mcp/tests/test_task_document.py:580-624. [29]
 - All four public task_doc publication operations refuse the masterless subTask with the exact message and preserve the immediate task-root file set and bytes — mcp/tests/test_task_document_application_1.py:31-57. [30]
 - Native create reports 0/1 major progress while both leaf and master row remain planning — `test_done_child_counts_as_progress_without_changing_document_stage` in mcp/tests/test_task_document_application_1.py. [31]
+
+- Removed-read tests assert ok=false/operation-removed, canonical file guidance, unchanged JSON/Markdown, no steps and rejection of an undeclared model key. Ordinary write fixtures use their fixed 40-character coordination root; that measure is distinct from location-separated content measurement. ApplicationWriteAnswers and TaskDocReadRemovalSweepTests cover phrase answers, dry diffs without master/rendered dumps, by-file section bytes/SHA256 and conflict/nonregular input refusal, and removal of read instructions/helpers. Earlier successful checklist-read defects are historical. These source tests do not forbid best-effort identity parsing or certify a fresh registered session. [27]

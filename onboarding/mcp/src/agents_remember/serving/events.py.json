@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/serving/events.py",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
@@ -41,12 +42,23 @@
   ],
   "references": {
     "1": {
-      "note": "The observer event envelope tailed here.",
+      "note": "The observer event envelope tailed here.\n\nAnchor: `Event`",
       "targets": [
         {
           "anchor": {
-            "blob": "5f8e07469944c4ce00a3b6c6682130855c7ba8a3",
-            "content": "sha256:ed4664f0abb424733ffd8244a3394e5158c3c5c5989b80dd8a67f4ff4290bc27",
+            "blob": "b5f4a15e3c26371377e98403ffbb1c7888478853",
+            "content": "sha256:518bd25c4403f72a906def18c2fb03586944d8cf73cc0928f2e644ec98c2be22",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/observer/events.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b5f4a15e3c26371377e98403ffbb1c7888478853",
+            "content": "sha256:bf1c889ad3d2ed153a0777aff4a42198118bdd11bb158fd8a134d739afae6244",
             "locator": {
               "kind": "symbol",
               "name": "Event"
@@ -108,8 +120,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a63806f02dcb39f57b535017de881cd393e6655c",
-            "content": "sha256:e5bc4711ecca0450afc832779a88676a7c6960fa3da5af410ee02d1e0151591a",
+            "blob": "3f0a6693c859f3300eb3e4a2ed3439fb33e1d04f",
+            "content": "sha256:333d1475e602493cd94f1e8dd3998389fa627cd2d07b20e4e260e6580a40a904",
             "locator": {
               "end": 129,
               "kind": "line_range",
@@ -121,12 +133,38 @@
         },
         {
           "anchor": {
-            "blob": "e2f1038f8f99aa45375bfa21ef0e369c5639cc46",
+            "blob": "3f0a6693c859f3300eb3e4a2ed3439fb33e1d04f",
+            "content": "sha256:ab5afe9326787a6e38519a2857d379c30e17271a4c7758a4202f82b22d411054",
+            "locator": {
+              "end": 95,
+              "kind": "line_range",
+              "start": 95
+            },
+            "path": "mcp/src/agents_remember/serving/_app_common.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3f0a6693c859f3300eb3e4a2ed3439fb33e1d04f",
             "content": "sha256:8e5edeb641d69e13c474106df2d1b18aec18b1575842e0646fcbdd1e2002c124",
             "locator": {
               "end": 96,
               "kind": "line_range",
               "start": 96
+            },
+            "path": "mcp/src/agents_remember/serving/_app_common.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3f0a6693c859f3300eb3e4a2ed3439fb33e1d04f",
+            "content": "sha256:04790d900d586d9961da1142df0528b529a7605a5363cb9c126d0c8d6f7dadcd",
+            "locator": {
+              "end": 82,
+              "kind": "line_range",
+              "start": 82
             },
             "path": "mcp/src/agents_remember/serving/_app_common.py"
           },
@@ -236,15 +274,14 @@
       ]
     },
     "6": {
-      "note": "`read_new_events` realigns records, admits top-level objects, filters heartbeat payloads, and bounds emitted batches.",
+      "note": "`read_new_events` realigns records, admits top-level objects, and bounds emitted batches.\n\nAnchor: `read_new_events`",
       "targets": [
         {
           "anchor": {
-            "blob": "272f3b9dcb6766eeb7ff857266cc8ac33b4a2775",
-            "content": "sha256:8022f04e76acc62722f3026e909ec41ff68231be9b38bf2c6969fad03626492a",
+            "blob": "91d04c0b9f1ef75ed3894240899e238bde789901",
+            "content": "sha256:bc69453f0b868100fbea12f5553f5a1ef460d52674d373f5c3bcbc049fe5106a",
             "locator": {
-              "kind": "symbol",
-              "name": "read_new_events"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -252,12 +289,22 @@
       ]
     },
     "7": {
-      "note": "`stream_raw_events` computes offsets once, drains the backlog in bounded chunks without pruning, and emits `ready` once after it.",
+      "note": "`stream_raw_events` computes offsets once, drains the backlog in bounded chunks without pruning, and emits `ready` once after it.\n\nAnchor: `stream_raw_events`",
       "targets": [
         {
           "anchor": {
-            "blob": "239e8b1c5cac777fdce10e4b35a2aeb3442457a2",
-            "content": "sha256:543e0b2edfce7c8dfbc142b5e92e1e9211df7bf4106871f5808ed01fb3beb8a7",
+            "blob": "91d04c0b9f1ef75ed3894240899e238bde789901",
+            "content": "sha256:bc69453f0b868100fbea12f5553f5a1ef460d52674d373f5c3bcbc049fe5106a",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "91d04c0b9f1ef75ed3894240899e238bde789901",
+            "content": "sha256:f25c0b814c5b1f5d9cd67057b6a56aa86fcebb6b4598c91ce82a46e949702552",
             "locator": {
               "kind": "symbol",
               "name": "stream_raw_events"

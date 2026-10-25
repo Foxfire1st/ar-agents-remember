@@ -6,7 +6,9 @@
 
 ## Current source contract evidence
 
+
 - Current candidate source supports the operative account; historical sections grant no current tool or execution acceptance. [17]
+
 
 ## Purpose
 
@@ -28,7 +30,7 @@
 - **The family seed (MIK-R05 rule 3; ruling Q1, 2026-09-30 03:32:18).** `_family_response(read, named)` accepts a text family ID, `ID@revision`, or the projected UUID of either. Before, a tree read ignored the family on this input and returned the repository-wide source-context view; the ruling calls that a defect. The earlier database-preservation statement is historical only; mounted knowledge tools now refuse legacy format before database access.
   - `_family_spelling(read, named)` resolves the spelling through `index.text_id` into `(family ID, revision)`: the revision is `None` when no `@` is present, and empty for a trailing bare `@`.
   - `_revision_absent(read, named)` is the **one rule for a named revision**: it returns `None` when no revision is named or it is the tree's own, and otherwise a detail naming what the tree holds, refused `selector_absent`. A tree holds one revision of a family, and a bare `ID@` names none (ruling R2-1, 2026-09-30 04:45:22). Since that fix a fresh `FAM-X@` is refused, where it used to read as the bare ID.
-  - **Resuming a family seed (review F4, 2026-09-30 04:12:49).** `_subject_refusal` takes a `family_id` normaliser, and `_named_subjects` compares a named `familyRevisionId` on a family-seed `leaf` token by its bare family ID (`_family_spelling(read, …)[0]`), so `ID`, `ID@rev` and the projected UUID all resume the walk, while another family is refused `continuation_binding_mismatch`. After the binding checks, `_resumed_revision_absent` holds a resume that names a revision to the same rule as a fresh read: `@99` or a bare `ID@` is refused `selector_absent` (R2-1). A different family therefore still fails first with `continuation_binding_mismatch`. The check returns a detail string, not a `PagingRefusal`, because `PagingRefusalCode` admits only paging codes.
+  - **Resuming a family seed (review F4, 2026-09-30 04:12:49).** `_subject_refusal` takes a `family_id` normaliser, and `_named_subjects` compares a named `familyRevisionId` on a family-seed `leaf` token by its bare family ID (`_family_spelling(read, …)`), so `ID`, `ID@rev` and the projected UUID all resume the walk, while another family is refused `continuation_binding_mismatch`. After the binding checks, `_resumed_revision_absent` holds a resume that names a revision to the same rule as a fresh read: `@99` or a bare `ID@` is refused `selector_absent` (R2-1). A different family therefore still fails first with `continuation_binding_mismatch`. The check returns a detail string, not a `PagingRefusal`, because `PagingRefusalCode` admits only paging codes.
 - **Family names in the `invariant` view (rule 7).** `_TreeRead.prepared` adds `families` (`_containing_families`: the live families by ID and title, through `family_names`) to every `invariant` view page.
 - `_refused` adds `threshold` to every refusal (ruling F8), and since MIK-R01 it takes the tree read and adds `memoryTree` (root, tree ID, index state, problems) and `indexComplete` to every refusal of a converted-tree read (rule 9, ruling N3 of 2026-09-30 00:08:39). The architect's R2-3 fix reworded the F4 detail for a missing root.
 - **A seed the tree does not hold is refused, never answered as an empty complete view (L37, P2 task 4).** A fresh
@@ -74,21 +76,31 @@ No configured live documentation source was available for this pass.
 - The module statement: any surface's token, bound ordering and code tree, threshold on every response. [1]
 - The default ordering, applied only when none is named. [2]
 - The subject a page is read about. [3]
+
 - The dispatch and the checks before any selection. [4]
+
+
 - The walk's code tree, and a root that does not hold it. [5]
+
+
 - A view page and a resumed scope page. [6]
+
 - Every refusal states the threshold, and names the memory tree and its index state (MIK-R01 rule 9, ruling N3). [7]
 - The policy each paged response is checked against, and the subjects a scope or leaf token binds, the family seed's among them. [8]
 - A named subject compared with the token's seed: a family seed's `familyRevisionId` by its bare family ID (review F4). [9]
 - The family seed: any spelling of the family, and one rule refusing a revision the tree does not hold, on fresh read and resume alike (ruling R2-1). [10]
 - Page 1 of a `source_context` path read is the leaf read, and of a read naming only `familyRevisionId` the family seed; a resumed page follows its token's kind, a leaf token's seed being a path or a family. [11]
+
 - The leaf page of a path or a family seed, one declared order on a fresh read (ruling Q7), and a path's `registration_absent` refusal carrying its route chain. [12]
+
 - The `invariant` view names its families (rule 7). [13]
 
 - Page 1 of a fresh read, or the refusal of a seed the tree does not hold. [14]
 - A family or revision the tree does not hold is refused selector_absent. [15]
 
+
 - Converted trees refuse unheld seeds; mounted tools refuse legacy memory without opening a database. [16]
+
 
 
 ### Cross-Repo References

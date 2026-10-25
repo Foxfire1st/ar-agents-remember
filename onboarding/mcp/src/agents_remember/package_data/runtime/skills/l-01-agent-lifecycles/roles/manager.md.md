@@ -6,7 +6,12 @@ A leaf Worker/Reviewer/Curator is started as one set, not Worker+Reviewer follow
 
 This account controls the named changed seams; contradictory earlier card wording below is retained only as historical evidence. Unchanged role duties and R117 file-only wake/report transport are preserved. Source inspection supplies no new runtime test, CODE verdict, review counter or acceptance.
 
+
+
+
 - A leaf Worker/Reviewer/Curator is started as one set, not Worker+Reviewer followed by Curator at freeze. Manager keeps whole-stage sync/closeout/integration/task/start boundaries and repairs own recording/address/input faults. Extra rounds beyond settings are requested from the task architect with the Worker property/construction account and recorded approval. Permission-held messages are product-owned for delivery; ordinary leaf peer artifacts are not couriered through Manager. [8]
+
+
 
 
 ## Message/file transport and return addressing
@@ -69,7 +74,12 @@ When the master line moves, Worker runs its supported leaf sync. If no path chan
 
 ## Evidence
 
+
+
+
 - The generated role carries its canonical repair-loop instructions without independent authority. [9]
+
+
 
 
 ### Repo-Internal References
@@ -78,9 +88,32 @@ When the master line moves, Worker runs its supported leaf sync. If no path chan
 | --- | --- | --- |
 | Selected-master scope, bound leaf loop, evidence inspection and AR publication ownership. | lines 8-24 | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/manager.md:8-24 |
 
-- The packaged manager is one master-scoped owner of the leaf closeout chain. [2]
-- Its hosted child dispatch uses structural task document and role. [3]
-- Curator dispatch carries the exact requirement packets, and a reviewer adjudication only when review was requested. [4]
+
+
+
+
+
+- The packaged manager is one master-scoped owner of the leaf closeout chain. Source caption: `# Manager` [2]
+
+
+
+
+
+
+
+
+
+- Its hosted child dispatch uses structural task document and role. Source caption: `role_start` [3]
+
+
+
+
+
+
+
+- Its starts follow `../operations/coordination.md`: a start names the role and the exact canonical references, and a leaf's Worker, Reviewer and Curator are started as one set with `role_start_set`. [4]
+
+
 - The canonical source owns this doctrine. [5]
 - MCP package data is copied from canonical skills and checked for drift. [6]
 
@@ -88,9 +121,17 @@ When the master line moves, Worker runs its supported leaf sync. If no path chan
 
 This packaged copy derives from the canonical roles/manager.md. The Manager retains its master’s leaf diff, direct repair and transaction ownership. A check or investigation belonging to no leaf may be assigned to Investigator within the Manager’s admitted master; leaf checks remain with the actual Worker or Reviewer. A forbidden start is sent to the known parent, or named as a blocker without one. This added delegation permission does not require an Orchestrator above one master or transfer onboarding/code ownership. Mirror synchronization remains the owner; this file adds no independent instruction.
 
+
+
+
 - This source owns the stated current Investigator scope or canonical vocabulary. [1]
 
+
+
 ## Current Contract Evidence
+
+
+
 
 
 - Current stage boundaries, settings-owned review budget and recorded approval duties are carried by these instruction sources. [7]

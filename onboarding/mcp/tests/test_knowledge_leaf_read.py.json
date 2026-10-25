@@ -4,12 +4,22 @@
   "realizes": [],
   "references": {
     "20": {
-      "note": "`test_a_path_selects_one_family_hop_in_the_declared_order` supplies the current fixture or assertion described above.",
+      "note": "`test_a_path_selects_one_family_hop_in_the_declared_order` supplies the current fixture or assertion described above.\n\nAnchor: `test_a_path_selects_one_family_hop_in_the_declared_order`",
       "targets": [
         {
           "anchor": {
-            "blob": "f4533ac64624faa9c36e2791770a4cea1b808c39",
-            "content": "sha256:719c231d5847f39cc891886dad2420c64c2dedf063940980409a9f28b9bd61e9",
+            "blob": "93ce182b4c1f78319f6efa68e94a4ae0ac23f63f",
+            "content": "sha256:45a5e09bf2d4b3896d6ee1c8919dab0a701ef6d6834636ae1091f966959e477d",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "93ce182b4c1f78319f6efa68e94a4ae0ac23f63f",
+            "content": "sha256:d61bca96a785e2f5ad9501a9757c35dd2194e1d64e438f4d65c4f20503d549a6",
             "locator": {
               "kind": "symbol",
               "name": "test_a_path_selects_one_family_hop_in_the_declared_order"
@@ -20,12 +30,22 @@
       ]
     },
     "21": {
-      "note": "`test_both_surfaces_return_one_selection_under_one_manifest` supplies the current fixture or assertion described above.",
+      "note": "`test_both_surfaces_return_one_selection_under_one_manifest` supplies the current fixture or assertion described above.\n\nAnchor: `test_both_surfaces_return_one_selection_under_one_manifest`",
       "targets": [
         {
           "anchor": {
-            "blob": "f4533ac64624faa9c36e2791770a4cea1b808c39",
-            "content": "sha256:7485b28c93f60d10ce62b680ae4c3f287d4802c374dcd7202f58a4ea148dc58f",
+            "blob": "93ce182b4c1f78319f6efa68e94a4ae0ac23f63f",
+            "content": "sha256:45a5e09bf2d4b3896d6ee1c8919dab0a701ef6d6834636ae1091f966959e477d",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "93ce182b4c1f78319f6efa68e94a4ae0ac23f63f",
+            "content": "sha256:2a1962c0b3e7d47a6d499d049219f0be3a4da0716216a8a11e800c9af1a7feba",
             "locator": {
               "kind": "symbol",
               "name": "test_both_surfaces_return_one_selection_under_one_manifest"
@@ -36,12 +56,22 @@
       ]
     },
     "22": {
-      "note": "`test_a_leaf_walk_resumes_at_its_code_tree_from_the_named_repository` supplies the current fixture or assertion described above.",
+      "note": "`test_a_leaf_walk_resumes_at_its_code_tree_from_the_named_repository` supplies the current fixture or assertion described above.\n\nAnchor: `test_a_leaf_walk_resumes_at_its_code_tree_from_the_named_repository`",
       "targets": [
         {
           "anchor": {
-            "blob": "1754beccfe5ea5ef90f83609255ce19021a04c18",
-            "content": "sha256:5a71216510badfcfe86be5efdd077a9490856e1b6a13a05693ce39b7721a91c8",
+            "blob": "93ce182b4c1f78319f6efa68e94a4ae0ac23f63f",
+            "content": "sha256:45a5e09bf2d4b3896d6ee1c8919dab0a701ef6d6834636ae1091f966959e477d",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "93ce182b4c1f78319f6efa68e94a4ae0ac23f63f",
+            "content": "sha256:45e2cd79cf396f760481cc794ac4bebfdc50225ca51ab34f9f1f8f8434bcb0c7",
             "locator": {
               "kind": "symbol",
               "name": "test_a_leaf_walk_resumes_at_its_code_tree_from_the_named_repository"
@@ -52,12 +82,22 @@
       ]
     },
     "23": {
-      "note": "`test_identity_seeds_on_a_tree_keep_the_scope_read_beside_the_leaf` supplies the current fixture or assertion described above.",
+      "note": "`test_identity_seeds_on_a_tree_keep_the_scope_read_beside_the_leaf` supplies the current fixture or assertion described above.\n\nAnchor: `test_identity_seeds_on_a_tree_keep_the_scope_read_beside_the_leaf`",
       "targets": [
         {
           "anchor": {
-            "blob": "f4533ac64624faa9c36e2791770a4cea1b808c39",
-            "content": "sha256:b86ea1b9064470226fe929445c9e38ac7e03244c5505d282b5d188ac17dc4374",
+            "blob": "93ce182b4c1f78319f6efa68e94a4ae0ac23f63f",
+            "content": "sha256:45a5e09bf2d4b3896d6ee1c8919dab0a701ef6d6834636ae1091f966959e477d",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "93ce182b4c1f78319f6efa68e94a4ae0ac23f63f",
+            "content": "sha256:6813425e3d105df3e40f839f0ff37e2cccc0cfc9f7287c5b94ccaf2209d9a83d",
             "locator": {
               "kind": "symbol",
               "name": "test_identity_seeds_on_a_tree_keep_the_scope_read_beside_the_leaf"
@@ -68,12 +108,22 @@
       ]
     },
     "24": {
-      "note": "The converted-tree world written through the text-file layout.",
+      "note": "The converted-tree world written through the text-file layout.\n\nAnchor: `_graph` `_invariant` `_family` `_sidecar`",
       "targets": [
         {
           "anchor": {
-            "blob": "f4533ac64624faa9c36e2791770a4cea1b808c39",
-            "content": "sha256:289325e65c692bbe9ce0bac0210d18ef675508a57df84ed609268473ca74b8b7",
+            "blob": "93ce182b4c1f78319f6efa68e94a4ae0ac23f63f",
+            "content": "sha256:45a5e09bf2d4b3896d6ee1c8919dab0a701ef6d6834636ae1091f966959e477d",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "93ce182b4c1f78319f6efa68e94a4ae0ac23f63f",
+            "content": "sha256:e160fed7fe608e894be53e250bc191da22eb5b8e5307036df01f4cdb5ed7d9a0",
             "locator": {
               "kind": "symbol",
               "name": "_graph"
@@ -83,8 +133,8 @@
         },
         {
           "anchor": {
-            "blob": "1754beccfe5ea5ef90f83609255ce19021a04c18",
-            "content": "sha256:40079b5553ff91a9dc09f745449c1d39eddbff3732ea5f7c4cdc4684c5889c3d",
+            "blob": "93ce182b4c1f78319f6efa68e94a4ae0ac23f63f",
+            "content": "sha256:bbf13c6de35ed7f2befbe434996bfd4ad5e1b15c45f01bb9989759ae346fb6c2",
             "locator": {
               "kind": "symbol",
               "name": "_invariant"
@@ -94,8 +144,8 @@
         },
         {
           "anchor": {
-            "blob": "1754beccfe5ea5ef90f83609255ce19021a04c18",
-            "content": "sha256:96a56dbdb4be399a4516cfb4c6a2ee4eca116fa9aac45ea50696277aaa620311",
+            "blob": "93ce182b4c1f78319f6efa68e94a4ae0ac23f63f",
+            "content": "sha256:2c122f528f9a18c38353aff398a31e4e0048423461bd20d3c356d94d65ecfed4",
             "locator": {
               "kind": "symbol",
               "name": "_family"
@@ -105,8 +155,8 @@
         },
         {
           "anchor": {
-            "blob": "1754beccfe5ea5ef90f83609255ce19021a04c18",
-            "content": "sha256:a5b5c0efe9a5096e5026050629cc5843e597cc2cf066572008086caa512e0ce3",
+            "blob": "93ce182b4c1f78319f6efa68e94a4ae0ac23f63f",
+            "content": "sha256:1550c5e20aebf17732d975b2c5c6c660114e5d4766df68e6494dc2ae622bdbaf",
             "locator": {
               "kind": "symbol",
               "name": "_sidecar"
@@ -117,12 +167,22 @@
       ]
     },
     "25": {
-      "note": "Selection, order, reference row, frontier, the chain rows after it, counts and policy.",
+      "note": "Selection, order, reference row, frontier, the chain rows after it, counts and policy.\n\nAnchor: `test_a_path_selects_one_family_hop_in_the_declared_order`",
       "targets": [
         {
           "anchor": {
-            "blob": "f4533ac64624faa9c36e2791770a4cea1b808c39",
-            "content": "sha256:719c231d5847f39cc891886dad2420c64c2dedf063940980409a9f28b9bd61e9",
+            "blob": "93ce182b4c1f78319f6efa68e94a4ae0ac23f63f",
+            "content": "sha256:45a5e09bf2d4b3896d6ee1c8919dab0a701ef6d6834636ae1091f966959e477d",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "93ce182b4c1f78319f6efa68e94a4ae0ac23f63f",
+            "content": "sha256:d61bca96a785e2f5ad9501a9757c35dd2194e1d64e438f4d65c4f20503d549a6",
             "locator": {
               "kind": "symbol",
               "name": "test_a_path_selects_one_family_hop_in_the_declared_order"
@@ -133,15 +193,14 @@
       ]
     },
     "26": {
-      "note": "One selection on both surfaces.",
+      "note": "Same manifest, ordered IDs and mapped kind/role pairs between the internal block and knowledge_read, not identical full rows.\n\nAnchor: `test_both_surfaces_return_one_selection_under_one_manifest`",
       "targets": [
         {
           "anchor": {
-            "blob": "f4533ac64624faa9c36e2791770a4cea1b808c39",
-            "content": "sha256:7485b28c93f60d10ce62b680ae4c3f287d4802c374dcd7202f58a4ea148dc58f",
+            "blob": "93ce182b4c1f78319f6efa68e94a4ae0ac23f63f",
+            "content": "sha256:45a5e09bf2d4b3896d6ee1c8919dab0a701ef6d6834636ae1091f966959e477d",
             "locator": {
-              "kind": "symbol",
-              "name": "test_both_surfaces_return_one_selection_under_one_manifest"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -149,15 +208,14 @@
       ]
     },
     "27": {
-      "note": "Family names in the `invariant` view.",
+      "note": "Family IDs in the invariant view, with the fixture title excluded.\n\nAnchor: `test_the_invariant_view_names_its_families`",
       "targets": [
         {
           "anchor": {
-            "blob": "f4533ac64624faa9c36e2791770a4cea1b808c39",
-            "content": "sha256:7eab63efaf85ccf45d87510d5f750c82a7a67387606df624f2661f9a41894b09",
+            "blob": "93ce182b4c1f78319f6efa68e94a4ae0ac23f63f",
+            "content": "sha256:45a5e09bf2d4b3896d6ee1c8919dab0a701ef6d6834636ae1091f966959e477d",
             "locator": {
-              "kind": "symbol",
-              "name": "test_the_invariant_view_names_its_families"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -165,15 +223,14 @@
       ]
     },
     "28": {
-      "note": "The conforming example in one response.",
+      "note": "Name-only conforming page with admitted states/kinds and existing location files.\n\nAnchor: `test_the_conforming_example_returns_the_whole_family_in_one_response`",
       "targets": [
         {
           "anchor": {
-            "blob": "1754beccfe5ea5ef90f83609255ce19021a04c18",
-            "content": "sha256:e7bffd1477271ca35c373791f6bbf6d9829d4af2be466e90f740c6139d739496",
+            "blob": "93ce182b4c1f78319f6efa68e94a4ae0ac23f63f",
+            "content": "sha256:45a5e09bf2d4b3896d6ee1c8919dab0a701ef6d6834636ae1091f966959e477d",
             "locator": {
-              "kind": "symbol",
-              "name": "test_the_conforming_example_returns_the_whole_family_in_one_response"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -197,12 +254,22 @@
       ]
     },
     "30": {
-      "note": "A path with no entry and no governing family refused on both surfaces with its `routeChain`, and refusals naming the tree.",
+      "note": "A path with no entry and no governing family refused on both surfaces with its `routeChain`, and refusals naming the tree.\n\nAnchor: `test_absent_and_partial_states_are_named`",
       "targets": [
         {
           "anchor": {
-            "blob": "f4533ac64624faa9c36e2791770a4cea1b808c39",
-            "content": "sha256:3badeaac9a49dfb95516547d9d09a1b2cd66a699c1167c69f5ac14c1a56b178d",
+            "blob": "93ce182b4c1f78319f6efa68e94a4ae0ac23f63f",
+            "content": "sha256:45a5e09bf2d4b3896d6ee1c8919dab0a701ef6d6834636ae1091f966959e477d",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "93ce182b4c1f78319f6efa68e94a4ae0ac23f63f",
+            "content": "sha256:3c54873d98f78b741e973be5ec50b4cc9caf498b9fae409715f5d44acc972cc2",
             "locator": {
               "kind": "symbol",
               "name": "test_absent_and_partial_states_are_named"
@@ -213,12 +280,22 @@
       ]
     },
     "31": {
-      "note": "A partial index named on both surfaces.",
+      "note": "A partial index named on both surfaces.\n\nAnchor: `test_a_partial_index_is_named_on_both_surfaces`",
       "targets": [
         {
           "anchor": {
-            "blob": "f4533ac64624faa9c36e2791770a4cea1b808c39",
-            "content": "sha256:d71d4320e9264f2d437969f53cc6006f051278fa90a91b30bc196ace704d784c",
+            "blob": "93ce182b4c1f78319f6efa68e94a4ae0ac23f63f",
+            "content": "sha256:45a5e09bf2d4b3896d6ee1c8919dab0a701ef6d6834636ae1091f966959e477d",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "93ce182b4c1f78319f6efa68e94a4ae0ac23f63f",
+            "content": "sha256:272512901e21549d45fb6ed6218487c8a9608ac878686c3ea3bef81d445b1e73",
             "locator": {
               "kind": "symbol",
               "name": "test_a_partial_index_is_named_on_both_surfaces"
@@ -229,12 +306,22 @@
       ]
     },
     "32": {
-      "note": "A root with no commit refused by name.",
+      "note": "A root with no commit refused by name.\n\nAnchor: `test_a_repository_root_with_no_commit_is_refused_by_name`",
       "targets": [
         {
           "anchor": {
-            "blob": "f4533ac64624faa9c36e2791770a4cea1b808c39",
-            "content": "sha256:3ea401a03a43b57e7385951a8a85d185b62fa5cd8283e4a2cb562952a132efee",
+            "blob": "93ce182b4c1f78319f6efa68e94a4ae0ac23f63f",
+            "content": "sha256:45a5e09bf2d4b3896d6ee1c8919dab0a701ef6d6834636ae1091f966959e477d",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "93ce182b4c1f78319f6efa68e94a4ae0ac23f63f",
+            "content": "sha256:c8045976de50597c0667f74db8102581957942600a0625b0601289e196ce2173",
             "locator": {
               "kind": "symbol",
               "name": "test_a_repository_root_with_no_commit_is_refused_by_name"
@@ -245,12 +332,22 @@
       ]
     },
     "33": {
-      "note": "A leaf walk resumes at its code tree, with no path in the token.",
+      "note": "A leaf walk resumes at its code tree, with no path in the token.\n\nAnchor: `test_a_leaf_walk_resumes_at_its_code_tree_from_the_named_repository`",
       "targets": [
         {
           "anchor": {
-            "blob": "1754beccfe5ea5ef90f83609255ce19021a04c18",
-            "content": "sha256:5a71216510badfcfe86be5efdd077a9490856e1b6a13a05693ce39b7721a91c8",
+            "blob": "93ce182b4c1f78319f6efa68e94a4ae0ac23f63f",
+            "content": "sha256:45a5e09bf2d4b3896d6ee1c8919dab0a701ef6d6834636ae1091f966959e477d",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "93ce182b4c1f78319f6efa68e94a4ae0ac23f63f",
+            "content": "sha256:45e2cd79cf396f760481cc794ac4bebfdc50225ca51ab34f9f1f8f8434bcb0c7",
             "locator": {
               "kind": "symbol",
               "name": "test_a_leaf_walk_resumes_at_its_code_tree_from_the_named_repository"
@@ -304,12 +401,22 @@
       ]
     },
     "36": {
-      "note": "Identity seeds keep the scope read beside the leaf, and the mixed-block policy.",
+      "note": "Identity seeds keep the scope read beside the leaf, and the mixed-block policy.\n\nAnchor: `test_identity_seeds_on_a_tree_keep_the_scope_read_beside_the_leaf` `_walk_entries`",
       "targets": [
         {
           "anchor": {
-            "blob": "f4533ac64624faa9c36e2791770a4cea1b808c39",
-            "content": "sha256:b86ea1b9064470226fe929445c9e38ac7e03244c5505d282b5d188ac17dc4374",
+            "blob": "93ce182b4c1f78319f6efa68e94a4ae0ac23f63f",
+            "content": "sha256:45a5e09bf2d4b3896d6ee1c8919dab0a701ef6d6834636ae1091f966959e477d",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "93ce182b4c1f78319f6efa68e94a4ae0ac23f63f",
+            "content": "sha256:6813425e3d105df3e40f839f0ff37e2cccc0cfc9f7287c5b94ccaf2209d9a83d",
             "locator": {
               "kind": "symbol",
               "name": "test_identity_seeds_on_a_tree_keep_the_scope_read_beside_the_leaf"
@@ -319,8 +426,8 @@
         },
         {
           "anchor": {
-            "blob": "1754beccfe5ea5ef90f83609255ce19021a04c18",
-            "content": "sha256:24e0c5c91517e6a2f99550017851137e21971d07c20e85d5fd81a3d7f5fa1914",
+            "blob": "93ce182b4c1f78319f6efa68e94a4ae0ac23f63f",
+            "content": "sha256:3cf06c265fde7542bb047c8b07455a8c4ec42686a87fffb64c6781408fb0da9f",
             "locator": {
               "kind": "symbol",
               "name": "_walk_entries"
@@ -335,29 +442,40 @@
       "targets": [
         {
           "anchor": {
-            "blob": "11ba98ff63f4a4815985ac51e2c0c7b5a48556a4",
-            "content": "sha256:6027af8247fcbbf12777fca8eae097ec0fc644ead20dc6255cbb7bb10446dd31",
+            "blob": "102c4550ab6429f44c8fb543d1d0662de66a1b8c",
+            "content": "sha256:ea533393f6ab58b54c02b6526a92b2a9d597d162f1fd77dbfe7a1fbceab5cbb8",
             "locator": {
-              "end": 175,
+              "end": 162,
               "kind": "line_range",
-              "start": 175
+              "start": 162
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
           "kind": "test"
-        }
-      ]
-    },
-    "38": {
-      "note": "The public leaf-tail premise measures a within-bound text-free page with continuation; rich domain-unit rows preserve selection/continued-family identities, not pointer retrieval or an execution verdict.",
-      "targets": [
+        },
         {
           "anchor": {
-            "blob": "93ce182b4c1f78319f6efa68e94a4ae0ac23f63f",
-            "content": "sha256:45a5e09bf2d4b3896d6ee1c8919dab0a701ef6d6834636ae1091f966959e477d",
+            "blob": "102c4550ab6429f44c8fb543d1d0662de66a1b8c",
+            "content": "sha256:6027af8247fcbbf12777fca8eae097ec0fc644ead20dc6255cbb7bb10446dd31",
             "locator": {
-              "kind": "file"
-            }
+              "end": 178,
+              "kind": "line_range",
+              "start": 178
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "102c4550ab6429f44c8fb543d1d0662de66a1b8c",
+            "content": "sha256:da02548ce4ede5f08c6d261a0d17d44df0708ada720380fbf5906306bcf3b81e",
+            "locator": {
+              "end": 147,
+              "kind": "line_range",
+              "start": 147
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
           },
           "kind": "test"
         }

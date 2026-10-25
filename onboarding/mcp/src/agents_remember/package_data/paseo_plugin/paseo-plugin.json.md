@@ -23,5 +23,8 @@ The minimum version range does not prove later versions preserve pinned unsuppor
 
 The current source and test assertions below establish the documented ownership; test citations do not claim a rerun in this pass.
 
+
 - Current source owner or exact assertion described above. [1]
-- The plugin manifest requires Paseo >=0.12.0 under the current pin; the >=0.11.1 requirement belongs to the earlier pin. [2]
+
+
+- The plugin manifest requires Paseo >=0.12.0. [2]

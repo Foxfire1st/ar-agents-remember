@@ -71,8 +71,12 @@ No relevant external documentation found.
 
 - The four retained canonical-to-package-data runtime targets; no product-owned Eve target remains. [1]
 
+
 - Digest comparison reports missing, extra, and changed files for `--check`, and refuses to call an absent canonical source in sync. [2]
+
+
 - Normal sync refuses self-sync, performs copy-then-swap replacement, and rechecks targets. [3]
+
 
 - Digest walk and copy use the same shared local-noise predicate; the per-target ignore API is removed. [4]
 
@@ -86,5 +90,6 @@ No meaningful cross-repo references found.
 ## Preserved incoming L109 source witness
 
 The incoming whole-source witness is retained at its earlier source epoch, not proof that the removed fifth Eve target or per-target ignore API survives this composition.
+
 
 - Historical incoming L109 declaration evidence: Current source declarations support the qualified naming or fixture account; no executed test or acceptance is inferred. [5]

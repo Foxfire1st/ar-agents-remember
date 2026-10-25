@@ -90,12 +90,12 @@
       ]
     },
     "7": {
-      "note": "The real background helper returns before its controlled host outcome, then logs it.\n\nAnchor: \"def test_real_background_function_serves_before_host_outcome_and_logs(\"",
+      "note": "The real background helper returns before its controlled host outcome, then logs it.",
       "targets": [
         {
           "anchor": {
-            "blob": "c42815dfbba3b343152a890c4291fd84970d3fcb",
-            "content": "sha256:9a629007397b1b296cf1c2f81b8f4c0dc34c70fc45c45b77b10b8e338de0c8ed",
+            "blob": "1e50356a4ad48a5958d93146cde23e5d889546fc",
+            "content": "sha256:7ee563ba1401fff8a3733740392022cd7ccaf3857875dded217b1e5226200dda",
             "locator": {
               "end": 219,
               "kind": "line_range",
@@ -107,12 +107,12 @@
       ]
     },
     "8": {
-      "note": "A supervised child avoids duplicate start and discovered settings remain explicit in guidance.\n\nAnchor: \"def test_supervised_child_does_not_start_host_again(monkeypatch, tmp_path):\"",
+      "note": "A supervised child avoids a duplicate start, and a discovered settings path stays explicit in guidance.",
       "targets": [
         {
           "anchor": {
-            "blob": "c42815dfbba3b343152a890c4291fd84970d3fcb",
-            "content": "sha256:4ae150f636924ad770b35b311b6a77c1cce33a95315631ab626573cb3b3be22b",
+            "blob": "1e50356a4ad48a5958d93146cde23e5d889546fc",
+            "content": "sha256:fb773d45ff68459ce39b24320b34ed82e87c3e8a9f5999fc8f49ddb9744ae46e",
             "locator": {
               "end": 270,
               "kind": "line_range",

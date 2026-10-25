@@ -186,15 +186,14 @@
       ]
     },
     "16": {
-      "note": "Subject-review composition calls the measurement owner and carries its optional result onto the payload.",
+      "note": "Subject-review composition calls the measurement owner and carries its optional result onto the payload.\n\nAnchor: `compose_review`",
       "targets": [
         {
           "anchor": {
-            "blob": "ac739bfed6942a8a7b701200421aa16e48d35463",
-            "content": "sha256:47fb36bd3b80dcd4fa28db9cad57e12495004dbe4f20c91814d5c7d8d56bf80c",
+            "blob": "1c9f8394dfb38bee67a5da3b90ace66147bd5334",
+            "content": "sha256:bc9aed0908cabfef3b176f1734ea114458607fab1f9bf612787eace2cfa4d0c0",
             "locator": {
-              "kind": "symbol",
-              "name": "compose_review"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/knowledge_review.py"
           },
@@ -203,15 +202,14 @@
       ]
     },
     "17": {
-      "note": "Task-context composition calls the same measurement owner and carries its optional result, not a separately inferred movement.",
+      "note": "Task-context composition calls the same measurement owner and carries its optional result, not a separately inferred movement.\n\nAnchor: `task_context_review`",
       "targets": [
         {
           "anchor": {
-            "blob": "3116530c1e9636c4f762f40648118c9afafb628f",
-            "content": "sha256:48edad60b732f6133cf448177947d10d53d3162ca244a6c606355fa84679ec76",
+            "blob": "5bd81fc6f8ff0b3bd239e3a985472aa9ae3d6d01",
+            "content": "sha256:24c7007f1a83da57d09fa21d5a68a75957fc813ea404723cd60102a51cb48705",
             "locator": {
-              "kind": "symbol",
-              "name": "task_context_review"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/review_task_context.py"
           },

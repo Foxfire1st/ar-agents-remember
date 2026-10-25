@@ -160,9 +160,13 @@ synthesized guarantee**.
 - The read owner's own refusal code for a cursor that binds another selection. [4]
 - One roster read's page bound, movement union and cursor, travelling as one request. [5]
 - **Which revision one roster read is for, the family owner's recorded list, and the axis's own sentence for a one-sided selection.** [6]
+
 - One bound snapshot as this composition reads it, with the reason it could not be opened when it could not. [7]
+
 - One side's roster read of one family revision, with what the offered cursor did. [8]
+
 - **The opener that turns a storage, OS or value error into a stated unreadable side rather than an exception.** [9]
+
 - **The read that states each fact it established: the selected revision, its guarantee, its roster page and its members — or the side's own unreadable reason.** [11]
 - **The cursor offer, where a cursor another walk minted leaves the side read from its own first page.** [12]
 - One read of one family revision's recorded scope at the request's own page bound. [13]
@@ -183,9 +187,15 @@ synthesized guarantee**.
 - **The refusal for naming the collection without a cursor: it is a set of per-family walks, so no single page was addressed.** [28]
 - **The refusal a cursor that bound no composed walk earns, in `ICR-R10@v1`'s own vocabulary with this collection's own action sentence.** [29]
 - The composition that decides which families and revisions this read is called for. [30]
+
 - **The values this read states, whose validators refuse a truncated roster presented as a whole one.** [31]
+
+
 - The production review read that asks for this roster and publishes its page. [32]
+
+
 - The cases that drive the roster read through the production review over a real enclosure. [33]
+
 
 | The page-local join emits members only for carried membership items. | `_members` | mcp/src/agents_remember/application/review_family_rosters.py:433-467 |
 

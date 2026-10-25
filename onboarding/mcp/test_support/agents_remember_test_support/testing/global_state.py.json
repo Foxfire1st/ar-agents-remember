@@ -1,5 +1,6 @@
 {
   "path": "mcp/test_support/agents_remember_test_support/testing/global_state.py",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
@@ -56,12 +57,22 @@
       ]
     },
     "10": {
-      "note": "The closed register also gives the existing closeout digest-file stats, lifecycle location cache and lifecycle operation-record cache ordinary `_clear` resets at module boundaries. It adds no scanner exemption or production reset; restored rows retain their per-test treatment.",
+      "note": "The closed register also gives the existing closeout digest-file stats, lifecycle location cache and lifecycle operation-record cache ordinary `_clear` resets at module boundaries. It adds no scanner exemption or production reset; restored rows retain their per-test treatment.\n\nAnchor: `PROCESS_MUTABLE_STATES`",
       "targets": [
         {
           "anchor": {
-            "blob": "3007b1080588e8baa67a2353791d8715f232f416",
-            "content": "sha256:45e97a83a26b557d41cf4f209513b506399f6a711e351f838ff6a95b6459168d",
+            "blob": "d422851710478deaa848eb88666bbae572b1b623",
+            "content": "sha256:c95dbcc59b62cef3c7553e0a6ba259c6eba305e927db53a4810d7d5c96b11b50",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d422851710478deaa848eb88666bbae572b1b623",
+            "content": "sha256:02156f666acbcf6874d1eb388cf50c1398e0194d2d23596790a5f9815bc51794",
             "locator": {
               "kind": "symbol",
               "name": "PROCESS_MUTABLE_STATES"
@@ -87,8 +98,18 @@
       ]
     },
     "2": {
-      "note": "Process snapshot/restore uses one typed owner.",
+      "note": "Process snapshot/restore uses one typed owner.\n\nAnchor: `_PytestProcessState` `begin_pytest_process` `end_pytest_process`",
       "targets": [
+        {
+          "anchor": {
+            "blob": "d422851710478deaa848eb88666bbae572b1b623",
+            "content": "sha256:c95dbcc59b62cef3c7553e0a6ba259c6eba305e927db53a4810d7d5c96b11b50",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
         {
           "anchor": {
             "blob": "d422851710478deaa848eb88666bbae572b1b623",
@@ -102,8 +123,8 @@
         },
         {
           "anchor": {
-            "blob": "381d2b5b4226195243682903153edb9ee3c2fb16",
-            "content": "sha256:0d412c968f7f0d8b4f299f22bb677b0f77b1d0e3df51044c71614832a4e57924",
+            "blob": "d422851710478deaa848eb88666bbae572b1b623",
+            "content": "sha256:8aef1c2a76ebeda48c8c7b6f0fd4404d64af40c72638c5e1eb9f8695e54ef77a",
             "locator": {
               "kind": "symbol",
               "name": "begin_pytest_process"
@@ -113,8 +134,8 @@
         },
         {
           "anchor": {
-            "blob": "381d2b5b4226195243682903153edb9ee3c2fb16",
-            "content": "sha256:47a8a9c4982508707646a49899af5d6d9aac85b626a5175d6d46dd9636950110",
+            "blob": "d422851710478deaa848eb88666bbae572b1b623",
+            "content": "sha256:d2530de545842cfcc3d49962b1d11f78af8555fd6fbe9b89aaee99a7bbd32402",
             "locator": {
               "kind": "symbol",
               "name": "end_pytest_process"
@@ -125,12 +146,22 @@
       ]
     },
     "3": {
-      "note": "The closed register gives every state a treatment and causal rationale.",
+      "note": "The closed register gives every state a treatment and causal rationale.\n\nAnchor: `PROCESS_MUTABLE_STATES`",
       "targets": [
         {
           "anchor": {
-            "blob": "3007b1080588e8baa67a2353791d8715f232f416",
-            "content": "sha256:45e97a83a26b557d41cf4f209513b506399f6a711e351f838ff6a95b6459168d",
+            "blob": "d422851710478deaa848eb88666bbae572b1b623",
+            "content": "sha256:c95dbcc59b62cef3c7553e0a6ba259c6eba305e927db53a4810d7d5c96b11b50",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d422851710478deaa848eb88666bbae572b1b623",
+            "content": "sha256:02156f666acbcf6874d1eb388cf50c1398e0194d2d23596790a5f9815bc51794",
             "locator": {
               "kind": "symbol",
               "name": "PROCESS_MUTABLE_STATES"
@@ -193,8 +224,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3007b1080588e8baa67a2353791d8715f232f416",
-            "content": "sha256:e757060e53c608802aca4ea1adc34f930a36abb1298e83754f6138e267f452cd",
+            "blob": "d422851710478deaa848eb88666bbae572b1b623",
+            "content": "sha256:c95dbcc59b62cef3c7553e0a6ba259c6eba305e927db53a4810d7d5c96b11b50",
             "locator": {
               "kind": "file"
             }
@@ -204,12 +235,22 @@
       ]
     },
     "9": {
-      "note": "The closed product-process register now includes agents_remember.kernel.primitives.runtime_config._LEGACY_GATE_DELEGATION_WARNED with the default reset treatment and existing _clear resetter between test modules. It is not a per-test-restored lock. The shared guard and treatment rules remain unchanged; registration is not execution of the reset control.",
+      "note": "The closed product-process register now includes agents_remember.kernel.primitives.runtime_config._LEGACY_GATE_DELEGATION_WARNED with the default reset treatment and existing _clear resetter between test modules. It is not a per-test-restored lock. The shared guard and treatment rules remain unchanged; registration is not execution of the reset control.\n\nAnchor: `PROCESS_MUTABLE_STATES`",
       "targets": [
         {
           "anchor": {
-            "blob": "3007b1080588e8baa67a2353791d8715f232f416",
-            "content": "sha256:45e97a83a26b557d41cf4f209513b506399f6a711e351f838ff6a95b6459168d",
+            "blob": "d422851710478deaa848eb88666bbae572b1b623",
+            "content": "sha256:c95dbcc59b62cef3c7553e0a6ba259c6eba305e927db53a4810d7d5c96b11b50",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d422851710478deaa848eb88666bbae572b1b623",
+            "content": "sha256:02156f666acbcf6874d1eb388cf50c1398e0194d2d23596790a5f9815bc51794",
             "locator": {
               "kind": "symbol",
               "name": "PROCESS_MUTABLE_STATES"

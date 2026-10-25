@@ -232,7 +232,6 @@ own worklist document; it returns the repair and report-only findings of the lea
   This is a statically inspected defensive branch; no dedicated execution of that
   branch is claimed. [30]
 
-- Missing converted sides produce a named incomplete repair, with no legacy fallback. \[30] [30]
 
 The checklist's leaf block passes scope, worklist-selected changed paths, current working paths and response to the source-bound gate; accepted coherence identities are not operands or substitutes for onboarding judgments.
 
@@ -329,7 +328,7 @@ marker never grants a validation PASS.
 
 - Ordinary quality revalidates scope and refuses unconverted input before the scan; removed prepared certification is not a surviving quality entry point. [29]
 
-- Ordinary quality revalidates scope and refuses unconverted input before the scan; removed prepared certification is not a surviving quality entry point. \[29] [29]
+- Ordinary quality revalidates scope and refuses unconverted input before the scan; removed prepared certification is not a surviving quality entry point. [29]
 
 
 ### Docs References
@@ -343,7 +342,9 @@ Full leaf checks compose and atomically publish the curator checklist: the tail 
 Anchor: "if not execution.publish_curator_report"; "_attach_curator_checklist(" [21] | `_attach_curator_checklist` | mcp/src/agents_remember/application/memory_quality/controller.py:635-789; mcp/src/agents_remember/application/memory_quality/controller.py:518-518; mcp/src/agents_remember/application/memory_quality/controller.py:522-522 |
 
 - Full runs use an empty-check identity sentinel while explicit subsets retain their normalized check tuple. [29]
+
 - Full execution prepares route-index caches before checking, exposes the build summary and proof count, and hands prepared values to checklist composition. [30]
+
 - Answer-key overlay preserves the existing routeIndexCacheBuild summary rather than overwriting it from the delivery projection. [31]
 
 ### Cross-Repo References
@@ -447,33 +448,68 @@ measured at all.
 
 ### Current Source-Inspection References
 
+
 - The refusal runs before any scan and returns a refused result naming the crossing sync. [1]
+
+
 - The checklist receives the list (since MIK-R09 beside the mandatory gate's findings, which do count); `None` for an unconverted tree. [2]
+
 - The worklist is recomputed after the census (since MIK-R09 by the gate where it applies, else by `_knowledge_worklist`) and summarized in the response. [3]
+
 - The prepared inputs handed to the checklist. [4]
+
+
 - Only a contract-scoped run gets a worklist, through the one recompute entry point. [5]
+
+
 - The checklist receives the worklist (since MIK-R09 the one the gate recomputed) and its path. [6]
+
+
 - The controller-level run persists, reports and renders the worklist; since MIK-R09 it captures real candidate trees, and its four open items count (`curatorActionableCount` 4, `knowledgeGate.openItemCount` 4). [7]
+
 - The checklist calls `_onboarding_refresh_gate(scope, _OnboardingGateInputs(traced_paths, working_paths, worklist), response)`; the traced paths come from `_gate_changed_paths(prepared.worklist, changed_paths)`. Accepted coherence identities are not an operand. [8]
 - The report-only findings pass through the filter. [11]
 - The filter and the adjusted count. [12]
+
 - The raw count is 2 and the response count 1; only the stray row remains. [13]
+
 - The run evaluates the gate and briefs it. [14]
+
 - The gate carried to the checklist. [15]
+
 - The gate over the exact curator candidate; `None` where it does not apply. [16]
 - Each gate finding is one repair finding, each open item counted once. [17]
 - The census blockers, split out. [18]
+
 - The execution identity contains normalized checks, detail limit, publication semantics, and frozen scope. [19]
+
 - Sync, start, and poll are separate typed request entry points with capacity and nondisclosing poll translations. [20]
+
 - Full leaf checks compose and atomically publish the curator checklist: the tail of `_execute_memory_quality` returns early for a run that publishes no checklist, and otherwise hands the payload to the checklist writer. [21]
+
 - R03 candidate-tree freezing and change refusal around curator publication. [22]
+
 - Quality computation retains whole material beside its computed status. [24]
+
+
 - Full execution supplies the contract-bound landing base separately from the validator base. [25]
 
+
+
 - Unconverted quality refusal copies the projection's own keys into the whole result before scanning; converted repair, index and coherence readiness remains separately evaluated. [26]
+
 - The unconverted fixture checks whole/delivered status, count, next action and key subset. [27]
 
+
 - Converted dispatch captures traced-path candidate blobs and forwards `code_blobs`; capture/read failure is a named `INCOMPLETE_CODE` repair, not an empty success. The retained fallback does not bypass MIK-R46's pre-scan legacy refusal. [9]
+
+
 - The source assertions count card/route traces and the uncovered file's `unexplained_hunk` once each; authored current-row answers, not bare card edits, settle the ordinary candidate. The historical Update History function is not called. [10]
+
+
 - Unconverted quality input refuses before scanning for either leaf or repository scope; current crossing/lock helpers word the conversion route, not permission to run the old format. [23]
+
+
 - Current source delta inspected statically: Describe candidate-blob capture and named failure; retire legacy-quality permission claims using current L46 authority, not the earlier recommendation. [28]
+
+- The dispatch reads the worklist run's identical-copy groups and hands blobs and groups to the gate through one inputs value; an unreadable run yields one incomplete finding and no ungrouped judgment. [32]

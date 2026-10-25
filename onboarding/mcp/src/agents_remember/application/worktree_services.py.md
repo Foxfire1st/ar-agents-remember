@@ -14,7 +14,7 @@ Builds the default service bundle that lets lower-level worktree operations use 
 
 `MemoryQualityAdapter.drift_context` binds the context's admitted leaf landing base separately from `knowledge_base`. Lower-level quality-phase consumers receive the same report-only comparison through their existing service port, without importing application base logic, changing the validator's operation base or weakening any closeout guard.
 
-- The memory-quality adapter carries the admitted landing base through the existing drift context. [13]
+- The memory-quality adapter carries the admitted landing base through the existing drift context.
 
 
 ### Logic
@@ -61,7 +61,7 @@ The rail-definition adapter is implemented; the complete R07/R08 production exec
 The default bundle no longer installs prepared closeout continuation or prepared-memory certification adapters. It still composes provider lifecycle, memory quality, citation guarding, certification rail definitions, knowledge validation with `GitBaseConverter`, structural crossing, worklist recomputation, the knowledge gate, review-artifact cleanup and the optional leaf-agent archive port. Composition is not a certification result.
 
 
-- The current `build_default_worktree_services` boundary implements the preparation contract above. [1]
+- The current `build_default_worktree_services` boundary implements the preparation contract above.
 
 
 ## Leaf agent archive binding (MIK-R76)
@@ -74,7 +74,7 @@ supply `LeafAgentArchive(config)`; a bundle built without it reports `not-bound`
 
 ## Evidence
 
-Inherited numbered findings [1] retain their exact wording and full targets as historical custody where their candidate9 owner is retired or their account conflicts with the current route. They are not evidence that an absent legacy owner still executes. No guarantee is retired by this proposal; parent disposition remains required. The source-bound current account below is separate.
+Inherited numbered findings retain their exact wording and full targets as historical custody where their candidate9 owner is retired or their account conflicts with the current route. They are not evidence that an absent legacy owner still executes. No guarantee is retired by this proposal; parent disposition remains required. The source-bound current account below is separate.
 
 - Default worktree services retain converted validation, crossing and gate ports without prepared continuation/certification adapters. [14]
 

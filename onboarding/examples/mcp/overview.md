@@ -44,7 +44,6 @@ The retirement illustration enables `autoLandOnIntegration`, `autoLandOnFinalize
 - The guideline example separates source responsibilities and uses Application entry point terminology. [2]
 - External memory roots derive from the coordination root and reject the removed repository-local layout. [3]
 - Supported provider entries derive runtime/log roots and reject unsupported per-provider fields. [4]
-- Retirement parsing preserves the two legacy aliases with current-key precedence. [5]
 - Gate delegation's standard settings home outranks the warning-bearing authority fallback. [6]
 - The old provider timeout spelling refuses and explains the separate uncapped indexing/seed boundary. [7]
 - Degradation settings retain explicit enable/failsafe switches and parsed threshold vocabulary. [8]

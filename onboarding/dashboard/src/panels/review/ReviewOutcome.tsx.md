@@ -232,7 +232,9 @@ source; requirement/provenance names are not fresh runtime evidence.
 - **The note that keeps a refusal visible beside the inventory the reader asked for instead.** [10]
 - **The retained-generation label whose closing sentence is chosen by what the retained payload actually is.** [11]
 - The outcome region evaluates shown-empty and retained-nonempty notes from supplied props and suppresses outer pending/problem lines when the workspace owns them; normal caller coherence is not arbitrary-prop validation. [12]
+
 - The surface wires the outcome region to the target-bound read and appropriate retry/source actions. [13]
+
 - Stored mounted/coherent-region cases assert phase distinctions and retained-empty/real labels; seeded capture responses and their case results are not fresh execution. [15]
 - The problem block exposes owner fields and explicit missing-field sentences as open review content, with eligibility-bound retry/source actions. [18]
 - The component imports transport projections from the public review entry. [2]

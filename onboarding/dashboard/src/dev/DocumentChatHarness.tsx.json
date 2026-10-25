@@ -3,15 +3,14 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The harness renders the real right rail for the switched Projects/Master/Task/ghost document with river/chat toggle buttons.",
+      "note": "The harness renders the real right rail for the switched Projects/Master/Task/ghost document with river/chat toggle buttons.\n\nAnchor: `DocumentChatHarness`",
       "targets": [
         {
           "anchor": {
-            "blob": "5f666dad742fab0147d7e75b25301898deb45e61",
-            "content": "sha256:6a1b59d59605fcadea4dd160da48229ddeb0fb1724655b7a2f9fb4333fdbb801",
+            "blob": "0ab6fb18150e9ffcdc0c08e1792fc57d7506d65d",
+            "content": "sha256:54ff1769bc90836cf236e7044ccafb5c08b6c6b75197c6d7b5ebab7ceddec514",
             "locator": {
-              "kind": "symbol",
-              "name": "DocumentChatHarness"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -19,15 +18,14 @@
       ]
     },
     "2": {
-      "note": "The fetch stub answers frame and document-chats calls with the fixed agent table.",
+      "note": "The fetch stub answers frame and document-chats calls with the fixed agent table.\n\nAnchor: `installFetchStub`",
       "targets": [
         {
           "anchor": {
-            "blob": "5f666dad742fab0147d7e75b25301898deb45e61",
-            "content": "sha256:24bb77e19199b87e9749bcbdd745b44569cfeedac012d75f6917fb652558b251",
+            "blob": "0ab6fb18150e9ffcdc0c08e1792fc57d7506d65d",
+            "content": "sha256:54ff1769bc90836cf236e7044ccafb5c08b6c6b75197c6d7b5ebab7ceddec514",
             "locator": {
-              "kind": "symbol",
-              "name": "installFetchStub"
+              "kind": "file"
             }
           },
           "kind": "code"

@@ -34,7 +34,9 @@ No configured Domain Documentation source applies.
 
 ### Repo-Internal References
 
+
 - The fixture installs the repository profile and declares a changed candidate. [2]
+
 - Task-document and route declaration are performed before execution. [3]
 - The executor uses isolated preparation and real report publication owners. [4]
 

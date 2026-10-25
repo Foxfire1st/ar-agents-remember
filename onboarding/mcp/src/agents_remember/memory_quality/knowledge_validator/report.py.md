@@ -48,7 +48,9 @@ The three result types.
 - One violation and its rendering. [1]
 - The report and its refusing/report-only split. [2]
 - The refusal lists every refusing violation. [3]
+
 - A shape refusal names file, field and rule. [4]
+
 
 ### Cross-Repo References
 

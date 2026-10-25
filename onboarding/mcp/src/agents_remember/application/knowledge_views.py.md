@@ -163,11 +163,15 @@ The current seam, derived-index reader and typed cursor models establish the bou
 - The seam admits the request, opens a read-only reader, renders its typed result and closes the handle. [1]
 
 - The recorded-graph and traversal-policy scope inputs a completeness statement is bounded to, and the version the dispatch tables and every payload record. [2]
+
 - The whole operation: admit, probe the schema read-only, build the reader, render, and close the connection. [3]
+
 
 - The derived-index seam checks ordering, namespace and continuation binding before reading rows and returns a typed refusal. [4]
 
+
 - The dispatch, the error-to-refusal conversion, the distinct-subject check, the counts call and the payload assembly, all through the renderer table. [5]
+
 - The seam serves exactly three views [6]
 
 - The context owns its snapshot and _snapshot_of carries that identity into the cursor binding. [7]
@@ -175,14 +179,20 @@ The current seam, derived-index reader and typed cursor models establish the bou
 - The continuation that binds a token to one snapshot, its minter, and the both-identities check the seam calls first. [8]
 - The completeness scope and the payload that refuses rows-remaining-without-a-continuation. [9]
 
+
 - The current renderer dispatch assembles the typed payload through the read-only StoreViewReader and its opener. [10]
+
 
 - The request the seam admits, the result it returns, and the refusal vocabulary both of them use. [11]
 
-- The admitted ordering inputs and the current source-context renderer. [12]
+
+- The three view renderers the dispatch table serves — source context, invariant and family; a curation-queue view is refused rather than rendered. [12]
+
+
 
 
 - The former projection writer and MCP seam call were retired. The current public knowledge tool reads a converted tree through read_tree_page, rather than calling read_knowledge_view. [15]
+
 
 
 ### Cross-Repo References
@@ -197,5 +207,8 @@ No meaningful cross-repo references found.
 ### Repo-Internal References
 
 - The ordered admission gate and its three refusals, run before the database is opened, and the single builder that turns a refusal into a typed result state. [16]
-- The five payload classes the table dispatches to, the five names the seam indexes, and the reader port with its store-side opener. [17]
-- The four admitted ordering inputs the admission gate screens the request against, and the five renderers the dispatch table imports one per view name. [18]
+
+- The three payload classes the table dispatches to — source context, invariant and family — the three view names the seam indexes, and the reader port with its store-side opener. [17]
+
+
+- The four admitted ordering inputs the admission gate screens the request against, and the three renderers the dispatch table imports one per view name. [18]

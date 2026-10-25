@@ -144,8 +144,12 @@ A source edit after the row reopens the item. Historical rows without sources re
 frozen: only a row in its own closed winning file retains legacy eligibility; open sourceless rows
 answer nothing. Marker transport and root subject `onboarding:overview` retain their earlier forms.
 
+
 - The row-kind docstring: `updated`/`no_impact`, writer-filled sources and legacy closed/open distinction. [1]
+
+
 - The gate reads source currency, counted-change requirements and each winning row's own closure provenance. [2]
+
 
 ## 260928-MIK-L11 The Planned Row (MIK-R11 Rule 5)
 
@@ -165,10 +169,14 @@ string `<ID>@v<n>` while a `deferred` row's `requirement` is structured; both sp
 R1 F5, accepted by ruling 2026-09-29T22:35:34+02:00). The module docstring now names MIK-R30 and MIK-R11 as
 the kinds that have landed.
 
-- Historical module-docstring landing outline; the current registry also includes MIK-R53 membership and record kinds. [3]
+
+- The docstring's list of landed row kinds names MIK-R30 onboarding, MIK-R11 planned, MIK-R10 hunk/file, MIK-R14 reconsideration, and MIK-R53 membership and record rows. [3]
+
 - The ref: exactly one key. [4]
 - The planned row and its disposition-bound ref. [5]
-- The current registry test compares all eight kinds as a set, including MIK-R53 membership and record. [6]
+
+- The registry test, since MIK-R53 eight kinds compared as a set. [6]
+
 
 ## 260928-MIK-L10 The No-Invariant Row (MIK-R10 Rule 3)
 
@@ -203,8 +211,12 @@ outline names MIK-R14's `reconsider:…`; the current registry also contains the
 `test_knowledge_history_files.py` compares the registry as a set because leaves register in landing
 order (review F9); subject disjointness remains asserted (review N4, accepted as a note).
 
+
 - The row's subject pattern and dispositions come from the one spelling. [11]
+
+
 - The reconsideration row: its kind, pattern and two dispositions. [12]
+
 - Registered sixth, owned by MIK-R14. [13]
 - The row kind registered with its owner, and the subject parsed. [14]
 
@@ -239,12 +251,18 @@ The file model is registered in `documents.py`; the tests in `test_knowledge_his
 each rule.
 
 - The invariant and family disposition vocabularies. [15]
+
 - The shared row shape and kind dispatch check. [16]
+
 - Covered entries: anchors with a path, or absent on one side. [17]
 - What each disposition's covers must show. [18]
 - The invariant row. [19]
+
 - The family row and its examined members. [20]
+
+
 - Many long marker lines move into one valid row. [23]
+
 - The file: one owner, one row per subject. [24]
 - The freeze predicate. [25]
 - Re-anchoring checked against K_C. [26]

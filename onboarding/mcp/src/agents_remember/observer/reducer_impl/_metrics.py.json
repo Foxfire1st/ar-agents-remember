@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/observer/reducer_impl/_metrics.py",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
@@ -20,32 +21,15 @@
     }
   ],
   "references": {
-    "1": {
-      "note": "Lifecycle metrics derive vocabulary-owned counts without age histograms.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "7d89d4d821ca54b186ca63995a049603a5fd7b0b",
-            "content": "sha256:971aac8fab740fef0829ff52b5068a0f8a13ba5611810f706362a35146ea8022",
-            "locator": {
-              "kind": "symbol",
-              "name": "_metrics"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "2": {
-      "note": "Analytics assembles retained feeds and caller-derived overrides without sidecar ranking.",
+      "note": "Analytics assembles retained feeds and caller-derived overrides without sidecar ranking.\n\nAnchor: `build_analytics`",
       "targets": [
         {
           "anchor": {
-            "blob": "7d89d4d821ca54b186ca63995a049603a5fd7b0b",
-            "content": "sha256:e66a8dac149446195dafb51bb8a62a09af54429c6323e7fe38da186fd2264667",
+            "blob": "dc7a6d1a7b42e9f22d3b82ddcee7e044cd9d7cb5",
+            "content": "sha256:bde726e93efe7ef8244710df716b85856e4098d733522c36dcd6c57f033a528e",
             "locator": {
-              "kind": "symbol",
-              "name": "build_analytics"
+              "kind": "file"
             }
           },
           "kind": "code"

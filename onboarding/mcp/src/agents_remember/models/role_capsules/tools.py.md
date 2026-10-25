@@ -57,8 +57,12 @@ No relevant documentation found after checking live sources.
 
 - The admitted policy snapshot and the request/`ToolId` shapes this module works with. [1]
 - The refusal code for a request outside the admitted snapshot. [2]
+
 - The compiler step that narrows requests before sealing the digest. [3]
-- The architect seat's declared tool requests in the canonical manifest, including the child-seat messaging tool that supplies a declared identity. [4]
+
+
+- The architect seat's declared tool requests in the canonical manifest, which name `role_message` and `role_start` for child-seat messaging. [4]
+
 - A request inside the policy is carried but not granted; one outside it is refused; every declared id exists in the public tool roster. [5]
 
 ### Cross-Repo References

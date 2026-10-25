@@ -35,15 +35,14 @@
       ]
     },
     "11": {
-      "note": "The thin delegating entry that consumes the selection and publishes `generation` + `currentness` + `scope`.",
+      "note": "The thin delegating entry that consumes the selection and publishes `generation` + `currentness` + `scope`.\n\nAnchor: `master_changeset`",
       "targets": [
         {
           "anchor": {
-            "blob": "ed2dc3fce7532d17eb6bc8d965c8db487feda835",
-            "content": "sha256:c05746a0396ad5a7276164066781be3b539a8381708540ffb470ea6c4e9937a3",
+            "blob": "8bdffe4683b00da6aed0b4f57d68f0689505bb48",
+            "content": "sha256:f05ce5d43215c150714cb107c391f4592af84fb36288fe206c9be422c0a5cb60",
             "locator": {
-              "kind": "symbol",
-              "name": "master_changeset"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/serving/changeset.py"
           },
@@ -114,26 +113,24 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5c5bad11e569807e1f8ac3f6b751e29506700331",
-            "content": "sha256:9bd1058368a641b153f336e91799b4bbcc487930c3c224d971f824b3df7de61e",
+            "blob": "7811241b103c8c1b3f9f931a62c42f51a8bc3742",
+            "content": "sha256:868cceba358df705e894864d6ecc17a750a328ae788c89cc4fb803b32930a54f",
             "locator": {
               "kind": "symbol",
               "name": "changed_files_with_counts"
             },
-            "path": "mcp/src/agents_remember/serving/changeset_reads.py"
+            "path": "mcp/src/agents_remember/worktrees/modules/git_changes.py"
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "7811241b103c8c1b3f9f931a62c42f51a8bc3742",
-            "content": "sha256:868cceba358df705e894864d6ecc17a750a328ae788c89cc4fb803b32930a54f",
+            "blob": "92ae1bfa857dbaf808ea47e97592015fb49a034e",
+            "content": "sha256:810f4e3750a0365227a2cb677133ef85646d2923fca5c5e03a2a61e4ecddf3f0",
             "locator": {
-              "end": 139,
-              "kind": "line_range",
-              "start": 99
+              "kind": "file"
             },
-            "path": "mcp/src/agents_remember/worktrees/modules/git_changes.py"
+            "path": "mcp/src/agents_remember/serving/changeset_reads.py"
           },
           "kind": "code"
         }

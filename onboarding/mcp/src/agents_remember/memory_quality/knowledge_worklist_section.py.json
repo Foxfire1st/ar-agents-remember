@@ -148,15 +148,14 @@
       ]
     },
     "17": {
-      "note": "The controller renders the section; since MIK-R09 its four open items count (`curatorActionableCount` 4).",
+      "note": "The controller renders the section; since MIK-R09 its four open items count (`curatorActionableCount` 4).\n\nAnchor: `test_the_memory_quality_controller_persists_the_worklist_and_renders_it_in_the_checklist`",
       "targets": [
         {
           "anchor": {
-            "blob": "30a7a2a8d8ec537425cdc4652a376dea8effdce8",
-            "content": "sha256:760603c37479f3c55f9774626c7bd71d0f3e556c64a2ed9b763e59a1bdf4707e",
+            "blob": "e159e3fdc8444fdd57cce28d9f770103e7ac3cb6",
+            "content": "sha256:bbcba9e57b03794900e6df5024bc17408af317e3896a1eff84d4042f64e3e44e",
             "locator": {
-              "kind": "symbol",
-              "name": "test_the_memory_quality_controller_persists_the_worklist_and_renders_it_in_the_checklist"
+              "kind": "file"
             },
             "path": "mcp/tests/test_knowledge_worklist_leaf.py"
           },

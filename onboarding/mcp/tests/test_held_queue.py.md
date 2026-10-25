@@ -54,8 +54,17 @@ end, so a lost message shows up as a missing or duplicated record.
 
 ## Evidence
 
+
 - A stale receipt zero does not lose durable admitted text after a restart. [1]
+
+
 - A terminal end survives the deletion-to-publication crash boundary. [2]
+
+
 - Replayed split work retains its part id on a deduping host. [3]
+
+
 - A larger admissible remainder is not chopped by a smaller earlier accepted size. [4]
+
+
 - Fleet-scale idle ticks cap reads and observe enumeration independently of read counts. [5]

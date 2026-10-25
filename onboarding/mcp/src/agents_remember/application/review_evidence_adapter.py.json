@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/application/review_evidence_adapter.py",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
@@ -116,8 +117,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "58434690ef3d16c8b5fd40a879a963054b3f07d5",
-            "content": "sha256:daea31fcac8acc0909791bd8751f0975a961d1a81ab5af34635dd80006e5a6d5",
+            "blob": "578ec75fd0d5d4a257abd64ddc7fca8063321dee",
+            "content": "sha256:01deaa6e23570686a887d6357648ca9466a3f61eae9b0ac117bf6d600ad97d14",
             "locator": {
               "kind": "symbol",
               "name": "prepare_evidence"

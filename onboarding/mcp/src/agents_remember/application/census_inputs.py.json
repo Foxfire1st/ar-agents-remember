@@ -1,0 +1,176 @@
+{
+  "path": "mcp/src/agents_remember/application/census_inputs.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "a2a538753a0ca2955cb8e83be1151894689b5644",
+        "content": "sha256:34a4c03946ecb9a111524b5be5d451a580119c4302a1f1c62526eea7b66f2ae9",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-6H7H8C",
+      "invariant": "INV-BTF5NF",
+      "origin": {
+        "handoffEntry": "MIK-R198@v2 §2 anchor-census",
+        "leaf": "260928-MIK-L191"
+      },
+      "rationale": "Resolves the census's inputs and names every unreadable or rejected sidecar so a partial walk cannot read as a complete one.",
+      "role": "unclassified"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The one entry point: capture both sides, census the captured trees, and carry the identities beside a diagnostic stability flag.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a2a538753a0ca2955cb8e83be1151894689b5644",
+            "content": "sha256:989eceaca8ea1c8fc996fd355de6d25e09516921ac44e4948021deee1e4eadc7",
+            "locator": {
+              "kind": "symbol",
+              "name": "measured_census"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "A Git side is captured as an immutable identity, a plain directory as its own bytes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a2a538753a0ca2955cb8e83be1151894689b5644",
+            "content": "sha256:c2ea897487f20d160782fe2667235abc38f8b2169acefdfa106ba65f99adfb55",
+            "locator": {
+              "kind": "symbol",
+              "name": "_capture"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "A Git root with no working-tree tree raises rather than degrading to a directory identity.\n\nAnchor: `KnowledgeTreeReadError`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a2a538753a0ca2955cb8e83be1151894689b5644",
+            "content": "sha256:788cf2d56cf87316ab41156fec9e5cf7462922132dc23fa45255823e6a25814d",
+            "locator": {
+              "end": 33,
+              "kind": "line_range",
+              "start": 30
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The memory side of a Git pair is read from the captured tree object.\n\nAnchor: `knowledge_tree_from_git`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a2a538753a0ca2955cb8e83be1151894689b5644",
+            "content": "sha256:1f7472fb1caa387a0e9dc27904282db8581aed1154abc4b2f60f72726889346b",
+            "locator": {
+              "end": 55,
+              "kind": "line_range",
+              "start": 50
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Only knowledge paths form the directory memory tree.\n\nAnchor: `is_knowledge_path`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a2a538753a0ca2955cb8e83be1151894689b5644",
+            "content": "sha256:2f510dc6a2eae91fa7d3f9a8af449d9d7882a6615bcd0da01fee60c3ac3c6bb0",
+            "locator": {
+              "end": 58,
+              "kind": "line_range",
+              "start": 55
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "A plain code directory becomes a path set over the same captured bytes.\n\nAnchor: `CodePathSet`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a2a538753a0ca2955cb8e83be1151894689b5644",
+            "content": "sha256:f73239918aea6d757b7f71bff0ab061f260dc78cc857590b8baa546b1ce0333d",
+            "locator": {
+              "end": 66,
+              "kind": "line_range",
+              "start": 60
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The census carries the identities its capture read and the live comparison that qualifies them.\n\nAnchor: `pair_identities`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a2a538753a0ca2955cb8e83be1151894689b5644",
+            "content": "sha256:bcde0b8e0c4ab319e17bce3d57e17fc881c608f083c47d74c28bca01f6953cf3",
+            "locator": {
+              "end": 72,
+              "kind": "line_range",
+              "start": 67
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "A live change during the read cannot rebind the captured census, whether or not it is restored.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0ad2e116f2af713a1299f1fe7ca7c77b86aa906a",
+            "content": "sha256:f4d7ea286fdd46c75851c268291b447677031a15749d01c18d24c12931b87712",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_live_changes_cannot_rebind_the_captured_census"
+            },
+            "path": "mcp/tests/test_citation_census_inputs.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "A quiet pair yields reproducible identities, and a refused capture raises instead of measuring a partial index.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0ad2e116f2af713a1299f1fe7ca7c77b86aa906a",
+            "content": "sha256:12664283e76ee2789f081c43de1abe4443d8b75293e6b44ed64b403f2ee9fad8",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_quiet_captured_pair_has_reproducible_input_identities"
+            },
+            "path": "mcp/tests/test_citation_census_inputs.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

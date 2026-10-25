@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/package_data/runtime/agents-md-files/coordinator/AGENTS.md",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
@@ -7,7 +8,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "39dc3557e131754a431a1b5497bafa704ef5c8cc",
+            "blob": "a15657c72cfec9d592ecb035de7ace917b05a8b1",
             "content": "sha256:5c2369e4d9746bb79cc50e22a49170e5d5d8f786a8b3a63caf04bedc4cf2655e",
             "locator": {
               "end": 27,
@@ -24,7 +25,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "39dc3557e131754a431a1b5497bafa704ef5c8cc",
+            "blob": "a15657c72cfec9d592ecb035de7ace917b05a8b1",
             "content": "sha256:030df64870c5c8092d2602c565d990a53b7d8368881594db4ad04bb722af37d4",
             "locator": {
               "end": 33,
@@ -36,8 +37,8 @@
         },
         {
           "anchor": {
-            "blob": "66fc64aa8dd0a907937cdc83925708b0266357ae",
-            "content": "sha256:c97f82c8edd1cdebd0aefa890ce2841f20f11f7deebf99d96b404262f570c232",
+            "blob": "a15657c72cfec9d592ecb035de7ace917b05a8b1",
+            "content": "sha256:d8c4821fc5ef0ea5ef3b413cbbc403aa84ef998058c54aaf804a517d3059a2ef",
             "locator": {
               "end": 73,
               "kind": "line_range",
@@ -48,8 +49,8 @@
         },
         {
           "anchor": {
-            "blob": "39dc3557e131754a431a1b5497bafa704ef5c8cc",
-            "content": "sha256:82aab64db1f985c9f2ecbeec5620b7a0dbe74a8137d844e00538f57cca3854d1",
+            "blob": "a15657c72cfec9d592ecb035de7ace917b05a8b1",
+            "content": "sha256:2138700c3155c8cef5cefb59998d8b94be6e0c86fd4f3a46843d4407e755e29b",
             "locator": {
               "end": 119,
               "kind": "line_range",
@@ -60,7 +61,7 @@
         },
         {
           "anchor": {
-            "blob": "39dc3557e131754a431a1b5497bafa704ef5c8cc",
+            "blob": "a15657c72cfec9d592ecb035de7ace917b05a8b1",
             "content": "sha256:2da1be91169aee6721a1235815f4ac3c9801138113f3a09b6a5bc785f1d2c2b6",
             "locator": {
               "end": 187,
@@ -77,7 +78,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "39dc3557e131754a431a1b5497bafa704ef5c8cc",
+            "blob": "a15657c72cfec9d592ecb035de7ace917b05a8b1",
             "content": "sha256:02f31803b1820ea437dc6431f3b3193740cdaa8e15127192bc5c1cbcda7e13f2",
             "locator": {
               "end": 48,
@@ -94,7 +95,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "39dc3557e131754a431a1b5497bafa704ef5c8cc",
+            "blob": "a15657c72cfec9d592ecb035de7ace917b05a8b1",
             "content": "sha256:d9a2385863c6df813880a5e04c2118d3881571a7d57ecda56b5ff041563fa47b",
             "locator": {
               "end": 150,
@@ -111,7 +112,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "39dc3557e131754a431a1b5497bafa704ef5c8cc",
+            "blob": "a15657c72cfec9d592ecb035de7ace917b05a8b1",
             "content": "sha256:337559417d5e277acceb74bd380124c5ba189de4975cc7b20d3aaa0de1c33d14",
             "locator": {
               "end": 73,
@@ -128,7 +129,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "39dc3557e131754a431a1b5497bafa704ef5c8cc",
+            "blob": "a15657c72cfec9d592ecb035de7ace917b05a8b1",
             "content": "sha256:bb6fa9de4a777293d930fefaf76cf62c9025e4dca7b0c85cc599640872d7ed66",
             "locator": {
               "end": 101,
@@ -141,12 +142,12 @@
       ]
     },
     "6": {
-      "note": "Memory-layer routing sends repository-specific guidance, including code quality checks, to memory-layer `system/*` files after `c-08-ar-coordination-context-resolver` skill resolves `memory_root`.\n\nAnchor: `### Memory Repo User Settings, Instructions, and Guidelines`",
+      "note": "Memory-layer routing sends repository-specific guidance, including code quality checks, to memory-layer `system/*` files after `c-08-ar-coordination-context-resolver` skill resolves `memory_root`. Source caption: `### Memory Repo User Settings, Instructions, and Guidelines`",
       "targets": [
         {
           "anchor": {
-            "blob": "39dc3557e131754a431a1b5497bafa704ef5c8cc",
-            "content": "sha256:1041f92612baf62f7c5c76462eadba99314e9aafbfb6e7dc9473b63f52a8aee6",
+            "blob": "a15657c72cfec9d592ecb035de7ace917b05a8b1",
+            "content": "sha256:8ac5d2ed98a7b60c134a9a7155c0b6b8e7b54dc541bcdbf140975f4f09e6fecd",
             "locator": {
               "end": 134,
               "kind": "line_range",
@@ -162,7 +163,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "39dc3557e131754a431a1b5497bafa704ef5c8cc",
+            "blob": "a15657c72cfec9d592ecb035de7ace917b05a8b1",
             "content": "sha256:4862e7691a01ece5e4fba428198d550fa4bf7b0d5fcb27985e2c07ff928ca77d",
             "locator": {
               "end": 174,
@@ -179,7 +180,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "39dc3557e131754a431a1b5497bafa704ef5c8cc",
+            "blob": "a15657c72cfec9d592ecb035de7ace917b05a8b1",
             "content": "sha256:4862e7691a01ece5e4fba428198d550fa4bf7b0d5fcb27985e2c07ff928ca77d",
             "locator": {
               "end": 174,
@@ -196,7 +197,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "39dc3557e131754a431a1b5497bafa704ef5c8cc",
+            "blob": "a15657c72cfec9d592ecb035de7ace917b05a8b1",
             "content": "sha256:0d595ad8a97a1e345377a2f7919e7745f25c81514e8f2a516dc87cbb31944894",
             "locator": {
               "end": 187,

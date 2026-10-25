@@ -58,16 +58,26 @@ The reset register also forgets master-architect host adapters, explainer in-fli
 ### Repo-Internal References
 
 - The one owned state register is explicit. [1]
+
 - Process snapshot/restore uses one typed owner. [2]
+
+
 - The closed register gives every state a treatment and causal rationale. [3]
+
 - Module reset uses already-loaded owners only. [4]
 - Worker completion precedes clearing the quality-run registry. [5]
 - Only process-owned spawned children are terminated and reaped. [7]
+
 - Loaded-owner reset includes delegated sweep and tool-writer cleanup. [8]
+
+
 
 - The closed product-process register now includes agents_remember.kernel.primitives.runtime_config._LEGACY_GATE_DELEGATION_WARNED with the default reset treatment and existing _clear resetter between test modules. It is not a per-test-restored lock. The shared guard and treatment rules remain unchanged; registration is not execution of the reset control. [9]
 
+
+
 - The closed register also gives the existing closeout digest-file stats, lifecycle location cache and lifecycle operation-record cache ordinary `_clear` resets at module boundaries. It adds no scanner exemption or production reset; restored rows retain their per-test treatment. [10]
+
 
 ## 260928-MIK-L177 A9 — The Background Pool Is Process State Too
 

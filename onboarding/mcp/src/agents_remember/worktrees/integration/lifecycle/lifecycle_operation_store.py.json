@@ -38,15 +38,14 @@
       ]
     },
     "10": {
-      "note": "A terminal successor archives its exact predecessor before publishing the next generation. (`replace_terminal`)",
+      "note": "A terminal successor archives its exact predecessor before publishing the next generation. (`replace_terminal`)\n\nAnchor: `replace_terminal`",
       "targets": [
         {
           "anchor": {
-            "blob": "c352fd41fe4707b8b335d85ba257614d2619136c",
-            "content": "sha256:df480aff6a1a707bc5c9100a10a727dbc5edbcdfb76ca3516ea2b39589211aa0",
+            "blob": "e90c6130ac0c24bea52a5c0f5f7c1b810857a1b9",
+            "content": "sha256:3724168940b2ae8f43ac0f9177c37db71689b097dc2bfe904f5d032732d5f88c",
             "locator": {
-              "kind": "symbol",
-              "name": "replace_terminal"
+              "kind": "file"
             }
           },
           "kind": "code"

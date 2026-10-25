@@ -69,7 +69,9 @@ No configured external source applies.
 ### Repo-Internal References
 
 - Route and child-intent model shapes. [1]
+
 - Fixed-list finding, round-cap permission fields, and review-state validation. [2]
+
 
 ## Historical L41 Source File Binding
 

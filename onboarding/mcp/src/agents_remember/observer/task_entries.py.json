@@ -147,12 +147,12 @@
   ],
   "references": {
     "1": {
-      "note": "Produce the single server-side join of authored task stage, worktree binding, host activity, membership and counts.\n\nAnchor: the task-entry producer",
+      "note": "Produce the single server-side join of authored task stage, worktree binding, host activity, membership and counts.",
       "targets": [
         {
           "anchor": {
-            "blob": "9e4b2543510affa9e5cc0d4f7e4ee8b261894051",
-            "content": "sha256:0250a816825917b58711fa06231313fba18a8b8374ef69afba824d905bad44df",
+            "blob": "26edfc879fceb5c3c0c071a8bf8d54180caebe20",
+            "content": "sha256:91b911a7b116915a9f4572f0350614d892e89149a358912e01ac7a60ba21bbdf",
             "locator": {
               "end": 245,
               "kind": "line_range",
@@ -164,12 +164,12 @@
       ]
     },
     "2": {
-      "note": "Task event time is served; display age is computed by the browser.\n\nAnchor: event time and display age",
+      "note": "Task event time is served; display age is computed by the browser.",
       "targets": [
         {
           "anchor": {
-            "blob": "d37db285155926a5393191721b105ab17f124661",
-            "content": "sha256:26710935a7f43bb1c69e2474e888289148018fe1f059ff53cbf4aaafeb7324d6",
+            "blob": "26edfc879fceb5c3c0c071a8bf8d54180caebe20",
+            "content": "sha256:391ea037f277b2f08970b140cd25ccab7d83e2b52ee9b2d8cb3b9c2371ba7732",
             "locator": {
               "end": 94,
               "kind": "line_range",
@@ -180,12 +180,12 @@
         },
         {
           "anchor": {
-            "blob": "359083eb794b3a5462b9e53d4dde2b27ec8ec7a9",
-            "content": "sha256:e345bcf52910f1d43fcff54700f85ea691a6b896120f54a78d4be96269c1b309",
+            "blob": "fd0cd6ba53b5d874adfcb26807b26ab92e77d56e",
+            "content": "sha256:0712aa3526279a573e1a32870b50b5837e2784b22be8aafcc063039e63b29e57",
             "locator": {
-              "end": 547,
+              "end": 459,
               "kind": "line_range",
-              "start": 540
+              "start": 452
             },
             "path": "mcp/src/agents_remember/observer/projection.py"
           },
@@ -193,8 +193,8 @@
         },
         {
           "anchor": {
-            "blob": "901cf61d779e58bf30849e0eea78a9123b9792fd",
-            "content": "sha256:73f45554796ee15769aee751c8a9f37a53c8aecd7cd5bd6b09a933b2b36ab464",
+            "blob": "bc164a94462c83d4491167bce3b58a8ce7003b54",
+            "content": "sha256:5d52b165e8e79110a60086bd568de20f412567a469d0be57ebb1d9c2d725caf2",
             "locator": {
               "end": 156,
               "kind": "line_range",
@@ -237,12 +237,12 @@
       ]
     },
     "4": {
-      "note": "Documented-subTask admission respects its own master, reports its contrary/unresolvable input and deduplicates complete reports; other listed kinds use list placement under identity/cycle guards.\n\nAnchor: Listed admission, reporting and identity/cycle guards",
+      "note": "Documented-subTask admission respects its own master, reports its contrary/unresolvable input and deduplicates complete reports; other listed kinds use list placement under identity/cycle guards.",
       "targets": [
         {
           "anchor": {
-            "blob": "d37db285155926a5393191721b105ab17f124661",
-            "content": "sha256:498b6aad55667bbf47656269670659b9718752be4fe352284b8c87114724fcd3",
+            "blob": "26edfc879fceb5c3c0c071a8bf8d54180caebe20",
+            "content": "sha256:a461fa4127666f8570b5ac561ba7f7f60a95c6b46219541e9a34ca0cf3415833",
             "locator": {
               "end": 248,
               "kind": "line_range",

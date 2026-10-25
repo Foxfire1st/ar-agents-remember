@@ -14,7 +14,9 @@ The new real-child test admits unreadable `reviewState` only while the private s
 
 ## Evidence
 
+
 - The scoped current source carries the module/document behavior described above. [1]
+
 
 
 - Adds a test importing the shared launch_world. A real child Python process runs the private command with mocked configuration/start seam. Inside start, canonical leaf resolution tolerates unreadable review only under launch context and task writing preserves the raw reviewState. The context is false outside the command, ordinary reader validation still refuses and parent assertions reread preserved raw state. [2]

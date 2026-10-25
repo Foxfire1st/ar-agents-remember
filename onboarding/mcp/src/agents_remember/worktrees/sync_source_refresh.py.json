@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/worktrees/sync_source_refresh.py",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
@@ -24,7 +25,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8a9babc9b20c6761c07440ac22d8adeba24ef3c2",
+            "blob": "42cfc78baa34c9c1a83d133d2c91d7c588856b83",
             "content": "sha256:ce81740d2e4cb263c942716af0d464e2cbb0d81cb98bf15d04ba52d79ae18843",
             "locator": {
               "kind": "symbol",

@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/worktrees/task_stage.py",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
@@ -44,8 +45,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "156779ca466f0289eb12c8623810b3798a9ca962",
-            "content": "sha256:471a1e70b1b5ad16c47341831113689485549bee8319d85dd8d91a696ec960d3",
+            "blob": "ff9e4fca054c6ed5dc91a1d267603fc32236d8f9",
+            "content": "sha256:45037c06bc64eea050a8cdff48d66c4e0a4be04ba4ef9ef9e0d187b22ace8933",
             "locator": {
               "kind": "symbol",
               "name": "plan_task_stage"

@@ -30,9 +30,9 @@ The current source facts below replace the former operative inventory. The separ
 
 ### Source and authority bounds
 
-- Source comparison: `mcp/src/agents_remember/cli/role_launch_preparation.py:135 (def _ar_tool_server_usage)`.
-- Source comparison: `mcp/src/agents_remember/cli/role_launch_preparation.py:679 ("arMcpUsage": _ar_tool_server_usage)`.
-- Source comparison: `mcp/src/agents_remember/cli/role_launch_preparation.py:775 (+ capsule.codex_delivery.trusted_instructions)`.
+- Source comparison: `mcp/src/agents_remember/cli/role_launch_preparation.py:155 (def _ar_tool_server_usage)`.
+- Source comparison: `mcp/src/agents_remember/cli/role_launch_preparation.py:771 ("arMcpUsage": _ar_tool_server_usage)`.
+- Source comparison: `mcp/src/agents_remember/cli/role_launch_preparation.py:575-590 (_assembled_brief assembles BriefParts and delegates to role_brief_message.brief_prompt)`.
 
 Source inspection supplies no new test, native-host, whole-build, landing or memory acceptance. Retained internal services and historical fixtures do not re-advertise deleted MCP tools. Numbered references retain historical custody and may include disclosed inherited stale targets; currentness or proof truth is not inferred from them.
 
@@ -105,7 +105,7 @@ The `roleTools.usage` value this module compiles now tells a role that a reply i
 - Frozen implementation of prepare_role_handover supporting the stated file behavior. [1]
 - Frozen implementation of _ar_mcp_context supporting the stated file behavior. [2]
 
-- The `_resolve_workspace` implementation now lives in its extracted owner. [3]
+> Retained earlier citation wording: - The `_resolve_workspace` implementation now lives in its extracted owner. [3]
 
 
 
@@ -150,3 +150,5 @@ Investigator’s actual started_by parent selects the concern-from-first-message
 
 - The capsule operation each launcher role is compiled from, including the free agent. [15]
 - The assignment the bootstrap seat carries, which names no task. [16]
+
+- The `_resolve_workspace` implementation now lives in its extracted owner.  Anchor: actual current supporting source [3]

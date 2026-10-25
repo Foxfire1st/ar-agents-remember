@@ -75,9 +75,13 @@ No external Domain Documentation source is configured for this memory repo.
 
 ### Repo-Internal References
 
+
 - The public facade validates input, keeps preview mutation-free, refreshes outside the lock, rereads under authority, and dispatches by contract kind. [1]
+
 - Shared upstream refresh reports per-side evidence without treating the remote as local mutation authority. [2]
+
 - Atomic-series sync binds the public wrapper to the exact transaction on this contract's own activation record: it validates ownership, publishes `reconciling`, reconciles the pinned source pair, retains incomplete work in reconciling, and publishes `active` only after current-source proof; a foreign master is never read or named. [3]
+
 - Ordinary transaction routing owns durable resume, continue, cancel, and recovery behavior. [4]
 - Stable status and recovery evidence lives at the enclosure-root journal, not in the queue. [5]
 

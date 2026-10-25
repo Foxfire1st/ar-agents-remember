@@ -144,15 +144,14 @@
       ]
     },
     "12": {
-      "note": "The recheck repeats selections before it reads bytes.",
+      "note": "The recheck repeats selections before it reads bytes.\n\nAnchor: `changed_observations`",
       "targets": [
         {
           "anchor": {
-            "blob": "a969ca4a3e6f9573376dc23de7876cccfaa59f78",
-            "content": "sha256:460ed4b4eaff75ffbcf3436841851e9cc9eb7340682d58f9b8abefe3f8ca0216",
+            "blob": "8e5fe3cc06555aa24b7a8353a5a2649d6e080876",
+            "content": "sha256:574d273db8bc349dc8ece9848026ece0a58843d54edd522c348c35d4ff5b22e9",
             "locator": {
-              "kind": "symbol",
-              "name": "changed_observations"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/kernel/recorded_reads.py"
           },
@@ -212,15 +211,14 @@
       ]
     },
     "16": {
-      "note": "Count and age bounds, and no answer for another key.",
+      "note": "Count and age bounds, and no answer for another key.\n\nAnchor: `test_the_view_memo_is_bounded_by_count_and_by_age_and_never_answers_another_key`",
       "targets": [
         {
           "anchor": {
-            "blob": "78e06c642582b7ee2331e01b9d0a2e718e80a76a",
-            "content": "sha256:ee1412d1f7feebd38fec601c9439dc99296a4d3fbf2506786f78b7e45eeb14fb",
+            "blob": "a936536068f5b5c599585cd9bc975e04e8906848",
+            "content": "sha256:4bc36d38c4fb8b8aa27abf2dc7591aeb566b0417f6db0b47bfcc4d2152a5b3e7",
             "locator": {
-              "kind": "symbol",
-              "name": "test_the_view_memo_is_bounded_by_count_and_by_age_and_never_answers_another_key"
+              "kind": "file"
             },
             "path": "mcp/tests/test_review_read_latency.py"
           },
@@ -229,15 +227,14 @@
       ]
     },
     "17": {
-      "note": "A view behind which a read failed is not kept.",
+      "note": "A view behind which a read failed is not kept.\n\nAnchor: `test_a_view_behind_which_a_read_failed_is_never_kept`",
       "targets": [
         {
           "anchor": {
-            "blob": "78e06c642582b7ee2331e01b9d0a2e718e80a76a",
-            "content": "sha256:ff87cbe5920e612dd80de9bc80ec548cc1084b42d37a57e7d672420da375d03a",
+            "blob": "a936536068f5b5c599585cd9bc975e04e8906848",
+            "content": "sha256:4bc36d38c4fb8b8aa27abf2dc7591aeb566b0417f6db0b47bfcc4d2152a5b3e7",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_view_behind_which_a_read_failed_is_never_kept"
+              "kind": "file"
             },
             "path": "mcp/tests/test_review_read_latency.py"
           },
@@ -371,15 +368,14 @@
       ]
     },
     "7": {
-      "note": "The key is built with the task lookup's reads recorded; several conditions give no key.",
+      "note": "The key is built with the task lookup's reads recorded; several conditions give no key.\n\nAnchor: `leaf_view_key`",
       "targets": [
         {
           "anchor": {
-            "blob": "e6b6e18a039a38854a26c80d11402708236430ab",
-            "content": "sha256:35f92df78ce63288a00fbcc92031c1beb900e56b76cd35980fbc49c62d82ae4b",
+            "blob": "ea7a3f0649df8d2f0e8ebb69a320eced33e5c2fa",
+            "content": "sha256:6db8e9535d2ddca60102923ac82b84a5d3fe190903cd457c14d315d2a2b1ab09",
             "locator": {
-              "kind": "symbol",
-              "name": "leaf_view_key"
+              "kind": "file"
             }
           },
           "kind": "code"

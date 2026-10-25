@@ -91,7 +91,9 @@ The role-start host remedies now name the install step where the host is not ins
 Architect, Orchestrator and Manager may start Investigator only within their admitted Projects/sprint/master containment; Investigator, Worker, Reviewer and Curator start no role. A role-addressed selected Investigator is resolved against the complete open request set, with exact IDs in an ambiguity refusal. A message that would start a new turn on a completed selected-task Investigator enters the shared selection capacity owner before send/resume; steering an already open execution keeps its slot. Host wait remains outside that short admission operation.
 
 
+
 - The current source implements this file’s stated Investigator boundary. [10]
+
 
 
 ## Refreshed current evidence
@@ -107,16 +109,20 @@ Architect, Orchestrator and Manager may start Investigator only within their adm
 
 ## Supported successor's operative seams
 
-- Public message call uses local resolution, report collection, prologue filing and held/native dispatch rather than the retained delivery-module dispatcher. [11]
+
 - After ordinary recipient resolution succeeds, the prologue constructs the filed identity from shared attachment/link/store primitives before that resolved-recipient delivery; unfinished-start holding returns through _hold_for_unresolved before _file_message and has no filed identity. [12]
 - Unheld native dispatch owns capacity/send/resume and invokes shared long-reply filing after its wait. [13]
 - Upstream held-message ordering is decided before native send; permission holding never answers a prompt. [14]
 
-- Leaf revival compares current grant-sensitive canonical task/contract scope before bridge use. [11]
+
+- Public message call uses local resolution, report collection, prologue filing and held/native dispatch rather than the retained delivery-module dispatcher.  Leaf revival compares current grant-sensitive canonical task/contract scope before bridge use. [11]
+
 
 - Typed public start conversion includes stepUp. [15]
 
+
 - Projection now delegates to the extracted answer owner. [16]
+
 
 - Readback, provenance and retry advice are extracted without changing receipt identity. [17]
 
@@ -128,4 +134,5 @@ Architect, Orchestrator and Manager may start Investigator only within their adm
 `_start_role` carries `callerHarness` into the dispatch request, so the transport's own report about its client reaches the launch instead of being reconstructed from a settings path. `_agent_override` delegates to `cli.role_agent_override.agent_override`, and before the dispatch endpoint runs, `_start_role` validates a bound free-agent override through `bound_to_caller_harness` with the caller-harness binding — on an already configured host, a model the bound provider does not offer is refused under the binding’s own sentence before preparation. At a cold root, provider binding and model validation occur after first-run preparation, whose report retains the effects already made. Every other role keeps the refusal a model given without its agent already gets.
 
 - The start path's own override rule, now owned by the caller-harness module. [19]
+
 - The start carries the client harness; configured-host choices are checked before dispatch, while a cold root defers binding and validation until after preparation. [20]

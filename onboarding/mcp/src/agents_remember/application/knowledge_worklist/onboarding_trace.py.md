@@ -25,7 +25,9 @@ Amended R53 rule 1 is a bounded pre-landing exception for this leaf's own measur
 ### Repo-Internal References
 
 - Registration and ordinary row/source requirement. [31]
+
 - Side inputs, conversions and actual settings reads. [32]
+
 
 
 - The exact candidate blob map and identical-change source groups reach the complete trace merge [33]

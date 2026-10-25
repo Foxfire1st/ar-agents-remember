@@ -17,4 +17,5 @@ This is a current source account, not an executed test, CODE/MEMORY grade, live 
 ## Evidence
 
 - A real primary checkout refuses the whole batch with the guard clause and leaves memory and task bytes unchanged [1]
+
 - A linked worktree refuses the batch on the disposable-root and contract-root mismatch, then the ordinary row alone commits and reads back [2]

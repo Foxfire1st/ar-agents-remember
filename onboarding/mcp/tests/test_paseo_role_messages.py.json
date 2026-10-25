@@ -230,12 +230,12 @@
   ],
   "references": {
     "1": {
-      "note": "The scoped current source carries the module/document behavior described above.",
+      "note": "Role addressing, reachability bounds, holding, at-most-once delivery, turn steering and waits are asserted here.",
       "targets": [
         {
           "anchor": {
-            "blob": "0e69d75e7954dc5bbcbd6b551a9d93dbe6b6402e",
-            "content": "sha256:8481e18dadd4ce7a48150307abc7b280838f754c71f1425e5dd9f927b7d77676",
+            "blob": "db2df976678eff16377688c911979deaa49f802b",
+            "content": "sha256:ee82df7a1492b0fc8deeb096331f3b560931abca1d265f147c8e59b8b2d48fa2",
             "locator": {
               "kind": "file"
             }
@@ -245,12 +245,12 @@
       ]
     },
     "2": {
-      "note": "Controlled-runtime cases now require one timestamp/sender/recipient message file and returned SHA-256, preserving unchanged bodyless delivered text and existing receipts.",
+      "note": "A message file carries one timestamp, sender and recipient and reports its returned SHA-256, while a bodyless delivered text keeps its existing form.",
       "targets": [
         {
           "anchor": {
-            "blob": "6000d8bf74427856cdb63998060ae1683b61be90",
-            "content": "sha256:b863f4715bd0df0bac60435ae413601ed47f28466251612ecb51872f75a2dfd7",
+            "blob": "db2df976678eff16377688c911979deaa49f802b",
+            "content": "sha256:61f93f4c1eb85edff82e3e5eb98b49944915513b00816806a1e3e9dcb7d055d3",
             "locator": {
               "end": 141,
               "kind": "line_range",
@@ -262,12 +262,12 @@
       ]
     },
     "3": {
-      "note": "Composed controlled-runtime cases hold permission/start-unfinished/unwritable-turn messages and deliver waiting work in order; two live leaf occupants refuse ambiguity and completed holders retain the seat until archived. Non-holdable failed resumes retain undelivered message files. Busy holding is not a general undelivered-file refusal or a sender-retry instruction. Current fixtures patch facade-local native/resolve owners; files, sender-line composition, limits, wait and independent report collection remain source assertions, not live host proof.",
+      "note": "Controlled-runtime cases hold permission, start-unfinished and unwritable-turn messages, deliver waiting work in order, refuse two live leaf occupants, and keep a completed holder's seat until archived.",
       "targets": [
         {
           "anchor": {
-            "blob": "6000d8bf74427856cdb63998060ae1683b61be90",
-            "content": "sha256:1d08915b801fdbdffda8b9ca88983dce2909053de5d7d73b20736f6d9180950e",
+            "blob": "db2df976678eff16377688c911979deaa49f802b",
+            "content": "sha256:2fa73aa8ee475f9d30444a521a07f2b129139b70d5933e1b7dadd58e10af8c85",
             "locator": {
               "end": 961,
               "kind": "line_range",

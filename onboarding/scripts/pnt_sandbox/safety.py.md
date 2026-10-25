@@ -10,4 +10,5 @@ The evaluator checks all reported/required roots after symlink resolution, selec
 
 ## Evidence
 
+
 - The scoped current source carries the module/document behavior described above. [1]

@@ -16,7 +16,11 @@ Repository verification infrastructure for quality planning, exact test selectio
 
 `projection_types.py` renders the dashboard projection contract from the Python wire schemas. It folds the served projection's additional definitions into generated TypeScript and compares that supplemental definition set exactly with its declared renames. A new supplemental definition therefore requires updating that declaration and regenerating the output. Refinements TypeScript cannot enforce structurally, including numeric bounds, lengths and patterns, remain documented beside the affected property. Unsupported schema keywords or shapes refuse generation.
 
-Its named vocabularies now concern attention severity/lane and process fact/health only. Task stage/activity/eventAt, task counts and entry membership are rendered from the current Python schema like other model fields; the generator no longer reconstructs a session-state partition, lifecycle-count extension, lifecycle metrics factory or `SubTaskRow` union. Task presentation vocabulary remains a consumer concern, not a second lifecycle model synthesized by this generator.
+Its named vocabularies now concern attention severity, lane and item class, plus process fact state and process health.
+
+> Retained earlier card wording; superseded by the current account above:
+> Its named vocabularies now concern attention severity/lane and process fact/health only.
+ Task stage/activity/eventAt, task counts and entry membership are rendered from the current Python schema like other model fields; the generator no longer reconstructs a session-state partition, lifecycle-count extension, lifecycle metrics factory or `SubTaskRow` union. Task presentation vocabulary remains a consumer concern, not a second lifecycle model synthesized by this generator.
 
 `quality_plan.py` owns typed configuration and command planning; `check.py` executes and interprets the rails. `profile_selection.py` derives the selected population, and `profile_rails.py` rederives and validates exact scope before execution. `dependency_ownership.py` and `scope.py` establish supported consumers and explicit product/verification ownership. `catalog_selection.py` reads both catalog versions through the shared reader `parse_catalog`; invalid catalog input remains an explicit selection refusal. `retry_proof.py`, `retry_coverage.py` and the child-environment helper preserve admitted retry inputs and remove outer retry/progress controls from candidate-test environments.
 
@@ -44,7 +48,11 @@ Coverage and CRAP reports describe selected production inputs. Metric findings a
 
 Missing or inconsistent causal evidence fails preflight and runs the already selected pytest population without suppression. It does not license broader unowned selection. The standing distinction between a proved dependent node and an independent same-file node remains part of the causal-report contract; its detailed producer predicates were not independently verified in this bounded account.
 
-Teardown proof uses frozen source applicability and exact report bytes. A non-applicable scenario must have no summary, and its proof explicitly records zero starts and non-applicability. An applicable scenario requires two passing fresh replications, matching candidate/selection identity and passing teardown checkpoints. Physical producer bytes, export bindings and immutable report generations remain distinct from synthetic test payloads.
+Historical teardown proof used frozen source applicability and exact report bytes: a non-applicable scenario required no summary and recorded zero starts, while an applicable scenario required two fresh passing replications and matching candidate/selection identity and teardown checkpoints. That adapter was removed with the old orchestration in MIK L113 and is not a current rail. Physical producer bytes, export bindings and immutable report generations remain distinct from synthetic test payloads.
+
+> Retained earlier card wording; superseded by the current account above:
+> Teardown proof uses frozen source applicability and exact report bytes. A non-applicable scenario must have no summary, and its proof explicitly records zero starts and non-applicability. An applicable scenario requires two passing fresh replications, matching candidate/selection identity and passing teardown checkpoints. Physical producer bytes, export bindings and immutable report generations remain distinct from synthetic test payloads.
+
 
 The final memory adapter requires exactly four selected code terminals before certification. It compares published result bytes with the producer bytes before selecting the terminal. Finalization requires five selected terminals and consumes the original fifth certificate's semantic inputs and references; it refuses absent certificate authority rather than inventing a replacement.
 
@@ -78,15 +86,20 @@ No lifecycle/status metadata in this overview grants execution or acceptance aut
 
 
 
+
 - The enforced collected-case pair is 10,000 unit/1,000 integration; the unit-only policy raises leave the guard unchanged. [12]
 
+
+
 - Development commands, diagnostic metrics and isolation; the current policy document states 10,000/1,000 budgets. [1]
+
 - Certifying publication and accepting consumers. [2]
+
 - Exact contract scope, the full check and curator worklist publication, including the informational without-proof list. [10]
+
 - Interactive catalog names missing authority without eligibility. [11]
 - Exact profile scope and suite execution. [13]
 - Plan composition and typed command steps. [14]
-- Teardown proof from source applicability and exact result bytes. [15]
 - Both catalog versions use the shared parser; retain the original deciding range. [16]
 - Catalog narrowing preserves removed consumers; parser errors remain named refusals. [17]
 - Profile selection declares full mode explicitly and retains incomplete targeted inputs. [19]
@@ -100,8 +113,19 @@ No lifecycle/status metadata in this overview grants execution or acceptance aut
 - Missing causal authority fails preflight without suppressing the selected population. [28]
 - Root configuration declares the current 10,000/1,000 budgets. [29]
 
-- Projection generation validates schema vocabulary and exact supplemental definitions. [18]
-- Helper test imports, source figures, historical Git pin and conditional record availability. [25]
 
-- The retained named vocabularies are attention severity/lane and process fact/health, not removed session state/phase. [30]
+- Projection generation validates schema vocabulary and exact supplemental definitions. [18]
+
+
+
+
+> Retained earlier citation wording: - Helper test imports, source figures, historical Git pin and conditional record availability. [25]
+
+
+
+
+- The retained named vocabularies are attention severity, lane and item class, plus process fact state and process health; the removed session state and phase vocabularies are not among them. [30]
+
 - Ordinary schema interfaces are rendered without a lifecycle-count extension or injected metrics factory/legacy subtask union. [31]
+
+- Helper test imports, source figures, historical Git pin and conditional record availability. [25]

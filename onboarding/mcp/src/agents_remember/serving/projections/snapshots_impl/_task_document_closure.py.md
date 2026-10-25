@@ -21,7 +21,9 @@ Local implementation and executable evidence do not replace requirement authorit
 ## Evidence
 
 
+
 - Computes changed/folder-master/explicitly-listed-child/graph-consumer/file-join transitive closure from retained payloads. Avoiding under-approximation is standing intent, not an implemented general ambiguity detector: invalid/unresolved links are skipped. Caller full refresh is selected by incomplete wake paths, first use or pending retry. [1]
+
 
 
 - Explicit same-folder and cross-folder listed children join the retained-payload fixpoint so sibling-derived Order display is recomputed; resolution normalizes listed paths to JSON and performs no filesystem read. [2]

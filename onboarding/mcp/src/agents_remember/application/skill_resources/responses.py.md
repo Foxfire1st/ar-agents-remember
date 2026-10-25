@@ -68,7 +68,9 @@ This account is bound to the candidate source, not a claim of a running serving 
 
 
 - Launch copies detail files, substitutes paths, and records frozen revisions. [11]
+
 - Replay validates regular opened files and frozen revisions at deterministic detail names beside the saved handover in its recorded canonical folder, not mutable corpus sources. [12]
+
 - Per-request detail artifacts use exact admitted bytes beside the handover and write-once publication. [13]
 - File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence. [14]
 
@@ -86,13 +88,21 @@ extension specification, SEP-2640).
 
 ### Repo-Internal References
 
+
 - The response builders, and the admitted facts that are present in a refusal as well as a success. [3]
+
+
 - A refusal keeps the manifest facts it has and never fabricates capsule content. [4]
+
 - The listing names files and carries no body; `skillRevision` and this file's revision are two facts. [5]
 - The trust statement every served file carries, as a constant rather than an input. [6]
+
 - The strict response contracts these builders produce. [7]
+
 - The case that executes the no-grant guarantee these builders render. [8]
+
 - The case that executes the no-body-in-a-listing guarantee these builders render. [9]
+
 - These builders serve this server's own tool surface; the extension's enumeration result is produced by the `skills/list` handler. [10]
 
 ### Cross-Repo References

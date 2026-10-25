@@ -23,4 +23,5 @@ Schema shape is not origin authorization, independent frame permission or a secr
 
 The current source and test assertions below establish the documented ownership; test citations do not claim a rerun in this pass.
 
+
 - Embed-list and explicit host-snapshot transports have separate typed empty-input responses. [1]

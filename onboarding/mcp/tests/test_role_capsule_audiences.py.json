@@ -1,9 +1,10 @@
 {
   "path": "mcp/tests/test_role_capsule_audiences.py",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
-      "note": "Source assertion: test_compiler_delivers_only_common_and_selected_role_stage_parts. The declaration is not an execution receipt.",
+      "note": "The compiler delivers only the common and selected role stage parts.",
       "targets": [
         {
           "anchor": {
@@ -19,7 +20,7 @@
       ]
     },
     "10": {
-      "note": "Source assertion: test_curator_execution_support_is_an_unconditional_inline_output. The declaration is not an execution receipt.",
+      "note": "Curator execution support is an unconditional inline output.",
       "targets": [
         {
           "anchor": {
@@ -35,7 +36,7 @@
       ]
     },
     "11": {
-      "note": "Source assertion: test_d301_external_backing_output_stays_inline. The declaration is not an execution receipt.",
+      "note": "External backing output stays inline.",
       "targets": [
         {
           "anchor": {
@@ -51,7 +52,7 @@
       ]
     },
     "12": {
-      "note": "Source assertion: test_d301_bootstrap_requires_reproducibility_not_reader_execution. The declaration is not an execution receipt.",
+      "note": "Bootstrap requires reproducibility rather than reader execution.",
       "targets": [
         {
           "anchor": {
@@ -67,7 +68,7 @@
       ]
     },
     "13": {
-      "note": "Source assertion: test_d301_delivered_authoring_resolves_actual_capsule_routing. The declaration is not an execution receipt.",
+      "note": "Delivered authoring resolves the actual capsule routing.",
       "targets": [
         {
           "anchor": {
@@ -83,7 +84,7 @@
       ]
     },
     "14": {
-      "note": "Source assertion: test_d301_handoff_file_is_read_for_first_review_then_reused_for_repairs. The declaration is not an execution receipt.",
+      "note": "The hand-off file is read for the first review and reused for repairs.",
       "targets": [
         {
           "anchor": {
@@ -99,7 +100,7 @@
       ]
     },
     "15": {
-      "note": "Source assertion: test_curator_detail_names_use_only_curation_workflow_numbers_and_titles. The declaration is not an execution receipt.",
+      "note": "Curator detail names use only the curation workflow's numbers and titles.",
       "targets": [
         {
           "anchor": {
@@ -115,7 +116,7 @@
       ]
     },
     "16": {
-      "note": "Source assertion: test_nested_curator_file_names_use_the_same_operation_titles. The declaration is not an execution receipt.",
+      "note": "Nested curator file names use the same operation titles.",
       "targets": [
         {
           "anchor": {
@@ -131,7 +132,7 @@
       ]
     },
     "17": {
-      "note": "Source assertion: test_leaf_role_texts_mark_only_their_own_completed_steps. The declaration is not an execution receipt.",
+      "note": "Leaf role texts mark only their own completed steps.",
       "targets": [
         {
           "anchor": {
@@ -147,7 +148,7 @@
       ]
     },
     "18": {
-      "note": "Source assertion: test_every_curator_stage_keeps_the_serving_build_producer_boundary. The declaration is not an execution receipt.",
+      "note": "Every Curator stage keeps the serving build's producer boundary.",
       "targets": [
         {
           "anchor": {
@@ -163,7 +164,7 @@
       ]
     },
     "19": {
-      "note": "Source assertion: test_memory_review_instructions_select_the_independent_recorded_lane. The declaration is not an execution receipt.",
+      "note": "Memory-review instructions select the independent recorded lane.",
       "targets": [
         {
           "anchor": {
@@ -179,7 +180,7 @@
       ]
     },
     "2": {
-      "note": "Source assertion: test_compiler_carries_declared_step_detail_bytes_as_separate_references. The declaration is not an execution receipt.",
+      "note": "Declared step detail bytes travel as separate references.",
       "targets": [
         {
           "anchor": {
@@ -195,7 +196,7 @@
       ]
     },
     "20": {
-      "note": "Source assertion: test_real_operation_audiences_preserve_pinned_common_and_only_addressed_paragraphs. The declaration is not an execution receipt.",
+      "note": "Real operation audiences preserve the pinned common part and only the addressed paragraphs.",
       "targets": [
         {
           "anchor": {
@@ -211,7 +212,7 @@
       ]
     },
     "21": {
-      "note": "Source assertion: test_operation_audience_markings_preserve_pinned_bytes_and_immutable_closeout. The declaration is not an execution receipt.",
+      "note": "Operation audience markings preserve the pinned bytes and the immutable closeout.",
       "targets": [
         {
           "anchor": {
@@ -227,7 +228,7 @@
       ]
     },
     "22": {
-      "note": "Source assertion: test_repairing_roles_stop_after_three_repairs_of_the_same_check_or_finding. The declaration is not an execution receipt.",
+      "note": "A repairing role stops after three repairs of the same check or finding.",
       "targets": [
         {
           "anchor": {
@@ -243,8 +244,20 @@
       ]
     },
     "23": {
-      "note": "The expected Reviewer-only paragraph includes missing-entry return and clean-sync no-round obligations.",
+      "note": "The expected Reviewer-only paragraph includes the missing-entry return and the clean-sync no-round obligations.",
       "targets": [
+        {
+          "anchor": {
+            "blob": "ee20e82cebeed3333d4831fe27894c9806cfb48c",
+            "content": "sha256:d47a99fc8b0b98c4bd6cfc202b943a211bbd2a6b8630d2d5ea405e55db15d176",
+            "locator": {
+              "end": 590,
+              "kind": "line_range",
+              "start": 570
+            }
+          },
+          "kind": "test"
+        },
         {
           "anchor": {
             "blob": "ee20e82cebeed3333d4831fe27894c9806cfb48c",
@@ -264,8 +277,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "38a29b692c837f2c549937b56d5a44e3e39eaa7a",
-            "content": "sha256:07236c7070136e0b9d2cdc943feaca7d2ca35adac89bbb530906e15e891bd60b",
+            "blob": "ee20e82cebeed3333d4831fe27894c9806cfb48c",
+            "content": "sha256:ea447977d29f8e38ada7b1146fb5fcce1d180c5afb9033b0267b79e94aec2834",
             "locator": {
               "end": 623,
               "kind": "line_range",
@@ -292,7 +305,7 @@
       ]
     },
     "3": {
-      "note": "Source assertion: test_handover_writes_immutable_source_details_beside_its_file. The declaration is not an execution receipt.",
+      "note": "The handover writes immutable source details beside its file.",
       "targets": [
         {
           "anchor": {
@@ -308,7 +321,7 @@
       ]
     },
     "4": {
-      "note": "Source assertion: test_launch_composition_names_frozen_details_by_their_request_paths. The declaration is not an execution receipt.",
+      "note": "The launch composition names frozen details by their request paths.",
       "targets": [
         {
           "anchor": {
@@ -324,15 +337,14 @@
       ]
     },
     "5": {
-      "note": "Source assertion: test_curator_receives_ruled_step_details_separately_and_keeps_writer_boundaries. The declaration is not an execution receipt.",
+      "note": "The Curator receives ruled step details separately and keeps the writer boundaries.\n\nAnchor: `test_curator_receives_ruled_step_details_separately_and_keeps_writer_boundaries`",
       "targets": [
         {
           "anchor": {
-            "blob": "04e92cf5dcbf1f0e0c3d761fbe0ca8871fa1a97d",
-            "content": "sha256:c8c74649cd9a30fabe348e80685281f433415fa0e929a36c23ffe98de7d7deb2",
+            "blob": "ee20e82cebeed3333d4831fe27894c9806cfb48c",
+            "content": "sha256:492e5af8c7c9762c02b08a6a56ca254b2cedd0429cc70a236b1fd00c300be7b0",
             "locator": {
-              "kind": "symbol",
-              "name": "test_curator_receives_ruled_step_details_separately_and_keeps_writer_boundaries"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -340,7 +352,7 @@
       ]
     },
     "6": {
-      "note": "Source assertion: test_manager_curation_does_not_receive_curators_card_or_writer_steps. The declaration is not an execution receipt.",
+      "note": "Manager curation receives neither the Curator's card nor the writer's steps.",
       "targets": [
         {
           "anchor": {
@@ -356,7 +368,7 @@
       ]
     },
     "7": {
-      "note": "Source assertion: test_d301_real_capsules_deliver_named_step_files_as_frozen_launch_artifacts. The declaration is not an execution receipt.",
+      "note": "The real D301 capsules deliver named step files as frozen launch artifacts.",
       "targets": [
         {
           "anchor": {
@@ -372,7 +384,7 @@
       ]
     },
     "8": {
-      "note": "Source assertion: test_d301_curator_keeps_whole_handover_and_step_limits_in_capsule. The declaration is not an execution receipt.",
+      "note": "The Curator's capsule keeps the whole handover and its step limits.",
       "targets": [
         {
           "anchor": {
@@ -388,7 +400,7 @@
       ]
     },
     "9": {
-      "note": "Source assertion: test_step_details_are_named_for_reaching_their_step_not_intake. The declaration is not an execution receipt.",
+      "note": "Step details are named for reaching their step, not for intake.",
       "targets": [
         {
           "anchor": {

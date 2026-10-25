@@ -33,4 +33,4 @@ None.
 
 The package is a marker; the nearest route overview documents the route scope.
 
-- The governing route overview documents the package route scope. [1]
+- The governing route overview documents the package route scope. 

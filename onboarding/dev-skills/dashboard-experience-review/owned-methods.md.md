@@ -52,8 +52,12 @@ No relevant external documentation found.
 
 ### Repo-Internal References
 
+
 - The pipeline that invokes these passes at Stage 3, and the OWNED-vs-DELEGATE split. [1]
+
+
 - The doctrine whose violations raise severity by a tier. [2]
+
 
 ### Cross-Repo References
 

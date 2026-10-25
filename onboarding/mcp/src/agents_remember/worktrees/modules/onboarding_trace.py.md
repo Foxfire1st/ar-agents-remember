@@ -26,7 +26,9 @@ The leaf's amended R53 rule 1 permits its own measured counted-card change under
 
 ## Evidence
 
+
 - Trace items consume caller-provided groups with every source/blob, and an existing root overview-file/card collision refuses as incomplete. [5]
+
 
 
 ### Repo-Internal References
@@ -34,7 +36,9 @@ The leaf's amended R53 rule 1 permits its own measured counted-card change under
 - References-only counting and readable repair. [1]
 - Item facts, ordinary open state and repair reasons. [2]
 - Per-file history provenance and current eligible answers. [3]
+
 - Card/route construction, failure reporting and stored-item predicate. [4]
+
 
 ### Docs References
 

@@ -211,8 +211,12 @@ the ordering closure with its registered tiebreak, the row shapes that keep the 
 payload validator that enforces honest bounding, the page size, the reader port, and the request and result that
 carry exactly one outcome.
 
-- The five view names in the design's own order, derived from the closed literal, and the module docstring stating that the five names are the contract. [1]
+
+- The three view names the closed literal admits — `source_context`, `invariant`, `family` — derived from it in that order, beside the module docstring's rule that the declared names are the contract. [1]
+
+
 - The published phrase per view that describes what the view selects and, as its comment states, carries no ordering claim. [2]
+
 
 - The position record and its builder require the declared tiebreak and admitted ordering input. [3]
 
@@ -232,15 +236,22 @@ carry exactly one outcome.
 - The no-consequence value requires a claim reference only for an authored statement. [12]
 
 
-- The four per-view row declarations preserve their distinct fact, change-locus, assessment and conditions fields. [13]
+
+- The three per-view row declarations keep their distinct fields: the source-context row's fact kind with its recorded location and anchor state, the invariant row's statement with its essential conditions, and the family row's explicit change locus. [13]
 
 
-- Machine work, curator judgment and their queue composition remain separate models. [14]
 
-- The discriminated union that keeps each payload's concrete row type, the declared page size, and the tuple of the five payload classes. [16]
-- The reader port as a runtime-checkable protocol of five methods — including the membership read a generic kind lookup cannot answer — and the recorded row and registered totals it hands a view. [17]
+
+
+- The discriminated union that keeps each payload's concrete row type, the declared page size, and the tuple of the three payload classes. [16]
+
+
+- The reader port as a runtime-checkable protocol of seven methods — the snapshot, the registered totals, the four row reads (including the membership read a generic kind lookup cannot answer) and the anchor state — and the recorded row and count values it hands a view. [17]
+
 - The optional source-path seed on the read request, and the shipped `PathSeed` rule the request's own validator uses instead of copying it: a path no stored anchor could carry selects nothing by construction rather than by a lookup that happens to miss. [19]
+
 - The three optional location fields a realization row carries — the recorded role, path and locator, reported by the invariant and the family view alike — and the one stored locator both decode through. [20]
+
 
 ### Cross-Repo References
 

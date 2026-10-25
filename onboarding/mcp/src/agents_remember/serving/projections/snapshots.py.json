@@ -3,12 +3,12 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "Anchor: Current task documents reuse the canonical reader.",
+      "note": "Canonical task-source and document readers remain read-only.",
       "targets": [
         {
           "anchor": {
-            "blob": "afdcb36128545477785fb11dbc359f26dac60cba",
-            "content": "sha256:b01e62f51ed909fab1c0782d1b8ce778659717bdbb0a37951fde8442407e6a2c",
+            "blob": "8553750157ecbc4d4c86582aec77207f1b043431",
+            "content": "sha256:f38ee32cdbc0dc2b782dc72be96e3b4699b06fe9cd4312d14492d0ed8351a5b6",
             "locator": {
               "end": 174,
               "kind": "line_range",
@@ -115,8 +115,8 @@
         },
         {
           "anchor": {
-            "blob": "83dd17a352b5292eba904d3ad3a081e7767cc88e",
-            "content": "sha256:113e8645faa0d638108e5d43da58cbeb162494e04f411fecc8d14549488d9f00",
+            "blob": "b57a7faeabd73c5872db8d333a7970835083e727",
+            "content": "sha256:441864cecbe593e55a3ec447e4793137b19a788673bfb784429ca66426106f69",
             "locator": {
               "end": 131,
               "kind": "line_range",
@@ -169,15 +169,14 @@
       ]
     },
     "5": {
-      "note": "The canonical projected-document reader prunes only extra_forbidden paths, revalidates in bounded passes and still withholds other malformed truth.",
+      "note": "The extracted parser retains addressed unknown-field pruning without forgiving other malformed data.\n\nAnchor: `_projected_document`",
       "targets": [
         {
           "anchor": {
-            "blob": "afdcb36128545477785fb11dbc359f26dac60cba",
-            "content": "sha256:739671a860e8acf658130f7eb9c33cb6edfdc17e53f07c46beb1d1df6cc91c75",
+            "blob": "8553750157ecbc4d4c86582aec77207f1b043431",
+            "content": "sha256:ff5ac511e0d698f5f84ad870b6a061f08c95a504abeea453f0ee998e356b059f",
             "locator": {
-              "kind": "symbol",
-              "name": "_projected_document"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py"
           },
@@ -207,23 +206,6 @@
               "end": 80,
               "kind": "line_range",
               "start": 41
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "9": {
-      "note": "Anchor: Worktree resources and active group filtering.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "12e671c3c6ee629ba635d19778b66208824cb3cb",
-            "content": "sha256:953e2cb6b8399229720bbd84e25ef2db73866771957edc2a7489420d00a9c9be",
-            "locator": {
-              "end": 245,
-              "kind": "line_range",
-              "start": 185
             }
           },
           "kind": "code"

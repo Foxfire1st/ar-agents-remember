@@ -74,12 +74,22 @@
       ]
     },
     "15": {
-      "note": "Record landing refuses through its route entry.",
+      "note": "Record landing refuses through its route entry.\n\nAnchor: `test_record_landing_refuses_through_its_route_entry`",
       "targets": [
         {
           "anchor": {
-            "blob": "b77fdd007c84e03ec75cccfb3736ffbb57118884",
-            "content": "sha256:7689a7b234b0cb254bfd2a2f633fecf07c9a1af3f4a220ec95e707c9e0f67bd6",
+            "blob": "cd9c5537287afcf467e163d880cd215185351a3f",
+            "content": "sha256:e6e886652be10fbe00a654d24ab251858ba9d00e64b0aa84004afa1ddddc11e3",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "cd9c5537287afcf467e163d880cd215185351a3f",
+            "content": "sha256:28fb9a8b5a78141ccea04a39e71203296f5d2dcf5765fafafad963e40659c5dd",
             "locator": {
               "kind": "symbol",
               "name": "test_record_landing_refuses_through_its_route_entry"
@@ -90,12 +100,22 @@
       ]
     },
     "16": {
-      "note": "Direct landing preview and apply refuse through their entry.",
+      "note": "Direct landing preview and apply refuse through their entry.\n\nAnchor: `test_direct_landing_preview_and_apply_refuse_through_their_route_entry`",
       "targets": [
         {
           "anchor": {
-            "blob": "b77fdd007c84e03ec75cccfb3736ffbb57118884",
-            "content": "sha256:3f7bc6557a05b8446e9b602174c01b492ca4d4de59eedc0e6710036e6b2e0530",
+            "blob": "cd9c5537287afcf467e163d880cd215185351a3f",
+            "content": "sha256:e6e886652be10fbe00a654d24ab251858ba9d00e64b0aa84004afa1ddddc11e3",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "cd9c5537287afcf467e163d880cd215185351a3f",
+            "content": "sha256:6c13977a1e1c986320e607d66eca9114c71cca08fbfaa29c5435367cf5c05358",
             "locator": {
               "kind": "symbol",
               "name": "test_direct_landing_preview_and_apply_refuse_through_their_route_entry"
@@ -138,12 +158,22 @@
       ]
     },
     "19": {
-      "note": "A failed Git read inside the gate is never a verdict.",
+      "note": "A failed Git read inside the gate is never a verdict.\n\nAnchor: `test_a_git_read_that_fails_inside_a_predicate_or_the_validator_is_never_a_verdict`",
       "targets": [
         {
           "anchor": {
-            "blob": "90df88949dc14e01c8a6bd6b614d3faf6a85d4ce",
-            "content": "sha256:781254a9aa437829fc461e3dcb967d7c727b953ae73a55cccb2d7e10287e72d0",
+            "blob": "cd9c5537287afcf467e163d880cd215185351a3f",
+            "content": "sha256:e6e886652be10fbe00a654d24ab251858ba9d00e64b0aa84004afa1ddddc11e3",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "cd9c5537287afcf467e163d880cd215185351a3f",
+            "content": "sha256:0e425bdd1f448a42d7ae12f7f58516db125ab0941ec2f5b2ee4c6d0d6223bae1",
             "locator": {
               "kind": "symbol",
               "name": "test_a_git_read_that_fails_inside_a_predicate_or_the_validator_is_never_a_verdict"
@@ -204,12 +234,22 @@
       ]
     },
     "23": {
-      "note": "A hand-closed history file is refused at closeout validation and recorded landing.",
+      "note": "A hand-closed history file is refused at closeout validation and recorded landing.\n\nAnchor: `test_a_hand_closed_leaf_file_is_refused_at_closeout_validation_and_record_landing`",
       "targets": [
         {
           "anchor": {
-            "blob": "b77fdd007c84e03ec75cccfb3736ffbb57118884",
-            "content": "sha256:bc681f97490d8ba99a5cd312417633ead8bb68f74605ee7a8a3d1dee5954cba1",
+            "blob": "cd9c5537287afcf467e163d880cd215185351a3f",
+            "content": "sha256:e6e886652be10fbe00a654d24ab251858ba9d00e64b0aa84004afa1ddddc11e3",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "cd9c5537287afcf467e163d880cd215185351a3f",
+            "content": "sha256:9e304d27e518188d9fc67324964429426d9015d040ee630800041780a2fb36aa",
             "locator": {
               "kind": "symbol",
               "name": "test_a_hand_closed_leaf_file_is_refused_at_closeout_validation_and_record_landing"
@@ -220,12 +260,22 @@
       ]
     },
     "24": {
-      "note": "Direct landing's route entries and its closing across calls.",
+      "note": "Direct landing's route entries and its closing across calls.\n\nAnchor: `test_direct_landing_preview_and_apply_refuse_through_their_route_entry`",
       "targets": [
         {
           "anchor": {
-            "blob": "b77fdd007c84e03ec75cccfb3736ffbb57118884",
-            "content": "sha256:3f7bc6557a05b8446e9b602174c01b492ca4d4de59eedc0e6710036e6b2e0530",
+            "blob": "cd9c5537287afcf467e163d880cd215185351a3f",
+            "content": "sha256:e6e886652be10fbe00a654d24ab251858ba9d00e64b0aa84004afa1ddddc11e3",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "cd9c5537287afcf467e163d880cd215185351a3f",
+            "content": "sha256:6c13977a1e1c986320e607d66eca9114c71cca08fbfaa29c5435367cf5c05358",
             "locator": {
               "kind": "symbol",
               "name": "test_direct_landing_preview_and_apply_refuse_through_their_route_entry"
@@ -284,12 +334,22 @@
       ]
     },
     "28": {
-      "note": "Git failures, probes and the read set.",
+      "note": "Git failures, probes and the read set.\n\nAnchor: `test_a_git_read_that_fails_inside_a_predicate_or_the_validator_is_never_a_verdict`",
       "targets": [
         {
           "anchor": {
-            "blob": "90df88949dc14e01c8a6bd6b614d3faf6a85d4ce",
-            "content": "sha256:781254a9aa437829fc461e3dcb967d7c727b953ae73a55cccb2d7e10287e72d0",
+            "blob": "cd9c5537287afcf467e163d880cd215185351a3f",
+            "content": "sha256:e6e886652be10fbe00a654d24ab251858ba9d00e64b0aa84004afa1ddddc11e3",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "cd9c5537287afcf467e163d880cd215185351a3f",
+            "content": "sha256:0e425bdd1f448a42d7ae12f7f58516db125ab0941ec2f5b2ee4c6d0d6223bae1",
             "locator": {
               "kind": "symbol",
               "name": "test_a_git_read_that_fails_inside_a_predicate_or_the_validator_is_never_a_verdict"
@@ -315,12 +375,22 @@
         },
         {
           "anchor": {
-            "blob": "90df88949dc14e01c8a6bd6b614d3faf6a85d4ce",
-            "content": "sha256:aaabd2d787c2395f0985482d43fce2c1d636c6593c1b3362279ddd1e2aacd396",
+            "blob": "cd9c5537287afcf467e163d880cd215185351a3f",
+            "content": "sha256:d7ee6d97a48e75ac9e9cbe52feb1e31f78842b2b384db72f8f409b8138ae8cd4",
             "locator": {
               "end": 1086,
               "kind": "line_range",
               "start": 1033
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "cd9c5537287afcf467e163d880cd215185351a3f",
+            "content": "sha256:e6e886652be10fbe00a654d24ab251858ba9d00e64b0aa84004afa1ddddc11e3",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -332,12 +402,38 @@
       "targets": [
         {
           "anchor": {
-            "blob": "11ba98ff63f4a4815985ac51e2c0c7b5a48556a4",
+            "blob": "102c4550ab6429f44c8fb543d1d0662de66a1b8c",
+            "content": "sha256:55aae7f94adeaee949444718419adb19e16cc7f7312f0ed50d8c4db0f98dc21f",
+            "locator": {
+              "end": 156,
+              "kind": "line_range",
+              "start": 156
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "102c4550ab6429f44c8fb543d1d0662de66a1b8c",
             "content": "sha256:ef900a5b38b3a4393ac60a6d42f336d540dcb806538d4acca19a65c9c1fc194c",
             "locator": {
-              "end": 169,
+              "end": 172,
               "kind": "line_range",
-              "start": 169
+              "start": 172
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "102c4550ab6429f44c8fb543d1d0662de66a1b8c",
+            "content": "sha256:9393f040e32d0b87aae56db7e4fee6efff6d470068daf26055068d3e10586dc6",
+            "locator": {
+              "end": 141,
+              "kind": "line_range",
+              "start": 141
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -362,12 +458,22 @@
       ]
     },
     "32": {
-      "note": "An unwritable closing receipt restores the file and admits nothing.",
+      "note": "An unwritable closing receipt restores the file and admits nothing.\n\nAnchor: `test_an_unwritable_closing_receipt_restores_the_file_and_admits_nothing`",
       "targets": [
         {
           "anchor": {
-            "blob": "90df88949dc14e01c8a6bd6b614d3faf6a85d4ce",
-            "content": "sha256:0f8785c3f4fe3d78f23bdb550f9df0e26ddca9c8eaa89c96199c7001aeca4e23",
+            "blob": "cd9c5537287afcf467e163d880cd215185351a3f",
+            "content": "sha256:e6e886652be10fbe00a654d24ab251858ba9d00e64b0aa84004afa1ddddc11e3",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "cd9c5537287afcf467e163d880cd215185351a3f",
+            "content": "sha256:ef96c555b5b61d7bebbc7ca9ad72f6cb61644a8107aa34318f4ef549eb366fd1",
             "locator": {
               "kind": "symbol",
               "name": "test_an_unwritable_closing_receipt_restores_the_file_and_admits_nothing"
@@ -378,12 +484,22 @@
       ]
     },
     "33": {
-      "note": "A hand-closed file is refused also one commit later and through a merge.",
+      "note": "A hand-closed file is refused also one commit later and through a merge.\n\nAnchor: `test_a_hand_closed_leaf_file_is_refused_at_closeout_validation_and_record_landing`",
       "targets": [
         {
           "anchor": {
-            "blob": "b77fdd007c84e03ec75cccfb3736ffbb57118884",
-            "content": "sha256:bc681f97490d8ba99a5cd312417633ead8bb68f74605ee7a8a3d1dee5954cba1",
+            "blob": "cd9c5537287afcf467e163d880cd215185351a3f",
+            "content": "sha256:e6e886652be10fbe00a654d24ab251858ba9d00e64b0aa84004afa1ddddc11e3",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "cd9c5537287afcf467e163d880cd215185351a3f",
+            "content": "sha256:9e304d27e518188d9fc67324964429426d9015d040ee630800041780a2fb36aa",
             "locator": {
               "kind": "symbol",
               "name": "test_a_hand_closed_leaf_file_is_refused_at_closeout_validation_and_record_landing"
@@ -394,12 +510,12 @@
       ]
     },
     "34": {
-      "note": "The four refusal cases retain their original branches and complete world snapshots. _record checks the exact answer code, state and error detail rather than merely accepting a generic unsuccessful return.\n\nAnchor: Current STOP-delta source carrier",
+      "note": "The four refusal cases retain their original branches and complete world snapshots. _record checks the exact answer code, state and error detail rather than merely accepting a generic unsuccessful return.",
       "targets": [
         {
           "anchor": {
-            "blob": "90df88949dc14e01c8a6bd6b614d3faf6a85d4ce",
-            "content": "sha256:1ce1172f5cd30442436af939c52b3ec57059c52cb0af3e872e6165e418be63fa",
+            "blob": "cd9c5537287afcf467e163d880cd215185351a3f",
+            "content": "sha256:e6e886652be10fbe00a654d24ab251858ba9d00e64b0aa84004afa1ddddc11e3",
             "locator": {
               "kind": "file"
             }

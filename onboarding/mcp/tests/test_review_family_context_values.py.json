@@ -103,23 +103,6 @@
         }
       ]
     },
-    "15": {
-      "note": "The population case independently checks authored-head ambiguity and explicitly requested revision history.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "425092f3285d3d94542b2b0e0be045cade63d706",
-            "content": "sha256:8c5a74167ce8a4b96a4f10f8c9de8e73dbae81ff859ab21120c1760732c6f7f7",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_the_history_sentence_is_measured_against_the_family_owner"
-            },
-            "path": "mcp/tests/test_review_family_context_population.py"
-          },
-          "kind": "test"
-        }
-      ]
-    },
     "2": {
       "note": "**Counts that do not describe the entries and rosters beside them.**",
       "targets": [

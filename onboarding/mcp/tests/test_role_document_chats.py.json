@@ -212,15 +212,14 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The exact started Projects request is read without substituting an Architect; archived targets disappear.",
+      "note": "The exact started Projects request is read without substituting an Architect; archived targets disappear.\n\nAnchor: `test_exact_started_projects_request_is_read_without_substituting_an_architect`",
       "targets": [
         {
           "anchor": {
-            "blob": "b6b13a674eb735bfc97e339f58f2596f28d3f4c9",
-            "content": "sha256:80cebe1cc125556322378b0a8f82ed548f28d40b11d92d6da31ebf7d0ed89dcd",
+            "blob": "a06f44bc580f7e2fdc333a837ad2a0b484b0cad6",
+            "content": "sha256:3df96ae53e2a2632532a20a1e50a51a2f3cdd6b1c731fe75e2a69f44541d18ee",
             "locator": {
-              "kind": "symbol",
-              "name": "test_exact_started_projects_request_is_read_without_substituting_an_architect"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -244,15 +243,14 @@
       ]
     },
     "2": {
-      "note": "Archival and missing-agent filtering keeps only live document agents.",
+      "note": "Archival and missing-agent filtering keeps only live document agents.\n\nAnchor: `test_read_filters_archived_and_missing_agents_and_keeps_document_workspaces`",
       "targets": [
         {
           "anchor": {
-            "blob": "7d5323ca23bf7ba51e9dc9bdab0ba798d5f12795",
-            "content": "sha256:7d73c6ca0c817a4eea8e25241354f5b5a6dd458722848980580458b77cb21d6c",
+            "blob": "a06f44bc580f7e2fdc333a837ad2a0b484b0cad6",
+            "content": "sha256:3df96ae53e2a2632532a20a1e50a51a2f3cdd6b1c731fe75e2a69f44541d18ee",
             "locator": {
-              "kind": "symbol",
-              "name": "test_read_filters_archived_and_missing_agents_and_keeps_document_workspaces"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -276,15 +274,14 @@
       ]
     },
     "5": {
-      "note": "Refusals preserve the native status, reason and owner repair on the role_start answer.",
+      "note": "Refusals preserve the native status, reason and owner repair on the role_start answer.\n\nAnchor: `test_preparation_refusals_keep_exact_status_reason_and_repair_on_role_start`",
       "targets": [
         {
           "anchor": {
-            "blob": "b6b13a674eb735bfc97e339f58f2596f28d3f4c9",
-            "content": "sha256:12c796553dfb723f3201fd2fae8148a13077b0ebf4244b7fc93794436ee91b47",
+            "blob": "a06f44bc580f7e2fdc333a837ad2a0b484b0cad6",
+            "content": "sha256:3df96ae53e2a2632532a20a1e50a51a2f3cdd6b1c731fe75e2a69f44541d18ee",
             "locator": {
-              "kind": "symbol",
-              "name": "test_preparation_refusals_keep_exact_status_reason_and_repair_on_role_start"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -292,15 +289,14 @@
       ]
     },
     "6": {
-      "note": "A masterless start reports the opened Projects workspace without a creation guess.",
+      "note": "A masterless start reports the opened Projects workspace without a creation guess.\n\nAnchor: `test_masterless_starts_report_opened_without_a_creation_guess`",
       "targets": [
         {
           "anchor": {
-            "blob": "b6b13a674eb735bfc97e339f58f2596f28d3f4c9",
-            "content": "sha256:6c237aa80e38ce8ccec58d703a0fa8d2f910976e643c4ad1746c6b9ce9a9aff4",
+            "blob": "a06f44bc580f7e2fdc333a837ad2a0b484b0cad6",
+            "content": "sha256:3df96ae53e2a2632532a20a1e50a51a2f3cdd6b1c731fe75e2a69f44541d18ee",
             "locator": {
-              "kind": "symbol",
-              "name": "test_masterless_starts_report_opened_without_a_creation_guess"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -312,8 +308,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b6b13a674eb735bfc97e339f58f2596f28d3f4c9",
-            "content": "sha256:12b1ed7249253ccece3728ce02e93d835eb462ad9223f0ce9b5623ab00bb0ce0",
+            "blob": "a06f44bc580f7e2fdc333a837ad2a0b484b0cad6",
+            "content": "sha256:ac662e5bab595120042a61ad39fac479ebb9bb6c217461f3813feacea685b182",
             "locator": {
               "end": 153,
               "kind": "line_range",
@@ -329,8 +325,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8eb41bc3857bbaa5b8fc9d6f7a658b61516acc0a",
-            "content": "sha256:e3c460a4a4754ee01a5d8930850b060acdc0ef4af4cabf5023372af98f740522",
+            "blob": "a06f44bc580f7e2fdc333a837ad2a0b484b0cad6",
+            "content": "sha256:3df96ae53e2a2632532a20a1e50a51a2f3cdd6b1c731fe75e2a69f44541d18ee",
             "locator": {
               "kind": "file"
             }

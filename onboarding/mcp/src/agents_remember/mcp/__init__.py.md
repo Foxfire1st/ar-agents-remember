@@ -29,5 +29,8 @@ No external Domain Documentation source is configured for this memory repo.
 
 ### Repo-Internal References
 
-- `ping_payload()` and `server_info_payload()` report `SERVER_VERSION`. [1]
-- Tool tests assert the public version reported by `ping_payload()`. [2]
+
+- `server_info_payload()` reports `SERVER_VERSION`. [1]
+
+
+- Tool tests assert the public version through `server_info_payload`: the safe-config-summary case compares the served build's version to `SERVER_VERSION`. [2]

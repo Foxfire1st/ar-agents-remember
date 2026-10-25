@@ -21,12 +21,12 @@
       ]
     },
     "3": {
-      "note": "The settings model for `orchestration.qualityGate`, including the host-managed `None` default.\n\nAnchor: \"class QualityGateSettings:\"",
+      "note": "The settings model for `orchestration.qualityGate`, including the host-managed `None` default.",
       "targets": [
         {
           "anchor": {
-            "blob": "449ed7c7f1f88ce881fce4bebf5f2fa99d1bee03",
-            "content": "sha256:3c69c3344c5fd0b130b1680dc25f0b8f30f4dc60ba7cb711c1786e454e4f3242",
+            "blob": "db5945e5f2851a76ce476f905684a268325b9442",
+            "content": "sha256:ebcc1928783293853eaa012db30eaa788a28428fcf4f23103718790534c3b852",
             "locator": {
               "end": 257,
               "kind": "line_range",
@@ -43,8 +43,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "47b554c4c3c6e56d70bdc702129982c4c418e6a8",
-            "content": "sha256:0c1b7ceaf9a4dd092975b1fdfbf83ca94f0730f74228a141775998427fcbeba5",
+            "blob": "d3b92b15b04467dce898722fe980347aee339810",
+            "content": "sha256:8fdbcaaf6a99933f672ff5d4406ec2337b503ff1d389c1d07165222ccaadf2e6",
             "locator": {
               "kind": "symbol",
               "name": "_parse_quality_gate"
@@ -55,12 +55,23 @@
         },
         {
           "anchor": {
-            "blob": "47b554c4c3c6e56d70bdc702129982c4c418e6a8",
-            "content": "sha256:c225dd4a62a552a0101fe63b815d7327c048f312e450048ae451cc810814b3e8",
+            "blob": "d3b92b15b04467dce898722fe980347aee339810",
+            "content": "sha256:944df6b12e112b437fe9cfdee9cc4258ce5c89c71d38cf3025687ff470458f0a",
             "locator": {
               "end": 400,
               "kind": "line_range",
               "start": 382
+            },
+            "path": "mcp/src/agents_remember/kernel/_agentic_settings_sections.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d3b92b15b04467dce898722fe980347aee339810",
+            "content": "sha256:a8e3cc2e0dbf594097b2d171715ea7216ee1c8168be98e43d7ea1fa3099a83f5",
+            "locator": {
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/kernel/_agentic_settings_sections.py"
           },

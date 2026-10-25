@@ -122,13 +122,23 @@ No Domain Documentation source is configured for this slice.
 
 ### Repo-Internal References
 
+
 - `test_a_successor_family_revision_is_read_from_its_own_rows_not_inherited` supplies the current fixture or assertion described above. [42]
+
+
 - `test_a_shared_member_is_one_canonical_revision_referenced_in_two_contexts` supplies the current fixture or assertion described above. [43]
+
 - `test_missing_knowledge_is_the_reviews_refusal_not_an_empty_family_context` supplies the current fixture or assertion described above. [44]
 - `test_the_published_cursor_continues_exactly_the_walk_that_minted_it` supplies the current fixture or assertion described above. [45]
+
 - `test_a_roster_walk_larger_than_one_page_terminates_with_a_page_and_no_failure` supplies the current fixture or assertion described above. [46]
+
+
 - Fixture construction imports test-only row constructors; it does not call the retired canonical writer. [47]
+
+
 - RowStore writes text-tree fixture rows without the retired production admission plane. [48]
+
 
 Every claim on this card is checkable in the module's own cases and in the owners they drive. The three
 details a reader should carry: **test-only text/row construction supplies the shared endpoint
@@ -144,46 +154,84 @@ No configured domain documentation could be consulted for this module. The resol
 configured yet." — so there is no external or domain source to check and no documentation row is
 recorded here.
 
+
 - **The leaf's load-bearing properties, one case each, and the fact that nothing here builds a review payload.** [49]
+
+
 - The frozen scenario handle the cases read. [50]
+
+
 - The module-scoped scenario fixture. [51]
+
+
 - **The real leaf enclosure built over the shared endpoint fixture, with two real knowledge datasets.** [52]
+
 The former member-successor author helper is removed; current changed populations are rebuilt as text trees.
 The former family-successor author helper is removed; its name is not current production-admission evidence.
+
 - **One membership row built by the test-only fixture helper, not the retired canonical authoring plane.** [55]
+
 - The review request built for a given selector. [56]
 - The production read the cases drive. [57]
 - The one family context selected out of the payload. [58]
 - A side's roster indexed by member revision. [59]
 - **A selected invariant resolving every recorded family it belongs to, each with its own guarantee text.** [60]
+
 - An unchanged family still composed at its own revision. [61]
+
+
 - **A successor revision read from its own rows, with the dropped membership still carried on the side that records it.** [62]
+
+
 - **One canonical revision referenced in two contexts, with the unique count not growing.** [63]
+
+
 - **A member change making its family context available and concluding nothing about the guarantee.** [64]
+
 - A selection in no recorded family as the measured zero. [65]
 - Missing knowledge as the review's own refusal rather than an empty family context. [66]
 - The task-context review stating that it selected no subject. [67]
+
 - A family only the candidate records as a one-sided context with a stated absence. [68]
+
 The old authored-ambiguity refusal case is removed from this population; no current witness is claimed.
 The old sibling-family revision builder is removed with that ambiguity fixture.
+
 - **A truncated roster staying partial with the owner's counts and the cursor that reaches the rest.** [71]
+
 - The roster page's completeness as the case reads it. [72]
 - **The published cursor continuing exactly the walk that minted it.** [73]
 - **A cursor that binds no composed walk refused beside every first page.** [74]
 - Naming the roster collection without a cursor earning the collection's own refusal. [75]
 - A token of another format answered in the owner's own vocabulary. [76]
+
 - **The complete source inventory and its unique counts not growing with a repeated membership.** [77]
+
+
 - The one-sided family fixture. [78]
+
+
 - The review of a subject the fixture never authored. [79]
+
 - **The context reaching the client over the real review route, which is what makes this a transport proof.** [80]
 - The real application the route case serves. [81]
+
 - **Further memberships built through test-only row construction, so a roster needs more than one page of the production read walk.** [82]
+
 - **One side's roster walk followed exactly as the delivered continuation control drives it, with the previous page's cursor and no page bound.** [83]
 - **The single-page boundary: one page is the roster, complete, cursored nowhere, carrying every row and saying so.** [84]
+
 - **The page the pre-correction guard refused: a completed FINAL page carrying only its own share, which used to answer a server failure.** [85]
+
+
 - **The multi-page boundary: every step is this route's own answer and the pages together carried exactly the owner's total.** [86]
+
+
 - **The production read these cases drive, which composes the context and carries it on the payload.** [87]
+
+
 - The population cases this module's fixtures are shared with. [88]
+
 - The values cases that pin the construction rules of the same deliverable. [89]
 
 ### Cross-Repo References

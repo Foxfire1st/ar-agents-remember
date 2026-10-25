@@ -26,5 +26,7 @@ The runtime-install answer may omit its host block. In that case the helper read
 
 - A compact install response reads its confined whole report without overwriting the response outcome. [3]
 
+
 - The scoped current source carries the module/document behavior described above. [1]
+
 - The runtime-install request names the sandbox and its Paseo port beside its settings file and roots. [4]

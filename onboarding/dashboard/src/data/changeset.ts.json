@@ -101,8 +101,9 @@
             "blob": "ad784b1c6e63764e2f4437c99f28a2b9bd553703",
             "content": "sha256:71b84ecdd19dc43a61dbccd60b8e3923f802f454e0f25bf69fed600558bffd4f",
             "locator": {
-              "kind": "symbol",
-              "name": "ChangeSetAddress"
+              "end": 184,
+              "kind": "line_range",
+              "start": 176
             }
           },
           "kind": "code"
@@ -112,8 +113,9 @@
             "blob": "ad784b1c6e63764e2f4437c99f28a2b9bd553703",
             "content": "sha256:96caa1bb9c703d0907f42fce68e51f3d0b92dac60b81b175d92472e23c9dc768",
             "locator": {
-              "kind": "symbol",
-              "name": "listUrl"
+              "end": 196,
+              "kind": "line_range",
+              "start": 186
             }
           },
           "kind": "code"
@@ -123,19 +125,21 @@
             "blob": "ad784b1c6e63764e2f4437c99f28a2b9bd553703",
             "content": "sha256:c44d17e6c9922e6c44c6596244d1adc200e72881ff589d449d00e72eeb15d7e5",
             "locator": {
-              "kind": "symbol",
-              "name": "peekChangeSet"
+              "end": 201,
+              "kind": "line_range",
+              "start": 198
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "8d239fc2e55f0351e0ed72114b79b8048a172148",
-            "content": "sha256:49597522fe4480b3e4e1a2f7715c0bb1b13a59a7a335a5abca23cf1a5542075c",
+            "blob": "ad784b1c6e63764e2f4437c99f28a2b9bd553703",
+            "content": "sha256:1353e8dabc40db1564c9fa6400aa2fbf25f36ea57c65eb39f91948b700b21c10",
             "locator": {
-              "kind": "symbol",
-              "name": "loadChangeSet"
+              "end": 206,
+              "kind": "line_range",
+              "start": 203
             }
           },
           "kind": "code"
@@ -159,12 +163,12 @@
       ]
     },
     "3": {
-      "note": "Three `base`-arg GET helpers build the `/task`, `/file-diff`, `/master` URLs via the shared `qs`.\n\nAnchor: \"export const taskChangeset\"",
+      "note": "The `base`-arg GET helpers build the `/task`, `/file-diff`, `/master` URLs via the shared `qs`.",
       "targets": [
         {
           "anchor": {
-            "blob": "ed265675478575ff8a4d1556006a4a3afd4aa87a",
-            "content": "sha256:127983f0be5fd30082af5895c5685b96c40cc47a909437b6859378b13a0cf3f3",
+            "blob": "ad784b1c6e63764e2f4437c99f28a2b9bd553703",
+            "content": "sha256:27e5788d5d9d73d24a81dbc0a5a74bfa82c9c3b3af99e52af796e90b468a8a3d",
             "locator": {
               "end": 167,
               "kind": "line_range",
@@ -176,12 +180,12 @@
       ]
     },
     "4": {
-      "note": "Change-set reads use qs and their own refusal-preserving getChangeSetJson, throwing ReviewTransportError rather than discarding refusal detail.\n\nAnchor: file",
+      "note": "Change-set reads use qs and their own refusal-preserving getChangeSetJson, throwing ReviewTransportError rather than discarding refusal detail.",
       "targets": [
         {
           "anchor": {
-            "blob": "1da3bab20ae2b0b070c790c820476038d043758c",
-            "content": "sha256:febb2273e3f71e88a9caf2e3d49d2190e870f23783ccd49d984070344364767e",
+            "blob": "ad784b1c6e63764e2f4437c99f28a2b9bd553703",
+            "content": "sha256:3991a7839bfcafd1a3534c2bdaebb09629138b26ca05dc63a7ee0778f9280d22",
             "locator": {
               "kind": "file"
             }
@@ -191,12 +195,12 @@
       ]
     },
     "5": {
-      "note": "The serving layer that defines the endpoints + response shapes this client mirrors.\n\nAnchor: \"def register_changeset_routes\"",
+      "note": "The serving layer that defines the endpoints + response shapes this client mirrors.",
       "targets": [
         {
           "anchor": {
-            "blob": "2186995d20205912e217dc39a14fa95fcb0e42f3",
-            "content": "sha256:a1c6875e67d150246d40eb2ce98bfba02431de162fd326f2098a9315c9572e88",
+            "blob": "8bdffe4683b00da6aed0b4f57d68f0689505bb48",
+            "content": "sha256:4050ee02fb3f7a59cecf9ef7c5db15527a777f2c116c361ff0a0efe807a36acd",
             "locator": {
               "end": 735,
               "kind": "line_range",
@@ -243,8 +247,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cb170808c1e7ad3aa75e0bfd0860f2206b2291c8",
-            "content": "sha256:6c060c16e60b96e1eac0720ba2e3a28697f292b60c80c3ad3a7e76be09924d65",
+            "blob": "dc229d234ae888019f18a20c91a1cd0135ada287",
+            "content": "sha256:4298541a4115524647f086766551d5201d22aec319fa90e1490dee02ffbd6dca",
             "locator": {
               "end": 103,
               "kind": "line_range",
@@ -257,12 +261,12 @@
       ]
     },
     "8": {
-      "note": "The vitest contract test pins the endpoint URLs + the `FilesApiError` mapping.\n\nAnchor: \"builds the task / file-diff / master URLs\"",
+      "note": "The vitest contract test pins the endpoint URLs + the `FilesApiError` mapping.",
       "targets": [
         {
           "anchor": {
-            "blob": "c8da7d3848373e1ba06c71f1d25a9244c95b03ff",
-            "content": "sha256:7b67309c208b206ea22249d95d9b0bdad801da2273299fc1331c2458f972f3a9",
+            "blob": "79c1804f7f0534d3aa66a7557d6f5430c3d16f53",
+            "content": "sha256:9d2188188a9e17ea99ff7185c411ebbdd8838d37de170f5f9d9a996e8cc9ad87",
             "locator": {
               "end": 32,
               "kind": "line_range",

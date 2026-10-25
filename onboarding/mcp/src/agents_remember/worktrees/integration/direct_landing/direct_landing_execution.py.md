@@ -72,11 +72,19 @@ No configured external domain-documentation evidence.
 These repository-relative targets were checked in the L9 code checkout. The cited ranges support
 the current working-candidate behavior; historical entries below retain their original scope.
 
+
 - Execution publishes or reuses real memory output and refreshes the cache afterward. [1]
+
+
 - Prepared attempts preserve repository and exact pre-commit tree evidence. [2]
+
 - Shared mutation intent and proof retain actual object checks. [3]
+
 - The lifecycle recovery owner resumes the generation before execution. [4]
+
+
 - Lost-receipt recovery and clean reuse are exercised with real temporary repositories. [5]
+
 
 ### Cross-Repo References
 
@@ -85,5 +93,6 @@ the package-local implementation above. No additional external or sibling-reposi
 source is configured for this file's claims.
 
 No additional configured cross-repository evidence is claimed.
+
 
 - Memory execution converges the same accepted create generation without a second code publication. [6]

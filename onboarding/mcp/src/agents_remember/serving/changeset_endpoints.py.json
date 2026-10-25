@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/serving/changeset_endpoints.py",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
@@ -39,8 +40,29 @@
       ]
     },
     "10": {
-      "note": "**The resolvability probe: the repository is asked, per commit, and the first object it does not hold is named.**",
+      "note": "**The resolvability probe: the repository is asked, per commit, and the first object it does not hold is named.**\n\nAnchor: `_unresolvable` `run_git`",
       "targets": [
+        {
+          "anchor": {
+            "blob": "48e667c9305d3cf101beae36d282b6f77fd8ca28",
+            "content": "sha256:e6cfb6af663bf6854da778c6d63017f1afe3d4ebf18fb08c3a549078db35c8b9",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "07979a6e10a7cde98e4a4ce1dcaca7a203241e3f",
+            "content": "sha256:6e94e3f710e3074a2f9def9a24032a21aee42476e665e4ea421cba0067b627bb",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/kernel/git_command.py"
+          },
+          "kind": "code"
+        },
         {
           "anchor": {
             "blob": "48e667c9305d3cf101beae36d282b6f77fd8ca28",
@@ -54,8 +76,8 @@
         },
         {
           "anchor": {
-            "blob": "cd35c66bb9c9d8af0f23fd2579f5e610cf4ee8da",
-            "content": "sha256:60788cf6b3cf57e313ccacab456fb49fd9601a1930fa8f8de28c01088b22a2af",
+            "blob": "07979a6e10a7cde98e4a4ce1dcaca7a203241e3f",
+            "content": "sha256:2581abe22f96abd5eed654d6bbd4024993314e94a5eb2eae6b9f4df000dcba6c",
             "locator": {
               "kind": "symbol",
               "name": "run_git"
@@ -67,27 +89,16 @@
       ]
     },
     "11": {
-      "note": "The contract whose recorded cells this module reads, and the cells themselves.",
+      "note": "The contract whose recorded cells this module reads, and the cells themselves.  Anchor: `WorktreeContract` `load_contract`",
       "targets": [
         {
           "anchor": {
-            "blob": "cad2b5290a889e152e487a9d3b2b27aeea339086",
-            "content": "sha256:8c82cf9643d566fa58d68d1a4bc2a516b15a7c4470a36c65892a811abb1e4454",
+            "blob": "c9e2847f64ca428bdc799c8173b43aa736f4b0e9",
+            "content": "sha256:e4018d774645cce7dce0c51cbf04e207718d8685255da4379ea1c0691d889378",
             "locator": {
-              "kind": "symbol",
-              "name": "WorktreeContract"
-            },
-            "path": "mcp/src/agents_remember/worktrees/worktree_contract.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "1ef6715a9f5e28dd748cb8dde604a86bad8f190d",
-            "content": "sha256:3bc924f5a9c3f4bd27d8bbc6cc3f4383cd0ced5ea64c848c72e01998bbba924d",
-            "locator": {
-              "kind": "symbol",
-              "name": "load_contract"
+              "end": 491,
+              "kind": "line_range",
+              "start": 246
             },
             "path": "mcp/src/agents_remember/worktrees/worktree_contract.py"
           },
@@ -96,8 +107,19 @@
       ]
     },
     "12": {
-      "note": "**The caller that owns the degradation policy: the code half carries its own `not-recorded` absence into the body as `state`/`stateDetail` while only an unrecorded **memory** half may empty, and both sides resolve independently.**",
+      "note": "**The caller that owns the degradation policy: the code half carries its own `not-recorded` absence into the body as `state`/`stateDetail` while only an unrecorded **memory** half may empty, and both sides resolve independently.**\n\nAnchor: `_leaf_range` `leaf_file_diff`",
       "targets": [
+        {
+          "anchor": {
+            "blob": "8bdffe4683b00da6aed0b4f57d68f0689505bb48",
+            "content": "sha256:f05ce5d43215c150714cb107c391f4592af84fb36288fe206c9be422c0a5cb60",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/serving/changeset.py"
+          },
+          "kind": "code"
+        },
         {
           "anchor": {
             "blob": "8bdffe4683b00da6aed0b4f57d68f0689505bb48",
@@ -112,8 +134,8 @@
         },
         {
           "anchor": {
-            "blob": "2186995d20205912e217dc39a14fa95fcb0e42f3",
-            "content": "sha256:0a37aa1cd75abd1c0e45859d5b2a2fe1ba532b9db0b43cd1c7a97ad17d04b51f",
+            "blob": "8bdffe4683b00da6aed0b4f57d68f0689505bb48",
+            "content": "sha256:7ea5a0c462acdae6785d07dfc32269df86c64c5edaad40f655ecfb5f2a020f63",
             "locator": {
               "kind": "symbol",
               "name": "leaf_file_diff"
@@ -125,12 +147,23 @@
       ]
     },
     "13": {
-      "note": "**The case module that measures the bound range, the immovable endpoint, the state answered instead of a refusal, the route's own `200`, and the one-half degradation.**",
+      "note": "**The case module that measures the bound range, the immovable endpoint, the state answered instead of a refusal, the route's own `200`, and the one-half degradation.**\n\nAnchor: `test_a_committed_range_binds_the_recorded_commit_and_a_later_commit_does_not_move_it` `test_an_unrecorded_committed_endpoint_is_answered_with_its_own_state_rather_than_read_from_head` `test_the_route_answers_an_unrecorded_committed_view_without_a_status_error` `test_an_unrecorded_memory_half_empties_only_itself_and_keeps_the_code_half`",
       "targets": [
         {
           "anchor": {
-            "blob": "ef7ea37ef8748fc8652f213eb82a099ffd4ad708",
-            "content": "sha256:e4b153a740fbd51671f089dea80c8dda8f42b7736a56f9ae8a62c3a6cc496712",
+            "blob": "bcbcc496c1dec9b0ec440122d7a990d82dcb69a1",
+            "content": "sha256:154d84ed29279279b9c392a02851fadf228ee0d19619acb50fe961e9174d8dc2",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_knowledge_review_source_endpoints.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "bcbcc496c1dec9b0ec440122d7a990d82dcb69a1",
+            "content": "sha256:fff151a6307bda42be3463b93fa856c06d89c102c0b0b1145dea883cfd4e0541",
             "locator": {
               "kind": "symbol",
               "name": "test_a_committed_range_binds_the_recorded_commit_and_a_later_commit_does_not_move_it"
@@ -141,8 +174,8 @@
         },
         {
           "anchor": {
-            "blob": "ef7ea37ef8748fc8652f213eb82a099ffd4ad708",
-            "content": "sha256:b9332aae10fd5065c5bc4ba35205b40390de7a58b9ce8e9b63c01de77f68e38b",
+            "blob": "bcbcc496c1dec9b0ec440122d7a990d82dcb69a1",
+            "content": "sha256:b3ec6e7db7a750909e0cec4db8326ba6803ae8f9a6bccafe1e21cab116283d91",
             "locator": {
               "kind": "symbol",
               "name": "test_an_unrecorded_committed_endpoint_is_answered_with_its_own_state_rather_than_read_from_head"
@@ -153,8 +186,8 @@
         },
         {
           "anchor": {
-            "blob": "ef7ea37ef8748fc8652f213eb82a099ffd4ad708",
-            "content": "sha256:c797f9387e3d9d2b955ce41e52637dc378b31de1f07fa17e47c7801bd65c1741",
+            "blob": "bcbcc496c1dec9b0ec440122d7a990d82dcb69a1",
+            "content": "sha256:1f76b2f5730cd5afddf1be51ba95a35027e6de25d2def8094c0c17227f264944",
             "locator": {
               "kind": "symbol",
               "name": "test_the_route_answers_an_unrecorded_committed_view_without_a_status_error"
@@ -165,8 +198,8 @@
         },
         {
           "anchor": {
-            "blob": "ef7ea37ef8748fc8652f213eb82a099ffd4ad708",
-            "content": "sha256:d7f70d5eb85ad859d8eadcf0670a3003b32eddd695b99761d4546485a3671db9",
+            "blob": "bcbcc496c1dec9b0ec440122d7a990d82dcb69a1",
+            "content": "sha256:f284d3f654cf707b2d61c77f2fd3beeca6f990d0761cdc646f39151fb0c71f34",
             "locator": {
               "kind": "symbol",
               "name": "test_an_unrecorded_memory_half_empties_only_itself_and_keeps_the_code_half"
@@ -178,12 +211,35 @@
       ]
     },
     "14": {
-      "note": "The endpoint resolver imports the serving cached reader as its local `run_git`; successful reads use the sole kernel Git runner.",
+      "note": "The endpoint resolver imports the serving cached reader as its local `run_git`; successful reads use the sole kernel Git runner.\n\nAnchor: `read_git`",
       "targets": [
         {
           "anchor": {
-            "blob": "5c5bad11e569807e1f8ac3f6b751e29506700331",
-            "content": "sha256:01c6c46ebf65ba9cad0beeef883a618899fe3f0ef4eaab6d199c65ec693da674",
+            "blob": "48e667c9305d3cf101beae36d282b6f77fd8ca28",
+            "content": "sha256:99e53bef1f907657972a65b889dd016fcbb1827d874f8ceb12d11f3e0d940353",
+            "locator": {
+              "end": 29,
+              "kind": "line_range",
+              "start": 28
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "92ae1bfa857dbaf808ea47e97592015fb49a034e",
+            "content": "sha256:810f4e3750a0365227a2cb677133ef85646d2923fca5c5e03a2a61e4ecddf3f0",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/serving/changeset_reads.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "92ae1bfa857dbaf808ea47e97592015fb49a034e",
+            "content": "sha256:dd099c4bd2f02bee810fd358ff83063db964c4fd9c98372b4ab42716a2c162ca",
             "locator": {
               "kind": "symbol",
               "name": "read_git"
@@ -195,11 +251,11 @@
         {
           "anchor": {
             "blob": "48e667c9305d3cf101beae36d282b6f77fd8ca28",
-            "content": "sha256:99e53bef1f907657972a65b889dd016fcbb1827d874f8ceb12d11f3e0d940353",
+            "content": "sha256:7918b6d8f91eb8d7854a1324544a1345c874697c916a1b7f78389c924db99559",
             "locator": {
-              "end": 29,
+              "end": 28,
               "kind": "line_range",
-              "start": 28
+              "start": 27
             }
           },
           "kind": "code"
@@ -309,12 +365,22 @@
       ]
     },
     "7": {
-      "note": "**The whole resolver: the recorded-base precondition, the two missing-cell refusals, and the resolvability probe — in that order.**",
+      "note": "**The whole resolver: the recorded-base precondition, the two missing-cell refusals, and the resolvability probe — in that order.**\n\nAnchor: `recorded_committed_range`",
       "targets": [
         {
           "anchor": {
-            "blob": "1b23f34074e609afd5c6c30cbb6f0cbb5c272771",
-            "content": "sha256:0a532a939f67db2df1a8e12f0dcee8c54f8052d08dbc41036c4f825bb67342d3",
+            "blob": "48e667c9305d3cf101beae36d282b6f77fd8ca28",
+            "content": "sha256:e6cfb6af663bf6854da778c6d63017f1afe3d4ebf18fb08c3a549078db35c8b9",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "48e667c9305d3cf101beae36d282b6f77fd8ca28",
+            "content": "sha256:b7a164140ee93dc815b88289ebc9427873fbda7c77a9bb4087fb5a0fa999b6c5",
             "locator": {
               "kind": "symbol",
               "name": "recorded_committed_range"

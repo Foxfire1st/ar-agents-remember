@@ -18,22 +18,6 @@
         }
       ]
     },
-    "2": {
-      "note": "The runtime-state gauge renderer.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "71425687075f4a988fd84c19d4d0f5b5809980fb",
-            "content": "sha256:a71608de6369d15bed0fe0b61ee92d3a631a0892e7f24cc5da99294a0cd36efd",
-            "locator": {
-              "kind": "symbol",
-              "name": "EngineGauge"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "3": {
       "note": "engines.tsx now exports BranchNode only, with ref-derived flags/materialisation, pruned style, full title/truncated bran — source ownership, not executed visual proof.\n\nAnchor: `function branchFlags(refNode: CommitRefNode): string {`",
       "targets": [

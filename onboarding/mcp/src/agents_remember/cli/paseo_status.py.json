@@ -148,12 +148,12 @@
       ]
     },
     "10": {
-      "note": "Pins delivered worker doctrine: freeze the candidate and hand its report file directly to the leaf's Reviewer, not to the Manager for relay; dashboard-started workers need no parent. A finished turn is not AR acceptance.  Anchor: `AgreementAcrossTheRoleSetTests.test_a_worker_tells_only_a_parent_agent_and_only_once_that_its_report_is_written`",
+      "note": "Pins delivered worker doctrine: freeze the candidate and hand its report file directly to the leaf's Reviewer, not to the Manager for relay; dashboard-started workers need no parent. A finished turn is not AR acceptance.  Anchor: `AgreementAcrossTheRoleSetTests.test_a_worker_hands_its_frozen_report_directly_to_the_reviewer`",
       "targets": [
         {
           "anchor": {
-            "blob": "2eaa2f828ba56892bad654fa5cf51b39dd84ccca",
-            "content": "sha256:41a8b5fde8f0cf2820197b2f5eb5fc9ed2e0c763039bb79b3a2cbd90745710dd",
+            "blob": "74a051a27a76bfa2d21ab404b581911d5e391701",
+            "content": "sha256:aa48fe416b66858a80f0e78f0780efcad0ed9caa4b6123f32b4a29ba4f1a2ead",
             "locator": {
               "kind": "file"
             },
@@ -163,8 +163,8 @@
         },
         {
           "anchor": {
-            "blob": "679a69b6f6ff4ae1a3b8e536d652b10a633a528e",
-            "content": "sha256:031dcb463d498b130a83c3171f643221a0f3bd58715a3d05b421cb0f007c8047",
+            "blob": "9ebdee8141a018420e8edba3c96161db8a2e5297",
+            "content": "sha256:c069dd1880ca2ab39ca3678233e29d41e38f2ee0dff431d89f25d2045d166760",
             "locator": {
               "kind": "file"
             },
@@ -175,12 +175,12 @@
       ]
     },
     "11": {
-      "note": "Composes delivered architect/manager/orchestrator capsule text, requires current diff/evidence inspection and owner acceptance clauses, and detects removal of manager inspection; this proves instruction delivery rather than runtime no-mutation.\n\nAnchor: `AgreementAcrossTheRoleSetTests.test_delivered_coordinator_capsules_check_candidate_evidence_before_acceptance`",
+      "note": "Composes delivered architect/manager/orchestrator capsule text, requires current diff/evidence inspection and owner acceptance clauses, and detects removal of manager inspection; this proves instruction delivery rather than runtime no-mutation.",
       "targets": [
         {
           "anchor": {
-            "blob": "34933a774836231c708d69217e5532d386d0c240",
-            "content": "sha256:393b855c157eb68d6f4d15b0d5f7bfbc94ee73b9d4ce9ca0ae2f6e360dce70c2",
+            "blob": "74a051a27a76bfa2d21ab404b581911d5e391701",
+            "content": "sha256:de1bd48cac17fb751f86bb0477a7207b22fc11358de9edea700e1a3b227a9253",
             "locator": {
               "end": 758,
               "kind": "line_range",
@@ -274,12 +274,12 @@
       ]
     },
     "6": {
-      "note": "Answered refusal persists as failed across refreshes without rewrite and blocks another Revive.\n\nAnchor: `ReviveTests.test_an_agent_the_host_cannot_resume_is_failed_and_stays_unrevivable`",
+      "note": "Answered refusal persists as failed across refreshes without rewrite and blocks another Revive.",
       "targets": [
         {
           "anchor": {
-            "blob": "21788c7aa5a07e55504cb2381dab40dc4853149c",
-            "content": "sha256:3f7dc34505dafaecff39ce204c0b7489d8798808b6cc655159b3e99a8f0522c1",
+            "blob": "0ae2cf68f67e50343d8166d5cc9e46795a520dfd",
+            "content": "sha256:963077096a20bb9298fa5170b8715db17b6b1c3c0b7da52cadf0c03d82c41557",
             "locator": {
               "end": 822,
               "kind": "line_range",

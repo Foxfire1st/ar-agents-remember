@@ -93,7 +93,9 @@ Summaries/bodies join optional display grants by canonical leaf identity; missin
 ## Evidence
 
 
+
 - Master validation in placement applies only to documented subTasks; other listed kinds retain list placement under existing identity/cycle guards, not a kind-rejection or own-master-validation rule. [22]
+
 
 
 ### Repo-Internal References
@@ -114,23 +116,31 @@ The module's own top-level surface is listed in Code Commentary; no cross-file c
 - The four-pass retry bound and augmented-location limitation belong to the extracted parser. Retained L10 measurements motivate the bound; no new run or derived pass-count guarantee is claimed. [6]
 
 
-- The repository's own stated read-versus-enforcement split this change follows. Anchor: "The read is deliberately the TOLERANT one" [7]
 - Authoring strictness is untouched: the strict base model, and the step-level `note` a newer build writes. Anchor: `Step.note` [8]
 - The durable-data writer takes an already-validated document, so it can write no unknown key. [9]
 
+
 - No summary count cap remains, but the current population is canonical direct task-root JSON with the explicit raw task schema and a successful tolerant parse; canonical sources project each admitted document, not a second series population. Missing/bad-schema/failed parses are not a completeness promise. Retain the silent-eviction removal rationale. [10]
+
 - The legacy-bare-node `ref` synthesis that leaves one loc path unprunable. [12]
 - The closeout-queue reader skips a payload that fails model validation. Historical site counting and unchanged-source comparison belong to the retained task evidence, not this current-source reference. [13]
 
+
 - The body read's master join table: none without a graph, otherwise graph-named masters and their declared children that carry the schema. [15]
+
 - The named-path probe that returns exactly the enumeration's subset for those tails, in the same order. [16]
 
+
 - The extracted graph adapter joins named documents for titles/nature/authored child stage. [17]
+
+
 - The HTTP handler that calls the body read: 503 before the first projection, 404 when the read returns `None`. [18]
 
-- Retained L42 regression account: byte identity against the corpus-wide join and same touched files at 4/40 unrelated tasks concerned the earlier graph-only closure. It remains historical execution evidence, not a result from this reconciliation. RF01 source updates the leaf-touch expectation to include its owner and adds owner/listed-child admission assertions; those compare dependency/graph fields, not complete serialized bodies for every possible Order population. [19]
+
 
 - Retained L42 regression account: byte identity against the corpus-wide join and same touched files at 4/40 unrelated tasks concerned the earlier graph-only closure. It remains historical execution evidence, not a result from this reconciliation. RF01 source updates the leaf-touch expectation to include its owner and adds owner/listed-child admission assertions; those compare dependency/graph fields, not complete serialized bodies for every possible Order population. [19]
+
+
 ## 260815-DAG-L12 Render-Ready Graph View Wiring
 
 Both snapshot readers now project `TaskDocNode.executionGraphView` (L12-R4): `_task_doc_node` was split into the include-body-gated `_reader_fields` and the sprint-only `_execution_graph_fields` behind a bundled `_TaskDocProjectionOptions` (`include_body` + `master_docs`), while `_task_graph_view.documents_by_ref` owns qualified indexing and `execution_graph_view` the task-domain adapter. For the summary reader its input is the whole projected task-document set: every admitted document under `tasks/<repo>/<task>/` is indexed, so a sprint's commanded masters are always present (no bound evicts any document; see the removal rationale at `_common.py:65-71`). **For the body reader, since 260921-ICR-L42, the input is the graph-named masters and their declared children** (`_graph_master_docs`). The extracted `execution_graph_view` does the tasks-domain walk — derived waves, resolved edge endpoints, joined titles, per-master facts — and feeds the primitives-only `build_execution_graph_view` builder (the observer package must not import tasks). An ordinary master may instead carry its derived Order graph; `_task_doc_node` includes graph/dependency fields in revision identity.
@@ -246,8 +256,12 @@ corpus the isolated HTTP route median fell from 0.591 s to 0.019 s for a leaf an
 
 
 
-- Body reads the requested schema-admitted payload plus sprint graph-named masters and their declared children and/or the addressed ordinary owner/listed-task closure, without corpus enumeration. RF01 newly read Order owner/child dicts must carry the raw task schema before tolerant parsing; separate grant-store census remains a distinct cost. [14]
 
-- Summary/body retain optional external grant annotation. Canonical full acquisition and addressed body dependencies have distinct costs. Display grants remain outside authored JSON/permission; captured grant inputs participate in generation currentness. [20]
+- Body reads the schema-admitted requested document, graph-named masters and their listed children, plus the addressed ordinary owner/listed-task Order closure, without enumerating the task corpus. Newly read owner/child dictionaries require the raw task schema before tolerant parsing. Grant-store census is a separate cost. [14]
+
+
+
+- Shared task-source summaries and addressed bodies retain optional external grant annotations. Corpus enumeration and addressed body owner/listed-task reads have different costs; grant-store census is separate. Grant display nodes remain outside authored task JSON and its body revision, and do not themselves grant permission. [20]
+
 
 - The shared source builder carries both normalized parent identity and the original master literal into TaskDocumentSource, preserving absent-versus-unresolvable input. [21]

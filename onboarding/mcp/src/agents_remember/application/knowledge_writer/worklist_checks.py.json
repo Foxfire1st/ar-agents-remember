@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/application/knowledge_writer/worklist_checks.py",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
@@ -205,12 +206,25 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1a2649c3264339377226860bbd12a87c8b3f2f65",
+            "blob": "f8c3ebb0fba1a81fe6fad47e544b6183713f1019",
             "content": "sha256:7bd60dc68e05905537c9cf0e470e2a2acdd23b49dc0659c8b610c352aaee40a3",
             "locator": {
               "end": 186,
               "kind": "line_range",
               "start": 137
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_writer/writer.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f8c3ebb0fba1a81fe6fad47e544b6183713f1019",
+            "content": "sha256:c4a68e02cb3d37ad4dd2e17db3b4bacc830ee76cf3c04607564c51823a20517b",
+            "locator": {
+              "end": 184,
+              "kind": "line_range",
+              "start": 135
             },
             "path": "mcp/src/agents_remember/application/knowledge_writer/writer.py"
           },

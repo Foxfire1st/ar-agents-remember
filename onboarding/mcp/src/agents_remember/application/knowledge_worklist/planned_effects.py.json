@@ -134,15 +134,14 @@
       ]
     },
     "13": {
-      "note": "Matching, marks, `subject_unknown`, the reordering and the four R1-F3 branches.",
+      "note": "Matching, marks, `subject_unknown`, the reordering and the four R1-F3 branches.\n\nAnchor: `test_declarations_match_only_the_rows_that_deliver_them_and_mark_every_item`",
       "targets": [
         {
           "anchor": {
-            "blob": "c7852e87c4c2eb41c0ab66973a0e148888c604ff",
-            "content": "sha256:d9784f0db813cd9d5697ccd0c02a5c8a3bee1be4e1ffa09b55b7d7ecd74ebf45",
+            "blob": "108235abe04cbe9d3271f3ba202cca2b7e43bab9",
+            "content": "sha256:4f1588452352498062ecf77e5ebc010a470552fc6638e32791882bf0a76cb122",
             "locator": {
-              "kind": "symbol",
-              "name": "test_declarations_match_only_the_rows_that_deliver_them_and_mark_every_item"
+              "kind": "file"
             },
             "path": "mcp/tests/test_planned_knowledge_effects.py"
           },

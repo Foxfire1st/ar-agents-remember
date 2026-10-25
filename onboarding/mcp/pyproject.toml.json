@@ -40,12 +40,12 @@
       ]
     },
     "10": {
-      "note": "The package README documents the installable MCP command and setup-oriented tool surface for PyPI/package readers: the Quickstart, the canonical runtime section and the local-wheel Install And Run block.\n\nAnchor: `## Quickstart`; `### Canonical Linux/WSL development runtime`; `## Install And Run`",
+      "note": "The package README documents the installable MCP command and setup-oriented tool surface for PyPI/package readers: the Quickstart, the canonical runtime section and the local-wheel Install And Run block.",
       "targets": [
         {
           "anchor": {
-            "blob": "04f1b6f3d5716d4d9b68b9724f0c1948b18304ab",
-            "content": "sha256:0b6b8e980f7ead3f02cb675dd822a04dfc959416e22307f2e5c52309ab843881",
+            "blob": "c49e33bf9ae9ea13e65a630f1b49c4b16e80e075",
+            "content": "sha256:c1a7ebc1a6d6bb01d4a54597fa81f3fd598479837652c825e02000dd04671794",
             "locator": {
               "end": 48,
               "kind": "line_range",
@@ -57,8 +57,8 @@
         },
         {
           "anchor": {
-            "blob": "04f1b6f3d5716d4d9b68b9724f0c1948b18304ab",
-            "content": "sha256:c71aebaf40b2f6d04e470ffdb64552df355e24ebe19563c0e5a09c42fb62dc2f",
+            "blob": "c49e33bf9ae9ea13e65a630f1b49c4b16e80e075",
+            "content": "sha256:92b93225880c7df24f01bc842d50f5f93345dd05cf90533ed31ddb8589da2daa",
             "locator": {
               "end": 117,
               "kind": "line_range",
@@ -346,12 +346,12 @@
       ]
     },
     "3": {
-      "note": "Public response contracts depend on Pydantic and token accounting depends on tiktoken.\n\nAnchor: \"pydantic>=2,<3\"; \"tiktoken>=0.12,<1\"",
+      "note": "Public response contracts depend on Pydantic and token accounting depends on tiktoken.",
       "targets": [
         {
           "anchor": {
-            "blob": "cd34ba7224618224d7bda60be1a80b2c77a16860",
-            "content": "sha256:b1a2b61702e74b4bd237f0a9b3190faab80b5b73f1c048c570f979057e1014fb",
+            "blob": "3f30237a53623bb13be7bf1d5d8dc8413ba64f6c",
+            "content": "sha256:e6b563e4acbcd80bd201904b19939ce2f5ff3a1958b8d7af3c1296e2e7249a98",
             "locator": {
               "end": 23,
               "kind": "line_range",
@@ -375,12 +375,12 @@
       ]
     },
     "4": {
-      "note": "The knowledge store's SQLite binding is exact-pinned, with the session/build-option reason recorded inline above the entry.\n\nAnchor: \"apsw==3.53.4.0\"",
+      "note": "The knowledge store's SQLite binding is exact-pinned, with the session/build-option reason recorded inline above the entry.",
       "targets": [
         {
           "anchor": {
-            "blob": "cd34ba7224618224d7bda60be1a80b2c77a16860",
-            "content": "sha256:44db4b85a586f86da2ed7cc34e2a6af28fb512217074dfad5d406fb14c8c83fe",
+            "blob": "3f30237a53623bb13be7bf1d5d8dc8413ba64f6c",
+            "content": "sha256:896fdd7b511626d78b5cabb93db1be4c16a9e801b46276eef3d039c681d2cdbb",
             "locator": {
               "end": 26,
               "kind": "line_range",

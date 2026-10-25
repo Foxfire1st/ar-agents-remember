@@ -3,7 +3,7 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The detector and evaluator under test.",
+      "note": "The detector and evaluator under test.\n\nAnchor: `classify_degradation` `evaluate_provider_degradation`",
       "targets": [
         {
           "anchor": {
@@ -19,8 +19,8 @@
         },
         {
           "anchor": {
-            "blob": "feb3705c0b9fadd03556a6fb1fdcf216d50ea060",
-            "content": "sha256:8afbf9c6eb69bf5c788c0dee107788c717d31829ca9417501296c174edf133f0",
+            "blob": "2edff51be75051062a682ac9a09910ffdb4db13a",
+            "content": "sha256:cc5170d7202ee81d95d4edca4240def0f7ea6395cd4e6599928b8f1108e72fff",
             "locator": {
               "kind": "symbol",
               "name": "evaluate_provider_degradation"
@@ -31,12 +31,12 @@
         },
         {
           "anchor": {
-            "blob": "feb3705c0b9fadd03556a6fb1fdcf216d50ea060",
-            "content": "sha256:963ee1671e9a7d807c97b60622a62f43d2922b64e7a3671619181360eddb9373",
+            "blob": "2edff51be75051062a682ac9a09910ffdb4db13a",
+            "content": "sha256:e2fc706870172b9f5598dd5e8d25a07abaa2a741c0ce2d2421a0c474640c87f3",
             "locator": {
-              "end": 323,
+              "end": 345,
               "kind": "line_range",
-              "start": 268
+              "start": 326
             },
             "path": "mcp/src/agents_remember/providers/degradation.py"
           },
@@ -44,12 +44,10 @@
         },
         {
           "anchor": {
-            "blob": "feb3705c0b9fadd03556a6fb1fdcf216d50ea060",
-            "content": "sha256:532f4a9c0205081dc78e30733995b35c894fa0bda33d2819462e65a72e1b79aa",
+            "blob": "2edff51be75051062a682ac9a09910ffdb4db13a",
+            "content": "sha256:40d7816d0c5b9185a064f230407906af290c62cd2792e5c7a5ee80c0234aaf03",
             "locator": {
-              "end": 345,
-              "kind": "line_range",
-              "start": 326
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/providers/degradation.py"
           },

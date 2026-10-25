@@ -86,19 +86,35 @@ No external Domain Documentation entries are configured. Source and test asserti
 
 - The driver treats this store as the sole current generation and routes recovery from its strict outcomes. [11]
 
+
 - Recovery archives damaged entries, writes quarantine, or reconstructs cancellation from refs. [12]
 
+
+
 - A nonempty crossingReport may name crossing or all-converted structural diagnostics; the serializer omits the empty value. N2 is historical; current retainedTreeDigests remains serialized, and old-journal defaults do not prove old-runtime forward compatibility. [13]
+
+
 - retainedTreeDigests defaults empty; per-value worktree/index hashes have fixed-width digest or absent/unreadable representations, with no declared dictionary-cardinality or journal-byte cap. [14]
+
+
 
 - Current strict side/operation records. [4]
 
+
+
 - Optional report serialization. [5]
+
+
 
 - Retained phase/parked candidate projection. [6]
 
-- Specific old-key adapter and current file resolution. [7]
+
+
+> Retained earlier citation wording: - Specific old-key adapter and current file resolution. [7]
+
 
 ### Cross-Repo References
 
 No additional configured cross-repository contract is asserted.
+
+- Specific old-key adapter and current file resolution.  Anchor: `SyncSideRecord` `SyncResolutionProjection` [7]

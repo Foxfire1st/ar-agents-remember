@@ -57,15 +57,14 @@
       ]
     },
     "16": {
-      "note": "One endpoint with the owner's answer and its key.",
+      "note": "One endpoint with the owner's answer and its key.\n\nAnchor: `RequirementEndpoint`",
       "targets": [
         {
           "anchor": {
-            "blob": "b8476720a5b70cf8f7e8577c7680ed8e26d3d079",
-            "content": "sha256:805dc487f22dc6d5f6b4e4d19d03a302ba1ed800b23aebec8daaa99930593b62",
+            "blob": "2c338bc95b7c3356425cae3d82c0c83cf08a2667",
+            "content": "sha256:00f54da1be81d091bdafdf53f314023ec88f3954f08edab4edd0585b07b4b895",
             "locator": {
-              "kind": "symbol",
-              "name": "RequirementEndpoint"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -73,15 +72,14 @@
       ]
     },
     "17": {
-      "note": "The owning task's root, or none for a repository that is not one directory name.",
+      "note": "The owning task's root, or none for a repository that is not one directory name.\n\nAnchor: `requirement_task_root`",
       "targets": [
         {
           "anchor": {
-            "blob": "b8476720a5b70cf8f7e8577c7680ed8e26d3d079",
-            "content": "sha256:e193e06d27f5ca3e36c1b6df94c5acef94331f99885129b8262b73955086cbc4",
+            "blob": "2c338bc95b7c3356425cae3d82c0c83cf08a2667",
+            "content": "sha256:00f54da1be81d091bdafdf53f314023ec88f3954f08edab4edd0585b07b4b895",
             "locator": {
-              "kind": "symbol",
-              "name": "requirement_task_root"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -89,15 +87,14 @@
       ]
     },
     "18": {
-      "note": "Resolution hands the reference to the owner and reports an unresolved endpoint.",
+      "note": "Resolution hands the reference to the owner and reports an unresolved endpoint.\n\nAnchor: `resolve_requirement_endpoint`",
       "targets": [
         {
           "anchor": {
-            "blob": "b8476720a5b70cf8f7e8577c7680ed8e26d3d079",
-            "content": "sha256:62053a4a3e8b2b719dc2f2929d0043fe15e429e73171aef402b509709047c059",
+            "blob": "2c338bc95b7c3356425cae3d82c0c83cf08a2667",
+            "content": "sha256:00f54da1be81d091bdafdf53f314023ec88f3954f08edab4edd0585b07b4b895",
             "locator": {
-              "kind": "symbol",
-              "name": "resolve_requirement_endpoint"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -202,15 +199,14 @@
       ]
     },
     "25": {
-      "note": "One endpoint, its state, its task root and the owner's answer; its index key.",
+      "note": "One endpoint, its state, its task root and the owner's answer; its index key.\n\nAnchor: `RequirementEndpoint`",
       "targets": [
         {
           "anchor": {
-            "blob": "b8476720a5b70cf8f7e8577c7680ed8e26d3d079",
-            "content": "sha256:805dc487f22dc6d5f6b4e4d19d03a302ba1ed800b23aebec8daaa99930593b62",
+            "blob": "2c338bc95b7c3356425cae3d82c0c83cf08a2667",
+            "content": "sha256:00f54da1be81d091bdafdf53f314023ec88f3954f08edab4edd0585b07b4b895",
             "locator": {
-              "kind": "symbol",
-              "name": "RequirementEndpoint"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -218,15 +214,14 @@
       ]
     },
     "26": {
-      "note": "The owning task's root, or none when the repository is not one directory.",
+      "note": "The owning task's root, or none when the repository is not one directory.\n\nAnchor: `requirement_task_root`",
       "targets": [
         {
           "anchor": {
-            "blob": "b8476720a5b70cf8f7e8577c7680ed8e26d3d079",
-            "content": "sha256:e193e06d27f5ca3e36c1b6df94c5acef94331f99885129b8262b73955086cbc4",
+            "blob": "2c338bc95b7c3356425cae3d82c0c83cf08a2667",
+            "content": "sha256:00f54da1be81d091bdafdf53f314023ec88f3954f08edab4edd0585b07b4b895",
             "locator": {
-              "kind": "symbol",
-              "name": "requirement_task_root"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -234,15 +229,14 @@
       ]
     },
     "27": {
-      "note": "No root, a root outside tasks, or the owner's answer verbatim.",
+      "note": "No root, a root outside tasks, or the owner's answer verbatim.\n\nAnchor: `resolve_requirement_endpoint`",
       "targets": [
         {
           "anchor": {
-            "blob": "b8476720a5b70cf8f7e8577c7680ed8e26d3d079",
-            "content": "sha256:62053a4a3e8b2b719dc2f2929d0043fe15e429e73171aef402b509709047c059",
+            "blob": "2c338bc95b7c3356425cae3d82c0c83cf08a2667",
+            "content": "sha256:00f54da1be81d091bdafdf53f314023ec88f3954f08edab4edd0585b07b4b895",
             "locator": {
-              "kind": "symbol",
-              "name": "resolve_requirement_endpoint"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -347,15 +341,14 @@
       ]
     },
     "34": {
-      "note": "The owner the packet question is handed to.",
+      "note": "The owner the packet question is handed to.\n\nAnchor: `resolve_requirement_endpoint`",
       "targets": [
         {
           "anchor": {
-            "blob": "b8476720a5b70cf8f7e8577c7680ed8e26d3d079",
-            "content": "sha256:62053a4a3e8b2b719dc2f2929d0043fe15e429e73171aef402b509709047c059",
+            "blob": "2c338bc95b7c3356425cae3d82c0c83cf08a2667",
+            "content": "sha256:00f54da1be81d091bdafdf53f314023ec88f3954f08edab4edd0585b07b4b895",
             "locator": {
-              "kind": "symbol",
-              "name": "resolve_requirement_endpoint"
+              "kind": "file"
             }
           },
           "kind": "code"

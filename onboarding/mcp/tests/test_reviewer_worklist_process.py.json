@@ -329,15 +329,14 @@
   ],
   "references": {
     "1": {
-      "note": "The child's document, reads and body equal the in-process computation at two sizes.",
+      "note": "The child's document, reads and body equal the in-process computation at two sizes.\n\nAnchor: `test_real_child_parity_source_reads_and_held_conversion_at_two_result_sizes`",
       "targets": [
         {
           "anchor": {
-            "blob": "dcea734d01a9e0e0e0f63ee8bfbf5ce1d40ee24d",
-            "content": "sha256:11d92de5942f33a7b54ee88a4a414dbe2f6338aea3d7498796788b81508b746b",
+            "blob": "27133970f3efd75083fdda0b036762cfe19db511",
+            "content": "sha256:0d5dcf1893f5dd43166d599a4319981049775a685e6d32beb6c990ad5663ab30",
             "locator": {
-              "kind": "symbol",
-              "name": "test_real_child_parity_source_reads_and_held_conversion_at_two_result_sizes"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -553,15 +552,14 @@
       ]
     },
     "22": {
-      "note": "The process owner under test.",
+      "note": "The process owner under test.\n\nAnchor: `ReviewerWorklistProcesses`",
       "targets": [
         {
           "anchor": {
-            "blob": "a555e9a9abeaf5f9e28273ddd2ac14cec79ec9f9",
-            "content": "sha256:b3b789d36947b0fd8cc6568a63d8f8f228689ad6b21244a9b7c3fc67ed0fb9fc",
+            "blob": "21a424c0ceba2885a766a768450e734806b787e5",
+            "content": "sha256:300ec6439567403db2cc5f43cb5d335522c27a97e1bd13886cb1d97ce1724868",
             "locator": {
-              "kind": "symbol",
-              "name": "ReviewerWorklistProcesses"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/kernel/reviewer_worklist_process.py"
           },

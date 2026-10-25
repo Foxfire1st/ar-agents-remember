@@ -28,14 +28,23 @@ Cache identity, explicit refresh, host-profile discovery, per-choice provider/mo
 ## Evidence
 
 - Options include the configured alternative. [6]
+
 - Host catalog validation and step-up provenance share the existing resolver. [7]
+
 - Host-default-mode path is conditional, and all concrete modes are checked. [8]
 - Test source contrasts ordinary auto with step-up host default. [9]
 
 - Frozen implementation of launcher_catalog supporting the stated file behavior. [1]
+
 - Frozen implementation of resolve_agent_selection supporting the stated file behavior. [2]
-- Frozen implementation of _tier_refusal supporting the stated file behavior. [3]
+
+
+- Frozen implementation of _selection_refusal supporting the stated file behavior. [3]
+
+
 - Checks reuse, explicit refresh and changed daemon home in the key. [4]
+
+
 - Checks rejected choices create no receipt, workspace, agent or enclosure. [5]
 
 - The settings role defaults carry origins/sources, host role and useHostDefaultMode through resolve_agent_selection; this is normal catalog-qualified launch resolution rather than a second explainer-specific model catalog. [10]

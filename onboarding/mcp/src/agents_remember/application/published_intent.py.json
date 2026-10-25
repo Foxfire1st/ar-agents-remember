@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/application/published_intent.py",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
@@ -21,7 +22,7 @@
   ],
   "references": {
     "10": {
-      "note": "**The ordinary read's converted-tree selection: `None` for an unconverted root, an `unusable` state when the tree cannot be indexed, and no authority-home check because the index is keyed by its tree alone.**",
+      "note": "**The ordinary read's converted-tree selection: `None` for an unconverted root, an `unusable` state when the tree cannot be indexed, and no authority-home check because the index is keyed by its tree alone.**\n\nAnchor: `resolve_published_memory_tree` `_TREE_FAILURES`",
       "targets": [
         {
           "anchor": {
@@ -47,12 +48,22 @@
         },
         {
           "anchor": {
-            "blob": "4be19bfc4f0db366151478c0195bb8e5278c7351",
-            "content": "sha256:35881170474dbeb9318bf58fac00560e7b4db17a04eb8c5c3d472db2ebdeee69",
+            "blob": "e2257653c8f42c1861ece020b7afb0ebe068ff1e",
+            "content": "sha256:30c1f188f142ed7a824680b207172c5519bc614a48fda7cf167edb8ddf79956c",
             "locator": {
               "end": 187,
               "kind": "line_range",
               "start": 187
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e2257653c8f42c1861ece020b7afb0ebe068ff1e",
+            "content": "sha256:ed945298901c54ce9411f7391b4d3b19bb0e13b0f246be1cbad4704f98383880",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -72,12 +83,12 @@
       ]
     },
     "12": {
-      "note": "**MIK-R03: the `currentness` block at the resolved source tree, named with its `treeScope` and computed once inside the bounded block; with no pair, every realized invariant is unverifiable.**\n\nAnchor: `WalkCurrentness`",
+      "note": "**MIK-R03: the `currentness` block at the resolved source tree, named with its `treeScope` and computed once inside the bounded block; with no pair, every realized invariant is unverifiable.**\n\nAnchor: `_tree_block` `_TREE_SCOPE`",
       "targets": [
         {
           "anchor": {
-            "blob": "bda6abac209b8bb555561b79169c66526d769437",
-            "content": "sha256:50736cbebf2454d75107453626b6d9e77ad49561e698b9b649e95a01f8a9f98e",
+            "blob": "e2257653c8f42c1861ece020b7afb0ebe068ff1e",
+            "content": "sha256:5285fef576900b9f593527201547405dc23b6173c51e53f87398fe5948a885b0",
             "locator": {
               "kind": "symbol",
               "name": "_tree_block"
@@ -87,19 +98,8 @@
         },
         {
           "anchor": {
-            "blob": "bda6abac209b8bb555561b79169c66526d769437",
-            "content": "sha256:5fcf47b9070212571bbc40e7eb7f4ecafa3728f5b06c5f8c87e9f8efc2491c24",
-            "locator": {
-              "kind": "symbol",
-              "name": "_TREE_SCOPE"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "4be19bfc4f0db366151478c0195bb8e5278c7351",
-            "content": "sha256:ed5fdd99b85d487e215b6e154c350a004a6ec343d66af54ba1bec5f8a1a33c8f",
+            "blob": "e2257653c8f42c1861ece020b7afb0ebe068ff1e",
+            "content": "sha256:c3668f91940eb9b9e538d93f532909de5532427372f50af993924a2413c7441b",
             "locator": {
               "end": 521,
               "kind": "line_range",
@@ -107,16 +107,36 @@
             }
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e2257653c8f42c1861ece020b7afb0ebe068ff1e",
+            "content": "sha256:ed945298901c54ce9411f7391b4d3b19bb0e13b0f246be1cbad4704f98383880",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
         }
       ]
     },
     "13": {
-      "note": "The complete text-tree knowledge block is bounded by the shared threshold.",
+      "note": "The complete text-tree knowledge block is bounded by the shared threshold.\n\nAnchor: `_tree_block`",
       "targets": [
         {
           "anchor": {
-            "blob": "bda6abac209b8bb555561b79169c66526d769437",
-            "content": "sha256:50736cbebf2454d75107453626b6d9e77ad49561e698b9b649e95a01f8a9f98e",
+            "blob": "e2257653c8f42c1861ece020b7afb0ebe068ff1e",
+            "content": "sha256:ed945298901c54ce9411f7391b4d3b19bb0e13b0f246be1cbad4704f98383880",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e2257653c8f42c1861ece020b7afb0ebe068ff1e",
+            "content": "sha256:5285fef576900b9f593527201547405dc23b6173c51e53f87398fe5948a885b0",
             "locator": {
               "kind": "symbol",
               "name": "_tree_block"
@@ -143,12 +163,12 @@
       ]
     },
     "15": {
-      "note": "**MIK-R01: the block's currentness merges the leaf and scope subsets, and its top-level policy follows the seeds asked (rulings Q5 and N5).**\n\nAnchor: `LeafCurrentness`",
+      "note": "**MIK-R01: the block's currentness merges the leaf and scope subsets, and its top-level policy follows the seeds asked (rulings Q5 and N5).**\n\nAnchor: `_block_policy` `LEAF_POLICY_VERSION_LABEL`",
       "targets": [
         {
           "anchor": {
-            "blob": "bda6abac209b8bb555561b79169c66526d769437",
-            "content": "sha256:cbbea4f2a603df2e8a33a4a17f01cf1ed0c22c3d4bd6827769a9e07e874bb211",
+            "blob": "e2257653c8f42c1861ece020b7afb0ebe068ff1e",
+            "content": "sha256:ffe27df64a18508f971a02398d2f4e51758d6a147961e9d3bedf58771503389a",
             "locator": {
               "kind": "symbol",
               "name": "_block_policy"
@@ -169,12 +189,22 @@
         },
         {
           "anchor": {
-            "blob": "4be19bfc4f0db366151478c0195bb8e5278c7351",
-            "content": "sha256:ba915c329c996e1cbaacd1beaaeabc50e66bbf6e48f101b60c307c0c0e2f6fb3",
+            "blob": "e2257653c8f42c1861ece020b7afb0ebe068ff1e",
+            "content": "sha256:c89c34c08374804f279327a2d836132ec5f18b413203de4797e5b4ee4bedde48",
             "locator": {
               "end": 527,
               "kind": "line_range",
               "start": 521
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e2257653c8f42c1861ece020b7afb0ebe068ff1e",
+            "content": "sha256:ed945298901c54ce9411f7391b4d3b19bb0e13b0f246be1cbad4704f98383880",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -206,37 +236,15 @@
             }
           },
           "kind": "code"
-        }
-      ]
-    },
-    "17": {
-      "note": "**The module docstring paragraph for the family-complete leaf read.**\n\nAnchor: \"A path on a memory tree is read family-complete\"",
-      "targets": [
+        },
         {
           "anchor": {
-            "blob": "4be19bfc4f0db366151478c0195bb8e5278c7351",
-            "content": "sha256:f825632b0f3eb6155b1ec1fac0789aaf1f92a7028f75c8eafe77a852e2b8f5f3",
+            "blob": "e2257653c8f42c1861ece020b7afb0ebe068ff1e",
+            "content": "sha256:522acc5eb7d4098a9e831e5b5e5d3aa1738a005a11a56af1be6afba16caad743",
             "locator": {
-              "end": 75,
+              "end": 466,
               "kind": "line_range",
-              "start": 71
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "18": {
-      "note": "**MIK-R05: the docstring states the route-chain families after the leaf content, an entry-less path still returning them, and the refusal of a path with neither.**\n\nAnchor: \"route-chain families follow (MIK-R05)\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "4be19bfc4f0db366151478c0195bb8e5278c7351",
-            "content": "sha256:0ed314c4f87af452c55dfc03107c154d8d8fe2c076fa240ca5c80bec0bbd3dcb",
-            "locator": {
-              "end": 77,
-              "kind": "line_range",
-              "start": 75
+              "start": 466
             }
           },
           "kind": "code"
@@ -259,47 +267,24 @@
         }
       ]
     },
-    "20": {
-      "note": "**The module docstring paragraph for the bounded block and its continuation.**\n\nAnchor: \"A memory tree's page continues through\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "4be19bfc4f0db366151478c0195bb8e5278c7351",
-            "content": "sha256:3f2b62e891b2a593338e0c25088aeb060561c38b9efddaa4b6512f9e4e4ed23e",
-            "locator": {
-              "end": 85,
-              "kind": "line_range",
-              "start": 77
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "21": {
-      "note": "**The module docstring paragraph for the currentness block.**\n\nAnchor: \"Returned invariants carry their currentness\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "4be19bfc4f0db366151478c0195bb8e5278c7351",
-            "content": "sha256:f3678d410309eda31db9c313d1ded171bc79d8dcc34d94d78312d699feafb2c2",
-            "locator": {
-              "end": 58,
-              "kind": "line_range",
-              "start": 54
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "22": {
-      "note": "The published-intent case: the resolved tree and `treeScope`, an uncommitted edit that changes nothing, and no resolved tree.",
+      "note": "The published-intent case: the resolved tree and `treeScope`, an uncommitted edit that changes nothing, and no resolved tree.\n\nAnchor: `test_the_published_intent_block_flags_returned_invariants_at_its_resolved_tree`",
       "targets": [
         {
           "anchor": {
-            "blob": "85c55f2eaf44e11e20283306277a55040b2fa8a1",
-            "content": "sha256:09c279f2f41db323726fa3e4a6d6054c028eeb2e2e05087fbc6d087fbe2e8ee2",
+            "blob": "035d30df74bd1bad93ddc28456d591c1024b28d2",
+            "content": "sha256:58f2f830be97427187427103b14ba610b4a99dad8ba64e42c299bd5fd25f7478",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_knowledge_currentness.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "035d30df74bd1bad93ddc28456d591c1024b28d2",
+            "content": "sha256:5888a3849044750fc90692e577d0dcdb3379c238072c72637419ac0ab3d79988",
             "locator": {
               "kind": "symbol",
               "name": "test_the_published_intent_block_flags_returned_invariants_at_its_resolved_tree"
@@ -324,16 +309,39 @@
             }
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e2257653c8f42c1861ece020b7afb0ebe068ff1e",
+            "content": "sha256:3cc6cd005bf54e912a1f7719f43b029bd517f9d99523ba95a76e9b6f138960ab",
+            "locator": {
+              "end": 389,
+              "kind": "line_range",
+              "start": 387
+            }
+          },
+          "kind": "code"
         }
       ]
     },
     "24": {
-      "note": "**The two shipped owners this module delegates the read to, reused unchanged.**",
+      "note": "**The two shipped owners this module delegates the read to, reused unchanged.**\n\nAnchor: `open_read_context` `read_knowledge_scope`",
       "targets": [
         {
           "anchor": {
-            "blob": "b71c42f66555bf28336d90d4449c7f9b2aaede25",
-            "content": "sha256:6b25c5ae9bc387cc07259a2f7f75a5be091b9d352b392c4a435b056f1a50eed5",
+            "blob": "9d2460c7b39373ba3a888ebd88da47468cc93266",
+            "content": "sha256:ca739f3b2996c442fd9c6e03488e5ff8b46ff05da0437375a48061f73df7d72f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_read.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9d2460c7b39373ba3a888ebd88da47468cc93266",
+            "content": "sha256:3b8eed5fbfb87e74aa54c8c4c607da5cf6af518e8986d2891659a70661f90548",
             "locator": {
               "kind": "symbol",
               "name": "open_read_context"
@@ -416,6 +424,18 @@
               "end": 480,
               "kind": "line_range",
               "start": 467
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e2257653c8f42c1861ece020b7afb0ebe068ff1e",
+            "content": "sha256:052f8068a2e57ac0f05b2b0075ccb5846418edc462ee3ec4c3c5a7ac9b6e2024",
+            "locator": {
+              "end": 443,
+              "kind": "line_range",
+              "start": 430
             }
           },
           "kind": "code"
@@ -504,12 +524,23 @@
       ]
     },
     "32": {
-      "note": "The dataset identity reader reused here: it answers an identity or a reason, and never raises for a caller.",
+      "note": "The dataset identity reader reused here: it answers an identity or a reason, and never raises for a caller.\n\nAnchor: `read_dataset_identity`",
       "targets": [
         {
           "anchor": {
-            "blob": "3be18b96855aa2d725ab80b99bc4c1c174cf18bc",
-            "content": "sha256:e3deadc626a9f4101a45821bfc3418bf4d7f1eb9af522de537812eb36cecde0d",
+            "blob": "dd22c4941955ad551d6ed094c6503a0289de477b",
+            "content": "sha256:5789fd898ab73cd24188c5890fab9eb79b7c9a4e7869eb8970b139ca9737bc57",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_before_half.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "dd22c4941955ad551d6ed094c6503a0289de477b",
+            "content": "sha256:ea63a36aa8c761106e39cb214d7a62520e306ebf1b01377b6acdbc12191c9c98",
             "locator": {
               "kind": "symbol",
               "name": "read_dataset_identity"
@@ -521,12 +552,23 @@
       ]
     },
     "34": {
-      "note": "The one Git command this route runs, through the shared owner.",
+      "note": "The one Git command this route runs, through the shared owner.\n\nAnchor: `run_git`",
       "targets": [
         {
           "anchor": {
-            "blob": "cd35c66bb9c9d8af0f23fd2579f5e610cf4ee8da",
-            "content": "sha256:60788cf6b3cf57e313ccacab456fb49fd9601a1930fa8f8de28c01088b22a2af",
+            "blob": "07979a6e10a7cde98e4a4ce1dcaca7a203241e3f",
+            "content": "sha256:6e94e3f710e3074a2f9def9a24032a21aee42476e665e4ea421cba0067b627bb",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/kernel/git_command.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "07979a6e10a7cde98e4a4ce1dcaca7a203241e3f",
+            "content": "sha256:2581abe22f96abd5eed654d6bbd4024993314e94a5eb2eae6b9f4df000dcba6c",
             "locator": {
               "kind": "symbol",
               "name": "run_git"
@@ -584,6 +626,19 @@
               "end": 391,
               "kind": "line_range",
               "start": 359
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_read.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9d2460c7b39373ba3a888ebd88da47468cc93266",
+            "content": "sha256:1d203bf4721c4d4a0353ef558fec900ec329dbc209e8895fc45a2c17391a1040",
+            "locator": {
+              "end": 389,
+              "kind": "line_range",
+              "start": 357
             },
             "path": "mcp/src/agents_remember/application/knowledge_read.py"
           },
@@ -724,12 +779,12 @@
       ]
     },
     "40": {
-      "note": "The ordinary route selects text-tree indexes, refuses malformed seeds, names absent registration and opens no unconverted canonical database.\n\nAnchor: `PublishedIntentRouteTests.test_the_ordinary_read_returns_source_and_the_selected_tree_index`; `PublishedIntentRouteTests.test_a_seed_that_is_not_typed_is_refused_rather_than_raising`; `PublishedIntentRouteTests.test_a_path_with_no_recorded_anchor_is_a_named_absence`; `PublishedIntentRouteTests.test_a_path_that_cannot_be_a_seed_is_refused`; `PublishedIntentRouteTests.test_an_unconverted_root_cannot_open_a_legacy_database`",
+      "note": "The selective block's direct cases: a malformed seed and a path that cannot be a seed are refused, a path with no recorded anchor is a named absence, and an unconverted root refuses `legacy-format` instead of opening a legacy database.",
       "targets": [
         {
           "anchor": {
-            "blob": "7e43d2693854c899b2a500728aa51e2d2676c2d1",
-            "content": "sha256:70a42142e1272a785b0ad9e26e602f059a48a4b9d749a05d8ec1c34c46cea993",
+            "blob": "e338a878b22250c3dafb8dd92f83643e5293f3f6",
+            "content": "sha256:d274b0d125ffd9f7989dc92822a835b8a285a699d14549677ee5323a4ab81eab",
             "locator": {
               "end": 439,
               "kind": "line_range",
@@ -793,110 +848,47 @@
         }
       ]
     },
-    "41": {
-      "note": "**The mounted-route cases. Since MIK-R24 the ordinary `read_ar_files` call on an unconverted memory tree returns no knowledge section (`legacy-format`), so the two cases assert that; this module's block is measured directly by the route cases.**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "7e43d2693854c899b2a500728aa51e2d2676c2d1",
-            "content": "sha256:434c9110600d5342cf7ef4de83705f6b672435e7ffa9912d9a1f1564ed47014a",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_the_mounted_route_returns_no_knowledge_section_for_unconverted_memory"
-            },
-            "path": "mcp/tests/test_read_ar_files.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "7e43d2693854c899b2a500728aa51e2d2676c2d1",
-            "content": "sha256:2e11236d5d5a66eebb793a2b5fa9f5ab0c50a9dc665a2e60651d00180f6ec9ee",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_the_mounted_route_names_the_legacy_format_before_anything_is_published"
-            },
-            "path": "mcp/tests/test_read_ar_files.py"
-          },
-          "kind": "test"
-        }
-      ]
-    },
     "42": {
-      "note": "The carrier-parity case that holds the retrieval instructions to the payload's real field spellings.",
+      "note": "The carrier-parity case that holds the retrieval instructions to the payload's real field spellings.\n\nAnchor: `test_the_carrier_uses_the_field_spellings_the_payload_actually_returns`",
       "targets": [
         {
           "anchor": {
-            "blob": "f3775ac25c5e32bb5efe59b7179717d7549271a7",
-            "content": "sha256:65834d3f907eca8375c6601717d851557c5ff09ec2a380aec51e31208717bc87",
+            "blob": "e338a878b22250c3dafb8dd92f83643e5293f3f6",
+            "content": "sha256:533e17a7865c395755ed010c160ea9501769b2e4e2ec02b5a5ae889d92f45c30",
             "locator": {
-              "kind": "symbol",
-              "name": "test_the_carrier_uses_the_field_spellings_the_payload_actually_returns"
+              "kind": "file"
             },
             "path": "mcp/tests/test_read_ar_files.py"
           },
           "kind": "test"
-        }
-      ]
-    },
-    "43": {
-      "note": "The route the ordinary read attaches this block from, the import it attaches it through, and the response field it travels on.\n\nAnchor: `published_intent_block`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "44a4837c014364afc6109be5aec371fe8ba6f721",
-            "content": "sha256:50449d1ec3fdf3d6eb2e44c162465537c2bcfa314a0fc395eb5211403cdf3dee",
-            "locator": {
-              "kind": "symbol",
-              "name": "read_ar_files_tool"
-            },
-            "path": "mcp/src/agents_remember/application/read_files.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "7d25a2e02bdb37246754a3e63616de2e7abc66b1",
-            "content": "sha256:38ea8d8026bcdb87abd8f43c241b3b071dc3c7a09a95159c29de3edfcc619993",
-            "locator": {
-              "kind": "symbol",
-              "name": "published_intent"
-            },
-            "path": "mcp/src/agents_remember/models/read_files.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "44a4837c014364afc6109be5aec371fe8ba6f721",
-            "content": "sha256:07ac27eea41ef7e0d14eeb4cc65ebf0beaa2041ad913826ebdf97d56d6febd5f",
-            "locator": {
-              "end": 31,
-              "kind": "line_range",
-              "start": 31
-            },
-            "path": "mcp/src/agents_remember/application/read_files.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "0461a0b7b1993a84c9c28d4c2fef7c60d7665d4e",
-            "content": "sha256:01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
-            "locator": {
-              "end": 74,
-              "kind": "line_range",
-              "start": 74
-            },
-            "path": "mcp/src/agents_remember/models/read_files.py"
-          },
-          "kind": "code"
         }
       ]
     },
     "44": {
-      "note": "Unconverted roots refuse retired database selection and mounted tools open no legacy database.",
+      "note": "Unconverted roots refuse retired database selection and mounted tools open no legacy database.\n\nAnchor: `test_an_unconverted_memory_root_refuses_the_retired_database_selection` `test_every_knowledge_tool_refuses_legacy_memory_and_opens_no_database`",
       "targets": [
+        {
+          "anchor": {
+            "blob": "f158a3201f14ff80393fad28555b022b5b22dd25",
+            "content": "sha256:0cf7e5b796c12424500d39803ac9f1253c63edb72f172343a974b97005cbe132",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_knowledge_index_reuse.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "bc2b134a1ee2b8958e995038dec519a5af1d7b69",
+            "content": "sha256:ea95bfa599e174f1929e6b7796658990bfd638ff2f8acaf153a5687b24b5c5cf",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_knowledge_index_surfaces.py"
+          },
+          "kind": "test"
+        },
         {
           "anchor": {
             "blob": "f158a3201f14ff80393fad28555b022b5b22dd25",
@@ -911,8 +903,8 @@
         },
         {
           "anchor": {
-            "blob": "9ca8a915fc0011e8ee8f280439e1cad09171468c",
-            "content": "sha256:5bc3a8924f717e9a6d5081c853dbe84a471c3533bcc2f1ee6131c4f9802bbdc3",
+            "blob": "bc2b134a1ee2b8958e995038dec519a5af1d7b69",
+            "content": "sha256:35cd6c3d19d38de1c42fefdcc64d139ae6134334dfae7d81d6fc76e74a1bfd45",
             "locator": {
               "kind": "symbol",
               "name": "test_every_knowledge_tool_refuses_legacy_memory_and_opens_no_database"
@@ -968,12 +960,22 @@
       ]
     },
     "6": {
-      "note": "**The source-resolution pair, resolved together or left unrequested because the read context refuses either half alone.**",
+      "note": "**The source-resolution pair, resolved together or left unrequested because the read context refuses either half alone.**\n\nAnchor: `_source_pair` `PublishedIntentSourcePair`",
       "targets": [
         {
           "anchor": {
-            "blob": "bda6abac209b8bb555561b79169c66526d769437",
-            "content": "sha256:1368ffe88c75786263561c6c6181d3c5aa7b5767b69f31bbb588e64da21dceef",
+            "blob": "e2257653c8f42c1861ece020b7afb0ebe068ff1e",
+            "content": "sha256:ed945298901c54ce9411f7391b4d3b19bb0e13b0f246be1cbad4704f98383880",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e2257653c8f42c1861ece020b7afb0ebe068ff1e",
+            "content": "sha256:564257e3a65dba1cd26b91783e12978c4a018d6e31b9465869588e47d0c56c30",
             "locator": {
               "kind": "symbol",
               "name": "_source_pair"
@@ -983,8 +985,8 @@
         },
         {
           "anchor": {
-            "blob": "bda6abac209b8bb555561b79169c66526d769437",
-            "content": "sha256:30bffbd51aeb7c3ae261b11a07d0ab00ae71a908822236ccc6415d5eca2ae75b",
+            "blob": "e2257653c8f42c1861ece020b7afb0ebe068ff1e",
+            "content": "sha256:ab0b27d7efe2067e1d7eba8c24063236ab8ac6cc5f9aa6d8027a627946cdbd1c",
             "locator": {
               "kind": "symbol",
               "name": "PublishedIntentSourcePair"
@@ -1022,12 +1024,22 @@
       ]
     },
     "8": {
-      "note": "**The read itself: the shipped taskless context constructor plus the shipped selective read, with `task_ref` left unset and identity seeds passed through; every page is then bound to the tree's index state.**",
+      "note": "**The read itself: the shipped taskless context constructor plus the shipped selective read, with `task_ref` left unset and identity seeds passed through; every page is then bound to the tree's index state.**\n\nAnchor: `read_published_intent` `_bind_index_state`",
       "targets": [
         {
           "anchor": {
-            "blob": "4be19bfc4f0db366151478c0195bb8e5278c7351",
-            "content": "sha256:fe62f6922d09b0a8c45d7735d9da499c5892065318fec4509b85124eac79ef8d",
+            "blob": "e2257653c8f42c1861ece020b7afb0ebe068ff1e",
+            "content": "sha256:ed945298901c54ce9411f7391b4d3b19bb0e13b0f246be1cbad4704f98383880",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e2257653c8f42c1861ece020b7afb0ebe068ff1e",
+            "content": "sha256:5be26a3a71d66ee5e95d4c7c1cb3a5049375cd567aaefe7db04b6dbbcb789b91",
             "locator": {
               "kind": "symbol",
               "name": "read_published_intent"
@@ -1049,12 +1061,12 @@
       ]
     },
     "9": {
-      "note": "**The converted-tree route: which path names a converted tree, the one dataset resolution every knowledge read applies, the refusal without a coordination root, and the index selection that recomputes the tree key.**",
+      "note": "**The converted-tree route: which path names a converted tree, the one dataset resolution every knowledge read applies, the refusal without a coordination root, and the index selection that recomputes the tree key.**\n\nAnchor: `converted_memory_tree` `select_knowledge_dataset` `SelectedKnowledgeDataset` `_index_selection`",
       "targets": [
         {
           "anchor": {
-            "blob": "4be19bfc4f0db366151478c0195bb8e5278c7351",
-            "content": "sha256:0cccdea8d89bca5b692f65605bc2538882ccfedb4da657545b59a8b2937068ef",
+            "blob": "e2257653c8f42c1861ece020b7afb0ebe068ff1e",
+            "content": "sha256:1547db395076f7fc40126682f972b3cca549f89a0d32ed7f2dffb4d1462dc66e",
             "locator": {
               "kind": "symbol",
               "name": "converted_memory_tree"
@@ -1064,8 +1076,8 @@
         },
         {
           "anchor": {
-            "blob": "4be19bfc4f0db366151478c0195bb8e5278c7351",
-            "content": "sha256:84f17e36045a6cafa1d747e119c0e701016e8c78e1cd298a3115c8a6456ffbe5",
+            "blob": "e2257653c8f42c1861ece020b7afb0ebe068ff1e",
+            "content": "sha256:59a7a3ebd4555efbb9b81010b0e796b0c6f499f5c97fc9426cfb178d5963b702",
             "locator": {
               "kind": "symbol",
               "name": "select_knowledge_dataset"
@@ -1103,6 +1115,28 @@
               "end": 216,
               "kind": "line_range",
               "start": 211
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e2257653c8f42c1861ece020b7afb0ebe068ff1e",
+            "content": "sha256:ed945298901c54ce9411f7391b4d3b19bb0e13b0f246be1cbad4704f98383880",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e2257653c8f42c1861ece020b7afb0ebe068ff1e",
+            "content": "sha256:7bd064ea1828100a6d8c3418f187e08438742e26aecc637ade219aa3e5e99e4b",
+            "locator": {
+              "end": 208,
+              "kind": "line_range",
+              "start": 203
             }
           },
           "kind": "code"

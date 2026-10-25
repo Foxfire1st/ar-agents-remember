@@ -1,23 +1,8 @@
 {
   "path": "mcp/tests/test_read_ar_files.py",
+  "proves": [],
   "realizes": [],
   "references": {
-    "21": {
-      "note": "`test_the_ordinary_read_returns_source_and_the_selected_tree_index` supplies the current fixture or assertion described above.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "7e43d2693854c899b2a500728aa51e2d2676c2d1",
-            "content": "sha256:70a42142e1272a785b0ad9e26e602f059a48a4b9d749a05d8ec1c34c46cea993",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_the_ordinary_read_returns_source_and_the_selected_tree_index"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
     "22": {
       "note": "`test_an_unconverted_root_cannot_open_a_legacy_database` supplies the current fixture or assertion described above.",
       "targets": [
@@ -35,15 +20,14 @@
       ]
     },
     "23": {
-      "note": "`test_the_carrier_uses_the_field_spellings_the_payload_actually_returns` supplies the current fixture or assertion described above.",
+      "note": "`test_the_carrier_uses_the_field_spellings_the_answer_returns` supplies the current fixture or assertion described above.\n\nAnchor: `test_the_carrier_uses_the_field_spellings_the_payload_actually_returns`",
       "targets": [
         {
           "anchor": {
-            "blob": "7e43d2693854c899b2a500728aa51e2d2676c2d1",
-            "content": "sha256:0448f524c5e5be9fed1ea50d293d98fcb32086c3d0da27aba7e4d9fbcd3514c7",
+            "blob": "e338a878b22250c3dafb8dd92f83643e5293f3f6",
+            "content": "sha256:533e17a7865c395755ed010c160ea9501769b2e4e2ec02b5a5ae889d92f45c30",
             "locator": {
-              "kind": "symbol",
-              "name": "test_the_carrier_uses_the_field_spellings_the_payload_actually_returns"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -51,63 +35,14 @@
       ]
     },
     "24": {
-      "note": "`test_the_mounted_route_returns_no_knowledge_section_for_unconverted_memory` supplies the current fixture or assertion described above.",
+      "note": "`test_unconverted_memory_names_no_card` and `test_named_answer_validates_against_the_registered_model` supply the current fixture or assertion described above.\n\nAnchor: `test_the_mounted_route_returns_no_knowledge_section_for_unconverted_memory`",
       "targets": [
         {
           "anchor": {
-            "blob": "7e43d2693854c899b2a500728aa51e2d2676c2d1",
-            "content": "sha256:434c9110600d5342cf7ef4de83705f6b672435e7ffa9912d9a1f1564ed47014a",
+            "blob": "e338a878b22250c3dafb8dd92f83643e5293f3f6",
+            "content": "sha256:533e17a7865c395755ed010c160ea9501769b2e4e2ec02b5a5ae889d92f45c30",
             "locator": {
-              "kind": "symbol",
-              "name": "test_the_mounted_route_returns_no_knowledge_section_for_unconverted_memory"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "25": {
-      "note": "Range request returns exact slice",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "7e43d2693854c899b2a500728aa51e2d2676c2d1",
-            "content": "sha256:264b88cc08c49c0fbe2623e8818cbf5fd0256d5bd55de195c0bf80308216ab0d",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_range_request_returns_exact_slice"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "26": {
-      "note": "Full read is not truncated",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "7e43d2693854c899b2a500728aa51e2d2676c2d1",
-            "content": "sha256:71ad46025630d9c65fb2582f04c2506fc0691f522c51d4a0852e72a9af86c7e4",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_full_read_is_not_truncated"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "27": {
-      "note": "Binary source is omitted",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "7e43d2693854c899b2a500728aa51e2d2676c2d1",
-            "content": "sha256:368d96285dc34f2fa8b996f6c2b5a9719a3778d4d39d701c08bdc206f18fbb48",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_binary_source_is_omitted"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -115,12 +50,22 @@
       ]
     },
     "28": {
-      "note": "Path confinement rejects escape",
+      "note": "Path confinement rejects escape\n\nAnchor: `test_path_confinement_rejects_escape`",
       "targets": [
         {
           "anchor": {
-            "blob": "7e43d2693854c899b2a500728aa51e2d2676c2d1",
-            "content": "sha256:7cacc6e2470d7e6488102f28c72aa4193d8752083b1b4839679e8c1ff784deeb",
+            "blob": "e338a878b22250c3dafb8dd92f83643e5293f3f6",
+            "content": "sha256:533e17a7865c395755ed010c160ea9501769b2e4e2ec02b5a5ae889d92f45c30",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e338a878b22250c3dafb8dd92f83643e5293f3f6",
+            "content": "sha256:95725486bc003a4265e725112bf768067f1bd486d25492253cbbb907ee140c21",
             "locator": {
               "kind": "symbol",
               "name": "test_path_confinement_rejects_escape"
@@ -131,12 +76,22 @@
       ]
     },
     "29": {
-      "note": "Symlink file escape rejected",
+      "note": "Symlink file escape rejected\n\nAnchor: `test_symlink_file_escape_rejected`",
       "targets": [
         {
           "anchor": {
-            "blob": "7e43d2693854c899b2a500728aa51e2d2676c2d1",
-            "content": "sha256:63d09b02deba9fe1129e14970fb48c6d11c9d263e512e39837afc3116cda855e",
+            "blob": "e338a878b22250c3dafb8dd92f83643e5293f3f6",
+            "content": "sha256:533e17a7865c395755ed010c160ea9501769b2e4e2ec02b5a5ae889d92f45c30",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e338a878b22250c3dafb8dd92f83643e5293f3f6",
+            "content": "sha256:6d003e54143ce11da6a1fb0f44e8f1b6ba4395f1ee718707ad232408f1dd23bd",
             "locator": {
               "kind": "symbol",
               "name": "test_symlink_file_escape_rejected"
@@ -147,12 +102,22 @@
       ]
     },
     "30": {
-      "note": "Symlink dir escape rejected",
+      "note": "Symlink dir escape rejected\n\nAnchor: `test_symlink_dir_escape_rejected`",
       "targets": [
         {
           "anchor": {
-            "blob": "7e43d2693854c899b2a500728aa51e2d2676c2d1",
-            "content": "sha256:2f0ff329a8dbfbf509030f26db87acfe849fc63b1c003c38e65e6120b91418be",
+            "blob": "e338a878b22250c3dafb8dd92f83643e5293f3f6",
+            "content": "sha256:533e17a7865c395755ed010c160ea9501769b2e4e2ec02b5a5ae889d92f45c30",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e338a878b22250c3dafb8dd92f83643e5293f3f6",
+            "content": "sha256:a95a02589bdf3f1330ba761e7f1e063265efde10eefcb625d410b806002f66ad",
             "locator": {
               "kind": "symbol",
               "name": "test_symlink_dir_escape_rejected"
@@ -162,112 +127,15 @@
         }
       ]
     },
-    "31": {
-      "note": "First read attaches overview and route chain",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "7e43d2693854c899b2a500728aa51e2d2676c2d1",
-            "content": "sha256:79c69c3fd506c6ea4f479ef5dfab6d7790545065a6a5cf76ea89acc61c2e07b3",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_first_read_attaches_overview_and_route_chain"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "32": {
-      "note": "Second read dedups unchanged pieces",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "7e43d2693854c899b2a500728aa51e2d2676c2d1",
-            "content": "sha256:a1d1c3edec2a93d9ea2d974eeb6285082ba4d14fc4634011f70948f9cf0af4e0",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_second_read_dedups_unchanged_pieces"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "33": {
-      "note": "Changed overview is reserved",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "7e43d2693854c899b2a500728aa51e2d2676c2d1",
-            "content": "sha256:c95cfe5801707217af2194e547c6c7a4ca30642bd06cf830ec3707f77a3fb340",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_changed_overview_is_reserved"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "34": {
-      "note": "Refresh forces reserve",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "7e43d2693854c899b2a500728aa51e2d2676c2d1",
-            "content": "sha256:e4be123e4bac7a222dd9c92283d0cf0bf92854bf39e6fda948a36bc9e273b1d6",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_refresh_forces_reserve"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "35": {
-      "note": "Compact marker resets served",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "7e43d2693854c899b2a500728aa51e2d2676c2d1",
-            "content": "sha256:b74048c81a8790a36f49b59215c59ac6c10c56b29a43dddfb80923e013d85db5",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_compact_marker_resets_served"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "36": {
-      "note": "Payload reads committed source",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "7e43d2693854c899b2a500728aa51e2d2676c2d1",
-            "content": "sha256:af38b6cbae9812fedfef35006109761249b8924052fc0105bf79f2930b310eb8",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_payload_reads_committed_source"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
     "37": {
-      "note": "**The carrier-parity case: the payload's real field spellings are derived from a real page, and the camelCase variants are rejected.**",
+      "note": "**The carrier-parity case: the payload's real field spellings are derived from a real page, and the camelCase variants are rejected.**\n\nAnchor: `test_the_carrier_uses_the_field_spellings_the_payload_actually_returns`",
       "targets": [
         {
           "anchor": {
-            "blob": "7e43d2693854c899b2a500728aa51e2d2676c2d1",
-            "content": "sha256:0448f524c5e5be9fed1ea50d293d98fcb32086c3d0da27aba7e4d9fbcd3514c7",
+            "blob": "e338a878b22250c3dafb8dd92f83643e5293f3f6",
+            "content": "sha256:533e17a7865c395755ed010c160ea9501769b2e4e2ec02b5a5ae889d92f45c30",
             "locator": {
-              "kind": "symbol",
-              "name": "test_the_carrier_uses_the_field_spellings_the_payload_actually_returns"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -275,26 +143,14 @@
       ]
     },
     "38": {
-      "note": "**The mounted route, which is the call an agent actually makes: on unconverted memory it returns no knowledge section and names the legacy format, with and without a database.**",
+      "note": "**The mounted route: on an unconverted memory it answers `memoryState: unconverted` with no card and no card text, and the answer validates against the registered model.**\n\nAnchor: `test_the_mounted_route_returns_no_knowledge_section_for_unconverted_memory` `test_the_mounted_route_names_the_legacy_format_before_anything_is_published`",
       "targets": [
         {
           "anchor": {
-            "blob": "7e43d2693854c899b2a500728aa51e2d2676c2d1",
-            "content": "sha256:434c9110600d5342cf7ef4de83705f6b672435e7ffa9912d9a1f1564ed47014a",
+            "blob": "e338a878b22250c3dafb8dd92f83643e5293f3f6",
+            "content": "sha256:533e17a7865c395755ed010c160ea9501769b2e4e2ec02b5a5ae889d92f45c30",
             "locator": {
-              "kind": "symbol",
-              "name": "test_the_mounted_route_returns_no_knowledge_section_for_unconverted_memory"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "7e43d2693854c899b2a500728aa51e2d2676c2d1",
-            "content": "sha256:4734f0fd5139da982682c4c97f5ad92fd3e1d5dde514da89f1128e8919f68b28",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_the_mounted_route_names_the_legacy_format_before_anything_is_published"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -302,8 +158,18 @@
       ]
     },
     "39": {
-      "note": "The published-intent fixtures, including the `_selection()` narrowing helper the type-checked call sites need.",
+      "note": "The published-intent fixtures, including the `_selection()` narrowing helper the type-checked call sites need.\n\nAnchor: `_selection` `PublishedIntentRouteTests` `PublishedIntentMountedRouteTests`",
       "targets": [
+        {
+          "anchor": {
+            "blob": "e338a878b22250c3dafb8dd92f83643e5293f3f6",
+            "content": "sha256:533e17a7865c395755ed010c160ea9501769b2e4e2ec02b5a5ae889d92f45c30",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        },
         {
           "anchor": {
             "blob": "e338a878b22250c3dafb8dd92f83643e5293f3f6",
@@ -311,43 +177,6 @@
             "locator": {
               "kind": "symbol",
               "name": "_selection"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "7e43d2693854c899b2a500728aa51e2d2676c2d1",
-            "content": "sha256:64ebeba9a5fdbfc4599718dcf2e06c7889aab4a67cbf8e6d97d93549feb8a793",
-            "locator": {
-              "kind": "symbol",
-              "name": "PublishedIntentRouteTests"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "7e43d2693854c899b2a500728aa51e2d2676c2d1",
-            "content": "sha256:e171ed06d775d511f8cfec27c8cd45ca536f02885035dd6fcb7f4afae9973571",
-            "locator": {
-              "kind": "symbol",
-              "name": "PublishedIntentMountedRouteTests"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "40": {
-      "note": "Current source declarations support the qualified naming or fixture account; no executed test or acceptance is inferred.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "d1b12eae446c7b5bdf3c25826915274bc695f9f6",
-            "content": "sha256:2515b79eb10278f0c3e45076e4c215f7136f78a3d890c9ab8dfdb28c7d344a8a",
-            "locator": {
-              "kind": "file"
             }
           },
           "kind": "test"

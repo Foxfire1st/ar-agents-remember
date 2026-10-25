@@ -129,12 +129,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a15ac74370e273b2d4c9511191164cb23e46ad5f",
-            "content": "sha256:a0c723f3bad531fcbbef58931eb5c20c958e6f9c815cb333fb871935f8ec21cf",
+            "blob": "4b951246c7fde0b145aac05a589c5d0d1bc1574c",
+            "content": "sha256:e1ad7965a2867ab847ad207bb2a5331fafafe99f93cd03b34f2f1ec5efbfca63",
             "locator": {
-              "end": 259,
-              "kind": "line_range",
-              "start": 259
+              "kind": "file"
             }
           },
           "kind": "code"

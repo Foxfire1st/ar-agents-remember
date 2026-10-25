@@ -3,12 +3,12 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "Every briefed manifestation receives an immutable candidate-bound worker record containing its complete envelope.\n\nAnchor: \"## Requirement Attempt Journal Records Appended For This Handoff\"",
+      "note": "Every briefed manifestation receives an immutable candidate-bound worker record containing its complete envelope.",
       "targets": [
         {
           "anchor": {
-            "blob": "c70336516ecd6551b3e292c8c11a46e6af9c62cf",
-            "content": "sha256:410c315faa64afedfb91dcd9e072b40f16b54bc6c7f2668effdcd63ff48fea66",
+            "blob": "235404cf390db9a3e608bd52ba6b0371c71de5a5",
+            "content": "sha256:5ea6de07b23027da0fbf23784c835ac49d0e476ecc7a539fc1f37409a90533ba",
             "locator": {
               "end": 130,
               "kind": "line_range",
@@ -20,12 +20,12 @@
       ]
     },
     "2": {
-      "note": "Exact commands and outcomes have a first-class report section.\n\nAnchor: \"## Checks\"",
+      "note": "Exact commands and outcomes have a first-class report section.",
       "targets": [
         {
           "anchor": {
-            "blob": "c70336516ecd6551b3e292c8c11a46e6af9c62cf",
-            "content": "sha256:96a464a692529054b42c6c0111ffa696bb0d01bef15e3a91e064a4885ee936ff",
+            "blob": "235404cf390db9a3e608bd52ba6b0371c71de5a5",
+            "content": "sha256:14c1826ab9930719877331ee26d1f31c6a695f7cc62f226b218c8f48ce37043f",
             "locator": {
               "end": 182,
               "kind": "line_range",
@@ -66,12 +66,12 @@
       ]
     },
     "4": {
-      "note": "The retained worker artifact uses the report path its handover names, rather than a fixed default or a notifier lookup convention. Main-loop ownership, immutable requirement-attempt evidence, exact checks and file-based handovers remain; a host turn-end signal does not inspect or accept the report.\n\nAnchor: `skills/l-01-agent-lifecycles/templates/turn-report.md`",
+      "note": "The retained worker artifact uses the report path its handover names, rather than a fixed default or a notifier lookup convention. Main-loop ownership, immutable requirement-attempt evidence, exact checks and file-based handovers remain; a host turn-end signal does not inspect or accept the report.",
       "targets": [
         {
           "anchor": {
-            "blob": "d5b494cb12c811d012b526baba4d13fdec553995",
-            "content": "sha256:149a15a6ff1f8bb6f714005dbea49b28f6f7053cdda6e424bea671b85a79a120",
+            "blob": "235404cf390db9a3e608bd52ba6b0371c71de5a5",
+            "content": "sha256:7bfa72bddfaf0b83f79f80e4bd4627b3d06545f16dbe27c01ff8d1af83c47840",
             "locator": {
               "kind": "file"
             }
@@ -85,8 +85,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d1f6148040f344edcc1f1cdca4c337de383684fb",
-            "content": "sha256:f96edac9a18847be461cf6115a2140fb1615d09c896bfe5474f39e188c9dae98",
+            "blob": "235404cf390db9a3e608bd52ba6b0371c71de5a5",
+            "content": "sha256:7bfa72bddfaf0b83f79f80e4bd4627b3d06545f16dbe27c01ff8d1af83c47840",
             "locator": {
               "kind": "file"
             }

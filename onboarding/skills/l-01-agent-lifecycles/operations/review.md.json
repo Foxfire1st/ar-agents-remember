@@ -84,8 +84,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "dbf343f86d5bf2a3d00ecd6d2c4c255e646cd043",
-            "content": "sha256:5f44de52981907402d31c4456912475ca60726182153bbaf24efecd63e2d3727",
+            "blob": "cc04f76ead30b37896b315dd8532f3bb79e2f6d6",
+            "content": "sha256:c58548cf81b75e9e191d6d6d4103b26fbd022ad3635c501034467f0abf051994",
             "locator": {
               "kind": "file"
             }
@@ -99,8 +99,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "053ba7c4260bcc5540d0519e5481b47d344c469d",
-            "content": "sha256:1a639d2b4e6dfc151d10b9f49b90f357524b30c31c3d1322e36365e21d2e1bf7",
+            "blob": "cc04f76ead30b37896b315dd8532f3bb79e2f6d6",
+            "content": "sha256:89ed8a2819b19332f433d39285f452a8910de400742290e04a7d744316fba9f1",
             "locator": {
               "end": 19,
               "kind": "line_range",
@@ -116,8 +116,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "dbf343f86d5bf2a3d00ecd6d2c4c255e646cd043",
-            "content": "sha256:5f44de52981907402d31c4456912475ca60726182153bbaf24efecd63e2d3727",
+            "blob": "cc04f76ead30b37896b315dd8532f3bb79e2f6d6",
+            "content": "sha256:c58548cf81b75e9e191d6d6d4103b26fbd022ad3635c501034467f0abf051994",
             "locator": {
               "kind": "file"
             }
@@ -146,8 +146,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ec9c3e6658331150d5e253965df7876d572ba086",
-            "content": "sha256:b6f88d3195695321b41c9182d1c837378fb680523f732d21c670ba9f10b95594",
+            "blob": "cc04f76ead30b37896b315dd8532f3bb79e2f6d6",
+            "content": "sha256:c58548cf81b75e9e191d6d6d4103b26fbd022ad3635c501034467f0abf051994",
             "locator": {
               "kind": "file"
             }
@@ -157,12 +157,12 @@
       ]
     },
     "6": {
-      "note": "Partitions Reviewer-only handover/record-only/code-concern method from common review rules and adds the post-landing recorded memory lane.\n\nAnchor: Candidate instruction body, lines 1–20",
+      "note": "Partitions Reviewer-only handover/record-only/code-concern method from common review rules and adds the post-landing recorded memory lane.",
       "targets": [
         {
           "anchor": {
-            "blob": "c88f998589d4789d0c221717bf72f8c258070afc",
-            "content": "sha256:d62617ec9e71bb9243c0e2d40d657c8f76d10a5c23203270f5a1900fd273e9e4",
+            "blob": "cc04f76ead30b37896b315dd8532f3bb79e2f6d6",
+            "content": "sha256:e28f36e0adf110e23da92143f6bc691ae32b15244c12a5c7c7f694c8a1f23022",
             "locator": {
               "end": 20,
               "kind": "line_range",

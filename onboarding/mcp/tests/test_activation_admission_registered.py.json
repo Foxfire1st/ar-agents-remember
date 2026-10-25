@@ -7,8 +7,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c2b016ef1ab174685c71169eb5dbee3c2001e63e",
-            "content": "sha256:070481150c47667d9011dcce349c59aa6698ce588ec93cb076074d6ae10cfd0e",
+            "blob": "5352b9cf2aed9b259e0491083ff9e33fc0a1e989",
+            "content": "sha256:5245ba4233f5bb6f9a85f598ca3e6cb1a7b17e05d95e7f3c4b9d6fed72986417",
             "locator": {
               "kind": "symbol",
               "name": "test_registered_status_projects_activation_without_mutation"
@@ -18,12 +18,22 @@
         },
         {
           "anchor": {
-            "blob": "c2b016ef1ab174685c71169eb5dbee3c2001e63e",
-            "content": "sha256:0449a2531d0f60e523d7d8177638ebaaf11368e650e112c7fb2126e359ad0b94",
+            "blob": "5352b9cf2aed9b259e0491083ff9e33fc0a1e989",
+            "content": "sha256:2b10e0d054aab040a6d6d4219748e53ce3cc48aeadeee2d015529194d5ffa2ea",
             "locator": {
               "end": 184,
               "kind": "line_range",
               "start": 163
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5352b9cf2aed9b259e0491083ff9e33fc0a1e989",
+            "content": "sha256:d8c797563dfb9837d6fad03b4083bb1e831907b91aed9b875399e56d8521d06b",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -35,8 +45,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f51ebc6d57918dd9bf36cc7168f448490be5b4e5",
-            "content": "sha256:7292072df05076b313a803f7d4a2635122db126b03aaeb426f655c18d01a80e7",
+            "blob": "5352b9cf2aed9b259e0491083ff9e33fc0a1e989",
+            "content": "sha256:d8c797563dfb9837d6fad03b4083bb1e831907b91aed9b875399e56d8521d06b",
             "locator": {
               "kind": "file"
             }
@@ -50,8 +60,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c2b016ef1ab174685c71169eb5dbee3c2001e63e",
-            "content": "sha256:d0c30db2f705f24c90a0df61907ee97e71244aab976ba7d6c8d8c5537735f3fa",
+            "blob": "5352b9cf2aed9b259e0491083ff9e33fc0a1e989",
+            "content": "sha256:5c910268117e4ae41a7a61f630f82814f62d1b47eaf958b2300098e3591b7b39",
             "locator": {
               "kind": "symbol",
               "name": "test_registered_sync_refusal_addresses_only_this_contracts_own_state"
@@ -61,12 +71,22 @@
         },
         {
           "anchor": {
-            "blob": "c2b016ef1ab174685c71169eb5dbee3c2001e63e",
-            "content": "sha256:3fded7ef3993df6ac6b4e1ad09de14c96049972a456743491b4973f59f82f32a",
+            "blob": "5352b9cf2aed9b259e0491083ff9e33fc0a1e989",
+            "content": "sha256:3c8b8bb03f0a7695976542daf4703333192979ac99a3faa15239bae08429b790",
             "locator": {
               "end": 229,
               "kind": "line_range",
               "start": 186
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5352b9cf2aed9b259e0491083ff9e33fc0a1e989",
+            "content": "sha256:d8c797563dfb9837d6fad03b4083bb1e831907b91aed9b875399e56d8521d06b",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -78,8 +98,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c2b016ef1ab174685c71169eb5dbee3c2001e63e",
-            "content": "sha256:3ae9515ce952f711ae2b635c1ee6555a1aa7e4128da82d80f25851fdae199253",
+            "blob": "5352b9cf2aed9b259e0491083ff9e33fc0a1e989",
+            "content": "sha256:9c4c6db98516fa8a293492e6692f1bf7b6a32d0bc63b983b73d8136cc485c19a",
             "locator": {
               "kind": "symbol",
               "name": "test_registered_sync_refusal_distinguishes_vacant_and_unreadable"
@@ -89,8 +109,8 @@
         },
         {
           "anchor": {
-            "blob": "c2b016ef1ab174685c71169eb5dbee3c2001e63e",
-            "content": "sha256:3f1754b73fde8ca513e487dde999b0d166e01ff3e980b49dda5d268eab54de29",
+            "blob": "5352b9cf2aed9b259e0491083ff9e33fc0a1e989",
+            "content": "sha256:49f3bdfb0c4d7bd3042c01378328dbfc5592e0c384b2283dcb752ccb15447ed6",
             "locator": {
               "end": 274,
               "kind": "line_range",
@@ -98,16 +118,26 @@
             }
           },
           "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5352b9cf2aed9b259e0491083ff9e33fc0a1e989",
+            "content": "sha256:d8c797563dfb9837d6fad03b4083bb1e831907b91aed9b875399e56d8521d06b",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
         }
       ]
     },
     "4": {
-      "note": "Oversized status and sync refusals keep bounded whole-result diagnostics in their logs and preserve malformed source bytes.\n\nAnchor: `RegisteredActivationAdmissionTests.test_registered_status_and_sync_bound_oversized_unreadable_detail`",
+      "note": "Oversized status and sync refusals keep bounded whole-result diagnostics in their logs and preserve malformed source bytes.",
       "targets": [
         {
           "anchor": {
-            "blob": "c2b016ef1ab174685c71169eb5dbee3c2001e63e",
-            "content": "sha256:a7f37631b15f55fd41268a9cfade0dc05a1304188b07f3738465db98eea24190",
+            "blob": "5352b9cf2aed9b259e0491083ff9e33fc0a1e989",
+            "content": "sha256:d357c56182dacb05699fcddbdff4b1263fc273dfdcaa8a72ecd187be0f43b3b5",
             "locator": {
               "end": 332,
               "kind": "line_range",
@@ -123,8 +153,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c2b016ef1ab174685c71169eb5dbee3c2001e63e",
-            "content": "sha256:fcc76a59db328742aa740ca041dd7b6ca32046048ab9741bc1da6a3a2850c594",
+            "blob": "5352b9cf2aed9b259e0491083ff9e33fc0a1e989",
+            "content": "sha256:1cd94ba1491a167d1415f197710f0fbfffdfa9d824b5639c3047919a4a8eb4cd",
             "locator": {
               "kind": "symbol",
               "name": "test_registered_start_refusal_reports_contract_edges"
@@ -134,12 +164,22 @@
         },
         {
           "anchor": {
-            "blob": "c2b016ef1ab174685c71169eb5dbee3c2001e63e",
-            "content": "sha256:d14a16cf53ec189f264336d28f8fa73e8d6f0807ff2eb215877d5cc1c346c626",
+            "blob": "5352b9cf2aed9b259e0491083ff9e33fc0a1e989",
+            "content": "sha256:2316976e47010920715a7b37d2ea83fafd219845e5828533fe32ee95996eb502",
             "locator": {
               "end": 380,
               "kind": "line_range",
               "start": 333
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5352b9cf2aed9b259e0491083ff9e33fc0a1e989",
+            "content": "sha256:d8c797563dfb9837d6fad03b4083bb1e831907b91aed9b875399e56d8521d06b",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -151,8 +191,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c2b016ef1ab174685c71169eb5dbee3c2001e63e",
-            "content": "sha256:566b1aa3c660afccce50071c5e429e01eef8e372ea6565af792e561adb4f93b6",
+            "blob": "5352b9cf2aed9b259e0491083ff9e33fc0a1e989",
+            "content": "sha256:a89f1744848fdeb9f16dc59891b5865368f97e7b1c68f2d0669eacf4ec8c6658",
             "locator": {
               "kind": "symbol",
               "name": "test_registered_start_reread_refusal_preserves_edges_and_guidance"
@@ -162,8 +202,8 @@
         },
         {
           "anchor": {
-            "blob": "c2b016ef1ab174685c71169eb5dbee3c2001e63e",
-            "content": "sha256:293afee9f6f3ef5a42c98e7db79b65209e289caeb70bf2eb0f4fb2853120ecc6",
+            "blob": "5352b9cf2aed9b259e0491083ff9e33fc0a1e989",
+            "content": "sha256:1061294f2278df3d3f211299eca6e49baf008fc9d830f3e14fe0cf088c65ea9d",
             "locator": {
               "end": 434,
               "kind": "line_range",
@@ -171,16 +211,26 @@
             }
           },
           "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5352b9cf2aed9b259e0491083ff9e33fc0a1e989",
+            "content": "sha256:d8c797563dfb9837d6fad03b4083bb1e831907b91aed9b875399e56d8521d06b",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
         }
       ]
     },
     "7": {
-      "note": "Unreadable startup contracts retain concrete bounded parser reason and admission in the logged whole refusal; delivered overflow identity and retry guidance are checked separately.\n\nAnchor: `RegisteredActivationAdmissionTests.test_registered_start_unreadable_contract_keeps_parser_reason`",
+      "note": "Unreadable startup contracts retain concrete bounded parser reason and admission in the logged whole refusal; delivered overflow identity and retry guidance are checked separately.",
       "targets": [
         {
           "anchor": {
-            "blob": "c2b016ef1ab174685c71169eb5dbee3c2001e63e",
-            "content": "sha256:10b423ab2e3661edd54866c23d8568afcdc6a74f2d84f997c0d434e873e8d05a",
+            "blob": "5352b9cf2aed9b259e0491083ff9e33fc0a1e989",
+            "content": "sha256:d000c28e7b97f8d4a7899d50be69f456522a44034e20cbce49ca1456e347a520",
             "locator": {
               "end": 515,
               "kind": "line_range",
@@ -210,12 +260,12 @@
       ]
     },
     "9": {
-      "note": "Registered-adapter readiness/admission facts are recovered from the answer log. Foreign-master exclusion, bounded parser reason, fingerprints and addressed action assertions remain. A compact answer and its retained detailed result are different carriers.\n\nAnchor: Current STOP-delta source carrier",
+      "note": "Registered-adapter readiness/admission facts are recovered from the answer log. Foreign-master exclusion, bounded parser reason, fingerprints and addressed action assertions remain. A compact answer and its retained detailed result are different carriers.",
       "targets": [
         {
           "anchor": {
-            "blob": "a539d42748ddf84cd602b7b7b20f7857b2a312aa",
-            "content": "sha256:33eb8506cbcd2cfb835cad8833386bcc4ffca36c66909e726ae1c2be96aa5eb7",
+            "blob": "5352b9cf2aed9b259e0491083ff9e33fc0a1e989",
+            "content": "sha256:d8c797563dfb9837d6fad03b4083bb1e831907b91aed9b875399e56d8521d06b",
             "locator": {
               "kind": "file"
             }

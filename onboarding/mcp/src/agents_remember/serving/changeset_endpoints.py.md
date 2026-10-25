@@ -111,7 +111,9 @@ No configured domain documentation could be checked.
 
 ### Repo-Internal References
 
+
 - The endpoint resolver imports the serving cached reader as its local `run_git`; successful reads use the sole kernel Git runner. [14]
+
 
 Every claim on this card is checkable in the shipped candidate: this module's own docstring and
 functions, the contract loader whose recorded cells it reads, the Git helper it probes with, the
@@ -135,13 +137,23 @@ of letting it reach the route as a `404` (register B6). The memory side's degrad
 - The three absence kinds and the single degradable one. [4]
 - **The range value: the two recorded ids plus the repository that holds them, because an id without its repository is not resolvable.** [5]
 - **The absence type: a `FileNotFoundError`, with `kind` carrying the reason apart — the code side's `not-recorded` instance is caught by `_leaf_range` and published as the body's state rather than reaching the route as a 404 (260921-ICR-L25).** [6]
+
 - **The whole resolver: the recorded-base precondition, the two missing-cell refusals, and the resolvability probe — in that order.** [7]
+
 - The two recorded cells per side, with the closeout cell preferred over the integration cell and the base side having no fallback. [8]
 - The leaf name a refusal carries, with the task id as the fallback for a contract that records no leaf. [9]
+
 - **The resolvability probe: the repository is asked, per commit, and the first object it does not hold is named.** [10]
-- The contract whose recorded cells this module reads, and the cells themselves. [11]
+
+
+> Retained earlier citation wording: - The contract whose recorded cells this module reads, and the cells themselves. [11]
+
+
 - **The caller that owns the degradation policy: the code half carries its own `not-recorded` absence into the body as `state`/`stateDetail` while only an unrecorded **memory** half may empty, and both sides resolve independently.** [12]
+
+
 - **The case module that measures the bound range, the immovable endpoint, the state answered instead of a refusal, the route's own `200`, and the one-half degradation.** [13]
+
 
 ### Cross-Repo References
 
@@ -150,3 +162,5 @@ repository and one memory repository named by the enclosure contract, and carrie
 ranges beyond them.
 
 No meaningful cross-repo references found.
+
+- The contract whose recorded cells this module reads, and the cells themselves.  Anchor: `WorktreeContract` `load_contract` [11]

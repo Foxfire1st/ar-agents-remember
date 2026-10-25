@@ -17,7 +17,12 @@ absent-name assertions live here as the permitted test-side literals.
 
 ## Evidence
 
+
 - Projection models carry no token fields. [1]
+
 - The served schema carries no token fields. [2]
+
 - A store write over an old-field file reads back clean. [4]
+
+
 - Workspace metrics carry no token total. [5]

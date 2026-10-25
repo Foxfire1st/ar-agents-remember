@@ -52,7 +52,9 @@ No relevant external or domain documentation is configured for this repository-l
 ### Repo-Internal References
 
 - The server projection still declares an optional dashboard fingerprint; the added process/source identity fields do not change the comparator's input. [1]
+
 - Renders the comparison as a data attribute and adds a reload instruction to the mismatch tooltip. [2]
+
 - Embeds the fingerprint into the compiled client. [3]
 
 ### Cross-Repo References

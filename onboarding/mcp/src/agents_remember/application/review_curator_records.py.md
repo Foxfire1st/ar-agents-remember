@@ -91,5 +91,7 @@ No Domain Documentation source is configured for this repository. Requirement pa
 
 ### Repo-Internal References
 
+
 - Current review composition supplies judgment/proofs and no supporting-record bundle or applicability call. [7]
+
 - The surviving pane reads the addressed record’s after-tree leaf-history rows and proof entries; this is not a relocation of the removed behavior. [8]

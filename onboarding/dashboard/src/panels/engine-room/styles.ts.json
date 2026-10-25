@@ -1,5 +1,6 @@
 {
   "path": "dashboard/src/panels/engine-room/styles.ts",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
@@ -7,7 +8,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cd5c184afd89ddd45144be1d679d04bd09da6b9c",
+            "blob": "5705ba6821a3de4af9781d63732e0300475af6a6",
             "content": "sha256:bc8f5d68c1d5a6961435fe4e2ae24b5f6f5c9becdd426e3efcc8cd6b2a30df78",
             "locator": {
               "kind": "symbol",
@@ -24,7 +25,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "36146708015b9475196ccf76dc85168aae56a77d",
+            "blob": "cd0b56b4d75340a645116b7357c2d0b4c954dea3",
             "content": "sha256:f14c89b21fd5002c385d5cc15560b6bc8a5e5c4abe5ac03068f613abf2ad546f",
             "locator": {
               "kind": "symbol",
@@ -41,7 +42,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c93efa0c8dad93909ffe08e9cb9d17efb3321b21",
+            "blob": "61fa5ab62915df0658c9617649fee1dec455a082",
             "content": "sha256:d2fb78a8b67fa0f141b7cee8fdd9d822b448c89123cc6fe246a8e17b2dcc0dfb",
             "locator": {
               "kind": "symbol",
@@ -58,7 +59,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c93efa0c8dad93909ffe08e9cb9d17efb3321b21",
+            "blob": "61fa5ab62915df0658c9617649fee1dec455a082",
             "content": "sha256:5de7520067a7984282375194629a00bcc4e15cc28258cd7b24594a4b143bda57",
             "locator": {
               "kind": "symbol",
@@ -75,12 +76,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b2ee2d1b311af75a312cadbd27cbc68256a08eab",
+            "blob": "15444872a266d89123558da6eb8909e81fe96665",
             "content": "sha256:ac62ca54f0f1d04e921bbc2241972b186f60f8104ff4b1afe03fbe9467fe7079",
             "locator": {
-              "end": 36,
+              "end": 35,
               "kind": "line_range",
-              "start": 36
+              "start": 35
             },
             "path": "dashboard/src/panels/engine-room/EnclosureCanvas.tsx"
           },
@@ -101,46 +102,12 @@
         }
       ]
     },
-    "2": {
-      "note": "`engineCharge` is fill-only colour-as-state (Motion owns the scaleY/opacity boot-fill); `engineReindexCharge` lost `animation: chargeSweep` (GSAP `data-fx='reindex'`).",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "cd5c184afd89ddd45144be1d679d04bd09da6b9c",
-            "content": "sha256:58417d64fb9f47bd13ec0c76d57389e8f5b5d1d9eded8d91196e626d39c1ad61",
-            "locator": {
-              "kind": "symbol",
-              "name": "engineCharge"
-            },
-            "path": "dashboard/src/panels/engine-room/stage.styles.ts"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "3": {
-      "note": "`worktreeWire` (05k, NEW) — carries NO opacity so Motion owns the wire's opacity (a className opacity shadows Motion under `initial=false`).",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "cd5c184afd89ddd45144be1d679d04bd09da6b9c",
-            "content": "sha256:072b528dc7b446ad42b49af20489c724614f68e613f6a4cc1ef58cdf60876c7f",
-            "locator": {
-              "kind": "symbol",
-              "name": "worktreeWire"
-            },
-            "path": "dashboard/src/panels/engine-room/stage.styles.ts"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "4": {
       "note": "`warpSurge` is plain `css` (GSAP `data-fx='surge'`); `warpCouplerG` removed (Motion owns coupler opacity).",
       "targets": [
         {
           "anchor": {
-            "blob": "cd5c184afd89ddd45144be1d679d04bd09da6b9c",
+            "blob": "5705ba6821a3de4af9781d63732e0300475af6a6",
             "content": "sha256:4bcd65590ea3df65140b70c7e677aa628dc2901efc287af1084cffb99ecee406",
             "locator": {
               "kind": "symbol",
@@ -157,8 +124,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "36146708015b9475196ccf76dc85168aae56a77d",
-            "content": "sha256:8bb101263081fee28fcd4dcffc32d6108736d892d70e461e15a1a3045efea6a1",
+            "blob": "cd0b56b4d75340a645116b7357c2d0b4c954dea3",
+            "content": "sha256:e2391602a19cc3101c809dc5101cf21f1cb07a1fdc5f36447c93cb6e7db895bb",
             "locator": {
               "kind": "symbol",
               "name": "refusedConduit"
@@ -174,8 +141,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f23ae83b49025d9b10e7b6bc846ede9a6d48563e",
-            "content": "sha256:521843cc89ecb7ccc1a3e9ff68b46d002a1a62ccc357caad545cc1093ebb3ae7",
+            "blob": "0a3de3f86452a06356eee661d5e4bbdc7ccdf5eb",
+            "content": "sha256:7a4dda1e37c1500d1e8f572c5fd5f02aac6a8037f6a885e76727b27bb8690d53",
             "locator": {
               "kind": "symbol",
               "name": "refusedPolarityOf"
@@ -191,12 +158,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fc93bae691a82da28bef3516bc6b7b8a85af6db8",
+            "blob": "fd0cd6ba53b5d874adfcb26807b26ab92e77d56e",
             "content": "sha256:6d5a8fd358ca69062732d0582b02c7da212699924831f1a0bca28dcd94c67685",
             "locator": {
-              "end": 372,
+              "end": 294,
               "kind": "line_range",
-              "start": 372
+              "start": 294
             },
             "path": "mcp/src/agents_remember/observer/projection.py"
           },
@@ -209,30 +176,13 @@
       "targets": [
         {
           "anchor": {
-            "blob": "36146708015b9475196ccf76dc85168aae56a77d",
+            "blob": "cd0b56b4d75340a645116b7357c2d0b4c954dea3",
             "content": "sha256:1ccd912cbec465c3f069295004a7a6607692b70237ef18dbdaa7e11784f4aa2a",
             "locator": {
               "kind": "symbol",
               "name": "attnBadge"
             },
             "path": "dashboard/src/panels/engine-room/flow.styles.ts"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "9": {
-      "note": "`engineGaugeOut` — **FLAT** gold bezel (05o dropped the base amber glow; `down`/fault keeps the red bezel + red glow); `enginePetal` is constant gold (05o — amber on `base`, opacity-only variants). `engineCharge`/`warpCouplerBar`/`flowConduit running`/`flowPacket`/`gateBar` keep their state-coloured `drop-shadow` glows (settled lanes glow-less).",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "cd5c184afd89ddd45144be1d679d04bd09da6b9c",
-            "content": "sha256:d0c302038252af02efe211e0db105f3e25a16473805114b8ed45cf771bee51de",
-            "locator": {
-              "kind": "symbol",
-              "name": "engineGaugeOut"
-            },
-            "path": "dashboard/src/panels/engine-room/stage.styles.ts"
           },
           "kind": "code"
         }

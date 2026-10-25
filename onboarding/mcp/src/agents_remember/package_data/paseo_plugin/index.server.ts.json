@@ -38,12 +38,12 @@
       ]
     },
     "2": {
-      "note": "The entry composes independent activity publication/RPC and parent-wake registration, with explicit initialization and unload failure handling.\n\nAnchor: current owner",
+      "note": "The entry composes independent activity publication/RPC and parent-wake registration, with explicit initialization and unload failure handling.",
       "targets": [
         {
           "anchor": {
-            "blob": "5b68ba06fadc90ada7343b781d0d24f97d961648",
-            "content": "sha256:3692fdc416363268b266939f5e43f0dfc7af5055e19817ca72ba0e9280bb977a",
+            "blob": "4973808b24e87c4f48217316928eb053db0fa69b",
+            "content": "sha256:b92378c07125e1db9fa829fdad89fbfc55ef32bb63d99f1966188f7985e0e400",
             "locator": {
               "end": 44,
               "kind": "line_range",
@@ -54,8 +54,8 @@
         },
         {
           "anchor": {
-            "blob": "5dcb7031b563ff6a932a970d782fb0d1bb680619",
-            "content": "sha256:effb6b463609951b20d995d719cbdff4517c7aa04335d2d5f2d526ee6a053c61",
+            "blob": "dc867726c9071a79792d76230a55b4be0f68908c",
+            "content": "sha256:4b28047d3fdeb79a7f95dd7a51e7282e13992884ee34ca45140631d391f7d329",
             "locator": {
               "end": 60,
               "kind": "line_range",

@@ -116,12 +116,14 @@ No cross-repo boundary is crossed by this file.
 
 - One question per subject and leaf. [7]
 
+
 - The one spelling of a link target, compared before a refresh (N1). [8]
+
+
 
 - The pure stored-item rule closes matching rows or supplied superseded IDs; empty default preserves two-argument behavior. [9]
 
-- The row kind, the subject parser and the item kind are registered with MIK-R14 as owner. [10]
-- The stored predicate agrees with `satisfiedBy` on the answered item. [11]
+
 
 
 
@@ -146,7 +148,9 @@ No cross-repo boundary is crossed by this file.
 Inspected source assertions, not a fresh Curator test run or deployment of the
 checked leaf repair to the serving build.
 
+
 - An explicitly supplied superseded set closes a stored item without a row; the empty default preserves row-based compatibility. [18]
+
 
 - Supersession, stale refresh and ordinary row satisfaction have explicit priority in the pure predicate. [19]
 

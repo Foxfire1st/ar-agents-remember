@@ -1,5 +1,6 @@
 {
   "path": "mcp/tests/test_landing_state_refusals.py",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
@@ -13,6 +14,18 @@
               "end": 260,
               "kind": "line_range",
               "start": 225
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "973144842850b525bb7677000953b7a9394f9574",
+            "content": "sha256:9d7c589952206b7706844947bd0cadcaece2eea6b42e9bea0f27ec00fef13755",
+            "locator": {
+              "end": 259,
+              "kind": "line_range",
+              "start": 224
             }
           },
           "kind": "test"
@@ -33,6 +46,18 @@
             }
           },
           "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "973144842850b525bb7677000953b7a9394f9574",
+            "content": "sha256:6e42b04745ce13b0b65b2769bc005a366dfd8e8e0f64cd6a2987eee001d3d5b7",
+            "locator": {
+              "end": 1389,
+              "kind": "line_range",
+              "start": 1388
+            }
+          },
+          "kind": "test"
         }
       ]
     },
@@ -50,16 +75,28 @@
             }
           },
           "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "973144842850b525bb7677000953b7a9394f9574",
+            "content": "sha256:79b7706ff5c97b5f001cfa6e61b9dd2f6592191fdc3ec67bd4b6d171f7ef3d8d",
+            "locator": {
+              "end": 1397,
+              "kind": "line_range",
+              "start": 1391
+            }
+          },
+          "kind": "test"
         }
       ]
     },
     "4": {
-      "note": "Three existing waits now use wait_until on the same contract closeout_status == completed condition. The first condition polls worktree_status before reading completion; the other two read the contract directly. The shared guard is unchanged, and all existing assertions retain their values; no sleep duration or new allowlist supplies readiness.\n\nAnchor: Current STOP-delta source carrier",
+      "note": "Three existing waits now use wait_until on the same contract closeout_status == completed condition. The first condition polls worktree_status before reading completion; the other two read the contract directly. The shared guard is unchanged, and all existing assertions retain their values; no sleep duration or new allowlist supplies readiness.",
       "targets": [
         {
           "anchor": {
-            "blob": "8f0c1412fae1ead2fac9d55bc117e8fd1a6f3601",
-            "content": "sha256:fe432ad44cbd60a33f839f20063329ffc3d3fbb6a2c9018c910e1c6e3317ddee",
+            "blob": "973144842850b525bb7677000953b7a9394f9574",
+            "content": "sha256:72200b9896013b98ecfc757b5ef4633560dd47a8a59182390c4f08533c6e020b",
             "locator": {
               "kind": "file"
             }
@@ -69,18 +106,8 @@
       ]
     },
     "5": {
-      "note": "Ordinary refusal tests require no error and read summary while preserving exact codes, next steps and state guards.\n\nThe closeout gate preview source case requires closeout-gate-blocked with a coded blocker and no commit approval; nextStep contains no nextTool and its summary contains STORED_GATE_WAY_OUT. This is static assertion coverage, not a Curator execution or transaction acceptance.\n\nAnchor: `GateBlockedTests.test_closeout_preview_with_closed_gate_answers_blocked`",
+      "note": "Ordinary refusal tests require no error and read summary while preserving exact codes, next steps and state guards. The closeout gate preview source case requires closeout-gate-blocked with a coded blocker and no commit approval; nextStep contains no nextTool and its summary contains STORED_GATE_WAY_OUT. This is static assertion coverage, not a Curator execution or transaction acceptance.",
       "targets": [
-        {
-          "anchor": {
-            "blob": "56eddc80b235913edd4ad7b2e50055673f0db23e",
-            "content": "sha256:b34798b76e54af521f3beeb546e90c30a729a07cd3d9f8ca22a1c9cb5303cd87",
-            "locator": {
-              "kind": "file"
-            }
-          },
-          "kind": "test"
-        },
         {
           "anchor": {
             "blob": "973144842850b525bb7677000953b7a9394f9574",
@@ -89,6 +116,16 @@
               "end": 850,
               "kind": "line_range",
               "start": 833
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "973144842850b525bb7677000953b7a9394f9574",
+            "content": "sha256:72200b9896013b98ecfc757b5ef4633560dd47a8a59182390c4f08533c6e020b",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "test"

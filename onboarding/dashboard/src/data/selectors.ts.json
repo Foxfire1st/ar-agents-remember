@@ -1,10 +1,11 @@
 {
   "path": "dashboard/src/data/selectors.ts",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
-        "blob": "8dc9b1852c479fc96771ecfcf0d392d17b35f9fe",
-        "content": "sha256:9a52fbcecc5fbed3adde11292a77329ce207499c27ea914ef595ef28eb4c29d6",
+        "blob": "45703aad8672ac0bd3f53a1e3be16aef2ad16336",
+        "content": "sha256:f9a468be21f745ce68abb4692d7cff78eddbba96844874c4ee80194c83731e5e",
         "locator": {
           "kind": "file"
         }
@@ -15,7 +16,7 @@
         "handoffEntry": "L192-W-R199-02",
         "leaf": "260928-MIK-L192"
       },
-      "rationale": "The store selectors no longer derive provider state for any panel.",
+      "rationale": "selectors.ts at C derives no provider state for any panel.",
       "role": "support"
     },
     {
@@ -39,15 +40,14 @@
   ],
   "references": {
     "1": {
-      "note": "selectQueue caches filtered queue arrays by queue and suppression-map identity and suppresses only dismissible rows whose ids are present in the local map.",
+      "note": "selectQueue caches the visible queue by the queue array's identity and the suppression map's identity, and hides every row whose id is in that map, whatever the entry's kind.\n\nAnchor: `selectQueue`",
       "targets": [
         {
           "anchor": {
-            "blob": "2c07983d592a02414e45f8b028e564aea10ddc48",
-            "content": "sha256:9ae902dbea2aa1774bb3776820ac6e601780b667fa3c55cd81afce127c39f346",
+            "blob": "45703aad8672ac0bd3f53a1e3be16aef2ad16336",
+            "content": "sha256:f9a468be21f745ce68abb4692d7cff78eddbba96844874c4ee80194c83731e5e",
             "locator": {
-              "kind": "symbol",
-              "name": "selectQueue"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -55,15 +55,14 @@
       ]
     },
     "3": {
-      "note": "The converted drift names order with the legacy classifications, healthy first.",
+      "note": "The converted drift names order with the legacy classifications, healthy first.\n\nAnchor: `DRIFT_ORDER`",
       "targets": [
         {
           "anchor": {
-            "blob": "30cb14732f6d4d548c1ee9550ab342b849d1eb10",
-            "content": "sha256:2f83b13eb6d0477badb3e2f2d84cdac51bd6c1565679c78804712e80a8c0e928",
+            "blob": "45703aad8672ac0bd3f53a1e3be16aef2ad16336",
+            "content": "sha256:f9a468be21f745ce68abb4692d7cff78eddbba96844874c4ee80194c83731e5e",
             "locator": {
-              "kind": "symbol",
-              "name": "DRIFT_ORDER"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -86,7 +85,7 @@
         },
         {
           "anchor": {
-            "blob": "2ec9093820c8c56fe734ba2d14e274bc7c792589",
+            "blob": "45703aad8672ac0bd3f53a1e3be16aef2ad16336",
             "content": "sha256:73c94ec98ff59774ca714fc57c18f3a2b416803757d40931678111e3b102ccf7",
             "locator": {
               "kind": "symbol",

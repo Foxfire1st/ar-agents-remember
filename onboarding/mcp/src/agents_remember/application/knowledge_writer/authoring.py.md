@@ -36,7 +36,7 @@ A record request with `remove: true` removes the stored record file and its Mark
 
 
 
-- Origin/evidence and decision alternatives delegate to their explicit owners. \[55] [55]
+- Origin/evidence and decision alternatives delegate to their explicit owners. [55]
 
 
 
@@ -161,8 +161,6 @@ The following complete predecessor retains useful explanations, old observations
 > The file is outside MIK-R30's Scope list; the architect accepted it as necessary wiring (ruling
 > 2026-09-29T18:49:50 (6)), since rows are authored only through the writer.
 >
-> - An `onboarding:` subject goes to its own row builder in the four-pair special dispatch. [3]
-> - The onboarding row: writer-filled source binding, `updated`/`no_impact`, counted-change check, ID and moved markers retained. [4]
 > - The historical moved-marker rewrite case retains its marker provenance; missing source binding is not a new open-row answer under R53. [5]
 >
 > ## 260928-MIK-L11 The Planned Row Through The Writer (MIK-R11 Rule 5)
@@ -189,9 +187,6 @@ The following complete predecessor retains useful explanations, old observations
 >
 > - The task owner's answer about a decision, injected into the writer. [6]
 > - The resolver field; `None` has no task owner. [7]
-> - A `planned:` subject goes to its own row builder. [8]
-> - The planned row: no extra members, `ref` required, the ID kept, validated. [9]
-> - What the ref names must exist or resolve. [10]
 > - The writer's planned rows and every refusal. [11]
 >
 > ## 260928-MIK-L06 A Moved Row Relocates Its Entry To Another File (MIK-R06, Ruling Q6)
@@ -217,10 +212,6 @@ The following complete predecessor retains useful explanations, old observations
 > - The malformed-path and remove-plus-path refusals are the hand-off reader's (`handoff._cover_path`, review
 >   F1 and N7).
 >
-> - An invariant row tells its covers whether it is a moved row. [12]
-> - A path on any other disposition is refused. [13]
-> - The entry's `after`: relocated when the path differs, then re-anchored at C. [14]
-> - The relocation: the entry keeps its ID and fields and moves sidecar. [15]
 > - A moved row relocates the entry; before and after name the old and new paths; a rerun is byte-identical. [16]
 >
 > ## 260928-MIK-L10 The No-Invariant Row And The Retired-Attach Refusal (MIK-R10)
@@ -249,8 +240,6 @@ The following complete predecessor retains useful explanations, old observations
 >
 > - The retired-attach guard, called before the record is placed. [17]
 > - The refusal names the invariant and the alternatives. [18]
-> - The special row kinds (L10's three, and MIK-R14's reconsideration row since L14), dispatched through one table. [19]
-> - The no_invariant row: no extra members, the ID kept, validated, and a `file:` subject checked at C. [20]
 > - The writer's refusals: absent and retired invariants, a blank reason, covers, another disposition. [21]
 >
 > ## 260928-MIK-L14 The Reconsideration Rows Through The Writer (MIK-R14 Rule 4)
@@ -289,10 +278,6 @@ The following complete predecessor retains useful explanations, old observations
 >   `authoring_rows.py`; these figures are not a current size, complexity or test result.
 >
 > - The port, the queued questions and the worklist's items. [22]
-> - The fourth special row kind in the dispatch table. [23]
-> - The row: common fields, the named alternative, then `raise` or the refresh. [24]
-> - `still_rejected`: the answered item, the refresh, one bump when judged, carried in place otherwise. [25]
-> - `raise`: the checked question, the status, and the queued append. [26]
 > - The refusals of a wrong subject or an extra field. [27]
 > - A `raise` refused without a task owner, on a check refusal and on an append refusal writes nothing. [28]
 >
@@ -309,9 +294,6 @@ The following complete predecessor retains useful explanations, old observations
 >   ID, role, invariant and anchor. A rationale on a proof entry is a named problem ("a proof has a facet"). The entry
 >   is looked up again first, because the cover may have moved it.
 >
-> - A row whose hand-off names no item lists the worklist items it answers. [47]
-> - The items a row answers, by each kind's satisfying-row rule. [48]
-> - A cover's rationale replaces the realization entry's rationale in place. [49]
 >
 > - The writer fills row items from the worklist after the unchanged case moved to governing-row tests. [50]
 >
@@ -343,7 +325,6 @@ The following complete predecessor retains useful explanations, old observations
 >
 > The mechanical fields, by concern.
 >
-> - Fields that carry no meaning; a change elsewhere is a new revision. [29]
 > - The operation: entries, records, rows, then unstored foreign evidence refuses. [30]
 > - ID assignment and rerun reuse. [31]
 > - Origin: own records gain evidence, another owner's origin is kept exactly. [32]
@@ -353,11 +334,8 @@ The following complete predecessor retains useful explanations, old observations
 > - A rerun removes only this owner's unnamed entries. [36]
 > - What became of a test the evidence names, and a test file named without a test is `unresolvable`. [37]
 >
-> - History rows into the owner's file; a closed file is frozen. [38]
 >
-> - Foreign evidence stored in this owner's row reason. [39]
 >
-> - A cover's before and after, re-anchored at C when asked. [40]
 >
 > - The conforming example: decision, realization and proof, validated. [41]
 > - Rerun idempotence. [42]
@@ -365,7 +343,6 @@ The following complete predecessor retains useful explanations, old observations
 >
 > - The record's revision after this operation: an unmerged record at the higher side's plus one. [44]
 >
-> - Rows are written to the history target, with its attempt when above 1. [45]
 >
 > - A record both sides changed is resolved at one more than the higher side. [46]
 >
@@ -383,5 +360,64 @@ The following complete predecessor retains useful explanations, old observations
 `_write_proof` now returns the report text and the evidence references its proof pairs with: a `path::name` proof resolves its symbol as before, and a range proof is resolved by `_proof_locator` through `case_proof.range_proof`, which admits the lines only for one case that runs and that no name reaches. The paired titles are then reported through `case_proof.proven_tests`, so evidence that names the case's own title reads `proof_written`. The authoring class is now `Authoring(RepointRowAuthoring)`, so a `still_rejected` row may carry the re-point that `repoint.py` judges; nothing else about the entry, proof or row order changed.
 
 - A proof is written from its symbol or from the lines of one running case that no name reaches, and the titles it pairs with are reported as its outcome. [57]
+
 - A range proof's locator and pairing titles are resolved by this one helper, which refuses a range that is no such case. [58]
+
+
 - The authoring class inherits the re-point row authoring, so a `still_rejected` row's `repoint` is judged where the row is written. [59]
+
+
+- Both forms become proofs once faceted; an absent test and a bare test file are reported. [1]
+
+- No sidecar until the facet is authored; a blank facet is refused and writes nothing. [2]
+
+- A moved marker row satisfies its item and survives a rewrite through the writer. [5]
+
+- The task owner's answer about a decision, injected into the writer. [6]
+- The resolver field; `None` has no task owner. [7]
+
+- The writer's planned rows and every refusal. [11]
+
+
+- A moved row relocates the entry; before and after name the old and new paths; a rerun is byte-identical. [16]
+
+- The retired-attach guard, called before the record is placed. [17]
+- The refusal names the invariant and the alternatives. [18]
+- The writer's refusals: absent and retired invariants, a blank reason, covers, another disposition. [21]
+- The port, the queued questions and the worklist's items. [22]
+- The refusals of a wrong subject or an extra field. [27]
+- A `raise` refused without a task owner, on a check refusal and on an append refusal writes nothing. [28]
+
+- The operation: entries, records, rows, then unstored foreign evidence refuses. [30]
+
+
+- ID assignment and rerun reuse. [31]
+
+
+- Origin: own records gain evidence, another owner's origin is kept exactly. [32]
+
+- Revision once per leaf against the base. [33]
+
+- Records of any kind, with defaults and resolved links. [34]
+
+- Realization and proof entries upserted in the sidecar. [35]
+- A rerun removes only this owner's unnamed entries. [36]
+
+- What became of a test the evidence names, and a test file named without a test is `unresolvable`. [37]
+
+
+- The conforming example: decision, realization and proof, validated. [41]
+
+- Rerun idempotence. [42]
+- Revision increments once; foreign evidence goes to this leaf's row. [43]
+- The record's revision after this operation: an unmerged record at the higher side's plus one. [44]
+- A record both sides changed is resolved at one more than the higher side. [46]
+
+- The writer fills row items from the worklist after the unchanged case moved to governing-row tests. [50]
+
+- A cover revises a realization entry's rationale in place. [51]
+
+- Row mechanics record the invariant's or family's own revision. [52]
+
+
+- Current source delta inspected statically: Refresh inherited-row facts and stale no_impact-only, dispatch and permanent-report captions while retaining origin, revision, relocation and attempt mechanics. [53]

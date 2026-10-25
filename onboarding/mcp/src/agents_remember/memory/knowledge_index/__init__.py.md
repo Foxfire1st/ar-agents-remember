@@ -46,8 +46,12 @@ No configured live documentation source was available for this pass.
 
 The package statement and its exports.
 
+
 - The package map and the rule that no writer writes the index and it is never merged. [1]
+
+
 - The re-exported public surface. [2]
+
 
 ### Cross-Repo References
 

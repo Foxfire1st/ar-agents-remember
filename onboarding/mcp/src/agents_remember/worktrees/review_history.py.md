@@ -60,8 +60,12 @@ No configured external source applies.
 
 ### Repo-Internal References
 
+
 - Error/status boundary, cap-aware begin semantics, and pending admission. [1]
+
+
 - Publication field validation, architect/developer approval parsing, and sealed baseline creation. [2]
+
 - Successor monotonicity and duplicate/blank-ID refusals. [3]
 
 ## Historical L41 Source File Binding

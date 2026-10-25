@@ -3,40 +3,16 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The internal apply owner obtains target storage authority and passes it to route-index refresh only after configured contract and protected-checkout authority.",
+      "note": "The internal carryover apply owner checks configured and protected-checkout authority before obtaining target storage, then passes that storage to apply_converted, whose route-index refresh uses it for target onboarding.",
       "targets": [
         {
           "anchor": {
-            "blob": "0f0ca0ad470b64ee83b9c59e9e2f7e672118e2c3",
-            "content": "sha256:7b27b96851ed90b6080df0ea24930b76547ceb6e8abd7c628c80343b10cc31a5",
+            "blob": "0f2012e3d1b6cfcf742adc9b3bf25460b4073950",
+            "content": "sha256:c3fc919d01bb913f4bf764082750154658ab29a904fb56ae72b550665436cb5b",
             "locator": {
-              "kind": "symbol",
-              "name": "_apply_carryover_for_request"
-            },
-            "path": "mcp/src/agents_remember/memory/carryover.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "4896c60fdd18274d54d45b59dac47cf5603e68b6",
-            "content": "sha256:ccf1e9497a2c9db372bb3095d5526a60b5d78ef16cd430d28e900541c0caf82e",
-            "locator": {
-              "kind": "symbol",
-              "name": "_refresh_target_route_indexes"
-            },
-            "path": "mcp/src/agents_remember/memory/carryover.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "4896c60fdd18274d54d45b59dac47cf5603e68b6",
-            "content": "sha256:f8906f1bf107784d7ba6c116f3264660365e1540dc44446ca561d3f6295f186d",
-            "locator": {
-              "end": 663,
+              "end": 337,
               "kind": "line_range",
-              "start": 629
+              "start": 315
             },
             "path": "mcp/src/agents_remember/memory/carryover.py"
           },
@@ -44,12 +20,12 @@
         },
         {
           "anchor": {
-            "blob": "4896c60fdd18274d54d45b59dac47cf5603e68b6",
-            "content": "sha256:2e64a5276ef3dba950b9b81a080e978eb0d950b7155138ccb9e7f788e2913b94",
+            "blob": "0f2012e3d1b6cfcf742adc9b3bf25460b4073950",
+            "content": "sha256:9bc2d54959a43945ded07f5ace35dba5cd83b82f62b9d6b59f3d33fd66ac7a6e",
             "locator": {
-              "end": 672,
+              "end": 384,
               "kind": "line_range",
-              "start": 638
+              "start": 381
             },
             "path": "mcp/src/agents_remember/memory/carryover.py"
           },
@@ -57,27 +33,14 @@
         },
         {
           "anchor": {
-            "blob": "0f0ca0ad470b64ee83b9c59e9e2f7e672118e2c3",
-            "content": "sha256:0abd13981ec925ba346b0b8c26b88923f771b784af7f6a9eaf7d22a945e58ba0",
+            "blob": "9686c82c42aa92ccb30902e632de9bc6f3dfc207",
+            "content": "sha256:fd4bc56da5a49d954fc2f04ab7cc7608daa71a3b0ba5f98806810dc55c8ce6da",
             "locator": {
-              "end": 791,
+              "end": 259,
               "kind": "line_range",
-              "start": 698
+              "start": 244
             },
-            "path": "mcp/src/agents_remember/memory/carryover.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "0f0ca0ad470b64ee83b9c59e9e2f7e672118e2c3",
-            "content": "sha256:7d4773c02e876ad9f11fb6fdd4ee2a010710dd6b3280ba8ac561af7798b6e2e9",
-            "locator": {
-              "end": 852,
-              "kind": "line_range",
-              "start": 759
-            },
-            "path": "mcp/src/agents_remember/memory/carryover.py"
+            "path": "mcp/src/agents_remember/memory/carryover_apply.py"
           },
           "kind": "code"
         }

@@ -71,16 +71,24 @@ open-work witness. The retirement refusal and its no-write assertions remain the
 - The ordinary unbound subTask refuses finalization with the contract-bound document/master-row message and unchanged world snapshot. [3]
 
 - The archive step never archives a task that holds a series contract. [4]
+
 - A partial hook failure on a lone master keeps the retirement and retries the cleanup only. [5]
+
 - A retry with other edge arguments is refused with no change. [6]
+
 - Any exception before archival ends restored on both routes. [7]
+
 - A record that does not match its canonical file name is refused. [8]
 
 
+
 - Pending cleanup alone permits preview while a real child worktree refuses. [9]
+
 - A refusal before a retirement record exists carries no restart notice. [10]
+
 
 - The open-work control supplies external-memory leaf cells and creates the intended code-side open work. [11]
 
-- A real tool_call_context precedes the registered adapter call, so its retained detailed result is available without repeating the mutator for facts. The unchanged-receipt assertion remains. [12]
 
+
+- A real tool_call_context precedes the registered adapter call, so its retained detailed result is available without repeating the mutator for facts. The unchanged-receipt assertion remains. [12]

@@ -56,15 +56,14 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The checkout-guard cause yields its one fixed clause and a refusal naming the mounted route with absolute paths, `commit: true` and no `--config`",
+      "note": "The checkout-guard cause yields its one fixed clause and a refusal naming the mounted route with absolute paths, `commit: true` and no `--config`\n\nAnchor: `test_the_checkout_guard_refuses_settings_to_an_undeclared_primary_checkout`",
       "targets": [
         {
           "anchor": {
-            "blob": "c78b16aea72a60a63758f8717dc593611653b458",
-            "content": "sha256:0e236b77003088c0a1415ef7bb4e3e675e10ac64a8f7cfa070e12bab91209b98",
+            "blob": "a8d170d06edbab3222572e1bdcace16a938c185e",
+            "content": "sha256:e377be1bcd1a73e9d0f67f65dfe60f75fa014c3ba768d58bb7c1fcca0d141ef8",
             "locator": {
-              "kind": "symbol",
-              "name": "test_the_checkout_guard_refuses_settings_to_an_undeclared_primary_checkout"
+              "kind": "file"
             }
           },
           "kind": "test"

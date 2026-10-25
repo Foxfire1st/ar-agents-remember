@@ -44,7 +44,10 @@ Other granted subTask states render bare Direct · given by words and no control
 
 
 
-- StepsBlock owns the task’s full step table and receives cached major-step payloads for header marks; reader composition only supplies served steps and counts. [4]
+
+- StepsBlock owns the full served step table and derives its header marks from those steps; taskReader supplies doc.steps and the served done/total counts. [4]
+
+
 
 
 
@@ -52,11 +55,18 @@ Other granted subTask states render bare Direct · given by words and no control
 
 
 
+
+
 - The planning-task switch stays rendered while pending, disables its action and displays served giver words and adapter notice. [7]
+
+
 
 
 
 - Only a planning subTask receives the switch; other granted states receive bare words. [8]
 
-- TaskPage identity is the canonical entry key; the surrounding clock observes only shown entry event times. [9]
+
+
+- TaskPage identity is the canonical entry key; the surrounding clock runs for shown entries that carry an event time or a served limited status. [9]
+
 - Both overview forms compose Now before the scoped closeout queue and Order. [10]

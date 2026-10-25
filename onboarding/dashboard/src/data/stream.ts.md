@@ -51,14 +51,24 @@ signal-lost state instead of retaining a live badge forever.
 
 No relevant external documentation is needed beyond the browser EventSource API used directly here.
 
-- No relevant documentation found after checking local project source and package contracts. [1]
+
+- The state channel's `connectState`: one `EventSource` over `/api/stream` merging the snapshot and each named delta into the store, with a bounded open deadline and the liveness watchdog. [1]
+
 
 ### Repo-Internal References
 
+
 - State stream snapshot and named deltas merge into the Zustand store. [2]
+
+
 - Raw event stream forwards `event` rows and the backend `ready` marker. [3]
+
+
 - `Cockpit` passes `markEventsHydrated` as the raw stream ready callback. [4]
+
+
 - The backend raw stream emits a `ready` event once after backlog delivery. [5]
+
 
 - The browser listener table has task/count and operational events, but no closeoutQueues named listener. [7]
 - Snapshot application separately retains closeoutQueues alongside canonical tasks and operational projections. [8]

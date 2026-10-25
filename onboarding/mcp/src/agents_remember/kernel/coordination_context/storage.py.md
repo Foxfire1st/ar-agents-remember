@@ -37,7 +37,10 @@ No relevant external documentation is needed.
 
 ### Repo-Internal References
 
+
+
 - JSON settings parsing produces the storage settings and path-rule models. [1]
+
 - The storage resolver consumes `StorageSettings` path rules to select storage for a source. [2]
 - Missing-onboarding checks call the storage resolver through the public facade. [3]
 
@@ -47,5 +50,6 @@ No relevant external documentation is needed.
 No cross-repository evidence is needed for storage policy.
 
 No meaningful cross-repo references found.
+
 
 - Storage decisions still serve source-coverage planning; converted knowledge currentness uses the converted checker rather than legacy verification metadata drift. [4]

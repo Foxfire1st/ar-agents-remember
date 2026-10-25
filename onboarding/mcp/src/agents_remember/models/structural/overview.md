@@ -86,5 +86,7 @@ Current lifecycle and closeout authority for that statement was not established 
 
 ## Evidence
 
+
 - The record carries the fingerprint, canonical path, selected master, record state, positive revision and selection time. [2]
+
 - The store derives the fingerprint from the canonical resolved contract path and refuses any record that is not this exact contract. [3]

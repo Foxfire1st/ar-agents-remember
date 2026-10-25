@@ -54,8 +54,12 @@ No configured live documentation source was available for this pass.
 ### Repo-Internal References
 
 - The package statement and its map of rules to modules. [1]
-- The re-exported names. [2]
+
+- The re-exported names: the observation, state and surface helpers - `invariant_currentness`, `invariant_state`, `observe_entry`, `returned_records` and their types. [2]
+
+
 - The two consumers import through the package. [3]
+
 
 ### Cross-Repo References
 

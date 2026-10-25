@@ -459,7 +459,9 @@ No configured domain documentation; source owners support this current account.
 
 ### Repo-Internal References
 
+
 - The header states a same-origin read-only client and delegated typed-result transport. The actual shared getReviewJson owns body classification; the header is not independent runtime schema validation. [1]
+
 - Semantic side states are present, absent and unresolved; selector kinds are invariant and family. Binary belongs to physical source-side vocabulary, not semantic statement sides. [3]
 - ReviewSideContent declares state, optional text, language and detail. This structural TypeScript interface performs no runtime state/text coherence validation. [4]
 - ReviewUnresolvedReference carries field, optional recorded_reference and detail for unresolved facts; the type does not prove which consumers render each field. [5]
@@ -474,11 +476,17 @@ No configured domain documentation; source owners support this current account.
 - **The reviewed subject as the server selected it — the entry's only legitimate selector source, with no path field on purpose.** [17]
 - **The error idiom this route deliberately steps outside of: `getJson` throws on a non-OK status, while a refused source read arrives with a typed refusal in the body.** [24]
 - The sibling taskChangeset read is a distinct client/transport boundary, not an implementation of this review client. [25]
+
 - **The catalogue consumer: since `260921-ICR-L47` the reviewer (not the task entry) reads this client's subject catalogue when it opens, keyed on the comparison's identity; the task entry reads the changed-intent summary instead, and a refused or empty catalogue still leaves the task-context review available.** [27]
+
 - The outline mirror matches the server model's five changes [28]
 - The tree carries families with members and invariants with summaries [29]
+
 - The mirrored recorded-meaning vocabulary separates steps, none and unavailable per addressed record. [32]
+
+
 - The read-only public client delegates transport, re-exports the family and judgment wire owners, requires judgment in ReviewPayload, keeps optional family/meaning/movement boundaries and performs no store mutation or complete runtime schema validation. [33]
+
 - ReviewPayload requires the imported judgment pane. Its rows and independently current/stale/unverifiable proofs are distinct arrays; optional origin and movement structures carry supplied provenance/measurement rather than resurrecting retired envelope assessments. [34]
 
 ### Cross-Repo References

@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/application/knowledge_writer/__init__.py",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
@@ -19,15 +20,14 @@
       ]
     },
     "2": {
-      "note": "The one operation it exports.",
+      "note": "The one operation it exports.\n\nAnchor: `write_knowledge`",
       "targets": [
         {
           "anchor": {
-            "blob": "dd6cf1d01b81aad12a4d1e9d8815046cd441dffe",
-            "content": "sha256:357ec0bb032b4a3d1e7affcdfdac35ec1f39ddc73624a3d818d8441d2bbba737",
+            "blob": "f8c3ebb0fba1a81fe6fad47e544b6183713f1019",
+            "content": "sha256:7fdd22a5c098b7645dcbb18b54f3ed58f98b8504c69bc155a9e3493e0e3e44d0",
             "locator": {
-              "kind": "symbol",
-              "name": "write_knowledge"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/knowledge_writer/writer.py"
           },

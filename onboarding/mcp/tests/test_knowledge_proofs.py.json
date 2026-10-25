@@ -24,11 +24,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "598b84d6b63c399c08e71e94ec6d7c3ea806afeb",
-            "content": "sha256:3ca50d3f9ee1a02287b076df8a2ab5873b77daabc19839e6208d443fbca3df22",
+            "blob": "0256098f652dc34be5986d7dcab77243a655f959",
+            "content": "sha256:cf29eef668463d8c3e86b18349bc5fb57bb6deee9dd2668e988d933b4f3acf3e",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_family_whose_members_have_no_proof_shows_an_empty_list"
+              "end": 338,
+              "kind": "line_range",
+              "start": 321
             }
           },
           "kind": "test"
@@ -73,11 +74,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "598b84d6b63c399c08e71e94ec6d7c3ea806afeb",
-            "content": "sha256:2ea418d939b9272380e2fde90df33c48fd5e5cd4099b15a2025e9b4d00725bdf",
+            "blob": "0256098f652dc34be5986d7dcab77243a655f959",
+            "content": "sha256:2ad896c89f900e65c36f4115a348f0fc0bc68410ffa14b847ca9ace63663669d",
             "locator": {
-              "kind": "symbol",
-              "name": "test_migrated_evidence_is_listed_then_turned_into_a_proof_by_a_curator_pass"
+              "end": 483,
+              "kind": "line_range",
+              "start": 432
             }
           },
           "kind": "test"
@@ -89,11 +91,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "598b84d6b63c399c08e71e94ec6d7c3ea806afeb",
-            "content": "sha256:60ee6df7b32247359d10474dd664e0a131554f14e888a43526363c188abc64e0",
+            "blob": "0256098f652dc34be5986d7dcab77243a655f959",
+            "content": "sha256:012da4baaaa18bd21045b5c96a299bd30671cec5316b01266d174e59bf6558ea",
             "locator": {
-              "kind": "symbol",
-              "name": "test_the_list_reuses_the_cached_index_and_reports_an_unreadable_one"
+              "end": 504,
+              "kind": "line_range",
+              "start": 486
             }
           },
           "kind": "test"
@@ -105,8 +108,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d539eb85c4a5a310b10e166e6ca1991af3fa83ed",
-            "content": "sha256:ce665b3929803225f7ff630ad6bb38ca9f9bb34bdeced08c688c07df9b051ecd",
+            "blob": "0256098f652dc34be5986d7dcab77243a655f959",
+            "content": "sha256:ebb05908d076c74907bac8a22bfb3c2902b74eb2329c114409ae4e9ab1aba461",
             "locator": {
               "kind": "file"
             }
@@ -147,11 +150,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "598b84d6b63c399c08e71e94ec6d7c3ea806afeb",
-            "content": "sha256:eabe6098adc9d27e81d976259bdf8d0ad5e0ef191d5182ec7d06b142e7e02299",
+            "blob": "0256098f652dc34be5986d7dcab77243a655f959",
+            "content": "sha256:d03f38a8f62baec2e95f3a52e5008280a4474a86832c7b80e5ee3800a06e6bc5",
             "locator": {
-              "kind": "symbol",
-              "name": "test_evidence_names_a_test_as_a_test_id_or_as_a_path_plus_symbol"
+              "end": 155,
+              "kind": "line_range",
+              "start": 98
             }
           },
           "kind": "test"
@@ -163,11 +167,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "598b84d6b63c399c08e71e94ec6d7c3ea806afeb",
-            "content": "sha256:3ca0e8c0a11ce0c176107c858932f8fe5622442b29939ac04758cc50e45158d9",
+            "blob": "0256098f652dc34be5986d7dcab77243a655f959",
+            "content": "sha256:fe2e2e4ca52731f33521f1e759d64af6107f1800fd17e87fdb38cff745422483",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_file_named_with_a_test_anywhere_in_the_evidence_is_not_also_reported_bare"
+              "end": 164,
+              "kind": "line_range",
+              "start": 158
             }
           },
           "kind": "test"
@@ -179,11 +184,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "598b84d6b63c399c08e71e94ec6d7c3ea806afeb",
-            "content": "sha256:8911a79e0c86c0b57ff0c032ec0e7ba0e65075fb4ce725cc23a291149ab7c393",
+            "blob": "0256098f652dc34be5986d7dcab77243a655f959",
+            "content": "sha256:d006d19efce358dc306ca3cbaa62224a68584cc8e5629a303e5cba7a66295cee",
             "locator": {
-              "kind": "symbol",
-              "name": "test_both_forms_become_proofs_once_faceted_and_unresolvable_evidence_is_reported"
+              "end": 215,
+              "kind": "line_range",
+              "start": 167
             }
           },
           "kind": "test"
@@ -214,19 +220,21 @@
             "blob": "0256098f652dc34be5986d7dcab77243a655f959",
             "content": "sha256:3feaa92e5c0f2bc4e07e617dcf5763ba806f550724bd4e5ef87504cd1cdbcc1f",
             "locator": {
-              "kind": "symbol",
-              "name": "_review_tree"
+              "end": 250,
+              "kind": "line_range",
+              "start": 245
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "c7aaa422f4382460c2d41f60a510ced85e6ff7d2",
-            "content": "sha256:8b07acc860cac24b0b323a8ae675c88d2d92ebdea1f81e21b6bb669149e29c30",
+            "blob": "0256098f652dc34be5986d7dcab77243a655f959",
+            "content": "sha256:4c80ede167d4d559ede1dbc83fe5941593a15bbcaf528f55036df7c38325a0fa",
             "locator": {
-              "kind": "symbol",
-              "name": "_read"
+              "end": 257,
+              "kind": "line_range",
+              "start": 253
             }
           },
           "kind": "test"
@@ -238,11 +246,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "598b84d6b63c399c08e71e94ec6d7c3ea806afeb",
-            "content": "sha256:56aad2e95f94971198ee2f83b8028706bd3e90b083bd5d0d640acf6a8e0b1896",
+            "blob": "0256098f652dc34be5986d7dcab77243a655f959",
+            "content": "sha256:c0f8cb3191bfe6feece8068f60bedf4084010e1b65a169b06d764e499b54c7a5",
             "locator": {
-              "kind": "symbol",
-              "name": "test_the_invariant_and_family_views_carry_their_proofs"
+              "end": 302,
+              "kind": "line_range",
+              "start": 260
             }
           },
           "kind": "test"
@@ -250,15 +259,16 @@
       ]
     },
     "9": {
-      "note": "A database read and the other views carry none.",
+      "note": "Source_context has no top-level proofs, and curation_queue is refused with unknown_view; no database-read case remains here.",
       "targets": [
         {
           "anchor": {
-            "blob": "c7aaa422f4382460c2d41f60a510ced85e6ff7d2",
-            "content": "sha256:eb39b50b0d239145c6ac25fab4ec4a2cb247b8a7fa577a7aa1498a574b459bdd",
+            "blob": "0256098f652dc34be5986d7dcab77243a655f959",
+            "content": "sha256:bf601201a638f43fc473b5737fc3b4d238bf42d0c502ea93a42a5263f8606d3b",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_database_read_and_other_views_carry_no_proofs"
+              "end": 318,
+              "kind": "line_range",
+              "start": 305
             }
           },
           "kind": "test"

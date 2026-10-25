@@ -28,7 +28,7 @@ Settings-backed layouts read an explicit settings path through `cgc_settings_fro
 
 `installation.py` owns runner installation and doctor checks. Provider status reports watcher container state, runner-image availability, source artifacts, process namespace, `lastRefresh`, and indexing state. Shared backend status separately reports container state, network attachment, ports, data-mount agreement, and readiness.
 
-`backend.py` represents a resolved invocation with frozen `CgcBackendContext`, carrying `settings_path`, `provider_settings`, `layouts`, and `backend`. Both `cgc_primary_backend_context(args)` and `cgc_backend_start_context(args)` return this value. Its `layout` property returns `layouts[0]`: FalkorDB is shared across configured repository layouts, and backend commands act through the first selected layout.
+`backend.py` represents a resolved invocation with frozen `CgcBackendContext`, carrying `settings_path`, `provider_settings`, `layouts`, and `backend`. Both `cgc_primary_backend_context(args)` and `cgc_backend_start_context(args)` return this value. Its `layout` property returns `layouts`: FalkorDB is shared across configured repository layouts, and backend commands act through the first selected layout.
 
 `CgcBackendPort` identifies a published port through the keys used in recorded state, resolved backend settings, and container inspection. `FALKORDB_PORT` and `BROWSER_PORT` are its two instances. `cgc_backend_endpoint(state, backend, inspect_data, port)` accepts this value, while `CgcHostPorts` carries the two published host ports together. An additional published port belongs in a new `CgcBackendPort` constant rather than another parallel group of endpoint keywords.
 

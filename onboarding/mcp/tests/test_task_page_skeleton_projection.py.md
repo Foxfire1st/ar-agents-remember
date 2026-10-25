@@ -20,4 +20,5 @@ This card describes the executable assertions and fixture seams of this module. 
 
 ## Evidence
 
+
 - The module declares form/bounded-summary/whole-body assertions and RF01 completion-time subcases for array order, invalid records, non-finalization exclusion, explicit precedence and unchanged task JSON. These are fixture-scoped source assertions, not execution or browser acceptance. [1]

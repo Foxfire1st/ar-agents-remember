@@ -136,11 +136,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b548cff646dad2bc49995692b60f69ef2f1d973a",
-            "content": "sha256:a9bab9994c9d7548b83fab792d82d5eb91269c24cac8aa81439422ac2a994dda",
+            "blob": "23061a7413ce30005806ccc7de11a018fd262e79",
+            "content": "sha256:d4a5a6d2f5856f7d4d85efc44dcfa1cee26f6b7b1a6ac13adaca495a102a34ea",
             "locator": {
-              "kind": "symbol",
-              "name": "RoleChatsPane"
+              "end": 133,
+              "kind": "line_range",
+              "start": 48
             }
           },
           "kind": "code"
@@ -182,16 +183,16 @@
       ]
     },
     "4": {
-      "note": "The sole Chats destination mounts RoleChatsPane directly, has no Chats-mode selector or SessionsView child, and keeps the pane identity while hiding/showing the existing layer.\n\nAnchor: `directly shows one persistent Role chats pane without an old-chat selector`",
+      "note": "The sole Chats destination mounts RoleChatsPane directly, has no Chats-mode selector or SessionsView child, and keeps the pane identity while hiding/showing the existing layer.",
       "targets": [
         {
           "anchor": {
-            "blob": "687739f2806360ba86237450d193083b5d7265bf",
-            "content": "sha256:354df045ac61caedcbb43161ca9ef110b281fec0e848a8682abb0331a7a78e01",
+            "blob": "d49c4b3ee776a1dadfa652fbc14bdb3765457d06",
+            "content": "sha256:9cc625bbffb74f914b8257dd4a266dd55c8cc98753b43fd6df8fc6c924e224b5",
             "locator": {
-              "end": 959,
+              "end": 724,
               "kind": "line_range",
-              "start": 1
+              "start": 698
             },
             "path": "dashboard/src/cockpit/Cockpit.test.tsx"
           },

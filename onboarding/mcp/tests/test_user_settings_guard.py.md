@@ -62,5 +62,7 @@ and are proved able to fail before they are trusted.
 - The guard refuses a made-up real path, permits a moved `XDG_CONFIG_HOME`, and creates nothing. [1]
 - Unreadable-database cases check the comparison and the truthful observed-home report. [2]
 - The child executes the world source, refuses, and leaves the fake home empty. [3]
+
 - The recursive population and syntactic checker hold the shared-support boundary. [4]
+
 - Direct, imported-alias and literal-rebuild controls fail while guarded controls pass. [5]

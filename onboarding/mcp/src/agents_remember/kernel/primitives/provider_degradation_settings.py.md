@@ -11,7 +11,7 @@ and `kernel/`.
 `providerDegradation` MCP settings block (260707-HFX-L7): it validates and produces the frozen
 `ProviderDegradationSettings` thresholds the degradation detector (`providers/degradation.py`)
 reads every evaluation. It follows the same fail-loud-allowlist discipline as
-`timeoutCaps`/`dashboard` in `mcp/config.py` — unsupported keys and wrong shapes/types raise at
+`timeoutCaps`/`dashboard` in `kernel/primitives/runtime_config.py` — unsupported keys and wrong shapes/types raise at
 settings load, never silently ignored.
 
 ## Code Commentary
@@ -41,12 +41,12 @@ runs enabled with the failsafe armed at these bounds, per the task's "default ON
 conservative bound" requirement.
 
 `ProviderDegradationSettingsError` subclasses `AgentsRememberError` (the typed `ValueError`
-family shared by `ConfigError` and the other settings-parser errors), so `mcp/config.py` wraps it
+family shared by `ConfigError` and the other settings-parser errors), so `kernel/primitives/runtime_config.py` wraps it
 into `ConfigError` at the call site without changing the boot fail-loud contract.
 
 ### Conventions
 
-Mirrors the `timeoutCaps`/`dashboard` settings-parser pattern in `mcp/config.py`: a frozen
+Mirrors the `timeoutCaps`/`dashboard` settings-parser pattern in `kernel/primitives/runtime_config.py`: a frozen
 dataclass of typed defaults, a `KNOWN_*_FIELDS` frozenset gate, and small per-type validator
 helpers (`_bool_setting`/`_positive_setting`/`_ratio_setting`) rather than a general schema
 library.
@@ -69,11 +69,24 @@ No known follow-up in this file.
 
 ### Docs References
 
+
 - The `providerDegradation` settings block is documented with its full key list, defaults, and behavior in the settings reference. [1]
+
 
 ### Repo-Internal References
 
-- `mcp/config.py` imports this module's `ProviderDegradationSettings`/`ProviderDegradationSettingsError`/`parse_provider_degradation_settings`, wraps parse errors into `ConfigError`, and stores the result on `McpRuntimeConfig.provider_degradation`. [2]
+
+
+
+
+- `kernel/primitives/runtime_config.py` imports this module's `ProviderDegradationSettings`/`ProviderDegradationSettingsError`/`parse_provider_degradation_settings`, wraps parse errors into `ConfigError`, and stores the result on `McpRuntimeConfig.provider_degradation`. Source caption: "class McpRuntimeConfig" [2]
+
+
+
+
+> Retained earlier card wording; superseded by the current account above:
+> - `mcp/config.py` imports this module's `ProviderDegradationSettings`/`ProviderDegradationSettingsError`/`parse_provider_degradation_settings`, wraps parse errors into `ConfigError`, and stores the result on `McpRuntimeConfig.provider_degradation`. [2]
+
 - The degradation detector consumes every field of `ProviderDegradationSettings` as its threshold/behavior surface. [3]
 - The public settings example ships a representative `providerDegradation` block. [4]
 

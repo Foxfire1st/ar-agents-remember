@@ -12,7 +12,9 @@
 
 ## Current source contract evidence
 
-- Current candidate source supports the operative account; historical sections grant no current tool or execution acceptance. [7]
+
+- Current candidate source supports the operative account; historical sections grant no current tool or execution acceptance.
+
 
 ## Purpose
 
@@ -111,13 +113,14 @@ The documented front-door dedup extent is lifecycle plus code/onboarding root, m
 > Historical paired-document contract only: FileReadStatus, FileRead, carried source/onboarding/format/references/published_intent and lifecycle-deduplicated overview bodies are not current response fields or owners. Strict validation and token stamping survive under the current NamedRecord/NamedFile naming model above.
 
 - The strict response base and `ToolResponse`. [1]
-- **The new field, and the owning module that decides its shape.** [2]
-- The application entry point producing the dict this validates; it imports `FileReadStatus` from this module, and `_resolve_onboarding` returns the narrowed type. [3]
-- The three optional format fields a file result gains, and the module that fills them. [4]
+
+- The module that fills a read result's format fields: a converted tree's `text/v2` card format, sidecar and resolved references, and an unconverted tree's `legacy-format` knowledge section that resolves nothing from sidecars. [4]
+
 - The registry mapping `read_ar_files` to this response model (L120). [5]
 
 ### Runtime Source References
 
 > Historical paired-document contract only: FileReadStatus, FileRead, carried source/onboarding/format/references/published_intent and lifecycle-deduplicated overview bodies are not current response fields or owners. Strict validation and token stamping survive under the current NamedRecord/NamedFile naming model above.
+
 
 - Frozen implementation of ReadArFilesResponse supporting the stated file behavior. [6]

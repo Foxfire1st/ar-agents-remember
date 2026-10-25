@@ -13,4 +13,5 @@ Restating a family guarantee requires a changed row with authored effect; the wr
 ## Evidence
 
 - New step-2 writer command/options and step-3 family/external/readback detail; same admitted writer remains owner. [1]
+
 - New step-2 writer command/options and step-3 family/external/readback detail; same admitted writer remains owner. [2]

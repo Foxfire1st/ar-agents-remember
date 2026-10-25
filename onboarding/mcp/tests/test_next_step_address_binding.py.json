@@ -1,5 +1,6 @@
 {
   "path": "mcp/tests/test_next_step_address_binding.py",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
@@ -20,12 +21,22 @@
       ]
     },
     "10": {
-      "note": "**The plan's case, driven as a sequence: two addressed contracts yield two different hints and neither body carries the other's path.**",
+      "note": "**The plan's case, driven as a sequence: two addressed contracts yield two different hints and neither body carries the other's path.**\n\nAnchor: `test_two_addressed_contracts_in_sequence_yield_two_different_hints`",
       "targets": [
         {
           "anchor": {
-            "blob": "17bbc60d5484872ad1863b2a25f337eecf265791",
-            "content": "sha256:edaa730e1ba583d88a4a217c98f0ef4f13e4a9de5f8e36511ed99a0efc4f4532",
+            "blob": "d1d22b20b04b8f4ae8fe80c1bbeb5e5d125616c9",
+            "content": "sha256:ab601b54aad2c2d578e5297494b508a80b9568d21c70f3c9cc347dde644d3350",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "d1d22b20b04b8f4ae8fe80c1bbeb5e5d125616c9",
+            "content": "sha256:303f98e83553a2d83dff0a5b8efe77f5fd325208c1a495fdbe5defbe682ba2c6",
             "locator": {
               "kind": "symbol",
               "name": "test_two_addressed_contracts_in_sequence_yield_two_different_hints"
@@ -36,8 +47,29 @@
       ]
     },
     "11": {
-      "note": "**The stated reach: the one carrier that declares no address — `TaskDocResponse` — has its hint WITHHELD, asserted against the model's own fields. `260918-TSIP-L10` renamed this case because it asserted the opposite until that leaf; the row is corrected with it.**",
+      "note": "**The stated reach: the one carrier that declares no address — `TaskDocResponse` — has its hint WITHHELD, asserted against the model's own fields. `260918-TSIP-L10` renamed this case because it asserted the opposite until that leaf; the row is corrected with it.**\n\nAnchor: `test_an_envelope_with_no_address_has_its_hint_withheld` `TaskDocResponse`",
       "targets": [
+        {
+          "anchor": {
+            "blob": "d1d22b20b04b8f4ae8fe80c1bbeb5e5d125616c9",
+            "content": "sha256:ab601b54aad2c2d578e5297494b508a80b9568d21c70f3c9cc347dde644d3350",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e7d80ed372402d196e9af03c6aa40d32a018d7e2",
+            "content": "sha256:c7dc3ccede6258becfe2c8d886d1ef79e04279f32d2f56f30d6d1c8fd90242c4",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/models/task_doc.py"
+          },
+          "kind": "code"
+        },
         {
           "anchor": {
             "blob": "d1d22b20b04b8f4ae8fe80c1bbeb5e5d125616c9",
@@ -51,8 +83,8 @@
         },
         {
           "anchor": {
-            "blob": "6f54fd6f338847f19a73a83a3ee4294c2b44e009",
-            "content": "sha256:a512717403eb5fdd792218f47b4b637c4b205900f47056421158897254473934",
+            "blob": "e7d80ed372402d196e9af03c6aa40d32a018d7e2",
+            "content": "sha256:f14d1dbb54c44b86dae12dbb5121f560f3dc931238a6c0c25900de4bb525ca70",
             "locator": {
               "kind": "symbol",
               "name": "TaskDocResponse"
@@ -64,16 +96,16 @@
       ]
     },
     "12": {
-      "note": "The lane row this module was appended to.\n\nAnchor: \"mcp/tests/test_next_step_address_binding.py\"",
+      "note": "The lane manifest registers mcp/tests/test_next_step_address_binding.py in unit-regression. Membership selects evidence and does not establish execution.",
       "targets": [
         {
           "anchor": {
-            "blob": "11ba98ff63f4a4815985ac51e2c0c7b5a48556a4",
-            "content": "sha256:6897c1086d34692ed244fe2a89df0b31f713b774b295274504d481dfe90dbc65",
+            "blob": "102c4550ab6429f44c8fb543d1d0662de66a1b8c",
+            "content": "sha256:8add48108fe714e0ef2bdb7cd10882b3527d5cd72c49bb186a8198750542663a",
             "locator": {
-              "end": 265,
+              "end": 252,
               "kind": "line_range",
-              "start": 265
+              "start": 252
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -146,15 +178,14 @@
       ]
     },
     "2": {
-      "note": "**The binder's one rule: a hint whose arguments contradict the response's own address is omitted; an ambiguous address is a refusal.**",
+      "note": "**The binder's one rule: a hint whose arguments contradict the response's own address is omitted, and a response that declares no address has its hint withheld.**\n\nAnchor: `bound_next_step`",
       "targets": [
         {
           "anchor": {
-            "blob": "1e151bfd9338a57f52c14bca69c5e9cb90e9398f",
-            "content": "sha256:f0688ad773a589f140c01f1a6a70fa5088d8ca7c30ef383f7dca90b8f6eee32a",
+            "blob": "e0e46bc6a90dd3b9da4bab12c43f61d1e4e71a70",
+            "content": "sha256:611cce8419f2f98ceb4edd0b31ea0dc5fe740280eed2d76a3dce05c98fa22b14",
             "locator": {
-              "kind": "symbol",
-              "name": "bound_next_step"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/tool_response.py"
           },
@@ -192,12 +223,23 @@
       ]
     },
     "4": {
-      "note": "**The contract-derived hint, which is why no global cursor can reach a caller.**",
+      "note": "**The contract-derived hint, which is why no global cursor can reach a caller.**\n\nAnchor: `compute_next_step`",
       "targets": [
         {
           "anchor": {
-            "blob": "489dc6c75481f9ee30b38f151e6e43e1334d474a",
-            "content": "sha256:a201fb436ead2894241e335bf4ccd0c7fb196f314ddea960606233ce56ee1561",
+            "blob": "a0ebc421a6c1cbf393461876ac120f34d348d7ac",
+            "content": "sha256:2ea815d1fdd699dbe67829dca211baddb1e52dea79cceff14ced31a237edc172",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/next_step.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a0ebc421a6c1cbf393461876ac120f34d348d7ac",
+            "content": "sha256:ed56376de2aca839183a36527b98b1606a2befdc8f3a1b1ee0cfd64c2bfe4bed",
             "locator": {
               "kind": "symbol",
               "name": "compute_next_step"
@@ -209,12 +251,22 @@
       ]
     },
     "6": {
-      "note": "One addressed contract, with the closeout state its hint is derived from.",
+      "note": "One addressed contract, with the closeout state its hint is derived from.\n\nAnchor: `_contract`",
       "targets": [
         {
           "anchor": {
-            "blob": "853af60ff55338379335766ac25f2ae83ea1c843",
-            "content": "sha256:69d588fbed850776f79eab11ea5f133b8df286d31fa1bcd0dbe9657fe403038d",
+            "blob": "d1d22b20b04b8f4ae8fe80c1bbeb5e5d125616c9",
+            "content": "sha256:ab601b54aad2c2d578e5297494b508a80b9568d21c70f3c9cc347dde644d3350",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "d1d22b20b04b8f4ae8fe80c1bbeb5e5d125616c9",
+            "content": "sha256:df7e22e1077d59e0f58e808009950fe43e261fe58903cc5384df258bb403dc17",
             "locator": {
               "kind": "symbol",
               "name": "_contract"

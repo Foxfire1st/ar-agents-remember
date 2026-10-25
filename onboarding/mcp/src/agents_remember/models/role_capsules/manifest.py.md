@@ -92,7 +92,9 @@ This account is bound to the candidate source, not a claim of a running serving 
 
 
 - Launch copies detail files, substitutes paths, and records frozen revisions. [10]
+
 - Replay validates regular opened files and frozen revisions at deterministic detail names beside the saved handover in its recorded canonical folder, not mutable corpus sources. [11]
+
 - Per-request detail artifacts use exact admitted bytes beside the handover and write-once publication. [12]
 - File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence. [13]
 - File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence. [14]
@@ -108,7 +110,9 @@ No relevant documentation found after checking live sources.
 
 ### Repo-Internal References
 
+
 - The frozen vocabulary this parser is validated against. [1]
+
 
 - The frozen compiler vocabulary declares ten roles and nine operations including Bootstrap; compiler vocabulary and native task-seat dispatch availability are distinct. [17]
 

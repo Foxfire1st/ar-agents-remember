@@ -37,8 +37,8 @@
     },
     {
       "anchor": {
-        "blob": "9085fbff738cdcce48e71a64f47c390b084c04d9",
-        "content": "sha256:d14ec9bcad109e1b71101a1799999063b4e9c80cda6b6962b0ba7aa35dc55df2",
+        "blob": "32b1a3e1f7a9679b323749644f84677b68576324",
+        "content": "sha256:27023eb12df02a282262b30231a042179988e72e9f6bf1782171417c84c10e9e",
         "locator": {
           "kind": "symbol",
           "name": "test_benchmark_preparation_discovers_package_skills_without_installing_copies"

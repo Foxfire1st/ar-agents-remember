@@ -51,3 +51,7 @@ the bridge replies it needs, so no case reads another's cache.
 
 - The options route, its per-runtime cache, partial and unreadable catalogs, refused defaults, distinct
   route errors, launch validation and service-tier handling are all asserted in this file. [1]
+
+
+
+- The scoped current source carries the module/document behavior described above. [1]

@@ -4,12 +4,22 @@
   "realizes": [],
   "references": {
     "40": {
-      "note": "`build_diff_fixture` supplies the current fixture or assertion described above.",
+      "note": "`build_diff_fixture` supplies the current fixture or assertion described above.\n\nAnchor: `build_diff_fixture`",
       "targets": [
         {
           "anchor": {
-            "blob": "472aa6a95dbd78142b0e19f328d23e2e3d2d3026",
-            "content": "sha256:0e33a6818449f12402a8bb83520c99d0fd294d8c353a6afe9f326d22e3665449",
+            "blob": "f71d2f06be49d435153b9c1758713da504a05c2e",
+            "content": "sha256:89e6a01e76fd13467e7a2ecb6f31901685045bb135f47e56e5dfb8f4a62a8fe8",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f71d2f06be49d435153b9c1758713da504a05c2e",
+            "content": "sha256:93278447340ac95295f133b59e4f66156f4b6856936d678eeb57d00502567eda",
             "locator": {
               "kind": "symbol",
               "name": "build_diff_fixture"
@@ -20,15 +30,14 @@
       ]
     },
     "41": {
-      "note": "`_author_revised_revision` supplies the current fixture or assertion described above.",
+      "note": "`rebuild_after_tree` supplies the current fixture or assertion described above.\n\nAnchor: `_author_revised_revision`",
       "targets": [
         {
           "anchor": {
-            "blob": "472aa6a95dbd78142b0e19f328d23e2e3d2d3026",
-            "content": "sha256:7b68a2db882368d5d7e653031b644c0f571dd4c26644b8984525c9a399ebd3b2",
+            "blob": "f71d2f06be49d435153b9c1758713da504a05c2e",
+            "content": "sha256:89e6a01e76fd13467e7a2ecb6f31901685045bb135f47e56e5dfb8f4a62a8fe8",
             "locator": {
-              "kind": "symbol",
-              "name": "_author_revised_revision"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -40,8 +49,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "472aa6a95dbd78142b0e19f328d23e2e3d2d3026",
-            "content": "sha256:f8a5aa9eaa893b2d925a0f8932e664caeebd46354a2142575db71028da1d55de",
+            "blob": "f71d2f06be49d435153b9c1758713da504a05c2e",
+            "content": "sha256:ffd70241f0da5719bfdbd12b641225b089c453a456b76ec45b0eccd73b6bdb7f",
             "locator": {
               "end": 70,
               "kind": "line_range",
@@ -53,15 +62,14 @@
       ]
     },
     "43": {
-      "note": "RowStore inserts index-shaped fixture rows without the retired production admission plane.",
+      "note": "RowStore writes text-tree fixture rows without the retired production admission plane.\n\nAnchor: `RowStore`",
       "targets": [
         {
           "anchor": {
-            "blob": "25497ca2fe27297d4ac750d338e86962058a76f1",
-            "content": "sha256:041b3cc8ba5b2d4ef617d3c837e60d9fdc1aca5a8c4787a0854ce08e91e91eee",
+            "blob": "62e692c8ea18903861ec2efddd03c884ed14f818",
+            "content": "sha256:43a32e8370a3aa07c1e8247bd8b4d445a42caab3b630d2ed5783e663bc3c824e",
             "locator": {
-              "kind": "symbol",
-              "name": "RowStore"
+              "kind": "file"
             },
             "path": "mcp/tests/knowledge_rows_test_support.py"
           },
@@ -70,7 +78,7 @@
       ]
     },
     "56": {
-      "note": "**The candidate's two new source paths, its revised statement and its authored words, and the whole candidate tree as one table.**",
+      "note": "**The candidate's two new source paths, its revised statement and its authored words, and the whole candidate tree rebuilt by one call.**",
       "targets": [
         {
           "anchor": {
@@ -102,31 +110,14 @@
       ]
     },
     "58": {
-      "note": "**The fixture builder: the shared baseline, the copied database, the curating candidate and the two live trees.**",
+      "note": "**The fixture builder: the shared baseline, the rebuilt candidate tree carrying the whole candidate-side delta, and the two live trees.**\n\nAnchor: `build_diff_fixture`",
       "targets": [
         {
           "anchor": {
-            "blob": "472aa6a95dbd78142b0e19f328d23e2e3d2d3026",
-            "content": "sha256:0e33a6818449f12402a8bb83520c99d0fd294d8c353a6afe9f326d22e3665449",
+            "blob": "f71d2f06be49d435153b9c1758713da504a05c2e",
+            "content": "sha256:89e6a01e76fd13467e7a2ecb6f31901685045bb135f47e56e5dfb8f4a62a8fe8",
             "locator": {
-              "kind": "symbol",
-              "name": "build_diff_fixture"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "60": {
-      "note": "**The fourth revision neither side selects, which is what makes `present_outside_selection` measurable.**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "472aa6a95dbd78142b0e19f328d23e2e3d2d3026",
-            "content": "sha256:050bdaa5412f93c0d8c11c74ee63cd15577369f356d27aaa6eff71c0b9d01321",
-            "locator": {
-              "kind": "symbol",
-              "name": "_add_unselected_revision"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -134,15 +125,14 @@
       ]
     },
     "61": {
-      "note": "**The added claim, whose recorded identity is the blob the candidate tree really holds.**",
+      "note": "**The added claim, whose recorded identity is the blob the candidate tree really holds.**\n\nAnchor: `_add_successor_claim`",
       "targets": [
         {
           "anchor": {
-            "blob": "472aa6a95dbd78142b0e19f328d23e2e3d2d3026",
-            "content": "sha256:3c322c2a216f80f22a50d1a8851d44b86450d5c7a410a2808de28678d2557420",
+            "blob": "f71d2f06be49d435153b9c1758713da504a05c2e",
+            "content": "sha256:89e6a01e76fd13467e7a2ecb6f31901685045bb135f47e56e5dfb8f4a62a8fe8",
             "locator": {
-              "kind": "symbol",
-              "name": "_add_successor_claim"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -182,12 +172,23 @@
       ]
     },
     "64": {
-      "note": "**The baseline fixture this module builds on.**",
+      "note": "**The baseline fixture this module builds on.**\n\nAnchor: `build_read_scope_fixture`",
       "targets": [
         {
           "anchor": {
-            "blob": "9f0492ab5aba8203333707f64fbc4914d432963f",
-            "content": "sha256:1c1cc0d822b84b2e2bc2985992d154d169a88e6928a5f1b59eaf352820ef9079",
+            "blob": "0d327ce3b9436eec25a74e5548e566bfbde89c7e",
+            "content": "sha256:f8b2b68d3a4084309c854c774b870c585832b99c522189ececf823a1ec098a67",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/read_scope_test_support.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "0d327ce3b9436eec25a74e5548e566bfbde89c7e",
+            "content": "sha256:269b1bb5848bfa06ae7f0b5f2138690cc4cc9475afc3d513873e274139d3eeea",
             "locator": {
               "kind": "symbol",
               "name": "build_read_scope_fixture"
@@ -199,12 +200,23 @@
       ]
     },
     "65": {
-      "note": "The fixture value the baseline side is read from.",
+      "note": "The fixture value the baseline side is read from.\n\nAnchor: `ReadScopeFixture`",
       "targets": [
         {
           "anchor": {
-            "blob": "9f0492ab5aba8203333707f64fbc4914d432963f",
-            "content": "sha256:9b57b87f9d39abfcc36a9196479bac7e0d41a13935c7c67582b514d175b95ee8",
+            "blob": "0d327ce3b9436eec25a74e5548e566bfbde89c7e",
+            "content": "sha256:f8b2b68d3a4084309c854c774b870c585832b99c522189ececf823a1ec098a67",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/read_scope_test_support.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "0d327ce3b9436eec25a74e5548e566bfbde89c7e",
+            "content": "sha256:41cd5ec8cdecaaf838b95079b0239b3e1803add55b6b39c6095b56ba680b4b8f",
             "locator": {
               "kind": "symbol",
               "name": "ReadScopeFixture"
@@ -220,7 +232,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5b85740d9ae416814196e4c0ca40c2bab4419451",
+            "blob": "3c5993c94cf78973b3b39cfe7de9774c8aea6d1a",
             "content": "sha256:929342408eab986b85e474007d33b0398ae3cda343cf39c7a584d5cf1ebf0936",
             "locator": {
               "end": 17,

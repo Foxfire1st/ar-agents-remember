@@ -49,15 +49,14 @@
       ]
     },
     "11": {
-      "note": "Current memory-quality refresh composition applies on unconverted onboarding; converted layouts take the trace gate.",
+      "note": "Current memory-quality refresh composition applies on unconverted onboarding; converted layouts take the trace gate.\n\nAnchor: `validate_memory_refresh_attestations` `_onboarding_refresh_gate`",
       "targets": [
         {
           "anchor": {
-            "blob": "92153a583a3f119a02cba25ddf722a99e3b54c8f",
-            "content": "sha256:34b68b21fbe2ebfb14563f10424ab75e5206ec6befd64444856573161247cbaa",
+            "blob": "80a4a1aa9ecd845e13f6f600c46560e34da8ce15",
+            "content": "sha256:18d5ebbea3a05ed4ec5591770b5c64663f584dbb94a405c0d12d7e7aebe6a8dc",
             "locator": {
-              "kind": "symbol",
-              "name": "validate_memory_refresh_attestations"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/worktrees/modules/onboarding.py"
           },
@@ -65,11 +64,10 @@
         },
         {
           "anchor": {
-            "blob": "a6eadd9ff1cf0a28a7754688d343ff8f802d2f04",
-            "content": "sha256:69a50a47232dddef1e59ab63aec78d762e988240c68e7067dc60f910aeb6870e",
+            "blob": "a4cb0ce3f5f3f488c8ad8313b8063d4a8218871e",
+            "content": "sha256:a2df6307f79b0a5282c67184a98d37a2d5fb71ad24fefd455d684627e7c5a73c",
             "locator": {
-              "kind": "symbol",
-              "name": "_onboarding_refresh_gate"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/memory_quality/controller.py"
           },
@@ -199,8 +197,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d5a990a37573009efcc6b9e64a03a90705368ce4",
-            "content": "sha256:b72a92de1e17269d0df6e9df39b32068f257c2283c7577c93ef639e5144d3821",
+            "blob": "72f8c66d6a44ab2bf2cdf025440751ba09ee6772",
+            "content": "sha256:35ea902206168b4965ef7890468937294948c45cf922c6f286f0b92a6e23f247",
             "locator": {
               "kind": "symbol",
               "name": "release_atomic_series_selection"
@@ -211,12 +209,23 @@
         },
         {
           "anchor": {
-            "blob": "d5a990a37573009efcc6b9e64a03a90705368ce4",
-            "content": "sha256:d2ae930ea8a4e4bc400ccc761ed819afe64f340893272d2fa531c8af290530de",
+            "blob": "72f8c66d6a44ab2bf2cdf025440751ba09ee6772",
+            "content": "sha256:ec931e89ea77b5659230b24451e48cf6eefc0b4f790ba384a0eb29d8b2b77cb8",
             "locator": {
               "end": 53,
               "kind": "line_range",
               "start": 23
+            },
+            "path": "mcp/src/agents_remember/worktrees/activation/atomic_series_activation_release.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "72f8c66d6a44ab2bf2cdf025440751ba09ee6772",
+            "content": "sha256:d6a46a7553240d9a912a468027c8664a01349d4281eacebc2e8f8de3d491bf07",
+            "locator": {
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/worktrees/activation/atomic_series_activation_release.py"
           },
@@ -242,15 +251,14 @@
       ]
     },
     "8": {
-      "note": "Selecting sync checks exact participating source bases before active exposure; incomplete memory retains its own refusal state.",
+      "note": "Selecting sync checks exact participating source bases before active exposure; incomplete memory retains its own refusal state.\n\nAnchor: `_sync_selected_atomic_series_under_authority`",
       "targets": [
         {
           "anchor": {
-            "blob": "ff96dbc4a7bc81bcfcaaa7eaae871eff3d759b82",
-            "content": "sha256:d7396696dcaf00edbb1527f2ab42a13ab21e0aff701abf80c6ad60218ec15497",
+            "blob": "62bf48665f1375408886ec0c3c4e30c5fd58a172",
+            "content": "sha256:a9b15768aaeddcc49e9ac662237ac67cd5fff449295a8849a2cb2f97d84d2f95",
             "locator": {
-              "kind": "symbol",
-              "name": "_sync_selected_atomic_series_under_authority"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py"
           },
@@ -259,28 +267,16 @@
       ]
     },
     "9": {
-      "note": "Bootstrap and parent-leaf attach select; direct series attach only observes activation and checks resume prerequisites.",
+      "note": "Bootstrap and parent-leaf attach select; direct series attach only observes activation and checks resume prerequisites.  Anchor: `series_attach_result`",
       "targets": [
         {
           "anchor": {
-            "blob": "8f7e7fe93b41877df96b48f1a6ed4750b7358683",
-            "content": "sha256:b7810881381f0cfa86e0f258b7a597ed823ccc92ef9aba6f09969b9b35453087",
+            "blob": "b33bc33f160f5a34a1f71f94e4f021f8a85cbad4",
+            "content": "sha256:071e46223f63203b7dc7f86a12a63bd9d976dba790f3b8952a367951b910c0d7",
             "locator": {
-              "kind": "symbol",
-              "name": "series_attach_result"
-            },
-            "path": "mcp/src/agents_remember/worktrees/modules/startup/series_attach.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "a5a5d52ff4fc8f4f9e0039688dab818a164a7b84",
-            "content": "sha256:2f7bedbf8da84aed881745a47e035a93465630d8dd697e9e30ae41d999b4302b",
-            "locator": {
-              "end": 307,
+              "end": 230,
               "kind": "line_range",
-              "start": 270
+              "start": 218
             },
             "path": "mcp/src/agents_remember/worktrees/modules/startup/start_contract.py"
           },
@@ -288,14 +284,27 @@
         },
         {
           "anchor": {
-            "blob": "4517ff389e5f8ac26676f8b517c15fd5cbc9f94f",
-            "content": "sha256:72e074c19ea4ce19ddf7446974417bd4f16cc4e2d8b4dee0cdb64657ca9b68a0",
+            "blob": "2ca78649db203d17f9087e7728f77b20e3a1d144",
+            "content": "sha256:8f25449d997df461b0c1138e2adf5e075306c3cefa95ef17d36a48265d8bcaa8",
             "locator": {
               "end": 238,
               "kind": "line_range",
               "start": 217
             },
             "path": "mcp/src/agents_remember/worktrees/modules/start.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8f7e7fe93b41877df96b48f1a6ed4750b7358683",
+            "content": "sha256:d64c6d7faafedb89ef00cf7604a4656edc8c3bdbfc8fbb14f5de1bd76e7232f4",
+            "locator": {
+              "end": 72,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/startup/series_attach.py"
           },
           "kind": "code"
         }

@@ -1,5 +1,6 @@
 {
   "path": "dashboard/src/dev/scenarios.ts",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
@@ -18,7 +19,7 @@
         },
         {
           "anchor": {
-            "blob": "bf8a8ae986fdd8988d313e83df48c377386c48b5",
+            "blob": "58403a8e3f376b93e6cea8747e0d8ecdb222dd8c",
             "content": "sha256:cadad09a94cb94b1287b43051b72029281203b9f7ab821d9f86348adcf9c6053",
             "locator": {
               "kind": "symbol",
@@ -35,10 +36,9 @@
         {
           "anchor": {
             "blob": "58403a8e3f376b93e6cea8747e0d8ecdb222dd8c",
-            "content": "sha256:cadad09a94cb94b1287b43051b72029281203b9f7ab821d9f86348adcf9c6053",
+            "content": "sha256:0b399324a5b92b6875378f983347d8c30a4dd89938753534c6152123b46f4a9d",
             "locator": {
-              "kind": "symbol",
-              "name": "erFrame"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -46,33 +46,9 @@
         {
           "anchor": {
             "blob": "58403a8e3f376b93e6cea8747e0d8ecdb222dd8c",
-            "content": "sha256:e685af48372589e8192b1f03364c6c7950af029a673adf7dca82026b8c1b9b73",
+            "content": "sha256:0b399324a5b92b6875378f983347d8c30a4dd89938753534c6152123b46f4a9d",
             "locator": {
-              "kind": "symbol",
-              "name": "buildUp"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "58403a8e3f376b93e6cea8747e0d8ecdb222dd8c",
-            "content": "sha256:ddf632780f5613ca695a6040e19556ddc8d46c6be43f47f1697fe125a6c3bb5f",
-            "locator": {
-              "kind": "symbol",
-              "name": "SCENARIOS"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "bf8a8ae986fdd8988d313e83df48c377386c48b5",
-            "content": "sha256:086529b4b739db18a4f6fe83169c1973088e37ec8501a464b29c89e6fa633dc9",
-            "locator": {
-              "end": 176,
-              "kind": "line_range",
-              "start": 27
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -85,10 +61,11 @@
         {
           "anchor": {
             "blob": "b655ff830c5a9c45e80be3c51bbd8390324add5b",
-            "content": "sha256:e1cdbdaf8407848910aa6566aabf918401673b88df39c60ff44782c3fa4e4737",
+            "content": "sha256:7c58dd7321607af85369d6195ac8adb1453c30395cf1e33057b309150c52f17e",
             "locator": {
-              "kind": "symbol",
-              "name": "DiagnosticsPanel"
+              "end": 73,
+              "kind": "line_range",
+              "start": 65
             },
             "path": "dashboard/src/panels/engine-room/DiagnosticsPanel.tsx"
           },
@@ -97,19 +74,7 @@
         {
           "anchor": {
             "blob": "b655ff830c5a9c45e80be3c51bbd8390324add5b",
-            "content": "sha256:2c005740ed1d39c83898a61fd68d7df6a0b597b044ddc8399737791c396c2785",
-            "locator": {
-              "kind": "symbol",
-              "name": "OptionalDiagRows"
-            },
-            "path": "dashboard/src/panels/engine-room/DiagnosticsPanel.tsx"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "a5f4ae8184249b0af91433e1c8892c6dc9713e32",
-            "content": "sha256:c0d658b66cc9df003669db192eb18900b22185e916463037258830a7c5ee10d4",
+            "content": "sha256:7c58dd7321607af85369d6195ac8adb1453c30395cf1e33057b309150c52f17e",
             "locator": {
               "end": 73,
               "kind": "line_range",
@@ -127,22 +92,11 @@
         {
           "anchor": {
             "blob": "0a3de3f86452a06356eee661d5e4bbdc7ccdf5eb",
-            "content": "sha256:9402042e8294712388b3e805cec8240dc98c8bcb9c8a730a9af5d133902f9c72",
+            "content": "sha256:08637b0be18477ff7379995dd690b3a5a93b5459302261b5a2809394edeec517",
             "locator": {
-              "kind": "symbol",
-              "name": "EDGE_GEOM"
-            },
-            "path": "dashboard/src/panels/engine-room/geometry.ts"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "0a3de3f86452a06356eee661d5e4bbdc7ccdf5eb",
-            "content": "sha256:7a834696248f231ee436448e606794ecb8f0eead0d0427e85d8e4c7ecb3ae79c",
-            "locator": {
-              "kind": "symbol",
-              "name": "conduitPathD"
+              "end": 77,
+              "kind": "line_range",
+              "start": 55
             },
             "path": "dashboard/src/panels/engine-room/geometry.ts"
           },
@@ -156,10 +110,11 @@
         {
           "anchor": {
             "blob": "97051d4d41f68adb2f44945b0980df38f23ad791",
-            "content": "sha256:4a7780a80d83c45d8dc75431893db3ab479330bef0168c71f78b2bec41c2b3a6",
+            "content": "sha256:d2eb179ab62bf8a4b526ba242a4cd246bc240d2f5201bfadbfa4069bd28829b5",
             "locator": {
-              "kind": "symbol",
-              "name": "resolveBlocks"
+              "end": 120,
+              "kind": "line_range",
+              "start": 93
             },
             "path": "dashboard/src/panels/engine-room/scene.ts"
           },
@@ -168,15 +123,14 @@
       ]
     },
     "2": {
-      "note": "The `reindexReroute` timeline, whose R4 caption now reads `CGC seed STALE → reindex reroute`.",
+      "note": "The `reindexReroute` timeline, whose R4 caption now reads `CGC seed STALE → reindex reroute`.\n\nAnchor: `reindexReroute`",
       "targets": [
         {
           "anchor": {
-            "blob": "a487415b9d5df3f817b748f597c7ce8378b252f2",
-            "content": "sha256:9dc66ac9a7115f87130d6a8d36e86258d89b34b1c8e7d2f5343670381016b2fa",
+            "blob": "58403a8e3f376b93e6cea8747e0d8ecdb222dd8c",
+            "content": "sha256:0b399324a5b92b6875378f983347d8c30a4dd89938753534c6152123b46f4a9d",
             "locator": {
-              "kind": "symbol",
-              "name": "reindexReroute"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -184,52 +138,15 @@
       ]
     },
     "3": {
-      "note": "`SCENARIOS` — timelines first, then the folded-in resting frames.",
+      "note": "`SCENARIOS` — timelines first, then the folded-in resting frames.\n\nAnchor: `SCENARIOS`",
       "targets": [
         {
           "anchor": {
-            "blob": "5a89964f4b120409c705e8442660ac0594dc7b1b",
-            "content": "sha256:dbd4e595ed8877c525078fde8c58d9cb61b85a3707902aa8424c4dea29ce4f35",
+            "blob": "58403a8e3f376b93e6cea8747e0d8ecdb222dd8c",
+            "content": "sha256:0b399324a5b92b6875378f983347d8c30a4dd89938753534c6152123b46f4a9d",
             "locator": {
-              "kind": "symbol",
-              "name": "SCENARIOS"
+              "kind": "file"
             }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "4": {
-      "note": "The `engine-cgc-seed-refused` fixture drives a `stale` `cgc-seed` edge; the fixture NAME is unchanged, only the caption moved.\n\nAnchor: \"engine-cgc-seed-refused\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "c25943bc8dde59686e3cd56112ad7650690f984c",
-            "content": "sha256:dc3d533f4116127b5df39faefb769bfbf78c1cc3fbe6d76186cd26b24499c789",
-            "locator": {
-              "end": 834,
-              "kind": "line_range",
-              "start": 834
-            },
-            "path": "dashboard/src/panels/engine-room/fixtures.ts"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "5": {
-      "note": "`_seed_edge_state` is the reducer function that produces seed-edge states; `stale` is one of its decisive answers and `refused` is not among them.\n\nAnchor: \"def _seed_edge_state(\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "7137fb6b1d0cd4fbee647c82ab46c5710cf1bafe",
-            "content": "sha256:2e916c163864333f653579c3520968a76f3842c03f3d3ba6bd92d819f91d26fc",
-            "locator": {
-              "end": 638,
-              "kind": "line_range",
-              "start": 638
-            },
-            "path": "mcp/src/agents_remember/observer/reducer_impl/_processes.py"
           },
           "kind": "code"
         }
@@ -240,8 +157,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fc93bae691a82da28bef3516bc6b7b8a85af6db8",
-            "content": "sha256:9438263648732139f82abce5f76d8ba78adf95de1b686cc1f01565f11d9c9810",
+            "blob": "fd0cd6ba53b5d874adfcb26807b26ab92e77d56e",
+            "content": "sha256:4b31b460cf2bfd78dc4589df8a552c328a633762e9e07d658f5db4e360b63935",
             "locator": {
               "kind": "symbol",
               "name": "EngineProcessEdge"
@@ -253,27 +170,14 @@
       ]
     },
     "7": {
-      "note": "`engineRoomProjection` (the shared wrap) + `GALLERY` (folded-in resting states).\n\nAnchor: `engineRoomProjection`, `GALLERY`",
+      "note": "`engineRoomProjection` (the shared wrap) + `GALLERY` (folded-in resting states).\n\nAnchor: `engineRoomProjection` `GALLERY`",
       "targets": [
         {
           "anchor": {
-            "blob": "7112f472338abd10d7f68eef7c90c01662c717e7",
-            "content": "sha256:e5c3bb10a165a85da05cca88c4c1aca1686e7747eed09465df5889b1dbbde8ef",
+            "blob": "87693eb6b819166337bd70d0a819044301bb6ecf",
+            "content": "sha256:0195b4c579d2a1a8dd00fffc526a784ef564c4ee1b088984acd3a58e9bd964fb",
             "locator": {
-              "kind": "symbol",
-              "name": "engineRoomProjection"
-            },
-            "path": "dashboard/src/dev/fixtures.ts"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "9b908ffe392c7403618dbf4785c58bf66825627c",
-            "content": "sha256:494192985f8d2f2ea7f9f79c571aed7020551fcece88e01e2cb4b4e396f00cf8",
-            "locator": {
-              "kind": "symbol",
-              "name": "GALLERY"
+              "kind": "file"
             },
             "path": "dashboard/src/dev/fixtures.ts"
           },
@@ -282,20 +186,8 @@
       ]
     },
     "8": {
-      "note": "Consumed by the player transport + the bench picker.\n\nAnchor: `Bench`, `applyFrame`",
+      "note": "Consumed by the player transport + the bench picker.\n\nAnchor: `Bench` `applyFrame`",
       "targets": [
-        {
-          "anchor": {
-            "blob": "0a59c5c96cab39c54627f45a6b98a379b42906aa",
-            "content": "sha256:b4df5ab1f0929cc5230f264ca569d5f7779be36faa23e04143b20cbbeb43d18d",
-            "locator": {
-              "kind": "symbol",
-              "name": "Bench"
-            },
-            "path": "dashboard/src/dev/Bench.tsx"
-          },
-          "kind": "code"
-        },
         {
           "anchor": {
             "blob": "8a496ea3787ae9c16702581c81e2793eb459d67e",
@@ -320,19 +212,40 @@
             "path": "dashboard/src/dev/ScenarioPlayer.tsx"
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d5f2bb361853e599187ee262fe848316a9f46589",
+            "content": "sha256:4229bd8c8291447936a3514d661a11ed31113ac75b9e1c25bc9e18a4c2429d55",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/dev/Bench.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8a496ea3787ae9c16702581c81e2793eb459d67e",
+            "content": "sha256:838e060d2d5550940c54e73ce183cc8ebdc6990d13e71fb25f059f3d5c707b1b",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/dev/ScenarioPlayer.tsx"
+          },
+          "kind": "code"
         }
       ]
     },
     "9": {
-      "note": "`WorkspaceProjection` / `ObserverEvent` types each frame carries.\n\nAnchor: `WorkspaceProjection`, `ObserverEvent`",
+      "note": "`WorkspaceProjection` / `ObserverEvent` types each frame carries.\n\nAnchor: `WorkspaceProjection` `ObserverEvent`",
       "targets": [
         {
           "anchor": {
-            "blob": "32f61ad92158b8a4519a35f725ce765c87f2ec99",
-            "content": "sha256:0f6e963168be5aeccb761d64603f4c4f77cace12721e5e7ca5d9f1e8e26a1ebd",
+            "blob": "d71e9db1948f52b82bd84b2348775f13ac9b57e7",
+            "content": "sha256:daaaf9f80d95ac50acc42b4097c5fcc9293b51a91e135d7b45f3ae87ee7e947f",
             "locator": {
-              "kind": "symbol",
-              "name": "WorkspaceProjection"
+              "kind": "file"
             },
             "path": "dashboard/src/types/projection.ts"
           },
@@ -340,11 +253,10 @@
         },
         {
           "anchor": {
-            "blob": "505b38f7f19667fa0c0cc4caca3e8a966d548e1d",
-            "content": "sha256:8b045c8da2fe34c0eebd21a36174eb5c131119422538977de690652191a5fae3",
+            "blob": "25b46051e848ed30ec884515068da4de250b2117",
+            "content": "sha256:ad737b334a9d79e13b1ab2b81a6e1a25a8ccc71cfb4c4f2a07ca3e974d61049e",
             "locator": {
-              "kind": "symbol",
-              "name": "ObserverEvent"
+              "kind": "file"
             },
             "path": "dashboard/src/types/event.ts"
           },

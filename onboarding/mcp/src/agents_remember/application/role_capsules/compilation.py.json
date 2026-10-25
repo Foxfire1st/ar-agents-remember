@@ -1,14 +1,26 @@
 {
   "path": "mcp/src/agents_remember/application/role_capsules/compilation.py",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
-      "note": "The pure compiler this entry point calls and the refusal-shaped manifest builders it selects between.",
+      "note": "The pure compiler this entry point calls and the refusal-shaped manifest builders it selects between.\n\nAnchor: `compile_role_capsule` `refused_manifest` `manifest_for_error`",
       "targets": [
         {
           "anchor": {
-            "blob": "e0c363f53732c65054fa825f478956800f102db7",
-            "content": "sha256:d1502ab73ec7a0c2f3607cb0f65c326092b8f83aa9d9d5fbab123774326f3f90",
+            "blob": "762c104a0bcdc0375416163993d106dc37c5fb18",
+            "content": "sha256:157949db0f9acdf0d70ebbd6959fb382dccab34600bf2e6cfd9b12f0b9079a74",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/compiler.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "762c104a0bcdc0375416163993d106dc37c5fb18",
+            "content": "sha256:1887eaccb5d5f005cb1e74f059d46449876977184df1293db4f51a2b4c61e567",
             "locator": {
               "kind": "symbol",
               "name": "compile_role_capsule"

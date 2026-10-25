@@ -51,15 +51,14 @@
       ]
     },
     "4": {
-      "note": "Source assertion: test_per_level_step_up_refusal_preserves_settings_file_and_exact_feature_key. The declaration is not an execution receipt.",
+      "note": "A per-level refusal preserves the settings file and the exact feature key.\n\nAnchor: `test_per_level_step_up_refusal_preserves_settings_file_and_exact_feature_key`",
       "targets": [
         {
           "anchor": {
-            "blob": "e94df54b05412105f814ab34a617a605dc0a78f8",
-            "content": "sha256:9b4f8a46ada0ca1e9ca46d84dc41e65ed36fe962c130493e4319bd6645a4c240",
+            "blob": "3a7482d175a6d374d249e97044b45b1e3dd3139a",
+            "content": "sha256:e3037dadd09596c2e9bf5a883932cb083b8f3602fd100ef2b4184b119e877c27",
             "locator": {
-              "kind": "symbol",
-              "name": "test_per_level_step_up_refusal_preserves_settings_file_and_exact_feature_key"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -99,15 +98,14 @@
       ]
     },
     "7": {
-      "note": "Source assertion: test_same_scope_native_tier_step_up_is_not_hidden_by_inherited_alias. The declaration is not an execution receipt.",
+      "note": "A same-scope native tier step-up is not hidden by an inherited alias.\n\nAnchor: `test_same_scope_native_tier_step_up_is_not_hidden_by_inherited_alias`",
       "targets": [
         {
           "anchor": {
-            "blob": "e94df54b05412105f814ab34a617a605dc0a78f8",
-            "content": "sha256:73b01e6bccf5fa96898160f447ea620bd634903e9fd525b04554e7c73c4987d3",
+            "blob": "3a7482d175a6d374d249e97044b45b1e3dd3139a",
+            "content": "sha256:e3037dadd09596c2e9bf5a883932cb083b8f3602fd100ef2b4184b119e877c27",
             "locator": {
-              "kind": "symbol",
-              "name": "test_same_scope_native_tier_step_up_is_not_hidden_by_inherited_alias"
+              "kind": "file"
             }
           },
           "kind": "test"

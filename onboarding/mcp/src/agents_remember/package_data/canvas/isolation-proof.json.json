@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/package_data/canvas/isolation-proof.json",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
@@ -7,8 +8,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "721e0c0d66cb5f927102b7fa50c5bfc859ef05f3",
-            "content": "sha256:187fdf35af2178ed4e06c3b08aec9ce3aa61328ccfe2ebbd7cf2ab1465c5768c",
+            "blob": "ffb8001c41f42300ff912c3c4ca4b6681bb782ed",
+            "content": "sha256:b1441963e8db6ddcf6618ae03f9d9c0b5da120ec3b76c6499c05c7cfc46cca92",
             "locator": {
               "kind": "file"
             }
@@ -22,8 +23,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "721e0c0d66cb5f927102b7fa50c5bfc859ef05f3",
-            "content": "sha256:187fdf35af2178ed4e06c3b08aec9ce3aa61328ccfe2ebbd7cf2ab1465c5768c",
+            "blob": "ffb8001c41f42300ff912c3c4ca4b6681bb782ed",
+            "content": "sha256:b1441963e8db6ddcf6618ae03f9d9c0b5da120ec3b76c6499c05c7cfc46cca92",
             "locator": {
               "kind": "file"
             }

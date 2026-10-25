@@ -116,7 +116,7 @@ None.
 ## 260928-MIK-L08 The Maintenance-Scope Header Line
 
 
-- The maintenance-scope header is drawn only for a truthy field; the current header also conditionally carries the raw waitsFor line. [1]
+- The maintenance-scope header is drawn only for a truthy field; the current header also conditionally carries the raw waitsFor line.
 ## 260928-MIK-L11 The Expected-Knowledge-Effects Header Block
 
 MIK-R11 adds a header block after the maintenance-scope line: when the leaf's document declares
@@ -126,7 +126,7 @@ field renders exactly as before (the worker's and reviewer's render hashes over 
 byte-identical).
 
 
-- Expected-knowledge-effects header bullets are drawn only when the declaration is truthy and retain declared order. [2]
+- Expected-knowledge-effects header bullets are drawn only when the declaration is truthy and retain declared order.
 ## External annotation input
 
 render_markdown accepts optional externally supplied direct-grant evidence for the leaf header; it only formats describe(), never reads or writes the store. No grant argument gives the former rendering, and a master ignores the annotation. Determinism is over the document plus supplied graph/grant/master_order inputs, not the document alone. Authored JSON stays primary and there is no TaskDocument grant field.

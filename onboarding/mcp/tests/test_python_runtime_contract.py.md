@@ -19,8 +19,14 @@ still run. The retained behavior and its fixture limits, described above, govern
 The negative admission witness (`test_unsupported_version_is_named_before_importing_new_stdlib_modules`)
 runs the checker under a simulated 3.13.15 interpreter whose `compression` import fails, and asserts
 exit 1, empty stdout and the exact named refusal naming the expected and observed versions and the
-executable. The real older-interpreter matrix supplements it with actual 3.11, 3.12 and 3.13
-interpreters.
+executable. This module invokes the current `sys.executable` and simulates the older version;
+the earlier card's additional account of a real 3.11, 3.12 and 3.13 matrix is historical and
+is not a retained test population in this module.
+
+> Retained earlier card wording; superseded by the current account above:
+> executable. The real older-interpreter matrix supplements it with actual 3.11, 3.12 and 3.13
+> interpreters.
+
 
 ### Conventions
 
@@ -55,7 +61,9 @@ to removed methods are superseded by this current inventory.
 - Runtime builder is fully cloned atomically published and reused [1]
 - Existing foreign builder is refused and preserved [2]
 
+
 - The negative admission witness proves the named refusal precedes any newer standard-library import. [3]
+
 
 ### Cross-Repo References
 

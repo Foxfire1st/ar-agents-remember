@@ -17,7 +17,7 @@ The queue lists the newest entry first — age ascending, ID breaking the tie, a
 
 - Equal findings remain dismissed across clock changes and a changed fingerprint recurs. [6]
 
-- Age decides the order, youngest first, with the ID breaking a tie and an age-less entry counting as zero. [7]
+- Severity leaves the ranking: the queue lists the newest entry first and breaks ties by id, and a drift entry that names no age counts as zero rather than sinking. [7]
 
 ### 20261023-L190-v2 Newest First Replaces Severity-First
 

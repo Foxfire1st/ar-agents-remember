@@ -23,7 +23,9 @@ Snapshots cover contract bytes, worklist presence/content and both ref inventori
 No external Domain Documentation source is configured for this repository. The following source witnesses establish the contract, not a new execution receipt.
 
 - Apply refusal preserves contract, worklist and refs. [1]
+
 - Recorded landing refusal also preserves its footprint. [2]
+
 - Changed cells produce their actual record-kept finding. [3]
 
 - The staying record_landing adapter call is judged by its exact returned refusal and retained detail, with the existing complete no-write oracle. Fixture publication precedes the snapshot; the control is not attributed to an earlier pre-publication frame. [4]

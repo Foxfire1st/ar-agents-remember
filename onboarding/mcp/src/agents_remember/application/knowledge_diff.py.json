@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/application/knowledge_diff.py",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
@@ -220,12 +221,23 @@
       ]
     },
     "17": {
-      "note": "**The union comparison and the display builder this seam calls.**",
+      "note": "**The union comparison and the display builder this seam calls.**\n\nAnchor: `compare_selected_scopes`",
       "targets": [
         {
           "anchor": {
-            "blob": "e00618928804650eeabd5ef862323284e1edfdc4",
-            "content": "sha256:b31c1bc20fc116b9c05dc30a9c8b0c8abaa7295f2091e7b730c7291a233ac6b2",
+            "blob": "ad181bee71830f01ceecfa0e450848eb85ae7902",
+            "content": "sha256:6edec7513bb2899e504b4decb67d19355339e61841648024c550c455296c616f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/diff.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ad181bee71830f01ceecfa0e450848eb85ae7902",
+            "content": "sha256:e249a0ea1c984fd189a2b0021d4af6b1ddc4a42c7edf91f90e8f2962575097ac",
             "locator": {
               "kind": "symbol",
               "name": "compare_selected_scopes"
@@ -281,6 +293,32 @@
             "path": "mcp/tests/test_knowledge_diff_boundaries.py"
           },
           "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "61c763ff8430456602202b02310012b4437a4c44",
+            "content": "sha256:567562e89f3b322ba5c85941b4eb79f9be2e90efd5484d91703d296d818026e6",
+            "locator": {
+              "end": 359,
+              "kind": "line_range",
+              "start": 321
+            },
+            "path": "mcp/tests/test_knowledge_diff_boundaries.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "61c763ff8430456602202b02310012b4437a4c44",
+            "content": "sha256:d76119e6050ab51f95ca4fb2fc4c1f5d3a29eb7b4d927172eeb8b6aa82ae6018",
+            "locator": {
+              "end": 465,
+              "kind": "line_range",
+              "start": 428
+            },
+            "path": "mcp/tests/test_knowledge_diff_boundaries.py"
+          },
+          "kind": "test"
         }
       ]
     },
@@ -301,7 +339,7 @@
       ]
     },
     "20": {
-      "note": "The nodes that measure a missing side refusing without a substitute, a continuation against another selector returning no page, and a small budget not shrinking the totals.\n\nAnchor: \"test_a_missing_side_refuses_and_substitutes_no_other_snapshot\"; \"test_a_continuation_presented_against_another_selector_refuses_and_returns_no_page\"; \"test_a_small_display_budget_pages_the_comparison_without_shrinking_its_totals\"",
+      "note": "The nodes that measure a missing side refusing without a substitute, a continuation against another selector returning no page, and a small budget not shrinking the totals.",
       "targets": [
         {
           "anchor": {
@@ -318,8 +356,8 @@
         },
         {
           "anchor": {
-            "blob": "73551cfb002f1420c4431ddb8a46eade70ddfa88",
-            "content": "sha256:e6cc5b87fbc410994f7a82001e09237da0d94e700d8e2f98795edd9043ffe8c2",
+            "blob": "61c763ff8430456602202b02310012b4437a4c44",
+            "content": "sha256:0ee239ee9b050cacfbfe49f95a18267a360078024b0b4dff488b8de5fb0e7a17",
             "locator": {
               "end": 425,
               "kind": "line_range",
@@ -337,6 +375,32 @@
               "end": 310,
               "kind": "line_range",
               "start": 270
+            },
+            "path": "mcp/tests/test_knowledge_diff_boundaries.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "61c763ff8430456602202b02310012b4437a4c44",
+            "content": "sha256:9b5cb64f799fb014ae5cebbca81e7469921c8e803950351771c083ba5da2bce2",
+            "locator": {
+              "end": 318,
+              "kind": "line_range",
+              "start": 299
+            },
+            "path": "mcp/tests/test_knowledge_diff_boundaries.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "61c763ff8430456602202b02310012b4437a4c44",
+            "content": "sha256:0ba3c2ba21df11e5251c7ea2c21dfc71c48e78710d81a3912fb047ff0b9070a8",
+            "locator": {
+              "end": 293,
+              "kind": "line_range",
+              "start": 253
             },
             "path": "mcp/tests/test_knowledge_diff_boundaries.py"
           },
@@ -359,6 +423,19 @@
             "path": "mcp/tests/test_knowledge_diff_boundaries.py"
           },
           "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "61c763ff8430456602202b02310012b4437a4c44",
+            "content": "sha256:14de030bdfb7d2561d661cf8e4742358aee76b51604500ebb88a76a54f021028",
+            "locator": {
+              "end": 739,
+              "kind": "line_range",
+              "start": 698
+            },
+            "path": "mcp/tests/test_knowledge_diff_boundaries.py"
+          },
+          "kind": "test"
         }
       ]
     },
@@ -373,6 +450,19 @@
               "end": 801,
               "kind": "line_range",
               "start": 782
+            },
+            "path": "mcp/tests/test_knowledge_diff_boundaries.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "61c763ff8430456602202b02310012b4437a4c44",
+            "content": "sha256:74a5628c7c0e6c38b2cccde92f8184a1d6581706fa3adff90076de5e5520c371",
+            "locator": {
+              "end": 761,
+              "kind": "line_range",
+              "start": 742
             },
             "path": "mcp/tests/test_knowledge_diff_boundaries.py"
           },
@@ -450,38 +540,24 @@
       ]
     },
     "3": {
-      "note": "**The production probe, now a one-line delegation: the two trees addressed by object id, the never-substitute-`HEAD` rule, and the delimiter-safe observation the review's own inventory reads too.**",
+      "note": "The production observation the comparison's probe delegates to: two code trees addressed by object id and never by `HEAD`, reported as changed paths or as an observation this run could not make, and read by the review's own inventory too.\n\nAnchor: `git_tree_difference_probe` `tree_difference_observation` `source_tree_side`",
       "targets": [
         {
           "anchor": {
             "blob": "99634b1100e73ac23db59be56a0f4536774322e5",
-            "content": "sha256:75cc4fbd0593f56af28ddcc9b8b65c1b4de6c05e2440466710bdefdcda3336e2",
+            "content": "sha256:436ebc7802e737e933f98b6e8ad12367932bb94e3d7c56e6967a66fa12826aa2",
             "locator": {
-              "kind": "symbol",
-              "name": "git_tree_difference_probe"
+              "kind": "file"
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "c6074ac19f6aae22d87bc3f2dbf6846e7ad0103e",
-            "content": "sha256:06246381dbd1f0bd6916b9d584e7dfa58ecaec6fd2a6bb9bd99f81cf497cb047",
-            "locator": {
-              "kind": "symbol",
-              "name": "tree_difference_observation"
-            },
-            "path": "mcp/src/agents_remember/application/review_source_inventory.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
             "blob": "ab8acf23bd578612e3b9cd51877bd9d2b2c0752f",
-            "content": "sha256:660943b0c519a43f2230401da098b234638bae93577d58cc25567582a8370745",
+            "content": "sha256:ac3a44ab3040c56730fb36e03ae2017d8f2e5a8f0e266230e0f335bf0e7dfb63",
             "locator": {
-              "kind": "symbol",
-              "name": "source_tree_side"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/review_source_inventory.py"
           },
@@ -490,12 +566,22 @@
       ]
     },
     "4": {
-      "note": "**The one operation: the ordered sequence, the injectable probe default and the typed catch of selection/storage/SQLite/OS failures.**",
+      "note": "**The one operation: the ordered sequence, the injectable probe default and the typed catch of selection/storage/SQLite/OS failures.**\n\nAnchor: `diff_knowledge_scope`",
       "targets": [
         {
           "anchor": {
-            "blob": "5e1dc9aed3f09bf6a0af1b7b09c4bf5770425a6e",
-            "content": "sha256:b6674c9a6519d5519f85e9dd396089661b4dd4d108b927663d1e332ddfba9a4f",
+            "blob": "99634b1100e73ac23db59be56a0f4536774322e5",
+            "content": "sha256:436ebc7802e737e933f98b6e8ad12367932bb94e3d7c56e6967a66fa12826aa2",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "99634b1100e73ac23db59be56a0f4536774322e5",
+            "content": "sha256:7085baaf787e295bef7ae0712df3c80a1e54020df708bf6b0a8fc8ee8d7d6d37",
             "locator": {
               "kind": "symbol",
               "name": "diff_knowledge_scope"
@@ -522,8 +608,18 @@
       ]
     },
     "6": {
-      "note": "The binding computed before either file is opened, and the per-side effective selector it digests.",
+      "note": "The binding computed before either file is opened, and the per-side effective selector it digests.\n\nAnchor: `_binding` `_effective_selector` `_resolve_sides`",
       "targets": [
+        {
+          "anchor": {
+            "blob": "99634b1100e73ac23db59be56a0f4536774322e5",
+            "content": "sha256:436ebc7802e737e933f98b6e8ad12367932bb94e3d7c56e6967a66fa12826aa2",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
         {
           "anchor": {
             "blob": "99634b1100e73ac23db59be56a0f4536774322e5",
@@ -548,8 +644,8 @@
         },
         {
           "anchor": {
-            "blob": "5e1dc9aed3f09bf6a0af1b7b09c4bf5770425a6e",
-            "content": "sha256:45f12ee827e06416c94e47a40365792a63d59e07dcd11d6b8eedd79c348fb068",
+            "blob": "99634b1100e73ac23db59be56a0f4536774322e5",
+            "content": "sha256:5988784bf97a3408d04b59c8cec0f44fd8a0386fae7b7a32d6b5fa8bbd248300",
             "locator": {
               "kind": "symbol",
               "name": "_resolve_sides"
@@ -560,12 +656,22 @@
       ]
     },
     "7": {
-      "note": "The values that must not be crossed: the snapshot pair, the connection pair and the whole opened comparison.",
+      "note": "The values that must not be crossed: the snapshot pair, the connection pair and the whole opened comparison.\n\nAnchor: `SnapshotPair` `OpenPair` `OpenComparison` `_compare_inside_one_snapshot_pair`",
       "targets": [
         {
           "anchor": {
-            "blob": "5e1dc9aed3f09bf6a0af1b7b09c4bf5770425a6e",
-            "content": "sha256:26dcccd247b5cf98a977c30ea09824a1b48fc7493d04bd3a6fbd980ab36a19c3",
+            "blob": "99634b1100e73ac23db59be56a0f4536774322e5",
+            "content": "sha256:436ebc7802e737e933f98b6e8ad12367932bb94e3d7c56e6967a66fa12826aa2",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "99634b1100e73ac23db59be56a0f4536774322e5",
+            "content": "sha256:3be29d0c18f785c713acb46bed564a59625f4283e34375d98b8c68ad4a35d1c6",
             "locator": {
               "kind": "symbol",
               "name": "SnapshotPair"
@@ -609,12 +715,22 @@
       ]
     },
     "8": {
-      "note": "**The ordered body: verify both sides before either selection, select each side with R07's own policy, compare, collect absences, display with the comparison's own mapping reader, page.**",
+      "note": "**The ordered body: verify both sides before either selection, select each side with R07's own policy, compare, collect absences, display with the comparison's own mapping reader, page.**\n\nAnchor: `_select_and_compare` `_select_side`",
       "targets": [
         {
           "anchor": {
-            "blob": "5e1dc9aed3f09bf6a0af1b7b09c4bf5770425a6e",
-            "content": "sha256:3c8fb9f41437c5a2de4f7366333fc6a70e28441909b88d8591f9c2a436a4d43d",
+            "blob": "99634b1100e73ac23db59be56a0f4536774322e5",
+            "content": "sha256:436ebc7802e737e933f98b6e8ad12367932bb94e3d7c56e6967a66fa12826aa2",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "99634b1100e73ac23db59be56a0f4536774322e5",
+            "content": "sha256:494bec58491aba8d7faf299ba7c427dc078901dcb30b2940c5df8b72217368f0",
             "locator": {
               "kind": "symbol",
               "name": "_select_and_compare"
@@ -636,12 +752,22 @@
       ]
     },
     "9": {
-      "note": "**The registered-mapping reader over this comparison's own two open snapshots — the partition decided from exactly the bytes the selection was made from.**",
+      "note": "**The registered-mapping reader over this comparison's own two open snapshots — the partition decided from exactly the bytes the selection was made from.**\n\nAnchor: `_registered_mapping_reader`",
       "targets": [
         {
           "anchor": {
-            "blob": "5e1dc9aed3f09bf6a0af1b7b09c4bf5770425a6e",
-            "content": "sha256:818628f7debcfb0a76b34230659b5a7b76ca2b5a01283ecdfeaa5a5048ca3bb9",
+            "blob": "99634b1100e73ac23db59be56a0f4536774322e5",
+            "content": "sha256:436ebc7802e737e933f98b6e8ad12367932bb94e3d7c56e6967a66fa12826aa2",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "99634b1100e73ac23db59be56a0f4536774322e5",
+            "content": "sha256:68a52c804c40a57f9cced1c0a9dddc6d3570559cdb37f467e9f39b38feac8d52",
             "locator": {
               "kind": "symbol",
               "name": "_registered_mapping_reader"

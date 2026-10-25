@@ -1,5 +1,6 @@
 {
   "path": "dashboard/src/topology/constel.ts",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
@@ -36,8 +37,8 @@
         },
         {
           "anchor": {
-            "blob": "fd60525c1bd140fad9fd83c38f79075c7556039d",
-            "content": "sha256:b8b519048d8a46d111901e761469e9220916486b24bb1b8ff1e8d520cbf64252",
+            "blob": "235b077ab68b7adfffa2b675a339fb346dca83c1",
+            "content": "sha256:f53636330ee7ec12551b481449425862fa552d1c9deca278efcf4998770d6ee5",
             "locator": {
               "kind": "symbol",
               "name": "constelColors"
@@ -47,8 +48,8 @@
         },
         {
           "anchor": {
-            "blob": "fd60525c1bd140fad9fd83c38f79075c7556039d",
-            "content": "sha256:1cdd58c292429d5b544ac150cc706f587d9a4c30410eb81af1c423e20be10719",
+            "blob": "235b077ab68b7adfffa2b675a339fb346dca83c1",
+            "content": "sha256:e01d375c5487b04ae8462b795a076f8cd749832339025551285bf5068e95d767",
             "locator": {
               "kind": "symbol",
               "name": "mountConstel"
@@ -58,7 +59,7 @@
         },
         {
           "anchor": {
-            "blob": "9cf8c0f5572eef476907ba10a4bfef8669303116",
+            "blob": "235b077ab68b7adfffa2b675a339fb346dca83c1",
             "content": "sha256:12d2460b1a40a9cda35b6a2484f2b5e689953029172cd14866fc6116216fac84",
             "locator": {
               "kind": "symbol",
@@ -69,8 +70,8 @@
         },
         {
           "anchor": {
-            "blob": "9cf8c0f5572eef476907ba10a4bfef8669303116",
-            "content": "sha256:b8b519048d8a46d111901e761469e9220916486b24bb1b8ff1e8d520cbf64252",
+            "blob": "235b077ab68b7adfffa2b675a339fb346dca83c1",
+            "content": "sha256:f53636330ee7ec12551b481449425862fa552d1c9deca278efcf4998770d6ee5",
             "locator": {
               "kind": "symbol",
               "name": "constelColors"
@@ -80,8 +81,8 @@
         },
         {
           "anchor": {
-            "blob": "9cf8c0f5572eef476907ba10a4bfef8669303116",
-            "content": "sha256:1cdd58c292429d5b544ac150cc706f587d9a4c30410eb81af1c423e20be10719",
+            "blob": "235b077ab68b7adfffa2b675a339fb346dca83c1",
+            "content": "sha256:e01d375c5487b04ae8462b795a076f8cd749832339025551285bf5068e95d767",
             "locator": {
               "kind": "symbol",
               "name": "mountConstel"
@@ -108,8 +109,8 @@
         },
         {
           "anchor": {
-            "blob": "fd60525c1bd140fad9fd83c38f79075c7556039d",
-            "content": "sha256:01952958727382fbeab1945f74c9b32a53e5aeb3a9d28a6178f87512188a0da5",
+            "blob": "235b077ab68b7adfffa2b675a339fb346dca83c1",
+            "content": "sha256:28ba578d7838dba106c3d5fde6d809b14d3c153f26779bbef07c3a1de2b79691",
             "locator": {
               "end": 433,
               "kind": "line_range",
@@ -120,20 +121,20 @@
         },
         {
           "anchor": {
-            "blob": "9cf8c0f5572eef476907ba10a4bfef8669303116",
+            "blob": "235b077ab68b7adfffa2b675a339fb346dca83c1",
             "content": "sha256:70df06c77ae8d21055d2c259e4d56e0e85876786c79759f01b7a637489f0ba1b",
             "locator": {
-              "end": 76,
+              "end": 73,
               "kind": "line_range",
-              "start": 76
+              "start": 73
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "9cf8c0f5572eef476907ba10a4bfef8669303116",
-            "content": "sha256:01952958727382fbeab1945f74c9b32a53e5aeb3a9d28a6178f87512188a0da5",
+            "blob": "235b077ab68b7adfffa2b675a339fb346dca83c1",
+            "content": "sha256:28ba578d7838dba106c3d5fde6d809b14d3c153f26779bbef07c3a1de2b79691",
             "locator": {
               "end": 433,
               "kind": "line_range",
@@ -145,15 +146,14 @@
       ]
     },
     "3": {
-      "note": "`CONSTEL_STATUSES` and the derived `ConstelStatus` this palette is keyed by — the single vocabulary shared with the model.",
+      "note": "`CONSTEL_STATUSES` and the derived `ConstelStatus` this palette is keyed by — the single vocabulary shared with the model.\n\nAnchor: `CONSTEL_STATUSES` `ConstelStatus`",
       "targets": [
         {
           "anchor": {
-            "blob": "59f64541870e7ff5dc2349ca590ec159703d74d1",
-            "content": "sha256:6995f9835dafa8ba781ddb2c4a7946277d0f3595424f45737eb3c90e4fc82152",
+            "blob": "046383e5c526185a26684c0f11200956456de65e",
+            "content": "sha256:d3d10649bf9236c7aa420388c78fdc9c43caf883bf6224f15a0e32bad2bc395f",
             "locator": {
-              "kind": "symbol",
-              "name": "CONSTEL_STATUSES"
+              "kind": "file"
             },
             "path": "dashboard/src/topology/model.ts"
           },
@@ -162,18 +162,6 @@
         {
           "anchor": {
             "blob": "046383e5c526185a26684c0f11200956456de65e",
-            "content": "sha256:42573ce5c78e597a8799eec27360bf40b57381b7f19ba075170a2b29e01cb18f",
-            "locator": {
-              "kind": "symbol",
-              "name": "ConstelStatus"
-            },
-            "path": "dashboard/src/topology/model.ts"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "2b82959051f071a383754faa3d11ebe8b8728ec0",
             "content": "sha256:42573ce5c78e597a8799eec27360bf40b57381b7f19ba075170a2b29e01cb18f",
             "locator": {
               "kind": "symbol",
@@ -186,15 +174,14 @@
       ]
     },
     "4": {
-      "note": "worktreeStatus maps a bound TaskEntry through shared status/tone and returns idle when unbound; buildTopology supplies only workspace, repository and worktree nodes, without provider satellites.",
+      "note": "`worktreeStatus` maps a worktree row through shared `taskStatusKey`/`statusTone`, returns `idle` when unbound, and maps `wait` to `warn`, `gone` to `idle`, otherwise `ok`. `worktreeFields` supplies the label, status word and full limit detail using shared status/limit helpers; a limited node's detail contains the word plus every `limitLines` row, with no canvas clock. `buildTopology` creates only workspace, repository and worktree nodes: workspace is `core`, `addRepositories` supplies repository `ok`, and worktrees use that shared derived status and those fields. Search-provider satellites and their status mapping are absent.",
       "targets": [
         {
           "anchor": {
             "blob": "046383e5c526185a26684c0f11200956456de65e",
-            "content": "sha256:d6c061b2bf9f32b160e796212e1d8d724a8d4a57d15d7f18803d71dc3c1d3caa",
+            "content": "sha256:d3d10649bf9236c7aa420388c78fdc9c43caf883bf6224f15a0e32bad2bc395f",
             "locator": {
-              "kind": "symbol",
-              "name": "worktreeStatus"
+              "kind": "file"
             },
             "path": "dashboard/src/topology/model.ts"
           },
@@ -203,10 +190,9 @@
         {
           "anchor": {
             "blob": "046383e5c526185a26684c0f11200956456de65e",
-            "content": "sha256:e1be11bdb96db1fabd46b9d9e3dfe87e16818f280a92f01d8e1e3cec728f1bdc",
+            "content": "sha256:d3d10649bf9236c7aa420388c78fdc9c43caf883bf6224f15a0e32bad2bc395f",
             "locator": {
-              "kind": "symbol",
-              "name": "buildTopology"
+              "kind": "file"
             },
             "path": "dashboard/src/topology/model.ts"
           },
@@ -214,12 +200,10 @@
         },
         {
           "anchor": {
-            "blob": "2b82959051f071a383754faa3d11ebe8b8728ec0",
-            "content": "sha256:d6c061b2bf9f32b160e796212e1d8d724a8d4a57d15d7f18803d71dc3c1d3caa",
+            "blob": "046383e5c526185a26684c0f11200956456de65e",
+            "content": "sha256:d3d10649bf9236c7aa420388c78fdc9c43caf883bf6224f15a0e32bad2bc395f",
             "locator": {
-              "end": 98,
-              "kind": "line_range",
-              "start": 94
+              "kind": "file"
             },
             "path": "dashboard/src/topology/model.ts"
           },
@@ -227,12 +211,10 @@
         },
         {
           "anchor": {
-            "blob": "3eb18c18613cf970752953563d62d26763e6d251",
-            "content": "sha256:1e0a427bdaa5dce035239fcbd766a51a6efa0b9ea72979a8fd5526f9a9cefe8c",
+            "blob": "046383e5c526185a26684c0f11200956456de65e",
+            "content": "sha256:d3d10649bf9236c7aa420388c78fdc9c43caf883bf6224f15a0e32bad2bc395f",
             "locator": {
-              "end": 164,
-              "kind": "line_range",
-              "start": 112
+              "kind": "file"
             },
             "path": "dashboard/src/topology/model.ts"
           },
@@ -240,12 +222,21 @@
         },
         {
           "anchor": {
-            "blob": "2b82959051f071a383754faa3d11ebe8b8728ec0",
-            "content": "sha256:fa495b5bda99fac776e92ceb3cc390fe544f0085c7396889c357d03042847871",
+            "blob": "046383e5c526185a26684c0f11200956456de65e",
+            "content": "sha256:d3d10649bf9236c7aa420388c78fdc9c43caf883bf6224f15a0e32bad2bc395f",
             "locator": {
-              "end": 240,
-              "kind": "line_range",
-              "start": 214
+              "kind": "file"
+            },
+            "path": "dashboard/src/topology/model.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "046383e5c526185a26684c0f11200956456de65e",
+            "content": "sha256:d3d10649bf9236c7aa420388c78fdc9c43caf883bf6224f15a0e32bad2bc395f",
+            "locator": {
+              "kind": "file"
             },
             "path": "dashboard/src/topology/model.ts"
           },
@@ -298,15 +289,14 @@
       ]
     },
     "6": {
-      "note": "The React wrapper that mounts this renderer once and pushes new models through `update()`.",
+      "note": "The React wrapper that mounts this renderer once and pushes new models through `update()`.\n\nAnchor: `Topology`",
       "targets": [
         {
           "anchor": {
-            "blob": "e6f197168068ebede03bb29a8769b4dccc419147",
-            "content": "sha256:c420d1aa8394b04cdbc37e97e27d92604d46847c69806fa78679d90e877447be",
+            "blob": "df6406b5558760d99e709731298749fbf82c081d",
+            "content": "sha256:5071a8ac1ab49420778bd00f5977347b64f4717b2896905b84a6a4acf290ea7f",
             "locator": {
-              "kind": "symbol",
-              "name": "Topology"
+              "kind": "file"
             },
             "path": "dashboard/src/panels/Topology.tsx"
           },

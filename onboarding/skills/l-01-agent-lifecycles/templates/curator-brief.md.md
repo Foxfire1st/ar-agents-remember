@@ -14,7 +14,9 @@ The brief retains exact paired roots, producer fields and source-lineage require
 
 This account controls the named changed seams; contradictory earlier card wording below is retained only as historical evidence. Unchanged role duties and R117 file-only wake/report transport are preserved. Source inspection supplies no new runtime test, CODE verdict, review counter or acceptance.
 
+
 - The brief retains exact paired roots, producer fields and source-lineage requirements. Its MEMORY review is separately sealed/counted; beyond-settings authority is architect/developer approval recorded by Manager, not a fresh CODE baseline. File-only report material, passed-candidate evidence and independent acceptance are distinct. [6]
+
 
 
 ## Message/file transport
@@ -82,10 +84,13 @@ No Domain Documentation source is configured.
 ### Repo-Internal References
 
 - The worktree section requires the current pre-curator lineage projection and explains its evidence-only role. [1]
+
 - Exact requirement packets and adjudications are mandatory task inputs. [2]
+
 - The brief carries the producers' curator hand-off list as data, with the producer fields filled and the curator fields null. [3]
+
 - Manager compiler notes require status before dispatch and the transaction repeats the proof before process creation. [4]
-- Manager doctrine owns the ordered pre-curator gate, exact packet/adjudication inputs, and complete brief. [5]
+
 
 ### Cross-Repo References
 
@@ -256,4 +261,7 @@ Inherited reference 7 commentary (not a revalidated target):
 
 The authored file is the canonical contract; its measured byte-equal package copy is a distribution carrier, not an independent role, task or permission authority. The following whole-file reference locates that authored contract; it does not convert inherited statements into executed or whole-card acceptance.
 
+
 - The authored source owns this contract; the distribution copy is not a separate authority. [8]
+
+- The Manager starts a leaf’s Worker, Reviewer and Curator as one `role_start_set` and refers leaf coordination to `operations/coordination.md`. That procedure starts the Curator held until its first message and routes the frozen change set, hand-off lists and passed code verdict directly from the Worker and Reviewer. The Curator brief carries the leaf task, approved requirement-corpus ruling, exact requirement revision and packet, and requested requirement-adjudication inputs.  Historical note (superseded Manager-owned ordering and complete-brief claim): Manager doctrine owns the ordered pre-curator gate, exact packet/adjudication inputs, and complete brief.  Anchor: "Hand the curator its brief"; "curator-brief.md" [9]

@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/rules_structure.py",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
@@ -22,12 +23,22 @@
   ],
   "references": {
     "1": {
-      "note": "Shape keeps the layout marker; canonical formatting is its own rule.",
+      "note": "Shape keeps the layout marker; canonical formatting is its own rule.\n\nAnchor: `check_shape` `check_canonical`",
       "targets": [
         {
           "anchor": {
-            "blob": "2d97bd09671eb1aee4a00e8dac33dbecc0c949ea",
-            "content": "sha256:48d006ecf85d757e05e752706d88c2e109ab84a67268da183ca9c8e982454d19",
+            "blob": "45784c11bfbc3ce1c18606b7f552248d495aaa17",
+            "content": "sha256:8b848fd99fbc8f7e854340aebd724f16c5230240b2a578d0668840af10e611a3",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "45784c11bfbc3ce1c18606b7f552248d495aaa17",
+            "content": "sha256:aaf6bf57a342d9f4e9b0cf9d765ddb936817a6ca6c9b22827c1f0bab53f28b3c",
             "locator": {
               "kind": "symbol",
               "name": "check_shape"

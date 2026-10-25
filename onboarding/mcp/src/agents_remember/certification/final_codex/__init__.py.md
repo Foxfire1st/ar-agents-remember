@@ -44,7 +44,9 @@ The approved CCR-R14@v3 requirement packet and the leaf doc 14_final-real-codex-
 - Durable isolated candidate run store with atomic CAS publication and retry-disabled reservation. [5]
 - Bound Gate-4 certificate compilation binding the exact ordered Gate-1..3 predecessor identities and both fresh results. [6]
 - The R14-run-controlled executor consumes these contracts through the trusted authority launcher. [7]
+
 - The outer certification facade re-exports the same final-codex surface. [8]
+
 
 ### Cross-Repo References
 

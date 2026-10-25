@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/application/task_projection/__init__.py",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
@@ -19,8 +20,8 @@
         },
         {
           "anchor": {
-            "blob": "9a4ce498ea27dd1a592a152b56acd5500346eee1",
-            "content": "sha256:b5f0bf5bde1ae1a2fc3d09be0af5f6a41c4a6aaf28aae3f2dd6026c09d0c431e",
+            "blob": "b520874e0837707762dcede94c19521961ac366e",
+            "content": "sha256:8066fa6e26c57c7f763122c5edf9f86631e8e4f32561cd7fc13eda1ba398a0cc",
             "locator": {
               "kind": "symbol",
               "name": "resolve_task_projection_scope"
@@ -56,8 +57,8 @@
         },
         {
           "anchor": {
-            "blob": "9a4ce498ea27dd1a592a152b56acd5500346eee1",
-            "content": "sha256:81126b0f7a03d02cc085700c5e38b241c87e43e9e548465253f0f0b14f466533",
+            "blob": "b520874e0837707762dcede94c19521961ac366e",
+            "content": "sha256:e4f70a2fcaf7533049274c3056b1ddfa49a11b7ab58fbbf901dd506ef9f67582",
             "locator": {
               "end": 373,
               "kind": "line_range",

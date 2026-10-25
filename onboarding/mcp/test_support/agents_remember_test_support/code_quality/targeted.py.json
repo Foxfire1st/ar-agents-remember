@@ -52,15 +52,14 @@
       ]
     },
     "4": {
-      "note": "Consumer semantics, explicit global invalidation and unresolved-input decisions live at the canonical owner without deciding product ownership.",
+      "note": "Consumer semantics, explicit global invalidation and unresolved-input decisions live at the canonical owner without deciding product ownership.\n\nAnchor: `DependencyOwnershipGraph`",
       "targets": [
         {
           "anchor": {
-            "blob": "5c9f286c5dde16fd945322e6788c7be6f0b2a3dc",
-            "content": "sha256:88d5e3ac8289a6db3944a0d9fa719f0a39b101483aa168b6f54a6bb231157bc3",
+            "blob": "82360cec3b9a90193f4e9d7dbdf68cf5340dabb6",
+            "content": "sha256:688e510f7c8a2009c8e5c645b5af61c473a862c7b104020ac037246da8e91cab",
             "locator": {
-              "kind": "symbol",
-              "name": "DependencyOwnershipGraph"
+              "kind": "file"
             },
             "path": "mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py"
           },

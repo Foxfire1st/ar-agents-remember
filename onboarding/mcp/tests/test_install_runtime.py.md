@@ -61,10 +61,15 @@ No configured domain evidence applies to the file-local claims above.
 
 The retained source anchors below support the fixture roles and assertion boundaries described above. They identify current behavior, not a request to restore historical test counts or percentage targets.
 
+
 - Runtime install preserves docker provider state. [1]
-- Runtime install provider dependency failure attempts watcher recovery. [2]
+
+
 - Existing settings file is never clobbered. [3]
-- Dry run counts the seed without writing. [4]
+
+
+- Dry run installs and counts the assets without writing settings. [4]
+
 
 ### Cross-Repo References
 

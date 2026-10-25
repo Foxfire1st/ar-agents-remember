@@ -19,15 +19,14 @@
       ]
     },
     "2": {
-      "note": "Shared helper _contract",
+      "note": "Shared helper _contract\n\nAnchor: `_contract`",
       "targets": [
         {
           "anchor": {
-            "blob": "36ffff42527943df72fda3d4c1440c1b872ae008",
-            "content": "sha256:dc59ccf7f2f19d41712a23e5939220d4978cc107a57457d43ae85c1d8200aac0",
+            "blob": "15c68f6a8e19769232a26cff91782bfb3ac84c78",
+            "content": "sha256:7d80afbcd229e3aaa8cdb9ec100d0645e7da29270ba5f0b210b3c0af9870b240",
             "locator": {
-              "kind": "symbol",
-              "name": "_contract"
+              "kind": "file"
             }
           },
           "kind": "test"

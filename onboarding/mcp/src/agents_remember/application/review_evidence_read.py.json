@@ -302,15 +302,14 @@
       ]
     },
     "5": {
-      "note": "A scan that could not reach the requested line says so instead of certifying an empty range.",
+      "note": "A scan that could not reach the requested line says so instead of certifying an empty range.\n\nAnchor: `_scan_cut`",
       "targets": [
         {
           "anchor": {
-            "blob": "5b2bd5bccc245c3d32d3ca95b1dbc29817a16b4e",
-            "content": "sha256:859fc7c4fad17024a8cc1601378c42dd1c3f240e5e151fa51666b0393162a415",
+            "blob": "67741bcb8061f606717744aa3c9a2012804d0df8",
+            "content": "sha256:42ad04ff543855e3d7cbd12c90f28b4bf84c879f3f9680dafa55cf63c9b05c50",
             "locator": {
-              "kind": "symbol",
-              "name": "_scan_cut"
+              "kind": "file"
             }
           },
           "kind": "code"

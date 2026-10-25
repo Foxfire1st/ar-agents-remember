@@ -47,19 +47,30 @@ against the answer alone.
 
 ## Evidence
 
+
 - The whole result is read back from the file the answer names, and a missing or unreadable file is an unvalidatable finding. [2]
+
+
 - A returned call validates the whole result under its model and judges the delivered answer as delivered. [3]
+
 - One shared classifier serves the sweep and the controls. [4]
 - A passed phase limit names the tool and the phase, outside the product-raiser classifier. [5]
+
 - The world obtains the guarded settings path before settings-parent creation and stub writing. [6]
+
 - The returned-call arm reads the log-named whole result and delegates validation and delivered-answer judging. [8]
 - The delivered-answer refusal arm classifies `ok: false` from the delivered code and actionable-next marks. [9]
 
 
-- The shared world uses an object-form read refusal stimulus, delegates validation through its classifier helpers and records timeout continuation in its own sweep. [11]
+- The shared benign table carries the 44 current roster keys, including `citation_note_revision` and `explainer_control`; this leaf adds that stimulus to the 42-key base. It supplies a dry run with a nonexistent selected sidecar and zero base digest so the product returns its named refusal without a note write. Table membership is preparation, not registration or execution. [10]
+
+
+
+- The shared world supplies an object-form read_ar_files stimulus and validates whole results and delivered answers through classifier helpers. Its sweep records timeouts as unvalidatable and continues; the separate self-contained support sweep propagates a timeout from call. These are source assertions, not execution. [11]
+
 - `build()` authors and starts the addressed enclosure without a session lifecycle option. [13]
 - The shared sweep uses fixed fixture labels and preserves the named timeout continuation. [14]
 
 - A fake-account child imports this worktree's world, receives the guard's refusal and leaves the fake configuration home empty — `test_building_the_world_with_the_users_own_environment_is_refused` in mcp/tests/test_user_settings_guard.py. [7]
 
-- The shared benign table carries43 current roster keys, including explainer_control; the earlier42-key account preceded that entry, and the41-key account preceded user_settings_init. Table membership is preparation, not registration or execution. [10]
+- The shared benign table carries 44 current roster keys, including explainer_control; the earlier42-key account preceded that entry, and the41-key account preceded user_settings_init. Table membership is preparation, not registration or execution. [10]

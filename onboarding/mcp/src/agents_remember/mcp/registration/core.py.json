@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/mcp/registration/core.py",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
@@ -60,8 +61,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "07748735d01ac6a9dea9ad11c856befad43de359",
-            "content": "sha256:a0a0bb91d62b57fefd322dd8d623be0d6bf3cd4213eda75007e3dd1d80d32d40",
+            "blob": "1f275a693016ec1e678f6e6d18b704f7ffb5d6e4",
+            "content": "sha256:e7ef247c42233cb2c63e39de6f03de03ec99c917445eb66c0a79869e7ff837c4",
             "locator": {
               "kind": "symbol",
               "name": "_register_installation_tools"
@@ -158,8 +159,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "07748735d01ac6a9dea9ad11c856befad43de359",
-            "content": "sha256:0bff075793a7ea070663d4887e9358e7d5d17b8a6072a2215057f553b9d3a5f2",
+            "blob": "1f275a693016ec1e678f6e6d18b704f7ffb5d6e4",
+            "content": "sha256:94beaf856da073ad11a5185a4c4b146fda61446305666a69bb15fa0140e9ad3e",
             "locator": {
               "kind": "file"
             }
@@ -173,8 +174,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "07748735d01ac6a9dea9ad11c856befad43de359",
-            "content": "sha256:a0a0bb91d62b57fefd322dd8d623be0d6bf3cd4213eda75007e3dd1d80d32d40",
+            "blob": "1f275a693016ec1e678f6e6d18b704f7ffb5d6e4",
+            "content": "sha256:e7ef247c42233cb2c63e39de6f03de03ec99c917445eb66c0a79869e7ff837c4",
             "locator": {
               "kind": "symbol",
               "name": "_register_installation_tools"
@@ -189,8 +190,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "07748735d01ac6a9dea9ad11c856befad43de359",
-            "content": "sha256:0bff075793a7ea070663d4887e9358e7d5d17b8a6072a2215057f553b9d3a5f2",
+            "blob": "1f275a693016ec1e678f6e6d18b704f7ffb5d6e4",
+            "content": "sha256:94beaf856da073ad11a5185a4c4b146fda61446305666a69bb15fa0140e9ad3e",
             "locator": {
               "kind": "file"
             }

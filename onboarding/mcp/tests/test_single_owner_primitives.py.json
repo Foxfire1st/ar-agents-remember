@@ -83,15 +83,14 @@
       ]
     },
     "6": {
-      "note": "A bare replace from dataclasses is not the one from os",
+      "note": "A bare replace from dataclasses is not the one from os\n\nAnchor: `test_a_bare_replace_from_dataclasses_is_not_the_one_from_os`",
       "targets": [
         {
           "anchor": {
-            "blob": "4de413b57f0f656ce1b4f561eb6fffa7f5534711",
-            "content": "sha256:7b292e5e52cee9a4ef6e98bb818cf3d6aed7fc21c4077121207795de7c80fca8",
+            "blob": "191ecdf1a0e83ba5e04ea59e5212227172205423",
+            "content": "sha256:63f6e6ba1199be272e05d1aee1653450a8bdb7ecbb5282ee8c32f1ced2a605d3",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_bare_replace_from_dataclasses_is_not_the_one_from_os"
+              "kind": "file"
             }
           },
           "kind": "test"

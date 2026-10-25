@@ -20,8 +20,8 @@
     },
     {
       "anchor": {
-        "blob": "00314414a9adbfba8f1452933f039ff41c7ee0b9",
-        "content": "sha256:217b7b6ed2d97ca44f97c47fbc75e642b81d8536abac065b4b20a8bcc230aaa7",
+        "blob": "1d4a994a29693ad93a517d83984c99e9db3d58f3",
+        "content": "sha256:3cc11313fce611e6bb0c6b5b7da917072f9f73c2f815eb36a291c6f82c83487f",
         "locator": {
           "kind": "symbol",
           "name": "test_a_stored_fact_holds_the_message_with_its_reset_time"

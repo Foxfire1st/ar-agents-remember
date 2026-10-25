@@ -92,7 +92,9 @@ No relevant external or domain documentation was found for this repository-local
 - `dashboard_static_dir` resolves the packaged bundle to `Path` or `None`; `mount_static` mounts the bundle or the 503 surface. [1]
 - After the unknown-API guard, the absent-bundle static surface answers 503 on GET/HEAD and 405 on other methods, mirroring `StaticFiles`. [2]
 - The release build step places the tree this module resolves; it refuses to place a stale one. [3]
+
 - The serving app registers API routes before the static mount. [4]
+
 
 
 

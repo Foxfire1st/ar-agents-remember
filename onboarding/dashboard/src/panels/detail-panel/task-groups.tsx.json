@@ -247,40 +247,40 @@
   ],
   "references": {
     "3": {
-      "note": "Master Tasks keeps discarded-before-start history reachable beside abandoned rows, and GroupViewBody renders that audit even without live group rows.",
+      "note": "Master Tasks keeps discarded-before-start history reachable beside aborted rows, and GroupViewBody renders that discarded audit independently of whether any live child row matches the aborted stage.",
       "targets": [
         {
           "anchor": {
-            "blob": "dc68d0e1a5417881f6c8e20a216389140d5ab54b",
-            "content": "sha256:f71c0e31c3f231795e1d090b4fa16d295c4215fcbdd10e11d434b45fda256cef",
+            "blob": "1554453f4bf62ac7a5c7a56e91240e1015a0ef44",
+            "content": "sha256:fa7f869b5e0c10c7456e25e84cde160963117bb243f176dd804ab1c1a2229016",
             "locator": {
-              "end": 485,
+              "end": 451,
               "kind": "line_range",
-              "start": 476
+              "start": 439
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "dc68d0e1a5417881f6c8e20a216389140d5ab54b",
-            "content": "sha256:75a41c69c2fbb3d1a8c590c6a8d5d483c13cb9132be77594e65937371b4a8832",
+            "blob": "1554453f4bf62ac7a5c7a56e91240e1015a0ef44",
+            "content": "sha256:93982e481ea7f5da2f115db98bb0637f2fa238b62042f3a2cdc853aad15e6dae",
             "locator": {
-              "end": 538,
+              "end": 353,
               "kind": "line_range",
-              "start": 533
+              "start": 318
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "26e91f4fe081577ba544237a794733dfd1d377c5",
-            "content": "sha256:0abf911a07d8fb836a98454a977203546a1ede36edc703ed3e2cdafcb636c049",
+            "blob": "1609d4607dea0ec7d83e230bda4ea335a0f38151",
+            "content": "sha256:3e8dddad8e79e1422f4a8e1e6959dc77099249dd802a6a87866bdc9b6819a705",
             "locator": {
-              "end": 78,
+              "end": 51,
               "kind": "line_range",
-              "start": 41
+              "start": 12
             },
             "path": "dashboard/src/panels/detail-panel/TaskGroupView.tsx"
           },
@@ -293,8 +293,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "dc68d0e1a5417881f6c8e20a216389140d5ab54b",
-            "content": "sha256:cc99540bcbbdcbeb0e6697b995e244195cdea1f474292bc40d7c7f55d266dcfe",
+            "blob": "1554453f4bf62ac7a5c7a56e91240e1015a0ef44",
+            "content": "sha256:10efad32951957fcb7a2267210a0d4792e217830451b18aca278e54f6e639da8",
             "locator": {
               "end": 246,
               "kind": "line_range",
@@ -305,8 +305,8 @@
         },
         {
           "anchor": {
-            "blob": "1b883ac7b89c8dc599645f119c56e8cf6b612998",
-            "content": "sha256:303f86859199f6069c2bca474c1ac301e62b3336168e86ac36b1e2266663e3a7",
+            "blob": "3697bf67f62826377744697f4c60a9d4a4711332",
+            "content": "sha256:351198afca7ea7f9cb04d673a42686f604cfa85a479740a7b9b4ef8e8c46d631",
             "locator": {
               "end": 332,
               "kind": "line_range",

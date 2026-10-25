@@ -84,11 +84,17 @@ engine-room backdrop styles + their usage, the honest-motion gate it shares, and
 empty states that mount it.
 
 - The engine-room G6 backdrop styles (`backdrop`/`backdropVideo`) this component mirrors. [1]
+
 - The engine-room usage of the same backdrop pattern (effects-gated, aria-hidden video). [2]
+
 - The honest-motion gate that decides whether the backdrop mounts at all. [3]
 - `DetailPanel` mounts the battle-cruiser clip inside `Panel` `fill`, passing `opacity={0.18}`. [4]
+
 - File-viewer `DualPane` mounts the siege-tank clip and passes `opacity={0.18}`. [5]
+
+
 - Change-set `ChangeSetViewer` mounts the siege-tank clip and passes `opacity={0.18}`. [6]
+
 - The static direct-video backdrop: baked media motion is owned by the MP4 asset, while the component only gates and styles a direct `<video>` child. [7]
 - The render test pinning children-always-show, effects gating, the direct video child, and absence of `empty-backdrop-zoom`. [8]
 

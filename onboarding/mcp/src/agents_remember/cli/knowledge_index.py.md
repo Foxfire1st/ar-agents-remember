@@ -46,9 +46,15 @@ No configured live documentation source was available for this pass.
 
 The adapter reuses the index package; it adds only argument handling and printing.
 
+
 - The command line and the exit statuses. [1]
+
+
 - Arguments. [2]
+
+
 - The build or reuse, the JSON report and the exit status by state. [3]
+
 - Registration in the umbrella. [4]
 - The command reports the index and exits by state. [5]
 

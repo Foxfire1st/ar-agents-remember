@@ -56,7 +56,8 @@ metrics and compact normally.
 
 ### Repo-Internal References
 
+
 - Retention policy implementation follows this design split. [1]
-- Projection readers apply interaction TTL and pickup feedback. [2]
+
 
 </details>

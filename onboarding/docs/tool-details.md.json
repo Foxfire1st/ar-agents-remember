@@ -1,10 +1,11 @@
 {
   "path": "docs/tool-details.md",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
-        "blob": "afe95b155440026f6474ee82152b83097de5980a",
-        "content": "sha256:edaf7290dd039afa82153bfa8a8731170c86b153df2534c5dfbbe2ba4bae806b",
+        "blob": "2b635ee176f4fb5b39f31f5a621e0169376a6fc0",
+        "content": "sha256:0de741136d6c46f7cec6de65f61f8a7aaffaac32bb60733e82ac02bea9186f4d",
         "locator": {
           "kind": "file"
         }
@@ -15,7 +16,7 @@
         "handoffEntry": "L192-W-R199-09",
         "leaf": "260928-MIK-L192"
       },
-      "rationale": "The cleanup limits the page states are still the limits the command enforces.",
+      "rationale": "The page's cleanup limits at C still match the command: 'providers-remove' refuses a failed watcher stop, a live process holding a folder open, and a root or deletion target that escapes the owned tree (tool-details.md:100-106), all three of which cli/providers_remove.py raises. The claim holds; the whole-file anchor is stale at C and has to be re-recorded.",
       "role": "presentation"
     }
   ],
@@ -25,10 +26,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ef052a554e59b0a8a26ef43d1e740035dc75b0d8",
-            "content": "sha256:9b1c44c03db9f6b35f2611b840a510ffe0cb6f35273167c8aa0cbe75718e6d4a",
+            "blob": "2b635ee176f4fb5b39f31f5a621e0169376a6fc0",
+            "content": "sha256:0de741136d6c46f7cec6de65f61f8a7aaffaac32bb60733e82ac02bea9186f4d",
             "locator": {
-              "kind": "file"
+              "end": 310,
+              "kind": "line_range",
+              "start": 1
             }
           },
           "kind": "code"

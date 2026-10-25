@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/cli/role_launch_defaults.py",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
@@ -38,12 +39,22 @@
   ],
   "references": {
     "1": {
-      "note": "Repository/altitude defaults and alternative projection are one per-use read.",
+      "note": "Repository/altitude defaults and alternative projection are one per-use read.\n\nAnchor: `role_defaults`",
       "targets": [
         {
           "anchor": {
-            "blob": "f652afca5631e32fdd409e0e50ed50d4aa749705",
-            "content": "sha256:0c61bb80c50d088ae98bb7af4daa0e2a41a276a929c44f82c7a396697190794d",
+            "blob": "c44891c82ea86bbdd51370115aba9141b3fe42fb",
+            "content": "sha256:753bf531760de36e76dbae7dfc1383d9674a66e7456c01cccf9be20470b63af2",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c44891c82ea86bbdd51370115aba9141b3fe42fb",
+            "content": "sha256:185979bfa70fed7866d04e986bce991efe5f127f4422f91de2430aea9979c968",
             "locator": {
               "kind": "symbol",
               "name": "role_defaults"
@@ -71,12 +82,23 @@
       ]
     },
     "3": {
-      "note": "Loader validates authority and effective alternative distinctness.",
+      "note": "Loader validates authority and effective alternative distinctness.\n\nAnchor: `load_agentic_settings`",
       "targets": [
         {
           "anchor": {
-            "blob": "ef574a64f9ec5521c39db2a70a97255951f02fef",
-            "content": "sha256:9cf05c1ed30880129ed3b8491527a1bb23af76ca84e4beb4725512b6918ea120",
+            "blob": "2672425710b97a49604ae997b9f1640a3bb55cec",
+            "content": "sha256:ba51f7604f2b82748550c405a260ebd6516773bf956bb736996ddea5c484d165",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/kernel/agentic_settings.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2672425710b97a49604ae997b9f1640a3bb55cec",
+            "content": "sha256:d709c4479088842b26eb621a81d5b87d5cbaaed0f4cbeb1813505a3c83b1ce59",
             "locator": {
               "kind": "symbol",
               "name": "load_agentic_settings"

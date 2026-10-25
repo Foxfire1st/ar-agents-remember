@@ -1,5 +1,6 @@
 {
   "path": "dashboard/src/dev/fixtures.ts",
+  "proves": [],
   "realizes": [],
   "references": {
     "2": {
@@ -31,20 +32,8 @@
         },
         {
           "anchor": {
-            "blob": "c611f6d118550fba30e54bd08aeca8028c49b974",
-            "content": "sha256:ce5491467ffb20168fdefbc88aa47b228e426764b6d0832caffc78ea4ede3934",
-            "locator": {
-              "end": 16,
-              "kind": "line_range",
-              "start": 16
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "c611f6d118550fba30e54bd08aeca8028c49b974",
-            "content": "sha256:6c8bd33ff6d197e792464b49280ca6efe844b8b26c697ac90f6a35209e4ff180",
+            "blob": "87693eb6b819166337bd70d0a819044301bb6ecf",
+            "content": "sha256:1f8615ea676a89ca15603966f1dc5c7d02540f66dcb306feb63698f79b30829e",
             "locator": {
               "end": 17,
               "kind": "line_range",
@@ -56,7 +45,7 @@
       ]
     },
     "4": {
-      "note": "The gallery maps Engine Room scenarios through `engineRoomProjection`.\n\nAnchor: \"export const GALLERY: GalleryEntry[] = [\"; \"ENGINE_ROOM_SCENARIOS.filter\"; \"projection: engineRoomProjection(scenario)\"",
+      "note": "The gallery maps Engine Room scenarios through `engineRoomProjection`.",
       "targets": [
         {
           "anchor": {
@@ -66,18 +55,6 @@
               "end": 76,
               "kind": "line_range",
               "start": 76
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "7112f472338abd10d7f68eef7c90c01662c717e7",
-            "content": "sha256:8fa34cd7d66b0c05003e6e563fc01cd4fae15978bc4bcc3ac86bfb4c65bfba75",
-            "locator": {
-              "end": 466,
-              "kind": "line_range",
-              "start": 466
             }
           },
           "kind": "code"
@@ -96,24 +73,12 @@
         },
         {
           "anchor": {
-            "blob": "c611f6d118550fba30e54bd08aeca8028c49b974",
-            "content": "sha256:8ab5d6b517ef2f9cd0b1c984a9fda3c9909f3ce8ae8d284e2c6d0306e061c9e7",
+            "blob": "87693eb6b819166337bd70d0a819044301bb6ecf",
+            "content": "sha256:4d5cd2fb4f3df884515255b39523f2f8b5472beea9f566ffca204db802561041",
             "locator": {
               "end": 111,
               "kind": "line_range",
               "start": 111
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "c611f6d118550fba30e54bd08aeca8028c49b974",
-            "content": "sha256:2f08b5c1600c87c14cb6cc08f8fdcc34eae958b1aa60b047beaedd2ecd3ea592",
-            "locator": {
-              "end": 266,
-              "kind": "line_range",
-              "start": 266
             }
           },
           "kind": "code"
@@ -123,6 +88,31 @@
     "7": {
       "note": "The gallery wraps Engine Room process facts and OFFICIAL_LEDGER into analytics; its filtered gallery entries reuse that wrapper. EngineRoomScenario contains a name and processes, with no workspace-provider collection.\n\nAnchor: `ENGINE_ROOM_SCENARIOS.filter`",
       "targets": [
+        {
+          "anchor": {
+            "blob": "87693eb6b819166337bd70d0a819044301bb6ecf",
+            "content": "sha256:ca94cab9cecbc07ccc4f7f999f4a8f76a1427b87e0f135bb2d674aa62a64b3a7",
+            "locator": {
+              "end": 109,
+              "kind": "line_range",
+              "start": 96
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8e709ead155da60c76cf2682665cc540e1219207",
+            "content": "sha256:945a05d5c0bb65ceab9bf33163c9adf96e9eedf39030a60cc5bb0d613d70311b",
+            "locator": {
+              "end": 22,
+              "kind": "line_range",
+              "start": 21
+            },
+            "path": "dashboard/src/panels/engine-room/fixtures.ts"
+          },
+          "kind": "code"
+        },
         {
           "anchor": {
             "blob": "87693eb6b819166337bd70d0a819044301bb6ecf",
@@ -157,43 +147,6 @@
             }
           },
           "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "7112f472338abd10d7f68eef7c90c01662c717e7",
-            "content": "sha256:8fa34cd7d66b0c05003e6e563fc01cd4fae15978bc4bcc3ac86bfb4c65bfba75",
-            "locator": {
-              "end": 466,
-              "kind": "line_range",
-              "start": 466
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "c611f6d118550fba30e54bd08aeca8028c49b974",
-            "content": "sha256:2f08b5c1600c87c14cb6cc08f8fdcc34eae958b1aa60b047beaedd2ecd3ea592",
-            "locator": {
-              "end": 266,
-              "kind": "line_range",
-              "start": 266
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "c25943bc8dde59686e3cd56112ad7650690f984c",
-            "content": "sha256:4cde88fd72edea588b870956d8c10e0b076491746eda8bdb18eec8d499bc3c0e",
-            "locator": {
-              "end": 22,
-              "kind": "line_range",
-              "start": 21
-            },
-            "path": "dashboard/src/panels/engine-room/fixtures.ts"
-          },
-          "kind": "code"
         }
       ]
     },
@@ -208,19 +161,6 @@
               "end": 682,
               "kind": "line_range",
               "start": 682
-            },
-            "path": "dashboard/src/types/projection.ts"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "fddde3fe60faa2d9374405b9676016ab026af1b6",
-            "content": "sha256:a638b2d5ffd49759707403c35afb2c49fff0c98265a9482b5cc5acf02927ccce",
-            "locator": {
-              "end": 732,
-              "kind": "line_range",
-              "start": 732
             },
             "path": "dashboard/src/types/projection.ts"
           },

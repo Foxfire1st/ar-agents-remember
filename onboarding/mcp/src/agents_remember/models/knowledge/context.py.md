@@ -49,7 +49,9 @@ No configured domain documentation could be checked.
 
 - The declared schema name and its separation from SQLite's integer user version. [1]
 - The schema identity a store is opened as, including its structural fingerprint. [2]
+
 - The schema generation this name is validated against at open and on reopen. [4]
+
 
 ### Cross-Repo References
 

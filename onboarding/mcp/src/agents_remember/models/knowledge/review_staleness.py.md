@@ -114,7 +114,9 @@ changed a home and not an import site.
 
 - The three retained review display/currentness models. [1]
 
+
 - The imports the three models need, and the `after` validator machinery they are built on. [2]
+
 - The published surface: three models and the state alias, in one alphabetical list. [3]
 
 - The movement-state Literal distinguishes measurements from explained absences. [4]
@@ -135,12 +137,24 @@ changed a home and not an import site.
 - Submission remains a display-only boundary, with no approval disposition. [9]
 
 - The shared bounds, patterns and base model every field is constrained from. [10]
+
 - **The re-export that made the extraction invisible to importers, and the payload vocabulary's own `__all__` entries for the three names.** [11]
+
+
 - **The payload that still declares the staleness, submission and movement fields, and the comment distinguishing "no sync has reported" from "a sync reported agreement".** [12]
+
+
 - **The R17 producer that builds a current or carried-mismatch staleness, and the fold that replaces it when a sync measured movement.** [13]
+
+
 - The task-context producer that uses the `not_compared` state because no knowledge operand was compared. [14]
+
+
 - The display-only submission producer, whose two states are the model's own members. [15]
+
+
 - **The projection whose output this model's validator accepts, and the record vocabulary the movement's three states are read from.** [16]
+
 
 - The current forgery sweep verifies measured movement and complete source-record binding. [17]
 

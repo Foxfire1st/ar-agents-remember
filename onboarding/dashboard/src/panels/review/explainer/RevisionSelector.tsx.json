@@ -16,7 +16,7 @@
         "handoffEntry": "L183-CUR-FE-ATTACH-explicit-revision-removal",
         "leaf": "260928-MIK-L183"
       },
-      "rationale": "The task-total refusal alone exposes the developer’s removal choices, keeping per-revision refusals separate and offering only unpinned retained revisions.",
+      "rationale": "`RefusalBox` still shows the removal choices only for the task-total refusal and offers only unpinned retained revisions, keeping per-revision refusals separate.",
       "role": "presentation"
     },
     {

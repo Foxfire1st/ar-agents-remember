@@ -1,17 +1,32 @@
 {
-  "path": "scripts/e2e_harness",
+  "path": "scripts/e2e_harness/overview",
+  "proves": [],
+  "realizes": [],
   "references": {
     "15": {
-      "note": "Checkpoint values are recorded before failure is raised.",
+      "note": "The scenario records each checkpoint's expected value, actual value and pass/fail status without aborting the run; CheckpointRecorder.report includes all checkpoint and diagnostic records.",
       "targets": [
         {
           "anchor": {
-            "blob": "a9f93da2ff31b160176f182d89ba64b12ddc032f",
-            "content": "sha256:21fbf93291802bf7d34acf1c50cb9f1119b1334e256378f9af3de7c930ccd756",
+            "blob": "5439394ca5c6553d2ab157745d8b1c1a034f0cdd",
+            "content": "sha256:907a7c54268547768443caf4a951558264f1103a2f07645e48b2325959dab15c",
             "locator": {
-              "end": 67,
+              "end": 256,
               "kind": "line_range",
-              "start": 26
+              "start": 231
+            },
+            "path": "scripts/e2e_harness/fresh_user_scenario.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b6d901c61e127ff9d281e7965feb949685271de2",
+            "content": "sha256:832ffe5fb2ac567d1306d0949a3da7e17f1d21fe611af6e912a1fee41bd0a9cf",
+            "locator": {
+              "end": 36,
+              "kind": "line_range",
+              "start": 21
             },
             "path": "scripts/e2e_harness/reporting.py"
           },
@@ -20,16 +35,16 @@
       ]
     },
     "17": {
-      "note": "Quality result projection names nested summary and replication reports.",
+      "note": "Quality result projection extends terminal run facts with attempted/completed/skipped steps, exit codes and optional gate, selection and failure evidence, plus Codex and causal-failure report pointers.",
       "targets": [
         {
           "anchor": {
-            "blob": "700f7e21663a922fa7af6beadf9e14bf22e62328",
-            "content": "sha256:51abcd678b4f024d218754cf9a1c415474f908d7f3d373e8b8ce57c4d4a60528",
+            "blob": "8832962819beec0b2b58f339a889576e2888a49d",
+            "content": "sha256:ff5957c0312b9324dbf4af7f2516fc96ee9ed23067ef02eaefa8ed2e963e8605",
             "locator": {
-              "end": 231,
+              "end": 178,
               "kind": "line_range",
-              "start": 174
+              "start": 102
             },
             "path": ".dagger/src/agents_remember_quality/profile_results.py"
           },
@@ -60,6 +75,71 @@
         {
           "anchor": {
             "blob": "5439394ca5c6553d2ab157745d8b1c1a034f0cdd",
+            "content": "sha256:b702fcc6b7224134cdfaa0f72d195586e176d0cdf299b70ea4027a156e8392d8",
+            "locator": {
+              "end": 220,
+              "kind": "line_range",
+              "start": 179
+            },
+            "path": "scripts/e2e_harness/fresh_user_scenario.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5439394ca5c6553d2ab157745d8b1c1a034f0cdd",
+            "content": "sha256:36328d6605bc1362355e66699abaa2222081594b6b295d03758721c5c951d906",
+            "locator": {
+              "end": 290,
+              "kind": "line_range",
+              "start": 259
+            },
+            "path": "scripts/e2e_harness/fresh_user_scenario.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5439394ca5c6553d2ab157745d8b1c1a034f0cdd",
+            "content": "sha256:24b46b6324077a88a6edf768a178761903b9ddad6020278b75153a99d375d953",
+            "locator": {
+              "end": 640,
+              "kind": "line_range",
+              "start": 560
+            },
+            "path": "scripts/e2e_harness/fresh_user_scenario.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5439394ca5c6553d2ab157745d8b1c1a034f0cdd",
+            "content": "sha256:050ec5f7d4197d0c8da35953b8452a0486ce3fe3a021df79501d519adfe5ada9",
+            "locator": {
+              "end": 792,
+              "kind": "line_range",
+              "start": 750
+            },
+            "path": "scripts/e2e_harness/fresh_user_scenario.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5439394ca5c6553d2ab157745d8b1c1a034f0cdd",
+            "content": "sha256:aec13a57ebfbb49d4ac31c089f8ca903e9b27d37b7e3532aa748ac970d39abda",
+            "locator": {
+              "end": 990,
+              "kind": "line_range",
+              "start": 908
+            },
+            "path": "scripts/e2e_harness/fresh_user_scenario.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5439394ca5c6553d2ab157745d8b1c1a034f0cdd",
             "content": "sha256:25cdd1f54345bac026896ac58fc1cdbe70a006f204c2c058b653f387866f3f6d",
             "locator": {
               "kind": "symbol",
@@ -71,8 +151,8 @@
         },
         {
           "anchor": {
-            "blob": "8e1e47dac3e8d44f393cc6a7d1233f65cdcc3dc6",
-            "content": "sha256:ac4a6d944717aeb5831a27fc4d49773700aa06e107d2f94405e6cc3bc7db14e0",
+            "blob": "5439394ca5c6553d2ab157745d8b1c1a034f0cdd",
+            "content": "sha256:aec13a57ebfbb49d4ac31c089f8ca903e9b27d37b7e3532aa748ac970d39abda",
             "locator": {
               "kind": "symbol",
               "name": "run_fresh_user_acceptance"
@@ -89,32 +169,6 @@
               "end": 777,
               "kind": "line_range",
               "start": 549
-            },
-            "path": "scripts/e2e_harness/fresh_user_scenario.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "8e1e47dac3e8d44f393cc6a7d1233f65cdcc3dc6",
-            "content": "sha256:91e5e4a5185fc889aa74883899aa1f65467ba59820e3c5f0f787dbfa6fb9875c",
-            "locator": {
-              "end": 1203,
-              "kind": "line_range",
-              "start": 1119
-            },
-            "path": "scripts/e2e_harness/fresh_user_scenario.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "5439394ca5c6553d2ab157745d8b1c1a034f0cdd",
-            "content": "sha256:b702fcc6b7224134cdfaa0f72d195586e176d0cdf299b70ea4027a156e8392d8",
-            "locator": {
-              "end": 220,
-              "kind": "line_range",
-              "start": 179
             },
             "path": "scripts/e2e_harness/fresh_user_scenario.py"
           },
@@ -165,8 +219,73 @@
       ]
     },
     "9": {
-      "note": "The retained consumer test checks module-path existence. Actual module loading and exact-path consumer declarations. Catalog declarations for the three fresh-user support modules.\n\nAnchor: `artifact[path=\"scripts/e2e_harness/fresh_user_fixture.py\"]`, `artifact[path=\"scripts/e2e_harness/fresh_user_scenario.py\"]`, `artifact[path=\"scripts/e2e_harness/run_fresh_user.py\"]`",
+      "note": "The retained consumer test checks module-path existence. Actual module loading and exact-path consumer declarations. Catalog declarations for the three fresh-user support modules.",
       "targets": [
+        {
+          "anchor": {
+            "blob": "7e009d4b32c2f82a0a22371f55a3f93aaf5906d1",
+            "content": "sha256:7e195c87e6a36e46ccedc444705cf265d35cce4d41df94a93fd32863638b8dd7",
+            "locator": {
+              "end": 206,
+              "kind": "line_range",
+              "start": 202
+            },
+            "path": "mcp/tests/test_fresh_user_harness.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "7e009d4b32c2f82a0a22371f55a3f93aaf5906d1",
+            "content": "sha256:a8b5d01828831f417aa7399b42666958d571b4f753cd135a2ad32743a39d66c7",
+            "locator": {
+              "end": 98,
+              "kind": "line_range",
+              "start": 64
+            },
+            "path": "mcp/tests/test_fresh_user_harness.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "3c5993c94cf78973b3b39cfe7de9774c8aea6d1a",
+            "content": "sha256:7541019af18b151e0de0169794864e0c48fc0b4c4d7ad10b3e581148ba325422",
+            "locator": {
+              "end": 4058,
+              "kind": "line_range",
+              "start": 4021
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "3c5993c94cf78973b3b39cfe7de9774c8aea6d1a",
+            "content": "sha256:4a8a9523c9bcd6edfc04bc042740f9913b9e1b60b5206b31854145b744848eb8",
+            "locator": {
+              "end": 4096,
+              "kind": "line_range",
+              "start": 4080
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "7e009d4b32c2f82a0a22371f55a3f93aaf5906d1",
+            "content": "sha256:4ee16273b01c1a9d9db5ea4c5319fbb5153f8407f03a53b915d9a88d9be4accf",
+            "locator": {
+              "end": 219,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/tests/test_fresh_user_harness.py"
+          },
+          "kind": "test"
+        },
         {
           "anchor": {
             "blob": "7e009d4b32c2f82a0a22371f55a3f93aaf5906d1",
@@ -181,25 +300,12 @@
         },
         {
           "anchor": {
-            "blob": "e1748a1360ed129edd05f2fa35a7729ea268303e",
-            "content": "sha256:67fc1792ef2baa39c34c3ea5ea131426936ad5143d9a1d7fd6fc548c699bd371",
+            "blob": "3c5993c94cf78973b3b39cfe7de9774c8aea6d1a",
+            "content": "sha256:65efd8540d2f97759a4b7133a2fbc5a4da26045e3b573b37eced262d75f9eb38",
             "locator": {
-              "end": 98,
+              "end": 4051,
               "kind": "line_range",
-              "start": 64
-            },
-            "path": "mcp/tests/test_fresh_user_harness.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "5b85740d9ae416814196e4c0ca40c2bab4419451",
-            "content": "sha256:fcbdf4282886accc1dac0b35af6cab92abeaa075f409d0b3479667ec7b46c5db",
-            "locator": {
-              "end": 3973,
-              "kind": "line_range",
-              "start": 3936
+              "start": 4014
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -207,12 +313,38 @@
         },
         {
           "anchor": {
-            "blob": "5b85740d9ae416814196e4c0ca40c2bab4419451",
-            "content": "sha256:ffe09ef236cc70e1a86c3cb5cd9d8c935b3ec5a38f9cb98c0da7727fea7c4ce1",
+            "blob": "3c5993c94cf78973b3b39cfe7de9774c8aea6d1a",
+            "content": "sha256:adcc8f62ed97feb2d72382d2d0ce4d7a06a4724d44f7b66ff02af26b11840362",
             "locator": {
-              "end": 4011,
+              "end": 4089,
               "kind": "line_range",
-              "start": 3995
+              "start": 4073
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "3c5993c94cf78973b3b39cfe7de9774c8aea6d1a",
+            "content": "sha256:ef8a0ef9e66b82e55ceeb79ce2f3f6d7de48f188628bd7a51798a34472714faf",
+            "locator": {
+              "end": 3431,
+              "kind": "line_range",
+              "start": 3394
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "3c5993c94cf78973b3b39cfe7de9774c8aea6d1a",
+            "content": "sha256:be2586c2059e10f02ad4a9e0cc393f8f9112d5eb3f0fdd6f06eb7df3c02fbc44",
+            "locator": {
+              "end": 3411,
+              "kind": "line_range",
+              "start": 3395
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -221,5 +353,5 @@
       ]
     }
   },
-  "schema": "ar-onboarding-route/v1"
+  "schema": "ar-onboarding-file/v1"
 }

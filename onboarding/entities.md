@@ -164,7 +164,7 @@ Landing report ownership is in `mcp/src/agents_remember/memory_quality/landing_r
 | Often Confused With          | Onboarding content itself or optional style guidance. Quality control is actionable workflow state, not passive advice.                                                                                                                                                                                                                          |
 | Source References            | [c-02 memory-quality skill](agents-remember/mcp/src/agents_remember/package_data/runtime/skills/c-02-memory-quality-control/SKILL.md); [check.py](agents-remember/mcp/src/agents_remember/memory_quality/check.py); [check_missing_onboarding.py](agents-remember/mcp/src/agents_remember/memory_quality/integrity/check_missing_onboarding.py); [converted_check.py](agents-remember/mcp/src/agents_remember/memory_quality/converted_check.py); [converted drift summary](agents-remember/mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/summary.py). Retired legacy drift/history/citation-index owners are not current source references. |
 | Citation-Index Contract (260915-CAPS-L14) | The quality surface's citation index consumes a **shared exclusion register** fed by three sources — `onboarding.pathRules.exclude.paths` in the memory layer's `system/settings.json`, the code repository's `.gitignore`, and optional caller-supplied excludes on `citation_fix` / `--exclude` — and records the rule set that produced each published generation. Exceeding a cap is a **reported skip naming the file and its size**, never a silent omission and never a whole-tree refusal (developer ruling 2026-08-20: 4 MiB per file, 512 MiB aggregate over the post-exclusion/post-skip set, a ~2 GiB hard stop, settings-overridable through `onboarding.citationIndex`). The register, the caps and the settings key are **mode-independent**. This entity's evidence set gains `exclusion_register.py` and `citation_index_settings.py`; the `git-blob-set-v1` fingerprint is **not** re-signed in this pass — the leaf's source is uncommitted, so `rev-parse HEAD:<path>` cannot resolve a blob for a file that does not exist at HEAD, and the governed closeout re-derives the fingerprint over the real commit. |
-| Converted-Format Dispatch (260928-MIK-L24) | On a memory tree holding `knowledge/layout.json` (the text knowledge format, MIK-R24 rule 5), `memory_quality/check.py` dispatches every selected check by format. The legacy-format checks (Update History order, citation `range_resolution` and `claim_reopen`) report `not-applicable-converted`. The drift slot runs `memory_quality/converted_check.converted_knowledge_check` instead: the knowledge validator's refusals are findings, and stale sidecar references (`memory_quality/reference_state`) are report-only, refreshed through the onboarding gate (MIK-R30). The quality controller refuses a contract-scoped run on an unconverted leaf tree whose official line is converted (rule 9). That refusal was inert before MIK-R37 converted the first line (pre-conversion observation recorded under L24): unconverted trees keep the legacy path unchanged, while converted trees run the converted knowledge check with current/stale/violation counts as stated above. |
+| Converted-Format Dispatch (260928-MIK-L24) | On a memory tree holding `knowledge/layout.json` (the text knowledge format, MIK-R24 rule 5), `memory_quality/check.py` dispatches every selected check by format. The legacy-format checks (Update History order, citation `range_resolution` and `claim_reopen`) report `not-applicable-converted`. The drift slot runs `memory_quality/converted_check.converted_knowledge_check` instead: the knowledge validator's refusals are findings, and a stale sidecar reference (`memory_quality/reference_state`) is one of them, refused by `R198.1-reference-anchor` and refreshed by `citation_fix`, curator re-authoring or the onboarding gate (MIK-R30). The quality controller refuses a contract-scoped run on an unconverted leaf tree whose official line is converted (rule 9). That refusal was inert before MIK-R37 converted the first line (pre-conversion observation recorded under L24): unconverted trees keep the legacy path unchanged, while converted trees run the converted knowledge check with current/stale/violation counts as stated above. |
 | Migration Notes              | Worktree support should preserve `c-02-memory-quality-control` skill as quality reporting/routing, not onboarding prose writing.                                                                                                                                                                                                                                                 |
 
 </details>
@@ -538,9 +538,9 @@ CCR cumulative source verification: Current contract publication additionally re
 #### Current Source Evidence
 
 
-- The contract stores the actual two outputs and informational cache location. [10]
+> Retained earlier citation wording: - The contract stores the actual two outputs and informational cache location. [10]
 
-- One normalizer/validator owns contract serialization. [11]
+> Retained earlier citation wording: - One normalizer/validator owns contract serialization. [11]
 
 ### Worktree Integration
 
@@ -706,13 +706,27 @@ Committed-source inventory admission is deferred until the owning code transacti
 - Canonical task edits and by-file input/report answers, informational task-copy drift, Git-source lineage and recognized pre-write integration refusals retain separate owners; compact reporting does not transfer their authority. [17]
 
 
-- **Historical source-bound reference account, not an operative override:** Adoption status is derived from Git attribution. [9]
-- **Historical source-bound reference account, not an operative override:** First-baseline admission refuses listed old-format cards regardless of accept_drift, without replacing attributed-history ownership. [14]
+
+
+
+
+
+- **Historical source-bound reference account, not an operative override:** Adoption status is derived from Git attribution. Source caption: `has_adopted_baseline` `ledger_status` [9]
+
+
+
+
+
+
+- First-baseline admission refuses listed old-format cards regardless of accept_drift, without replacing attributed-history ownership. [14]
+
 
 ## Evidence
 
 
+
 - Native task stage/activity and eventAt are produced once; planned and terminal documents take precedence over host observations. [18]
+
 
 
 - Declared-list order and documented-subTask master validation with absent-master fallback form cycle-safe canonical entries; other listed kinds retain guarded list placement without own-master validation. [19]
@@ -721,8 +735,15 @@ Committed-source inventory admission is deferred until the owning code transacti
 - Manager guidance distinguishes native stage publication from explicit correction and organizational-master completion. [21]
 
 
+
 - Selected operation passages and separately frozen named-step detail artifacts preserve source revisions without implying installation or new grants. [22]
 
 
 
+
 - Ordinary memory publication and recovered-pair gating own retained output proof; metadata refresh separately updates entity fingerprints and route indexes, and no exclusive prepared-certificate continuation publishes memory. [23]
+
+- The contract stores the actual two outputs and informational cache location. [10]
+
+
+- One normalizer/validator owns contract serialization. [11]

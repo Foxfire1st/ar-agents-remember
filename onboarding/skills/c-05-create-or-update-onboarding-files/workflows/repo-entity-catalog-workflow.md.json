@@ -1,5 +1,6 @@
 {
   "path": "skills/c-05-create-or-update-onboarding-files/workflows/repo-entity-catalog-workflow.md",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
@@ -24,7 +25,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "286f2bdd8ea0869bbbd819a609489e6b1ef9f5e3",
+            "blob": "7544470421d07347f2127e91131a701490676138",
             "content": "sha256:94b74f2e0b77aec344ec5066148cfccfbafd096e3e10a72a7d04706142d161f3",
             "locator": {
               "end": 57,

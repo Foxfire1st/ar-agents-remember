@@ -97,10 +97,14 @@ absence of a transition, published exactly when every declared identity still st
 - The payload module explicitly publishes ExternalGitMovement in its own export declaration. [15]
 
 
+
 - Subject-review composition calls the measurement owner and carries its optional result onto the payload. [16]
 
 
+
+
 - Task-context composition calls the same measurement owner and carries its optional result, not a separately inferred movement. [17]
+
 
 
 - The current forgery sweep checks state consistency and complete source-comparison binding. [18]

@@ -3,12 +3,12 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The scoped current source carries the module/document behavior described above.",
+      "note": "The bridge and runtime commands as the only admitted path, and the exactness of the tree scan.",
       "targets": [
         {
           "anchor": {
-            "blob": "309de0828276c5592db21788393ffa85501547c5",
-            "content": "sha256:d1e307cbeff9e26cc2159815e2fe6baab61781c24ce957d4b31e14339543ac25",
+            "blob": "afe143a49dbda9e1f08ea03ea827645b2e28ae9d",
+            "content": "sha256:2e6afa2fb39a18355b50ee91c9198e0f3bab8ff4949e57072ce24a78d71e97b9",
             "locator": {
               "kind": "file"
             }
@@ -18,15 +18,14 @@
       ]
     },
     "2": {
-      "note": "The single-path cases over the moved host modules.",
+      "note": "The single-path cases as they apply to the host modules.\n\nAnchor: `SinglePathTests`",
       "targets": [
         {
           "anchor": {
-            "blob": "309de0828276c5592db21788393ffa85501547c5",
-            "content": "sha256:067821f7c94845550343930854cc41ede98df645f88d2c797ab563f6092ba527",
+            "blob": "afe143a49dbda9e1f08ea03ea827645b2e28ae9d",
+            "content": "sha256:2e6afa2fb39a18355b50ee91c9198e0f3bab8ff4949e57072ce24a78d71e97b9",
             "locator": {
-              "kind": "symbol",
-              "name": "SinglePathTests"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -34,12 +33,12 @@
       ]
     },
     "3": {
-      "note": "The dev-only fake host has two admitted pinned-server comments, not another host path.",
+      "note": "The dev-only fake host holds two admitted pinned-server comments, not a second host path.",
       "targets": [
         {
           "anchor": {
-            "blob": "309de0828276c5592db21788393ffa85501547c5",
-            "content": "sha256:d1e307cbeff9e26cc2159815e2fe6baab61781c24ce957d4b31e14339543ac25",
+            "blob": "afe143a49dbda9e1f08ea03ea827645b2e28ae9d",
+            "content": "sha256:2e6afa2fb39a18355b50ee91c9198e0f3bab8ff4949e57072ce24a78d71e97b9",
             "locator": {
               "kind": "file"
             }
@@ -49,12 +48,12 @@
       ]
     },
     "4": {
-      "note": "The helper's allowance is two address reads: the recorded settings block and the build's resolution under the server environment.",
+      "note": "One helper's allowance is two address reads: the recorded settings block and the build's resolution under the server environment.",
       "targets": [
         {
           "anchor": {
-            "blob": "309de0828276c5592db21788393ffa85501547c5",
-            "content": "sha256:26931619c04160523042e51b9809bd779df6a1a7ec2b02601d97757ddc0a91d4",
+            "blob": "afe143a49dbda9e1f08ea03ea827645b2e28ae9d",
+            "content": "sha256:764777268f10706986680e8c2d1f7545ffc5ca250585083ddcb938adab188703",
             "locator": {
               "end": 264,
               "kind": "line_range",

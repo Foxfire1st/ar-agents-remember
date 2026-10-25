@@ -70,11 +70,20 @@ The following pre-existing verification note is retained as metadata, outside th
 - A record that is not this exact contract is refused rather than adopted. [3]
 - Admission moves this contract from reconciling to active only through exact sync. [4]
 - A mid-flight selection reports the stuck contract and both exits, and a succeeding pass beside it never reports its own success state. [5]
+
 - Release publishes durable vacancy for this contract alone and refuses a missing exact selection. [6]
+
 - Public admission explains this contract's activation and retry evidence without selector mutation or any other master's state, bounding its public diagnostic detail. [7]
 
 
+
 - Selecting sync checks exact participating source bases before active exposure; incomplete memory retains its own refusal state. [8]
-- Bootstrap and parent-leaf attach select; direct series attach only observes activation and checks resume prerequisites. [9]
+
+
+> Retained earlier citation wording: - Bootstrap and parent-leaf attach select; direct series attach only observes activation and checks resume prerequisites. [9]
+
 - Terminal release preserves unreadable or unproven evidence and releases only the recorded exact owner. [10]
+
 - Current memory-quality refresh composition applies on unconverted onboarding; converted layouts take the trace gate. [11]
+
+- Bootstrap and parent-leaf attach select; direct series attach only observes activation and checks resume prerequisites.  Anchor: `series_attach_result` [9]

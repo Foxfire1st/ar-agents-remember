@@ -110,7 +110,7 @@
       ]
     },
     "4": {
-      "note": "Freshness, consumer paths, identity fields, and interactive/projected observation.",
+      "note": "Freshness, consumer paths, identity fields, and interactive/projected observation.\n\nAnchor: `base_freshness` `WorktreeStatusFacts`",
       "targets": [
         {
           "anchor": {
@@ -125,8 +125,8 @@
         },
         {
           "anchor": {
-            "blob": "2e1832a7e5f574066e78c4bf63f69851a912ddf2",
-            "content": "sha256:9ed51d4514fdc384e55b9df427f2c3d7526727d4a6adc150e0563788aedd7973",
+            "blob": "97d891cffc76560263390fb8f9b22f38c8260a8b",
+            "content": "sha256:268759a15456986115ff29951f17ea422863c8949a300bafd1fa77662c57edda",
             "locator": {
               "kind": "symbol",
               "name": "WorktreeStatusFacts"
@@ -148,12 +148,22 @@
         },
         {
           "anchor": {
-            "blob": "2e1832a7e5f574066e78c4bf63f69851a912ddf2",
-            "content": "sha256:db4590f6b06d799be71ad79635475bbf2092f5b240bcc76abf03272cfba7fab2",
+            "blob": "97d891cffc76560263390fb8f9b22f38c8260a8b",
+            "content": "sha256:b8bda42e12674295e50e7f462abbe702b530538cff6b858fe96d07c4d5191e7a",
             "locator": {
               "end": 121,
               "kind": "line_range",
               "start": 83
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "97d891cffc76560263390fb8f9b22f38c8260a8b",
+            "content": "sha256:c5a2fd084e668cadc10135510d3635ab841914e4f4cfafe640271cfe0bf18e67",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -206,8 +216,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9d18347f5e86ad09f7aee456760812eaead4cefc",
-            "content": "sha256:bed6b4a3fd67105d46c67f019f143988f0646c47b20731e04a123696e73c563e",
+            "blob": "d4d550c6fb2e3a7576ca7fd91c7112a14e21c7c8",
+            "content": "sha256:53d5d8d3a38ad5cb5af0ff5849a5b63dd92f2fb581b55dba3b4bac1e37b916ff",
             "locator": {
               "kind": "symbol",
               "name": "test_external_completion_proves_landed_commits_without_reading_the_cache"
@@ -218,12 +228,23 @@
         },
         {
           "anchor": {
-            "blob": "9d18347f5e86ad09f7aee456760812eaead4cefc",
-            "content": "sha256:760a46cf6be785dc3c5c006f8f47fa0f673fc86cc2c8986b307c93c83a64e404",
+            "blob": "d4d550c6fb2e3a7576ca7fd91c7112a14e21c7c8",
+            "content": "sha256:622c182548b6ebb0259cc46e9da9bd3ec06a2f0e89d36f5ef9f35a4a27ca158c",
             "locator": {
               "end": 119,
               "kind": "line_range",
               "start": 84
+            },
+            "path": "mcp/tests/test_post_integration_cleanup_guidance.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "d4d550c6fb2e3a7576ca7fd91c7112a14e21c7c8",
+            "content": "sha256:6251c44c1f10bb7dec214700eee8037c935da57560346eab3b97d13a0942b9f6",
+            "locator": {
+              "kind": "file"
             },
             "path": "mcp/tests/test_post_integration_cleanup_guidance.py"
           },
@@ -236,8 +257,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9abba82adbe3808aecb5027997fd396da8ea5d2f",
-            "content": "sha256:dd2bbf11a717dde8681273816aa4b3499dc7ca5b4900e847d78841217721d0ed",
+            "blob": "97d891cffc76560263390fb8f9b22f38c8260a8b",
+            "content": "sha256:c5a2fd084e668cadc10135510d3635ab841914e4f4cfafe640271cfe0bf18e67",
             "locator": {
               "kind": "file"
             }

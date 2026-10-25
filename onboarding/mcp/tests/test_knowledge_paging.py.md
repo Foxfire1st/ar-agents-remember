@@ -6,7 +6,9 @@
 
 ## Current source contract evidence
 
+
 - Current source declarations support the qualified naming or fixture account; no executed test or acceptance is inferred. [27]
+
 
 ## Purpose
 
@@ -51,10 +53,16 @@ No Domain Documentation source is configured for this slice.
 
 ### Repo-Internal References
 
+
 - `test_a_forty_member_family_pages_from_read_ar_files_through_knowledge_read_exactly_once` supplies the current fixture or assertion described above. [13]
+
+
 - `test_a_row_larger_than_the_threshold_is_returned_alone_and_flagged` supplies the current fixture or assertion described above. [14]
+
 - `test_the_whole_knowledge_block_of_several_seeds_stays_within_the_threshold` supplies the current fixture or assertion described above. [15]
+
 - `test_a_view_walk_is_bound_to_its_named_code_tree` supplies the current fixture or assertion described above. [16]
+
 
 ### Docs References
 
@@ -68,15 +76,31 @@ code and memory repositories, so they are named here and not cited as rows.
 No configured live documentation source was available for this pass.
 
 - Seeded, bounded randomized trials. [17]
+
 - Forty-member direct knowledge_read walk, exactly once; the historical test name does not describe its current first call. [18]
+
+
 - Threshold adherence over randomized families. [19]
+
+
 - Large prose is not carried in projected rows and produces no oversized-row flag. [20]
+
+
 - Binding refusals with no page. [21]
+
 - Internal published-intent whole-block threshold assertions for five and sixteen seeds, not the read_ar_files path cap. [22]
+
 - A view walk keeps its ordering. [23]
+
+
 - Resumed pages stay at page 1's code tree: a leaf walk's entries are current at T1 and stale at T2, and a named view walk keeps its tree. [24]
+
+
 - The leaf-row helpers: the counted rows, and the key that identifies each row once. [25]
+
+
 - An empty ordering is refused on every path. [26]
+
 
 ### Cross-Repo References
 

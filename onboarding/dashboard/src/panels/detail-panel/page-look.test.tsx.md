@@ -18,4 +18,5 @@ This card describes the executable assertions and fixture seams of this module. 
 
 ## Evidence
 
+
 - Seeded head/table/review/navigation assertions; the Steps case preserves nested rows but requires a 1-of-4 major heading and four marks. [1]

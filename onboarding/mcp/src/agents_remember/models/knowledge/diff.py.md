@@ -151,7 +151,9 @@ No configured domain documentation could be checked.
 ### Repo-Internal References
 
 - The comparison policy version and the display budget that bounds what a page *shows* and never what the comparison *selected*. [1]
-- **The closed vocabularies: item kinds, coverage, the four record transitions, the omission reasons and the five limitations.** [2]
+
+- The closed vocabularies: item kinds, coverage, the four record transitions, the omission reasons and the five limitations. [2]
+
 - **The nine compared record fields in declared order, with `selection_reasons` deliberately absent.** [3]
 - **One side of a comparison: the exact snapshot and the per-side selector that is the one extension to R07's contract.** [4]
 - The display-only budget and the registered-role filter that refuses a repeated role. [5]
@@ -174,7 +176,9 @@ No configured domain documentation could be checked.
 - **The node that measures the absence the request shape cannot carry: nine verdict words searched over the whole serialized response, with a positive control.** [22]
 - **The node that holds the two change statements apart, and the node that measures the limitation validator.** [23]
 - **The node that measures the truncated comparison, whose failing assertion sits at `:716` on the frozen file.** [24]
+
 - The one member this leaf added to the operation union, and the vocabulary the new refusals reuse. [25]
+
 
 ### Cross-Repo References
 

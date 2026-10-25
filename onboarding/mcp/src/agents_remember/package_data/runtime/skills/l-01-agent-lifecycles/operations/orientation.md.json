@@ -25,8 +25,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fe0ee3ac71ede00f98e9bcafb82a64ad8eed553b",
-            "content": "sha256:83809b5f736555c591ccd2964ca3ec36644ec461dba5ec07774674e8b151d234",
+            "blob": "541f15fba478277772b410bd15974fb889feaabc",
+            "content": "sha256:743206fd0aa45bc40d42fdaa4c664eb1ceeee8b594a9f3bc20e95988ed500d8f",
             "locator": {
               "kind": "file"
             }
@@ -36,27 +36,43 @@
       ]
     },
     "2": {
-      "note": "Investigator takes any scoped concern from the actual parent, uses the developer request only without a parent, and never synthesizes task identity; developer decisions follow the parent channel with the stated parentless and unreachable exceptions. [2]",
+      "note": "Investigator takes any scoped concern from the actual parent, uses the developer request only without a parent, and never synthesizes task identity; developer decisions follow the parent channel with the stated parentless and unreachable exceptions.",
       "targets": [
         {
           "anchor": {
-            "blob": "fe0ee3ac71ede00f98e9bcafb82a64ad8eed553b",
-            "content": "sha256:83809b5f736555c591ccd2964ca3ec36644ec461dba5ec07774674e8b151d234",
+            "blob": "541f15fba478277772b410bd15974fb889feaabc",
+            "content": "sha256:90c1134af65243f7ac535323798edcb2b590b7ff96945970bce4dfdc463ef128",
             "locator": {
-              "kind": "file"
-            }
+              "end": 4,
+              "kind": "line_range",
+              "start": 4
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/orientation.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "541f15fba478277772b410bd15974fb889feaabc",
+            "content": "sha256:b5dd7e76af9ae885092e013ed37f601ae0f3fb90bd166d075e39de593a088c20",
+            "locator": {
+              "end": 23,
+              "kind": "line_range",
+              "start": 19
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/orientation.md"
           },
           "kind": "code"
         }
       ]
     },
     "3": {
-      "note": "The operation block's declared purpose, source path, and applicable roles.\n\nAnchor: `orientation`",
+      "note": "The operation block's declared purpose, source path, and applicable roles.",
       "targets": [
         {
           "anchor": {
-            "blob": "9f01b458769e29ba24c9cc3c0ff187e9e5eb2cf2",
-            "content": "sha256:ee423b4709661c5bf62c3ef0bf31b49e324f4a8f47522b946e3443232fe1ac53",
+            "blob": "2f3ce46a32a38d86f474252bb23d8081e91f0a6e",
+            "content": "sha256:5c9b9a2d722535694c4bee2d90985e22c5ef9251bec964fbd36e2af201299f3b",
             "locator": {
               "end": 54,
               "kind": "line_range",

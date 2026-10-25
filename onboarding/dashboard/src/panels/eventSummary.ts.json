@@ -41,15 +41,14 @@
   ],
   "references": {
     "1": {
-      "note": "The raw observer event envelope rendered by this formatter.",
+      "note": "The raw observer event envelope rendered by this formatter.\n\nAnchor: `ObserverEvent`",
       "targets": [
         {
           "anchor": {
-            "blob": "505b38f7f19667fa0c0cc4caca3e8a966d548e1d",
-            "content": "sha256:8b045c8da2fe34c0eebd21a36174eb5c131119422538977de690652191a5fae3",
+            "blob": "25b46051e848ed30ec884515068da4de250b2117",
+            "content": "sha256:ad737b334a9d79e13b1ab2b81a6e1a25a8ccc71cfb4c4f2a07ca3e974d61049e",
             "locator": {
-              "kind": "symbol",
-              "name": "ObserverEvent"
+              "kind": "file"
             },
             "path": "dashboard/src/types/event.ts"
           },
@@ -155,12 +154,12 @@
       ]
     },
     "4": {
-      "note": "The Event River component consumes these summaries for rendering.\n\nAnchor: `eventSummaryContextReady`, `summarizeEvent`",
+      "note": "The Event River component consumes these summaries for rendering.",
       "targets": [
         {
           "anchor": {
-            "blob": "539e6e0dfac6147013ce80409fdc72508cca76fd",
-            "content": "sha256:2c5ce97c9242d264c581d8e1abbf693fad8c82d495fa6a787817afcb6b3fcb04",
+            "blob": "ec46a3a25c36c5a79747ac7d9485027c7a7e7973",
+            "content": "sha256:f113e4907c036782bfc6b693b6725621c909ac9cde93e174ec7ecd428ee2d242",
             "locator": {
               "end": 94,
               "kind": "line_range",

@@ -16,7 +16,9 @@ A fixed-clock role-record harness distinguishes incomplete boot/unload, cold idl
 
 - Boot and permission/terminal transitions. [1]
 - Pagination, failed listing, population bounds and hook names. [2]
+
 - One file and turn-start age through permission/reconciliation. [3]
+
 
 
 - Controlled publisher assertions pin exact sibling IDs before archive and cap-induced incompleteness, followed by complete reconciliation and native removal; this file does not exercise Python retained inputs or a live host population. [4]

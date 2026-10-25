@@ -40,5 +40,7 @@ seat actually reads.
 
 ## Evidence
 
+
 - The Curator's role text names both authoring routes, says no other route writes knowledge, and writes `--commit` as `commit: true`. [1]
+
 - The writer admission is pinned in the role, detail and operation texts, and the parser refuses the removed options with exit 2. [2]

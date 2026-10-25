@@ -1,5 +1,6 @@
 {
   "path": "dashboard/src/test/wireFixtureGuard.test.ts",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
@@ -118,12 +119,12 @@
         },
         {
           "anchor": {
-            "blob": "1acfa30a3d49af71983046497da65be4299e1951",
+            "blob": "609ce5dbd44b34a6cdfe57060a562b9a58283df8",
             "content": "sha256:cc552e64d9835d5841f2d0a4c809bb4ae532b93f7c7b46d16da823968bb51597",
             "locator": {
-              "end": 640,
+              "end": 666,
               "kind": "line_range",
-              "start": 640
+              "start": 666
             },
             "path": "dashboard/src/test/contract.test.ts"
           },
@@ -181,12 +182,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "422820d3b137d6391b4633f25bc2bee615473d94",
-            "content": "sha256:6f249ed78200a3b7c4abd7a4d8f7dba213e241fc371ac683e5045a97496f832b",
+            "blob": "a638463e5b64ab2206752784eae0cb1426ad8637",
+            "content": "sha256:f9d2c04d8392b75bf6b6fd975b013471d78da87a660d55826b32d97958317314",
             "locator": {
-              "end": 263,
+              "end": 265,
               "kind": "line_range",
-              "start": 254
+              "start": 256
             }
           },
           "kind": "test"
@@ -194,16 +195,16 @@
       ]
     },
     "5": {
-      "note": "The reconciliation over the real tree.\n\nAnchor: \"no dashboard test asserts against a payload the server cannot produce\"",
+      "note": "The reconciliation over the real tree.",
       "targets": [
         {
           "anchor": {
-            "blob": "422820d3b137d6391b4633f25bc2bee615473d94",
-            "content": "sha256:c4d24e9efefe12c6a030a86b9595c3bc0ab0a2d1766051b7d4dbe792c635a158",
+            "blob": "a638463e5b64ab2206752784eae0cb1426ad8637",
+            "content": "sha256:c027e994d18fbf901b4c6318faf3a5a32bdf47ae3b0b0b4e89b2d3c8962d3573",
             "locator": {
-              "end": 288,
+              "end": 290,
               "kind": "line_range",
-              "start": 266
+              "start": 268
             }
           },
           "kind": "test"
@@ -211,15 +212,14 @@
       ]
     },
     "6": {
-      "note": "The virtual planted modules and honest forms.",
+      "note": "The virtual planted modules and honest forms.\n\nAnchor: `PLANTED_FILES`",
       "targets": [
         {
           "anchor": {
-            "blob": "d739fec054cf031cd6388b9c34dc903fb98c8b60",
-            "content": "sha256:c43a2663afb3512509c59bbc8031a89e37280f455590fe5480bb4a8f2081d44c",
+            "blob": "a638463e5b64ab2206752784eae0cb1426ad8637",
+            "content": "sha256:8c574945484876085ce2c0a763e3e28e1c157d90bddede766c1192d225eb6e6d",
             "locator": {
-              "kind": "symbol",
-              "name": "PLANTED_FILES"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -227,16 +227,16 @@
       ]
     },
     "7": {
-      "note": "Each rule shown biting, including cross-module and unresolved-name cases.\n\nAnchor: \"the guard is shown able to fail\"",
+      "note": "Each rule shown biting, including cross-module and unresolved-name cases.",
       "targets": [
         {
           "anchor": {
-            "blob": "d739fec054cf031cd6388b9c34dc903fb98c8b60",
-            "content": "sha256:baffacbc984d819e9871d3c3631ade8945f0dbe3278a4f86461ed47dabfbd549",
+            "blob": "a638463e5b64ab2206752784eae0cb1426ad8637",
+            "content": "sha256:c90d73b850c625a1dab0eac5cee0a7b93f9d1707dc4d8fa86fbf88f2b1176ac2",
             "locator": {
-              "end": 493,
+              "end": 449,
               "kind": "line_range",
-              "start": 377
+              "start": 337
             }
           },
           "kind": "test"
@@ -244,16 +244,16 @@
       ]
     },
     "8": {
-      "note": "Zero findings on the honest forms.\n\nAnchor: \"the guard leaves the honest forms alone\"",
+      "note": "Zero findings on the honest forms.",
       "targets": [
         {
           "anchor": {
-            "blob": "d739fec054cf031cd6388b9c34dc903fb98c8b60",
-            "content": "sha256:7463c38cb94ebaf84425b625e7534c6e0ae29ba651e1fa6ebec21f994526e94b",
+            "blob": "a638463e5b64ab2206752784eae0cb1426ad8637",
+            "content": "sha256:5124f65ebaeeab7af633cb70837a72d4c6a38867de241718eaf7c5e73f2d92bb",
             "locator": {
-              "end": 502,
+              "end": 458,
               "kind": "line_range",
-              "start": 495
+              "start": 451
             }
           },
           "kind": "test"
@@ -261,16 +261,16 @@
       ]
     },
     "9": {
-      "note": "The registry reconciliation unit cases.\n\nAnchor: \"the registry cannot be quietly outgrown\"",
+      "note": "The registry reconciliation unit cases.",
       "targets": [
         {
           "anchor": {
-            "blob": "d739fec054cf031cd6388b9c34dc903fb98c8b60",
-            "content": "sha256:c84e3294eb70cf03cd2e5186d7c75cce8c41e64b6f4bebb25b7de8cb892e1c7f",
+            "blob": "a638463e5b64ab2206752784eae0cb1426ad8637",
+            "content": "sha256:b69b3a519a95ce49481e35e962d28f88755bcf61d2967e9e047fc7fd20572d09",
             "locator": {
-              "end": 535,
+              "end": 491,
               "kind": "line_range",
-              "start": 504
+              "start": 460
             }
           },
           "kind": "test"

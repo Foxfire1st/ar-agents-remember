@@ -16,5 +16,7 @@ This is a current source account, not an executed test, CODE/MEMORY grade, live 
 
 ## Evidence
 
+
 - The checkout-guard cause yields its one fixed clause and a refusal naming the mounted route with absolute paths, `commit: true` and no `--config` [1]
+
 - `knowledge-ingest --config` is refused by the parser [2]

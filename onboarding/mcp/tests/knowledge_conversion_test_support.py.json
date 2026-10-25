@@ -1,5 +1,6 @@
 {
   "path": "mcp/tests/knowledge_conversion_test_support.py",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
@@ -72,8 +73,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e3903b94a0434bafc0d0f9468456cddd9cbae9fa",
-            "content": "sha256:7e68b12aea43708c3b9eb5548cc7ce9a230a79f0291d50d39918884b4f9e9096",
+            "blob": "e78599f3e7793eee430113ecdc0a7d0f1a14e729",
+            "content": "sha256:e7cf713654a05d5606cd3407b5ec70eddaa276b1f8514c885e900833b4ea4583",
             "locator": {
               "kind": "symbol",
               "name": "route_card"
@@ -127,16 +128,29 @@
       ]
     },
     "6": {
-      "note": "Its catalog row.\n\nAnchor: \"mcp/tests/knowledge_conversion_test_support.py\"",
+      "note": "Its catalog row.",
       "targets": [
         {
           "anchor": {
-            "blob": "ebc05ce1931cc333de63614d7496dcd1d78c7a8b",
-            "content": "sha256:0d1e51fc24683b296ff765e5adb94ba2a8cc80373f4db529e88e52a5eceeb863",
+            "blob": "3c5993c94cf78973b3b39cfe7de9774c8aea6d1a",
+            "content": "sha256:068923e7c55325aff8becc137237e942036f9ca5b3c733413709180293cd3764",
             "locator": {
-              "end": 1679,
+              "end": 2687,
               "kind": "line_range",
-              "start": 1660
+              "start": 2657
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "3c5993c94cf78973b3b39cfe7de9774c8aea6d1a",
+            "content": "sha256:1d1127425f99015cd1089965285e3bfd14e17b476409660706b275fa96e07037",
+            "locator": {
+              "end": 1721,
+              "kind": "line_range",
+              "start": 1702
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },

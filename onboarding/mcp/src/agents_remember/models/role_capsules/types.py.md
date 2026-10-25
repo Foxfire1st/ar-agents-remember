@@ -80,7 +80,9 @@ This account is bound to the candidate source, not a claim of a running serving 
 
 
 - Launch copies detail files, substitutes paths, and records frozen revisions. [7]
+
 - Replay validates regular opened files and frozen revisions at deterministic detail names beside the saved handover in its recorded canonical folder, not mutable corpus sources. [8]
+
 - Per-request detail artifacts use exact admitted bytes beside the handover and write-once publication. [9]
 - File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence. [10]
 
@@ -93,9 +95,13 @@ No relevant documentation found after checking live sources.
 
 ### Repo-Internal References
 
+
 - The frozen role and operation vocabulary these types are declared against. [1]
+
 - The stable refusal codes a binding or selection defect resolves to. [2]
+
 - The pure compiler that consumes these shapes and produces the sealed result. [3]
+
 - The diagnostic half of the contract, kept structurally out of the digest. [4]
 - The application boundary that does the I/O this module refuses to do. [5]
 - Compound identity, digest and order properties are pinned by executable cases. [6]

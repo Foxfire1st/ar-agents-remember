@@ -51,15 +51,14 @@
       ]
     },
     "4": {
-      "note": "Setting fields on the model before the dump is the sanctioned pattern",
+      "note": "Setting fields on the model before the dump is the sanctioned pattern\n\nAnchor: `test_setting_fields_on_the_model_before_the_dump_is_the_sanctioned_pattern`",
       "targets": [
         {
           "anchor": {
-            "blob": "64945a135b54fe4187781f21550c8c4c6700e12e",
-            "content": "sha256:9cb4dd59dbc654a45c092e9107432a0798760d212197180f798623f6704a9949",
+            "blob": "030ddcdcaa5302d471a84a79e9a2ac0115baab8e",
+            "content": "sha256:7a00957d1d54bc6586b2238b63a6f84a0642a938cd1da59fe83e8d8f72a6a7ee",
             "locator": {
-              "kind": "symbol",
-              "name": "test_setting_fields_on_the_model_before_the_dump_is_the_sanctioned_pattern"
+              "kind": "file"
             }
           },
           "kind": "test"

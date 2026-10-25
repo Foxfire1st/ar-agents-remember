@@ -20,16 +20,16 @@
       ]
     },
     "2": {
-      "note": "The README defines coordinator examples as workspace-wide/global, memory-repo examples as repository-specific, and names the memory-repo `git-workflow.md` landing-flow starter and quality-report template.\n\nAnchor: `## Memory Repo`",
+      "note": "The README defines coordinator examples as workspace-wide/global, memory-repo examples as repository-specific, and names the memory-repo `task-publication.md` landing-flow starter and quality-report template. Source caption: `## Memory Repo`",
       "targets": [
         {
           "anchor": {
-            "blob": "7da59187180babded977992a66270693bccc7cf4",
-            "content": "sha256:9dfc9396f4ccf07e70004cb0ac96bc204582491fbb61a01761cfd23e1c297b39",
+            "blob": "aef54b5f0fea9b25e0063b54b8afed0b3e9821ff",
+            "content": "sha256:5bf43c5e71bcd4a1c4e6b47fbec6f11af0ed6b8b628cd79012cac90beecd2aa2",
             "locator": {
-              "end": 36,
+              "end": 39,
               "kind": "line_range",
-              "start": 19
+              "start": 6
             }
           },
           "kind": "code"

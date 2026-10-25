@@ -87,10 +87,15 @@ containment proof against the resolved root. All refusals are `AuthorityError`.
 
 ### Repo-Internal References
 
+
 - The `read_ar_files` application entry point that these helpers were extracted from; it imports them under their former private names. [1]
+
 - The dashboard files API that reuses this module (forward + reverse pairing, the path guard). [2]
+
 - `sidecar_status` + `INDEX_FILE_NAME` / `ROUTE_OVERVIEW_NAME` / `ENTITY_CATALOG_NAME` consumed read-only. [3]
+
 - The `meaningful_body` extractor applied to a sidecar body here. [4]
 - The mirror sidecar-path helper (`onboarding_root/<rel>.md`) used for the body read and the no-index probe. [5]
 - The `path_is_relative_to` confinement predicate used by `confine_rel`. [6]
+
 - The `AuthorityError` raised on an out-of-root / absolute path. [7]

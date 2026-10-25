@@ -6,8 +6,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fe8ae45e9e3fbc1e89557feb17c3fc169dfe5acf",
-            "content": "sha256:8dba7f1cd88de2c9a774160d75b0247706c0c8671ed21143fe10f86cdfae218b",
+            "blob": "1062725d27dbcdf1ebcf6efb1b6d1eb255655174",
+            "content": "sha256:d5812b623ffca1d5e58405196495f79c40ffc512d7e973791186a195c40fa843",
             "locator": {
               "kind": "file"
             },
@@ -69,15 +69,14 @@
       ]
     },
     "5": {
-      "note": "Incoming memory fast-forwards validate before moving refs.",
+      "note": "Incoming memory fast-forwards validate before moving refs.\n\nAnchor: `validate_memory_fast_forward`",
       "targets": [
         {
           "anchor": {
-            "blob": "ad8f2c2994a58d6b30409cfa13e222fb164efdeb",
-            "content": "sha256:4dfb1001ace80d65fac156ffadd6d2bd988b47f1dec9d4a82831ad47814ad301",
+            "blob": "a63984305b167f217f656a85724a6f70fad04702",
+            "content": "sha256:0b4bb60005807ea000e1df8845b0ef48d8052337664eb956852106008263c3fe",
             "locator": {
-              "kind": "symbol",
-              "name": "validate_memory_fast_forward"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/worktrees/sync_transaction_git/_merge.py"
           },

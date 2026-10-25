@@ -149,7 +149,9 @@ No configured live documentation source was available for this pass.
 - Step 6 of the run. [19]
 - The conforming directory move, four worklists, stable IDs. [20]
 - `no_impact` never satisfies; a kept dead route keeps the item open. [21]
+
 - The carried L04 decision: a killed route is a mandatory item. [22]
+
 - A route dead at B is not charged to the leaf. [23]
 
 ### Cross-Repo References

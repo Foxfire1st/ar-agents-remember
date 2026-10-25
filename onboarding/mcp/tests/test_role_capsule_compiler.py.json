@@ -39,12 +39,12 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The module under test and its pipeline.\n\nAnchor: \"The capsule identity: admitted facts plus the bytes that were composed.\"",
+      "note": "The module under test and its pipeline.",
       "targets": [
         {
           "anchor": {
-            "blob": "e0c363f53732c65054fa825f478956800f102db7",
-            "content": "sha256:d1502ab73ec7a0c2f3607cb0f65c326092b8f83aa9d9d5fbab123774326f3f90",
+            "blob": "762c104a0bcdc0375416163993d106dc37c5fb18",
+            "content": "sha256:1887eaccb5d5f005cb1e74f059d46449876977184df1293db4f51a2b4c61e567",
             "locator": {
               "kind": "symbol",
               "name": "compile_role_capsule"
@@ -55,12 +55,23 @@
         },
         {
           "anchor": {
-            "blob": "e0c363f53732c65054fa825f478956800f102db7",
-            "content": "sha256:24e597bc39f27710d9a95b8b39c255ff485a17e23e1bce53e77e51cc39ba55cc",
+            "blob": "762c104a0bcdc0375416163993d106dc37c5fb18",
+            "content": "sha256:01728ce69a762bc1321deb33e85cf450cc3fd0385638b7952cf92498b2d1fec4",
             "locator": {
               "end": 269,
               "kind": "line_range",
               "start": 224
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/compiler.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "762c104a0bcdc0375416163993d106dc37c5fb18",
+            "content": "sha256:157949db0f9acdf0d70ebbd6959fb382dccab34600bf2e6cfd9b12f0b9079a74",
+            "locator": {
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/models/role_capsules/compiler.py"
           },
@@ -227,8 +238,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8f55401b7e0afa34d4cc0cc01d77d2aa95c1a3b7",
-            "content": "sha256:4aae10481d05e43d7a434e93ae593f4f4643d82811f592c85432b658c5def51e",
+            "blob": "0de84f83644c391b29759b1623034309cabc8c72",
+            "content": "sha256:7b16c4a32019a3e8f4ccf82b15f964d954f4c2df5c97d530d7128a382caa421b",
             "locator": {
               "kind": "symbol",
               "name": "CapsuleCompilationOutcome"
@@ -239,8 +250,19 @@
         },
         {
           "anchor": {
-            "blob": "8f55401b7e0afa34d4cc0cc01d77d2aa95c1a3b7",
-            "content": "sha256:890ae5d28141750c1f331f5741092fc292b0d05127e02b5d8d667323dfe0b1ad",
+            "blob": "0de84f83644c391b29759b1623034309cabc8c72",
+            "content": "sha256:fa7dbb04c116a8a6d6767c3d85c3b723091f0af5bfd84f27ffc91b7b7e9f8f52",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/role_capsules/compilation.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0de84f83644c391b29759b1623034309cabc8c72",
+            "content": "sha256:44b7b0e2bbd5167de246c297f3e1fc598638b1ecf36348770e53421b8e779e14",
             "locator": {
               "end": 88,
               "kind": "line_range",
@@ -270,27 +292,14 @@
       ]
     },
     "9": {
-      "note": "The corpus test this leaf was required to preserve; it was not edited and still passes.",
+      "note": "The corpus test preserved by the earlier leaf; this pass retains that historical evidence and asserts no fresh execution result.\n\nAnchor: `ROLE_ORDER` `OPERATION_KEYS`",
       "targets": [
         {
           "anchor": {
-            "blob": "d4914fd3234ca83c0ad58428c5b3f866ed3e07f5",
-            "content": "sha256:d78a14f8e2e81395c228cc0832cce6a71a04442ab1889a1b700e2d66d69e53a2",
-            "locator": {
-              "kind": "symbol",
-              "name": "ROLE_ORDER"
-            },
-            "path": "mcp/tests/test_role_instruction_corpus.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
             "blob": "d5d78bb15fa14ec0cbd3a7ef0be4ee21715faf09",
-            "content": "sha256:2c2967c88ee9f13f34c15c2a1f36231718875757913489e62894d4d551dd6035",
+            "content": "sha256:d52c2f22ddcaab6c4fe089db94e707c79ae1bc2400e4d3b8f4cf44870d289ac4",
             "locator": {
-              "kind": "symbol",
-              "name": "OPERATION_KEYS"
+              "kind": "file"
             },
             "path": "mcp/tests/test_role_instruction_corpus.py"
           },

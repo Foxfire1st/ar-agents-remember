@@ -77,22 +77,44 @@ No relevant domain documentation was found.
 
 ### Repo-Internal References
 
+
 - The re-validation boundary the cases exercise. [10]
+
+
 
 - The shell the cases mount on an injected view. [11]
 
+
+
 - The mode-bar entry used to leave and return to Operations. [12]
+
+
 
 - The ruled triggers and the request-counting method. [22]
 
+
+
 - Two live leaves seeded into the real store. [23]
 
+
+
 - The route stub with the knowledge switch and the read counters. [24]
+
+
 - The first-ingest sequence every case starts from. [25]
+
+
 - (a) re-show, once per showing, no catalogue read. [26]
+
+
 - (a) opening a task from another view reads once. [27]
+
+
 - (b) leaving the reviewer re-validates. [28]
+
+
 - (c) the reviewer's refresh re-validates. [29]
+
 - The provider under test. [30]
 
 ### Cross-Repo References

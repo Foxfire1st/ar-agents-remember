@@ -18,4 +18,5 @@ Local implementation and executable evidence do not replace requirement authorit
 
 ## Evidence
 
+
 - Retained projection, event-tail, warmup, landing and startup/teardown cases check executing-thread attribution and drain; startup failure/cancellation uses river compaction, and retired native-conversation/migration stages are absent. [1]

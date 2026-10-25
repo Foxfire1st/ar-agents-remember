@@ -75,26 +75,14 @@
       ]
     },
     "2": {
-      "note": "Stage facets are bound to the extracted section rather than satisfied by relocated source text.",
+      "note": "Stage facets are bound to the extracted section rather than satisfied by relocated source text.\n\nAnchor: `test_stage_section_binding_fails_on_deletion_and_relocation` `test_compiled_section_binding_fails_on_deletion_and_relocation`",
       "targets": [
         {
           "anchor": {
-            "blob": "a9d5fecd3d69a477d1fdcf2134c5bfa205c4b1e1",
-            "content": "sha256:55c2095e15b43fdbe4f7bd2a029363db48c23da76db18a5a43947efdabf8bbce",
+            "blob": "a3d178a8905817f7cc22aaf92039a5c7dd0a3e70",
+            "content": "sha256:a1dcb9e98b511cc0c71dd718321b2a21a89b716e3f7d8b9534109c3bf0867376",
             "locator": {
-              "kind": "symbol",
-              "name": "test_stage_section_binding_fails_on_deletion_and_relocation"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "a9d5fecd3d69a477d1fdcf2134c5bfa205c4b1e1",
-            "content": "sha256:5840480b321207a34a2c9cd7ce935af6f9d031dd1e1b59af65daeeea4086ae8e",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_compiled_section_binding_fails_on_deletion_and_relocation"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -118,14 +106,14 @@
       ]
     },
     "4": {
-      "note": "Reviewer/Curator facet alternatives are explicitly role scoped. Presence, deletion and relocation checks still bind to the extracted Stage end section. Source and compiled controls assert the original surface is complete and mutation actually changes text; compiled relocation is now exercised as well as deletion. The four roles are parametrized individually; numeric budget detector and rule-nine cases remain.\n\nAnchor: Current test/support source",
+      "note": "Reviewer/Curator facet alternatives are explicitly role scoped. Presence, deletion and relocation checks still bind to the extracted Stage end section. Source and compiled controls assert the original surface is complete and mutation actually changes text; compiled relocation is now exercised as well as deletion. The four roles are parametrized individually; numeric budget detector and rule-nine cases remain.",
       "targets": [
         {
           "anchor": {
-            "blob": "78f49838b168236d1c840958f72556ffdf3b48d2",
-            "content": "sha256:57c1dfbbf91a6dc5f351c9be9ade2f95604c6864894ceb3f58a2a0316e9ab7d0",
+            "blob": "a3d178a8905817f7cc22aaf92039a5c7dd0a3e70",
+            "content": "sha256:a1dcb9e98b511cc0c71dd718321b2a21a89b716e3f7d8b9534109c3bf0867376",
             "locator": {
-              "end": 473,
+              "end": 463,
               "kind": "line_range",
               "start": 1
             }

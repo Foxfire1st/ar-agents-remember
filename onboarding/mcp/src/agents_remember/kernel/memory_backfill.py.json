@@ -58,12 +58,12 @@
       ]
     },
     "3": {
-      "note": "Apply orders digest/rescue/rewrite/publication and frames every target update correctly.\n\nAnchor: \"def apply_memory_backfill\"; \"def _move_targets\"",
+      "note": "Apply orders digest/rescue/rewrite/publication and frames every target update correctly.",
       "targets": [
         {
           "anchor": {
-            "blob": "f000e1b9d3818bcc0637b050357be02ec08f3cf6",
-            "content": "sha256:36cd6a546faa8fc208cc8c5d73eaef16d0f7e699685cdc2a278ccd380cebd8f1",
+            "blob": "a34c0c59625ee920577abd445e3ad0bd757bf05c",
+            "content": "sha256:6c49a253855d84d4f759f680e0a521fc627d4e9ae6b20fd77665d75974946654",
             "locator": {
               "kind": "symbol",
               "name": "apply_memory_backfill"
@@ -79,6 +79,16 @@
               "end": 930,
               "kind": "line_range",
               "start": 888
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a34c0c59625ee920577abd445e3ad0bd757bf05c",
+            "content": "sha256:6033e57616f2365ada5e59d962dd501f7c092a231be413f3ca4c63460c7bce99",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "code"

@@ -131,13 +131,19 @@ The configured direct-landing fixture grants the exact canonical gate_case/leaf.
 
 - The closeout refuses, restores the file and commits it closed once valid. [14]
 
+
 - Record landing refuses through its route entry. [15]
+
+
 - Direct landing preview and apply refuse through their entry. [16]
+
 
 - The recorded rows of the settings resolution, and a conflicting read that is never kept. [17]
 
 - Another parent tip is another evaluation. [18]
+
 - A failed Git read inside the gate is never a verdict. [19]
+
 - A marker probe Git cannot answer is never unconverted memory. [20]
 - The settings resolution whose rows the read-set test checks. [21]
 
@@ -151,28 +157,41 @@ No configured live documentation source was available for this pass.
 ### Repo-Internal References
 
 - The module docstring: each route test enters through its own entry point. [22]
+
 - A hand-closed history file is refused at closeout validation and recorded landing. [23]
+
+
 - Direct landing's route entries and its closing across calls. [24]
+
 
 - Master landing refuses anything not current; ghost subjects; the scoping. [25]
 
 - The exact trees re-anchor-check the file they just closed; an unavailable object. [26]
 - The admission base, the memo key and record landing on unconverted memory. [27]
+
 - Git failures, probes and the read set. [28]
 
+
+
 - R3-1 and R3-2. [29]
+
 
 
 - The lane row. [30]
 
 - A Git failure asking for a recorded blob is named by the trees and the lane. [31]
+
 - An unwritable closing receipt restores the file and admits nothing. [32]
+
+
 - A hand-closed file is refused also one commit later and through a merge. [33]
+
 
 ### Cross-Repo References
 
 No meaningful cross-repo references found: the fixture builds its own repositories.
 
 No cross-repo boundary is crossed by this file.
+
 
 - The four refusal cases retain their original branches and complete world snapshots. _record checks the exact answer code, state and error detail rather than merely accepting a generic unsuccessful return. [34]

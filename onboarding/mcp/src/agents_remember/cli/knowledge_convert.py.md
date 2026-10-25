@@ -70,7 +70,9 @@ The arguments, the run and its registration.
 
 - The arguments. [1]
 - The run: convert, report, write unless checking, exit status. [2]
+
 - The umbrella registration. [3]
+
 - The conversion it drives. [4]
 
 ### Cross-Repo References

@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/architect.md",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
@@ -25,8 +26,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "147a10bf74e96fb8267994fcdd1f59c2b321c557",
-            "content": "sha256:c880d5fa3c475ef82dfc9edfd4142a17069ce17af4f9fe288497421c5d6ed192",
+            "blob": "f8df4537fd2ad81ad0e51743831f41509c24dcfe",
+            "content": "sha256:4a0a5d9f8e5202460cee5e0870e801a644d2432900685a5a54114a1dab9cc219",
             "locator": {
               "kind": "file"
             }
@@ -75,8 +76,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "147a10bf74e96fb8267994fcdd1f59c2b321c557",
-            "content": "sha256:c880d5fa3c475ef82dfc9edfd4142a17069ce17af4f9fe288497421c5d6ed192",
+            "blob": "f8df4537fd2ad81ad0e51743831f41509c24dcfe",
+            "content": "sha256:4a0a5d9f8e5202460cee5e0870e801a644d2432900685a5a54114a1dab9cc219",
             "locator": {
               "kind": "file"
             }
@@ -90,8 +91,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "147a10bf74e96fb8267994fcdd1f59c2b321c557",
-            "content": "sha256:c880d5fa3c475ef82dfc9edfd4142a17069ce17af4f9fe288497421c5d6ed192",
+            "blob": "f8df4537fd2ad81ad0e51743831f41509c24dcfe",
+            "content": "sha256:4a0a5d9f8e5202460cee5e0870e801a644d2432900685a5a54114a1dab9cc219",
             "locator": {
               "kind": "file"
             }
@@ -105,8 +106,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "147a10bf74e96fb8267994fcdd1f59c2b321c557",
-            "content": "sha256:c880d5fa3c475ef82dfc9edfd4142a17069ce17af4f9fe288497421c5d6ed192",
+            "blob": "f8df4537fd2ad81ad0e51743831f41509c24dcfe",
+            "content": "sha256:4a0a5d9f8e5202460cee5e0870e801a644d2432900685a5a54114a1dab9cc219",
             "locator": {
               "kind": "file"
             }

@@ -65,7 +65,9 @@ The retained source anchors below support the fixture roles and assertion bounda
 - Launch failure rolls back the admitted slot. [2]
 - Wrong repository poll never discloses any run state. [3]
 - Pair change during derived evidence refuses before curator publication. [4]
+
 - The dead-governing-overview case hands the census to `_attach_curator_checklist` through the prepared-inputs bundle. [5]
+
 
 ### Cross-Repo References
 

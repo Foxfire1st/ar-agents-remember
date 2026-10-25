@@ -1,28 +1,17 @@
 {
   "path": "dashboard/src/panels/engine-room/scene.ts",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
-      "note": "The scene packet and its resolving entry point.",
+      "note": "The scene packet and its resolving entry point.\n\nAnchor: `EnclosureScene` `resolveScene`",
       "targets": [
         {
           "anchor": {
-            "blob": "8c1406f9ffcfd4797058662e7bc6893c83b0e3cf",
-            "content": "sha256:7ad227f94029da89442cf4c4ec64823b2ed3cbc17859ded60630bedcc58721c5",
+            "blob": "97051d4d41f68adb2f44945b0980df38f23ad791",
+            "content": "sha256:673ca7fee98a94e57d21c3c4993782254e226ce9a3d540f6e64ebfeb7c731325",
             "locator": {
-              "kind": "symbol",
-              "name": "EnclosureScene"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "8c1406f9ffcfd4797058662e7bc6893c83b0e3cf",
-            "content": "sha256:a30f00218c012af355f8de8b99295a1242f6ef8ae4316c84072cd1af075ffe34",
-            "locator": {
-              "kind": "symbol",
-              "name": "resolveScene"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -30,37 +19,14 @@
       ]
     },
     "2": {
-      "note": "The per-aspect resolvers consumed by the layers.",
+      "note": "The per-aspect resolvers consumed by the layers.\n\nAnchor: `resolveEngines` `resolveBlocks` `resolveRecovery`",
       "targets": [
         {
           "anchor": {
-            "blob": "8c1406f9ffcfd4797058662e7bc6893c83b0e3cf",
-            "content": "sha256:2fc674628105c01ec17f31f35cef24edbca2fcd7452124c2e13bffb825f11e4b",
+            "blob": "97051d4d41f68adb2f44945b0980df38f23ad791",
+            "content": "sha256:673ca7fee98a94e57d21c3c4993782254e226ce9a3d540f6e64ebfeb7c731325",
             "locator": {
-              "kind": "symbol",
-              "name": "resolveEngines"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "8c1406f9ffcfd4797058662e7bc6893c83b0e3cf",
-            "content": "sha256:0ee05ce370e178efbe456c5f1a1e1b9abbba8f9356b73256750f325c45b87bd3",
-            "locator": {
-              "kind": "symbol",
-              "name": "resolveBlocks"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "87821aabab3b972a5513d33de296765a0bab6d47",
-            "content": "sha256:43725cd7ddc2af69520742a7ee724db1b5d43dcad2005d95c9e59491bd7c1407",
-            "locator": {
-              "kind": "symbol",
-              "name": "resolveRecovery"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -72,8 +38,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "87821aabab3b972a5513d33de296765a0bab6d47",
-            "content": "sha256:21e2a65cf85ce877b65d3e96cccec2087ec87590761bac1479f8da606650bc09",
+            "blob": "97051d4d41f68adb2f44945b0980df38f23ad791",
+            "content": "sha256:b2f49c64fd452f7a9daf799d77013122c333e70ac3fde9a61bf2082277cef257",
             "locator": {
               "end": 120,
               "kind": "line_range",
@@ -89,12 +55,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "87821aabab3b972a5513d33de296765a0bab6d47",
+            "blob": "97051d4d41f68adb2f44945b0980df38f23ad791",
             "content": "sha256:7e47d5a4af61363947c875f3f607466d5df33698e6646e7986af1a2d55888648",
             "locator": {
-              "end": 188,
+              "end": 186,
               "kind": "line_range",
-              "start": 154
+              "start": 152
             }
           },
           "kind": "code"
@@ -106,12 +72,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "87821aabab3b972a5513d33de296765a0bab6d47",
-            "content": "sha256:75a2788971f419e32439c8eb770d20572edf96d889012f0cddb028e8b09b14db",
+            "blob": "97051d4d41f68adb2f44945b0980df38f23ad791",
+            "content": "sha256:673ca7fee98a94e57d21c3c4993782254e226ce9a3d540f6e64ebfeb7c731325",
             "locator": {
-              "end": 264,
-              "kind": "line_range",
-              "start": 223
+              "kind": "file"
             }
           },
           "kind": "code"

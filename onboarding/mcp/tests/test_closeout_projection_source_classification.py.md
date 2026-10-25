@@ -97,9 +97,23 @@ No external source is required for this repository-owned classification proof.
 - The classification the module pins: membership of the declared set, with the other vocabularies' markers untouched. [5]
 - The single declaration that owns the capacity codes and their classification. [6]
 - The raiser that publishes the code the first case reads back. [7]
+
 - The fixture this module composes instead of rebuilding the world. [8]
-- The two artifact rows that declare this module as an exact consumer, both through `test_closeout_queue`. [9]
-- The integration lane row the fail-closed manifest requires. [10]
+
+
+
+
+> Retained earlier citation wording: - The current lifecycle catalog declares this module as an exact consumer on four artifact rows: _user_settings_guard.py, curator_coherence_test_support.py, the Node package-lock fixture and writer_worklist_test_support.py. These are dependency declarations, not runtime fixture-consumption or execution evidence. [9]
+
+
+
+
+
+
+> Retained earlier citation wording: - The integration lane row the fail-closed manifest requires. Source caption: "mcp/tests/test_closeout_projection_source_classification.py" [10]
+
+
+
 
 ### Cross-Repo References
 
@@ -108,5 +122,13 @@ declares one, an external memory repository — as real temporary Git repositori
 the graph admission and projection path run at all. No production cross-repository authority is claimed
 by this focused module.
 
+
 - The fixture's repositories are real temporary Git repositories created per case, not mocks. [11]
+
+
 - The fixture's repositories are real temporary Git repositories created per case, not mocks. [12]
+
+- The integration lane row the fail-closed manifest requires. Source caption: "mcp/tests/test_closeout_projection_source_classification.py" [10]
+
+
+- The current lifecycle catalog declares this module as an exact consumer on four artifact rows: _user_settings_guard.py, curator_coherence_test_support.py, the Node package-lock fixture and writer_worklist_test_support.py. These are dependency declarations, not runtime fixture-consumption or execution evidence. [9]

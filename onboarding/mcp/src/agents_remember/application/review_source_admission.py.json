@@ -177,12 +177,23 @@
       ]
     },
     "13": {
-      "note": "**The cases: attributed admission without counting, unlinked refusal, and undetermined refusal.**",
+      "note": "**The cases: attributed admission without counting, unlinked refusal, and undetermined refusal.**\n\nAnchor: `test_an_unchanged_path_a_recorded_realization_links_opens_as_context_without_counting` `test_an_unchanged_path_no_recorded_realization_links_is_still_refused` `test_an_unreadable_snapshot_leaves_the_link_undetermined_rather_than_absent`",
       "targets": [
         {
           "anchor": {
-            "blob": "9df6a850742f0e02c026d141b7813616ea5c2944",
-            "content": "sha256:a91f9b24a303265586c5bbd016bdf3e7233c2897ce74f821ce03ebf130172a60",
+            "blob": "373b98939739fd3634b0fe64b4ea2d00c508d5bb",
+            "content": "sha256:4f7ecc8772618d62abc5902fc65b5a8b5e48a7d69e4e689e810128c571ba4261",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_knowledge_review_attributed_source_content.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "373b98939739fd3634b0fe64b4ea2d00c508d5bb",
+            "content": "sha256:d70366a961d71e0818f3c98a04f891c2885dde06ba6d0a42e71312fd65fe615f",
             "locator": {
               "kind": "symbol",
               "name": "test_an_unchanged_path_a_recorded_realization_links_opens_as_context_without_counting"
@@ -193,8 +204,8 @@
         },
         {
           "anchor": {
-            "blob": "9df6a850742f0e02c026d141b7813616ea5c2944",
-            "content": "sha256:c405e549eab3887145bc7f2ee49d30d66dad755472e4b3e744f0fb1b940c6075",
+            "blob": "373b98939739fd3634b0fe64b4ea2d00c508d5bb",
+            "content": "sha256:b5f4d04e637162b34ef94f05f0089dbf7d118af8a51aa975521f7091f2749128",
             "locator": {
               "kind": "symbol",
               "name": "test_an_unchanged_path_no_recorded_realization_links_is_still_refused"
@@ -205,8 +216,8 @@
         },
         {
           "anchor": {
-            "blob": "9df6a850742f0e02c026d141b7813616ea5c2944",
-            "content": "sha256:e7e8349ee6dbf01820889bfe44cd5c9bf7581763bab975eb30ac2a05ba7db799",
+            "blob": "373b98939739fd3634b0fe64b4ea2d00c508d5bb",
+            "content": "sha256:aa6769f725a27fe9635549a30b6835d37141876f12f22e2af38a25860ac95881",
             "locator": {
               "kind": "symbol",
               "name": "test_an_unreadable_snapshot_leaves_the_link_undetermined_rather_than_absent"
@@ -218,8 +229,19 @@
       ]
     },
     "14": {
-      "note": "Unconverted knowledge states its unavailability without canonical initialization; tree proof entries still admit their exact unchanged path.",
+      "note": "Unconverted knowledge states its unavailability without canonical initialization; tree proof entries still admit their exact unchanged path.\n\nAnchor: `test_unconverted_knowledge_names_its_unavailability_without_canonical_initialization` `test_a_tree_index_links_a_path_its_proof_entry_is_anchored_at`",
       "targets": [
+        {
+          "anchor": {
+            "blob": "373b98939739fd3634b0fe64b4ea2d00c508d5bb",
+            "content": "sha256:4f7ecc8772618d62abc5902fc65b5a8b5e48a7d69e4e689e810128c571ba4261",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_knowledge_review_attributed_source_content.py"
+          },
+          "kind": "test"
+        },
         {
           "anchor": {
             "blob": "373b98939739fd3634b0fe64b4ea2d00c508d5bb",
@@ -234,8 +256,8 @@
         },
         {
           "anchor": {
-            "blob": "fcca75c35582b37105f048d0536ee42d366721c4",
-            "content": "sha256:3bcaef1917995e96fc714d4576ca45409b8f0ad3cf0f6c95114e6b991cd82623",
+            "blob": "373b98939739fd3634b0fe64b4ea2d00c508d5bb",
+            "content": "sha256:a4daad0b40316963239d44a883e69a8a38023e421fc146a21c0afd6a528db652",
             "locator": {
               "kind": "symbol",
               "name": "test_a_tree_index_links_a_path_its_proof_entry_is_anchored_at"
@@ -377,12 +399,22 @@
       ]
     },
     "7": {
-      "note": "The two remedies: initialize never-created knowledge, restore or repair a damaged snapshot.",
+      "note": "The two remedies: initialize never-created knowledge, restore or repair a damaged snapshot.\n\nAnchor: `_RESTORE` `_INITIALIZE`",
       "targets": [
         {
           "anchor": {
-            "blob": "4045c2ca127be7f0ab31fffbf315b503780d0973",
-            "content": "sha256:a000faaeda1b3fd0aa59341f178a05d586ffddef88b2639dfa0878d0ace43a86",
+            "blob": "bd53a560b89553bb10e18692e31319e6d580a0cc",
+            "content": "sha256:fb8ebcbda1f115906d1c9fc1d958e558c3fe21bdab2a41779c4ed901c3be5e02",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bd53a560b89553bb10e18692e31319e6d580a0cc",
+            "content": "sha256:058f30c3a664bf6e7546c3c1c11c5ead7c4d50af7c8e3075aa540b8e611e6cb1",
             "locator": {
               "kind": "symbol",
               "name": "_RESTORE"
@@ -392,8 +424,8 @@
         },
         {
           "anchor": {
-            "blob": "4045c2ca127be7f0ab31fffbf315b503780d0973",
-            "content": "sha256:5bffce1766b4e23c4601e3cc8a877fea74b9307e4706f407a73c223529ffeaca",
+            "blob": "bd53a560b89553bb10e18692e31319e6d580a0cc",
+            "content": "sha256:867246713d6f844cff6cb05befb366a30dd15ae2d24fb4355b33b3fa4f6a9488",
             "locator": {
               "kind": "symbol",
               "name": "_INITIALIZE"
@@ -431,8 +463,19 @@
       ]
     },
     "9": {
-      "note": "**The link owner this module consumes.**",
+      "note": "**The link owner this module consumes.**\n\nAnchor: `RealizationLink` `recorded_realization_link`",
       "targets": [
+        {
+          "anchor": {
+            "blob": "bc638f5e47c02721604a66086ebc28876ec93f4c",
+            "content": "sha256:1d48a327261da8e5b431d2148745fd5f228e87171e9b8e12a8113c31c32ccb4d",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/review_source_realization_link.py"
+          },
+          "kind": "code"
+        },
         {
           "anchor": {
             "blob": "bc638f5e47c02721604a66086ebc28876ec93f4c",
@@ -447,8 +490,8 @@
         },
         {
           "anchor": {
-            "blob": "c44437cfac6ee519a532c3ce675f46baa01148fe",
-            "content": "sha256:8ef4c43fc85de2eca313ac24b362b166d2034dc3e91b56e1671f4e5d73858773",
+            "blob": "bc638f5e47c02721604a66086ebc28876ec93f4c",
+            "content": "sha256:7ca3162b210e28ae0b41ff020882d0b9ec231cc4ff6de3e8094ac12962e5256b",
             "locator": {
               "kind": "symbol",
               "name": "recorded_realization_link"

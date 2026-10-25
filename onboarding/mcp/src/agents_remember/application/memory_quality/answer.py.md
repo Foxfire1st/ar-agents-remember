@@ -43,7 +43,9 @@ details remain outside this compact selection.
 
 No Domain Documentation sources are configured; the evidence below is repository implementation or test assertions, not a new execution attestation.
 
+
 - Completed results retain status, blocking totals and report locations. [1]
+
 - The bounded blocking list preserves repair-loop order and whole-population count. [2]
 - A taken-over failure retains its own code and recovery action. [3]
 - Poll projection distinguishes live, absent and completed runs. [4]

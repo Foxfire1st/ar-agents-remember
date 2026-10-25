@@ -122,28 +122,48 @@ completion blockers, while any other row resolves the terminal leaf doc exactly 
 - The typed masterRef row, SprintSeat and TaskDocument models supply the linkage schema this module writes. [1]
 
 
+
 - The typed masterRef row, SprintSeat and TaskDocument models supply the linkage schema this module writes. [16]
+
+
 
 
 
 - The typed-linkage cross-check and altitude role sets this module relies on. [2]
 
 
+
+
 - The typed-linkage cross-check and altitude role sets this module relies on. [17]
 
+
+
 - The public tool-layer operation routing. [3]
+
 - The shared judgment verifier and completion gate. [4]
+
 - The rollback-safe batch writer and exact task publication transaction. [5]
+
 - The single-owner authority gate admitting this module as a task-document writer. [6]
+
 - The linkage preflight wraps the served-build check in the linkage error family (L15-R4). [7]
+
+
 
 - The F8 fact kinds: sprints excluded from the uncommanded-master scan; unresolved seat-doc rows named. [8]
 
 
+
+
 - The operation tuple lists the five linkage operations and the dispatcher sends `retire_master` to the retirement module. [10]
 
+
+
 - Attach validates its full candidate before preview or apply and calls the shared graph-title cardinality owner before publication. [11]
+
+
 - Detach builds its candidate from the shared pure `_detach_candidate`, validates it, and publishes through `_publish`. [12]
+
 - Apply uses the central title owner and the exact task-document transaction publisher; it does not select a first graph locally. [13]
 - The shared publication helper refuses more than one graph-bearing document and builds the sole qualified title context. [14]
 - The detach candidate removes the typed row, the membership aliases and the graph node, and refuses to empty the graph or to leave an edge touching the node. [15]
@@ -188,6 +208,9 @@ lock or lifecycle evidence owner.
 
 ### Reconciled Source Evidence
 
-- The current module exposes `SprintLinkageError`, `SprintLinkageRequest`, `SprintLinkageCall` at this ownership boundary. [9]
+
+- The current module exposes `SprintLinkageError` and `SprintLinkageRequest` at this ownership boundary; the call context `SprintLinkageCall` is declared in the linkage module. [9]
+
+
 
 - linkage_report is the surviving observation surface; it does not mirror task_doc.get. Non-dry reporting writes JSON and answers factKinds/reportPath under enclosure reports or the UTC-day detail folder; an unwritable destination is a named failure. Dry run computes facts without that per-call report. Best-effort reclamation keeps the bounded 50-member report group. Fact collection remains tolerant, but the whole reporting operation is not guaranteed never to raise. Attach/detach preserve their per-document previews internally; bounded task delivery uses aggregate diff/wouldLose, not rendered document dumps. [18]

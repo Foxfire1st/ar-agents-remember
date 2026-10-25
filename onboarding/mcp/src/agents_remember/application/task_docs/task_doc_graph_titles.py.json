@@ -30,15 +30,14 @@
       ]
     },
     "2": {
-      "note": "Ordinary publication checks the same cardinality before it constructs the task transaction.",
+      "note": "Ordinary publication checks the same cardinality before it constructs the task transaction.\n\nAnchor: `task_doc_publication_transaction`",
       "targets": [
         {
           "anchor": {
-            "blob": "0dcc3c1c6d4cd7078c1c23ab2db0215845db9a40",
-            "content": "sha256:382ac1c56b0075ab841e4b01ce53a94985b33f5cb6b60e4726e6bf3f0c0240b9",
+            "blob": "3cdbb47739fd9663671343886ca7985545584789",
+            "content": "sha256:6543e82cfa71a38f1f0ddb4c92ba517cdd337bf181e07c119bc10b368774263e",
             "locator": {
-              "kind": "symbol",
-              "name": "task_doc_publication_transaction"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/task_docs/task_doc_publication.py"
           },
@@ -47,15 +46,14 @@
       ]
     },
     "3": {
-      "note": "Focused proof covers zero/one support, two-graph no-write refusal, and order-independent errors.",
+      "note": "Focused proof covers the plain-or-single-graph batch shape and the two-graph refusal, which leaves task and projection bytes untouched.\n\nAnchor: `TaskDocGraphPublicationTests`",
       "targets": [
         {
           "anchor": {
-            "blob": "56afdabb8daf6d4f55f78484a975fdd60e99601b",
-            "content": "sha256:bc41f407e5e432caa4afc030e851385ffe5f0e3276e64ff6a3768eefbc05629e",
+            "blob": "b2d4da2d1b3bc34a082fe573f4ee00c4bc28c358",
+            "content": "sha256:5a795415a1209966fed669e92c835ce1585bfb9a821b3108f4f42d7152d6e9d7",
             "locator": {
-              "kind": "symbol",
-              "name": "TaskDocGraphPublicationTests"
+              "kind": "file"
             },
             "path": "mcp/tests/test_task_doc_graph_publication.py"
           },

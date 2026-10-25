@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/application/worktree_services.py",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
@@ -21,21 +22,6 @@
     }
   ],
   "references": {
-    "1": {
-      "note": "The current `build_default_worktree_services` boundary implements the preparation contract above.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "9ae9c1fd9981228aafde4ea8749d2dd3819612de",
-            "content": "sha256:b370cda12c8eb9e48b81c6ba339c593b55dd5088635c58f0566ce3c68c42439a",
-            "locator": {
-              "kind": "file"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "10": {
       "note": "MemoryQualityAdapter supplies the converted comparison-base port to quality-service consumers; its composition is not evidence that closeout runs the retained quality-phase helpers.",
       "targets": [
@@ -53,12 +39,23 @@
       ]
     },
     "11": {
-      "note": "The default bundle composes the declared worktree services, including the knowledge validator with its base converter and the knowledge crossing.",
+      "note": "The default bundle composes the declared worktree services, including the knowledge validator with its base converter and the knowledge crossing.\n\nAnchor: `GitKnowledgeValidation`",
       "targets": [
         {
           "anchor": {
-            "blob": "55081c83a1fc69eaf758dd03fe4b6b25f9abd4fc",
-            "content": "sha256:eb5133dc06839dccfdcc9332a7563f99487d746a7f5e282a2bd057bcc98318e2",
+            "blob": "cca63e02198c777c714652d517c3489224c4a42a",
+            "content": "sha256:0644ec0f7cb39240ce8fc30a7e6eda5c33bef924d0a35f8527d3514472a6eb09",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/commit_route.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cca63e02198c777c714652d517c3489224c4a42a",
+            "content": "sha256:9bf80d8d21320f6abd967dc5a486238971b13ab0a20bf6c5d4bc41879a074351",
             "locator": {
               "kind": "symbol",
               "name": "GitKnowledgeValidation"
@@ -74,29 +71,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "41ed699ec457b16f9ad06ea009933785619ef9ba",
-            "content": "sha256:d8180a993b1e07020efcb0b7a376a4ec55a128ee5b7df7a130e18b8ffe95cd24",
+            "blob": "ad49bbea3aa27328b16a81b38c0fac81b3448485",
+            "content": "sha256:bfe6d6b14af7466022314bff5012200cd1fb382c043dcdda58972c2a9912dea7",
             "locator": {
               "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/knowledge_worklist/leaf.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "13": {
-      "note": "The memory-quality adapter carries the admitted landing base through the existing drift context.\n\nAnchor: `MemoryQualityAdapter.drift_context`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "9cfe5fc779f3234e5cf2d83eee7be9897b4668cb",
-            "content": "sha256:df4c5faac7fc15acf748d9f813b6d3d3d7740b7fbc0c0d005555b38eb8bdf432",
-            "locator": {
-              "end": 183,
-              "kind": "line_range",
-              "start": 167
-            }
           },
           "kind": "code"
         }
@@ -135,8 +115,18 @@
       ]
     },
     "3": {
-      "note": "Memory-rail and memory-quality adapters",
+      "note": "Memory-rail and memory-quality adapters\n\nAnchor: `CertificationMemoryRailsAdapter` `MemoryQualityAdapter`",
       "targets": [
+        {
+          "anchor": {
+            "blob": "9cfe5fc779f3234e5cf2d83eee7be9897b4668cb",
+            "content": "sha256:a219236a73954634734073e091b79e55d120b08e493a482435b84adb37cc3092",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
         {
           "anchor": {
             "blob": "9cfe5fc779f3234e5cf2d83eee7be9897b4668cb",
@@ -150,8 +140,8 @@
         },
         {
           "anchor": {
-            "blob": "9ae9c1fd9981228aafde4ea8749d2dd3819612de",
-            "content": "sha256:cddef9d5a16727c08ebd3bda8209a8ae576d5505242444195a419791b84f2c8c",
+            "blob": "9cfe5fc779f3234e5cf2d83eee7be9897b4668cb",
+            "content": "sha256:0a7eee32f0f1a706911349da4f5180c79db8d44363cfca0663e98ef2594e3858",
             "locator": {
               "kind": "symbol",
               "name": "MemoryQualityAdapter"
@@ -178,16 +168,28 @@
       ]
     },
     "5": {
-      "note": "The default bundle composes the declared worktree services, including the knowledge validator with its base converter and the knowledge crossing.",
+      "note": "The default bundle composes the declared worktree services, including the knowledge validator with its base converter and the knowledge crossing.\n\nAnchor: `GitKnowledgeValidation`",
       "targets": [
         {
           "anchor": {
-            "blob": "05a0dc3d78298af697a9b16a0692971abddd837b",
-            "content": "sha256:44ca04b177598b8dcc61dc26c1e21afa6e6bd6700b4909dd3f6aeb29c02fd1e3",
+            "blob": "cca63e02198c777c714652d517c3489224c4a42a",
+            "content": "sha256:0644ec0f7cb39240ce8fc30a7e6eda5c33bef924d0a35f8527d3514472a6eb09",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/commit_route.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cca63e02198c777c714652d517c3489224c4a42a",
+            "content": "sha256:9bf80d8d21320f6abd967dc5a486238971b13ab0a20bf6c5d4bc41879a074351",
             "locator": {
               "kind": "symbol",
-              "name": "build_default_worktree_services"
-            }
+              "name": "GitKnowledgeValidation"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/commit_route.py"
           },
           "kind": "code"
         }
@@ -198,8 +200,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9ae9c1fd9981228aafde4ea8749d2dd3819612de",
-            "content": "sha256:b370cda12c8eb9e48b81c6ba339c593b55dd5088635c58f0566ce3c68c42439a",
+            "blob": "9cfe5fc779f3234e5cf2d83eee7be9897b4668cb",
+            "content": "sha256:a219236a73954634734073e091b79e55d120b08e493a482435b84adb37cc3092",
             "locator": {
               "kind": "file"
             }
@@ -213,11 +215,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9ae9c1fd9981228aafde4ea8749d2dd3819612de",
-            "content": "sha256:b370cda12c8eb9e48b81c6ba339c593b55dd5088635c58f0566ce3c68c42439a",
+            "blob": "ad49bbea3aa27328b16a81b38c0fac81b3448485",
+            "content": "sha256:bfe6d6b14af7466022314bff5012200cd1fb382c043dcdda58972c2a9912dea7",
             "locator": {
               "kind": "file"
-            }
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_worklist/leaf.py"
           },
           "kind": "code"
         }
@@ -228,8 +231,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9ae9c1fd9981228aafde4ea8749d2dd3819612de",
-            "content": "sha256:b370cda12c8eb9e48b81c6ba339c593b55dd5088635c58f0566ce3c68c42439a",
+            "blob": "9cfe5fc779f3234e5cf2d83eee7be9897b4668cb",
+            "content": "sha256:a219236a73954634734073e091b79e55d120b08e493a482435b84adb37cc3092",
             "locator": {
               "kind": "file"
             }
@@ -243,13 +246,13 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1ed6df983ba83a5dca67863f17dade9ab2d875aa",
-            "content": "sha256:39e23e747ef0775107905f1e7c4a2eda107132742553cb591864ab349d2271b1",
+            "blob": "d1dd581ce7a39878387a2f6a26246563ee31c405",
+            "content": "sha256:c8c3327ac798e2663257af23c4621aa0d86e51c6c40e7a1614f5299cdea455a7",
             "locator": {
               "kind": "symbol",
               "name": "bind_worktree_services"
             },
-            "path": "mcp/src/agents_remember/worktrees/services.py"
+            "path": "mcp/src/agents_remember/kernel/worktree_service_binding.py"
           },
           "kind": "code"
         }

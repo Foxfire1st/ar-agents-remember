@@ -61,7 +61,9 @@ AgentBindingPayload captures launch agent, role, request, report and optional ca
 
 ### Repo-Internal References
 
+
 - Core payload builders serialize these models. [1]
+
 
 ### Runtime Source References
 

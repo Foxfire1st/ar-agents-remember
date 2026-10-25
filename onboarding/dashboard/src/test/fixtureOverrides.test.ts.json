@@ -1,14 +1,15 @@
 {
   "path": "dashboard/src/test/fixtureOverrides.test.ts",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
-      "note": "`ts.Program#getSemanticDiagnostics` and `ts.flattenDiagnosticMessageText` are the documented compiler-API surface these assertions read.\n\nAnchor: `getSemanticDiagnostics`, `flattenDiagnosticMessageText`",
+      "note": "`ts.Program#getSemanticDiagnostics` and `ts.flattenDiagnosticMessageText` are the documented compiler-API surface these assertions read.",
       "targets": [
         {
           "anchor": {
-            "blob": "4d075a3b14a63e51fde0521c960138addc02ad48",
-            "content": "sha256:9d1d07129c8f3cc5387672f2436c06e4bc86307638c10f321e7174b232efa5bc",
+            "blob": "a8e7c68ec7ffbfd48d47afb359d1fee9f46db41f",
+            "content": "sha256:5e286e66701bd587b708f01893739a9cfcc99fe62e91f353a4796d0dc99b4655",
             "locator": {
               "end": 83,
               "kind": "line_range",
@@ -20,15 +21,14 @@
       ]
     },
     "10": {
-      "note": "The builders whose parameters are being pinned.\n\nAnchor: `lifecycle`, `taskDoc`, `projection`",
+      "note": "The builders whose parameters are being pinned: `projection`, `taskEntry`, `taskSummary`, `provider`, `action` and `observerEvent`, each taking an `Overrides<O, Node>`.  Earlier card anchor caption (historical provenance): `lifecycle` `taskDoc` `projection` Source caption: `projection` `taskEntry` `taskSummary` `provider` `action` `observerEvent`",
       "targets": [
         {
           "anchor": {
-            "blob": "9748f432f9443a640ef5221d0bace3f986bed50e",
-            "content": "sha256:d0a2ab51fc39e99c785427195b81e8d28bda217130654c318b480eaad0b95c1e",
+            "blob": "67bd836a126c87cce7dd24fb8f82a699decf8e4f",
+            "content": "sha256:fa043074e33f2bf4c2dc606a7bc5c1664ed3d52c09af65f3df1e2986be56ce79",
             "locator": {
-              "kind": "symbol",
-              "name": "lifecycle"
+              "kind": "file"
             },
             "path": "dashboard/src/test/fixtures/wire.ts"
           },
@@ -36,11 +36,10 @@
         },
         {
           "anchor": {
-            "blob": "9748f432f9443a640ef5221d0bace3f986bed50e",
-            "content": "sha256:b6f4449a610c853dc02c93cbd467d7e51859462c455d37452856c2db473369b9",
+            "blob": "67bd836a126c87cce7dd24fb8f82a699decf8e4f",
+            "content": "sha256:fa043074e33f2bf4c2dc606a7bc5c1664ed3d52c09af65f3df1e2986be56ce79",
             "locator": {
-              "kind": "symbol",
-              "name": "taskDoc"
+              "kind": "file"
             },
             "path": "dashboard/src/test/fixtures/wire.ts"
           },
@@ -48,11 +47,10 @@
         },
         {
           "anchor": {
-            "blob": "9748f432f9443a640ef5221d0bace3f986bed50e",
-            "content": "sha256:d2af665eedc8a50a5532a15b550ca9fa03188b3a307676167301b39926ac8c24",
+            "blob": "67bd836a126c87cce7dd24fb8f82a699decf8e4f",
+            "content": "sha256:fa043074e33f2bf4c2dc606a7bc5c1664ed3d52c09af65f3df1e2986be56ce79",
             "locator": {
-              "kind": "symbol",
-              "name": "projection"
+              "kind": "file"
             },
             "path": "dashboard/src/test/fixtures/wire.ts"
           },
@@ -60,12 +58,10 @@
         },
         {
           "anchor": {
-            "blob": "9748f432f9443a640ef5221d0bace3f986bed50e",
-            "content": "sha256:0b6d7588b51c25d183925852d3c4c394b777fc423f105c8f412e89933cf8d266",
+            "blob": "67bd836a126c87cce7dd24fb8f82a699decf8e4f",
+            "content": "sha256:fa043074e33f2bf4c2dc606a7bc5c1664ed3d52c09af65f3df1e2986be56ce79",
             "locator": {
-              "end": 227,
-              "kind": "line_range",
-              "start": 222
+              "kind": "file"
             },
             "path": "dashboard/src/test/fixtures/wire.ts"
           },
@@ -73,25 +69,10 @@
         },
         {
           "anchor": {
-            "blob": "9748f432f9443a640ef5221d0bace3f986bed50e",
-            "content": "sha256:7787bef99d426bc546b2ab40461310dcc30baff6bbbc70805d626108c14e1087",
+            "blob": "67bd836a126c87cce7dd24fb8f82a699decf8e4f",
+            "content": "sha256:fa043074e33f2bf4c2dc606a7bc5c1664ed3d52c09af65f3df1e2986be56ce79",
             "locator": {
-              "end": 248,
-              "kind": "line_range",
-              "start": 243
-            },
-            "path": "dashboard/src/test/fixtures/wire.ts"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "9748f432f9443a640ef5221d0bace3f986bed50e",
-            "content": "sha256:435d7d309c961ac09c5e93b3e50151bf9c1aab8ea91ec53c2f475748bd2ea40d",
-            "locator": {
-              "end": 299,
-              "kind": "line_range",
-              "start": 283
+              "kind": "file"
             },
             "path": "dashboard/src/test/fixtures/wire.ts"
           },
@@ -162,15 +143,14 @@
       ]
     },
     "3": {
-      "note": "The header: what no guard rule can see, and why running over the guard's flag-free program is the point.\n\nAnchor: `PROBE_FILES`, `GUARD_COMPILER_OPTIONS`",
+      "note": "The header: what no guard rule can see, and why running over the guard's flag-free program is the point.\n\nAnchor: `PROBE_FILES` `GUARD_COMPILER_OPTIONS`",
       "targets": [
         {
           "anchor": {
-            "blob": "ae3aa11cebde8ce4c33cb799abcbd9943909021e",
-            "content": "sha256:23adf6d038c7a824263c3fa7fe0689a43d09b9bc87a8c4bc85413603d5bb4f70",
+            "blob": "a8e7c68ec7ffbfd48d47afb359d1fee9f46db41f",
+            "content": "sha256:1c8e89d576fa911d1745c142a49830526eeda7a4e1042f3a3bdf5c358624f25b",
             "locator": {
-              "kind": "symbol",
-              "name": "PROBE_FILES"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -178,10 +158,9 @@
         {
           "anchor": {
             "blob": "e87c7782c9414ddd44713084a9a37d1b860749ab",
-            "content": "sha256:0c1963e5cd5a238d452bac7b1ed7c6deadd83bafbf1164e771793307a2c6165b",
+            "content": "sha256:e4fe33b5ab72d1e360b6cfbbd87f7bd59677a983c32e6ab2acded3d1af7a2105",
             "locator": {
-              "kind": "symbol",
-              "name": "GUARD_COMPILER_OPTIONS"
+              "kind": "file"
             },
             "path": "dashboard/src/test/wireFixtureGuard.ts"
           },
@@ -190,15 +169,14 @@
       ]
     },
     "4": {
-      "note": "The four impossible calls, the two excess-property calls, and the eleven honest shapes.",
+      "note": "The four impossible calls, the two excess-property calls, and the nine honest shapes.\n\nAnchor: `PROBE_FILES`",
       "targets": [
         {
           "anchor": {
-            "blob": "ae3aa11cebde8ce4c33cb799abcbd9943909021e",
-            "content": "sha256:23adf6d038c7a824263c3fa7fe0689a43d09b9bc87a8c4bc85413603d5bb4f70",
+            "blob": "a8e7c68ec7ffbfd48d47afb359d1fee9f46db41f",
+            "content": "sha256:1c8e89d576fa911d1745c142a49830526eeda7a4e1042f3a3bdf5c358624f25b",
             "locator": {
-              "kind": "symbol",
-              "name": "PROBE_FILES"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -206,12 +184,12 @@
       ]
     },
     "5": {
-      "note": "The three exact-count assertions and their message checks.\n\nAnchor: \"a builder override cannot state that a required field is absent\"",
+      "note": "The three exact-count assertions and their message checks.",
       "targets": [
         {
           "anchor": {
-            "blob": "4d075a3b14a63e51fde0521c960138addc02ad48",
-            "content": "sha256:3394f195238b36c051bc34713244ed3308a31c288dca925292da8cb2bd66e162",
+            "blob": "a8e7c68ec7ffbfd48d47afb359d1fee9f46db41f",
+            "content": "sha256:5f75b8a2e310fc4f4df6c5b5a38f49bac5942524b071a8b8795d9e26e4312c84",
             "locator": {
               "end": 112,
               "kind": "line_range",
@@ -223,12 +201,12 @@
       ]
     },
     "6": {
-      "note": "The residue asserted as a known pass: a pre-widened `Partial<LifecycleProjection>` override still compiles.\n\nAnchor: \"LC-2\"",
+      "note": "The residue asserted as a known pass: a pre-widened `Partial<TaskEntry>` override still compiles.",
       "targets": [
         {
           "anchor": {
-            "blob": "4d075a3b14a63e51fde0521c960138addc02ad48",
-            "content": "sha256:019b3385712f19a5940af7762607a7aa50f638381524de157fd04dd4d8f4fab7",
+            "blob": "a8e7c68ec7ffbfd48d47afb359d1fee9f46db41f",
+            "content": "sha256:f7078c3fd8e02dea99d841ddc4806842fd5c4476b59e0a64e42518a714fb0bdc",
             "locator": {
               "end": 69,
               "kind": "line_range",
@@ -286,12 +264,12 @@
       ]
     },
     "9": {
-      "note": "The guard's own statement of the same hole — item 5, \"A VALUE\" — which names this file as the answer.\n\nAnchor: \"A VALUE\"",
+      "note": "The guard's own statement of the same hole — item 5, \"A VALUE\" — which names this file as the answer.",
       "targets": [
         {
           "anchor": {
-            "blob": "bb7efca63cba441712648f4b743dbb34d8d27d85",
-            "content": "sha256:42591ea764277b6bf9d9daa70b48f5c575a872f43d5e7b32c8e5d0b2a88e2b26",
+            "blob": "e87c7782c9414ddd44713084a9a37d1b860749ab",
+            "content": "sha256:9db2fdcb1887f4bd52cdb376fab7a79a7be3748ebb8ef70a334678f487c9c115",
             "locator": {
               "end": 75,
               "kind": "line_range",

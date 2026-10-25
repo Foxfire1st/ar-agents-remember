@@ -75,7 +75,9 @@ The following excluded metadata is preserved verbatim. It does not grant operati
 
 
 - The scenario catalog of the cockpit dashboard. [1]
+
 - The upstream register and the Chats decision brief. [2]
+
 
 - The closeout evidence index of the session cockpit series. [3]
 
@@ -99,7 +101,9 @@ The following excluded metadata is preserved verbatim. It does not grant operati
 
 - The bounded series closeout evidence pack. [25]
 
+
 - The implementation produces or reuses memory content before refreshing its cache. [26]
+
 
 - The historical session design records former recovery/cache boundaries; its R113 status makes the session-driven promise non-operative. [28]
 
@@ -108,9 +112,13 @@ The following excluded metadata is preserved verbatim. It does not grant operati
 
 - The cockpit index describes its historical candidate and internal measurement boundary. [32]
 
+
 - The dashboard review doctrine defines review bars and visual grammar. [33]
+
 - Engine-room references identify the visual-language library and choreography prototype. [34]
+
 - The current complete closeout function preserves the memory-before-cache sequence; exact-tree validation independently refuses ungated memory. [35]
+
 
 - The current collected-case declaration is 10,000 unit/1,000 integration; this is policy, not a collected or executed population. [27]
 - The bootstrap policy and current root declarations agree on 10,000 unit/1,000 integration; host-versus-certifying evidence remains separate. [30]

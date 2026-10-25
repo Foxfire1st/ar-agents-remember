@@ -56,9 +56,13 @@ No relevant domain documentation was found.
 
 - The detail-panel entry under test. [1]
 - seedTaskEntries seeds the supplied native TaskEntry list into the shared projection via seedProjection, which calls dashboardStore.applySnapshot(projection(over)); tasks are applied after other caller overrides. The requirement fixture supplies its selected entry through this helper, not seedTaskDocuments. [2]
-- stubNotes responds to task-document, folder/read and requirements-list requests. [3]
+
+- stubNotes responds to task-document, notes-list/read and requirements-list requests. [3]
+
 - taskEntry and taskSummary are re-exported from the shared wire fixtures. They supply typed native-entry and reader-content defaults before caller overrides; taskEntry derives a qualified key from an overridden reference unless the caller supplies a key. The requirement fixture composes taskEntry with taskSummary, rather than taskDoc. [4]
+
 - The requirement anchor rendering exercised through Markdown. [5]
+
 
 
 - The reference resolution rules under test. [6]

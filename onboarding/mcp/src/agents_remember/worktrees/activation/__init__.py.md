@@ -40,7 +40,7 @@ No Domain Documentation source is configured for this memory root.
 ### Repo-Internal References
 
 - The package docstring names selection and source reconciliation as the route authority. [1]
-- The route overview maps this route's concrete package owners. [2]
+- The route overview maps this route's concrete package owners. 
 
 ### Cross-Repo References
 

@@ -161,15 +161,14 @@
       ]
     },
     "4": {
-      "note": "**Provenance as a value: what admitted the write, from which document, and the one fact that made it an admission.**\n\nAnchor: \"authority\"",
+      "note": "**Provenance as a value: what admitted the write, from which document, and the one fact that made it an admission.**\n\nAnchor: `AdmissionProvenance`",
       "targets": [
         {
           "anchor": {
-            "blob": "f1835f850e272e93c572dee8c07d07f8680882af",
-            "content": "sha256:b28495f74cd530e4f089233586cd669a2cd5c23064dcd37bf9d1d02caa2d662c",
+            "blob": "0c25de5b43f8d9eab093ba267292a378cddb9137",
+            "content": "sha256:48240d76706b6814071190f752ced0d208695746365055fb8212d06fad7a49b7",
             "locator": {
-              "kind": "symbol",
-              "name": "AdmissionProvenance"
+              "kind": "file"
             }
           },
           "kind": "code"

@@ -80,10 +80,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "44a8a825dcdfa497a4710714a984f5fb8acca6c2",
-            "content": "sha256:b0e384faf5a57040e5f6ed61bd25ea2081993a8e1070538aa59f4e7d412863ae",
+            "blob": "51874ba1d00551e34965432359cdfa9da2b0eb8d",
+            "content": "sha256:9c650a0f003006bf3e23115fe53c2f5477b3021419647c8ad60e9499dede4de3",
             "locator": {
-              "kind": "file"
+              "end": 19,
+              "kind": "line_range",
+              "start": 1
             }
           },
           "kind": "code"
@@ -95,10 +97,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "44a8a825dcdfa497a4710714a984f5fb8acca6c2",
-            "content": "sha256:b0e384faf5a57040e5f6ed61bd25ea2081993a8e1070538aa59f4e7d412863ae",
+            "blob": "51874ba1d00551e34965432359cdfa9da2b0eb8d",
+            "content": "sha256:59e495800b98ee95e3aec47b001ab54a5f64d1007f185b5f53c2ccc4aec3fdf8",
             "locator": {
-              "kind": "file"
+              "end": 93,
+              "kind": "line_range",
+              "start": 83
             }
           },
           "kind": "code"
@@ -110,10 +114,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "44a8a825dcdfa497a4710714a984f5fb8acca6c2",
-            "content": "sha256:b0e384faf5a57040e5f6ed61bd25ea2081993a8e1070538aa59f4e7d412863ae",
+            "blob": "51874ba1d00551e34965432359cdfa9da2b0eb8d",
+            "content": "sha256:da2c42d20861eb2a5bebdded22472fdbbda9ae7c068ddda0e8a1f4bae156d839",
             "locator": {
-              "kind": "file"
+              "end": 130,
+              "kind": "line_range",
+              "start": 74
             }
           },
           "kind": "code"

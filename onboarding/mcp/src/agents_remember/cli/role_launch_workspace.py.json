@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/cli/role_launch_workspace.py",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
@@ -177,7 +178,7 @@
         "handoffEntry": "L198-F-mcp-src-agents_remember-cli-role_launch_workspace",
         "leaf": "260928-MIK-L198"
       },
-      "rationale": "The role launch workspace resolves the enclosure's recorded outside scratch root and hands it to the seat as workspace.outsideScratchRoot.",
+      "rationale": "the realization entry the existing row records; unchanged by this landing",
       "role": "support"
     },
     {
@@ -309,15 +310,16 @@
   ],
   "references": {
     "1": {
-      "note": "The recorded master contract supplies the parent hint; an absent contract falls back to the sprint only to bootstrap.",
+      "note": "The recorded master contract supplies the parent hint unless it names the master itself, where the commanding sprint supplies it; an absent contract falls back to the sprint to bootstrap.  Anchor: `_recorded_parent`",
       "targets": [
         {
           "anchor": {
-            "blob": "a0ed662a42a3b5b6c0fec263b6c9d5eb5f77fa83",
-            "content": "sha256:7bed85c3ee2f4d1ae1c5b044416633c88910d9c88b9339b2c63237f830a60da3",
+            "blob": "72075734fbef78540ef61ec74cf4e43c21260b72",
+            "content": "sha256:41be59045eeb838479424985ab4ea8d53378396f8249a02685963a1c7fcd7195",
             "locator": {
-              "kind": "symbol",
-              "name": "_recorded_parent"
+              "end": 52,
+              "kind": "line_range",
+              "start": 35
             }
           },
           "kind": "code"
@@ -327,17 +329,6 @@
     "2": {
       "note": "A refusal keeps the native status and reason and names an owner-derived next action.",
       "targets": [
-        {
-          "anchor": {
-            "blob": "72075734fbef78540ef61ec74cf4e43c21260b72",
-            "content": "sha256:1d362164da7db151e71462781701fa326cc8dc10a271661bb475223d16689e94",
-            "locator": {
-              "kind": "symbol",
-              "name": "_preparation_refusal"
-            }
-          },
-          "kind": "code"
-        },
         {
           "anchor": {
             "blob": "72075734fbef78540ef61ec74cf4e43c21260b72",
@@ -364,17 +355,6 @@
             }
           },
           "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "72075734fbef78540ef61ec74cf4e43c21260b72",
-            "content": "sha256:a23cf9cfa008bf8a2ee317fb605d5039754507de4e00f40c91703884303d46c6",
-            "locator": {
-              "kind": "symbol",
-              "name": "_leaf_contract_path"
-            }
-          },
-          "kind": "code"
         }
       ]
     },
@@ -383,8 +363,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a0ed662a42a3b5b6c0fec263b6c9d5eb5f77fa83",
-            "content": "sha256:94e6b420c05d940e37bafcec32fddb20cf0fe89a2f660e6a203c6f8061cdc174",
+            "blob": "72075734fbef78540ef61ec74cf4e43c21260b72",
+            "content": "sha256:c813bc0f9c0a255097094d1cf57b2b16a0762ea40490fbdd35f35cd3453af780",
             "locator": {
               "end": 253,
               "kind": "line_range",
@@ -396,15 +376,16 @@
       ]
     },
     "5": {
-      "note": "Terminal generations refuse before any root use or materialization, and a missing enclosure is created through the child.",
+      "note": "Terminal generations refuse before any root use or materialization, and a missing or reopened enclosure is created through the child — a reopened one under the worktree name its contract already owns.  Anchor: `_ensure_leaf_enclosure`",
       "targets": [
         {
           "anchor": {
-            "blob": "a0ed662a42a3b5b6c0fec263b6c9d5eb5f77fa83",
-            "content": "sha256:d6fde4cb534c458665bcbbcaf1b3e0d6a124b41dcac11ecfe26c05a0a7987503",
+            "blob": "72075734fbef78540ef61ec74cf4e43c21260b72",
+            "content": "sha256:bd6e9e56e6b9708a3185142544b43168686ca030c6c2f7928afb2d0d95d15f81",
             "locator": {
-              "kind": "symbol",
-              "name": "_ensure_leaf_enclosure"
+              "end": 385,
+              "kind": "line_range",
+              "start": 307
             }
           },
           "kind": "code"
@@ -424,17 +405,6 @@
             }
           },
           "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "72075734fbef78540ef61ec74cf4e43c21260b72",
-            "content": "sha256:c80dfdf8d84f1ec625798c15cf8ff02716fb4a6dcba5473eb4a59d2274b388c4",
-            "locator": {
-              "kind": "symbol",
-              "name": "_start_leaf_enclosure"
-            }
-          },
-          "kind": "code"
         }
       ]
     },
@@ -443,8 +413,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a0ed662a42a3b5b6c0fec263b6c9d5eb5f77fa83",
-            "content": "sha256:423878d0ce0f3c0d8cfb591c2805f2094298754f6e505e0c23d1a233e388b9e6",
+            "blob": "72075734fbef78540ef61ec74cf4e43c21260b72",
+            "content": "sha256:89a718153e30da7fa3470ac7e81627bb7842889c24466829a48fd84bbc17f879",
             "locator": {
               "end": 253,
               "kind": "line_range",

@@ -3,15 +3,14 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "Source assertion: test_memory_record_answer_uses_curator_lane_without_reopening_passed_code. The declaration is not an execution receipt.",
+      "note": "A memory record answers through the Curator lane without reopening passed code.\n\nAnchor: `test_memory_record_answer_uses_curator_lane_without_reopening_passed_code`",
       "targets": [
         {
           "anchor": {
-            "blob": "8a37758fd506b0b1208e26bb4bf7d16197dd3d90",
-            "content": "sha256:323e3f48d42d60f0930a629e2a94adce1a44f3028835b81dd99b29610371b4be",
+            "blob": "fda633bc75bb56bf4e2a885fc0d9af3821af66b2",
+            "content": "sha256:cf9d5b9ad82f2e7c46a1a7d3a7a83bc93c5d3e6003f84122e5807da7f05df15f",
             "locator": {
-              "kind": "symbol",
-              "name": "test_memory_record_answer_uses_curator_lane_without_reopening_passed_code"
+              "kind": "file"
             }
           },
           "kind": "test"

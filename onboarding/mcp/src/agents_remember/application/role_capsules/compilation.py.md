@@ -74,7 +74,9 @@ No relevant documentation found after checking live sources.
 
 ### Repo-Internal References
 
+
 - The pure compiler this entry point calls and the refusal-shaped manifest builders it selects between. [1]
+
 - The admission step whose refusal is converted into the same outcome shape. [2]
 - The task-projection seam accepted here and verified inside the compiler. [3]
 - The typed refusal carried as a value. [4]

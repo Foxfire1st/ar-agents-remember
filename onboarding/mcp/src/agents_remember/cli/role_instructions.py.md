@@ -20,6 +20,6 @@ The required review-presenter capsule phrase changes from attempt to environment
 - Choice metadata digests note text and strips profile notes. [2]
 - Instruction records drop delivered text from stored blocks. [3]
 
-- The capability layer reads a non-seat capability's instructions from the installed resource under `CAPABILITY_RESOURCES` and `ar-capability-resource/v1`: `load_capability_resource` enforces the shipped word budget and wording at the read, `compose_capability_capsule` composes a baseline, an addition or a replacement, and `write_generated_capability_copy` with `capability_copy_drift` keep the installed copy a generated projection of the canonical source so a hand-edited copy is refused. \[4] [4]
+- The capability layer reads a non-seat capability's instructions from the installed resource under `CAPABILITY_RESOURCES` and `ar-capability-resource/v1`: `load_capability_resource` enforces the shipped word budget and wording at the read, `compose_capability_capsule` composes a baseline, an addition or a replacement, and `write_generated_capability_copy` with `capability_copy_drift` keep the installed copy a generated projection of the canonical source so a hand-edited copy is refused. [4]
 
 - The required review-presenter capsule phrase changes from attempt to environment, matching the durable per-leaf explainer ownership rather than a transient presenter attempt. [5]

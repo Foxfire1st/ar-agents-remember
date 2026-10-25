@@ -41,27 +41,33 @@ result and full-detail log retain scalar `admission`; the ordinary citation stat
 does not currently project it, and completion does not merge omitted fields back into the answer. The exact configured-contract-authority catch stays narrow. For a legacy-format refusal,
 `_carry_legacy_refusal` additionally carries the central `code` and conversion `detail` into the public answer: a whole-result log alone does not tell the caller how to recover. Ordinary failed converted fixes project stale, unreadable and authoring-refused entries only; the removed migration and old-format repair-list projections do not supply another repair route.
 
-- The retained citation-fix payload forwards the optional contract and translates only configured-contract authority mismatch. [9]
+
+- The retained citation-fix payload forwards the optional contract and translates only configured-contract authority mismatch.
+
 
 ## Current evidence
 
-Inherited numbered findings [1], [3] retain their exact wording and full targets as historical custody where their candidate9 owner is retired or their account conflicts with the current route. They are not evidence that an absent legacy owner still executes. No guarantee is retired by this proposal; parent disposition remains required. The source-bound current account below is separate.
+Inherited numbered findings retain their exact wording and full targets as historical custody where their candidate9 owner is retired or their account conflicts with the current route. They are not evidence that an absent legacy owner still executes. No guarantee is retired by this proposal; parent disposition remains required. The source-bound current account below is separate.
 
-- Converted citation fixes return bounded status/count work orders; legacy-format refusals carry conversion code/detail rather than a repair list. [12]
+- Converted citation fixes return bounded status/count work orders; legacy-format refusals carry conversion code/detail rather than a repair list.
 
-- The source test asserts singleton reference scope, full status counts and a capped actionable first slice without authoring/rewritten-detail delivery. [13]
-
-
-- Carryover adapters retain full review detail and merge genuine delivered decision fields into the validated/logged whole; only apply files a per-call report. Compact answers retain recovery guidance, decisions/carriedPaths and apply reportPath without raw candidates/conversion/publication. [14]
+- The source test asserts singleton reference scope, full status counts and a capped actionable first slice without authoring/rewritten-detail delivery.
 
 
-- Route refresh delivers counts and stale targets rather than successful index material. [10]
 
-- Citation fix delivers the ordinary status projection while preserving the configured-authority refusal. [11]
+- Carryover adapters retain full review detail and merge genuine delivered decision fields into the validated/logged whole; only apply files a per-call report. Compact answers retain recovery guidance, decisions/carriedPaths and apply reportPath without raw candidates/conversion/publication.
 
-- Current source excerpt `def memory_quality_check_payload(` identifies this section's adapter/control owner, not an executed success. [7]
 
-- Current source excerpt `def _bounded_lists(payload: dict[str, Any], names: tuple[str, ...]) -> dict[str, Any]:` identifies this section's adapter/control owner, not an executed success. [8]
+
+- Route refresh delivers counts and stale targets rather than successful index material.
+
+
+- Citation fix delivers the ordinary status projection while preserving the configured-authority refusal.
+
+
+- Current source excerpt `def memory_quality_check_payload(` identifies this section's adapter/control owner, not an executed success.
+
+- Current source excerpt `def _bounded_lists(payload: dict[str, Any], names: tuple[str, ...]) -> dict[str, Any]:` identifies this section's adapter/control owner, not an executed success.
 
 ## Historical superseded account (non-operative)
 
@@ -148,9 +154,10 @@ controller.
 `truncatedNote` says how to get the rest: name one card, or run the command line's dry run. An unconverted tree's
 result is passed through unchanged, because its complete repair list is that fixer's contract.
 
-- A converted tree's citation-fix result is bounded for transport; a legacy result passes through. [1]
-- Each named list capped, with its full count. [2]
-- The response caps every list, says so, and keeps the full counts. [3]
+
+- The bounded citation-fix helper caps a converted tree's lists and passes a legacy result through; the delivered answer is the capped status projection and the whole result is kept for the log.
+
+- Each named list capped, with its full count.
 
 ## Historical two-caller account — configured-authority mismatch
 
@@ -170,9 +177,12 @@ empty because the sweep's probe meets only that condition. The refusal is built 
 adapter cannot answer the same condition two ways; `citation_fix`'s answer still passes through
 `bounded_citation_fix`.
 
-- The retained citation-fix adapter's configured-contract-authority refusal names the status and next action; the former MCP migration caller is retired. [4]
-- The refusal carries the failing side and name in its detail, for both tools. [5]
+- The retained citation-fix adapter's configured-contract-authority refusal names the status and next action; the former MCP migration caller is retired.
 
-- Only that error is translated: every other error, an `AuthorityError` among them, still propagates unchanged. [6]
+- The refusal carries the failing side and name in its detail, for both tools.
 
-- The payload now computes whole first and supplies the filtered answer only for legacy-format; full is still handed to _tool_payload. Other changes defer cutover imports with the same error semantics. [15]
+
+
+- Only that error is translated: every other error, an `AuthorityError` among them, still propagates unchanged.
+
+- The payload now computes whole first and supplies the filtered answer only for legacy-format; full is still handed to _tool_payload. Other changes defer cutover imports with the same error semantics.

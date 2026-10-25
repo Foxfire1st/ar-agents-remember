@@ -6,7 +6,7 @@
 
 ## Current source contract evidence
 
-- Current candidate source supports the operative account; historical sections grant no current tool or execution acceptance. [7]
+- Current candidate source supports the operative account; historical sections grant no current tool or execution acceptance.
 
 ## Purpose
 
@@ -37,13 +37,13 @@ adapters do not supply a generic restart or skill installation tool.
 
 ## Current evidence
 
-- Current source excerpt `def server_info_payload(` identifies this section's adapter/control owner, not an executed success. [3]
+- Current source excerpt `def server_info_payload(` identifies this section's adapter/control owner, not an executed success.
 
-- Current source excerpt `class ServerInfoResponse(ResponseModel):` identifies this section's adapter/control owner, not an executed success. [4]
+- Current source excerpt `class ServerInfoResponse(ResponseModel):` identifies this section's adapter/control owner, not an executed success.
 
-- Current source excerpt `def runtime_install_payload(` identifies this section's adapter/control owner, not an executed success. [5]
+- Current source excerpt `def runtime_install_payload(` identifies this section's adapter/control owner, not an executed success.
 
-- Current source excerpt `# Rule 2: a list with more entries is cut; the answer keeps the count, the` identifies this section's adapter/control owner, not an executed success. [6]
+- Current source excerpt `# Rule 2: a list with more entries is cut; the answer keeps the count, the` identifies this section's adapter/control owner, not an executed success.
 
 ## Historical superseded account (non-operative)
 

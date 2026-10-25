@@ -86,7 +86,9 @@ The declaration, registry and frozen continuation are production owners. The foc
 - Continuation and terminal release share the same physical registry lock. [6]
 - Process-start liveness and operation-scoped owner identities. [7]
 - Host-local registry root configuration. [8]
+
 - One physical lock protocol, actual thread/process exclusion and capability probe. [9]
+
 - Typed lock and authority refusal surfaces. [10]
 
 ### Cross-Repo References

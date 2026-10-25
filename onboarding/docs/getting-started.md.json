@@ -1,10 +1,11 @@
 {
   "path": "docs/getting-started.md",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
-        "blob": "c37ed5a457d4f3b5771aaf6cead17a534827e4d6",
-        "content": "sha256:83d0894afa9ba8896158c2d00660e761b6e33f03eef74850c557b5162262c982",
+        "blob": "5f6047fcfe018839ff9723eb04c29ad9ac43b465",
+        "content": "sha256:9a2072e139e6af06b4aec61fd0f91b77b543921f3f54dad81b7dc93fc877a2a0",
         "locator": {
           "kind": "file"
         }
@@ -15,7 +16,7 @@
         "handoffEntry": "L192-W-R199-12",
         "leaf": "260928-MIK-L192"
       },
-      "rationale": "The getting-started claims do not send a new user to a provider install.",
+      "rationale": "docs/getting-started.md at C still describes setup without a provider step and says retired providers are reported as unused with no provider indexing or watcher started.",
       "role": "presentation"
     },
     {

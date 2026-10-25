@@ -261,22 +261,34 @@ declarations support the scoped account, not fresh execution acceptance.
 - The main file opener sequences its own responses and delegates comparison-first, then leaf/master/scope diff selection to the real request owner. [3]
 - Forward/reverse partner mapping admits code/ordinary Markdown sidecars and excludes overview/entities/index reverse partners. [4]
 - The list/diff delegates call the shared change-set client; comparison address and generation pins remain explicit rather than another selected range. [5]
+
 - The current workspace mounts the selected main pane and a second partner pane only when its supplied partner value exists. [6]
+
+
 - The actual cockpit takeover dispatches review targets separately and supplies the ordinary viewer Back and leaf-retarget callbacks. [7]
+
 - After a current error is handled, the nonerror middle-pane branches are a selected diff, an explicitly worded zero/filter-zero result, or the pick-a-file backdrop. [8]
+
 - The current task/detail controls supply change-set targets; their caller, not this viewer, owns entry selection. [9]
+
 - Stored component cases with seeded API results assert loading, Back, a master file read and listed-generation pins; these are source assertions, not a fresh route/test run. [10]
 - The shared list URL requests the master per-leaf breakdown; the viewer reads returned leaves by field presence rather than inventing them. [11]
 - The leaf rail prints each supplied state and its separate code/memory counters. [12]
+
 - Leaf-row callbacks choose working versus committed from the returned row and compose its repo/master/leaf target through the supplied callback. [13]
+
 - The current refusal renderer exposes the supplied owner code/status/detail and optional offending input/action; it does not invent absent fields. [14]
 - An error precedes selected diff and zero/backdrop branches; filtered-zero wording does not claim the entire comparison was measured empty. [15]
+
 - The cockpit forwards leaf reopening into the existing takeover instead of requiring another document-navigation path. [16]
+
 - Stored seeded component cases assert per-leaf counters, both leaf modes, a named refusal and measured-empty wording; historical captured-body comments are not fresh server execution. [17]
 - A numbered comparison is forwarded intact to the shared list URL owner before other range choices. [18]
 - Per-file comparison reads take the explicit comparison address before leaf/master/scope fallbacks. [19]
 - Shared ReviewFilters, not removed local functions, owns destination labels/counts, non-all eligibility and by-design explanation text. [20]
+
 - The comparison header names its number, Back destination and abbreviated code trees; it does not display all four full operands. [21]
+
 - The comparison entry/filter effect opens the matching initial file, or clears the selection when there is none. [22]
 - A rendered list builds reviewFileBadges once from already supplied lane/inventory/worklist facts; no per-file gate request or classification is added. [23]
 - Eligible working leaf polls schedule the next refresh after both list/open-file requests settle; no explicit initial-load dependency or fixed wall-clock cadence is enforced. [24]

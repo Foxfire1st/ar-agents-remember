@@ -17,9 +17,15 @@ Source/test/fixture inspection is not a fresh mounted capture or a passing test 
 Historical provider-shaped input data and retained compatibility definitions do not
 restore removed provider visuals or tool exposure.
 
-- EnclosureProcessMap no longer accepts/forwards workspaceEngines or imports ProviderNode. It forwards node/gateNode/offic — source ownership, not executed visual proof. [11]
-- EnclosureProcessMap no longer accepts/forwards workspaceEngines or imports ProviderNode. It forwards node/gateNode/offic — source ownership, not executed visual proof. [12]
-- EnclosureProcessMap no longer accepts/forwards workspaceEngines or imports ProviderNode. It forwards node/gateNode/offic — source ownership, not executed visual proof. [13]
+
+- `EnclosureProcessMap` takes `node` and an optional `officialLedger` and forwards both to `EnclosureCanvas`; it reads no workspace engines or provider nodes. [11]
+
+
+- EnclosureProcessMap accepts node and optional officialLedger, forwards them to EnclosureCanvas, and selects abandon/cleanup presentation from teardownKind. Its source imports and props contain no workspaceEngines or ProviderNode; this is source ownership, not executed visual proof. [12]
+
+
+- `EnclosureProcessMap` takes `node` and an optional `officialLedger` and forwards both to `EnclosureCanvas`; it reads no workspace engines or provider nodes. [13]
+
 
 ## Historical superseded account (non-operative)
 
@@ -105,16 +111,36 @@ is `aria-hidden` pure atmosphere, never state. Shell hooks are `process-map` and
 
 ### Repo-Internal References
 
+
 - `EnclosureProcessMap` — `motion.div` shell (gated enter + `layout` morph) that delegates the scene. [1]
+
 - The G6 backdrop (`backdrop`/`backdropVideo`/`stageContent`) mounted only when effects are on. [2]
+
 - The shell renders no HTML fleeting banner and delegates every live scene branch to `EnclosureCanvas`. [3]
+
+
 - The canvas derives its `fleeting` predicate and renders `FleetingEnclosure` for the born-blocked case. [4]
+
 - The focused regression asserts the canvas-owned `fleeting-enclosure` exposes both stale-base recovery choices. [5]
-- The bird's-eye scene (the render body, given `workspaceEngines`). [6]
+
+
+
+
+
+- The bird's-eye scene (the render body, given `node` and the optional official ledger).  Earlier card anchor caption (historical provenance): `workspaceEngines` Source caption: `EnclosureCanvas` [6]
+
+
+
+
 - The honest-motion gate. [7]
 - EngineProcessNode is the generated projection contract consumed by this surface. [8]
 - ProviderNode is the generated projection contract consumed by this surface. [9]
-- GateNode is the generated projection contract consumed by this surface. [10]
+
+
+
+- The surface consumes the generated `EngineProcessNode` and `LedgerNode` records; no separate gate contract is read. [10]
+
+
 
 ## Current L5I Maintenance
 

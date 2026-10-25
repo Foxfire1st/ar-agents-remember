@@ -1,5 +1,6 @@
 {
   "path": "skills/l-01-agent-lifecycles/operations/planning.md",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
@@ -41,8 +42,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "084f763c88f1ebdef1358a52328f99a44df3223a",
-            "content": "sha256:2128e942e3b0ccb9cbd2e813f09585bea2ec8c46d7bf92e0085fd8452be1ddf0",
+            "blob": "39174489f4ffee8369bf9973ae1be09ef15b5307",
+            "content": "sha256:906fdabfc96eb8ecded4f70ae179fff5a0880efde8bb94a3b6f1655beaa2abe6",
             "locator": {
               "end": 9,
               "kind": "line_range",
@@ -58,8 +59,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "155a4a0f31d528f1b949ddb4aaf1d3131a36b5e3",
-            "content": "sha256:d6a1c6458d3a67ed54c0bbf0b399066022d8ac094110e5fae4673c5d0bd36f63",
+            "blob": "39174489f4ffee8369bf9973ae1be09ef15b5307",
+            "content": "sha256:d2e094479cb924799a40eb93de188b08ee126aa47d5b90722f319c57a1e08190",
             "locator": {
               "kind": "file"
             }
@@ -73,8 +74,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "084f763c88f1ebdef1358a52328f99a44df3223a",
-            "content": "sha256:a9a9b13805233933e48359c29f3bb507cffe2fd7502b2ecf7a873e5ef7e99813",
+            "blob": "39174489f4ffee8369bf9973ae1be09ef15b5307",
+            "content": "sha256:d2e094479cb924799a40eb93de188b08ee126aa47d5b90722f319c57a1e08190",
             "locator": {
               "end": 14,
               "kind": "line_range",

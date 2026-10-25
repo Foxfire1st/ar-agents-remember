@@ -42,7 +42,9 @@ The retained source anchors below support the fixture roles and assertion bounda
 
 - A second thread is kept out of a log that is already held. [1]
 - Taking a logs exclusivity twice on one thread does not deadlock. [2]
+
 - A dismissal is not lost to a prune sweeping on another thread. [3]
+
 - A store refuses the append itself and recovers once the lock works. [4]
 - A future row stops the authority read and only costs projection a tick. [5]
 - An interrupted rewrite cleans up too. [8]
@@ -52,5 +54,6 @@ The retained source anchors below support the fixture roles and assertion bounda
 No cross-repository implementation evidence is required for these local test and fixture claims.
 
 Fixture repositories and protocol doubles do not establish a live external integration.
+
 
 - Actual mutex contention precedes the negative dismissal assertion. [9]

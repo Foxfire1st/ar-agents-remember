@@ -34,12 +34,20 @@ Worker repairs a sealed finding directly in its own task files. No plan, account
 
 - Worker distinguishes a clean sync from an overlapping path or failing focused test, and repairs owned findings without prior approval. [6]
 - Each repaired finding has its own freeze entry; code PASS carries the same entries and changed paths directly to Curator. [7]
+
 - The Worker-only operation now carries conditional sync, direct repair and per-finding freeze evidence; its all-role audience marker adds no other seat. [5]
 
 
+
+
 - The freeze handover goes directly to the Reviewer and carries the appended journal records. [1]
+
+
 - The candidate stays uncommitted and the seat starts no role and stages nothing. [2]
+
+
 - A hand-over counts only on a reply naming its exact object; busy refusals are retried. [3]
+
 
 ## Inherited Source-Epoch Commentary
 
@@ -127,5 +135,6 @@ Inherited reference 3 commentary (not a revalidated target):
 ## Canonical Source Ownership
 
 The byte-equal package copy is a distribution carrier, not an independent role, task or permission authority. Whole-file source evidence does not certify inherited statements, execution, grading or the whole card.
+
 
 - The authored source owns this contract; the distribution copy is not a separate authority. [4]

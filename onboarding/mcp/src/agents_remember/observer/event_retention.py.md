@@ -29,5 +29,7 @@ No relevant external documentation found after checking in-repo design docs for 
 
 Fresh offsets and compaction retain the bounded workspace River.
 
-- Fresh replay uses virtual base plus the first not-provably-old offset. [1]
+
+- `initial_event_offsets` gives a fresh `/api/events` connection the workspace river's start: the stored virtual base plus the first row still inside the replay TTL. The river is also cut by size on admission — a ceiling and a trim level — so the retained window is bounded by age and bytes. [1]
+
 - Unparseable timestamps are retained rather than guessed old. [6]

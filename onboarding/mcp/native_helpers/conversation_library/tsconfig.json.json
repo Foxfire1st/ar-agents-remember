@@ -21,12 +21,12 @@
       ]
     },
     "2": {
-      "note": "Protocol code and tests are the complete included TypeScript source set.\n\nAnchor: \"export const PROTOCOL_VERSION\"",
+      "note": "Protocol code and tests are the complete included TypeScript source set.",
       "targets": [
         {
           "anchor": {
-            "blob": "70ba45a65f761568eb08f3174176d0d2e920802e",
-            "content": "sha256:5f9e1af9426c030318a23854f2cd89cef68b9a3710ccbc0ef3f605b5b102c379",
+            "blob": "10a7a9f179e8dff2b50d1779e43c2a52b4b6a562",
+            "content": "sha256:19299769ec918cbf22e87632ef5acbf56c9e92f42c296cb36800e1ad7a362fb5",
             "locator": {
               "end": 13,
               "kind": "line_range",

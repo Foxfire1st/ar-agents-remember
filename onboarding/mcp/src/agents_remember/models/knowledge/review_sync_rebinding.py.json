@@ -144,15 +144,14 @@
       ]
     },
     "20": {
-      "note": "**The read half that projects this record's own verdict into the review's measured-currentness vocabulary.**",
+      "note": "**The read half that projects this record's own verdict into the review's measured-currentness vocabulary.**\n\nAnchor: `_project`",
       "targets": [
         {
           "anchor": {
-            "blob": "93731bde89e06ef01c6f5b0ae7c8ce7dd102a747",
-            "content": "sha256:8f9ca922b68691ee041e2b5f39d96ababee0a521df37edd10be6a59796780642",
+            "blob": "3a7a51167bc4342c1d0cd79fee92196b7ae12b14",
+            "content": "sha256:8cc0bd8a910711f5fab8a88d254b0100adad175944c0bb7bd41a787a28e086be",
             "locator": {
-              "kind": "symbol",
-              "name": "_project"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/review_sync_movement.py"
           },

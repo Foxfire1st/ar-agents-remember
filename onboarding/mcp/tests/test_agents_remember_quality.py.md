@@ -38,7 +38,9 @@ No configured domain evidence applies to the file-local claims above.
 
 The retained source anchors below support the fixture roles and assertion boundaries described above. They identify current behavior, not a request to restore historical test counts or percentage targets.
 
+
 - Gate four not applicable result does not claim real codex execution. [1]
+
 - Python suite refuses missing or mismatched dagger attestation. [2]
 - Dagger quality red gate one still terminalizes every gate one sibling. [3]
 

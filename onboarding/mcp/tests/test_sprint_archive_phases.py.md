@@ -14,4 +14,5 @@ MIK-R82 rule 1: a failure before the moves end restores every folder and removes
 
 ## Evidence
 
+
 - Phase rollback, hook-failure retention with retry, and repeat comparison are pinned. [1]

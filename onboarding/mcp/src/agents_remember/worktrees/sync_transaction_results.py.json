@@ -3,15 +3,14 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "Retained conflict shapes.",
+      "note": "Retained conflict shapes.\n\nAnchor: `resolution_required`",
       "targets": [
         {
           "anchor": {
-            "blob": "3478a7daa4b6b4545dc212e58ea592800554348b",
-            "content": "sha256:b319465bab96886aa6c108ee1a03fe918bc3301a05b88d2cea243fad52822b3e",
+            "blob": "f3de75deccdec38465593f20a672d660f0157e49",
+            "content": "sha256:7237aa0cf7d44bd76a6ca1a9a50c9746aa0cc1a8ebc8c6bb6e9c40ad662bab04",
             "locator": {
-              "kind": "symbol",
-              "name": "resolution_required"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -35,15 +34,16 @@
       ]
     },
     "13": {
-      "note": "Current file-based resolution model.",
+      "note": "Current file-based resolution model.  Anchor: `SyncResolutionProjection`",
       "targets": [
         {
           "anchor": {
-            "blob": "3ff8738a74b90a9cde9779804b87b348f22f8127",
-            "content": "sha256:7ee5b7aa48b2e692966b0d8f2ce90800290025dae7f0995044c9832235eb34f8",
+            "blob": "b4bf02afeb62c71b1a3333562b505eeb244d637e",
+            "content": "sha256:37d26dc6580a5156f8db068920c6b6bd8bf2336525e967f199ff2b34e0f481b5",
             "locator": {
-              "kind": "symbol",
-              "name": "SyncResolutionProjection"
+              "end": 188,
+              "kind": "line_range",
+              "start": 168
             },
             "path": "mcp/src/agents_remember/models/worktree.py"
           },
@@ -52,15 +52,14 @@
       ]
     },
     "19": {
-      "note": "A nonempty structural memory-merge report adds resolution.crossing and a named report summary, including all-converted diagnostics; converted selects crossing wording. With no report, no report-derived block or sentence is added.",
+      "note": "A nonempty structural memory-merge report adds resolution.crossing and a named report summary, including all-converted diagnostics; converted selects crossing wording. With no report, no report-derived block or sentence is added.\n\nAnchor: `resolution_required`",
       "targets": [
         {
           "anchor": {
-            "blob": "3478a7daa4b6b4545dc212e58ea592800554348b",
-            "content": "sha256:b319465bab96886aa6c108ee1a03fe918bc3301a05b88d2cea243fad52822b3e",
+            "blob": "f3de75deccdec38465593f20a672d660f0157e49",
+            "content": "sha256:7237aa0cf7d44bd76a6ca1a9a50c9746aa0cc1a8ebc8c6bb6e9c40ad662bab04",
             "locator": {
-              "kind": "symbol",
-              "name": "resolution_required"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -68,15 +67,14 @@
       ]
     },
     "2": {
-      "note": "Structural/crossing report guidance.",
+      "note": "Structural/crossing report guidance.\n\nAnchor: `resolution_required`",
       "targets": [
         {
           "anchor": {
-            "blob": "3478a7daa4b6b4545dc212e58ea592800554348b",
-            "content": "sha256:b319465bab96886aa6c108ee1a03fe918bc3301a05b88d2cea243fad52822b3e",
+            "blob": "f3de75deccdec38465593f20a672d660f0157e49",
+            "content": "sha256:7237aa0cf7d44bd76a6ca1a9a50c9746aa0cc1a8ebc8c6bb6e9c40ad662bab04",
             "locator": {
-              "kind": "symbol",
-              "name": "resolution_required"
+              "kind": "file"
             }
           },
           "kind": "code"

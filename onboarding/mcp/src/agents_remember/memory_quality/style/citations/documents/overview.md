@@ -21,6 +21,7 @@ Removed document adapters supply no additional authority or legacy permission.
 
 ## Evidence
 
-- The surviving citation owner resolves one qualified construct through the shared symbol-span rule. [1]
+> Retained earlier citation wording: - The surviving citation owner resolves one qualified construct through the shared symbol-span rule. [1]
 
-- The surviving citation owner resolves one qualified construct through the shared symbol-span rule. \[1] [1]
+
+- The surviving citation owner resolves one qualified construct through the shared symbol-span rule. [1]

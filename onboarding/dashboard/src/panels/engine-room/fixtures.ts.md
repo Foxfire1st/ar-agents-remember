@@ -85,11 +85,13 @@ Fixtures are presentation data only: they encode the wire shape (camelCase, `exc
 
 - Node/edge types this file shapes — the import list here, resolving to the mirror there. [1]
 - `EngineProcessEdge` server model — `extra="forbid"`, no `refusedPolarity`, no `refused` in the state comment. [2]
-- `_seed_edge_state` returns `stale` for the reroute case — the state this fixture now carries. [3]
+- No `_seed_edge_state` remains in the reducer; `_materialize_edge_state` returns only skipped, complete, unknown or planned. 
+
 - `EngineRoomScenario` interface + exported `ENGINE_ROOM_SCENARIOS` [4]
+
 - `engineProcess` core builder (override-last spread) [5]
 - `edges` / `EdgeStates` graph emitter (incl. the `integration` + memory-lane `integration-mem` edges); `EdgeStates` no longer carries a `cgcRefused` flag and the `cgc-seed` lane takes `states.cgc` straight through. [6]
-- `engine-cgc-seed-refused` — the T9C scenario, now `edges({ cgc: "stale", … })` with `seedFallback: true`. [7]
+- No `engine-cgc-seed-refused` scenario and no `cgc` edge-state lane remain in this file. 
 - `bootStages` six-frame build-up (B0 main-only → B5 nominal, 5i), spread into the export tail [8]
 - `engine-retired` (D6 stack-removed) + the D4/D5 split (`engine-landing-merged` integration-pending, `engine-cleanup-pending` de-materialise) [9]
 - `engine-landing-pushed` (05k, D3 "code lands": feat `pushed` · PR `merged` · origin/main `tip` · origin/mem-main still `planned`) — the D2·D3 split [10]

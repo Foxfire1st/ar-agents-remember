@@ -62,7 +62,9 @@ No Domain Documentation source is configured for this memory root.
 ### Repo-Internal References
 
 - The graph-less walk carries source-pair selection and pause/resume semantics. [1]
+
 - Plan review independently validates that choice. [2]
+
 
 ### Cross-Repo References
 

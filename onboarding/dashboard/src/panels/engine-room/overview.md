@@ -105,7 +105,7 @@ These superseded reference captions remain history; the current evidence region 
 - Retained reference account (no fresh execution or acceptance inferred): The cockpit shell that hides the rails for the Engine Room view (§4.1). [4]
 - Retained reference account (no fresh execution or acceptance inferred): `EngineProcessEdge` (`extra="forbid"`) with the documented `kind` and `state` vocabularies the flash derives from. [5]
 - Retained reference account (no fresh execution or acceptance inferred): The client mirror of the edge, which no longer declares a polarity field. [7]
-- Retained reference account (no fresh execution or acceptance inferred): Route still owns enclosure visualization, model/types, branch/coupler/ledger, straight worktree/sync/integration conduit — source ownership, not executed visual proof. [8] [9] [10] [11] [12]
+> > - Retained reference account (no fresh execution or acceptance inferred): Route still owns enclosure visualization, model/types, branch/coupler/ledger, straight worktree/sync/integration conduit — source ownership, not executed visual proof. [8] [9] [10] [11] [12]
 
 - Published process nodes are mapped and ordered without a lifecycle/session/gate join; only enclosureKey and node are returned. [13]
 
@@ -142,3 +142,7 @@ These superseded reference captions remain history; the current evidence region 
 - The former _seed_edge_state/_DECISIVE_SETUP_EDGE_STATES seed-lane account is historical. The current process reducer emits enclosure materialisation and sync edges with no provider seed/clone state reducer. [6]
 
 - The current process producer emits worktree-add, ledger-map and sync edges; provider seed/clone lanes and their state-precedence reducer are absent. [21]
+
+- Route still owns enclosure visualization, model/types, branch/coupler/ledger, straight worktree/sync/integration conduit — source ownership, not executed visual proof. [12]
+
+- The Engine Room model consumes server-composed enclosure process nodes without a client session join or safety inference and sorts them by phase then leaf/task identity. EngineRoom composes their stack, process-map stage with ledger input and diagnostics layout; these are source responsibilities, not executed visual proof. [8]

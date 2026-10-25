@@ -1,10 +1,11 @@
 {
   "path": "mcp/src/agents_remember/application/knowledge_writer/repoint.py",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
-        "blob": "883dc748c08fbd631020b50d34ea959d2a72eb8b",
-        "content": "sha256:a4fe56aef5fd967e6bbf54548d1651e081cb950633fdb3f99ef1a47ad61f7c6d",
+        "blob": "f6dd3fa6bb431ea9ffec7301f9ab7bd2bda866df",
+        "content": "sha256:03d7182698b77d71916665f7fed50fbe68b5c7a85a1159bffca11b0d71298bbf",
         "locator": {
           "kind": "symbol",
           "name": "RepointRowAuthoring"
@@ -16,13 +17,13 @@
         "handoffEntry": "the-curators-reconsideration-judgment-is-never-automated",
         "leaf": "260928-MIK-L186"
       },
-      "rationale": "The only code that writes a re-point reads it from a row request, so this class is the whole of the writer's share in the judgment and its absence of a default.",
+      "rationale": "`RepointRowAuthoring` is still the writer's whole share of the judgment: with no `request.repoint` it writes the inherited row, and a re-point is admitted only on a `still_rejected` row from the row's own `repoint` list (343, 348-354, 383), so nothing here re-points a link on its own.",
       "role": "primary-authority"
     },
     {
       "anchor": {
-        "blob": "883dc748c08fbd631020b50d34ea959d2a72eb8b",
-        "content": "sha256:a4fe56aef5fd967e6bbf54548d1651e081cb950633fdb3f99ef1a47ad61f7c6d",
+        "blob": "f6dd3fa6bb431ea9ffec7301f9ab7bd2bda866df",
+        "content": "sha256:03d7182698b77d71916665f7fed50fbe68b5c7a85a1159bffca11b0d71298bbf",
         "locator": {
           "kind": "symbol",
           "name": "RepointRowAuthoring"
@@ -34,7 +35,7 @@
         "handoffEntry": "a-still-rejected-row-may-re-point-a-fired-link-whose-code-is-gone",
         "leaf": "260928-MIK-L186"
       },
-      "rationale": "The row side of the same judgment: it places the re-pointed decision and bumps the revision once, and a rerun writes the same bytes.",
+      "rationale": "RepointRowAuthoring still places the re-pointed decision and bumps the revision once so a rerun writes the same bytes; its span matches C.",
       "role": "unclassified"
     },
     {
@@ -181,15 +182,14 @@
       ]
     },
     "8": {
-      "note": "Each re-point is reported with its link, both paths and the row's reason.",
+      "note": "Each re-point is reported with its link, both paths and the row's reason.\n\nAnchor: `_note_repoints`",
       "targets": [
         {
           "anchor": {
-            "blob": "883dc748c08fbd631020b50d34ea959d2a72eb8b",
-            "content": "sha256:2032c5081e9523aa9529c5b086d5b6024fd047f89dd2bfb6960a2acdac150e69",
+            "blob": "f6dd3fa6bb431ea9ffec7301f9ab7bd2bda866df",
+            "content": "sha256:dc413372874664ebcebe2db818c89f7ef478ed5d4c56d5741e3542b2eb5c8d3a",
             "locator": {
-              "kind": "symbol",
-              "name": "_note_repoints"
+              "kind": "file"
             }
           },
           "kind": "code"

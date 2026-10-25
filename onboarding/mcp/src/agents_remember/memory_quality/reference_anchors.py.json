@@ -1,0 +1,484 @@
+{
+  "path": "mcp/src/agents_remember/memory_quality/reference_anchors.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "33259ce06fc28a1651d2031509d9e68fd9ca1804",
+        "content": "sha256:8e08d0b1485576102932763310b43e2be38fc8c9756d9c2dbfa8724cf9577005",
+        "locator": {
+          "kind": "symbol",
+          "name": "observe"
+        }
+      },
+      "id": "RLZ-Q4HG5W",
+      "invariant": "INV-033XSD",
+      "origin": {
+        "handoffEntry": "MIK-R198@v2 §5-§7 publication-refuses-stale-anchor",
+        "leaf": "260928-MIK-L191"
+      },
+      "rationale": "Classifies one anchor at the pair as current, stale:blob, moved:range, stale:content, stale:ambiguous, stale:unresolved or stale:path-absent, and claims a mechanical repair only where the shipped fixer performs one.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "33259ce06fc28a1651d2031509d9e68fd9ca1804",
+        "content": "sha256:6ce12a4e21da23e557d322ed638c724a1734cfdf4ce4eddcb9fdb439c53ed089",
+        "locator": {
+          "kind": "symbol",
+          "name": "census"
+        }
+      },
+      "id": "RLZ-Z4CHDP",
+      "invariant": "INV-BTF5NF",
+      "origin": {
+        "handoffEntry": "MIK-R198@v2 §2 anchor-census",
+        "leaf": "260928-MIK-L191"
+      },
+      "rationale": "Walks every sidecar at one pair, classifies each anchor, and counts what it promised against what the fixer would actually do.",
+      "role": "unclassified"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The module states the four classes, the exact-pair requirement and the fixer reuse it is built on.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "33259ce06fc28a1651d2031509d9e68fd9ca1804",
+            "content": "sha256:cdcb7a9d73585093898ad0cba36d7b390fae3c95d76b0ac2e5e7084775ba9016",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "Already-parsed sidecars are observed, and the distinct paths are prefetched once.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "33259ce06fc28a1651d2031509d9e68fd9ca1804",
+            "content": "sha256:26ceed3838e1431853300000774efc6a5c725a1d07f7d2a3fabf846ccca698fd",
+            "locator": {
+              "kind": "symbol",
+              "name": "observations_of"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "Only file and route sidecars are observed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "33259ce06fc28a1651d2031509d9e68fd9ca1804",
+            "content": "sha256:9aed28b2606fa904294e49503b35bec8d5ab89eb6a5b8f1ff7429c25f33bbc95",
+            "locator": {
+              "kind": "symbol",
+              "name": "_sidecars"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The onboarding sidecars the product parser cannot read.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "33259ce06fc28a1651d2031509d9e68fd9ca1804",
+            "content": "sha256:5147b19386d762ac5c7fdfbe8b4f44715cd1092458c99417e312f7141349a327",
+            "locator": {
+              "kind": "symbol",
+              "name": "unreadable_sidecars"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "The readable sidecars the tree parser refused for their location, compared by physical path.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "33259ce06fc28a1651d2031509d9e68fd9ca1804",
+            "content": "sha256:21bf5a8f67bf0b1f1adaa8486e302b27bb3d2ad2f6b6913e82ccd2f8eb3f7aaa",
+            "locator": {
+              "kind": "symbol",
+              "name": "rejected_sidecars"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "A target's source route is its first path segment.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "33259ce06fc28a1651d2031509d9e68fd9ca1804",
+            "content": "sha256:3de639e615d75ff623c8e79cef03a90237d193cc9cdf01b0f40c26866f09ba1a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_source_route"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "The rule-1 census counts states, repairs, per-sidecar rows and per-route totals that reconcile to the denominator, and answers `ok` only when no input is invalid and every anchor is current.\n\nAnchor: `routeCount`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "33259ce06fc28a1651d2031509d9e68fd9ca1804",
+            "content": "sha256:6ce12a4e21da23e557d322ed638c724a1734cfdf4ce4eddcb9fdb439c53ed089",
+            "locator": {
+              "end": 441,
+              "kind": "line_range",
+              "start": 397
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "The affected sidecars split into repairable and judgment documents.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "33259ce06fc28a1651d2031509d9e68fd9ca1804",
+            "content": "sha256:6e791f9c7cac1b7ed0d0413baa5a4a0aa056c8643e09a3e2917e7b0f68bca3ca",
+            "locator": {
+              "kind": "symbol",
+              "name": "_documents"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "Card names are split from the cardless remainder rather than dropping it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "33259ce06fc28a1651d2031509d9e68fd9ca1804",
+            "content": "sha256:d416f27ba61e415d8acf3b07cc6a2a45e07f51edea32265d97203d649e79b1fb",
+            "locator": {
+              "kind": "symbol",
+              "name": "_card_names"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "The directory pair run the CLI calls.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "33259ce06fc28a1651d2031509d9e68fd9ca1804",
+            "content": "sha256:4ef86feb302460109e7f31897ec26cd44d9f4c9c546a2998047185bcd4924c0d",
+            "locator": {
+              "kind": "symbol",
+              "name": "census_for_memory"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "The parser is imported lazily because the validator package imports this module's rule module.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "33259ce06fc28a1651d2031509d9e68fd9ca1804",
+            "content": "sha256:d23dafdc2926f2781ed9caf6a52e6f627c6054173fd06a3cfec667774655f024",
+            "locator": {
+              "kind": "symbol",
+              "name": "_parse_tree"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The census schema tag and the rule id the validator registers.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "33259ce06fc28a1651d2031509d9e68fd9ca1804",
+            "content": "sha256:2589ad76e2c0cc9b9865f388dbe91ebc337093eaaebf418692b9df2820d7e40f",
+            "locator": {
+              "kind": "symbol",
+              "name": "CENSUS_SCHEMA"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "Current is the only zero-debt state.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "04133ff7e06104be55cca690b0d2da9b7cfdaa9c",
+            "content": "sha256:1377153de772bf36087de9da6f57f458c6d5038f73a89fe82856c99b177c1031",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_current_anchor_is_the_only_zero_debt_state"
+            },
+            "path": "mcp/tests/test_reference_anchors_census.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "21": {
+      "note": "A same-blob anchor with a wrong locator is judgment because the fixer refuses it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "04133ff7e06104be55cca690b0d2da9b7cfdaa9c",
+            "content": "sha256:7fa3b5507d3e48544fabb9b6e12e002e5bd3bdba357b1aac635aaf7ad305a1a1",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_same_blob_anchor_with_a_wrong_locator_is_judgment_because_the_fixer_refuses"
+            },
+            "path": "mcp/tests/test_reference_anchors_census.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "22": {
+      "note": "Route totals reconcile to the denominator.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "04133ff7e06104be55cca690b0d2da9b7cfdaa9c",
+            "content": "sha256:700afbcf1dddaf7efe070a44331f470e792cf40850819b519312b3336bc9dbe8",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_census_reconciles_its_targets_by_source_route"
+            },
+            "path": "mcp/tests/test_reference_anchors_census.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "23": {
+      "note": "Mechanical repair is claimed exactly where the shipped fixer repairs.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "04133ff7e06104be55cca690b0d2da9b7cfdaa9c",
+            "content": "sha256:041fdeb3cdcf417f809708456d696a784e01df8c63ac7ac26e1f55b0affca802",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_mechanical_repair_is_claimed_exactly_where_the_shipped_fixer_repairs"
+            },
+            "path": "mcp/tests/test_reference_anchors_census.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "24": {
+      "note": "A range that appears twice is ambiguous and needs judgment.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "04133ff7e06104be55cca690b0d2da9b7cfdaa9c",
+            "content": "sha256:3659470a0478753458a066f7c8f872b491fa3398a24fb1c2ee3d14fd1b403cd8",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_line_range_that_appears_twice_is_ambiguous_and_needs_judgment"
+            },
+            "path": "mcp/tests/test_reference_anchors_census.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "25": {
+      "note": "A sidecar the parser refused is named and the census is not complete.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "04133ff7e06104be55cca690b0d2da9b7cfdaa9c",
+            "content": "sha256:2457dc1c11bb67cbf9ccfa15f360e4a7758d629f19e75c91b9640a4c81738266",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_sidecar_the_parser_refused_is_named_and_the_census_is_not_complete"
+            },
+            "path": "mcp/tests/test_reference_anchors_census.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "26": {
+      "note": "An accepted sidecar cannot alias a rejected one out of the accounting.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "04133ff7e06104be55cca690b0d2da9b7cfdaa9c",
+            "content": "sha256:e85f541d60c0b22582e957f4453efdee814fd5115c30458a622271ba815dce29",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_accepted_sidecar_cannot_alias_a_rejected_sidecar_out_of_the_accounting"
+            },
+            "path": "mcp/tests/test_reference_anchors_census.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "27": {
+      "note": "The directory census measures a working-tree pair.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "04133ff7e06104be55cca690b0d2da9b7cfdaa9c",
+            "content": "sha256:154456a03b4f2c9ebeeb107bc5c05e49527de8f0b176073b8993d1eb8d82aa88",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_directory_census_measures_a_working_tree_pair"
+            },
+            "path": "mcp/tests/test_reference_anchors_census.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "A locator is rendered as one comparable line for the three locator kinds.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "33259ce06fc28a1651d2031509d9e68fd9ca1804",
+            "content": "sha256:2a7d7add4aa608b6412186893e24a0f9c9932d0853c3ead9c96ce44361d594b5",
+            "locator": {
+              "kind": "symbol",
+              "name": "render_locator"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Every start whose same-length lines carry the recorded content.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "33259ce06fc28a1651d2031509d9e68fd9ca1804",
+            "content": "sha256:8056641d7f44f844c8344282bca62ebc4c54ba018fe0ca50e8f11dc4b729eb91",
+            "locator": {
+              "kind": "symbol",
+              "name": "_range_matches"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "One anchor's state at one pair, and what closes it, decided through the shipped fixer's function.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "33259ce06fc28a1651d2031509d9e68fd9ca1804",
+            "content": "sha256:8e08d0b1485576102932763310b43e2be38fc8c9756d9c2dbfa8724cf9577005",
+            "locator": {
+              "kind": "symbol",
+              "name": "observe"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The observation record, its `current` test and the row projection.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "33259ce06fc28a1651d2031509d9e68fd9ca1804",
+            "content": "sha256:9d597826e9d4f381921728012cdaba95ac89e8d61c480795f07f2d633abea7bb",
+            "locator": {
+              "kind": "symbol",
+              "name": "AnchorObservation"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The judgment states the shipped repair rule refuses.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "33259ce06fc28a1651d2031509d9e68fd9ca1804",
+            "content": "sha256:57572c9d8535ad6ff5119073f7553f6776e83486dff2dd6757834500f54252b5",
+            "locator": {
+              "kind": "symbol",
+              "name": "_judged"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "A range's judgment: ambiguous, one identical match the fixer will not refresh, or no identical range.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "33259ce06fc28a1651d2031509d9e68fd9ca1804",
+            "content": "sha256:983f7cf3b3e9e2452c4be4593d440a806330268c191996efe7921f261c7e17b1",
+            "locator": {
+              "kind": "symbol",
+              "name": "_judged_range"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Every code or test target of one sidecar, with its `references.N.targets.I` field.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "33259ce06fc28a1651d2031509d9e68fd9ca1804",
+            "content": "sha256:80f33f53202918b3c9ffb936ed91dc0ee9e9e43265b4274fd3dc4b27bc6c3ef8",
+            "locator": {
+              "kind": "symbol",
+              "name": "reference_targets"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

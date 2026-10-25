@@ -60,8 +60,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "90b609572aa48fb2a5e13fbf13040c2f337839b0",
-            "content": "sha256:54e6493669a47ba6cf13fdf525c739de4a1ac59255c99f635a7398b21561700d",
+            "blob": "9f6e5640683f5837e056f35ab36b73d582df963d",
+            "content": "sha256:1370d89348c253989e44556933ef532f9e18cb312db58b4d7c604dea6da98bb4",
             "locator": {
               "end": 101,
               "kind": "line_range",
@@ -126,15 +126,14 @@
       ]
     },
     "3": {
-      "note": "The response builders, and the admitted facts that are present in a refusal as well as a success.",
+      "note": "The response builders, and the admitted facts that are present in a refusal as well as a success.\n\nAnchor: `role_capsule_response`",
       "targets": [
         {
           "anchor": {
-            "blob": "1561b7a012399b00069bb85b8abe538377e89057",
-            "content": "sha256:6527bdaf8b5b6feac4cbc3bbda489568653f8a287c5adbba5456e421f0bf3e06",
+            "blob": "2f9008e97604943a305aca323ecb9410f0e66057",
+            "content": "sha256:fba14f2ddb26d1fec29fa3d44f98a77c83610b3c19ea132676d2d9434b15be6f",
             "locator": {
-              "kind": "symbol",
-              "name": "role_capsule_response"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -142,15 +141,14 @@
       ]
     },
     "4": {
-      "note": "A refusal keeps the manifest facts it has and never fabricates capsule content.",
+      "note": "A refusal keeps the manifest facts it has and never fabricates capsule content.\n\nAnchor: `_fill_manifest`",
       "targets": [
         {
           "anchor": {
-            "blob": "90a25a6f5ceee4fe834fa6cf854b9b489659cdf2",
-            "content": "sha256:9876ee58b74090ed105bd80b901cb382629d798c1e8a7fc16cc750e2fbf1fcf4",
+            "blob": "2f9008e97604943a305aca323ecb9410f0e66057",
+            "content": "sha256:fba14f2ddb26d1fec29fa3d44f98a77c83610b3c19ea132676d2d9434b15be6f",
             "locator": {
-              "kind": "symbol",
-              "name": "_fill_manifest"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -202,39 +200,14 @@
       ]
     },
     "7": {
-      "note": "The strict response contracts these builders produce.",
+      "note": "The strict response contracts these builders produce.\n\nAnchor: `RoleCapsuleResponse` `SkillCatalogListResponse` `SkillCatalogReadResponse`",
       "targets": [
         {
           "anchor": {
-            "blob": "930081c5d499f7270a7cb697d458ef0bb62d2e97",
-            "content": "sha256:c60e6b82416934f780fdf1ce59eff9840476c4c307fc19b9b2089f211449a4c9",
-            "locator": {
-              "kind": "symbol",
-              "name": "RoleCapsuleResponse"
-            },
-            "path": "mcp/src/agents_remember/models/role_capsule_resources.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
             "blob": "6df57ae981982e091e8dd11888f3f8af12865542",
-            "content": "sha256:c3fcf3648ee9a334adea687e5219d8eaa03852026cc43e2a36e5c481ef8a5cd1",
+            "content": "sha256:b5773c433bf7281a0a3d1ef2939c9b0cb57f452e341b5ce6271d6521ebbe1481",
             "locator": {
-              "kind": "symbol",
-              "name": "SkillCatalogListResponse"
-            },
-            "path": "mcp/src/agents_remember/models/role_capsule_resources.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "6df57ae981982e091e8dd11888f3f8af12865542",
-            "content": "sha256:101b00e18d3e8cfe9badf6f0a19c0b0bd84063be7b88c8504e56a399b33234c5",
-            "locator": {
-              "kind": "symbol",
-              "name": "SkillCatalogReadResponse"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/models/role_capsule_resources.py"
           },
@@ -277,8 +250,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1d6d4c77ad41eb2f9783975d929a3519d218f22f",
-            "content": "sha256:fdc3df03e6984138a4dd82eb0bd84582f4754ab3779042878e6c006845bdd1f5",
+            "blob": "231672944ca7b848d89e9ce82d950d95d92e5cc2",
+            "content": "sha256:3457497d1f83653411517625d1ef81417210b9171d8c2fb902e8e7475cd7d598",
             "locator": {
               "kind": "symbol",
               "name": "test_the_discovery_registry_is_not_the_model_visible_catalog"
@@ -289,12 +262,23 @@
         },
         {
           "anchor": {
-            "blob": "1d6d4c77ad41eb2f9783975d929a3519d218f22f",
-            "content": "sha256:2b0607b723b829d47ef5ccf50b50809eed6a8297c71b5cdd98c349e47383b521",
+            "blob": "231672944ca7b848d89e9ce82d950d95d92e5cc2",
+            "content": "sha256:0731ce888c5344263193519986fccf77d35e1c3355afa12391c30389b1ac6d9b",
             "locator": {
               "end": 891,
               "kind": "line_range",
               "start": 865
+            },
+            "path": "mcp/tests/test_capsule_serving.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "231672944ca7b848d89e9ce82d950d95d92e5cc2",
+            "content": "sha256:ad3d94e6364f84bb66c0c762b33c3ee884d2fb94066e18b3964f3c9321ecec05",
+            "locator": {
+              "kind": "file"
             },
             "path": "mcp/tests/test_capsule_serving.py"
           },

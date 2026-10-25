@@ -248,6 +248,23 @@
         }
       ]
     },
+    "20": {
+      "note": "Per-process fixture isolation, subprocess exception and coordination-root ownership at teardown. [20]",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5525d438c942b2a69ee259d8298c5d62dd65b6df",
+            "content": "sha256:0fef077bb72906dccf89fd0a2b67bae4f835d2be42490559798850205863ef24",
+            "locator": {
+              "end": 162,
+              "kind": "line_range",
+              "start": 105
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
     "4": {
       "note": "Integration files are skipped before import in a run that excludes integration.",
       "targets": [
@@ -297,15 +314,16 @@
       ]
     },
     "7": {
-      "note": "The environment is restored and the temporary directory removed.",
+      "note": "The environment is restored and the temporary directory removed.  Anchor: `pytest_unconfigure`",
       "targets": [
         {
           "anchor": {
-            "blob": "a7c7f81ed7977e9dde8fb7d28eb440d08a1fc275",
-            "content": "sha256:7f41a8328323663c187c30e8c1b50baec67266d49c01dd89abc116ee2c89a4ed",
+            "blob": "5525d438c942b2a69ee259d8298c5d62dd65b6df",
+            "content": "sha256:4b6630a829f00cbb2d79a4f1bc91f9eb2e61a56a77f4d933ecca34d89a3f6b9e",
             "locator": {
-              "kind": "symbol",
-              "name": "pytest_unconfigure"
+              "end": 323,
+              "kind": "line_range",
+              "start": 310
             }
           },
           "kind": "test"
@@ -317,12 +335,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a7c7f81ed7977e9dde8fb7d28eb440d08a1fc275",
-            "content": "sha256:2e01c319b3a799f323ce00c51cee9e0b6b394985de9b5a83d04aec0a0c7937fa",
+            "blob": "5525d438c942b2a69ee259d8298c5d62dd65b6df",
+            "content": "sha256:d9f5df1e71317c46f8354ee878423213b3052061d115684f5e6a218f00a6ea5d",
             "locator": {
-              "end": 47,
+              "end": 48,
               "kind": "line_range",
-              "start": 31
+              "start": 32
             }
           },
           "kind": "test"
@@ -334,12 +352,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a7c7f81ed7977e9dde8fb7d28eb440d08a1fc275",
-            "content": "sha256:bbf319536a70a895811ae4183ef47df1fea44fba451e849d17967224b4d4b3f4",
+            "blob": "5525d438c942b2a69ee259d8298c5d62dd65b6df",
+            "content": "sha256:061a6b2181444b485651691474040eb265ec5737770be8a1a2149a5967eb2417",
             "locator": {
-              "end": 66,
+              "end": 78,
               "kind": "line_range",
-              "start": 48
+              "start": 58
             }
           },
           "kind": "test"

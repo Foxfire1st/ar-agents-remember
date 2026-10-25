@@ -88,7 +88,9 @@ record; any other disposition leaves the item open, naming the disposition and t
 
 - Row-own closed provenance and source/count currency. [1]
 - Covered versus uncovered unexplained admission. [2]
+
 - Membership/record revision and disposition predicates with registrations. [3]
+
 
 - Governing changed-row violations take diagnostic precedence and retain missing-cover details. [4]
 - Reconsideration delegates with candidate knowledge and code, translating CodeReadError into GitReadFailed. [5]

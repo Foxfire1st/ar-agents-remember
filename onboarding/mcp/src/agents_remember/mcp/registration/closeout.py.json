@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/mcp/registration/closeout.py",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
@@ -22,15 +23,14 @@
   ],
   "references": {
     "1": {
-      "note": "Registered direct/ordinary closeout and integration tools expose no ledger message or landed-ledger argument.",
+      "note": "Registered direct/ordinary closeout and integration tools expose no ledger message or landed-ledger argument.\n\nAnchor: `_register_direct_landing_tools`",
       "targets": [
         {
           "anchor": {
-            "blob": "8db0c4a8a33eafcca543f0f9f74c2d94e1ec8895",
-            "content": "sha256:69c006f641ad93421684228bc809f01efd582fc304b816cfce9cfbe7c817dddc",
+            "blob": "fa17709a127c9b18641196b921b59caa9f7ec2b2",
+            "content": "sha256:dce036a193b04613f2a25218717eea07994829364ae04d13b6ce63c1a99b2de2",
             "locator": {
-              "kind": "symbol",
-              "name": "_register_direct_landing_tools"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -58,8 +58,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bb0bb3baad13c8a30ef39a2f2750c088f5da54fe",
-            "content": "sha256:fcaca5dc43a7a37236131a3c630f14c9bcd4f072f3ab4e12ed8ed0ba34066310",
+            "blob": "fa17709a127c9b18641196b921b59caa9f7ec2b2",
+            "content": "sha256:dce036a193b04613f2a25218717eea07994829364ae04d13b6ce63c1a99b2de2",
             "locator": {
               "kind": "file"
             }
@@ -185,28 +185,16 @@
       ]
     },
     "3": {
-      "note": "The checkpoint-landing tool declaration and the payload builder it forwards to.\n\nAnchor: `_register_integration_command_tools.worktree_checkpoint_landing`",
+      "note": "The checkpoint-landing tool declaration and the payload builder it forwards to.",
       "targets": [
         {
           "anchor": {
-            "blob": "23805a3cc7fbb5f58d96584b7b4e3ce915c3eab9",
-            "content": "sha256:0430ae7f2b7ed259a2576820fc33c35146f0b5cb2f57e00492c4fc4291314798",
+            "blob": "fa17709a127c9b18641196b921b59caa9f7ec2b2",
+            "content": "sha256:e645def706db273be4a8fc86f2a25d1d732fa06a6f772cf519fb5aa1789f0bf3",
             "locator": {
-              "kind": "symbol",
-              "name": "worktree_checkpoint_landing_payload"
-            },
-            "path": "mcp/src/agents_remember/mcp/tools/worktree.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "442ba26117e74abfd7a4e161b6ff0dede79cc12f",
-            "content": "sha256:bbfda00b4b3ec5d695b9b13008e8361f23c18fe6a7e731758ce3637f13d07ed7",
-            "locator": {
-              "end": 266,
+              "end": 182,
               "kind": "line_range",
-              "start": 235
+              "start": 169
             }
           },
           "kind": "code"
@@ -214,11 +202,11 @@
         {
           "anchor": {
             "blob": "23805a3cc7fbb5f58d96584b7b4e3ce915c3eab9",
-            "content": "sha256:c456fcc0f20713aba55cf002081eb2b2871d7b84ca5b82c7adc9654bc372688d",
+            "content": "sha256:0430ae7f2b7ed259a2576820fc33c35146f0b5cb2f57e00492c4fc4291314798",
             "locator": {
-              "end": 194,
+              "end": 169,
               "kind": "line_range",
-              "start": 168
+              "start": 154
             },
             "path": "mcp/src/agents_remember/mcp/tools/worktree.py"
           },

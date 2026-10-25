@@ -412,15 +412,14 @@
   ],
   "references": {
     "2": {
-      "note": "A delivered answer that keeps an envelope field is unvalidatable, each field on its own subTest.",
+      "note": "A delivered answer that keeps an envelope field is unvalidatable, each field on its own subTest.\n\nAnchor: `test_a_delivered_answer_that_keeps_an_envelope_field_is_unvalidatable`",
       "targets": [
         {
           "anchor": {
-            "blob": "4308e49f7ea958d2f655efb8c8c6b72c587e4f48",
-            "content": "sha256:f471158d375413d998bf6a06bae943ebaac8887cc753a654248dd515d3d4d8d1",
+            "blob": "3a3b5e8a31e73a548a62981ed3865276483f7ea8",
+            "content": "sha256:efd96d85d42cf0105781fcb24eb2d1a56c3f7aac1387c584fd98e0225de75c44",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_delivered_answer_that_keeps_an_envelope_field_is_unvalidatable"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -428,15 +427,14 @@
       ]
     },
     "3": {
-      "note": "An answer without a readable whole-result file is unvalidatable, and the detail says which.",
+      "note": "An answer without a readable whole-result file is unvalidatable, and the detail says which.\n\nAnchor: `test_an_answer_without_a_readable_whole_result_is_unvalidatable`",
       "targets": [
         {
           "anchor": {
-            "blob": "4308e49f7ea958d2f655efb8c8c6b72c587e4f48",
-            "content": "sha256:5b3a075d836e607c7f44727508e07f16e20695d73b3bde2a7046a07f4c4f81ac",
+            "blob": "3a3b5e8a31e73a548a62981ed3865276483f7ea8",
+            "content": "sha256:efd96d85d42cf0105781fcb24eb2d1a56c3f7aac1387c584fd98e0225de75c44",
             "locator": {
-              "kind": "symbol",
-              "name": "test_an_answer_without_a_readable_whole_result_is_unvalidatable"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -444,15 +442,14 @@
       ]
     },
     "4": {
-      "note": "A handler that goes round the choke point arrives as unvalidatable with its key named.",
+      "note": "A handler that goes round the choke point arrives as unvalidatable with its key named.\n\nAnchor: `test_a_handler_that_bypasses_the_choke_point_arrives_as_unvalidatable`",
       "targets": [
         {
           "anchor": {
-            "blob": "4308e49f7ea958d2f655efb8c8c6b72c587e4f48",
-            "content": "sha256:94d769f5492e53bf816e48eed616d219d3e8cfab7a676cbf2f0885631b062a44",
+            "blob": "3a3b5e8a31e73a548a62981ed3865276483f7ea8",
+            "content": "sha256:efd96d85d42cf0105781fcb24eb2d1a56c3f7aac1387c584fd98e0225de75c44",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_handler_that_bypasses_the_choke_point_arrives_as_unvalidatable"
+              "kind": "file"
             }
           },
           "kind": "test"

@@ -1,5 +1,6 @@
 {
   "path": "dashboard/src/dev/scenarios.test.ts",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
@@ -80,23 +81,9 @@
         {
           "anchor": {
             "blob": "58403a8e3f376b93e6cea8747e0d8ecdb222dd8c",
-            "content": "sha256:ddf632780f5613ca695a6040e19556ddc8d46c6be43f47f1697fe125a6c3bb5f",
+            "content": "sha256:0b399324a5b92b6875378f983347d8c30a4dd89938753534c6152123b46f4a9d",
             "locator": {
-              "kind": "symbol",
-              "name": "SCENARIOS"
-            },
-            "path": "dashboard/src/dev/scenarios.ts"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "58403a8e3f376b93e6cea8747e0d8ecdb222dd8c",
-            "content": "sha256:d4845d317b0eaa6666c7e6e09256d0a50319e6b4831f5aafe72daba5345fc3e0",
-            "locator": {
-              "end": 12,
-              "kind": "line_range",
-              "start": 8
+              "kind": "file"
             },
             "path": "dashboard/src/dev/scenarios.ts"
           },
@@ -132,7 +119,7 @@
               "name": "SERVED_EDGE_STATES"
             }
           },
-          "kind": "test"
+          "kind": "code"
         }
       ]
     },
@@ -141,8 +128,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f23ae83b49025d9b10e7b6bc846ede9a6d48563e",
-            "content": "sha256:521843cc89ecb7ccc1a3e9ff68b46d002a1a62ccc357caad545cc1093ebb3ae7",
+            "blob": "0a3de3f86452a06356eee661d5e4bbdc7ccdf5eb",
+            "content": "sha256:7a4dda1e37c1500d1e8f572c5fd5f02aac6a8037f6a885e76727b27bb8690d53",
             "locator": {
               "kind": "symbol",
               "name": "refusedPolarityOf"

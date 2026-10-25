@@ -25,8 +25,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e9c8975d297fe0271bc4c6777f41a4fffad2a002",
-            "content": "sha256:740b5365cfe34c7cd564737d17fa4898179d19845be3ebb9bed964f5350ae17e",
+            "blob": "2d58c15304831b65be687127ce05ace5c0f87cec",
+            "content": "sha256:e1a2eef2ab61b6c4b36edb85b55641d0b0460fb89690d702aaf89192901bd682",
             "locator": {
               "kind": "file"
             }

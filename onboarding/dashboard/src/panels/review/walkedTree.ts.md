@@ -87,7 +87,6 @@ It makes no request and stores nothing outside the mounted reviewer. Its only in
 - The hook advances the walk during render and stores a new result in the same render. [13]
 - The comparison test the walk uses is the read cache's. [14]
 - The member merge the walk reuses. [15]
-- The workspace is the hook's one caller. [16]
 - The unit cases over served bodies: idempotence, order, the kept answer, names, an outside selection, another comparison, and a family read twice. [17]
 
 - The module folds already-read comparison-bound context and issues no request; retained families are data, not a guarantee that every stored member is currently rendered or traversable. [18]

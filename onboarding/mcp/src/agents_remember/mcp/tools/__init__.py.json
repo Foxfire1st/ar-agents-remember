@@ -1,9 +1,27 @@
 {
   "path": "mcp/src/agents_remember/mcp/tools/__init__.py",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
-        "blob": "0fa31000c046f2f804084d4f0b4088c89e71cea9",
+        "blob": "0a29daece8de46849bc5b8afc1f6e66a0b6a4f5c",
+        "content": "sha256:55e8b1fb6a433c140a0369bc4b22f83a7aac05c4a4d35af946e31d4d2f430702",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-KAXJAV",
+      "invariant": "INV-Q7KYQH",
+      "origin": {
+        "handoffEntry": "MIK-R198@v2 §8 reference-note-revision",
+        "leaf": "260928-MIK-L191"
+      },
+      "rationale": "Exports the new tool module with the others on the memory surface.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "0a29daece8de46849bc5b8afc1f6e66a0b6a4f5c",
         "content": "sha256:9758079924e30ddc058b3d0e45f0f28d2d1a9150396fe49599644056c8d9ca51",
         "locator": {
           "end": 22,
@@ -17,28 +35,11 @@
         "handoffEntry": "L183-CUR-ET01-bound-explainer-roster",
         "leaf": "260928-MIK-L183"
       },
-      "rationale": "The existing payload facade exports the explicit explainer control call and payload; it adds no second command implementation.",
+      "rationale": "Line 22 of mcp/tools/__init__.py still exports `ExplainerControlCall` and `explainer_control_payload` from the one implementation, so the facade adds no second command; the line resolves at C with the recorded bytes.",
       "role": "enforcement"
     }
   ],
   "references": {
-    "1": {
-      "note": "`gate_response_wait_payload` is imported from `gates`.\n\nAnchor: \"from .gates import (\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f1ef3e2d18c1f37d725e85801d7ae006c37ce1d9",
-            "content": "sha256:438284fca14c63ad999773b951157d608051d57de6eb1e5d9958c6cf6edb2cc8",
-            "locator": {
-              "end": 28,
-              "kind": "line_range",
-              "start": 20
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "10": {
       "note": "The lifecycle finalizer payload builder is owned by the `lifecycle_finalize` submodule.",
       "targets": [
@@ -61,7 +62,19 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0fa31000c046f2f804084d4f0b4088c89e71cea9",
+            "blob": "0a29daece8de46849bc5b8afc1f6e66a0b6a4f5c",
+            "content": "sha256:9758079924e30ddc058b3d0e45f0f28d2d1a9150396fe49599644056c8d9ca51",
+            "locator": {
+              "end": 22,
+              "kind": "line_range",
+              "start": 22
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0a29daece8de46849bc5b8afc1f6e66a0b6a4f5c",
             "content": "sha256:218d13cfa0841258c627be215df00b1f9e19bcb9d40a8b411b297ae088958f81",
             "locator": {
               "end": 23,
@@ -73,34 +86,29 @@
         }
       ]
     },
-    "13": {
-      "note": "The terminal payload builders are re-exported by this facade.\n\nAnchor: \"from .terminal import (\"",
+    "14": {
+      "note": "The pure payload facade includes worktree_pause_payload in __all__; that exports its builder, rather than independently advertising or authorizing a tool.",
       "targets": [
         {
           "anchor": {
-            "blob": "91fd0b2098e1d0fe71d847041f50d6a65ba3d022",
-            "content": "sha256:8f8e8dcfff2c6c1171451ad26878db4b4e152bd866a2ad6bd63f5b6bd6fcedd9",
+            "blob": "0a29daece8de46849bc5b8afc1f6e66a0b6a4f5c",
+            "content": "sha256:8e168fd7b891101dea5bc81debe8d9cadd3c39b2cff20b96d70c69e217dc761c",
             "locator": {
-              "end": 53,
+              "end": 5,
               "kind": "line_range",
-              "start": 53
+              "start": 1
             }
           },
           "kind": "code"
-        }
-      ]
-    },
-    "14": {
-      "note": "The current module exposes the module-level vocabulary at this ownership boundary; the anchor is the stop builder's own `__all__` entry, which pins the list this claim is about.\n\nAnchor: \"\\\"worktree_pause_payload\\\",\"",
-      "targets": [
+        },
         {
           "anchor": {
-            "blob": "1e10e64fdca7c29c8f073a3465c8674964e0e8bf",
-            "content": "sha256:0d782a4699d5432f3e66fb1cc878f5b4bf7d8c27ac746f5f7f12fe6efba91678",
+            "blob": "0a29daece8de46849bc5b8afc1f6e66a0b6a4f5c",
+            "content": "sha256:ee46b74e435aa051d6a16b79f477300701170f315db86141a3c32e33398b5fcf",
             "locator": {
-              "end": 201,
+              "end": 94,
               "kind": "line_range",
-              "start": 115
+              "start": 94
             }
           },
           "kind": "code"
@@ -108,28 +116,28 @@
       ]
     },
     "15": {
-      "note": "The pause payload builder is re-exported by this facade from the `.worktree` import block and listed in the `__all__` extent, exactly per the documented pattern.\n\nAnchor: \"from .worktree import (\"",
+      "note": "The pause payload builder is re-exported by this facade from the `.worktree` import block and listed in the `__all__` extent, exactly per the documented pattern.",
       "targets": [
         {
           "anchor": {
-            "blob": "f0ca175f86e8f783a45f05c22fe3201683cb1c69",
-            "content": "sha256:e6443b4cdf8964805deae5492964ae123dd9fbc349747b01c0f6dff498372ebe",
+            "blob": "0a29daece8de46849bc5b8afc1f6e66a0b6a4f5c",
+            "content": "sha256:fb764dddd8da140c48bbb30b0b67b35b385afa6b01ab8d1398acaaec3982aeb1",
             "locator": {
-              "end": 112,
+              "end": 54,
               "kind": "line_range",
-              "start": 90
+              "start": 40
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "1e10e64fdca7c29c8f073a3465c8674964e0e8bf",
-            "content": "sha256:0d782a4699d5432f3e66fb1cc878f5b4bf7d8c27ac746f5f7f12fe6efba91678",
+            "blob": "0a29daece8de46849bc5b8afc1f6e66a0b6a4f5c",
+            "content": "sha256:c0c56b9ba7975a1b5b937211a9318e464e8a7ec02388a34042a34ccf525e67c8",
             "locator": {
-              "end": 201,
+              "end": 97,
               "kind": "line_range",
-              "start": 115
+              "start": 55
             }
           },
           "kind": "code"
@@ -137,32 +145,25 @@
       ]
     },
     "16": {
-      "note": "Frozen implementation of __all__ supporting the stated file behavior.",
+      "note": "Frozen implementation of __all__ supporting the stated file behavior.\n\nAnchor: `__all__`",
       "targets": [
         {
           "anchor": {
-            "blob": "f1ef3e2d18c1f37d725e85801d7ae006c37ce1d9",
-            "content": "sha256:5e17afd29cf36bdb833bbffddf496eef036e99811f482a7dfe17b6c9a21eafe5",
+            "blob": "0a29daece8de46849bc5b8afc1f6e66a0b6a4f5c",
+            "content": "sha256:55e8b1fb6a433c140a0369bc4b22f83a7aac05c4a4d35af946e31d4d2f430702",
             "locator": {
-              "kind": "symbol",
-              "name": "__all__"
+              "kind": "file"
             }
           },
           "kind": "code"
-        }
-      ]
-    },
-    "17": {
-      "note": "Current source excerpt `from .base import PUBLIC_TOOLS, RESERVED_TOOLS, TRANSPORT` identifies this section's adapter/control owner, not an executed success.\n\nAnchor: 9-135",
-      "targets": [
+        },
         {
           "anchor": {
-            "blob": "6a9e16e0399eac88f3a66ff9243508ddca2c5710",
-            "content": "sha256:c41df0d18a069b78ed34320acebf6849dec6e89a1846b36a9ddcc9fe1aff7465",
+            "blob": "0a29daece8de46849bc5b8afc1f6e66a0b6a4f5c",
+            "content": "sha256:1228ca06d2f549d886d031ce6918afaf2dfadeafa43c67157ac851de691aa68d",
             "locator": {
-              "end": 135,
-              "kind": "line_range",
-              "start": 9
+              "kind": "symbol",
+              "name": "__all__"
             }
           },
           "kind": "code"
@@ -174,25 +175,20 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8f4b33122e8898b9c5af4392b612c31ee833ae3b",
-            "content": "sha256:fab3bd652ac3bd23a0c85d578adff9eea4da53c73cd8bcf2313ed1ebee1da296",
+            "blob": "0a29daece8de46849bc5b8afc1f6e66a0b6a4f5c",
+            "content": "sha256:df959d9d3f7ba34f7c60118d616c6a8ab87a48ca45bd5c8ea306c10cb871e965",
             "locator": {
-              "end": 137,
+              "end": 97,
               "kind": "line_range",
               "start": 1
             }
           },
           "kind": "code"
-        }
-      ]
-    },
-    "19": {
-      "note": "Current synced source supports the qualified account; declarations, mirrors and fixture assertions are not executed acceptance.",
-      "targets": [
+        },
         {
           "anchor": {
-            "blob": "91fd0b2098e1d0fe71d847041f50d6a65ba3d022",
-            "content": "sha256:190f8d1f04e52d284d766b76b3c4f192d4421f84c1601efacda55ee2dd9a22bd",
+            "blob": "0a29daece8de46849bc5b8afc1f6e66a0b6a4f5c",
+            "content": "sha256:55e8b1fb6a433c140a0369bc4b22f83a7aac05c4a4d35af946e31d4d2f430702",
             "locator": {
               "kind": "file"
             }
@@ -206,12 +202,24 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0fa31000c046f2f804084d4f0b4088c89e71cea9",
+            "blob": "0a29daece8de46849bc5b8afc1f6e66a0b6a4f5c",
             "content": "sha256:ed4d77a0a5436bf22b0d8c7ff20f7ff77c4f1cb32c6a8c91d502d82ca66676b4",
             "locator": {
-              "end": 55,
+              "end": 56,
               "kind": "line_range",
-              "start": 55
+              "start": 56
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0a29daece8de46849bc5b8afc1f6e66a0b6a4f5c",
+            "content": "sha256:fafba0527c3953c4b6e0e5b5739ba83612f8053bcdc9466730193cd1d590b408",
+            "locator": {
+              "end": 54,
+              "kind": "line_range",
+              "start": 54
             }
           },
           "kind": "code"
@@ -223,46 +231,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0fa31000c046f2f804084d4f0b4088c89e71cea9",
+            "blob": "0a29daece8de46849bc5b8afc1f6e66a0b6a4f5c",
             "content": "sha256:9758079924e30ddc058b3d0e45f0f28d2d1a9150396fe49599644056c8d9ca51",
             "locator": {
               "end": 22,
               "kind": "line_range",
               "start": 22
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "7": {
-      "note": "The inbox payload builders (post/poll/consume/supersede since 260713-TES-L4) are re-exported by this facade.\n\nAnchor: \"from .operator_inbox import (\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "91fd0b2098e1d0fe71d847041f50d6a65ba3d022",
-            "content": "sha256:cecfae3cb4b0d4d8643cb5455ee04bc593fb17e2877d1071efacabde7220497b",
-            "locator": {
-              "end": 42,
-              "kind": "line_range",
-              "start": 42
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "9": {
-      "note": "The orchestration nudge payload builder is re-exported by this facade.\n\nAnchor: \"from .orchestration import orchestration_nudge_manager_payload\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "91fd0b2098e1d0fe71d847041f50d6a65ba3d022",
-            "content": "sha256:6885abeb8ba145e8fca758ac8fb90e71ec45cb4f9d09202db5b04aa1af21de09",
-            "locator": {
-              "end": 48,
-              "kind": "line_range",
-              "start": 48
             }
           },
           "kind": "code"

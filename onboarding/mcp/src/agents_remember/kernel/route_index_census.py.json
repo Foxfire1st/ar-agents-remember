@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/kernel/route_index_census.py",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
@@ -7,8 +8,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c8f46c37a779c2f92a9c7791dec0accee6d61e4d",
-            "content": "sha256:8b6b3a7d2b3c16481f3247074408f445f6088cc178e86be22211c87697f569d3",
+            "blob": "24d682ff648aa771ce9836a527913f55f0c94e5f",
+            "content": "sha256:60c738fbff7f8b76f037ac59d0174391ef8e585d380a03a671edb65809cf2021",
             "locator": {
               "kind": "symbol",
               "name": "build_route_indexes"
@@ -19,8 +20,19 @@
         },
         {
           "anchor": {
-            "blob": "c8f46c37a779c2f92a9c7791dec0accee6d61e4d",
-            "content": "sha256:2bc0a4808cb4d9781c95d1ccc1a9593291ef38647906beb7184fc4656465860a",
+            "blob": "24d682ff648aa771ce9836a527913f55f0c94e5f",
+            "content": "sha256:03bd8a85010e049891e7c368c1934cc68fac935af49b4fcf5f0221a8a46e8369",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/kernel/route_index.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "24d682ff648aa771ce9836a527913f55f0c94e5f",
+            "content": "sha256:35647404308e6930bdcc34208b313a7414e220b2bc3dbe2794868555c60ce2fc",
             "locator": {
               "end": 230,
               "kind": "line_range",
@@ -33,8 +45,19 @@
       ]
     },
     "2": {
-      "note": "The one Git runner: `GIT_REPOSITORY_SELECTOR_ENV` and `git_environment` scrub all eight repository selectors, `run_git` preserves non-UTF-8 record identity via `errors=\"surrogateescape\"`, `_run_git` here passes its 30s bound through `GitRunnerOptions(timeout=...)`, and `GIT_METADATA_TIMEOUT_SECONDS = 30` is the class this census names.\n\nAnchor: `GIT_REPOSITORY_SELECTOR_ENV`, `git_environment`, `run_git`",
+      "note": "The one Git runner: `GIT_REPOSITORY_SELECTOR_ENV` and `git_environment` scrub all eight repository selectors, `run_git` preserves non-UTF-8 record identity via `errors=\"surrogateescape\"`, `_run_git` here passes its 30s bound through `GitRunnerOptions(timeout=...)`, and `GIT_METADATA_TIMEOUT_SECONDS = 30` is the class this census names.\n\nAnchor: `GIT_REPOSITORY_SELECTOR_ENV` `git_environment` `run_git`",
       "targets": [
+        {
+          "anchor": {
+            "blob": "07979a6e10a7cde98e4a4ce1dcaca7a203241e3f",
+            "content": "sha256:6e94e3f710e3074a2f9def9a24032a21aee42476e665e4ea421cba0067b627bb",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/kernel/git_command.py"
+          },
+          "kind": "code"
+        },
         {
           "anchor": {
             "blob": "07979a6e10a7cde98e4a4ce1dcaca7a203241e3f",
@@ -49,8 +72,8 @@
         },
         {
           "anchor": {
-            "blob": "0add0d691edd9fadf0873b47c05c3556c94fb585",
-            "content": "sha256:9a5c584084f2d3c5b2f922be34cc829903d4c855e354a734263febd5289b334b",
+            "blob": "07979a6e10a7cde98e4a4ce1dcaca7a203241e3f",
+            "content": "sha256:86485973cec1b30881a8538bc29f5f42f53066c3901c053eb5c3b164acaf512d",
             "locator": {
               "kind": "symbol",
               "name": "git_environment"
@@ -61,8 +84,8 @@
         },
         {
           "anchor": {
-            "blob": "cd35c66bb9c9d8af0f23fd2579f5e610cf4ee8da",
-            "content": "sha256:60788cf6b3cf57e313ccacab456fb49fd9601a1930fa8f8de28c01088b22a2af",
+            "blob": "07979a6e10a7cde98e4a4ce1dcaca7a203241e3f",
+            "content": "sha256:2581abe22f96abd5eed654d6bbd4024993314e94a5eb2eae6b9f4df000dcba6c",
             "locator": {
               "kind": "symbol",
               "name": "run_git"

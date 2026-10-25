@@ -21,7 +21,7 @@
       ]
     },
     "2": {
-      "note": "The retained lifecycle settings helper emits a disabled contextProviders document with an empty providers map; configured legacy keys do not generate runtime settings or enable the retired providers.",
+      "note": "Provider lifecycle settings no longer read configuration: `lifecycle_settings_from_config` takes no argument and emits an empty `contextProviders` block, so neither retired provider is written into them.",
       "targets": [
         {
           "anchor": {

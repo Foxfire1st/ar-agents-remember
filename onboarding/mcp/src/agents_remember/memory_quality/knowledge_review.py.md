@@ -70,14 +70,20 @@ counted it as nothing at all would let a zero read as "nothing moved" (`ICR-R15@
 
 ### Docs References
 
+
 - The report-only boundary as recorded in the module's own contract: the rendered section states it in one sentence inside the artifact. [1]
+
 
 ### Repo-Internal References
 
+
 - The section renderer, its empty-collection spelling, and the counts it reports. [2]
+
 - The summary shape, which carries counts and identities and deliberately no verdict. [3]
 - **The four counted limitation codes, and the rule that makes a measured movement and an unmeasured binding separate facts rather than one.** [4]
+
 - The one checklist field that carries the section, and the arithmetic the section cannot reach. [5]
+
 - The controller read that supplies the summaries from the already-published authority, and passes the projection's own unmeasured count through without measuring anything itself. [6]
 
 ## KS-R15@v1 Report-Only Checklist Section

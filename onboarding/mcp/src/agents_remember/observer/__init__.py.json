@@ -1,17 +1,17 @@
 {
   "path": "mcp/src/agents_remember/observer/__init__.py",
+  "proves": [],
   "realizes": [],
   "references": {
     "9": {
-      "note": "The current explicit facade exports the retained dependency-light observer names — `TaskDocNode`, `LedgerNode`, `Metrics`, the analytics and workspace-projection types — not the removed guard/pickup/expectation/age-helper surface. There is no served-ledger surface to export.",
+      "note": "Explicit facade exports workspace schema, event storage and pure assembly only.\n\nAnchor: `__all__`",
       "targets": [
         {
           "anchor": {
-            "blob": "fcda4c53a0067f5b3fe6eb1839ba255847b4a186",
-            "content": "sha256:ae4578b9ff3e84d04239e6f3290b5c18958e8d7290ad942b731b3af568c6bfe7",
+            "blob": "90cdaabb8a2503d6feaa2452fea8963f7c486bf9",
+            "content": "sha256:51ce4f2dc74e46d5e739d4484ac85bb854521ed3b318c1b624f9d2e4fc953166",
             "locator": {
-              "kind": "symbol",
-              "name": "__all__"
+              "kind": "file"
             }
           },
           "kind": "code"

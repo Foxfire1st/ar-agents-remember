@@ -18,4 +18,5 @@ This card describes the executable assertions and fixture seams of this module. 
 
 ## Evidence
 
+
 - Full/bare fixed form order, one objective, actual TaskReader chrome, shared block classes and nonGoals/acceptance expansion remain asserted using native entry/summary/tree inputs. [1]

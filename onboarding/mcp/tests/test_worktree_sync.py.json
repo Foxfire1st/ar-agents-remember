@@ -3,15 +3,14 @@
   "realizes": [],
   "references": {
     "12": {
-      "note": "`SyncFixture` owns the current boundary described above.",
+      "note": "`SyncFixture` owns the current boundary described above.\n\nAnchor: `SyncFixture`",
       "targets": [
         {
           "anchor": {
-            "blob": "10f851e4484874f5350945cc4b10e60e22644f55",
-            "content": "sha256:477235dbc4fdec00825083edb74b73282bd3b008cc8a9bc1e42765211b086c01",
+            "blob": "432bd10c5171438d344e689e31db7aa0d65727f9",
+            "content": "sha256:6eb5dc4bae9b6bc138e722301bf64db472318778e891ea2f0859967050327104",
             "locator": {
-              "kind": "symbol",
-              "name": "SyncFixture"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -19,15 +18,14 @@
       ]
     },
     "13": {
-      "note": "`WorktreeSyncTests` owns the current boundary described above.",
+      "note": "`WorktreeSyncTests` owns the current boundary described above.\n\nAnchor: `WorktreeSyncTests`",
       "targets": [
         {
           "anchor": {
-            "blob": "64be9a0ba72aac13b56b200c5afb96f680a7f522",
-            "content": "sha256:c6a9d58fc5ae18c9bb294dbce6bd95c9f61e8a2143a6a568ff79bdfe60b2ea29",
+            "blob": "432bd10c5171438d344e689e31db7aa0d65727f9",
+            "content": "sha256:6eb5dc4bae9b6bc138e722301bf64db472318778e891ea2f0859967050327104",
             "locator": {
-              "kind": "symbol",
-              "name": "WorktreeSyncTests"
+              "kind": "file"
             }
           },
           "kind": "test"

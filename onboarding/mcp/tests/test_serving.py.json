@@ -92,12 +92,22 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "Snapshot subscription cannot lose an interleaved projection",
+      "note": "Snapshot subscription cannot lose an interleaved projection\n\nAnchor: `test_snapshot_subscription_cannot_lose_an_interleaved_projection`",
       "targets": [
         {
           "anchor": {
-            "blob": "2f87545123e787fca284973dfc4fc9483f01aa34",
-            "content": "sha256:3eeee82508f94d728d856c4b1b472401be58c7474677f4ba25f47cc65a3c3033",
+            "blob": "6b08a737a9cbd2402baceedf305bd3a7b12d5068",
+            "content": "sha256:cf440a11d28b016d4b026e9c12c3a0be45b4fec23dfb702d54fbe7a089aeff92",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "6b08a737a9cbd2402baceedf305bd3a7b12d5068",
+            "content": "sha256:17f2d24d578df65381c8b86ac5a16f1c0a15f842100f83f6ab91069da7c64d58",
             "locator": {
               "kind": "symbol",
               "name": "test_snapshot_subscription_cannot_lose_an_interleaved_projection"
@@ -112,17 +122,6 @@
       "targets": [
         {
           "anchor": {
-            "blob": "88478d9345e5c625b2a554f452ad8e02a7311424",
-            "content": "sha256:10cb6cd7a2918481717ccbf22a14a770cf4c3c48f3830133a8e0dbddf1bcf2df",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_task_exception_never_delays_an_earlier_normal_deadline"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
             "blob": "6b08a737a9cbd2402baceedf305bd3a7b12d5068",
             "content": "sha256:10cb6cd7a2918481717ccbf22a14a770cf4c3c48f3830133a8e0dbddf1bcf2df",
             "locator": {
@@ -135,12 +134,22 @@
       ]
     },
     "2": {
-      "note": "Etag 304 cycle then new etag on content change",
+      "note": "Etag 304 cycle then new etag on content change\n\nAnchor: `test_etag_304_cycle_then_new_etag_on_content_change`",
       "targets": [
         {
           "anchor": {
-            "blob": "2f87545123e787fca284973dfc4fc9483f01aa34",
-            "content": "sha256:03f45f2e5bb58d50c612ddccdaa038d173445b65045a16bed9dc69757c8a51c6",
+            "blob": "6b08a737a9cbd2402baceedf305bd3a7b12d5068",
+            "content": "sha256:cf440a11d28b016d4b026e9c12c3a0be45b4fec23dfb702d54fbe7a089aeff92",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "6b08a737a9cbd2402baceedf305bd3a7b12d5068",
+            "content": "sha256:702a645d32e7b4e690d2a9663406e3b3de4015861b50bf13f403f6895cb2318c",
             "locator": {
               "kind": "symbol",
               "name": "test_etag_304_cycle_then_new_etag_on_content_change"
@@ -155,8 +164,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bf6a37958b6f58a9521014b9d69bf2eb2461139c",
-            "content": "sha256:25885743791efb98cd61f126ed1742b5ef71d0d91e87369ae3cb6886a8df3f68",
+            "blob": "6b08a737a9cbd2402baceedf305bd3a7b12d5068",
+            "content": "sha256:128383f876583644e55c8c9aac66d77576dea7f803f6277a4cb95fd8bdcdae5a",
             "locator": {
               "end": 256,
               "kind": "line_range",
@@ -172,8 +181,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bf6a37958b6f58a9521014b9d69bf2eb2461139c",
-            "content": "sha256:969b9500feedd04e51945c51cee1640d905eb6f4a696cfeeb1ecac43f8addb71",
+            "blob": "6b08a737a9cbd2402baceedf305bd3a7b12d5068",
+            "content": "sha256:5954301579cf49b02532078d40f046d3d57bc657c2c0d769713f90158366a761",
             "locator": {
               "end": 315,
               "kind": "line_range",
@@ -189,8 +198,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "88478d9345e5c625b2a554f452ad8e02a7311424",
-            "content": "sha256:215fb4eddd658d3a81c6eb68d44cb1fa874d0b60f1f81980c159d55ce4d8dd28",
+            "blob": "6b08a737a9cbd2402baceedf305bd3a7b12d5068",
+            "content": "sha256:db506fa2e7aa1373e47207f30e16df88d2f48c89778d8b028c3b3728034f6bde",
             "locator": {
               "end": 516,
               "kind": "line_range",
@@ -218,8 +227,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "88478d9345e5c625b2a554f452ad8e02a7311424",
-            "content": "sha256:72e80a96d6e5b8921fb605b6a1f8f06d82b682cb006deef9d677fa24c39ceed8",
+            "blob": "6b08a737a9cbd2402baceedf305bd3a7b12d5068",
+            "content": "sha256:c8012f5d3fd6c296f1dd6ac0c7389689067b0c21af6ac1bdc370e452c6ff6a01",
             "locator": {
               "end": 575,
               "kind": "line_range",
@@ -243,12 +252,22 @@
       ]
     },
     "7": {
-      "note": "The unchanged ETag is checked after the volatile-only projection was actually published.",
+      "note": "The unchanged ETag is checked after the volatile-only projection was actually published.\n\nAnchor: `test_etag_304_cycle_then_new_etag_on_content_change`",
       "targets": [
         {
           "anchor": {
-            "blob": "82195bea86c6231f6c6014c8807cd5b7bc66e33e",
-            "content": "sha256:61d4b4cbea2a1d5bf70449f9f62010dbc716af77eb88d3e8a6c5f712602f5edb",
+            "blob": "6b08a737a9cbd2402baceedf305bd3a7b12d5068",
+            "content": "sha256:cf440a11d28b016d4b026e9c12c3a0be45b4fec23dfb702d54fbe7a089aeff92",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "6b08a737a9cbd2402baceedf305bd3a7b12d5068",
+            "content": "sha256:702a645d32e7b4e690d2a9663406e3b3de4015861b50bf13f403f6895cb2318c",
             "locator": {
               "kind": "symbol",
               "name": "test_etag_304_cycle_then_new_etag_on_content_change"
@@ -261,17 +280,6 @@
     "8": {
       "note": "Task/host changes get one early pass per original rest.",
       "targets": [
-        {
-          "anchor": {
-            "blob": "88478d9345e5c625b2a554f452ad8e02a7311424",
-            "content": "sha256:942de0bc5ef4f0cc452d104cb6d9ff7c35e68e6eb10fb61524f22e29b09895d9",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_task_and_host_changes_get_one_early_pass_per_original_rest"
-            }
-          },
-          "kind": "test"
-        },
         {
           "anchor": {
             "blob": "6b08a737a9cbd2402baceedf305bd3a7b12d5068",
@@ -288,17 +296,6 @@
     "9": {
       "note": "Other domains keep rest while leaving the task exception available.",
       "targets": [
-        {
-          "anchor": {
-            "blob": "88478d9345e5c625b2a554f452ad8e02a7311424",
-            "content": "sha256:4cfc3d642a4e5c57d7fddffe5b6aec1c2d1f7fd195c587604f6dc137472b7e63",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_other_domains_keep_rest_without_spending_the_task_exception"
-            }
-          },
-          "kind": "test"
-        },
         {
           "anchor": {
             "blob": "6b08a737a9cbd2402baceedf305bd3a7b12d5068",

@@ -3,15 +3,14 @@
   "realizes": [],
   "references": {
     "3": {
-      "note": "Round trip through store.",
+      "note": "Round trip through store.\n\nAnchor: `test_round_trip_through_store`",
       "targets": [
         {
           "anchor": {
-            "blob": "229a1284fa08b85c28e7751a26ce2251e9567dd9",
-            "content": "sha256:237d9c47747056a35b0e88d4f94ac4f9d11fa955dbcc989815345ca95a157077",
+            "blob": "954cf5b3913a1fd199f81cc088876e9cb40903b0",
+            "content": "sha256:67e1f55189add19f5cebe95396538e8944add0b016256a72657d2072f14f53ac",
             "locator": {
-              "kind": "symbol",
-              "name": "test_round_trip_through_store"
+              "kind": "file"
             }
           },
           "kind": "test"

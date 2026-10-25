@@ -121,7 +121,9 @@ No relevant external documentation found.
 - The local default bound is 300 seconds. [1]
 - The ordinary remote bound is 120 seconds. [2]
 - The metadata bound is 30 seconds. [3]
+
 - The shared Git runner applies caller-selected bounds and isolated repository environment. [4]
+
 - Style precedent: read-only git facts with dataclass + packet projector, the sibling that classes its four probes the same way, and — since 260731-EFA-L4 — the sibling that declares its own `RepoState` / `VALID_REPO_STATES` for the same reason this file declares `FreshnessState`. [5]
 - The wire face that imports `FreshnessState` instead of retyping its eight members: `BranchFreshness.state`. [6]
 - The context packet application entry point is the first consumer (`_freshness_packet`). [7]

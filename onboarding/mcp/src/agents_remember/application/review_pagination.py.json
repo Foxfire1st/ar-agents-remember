@@ -3,7 +3,7 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "**The module's own statement of what it owns, of the one cursor authority it reuses, and of the reset rule.**",
+      "note": "**The module's own statement of what it owns, of the one cursor authority it reuses, and of the reset rule.**\n\nAnchor: `MOVED_SNAPSHOT_CODES` `RecordsPagePosition`",
       "targets": [
         {
           "anchor": {
@@ -18,23 +18,22 @@
         },
         {
           "anchor": {
-            "blob": "349c49a6947f924a88c71208c74738a7b4905ab9",
-            "content": "sha256:51314d363eaf2435760eda35e95519b8b72d61a4a834397065db49223e56a83f",
+            "blob": "fd95f139f4c1a2696a43d69e4f4a611944798d2a",
+            "content": "sha256:32cdc5f549feec26d9565b26d4a97e4f5e7f738d69fde283182d51b32b19b1cd",
             "locator": {
-              "kind": "symbol",
-              "name": "RecordsPagePosition"
+              "end": 29,
+              "kind": "line_range",
+              "start": 1
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "349c49a6947f924a88c71208c74738a7b4905ab9",
-            "content": "sha256:95007bbad14ba1b64fd426c80c448c6741df75e32ecfc4995c3b1e1efc90ac50",
+            "blob": "fd95f139f4c1a2696a43d69e4f4a611944798d2a",
+            "content": "sha256:30bd162688621cab6855e49990c207aedf786885e6484f6f933a6e3b00678d4c",
             "locator": {
-              "end": 29,
-              "kind": "line_range",
-              "start": 1
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -117,12 +116,12 @@
       ]
     },
     "13": {
-      "note": "The two page refusal codes on the closed refusal-code union.\n\nAnchor: `comparison_page_reset`; `comparison_page_unreadable`",
+      "note": "The two page refusal codes on the closed refusal-code union.",
       "targets": [
         {
           "anchor": {
-            "blob": "005c44f99677f29c3777322502b77b732a3a0252",
-            "content": "sha256:fbe0325893e222ac3252111770681368eaa0f780917dc3232c130ab08134c9ea",
+            "blob": "e298bc656619aa09b3566b8e7baeb7a8453b656f",
+            "content": "sha256:64e1c0c94e91954b0f8d3c83e41404617000a661098c382c18c4586589e6b734",
             "locator": {
               "end": 158,
               "kind": "line_range",
@@ -134,8 +133,8 @@
         },
         {
           "anchor": {
-            "blob": "63e4b2ff0581b472b92222169905d9de145508ef",
-            "content": "sha256:92e08f692ea00fdb8852968ef6c4505506a82510e4181c414e420e19520974be",
+            "blob": "e298bc656619aa09b3566b8e7baeb7a8453b656f",
+            "content": "sha256:9e48ce79d19cdf6921c7476ba21e4041a7b0759bb8a5d84bb685d9616716e61a",
             "locator": {
               "end": 162,
               "kind": "line_range",
@@ -148,15 +147,14 @@
       ]
     },
     "14": {
-      "note": "The one consumer: the adapter offers a request's cursor to the collection it names and states the page this module returns.",
+      "note": "The one consumer: the adapter offers a request's cursor to the collection it names and states the page this module returns.\n\nAnchor: `compose_review`",
       "targets": [
         {
           "anchor": {
-            "blob": "75a68c3874ea545bd49e863046a120e320587404",
-            "content": "sha256:cccdeadc30f88b4527694d3c2e46f16c82c0784cb1d38b04bece61b9ec6bd1d8",
+            "blob": "1c9f8394dfb38bee67a5da3b90ace66147bd5334",
+            "content": "sha256:bc9aed0908cabfef3b176f1734ea114458607fab1f9bf612787eace2cfa4d0c0",
             "locator": {
-              "kind": "symbol",
-              "name": "compose_review"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/knowledge_review.py"
           },
@@ -194,27 +192,14 @@
       ]
     },
     "16": {
-      "note": "The client that renders these pages without ever constructing a cursor.",
+      "note": "The client that renders these pages without ever constructing a cursor.\n\nAnchor: `carriedPage` `pageBounds`",
       "targets": [
         {
           "anchor": {
-            "blob": "923faffc20359156074cf02aed9860c41b8b29dd",
-            "content": "sha256:3b55093c66702463240622b5e86748f1459b59915c203077e5575d872049441f",
+            "blob": "5e94e860bdcfd117a4e496db152da5bfdb241e53",
+            "content": "sha256:65b7f98cb5ff7962303f5258fab14cfff5acc73adf5a464ce722d0a3f9fa800f",
             "locator": {
-              "kind": "symbol",
-              "name": "carriedPage"
-            },
-            "path": "dashboard/src/data/review.ts"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "923faffc20359156074cf02aed9860c41b8b29dd",
-            "content": "sha256:a2cc85ec2dc5f638de16a6582ac49f456d5eb7f262bf4c0868b8f3b79cc43ed8",
-            "locator": {
-              "kind": "symbol",
-              "name": "pageBounds"
+              "kind": "file"
             },
             "path": "dashboard/src/data/review.ts"
           },
@@ -266,31 +251,14 @@
       ]
     },
     "4": {
-      "note": "**The matrix refusal: the binding mismatch takes the surface's action, every other view refusal keeps the owner's, and the presented token is named rather than the view.**",
+      "note": "**The matrix refusal: the binding mismatch takes the surface's action, every other view refusal keeps the owner's, and the presented token is named rather than the view.**\n\nAnchor: `records_page_refusal`",
       "targets": [
         {
           "anchor": {
-            "blob": "1b04b0a10c072c0e4e724844acb5325af5b83cfe",
-            "content": "sha256:eab55255908055690ac9af6693501f97bf620b01a9290320cb41a99776f584d7",
+            "blob": "fd95f139f4c1a2696a43d69e4f4a611944798d2a",
+            "content": "sha256:30bd162688621cab6855e49990c207aedf786885e6484f6f933a6e3b00678d4c",
             "locator": {
-              "kind": "symbol",
-              "name": "records_page_refusal"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "5": {
-      "note": "The four fields of one page's position in its walk, as one value.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "349c49a6947f924a88c71208c74738a7b4905ab9",
-            "content": "sha256:51314d363eaf2435760eda35e95519b8b72d61a4a834397065db49223e56a83f",
-            "locator": {
-              "kind": "symbol",
-              "name": "RecordsPagePosition"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -313,33 +281,6 @@
         }
       ]
     },
-    "7": {
-      "note": "**The view window stated as the surface's page: `total_basis=\"walk\"`, and the returned rows checked against the bound the caller asked for.**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "349c49a6947f924a88c71208c74738a7b4905ab9",
-            "content": "sha256:9a4c272f27a3144db69a73c923360fe901d21fe8401fc90678b7a88544949f26",
-            "locator": {
-              "kind": "symbol",
-              "name": "records_page"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "349c49a6947f924a88c71208c74738a7b4905ab9",
-            "content": "sha256:51314d363eaf2435760eda35e95519b8b72d61a4a834397065db49223e56a83f",
-            "locator": {
-              "kind": "symbol",
-              "name": "RecordsPagePosition"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "8": {
       "note": "**The reset page: the current comparison's first page served beside the refusal, with the refused cursor named on the refusal.**",
       "targets": [
@@ -350,22 +291,6 @@
             "locator": {
               "kind": "symbol",
               "name": "reset_comparison_page"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "9": {
-      "note": "The one reader of a view quantity, so a page can never publish an unmeasured count.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "349c49a6947f924a88c71208c74738a7b4905ab9",
-            "content": "sha256:f85d246645027e87a1127f3f700e4184ecca88976da0478238c7033a58dab661",
-            "locator": {
-              "kind": "symbol",
-              "name": "_counted"
             }
           },
           "kind": "code"

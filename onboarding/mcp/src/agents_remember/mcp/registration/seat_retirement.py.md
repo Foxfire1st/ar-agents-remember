@@ -24,6 +24,7 @@ A currently running turn needs explicit interruption authority. Other role agent
 
 No Domain Documentation source is configured for this repository-specific boundary.
 
+
 - Native child retirement registration: implementation/assertion boundary described above. [1]
 
 - The retire_child signature stays strict while the payload loads only when retirement is invoked. [2]

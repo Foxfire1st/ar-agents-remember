@@ -30,6 +30,9 @@ are fixed literals (`agent-architect`/`agent-manager` in `wks_projects`, `agent-
 
 ## Evidence
 
+
 - The harness renders the real right rail for the switched Projects/Master/Task/ghost document with river/chat toggle buttons. [1]
+
+
 
 - The fetch stub answers frame and document-chats calls with the fixed agent table. [2]

@@ -107,4 +107,5 @@ No Domain Documentation entries are configured; current repository bodies and ca
 - The code note and complete supplied partial-index problem list. [5]
 - The added mounted name-selection field validates through a root path read and navigates only on a view answer. [6]
 - One-line control layout and the narrow-width Browse callback remain separate from parent full-screen layout. [7]
+
 - The parent’s single records acquisition feeds lookup and the Records loader. [8]

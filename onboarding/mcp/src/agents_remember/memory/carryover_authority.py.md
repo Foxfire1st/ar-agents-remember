@@ -62,7 +62,9 @@ No configured domain documentation could be checked.
 
 ### Repo-Internal References
 
-- The internal apply owner obtains target storage authority and passes it to route-index refresh only after configured contract and protected-checkout authority. [1]
+
+- The internal carryover apply owner checks configured and protected-checkout authority before obtaining target storage, then passes that storage to apply_converted, whose route-index refresh uses it for target onboarding. [1]
+
 - The raw preflight exposes the required target storage authority. [2]
 
 ### Cross-Repo References

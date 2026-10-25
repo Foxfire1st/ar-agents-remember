@@ -99,4 +99,5 @@ guarantee is inferred.
 - The new target is resolved at C, and a link that already names that path, locator and content changes nothing on a rerun. [5]
 - `RepointRowAuthoring` overrides only `_reconsideration_row`: with no `repoint` the inherited row is written and the refresh route is noted, and a `raise` carrying `repoint` is refused by name. [6]
 - The decision is placed once with the re-pointed links, and a rerun that produces the stored links bumps nothing. [7]
+
 - Each re-point is reported with its link, both paths and the row's reason. [8]

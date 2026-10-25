@@ -26,6 +26,8 @@ Order targets resolve canonical references in the shared tasks map and use entry
 - The graph restores the work border for started task entries independently of host activity, using readiness only for other targets. [3]
 
 
+
 - Order uses entry stage/activity and the shared status presentation while retaining producer dependency waves/readiness; graph-derived done/abandoned totals are absent, and the own graph view retains the supplied graph. [1]
+
 
 - OrderRowsView wires pointer rest and immediate focus to shared graph highlighting, with reduced motion disabling fade and relations omitting finished dependencies. [2]

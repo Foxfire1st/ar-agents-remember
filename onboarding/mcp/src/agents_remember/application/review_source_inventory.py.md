@@ -241,8 +241,12 @@ names.
 
 No meaningful cross-repo references found.
 
+
 - The current comparison viewer renders named changed-file rows and explicit byte-form cannot-open rows in All changes; the backend inventory supplies wire data, not this UI. [66]
+
+
 - Comparison list/diff requests use the held comparison number; changed-file controls open only eligible listed files, while byte-form paths remain displayed cannot-open facts. [67]
+
 - Comparison list/diff requests use the held comparison number; changed-file controls open only eligible listed files, while byte-form paths remain displayed cannot-open facts. [68]
 - Comparison list/diff requests use the held comparison number; changed-file controls open only eligible listed files, while byte-form paths remain displayed cannot-open facts. [69]
 
@@ -260,7 +264,9 @@ No meaningful cross-repo references found.
 - The pane: inventory, locations, relationships, attribution lists and counts. [36]
 - A count is a value or a reason, never both. [37]
 
+
 - The retained parsed-diff test checks PARSED_DIFF_OPTIONS in the current combined _RAW_ARGS and prefix/colour/driver options in code.BLOB_DIFF_ARGS. The former separate raw/numstat tuple account is historical. [38]
+
 
 - The review body is identical under a hostile Git configuration. [39]
 - The module's own statement of the three properties it exists for — measured from the pair, delimiter-safe, three separate facts with a failed measurement as a state — and of why the pane lives beside it. [40]
@@ -282,6 +288,9 @@ No meaningful cross-repo references found.
 - **Pane 2: the inventory first and unconditionally, then the measured partition it is read from, the address view the recorded-relationship traversal renders, the relationships themselves, the six remaining counts, expansion and the three bucket lists.** [54]
 - **The scope of each count and the two partition facts in the comparison route's spelling.** [55]
 - **The wire value this module builds, with the count checked against the list and the unrepresentable rule enforced at construction.**  Anchor: `ReviewSourceInventory` [58]
+
 - The adapter's composition: the observation made once and handed to both renderings, before any dataset is opened and before the selector branch, and its limits declared at the top level. [60]
+
 - **The cases that measure this module against real repositories: population and per-path status against an independent Git observation, the tab/newline name, one entry per renderability kind, unavailable versus measured-empty with its control, the paths-only partial rendering, and the non-UTF-8 byte form.** [61]
+
 - **The cases that measure the inventory through the real composition and the real route: no knowledge at all, an unusual name carried by the shipped capture, non-text and mode-changed paths, and a non-UTF-8 name that leaves the review openable and partial.** [63]

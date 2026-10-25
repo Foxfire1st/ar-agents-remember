@@ -56,15 +56,14 @@
       ]
     },
     "2": {
-      "note": "The saved launch's files are restored together, checked before the first write.",
+      "note": "The saved launch's files are restored together, checked before the first write.\n\nAnchor: `restore_launch_files`",
       "targets": [
         {
           "anchor": {
-            "blob": "801d3be936028d93ae5201e4bccc6c0814e1da0e",
-            "content": "sha256:623d4d569148bb33b3e3399d6c61118e137ee642b467b5602aff535015858c74",
+            "blob": "e67b518ce70be78d1e52c7ff344223c0e027bf6b",
+            "content": "sha256:386bfe82eecb7c0dc3e7d8d40531e370a14587636eebba1d7841cc01094019b6",
             "locator": {
-              "kind": "symbol",
-              "name": "restore_launch_files"
+              "kind": "file"
             }
           },
           "kind": "code"

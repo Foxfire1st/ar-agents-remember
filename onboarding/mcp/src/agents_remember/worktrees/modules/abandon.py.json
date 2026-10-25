@@ -149,15 +149,16 @@
   ],
   "references": {
     "1": {
-      "note": "Successful abandon and exact terminal replay are wrapped with exact source-pair release.",
+      "note": "Successful abandon and exact terminal replay are wrapped with exact source-pair release.  Anchor: `abandon_result`",
       "targets": [
         {
           "anchor": {
-            "blob": "a0c35c9361af4935f2c39f8d56fa0569f14ff90f",
-            "content": "sha256:16d3a43affb4cbe85415b5cfa764dc79df13660916b0b96557bcf42294a79c8e",
+            "blob": "e5a10d614d0e28fb14c5e7a0703d8fb4ce35def4",
+            "content": "sha256:40e16785a8feb0b92aeb65cd5814eeede4efbdb7403ecb496729a07062b2861f",
             "locator": {
-              "kind": "symbol",
-              "name": "abandon_result"
+              "end": 212,
+              "kind": "line_range",
+              "start": 116
             }
           },
           "kind": "code"
@@ -200,10 +201,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "049227aeea85b68565e3a144f616be2f01186dc3",
-            "content": "sha256:e79f69a320047a9ff0ff3fb74868c934897b26b94cbaf5ad67ab98eaf2e49b71",
+            "blob": "c9e2847f64ca428bdc799c8173b43aa736f4b0e9",
+            "content": "sha256:15ff2b77804c98eb561cb5c8b92ae8240ddb9bce099af7731e8320f260faa919",
             "locator": {
-              "kind": "file"
+              "end": 243,
+              "kind": "line_range",
+              "start": 190
             },
             "path": "mcp/src/agents_remember/worktrees/worktree_contract.py"
           },
@@ -212,15 +215,16 @@
       ]
     },
     "12": {
-      "note": "The current module exposes `abandon_result` at this ownership boundary.",
+      "note": "The current module exposes `abandon_result` at this ownership boundary.  Anchor: `abandon_result`",
       "targets": [
         {
           "anchor": {
-            "blob": "a0c35c9361af4935f2c39f8d56fa0569f14ff90f",
-            "content": "sha256:16d3a43affb4cbe85415b5cfa764dc79df13660916b0b96557bcf42294a79c8e",
+            "blob": "e5a10d614d0e28fb14c5e7a0703d8fb4ce35def4",
+            "content": "sha256:7a86dbe0abf3f890e8e414f6aca08255f07a30778499d81e4e0e5c06d4c78236",
             "locator": {
-              "kind": "symbol",
-              "name": "abandon_result"
+              "end": 165,
+              "kind": "line_range",
+              "start": 162
             }
           },
           "kind": "code"
@@ -249,10 +253,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6a694c702d35e4d5a1761381a0d9876b40837588",
-            "content": "sha256:41b7d7e2babe5f11894baf0ffd13637943616bda817bcf0902f28de01d955484",
+            "blob": "38b1dccdd3748dc7d095c969fb81d964e1075f11",
+            "content": "sha256:fee30c4fcfd11f9734404ad8bd80b39cc7981508be63ae8a98790bd6c96940fd",
             "locator": {
-              "kind": "file"
+              "end": 334,
+              "kind": "line_range",
+              "start": 54
             },
             "path": "mcp/src/agents_remember/worktrees/modules/cleanup.py"
           },
@@ -281,10 +287,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "680ee6661cc049e3e6876ee998e85b6371f1aa25",
-            "content": "sha256:5ad1872922b289898616ea4f50b6449749007c82bb8e83d1fe4ba7ed8cd30a66",
+            "blob": "e5a10d614d0e28fb14c5e7a0703d8fb4ce35def4",
+            "content": "sha256:deb0849fda385e1003d96293a7fbec6ab535d372876aa8db7d3de65ca2d03ad8",
             "locator": {
-              "kind": "file"
+              "end": 270,
+              "kind": "line_range",
+              "start": 116
             }
           },
           "kind": "code"
@@ -312,11 +320,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b8ccc22f00045bfceb680329d2723611281b8ee4",
-            "content": "sha256:8302972fbb6afcd531710e932767677a2c1746703e4c6876ee831e356f75932b",
+            "blob": "e5a10d614d0e28fb14c5e7a0703d8fb4ce35def4",
+            "content": "sha256:603402e4b3b74ccb8366b134343edd9d49fb2bc215330335ee24450b0308e7db",
             "locator": {
-              "kind": "symbol",
-              "name": "_publish_abandon"
+              "end": 522,
+              "kind": "line_range",
+              "start": 463
             }
           },
           "kind": "code"
@@ -324,15 +333,14 @@
       ]
     },
     "19": {
-      "note": "One shared owner publishes/restores task stage and contract under the terminal guard.",
+      "note": "One shared owner publishes/restores task stage and contract under the terminal guard.\n\nAnchor: `publish_abandoned_task`",
       "targets": [
         {
           "anchor": {
-            "blob": "0b8256aef2d4c0a07621d321e9efa78148b84942",
-            "content": "sha256:371d5ba827d99b7cc19a57ae8a47f83034c87c651fe721108944dcb00cd016f0",
+            "blob": "b5ccbb891fc3b5b1a85848561a6ac63c70b433d5",
+            "content": "sha256:fd1b67a3eb2db4aa0e69c0c4d8b56495f210c9182b46723ffb7157dcb94d1979",
             "locator": {
-              "kind": "symbol",
-              "name": "publish_abandoned_task"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/worktrees/abandon_task_publication.py"
           },
@@ -475,10 +483,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8e7c293ce46fe4d3041a43bab9bf26cbf1087120",
-            "content": "sha256:f0b616a5fbda201147a849d0895e50bf075e7501e35584b3c5f6ce006aa9255f",
+            "blob": "b4bf02afeb62c71b1a3333562b505eeb244d637e",
+            "content": "sha256:e092fb2568484314845a9e60f9dea7437e90fa9fe0e646662ff06051f4a2749b",
             "locator": {
-              "kind": "file"
+              "end": 37,
+              "kind": "line_range",
+              "start": 37
             },
             "path": "mcp/src/agents_remember/models/worktree.py"
           },

@@ -23,7 +23,9 @@ No test execution, CODE/MEMORY grade, new producer capability or landing is clai
 ## Evidence
 
 
+
 - Describes keyed reconsideration-question publication through the native task-document owner and its rollback/concurrency boundaries. Do not conflate refused question publication (no own append/replacement) with the explicit later memory-write-failure exception. Thread/event and injected-failure fixtures protect named opportunities, not universal timing or transaction acceptance, and none is executed by reading this card. [1]
+
 
 ## Current account — the command route drives the question port
 

@@ -39,15 +39,14 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "Recorded-master dispatch reaches the chain refusal for the actual foreign commit.",
+      "note": "Recorded-master dispatch reaches the chain refusal for the actual foreign commit.\n\nAnchor: `test_a_foreign_commit_refuses_through_the_public_recorded_route`",
       "targets": [
         {
           "anchor": {
-            "blob": "26d6172b1f8b8f91e9680896e04425e6e79fb3c1",
-            "content": "sha256:420925c85d3aba1fcaa9b1fc1bf1bcedec2dc322a3b2027bb97cef9de732e237",
+            "blob": "1b4a7d9869c9f3a9e7793676b7dfdf463cd7f667",
+            "content": "sha256:a83872ec2c56177d897795aa4936c27977488e0fb7192d1b8faa78bbe59a84ae",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_foreign_commit_refuses_through_the_public_recorded_route"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -55,15 +54,14 @@
       ]
     },
     "2": {
-      "note": "The final route admits the recorded sync position and produced head.",
+      "note": "The final route admits the recorded sync position and produced head.\n\nAnchor: `test_a_managed_sync_merge_passes_through_the_public_final_route`",
       "targets": [
         {
           "anchor": {
-            "blob": "5874259383770db761b01efb85f1cdc83142dc41",
-            "content": "sha256:763aba0c92274c4d2d2ac94d8b71e10502cefc2c03477cd0fae0d2e5de9818e4",
+            "blob": "1b4a7d9869c9f3a9e7793676b7dfdf463cd7f667",
+            "content": "sha256:a83872ec2c56177d897795aa4936c27977488e0fb7192d1b8faa78bbe59a84ae",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_managed_sync_merge_passes_through_the_public_final_route"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -87,12 +85,12 @@
       ]
     },
     "4": {
-      "note": "Original offending-commit identity pins remain on the staying public route calls. Complete world snapshots add refusal-footprint preservation; they are not a new executed rollback result.\n\nAnchor: Current STOP-delta source carrier",
+      "note": "Original offending-commit identity pins remain on the staying public route calls. Complete world snapshots add refusal-footprint preservation; they are not a new executed rollback result.",
       "targets": [
         {
           "anchor": {
-            "blob": "14f9c242734c0d569c1a589a74d13f442cd990a6",
-            "content": "sha256:1198eca76391eae70e6cead456582d6f204aca99dc0d8bed0486e1aff8d533ac",
+            "blob": "1b4a7d9869c9f3a9e7793676b7dfdf463cd7f667",
+            "content": "sha256:a83872ec2c56177d897795aa4936c27977488e0fb7192d1b8faa78bbe59a84ae",
             "locator": {
               "kind": "file"
             }

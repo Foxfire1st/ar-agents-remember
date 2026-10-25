@@ -19,15 +19,14 @@
       ]
     },
     "2": {
-      "note": "Default targets only write to mcp package data",
+      "note": "Default targets only write to mcp package data\n\nAnchor: `test_default_targets_only_write_to_mcp_package_data`",
       "targets": [
         {
           "anchor": {
-            "blob": "f52951a09d88b5ae4d22c9503f0da3ecfd45ac24",
-            "content": "sha256:24f0494f6f97beefb7ff2f38730482e46c52c209285ab0b21e558318e0ec3da4",
+            "blob": "7986990eab54fc47b28637f9939d9043e6877c26",
+            "content": "sha256:e88c0e1d6505f47695228f21a862f6b1fc45511ccd4f05d8abf741de662ffae0",
             "locator": {
-              "kind": "symbol",
-              "name": "test_default_targets_only_write_to_mcp_package_data"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -44,22 +43,6 @@
             "locator": {
               "kind": "symbol",
               "name": "test_a_missing_canonical_source_is_never_reported_in_sync"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "4": {
-      "note": "Only the eve application target ignores machine-local trees",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f52951a09d88b5ae4d22c9503f0da3ecfd45ac24",
-            "content": "sha256:9e23ab3b636f7d80dab708c88c10a6a7c702a81431b9163f5e965341dbde82fb",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_only_the_eve_application_target_ignores_machine_local_trees"
             }
           },
           "kind": "test"

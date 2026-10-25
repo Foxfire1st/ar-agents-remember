@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/memory/conversion/convert.py",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
@@ -71,12 +72,23 @@
       ]
     },
     "11": {
-      "note": "Determinism, the version refusal and the no-op.",
+      "note": "Determinism, the version refusal and the no-op.\n\nAnchor: `test_conversion_is_deterministic_version_pinned_and_a_no_op_once_converted`",
       "targets": [
         {
           "anchor": {
-            "blob": "da911c55197d73b2084ba132c741bb6f2d3447ae",
-            "content": "sha256:27d8c8a624b0821eb9b38bbb0bd49df08055def344e540994fc5cdb2ad788e7f",
+            "blob": "44773410bfe6609e2891b444d598d96768be39ad",
+            "content": "sha256:67ae57d39d98cfdb606ab31b093d3422b2bd603cebdafb59586484fbd293bd4e",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_knowledge_conversion.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "44773410bfe6609e2891b444d598d96768be39ad",
+            "content": "sha256:dc4e2058816533155d8660ffc660f0572a015fdfd41735e651c19f8ac80323e3",
             "locator": {
               "kind": "symbol",
               "name": "test_conversion_is_deterministic_version_pinned_and_a_no_op_once_converted"
@@ -88,8 +100,19 @@
       ]
     },
     "12": {
-      "note": "Version 1's pinned bytes.",
+      "note": "Version 1's pinned bytes.\n\nAnchor: `test_conversion_format_version_1_reproduces_its_pinned_bytes` `VERSION_1_FIXTURE_DIGEST`",
       "targets": [
+        {
+          "anchor": {
+            "blob": "44773410bfe6609e2891b444d598d96768be39ad",
+            "content": "sha256:67ae57d39d98cfdb606ab31b093d3422b2bd603cebdafb59586484fbd293bd4e",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_knowledge_conversion.py"
+          },
+          "kind": "test"
+        },
         {
           "anchor": {
             "blob": "44773410bfe6609e2891b444d598d96768be39ad",
@@ -104,8 +127,8 @@
         },
         {
           "anchor": {
-            "blob": "da911c55197d73b2084ba132c741bb6f2d3447ae",
-            "content": "sha256:baf240ed900a0eba55e5c706cb874864e0196ce092aade08000543c19933d43e",
+            "blob": "44773410bfe6609e2891b444d598d96768be39ad",
+            "content": "sha256:8a2cb76e5e8cc9bf5d02a7e33eacb02348a191a0355877ec40a4064aadf2d7d2",
             "locator": {
               "kind": "symbol",
               "name": "VERSION_1_FIXTURE_DIGEST"

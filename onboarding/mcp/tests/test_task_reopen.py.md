@@ -91,8 +91,12 @@ to removed methods are superseded by this current inventory.
 - Resets contract doc and master index [1]
 - Contract publish failure rolls back docs and landing [2]
 - The terminal series reopen, gathered as one collected subject across all three of its arrivals. [7]
+
 - The reset that is durable while the locator is still the collected generation is resumed, not refused. [8]
+
+
 - A series that is already live and unaddressed is re-addressed: the successor is published citing the archived predecessor, the branch is unmoved, and the spent review counter is cleared. [9]
+
 
 ### Cross-Repo References
 

@@ -19,15 +19,14 @@
       ]
     },
     "10": {
-      "note": "The `dot` recipe defines the state/severity color pairs that the glyph tests distinguish.",
+      "note": "The recipe defines attention-severity appearances, not task lifecycle marks.\n\nAnchor: `dot`",
       "targets": [
         {
           "anchor": {
-            "blob": "8617ee0e8edd92b82484aea936ab97f64f7ddf16",
-            "content": "sha256:9b465835ee581f451d8970828438dfc43651bb94ec12e65c4941bbba82f024e2",
+            "blob": "ad18738b0d781e04a5a6ed715ccbd1f67f02b34b",
+            "content": "sha256:3bf23101250eb6f1cc151d92ae358f52e91a507bb65e47c844bcae9683e979db",
             "locator": {
-              "kind": "symbol",
-              "name": "dot"
+              "kind": "file"
             },
             "path": "dashboard/src/grammar/Dot.tsx"
           },
@@ -108,16 +107,16 @@
       ]
     },
     "18": {
-      "note": "`Cockpit.tsx` renders `AttentionQueue`.\n\nAnchor: \"<AttentionQueue\"",
+      "note": "`Cockpit.tsx` mounts `LifecycleList` in its left rail, and that list's task-column pivot head (`TaskPivotBar`) renders `AttentionQueue`.",
       "targets": [
         {
           "anchor": {
-            "blob": "76c1e952f0b6c4c9d708c3edf4cd8b28c0f764ff",
-            "content": "sha256:0f7040a302449a895f4f48acb0910d4a3b9f17c2f1358d6d1f634e3918c558a7",
+            "blob": "1b839113b8d511b4a8343230e70a8de0be01b79f",
+            "content": "sha256:635b971208acb3c2650c004fce4b12c1809f18c0a7a8c5d763ffd4df2b091698",
             "locator": {
-              "end": 684,
+              "end": 707,
               "kind": "line_range",
-              "start": 684
+              "start": 707
             },
             "path": "dashboard/src/cockpit/Cockpit.tsx"
           },
@@ -126,16 +125,16 @@
       ]
     },
     "19": {
-      "note": "`Cockpit.tsx` renders `LifecycleList`.\n\nAnchor: \"<LifecycleList\"",
+      "note": "`Cockpit.tsx` renders `LifecycleList`.",
       "targets": [
         {
           "anchor": {
-            "blob": "4b640fd1cc8a08d08a8e813dc3a883c12157110c",
-            "content": "sha256:1b4c62b2d5ddd73a0c8b767effdb34e6b7b2c2e903ee29e6601a407745cb329b",
+            "blob": "1b839113b8d511b4a8343230e70a8de0be01b79f",
+            "content": "sha256:45c93cf1e942145f2816b5e9d8bb19cd003f7e26f0432411fbb3731897859efc",
             "locator": {
-              "end": 630,
+              "end": 647,
               "kind": "line_range",
-              "start": 630
+              "start": 647
             },
             "path": "dashboard/src/cockpit/Cockpit.tsx"
           },
@@ -160,15 +159,14 @@
       ]
     },
     "3": {
-      "note": "`appearanceOf` derives the observable appearance key from the rendered mark.",
+      "note": "`appearanceOf` derives the observable appearance key from the rendered mark.\n\nAnchor: `appearanceOf`",
       "targets": [
         {
           "anchor": {
-            "blob": "bc0f3d621d5d0b47243a45338ea8a76800018de4",
-            "content": "sha256:6760ef11b3243681ce0bfaa303924149c7ae8cd02e48287b175ffd76ec957843",
+            "blob": "abe657a609e6b8169b65273494d0e5dab54df810",
+            "content": "sha256:d897a74a9e088f348e4530e21e54c5c2c57080e4b2595617ec39723e6eb0c028",
             "locator": {
-              "kind": "symbol",
-              "name": "appearanceOf"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -176,12 +174,12 @@
       ]
     },
     "4": {
-      "note": "The suite asserts the wire/recipe vocabulary equality.\n\nAnchor: \"treats exactly the states\"",
+      "note": "The vocabulary assertion requires exactly alarm/warn/info.",
       "targets": [
         {
           "anchor": {
-            "blob": "bc0f3d621d5d0b47243a45338ea8a76800018de4",
-            "content": "sha256:bf00d8ae37d16b6d7ef7a5191fc1386beb662cc4d2fad38752e315171286c8f7",
+            "blob": "abe657a609e6b8169b65273494d0e5dab54df810",
+            "content": "sha256:dad4a85c6b9521a8a6c70bf969d254b41a18ffe7ff165275986caa834ddcb00c",
             "locator": {
               "end": 51,
               "kind": "line_range",
@@ -193,12 +191,12 @@
       ]
     },
     "5": {
-      "note": "The suite asserts distinct appearances for every variant and the fallback.\n\nAnchor: \"renders every state\"",
+      "note": "The suite asserts distinct appearances for every variant and the fallback.",
       "targets": [
         {
           "anchor": {
-            "blob": "bc0f3d621d5d0b47243a45338ea8a76800018de4",
-            "content": "sha256:5395e3b01c75c47d3e8ec5a4437bdf20e8eab0c0d34977b4b5c56f4ca8cb9cbe",
+            "blob": "abe657a609e6b8169b65273494d0e5dab54df810",
+            "content": "sha256:cc36efe27a519b707ceffeb9a576300213aad99f003ed5b6f4b90e7e8a098b7d",
             "locator": {
               "end": 70,
               "kind": "line_range",
@@ -210,16 +208,16 @@
       ]
     },
     "6": {
-      "note": "The suite asserts that every variant carries its own ink.\n\nAnchor: \"gives every variant an ink\"",
+      "note": "The suite asserts that every variant carries its own ink.",
       "targets": [
         {
           "anchor": {
-            "blob": "bc0f3d621d5d0b47243a45338ea8a76800018de4",
-            "content": "sha256:c02096b249b4d191c6618d8e0d7089d49196afa52f4ea76e308af32a1f6d4db4",
+            "blob": "abe657a609e6b8169b65273494d0e5dab54df810",
+            "content": "sha256:cf11b17e57cd33434be471c958e66ffe09c1ee8cbb1cad61035fac6f57630108",
             "locator": {
-              "end": 87,
+              "end": 69,
               "kind": "line_range",
-              "start": 72
+              "start": 59
             }
           },
           "kind": "test"
@@ -244,15 +242,14 @@
       ]
     },
     "8": {
-      "note": "`DOT_GLYPHS` is the glyph table used by the dot recipe.",
+      "note": "`DOT_GLYPHS` is the glyph table used by the dot recipe.\n\nAnchor: `DOT_GLYPHS`",
       "targets": [
         {
           "anchor": {
-            "blob": "8617ee0e8edd92b82484aea936ab97f64f7ddf16",
-            "content": "sha256:f21c21409320c8d8d9bb08014f00711f758a7bbf2eb2396daee3d8cfc7ecc901",
+            "blob": "ad18738b0d781e04a5a6ed715ccbd1f67f02b34b",
+            "content": "sha256:3bf23101250eb6f1cc151d92ae358f52e91a507bb65e47c844bcae9683e979db",
             "locator": {
-              "kind": "symbol",
-              "name": "DOT_GLYPHS"
+              "kind": "file"
             },
             "path": "dashboard/src/grammar/Dot.tsx"
           },
@@ -261,12 +258,12 @@
       ]
     },
     "9": {
-      "note": "The `cva` base uses `color: \"muted\"`.\n\nAnchor: \"color: \\\"muted\\\"\"",
+      "note": "The `cva` base uses `color: \"muted\"`.",
       "targets": [
         {
           "anchor": {
-            "blob": "8617ee0e8edd92b82484aea936ab97f64f7ddf16",
-            "content": "sha256:f983685a9e31955bf2551815f836d4fe7e279662443b10c492b0c090976cf617",
+            "blob": "ad18738b0d781e04a5a6ed715ccbd1f67f02b34b",
+            "content": "sha256:ab0482c579d3c4f2bc618bd18acc0d0aa39a46ef3e0321030d5e58d36a636d04",
             "locator": {
               "end": 37,
               "kind": "line_range",

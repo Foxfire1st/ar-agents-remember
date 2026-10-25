@@ -48,15 +48,14 @@
       ]
     },
     "3": {
-      "note": "Actual validator results derive integrity answer cases.",
+      "note": "Actual validator results derive integrity answer cases.\n\nAnchor: `IntegrityProductionTests`",
       "targets": [
         {
           "anchor": {
-            "blob": "dbe036563e60c80246f0cf4f88feaafce572b1ed",
-            "content": "sha256:8c868e437eb58b49841cc87267bf18ad94210a156d5eb22f7f0342dec7c7158a",
+            "blob": "6d672d3445e36d61529eab5788ef10633dbf6d77",
+            "content": "sha256:7e7339c3360d4af9a3a4563a565bed6550e448982fc6607ba612afc76aa028ea",
             "locator": {
-              "kind": "symbol",
-              "name": "IntegrityProductionTests"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -129,7 +128,7 @@
       ]
     },
     "8": {
-      "note": "The actual fixture builder composes its review world and owned topology; packaging's coherence case exercises real service actions over forty constructed candidates without changing guard assertions.\n\nAnchor: current fixture and case",
+      "note": "The actual fixture builder composes its review world and owned topology; packaging's coherence case exercises real service actions over forty constructed candidates without changing guard assertions.",
       "targets": [
         {
           "anchor": {
@@ -146,12 +145,12 @@
         },
         {
           "anchor": {
-            "blob": "5afb4f3f2ac22a5619a7c83302cf7b3897e3df9e",
-            "content": "sha256:8bc2e7b85fa80587808541e57663dcbcb1b9bf49e524a87bcd049897106a6144",
+            "blob": "6d672d3445e36d61529eab5788ef10633dbf6d77",
+            "content": "sha256:66daf1f61e34ef86d10e6ca6db6c74a01c467106714deb3ddd75e27434a88fc3",
             "locator": {
-              "end": 550,
+              "end": 483,
               "kind": "line_range",
-              "start": 483
+              "start": 403
             }
           },
           "kind": "test"

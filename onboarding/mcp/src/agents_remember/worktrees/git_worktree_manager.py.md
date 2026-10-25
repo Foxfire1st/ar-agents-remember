@@ -106,12 +106,19 @@ documented by the `modules/overview.md` route overview.
 
 L4 makes task-derived integration refs mechanically non-ordinary: repository defaults, sprint supers, and active atomic-series refs are censused across code and external memory. Mutation is admitted only through exact lifecycle authority, named-ref compare-and-swap, queue/repository serialization, or a terminal capability; stale topology, aliases, ambient checkouts, and torn recovery fail closed.
 
+
 - MCP worktree start writes temporary lifecycle settings and passes them to this module. [1]
 
-- Worktree contract serialization lives in the package worktree contract module. [4]
+
+> Retained earlier citation wording: - Worktree contract serialization lives in the package worktree contract module. [4]
 
 - The pause's result function is imported from its own module and listed in the facade's public export surface, so the stop route is reachable through the stable facade path. [6]
 
 - The facade declares its public worktree lifecycle result exports, including the pull-request landing recorder, the checkpoint landing route and the stop-only pause. [5]
+
+> Retained earlier citation wording: - Terminal lifecycle finalization is implemented in the extracted module. [7]
+
+- Worktree contract serialization lives in the package worktree contract module. [4]
+
 
 - Terminal lifecycle finalization is implemented in the extracted module. [7]

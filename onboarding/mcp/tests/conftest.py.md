@@ -81,9 +81,15 @@ scope `all-tests`.
 - Integration files are skipped before import in a run that excludes integration. [4]
 - The collected items are counted against the two budgets. [5]
 - The worktree services are bound and reset by a fixture. [6]
-- The environment is restored and the temporary directory removed. [7]
-- The isolated home directories and the switched-off Git configuration. [8]
-- The removal of inherited opt-ins and credentials. [9]
+
+> Retained earlier citation wording: - The environment is restored and the temporary directory removed. [7]
+
+
+> Retained earlier citation wording: - The isolated home directories and the switched-off Git configuration. [8]
+
+
+> Retained earlier citation wording: - The removal of inherited opt-ins and credentials. [9]
+
 
 - The lane manifest is read once for the integration files, an unreadable manifest is explained, and certification asks for Dagger admission. [13]
 - The refusal text for a manifest that cannot be read or parsed. [14]
@@ -96,6 +102,16 @@ scope `all-tests`.
 
 - The three registered plugins and the comment on the Git checkout. [10]
 
-## 260928-MIK-L198 — each pytest process isolates the outside scratch parent
+## Outside scratch isolation and ownership at teardown
 
-The session fixture redirects outside-scratch allocations in this pytest process to its isolated parent. A separately served product subprocess does not load this fixture and can allocate under the original `/var/tmp/agents-remember` parent. Teardown checks both parents and removes only roots whose marker's resolved coordination root is this invocation's temporary base or lies beneath it; sibling and foreign roots remain. It then restores the parent and socket limit and removes the isolated directory.
+The session fixture gives code running in this pytest process an isolated outside scratch parent and restores the previous parent and socket limit at teardown. A product served in a subprocess does not load this fixture and can allocate under the normal product parent. Teardown examines both parents and removes only roots whose marker proves that their coordination root is this run's own temporary base or lies beneath it; roots owned by parallel workers remain. [20]
+
+- The environment is restored and the temporary directory removed.  Anchor: `pytest_unconfigure` [7]
+
+
+- The isolated home directories and the switched-off Git configuration. [8]
+
+
+- The removal of inherited opt-ins and credentials. [9]
+
+- Per-process fixture isolation, subprocess exception and coordination-root ownership at teardown. \[20] [20]

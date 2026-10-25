@@ -2,7 +2,7 @@
 
 ## Current operative account — MIK-R112
 
-explainer_control is attributed to L183 in the retained interim answer vocabulary while its leaf is unlanded; existing tool limits are unchanged.
+explainer_control is attributed to L183 in the retained interim answer vocabulary, which keeps L183 in INTERIM_TOOL_LEAF even though that leaf has landed; existing tool limits are unchanged.
 
 The retained `role_message` exception describes the normative cut/file policy for waited replies; it does not implement character cutting or full-text storage. Its 4000-token ceiling and common envelope/list/short-form shaping algorithms are unchanged. The composed unheld dispatcher calls the delivery helper when a filed identity exists, while the held-drain wait merges its result without that helper. This table therefore does not prove every waited reply is character-bounded and filed; the implementation gap remains Owner/Worker-owned rather than a narrowed requirement.
 
@@ -37,17 +37,19 @@ The current source facts below replace the former operative inventory. The separ
 
 ### Current naming-reader bounds
 
+The note-only `citation_note_revision` answer has a final shaped bound of 1,200 tokens. Its response names the revised reference, before/after sidecar digests and refusal vocabulary; complete sidecar rows remain whole-result log data.
+
 The candidate assigns final explicit bounds: read_ar_files 2400, knowledge_read 4000, knowledge_diff 1500 and context_packet 360 tokens. These four names have no L109 interim row; resolve_context is removed, and INTERIM_LEAVES no longer contains L109. This is the candidate’s table/guard state, not a Git landing claim. Twenty-entry list caps and 400-token overflow shaping remain unchanged.
 
 ### Superseded inventory
 
 - Pre-repair card claim: Card says L112 rows remain interim until landing. This is superseded archival wording, not a current prescription.
 
-- runtime_install is the sole retained L112 final bound; dispatch_agent is absent. [6]
+> Retained earlier citation wording: - runtime_install is the sole retained L112 final bound; dispatch_agent is absent. [6]
 
-- The installation projection retains removedPartStores rather than suppressing its report. [7]
+- The installation projection retains removedPartStores rather than suppressing its report.
 
-- Removed notifier/supervisor banners are absent from the framework allowed keys. [8]
+- Removed notifier/supervisor banners are absent from the framework allowed keys.
 
 ### Source and authority bounds
 
@@ -118,11 +120,14 @@ SHAPED_TOOL_BOUNDS carries the final task/landing/role delivery bounds; direct_e
 
 - **Retained historical source account — superseded by the current contract:** The grant tool has explicit L111 interim ownership. [5]
 
-- SHAPED_TOOL_BOUNDS carries the final task/landing/role delivery bounds; direct_execution_grant has the shaped 150-token bound and no raw interim-map entry. Final assembled table rows and the raw declaration map are distinct: some shaped tools retain L111 entries in INTERIM_TOOL_LEAF, and interim_leaf_for checks that map first. Bound selection separately uses operation/tool exceptions, shaped bounds, explicit interim ownership, final rows and fallback. Ordinary content targets exclude locations; the whole delivered guard and detail-file byte budget remain separate. No source comment or final table row is a lifecycle landing verdict. [6]
+
+- SHAPED_TOOL_BOUNDS carries the final task/landing/role delivery bounds; direct_execution_grant has the shaped 150-token bound and no raw interim-map entry. Final assembled table rows and the raw declaration map are distinct: some shaped tools retain L111 entries in INTERIM_TOOL_LEAF, and interim_leaf_for checks that map first. Bound selection separately uses operation/tool exceptions, shaped bounds, explicit interim ownership, final rows and fallback. Ordinary content targets exclude locations; the whole delivered guard and detail-file byte budget remain separate. No source comment or final table row is a lifecycle landing verdict. runtime_install is the sole retained L112 final bound; dispatch_agent is absent. [6]
+
 
 ## The settings answer's bound
 
 `SHAPED_TOOL_BOUNDS` gives `user_settings_init` a 900-token bound: its answer carries the state, the path, the two key lists, the harness of every role and its sources, and the largest measured answer is 572 characters. A bound is a ceiling on the delivered answer, not a promise that every field appears in the short form.
+
 
 - The shaped-bound table, which carries the settings answer's ceiling. [9]
 

@@ -51,7 +51,9 @@ No configured live documentation source was available for this pass.
 ### Repo-Internal References
 
 - The real captured body. [1]
+
 - The tree view of a converted leaf. [2]
+
 - One wire convention, and the comparison and selection a request names. [3]
 - The answers that are not a tree view. [4]
 

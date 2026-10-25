@@ -21,8 +21,12 @@ handover_gate_blocked preserves the existing master-handover refusal code, gate 
 ## Evidence
 
 - The constructor preserves the producer sentence and carries tool arguments or separate CLI values with a correctly quoted display. [1]
+
 - Terminal conversion is a recognized-message mapping with an unrecognized fallback. [2]
+
+
 - Shared blocker sentences preserve producer fields and add the dirty/unmerged force wording without changing a caller. [3]
+
 - Cleanup calls terminal preflight with force false; formatter prose supplies no override to that route. [4]
 
 

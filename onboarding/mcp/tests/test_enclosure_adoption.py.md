@@ -22,8 +22,13 @@ The dry-run witness keeps the delivered envelope free of `operation`, but assert
 
 ## Evidence
 
+
 - Adoption dry run, real run and repeated run are pinned. [1]
 
+
+
 - Operation identity is read from the whole result while dry-run and next-action assertions remain. [2]
+
+
 
 - Existing _adopt_tool application controls remain. Registered adapter details such as the adoption artifact use the retained log. Identity, receipt, no-write and move comparisons remain intact; no second mutator is called merely to obtain whole facts. [3]

@@ -43,7 +43,9 @@ No configured live documentation source was available for this pass.
 
 - The gutter: plain for line 1, offset otherwise. [1]
 - The file pane's use, through its optional first line. [2]
+
 - The diff pane's use, one first line per side. [3]
+
 
 ### Cross-Repo References
 

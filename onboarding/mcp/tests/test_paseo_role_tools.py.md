@@ -44,7 +44,7 @@ the CLI helpers directly, and use `paseo_role_tools_test_support` for the bridge
 
 - The second start reaches the held dispatch lock before pending is asserted. [2]
 
-- The fixture patches facade-local bridge, resolve and topology names plus the held-store and retirement callers; an occupied-seat refusal names its holder. [3]
+- The controlled fixture patches facade-local bridge, resolve and topology names plus the held-store and retirement bridge callers. The registry assertion expects `role_start`, `role_start_set`, `user_settings_init` and `role_message`, and an unbound `role_start_set` call is refused. [3]
 - A native binding refusal carries no redundant operation envelope. [4]
 - The role answer stays concise while a real `tool_call_context` supplies the dispatch log for detailed controls. [5]
 

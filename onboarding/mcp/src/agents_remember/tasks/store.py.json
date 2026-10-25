@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/tasks/store.py",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
@@ -81,8 +82,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ef35d2d921f438cb1f260638e11b337325b8e2e0",
-            "content": "sha256:7fccc6ef1f4386cf270decc5f62741eedbbe18150ccf2bdf6776abd3cb492aec",
+            "blob": "be6077cacddf1e01c108ee2a00fa606660e7034c",
+            "content": "sha256:6d683b80d214bd8ed682d805971fc4ef31e5bbd353bb39318d5e9333000d9e5f",
             "locator": {
               "end": 867,
               "kind": "line_range",
@@ -166,12 +167,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a3cf34ba109604b42b995d60c5eebc3da063dece",
-            "content": "sha256:5c2c0b677425cb4403e43d783da566ba64d6e1b45a5e23c99ddbf0763b363da1",
+            "blob": "f174a79f72375a38aa57f50907312424f3fc2c3c",
+            "content": "sha256:de85e8dd1d0b56d0f3b8094363451dc77f81530f3fe0488d43004c27899786f5",
             "locator": {
-              "end": 533,
+              "end": 537,
               "kind": "line_range",
-              "start": 488
+              "start": 492
             },
             "path": "mcp/src/agents_remember/application/task_docs/task_doc_tools.py"
           },

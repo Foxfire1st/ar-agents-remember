@@ -28,14 +28,22 @@ The role settings reference now documents a single user-owned `stepUp` alternati
 
 ## Evidence
 
+
 - Five settings homes/cadences, exact user-owned open/close commands and nonmutating live-mode reporting are declared by the current reference. [4]
+
+
 - The complete reference separates current host role/features from accepted-but-unused retired settings and product answer authority. [5]
+
 
 No external Domain Documentation source or fresh executed acceptance is inferred.
 
 
+
 - The new roles table/paragraphs document one user-layer, nonnested stepUp alternative, default positive afterTries=3 only for Worker/Curator, code versus memory recorded-round tries, record-only nontries and exact-key refusals. The next start validates catalog choices before normal idle-seat retirement; active turn/prompt refuses. Explicit step_up reason/UI Step up use the same alternative without adding permission authority. Cross-harness/model omissions use identified host defaults, durable decisions retain task choice, and reviewer limits/findings do not reset. Removing the alternative changes the next start, not the running actor. [6]
 
-- The same `orchestration.roles` family admits the non-seat capability id `review-presenter`: every rule above validates its row, but it is never dispatchable as a seat, it reads the launch choices a capability can act on, and a row naming `stepUp` refuses that capability's launch by name — a capability has no seat replacement ladder — while `notes`, `featureValues` and `serviceTier` are applied through the native launch. \[7] [7]
+
+
+- The same `orchestration.roles` family admits the non-seat capability id `review-presenter`: every rule above validates its row, it is never dispatchable as a lifecycle seat, and it applies `harness`, `model`, `effort`, `mode`, `serviceTier`, `featureValues` and `notes` through the native launch. A row naming `stepUp` alone refuses that capability's launch by name because it owns no seat replacement ladder. [7]
+
 
 **L184 — NEW-R192-EXTRA-ARGS.** This is the document that states what the settings file's keys mean, so a new key has to be described here rather than inferred from code. The obligation this leaf records for this place is stated in the invariant named here; the card's earlier account of this file stands, and this paragraph adds what the change made true.

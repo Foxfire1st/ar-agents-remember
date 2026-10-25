@@ -1,5 +1,6 @@
 {
   "path": "dashboard/src/panels/lifecycle-list/LifecycleList.tsx",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
@@ -309,15 +310,14 @@
       ]
     },
     "27": {
-      "note": "Typeahead preserves title-only matching and the displayed prefix for numbered rows.",
+      "note": "Typeahead preserves title-only matching and the displayed prefix for numbered rows.\n\nAnchor: `typedText`",
       "targets": [
         {
           "anchor": {
-            "blob": "ae0b34f8138b4a85b281c7a8b0009da082f7bad9",
-            "content": "sha256:51dc2af098c2dbe329f8ba8911a79ae4cf1400ded74153cac0a10b9a5bba3c30",
+            "blob": "8835407060216b31d4e3a7c45f4cb3e631551701",
+            "content": "sha256:dc09e97aa36b6f85702e098e15f9afa4678107ca1a3e2e736a686e0c233052b2",
             "locator": {
-              "kind": "symbol",
-              "name": "typedText"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -329,8 +329,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1d0b0d1c2f817ec7e6cfef2a5b075f3f9609c857",
-            "content": "sha256:0d027e307a6eecdc58c883570a3e50663fbd5da290363a28f52b8f45ce5ee66b",
+            "blob": "f87a9fe11dcdc7e7e2e1e463684b59e7bced0564",
+            "content": "sha256:47a9c12fb366e47e94ebf7e04005bffe23591f7eeda0fa804df279c8104b962d",
             "locator": {
               "kind": "file"
             },
@@ -340,8 +340,8 @@
         },
         {
           "anchor": {
-            "blob": "0cdb05b43b696a44dd2de57a0ec30412310ff930",
-            "content": "sha256:0dd8f0689c2d4497fef085255807b034f654610df83322b9b62f5b8c3eb08db6",
+            "blob": "6e4cb0f1271f303406e738d0cd3a47b6415c56ef",
+            "content": "sha256:2846b6d2c185ae2a48641c2a406f97cacb445daf1b5162897e4d7316ef72f49c",
             "locator": {
               "kind": "file"
             },
@@ -352,12 +352,12 @@
       ]
     },
     "30": {
-      "note": "The remaining component behavioral suites hold row admission, hierarchy and independent Operations signals; this is source inspection, not a new run.\n\nAnchor: whole current source; whole current source; whole current source",
+      "note": "The remaining component behavioral suites hold row admission, hierarchy and independent Operations signals; this is source inspection, not a new run.",
       "targets": [
         {
           "anchor": {
-            "blob": "acb6ce3d66633adde04d9eff3f4992ecf2a6327f",
-            "content": "sha256:9156accfe719cb105f8090b2d85ca868a6be9a5c85e0d6153d2b441d9803d8f1",
+            "blob": "43ceca142b694494d71b86d1b9dfb66ad8fd4fe0",
+            "content": "sha256:efa14e3149beb27705ab43bcdab87b01c607bf6457e183c937397d32258677fa",
             "locator": {
               "kind": "file"
             },
@@ -367,8 +367,8 @@
         },
         {
           "anchor": {
-            "blob": "ff7410a6dbed3ef50ddd8ff78b78ecc48b45849b",
-            "content": "sha256:7e4e3cf5d07b4590b18c674c11cf90519ad9a3f836ec4d94b082b960ee19f447",
+            "blob": "949bce364ba34ad511722513cdeb6698679ab7f4",
+            "content": "sha256:b155e43c074d6c45928411903e0bb0fc3e72c1778ed8ecc0e812adfe9c5221fc",
             "locator": {
               "kind": "file"
             },
@@ -378,8 +378,8 @@
         },
         {
           "anchor": {
-            "blob": "1ffe247435f4d2af35c4d2048d80a108a4257539",
-            "content": "sha256:145c1966cb77e3eefa3ca4a3d037aaef3aabdb064c4364aa0a48230fe9ff2c96",
+            "blob": "67b970d373b054a824efc6465b9c28a3baf87049",
+            "content": "sha256:126c49611e8e49e66acb27800b3f8e5abe3fdd3d5023c8ac00f576732fd6d206",
             "locator": {
               "kind": "file"
             },
@@ -465,8 +465,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6e5e8b5903fcf5108cc0ec06035fdc04c06c8256",
-            "content": "sha256:983658d30481cce4cb5994b573218070fca4fa0f1da1165b9da082abbc504407",
+            "blob": "8835407060216b31d4e3a7c45f4cb3e631551701",
+            "content": "sha256:ef86271ac8a7a2c23b1f25c3a77c492db92b9f4fca192d0be7211fad27f26de5",
             "locator": {
               "end": 488,
               "kind": "line_range",
@@ -489,8 +489,8 @@
         },
         {
           "anchor": {
-            "blob": "03f3276749c0abc72c7d3061ae1c9c4e6c858696",
-            "content": "sha256:63fbdfadb86d7d4d729806191a645bff1a656de22f56bf4ebc542ab135245f1d",
+            "blob": "8835407060216b31d4e3a7c45f4cb3e631551701",
+            "content": "sha256:52d94cc07999cb530c86c50b6fd41f2a59b0716af6b95030503bd8f3fb60fad4",
             "locator": {
               "end": 619,
               "kind": "line_range",
@@ -519,15 +519,14 @@
       ]
     },
     "40": {
-      "note": "The row's native title is gone from every ancestor of a step mark, while its own cells keep the hover text.",
+      "note": "The row's native title is gone from every ancestor of a step mark, while its own cells keep the hover text.\n\nAnchor: `TaskRowLine`",
       "targets": [
         {
           "anchor": {
-            "blob": "03f3276749c0abc72c7d3061ae1c9c4e6c858696",
-            "content": "sha256:c32d0df4169da4f9b000cf618a7d7e665f7bf828f9273bacbaff6ed07c9feaf7",
+            "blob": "8835407060216b31d4e3a7c45f4cb3e631551701",
+            "content": "sha256:dc09e97aa36b6f85702e098e15f9afa4678107ca1a3e2e736a686e0c233052b2",
             "locator": {
-              "kind": "symbol",
-              "name": "TaskRowLine"
+              "kind": "file"
             }
           },
           "kind": "code"

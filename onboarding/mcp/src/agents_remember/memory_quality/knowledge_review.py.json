@@ -22,12 +22,12 @@
   ],
   "references": {
     "1": {
-      "note": "The report-only boundary as recorded in the module's own contract: the rendered section states it in one sentence inside the artifact.\n\nAnchor: \"Report-only. This section records what the curator-coherence authority holds; it adds no \"",
+      "note": "The report-only boundary as recorded in the module's own contract: the rendered section states it in one sentence inside the artifact.",
       "targets": [
         {
           "anchor": {
-            "blob": "b50f8652c4f13ce686dc1c39af4b56097be880c2",
-            "content": "sha256:c02a2b625c765dc572aeedc5036d75c1f349b392e6063921a57168b8b6183e09",
+            "blob": "9af566a4f50f42d95a977d28b8159d6e434cd27c",
+            "content": "sha256:96c0d6000d3dc10fa6042058ab0c973feb41759d12902b8dc7558d0eb1457f4c",
             "locator": {
               "end": 88,
               "kind": "line_range",
@@ -43,8 +43,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b50f8652c4f13ce686dc1c39af4b56097be880c2",
-            "content": "sha256:5bc4727760a8fdcae578b641cfd1345f9807744a5bff05a3ab8d86856d9813ce",
+            "blob": "9af566a4f50f42d95a977d28b8159d6e434cd27c",
+            "content": "sha256:18f74e6be2791e368b8a5c62d02d98ff87b727c9d6350084654ba70646a88853",
             "locator": {
               "kind": "symbol",
               "name": "knowledge_review_section"
@@ -54,12 +54,22 @@
         },
         {
           "anchor": {
-            "blob": "b50f8652c4f13ce686dc1c39af4b56097be880c2",
-            "content": "sha256:1b8314f586257f0f58fb42b482c2dea28fcbdc7fb6d2b9425f00d03af32823d5",
+            "blob": "9af566a4f50f42d95a977d28b8159d6e434cd27c",
+            "content": "sha256:537efe6f373a7a9a1189ddd98aeaf5e7795d459eaad32cd7cba1f52c38adb05a",
             "locator": {
               "end": 135,
               "kind": "line_range",
               "start": 70
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9af566a4f50f42d95a977d28b8159d6e434cd27c",
+            "content": "sha256:e30e125436201a9195508d11be47cd15288cc5b724b734e164fd7549b178aa43",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -144,12 +154,12 @@
       ]
     },
     "5": {
-      "note": "The one checklist field that carries the section, and the arithmetic the section cannot reach.",
+      "note": "The one checklist field that carries the section, and the arithmetic the section cannot reach.\n\nAnchor: `CuratorChecklist` `write_curator_checklist`",
       "targets": [
         {
           "anchor": {
-            "blob": "19f494496b10bbc4067fd8056bb5ccd7e6d139fe",
-            "content": "sha256:8ee3757d3541a24076ae20506ed6559e685500d057acfe63c58d798c3141b020",
+            "blob": "16bc720d447857303959d9881c8624f6aab9b7fd",
+            "content": "sha256:4c7ab7333dcb0dcfb5a567e2e9025c1d8111ccdcfd99491d573d3d1b9d3c2ca0",
             "locator": {
               "kind": "symbol",
               "name": "CuratorChecklist"
@@ -160,8 +170,8 @@
         },
         {
           "anchor": {
-            "blob": "cd98867bca76ef800dd2b0dfbc80232971044bb5",
-            "content": "sha256:f9fb57f1aa32f4a75466c8dd3449b67f263f6df7a6656f2c79e17cedf593a5d8",
+            "blob": "16bc720d447857303959d9881c8624f6aab9b7fd",
+            "content": "sha256:734ad81fa453f91aea1bb5d29e5a9b15c50467f4159d12cbe8a22fcf429836b0",
             "locator": {
               "kind": "symbol",
               "name": "write_curator_checklist"
@@ -178,6 +188,17 @@
               "end": 200,
               "kind": "line_range",
               "start": 120
+            },
+            "path": "mcp/src/agents_remember/memory_quality/curator_checklist.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "16bc720d447857303959d9881c8624f6aab9b7fd",
+            "content": "sha256:3951da961cb844d8a05185f577ec46129fb6687d31bdf33036bc929fb39c8dbd",
+            "locator": {
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/memory_quality/curator_checklist.py"
           },

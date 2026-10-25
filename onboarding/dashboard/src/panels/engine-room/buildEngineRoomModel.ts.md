@@ -42,7 +42,12 @@ Current behavior and its limits are the operative contract above.
 
 ### Repo-Internal References
 
+
 - The `buildEngineRoomModel` projection function is exported here. [1]
+
 - Each view assigns `enclosureKey` from `node.worktreeGroup`. [2]
+
 - `EngineRoomModel` render shape [3]
+
+
 - `EngineProcessView` render shape [4]

@@ -264,11 +264,15 @@ No external/product documentation governs this protocol; it is a repository-inte
 
 - The provider-only detector/response entry point implemented by this module. [1]
 - The central provider metrics store this detector reads (`PROVIDER_METRICS_SCHEMA`, `PROVIDER_INDEX_STATE_SCHEMA`, container/index-state row shapes). [2]
+
 - The always-legal provider stop path the critical failsafe calls; never gated by provider launch authority (containment R1). [3]
+
 - The critical-failsafe wiring supplies the stop action directly from the dashboard loop. [4]
 
 - `providerDegradation` settings this module consumes (thresholds, `fail_safe_enabled`, `recent_sample_limit`). [9]
+
 - `_metrics_loop` — the sole production caller: `metrics_store.record`, `evaluate_provider_degradation` and `metrics_store.compact` on one 30s tick. This is why the dashboard is the declared compaction owner of both provider stores, and it is where the ownership is enforced structurally. [10]
+
 
 
 - `ar-durable-store/1.0`: `exclusive_access`, `append_line`, `rewrite_lines`, `read_log_text`, `SCHEMA_VERSION`, `schema_version_supported`, and the `StoreOwnership` record `PROVIDER_DEGRADATION_OWNERSHIP` instantiates. Cited by symbol so later additions do not change the claim. [12]
@@ -300,11 +304,15 @@ provider thresholds, hysteresis or failsafe behavior.
 
 Current alert/inbox vocabulary addresses Investigator. The degradation protocol’s samples, thresholds, alert state and remediation/order boundaries are preserved by the canonical naming change; historical task and quoted ruling words retain the earlier spelling. A broader concern role does not authorize a provider restart forbidden by alert state.
 
+
 - This source owns the stated current Investigator scope or canonical vocabulary. [18]
+
 
 
 ## Refreshed current evidence
 
-- Failing-first tests pinning hysteresis, inbox delivery parity, and failsafe-stop-failure durability. [11]
+
+- Failing-first tests pinning hysteresis and the critical transition's event and failsafe-once record, with the stop failure that still records the event and state.  Anchor: `test_hysteresis_requires_sustained_bad_and_sustained_healthy_samples`, `test_critical_transition_records_event_and_failsafe_once`, `test_critical_stop_failure_still_records_event_and_state` [11]
+
 
 </details>

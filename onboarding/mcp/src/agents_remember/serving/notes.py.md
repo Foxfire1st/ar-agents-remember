@@ -150,13 +150,17 @@ No meaningful cross-repo references found.
 ### Repo-Internal References
 
 
+
 - The app factory registers notes routes during app assembly. [1]
+
 
 
 - The `confine_rel` realpath confinement this module reuses for reads. [2]
 
 
+
 - `McpRuntimeConfig` and `path_is_relative_to` provide configuration and path confinement. [4]
+
 
 
 - The browser client for these endpoints. [7]

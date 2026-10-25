@@ -197,7 +197,7 @@
       ]
     },
     "7": {
-      "note": "JSON/Markdown partial record retry reaches whole-tree validation; unrelated [999] refusal restores state, reports rolled-back refresh and only preexisting carried members in diagnostics.",
+      "note": "JSON/Markdown partial record retry reaches whole-tree validation; unrelated \\ refusal restores state, reports rolled-back refresh and only preexisting carried members in diagnostics.",
       "targets": [
         {
           "anchor": {

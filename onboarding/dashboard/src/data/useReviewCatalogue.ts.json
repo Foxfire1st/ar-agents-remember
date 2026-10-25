@@ -75,12 +75,12 @@
   ],
   "references": {
     "1": {
-      "note": "Who owns the read (the reviewer, not the entry) and why the key is the comparison's identity.\n\nAnchor: \"It belongs to the reviewer, not to the task entry\"",
+      "note": "Who owns the read (the reviewer, not the entry) and why the key is the comparison's identity.",
       "targets": [
         {
           "anchor": {
-            "blob": "e909f979eb2190c3b85bf937b44cd14ced1daf09",
-            "content": "sha256:c7ce7440d31a5c0dc24419015408ddc62d9e086e861bcfc05e12540d0fa7d8f9",
+            "blob": "421fcf655416c82d0bd4d4e7c4e93a8449682d08",
+            "content": "sha256:819af014e3a17532b9e512c5567cc46db32442cc30d24465a591aacea1131559",
             "locator": {
               "end": 12,
               "kind": "line_range",
@@ -109,15 +109,14 @@
       ]
     },
     "2": {
-      "note": "The read state, now without the analytics `facts`/`stale` fields.\n\nAnchor: `comparisonKey`",
+      "note": "The read state, now without the analytics `facts`/`stale` fields.\n\nAnchor: `ReviewCatalogueRead`",
       "targets": [
         {
           "anchor": {
-            "blob": "e909f979eb2190c3b85bf937b44cd14ced1daf09",
-            "content": "sha256:f7902fbf98dab07bf53fdd7b7b4be01039fea209da2deb3db41dc4974c731a5b",
+            "blob": "421fcf655416c82d0bd4d4e7c4e93a8449682d08",
+            "content": "sha256:4c3fd11e4b0a15e8e0fe08a126594e4cf000fb021985f67854c1fb7d71e06619",
             "locator": {
-              "kind": "symbol",
-              "name": "ReviewCatalogueRead"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -140,15 +139,14 @@
       ]
     },
     "4": {
-      "note": "The answer mapping.",
+      "note": "The answer mapping.\n\nAnchor: `catalogueAnswer`",
       "targets": [
         {
           "anchor": {
-            "blob": "e909f979eb2190c3b85bf937b44cd14ced1daf09",
-            "content": "sha256:1460378f6fcca561369368a0535e8c9d68750020652c893b23df5617123d4380",
+            "blob": "421fcf655416c82d0bd4d4e7c4e93a8449682d08",
+            "content": "sha256:4c3fd11e4b0a15e8e0fe08a126594e4cf000fb021985f67854c1fb7d71e06619",
             "locator": {
-              "kind": "symbol",
-              "name": "catalogueAnswer"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -171,16 +169,16 @@
       ]
     },
     "6": {
-      "note": "Its caller, which bumps the generation on a new snapshot pair.\n\nAnchor: `useReviewCatalogue`; `observeComparison`",
+      "note": "Its caller, which bumps the generation on a new snapshot pair.",
       "targets": [
         {
           "anchor": {
-            "blob": "2d781656bb73395d1724e71b0e17c6c77f53d506",
-            "content": "sha256:f2fec9b4d7b2e803781bc835698d3d6a5bf971cee4c54192d0f02667c6db59ea",
+            "blob": "b87c6e5d5e3a7ab5cc242cc08bb5346a018eeb4d",
+            "content": "sha256:6049d62ac59090a2802737684c68740b10088e8afb867f789df48d2bef706334",
             "locator": {
-              "end": 199,
+              "end": 115,
               "kind": "line_range",
-              "start": 149
+              "start": 61
             },
             "path": "dashboard/src/panels/review/ReviewNavigation.tsx"
           },

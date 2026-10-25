@@ -22,15 +22,14 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "GlobalStateLeakDetectionTests checks named leak restoration and the loaded-owner reset register.",
+      "note": "GlobalStateLeakDetectionTests checks named leak restoration and the loaded-owner reset register.\n\nAnchor: `GlobalStateLeakDetectionTests`",
       "targets": [
         {
           "anchor": {
-            "blob": "251f20fd78b6afb13afca5a101943ed52516e3d5",
-            "content": "sha256:c9233f2fed292080f923e6e4397f4ec126d260118dbb933659e4e6b1206d2d2b",
+            "blob": "8662cd79260de47050b1fdb7bc75f8a112aa9426",
+            "content": "sha256:6a0df75088278e1a23a55472c490da48d73d4eca94c5df9757991dd2446b373b",
             "locator": {
-              "kind": "symbol",
-              "name": "GlobalStateLeakDetectionTests"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -38,15 +37,14 @@
       ]
     },
     "2": {
-      "note": "Every loaded reset row participates in its declared cleanup proof.",
+      "note": "Every loaded reset row participates in its declared cleanup proof.\n\nAnchor: `test_every_reset_row_runs_its_declared_cleanup_for_a_loaded_owner`",
       "targets": [
         {
           "anchor": {
-            "blob": "251f20fd78b6afb13afca5a101943ed52516e3d5",
-            "content": "sha256:adee3d911cc3f8dc2c0664dc9ccc2eb28dba4578be34054ce756b16b32e753f5",
+            "blob": "8662cd79260de47050b1fdb7bc75f8a112aa9426",
+            "content": "sha256:6a0df75088278e1a23a55472c490da48d73d4eca94c5df9757991dd2446b373b",
             "locator": {
-              "kind": "symbol",
-              "name": "test_every_reset_row_runs_its_declared_cleanup_for_a_loaded_owner"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -90,8 +88,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d17bc50782025223405cb1526f0d286a9bc74274",
-            "content": "sha256:a8e94d49633d431c3a15916753d6c28ab6ba8d44663b7d8c25d117829d70e07f",
+            "blob": "8662cd79260de47050b1fdb7bc75f8a112aa9426",
+            "content": "sha256:6a0df75088278e1a23a55472c490da48d73d4eca94c5df9757991dd2446b373b",
             "locator": {
               "kind": "file"
             }

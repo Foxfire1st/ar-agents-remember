@@ -76,7 +76,7 @@ No external Domain Documentation source is configured for this memory repo.
 ### Repo-Internal References
 
 - The public benchmark facade re-exports this module's public functions and classes for compatibility. [1]
-- The route-local overview summarizes how this module fits into the benchmark runner split. [2]
+- The route-local overview summarizes how this module fits into the benchmark runner split.
 - The one Git runner both call sites go through, and the option object that carries `work_dir` and the timeout class. [3]
 - `git_environment()` and the `GIT_REPOSITORY_SELECTOR_ENV` tuple the runner strips with. [4]
 - The destructive argv this module is handed: `clone`, `fetch --all --tags`, `checkout --detach`, `reset --hard`, `clean -fdx`. [5]

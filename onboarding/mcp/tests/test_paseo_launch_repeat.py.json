@@ -22,12 +22,12 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The scoped current source carries the module/document behavior described above.",
+      "note": "Repeats, replaced executions, reused request ids, runtime replies, workspace placement and service-tier replay are asserted against the fake bridge.",
       "targets": [
         {
           "anchor": {
-            "blob": "630fbd8428520936a986d065e2ea7fb03f1232a7",
-            "content": "sha256:db623147109c8a0306d153a134bc997631cb44e4b256f0ca7fd11512cbdc86c3",
+            "blob": "735fbff960e8691bf138f01a4e8aaf4ffc49870b",
+            "content": "sha256:34ba90d18b18a0d2a1051cd76b279ad6535a9ec7b4b089bc843050c8078d2f81",
             "locator": {
               "kind": "file"
             }

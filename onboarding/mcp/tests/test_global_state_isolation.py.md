@@ -38,7 +38,9 @@ not native heartbeat or full native-service execution.
 
 This module defines the top-level symbols cited below; each row points at the exact source range holding the anchor.
 
+
 - GlobalStateLeakDetectionTests checks named leak restoration and the loaded-owner reset register. [1]
+
 
 ## Bootstrap Ownership
 
@@ -47,11 +49,15 @@ certifying pytest use its reusable bootstrap. No Dagger-only requirement belongs
 restoration assertions.
 
 
+
 - Every loaded reset row participates in its declared cleanup proof. [2]
+
 - Each restored table is repaired and its leak named. [3]
 - Private tmux failure preserves all existing later teardown. [4]
 
+
 - Reset-row doubles assert owner delegation for sweep and tool-writer cleanup. [5]
+
 
 ## 260928-MIK-L177 A9 — Reset Controls Cover The Background Pool
 

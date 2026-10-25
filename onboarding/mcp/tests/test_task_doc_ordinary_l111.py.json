@@ -1,5 +1,6 @@
 {
   "path": "mcp/tests/test_task_doc_ordinary_l111.py",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
@@ -113,8 +114,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "49d2854971e987aa28790d27ef4aaf9e62be4a1a",
-            "content": "sha256:13ac68d46f64e57e5fb36a72a71365270e757ef1bb2e93d12fff8008ac74359b",
+            "blob": "b37b908d3f64ab63e2c8bdd0e3456f3d3f04995e",
+            "content": "sha256:34c39a011bd4f9a2097bd9d5dd92528c48330613f9f67052b8bd2606d464f3e4",
             "locator": {
               "end": 670,
               "kind": "line_range",

@@ -45,7 +45,9 @@ No external domain evidence applies.
 
 ### Repo-Internal References
 
+
 - Registered preview transport case was deleted with the closeout route-review gate; the removal is pinned at both altitudes by the atomic-master public closeout test. [1]
+
 - Certification projection preserves the route finding while promoting status. [2]
 - Registered apply transport case was deleted: the module docstring records that the gate was removed, so only the certification-admission refusal payload shaping remains as this module's route-review evidence. [3]
 

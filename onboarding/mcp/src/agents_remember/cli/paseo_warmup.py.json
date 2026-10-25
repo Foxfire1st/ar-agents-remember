@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/cli/paseo_warmup.py",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
@@ -64,8 +65,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a742c89b2cd23728445c96bfb19dd52e8b469330",
-            "content": "sha256:648a3cb48f72161c1d4b561ea07942f426ccc73677f9b0c5bc06b75e0b6e5279",
+            "blob": "29bb5137456bd658ad4c32ae410ebdd8e500a8b4",
+            "content": "sha256:3f386b2c5cee92657f13c0fd5d4cc2c96000c359069d53b90ad52fe05599f9ae",
             "locator": {
               "kind": "file"
             }

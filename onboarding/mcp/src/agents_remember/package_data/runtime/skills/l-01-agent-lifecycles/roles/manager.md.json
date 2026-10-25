@@ -25,10 +25,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "592110578a35abd37ceccd7e8f2bc0c2227f4c84",
-            "content": "sha256:c1ca58bb4822516731864e315eb92133c0dbda9e23e6656cbf23e5f754185497",
+            "blob": "3c2cfd97c8d64a0cd6245c1b87c6f6bd45457380",
+            "content": "sha256:f8a726b8876a8fa228bb38f1cd05c786ca38f4d166da2f088468c3e2b0a99d74",
             "locator": {
-              "kind": "file"
+              "end": 26,
+              "kind": "line_range",
+              "start": 20
             }
           },
           "kind": "code"
@@ -36,14 +38,14 @@
       ]
     },
     "2": {
-      "note": "The packaged manager is one master-scoped owner of the leaf closeout chain.\n\nAnchor: `# Manager`",
+      "note": "The packaged manager is one master-scoped owner of the leaf closeout chain. Source caption: `# Manager`",
       "targets": [
         {
           "anchor": {
-            "blob": "0e257ea17bb8d14a7ae8aea840fd9429558309ba",
-            "content": "sha256:342bdd7c63787cdd02eea07af5179b44e74de818c8185ded11a9086a901b4c42",
+            "blob": "3c2cfd97c8d64a0cd6245c1b87c6f6bd45457380",
+            "content": "sha256:3a6312995bf3d04f137a408d7387112021441fc70ac7543ddc4a72b22f1f6cd8",
             "locator": {
-              "end": 8,
+              "end": 22,
               "kind": "line_range",
               "start": 6
             }
@@ -53,16 +55,16 @@
       ]
     },
     "3": {
-      "note": "Its hosted child dispatch uses structural task document and role.\n\nAnchor: `role_start`",
+      "note": "Its hosted child dispatch uses structural task document and role. Source caption: `role_start`",
       "targets": [
         {
           "anchor": {
-            "blob": "592110578a35abd37ceccd7e8f2bc0c2227f4c84",
-            "content": "sha256:8802e024e27b7ec5244fbc7cf6eef825e6211c65ebbac1cdcf5fd3ea9e67a15a",
+            "blob": "3c2cfd97c8d64a0cd6245c1b87c6f6bd45457380",
+            "content": "sha256:b29dfd1a2901be3b27df780b9d1b1e5d7bbba9a5c83aeca4d2c67b9f39708466",
             "locator": {
-              "end": 18,
+              "end": 20,
               "kind": "line_range",
-              "start": 16
+              "start": 12
             }
           },
           "kind": "code"
@@ -70,16 +72,16 @@
       ]
     },
     "4": {
-      "note": "Curator dispatch carries the exact requirement packets, and a reviewer adjudication only when review was requested.\n\nAnchor: `role_start`",
+      "note": "Its starts follow `../operations/coordination.md`: a start names the role and the exact canonical references, and a leaf's Worker, Reviewer and Curator are started as one set with `role_start_set`.",
       "targets": [
         {
           "anchor": {
-            "blob": "592110578a35abd37ceccd7e8f2bc0c2227f4c84",
-            "content": "sha256:5273359624060efd8fd05094a65d0732e4d39980b6a702db4d4f2013ac0e2c52",
+            "blob": "3c2cfd97c8d64a0cd6245c1b87c6f6bd45457380",
+            "content": "sha256:3672fa23dc1c0f189afa8b5ebed9238226a96736a2c5105824cd3d4bf11cf98f",
             "locator": {
-              "end": 18,
+              "end": 20,
               "kind": "line_range",
-              "start": 12
+              "start": 20
             }
           },
           "kind": "code"
@@ -125,10 +127,24 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0e257ea17bb8d14a7ae8aea840fd9429558309ba",
-            "content": "sha256:b888be9c022fa12e809146599d3513e9e3a3838d308d17943e62e83f50e4332b",
+            "blob": "3c2cfd97c8d64a0cd6245c1b87c6f6bd45457380",
+            "content": "sha256:3647b684a59d9600cd02ab256881a639829eb9c6a0569b1ea86eadb0e3337846",
             "locator": {
-              "kind": "file"
+              "end": 30,
+              "kind": "line_range",
+              "start": 26
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3c2cfd97c8d64a0cd6245c1b87c6f6bd45457380",
+            "content": "sha256:0a7dc3e827c8519d3c2f9215a6e24fdc560c6af1230254d2b77eddba8b8e5866",
+            "locator": {
+              "end": 56,
+              "kind": "line_range",
+              "start": 50
             }
           },
           "kind": "code"
@@ -140,12 +156,36 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bab862b563d9cfcd13b59d0aed6d3ae0e6c098c3",
-            "content": "sha256:881d78e98580e78164d74ed75e4d671d645fbc965aad9d32e4cc74cd1ba50278",
+            "blob": "3c2cfd97c8d64a0cd6245c1b87c6f6bd45457380",
+            "content": "sha256:9eda653cc3618db775c28a818700d7b8131668618d8774bc9d67a8d4ad474000",
             "locator": {
-              "end": 70,
+              "end": 34,
               "kind": "line_range",
-              "start": 1
+              "start": 18
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3c2cfd97c8d64a0cd6245c1b87c6f6bd45457380",
+            "content": "sha256:0a7dc3e827c8519d3c2f9215a6e24fdc560c6af1230254d2b77eddba8b8e5866",
+            "locator": {
+              "end": 56,
+              "kind": "line_range",
+              "start": 50
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3c2cfd97c8d64a0cd6245c1b87c6f6bd45457380",
+            "content": "sha256:96cb9d9b28fe4666d8962f039baead4c5acef32d08fa7b40c13604f65cfc055a",
+            "locator": {
+              "end": 74,
+              "kind": "line_range",
+              "start": 74
             }
           },
           "kind": "code"
@@ -157,10 +197,24 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3940f282abb6f48c2dc00a01de5e55b87d64b2f6",
-            "content": "sha256:5bc82009a4f30cd6ce12fb5eddd7f0bc741146e6f582074f6d1fbf5465bb4375",
+            "blob": "3c2cfd97c8d64a0cd6245c1b87c6f6bd45457380",
+            "content": "sha256:f95a9f538919e9e2906789f5f995d3dc5f99ac7cdd257b90333749f6661dad35",
             "locator": {
-              "kind": "file"
+              "end": 20,
+              "kind": "line_range",
+              "start": 18
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3c2cfd97c8d64a0cd6245c1b87c6f6bd45457380",
+            "content": "sha256:0a7dc3e827c8519d3c2f9215a6e24fdc560c6af1230254d2b77eddba8b8e5866",
+            "locator": {
+              "end": 56,
+              "kind": "line_range",
+              "start": 50
             }
           },
           "kind": "code"

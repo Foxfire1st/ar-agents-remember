@@ -45,7 +45,9 @@ No domain-documentation source is configured for this slice. The behavior descri
 These current source spans identify the implementation owners and the specific assertions supporting the file's behavior. A test definition is evidence of its assertions, not an execution or certification receipt.
 
 - Final output authority is the contract's exact accepted pair. [1]
+
 - Source and ref proof remain at the prepared movement boundary. [2]
+
 
 ### Cross-Repo References
 

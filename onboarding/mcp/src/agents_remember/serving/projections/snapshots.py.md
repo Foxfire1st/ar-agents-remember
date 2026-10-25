@@ -26,7 +26,6 @@ Current source interpretation only; no fresh execution or grade.
 
 - Canonical task-source and document readers remain read-only. [1]
 - The extracted parser retains addressed unknown-field pruning without forgiving other malformed data. [5]
-- [9]
 - [11]
 - [12]
 - [13]

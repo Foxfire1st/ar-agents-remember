@@ -16,7 +16,9 @@ Request-local enclosure plan values, unchanged contract projections and ordinary
 
 Authority remains with the existing master-series constructor/admission and durable transaction owners. These local values do not authorize actual apply or another parent-series caller. Startup-state no-materialization means no contract, activation, protected-ref, worktree/provider or real-index mutation. The enclosing registered tool call still records its daily log line and any detail file, plus its completed-call workspace-river event (or the existing ambient lifecycle's event). Those records are not a reservation or startup publication; the public first-leaf proof admits and checks them rather than asserting universal zero-I/O.
 
-- The registered first-leaf proof preserves startup/Git state and checks the call records separately. \[10] [10]
+
+> Retained earlier citation wording: - The registered first-leaf proof preserves startup/Git state and checks the call records separately. [10]
+
 
 ## Evidence
 
@@ -24,3 +26,5 @@ Authority remains with the existing master-series constructor/admission and dura
 - Same request's validated preview-only parent [7]
 - Memory blocks retain recovery action and fields [8]
 - Preview uses the dry-run worktree owner [9]
+
+- The registered first-leaf proof preserves startup/Git state and checks the call records separately. \[10]  Anchor: `test_registered_first_leaf_preview_is_repeatable_without_publication` [10]

@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/serving/scope.py",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
@@ -31,6 +32,19 @@
               "end": 80,
               "kind": "line_range",
               "start": 80
+            },
+            "path": "mcp/src/agents_remember/serving/changeset.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8bdffe4683b00da6aed0b4f57d68f0689505bb48",
+            "content": "sha256:5a806c50edfc5197e173a83194140f5608aa5687bdaf1bc524dc1ac65824d405",
+            "locator": {
+              "end": 67,
+              "kind": "line_range",
+              "start": 67
             },
             "path": "mcp/src/agents_remember/serving/changeset.py"
           },
@@ -91,8 +105,29 @@
       ]
     },
     "6": {
-      "note": "The catalog uses the notes/archive-excluding iterator and names foreign positional nonmembers before liveness filters.\n\nAnchor: `_iter_active_contracts`, `iter_leaf_enclosure_contracts`",
+      "note": "The catalog uses the notes/archive-excluding iterator and names foreign positional nonmembers before liveness filters.\n\nAnchor: `_iter_active_contracts` `iter_leaf_enclosure_contracts`",
       "targets": [
+        {
+          "anchor": {
+            "blob": "6b5c163ab7290f3ff778e1a69a54324e7da1d022",
+            "content": "sha256:3961183c78ea5b46476a9f0f70ff4708efcfe33cf3f23935d58b54f2bde3259c",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "396f581aa13672645248ee4b089011b1ca781c1b",
+            "content": "sha256:a1e25e610b89188c8b8ee96186b79376eb9947c515ae118097c7dee9e073a595",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/tasks/task_paths.py"
+          },
+          "kind": "code"
+        },
         {
           "anchor": {
             "blob": "6b5c163ab7290f3ff778e1a69a54324e7da1d022",
@@ -106,8 +141,8 @@
         },
         {
           "anchor": {
-            "blob": "ea5a1d83e55e71447ccf114937714f3e9275c8fe",
-            "content": "sha256:3694617e0ce7715963085263eb45c152a95fe8c57f1250bc25db3e4cbd7c9b3e",
+            "blob": "396f581aa13672645248ee4b089011b1ca781c1b",
+            "content": "sha256:d86ba7e7cf7f74c5b8c19d590f8b1d4fabb228ba633bfef6358e894af37792b5",
             "locator": {
               "kind": "symbol",
               "name": "iter_leaf_enclosure_contracts"
@@ -119,39 +154,16 @@
       ]
     },
     "7": {
-      "note": "WorktreeContract retains the code-worktree, group and cleanup fields; its loader and named error own parsing.\n\nAnchor: `WorktreeContract`, `load_contract`, `ContractError`",
+      "note": "WorktreeContract retains the code-worktree, group and cleanup fields; its loader and named error own parsing.  Anchor: `WorktreeContract` `load_contract` `ContractError`",
       "targets": [
         {
           "anchor": {
-            "blob": "a7b238883ac81b8560b5e31890a05d9d253fd689",
-            "content": "sha256:38d624acd3e04b9a21161f22f18e389bd0052af14896728bdf9976d8361182c6",
-            "locator": {
-              "kind": "symbol",
-              "name": "WorktreeContract"
-            },
-            "path": "mcp/src/agents_remember/worktrees/worktree_contract.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "10fc96becf7770c443afcc8cee7888254836cc69",
-            "content": "sha256:dfa776e8c904c68a07307656bf919d2e921a20cdbe101c1ecec2079130988058",
-            "locator": {
-              "kind": "symbol",
-              "name": "load_contract"
-            },
-            "path": "mcp/src/agents_remember/worktrees/worktree_contract.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
             "blob": "c9e2847f64ca428bdc799c8173b43aa736f4b0e9",
-            "content": "sha256:d691052aa2ddd33bb7e551016a406704876a55fe73978c266b4c70fcb015b0ac",
+            "content": "sha256:9d7bdb395ee1911989911a31d4f82b84b3fd1ef9fc7505a24f62fe4709a1bcf1",
             "locator": {
-              "kind": "symbol",
-              "name": "ContractError"
+              "end": 491,
+              "kind": "line_range",
+              "start": 97
             },
             "path": "mcp/src/agents_remember/worktrees/worktree_contract.py"
           },

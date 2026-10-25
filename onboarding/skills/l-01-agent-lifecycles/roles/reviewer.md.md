@@ -6,14 +6,15 @@ The whole requirement verdict, findings and coverage ends this independent stage
 
 This account controls the named changed seams; contradictory earlier card wording below is retained only as historical evidence. Unchanged role duties and R117 file-only wake/report transport are preserved. Source inspection supplies no new runtime test, CODE verdict, review counter or acceptance.
 
-- The whole requirement verdict, findings and coverage ends this independent stage. Reviewer records ordinary begin/result within the actual review-state settings limit; Manager records architect/developer authorization beyond it. A record-only check preserves the last round only on byte-identical candidate with all candidate findings closed. A finding states the broken required property; a case is its proof, not a replacement finding or automatic new round. MEMORY stays a separate sealed lane. [7]
+
+> Retained earlier citation wording: - The whole requirement verdict, findings and coverage ends this independent stage. Reviewer records ordinary begin/result within the actual review-state settings limit; Manager records architect/developer authorization beyond it. A record-only check preserves the last round only on byte-identical candidate with all candidate findings closed. A finding states the broken required property; a case is its proof, not a replacement finding or automatic new round. MEMORY stays a separate sealed lane. [7]
+
 
 
 ## Landing evidence in the independent memory lane
 
 The independent MEMORY review reads both landing populations in the quality result. Removed text without a named task change is a finding; an added file outside the knowledge without a place in the task requirement is a finding. These are human judgments, not automatic refusing diagnostics. CODE evidence, MEMORY findings/pass count and Manager acceptance/transaction authority stay separate.
 
-- The separate memory review judges cut reasons and requirement ownership of outside-knowledge additions. [8]
 
 ## Message/file transport
 
@@ -97,7 +98,7 @@ Canonical lifecycle doctrine owns canonical skill content; generated copies are 
 outputs. Requirement adjudication and the durable-evidence stable-contract-or-expiry hold point
 are independent mandatory concerns. Accepted attempts remain closed without one of the two
 authorized invalidation paths.
-One reviewer role serves leaf, master, plan and super seams under an explicit assignment. Developer questions go to the parent when one exists, and peer clarification uses the actual parent/task role; a Reviewer without a parent asks in its own chat. The role text names hand-over values by their dotted path, `documents[0].taskDocReadArgs` and `workspace.memoryRoot`, and carries no bare nested name.
+One reviewer role serves leaf, master, plan and super seams under an explicit assignment. Developer questions go to the parent when one exists, and peer clarification uses the actual parent/task role; a Reviewer without a parent asks in its own chat. The role text names hand-over values by their dotted path, `documents.taskDocReadArgs` and `workspace.memoryRoot`, and carries no bare nested name.
 
 ## CCR-R12@v5 Transaction Boundary
 
@@ -135,12 +136,17 @@ No relevant documentation was configured in the resolved source registry; task a
 
 Worker envelope, reviewer verdict template, manager exact-set dispatch, and governing route overview.
 
-- Every exact requirement attempt and candidate receives a separate independent accepted/rejected record. [1]
-- The verdict template structurally repeats one adjudication block per stable ID. [2]
-- The reviewer emits its own curator hand-off list in the shared producer shape. [3]
-- A leaf's declared knowledge effects are checked against its packet; a mismatch is a finding (MIK-R11). [4]
 
-- The seat's seam table fixes the five seams and where each verdict goes. [5]
+- Every exact requirement attempt and candidate receives a separate independent accepted/rejected record. [1]
+
+- The verdict template structurally repeats one adjudication block per stable ID. [2]
+
+- The reviewer emits its own curator hand-off list in the shared producer shape. [3]
+
+
+
+> Retained earlier citation wording: - The seat's seam table fixes the five seams and where each verdict goes. [5]
+
 
 ### Cross-Repo References
 
@@ -171,15 +177,23 @@ The review budget is the settings number `orchestration.loops.defaults.maxRounds
 
 ## Current Source Evidence
 
-- Current settings-budget, recorded approval and preserved stage/ownership boundaries are carried by this canonical instruction source. [6]
 
-- Rewords without claimed semantic approval, extracts named-step checks, consolidates baseline outputs inline, adds post-landing memory recording and passed-review-only own-step completion. [10]
+> Retained earlier citation wording: - Current settings-budget, recorded approval and preserved stage/ownership boundaries are carried by this canonical instruction source. [6]
+
+
+
+> Retained earlier citation wording: - Rewords without claimed semantic approval, extracts named-step checks, consolidates baseline outputs inline, adds post-landing memory recording and passed-review-only own-step completion. [10]
+
 - Rewords without claimed semantic approval, extracts named-step checks, consolidates baseline outputs inline, adds post-landing memory recording and passed-review-only own-step completion. [11]
 - Rewords without claimed semantic approval, extracts named-step checks, consolidates baseline outputs inline, adds post-landing memory recording and passed-review-only own-step completion. [12]
 - Rewords without claimed semantic approval, extracts named-step checks, consolidates baseline outputs inline, adds post-landing memory recording and passed-review-only own-step completion. [13]
-- Rewords without claimed semantic approval, extracts named-step checks, consolidates baseline outputs inline, adds post-landing memory recording and passed-review-only own-step completion. [14]
+
+> Retained earlier citation wording: - Rewords without claimed semantic approval, extracts named-step checks, consolidates baseline outputs inline, adds post-landing memory recording and passed-review-only own-step completion. [14]
+
 - Rewords without claimed semantic approval, extracts named-step checks, consolidates baseline outputs inline, adds post-landing memory recording and passed-review-only own-step completion. [15]
-- Rewords without claimed semantic approval, extracts named-step checks, consolidates baseline outputs inline, adds post-landing memory recording and passed-review-only own-step completion. [16]
+
+- The baseline steps bind the catalogs, all three lenses and the exploratory mandate, require evidence of the requirement's own class, and hold that a recorded weakness or a document's staleness outside the task's scope is never a finding. [16]
+
 - Rewords without claimed semantic approval, extracts named-step checks, consolidates baseline outputs inline, adds post-landing memory recording and passed-review-only own-step completion. [17]
 - Rewords without claimed semantic approval, extracts named-step checks, consolidates baseline outputs inline, adds post-landing memory recording and passed-review-only own-step completion. [18]
 - Rewords without claimed semantic approval, extracts named-step checks, consolidates baseline outputs inline, adds post-landing memory recording and passed-review-only own-step completion. [19]
@@ -188,3 +202,17 @@ The review budget is the settings number `orchestration.loops.defaults.maxRounds
 ## 260928-MIK-L198 — the reviewer writes outside the projects home only in the named outside root
 
 The Reviewer's closing paragraph now sends temporary files, experiments and working copies to the hand-over's real `workspace.scratchRoot` and, for what must not live under the projects home (a sandbox root) and for one short `TMPDIR`, to `workspace.outsideScratchRoot`, with `XDG_CONFIG_HOME` inside `workspace.scratchRoot` and that root never removed. Product/tooling temporary files, test-runner temporary files and explicitly admitted repository sandboxes keep their own owners, and reports and evidence stay in the hand-over's local report folder for the product to copy to canonical notes before removal. The same change keeps temporaries outside code, memory and tasks, and the launch projection carries the new field as `outsideScratchRoot` beside `scratchRoot`.
+
+- Rewords without claimed semantic approval, extracts named-step checks, consolidates baseline outputs inline, adds post-landing memory recording and passed-review-only own-step completion. [10]
+
+
+- Rewords without claimed semantic approval, extracts named-step checks, consolidates baseline outputs inline, adds post-landing memory recording and passed-review-only own-step completion. [14]
+
+
+- The seat's seam table fixes the five seams and where each verdict goes. [5]
+
+
+- Current settings-budget, recorded approval and preserved stage/ownership boundaries are carried by this canonical instruction source. [6]
+
+
+- The whole requirement verdict, findings and coverage ends this independent stage. Reviewer records ordinary begin/result within the actual review-state settings limit; Manager records architect/developer authorization beyond it. A record-only check preserves the last round only on byte-identical candidate with all candidate findings closed. A finding states the broken required property; a case is its proof, not a replacement finding or automatic new round. MEMORY stays a separate sealed lane. [7]

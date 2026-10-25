@@ -20,13 +20,20 @@ Fixture validation does not prove native creation, paid-turn speed or permanent 
 
 The current source and test assertions below establish the documented ownership; test citations do not claim a rerun in this pass.
 
+
 - Configured tier, incompatible-model refusal and foreign-agent default disclosure remain asserted. [2]
 
+
+
 - Current source owner or exact assertion described above. [3]
+
+
 
 - Mounted R71 assertions read mode/instruction chips and their source hovers while retaining explicit-only feature submission and feature preservation. [4]
 
 
+
 ### Clock And Settlement Evidence
+
 
 - The launch-lock reread case enables fake time before mount, flushes the initial reply, then advances the 1,500 ms product reread in async `act`. Its no-status/no-alert and restored-Start assertions follow the actual reread opportunity; teardown restores real timers. [1]

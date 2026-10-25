@@ -49,9 +49,16 @@ No configured live documentation source was available for this pass.
 
 ### Repo-Internal References
 
+
 - The real composed-tree presence and coverage case. [1]
+
 - The listing entry point under test. [2]
+
+
+
 - The suite's lane membership in the evidence catalog. [3]
+
+
 
 ### Cross-Repo References
 

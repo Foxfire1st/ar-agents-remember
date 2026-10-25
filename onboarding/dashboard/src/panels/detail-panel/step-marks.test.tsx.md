@@ -16,4 +16,5 @@ Fake-timer hover cases run only on master/task lines: details appear after rest,
 
 ## Evidence
 
+
 - Seeded major-mark assertions retain nested lists; bounded hover cases cover only master/task pointer-rest details. [1]

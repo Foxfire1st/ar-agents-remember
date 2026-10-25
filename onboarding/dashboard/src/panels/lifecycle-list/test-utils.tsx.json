@@ -3,15 +3,14 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The shared typed fixture builders and explicitly installed cleanup retain DOM/global/dashboard/localStorage ownership, without the removed sessions store.",
+      "note": "The shared typed fixture builders and explicitly installed cleanup retain DOM/global/dashboard/localStorage ownership, without the removed sessions store.\n\nAnchor: `installLifecycleListCleanup`",
       "targets": [
         {
           "anchor": {
-            "blob": "226d904b6506cf065ef6ec9832e670ff236732de",
-            "content": "sha256:1b822664f2c78cd00cf6877ff36327bf050d36c68e9bbdd3cfbc9715cd4cbeab",
+            "blob": "3a149fd1c585e45b2e9bcd8b32f1541b966ea277",
+            "content": "sha256:6a08ae1fd9e1439834581f4d49510bce89d0d1cbdf72a2a0f6400c3a7849f541",
             "locator": {
-              "kind": "symbol",
-              "name": "installLifecycleListCleanup"
+              "kind": "file"
             }
           },
           "kind": "code"

@@ -46,8 +46,12 @@ No configured external/domain document defines this internal endpoint adapter.
 
 The transport fetches the qualified visible body; the store resource owns retention and pending-read deduplication; the hook owns current-summary merge and availability.
 
+
 - The serving route maps projection readiness and the confined snapshot read to HTTP responses. [3]
+
+
 - That reader reaches the schema through the shared tolerant parse, so a field a newer build wrote no longer turns a readable body into a 404. [5]
+
 
 ### Cross-Repo References
 

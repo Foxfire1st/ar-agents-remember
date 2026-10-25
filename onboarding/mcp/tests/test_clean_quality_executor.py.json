@@ -3,15 +3,14 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "Exact staged candidate is passed to one pinned dagger pipeline.",
+      "note": "Exact staged candidate is passed to one pinned dagger pipeline.\n\nAnchor: `test_exact_staged_candidate_is_passed_to_one_pinned_dagger_pipeline`",
       "targets": [
         {
           "anchor": {
-            "blob": "e548eec3f144734630d2db79983da737a0a4b120",
-            "content": "sha256:3da0882b0ce87deb0a5cc7ee73d06a3bf86e3405bf4ad1b126a1e4934126f9a4",
+            "blob": "1230f7734c660a0e67354c43dbd83a89c74d814f",
+            "content": "sha256:c0581c84e88d99544ef2aa6883b14394c581f4b7322658392253dbbf10f3d9a7",
             "locator": {
-              "kind": "symbol",
-              "name": "test_exact_staged_candidate_is_passed_to_one_pinned_dagger_pipeline"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -35,15 +34,14 @@
       ]
     },
     "3": {
-      "note": "Invalid or unowned exports never replace durable evidence.",
+      "note": "Invalid or unowned exports never replace durable evidence.\n\nAnchor: `test_invalid_or_unowned_exports_never_replace_durable_evidence`",
       "targets": [
         {
           "anchor": {
-            "blob": "e548eec3f144734630d2db79983da737a0a4b120",
-            "content": "sha256:b90baa42eaec1fdd2909cc4d0ff01f41ad09917dfae25b327008656112fad66d",
+            "blob": "1230f7734c660a0e67354c43dbd83a89c74d814f",
+            "content": "sha256:c0581c84e88d99544ef2aa6883b14394c581f4b7322658392253dbbf10f3d9a7",
             "locator": {
-              "kind": "symbol",
-              "name": "test_invalid_or_unowned_exports_never_replace_durable_evidence"
+              "kind": "file"
             }
           },
           "kind": "test"

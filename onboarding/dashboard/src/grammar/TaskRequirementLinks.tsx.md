@@ -59,8 +59,12 @@ No relevant domain documentation was found.
 ### Repo-Internal References
 
 - The listing client that feeds the context. [1]
+
 - The artifact target the `open` callback lifts. [2]
+
+
 - The markdown consumer that renders registered addresses as buttons. [3]
+
 
 
 - `TaskPage` mounts the provider around the selected form and own view, deferring its document listing until body loading settles. [4]

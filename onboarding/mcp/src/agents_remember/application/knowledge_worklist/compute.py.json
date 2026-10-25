@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/application/knowledge_worklist/compute.py",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
@@ -76,8 +77,8 @@
         },
         {
           "anchor": {
-            "blob": "a9361b86286bca9cc42dd02954bfb370d3f6ac13",
-            "content": "sha256:5825d2e5f237ce1ef48fe98a5301e8e8eb75fdc7e21cb11c67fbd3f8a2be1f6d",
+            "blob": "59df3e87b029877e99fa290243535ef8afed51ed",
+            "content": "sha256:e3da50555cfb4fbe613212924e7fa24084ed7e7fbf30985efed8ff053ac769af",
             "locator": {
               "end": 579,
               "kind": "line_range",
@@ -109,6 +110,18 @@
               "start": 141
             },
             "path": "mcp/src/agents_remember/application/knowledge_worklist/planned_effects.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "59df3e87b029877e99fa290243535ef8afed51ed",
+            "content": "sha256:24f51e734c1b46516f1f3227dfc949c7da5316dcaa8d550922bb201a5d0eadec",
+            "locator": {
+              "end": 290,
+              "kind": "line_range",
+              "start": 285
+            }
           },
           "kind": "code"
         }
@@ -183,8 +196,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e6b16a65aa566287b7b4d80ff076618e8b8fe62d",
-            "content": "sha256:ef7fcab56a88719ed8d2f4a0bdb2bd30abec547be95c7fda58127c674537ed30",
+            "blob": "59df3e87b029877e99fa290243535ef8afed51ed",
+            "content": "sha256:3fc137a2b0456e0c0cd1c810a5ad69c2d58e7aa1611768afbb2e7be739e4ba4c",
             "locator": {
               "end": 318,
               "kind": "line_range",
@@ -212,15 +225,14 @@
       ]
     },
     "40": {
-      "note": "A changed path's hunks with their linkage, or its file-level linkage.",
+      "note": "A changed path's hunks with their linkage, or its file-level linkage.\n\nAnchor: `_change`",
       "targets": [
         {
           "anchor": {
-            "blob": "b59daaf83db5958a313a61186e00d81273c8c347",
-            "content": "sha256:1f27b502aae886e6ff96295f9c432b360b9e62482dc655f908b2989c36c7795e",
+            "blob": "59df3e87b029877e99fa290243535ef8afed51ed",
+            "content": "sha256:694f40d77321342cf37099ddfa0c3c3ef6e1b6e4028235629486a5afbb29dfcf",
             "locator": {
-              "kind": "symbol",
-              "name": "_change"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -228,15 +240,14 @@
       ]
     },
     "41": {
-      "note": "A hunk is linked by changed lines on their own side only.",
+      "note": "A hunk is linked by changed lines on their own side only.\n\nAnchor: `_linked`",
       "targets": [
         {
           "anchor": {
-            "blob": "a9361b86286bca9cc42dd02954bfb370d3f6ac13",
-            "content": "sha256:033e36db176b1d3e36a27335c39eddedf3572b96f51e878f34855cdadfc20170",
+            "blob": "59df3e87b029877e99fa290243535ef8afed51ed",
+            "content": "sha256:694f40d77321342cf37099ddfa0c3c3ef6e1b6e4028235629486a5afbb29dfcf",
             "locator": {
-              "kind": "symbol",
-              "name": "_linked"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -244,15 +255,14 @@
       ]
     },
     "42": {
-      "note": "A non-text change is linked by a file-locator entry.",
+      "note": "A non-text change is linked by a file-locator entry.\n\nAnchor: `non_text_linked`",
       "targets": [
         {
           "anchor": {
-            "blob": "a9361b86286bca9cc42dd02954bfb370d3f6ac13",
-            "content": "sha256:37a6335fc10fcc09a120845217ca9d018c84ee4a1988d1d6cb675849b3b226c6",
+            "blob": "59df3e87b029877e99fa290243535ef8afed51ed",
+            "content": "sha256:694f40d77321342cf37099ddfa0c3c3ef6e1b6e4028235629486a5afbb29dfcf",
             "locator": {
-              "kind": "symbol",
-              "name": "non_text_linked"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -293,12 +303,22 @@
       ]
     },
     "45": {
-      "note": "Step 7 in the docstring: the linkage marking, the delete-only rule and MIK-R10's items.",
+      "note": "Step 7 in the docstring: the linkage marking, the delete-only rule and MIK-R10's items.\n\nAnchor: `_Run`",
       "targets": [
         {
           "anchor": {
-            "blob": "b59daaf83db5958a313a61186e00d81273c8c347",
-            "content": "sha256:1de12de109b69500896f029a5feb3d71ac1fad9d25530c2d6641ff9f6c3be99e",
+            "blob": "59df3e87b029877e99fa290243535ef8afed51ed",
+            "content": "sha256:694f40d77321342cf37099ddfa0c3c3ef6e1b6e4028235629486a5afbb29dfcf",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "59df3e87b029877e99fa290243535ef8afed51ed",
+            "content": "sha256:3e5acac1166399f87bd5337e0396304c74e9cdef5de015ca150bf86341b94d29",
             "locator": {
               "kind": "symbol",
               "name": "_Run"
@@ -389,12 +409,22 @@
       ]
     },
     "51": {
-      "note": "The document: the items of every step, one sort and the digest.",
+      "note": "The document: the items of every step, one sort and the digest.\n\nAnchor: `_Run`",
       "targets": [
         {
           "anchor": {
-            "blob": "b59daaf83db5958a313a61186e00d81273c8c347",
-            "content": "sha256:1de12de109b69500896f029a5feb3d71ac1fad9d25530c2d6641ff9f6c3be99e",
+            "blob": "59df3e87b029877e99fa290243535ef8afed51ed",
+            "content": "sha256:694f40d77321342cf37099ddfa0c3c3ef6e1b6e4028235629486a5afbb29dfcf",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "59df3e87b029877e99fa290243535ef8afed51ed",
+            "content": "sha256:3e5acac1166399f87bd5337e0396304c74e9cdef5de015ca150bf86341b94d29",
             "locator": {
               "kind": "symbol",
               "name": "_Run"
@@ -469,12 +499,22 @@
       ]
     },
     "56": {
-      "note": "The `stale_invariant` item.",
+      "note": "The `stale_invariant` item.\n\nAnchor: `_stale_item`",
       "targets": [
         {
           "anchor": {
-            "blob": "a9361b86286bca9cc42dd02954bfb370d3f6ac13",
-            "content": "sha256:c2bd43a5328db2f1938c9af5237f95f18aeb320c881ac494587c08689c134785",
+            "blob": "59df3e87b029877e99fa290243535ef8afed51ed",
+            "content": "sha256:694f40d77321342cf37099ddfa0c3c3ef6e1b6e4028235629486a5afbb29dfcf",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "59df3e87b029877e99fa290243535ef8afed51ed",
+            "content": "sha256:e9c68c85d51f15af539883120fb1aa0e851df4b37046d63398a13c77df8c9b45",
             "locator": {
               "kind": "symbol",
               "name": "_stale_item"
@@ -521,13 +561,38 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a9361b86286bca9cc42dd02954bfb370d3f6ac13",
-            "content": "sha256:494fc2acdc4450e821714a1b26d67f63b2b79ad135a6ddfc228fb310685e71dc",
+            "blob": "59df3e87b029877e99fa290243535ef8afed51ed",
+            "content": "sha256:15bbd667268b03d1c0157ac9a3486071210f86a5013798e6db95c72f2f33bf50",
             "locator": {
-              "end": 611,
+              "end": 328,
               "kind": "line_range",
               "start": 240
             }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "59df3e87b029877e99fa290243535ef8afed51ed",
+            "content": "sha256:0639e1634070908d782ead94013e3691f55e104d3f6e26a9b414e7b005f98742",
+            "locator": {
+              "end": 570,
+              "kind": "line_range",
+              "start": 549
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d6988bceaf54360e16df0add0b9fab7a65147fa6",
+            "content": "sha256:d344967b445d345bd1539b3884cf0e9fb8974b4f0e215ed0616e756f79458a4f",
+            "locator": {
+              "end": 143,
+              "kind": "line_range",
+              "start": 141
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_worklist/planned_effects.py"
           },
           "kind": "code"
         },
@@ -545,8 +610,8 @@
         },
         {
           "anchor": {
-            "blob": "a9361b86286bca9cc42dd02954bfb370d3f6ac13",
-            "content": "sha256:5825d2e5f237ce1ef48fe98a5301e8e8eb75fdc7e21cb11c67fbd3f8a2be1f6d",
+            "blob": "59df3e87b029877e99fa290243535ef8afed51ed",
+            "content": "sha256:e3da50555cfb4fbe613212924e7fa24084ed7e7fbf30985efed8ff053ac769af",
             "locator": {
               "end": 579,
               "kind": "line_range",
@@ -570,14 +635,13 @@
         },
         {
           "anchor": {
-            "blob": "d6988bceaf54360e16df0add0b9fab7a65147fa6",
-            "content": "sha256:d344967b445d345bd1539b3884cf0e9fb8974b4f0e215ed0616e756f79458a4f",
+            "blob": "59df3e87b029877e99fa290243535ef8afed51ed",
+            "content": "sha256:24f51e734c1b46516f1f3227dfc949c7da5316dcaa8d550922bb201a5d0eadec",
             "locator": {
-              "end": 143,
+              "end": 290,
               "kind": "line_range",
-              "start": 141
-            },
-            "path": "mcp/src/agents_remember/application/knowledge_worklist/planned_effects.py"
+              "start": 285
+            }
           },
           "kind": "code"
         }
@@ -588,13 +652,38 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a9361b86286bca9cc42dd02954bfb370d3f6ac13",
-            "content": "sha256:494fc2acdc4450e821714a1b26d67f63b2b79ad135a6ddfc228fb310685e71dc",
+            "blob": "59df3e87b029877e99fa290243535ef8afed51ed",
+            "content": "sha256:15bbd667268b03d1c0157ac9a3486071210f86a5013798e6db95c72f2f33bf50",
             "locator": {
-              "end": 611,
+              "end": 328,
               "kind": "line_range",
               "start": 240
             }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "59df3e87b029877e99fa290243535ef8afed51ed",
+            "content": "sha256:0639e1634070908d782ead94013e3691f55e104d3f6e26a9b414e7b005f98742",
+            "locator": {
+              "end": 570,
+              "kind": "line_range",
+              "start": 549
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d6988bceaf54360e16df0add0b9fab7a65147fa6",
+            "content": "sha256:d344967b445d345bd1539b3884cf0e9fb8974b4f0e215ed0616e756f79458a4f",
+            "locator": {
+              "end": 143,
+              "kind": "line_range",
+              "start": 141
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_worklist/planned_effects.py"
           },
           "kind": "code"
         },
@@ -612,8 +701,8 @@
         },
         {
           "anchor": {
-            "blob": "a9361b86286bca9cc42dd02954bfb370d3f6ac13",
-            "content": "sha256:5825d2e5f237ce1ef48fe98a5301e8e8eb75fdc7e21cb11c67fbd3f8a2be1f6d",
+            "blob": "59df3e87b029877e99fa290243535ef8afed51ed",
+            "content": "sha256:e3da50555cfb4fbe613212924e7fa24084ed7e7fbf30985efed8ff053ac769af",
             "locator": {
               "end": 579,
               "kind": "line_range",
@@ -637,14 +726,13 @@
         },
         {
           "anchor": {
-            "blob": "d6988bceaf54360e16df0add0b9fab7a65147fa6",
-            "content": "sha256:d344967b445d345bd1539b3884cf0e9fb8974b4f0e215ed0616e756f79458a4f",
+            "blob": "59df3e87b029877e99fa290243535ef8afed51ed",
+            "content": "sha256:24f51e734c1b46516f1f3227dfc949c7da5316dcaa8d550922bb201a5d0eadec",
             "locator": {
-              "end": 143,
+              "end": 290,
               "kind": "line_range",
-              "start": 141
-            },
-            "path": "mcp/src/agents_remember/application/knowledge_worklist/planned_effects.py"
+              "start": 285
+            }
           },
           "kind": "code"
         }
@@ -671,13 +759,38 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a9361b86286bca9cc42dd02954bfb370d3f6ac13",
-            "content": "sha256:494fc2acdc4450e821714a1b26d67f63b2b79ad135a6ddfc228fb310685e71dc",
+            "blob": "59df3e87b029877e99fa290243535ef8afed51ed",
+            "content": "sha256:15bbd667268b03d1c0157ac9a3486071210f86a5013798e6db95c72f2f33bf50",
             "locator": {
-              "end": 611,
+              "end": 328,
               "kind": "line_range",
               "start": 240
             }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "59df3e87b029877e99fa290243535ef8afed51ed",
+            "content": "sha256:0639e1634070908d782ead94013e3691f55e104d3f6e26a9b414e7b005f98742",
+            "locator": {
+              "end": 570,
+              "kind": "line_range",
+              "start": 549
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d6988bceaf54360e16df0add0b9fab7a65147fa6",
+            "content": "sha256:d344967b445d345bd1539b3884cf0e9fb8974b4f0e215ed0616e756f79458a4f",
+            "locator": {
+              "end": 143,
+              "kind": "line_range",
+              "start": 141
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_worklist/planned_effects.py"
           },
           "kind": "code"
         },
@@ -695,8 +808,8 @@
         },
         {
           "anchor": {
-            "blob": "a9361b86286bca9cc42dd02954bfb370d3f6ac13",
-            "content": "sha256:5825d2e5f237ce1ef48fe98a5301e8e8eb75fdc7e21cb11c67fbd3f8a2be1f6d",
+            "blob": "59df3e87b029877e99fa290243535ef8afed51ed",
+            "content": "sha256:e3da50555cfb4fbe613212924e7fa24084ed7e7fbf30985efed8ff053ac769af",
             "locator": {
               "end": 579,
               "kind": "line_range",
@@ -720,26 +833,35 @@
         },
         {
           "anchor": {
-            "blob": "d6988bceaf54360e16df0add0b9fab7a65147fa6",
-            "content": "sha256:d344967b445d345bd1539b3884cf0e9fb8974b4f0e215ed0616e756f79458a4f",
+            "blob": "59df3e87b029877e99fa290243535ef8afed51ed",
+            "content": "sha256:24f51e734c1b46516f1f3227dfc949c7da5316dcaa8d550922bb201a5d0eadec",
             "locator": {
-              "end": 143,
+              "end": 290,
               "kind": "line_range",
-              "start": 141
-            },
-            "path": "mcp/src/agents_remember/application/knowledge_worklist/planned_effects.py"
+              "start": 285
+            }
           },
           "kind": "code"
         }
       ]
     },
     "63": {
-      "note": "Step 8 in the docstring: MIK-R14's reconsideration candidates.",
+      "note": "Step 8 in the docstring: MIK-R14's reconsideration candidates.\n\nAnchor: `_Run`",
       "targets": [
         {
           "anchor": {
-            "blob": "b59daaf83db5958a313a61186e00d81273c8c347",
-            "content": "sha256:1de12de109b69500896f029a5feb3d71ac1fad9d25530c2d6641ff9f6c3be99e",
+            "blob": "59df3e87b029877e99fa290243535ef8afed51ed",
+            "content": "sha256:694f40d77321342cf37099ddfa0c3c3ef6e1b6e4028235629486a5afbb29dfcf",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "59df3e87b029877e99fa290243535ef8afed51ed",
+            "content": "sha256:3e5acac1166399f87bd5337e0396304c74e9cdef5de015ca150bf86341b94d29",
             "locator": {
               "kind": "symbol",
               "name": "_Run"
@@ -754,13 +876,38 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a9361b86286bca9cc42dd02954bfb370d3f6ac13",
-            "content": "sha256:494fc2acdc4450e821714a1b26d67f63b2b79ad135a6ddfc228fb310685e71dc",
+            "blob": "59df3e87b029877e99fa290243535ef8afed51ed",
+            "content": "sha256:15bbd667268b03d1c0157ac9a3486071210f86a5013798e6db95c72f2f33bf50",
             "locator": {
-              "end": 611,
+              "end": 328,
               "kind": "line_range",
               "start": 240
             }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "59df3e87b029877e99fa290243535ef8afed51ed",
+            "content": "sha256:0639e1634070908d782ead94013e3691f55e104d3f6e26a9b414e7b005f98742",
+            "locator": {
+              "end": 570,
+              "kind": "line_range",
+              "start": 549
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d6988bceaf54360e16df0add0b9fab7a65147fa6",
+            "content": "sha256:d344967b445d345bd1539b3884cf0e9fb8974b4f0e215ed0616e756f79458a4f",
+            "locator": {
+              "end": 143,
+              "kind": "line_range",
+              "start": 141
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_worklist/planned_effects.py"
           },
           "kind": "code"
         },
@@ -778,8 +925,8 @@
         },
         {
           "anchor": {
-            "blob": "a9361b86286bca9cc42dd02954bfb370d3f6ac13",
-            "content": "sha256:5825d2e5f237ce1ef48fe98a5301e8e8eb75fdc7e21cb11c67fbd3f8a2be1f6d",
+            "blob": "59df3e87b029877e99fa290243535ef8afed51ed",
+            "content": "sha256:e3da50555cfb4fbe613212924e7fa24084ed7e7fbf30985efed8ff053ac769af",
             "locator": {
               "end": 579,
               "kind": "line_range",
@@ -803,29 +950,27 @@
         },
         {
           "anchor": {
-            "blob": "d6988bceaf54360e16df0add0b9fab7a65147fa6",
-            "content": "sha256:d344967b445d345bd1539b3884cf0e9fb8974b4f0e215ed0616e756f79458a4f",
+            "blob": "59df3e87b029877e99fa290243535ef8afed51ed",
+            "content": "sha256:24f51e734c1b46516f1f3227dfc949c7da5316dcaa8d550922bb201a5d0eadec",
             "locator": {
-              "end": 143,
+              "end": 290,
               "kind": "line_range",
-              "start": 141
-            },
-            "path": "mcp/src/agents_remember/application/knowledge_worklist/planned_effects.py"
+              "start": 285
+            }
           },
           "kind": "code"
         }
       ]
     },
     "65": {
-      "note": "A hunk links only through a side where it changes lines: a delete-only hunk only by a K_B range (L10 ruling Q2), an insertion-only hunk only by a K_C range (MIK-R09, the L10 N3 carry).",
+      "note": "A hunk links only through a side where it changes lines: a delete-only hunk only by a K_B range (L10 ruling Q2), an insertion-only hunk only by a K_C range (MIK-R09, the L10 N3 carry).\n\nAnchor: `_linked`",
       "targets": [
         {
           "anchor": {
-            "blob": "a9361b86286bca9cc42dd02954bfb370d3f6ac13",
-            "content": "sha256:033e36db176b1d3e36a27335c39eddedf3572b96f51e878f34855cdadfc20170",
+            "blob": "59df3e87b029877e99fa290243535ef8afed51ed",
+            "content": "sha256:694f40d77321342cf37099ddfa0c3c3ef6e1b6e4028235629486a5afbb29dfcf",
             "locator": {
-              "kind": "symbol",
-              "name": "_linked"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -866,15 +1011,14 @@
       ]
     },
     "68": {
-      "note": "Gate linkage, text and file level.",
+      "note": "Gate linkage, text and file level.\n\nAnchor: `_change`",
       "targets": [
         {
           "anchor": {
-            "blob": "b59daaf83db5958a313a61186e00d81273c8c347",
-            "content": "sha256:1f27b502aae886e6ff96295f9c432b360b9e62482dc655f908b2989c36c7795e",
+            "blob": "59df3e87b029877e99fa290243535ef8afed51ed",
+            "content": "sha256:694f40d77321342cf37099ddfa0c3c3ef6e1b6e4028235629486a5afbb29dfcf",
             "locator": {
-              "kind": "symbol",
-              "name": "_change"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -882,15 +1026,14 @@
       ]
     },
     "69": {
-      "note": "The non-text predicate the gate and the lane share (MIK-L32).",
+      "note": "The non-text predicate the gate and the lane share (MIK-L32).\n\nAnchor: `_file_covered`",
       "targets": [
         {
           "anchor": {
-            "blob": "a9361b86286bca9cc42dd02954bfb370d3f6ac13",
-            "content": "sha256:1f7e567e9aedc338166c50eb7481097abeedd869092b2a2a96869f9ca5352d49",
+            "blob": "59df3e87b029877e99fa290243535ef8afed51ed",
+            "content": "sha256:694f40d77321342cf37099ddfa0c3c3ef6e1b6e4028235629486a5afbb29dfcf",
             "locator": {
-              "kind": "symbol",
-              "name": "_file_covered"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -1031,8 +1174,8 @@
         },
         {
           "anchor": {
-            "blob": "a9361b86286bca9cc42dd02954bfb370d3f6ac13",
-            "content": "sha256:5825d2e5f237ce1ef48fe98a5301e8e8eb75fdc7e21cb11c67fbd3f8a2be1f6d",
+            "blob": "59df3e87b029877e99fa290243535ef8afed51ed",
+            "content": "sha256:e3da50555cfb4fbe613212924e7fa24084ed7e7fbf30985efed8ff053ac769af",
             "locator": {
               "end": 579,
               "kind": "line_range",
@@ -1066,6 +1209,18 @@
             "path": "mcp/src/agents_remember/application/knowledge_worklist/planned_effects.py"
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "59df3e87b029877e99fa290243535ef8afed51ed",
+            "content": "sha256:24f51e734c1b46516f1f3227dfc949c7da5316dcaa8d550922bb201a5d0eadec",
+            "locator": {
+              "end": 290,
+              "kind": "line_range",
+              "start": 285
+            }
+          },
+          "kind": "code"
         }
       ]
     },
@@ -1074,8 +1229,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e6b16a65aa566287b7b4d80ff076618e8b8fe62d",
-            "content": "sha256:ef7fcab56a88719ed8d2f4a0bdb2bd30abec547be95c7fda58127c674537ed30",
+            "blob": "59df3e87b029877e99fa290243535ef8afed51ed",
+            "content": "sha256:3fc137a2b0456e0c0cd1c810a5ad69c2d58e7aa1611768afbb2e7be739e4ba4c",
             "locator": {
               "end": 318,
               "kind": "line_range",
@@ -1100,6 +1255,18 @@
             }
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "59df3e87b029877e99fa290243535ef8afed51ed",
+            "content": "sha256:fe67176ad17a2319289214ff3467dec72e7ecf8ba3136c1f85f487d7f853dc5c",
+            "locator": {
+              "end": 487,
+              "kind": "line_range",
+              "start": 468
+            }
+          },
+          "kind": "code"
         }
       ]
     },
@@ -1108,8 +1275,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8f2174f431d1314684097c47a8a4ebcd365a15ee",
-            "content": "sha256:fcfdb195d4de211aacfd79f737e7880f56bf93fc62a8edf905f640ba64654f0c",
+            "blob": "6d7207b62870c112ca4f25941c37846c0152a38a",
+            "content": "sha256:c7cc9629f16c9f81e05f597ebd517127e852d3f6aa45e0c451fc13b5ed26906b",
             "locator": {
               "end": 117,
               "kind": "line_range",
@@ -1154,12 +1321,48 @@
             "path": "mcp/src/agents_remember/application/knowledge_worklist/route_context.py"
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "dfe3a029c282b08bcf784fc926e3cc04a975a615",
+            "content": "sha256:537b06483ffe21977247c155eb2f1e5643a5c0147caac3f316e2045304c1451a",
+            "locator": {
+              "end": 116,
+              "kind": "line_range",
+              "start": 70
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_worklist/route_context.py"
+          },
+          "kind": "code"
         }
       ]
     },
     "83": {
-      "note": "The orchestrator shares its actual classifier, exact pairing and candidate knowledge side with the active request-scoped classification owner before computing scope/linkage.\n\nAnchor: `_Run.document`",
+      "note": "The orchestrator shares its actual classifier, exact pairing and candidate knowledge side with the active request-scoped classification owner before computing scope/linkage.\n\nAnchor: `share_classifier`",
       "targets": [
+        {
+          "anchor": {
+            "blob": "59df3e87b029877e99fa290243535ef8afed51ed",
+            "content": "sha256:97050d137b70b6b8bb959c67130e959b9e8616103a5a01dac74b08add9b90f7c",
+            "locator": {
+              "end": 320,
+              "kind": "line_range",
+              "start": 244
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2cd431100b2a049cb57eba23f2933df888c5aaf7",
+            "content": "sha256:e04fc6be8f884031fd5cfbc43165328f8f6fc2ed361b588fa3a82cbe158f5dcf",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_worklist/classification_context.py"
+          },
+          "kind": "code"
+        },
         {
           "anchor": {
             "blob": "2cd431100b2a049cb57eba23f2933df888c5aaf7",
@@ -1169,18 +1372,6 @@
               "name": "share_classifier"
             },
             "path": "mcp/src/agents_remember/application/knowledge_worklist/classification_context.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "337a487d553a03970df1b00646d6a937a1722cab",
-            "content": "sha256:d0c81dcdb563c622eebb2aae021998438bf4235761e5e555a8de52df6ca1ba79",
-            "locator": {
-              "end": 320,
-              "kind": "line_range",
-              "start": 244
-            }
           },
           "kind": "code"
         }

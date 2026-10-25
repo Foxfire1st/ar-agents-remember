@@ -89,7 +89,7 @@ No Domain Documentation source is configured for this memory root.
 - **Retained historical source account — superseded by the current contract:** The execution parameter object `StartExecution` (dry_run, skip_provider_setup, retry_provider_setup), defined in the application request boundary. [9]
 - **Retained historical source account — superseded by the current contract:** `TaskRef` — the shared task locator attach and status pack. [10]
 
-- **Retained historical source account — superseded by the current contract:** **The pairing this registrar performs, and the vocabulary the decision is typed by.** [11]
+- **Retained historical source account — superseded by the current contract:** **The pairing this registrar performs, and the vocabulary the decision is typed by.** Historical KS-L40 caption: commit74c6c693 paired resolution_action and knowledge_resolution into SyncResolutionInput; b52adc8 removed that authored-reconciliation input. On current source the registrar constructs action-only SyncResolutionInput(action=resolution_action), with continue/cancel vocabulary. The retained historical pairing account remains superseded. [11]
 
 ### Cross-Repo References
 

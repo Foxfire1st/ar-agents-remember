@@ -3,15 +3,14 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The read-only CodeMirror pane it hosts on the code side.",
+      "note": "The read-only CodeMirror pane it hosts on the code side.\n\nAnchor: `FilePane`",
       "targets": [
         {
           "anchor": {
-            "blob": "51f94729899f48cef6ffa98458e7c097fa30497e",
-            "content": "sha256:6c1ef40b74941e5bc4e8f9a286aefb833f98a00d211239b487d8009b8f9f6887",
+            "blob": "dbbb34c143ffd24687f884bd401852c94fb43a96",
+            "content": "sha256:4381a6ac5fd2d1fed3c3059c96f97e25dc55475450953631d92a8d35b059cd90",
             "locator": {
-              "kind": "symbol",
-              "name": "FilePane"
+              "kind": "file"
             },
             "path": "dashboard/src/panels/file-viewer/FilePane.tsx"
           },
@@ -20,15 +19,14 @@
       ]
     },
     "2": {
-      "note": "The markdown renderer the sidecar pane reuses.",
+      "note": "The markdown renderer the sidecar pane reuses.\n\nAnchor: `Markdown`",
       "targets": [
         {
           "anchor": {
-            "blob": "b4c74c37212e432009df876b3276beea828250fa",
-            "content": "sha256:e65a77e2d635bfba5d57e537277bdfe467525e8ee50a1074c263649cbf815cc2",
+            "blob": "1a65bd4444779518a555e2e38d8ca30fa0df9f3a",
+            "content": "sha256:dbbcb27210f3e352d08d6ba242aaa61621f03500d95beccbb45dbe266bda2ae3",
             "locator": {
-              "kind": "symbol",
-              "name": "Markdown"
+              "kind": "file"
             },
             "path": "dashboard/src/grammar/Markdown.tsx"
           },

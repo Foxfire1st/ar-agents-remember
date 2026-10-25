@@ -69,7 +69,7 @@ No relevant domain documentation was found.
 ### Repo-Internal References
 
 - The branch-node renderer with landing/pruned registers. [1]
-- The runtime-state gauge renderer. [2]
+
 
 ### Cross-Repo References
 

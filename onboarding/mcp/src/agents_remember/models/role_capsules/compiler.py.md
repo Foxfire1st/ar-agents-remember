@@ -107,7 +107,9 @@ This account is bound to the candidate source, not a claim of a running serving 
 
 
 - Launch copies detail files, substitutes paths, and records frozen revisions. [9]
+
 - Replay validates regular opened files and frozen revisions at deterministic detail names beside the saved handover in its recorded canonical folder, not mutable corpus sources. [10]
+
 - Per-request detail artifacts use exact admitted bytes beside the handover and write-once publication. [11]
 - File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence. [12]
 - File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence. [13]
@@ -121,7 +123,9 @@ No relevant documentation found after checking live sources.
 
 ### Repo-Internal References
 
+
 - The application entry point that admits bytes from disk and calls this compiler, returning success or refusal as a value. [1]
+
 - The diagnostic shapes this module fills and the ordering rule that keeps them out of the digest. [2]
 - **The carried skill channel** — one content-addressed reference per declared skill, built with no policy call. [3]
 - The determinism cases: identical input to identical content and digest, order as identity, and a real binding change moving the digest. [4]

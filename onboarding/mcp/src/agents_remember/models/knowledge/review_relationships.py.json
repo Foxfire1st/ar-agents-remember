@@ -3,12 +3,12 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "**The module's own statement of the five rules its shape enforces: both sides, the carried identity, no blank state, the labelled authored lineage, and the rename as an inference.**",
+      "note": "The module's own statement of the four rules its shape enforces: both sides, the carried identity, no blank state, and the rename as an inference.",
       "targets": [
         {
           "anchor": {
-            "blob": "e3e8df3624cd2d7cb440199d304479c1fa4dba64",
-            "content": "sha256:88313a99b690437de0e806fac0ad2c236476cf98fa1869d1e61d7147b0b7ea73",
+            "blob": "052766edeb931fb7a3ab142ec97de73583b76cdf",
+            "content": "sha256:7cf29daa7f50cdde84fe7b9ab893f7307ed6b67352cee43aa097ae9358a2cd95",
             "locator": {
               "kind": "symbol",
               "name": "ReviewRelationshipMovement"
@@ -18,8 +18,8 @@
         },
         {
           "anchor": {
-            "blob": "e3e8df3624cd2d7cb440199d304479c1fa4dba64",
-            "content": "sha256:e34c54504e3525e466197cbb34193503f5f17e6bbd74ad94c346ac645a82b86b",
+            "blob": "052766edeb931fb7a3ab142ec97de73583b76cdf",
+            "content": "sha256:f930b21842cbd28b95226ccfaa6980e69829fbe0710ea1eb550b22c6edf8db5d",
             "locator": {
               "end": 46,
               "kind": "line_range",
@@ -27,19 +27,28 @@
             }
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "052766edeb931fb7a3ab142ec97de73583b76cdf",
+            "content": "sha256:319d9f8a3fe71f650293d56516821b43d0be1ee15df18a981dff4d28d9afa1fe",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
         }
       ]
     },
     "10": {
-      "note": "The application module that builds the movements, and the display module that renders them.",
+      "note": "The application module that builds the movements, and the display module that renders them.\n\nAnchor: `relationship_movements` `paired_movement` `single_sided_movement`",
       "targets": [
         {
           "anchor": {
-            "blob": "2010ceb201503bdba78bee89fd27919ced5b4c4a",
-            "content": "sha256:fff934dfcda5aff44a91daa122a2d3139fd4f05c109babd2142bf85c39003b34",
+            "blob": "8810b5f2e85378847113d9ea6246a4fb96def91f",
+            "content": "sha256:31b4506c1ef62e6c77c68efb52f668b00415b0725a84ff746be8e9adbd222cae",
             "locator": {
-              "kind": "symbol",
-              "name": "relationship_movements"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/review_relationship_movement.py"
           },
@@ -47,23 +56,10 @@
         },
         {
           "anchor": {
-            "blob": "d3778adb8516a03d5dd5fc2d32a221efcdd0c61d",
-            "content": "sha256:8a5a091a5ffdc35fd29bc7ecaf5a0352431c3b706814476a3c28b4aa6022bbac",
+            "blob": "0d9ce891dc115c70c6c14385dfb732ca0aab63cf",
+            "content": "sha256:05266b32621366098959dab03caa9003059e519b7ed6f15aa2ff02413b697d82",
             "locator": {
-              "kind": "symbol",
-              "name": "paired_movement"
-            },
-            "path": "mcp/src/agents_remember/application/review_relationship_display.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "d3778adb8516a03d5dd5fc2d32a221efcdd0c61d",
-            "content": "sha256:c3985f97818b1dc5e6deaba6ad8df7340a8ac686e580254e5ff81c07c264bfdc",
-            "locator": {
-              "kind": "symbol",
-              "name": "single_sided_movement"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/review_relationship_display.py"
           },
@@ -72,36 +68,12 @@
       ]
     },
     "11": {
-      "note": "The review vocabulary that re-exports these names and gains the two new fields on the pane row.",
+      "note": "The review vocabulary that re-exports these names and gains the two new fields on the pane row.\n\nAnchor: `ReviewSourceLocation` `ReviewSourcePane` `__all__`",
       "targets": [
         {
           "anchor": {
-            "blob": "f9105a09d9fdee4eeed9ab2b715723940337949e",
-            "content": "sha256:a534925c08ceec61e373170de934a2ef1563aa0de669feb112624761dfcd2f2e",
-            "locator": {
-              "kind": "symbol",
-              "name": "ReviewSourceLocation"
-            },
-            "path": "mcp/src/agents_remember/models/knowledge/review.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "f9105a09d9fdee4eeed9ab2b715723940337949e",
-            "content": "sha256:65dafa202f40ba2a5d96f2c3b652c751c562b0dcd38af89bd10f5ff56bc434b4",
-            "locator": {
-              "kind": "symbol",
-              "name": "ReviewSourcePane"
-            },
-            "path": "mcp/src/agents_remember/models/knowledge/review.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "0cc1ed4aa2ead143a66f5ee6b69cf490138fd7ae",
-            "content": "sha256:76b4855ea420035e7e9aab5f310ee5329d05a1b7b94b2822793e5c191704fb8b",
+            "blob": "e298bc656619aa09b3566b8e7baeb7a8453b656f",
+            "content": "sha256:1da4715cc524823e0d5a161c96f379727d4cc35e17e708025eafff04590b510c",
             "locator": {
               "kind": "symbol",
               "name": "__all__"
@@ -112,8 +84,8 @@
         },
         {
           "anchor": {
-            "blob": "0cc1ed4aa2ead143a66f5ee6b69cf490138fd7ae",
-            "content": "sha256:cde0cc82f181e0d6722293e7a2dca8c698fe905cc211a202471f8ad0440284ee",
+            "blob": "e298bc656619aa09b3566b8e7baeb7a8453b656f",
+            "content": "sha256:006cecd1a072e2de62a498f44e3ea8ea406cafb3cc467c4c31d2d72137e647f3",
             "locator": {
               "end": 101,
               "kind": "line_range",
@@ -122,43 +94,29 @@
             "path": "mcp/src/agents_remember/models/knowledge/review.py"
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e298bc656619aa09b3566b8e7baeb7a8453b656f",
+            "content": "sha256:4d0b65fa6dad1cd50ffccbef6a9438db99bd5d650c265f6820bac0cf5e6bf315",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review.py"
+          },
+          "kind": "code"
         }
       ]
     },
     "12": {
-      "note": "The production movement cases retain moved and withdrawn realizations and distinguish each declared route from an unread route side.",
+      "note": "The production movement cases retain withdrawn realizations and distinguish each declared route from an unread route side; a moved realization is displayed as a retraction and an addition, not one movement.\n\nAnchor: `test_a_moved_realization_displays_both_recorded_paths_under_one_invariant_identity` `test_a_withdrawn_realization_stays_visible_with_its_deleted_file_and_its_identity` `test_each_declared_route_is_one_relationship_and_an_unread_side_is_never_ungoverned`",
       "targets": [
         {
           "anchor": {
-            "blob": "4fbe8a393d04d0bc0f0af6d31ed7a7880fd4c684",
-            "content": "sha256:c541cc58ebe13ea87b050db72ad1eef4ed93ef7c75d4b2b8a9c2a79d16724e49",
+            "blob": "b2988f6b2880854b942ad85dea6de14ff88eb7c9",
+            "content": "sha256:d48782df1cc07dc9fa8556307192ab80fe5651cdc798afaab7fd5d94fd22b31e",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_moved_realization_displays_both_recorded_paths_under_one_invariant_identity"
-            },
-            "path": "mcp/tests/test_knowledge_review_relationship_movement.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "4fbe8a393d04d0bc0f0af6d31ed7a7880fd4c684",
-            "content": "sha256:e9f35ce7e338468c9d99e8b858bfdc030052d2335c8ab2f24deecb34a7930440",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_a_withdrawn_realization_stays_visible_with_its_deleted_file_and_its_identity"
-            },
-            "path": "mcp/tests/test_knowledge_review_relationship_movement.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "4fbe8a393d04d0bc0f0af6d31ed7a7880fd4c684",
-            "content": "sha256:a3228e55bfb2cfb17777ec323257d38273b2c23ca70020ac9e3201deb902eebb",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_each_declared_route_is_one_relationship_and_an_unread_side_is_never_ungoverned"
+              "kind": "file"
             },
             "path": "mcp/tests/test_knowledge_review_relationship_movement.py"
           },
@@ -167,15 +125,14 @@
       ]
     },
     "2": {
-      "note": "The published vocabulary.",
+      "note": "The published vocabulary.\n\nAnchor: `__all__`",
       "targets": [
         {
           "anchor": {
-            "blob": "255c5c146eeeb6582e90058eeeebba11883abeba",
-            "content": "sha256:15dd4252ff7063bfe5dd16246e2ddaa56e9311f29569eb79f0ff088272d6bac1",
+            "blob": "052766edeb931fb7a3ab142ec97de73583b76cdf",
+            "content": "sha256:319d9f8a3fe71f650293d56516821b43d0be1ee15df18a981dff4d28d9afa1fe",
             "locator": {
-              "kind": "symbol",
-              "name": "__all__"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -183,70 +140,14 @@
       ]
     },
     "3": {
-      "note": "The four relationship kinds, the two side names, the five side states, the six transitions, the three lineage kinds and the seven gap codes.",
+      "note": "The four relationship kinds, the two side names, the six side states, the seven transitions and the six gap codes.\n\nAnchor: `ReviewRelationshipKind` `ReviewRelationshipSideName` `ReviewRelationshipState` `ReviewRelationshipTransition` `AuthoredLineageKind` `ReviewRelationshipGapCode`",
       "targets": [
         {
           "anchor": {
             "blob": "052766edeb931fb7a3ab142ec97de73583b76cdf",
-            "content": "sha256:20af61f3d4383480b7c24f2720ce95462eae4663705cd7219d993fd1e3c0a6e0",
+            "content": "sha256:319d9f8a3fe71f650293d56516821b43d0be1ee15df18a981dff4d28d9afa1fe",
             "locator": {
-              "kind": "symbol",
-              "name": "ReviewRelationshipKind"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "052766edeb931fb7a3ab142ec97de73583b76cdf",
-            "content": "sha256:8929eb9a7710fc3d0591cfb49a20cbeaf7eb509a48351382ca0f28da27582d1c",
-            "locator": {
-              "kind": "symbol",
-              "name": "ReviewRelationshipSideName"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "e3e8df3624cd2d7cb440199d304479c1fa4dba64",
-            "content": "sha256:a26a4d0a4b7c059aa59664b667145628f58f843fd806ae0030f5b710170ada9f",
-            "locator": {
-              "kind": "symbol",
-              "name": "ReviewRelationshipState"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "e3e8df3624cd2d7cb440199d304479c1fa4dba64",
-            "content": "sha256:d07d834073f4b959a9f29311a6e321100709fd6774c25c0f4e068755caf93135",
-            "locator": {
-              "kind": "symbol",
-              "name": "ReviewRelationshipTransition"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "255c5c146eeeb6582e90058eeeebba11883abeba",
-            "content": "sha256:9d86d9b13804492094d76aec684195f8afcb2bb2825c0f670e119bf6498ab1d0",
-            "locator": {
-              "kind": "symbol",
-              "name": "AuthoredLineageKind"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "e3e8df3624cd2d7cb440199d304479c1fa4dba64",
-            "content": "sha256:e0a5aa52116b78bb4525965224504a031a3a331f69adbb0a490762439a3b7f7c",
-            "locator": {
-              "kind": "symbol",
-              "name": "ReviewRelationshipGapCode"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -254,37 +155,14 @@
       ]
     },
     "4": {
-      "note": "**The eight recorded relations a pairing may name, and the single-member rename basis.**",
+      "note": "The two recorded relations a pairing may name, and the single-member rename basis.\n\nAnchor: `ReviewPairingBasis` `RENAME_INFERENCE_KIND` `RenameInferenceState`",
       "targets": [
         {
           "anchor": {
-            "blob": "255c5c146eeeb6582e90058eeeebba11883abeba",
-            "content": "sha256:d66bc7ec8d86b7063f512eb3680268b6c76dee3a198d5f0a77246fcb21838c03",
-            "locator": {
-              "kind": "symbol",
-              "name": "ReviewPairingBasis"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
             "blob": "052766edeb931fb7a3ab142ec97de73583b76cdf",
-            "content": "sha256:0250a09044629348ecc4ab0f11e5e390fda15a6e3e9ebfab587b94ea20917ce4",
+            "content": "sha256:319d9f8a3fe71f650293d56516821b43d0be1ee15df18a981dff4d28d9afa1fe",
             "locator": {
-              "kind": "symbol",
-              "name": "RENAME_INFERENCE_KIND"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "052766edeb931fb7a3ab142ec97de73583b76cdf",
-            "content": "sha256:0cd5b12e7501c49607150f8581d4020acf532073311323fab63344b6aeaaa084",
-            "locator": {
-              "kind": "symbol",
-              "name": "RenameInferenceState"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -323,22 +201,6 @@
         }
       ]
     },
-    "7": {
-      "note": "The author's own edge with every related revision, and the absence of any field a similarity could occupy.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "255c5c146eeeb6582e90058eeeebba11883abeba",
-            "content": "sha256:4c9f06485ec066a3dcbefdf4a875da9eb3a9d298dc96f683737a27d4c7496912",
-            "locator": {
-              "kind": "symbol",
-              "name": "ReviewAuthoredLineage"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "8": {
       "note": "**The labelled rename inference, with the validator that ties a pairing to its state and refuses a similarity word on an unmeasured inference.**",
       "targets": [
@@ -356,15 +218,14 @@
       ]
     },
     "9": {
-      "note": "**The movement's four validators: the transition must match its sides, a gap must name a displayed side, a pairing must state its basis, and an absent identity must state itself.**",
+      "note": "**The movement's four validators: the transition must match its sides, a gap must name a displayed side, a pairing must state its basis, and an absent identity must state itself.**\n\nAnchor: `ReviewRelationshipMovement`",
       "targets": [
         {
           "anchor": {
-            "blob": "e3e8df3624cd2d7cb440199d304479c1fa4dba64",
-            "content": "sha256:88313a99b690437de0e806fac0ad2c236476cf98fa1869d1e61d7147b0b7ea73",
+            "blob": "052766edeb931fb7a3ab142ec97de73583b76cdf",
+            "content": "sha256:319d9f8a3fe71f650293d56516821b43d0be1ee15df18a981dff4d28d9afa1fe",
             "locator": {
-              "kind": "symbol",
-              "name": "ReviewRelationshipMovement"
+              "kind": "file"
             }
           },
           "kind": "code"

@@ -19,7 +19,9 @@ Local implementation and executable evidence do not replace requirement authorit
 ## Evidence
 
 
+
 - Private capture copies the real index with its time, restores HEAD, clears trust flags only on the copy, applies explicit exclusions and stages working files. Unusable-copy recovery remains with the caller; unchanged stat-matching files are not reconverted merely because conversion rules changed. [1]
+
 
 ## 260928-MIK-L177 The Index Census The Proof Reads
 

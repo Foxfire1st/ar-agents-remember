@@ -275,7 +275,9 @@ beside it, and every anchor in a row occurs inside the range that row cites.
 
 - The one-sided reducer: how many sides carried content is the question, and a row missing from a bounded page is the page's fact. [27]
 
+
 - The public entry re-exports the family values/functions and family, change-fact, selection and locator types. [28]
+
 
 - The optional family_context field remains distinct from a measured no_family_recorded context. [29]
 
@@ -283,7 +285,9 @@ beside it, and every anchor in a row occurs inside the range that row cites.
 
 - The server's own rules the mirror carries across: a guarantee is the family's authored text and the five status dimensions stay separate. [31]
 
+
 - The tree retains side order and member-row reduction; guarantee rendering lives in FamilyGuarantees and selected statements use their own text-first owner. [32]
+
 
 - The change literals and one member occurrence's facts, primary, marks and three reason lists kept apart (MIK-L33). [33]
 

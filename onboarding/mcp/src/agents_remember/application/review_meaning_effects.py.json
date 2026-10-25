@@ -56,15 +56,14 @@
       ]
     },
     "2": {
-      "note": "The same owner-filtered projection supplies outline labels.",
+      "note": "The same owner-filtered projection supplies outline labels.\n\nAnchor: `outline_meanings`",
       "targets": [
         {
           "anchor": {
-            "blob": "112a9855157f940bc999dde2c6fba752f6430f5e",
-            "content": "sha256:e1d5160e69a84c1c9ec66202e863fab35f75d60db3777a95cfe7eee77e8e0492",
+            "blob": "adee3e1164686ae8794d9205dd8877034eb0426e",
+            "content": "sha256:e34f59646dc60f82bdb41a9e90bfdcfcd33d005e8062873e164319edb0ccd6be",
             "locator": {
-              "kind": "symbol",
-              "name": "outline_meanings"
+              "kind": "file"
             }
           },
           "kind": "code"

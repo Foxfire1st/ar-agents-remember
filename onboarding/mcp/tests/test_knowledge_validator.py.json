@@ -1,5 +1,6 @@
 {
   "path": "mcp/tests/test_knowledge_validator.py",
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
@@ -79,8 +80,8 @@
         },
         {
           "anchor": {
-            "blob": "5cfaba0452820d0166d819685dc9bcb29d054ff9",
-            "content": "sha256:ef454efb274a8bcf72b8a1b53b24c596269cf0540745e45299e6e94eace8cb84",
+            "blob": "922080aa70ed74fa611b56de473a1398e4e6ec6d",
+            "content": "sha256:c584c3141570f90eef76d2c9643a81042b3b62d7b72fd13c5e985c9f8676fbe9",
             "locator": {
               "end": 1021,
               "kind": "line_range",
@@ -180,8 +181,8 @@
         },
         {
           "anchor": {
-            "blob": "5cfaba0452820d0166d819685dc9bcb29d054ff9",
-            "content": "sha256:ef454efb274a8bcf72b8a1b53b24c596269cf0540745e45299e6e94eace8cb84",
+            "blob": "922080aa70ed74fa611b56de473a1398e4e6ec6d",
+            "content": "sha256:c584c3141570f90eef76d2c9643a81042b3b62d7b72fd13c5e985c9f8676fbe9",
             "locator": {
               "end": 1021,
               "kind": "line_range",
@@ -205,15 +206,14 @@
       ]
     },
     "11": {
-      "note": "MIK-R27: a forged legacy ID does not make a record exported.",
+      "note": "MIK-R27: a forged legacy ID does not make a record exported.\n\nAnchor: `test_a_forged_legacy_id_does_not_make_a_record_exported`",
       "targets": [
         {
           "anchor": {
-            "blob": "191f2efd3cfb209068998c6db39a5de6427d55b2",
-            "content": "sha256:4523e9a98feb5acd66c7973b2b117b37d3f6ba13234dd455ce7c3648e09ac413",
+            "blob": "922080aa70ed74fa611b56de473a1398e4e6ec6d",
+            "content": "sha256:2872079c064fd035ad0a25e8d43839a5893228d43b3b62f0c5e5de769d3b1504",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_forged_legacy_id_does_not_make_a_record_exported"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -309,8 +309,8 @@
         },
         {
           "anchor": {
-            "blob": "5cfaba0452820d0166d819685dc9bcb29d054ff9",
-            "content": "sha256:ef454efb274a8bcf72b8a1b53b24c596269cf0540745e45299e6e94eace8cb84",
+            "blob": "922080aa70ed74fa611b56de473a1398e4e6ec6d",
+            "content": "sha256:c584c3141570f90eef76d2c9643a81042b3b62d7b72fd13c5e985c9f8676fbe9",
             "locator": {
               "end": 1021,
               "kind": "line_range",
@@ -410,8 +410,8 @@
         },
         {
           "anchor": {
-            "blob": "5cfaba0452820d0166d819685dc9bcb29d054ff9",
-            "content": "sha256:ef454efb274a8bcf72b8a1b53b24c596269cf0540745e45299e6e94eace8cb84",
+            "blob": "922080aa70ed74fa611b56de473a1398e4e6ec6d",
+            "content": "sha256:c584c3141570f90eef76d2c9643a81042b3b62d7b72fd13c5e985c9f8676fbe9",
             "locator": {
               "end": 1021,
               "kind": "line_range",
@@ -523,8 +523,8 @@
         },
         {
           "anchor": {
-            "blob": "5cfaba0452820d0166d819685dc9bcb29d054ff9",
-            "content": "sha256:ef454efb274a8bcf72b8a1b53b24c596269cf0540745e45299e6e94eace8cb84",
+            "blob": "922080aa70ed74fa611b56de473a1398e4e6ec6d",
+            "content": "sha256:c584c3141570f90eef76d2c9643a81042b3b62d7b72fd13c5e985c9f8676fbe9",
             "locator": {
               "end": 1021,
               "kind": "line_range",
@@ -612,8 +612,8 @@
         },
         {
           "anchor": {
-            "blob": "5cfaba0452820d0166d819685dc9bcb29d054ff9",
-            "content": "sha256:ef454efb274a8bcf72b8a1b53b24c596269cf0540745e45299e6e94eace8cb84",
+            "blob": "922080aa70ed74fa611b56de473a1398e4e6ec6d",
+            "content": "sha256:c584c3141570f90eef76d2c9643a81042b3b62d7b72fd13c5e985c9f8676fbe9",
             "locator": {
               "end": 1021,
               "kind": "line_range",
@@ -665,12 +665,12 @@
         },
         {
           "anchor": {
-            "blob": "fe8d91c5906a9a7de3962f685120cc2066dabdc9",
+            "blob": "4d9d6893681f254b50613d353e3db9f1e71d6800",
             "content": "sha256:b05706ae69e147e8e46f29da61920c250c5cc55f18280090f01356b80ccdb9c0",
             "locator": {
-              "end": 75,
+              "end": 78,
               "kind": "line_range",
-              "start": 69
+              "start": 72
             },
             "path": "mcp/tests/knowledge_validator_test_support.py"
           },
@@ -706,15 +706,14 @@
       ]
     },
     "3": {
-      "note": "The hand-added marker is refused.",
+      "note": "The hand-added marker is refused.\n\nAnchor: `test_a_hand_added_marker_without_a_reference_is_refused`",
       "targets": [
         {
           "anchor": {
-            "blob": "191f2efd3cfb209068998c6db39a5de6427d55b2",
-            "content": "sha256:0670aeda506e093647aaa77c8d54dbb1a253b430f599a95c3e7b6531e682acd9",
+            "blob": "922080aa70ed74fa611b56de473a1398e4e6ec6d",
+            "content": "sha256:2872079c064fd035ad0a25e8d43839a5893228d43b3b62f0c5e5de769d3b1504",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_hand_added_marker_without_a_reference_is_refused"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -722,15 +721,14 @@
       ]
     },
     "4": {
-      "note": "A dot-named card and its sidecar are validated.",
+      "note": "A dot-named card and its sidecar are validated.\n\nAnchor: `test_a_dot_named_card_and_its_sidecar_are_validated`",
       "targets": [
         {
           "anchor": {
-            "blob": "191f2efd3cfb209068998c6db39a5de6427d55b2",
-            "content": "sha256:6631cf300cab0f9d694c9eb0fb88677bf250e6ba914c47bdaf6e4c9c78bbfff7",
+            "blob": "922080aa70ed74fa611b56de473a1398e4e6ec6d",
+            "content": "sha256:2872079c064fd035ad0a25e8d43839a5893228d43b3b62f0c5e5de769d3b1504",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_dot_named_card_and_its_sidecar_are_validated"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -742,12 +740,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4e1965aa3c82ea00c2bd3dac463bef17c3fc473e",
+            "blob": "f733d24914c53e9a394f450ad93e8cce9aa70c02",
             "content": "sha256:0c4aded6e6bee9ab9a6f2722c21400cdba03cd92aaf1e76e624559b12aa402c6",
             "locator": {
-              "end": 67,
+              "end": 74,
               "kind": "line_range",
-              "start": 51
+              "start": 58
             },
             "path": "mcp/tests/test_validator_link_targets.py"
           },
@@ -788,15 +786,14 @@
       ]
     },
     "8": {
-      "note": "MIK-R27: reference-only justifications are refused, real prose is admitted.",
+      "note": "MIK-R27: reference-only justifications are refused, real prose is admitted.\n\nAnchor: `test_a_new_record_whose_justification_is_only_a_reference_is_refused`",
       "targets": [
         {
           "anchor": {
-            "blob": "191f2efd3cfb209068998c6db39a5de6427d55b2",
-            "content": "sha256:d7ef77f63545922409088ab8363e742a14519a896025bc46614a68e1efc312e7",
+            "blob": "922080aa70ed74fa611b56de473a1398e4e6ec6d",
+            "content": "sha256:2872079c064fd035ad0a25e8d43839a5893228d43b3b62f0c5e5de769d3b1504",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_new_record_whose_justification_is_only_a_reference_is_refused"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -880,8 +877,8 @@
         },
         {
           "anchor": {
-            "blob": "5cfaba0452820d0166d819685dc9bcb29d054ff9",
-            "content": "sha256:ef454efb274a8bcf72b8a1b53b24c596269cf0540745e45299e6e94eace8cb84",
+            "blob": "922080aa70ed74fa611b56de473a1398e4e6ec6d",
+            "content": "sha256:c584c3141570f90eef76d2c9643a81042b3b62d7b72fd13c5e985c9f8676fbe9",
             "locator": {
               "end": 1021,
               "kind": "line_range",

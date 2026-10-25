@@ -132,7 +132,7 @@
       ]
     },
     "3": {
-      "note": "Five `base`-arg GET helpers build the `/repos`, `/list`, `/read`, and `/onboarding` (forward+reverse) URLs.",
+      "note": "Five `base`-arg GET helpers build the `/repos`, `/list`, `/read`, and `/onboarding` (forward+reverse) URLs.\n\nAnchor: `fetchRepos` `listDir` `readFile` `resolveForward` `resolveReverse`",
       "targets": [
         {
           "anchor": {
@@ -191,8 +191,8 @@
         },
         {
           "anchor": {
-            "blob": "69f443587646541eb1434c6090c484772f0ac10a",
-            "content": "sha256:b1417edcf2e73263bfdf0586709b4efaa8041fb1f867033e03b0ef436a323297",
+            "blob": "05420e58f22ada25400406ce21f18491119d64da",
+            "content": "sha256:ac2884eefb08117797f1436f61da6d26047caa9ac28ce5404d0ede4b07dd9b08",
             "locator": {
               "end": 111,
               "kind": "line_range",
@@ -221,6 +221,16 @@
               "end": 141,
               "kind": "line_range",
               "start": 133
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "05420e58f22ada25400406ce21f18491119d64da",
+            "content": "sha256:5bc1a08e5b79445259a58e95eab4400ca1cb769e51344240adeb08cc359848a2",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -352,15 +362,16 @@
       ]
     },
     "9": {
-      "note": "`DualPane` consumes the `FileContent` type for its code side.\n\nAnchor: `FileContent`",
+      "note": "`DualPane` consumes the `FileContent` type for its code side. Source caption: `FileContent`",
       "targets": [
         {
           "anchor": {
-            "blob": "5e1f3e3243fe21af63d66c6fafc9829e9fa50166",
-            "content": "sha256:b7d09e1dfa9ff6cfed47c439a853ed250342a83c8124fff97f051031b7146d28",
+            "blob": "2a8233f6878d1f710c5879a2464418c11ea9627e",
+            "content": "sha256:28cde7507ab57730f6e85edfcd20e3e1ccddb24b052dee0a19f226c2325eb3e6",
             "locator": {
-              "kind": "symbol",
-              "name": "DualPane"
+              "end": 142,
+              "kind": "line_range",
+              "start": 96
             },
             "path": "dashboard/src/panels/file-viewer/DualPane.tsx"
           },

@@ -1,5 +1,6 @@
 {
   "path": "mcp/src/agents_remember/worktrees/modules/capture_index.py",
+  "proves": [],
   "realizes": [
     {
       "anchor": {
@@ -58,8 +59,18 @@
   ],
   "references": {
     "1": {
-      "note": "Private capture copies the real index with its time, restores HEAD, clears trust flags only on the copy, applies explicit exclusions and stages working files. Unusable-copy recovery remains with the caller; unchanged stat-matching files are not reconverted merely because conversion rules changed.",
+      "note": "Private capture copies the real index with its time, restores HEAD, clears trust flags only on the copy, applies explicit exclusions and stages working files. Unusable-copy recovery remains with the caller; unchanged stat-matching files are not reconverted merely because conversion rules changed.\n\nAnchor: `_real_index` `_clear_trust_flags` `_tree_from_index_copy` `_add_all_args`",
       "targets": [
+        {
+          "anchor": {
+            "blob": "8f53c952d51eb1b83c2d97993768dbc0809cc6ea",
+            "content": "sha256:0a06f9c025ff6aa48b239ca0893bc992df4b397782bb8e5930acf3f69bed7c7b",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
         {
           "anchor": {
             "blob": "8f53c952d51eb1b83c2d97993768dbc0809cc6ea",
@@ -84,8 +95,8 @@
         },
         {
           "anchor": {
-            "blob": "a955cc499935e7a7f74d9dc2c41622e55df65c98",
-            "content": "sha256:4f7f5821a91ff126170485cc55eb81dfbead67fc107bae7dba9c0521632c4abc",
+            "blob": "8f53c952d51eb1b83c2d97993768dbc0809cc6ea",
+            "content": "sha256:8699b57a3d2f03599cb0115133681e0e30af288ae093b1ac52d64d5f24cd62f6",
             "locator": {
               "kind": "symbol",
               "name": "_tree_from_index_copy"

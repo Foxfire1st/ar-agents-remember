@@ -14,9 +14,9 @@ Ordinary registration declares payload handlers lazily through registration.lazy
 
 MIK-R109: core registration removes `resolve_context`; `context_packet` advertises roots/task/actions/build/pair, not the full resolver blocks. `read_ar_files` accepts up to twenty string paths and returns knowledge locations, not document text; `refresh` is absent from the advertised schema but any supplied value reaches `argument-removed`, as do object-form entries. Knowledge registration names paged records and whole comparison reports. `create_server` applies every tool’s annotation from `mcp/read_only.py` after the registrars, refusing unlisted names. `read_ar_files`/`knowledge_read` are marked true; the freshness-capable context and report/capture-capable diff are false.
 
-The L111 predecessor declared41 public names after L109 removed resolve_context (that earlier 42-name epoch was historical); the current ordinary source has43 — the predecessor41 plus mounted user_settings_init and explainer_control. Family registrars keep their existing request/response/application owners while using compact descriptions and docs/reference/mcp-tools.md for the longer account. Task write operations accept forwarded fields_file/section_body_file inputs; removed reads guide canonical file reading. Sync accepts the exact continue/cancel action, not a knowledge_resolution input; memory content resolution remains file-authored and staged under its transaction owner. Reachable task-state refusals and role outcomes are bounded answers, not new authority from a docstring or a finished tool turn.
+The L111 predecessor declared41 public names after L109 removed resolve_context (that earlier 42-name epoch was historical); the current ordinary source has44 — the predecessor41 plus mounted user_settings_init, explainer_control and citation_note_revision. Family registrars keep their existing request/response/application owners while using compact descriptions and docs/reference/mcp-tools.md for the longer account. Task write operations accept forwarded fields_file/section_body_file inputs; removed reads guide canonical file reading. Sync accepts the exact continue/cancel action, not a knowledge_resolution input; memory content resolution remains file-authored and staged under its transaction owner. Reachable task-state refusals and role outcomes are bounded answers, not new authority from a docstring or a finished tool turn.
 
-An ordinary `create_server` calls ten registrars in order: core, native seat retirement, memory, worktrees, closeout, tasks, capsule/skill resources, native role agents, knowledge and explainer control. Nine declare tools; the capsule registrar publishes resources and installs skill protocol support without declaring tools. The current source `PUBLIC_TOOLS` literal contains 43 ordinary names, including native `retire_child`, `role_start_set`, the mounted `user_settings_init` and `knowledge_write`, with `dispatch_agent` absent. This is the current source declaration, not a claim that adding those names to an old population alone computes its size or that a live server was interrogated.
+An ordinary `create_server` calls ten registrars in order: core, native seat retirement, memory, worktrees, closeout, tasks, capsule/skill resources, native role agents, knowledge and explainer control. Nine declare tools; the capsule registrar publishes resources and installs skill protocol support without declaring tools. The current source `PUBLIC_TOOLS` literal contains 44 ordinary names, including native `retire_child`, `role_start_set`, the mounted `user_settings_init`, `citation_note_revision` and `explainer_control`, with `dispatch_agent` absent. This is the current source declaration, not a claim that adding those names to an old population alone computes its size or that a live server was interrogated.
 
 > **Retained historical source account — superseded by the current route account:**
 > A tool handler normally constructs its request value and forwards it to a payload builder. Memory quality dispatches its typed request by mode; native role calls use `asyncio.to_thread` around their payload builders. The shared `_tool_payload` adapter delegates the whole result and an optional compact answer to the application boundary; the boundary validates and logs the whole result and guards the delivered answer. Registration does not independently grant approval, retry, publication, or actor authority.
@@ -32,7 +32,7 @@ The closeout/direct-landing registrar adds the launch-bound architect direct_exe
 | `__init__.py` | Ordered `TOOL_REGISTRARS` tuple and `ToolRegistrar` callable type. |
 | `core.py` | `server_info`, `context_packet`, `read_ar_files`, `runtime_install`; public `resolve_context` is removed by MIK-R109. |
 | `seat_retirement.py` | Native receipt-tracked `retire_child`; sessions.py and dispatch_agent are removed. |
-| `memory.py` | `memory_quality_check`, `citation_fix`, `route_index_refresh`, `memory_init`, baseline status/adoption, and carryover planning/apply. |
+| `memory.py` | `memory_quality_check`, `citation_fix`, `citation_note_revision`, `route_index_refresh`, `memory_init`, baseline status/adoption, and carryover planning/apply. |
 | `worktrees.py` | Start, enclosure adoption, attach, status, sync, and pause. |
 | `closeout.py` | Direct landing, closeout preview/apply, integration, checkpoint publication, landing recording, operation control, cleanup, and abandonment. |
 | `tasks.py` | Reopen, lifecycle finalization, task-document authoring, curator coherence, and closeout projection inspection/rebuild. |
@@ -67,7 +67,7 @@ Integrity now accepts `memoryRoot`, `codeRoot`, `contractPath`, and `baseCommits
 
 The knowledge family mounts four operations — read, diff, integrity and write — and `knowledge_write` is curator authoring through the same plan, write, refusal and report behaviour as the command route, with server settings for a raise, a default plan, an explicit file-write flag and no Git commit. That statement must not be read as a promise of zero storage writes: the diff description explicitly says a working-tree comparison creates loose unreferenced Git objects while changing no ref, branch, index, or working file. The read description and delegate also distinguish the derived index/cache from authored knowledge.
 
-`context_packet` describes optional drift as reference-anchor and tree-validity measurement, with invariant currentness assigned to knowledge read/integrity and no repair performed there. The current memory registrar has no `drift_check` tool. The inherited baseline-adoption description account requires application-owner verification before it can be treated as an operative promise.
+`context_packet` describes optional drift as reference-anchor and tree-validity measurement, with invariant currentness assigned to knowledge read/integrity and no repair performed there. The current memory registrar has no `drift_check` tool. The memory registrar mounts `citation_note_revision` with the leaf contract, card/reference identity, note, base digest and dry-run flag; it advertises in-place note replacement and named refusal without changing targets or anchors. Baseline adoption's current short description distinguishes lifting the actionable drift gate from the paired-anchor validator: a stale code/test reference still refuses as `R198.1-reference-anchor`. These descriptions advertise owner contracts rather than proving a write or an adoption.
 
 ### Worktree, task, and publication descriptions
 
@@ -126,7 +126,6 @@ The following inherited metadata is retained verbatim and is not lifecycle or ac
 
 ## Evidence
 
-
 - **Retained historical source account — superseded by the current route account:** Finalization description includes folder-master derivation and refusal.
 - **Retained historical source account — superseded by the current route account:** Read description retains route-chain rows and family selection.
 - **Retained historical source account — superseded by the current route account:** Current family-complete read description; former range crossed into request construction.
@@ -138,7 +137,7 @@ The following inherited metadata is retained verbatim and is not lifecycle or ac
 - **Retained historical source account — superseded by the current route account:** Shared response adapter delegates whole-result and optional answer completion.
 - **Retained historical source account — superseded by the current route account:** Roster declaration and unchanged adapter export; current count is 41.
 
-- Current single literal PUBLIC_TOOLS contains 43 ordinary public names (the predecessor41 plus user_settings_init and explainer_control) and excludes dispatch_agent; native role, retirement and knowledge vocabulary remains. Source census only, no live advertisement, new CODE grade or MEMORY acceptance. The retained base export is the same roster object.
+- Current single literal PUBLIC_TOOLS contains 44 ordinary public names (the predecessor41 plus user_settings_init, explainer_control and citation_note_revision) and excludes dispatch_agent; native role, retirement and knowledge vocabulary remains. Source census only, no live advertisement, new CODE grade or MEMORY acceptance. The retained base export is the same roster object.
 - **Retained historical source account — superseded by the current route account:** Inherited argument-count exemption target retained pending location confirmation.
 - **Retained historical source account — superseded by the current route account:** Shared task locator.
 - **Retained historical source account — superseded by the current route account:** Canonical message input and refused-field vocabulary retain both named co-targets.
@@ -155,7 +154,7 @@ The following inherited metadata is retained verbatim and is not lifecycle or ac
 - **Retained historical source account — superseded by the current route account:** Server wiring and strict dispatch boundary.
 - **Retained historical source account — superseded by the current route account:** Runtime request construction and current installation description.
 
-- Current composed PUBLIC_TOOLS declares43 ordinary names (the predecessor41 plus user_settings_init and explainer_control); the41-name predecessor membership is historical. This is source declaration only, not runtime advertisement or execution.
+- Current composed PUBLIC_TOOLS declares 44 ordinary names (the predecessor 41 plus user_settings_init, citation_note_revision and explainer_control); the41-name predecessor membership is historical. This is source declaration only, not runtime advertisement or execution.
 
 - **Retained historical source account — superseded by the current route account:** Skill resources, declaration coupling, and index/file construction.
 - **Retained historical source account — superseded by the current route account:** Extension installation and catalog-backed methods.
@@ -164,8 +163,7 @@ The following inherited metadata is retained verbatim and is not lifecycle or ac
 - **Retained historical source account — superseded by the current route account:** Closeout descriptions, message inputs, and delegate composition.
 - **Retained historical source account — superseded by the current route account:** Native-role adapters forward typed single-start, set-start and message calls to Paseo owners.
 
-
-- The L111 predecessor declared41 public names after L109 removed resolve_context (that earlier 42-name epoch was historical); the current ordinary source has43 — the predecessor41 plus mounted user_settings_init and explainer_control. Family registrars keep their existing request/response/application owners while using compact descriptions and docs/reference/mcp-tools.md for the longer account. Task write operations accept forwarded fields_file/section_body_file inputs; removed reads guide canonical file reading. Sync accepts the exact continue/cancel action, not a knowledge_resolution input; memory content resolution remains file-authored and staged under its transaction owner. Reachable task-state refusals and role outcomes are bounded answers, not new authority from a docstring or a finished tool turn. Source declaration only; no live advertisement, execution or acceptance is inferred.
+- The L111 predecessor declared41 public names after L109 removed resolve_context (that earlier 42-name epoch was historical); the current ordinary source has 44 — the predecessor 41 plus mounted user_settings_init and explainer_control. Family registrars keep their existing request/response/application owners while using compact descriptions and docs/reference/mcp-tools.md for the longer account. Task write operations accept forwarded fields_file/section_body_file inputs; removed reads guide canonical file reading. Sync accepts the exact continue/cancel action, not a knowledge_resolution input; memory content resolution remains file-authored and staged under its transaction owner. Reachable task-state refusals and role outcomes are bounded answers, not new authority from a docstring or a finished tool turn. Source declaration only; no live advertisement, execution or acceptance is inferred.
 
 ## The settings initializer's registration
 
@@ -176,14 +174,11 @@ The following inherited metadata is retained verbatim and is not lifecycle or ac
 
 [1] mcp/src/agents_remember/mcp/registration/tasks.py — symbol lifecycle_finalize_task
 
-- Current single literal PUBLIC_TOOLS contains 43 ordinary public names, including mounted `user_settings_init` and `explainer_control`, and excludes dispatch_agent; native role, retirement and knowledge vocabulary remains. Source census only, no live advertisement, new CODE grade or MEMORY acceptance. The retained base export is the same roster object. [10]
+- Current single literal PUBLIC_TOOLS contains 44 ordinary public names, including mounted `user_settings_init`, `explainer_control` and `citation_note_revision`, and excludes dispatch_agent; native role, retirement and knowledge vocabulary remains. Source census only, no live advertisement, new CODE grade or MEMORY acceptance. The retained base export is the same roster object. [10]
 
+- Current composed PUBLIC_TOOLS declares 44 ordinary names; the 41-name predecessor membership is historical. This is source declaration only, not runtime advertisement or execution. [29]
 
-- Current composed PUBLIC_TOOLS declares 43 ordinary names; the 41-name predecessor membership is historical. This is source declaration only, not runtime advertisement or execution. [29]
-
-
-- The L111 predecessor declared 41 public names after L109 removed resolve_context (that earlier 42-name epoch was historical); the current composed ordinary source has 43 — the 41 predecessor plus mounted user_settings_init and explainer_control. Family registrars keep their existing request/response/application owners while using compact descriptions and docs/reference/mcp-tools.md for the longer account. Task write operations accept forwarded fields_file/section_body_file inputs; removed reads guide canonical file reading. Sync accepts the exact continue/cancel action, not a knowledge_resolution input; memory content resolution remains file-authored and staged under its transaction owner. Reachable task-state refusals and role outcomes are bounded answers, not new authority from a docstring or a finished tool turn. [38]
-
+- The L111 predecessor declared 41 public names after L109 removed resolve_context (that earlier 42-name epoch was historical); the current composed ordinary source has 44 — the 41 predecessor plus mounted user_settings_init, explainer_control and citation_note_revision. Family registrars keep their existing request/response/application owners while using compact descriptions and docs/reference/mcp-tools.md for the longer account. Task write operations accept forwarded fields_file/section_body_file inputs; removed reads guide canonical file reading. Sync accepts the exact continue/cancel action, not a knowledge_resolution input; memory content resolution remains file-authored and staged under its transaction owner. Reachable task-state refusals and role outcomes are bounded answers, not new authority from a docstring or a finished tool turn. [38]
 
 [2] mcp/src/agents_remember/mcp/registration/knowledge.py — lines 95-97
 [3] mcp/src/agents_remember/mcp/registration/knowledge.py — lines 90-99
@@ -204,19 +199,12 @@ The following inherited metadata is retained verbatim and is not lifecycle or ac
 [22] mcp/src/agents_remember/mcp/registration/knowledge.py — symbol _register_knowledge_read; mcp/src/agents_remember/mcp/registration/knowledge.py — symbol _register_knowledge_diff; mcp/src/agents_remember/mcp/registration/knowledge.py — symbol _register_knowledge_integrity_check
 [23] mcp/src/agents_remember/mcp/registration/memory.py — symbol citation_fix
 [24] mcp/src/agents_remember/mcp/registration/role_agents.py — symbol register_role_agent_tools; mcp/src/agents_remember/mcp/registration/role_agents.py — symbol role_start; mcp/src/agents_remember/mcp/registration/role_agents.py — symbol role_start_set; mcp/src/agents_remember/mcp/registration/role_agents.py — symbol role_message
-[25] mcp/src/agents_remember/mcp/registration/core.py — code file
 [26] mcp/src/agents_remember/mcp/registration/__init__.py — symbol TOOL_REGISTRARS
-[27] mcp/src/agents_remember/mcp/server.py — code file
-[28] mcp/src/agents_remember/mcp/registration/core.py — symbol _register_installation_tools
 [29] mcp/src/agents_remember/models/tools/public_roster.py — code file
 [31] mcp/src/agents_remember/mcp/registration/capsule_serving.py — lines 69-116; mcp/src/agents_remember/mcp/registration/capsule_serving.py — lines 126-183
 [32] mcp/src/agents_remember/mcp/registration/skills_extension.py — lines 133-214; mcp/src/agents_remember/mcp/registration/skills_extension.py — lines 235-294
 [33] mcp/src/agents_remember/mcp/registration/tasks.py — symbol _register_closeout_queue_tools; mcp/src/agents_remember/mcp/registration/tasks.py — symbol _register_curator_coherence_tools; mcp/src/agents_remember/mcp/registration/tasks.py — symbol _register_task_reopen_tools; mcp/src/agents_remember/mcp/registration/tasks.py — symbol _register_task_finalizer_tools; mcp/src/agents_remember/mcp/registration/tasks.py — symbol _TASK_DOC_TOOL_DESCRIPTION; mcp/src/agents_remember/mcp/registration/tasks.py — symbol _register_task_document_tools; mcp/src/agents_remember/mcp/registration/tasks.py — symbol register_task_tools
-[34] mcp/src/agents_remember/mcp/registration/worktrees.py — lines 206-266
-[35] mcp/src/agents_remember/mcp/registration/closeout.py — lines 37-311
-[37] mcp/src/agents_remember/mcp/tools/role_agents.py — symbol role_message_payload; mcp/src/agents_remember/mcp/tools/role_agents.py — symbol role_start_payload; mcp/src/agents_remember/mcp/tools/role_agents.py — symbol role_start_set_payload
 [38] mcp/src/agents_remember/models/tools/public_roster.py — code file; mcp/src/agents_remember/mcp/registration/tasks.py — code file; mcp/src/agents_remember/mcp/registration/worktrees.py — code file; mcp/src/agents_remember/mcp/registration/closeout.py — code file; mcp/src/agents_remember/mcp/registration/role_agents.py — code file
-[39] mcp/src/agents_remember/mcp/registration/role_agents.py — symbol caller_harness_name
 [40] mcp/src/agents_remember/mcp/registration/role_agents.py — symbol register_role_agent_tools
 
 - The ordered ordinary registrar tuple now includes explainer control. The same server selects ordinary versus bound explainer registration. [41]

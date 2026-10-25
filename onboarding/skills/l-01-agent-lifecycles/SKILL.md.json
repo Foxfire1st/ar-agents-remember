@@ -187,23 +187,6 @@
     }
   ],
   "references": {
-    "10": {
-      "note": "The companion files now include the producers' curator hand-off shape beside the brief schemas.\n\nAnchor: \"the **producer's output shape**\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "429f3207e534eba9dcb915dce46a9ca6804a28ab",
-            "content": "sha256:ab69b92baaa29ce1c05898428302b50d1fbbc7d58e01bc94259fdc66baf7cac5",
-            "locator": {
-              "end": 143,
-              "kind": "line_range",
-              "start": 139
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "11": {
       "note": "One explicit supported role and applicable operation select the two instruction blocks; the router injects no shared core.\n\nAnchor: line 8-12",
       "targets": [
@@ -422,6 +405,49 @@
               "kind": "file"
             },
             "path": "generated-copies.json"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "The composition manifest registers `curator-handoff-list.md` alongside brief templates. That template defines the producers’ curator hand-off output shape. The thin router names the manifest as the routing metadata authority.  Historical source caption: \"Anchor: \\\"the **producer's output shape**\\\"\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "69334b6b2698ef70a7bbf579aa1c1883b95d11d4",
+            "content": "sha256:94e015e104f30a1ca74fccfe69524d73d513a997a7822271fcbb9f0cbe3376b4",
+            "locator": {
+              "end": 8,
+              "kind": "line_range",
+              "start": 8
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2f3ce46a32a38d86f474252bb23d8081e91f0a6e",
+            "content": "sha256:58e059b7c8b5f73b806483acc5531824790614e851b70da7ba9a4d918c564e8b",
+            "locator": {
+              "end": 256,
+              "kind": "line_range",
+              "start": 249
+            },
+            "path": "skills/l-01-agent-lifecycles/composition-manifest.json"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "00c3e00784503e851d2ca11c94f62d0c2576a160",
+            "content": "sha256:96ecb699456bf2edd25cf87113b5f91c9bff08055f3387d8978c33d3509bf48c",
+            "locator": {
+              "end": 6,
+              "kind": "line_range",
+              "start": 3
+            },
+            "path": "skills/l-01-agent-lifecycles/templates/curator-handoff-list.md"
           },
           "kind": "code"
         }

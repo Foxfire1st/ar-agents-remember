@@ -45,8 +45,12 @@ behavior, no enforced authorship separation).
 
 ### Repo-Internal References
 
+
 - The schema, renderer, and store owned by this package. [1]
+
+
 - Current facade re-exports of the typed task-intent slot models. [2]
+
 
 ## Series-Contract Notes
 
@@ -67,7 +71,9 @@ write/remove primitive described below.
 
 ### Reconciled Source Evidence
 
+
 - The current module exposes the canonical task models, publication primitives, discard/audit types, and rollback-safe store operations. [3]
+
 
 ## 260821-CLIVE Task Audit And Registration Exports
 

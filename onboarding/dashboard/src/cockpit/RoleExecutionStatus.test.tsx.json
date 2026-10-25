@@ -3,12 +3,12 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The held Result case enables fake time before mount, flushes each initial/result reply and advances the 1,500 ms reread in async `act`. It preserves the exact read count, absent report request and cleared failure/Start assertions after the reread opportunity; teardown restores real timers.\n\nAnchor: `names an explicit Result held by a launch and clears the line after its reread`",
+      "note": "The held Result case enables fake time before mount, flushes each initial/result reply and advances the 1,500 ms reread in async `act`. It preserves the exact read count, absent report request and cleared failure/Start assertions after the reread opportunity; teardown restores real timers.",
       "targets": [
         {
           "anchor": {
-            "blob": "762704569fb205c645f778f52e0d31afa916dffd",
-            "content": "sha256:782a113d3788063d65ff28b59c452c899cb4f2de3f9494fda9c109794f3a6162",
+            "blob": "ae9ec1fe165557e0d4e3e35fe738736122a1ed32",
+            "content": "sha256:996a0d7890773e1a237e362604ea67f9f6b019160165150c84b521a012d36ea7",
             "locator": {
               "end": 191,
               "kind": "line_range",
@@ -20,12 +20,12 @@
       ]
     },
     "2": {
-      "note": "Current source owner or exact assertion described above.\n\nAnchor: \"leaves ordinary execution, reply and report details to the chat\"",
+      "note": "Current source owner or exact assertion described above.",
       "targets": [
         {
           "anchor": {
-            "blob": "762704569fb205c645f778f52e0d31afa916dffd",
-            "content": "sha256:91c0dd7cbcee9f7d60c63c84ec0b6f623d75a48d866b937c03331ac3e6c23b0f",
+            "blob": "ae9ec1fe165557e0d4e3e35fe738736122a1ed32",
+            "content": "sha256:199588ce4f4242ac1612512552045db12aafe789498756616caf525564af2c52",
             "locator": {
               "end": 31,
               "kind": "line_range",
@@ -37,12 +37,12 @@
       ]
     },
     "3": {
-      "note": "Current source owner or exact assertion described above.\n\nAnchor: \"offers Revive only for a revivable execution\"",
+      "note": "Current source owner or exact assertion described above.",
       "targets": [
         {
           "anchor": {
-            "blob": "762704569fb205c645f778f52e0d31afa916dffd",
-            "content": "sha256:75c00654b69e799b9e22e3a93132d1042e1f5f0854035b8701483797c4b6624f",
+            "blob": "ae9ec1fe165557e0d4e3e35fe738736122a1ed32",
+            "content": "sha256:ba536f7ac5249a9339edab2a0cdaf1ec2bd5a6e2eefdbabee22c5ef84867383d",
             "locator": {
               "end": 137,
               "kind": "line_range",
@@ -54,12 +54,12 @@
       ]
     },
     "4": {
-      "note": "Current source owner or exact assertion described above.\n\nAnchor: \"keeps a refused Revive visible through automatic reads and clears on successful Refresh\"",
+      "note": "Current source owner or exact assertion described above.",
       "targets": [
         {
           "anchor": {
-            "blob": "762704569fb205c645f778f52e0d31afa916dffd",
-            "content": "sha256:1dfd0b05f86ef681193f318060f9f99940c3439696426fc401df7a8e8bc2d2b5",
+            "blob": "ae9ec1fe165557e0d4e3e35fe738736122a1ed32",
+            "content": "sha256:d2653ccb926a535b886050332985cb037b530d77b401d3eb1c90cc5f1380a1a3",
             "locator": {
               "end": 231,
               "kind": "line_range",

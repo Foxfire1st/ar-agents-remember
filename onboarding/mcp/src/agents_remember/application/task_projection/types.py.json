@@ -138,12 +138,12 @@
       ]
     },
     "6": {
-      "note": "The relation vocabulary this module imports rather than retypes.\n\nAnchor: `CapsuleOperation`; `CapsuleRole`",
+      "note": "The relation vocabulary this module imports rather than retypes.",
       "targets": [
         {
           "anchor": {
-            "blob": "948ac8f9002d5482ad558015219f7acb5ee39d78",
-            "content": "sha256:ad94859f464c69dee65e86d5fef308a6569dac5172d468d9c4061e2daad97367",
+            "blob": "f82bdc4007083ae4dad1686445d94d0c7e33d03b",
+            "content": "sha256:5e7059d7a137229dc33ef7bb9cf8a423e71f03d8a770aa902e39ea4137af739d",
             "locator": {
               "end": 62,
               "kind": "line_range",
@@ -155,8 +155,8 @@
         },
         {
           "anchor": {
-            "blob": "948ac8f9002d5482ad558015219f7acb5ee39d78",
-            "content": "sha256:f5bbb73722f4cf18fc9c74e1d1d8ec48ee503787ed1f65950322d5e0d45387a7",
+            "blob": "f82bdc4007083ae4dad1686445d94d0c7e33d03b",
+            "content": "sha256:68c9fde7fa1229cdbd5e71b632d1b4b58d00236c81371f6d46719150dd497d9e",
             "locator": {
               "end": 31,
               "kind": "line_range",

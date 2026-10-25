@@ -43,9 +43,18 @@ not in the composed capsule is a failure.
 
 ## Evidence
 
+
 - The parentable roles carry the question, recovery, provenance and notice clauses. [1]
+
+
 - Every starter role carries the upward notice and unchanged downward answer duties. [2]
+
 - Orientation keeps conditional routing and pending recovery; review and curation are checked as composed role-plus-operation pairs. [3]
+
 - The leaf `ownerRelation` keeps peer results and named parent occasions. [4]
+
+
 - Each exact retired directive is detected as an independent sentence. [5]
+
+
 - The compiled leaf `ownerRelation` carries the current Manager role and task return address separately from the descriptive starter identity. [6]

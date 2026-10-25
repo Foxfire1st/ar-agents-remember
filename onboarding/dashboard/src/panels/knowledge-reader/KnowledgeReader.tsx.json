@@ -254,12 +254,12 @@
       ]
     },
     "13": {
-      "note": "One selection-local records acquisition is created here and shared with the tree and toolbar.\n\nAnchor: `useRead`",
+      "note": "One selection-local records acquisition is created here and shared with the tree and toolbar.",
       "targets": [
         {
           "anchor": {
-            "blob": "c912caf7f7b6b8a458edab167db0974d883b2cb4",
-            "content": "sha256:c2190ed93ac03f0480a9070370a93059433f5065eeec57f34871e808acd416ec",
+            "blob": "a01cef75c71aa3fda6bae526501fa075f45f4197",
+            "content": "sha256:99bcb600e82bd59139d125d12d3e4b5bc9e2b6c5ef2e13bed9e9907f3a04c8d7",
             "locator": {
               "kind": "file"
             },
@@ -337,12 +337,12 @@
       ]
     },
     "18": {
-      "note": "The outline that navigates the document's chapters.\n\nAnchor: `ReaderOutline`",
+      "note": "The outline that navigates the document's chapters.",
       "targets": [
         {
           "anchor": {
-            "blob": "cbd4e1e033b1822b9c6cdf0d8c0879f0b51cfb0b",
-            "content": "sha256:0e1d5d5a96b53143060b6b1a7c0f144fb32f9b9f7bfb705ae8042b6dfa646c51",
+            "blob": "c18a078a87a4bf5adc68342854e722257a33b8e1",
+            "content": "sha256:265c5f3c2cfa7a43356a9eb31573ae93b9f943a3e996bf4d613fff0bd6a21d04",
             "locator": {
               "kind": "file"
             },

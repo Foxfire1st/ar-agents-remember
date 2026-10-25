@@ -58,12 +58,12 @@
   ],
   "references": {
     "12": {
-      "note": "The pane marks the cited lines and scrolls the first into view.\n\nAnchor: `citationHighlight`",
+      "note": "The pane marks the cited lines and scrolls the first into view.",
       "targets": [
         {
           "anchor": {
-            "blob": "51f94729899f48cef6ffa98458e7c097fa30497e",
-            "content": "sha256:4a43e1fb816be365d60b18535505d03053665d9c2b70be574c717a4968b19539",
+            "blob": "dbbb34c143ffd24687f884bd401852c94fb43a96",
+            "content": "sha256:4381a6ac5fd2d1fed3c3059c96f97e25dc55475450953631d92a8d35b059cd90",
             "locator": {
               "kind": "file"
             }
@@ -89,12 +89,12 @@
       ]
     },
     "14": {
-      "note": "The optional range joins the editor's dependencies and rebuilds the view.\n\nAnchor: `FilePane`",
+      "note": "The optional range joins the editor's dependencies and rebuilds the view.",
       "targets": [
         {
           "anchor": {
-            "blob": "51f94729899f48cef6ffa98458e7c097fa30497e",
-            "content": "sha256:4a43e1fb816be365d60b18535505d03053665d9c2b70be574c717a4968b19539",
+            "blob": "dbbb34c143ffd24687f884bd401852c94fb43a96",
+            "content": "sha256:4381a6ac5fd2d1fed3c3059c96f97e25dc55475450953631d92a8d35b059cd90",
             "locator": {
               "kind": "file"
             }
@@ -104,12 +104,12 @@
       ]
     },
     "15": {
-      "note": "The dual pane that mounts the same primitive on the code side.\n\nAnchor: `DualPane`",
+      "note": "The dual pane that mounts the same primitive on the code side.",
       "targets": [
         {
           "anchor": {
-            "blob": "5e1f3e3243fe21af63d66c6fafc9829e9fa50166",
-            "content": "sha256:84c6e93b59974db67804d8146d4e273943edbd3782cfa093773e5531c150cb24",
+            "blob": "2a8233f6878d1f710c5879a2464418c11ea9627e",
+            "content": "sha256:36e3128196752e9703f3acf1ea2f7c8f051c50523594dc0e8cf635f32dc51433",
             "locator": {
               "kind": "file"
             },

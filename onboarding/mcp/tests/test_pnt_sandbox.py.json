@@ -330,12 +330,12 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The scoped current source carries the module/document behavior described above.",
+      "note": "The sandbox safety check, build inputs, tool-server environment and admission.",
       "targets": [
         {
           "anchor": {
-            "blob": "e4e1d8a038d1c6b077c70f3a93ed08c50ffb0ca6",
-            "content": "sha256:672807db77674e18abfeca126286809d43236c0ed72265e9002d04b2e3f1bca0",
+            "blob": "5c5436de50d469ed4969524c38a6a5e461a23473",
+            "content": "sha256:7c158657e98b3a6cc0754446ad3e1143822e7e51793d157309b1c3112ccd4fa7",
             "locator": {
               "kind": "file"
             }
@@ -361,15 +361,14 @@
       ]
     },
     "11": {
-      "note": "A sandbox whose own settings select another home or the live port refuses.",
+      "note": "A sandbox whose own settings select another home or the live port refuses.\n\nAnchor: `test_a_sandbox_whose_settings_select_another_host_is_refused`",
       "targets": [
         {
           "anchor": {
-            "blob": "e4e1d8a038d1c6b077c70f3a93ed08c50ffb0ca6",
-            "content": "sha256:859824602377c52ba0fda75fa81d992cccb35019d0b174cb2f3385c78e0d2f9c",
+            "blob": "5c5436de50d469ed4969524c38a6a5e461a23473",
+            "content": "sha256:7c158657e98b3a6cc0754446ad3e1143822e7e51793d157309b1c3112ccd4fa7",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_sandbox_whose_settings_select_another_host_is_refused"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -377,15 +376,14 @@
       ]
     },
     "12": {
-      "note": "The unconfigured state refuses a foreign resolved host.",
+      "note": "The unconfigured state refuses a foreign resolved host.\n\nAnchor: `test_a_host_outside_the_sandbox_refuses_in_the_unconfigured_phase`",
       "targets": [
         {
           "anchor": {
-            "blob": "e4e1d8a038d1c6b077c70f3a93ed08c50ffb0ca6",
-            "content": "sha256:ef5c5f7c2fbf18af17ead07fb61ab6ca097b2966deb699d1caddfb3e9dddb23a",
+            "blob": "5c5436de50d469ed4969524c38a6a5e461a23473",
+            "content": "sha256:7c158657e98b3a6cc0754446ad3e1143822e7e51793d157309b1c3112ccd4fa7",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_host_outside_the_sandbox_refuses_in_the_unconfigured_phase"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -409,15 +407,14 @@
       ]
     },
     "14": {
-      "note": "The unconfigured state is admitted and named, and a settings host the build cannot resolve refuses.",
+      "note": "The unconfigured state is admitted and named, and a settings host the build cannot resolve refuses.\n\nAnchor: `test_a_sandbox_that_records_no_host_yet_is_admitted_only_without_one`",
       "targets": [
         {
           "anchor": {
-            "blob": "e4e1d8a038d1c6b077c70f3a93ed08c50ffb0ca6",
-            "content": "sha256:920fab14c0ada4d3665736cae5feb7a56d7dd4532a25e427c57c37f037b4b2a6",
+            "blob": "5c5436de50d469ed4969524c38a6a5e461a23473",
+            "content": "sha256:7c158657e98b3a6cc0754446ad3e1143822e7e51793d157309b1c3112ccd4fa7",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_sandbox_that_records_no_host_yet_is_admitted_only_without_one"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -425,15 +422,14 @@
       ]
     },
     "2": {
-      "note": "The safety case for the product Node and cache roots.",
+      "note": "The safety case for the product Node and cache roots.\n\nAnchor: `SafetyCheckTests`",
       "targets": [
         {
           "anchor": {
-            "blob": "e4e1d8a038d1c6b077c70f3a93ed08c50ffb0ca6",
-            "content": "sha256:c00a67755ff1415b5c3f597b8a58e83dfa79b05734e8c9c693cef3ff34a28789",
+            "blob": "5c5436de50d469ed4969524c38a6a5e461a23473",
+            "content": "sha256:7c158657e98b3a6cc0754446ad3e1143822e7e51793d157309b1c3112ccd4fa7",
             "locator": {
-              "kind": "symbol",
-              "name": "SafetyCheckTests"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -473,15 +469,14 @@
       ]
     },
     "5": {
-      "note": "The real resolver command must return empty errors, every expected non-null root and five resolver keys.",
+      "note": "The real resolver command returns empty errors, every expected non-null root and five resolver keys.\n\nAnchor: `test_build_roots_command_resolves_every_expected_root_without_errors`",
       "targets": [
         {
           "anchor": {
-            "blob": "e4e1d8a038d1c6b077c70f3a93ed08c50ffb0ca6",
-            "content": "sha256:b77d5e9b81b7116b374edf13ddce736955caaf2bc04e19b47357234211096558",
+            "blob": "5c5436de50d469ed4969524c38a6a5e461a23473",
+            "content": "sha256:7c158657e98b3a6cc0754446ad3e1143822e7e51793d157309b1c3112ccd4fa7",
             "locator": {
-              "kind": "symbol",
-              "name": "test_build_roots_command_resolves_every_expected_root_without_errors"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -521,15 +516,14 @@
       ]
     },
     "8": {
-      "note": "A resolved host outside the sandbox is refused before any call, naming both hosts.",
+      "note": "A resolved host outside the sandbox is refused before any call, naming both hosts.\n\nAnchor: `test_a_resolved_host_outside_the_sandbox_is_refused_before_any_call`",
       "targets": [
         {
           "anchor": {
-            "blob": "e4e1d8a038d1c6b077c70f3a93ed08c50ffb0ca6",
-            "content": "sha256:1f6d83e34824337f196e038d3f01fa17b2ce641ae83cb9f10000d6e6016b8966",
+            "blob": "5c5436de50d469ed4969524c38a6a5e461a23473",
+            "content": "sha256:7c158657e98b3a6cc0754446ad3e1143822e7e51793d157309b1c3112ccd4fa7",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_resolved_host_outside_the_sandbox_is_refused_before_any_call"
+              "kind": "file"
             }
           },
           "kind": "test"
