@@ -1,0 +1,36 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "Synchronous work must not starve polls or release ordering while a cancelled worker can still mutate shared state."
+  },
+  "applicability": "Registered synchronous MCP handlers on one AgentsRememberMCP server.",
+  "conditions": [
+    "FastMCP continues validating arguments, injecting context and converting results.",
+    "Potentially mutating synchronous calls share that server's ordering lock until their worker exits, including cancellation."
+  ],
+  "exclusions": [
+    "Existing asynchronous handlers retain their event-loop path.",
+    "Centrally read-only handlers and the explicitly classified context/check/preview modes bypass this lock.",
+    "The process-local log-budget lock does not replace cross-process file exclusion."
+  ],
+  "id": "INV-T3CE64",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "freeze-A4.md; A4-dispatch-before.log; A4-dispatch-green.log; A4-full-memory-evidence.md"
+      ],
+      "path": "handoff99.json"
+    },
+    "handoffEntry": "MIK-R213@v1 rule 1",
+    "leaf": "260928-MIK-L202",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Synchronous MCP handlers execute off the event loop with per-call ContextVars, while potentially mutating synchronous calls retain FIFO ordering until their worker exits.",
+  "status": "proposed",
+  "supersedes": []
+}

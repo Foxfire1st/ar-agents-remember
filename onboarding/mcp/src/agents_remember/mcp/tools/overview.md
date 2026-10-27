@@ -102,8 +102,29 @@ These inherited tables are retained verbatim for navigation and custody. Their s
 
 `role_agents.py` builds the `user_settings_init` answer: a preview or one create of the role-harness settings file, with a refusal answered as data — `state: refused` and its code, detail, next action, path and target — rather than raised. `core.py`'s `server_info` no longer reports a harness skill root, and the response-model registry binds the new tool name.
 
-## Evidence
+## Citation preview projection
+
+The memory payload owner routes synchronous citation repair and background preview start/poll. A background start refuses writes, and polling admits no document selectors. The shared controller validates run scope; completed previews retain the existing citation result projection while adding status/run identity. Synchronous configured-authority error handling remains distinct from retained background worker failure.
+
+
 - **Historical removed-tool evidence, not a current capability:** the declarations that called these builders, which passed no corpus override to the wire surface, are removed at C, so this records a retired shape and no current capability.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## Evidence
+- Mode routing and background admission stay in the memory payload owner. [64]
 - The named refusal of a root with no code tree. [1]
 - A converted tree's projection reads each view whole. [2]
 - The leaf response the paged tree read routes to, for a path or (since MIK-R05) a family seed, a path's refusal carrying its route chain. [3]
@@ -125,9 +146,7 @@ These inherited tables are retained verbatim for navigation and custody. Their s
 - The linear-half hint delegates to the worktree guidance state machine. [20]
 - The `ResponseEnvelope` union and the two choke-point fields (`nextStep`, `supervisorBanner`) declared on both envelope bases. [22]
 - The application request owner has only code and memory messages. [24]
-
 - Lifecycle control uses the operation-control payload; explicit enclosure adoption retains its own typed payload builder delegating to the adoption service. [25]
-
 - The removed wait payload builder has no replacement; the surviving worktree builders still delegate the exact typed request and use the standard response wrapper. [26]
 - **Historical removed-tool evidence, not a current capability:** The capsule envelope carries its refusal in the same shape as a success. [30]
 - The extension's enumeration surface is the `skills/list` method on the registration route, not a builder on this one. [31]
@@ -135,13 +154,9 @@ These inherited tables are retained verbatim for navigation and custody. Their s
 - Read carries tree/index state and partial-index completeness. [34]
 - Legacy paths and unheld current seeds refuse truthfully. [35]
 - Role-agent MCP payload builders delegate start and message calls to the Paseo role tools while retaining the addressed role in the tool-event context. [37]
-
 > Retained earlier citation wording: - Current imported source owns this scoped route boundary. [37] - - The shared selection and its refusal mapping, which since MIK-R01 also refuses a named root with no code tree by name.
 - - A partial index is never presented as complete. [42]
-- - A converted tree's citation-fix result is bounded for transport. [43]
-
 - One registry, TOOL_RESPONSE_MODELS, maps each public tool name to the response model its payload validates against; no separate public subset or internal-compat exclusion remains. [46]
-
 - **Retained historical source account — superseded by the current route account:** Facade exports include adoption and internal adapters; the structural module also adapts native retirement, without adding that builder to the facade. [44]
 - **Retained historical source account — superseded by the current route account:** One model-owned 41-name successor roster (42 on the rejected freeze; resolve_context removed), including adoption, native-role, native retirement and knowledge names. [45]
 - **Retained historical source account — superseded by the current route account:** Whole-result validation precedes supplied/default answer selection, logging and final guards. [47]
@@ -152,16 +167,12 @@ These inherited tables are retained verbatim for navigation and custody. Their s
 - **Retained historical source account — superseded by the current route account:** Knowledge selection and paging replace database-facing requests. [53]
 - **Retained historical source account — superseded by the current route account:** Fresh and resumed walks retain explicit tree binding and incomplete-index facts [54]
 - **Retained historical source account — superseded by the current route account:** Integrity validates paired roots, retains all whole-result findings and bounds the delivered violation list without losing counts. [55]
-- **Retained historical source account — superseded by the current route account:** Citation repair projects selected actionable lists; the retained 50-entry helper is not called by the builder. [56]
 - **Retained historical source account — superseded by the current route account:** Skill registrar serves resources/extension methods without tools [59]
-
 - The L111 predecessor model-owned public roster had41 after resolve_context removal; the current ordinary source has 44 (including mounted user_settings_init, citation_note_revision and explainer_control; the earlier 42-name epoch is historical). The payload facade still delegates typed requests and whole-result completion rather than becoming policy authority. role_start_payload and role_message_payload keep the addressed target-role context through _tool_payload completion and reset it in finally, with held projections supplied explicitly. This fixes message observer context without changing id resolution, target-role arguments, sender receipt custody or registration ownership. [60]
-
 - Current facade exports the retained pure payload builders, including role-agent start/message, memory, task and worktree operations; removed structural, terminal, gate and inbox adapters are not facade members. [44]
 - Current single literal PUBLIC_TOOLS contains 44 ordinary public names, including mounted `user_settings_init`, `citation_note_revision` and `explainer_control`, and excludes dispatch_agent; native role, retirement and knowledge vocabulary remains. Source census only, no live advertisement, new CODE grade or MEMORY acceptance. The retained base export is the same roster object. [45]
-
 - The settings payload that answers a refusal instead of raising it. [61]
-
 - The server-info answer without a harness skill root. [62]
-
 - Current ordinary model roster has 44 names, including citation_note_revision, ten ordered registrars include explainer control, and the facade exports its DTO/builder; the explainer-bound surface remains separate. [63]
+- - A converted tree's citation-fix result is bounded for transport. [43]
+- **Retained historical source account — superseded by the current route account:** Citation repair projects selected actionable lists; the retained 50-entry helper is not called by the builder.  Anchor: `citation_fix_payload`, `_citation_fix_answer`, `_bounded_lists`, `_bounded_citation_fix` [56]

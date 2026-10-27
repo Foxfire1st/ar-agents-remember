@@ -50,6 +50,7 @@ The tray neither navigates the host chat nor creates a role. Native origin/windo
 
 - The Chats pane publishes the chat its own frame reports showing, and nothing else: a frame that has not reported a chat yet names none, and while a placeholder stands in for the frame it publishes nothing. [6]
 
+
 - A review pick stays minimized with the column closed; explicit expansion opens it, while one pending target default ends on user choice, empty automatic collection or leaving review. [7]
 
 - A Send aimed at an archived or placeholder explainer first asks that leaf’s fixed-target first-request form to open with the current text. If no live target remains, no role-chat post or settlement occurs and the collection stays; a mixed selection continues through ordinary live-target posting and settlement. This handoff is not reported as native delivery. The minimized line’s head also expands on a click, Enter or space outside a nested control; the nested button, link, input, textarea, select and listed ARIA control targets retain their own actions, so Close does not also expand. The existing closed-column minimized-pick rule remains separate from the explicit first-request signal that opens its matching column. [8]

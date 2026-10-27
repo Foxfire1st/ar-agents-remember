@@ -16,7 +16,7 @@ Once options are ready, ordinary `RoleLaunchDefaults` composes `ModeChip` and th
 
 ## Current Contract
 
-`basePreview` defaults false on both exports. Ordinary feature/default rendering and override cleanup stay unchanged. With a stepped-up execution the caller passes true: every listed base feature becomes a noninteractive Base chip; mode and optional Instructions become Base chips too. Hover explicitly says these are not applied choices of the stepped-up execution. Service-tier feature preview maps fast to priority. The receipt reports the stepped-up model, not its applied mode, features or user instructions; user settings remain the permission owner.
+`basePreview` defaults false on both exports. Ordinary feature/default rendering and override cleanup stay unchanged. With a stepped-up execution the caller passes true: every listed base feature becomes a noninteractive Base chip; mode and optional Instructions become Base chips too. Hover explicitly says these are not applied choices of the stepped-up execution. Feature/default labels match the host's option IDs or labels without case; service-tier preview uses the configured value without a built-in fast-to-priority conversion. The receipt reports the stepped-up model, not its applied mode, features or user instructions; user settings remain the permission owner.
 
 
 This account is bound to the candidate source, not a claim of a running serving build or a fresh execution/acceptance verdict. Existing historical accounts remain historical.
@@ -26,12 +26,16 @@ This account is bound to the candidate source, not a claim of a running serving 
 
 - Worker/Curator typed review census, record-only exclusion and unknown history. [4]
 - Reason admission, threshold and differing-harness/model inheritance boundary. [5]
-- File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence. [6]
+- RoleLaunchFeatures retains settings-owned permissions and non-applied Base previews; feature labels match host IDs or labels without a built-in speed alias. [6]
+
 - File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence. [7]
+
 
 - Permission dispatch preserves settings-owned chips; FeatureOverrideSelect owns selectable labels and hover. [1]
 
+
 - The feature-value updater retains identities and removes only an empty override. [2]
+
 
 
 - The ordinary ready defaults composition draws the host mode and optional instruction chips; basePreview labels them as non-applied Base previews. [3]

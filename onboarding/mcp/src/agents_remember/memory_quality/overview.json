@@ -4,12 +4,12 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "Retained reference account (no fresh execution or acceptance inferred): The MCP application entry point builds drift context, including temporary leaf-base provenance, and calls the package runner.\n\nAnchor: `run_memory_quality_request` `_execute_memory_quality`",
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The MCP application entry point builds drift context, including temporary leaf-base provenance, and calls the package runner.  Anchor: `run_memory_quality_request` `_execute_memory_quality`",
       "targets": [
         {
           "anchor": {
-            "blob": "a4cb0ce3f5f3f488c8ad8313b8063d4a8218871e",
-            "content": "sha256:a2df6307f79b0a5282c67184a98d37a2d5fb71ad24fefd455d684627e7c5a73c",
+            "blob": "f3bf4bfa27b8bfd44cd242540d16a2dbf31ec1c4",
+            "content": "sha256:86b9f991a82d2cf8b7a6604799d421f5a3c8a07dec010204994f79f6296011e1",
             "locator": {
               "kind": "file"
             },
@@ -42,12 +42,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a4cb0ce3f5f3f488c8ad8313b8063d4a8218871e",
+            "blob": "f3bf4bfa27b8bfd44cd242540d16a2dbf31ec1c4",
             "content": "sha256:ad3d2782cc1d00c21f6b700a18fd7115774748e235752fed03dd2454cf993758",
             "locator": {
-              "end": 648,
+              "end": 589,
               "kind": "line_range",
-              "start": 648
+              "start": 589
             },
             "path": "mcp/src/agents_remember/application/memory_quality/controller.py"
           },
@@ -55,12 +55,12 @@
         },
         {
           "anchor": {
-            "blob": "a4cb0ce3f5f3f488c8ad8313b8063d4a8218871e",
+            "blob": "f3bf4bfa27b8bfd44cd242540d16a2dbf31ec1c4",
             "content": "sha256:edd4e53b3a92f67842ae50ef0a4484cd315a1cc3f4460053f86c5e4feb06281b",
             "locator": {
-              "end": 1076,
+              "end": 1017,
               "kind": "line_range",
-              "start": 1040
+              "start": 981
             },
             "path": "mcp/src/agents_remember/application/memory_quality/controller.py"
           },
@@ -113,12 +113,12 @@
       ]
     },
     "2": {
-      "note": "Retained reference account (no fresh execution or acceptance inferred): Tool metadata and server registration expose `memory_quality_check` to agents.\n\nAnchor: `memory_quality_check_payload` `create_server`",
+      "note": "Retained reference account (no fresh execution or acceptance inferred): Tool metadata and server registration expose `memory_quality_check` to agents.  Anchor: `memory_quality_check_payload` `create_server`",
       "targets": [
         {
           "anchor": {
-            "blob": "e10b32fdbb80d5c5c1e05892e1a33d81a4841c92",
-            "content": "sha256:e5ec15101aadfde2395cb9c8d604a46bb7ff6dd543307eed240b82f94eaf8e0b",
+            "blob": "f33904d9efb39530affd7e1a084186df0c3169dc",
+            "content": "sha256:9587e21b84f3111c38c400ea4bbb19364ebc17e8c540588423cf39ea08983674",
             "locator": {
               "kind": "file"
             },
@@ -128,8 +128,8 @@
         },
         {
           "anchor": {
-            "blob": "04fe591490945dea61eca1af410ae2553d95ea05",
-            "content": "sha256:cc3a440dce07a6635e86d3b3c0bd4747a332896e3470112e376449434e08b69a",
+            "blob": "c32522a60857504ad69c2b55c97baed38f637142",
+            "content": "sha256:51aabd4a109dee3ed422848ba7df15577c0cdd83fd80309e6668f594a29fc514",
             "locator": {
               "kind": "file"
             },
@@ -144,12 +144,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5dd2a44685920ec5d90e001beb9a4c0e14cf8c00",
-            "content": "sha256:d91eb14a3438541a0d5994ebee3a5d5d6a2e22a8142a9f93b2ee600685bd4567",
+            "blob": "6782d184c8982f54e6e72e5f11a61aa2c8f88627",
+            "content": "sha256:e680829e47db58265b7a93e8d891f6a09ba122ed9a80bec82f3dcc04a8a1cfad",
             "locator": {
-              "end": 89,
+              "end": 93,
               "kind": "line_range",
-              "start": 70
+              "start": 54
             },
             "path": "mcp/src/agents_remember/mcp/registration/memory.py"
           },
@@ -162,7 +162,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5dd2a44685920ec5d90e001beb9a4c0e14cf8c00",
+            "blob": "6782d184c8982f54e6e72e5f11a61aa2c8f88627",
             "content": "sha256:a5ff3c8235677e4cf8e075a2d73e2fc7313e631861dfeb91375f2e8740c11bda",
             "locator": {
               "kind": "symbol",
@@ -390,7 +390,7 @@
       ]
     },
     "41": {
-      "note": "Retained reference account (no fresh execution or acceptance inferred): Stale references are report-only.",
+      "note": "Stale reference anchors refuse the converted knowledge check; source-policy observations remain separate report-only notes.",
       "targets": [
         {
           "anchor": {
@@ -407,12 +407,12 @@
       ]
     },
     "42": {
-      "note": "Retained reference account (no fresh execution or acceptance inferred): The converted run's legacy-format checks and its validator slot.\n\nAnchor: `LEGACY_FORMAT_CHECKS` `converted_knowledge_check`",
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The converted run's legacy-format checks and its validator slot.  Anchor: `LEGACY_FORMAT_CHECKS` `converted_knowledge_check`",
       "targets": [
         {
           "anchor": {
-            "blob": "2464d2d12704dfa0b90457ac3a62acf2212bedb8",
-            "content": "sha256:dbe61d25412db3ca95db073cf15c9ee9d92ce8db5675165fd09a7ef428230979",
+            "blob": "ef73833b143decb50eb3949345e195a40a7692d3",
+            "content": "sha256:432553dfa98a325f9d0361c0ddf32e95cafddfc67051662ac1669087b332b674",
             "locator": {
               "kind": "file"
             },
@@ -423,12 +423,12 @@
       ]
     },
     "43": {
-      "note": "Retained reference account (no fresh execution or acceptance inferred): The runner's dispatch by format.\n\nAnchor: `_converted_check`",
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The runner's dispatch by format.  Anchor: `_converted_check`",
       "targets": [
         {
           "anchor": {
-            "blob": "acbadcd4888a7c17f2d92aed6961938cefde99d5",
-            "content": "sha256:d6de97e147d8e262922b1b7a1fed1346c158ac4683515916799ef798383a45b6",
+            "blob": "0c9835c5bfa78c871ef403fc01be28bfb5f53998",
+            "content": "sha256:6327d4841a9b8a8f1890647a7deec14ee015c3bd6b9addfa59a5b544d36661c5",
             "locator": {
               "kind": "file"
             },
@@ -605,7 +605,7 @@
         },
         {
           "anchor": {
-            "blob": "bf6833bf5d456b21488675f40c54e8fe67c5c011",
+            "blob": "5cd7ec716feacd1db6d5df3f9f31d400bf26d49e",
             "content": "sha256:b804c118ac77ae0cb9da25c3e8f04f0a1375f1b09300db17a0fb0ce5fb232184",
             "locator": {
               "end": 27,
@@ -1108,7 +1108,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2464d2d12704dfa0b90457ac3a62acf2212bedb8",
+            "blob": "ef73833b143decb50eb3949345e195a40a7692d3",
             "content": "sha256:215ec4b99c44aff97b9eb3535f1dba09e2ceb0332d9ba4ba17cd371e9eacc32e",
             "locator": {
               "kind": "symbol",
@@ -1256,12 +1256,12 @@
         },
         {
           "anchor": {
-            "blob": "2464d2d12704dfa0b90457ac3a62acf2212bedb8",
-            "content": "sha256:59f2e394135b932168fb4c44da1a3ddabd0d94190ad739dc805a0c8e97005ff1",
+            "blob": "ef73833b143decb50eb3949345e195a40a7692d3",
+            "content": "sha256:b0bef3b05c9cd33676146572443e9630f8972e5b595312b8354d2771981ce83b",
             "locator": {
-              "end": 130,
+              "end": 197,
               "kind": "line_range",
-              "start": 101
+              "start": 81
             },
             "path": "mcp/src/agents_remember/memory_quality/converted_check.py"
           },
@@ -1282,12 +1282,12 @@
         },
         {
           "anchor": {
-            "blob": "acbadcd4888a7c17f2d92aed6961938cefde99d5",
+            "blob": "0c9835c5bfa78c871ef403fc01be28bfb5f53998",
             "content": "sha256:2bd7f8cb57b675b6bcfe1de7b66bec80ad325a045cde4a045edf9c78dd831d5f",
             "locator": {
-              "end": 60,
+              "end": 61,
               "kind": "line_range",
-              "start": 46
+              "start": 47
             },
             "path": "mcp/src/agents_remember/memory_quality/check.py"
           },
@@ -1295,12 +1295,12 @@
         },
         {
           "anchor": {
-            "blob": "acbadcd4888a7c17f2d92aed6961938cefde99d5",
-            "content": "sha256:a9f70870216f0e43de62ded85b51bfa9d6122c9049c7752040244033d1c2adb1",
+            "blob": "0c9835c5bfa78c871ef403fc01be28bfb5f53998",
+            "content": "sha256:a38582aed02bfa1a349badd77c12de793f21fba1fa804f7e84c8358e1a46d3a8",
             "locator": {
-              "end": 132,
+              "end": 133,
               "kind": "line_range",
-              "start": 79
+              "start": 80
             },
             "path": "mcp/src/agents_remember/memory_quality/check.py"
           },
@@ -1309,22 +1309,11 @@
       ]
     },
     "81": {
-      "note": "Named converted-base refusal depends on the supplied port; no-port HEAD reads can yield no bases; reported base failure withholds anchor-path refusals.\n\nAnchor: `_comparison_bases` `converted_knowledge_check`",
+      "note": "Named converted-base refusal depends on the supplied port; no-port HEAD reads can yield no bases; reported base failure withholds anchor-path refusals.  Anchor: `_comparison_bases` `converted_knowledge_check`",
       "targets": [
         {
           "anchor": {
-            "blob": "2464d2d12704dfa0b90457ac3a62acf2212bedb8",
-            "content": "sha256:dbe61d25412db3ca95db073cf15c9ee9d92ce8db5675165fd09a7ef428230979",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "mcp/src/agents_remember/memory_quality/converted_check.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "2464d2d12704dfa0b90457ac3a62acf2212bedb8",
+            "blob": "ef73833b143decb50eb3949345e195a40a7692d3",
             "content": "sha256:215ec4b99c44aff97b9eb3535f1dba09e2ceb0332d9ba4ba17cd371e9eacc32e",
             "locator": {
               "kind": "symbol",
@@ -1336,11 +1325,22 @@
         },
         {
           "anchor": {
-            "blob": "2464d2d12704dfa0b90457ac3a62acf2212bedb8",
-            "content": "sha256:7faaa61a8f79c86f584b9769065b0fb54057f793bcd8c3adf57568bceb568bfd",
+            "blob": "ef73833b143decb50eb3949345e195a40a7692d3",
+            "content": "sha256:162e27ef3c05f6f21f2da9209dda01ce969d0a1e6f2d62a562343e1f145b8165",
             "locator": {
               "kind": "symbol",
               "name": "converted_knowledge_check"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/converted_check.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ef73833b143decb50eb3949345e195a40a7692d3",
+            "content": "sha256:432553dfa98a325f9d0361c0ddf32e95cafddfc67051662ac1669087b332b674",
+            "locator": {
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/memory_quality/converted_check.py"
           },
@@ -1389,7 +1389,7 @@
       ]
     },
     "83": {
-      "note": "Purpose heading, leaf/date heading and trailing citation rules refuse, with standalone-conversion exemptions; their implementation is presently an untracked working-tree file.\n\nAnchor: `check_purpose_first`, `check_no_leaf_sections`, `check_citations_at_end`, `OVERVIEW_RULES`",
+      "note": "Purpose heading, leaf/date heading and trailing citation rules refuse at leaf publication, with standalone-conversion exemptions. Their implementation is tracked in the frozen code tree.\n\nAnchor: `check_purpose_first`, `check_no_leaf_sections`, `check_citations_at_end`, `OVERVIEW_RULES`",
       "targets": [
         {
           "anchor": {
@@ -1527,7 +1527,7 @@
       ]
     },
     "87": {
-      "note": "Currentness is mechanical and report-only; scoped fixing excludes refused sidecars before refresh/write, after parsing.\n\nAnchor: `anchor_state`, `check_references`, `fix_references`",
+      "note": "The retained `check_references` helper reports mechanical currentness. Full converted quality and publication separately refuse stale reference anchors through R198. Scoped fixing excludes refused sidecars before refresh/write, after parsing.\n\nAnchor: `anchor_state`, `check_references`, `fix_references`",
       "targets": [
         {
           "anchor": {
@@ -1601,7 +1601,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a4cb0ce3f5f3f488c8ad8313b8063d4a8218871e",
+            "blob": "f3bf4bfa27b8bfd44cd242540d16a2dbf31ec1c4",
             "content": "sha256:d81b89961aa9f6111073416b7d9db6242c5d1caddb566ef889f16800de227eb4",
             "locator": {
               "kind": "symbol",
@@ -1797,6 +1797,23 @@
               "start": 177
             },
             "path": "mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/summary.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "98": {
+      "note": "The per-check reader bounds file reads, preserves citation verification and reports skipped sources.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ae1b5a6ed0cae313b1f5ce14e2f26dc25dcaf5f4",
+            "content": "sha256:41323e4abe140a22bd55baf7103000883c590d109759a71b5fc9dca64854cec8",
+            "locator": {
+              "kind": "symbol",
+              "name": "QualitySourceFiles"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/source_files.py"
           },
           "kind": "code"
         }

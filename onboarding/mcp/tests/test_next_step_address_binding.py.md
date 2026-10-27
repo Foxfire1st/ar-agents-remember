@@ -36,10 +36,14 @@ The module directly calls compute_next_step(contract, tool, guidance=...) on two
 
 
 
-- The lane manifest registers mcp/tests/test_next_step_address_binding.py in unit-regression. Membership selects evidence and does not establish execution. [12]
+
 
 
 - A foreign address is omitted, not forwarded. [13]
 - An own-address hint is retained by identity. [14]
 - Two contract-addressed calls yield distinct isolated hints. [15]
 - An addressless response withholds guidance rather than passing it unchecked. [16]
+
+
+
+- The lane manifest registers mcp/tests/test_next_step_address_binding.py in unit-regression. Membership selects evidence and does not establish execution. [12]

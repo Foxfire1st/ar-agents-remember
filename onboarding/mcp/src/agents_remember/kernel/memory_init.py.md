@@ -111,7 +111,7 @@ when this run would have created the marker (nothing was written), and the case'
 
 ### Repo-Internal References
 
-- `memory_init` is wired through the Phase 04 application entry point. [1]
+
 - A new memory repository is created with the layout marker; an existing or legacy root is never marked. [2]
 
 - The marker case: only a new root is created in the text format. [3]
@@ -128,3 +128,5 @@ when this run would have created the marker (nothing was written), and the case'
 
 
 - The failed-Git early return reports the marker as not created. [10]
+
+- `memory_init` is wired through the Phase 04 application entry point. [1]

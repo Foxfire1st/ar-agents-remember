@@ -33,10 +33,14 @@ An in-memory registered MCP session verifies the optional exact task_context pai
 - The scoped current source carries the module/document behavior described above. [1]
 
 
-- The factory that pairs the process-wide request union with its per-server dispatcher. [2]
+
 
 
 - The bounded driver and the 60-second Git observation limit. [3]
 
 
 - The late-response case that holds its handler and starts its deadline after session initialization. [4]
+
+
+
+- The factory that pairs the process-wide request union with its per-server dispatcher.  Anchor: `create_server` [2]

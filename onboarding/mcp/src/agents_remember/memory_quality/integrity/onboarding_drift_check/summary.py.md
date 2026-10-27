@@ -88,7 +88,7 @@ The concrete snapshot filename is derived by the shared `drift_snapshot_path` he
 
 - The context-packet wire model that validates this packet's `status` — the one that used to lack `error`. [4]
 
-- The tool response model that validates the same packet. [5]
+
 
 ## Current source evidence
 
@@ -101,3 +101,5 @@ The concrete snapshot filename is derived by the shared `drift_snapshot_path` he
 
 
 - Current source account and its stated boundaries. [15]
+
+- The tool response model that validates the same packet. [5]

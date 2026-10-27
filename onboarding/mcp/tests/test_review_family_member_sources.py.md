@@ -105,14 +105,14 @@ No configured domain documentation could be checked.
 
 
 
-> Retained earlier citation wording: - The lane registration. Source caption: `test_review_family_member_sources` [34]
+> Retained earlier citation wording: - The lane registration. Source caption: `test_review_family_member_sources`
 
 
 
 
 
 
-> Retained earlier citation wording: - The shared-fixture consumer registration. [35]
+> Retained earlier citation wording: - The shared-fixture consumer registration.
 
 
 
@@ -121,6 +121,17 @@ No configured domain documentation could be checked.
 No cross-repository behavior is exercised; the Git repository and datasets are temporary.
 
 No meaningful cross-repo references found.
+
+
+
+
+
+
+
+
+
+
+
 
 - The lane registration. Source caption: `test_review_family_member_sources` [34]
 

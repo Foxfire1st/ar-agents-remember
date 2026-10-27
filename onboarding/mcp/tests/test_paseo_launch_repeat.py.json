@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "735fbff960e8691bf138f01a4e8aaf4ffc49870b",
+        "blob": "54a24300c0ac14f8e309b1cb70d30c4654bf0559",
         "content": "sha256:f1353abee29eab16fbb0ba69a94223c6c561fca9fc12e1221d3444a1df625fa6",
         "locator": {
           "kind": "symbol",
@@ -26,8 +26,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "735fbff960e8691bf138f01a4e8aaf4ffc49870b",
-            "content": "sha256:34ba90d18b18a0d2a1051cd76b279ad6535a9ec7b4b089bc843050c8078d2f81",
+            "blob": "54a24300c0ac14f8e309b1cb70d30c4654bf0559",
+            "content": "sha256:8c0a07c684d4f9ef67e55dba4e6f28a432fe0531290b80c0e08e4aa0d87e86f1",
             "locator": {
               "kind": "file"
             }

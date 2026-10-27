@@ -34,7 +34,7 @@ The document says the writer orders rows and lists, removes duplicate lines, der
 
 The selection contract requires typed incomplete ownership to stop before Gate 2, removes deleted tests from the population, and keeps irrelevant inputs explicit. The immutable selector result binds candidate, configuration, scope, and dependency reasons. Retry binds its digest and, when proof cannot be reused, refreshes the already admitted population. These are the document's standing contracts; this overview does not certify every corresponding implementation predicate.
 
-`python-pytest-bootstrap.md` gives the behavior-based admission policy for tests, ordinary isolated host pytest commands, Git-checkout prerequisite, diagnostic metrics, and isolation rules. Host pytest has no certification authority. Coverage is diagnostic; production CRAP20 prompts review rather than blocking delivery. The current document and root `pyproject.toml:320-321` declare 10,000 unit cases and 1,000 integration cases. D226's earlier 4,000-to-5,000 unit policy raise and L54's 5,000-to-6,000 raise are historical; both later unit-only raises leave integration and the enforcing guard unchanged. The earlier 1,000/150-versus-4,000/1,000 source discrepancy is a prior-pair observation, not the current reading.
+`python-pytest-bootstrap.md` gives the behavior-based admission policy for tests, ordinary isolated host pytest commands, Git-checkout prerequisite, diagnostic metrics, and isolation rules. Host pytest has no certification authority. Coverage is diagnostic; production CRAP20 prompts review rather than blocking delivery. The current document and root `pyproject.toml:333-334` declare 10,000 unit cases and 2,000 integration cases. D226's earlier 4,000-to-5,000 unit policy raise and L54's 5,000-to-6,000 raise are historical; both later unit-only raises leave integration and the enforcing guard unchanged. The earlier 1,000/150-versus-4,000/1,000 source discrepancy is a prior-pair observation, not the current reading.
 
 `python-test-evidence.md` states that Python acceptance requires a passed, immutable, candidate-bound publication of the pinned Dagger quality graph. Non-accepting investigation artifacts cannot satisfy accepting consumers. It names `worktrees.route_review_scope.require_current_route_review` as the route-review owner and separates independent route-review authority from test evidence. The inspected owner defers atomic children and atomic master closeout review until the accumulated master integration review; contracts outside that atomic scope call the existing independent review owner.
 
@@ -66,63 +66,76 @@ The following excluded metadata is preserved verbatim. It does not grant operati
 | ---------------------- | ------------------------------------------- |
 | sourceRoute            | `docs/design/`                              |
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+### Integration headroom
+
+On 2026-10-26, the integration ceiling rises from 1000 to 2000; unit remains 10000. The source-file cases protect Git listing, bounded reads and readable excluded citations. The original 16-case shape measured 18.56 s and independently 20.15 s; grouping preserved its scenarios in four cases and 14 subtests at 19.70 s. The two link-class regressions produce four cases and 16 subtests: v2 measured 27.47 s and v3 38.20 s. No case was weakened or moved to the unit lane. Both over-budget refusal directions remain enforced. These are scenario-run measurements, not whole-suite runtime or a claimed speedup.
+
 ## Evidence
-
 - The RV01 dated certificate line is unchanged in content after the allowed R113 History banner; its current location is151. [36]
-
-
-
-
-
 - The scenario catalog of the cockpit dashboard. [1]
-
 - The upstream register and the Chats decision brief. [2]
-
-
 - The closeout evidence index of the session cockpit series. [3]
-
 - The former observable session-lifecycle design is explicitly historical under R113. [6]
-
 - The former harness capability matrix is explicitly historical, not current adapter availability. [7]
-
 - The test commands and the need for a Git checkout. [8]
 - The one accepting authority for Python test evidence. [9]
 - The design document's statement of the catalogs' canonical form, their union merge, the write command, and that no byte or count is pinned. [10]
-
 - FEUI-L8's recorded scenario, accessibility, performance, and invariant evidence entry point. [20]
-
 - The upstream gaps and recorded one-Chats cutover ruling entry point. [21]
-
 - The bounded series closeout evidence pack entry point. [22]
-
 - FEUI-L8's recorded scenario, accessibility, performance, and invariant evidence reference. [23]
-
 - The upstream gaps and recorded one-Chats cutover ruling reference. [24]
-
 - The bounded series closeout evidence pack. [25]
-
-
 - The implementation produces or reuses memory content before refreshing its cache. [26]
-
-
 - The historical session design records former recovery/cache boundaries; its R113 status makes the session-driven promise non-operative. [28]
-
 - The Python evidence design describes selection, retry, and maintenance contracts. [29]
 - The authority document records Candidate A retirement and the review consumer; the current review owner defers atomic scope. [31]
-
 - The cockpit index describes its historical candidate and internal measurement boundary. [32]
-
-
 - The dashboard review doctrine defines review bars and visual grammar. [33]
-
 - Engine-room references identify the visual-language library and choreography prototype. [34]
-
 - The current complete closeout function preserves the memory-before-cache sequence; exact-tree validation independently refuses ungated memory. [35]
-
-
-- The current collected-case declaration is 10,000 unit/1,000 integration; this is policy, not a collected or executed population. [27]
-- The bootstrap policy and current root declarations agree on 10,000 unit/1,000 integration; host-versus-certifying evidence remains separate. [30]
-
+- The root pytest declaration sets 10000 unit and 2000 integration selected cases; the repository collection guard enforces this pair. [27]
+- The testing design and root configuration agree on 10000 unit and 2000 integration selected cases; historical values describe their earlier policy epochs. [30]
 - The canvas-host amendment retires the old authoring POSTs and standalone presenter-tool launch while retaining the explicit runner/confinement and browser-readiness limits. [37]
-
 - The canvas-host amendment retires old authoring POSTs and the dedicated native presenter launch; retained authoring port and explicit browser readiness remain bounded. [37]
+- The dated raise states the headroom, measured scenario costs and preserved refusal directions. [38]

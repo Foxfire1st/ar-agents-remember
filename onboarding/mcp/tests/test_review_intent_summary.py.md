@@ -82,7 +82,7 @@ No Domain Documentation source is configured for this slice.
 
 
 
-> Retained earlier citation wording: - The lane registration. Source caption: `test_review_intent_summary` [23]
+> Retained earlier citation wording: - The lane registration. Source caption: `test_review_intent_summary`
 
 
 
@@ -96,5 +96,9 @@ No Domain Documentation source is configured for this slice.
 The route fixture's summary callback accepts the optional comparison-number argument before the read observer. Its counted and absent requests omit a number and select canned answers by leaf. The existing 200 counted/unavailable and 503 unwired assertions are unchanged; this callback adaptation supplies no separate numbered-comparison selection proof.
 
 - The comparison-shaped callback retains counted/unavailable 200 and unwired 503 assertions. [25]
+
+
+
+
 
 - The lane registration. Source caption: `test_review_intent_summary` [23]

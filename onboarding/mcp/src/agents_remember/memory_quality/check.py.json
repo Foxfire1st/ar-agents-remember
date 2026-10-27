@@ -8,12 +8,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5dd2a44685920ec5d90e001beb9a4c0e14cf8c00",
-            "content": "sha256:5020bab552b9053a016c3fa1071a014a7e2989fa8c43f1185d109c3bd1ddacc7",
+            "blob": "6782d184c8982f54e6e72e5f11a61aa2c8f88627",
+            "content": "sha256:5a7c8284795e246aa50d83ef866c01c7293a3a18cf3e73c5ea1a44102bb91537",
             "locator": {
-              "end": 68,
+              "end": 70,
               "kind": "line_range",
-              "start": 51
+              "start": 35
             },
             "path": "mcp/src/agents_remember/mcp/registration/memory.py"
           },
@@ -21,7 +21,7 @@
         },
         {
           "anchor": {
-            "blob": "5dd2a44685920ec5d90e001beb9a4c0e14cf8c00",
+            "blob": "6782d184c8982f54e6e72e5f11a61aa2c8f88627",
             "content": "sha256:43a1d7f95272f5ff1aa38680687e73983baf6cc1a83aba578dba8c56155f1f5f",
             "locator": {
               "end": 45,
@@ -34,12 +34,12 @@
         },
         {
           "anchor": {
-            "blob": "5dd2a44685920ec5d90e001beb9a4c0e14cf8c00",
+            "blob": "6782d184c8982f54e6e72e5f11a61aa2c8f88627",
             "content": "sha256:9300e9d65f093aadea42a2e8d3fb56a7ca5198251793ae878b267f3621318d04",
             "locator": {
-              "end": 68,
+              "end": 70,
               "kind": "line_range",
-              "start": 64
+              "start": 66
             },
             "path": "mcp/src/agents_remember/mcp/registration/memory.py"
           },
@@ -52,12 +52,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2464d2d12704dfa0b90457ac3a62acf2212bedb8",
-            "content": "sha256:ca9cd615f6db698de4ada87fa1a8bba53c7e86283086087c1c54b29fb93f58f2",
+            "blob": "ef73833b143decb50eb3949345e195a40a7692d3",
+            "content": "sha256:bad77215498cb21effece067e4f9950d860b0a768e67b46452e298dabde3f252",
             "locator": {
-              "end": 115,
+              "end": 121,
               "kind": "line_range",
-              "start": 63
+              "start": 64
             },
             "path": "mcp/src/agents_remember/memory_quality/converted_check.py"
           },
@@ -70,12 +70,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "acbadcd4888a7c17f2d92aed6961938cefde99d5",
-            "content": "sha256:f0b0bba0218b40bf7f7e774caf491de359a333a3d4651f2b141447ec2f683aa7",
+            "blob": "0c9835c5bfa78c871ef403fc01be28bfb5f53998",
+            "content": "sha256:0eb154726ac75a8f950f4b5a74c1ce161536f4f61572cc101c5306fa55757221",
             "locator": {
-              "end": 165,
+              "end": 166,
               "kind": "line_range",
-              "start": 46
+              "start": 47
             }
           },
           "kind": "code"
@@ -87,12 +87,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "acbadcd4888a7c17f2d92aed6961938cefde99d5",
-            "content": "sha256:f0b0bba0218b40bf7f7e774caf491de359a333a3d4651f2b141447ec2f683aa7",
+            "blob": "0c9835c5bfa78c871ef403fc01be28bfb5f53998",
+            "content": "sha256:0eb154726ac75a8f950f4b5a74c1ce161536f4f61572cc101c5306fa55757221",
             "locator": {
-              "end": 165,
+              "end": 166,
               "kind": "line_range",
-              "start": 46
+              "start": 47
             }
           },
           "kind": "code"
@@ -100,12 +100,12 @@
       ]
     },
     "16": {
-      "note": "The drift context carries the converted tree's comparison base.\n\nAnchor: `DriftCheckContext`",
+      "note": "The drift context carries the converted tree's comparison base.  Anchor: `DriftCheckContext`",
       "targets": [
         {
           "anchor": {
-            "blob": "acbadcd4888a7c17f2d92aed6961938cefde99d5",
-            "content": "sha256:d6de97e147d8e262922b1b7a1fed1346c158ac4683515916799ef798383a45b6",
+            "blob": "0c9835c5bfa78c871ef403fc01be28bfb5f53998",
+            "content": "sha256:6327d4841a9b8a8f1890647a7deec14ee015c3bd6b9addfa59a5b544d36661c5",
             "locator": {
               "kind": "file"
             }
@@ -115,12 +115,12 @@
       ]
     },
     "17": {
-      "note": "The converted check receives the base port.\n\nAnchor: `_converted_check`",
+      "note": "The converted check receives the base port.  Anchor: `_converted_check`",
       "targets": [
         {
           "anchor": {
-            "blob": "acbadcd4888a7c17f2d92aed6961938cefde99d5",
-            "content": "sha256:d6de97e147d8e262922b1b7a1fed1346c158ac4683515916799ef798383a45b6",
+            "blob": "0c9835c5bfa78c871ef403fc01be28bfb5f53998",
+            "content": "sha256:6327d4841a9b8a8f1890647a7deec14ee015c3bd6b9addfa59a5b544d36661c5",
             "locator": {
               "kind": "file"
             }
@@ -130,14 +130,30 @@
       ]
     },
     "18": {
-      "note": "The converted dispatch forwards independent validator and landing base ports.\n\nAnchor: `_converted_check`",
+      "note": "The converted dispatch forwards independent validator and landing base ports.  Anchor: `_converted_check`",
       "targets": [
         {
           "anchor": {
-            "blob": "acbadcd4888a7c17f2d92aed6961938cefde99d5",
-            "content": "sha256:d6de97e147d8e262922b1b7a1fed1346c158ac4683515916799ef798383a45b6",
+            "blob": "0c9835c5bfa78c871ef403fc01be28bfb5f53998",
+            "content": "sha256:6327d4841a9b8a8f1890647a7deec14ee015c3bd6b9addfa59a5b544d36661c5",
             "locator": {
               "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "Converted dispatch supplies the per-check source reader and both comparison ports.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0c9835c5bfa78c871ef403fc01be28bfb5f53998",
+            "content": "sha256:bde494dabb48066c818f77a8834be555e256a96928d19acd48e694d61a417c9a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_converted_check"
             }
           },
           "kind": "code"
@@ -223,12 +239,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "acbadcd4888a7c17f2d92aed6961938cefde99d5",
-            "content": "sha256:f0b0bba0218b40bf7f7e774caf491de359a333a3d4651f2b141447ec2f683aa7",
+            "blob": "0c9835c5bfa78c871ef403fc01be28bfb5f53998",
+            "content": "sha256:45c932b58130519d78d343395944d9402d93182fc1674513a4fbcf44e555719b",
             "locator": {
-              "end": 165,
+              "end": 166,
               "kind": "line_range",
-              "start": 46
+              "start": 32
             }
           },
           "kind": "code"
@@ -240,12 +256,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "acbadcd4888a7c17f2d92aed6961938cefde99d5",
-            "content": "sha256:f0b0bba0218b40bf7f7e774caf491de359a333a3d4651f2b141447ec2f683aa7",
+            "blob": "0c9835c5bfa78c871ef403fc01be28bfb5f53998",
+            "content": "sha256:0eb154726ac75a8f950f4b5a74c1ce161536f4f61572cc101c5306fa55757221",
             "locator": {
-              "end": 165,
+              "end": 166,
               "kind": "line_range",
-              "start": 46
+              "start": 47
             }
           },
           "kind": "code"
@@ -257,12 +273,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "acbadcd4888a7c17f2d92aed6961938cefde99d5",
-            "content": "sha256:f0b0bba0218b40bf7f7e774caf491de359a333a3d4651f2b141447ec2f683aa7",
+            "blob": "0c9835c5bfa78c871ef403fc01be28bfb5f53998",
+            "content": "sha256:0eb154726ac75a8f950f4b5a74c1ce161536f4f61572cc101c5306fa55757221",
             "locator": {
-              "end": 165,
+              "end": 166,
               "kind": "line_range",
-              "start": 46
+              "start": 47
             }
           },
           "kind": "code"
@@ -274,12 +290,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2464d2d12704dfa0b90457ac3a62acf2212bedb8",
-            "content": "sha256:ca9cd615f6db698de4ada87fa1a8bba53c7e86283086087c1c54b29fb93f58f2",
+            "blob": "ef73833b143decb50eb3949345e195a40a7692d3",
+            "content": "sha256:bad77215498cb21effece067e4f9950d860b0a768e67b46452e298dabde3f252",
             "locator": {
-              "end": 115,
+              "end": 121,
               "kind": "line_range",
-              "start": 63
+              "start": 64
             },
             "path": "mcp/src/agents_remember/memory_quality/converted_check.py"
           },

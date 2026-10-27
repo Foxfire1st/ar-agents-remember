@@ -24,8 +24,11 @@ real start leaves in the task document.
 
 - **Refusal is free of effects.** `LaunchRefusalTests.test_a_launch_that_cannot_start_refuses_before_any_runtime_call_or_receipt`
   checks the refusal arrives with no launch call (no workspace opened, no agent created or archived) and no receipt
-  file. The catalog read before the catalog-failure refusal and the attempted leaf-enclosure start are asserted
-  separately from those launch calls.
+  file. Selection validation and an attempted leaf-enclosure start are checked separately from those
+  launch calls; an unanswered catalog alone is not treated as a launch refusal.
+- **Unanswered catalog.** `test_an_unanswered_catalog_passes_configured_choices_to_the_host`
+  requests `metadata` and then `selected` data for `gpt-a`, opens the workspace and creates one agent
+  with the configured `codex`/`gpt-a`/`low` choices. It records one enclosure start and a running receipt.
 - **Feature values are merged, never clobbered.** `LaunchFeatureValuesTests` shows a service tier merged
   into accepted feature values, feature values passing through untouched when no tier is asked for, and a
   tier alone setting only its own key.
@@ -53,5 +56,6 @@ The fixture now gives the process a short temporary home of its own, as a real a
 
 ## Evidence
 
-- Dispatch, refusal without effects and feature-value merging are asserted against the shared fake runtime. [1]
-- The fixture takes `FakeRuntime`, `CATALOG` and `SERVER_ID` from `paseo_launch_test_support` and wires them into the catalog, launch and status calls. [2]
+- The scoped current source carries the module/document behavior described above. [1]
+
+- The launch fixture now imports `FakeRuntime`, `CATALOG` and `SERVER_ID` from `paseo_launch_test_support`; `CATALOG` remains exported for suites built on this fixture. `PaseoLaunchTestCase.setUp` wires the shared fake into catalog/launch/status bridge calls. This is fixture-owner relocation, not a change to launch identity, retry or holder-replacement semantics. [2]

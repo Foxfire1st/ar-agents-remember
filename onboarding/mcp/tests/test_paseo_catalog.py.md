@@ -7,8 +7,8 @@
 ## Purpose
 
 Drives the launcher-options route against a recording fake bridge and proves the choices a launch is
-offered come from the host runtime's own catalog: cached per runtime, validated before anything is
-created, and named when the runtime is unconfigured or unreachable. It is route and fixture coverage;
+offered come from the host runtime's own catalog: freshly asked per operation, validated against answered parts before anything is
+created, and named when the runtime is unconfigured. Last successful answers cover failed parts; wholly unknown parts remain unchecked. It is route and fixture coverage;
 no daemon, agent workspace or browser is involved.
 
 ## Code Commentary
@@ -23,15 +23,12 @@ the requested and legacy option shapes, and `HARNESS_ORDER` fixes the order harn
 
 - **The catalog is the source of options.** `test_options_come_from_the_runtime_catalog` reads the
   harnesses, models and efforts out of the runtime's answer instead of a local default.
-- **Caching is per runtime.** `test_catalog_is_cached_per_runtime_and_only_a_refresh_rediscovers`
-  shows a second read answering from cache and only an explicit refresh asking the runtime again.
-- **Degradation is named.** `test_an_unoffered_default_is_flagged_and_never_replaced`,
-  `test_a_partial_catalog_is_kept_and_a_failed_discovery_caches_nothing` and
-  `test_an_unreadable_catalog_is_a_named_failure_and_is_not_cached` keep a flagged default, a partial
-  answer and an unreadable answer apart: a failed discovery or unreadable catalog caches nothing, while a
-  returned partial catalog is kept, with its listing error, until a refresh replaces it.
-- **Refusals stay distinct.** `test_route_errors_name_not_configured_and_unreachable_apart` separates
-  the two states, and `test_a_launch_is_validated_against_the_catalog_before_anything_is_created`
+- **Questions are fresh.** `test_each_view_and_start_asks_fresh_and_refresh_rescans`
+  requires every view and start to ask the runtime, with explicit refresh also requesting a provider rescan.
+- **Degradation preserves successful answers.** `test_an_unoffered_default_is_flagged_and_never_replaced`,
+  `test_whole_failure_uses_previous_success_without_erasing_it` and
+  `test_an_unreadable_catalog_leaves_configured_choices_unchecked` distinguish known unoffered defaults, saved successful answers and wholly unknown offerings.
+- **Missing runtime and unoffered choices stay distinct.** `test_not_configured_runtime_still_names_the_missing_authority` identifies absent runtime authority, and `test_a_launch_is_validated_against_the_catalog_before_anything_is_created`
   proves an unservable launch is refused before an agent or workspace exists.
 - **Service tiers.** `fast` is offered independently of the host default, a model override revalidates
   capability, and `test_unsupported_tier_and_exact_unavailable_model_are_not_substituted` refuses an
@@ -40,16 +37,16 @@ the requested and legacy option shapes, and `HARNESS_ORDER` fixes the order harn
 ### Conventions
 
 Each case builds its own runtime settings and `McpRuntimeConfig` under a temporary root and queues
-the bridge replies it needs, so no case reads another's cache.
+the bridge replies it needs, so no case reads another's saved catalog store.
 
 ### Invariants And Boundaries
 
 - The catalog is only ever read through the bridge; nothing here starts a daemon, an agent or a task.
-- Cache entries are keyed by the runtime they came from, so two runtimes never share a catalog.
+- Saved catalog parts are scoped to their runtime, and live answers are shared only within one operation.
 
 ## Evidence
 
-- The options route, its per-runtime cache, partial and unreadable catalogs, refused defaults, distinct
+- The options route, fresh per-operation questions, saved and unknown catalog parts, refused defaults, distinct
   route errors, launch validation and service-tier handling are all asserted in this file. [1]
 
 

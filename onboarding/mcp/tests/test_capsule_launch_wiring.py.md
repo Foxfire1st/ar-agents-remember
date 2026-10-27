@@ -190,13 +190,13 @@ No configured live documentation source was available for this pass.
 
 - The free agent's named absence, and the identity that moves with the seat. [12]
 
-- The lane row D9's fail-closed loader requires for every new test module. [15]
+
 
 - The live launch request value and internal compiler carry capsule identity; removed terminal launch points and the removed resolver are not current production routes. [18]
 
 
 
-> Retained earlier citation wording: - The three governed-artifact rows registering this module as a consumer. [21]
+> Retained earlier citation wording: - The three governed-artifact rows registering this module as a consumer.
 
 
 
@@ -215,5 +215,16 @@ the fixture it is pinned against lives in this repository.
 - Adds a copied shipped corpus fixture while keeping real admission/selection/compilation. Three launch-boundary cases refuse unmarked section text with the exact line (including frontmatter), an operation that does not apply to the requested role, and a missing required operation file; each requires no delivery and a named status. Existing compiler-identity/free-agent/tool-removal cases remain. [22]
 
 - The current task-attached launch asserts equality with the compiler's trusted instructions and semantic digest for the same admitted seat. Workspace-sensitive capsule identity is asserted by a separate free-agent test; it is not a spawn-launch workspace-agreement assertion.  Historical former note: "The spawn side's agreement with its own capsule about the workspace." The former spawn-workspace assertion is historical; the current module has no such test case. [23]
+
+
+
+
+
+
+
+
+
+- The lane row D9's fail-closed loader requires for every new test module.  Anchor: "mcp/tests/test_capsule_launch_wiring.py" [15]
+
 
 - The three governed-artifact rows registering this module as a consumer. [21]

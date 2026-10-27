@@ -289,10 +289,14 @@ Absent input retains the typed defaults: all-human gate policy, maxRounds=5, rev
 - Repository alternatives are refused, including altitude rows. [5]
 
 - Test source names user-only refusal and repository file. [6]
+
 - Removed execution families/fields remain accepted-unused vocabulary. [7]
+
 - Loop defaults remain separate from step-up thresholds. [8]
 
+
 - Typed settings retain their independent defaults. [9]
+
 
 
 - Only effective IDs and accepted-unused execution keys remain. [10]

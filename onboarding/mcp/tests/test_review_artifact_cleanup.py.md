@@ -84,7 +84,7 @@ No configured live documentation source was available for this pass.
 - Never raises; a refused generation is held. [5]
 - A planted foreign manifest releases nothing. [6]
 - Symlinks: the scan, the notes root, the generation directory. [7]
-- The lane row. Source caption: "mcp/tests/test_review_artifact_cleanup.py" [8]
+
 
 ### Cross-Repo References
 
@@ -93,3 +93,7 @@ No cross-repo boundary is crossed by this file.
 - A repeated attempt reports what is already absent, keeps the first receipt as attempt 1, and writes none when nothing is new. [9]
 
 - The planned receipt classes include `explainerArtifacts`. An interrupted deletion of the archived task's external explainer workspace and generation counter is retried as attributed `alreadyAbsent` entries of that class, with `interrupted=true`; the test reads the actual deleted fixture paths and retry receipt. [11]
+
+
+
+- The lane row. Source caption: "mcp/tests/test_review_artifact_cleanup.py" [8]

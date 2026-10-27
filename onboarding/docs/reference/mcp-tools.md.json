@@ -4,7 +4,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "4d099561f10d1ae73b6b908557fd452c7252bfbc",
+        "blob": "1cca4998bfa9489d579e6d86646763bc880a5e18",
         "content": "sha256:789c07c35bb07b48125149f8d927a74707c811ea4548e4b14a347d9b741504dd",
         "locator": {
           "end": 189,
@@ -23,7 +23,7 @@
     },
     {
       "anchor": {
-        "blob": "4d099561f10d1ae73b6b908557fd452c7252bfbc",
+        "blob": "1cca4998bfa9489d579e6d86646763bc880a5e18",
         "content": "sha256:789c07c35bb07b48125149f8d927a74707c811ea4548e4b14a347d9b741504dd",
         "locator": {
           "end": 189,
@@ -42,8 +42,8 @@
     },
     {
       "anchor": {
-        "blob": "4d099561f10d1ae73b6b908557fd452c7252bfbc",
-        "content": "sha256:2a4c8021b7444978b780c206fcd9c885cf96287c42a92a55b0024fdd5f58706e",
+        "blob": "1cca4998bfa9489d579e6d86646763bc880a5e18",
+        "content": "sha256:716a14a69fa7b83afdfb6331ab2aa600e4193122b96e0c41f23ed88a4cc16392",
         "locator": {
           "kind": "file"
         }
@@ -59,8 +59,8 @@
     },
     {
       "anchor": {
-        "blob": "4d099561f10d1ae73b6b908557fd452c7252bfbc",
-        "content": "sha256:2a4c8021b7444978b780c206fcd9c885cf96287c42a92a55b0024fdd5f58706e",
+        "blob": "1cca4998bfa9489d579e6d86646763bc880a5e18",
+        "content": "sha256:716a14a69fa7b83afdfb6331ab2aa600e4193122b96e0c41f23ed88a4cc16392",
         "locator": {
           "kind": "file"
         }
@@ -77,11 +77,11 @@
   ],
   "references": {
     "1": {
-      "note": "The reference header states 40 public tools while the literal roster declares 43; the older header and roster counts are historical, not live advertisement.",
+      "note": "The reference header states 40 public tools while the literal roster declares 44; the older header and roster counts are historical, not live advertisement.",
       "targets": [
         {
           "anchor": {
-            "blob": "4d099561f10d1ae73b6b908557fd452c7252bfbc",
+            "blob": "1cca4998bfa9489d579e6d86646763bc880a5e18",
             "content": "sha256:f9e8d8278ea6c455e34139e07f4eb8439d2ce07b7074c4e361c3daddafccff76",
             "locator": {
               "end": 5,
@@ -109,11 +109,46 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4d099561f10d1ae73b6b908557fd452c7252bfbc",
-            "content": "sha256:2a4c8021b7444978b780c206fcd9c885cf96287c42a92a55b0024fdd5f58706e",
+            "blob": "1cca4998bfa9489d579e6d86646763bc880a5e18",
+            "content": "sha256:716a14a69fa7b83afdfb6331ab2aa600e4193122b96e0c41f23ed88a4cc16392",
             "locator": {
               "kind": "file"
             }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The reference publishes the flat preview modes beside the request-object quality modes.\n\nAnchor: \"citation_fix\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1cca4998bfa9489d579e6d86646763bc880a5e18",
+            "content": "sha256:1b7433c5a465fc3a2c8bc01a7c963e13fccf46adb465c677689eed240170221d",
+            "locator": {
+              "end": 87,
+              "kind": "line_range",
+              "start": 86
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The detailed contract describes shared preview runs and synchronous write ordering.\n\nAnchor: \"mode=\\\"start\\\"\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9cc12d82c359d5d0e3bf22d07526a159a3d8be2a",
+            "content": "sha256:9909c510242a60b9724d65b9a21055f5f13c95e48dbaa06b50f00be4db47b94f",
+            "locator": {
+              "end": 159,
+              "kind": "line_range",
+              "start": 145
+            },
+            "path": "docs/tool-details.md"
           },
           "kind": "code"
         }

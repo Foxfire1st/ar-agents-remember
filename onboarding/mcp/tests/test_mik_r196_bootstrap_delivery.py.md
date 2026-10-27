@@ -22,6 +22,8 @@ Drives the one call's continuation and the free seats' chat discovery through th
 
 - A start answers with the seat it made and the address at which the user continues it, and a repeat reconciles that seat. [1]
 
+
 - A model-only choice binds the caller's own harness, and an unoffered model is refused before a seat exists. [2]
+
 
 - A preparation refusal reports the files already written and each returned effect's identity. [3]

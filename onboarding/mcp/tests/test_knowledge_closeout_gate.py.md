@@ -114,7 +114,7 @@ No configured live documentation source was available for this pass.
 - The memo and the approval state. [9]
 
 
-- The lane row. [10]
+
 
 
 - The memo key names the parent tip and the leaf's memory HEAD. [12]
@@ -130,3 +130,7 @@ No cross-repo boundary is crossed by this file.
 - New invariants, recompute, incomplete runs and registry dispatch; added R53 predicate assertions cover source/membership/record currency. [4]
 - The closeout test answers the code commit's items with recomputed source-bound trace rows, then checks closure/restore and reaching the mutation seam, not a successful product memory commit. [11]
 - Current source delta inspected statically: Align renamed-but-unchanged test identifiers with four-item reopening and R53 source-bound predicates; replace stale population figures with actual static source counts, preserving the narrow closeout mutation-seam limit. [13]
+
+
+
+- The lane row. [10]

@@ -46,7 +46,7 @@ Coherence authority is validated before closeout. Once closeout completed, retai
 - Recovery remains candidate-bound. Conflicting reported commits and commit-proven mutation evidence refuse rather than silently selecting an output.
 - One canonical structured authority selects one immutable coherence generation per leaf. Generated Markdown is checked against that record; historical prose is not an authority-selection mechanism.
 - Current coherence binds the exact candidate pair, task document, code and memory trees, semantic intent, attestation and source-candidate set. Missing or stale intent and mismatching dependencies refuse current use and direct republication.
-- Exact no-content-impact and no-route-impact judgments project into separate onboarding gates. The shared refresh validator composes sidecar and governing-route checks; curator preparation must not treat only one surface as sufficient.
+- Current converted onboarding traces require the applicable source-bound card and governing-route judgments over the same candidate. The former sidecar/governing-route refresh composer is removed; curator preparation must satisfy the surviving converted trace gate rather than treating either surface alone as sufficient.
 - Malformed canonical authority remains subject to exact prepared predecessor identity. Immutable generation collisions and incomplete generations refuse; durable integrity does not substitute for current readiness.
 - Graph-backed consumers use the bound graph-context sprint for their observation rather than mixing its topology with an independently resolved sprint.
 - External-memory closeout obtains its accepted pair from current coherence and re-proves apply/recovery pair identity against the exact contract, rather than substituting repository identity.
@@ -104,10 +104,12 @@ The closeout door first allows the recorded candidate tree itself. For a differe
 
 - Preparation selection requires original certificates and retains command starts, outcomes and selected outputs. [6]
 
-- The curator checklist supplies scope, its worklist-backed `_OnboardingGateInputs` and response to the onboarding refresh gate; that gate dispatches converted history-file traces. It accepts no separate no-impact identities. [7]
+
 
 
 - Converted leaf closeout evaluates its exact candidate through the mandatory invariant gate and refuses an unbound gate; unconverted memory uses the central cutover refusal. No removed prepared-certification adapter is an alternate route. [8]
 
 - Exact accepted and recovered pair identities and source-branch reintegration predicates have shared owners. [9]
 - Both coherence assessment projections delegate supplied per-record measurements to the binding owner. [10]
+
+- The curator checklist supplies scope, its worklist-backed `_OnboardingGateInputs` and response to the onboarding refresh gate; that gate dispatches converted history-file traces. It accepts no separate no-impact identities. [7]

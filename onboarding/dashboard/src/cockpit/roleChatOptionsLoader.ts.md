@@ -10,7 +10,7 @@ Load options/catalog data and restore exact saved request selection.
 
 ## Code Commentary
 
-The effect and manual refresh share scoped options/catalog stores. Abort, active-lifetime, canonical-scope and completion guards reject stale answers; periodic refresh cleans up its timer. Saved request and retry restoration retain exact UUID and references. A singular failure-only execution updates the failure channel without replacing an already selected Result receipt.
+The effect and manual refresh own the current scoped options answer and a presentation-only saved catalog snapshot. Each load asks for the disk snapshot alongside fresh options; the snapshot is accepted only while that fresh request remains pending and is cleared when it settles. There is no process-held role-default cache or inventory merge. Abort, active-lifetime, canonical-scope and completion guards reject stale answers; periodic refresh cleans up its timer. Saved request and retry restoration retain exact UUID and references. A singular failure-only execution updates the failure channel without replacing an already selected Result receipt.
 
 ## Boundaries
 
@@ -19,4 +19,5 @@ Automatic refresh and an explicit successful action have distinct sticky-error c
 ## Evidence
 
 - useRoleChatOptionsLoader is a current owner of the behavior described above. [1]
+
 - applyOptionsSuccess is a current owner of the behavior described above. [2]

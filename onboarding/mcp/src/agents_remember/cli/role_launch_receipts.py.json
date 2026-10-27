@@ -330,12 +330,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0ae2cf68f67e50343d8166d5cc9e46795a520dfd",
+            "blob": "be28238caa1a4769e38c6eb12cdc92ca0d18c95e",
             "content": "sha256:570db7757a23c5d440b7946e3978f8a8b8eadf27041308984611dafe470c2c37",
             "locator": {
-              "end": 586,
+              "end": 585,
               "kind": "line_range",
-              "start": 566
+              "start": 565
             },
             "path": "mcp/tests/test_paseo_status.py"
           },
@@ -348,12 +348,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0ae2cf68f67e50343d8166d5cc9e46795a520dfd",
+            "blob": "be28238caa1a4769e38c6eb12cdc92ca0d18c95e",
             "content": "sha256:7317bfcc777a532104416dab4e9f6aba648e4028e77ec3bd9616eaa9ece25cb8",
             "locator": {
-              "end": 334,
+              "end": 333,
               "kind": "line_range",
-              "start": 318
+              "start": 317
             },
             "path": "mcp/tests/test_paseo_status.py"
           },
@@ -362,7 +362,7 @@
       ]
     },
     "12": {
-      "note": "Pins delivered worker doctrine: one parent role_message after report, none for dashboard-started worker, and a finished turn is not AR acceptance.",
+      "note": "Pins delivered worker doctrine: freeze the candidate and hand it directly to the leaf's Reviewer; the Manager receives no routine report notice. A dashboard-started Worker has no parent, and a finished turn is not AR acceptance.",
       "targets": [
         {
           "anchor": {
@@ -576,8 +576,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "eff61bd009114853d63dfa173a28c593ba4cdf18",
-            "content": "sha256:30594f5fa73a62687ba763a09c8b540cc839fd97f60ccb98945ebe0a25404222",
+            "blob": "7630b4f03f2e79c3a03b3552892457f28bd0cb98",
+            "content": "sha256:a8990b0207d7102eb08de50307f0d286147cb3c2c55ebe5eefc3250d01c1fe3e",
             "locator": {
               "kind": "file"
             },
@@ -592,7 +592,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "40d282dd9310955624bd2cf90cf838bbb8608a41",
+            "blob": "e1dc94b219bf66b192bfdc8b7692d6887a97c99c",
             "content": "sha256:2200041761481afb1a77501bfcdb24006626a7641f1a37c9bc4b85a1fc79e8d9",
             "locator": {
               "kind": "symbol",
@@ -609,8 +609,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "735fbff960e8691bf138f01a4e8aaf4ffc49870b",
-            "content": "sha256:34ba90d18b18a0d2a1051cd76b279ad6535a9ec7b4b089bc843050c8078d2f81",
+            "blob": "54a24300c0ac14f8e309b1cb70d30c4654bf0559",
+            "content": "sha256:8c0a07c684d4f9ef67e55dba4e6f28a432fe0531290b80c0e08e4aa0d87e86f1",
             "locator": {
               "kind": "file"
             },
@@ -625,7 +625,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "40d282dd9310955624bd2cf90cf838bbb8608a41",
+            "blob": "e1dc94b219bf66b192bfdc8b7692d6887a97c99c",
             "content": "sha256:efb058c8ca5c6a9df9153a195baff04ee4188e2855945750b226565550720f3b",
             "locator": {
               "kind": "symbol",

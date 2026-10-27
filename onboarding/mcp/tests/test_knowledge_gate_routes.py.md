@@ -177,7 +177,7 @@ No configured live documentation source was available for this pass.
 
 
 
-- The lane row. [30]
+
 
 - A Git failure asking for a recorded blob is named by the trees and the lane. [31]
 
@@ -195,3 +195,7 @@ No cross-repo boundary is crossed by this file.
 
 
 - The four refusal cases retain their original branches and complete world snapshots. _record checks the exact answer code, state and error detail rather than merely accepting a generic unsuccessful return. [34]
+
+
+
+- The lane row. [30]

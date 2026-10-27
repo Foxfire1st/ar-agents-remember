@@ -136,7 +136,7 @@ The cases and the plan check.
 - The all-unconverted preliminary sync refuses without movement or journal; the successful crossing persists the complete worklist at its new base pair [9]
 
 - Overlapping edits reach the curator; a failed step changes nothing. [10]
-- Its lane row. [11]
+
 
 - A record both sides changed is resolved at one more than the higher side, on a converted and an unconverted own side. [12]
 - The writer compares an unconverted HEAD through its converted base. [13]
@@ -160,3 +160,7 @@ No cross-repo boundary is crossed by this file.
 
 
 - The real managed route rather than the pure plan: the fixture's sync crosses an unconverted leaf into a converted line, lands `synced`, and persists the worklist recomputed at its new base pair. [23]
+
+
+
+- Its lane row.  Anchor: "mcp/tests/test_knowledge_crossing.py" [11]

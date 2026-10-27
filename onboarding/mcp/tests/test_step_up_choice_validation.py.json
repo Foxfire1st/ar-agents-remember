@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3a7482d175a6d374d249e97044b45b1e3dd3139a",
+            "blob": "16a38f7bb452bd43808dd3d21e01fe4c729b1582",
             "content": "sha256:51dbb31df36dcee7a4f08ca266497400c1fcf62a16e8b663fa11ab254cd36964",
             "locator": {
               "kind": "symbol",
@@ -23,7 +23,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3a7482d175a6d374d249e97044b45b1e3dd3139a",
+            "blob": "16a38f7bb452bd43808dd3d21e01fe4c729b1582",
             "content": "sha256:8e1cbf50b78103e452181875e3898119f4603b2fe5c917edba5407a5f1d730db",
             "locator": {
               "kind": "symbol",
@@ -39,8 +39,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3a7482d175a6d374d249e97044b45b1e3dd3139a",
-            "content": "sha256:db94b397178750b01f028a5cf7533d7f576c73656c8654147fa886cd8f187f7d",
+            "blob": "16a38f7bb452bd43808dd3d21e01fe4c729b1582",
+            "content": "sha256:30d932de5d76d24ad53adc5c359cba6ebc98fe8daa117c4fc1f1fe2a4e33bafb",
             "locator": {
               "kind": "symbol",
               "name": "test_effective_noop_step_up_refuses_with_authored_file_and_key"
@@ -55,8 +55,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3a7482d175a6d374d249e97044b45b1e3dd3139a",
-            "content": "sha256:e3037dadd09596c2e9bf5a883932cb083b8f3602fd100ef2b4184b119e877c27",
+            "blob": "16a38f7bb452bd43808dd3d21e01fe4c729b1582",
+            "content": "sha256:60bad0c4829aab1054465368658f236a9624cc4a2b561085eeb61385886f475f",
             "locator": {
               "kind": "file"
             }
@@ -70,7 +70,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3a7482d175a6d374d249e97044b45b1e3dd3139a",
+            "blob": "16a38f7bb452bd43808dd3d21e01fe4c729b1582",
             "content": "sha256:00f592047d184be5c7fbe6b30f21a5ae58c7753177621484bd673fca7dd31303",
             "locator": {
               "kind": "symbol",
@@ -86,7 +86,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3a7482d175a6d374d249e97044b45b1e3dd3139a",
+            "blob": "16a38f7bb452bd43808dd3d21e01fe4c729b1582",
             "content": "sha256:376fb20fdf2e2001cd4f8b6d9da8befda9644a5a6a730d0597a2f22d7009e335",
             "locator": {
               "kind": "symbol",
@@ -102,8 +102,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3a7482d175a6d374d249e97044b45b1e3dd3139a",
-            "content": "sha256:e3037dadd09596c2e9bf5a883932cb083b8f3602fd100ef2b4184b119e877c27",
+            "blob": "16a38f7bb452bd43808dd3d21e01fe4c729b1582",
+            "content": "sha256:60bad0c4829aab1054465368658f236a9624cc4a2b561085eeb61385886f475f",
             "locator": {
               "kind": "file"
             }

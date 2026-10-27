@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "6e8a26329bdabf90cb4e5ecea076413eb85e8cf5",
+        "blob": "7a2d8031eb6ebc7fe32294dde0efeaf8ebe739d5",
         "content": "sha256:8a99062b311fc5e4eb1dc75c12c32e1e546f3d0cd063e32d0eb3565f04b40f72",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "6e8a26329bdabf90cb4e5ecea076413eb85e8cf5",
+        "blob": "7a2d8031eb6ebc7fe32294dde0efeaf8ebe739d5",
         "content": "sha256:39ee99a4b03f3afd3395db519674dafb8a75b12327bd9f54b2deb0cede1c88d2",
         "locator": {
           "kind": "symbol",
@@ -37,7 +37,7 @@
     },
     {
       "anchor": {
-        "blob": "6e8a26329bdabf90cb4e5ecea076413eb85e8cf5",
+        "blob": "7a2d8031eb6ebc7fe32294dde0efeaf8ebe739d5",
         "content": "sha256:fbf9364a31dae82137d4473cafa38841182e78cac7f632b6f79264997385f532",
         "locator": {
           "kind": "symbol",
@@ -54,7 +54,7 @@
     },
     {
       "anchor": {
-        "blob": "6e8a26329bdabf90cb4e5ecea076413eb85e8cf5",
+        "blob": "7a2d8031eb6ebc7fe32294dde0efeaf8ebe739d5",
         "content": "sha256:3a1301eba552553a996caab360d0cadd38e881471a8875aaded2d812b3c48294",
         "locator": {
           "kind": "symbol",
@@ -71,7 +71,7 @@
     },
     {
       "anchor": {
-        "blob": "6e8a26329bdabf90cb4e5ecea076413eb85e8cf5",
+        "blob": "7a2d8031eb6ebc7fe32294dde0efeaf8ebe739d5",
         "content": "sha256:e59d338bb5abd5bd8e3aef5ad3eac5c118837c96184782710efbb260d2829bcd",
         "locator": {
           "kind": "symbol",
@@ -88,7 +88,7 @@
     },
     {
       "anchor": {
-        "blob": "6e8a26329bdabf90cb4e5ecea076413eb85e8cf5",
+        "blob": "7a2d8031eb6ebc7fe32294dde0efeaf8ebe739d5",
         "content": "sha256:2ecffd21ad3108e314559e2a555a6b6aede03717dabb47afb490c112c226f72e",
         "locator": {
           "kind": "symbol",
@@ -105,7 +105,7 @@
     },
     {
       "anchor": {
-        "blob": "6e8a26329bdabf90cb4e5ecea076413eb85e8cf5",
+        "blob": "7a2d8031eb6ebc7fe32294dde0efeaf8ebe739d5",
         "content": "sha256:979facbf22a458fcc3a30e680c34c8f2618d6a96df3efd4ad4f62d6a8de782fb",
         "locator": {
           "kind": "symbol",
@@ -122,6 +122,23 @@
     }
   ],
   "realizes": [],
-  "references": {},
+  "references": {
+    "1": {
+      "note": "Unknown provider offerings retain the configured spelling; known host labels resolve to their IDs and known-empty offerings refuse.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7a2d8031eb6ebc7fe32294dde0efeaf8ebe739d5",
+            "content": "sha256:88b9211297d5dd8c1db7d6bcca60d77dea5d8c921ea9913ee85beb0220225028",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_discovery_unknown_passes_value_and_known_names_use_paseo_labels"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
   "schema": "ar-onboarding-file/v1"
 }

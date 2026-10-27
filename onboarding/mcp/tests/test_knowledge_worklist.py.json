@@ -101,11 +101,11 @@
       ]
     },
     "15": {
-      "note": "The lane registration.\n\nAnchor: \"mcp/tests/test_knowledge_worklist.py\"",
+      "note": "The lane registration.  Anchor: \"mcp/tests/test_knowledge_worklist.py\"",
       "targets": [
         {
           "anchor": {
-            "blob": "102c4550ab6429f44c8fb543d1d0662de66a1b8c",
+            "blob": "5276cd9583d9a33d9094edac37d82b768491aed9",
             "content": "sha256:6c6eb717921aed553123e6ec0c05af608f1f0bb22e31ccf714a7e2642a3bd270",
             "locator": {
               "end": 197,
@@ -118,7 +118,7 @@
         },
         {
           "anchor": {
-            "blob": "102c4550ab6429f44c8fb543d1d0662de66a1b8c",
+            "blob": "5276cd9583d9a33d9094edac37d82b768491aed9",
             "content": "sha256:f1eb15b922e2fc0f023cf3d20bc6030966d637f78693ee2f7948e9cc24017663",
             "locator": {
               "end": 213,
@@ -131,7 +131,7 @@
         },
         {
           "anchor": {
-            "blob": "102c4550ab6429f44c8fb543d1d0662de66a1b8c",
+            "blob": "5276cd9583d9a33d9094edac37d82b768491aed9",
             "content": "sha256:d54a50e03627c892f55b0f78074a6ddb8756f2e162ded114ec1323801d29b354",
             "locator": {
               "end": 167,

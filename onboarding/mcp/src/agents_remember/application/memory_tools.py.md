@@ -168,12 +168,9 @@ caller from reimplementing the controller's failure vocabulary.
 
 ## KS-R23@v1 The Citation Responses Name Their Ruler
 
-The surviving citation-fix entry point returns the measurement's ruler beside its counts:
-`citation_fix_tool` attaches `measuring_build_stamp()` to its response, so the repair counts identify the serving ruler rather than being attributed to the candidate code. The old internal citation-migration entry point is removed.
+KS-R23 introduced the serving-build stamp because the fixed MCP serving build can differ from the candidate under curation. That historical motivation does not make every current citation-fix result stamped. In this source, `citation_fix_tool` adds `measuring_build_stamp()` to the pre-baseline result and the unconverted-memory refusal. The converted-leaf branch instead returns `_citation_fix_result`, which adds failure recovery guidance but no serving-build stamp. Citation census and note revision retain their own explicit stamp calls.
 
-That the repair engine belongs to the *measuring* machinery is the reason it is stamped at all: a count
-produced by a fixed serving build while the candidate carries different code cannot show a fix to that
-machinery. The citation-fix response retains the measuring-build identity. The ordinary leaf writer guard and measured pre-baseline admission remain; `_citation_trees` and the internal migration route do not.
+The ordinary leaf writer guard and measured pre-baseline admission remain. The old internal citation-migration entry point and `_citation_trees` are removed.
 
 ## 260918-TSIP-L6 Branch Authority Unavailable, Answered In The Envelope
 
@@ -210,7 +207,7 @@ DEC-VMMJDN exception does not authorize any of these writes on unconverted memor
 
 - Canonical quality scope is owned by the focused scope module. [4]
 
-- Typed quality execution and public run translation are owned by the controller. [5]
+
 
 - The route-index application entry point forwards resolver-owned authority. [6]
 
@@ -233,10 +230,10 @@ DEC-VMMJDN exception does not authorize any of these writes on unconverted memor
 - Canonical quality scope is owned by the focused scope module. [14]
 - Its resolver, which binds a repository to the scope the quality surface runs against. [15]
 
-- This controller function revalidates the scope, calls the scoped memory-quality check and composes its result. [16]
 
 
-- The controller attaches the curator checklist and enclosure-local worklist for the full scoped publication. [17]
+
+
 
 
 - On a converted tree the citation check reports sidecar references instead of reading citation tables. [18]
@@ -270,3 +267,9 @@ DEC-VMMJDN exception does not authorize any of these writes on unconverted memor
 
 
 - Memory initialization reports the foundation without authoring records. Complete resolved states and nonlegacy unavailable publication name the measured state before the Architect/regular-task/Curator handover; partial-index repair, legacy conversion and admission refusals retain their distinct next actions. [42]
+
+- Typed quality execution and public run translation are owned by the controller. [5]
+
+- This controller function revalidates the scope, calls the scoped memory-quality check and composes its result. [16]
+
+- The controller attaches the curator checklist and enclosure-local worklist for the full scoped publication. [17]

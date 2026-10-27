@@ -265,11 +265,11 @@
       ]
     },
     "16": {
-      "note": "The Ruff `target-version` that must track the supported minor declared here lives in the repository-root project file.\n\nAnchor: \"py313\"",
+      "note": "Ruff keeps its syntax target at Python 3.13; this is explicitly independent from runtime requirements and Pyright language configuration.",
       "targets": [
         {
           "anchor": {
-            "blob": "0b550ee3cda163c8b451cb06a4fb69b489c4686d",
+            "blob": "ddd77babbaaddf51063d6e23856c0cadd142d461",
             "content": "sha256:66849923cf1e429dc9be66b5ca9be29d75ada44505e180a10a193079e3826c7a",
             "locator": {
               "end": 4,
@@ -315,11 +315,11 @@
       ]
     },
     "2": {
-      "note": "Root pytest configuration selects four workers by default.\n\nAnchor: \"-n=4\"",
+      "note": "Root pytest configuration selects four workers by default. The retained historical comments record an earlier four-worker runtime and the earlier population-growth boundary.\n\nAnchor: \"-n=4\"",
       "targets": [
         {
           "anchor": {
-            "blob": "0b550ee3cda163c8b451cb06a4fb69b489c4686d",
+            "blob": "ddd77babbaaddf51063d6e23856c0cadd142d461",
             "content": "sha256:3ba6c4ba535ae9033fbe06949ca6eca5c5c4f4375e101f3172ee3fcaf52092c4",
             "locator": {
               "end": 164,
@@ -332,12 +332,25 @@
         },
         {
           "anchor": {
-            "blob": "0b550ee3cda163c8b451cb06a4fb69b489c4686d",
+            "blob": "ddd77babbaaddf51063d6e23856c0cadd142d461",
             "content": "sha256:70525e47cbd9f3178774a1352cbbf683c00a3ee8c8398143faa2d145d5881347",
             "locator": {
               "end": 186,
               "kind": "line_range",
               "start": 186
+            },
+            "path": "pyproject.toml"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ddd77babbaaddf51063d6e23856c0cadd142d461",
+            "content": "sha256:a2c93a423b219d580128cb62d3ea549600b72ae4da1a3a3f6785aed3eb3193fd",
+            "locator": {
+              "end": 344,
+              "kind": "line_range",
+              "start": 344
             },
             "path": "pyproject.toml"
           },

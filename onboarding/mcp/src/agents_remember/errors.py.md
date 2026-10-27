@@ -20,7 +20,7 @@ Task-intent failures carry an explicit next action. Seat occupancy, dispatch evi
 
 `CuratorCoherenceError`, `MemoryCandidatePairError`, `CuratorCoherencePairError` and `FinalCertificationError` have distinct public response fields. Pair errors preserve the exact failing field and recovery arguments; the coherence adapter forwards the shared pair diagnosis. Final certification uses `certificationStatus`, while pair validation uses `pairStatus` and `pairField`.
 
-Harness errors distinguish a request that sent no bytes, one that may have been sent, a busy adapter that proved zero bytes were sent, request-id conflicts, stale bridge epochs and non-pending interaction responses. Tokenizer and grammar failures remain explicit integrity failures; native-history unavailability does not automatically invalidate the harness adapter.
+The retained earlier harness taxonomy distinguished zero-byte requests, uncertain sends, busy adapters, request conflicts, bridge epochs and pending interactions; those removed harness error classes are not current members of this module. `TokenizerVocabularyError` and `GrammarUnavailableError` remain explicit integrity failures in the current source.
 
 The role-capsule compiler adds a fourth family at the end of the module. cit:([`CapsuleCompilationError`], mcp/src/agents_remember/errors.py:490-531) is the typed refusal a capsule compilation raises, and its shape is what makes a refusal *explainable* rather than merely fatal: `status` is a stable, branchable code (the thirteen in `agents_remember.models.role_capsules.statuses`, plus the application tier's source-admission codes), `detail` names the exact defect for an operator who does not know the internals, `next_action` names **the owner that has to change something**, and `conflicts` carries the structured contradiction rows when the refusal is a stopped conflict. `conflicts` is frozen through `MappingProxyType` per row, so a caller cannot mutate a refusal's evidence after the fact. Two projections are provided: cit:([`render`], mcp/src/agents_remember/errors.py:516-521) is the one-line operator-facing text (`"<status>: <detail> (remedy: <next_action>)"`, with the remedy omitted when empty), and cit:([`response_fields`], mcp/src/agents_remember/errors.py:523-531) is the bounded fact set that adds `nextAction` and `conflicts` only when present, so a lower-layer diagnostic never leaks into a response.
 
@@ -34,7 +34,7 @@ The family's defining invariant is that **a projection is either complete or ref
 
 **The class is not interchangeable with `CapsuleCompilationError`.** `TaskProjectionSourceError` has no `conflicts` field and its `response_fields()` publishes `status`/`detail` plus `nextAction`/`ownerStatus`; the capsule family publishes `nextAction`/`conflicts`. A caller that branches on one family's response keys must not assume the other's.
 
-`AtomicReplaceError` is a later, smaller member appended after the task-context projection family **and after `MemoryModeUnsupportedError`**, which the committed source already carries at `637-685` — it is not part of this change set: the typed failure of `kernel.atomic_write.atomic_replace`, which does two things that fail independently — the rename that makes new bytes reachable and the directory flush that makes the *name* durable. Both legs used to surface as one indistinguishable `OSError`, so a caller could not tell "the destination never changed" from "the destination already changed but the rename is not durable". It carries `leg` (`"replace"` or `"directory-fsync"`), `destination`, `destination_state` and the cause, and `response_fields()` projects the bounded `leg`/`destination`/`destinationState` triple. **The reachable states are exactly two:** the two raise sites in `atomic_replace` publish `"previous-bytes"` (failed rename, nothing published) and `"source-absent"` (successful rename, failed flush). The class docstring additionally lists a `"new-bytes"` state for "the rename completed and its name is not yet durable"; no raise site produces it today, so it is a declared-but-unreachable label and must not be presented as an observed state. The claim the class makes is a *measured* one — the test re-reads the destination after a failed flush and asserts it holds the new bytes — and it deliberately subclasses **both** `AgentsRememberError` and `OSError`, so every existing `except OSError` around a publish keeps observing the failure it always did rather than silently no longer matching it.
+In the current source, `AtomicReplaceError` follows `TaskProjectionSourceError` and precedes `MemoryModeUnsupportedError`. It is the typed failure of `kernel.atomic_write.atomic_replace`, which does two things that fail independently — the rename that makes new bytes reachable and the directory flush that makes the *name* durable. Both legs used to surface as one indistinguishable `OSError`, so a caller could not tell "the destination never changed" from "the destination already changed but the rename is not durable". It carries `leg` (`"replace"` or `"directory-fsync"`), `destination`, `destination_state` and the cause, and `response_fields()` projects the bounded `leg`/`destination`/`destinationState` triple. **The reachable states are exactly two:** the two raise sites in `atomic_replace` publish `"previous-bytes"` (failed rename, nothing published) and `"source-absent"` (successful rename, failed flush). The class docstring additionally lists a `"new-bytes"` state for "the rename completed and its name is not yet durable"; no raise site produces it today, so it is a declared-but-unreachable label and must not be presented as an observed state. The claim the class makes is a *measured* one — the test re-reads the destination after a failed flush and asserts it holds the new bytes — and it deliberately subclasses **both** `AgentsRememberError` and `OSError`, so every existing `except OSError` around a publish keeps observing the failure it always did rather than silently no longer matching it.
 
 The retained comparison-artifact owners use two status-carrying members of AgentsRememberError. CodeObjectRetentionError reports a failed release of a historical pin: a moved ref is code-object-ref-moved and a failed expected-value deletion is code-object-ref-unwritable. Current retention code creates no pin. [18] [20]
 
@@ -54,7 +54,7 @@ Raise the narrow typed family rather than a generic exception when a domain cont
 - A capsule refusal is a **value with a remedy**, not a bare abort: `status` is a stable branching contract, `detail` is operator-facing prose, and `next_action` names the owner that has to change something.
 - `conflicts` rows are frozen at construction. A caller may read a refusal's structured contradiction evidence but must not mutate it.
 - `response_fields()` is the **bounded** projection: it adds `nextAction` and `conflicts` only when they exist, and it must never be widened to carry lower-layer diagnostics.
-- The three `Capsule*` subclasses are boundary markers, not behavior. Adding a distinct meaning to one of them is a contract change for every caller that branches on the exception type.
+- `CapsuleManifestError` and `CapsuleSourceError` are the two subclasses of `CapsuleCompilationError`; they mark defect boundaries without overriding behavior. Adding a distinct meaning to either is a contract change for every caller that branches on the exception type.
 - A compilation failure never becomes a partially valid capsule, so this family is raised **instead of** returning content — it is never a warning channel.
 - A task-context projection is **either complete or refused**. There is no partial projection, no fallback branch, no nearest task match and no silent scope widening; a projection never repairs what it could not resolve.
 - `TaskProjectionSourceError` keeps the wrapped owner's own status in `owner_status`. Do not collapse it into the projection's vocabulary — the whole point is that a caller can branch on the owner's code rather than on prose.
@@ -88,7 +88,9 @@ The error families preserve distinct authority, recovery and transport meanings.
 - Bounded configured-contract authority and reread errors. [3]
 - Separate coherence, exact-pair and final-certification response shapes. [4]
 
-- **The tokenizer vocabulary and the grammar an install cannot supply: the counter's missing vendored vocabulary and a citation check's missing grammar, each raised rather than downloaded or approximated.** [5]
+
+
+- **The tokenizer vocabulary and the grammar an install cannot supply: the counter's missing vendored vocabulary and a citation check's missing grammar, each raised rather than downloaded or approximated.** Current anchors: `TokenizerVocabularyError`, `GrammarUnavailableError`. The earlier `ConversationCompositionError`, `HarnessAdapterDisconnectedError` and `NativeHistoryLimitExceeded` names are historical, not classes in this source. [5]
 
 
 - Control-plane translation preserves the durable-store error family. [6]
@@ -107,7 +109,10 @@ The error families preserve distinct authority, recovery and transport meanings.
 - The case that pins the failure taxonomy: each unresolvable input returns its own status. [16]
 - The typed failure of a two-leg atomic publish, subclassing both the domain family and `OSError` so existing `except OSError` call sites keep observing it. [17]
 
-- **The retention owner's typed failure, whose status distinguishes a ref the record never held, a ref that has moved and a ref that could not be deleted.** [18]
+
+
+- **The retention owner's typed failure, whose status distinguishes a ref the record never held, a ref that has moved and a ref that could not be deleted.**  Anchor: `CodeObjectRetentionError` [18]
+
 
 - **The deletion owner's typed failure, raised before anything is recorded or removed.** [19]
 
@@ -132,3 +137,7 @@ No cross-repository evidence is required for these file-local claims.
 `PaseoRuntimeFailure` now lives here, beside the other named errors, so the shared host modules and the bridge can raise it without importing the CLI package; it carries the code, step, message and optional Paseo detail.
 
 - The shared named host failure and its code/step/message/detail fields. [24]
+
+`SourceFileUnavailableError` carries the reason a cited file cannot be read within the quality check's source policy. Anchor observation handles it as a named not-indexed result rather than aborting the synchronous check.
+
+- Source-read unavailability carries a reason for the reference observer. [25]

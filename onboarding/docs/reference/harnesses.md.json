@@ -26,7 +26,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "db5945e5f2851a76ce476f905684a268325b9442",
+            "blob": "5c065040ed1bf6a4ea566677bab5c49cc68a0c7b",
             "content": "sha256:6b6b2bf502c8b69429486d810824094b1ebc4429f1d02b6a7bad30200c667f33",
             "locator": {
               "kind": "symbol",
@@ -38,12 +38,12 @@
         },
         {
           "anchor": {
-            "blob": "db5945e5f2851a76ce476f905684a268325b9442",
+            "blob": "5c065040ed1bf6a4ea566677bab5c49cc68a0c7b",
             "content": "sha256:d505e5879a9dbba4c6de48cfc0df082590e57fb46470949934476eb3f523db9c",
             "locator": {
-              "end": 496,
+              "end": 489,
               "kind": "line_range",
-              "start": 474
+              "start": 467
             },
             "path": "mcp/src/agents_remember/kernel/_agentic_settings_core.py"
           },
@@ -51,23 +51,23 @@
         },
         {
           "anchor": {
-            "blob": "db5945e5f2851a76ce476f905684a268325b9442",
-            "content": "sha256:83f9ef3b3cacad9ff2e0d4ea57f0bdf33279b90ab372459a61f8a53536b2a19e",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "mcp/src/agents_remember/kernel/_agentic_settings_core.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "db5945e5f2851a76ce476f905684a268325b9442",
+            "blob": "5c065040ed1bf6a4ea566677bab5c49cc68a0c7b",
             "content": "sha256:ff6f103c1e9547e4d195cc8583db4e114e486e67b7da4714a061ce267a18e44a",
             "locator": {
-              "end": 313,
+              "end": 306,
               "kind": "line_range",
-              "start": 291
+              "start": 284
+            },
+            "path": "mcp/src/agents_remember/kernel/_agentic_settings_core.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5c065040ed1bf6a4ea566677bab5c49cc68a0c7b",
+            "content": "sha256:916f4f6f4ec526d877dcfa348f36d22280cccfc684f813741121351feebfc7bb",
+            "locator": {
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/kernel/_agentic_settings_core.py"
           },

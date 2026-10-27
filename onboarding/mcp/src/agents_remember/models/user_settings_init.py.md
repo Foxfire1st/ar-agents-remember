@@ -20,4 +20,5 @@ Declare the answer of the one user-settings initializer: its state, its path, th
 
 - A preview writes nothing and reports the preview state. [3]
 
+
 - Current source account and its stated boundaries. [4]

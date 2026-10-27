@@ -249,7 +249,7 @@ Manager receives the clean-sync focused-test result for its own preview; no clea
 
 - Curator authors scope, completes full MQC and coherence, and records no separate Reviewer-owned Git comparison. Anchor: Normal workflow; Scope before ingest; Authority gates [39]
 
-- Raw quality is retained separately; combined readiness changes only when coherence validation fails after quality is ready. [40]
+
 
 - Current native Curator launch resolves and validates the canonical sprint/master/leaf chain; the removed generic task-binding module supplies no current taskless Curator admission, and the foundation task the Architect opens is an ordinary leaf on that chain. [41]
 
@@ -315,3 +315,7 @@ Manager receives the clean-sync focused-test result for its own preview; no clea
 - Role-stage selection, precise authoring, narrow own-step completion and independent recorded memory lane; source declarations, no execution acceptance. [62]
 
 - The Architect verifies copied developer words against the filed message and claims a master when its record does not name this Architect. [65]
+
+
+
+- Raw quality is retained separately; combined readiness changes only when coherence validation fails after quality is ready. [40]

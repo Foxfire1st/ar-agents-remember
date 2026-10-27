@@ -263,12 +263,12 @@
       ]
     },
     "9": {
-      "note": "The checklist consumer.\n\nAnchor: `_without_proof`",
+      "note": "The checklist consumer.  Anchor: `_without_proof`",
       "targets": [
         {
           "anchor": {
-            "blob": "a4cb0ce3f5f3f488c8ad8313b8063d4a8218871e",
-            "content": "sha256:a2df6307f79b0a5282c67184a98d37a2d5fb71ad24fefd455d684627e7c5a73c",
+            "blob": "f3bf4bfa27b8bfd44cd242540d16a2dbf31ec1c4",
+            "content": "sha256:86b9f991a82d2cf8b7a6604799d421f5a3c8a07dec010204994f79f6296011e1",
             "locator": {
               "kind": "file"
             },

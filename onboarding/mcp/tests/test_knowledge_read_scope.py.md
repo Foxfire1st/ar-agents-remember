@@ -154,11 +154,11 @@ No configured domain documentation could be checked.
 - The persisted-nothing and current file-isolation nodes; the old requested-namespace fixture is not current coverage. [33]
 
 
-- The lane row this module occupies. [34]
 
 
 
-> Retained earlier citation wording: - The support artifacts and contracts the evidence-lifecycle catalog declares this module a consumer of. [35]
+
+> Retained earlier citation wording: - The support artifacts and contracts the evidence-lifecycle catalog declares this module a consumer of.
 
 
 
@@ -167,5 +167,16 @@ No configured domain documentation could be checked.
 No cross-repository behavior is implemented in this file.
 
 No meaningful cross-repo references found.
+
+
+
+
+
+
+
+
+
+- The lane row this module occupies.  Anchor: `test_knowledge_read_scope` [34]
+
 
 - The support artifacts and contracts the evidence-lifecycle catalog declares this module a consumer of. [35]

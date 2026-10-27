@@ -4,7 +4,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "f42b73b25d4034dd173d1c95d74c2b16ba88de6c",
+        "blob": "27ee720224f8f02b7476a5457b1b0bf33fbd9baa",
         "content": "sha256:083c47bbcdf32fb13b088c4fa0e6cedeaee1982b7c66ae5b3caf76023e89547f",
         "locator": {
           "kind": "symbol",
@@ -22,7 +22,7 @@
     },
     {
       "anchor": {
-        "blob": "f42b73b25d4034dd173d1c95d74c2b16ba88de6c",
+        "blob": "27ee720224f8f02b7476a5457b1b0bf33fbd9baa",
         "content": "sha256:9ac3b845fea5ca04fe41a003ac2e460cbe104bdfca98f9602462121f3475b174",
         "locator": {
           "kind": "symbol",
@@ -40,8 +40,8 @@
     },
     {
       "anchor": {
-        "blob": "f42b73b25d4034dd173d1c95d74c2b16ba88de6c",
-        "content": "sha256:dd48fe8ff5e2412c0403a8aa8fd27dc1027a7ba29ad6020b6430133a4bf580b5",
+        "blob": "27ee720224f8f02b7476a5457b1b0bf33fbd9baa",
+        "content": "sha256:bc2984a5bce312feb5ea33efa1dbbfacec12c5a19e140135d506bc73322fc8ee",
         "locator": {
           "kind": "symbol",
           "name": "code_tree_from_working_directory"
@@ -58,7 +58,25 @@
     },
     {
       "anchor": {
-        "blob": "f42b73b25d4034dd173d1c95d74c2b16ba88de6c",
+        "blob": "27ee720224f8f02b7476a5457b1b0bf33fbd9baa",
+        "content": "sha256:bc2984a5bce312feb5ea33efa1dbbfacec12c5a19e140135d506bc73322fc8ee",
+        "locator": {
+          "kind": "symbol",
+          "name": "code_tree_from_working_directory"
+        }
+      },
+      "id": "RLZ-MMDERQ",
+      "invariant": "INV-WTF0AW",
+      "origin": {
+        "handoffEntry": "MIK-R212@v3 rules 2 and 4",
+        "leaf": "260928-MIK-L202"
+      },
+      "rationale": "The existing Git enumeration owns the tracked and non-ignored untracked path set.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "27ee720224f8f02b7476a5457b1b0bf33fbd9baa",
         "content": "sha256:9226866b0e6aea01313acf27e9f5c63e7af01d3eab698717af76b7b21c91c92a",
         "locator": {
           "kind": "symbol",
@@ -76,7 +94,7 @@
     },
     {
       "anchor": {
-        "blob": "f42b73b25d4034dd173d1c95d74c2b16ba88de6c",
+        "blob": "27ee720224f8f02b7476a5457b1b0bf33fbd9baa",
         "content": "sha256:f168e7c4ca8e967b8e0ead5a497a30f5ebeb9254fbb9354ea136c6519b5a65cd",
         "locator": {
           "kind": "symbol",
@@ -99,7 +117,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f42b73b25d4034dd173d1c95d74c2b16ba88de6c",
+            "blob": "27ee720224f8f02b7476a5457b1b0bf33fbd9baa",
             "content": "sha256:312f01489db650ccd1a6f99d36ea871efa7ddecdf6df5314c968292a8ec2e31a",
             "locator": {
               "kind": "symbol",
@@ -110,7 +128,7 @@
         },
         {
           "anchor": {
-            "blob": "f42b73b25d4034dd173d1c95d74c2b16ba88de6c",
+            "blob": "27ee720224f8f02b7476a5457b1b0bf33fbd9baa",
             "content": "sha256:b415f592f50a05e11543c7caf8ad45a8308c83244ef7bc9eb17ca7abd6b018c1",
             "locator": {
               "kind": "symbol",
@@ -122,12 +140,12 @@
       ]
     },
     "10": {
-      "note": "Only the history files of a commit that is not a comparison base.\n\nAnchor: `history_tree_from_git`",
+      "note": "Only the history files of a commit that is not a comparison base.  Anchor: `history_tree_from_git`",
       "targets": [
         {
           "anchor": {
-            "blob": "f42b73b25d4034dd173d1c95d74c2b16ba88de6c",
-            "content": "sha256:22111722cff0f8f56d36e34181298d1f7a3c82c890de68cded99e8414806df58",
+            "blob": "27ee720224f8f02b7476a5457b1b0bf33fbd9baa",
+            "content": "sha256:1d565dc70a6799571f26b7358c170b127906c80d70fa5ec70d0a3feef7bca359",
             "locator": {
               "kind": "file"
             }
@@ -141,7 +159,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f42b73b25d4034dd173d1c95d74c2b16ba88de6c",
+            "blob": "27ee720224f8f02b7476a5457b1b0bf33fbd9baa",
             "content": "sha256:1cd7d74b478d57a2640924890747b4be3f1bb90a0ab21907c1077afd37519fe0",
             "locator": {
               "end": 148,
@@ -153,12 +171,28 @@
         }
       ]
     },
+    "12": {
+      "note": "Git supplies tracked and nonignored untracked paths; links are discarded first.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "27ee720224f8f02b7476a5457b1b0bf33fbd9baa",
+            "content": "sha256:bc2984a5bce312feb5ea33efa1dbbfacec12c5a19e140135d506bc73322fc8ee",
+            "locator": {
+              "kind": "symbol",
+              "name": "code_tree_from_working_directory"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "2": {
       "note": "A tree is converted exactly when it holds the layout marker.",
       "targets": [
         {
           "anchor": {
-            "blob": "f42b73b25d4034dd173d1c95d74c2b16ba88de6c",
+            "blob": "27ee720224f8f02b7476a5457b1b0bf33fbd9baa",
             "content": "sha256:339aef4512e94345d3b3f1783fa1c390ed850f1962a1984f90b0e9652d447946",
             "locator": {
               "kind": "symbol",
@@ -170,12 +204,12 @@
       ]
     },
     "3": {
-      "note": "The code-tree protocol and its two implementations, each answering file and directory existence.\n\nAnchor: `CodeTree` `CodePathSet` `CodeDirectory`",
+      "note": "The code-tree protocol and its two implementations, each answering file and directory existence.  Anchor: `CodeTree` `CodePathSet` `CodeDirectory`",
       "targets": [
         {
           "anchor": {
-            "blob": "f42b73b25d4034dd173d1c95d74c2b16ba88de6c",
-            "content": "sha256:22111722cff0f8f56d36e34181298d1f7a3c82c890de68cded99e8414806df58",
+            "blob": "27ee720224f8f02b7476a5457b1b0bf33fbd9baa",
+            "content": "sha256:1d565dc70a6799571f26b7358c170b127906c80d70fa5ec70d0a3feef7bca359",
             "locator": {
               "kind": "file"
             }
@@ -206,7 +240,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f42b73b25d4034dd173d1c95d74c2b16ba88de6c",
+            "blob": "27ee720224f8f02b7476a5457b1b0bf33fbd9baa",
             "content": "sha256:cdb1520662f37b5cf55a86f420d51b6e9bf672179b0670971cb603e64fceb945",
             "locator": {
               "kind": "symbol",
@@ -218,12 +252,12 @@
       ]
     },
     "6": {
-      "note": "The Git readers: regular files only, blobs read in one batch as exact bytes.\n\nAnchor: `_tree_blobs` `knowledge_tree_from_git` `code_tree_from_git`",
+      "note": "The Git readers: regular files only, blobs read in one batch as exact bytes.  Anchor: `_tree_blobs` `knowledge_tree_from_git` `code_tree_from_git`",
       "targets": [
         {
           "anchor": {
-            "blob": "f42b73b25d4034dd173d1c95d74c2b16ba88de6c",
-            "content": "sha256:22111722cff0f8f56d36e34181298d1f7a3c82c890de68cded99e8414806df58",
+            "blob": "27ee720224f8f02b7476a5457b1b0bf33fbd9baa",
+            "content": "sha256:1d565dc70a6799571f26b7358c170b127906c80d70fa5ec70d0a3feef7bca359",
             "locator": {
               "kind": "file"
             }

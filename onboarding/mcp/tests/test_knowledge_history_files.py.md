@@ -100,7 +100,7 @@ The cases cover `models/knowledge_files/history.py` and its registration in `doc
 
 - The freeze predicate. [8]
 - The parallel merge in a real repository. [9]
-- Lane registration. [10]
+
 
 - The governing-row rules for a changed invariant and a family with a changed guarantee. [11]
 
@@ -116,3 +116,7 @@ No cross-repo boundary is crossed by this file.
 - Writer and validator token tests distinguish new full-hash admission. [13]
 - Stored closed comparison-base legacy items parse, validate and round-trip unchanged. \ [14]
 - Item tokens are judged only in the files the re-anchor check reads: five file/base/route shapes. \ [15]
+
+
+
+- Lane registration.  Anchor: "mcp/tests/test_knowledge_history_files.py" [10]

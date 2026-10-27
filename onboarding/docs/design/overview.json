@@ -176,14 +176,14 @@
       ]
     },
     "27": {
-      "note": "The current collected-case declaration is 10,000 unit/1,000 integration; this is policy, not a collected or executed population.\n\nAnchor: `unit_case_budget`",
+      "note": "The root pytest declaration sets 10000 unit and 2000 integration selected cases; the repository collection guard enforces this pair.",
       "targets": [
         {
           "anchor": {
-            "blob": "0b550ee3cda163c8b451cb06a4fb69b489c4686d",
-            "content": "sha256:5559c13c46e03eb19fae3e43e1e5505868ae7ff83af16118912b42fb3b6d6e08",
+            "blob": "ddd77babbaaddf51063d6e23856c0cadd142d461",
+            "content": "sha256:d54efa326c1d4128e0c15e19ae1c2e3f9fb44b9af2c0cfbcfa5bca0306be0494",
             "locator": {
-              "end": 321,
+              "end": 334,
               "kind": "line_range",
               "start": 320
             },
@@ -287,12 +287,12 @@
       ]
     },
     "30": {
-      "note": "The bootstrap policy and current root declarations agree on 10,000 unit/1,000 integration; host-versus-certifying evidence remains separate.\n\nAnchor: `# Python test policy and commands`; `unit_case_budget`",
+      "note": "The testing design and root configuration agree on 10000 unit and 2000 integration selected cases; historical values describe their earlier policy epochs.",
       "targets": [
         {
           "anchor": {
-            "blob": "7ffa056cff009f353268195182f04dbb00fde93b",
-            "content": "sha256:5546e42c633d481fa5a76d1abd807d52254893801c9d59b9e082450ad123bf2f",
+            "blob": "0d19e9bdf51497de71bacf7a9830b69978d96dc7",
+            "content": "sha256:556a805eda21cb7a1bf1100428de735cab1f03b438105d851a744dd26ec25cfa",
             "locator": {
               "end": 14,
               "kind": "line_range",
@@ -304,10 +304,10 @@
         },
         {
           "anchor": {
-            "blob": "0b550ee3cda163c8b451cb06a4fb69b489c4686d",
-            "content": "sha256:5559c13c46e03eb19fae3e43e1e5505868ae7ff83af16118912b42fb3b6d6e08",
+            "blob": "ddd77babbaaddf51063d6e23856c0cadd142d461",
+            "content": "sha256:d54efa326c1d4128e0c15e19ae1c2e3f9fb44b9af2c0cfbcfa5bca0306be0494",
             "locator": {
-              "end": 321,
+              "end": 334,
               "kind": "line_range",
               "start": 320
             },
@@ -477,6 +477,24 @@
         }
       ]
     },
+    "38": {
+      "note": "The dated raise states the headroom, measured scenario costs and preserved refusal directions.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ddd77babbaaddf51063d6e23856c0cadd142d461",
+            "content": "sha256:d54efa326c1d4128e0c15e19ae1c2e3f9fb44b9af2c0cfbcfa5bca0306be0494",
+            "locator": {
+              "end": 334,
+              "kind": "line_range",
+              "start": 320
+            },
+            "path": "pyproject.toml"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "6": {
       "note": "The former observable session-lifecycle design is explicitly historical under R113.\n\nAnchor: recorded source",
       "targets": [
@@ -518,7 +536,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7ffa056cff009f353268195182f04dbb00fde93b",
+            "blob": "0d19e9bdf51497de71bacf7a9830b69978d96dc7",
             "content": "sha256:b09ffb5d4dc406d5da95535a47409d0b7b687f973669afecb344fa6d195387bf",
             "locator": {
               "end": 24,

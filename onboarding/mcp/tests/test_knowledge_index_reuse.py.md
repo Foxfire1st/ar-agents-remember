@@ -67,10 +67,14 @@ The cases and their keys.
 
 - Views and the comparison over index files. [12]
 
-- The lane row. [13]
+
 
 ### Cross-Repo References
 
 No meaningful cross-repo references found: every case builds its own repository under `tmp_path`.
 
 No cross-repo boundary is crossed by this file.
+
+
+
+- The lane row.  Anchor: `test_knowledge_index_reuse` [13]

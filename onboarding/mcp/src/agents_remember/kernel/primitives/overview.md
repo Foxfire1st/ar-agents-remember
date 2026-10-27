@@ -2,13 +2,13 @@
 
 ## What This Area Is
 
-This directory owns the shared runtime configuration, checkout coordination isolation, gate policy and vocabulary, provider identity, inbox backoff, optional memory-cap planning, drift snapshot and observer paths, command capture, tool reports, provider-degradation settings, version identity, and host authority primitives. Higher layers consume these definitions without making the primitive owners depend on MCP, controlplane, providers, or worktrees.
+This directory owns the shared runtime configuration, checkout coordination isolation, gate policy and vocabulary, provider identity, optional memory-cap planning, drift snapshot and observer paths, command capture, tool reports, provider-degradation settings, version identity, and host authority primitives. Higher layers consume these definitions without making the primitive owners depend on MCP, controlplane, providers, or worktrees.
 
 ## Hot Path Summary
 
 Legacy gateDelegation migration warnings are deduplicated per authority-file-path/shadowed-state pair in the process, rather than on every re-resolution. The downstream direct-leaf authority, ignored directExecutionEnabled input, configured policy precedence and host/readiness boundaries are unchanged. The provider-degradation parser's actual source owner is provider_degradation_settings.py; retained primitives do not restore removed provider tools.
 
-`runtime_config.py` supplies the trusted runtime configuration record and parser. Its Paseo authority property reads the shared host settings on each use; a folder does not establish runtime readiness or model availability. `checkout_coordination.py` selects the loaded checkout's write boundary before runtime configuration reads. Gate policy defaults to human decisions, inbox backoff supplies redelivery timing, and memory-cap planning remains an explicit opt-in.
+`runtime_config.py` supplies the trusted runtime configuration record and parser. Its Paseo authority property reads the shared host settings on each use; a folder does not establish runtime readiness or model availability. `checkout_coordination.py` selects the loaded checkout's write boundary before runtime configuration reads. Gate policy defaults to human decisions, and memory-cap planning remains an explicit opt-in.
 
 Repository configuration carries an optional certification-profile reference. This parser validates its path spelling; profile loading and execution belong to downstream certification owners. Native role launch and replay likewise belong downstream: the CLI launch owner carries task/workspace identity and the stored launch call, while its catalog owner validates model, effort and service-tier selections.
 
@@ -42,7 +42,7 @@ Other modules provide command-module output capture, drift snapshot path/removal
 | `gate_policy.py` | Gate delegation policy. |
 | `gate_vocab.py` | Gate-kind vocabulary. |
 | `identity.py` | Provider instance identity/naming. |
-| `inbox_backoff.py` | Inbox redelivery backoff + rate limiting. |
+| `inbox_backoff.py` (historical, removed) | Former inbox redelivery/backoff helper; no current module or scheduler. |
 | `memory_cap.py` | Optional explicit full-gate hard-cap planning; default host memory/swap remains untouched. |
 | `observer_paths.py` | Observer store-root path conventions. |
 | `provider_degradation_settings.py` | Provider degradation settings parsing. |
@@ -56,7 +56,7 @@ The host modules described above and `user_settings_location.py` also belong to 
 
 - Settings records with fail-loud `ConfigError` and typed error families.
 - Policy/vocabulary literals with single-declaration ownership.
-- Path, checkout-containment, backoff, cap-planning and identity helpers, alongside explicit settings reads, report writes and snapshot removal.
+- Path, checkout-containment, cap-planning and identity helpers, alongside explicit settings reads, report writes and snapshot removal.
 
 ## Operating Model
 
@@ -200,6 +200,7 @@ None.
 - Paseo settings own strict nested runtime fields and the explicit unconfigured-runtime refusal. [4]
 - Runtime configuration owns repository/profile parsing and reads shared host authority per use. [5]
 - Agentic settings keep model, effort and service tier separate and resolve role settings precedence; this file also contains the disclosed upward model import. [6]
+
 - Role settings parsers shape-check independent fields; quality-gate caps remain optional. [7]
 
 - The authority reader reads the block of the MCP settings file on each use. [8]
@@ -212,7 +213,8 @@ None.
 - Remaining opt-in memory-cap planning, provider-degradation settings parsing, report retention/redaction and package/source version resolution keep their primitive owners; removed inbox backoff supplies no current scheduler. [14]
 - Packaged host pins, Linux x86_64 Node selection and the user-settings location supply shared host primitives. [15]
 - Configured-contract authority checks repository identities, memory mode and canonical task/enclosure paths at its mutation boundary. [16]
-- Native launch construction and replay belong to the CLI launch owner; catalog selection refuses unsupported model, effort and feature selections. [17]
+- Native launch construction and replay belong to the CLI launch owner. Catalog selection refuses unsupported model, effort and feature values when the corresponding fresh or saved offering is known; unanswered parts pass configured values through unchecked. [17]
+
 - The kernel validates the optional certification-profile path; requested certification loads that profile, freezes exact admission and executes the selected quality plan through its own owner, independently of ordinary closeout. [18]
 - Legacy gateDelegation migration warnings are deduplicated per authority-file-path/shadowed-state pair in the process, rather than on every re-resolution. The downstream direct-leaf authority, ignored directExecutionEnabled input, configured policy precedence and host/readiness boundaries are unchanged. The provider-degradation parser's actual source owner is provider_degradation_settings.py; retained primitives do not restore removed provider tools. [19]
 - The once-only establishment of the host block. [20]

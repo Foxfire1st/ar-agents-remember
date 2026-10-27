@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "b80702d8154ccb2f28eeee73e070661c0d13db50",
+        "blob": "88de0373d5339b3b1f1fb7cc23c59975ee6b560a",
         "content": "sha256:9e0f636b76e7e7b2a67e44bdc6c06650891e19b0a19a8dd085fdacaf7d401ae8",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,45 @@
     },
     {
       "anchor": {
-        "blob": "b80702d8154ccb2f28eeee73e070661c0d13db50",
+        "blob": "88de0373d5339b3b1f1fb7cc23c59975ee6b560a",
+        "content": "sha256:5a56dc01cee577221dded10630b7848a3434d846fdb2332cdf274638f7c80aba",
+        "locator": {
+          "end": 41,
+          "kind": "line_range",
+          "start": 41
+        }
+      },
+      "id": "RLZ-DNT2PS",
+      "invariant": "INV-63Z0MN",
+      "origin": {
+        "handoffEntry": "L202-A6b-attach-4cb306",
+        "leaf": "260928-MIK-L202"
+      },
+      "rationale": "Displays an explicit override through the same offered ID/label match instead of a local service-tier alias.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "88de0373d5339b3b1f1fb7cc23c59975ee6b560a",
+        "content": "sha256:e0d79930e5a47a875ee44bf38cbd164ad4946d28c8ca3c2ba05c32830286f514",
+        "locator": {
+          "end": 24,
+          "kind": "line_range",
+          "start": 24
+        }
+      },
+      "id": "RLZ-G5BZYA",
+      "invariant": "INV-63Z0MN",
+      "origin": {
+        "handoffEntry": "L202-A6b-attach-2e8221",
+        "leaf": "260928-MIK-L202"
+      },
+      "rationale": "Displays an existing selected feature using the offered label matched without case, preserving configured value when no choice is known.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "88de0373d5339b3b1f1fb7cc23c59975ee6b560a",
         "content": "sha256:e35d363ea0c0769d4eefb5b11118d0e50e1cf0f355fdc7ae55d488c60f6b2854",
         "locator": {
           "kind": "symbol",
@@ -39,7 +77,26 @@
     },
     {
       "anchor": {
-        "blob": "b80702d8154ccb2f28eeee73e070661c0d13db50",
+        "blob": "88de0373d5339b3b1f1fb7cc23c59975ee6b560a",
+        "content": "sha256:8cafdaad8fb9fa8b8677aeb34b78b8e22c971ebcb781a99ca6c2c27fcfd705bd",
+        "locator": {
+          "end": 135,
+          "kind": "line_range",
+          "start": 135
+        }
+      },
+      "id": "RLZ-K9235Z",
+      "invariant": "INV-63Z0MN",
+      "origin": {
+        "handoffEntry": "L202-A6b-attach-59be8b",
+        "leaf": "260928-MIK-L202"
+      },
+      "rationale": "Passes the configured service-tier spelling into the stepped-up base-preview branch, which labels those base choices as not applied to the stepped-up execution; this branch is not the ordinary feature control.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "88de0373d5339b3b1f1fb7cc23c59975ee6b560a",
         "content": "sha256:9e0f636b76e7e7b2a67e44bdc6c06650891e19b0a19a8dd085fdacaf7d401ae8",
         "locator": {
           "kind": "symbol",
@@ -62,7 +119,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b80702d8154ccb2f28eeee73e070661c0d13db50",
+            "blob": "88de0373d5339b3b1f1fb7cc23c59975ee6b560a",
             "content": "sha256:9e0f636b76e7e7b2a67e44bdc6c06650891e19b0a19a8dd085fdacaf7d401ae8",
             "locator": {
               "kind": "symbol",
@@ -78,7 +135,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b80702d8154ccb2f28eeee73e070661c0d13db50",
+            "blob": "88de0373d5339b3b1f1fb7cc23c59975ee6b560a",
             "content": "sha256:beb1dc01ed8c6a7ddacdf6986b39bbe91aa47a708a081eaacf0ac025cbdda884",
             "locator": {
               "kind": "symbol",
@@ -94,8 +151,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b80702d8154ccb2f28eeee73e070661c0d13db50",
-            "content": "sha256:b946d0da0fb25a84cd36af44373126407b6bddd5f36037d50403c7b8490e83a5",
+            "blob": "88de0373d5339b3b1f1fb7cc23c59975ee6b560a",
+            "content": "sha256:3f9e66aaf9e547933bfddf9dc79310cf8126d7a068156eac880b468ed5138a7d",
             "locator": {
               "end": 213,
               "kind": "line_range",
@@ -143,12 +200,12 @@
       ]
     },
     "6": {
-      "note": "File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence.\n\nAnchor: L111–L145",
+      "note": "RoleLaunchFeatures retains settings-owned permissions and non-applied Base previews; feature labels match host IDs or labels without a built-in speed alias.",
       "targets": [
         {
           "anchor": {
-            "blob": "b80702d8154ccb2f28eeee73e070661c0d13db50",
-            "content": "sha256:a25aee52f3020f62c99a41dadc9009860a2560a40e3cf9130e39ba60bacdf8f0",
+            "blob": "88de0373d5339b3b1f1fb7cc23c59975ee6b560a",
+            "content": "sha256:7d419396057235240001b1b041f2bf663423dec70fc501bea19a9c8d50f7176f",
             "locator": {
               "end": 145,
               "kind": "line_range",
@@ -164,7 +221,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b80702d8154ccb2f28eeee73e070661c0d13db50",
+            "blob": "88de0373d5339b3b1f1fb7cc23c59975ee6b560a",
             "content": "sha256:e35d363ea0c0769d4eefb5b11118d0e50e1cf0f355fdc7ae55d488c60f6b2854",
             "locator": {
               "end": 213,

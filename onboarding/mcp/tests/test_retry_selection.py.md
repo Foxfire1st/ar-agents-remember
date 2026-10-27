@@ -53,7 +53,7 @@ The implementation and explicit lane declaration are the load-bearing same-repos
 
 
 
-> Retained earlier citation wording: - The suite has explicit unit-regression membership. Source caption: "mcp/tests/test_retry_selection.py" [3]
+> Retained earlier citation wording: - The suite has explicit unit-regression membership. Source caption: "mcp/tests/test_retry_selection.py"
 
 
 
@@ -63,5 +63,9 @@ The implementation and explicit lane declaration are the load-bearing same-repos
 No meaningful cross-repository boundary is involved.
 
 Temporary paths and mocks remain local to the test process.
+
+
+
+
 
 - The suite has explicit unit-regression membership. Source caption: "mcp/tests/test_retry_selection.py" [3]

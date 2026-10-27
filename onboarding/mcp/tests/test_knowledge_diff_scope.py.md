@@ -139,7 +139,7 @@ No configured domain documentation could be checked.
 
 - The fixture these cases run on. [14]
 
-> Retained earlier citation wording: - **The unit-lane row this module occupies, and the governed support artifact it consumes.** [15]
+> Retained earlier citation wording: - **The unit-lane row this module occupies, and the governed support artifact it consumes.**
 
 ### Cross-Repo References
 
@@ -147,9 +147,18 @@ No cross-repository behaviour is exercised here. The fixture's Git trees are tem
 the comparison's source resolution is driven through the fixture's own committed trees.
 
 No configured cross-repository evidence is claimed.
-> Retained earlier citation wording: - **The unit-lane row this module occupies, and the governed support artifact it consumes.** [16]
-
-- **The unit-lane row this module occupies, and the governed support artifact it consumes.** [15]
+> Retained earlier citation wording: - **The unit-lane row this module occupies, and the governed support artifact it consumes.**
 
 
-- **The unit-lane row this module occupies, and the governed support artifact it consumes.** [16]
+
+
+
+
+
+
+
+
+- **The unit-lane row this module occupies, and the governed support artifact it consumes.**  Anchor: "evidence_node = \"mcp/tests/test_knowledge_diff_scope.py::test_a_realization_the_candidate_removed_keeps_its_baseline_source_in_the_union\"" [15]
+
+
+- **The unit-lane row this module occupies, and the governed support artifact it consumes.**  Anchor: "evidence_node = \"mcp/tests/test_knowledge_diff_scope.py::test_a_realization_the_candidate_removed_keeps_its_baseline_source_in_the_union\"" [16]

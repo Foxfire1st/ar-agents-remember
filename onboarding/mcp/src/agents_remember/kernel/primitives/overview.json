@@ -280,7 +280,7 @@
       ]
     },
     "17": {
-      "note": "Native launch construction and replay belong to the CLI launch owner; catalog selection refuses unsupported model, effort and feature selections.\n\nAnchor: `mcp/src/agents_remember/cli/paseo_launch.py`; `mcp/src/agents_remember/cli/paseo_catalog.py`",
+      "note": "Native launch construction and replay belong to the CLI launch owner. Catalog selection refuses unsupported model, effort and feature values when the corresponding fresh or saved offering is known; unanswered parts pass configured values through unchecked.",
       "targets": [
         {
           "anchor": {
@@ -310,12 +310,12 @@
         },
         {
           "anchor": {
-            "blob": "f65bc41685229d76a9af0e644b2b9b2f17f5579f",
-            "content": "sha256:c24e2502bff061522a869968fb91275aa44a20c5dc8dbe6a422ff06757f8b3a0",
+            "blob": "436a4caf23092264494e8678f2b27e99c20f69a1",
+            "content": "sha256:34489522d7de137eedb8af04875e433e1bf53f6d58d2726fdbe0d7db8e716b2b",
             "locator": {
-              "end": 365,
+              "end": 430,
               "kind": "line_range",
-              "start": 175
+              "start": 233
             },
             "path": "mcp/src/agents_remember/cli/paseo_catalog.py"
           },
@@ -323,12 +323,12 @@
         },
         {
           "anchor": {
-            "blob": "f65bc41685229d76a9af0e644b2b9b2f17f5579f",
-            "content": "sha256:2fd96e648185b50c1a7cf0596be4d11ab9d55d0af656967247dcad27762af32c",
+            "blob": "436a4caf23092264494e8678f2b27e99c20f69a1",
+            "content": "sha256:a8fcd951614e66a3b2f766cdb70bde0964519133b34daeabd189e18c7e64ba3c",
             "locator": {
-              "end": 535,
+              "end": 602,
               "kind": "line_range",
-              "start": 479
+              "start": 541
             },
             "path": "mcp/src/agents_remember/cli/paseo_catalog.py"
           },
@@ -336,12 +336,12 @@
         },
         {
           "anchor": {
-            "blob": "f65bc41685229d76a9af0e644b2b9b2f17f5579f",
-            "content": "sha256:e6578e791324819780d29e9293e53ad0ae2479323c224fd03a737fa508810c2d",
+            "blob": "436a4caf23092264494e8678f2b27e99c20f69a1",
+            "content": "sha256:6bd0539464629f61bbf86778d8e2aae1c6af7d9be4910e5465115950616c10c2",
             "locator": {
-              "end": 623,
+              "end": 680,
               "kind": "line_range",
-              "start": 585
+              "start": 641
             },
             "path": "mcp/src/agents_remember/cli/paseo_catalog.py"
           },
@@ -375,12 +375,12 @@
         },
         {
           "anchor": {
-            "blob": "f65bc41685229d76a9af0e644b2b9b2f17f5579f",
-            "content": "sha256:2a2c663cee9d6310a8f2690a07d659a873ef7a6bddec9ca134eee48eba8be734",
+            "blob": "436a4caf23092264494e8678f2b27e99c20f69a1",
+            "content": "sha256:e04244d97ac6645cc04a11781f410c7a9aacd3aee08c5ca35ca8b2921bf33648",
             "locator": {
-              "end": 366,
+              "end": 431,
               "kind": "line_range",
-              "start": 176
+              "start": 234
             },
             "path": "mcp/src/agents_remember/cli/paseo_catalog.py"
           },
@@ -388,12 +388,12 @@
         },
         {
           "anchor": {
-            "blob": "f65bc41685229d76a9af0e644b2b9b2f17f5579f",
-            "content": "sha256:dea02e3ca897b61813fe0fc2374411f3726b6a345911abd2f56b881f813bfc3c",
+            "blob": "436a4caf23092264494e8678f2b27e99c20f69a1",
+            "content": "sha256:62bf276a25a1bbe4a8539480fa5e79e643d4dd691a3dcf4a7e98c2447449fdd4",
             "locator": {
-              "end": 536,
+              "end": 603,
               "kind": "line_range",
-              "start": 480
+              "start": 542
             },
             "path": "mcp/src/agents_remember/cli/paseo_catalog.py"
           },
@@ -401,12 +401,12 @@
         },
         {
           "anchor": {
-            "blob": "f65bc41685229d76a9af0e644b2b9b2f17f5579f",
-            "content": "sha256:101bffcfdb70c45c61bf57c578b278bdcc3a79906ef1ae9d8a36dc8585dd91ce",
+            "blob": "436a4caf23092264494e8678f2b27e99c20f69a1",
+            "content": "sha256:8fe4dfd83585f38307d6586b29aff30c151bea45c3d1440f5b4ffe6c4b59d7fa",
             "locator": {
-              "end": 624,
+              "end": 681,
               "kind": "line_range",
-              "start": 586
+              "start": 642
             },
             "path": "mcp/src/agents_remember/cli/paseo_catalog.py"
           },
@@ -440,12 +440,12 @@
         },
         {
           "anchor": {
-            "blob": "f65bc41685229d76a9af0e644b2b9b2f17f5579f",
-            "content": "sha256:08bc1b97dff86367df5267b2727fd9c997766e2fc85a277e3a861e0b77685f4a",
+            "blob": "436a4caf23092264494e8678f2b27e99c20f69a1",
+            "content": "sha256:adc1b4009b8c4fc4a17b73edd90fb8da3c51d238745442330d161c9a9d8d93ca",
             "locator": {
-              "end": 346,
+              "end": 411,
               "kind": "line_range",
-              "start": 156
+              "start": 214
             },
             "path": "mcp/src/agents_remember/cli/paseo_catalog.py"
           },
@@ -453,12 +453,12 @@
         },
         {
           "anchor": {
-            "blob": "f65bc41685229d76a9af0e644b2b9b2f17f5579f",
-            "content": "sha256:bea4c26c95cfdf8a40cc72ed2dffe4d7f4bc184151c215119db98970619d09fc",
+            "blob": "436a4caf23092264494e8678f2b27e99c20f69a1",
+            "content": "sha256:0f665a2ec86a072c886d1f6f899dded8d3ff029af466be9ad03eebcb3c6ce33a",
             "locator": {
-              "end": 516,
+              "end": 583,
               "kind": "line_range",
-              "start": 460
+              "start": 525
             },
             "path": "mcp/src/agents_remember/cli/paseo_catalog.py"
           },
@@ -466,12 +466,12 @@
         },
         {
           "anchor": {
-            "blob": "f65bc41685229d76a9af0e644b2b9b2f17f5579f",
-            "content": "sha256:9ecb4fb3ec62682f4786f5d6f510d6712a3a85879d184cab60962844e53c9442",
+            "blob": "436a4caf23092264494e8678f2b27e99c20f69a1",
+            "content": "sha256:8955e3ddf2d47f4c3b84d298ba5732e19a65ee9885eb69bca64c6aa661e659d0",
             "locator": {
-              "end": 604,
+              "end": 661,
               "kind": "line_range",
-              "start": 566
+              "start": 622
             },
             "path": "mcp/src/agents_remember/cli/paseo_catalog.py"
           },
@@ -715,8 +715,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "db5945e5f2851a76ce476f905684a268325b9442",
-            "content": "sha256:83f9ef3b3cacad9ff2e0d4ea57f0bdf33279b90ab372459a61f8a53536b2a19e",
+            "blob": "5c065040ed1bf6a4ea566677bab5c49cc68a0c7b",
+            "content": "sha256:916f4f6f4ec526d877dcfa348f36d22280cccfc684f813741121351feebfc7bb",
             "locator": {
               "kind": "file"
             },

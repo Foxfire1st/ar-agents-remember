@@ -174,7 +174,7 @@ No Domain Documentation source is configured for this memory root.
 
 
 
-> Retained earlier citation wording: - The lane this module is registered in. Source caption: "mcp/tests/test_pause_stop_only_end_to_end.py" [11]
+> Retained earlier citation wording: - The lane this module is registered in. Source caption: "mcp/tests/test_pause_stop_only_end_to_end.py"
 
 
 
@@ -183,23 +183,43 @@ No Domain Documentation source is configured for this memory root.
 
 
 
-> Retained earlier citation wording: - The lane this module is registered in. Source caption: "mcp/tests/test_pause_stop_only_end_to_end.py" [13]
+> Retained earlier citation wording: - The lane this module is registered in. Source caption: "mcp/tests/test_pause_stop_only_end_to_end.py"
 
 
 
 
 
-> Retained earlier citation wording: - The curator-coherence shared-support artifact declares test_pause_stop_only_end_to_end.py as an exact consumer; declaration does not establish invocation. [14]
+> Retained earlier citation wording: - The curator-coherence shared-support artifact declares test_pause_stop_only_end_to_end.py as an exact consumer; declaration does not establish invocation.
 
 
 - The separate publication no case here reaches. [15]
 
-- The integration-case budget this module's membership is accounted against. [16]
+
+
+- The integration-case budget this module's membership is accounted against.  Anchor: `integration_case_budget` [16]
+
+
 - The end-to-end playthrough that exercises pause and resume in lifecycle order and proves the master a pause stops still admits a leaf. [17]
 
 ### Cross-Repo References
 
 No meaningful cross-repository reference applies to this repository-owned boundary proof.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 - The lane this module is registered in. Source caption: "mcp/tests/test_pause_stop_only_end_to_end.py" [11]
 

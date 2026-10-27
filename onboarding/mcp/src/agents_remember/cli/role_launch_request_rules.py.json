@@ -7,8 +7,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "dc63e844bdd0b27fbd266592f9a9821cefcba611",
-            "content": "sha256:23bd27e6b2c5d3b7135b7a6f5a2d0c5b1dfe47654f1729b9c04078b819f961bc",
+            "blob": "6fa1ea0b40930f3f7b7eecbf2e1e53d6a88e6b7d",
+            "content": "sha256:6d5b6e5692c764792426f3fb13ad35c0cd9a5a8adb1c6ef8cf677be48ad72703",
             "locator": {
               "kind": "symbol",
               "name": "with_caller_harness"
@@ -23,7 +23,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "dc63e844bdd0b27fbd266592f9a9821cefcba611",
+            "blob": "6fa1ea0b40930f3f7b7eecbf2e1e53d6a88e6b7d",
             "content": "sha256:8c1e0a60ea38f9776239de9e18393460648b8e07432b0c5ec3cdacd0e72df8ed",
             "locator": {
               "kind": "symbol",
@@ -39,7 +39,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "edb37b70ea9736171b2dd51725691a69d0813b9d",
+            "blob": "43f9bd6748e5bd6ae9d7dd9310202824e7060617",
             "content": "sha256:10c5f14f4859e88da084df881bab90b607c0e937e308e7c78e5bc3ea54f119e2",
             "locator": {
               "kind": "symbol",
@@ -56,7 +56,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "dc63e844bdd0b27fbd266592f9a9821cefcba611",
+            "blob": "6fa1ea0b40930f3f7b7eecbf2e1e53d6a88e6b7d",
             "content": "sha256:40b9b78a5d624b34e69c7053ecc525efc5c313167f38d9dac20a56bfc5682e88",
             "locator": {
               "kind": "symbol",

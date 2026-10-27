@@ -4,8 +4,44 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "f65bc41685229d76a9af0e644b2b9b2f17f5579f",
-        "content": "sha256:deb5817b1cc29eddd77dfb786f9116c0760f59660d4b23199fd2a5487a60531c",
+        "blob": "436a4caf23092264494e8678f2b27e99c20f69a1",
+        "content": "sha256:da9bb84ab152d8536f1b564e85fc8e34c877b27ff313d5c52d3f751764b17d81",
+        "locator": {
+          "kind": "symbol",
+          "name": "runnable_harnesses"
+        }
+      },
+      "id": "RLZ-0V5GSP",
+      "invariant": "INV-RQ2ZB8",
+      "origin": {
+        "handoffEntry": "L202-A6b-shared-fresh-catalog",
+        "leaf": "260928-MIK-L202"
+      },
+      "rationale": "Uses the shared catalog for settings initialization, returning host ID/label rows or unknown rather than an invented empty offer set.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "436a4caf23092264494e8678f2b27e99c20f69a1",
+        "content": "sha256:21f0800be2a7997db8296707a004b040b28dba444cb781207687a04bf3ee2259",
+        "locator": {
+          "kind": "symbol",
+          "name": "provider_accepts_tool_servers"
+        }
+      },
+      "id": "RLZ-17J7VC",
+      "invariant": "INV-RQ2ZB8",
+      "origin": {
+        "handoffEntry": "L202-A6b-shared-fresh-catalog",
+        "leaf": "260928-MIK-L202"
+      },
+      "rationale": "Uses the shared catalog and withholds the task server only for an explicit false provider capability.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "436a4caf23092264494e8678f2b27e99c20f69a1",
+        "content": "sha256:237c17e79fafac87d5035439a39a7ba09dcc077f73281383e7665255b24d2d64",
         "locator": {
           "kind": "symbol",
           "name": "launcher_options"
@@ -22,62 +58,98 @@
     },
     {
       "anchor": {
-        "blob": "f65bc41685229d76a9af0e644b2b9b2f17f5579f",
-        "content": "sha256:f2137421ead3ed7011fe470b12a190f5aa3a1862b743bc636ac3623b16b4b804",
+        "blob": "436a4caf23092264494e8678f2b27e99c20f69a1",
+        "content": "sha256:237c17e79fafac87d5035439a39a7ba09dcc077f73281383e7665255b24d2d64",
         "locator": {
           "kind": "symbol",
-          "name": "resolve_agent_selection"
+          "name": "launcher_options"
         }
       },
-      "id": "RLZ-5JRX01",
+      "id": "RLZ-4FRACE",
       "invariant": "INV-RQ2ZB8",
       "origin": {
-        "handoffEntry": "PNT-R02@v1 §6",
-        "leaf": "260928-MIK-L90"
+        "handoffEntry": "L202-A6b-shared-fresh-catalog",
+        "leaf": "260928-MIK-L202"
       },
-      "rationale": "Rejects unoffered provider/model/effort before creation.",
-      "role": "enforcement"
-    },
-    {
-      "anchor": {
-        "blob": "f65bc41685229d76a9af0e644b2b9b2f17f5579f",
-        "content": "sha256:2ee18b0e960d8f26922b3a32dc406473e3eba269f281aaa5250736623678853e",
-        "locator": {
-          "kind": "symbol",
-          "name": "paseo_catalog_scope"
-        }
-      },
-      "id": "RLZ-8FVGP5",
-      "invariant": "INV-RQ2ZB8",
-      "origin": {
-        "handoffEntry": "PNT-R02@v1 §6",
-        "leaf": "260928-MIK-L90"
-      },
-      "rationale": "Defines the install/home/listen/version cache identity.",
+      "rationale": "Requests full offers for a launcher view and returns the catalog's current/saved/unknown provenance.",
       "role": "primary-authority"
     },
     {
       "anchor": {
-        "blob": "f65bc41685229d76a9af0e644b2b9b2f17f5579f",
-        "content": "sha256:843d1fdf78073c58778d1a9168510ee37a2b38a46810354d96d5cbff39ae1491",
+        "blob": "436a4caf23092264494e8678f2b27e99c20f69a1",
+        "content": "sha256:f1dea313b6bd96304f69e0c24045259f2588effc6ff0d2c5f53348cb91b06716",
+        "locator": {
+          "kind": "symbol",
+          "name": "launcher_catalog"
+        }
+      },
+      "id": "RLZ-6YVTSR",
+      "invariant": "INV-RQ2ZB8",
+      "origin": {
+        "handoffEntry": "L202-A6b-shared-fresh-catalog",
+        "leaf": "260928-MIK-L202"
+      },
+      "rationale": "Asks the configured runtime for each top-level operation; only nested calls reuse the current operation's catalog.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "436a4caf23092264494e8678f2b27e99c20f69a1",
+        "content": "sha256:67430d25426b08cbcf32fd77c3ad62a3f43489b11864e45a57c31c5008847c4d",
         "locator": {
           "kind": "symbol",
           "name": "_resolve_mode"
         }
       },
-      "id": "RLZ-B88P86",
+      "id": "RLZ-AQA2BV",
       "invariant": "INV-7DMXZ3",
       "origin": {
-        "handoffEntry": "L71-CURRENT242-W-04",
-        "leaf": "260928-MIK-L71"
+        "handoffEntry": "L202-M1-mode-offers",
+        "leaf": "260928-MIK-L202"
       },
-      "rationale": "The mode resolver preserves ordinary least-working-mode fallback but uses an offered host default for omitted mode on an explicitly selected cross-scope step-up, and refuses unknown or unoffered catalogs.",
+      "rationale": "Uses known offers to resolve defaults or refuse a named value, while unanswered offers leave configured mode unchecked.",
       "role": "enforcement"
     },
     {
       "anchor": {
-        "blob": "f65bc41685229d76a9af0e644b2b9b2f17f5579f",
-        "content": "sha256:a3ba2f8ef38f4bb239f47600bc8078388bf576b7d68bbba7991f1bc139d24801",
+        "blob": "436a4caf23092264494e8678f2b27e99c20f69a1",
+        "content": "sha256:620526a163bd5b191428039bdfb97ab0ce593c22b9ec51e2f05bb1ea55895ec4",
+        "locator": {
+          "kind": "symbol",
+          "name": "launcher_catalog_question"
+        }
+      },
+      "id": "RLZ-DVGZB0",
+      "invariant": "INV-RQ2ZB8",
+      "origin": {
+        "handoffEntry": "L202-A6b-shared-fresh-catalog",
+        "leaf": "260928-MIK-L202"
+      },
+      "rationale": "Bounds answer reuse to a single operation and resets that ContextVar when the operation exits.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "436a4caf23092264494e8678f2b27e99c20f69a1",
+        "content": "sha256:40f8fc4905c5f963c386d83fdfb55e5b4a87f2020075842498fb330455e8fedc",
+        "locator": {
+          "kind": "symbol",
+          "name": "resolve_agent_selection"
+        }
+      },
+      "id": "RLZ-HFP40K",
+      "invariant": "INV-RQ2ZB8",
+      "origin": {
+        "handoffEntry": "L202-A6b-shared-fresh-catalog",
+        "leaf": "260928-MIK-L202"
+      },
+      "rationale": "Validates known offers before creation and leaves choices unchecked only for unanswered parts.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "436a4caf23092264494e8678f2b27e99c20f69a1",
+        "content": "sha256:902cecd5d251f33487590646e3eaaf501aab7c8bc83423fad14ff75055defd7f",
         "locator": {
           "kind": "file"
         }
@@ -93,7 +165,7 @@
     },
     {
       "anchor": {
-        "blob": "f65bc41685229d76a9af0e644b2b9b2f17f5579f",
+        "blob": "436a4caf23092264494e8678f2b27e99c20f69a1",
         "content": "sha256:54b6ef2a933944520c73acab6fbbcf27cb55859f30f861d728f627d6fcde5299",
         "locator": {
           "kind": "symbol",
@@ -111,7 +183,7 @@
     },
     {
       "anchor": {
-        "blob": "f65bc41685229d76a9af0e644b2b9b2f17f5579f",
+        "blob": "436a4caf23092264494e8678f2b27e99c20f69a1",
         "content": "sha256:d6760aa54784fc632ef9b14625915a343b8caf98e0d524bcbdeb1e2e57c253c9",
         "locator": {
           "kind": "symbol",
@@ -129,8 +201,8 @@
     },
     {
       "anchor": {
-        "blob": "f65bc41685229d76a9af0e644b2b9b2f17f5579f",
-        "content": "sha256:6e58dfe9f55b655992db0380942f2820cd9d7ffe9dadd142a288ab55ee10963c",
+        "blob": "436a4caf23092264494e8678f2b27e99c20f69a1",
+        "content": "sha256:40c6195a6d5fe3993fdd56133bde208da01b7adffd23af71e23dfa57f5342ca5",
         "locator": {
           "kind": "symbol",
           "name": "_resolve_features"
@@ -142,12 +214,12 @@
         "handoffEntry": "L71-CURRENT242-W-05",
         "leaf": "260928-MIK-L71"
       },
-      "rationale": "Resolution validates host offered feature values and their provider/model applicability before an accepted feature reaches the create payload.",
+      "rationale": "Resolution preserves provider/model applicability and validates feature values against known host offerings before create. A catalog part with neither a fresh nor a saved answer remains unchecked, so its configured value reaches the host unchanged.",
       "role": "enforcement"
     },
     {
       "anchor": {
-        "blob": "f65bc41685229d76a9af0e644b2b9b2f17f5579f",
+        "blob": "436a4caf23092264494e8678f2b27e99c20f69a1",
         "content": "sha256:9d4087a3a9ee3ee4277be5feb9389d15a256d9d55f0d417c5cbe3f39ffebfe46",
         "locator": {
           "kind": "symbol",
@@ -165,26 +237,8 @@
     },
     {
       "anchor": {
-        "blob": "f65bc41685229d76a9af0e644b2b9b2f17f5579f",
-        "content": "sha256:8fbf3fd90997084f88cd6d730ec1cc518e3650aed48ea0d26ca3926fac37736c",
-        "locator": {
-          "kind": "symbol",
-          "name": "launcher_catalog"
-        }
-      },
-      "id": "RLZ-SMPN30",
-      "invariant": "INV-RQ2ZB8",
-      "origin": {
-        "handoffEntry": "PNT-R02@v1 §6",
-        "leaf": "260928-MIK-L90"
-      },
-      "rationale": "Discovers only for empty cache or explicit refresh, preserving the selected runtime key.",
-      "role": "enforcement"
-    },
-    {
-      "anchor": {
-        "blob": "f65bc41685229d76a9af0e644b2b9b2f17f5579f",
-        "content": "sha256:f2137421ead3ed7011fe470b12a190f5aa3a1862b743bc636ac3623b16b4b804",
+        "blob": "436a4caf23092264494e8678f2b27e99c20f69a1",
+        "content": "sha256:40f8fc4905c5f963c386d83fdfb55e5b4a87f2020075842498fb330455e8fedc",
         "locator": {
           "kind": "symbol",
           "name": "resolve_agent_selection"
@@ -196,12 +250,12 @@
         "handoffEntry": "L71-CURRENT242-W-01",
         "leaf": "260928-MIK-L71"
       },
-      "rationale": "This resolver validates the selected host provider and its offered model/effort/tier rather than restricting provider selection to AR builtin harness declarations.",
+      "rationale": "The resolver uses Paseo provider/model/effort/tier IDs or labels, without restricting provider selection to AR built-in harness declarations. It validates known fresh or saved offerings and leaves a part unchecked when neither answer exists.",
       "role": "enforcement"
     },
     {
       "anchor": {
-        "blob": "f65bc41685229d76a9af0e644b2b9b2f17f5579f",
+        "blob": "436a4caf23092264494e8678f2b27e99c20f69a1",
         "content": "sha256:66a8b3fc57f621f7f7d97009ee3df3c3d0e7e05bc491e30032c9f07b48e5d835",
         "locator": {
           "kind": "symbol",
@@ -219,8 +273,44 @@
     },
     {
       "anchor": {
-        "blob": "f65bc41685229d76a9af0e644b2b9b2f17f5579f",
-        "content": "sha256:6e58dfe9f55b655992db0380942f2820cd9d7ffe9dadd142a288ab55ee10963c",
+        "blob": "436a4caf23092264494e8678f2b27e99c20f69a1",
+        "content": "sha256:9c2ca81f6a5216bcf902204da2632f872bba64b511ad27977b39bb6c3f004ab3",
+        "locator": {
+          "kind": "symbol",
+          "name": "_question_catalog"
+        }
+      },
+      "id": "RLZ-X66C8E",
+      "invariant": "INV-RQ2ZB8",
+      "origin": {
+        "handoffEntry": "L202-A6b-shared-fresh-catalog",
+        "leaf": "260928-MIK-L202"
+      },
+      "rationale": "Calls the host and merges its reply or failure through the shared durable per-part store.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "436a4caf23092264494e8678f2b27e99c20f69a1",
+        "content": "sha256:9d4087a3a9ee3ee4277be5feb9389d15a256d9d55f0d417c5cbe3f39ffebfe46",
+        "locator": {
+          "kind": "symbol",
+          "name": "settings_role_launch"
+        }
+      },
+      "id": "RLZ-YA1GYN",
+      "invariant": "INV-RQ2ZB8",
+      "origin": {
+        "handoffEntry": "L202-A6b-shared-fresh-catalog",
+        "leaf": "260928-MIK-L202"
+      },
+      "rationale": "Resolves settings-driven explainer choices through the same resolve_agent_selection path.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "436a4caf23092264494e8678f2b27e99c20f69a1",
+        "content": "sha256:40c6195a6d5fe3993fdd56133bde208da01b7adffd23af71e23dfa57f5342ca5",
         "locator": {
           "kind": "symbol",
           "name": "_resolve_features"
@@ -232,7 +322,25 @@
         "handoffEntry": "L71-CURRENT242-W-03",
         "leaf": "260928-MIK-L71"
       },
-      "rationale": "Validates selected feature values against host-offered type/options after scoped composition. Local mode/notes/permission authority is enforced separately by _refuse_repository_role_authority and NON_PERMISSION_FEATURES; this function is not that classifier.",
+      "rationale": "After scoped composition, feature values are checked against known host-offered types and options; parts with neither a fresh nor a saved answer remain unchecked. Local mode, notes and permission authority is enforced separately by _refuse_repository_role_authority and NON_PERMISSION_FEATURES.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "436a4caf23092264494e8678f2b27e99c20f69a1",
+        "content": "sha256:8a9b221e6e947655d7e8c9a202ee41d6a9b1a1c2b902f7b82c40a496208bfe76",
+        "locator": {
+          "kind": "symbol",
+          "name": "paseo_catalog_scope"
+        }
+      },
+      "id": "RLZ-ZFQTQP",
+      "invariant": "INV-RQ2ZB8",
+      "origin": {
+        "handoffEntry": "L202-A6b-shared-fresh-catalog",
+        "leaf": "260928-MIK-L202"
+      },
+      "rationale": "Defines the configured runtime identity for shared saved answers.",
       "role": "enforcement"
     }
   ],
@@ -242,8 +350,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f65bc41685229d76a9af0e644b2b9b2f17f5579f",
-            "content": "sha256:8fbf3fd90997084f88cd6d730ec1cc518e3650aed48ea0d26ca3926fac37736c",
+            "blob": "436a4caf23092264494e8678f2b27e99c20f69a1",
+            "content": "sha256:f1dea313b6bd96304f69e0c24045259f2588effc6ff0d2c5f53348cb91b06716",
             "locator": {
               "kind": "symbol",
               "name": "launcher_catalog"
@@ -258,8 +366,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f65bc41685229d76a9af0e644b2b9b2f17f5579f",
-            "content": "sha256:a3ba2f8ef38f4bb239f47600bc8078388bf576b7d68bbba7991f1bc139d24801",
+            "blob": "436a4caf23092264494e8678f2b27e99c20f69a1",
+            "content": "sha256:902cecd5d251f33487590646e3eaaf501aab7c8bc83423fad14ff75055defd7f",
             "locator": {
               "kind": "file"
             }
@@ -273,21 +381,21 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f65bc41685229d76a9af0e644b2b9b2f17f5579f",
-            "content": "sha256:a3ba2f8ef38f4bb239f47600bc8078388bf576b7d68bbba7991f1bc139d24801",
+            "blob": "436a4caf23092264494e8678f2b27e99c20f69a1",
+            "content": "sha256:40f8fc4905c5f963c386d83fdfb55e5b4a87f2020075842498fb330455e8fedc",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "resolve_agent_selection"
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "f65bc41685229d76a9af0e644b2b9b2f17f5579f",
-            "content": "sha256:f2137421ead3ed7011fe470b12a190f5aa3a1862b743bc636ac3623b16b4b804",
+            "blob": "436a4caf23092264494e8678f2b27e99c20f69a1",
+            "content": "sha256:902cecd5d251f33487590646e3eaaf501aab7c8bc83423fad14ff75055defd7f",
             "locator": {
-              "kind": "symbol",
-              "name": "resolve_agent_selection"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -295,12 +403,12 @@
       ]
     },
     "3": {
-      "note": "Frozen implementation of _selection_refusal supporting the stated file behavior.\n\nAnchor: `_tier_refusal`",
+      "note": "Frozen implementation of _selection_refusal supporting the stated file behavior.\n\nAnchor: `_selection_refusal`",
       "targets": [
         {
           "anchor": {
-            "blob": "f65bc41685229d76a9af0e644b2b9b2f17f5579f",
-            "content": "sha256:a3ba2f8ef38f4bb239f47600bc8078388bf576b7d68bbba7991f1bc139d24801",
+            "blob": "436a4caf23092264494e8678f2b27e99c20f69a1",
+            "content": "sha256:902cecd5d251f33487590646e3eaaf501aab7c8bc83423fad14ff75055defd7f",
             "locator": {
               "kind": "file"
             }
@@ -310,16 +418,16 @@
       ]
     },
     "4": {
-      "note": "Checks reuse, explicit refresh and changed daemon home in the key.",
+      "note": "Checks that every view and start asks fresh and explicit refresh rescans provider discovery.",
       "targets": [
         {
           "anchor": {
-            "blob": "970bac1a296488d06bea9315fb0a241d33dd8744",
-            "content": "sha256:1fbb034e76bb8e5f34e3440e7d408d0ccd0260d92d701d20aad6a39452f02d82",
+            "blob": "00532bdbe263591821e2365606c47747da6ed99a",
+            "content": "sha256:66809e1332ee7087d3d160d114770950a23628d2cf1a3cc43e0ecebac4291bde",
             "locator": {
-              "end": 224,
+              "end": 237,
               "kind": "line_range",
-              "start": 177
+              "start": 178
             },
             "path": "mcp/tests/test_paseo_catalog.py"
           },
@@ -332,12 +440,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "970bac1a296488d06bea9315fb0a241d33dd8744",
-            "content": "sha256:b8568d36b5a5d050388be5fa3e39a1f762704ec5eff70c90635f5d57a0b19938",
+            "blob": "00532bdbe263591821e2365606c47747da6ed99a",
+            "content": "sha256:76deccd2f509435da730cdd3a5519c9a381776b2e2ca596aebb34dc673bf64a8",
             "locator": {
-              "end": 437,
+              "end": 336,
               "kind": "line_range",
-              "start": 361
+              "start": 293
             },
             "path": "mcp/tests/test_paseo_catalog.py"
           },
@@ -350,8 +458,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f65bc41685229d76a9af0e644b2b9b2f17f5579f",
-            "content": "sha256:deb5817b1cc29eddd77dfb786f9116c0760f59660d4b23199fd2a5487a60531c",
+            "blob": "436a4caf23092264494e8678f2b27e99c20f69a1",
+            "content": "sha256:237c17e79fafac87d5035439a39a7ba09dcc077f73281383e7665255b24d2d64",
             "locator": {
               "kind": "symbol",
               "name": "launcher_options"
@@ -366,21 +474,21 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f65bc41685229d76a9af0e644b2b9b2f17f5579f",
-            "content": "sha256:a3ba2f8ef38f4bb239f47600bc8078388bf576b7d68bbba7991f1bc139d24801",
+            "blob": "436a4caf23092264494e8678f2b27e99c20f69a1",
+            "content": "sha256:40f8fc4905c5f963c386d83fdfb55e5b4a87f2020075842498fb330455e8fedc",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "resolve_agent_selection"
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "f65bc41685229d76a9af0e644b2b9b2f17f5579f",
-            "content": "sha256:f2137421ead3ed7011fe470b12a190f5aa3a1862b743bc636ac3623b16b4b804",
+            "blob": "436a4caf23092264494e8678f2b27e99c20f69a1",
+            "content": "sha256:902cecd5d251f33487590646e3eaaf501aab7c8bc83423fad14ff75055defd7f",
             "locator": {
-              "kind": "symbol",
-              "name": "resolve_agent_selection"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -388,12 +496,12 @@
       ]
     },
     "8": {
-      "note": "Host-default-mode path is conditional, and all concrete modes are checked.",
+      "note": "The host-default-mode path remains conditional; concrete modes are checked when mode data is known, while unknown mode data passes the configured value through.",
       "targets": [
         {
           "anchor": {
-            "blob": "f65bc41685229d76a9af0e644b2b9b2f17f5579f",
-            "content": "sha256:843d1fdf78073c58778d1a9168510ee37a2b38a46810354d96d5cbff39ae1491",
+            "blob": "436a4caf23092264494e8678f2b27e99c20f69a1",
+            "content": "sha256:67430d25426b08cbcf32fd77c3ad62a3f43489b11864e45a57c31c5008847c4d",
             "locator": {
               "kind": "symbol",
               "name": "_resolve_mode"
@@ -408,7 +516,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3a7482d175a6d374d249e97044b45b1e3dd3139a",
+            "blob": "16a38f7bb452bd43808dd3d21e01fe4c729b1582",
             "content": "sha256:8e1cbf50b78103e452181875e3898119f4603b2fe5c917edba5407a5f1d730db",
             "locator": {
               "kind": "symbol",

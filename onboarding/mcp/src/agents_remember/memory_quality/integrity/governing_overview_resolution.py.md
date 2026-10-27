@@ -84,5 +84,7 @@ guard is reachable outside pytest.
 - The failable standalone runner: five counters, one row per finding, non-zero exit while any declaration is dead. [5]
 - The metadata reader strips the value's backticks and skips the header and separator rows, which is why a declared target arrives unquoted. [6]
 - Existence probes, including the Windows long-path prefix, are the shared helper's rather than a second implementation's. [7]
-- The consumer: inside `_attach_curator_checklist` the findings are extended into the gated curator repair set, and the counts are published on the response as `governingOverviewResolution` for the curator's loop. [8]
+
 - The falsifiable guard for this module's discrimination, with its green control in the same tree. [9]
+
+- The consumer: inside `_attach_curator_checklist` the findings are extended into the gated curator repair set, and the counts are published on the response as `governingOverviewResolution` for the curator's loop.  Anchor: `check_governing_overview_resolution`; "governingOverviewResolution" [8]

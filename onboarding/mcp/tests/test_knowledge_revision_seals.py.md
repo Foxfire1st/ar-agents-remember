@@ -92,10 +92,10 @@ No configured domain documentation could be checked.
 
 - The read-path recomputation that turns a row whose stored cells were rewritten behind its seal into a storage defect. [8]
 
-- The unit-regression lane row this module is registered by. [9]
 
 
-> Retained earlier citation wording: - The knowledge identity-branching fixture artifact names contract:knowledge-identity-branching-fixture as its replacement and test_knowledge_revision_seals.py as an exact consumer. These declarations do not establish execution. [10]
+
+> Retained earlier citation wording: - The knowledge identity-branching fixture artifact names contract:knowledge-identity-branching-fixture as its replacement and test_knowledge_revision_seals.py as an exact consumer. These declarations do not establish execution.
 
 
 
@@ -104,5 +104,14 @@ No configured domain documentation could be checked.
 No cross-repository behavior is implemented in this file.
 
 No meaningful cross-repo references found.
+
+
+
+
+
+
+
+- The unit-regression lane row this module is registered by.  Anchor: "mcp/tests/test_knowledge_revision_seals.py" [9]
+
 
 - The knowledge identity-branching fixture artifact names contract:knowledge-identity-branching-fixture as its replacement and test_knowledge_revision_seals.py as an exact consumer. These declarations do not establish execution. [10]

@@ -45,6 +45,8 @@ test cannot pass on a value production would never send.
 
 ## Evidence
 
-- The shared fake runtime, its expectations and host preparation. [1]
-- `FakeRuntime` holds agents and workspaces across calls, preserves before-and-after-effect failure scenarios and supplies state, archive and resume. [2]
-- `FakeRuntime._agent_create` records a service tier only when `featureValues` carries `service_tier`, copies the feature map and keeps a supplied `modeId`. [3]
+- The scoped current source carries the module/document behavior described above. [1]
+
+- The module additionally owns `FakeRuntime`, its catalog/server constants and recorded launch-call set. This in-memory bridge stand-in holds agents/workspaces across calls, preserves before/after-effect failure scenarios and supplies state/archive/resume plus `agents-live` answers; `unlisted` makes the census incomplete. `GivenToAgentExpectations` derives the data a dispatch gives an agent, but its first-message line comes from the production `artifact_line`, so only the data is independent and the formatting is shared. Launch/status/document-chat suites share the fake, not a live harness or production host. [2]
+
+- FakeRuntime._agent_create now records a serviceTier only when featureValues actually contains service_tier, separately copies any supplied featureValues map and retains modeId when supplied. This supports permission-feature-only payloads without a service-tier KeyError and exposes submitted choices to the controlled observations. Default-model and idempotent agent-state behavior remain. [3]

@@ -14,8 +14,8 @@ The skills-versus-tools paragraph now names the kept owners: `c-00-initialize-me
 
 ## Code Commentary
 
-The current literal PUBLIC_TOOLS has42 distinct entries, including user_settings_init, after removal of dispatch_agent and resolve_context;40/41-entry populations are historical, not this candidate roster.
-The current frozen reference header still literally states40 public tools, so its count disagrees with the 42-entry literal roster; that header count is source-document debt, not a roster census. Pre-L113 header38 and predecessor40/41/42 rosters remain historical source epochs, not current counts or a CODE repair request. The source also contains older databasePath/repositoryId knowledge rows plus removed
+The current literal PUBLIC_TOOLS has44 distinct entries, including user_settings_init, after removal of dispatch_agent and resolve_context;40/41-entry populations are historical, not this candidate roster.
+The current frozen reference header still literally states40 public tools, so its count disagrees with the 44-entry literal roster; that header count is source-document debt, not a roster census. Pre-L113 header38 and predecessor40/41/42 rosters remain historical source epochs, not current counts or a CODE repair request. The source also contains older databasePath/repositoryId knowledge rows plus removed
 knowledge_change/knowledge_project and other historical transport rows; those are not
 current calls. The map is not the roster. Confirm the selected server's exact schema and
 use memoryRoot/repositoryRoot/codeTreeId for the retained converted-tree reads and opaque
@@ -40,7 +40,20 @@ but cannot advertise removed tools or turn a transport acceptance into implement
 
 
 
-- Source reference records retirement of structural/lifecycle/provider/benchmark/capsule tools; backend existence is not advertisement. [2]
+
+
+
+## Citation preview and concurrent calls
+
+Citation repair keeps synchronous preview and writes, and adds background preview through the quality run registry. Its flat start call names the repository, optional candidate contract and optional document selection, with `mode="start", dry_run=true`; poll uses `mode="poll", run_id=...`, the same scope and no selectors. Capacity, run ownership, terminal eviction and worker-failure handling are shared with quality checks. The completed preview preserves the synchronous result apart from run state/identity. Background mode never applies repairs.
+
+Synchronous tool bodies run off the event loop so other reads and polls can answer while they run. Potentially mutating synchronous calls keep one server-local ordering lock until the worker stops; existing asynchronous handlers retain their original path. This is not a blanket guarantee that every tool is side-effect-free or that a timeout cancels a worker.
+
+
+- The reference publishes the flat preview modes beside the request-object quality modes. [3]
+
+
+- The detailed contract describes shared preview runs and synchronous write ordering. [4]
 
 
 ## Historical superseded account (non-operative)
@@ -111,4 +124,15 @@ task itself is not completed, is unchanged. The same clauses are in the register
 (`mcp/registration/tasks.py`) and the `w-02-light-task-workflow` skill, which now owns that procedure.
 
 
-- The reference header states 40 public tools while the literal roster declares 43; the older header and roster counts are historical, not live advertisement. [1]
+
+
+
+
+
+
+
+- The reference header states 40 public tools while the literal roster declares 44; the older header and roster counts are historical, not live advertisement. [1]
+
+
+
+- Source reference records retirement of structural/lifecycle/provider/benchmark/capsule tools; backend existence is not advertisement. [2]

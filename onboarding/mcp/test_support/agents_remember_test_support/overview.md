@@ -34,7 +34,7 @@ The Python suite adapter executes the pytest step constructed by the quality-pla
 
 `code_quality/catalog_selection.py` narrows consumer-list-only catalog edits to the union of old and new affected consumers. Changes to broader catalog semantics retain global invalidation; malformed catalog text refuses. `code_quality/dependency_ownership.py` supplies repository-input consumer declarations and retains unresolved ownership explicitly.
 
-`code_quality/completion_relay.py` guards the standing one-relay contract: `adapter evidence -> catalog -> notifier -> durable inbox -> owner`. The contract requires exactly two lifecycle-owned entry points into the shared terminal-observation body, one startup prime and one recurring steady-state caller, and forbids HTTP routes from advancing observation. The guard also preserves the existing notifier refresh authority rather than treating it as a third observation-entry owner. Its census records sweeper constructions, reads and mutations, observation-body calls, references to observation entry callables, route handlers, and harness-wire submissions. Reviewed sets and remediation text make additional authority visible to its direct assertion suite. This is a structural census with declared blind spots, not proof that every possible runtime indirection follows the relay.
+The earlier `code_quality/completion_relay.py` account described a structural census for the relay `adapter evidence -> catalog -> notifier -> durable inbox -> owner`, with startup and recurring observation entry points. That module is absent from the frozen source tree, so this account is historical and supplies no current relay guard, HTTP exclusion check or runtime-indirection guarantee.
 
 `testing/curation_doctrine.py` owns normalized retired-wording checks and positive checks for compact curation policy. It strips Markdown emphasis and collapses wrapping before matching retired statements on the surfaces that shipped them. A separate registry checks the retired repair-loop field pairing and the corrected field names in declared documents. The module imports neither pytest nor a fixed repository root, so callers can supply staged or synthetic trees. Its retired-wording scan is a census, not a semantic check: fresh vocabulary can escape it. The compact-policy helper accepts any listed statement for each declared source; the direct canonical-source test requires every listed statement. Complete curation remains the stated intent, and those different deciding predicates must not be described as equivalent.
 
@@ -56,20 +56,39 @@ Repository-owned design descriptions live in `docs/design/python-evidence-system
 - Production coverage is diagnostic and CRAP20 is a review trigger. Lint, typing, structural rules, real test failures and malformed diagnostic inputs remain enforcing.
 - The retired causal/retry route-evidence and route-measurement machinery must not be restored as a duplicate measurement path, and removed tests must not be treated as current protection.
 
-Case budgets belong to the root `pyproject.toml` rather than this overview or a test-local default. Its current declarations at `pyproject.toml:320-321` are `unit_case_budget = 10000` and `integration_case_budget = 1000`; the unit ceiling has been raised three times since D226's 4000 — to 5000, to 6000 by L54 and to 10000 by L193's D460 — and only the unit ceiling moved, with integration and guard behavior unchanged. Readers must re-read that owner when the limits change.
+Case budgets belong to the root `pyproject.toml` rather than this overview or a test-local default. Its current declarations at `pyproject.toml:333-334` are `unit_case_budget = 10000` and `integration_case_budget = 2000`; the unit ceiling has been raised three times since D226's 4000 — to 5000, to 6000 by L54 and to 10000 by L193's D460 — and the unit ceiling remains 10000 and D579 raises integration to 2000; guard behavior is unchanged. Readers must re-read that owner when the limits change.
 
 ## File-Level Onboarding Map
 
-File-level onboarding is intended to cover every current Python source below this route with its same-route card and sidecar. The inspected tree does not yet meet that boundary: `code_quality/completion_relay.py` lacks both files, while `__init__.py`, `testing/causal_dependency.py` and `testing/candidate_snapshot.py` have Markdown cards but lack JSON sidecars. Generated route-index completeness is not established by this inventory.
+File-level onboarding is intended to cover every current Python source below this route with its same-route card and sidecar. The inspected memory tree still has Markdown cards but no JSON sidecars for `__init__.py`, `testing/causal_dependency.py` and `testing/candidate_snapshot.py`. `code_quality/completion_relay.py` is absent from source and is not a missing-current-source-card case. Generated route-index completeness is not established by this inventory.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+### Integration headroom
+
+On 2026-10-26, the integration ceiling rises from 1000 to 2000; unit remains 10000. The source-file cases protect Git listing, bounded reads and readable excluded citations. The original 16-case shape measured 18.56 s and independently 20.15 s; grouping preserved its scenarios in four cases and 14 subtests at 19.70 s. The two link-class regressions produce four cases and 16 subtests: v2 measured 27.47 s and v3 38.20 s. No case was weakened or moved to the unit lane. Both over-budget refusal directions remain enforced. These are scenario-run measurements, not whole-suite runtime or a claimed speedup.
 
 ## Evidence
-
 - Canonical POSIX-string sorting retains duplicate path entries. [2]
-
-
-- The enforced collected-case pair is 10,000 unit/1,000 integration; the unit-only policy raises leave the guard unchanged. [3]
-
-
+- The root declares 10000 unit and 2000 integration selected cases. The current integration raise preserves marker classification and both over-budget refusal directions. [3]
 - The adapter rederives the selector and compares each executable path population exactly. [1]
 - Development dependencies and checkout import paths are distinct from installed product-package discovery. [4]
 > Retained earlier citation wording: - Certifying pytest startup requires admission before preparing candidate state and loading the certifying plugin. [5]
@@ -78,18 +97,11 @@ File-level onboarding is intended to cover every current Python source below thi
 - Targeted ownership remains typed-incomplete and refuses executable quality configuration when unresolved. [8]
 - Exact-candidate cache reuse checks selection identity. [9]
 - The adapter constructs an explicit phase-report path; the quality-plan owner registers its reporting plugin. [10]
-
 - Consumer-only catalog changes preserve old and new consumers; repository inputs use explicit consumer declarations. [12]
-
-
 - Retired-wording checks are normalized and surface-specific; compact-policy helper and canonical test use different predicates. [14]
-
-
-
 - The current projection generator derives the serialized TypeScript and schema contracts from the Pydantic declarations, folding the served tail fields (`servingBuild`, `watcherHealth`, `checkoutBinding`) that `ServedWorkspaceProjection` declares into the same generated output. [15]
-
 - Evidence design separates development and diagnostic artifacts from immutable certifying publication and records Candidate A retirement. [16]
 - Case budgets are root declarations rather than overview-owned constants. [17]
 - Dagger owns the retained build and retry cache bindings. [18]
-
 - Certifying pytest startup requires admission before preparing candidate state and loading the certifying plugin. [5]
+- The dated raise states the headroom, measured scenario costs and preserved refusal directions. [19]

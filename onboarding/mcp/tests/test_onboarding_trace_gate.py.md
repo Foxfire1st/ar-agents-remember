@@ -128,7 +128,7 @@ No configured live documentation source was available for this pass.
 
 
 
-- The unit-lane registration. Source caption: "mcp/tests/test_onboarding_trace_gate.py" [18]
+
 
 
 
@@ -150,3 +150,7 @@ No cross-repo boundary is crossed by this file.
 - Unnecessary rows, five registry facts including sourceBlobs, and rejection of counted-change-only satisfaction. [7]
 - test_a_moved_marker_row_binds_its_sources_and_reopens_on_change preserves row identity/markers and the unchanged candidate source binding on rewrite, updates the reason to `Re-reviewed.`, then reopens after source movement. [8]
 - Current source delta inspected statically: Repair current-row/counting doctrine, moved-marker caption and worklist/blob inputs; keep historical rulings explicitly superseded. [20]
+
+
+
+- The unit-lane registration. Source caption: "mcp/tests/test_onboarding_trace_gate.py" [18]

@@ -115,7 +115,7 @@ No configured live documentation source was available for this pass.
 - The invariant view, moves and re-anchors, and the timeline cache. [36]
 - The family, decision, incident and facet, and census views. [37]
 - The route, and bad requests and bounded code notices. [39]
-- The lane row. [40]
+
 - A history row's incoming link carries the record the row is about. [41]
 
 ### Cross-Repo References
@@ -124,3 +124,7 @@ No cross-repo boundary is crossed by this file.
 
 
 - Published selection reads uncommitted memory without writes and pins only clean state; live-leaf selection names excluded uncommitted code; partial-index and missing-code-tree notices remain covered. The hexadecimal-name selection test is absent. [38]
+
+
+
+- The lane row.  Anchor: `test_knowledge_reader` [40]

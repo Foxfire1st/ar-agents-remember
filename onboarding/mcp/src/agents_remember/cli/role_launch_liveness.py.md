@@ -39,11 +39,16 @@ No finished turn accepts AR work or frees a live leaf holder. Held-state persist
 
 - Checks bytes, inode and mtime unchanged on failed/unreadable state and response-only unreachable reason. [6]
 
+
 - Answered refusal persists as failed across refreshes without rewrite and blocks another Revive. [7]
 
+
 - Observing the same session open clears prior resume refusal. [8]
+
 - Checks unresolved/rejected receipts returned unchanged without host read. [9]
+
 - Checks an idle finished native turn projects completed lifecycle status and its bounded last text; the test does not itself prove absence of every semantic/Git mutation. [10]
+
 
 
 ## Investigator scope and request identity
@@ -62,7 +67,8 @@ Selected-task Investigator starts reconcile their exact request instead of adopt
 - Changes task/capsule/prompt inputs and verifies repeat returns or replays saved receipt without new preparation. [4]
 
 
-- Pins delivered worker doctrine: one parent role_message after report, none for dashboard-started worker, and a finished turn is not AR acceptance. [11]
+
+- Pins delivered worker doctrine: freeze the candidate and hand it directly to the leaf's Reviewer; the Manager receives no routine report notice. A dashboard-started Worker has no parent, and a finished turn is not AR acceptance. [11]
 
 
 - Composes delivered architect/manager/orchestrator capsule text, requires current diff/evidence inspection and owner acceptance clauses, and detects removal of manager inspection; this proves instruction delivery rather than runtime no-mutation. [12]

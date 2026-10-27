@@ -10,7 +10,7 @@ Derive normalized selection and Start, Retry and Result readiness facts.
 
 ## Code Commentary
 
-Live occupant, ready/complete/busy state, request policy and exact retry scope determine the offered action facts. Per-request starts exclude starting/unknown receipts; singleton and Projects bound Starts still pass the caller’s final bound guard.
+Live occupant, ready/complete/busy state, request policy and exact retry scope determine the offered action facts. Choice validation also receives catalog discovery state: unknown parts do not create a local unsupported-choice refusal, but options must still settle before Start is ready. Per-request starts exclude starting/unknown receipts; singleton and Projects bound Starts still pass the caller’s final bound guard.
 
 ## Boundaries
 
@@ -19,4 +19,5 @@ Pure predicates do not mutate selection or admit backend work. Retry scope match
 ## Evidence
 
 - resolveLaunchReadiness is a current owner of the behavior described above. [1]
+
 - startAllowed is a current owner of the behavior described above. [2]

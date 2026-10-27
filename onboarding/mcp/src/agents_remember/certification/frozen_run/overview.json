@@ -120,7 +120,7 @@
       ]
     },
     "5": {
-      "note": "Historical pre-R65 refresh composition checked sidecars and route overviews; that legacy composition is removed. The surviving converted controller uses its trace gate.\n\nAnchor: `validate_memory_refresh_attestations` `_onboarding_refresh_gate`",
+      "note": "Historical pre-R65 refresh composition checked sidecars and route overviews; that legacy composition is removed. The surviving converted controller uses its trace gate.  Anchor: `validate_memory_refresh_attestations` `_onboarding_refresh_gate`",
       "targets": [
         {
           "anchor": {
@@ -135,8 +135,8 @@
         },
         {
           "anchor": {
-            "blob": "a4cb0ce3f5f3f488c8ad8313b8063d4a8218871e",
-            "content": "sha256:a2df6307f79b0a5282c67184a98d37a2d5fb71ad24fefd455d684627e7c5a73c",
+            "blob": "f3bf4bfa27b8bfd44cd242540d16a2dbf31ec1c4",
+            "content": "sha256:86b9f991a82d2cf8b7a6604799d421f5a3c8a07dec010204994f79f6296011e1",
             "locator": {
               "kind": "file"
             },

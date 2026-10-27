@@ -150,13 +150,13 @@ it.
 
 
 
-> Retained earlier citation wording: - **The lane row that selects this module, and the artifact consumer row that registers it against the fixture it consumes.** [16]
+> Retained earlier citation wording: - **The lane row that selects this module, and the artifact consumer row that registers it against the fixture it consumes.**
 
 
 
 
 
-> Retained earlier citation wording: - The `consumer_scope = "exact"` artifact whose list this module joined. [17]
+> Retained earlier citation wording: - The `consumer_scope = "exact"` artifact whose list this module joined.
 
 
 
@@ -182,6 +182,17 @@ Fixture repositories and protocol doubles do not establish a live external integ
 - The projection owner defines canonical structured-value text and its wrapper markers. The retained local test asserts key-order canonicality; marker round-trip test coverage is not claimed. [13]
 
 - The current compose_review entry point takes resolution and request; the local review helper invokes it without the removed ReviewRecordInputs bag. [14]
+
+
+
+
+
+
+
+
+
+
+
 
 - **The lane row that selects this module, and the artifact consumer row that registers it against the fixture it consumes.** [16]
 

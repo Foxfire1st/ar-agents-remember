@@ -4,7 +4,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "4f542fc6a6101512a8a4688f8bd109a5ae5c55f1",
+        "blob": "2aefd05f27aa14bee11185673ef4a09e2f9dc55f",
         "content": "sha256:352aeecbb61b1546e1c531078d752b12ab659017adad5b11888bfa7f3a6ffadb",
         "locator": {
           "kind": "symbol",
@@ -22,7 +22,7 @@
     },
     {
       "anchor": {
-        "blob": "4f542fc6a6101512a8a4688f8bd109a5ae5c55f1",
+        "blob": "2aefd05f27aa14bee11185673ef4a09e2f9dc55f",
         "content": "sha256:d76d5b2e8837a52a2a5983f15e9d924fffb772f728a7fde5152e6db885f8af24",
         "locator": {
           "kind": "symbol",
@@ -40,8 +40,8 @@
     },
     {
       "anchor": {
-        "blob": "4f542fc6a6101512a8a4688f8bd109a5ae5c55f1",
-        "content": "sha256:da8fc34daa9eb7458bc351502dd76d87c9a1ef247dd3c208c1e06d46f0e29f67",
+        "blob": "2aefd05f27aa14bee11185673ef4a09e2f9dc55f",
+        "content": "sha256:a1d18c0b9897a6e059820c9a6c05e9a75ec21de1f2b2e2fad0039b4214c6388d",
         "locator": {
           "kind": "file"
         }
@@ -57,7 +57,7 @@
     },
     {
       "anchor": {
-        "blob": "4f542fc6a6101512a8a4688f8bd109a5ae5c55f1",
+        "blob": "2aefd05f27aa14bee11185673ef4a09e2f9dc55f",
         "content": "sha256:2472cefe0f77a03045a4b389e5f8e1102c885b522d539b95d6a9ff74107686da",
         "locator": {
           "kind": "symbol",
@@ -75,49 +75,11 @@
     },
     {
       "anchor": {
-        "blob": "4f542fc6a6101512a8a4688f8bd109a5ae5c55f1",
-        "content": "sha256:68dd03c55d195ea34ce52b0977c306487e68c20d24155ca2a4d45d506c606f82",
+        "blob": "2aefd05f27aa14bee11185673ef4a09e2f9dc55f",
+        "content": "sha256:35d445b9fbcf93f458571be8f1390bc1608b893aa8f8d362f1414820e2be1fb6",
         "locator": {
           "kind": "symbol",
-          "name": "role_message_limit"
-        }
-      },
-      "id": "RLZ-737EJY",
-      "invariant": "INV-A87E4H",
-      "origin": {
-        "handoffEntry": "L117-R01",
-        "leaf": "260928-MIK-L117"
-      },
-      "rationale": "The per-call limit read keeps a changed number effective for the next call without a restart.",
-      "role": "enforcement"
-    },
-    {
-      "anchor": {
-        "blob": "4f542fc6a6101512a8a4688f8bd109a5ae5c55f1",
-        "content": "sha256:f87a8363805aff1ab8fca717445b31b42445344f416b1906cf07cdc2fb49033e",
-        "locator": {
-          "end": 389,
-          "kind": "line_range",
-          "start": 336
-        }
-      },
-      "id": "RLZ-7HPMFG",
-      "invariant": "INV-RTQCXN",
-      "origin": {
-        "handoffEntry": "L100-R100-set-start-and-held-seats",
-        "leaf": "260928-MIK-L100"
-      },
-      "rationale": "One call prepares and starts the leaf's three seats as a set with Reviewer and Curator held.",
-      "role": "enforcement"
-    },
-    {
-      "anchor": {
-        "blob": "4f542fc6a6101512a8a4688f8bd109a5ae5c55f1",
-        "content": "sha256:f6860583abc4bd2bf2a6b311b16c42c9e5d00453d8e340e27e6fa11a75814e43",
-        "locator": {
-          "end": 1715,
-          "kind": "line_range",
-          "start": 1618
+          "name": "_deliver"
         }
       },
       "id": "RLZ-7MG9HB",
@@ -131,48 +93,12 @@
     },
     {
       "anchor": {
-        "blob": "4f542fc6a6101512a8a4688f8bd109a5ae5c55f1",
-        "content": "sha256:b0bf53728de4411d8749e98977b4e10f4c738ce7008aaa357f16a50f9d6b6b5d",
-        "locator": {
-          "kind": "symbol",
-          "name": "_recipient_by_selection"
-        }
-      },
-      "id": "RLZ-87W4MJ",
-      "invariant": "INV-R9S24S",
-      "origin": {
-        "handoffEntry": "PNT-R06@v1 §5 / G7 / F3 / A1",
-        "leaf": "260928-MIK-L90"
-      },
-      "rationale": "Refuses multiple live taskless agents or truncated candidate set.",
-      "role": "enforcement"
-    },
-    {
-      "anchor": {
-        "blob": "4f542fc6a6101512a8a4688f8bd109a5ae5c55f1",
-        "content": "sha256:30415cc3de8770663243189a3306756bc53585d7818bdad9f3c9701f4a705a19",
-        "locator": {
-          "kind": "symbol",
-          "name": "_live_agents"
-        }
-      },
-      "id": "RLZ-A9DFWX",
-      "invariant": "INV-R9S24S",
-      "origin": {
-        "handoffEntry": "PNT-R06@v1 §5 / G7 / F3 / A1",
-        "leaf": "260928-MIK-L90"
-      },
-      "rationale": "Reads receipt-named agents from the host, retains the first archived ID, and stops at the first live agent only when first_only is true. The public selector sets that flag for non-leaf task-bound selections, but scans leaf-seat and taskless candidates for explicit ambiguity rather than choosing one.",
-      "role": "enforcement"
-    },
-    {
-      "anchor": {
-        "blob": "4f542fc6a6101512a8a4688f8bd109a5ae5c55f1",
+        "blob": "2aefd05f27aa14bee11185673ef4a09e2f9dc55f",
         "content": "sha256:d9c486831df4838ded9e6993733bcfb0961a4c32142f7e6bdfd15c0491c35cfe",
         "locator": {
-          "end": 1853,
+          "end": 1106,
           "kind": "line_range",
-          "start": 1815
+          "start": 1068
         }
       },
       "id": "RLZ-BVTKAZ",
@@ -186,103 +112,12 @@
     },
     {
       "anchor": {
-        "blob": "4f542fc6a6101512a8a4688f8bd109a5ae5c55f1",
-        "content": "sha256:abd8d2ff3ba2ae76819edcfe569cc5228b1732f97797006da1b82761dfc2ee1e",
-        "locator": {
-          "kind": "symbol",
-          "name": "_with_second_copies"
-        }
-      },
-      "id": "RLZ-CJK95R",
-      "invariant": "INV-HFREW1",
-      "origin": {
-        "handoffEntry": "MIK-R132@v1 rule 5",
-        "leaf": "260928-MIK-L113"
-      },
-      "rationale": "Carries the same statement per seat into the answer of a set of three.",
-      "role": "presentation"
-    },
-    {
-      "anchor": {
-        "blob": "4f542fc6a6101512a8a4688f8bd109a5ae5c55f1",
-        "content": "sha256:3ac5d9853ec3a35ba0bfce2b34dd1067035a83f8254e5dc3ad97fdc96376d5bc",
-        "locator": {
-          "kind": "symbol",
-          "name": "_agent_override"
-        }
-      },
-      "id": "RLZ-D3P8S7",
-      "invariant": "INV-7DMXZ3",
-      "origin": {
-        "handoffEntry": "L71-CURRENT242-W-04",
-        "leaf": "260928-MIK-L71"
-      },
-      "rationale": "The shared role-start override boundary rejects forbidden caller fields before creating an agent or a receipt.",
-      "role": "enforcement"
-    },
-    {
-      "anchor": {
-        "blob": "4f542fc6a6101512a8a4688f8bd109a5ae5c55f1",
-        "content": "sha256:ce7afe7a2c98da194eacfd8b0c70bcd1cc86e033855db28325a12cfa834e484e",
-        "locator": {
-          "kind": "symbol",
-          "name": "second_copy_loaded"
-        }
-      },
-      "id": "RLZ-D5PVDQ",
-      "invariant": "INV-HFREW1",
-      "origin": {
-        "handoffEntry": "MIK-R132@v1 rule 5",
-        "leaf": "260928-MIK-L113"
-      },
-      "rationale": "Reads the launch receipt: a second copy is loaded where the agent carries the task server and no record of the host's mode keeps the other out.",
-      "role": "primary-authority"
-    },
-    {
-      "anchor": {
-        "blob": "4f542fc6a6101512a8a4688f8bd109a5ae5c55f1",
-        "content": "sha256:13d18faab6f1cfc943a5beb402c7b520278d3de7892245035abe9426ef87c470",
-        "locator": {
-          "kind": "symbol",
-          "name": "MAY_START"
-        }
-      },
-      "id": "RLZ-ERFERN",
-      "invariant": "INV-5TT40M",
-      "origin": {
-        "handoffEntry": "PNT-R06@v1 §4",
-        "leaf": "260928-MIK-L90"
-      },
-      "rationale": "Defines exact caller-to-child role pairs.",
-      "role": "primary-authority"
-    },
-    {
-      "anchor": {
-        "blob": "4f542fc6a6101512a8a4688f8bd109a5ae5c55f1",
-        "content": "sha256:e5d87e59608e3842c9a723fe5d44134fa0f30aa0c76d3f8b190495a28206f3b7",
-        "locator": {
-          "end": 157,
-          "kind": "line_range",
-          "start": 155
-        }
-      },
-      "id": "RLZ-HJ854G",
-      "invariant": "INV-R9S24S",
-      "origin": {
-        "handoffEntry": "PNT-R06@v1 §5 / G7 / F3 / A1",
-        "leaf": "260928-MIK-L90"
-      },
-      "rationale": "Bounds native reads at 24 and forces explicit taskless cut ambiguity.",
-      "role": "primary-authority"
-    },
-    {
-      "anchor": {
-        "blob": "4f542fc6a6101512a8a4688f8bd109a5ae5c55f1",
+        "blob": "2aefd05f27aa14bee11185673ef4a09e2f9dc55f",
         "content": "sha256:3e9100a819ac7dd689a6d9fb5c1687ad3312467abc59095ac554caf866a14819",
         "locator": {
-          "end": 872,
+          "end": 351,
           "kind": "line_range",
-          "start": 858
+          "start": 337
         }
       },
       "id": "RLZ-J6YQNS",
@@ -296,7 +131,7 @@
     },
     {
       "anchor": {
-        "blob": "4f542fc6a6101512a8a4688f8bd109a5ae5c55f1",
+        "blob": "2aefd05f27aa14bee11185673ef4a09e2f9dc55f",
         "content": "sha256:4da243e498ffe93f8bf0e4cd2466b5da0d94d6a5d1f9f6bd243f977e812ac7ed",
         "locator": {
           "kind": "symbol",
@@ -314,7 +149,7 @@
     },
     {
       "anchor": {
-        "blob": "4f542fc6a6101512a8a4688f8bd109a5ae5c55f1",
+        "blob": "2aefd05f27aa14bee11185673ef4a09e2f9dc55f",
         "content": "sha256:242903221b0fe9124d4a771bbe1d8a4f3e310777cefec81070989063bebf1fd0",
         "locator": {
           "kind": "symbol",
@@ -332,25 +167,7 @@
     },
     {
       "anchor": {
-        "blob": "4f542fc6a6101512a8a4688f8bd109a5ae5c55f1",
-        "content": "sha256:ebc1a4ad94a8accb33e831864452ec335ea91e81251b9bee90dff501552948a5",
-        "locator": {
-          "kind": "symbol",
-          "name": "_recipient_by_id"
-        }
-      },
-      "id": "RLZ-PYXJN6",
-      "invariant": "INV-R9S24S",
-      "origin": {
-        "handoffEntry": "PNT-R06@v1 §5 / G7 / F3 / A1",
-        "leaf": "260928-MIK-L90"
-      },
-      "rationale": "Requires explicit ID to belong to this execution line receipt.",
-      "role": "enforcement"
-    },
-    {
-      "anchor": {
-        "blob": "4f542fc6a6101512a8a4688f8bd109a5ae5c55f1",
+        "blob": "2aefd05f27aa14bee11185673ef4a09e2f9dc55f",
         "content": "sha256:6c1f3b2d543a5d0110c11582e9e7b7e46c1154b7e4a536e453517d7cbf80c0a9",
         "locator": {
           "kind": "symbol",
@@ -368,62 +185,7 @@
     },
     {
       "anchor": {
-        "blob": "4f542fc6a6101512a8a4688f8bd109a5ae5c55f1",
-        "content": "sha256:aedaab437d59446aff5d7d12263b0ac81be94f91f6123161e0d9f9abc3795abf",
-        "locator": {
-          "end": 171,
-          "kind": "line_range",
-          "start": 167
-        }
-      },
-      "id": "RLZ-RHVKF4",
-      "invariant": "INV-68QN0P",
-      "origin": {
-        "handoffEntry": "MIK-R98@v1 §7",
-        "leaf": "260928-MIK-L98"
-      },
-      "rationale": "The table grants only the specified callers.",
-      "role": "enforcement"
-    },
-    {
-      "anchor": {
-        "blob": "4f542fc6a6101512a8a4688f8bd109a5ae5c55f1",
-        "content": "sha256:7b5071f64bf3e66e005d048fe1f9a292f5917e5545f7fb689247190c6356d33b",
-        "locator": {
-          "kind": "symbol",
-          "name": "sender_line"
-        }
-      },
-      "id": "RLZ-S0SZP3",
-      "invariant": "INV-VH983B",
-      "origin": {
-        "handoffEntry": "L117-R04",
-        "leaf": "260928-MIK-L117"
-      },
-      "rationale": "The sender line names the wake-up's origin so the recipient never confuses a wake-up with content.",
-      "role": "enforcement"
-    },
-    {
-      "anchor": {
-        "blob": "4f542fc6a6101512a8a4688f8bd109a5ae5c55f1",
-        "content": "sha256:53f31d090bda3f68a2e83d16b4b0dde4dbc06a5569b939eba6c5e967482dbcb9",
-        "locator": {
-          "kind": "symbol",
-          "name": "_no_binding"
-        }
-      },
-      "id": "RLZ-S952ET",
-      "invariant": "INV-85VB61",
-      "origin": {
-        "handoffEntry": "MIK-R113@v1 rule 6",
-        "leaf": "260928-MIK-L113"
-      },
-      "rationale": "The refusal of `role_message` for a chat without a role: it says that the developer speaks with the agent in the dashboard and that such a chat starts a role with `role_start`.",
-      "role": "presentation"
-    },
-    {
-      "anchor": {
-        "blob": "4f542fc6a6101512a8a4688f8bd109a5ae5c55f1",
+        "blob": "2aefd05f27aa14bee11185673ef4a09e2f9dc55f",
         "content": "sha256:35d445b9fbcf93f458571be8f1390bc1608b893aa8f8d362f1414820e2be1fb6",
         "locator": {
           "kind": "symbol",
@@ -441,25 +203,7 @@
     },
     {
       "anchor": {
-        "blob": "4f542fc6a6101512a8a4688f8bd109a5ae5c55f1",
-        "content": "sha256:7781bfcbcbdf5f6706a7e352e24f8ab303f89836ba57b562ec6410dc1480f2bc",
-        "locator": {
-          "kind": "symbol",
-          "name": "_projects_preparation_note"
-        }
-      },
-      "id": "RLZ-STRQRP",
-      "invariant": "INV-ZVQ7E3",
-      "origin": {
-        "handoffEntry": "MIK-R95@v1 rule6",
-        "leaf": "260928-MIK-L95"
-      },
-      "rationale": "This projection explains the Projects host capability limit in the role_start answer. It derives the note from the returned preparation value and does not perform a list read, timing inference or another opening operation.",
-      "role": "unclassified"
-    },
-    {
-      "anchor": {
-        "blob": "4f542fc6a6101512a8a4688f8bd109a5ae5c55f1",
+        "blob": "2aefd05f27aa14bee11185673ef4a09e2f9dc55f",
         "content": "sha256:d76d5b2e8837a52a2a5983f15e9d924fffb772f728a7fde5152e6db885f8af24",
         "locator": {
           "kind": "symbol",
@@ -477,25 +221,7 @@
     },
     {
       "anchor": {
-        "blob": "4f542fc6a6101512a8a4688f8bd109a5ae5c55f1",
-        "content": "sha256:263fc31278fc9bea43e7e85be88f6e272b56f0b509dcbebb5ed747fc7c1df019",
-        "locator": {
-          "kind": "symbol",
-          "name": "_resolve_recipient"
-        }
-      },
-      "id": "RLZ-VQW9WE",
-      "invariant": "INV-R9S24S",
-      "origin": {
-        "handoffEntry": "PNT-R06@v1 §5 / G7 / F3 / A1",
-        "leaf": "260928-MIK-L90"
-      },
-      "rationale": "The facade resolver requires exactly one receipt-bound address form and refuses self-addressing. For an unfinished start it raises recipient-busy with a holdReason that send_role_message converts to workspace holding when the store is known, rather than proving unconditional terminal refusal.",
-      "role": "enforcement"
-    },
-    {
-      "anchor": {
-        "blob": "4f542fc6a6101512a8a4688f8bd109a5ae5c55f1",
+        "blob": "2aefd05f27aa14bee11185673ef4a09e2f9dc55f",
         "content": "sha256:6c1f3b2d543a5d0110c11582e9e7b7e46c1154b7e4a536e453517d7cbf80c0a9",
         "locator": {
           "kind": "symbol",
@@ -510,79 +236,6 @@
       },
       "rationale": "The held-drain answer must propagate the transport disposition through the same replacement warning helper as direct delivery.",
       "role": "propagation-persistence"
-    },
-    {
-      "anchor": {
-        "blob": "4f542fc6a6101512a8a4688f8bd109a5ae5c55f1",
-        "content": "sha256:c48df9a1f1aaafe92bbecd9163de74c180b08fd1081068db975efb22b063708d",
-        "locator": {
-          "kind": "symbol",
-          "name": "start_rule_violation"
-        }
-      },
-      "id": "RLZ-WQXQC4",
-      "invariant": "INV-5TT40M",
-      "origin": {
-        "handoffEntry": "PNT-R06@v1 §4",
-        "leaf": "260928-MIK-L90"
-      },
-      "rationale": "Enforces caller binding and sprint/master containment before preparation.",
-      "role": "enforcement"
-    },
-    {
-      "anchor": {
-        "blob": "4f542fc6a6101512a8a4688f8bd109a5ae5c55f1",
-        "content": "sha256:7d1e77434f1ece959cd8f20db179a9a3f78d0a06c010410e11bbf2635a3c8323",
-        "locator": {
-          "kind": "symbol",
-          "name": "_binding_absent"
-        }
-      },
-      "id": "RLZ-Z0GQ9A",
-      "invariant": "INV-85VB61",
-      "origin": {
-        "handoffEntry": "MIK-R113@v1 rule 6",
-        "leaf": "260928-MIK-L113"
-      },
-      "rationale": "Tells a tool server that was started without any binding from one whose binding is malformed; only the first may start without a parent.",
-      "role": "enforcement"
-    },
-    {
-      "anchor": {
-        "blob": "4f542fc6a6101512a8a4688f8bd109a5ae5c55f1",
-        "content": "sha256:df975f80addf619cf119a02cba4faf1530fea468e99ab8f61bf23e117625bf51",
-        "locator": {
-          "kind": "symbol",
-          "name": "_start_refusal"
-        }
-      },
-      "id": "RLZ-Z1BTW8",
-      "invariant": "INV-8J056T",
-      "origin": {
-        "handoffEntry": "MIK-R95@v1 rule7",
-        "leaf": "260928-MIK-L95"
-      },
-      "rationale": "It projects a preparation failure into launch-refused with the owner's status, detail and next action plus preparationStatus.",
-      "role": "presentation"
-    },
-    {
-      "anchor": {
-        "blob": "4f542fc6a6101512a8a4688f8bd109a5ae5c55f1",
-        "content": "sha256:c06ee6c5bed8039b7e75326536885ab7ccdf954accbe293c2f61a747488b7011",
-        "locator": {
-          "end": 342,
-          "kind": "line_range",
-          "start": 311
-        }
-      },
-      "id": "RLZ-ZQGPJB",
-      "invariant": "INV-68QN0P",
-      "origin": {
-        "handoffEntry": "MIK-R98@v1 §7",
-        "leaf": "260928-MIK-L98"
-      },
-      "rationale": "The existing caller containment rule owns scope enforcement.",
-      "role": "enforcement"
     }
   ],
   "references": {
@@ -591,12 +244,13 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4f542fc6a6101512a8a4688f8bd109a5ae5c55f1",
+            "blob": "374d6d9650fe069cc8eb9ad69a39e036c1edfa82",
             "content": "sha256:c48df9a1f1aaafe92bbecd9163de74c180b08fd1081068db975efb22b063708d",
             "locator": {
               "kind": "symbol",
               "name": "start_rule_violation"
-            }
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_role_start.py"
           },
           "kind": "code"
         }
@@ -607,8 +261,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4f542fc6a6101512a8a4688f8bd109a5ae5c55f1",
-            "content": "sha256:da8fc34daa9eb7458bc351502dd76d87c9a1ef247dd3c208c1e06d46f0e29f67",
+            "blob": "2aefd05f27aa14bee11185673ef4a09e2f9dc55f",
+            "content": "sha256:a1d18c0b9897a6e059820c9a6c05e9a75ec21de1f2b2e2fad0039b4214c6388d",
             "locator": {
               "kind": "file"
             }
@@ -618,28 +272,28 @@
       ]
     },
     "11": {
-      "note": "Public message call uses local resolution, report collection, prologue filing and held/native dispatch rather than the retained delivery-module dispatcher.  Leaf revival compares current grant-sensitive canonical task/contract scope before bridge use.",
+      "note": "The public message call uses the imported recipient-resolution owner, report collection, prologue filing and held/native dispatch. Leaf revival compares current grant-sensitive canonical task/contract scope before bridge use.",
       "targets": [
         {
           "anchor": {
-            "blob": "4f542fc6a6101512a8a4688f8bd109a5ae5c55f1",
+            "blob": "2aefd05f27aa14bee11185673ef4a09e2f9dc55f",
             "content": "sha256:beb65176764bcad989badce2fc11b1bd09348cc5f8312901e3312fe876cab935",
             "locator": {
-              "end": 826,
+              "end": 305,
               "kind": "line_range",
-              "start": 764
+              "start": 243
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "4f542fc6a6101512a8a4688f8bd109a5ae5c55f1",
-            "content": "sha256:d4b6b3f5ed3fce2dbbae284d42489978a6726df9d32f49c71de6d0026479c18e",
+            "blob": "2aefd05f27aa14bee11185673ef4a09e2f9dc55f",
+            "content": "sha256:35c7c05ca0accdd7a21f509d31d11718d4c673adb141a42d8a63411f5e7e9140",
             "locator": {
-              "end": 1829,
+              "end": 1082,
               "kind": "line_range",
-              "start": 1809
+              "start": 1065
             }
           },
           "kind": "code"
@@ -651,108 +305,108 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4f542fc6a6101512a8a4688f8bd109a5ae5c55f1",
+            "blob": "2aefd05f27aa14bee11185673ef4a09e2f9dc55f",
             "content": "sha256:451370779bf011b9179e6754d32b06340ca91ff5177ca34a6b9c400de0d2ba69",
             "locator": {
-              "end": 785,
+              "end": 264,
               "kind": "line_range",
-              "start": 732
+              "start": 211
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "4f542fc6a6101512a8a4688f8bd109a5ae5c55f1",
+            "blob": "2aefd05f27aa14bee11185673ef4a09e2f9dc55f",
             "content": "sha256:d063606f26994922812368c8bfe1cee9c397385d6189cde2ac8ca2b3914b80c5",
             "locator": {
-              "end": 850,
+              "end": 329,
               "kind": "line_range",
-              "start": 788
+              "start": 267
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "4f542fc6a6101512a8a4688f8bd109a5ae5c55f1",
+            "blob": "2aefd05f27aa14bee11185673ef4a09e2f9dc55f",
             "content": "sha256:892df358d7c76e5531b5ff1a1b1108b74ae5fa9393eb9927da42bfd8bb6442c2",
             "locator": {
-              "end": 1076,
+              "end": 555,
               "kind": "line_range",
-              "start": 1057
+              "start": 536
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "4f542fc6a6101512a8a4688f8bd109a5ae5c55f1",
+            "blob": "2aefd05f27aa14bee11185673ef4a09e2f9dc55f",
             "content": "sha256:ff33f0be3ae175d4d6dd8873c7194d41e8aedc37385674e6ea2b9e078060b442",
             "locator": {
-              "end": 788,
+              "end": 267,
               "kind": "line_range",
-              "start": 735
+              "start": 214
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "4f542fc6a6101512a8a4688f8bd109a5ae5c55f1",
+            "blob": "2aefd05f27aa14bee11185673ef4a09e2f9dc55f",
             "content": "sha256:985ceb67f4f555ee9fea51b2455ea6c9f467aafdb84b74fe09e2013d291c9dc7",
             "locator": {
-              "end": 853,
+              "end": 332,
               "kind": "line_range",
-              "start": 791
+              "start": 270
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "4f542fc6a6101512a8a4688f8bd109a5ae5c55f1",
+            "blob": "2aefd05f27aa14bee11185673ef4a09e2f9dc55f",
             "content": "sha256:269fe9e3f68cb4955f4e63a282eed3d653a224c89b6adeb8c18d4964f9418512",
             "locator": {
-              "end": 1079,
+              "end": 558,
               "kind": "line_range",
-              "start": 1060
+              "start": 539
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "4f542fc6a6101512a8a4688f8bd109a5ae5c55f1",
+            "blob": "2aefd05f27aa14bee11185673ef4a09e2f9dc55f",
             "content": "sha256:4c8ece809cd773e809413aab95712be6721f94d80e20dffd07dbdb2450709478",
             "locator": {
-              "end": 782,
+              "end": 261,
               "kind": "line_range",
-              "start": 729
+              "start": 208
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "4f542fc6a6101512a8a4688f8bd109a5ae5c55f1",
+            "blob": "2aefd05f27aa14bee11185673ef4a09e2f9dc55f",
             "content": "sha256:10be109a68b9507b5b521bc567c4821f19eee5f5c6535271f56bdc58966a3b40",
             "locator": {
-              "end": 847,
+              "end": 326,
               "kind": "line_range",
-              "start": 785
+              "start": 264
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "4f542fc6a6101512a8a4688f8bd109a5ae5c55f1",
+            "blob": "2aefd05f27aa14bee11185673ef4a09e2f9dc55f",
             "content": "sha256:f49276f194deefd411f91b27f8480f6a0043f827bc417ba4abec6d45692674f4",
             "locator": {
-              "end": 1073,
+              "end": 552,
               "kind": "line_range",
-              "start": 1054
+              "start": 533
             }
           },
           "kind": "code"
@@ -764,7 +418,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4f542fc6a6101512a8a4688f8bd109a5ae5c55f1",
+            "blob": "2aefd05f27aa14bee11185673ef4a09e2f9dc55f",
             "content": "sha256:35d445b9fbcf93f458571be8f1390bc1608b893aa8f8d362f1414820e2be1fb6",
             "locator": {
               "kind": "symbol",
@@ -780,7 +434,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4f542fc6a6101512a8a4688f8bd109a5ae5c55f1",
+            "blob": "2aefd05f27aa14bee11185673ef4a09e2f9dc55f",
             "content": "sha256:242903221b0fe9124d4a771bbe1d8a4f3e310777cefec81070989063bebf1fd0",
             "locator": {
               "kind": "symbol",
@@ -796,54 +450,58 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4f542fc6a6101512a8a4688f8bd109a5ae5c55f1",
-            "content": "sha256:f7e90450e693e938dd444a600258d879c831fa02214ec34eee83a830226e6d9a",
+            "blob": "374d6d9650fe069cc8eb9ad69a39e036c1edfa82",
+            "content": "sha256:ce893ea39695242eee3cf56eae0142dcf200ec58da229efb604f1a7d439327a8",
             "locator": {
-              "end": 562,
+              "end": 311,
               "kind": "line_range",
-              "start": 495
-            }
+              "start": 246
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_role_start.py"
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "4f542fc6a6101512a8a4688f8bd109a5ae5c55f1",
-            "content": "sha256:86a9e4b5aa714b12c4d1596aad684467e28cb81bad07515dea1806c715bb374e",
+            "blob": "374d6d9650fe069cc8eb9ad69a39e036c1edfa82",
+            "content": "sha256:ab2f912fa61d56db6e3f923572e47dae171179619b1b4e411ce1ae342b3e9d64",
             "locator": {
-              "end": 565,
+              "end": 314,
               "kind": "line_range",
-              "start": 498
-            }
+              "start": 249
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_role_start.py"
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "4f542fc6a6101512a8a4688f8bd109a5ae5c55f1",
-            "content": "sha256:c880b0569715f1c6d65a67e51639789b9042795f04234ff0d1ef0ed54157132b",
+            "blob": "374d6d9650fe069cc8eb9ad69a39e036c1edfa82",
+            "content": "sha256:1c6cfe59dafcc81b25c3c311eb4890625aaa682a59c70e6e6c40e392b390b839",
             "locator": {
-              "end": 559,
+              "end": 308,
               "kind": "line_range",
-              "start": 492
-            }
+              "start": 243
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_role_start.py"
           },
           "kind": "code"
         }
       ]
     },
     "16": {
-      "note": "Projection now delegates to the extracted answer owner.",
+      "note": "The extracted answer owner derives second-copy status from the applied task-server flag and recorded exclusion.",
       "targets": [
         {
           "anchor": {
-            "blob": "4f542fc6a6101512a8a4688f8bd109a5ae5c55f1",
+            "blob": "b1fff467b7281a23b7caba62cd49c7dedac72cbc",
             "content": "sha256:bae4627cff64a6320a1f7b275993044113038bc0bd40eb71731ec564c6d32579",
             "locator": {
-              "end": 675,
+              "end": 162,
               "kind": "line_range",
-              "start": 674
-            }
+              "start": 161
+            },
+            "path": "mcp/src/agents_remember/cli/role_start_answer.py"
           },
           "kind": "code"
         }
@@ -854,12 +512,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4d1d758b388f95a3ccf00255dc8a799424ba73e7",
-            "content": "sha256:e8e753056c1c1c11c52ba18eff862356c46063990c51359b49ac270d0674a6c4",
+            "blob": "b1fff467b7281a23b7caba62cd49c7dedac72cbc",
+            "content": "sha256:26d87d9df225d7f7552bd73bd494540cb202246d07350830a53ecec682da9c76",
             "locator": {
-              "end": 81,
+              "end": 88,
               "kind": "line_range",
-              "start": 15
+              "start": 22
             },
             "path": "mcp/src/agents_remember/cli/role_start_answer.py"
           },
@@ -898,10 +556,10 @@
         },
         {
           "anchor": {
-            "blob": "4d1d758b388f95a3ccf00255dc8a799424ba73e7",
-            "content": "sha256:6d28e63c1151666c3f506918858fd69e1e7b9977de1ea760c11ef375c7210269",
+            "blob": "b1fff467b7281a23b7caba62cd49c7dedac72cbc",
+            "content": "sha256:335301dc67e6a6ce25d1e76d95073f50c01b78998c766e879349f05afade47e3",
             "locator": {
-              "end": 80,
+              "end": 87,
               "kind": "line_range",
               "start": 1
             },
@@ -942,12 +600,13 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4f542fc6a6101512a8a4688f8bd109a5ae5c55f1",
+            "blob": "374d6d9650fe069cc8eb9ad69a39e036c1edfa82",
             "content": "sha256:3ac5d9853ec3a35ba0bfce2b34dd1067035a83f8254e5dc3ad97fdc96376d5bc",
             "locator": {
               "kind": "symbol",
               "name": "_agent_override"
-            }
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_role_start.py"
           },
           "kind": "code"
         }
@@ -958,12 +617,13 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4f542fc6a6101512a8a4688f8bd109a5ae5c55f1",
-            "content": "sha256:9130157d547a00fa89cb793ad96c57967e6e8e464acafd744f07d718c35ed94a",
+            "blob": "374d6d9650fe069cc8eb9ad69a39e036c1edfa82",
+            "content": "sha256:301fdbafa8ddeff8b8b6779ade103f7f461c9f53baae8fbd7de8b3274495b5aa",
             "locator": {
               "kind": "symbol",
               "name": "_start_role"
-            }
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_role_start.py"
           },
           "kind": "code"
         }
@@ -974,12 +634,37 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f8cfe435ca6fbe3bbe12080957f343453ad78be9",
+            "blob": "932a9eb64943b87d06372b21f57b90a7dbfad8a7",
+            "content": "sha256:3acdd5dcc455eb1ce9f1c05d3f0f2bae5b9f1d8232496b38830022114e1546c2",
+            "locator": {
+              "kind": "symbol",
+              "name": "bound_to_caller_harness"
+            },
+            "path": "mcp/src/agents_remember/cli/role_agent_override.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9bb74647f6b0b1b06178972710d51364539d642f",
             "content": "sha256:754408ad18741d52cf5e04e2ab1fed531e79502b9ee5044bb4360ad704ad495c",
             "locator": {
-              "end": 278,
+              "end": 285,
               "kind": "line_range",
-              "start": 250
+              "start": 257
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_routes.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9bb74647f6b0b1b06178972710d51364539d642f",
+            "content": "sha256:3f7db8c4cfd8eb528c25b0ed0f52e041a7c901032c5758a3df8121cfeb1f9203",
+            "locator": {
+              "end": 295,
+              "kind": "line_range",
+              "start": 267
             },
             "path": "mcp/src/agents_remember/cli/role_launch_routes.py"
           },
@@ -998,36 +683,11 @@
         },
         {
           "anchor": {
-            "blob": "4f542fc6a6101512a8a4688f8bd109a5ae5c55f1",
-            "content": "sha256:da8fc34daa9eb7458bc351502dd76d87c9a1ef247dd3c208c1e06d46f0e29f67",
+            "blob": "2aefd05f27aa14bee11185673ef4a09e2f9dc55f",
+            "content": "sha256:a1d18c0b9897a6e059820c9a6c05e9a75ec21de1f2b2e2fad0039b4214c6388d",
             "locator": {
               "kind": "file"
             }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "932a9eb64943b87d06372b21f57b90a7dbfad8a7",
-            "content": "sha256:3acdd5dcc455eb1ce9f1c05d3f0f2bae5b9f1d8232496b38830022114e1546c2",
-            "locator": {
-              "kind": "symbol",
-              "name": "bound_to_caller_harness"
-            },
-            "path": "mcp/src/agents_remember/cli/role_agent_override.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "f8cfe435ca6fbe3bbe12080957f343453ad78be9",
-            "content": "sha256:3f7db8c4cfd8eb528c25b0ed0f52e041a7c901032c5758a3df8121cfeb1f9203",
-            "locator": {
-              "end": 288,
-              "kind": "line_range",
-              "start": 260
-            },
-            "path": "mcp/src/agents_remember/cli/role_launch_routes.py"
           },
           "kind": "code"
         }
@@ -1038,12 +698,13 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4f542fc6a6101512a8a4688f8bd109a5ae5c55f1",
+            "blob": "634f7ed1b0bf88c39ff6c491845cecec943df773",
             "content": "sha256:263fc31278fc9bea43e7e85be88f6e272b56f0b509dcbebb5ed747fc7c1df019",
             "locator": {
               "kind": "symbol",
               "name": "_resolve_recipient"
-            }
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_role_recipients.py"
           },
           "kind": "code"
         }
@@ -1054,12 +715,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "da1a4e05f314251af6a09d045d9928769f7ace3a",
+            "blob": "efdd76c6e03cd7a5879e496c68a65f78cdf9e4a4",
             "content": "sha256:2593d0ec139ad97f1bb0be0d8299b2ac4c8dc4ea687c5b761cab87b0e942a29e",
             "locator": {
-              "end": 280,
+              "end": 286,
               "kind": "line_range",
-              "start": 258
+              "start": 264
             },
             "path": "mcp/tests/test_paseo_role_tools.py"
           },
@@ -1072,12 +733,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "da1a4e05f314251af6a09d045d9928769f7ace3a",
+            "blob": "efdd76c6e03cd7a5879e496c68a65f78cdf9e4a4",
             "content": "sha256:7573ff3b62151555a8d70fa2424e941b85763432b7b516b0afe6d5d1ce0a415f",
             "locator": {
-              "end": 295,
+              "end": 301,
               "kind": "line_range",
-              "start": 261
+              "start": 267
             },
             "path": "mcp/tests/test_paseo_role_tools.py"
           },
@@ -1090,12 +751,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "db2df976678eff16377688c911979deaa49f802b",
+            "blob": "1411a2e35f897f8d1ea29c5e26045133c9dbc48a",
             "content": "sha256:872f8246b3ac6e79da7a84eebfbbd16c2af919f5af3d5c1b992c93704c138be3",
             "locator": {
-              "end": 464,
+              "end": 469,
               "kind": "line_range",
-              "start": 417
+              "start": 422
             },
             "path": "mcp/tests/test_paseo_role_messages.py"
           },
@@ -1108,12 +769,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "db2df976678eff16377688c911979deaa49f802b",
+            "blob": "1411a2e35f897f8d1ea29c5e26045133c9dbc48a",
             "content": "sha256:b80d60e687c8d38b602def038f3001b0f0ddc61fdd2d58b37f1e835776bde360",
             "locator": {
-              "end": 228,
+              "end": 233,
               "kind": "line_range",
-              "start": 201
+              "start": 206
             },
             "path": "mcp/tests/test_paseo_role_messages.py"
           },
@@ -1126,12 +787,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "db2df976678eff16377688c911979deaa49f802b",
+            "blob": "1411a2e35f897f8d1ea29c5e26045133c9dbc48a",
             "content": "sha256:6cb683f725caad5644be0c2e7c2f6754c2fa8d167d14f70837d9fbe1bdc7c28d",
             "locator": {
-              "end": 369,
+              "end": 374,
               "kind": "line_range",
-              "start": 339
+              "start": 344
             },
             "path": "mcp/tests/test_paseo_role_messages.py"
           },
@@ -1144,12 +805,13 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4f542fc6a6101512a8a4688f8bd109a5ae5c55f1",
+            "blob": "18e5524471a10c4022c89da7e02e556061265092",
             "content": "sha256:6360d6906f33f67364a091fa810512750413c1193bdccd08992ec081f5f091b8",
             "locator": {
               "kind": "symbol",
               "name": "_host_unreachable"
-            }
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_role_caller.py"
           },
           "kind": "code"
         }

@@ -103,7 +103,7 @@ the production path to drive.
 
 
 
-> Retained earlier citation wording: - The integration-lane row this module's classification rests on, and the lane header that declares the classification. Source caption: "mcp/tests/test_curator_review_assessment_publication.py"; "integration = [" [1]
+> Retained earlier citation wording: - The integration-lane row this module's classification rests on, and the lane header that declares the classification. Source caption: "mcp/tests/test_curator_review_assessment_publication.py"; "integration = ["
 
 
 
@@ -111,7 +111,7 @@ the production path to drive.
 
 
 
-> Retained earlier citation wording: - The integration-lane row this module's classification rests on, and the lane header that declares the classification. Source caption: "mcp/tests/test_curator_review_assessment_publication.py"; "integration = [" [2]
+> Retained earlier citation wording: - The integration-lane row this module's classification rests on, and the lane header that declares the classification. Source caption: "mcp/tests/test_curator_review_assessment_publication.py"; "integration = ["
 
 
 
@@ -119,7 +119,7 @@ the production path to drive.
 
 
 
-> Retained earlier citation wording: - The lifecycle catalog declares this suite as an exact consumer of curator_coherence_test_support.py and the Node package-lock fixture. Declaration is not invocation. [3]
+> Retained earlier citation wording: - The lifecycle catalog declares this suite as an exact consumer of curator_coherence_test_support.py and the Node package-lock fixture. Declaration is not invocation.
 
 
 
@@ -168,6 +168,22 @@ closeout entry point the rest of the integration suite uses.
 
 The module grew 948 → 988 lines. Nothing else in it changed: the same fixture, the same published
 assessment, and the same `curator_coherence_subject_assessment_state` projection under test.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 - The integration-lane row this module's classification rests on, and the lane header that declares the classification. Source caption: "mcp/tests/test_curator_review_assessment_publication.py"; "integration = [" [1]
 

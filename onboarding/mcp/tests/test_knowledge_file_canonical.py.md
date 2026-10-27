@@ -79,10 +79,14 @@ The cases cover `canonical.py` and `cli/knowledge_format.py`.
 - Only declared positions are sorted. [12]
 - Content-changing input is refused. [13]
 - The command's exit codes and skip rules. [14]
-- Lane registration. [15]
+
 
 ### Cross-Repo References
 
 No meaningful cross-repo references found.
 
 No cross-repo boundary is exercised.
+
+
+
+- Lane registration.  Anchor: `test_knowledge_file_canonical` [15]

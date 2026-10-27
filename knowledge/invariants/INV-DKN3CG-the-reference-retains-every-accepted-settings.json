@@ -10,7 +10,7 @@
   "conditions": [
     "Accepted settings keys are documented separately with their actual reader or explicit no-reader boundary; a parsed key or reference sentence is not evidence of enforcement.",
     "orchestration.spawn.harness is read through settings.spawn_harness by role defaults and the terminal spawn resolver; concurrency limits remain accepted but unenforced.",
-    "Onboarding obtains provider, mode and feature choices through the existing public options catalog with the host running."
+    "Onboarding obtains provider, mode and feature choices through the existing public options catalog. Each view asks Paseo fresh; an unavailable part uses its last successful saved answer and is marked with its time. Without either answer, configured values are sent unchecked. A running host is not required to display saved or unknown state."
   ],
   "exclusions": [
     "Grouping qualityGate, concurrency, spawn and loops under one no-reader or enforcement claim.",
@@ -29,9 +29,9 @@
     "leaf": "260928-MIK-L71",
     "task": "260928-MIK"
   },
-  "revision": 2,
+  "revision": 3,
   "schema": "ar-invariant/v1",
-  "statement": "The reference retains every accepted settings key and states its reader/enforcer or no-reader boundary. Onboarding obtains provider/mode/feature choices from the existing public options catalog with the host running.",
+  "statement": "The reference retains every accepted settings key and states its reader/enforcer or no-reader boundary. Onboarding obtains provider/mode/feature choices through the existing public options catalog, which asks Paseo fresh and uses its last successful answer for any part Paseo does not answer; an unanswered part with no saved answer is unknown rather than an empty offering set.",
   "status": "proposed",
   "supersedes": []
 }

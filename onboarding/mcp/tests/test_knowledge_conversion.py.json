@@ -156,11 +156,11 @@
       ]
     },
     "7": {
-      "note": "Its lane row.\n\nAnchor: \"mcp/tests/test_knowledge_conversion.py\"",
+      "note": "Its lane row.  Anchor: \"mcp/tests/test_knowledge_conversion.py\"",
       "targets": [
         {
           "anchor": {
-            "blob": "102c4550ab6429f44c8fb543d1d0662de66a1b8c",
+            "blob": "5276cd9583d9a33d9094edac37d82b768491aed9",
             "content": "sha256:c6902ff7c8aa692bca9430990230becb82a9fb157809e18098e9b4671e599c45",
             "locator": {
               "end": 139,
@@ -173,7 +173,7 @@
         },
         {
           "anchor": {
-            "blob": "102c4550ab6429f44c8fb543d1d0662de66a1b8c",
+            "blob": "5276cd9583d9a33d9094edac37d82b768491aed9",
             "content": "sha256:c1982547bb989f163509da14ecb063cbb188711a3d8cc19491c6f2ad577f669e",
             "locator": {
               "end": 155,
@@ -186,7 +186,7 @@
         },
         {
           "anchor": {
-            "blob": "102c4550ab6429f44c8fb543d1d0662de66a1b8c",
+            "blob": "5276cd9583d9a33d9094edac37d82b768491aed9",
             "content": "sha256:701dfc16e90a57bb20b47a098c9f3f67419c2cde1a56b17ed586636dbbe4c6e5",
             "locator": {
               "end": 124,

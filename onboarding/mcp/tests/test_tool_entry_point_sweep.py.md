@@ -233,7 +233,7 @@ they make no acceptance claim.
 
 
 
-> Retained earlier citation wording: - The lane row that keeps this module in the default selection. [40]
+> Retained earlier citation wording: - The lane row that keeps this module in the default selection.
 
 
 
@@ -319,5 +319,9 @@ Current pins (L130): `ENVELOPE_LOSING_RAISERS` holds `worktree_checkpoint_landin
 - Envelope loss is pinned empty; the positive T34 population retains only memory_baseline_adopt. [58]
 
 - The main probe retains exact equality between observed raisers and the current pin. [59]
+
+
+
+
 
 - The lane row that keeps this module in the default selection. [40]

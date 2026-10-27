@@ -58,7 +58,7 @@ The cases.
 - Freshness, partial state and an unconverted tree. [5]
 - Cache, flags and format. [6]
 - The command and the shared file filter. [7]
-- The lane row. [8]
+
 
 - A rewrite in the second of the index write is never answered from the old content. [9]
 
@@ -67,3 +67,7 @@ The cases.
 No meaningful cross-repo references found: every case builds its own repository under `tmp_path`.
 
 No cross-repo boundary is crossed by this file.
+
+
+
+- The lane row.  Anchor: "mcp/tests/test_knowledge_index.py" [8]

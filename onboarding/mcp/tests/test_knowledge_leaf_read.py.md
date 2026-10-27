@@ -121,7 +121,7 @@ No configured live documentation source was available for this pass.
 
 - Identity seeds keep the scope read beside the leaf, and the mixed-block policy. [36]
 
-- The lane row. [37]
+
 
 ### Cross-Repo References
 
@@ -130,3 +130,7 @@ No meaningful cross-repo references found: the cases build their repositories un
 No cross-repo boundary is crossed by this file.
 
 - Rich domain-unit tails expose rows and continuation without implying public overflow or pointer retrieval.
+
+
+
+- The lane row.  Anchor: `test_knowledge_leaf_read` [37]

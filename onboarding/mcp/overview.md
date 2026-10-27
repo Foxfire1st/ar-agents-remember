@@ -84,7 +84,7 @@ The transport roster is a cycle-free model literal; registration order is separa
 
 The kernel owns canonical JSON, shared Git commands and capabilities, file observations, route census/indexing, memory attribution, ledger formatting, and cache materialization. Canonical JSON sorts keys, uses compact Unicode encoding, refuses nonfinite values and duplicate keys. `kernel/git_command.py` supplies shared Git runners, not exclusive ownership of every Git/hook subprocess; its environment removes eight repository selectors, explicit stdin prevents ambient input, and identity injection cannot reintroduce selectors. Present timeout classes are metadata 30 s, local 300 s, tool-bound remote 120 s, and interruptible bulk remote 1,800 s. Parsed diffs carry explicit color, external-driver, and a/b-prefix options. Private object preparation and expected-old ref publication are separate capabilities using those runners; `landing_commit_check.py` also owns direct Git and hook subprocess calls.
 
-Route census freezes one Git/path-rule source population with NUL-safe tracked/untracked enumeration, ignored/generated exclusion, and symlink classification without following targets. Callers pass repository/storage authority rather than rediscovering it inside generation. Citation indexing combines storage excludes, Git ignore rules, and scoped caller exclusions in a recorded register. The inherited policy skips and reports oversized files, applies the aggregate budget after exclusions/skips, permits configured caps, and names hard-stop offenders and recovery guidance. Its v10 manifest refuses/rebuilds v9 rather than inventing an absent register. Citation publication preserves declined bytes and binds accepted full-document/source-cell observations before atomic replacement. Only citation fixing admits a finite `documents` list, mutually exclusive with `document`, nonempty and bounded by the curator source-candidate limit. Singleton behavior and the original leaf writer guard remain; converted list repair isolates missing/refused cards and retains both authoring and mechanical repair stages.
+Route census freezes one Git/path-rule source population with NUL-safe tracked/untracked enumeration, ignored/generated exclusion, and symlink classification without following targets. Callers pass repository/storage authority rather than rediscovering it inside generation. Full memory quality uses a per-check Git source reader, with bounded reads and named unavailable-source reasons; readable ignored and binary citations remain verifiable. The retired citation-index exclusion register, aggregate budget, v10 manifest and source-cell publication protocol are not current producers. Retained source-index cache code owns terminal fencing and cleanup of existing artifacts. Citation fixing admits a finite nonempty `documents` list, mutually exclusive with `document` and bounded by the curator source-candidate limit; singleton behavior and the leaf writer guard remain. Converted list repair isolates missing/refused cards and retains separate authoring and mechanical repair stages.
 
 Memory attribution is inside immutable commit messages through the shared `Code-Commit` renderer; ledger format and attribution are separate kernel responsibilities. The newest-first ledger is a Git-derived consumer view, allowing later memory states for repeated code revisions without deleting older attributed history. Root `memory.md` is a disposable memory-domain cache, not a second mapping authority or publication prerequisite. Memory content identity excludes that cache while retaining actual Git head/tree observations; this exclusion does not apply to code. Baseline/carryover produce attributed substantive content when needed and report cache refresh separately. Cache failure is availability, not permission to invent a pairing.
 
@@ -169,7 +169,7 @@ Paired acceptance binds configured repositories, physical worktree roots, branch
 
 Full contract-scoped curation distinguishes raw quality repairs, coherence-required and current validated coherence; preparation is not a final certificate. Before closeout, a non-author second reader checks every changed card, sidecar and record statement against final code, every history disposition/effect/reason against the diff and important omissions; blocking findings are repaired. This role duty is not a new transaction-enforced review predicate. Historical certification owners remain separate from host-test authority and converted-knowledge admission; the broad old CCR-R12 no-prerequisite wording does not erase present knowledge-gate calls.
 
-Ordinary development supports isolated host pytest, including focused/serial investigation, without certifying authority. The root declaration is 10,000 unit and 1,000 integration cases (`pyproject.toml:320-321`). The earlier D226 4,000-to-5,000 epoch and L54's D299 5,000-to-6,000 raise are historical; the composed D460 unit-only raise leaves integration and guard behavior unchanged. A configured ceiling is not a collected or executed population. Distinct user-operation/failure/regression protection justifies cases; unused support and duplicate matrices are not restored for coverage. Coverage is diagnostic, production CRAP 20 is a review trigger, and Radon reports do not enforce acceptance. Lint, formatting, typing, structural rules, and test failures remain enforcing; diagnostic execution errors remain visible. Certifying claims require genuine pinned Dagger admission and the existing lifecycle publication owners, exact candidate/process identity, disposable state, and credential isolation. A copied report, host pass, sync result, or use of Dagger alone is insufficient.
+Ordinary development supports isolated host pytest, including focused/serial investigation, without certifying authority. The root declaration is 10,000 unit and 2,000 integration cases (`pyproject.toml:333-334`). The earlier D226 4,000-to-5,000 epoch and L54's D299 5,000-to-6,000 raise are historical; D460 raised only the unit ceiling and left integration unchanged at that time; D579 subsequently raises integration from 1000 to 2000, retaining guard behavior. A configured ceiling is not a collected or executed population. Distinct user-operation/failure/regression protection justifies cases; unused support and duplicate matrices are not restored for coverage. Coverage is diagnostic, production CRAP 20 is a review trigger, and Radon reports do not enforce acceptance. Lint, formatting, typing, structural rules, and test failures remain enforcing; diagnostic execution errors remain visible. Certifying claims require genuine pinned Dagger admission and the existing lifecycle publication owners, exact candidate/process identity, disposable state, and credential isolation. A copied report, host pass, sync result, or use of Dagger alone is insufficient.
 
 Finalization preserves landed reachability, carryover-before-cleanup, actual edit/ancestry protection, task work-branch scope, exact task-document resolution, and terminal blockers. Present `finalize.py` delegates document resolution/publication to `finalize_task_documents.py`; older private-owner locations are historical. The inherited master rule distinguishes completion from archival: abandoned rows do not block master completion, finalizing a master does not archive it, and explicit task retirement owns master archival. Cleanup excludes/discards only the computed memory ledger cache, preserves parent/source branches, and derives review-artifact deletion from the archived task's identity with physical confinement. It also removes the enclosure generation's recorded outside scratch root and reports the removal or the blocker in the same inventory, and a completed retry removes a root that remains or blocks on one it cannot. Agent archival and review cleanup do not establish new historical knowledge.
 
@@ -247,6 +247,8 @@ Route-review construction now stamps the leaf code base. The closeout door can p
 
 ## Current Behavior
 
+Launcher discovery asks the configured host afresh for each view and Start. A context local to one operation shares that operation's answer; it is not a process-wide answer cache. Successful catalog parts are saved on disk, scoped to the host installation, runtime home, listen address and version. A failed or partial answer reuses only the matching saved parts and marks their provenance; without a saved part, configured values remain unknown and pass through unchecked. A known offering still refuses an unsupported choice, and permission checks remain separate. The launcher, role start, settings and tool-server readers use the same resolver and host ID-before-label matching without case.
+
 change-set reads now run on the route family's own bounded admission: `changeset_scheduler.py` starts eight workers and admits eight more pending jobs; a request past the cap answers 503 with `Retry-After: 1`, a disconnect answers 499 after setting the read's cancellation event, a queued abandoned job is withdrawn before it runs, and a running job releases its slot only when its worker ends. The runner's single `_wait_process` kills the Git child and its process group on the timeout or the event. Freshness is Git's own: a commit pair is keyed by ids with no observation on a hit, a working view runs `git status --porcelain=v2 -z` (and has no cache where a plain read costs no more), and the object store is Git's `count-objects -v` census; the `.git/objects` and worktree directory walks are gone. The id-keyed no-observation choice names its accepted gap: object loss and attribute changes are not observed per hit until eviction or restart. The cache's per-read maps are capacity-bounded and an abandoned read admits nothing.
 
 **L184.** The product reads the host's usage report at a stamped turn end, keeps one limit file, and holds a limited recipient's message; the bridge carries the snapshot's second step and the usage read, and the CLI reaches the limit reader through an injected port.
@@ -261,8 +263,126 @@ These superseded descriptions retain their historical wording; the current accou
 > - **Retained historical source account — superseded by the current route account:** Present public vocabulary has 41 names, adds native retire_child and role_start_set, excludes historical provider/capsule/catalog tools and retains three knowledge operations
 > - **Retained historical source account — superseded by the current route account:** bounded landing answer and human-review role contract
 
-## Evidence
+## Concurrent transport calls
 
+The MCP transport retains launch-bound seat checks and registered schema authority. It runs synchronous handler bodies off the event loop with per-call context, while potentially mutating synchronous calls hold a server-local lock until their worker exits, including cancellation. Classified reads and explicit preview/poll modes bypass that lock. Async handlers retain their original path. The existing citation tool adds background preview start/poll; this extends its signature without adding another roster member.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+- Historical D226 collected-case declaration: 5000 unit/1000 integration, superseded first by the composed 6000/1000 declaration and then by D460's unit-only raise to 10,000/1,000. The retained reference records that earlier policy epoch, not the current ceiling.
+- The enforced collected-case pair is 10000 unit/2000 integration; D579 raises integration from 1000 to 2000 and leaves the collection guard unchanged.
+
+> Retained historical citation wording: - **Retained historical source account — superseded by the current route account:** The lane row.
+> Retained earlier citation wording: - **Retained historical source account — superseded by the current route account:** The lane row.
+> Retained historical citation wording: - **Retained historical source account — superseded by the current route account:** The lane row.
+> Retained historical citation wording: - **Retained historical source account — superseded by the current route account:** The two lane rows.
+
+
+
+
+> Retained earlier citation wording: - **Retained historical source account — superseded by the current route account:** The two lane rows.
+
+
+
+
+
+
+
+
+> Retained earlier citation wording: - The lane row.
+> Retained earlier citation wording: - The lane row.
+> Retained earlier citation wording: - The lane row.
+> Retained earlier citation wording: - The two lane rows.
+
+
+> Retained earlier citation wording: - The two lane rows.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Full memory-quality source reading is per check and bounded, with Git owning the listing and citation verification independent of onboarding eligibility. Source unavailability is an explicit reason; readable ignored/binary citations retain verification and pathRules-excluded citations carry no remark.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## Evidence
+- Synchronous dispatch keeps validation and orders writes through worker completion. [389]
+- Citation preview adds modes to the existing declaration. [390]
 - Raw Git output prevents newline normalization from collapsing pathname identities. [340]
 - A changed candidate tree needs the bounded clean-sync proof at the door. [341]
 - Master validation in placement applies only to documented subTasks; other listed kinds retain list placement under existing identity/cycle guards, not a kind-rejection or own-master-validation rule. [336]
@@ -301,9 +421,7 @@ These superseded descriptions retain their historical wording; the current accou
 - **Retained historical source account — superseded by the current route account:** The index format bump for the seal fix. [36]
 - **Retained historical source account — superseded by the current route account:** The content rules and derived reads. [38]
 - **Retained historical source account — superseded by the current route account:** The five registered decision rules. [39]
-
 > Retained earlier citation wording: - **Retained historical source account — superseded by the current route account:** The owner resolves each requirement endpoint; unresolved is reported. [40] [270]
-
 - **Retained historical source account — superseded by the current route account:** The writer reports each endpoint of the records the run touched. [41]
 - **Retained historical source account — superseded by the current route account:** A decision is never an export. [42]
 - **Retained historical source account — superseded by the current route account:** The leaf package statement. [43]
@@ -323,7 +441,6 @@ These superseded descriptions retain their historical wording; the current accou
 - **Retained historical source account — superseded by the current route account:** The mounted read's converted-tree branch. [57]
 - **Retained historical source account — superseded by the current route account:** The whole-block bound of the published-intent block. [58]
 - **Retained historical source account — superseded by the current route account:** The rule's statement for converted trees. [59]
-- **Retained historical source account — superseded by the current route account:** The memory-quality dispatch between the two gates. [60]
 - The gate chooser both enforcement points share (since MIK-R09 a probe Git cannot answer is an incomplete side). [61]
 - **Retained historical source account — superseded by the current route account:** The package statement. [62]
 - **Retained historical source account — superseded by the current route account:** The `knowledge_read` surface, reached through the per-page extras since MIK-R02. [63]
@@ -376,16 +493,12 @@ These superseded descriptions retain their historical wording; the current accou
 - **Retained historical source account — superseded by the current route account:** Current four-tree capture [147]
 - **Retained historical source account — superseded by the current route account:** Development commands, budgets, diagnostic metrics and isolation. [150]
 - **Retained historical source account — superseded by the current route account:** Certifying publication and accepting consumers. [151]
-- **Retained historical source account — superseded by the current route account:** Exact contract scope, full check and curator worklist publication. [152]
-- **Retained historical source account — superseded by the current route account:** Interactive catalog names missing authority without eligibility. [153]
 - **Retained historical source account — superseded by the current route account:** A ledger view is derived from Git and cache write failure is only an availability result. [156]
 - **Retained historical source account — superseded by the current route account:** Existing preparation retains actual Git binding and allows a distinct memory content view. [157]
 - **Retained historical source account — superseded by the current route account:** Baseline adoption commits memory content and returns a cache observation. Source caption: `adopt_initial_baseline` `memory_content_commit` [158]
 - The launch's instruction value: one of exactly two modes, a capsule compiled for the seat or a named refusal. [159]
 - **Retained historical source account — superseded by the current route account:** The one workspace rule and the selection that follows it. [273]
-
 > - **Retained historical source account — superseded by the current route account:** The compiler the port is bound to, including the eve path that reads the admitted workspace back out of the carrier. [161] [274]
-
 - **Retained historical source account — superseded by the current route account:** D13's repair, on the registered operation's own resolution path. [162]
 - **Retained historical source account — superseded by the current route account:** The declared legacy exclusion, and the enumeration case that keeps a fourth launch point from appearing silently. [163]
 - **Retained historical source account — superseded by the current route account:** Public closeout payload delegates the current task-bound request. [165]
@@ -401,9 +514,7 @@ These superseded descriptions retain their historical wording; the current accou
 - The port field on the collaborators dataclass, and the rank reason it exists. [191]
 - **Retained historical source account — superseded by the current route account:** The registration that reads that port. [192]
 - The composition root's adapters for the review, the entry list, the source-content read, the tree view and the knowledge reader, each bound to this configuration. [193]
-
 > Retained earlier citation wording: - **Retained historical source account — superseded by the current route account:** The shared collaborators bind the knowledge-review and entry-list ports and the listed source-content port. [268]
-
 - **Retained historical source account — superseded by the current route account:** **The two-shape status idiom the routes inherit, `503` included; the signature now accepts all three typed results.** [195]
 - The shared collaborators bind the knowledge-review and entry-list adapters, beside the source-content, tree, intent-summary and knowledge-reader ports. [196]
 - **Retained historical source account — superseded by the current route account:** **The two-shape status idiom both routes inherit, `503` included; the signature now accepts both typed results.** [197]
@@ -427,9 +538,7 @@ These superseded descriptions retain their historical wording; the current accou
 - **Retained historical source account — superseded by the current route account:** The lock every memory route asks. [225]
 - **Retained historical source account — superseded by the current route account:** A copied Git index keeps the index file's modification time. [226]
 - **Retained historical source account — superseded by the current route account:** The cache's ignore rule alone. [227]
-
 > - **Retained historical source account — superseded by the current route account:** Current imported source owns this scoped route boundary. [228] [229] [230] [231]
-
 - **Retained historical source account — superseded by the current route account:** The ledger loader reads through the recorder. [232]
 - **Retained historical source account — superseded by the current route account:** The limits of the worklist processes. [234]
 - **Retained historical source account — superseded by the current route account:** One request: digest, join or start, wait, leave. [235]
@@ -446,9 +555,7 @@ These superseded descriptions retain their historical wording; the current accou
 - **Retained historical source account — superseded by the current route account:** A recording block collects the rows of one computation. [246]
 - **Retained historical source account — superseded by the current route account:** A kept set is checked with its path selections first. [247]
 - **Retained historical source account — superseded by the current route account:** A conflict or an unreadable row is a failed observation. [248]
-
 > Retained earlier citation wording: - **Retained historical source account — superseded by the current route account:** The contract loader reads through the recorder. [249]
-
 - **Retained historical source account — superseded by the current route account:** The removed repository memory root is resolved through the recorder. [250]
 - **Retained historical source account — superseded by the current route account:** The host step of the install. [251]
 - **Retained historical source account — superseded by the current route account:** The packaged host contract. [252]
@@ -467,24 +574,10 @@ These superseded descriptions retain their historical wording; the current accou
 - **Retained historical source account — superseded by the current route account:** The batch blob reader. [272]
 - **Retained historical source account — superseded by the current route account:** The task reopening tool on the registration surface. [285]
 - **Retained historical source account — superseded by the current route account:** The packaged candidate-environment input delegates setup to repository tool notes and records the used interpreter. [286]
-- Historical D226 collected-case declaration: 5000 unit/1000 integration, superseded first by the composed 6000/1000 declaration and then by D460's unit-only raise to 10,000/1,000. The retained reference records that earlier policy epoch, not the current ceiling. [287]
-- The enforced collected-case pair is 10000 unit/1000 integration; the unit-only policy raise leaves the collection guard unchanged. [287]
-
-> Retained historical citation wording: - **Retained historical source account — superseded by the current route account:** The lane row. [18]
-> Retained earlier citation wording: - **Retained historical source account — superseded by the current route account:** The lane row. [28]
-> Retained historical citation wording: - **Retained historical source account — superseded by the current route account:** The lane row. [32]
-> Retained historical citation wording: - **Retained historical source account — superseded by the current route account:** The two lane rows. [37]
-
 - **Retained historical source account — superseded by the current route account:** The previously named comparison-record CLI producer is retired; the current umbrella parser registers converted file authoring and no review-record-comparison command. [103]
-
 > Retained earlier citation wording: - **Retained historical source account — superseded by the current route account:** Knowledge ingest is the contract-scoped converted file writer; unconverted memory is refused with conversion guidance, not a callable prior-task database publication route. [198] [203]
-
 - **Retained historical source account — superseded by the current route account:** The converted-card workflow's opening. [224]
-
-> Retained earlier citation wording: - **Retained historical source account — superseded by the current route account:** The two lane rows. [233]
-
 - **Retained historical source account — superseded by the current route account:** Skills registrar installs resources and mandatory methods; no tools or capability grant [289]
-- **Retained historical source account — superseded by the current route account:** Dispatch advertisement is closed and undeclared inputs refuse before handler [290]
 - **Retained historical source account — superseded by the current route account:** Generated lifecycle providers are empty independently of configuration [291]
 - **Retained historical source account — superseded by the current route account:** Old-watcher stop failure is reported and installation continues [292]
 - **Retained historical source account — superseded by the current route account:** Retrieval uses harness search and bounded source confirmation [293]
@@ -493,7 +586,6 @@ These superseded descriptions retain their historical wording; the current accou
 - **Retained historical source account — superseded by the current route account:** Closeout invokes mandatory candidate gate before publication [296]
 - **Retained historical source account — superseded by the current route account:** Exact memory output is validated/gated against parent tip with leaf-publication context [297]
 - **Retained historical source account — superseded by the current route account:** Integration/checkpoint preview and apply encounter knowledge boundary; leaf and series predicates differ [298]
-- **Retained historical source account — superseded by the current route account:** Raw quality status and combined coherence readiness remain distinct; a coherence refusal retains its code and next action [299]
 - **Retained historical source account — superseded by the current route account:** Investigator refuses leaf selection and validates canonical topology [301]
 - **Retained historical source account — superseded by the current route account:** Leaf sibling handover supplies canonical role/task arguments [302]
 - **Retained historical source account — superseded by the current route account:** Replay retains agent identity and typed created/refused/no-answer outcomes; held launch calls omit the first host prompt [303]
@@ -501,9 +593,7 @@ These superseded descriptions retain their historical wording; the current accou
 - **Retained historical source account — superseded by the current route account:** Read revalidation checks selections first and excludes failed observations from memo reuse [305]
 - **Retained historical source account — superseded by the current route account:** Worklist limits count shared computations and deliberately omit an arbitrary result-byte cap [306]
 - **Retained historical source account — superseded by the current route account:** Git includes a fourth bulk-remote timeout and fixed parsed-diff options [307]
-
 > Retained earlier citation wording: - **Retained historical source account — superseded by the current route account:** Finalization delegates task-document resolution/publication and checks blockers before cleanup/publication [308]
-
 - **Retained historical source account — superseded by the current route account:** Current declared collected-case budgets supersede historical totals [309]
 - The bridge's internal daemon client and its first-message delivery, and the two chat routes over them: the tree's preloaded live-agent answer and the single-document read that corrects it. [310]
 - The retained internal family-complete leaf payload supports path/family seeds; current mounted knowledge_read cuts/projects that payload to naming rows, not full content. [45]
@@ -571,7 +661,7 @@ These superseded descriptions retain their historical wording; the current accou
 - The shared application route owns the converted-layout marker check that the CLI routes import. [376]
 - The production review port delegates the candidate-bound complete review through the recorded-answer owner. [377]
 - **The keystone record: the manifest, its layout under the one durable root, the re-derived id and the directory-name agreement.** [259]
-- **The two deletion owners and the record that precedes every deletion.** [260]
+- Code-object release records deletion before invoking its release owner; snapshot discard verifies and removes present bytes before recording deletion. The two owners preserve their own orderings. [260]
 - **The Git-object retention member this route's `worktrees/` gained.** [261]
 - **The two typed failures, and the two boundaries that decide why they are raised.** [262]
 - **The one durable-root owner the layout asks instead of restating.** [263]
@@ -582,18 +672,9 @@ These superseded descriptions retain their historical wording; the current accou
 - The batch blob reader. [272]
 - The task reopening tool on the registration surface. [378]
 - The packaged candidate-environment input delegates setup to repository tool notes and records the used interpreter. [286]
-
-> Retained earlier citation wording: - The lane row. [18]
-> Retained earlier citation wording: - The lane row. [28]
-> Retained earlier citation wording: - The lane row. [32]
-> Retained earlier citation wording: - The two lane rows. [37]
-
 - The previously named comparison-record CLI producer is retired; the current umbrella parser registers converted file authoring and no review-record-comparison command. [379]
 - Knowledge ingest is the contract-scoped converted file writer; unconverted memory is refused with conversion guidance, not a callable prior-task database publication route. [380]
 - The converted-card workflow's opening. [381]
-
-> Retained earlier citation wording: - The two lane rows. [233]
-
 - Historical L113 source census recorded 40 public names after dispatch removal; its grouped bounded-landing and role-duty co-targets retain that source epoch. PUBLIC_TOOLS is one literal tuple of 44 public names, including native role, retirement and knowledge operations and excluding dispatch_agent. This source census does not establish live advertisement, a CODE grade or MEMORY acceptance. The landing-answer helper separately keeps cut/added counts and bounds inline rows; the Curator instructions require an independent statement-by-statement fact-check before closeout. [288]
 - The shared application route resolves the paired memory base and passes that base, the contract-bound code root and worklist to the normal knowledge writer. [315]
 - Named reporting and refusing routes. [312]
@@ -606,7 +687,7 @@ These superseded descriptions retain their historical wording; the current accou
 - Replayed role launch publishes receipt identity before invoking its host launch call. [326]
 - TaskSummary bodies use a separate bounded generation-qualified cache, with content-derived revision. [327]
 - Obsolete terminal lock cleanup requires a complete canonical-contract census and preserves any subject not proved terminal. [328]
-- The composed declaration is 10,000 unit and 1,000 integration collected cases; declarations are not execution counts. [329]
+- The current declared pair is 10000 unit and 2000 integration selected cases. Earlier unit-only raises kept their integration ceiling unchanged at that time. [329]
 - User alternatives select by manual/prior/threshold facts with no cross-scope choice carry. [330]
 - Worker code and Curator memory failures count independently; incomplete history stays unknown. [331]
 - Replacement rechecks idle and pending permission at every saved archival call. [332]
@@ -630,16 +711,13 @@ These superseded descriptions retain their historical wording; the current accou
 - Filing removes only newly created orphan pick blobs on pre-message failure. [353]
 - Sent logs are bounded working views and settle held outcomes from launch records without delivery. [354]
 - Developer delivery retains ordered holds and attempted IDs, resumes eligible closed recipients and attributes immediate drain results to this message. [355]
-- Chooses ordinary versus launched-explainer registration; invalid bindings refuse and dispatch checks launched-seat identity. [382]
 - One holder builds pending supplier at first operation use; discovery does not construct services. [384]
 - Open intentReview refuses leaf-role preparation before enclosure/seat mutations; same existing native task-fact owner handles admitted found planning enclosure. [385]
 - Qualified Manager starter lineage writes master-to-Architect address; unrelated/dashboard starters do not. [386]
 - Additional host-checked explainer-binding source is distinct from ordinary role launch-record listing and adds none for taskless scope. [387]
 - Explainer seats are excluded from automatic warmup; showing or writing the chat owns their resume instead of host restart. [388]
-- Chooses ordinary versus launched-explainer registration; invalid bindings refuse and dispatch checks launched-seat identity. [382]
 - One holder builds pending supplier at first operation use; discovery does not construct services. [384]
 - Open intentReview refuses leaf-role preparation before enclosure/seat mutations; same existing native task-fact owner handles admitted found planning enclosure. [385]
-- Qualified Manager starter lineage writes master-to-Architect address; unrelated/dashboard starters do not. [386]
 - Additional host-checked explainer-binding source is distinct from ordinary role launch-record listing and adds none for taskless scope. [387]
 - Explainer seats are excluded from automatic warmup; showing or writing the chat owns their resume instead of host restart. [388]
 - The current literal ordinary roster has 44 names, including mounted `knowledge_write`, `user_settings_init`, `citation_note_revision` and `explainer_control`; preceding roster counts remain historical source epochs. Existing task/public-delivery and no-acceptance qualifications stand. [316]
@@ -655,18 +733,10 @@ These superseded descriptions retain their historical wording; the current accou
 - The knowledge-write CLI adapter validates the explicit authorization and hand-off input, then submits the leaf write to the shared application route and prints that route's report. [231]
 - The launch compiler routes task-attached requests through _compile_admitted_task, resolves the canonical task document, and compiles the admitted task capsule. [274]
 - Task-scoped MCP reader configuration derives a call-local repository entry only from the admitted canonical task and enclosure contract; a reader without task_context retains the configured Projects roots. [230]
-- A delete-only hunk is linked only by a K_B range (and, since MIK-R09, an insertion-only hunk only by a K_C range). Anchor: "def _linked("; "hunk.new_count > 0 and any(hits_new(hunk, span) for span in candidate_spans)" The Anchor caption above records the historical `_linked`/`candidate_spans` spelling. Current enforcement is `linkage._classify_hunk`: the before and after comprehensions require changed lines on their own side (`old_count > 0` with `hits_old`, and `new_count > 0` with `hits_new`). [382]
-- The lane row. [18]
-- The two lane rows. [233]
 - **Retained historical source account — superseded by the current route account:** The contract loader reads through the recorder. Anchor: `load_contract` [249]
-- The lane row. [28]
 - Finalization delegates task-document resolution/publication and checks blockers before cleanup/publication [308]
-- The lane row. [32]
-- The two lane rows. [37]
-- Chooses ordinary versus launched-explainer registration; invalid bindings refuse and dispatch checks launched-seat identity. [382]
 - One holder builds pending supplier at first operation use; discovery does not construct services. [384]
 - Open intentReview refuses leaf-role preparation before enclosure/seat mutations; same existing native task-fact owner handles admitted found planning enclosure. [385]
-- Qualified Manager starter lineage writes master-to-Architect address; unrelated/dashboard starters do not. [386]
 - Additional host-checked explainer-binding source is distinct from ordinary role launch-record listing and adds none for taskless scope. [387]
 - Explainer seats are excluded from automatic warmup; showing or writing the chat owns their resume instead of host restart. [388]
 - Settings-selected launch requests same-build bound task server, preapproved surface and capsule system prompt without initial prompt; this is source wiring, not fresh native suppression acceptance. [383]
@@ -682,10 +752,20 @@ These superseded descriptions retain their historical wording; the current accou
 - The launch compiler routes task-attached requests through _compile_admitted_task, resolves the canonical task document, and compiles the admitted task capsule. [274]
 - Task-scoped MCP reader configuration derives a call-local repository entry only from the admitted canonical task and enclosure contract; a reader without task_context retains the configured Projects roots. [230]
 - A delete-only hunk is linked only by a K_B range (and, since MIK-R09, an insertion-only hunk only by a K_C range). Anchor: "def _linked("; "hunk.new_count > 0 and any(hits_new(hunk, span) for span in candidate_spans)" The Anchor caption above records the historical `_linked`/`candidate_spans` spelling. Current enforcement is `linkage._classify_hunk`: the before and after comprehensions require changed lines on their own side (`old_count > 0` with `hits_old`, and `new_count > 0` with `hits_new`). [31]
-- The lane row. [18]
-- The two lane rows. [233]
 - **Retained historical source account — superseded by the current route account:** The contract loader reads through the recorder. Anchor: `load_contract` [249]
-- The lane row. [28]
 - Finalization delegates task-document resolution/publication and checks blockers before cleanup/publication [308]
+- The root configuration declares the current selected-case ceilings of 10000 unit and 2000 integration; deliberate raises update the declaration and its independent screens together. [287]
+- The lane row. [18]
+- The lane row. [28]
 - The lane row. [32]
 - The two lane rows. [37]
+- **Retained historical source account — superseded by the current route account:** The memory-quality dispatch between the two gates.  Anchor: `_onboarding_refresh_gate` [60]
+- **Retained historical source account — superseded by the current route account:** Exact contract scope, full check and curator worklist publication.  Anchor: `_resolve_execution` `_execute_memory_quality` `_attach_curator_checklist` [152]
+- **Retained historical source account — superseded by the current route account:** Interactive catalog names missing authority without eligibility. [153]
+- The two lane rows. [233]
+- **Retained historical source account — superseded by the current route account:** Dispatch advertisement is closed and undeclared inputs refuse before handler  Anchor: `AgentsRememberMCP` [290]
+- **Retained historical source account — superseded by the current route account:** Raw quality status and combined coherence readiness remain distinct; a coherence refusal retains its code and next action [299]
+- Chooses ordinary versus launched-explainer registration; invalid bindings refuse and dispatch checks launched-seat identity. [382]
+- Each operation asks fresh; its local context shares the answer, and saved-only reads do not discover or write. [391]
+- Durable parts preserve successful answers and distinguish saved from unknown after failures. [392]
+- Host names match IDs before labels, without case. [393]

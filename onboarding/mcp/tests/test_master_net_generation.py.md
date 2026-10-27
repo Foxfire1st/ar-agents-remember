@@ -105,7 +105,7 @@ No configured Domain Documentation source exists for this file.
 - The conforming add-then-remove case and the F1 diff-failure refusal case. [3]
 
 
-- The lane manifest registers mcp/tests/test_master_net_generation.py in unit-regression. Membership selects evidence and does not establish execution. [4]
+
 
 
 - The selection under test (endpoint binding, digest, currentness, refusal) and the thin entry that publishes it. [5]
@@ -117,3 +117,7 @@ This card maps a repository-local agents-remember test module. Import and task-b
 cross-repository implementation source that governs its behavior.
 
 No applicable cross-repository source was found.
+
+
+
+- The lane manifest registers mcp/tests/test_master_net_generation.py in unit-regression. Membership selects evidence and does not establish execution. [4]

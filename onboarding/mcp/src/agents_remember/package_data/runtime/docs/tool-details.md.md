@@ -21,6 +21,8 @@ references for every kind, not only the gone-path one.
 
 ## Code Commentary
 
+Long citation previews can start in the background and be polled with the same repository and leaf contract; they never apply repairs. Synchronous writes retain their ordering while other reads and polls can answer. The converted memory check lists Git-tracked and non-ignored untracked sources, reports skipped paths and checks readable cited content independently of onboarding path rules. The canonical and packaged explanations have identical bytes in this candidate; the passed shipped-document tests check that equality and the disposable install location.
+
 The baseline-adoption explanation now distinguishes the actionable-drift gate from paired-tree validation. `accept_drift` can lift only the former; a stale code/test reference still refuses as `R198.1-reference-anchor`, and the first converted baseline is validated before commitment. The option does not make an invalid paired tree adoptable.
 
 The canonical and packaged document carry long explanations for `citation_fix`, `context_packet`, `curator_coherence`, baseline adoption, carryover planning, memory quality, child retirement, role-set start and route-index refresh. Short registration descriptions point here, but callable signatures remain defined by registration, not this document. The citation explanation now replaces source-index snapshot options with unconditional old-format refusal and conversion, while preserving finite card selection, measured admissions, sidecar authoring and full logged detail. The installer-owned documentation-copy route is unchanged.
@@ -66,9 +68,16 @@ cross-repository acceptance evidence is inferred.
 
 
 
+
 - The document defines build/install explanations and distinguishes read-only drift reporting from exact-pair stale-anchor publication refusal, with an additional carried-deleted-path refusal; documentation is not fresh execution evidence. [1]
 
 
 
 
+
 - The shipped explanation states citation admission and old-format refusal and distinguishes anchor measurement from currentness; registration remains the callable-signature owner. [2]
+
+
+- Canonical and shipped explanations both describe background preview and synchronous ordering. [4]
+- Both copies describe Git source listing, skipped sources and cited-file inspection. [5]
+- Shipped-document tests compare packaged and canonical bytes and check the installed location. [6]

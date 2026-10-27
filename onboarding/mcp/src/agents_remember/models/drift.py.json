@@ -103,7 +103,7 @@
       ]
     },
     "3": {
-      "note": "The onboarding drift model defines the `DriftStatus` and `DriftSummaryPacket` wire shapes.",
+      "note": "The onboarding drift model imports canonical `DriftStatus` and defines the `DriftSummaryPacket` wire shape.",
       "targets": [
         {
           "anchor": {
@@ -120,7 +120,7 @@
       ]
     },
     "4": {
-      "note": "Both wire models expose the shared `DriftStatus` and optional error diagnostic.\n\nAnchor: \"class DriftSummary\"; \"class DriftCheckResponse(ToolResponse):\"",
+      "note": "Both wire models expose the shared `DriftStatus` and optional error diagnostic.  Anchor: \"class DriftSummary\"; \"class DriftCheckResponse(ToolResponse):\"",
       "targets": [
         {
           "anchor": {
@@ -136,7 +136,7 @@
         },
         {
           "anchor": {
-            "blob": "bf6833bf5d456b21488675f40c54e8fe67c5c011",
+            "blob": "5cd7ec716feacd1db6d5df3f9f31d400bf26d49e",
             "content": "sha256:9006b7b69dc5a39ca0854598cd817087bc4cd69dadbaeac832c91843fde0f9e7",
             "locator": {
               "end": 15,

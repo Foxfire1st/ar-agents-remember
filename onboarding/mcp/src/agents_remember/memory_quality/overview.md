@@ -17,7 +17,7 @@ Landing cut/add observations are report-only; use the measurement owner and cano
 
 The runtime style registry now contains only document-shape checks for diff markers, entity-catalog alignment and tables. Its pre-refresh population is entity alignment; its post-refresh population is drift plus those style checks. Legacy Update History, citation range resolution and claim reopening were removed. The public controller refuses unconverted operational input before running the registry; declaration of phase lists does not imply automatic execution by ordinary closeout.
 
-On converted trees the drift slot runs `knowledge.converted`: the knowledge validator plus report-only stale-reference and landing observations. The three surviving document-shape checks run normally; no legacy not-applicable compatibility check remains. A supplied `KnowledgeBasePort` provides the comparison base and its named failure. When that port fails, `R24.7-converted-base` refuses and base-dependent `R22.6-anchor-path` refusals are withheld while independently measurable references remain reported. Without a port, the helper attempts converted memory `HEAD` and returns no bases if it is unreadable or unconverted; these are distinct composition contracts, not a universal named-refusal promise.
+On converted trees the drift slot runs `knowledge.converted`: the knowledge validator with refusing stale-reference findings and separate report-only landing observations. The three surviving document-shape checks run normally; no legacy not-applicable compatibility check remains. A supplied `KnowledgeBasePort` provides the comparison base and its named failure. When that port fails, `R24.7-converted-base` refuses and base-dependent `R22.6-anchor-path` refusals are withheld while independently measurable references remain reported. Without a port, the helper attempts converted memory `HEAD` and returns no bases if it is unreadable or unconverted; these are distinct composition contracts, not a universal named-refusal promise.
 
 The application controller owns synchronous/start/poll transport and contract-scoped composition. Its completed whole result retains the computed finding populations; `application/memory_quality/answer.py` selects bounded blocking entries in repair, missing-onboarding and stale-index order. The controller computes that answer once and retains its status/recovery fields beside the whole result, keeping delivery sampling separate from full result retention. It revalidates scope before and after checking, binds the comparison-base port, checks candidate stability, and combines quality, missing onboarding, route-index alignment, governing-overview resolution and knowledge-gate findings. The full leaf-scoped run publishes one deterministic enclosure checklist and its structured attestation. Repository-only diagnostics do not establish candidate acceptance.
 
@@ -61,7 +61,7 @@ The knowledge validator refuses deletion of any record a comparison base holds: 
 
 Complete converted validation is required before memory commits; require_valid_commit has no rule subset or skip. Plain report-only registrations are refused. Each finding instead uses its rule's merge_reports or migration_debt policy. Sync/standalone-conversion reporting is not commit/landing permission. Writer_reports is a narrower across-run repair allowance inside the writer; validator/commit routes still refuse. Every reported finding names its reason and refusing route. These local predicates are not an audit of every Git-writing call path.
 
-The validator judges declared structure, identity, references, ownership, route membership, anchor path existence and history preservation, not prose meaning or reference-content currency. A gone carried anchor path or family directory now refuses outside its sync/standalone-conversion reporting boundary; existing-path blob/content drift stays a separate currentness observation. Standalone conversion authors migration input without claiming a publication verdict or paired code-path existence proof.
+The validator judges declared structure, identity, references, ownership, route membership, anchor path existence and history preservation, not prose meaning. Its registered R198 reference rule additionally requires every code/test reference anchor to name the exact paired code blob and resolve to its recorded content identity. Writer and sync-merge routes report that repair debt; publication and full quality refuse it. A gone carried anchor path or family directory retains its separate sync/standalone-conversion reporting boundary. Standalone conversion authors migration input without claiming a publication verdict or paired code-path existence proof.
 
 Family routes are evaluated over realizations, never proofs. Added routes need a real code directory, realizations need coverage and routes need members; retired families retain their exemption. A live unrealized family has a nonempty-territory exception but its separate unrealized finding now uses merge_reports. Genuine export route-unassigned debt is migration_debt: only actual base-carried state reports before migration completion, while new debt refuses immediately. Mechanical suggestions are labelled and never written; route breadth/depth remains curator judgment.
 
@@ -75,7 +75,7 @@ The additional `R48-family-judgment` rule requires new/edited changed family jud
 
 Overview rules require the first level-two section after an optional Governing Overview to be `Purpose`, `What This Repo Is` or `What This Area Is`; reject leaf/date section headings; and place numbered citation lines together in the final section's trailing citation region. The rules parse ATX headings outside fences and marker syntax outside escaped/code forms. Once that region begins, only citation lines, blanks and fenced-code lines are permitted. These checks remain refusing and imported into the same registry, but return during standalone conversion or outside leaf publication. Leaf closeout/direct or recorded landing activates them; baseline adoption/status, census and ordinary writer validation do not. Curation conforms adopted scaffold stubs before publication rather than blocking their adoption.
 
-Converted reference checking reports code/test anchors as current when their blob matches or located content still hashes identically; absent paths, ambiguous/unresolved symbols or changed content are stale. Staleness is report-only here and routes through onboarding refresh/gating rather than becoming a new refusal in this checker. Mechanical fixing re-records only unchanged-content movement, requires unique exact-byte recovery for moved ranges, and never rewrites stale claim meaning, notes or target lists. One-sidecar scope restricts the reported population. The application `citation_fix` composition also accepts named-document batches: each converted card is authored and mechanically refreshed separately, refused cards remain excluded from refresh, and a missing name refuses that card without stopping independent siblings. This batching changes scope and transport, not authority to rewrite stale meaning. Authoring-refused sidecars are excluded from mechanical refresh/write so refused card bytes remain preserved while independent siblings can proceed. The exclusion is checked after sidecar enumeration/parsing; it is not a promise that excluded sidecars are never read.
+Full converted quality’s reference census reports a code/test anchor current only when it names the exact paired code blob and its locator resolves to the recorded content identity. In that strict census, a moved blob, changed content, absent path, or ambiguous/unresolved locator is stale. The registered R198 rule refuses that debt in full quality and publication, while writer and sync-merge routes report it for repair. Mechanical fixing re-records only unchanged-content movement, requires unique exact-byte recovery for moved ranges, and never rewrites stale claim meaning, notes or target lists. One-sidecar scope restricts the reported population. The application `citation_fix` composition also accepts named-document batches: each converted card is authored and mechanically refreshed separately, refused cards remain excluded from refresh, and a missing name refuses that card without stopping independent siblings. This batching changes scope and transport, not authority to rewrite stale meaning. Authoring-refused sidecars are excluded from mechanical refresh/write so refused card bytes remain preserved while independent siblings can proceed. The exclusion is checked after sidecar enumeration/parsing; it is not a promise that excluded sidecars are never read.
 
 Converted citation maintenance has two current owners. Card authoring resolves curator-authored citation rows against the code working tree, preserves explicit reference numbers, refuses ambiguous reauthoring or malformed sidecars, and removes unused references only for a named card. Mechanical reference repair changes only unchanged-content blob/range movement, with a unique exact-byte match required for moved ranges; stale notes and target lists remain curator work. Application composition excludes authoring-refused sidecars from refresh and continues independent selected cards.
 
@@ -115,20 +115,55 @@ These inherited tables are retained verbatim for navigation and custody. Their s
 | `memory_candidate_pair.py` | [../worktrees/modules/memory_candidate_pair.py.md](../worktrees/modules/memory_candidate_pair.py.md) | **relocated out** by `806649b9`; card moved with it |
 | `memory_census_scope.py` | [memory_census_scope.py.md](memory_census_scope.py.md) | covered |
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+- Format dispatch substitutes converted validation and retires three legacy-format checks; complete counts and samples remain separate.
+
+
+
+
+
+
+
+
+
+- report-only landing measurement with separate read-summary scope
+
+
+
+
+
+Full synchronous quality uses the per-check Git source reader: listed but unreadable files receive named reasons, and readable ignored or binary citations retain content verification with separate notes. Onboarding pathRules do not filter cited content. Source-count and size cases cannot abort the whole check; no retired persistent citation index is restored.
+
+
+
+
+
+
+
+
+
 ## Evidence
-- Retained reference account (no fresh execution or acceptance inferred): The MCP application entry point builds drift context, including temporary leaf-base provenance, and calls the package runner. [1]
-- Retained reference account (no fresh execution or acceptance inferred): Tool metadata and server registration expose `memory_quality_check` to agents. [2]
-- Retained reference account (no fresh execution or acceptance inferred): The update-history fixer is a dedicated mutating module rather than a `memory_quality_check` option. [3]
 - Retained reference account (no fresh execution or acceptance inferred): The missing-onboarding checker catches newly added worktree files before code commit. [4]
-- Retained reference account (no fresh execution or acceptance inferred): The shared drift model declares the vocabulary used by drift-check wire responses. [5]
 - Retained reference account (no fresh execution or acceptance inferred): The context-packet application entry point that returns `DriftSummaryPacket` from its drift seam. [6]
 - Retained reference account (no fresh execution or acceptance inferred): The curator checklist renderer owns deterministic grouping, closeout-provenance separation, and atomic publication. [7]
 - Retained reference account (no fresh execution or acceptance inferred): Memory candidate identity excludes consumer cache availability. [8]
 - Retained reference account (no fresh execution or acceptance inferred): Complete catalog items become deterministic memory-domain rails and a population-bound configuration digest. [15]
-- Retained reference account (no fresh execution or acceptance inferred): The application surface projects readiness with no affected-closure plan. [16]
-
 - Core certificate issuance consumes an exact admitted result manifest and earlier-gate prefix and refuses non-green or diagnostic promotion; the interactive complete-catalog projection remains finalization-ineligible. [17]
-- Retained reference account (no fresh execution or acceptance inferred): The caller-exclude surface on the registered tool and the CLI. [25]
 - Retained reference account (no fresh execution or acceptance inferred): The package's module map and public API. [30]
 - Retained reference account (no fresh execution or acceptance inferred): The single registry. [31]
 - Retained reference account (no fresh execution or acceptance inferred): The commit route's call, with no skip parameter. [32]
@@ -139,8 +174,8 @@ These inherited tables are retained verbatim for navigation and custody. Their s
 - Retained reference account (no fresh execution or acceptance inferred): The measures in Doc12's order. [39]
 - Retained reference account (no fresh execution or acceptance inferred): The registration with the validator. [40]
 - Retained reference account (no fresh execution or acceptance inferred): Stale references are report-only. [41]
-- Retained reference account (no fresh execution or acceptance inferred): The converted run's legacy-format checks and its validator slot. [42]
-- Retained reference account (no fresh execution or acceptance inferred): The runner's dispatch by format. [43]
+- Retained reference account (no fresh execution or acceptance inferred): The converted run's legacy-format checks and its validator slot.  Anchor: `LEGACY_FORMAT_CHECKS` `converted_knowledge_check` [42]
+- Retained reference account (no fresh execution or acceptance inferred): The runner's dispatch by format.  Anchor: `_converted_check` [43]
 - Retained reference account (no fresh execution or acceptance inferred): The commit route's optional base converter. [44]
 - Retained reference account (no fresh execution or acceptance inferred): The escaping rule on the validator's grammar. [45]
 - Retained reference account (no fresh execution or acceptance inferred): The one symbol-binding rule. [46]
@@ -174,29 +209,29 @@ These inherited tables are retained verbatim for navigation and custody. Their s
 - Retained reference account (no fresh execution or acceptance inferred): The drift item of a converted tree is the converted check's result. [77]
 - Retained reference account (no fresh execution or acceptance inferred): Adoption-only card discovery is sorted and root-relative; unreadable files remain with validator/drift owners. [78]
 - Retained reference account (no fresh execution or acceptance inferred): Mechanical refresh skips sidecars refused by citation authoring before refresh/write. [79]
-
-- Format dispatch substitutes converted validation and retires three legacy-format checks; complete counts and samples remain separate. [80]
-- Named converted-base refusal depends on the supplied port; no-port HEAD reads can yield no bases; reported base failure withholds anchor-path refusals. [81]
 - One registry includes the working-tree overview rules; applicable commit calls refuse failing reports without a subset parameter. [82]
-- Purpose heading, leaf/date heading and trailing citation rules refuse, with standalone-conversion exemptions; their implementation is presently an untracked working-tree file. [83]
+- Purpose heading, leaf/date heading and trailing citation rules refuse at leaf publication, with standalone-conversion exemptions. Their implementation is tracked in the frozen code tree. [83]
 - Checklist actionability has three terms; operational report and attestation receive separate atomic writes and exact bindings, and the returned whole result retains the three blocking populations. [84]
 - Governing resolution requires a metadata field, tests field/body independently, and observes missing body links. [85]
 - Converted summary names measured counts and unreadable sidecars; report/snapshot writes are conditional. [86]
-- Currentness is mechanical and report-only; scoped fixing excludes refused sidecars before refresh/write, after parsing. [87]
+- The retained `check_references` helper reports mechanical currentness. Full converted quality and publication separately refuse stale reference anchors through R198. Scoped fixing excludes refused sidecars before refresh/write, after parsing. [87]
 - Family judgments newly published or edited require authored effect and their actual revision; exact historical rows are exempt. [88]
-- Interactive catalog projection supplies no affected-closure plan and does not claim certification eligibility. [89]
-
 - An explicit certificate requires a green certifying result bound to its admitted plan; core finalization authority requires exact green Gates 1–5 and current memory inputs. Readiness alone supplies no certificate. [92]
-
 - Overview-order rules activate at leaf publication, not conversion or ordinary adoption/census/writer validation. [94]
-
-- report-only landing measurement with separate read-summary scope [80]
-
 - Named registry policy rather than unconditional report-only flags. [34]
 - Family writer deferral and named reporting boundaries. [36]
 - Admission findings use route and actual carried-state policy. [55]
 - Decision governs is a refusing rule. [58]
 - Migration completeness covers candidate onboarding and census routes. [95]
 - Membership, record and onboarding fact rendering. [96]
-
 - Converted snapshot identity uses all stale findings rather than the sampled packet and is withheld for unreadable sidecars; legacy snapshots hash their complete actionable rows, independently of snapshot time. [97]
+- report-only landing measurement with separate read-summary scope [80]
+- The per-check reader bounds file reads, preserves citation verification and reports skipped sources. [98]
+- Named converted-base refusal depends on the supplied port; no-port HEAD reads can yield no bases; reported base failure withholds anchor-path refusals.  Anchor: `_comparison_bases` `converted_knowledge_check` [81]
+- Retained reference account (no fresh execution or acceptance inferred): The MCP application entry point builds drift context, including temporary leaf-base provenance, and calls the package runner.  Anchor: `run_memory_quality_request` `_execute_memory_quality` [1]
+- Retained reference account (no fresh execution or acceptance inferred): Tool metadata and server registration expose `memory_quality_check` to agents.  Anchor: `memory_quality_check_payload` `create_server` [2]
+- Retained reference account (no fresh execution or acceptance inferred): The update-history fixer is a dedicated mutating module rather than a `memory_quality_check` option. [3]
+- Retained reference account (no fresh execution or acceptance inferred): The shared drift model declares the vocabulary used by drift-check wire responses. [5]
+- Retained reference account (no fresh execution or acceptance inferred): The application surface projects readiness with no affected-closure plan. [16]
+- Retained reference account (no fresh execution or acceptance inferred): The caller-exclude surface on the registered tool and the CLI. [25]
+- Interactive catalog projection supplies no affected-closure plan and does not claim certification eligibility. [89]

@@ -88,7 +88,7 @@ The fixtures and each case.
 - `reconsider_on` must name an existing rejected or deferred alternative. [7]
 - Superseded is derived; reconsider links carry their subject. [9]
 - Requirement endpoints resolve through the owner and never refuse. [10]
-- The lane row. [12]
+
 
 ### Cross-Repo References
 
@@ -102,3 +102,7 @@ No cross-repo boundary is crossed by this file.
 - Current source delta inspected statically: Fix owning-rule filtering, governs refusal and dual legacy refusals, including renamed captions; retain derived-status and endpoint boundaries. [13]
 
 - Reordering preserves option-text identity for reconsideration links, with an independently misbound-index control; the assertions filter R14. [14]
+
+
+
+- The lane row.  Anchor: "mcp/tests/test_knowledge_decisions.py" [12]

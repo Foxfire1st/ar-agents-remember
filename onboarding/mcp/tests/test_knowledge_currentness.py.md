@@ -104,10 +104,14 @@ No configured live documentation source was available for this pass.
 
 - A failing step never refuses. [15]
 
-- The lane row. [16]
+
 
 ### Cross-Repo References
 
 No meaningful cross-repo references found: every case works in its own temporary repositories.
 
 No cross-repo boundary is crossed by this file.
+
+
+
+- The lane row.  Anchor: "mcp/tests/test_knowledge_currentness.py" [16]

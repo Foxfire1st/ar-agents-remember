@@ -26,6 +26,14 @@ The current source facts below replace the former operative inventory. The separ
 
 Source inspection supplies no new test, native-host, whole-build, landing or memory acceptance. Retained internal services and historical fixtures do not re-advertise deleted MCP tools. Numbered references retain historical custody and may include disclosed inherited stale targets; currentness or proof truth is not inferred from them.
 
+## Flat citation-preview declaration
+
+The retained `citation_fix` declaration adds flat `mode="sync"|"start"|"poll"` and optional `run_id` beside its repository, contract, document selection and `dry_run` arguments. Start is a preview only and polling repeats the admitted scope without document selectors. This flat interface is distinct from the memory-quality tool's discriminated `request` object. No background write mode is advertised or admitted.
+
+
+- The public declaration forwards mode, run ID and frozen selectors through one payload owner. [20]
+
+
 ## Historical original card — preserved, not the current operative account
 
 <details>
@@ -124,18 +132,18 @@ No configured external domain source applies.
 
 ### Repo-Internal References
 
-- The payload builders for the carryover plan and report-filing apply pair. [2]
-- The typed sync/start/poll payload builders. [3]
 
-- Carryover registration declares a leaf-bound recovery application that reanchors, indexes and validates, requires intent_note, and carries no commit or imported history. Source caption: `memory_carryover_apply` [1]
+
+
+
 - The `MemoryBranches` parameter object. [4]
 - The `CarryoverSelection` parameter object. [5]
-- The payload builder for the carryover plan. [6]
-- The payload builder for the report-filing apply. [7]
-- The typed sync payload builder. [8]
-- The typed start payload builder. [9]
-- The typed poll payload builder. [10]
-- The `citation_fix` registration with its one-card or bounded-card selectors, optional `contract_path` and `dry_run`; no caller exclude is declared. Source caption: `citation_fix` [11]
+
+
+
+
+
+
 - The scope object the citation operations share: it carries one named document or a bounded list of them, and refuses both selectors, an empty list, or a list outside `citation_fix`. [12]
 - The one scope value the citation operations share: the application entry points default to `DEFAULT_CITATION_OPERATION_SCOPE`, and the registration constructs the named-document scope it passes in. [13]
 
@@ -207,10 +215,57 @@ polls to repeat the original contract path. It does not imply that repository id
 acceptance pair.
 
 - The drift description states the anchor measurement, the non-blocking stale rule, and the no-repair boundary. [14]
-- Baseline adoption forwards accept_drift without bypassing legacy-card or validator refusal; stale code/test references still fail exact paired staged-tree validation before any baseline is published. [15]
+
 
 </details>
 
+
+
+
+
+
+- Carryover registration declares a leaf-bound recovery application that reanchors, indexes and validates, requires intent_note, and carries no commit or imported history. Source caption: `memory_carryover_apply` [1]
+
+
+
+- The payload builders for the carryover plan and report-filing apply pair.  Anchor: `memory_carryover_plan_payload` [2]
+
+
+
+- The typed sync/start/poll payload builders.  Anchor: `memory_quality_check_payload` [3]
+
+
+
+- The payload builder for the carryover plan.  Anchor: `memory_carryover_plan_payload` [6]
+
+
+
+- The payload builder for the report-filing apply.  Anchor: `memory_carryover_apply_payload` [7]
+
+
+
+- The typed sync payload builder.  Anchor: `memory_quality_check_payload` [8]
+
+
+
+- The typed start payload builder.  Anchor: `memory_quality_check_start_payload` [9]
+
+
+
+- The typed poll payload builder.  Anchor: `memory_quality_check_poll_payload` [10]
+
+
+
+- The `citation_fix` registration with its one-card or bounded-card selectors, optional `contract_path` and `dry_run`; no caller exclude is declared. Source caption: `citation_fix` [11]
+
+
+
+- Baseline adoption forwards accept_drift without bypassing legacy-card or validator refusal; stale code/test references still fail exact paired staged-tree validation before any baseline is published. [15]
+
+
+
 - Registration exposes converted worktree-only carryover and finite citation selectors without retired commit-message, caller-exclude or expected-snapshot arguments. [18]
 
-- Memory health, baseline and carryover declarations retain their models and request discriminators, but payloads and operation-only memory request types are resolved on the matching call. [19]
+
+
+- Memory health, baseline and carryover declarations retain their models and request discriminators, but payloads and operation-only memory request types are resolved on the matching call.  Anchor: `_register_memory_health_tools` [19]

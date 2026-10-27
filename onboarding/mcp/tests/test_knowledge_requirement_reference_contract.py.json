@@ -166,11 +166,11 @@
       ]
     },
     "26": {
-      "note": "The lane row that gives this module its classification and keeps it collectable under a named lane.\n\nAnchor: `test_knowledge_requirement_reference_contract`",
+      "note": "The lane row that gives this module its classification and keeps it collectable under a named lane.  Anchor: `test_knowledge_requirement_reference_contract`",
       "targets": [
         {
           "anchor": {
-            "blob": "102c4550ab6429f44c8fb543d1d0662de66a1b8c",
+            "blob": "5276cd9583d9a33d9094edac37d82b768491aed9",
             "content": "sha256:7ed6d2ea1379d55b9a055c3301c21735631cf3baf1f8d8f8533ab8e8043731c2",
             "locator": {
               "end": 176,
@@ -183,7 +183,7 @@
         },
         {
           "anchor": {
-            "blob": "102c4550ab6429f44c8fb543d1d0662de66a1b8c",
+            "blob": "5276cd9583d9a33d9094edac37d82b768491aed9",
             "content": "sha256:5fc838a1a57ff06ca36f1af8828a79e2c501daac8ea86a7f4c3cddce2a7f34fe",
             "locator": {
               "end": 192,
@@ -196,7 +196,7 @@
         },
         {
           "anchor": {
-            "blob": "102c4550ab6429f44c8fb543d1d0662de66a1b8c",
+            "blob": "5276cd9583d9a33d9094edac37d82b768491aed9",
             "content": "sha256:33b4b865c5c5115dd7a22ed4473ff30e50bbc9a1ec3048676cad3730f5be890a",
             "locator": {
               "end": 161,

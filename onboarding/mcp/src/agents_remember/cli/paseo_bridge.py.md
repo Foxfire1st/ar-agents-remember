@@ -34,8 +34,11 @@ closing archive budget.
 - Frozen implementation of _bridge_environment supporting the stated file behavior. [2]
 - Frozen implementation of _configured_server_id supporting the stated file behavior. [3]
 - Checks exact endpoint/server-id environment and removal of inherited PASEO/AR_PASEO values. [4]
+
 - Checks absent settings or home server-id start no process. [5]
+
 - Exercises different/missing connected server identity and named refusal with reconnect disabled. [6]
+
 
 ## 260928-MIK-L96 Node and remedy text
 

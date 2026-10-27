@@ -4,13 +4,23 @@
       "spans_locations",
       "guarded_by_test"
     ],
-    "justification": "Runtime-scoped caching and pre-creation validation prevent a choice cached from another home creating an unintended workspace or role."
+    "justification": "The runtime-scoped shared store and fresh per-operation discovery prevent one runtime or old in-process answer deciding another start; pre-creation validation uses only parts for which current or saved offers are actually known."
   },
-  "applicability": "Dashboard launcher catalog and its handover preparation.",
-  "conditions": [],
+  "applicability": "Every consumer of the configured Paseo catalog when it needs current launch-choice or provider-capability information: launcher views and rechecks, new role starts and their preparation, tool-server acceptance/status checks, caller-harness/native-tool checks, settings initialization that needs offered harnesses, and settings-driven explainer starts.",
+  "conditions": [
+    "The shared stored answer is scoped by install prefix, home, listen address and runtime version.",
+    "Each top-level operation requests fresh host data; nested work in the same operation may share its answer.",
+    "Unavailable parts use only their corresponding successful saved part; unknown parts are not represented as empty offered sets.",
+    "Explicitly unoffered choices in a known answer are refused before durable preparation.",
+    "Every catalog consumer uses the same configured-host resolver and saved-part policy."
+  ],
   "exclusions": [
-    "role_start intentionally refreshes its catalog per call.",
-    "Service-tier capability behavior has its separate R17 owner."
+    "A saved-only display is not authority to start without the fresh request finishing.",
+    "Unavailable metadata does not prove a configured value unsupported.",
+    "No promise of successful host creation follows from unchecked choices.",
+    "Service-tier capability behavior retains its separate owner; freshness does not authorize permission-bearing start arguments.",
+    "A repeated receipt-bound request retains the recorded call and choices; do not turn catalog freshness into reselecting an already recorded launch.",
+    "Permission-mode defaults are explicitly excluded from R214 name-map removal, and unknown offerings do not grant permission authority."
   ],
   "id": "INV-RQ2ZB8",
   "origin": {
@@ -24,9 +34,9 @@
     "leaf": "260928-MIK-L90",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "The catalog is cached per Paseo runtime (install prefix, home, listen address, version) in the process, is loaded when the cache is empty and rediscovered only when the options request carries `refreshCatalog`; a role change, an `agentId` and a launch reuse it, and a launch's agent, model and effort are validated against it before the workspace is resolved, so a refused selection creates nothing.",
+  "statement": "Every launcher view and role start asks the configured Paseo runtime for current choices. A view reads full offers; a start reads provider/model metadata and then only the selected model's features. Within one operation the answer may be shared, but no process-lifetime cache controls later views or starts. Unavailable parts use the shared last successful answer with its timestamp; a part with no current or saved answer leaves configured values unchecked. Known agent/model/effort choices are validated before workspace or enclosure creation. Launcher rechecks, role-start preparation, tool-server checks, caller-harness checks, settings initialization and settings-driven explainer starts use this same resolver and saved-part policy.",
   "status": "proposed",
   "supersedes": []
 }

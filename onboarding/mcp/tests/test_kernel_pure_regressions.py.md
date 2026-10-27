@@ -37,8 +37,12 @@ The Candidate A retirement and replacement measurement are described in
 
 - Five retained provider-ID and gate/decision-role guards remain; the two retired route-normalization cases are not replaced by whole-file assertions. [1]
 
-- The explicit unit lane owns the module. [2]
+
 
 ### Cross-Repo References
 
 No cross-repository boundary applies.
+
+
+
+- The explicit unit lane owns the module.  Anchor: "mcp/tests/test_kernel_pure_regressions.py" [2]

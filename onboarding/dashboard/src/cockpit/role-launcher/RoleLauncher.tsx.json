@@ -3,8 +3,27 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "7fd286e8f506c4eda1b00757ae2dcc75194bab80",
-        "content": "sha256:1712214cf009a7918411578e039ea7a6aa287c819078d4bc0250eee59ee9790a",
+        "blob": "50f423ccd5a6d36f86fb770c54719420ea2a42d6",
+        "content": "sha256:576e9d51377d25993beaa73cbb22b6e1d2f4ecfb3d7c8cf27eed15a770948fe6",
+        "locator": {
+          "end": 818,
+          "kind": "line_range",
+          "start": 817
+        }
+      },
+      "id": "RLZ-0T0KXT",
+      "invariant": "INV-63Z0MN",
+      "origin": {
+        "handoffEntry": "L202-A6b-attach-098678",
+        "leaf": "260928-MIK-L202"
+      },
+      "rationale": "Shows the speed label from the selected model’s actual offered tier rows, preserving the configured spelling when unmatched.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "50f423ccd5a6d36f86fb770c54719420ea2a42d6",
+        "content": "sha256:6c92bcf7a4abb9ee094f9c02deb173e5aa3c7088ad83614813f797905e9af228",
         "locator": {
           "kind": "symbol",
           "name": "RoleLauncher"
@@ -21,8 +40,8 @@
     },
     {
       "anchor": {
-        "blob": "7fd286e8f506c4eda1b00757ae2dcc75194bab80",
-        "content": "sha256:1712214cf009a7918411578e039ea7a6aa287c819078d4bc0250eee59ee9790a",
+        "blob": "50f423ccd5a6d36f86fb770c54719420ea2a42d6",
+        "content": "sha256:6c92bcf7a4abb9ee094f9c02deb173e5aa3c7088ad83614813f797905e9af228",
         "locator": {
           "kind": "symbol",
           "name": "RoleLauncher"
@@ -39,12 +58,12 @@
     },
     {
       "anchor": {
-        "blob": "7fd286e8f506c4eda1b00757ae2dcc75194bab80",
+        "blob": "50f423ccd5a6d36f86fb770c54719420ea2a42d6",
         "content": "sha256:b86f86bed78f99f0d2aea43d8777da52b524be369474c1858449c6e583be1c7f",
         "locator": {
-          "end": 1093,
+          "end": 1105,
           "kind": "line_range",
-          "start": 1079
+          "start": 1091
         }
       },
       "id": "RLZ-9FTBAR",
@@ -58,7 +77,7 @@
     },
     {
       "anchor": {
-        "blob": "7fd286e8f506c4eda1b00757ae2dcc75194bab80",
+        "blob": "50f423ccd5a6d36f86fb770c54719420ea2a42d6",
         "content": "sha256:ae01e6a809cd47819b696aee450d63c9dec59f9e0be5b9c54b718c11e5fdabdb",
         "locator": {
           "kind": "symbol",
@@ -76,8 +95,27 @@
     },
     {
       "anchor": {
-        "blob": "7fd286e8f506c4eda1b00757ae2dcc75194bab80",
-        "content": "sha256:1712214cf009a7918411578e039ea7a6aa287c819078d4bc0250eee59ee9790a",
+        "blob": "50f423ccd5a6d36f86fb770c54719420ea2a42d6",
+        "content": "sha256:74a4a0bf6399224b7bd7195c7c8a3e0eb5bab58f0faf288f23d851395bf5f88b",
+        "locator": {
+          "end": 568,
+          "kind": "line_range",
+          "start": 566
+        }
+      },
+      "id": "RLZ-GVWM81",
+      "invariant": "INV-RQ2ZB8",
+      "origin": {
+        "handoffEntry": "L202-A6b-attach-bcff60",
+        "leaf": "260928-MIK-L202"
+      },
+      "rationale": "Names an unanswered model inventory as configured and unchecked rather than reporting a known empty list.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "50f423ccd5a6d36f86fb770c54719420ea2a42d6",
+        "content": "sha256:6c92bcf7a4abb9ee094f9c02deb173e5aa3c7088ad83614813f797905e9af228",
         "locator": {
           "kind": "symbol",
           "name": "RoleLauncher"
@@ -94,8 +132,8 @@
     },
     {
       "anchor": {
-        "blob": "7fd286e8f506c4eda1b00757ae2dcc75194bab80",
-        "content": "sha256:1712214cf009a7918411578e039ea7a6aa287c819078d4bc0250eee59ee9790a",
+        "blob": "50f423ccd5a6d36f86fb770c54719420ea2a42d6",
+        "content": "sha256:6c92bcf7a4abb9ee094f9c02deb173e5aa3c7088ad83614813f797905e9af228",
         "locator": {
           "kind": "symbol",
           "name": "RoleLauncher"
@@ -112,12 +150,12 @@
     },
     {
       "anchor": {
-        "blob": "7fd286e8f506c4eda1b00757ae2dcc75194bab80",
+        "blob": "50f423ccd5a6d36f86fb770c54719420ea2a42d6",
         "content": "sha256:3ce7369a5577704e0156be3fde1ae43e6b2aa2c9eafabc52ca7ec8f99b6e715b",
         "locator": {
-          "end": 687,
+          "end": 693,
           "kind": "line_range",
-          "start": 581
+          "start": 587
         }
       },
       "id": "RLZ-N85X2R",
@@ -131,8 +169,8 @@
     },
     {
       "anchor": {
-        "blob": "7fd286e8f506c4eda1b00757ae2dcc75194bab80",
-        "content": "sha256:1712214cf009a7918411578e039ea7a6aa287c819078d4bc0250eee59ee9790a",
+        "blob": "50f423ccd5a6d36f86fb770c54719420ea2a42d6",
+        "content": "sha256:6c92bcf7a4abb9ee094f9c02deb173e5aa3c7088ad83614813f797905e9af228",
         "locator": {
           "kind": "symbol",
           "name": "RoleLauncher"
@@ -149,12 +187,12 @@
     },
     {
       "anchor": {
-        "blob": "7fd286e8f506c4eda1b00757ae2dcc75194bab80",
-        "content": "sha256:5ff2039bc6e242759143b58f72ce76dcec06dd656628e78fb97a4498c870e457",
+        "blob": "50f423ccd5a6d36f86fb770c54719420ea2a42d6",
+        "content": "sha256:696f8896048836abf48e1da40fed093d12aa0f2a229d7252984f71bf22bfab13",
         "locator": {
-          "end": 1055,
+          "end": 1063,
           "kind": "line_range",
-          "start": 967
+          "start": 976
         }
       },
       "id": "RLZ-TNTSC0",
@@ -168,8 +206,8 @@
     },
     {
       "anchor": {
-        "blob": "7fd286e8f506c4eda1b00757ae2dcc75194bab80",
-        "content": "sha256:1712214cf009a7918411578e039ea7a6aa287c819078d4bc0250eee59ee9790a",
+        "blob": "50f423ccd5a6d36f86fb770c54719420ea2a42d6",
+        "content": "sha256:6c92bcf7a4abb9ee094f9c02deb173e5aa3c7088ad83614813f797905e9af228",
         "locator": {
           "kind": "symbol",
           "name": "RoleLauncher"
@@ -191,12 +229,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7fd286e8f506c4eda1b00757ae2dcc75194bab80",
+            "blob": "50f423ccd5a6d36f86fb770c54719420ea2a42d6",
             "content": "sha256:b1bb4a25b25a077f144005d93d9649d2ab97891acec17f0926c6b522308d3ce3",
             "locator": {
-              "end": 835,
+              "end": 842,
               "kind": "line_range",
-              "start": 825
+              "start": 832
             }
           },
           "kind": "code"
@@ -204,16 +242,16 @@
       ]
     },
     "10": {
-      "note": "File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence.\n\nAnchor: Current source; preserved L88 property 12",
+      "note": "The shared launcher retains the reasoned StepUp/base-preview composition, runs seeded document repair only, and adds catalog provenance without pruning configured overrides.",
       "targets": [
         {
           "anchor": {
-            "blob": "7fd286e8f506c4eda1b00757ae2dcc75194bab80",
-            "content": "sha256:e79ec32916e09bff3269e8f0b39163d3b2494684c7e33ea3596716ecb3461851",
+            "blob": "50f423ccd5a6d36f86fb770c54719420ea2a42d6",
+            "content": "sha256:b5df0934a040e1d9ef2aee7248af6fa96d3b22ee6b29cb83e9e4eb1d8564b23e",
             "locator": {
-              "end": 1175,
+              "end": 1182,
               "kind": "line_range",
-              "start": 1096
+              "start": 1108
             }
           },
           "kind": "code"
@@ -261,7 +299,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7fd286e8f506c4eda1b00757ae2dcc75194bab80",
+            "blob": "50f423ccd5a6d36f86fb770c54719420ea2a42d6",
             "content": "sha256:6e12c73e518e0dad2a470a82303f8f9f7e83170c8fbf27b24a3acdcc76b3dd43",
             "locator": {
               "kind": "symbol",
@@ -277,48 +315,48 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7fd286e8f506c4eda1b00757ae2dcc75194bab80",
+            "blob": "50f423ccd5a6d36f86fb770c54719420ea2a42d6",
             "content": "sha256:8b6e5f5f4a4cc02e4f7d96f245b49676c3521fc8e31461166314907a0e6f041a",
             "locator": {
-              "end": 183,
+              "end": 187,
               "kind": "line_range",
-              "start": 181
+              "start": 185
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "7fd286e8f506c4eda1b00757ae2dcc75194bab80",
+            "blob": "50f423ccd5a6d36f86fb770c54719420ea2a42d6",
             "content": "sha256:e6d5ccc8b69c02c2baa25b2e5923c3e44b90539dfc1eed2f2993db9403ca70c4",
             "locator": {
-              "end": 1103,
+              "end": 1115,
               "kind": "line_range",
-              "start": 1096
+              "start": 1108
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "7fd286e8f506c4eda1b00757ae2dcc75194bab80",
-            "content": "sha256:b0201fef76b6892d4c564eefa2790b83e008d8d3486c79c9c75ba4c52c7f678c",
+            "blob": "50f423ccd5a6d36f86fb770c54719420ea2a42d6",
+            "content": "sha256:06219f1c6ff8a1b8e4bd3c095769c8ea5e093ee3abcf933d4812ad3fcba67675",
             "locator": {
-              "end": 1176,
+              "end": 1183,
               "kind": "line_range",
-              "start": 1138
+              "start": 1142
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "7fd286e8f506c4eda1b00757ae2dcc75194bab80",
-            "content": "sha256:baa3abb391c852a10d677fc4938c0b37bb9f094f2dc039344dd5d7d05868b439",
+            "blob": "50f423ccd5a6d36f86fb770c54719420ea2a42d6",
+            "content": "sha256:696f8896048836abf48e1da40fed093d12aa0f2a229d7252984f71bf22bfab13",
             "locator": {
-              "end": 1053,
+              "end": 1063,
               "kind": "line_range",
-              "start": 967
+              "start": 976
             }
           },
           "kind": "code"
@@ -352,16 +390,16 @@
       ]
     },
     "4": {
-      "note": "The shared composition wires field sections, repair effects and the action bar.",
+      "note": "The shared composition wires field sections, seeded document repair, catalog provenance and the action bar; no catalog override-pruning effect remains.",
       "targets": [
         {
           "anchor": {
-            "blob": "7fd286e8f506c4eda1b00757ae2dcc75194bab80",
-            "content": "sha256:1712214cf009a7918411578e039ea7a6aa287c819078d4bc0250eee59ee9790a",
+            "blob": "50f423ccd5a6d36f86fb770c54719420ea2a42d6",
+            "content": "sha256:6c92bcf7a4abb9ee094f9c02deb173e5aa3c7088ad83614813f797905e9af228",
             "locator": {
-              "end": 1176,
+              "end": 1183,
               "kind": "line_range",
-              "start": 1096
+              "start": 1108
             }
           },
           "kind": "code"
@@ -373,8 +411,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "93d2b412210f4bc1e940caa813b6399f5237910d",
-            "content": "sha256:83087251ec33aa1a0615f73d8e1e48bec7a74d36dbcdcb2992938410b4b69e4e",
+            "blob": "9587f2f625e895a2933a3474ec4cfab7f630fdc0",
+            "content": "sha256:c3f86277f2b02bab72698fea8e0d2f9287e2ca96e40c5bb99bffa9dcdcd88e2c",
             "locator": {
               "kind": "symbol",
               "name": "resolveLaunchReadiness"
@@ -390,12 +428,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7fd286e8f506c4eda1b00757ae2dcc75194bab80",
+            "blob": "50f423ccd5a6d36f86fb770c54719420ea2a42d6",
             "content": "sha256:1b82c274556b2944144ea73674c31503477db1b7786ae43f615e1ee735c9f4c4",
             "locator": {
-              "end": 56,
+              "end": 60,
               "kind": "line_range",
-              "start": 42
+              "start": 46
             }
           },
           "kind": "code"
@@ -407,12 +445,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7fd286e8f506c4eda1b00757ae2dcc75194bab80",
+            "blob": "50f423ccd5a6d36f86fb770c54719420ea2a42d6",
             "content": "sha256:05331be8d9ead03bbfb923615d590e1096e6b46362fd4eddc413b73934d8d931",
             "locator": {
-              "end": 171,
+              "end": 175,
               "kind": "line_range",
-              "start": 157
+              "start": 161
             }
           },
           "kind": "code"
@@ -424,12 +462,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7fd286e8f506c4eda1b00757ae2dcc75194bab80",
+            "blob": "50f423ccd5a6d36f86fb770c54719420ea2a42d6",
             "content": "sha256:0ed142ed6c75866f1322e2dec119ef8f604322b6c36fc8a028ba077dd679a38d",
             "locator": {
-              "end": 796,
+              "end": 802,
               "kind": "line_range",
-              "start": 717
+              "start": 723
             }
           },
           "kind": "code"
@@ -441,12 +479,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7fd286e8f506c4eda1b00757ae2dcc75194bab80",
-            "content": "sha256:a60a8bbe3adfd46f5a33d8099c09f0f01cd7de205219e045a7657cf1bdef8f69",
+            "blob": "50f423ccd5a6d36f86fb770c54719420ea2a42d6",
+            "content": "sha256:4db9be4875f23f837d8a33716eec436ad511a2faad14073aaa6e03ffac1b0e5d",
             "locator": {
-              "end": 1052,
+              "end": 1062,
               "kind": "line_range",
-              "start": 926
+              "start": 933
             }
           },
           "kind": "code"

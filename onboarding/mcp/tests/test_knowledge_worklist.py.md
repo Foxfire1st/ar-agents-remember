@@ -88,10 +88,14 @@ No configured live documentation source was available for this pass.
 - Both memory sides unconverted: no worklist. [12]
 - The definition-4 ruling. [13]
 - A partial inventory. [14]
-- The lane registration. [15]
+
 
 ### Cross-Repo References
 
 No meaningful cross-repo references found: every repository is built under `tmp_path`.
 
 No cross-repo boundary is crossed by this file.
+
+
+
+- The lane registration.  Anchor: "mcp/tests/test_knowledge_worklist.py" [15]

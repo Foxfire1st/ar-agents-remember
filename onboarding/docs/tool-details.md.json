@@ -4,8 +4,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "2b635ee176f4fb5b39f31f5a621e0169376a6fc0",
-        "content": "sha256:0de741136d6c46f7cec6de65f61f8a7aaffaac32bb60733e82ac02bea9186f4d",
+        "blob": "9cc12d82c359d5d0e3bf22d07526a159a3d8be2a",
+        "content": "sha256:222c741aff9fe8ecf4c2f26bb4f1f9e04cdf050d261e7fa26f805e7d8fea2d4e",
         "locator": {
           "kind": "file"
         }
@@ -26,12 +26,47 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2b635ee176f4fb5b39f31f5a621e0169376a6fc0",
-            "content": "sha256:0de741136d6c46f7cec6de65f61f8a7aaffaac32bb60733e82ac02bea9186f4d",
+            "blob": "9cc12d82c359d5d0e3bf22d07526a159a3d8be2a",
+            "content": "sha256:222c741aff9fe8ecf4c2f26bb4f1f9e04cdf050d261e7fa26f805e7d8fea2d4e",
             "locator": {
-              "end": 310,
+              "end": 336,
               "kind": "line_range",
               "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The reference publishes the flat preview modes beside the request-object quality modes.\n\nAnchor: \"citation_fix\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1cca4998bfa9489d579e6d86646763bc880a5e18",
+            "content": "sha256:1b7433c5a465fc3a2c8bc01a7c963e13fccf46adb465c677689eed240170221d",
+            "locator": {
+              "end": 87,
+              "kind": "line_range",
+              "start": 86
+            },
+            "path": "docs/reference/mcp-tools.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The detailed contract describes shared preview runs and synchronous write ordering.\n\nAnchor: \"mode=\\\"start\\\"\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9cc12d82c359d5d0e3bf22d07526a159a3d8be2a",
+            "content": "sha256:9909c510242a60b9724d65b9a21055f5f13c95e48dbaa06b50f00be4db47b94f",
+            "locator": {
+              "end": 159,
+              "kind": "line_range",
+              "start": 145
             }
           },
           "kind": "code"

@@ -14,7 +14,7 @@ Receipt-directory vocabulary is defined by `controlplane/held_store_discovery.py
 
 Receipt creation is exclusive and complete before native launch. `_execute_prepared_launch` republishes receipt-bound role facts before the native launch/replay call; this best-effort publication and host execution are separate boundaries, not one atomic transaction; unknown outcomes retain replayRequest with original UUID/prompt/options. Resolved ordinary receipts drop replayRequest. A rejected step-up with a settled predecessor and no lost successor instead retains its saved call for same-request retry; other rejections remain closed. A created held seat instead keeps its saved call and opening handover, reports `held`, and restores the artifact from `heldOpeningPrompt` on retry without inventing a first message. Public projection names an eligible leaf holder for the launcher; closing-mark refusals still override retry/revive/start affordances without erasing archival debt. Taskless canonical storage/migration remains bounded to exact receipt identities; old schema at current address refuses, previous host receipts are not execution authority. Public execution whitelists lifecycle fields and requested/observed tier disclosure, never task acceptance.
 
-`_read_receipt` distinguishes a missing receipt from an unreadable or malformed one: non-regular paths refuse, decoding/JSON/value-conversion/depth failures return HTTP 409 with reconcile advice, and non-object/wrong-schema records are malformed. The document reader adds shared chat-shape validation; none of these refusals rewrites a receipt or starts/replays a launch. A retry restores both hand-over files through `role_handover_restore.py` before it sends, and a receipt without the second file's reference keeps the text file's rules alone.
+`_read_receipt` distinguishes a missing receipt from an unreadable or malformed one: non-regular paths refuse, decoding/JSON/value-conversion/depth failures return HTTP 409 with reconcile advice, and non-object/wrong-schema records are malformed. The document reader adds shared chat-shape validation; none of these refusals rewrites a receipt or starts/replays a launch. A retry that carries `handoverArtifact` or a `handoverFile` key enters `role_handover_restore.py` before it sends; a missing or mistyped companion reference is not treated as a legacy receipt. Only a receipt with neither recorded artifact enters the detail-validation-only path.
 
 ## Closing mark and archive settlement (MIK-R76)
 
@@ -50,10 +50,14 @@ Existing schema/read refusals, exclusive receipt creation, canonical taskless id
 
 - Interrupts between receipt and call and checks retry retains one agent identity. [6]
 
+
 - Races publication and checks one persisted winner; competing request cannot issue another launch. [8]
 
+
 - Checks unresolved/rejected receipts returned unchanged without host read. [10]
+
 - Checks an idle finished native turn projects completed lifecycle status and its bounded last text; the test does not itself prove absence of every semantic/Git mutation. [11]
+
 
 
 ## MIK-R95 Preparation Receipt
@@ -73,9 +77,11 @@ Selected-task Investigator receipts are per request rather than singleton select
 - Frozen implementation of _execute_prepared_launch supporting the stated file behavior. [1]
 - Frozen implementation of _public_execution supporting the stated file behavior. [4]
 - The launch observer checks complete receipt, stable UUID and stored call before runtime launch. [5]
+
 - Changes task/capsule/prompt inputs and verifies repeat returns or replays saved receipt without new preparation. [7]
+
 - Through leaf/taskless routes checks restoration/refusal, exact advice and unchanged receipt/foreign link target. [9]
-- Pins delivered worker doctrine: one parent role_message after report, none for dashboard-started worker, and a finished turn is not AR acceptance. [12]
+- Pins delivered worker doctrine: freeze the candidate and hand it directly to the leaf's Reviewer; the Manager receives no routine report notice. A dashboard-started Worker has no parent, and a finished turn is not AR acceptance. [12]
 - Composes delivered architect/manager/orchestrator capsule text, requires current diff/evidence inspection and owner acceptance clauses, and detects removal of manager inspection; this proves instruction delivery rather than runtime no-mutation. [13]
 
 ## Current contract evidence

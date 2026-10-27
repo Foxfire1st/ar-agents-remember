@@ -53,4 +53,6 @@ The following retained coverage metadata describes the onboarding map, not lifec
 
 - Retained authority models carry generated declarations, an optional admittedMemoryTree, input snapshots and provenance; model validation does not prove a current runtime observer or gate execution. [4]
 
-- Historical pre-R65 refresh composition checked sidecars and route overviews; that legacy composition is removed. The surviving converted controller uses its trace gate. [5]
+
+
+- Historical pre-R65 refresh composition checked sidecars and route overviews; that legacy composition is removed. The surviving converted controller uses its trace gate.  Anchor: `validate_memory_refresh_attestations` `_onboarding_refresh_gate` [5]

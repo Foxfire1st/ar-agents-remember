@@ -182,7 +182,7 @@ durable memory. Every range was derived against the current 1140-line source.
 
 
 
-> Retained earlier citation wording: - The lane this module is registered in, so the fail-closed manifest admits it. Source caption: "mcp/tests/test_record_integrity.py" [17]
+> Retained earlier citation wording: - The lane this module is registered in, so the fail-closed manifest admits it. Source caption: "mcp/tests/test_record_integrity.py"
 
 
 
@@ -193,5 +193,9 @@ No separate cross-repository protocol is established by this file. The configure
 allowance is empty and no external source is relied upon here.
 
 No cross-repository evidence is required for these file-local claims.
+
+
+
+
 
 - The lane this module is registered in, so the fail-closed manifest admits it. Source caption: "mcp/tests/test_record_integrity.py" [17]

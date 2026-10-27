@@ -78,7 +78,7 @@ The fixture builders.
 
 
 
-> Retained earlier citation wording: - Its catalog row. [6]
+> Retained earlier citation wording: - Its catalog row.
 
 
 
@@ -87,5 +87,9 @@ The fixture builders.
 No meaningful cross-repo references found: the fixtures are `tmp_path` Git repositories built by the tests themselves.
 
 No cross-repo boundary is crossed by this file.
+
+
+
+
 
 - Its catalog row. [6]

@@ -174,11 +174,43 @@ These retired source accounts preserve earlier intent only. Their former citatio
 
 `models/user_settings_init.py` declares the settings initializer's answer — its state, path, target, the harness of each role, what the call wrote or preserved, and its refusal fields — and `models/skills.py` was removed with the skill-install response it declared. On the role wire, `RoleStartCall` carries the caller's harness name, `RoleEnvironmentPreparation` declares the first-run report, and `RoleStartResponse` declares the dashboard and chat addresses the start answer emits. `LauncherRole` also admits the taskless setup role `bootstrap`; `system-specialist` normalizes to Investigator. `RoleDispatchRequest` carries `callerHarness` independently of the optional agent/model/effort override; model fields do not establish successful launch or permission authority.
 
-## Evidence
+## Citation preview response
 
+`CitationFixResponse` adds optional run status and identity to the existing explicit citation count fields. The envelope distinguishes running/completed/failed background state from the repair result; it does not turn completed computation into clean memory or acceptance.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## Evidence
+- Citation responses carry optional background identity. [338]
 - The packet shapes bind one comparison and refuse an inconsistent collection or coverage count. [325]
 - A frame manifest refuses an inconsistent asset digest, an unlisted entrypoint and a non-older parent. [326]
-
 - **The refusal record the new code travels in, and the result that carries it as one of exactly two outcomes.** [2]
 - The surface version that stays `/1`, with the reasoning recorded beside the constant. [3] [252]
 - The anchor observation and its region validator. [8]
@@ -192,9 +224,7 @@ These retired source accounts preserve earlier intent only. Their former citatio
 - **The presence union on the vocabulary, beside the subject-kind union it parallels.** [16]
 - **The entry value with `presence`, and the entry list with the totals and their agreement validator.** [17]
 - The catalogue owner that fills these values, and the adapter that delegates to it. [18]
-
 - The current revision-selection value declares the four-state union compared/unresolved/added/removed and validates the respective pair-presence combinations; the earlier five-state account is historical. [19]
-
 - **The three validators that make a misreading unconstructible.** [20]
 - **The pane field that carries the value, with its one-direction validator.** [21]
 - **The policy that computes the value from authored heads.** [22]
@@ -239,9 +269,7 @@ These retired source accounts preserve earlier intent only. Their former citatio
 - Public MCP payload builders validate through the response model registry. [67]
 - The advertised public roster's single definition, in this route's zero-import `tools/` leaf; the adapter re-exports the identical object. [68]
 - The response model that reads the roster to enforce the worktree surface's next move against `PUBLIC_TOOLS`.  Anchor: "# The next-move triple, declared here so the worktree surface's guidance is part of"; "def _require_registered_public_next_tool" [69]
-
 - The registry maps every modeled builder and the advertised public subset to response models. [70]
-
 - Contract tests prove public tool coverage and schema generation. [71] [77]
 - The record-landing envelope is declared on this route.  Anchor: "class WorktreeRecordLandingResponse(WorktreeCommandResponse):" [72]
 - The checkpoint-landing envelope is declared on this route.  Anchor: "class WorktreeCheckpointLandingResponse(WorktreeCommandResponse):" [73]
@@ -307,9 +335,7 @@ These retired source accounts preserve earlier intent only. Their former citatio
 - The nodes that hold the page and result invariants: the truncated comparison and the unestablished limitation, including the opposite-state and continuation refusals (`test_knowledge_diff_scope.py:613-676`). [192]
 - The two operations the route write layer added, so a route refusal names a route operation. [193] [195]
 - The shipped code an inadmissible record payload is refused with — reused rather than widened, and re-cited by hand against the current tree. [194] [196]
-
 - Historical candidate-change commands and their union were retired with the canonical database write boundary (MIK-R26); candidate.py now owns read-context identities, not that widened write operation. [199]
-
 - **The six operations this leaf added to the shared vocabulary, and the unchanged code union.** [205]
 - Condition/input-set vocabulary remains as Literal types. [207]
 - Retained mechanical observation vocabulary names granularity, scope and limitations. [209]
@@ -327,11 +353,11 @@ These retired source accounts preserve earlier intent only. Their former citatio
 - The unassessed-is-an-absence rule for counts. [233]
 - One outcome per comparison result: a payload or one refusal. [234]
 - **The two reviewable subject kinds, declared here once so the transport, the entry list and the panes cannot disagree.** [235]
-- **The reviewed subject as the comparison selected it: a recorded identity, its own label and the operation's count, with no field for a path, a file, a display version or a ranking.** [236]
+- The reviewed subject carries its recorded identity, its own label and before/after presence. It has no path, file, display version, ranking or per-subject comparison count. [236]
 - **The entry read's typed outcome, whose validators refuse a refused read that offers any entry, non-zero totals beside a refusal, and a total smaller than the page beside it (`ICR-R09@v1`).** [237]
 - The sixth refusal code, for a subject the resolution could not name. [238]
 - **The seventh refusal code, added by this leaf: the generation a listing published no longer resolves to the two code objects it bound, so there are no bytes to serve for that entry.** [239]
-- **The new field, on the strict response model that declares it.** [242]
+- The strict `ReadArFilesResponse` declares named-file and governing-overview locations, observation state and refusal fields; it has no `published_intent` body field. [242]
 - **The owning module that decides the shape this model declines to re-declare.** [243]
 - The strict envelope base the field joined. [244]
 - The registry entry for the tool whose payload carries the field; unchanged by this leaf. [245]
@@ -362,9 +388,7 @@ These retired source accounts preserve earlier intent only. Their former citatio
 - The attempt-qualified history path. [273]
 - Why a row cannot govern an invariant whose revision the leaf changed. [274]
 - Current imported source owns this scoped route boundary. [275] [277] [278]
-
 - Current imported source owns this scoped route boundary. [276]
-
 - A second computation over moved inputs is refused as inputs_changing; a process failure keeps its own code. [279]
 - The dashboard's tokens for the codes. [280]
 - Overload is its own refusal code with a true action. [281]
@@ -378,14 +402,10 @@ These retired source accounts preserve earlier intent only. Their former citatio
 - `PUBLIC_TOOLS` is one tuple with a single definition, re-exported unchanged. [289]
 - The worktree response declares the next-move triple and refuses any `nextTool` outside `PUBLIC_TOOLS`. [290]
 - ReviewEntryListResult gains the optional ReviewOutline field beside its entry population and counts. [291]
-
-
 - Rows and supplied superseded IDs close items; default context remains empty. [292]
-
 - The subject pattern, the triggers and the refreshed triggers. [64]
 - The one spelling of a link target, and the gate's predicate. [65]
 - Curator coherence keeps semantic revision, attempt, immutable record, stable authority, snapshot, and action request identities separate and exact. [75]
-
 - Current single literal PUBLIC_TOOLS contains 44 ordinary public names (including knowledge_write, user_settings_init, citation_note_revision and explainer_control) and excludes dispatch_agent; native role, retirement and knowledge vocabulary remains. Source census only, no live advertisement, new CODE grade or MEMORY acceptance. [294]
 - One current tool-response registry: `TOOL_RESPONSE_MODELS` holds the same 44 public names as `PUBLIC_TOOLS`, including `knowledge_write`, `user_settings_init`, `citation_note_revision` and `explainer_control`, and excludes `dispatch_agent`; the former internal-compat/public split (`INTERNAL_COMPAT_TOOL_NAMES`, `PUBLIC_TOOL_RESPONSE_MODELS`) is retired and is retained as history only. This is a source-shape census, not a live advertisement or acceptance. [295]
 - Whole-result validation/enrichment precedes serialization and token finalization. [296]
@@ -402,7 +422,6 @@ These retired source accounts preserve earlier intent only. Their former citatio
 - V2 receipt admits only measured bound/moved states; helper also represents unmeasured. [307]
 - Sync currency requires both exact matches and preserves missing memory as unmeasured. [308]
 - Capsule skill references and semantic digest exclude diagnostic output. [309]
-
 - **Retained historical source account — superseded by the current route account:** The subject pattern, the triggers and the refreshed triggers. [64]
 - **Retained historical source account — superseded by the current route account:** The one spelling of a link target, and the gate's predicate. [65]
 - **Retained historical source account — superseded by the current route account:** Curator coherence keeps semantic revision, attempt, immutable record, stable authority, snapshot, and action request identities separate and exact. [75]
@@ -420,42 +439,29 @@ These retired source accounts preserve earlier intent only. Their former citatio
 - **Retained historical source account — superseded by the current route account:** V2 receipt admits only measured bound/moved states; helper also represents unmeasured. [307]
 - **Retained historical source account — superseded by the current route account:** Sync currency requires both exact matches and preserves missing memory as unmeasured. [308]
 - **Retained historical source account — superseded by the current route account:** Capsule skill references and semantic digest exclude diagnostic output. [309]
-
 - The recorded-meaning review models separate eligible steps, readable none and unavailable history. [293]
-
 - The shared predicate has a superseded-set exception without a new row kind or a change to default two-argument behavior. [311]
-
 - History registry includes the full set of row forms. [41]
 - History registry retains unexplained and its neighboring row kinds. [53]
 - Registry includes membership and record. [266]
 - SourceBlob and bound onboarding row validation. [312]
 - Membership and decision/facet record forms. [313]
 - Each winning row retains its own closed-file provenance. [314]
-
 - **Retained historical source account — superseded by the current route account:** Historical L111 predecessor account, not the current roster: the composed PUBLIC_TOOLS now declares 44 names and SHAPED_TOOL_BOUNDS carries the final task/landing/role delivery rows including direct_execution_grant at 150 tokens; the earlier 41- and 42-name captions here are historical, not current source counts. [315]
-
 - Capsule operation selection now carries an explicit all/sections audience contract. Sections-mode validation examines the complete source before projecting common and addressed text. Declared step-detail references carry source, revision, bytes and named step separately from inline blocks; the selected-content seal does not change their original source revisions or tool grants. [319]
-
 - The response requires judgment and retains knowledge/source identity without the removed supporting-record fields. [320]
 - Selected-subject history and membership rows are rendered in attempt order, with proof entries supplied separately and explicit none/unavailable states. [321]
 - The regression asserts required judgment and absence of removed wire channels; this is source/assertion evidence, not a fresh test run. [322]
 - Lifecycle assessment status partitions remain independently modeled; their existence does not restore the removed tree-review assessment display. [323]
 - Judgment rows exist exactly in rows state; proof facets/currentness are not run results. [324]
-
 - The catalogue declares optional nonnegative comparison identity. [327]
 - The changed-intent summary declares the recorded comparison it counted. [328]
 - Revision writer owner-presence validation is separate from exact selected IDs and display versions. [329]
 - Entry-side symbol and entry memory values retain explicit path and count meanings. [330]
 - Focused card memory availability carries the after tree and explicit index state or reason. [331]
-
 - The review models carry the delivered notice value beside the resolved comparison, without becoming a review of that pair. [332]
-
 - The settings initializer's answer shape. [333]
-
 - The start answer that declares the seat's continuation. [334]
-
 - The current literal ordinary public roster declares 44 names, including knowledge_write, user_settings_init, citation_note_revision and explainer_control; this source census is not live advertisement or acceptance. [335]
-
 - Launcher selections include Bootstrap, normalize the earlier system-specialist spelling to Investigator, and carry the caller harness as separate request data. [336]
-
 - The ordinary roster adds explainer_control, whose strict result keeps ownership, state and optional action records; admitted results validate the action and refusals retain an unknown rejected action. [337]

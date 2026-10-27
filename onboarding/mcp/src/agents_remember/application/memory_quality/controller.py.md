@@ -217,7 +217,7 @@ own worklist document; it returns the repair and report-only findings of the lea
   hands the blobs and the groups together through one `OnboardingTraceInputs` (MIK-R177). A run that is
   absent, not `complete`, or whose `identicalChanges` is malformed becomes one `INCOMPLETE_CODE` finding
   whose path is the worklist file and whose message names the recompute; the gate then judges no ungrouped
-  items. [32]
+
   Any capture/read exception returns one named `CHECK_NAME` / `INCOMPLETE_CODE` repair finding and an
   empty report-only list; it is not a clean empty result and no successful trace brief is published.
   Each missing or stale current-row trace counts toward `curatorActionableCount`; unreadable inputs
@@ -230,7 +230,7 @@ own worklist document; it returns the repair and report-only findings of the lea
   no report-only success or legacy stamp/body-attestation fallback. Unconverted
   public input still refuses in `_execute_memory_quality` before any scan or gate.
   This is a statically inspected defensive branch; no dedicated execution of that
-  branch is claimed. [30]
+
 
 
 The checklist's leaf block passes scope, worklist-selected changed paths, current working paths and response to the source-bound gate; accepted coherence identities are not operands or substitutes for onboarding judgments.
@@ -257,7 +257,7 @@ they join the checklist (ruling 2026-09-30T01:56:39 Q3):
 
 The report-only findings pass through the filter.
 
-Anchor: "report_only.extend(_needed_rows_dropped(" [11] |  | mcp/src/agents_remember/application/memory_quality/controller.py:755-755 |
+
 
 ## 260928-MIK-L09 The Mandatory Gate Counts Every Open Item (MIK-R09 Rules 1, 3 And 7)
 
@@ -290,10 +290,10 @@ The curator publication is one of MIK-R09's leaf routes. `_execute_memory_qualit
 
 The run evaluates the gate and briefs it.
 
-Anchor: "gate, worklist = _knowledge_gate_and_worklist(scope, candidate_inputs)"; "response.update(_knowledge_briefs(worklist, gate))" [14] |  | mcp/src/agents_remember/application/memory_quality/controller.py:478-478; mcp/src/agents_remember/application/memory_quality/controller.py:517-517 |
+
 Each gate finding is one repair finding, each open item counted once.
 
-Anchor: "repair_findings.extend(_with_gate(gate_findings, prepared.gate))" [17] | `_with_gate`; `_onboarding_findings_beside` | mcp/src/agents_remember/application/memory_quality/controller.py:819-840; mcp/src/agents_remember/application/memory_quality/controller.py:843-852; mcp/src/agents_remember/application/memory_quality/controller.py:754-754 |
+
 
 ## MIK-R46 R8: unconverted refusal and delivered-key validation
 
@@ -326,9 +326,9 @@ memory. Converted runs still owe their own knowledge, onboarding and coherence
 judgments. The same central cutover owner words legacy recovery; conversion or a
 marker never grants a validation PASS.
 
-- Ordinary quality revalidates scope and refuses unconverted input before the scan; removed prepared certification is not a surviving quality entry point. [29]
 
-- Ordinary quality revalidates scope and refuses unconverted input before the scan; removed prepared certification is not a surviving quality entry point. [29]
+
+
 
 
 ### Docs References
@@ -339,13 +339,13 @@ No configured Domain Documentation source applies; the controller contract is re
 
 Full leaf checks compose and atomically publish the curator checklist: the tail of `_execute_memory_quality` returns early for a run that publishes no checklist, and otherwise hands the payload to the checklist writer.
 
-Anchor: "if not execution.publish_curator_report"; "_attach_curator_checklist(" [21] | `_attach_curator_checklist` | mcp/src/agents_remember/application/memory_quality/controller.py:635-789; mcp/src/agents_remember/application/memory_quality/controller.py:518-518; mcp/src/agents_remember/application/memory_quality/controller.py:522-522 |
 
-- Full runs use an empty-check identity sentinel while explicit subsets retain their normalized check tuple. [29]
 
-- Full execution prepares route-index caches before checking, exposes the build summary and proof count, and hands prepared values to checklist composition. [30]
 
-- Answer-key overlay preserves the existing routeIndexCacheBuild summary rather than overwriting it from the delivery projection. [31]
+
+
+
+
 
 ### Cross-Repo References
 
@@ -449,67 +449,193 @@ measured at all.
 ### Current Source-Inspection References
 
 
-- The refusal runs before any scan and returns a refused result naming the crossing sync. [1]
 
 
-- The checklist receives the list (since MIK-R09 beside the mandatory gate's findings, which do count); `None` for an unconverted tree. [2]
-
-- The worklist is recomputed after the census (since MIK-R09 by the gate where it applies, else by `_knowledge_worklist`) and summarized in the response. [3]
-
-- The prepared inputs handed to the checklist. [4]
 
 
-- Only a contract-scoped run gets a worklist, through the one recompute entry point. [5]
 
 
-- The checklist receives the worklist (since MIK-R09 the one the gate recomputed) and its path. [6]
+
+
+
+
+
+
+
+
 
 
 - The controller-level run persists, reports and renders the worklist; since MIK-R09 it captures real candidate trees, and its four open items count (`curatorActionableCount` 4, `knowledgeGate.openItemCount` 4). [7]
 
-- The checklist calls `_onboarding_refresh_gate(scope, _OnboardingGateInputs(traced_paths, working_paths, worklist), response)`; the traced paths come from `_gate_changed_paths(prepared.worklist, changed_paths)`. Accepted coherence identities are not an operand. [8]
-- The report-only findings pass through the filter. [11]
-- The filter and the adjusted count. [12]
+
+
+
 
 - The raw count is 2 and the response count 1; only the stray row remains. [13]
 
-- The run evaluates the gate and briefs it. [14]
-
-- The gate carried to the checklist. [15]
-
-- The gate over the exact curator candidate; `None` where it does not apply. [16]
-- Each gate finding is one repair finding, each open item counted once. [17]
-- The census blockers, split out. [18]
-
-- The execution identity contains normalized checks, detail limit, publication semantics, and frozen scope. [19]
-
-- Sync, start, and poll are separate typed request entry points with capacity and nondisclosing poll translations. [20]
-
-- Full leaf checks compose and atomically publish the curator checklist: the tail of `_execute_memory_quality` returns early for a run that publishes no checklist, and otherwise hands the payload to the checklist writer. [21]
-
-- R03 candidate-tree freezing and change refusal around curator publication. [22]
-
-- Quality computation retains whole material beside its computed status. [24]
-
-
-- Full execution supplies the contract-bound landing base separately from the validator base. [25]
 
 
 
-- Unconverted quality refusal copies the projection's own keys into the whole result before scanning; converted repair, index and coherence readiness remains separately evaluated. [26]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 - The unconverted fixture checks whole/delivered status, count, next action and key subset. [27]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## Shared scope-aware polling
+
+`_poll_memory_quality_request` owns run lookup, operation checks, repository nondisclosure, admitted scope comparison and candidate freshness checks. Ordinary quality polling calls it directly. `poll_scoped_run` delegates to that owner for citation previews and adapts the operation-specific recovery fields without duplicating the scope controller. Four response constructors now belong to `run_answers.py`: unfinished-run payload, pair refusal, scope projection and poll-scope mismatch. Their extraction changes ownership, not the existing refusal semantics. Quality execution and publication still remain in this controller.
+
+
+- Common polling keeps operation identity and the established scope checks. [33]
+
+
+- Shared response construction lives in its own module. [34]
+
+
+
+- The refusal runs before any scan and returns a refused result naming the crossing sync.  Anchor: `_execute_memory_quality` `unconverted_line_refusal` [1]
+
+
+
+- The checklist receives the list (since MIK-R09 beside the mandatory gate's findings, which do count); `None` for an unconverted tree.  Anchor: `_attach_curator_checklist` [2]
+
+
+
+- The worklist is recomputed after the census (since MIK-R09 by the gate where it applies, else by `_knowledge_worklist`) and summarized in the response.  Anchor: `_knowledge_gate_and_worklist`, `_knowledge_briefs` [3]
+
+
+
+- The prepared inputs handed to the checklist.  Anchor: `_PreparedInputs` [4]
+
+
+
+- Only a contract-scoped run gets a worklist, through the one recompute entry point.  Anchor: `_knowledge_worklist` [5]
+
+
+
+- The checklist receives the worklist (since MIK-R09 the one the gate recomputed) and its path.  Anchor: `_attach_curator_checklist` [6]
+
+
+
+- The checklist calls `_onboarding_refresh_gate(scope, _OnboardingGateInputs(traced_paths, working_paths, worklist), response)`; the traced paths come from `_gate_changed_paths(prepared.worklist, changed_paths)`. Accepted coherence identities are not an operand. [8]
+
 
 
 - Converted dispatch captures traced-path candidate blobs and forwards `code_blobs`; capture/read failure is a named `INCOMPLETE_CODE` repair, not an empty success. The retained fallback does not bypass MIK-R46's pre-scan legacy refusal. [9]
 
 
+
 - The source assertions count card/route traces and the uncovered file's `unexplained_hunk` once each; authored current-row answers, not bare card edits, settle the ordinary candidate. The historical Update History function is not called. [10]
+
+
+
+- The report-only findings pass through the filter. [11]
+
+
+
+- The filter and the adjusted count. [12]
+
+
+
+- The run evaluates the gate and briefs it. [14]
+
+
+
+- The gate carried to the checklist.  Anchor: `_PreparedInputs` [15]
+
+
+
+- The gate over the exact curator candidate; `None` where it does not apply. [16]
+
+
+
+- Each gate finding is one repair finding, each open item counted once.  Anchor: `_with_gate`, `_onboarding_findings_beside` [17]
+
+
+
+- The census blockers, split out. [18]
+
+
+
+- The execution identity contains normalized checks, detail limit, publication semantics, and frozen scope.  Anchor: `MemoryQualityExecution` [19]
+
+
+
+- Sync, start, and poll are separate typed request entry points with capacity and nondisclosing poll translations.  Anchor: `run_memory_quality_request`, `start_memory_quality_request`, `poll_memory_quality_request` [20]
+
+
+
+- Full leaf checks compose and atomically publish the curator checklist: the tail of `_execute_memory_quality` returns early for a run that publishes no checklist, and otherwise hands the payload to the checklist writer. [21]
+
+
+
+- R03 candidate-tree freezing and change refusal around curator publication.  Anchor: `_curator_candidate_inputs`, `_require_same_curator_candidate` [22]
+
 
 
 - Unconverted quality input refuses before scanning for either leaf or repository scope; current crossing/lock helpers word the conversion route, not permission to run the old format. [23]
 
 
+
+- Quality computation retains whole material beside its computed status.  Anchor: `_answered_quality_response` [24]
+
+
+
+- Full execution supplies the contract-bound landing base separately from the validator base.  Anchor: `_execute_memory_quality` [25]
+
+
+
+- Unconverted quality refusal copies the projection's own keys into the whole result before scanning; converted repair, index and coherence readiness remains separately evaluated.  Anchor: `_execute_memory_quality` [26]
+
+
+
 - Current source delta inspected statically: Describe candidate-blob capture and named failure; retire legacy-quality permission claims using current L46 authority, not the earlier recommendation. [28]
+
+
+
+- Full runs use an empty-check identity sentinel while explicit subsets retain their normalized check tuple. [29]
+
+
+
+- Full execution prepares route-index caches before checking, exposes the build summary and proof count, and hands prepared values to checklist composition. [30]
+
+
+
+- Answer-key overlay preserves the existing routeIndexCacheBuild summary rather than overwriting it from the delivery projection. [31]
+
+
 
 - The dispatch reads the worklist run's identical-copy groups and hands blobs and groups to the gate through one inputs value; an unreadable run yields one incomplete finding and no ungrouped judgment. [32]

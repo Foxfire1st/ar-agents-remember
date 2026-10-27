@@ -3,8 +3,26 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "d0611d0924e7d61a66a9ca305f6d78157b849c52",
-        "content": "sha256:0a960d32267e0a88f38178b5cf3ad435c647ee963a20e551feb9328fc0cbc574",
+        "blob": "e97481b8feeb102ce11753f3c87355310c00ffe0",
+        "content": "sha256:825544bae9ad8aec5923a063865748f724855143d149ed93ba72274dc1eff3d9",
+        "locator": {
+          "kind": "symbol",
+          "name": "readSavedCatalog"
+        }
+      },
+      "id": "RLZ-9TW834",
+      "invariant": "INV-RQ2ZB8",
+      "origin": {
+        "handoffEntry": "L202-A6b-shared-fresh-catalog",
+        "leaf": "260928-MIK-L202"
+      },
+      "rationale": "Reads a saved-only preview for the current options scope while the fresh request remains pending; the preview does not decide Start.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "e97481b8feeb102ce11753f3c87355310c00ffe0",
+        "content": "sha256:c2bcb2b508651ded09386fb4cd171d5bb2ae69f15669e1838a2a85c2b319654a",
         "locator": {
           "kind": "symbol",
           "name": "runOptionsLoad"
@@ -26,8 +44,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d0611d0924e7d61a66a9ca305f6d78157b849c52",
-            "content": "sha256:362a1b002b54583d5cfa961f515d228a3192b2dd820219f07a8e3bc66412a1c1",
+            "blob": "e97481b8feeb102ce11753f3c87355310c00ffe0",
+            "content": "sha256:07d22be67ac2326704faf4bcc87985e28af331b5ef05ad704b41760014e0eb74",
             "locator": {
               "kind": "symbol",
               "name": "useRoleChatOptionsLoader"
@@ -42,8 +60,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d0611d0924e7d61a66a9ca305f6d78157b849c52",
-            "content": "sha256:ce4ea01ad470228c526ef60a2a4630edb30c2eef49596b6a646d4b49a36bf11a",
+            "blob": "e97481b8feeb102ce11753f3c87355310c00ffe0",
+            "content": "sha256:2c9ae9a4b511770fa6b6822c9ca918c5406db1effe5cba2a6ac53265ffbdddd5",
             "locator": {
               "kind": "symbol",
               "name": "applyOptionsSuccess"

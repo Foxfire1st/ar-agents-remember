@@ -48,7 +48,7 @@ The archive-precedence case drives `resolve_requirement_endpoint`: with no activ
 - **The real owner's four refusals carried verbatim, with the stored reference byte-identical — the proof that the reference is never rewritten.** [23]
 - The resolved owner recorded as resolved, with no refusal fields. [24]
 - **The real resolver these cases drive, rather than a stub — a stubbed resolver cannot catch the second resolver this suite exists to exclude.** [25]
-- The lane row that gives this module its classification and keeps it collectable under a named lane. [26]
+
 
 ### Docs References
 
@@ -62,3 +62,7 @@ No configured domain documentation could be checked.
 No cross-repository contract is established by this file.
 
 - Archive fallback requires the active task directory to be absent; an existing empty active directory wins and remains unresolved. [27]
+
+
+
+- The lane row that gives this module its classification and keeps it collectable under a named lane.  Anchor: `test_knowledge_requirement_reference_contract` [26]

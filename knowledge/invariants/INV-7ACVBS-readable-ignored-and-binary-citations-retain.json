@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "The regression prevents a repository shape or citation eligibility decision from aborting the check or hiding content drift."
+  },
+  "applicability": "Readable cited files in a full synchronous memory-quality run, including ignored, binary and pathRules-excluded files.",
+  "conditions": [
+    "The file is a regular file inside the repository, reached without traversing a symbolic link.",
+    "The content does not exceed 4 MiB."
+  ],
+  "exclusions": [
+    "Files that cannot be read under the bounded source policy.",
+    "A source note is not a new refusal for otherwise readable content."
+  ],
+  "id": "INV-7ACVBS",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "freeze-A3.md; A3-v3-checks.md; A3-v3-candidate-manifest.json"
+      ],
+      "path": "curator-handoff-v2.json"
+    },
+    "handoffEntry": "L202-R2",
+    "leaf": "260928-MIK-L202",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Readable ignored and binary citations retain current-or-stale content verification and a separate reason, while readable pathRules-excluded citations verify without a remark.",
+  "status": "proposed",
+  "supersedes": []
+}

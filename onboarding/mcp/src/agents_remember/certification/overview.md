@@ -164,4 +164,6 @@ These inherited tables are retained verbatim for navigation and custody. Their s
 - A published terminal generation is processed before nonzero run refusal; supplied catalogs remain distinct from missing publication. [16]
 
 
+
+
 - Curator preparation uses source-bound converted onboarding traces; missing converted sides are incomplete, with no legacy body/history fallback. [21]

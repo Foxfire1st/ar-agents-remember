@@ -1,14 +1,33 @@
 {
   "path": "mcp/tests/test_tool_answer_log.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "1d568e1859411f9cdc6f53110802f8833a7d7bbe",
+        "content": "sha256:eeee87337f9f842a50424190b54b7013d7d74ea7464f193fc21d17826a0712e8",
+        "locator": {
+          "kind": "symbol",
+          "name": "ToolAnswerLogTests.test_concurrent_details_cannot_both_spend_the_same_log_budget"
+        }
+      },
+      "facet": "Two concurrent detail writers share one budget admission; only the affordable detail is written.",
+      "id": "PRF-AGPT04",
+      "invariant": "INV-T3CE64",
+      "origin": {
+        "handoffEntry": "MIK-R213@v1 rule 1",
+        "leaf": "260928-MIK-L202"
+      }
+    }
+  ],
   "realizes": [],
   "references": {
     "1": {
-      "note": "Log fields, redaction and write-failure behavior are checked.\n\nAnchor: `ToolAnswerLogTests`",
+      "note": "Log fields, redaction and write-failure behavior are checked.  Anchor: `ToolAnswerLogTests`",
       "targets": [
         {
           "anchor": {
-            "blob": "fcbbd0bdc215fb2585e27524cc905716187800ae",
-            "content": "sha256:9d0394939bf75a2c361c77b1c53a1a0458be63e8e84c327a41913b290451ea5c",
+            "blob": "02df2b567c68180c22058ef0d58bf27b6ea52756",
+            "content": "sha256:4e501d5e6da0d4fabec24d326e4f71ecc97abfad6fb7b6e5c130c636c22154f4",
             "locator": {
               "kind": "file"
             }
@@ -18,12 +37,12 @@
       ]
     },
     "2": {
-      "note": "Raised and refused calls keep real entry logging.\n\nAnchor: `ToolRaisedCallLoggingTests`",
+      "note": "Raised and refused calls keep real entry logging.  Anchor: `ToolRaisedCallLoggingTests`",
       "targets": [
         {
           "anchor": {
-            "blob": "fcbbd0bdc215fb2585e27524cc905716187800ae",
-            "content": "sha256:9d0394939bf75a2c361c77b1c53a1a0458be63e8e84c327a41913b290451ea5c",
+            "blob": "02df2b567c68180c22058ef0d58bf27b6ea52756",
+            "content": "sha256:4e501d5e6da0d4fabec24d326e4f71ecc97abfad6fb7b6e5c130c636c22154f4",
             "locator": {
               "kind": "file"
             }
@@ -33,12 +52,12 @@
       ]
     },
     "3": {
-      "note": "Hermetic enclosure log placement and cleanup are asserted.\n\nAnchor: `ToolAnswerEnclosureTests`",
+      "note": "Hermetic enclosure log placement and cleanup are asserted.  Anchor: `ToolAnswerEnclosureTests`",
       "targets": [
         {
           "anchor": {
-            "blob": "fcbbd0bdc215fb2585e27524cc905716187800ae",
-            "content": "sha256:9d0394939bf75a2c361c77b1c53a1a0458be63e8e84c327a41913b290451ea5c",
+            "blob": "02df2b567c68180c22058ef0d58bf27b6ea52756",
+            "content": "sha256:4e501d5e6da0d4fabec24d326e4f71ecc97abfad6fb7b6e5c130c636c22154f4",
             "locator": {
               "kind": "file"
             }
@@ -48,16 +67,31 @@
       ]
     },
     "4": {
-      "note": "Real temporary-root paths obey the exact preservation or length-and-digest rule.\n\nAnchor: `ToolAnswerLogTests.test_home_folder_path_follows_the_length_rule`",
+      "note": "Real temporary-root paths obey the exact preservation or length-and-digest rule.  Anchor: `ToolAnswerLogTests.test_home_folder_path_follows_the_length_rule`",
       "targets": [
         {
           "anchor": {
-            "blob": "fcbbd0bdc215fb2585e27524cc905716187800ae",
+            "blob": "02df2b567c68180c22058ef0d58bf27b6ea52756",
             "content": "sha256:6ab4de03b441a04dcaeb3bc72e2070286d92677e9bfcbde64358e6010b711f3e",
             "locator": {
-              "end": 297,
+              "end": 346,
               "kind": "line_range",
-              "start": 277
+              "start": 326
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Two detail writers cannot both spend one remaining budget.\n\nAnchor: `test_concurrent_details_cannot_both_spend_the_same_log_budget`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "02df2b567c68180c22058ef0d58bf27b6ea52756",
+            "content": "sha256:4e501d5e6da0d4fabec24d326e4f71ecc97abfad6fb7b6e5c130c636c22154f4",
+            "locator": {
+              "kind": "file"
             }
           },
           "kind": "test"

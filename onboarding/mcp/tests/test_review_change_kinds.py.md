@@ -81,7 +81,7 @@ No cross-repo boundary is crossed by this file.
 - The total, the derived facts and the dataset review. [6]
 
 
-> Retained earlier citation wording: - Its lane row.  Anchor: "mcp/tests/test_review_change_kinds.py" [7]
+> Retained earlier citation wording: - Its lane row.  Anchor: "mcp/tests/test_review_change_kinds.py"
 
 
 - The outline reads indexes only and keeps catalogue bytes [8]
@@ -97,5 +97,9 @@ No cross-repo boundary is crossed by this file.
 The index-only outline case now includes `comparison` in the exact serialized field sequence checked after excluding `outline`. The forbidden source, roster and per-subject readers remain in place, and catalogue equality, totals, authored membership order and meaning-only facts remain asserted. This extra field-name assertion does not independently validate a numbered comparison's resolved value.
 
 - The index-only outline preserves exact catalogue fields including comparison. [13]
+
+
+
+
 
 - Its lane row.  Anchor: "mcp/tests/test_review_change_kinds.py" [7]

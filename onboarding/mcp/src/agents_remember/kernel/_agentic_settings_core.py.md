@@ -38,7 +38,7 @@ L23 had added the closed `QualityExecutor` choice defaulting `orchestration.qual
 
 ### Role Runtime and Scope
 
-RoleKnobs now carries optional service_tier. resolved_role_knobs merges tier independently of harness/model/effort, so a lower-level model or effort does not erase a role/altitude tier. Legacy role launch/session fields remain accepted-unused; the independent tier/default facts here are not execution-argument authority. RoleKnobs now also carries `mode`, `feature_values` and `notes` with per-choice `origins`: `NON_PERMISSION_FEATURES` (`service_tier`, `fast_mode`) marks speed authority while unknown features carry permission authority until classified, `native_service_tier` normalizes user `fast` to `priority`, and `role_feature_values` compares the tier alias against `featureValues.service_tier` after merging. `agentic_settings_path` names the repository-local file only; `user_agentic_settings_path` and `require_user_agentic_settings_path` resolve and guard the single user file.
+RoleKnobs now carries optional service_tier. resolved_role_knobs merges tier independently of harness/model/effort, so a lower-level model or effort does not erase a role/altitude tier. Legacy role launch/session fields remain accepted-unused; the independent tier/default facts here are not execution-argument authority. RoleKnobs now also carries `mode`, `feature_values` and `notes` with per-choice `origins`: `NON_PERMISSION_FEATURES` (`service_tier`, `fast_mode`) marks speed authority while unknown features carry permission authority until classified, `role_feature_values` retains the configured tier spelling. Fresh catalog resolution, rather than settings parsing, matches IDs then labels without case when the offering is known. `agentic_settings_path` names the repository-local file only; `user_agentic_settings_path` and `require_user_agentic_settings_path` resolve and guard the single user file.
 
 
 **L184 — NEW-R192-EXTRA-ARGS.** Layering is decided in the core, so a new key's precedence is realized here. The obligation this leaf records for this place is stated in the invariant named here; the card's earlier account of this file stands, and this paragraph adds what the change made true.
@@ -61,7 +61,7 @@ family.
 
 KNOWN_ROLE_LAUNCH_FIELDS isolates the ordinary launch fields; KNOWN_ROLE_KNOB_FIELDS adds stepUp only at the outer role row. RoleKnobs carries optional RoleStepUp(choices, after_tries, source, key); nesting is a parser refusal, not another escalation ladder.
 
-require_distinct_step_up rejects an effective no-op alternative after role/spawn scope and serviceTier fast/priority alias normalization. It compares stated ordinary fields, effective features and tier; it does not validate the host’s offered model/mode/features.
+require_distinct_step_up rejects an effective no-op alternative after role/spawn scope using the stated feature/tier values; it performs no fast/priority alias normalization. It compares stated ordinary fields, effective features and tier; it does not validate the host’s offered model/mode/features.
 
 resolved_role_knobs preserves normal flat/per-level field and feature/origin merges and inherits/replaces step_up as an alternative object. It validates distinctness both without an altitude override and after effective merging, so an altitude may not turn an inherited alternative into the role’s own choices.
 
@@ -74,12 +74,17 @@ Existing review maxRounds, roleMessageLimit, landing timeout, optional profile-o
 
 - Separate ordinary launch vocabulary from outer stepUp. [3]
 
+
 - Typed alternative has choices, count and provenance. [4]
-- No-op validation normalizes native tier aliases. [5]
+
+- No-op validation compares the effective stated feature and tier values without a local fast/priority alias. [5]
+
 
 - Effective flat/altitude merge rechecks distinctness. [6]
 
-- Test source checks no-op alternatives caused by altitude or alias equality. [7]
+
+- Test source checks no-op alternatives from altitude or equal effective values; host-offered spelling is resolved at launch. [7]
+
 
 - Three is the counted-role threshold default, not a new review budget. [8]
 
@@ -96,7 +101,9 @@ The module's own top-level surface is listed in Code Commentary; no cross-file c
 - Frozen implementation of RoleKnobs supporting the stated file behavior. [1]
 
 
+
 - Frozen implementation of AgenticSettings supporting the stated file behavior. [2]
+
 
 
 ## L23 Final Candidate Disposition
@@ -114,4 +121,4 @@ Executor identity belongs to the repository certification profile, not to these 
 The review budget uses the settings number `orchestration.loops.defaults.maxRounds`. `MAX_REVIEW_ROUNDS` is removed; `DEFAULT_LOOP_MAX_ROUNDS` is the fallback used by `LoopDefaults` and the reference seed when no number is named. Any positive whole number is accepted by the parser. The settings/transition owners, not role prose, determine the number in force.
 
 
-- `CAPABILITY_IDS` names the non-seat capabilities that carry a launch block (`review-presenter`): their choices live under `orchestration.roles.<capability>` with the same per-field provenance and refusal rules as a seat, while the capsule, dispatch and level tables stay seat-only. [11]
+- `CAPABILITY_IDS` names the non-seat capabilities that carry a launch block (`review-presenter`): their choices live under `orchestration.roles.<capability>` with the same per-field provenance and refusal rules as a seat, while the capsule, dispatch and level tables stay seat-only. \[11] [11]

@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "The regression prevents a repository shape or citation eligibility decision from aborting the check or hiding content drift."
+  },
+  "applicability": "Citation reads through the synchronous memory-quality source reader.",
+  "conditions": [
+    "A path component is a symbolic link or Git cannot classify the path."
+  ],
+  "exclusions": [
+    "Ordinary absent paths keep their distinct absent-path observation.",
+    "The result does not authorize following a symbolic link."
+  ],
+  "id": "INV-YV9C44",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "freeze-A3.md; A3-v3-checks.md; A3-v3-candidate-manifest.json"
+      ],
+      "path": "curator-handoff-v2.json"
+    },
+    "handoffEntry": "L202-R1",
+    "leaf": "260928-MIK-L202",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Citations through links or into Git-unclassifiable paths return a named unavailable observation instead of aborting the synchronous check.",
+  "status": "proposed",
+  "supersedes": []
+}

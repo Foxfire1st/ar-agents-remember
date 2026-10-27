@@ -45,7 +45,7 @@ The rest of the path is unchanged, except that an apply records this generation'
 
 - Attach delegates with started=False and retains typed binding refusal. [26]
 - The shared publisher promotes start, preserves attach stage, mirrors the row and reads binding back. [27]
-- A tool call records its daily line and required detail under the retained log owner. [21]
+
 - Completed answers use the one workspace event writer, with no ambient-lifecycle alternative. [22]
 - The public result path carries the owner-validated start plan. [23]
 - Only the actually carried preview parent qualifies for planned-lineage recognition. [24]
@@ -65,3 +65,5 @@ The following earlier wording is retained as provenance, not a current consumer 
 - The shared enablement predicate always disables CGC and GrepAI, regardless of legacy settings. [30]
 
 - The retained launch seam returns non-enabled plans without starting a setup job. [31]
+
+- A tool call records its daily line and required detail under the retained log owner. [21]

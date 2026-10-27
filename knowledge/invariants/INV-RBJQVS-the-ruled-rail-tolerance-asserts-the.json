@@ -6,7 +6,7 @@
     ],
     "justification": "A stale current-budget declaration or mirror can either prevent all collection or make a green boundary screen prove a ceiling the repository no longer uses."
   },
-  "applicability": "The repository root selected-case budget declarations and this screen's current 10000/1000 policy on the maintained-invariant line.",
+  "applicability": "The repository root selected-case budget declarations and this screen's current 10000/2000 policy on the maintained-invariant line.",
   "conditions": [
     "Selected parametrized cases are classified by the integration marker.",
     "The guard reads the root pytest ini configuration; a subsequent deliberate policy raise must update these stated values and mirrors together."
@@ -28,9 +28,9 @@
     "leaf": "260928-MIK-L146",
     "task": "260928-MIK"
   },
-  "revision": 3,
+  "revision": 4,
   "schema": "ar-invariant/v1",
-  "statement": "The ruled-rail tolerance asserts the developer's 10000/1000 ruling, not L13's superseded 4000/1000.",
+  "statement": "The ruled-rail screen requires the current developer-ruled pair of 10000 unit and 2000 integration selected cases.",
   "status": "accepted",
   "supersedes": []
 }

@@ -27,10 +27,41 @@ The daily tool-call log (MIK-R108 rule 3): one line per admitted call plus the w
 
 ## Evidence
 
+
+
+
+
+
+
+
+
+## Concurrent budget accounting
+
+A process-local reentrant lock now encloses shared budget accounting across folder census, admission, detail publication, line append and pruning. It prevents two threads in the same server from both spending one remaining budget. Existing whole-record file exclusion still owns cross-process append atomicity; the process lock is not a replacement for it. Log admission, redaction, failure containment and the existing cross-process census margin remain distinct contracts.
+
+
+- The shared in-process budget state is serialized by one reentrant lock. [6]
+
+
+- Concurrent detail writes cannot both spend the same remaining folder budget. [7]
+
+
+
+
 - Admitted calls append one whole day line and file their whole result beside it; writes that cannot be admitted are dropped and counted. [1]
 
+
+
 - A canonical caller-task enclosure binding selects a live enclosure log folder; terminating calls always use the transcript root. [2]
+
+
+
 - Over-budget folders evict whole oldest days against one coherent census. [3]
+
+
+
 - Credential keys and credential-variable values are omitted; ordinary values stay whole. [4]
+
+
 
 - A caller diff has its own bounded readable report, or no report when oversize or unwritable; it is independent of detail retention. [5]

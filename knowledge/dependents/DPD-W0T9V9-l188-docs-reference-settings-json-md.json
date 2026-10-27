@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "e2057915c8ea285fadecb95170528e37fa162fcf",
-    "commit": "2f699606998a68c42994b9cc102cd22d56cfae37",
+    "codeTree": "4ffeeb98c6ddf7594ebdea7eac26bb7298f2dd72",
+    "commit": "d0be84f714df97c4c4f63406dc5ba190fa53c325",
     "role": "curator",
-    "statement": "The settings reference now records the provider block as retired, still parsed and reported unused, and no longer promises server-derived provider lifecycle settings, so its reference account still stands.",
-    "task": "260928-MIK-L192",
+    "statement": "At A6b, the settings reference describes fresh host choice queries with saved-part fallback and ID-before-label matching, while retired provider settings remain parsed and reported unused.",
+    "task": "260928-MIK-L202",
     "uncommitted": true
   },
   "document": "docs/reference/settings-json.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L188",
     "task": "260928-MIK"
   },
-  "revision": 2,
+  "revision": 3,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -34,13 +34,37 @@
     },
     {
       "anchor": {
-        "blob": "46fca51f33906e050ca2e132dc6c7c80f4a714fd",
-        "content": "sha256:b4ddcf4a6b053e14bc4a2bdc4e286138fb7723752d9bc5bec0cd88992e96969a",
+        "blob": "0e185e049a5486c5af924b189c89f7aea3847da8",
+        "content": "sha256:fe2c9c9853b4fe5448816a275677328298baaedf989141461565f4781ad80948",
         "locator": {
           "kind": "symbol",
           "name": "initialize_role_settings"
         },
         "path": "mcp/src/agents_remember/application/user_settings_init.py"
+      },
+      "kind": "anchor"
+    },
+    {
+      "anchor": {
+        "blob": "436a4caf23092264494e8678f2b27e99c20f69a1",
+        "content": "sha256:f1dea313b6bd96304f69e0c24045259f2588effc6ff0d2c5f53348cb91b06716",
+        "locator": {
+          "kind": "symbol",
+          "name": "launcher_catalog"
+        },
+        "path": "mcp/src/agents_remember/cli/paseo_catalog.py"
+      },
+      "kind": "anchor"
+    },
+    {
+      "anchor": {
+        "blob": "bca333ae11bd912a4042f43c258df9126d70dc72",
+        "content": "sha256:cd8e5866dc3e9d616b06d2a7aa3ec3d0bbe5a9376df5b0711b54d426395aa30e",
+        "locator": {
+          "kind": "symbol",
+          "name": "named"
+        },
+        "path": "mcp/src/agents_remember/kernel/primitives/named_choices.py"
       },
       "kind": "anchor"
     }

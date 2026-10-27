@@ -234,22 +234,26 @@ Inherited numbered findings [116], [149] retain their exact wording and full tar
 - Retained reference account (no fresh execution or acceptance inferred): The bound-checked line-range observation. [18]
 - Retained reference account (no fresh execution or acceptance inferred): The symbol observation carrying every defining extent. [19]
 - Retained reference account (no fresh execution or acceptance inferred): **The display seam: one observation, the carried partition, the two established omissions, and the deliberate non-replacement.** [22]
-- Retained reference account (no fresh execution or acceptance inferred): The shared case harness registered as `contract:common-base-merge-cases`, and its evidence node. [52]
+
+
+
+
+
 - Retained reference account (no fresh execution or acceptance inferred): **The advertised command, now the delimiter-safe interface the measurement itself reads.** [97]
 - Retained reference account (no fresh execution or acceptance inferred): **The expansion detail that states a partial observation's own limit instead of only counting the paths it could carry.** [98]
 - Retained reference account (no fresh execution or acceptance inferred): Source-path observation cases moved with meaning preserved. [100]
 - Retained reference account (no fresh execution or acceptance inferred): The captured-state key. [102]
 - Retained reference account (no fresh execution or acceptance inferred): The cache refuses a Git working tree. [105]
 - Retained reference account (no fresh execution or acceptance inferred): The capture copies the index with its time. [119]
-- Retained reference account (no fresh execution or acceptance inferred): The governed-artifact row and the exact consumer list the L5 leaf registered in the shared catalog, which this leaf extended by two modules. [120]
-- Retained reference account (no fresh execution or acceptance inferred): The registry rows this leaf added: two integration lane rows. [121]
-- Retained reference account (no fresh execution or acceptance inferred): The registered support artifact the two integration lane rows land in, by its own artifact id. [122]
-- Retained reference account (no fresh execution or acceptance inferred): The second registered support artifact those rows land in, by its own artifact id. [123]
-- Retained reference account (no fresh execution or acceptance inferred): The second registered support artifact those rows land in, by its own artifact id. [125]
-- Retained reference account (no fresh execution or acceptance inferred): The second registered support artifact those rows land in, by its own artifact id. [127]
-- Retained reference account (no fresh execution or acceptance inferred): The third registered support artifact those rows land in, by its own artifact id. [124]
-- Retained reference account (no fresh execution or acceptance inferred): The third registered support artifact those rows land in, by its own artifact id. [126]
-- Retained reference account (no fresh execution or acceptance inferred): The third registered support artifact those rows land in, by its own artifact id. [128]
+
+
+
+
+
+
+
+
+
 - Retained reference account (no fresh execution or acceptance inferred): The gate's warm pass becomes the refusal when a packet locator is retargeted to identical bytes. [133]
 - Retained reference account (no fresh execution or acceptance inferred): Converted first adoption preserves attributed-history precedence, lists legacy cards and refuses them without a drift waiver. [145]
 - Converted baseline validates a paired immutable tree; publication reads its comparison parent after validation. [147]
@@ -261,3 +265,32 @@ Inherited numbered findings [116], [149] retain their exact wording and full tar
 - The response requires judgment and retains knowledge/source identity without the removed supporting-record fields. [171]
 - Selected-subject history and membership rows are rendered in attempt order, with proof entries supplied separately and explicit none/unavailable states. [172]
 - The regression asserts required judgment and absence of removed wire channels; this is source/assertion evidence, not a fresh test run. [173]
+
+- Retained reference account (no fresh execution or acceptance inferred): The retained line is one consumer entry of the shared curator-coherence fixture author `mcp/tests/curator_coherence_test_support.py`; the former knowledge-merge case harness and its `contract:common-base-merge-cases` registration are retired with the canonical database, and no current contract id replaces them. [52]
+
+
+- Retained reference account (no fresh execution or acceptance inferred): The governed-artifact row and the exact consumer list the L5 leaf registered in the shared catalog, which this leaf extended by two modules. [120]
+
+
+- Retained reference account (no fresh execution or acceptance inferred): The registry rows this leaf added: two integration lane rows. [121]
+
+
+- Retained reference account (no fresh execution or acceptance inferred): The registered support artifact the two integration lane rows land in, by its own artifact id. [122]
+
+
+- Retained reference account (no fresh execution or acceptance inferred): The second registered support artifact those rows land in, by its own artifact id. [123]
+
+
+- Retained reference account (no fresh execution or acceptance inferred): The third registered support artifact those rows land in, by its own artifact id. [124]
+
+
+- Retained reference account (no fresh execution or acceptance inferred): The second registered support artifact those rows land in, by its own artifact id. [125]
+
+
+- Retained reference account (no fresh execution or acceptance inferred): The third registered support artifact those rows land in, by its own artifact id. [126]
+
+
+- Retained reference account (no fresh execution or acceptance inferred): The second registered support artifact those rows land in, by its own artifact id. [127]
+
+
+- Retained reference account (no fresh execution or acceptance inferred): The third registered support artifact those rows land in, by its own artifact id. [128]

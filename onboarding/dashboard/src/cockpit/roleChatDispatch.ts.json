@@ -127,12 +127,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3aa75e7e06e051f836a57a221e7f05a63b7b4a59",
+            "blob": "d40f60e246eaa870ff228d5f4a6582788c2104ee",
             "content": "sha256:6a359647fdb5a46a6831eb7f88dd5277938cca9b6db9bd0c01591b7b6367ba99",
             "locator": {
-              "end": 303,
+              "end": 312,
               "kind": "line_range",
-              "start": 265
+              "start": 274
             },
             "path": "dashboard/src/cockpit/roleLaunchModel.ts"
           },

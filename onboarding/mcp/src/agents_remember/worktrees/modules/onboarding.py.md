@@ -78,7 +78,7 @@ The converted curator trace entry remains source-bound. It requires one `Onboard
 - The helper raises for missing/unsupported cards; the trace wrapper catches that RuntimeError and prepends the finding while retaining trace findings. [3]
 
 
-- The surviving curator trace entry takes the candidate blobs and the run's identical-copy groups through one inputs value and requires current eligible answers; missing converted sides are incomplete. [13]
+
 
 
 - The one entity refusal the closeout asks before the code commit and again before the memory commit. [16]
@@ -121,3 +121,5 @@ No additional cross-repository evidence applies.
 
 
 - The gate reads a run's groups through one strict reader: a malformed or representative-omitting group raises rather than shortening into a single source. (`identical_changes_from_run`; `IdenticalChangesUnreadable`) [14]
+
+- The surviving curator trace entry takes the candidate blobs and the run's identical-copy groups through one inputs value and requires current eligible answers; missing converted sides are incomplete.  Anchor: `onboarding_trace_gate_for_context` `_onboarding_trace_open` `OnboardingTraceInputs` `_worklist_identical_changes` [13]

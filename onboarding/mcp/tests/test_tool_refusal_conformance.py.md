@@ -199,7 +199,7 @@ they make no acceptance claim.
 
 
 
-> Retained earlier citation wording: - The lane row that keeps this module in the default selection. Source caption: "mcp/tests/test_tool_refusal_conformance.py" [16]
+> Retained earlier citation wording: - The lane row that keeps this module in the default selection. Source caption: "mcp/tests/test_tool_refusal_conformance.py"
 
 
 
@@ -219,5 +219,9 @@ No repository or external-system boundary is proved by this module.
 
 
 - The declared bare-raiser set has ten names: `memory_baseline_adopt` and `task_doc` left it with their repairs. Both-direction census and invocation of actual failure cases remain source assertions, not this Curator's execution. [18]
+
+
+
+
 
 - The lane row that keeps this module in the default selection. Source caption: "mcp/tests/test_tool_refusal_conformance.py" [16]

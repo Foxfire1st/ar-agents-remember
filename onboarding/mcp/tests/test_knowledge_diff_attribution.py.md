@@ -134,12 +134,12 @@ No configured domain documentation could be checked.
 
 - The arithmetic cases' two input builders. [29]
 
-- The unit-regression lane row, beside its sibling's. [30]
 
 
 
 
-> Retained earlier citation wording: - The unit-regression lane registers test_knowledge_diff_attribution.py. Seven lifecycle artifact lists declare it as a consumer: _user_settings_guard.py, anchor_fixture_models.py, diff_scope_test_support.py, the Node package-lock fixture, knowledge_row_codec_test_support.py, knowledge_rows_test_support.py and read_scope_test_support.py. Declaration is not execution. [31]
+
+> Retained earlier citation wording: - The unit-regression lane registers test_knowledge_diff_attribution.py. Seven lifecycle artifact lists declare it as a consumer: _user_settings_guard.py, anchor_fixture_models.py, diff_scope_test_support.py, the Node package-lock fixture, knowledge_row_codec_test_support.py, knowledge_rows_test_support.py and read_scope_test_support.py. Declaration is not execution.
 
 
 
@@ -148,5 +148,16 @@ No configured domain documentation could be checked.
 No cross-repository behaviour is exercised here. The fixture's Git trees are temporary and local.
 
 No configured cross-repository evidence is claimed.
+
+
+
+
+
+
+
+
+
+- The unit-regression lane row, beside its sibling's.  Anchor: `test_knowledge_diff_attribution` [30]
+
 
 - The unit-regression lane registers test_knowledge_diff_attribution.py. Seven lifecycle artifact lists declare it as a consumer: _user_settings_guard.py, anchor_fixture_models.py, diff_scope_test_support.py, the Node package-lock fixture, knowledge_row_codec_test_support.py, knowledge_rows_test_support.py and read_scope_test_support.py. Declaration is not execution. [31]

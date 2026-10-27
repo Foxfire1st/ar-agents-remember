@@ -8,7 +8,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2b635ee176f4fb5b39f31f5a621e0169376a6fc0",
+            "blob": "9cc12d82c359d5d0e3bf22d07526a159a3d8be2a",
             "content": "sha256:896e30c87965527164fb3a5da91f5f7f18798424669f113b527fa7f24a007dae",
             "locator": {
               "end": 121,
@@ -25,10 +25,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2b635ee176f4fb5b39f31f5a621e0169376a6fc0",
-            "content": "sha256:4610e225642db196e321c2d33d1126d29c2dca1779adf775a419d05e2abf9311",
+            "blob": "9cc12d82c359d5d0e3bf22d07526a159a3d8be2a",
+            "content": "sha256:78d67ba0ef29ee678d16703dec6acf3e7e3e12d1fea8234992c425154a97993b",
             "locator": {
-              "end": 163,
+              "end": 176,
               "kind": "line_range",
               "start": 124
             }
@@ -42,7 +42,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2b635ee176f4fb5b39f31f5a621e0169376a6fc0",
+            "blob": "9cc12d82c359d5d0e3bf22d07526a159a3d8be2a",
             "content": "sha256:587fd50aef8cf94f65d8c0119390ffc913c3628342eaf1a598204bf3d36f603d",
             "locator": {
               "end": 84,
@@ -51,6 +51,82 @@
             }
           },
           "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Canonical and shipped explanations both describe background preview and synchronous ordering.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9cc12d82c359d5d0e3bf22d07526a159a3d8be2a",
+            "content": "sha256:82b8238d6fd78956bc50f48081a5e38742ba85e581c6e93ab7a812b0b79002c0",
+            "locator": {
+              "end": 159,
+              "kind": "line_range",
+              "start": 147
+            },
+            "path": "docs/tool-details.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9cc12d82c359d5d0e3bf22d07526a159a3d8be2a",
+            "content": "sha256:82b8238d6fd78956bc50f48081a5e38742ba85e581c6e93ab7a812b0b79002c0",
+            "locator": {
+              "end": 159,
+              "kind": "line_range",
+              "start": 147
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Both copies describe Git source listing, skipped sources and cited-file inspection.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9cc12d82c359d5d0e3bf22d07526a159a3d8be2a",
+            "content": "sha256:f45081bbf07e62bfe5f1aa8cdde8066eaef1ab3dbf4e1a25b45df3b9ae151ea8",
+            "locator": {
+              "end": 287,
+              "kind": "line_range",
+              "start": 276
+            },
+            "path": "docs/tool-details.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9cc12d82c359d5d0e3bf22d07526a159a3d8be2a",
+            "content": "sha256:f45081bbf07e62bfe5f1aa8cdde8066eaef1ab3dbf4e1a25b45df3b9ae151ea8",
+            "locator": {
+              "end": 287,
+              "kind": "line_range",
+              "start": 276
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Shipped-document tests compare packaged and canonical bytes and check the installed location.\n\nAnchor: `ShippedToolDetailsTests.test_packaged_copy_matches_the_checkout_canonical`; `ShippedToolDetailsTests.test_disposable_install_reaches_the_named_place`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b4953e48cf2fce2001e2ff6b65449636db0d0972",
+            "content": "sha256:f24451580ae6183da097b6ee8ea241ee47f85c1f8cd98f069f9301ca8f41b15e",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_tool_descriptions.py"
+          },
+          "kind": "test"
         }
       ]
     }

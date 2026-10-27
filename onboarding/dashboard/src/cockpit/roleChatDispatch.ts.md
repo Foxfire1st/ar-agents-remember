@@ -31,6 +31,7 @@ This account is bound to the candidate source, not a claim of a running serving 
 
 - Saved taskless UUID/pending plus trimmed reason/override restoration keeps the legacy Investigator storage slot. [6]
 
+
 - The same start-only reason enters saved retry payload and POST body. [7]
 - File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence. [8]
 - File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence. [9]

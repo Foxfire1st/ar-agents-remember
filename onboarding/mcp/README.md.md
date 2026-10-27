@@ -108,10 +108,22 @@ The package's explicit install step reads host facts from paseoRuntime in the ac
 
 
 
-- The run command requires absolute MCP authority settings, rejecting user settings and coordinator system/settings.json; the package console entry delegates to server.main(). [1]
-- The reference catalog introduces the tool surface; actual server registration and its registrar tuple own the advertised families and signatures, rather than every historical catalog row. [4]
+
+
 - Requirements and the development-runtime section state the bounded package line, the historical published range, and the canonical exact source build. [7]
 - The dashboard command ensures the dashboard and starts or adopts the configured host; this path does not install it. [8]
 - Package-first onboarding explicitly retires provider installation, indexing and watching. [10]
 - Retained install knobs, unused provider keys and asked-only container removal do not re-enable provider setup. [11]
 - The advertised families are the retained registrar tuple, not the README's broad historical tool labels. [12]
+
+
+
+
+
+
+
+
+
+- The run command requires absolute MCP authority settings, rejecting user settings and coordinator system/settings.json; the package console entry delegates to server.main(). [1]
+
+- The reference catalog introduces the tool surface; actual server registration and its registrar tuple own the advertised families and signatures, rather than every historical catalog row. [4]

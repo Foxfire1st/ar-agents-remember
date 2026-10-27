@@ -23,6 +23,7 @@ role_launch_preparation._role_defaults retains its patchable seam and reads the 
 
 - Preparation keeps the host-read wrapper. [2]
 
+
 - Loader validates authority and effective alternative distinctness. [3]
 
 

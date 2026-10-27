@@ -395,40 +395,8 @@
       ]
     },
     "13": {
-      "note": "The surviving curator trace entry takes the candidate blobs and the run's identical-copy groups through one inputs value and requires current eligible answers; missing converted sides are incomplete.\n\nAnchor: `onboarding_trace_gate_for_context` `_onboarding_trace_open` `OnboardingTraceInputs` `_worklist_identical_changes`",
+      "note": "The surviving curator trace entry takes the candidate blobs and the run's identical-copy groups through one inputs value and requires current eligible answers; missing converted sides are incomplete.  Anchor: `onboarding_trace_gate_for_context` `_onboarding_trace_open` `OnboardingTraceInputs` `_worklist_identical_changes`",
       "targets": [
-        {
-          "anchor": {
-            "blob": "80a4a1aa9ecd845e13f6f600c46560e34da8ce15",
-            "content": "sha256:18d5ebbea3a05ed4ec5591770b5c64663f584dbb94a405c0d12d7e7aebe6a8dc",
-            "locator": {
-              "kind": "file"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "f312d2bd30e408565bad26d89ed227a954d4cd8a",
-            "content": "sha256:fe0280b08b4ea7b0e88aab3497f039783cbab20591f724696c0547175e9c231c",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "mcp/src/agents_remember/application/knowledge_gate/predicates.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "a4cb0ce3f5f3f488c8ad8313b8063d4a8218871e",
-            "content": "sha256:a2df6307f79b0a5282c67184a98d37a2d5fb71ad24fefd455d684627e7c5a73c",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "mcp/src/agents_remember/application/memory_quality/controller.py"
-          },
-          "kind": "code"
-        },
         {
           "anchor": {
             "blob": "80a4a1aa9ecd845e13f6f600c46560e34da8ce15",
@@ -465,11 +433,43 @@
         },
         {
           "anchor": {
-            "blob": "a4cb0ce3f5f3f488c8ad8313b8063d4a8218871e",
+            "blob": "f3bf4bfa27b8bfd44cd242540d16a2dbf31ec1c4",
             "content": "sha256:a9ce0154bceaa1f9de90686202afce80831ad1f1264b3a7a1e092b63474d9793",
             "locator": {
               "kind": "symbol",
               "name": "_worklist_identical_changes"
+            },
+            "path": "mcp/src/agents_remember/application/memory_quality/controller.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "80a4a1aa9ecd845e13f6f600c46560e34da8ce15",
+            "content": "sha256:18d5ebbea3a05ed4ec5591770b5c64663f584dbb94a405c0d12d7e7aebe6a8dc",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f312d2bd30e408565bad26d89ed227a954d4cd8a",
+            "content": "sha256:fe0280b08b4ea7b0e88aab3497f039783cbab20591f724696c0547175e9c231c",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_gate/predicates.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f3bf4bfa27b8bfd44cd242540d16a2dbf31ec1c4",
+            "content": "sha256:86b9f991a82d2cf8b7a6604799d421f5a3c8a07dec010204994f79f6296011e1",
+            "locator": {
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/memory_quality/controller.py"
           },

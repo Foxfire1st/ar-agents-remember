@@ -92,7 +92,7 @@ register_role_agent_tools is added to TOOL_REGISTRARS in the existing registrati
 ### Repo-Internal References
 
 
-- The `create_server` consumer iterates `TOOL_REGISTRARS`. [1]
+
 
 
 - The advertised tool-name list's one definition, re-exported unchanged by the adapter. [2]
@@ -115,3 +115,5 @@ register_role_agent_tools is added to TOOL_REGISTRARS in the existing registrati
 </details>
 
 - Ordinary registration adds explainer_control through register_explainer_tools; bound explainer registration is selected separately by create_server, rather than appending ordinary registrars. [10]
+
+- The `create_server` consumer iterates `TOOL_REGISTRARS`.  Anchor: `create_server` [1]

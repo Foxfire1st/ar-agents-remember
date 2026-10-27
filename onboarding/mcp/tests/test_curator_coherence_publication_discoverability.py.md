@@ -130,7 +130,7 @@ No configured domain documentation could be checked.
 
 - **The added-member case: one declaration edit reaches the refusal and the text, with neither text touched.** [13]
 - The non-publish refusals, by name and in model order, and the freeze branch's preserved message. [14]
-- The lane row this module was appended to. [16]
+
 
 ### Cross-Repo References
 
@@ -138,3 +138,7 @@ No cross-repository behavior is implemented or measured in this file. Every case
 repository's own model and publication route over a stubbed observation.
 
 No meaningful cross-repo references found.
+
+
+
+- The lane row this module was appended to.  Anchor: "mcp/tests/test_curator_coherence_publication_discoverability.py" [16]

@@ -24,4 +24,5 @@ This is launch metadata published by the canonical task owner, not evidence that
 - Existing task lock and writer publish the first decision. [2]
 - Observed destination updates are request-bound and preserve requested fields. [3]
 - Test source exercises failed/lost decision acknowledgment, deduplication and receipt loss. [4]
+
 - Test source preserves unrelated same-label prose and requested-vs-observed destination. [5]

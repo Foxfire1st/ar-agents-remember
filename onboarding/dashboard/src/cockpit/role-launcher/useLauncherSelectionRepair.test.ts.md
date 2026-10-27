@@ -10,13 +10,13 @@ Specify repair payloads, first-invalid priority and selected hook scheduling cas
 
 ## Code Commentary
 
-Pure document/override cases retain payload shape. Separate hook cases distinguish options-not-ready deferral, current callbacks and quiescent valid rerenders.
+Document cases retain the reset payloads and first-invalid sprint/master/task order. Hook cases check repair when task entries arrive and quiescence for valid document selections. Catalog override-pruning cases were removed with their production helpers.
 
 ## Boundaries
 
-The tests do not execute the pre-cut implementation or compose both effects into an arbitration proof. StrictMode and every catalog-arrival sequence are not implied.
+The tests do not prove catalog override repair or a combined effect arbitration contract. StrictMode and every catalog-arrival sequence are not implied.
 
 ## Evidence
 
 
-- The test file asserts the cases and limitations described above. [1]
+- The test file asserts seeded document correction payloads, first-invalid document order, document-arrival scheduling and quiescent valid selections; catalog override-pruning cases are removed. [1]

@@ -52,25 +52,44 @@ state and the settings file rather than on internal call order.
 
 ## Evidence
 
-- A user step-up accepts its own choices and defaults to three. [1]
-- An invalid step-up names the file and the exact key. [2]
-- A failed try is a review-kind round, not a record check. [3]
-- A step-up selection uses its own choices and never steps down. [4]
-- The count selects a step-up at and above its threshold. [5]
-- A step-up's provenance follows the catalog and reports an unoffered choice. [6]
-- A manual start replaces an idle holder and keeps the step-up across a restart. [7]
-- Provenance uses the actual predecessor's choices. [8]
-- A step-up refuses an active turn or permission without archiving. [9]
-- A recorded round names the step-up without granting a round. [10]
-- A failed creation leaves an empty seat and the same request retries. [11]
-- A host refusal keeps the holder and the user's permission authority. [12]
-- A third failed round changes the harness with its own mode and keeps the reviewer. [13]
-- An unreadable review launches the base role with a warning. [14]
-- An unreadable review preserves an explicit or prior step-up. [15]
-- The launch-review fallback keeps the raw evidence and the other validation. [16]
-- A step-up replay reconciles the decision before the host and survives receipt loss. [17]
-- A host default successor model is observed without losing the requested provenance. [18]
+- Source assertion: test_user_step_up_accepts_own_choices_and_defaults_to_three. The declaration is not an execution receipt. [1]
+
+- Source assertion: test_invalid_step_ups_name_file_and_exact_key. The declaration is not an execution receipt. [2]
+
+- Source assertion: test_failed_tries_are_review_kind_rounds_not_record_checks. The declaration is not an execution receipt. [3]
+
+- Source assertion: test_step_up_selection_uses_own_choices_and_never_steps_down. The declaration is not an execution receipt. [4]
+
+- Source assertion: test_count_selects_step_up_at_and_above_threshold. The declaration is not an execution receipt. [5]
+
+- Source assertion: test_step_up_catalog_provenance_and_unoffered_choice. The declaration is not an execution receipt. [6]
+
+- Source assertion: test_manual_start_replaces_idle_holder_and_keeps_step_up_on_restart. The declaration is not an execution receipt. [7]
+
+- Source assertion: test_step_up_provenance_uses_actual_predecessor_choices. The declaration is not an execution receipt. [8]
+
+- Source assertion: test_step_up_refuses_active_turn_or_permission_without_archiving. The declaration is not an execution receipt. [9]
+
+- Source assertion: test_recorded_round_names_the_step_up_without_granting_a_round. The declaration is not an execution receipt. [10]
+
+- Source assertion: test_failed_step_up_creation_leaves_empty_seat_and_same_request_retries. The declaration is not an execution receipt. [11]
+
+- Source assertion: test_host_refusal_keeps_holder_and_user_permission_authority. The declaration is not an execution receipt. [12]
+
+- Source assertion: test_third_failed_round_changes_harness_with_own_mode_and_keeps_reviewer. The declaration is not an execution receipt. [13]
+
+- Source assertion: test_unreadable_review_launches_base_with_warning. The declaration is not an execution receipt. [14]
+
+- Source assertion: test_unreadable_review_preserves_explicit_or_prior_step_up. The declaration is not an execution receipt. [15]
+
+- Source assertion: test_launch_review_fallback_preserves_raw_evidence_and_other_validation. The declaration is not an execution receipt. [16]
+
+- Source assertion: test_step_up_replay_reconciles_decision_before_host_and_survives_receipt_loss. The declaration is not an execution receipt. [17]
+
+- Source assertion: test_host_default_successor_model_is_observed_without_losing_requested_provenance. The declaration is not an execution receipt. [18]
+
 
 - An incomplete historical count warns without inventing tries. [19]
 
-- A repository cannot supply a step-up. [20]
+
+- Source assertion: test_repository_cannot_supply_step_up. The declaration is not an execution receipt. [20]

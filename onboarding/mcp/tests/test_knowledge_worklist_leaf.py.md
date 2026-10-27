@@ -138,7 +138,7 @@ No configured live documentation source was available for this pass.
 
 
 
-> Retained earlier citation wording: - The census-derived consumer row. [40]
+> Retained earlier citation wording: - The census-derived consumer row.
 
 
 
@@ -157,5 +157,11 @@ and in `test_the_memory_quality_controller_persists_the_worklist_and_renders_it_
 `onboarding_trace: 2`, the edited file's card and its root route. The cache case patches
 `base_cache.converted_base` instead of `leaf.converted_base`, because the conversion moved into
 `base_cache.converted_base_files` (ruling 18:49:50 (4)). The fixture and the other cases are unchanged.
+
+
+
+
+
+
 
 - The census-derived consumer row. [40]

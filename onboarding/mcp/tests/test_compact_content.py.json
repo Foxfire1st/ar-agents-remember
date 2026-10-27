@@ -21,12 +21,12 @@
       ]
     },
     "2": {
-      "note": "`create_server()` installs the shim before registering tools.\n\nAnchor: `create_server`",
+      "note": "`create_server()` installs the shim before registering tools.  Anchor: `create_server`",
       "targets": [
         {
           "anchor": {
-            "blob": "04fe591490945dea61eca1af410ae2553d95ea05",
-            "content": "sha256:cc3a440dce07a6635e86d3b3c0bd4747a332896e3470112e376449434e08b69a",
+            "blob": "c32522a60857504ad69c2b55c97baed38f637142",
+            "content": "sha256:51aabd4a109dee3ed422848ba7df15577c0cdd83fd80309e6668f594a29fc514",
             "locator": {
               "kind": "file"
             },

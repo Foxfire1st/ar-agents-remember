@@ -371,7 +371,7 @@
   ],
   "references": {
     "10": {
-      "note": "The shared benign table carries43 current roster keys, including explainer_control; the earlier42-key account preceded that entry, and the41-key account preceded user_settings_init. Table membership is preparation, not registration or execution.",
+      "note": "The shared benign table carries44 current roster keys, including explainer_control; the earlier42-key account preceded that entry, and the41-key account preceded user_settings_init. Table membership is preparation, not registration or execution.",
       "targets": [
         {
           "anchor": {

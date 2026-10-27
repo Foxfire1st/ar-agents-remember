@@ -228,11 +228,11 @@
       ]
     },
     "66": {
-      "note": "**The contract this module's artifact row is registered under.**\n\nAnchor: `knowledge-diff-cases`",
+      "note": "**The contract this module's artifact row is registered under.**  Anchor: `knowledge-diff-cases`",
       "targets": [
         {
           "anchor": {
-            "blob": "3c5993c94cf78973b3b39cfe7de9774c8aea6d1a",
+            "blob": "339dffc9c6794b5fe29fe6980e9e45603b344a09",
             "content": "sha256:929342408eab986b85e474007d33b0398ae3cda343cf39c7a584d5cf1ebf0936",
             "locator": {
               "end": 17,

@@ -20,8 +20,7 @@ Registered drift/migration adapters remain retired even where historical model d
 
 cit:([`DriftCheckResponse`], mcp/src/agents_remember/models/memory.py:15-29) is strict because drift summaries have a stable
 status, count, report, and actionable-sample shape. Its cit:(["status: DriftStatus"], mcp/src/agents_remember/models/memory.py:20-20) is
-`DriftStatus`, **imported** from
-`memory_quality.integrity.onboarding_drift_check.models`:
+`DriftStatus`, **imported** from the canonical owner `models/drift.py`:
 `notChecked | checked | error`. The local
 `DriftCheckStatus = Literal["notChecked", "checked", "error"]` this module used
 to declare was the last of three hand-copies of one vocabulary — identical in
@@ -55,8 +54,8 @@ The optional memory-quality `code` has no model-level length ceiling. Malformed 
   `notChecked` / `checked` / `error` (camelCase `notChecked`, not
   `not-checked` — that hyphenated spelling is `FreshnessSummary.status`, a
   different vocabulary).
-- That constraint is not declared here. `DriftStatus` is imported from the
-  module that produces it; this model must not reintroduce a local copy, however
+- That constraint is not declared here. `DriftStatus` is imported from
+  `models/drift.py`; this model must not reintroduce a local copy, however
   identical.
 - Flexible memory-service responses should still include the public operation
   name and shared token metadata.
@@ -75,8 +74,8 @@ The optional memory-quality `code` has no model-level length ceiling. Malformed 
 
 ### Repo-Internal References
 
-- Memory-quality requests are executed by the focused controller. [1]
-- The strict sync/start/poll request models and discriminated union. [3]
+
+
 
 ## 260815-DAG-L3 Attestation Response Field
 
@@ -125,17 +124,48 @@ and D-33 names the memory-quality and citation surfaces.
 `memoryRoot`, `codeRoot`, `sidecarCount`, `states`, `violationCount`, `violationSample`,
 `reportOnlyCount` and `unreadableSidecars` — so the tool and the packet faces of one measurement agree.
 
-- The tool response carries the converted measurement fields beside the legacy ones. [7]
+
 
 
 - Other memory MCP application entry points retain drift, citation, route-index, init, baseline, and carryover ownership. [2]
 
-- `DriftCheckResponse.status` uses the shared `DriftStatus` alias. [4]
+
 - `DriftSummary.status` uses the same shared `DriftStatus` alias. [5]
 - The context-packet wire face includes its matching `error` field. [6]
 
 
-- Memory-quality codes reach the shared guard without a model length rejection. [8]
+
+
+
+
+
+## Citation run response fields
+
+`CitationFixResponse` explicitly carries optional `status` and `runId` for the same preview result when a background run delivers it. Document and repair counts remain explicit nonnegative fields. The model preserves synchronous status vocabulary and does not itself turn a completed computation into successful repair or review acceptance.
+
+
+- The citation envelope declares background state and run identity. [10]
+
+
+
+- Memory-quality requests are executed by the focused controller. [1]
+
+
+
+- The strict sync/start/poll request models and discriminated union.  Anchor: `MemoryQualityCheckRequest` [3]
+
+
+
+- `DriftCheckResponse.status` uses the shared `DriftStatus` alias. [4]
+
+
+
+- The tool response carries the converted measurement fields beside the legacy ones. [7]
+
+
+
+- Memory-quality codes reach the shared guard without a model length rejection.  Anchor: `MemoryQualityCheckResponse` [8]
+
 
 
 - The two optional quality fields are declared rather than merely tolerated flexible extras. [9]

@@ -24,8 +24,7 @@ checks the layout paths. Registered in the `unit-regression` lane.
   `{code:{symbol}}` and proves they are refused, so the adaptation is deliberate.
 - Kinds: `test_every_record_kind_parses_round_trips_and_refuses_a_foreign_prefix` is parametrized
   over all twelve kinds (foreign prefix, undeclared field, every out-of-vocabulary relation refused);
-  `test_facet_records_carry_todays_payload_fields_plus_links` compares facet fields with
-  `models/knowledge/facet.py`.
+  its `_KIND_FIELDS` fixtures supply the payload and link shapes checked by those per-kind cases.
 - Refusals: `test_records_refuse_second_owners_and_malformed_record_fields`,
   `test_links_carry_their_relation_rules`, `test_sidecars_references_and_anchors_refuse_malformed_shapes`
   (including `incidental`, own-file `path`, route-index fields on a route sidecar). Its
@@ -68,10 +67,14 @@ The cases exercise every public model of the package.
 - Every kind round-trips and refuses a foreign prefix and foreign relations. [3]
 - Second-owner fields are refused on an invariant. [4]
 - Sidecar, reference and anchor refusals. [5]
-- Lane registration. [6]
+
 
 ### Cross-Repo References
 
 No meaningful cross-repo references found.
 
 No cross-repo boundary is exercised.
+
+
+
+- Lane registration.  Anchor: "mcp/tests/test_knowledge_file_formats.py" [6]

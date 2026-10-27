@@ -1041,12 +1041,12 @@
         },
         {
           "anchor": {
-            "blob": "06abcf50e960083f414831b75302d1ec30aad2e5",
+            "blob": "ad6c2cbc4cd5699281c3328e01ff5eff4b81dd85",
             "content": "sha256:b092cafb815fd85b0f00794dcbf5206b8e2ca9f8dfe5c72030d845b316f0a735",
             "locator": {
-              "end": 85,
+              "end": 84,
               "kind": "line_range",
-              "start": 54
+              "start": 53
             },
             "path": "dashboard/src/cockpit/roleChatExecutionView.ts"
           },
@@ -1759,8 +1759,8 @@
         },
         {
           "anchor": {
-            "blob": "b80702d8154ccb2f28eeee73e070661c0d13db50",
-            "content": "sha256:b946d0da0fb25a84cd36af44373126407b6bddd5f36037d50403c7b8490e83a5",
+            "blob": "88de0373d5339b3b1f1fb7cc23c59975ee6b560a",
+            "content": "sha256:3f9e66aaf9e547933bfddf9dc79310cf8126d7a068156eac880b468ed5138a7d",
             "locator": {
               "end": 213,
               "kind": "line_range",
@@ -2481,6 +2481,38 @@
             "path": "dashboard/src/cockpit/document-chat/DocumentChat.tsx"
           },
           "kind": "code"
+        }
+      ]
+    },
+    "97": {
+      "note": "Launcher choices carry pending, saved and unknown provenance without granting execution authority.\n\nAnchor: `RoleCatalogStatus`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d1c2f438ceeb88ab50c84cc5a570bbe0378e9f87",
+            "content": "sha256:57b64897eeddfac73429c62eb83214c5953da5659b5d69def86fc8cf8ee971f8",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/cockpit/role-launcher/RoleCatalogStatus.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "98": {
+      "note": "Saved previews, unknown selections and known-empty answers have separate component cases.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d492568fb06e30356e62fbcf296450f3a9bf59b2",
+            "content": "sha256:1c1b80011e41509c61f3184f985208b718872530c65644bc05a5c6d03e1313b2",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/cockpit/role-launcher/RoleCatalogStatus.test.tsx"
+          },
+          "kind": "test"
         }
       ]
     }

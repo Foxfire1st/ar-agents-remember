@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "98f8cd5791ea2314f54ffb009e3f7c5c87558652",
+        "blob": "2b81ba0f28f7d716c30f1dca2090ea75b350c3cb",
         "content": "sha256:03ec733da445aa6b4d8910bc6875e8f971ccfb913c6a482b1fac7f3b3eb0fc1f",
         "locator": {
           "kind": "symbol",
@@ -21,8 +21,8 @@
     },
     {
       "anchor": {
-        "blob": "98f8cd5791ea2314f54ffb009e3f7c5c87558652",
-        "content": "sha256:1780cc829057c1c26228475e2789be2e55bd7a9e2102ea099b2f24e586746f7d",
+        "blob": "2b81ba0f28f7d716c30f1dca2090ea75b350c3cb",
+        "content": "sha256:c22dd12cf6c8d6533461cc6a6e5bf97a22f98c2011311e1df231340a41fe53af",
         "locator": {
           "kind": "symbol",
           "name": "append_call_line"
@@ -39,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "98f8cd5791ea2314f54ffb009e3f7c5c87558652",
+        "blob": "2b81ba0f28f7d716c30f1dca2090ea75b350c3cb",
         "content": "sha256:8e938807fb5d6538c4803338b19c1800f906615572f3a1c0a91b231a151bf06b",
         "locator": {
           "kind": "symbol",
@@ -57,12 +57,30 @@
     },
     {
       "anchor": {
-        "blob": "98f8cd5791ea2314f54ffb009e3f7c5c87558652",
+        "blob": "2b81ba0f28f7d716c30f1dca2090ea75b350c3cb",
+        "content": "sha256:298df489896a0e1cf655522ee0eaa00cec9114cae3c2f46a1e1ec6eb7d589846",
+        "locator": {
+          "kind": "symbol",
+          "name": "_serialized_budget"
+        }
+      },
+      "id": "RLZ-Q4301Q",
+      "invariant": "INV-T3CE64",
+      "origin": {
+        "handoffEntry": "MIK-R213@v1 rule 1",
+        "leaf": "260928-MIK-L202"
+      },
+      "rationale": "The shared reentrant lock prevents concurrently dispatched calls spending the same remaining log budget.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "2b81ba0f28f7d716c30f1dca2090ea75b350c3cb",
         "content": "sha256:fc6c572468e4c29846b3cc9752c6064780279bf2fd776e72531cf7b8878077a6",
         "locator": {
-          "end": 344,
+          "end": 353,
           "kind": "line_range",
-          "start": 274
+          "start": 283
         }
       },
       "id": "RLZ-RRGDHN",
@@ -76,12 +94,12 @@
     },
     {
       "anchor": {
-        "blob": "98f8cd5791ea2314f54ffb009e3f7c5c87558652",
+        "blob": "2b81ba0f28f7d716c30f1dca2090ea75b350c3cb",
         "content": "sha256:fc6c572468e4c29846b3cc9752c6064780279bf2fd776e72531cf7b8878077a6",
         "locator": {
-          "end": 344,
+          "end": 353,
           "kind": "line_range",
-          "start": 274
+          "start": 283
         }
       },
       "id": "RLZ-RRJX13",
@@ -95,7 +113,7 @@
     },
     {
       "anchor": {
-        "blob": "98f8cd5791ea2314f54ffb009e3f7c5c87558652",
+        "blob": "2b81ba0f28f7d716c30f1dca2090ea75b350c3cb",
         "content": "sha256:53a373db7a06d0fbb1b0419108122ca31b58886c642b19298de7e385e5cb4599",
         "locator": {
           "kind": "symbol",
@@ -118,8 +136,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "98f8cd5791ea2314f54ffb009e3f7c5c87558652",
-            "content": "sha256:1780cc829057c1c26228475e2789be2e55bd7a9e2102ea099b2f24e586746f7d",
+            "blob": "2b81ba0f28f7d716c30f1dca2090ea75b350c3cb",
+            "content": "sha256:c22dd12cf6c8d6533461cc6a6e5bf97a22f98c2011311e1df231340a41fe53af",
             "locator": {
               "kind": "symbol",
               "name": "append_call_line"
@@ -134,7 +152,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "98f8cd5791ea2314f54ffb009e3f7c5c87558652",
+            "blob": "2b81ba0f28f7d716c30f1dca2090ea75b350c3cb",
             "content": "sha256:fc6c572468e4c29846b3cc9752c6064780279bf2fd776e72531cf7b8878077a6",
             "locator": {
               "kind": "symbol",
@@ -150,7 +168,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "98f8cd5791ea2314f54ffb009e3f7c5c87558652",
+            "blob": "2b81ba0f28f7d716c30f1dca2090ea75b350c3cb",
             "content": "sha256:53a373db7a06d0fbb1b0419108122ca31b58886c642b19298de7e385e5cb4599",
             "locator": {
               "kind": "symbol",
@@ -166,7 +184,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "98f8cd5791ea2314f54ffb009e3f7c5c87558652",
+            "blob": "2b81ba0f28f7d716c30f1dca2090ea75b350c3cb",
             "content": "sha256:03ec733da445aa6b4d8910bc6875e8f971ccfb913c6a482b1fac7f3b3eb0fc1f",
             "locator": {
               "kind": "symbol",
@@ -182,14 +200,46 @@
       "targets": [
         {
           "anchor": {
-            "blob": "98f8cd5791ea2314f54ffb009e3f7c5c87558652",
-            "content": "sha256:dcceb9ddc3af3c1b08c2536e0f13911cab65344b646fc4c08f96ca4f856201c3",
+            "blob": "2b81ba0f28f7d716c30f1dca2090ea75b350c3cb",
+            "content": "sha256:636b1392813c0c5b75390e952df83aaa0eb06c3d123bb77f21f7649c374dd88b",
             "locator": {
               "kind": "symbol",
               "name": "write_diff_report"
             }
           },
           "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The shared in-process budget state is serialized by one reentrant lock.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2b81ba0f28f7d716c30f1dca2090ea75b350c3cb",
+            "content": "sha256:298df489896a0e1cf655522ee0eaa00cec9114cae3c2f46a1e1ec6eb7d589846",
+            "locator": {
+              "kind": "symbol",
+              "name": "_serialized_budget"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Concurrent detail writes cannot both spend the same remaining folder budget.\n\nAnchor: `test_concurrent_details_cannot_both_spend_the_same_log_budget`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "02df2b567c68180c22058ef0d58bf27b6ea52756",
+            "content": "sha256:4e501d5e6da0d4fabec24d326e4f71ecc97abfad6fb7b6e5c130c636c22154f4",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_tool_answer_log.py"
+          },
+          "kind": "test"
         }
       ]
     }

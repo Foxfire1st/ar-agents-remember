@@ -79,7 +79,7 @@ The cases and their helpers.
 - A family without routes that is not an unassessed export violates Coverage. [7]
 
 - A standalone conversion checks no route directory: with no code tree it passes, reporting only the legacy count. [8]
-- The lane registration. [9]
+
 
 ### Cross-Repo References
 
@@ -98,3 +98,7 @@ No cross-repo boundary is crossed by this file.
 
 
 - Nested-route refusal, one state computation per fixture family/validation and explicit routes-command difference output are source assertions. [11]
+
+
+
+- The lane registration.  Anchor: "mcp/tests/test_knowledge_family_routes.py" [9]

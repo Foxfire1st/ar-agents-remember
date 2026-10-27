@@ -67,7 +67,7 @@ No configured live documentation source was available for this pass.
 - The base port of a memory-quality run. [2]
 - The base port of a run that holds a coordination context; none without a coordination root. [3]
 
-- The memory-quality run passes the port into the drift context. [4]
+
 
 - The check's side of the port: its bases, and an unbuildable base as a finding. [5]
 
@@ -76,3 +76,5 @@ No configured live documentation source was available for this pass.
 No meaningful cross-repo references found: the module binds two same-repository modules.
 
 No cross-repo boundary is crossed by this file.
+
+- The memory-quality run passes the port into the drift context.  Anchor: `_execute_memory_quality` [4]

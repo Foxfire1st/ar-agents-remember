@@ -397,7 +397,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0b550ee3cda163c8b451cb06a4fb69b489c4686d",
+            "blob": "ddd77babbaaddf51063d6e23856c0cadd142d461",
             "content": "sha256:22b47af4643ca57af5fc2b20ea693b15dc794169080cdd900465ea6c0361df12",
             "locator": {
               "end": 41,
@@ -534,7 +534,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f8cfe435ca6fbe3bbe12080957f343453ad78be9",
+            "blob": "9bb74647f6b0b1b06178972710d51364539d642f",
             "content": "sha256:d464b721ab61acb5e0c79ad3210870eadeddf5510a8dc5f096c0c0468b32f7e5",
             "locator": {
               "end": 5,
@@ -1352,7 +1352,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "66cdb7eb934b997506694ce9294209c403320f90",
+            "blob": "bad174f5c8c114dc40837c9d847d35d746f59567",
             "content": "sha256:9259c90e6f88d9341d436169bfe73964ad5e34c7bd5b8880aad5b6b8a2827a4d",
             "locator": {
               "end": 64,
@@ -1420,12 +1420,12 @@
       ]
     },
     "285": {
-      "note": "Retained reference account (no fresh execution or acceptance inferred): Exact contract scope, full check and curator worklist publication.\n\nAnchor: `_resolve_execution`",
+      "note": "Retained reference account (no fresh execution or acceptance inferred): Exact contract scope, full check and curator worklist publication.  Anchor: `_resolve_execution`",
       "targets": [
         {
           "anchor": {
-            "blob": "a4cb0ce3f5f3f488c8ad8313b8063d4a8218871e",
-            "content": "sha256:a2df6307f79b0a5282c67184a98d37a2d5fb71ad24fefd455d684627e7c5a73c",
+            "blob": "f3bf4bfa27b8bfd44cd242540d16a2dbf31ec1c4",
+            "content": "sha256:86b9f991a82d2cf8b7a6604799d421f5a3c8a07dec010204994f79f6296011e1",
             "locator": {
               "kind": "file"
             },
@@ -1440,7 +1440,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a4cb0ce3f5f3f488c8ad8313b8063d4a8218871e",
+            "blob": "f3bf4bfa27b8bfd44cd242540d16a2dbf31ec1c4",
             "content": "sha256:d81b89961aa9f6111073416b7d9db6242c5d1caddb566ef889f16800de227eb4",
             "locator": {
               "kind": "symbol",
@@ -2616,7 +2616,7 @@
         },
         {
           "anchor": {
-            "blob": "2b635ee176f4fb5b39f31f5a621e0169376a6fc0",
+            "blob": "9cc12d82c359d5d0e3bf22d07526a159a3d8be2a",
             "content": "sha256:31cacb87830e073b464b4e469eb42cea522da5139af0f2d7ce654c9ccaa25442",
             "locator": {
               "end": 8,
@@ -3506,6 +3506,37 @@
         }
       ]
     },
+    "363": {
+      "note": "Current budget guidance agrees with the root declaration.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ddd77babbaaddf51063d6e23856c0cadd142d461",
+            "content": "sha256:d54efa326c1d4128e0c15e19ae1c2e3f9fb44b9af2c0cfbcfa5bca0306be0494",
+            "locator": {
+              "end": 334,
+              "kind": "line_range",
+              "start": 320
+            },
+            "path": "pyproject.toml"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bad174f5c8c114dc40837c9d847d35d746f59567",
+            "content": "sha256:54b7900bd3a717483370deaa05e4919139eb4cca6f55da506c1849ae679b63eb",
+            "locator": {
+              "end": 86,
+              "kind": "line_range",
+              "start": 83
+            },
+            "path": "CONTRIBUTING.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "37": {
       "note": "Retained reference account (no fresh execution or acceptance inferred): GitHub runs the deterministic non-test gate on pull requests only; tag publishing proves reachability from main.",
       "targets": [
@@ -3577,8 +3608,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "66cdb7eb934b997506694ce9294209c403320f90",
-            "content": "sha256:063d594385c614803b681bdd7b349cedfd070d22e9360a6b5a43adb6c97e99df",
+            "blob": "bad174f5c8c114dc40837c9d847d35d746f59567",
+            "content": "sha256:792f889a8430e2e155f148b71f218a63e7cee5b22ff6d8923edd16930be54a4d",
             "locator": {
               "end": 187,
               "kind": "line_range",
@@ -3611,8 +3642,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7ffa056cff009f353268195182f04dbb00fde93b",
-            "content": "sha256:167a1ab938d79a1cb88e126e0af8a72debe760638d1de4d11e6ef5ec82a95362",
+            "blob": "0d19e9bdf51497de71bacf7a9830b69978d96dc7",
+            "content": "sha256:e1e3d8365a62fc5a5f5f54f499dc4c5e7203b70b369e307d47f30e350c5eb4b7",
             "locator": {
               "end": 53,
               "kind": "line_range",
@@ -3643,12 +3674,12 @@
       ]
     },
     "46": {
-      "note": "Retained reference account (no fresh execution or acceptance inferred): Exact contract scope, the full check and the curator worklist publication.\n\nAnchor: `_resolve_execution` `_execute_memory_quality` `_attach_curator_checklist`",
+      "note": "Retained reference account (no fresh execution or acceptance inferred): Exact contract scope, the full check and the curator worklist publication.  Anchor: `_resolve_execution` `_execute_memory_quality` `_attach_curator_checklist`",
       "targets": [
         {
           "anchor": {
-            "blob": "a4cb0ce3f5f3f488c8ad8313b8063d4a8218871e",
-            "content": "sha256:a2df6307f79b0a5282c67184a98d37a2d5fb71ad24fefd455d684627e7c5a73c",
+            "blob": "f3bf4bfa27b8bfd44cd242540d16a2dbf31ec1c4",
+            "content": "sha256:86b9f991a82d2cf8b7a6604799d421f5a3c8a07dec010204994f79f6296011e1",
             "locator": {
               "kind": "file"
             },
@@ -3663,7 +3694,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a4cb0ce3f5f3f488c8ad8313b8063d4a8218871e",
+            "blob": "f3bf4bfa27b8bfd44cd242540d16a2dbf31ec1c4",
             "content": "sha256:d81b89961aa9f6111073416b7d9db6242c5d1caddb566ef889f16800de227eb4",
             "locator": {
               "kind": "symbol",
@@ -3951,12 +3982,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0b550ee3cda163c8b451cb06a4fb69b489c4686d",
-            "content": "sha256:4eaf913583adc97708111cd7ade739a0f30d50b79cfac37e3f8a9d1e36cc0d52",
+            "blob": "ddd77babbaaddf51063d6e23856c0cadd142d461",
+            "content": "sha256:a45f05c153d1b724bd7bfe5527b5534499d94b58cd5742e0a22db07b37cb65f7",
             "locator": {
-              "end": 279,
+              "end": 334,
               "kind": "line_range",
-              "start": 278
+              "start": 333
             },
             "path": "pyproject.toml"
           },

@@ -172,7 +172,10 @@ later reader does not have to reconstruct it from a report.
 ### Repo-Internal References
 
 - The quality plan composes the selected development tools; coverage and production CRAP remain diagnostic. [1]
-- Root pytest configuration selects four workers by default. [2]
+
+
+
+
 
 - Public response contracts depend on Pydantic and token accounting depends on tiktoken. [3]
 
@@ -196,8 +199,13 @@ later reader does not have to reconstruct it from a report.
 - The placement step whose output this recursive glob picks up at build time. [13]
 - Both generated dashboard paths are git-ignored, with the reason recorded inline. [14]
 - An installation with no bundle reports the absence instead of failing, which is why packaging needs no guard. [15]
-- The Ruff `target-version`, an explicitly reasoned non-runtime syntax-rewrite policy independent of the supported minor declared here, lives in the repository-root project file. [16]
+
+
+- Ruff keeps its syntax target at Python 3.13; this is explicitly independent from runtime requirements and Pyright language configuration. [16]
+
 
 - Package metadata directly bounds the interpreter line and declares its Python classifier. [17]
 
 - The package data includes `canvas/*.md` and `canvas/*.mjs` beside the generated package-data copy, because `canvas/presenter_inputs.py` resolves the capability text module-relatively in an installed build; the capsule-text test fails on drift between the two copies. [18]
+
+- Root pytest configuration selects four workers by default. The retained historical comments record an earlier four-worker runtime and the earlier population-growth boundary. [2]

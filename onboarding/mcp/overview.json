@@ -535,8 +535,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7ffa056cff009f353268195182f04dbb00fde93b",
-            "content": "sha256:167a1ab938d79a1cb88e126e0af8a72debe760638d1de4d11e6ef5ec82a95362",
+            "blob": "0d19e9bdf51497de71bacf7a9830b69978d96dc7",
+            "content": "sha256:e1e3d8365a62fc5a5f5f54f499dc4c5e7203b70b369e307d47f30e350c5eb4b7",
             "locator": {
               "end": 53,
               "kind": "line_range",
@@ -567,12 +567,12 @@
       ]
     },
     "152": {
-      "note": "**Retained historical source account — superseded by the current route account:** Exact contract scope, full check and curator worklist publication.\n\nAnchor: `_resolve_execution` `_execute_memory_quality` `_attach_curator_checklist`",
+      "note": "**Retained historical source account — superseded by the current route account:** Exact contract scope, full check and curator worklist publication.  Anchor: `_resolve_execution` `_execute_memory_quality` `_attach_curator_checklist`",
       "targets": [
         {
           "anchor": {
-            "blob": "a4cb0ce3f5f3f488c8ad8313b8063d4a8218871e",
-            "content": "sha256:a2df6307f79b0a5282c67184a98d37a2d5fb71ad24fefd455d684627e7c5a73c",
+            "blob": "f3bf4bfa27b8bfd44cd242540d16a2dbf31ec1c4",
+            "content": "sha256:86b9f991a82d2cf8b7a6604799d421f5a3c8a07dec010204994f79f6296011e1",
             "locator": {
               "kind": "file"
             },
@@ -587,7 +587,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a4cb0ce3f5f3f488c8ad8313b8063d4a8218871e",
+            "blob": "f3bf4bfa27b8bfd44cd242540d16a2dbf31ec1c4",
             "content": "sha256:d81b89961aa9f6111073416b7d9db6242c5d1caddb566ef889f16800de227eb4",
             "locator": {
               "kind": "symbol",
@@ -898,38 +898,38 @@
       "targets": [
         {
           "anchor": {
-            "blob": "102c4550ab6429f44c8fb543d1d0662de66a1b8c",
+            "blob": "5276cd9583d9a33d9094edac37d82b768491aed9",
             "content": "sha256:4a39e0fccce5a736c9676f5d0015441e750f88931a3e36276047ee371e324a1e",
+            "locator": {
+              "end": 327,
+              "kind": "line_range",
+              "start": 327
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5276cd9583d9a33d9094edac37d82b768491aed9",
+            "content": "sha256:b6cc1ca0fd0d7aa788517485aee9f2b5ec3d520f9b000ecb2f8d2321e4271e33",
+            "locator": {
+              "end": 343,
+              "kind": "line_range",
+              "start": 343
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5276cd9583d9a33d9094edac37d82b768491aed9",
+            "content": "sha256:f9dc9014637fcd247260c1e316f01404266fd5552dc69a4aae4268b8d42dc66f",
             "locator": {
               "end": 324,
               "kind": "line_range",
               "start": 324
-            },
-            "path": "mcp/tests/test-evidence-lanes.toml"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "102c4550ab6429f44c8fb543d1d0662de66a1b8c",
-            "content": "sha256:b6cc1ca0fd0d7aa788517485aee9f2b5ec3d520f9b000ecb2f8d2321e4271e33",
-            "locator": {
-              "end": 340,
-              "kind": "line_range",
-              "start": 340
-            },
-            "path": "mcp/tests/test-evidence-lanes.toml"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "102c4550ab6429f44c8fb543d1d0662de66a1b8c",
-            "content": "sha256:f9dc9014637fcd247260c1e316f01404266fd5552dc69a4aae4268b8d42dc66f",
-            "locator": {
-              "end": 321,
-              "kind": "line_range",
-              "start": 321
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -2025,7 +2025,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "102c4550ab6429f44c8fb543d1d0662de66a1b8c",
+            "blob": "5276cd9583d9a33d9094edac37d82b768491aed9",
             "content": "sha256:65870d8bf072581aae2e74e46f3f91600d874e4babbd72a6acac9137900ba98a",
             "locator": {
               "end": 138,
@@ -2038,7 +2038,7 @@
         },
         {
           "anchor": {
-            "blob": "102c4550ab6429f44c8fb543d1d0662de66a1b8c",
+            "blob": "5276cd9583d9a33d9094edac37d82b768491aed9",
             "content": "sha256:55aae7f94adeaee949444718419adb19e16cc7f7312f0ed50d8c4db0f98dc21f",
             "locator": {
               "end": 156,
@@ -2051,7 +2051,7 @@
         },
         {
           "anchor": {
-            "blob": "102c4550ab6429f44c8fb543d1d0662de66a1b8c",
+            "blob": "5276cd9583d9a33d9094edac37d82b768491aed9",
             "content": "sha256:2fa53d75d1a4d6ef8e4c45600fb5f9678bb7206ba3b69dd24ee8963593f7ebfd",
             "locator": {
               "end": 154,
@@ -2064,7 +2064,7 @@
         },
         {
           "anchor": {
-            "blob": "102c4550ab6429f44c8fb543d1d0662de66a1b8c",
+            "blob": "5276cd9583d9a33d9094edac37d82b768491aed9",
             "content": "sha256:ef900a5b38b3a4393ac60a6d42f336d540dcb806538d4acca19a65c9c1fc194c",
             "locator": {
               "end": 172,
@@ -2077,7 +2077,7 @@
         },
         {
           "anchor": {
-            "blob": "102c4550ab6429f44c8fb543d1d0662de66a1b8c",
+            "blob": "5276cd9583d9a33d9094edac37d82b768491aed9",
             "content": "sha256:69d8280dc81168ccad9bbfe29ba5f03699c91984d70f014cb8aaa09868400e4d",
             "locator": {
               "end": 135,
@@ -2090,7 +2090,7 @@
         },
         {
           "anchor": {
-            "blob": "102c4550ab6429f44c8fb543d1d0662de66a1b8c",
+            "blob": "5276cd9583d9a33d9094edac37d82b768491aed9",
             "content": "sha256:94735bcffa1378ed55669798460b785212b5c930b61021035296bb635c9050c0",
             "locator": {
               "end": 153,
@@ -2579,7 +2579,7 @@
       ]
     },
     "260": {
-      "note": "**The two deletion owners and the record that precedes every deletion.**",
+      "note": "Code-object release records deletion before invoking its release owner; snapshot discard verifies and removes present bytes before recording deletion. The two owners preserve their own orderings.",
       "targets": [
         {
           "anchor": {
@@ -2617,7 +2617,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "806f87dacbd41bb3a7c9c2fa4c012db6332d673b",
+            "blob": "f44c8d99dcf91688bcc70c6659a03fbf91c40a5e",
             "content": "sha256:8d2cdc2c8974142bc9972b5768feccd855dacd33a33b7ed6cc31a21a9fdaf4bd",
             "locator": {
               "kind": "symbol",
@@ -2876,38 +2876,38 @@
       "targets": [
         {
           "anchor": {
-            "blob": "102c4550ab6429f44c8fb543d1d0662de66a1b8c",
+            "blob": "5276cd9583d9a33d9094edac37d82b768491aed9",
             "content": "sha256:4a39e0fccce5a736c9676f5d0015441e750f88931a3e36276047ee371e324a1e",
+            "locator": {
+              "end": 327,
+              "kind": "line_range",
+              "start": 327
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5276cd9583d9a33d9094edac37d82b768491aed9",
+            "content": "sha256:b6cc1ca0fd0d7aa788517485aee9f2b5ec3d520f9b000ecb2f8d2321e4271e33",
+            "locator": {
+              "end": 343,
+              "kind": "line_range",
+              "start": 343
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5276cd9583d9a33d9094edac37d82b768491aed9",
+            "content": "sha256:f9dc9014637fcd247260c1e316f01404266fd5552dc69a4aae4268b8d42dc66f",
             "locator": {
               "end": 324,
               "kind": "line_range",
               "start": 324
-            },
-            "path": "mcp/tests/test-evidence-lanes.toml"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "102c4550ab6429f44c8fb543d1d0662de66a1b8c",
-            "content": "sha256:b6cc1ca0fd0d7aa788517485aee9f2b5ec3d520f9b000ecb2f8d2321e4271e33",
-            "locator": {
-              "end": 340,
-              "kind": "line_range",
-              "start": 340
-            },
-            "path": "mcp/tests/test-evidence-lanes.toml"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "102c4550ab6429f44c8fb543d1d0662de66a1b8c",
-            "content": "sha256:f9dc9014637fcd247260c1e316f01404266fd5552dc69a4aae4268b8d42dc66f",
-            "locator": {
-              "end": 321,
-              "kind": "line_range",
-              "start": 321
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -2950,16 +2950,16 @@
       ]
     },
     "287": {
-      "note": "The enforced collected-case pair is 10000 unit/1000 integration; the unit-only policy raise leaves the collection guard unchanged.",
+      "note": "The root configuration declares the current selected-case ceilings of 10000 unit and 2000 integration; deliberate raises update the declaration and its independent screens together.",
       "targets": [
         {
           "anchor": {
-            "blob": "0b550ee3cda163c8b451cb06a4fb69b489c4686d",
-            "content": "sha256:24329980c91722cff083957188e3f6e6de6c7f24a81a62f06db77bd5fafa166d",
+            "blob": "ddd77babbaaddf51063d6e23856c0cadd142d461",
+            "content": "sha256:a45f05c153d1b724bd7bfe5527b5534499d94b58cd5742e0a22db07b37cb65f7",
             "locator": {
-              "end": 299,
+              "end": 334,
               "kind": "line_range",
-              "start": 278
+              "start": 333
             },
             "path": "pyproject.toml"
           },
@@ -3060,12 +3060,12 @@
       ]
     },
     "290": {
-      "note": "**Retained historical source account — superseded by the current route account:** Dispatch advertisement is closed and undeclared inputs refuse before handler\n\nAnchor: `AgentsRememberMCP`",
+      "note": "**Retained historical source account — superseded by the current route account:** Dispatch advertisement is closed and undeclared inputs refuse before handler  Anchor: `AgentsRememberMCP`",
       "targets": [
         {
           "anchor": {
-            "blob": "04fe591490945dea61eca1af410ae2553d95ea05",
-            "content": "sha256:cc3a440dce07a6635e86d3b3c0bd4747a332896e3470112e376449434e08b69a",
+            "blob": "c32522a60857504ad69c2b55c97baed38f637142",
+            "content": "sha256:51aabd4a109dee3ed422848ba7df15577c0cdd83fd80309e6668f594a29fc514",
             "locator": {
               "kind": "file"
             },
@@ -3292,7 +3292,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a4cb0ce3f5f3f488c8ad8313b8063d4a8218871e",
+            "blob": "f3bf4bfa27b8bfd44cd242540d16a2dbf31ec1c4",
             "content": "sha256:0c161eccbe0bd6e26018eb3d037bf32dc5e85f85f1361db82da57796944e207e",
             "locator": {
               "kind": "symbol",
@@ -3357,7 +3357,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "22c18d8af149dc6c56458157e5fc782db0309e51",
+            "blob": "6295b3c90a86ff77e4b13ec5bab3ab1830114d78",
             "content": "sha256:42ad021e4f065aa293c21e685e4f12f72b40de8cf09456ad8dd82a5881f41574",
             "locator": {
               "end": 858,
@@ -3370,7 +3370,7 @@
         },
         {
           "anchor": {
-            "blob": "22c18d8af149dc6c56458157e5fc782db0309e51",
+            "blob": "6295b3c90a86ff77e4b13ec5bab3ab1830114d78",
             "content": "sha256:6e77f12e0543c46c775700024cbb7d40d6cd0499bf89fe2e18a912063d726639",
             "locator": {
               "end": 857,
@@ -3568,7 +3568,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0b550ee3cda163c8b451cb06a4fb69b489c4686d",
+            "blob": "ddd77babbaaddf51063d6e23856c0cadd142d461",
             "content": "sha256:4eaf913583adc97708111cd7ade739a0f30d50b79cfac37e3f8a9d1e36cc0d52",
             "locator": {
               "end": 279,
@@ -3617,12 +3617,12 @@
         },
         {
           "anchor": {
-            "blob": "d567e4338eff6de6f22fe372f65b92ef650658d0",
+            "blob": "755280c18dca99295c07443b6ea5e945881bbc54",
             "content": "sha256:44a4a3c46c23bb58709ed5a5622cc1fd4d8a18c4400f8d5214151d68a146c18d",
             "locator": {
-              "end": 248,
+              "end": 251,
               "kind": "line_range",
-              "start": 244
+              "start": 247
             },
             "path": "mcp/src/agents_remember/cli/paseo_bridge.mjs"
           },
@@ -3630,12 +3630,12 @@
         },
         {
           "anchor": {
-            "blob": "d567e4338eff6de6f22fe372f65b92ef650658d0",
+            "blob": "755280c18dca99295c07443b6ea5e945881bbc54",
             "content": "sha256:07107728aaac2fd5b429aacacfaae0cce32c6156b7a8da8a80e5c859560b5c09",
             "locator": {
-              "end": 757,
+              "end": 797,
               "kind": "line_range",
-              "start": 738
+              "start": 778
             },
             "path": "mcp/src/agents_remember/cli/paseo_bridge.mjs"
           },
@@ -3707,7 +3707,7 @@
         },
         {
           "anchor": {
-            "blob": "2b635ee176f4fb5b39f31f5a621e0169376a6fc0",
+            "blob": "9cc12d82c359d5d0e3bf22d07526a159a3d8be2a",
             "content": "sha256:31cacb87830e073b464b4e469eb42cea522da5139af0f2d7ce654c9ccaa25442",
             "locator": {
               "end": 8,
@@ -3817,7 +3817,7 @@
       ]
     },
     "316": {
-      "note": "The current literal ordinary roster has 43 names, including mounted `knowledge_write`, `user_settings_init` and `explainer_control`; preceding roster counts remain historical source epochs. Existing task/public-delivery and no-acceptance qualifications stand.",
+      "note": "The current literal ordinary roster has 44 names, including mounted `knowledge_write`, `user_settings_init` and `explainer_control`; preceding roster counts remain historical source epochs. Existing task/public-delivery and no-acceptance qualifications stand.",
       "targets": [
         {
           "anchor": {
@@ -3887,38 +3887,38 @@
       "targets": [
         {
           "anchor": {
-            "blob": "102c4550ab6429f44c8fb543d1d0662de66a1b8c",
+            "blob": "5276cd9583d9a33d9094edac37d82b768491aed9",
             "content": "sha256:4a39e0fccce5a736c9676f5d0015441e750f88931a3e36276047ee371e324a1e",
+            "locator": {
+              "end": 327,
+              "kind": "line_range",
+              "start": 327
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5276cd9583d9a33d9094edac37d82b768491aed9",
+            "content": "sha256:b6cc1ca0fd0d7aa788517485aee9f2b5ec3d520f9b000ecb2f8d2321e4271e33",
+            "locator": {
+              "end": 343,
+              "kind": "line_range",
+              "start": 343
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5276cd9583d9a33d9094edac37d82b768491aed9",
+            "content": "sha256:f9dc9014637fcd247260c1e316f01404266fd5552dc69a4aae4268b8d42dc66f",
             "locator": {
               "end": 324,
               "kind": "line_range",
               "start": 324
-            },
-            "path": "mcp/tests/test-evidence-lanes.toml"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "102c4550ab6429f44c8fb543d1d0662de66a1b8c",
-            "content": "sha256:b6cc1ca0fd0d7aa788517485aee9f2b5ec3d520f9b000ecb2f8d2321e4271e33",
-            "locator": {
-              "end": 340,
-              "kind": "line_range",
-              "start": 340
-            },
-            "path": "mcp/tests/test-evidence-lanes.toml"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "102c4550ab6429f44c8fb543d1d0662de66a1b8c",
-            "content": "sha256:f9dc9014637fcd247260c1e316f01404266fd5552dc69a4aae4268b8d42dc66f",
-            "locator": {
-              "end": 321,
-              "kind": "line_range",
-              "start": 321
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -4126,14 +4126,14 @@
       ]
     },
     "329": {
-      "note": "The composed declaration is 10,000 unit and 1,000 integration collected cases; declarations are not execution counts.\n\nAnchor: `unit_case_budget`",
+      "note": "The current declared pair is 10000 unit and 2000 integration selected cases. Earlier unit-only raises kept their integration ceiling unchanged at that time.",
       "targets": [
         {
           "anchor": {
-            "blob": "0b550ee3cda163c8b451cb06a4fb69b489c4686d",
-            "content": "sha256:5559c13c46e03eb19fae3e43e1e5505868ae7ff83af16118912b42fb3b6d6e08",
+            "blob": "ddd77babbaaddf51063d6e23856c0cadd142d461",
+            "content": "sha256:d54efa326c1d4128e0c15e19ae1c2e3f9fb44b9af2c0cfbcfa5bca0306be0494",
             "locator": {
-              "end": 321,
+              "end": 334,
               "kind": "line_range",
               "start": 320
             },
@@ -4759,12 +4759,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d567e4338eff6de6f22fe372f65b92ef650658d0",
+            "blob": "755280c18dca99295c07443b6ea5e945881bbc54",
             "content": "sha256:c968c1884cff2af1a86b7b33d364870c7af2cc16de93126ea32c6bee30f4b8f2",
             "locator": {
-              "end": 1140,
+              "end": 1219,
               "kind": "line_range",
-              "start": 1079
+              "start": 1158
             },
             "path": "mcp/src/agents_remember/cli/paseo_bridge.mjs"
           },
@@ -4772,12 +4772,12 @@
         },
         {
           "anchor": {
-            "blob": "d567e4338eff6de6f22fe372f65b92ef650658d0",
+            "blob": "755280c18dca99295c07443b6ea5e945881bbc54",
             "content": "sha256:14a3c70b338ddd80b68af4f59bec9ef9c5cc6d9b2408feb2ae6ed36e86d8ed28",
             "locator": {
-              "end": 1169,
+              "end": 1248,
               "kind": "line_range",
-              "start": 1108
+              "start": 1187
             },
             "path": "mcp/src/agents_remember/cli/paseo_bridge.mjs"
           },
@@ -5230,7 +5230,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "102c4550ab6429f44c8fb543d1d0662de66a1b8c",
+            "blob": "5276cd9583d9a33d9094edac37d82b768491aed9",
             "content": "sha256:65870d8bf072581aae2e74e46f3f91600d874e4babbd72a6acac9137900ba98a",
             "locator": {
               "end": 138,
@@ -5243,7 +5243,7 @@
         },
         {
           "anchor": {
-            "blob": "102c4550ab6429f44c8fb543d1d0662de66a1b8c",
+            "blob": "5276cd9583d9a33d9094edac37d82b768491aed9",
             "content": "sha256:55aae7f94adeaee949444718419adb19e16cc7f7312f0ed50d8c4db0f98dc21f",
             "locator": {
               "end": 156,
@@ -5256,7 +5256,7 @@
         },
         {
           "anchor": {
-            "blob": "102c4550ab6429f44c8fb543d1d0662de66a1b8c",
+            "blob": "5276cd9583d9a33d9094edac37d82b768491aed9",
             "content": "sha256:2fa53d75d1a4d6ef8e4c45600fb5f9678bb7206ba3b69dd24ee8963593f7ebfd",
             "locator": {
               "end": 154,
@@ -5269,7 +5269,7 @@
         },
         {
           "anchor": {
-            "blob": "102c4550ab6429f44c8fb543d1d0662de66a1b8c",
+            "blob": "5276cd9583d9a33d9094edac37d82b768491aed9",
             "content": "sha256:ef900a5b38b3a4393ac60a6d42f336d540dcb806538d4acca19a65c9c1fc194c",
             "locator": {
               "end": 172,
@@ -5282,7 +5282,7 @@
         },
         {
           "anchor": {
-            "blob": "102c4550ab6429f44c8fb543d1d0662de66a1b8c",
+            "blob": "5276cd9583d9a33d9094edac37d82b768491aed9",
             "content": "sha256:69d8280dc81168ccad9bbfe29ba5f03699c91984d70f014cb8aaa09868400e4d",
             "locator": {
               "end": 135,
@@ -5295,7 +5295,7 @@
         },
         {
           "anchor": {
-            "blob": "102c4550ab6429f44c8fb543d1d0662de66a1b8c",
+            "blob": "5276cd9583d9a33d9094edac37d82b768491aed9",
             "content": "sha256:94735bcffa1378ed55669798460b785212b5c930b61021035296bb635c9050c0",
             "locator": {
               "end": 153,
@@ -5631,7 +5631,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "04fe591490945dea61eca1af410ae2553d95ea05",
+            "blob": "c32522a60857504ad69c2b55c97baed38f637142",
             "content": "sha256:a0f83948be17a52e49ae3ea3458054d02d413132a902ccf88db97b841eeef676",
             "locator": {
               "kind": "symbol",
@@ -5711,7 +5711,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f8cfe435ca6fbe3bbe12080957f343453ad78be9",
+            "blob": "9bb74647f6b0b1b06178972710d51364539d642f",
             "content": "sha256:c66af9c85cd326f4a585ffaf27da472e2b8490f9b8ccc51ed0f0e125ca59bfbd",
             "locator": {
               "kind": "symbol",
@@ -5758,6 +5758,23 @@
         }
       ]
     },
+    "389": {
+      "note": "Synchronous dispatch keeps validation and orders writes through worker completion.\n\nAnchor: `AgentsRememberMCP._dispatch_tool`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c32522a60857504ad69c2b55c97baed38f637142",
+            "content": "sha256:3464bef016f8108190a72784cc6b2fdccfc803d36d70efe351eb894b0fa68496",
+            "locator": {
+              "kind": "symbol",
+              "name": "_threaded"
+            },
+            "path": "mcp/src/agents_remember/mcp/server.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "39": {
       "note": "**Retained historical source account — superseded by the current route account:** The five registered decision rules.\n\nAnchor: `DECISION_RULES`",
       "targets": [
@@ -5769,6 +5786,71 @@
               "kind": "file"
             },
             "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/rules_decisions.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "390": {
+      "note": "Citation preview adds modes to the existing declaration.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6782d184c8982f54e6e72e5f11a61aa2c8f88627",
+            "content": "sha256:8c8970683147f31767f3c402cb5be5e66ff82056236a64dead9f16f9747fc52e",
+            "locator": {
+              "kind": "symbol",
+              "name": "citation_fix"
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/memory.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "391": {
+      "note": "Each operation asks fresh; its local context shares the answer, and saved-only reads do not discover or write.\n\nAnchor: `launcher_catalog_question`; `launcher_catalog`; `_question_catalog`; `saved_launcher_catalog`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "436a4caf23092264494e8678f2b27e99c20f69a1",
+            "content": "sha256:902cecd5d251f33487590646e3eaaf501aab7c8bc83423fad14ff75055defd7f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_catalog.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "392": {
+      "note": "Durable parts preserve successful answers and distinguish saved from unknown after failures.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1685739736665c385870182bb26945b4a57565d3",
+            "content": "sha256:05c5d75e2d9cb426434aea3396f2ca5e99ab2df1a0e8b5f07a5c36949a9cca70",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_catalog_store.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "393": {
+      "note": "Host names match IDs before labels, without case.\n\nAnchor: `named`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bca333ae11bd912a4042f43c258df9126d70dc72",
+            "content": "sha256:cb43d4abb78e50d3c89eb1edfa8a0d6ca60a1b07720e3a557734bed85bced037",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/named_choices.py"
           },
           "kind": "code"
         }
@@ -6202,12 +6284,12 @@
       ]
     },
     "60": {
-      "note": "**Retained historical source account — superseded by the current route account:** The memory-quality dispatch between the two gates.\n\nAnchor: `_onboarding_refresh_gate`",
+      "note": "**Retained historical source account — superseded by the current route account:** The memory-quality dispatch between the two gates.  Anchor: `_onboarding_refresh_gate`",
       "targets": [
         {
           "anchor": {
-            "blob": "a4cb0ce3f5f3f488c8ad8313b8063d4a8218871e",
-            "content": "sha256:a2df6307f79b0a5282c67184a98d37a2d5fb71ad24fefd455d684627e7c5a73c",
+            "blob": "f3bf4bfa27b8bfd44cd242540d16a2dbf31ec1c4",
+            "content": "sha256:86b9f991a82d2cf8b7a6604799d421f5a3c8a07dec010204994f79f6296011e1",
             "locator": {
               "kind": "file"
             },
@@ -6754,7 +6836,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f42b73b25d4034dd173d1c95d74c2b16ba88de6c",
+            "blob": "27ee720224f8f02b7476a5457b1b0bf33fbd9baa",
             "content": "sha256:312f01489db650ccd1a6f99d36ea871efa7ddecdf6df5314c968292a8ec2e31a",
             "locator": {
               "kind": "symbol",

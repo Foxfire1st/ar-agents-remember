@@ -78,7 +78,9 @@ Loop budgets, quality memoryCapBytes-only parser, landing timeout and accepted-u
 - Counted-role-only threshold defaults to three and refuses nested/unknown fields. [6]
 
 - Test source names exact author file/key for invalid alternatives. [7]
+
 - Boolean, zero and fractional thresholds refuse through the shared validator. [8]
+
 
 ### Repo-Internal References
 

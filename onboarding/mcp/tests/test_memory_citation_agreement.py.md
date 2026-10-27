@@ -32,7 +32,7 @@ qualified `## Update History…` headings. The older-budget cases inspect a fixe
 
 Five unittest classes contain 26 statically observed test-method definitions, not a collected/executed case total: EscapedPipeAnchorTests, BudgetAgreementTests, SupersededPairDerivationTests, QualifiedHistoryHeadingTests and RepoStateTests.
 
-- **`T57`, the escape** (`EscapedPipeAnchorTests`, `:486-579`). A literal pipe in a GFM table cell must
+- **`T57`, the escape** (`EscapedPipeAnchorTests`, `:282-375`). A literal pipe in a GFM table cell must
   be written `\|`, so `` `useEffect(cb, [a \| b])` `` reached the anchor grammar carrying a character
   the source does not have and was silently counted as an *unchecked span* — reading as checked and
   not being checked. Seven cases cover the code-span anchor, the same escape in the **Source** cell, a
@@ -40,24 +40,24 @@ Five unittest classes contain 26 statically observed test-method definitions, no
   with two backslashes the second is the one consumed and the source's `a | b` stays unmatched, which
   is GFM's own reading.
 
-- **The budget screen** (`BudgetAgreementTests`, `:698-936`). The declared pair is read from
-  `pyproject.toml` at run time. The current declaration assertion pins 10,000/1,000, and the stub mirror must follow it; the repaired sentence must state that pair and the declaration's line range as computed by `declared_lines` (currently `pyproject.toml:320-321`). This corrects the changed budget assertion only; the retained pair-specific census and historical pin accounts below are not new measurements or current-candidate acceptance. The
+- **The budget screen** (`BudgetAgreementTests`, `:378-654`). The declared pair is read from
+  `pyproject.toml` at run time. The current declaration assertion pins 10,000/2,000, and the stub mirror must follow it; the repaired sentence must state that pair and the declaration's line range as computed by `declared_lines` (currently `pyproject.toml:333-334`). This corrects the changed budget assertion only; the retained pair-specific census and historical pin accounts below are not new measurements or current-candidate acceptance. The
   declarations on `conftest.py` must register both names and state no value; the two stale-figure
   classes are counted separately; and the superseded-pair worklist is pinned as **the count
   `superseded_pair_sites` returns**, not as a literal.
-- **`T112`/`F2`, the derivation itself** (`SupersededPairDerivationTests`, `:939-993`). Five hermetic
-  arms prove the worklist rule fires: a live site outside history is counted (`:958-961`); the same
-  line inside `## Update History` is not (`:963-969`); a qualified `## Update History…` heading cannot
-  hide a live line (`:971-983`); the comma-grouped spelling of the superseded unit ceiling is
-  counted, where a plain grep for the digits alone under-counts (`:985-988`); and the declared pair
-  is not itself a site (`:990-993`).
-- **`T125`/`F8`, the heading census** (`QualifiedHistoryHeadingTests`, `:996-1055`). The corpus writes
+- **`T112`/`F2`, the derivation itself** (`SupersededPairDerivationTests`, `:657-711`). Five hermetic
+  arms prove the worklist rule fires: a live site outside history is counted (`:676-679`); the same
+  line inside `## Update History` is not (`:681-687`); a qualified `## Update History…` heading cannot
+  hide a live line (`:689-701`); the comma-grouped spelling of the superseded unit ceiling is
+  counted, where a plain grep for the digits alone under-counts (`:703-706`); and the declared pair
+  is not itself a site (`:708-711`).
+- **`T125`/`F8`, the heading census** (`QualifiedHistoryHeadingTests`, `:714-779`). The corpus writes
   `## Update History` and the checker accepts only that spelling, so a qualified title renders as a
   section boundary while every entry beneath it is invisible to the order check — and the corpus
   carried two with no diagnostic at all. Four arms: the detector fires on the backtick-mangled title
-  (`:1029-1031`) and on a dated title (`:1033-1036`), an exact heading — and a deeper `###` one — is
-  not reported (`:1038-1041`), and a live arm asserts the named tree carries exactly the pinned list.
-- **The module's own boundary** (`RepoStateTests`, `:1058-1124`). The module under test is the working
+  (`:753-755`) and on a dated title (`:757-760`), an exact heading — and a deeper `###` one — is
+  not reported (`:762-765`), and a live arm asserts the named tree carries exactly the pinned list.
+- **The module's own boundary** (`RepoStateTests`, `:782-844`). The module under test is the working
   tree's, no memory tree is reached for by default, and no `subprocess` is used.
 
 ### Conventions
@@ -67,10 +67,10 @@ Every root is derived from `__file__` — `MCP_SRC`, `MCP_TESTS`, `REPOSITORY_RO
 repository-root-relative path literal makes a suite's result a fact about the directory it ran in.
 The live-population cases are **hermetic by construction**: with no `AR_ONBOARDING_ROOT` they **skip**
 rather than reach for a checkout that may not exist on the machine running them
-(`live_onboarding_root`, `:273-284`), and the mechanism cases build their worlds under
+(`live_onboarding_root`, `:268-279`), and the mechanism cases build their worlds under
 `tempfile.TemporaryDirectory`.
 
-The lane row is `unit-regression` (`mcp/tests/test-evidence-lanes.toml:121-121`), so the module is in
+The lane row is `unit-regression` (`mcp/tests/test-evidence-lanes.toml:248-248`), so the module is in
 the **default selection** and the unit population a full run collects — it is not an integration-only
 or manually-invoked lane. The surviving live budget/worklist/heading cases additionally require `AR_ONBOARDING_ROOT` to name a
 memory tree ; without it they skip, and the retained mechanism cases still enforce their own budget/heading derivations. **A green lane run is therefore never evidence that the pins
@@ -116,7 +116,7 @@ hold** — that sentence is in the module's own header, and it is the answer to 
   prose. It is a **worklist, not a verdict**: each line is a dated or as-of reading reviewed row by
   row, and none is asserted to be wrong by being counted.
 - **The qualified-heading census is a NAMED population, not a zero.**
-  `QualifiedHistoryHeadingTests.QUALIFIED_HEADINGS` (`:1017`) pins one entry —
+  `QualifiedHistoryHeadingTests.QUALIFIED_HEADINGS` (`:741`) pins one entry —
   `mcp/tests/overview.md:4833`, the sibling `260915_knowledge-substrate` line's dated heading, which
   arrived with the merge. It is pinned rather than repaired deliberately, and the reading behind that
   is recorded on the document: the heading is the corpus's **deliberate dated form**, structurally
@@ -141,7 +141,7 @@ hold** — that sentence is in the module's own header, and it is the answer to 
   detector rather than reading the fixer's own counter — a case that reads its subject's counter cannot
   falsify it.
 - **The AST guard's name is wider than its set.** `test_this_module_shells_out_to_nothing`
-  (`:805-838`) flags the attributes `run`/`system`/`popen`/`check_output`/`Popen`, the bare names
+  (`:811-844`) flags the attributes `run`/`system`/`popen`/`check_output`/`Popen`, the bare names
   `system`/`popen` and any `subprocess` import; `os.posix_spawn`, `os.exec*` and `os.spawn*` are
   outside it, which the successor verification demonstrated by mutation. No such call exists; the
   honest statement of the property is the narrower one, and this bound is register row `T114`.
@@ -160,7 +160,8 @@ The escaped-pipe row case derives stripped cell text from the live cell_spans of
 
 ## Evidence
 
-- The declaration assertion and stub screen use 10,000 unit and 1,000 integration cases; the overview citation range is derived from the actual declaration lines. [34]
+
+
 
 
 
@@ -173,7 +174,9 @@ No configured domain evidence applies to the file-local claims above.
 
 ### Repo-Internal References
 
-- The current declaration assertion pins 10,000 unit/1,000 integration and checks the matching stub mirrors. [33]
+
+
+- The current declaration assertion pins 10,000 unit/2,000 integration and checks the matching stub mirrors.  Anchor: `unit_case_budget` [33]
 
 
 The anchors below identify current behaviour of this module; they are not execution evidence and they
@@ -187,7 +190,9 @@ The product refusal is definition-addressed rather than the old module-header lo
 - The escape resolved where cell text becomes anchor text, which is where the `T57` blind spot was. [9]
 
 
-- Both cells and the quote path preserve escaped/plain anchor agreement; the row case now derives text from live cell spans. [10]
+
+
+
 
 
 - Every stale site the sweep found, with the pair it states and the ceiling it was written against. [14]
@@ -204,11 +209,15 @@ The product refusal is definition-addressed rather than the old module-header lo
 - The two section-boundary bounds of the worklist rule, each with its direction, measured on planted documents. [23]
 
 
-- The budget screen dynamically reads declaration line positions, pins 10,000/1,000 and matching stubs, and bounds the live overview sentence check. [24]
+
+
+- The budget screen dynamically reads declaration line positions, pins 10,000/2,000 and matching stubs, and bounds the live overview sentence check. [24]
 
 
 
-- The repaired sentence held by a case now that its stale entry is gone, so a repair is not a gap. [25]
+
+
+
 
 - Both figures asserted separately at every pinned site, so a site that has moved on is red. [26]
 - The two figure classes counted separately: a live claim is not a dated record, and the worklist is larger than the set a repair moves. [27]
@@ -217,7 +226,7 @@ The product refusal is definition-addressed rather than the old module-header lo
 
 
 
-- The lane row that keeps this module in the default selection. Source caption: "mcp/tests/test_memory_citation_agreement.py" [29]
+
 
 
 
@@ -240,7 +249,7 @@ module in the route carries a card.
 Recorded historical source/run account, not current executable coverage: Two register questions this card answers rather than assumes.
 
 Recorded historical source/run account, not current executable coverage: **Does a lane someone actually runs reach it?** Yes, and by two independent routes. The lane row is
-`mcp/tests/test-evidence-lanes.toml:121-121` in **`unit-regression`**, which is the lane the default
+`mcp/tests/test-evidence-lanes.toml:248-248` in **`unit-regression`**, which is the lane the default
 selection collects: the leaf's targeted run of eight modules is **85 passed / 3 skipped / 31 subtests**
 and the module's own live run on the leaf pair is **26 passed** (155 s) with `AR_ONBOARDING_ROOT`
 naming the leaf memory worktree. The registry loader (`mcp/tests/test_evidence_lanes.py`, **3 passed**)
@@ -303,3 +312,15 @@ carried from the pair it was cut from `4d0fc20a`/`47570cd8`: on that earlier pai
 0 / 3-2, and the merge moved three of them. `AR_ONBOARDING_ROOT=<the leaf tree>/onboarding` then runs
 **35 passed**; with the variable unset the same module reads **30 passed, 5 skipped**, which is the
 trap rather than a green light.
+
+
+
+
+
+- The repaired sentence held by a case now that its stale entry is gone, so a repair is not a gap.  Anchor: `test_the_repaired_site_states_the_declared_pair` [25]
+
+- The declaration assertion and stub screen use 10,000 unit and 2,000 integration cases; the overview citation range is derived from the actual declaration lines.  Anchor: `unit_case_budget` [34]
+
+- Both cells and the quote path preserve escaped/plain anchor agreement; the row case derives text from live cell spans. The separately retained budget-test range covers the declared-pair sentence, constant, marker-registration and older-budget-site assertions. [10]
+
+- The retained L192 instruction-parameter row is separate from this module's own unit-regression entry. The added citation-agreement row establishes its default-selection membership. [29]

@@ -53,14 +53,15 @@
       ]
     },
     "4": {
-      "note": "The memory-quality run passes the port into the drift context.\n\nAnchor: `_execute_memory_quality`",
+      "note": "The memory-quality run passes the port into the drift context.  Anchor: `_execute_memory_quality`",
       "targets": [
         {
           "anchor": {
-            "blob": "a4cb0ce3f5f3f488c8ad8313b8063d4a8218871e",
-            "content": "sha256:a2df6307f79b0a5282c67184a98d37a2d5fb71ad24fefd455d684627e7c5a73c",
+            "blob": "f3bf4bfa27b8bfd44cd242540d16a2dbf31ec1c4",
+            "content": "sha256:306f6286876759fdd98fa31ee60140a06b129e5d528ab0d843fc5dcea6300b09",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "_execute_memory_quality"
             },
             "path": "mcp/src/agents_remember/application/memory_quality/controller.py"
           },
@@ -68,11 +69,10 @@
         },
         {
           "anchor": {
-            "blob": "a4cb0ce3f5f3f488c8ad8313b8063d4a8218871e",
-            "content": "sha256:306f6286876759fdd98fa31ee60140a06b129e5d528ab0d843fc5dcea6300b09",
+            "blob": "f3bf4bfa27b8bfd44cd242540d16a2dbf31ec1c4",
+            "content": "sha256:86b9f991a82d2cf8b7a6604799d421f5a3c8a07dec010204994f79f6296011e1",
             "locator": {
-              "kind": "symbol",
-              "name": "_execute_memory_quality"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/memory_quality/controller.py"
           },
@@ -85,7 +85,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2464d2d12704dfa0b90457ac3a62acf2212bedb8",
+            "blob": "ef73833b143decb50eb3949345e195a40a7692d3",
             "content": "sha256:215ec4b99c44aff97b9eb3535f1dba09e2ceb0332d9ba4ba17cd371e9eacc32e",
             "locator": {
               "kind": "symbol",

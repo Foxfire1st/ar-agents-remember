@@ -60,12 +60,18 @@ The predicate, the tree types and the two readers.
 - The shared exclusion predicate: cache files and hidden directories only. [1]
 - A tree is converted exactly when it holds the layout marker. [2]
 
-- The code-tree protocol and its two implementations, each answering file and directory existence. [3]
+
+
+- The code-tree protocol and its two implementations, each answering file and directory existence.  Anchor: `CodeTree` `CodePathSet` `CodeDirectory` [3]
+
 
 - Both code trees answer directory existence, the root route included. [4]
 - The directory reader prunes dot directories. [5]
 
-- The Git readers: regular files only, blobs read in one batch as exact bytes. [6]
+
+
+- The Git readers: regular files only, blobs read in one batch as exact bytes.  Anchor: `_tree_blobs` `knowledge_tree_from_git` `code_tree_from_git` [6]
+
 
 - The formatter shares the predicate. [7]
 
@@ -74,7 +80,9 @@ The predicate, the tree types and the two readers.
 - The Git reader reads exact bytes, ignores the cache, and matches the directory reader. [9]
 
 
-- Only the history files of a commit that is not a comparison base. [10]
+
+
+- Only the history files of a commit that is not a comparison base.  Anchor: `history_tree_from_git` [10]
 
 
 ### Cross-Repo References
@@ -85,3 +93,7 @@ No cross-repo boundary is crossed by this file.
 
 
 - The working-directory validator input is Git-visible current regular non-symlink files, with named listing failure. [11]
+
+The working-directory filter checks a listed path for a symbolic link before testing regular-file existence. This preserves the accepted Git-visible path set while avoiding inspection through a leaf symlink.
+
+- Git supplies tracked and nonignored untracked paths; links are discarded first. [12]

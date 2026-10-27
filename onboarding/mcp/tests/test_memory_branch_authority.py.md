@@ -71,7 +71,7 @@ No relevant documentation found after checking live sources.
 - The exclusion policy the third group pins. [12]
 
 
-- The lane row that keeps the fail-closed evidence registry loading clean. [15]
+
 
 
 - Converted first baselines run under a bound validator via the bound_validation fixture. [16]
@@ -88,3 +88,7 @@ No meaningful cross-repo references found.
 
 - Group 3 — the exclusion, pinned on the commit tree. [6]
 - The staging helper the third group's failure mode lives in. [13]
+
+
+
+- The lane row that keeps the fail-closed evidence registry loading clean. [15]

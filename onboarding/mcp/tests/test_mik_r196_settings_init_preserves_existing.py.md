@@ -50,6 +50,13 @@ file is never touched.
   `destination-is-symlink` and leaves the target. `test_the_host_block_is_refused_by_name_not_written_into_the_user_file`
   answers `host-authority-not-in-user-settings` naming the MCP authority file, and creates no user file (MIK-R137).
 
+- **Discovery distinguishes unknown from known-empty offerings.**
+  `test_discovery_unknown_passes_value_and_known_names_use_paseo_labels` previews a Worker choice of
+  `MY Choice`. With no provider answer, the configured spelling is retained; with the host row
+  `{id: "native-id", label: "My Choice"}`, the same choice resolves to `native-id`; an answered empty
+  provider list refuses the choice as unavailable. The test uses `dry_run=True` and the same temporary
+  settings fixture as the existing cases.
+
 ### Conventions
 
 `_config` builds a config whose coordination root is the test's, `_write` creates a destination at `0o640` and
@@ -74,3 +81,5 @@ reached at their own module attributes so each guard is tested where it lives.
 - `O_EXCL` refuses a destination the existence check missed.
 - The public answer refuses an unreadable file, an old-location collision, a symlinked destination and a host-block
   request by name, without a second read and without creating a file.
+
+- Unknown provider offerings retain the configured spelling; known host labels resolve to their IDs and known-empty offerings refuse. [1]

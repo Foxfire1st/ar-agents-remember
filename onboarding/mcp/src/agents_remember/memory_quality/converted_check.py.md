@@ -28,7 +28,7 @@ The converted check optionally joins landing observations to `reportOnlyFindings
 
 
 - `converted_knowledge_check(memory_root, code_root, *, base=None)` validates the working tree
-  (`validate_tree`) against the code working tree (`CodeDirectory`). Its K_B comes from `_comparison_bases`:
+  (`validate_tree`) against the supplied source reader. A direct `Path` input uses `CodeDirectory`; full quality dispatch supplies `QualitySourceFiles`. Its K_B comes from `_comparison_bases`:
   without a `base` port, the repository's converted `HEAD` when it has one (`_committed_base`); with one
   (L37 review R3-1), whatever the `KnowledgeBasePort` returns, which the application binds to `HEAD` or, when
   `HEAD` is unconverted, to its conversion from the shared converted-base cache (MIK-R24 rule 7). A base the
@@ -79,7 +79,10 @@ The converted validator/reference result and its dispatch boundary.
 
 - K_B is the converted HEAD, when there is one. [2]
 
+
+
 - The runner's dispatch to this module. [4]
+
 
 - Memory quality reads the converted format. [5]
 
@@ -88,7 +91,8 @@ The converted validator/reference result and its dispatch boundary.
 
 
 
-- An unbuildable base withholds base-dependent refusals; measurable states keep reporting. [8]
+
+
 
 
 
@@ -98,7 +102,19 @@ No meaningful cross-repo references found: the file reads and writes only the me
 
 No cross-repo boundary is crossed by this file.
 
+
+
 - The validator's refusals are findings, and a stale reference anchor is one of them; only its reports stay report-only. [3]
 
 
-- The check takes the base port and reports an unbuildable base as a finding. [7]
+
+
+
+
+When full quality supplies `QualitySourceFiles`, both validation and the reference census read through it. The result adds source listing counts and skipped reasons in `sourceFiles`, and per-reference ignored/binary reasons in `referenceSourceNotes`. Readable excluded files retain verification without a remark; source notes do not turn readable citations into refusing findings.
+
+- Reader selection preserves direct Path callers and the supplied full-quality reader. [9]
+
+- The check takes the base port and reports an unbuildable base as a finding.  Anchor: `converted_knowledge_check` [7]
+
+- An unbuildable base withholds base-dependent refusals; measurable states keep reporting.  Anchor: `converted_knowledge_check` [8]

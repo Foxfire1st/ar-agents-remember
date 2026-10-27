@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "92c652c317276bbf370c18624e543eb8cd30cfbc",
-    "commit": "f22f39dfea8d0f6c9e0729206bdc909653494861",
+    "codeTree": "4ffeeb98c6ddf7594ebdea7eac26bb7298f2dd72",
+    "commit": "d0be84f714df97c4c4f63406dc5ba190fa53c325",
     "role": "curator",
-    "statement": "At the synced candidate, the packaged tool reference remains byte-identical to the canonical document and carries the same diagnostic-versus-publication and non-waivable baseline boundaries.",
-    "task": "260928-MIK-L191",
+    "statement": "At A6b, packaged tool-details is byte-identical to the canonical document and retains first-run/authority and diagnostic-versus-publication boundaries while documenting Git source listing and background citation preview.",
+    "task": "260928-MIK-L202",
     "uncommitted": true
   },
   "document": "mcp/src/agents_remember/package_data/runtime/docs/tool-details.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L188",
     "task": "260928-MIK"
   },
-  "revision": 2,
+  "revision": 3,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -53,6 +53,11 @@
       "id": "INV-QR6DSA",
       "kind": "record",
       "revision": 2
+    },
+    {
+      "blob": "9cc12d82c359d5d0e3bf22d07526a159a3d8be2a",
+      "kind": "file",
+      "path": "docs/tool-details.md"
     }
   ]
 }

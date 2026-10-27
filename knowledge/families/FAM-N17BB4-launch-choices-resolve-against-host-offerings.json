@@ -3,9 +3,9 @@
     "criteria": [
       "joint_guarantee"
     ],
-    "justification": "The eight member obligations hold only together: catalog resolution, layer retention, repository refusal, mode selection, feature acceptance, note composition, repeat stability and server binding jointly guarantee that every launch choice the host offered is carried and everything else is refused. No member was grouped by directory or route; each was read against its source and the Worker expanded evidence."
+    "justification": "The eight member obligations hold only together: catalog resolution, layer retention, repository refusal, mode selection, feature acceptance, note composition, repeat stability and server binding jointly guarantee that accepted host choices are carried, known unoffered choices are refused, and unanswered parts follow the saved-or-unchecked rule. No member was grouped by directory or route; each was read against its source and the Worker expanded evidence."
   },
-  "guarantee": "A role launch resolves host launch choices against the host's own offerings and carries accepted values onto the create payload; unresolvable, incompatible, permission-bearing from an unauthorized layer, or unknown choices are refused by name before the run. AR supplies that agent's own bound task-server definition only when the provider accepts MCP definitions; an explicitly unsupported provider receives no definition and no harness-configuration fallback. This source/input projection and narrow server_info preapproval do not establish host-actual ambient exclusion or first-agent consumption; those witnesses are not credited by L112 curation.",
+  "guarantee": "A role launch resolves host launch choices against Paseo's fresh answer, using its last successful saved answer for a part Paseo does not answer, and carries accepted values onto the create payload. Choices rejected by a known offering, incompatible choices, and permission-bearing choices from an unauthorized layer are refused by name before the run. A part with neither a fresh nor a saved answer leaves the configured value unchecked for Paseo or the harness to decide. AR supplies that agent's own bound task-server definition only when the provider accepts MCP definitions; an explicitly unsupported provider receives no definition and no harness-configuration fallback. This source/input projection and narrow server_info preapproval do not establish host-actual ambient exclusion or first-agent consumption; those witnesses are not credited by L112 curation.",
   "id": "FAM-N17BB4",
   "members": [
     "INV-AFTG56",
@@ -25,7 +25,7 @@
     "leaf": "260928-MIK-L71",
     "task": "260928-MIK"
   },
-  "revision": 2,
+  "revision": 3,
   "routes": [
     "mcp",
     "dashboard/src/cockpit"

@@ -25,5 +25,6 @@ This is candidate-source onboarding, not execution, CODE/MEMORY acceptance, serv
 
 - Saved taskless UUID/pending plus trimmed reason/override restoration keeps the legacy Investigator storage slot. [3]
 
+
 - The same start-only reason enters saved retry payload and POST body. [4]
 - File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence. [5]

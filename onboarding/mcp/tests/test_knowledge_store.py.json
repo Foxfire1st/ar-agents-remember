@@ -202,11 +202,11 @@
       ]
     },
     "19": {
-      "note": "The lane registration that makes the repository's manifest load (this module's row inside the lane, after the `KS-R03` insertions).\n\nAnchor: `test_knowledge_store`",
+      "note": "The lane registration that makes the repository's manifest load (this module's row inside the lane, after the `KS-R03` insertions).  Anchor: `test_knowledge_store`",
       "targets": [
         {
           "anchor": {
-            "blob": "102c4550ab6429f44c8fb543d1d0662de66a1b8c",
+            "blob": "5276cd9583d9a33d9094edac37d82b768491aed9",
             "content": "sha256:d111436f816900c8ee32efc6a3864a3f484cae7befe34a1cffa55a4a39c318b2",
             "locator": {
               "end": 193,
@@ -219,7 +219,7 @@
         },
         {
           "anchor": {
-            "blob": "102c4550ab6429f44c8fb543d1d0662de66a1b8c",
+            "blob": "5276cd9583d9a33d9094edac37d82b768491aed9",
             "content": "sha256:ab4c000ebb434e9339018678bac61a62e5a6bd96d610521ef2e3883e622b137f",
             "locator": {
               "end": 209,
@@ -232,7 +232,7 @@
         },
         {
           "anchor": {
-            "blob": "102c4550ab6429f44c8fb543d1d0662de66a1b8c",
+            "blob": "5276cd9583d9a33d9094edac37d82b768491aed9",
             "content": "sha256:7ed6d2ea1379d55b9a055c3301c21735631cf3baf1f8d8f8533ab8e8043731c2",
             "locator": {
               "end": 176,
@@ -276,7 +276,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3c5993c94cf78973b3b39cfe7de9774c8aea6d1a",
+            "blob": "339dffc9c6794b5fe29fe6980e9e45603b344a09",
             "content": "sha256:e431cc066a9871801abbd8c2909f65c8592b2fd601232848a3e257f99b27ddcc",
             "locator": {
               "end": 28,

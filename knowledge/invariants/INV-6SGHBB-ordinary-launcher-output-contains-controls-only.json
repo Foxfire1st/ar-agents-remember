@@ -10,7 +10,10 @@
   "conditions": [
     "The existing controls remain; configured Step up and receipt-derived model/status badges share their wrapping container.",
     "Result opens its report in the existing reader; a step-up badge does not expose a reply, path or applied permission claim.",
-    "Base mode, notes and feature chips are explicitly non-applied previews after step-up; applied mode/features are reported unreported."
+    "Base mode, notes and feature chips are explicitly non-applied previews after step-up; applied mode/features are reported unreported.",
+    "While the fresh catalog question is pending, the bar shows the pending line and marks displayed choices as saved. The saved catalog receipt gives its origin and agent/model list: at most three model names per agent, with +N more when additional models remain. A fresh answer replaces the saved values.",
+    "For the catalog and selected agent/model parts, a saved part says when it was saved, and an unknown part says Paseo has not answered and configured values will be sent unchecked.",
+    "The catalog status and saved-receipt display do not block the launcher bar."
   ],
   "exclusions": [
     "The chat frame and the messages it shows are outside this obligation.",
@@ -29,9 +32,9 @@
     "leaf": "260928-MIK-L75",
     "task": "260928-MIK"
   },
-  "revision": 2,
+  "revision": 3,
   "schema": "ar-invariant/v1",
-  "statement": "Ordinary launcher output contains controls, one actionable failure line and compact receipt-driven step-up identification, without execution-detail, reply, capability-summary or report-path prose.",
+  "statement": "Ordinary launcher output contains controls, one actionable failure line, compact receipt-driven step-up identification, and the Paseo catalog receipt while a fresh answer is pending. The receipt identifies the saved choices and their origin; selected-part status identifies saved or unanswered provenance. Fresh answers replace saved values. Execution detail, reply text, report paths and capability-summary prose other than that receipt remain forbidden.",
   "status": "proposed",
   "supersedes": []
 }
