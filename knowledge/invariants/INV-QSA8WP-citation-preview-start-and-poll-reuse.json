@@ -1,0 +1,36 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "A second preview registry or weaker scope check would lose the quality runner's capacity and candidate boundaries."
+  },
+  "applicability": "Background citation previews admitted through citation_fix mode=start or mode=poll.",
+  "conditions": [
+    "Start requires dry_run=true and freezes any document selectors.",
+    "A supplied contract binds the admitted leaf candidate; without one the configured repository scope applies.",
+    "Poll repeats the same repository/scope with the run ID and no document selectors."
+  ],
+  "exclusions": [
+    "Runtime restart or terminal eviction does not preserve a run.",
+    "A completed computation is not a clean-memory or acceptance verdict."
+  ],
+  "id": "INV-QSA8WP",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "freeze-A4.md; test_completed_preview_equals_sync_and_leaves_memory_bytes_unchanged; A4-full-memory-evidence.md"
+      ],
+      "path": "handoff99.json"
+    },
+    "handoffEntry": "MIK-R213@v1 rule 2",
+    "leaf": "260928-MIK-L202",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Citation preview start and poll reuse the memory-quality run registry and scope validation; dry-run completion retains the synchronous preview fields except status and runId.",
+  "status": "proposed",
+  "supersedes": []
+}

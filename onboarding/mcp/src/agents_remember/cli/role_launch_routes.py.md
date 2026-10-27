@@ -43,21 +43,32 @@ _launch_prepared_role_session delegates successor prompt assembly to role_step_u
 
 Missing-copy warnings are composed with step-up warnings rather than dropping either. Held-opening prompt retention, exclusive receipt-before-native publication, partial leaf-set reconciliation, scoped revive and closing/archive semantics remain unchanged.
 
+## Current catalog questions
+
+The options and dispatch endpoints share a `launcher_catalog_question` context for the current operation. Options ask the full catalog; a new dispatch asks metadata and its selected-model features. `GET /api/role-launch/saved-catalog` reads the durable snapshot without querying Paseo or deciding a start.
+
 ## Evidence
 
 - The existing route delegates preparation/reconciliation to the new owner. [16]
+
 - Occupancy receives the step-up marker and actual predecessor facts. [17]
+
 - Frozen takeover and requested reason are recorded before the host call. [18]
-- Missing-copy and step-up warnings coexist. [19]
+
+- Missing-copy and step-up warnings coexist in the launch request rules. [19]
+
 
 
 
 - Interrupts between receipt and call and checks retry retains one agent identity. [6]
 
+
 - Races publication and checks one persisted winner; competing request cannot issue another launch. [8]
+
 - Checks path, bytes, digest, read-only mode, exact reuse and conflicting-content refusal. [9]
 - Checks size limit and refuses links without changing their target. [10]
 - Changed/missing saved scope refuses with both pairs, no bridge/write/enclosure creation. [11]
+
 
 ## MIK-R95 Progress And Document Reads
 
@@ -75,26 +86,38 @@ Investigator dispatch uses the existing selection admission lock; options expose
 ## Refreshed current evidence
 
 - The launch observer checks complete receipt, stable UUID and stored call before runtime launch. [5]
+
 - Changes task/capsule/prompt inputs and verifies repeat returns or replays saved receipt without new preparation. [7]
+
 
 
 ## Current contract evidence
 
 - Frozen implementation of register_role_launch_routes supporting the stated file behavior. [1]
+
 - Frozen implementation of _start_execution supporting the stated file behavior. [2]
+
 - Frozen implementation of _launch_prepared_role_session supporting the stated file behavior. [3]
+
 - Frozen implementation of _revive_execution supporting the stated file behavior. [4]
+
 - The current source implements this file’s stated Investigator boundary. [12]
+
 - Leaf revival compares current grant-sensitive canonical task/contract scope before bridge use. [13]
+
 - The registration also mounts `POST /api/role-launch/document-chats/tree` through `register_document_chat_tree_route`, beside the selected-document read and report route. The tree owner supplies bounded receipt-derived pre-click discovery and one live-ID census; dispatch, retry, revive, progress reclamation and launch authority retain their existing owners. [14]
 
+
 - Launch preparation/receipt records retain their rich internal identity and task-copy metadata. Missing requirement sources are reported as missingCopies in handover/index/receipt and a warning; they do not fail a start solely for that absence. Later canonical task publication refreshes copies when sources become available. Ordinary delivered role_start success is the compact id/handover projection, not every internal receipt field. [15]
+
 
 ## Admission and first-run preparation under the dispatch lock
 
 The dispatch endpoint takes the lock first and decides inside it: `role_launch_admission.admit` refuses an invalid parentless selection and a request id another execution or another selection's binding already owns, then `prepare_first_run_for` runs the three cold stages only for a request that has neither. A queued same-request call therefore sees the binding or receipt its predecessor published rather than a pre-lock decision. The route no longer re-checks the parentless table before the lock and no longer requires a configured runtime before admission — a genuinely cold root has none, and the stage establishes it. The caller harness is bound after preparation, and a refusal that arrives after preparation is re-raised with the completed stages and retained host state carried in its detail. The starting receipt's `preparation` block carries `firstRun` when this call prepared one. The missing-copy warning and the bridge status mapping moved to `cli.role_launch_request_rules`.
 
 - The dispatch endpoint that admits, prepares, binds and refuses in one locked order. [20]
+
 - Cold preparation runs under the dispatch lock, and a later refusal keeps the preparation it made. [21]
+
 
 - At successful receipt ownership before native execution, _record_manager_start writes the Architect address; _architect_behind verifies Orchestrator.parentAgentId by its Architect launch receipt. Failure to persist the address is caught rather than losing the seat. [22]

@@ -64,7 +64,7 @@ Do not reconstruct the deleted host diagnostic analyzer/manifest machinery to pe
 
 Ordinary Python development is supported directly through `mcp/.venv/bin/python -m pytest`; four workers run by default. `-m integration` selects the small real-boundary population and `-m ""` selects both. Focused file/node execution, including serial debugging, is valid development work and does not acquire certification authority. These commands require a Git checkout because population enumeration uses tracked files.
 
-The root configuration and current test-policy document both declare 10,000 unit and 1,000 integration parametrized collected cases. The unit ceiling has been raised three times since D226's 4,000 — to 5,000, to 6,000 by L54 and to 10,000 by L193's D460 — and only the unit ceiling moved; integration and guard behavior are unchanged. The earlier 1,000/150-versus-4,000/1,000 discrepancy remains a historical source-pair observation, not a present disagreement. Preserve the standing requirement to extend or consolidate distinct behavior protection before adding cases, and to justify budget growth explicitly. Do not restore deleted matrices, private-branch tests or unused fixture machinery because an old milestone names them.
+The root configuration and current test-policy document both declare 10,000 unit and 2,000 integration parametrized collected cases. The unit ceiling has been raised three times since D226's 4,000 — to 5,000, to 6,000 by L54 and to 10,000 by L193's D460 — and the unit ceiling remains 10000 and D579 raises integration to 2000; guard behavior is unchanged. The earlier 1,000/150-versus-4,000/1,000 discrepancy remains a historical source-pair observation, not a present disagreement. Preserve the standing requirement to extend or consolidate distinct behavior protection before adding cases, and to justify budget growth explicitly. Do not restore deleted matrices, private-branch tests or unused fixture machinery because an old milestone names them.
 
 Coverage, including changed-production coverage, is diagnostic only. No percentage floor requires additional tests. Production-only CRAP retains 20 as a review trigger, not a delivery blocker; tests and verification support are excluded. Lint, formatting, typing, structural rules and test failures still enforce. Diagnostic-tool execution errors remain visible failures distinct from metric findings. There is no coverage baseline, score-exception registry or ratchet.
 
@@ -82,22 +82,45 @@ No lifecycle/status metadata in this overview grants execution or acceptance aut
 
 **L184.** The projection-type checker knows the served provider limit, including its exact reset datetimes.
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+> Retained earlier citation wording: - Helper test imports, source figures, historical Git pin and conditional record availability.
+
+
+
+
+
+
+
+
+
+
+
+
 ## Evidence
-
-
-
-
-- The enforced collected-case pair is 10,000 unit/1,000 integration; the unit-only policy raises leave the guard unchanged. [12]
-
-
-
-- Development commands, diagnostic metrics and isolation; the current policy document states 10,000/1,000 budgets. [1]
-
+- The current root policy is 10000 unit and 2000 integration selected cases. Collection rejects a lane above its declared ceiling; the raise changes headroom and preserves the guard. [12]
+- The current root policy is 10000 unit and 2000 integration selected cases. Collection rejects a lane above its declared ceiling; the raise changes headroom and preserves the guard. [1]
 - Certifying publication and accepting consumers. [2]
-
-- Exact contract scope, the full check and curator worklist publication, including the informational without-proof list. [10]
-
-- Interactive catalog names missing authority without eligibility. [11]
 - Exact profile scope and suite execution. [13]
 - Plan composition and typed command steps. [14]
 - Both catalog versions use the shared parser; retain the original deciding range. [16]
@@ -111,21 +134,10 @@ No lifecycle/status metadata in this overview grants execution or acceptance aut
 - Retry artifacts retain admitted identity, digest checks and passing-delta merge ownership. [26]
 - Child environments remove outer invocation controls through the executing caller. [27]
 - Missing causal authority fails preflight without suppressing the selected population. [28]
-- Root configuration declares the current 10,000/1,000 budgets. [29]
-
-
+- The current root policy is 10000 unit and 2000 integration selected cases. Collection rejects a lane above its declared ceiling; the raise changes headroom and preserves the guard. [29]
 - Projection generation validates schema vocabulary and exact supplemental definitions. [18]
-
-
-
-
-> Retained earlier citation wording: - Helper test imports, source figures, historical Git pin and conditional record availability. [25]
-
-
-
-
 - The retained named vocabularies are attention severity, lane and item class, plus process fact state and process health; the removed session state and phase vocabularies are not among them. [30]
-
 - Ordinary schema interfaces are rendered without a lifecycle-count extension or injected metrics factory/legacy subtask union. [31]
-
+- Exact contract scope, the full check and curator worklist publication, including the informational without-proof list.  Anchor: `_execute_memory_quality` `_answered_quality_response` `_attach_curator_checklist` [10]
+- Interactive catalog names missing authority without eligibility. [11]
 - Helper test imports, source figures, historical Git pin and conditional record availability. [25]

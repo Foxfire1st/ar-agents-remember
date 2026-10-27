@@ -4,8 +4,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "bf6833bf5d456b21488675f40c54e8fe67c5c011",
-        "content": "sha256:021780c76752acd66ed811b49eed917c54094fc3454a1b67bc914b19d3765a7c",
+        "blob": "5cd7ec716feacd1db6d5df3f9f31d400bf26d49e",
+        "content": "sha256:628fd21bfec7a1b7eacea95e6959b62f39dba09bd0368e8991ab63cfc3e44d90",
         "locator": {
           "kind": "file"
         }
@@ -26,7 +26,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a4cb0ce3f5f3f488c8ad8313b8063d4a8218871e",
+            "blob": "f3bf4bfa27b8bfd44cd242540d16a2dbf31ec1c4",
             "content": "sha256:b9c3b6fbb6f4b5ae523ee6888de143b18da1674d8d42ec868401b25daea26060",
             "locator": {
               "kind": "symbol",
@@ -38,7 +38,7 @@
         },
         {
           "anchor": {
-            "blob": "a4cb0ce3f5f3f488c8ad8313b8063d4a8218871e",
+            "blob": "f3bf4bfa27b8bfd44cd242540d16a2dbf31ec1c4",
             "content": "sha256:d66282011e6104457e201a03a8626244577dc026812a91ef41972743328fa8d1",
             "locator": {
               "kind": "symbol",
@@ -50,7 +50,7 @@
         },
         {
           "anchor": {
-            "blob": "a4cb0ce3f5f3f488c8ad8313b8063d4a8218871e",
+            "blob": "f3bf4bfa27b8bfd44cd242540d16a2dbf31ec1c4",
             "content": "sha256:daf3217ecae8b4eaad292db942e50c17acee95b05ae749a557801f04457bc3a2",
             "locator": {
               "kind": "symbol",
@@ -62,12 +62,12 @@
         },
         {
           "anchor": {
-            "blob": "a4cb0ce3f5f3f488c8ad8313b8063d4a8218871e",
+            "blob": "f3bf4bfa27b8bfd44cd242540d16a2dbf31ec1c4",
             "content": "sha256:859092a84cc90e617f1aa354f948de9c8b7574016de937fbaedf26de3f050c22",
             "locator": {
-              "end": 301,
+              "end": 328,
               "kind": "line_range",
-              "start": 293
+              "start": 320
             },
             "path": "mcp/src/agents_remember/application/memory_quality/controller.py"
           },
@@ -75,12 +75,12 @@
         },
         {
           "anchor": {
-            "blob": "a4cb0ce3f5f3f488c8ad8313b8063d4a8218871e",
+            "blob": "f3bf4bfa27b8bfd44cd242540d16a2dbf31ec1c4",
             "content": "sha256:29dcfa5d07b87f17f15e90303d889e700849a94090bab97105f06c5acab94f70",
             "locator": {
-              "end": 310,
+              "end": 337,
               "kind": "line_range",
-              "start": 302
+              "start": 329
             },
             "path": "mcp/src/agents_remember/application/memory_quality/controller.py"
           },
@@ -88,14 +88,30 @@
         },
         {
           "anchor": {
-            "blob": "a4cb0ce3f5f3f488c8ad8313b8063d4a8218871e",
+            "blob": "f3bf4bfa27b8bfd44cd242540d16a2dbf31ec1c4",
             "content": "sha256:2381491880d675d8dd4d82dae3f0a85c07b093cbcb0c8d7fbcba954c6720e59a",
             "locator": {
-              "end": 319,
+              "end": 346,
               "kind": "line_range",
-              "start": 311
+              "start": 338
             },
             "path": "mcp/src/agents_remember/application/memory_quality/controller.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The citation envelope declares background state and run identity.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5cd7ec716feacd1db6d5df3f9f31d400bf26d49e",
+            "content": "sha256:7be2241f9fc71ec173132d0a8a7ad86287ab3a0b932e2cc12f26a5e84c4d5526",
+            "locator": {
+              "kind": "symbol",
+              "name": "CitationFixResponse"
+            }
           },
           "kind": "code"
         }
@@ -118,11 +134,11 @@
       ]
     },
     "3": {
-      "note": "The strict sync/start/poll request models and discriminated union.\n\nAnchor: `MemoryQualityCheckRequest`",
+      "note": "The strict sync/start/poll request models and discriminated union.  Anchor: `MemoryQualityCheckRequest`",
       "targets": [
         {
           "anchor": {
-            "blob": "bf6833bf5d456b21488675f40c54e8fe67c5c011",
+            "blob": "5cd7ec716feacd1db6d5df3f9f31d400bf26d49e",
             "content": "sha256:775235fb1f42f9630eb54a53efe600111eeefbd90e72692d1202abd3725bb2ac",
             "locator": {
               "kind": "symbol",
@@ -133,7 +149,7 @@
         },
         {
           "anchor": {
-            "blob": "bf6833bf5d456b21488675f40c54e8fe67c5c011",
+            "blob": "5cd7ec716feacd1db6d5df3f9f31d400bf26d49e",
             "content": "sha256:c530441aca764d26912f99f7d4144edce303ef641e01dc21ceab0c40f8fcea42",
             "locator": {
               "kind": "symbol",
@@ -144,7 +160,7 @@
         },
         {
           "anchor": {
-            "blob": "bf6833bf5d456b21488675f40c54e8fe67c5c011",
+            "blob": "5cd7ec716feacd1db6d5df3f9f31d400bf26d49e",
             "content": "sha256:38dd3e642d96d2d197c1c9d8d5ddb9b0404157d1a5ebbf65fa4ce3b6d7bc9d55",
             "locator": {
               "kind": "symbol",
@@ -155,7 +171,7 @@
         },
         {
           "anchor": {
-            "blob": "bf6833bf5d456b21488675f40c54e8fe67c5c011",
+            "blob": "5cd7ec716feacd1db6d5df3f9f31d400bf26d49e",
             "content": "sha256:20510de9fed7583f74b4605066ac827c276aba64e69757e2cf2655aa6586375d",
             "locator": {
               "end": 158,
@@ -172,7 +188,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bf6833bf5d456b21488675f40c54e8fe67c5c011",
+            "blob": "5cd7ec716feacd1db6d5df3f9f31d400bf26d49e",
             "content": "sha256:5defc592c4ead496c0d96b2b8a314b6a884ae178e845fb42f98657c6140395ee",
             "locator": {
               "kind": "symbol",
@@ -222,7 +238,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bf6833bf5d456b21488675f40c54e8fe67c5c011",
+            "blob": "5cd7ec716feacd1db6d5df3f9f31d400bf26d49e",
             "content": "sha256:5defc592c4ead496c0d96b2b8a314b6a884ae178e845fb42f98657c6140395ee",
             "locator": {
               "kind": "symbol",
@@ -234,12 +250,12 @@
       ]
     },
     "8": {
-      "note": "Memory-quality codes reach the shared guard without a model length rejection.\n\nAnchor: `MemoryQualityCheckResponse`",
+      "note": "Memory-quality codes reach the shared guard without a model length rejection.  Anchor: `MemoryQualityCheckResponse`",
       "targets": [
         {
           "anchor": {
-            "blob": "bf6833bf5d456b21488675f40c54e8fe67c5c011",
-            "content": "sha256:021780c76752acd66ed811b49eed917c54094fc3454a1b67bc914b19d3765a7c",
+            "blob": "5cd7ec716feacd1db6d5df3f9f31d400bf26d49e",
+            "content": "sha256:628fd21bfec7a1b7eacea95e6959b62f39dba09bd0368e8991ab63cfc3e44d90",
             "locator": {
               "kind": "file"
             }
@@ -253,7 +269,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bf6833bf5d456b21488675f40c54e8fe67c5c011",
+            "blob": "5cd7ec716feacd1db6d5df3f9f31d400bf26d49e",
             "content": "sha256:51dc539bb93ec14158b4e050897b5328286ad7978c7888c28e7e23e758ddcbce",
             "locator": {
               "end": 121,

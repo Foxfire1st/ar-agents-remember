@@ -87,7 +87,7 @@ No configured live documentation source was available for this pass.
 - The budget, the family-seed resume under any spelling, a lacking revision refused on resume, and the v1 token refused. [10]
 
 - Repeated calls name the same files, omit served_earlier and retain governing family/chain IDs without session state. [14]
-- The lane row. [12]
+
 
 ### Cross-Repo References
 
@@ -96,3 +96,7 @@ No meaningful cross-repo references found: the cases build their repositories un
 No cross-repo boundary is crossed by this file.
 
 - Route-chain walks keep public outcomes and obtain complete domain-unit rows and continuations.
+
+
+
+- The lane row.  Anchor: "mcp/tests/test_knowledge_route_chain.py" [12]

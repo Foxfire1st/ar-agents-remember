@@ -44,9 +44,10 @@ informational "Invariants without proof" section.
 - **A proof never claims a pass.** Nothing here states whether a test passes, and a proof is never
   presented as the invariant being satisfied (MIK-R28 exclusions; Doc13). Test execution results are not
   stored.
-- **Information, never a gate (architect ruling, 2026-09-29).** The "without proof" list feeds only the
-  rendered checklist section; it never counts toward `curatorActionableCount`, the attestation or the wire
-  summary. The admission rule (MIK-R27) accepts other criteria.
+- **Information, never a gate (architect ruling, 2026-09-29).** The "without proof" list feeds the
+  rendered checklist section, and a present observation supplies the informational
+  `invariantsWithoutProofCount` in the delivered quality summary. It adds no term to
+  `curatorActionableCount` or the attestation's count fields. The admission rule (MIK-R27) accepts other criteria.
 - **The list never breaks the run that shows it.** `MemoryTreeError`, `IndexMismatchError`, `apsw.Error` and
   `OSError` become `ProofCoverage(unproven=(), index_state="unreadable", problem=…)`.
 - **Unconverted trees and database reads are unchanged.** Both entry points answer `None` for them, so
@@ -85,7 +86,7 @@ The two readings and their consumers.
 - The tests the migrated evidence names. [7]
 - The view consumer, since MIK-R02 the per-page extras of a converted tree's read. [8]
 
-- The checklist consumer. [9]
+
 
 
 - The index lookups it reads. [10]
@@ -103,3 +104,5 @@ No meaningful cross-repo references found: the module reads one memory tree, add
 caller, and the coordination index cache.
 
 No cross-repo boundary is crossed by this file.
+
+- The checklist consumer.  Anchor: `_without_proof` [9]

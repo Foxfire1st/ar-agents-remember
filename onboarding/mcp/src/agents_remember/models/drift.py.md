@@ -17,11 +17,10 @@ was really measured — `basis`, `memoryRoot`, `codeRoot`, `sidecarCount`, `stat
 `violationSample`, `reportOnlyCount` and `unreadableSidecars` — each optional and absent on legacy
 results; legacy fields are never invented for a converted card, and vice versa.
 
-`status` is `DriftStatus`, **imported** from
-`memory_quality.integrity.onboarding_drift_check.models`, the module
-that produces it: `notChecked | checked | error`. This file used to declare its
-own `DriftStatus = Literal["notChecked", "checked"]`, one of three hand-written
-copies of the same vocabulary in the package, and the only one missing `error`.
+`status` uses `DriftStatus`, declared in this module as
+`Literal["notChecked", "checked", "error"]`. The drift packet model and
+`models/memory.py` import this canonical declaration. This file's earlier
+two-state declaration lacked `error`; the current declaration includes it.
 
 **The diagnostic path was the one that crashed.** `run_drift_summary` returns
 `{"status": "error", "error": ...}` when the onboarding root is missing. This
@@ -34,10 +33,9 @@ context packet had not.
 ## Invariants And Boundaries
 
 - Context-packet drift is a summary, not the full drift report.
-- `status` is not declared here. It is `DriftStatus` from the drift-check
-  models module, which is where `run_drift_summary` decides it; the same alias
-  now also types `DriftCheckResponse.status`, so the two wire faces of one
-  vocabulary cannot diverge.
+- `DriftStatus` is declared here and imported by the drift packet model and
+  `DriftCheckResponse`; the producer emits members of that shared vocabulary.
+  The context and tool wire faces therefore use the same three states.
 - **A report-why field must be at least as wide as the failure it reports.** A
   strict model that omits the error member of a status enum turns its own
   diagnostic into an exception.
@@ -48,9 +46,11 @@ context packet had not.
 ### Repo-Internal References
 
 - Context packet construction validates `_drift_packet` output with `DriftSummary.model_validate`; `_drift_packet` is typed as `DriftSummaryPacket`. [2]
-- Both wire models expose the shared `DriftStatus` and optional error diagnostic. [4]
+
 
 - The summary carries the converted measurement fields beside the legacy ones. [5]
 
 - The strict `DriftSummary` model exposes status and the optional diagnostic error. [1]
-- The onboarding drift model defines the `DriftStatus` and `DriftSummaryPacket` wire shapes. [3]
+- The onboarding drift model imports canonical `DriftStatus` and defines the `DriftSummaryPacket` wire shape. [3]
+
+- Both wire models expose the shared `DriftStatus` and optional error diagnostic.  Anchor: "class DriftSummary"; "class DriftCheckResponse(ToolResponse):" [4]

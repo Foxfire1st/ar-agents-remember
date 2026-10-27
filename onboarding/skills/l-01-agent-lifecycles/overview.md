@@ -340,7 +340,7 @@ The registry records the changed compiled-text budgets under the existing ceilin
 
 - History preserves governing changed rows and replacement covers; admission and decision rules remain explicit. Anchor: History; admission; decisions [69]
 
-- Raw quality status is preserved; stale coherence rewrites combined status, current coherence sets readiness without rewriting it. [70]
+
 - The retained repository-context admission helper refuses `enclosure_in_scope` for a resolved enclosure; current foundation authoring is separately admitted inside the actual Architect task/enclosure through the task-contract knowledge-ingest/knowledge_write route. [72]
 
 - Verification stays on sealed existing findings; settings govern ordinary rounds and Manager-recorded architect/developer approval is required beyond them, separately in each lane. [73]
@@ -395,3 +395,7 @@ The registry records the changed compiled-text budgets under the existing ceilin
 - Role-stage selection, precise authoring, narrow own-step completion and independent recorded memory lane; source declarations, no execution acceptance. [91]
 
 - Before any new-leaf start, the Architect records the once-asked go/review-first decision; planned review creates no task workspace, first Explain creates its own workspace, and intent-review-open starts wait for go without retry. [95]
+
+
+
+- Raw quality status is preserved; stale coherence rewrites combined status, current coherence sets readiness without rewriting it. \[70] [70]

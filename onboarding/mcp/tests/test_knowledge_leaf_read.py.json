@@ -438,11 +438,11 @@
       ]
     },
     "37": {
-      "note": "The lane row.\n\nAnchor: `test_knowledge_leaf_read`",
+      "note": "The lane row.  Anchor: `test_knowledge_leaf_read`",
       "targets": [
         {
           "anchor": {
-            "blob": "102c4550ab6429f44c8fb543d1d0662de66a1b8c",
+            "blob": "5276cd9583d9a33d9094edac37d82b768491aed9",
             "content": "sha256:ea533393f6ab58b54c02b6526a92b2a9d597d162f1fd77dbfe7a1fbceab5cbb8",
             "locator": {
               "end": 162,
@@ -455,7 +455,7 @@
         },
         {
           "anchor": {
-            "blob": "102c4550ab6429f44c8fb543d1d0662de66a1b8c",
+            "blob": "5276cd9583d9a33d9094edac37d82b768491aed9",
             "content": "sha256:6027af8247fcbbf12777fca8eae097ec0fc644ead20dc6255cbb7bb10446dd31",
             "locator": {
               "end": 178,
@@ -468,7 +468,7 @@
         },
         {
           "anchor": {
-            "blob": "102c4550ab6429f44c8fb543d1d0662de66a1b8c",
+            "blob": "5276cd9583d9a33d9094edac37d82b768491aed9",
             "content": "sha256:da02548ce4ede5f08c6d261a0d17d44df0708ada720380fbf5906306bcf3b81e",
             "locator": {
               "end": 147,

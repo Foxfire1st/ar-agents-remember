@@ -4,8 +4,62 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "4d1d758b388f95a3ccf00255dc8a799424ba73e7",
-        "content": "sha256:05b73ca22dab33659fc8fd0358bb72db97960e4e9bbec516da05629abf513e51",
+        "blob": "b1fff467b7281a23b7caba62cd49c7dedac72cbc",
+        "content": "sha256:7a3de4ee03db69a68bb7bed2d91817592aca3d20f0cb22440f1a885e41f46635",
+        "locator": {
+          "kind": "symbol",
+          "name": "_launch_refused"
+        }
+      },
+      "id": "RLZ-0AF81G",
+      "invariant": "INV-ZD9BK1",
+      "origin": {
+        "handoffEntry": "L202-A6b-attach-receipt-4",
+        "leaf": "260928-MIK-L202"
+      },
+      "rationale": "Formats a launch-refused result with the supplied detail and a remedy restricting same-request repeats to the same selection and override; this helper does not inspect host agent state.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "b1fff467b7281a23b7caba62cd49c7dedac72cbc",
+        "content": "sha256:5b3730cf58e1473a47c87533c76e443d291cf1b1603775ac37bd189520cc6443",
+        "locator": {
+          "kind": "symbol",
+          "name": "_started_agent_id"
+        }
+      },
+      "id": "RLZ-BN5QYK",
+      "invariant": "INV-0GPNBS",
+      "origin": {
+        "handoffEntry": "L202-A6b-attach-receipt-1",
+        "leaf": "260928-MIK-L202"
+      },
+      "rationale": "Reads the exact started agent identity from its recorded execution or receipt without creating another seat.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "b1fff467b7281a23b7caba62cd49c7dedac72cbc",
+        "content": "sha256:ce7afe7a2c98da194eacfd8b0c70bcd1cc86e033855db28325a12cfa834e484e",
+        "locator": {
+          "kind": "symbol",
+          "name": "second_copy_loaded"
+        }
+      },
+      "id": "RLZ-D5PVDQ",
+      "invariant": "INV-HFREW1",
+      "origin": {
+        "handoffEntry": "MIK-R132@v1 rule 5",
+        "leaf": "260928-MIK-L113"
+      },
+      "rationale": "Reads the launch receipt: a second copy is loaded where the agent carries the task server and no record of the host's mode keeps the other out.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "b1fff467b7281a23b7caba62cd49c7dedac72cbc",
+        "content": "sha256:903ae84db41653736a96175d0e1388126f3aed6b946bc1c90e719a11511db73e",
         "locator": {
           "kind": "symbol",
           "name": "started_answer"
@@ -19,6 +73,42 @@
       },
       "rationale": "The successful launch producer binds the real seat and its continuation addresses.",
       "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "b1fff467b7281a23b7caba62cd49c7dedac72cbc",
+        "content": "sha256:7781bfcbcbdf5f6706a7e352e24f8ab303f89836ba57b562ec6410dc1480f2bc",
+        "locator": {
+          "kind": "symbol",
+          "name": "_projects_preparation_note"
+        }
+      },
+      "id": "RLZ-STRQRP",
+      "invariant": "INV-ZVQ7E3",
+      "origin": {
+        "handoffEntry": "MIK-R95@v1 rule6",
+        "leaf": "260928-MIK-L95"
+      },
+      "rationale": "This projection explains the Projects host capability limit in the role_start answer. It derives the note from the returned preparation value and does not perform a list read, timing inference or another opening operation.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "b1fff467b7281a23b7caba62cd49c7dedac72cbc",
+        "content": "sha256:fcb9199bf1b2a0c593c157799034494f393d5dac61995270667e5c72fd5bd361",
+        "locator": {
+          "kind": "symbol",
+          "name": "_refuse_agent_that_is_gone"
+        }
+      },
+      "id": "RLZ-V8MQXT",
+      "invariant": "INV-ZD9BK1",
+      "origin": {
+        "handoffEntry": "L202-A6b-attach-receipt-4",
+        "leaf": "260928-MIK-L202"
+      },
+      "rationale": "Reads the host state for the recorded agent, reports an unreachable read, and refuses an archived or missing agent without creating a replacement for that request.",
+      "role": "support"
     }
   ],
   "references": {
@@ -27,8 +117,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4d1d758b388f95a3ccf00255dc8a799424ba73e7",
-            "content": "sha256:05b73ca22dab33659fc8fd0358bb72db97960e4e9bbec516da05629abf513e51",
+            "blob": "b1fff467b7281a23b7caba62cd49c7dedac72cbc",
+            "content": "sha256:903ae84db41653736a96175d0e1388126f3aed6b946bc1c90e719a11511db73e",
             "locator": {
               "kind": "symbol",
               "name": "started_answer"
@@ -43,13 +133,13 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4f542fc6a6101512a8a4688f8bd109a5ae5c55f1",
+            "blob": "374d6d9650fe069cc8eb9ad69a39e036c1edfa82",
             "content": "sha256:482394491c5ccfc71c75ec8a1d8cf243273b23a4cb06930b267e4f0a43d713b0",
             "locator": {
               "kind": "symbol",
               "name": "_started"
             },
-            "path": "mcp/src/agents_remember/cli/paseo_role_tools.py"
+            "path": "mcp/src/agents_remember/cli/paseo_role_start.py"
           },
           "kind": "code"
         }
@@ -120,10 +210,10 @@
         },
         {
           "anchor": {
-            "blob": "4d1d758b388f95a3ccf00255dc8a799424ba73e7",
-            "content": "sha256:6d28e63c1151666c3f506918858fd69e1e7b9977de1ea760c11ef375c7210269",
+            "blob": "b1fff467b7281a23b7caba62cd49c7dedac72cbc",
+            "content": "sha256:335301dc67e6a6ce25d1e76d95073f50c01b78998c766e879349f05afade47e3",
             "locator": {
-              "end": 80,
+              "end": 87,
               "kind": "line_range",
               "start": 1
             }
@@ -163,8 +253,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4d1d758b388f95a3ccf00255dc8a799424ba73e7",
-            "content": "sha256:05b73ca22dab33659fc8fd0358bb72db97960e4e9bbec516da05629abf513e51",
+            "blob": "b1fff467b7281a23b7caba62cd49c7dedac72cbc",
+            "content": "sha256:903ae84db41653736a96175d0e1388126f3aed6b946bc1c90e719a11511db73e",
             "locator": {
               "kind": "symbol",
               "name": "started_answer"
@@ -179,7 +269,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c4429436521c8e8b49ccbbaf575db813992b182d",
+            "blob": "7e159b5edd1a237f0d4ad5b8153b6542d6affa4e",
             "content": "sha256:f74296314bb403b371679681d3bca7c7ec9aa06fdb271bd688a6b753fab04114",
             "locator": {
               "kind": "symbol",
@@ -191,7 +281,7 @@
         },
         {
           "anchor": {
-            "blob": "c4429436521c8e8b49ccbbaf575db813992b182d",
+            "blob": "7e159b5edd1a237f0d4ad5b8153b6542d6affa4e",
             "content": "sha256:c7da8e8fa7cc958ef689e00a5ffbe736605b98329d7f1acf81a66b0be5e714fc",
             "locator": {
               "kind": "symbol",
@@ -208,12 +298,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4d1d758b388f95a3ccf00255dc8a799424ba73e7",
+            "blob": "b1fff467b7281a23b7caba62cd49c7dedac72cbc",
             "content": "sha256:ad95058fbcf856b0e4b52dafe052aa9d252ef588543e0131c13ff6e5fa16751c",
             "locator": {
-              "end": 105,
+              "end": 112,
               "kind": "line_range",
-              "start": 87
+              "start": 94
             }
           },
           "kind": "code"

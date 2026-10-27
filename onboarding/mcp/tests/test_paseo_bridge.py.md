@@ -41,6 +41,10 @@ stdout, stderr and exit status through the same `bridge_call` boundary productio
 - The wrapper never reaches a runtime the configuration does not name.
 - The fake client is never imported by product code; it exists only under a scratch prefix per case.
 
+## Partial catalog answers
+
+The catalog cases distinguish successful empty listings from unanswered parts. Missing mode, effort or configuration data is named by its part error; failed model listings omit `models`. A deadline reached while a provider is still loading preserves its enabled identity with an unanswered model listing instead of turning the whole catalog into a timeout refusal.
+
 ## Evidence
 
 - The wrapper's process boundary: unconfigured refusal, the configured runtime as the only target, named
@@ -49,7 +53,9 @@ stdout, stderr and exit status through the same `bridge_call` boundary productio
 - Process-level refuse-before-spawn and single-target behaviour of `bridge_call`. [2]
 
 
+
 - Catalog shape, script failures and provider-option naming against the real script and fake client. [3]
+
 
 
 - The scoped current source carries the module/document behavior described above. [1]

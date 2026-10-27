@@ -108,7 +108,7 @@ No Domain Documentation source is configured for this memory root.
 
 
 
-> Retained earlier citation wording: - The lane this module is registered in. Source caption: "mcp/tests/test_pause_is_not_publication.py" [8]
+> Retained earlier citation wording: - The lane this module is registered in. Source caption: "mcp/tests/test_pause_is_not_publication.py"
 
 
 
@@ -116,5 +116,9 @@ No Domain Documentation source is configured for this memory root.
 ### Cross-Repo References
 
 No meaningful cross-repository reference applies to this repository-owned structural guard.
+
+
+
+
 
 - The lane this module is registered in. Source caption: "mcp/tests/test_pause_is_not_publication.py" [8]

@@ -137,7 +137,7 @@ No external domain claim is required.
 
 
 
-> Retained earlier citation wording: - The dependency-classification entry that names this module as a consumer of the certification profile. Source caption: `AMBIENT_ROLE_RUNNER_PATH` [10]
+> Retained earlier citation wording: - The dependency-classification entry that names this module as a consumer of the certification profile. Source caption: `AMBIENT_ROLE_RUNNER_PATH`
 
 
 
@@ -154,10 +154,14 @@ directory; no sibling repository or external system participates.
 
 No meaningful cross-repo references found.
 
-- The dependency-classification entry that names this module as a consumer of the certification profile. Source caption: `AMBIENT_ROLE_RUNNER_PATH` [10]
+
 
 
 - The reclamation runner and report-shaping gate these cases exercise through `lifecycle_finalize_task`. A completed cleanup cell still archives its recorded terminal agents. [2]
 
 
 - The report shaper whose exact sentence and inventory the first case asserts.  Anchor: "ALREADY_CLEAN = \"already-clean\"" [3]
+
+
+
+- The dependency-classification entry that names this module as a consumer of the certification profile. Source caption: `AMBIENT_ROLE_RUNNER_PATH` [10]

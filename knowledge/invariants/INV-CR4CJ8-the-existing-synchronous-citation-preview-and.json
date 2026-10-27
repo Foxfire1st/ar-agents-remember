@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "A background write would violate preview-only admission and the original explicit apply boundary."
+  },
+  "applicability": "The public citation_fix sync/start/poll interface.",
+  "conditions": [
+    "Synchronous mode remains the default.",
+    "Only dry-run preview is admitted to the background registry."
+  ],
+  "exclusions": [
+    "Background writes.",
+    "Run IDs supplied to synchronous mode and document selectors supplied to polling."
+  ],
+  "id": "INV-CR4CJ8",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "freeze-A4.md; test_background_writes_and_ambiguous_arguments_refused; test_citation_fix_documents.py"
+      ],
+      "path": "handoff99.json"
+    },
+    "handoffEntry": "MIK-R213@v1 rule 3",
+    "leaf": "260928-MIK-L202",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The existing synchronous citation preview and write path remain available, and background start refuses write requests.",
+  "status": "proposed",
+  "supersedes": []
+}

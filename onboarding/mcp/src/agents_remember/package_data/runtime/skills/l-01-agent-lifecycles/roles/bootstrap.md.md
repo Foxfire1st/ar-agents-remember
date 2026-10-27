@@ -98,9 +98,9 @@ resolved, so a bad reference is still refused as `task-binding-invalid`.
 
 **Its instructions are its compiled capsule, and nothing else.** A task seat is booted by the brief
 its dispatcher pins; this agent has no dispatcher and no brief, so the compiled capsule for
-`(bootstrap, bootstrap)` is its instruction source. The five composed blocks are
-`core:acceptance`, `core:authority`, `core:invariants`, `role:bootstrap`, `operation:bootstrap`, in
-the registry's composition order, and the manifest declares the role with `altitude: "free-agent"`
+`(bootstrap, bootstrap)` is its instruction source. Its composed instruction blocks are
+`role:bootstrap` and `operation:bootstrap`, in the role-specific composition order; shared core
+blocks are not injected. The manifest declares the role with `altitude: "free-agent"`
 and no templates or criteria catalogs.
 
 **Its subject is the first hour, and it points rather than restates.** The ordered workflow and the

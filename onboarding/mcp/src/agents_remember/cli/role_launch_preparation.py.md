@@ -56,6 +56,7 @@ The same module carries the one instruction every role's first message repeats a
 - Current synced source supports the qualified account; declarations, mirrors and fixture assertions are not executed acceptance. [10]
 
 
+
 ## Synced current-source qualification
 
 Granted direct-leaf revival binds the canonical leaf to its master series contract through the readable explicit grant; other leaves keep enclosure binding. Unreadable grant data refuses rather than falling back. This new-base preservation is not a Curator-issued grant.
@@ -103,7 +104,9 @@ The `roleTools.usage` value this module compiles now tells a role that a reply i
 ## Evidence
 
 - Frozen implementation of prepare_role_handover supporting the stated file behavior. [1]
+
 - Frozen implementation of _ar_mcp_context supporting the stated file behavior. [2]
+
 
 > Retained earlier citation wording: - The `_resolve_workspace` implementation now lives in its extracted owner. [3]
 
@@ -111,7 +114,9 @@ The `roleTools.usage` value this module compiles now tells a role that a reply i
 
 
 - Checks rejected choices create no receipt, workspace, agent or enclosure. [6]
+
 - Changed/missing saved scope refuses with both pairs, no bridge/write/enclosure creation. [7]
+
 
 ## MIK-R95 Workspace Owner Extracted
 
@@ -125,23 +130,30 @@ Investigator’s actual started_by parent selects the concern-from-first-message
 - The current source implements this file’s stated Investigator boundary. [8]
 
 
+
 ## Refreshed current evidence
 
 - Frozen implementation of the narrow parented-coordinator handover values. [4]
-- Checks reuse, explicit refresh and changed daemon home in the key. [5]
+
+- Checks that every view and start asks fresh and explicit refresh rescans provider discovery. [5]
+
 
 </details>
 
-- **Retained historical source account — superseded by the current contract:** Leaf revival compares current grant-sensitive canonical task/contract scope before bridge use. [9]
+- Leaf revival compares current grant-sensitive canonical task/contract scope before bridge use. [9]
 
-- The launch preparer consumes resolved task identity and canonical files without calling the removed task_doc.get. Read metadata names json_path/rendered_path instead of an operation=get request. taskDocumentFiles includes the own-leaf copy set derived from INDEX, absolute file locations and missingCopies. Compiled task context and launch admission keep their existing owners; file copies do not become task authority or a historical approval witness. [10]
+
+
 
 
 ## Evidence
 
 - Select and catalog-validate before workspace creation. [11]
+
 - Defaults extraction preserves host-role lookup. [12]
+
 - Detail-bound composition enters the existing handover and message binding. [13]
+
 - Concrete frozen detail pointers retain existing user-note composition. [14]
 
 ## The bootstrap capsule and the assignment owner
@@ -149,6 +161,8 @@ Investigator’s actual started_by parent selects the concern-from-first-message
 `ROLE_START_OPERATIONS` binds `bootstrap` to its capsule operation, so the free agent is compiled from the same capsule the role documents describe rather than from a second corpus. The assignment sentences of the three roles a launch admits without a canonical task — architect, investigator and bootstrap — are owned by `cli.role_launch_assignments`, and `_role_assignment` returns the bootstrap sentence for that role instead of asserting a selected task. Nothing else in preparation changes for the existing roles.
 
 - The capsule operation each launcher role is compiled from, including the free agent. [15]
+
 - The assignment the bootstrap seat carries, which names no task. [16]
+
 
 - The `_resolve_workspace` implementation now lives in its extracted owner.  Anchor: actual current supporting source [3]

@@ -33,11 +33,11 @@
       ]
     },
     "10": {
-      "note": "Poll includes optional contract scope while extra execution-only fields are forbidden.\n\nAnchor: _MemoryQualityExecutionRequest / MemoryQualityPollRequest / MemoryQualityCheckRequest",
+      "note": "Poll includes optional contract scope while extra execution-only fields are forbidden.  Anchor: _MemoryQualityExecutionRequest / MemoryQualityPollRequest / MemoryQualityCheckRequest",
       "targets": [
         {
           "anchor": {
-            "blob": "bf6833bf5d456b21488675f40c54e8fe67c5c011",
+            "blob": "5cd7ec716feacd1db6d5df3f9f31d400bf26d49e",
             "content": "sha256:db2e5557cc428798a0a83e5f4d6a5a7b97ce6b56fc98780eac1d5e6b49eb4cc8",
             "locator": {
               "end": 161,
@@ -55,12 +55,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5dd2a44685920ec5d90e001beb9a4c0e14cf8c00",
-            "content": "sha256:50323426b09bb6a9583a12e6706421ccf7190bebd8b6815d833fcff219a782a6",
+            "blob": "6782d184c8982f54e6e72e5f11a61aa2c8f88627",
+            "content": "sha256:3f5bd2a2ca393e41c75ab33ff834703c899571c620043265f696d39870f9635e",
             "locator": {
-              "end": 68,
+              "end": 70,
               "kind": "line_range",
-              "start": 37
+              "start": 36
             },
             "path": "mcp/src/agents_remember/mcp/registration/memory.py"
           },
@@ -68,12 +68,12 @@
         },
         {
           "anchor": {
-            "blob": "a4cb0ce3f5f3f488c8ad8313b8063d4a8218871e",
+            "blob": "f3bf4bfa27b8bfd44cd242540d16a2dbf31ec1c4",
             "content": "sha256:5ef7dfb0d7ba3ca6dd7e770968de21909a7841293669f0a15a567997e90ad75c",
             "locator": {
-              "end": 201,
+              "end": 205,
               "kind": "line_range",
-              "start": 175
+              "start": 179
             },
             "path": "mcp/src/agents_remember/application/memory_quality/controller.py"
           },
@@ -81,12 +81,12 @@
         },
         {
           "anchor": {
-            "blob": "5dd2a44685920ec5d90e001beb9a4c0e14cf8c00",
-            "content": "sha256:112398a825f11b8035330e56e820b01c50af82bb68f94732d5ded8c7258b5620",
+            "blob": "6782d184c8982f54e6e72e5f11a61aa2c8f88627",
+            "content": "sha256:11c35b13c9c4aaabb5ef4fb90e9d14e3692de6f952310dd552dc30300b2649d9",
             "locator": {
-              "end": 67,
+              "end": 69,
               "kind": "line_range",
-              "start": 36
+              "start": 35
             },
             "path": "mcp/src/agents_remember/mcp/registration/memory.py"
           },
@@ -298,8 +298,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4d099561f10d1ae73b6b908557fd452c7252bfbc",
-            "content": "sha256:2a4c8021b7444978b780c206fcd9c885cf96287c42a92a55b0024fdd5f58706e",
+            "blob": "1cca4998bfa9489d579e6d86646763bc880a5e18",
+            "content": "sha256:716a14a69fa7b83afdfb6331ab2aa600e4193122b96e0c41f23ed88a4cc16392",
             "locator": {
               "kind": "file"
             },
@@ -502,7 +502,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4d099561f10d1ae73b6b908557fd452c7252bfbc",
+            "blob": "1cca4998bfa9489d579e6d86646763bc880a5e18",
             "content": "sha256:8c8dfbb10e9a3cf65b678e3a32134293018b836c307ea9398cfc834a209d66bf",
             "locator": {
               "end": 251,
@@ -515,13 +515,31 @@
         }
       ]
     },
+    "28": {
+      "note": "Public signatures distinguish flat citation arguments from quality requests.\n\nAnchor: \"citation_fix\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1cca4998bfa9489d579e6d86646763bc880a5e18",
+            "content": "sha256:1b7433c5a465fc3a2c8bc01a7c963e13fccf46adb465c677689eed240170221d",
+            "locator": {
+              "end": 87,
+              "kind": "line_range",
+              "start": 86
+            },
+            "path": "docs/reference/mcp-tools.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "3": {
       "note": "Retained reference account (no fresh execution or acceptance inferred): The settings reference describes the active MCP authority, user role settings and their distinct merge and precedence boundaries.",
       "targets": [
         {
           "anchor": {
-            "blob": "ef1c4f3765418edbd7e43d5d502aad8c39a44749",
-            "content": "sha256:49b9ac966a9cb45f776e0fc0da57ec1323c2ef2676a7f2fe04c4875e4cd37ad3",
+            "blob": "6d8cc9b75acea207484aeaf2f87c0e5cafd6640e",
+            "content": "sha256:75c64f4096f37bb14d4fd91208bbcf2fd462d84510758129af718a695d943ac4",
             "locator": {
               "kind": "file"
             },
@@ -536,8 +554,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f65bc41685229d76a9af0e644b2b9b2f17f5579f",
-            "content": "sha256:a3ba2f8ef38f4bb239f47600bc8078388bf576b7d68bbba7991f1bc139d24801",
+            "blob": "436a4caf23092264494e8678f2b27e99c20f69a1",
+            "content": "sha256:902cecd5d251f33487590646e3eaaf501aab7c8bc83423fad14ff75055defd7f",
             "locator": {
               "kind": "file"
             },
@@ -552,8 +570,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ef1c4f3765418edbd7e43d5d502aad8c39a44749",
-            "content": "sha256:49b9ac966a9cb45f776e0fc0da57ec1323c2ef2676a7f2fe04c4875e4cd37ad3",
+            "blob": "6d8cc9b75acea207484aeaf2f87c0e5cafd6640e",
+            "content": "sha256:75c64f4096f37bb14d4fd91208bbcf2fd462d84510758129af718a695d943ac4",
             "locator": {
               "kind": "file"
             },

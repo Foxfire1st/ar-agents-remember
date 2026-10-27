@@ -15,7 +15,7 @@ The payload now computes whole first and supplies the filtered answer only for l
 Quality sync/start/poll wrappers forward their discriminated typed requests to the matching
 controller method. Drift-check and citation-migrate adapters are absent. Citation fix alone
 catches exactly ConfiguredContractAuthorityError and returns configured-contract-authority-invalid
-with developer-decision guidance; unrelated exceptions propagate. Ordinary citation-fix results
+with developer-decision guidance; unrelated exceptions propagate during the synchronous computation. Ordinary citation-fix results
 have a separate status projection: outcome, dry-run selection count, rewritten/stale/unreadable/refused
 totals and, on failure, bounded document/place/reason work orders. Complete authoring and stale lists
 remain in the whole-result log. The configured-authority refusal deliberately retains its existing
@@ -68,6 +68,22 @@ Inherited numbered findings retain their exact wording and full targets as histo
 - Current source excerpt `def memory_quality_check_payload(` identifies this section's adapter/control owner, not an executed success.
 
 - Current source excerpt `def _bounded_lists(payload: dict[str, Any], names: tuple[str, ...]) -> dict[str, Any]:` identifies this section's adapter/control owner, not an executed success.
+
+## Citation preview modes
+
+`citation_fix_payload` retains its synchronous default and actual-write path. `mode="start"` requires `dry_run=true` and no run ID, freezes document selectors, and starts the existing preview computation in the shared run registry. `mode="poll"` requires a run ID and no selectors, with the same repository and candidate contract. Completed previews pass through the same citation status projection with `status` and `runId`; retained whole results remain separate from compact answers. A completed computation is not a claim that every repair succeeded.
+
+The configured-contract-authority catch in the synchronous computation stays narrow. Background worker exceptions instead become retained failed runs, and the shared poll controller can return scope or pair refusals. The synchronous statement that other errors propagate does not describe every background lifecycle outcome.
+
+
+- Mode dispatch preserves the default synchronous application call. [1]
+
+
+- Start and poll enforce their distinct argument shapes. [2]
+
+
+- Completed preview projections retain ordinary citation counts and failure work orders. [3]
+
 
 ## Historical superseded account (non-operative)
 

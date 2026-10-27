@@ -83,16 +83,16 @@
       ]
     },
     "13": {
-      "note": "The lane manifest of record; this module's row stands in the `unit-regression` list.",
+      "note": "The retained lane entries name three neighbouring test modules. The added test_task_projection.py row establishes this module's own unit-regression membership.\n\nAnchor: \"test_task_projection.py\"",
       "targets": [
         {
           "anchor": {
-            "blob": "102c4550ab6429f44c8fb543d1d0662de66a1b8c",
+            "blob": "5276cd9583d9a33d9094edac37d82b768491aed9",
             "content": "sha256:6ebb064b1ddea9441753921bfda48a0fdadac346782f14b7ecf9a11c53a90ec4",
             "locator": {
-              "end": 431,
+              "end": 434,
               "kind": "line_range",
-              "start": 431
+              "start": 434
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -100,12 +100,12 @@
         },
         {
           "anchor": {
-            "blob": "102c4550ab6429f44c8fb543d1d0662de66a1b8c",
+            "blob": "5276cd9583d9a33d9094edac37d82b768491aed9",
             "content": "sha256:451f58fad4e5e5d4e04998604c8ce838b006f6fd21f6f6a0f3735404b2bd498f",
             "locator": {
-              "end": 448,
+              "end": 451,
               "kind": "line_range",
-              "start": 448
+              "start": 451
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -113,12 +113,25 @@
         },
         {
           "anchor": {
-            "blob": "102c4550ab6429f44c8fb543d1d0662de66a1b8c",
+            "blob": "5276cd9583d9a33d9094edac37d82b768491aed9",
             "content": "sha256:8d296a650518449fc32dfa06f5b5ed5668dcd95438aefab5181fdc6b689c89e1",
             "locator": {
-              "end": 304,
+              "end": 307,
               "kind": "line_range",
-              "start": 304
+              "start": 307
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5276cd9583d9a33d9094edac37d82b768491aed9",
+            "content": "sha256:1e63282d454a81385c60d01480ef8f81c883423862b512a38619e46453b702f6",
+            "locator": {
+              "end": 459,
+              "kind": "line_range",
+              "start": 459
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -127,16 +140,16 @@
       ]
     },
     "15": {
-      "note": "The population setting that makes every module under `mcp/tests/` part of the expected set.\n\nAnchor: \"testpaths\"",
+      "note": "The population setting includes modules below mcp/tests. The retained historical collection comment names its default-unit-lane collection method.\n\nAnchor: \"testpaths\"",
       "targets": [
         {
           "anchor": {
-            "blob": "0b550ee3cda163c8b451cb06a4fb69b489c4686d",
-            "content": "sha256:2190a60352b4095e9f4ce96f02b3e1e1db6f520b056e958c782adade18cdf3d8",
+            "blob": "ddd77babbaaddf51063d6e23856c0cadd142d461",
+            "content": "sha256:8b0582471cc7559215ce1e2562b241858f5adbcba15e90e6366c8376ee6c0f77",
             "locator": {
-              "end": 326,
+              "end": 284,
               "kind": "line_range",
-              "start": 326
+              "start": 284
             },
             "path": "pyproject.toml"
           },
@@ -144,12 +157,12 @@
         },
         {
           "anchor": {
-            "blob": "0b550ee3cda163c8b451cb06a4fb69b489c4686d",
-            "content": "sha256:8b0582471cc7559215ce1e2562b241858f5adbcba15e90e6366c8376ee6c0f77",
+            "blob": "ddd77babbaaddf51063d6e23856c0cadd142d461",
+            "content": "sha256:2190a60352b4095e9f4ce96f02b3e1e1db6f520b056e958c782adade18cdf3d8",
             "locator": {
-              "end": 284,
+              "end": 339,
               "kind": "line_range",
-              "start": 284
+              "start": 339
             },
             "path": "pyproject.toml"
           },
@@ -255,16 +268,29 @@
       ]
     },
     "21": {
-      "note": "The lane manifest registers mcp/tests/test_task_projection.py in unit-regression. Membership selects evidence and does not establish execution.",
+      "note": "The retained stored-operation-record row is separate from the added test_task_projection.py membership row. Catalog membership selects evidence and does not establish execution.\n\nAnchor: \"test_task_projection.py\"",
       "targets": [
         {
           "anchor": {
-            "blob": "102c4550ab6429f44c8fb543d1d0662de66a1b8c",
+            "blob": "5276cd9583d9a33d9094edac37d82b768491aed9",
             "content": "sha256:6ebb064b1ddea9441753921bfda48a0fdadac346782f14b7ecf9a11c53a90ec4",
             "locator": {
-              "end": 431,
+              "end": 434,
               "kind": "line_range",
-              "start": 431
+              "start": 434
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5276cd9583d9a33d9094edac37d82b768491aed9",
+            "content": "sha256:1e63282d454a81385c60d01480ef8f81c883423862b512a38619e46453b702f6",
+            "locator": {
+              "end": 459,
+              "kind": "line_range",
+              "start": 459
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },

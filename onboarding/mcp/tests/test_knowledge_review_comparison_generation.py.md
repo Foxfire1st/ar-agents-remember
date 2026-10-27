@@ -32,6 +32,10 @@ No meaningful cross-repo references found.
 
 - `test_a_legacy_record_preserves_exact_source_and_never_reads_its_dataset` owns the current boundary described above. [25]
 - `test_a_tampered_historical_source_record_is_refused_instead_of_retargeted` owns the current boundary described above. [26]
-> Retained earlier citation wording: - The lane row this module was registered under, inside the array whose own key declares the classification.  Anchor: `test_knowledge_review_comparison_generation` [27]
+> Retained earlier citation wording: - The lane row this module was registered under, inside the array whose own key declares the classification.  Anchor: `test_knowledge_review_comparison_generation`
+
+
+
+
 
 - The lane row this module was registered under, inside the array whose own key declares the classification.  Anchor: `test_knowledge_review_comparison_generation` [27]

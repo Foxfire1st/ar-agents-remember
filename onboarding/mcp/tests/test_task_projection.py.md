@@ -112,7 +112,7 @@ The cases, the fixture value objects that vary one fact at a time, and the seam 
 
 
 
-> Retained earlier citation wording: - The lane manifest registers mcp/tests/test_task_projection.py in unit-regression. Membership selects evidence and does not establish execution. [21]
+> Retained earlier citation wording: - The lane manifest registers mcp/tests/test_task_projection.py in unit-regression. Membership selects evidence and does not establish execution.
 
 
 - The fixture world and the two spec value objects that keep a failure attributable. [1]
@@ -131,11 +131,14 @@ The cases, the fixture value objects that vary one fact at a time, and the seam 
 - The missing-lane finding. [18]
 
 
-> Retained earlier citation wording: - The lane manifest of record; this module's row stands in the `unit-regression` list. [13]
+> Retained earlier citation wording: - The lane manifest of record; this module's row stands in the `unit-regression` list.
 
 
 - The `pytest` hook that runs the loader on every collection, so an unlisted module is a collection failure. [19]
-- The population setting that makes every module under `mcp/tests/` part of the expected set. [15]
+
+
+
+
 
 ### Cross-Repo References
 
@@ -143,7 +146,14 @@ No sibling-repository contract is exercised by these cases.
 
 No meaningful cross-repo references found.
 
-- The lane manifest of record; this module's row stands in the `unit-regression` list. [13]
 
 
-- The lane manifest registers mcp/tests/test_task_projection.py in unit-regression. Membership selects evidence and does not establish execution. [21]
+
+
+
+- The population setting includes modules below mcp/tests. The retained historical collection comment names its default-unit-lane collection method. [15]
+
+- The retained lane entries name three neighbouring test modules. The added test_task_projection.py row establishes this module's own unit-regression membership. [13]
+
+
+- The retained stored-operation-record row is separate from the added test_task_projection.py membership row. Catalog membership selects evidence and does not establish execution. [21]

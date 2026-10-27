@@ -28,9 +28,7 @@ serving build while the candidate under curation may carry different code, and u
 a checklist reader could not tell a candidate-ruler count from a serving-build-ruler count. It returns
 `{"servingBuild": <resolved payload as wire JSON>}` — a dict copy of the identity
 `process_serving_build()` resolved once per process, not a probe — with `dirty` riding along so an
-uncommitted serving tree reads as such instead of being taken for the commit it names. Its consumers are
-the memory-quality controller's three public entry points and the two citation tools; the omission of
-`drift_check` is deliberate, because a tree-integrity count is not a curation count.
+uncommitted serving tree reads as such instead of being taken for the commit it names. Its current uses include the memory-quality controller's public entry points, citation census, citation note revision, the pre-baseline and unconverted-refusal branches of citation fixing, and the knowledge-gate memo's build identity. The converted-leaf citation-fix result does not add the stamp, and `drift_check` does not call it.
 
 ### Conventions
 
@@ -56,5 +54,7 @@ None.
 ## Outside-scratch reconciliation
 
 `start_after_discovery` reaches `start_outside_scratch_reconcile()` once after discovery or through the first-call fallback. The latter starts the daemon thread named `outside-scratch-reconcile`. Its wrapper calls `reconcile_outside_scratch_roots()`, which runs the heavy worktree-owned sweep in a one-shot child process through the same Python executable, with stdin disconnected from the MCP transport, a 600-second timeout and a captured JSON report. The heavy worktree import occurs in that child, so this serving process does not import the package as part of the sweep. Thread-launch and sweep failures are caught and logged rather than refusing server service; a nonzero child result is raised into that contained wrapper. A pass deletes a root only when its marker, the retained contract record and a terminal-archived locator agree that the generation ended; other roots are reported with a reason and retained. Sorted JSON is logged only when the report contains removed or reported roots.
+
+
 
 - Process preparation only declares ownership. A produced tools/list answer schedules the one joint post-discovery start; a first tool call is its fallback. The first attempt starts the sweep even without config and consumes the latch; dashboard supervision needs config and respects autoStart. The sweep runs in a child with MCP stdin disconnected, keeping the heavy worktree owner out of the serving process. [2]

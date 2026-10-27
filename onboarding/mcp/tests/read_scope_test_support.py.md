@@ -123,7 +123,7 @@ No configured domain documentation could be checked.
 
 
 
-> Retained earlier citation wording: - **The governed-artifact and contract rows that make this module part of the catalog.** Source caption: `read_scope_test_support` [22]
+> Retained earlier citation wording: - **The governed-artifact and contract rows that make this module part of the catalog.** Source caption: `read_scope_test_support`
 
 
 
@@ -133,5 +133,9 @@ No configured domain documentation could be checked.
 No cross-repository behavior is implemented in this file.
 
 No meaningful cross-repo references found.
+
+
+
+
 
 - **The governed-artifact and contract rows that make this module part of the catalog.** Source caption: `read_scope_test_support` [22]

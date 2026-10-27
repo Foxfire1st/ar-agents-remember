@@ -84,7 +84,7 @@ The cases and the renderer.
 
 - The version 1 golden digest. [6]
 
-- Its lane row. [7]
+
 
 ### Cross-Repo References
 
@@ -96,3 +96,7 @@ No cross-repo boundary is crossed by this file.
 - Current source delta inspected statically: Replace final converted-validation PASS with based carried-stale refusal; retain determinism, version, no-op and golden-input boundaries. [8]
 
 - Equal-blob definition and changed-blob proof observations retain filename eligibility in either priming order. [9]
+
+
+
+- Its lane row.  Anchor: "mcp/tests/test_knowledge_conversion.py" [7]

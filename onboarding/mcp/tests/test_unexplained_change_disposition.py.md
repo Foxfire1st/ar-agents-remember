@@ -105,14 +105,14 @@ No configured live documentation source was available for this pass.
 
 
 
-> Retained earlier citation wording: - The unit-lane row. Source caption: "mcp/tests/test_unexplained_change_disposition.py" [13]
+> Retained earlier citation wording: - The unit-lane row. Source caption: "mcp/tests/test_unexplained_change_disposition.py"
 
 
 
 
 
 
-> Retained earlier citation wording: - The catalog consumer row. [14]
+> Retained earlier citation wording: - The catalog consumer row.
 
 
 
@@ -133,6 +133,17 @@ No cross-repo boundary is crossed by this file.
 
 
 - The changed-card regression asserts worklist/gate agreement for an authored updated row without a separately bound trace item; source assertions are not fresh execution acceptance. [16]
+
+
+
+
+
+
+
+
+
+
+
 
 - The unit-lane row. Source caption: "mcp/tests/test_unexplained_change_disposition.py" [13]
 

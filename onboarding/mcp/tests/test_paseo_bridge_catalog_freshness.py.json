@@ -1,0 +1,109 @@
+{
+  "path": "mcp/tests/test_paseo_bridge_catalog_freshness.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Successful empty lists retain read time; ordinary and refresh questions reach the provider boundary.\n\nAnchor: `CatalogFreshnessBridgeTests.test_successful_empty_is_explicit_and_every_question_reaches_paseo`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e179f312b126a6fcddd63cc5dab29926ea6ecf07",
+            "content": "sha256:0ab7874e8944266534eee235f64fe6eb980c876eb28ac603b61b65cccfbdcb62",
+            "locator": {
+              "end": 70,
+              "kind": "line_range",
+              "start": 61
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Model, mode, effort, feature and tool-server failures stay distinct from valid parts.\n\nAnchor: `CatalogFreshnessBridgeTests.test_failed_parts_are_omitted_while_the_other_parts_survive`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e179f312b126a6fcddd63cc5dab29926ea6ecf07",
+            "content": "sha256:2f8d5d809ba8e16b2cde2e9b5ec9fdcefc3b279e0f4323be8681e1a5e110ade7",
+            "locator": {
+              "end": 102,
+              "kind": "line_range",
+              "start": 72
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Unavailable discovery fails; an available provider snapshot can survive a discovery wait.\n\nAnchor: `CatalogFreshnessBridgeTests.test_whole_discovery_failure_is_never_an_empty_success`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e179f312b126a6fcddd63cc5dab29926ea6ecf07",
+            "content": "sha256:4b75c2c83817912b8d7d405361be1c3477d77fabf80bde2226a6b943ddfaf9dd",
+            "locator": {
+              "end": 118,
+              "kind": "line_range",
+              "start": 104
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Timed-out model, feature and configuration parts remain unknown while other answers survive.\n\nAnchor: `CatalogFreshnessBridgeTests.test_model_and_feature_timeouts_do_not_claim_empty_offerings`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e179f312b126a6fcddd63cc5dab29926ea6ecf07",
+            "content": "sha256:9deda5a3372d36a150805f0b03860a7154aba01510e120fbb3a86c91c1d253c8",
+            "locator": {
+              "end": 143,
+              "kind": "line_range",
+              "start": 121
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Metadata mode reads provider/model metadata without querying features.\n\nAnchor: `CatalogFreshnessBridgeTests.test_metadata_reads_no_model_features`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e179f312b126a6fcddd63cc5dab29926ea6ecf07",
+            "content": "sha256:10c53d0684c688707b29563e0688fe39ecea79dac8572e933beb8c135e172cd4",
+            "locator": {
+              "end": 162,
+              "kind": "line_range",
+              "start": 145
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Selected mode queries only the chosen model and names unanswered feature parts.\n\nAnchor: `CatalogFreshnessBridgeTests.test_selected_reads_only_target_features_even_when_metadata_is_unavailable`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e179f312b126a6fcddd63cc5dab29926ea6ecf07",
+            "content": "sha256:20c647347e9b517ed677fb03c4a8048845b3b18dd804328055c837664d6f2542",
+            "locator": {
+              "end": 205,
+              "kind": "line_range",
+              "start": 164
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

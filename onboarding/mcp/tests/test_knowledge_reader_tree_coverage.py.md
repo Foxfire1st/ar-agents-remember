@@ -56,7 +56,7 @@ No configured live documentation source was available for this pass.
 
 
 
-- The suite's lane membership in the evidence catalog. [3]
+
 
 
 
@@ -67,3 +67,7 @@ No cross-repo boundary is crossed by this file.
 - Memory commits and branches remain selectable beyond the recent list; malformed names are rejected before Git and failed commit-list reads are unavailable. [4]
 - UTF-8 summaries are byte bounded while whole-prose reads retain full text and selected-tree identity, with named invalid, absent and unavailable outcomes. [5]
 - Timeline pages retain event identity and bound continuations; instrumentation asserts one build and one hash walk. Bounded memo checks cover byte pricing, eviction, mutation isolation and unretained over-budget reads. [6]
+
+
+
+- The suite's lane membership in the evidence catalog. [3]

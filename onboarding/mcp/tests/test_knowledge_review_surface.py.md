@@ -303,7 +303,7 @@ evidence; source inspection supplies no new execution or acceptance grade.
 
 
 
-> Retained earlier citation wording: - The module is selected once in the unit-regression lane and named by seven exact-scope lifecycle artifact records; registration is not execution. [21]
+> Retained earlier citation wording: - The module is selected once in the unit-regression lane and named by seven exact-scope lifecycle artifact records; registration is not execution.
 
 
 
@@ -331,5 +331,11 @@ rather than passing a parallel keyword beside the request".
 `test_the_previous_binding_identity_reaches_the_port_and_is_compared_against_the_read` there verbatim;
 its account of the three requests (refresh, plain read, malformed spelling) moved with it. `render`
 stays here, and that module imports it.
+
+
+
+
+
+
 
 - The module is selected once in the unit-regression lane and named by seven exact-scope lifecycle artifact records; registration is not execution. [21]

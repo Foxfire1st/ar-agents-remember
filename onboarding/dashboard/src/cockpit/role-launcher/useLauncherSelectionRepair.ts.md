@@ -6,15 +6,15 @@
 
 ## Purpose
 
-Repair seeded document references and stale explicit overrides against current catalogs.
+Repair seeded document references against served task entries.
 
 ## Code Commentary
 
-Pure functions validate seeded document references against served TaskEntry options and choose the first invalid document/override tier and produce its existing reset payload. The document effect runs before the override effect at the launcher call site. Override repair waits for optionsReady; valid selections remain quiescent and callbacks stay live.
+Pure functions validate seeded sprint, master and task references against served TaskEntry options and reset the first invalid document tier. The remaining document effect runs when task entries arrive; valid selections remain quiescent and callbacks stay live. Catalog-based agent/model/effort override pruning was removed by R214, so unavailable choices are left intact for the launcher validation boundary.
 
 ## Boundaries
 
-Two independent effects, not a combined callback arbiter. Explicit model/effort UI changes retain feature values; inherited invalid-catalog model/effort repair drops them. No new permissions, option loading or Start gate.
+This module repairs document scope only. It neither prunes catalog overrides nor owns permissions, options loading or Start readiness.
 
 ## Evidence
 
@@ -22,9 +22,12 @@ Two independent effects, not a combined callback arbiter. Explicit model/effort 
 - repairedSeededSelection is a current owner of the behavior described above. [1]
 
 
-- repairedOverride is a current owner of the behavior described above. [2]
+
+- repairedSeededSelection returns the first invalid seeded document correction, without catalog override pruning. [2]
+
 
 
 - usePruneSeededSelection is a current owner of the behavior described above. [3]
 
-- usePruneStaleOverride is a current owner of the behavior described above. [4]
+
+- usePruneSeededSelection is the retained document repair effect; its dependencies contain no catalog or options-readiness input. [4]

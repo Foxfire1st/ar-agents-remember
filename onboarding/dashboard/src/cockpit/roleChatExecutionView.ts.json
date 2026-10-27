@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "06abcf50e960083f414831b75302d1ec30aad2e5",
+            "blob": "ad6c2cbc4cd5699281c3328e01ff5eff4b81dd85",
             "content": "sha256:d4a498189b572064fcd25cc36f014dbad368adb39c5ab29e02db8dccd069ec0c",
             "locator": {
               "kind": "symbol",
@@ -19,12 +19,12 @@
       ]
     },
     "2": {
-      "note": "resolveLauncherCatalog is a current owner of the behavior described above.",
+      "note": "resolveLauncherCatalog uses one settled options answer or the saved disk catalog, never merged inventories; pending display carries no role defaults and is not ready.",
       "targets": [
         {
           "anchor": {
-            "blob": "06abcf50e960083f414831b75302d1ec30aad2e5",
-            "content": "sha256:d83624f35e0f7f818edef7f829fd9b6c7f347b91574cb9f8956b0a66eceb6747",
+            "blob": "ad6c2cbc4cd5699281c3328e01ff5eff4b81dd85",
+            "content": "sha256:c9ac6810ed78a857148d44276e833ca8219ebb7c918dd0e65f7cb19f76984372",
             "locator": {
               "kind": "symbol",
               "name": "resolveLauncherCatalog"

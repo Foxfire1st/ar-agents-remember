@@ -46,7 +46,7 @@ Starts the configured MCP application with either the ordinary registration fami
 
 ### Closed dispatch input at the public transport boundary
 
-AgentsRememberMCP.list_tools first awaits the FastMCP answer, then schedules start_after_discovery(config) with the running loop’s call_soon and returns that already-produced answer. The shared latch starts outside-scratch reconciliation once, including on a bare no-config server, and dashboard autostart only with config/settings. call_tool reaches that same latch as the fallback for a client that never lists, before checking the bound surface and entering tool_call_context. Bound explainer calls also validate their launched seat before the registered handler. The retained delegation and raised-call logging use the shared boundary. There is no dispatch-specific input-schema closing or undeclared-dispatch handler hook; tool argument admission belongs to each retained registered schema.
+AgentsRememberMCP.list_tools first awaits the FastMCP answer, then schedules start_after_discovery(config) with the running loop’s call_soon and returns that already-produced answer. The shared latch starts outside-scratch reconciliation once, including on a bare no-config server, and dashboard autostart only with config/settings. call_tool reaches that same latch as the fallback for a client that never lists, before checking the bound surface and entering tool_call_context. Bound explainer calls also validate their launched seat before the registered handler. The retained delegation and raised-call logging use the shared boundary. Tool argument admission belongs to each retained registered schema. The synchronous dispatch wrapper described below keeps that validation path while moving the handler body off the event loop.
 
 ### Tool-call logging at the transport boundary (MIK-R108 rule 3)
 
@@ -118,7 +118,7 @@ Readable launch binding supplies one canonical launched-server instruction line.
 ### Repo-Internal References
 
 
-- `create_server` builds the FastMCP instance and invokes the registered tool families. [1]
+
 
 
 - The registration package imports each family registrar, collects them in `TOOL_REGISTRARS`, and exports that collection for server wiring. [2]
@@ -135,9 +135,9 @@ No meaningful cross-repo references found.
 
 ### Runtime Source References
 
-- Frozen implementation of launched_server_instructions supporting the stated file behavior. [6]
 
-- Frozen implementation of create_server supporting the stated file behavior. [7]
+
+
 
 
 ## L23 Runtime Package Review
@@ -146,5 +146,40 @@ The transport server now imports its composition boundary as
 `application.runtime.startup as server_startup`. Startup trust, configuration, registration, and
 durable-store ownership remain application concerns; only their package location changed.
 
+
+
+
+## Synchronous dispatch and write ordering
+
+After the existing launch-surface and seat checks, `_dispatch_tool` runs a synchronous registered function through `asyncio.to_thread` on a per-call Tool copy. FastMCP still validates the original arguments, injects context and converts the result. The worker receives the call's ContextVars; async handlers retain their existing event-loop path.
+
+Potentially mutating synchronous calls hold one per-server lock until their worker stops. Cancellation does not release it while the thread is alive, including repeated cancellation. Centrally declared read-only calls and explicitly nonwriting modes bypass the lock; the bypass is a dispatch policy, not host-wide purity or permission. A string-coercible false value does not satisfy the strict boolean checks.
+
+
+- Threaded synchronous dispatch retains the registered validation and conversion path. [10]
+
+
+- Declared reads and explicit nonwriting modes bypass the synchronous write lock. [11]
+
+
+- Cancellation drains the shielded worker before releasing its caller. [12]
+
+
+
+- `create_server` builds the FastMCP instance and invokes the registered tool families.  Anchor: `create_server` [1]
+
+
+
+- Frozen implementation of launched_server_instructions supporting the stated file behavior. [6]
+
+
+
+- Frozen implementation of create_server supporting the stated file behavior.  Anchor: `create_server` [7]
+
+
+
 - Current transport wiring retains boot-time caller identity and lazy worktree service construction. It schedules a shared post-discovery sweep/conditional-dashboard latch after producing the list answer, with first-call fallback; application initialization installs no ambient lifecycle. [8]
+
+
+
 - Initialization names the worktree supplier and selects the ordinary or bound surface. list_tools produces its answer before scheduling start_after_discovery; call_tool invokes the same latch before bound-name/exact-seat checks. The latch starts the sweep even without config and starts dashboard supervision only with config/settings; bound checks and raised-call logging retain their owners. [9]

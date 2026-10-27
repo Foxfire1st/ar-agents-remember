@@ -98,4 +98,6 @@ containment proof against the resolved root. All refusals are `AuthorityError`.
 - The mirror sidecar-path helper (`onboarding_root/<rel>.md`) used for the body read and the no-index probe. [5]
 - The `path_is_relative_to` confinement predicate used by `confine_rel`. [6]
 
+
+
 - The `AuthorityError` raised on an out-of-root / absolute path. [7]

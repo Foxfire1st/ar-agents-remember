@@ -11,7 +11,7 @@
 ## Code Commentary
 
 The module counts tokens over compact, sorted JSON payloads (`_payload_json`
-serializes with `ensure_ascii=False`, `separators=("", ":")`, `sort_keys=True`).
+serializes with `ensure_ascii=False`, `separators=(",", ":")`, `sort_keys=True`).
 The default counter, `DEFAULT_TOKEN_COUNTER`, is a `TiktokenTokenCounter` on the
 `o200k_base` encoding (`exact=True`); an `ApproximateTokenCounter` (compact-JSON
 character length divided by four) remains available as a deterministic fallback.

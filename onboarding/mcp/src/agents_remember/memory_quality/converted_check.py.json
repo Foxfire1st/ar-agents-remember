@@ -4,8 +4,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "2464d2d12704dfa0b90457ac3a62acf2212bedb8",
-        "content": "sha256:7faaa61a8f79c86f584b9769065b0fb54057f793bcd8c3adf57568bceb568bfd",
+        "blob": "ef73833b143decb50eb3949345e195a40a7692d3",
+        "content": "sha256:162e27ef3c05f6f21f2da9209dda01ce969d0a1e6f2d62a562343e1f145b8165",
         "locator": {
           "kind": "symbol",
           "name": "converted_knowledge_check"
@@ -22,8 +22,8 @@
     },
     {
       "anchor": {
-        "blob": "2464d2d12704dfa0b90457ac3a62acf2212bedb8",
-        "content": "sha256:7faaa61a8f79c86f584b9769065b0fb54057f793bcd8c3adf57568bceb568bfd",
+        "blob": "ef73833b143decb50eb3949345e195a40a7692d3",
+        "content": "sha256:162e27ef3c05f6f21f2da9209dda01ce969d0a1e6f2d62a562343e1f145b8165",
         "locator": {
           "kind": "symbol",
           "name": "converted_knowledge_check"
@@ -40,7 +40,7 @@
     },
     {
       "anchor": {
-        "blob": "2464d2d12704dfa0b90457ac3a62acf2212bedb8",
+        "blob": "ef73833b143decb50eb3949345e195a40a7692d3",
         "content": "sha256:e8c735e2c57dda2f3dddf3e6b3e0a17629d04f5f9542f2e7a20f823dd61296a0",
         "locator": {
           "end": 6,
@@ -56,6 +56,24 @@
       },
       "rationale": "The module contract states that non-current code/test references now refuse the whole-tree quality run; landing changes remain report-only. The separately covered converted_knowledge_check performs the refusal.",
       "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "ef73833b143decb50eb3949345e195a40a7692d3",
+        "content": "sha256:162e27ef3c05f6f21f2da9209dda01ce969d0a1e6f2d62a562343e1f145b8165",
+        "locator": {
+          "kind": "symbol",
+          "name": "converted_knowledge_check"
+        }
+      },
+      "id": "RLZ-JS3Y20",
+      "invariant": "INV-7ACVBS",
+      "origin": {
+        "handoffEntry": "L202-R2",
+        "leaf": "260928-MIK-L202"
+      },
+      "rationale": "The result attaches source notes to each sidecar field and target.",
+      "role": "primary-authority"
     }
   ],
   "references": {
@@ -64,7 +82,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2464d2d12704dfa0b90457ac3a62acf2212bedb8",
+            "blob": "ef73833b143decb50eb3949345e195a40a7692d3",
             "content": "sha256:4f4d571509f070b6b194d8cc2e2e4397b1c13948dd9445303efc599732feb22d",
             "locator": {
               "kind": "symbol",
@@ -76,15 +94,14 @@
       ]
     },
     "3": {
-      "note": "The validator's refusals are findings, and a stale reference anchor is one of them; only its reports stay report-only.",
+      "note": "The validator's refusals are findings, and a stale reference anchor is one of them; only its reports stay report-only.\n\nAnchor: `converted_knowledge_check`",
       "targets": [
         {
           "anchor": {
-            "blob": "2464d2d12704dfa0b90457ac3a62acf2212bedb8",
-            "content": "sha256:7faaa61a8f79c86f584b9769065b0fb54057f793bcd8c3adf57568bceb568bfd",
+            "blob": "ef73833b143decb50eb3949345e195a40a7692d3",
+            "content": "sha256:432553dfa98a325f9d0361c0ddf32e95cafddfc67051662ac1669087b332b674",
             "locator": {
-              "kind": "symbol",
-              "name": "converted_knowledge_check"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -92,15 +109,14 @@
       ]
     },
     "4": {
-      "note": "The runner's dispatch to this module.",
+      "note": "The runner's dispatch to this module.\n\nAnchor: `_converted_check`",
       "targets": [
         {
           "anchor": {
-            "blob": "acbadcd4888a7c17f2d92aed6961938cefde99d5",
-            "content": "sha256:ae3427375a45849eb0dc29cabe9a99cc597f3ae1c0aab770fc28c842fb79bdfb",
+            "blob": "0c9835c5bfa78c871ef403fc01be28bfb5f53998",
+            "content": "sha256:6327d4841a9b8a8f1890647a7deec14ee015c3bd6b9addfa59a5b544d36661c5",
             "locator": {
-              "kind": "symbol",
-              "name": "_converted_check"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/memory_quality/check.py"
           },
@@ -130,7 +146,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2464d2d12704dfa0b90457ac3a62acf2212bedb8",
+            "blob": "ef73833b143decb50eb3949345e195a40a7692d3",
             "content": "sha256:215ec4b99c44aff97b9eb3535f1dba09e2ceb0332d9ba4ba17cd371e9eacc32e",
             "locator": {
               "kind": "symbol",
@@ -141,7 +157,7 @@
         },
         {
           "anchor": {
-            "blob": "2464d2d12704dfa0b90457ac3a62acf2212bedb8",
+            "blob": "ef73833b143decb50eb3949345e195a40a7692d3",
             "content": "sha256:2ea7090ba8f226dac8a812a416add05ecbe607a0b29ca776b4ae8d61b1231d28",
             "locator": {
               "kind": "symbol",
@@ -153,25 +169,25 @@
       ]
     },
     "7": {
-      "note": "The check takes the base port and reports an unbuildable base as a finding.\n\nAnchor: `converted_knowledge_check`",
+      "note": "The check takes the base port and reports an unbuildable base as a finding.  Anchor: `converted_knowledge_check`",
       "targets": [
         {
           "anchor": {
-            "blob": "2464d2d12704dfa0b90457ac3a62acf2212bedb8",
-            "content": "sha256:dbe61d25412db3ca95db073cf15c9ee9d92ce8db5675165fd09a7ef428230979",
+            "blob": "ef73833b143decb50eb3949345e195a40a7692d3",
+            "content": "sha256:162e27ef3c05f6f21f2da9209dda01ce969d0a1e6f2d62a562343e1f145b8165",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "converted_knowledge_check"
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "2464d2d12704dfa0b90457ac3a62acf2212bedb8",
-            "content": "sha256:7faaa61a8f79c86f584b9769065b0fb54057f793bcd8c3adf57568bceb568bfd",
+            "blob": "ef73833b143decb50eb3949345e195a40a7692d3",
+            "content": "sha256:432553dfa98a325f9d0361c0ddf32e95cafddfc67051662ac1669087b332b674",
             "locator": {
-              "kind": "symbol",
-              "name": "converted_knowledge_check"
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -179,22 +195,38 @@
       ]
     },
     "8": {
-      "note": "An unbuildable base withholds base-dependent refusals; measurable states keep reporting.\n\nAnchor: `converted_knowledge_check`",
+      "note": "An unbuildable base withholds base-dependent refusals; measurable states keep reporting.  Anchor: `converted_knowledge_check`",
       "targets": [
         {
           "anchor": {
-            "blob": "2464d2d12704dfa0b90457ac3a62acf2212bedb8",
-            "content": "sha256:dbe61d25412db3ca95db073cf15c9ee9d92ce8db5675165fd09a7ef428230979",
+            "blob": "ef73833b143decb50eb3949345e195a40a7692d3",
+            "content": "sha256:162e27ef3c05f6f21f2da9209dda01ce969d0a1e6f2d62a562343e1f145b8165",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "converted_knowledge_check"
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "2464d2d12704dfa0b90457ac3a62acf2212bedb8",
-            "content": "sha256:7faaa61a8f79c86f584b9769065b0fb54057f793bcd8c3adf57568bceb568bfd",
+            "blob": "ef73833b143decb50eb3949345e195a40a7692d3",
+            "content": "sha256:432553dfa98a325f9d0361c0ddf32e95cafddfc67051662ac1669087b332b674",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Reader selection preserves direct Path callers and the supplied full-quality reader.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ef73833b143decb50eb3949345e195a40a7692d3",
+            "content": "sha256:162e27ef3c05f6f21f2da9209dda01ce969d0a1e6f2d62a562343e1f145b8165",
             "locator": {
               "kind": "symbol",
               "name": "converted_knowledge_check"

@@ -1,0 +1,29 @@
+{
+  "confirmed": {
+    "codeTree": "93cdd58cc49064f432e3345d261ff8902c2db25e",
+    "commit": "d0be84f714df97c4c4f63406dc5ba190fa53c325",
+    "role": "curator",
+    "statement": "The document agrees with the root declaration of 10000 unit and 2000 integration selected cases, preserving the collection guard.",
+    "task": "260928-MIK-L202",
+    "uncommitted": true
+  },
+  "document": "CONTRIBUTING.md",
+  "id": "DPD-78737N",
+  "origin": {
+    "handoff": {
+      "path": "curator-handoff-v2.json"
+    },
+    "handoffEntry": "dependent-1",
+    "leaf": "260928-MIK-L202",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-dependent/v1",
+  "stands_on": [
+    {
+      "blob": "ddd77babbaaddf51063d6e23856c0cadd142d461",
+      "kind": "file",
+      "path": "pyproject.toml"
+    }
+  ]
+}

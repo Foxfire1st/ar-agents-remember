@@ -155,14 +155,14 @@ No external source is required for this repository-owned blocker contract.
 
 
 
-> Retained earlier citation wording: - The integration lane declares test_terminal_blocker_reasons.py; membership is not execution evidence. [23]
+> Retained earlier citation wording: - The integration lane declares test_terminal_blocker_reasons.py; membership is not execution evidence.
 
 
 - The landing fixture and the public configuration the whole-tool cases build on. [24]
 
 
 
-> Retained earlier citation wording: - The lane manifest declares test_terminal_blocker_reasons.py in integration. Membership selects evidence and establishes no invocation. [25]
+> Retained earlier citation wording: - The lane manifest declares test_terminal_blocker_reasons.py in integration. Membership selects evidence and establishes no invocation.
 
 
 - The exact-consumer declaration that gives this module ownership for targeted selection: this module's entry inside the ownership catalog's repository-test-input mapping. [28]
@@ -201,6 +201,15 @@ not shifted: the module's definitions moved because the new cases are appended a
 `test_a_reclaimed_but_surviving_provider_runtime_reports_why_it_survived` `:341-381`. The module
 now has **ten** cases, not seven, and its lane row is
 `mcp/tests/test-evidence-lanes.toml:220` (it read `:177` when this card was written).
+
+
+
+
+
+
+
+
+
 
 - The integration lane declares test_terminal_blocker_reasons.py; membership is not execution evidence. [23]
 

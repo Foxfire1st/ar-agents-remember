@@ -152,7 +152,7 @@ No external domain claim is required.
 
 
 
-> Retained earlier citation wording: - The integration lane row the fail-closed manifest requires. Source caption: "mcp/tests/test_lifecycle_playthrough_end_to_end.py" [10]
+> Retained earlier citation wording: - The integration lane row the fail-closed manifest requires. Source caption: "mcp/tests/test_lifecycle_playthrough_end_to_end.py"
 
 
 
@@ -160,23 +160,26 @@ No external domain claim is required.
 
 
 
-> Retained earlier citation wording: - The lifecycle catalog lists this suite under checkpoint-landing and curator-coherence shared support. [11]
-
-
-
-- The integration-case budget this module's membership is accounted against. [12]
+> Retained earlier citation wording: - The lifecycle catalog lists this suite under checkpoint-landing and curator-coherence shared support.
 
 
 
 
-> Retained earlier citation wording: - The integration lane row the fail-closed manifest requires. Source caption: "mcp/tests/test_lifecycle_playthrough_end_to_end.py" [13]
+
+- The integration-case budget this module's membership is accounted against.  Anchor: `integration_case_budget` [12]
+
+
+> Retained earlier citation wording: - The integration lane row the fail-closed manifest requires. Source caption: "mcp/tests/test_lifecycle_playthrough_end_to_end.py"
 
 
 
 
-- The lifecycle catalog names this suite among the consumers of the checkpoint-landing and curator-coherence shared-support artifacts. [14]
 
-- The integration-case budget this module's membership is accounted against. [15]
+
+
+
+- The integration-case budget this module's membership is accounted against.  Anchor: `integration_case_budget` [15]
+
 
 ### Cross-Repo References
 
@@ -185,6 +188,24 @@ by the module's own fixture; no sibling repository or external system participat
 
 No meaningful cross-repo references found.
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 - The integration lane row the fail-closed manifest requires. Source caption: "mcp/tests/test_lifecycle_playthrough_end_to_end.py" [10]
 
 
@@ -192,3 +213,6 @@ No meaningful cross-repo references found.
 
 
 - The integration lane row the fail-closed manifest requires. Source caption: "mcp/tests/test_lifecycle_playthrough_end_to_end.py" [13]
+
+
+- The lifecycle catalog names this suite among the consumers of the checkpoint-landing and curator-coherence shared-support artifacts. [14]

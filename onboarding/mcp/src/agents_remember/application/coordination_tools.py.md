@@ -57,6 +57,8 @@ repo is disallowed or a path escapes the coordination root.
 - Coordination context resolver owns the actual context construction. [2]
 - `require_repo` and `require_within_coordination` (repo resolution and path confinement) now live in the shared `kernel/authority.py` module. [3]
 
+
+
 - `AuthorityError` is the authority-violation error type the guards raise. [4]
 
 

@@ -112,7 +112,7 @@ No external domain claim is required.
 
 
 
-> Retained earlier citation wording: - The lane registration. Source caption: "mcp/tests/test_task_document_body_lookup.py" [10]
+> Retained earlier citation wording: - The lane registration. Source caption: "mcp/tests/test_task_document_body_lookup.py"
 
 
 
@@ -123,5 +123,9 @@ This card covers test behavior only. There is no separate cross-repository proto
 installation involved.
 
 No meaningful cross-repo references found.
+
+
+
+
 
 - The lane registration. Source caption: "mcp/tests/test_task_document_body_lookup.py" [10]

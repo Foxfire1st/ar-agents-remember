@@ -10,11 +10,11 @@ The extracted role launcher: one row of controls that fills or accepts a selecti
 
 ## Code Commentary
 
-`RoleLauncher` follows TaskEntry children for its reference options, without reconstructing document/series joins, and composes document fields, override fields and the action bar. roleLauncherDisplay owns pure chosen/default labels, roleLauncherReadiness owns readiness predicates, and useLauncherSelectionRepair owns the document-then-override repair effects. The local field components render accessible selectors without visible titles, information chips and action buttons from the admitted selection and options. Selectors use `launcherSelect` from `grammar/viewTabLook`; chips and buttons take their look from the same shared tab definition. Start uses the selected-tab look and Refresh the unselected look. Role, agent, model, effort and selectable-feature hovers retain their complete chosen-or-default label, purpose and applicable default provenance. A document selector whose reference matches a selected option retains its complete document label, purpose and canonical identity in hover. When no option matches (`optionIndex` is empty), its hover names only the purpose — Sprint, Master or Task — not the visible empty placeholder or a document identity. Long selected values may ellipsize, but their recovered hover text does not.
+`RoleLauncher` follows TaskEntry children for its reference options, without reconstructing document/series joins, and composes document fields, override fields and the action bar. roleLauncherDisplay owns pure chosen/default labels, roleLauncherReadiness owns readiness predicates, and useLauncherSelectionRepair owns seeded document repair. Catalog arrivals no longer erase explicit agent/model/effort overrides. The local field components render accessible selectors without visible titles, information chips and action buttons from the admitted selection and options. Selectors use `launcherSelect` from `grammar/viewTabLook`; chips and buttons take their look from the same shared tab definition. Start uses the selected-tab look and Refresh the unselected look. Role, agent, model, effort and selectable-feature hovers retain their complete chosen-or-default label, purpose and applicable default provenance. A document selector whose reference matches a selected option retains its complete document label, purpose and canonical identity in hover. When no option matches (`optionIndex` is empty), its hover names only the purpose — Sprint, Master or Task — not the visible empty placeholder or a document identity. Long selected values may ellipsize, but their recovered hover text does not.
 
 The earlier ordinary task-needing role/sprint/master/task/agent/model/effort/one-feature/mode/Start/Refresh composition was measured as fitting one line at 1440px; that is retained layout evidence, not a new guarantee for the added step-up/status controls. Extra controls or narrower space wrap by whole controls, without an overflow menu; the strip is not an unconditional fixed-height or wide-nowrap container. Reply length still cannot grow it because execution/reply prose is absent. During preparation, the Start label carries the shared progress phase; failures retain the existing single actionable line. The mode and optional Instructions are chips, permission-bearing features are settings-owned chips, and selectable features share the row's selector. Service-tier disclosure keeps its test id as a shared chip; while the selected execution is stepped up, its Base label and hover explicitly deny that it is the applied tier.
 
-The Chats pane and document rail share this extracted owner. Bound callers hide references already determined by their selection and retain uncertainty/retry identity. Ordinary singleton and Projects bound rows prohibit a second open-request start; selected sprint/master Investigator rows retain their backend-admitted per-request exception. Choice ordering and start/options payloads retain their existing owners. A selected bound seat with status `held` is labeled “(held)” and counts as a live occupant, disabling another ordinary bound Start. That state extension does not change the shared visual authority or add execution prose. Explicit model and effort UI changes retain feature values; inherited invalid-catalog model/effort repair drops them, and an invalid explicit agent id clears the override. No second workspace list, report navigation or execution-prose surface is introduced.
+The Chats pane and document rail share this extracted owner. Bound callers hide references already determined by their selection and retain uncertainty/retry identity. Ordinary singleton and Projects bound rows prohibit a second open-request start; selected sprint/master Investigator rows retain their backend-admitted per-request exception. Choice ordering and start/options payloads retain their existing owners. RoleCatalogStatus displays per-part saved timestamps or unchecked-state explanations. While fresh options are pending it labels the displayed disk snapshot and its origin; these are catalog provenance, not execution replies. A selected bound seat with status `held` is labeled “(held)” and counts as a live occupant, disabling another ordinary bound Start. That state extension does not change the shared visual authority or add execution prose. Explicit model and effort UI changes retain feature values. A known unsupported catalog choice disables Start with its reason, while unknown parts preserve configured values for an unchecked host attempt; catalog answers do not prune the override. No second workspace list, report navigation or execution-prose surface is introduced.
 
 ## Current Contract
 
@@ -30,16 +30,21 @@ This account is bound to the candidate source, not a claim of a running serving 
 
 - The final Start guard joins backend startability, preparation and bound-seat occupancy. [1]
 
+
 - Bound mode omits the reference fields the selection already determines. [2]
 
+
 - Preparation is carried by the Start label rather than an extra ordinary status line. [3]
+
 
 
 - The visual grid keeps whole-control wrapping. [6]
 
 
 
+
 - The complete selected document label and identity survive truncation in hover; an empty or unmatched document selector instead names only its purpose. [7]
+
 
 
 ## Investigator scope and request identity
@@ -50,17 +55,22 @@ Ordinary singleton and Projects bound rows still adopt an open request and disab
 - Readiness retains ordinary singleton gating and the request-scoped exception. [5]
 
 
+
 ## Refreshed current evidence
 
 
-- The shared composition wires field sections, repair effects and the action bar. [4]
+- The shared composition wires field sections, seeded document repair, catalog provenance and the action bar; no catalog override-pruning effect remains. [4]
+
 
 
 - File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence. [8]
 
+
 - File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence. [9]
 
-- File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence. [10]
+
+- The shared launcher retains the reasoned StepUp/base-preview composition, runs seeded document repair only, and adds catalog provenance without pruning configured overrides. [10]
+
 
 - Worker/Curator typed review census, record-only exclusion and unknown history. [11]
 

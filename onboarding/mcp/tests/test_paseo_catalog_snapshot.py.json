@@ -1,0 +1,24 @@
+{
+  "path": "mcp/tests/test_paseo_catalog_snapshot.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Unknown and saved responses preserve files, make no bridge call, invent no error and carry no start decision.\n\nAnchor: `SavedCatalogRouteTests.test_route_reads_only_and_never_decides_a_start`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "415e58b7f127ea2dd3e799207cf0db6c09ed1e78",
+            "content": "sha256:08b5b755fe20fe72edee6c0f4102423b73b0b1bf920cb412e3369fe964826871",
+            "locator": {
+              "end": 56,
+              "kind": "line_range",
+              "start": 20
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

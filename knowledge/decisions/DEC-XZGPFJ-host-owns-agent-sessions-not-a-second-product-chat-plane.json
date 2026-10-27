@@ -31,13 +31,13 @@
     {
       "relation": "constrains",
       "target": {
-        "blob": "6a3f013bb62f4d45d60686439620c0c00718d314",
-        "content": "sha256:fd13901b63b884818ab4ff83a348e2348c54ed968c292052262368fc3a87febc",
+        "blob": "374d6d9650fe069cc8eb9ad69a39e036c1edfa82",
+        "content": "sha256:e7268b9f4c5403a6a21dbbab92cdcb9c1b618744aa3bb35686d800f61282bbf1",
         "locator": {
           "kind": "symbol",
           "name": "start_role"
         },
-        "path": "mcp/src/agents_remember/cli/paseo_role_tools.py"
+        "path": "mcp/src/agents_remember/cli/paseo_role_start.py"
       }
     },
     {
@@ -56,7 +56,7 @@
     "leaf": "260928-MIK-L113",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-decision/v1",
   "status": "active",
   "supersedes": []

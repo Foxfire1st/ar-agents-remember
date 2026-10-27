@@ -48,12 +48,12 @@
       ]
     },
     "3": {
-      "note": "The registry places this check first in closeout's pre-metadata phase.\n\nAnchor: `BEFORE_METADATA_REFRESH_CHECKS`",
+      "note": "The registry places this check first in closeout's pre-metadata phase.  Anchor: `BEFORE_METADATA_REFRESH_CHECKS`",
       "targets": [
         {
           "anchor": {
-            "blob": "acbadcd4888a7c17f2d92aed6961938cefde99d5",
-            "content": "sha256:d6de97e147d8e262922b1b7a1fed1346c158ac4683515916799ef798383a45b6",
+            "blob": "0c9835c5bfa78c871ef403fc01be28bfb5f53998",
+            "content": "sha256:6327d4841a9b8a8f1890647a7deec14ee015c3bd6b9addfa59a5b544d36661c5",
             "locator": {
               "kind": "file"
             },

@@ -103,14 +103,14 @@ No external source is required for this repository-owned classification proof.
 
 
 
-> Retained earlier citation wording: - The current lifecycle catalog declares this module as an exact consumer on four artifact rows: _user_settings_guard.py, curator_coherence_test_support.py, the Node package-lock fixture and writer_worklist_test_support.py. These are dependency declarations, not runtime fixture-consumption or execution evidence. [9]
+> Retained earlier citation wording: - The current lifecycle catalog declares this module as an exact consumer on four artifact rows: _user_settings_guard.py, curator_coherence_test_support.py, the Node package-lock fixture and writer_worklist_test_support.py. These are dependency declarations, not runtime fixture-consumption or execution evidence.
 
 
 
 
 
 
-> Retained earlier citation wording: - The integration lane row the fail-closed manifest requires. Source caption: "mcp/tests/test_closeout_projection_source_classification.py" [10]
+> Retained earlier citation wording: - The integration lane row the fail-closed manifest requires. Source caption: "mcp/tests/test_closeout_projection_source_classification.py"
 
 
 
@@ -128,7 +128,18 @@ by this focused module.
 
 - The fixture's repositories are real temporary Git repositories created per case, not mocks. [12]
 
-- The integration lane row the fail-closed manifest requires. Source caption: "mcp/tests/test_closeout_projection_source_classification.py" [10]
+
+
+
+
+
+
+
+
+
 
 
 - The current lifecycle catalog declares this module as an exact consumer on four artifact rows: _user_settings_guard.py, curator_coherence_test_support.py, the Node package-lock fixture and writer_worklist_test_support.py. These are dependency declarations, not runtime fixture-consumption or execution evidence. [9]
+
+
+- The integration lane row the fail-closed manifest requires. Source caption: "mcp/tests/test_closeout_projection_source_classification.py" [10]

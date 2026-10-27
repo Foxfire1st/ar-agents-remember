@@ -111,7 +111,9 @@ The generated route index lists the source files of this route and their cards.
 
 
 
+
 - **Historical source-bound reference account, not an operative override:** The register assigns distinct reset, restored and constant treatments. [19]
+
 
 
 
@@ -119,7 +121,9 @@ The generated route index lists the source files of this route and their cards.
 
 
 
+
 - The current closed register omits retired ambient-session/log owners while retaining closeout and worktree landing-chain cache resets. [28]
+
 
 
 - The synchronization owner projects canonical skills to the sole declared package target, preserving every declared-copy check without harness mirrors. [14]

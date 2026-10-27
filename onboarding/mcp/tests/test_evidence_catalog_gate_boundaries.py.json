@@ -71,11 +71,11 @@
       ]
     },
     "25": {
-      "note": "The lane row this module was appended to, in the lane list — appended rather than inserted mid-list.\n\nAnchor: `test_evidence_catalog_gate_boundaries`",
+      "note": "The lane row this module was appended to, in the lane list — appended rather than inserted mid-list.  Anchor: `test_evidence_catalog_gate_boundaries`",
       "targets": [
         {
           "anchor": {
-            "blob": "102c4550ab6429f44c8fb543d1d0662de66a1b8c",
+            "blob": "5276cd9583d9a33d9094edac37d82b768491aed9",
             "content": "sha256:66583e2395f029c41ed546bcfba81d8db83a928e36f0c3372e3eadc643a0ace8",
             "locator": {
               "end": 102,
@@ -88,7 +88,7 @@
         },
         {
           "anchor": {
-            "blob": "102c4550ab6429f44c8fb543d1d0662de66a1b8c",
+            "blob": "5276cd9583d9a33d9094edac37d82b768491aed9",
             "content": "sha256:1d0174394ac949359d686292321739390d691490cf94038d9e8f95e831d8624a",
             "locator": {
               "end": 104,
@@ -101,7 +101,7 @@
         },
         {
           "anchor": {
-            "blob": "102c4550ab6429f44c8fb543d1d0662de66a1b8c",
+            "blob": "5276cd9583d9a33d9094edac37d82b768491aed9",
             "content": "sha256:37887d6235acabbc2d0497958ebd21a90e6e39dcd35fe3666d712915446f13cf",
             "locator": {
               "end": 91,
@@ -115,11 +115,11 @@
       ]
     },
     "26": {
-      "note": "The two exact-scope consumer registrations this module obliged.\n\nAnchor: `test_evidence_catalog_gate_boundaries`",
+      "note": "The two exact-scope consumer registrations this module obliged.  Anchor: `test_evidence_catalog_gate_boundaries`",
       "targets": [
         {
           "anchor": {
-            "blob": "3c5993c94cf78973b3b39cfe7de9774c8aea6d1a",
+            "blob": "339dffc9c6794b5fe29fe6980e9e45603b344a09",
             "content": "sha256:6a77f5f75d151f8e877400f89c3e1f5cb8f793409e8fc72805f73f03f0d822a3",
             "locator": {
               "end": 108,
@@ -132,7 +132,7 @@
         },
         {
           "anchor": {
-            "blob": "3c5993c94cf78973b3b39cfe7de9774c8aea6d1a",
+            "blob": "339dffc9c6794b5fe29fe6980e9e45603b344a09",
             "content": "sha256:b297b1802ce34784596454866d69d42fc759190f0ff8db354597960d3ba45d63",
             "locator": {
               "end": 88,
@@ -150,7 +150,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "102c4550ab6429f44c8fb543d1d0662de66a1b8c",
+            "blob": "5276cd9583d9a33d9094edac37d82b768491aed9",
             "content": "sha256:66583e2395f029c41ed546bcfba81d8db83a928e36f0c3372e3eadc643a0ace8",
             "locator": {
               "end": 102,
@@ -168,10 +168,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3c5993c94cf78973b3b39cfe7de9774c8aea6d1a",
-            "content": "sha256:2ef9f4fb2001a5a7e3c6c57e1f8024560fb9047918864c81f348166500b64b08",
+            "blob": "339dffc9c6794b5fe29fe6980e9e45603b344a09",
+            "content": "sha256:813c5b76e0e2f4f07ac6f66968f8f7986ae9ee7434d12e988dc887d2ca6f8776",
             "locator": {
-              "end": 4018,
+              "end": 4036,
               "kind": "line_range",
               "start": 1
             },

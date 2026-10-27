@@ -16,7 +16,7 @@ Ruff keeps its syntax rewrites at Python 3.13 with one comment line stating that
 
 Pyright covers the checkout with its declared Python version at 3.14, with explicit import environments for source, verification support, tests and scripts. The selected interpreter is supplied by the quality owner. Coverage measurement includes branches and Python subprocesses for delivery reports; ordinary pytest is unmeasured. Product and verification package roots are classified separately, and the file-size detector remains armed.
 
-Pytest defaults to four workers and excludes the integration marker. It collects the repository's class naming convention, excludes imported test classes, treats xfail success strictly, and requires registered markers/configuration. **Budgets are `unit_case_budget = 10000` (`pyproject.toml:320`) and `integration_case_budget = 1000` (`pyproject.toml:321`)** — collected cases, including parametrization, enforced on the selected population. **Both values moved for `260915-KS-L7`, and the move is a merged-line sizing defect rather than a defect of either side:** the merged base `4eb2b199` collected **1138 unit cases against a ceiling of 1100** *before any L7 line*, and because `pytest_collection_finish` raises `UsageError` on an over-budget population the whole unit run executed **zero** tests. The official line alone at its own tip `8dd62345` collected 1014/1100 and the KS parent `7db50f8f` collected 1003/1100 — **both green** — so the sizing question was ruled on by the master's owning seat and is not re-litigated here; the raise is **headroom, not a target**, and the four earlier dated tradeoff entries above the pair are intact. The latest unit-only raise is L193's D460 direction from 6000 to 10000, after L54’s D299 direction from 5000 to 6000 and the earlier D226 direction from 4000 to 5000; each remains the developer-ruled headroom choice: the guard and integration ceiling remain unchanged, no case is removed or added by this change, and its dated block attributes prior unit growth to the maintained-invariant master. The block records historical base populations, not a post-sync measurement; whole-lane runtime is explicitly deferred to the master's one full suite rather than invented here. Other raises carry their protection, case-count, support-size and runtime tradeoffs. The single testpaths declaration is mcp/tests. Warning policy has three explicit third-party exceptions. Current marker declarations distinguish integration, evidence categories and the inherited fitness selector; the removed environment-gated runner and old vendor matrix are not current execution routes.
+Pytest defaults to four workers and excludes the integration marker. It collects the repository's class naming convention, excludes imported test classes, treats xfail success strictly, and requires registered markers/configuration. **Budgets are `unit_case_budget = 10000` (`pyproject.toml:333`) and `integration_case_budget = 2000` (`pyproject.toml:334`)** — collected cases, including parametrization, enforced on the selected population. **Both values moved for `260915-KS-L7`, and the move is a merged-line sizing defect rather than a defect of either side:** the merged base `4eb2b199` collected **1138 unit cases against a ceiling of 1100** *before any L7 line*, and because `pytest_collection_finish` raises `UsageError` on an over-budget population the whole unit run executed **zero** tests. The official line alone at its own tip `8dd62345` collected 1014/1100 and the KS parent `7db50f8f` collected 1003/1100 — **both green** — so the sizing question was ruled on by the master's owning seat and is not re-litigated here; the raise is **headroom, not a target**, and the four earlier dated tradeoff entries above the pair are intact. The latest unit-only raise is L193's D460 direction from 6000 to 10000, after L54’s D299 direction from 5000 to 6000 and the earlier D226 direction from 4000 to 5000; each remains the developer-ruled headroom choice: the guard remains unchanged; those earlier unit-only raises neither added nor removed cases and left integration unchanged; D579 now raises integration to 2000. L193’s earlier dated unit-raise block attributes prior unit growth to the maintained-invariant master. The block records historical base populations, not a post-sync measurement; whole-lane runtime is explicitly deferred to the master's one full suite rather than invented here. Other raises carry their protection, case-count, support-size and runtime tradeoffs. The single testpaths declaration is mcp/tests. Warning policy has three explicit third-party exceptions. Current marker declarations distinguish integration, evidence categories and the inherited fitness selector; the removed environment-gated runner and old vendor matrix are not current execution routes.
 
 **`260915-KS-L24` then raised the pair again — `unit_case_budget` 1250 -> 1500 and `integration_case_budget` 340 -> 400 — by the master's owning seat, through the dated block at `pyproject.toml:286-303`.** It is the same class of event as the L7 raise above and is recorded the same way: measured at the `ar/260915-ks-l11` candidate *before* this raise, the unit population was **1250 collected against a ceiling of 1250** and integration 322 against 340, so L11 landed exactly **on** the unit ceiling and its worker consolidated the whole KS-R11 evidence into 17 cases rather than raise it. Over-budget collection is not a slow gate but no gate — `pytest_collection_finish` refuses the ENTIRE unit population (`unit suite has N cases; budget is 1250`) — so the increment's remaining requirement leaves could not have collected a unit case at all. The raise is **headroom sized for those leaves, not a target**: the dated block states the case-count delta (+250 unit, +60 integration, 0 consumed at the raise), the runtime cost it could state (the L11 unit population of 1250 cases inside a 490.73s combined run under the pinned `-n=4`), and that it licenses no weaker case. The `260915-KS-L24` candidate consumes 18 of the unit headroom (1268 collected) and 0 of the integration headroom (322 collected).
 
@@ -46,28 +46,60 @@ No configured external domain documentation applies.
 
 
 
-- The enforced collected-case pair is 10,000 unit/1,000 integration under L193's D460; the earlier 6,000/1,000 and 5,000/1,000 pairs are historical, and the unchanged collection guard retains its own authority. [11]
+
+
+
+- The current enforced pair is 10000 unit and 2000 integration under D579; earlier 10000/1000, 6000/1000 and 5000/1000 readings are historical. The collection guard retains its authority. [11]
+
 
 
 
 - Python lint policy and signature exception. [1]
+
+
 - Type-checker scope and import environments. [2]
+
+
 - Measurement and operational package ownership. [3]
+
+
 - Radon reports. [4]
+
+
 - The pytest configuration section the budget pair lives in. [5]
 
 
-- **The declared budget pair as the file now declares it — `unit_case_budget` 10000 / `integration_case_budget` 1000, the latest unit ceiling raised from 6000 to 10000 by L193's D460 direction, following L54’s D299 raise from 5000 and the earlier D226 4000-to-5000 raise; the integration ceiling remains unchanged. The prior pair was raised from 3000 / 600 by `260918-TSIP-L13`'s second developer-ruled raise on 2026-09-20; that earlier pair had itself been raised from 2300 / 400 by `260918-TSIP-L7` on 2026-09-19, and from 2200 / 400 before that by the truth-coverage census and staged-migration leaf over its own measured 2206-case candidate.** The earlier raises this row has carried are retained as the history they are: this candidate's own owning seat moved 1500 -> 1600, the merge onto the moved super line moved it to 2200 over a 2035-case population, and `260915-KS-L21` moved it to **2300** over a 2206-case population. Earlier dated population measurements remain inherited history, not re-executed or newly certified here. [6]
+
+
+
+
+- The current root declaration is unit_case_budget = 10000 and integration_case_budget = 2000. D579 raises only integration from 1000 to 2000; the dated source block records the measured scenario runtimes and unchanged over-budget refusal directions. Earlier unit-only raises and their population measurements remain historical: **The earlier declared budget pair — `unit_case_budget` 10000 / `integration_case_budget` 1000, the latest unit ceiling raised from 6000 to 10000 by L193's D460 direction, following L54’s D299 raise from 5000 and the earlier D226 4000-to-5000 raise; the integration ceiling remained unchanged during those earlier unit raises. The prior pair was raised from 3000 / 600 by `260918-TSIP-L13`'s second developer-ruled raise on 2026-09-20; that earlier pair had itself been raised from 2300 / 400 by `260918-TSIP-L7` on 2026-09-19, and from 2200 / 400 before that by the truth-coverage census and staged-migration leaf over its own measured 2206-case candidate.** The earlier raises this row has carried are retained as the history they are: this candidate's own owning seat moved 1500 -> 1600, the merge onto the moved super line moved it to 2200 over a 2035-case population, and `260915-KS-L21` moved it to **2300** over a 2206-case population. Earlier dated population measurements remain inherited history, not re-executed or newly certified here. [6]
+
+
 
 
 - **The dated merge entry that carries both lines' raise history verbatim — this master's `unit 1100 -> 1250`, then `1250 -> 1500` and `integration 300 -> 340`, then `1500 -> 1600` — beside the rule that each axis starts from the higher of the two lines' values and is then measured.** [7]
+
+
 - **The dated block `260915-KS-L21` added immediately above the pair — measured 2158 collected at the base `a7076008`, 48 unit cases added by this leaf, 2206 collected against 2200, and the raise to 2300 sized for L22/L23 rather than filled — together with the integration measurement (394 against 400, unchanged) that the same block reports.** [8]
+
+
 - Warning exceptions and current evidence markers; the anchor is one of the three third-party exceptions the setting carries, because the setting name itself occurs three times in the file (twice inside the comments explaining it) and cannot anchor a unique claim. [9]
+
+
 
 
 - Budgets, populations, collection and strictness, including the dated ceiling policy and tradeoff blocks. [10]
 
 
+
 ### Cross-Repo References
 
 No cross-repository implementation is claimed.
+
+### Integration headroom
+
+On 2026-10-26, the integration ceiling rises from 1000 to 2000; unit remains 10000. The source-file cases protect Git listing, bounded reads and readable excluded citations. The original 16-case shape measured 18.56 s and independently 20.15 s; grouping preserved its scenarios in four cases and 14 subtests at 19.70 s. The two link-class regressions produce four cases and 16 subtests: v2 measured 27.47 s and v3 38.20 s. No case was weakened or moved to the unit lane. Both over-budget refusal directions remain enforced. These are scenario-run measurements, not whole-suite runtime or a claimed speedup.
+
+
+- The dated raise states the headroom, measured scenario costs and preserved refusal directions. [12]

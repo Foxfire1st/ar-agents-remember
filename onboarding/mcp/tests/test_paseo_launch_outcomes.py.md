@@ -16,10 +16,15 @@ The launch's outcomes against the fake bridge: what is written to a receipt, whi
 
 A refusal is asserted together with the world being unchanged, so a refusal that left a seat behind fails. The oversized first message is sent as data, not truncated into the prompt path.
 
+## Fresh catalog reads before outcomes
+
+A new start asks catalog metadata before the retained holder/refusal, archive or create sequence. The refusal cases still preserve receipts and create or archive no agent; the extra catalog question is a read, not a changed launch outcome.
+
 ## Evidence
 
 ### Repo-Internal References
 
 - Every runtime answer is written to the receipt and an unusable one leaves the launch retryable. [1]
+
 
 - A repeat converges on one agent; a conflict refuses and changes nothing, naming the holder it found. [2]

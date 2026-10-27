@@ -16,7 +16,7 @@ Documents landing.commitCheckTimeoutSeconds: positive integer, default 900, rere
 
 The user file is installed read-only and its folder closed to new/removed entries. Opening them for editing and closing them again are explicit user operations; the product does not relax permissions by itself. The one product write is the explicit upgrade-user-settings move. server_info reads live modes and reports exact-path edit/close commands without changing any file byte or permission. The reference spells those commands for XDG_CONFIG_HOME and quoted paths, not a grant to a role agent.
 
-Paseo runtime is one shared per-use configuration, with no fallback to old per-harness blocks. Missing runtime and unknown keys have named refusal behavior. Host catalog data supplies actual agent kinds, models, modes and features. Role and per-level knobs merge at field granularity, with retained source/provider/model provenance; unknown settings and conflicting effective speed aliases are not silently normalized into authority.
+Paseo runtime is one shared per-use configuration, with no fallback to old per-harness blocks. Missing runtime and unknown keys have named refusal behavior. Each launcher view and start asks the host for current catalog parts. A failed part may use its timestamped last successful answer from the shared disk store; without either answer the configured choice is sent unchecked. Choice IDs or labels match without case, including host-supplied speed labels. The pending launcher displays saved choices but Start waits for fresh options; creation refreshes metadata and asks only for the chosen model's features. Role and per-level knobs merge at field granularity, with retained source/provider/model provenance; unknown settings and conflicting effective speed aliases are not silently normalized into authority.
 
 Legacy retirement, launchArgs/promptKeywords/sessionCommands, native command/model/effort delivery fields, agentNotifier/supervisor/expectations, and concurrency limits remain accepted only where the reference says so, but are unread or unenforced and reported by server_info. The removed supervisor has no current redelivery budget, cadence, escalation ladder or emergency setting taught by this card. Caller spend overrides, current host role settings and unused compatibility fields are distinct surfaces; no removed spawn tool or adapter command is restored.
 
@@ -32,7 +32,9 @@ The role settings reference now documents a single user-owned `stepUp` alternati
 - Five settings homes/cadences, exact user-owned open/close commands and nonmutating live-mode reporting are declared by the current reference. [4]
 
 
+
 - The complete reference separates current host role/features from accepted-but-unused retired settings and product answer authority. [5]
+
 
 
 No external Domain Documentation source or fresh executed acceptance is inferred.
@@ -43,7 +45,9 @@ No external Domain Documentation source or fresh executed acceptance is inferred
 
 
 
+
 - The same `orchestration.roles` family admits the non-seat capability id `review-presenter`: every rule above validates its row, it is never dispatchable as a lifecycle seat, and it applies `harness`, `model`, `effort`, `mode`, `serviceTier`, `featureValues` and `notes` through the native launch. A row naming `stepUp` alone refuses that capability's launch by name because it owns no seat replacement ladder. [7]
+
 
 
 **L184 — NEW-R192-EXTRA-ARGS.** This is the document that states what the settings file's keys mean, so a new key has to be described here rather than inferred from code. The obligation this leaf records for this place is stated in the invariant named here; the card's earlier account of this file stands, and this paragraph adds what the change made true.

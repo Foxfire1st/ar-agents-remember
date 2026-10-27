@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "edb37b70ea9736171b2dd51725691a69d0813b9d",
+        "blob": "43f9bd6748e5bd6ae9d7dd9310202824e7060617",
         "content": "sha256:b2cb082cd1c397c7167fc80221058d3c535ab06ad08f6934d5e789b5f75795dc",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "edb37b70ea9736171b2dd51725691a69d0813b9d",
+        "blob": "43f9bd6748e5bd6ae9d7dd9310202824e7060617",
         "content": "sha256:cd7a16323f92584da8e2d0d1497e7048d56237f96acc67955f7e784e87f65ff0",
         "locator": {
           "kind": "symbol",
@@ -43,24 +43,24 @@
       "targets": [
         {
           "anchor": {
-            "blob": "edb37b70ea9736171b2dd51725691a69d0813b9d",
+            "blob": "43f9bd6748e5bd6ae9d7dd9310202824e7060617",
             "content": "sha256:21bbcd76d53720f4d4624dd2b4126c2764099f06dbcf27d21d34f0a956758f89",
             "locator": {
-              "end": 395,
+              "end": 399,
               "kind": "line_range",
-              "start": 379
+              "start": 383
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "c4429436521c8e8b49ccbbaf575db813992b182d",
+            "blob": "7e159b5edd1a237f0d4ad5b8153b6542d6affa4e",
             "content": "sha256:f74296314bb403b371679681d3bca7c7ec9aa06fdb271bd688a6b753fab04114",
             "locator": {
-              "end": 227,
+              "end": 229,
               "kind": "line_range",
-              "start": 197
+              "start": 199
             },
             "path": "mcp/tests/test_mik_r196_bootstrap_delivery.py"
           },

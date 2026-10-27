@@ -98,12 +98,12 @@ No configured domain documentation could be checked.
 
 - The shared fixture every case builds from. [18]
 
-- The lane registration that makes the repository's manifest load (this module's row inside the lane, after the `KS-R03` insertions). [19]
 
 
 
 
-- The fixture's registered stable contract and evidence node. Source caption: `knowledge-identity-branching-fixture` [20]
+
+
 
 
 
@@ -115,3 +115,12 @@ No cross-repository contract is established by this file.
 No cross-repository behavior is implemented in this file.
 
 No meaningful cross-repo references found.
+
+
+
+
+
+- The lane registration that makes the repository's manifest load (this module's row inside the lane, after the `KS-R03` insertions).  Anchor: `test_knowledge_store` [19]
+
+
+- The fixture's registered stable contract and evidence node. Source caption: `knowledge-identity-branching-fixture` [20]

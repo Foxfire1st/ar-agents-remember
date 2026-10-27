@@ -492,7 +492,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a4cb0ce3f5f3f488c8ad8313b8063d4a8218871e",
+            "blob": "f3bf4bfa27b8bfd44cd242540d16a2dbf31ec1c4",
             "content": "sha256:b9c3b6fbb6f4b5ae523ee6888de143b18da1674d8d42ec868401b25daea26060",
             "locator": {
               "kind": "symbol",
@@ -504,7 +504,7 @@
         },
         {
           "anchor": {
-            "blob": "a4cb0ce3f5f3f488c8ad8313b8063d4a8218871e",
+            "blob": "f3bf4bfa27b8bfd44cd242540d16a2dbf31ec1c4",
             "content": "sha256:d66282011e6104457e201a03a8626244577dc026812a91ef41972743328fa8d1",
             "locator": {
               "kind": "symbol",
@@ -516,7 +516,7 @@
         },
         {
           "anchor": {
-            "blob": "a4cb0ce3f5f3f488c8ad8313b8063d4a8218871e",
+            "blob": "f3bf4bfa27b8bfd44cd242540d16a2dbf31ec1c4",
             "content": "sha256:daf3217ecae8b4eaad292db942e50c17acee95b05ae749a557801f04457bc3a2",
             "locator": {
               "kind": "symbol",
@@ -528,7 +528,7 @@
         },
         {
           "anchor": {
-            "blob": "a4cb0ce3f5f3f488c8ad8313b8063d4a8218871e",
+            "blob": "f3bf4bfa27b8bfd44cd242540d16a2dbf31ec1c4",
             "content": "sha256:9e419dfdd31128ccf5ceac3e59beb60b4635163009e3fb334f5fa77592dc182c",
             "locator": {
               "kind": "symbol",
@@ -3207,7 +3207,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a4cb0ce3f5f3f488c8ad8313b8063d4a8218871e",
+            "blob": "f3bf4bfa27b8bfd44cd242540d16a2dbf31ec1c4",
             "content": "sha256:306f6286876759fdd98fa31ee60140a06b129e5d528ab0d843fc5dcea6300b09",
             "locator": {
               "kind": "symbol",
@@ -3311,12 +3311,12 @@
       ]
     },
     "276": {
-      "note": "The controller's informational input to the checklist.\n\nAnchor: `_without_proof`",
+      "note": "The controller's informational input to the checklist.  Anchor: `_without_proof`",
       "targets": [
         {
           "anchor": {
-            "blob": "a4cb0ce3f5f3f488c8ad8313b8063d4a8218871e",
-            "content": "sha256:a2df6307f79b0a5282c67184a98d37a2d5fb71ad24fefd455d684627e7c5a73c",
+            "blob": "f3bf4bfa27b8bfd44cd242540d16a2dbf31ec1c4",
+            "content": "sha256:86b9f991a82d2cf8b7a6604799d421f5a3c8a07dec010204994f79f6296011e1",
             "locator": {
               "kind": "file"
             },
@@ -3439,7 +3439,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a4cb0ce3f5f3f488c8ad8313b8063d4a8218871e",
+            "blob": "f3bf4bfa27b8bfd44cd242540d16a2dbf31ec1c4",
             "content": "sha256:121580f2c2ff5e13ae6e5ac2a6c6735a48e9a9c7effc23a0d653b8fa42d3978f",
             "locator": {
               "kind": "symbol",
@@ -3595,11 +3595,11 @@
       ]
     },
     "288": {
-      "note": "The curator run's dispatch between the history-file gate and today's gate.\n\nAnchor: `onboarding_trace_gate_for_context`",
+      "note": "The curator run's dispatch between the history-file gate and today's gate.  Anchor: `onboarding_trace_gate_for_context`",
       "targets": [
         {
           "anchor": {
-            "blob": "a4cb0ce3f5f3f488c8ad8313b8063d4a8218871e",
+            "blob": "f3bf4bfa27b8bfd44cd242540d16a2dbf31ec1c4",
             "content": "sha256:6463ae48eea95244cea5e8b82e5a35b01859fb3bd5d564f7493aa05b81af995b",
             "locator": {
               "kind": "symbol",
@@ -4609,7 +4609,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a4cb0ce3f5f3f488c8ad8313b8063d4a8218871e",
+            "blob": "f3bf4bfa27b8bfd44cd242540d16a2dbf31ec1c4",
             "content": "sha256:e3eed057ca2ce1987b93c26ff3a0d4086762ea0473199bc965a64601abdf36a8",
             "locator": {
               "kind": "symbol",
@@ -5556,7 +5556,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a4cb0ce3f5f3f488c8ad8313b8063d4a8218871e",
+            "blob": "f3bf4bfa27b8bfd44cd242540d16a2dbf31ec1c4",
             "content": "sha256:58c69b529ff72df2527aa7718489f45d33129774eb5e9b546e4a2384b09acda8",
             "locator": {
               "kind": "symbol",
@@ -5568,7 +5568,7 @@
         },
         {
           "anchor": {
-            "blob": "a4cb0ce3f5f3f488c8ad8313b8063d4a8218871e",
+            "blob": "f3bf4bfa27b8bfd44cd242540d16a2dbf31ec1c4",
             "content": "sha256:f46bff14ccf15ad96dfaf4add6284831b1be86fc914733e91c17558c139f1fdb",
             "locator": {
               "kind": "symbol",
@@ -5811,7 +5811,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a4cb0ce3f5f3f488c8ad8313b8063d4a8218871e",
+            "blob": "f3bf4bfa27b8bfd44cd242540d16a2dbf31ec1c4",
             "content": "sha256:1e4695090e86243d29edfa20d74d1f551cd102d5e79638d560e9fe6a6c6fbf17",
             "locator": {
               "kind": "symbol",
@@ -7253,7 +7253,7 @@
       ]
     },
     "455": {
-      "note": "Canonical task/contract admission derives scoped reader roots; the admitted leaf base is resolved independently for landing observations and is passed by controller and drift adapter; the answer carries bounded cut/add rows without changing validator classification.\n\nAnchor: `task_scoped_mcp_config_for_reader`, `leaf_base_request`, `leaf_base_port`, `_bounded_quality_response`",
+      "note": "Canonical task/contract admission derives scoped reader roots; the admitted leaf base is resolved independently for landing observations and is passed by controller and drift adapter; the answer carries bounded cut/add rows without changing validator classification.  Anchor: `task_scoped_mcp_config_for_reader`, `leaf_base_request`, `leaf_base_port`, `_bounded_quality_response`",
       "targets": [
         {
           "anchor": {
@@ -7293,7 +7293,7 @@
         },
         {
           "anchor": {
-            "blob": "a4cb0ce3f5f3f488c8ad8313b8063d4a8218871e",
+            "blob": "f3bf4bfa27b8bfd44cd242540d16a2dbf31ec1c4",
             "content": "sha256:ad94b61145628f97b362b95667d27fadf055c3a23b9246e7949920b6ea06065e",
             "locator": {
               "kind": "symbol",
@@ -7809,12 +7809,12 @@
         },
         {
           "anchor": {
-            "blob": "a4cb0ce3f5f3f488c8ad8313b8063d4a8218871e",
+            "blob": "f3bf4bfa27b8bfd44cd242540d16a2dbf31ec1c4",
             "content": "sha256:ad94b61145628f97b362b95667d27fadf055c3a23b9246e7949920b6ea06065e",
             "locator": {
-              "end": 655,
+              "end": 596,
               "kind": "line_range",
-              "start": 641
+              "start": 582
             },
             "path": "mcp/src/agents_remember/application/memory_quality/controller.py"
           },
@@ -7827,14 +7827,14 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4f542fc6a6101512a8a4688f8bd109a5ae5c55f1",
-            "content": "sha256:f35d356bc13c89cc4e718183a02541643922372499f979e9d381e03edafacf04",
+            "blob": "374d6d9650fe069cc8eb9ad69a39e036c1edfa82",
+            "content": "sha256:8a6dce4cb2f7d02a5d980359ea731ad903668ac7fc77cd33091e65a6ac2ded9d",
             "locator": {
-              "end": 406,
+              "end": 156,
               "kind": "line_range",
-              "start": 328
+              "start": 77
             },
-            "path": "mcp/src/agents_remember/cli/paseo_role_tools.py"
+            "path": "mcp/src/agents_remember/cli/paseo_role_start.py"
           },
           "kind": "code"
         },
@@ -7853,12 +7853,12 @@
         },
         {
           "anchor": {
-            "blob": "f8cfe435ca6fbe3bbe12080957f343453ad78be9",
+            "blob": "9bb74647f6b0b1b06178972710d51364539d642f",
             "content": "sha256:a467a526097475301964f25efa8803cbe3b101678f5c1aa2005a075c8d8983ef",
             "locator": {
-              "end": 898,
+              "end": 905,
               "kind": "line_range",
-              "start": 740
+              "start": 747
             },
             "path": "mcp/src/agents_remember/cli/role_launch_routes.py"
           },
@@ -7982,12 +7982,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a4cb0ce3f5f3f488c8ad8313b8063d4a8218871e",
+            "blob": "f3bf4bfa27b8bfd44cd242540d16a2dbf31ec1c4",
             "content": "sha256:1a7faacc05dc85860b5dd8d2b4ac7ef91f3bf89f608671eb094f76faaf4db2b8",
             "locator": {
-              "end": 966,
+              "end": 907,
               "kind": "line_range",
-              "start": 919
+              "start": 860
             },
             "path": "mcp/src/agents_remember/application/memory_quality/controller.py"
           },
@@ -8040,8 +8040,8 @@
         },
         {
           "anchor": {
-            "blob": "22c18d8af149dc6c56458157e5fc782db0309e51",
-            "content": "sha256:e17e9179619486b93fb4f51348083b30761ba19a06cd23c86050b7d323221a49",
+            "blob": "6295b3c90a86ff77e4b13ec5bab3ab1830114d78",
+            "content": "sha256:0f905b1146695b02aa37ee2020bd2bcde7ef88e9de252981eb5a0b2cedbf220a",
             "locator": {
               "kind": "file"
             },
@@ -8100,7 +8100,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "98f8cd5791ea2314f54ffb009e3f7c5c87558652",
+            "blob": "2b81ba0f28f7d716c30f1dca2090ea75b350c3cb",
             "content": "sha256:eb907bdbaa4f47a927917af1d24e656d22c72fa77db96b7481782ce7ad58bb85",
             "locator": {
               "kind": "symbol",
@@ -8260,8 +8260,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a4cb0ce3f5f3f488c8ad8313b8063d4a8218871e",
-            "content": "sha256:a2df6307f79b0a5282c67184a98d37a2d5fb71ad24fefd455d684627e7c5a73c",
+            "blob": "f3bf4bfa27b8bfd44cd242540d16a2dbf31ec1c4",
+            "content": "sha256:86b9f991a82d2cf8b7a6604799d421f5a3c8a07dec010204994f79f6296011e1",
             "locator": {
               "kind": "file"
             },
@@ -8659,10 +8659,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "46fca51f33906e050ca2e132dc6c7c80f4a714fd",
-            "content": "sha256:516612cba099bb00223a25164dd0e72c5f00034c47d5223d095b1420deced494",
+            "blob": "0e185e049a5486c5af924b189c89f7aea3847da8",
+            "content": "sha256:fe2c9c9853b4fe5448816a275677328298baaedf989141461565f4781ad80948",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "initialize_role_settings"
             },
             "path": "mcp/src/agents_remember/application/user_settings_init.py"
           },
@@ -8670,11 +8671,10 @@
         },
         {
           "anchor": {
-            "blob": "46fca51f33906e050ca2e132dc6c7c80f4a714fd",
-            "content": "sha256:b4ddcf4a6b053e14bc4a2bdc4e286138fb7723752d9bc5bec0cd88992e96969a",
+            "blob": "0e185e049a5486c5af924b189c89f7aea3847da8",
+            "content": "sha256:0da753f8e179a72a8aa7ea135ba4b6da2b459cfe863ab2a6e1a4fd17e36e6541",
             "locator": {
-              "kind": "symbol",
-              "name": "initialize_role_settings"
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/application/user_settings_init.py"
           },
@@ -8771,6 +8771,57 @@
               "start": 102
             },
             "path": "mcp/src/agents_remember/application/knowledge_worklist/linkage.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "519": {
+      "note": "Preview admission reuses the registry and scope controller.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8beb56e7ac09f840d461d70e1211b91ed27f8c7e",
+            "content": "sha256:81fc9d805f6e5d6eda7350fd0665675fd20648c396832ebf3bcd21943441cd52",
+            "locator": {
+              "kind": "symbol",
+              "name": "start_citation_preview"
+            },
+            "path": "mcp/src/agents_remember/application/memory_quality/citation_runs.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "520": {
+      "note": "Run identity includes operation and selection.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "43b091711c6ff4cc99e2a14a2aae53c94e0146cf",
+            "content": "sha256:06cb7125dc8179179670e65165110453332938e89d4109a6ce0c74c4fd324bec",
+            "locator": {
+              "kind": "symbol",
+              "name": "QualityRunIdentity"
+            },
+            "path": "mcp/src/agents_remember/application/memory_quality/runs.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "521": {
+      "note": "Shared budget accounting is serialized.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2b81ba0f28f7d716c30f1dca2090ea75b350c3cb",
+            "content": "sha256:298df489896a0e1cf655522ee0eaa00cec9114cae3c2f46a1e1ec6eb7d589846",
+            "locator": {
+              "kind": "symbol",
+              "name": "_serialized_budget"
+            },
+            "path": "mcp/src/agents_remember/application/tool_answer_log.py"
           },
           "kind": "code"
         }
@@ -9128,7 +9179,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "806f87dacbd41bb3a7c9c2fa4c012db6332d673b",
+            "blob": "f44c8d99dcf91688bcc70c6659a03fbf91c40a5e",
             "content": "sha256:8d2cdc2c8974142bc9972b5768feccd855dacd33a33b7ed6cc31a21a9fdaf4bd",
             "locator": {
               "kind": "symbol",
@@ -9140,7 +9191,7 @@
         },
         {
           "anchor": {
-            "blob": "806f87dacbd41bb3a7c9c2fa4c012db6332d673b",
+            "blob": "f44c8d99dcf91688bcc70c6659a03fbf91c40a5e",
             "content": "sha256:6f59dd1ce2de981f4831d18db96083f8b33665595c83a8a5042db183f0a47d72",
             "locator": {
               "kind": "symbol",

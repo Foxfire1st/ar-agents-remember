@@ -19,18 +19,23 @@ This answer builder does not publish role facts: the obsolete post-answer plugin
 ## Evidence
 
 - Receipt identity, status, disclosure and conditional remedy all derive from saved state. [1]
+
 - Public facade delegates to this extracted owner. [2]
+
 - Registered tool test source requires same-request recovery text. [3]
 - Ordinary rejection retains new-request advice. [4]
 
 
 - On valid saved receipt context, role-facts publication belongs to pre-launch/replay and receipt-aware resume, not to the post-answer projection; filesystem/runtime publication is best effort, not host execution or plugin-consumption evidence. [5]
 
+
 ## The continuation a bootstrap answer names
 
 For Bootstrap the answer independently adds the dashboard address result and the host chat route. `dashboardAddress` is published only when its origin answers and the dashboard owner's action is not `failed` (including a `lock-held`/skipped ensure result when the origin answers); running `nextAction` uses that dashboard address or names its failure. `chatAddress` is derived from the configured embed frame base URL, the bridge-reported server id and the receipt agent id; this path does not HTTP-probe the chat page and is not gated by the dashboard result. Identity and status still come from the saved receipt. This is the Architect-admitted distinction, not a rendered-page or native execution witness.
 
 - The receipt-derived answer that adds the continuation for the free agent. [6]
+
 - A bootstrap start answers with its seat and the place it is continued, and a dashboard that does not answer is reported instead of published. [7]
+
 
 - Dashboard publication requires the owner/origin result; host chat independently derives its route from embed, reported server id and receipt agent id without an HTTP chat-page probe. [8]

@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "4e5d18cc4fa53ab8660c051d343250f6261ad4c7",
+        "blob": "a8d4a67d35b664148541468ac88e4d4b7e48bfd4",
         "content": "sha256:36553ea2f6b5acc2ed882d02f71eb91baf557355edfe3f524305ca6669fc0d86",
         "locator": {
           "kind": "symbol",
@@ -26,8 +26,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4e5d18cc4fa53ab8660c051d343250f6261ad4c7",
-            "content": "sha256:a428f205170395698193d59724a37939a5d33279d5af0e75e4e87cefb9377a00",
+            "blob": "a8d4a67d35b664148541468ac88e4d4b7e48bfd4",
+            "content": "sha256:354b52757fad79276e4088a2283e445bbb9e6c1b4dd171fff275a46a0f45c5bf",
             "locator": {
               "kind": "file"
             }
@@ -41,12 +41,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4e5d18cc4fa53ab8660c051d343250f6261ad4c7",
+            "blob": "a8d4a67d35b664148541468ac88e4d4b7e48bfd4",
             "content": "sha256:7e7417f305e99bebbb282e4c928b98eba9c576375a946033e4ec6a46673e4f5b",
             "locator": {
-              "end": 538,
+              "end": 537,
               "kind": "line_range",
-              "start": 400
+              "start": 399
             }
           },
           "kind": "test"
@@ -58,8 +58,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4e5d18cc4fa53ab8660c051d343250f6261ad4c7",
-            "content": "sha256:a428f205170395698193d59724a37939a5d33279d5af0e75e4e87cefb9377a00",
+            "blob": "a8d4a67d35b664148541468ac88e4d4b7e48bfd4",
+            "content": "sha256:354b52757fad79276e4088a2283e445bbb9e6c1b4dd171fff275a46a0f45c5bf",
             "locator": {
               "kind": "file"
             }

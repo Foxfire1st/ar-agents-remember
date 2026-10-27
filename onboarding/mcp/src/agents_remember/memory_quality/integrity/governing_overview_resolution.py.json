@@ -117,16 +117,16 @@
       ]
     },
     "8": {
-      "note": "The consumer: inside `_attach_curator_checklist` the findings are extended into the gated curator repair set, and the counts are published on the response as `governingOverviewResolution` for the curator's loop.\n\nAnchor: `check_governing_overview_resolution`; \"governingOverviewResolution\"",
+      "note": "The consumer: inside `_attach_curator_checklist` the findings are extended into the gated curator repair set, and the counts are published on the response as `governingOverviewResolution` for the curator's loop.  Anchor: `check_governing_overview_resolution`; \"governingOverviewResolution\"",
       "targets": [
         {
           "anchor": {
-            "blob": "a4cb0ce3f5f3f488c8ad8313b8063d4a8218871e",
+            "blob": "f3bf4bfa27b8bfd44cd242540d16a2dbf31ec1c4",
             "content": "sha256:902f0767b6abf83f5b1e68168cc93585d397f95feb476983899295c2cbe3002d",
             "locator": {
-              "end": 708,
+              "end": 649,
               "kind": "line_range",
-              "start": 682
+              "start": 623
             },
             "path": "mcp/src/agents_remember/application/memory_quality/controller.py"
           },

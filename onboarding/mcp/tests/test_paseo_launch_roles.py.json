@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "5a0356371a5b933f4b5379797802559e0f9f22e0",
+        "blob": "d09cdc288861533fd56cd32869aedacf27642698",
         "content": "sha256:6f8f73bbd0ca2b47008d31312529a915e665f412e8eeb3e58b2829507fd558f5",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "5a0356371a5b933f4b5379797802559e0f9f22e0",
+        "blob": "d09cdc288861533fd56cd32869aedacf27642698",
         "content": "sha256:815ab33c18ab4bf09cd07fd01e0ddbd0bc8bee09a6923e6a1cab07f26d6e6438",
         "locator": {
           "kind": "symbol",
@@ -37,8 +37,8 @@
     },
     {
       "anchor": {
-        "blob": "5a0356371a5b933f4b5379797802559e0f9f22e0",
-        "content": "sha256:3c7cd8b3cad4a9b7d77e82181c2303269ccd1107f0c713ac706caa6155e1abd6",
+        "blob": "d09cdc288861533fd56cd32869aedacf27642698",
+        "content": "sha256:4437049c5c98b476c57900b5768540bee61555e2dc838fbc8502d113198d2fd8",
         "locator": {
           "kind": "symbol",
           "name": "RoleFolderAndIdentityTests.test_each_role_class_gets_one_agent_in_its_folder_with_title_and_labels"
@@ -60,8 +60,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5a0356371a5b933f4b5379797802559e0f9f22e0",
-            "content": "sha256:19413fc1227f55a6ec337daa3549e96595c775b36c937d1744c4e6d6829df9cb",
+            "blob": "d09cdc288861533fd56cd32869aedacf27642698",
+            "content": "sha256:269adb322f91cacca6ec3d268e754f7b53c788f9c71cf5c48ddbd7785d3ce6ff",
             "locator": {
               "kind": "file"
             }
@@ -75,8 +75,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5a0356371a5b933f4b5379797802559e0f9f22e0",
-            "content": "sha256:19413fc1227f55a6ec337daa3549e96595c775b36c937d1744c4e6d6829df9cb",
+            "blob": "d09cdc288861533fd56cd32869aedacf27642698",
+            "content": "sha256:269adb322f91cacca6ec3d268e754f7b53c788f9c71cf5c48ddbd7785d3ce6ff",
             "locator": {
               "kind": "file"
             }
@@ -90,8 +90,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5a0356371a5b933f4b5379797802559e0f9f22e0",
-            "content": "sha256:19413fc1227f55a6ec337daa3549e96595c775b36c937d1744c4e6d6829df9cb",
+            "blob": "d09cdc288861533fd56cd32869aedacf27642698",
+            "content": "sha256:269adb322f91cacca6ec3d268e754f7b53c788f9c71cf5c48ddbd7785d3ce6ff",
             "locator": {
               "kind": "file"
             }
@@ -105,8 +105,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5a0356371a5b933f4b5379797802559e0f9f22e0",
-            "content": "sha256:19413fc1227f55a6ec337daa3549e96595c775b36c937d1744c4e6d6829df9cb",
+            "blob": "d09cdc288861533fd56cd32869aedacf27642698",
+            "content": "sha256:269adb322f91cacca6ec3d268e754f7b53c788f9c71cf5c48ddbd7785d3ce6ff",
             "locator": {
               "kind": "file"
             }

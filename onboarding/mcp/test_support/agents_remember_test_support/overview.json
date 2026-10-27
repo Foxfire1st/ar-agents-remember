@@ -246,12 +246,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0b550ee3cda163c8b451cb06a4fb69b489c4686d",
-            "content": "sha256:3c08158a7017954bf06b4dd4ccdd5aefe17180ddc853fed7bbef05ff63e9ea7b",
+            "blob": "ddd77babbaaddf51063d6e23856c0cadd142d461",
+            "content": "sha256:a45f05c153d1b724bd7bfe5527b5534499d94b58cd5742e0a22db07b37cb65f7",
             "locator": {
-              "end": 284,
+              "end": 334,
               "kind": "line_range",
-              "start": 278
+              "start": 333
             },
             "path": "pyproject.toml"
           },
@@ -290,6 +290,24 @@
         }
       ]
     },
+    "19": {
+      "note": "The dated raise states the headroom, measured scenario costs and preserved refusal directions.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ddd77babbaaddf51063d6e23856c0cadd142d461",
+            "content": "sha256:d54efa326c1d4128e0c15e19ae1c2e3f9fb44b9af2c0cfbcfa5bca0306be0494",
+            "locator": {
+              "end": 334,
+              "kind": "line_range",
+              "start": 320
+            },
+            "path": "pyproject.toml"
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "2": {
       "note": "Canonical POSIX-string sorting retains duplicate path entries.",
       "targets": [
@@ -308,16 +326,16 @@
       ]
     },
     "3": {
-      "note": "The enforced collected-case pair is 10,000 unit/1,000 integration; the unit-only policy raises leave the guard unchanged.",
+      "note": "The root declares 10000 unit and 2000 integration selected cases. The current integration raise preserves marker classification and both over-budget refusal directions.",
       "targets": [
         {
           "anchor": {
-            "blob": "0b550ee3cda163c8b451cb06a4fb69b489c4686d",
-            "content": "sha256:24329980c91722cff083957188e3f6e6de6c7f24a81a62f06db77bd5fafa166d",
+            "blob": "ddd77babbaaddf51063d6e23856c0cadd142d461",
+            "content": "sha256:a45f05c153d1b724bd7bfe5527b5534499d94b58cd5742e0a22db07b37cb65f7",
             "locator": {
-              "end": 299,
+              "end": 334,
               "kind": "line_range",
-              "start": 278
+              "start": 333
             },
             "path": "pyproject.toml"
           },
@@ -459,7 +477,7 @@
         },
         {
           "anchor": {
-            "blob": "0b550ee3cda163c8b451cb06a4fb69b489c4686d",
+            "blob": "ddd77babbaaddf51063d6e23856c0cadd142d461",
             "content": "sha256:c98a6cb375caa7f3c6ba6d5d0148b8f14656dcb1658db5bc1a924556b9823195",
             "locator": {
               "end": 88,

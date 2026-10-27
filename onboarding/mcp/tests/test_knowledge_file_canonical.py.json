@@ -97,11 +97,11 @@
       ]
     },
     "15": {
-      "note": "Lane registration.\n\nAnchor: `test_knowledge_file_canonical`",
+      "note": "Lane registration.  Anchor: `test_knowledge_file_canonical`",
       "targets": [
         {
           "anchor": {
-            "blob": "102c4550ab6429f44c8fb543d1d0662de66a1b8c",
+            "blob": "5276cd9583d9a33d9094edac37d82b768491aed9",
             "content": "sha256:4833ee2cefb5bca323d9961b116510ff94361bbbd029cbd56eb1378407f69ce3",
             "locator": {
               "end": 156,
@@ -114,7 +114,7 @@
         },
         {
           "anchor": {
-            "blob": "102c4550ab6429f44c8fb543d1d0662de66a1b8c",
+            "blob": "5276cd9583d9a33d9094edac37d82b768491aed9",
             "content": "sha256:c2b868ff7b3c127af17a9eafe16d29a248a9090946dbe072ef1bbecb9d0cd5b3",
             "locator": {
               "end": 172,
@@ -127,7 +127,7 @@
         },
         {
           "anchor": {
-            "blob": "102c4550ab6429f44c8fb543d1d0662de66a1b8c",
+            "blob": "5276cd9583d9a33d9094edac37d82b768491aed9",
             "content": "sha256:4ad97e33f735baab94202cf741901c1728626ce26636e9e199748960af9e8a48",
             "locator": {
               "end": 141,

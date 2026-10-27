@@ -83,14 +83,14 @@ against, and that assertion is filed under Repo-Internal References.
 
 
 
-> Retained earlier citation wording: - **The lane registration that makes these cases part of the governed `integration` population.** Source caption: `test_review_external_git_movement_read` [27]
+> Retained earlier citation wording: - **The lane registration that makes these cases part of the governed `integration` population.** Source caption: `test_review_external_git_movement_read`
 
 
 
 
 
 
-> Retained earlier citation wording: - **A lifecycle consumer row that names this module, so the artifact census still counts it.** [28]
+> Retained earlier citation wording: - **A lifecycle consumer row that names this module, so the artifact census still counts it.**
 
 
 - **The documented section the matrix case asserts against, generated from the production table.** [29]
@@ -104,6 +104,17 @@ temporary enclosure this same repository's own fixture created under a temporary
 operation it performs is a local Git subprocess inside that enclosure. No remote, credential, network or
 external system is involved, and no cited range proves a repository or external-system boundary, so no
 cross-repo reference row is recorded here.
+
+
+
+
+
+
+
+
+
+
+
 
 - **The lane registration that makes these cases part of the governed `integration` population.** Source caption: `test_review_external_git_movement_read` [27]
 

@@ -7,7 +7,7 @@
 
 The serving package composes the local dashboard, projection/event streams and retained file, note, task, requirement, change-set, Knowledge and review readers over configured application ports. Native Paseo integration remains a separate retained subtree; the removed hosted terminal catalogue, harness adapter/control, conversation, notifier and supervisor plane is not this package's current responsibility.
 
-Role launch instructions are generic capsule-or-refused values; compilation and admission remain application-owned. The current ordinary source literal `PUBLIC_TOOLS` has 43 names, including `knowledge_write`, `user_settings_init` and `explainer_control`; a valid launch-bound explainer selects its separate 22-tool surface. Declaration, installation content, native receipt identity and observed host execution are separate facts; this overview creates no new CODE grade.
+Role launch instructions are generic capsule-or-refused values; compilation and admission remain application-owned. The current ordinary source literal `PUBLIC_TOOLS` has 44 names, including `knowledge_write`, `user_settings_init` and `explainer_control`; a valid launch-bound explainer selects its separate 22-tool surface. Declaration, installation content, native receipt identity and observed host execution are separate facts; this overview creates no new CODE grade.
 
 ## Hot Path Summary
 
@@ -321,4 +321,4 @@ the change-set routes now run on a dedicated `_BoundedReads` scheduler: eight wo
 - The native recorded-answer cache returns predicate-rejected values without retaining them. [145]
 - The catalogue handler forwards task context and its optional recorded comparison number; an unwired process still returns a named refusal rather than an empty list. [30]
 
-- Serving composition refuses retired canvas authoring before registration, composes explicit explainer ports and comparison-bound routes, and owns moved-notice stream/watch lifetime. Ordinary roster has 43 names while explainer surface selection is separate. [146]
+- Serving composition refuses retired canvas authoring before registration, composes explicit explainer ports and comparison-bound routes, and owns moved-notice stream/watch lifetime. Ordinary roster has 44 names while explainer surface selection is separate. [146]

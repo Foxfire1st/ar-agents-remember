@@ -1,5 +1,58 @@
 {
   "path": "mcp/tests/test_paseo_catalog_r71.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "484f7f3b26fefbe308731ed1d748fb768601e3d8",
+        "content": "sha256:5f10b13d4c512cf3902d174a086c2333373aa81fd214599f1861744e9cf8aa24",
+        "locator": {
+          "kind": "symbol",
+          "name": "R71RoleChoicesTests.test_r71_unknown_modes_pass_through_and_known_empty_remains_distinct"
+        }
+      },
+      "facet": "An unanswered mode part passes an explicitly configured mode through and preserves omission; a known empty mode list remains distinct and invents no safe mode.",
+      "id": "PRF-5WCHTN",
+      "invariant": "INV-7DMXZ3",
+      "origin": {
+        "handoffEntry": "L202-M1-mode-offers",
+        "leaf": "260928-MIK-L202"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "484f7f3b26fefbe308731ed1d748fb768601e3d8",
+        "content": "sha256:df11bc6e72d2fb9148f2b5b67d64890791b2351105cb91df2541c0a50d8b7054",
+        "locator": {
+          "kind": "symbol",
+          "name": "R71RoleChoicesTests.test_r71_start_calls_cannot_supply_permission_authority"
+        }
+      },
+      "facet": "Start-call mode arguments and permission-bearing feature arguments are refused independently of offer availability.",
+      "id": "PRF-VRGDMH",
+      "invariant": "INV-7DMXZ3",
+      "origin": {
+        "handoffEntry": "L202-M1-mode-offers",
+        "leaf": "260928-MIK-L202"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "484f7f3b26fefbe308731ed1d748fb768601e3d8",
+        "content": "sha256:66093ab77b681632aaee9c94aac0997f401e5eb3b195b1fb66a616133b5c2cac",
+        "locator": {
+          "kind": "symbol",
+          "name": "R71RoleChoicesTests.test_r71_unoffered_mode_feature_and_value_refuse_then_corrected_selection_succeeds"
+        }
+      },
+      "facet": "Known unoffered modes and invalid feature choices refuse; corrected permitted values succeed.",
+      "id": "PRF-ZN0XP4",
+      "invariant": "INV-7DMXZ3",
+      "origin": {
+        "handoffEntry": "L202-M1-mode-offers",
+        "leaf": "260928-MIK-L202"
+      }
+    }
+  ],
   "realizes": [],
   "references": {
     "1": {
@@ -7,8 +60,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0599ac1e1bfa514fe0d53f524cd2f3c3c940121d",
-            "content": "sha256:7c58d04faa1fbb47c4196f69d3ec89452ed3b8677f66202eb65cf4968916d1a4",
+            "blob": "484f7f3b26fefbe308731ed1d748fb768601e3d8",
+            "content": "sha256:fc78f21c2ef6f41a232fa43ef6b72eb0180a94fa2cf1e5cf51704be46e8b4c52",
             "locator": {
               "kind": "file"
             }
@@ -22,8 +75,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0599ac1e1bfa514fe0d53f524cd2f3c3c940121d",
-            "content": "sha256:7c58d04faa1fbb47c4196f69d3ec89452ed3b8677f66202eb65cf4968916d1a4",
+            "blob": "484f7f3b26fefbe308731ed1d748fb768601e3d8",
+            "content": "sha256:fc78f21c2ef6f41a232fa43ef6b72eb0180a94fa2cf1e5cf51704be46e8b4c52",
             "locator": {
               "kind": "file"
             }

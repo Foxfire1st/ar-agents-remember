@@ -3,36 +3,19 @@
   "proves": [
     {
       "anchor": {
-        "blob": "970bac1a296488d06bea9315fb0a241d33dd8744",
-        "content": "sha256:d104865b5eb21c3c267b5ad7b7ab601ad8123c167f9dec043438e4def9f0d82a",
-        "locator": {
-          "kind": "symbol",
-          "name": "LauncherOptionsTests.test_catalog_is_cached_per_runtime_and_only_a_refresh_rediscovers"
-        }
-      },
-      "facet": "Checks reuse, explicit refresh and changed daemon home in the key.",
-      "id": "PRF-E268RN",
-      "invariant": "INV-RQ2ZB8",
-      "origin": {
-        "handoffEntry": "PNT-R02@v1 §6",
-        "leaf": "260928-MIK-L90"
-      }
-    },
-    {
-      "anchor": {
-        "blob": "970bac1a296488d06bea9315fb0a241d33dd8744",
-        "content": "sha256:d10a276c7c44c75616ee1554807c92d74fe79102dac507b73d64dd3388b2419b",
+        "blob": "00532bdbe263591821e2365606c47747da6ed99a",
+        "content": "sha256:b9895886bde75c0eda26d00974e48f0f41f404818c1da3fde921471c5125d980",
         "locator": {
           "kind": "symbol",
           "name": "LaunchValidationTests.test_a_launch_is_validated_against_the_catalog_before_anything_is_created"
         }
       },
-      "facet": "Checks rejected choices create no receipt, workspace, agent or enclosure.",
-      "id": "PRF-Y64YC4",
+      "facet": "Known unoffered agent/model/effort choices refuse before workspace resolution, while an unavailable model listing preserves the configured model; this is the A6b test body, separate from historical PRF-Y64YC4.",
+      "id": "PRF-CEJ4E5",
       "invariant": "INV-RQ2ZB8",
       "origin": {
-        "handoffEntry": "PNT-R02@v1 §6",
-        "leaf": "260928-MIK-L90"
+        "handoffEntry": "L202-A6b-shared-fresh-catalog",
+        "leaf": "260928-MIK-L202"
       }
     }
   ],
@@ -43,8 +26,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "970bac1a296488d06bea9315fb0a241d33dd8744",
-            "content": "sha256:0a43b224422cfc3bf39d250c16d16322589baf237a2d7f20c2e750d38e5a1aa8",
+            "blob": "00532bdbe263591821e2365606c47747da6ed99a",
+            "content": "sha256:817cdeefa8b95db11a58fd768757678dc592e15af853085683cc8b70eb7e87c9",
             "locator": {
               "kind": "file"
             }

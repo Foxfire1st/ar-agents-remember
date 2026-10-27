@@ -48,11 +48,11 @@
       ]
     },
     "11": {
-      "note": "[10] mcp/src/agents_remember/models/tools/public_roster.py — symbol PUBLIC_TOOLS; mcp/src/agents_remember/mcp/tools/base.py — symbol __all__",
+      "note": "[10] mcp/src/agents_remember/models/tools/public_roster.py — symbol PUBLIC_TOOLS; mcp/src/agents_remember/mcp/tools/base.py — symbol __all__ The root PLR0913 exception supports the flat MCP registration signatures; it is not itself the PUBLIC_TOOLS or __all__ declaration.",
       "targets": [
         {
           "anchor": {
-            "blob": "0b550ee3cda163c8b451cb06a4fb69b489c4686d",
+            "blob": "ddd77babbaaddf51063d6e23856c0cadd142d461",
             "content": "sha256:3cf29d3ca7682b6651c5944ff70aa77ec90c7f2e16d6df26e1244a14174dd8c4",
             "locator": {
               "end": 38,
@@ -272,8 +272,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5dd2a44685920ec5d90e001beb9a4c0e14cf8c00",
-            "content": "sha256:74c4cc0c962abd2e63c35341aaad1dcab196c1ba21c01b72346f1ef805476c62",
+            "blob": "6782d184c8982f54e6e72e5f11a61aa2c8f88627",
+            "content": "sha256:8c8970683147f31767f3c402cb5be5e66ff82056236a64dead9f16f9747fc52e",
             "locator": {
               "kind": "symbol",
               "name": "citation_fix"
@@ -635,7 +635,7 @@
       ]
     },
     "41": {
-      "note": "The ordered ordinary registrar tuple now includes explainer control. The same server selects ordinary versus bound explainer registration.\n\nAnchor: `TOOL_REGISTRARS`, `create_server`",
+      "note": "The ordered ordinary registrar tuple now includes explainer control. The same server selects ordinary versus bound explainer registration.  Anchor: `TOOL_REGISTRARS`, `create_server`",
       "targets": [
         {
           "anchor": {
@@ -650,12 +650,29 @@
         },
         {
           "anchor": {
-            "blob": "04fe591490945dea61eca1af410ae2553d95ea05",
-            "content": "sha256:cc3a440dce07a6635e86d3b3c0bd4747a332896e3470112e376449434e08b69a",
+            "blob": "c32522a60857504ad69c2b55c97baed38f637142",
+            "content": "sha256:51aabd4a109dee3ed422848ba7df15577c0cdd83fd80309e6668f594a29fc514",
             "locator": {
               "kind": "file"
             },
             "path": "mcp/src/agents_remember/mcp/server.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "42": {
+      "note": "One registered citation operation forwards the extended signature.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6782d184c8982f54e6e72e5f11a61aa2c8f88627",
+            "content": "sha256:8c8970683147f31767f3c402cb5be5e66ff82056236a64dead9f16f9747fc52e",
+            "locator": {
+              "kind": "symbol",
+              "name": "citation_fix"
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/memory.py"
           },
           "kind": "code"
         }
@@ -718,7 +735,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "04fe591490945dea61eca1af410ae2553d95ea05",
+            "blob": "c32522a60857504ad69c2b55c97baed38f637142",
             "content": "sha256:a0f83948be17a52e49ae3ea3458054d02d413132a902ccf88db97b841eeef676",
             "locator": {
               "kind": "symbol",

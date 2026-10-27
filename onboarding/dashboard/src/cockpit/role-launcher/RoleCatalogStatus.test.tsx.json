@@ -1,0 +1,22 @@
+{
+  "path": "dashboard/src/cockpit/role-launcher/RoleCatalogStatus.test.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The cases cover saved provenance, unknown choices, known-empty replacement and host spelling.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d492568fb06e30356e62fbcf296450f3a9bf59b2",
+            "content": "sha256:1c1b80011e41509c61f3184f985208b718872530c65644bc05a5c6d03e1313b2",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

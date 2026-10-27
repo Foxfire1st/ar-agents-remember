@@ -10,11 +10,11 @@ The pure model carries canonical role/document/request identity and validates ad
 
 ## Code Commentary
 
-Entry option helpers follow server-ordered children and exact references for the seven roles' canonical reference needs; they do not rebuild topology from documents and series. Taskless metadata and exact scope comparators preserve active request identity. Role model applies on the role agent, effort on its role model, and service tier on its role agent even for a model override. Fast maps to priority; another agent uses native tier default. Model rows carry host-offered `features` with permission-bearing marks and agents carry `modes`; defaults carry `mode`, `featureValues` and per-choice sources. `agentId` is optional so defaults can stand without an explicit selection, `roleAgentOverrideFor` preserves explicit speed values through model and effort changes, and selection equality compares sorted feature entries.
+Entry option helpers follow server-ordered children and exact references for the seven roles' canonical reference needs; they do not rebuild topology from documents and series. Taskless metadata and exact scope comparators preserve active request identity. Role model applies on the role agent, effort on its role model, and service tier on its role agent even for a model override. Choice matching accepts host IDs or labels without case; there is no built-in fast-to-priority alias. Another agent uses native tier default. Model rows carry host-offered `features` with permission-bearing marks and agents carry `modes`; defaults carry `mode`, `featureValues` and per-choice sources. `agentId` is optional so defaults can stand without an explicit selection, `roleAgentOverrideFor` preserves explicit speed values through model and effort changes, and selection equality compares sorted feature entries.
 
 ## Invariants And Boundaries
 
-Unavailable values are surfaced rather than substituted. Effort and tier inheritance remain independent; this code does not prove permanent native availability or create an actor.
+Known unsupported values are surfaced rather than substituted. Unknown catalog/model/effort/tier parts leave configured values unchecked for the host, including a tier when no model resolves; a successful empty offer remains a refusal. Discovery fields distinguish fresh, timestamped saved and unknown answers. Effort and tier inheritance remain independent; this code does not prove permanent native availability or create an actor.
 
 ## Current Contract
 
@@ -33,10 +33,13 @@ The current source and test assertions below establish the documented ownership;
 - Current source owner or exact assertion described above. [1]
 
 
-- Current source owner or exact assertion described above. [2]
+
+- Choice validation matches host IDs or labels without case and retains configured values when catalog data is unknown, instead of silently selecting an alternative. [2]
 
 
-- Current source owner or exact assertion described above. [3]
+
+- Service-tier validation matches known host offers without a fast alias; unknown models or tiers leave the configured tier unchecked. [3]
+
 
 
 ## MIK-R95 Bound Selection Helpers
@@ -52,15 +55,19 @@ usesRequestReceipts separates per-request execution cardinality from isTasklessR
 - The current source implements this file’s stated Investigator boundary. [4]
 
 
+
 - File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence. [5]
 
+
 - File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence. [6]
+
 
 - Worker/Curator typed review census, record-only exclusion and unknown history. [7]
 
 - Reason admission, threshold and differing-harness/model inheritance boundary. [8]
 
 - Saved taskless UUID/pending plus trimmed reason/override restoration keeps the legacy Investigator storage slot. [9]
+
 
 - The same start-only reason enters saved retry payload and POST body. [10]
 

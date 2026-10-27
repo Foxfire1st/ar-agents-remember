@@ -264,12 +264,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e10b32fdbb80d5c5c1e05892e1a33d81a4841c92",
-            "content": "sha256:db18325e26820d211b5400f1a11326929eacc6099be2ef162ad5d6f874c8a847",
+            "blob": "f33904d9efb39530affd7e1a084186df0c3169dc",
+            "content": "sha256:98272c5c05e19cd5164b40aedfb63272323a839c24d64ecc75b9dffa79d0aa15",
             "locator": {
-              "end": 167,
+              "end": 233,
               "kind": "line_range",
-              "start": 145
+              "start": 148
             },
             "path": "mcp/src/agents_remember/mcp/tools/memory.py"
           },
@@ -316,12 +316,12 @@
         },
         {
           "anchor": {
-            "blob": "98f8cd5791ea2314f54ffb009e3f7c5c87558652",
+            "blob": "2b81ba0f28f7d716c30f1dca2090ea75b350c3cb",
             "content": "sha256:40aad1a4af3a156c7c6fe135f74dc90f9e1e386babfb0c6fee5e7c924c6127ee",
             "locator": {
-              "end": 973,
+              "end": 985,
               "kind": "line_range",
-              "start": 919
+              "start": 931
             },
             "path": "mcp/src/agents_remember/application/tool_answer_log.py"
           },
@@ -329,12 +329,12 @@
         },
         {
           "anchor": {
-            "blob": "98f8cd5791ea2314f54ffb009e3f7c5c87558652",
+            "blob": "2b81ba0f28f7d716c30f1dca2090ea75b350c3cb",
             "content": "sha256:bc1412b60e3d98caf4a5c0aca43245d67904d0a8d8aee4785de4bc197caa1928",
             "locator": {
-              "end": 1115,
+              "end": 1129,
               "kind": "line_range",
-              "start": 1098
+              "start": 1112
             },
             "path": "mcp/src/agents_remember/application/tool_answer_log.py"
           },
@@ -484,7 +484,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "102c4550ab6429f44c8fb543d1d0662de66a1b8c",
+            "blob": "5276cd9583d9a33d9094edac37d82b768491aed9",
             "content": "sha256:5416c4656b87f2dc7f927add3da95de8b35d5ef3cdf2cd76a5b9fde9eaa2a467",
             "locator": {
               "end": 140,
@@ -497,7 +497,7 @@
         },
         {
           "anchor": {
-            "blob": "102c4550ab6429f44c8fb543d1d0662de66a1b8c",
+            "blob": "5276cd9583d9a33d9094edac37d82b768491aed9",
             "content": "sha256:55aae7f94adeaee949444718419adb19e16cc7f7312f0ed50d8c4db0f98dc21f",
             "locator": {
               "end": 156,
@@ -510,7 +510,7 @@
         },
         {
           "anchor": {
-            "blob": "102c4550ab6429f44c8fb543d1d0662de66a1b8c",
+            "blob": "5276cd9583d9a33d9094edac37d82b768491aed9",
             "content": "sha256:e7368c009c8609a6088fac7df42ebc4cd356189403a1f79102e8141a10b946f9",
             "locator": {
               "end": 125,

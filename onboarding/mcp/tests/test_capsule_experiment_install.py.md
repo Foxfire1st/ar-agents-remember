@@ -81,13 +81,22 @@ The present test module no longer contains that test or asserts those installed-
 
 
 
-> Retained earlier citation wording: - The current settings-guard and portable Node-lockfile artifact rows both declare test_capsule_experiment_install.py as a consumer. The original two-row addition account belongs to its prior source epoch; these declarations establish no invocation. [6]
+> Retained earlier citation wording: - The current settings-guard and portable Node-lockfile artifact rows both declare test_capsule_experiment_install.py as a consumer. The original two-row addition account belongs to its prior source epoch; these declarations establish no invocation.
 
 
 
 
 
-> Retained earlier citation wording: - The current settings-guard and portable Node-lockfile artifact rows both declare test_capsule_experiment_install.py as a consumer. The original two-row addition account belongs to its prior source epoch; these declarations establish no invocation. [7]
+> Retained earlier citation wording: - The current settings-guard and portable Node-lockfile artifact rows both declare test_capsule_experiment_install.py as a consumer. The original two-row addition account belongs to its prior source epoch; these declarations establish no invocation.
+
+
+
+
+
+
+
+
+
 
 - The current settings-guard and portable Node-lockfile artifact rows both declare test_capsule_experiment_install.py as a consumer. The original two-row addition account belongs to its prior source epoch; these declarations establish no invocation. [6]
 

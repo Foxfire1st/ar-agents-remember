@@ -3,12 +3,12 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The test file asserts the cases and limitations described above.",
+      "note": "The test file asserts seeded document correction payloads, first-invalid document order, document-arrival scheduling and quiescent valid selections; catalog override-pruning cases are removed.",
       "targets": [
         {
           "anchor": {
-            "blob": "ed79b7cac75bcce361f2b50a9555dc10799b30fa",
-            "content": "sha256:505a470cf0bb78797587de273af63b56b46038b78fdd4a3ebc7692d3c1149d20",
+            "blob": "bb5c2cb3d111c0f84b20e6db76e7efc1a92699d9",
+            "content": "sha256:ab714771ae415f42ebe38b8183c27d8302404a5c9542706f0035fcbe020e78b7",
             "locator": {
               "kind": "file"
             }

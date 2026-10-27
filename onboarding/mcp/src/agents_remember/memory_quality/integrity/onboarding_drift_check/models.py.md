@@ -33,7 +33,7 @@
 
 - The context-packet wire model that reads `DriftStatus` and gained the matching `error` field. [2]
 
-- The tool response model that dropped its third copy of the enum for the same alias. [3]
+
 
 
 
@@ -42,3 +42,5 @@ The converted measurement adds its own optional keys to `DriftSummaryPacket`: `b
 `unreadableSidecars`. Legacy fields are never invented for a converted card, and vice versa.
 
 - The packet carries the converted measurement fields alongside the legacy ones. [5]
+
+- The tool response model that dropped its third copy of the enum for the same alias. [3]

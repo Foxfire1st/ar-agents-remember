@@ -21,7 +21,7 @@ public configuration hook for that indent in the supported `mcp` range.
 
 `install_compact_content()` monkeypatches `_convert_to_content` with a wrapper
 that calls the original converter, then re-serializes any `TextContent` block
-whose text parses as JSON using `json.dumps(..., separators=("", ":"))`.
+whose text parses as JSON using `json.dumps(..., separators=(",", ":"))`.
 `_compact_text_block()` performs the per-block re-serialization and returns the
 block unchanged when the text is not JSON (wrapped in `contextlib.suppress`),
 so plain-string and already-minified blocks pass through untouched. The patch is
@@ -46,7 +46,9 @@ compacted text remains a faithful mirror of the structured payload.
 ### Repo-Internal References
 
 
-- `create_server()` installs the shim as its first action. [1]
+
 
 
 - Behavior is verified through an in-process tool call. [2]
+
+- `create_server()` installs the shim as its first action.  Anchor: `create_server` [1]

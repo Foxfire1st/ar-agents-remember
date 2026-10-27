@@ -4,13 +4,13 @@
       "spans_locations",
       "family_guarantee"
     ],
-    "justification": "All start routes exclude caller permission authority; the catalog validates ordinary least-mode or explicitly selected cross-scope host-default mode before launch."
+    "justification": "All start routes exclude caller permission authority; the shared catalog validates ordinary least-mode or explicitly selected cross-scope host-default mode against known offers, while an unanswered mode part leaves a configured choice unchecked."
   },
   "applicability": "Every role start route that resolves a working mode.",
   "conditions": [
     "Existing user/profile precedence remains provider-bound.",
-    "Only an omitted cross-scope step-up mode takes the offered host default; ordinary fallback remains least working.",
-    "Unknown catalogs and unoffered named modes refuse before creation."
+    "With known mode offers, only an omitted cross-scope step-up mode takes the offered host default; ordinary fallback remains least working.",
+    "Unavailable mode answers use the saved successful part; without either answer a configured mode stays unchecked. A known unoffered named mode refuses before creation."
   ],
   "exclusions": [
     "Caller-supplied mode arguments or permission-bearing feature arguments, which no start route accepts."
@@ -27,9 +27,9 @@
     "leaf": "260928-MIK-L71",
     "task": "260928-MIK"
   },
-  "revision": 2,
+  "revision": 3,
   "schema": "ar-invariant/v1",
-  "statement": "No start route accepts a caller mode or permission-bearing feature argument. Ordinary starts without an applicable authored mode use the least offered working mode; an explicitly selected cross-provider/model step-up with omitted mode uses the offered host default. Unknown or unoffered modes refuse by name.",
+  "statement": "No start route accepts a caller mode or permission-bearing feature argument. With known mode offers, ordinary starts without an applicable authored mode use the least offered working mode, and an explicitly selected cross-provider/model step-up with omitted mode uses the offered host default. A known unoffered mode is refused; when neither a fresh nor saved mode answer exists, a configured mode passes to Paseo unchecked.",
   "status": "proposed",
   "supersedes": []
 }

@@ -984,8 +984,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "98f8cd5791ea2314f54ffb009e3f7c5c87558652",
-            "content": "sha256:ff6599cd6ddf244ac14b2ec5cfdf351e8576cecf52d65b5ee608ed8a9aacee21",
+            "blob": "2b81ba0f28f7d716c30f1dca2090ea75b350c3cb",
+            "content": "sha256:62372c24c148ec8d3027528f6e0b457600727d7e4bc6bacebf3df10af9774c8e",
             "locator": {
               "kind": "symbol",
               "name": "record_tool_call"

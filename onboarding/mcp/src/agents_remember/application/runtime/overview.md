@@ -59,4 +59,6 @@ No Domain Documentation source is configured. No cross-repository implementation
 
 - Startup installs only the workspace tool writer, snapshots its launch-bound caller once and falls back to an unbound chat when that binding cannot be read. [7]
 
+
+
 - Preparation is declaration-only. list_tools produces its answer before scheduling start_after_discovery, and call_tool reaches the same latch as fallback. The sweep attempt consumes the latch even without config; dashboard autostart needs config/settings. The heavy sweep owner is imported only in a one-shot child with stdin=DEVNULL. Source order does not attest client receipt. [8]

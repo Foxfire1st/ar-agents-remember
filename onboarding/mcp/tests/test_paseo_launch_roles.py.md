@@ -23,6 +23,9 @@ Preparation happens in the child and the caller's lifecycle binding is not adopt
 - Each role class gets one agent in its own folder, with title, labels and reachable paths. [1]
 
 
+
 - The shared dispatch path prepares Worker and Reviewer in the existing child, and a refusing, failing or unfinished child refuses the launch. [2]
+
 - The launch-file census includes fixture task documents and published copies. [3]
+
 - Sequential child preparation leaves the caller's binding environment exact. [4]

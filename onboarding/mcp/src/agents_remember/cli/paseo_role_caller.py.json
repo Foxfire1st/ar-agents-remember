@@ -1,0 +1,95 @@
+{
+  "path": "mcp/src/agents_remember/cli/paseo_role_caller.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "18e5524471a10c4022c89da7e02e556061265092",
+        "content": "sha256:68dd03c55d195ea34ce52b0977c306487e68c20d24155ca2a4d45d506c606f82",
+        "locator": {
+          "kind": "symbol",
+          "name": "role_message_limit"
+        }
+      },
+      "id": "RLZ-737EJY",
+      "invariant": "INV-A87E4H",
+      "origin": {
+        "handoffEntry": "L117-R01",
+        "leaf": "260928-MIK-L117"
+      },
+      "rationale": "The per-call limit read keeps a changed number effective for the next call without a restart.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "18e5524471a10c4022c89da7e02e556061265092",
+        "content": "sha256:7b5071f64bf3e66e005d048fe1f9a292f5917e5545f7fb689247190c6356d33b",
+        "locator": {
+          "kind": "symbol",
+          "name": "sender_line"
+        }
+      },
+      "id": "RLZ-S0SZP3",
+      "invariant": "INV-VH983B",
+      "origin": {
+        "handoffEntry": "L117-R04",
+        "leaf": "260928-MIK-L117"
+      },
+      "rationale": "The sender line names the wake-up's origin so the recipient never confuses a wake-up with content.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "18e5524471a10c4022c89da7e02e556061265092",
+        "content": "sha256:53f31d090bda3f68a2e83d16b4b0dde4dbc06a5569b939eba6c5e967482dbcb9",
+        "locator": {
+          "kind": "symbol",
+          "name": "_no_binding"
+        }
+      },
+      "id": "RLZ-S952ET",
+      "invariant": "INV-85VB61",
+      "origin": {
+        "handoffEntry": "MIK-R113@v1 rule 6",
+        "leaf": "260928-MIK-L113"
+      },
+      "rationale": "The refusal of `role_message` for a chat without a role: it says that the developer speaks with the agent in the dashboard and that such a chat starts a role with `role_start`.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "18e5524471a10c4022c89da7e02e556061265092",
+        "content": "sha256:7d1e77434f1ece959cd8f20db179a9a3f78d0a06c010410e11bbf2635a3c8323",
+        "locator": {
+          "kind": "symbol",
+          "name": "_binding_absent"
+        }
+      },
+      "id": "RLZ-Z0GQ9A",
+      "invariant": "INV-85VB61",
+      "origin": {
+        "handoffEntry": "MIK-R113@v1 rule 6",
+        "leaf": "260928-MIK-L113"
+      },
+      "rationale": "Tells a tool server that was started without any binding from one whose binding is malformed; only the first may start without a parent.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The source implements the behavior and boundaries described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "18e5524471a10c4022c89da7e02e556061265092",
+            "content": "sha256:22c91376cfbf521299a1b66d8acf38c3800bcd11d3eebde19db44925544deaf6",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

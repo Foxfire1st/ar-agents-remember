@@ -120,7 +120,7 @@ they make no acceptance claim.
 
 
 
-> Retained earlier citation wording: - The lane row that keeps this module in the default selection. Source caption: "mcp/tests/test_response_address_binding.py" [16]
+> Retained earlier citation wording: - The lane row that keeps this module in the default selection. Source caption: "mcp/tests/test_response_address_binding.py"
 
 
 
@@ -131,5 +131,9 @@ No cross-repository implementation evidence is required for these local response
 The cases build no repository and touch no real coordination root.
 
 No repository or external-system boundary is proved by this module.
+
+
+
+
 
 - The lane row that keeps this module in the default selection. Source caption: "mcp/tests/test_response_address_binding.py" [16]

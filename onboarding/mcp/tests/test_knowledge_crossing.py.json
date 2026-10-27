@@ -494,11 +494,11 @@
       ]
     },
     "11": {
-      "note": "Its lane row.\n\nAnchor: \"mcp/tests/test_knowledge_crossing.py\"",
+      "note": "Its lane row.  Anchor: \"mcp/tests/test_knowledge_crossing.py\"",
       "targets": [
         {
           "anchor": {
-            "blob": "102c4550ab6429f44c8fb543d1d0662de66a1b8c",
+            "blob": "5276cd9583d9a33d9094edac37d82b768491aed9",
             "content": "sha256:a1087283d1e84c3b6d04b4157722be53d0881f6ce44636357e63d06058448f97",
             "locator": {
               "end": 145,
@@ -511,7 +511,7 @@
         },
         {
           "anchor": {
-            "blob": "102c4550ab6429f44c8fb543d1d0662de66a1b8c",
+            "blob": "5276cd9583d9a33d9094edac37d82b768491aed9",
             "content": "sha256:33b4b865c5c5115dd7a22ed4473ff30e50bbc9a1ec3048676cad3730f5be890a",
             "locator": {
               "end": 161,
@@ -524,7 +524,7 @@
         },
         {
           "anchor": {
-            "blob": "102c4550ab6429f44c8fb543d1d0662de66a1b8c",
+            "blob": "5276cd9583d9a33d9094edac37d82b768491aed9",
             "content": "sha256:8f9c86a58330db90b67de65d40018c36e7a440d879ea8f9a109f2a7f4f921763",
             "locator": {
               "end": 130,

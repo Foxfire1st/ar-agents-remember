@@ -20,11 +20,11 @@
       ]
     },
     "2": {
-      "note": "Root pytest configuration selects four workers by default.\n\nAnchor: \"-n=4\"",
+      "note": "Root pytest configuration selects four workers by default. The retained historical comment records the decision to keep a single declared ceiling.\n\nAnchor: \"-n=4\"",
       "targets": [
         {
           "anchor": {
-            "blob": "0b550ee3cda163c8b451cb06a4fb69b489c4686d",
+            "blob": "ddd77babbaaddf51063d6e23856c0cadd142d461",
             "content": "sha256:4db9424314fa43b50eb134fde0f65a5e665ef67880a9bc568f6189a8b5e2007e",
             "locator": {
               "end": 183,
@@ -37,12 +37,12 @@
         },
         {
           "anchor": {
-            "blob": "0b550ee3cda163c8b451cb06a4fb69b489c4686d",
+            "blob": "ddd77babbaaddf51063d6e23856c0cadd142d461",
             "content": "sha256:a2c93a423b219d580128cb62d3ea549600b72ae4da1a3a3f6785aed3eb3193fd",
             "locator": {
-              "end": 331,
+              "end": 344,
               "kind": "line_range",
-              "start": 331
+              "start": 344
             },
             "path": "pyproject.toml"
           },

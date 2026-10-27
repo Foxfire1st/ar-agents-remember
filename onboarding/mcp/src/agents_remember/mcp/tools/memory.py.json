@@ -4,7 +4,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "e10b32fdbb80d5c5c1e05892e1a33d81a4841c92",
+        "blob": "f33904d9efb39530affd7e1a084186df0c3169dc",
         "content": "sha256:5aad99e6ca9de0e4f39431d106120972c20f02e56705d2290d7b43ecc939b5cc",
         "locator": {
           "kind": "symbol",
@@ -22,7 +22,25 @@
     },
     {
       "anchor": {
-        "blob": "e10b32fdbb80d5c5c1e05892e1a33d81a4841c92",
+        "blob": "f33904d9efb39530affd7e1a084186df0c3169dc",
+        "content": "sha256:c6b72dfc1314f7fa35e91655e5e6845898d18e11ffb2d7a291f00627888efc68",
+        "locator": {
+          "kind": "symbol",
+          "name": "_citation_fix_whole"
+        }
+      },
+      "id": "RLZ-40PPMN",
+      "invariant": "INV-CR4CJ8",
+      "origin": {
+        "handoffEntry": "MIK-R213@v1 rule 3",
+        "leaf": "260928-MIK-L202"
+      },
+      "rationale": "The original synchronous computation retains the contract-scoped repair and authority refusal path.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "f33904d9efb39530affd7e1a084186df0c3169dc",
         "content": "sha256:8512bf49ed060b04bc987a87a99f12c2e9bf03d022426c17124c865589a1f38c",
         "locator": {
           "kind": "symbol",
@@ -40,7 +58,25 @@
     },
     {
       "anchor": {
-        "blob": "e10b32fdbb80d5c5c1e05892e1a33d81a4841c92",
+        "blob": "f33904d9efb39530affd7e1a084186df0c3169dc",
+        "content": "sha256:1d8e5e92f72c2130862a7d87c1e49c3cfb77726ab7baf772afb55740c8ab6189",
+        "locator": {
+          "kind": "symbol",
+          "name": "citation_fix_payload"
+        }
+      },
+      "id": "RLZ-8R01VM",
+      "invariant": "INV-QSA8WP",
+      "origin": {
+        "handoffEntry": "MIK-R213@v1 rule 2",
+        "leaf": "260928-MIK-L202"
+      },
+      "rationale": "The public payload selects sync/start/poll and preserves the ordinary preview projection.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "f33904d9efb39530affd7e1a084186df0c3169dc",
         "content": "sha256:4f54e6f38987cf9270c2e363362117f4bcae7ae067096e41872b77e795ff4266",
         "locator": {
           "kind": "symbol",
@@ -58,7 +94,7 @@
     },
     {
       "anchor": {
-        "blob": "e10b32fdbb80d5c5c1e05892e1a33d81a4841c92",
+        "blob": "f33904d9efb39530affd7e1a084186df0c3169dc",
         "content": "sha256:4f54e6f38987cf9270c2e363362117f4bcae7ae067096e41872b77e795ff4266",
         "locator": {
           "kind": "symbol",
@@ -76,12 +112,11 @@
     },
     {
       "anchor": {
-        "blob": "e10b32fdbb80d5c5c1e05892e1a33d81a4841c92",
-        "content": "sha256:fe97bcc5955773116ca3a0f9d1b0f876808252c1c03d537c54c24b5a92d5d54e",
+        "blob": "f33904d9efb39530affd7e1a084186df0c3169dc",
+        "content": "sha256:8e13a1eb9935af949caa040b1e823534e54df7aac00b3cd48edcbddc9a43d90c",
         "locator": {
-          "end": 253,
-          "kind": "line_range",
-          "start": 202
+          "kind": "symbol",
+          "name": "_citation_fix_answer"
         }
       },
       "id": "RLZ-G52W6N",
@@ -90,16 +125,16 @@
         "handoffEntry": "L110-C-status",
         "leaf": "260928-MIK-L110"
       },
-      "rationale": "The entry says the citation answer selects status counts and document/place/reason entries and leaves successful authoring material out; `_citation_fix_answer` (199-241) plus `_CITATION_ENTRY_KEYS`/`_slim_citation_entry` do exactly that inside the recorded 202-253 at C. The candidate's recorded bytes are the leaf's uncommitted file, whose citations answer moved 52 lines down.",
+      "rationale": "The citation status projection retains the synchronous result fields and completed preview repair details while the whole result is recorded separately.",
       "role": "presentation"
     },
     {
       "anchor": {
-        "blob": "e10b32fdbb80d5c5c1e05892e1a33d81a4841c92",
-        "content": "sha256:be1298f91607ed5f18940f2ac88c6ccee032edc696091d21f4a0541a05e4ee52",
+        "blob": "f33904d9efb39530affd7e1a084186df0c3169dc",
+        "content": "sha256:c6b72dfc1314f7fa35e91655e5e6845898d18e11ffb2d7a291f00627888efc68",
         "locator": {
           "kind": "symbol",
-          "name": "citation_fix_payload"
+          "name": "_citation_fix_whole"
         }
       },
       "id": "RLZ-HPM03Q",
@@ -108,12 +143,12 @@
         "handoffEntry": "MIK-R70@v1 rule 5",
         "leaf": "260928-MIK-L70"
       },
-      "rationale": "The public entry point of `citation_fix`: the one place its application call can be turned into an answer before the response model sees it.",
+      "rationale": "The extracted synchronous application wrapper translates only ConfiguredContractAuthorityError; background worker settlement has a separate error envelope.",
       "role": "enforcement"
     },
     {
       "anchor": {
-        "blob": "e10b32fdbb80d5c5c1e05892e1a33d81a4841c92",
+        "blob": "f33904d9efb39530affd7e1a084186df0c3169dc",
         "content": "sha256:3dcddad935eda28d068e65014a7b2c9056140aba53823fd329a100ad867a9375",
         "locator": {
           "kind": "symbol",
@@ -131,12 +166,12 @@
     },
     {
       "anchor": {
-        "blob": "e10b32fdbb80d5c5c1e05892e1a33d81a4841c92",
-        "content": "sha256:dcca617ad726477c585f127f88da5467a4391ee90d138945960e4d0f25852e12",
+        "blob": "f33904d9efb39530affd7e1a084186df0c3169dc",
+        "content": "sha256:7c23001311b7fb2a709788e53a1db173f981881e96fa4bdc440b5a38387a003b",
         "locator": {
-          "end": 470,
+          "end": 495,
           "kind": "line_range",
-          "start": 449
+          "start": 460
         }
       },
       "id": "RLZ-NKTNVE",
@@ -145,13 +180,13 @@
         "handoffEntry": "L110-C-status",
         "leaf": "260928-MIK-L110"
       },
-      "rationale": "The entry says the refresh answer selects refresh counts and stale work and leaves successful index material in the detail; that is `_ROUTE_STATUS_KEYS` (342-355) and `_route_index_answer` (356+) at C, not the recorded 449-470, which holds `compact_carryover_payload`'s tail and the carryover plan's head. The claim is true of the tool, but this extent never showed it, at the base tree either.",
+      "rationale": "The route-index status projection preserves outcome/counts, omits successful root paths, and retains stale indexes for repair while the whole result holds written indexes.",
       "role": "presentation"
     },
     {
       "anchor": {
-        "blob": "e10b32fdbb80d5c5c1e05892e1a33d81a4841c92",
-        "content": "sha256:e5ec15101aadfde2395cb9c8d604a46bb7ff6dd543307eed240b82f94eaf8e0b",
+        "blob": "f33904d9efb39530affd7e1a084186df0c3169dc",
+        "content": "sha256:9587e21b84f3111c38c400ea4bbb19364ebc17e8c540588423cf39ea08983674",
         "locator": {
           "kind": "file"
         }
@@ -167,7 +202,7 @@
     },
     {
       "anchor": {
-        "blob": "e10b32fdbb80d5c5c1e05892e1a33d81a4841c92",
+        "blob": "f33904d9efb39530affd7e1a084186df0c3169dc",
         "content": "sha256:8512bf49ed060b04bc987a87a99f12c2e9bf03d022426c17124c865589a1f38c",
         "locator": {
           "kind": "symbol",
@@ -185,7 +220,7 @@
     },
     {
       "anchor": {
-        "blob": "e10b32fdbb80d5c5c1e05892e1a33d81a4841c92",
+        "blob": "f33904d9efb39530affd7e1a084186df0c3169dc",
         "content": "sha256:d3f622fc4d9f4c5ecba385b0dbf495db20bdefab71304abd6bbdb5033341f253",
         "locator": {
           "kind": "symbol",
@@ -202,6 +237,55 @@
       "role": "primary-authority"
     }
   ],
-  "references": {},
+  "references": {
+    "1": {
+      "note": "Mode dispatch preserves the default synchronous application call.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f33904d9efb39530affd7e1a084186df0c3169dc",
+            "content": "sha256:1d8e5e92f72c2130862a7d87c1e49c3cfb77726ab7baf772afb55740c8ab6189",
+            "locator": {
+              "kind": "symbol",
+              "name": "citation_fix_payload"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Start and poll enforce their distinct argument shapes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f33904d9efb39530affd7e1a084186df0c3169dc",
+            "content": "sha256:96f11ef494b807389f2f26320f71b8489459f52c9b7d56bb1575859f9824ccfc",
+            "locator": {
+              "kind": "symbol",
+              "name": "_citation_run_result"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Completed preview projections retain ordinary citation counts and failure work orders.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f33904d9efb39530affd7e1a084186df0c3169dc",
+            "content": "sha256:8e13a1eb9935af949caa040b1e823534e54df7aac00b3cd48edcbddc9a43d90c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_citation_fix_answer"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
   "schema": "ar-onboarding-file/v1"
 }

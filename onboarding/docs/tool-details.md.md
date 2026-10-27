@@ -19,4 +19,24 @@ The tool reference now states that skills are served from the package as MCP res
 
 
 
+
+
+
+
+## Citation preview and concurrent calls
+
+Citation repair keeps synchronous preview and writes, and adds background preview through the quality run registry. Its flat start call names the repository, optional candidate contract and optional document selection, with `mode="start", dry_run=true`; poll uses `mode="poll", run_id=...`, the same scope and no selectors. Capacity, run ownership, terminal eviction and worker-failure handling are shared with quality checks. The completed preview preserves the synchronous result apart from run state/identity. Background mode never applies repairs.
+
+Synchronous tool bodies run off the event loop so other reads and polls can answer while they run. Potentially mutating synchronous calls keep one server-local ordering lock until the worker stops; existing asynchronous handlers retain their original path. This is not a blanket guarantee that every tool is side-effect-free or that a timeout cancels a worker.
+
+
+- The reference publishes the flat preview modes beside the request-object quality modes. [2]
+
+
+- The detailed contract describes shared preview runs and synchronous write ordering. [3]
+
+
+
+
+
 - The source describes the current instructions summarized above. [1]

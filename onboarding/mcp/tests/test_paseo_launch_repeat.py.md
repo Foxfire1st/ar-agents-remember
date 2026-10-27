@@ -23,7 +23,7 @@ message, `launch_that_stays_starting()` leaves a receipt whose process has ended
 
 - **Repeats.** `test_a_repeat_is_answered_from_its_receipt_whatever_changed_since_the_launch` and the
   `ServiceTierReplayTests` cases prove a repeat keeps the first profile choices after the host role or
-  the catalog changed, and that a still-loading catalog refuses before an agent or workspace exists.
+  the catalog changed, and that an unanswered model inventory passes both the native default and a configured model through to Paseo unchecked.
 - **Replaced executions.** `ReplacedExecutionTests` archives the agent of the newest archived receipt
   when a start arrives without one, closes a launch whose agent cannot be opened before its first
   message, and proves a losing launch takes back the binding file it created but leaves a file that is

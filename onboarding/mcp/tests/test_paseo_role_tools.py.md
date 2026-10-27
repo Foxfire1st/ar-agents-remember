@@ -27,6 +27,10 @@ the dashboard refuses, in the same words.
   would: they are registered under their names and answer inside the envelope; `mode` is absent from the
   tool schema and rejected by the HTTP route; a chat without a role starts a parentless Architect; and
   the registered tool refuses what the dashboard refuses in the same words.
+- **Reads during catalog discovery.**
+  `test_fresh_catalog_wait_leaves_registered_reads_responsive` holds a registered `role_start`
+  in fresh catalog discovery, receives a successful registered read while that start remains
+  pending, then releases discovery and checks that the start succeeds.
 
 ### Conventions
 
@@ -42,10 +46,15 @@ the CLI helpers directly, and use `paseo_role_tools_test_support` for the bridge
 
 - May-start rules, another starter's receipt, a reused request id and the registered tool surface are asserted here. [1]
 
+
 - The second start reaches the held dispatch lock before pending is asserted. [2]
 
-- The controlled fixture patches facade-local bridge, resolve and topology names plus the held-store and retirement bridge callers. The registry assertion expects `role_start`, `role_start_set`, `user_settings_init` and `role_message`, and an unbound `role_start_set` call is refused. [3]
+
+- The controlled fixture patches the actual bridge, caller, recipient, held-store and retirement owners after extraction. The registry still exposes role_start, role_start_set, user_settings_init and role_message, and an unbound role_start_set call is refused. [3]
+
 - A native binding refusal carries no redundant operation envelope. [4]
+
 - The role answer stays concise while a real `tool_call_context` supplies the dispatch log for detailed controls. [5]
+
 
 - The role, task and report registration exists before agent-create begins, under the existing dispatch lock. [6]

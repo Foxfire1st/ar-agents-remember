@@ -21,11 +21,16 @@ STATUS_TABLE applies its first matching row: unreadable host preserves receipt f
 
 - Checks bytes, inode and mtime unchanged on failed/unreadable state and response-only unreachable reason. [5]
 
+
 - Answered refusal persists as failed across refreshes without rewrite and blocks another Revive. [6]
 
+
 - Observing the same session open clears prior resume refusal. [7]
+
 - Checks unresolved/rejected receipts returned unchanged without host read. [8]
+
 - Checks an idle finished native turn projects completed lifecycle status and its bounded last text; the test does not itself prove absence of every semantic/Git mutation. [9]
+
 
 
 - Pins delivered worker doctrine: freeze the candidate and hand its report file directly to the leaf's Reviewer, not to the Manager for relay; dashboard-started workers need no parent. A finished turn is not AR acceptance.  Anchor: `AgreementAcrossTheRoleSetTests.test_a_worker_hands_its_frozen_report_directly_to_the_reviewer` [10]

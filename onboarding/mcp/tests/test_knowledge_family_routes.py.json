@@ -601,11 +601,11 @@
       ]
     },
     "9": {
-      "note": "The lane registration.\n\nAnchor: \"mcp/tests/test_knowledge_family_routes.py\"",
+      "note": "The lane registration.  Anchor: \"mcp/tests/test_knowledge_family_routes.py\"",
       "targets": [
         {
           "anchor": {
-            "blob": "102c4550ab6429f44c8fb543d1d0662de66a1b8c",
+            "blob": "5276cd9583d9a33d9094edac37d82b768491aed9",
             "content": "sha256:94735bcffa1378ed55669798460b785212b5c930b61021035296bb635c9050c0",
             "locator": {
               "end": 153,
@@ -618,7 +618,7 @@
         },
         {
           "anchor": {
-            "blob": "102c4550ab6429f44c8fb543d1d0662de66a1b8c",
+            "blob": "5276cd9583d9a33d9094edac37d82b768491aed9",
             "content": "sha256:8adda2e4b569169c29db5f94ba70ba865ffa308df881aa40153dd219b6e70d95",
             "locator": {
               "end": 169,
@@ -631,7 +631,7 @@
         },
         {
           "anchor": {
-            "blob": "102c4550ab6429f44c8fb543d1d0662de66a1b8c",
+            "blob": "5276cd9583d9a33d9094edac37d82b768491aed9",
             "content": "sha256:65870d8bf072581aae2e74e46f3f91600d874e4babbd72a6acac9137900ba98a",
             "locator": {
               "end": 138,

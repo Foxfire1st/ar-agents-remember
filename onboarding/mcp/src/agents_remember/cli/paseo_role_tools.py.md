@@ -10,7 +10,7 @@ Implements single-role starts, the Manager-owned leaf-set start and receipt-boun
 
 ## Code Commentary
 
-Caller binding decides may-start pairs and sprint/master containment. Starts call launcher dispatch with native parent, and only starter or dashboard may replay a stored request. Recipients resolve through current-line receipts. Self-addresses and ambiguous/cut candidate sets refuse; a leaf seat with two live agents is ambiguous too. An unfinished start, permission prompt or unwritable running turn instead holds a message in the recipient workspace when its receipt locates that store. Native message delivery/resume/wait results keep explicit refusal and uncertain-delivery shapes; no second hosted AR seat is created here.
+Caller binding decides may-start pairs and sprint/master containment. Starts call launcher dispatch with native parent, and only starter or dashboard may replay a stored request. Recipients resolve through current-line receipts. Self-addresses, ambiguous live-agent selections and cut taskless candidate sets refuse; a leaf seat with two live agents is ambiguous too. An unfinished start, permission prompt or unwritable running turn instead holds a message in the recipient workspace when its receipt locates that store. Native message delivery/resume/wait results keep explicit refusal and uncertain-delivery shapes; no second hosted AR seat is created here.
 
 Closed-recipient resume calls `role_activity.resume_role_agent` with the saved receipt, publishing its identity before native resume. `_started` only builds the start answer; post-success role-facts publication was removed from it. The launch-receipt owner publishes before launch/replay. Best-effort publication does not imply host consumption, delivery or task acceptance.
 
@@ -41,7 +41,7 @@ The supported successor composition is not the Attempt-4 thin facade. `role_mess
 
 `role_message_delivery` is the selected shared library for file preparation/storage, links, text refusal, successor naming and long-reply filing; its remaining recipient-resolution helpers are not this public call path, and its uncalled duplicate `_deliver`/`_send` routines are gone. The prologue's shared archived answer can name a known live successor, while local resume/refusal constructors preserve their own explicit recovery boundaries. No-runtime/host-unreachable advice, actual-parent-ID questions and ordinary role/task returns remain separate; no remedy unarchives an old agent.
 
-The Worker successor/addendum reports the composed 1835-line file breaches the 1200-line F04 rail, unlike its earlier 583-line facade. The original ONE D140 records that limitation. Architect ruling b17b9a0a permits size-named landing and assigns the later split to L68; it neither waives the rail nor repairs this file. This source-ownership account is not MEMORY acceptance or a new CODE PASS; ONE D140 is not reopened here.
+Historical Worker successor/addendum: the then-composed 1835-line file breached the 1200-line F04 rail, unlike its earlier 583-line facade. ONE D140 recorded that limitation, and Architect ruling b17b9a0a permitted size-named landing and assigned the later split to L68 without waiving the rail. The current A6b file has 1145 physical lines: caller binding, recipient resolution and role starts now live in `paseo_role_caller.py`, `paseo_role_recipients.py` and `paseo_role_start.py`, imported by this message facade. This current source observation neither rewrites the earlier report nor claims that L68 performed this extraction, and it is not MEMORY acceptance or a new CODE PASS.
 
 ## Hold-versus-send decision and the delivery answers
 
@@ -70,12 +70,17 @@ The role-message facade, native held ordering, recipient identity, parent contai
 
 
 - Frozen implementation of _start_role supporting the stated file behavior. [2]
+
 - Frozen implementation of _resolve_recipient supporting the stated file behavior. [3]
 
 
+
 - Checks foreign IDs and self-addresses are refused. [6]
+
 - Checks live taskless-role ambiguity reports IDs and sends no message. [7]
+
 - Exceeding 24 reads refuses and discloses list cut rather than selecting newest agent. [8]
+
 
 ## MIK-R95 Preparation Answer
 
@@ -85,6 +90,7 @@ A `RolePreparationError` cause is projected into the `launch-refused` answer wit
 The role-start host remedies now name the install step where the host is not installed and the one start where it is down, so an agent started by a dashboard without a reachable host is told the same thing the dashboard line says.
 
 - The host-unreachable remedy that names the install step and the one start. [9]
+
 
 ## Investigator scope and request identity
 
@@ -96,43 +102,56 @@ Architect, Orchestrator and Manager may start Investigator only within their adm
 
 
 
+
 ## Refreshed current evidence
 
 - Frozen implementation of start_rule_violation supporting the stated file behavior. [1]
 
 
 
+
 ## Refreshed current evidence
 
 - Checks all 49 caller/target pairs against exact table. [4]
+
 - Checks own orchestrator sprint and manager sprint/master binding containment. [5]
+
 
 ## Supported successor's operative seams
 
 
 - After ordinary recipient resolution succeeds, the prologue constructs the filed identity from shared attachment/link/store primitives before that resolved-recipient delivery; unfinished-start holding returns through _hold_for_unresolved before _file_message and has no filed identity. [12]
+
 - Unheld native dispatch owns capacity/send/resume and invokes shared long-reply filing after its wait. [13]
+
 - Upstream held-message ordering is decided before native send; permission holding never answers a prompt. [14]
 
 
-- Public message call uses local resolution, report collection, prologue filing and held/native dispatch rather than the retained delivery-module dispatcher.  Leaf revival compares current grant-sensitive canonical task/contract scope before bridge use. [11]
+
+- The public message call uses the imported recipient-resolution owner, report collection, prologue filing and held/native dispatch. Leaf revival compares current grant-sensitive canonical task/contract scope before bridge use. [11]
+
 
 
 - Typed public start conversion includes stepUp. [15]
 
 
-- Projection now delegates to the extracted answer owner. [16]
+
+- The extracted answer owner derives second-copy status from the applied task-server flag and recorded exclusion. [16]
+
 
 
 - Readback, provenance and retry advice are extracted without changing receipt identity. [17]
 
 
+
 - On valid saved receipt context, role-facts publication belongs to pre-launch/replay and receipt-aware resume, not to the post-answer projection; filesystem/runtime publication is best effort, not host execution or plugin-consumption evidence. [18]
+
 
 ## The caller's own harness and the override rule
 
 `_start_role` carries `callerHarness` into the dispatch request, so the transport's own report about its client reaches the launch instead of being reconstructed from a settings path. `_agent_override` delegates to `cli.role_agent_override.agent_override`, and before the dispatch endpoint runs, `_start_role` validates a bound free-agent override through `bound_to_caller_harness` with the caller-harness binding — on an already configured host, a model the bound provider does not offer is refused under the binding’s own sentence before preparation. At a cold root, provider binding and model validation occur after first-run preparation, whose report retains the effects already made. Every other role keeps the refusal a model given without its agent already gets.
 
 - The start path's own override rule, now owned by the caller-harness module. [19]
+
 
 - The start carries the client harness; configured-host choices are checked before dispatch, while a cold root defers binding and validation until after preparation. [20]

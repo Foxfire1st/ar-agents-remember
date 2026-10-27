@@ -1,14 +1,33 @@
 {
   "path": "mcp/src/agents_remember/application/memory_quality/runs.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "43b091711c6ff4cc99e2a14a2aae53c94e0146cf",
+        "content": "sha256:06cb7125dc8179179670e65165110453332938e89d4109a6ce0c74c4fd324bec",
+        "locator": {
+          "kind": "symbol",
+          "name": "QualityRunIdentity"
+        }
+      },
+      "id": "RLZ-904ZB8",
+      "invariant": "INV-QSA8WP",
+      "origin": {
+        "handoffEntry": "MIK-R213@v1 rule 2",
+        "leaf": "260928-MIK-L202"
+      },
+      "rationale": "Operation and immutable selectors prevent preview/check or selection aliasing.",
+      "role": "primary-authority"
+    }
+  ],
   "references": {
     "1": {
       "note": "The canonical identity and typed registry values.",
       "targets": [
         {
           "anchor": {
-            "blob": "8ab9e505ff12815e8bc8979dde6d0d6b356d3bab",
-            "content": "sha256:97385fd80810c9b721fac063ba5fe3a8a7cb9d32beb934b73736fc4f8bbf7757",
+            "blob": "43b091711c6ff4cc99e2a14a2aae53c94e0146cf",
+            "content": "sha256:06cb7125dc8179179670e65165110453332938e89d4109a6ce0c74c4fd324bec",
             "locator": {
               "kind": "symbol",
               "name": "QualityRunIdentity"
@@ -18,7 +37,7 @@
         },
         {
           "anchor": {
-            "blob": "8ab9e505ff12815e8bc8979dde6d0d6b356d3bab",
+            "blob": "43b091711c6ff4cc99e2a14a2aae53c94e0146cf",
             "content": "sha256:cce232136fcf2bc9ce14736c719ab18f6d12f49e75f840713acc3f68fc9016b4",
             "locator": {
               "kind": "symbol",
@@ -29,7 +48,7 @@
         },
         {
           "anchor": {
-            "blob": "8ab9e505ff12815e8bc8979dde6d0d6b356d3bab",
+            "blob": "43b091711c6ff4cc99e2a14a2aae53c94e0146cf",
             "content": "sha256:1b4ca342ac43bf92aaf0222a65a8b9c2916e0511e6e74bfc74a0c4d7028a7518",
             "locator": {
               "kind": "symbol",
@@ -45,7 +64,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8ab9e505ff12815e8bc8979dde6d0d6b356d3bab",
+            "blob": "43b091711c6ff4cc99e2a14a2aae53c94e0146cf",
             "content": "sha256:411d2ae09531f60d396f7bf6fb0d7eae98738c6abff0b282df5b2c24d2ef864e",
             "locator": {
               "kind": "symbol",
@@ -61,8 +80,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8ab9e505ff12815e8bc8979dde6d0d6b356d3bab",
-            "content": "sha256:0ef8c57ea710186ef1b3b5c8d37b80c696e6bc7f62057b227b8bb6bcbd6cc665",
+            "blob": "43b091711c6ff4cc99e2a14a2aae53c94e0146cf",
+            "content": "sha256:93dfb160f51d1d36e41bed9fefe52ff0a860b5a9b8b2134f74b5ab0e8bb7af42",
             "locator": {
               "kind": "symbol",
               "name": "poll_quality_run"
@@ -77,7 +96,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8ab9e505ff12815e8bc8979dde6d0d6b356d3bab",
+            "blob": "43b091711c6ff4cc99e2a14a2aae53c94e0146cf",
             "content": "sha256:afb5b9fe27f63187e71e93daee41a0731ddc51e356730e770c2c1898e40c4dba",
             "locator": {
               "kind": "symbol",
@@ -93,7 +112,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a4cb0ce3f5f3f488c8ad8313b8063d4a8218871e",
+            "blob": "f3bf4bfa27b8bfd44cd242540d16a2dbf31ec1c4",
             "content": "sha256:d66282011e6104457e201a03a8626244577dc026812a91ef41972743328fa8d1",
             "locator": {
               "kind": "symbol",
@@ -105,7 +124,7 @@
         },
         {
           "anchor": {
-            "blob": "a4cb0ce3f5f3f488c8ad8313b8063d4a8218871e",
+            "blob": "f3bf4bfa27b8bfd44cd242540d16a2dbf31ec1c4",
             "content": "sha256:daf3217ecae8b4eaad292db942e50c17acee95b05ae749a557801f04457bc3a2",
             "locator": {
               "kind": "symbol",
@@ -117,12 +136,12 @@
         },
         {
           "anchor": {
-            "blob": "a4cb0ce3f5f3f488c8ad8313b8063d4a8218871e",
+            "blob": "f3bf4bfa27b8bfd44cd242540d16a2dbf31ec1c4",
             "content": "sha256:6a715d528af54912cb5e19cbbb9267475531b5cf87e46a27f8391883c9d1a0a5",
             "locator": {
-              "end": 307,
+              "end": 334,
               "kind": "line_range",
-              "start": 301
+              "start": 328
             },
             "path": "mcp/src/agents_remember/application/memory_quality/controller.py"
           },
@@ -130,14 +149,57 @@
         },
         {
           "anchor": {
-            "blob": "a4cb0ce3f5f3f488c8ad8313b8063d4a8218871e",
+            "blob": "f3bf4bfa27b8bfd44cd242540d16a2dbf31ec1c4",
             "content": "sha256:b44e71007fa0a88f6ec17177f8979cd313678136b1e847464815851f03a9d461",
             "locator": {
-              "end": 316,
+              "end": 343,
               "kind": "line_range",
-              "start": 310
+              "start": 337
             },
             "path": "mcp/src/agents_remember/application/memory_quality/controller.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Run identity distinguishes operation and immutable selectors.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "43b091711c6ff4cc99e2a14a2aae53c94e0146cf",
+            "content": "sha256:06cb7125dc8179179670e65165110453332938e89d4109a6ce0c74c4fd324bec",
+            "locator": {
+              "kind": "symbol",
+              "name": "QualityRunIdentity"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Results are detached at retention and polling.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "43b091711c6ff4cc99e2a14a2aae53c94e0146cf",
+            "content": "sha256:93dfb160f51d1d36e41bed9fefe52ff0a860b5a9b8b2134f74b5ab0e8bb7af42",
+            "locator": {
+              "kind": "symbol",
+              "name": "poll_quality_run"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "43b091711c6ff4cc99e2a14a2aae53c94e0146cf",
+            "content": "sha256:9f94fdbcc919addad24f06845633e0d23b1dc231e783687b04703239784c4434",
+            "locator": {
+              "kind": "symbol",
+              "name": "_complete_quality_run"
+            }
           },
           "kind": "code"
         }

@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "5930773b499dccfcff2fbb23b686794e65e22ad1",
+        "blob": "730fe0af2f4f304ee6e4b2c76e0683cff9e842fa",
         "content": "sha256:dfb975b002026525cc8ccdf35158210f1e10fc85d8496eecbe06b240ce745b48",
         "locator": {
           "kind": "symbol",
@@ -22,8 +22,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "5930773b499dccfcff2fbb23b686794e65e22ad1",
-        "content": "sha256:faeb2c1d676d3d096f64e06b9fb3b426b83e637f72e3be180a1de767227311b3",
+        "blob": "730fe0af2f4f304ee6e4b2c76e0683cff9e842fa",
+        "content": "sha256:7885e634d5fed5ff4509e800ab4a7e2cfc937fe43383802746c8f34f18e10012",
         "locator": {
           "end": 17,
           "kind": "line_range",
@@ -46,7 +46,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5930773b499dccfcff2fbb23b686794e65e22ad1",
+            "blob": "730fe0af2f4f304ee6e4b2c76e0683cff9e842fa",
             "content": "sha256:cc3e8849bac0b8d1afbedd3d2f8f3616195f6b014305fb612e86249da44ed182",
             "locator": {
               "kind": "symbol",
@@ -57,7 +57,7 @@
         },
         {
           "anchor": {
-            "blob": "5930773b499dccfcff2fbb23b686794e65e22ad1",
+            "blob": "730fe0af2f4f304ee6e4b2c76e0683cff9e842fa",
             "content": "sha256:1124446ec97f490d03a274ca6bf80efc50758754a3123d210da234cb94b5c5d4",
             "locator": {
               "end": 41,
@@ -74,7 +74,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5930773b499dccfcff2fbb23b686794e65e22ad1",
+            "blob": "730fe0af2f4f304ee6e4b2c76e0683cff9e842fa",
             "content": "sha256:9134ae5e2ff9950b195edf03b1b5b85f02939ac565ab2a0f533db786c703e9a2",
             "locator": {
               "kind": "symbol",
@@ -86,12 +86,12 @@
       ]
     },
     "3": {
-      "note": "Refuses a default on either budget declaration, so a dead number cannot return to the tree.\n\nAnchor: `test_the_option_declarations_state_no_budget_of_their_own`",
+      "note": "Refuses a default on either budget declaration, so a dead number cannot return to the tree.  Anchor: `test_the_option_declarations_state_no_budget_of_their_own`",
       "targets": [
         {
           "anchor": {
-            "blob": "5930773b499dccfcff2fbb23b686794e65e22ad1",
-            "content": "sha256:e7f86545075d82fb4f9f513462cf9d51b8a7b075547518f319e5a2025dd8f160",
+            "blob": "730fe0af2f4f304ee6e4b2c76e0683cff9e842fa",
+            "content": "sha256:1128930e2d2210b4adf2819cf98e6188e04a6f494c052e814515c50df9fc991a",
             "locator": {
               "kind": "file"
             }
@@ -105,7 +105,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5930773b499dccfcff2fbb23b686794e65e22ad1",
+            "blob": "730fe0af2f4f304ee6e4b2c76e0683cff9e842fa",
             "content": "sha256:69ea7da23d36e3a8de6a02e2d18474d5bfd7ee0cc075ce22192fb1651013376c",
             "locator": {
               "kind": "symbol",
@@ -117,14 +117,14 @@
       ]
     },
     "5": {
-      "note": "The current root declaration is 10,000 unit/1,000 integration; the synthetic stub and guard-relative boundary cases must follow it.\n\nAnchor: `unit_case_budget`",
+      "note": "The current root declaration is 10000 unit and 2000 integration; the synthetic stub and both guard-relative boundary cases follow it.",
       "targets": [
         {
           "anchor": {
-            "blob": "0b550ee3cda163c8b451cb06a4fb69b489c4686d",
-            "content": "sha256:5559c13c46e03eb19fae3e43e1e5505868ae7ff83af16118912b42fb3b6d6e08",
+            "blob": "ddd77babbaaddf51063d6e23856c0cadd142d461",
+            "content": "sha256:d54efa326c1d4128e0c15e19ae1c2e3f9fb44b9af2c0cfbcfa5bca0306be0494",
             "locator": {
-              "end": 321,
+              "end": 334,
               "kind": "line_range",
               "start": 320
             },

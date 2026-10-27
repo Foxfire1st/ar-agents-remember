@@ -164,7 +164,7 @@ served body together.
 - **The refusal family: an unconfined path, a substituted baseline, an incomplete query and an unwired process.** [18]
 - The closing identity case: what was opened is what was listed. [19]
 - **The transport this module drives: the third route constant, the selector that carries the caller's generation, and the port the composition supplies.** [20]
-> Retained earlier citation wording: - **The lane row and the two consumer rows this module's registration produced, with the counts they do not move.** [22]
+> Retained earlier citation wording: - **The lane row and the two consumer rows this module's registration produced, with the counts they do not move.**
 
 ### Cross-Repo References
 
@@ -183,4 +183,8 @@ No meaningful cross-repo references found.
 - The entry callback forwards the optional comparison number to the comparison-aware owner. [23]
 - The content request still names the listed before/after tree ids. [24]
 
-- **The lane row and the two consumer rows this module's registration produced, with the counts they do not move.** [22]
+
+
+
+
+- **The lane row and the two consumer rows this module's registration produced, with the counts they do not move.**  Anchor: "mcp/tests/test_knowledge_review_source_content.py" [22]

@@ -64,11 +64,11 @@
       ]
     },
     "2": {
-      "note": "The explicit unit lane owns the module.\n\nAnchor: \"mcp/tests/test_kernel_pure_regressions.py\"",
+      "note": "The explicit unit lane owns the module.  Anchor: \"mcp/tests/test_kernel_pure_regressions.py\"",
       "targets": [
         {
           "anchor": {
-            "blob": "102c4550ab6429f44c8fb543d1d0662de66a1b8c",
+            "blob": "5276cd9583d9a33d9094edac37d82b768491aed9",
             "content": "sha256:bf578a482d17e18fd93a496041c04fc839cc47369b5649865d7738050ba9c576",
             "locator": {
               "end": 132,
@@ -81,7 +81,7 @@
         },
         {
           "anchor": {
-            "blob": "102c4550ab6429f44c8fb543d1d0662de66a1b8c",
+            "blob": "5276cd9583d9a33d9094edac37d82b768491aed9",
             "content": "sha256:cad8724903fb4b53cc5f31ed61dd6ff3592baeecfde98c48e196704bd5a14898",
             "locator": {
               "end": 148,
@@ -94,7 +94,7 @@
         },
         {
           "anchor": {
-            "blob": "102c4550ab6429f44c8fb543d1d0662de66a1b8c",
+            "blob": "5276cd9583d9a33d9094edac37d82b768491aed9",
             "content": "sha256:70dee210aae0b112df66541607fdba376d9310fd36b8a5fec0214582af60d323",
             "locator": {
               "end": 117,

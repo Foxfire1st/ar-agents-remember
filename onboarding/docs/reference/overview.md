@@ -40,9 +40,9 @@ The skill-distribution contract these pages now state has one carrier: canonical
 
 The server's ordered registrar tuple names the tool-family owners. The cycle-free literal roster lives in `models/tools/public_roster.py`; `PUBLIC_TOOL_RESPONSE_MODELS` owns response-model correspondence. Stale statements such as manual `skills_install()` or a single public spawn surface must be read against these present owners. Registration of `role_start` does not erase structural dispatch's separate caller matrix.
 
-Native Paseo launches resolve agent/provider, model, effort, mode, features and notes with per-choice provenance. Explicit start selections precede matching host profiles and role settings for agent/model/effort and speed features; absent choices can reach host defaults. Profiles match the exact role name, first match wins, skipped matches are recorded, and an unavailable profile read is explicitly reported before role settings are used. Lower choices stay bound to their authored provider/model instead of being reinterpreted after an override. Effective unoffered values refuse. Modes and notes belong to the user settings/profile authority; start calls accept no mode. Speed choices include service tier and Claude fast mode, while permission-bearing and unknown features are prohibited in start calls. Service-tier aliases normalize before conflict comparison; fast mode is a distinct toggle. Saved retries preserve the original launch choices, and revival uses the stored host agent rather than recalculating a running mode.
+Native Paseo launches resolve agent/provider, model, effort, mode, features and notes with per-choice provenance. Explicit start selections precede matching host profiles and role settings for agent/model/effort and speed features; absent choices can reach host defaults. Profiles match the exact role name, first match wins, skipped matches are recorded, and an unavailable profile read is explicitly reported before role settings are used. Lower choices stay bound to their authored provider/model instead of being reinterpreted after an override. Selections absent from a known offer set refuse; a catalog part without a fresh or saved answer remains unchecked. Modes and notes belong to the user settings/profile authority; start calls accept no mode. Speed choices include service tier and Claude fast mode, while permission-bearing and unknown features are prohibited in start calls. Choice names match Paseo IDs or labels without regard to case. Service-tier conflicts compare the matched Paseo options; fast mode is a distinct toggle. Saved retries preserve the original launch choices, and revival uses the stored host agent rather than recalculating a running mode. Each launcher view and start asks for fresh catalog data. The launcher can display timestamped saved offers while its request runs, but Start waits for the fresh request. Start refreshes provider/model metadata and asks only for the chosen model's features. A failed part uses its last successful answer from the shared on-disk store; a part with neither answer is unknown and its configured choices pass to the host unchecked.
 
-The settings reference distinguishes the selected mode from actual permission behavior. New Claude/Codex starts use the named least-working offered modes only when offered; Pi has no selectable mode, and unknown kinds or missing named modes omit the mode with a reason. Failed/incomplete catalogs refuse; an explicitly empty mode catalog is a different observation. Host preselection is not evidence of least privilege, and mode labels alone do not prove unattended operation. User notes append as a marked, sourced block; an exact first-nonblank-line `<overwrite>` marker replaces the baseline text, with empty replacement refused and binding/handover/start-message permissions retained. Text is not a file/link loader; no role skill setting is implied. Host-global appended prompts remain a separate authority.
+The settings reference distinguishes the selected mode from actual permission behavior. New Claude/Codex starts use the named least-working offered modes only when offered; Pi has no selectable mode, and unknown kinds or missing named modes omit the mode with a reason. A failed catalog part uses its saved answer when available. With neither fresh nor saved modes, a configured mode is passed through unchecked; a known, explicitly empty mode catalog is a different observation and rejects a configured mode as unoffered. Host preselection is not evidence of least privilege, and mode labels alone do not prove unattended operation. User notes append as a marked, sourced block; an exact first-nonblank-line `<overwrite>` marker replaces the baseline text, with empty replacement refused and binding/handover/start-message permissions retained. Text is not a file/link loader; no role skill setting is implied. Host-global appended prompts remain a separate authority.
 
 The terminal harness contract remains distinct. Claude, Codex and Pi obtain token-free installed/account catalogs and validate effort under the selected model; native adapters own launch and same-session control evidence. Claude correlated initialize command rows, live `system/init` session facts, and correlated `list_models` catalog/model-effort data are separate witnesses. Required malformed or contradictory structured fields refuse rather than falling back to panes/logs or guessed version ranges. Settings-defined non-native mappings remain an explicitly declared compatibility surface. Native selection conflicts, duplicate selectors, omitted required model/effort, unsupported caller spend overrides and unavailable harnesses retain their documented refusals. Catalog concurrency, readiness, three-state hosted dispatch and complete serving reload remain separate contracts.
 
@@ -98,13 +98,37 @@ These inherited tables are retained verbatim for navigation and custody. Their s
 
 **L184.** The tool reference's held answer now has to describe the limited recipient's hold and the reset it carries.
 
+## Citation preview modes
+
+The existing `citation_fix` signature is flat: its default sync mode still previews or writes under the original authority boundary. Background start requires `dry_run=true`; poll repeats the repository/optional contract scope and run ID without document selectors. It reuses the quality run registry and scope validation, retaining the synchronous preview fields except run status/identity. The quality-check signature still uses its discriminated `request` object.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ## Evidence
-
+- Public signatures distinguish flat citation arguments from quality requests. [28]
 Inherited finding [23] retains its exact wording/target as the historical profile-required closeout account; parent adjudicates that outdated prerequisite. Current requested-certification and invariant-gated transaction are separate:
-
 - Requested certification is explicitly selected repository-profile work through Dagger and commits nothing. The profile and loader are still authority for that requested Gates 1–4 work; a selection named `closeout` is not an automatic closeout invocation. Ordinary closeout runs no gate but the invariant gate, retains exact candidate/approval/lineage checks and code-then-memory Git publication, and does not run certification, code-quality checks, test suites or independent review. A missing profile or certification result does not block that transaction. This does not remove canonical Curator/Reviewer duties or confer independent semantic acceptance on diagnostics. [26]
 - Retained reference account (no fresh execution or acceptance inferred): The normalized public input has only two commit legs. [1]
-- Retained reference account (no fresh execution or acceptance inferred): The public tool reference maps the current tool surface to its registered families and owning routes. [2]
 - Retained reference account (no fresh execution or acceptance inferred): The settings reference describes the active MCP authority, user role settings and their distinct merge and precedence boundaries. [3]
 - Retained reference account (no fresh execution or acceptance inferred): The Paseo catalog adapter is the source owner for the configured host catalog route. [4]
 - Retained reference account (no fresh execution or acceptance inferred): The settings document's host section. [5]
@@ -112,8 +136,6 @@ Inherited finding [23] retains its exact wording/target as the historical profil
 - Current literal public roster has 44 names, including knowledge_write, user_settings_init, explainer_control and citation_note_revision; historical populations retain their own epochs and supply no live-advertisement acceptance. [7]
 - Ordered family registration owns the advertised tool definitions. [8]
 - Bound role starts retain caller/role constraints, request reconciliation and no caller permission-feature authority; set starts are Manager-only and preserve held siblings. [9]
-- Poll includes optional contract scope while extra execution-only fields are forbidden. [10]
-- Memory preparation distinguishes diagnostic scope, raw readiness, coherence validation and capacity refusal. [11]
 - Pre-baseline writes require the declared converted root, no baseline and no dependent linked worktree. [12]
 - Converted citation repair excludes refused cards from its mechanical second stage in both list and singleton paths. [13]
 - Unscoped route-index apply enters the pre-baseline guard; leaf apply enters the leaf writer guard. [14]
@@ -126,4 +148,7 @@ Inherited finding [23] retains its exact wording/target as the historical profil
 - Source-quality profile requirement has an explicit no-code-commit exception. [23]
 - Setup reports the knowledge state and hands foundation work to the user-started Architect's regular task and its Curator; the following provider stage retires providers. [24]
 - Current literal public roster has 44 names, including knowledge_write, user_settings_init, explainer_control and citation_note_revision; historical populations retain their own epochs and supply no live-advertisement acceptance. [25]
+- Retained reference account (no fresh execution or acceptance inferred): The public tool reference maps the current tool surface to its registered families and owning routes. [2]
+- Poll includes optional contract scope while extra execution-only fields are forbidden.  Anchor: _MemoryQualityExecutionRequest / MemoryQualityPollRequest / MemoryQualityCheckRequest [10]
+- Memory preparation distinguishes diagnostic scope, raw readiness, coherence validation and capacity refusal. [11]
 - The public explainer_control reference declares hosted Architect claim, master-record-gated leaf actions, developer dashboard routes and first-request/no-model-turn controls. [27]

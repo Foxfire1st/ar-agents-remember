@@ -41,11 +41,19 @@ None recorded.
 
 ## Evidence
 
+
+
 - The module states the four classes, the exact-pair requirement and the fixer reuse it is built on. [1]
+
+
 - The census schema tag and the rule id the validator registers. [2]
 - A locator is rendered as one comparable line for the three locator kinds. [3]
 - Every start whose same-length lines carry the recorded content. [4]
+
+
 - One anchor's state at one pair, and what closes it, decided through the shipped fixer's function. [5]
+
+
 - The observation record, its `current` test and the row projection. [6]
 - The judgment states the shipped repair rule refuses. [7]
 - A range's judgment: ambiguous, one identical match the fixer will not refresh, or no identical range. [8]
@@ -68,3 +76,7 @@ None recorded.
 - A sidecar the parser refused is named and the census is not complete. [25]
 - An accepted sidecar cannot alias a rejected one out of the accounting. [26]
 - The directory census measures a working-tree pair. [27]
+
+A source read that raises `SourceFileUnavailableError` produces a `not-indexed` observation with the exact reason and no invented actual blob or content. A genuinely absent path remains `stale:path-absent`. Readable ignored or binary content still reaches ordinary content verification.
+
+- Unavailable source and an absent path have distinct observations. [28]

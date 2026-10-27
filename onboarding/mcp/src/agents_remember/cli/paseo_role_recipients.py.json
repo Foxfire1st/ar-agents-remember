@@ -1,0 +1,112 @@
+{
+  "path": "mcp/src/agents_remember/cli/paseo_role_recipients.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "634f7ed1b0bf88c39ff6c491845cecec943df773",
+        "content": "sha256:b0bf53728de4411d8749e98977b4e10f4c738ce7008aaa357f16a50f9d6b6b5d",
+        "locator": {
+          "kind": "symbol",
+          "name": "_recipient_by_selection"
+        }
+      },
+      "id": "RLZ-87W4MJ",
+      "invariant": "INV-R9S24S",
+      "origin": {
+        "handoffEntry": "PNT-R06@v1 §5 / G7 / F3 / A1",
+        "leaf": "260928-MIK-L90"
+      },
+      "rationale": "Refuses multiple live taskless agents or truncated candidate set.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "634f7ed1b0bf88c39ff6c491845cecec943df773",
+        "content": "sha256:30415cc3de8770663243189a3306756bc53585d7818bdad9f3c9701f4a705a19",
+        "locator": {
+          "kind": "symbol",
+          "name": "_live_agents"
+        }
+      },
+      "id": "RLZ-A9DFWX",
+      "invariant": "INV-R9S24S",
+      "origin": {
+        "handoffEntry": "PNT-R06@v1 §5 / G7 / F3 / A1",
+        "leaf": "260928-MIK-L90"
+      },
+      "rationale": "Reads receipt-named agents from the host, retains the first archived ID, and stops at the first live agent only when first_only is true. The public selector sets that flag for non-leaf task-bound selections, but scans leaf-seat and taskless candidates for explicit ambiguity rather than choosing one.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "634f7ed1b0bf88c39ff6c491845cecec943df773",
+        "content": "sha256:cbf94e497fceae9060ca63104a00d7335a025dfdffd38de9ede04365294a972f",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-HJ854G",
+      "invariant": "INV-R9S24S",
+      "origin": {
+        "handoffEntry": "PNT-R06@v1 §5 / G7 / F3 / A1",
+        "leaf": "260928-MIK-L90"
+      },
+      "rationale": "Bounds native reads at 24 and forces explicit taskless cut ambiguity.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "634f7ed1b0bf88c39ff6c491845cecec943df773",
+        "content": "sha256:ebc1a4ad94a8accb33e831864452ec335ea91e81251b9bee90dff501552948a5",
+        "locator": {
+          "kind": "symbol",
+          "name": "_recipient_by_id"
+        }
+      },
+      "id": "RLZ-PYXJN6",
+      "invariant": "INV-R9S24S",
+      "origin": {
+        "handoffEntry": "PNT-R06@v1 §5 / G7 / F3 / A1",
+        "leaf": "260928-MIK-L90"
+      },
+      "rationale": "Requires explicit ID to belong to this execution line receipt.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "634f7ed1b0bf88c39ff6c491845cecec943df773",
+        "content": "sha256:263fc31278fc9bea43e7e85be88f6e272b56f0b509dcbebb5ed747fc7c1df019",
+        "locator": {
+          "kind": "symbol",
+          "name": "_resolve_recipient"
+        }
+      },
+      "id": "RLZ-VQW9WE",
+      "invariant": "INV-R9S24S",
+      "origin": {
+        "handoffEntry": "PNT-R06@v1 §5 / G7 / F3 / A1",
+        "leaf": "260928-MIK-L90"
+      },
+      "rationale": "The facade resolver requires exactly one receipt-bound address form and refuses self-addressing. For an unfinished start it raises recipient-busy with a holdReason that send_role_message converts to workspace holding when the store is known, rather than proving unconditional terminal refusal.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The source implements the behavior and boundaries described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "634f7ed1b0bf88c39ff6c491845cecec943df773",
+            "content": "sha256:cbf94e497fceae9060ca63104a00d7335a025dfdffd38de9ede04365294a972f",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

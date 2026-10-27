@@ -25,8 +25,8 @@ host outside the allow-list. `words_of()` matches the name as a word.
   a symlink's target included — and passes only what is listed.
 - **Leftover settings.** `test_a_settings_file_with_the_former_block_loads_as_if_the_block_were_absent`
   loads a settings file that still carries the former block as if it were absent.
-- **Routes.** `test_the_launcher_registers_its_ten_routes_and_answers_404_on_the_former_paths` registers the
-  launcher's ten routes and answers 404 on each former path, and
+- **Routes.** `test_the_launcher_registers_its_eleven_routes_and_answers_404_on_the_former_paths` registers the
+  launcher's eleven routes and answers 404 on each former path, and
   `test_no_route_of_the_dashboard_application_matches_a_former_path` checks the dashboard application's
   routes against `FORMER_ROUTES`.
 - **Previous line on disk.** `PreviousLineReceiptTests` leaves a previous line's receipts and reports
@@ -48,4 +48,5 @@ former path is probed with.
 
 - The tracked tree names the previous host nowhere outside the allow-list, and the former block loads as absent. [1]
 
-- Ten current launcher routes include `GET /api/role-launch/warmup`, while every former-path 404 check remains. [2]
+
+- Eleven current launcher routes include GET /api/role-launch/warmup and GET /api/role-launch/saved-catalog while every former-path 404 check remains. [2]

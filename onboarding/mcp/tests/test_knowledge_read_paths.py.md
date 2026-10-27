@@ -162,7 +162,7 @@ No configured domain documentation could be checked.
 
 
 
-> Retained earlier citation wording: - The lane row this module occupies. Source caption: `test_knowledge_read_paths` [18]
+> Retained earlier citation wording: - The lane row this module occupies. Source caption: `test_knowledge_read_paths`
 
 
 
@@ -172,5 +172,9 @@ No configured domain documentation could be checked.
 No cross-repository behavior is implemented in this file.
 
 No meaningful cross-repo references found.
+
+
+
+
 
 - The lane row this module occupies. Source caption: `test_knowledge_read_paths` [18]

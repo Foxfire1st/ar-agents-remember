@@ -16,8 +16,9 @@ payload for MCP closeout workflows.
 `DriftCheckContext.landing_base` is an optional independent landing resolver. The converted drift-slot dispatch forwards it to `converted_knowledge_check` alongside the existing `knowledge_base`: contract-bound reports compare with the admitted leaf base, while validator classification keeps its operation-base semantics. This is context propagation, not another refusing check or registry entry.
 
 
-- The converted dispatch forwards independent validator and landing base ports. [18]
 
+
+- The converted dispatch forwards independent validator and landing base ports.  Anchor: `_converted_check` [18]
 
 
 ### Logic
@@ -52,7 +53,7 @@ The converted checker supplies refusing validator findings, a stale reference an
 
 
 
-- The registered `memory_quality_check` dispatches typed sync/start/poll requests to their payload builders; its description names candidate leaf-contract scope and required coherence validation. [1]
+
 
 
 
@@ -63,26 +64,52 @@ The converted checker supplies refusing validator findings, a stale reference an
 
 - The first pre-code check enforces entity inventory/fingerprint alignment without requiring code metadata. [5]
 
+
+
 - StyleCheckInputs now carries only the onboarding root; surviving style runners do not execute claim reopening or prepared-history citation gates. [6]
+
+
+
 
 - Converted dispatch replaces the drift slot with the validator/reference report and runs the surviving document-shape checks; legacy compatibility checks are absent. [7]
 
+
+
+
 - The surviving runner aggregates selected check results; it has no source-index acquisition exception guard. [8]
+
+
 
 
 - The converted checker reports named base-build failure rather than inventing an empty comparison. [9]
 
 
 
+
 - When a supplied converted base cannot be built, its named finding is retained and base-dependent anchor-path refusals are withheld. [10]
+
+
 
 
 - run_check dispatches only the surviving STYLE_CHECKS and refuses an unknown name. [11]
 
+
+
+
 - The aggregate runner retains declared refusing counts and complete findings, with bounded report-only samples and optional complete report-only rows. [13]
 
 
-- The drift context carries the converted tree's comparison base. [16]
 
 
-- The converted check receives the base port. [17]
+- The drift context carries the converted tree's comparison base.  Anchor: `DriftCheckContext` [16]
+
+
+
+
+- The converted check receives the base port.  Anchor: `_converted_check` [17]
+
+Converted full-quality dispatch constructs `QualitySourceFiles` from the paired code repository root. The validator base and landing base remain separate inputs.
+
+- Converted dispatch supplies the per-check source reader and both comparison ports. [19]
+
+- The registered `memory_quality_check` dispatches typed sync/start/poll requests to their payload builders; its description names candidate leaf-contract scope and required coherence validation. [1]

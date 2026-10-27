@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "d1f7a137b32d3fac6a09c476ec7ed538ae8a4a03",
-    "commit": "6f81148c90e0d0db595034e111f696697cc40c7e",
+    "codeTree": "4ffeeb98c6ddf7594ebdea7eac26bb7298f2dd72",
+    "commit": "d0be84f714df97c4c4f63406dc5ba190fa53c325",
     "role": "curator",
-    "statement": "No reported chat means no shown identity: the Chats pane publishes nothing until the frame reports what it shows, and the launcher fallback the repair removed is not restored. The named-seat request remains a separate mechanism that supplies the frame target and scope.",
-    "task": "260928-MIK-L190",
+    "statement": "At A6b, RoleChatsView still publishes shown-chat identity only from the frame's own report, with no identity before that report; the requested frame target remains separate from observed identity.",
+    "task": "260928-MIK-L202",
     "uncommitted": true
   },
   "document": "dashboard/src/cockpit/RoleChatsView.tsx",
@@ -17,12 +17,12 @@
     "leaf": "260928-MIK-L190",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
       "anchor": {
-        "blob": "84550a276c2350aa700370967d9509160521edc2",
+        "blob": "88c457444f4fabbaee444d04d1131c177f99a9d0",
         "content": "sha256:79b9c4f7e05d7510a2bbbe85ca53a13faefb2b29437a77738ad872cca309aaa6",
         "locator": {
           "kind": "symbol",

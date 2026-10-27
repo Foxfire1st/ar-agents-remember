@@ -1,0 +1,46 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives",
+      "constrains_future_work"
+    ],
+    "justification": "The two interpretations produced different refusing findings; the chosen boundary constrains every future citation-reader change."
+  },
+  "alternatives": [
+    {
+      "option": "Keep pathRules restricted to per-file note eligibility and storage; verify readable excluded citations.",
+      "reason": "This preserves the existing citation verification contract and avoids new refusals for ordinary readable sources.",
+      "status": "chosen"
+    },
+    {
+      "option": "Filter citation verification inputs by onboarding pathRules.",
+      "reason": "The A2 interpretation added refusals to existing readable citations in this repository.",
+      "reconsider_when": "A future developer decision explicitly changes citation eligibility and accounts for existing excluded-file citations.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "Ignored and binary readable citations retain separate source notes; pathRules-excluded readable citations have no remark."
+  ],
+  "context": "Applying onboarding pathRules to citation inputs made readable existing citations refuse; listing policy and per-file-note eligibility must remain separate.",
+  "decider": "Developer D580 and MIK-R212@v3",
+  "id": "DEC-YGP1V4",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": "INV-7ACVBS"
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "path": "curator-handoff-v2.json"
+    },
+    "handoffEntry": "pathrules-citation-boundary",
+    "leaf": "260928-MIK-L202",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

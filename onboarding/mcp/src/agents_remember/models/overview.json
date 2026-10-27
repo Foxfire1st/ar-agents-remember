@@ -2252,7 +2252,7 @@
       ]
     },
     "236": {
-      "note": "**The reviewed subject as the comparison selected it: a recorded identity, its own label and the operation's count, with no field for a path, a file, a display version or a ranking.**",
+      "note": "The reviewed subject carries its recorded identity, its own label and before/after presence. It has no path, file, display version, ranking or per-subject comparison count.",
       "targets": [
         {
           "anchor": {
@@ -2339,7 +2339,7 @@
       ]
     },
     "242": {
-      "note": "**The new field, on the strict response model that declares it.**\n\nAnchor: `ReadArFilesResponse` `published_intent`",
+      "note": "The strict `ReadArFilesResponse` declares named-file and governing-overview locations, observation state and refusal fields; it has no `published_intent` body field.\n\nAnchor: `ReadArFilesResponse`",
       "targets": [
         {
           "anchor": {
@@ -4692,6 +4692,23 @@
               "name": "ExplainerControlClaim"
             },
             "path": "mcp/src/agents_remember/models/tools/explainer_control.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "338": {
+      "note": "Citation responses carry optional background identity.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5cd7ec716feacd1db6d5df3f9f31d400bf26d49e",
+            "content": "sha256:7be2241f9fc71ec173132d0a8a7ad86287ab3a0b932e2cc12f26a5e84c4d5526",
+            "locator": {
+              "kind": "symbol",
+              "name": "CitationFixResponse"
+            },
+            "path": "mcp/src/agents_remember/models/memory.py"
           },
           "kind": "code"
         }

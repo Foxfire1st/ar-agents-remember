@@ -29,7 +29,7 @@ fails if the refusal comes back — set against the guards that were kept and ar
 
 ### Current Contract
 
-The integration lane contains test_task_reopen_series_extension.py at the current declaration location, line470. Integration membership and the nine-step route are unchanged; a stale historical row number is not a semantic reopen change or an executed result.
+The integration lane contains test_task_reopen_series_extension.py at the current declaration location, line 615. Integration membership and the nine-step route are unchanged; a stale historical row number is not a semantic reopen change or an executed result.
 
 ### Logic
 
@@ -143,13 +143,11 @@ with a 1000/250 screen before that raise, and a matching 3000/600 pair after it;
 interface rather than literal-only source syntax addressed the named-constant reader defect.
 That dated account is not a general guarantee for every later raise or landing order.
 
-With the current ruled constants 10,000/1,000, the agreement method compares the declaration tuple
+With the current ruled constants 10,000/2,000, the agreement method compares the declaration tuple
 lexicographically with that ruled tuple. At or above it, the screen must equal the declaration.
 Below it, the screen must equal the fixed 1000/250 legacy pair and differ from the declaration.
 A synchronized 4000/1000 or 3000/600 pair thus enters the legacy branch and fails; the method does
-not accept every intermediate matched pair. The separate ruling method skips when either
-individual declaration is below its ruled value, otherwise requires exactly 10,000/1,000. Its skip
-does not skip or qualify the agreement method. These are current assertion boundaries, not
+not accept every intermediate matched pair. The separate ruling method unconditionally requires exactly 10,000/2,000 and fails a below-ruling declaration; the obsolete pending-owner skip is removed. It does not qualify the agreement method. These are current assertion boundaries, not
 proof of arbitrary mixed-state publication or a whole-suite compatibility claim. [17] [18] [19]
 
 ### Conventions
@@ -177,7 +175,7 @@ proof of arbitrary mixed-state publication or a whole-suite compatibility claim.
   check is what makes that true for this module. Deleting the check, or skipping it together with the
   route, is outside what any in-repo case can prevent and is recorded as such rather than presented
   as proof.
-- The two budget figures inside the module — the ruled 10,000/1,000 constants and the pre-raise 1000/250
+- The two budget figures inside the module — the ruled 10,000/2,000 constants and the pre-raise 1000/250
   pair — are **this module's declared inputs and the ruling's values**, never a second copy of the
   repository's ceilings: the ceilings themselves are read from `pyproject.toml` at run time. Do not
   restate either pair here; read them there.
@@ -235,35 +233,92 @@ No cross-repository claim is made.
 
 
 
+
 - The nine-step route — reopen, author the new row with its `file` cell, start, work, close out, integrate, finalize, close the master out, land it — runs in order and records completion on its last line. [1]
 
+
+
 - The documented fallback from the closeout cell to the integration cell carries the code landing. [10]
+
+
 - The same fallback carries the memory landing. [11]
+
+
 - A missing master document no longer blocks: the reopen proceeds and reports the missing path. [12]
+
+
 - The other side of that demotion is kept: a task root whose document is not a master is refused. [13]
+
+
 - With both landing cells empty on both sides there is nothing to reconstruct or re-cut from, and the reopen refuses. [14]
+
+
 - An existing ref at a tip that is neither the source tip nor the recorded landing is refused, not moved — the arm the reconstruction must not swallow. [15]
+
+
 - The reachable direction: a work branch on the source tip whose line still holds the landing is adopted, so "refuse harder" cannot pass. [16]
+
+
 - The current agreement method asserts screen equals declaration at or above the ruled tuple; below it asserts the fixed 1000/250 screen and inequality. Its original L7 landing-order account is historical, not generic later-raise compatibility.  Anchor: `SeriesExtensionRouteTests.test_the_budget_screen_and_the_declaration_agree_in_either_landing_order` [17]
-- The ruling arm: a plain assertion once the ruled pair is declared, and a skip naming the owner and the observed pair while it is not. [18]
+
+
+
+
+- The current ruling screen unconditionally requires exactly 10000 unit and 2000 integration selected cases; it no longer skips a below-ruling declaration. [18]
+
+
+
+
 - The screen's proved pair is read from the `parametrize` marks the screen runs with, so literals and named constants resolve alike. [19]
+
+
 - A retired branch whose landing left the source line is rebuilt **at the recorded landing**, reports `reconstructed`, and leaves the master reopenable. [2]
+
+
 - The case ceilings are read from the repository-root declaration rather than copied, so this check cannot rot into a third copy of the number. [20]
+
+
 - A skipped route cannot report success: the sentinel and its boundary, stated rather than implied. [21]
+
+
 - The population assertion no skip can satisfy, sorting last by construction. [22]
+
+
 - The guard cases' invariant that a refused reopen writes nothing to the contract or the master document. [23]
+
+
 - The disposable world every case is built on, and the two hand-repair shapes the reachability proof has to survive. [24]
+
+
 - The developer's symptom is pinned with its remedy: the operator-visible source lineage reads `unavailable` before the reopen and `current` after it. [3]
+
+
 - A contract that no longer records its landing refuses the re-cut, writes nothing, and creates no branch. [4]
+
+
 - A start over an archived terminal contract refuses with the typed status and `nextTool: task_reopen`, mints nothing, and the named route then really works. [5]
+
+
 - The archived-generation start asserts the typed refusal, no replacement contract or integration branch, and equality of the coordination-root file-name set. [6]
+
+
 - The refusal snapshot compares relative file-path sets under the coordination root, excluding Git internals; it does not compare existing file bytes. [7]
+
+
 - A live series is still refused, so the reopen never resets a series out from under a running seat. [8]
+
+
 - The reachability proof runs on the memory side too, and the two sides' actions are asserted independently so a one-sided mutation cannot satisfy it. [9]
+
+
+
+
 
 
 
 - The integration lane in `mcp/tests/test-evidence-lanes.toml` lists `mcp/tests/test_task_reopen_series_extension.py`, and its nine-step route case still runs the whole route in order. [26]
 
 
-- The current root declaration is 10,000 unit/1,000 integration; the conditional ruling/screen assertions use the corresponding current threshold. [25]
+
+
+- The ruled constants and current declaration are 10000 unit and 2000 integration; the independent agreement method retains its fixed 1000/250 lower-rail fixture branch. [25]

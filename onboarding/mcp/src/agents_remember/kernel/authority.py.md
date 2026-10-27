@@ -63,6 +63,8 @@ Two module-level helpers operate on an `McpRuntimeConfig`:
 
 
 
+
+
 - `AuthorityError` is the authority-violation error type raised by both guards. [2]
 
 

@@ -1,0 +1,93 @@
+{
+  "path": "mcp/tests/test_citation_preview_runs.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "27f88bcba540a9812ca5bf0d34e3d8334466006e",
+        "content": "sha256:cc50b0d5fc9517139bd18b38eba146cd607763caa596e8c655a78b503f995ab0",
+        "locator": {
+          "kind": "symbol",
+          "name": "CitationPreviewRunTests.test_background_writes_and_ambiguous_arguments_refused"
+        }
+      },
+      "facet": "Start rejects writes and invalid start/poll argument combinations before background admission.",
+      "id": "PRF-K9TGVW",
+      "invariant": "INV-CR4CJ8",
+      "origin": {
+        "handoffEntry": "MIK-R213@v1 rule 3",
+        "leaf": "260928-MIK-L202"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "27f88bcba540a9812ca5bf0d34e3d8334466006e",
+        "content": "sha256:579934dd5c4d14bc4218cb948de17d62c264370d79be1c7cd252008494d1e694",
+        "locator": {
+          "kind": "symbol",
+          "name": "CitationPreviewRunTests.test_completed_preview_equals_sync_and_leaves_memory_bytes_unchanged"
+        }
+      },
+      "facet": "The real completed preview and compact answer equal synchronous preview fields apart from run state and identity, including refused rows; memory bytes remain unchanged.",
+      "id": "PRF-REAMMP",
+      "invariant": "INV-QSA8WP",
+      "origin": {
+        "handoffEntry": "MIK-R213@v1 rule 2",
+        "leaf": "260928-MIK-L202"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "88f2f7bf2713204f5c46aac40ff7449a65ecd6ca",
+        "content": "sha256:17139015c432a406d6501103df31c1ed365108d9ff0df073a805456360c6017d",
+        "locator": {
+          "kind": "symbol",
+          "name": "CitationPreviewRunTests.test_shared_capacity_identity_kind_and_responsive_poll"
+        }
+      },
+      "facet": "Preview and quality jobs share capacity while operation/selection identity and detached poll results remain distinct.",
+      "id": "PRF-T3ZNBE",
+      "invariant": "INV-QSA8WP",
+      "origin": {
+        "handoffEntry": "MIK-R213@v1 rule 2",
+        "leaf": "260928-MIK-L202"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Synchronous and completed background previews agree without changing memory.\n\nAnchor: `CitationPreviewRunTests.test_completed_preview_equals_sync_and_leaves_memory_bytes_unchanged`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "27f88bcba540a9812ca5bf0d34e3d8334466006e",
+            "content": "sha256:579934dd5c4d14bc4218cb948de17d62c264370d79be1c7cd252008494d1e694",
+            "locator": {
+              "end": 123,
+              "kind": "line_range",
+              "start": 82
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Shared capacity, identity, ownership and failure boundaries are exercised.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "27f88bcba540a9812ca5bf0d34e3d8334466006e",
+            "content": "sha256:7dcdd386d15c1296efc7c9bb0424d5a5785e30487a707e6dd8faff90fd77ba85",
+            "locator": {
+              "kind": "symbol",
+              "name": "CitationPreviewRunTests"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -17,4 +17,5 @@ Decide the launch override one start hands to the selection owner, and bind a mo
 - The override rule, with the free agent alone admitting a model or effort without an agent. [1]
 - The pre-dispatch binding and validation on a configured host. [2]
 - Every other role still refuses a model given without its agent. [3]
+
 - Bootstrap overrides are validated before dispatch when a host is configured. [4]

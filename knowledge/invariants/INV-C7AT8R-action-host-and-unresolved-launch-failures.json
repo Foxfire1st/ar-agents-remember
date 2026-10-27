@@ -8,10 +8,10 @@
   },
   "applicability": "Every ordinary failure of a control in the launcher bar: a refused or unresolved start, an unreachable host, a failed options or catalog read and a report that cannot be opened.",
   "conditions": [
-    "The line is the only text under the controls and is gone when the condition has ended or the next action of the bar has succeeded.",
+    "The line is the only actionable failure line under the controls and is gone when the condition has ended or the next action of the bar has succeeded. The bounded catalog receipt and saved or unanswered part provenance allowed by INV-6SGHBB are separate from that failure line.",
     "An unresolved launch is an actionable uncertainty, not a false agent failure; the line says what is unknown and what to do.",
     "A refused dispatch stays visible through automatic reads; only an explicit successful action clears it.",
-    "A failed task-bound dispatch followed by a failed options read restores the base control behavior: the selectors and Start stay enabled and no Retry is offered by that path, while the one line still names the failure."
+    "A failed task-bound dispatch followed by a failed options read retains the role and document controls, but an old view cannot authorize another launch: the agent selector and Start remain disabled until a current options answer is available. No Retry is offered by that path, and the one actionable line still names the failure."
   ],
   "exclusions": [
     "The state line and reply text removed by rule 1 never return as a 'status' of the normal case.",
@@ -31,7 +31,7 @@
     "leaf": "260928-MIK-L75",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
   "statement": "Action, host and unresolved-launch failures share one actionable line and explicit successful recovery clears it.",
   "status": "proposed",

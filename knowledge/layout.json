@@ -4,6 +4,12 @@
     "file:dashboard/src/cockpit/RoleChatsView.tsx": [
       "knowledge/dependents/DPD-99CBY7-rolechatsview-frame-target.json"
     ],
+    "file:docs/tool-details.md": [
+      "knowledge/dependents/DPD-NGC2F6-l188-mcp-src-agents_remember-package_data-runtime-docs-tool-details-md.json"
+    ],
+    "file:mcp/src/agents_remember/application/memory_quality/citation_runs.py": [
+      "knowledge/dependents/DPD-10YCT2-l188-docs-tool-details-md.json"
+    ],
     "file:mcp/src/agents_remember/application/skill_resources/provider.py": [
       "knowledge/dependents/DPD-633P3W-l188-docs-llms-txt.json",
       "knowledge/dependents/DPD-EG5TYT-l188-docs-features-md.json",
@@ -12,9 +18,15 @@
     "file:mcp/src/agents_remember/application/user_settings_init.py": [
       "knowledge/dependents/DPD-W0T9V9-l188-docs-reference-settings-json-md.json"
     ],
+    "file:mcp/src/agents_remember/cli/paseo_catalog.py": [
+      "knowledge/dependents/DPD-W0T9V9-l188-docs-reference-settings-json-md.json"
+    ],
     "file:mcp/src/agents_remember/cli/role_launch_first_run.py": [
       "knowledge/dependents/DPD-10YCT2-l188-docs-tool-details-md.json",
       "knowledge/dependents/DPD-NGC2F6-l188-mcp-src-agents_remember-package_data-runtime-docs-tool-details-md.json"
+    ],
+    "file:mcp/src/agents_remember/kernel/primitives/named_choices.py": [
+      "knowledge/dependents/DPD-W0T9V9-l188-docs-reference-settings-json-md.json"
     ],
     "file:mcp/src/agents_remember/kernel/primitives/paseo_authority.py": [
       "knowledge/dependents/DPD-10YCT2-l188-docs-tool-details-md.json",
@@ -22,6 +34,19 @@
     ],
     "file:mcp/src/agents_remember/kernel/primitives/runtime_config.py": [
       "knowledge/dependents/DPD-W0T9V9-l188-docs-reference-settings-json-md.json"
+    ],
+    "file:mcp/src/agents_remember/mcp/server.py": [
+      "knowledge/dependents/DPD-10YCT2-l188-docs-tool-details-md.json"
+    ],
+    "file:mcp/src/agents_remember/memory_quality/converted_check.py": [
+      "knowledge/dependents/DPD-10YCT2-l188-docs-tool-details-md.json"
+    ],
+    "file:mcp/src/agents_remember/memory_quality/source_files.py": [
+      "knowledge/dependents/DPD-10YCT2-l188-docs-tool-details-md.json"
+    ],
+    "file:pyproject.toml": [
+      "knowledge/dependents/DPD-78737N-CONTRIBUTING-md.json",
+      "knowledge/dependents/DPD-ZT8YY7-docs-design-python-pytest-bootstrap-md.json"
     ],
     "file:scripts/sync-skills.py": [
       "knowledge/dependents/DPD-Y454FF-l188-AGENTS-md.json"

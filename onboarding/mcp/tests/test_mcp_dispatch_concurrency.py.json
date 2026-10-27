@@ -1,0 +1,93 @@
+{
+  "path": "mcp/tests/test_mcp_dispatch_concurrency.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "06bc42446d43028bf778b0451b4054365f5b5305",
+        "content": "sha256:0ac550784d6aa1c9729bcf41d8cec3c03f172098bd4bac96375100c905e3ecd9",
+        "locator": {
+          "kind": "symbol",
+          "name": "DispatchConcurrencyTests.test_transport_poll_and_read_answer_while_long_call_is_running"
+        }
+      },
+      "facet": "A blocked synchronous handler leaves registered poll and read calls able to complete.",
+      "id": "PRF-BC4F1Z",
+      "invariant": "INV-T3CE64",
+      "origin": {
+        "handoffEntry": "MIK-R213@v1 rule 1",
+        "leaf": "260928-MIK-L202"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "06bc42446d43028bf778b0451b4054365f5b5305",
+        "content": "sha256:07e9026384c0c55bea24dfb83ceb08353a8bf504a483da60ad4d73453bc0a369",
+        "locator": {
+          "kind": "symbol",
+          "name": "DispatchConcurrencyTests.test_concurrent_calls_keep_context_caches_and_answer_logs_separate"
+        }
+      },
+      "facet": "Concurrent handler calls keep their contexts, read caches and answer-log attribution separate.",
+      "id": "PRF-JYKGMF",
+      "invariant": "INV-T3CE64",
+      "origin": {
+        "handoffEntry": "MIK-R213@v1 rule 1",
+        "leaf": "260928-MIK-L202"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "06bc42446d43028bf778b0451b4054365f5b5305",
+        "content": "sha256:604facbc69eab3b6e09da386d69533e36c662897520a6afa7e964d953da71004",
+        "locator": {
+          "kind": "symbol",
+          "name": "DispatchConcurrencyTests.test_cancelled_write_drains_before_next_write_and_keeps_context"
+        }
+      },
+      "facet": "A cancelled write drains before the next ordered synchronous write and retains its call context.",
+      "id": "PRF-S7AZR6",
+      "invariant": "INV-T3CE64",
+      "origin": {
+        "handoffEntry": "MIK-R213@v1 rule 1",
+        "leaf": "260928-MIK-L202"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "A poll and read answer before a long synchronous call is released.\n\nAnchor: `DispatchConcurrencyTests.test_transport_poll_and_read_answer_while_long_call_is_running`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "362b8a9fc3c3ddc0c47166e65016bef79346a7a1",
+            "content": "sha256:d08309beeb0c0f52fa43370b1aa3df3e8f1cc4cd98aaae7c3add50fb23023c9b",
+            "locator": {
+              "end": 104,
+              "kind": "line_range",
+              "start": 52
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Cancellation drains before the next write and call contexts stay separate.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "362b8a9fc3c3ddc0c47166e65016bef79346a7a1",
+            "content": "sha256:f9208b23ca9497e53217d4f411eaa89d395738fcb8f0f1a055061280d90c401d",
+            "locator": {
+              "kind": "symbol",
+              "name": "DispatchConcurrencyTests"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

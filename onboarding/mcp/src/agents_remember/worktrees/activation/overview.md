@@ -54,7 +54,7 @@ This route owns contract-scoped activation for durable atomic-master work. It se
 
 ### Memory Refresh Validation
 
-`worktrees/modules/onboarding.py::validate_memory_refresh_attestations` composes the sidecar refresh checks and governing route-overview body/history checks with separately supplied evidence. The memory-quality controller calls it for the unconverted onboarding layout; converted layouts take the onboarding trace gate instead. This validation is outside the activation selector's transition authority.
+The former `worktrees/modules/onboarding.py::validate_memory_refresh_attestations` composer was removed. The memory-quality controller's `_onboarding_refresh_gate` applies converted onboarding traces; missing converted sides are incomplete, and unconverted public inputs refuse upstream. The surviving worktree onboarding module owns separate refresh and route-index operations. These checks remain outside the activation selector's transition authority.
 
 ## Lifecycle Metadata
 
@@ -84,6 +84,8 @@ The following pre-existing verification note is retained as metadata, outside th
 
 - Terminal release preserves unreadable or unproven evidence and releases only the recorded exact owner. [10]
 
-- Current memory-quality refresh composition applies on unconverted onboarding; converted layouts take the trace gate. [11]
+
 
 - Bootstrap and parent-leaf attach select; direct series attach only observes activation and checks resume prerequisites.  Anchor: `series_attach_result` [9]
+
+- Historical refresh composition named `validate_memory_refresh_attestations`; that composer is removed. Current `_onboarding_refresh_gate` applies converted onboarding traces, with unconverted public input refused upstream. [11]

@@ -48,6 +48,7 @@ Records are grouped one block per role, newest first, and `_role_records` reads 
 - The end of a role's block, which a continuation resumes after. [8]
 - A bootstrap seat behind architect records is reached across pages, and naming the free agent answers with its own seat. [9]
 
+
 - After the ordinary receipt scan, selected leaf lookup derives canonical master/leaf, reads its environment and host state, and appends a reachable found unarchived seat under Explainer; no launch receipt is fabricated. [10]
 
 - Role-record pagination bounds its own scan; the separately appended explainer lookup has its own host check. [7]

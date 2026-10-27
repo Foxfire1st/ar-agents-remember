@@ -7,12 +7,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "826d9454d3f442dfaf0e4441c148efb295224f07",
+            "blob": "3443840e5d8030c7d294c2aad5c9aa39dbda5e57",
             "content": "sha256:759a3d5b5dda521b7fdf90303acd6f860aeed3a9542f067601c18afc3c2d7cc5",
             "locator": {
-              "end": 96,
+              "end": 92,
               "kind": "line_range",
-              "start": 86
+              "start": 82
             }
           },
           "kind": "code"
@@ -20,16 +20,16 @@
       ]
     },
     "2": {
-      "note": "repairedOverride is a current owner of the behavior described above.",
+      "note": "repairedSeededSelection returns the first invalid seeded document correction, without catalog override pruning.",
       "targets": [
         {
           "anchor": {
-            "blob": "826d9454d3f442dfaf0e4441c148efb295224f07",
-            "content": "sha256:edc1faca669c6618fdbeabab1db9c50bb7e7838ca5730d22f8bc998c408fbb31",
+            "blob": "3443840e5d8030c7d294c2aad5c9aa39dbda5e57",
+            "content": "sha256:898999d205bc14c4ce1e481d3018308a822a850c02518047d11daa1b53371c95",
             "locator": {
-              "end": 167,
+              "end": 91,
               "kind": "line_range",
-              "start": 155
+              "start": 82
             }
           },
           "kind": "code"
@@ -41,12 +41,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "826d9454d3f442dfaf0e4441c148efb295224f07",
+            "blob": "3443840e5d8030c7d294c2aad5c9aa39dbda5e57",
             "content": "sha256:cac816d299f657ea1595050f4462717d33cac234ad3cc53b6a7f7ad6129e6f52",
             "locator": {
-              "end": 190,
+              "end": 115,
               "kind": "line_range",
-              "start": 171
+              "start": 96
             }
           },
           "kind": "code"
@@ -54,15 +54,16 @@
       ]
     },
     "4": {
-      "note": "usePruneStaleOverride is a current owner of the behavior described above.",
+      "note": "usePruneSeededSelection is the retained document repair effect; its dependencies contain no catalog or options-readiness input.",
       "targets": [
         {
           "anchor": {
-            "blob": "826d9454d3f442dfaf0e4441c148efb295224f07",
-            "content": "sha256:bc71ccf5e3dce5337e742b4e8fbef7fa11929c1e154a10e429d0a8ec0b30dbf1",
+            "blob": "3443840e5d8030c7d294c2aad5c9aa39dbda5e57",
+            "content": "sha256:12212a6a3df2f8339da76c9df0e7f244e409291f59ad6327438be8c508162b09",
             "locator": {
-              "kind": "symbol",
-              "name": "usePruneStaleOverride"
+              "end": 114,
+              "kind": "line_range",
+              "start": 96
             }
           },
           "kind": "code"

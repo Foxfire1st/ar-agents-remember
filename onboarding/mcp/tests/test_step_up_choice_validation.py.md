@@ -24,13 +24,17 @@ writes the settings tree, and the cases drive `role_launch_defaults` and the tas
 - **Omitted mode.** `test_cross_model_omitted_mode_uses_host_default_without_changing_base` takes the
   host default for an omitted mode while the base role's choices stay as they were.
 - **A no-op step-up refuses.** `test_effective_noop_step_up_refuses_with_authored_file_and_key` refuses a
-  step-up that would change nothing, naming the file and the key.
+  step-up whose authored values make no change, naming the file and the key. The cases compare
+  equal model values and equal `priority` tier values across the native and alias keys; they do not
+  infer equivalence between arbitrary host labels and IDs at settings-parse time.
 - **After the commit.** `test_post_commit_settings_hint_failure_returns_the_recorded_review` proves a
   failure of the settings hint after publication still returns the review that was recorded.
 - **Predecessor material.** `test_receipt_loss_uses_durable_destination_as_predecessor_in_takeover_material`
   reads the predecessor from the durable destination when the receipt is lost.
 - **Alias and tier.** `test_same_scope_native_tier_step_up_is_not_hidden_by_inherited_alias` keeps a
-  same-scope native tier choice visible through an inherited alias.
+  same-scope native tier choice visible through an inherited alias. Its host catalog offers ID
+  `priority` with label `Fast`: the inherited `fast` choice starts, but a native step-up value
+  `not-offered` is refused by its exact settings key before the original agent is archived.
 
 ### Conventions
 
@@ -44,13 +48,19 @@ both the answer and the bytes of the settings file.
 
 ## Evidence
 
-- A feature refusal names the authored key before retirement. [1]
-- An omitted mode takes the host default without changing the base. [2]
-- An effective no-op step-up refuses with the authored file and key. [3]
+- Source assertion: test_step_up_feature_refusal_names_authored_key_before_retirement. The declaration is not an execution receipt. [1]
+
+- Source assertion: test_cross_model_omitted_mode_uses_host_default_without_changing_base. The declaration is not an execution receipt. [2]
+
+- Source assertion: test_effective_noop_step_up_refuses_with_authored_file_and_key. The declaration is not an execution receipt. [3]
+
 
 - A per-level refusal preserves the settings file and the exact feature key. [4]
 
-- A post-commit settings-hint failure returns the recorded review. [5]
-- A lost receipt uses the durable destination as the predecessor in takeover material. [6]
+
+- Source assertion: test_post_commit_settings_hint_failure_returns_the_recorded_review. The declaration is not an execution receipt. [5]
+
+- Source assertion: test_receipt_loss_uses_durable_destination_as_predecessor_in_takeover_material. The declaration is not an execution receipt. [6]
+
 
 - A same-scope native tier step-up is not hidden by an inherited alias. [7]

@@ -9,7 +9,7 @@
 Runs the bridge's workspace, creation, message, get and archive commands as the real script against a fake client
 package: a workspace is reused or created through the public client, an explicit workspace refuses a partial or
 wrong placement without falling back to a directory, and creation tells a created agent from an existing one and
-from a refusal. A service tier travels as native creation data, and an unsupported one is rejected before create.
+from a refusal. A service tier travels as native creation data, and a tier excluded by a known offering is rejected before create.
 
 ## Code Commentary
 
@@ -29,6 +29,16 @@ from a refusal. A service tier travels as native creation data, and an unsupport
   tier is native creation data and an unsupported one stops before create, and
   `test_agent_create_uses_the_given_id_and_tells_created_existing_and_refused_apart` keeps the three outcomes
   apart under the id it was given.
+- **Choice matching at create.** `test_create_matches_option_ids_then_labels_without_case` checks
+  both a named model and native defaults: IDs win over colliding labels, `fast`/`Fast` map through
+  the offered label to `priority`, and `ULTRAFAST` maps to `ultrafast`.
+- **Unknown offerings.** `test_create_passes_unknown_feature_parts_through` retains authored
+  `fast` through failed, refused, malformed or timed-out discovery. Explicitly empty features or
+  an empty service-tier option list remain known offerings and refuse it for the named model.
+- **Timeout without a saved answer.**
+  `test_discovery_timeout_without_saved_answer_sends_fast_as_priority_to_paseo_create` keeps
+  `fast`/`Fast` unchanged through an unknown launcher catalog, then confirms that the create
+  boundary resolves the host's offered `Fast` label to ID `priority`.
 - **Messages.** `test_the_first_message_follows_the_creation_and_goes_to_an_agent_that_has_none` sends the first
   message only to an agent that has none, and
   `test_a_300_000_byte_first_message_reaches_the_client_as_data` carries a large message to the client as data
@@ -53,6 +63,8 @@ the production ones — the fake is only the daemon behind them.
 - Workspace, creation, message, get and archive commands against the real script and fake client. [1]
 
 
+
 - Feature discovery may precede a refusal, but refused features send no agent create or message. [2]
 
-- Keyed completed-creation replay, pre-refresh current identity and a selectively hidden live listing support the archive cases. [3]
+
+- Keyed completed creation replay, pre-refresh current identity and selectively hidden live listing support the real-bridge archive tests. [3]

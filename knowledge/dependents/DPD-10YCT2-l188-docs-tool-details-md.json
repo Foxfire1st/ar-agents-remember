@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "92c652c317276bbf370c18624e543eb8cd30cfbc",
-    "commit": "f22f39dfea8d0f6c9e0729206bdc909653494861",
+    "codeTree": "86769d981e7ffbcf93930b2861e0835345be5805",
+    "commit": "d0be84f714df97c4c4f63406dc5ba190fa53c325",
     "role": "curator",
-    "statement": "At the synced candidate, the canonical tool reference still distinguishes reported drift from refusing exact-pair publication and states that baseline accept_drift cannot waive a stale code or test reference anchor.",
-    "task": "260928-MIK-L191",
+    "statement": "The detailed reference preserves source-reading and authority boundaries and describes scoped preview runs, unchanged synchronous apply, and worker-lifetime ordering.",
+    "task": "260928-MIK-L202",
     "uncommitted": true
   },
   "document": "docs/tool-details.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L188",
     "task": "260928-MIK"
   },
-  "revision": 2,
+  "revision": 3,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -53,6 +53,56 @@
       "id": "INV-QR6DSA",
       "kind": "record",
       "revision": 2
+    },
+    {
+      "anchor": {
+        "blob": "ae1b5a6ed0cae313b1f5ce14e2f26dc25dcaf5f4",
+        "content": "sha256:41323e4abe140a22bd55baf7103000883c590d109759a71b5fc9dca64854cec8",
+        "locator": {
+          "kind": "symbol",
+          "name": "QualitySourceFiles"
+        },
+        "path": "mcp/src/agents_remember/memory_quality/source_files.py"
+      },
+      "heading": "memory_quality_check",
+      "kind": "anchor"
+    },
+    {
+      "anchor": {
+        "blob": "ef73833b143decb50eb3949345e195a40a7692d3",
+        "content": "sha256:162e27ef3c05f6f21f2da9209dda01ce969d0a1e6f2d62a562343e1f145b8165",
+        "locator": {
+          "kind": "symbol",
+          "name": "converted_knowledge_check"
+        },
+        "path": "mcp/src/agents_remember/memory_quality/converted_check.py"
+      },
+      "heading": "memory_quality_check",
+      "kind": "anchor"
+    },
+    {
+      "anchor": {
+        "blob": "8beb56e7ac09f840d461d70e1211b91ed27f8c7e",
+        "content": "sha256:81fc9d805f6e5d6eda7350fd0665675fd20648c396832ebf3bcd21943441cd52",
+        "locator": {
+          "kind": "symbol",
+          "name": "start_citation_preview"
+        },
+        "path": "mcp/src/agents_remember/application/memory_quality/citation_runs.py"
+      },
+      "kind": "anchor"
+    },
+    {
+      "anchor": {
+        "blob": "c32522a60857504ad69c2b55c97baed38f637142",
+        "content": "sha256:fdfd078bb233e7616bdacc47766168eea5c696b7cf50c0a719787b863b635663",
+        "locator": {
+          "kind": "symbol",
+          "name": "AgentsRememberMCP._dispatch_tool"
+        },
+        "path": "mcp/src/agents_remember/mcp/server.py"
+      },
+      "kind": "anchor"
     }
   ]
 }

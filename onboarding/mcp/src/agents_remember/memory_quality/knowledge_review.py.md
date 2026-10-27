@@ -84,7 +84,7 @@ counted it as nothing at all would let a zero read as "nothing moved" (`ICR-R15@
 
 - The one checklist field that carries the section, and the arithmetic the section cannot reach. [5]
 
-- The controller read that supplies the summaries from the already-published authority, and passes the projection's own unmeasured count through without measuring anything itself. [6]
+
 
 ## KS-R15@v1 Report-Only Checklist Section
 
@@ -117,3 +117,5 @@ only when a count is non-zero, and `knowledge_review_section` renders the fourth
 passes the projection's own `notMeasuredCount` through unchanged — the section still measures nothing
 itself and still returns **no** count, so the report-only boundary (and the arithmetic in
 `write_curator_checklist` it cannot reach) is untouched by this leaf.
+
+- The controller read that supplies the summaries from the already-published authority, and passes the projection's own unmeasured count through without measuring anything itself. [6]

@@ -85,7 +85,7 @@ The following coverage statuses are retained metadata, outside the operative pro
 - Historical pre-change completed-disposition diagnosis: the former direct-owner tuple had unequal lengths. Current disposition delegates to lifecycle_operation_identity.completed_direct_owner and retains integration/publication-claim/worker-exit restrictions.  Anchor: lifecycle_completed_disposition.py [13]
 
 
-- Converted memory is judged through the onboarding-trace gate, which reports missing traces and incomplete sides while unnecessary rows report only. External-memory helpers separately plan entity fingerprints and refresh route indexes; they do not restore the removed sidecar/route-body gate. [14]
+
 
 
 - Default production services bind the ordinary memory-quality, citation, certification-memory, knowledge validation/crossing/gate and archive adapters; they do not install the removed prepared-closeout continuation or selected certificate producer. [15]
@@ -105,3 +105,5 @@ The following coverage statuses are retained metadata, outside the operative pro
 - Current store mutation serialization and waiting-door claims contradict the blanket plane-deletion account.  Anchor: lifecycle_operation_store.py; lifecycle_operations.py [12]
 
 - Direct recovery is admitted independently of closeout doors and settles its retained receipt on completion.  Locator and manifest determine per-kind journal addresses independently of task-document reads. [5]
+
+- Converted memory is judged through the onboarding-trace gate, which reports missing traces and incomplete sides while unnecessary rows report only. External-memory helpers separately plan entity fingerprints and refresh route indexes; they do not restore the removed sidecar/route-body gate. [14]

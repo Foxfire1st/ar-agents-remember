@@ -3,61 +3,61 @@
   "proves": [
     {
       "anchor": {
-        "blob": "b534c85463fd186bc2a7a4cab7d02efd07a60508",
-        "content": "sha256:da2696198b9d905dcb8c037ea34200b9204a63cd6afd1e5d2289eb91ebb0433e",
+        "blob": "a4143e79e333e7e7ceefba0ea8694d97a7427da0",
+        "content": "sha256:16f67edf8d86b275b569df141b8afda9b81f1dc22ca0e4164441e37d95de5067",
         "locator": {
           "kind": "symbol",
           "name": "BudgetAgreementTests.test_the_declaration_is_the_ceiling_this_module_screens"
         }
       },
-      "facet": "Asserts the root declaration is exactly 10000/1000 and that both suite-budget stub constants spell the declared numbers.",
-      "id": "PRF-7NNT9Z",
-      "invariant": "INV-Q2VTFP",
-      "origin": {
-        "handoffEntry": "INV-Q2VTFP — statement and applicability",
-        "leaf": "260928-MIK-L193"
-      }
-    },
-    {
-      "anchor": {
-        "blob": "b534c85463fd186bc2a7a4cab7d02efd07a60508",
-        "content": "sha256:da2696198b9d905dcb8c037ea34200b9204a63cd6afd1e5d2289eb91ebb0433e",
-        "locator": {
-          "kind": "symbol",
-          "name": "BudgetAgreementTests.test_the_declaration_is_the_ceiling_this_module_screens"
-        }
-      },
-      "facet": "Asserts the root declaration is exactly 10000/1000 and that both suite-budget stub constants spell the declared numbers.",
-      "id": "PRF-Q5A79J",
-      "invariant": "INV-Z3DDAX",
-      "origin": {
-        "handoffEntry": "INV-3NAQA6, INV-F0WP8H, INV-RBJQVS, INV-Z3DDAX — current statements and applicability: INV-Z3DDAX",
-        "leaf": "260928-MIK-L193"
-      }
-    },
-    {
-      "anchor": {
-        "blob": "b534c85463fd186bc2a7a4cab7d02efd07a60508",
-        "content": "sha256:da2696198b9d905dcb8c037ea34200b9204a63cd6afd1e5d2289eb91ebb0433e",
-        "locator": {
-          "kind": "symbol",
-          "name": "BudgetAgreementTests.test_the_declaration_is_the_ceiling_this_module_screens"
-        }
-      },
-      "facet": "Asserts the root declaration is exactly 10000/1000 and that both suite-budget stub constants spell the declared numbers.",
-      "id": "PRF-VXDJ0E",
+      "facet": "Asserts that the root declares 10000 unit and 2000 integration cases and both screen stubs use those declared numbers.",
+      "id": "PRF-B4E9Q1",
       "invariant": "INV-3NAQA6",
       "origin": {
-        "handoffEntry": "INV-3NAQA6, INV-F0WP8H, INV-RBJQVS, INV-Z3DDAX — current statements and applicability: INV-3NAQA6",
-        "leaf": "260928-MIK-L193"
+        "handoffEntry": "L202-A6b-current-budget-agreement-proof-INV-3NAQA6",
+        "leaf": "260928-MIK-L202"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "a4143e79e333e7e7ceefba0ea8694d97a7427da0",
+        "content": "sha256:16f67edf8d86b275b569df141b8afda9b81f1dc22ca0e4164441e37d95de5067",
+        "locator": {
+          "kind": "symbol",
+          "name": "BudgetAgreementTests.test_the_declaration_is_the_ceiling_this_module_screens"
+        }
+      },
+      "facet": "Asserts that the root declares 10000 unit and 2000 integration cases and both screen stubs use those declared numbers.",
+      "id": "PRF-GMYDWJ",
+      "invariant": "INV-Z3DDAX",
+      "origin": {
+        "handoffEntry": "L202-A6b-current-budget-agreement-proof-INV-Z3DDAX",
+        "leaf": "260928-MIK-L202"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "a4143e79e333e7e7ceefba0ea8694d97a7427da0",
+        "content": "sha256:16f67edf8d86b275b569df141b8afda9b81f1dc22ca0e4164441e37d95de5067",
+        "locator": {
+          "kind": "symbol",
+          "name": "BudgetAgreementTests.test_the_declaration_is_the_ceiling_this_module_screens"
+        }
+      },
+      "facet": "Asserts that the root declares 10000 unit and 2000 integration cases and both screen stubs use those declared numbers.",
+      "id": "PRF-H98D4T",
+      "invariant": "INV-Q2VTFP",
+      "origin": {
+        "handoffEntry": "L202-A6b-current-budget-agreement-proof-INV-Q2VTFP",
+        "leaf": "260928-MIK-L202"
       }
     }
   ],
   "realizes": [
     {
       "anchor": {
-        "blob": "b534c85463fd186bc2a7a4cab7d02efd07a60508",
-        "content": "sha256:da2696198b9d905dcb8c037ea34200b9204a63cd6afd1e5d2289eb91ebb0433e",
+        "blob": "a4143e79e333e7e7ceefba0ea8694d97a7427da0",
+        "content": "sha256:ba01326e937035c189a22431df5ed7cee1d450b8c945c8272388c5d3432e08eb",
         "locator": {
           "end": 525,
           "kind": "line_range",
@@ -93,11 +93,11 @@
       ]
     },
     "10": {
-      "note": "Both cells and the quote path preserve escaped/plain anchor agreement; the row case now derives text from live cell spans.",
+      "note": "Both cells and the quote path preserve escaped/plain anchor agreement; the row case derives text from live cell spans. The separately retained budget-test range covers the declared-pair sentence, constant, marker-registration and older-budget-site assertions.",
       "targets": [
         {
           "anchor": {
-            "blob": "b534c85463fd186bc2a7a4cab7d02efd07a60508",
+            "blob": "a4143e79e333e7e7ceefba0ea8694d97a7427da0",
             "content": "sha256:3617512dc4dbf5e374d2d4f85eb0bd8a3f5161198c0d05af200570fad0c322d5",
             "locator": {
               "kind": "symbol",
@@ -108,20 +108,20 @@
         },
         {
           "anchor": {
-            "blob": "b534c85463fd186bc2a7a4cab7d02efd07a60508",
-            "content": "sha256:dd9d258f3fc5f9a411dd642bd815402fd412b1de157b6c9b47a6d6949dcc79f6",
+            "blob": "a4143e79e333e7e7ceefba0ea8694d97a7427da0",
+            "content": "sha256:c41e658333ae89a90802bf5288466134a2fcaaa253ca98677f381f47fc822b23",
             "locator": {
-              "end": 579,
+              "end": 580,
               "kind": "line_range",
-              "start": 486
+              "start": 487
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "b534c85463fd186bc2a7a4cab7d02efd07a60508",
-            "content": "sha256:803509efd210036b984056ff3b5e0c8bdb84f5dbc7ac1196829afdcf8062c03f",
+            "blob": "a4143e79e333e7e7ceefba0ea8694d97a7427da0",
+            "content": "sha256:1b9b738b24cf0496f275dc7d7d5ea813102d3947babc240c6a8bcb39ca8ba86b",
             "locator": {
               "kind": "file"
             }
@@ -135,7 +135,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b534c85463fd186bc2a7a4cab7d02efd07a60508",
+            "blob": "a4143e79e333e7e7ceefba0ea8694d97a7427da0",
             "content": "sha256:8516d8246ab1dadcf6ff36523e1c1ba2cf8b65e93200bcd38446146a32716cc3",
             "locator": {
               "kind": "symbol",
@@ -151,7 +151,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b534c85463fd186bc2a7a4cab7d02efd07a60508",
+            "blob": "a4143e79e333e7e7ceefba0ea8694d97a7427da0",
             "content": "sha256:a0533a837d54118edf922687e6e7ca47840ddf9fbc25b7c011bccf335d031a97",
             "locator": {
               "kind": "symbol",
@@ -167,7 +167,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b534c85463fd186bc2a7a4cab7d02efd07a60508",
+            "blob": "a4143e79e333e7e7ceefba0ea8694d97a7427da0",
             "content": "sha256:38457f31d232216202dda762edd2bca504e80669fae89451ac0bb01a514f42d4",
             "locator": {
               "kind": "symbol",
@@ -183,7 +183,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b534c85463fd186bc2a7a4cab7d02efd07a60508",
+            "blob": "a4143e79e333e7e7ceefba0ea8694d97a7427da0",
             "content": "sha256:15d4233fbaa6673622b926d00801d66bd8d186f9287968d830398d25fe324a83",
             "locator": {
               "kind": "symbol",
@@ -199,7 +199,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b534c85463fd186bc2a7a4cab7d02efd07a60508",
+            "blob": "a4143e79e333e7e7ceefba0ea8694d97a7427da0",
             "content": "sha256:8268a3728b3438a2db841b6e52f147bebd92c10a15e0f1f4ceb66f466669f5ac",
             "locator": {
               "kind": "symbol",
@@ -215,7 +215,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b534c85463fd186bc2a7a4cab7d02efd07a60508",
+            "blob": "a4143e79e333e7e7ceefba0ea8694d97a7427da0",
             "content": "sha256:c7a67a9dbde4f4dfa0b4336a498387fda043bb5c339047cf6a085308f0235304",
             "locator": {
               "kind": "symbol",
@@ -231,7 +231,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b534c85463fd186bc2a7a4cab7d02efd07a60508",
+            "blob": "a4143e79e333e7e7ceefba0ea8694d97a7427da0",
             "content": "sha256:a78aa356aa1b6e848a8fab628eba29e0eaf4ca558a190c8cba9f5971585dafb9",
             "locator": {
               "kind": "symbol",
@@ -247,7 +247,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b534c85463fd186bc2a7a4cab7d02efd07a60508",
+            "blob": "a4143e79e333e7e7ceefba0ea8694d97a7427da0",
             "content": "sha256:020733557db49eaf2146498b58cf5dbc3fa193376bc62de1560864f2a21a8462",
             "locator": {
               "kind": "symbol",
@@ -263,7 +263,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b534c85463fd186bc2a7a4cab7d02efd07a60508",
+            "blob": "a4143e79e333e7e7ceefba0ea8694d97a7427da0",
             "content": "sha256:dbda2f220e377f998116842a262bca1b9f61013ccebfdb659253c5bd2c3670db",
             "locator": {
               "kind": "symbol",
@@ -279,7 +279,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b534c85463fd186bc2a7a4cab7d02efd07a60508",
+            "blob": "a4143e79e333e7e7ceefba0ea8694d97a7427da0",
             "content": "sha256:58a253311ac54442743deebc123ab854f562d8be817078b39f5da2288878ccf5",
             "locator": {
               "kind": "symbol",
@@ -291,16 +291,16 @@
       ]
     },
     "24": {
-      "note": "The budget screen dynamically reads declaration line positions, pins 10,000/1,000 and matching stubs, and bounds the live overview sentence check.",
+      "note": "The budget screen dynamically reads declaration line positions, pins 10,000/2,000 and matching stubs, and bounds the live overview sentence check.",
       "targets": [
         {
           "anchor": {
-            "blob": "b534c85463fd186bc2a7a4cab7d02efd07a60508",
-            "content": "sha256:a900b2c6997b72e228666f9c819ad3630fdda7c3c6e9094846c82153f14842e2",
+            "blob": "a4143e79e333e7e7ceefba0ea8694d97a7427da0",
+            "content": "sha256:63c3c5016aecc944e95d363c1df89339ade77d1ff7039be25f58d59d762b9c39",
             "locator": {
-              "end": 520,
+              "end": 526,
               "kind": "line_range",
-              "start": 469
+              "start": 470
             }
           },
           "kind": "test"
@@ -308,25 +308,25 @@
       ]
     },
     "25": {
-      "note": "The repaired sentence held by a case now that its stale entry is gone, so a repair is not a gap.\n\nAnchor: `test_the_repaired_site_states_the_declared_pair`",
+      "note": "The repaired sentence held by a case now that its stale entry is gone, so a repair is not a gap.  Anchor: `test_the_repaired_site_states_the_declared_pair`",
       "targets": [
         {
           "anchor": {
-            "blob": "b534c85463fd186bc2a7a4cab7d02efd07a60508",
-            "content": "sha256:803509efd210036b984056ff3b5e0c8bdb84f5dbc7ac1196829afdcf8062c03f",
+            "blob": "a4143e79e333e7e7ceefba0ea8694d97a7427da0",
+            "content": "sha256:f86cee960573dd4d6139238255e7aef54f395c291e4d1c7d6eb56e182156f360",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "test_the_repaired_site_states_the_declared_pair"
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "b534c85463fd186bc2a7a4cab7d02efd07a60508",
-            "content": "sha256:f86cee960573dd4d6139238255e7aef54f395c291e4d1c7d6eb56e182156f360",
+            "blob": "a4143e79e333e7e7ceefba0ea8694d97a7427da0",
+            "content": "sha256:1b9b738b24cf0496f275dc7d7d5ea813102d3947babc240c6a8bcb39ca8ba86b",
             "locator": {
-              "kind": "symbol",
-              "name": "test_the_repaired_site_states_the_declared_pair"
+              "kind": "file"
             }
           },
           "kind": "test"
@@ -338,7 +338,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b534c85463fd186bc2a7a4cab7d02efd07a60508",
+            "blob": "a4143e79e333e7e7ceefba0ea8694d97a7427da0",
             "content": "sha256:2cfed67e438bd555fa57eb65dda393663da83bf05c174fdbdd7930b42ccfb421",
             "locator": {
               "kind": "symbol",
@@ -354,7 +354,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b534c85463fd186bc2a7a4cab7d02efd07a60508",
+            "blob": "a4143e79e333e7e7ceefba0ea8694d97a7427da0",
             "content": "sha256:a0acded7c248b8bb33a24fefd950d13361836bd9d3e9fbf0b0376dac14aa142f",
             "locator": {
               "kind": "symbol",
@@ -370,7 +370,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b534c85463fd186bc2a7a4cab7d02efd07a60508",
+            "blob": "a4143e79e333e7e7ceefba0ea8694d97a7427da0",
             "content": "sha256:f397c4c27b07fbaf3b964d004d1a10010170c05f8aafee394f2b76a979b7c11f",
             "locator": {
               "kind": "symbol",
@@ -382,16 +382,29 @@
       ]
     },
     "29": {
-      "note": "The lane row that keeps this module in the default selection. Source caption: \"mcp/tests/test_memory_citation_agreement.py\"",
+      "note": "The retained L192 instruction-parameter row is separate from this module's own unit-regression entry. The added citation-agreement row establishes its default-selection membership.\n\nAnchor: \"test_memory_citation_agreement.py\"",
       "targets": [
         {
           "anchor": {
-            "blob": "102c4550ab6429f44c8fb543d1d0662de66a1b8c",
+            "blob": "5276cd9583d9a33d9094edac37d82b768491aed9",
             "content": "sha256:766f303bc7e15e82fd24136e1f75c57daa2d42f95ed1533239ab313812f24b13",
             "locator": {
               "end": 223,
               "kind": "line_range",
               "start": 223
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5276cd9583d9a33d9094edac37d82b768491aed9",
+            "content": "sha256:f077da38793d14168158a19a2d41f7fbcff188affdbc98de0e9dccf33bef430a",
+            "locator": {
+              "end": 248,
+              "kind": "line_range",
+              "start": 248
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -404,7 +417,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b534c85463fd186bc2a7a4cab7d02efd07a60508",
+            "blob": "a4143e79e333e7e7ceefba0ea8694d97a7427da0",
             "content": "sha256:60c98500e3dc6df435e3cfbef588afe0cea1e92065aa658dc88cf66c762d5a1d",
             "locator": {
               "kind": "symbol",
@@ -416,40 +429,39 @@
       ]
     },
     "33": {
-      "note": "The current declaration assertion pins 10,000 unit/1,000 integration and checks the matching stub mirrors.\n\nAnchor: `unit_case_budget`",
+      "note": "The current declaration assertion pins 10,000 unit/2,000 integration and checks the matching stub mirrors.  Anchor: `unit_case_budget`\n\nAnchor: `test_the_declaration_is_the_ceiling_this_module_screens`",
       "targets": [
         {
           "anchor": {
-            "blob": "b534c85463fd186bc2a7a4cab7d02efd07a60508",
-            "content": "sha256:da2696198b9d905dcb8c037ea34200b9204a63cd6afd1e5d2289eb91ebb0433e",
+            "blob": "ddd77babbaaddf51063d6e23856c0cadd142d461",
+            "content": "sha256:d54efa326c1d4128e0c15e19ae1c2e3f9fb44b9af2c0cfbcfa5bca0306be0494",
             "locator": {
-              "kind": "symbol",
-              "name": "test_the_declaration_is_the_ceiling_this_module_screens"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "0b550ee3cda163c8b451cb06a4fb69b489c4686d",
-            "content": "sha256:5559c13c46e03eb19fae3e43e1e5505868ae7ff83af16118912b42fb3b6d6e08",
-            "locator": {
-              "end": 321,
+              "end": 334,
               "kind": "line_range",
               "start": 320
             },
             "path": "pyproject.toml"
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a4143e79e333e7e7ceefba0ea8694d97a7427da0",
+            "content": "sha256:1b9b738b24cf0496f275dc7d7d5ea813102d3947babc240c6a8bcb39ca8ba86b",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
         }
       ]
     },
     "34": {
-      "note": "The declaration assertion and stub screen use 10,000 unit and 1,000 integration cases; the overview citation range is derived from the actual declaration lines.\n\nAnchor: `unit_case_budget`",
+      "note": "The declaration assertion and stub screen use 10,000 unit and 2,000 integration cases; the overview citation range is derived from the actual declaration lines.  Anchor: `unit_case_budget`\n\nAnchor: `unit_case_budget`",
       "targets": [
         {
           "anchor": {
-            "blob": "b534c85463fd186bc2a7a4cab7d02efd07a60508",
+            "blob": "a4143e79e333e7e7ceefba0ea8694d97a7427da0",
             "content": "sha256:f86cee960573dd4d6139238255e7aef54f395c291e4d1c7d6eb56e182156f360",
             "locator": {
               "kind": "symbol",
@@ -460,8 +472,8 @@
         },
         {
           "anchor": {
-            "blob": "b534c85463fd186bc2a7a4cab7d02efd07a60508",
-            "content": "sha256:da2696198b9d905dcb8c037ea34200b9204a63cd6afd1e5d2289eb91ebb0433e",
+            "blob": "a4143e79e333e7e7ceefba0ea8694d97a7427da0",
+            "content": "sha256:16f67edf8d86b275b569df141b8afda9b81f1dc22ca0e4164441e37d95de5067",
             "locator": {
               "kind": "symbol",
               "name": "test_the_declaration_is_the_ceiling_this_module_screens"
@@ -471,12 +483,12 @@
         },
         {
           "anchor": {
-            "blob": "0b550ee3cda163c8b451cb06a4fb69b489c4686d",
-            "content": "sha256:5559c13c46e03eb19fae3e43e1e5505868ae7ff83af16118912b42fb3b6d6e08",
+            "blob": "ddd77babbaaddf51063d6e23856c0cadd142d461",
+            "content": "sha256:a45f05c153d1b724bd7bfe5527b5534499d94b58cd5742e0a22db07b37cb65f7",
             "locator": {
-              "end": 321,
+              "end": 334,
               "kind": "line_range",
-              "start": 320
+              "start": 333
             },
             "path": "pyproject.toml"
           },

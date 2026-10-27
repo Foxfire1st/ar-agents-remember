@@ -109,7 +109,7 @@ No Domain Documentation source is configured for this slice.
 
 - The fixture value the baseline side is read from. [65]
 
-- **The contract this module's artifact row is registered under.** [66]
+
 - **The evidence node the contract names: the removed realization keeps its baseline source in the union.** [67]
 
 
@@ -120,3 +120,7 @@ are local, created under the caller's `tmp_path`, and neither touches a configur
 repository's history.
 
 No configured cross-repository evidence is claimed.
+
+
+
+- **The contract this module's artifact row is registered under.**  Anchor: `knowledge-diff-cases` [66]

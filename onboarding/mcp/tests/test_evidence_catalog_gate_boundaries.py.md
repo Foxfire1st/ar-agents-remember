@@ -68,18 +68,39 @@ No configured domain documentation could be checked.
 - **The consumer-completeness oracle: the one gate the source tree can redden, and the finding it raises.** [22]
 - The shared fixture that writes a valid synthetic catalog. [23]
 - The synthetic repository: two real consumers, one governed artifact, and a real Git repository because the oracle derives its graph from tracked files. [24]
-- The lane row this module was appended to, in the lane list — appended rather than inserted mid-list. [25]
-- The two exact-scope consumer registrations this module obliged. [26]
 
 
+
+
+
+
+
+
+
+
+
+
+> Retained earlier citation wording: - The catalog declares test_evidence_catalog_gate_boundaries.py as an exact consumer on the evidence-catalog fixture, settings-guard and Node-lockfile artifact rows. These three declarations do not establish invocation.
+
+
+
+
+
+
+
+
+
+
+
+
+
+- The lane row this module was appended to, in the lane list — appended rather than inserted mid-list.  Anchor: `test_evidence_catalog_gate_boundaries` [25]
+
+
+- The two exact-scope consumer registrations this module obliged.  Anchor: `test_evidence_catalog_gate_boundaries` [26]
 
 
 - The lane row this module holds in the sorted `unit-regression` list.  Anchor: "mcp/tests/test_evidence_catalog_gate_boundaries.py" [27]
 
-
-
-
-
-> Retained earlier citation wording: - The catalog declares test_evidence_catalog_gate_boundaries.py as an exact consumer on the evidence-catalog fixture, settings-guard and Node-lockfile artifact rows. These three declarations do not establish invocation. [28]
 
 - The catalog declares test_evidence_catalog_gate_boundaries.py as an exact consumer on the evidence-catalog fixture, settings-guard and Node-lockfile artifact rows. These three declarations do not establish invocation. [28]

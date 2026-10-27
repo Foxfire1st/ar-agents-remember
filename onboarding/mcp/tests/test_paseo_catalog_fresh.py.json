@@ -1,0 +1,332 @@
+{
+  "path": "mcp/tests/test_paseo_catalog_fresh.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "b53e153ce5ab753e83ba16cee43c68df3eb91d7e",
+        "content": "sha256:c309ccac06e074998b73ad3e30cabd9c083d704165c20faa2c197abeecb9f476",
+        "locator": {
+          "kind": "symbol",
+          "name": "FreshCatalogTests.test_next_view_asks_fresh_and_replaces_changed_choices"
+        }
+      },
+      "facet": "Two consecutive launcher views each query the host; changed returned model label replaces the old answer without explicit refresh.",
+      "id": "PRF-1FN1EQ",
+      "invariant": "INV-RQ2ZB8",
+      "origin": {
+        "handoffEntry": "L202-A6b-shared-fresh-catalog",
+        "leaf": "260928-MIK-L202"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "b53e153ce5ab753e83ba16cee43c68df3eb91d7e",
+        "content": "sha256:f0fa2eebe35e6bb20380db4e660f51de276f7d9882bf70a098c5e8e9187e0f66",
+        "locator": {
+          "kind": "symbol",
+          "name": "FreshCatalogTests.test_whole_failure_survives_new_process_with_saved_timestamp"
+        }
+      },
+      "facet": "A new process whose fresh question times out reads the persisted successful answer and its original timestamp.",
+      "id": "PRF-6JGPV5",
+      "invariant": "INV-RQ2ZB8",
+      "origin": {
+        "handoffEntry": "L202-A6b-shared-fresh-catalog",
+        "leaf": "260928-MIK-L202"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "b53e153ce5ab753e83ba16cee43c68df3eb91d7e",
+        "content": "sha256:ddfe5923ed23980c02cd0362192e436e4a352645a567185ef809687134c1ca47",
+        "locator": {
+          "kind": "symbol",
+          "name": "FreshCatalogTests.test_saved_reader_never_queries_or_creates_or_writes_files"
+        }
+      },
+      "facet": "Saved-only preview performs no host query or store mutation; passing that preview into selection still triggers a fresh question.",
+      "id": "PRF-883ZR1",
+      "invariant": "INV-RQ2ZB8",
+      "origin": {
+        "handoffEntry": "L202-A6b-shared-fresh-catalog",
+        "leaf": "260928-MIK-L202"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "b53e153ce5ab753e83ba16cee43c68df3eb91d7e",
+        "content": "sha256:ecf059d727d7b0382b21be0b1c0b3e82381db914496f68342c8bee4b6023507b",
+        "locator": {
+          "kind": "symbol",
+          "name": "FreshCatalogTests.test_start_questions_only_selected_features_after_precedence_and_labels"
+        }
+      },
+      "facet": "A start asks metadata then only the selected model features; provider capability and repeated selection inside that operation add no redundant question.",
+      "id": "PRF-AP7258",
+      "invariant": "INV-RQ2ZB8",
+      "origin": {
+        "handoffEntry": "L202-A6b-shared-fresh-catalog",
+        "leaf": "260928-MIK-L202"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "b53e153ce5ab753e83ba16cee43c68df3eb91d7e",
+        "content": "sha256:bcdf0bbc28a3de4687146f7a3b7f0090383245e8a1c91863303171cb47985973",
+        "locator": {
+          "kind": "symbol",
+          "name": "FreshCatalogTests.test_no_answer_leaves_all_configured_choices_unchecked"
+        }
+      },
+      "facet": "With neither fresh nor saved offers, configured provider/model/effort/mode/tier survive selection and unknown tool-server capability does not falsely prohibit provision.",
+      "id": "PRF-QP3PG4",
+      "invariant": "INV-RQ2ZB8",
+      "origin": {
+        "handoffEntry": "L202-A6b-shared-fresh-catalog",
+        "leaf": "260928-MIK-L202"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "b53e153ce5ab753e83ba16cee43c68df3eb91d7e",
+        "content": "sha256:6182659d70bece3cd99b7cc8211a2d2053f211984ecf86574a1f923a13ef1c51",
+        "locator": {
+          "kind": "symbol",
+          "name": "FreshCatalogTests.test_partial_timeout_retains_only_saved_part_and_never_saves_empty"
+        }
+      },
+      "facet": "Failed tier/features/model/mode/tool-server/effort parts retain corresponding saved values and provenance while healthy parts remain fresh; failed tier emptiness does not overwrite the saved answer.",
+      "id": "PRF-RPV6HE",
+      "invariant": "INV-RQ2ZB8",
+      "origin": {
+        "handoffEntry": "L202-A6b-shared-fresh-catalog",
+        "leaf": "260928-MIK-L202"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "b53e153ce5ab753e83ba16cee43c68df3eb91d7e",
+        "content": "sha256:d52539a04c4fd29feb01b0ffb71d5efa4a847fbd302706b3962baf80635965a4",
+        "locator": {
+          "kind": "symbol",
+          "name": "FreshCatalogTests.test_selected_feature_failure_uses_saved_part_or_passes_unknown_value"
+        }
+      },
+      "facet": "Selected-feature failure uses saved tier when seeded and preserves an unknown configured tier when no saved answer exists.",
+      "id": "PRF-X555V8",
+      "invariant": "INV-RQ2ZB8",
+      "origin": {
+        "handoffEntry": "L202-A6b-shared-fresh-catalog",
+        "leaf": "260928-MIK-L202"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "b53e153ce5ab753e83ba16cee43c68df3eb91d7e",
+        "content": "sha256:21edd1bdafc99ea85beb0ab3040bab27006897fe166af604a533cc2e2f92c5b1",
+        "locator": {
+          "kind": "symbol",
+          "name": "FreshCatalogTests.test_request_scope_asks_once_then_discards_its_answer"
+        }
+      },
+      "facet": "Nested reads share one operation-local catalog answer, but successive operations and later unscoped reads query again.",
+      "id": "PRF-ZQGGY0",
+      "invariant": "INV-RQ2ZB8",
+      "origin": {
+        "handoffEntry": "L202-A6b-shared-fresh-catalog",
+        "leaf": "260928-MIK-L202"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "A later view asks again and displays the changed host answer.\n\nAnchor: `FreshCatalogTests.test_next_view_asks_fresh_and_replaces_changed_choices`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b53e153ce5ab753e83ba16cee43c68df3eb91d7e",
+            "content": "sha256:c309ccac06e074998b73ad3e30cabd9c083d704165c20faa2c197abeecb9f476",
+            "locator": {
+              "end": 78,
+              "kind": "line_range",
+              "start": 62
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "Saved reads neither query nor write; a start cannot treat that snapshot as its fresh answer.\n\nAnchor: `FreshCatalogTests.test_saved_reader_never_queries_or_creates_or_writes_files`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b53e153ce5ab753e83ba16cee43c68df3eb91d7e",
+            "content": "sha256:ddfe5923ed23980c02cd0362192e436e4a352645a567185ef809687134c1ca47",
+            "locator": {
+              "end": 420,
+              "kind": "line_range",
+              "start": 372
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "Concurrent processes retain their disjoint successful catalog parts.\n\nAnchor: `FreshCatalogTests.test_concurrent_processes_merge_disjoint_successful_parts`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b53e153ce5ab753e83ba16cee43c68df3eb91d7e",
+            "content": "sha256:e579c24725b5a99903b9a526c1c474246c0cdcef244f5cb69b75dc97b6914df2",
+            "locator": {
+              "end": 459,
+              "kind": "line_range",
+              "start": 422
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "A new process recovers successful saved parts with their original read time.\n\nAnchor: `FreshCatalogTests.test_whole_failure_survives_new_process_with_saved_timestamp`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b53e153ce5ab753e83ba16cee43c68df3eb91d7e",
+            "content": "sha256:f0fa2eebe35e6bb20380db4e660f51de276f7d9882bf70a098c5e8e9187e0f66",
+            "locator": {
+              "end": 112,
+              "kind": "line_range",
+              "start": 80
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "A failed part retains its saved value while independently successful parts become fresh.\n\nAnchor: `FreshCatalogTests.test_partial_timeout_retains_only_saved_part_and_never_saves_empty`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b53e153ce5ab753e83ba16cee43c68df3eb91d7e",
+            "content": "sha256:6182659d70bece3cd99b7cc8211a2d2053f211984ecf86574a1f923a13ef1c51",
+            "locator": {
+              "end": 148,
+              "kind": "line_range",
+              "start": 114
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "With neither fresh nor saved answers, configured values pass through unchecked.\n\nAnchor: `FreshCatalogTests.test_no_answer_leaves_all_configured_choices_unchecked`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b53e153ce5ab753e83ba16cee43c68df3eb91d7e",
+            "content": "sha256:bcdf0bbc28a3de4687146f7a3b7f0090383245e8a1c91863303171cb47985973",
+            "locator": {
+              "end": 183,
+              "kind": "line_range",
+              "start": 150
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Host IDs and labels match without case, and distinct resolved tier IDs conflict.\n\nAnchor: `FreshCatalogTests.test_names_match_ids_or_labels_without_case_and_conflicts_use_ids`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b53e153ce5ab753e83ba16cee43c68df3eb91d7e",
+            "content": "sha256:a4f2a697000f179e50f25e7d1ffb833cbf713f1cc80047abefd412a051464999",
+            "locator": {
+              "end": 224,
+              "kind": "line_range",
+              "start": 185
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Nested operation scopes share one answer; another scope or later call asks again.\n\nAnchor: `FreshCatalogTests.test_request_scope_asks_once_then_discards_its_answer`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b53e153ce5ab753e83ba16cee43c68df3eb91d7e",
+            "content": "sha256:21edd1bdafc99ea85beb0ab3040bab27006897fe166af604a533cc2e2f92c5b1",
+            "locator": {
+              "end": 237,
+              "kind": "line_range",
+              "start": 226
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "Successful smaller or empty inventories reclaim retired parts; failures preserve them at both tested sizes.\n\nAnchor: `FreshCatalogTests.test_successful_inventory_reclaims_parts_at_two_sizes_but_failure_retains_them`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b53e153ce5ab753e83ba16cee43c68df3eb91d7e",
+            "content": "sha256:3da55b0bffcd0990471c9430f32f137a21e237502cbeabd4e1edd6e5b9a519a5",
+            "locator": {
+              "end": 291,
+              "kind": "line_range",
+              "start": 239
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "Start resolution asks metadata then only the final selected model’s features, sharing both inside the operation.\n\nAnchor: `FreshCatalogTests.test_start_questions_only_selected_features_after_precedence_and_labels`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b53e153ce5ab753e83ba16cee43c68df3eb91d7e",
+            "content": "sha256:ecf059d727d7b0382b21be0b1c0b3e82381db914496f68342c8bee4b6023507b",
+            "locator": {
+              "end": 346,
+              "kind": "line_range",
+              "start": 293
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "An unavailable selected-feature answer uses saved data or passes the unknown value through.\n\nAnchor: `FreshCatalogTests.test_selected_feature_failure_uses_saved_part_or_passes_unknown_value`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b53e153ce5ab753e83ba16cee43c68df3eb91d7e",
+            "content": "sha256:d52539a04c4fd29feb01b0ffb71d5efa4a847fbd302706b3962baf80635965a4",
+            "locator": {
+              "end": 370,
+              "kind": "line_range",
+              "start": 348
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}
