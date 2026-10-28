@@ -10,7 +10,7 @@ The product-owned plugin bridges provisioned embed data and role-agent lifecycle
 
 ## Hot Path Summary
 
-`index.server.ts` retains the embed RPC, contributes the host-activity snapshot RPC and installs two separate event owners. `server/host_activity.ts` publishes recorded agents' activity; `server/turn_events.ts` wires parent wakes through the shared tracker in `server/turn_ended.ts`, reads the host's agent state and sinks every decision row to `server/turn_log.ts`, the plugin's own bounded file. `server/role_agents.ts` supplies published role/task/report facts through one replaceable stat-generation cache, not a fresh JSON parse on each event. `server/fixtures/evidence-rows.json` holds the five captured host rows verbatim, and `server/turn_events.test.ts` drives the contributed adapter against incomplete and complete listings.
+`index.server.ts` retains the embed RPC, contributes the host-activity snapshot RPC and installs two separate event owners. `server/host_activity.ts` publishes recorded agents' activity; `server/turn_events.ts` wires parent wakes through the shared tracker in `server/turn_ended.ts`, reads the host's agent state and sinks every decision row to `server/turn_log.ts`, the plugin's own bounded file. `server/role_agents.ts` supplies published role/task/report facts through one replaceable stat-generation cache, not a fresh JSON parse on each event. `server/acp_providers.ts` reads the installed host's provider classes once per boot, publishes the ACP verdict each seat is judged by as the plugin's own `acp-providers.json`, and keeps providers that reported helper calls out of ACP across restarts. `server/fixtures/evidence-rows.json` holds the five captured host rows verbatim, and `server/turn_events.test.ts` drives the contributed adapter against incomplete and complete listings.
 
 ## Structure And Boundaries
 
@@ -24,7 +24,7 @@ Host activity is a separate replaceable publication, bounded by the existing rol
 
 A line carries the ended turn's own last line of agent text, shortened to 300 characters, and no document; a turn with no text says so, and a refused return still gives the line. A return to the parent suppresses it wherever the row shows the recipient — Codex's input or a Hermes answer that names it — while a row that shows no recipient is only a hand-off. A parent awaiting permission holds the line, and so does one that is in a turn unless the product knows its provider keeps that turn under a steer — the build names no such provider, so in practice a running parent is told when its turn ends, never steered into it and never replaced; the same gate is asked again before each send, so a batch cannot steer into a turn it has just started. Child activity holds the line, while descendant restarts drop the older owed one, including an already claimed deferred one. Each line is sent once, in the order the turns ended, across requeues and a Manager rebind. A leaf agent whose recorded parent is archived or missing gives its line to the current Manager of its master, and an agent outside the product's list is named once in the host log. The tracker is process-local and the source cap is distinct from the settings-reloaded role_message limit.
 
-A Worker, Reviewer or Curator that stops without handing off is sent back to its work instead: after every silent end the plugin waits 60 seconds, then — if the seat is out of a turn, unarchived and owing no permission — sends the seat one message naming its role and task, quoting the ended turn's own last line and asking it to go on, or sends its parent the counted line from the third silent end in a row. A turn start inside the wait cancels the send and the end is not counted; a hand-off or a turn begun by another agent's message resets the run. Other roles are unchanged. Every message, marked line, cancelled wait, skipped send and left-alone end the current generation emits is offered to the plugin's own `turn-ends.jsonl`, turned over at 2 MiB to one archive, with a failed write named once in `turn-ends.error.json`; an obsolete intake outcome and a generation-boundary send add no row, a sink without `PASEO_HOME` writes nothing, and `host-activity.json` keeps its bytes. The plugin's cleanup drops pending and in-flight waits and clears the runs, so a reload starts afresh.
+A Worker, Reviewer or Curator that stops without handing off is sent back to its work instead: after every silent end the plugin waits 60 seconds, then — if the seat is out of a turn, unarchived and owing no permission — sends the seat one message naming its role and task, quoting the ended turn's own last line and asking it to go on, or sends its parent the counted line from the third silent end in a row. A turn start inside the wait cancels the send and the end is not counted; a hand-off or a turn begun by another agent's message resets the run. Other roles are unchanged. A seat the provider verdict puts on ACP that ends its turn with a line starting `WAITING FOR SUBAGENTS:` has declared a helper wait, and that end is not silent: it gives its parent nothing, adds nothing to the two-end run, and arms one check three minutes later that asks the seat for each helper's status and tells it to declare again if helpers still run or to go on; the check passes the same turn, permission, limit and generation gates as the seat message, and the wait ends at the seat's next end without a declaration or at its archive. Every message, marked line, cancelled wait, skipped send, left-alone end, declared wait, ended wait and progress check the current generation emits is offered to the plugin's own `turn-ends.jsonl`, turned over at 2 MiB to one archive, with a failed write named once in `turn-ends.error.json`; an obsolete intake outcome and a generation-boundary send add no row, a sink without `PASEO_HOME` writes nothing, and `host-activity.json` keeps its bytes. The plugin's cleanup drops pending and in-flight waits and clears the runs, so a reload starts afresh.
 
 The client also carries the tray channel. `index.client.tsx` keeps supported theme/screen/RPC wiring separate from the pinned DOM adapters under `client/`. The bridge negotiates `pick` and `showing` with the trusted parent: `showing` reports the chat actually displayed, independently of a pending navigation request, and names no agent for missing/load-failed or ambiguous chat identity. Tray chat highlights can copy through the host copy handler and offer a non-modal Add control; only clicking Add posts a pick. Each pick carries the displayed agent, message ID and time from that row's own recorded timeline data. A row without recorded time is refused in place, and unreadable adapter structure produces a named notice rather than invented provenance. The same channel observes the message-box rectangle for an external tray dock — the box's own left and width beside its vertical edge, the pair optional as a unit — and reserves finite tray-height padding in the chat scroll root; missing composer measurement is named, and teardown disconnects every observer, including the class/style watch over the box and its ancestors that re-measures a layout move resizing nothing, and releases the reservation. These pinned DOM/React-property adapters are explicit unsupported host seams; source declarations and local tests do not establish live-host acceptance.
 
@@ -38,7 +38,8 @@ The client also carries the tray channel. `index.client.tsx` keeps supported the
 - `server/host_activity.ts`: bound, boot-qualified host activity and atomic publication.
 - `server/role_agents.ts`: typed, stat-generation-cached per-agent fact reader.
 - `server/turn_events.ts`: contributed parent-wake handlers, host-state reads, log sink and steering sends.
-- `server/turn_ended.ts`: stateful pure notification decision, including the leaf self-wake.
+- `server/turn_ended.ts`: stateful pure notification decision, including the leaf self-wake and the declared helper wait.
+- `server/acp_providers.ts`: the installed host's provider classes read once, the ACP verdict and its written file, and the helper-call drop-outs.
 - `server/turn_log.ts`: the plugin's own bounded turn-end log and write-error file.
 - `server/turn_ended.test.ts`: host-free schedules and preservation controls.
 - `server/turn_events.test.ts`: the contributed adapter under incomplete and complete host listings.
@@ -48,13 +49,15 @@ The client also carries the tray channel. `index.client.tsx` keeps supported the
 
 **L184.** The plugin subscribes once per boot to provider subagent updates, publishes the running counts, reads the limit file at the send-back and the parent gate, and states its host requirement at 0.12.0.
 
+**L203.** A role seat on an ACP connection says what it waits for: a turn that ends with a `WAITING FOR SUBAGENTS:` line is a declared wait rather than a silent end, and the plugin asks it for its helpers' progress three minutes later. Which providers are ACP is read from the classes the installed host ships, written to the plugin's own `acp-providers.json`, and a provider that reports helper calls is kept out of ACP across restarts.
+
+- Keep embed RPC while wiring turn, permission and archive events to product-owned decisions; asynchronous handler failures are logged.
 ## Evidence
 
 
 - The client bridge negotiates display replies while keeping native navigation, selected-screen admission and drawing/failure distinct. [3]
 
 
-- Keep embed RPC while wiring turn, permission and archive events to product-owned decisions; asynchronous handler failures are logged. [1]
 
 - Read current role/task/report registrations through one replaceable stat-generation cache; absence clears it and malformed content remains visible. [2]
 
@@ -62,7 +65,6 @@ The client also carries the tray channel. `index.client.tsx` keeps supported the
 
 
 - Parent-wake handlers retain the existing gates: any admitted send asks the host for a steer, a free parent takes the line at once, and only a parent that is already in a turn is withheld unless the product knows its provider keeps that turn. [5]
-
 
 - Supported client contributions remain separate from explicitly pinned DOM adapters. [6]
 - The displayed chat is observed independently and published only to a dashboard that negotiates showing. [7]

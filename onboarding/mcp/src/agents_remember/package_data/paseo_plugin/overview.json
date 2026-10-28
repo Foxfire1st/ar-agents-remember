@@ -1,22 +1,6 @@
 {
   "path": "mcp/src/agents_remember/package_data/paseo_plugin",
   "references": {
-    "1": {
-      "note": "Keep embed RPC while wiring turn, permission and archive events to product-owned decisions; asynchronous handler failures are logged.\n\nAnchor: `contribute`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "4973808b24e87c4f48217316928eb053db0fa69b",
-            "content": "sha256:7a20a4770517aeb358d7d1a02f45cbafd50b35b38a7f5b6d5e70e67225d8ce88",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "mcp/src/agents_remember/package_data/paseo_plugin/index.server.ts"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "10": {
       "note": "Only explicit Add posts a timed pick; unrecorded time and unreadable structure remain named.",
       "targets": [
@@ -154,12 +138,12 @@
       ]
     },
     "5": {
-      "note": "Parent-wake handlers retain the existing gates: any admitted send asks the host for a steer, a free parent takes the line at once, and only a parent that is already in a turn is withheld unless the product knows its provider keeps that turn.\n\nAnchor: `registerParentWakeEvents`",
+      "note": "Parent-wake handlers retain the existing gates: any admitted send asks the host for a steer, a free parent takes the line at once, and only a parent that is already in a turn is withheld unless the product knows its provider keeps that turn.",
       "targets": [
         {
           "anchor": {
-            "blob": "dc867726c9071a79792d76230a55b4be0f68908c",
-            "content": "sha256:3ba0f0fe2d258d10aa88bcc879a80a673db2297f7c5c8f0e98b3153c53b69398",
+            "blob": "ff66e28b794c20c503abe40cc212800377e83e12",
+            "content": "sha256:8b7e25a99d324874787dec3345aa36d2c6aefc3eb439ffe6eb6ed50ad7a12c14",
             "locator": {
               "kind": "file"
             },

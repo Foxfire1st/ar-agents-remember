@@ -1,0 +1,36 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations"
+    ],
+    "justification": "The provision is split across four files that do different work: the declaration detector and the check scheduler decide in the plugin's turn-end state, the provider set resolves and persists the verdict the decision obeys, the subagent tracker is where a helper's own report disqualifies its provider, and the launch route appends the instruction that tells the seat to declare; a change to any one alone leaves the others waiting for a signal that never comes."
+  },
+  "applicability": "Every role agent the AR Paseo plugin launches or watches on a host that keeps the agent's turn open between messages, where the provider is on an ACP connection the plugin's own discovery names.",
+  "conditions": [
+    "The seat's declaration is a line starting `WAITING FOR SUBAGENTS:` in its last assistant message of the turn.",
+    "The check that follows a declared end repeats what the plugin's own verdict says rather than a list copied from the host.",
+    "A seat on a provider that is not ACP keeps the ordinary silent-end path.",
+    "The plugin's verdict file is written by staging and rename and read by both the launch and the turn-end decision."
+  ],
+  "exclusions": [
+    "No component is installed on the host for this provision; the plugin ships in its existing install copy.",
+    "No delivery of the hierarchy's own ACP adapter is claimed or changed."
+  ],
+  "id": "INV-G841F9",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "reviewer verdict role-reports/reviewer/87dbf3d5-8664-42ee-ab5a-bda53b30dbc9/verdict/260928-MIK-L203-route-review-verdict.md (round 1 baseline, candidate tree 4384457687521cc050e0c36f41fbf3e3c843b774; worker report ab9c3ca5…; journal b0934a60… pre-append): verbatim x3 mechanical MATCH; node 41+10+166 pass + tsc pass on BIND-OK bytes; pytest new-file 14 pass; live plugin-written acp-providers.json reads in frozen reader (hermes ACP, claude skipped); live rows declaredx3/sentx3/endedx1, zero send-sent; 4 evidence hashes match"
+      ],
+      "path": "handoff-2.json"
+    },
+    "handoffEntry": "MIK-R216@v1",
+    "leaf": "260928-MIK-L203",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "An ACP-connection seat that waits for its own background helpers ends the waiting turn with a WAITING FOR SUBAGENTS declaration and progress report, is asked for progress every 3 minutes while idle, and no harness gains any installed component.",
+  "status": "proposed",
+  "supersedes": []
+}
