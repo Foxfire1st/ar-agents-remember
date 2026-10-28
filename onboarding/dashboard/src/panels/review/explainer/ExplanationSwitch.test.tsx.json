@@ -7,29 +7,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1257dfe35f5662ab3f7efd95979d500fd6bfa64b",
-            "content": "sha256:17363ab605763eb5d3947590943cbcba8d757c78134e22395e2739043328a1e5",
+            "blob": "110427e878372ac0c22fc28673e1c0d46c7476e9",
+            "content": "sha256:411de13987bb7b9302e35e171c2b15e90cf70df0c2d64f88095a033debe9dd39",
             "locator": {
-              "end": 21,
+              "end": 181,
               "kind": "line_range",
-              "start": 16
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "2": {
-      "note": "A stale count and a build each reach the label, and no fetch is made\n\nAnchor: `names the build, and the stale count, without starting anything`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "1257dfe35f5662ab3f7efd95979d500fd6bfa64b",
-            "content": "sha256:4c6cc31225b8b507170735602ee28900d430d42e95bdcd4eb0886942e2dfadfa",
-            "locator": {
-              "end": 36,
-              "kind": "line_range",
-              "start": 23
+              "start": 41
             }
           },
           "kind": "test"
@@ -41,12 +24,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1257dfe35f5662ab3f7efd95979d500fd6bfa64b",
+            "blob": "110427e878372ac0c22fc28673e1c0d46c7476e9",
             "content": "sha256:61395766180fe647fa0256a815449656a53e066608c89e0e4aa49a78268b6d55",
             "locator": {
-              "end": 44,
+              "end": 77,
               "kind": "line_range",
-              "start": 38
+              "start": 71
             }
           },
           "kind": "test"

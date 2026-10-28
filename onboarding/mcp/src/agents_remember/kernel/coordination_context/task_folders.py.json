@@ -1,0 +1,55 @@
+{
+  "path": "mcp/src/agents_remember/kernel/coordination_context/task_folders.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The archive segment is one constant, and both packages read it rather than restate it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2034ea800cb4513030a30f2affb358db68fb76d4",
+            "content": "sha256:01dae166890935fa3f4d09ee9ca49ad0e76ba24d84cb6d5808a25c3722b9a554",
+            "locator": {
+              "kind": "symbol",
+              "name": "ARCHIVE_DIR"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "One step per child: a directory is a step, anything else - the archive segment included - is None, and an unreadable directory is reported to the caller or raised when it offers no handler.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2034ea800cb4513030a30f2affb358db68fb76d4",
+            "content": "sha256:fab2d95647aa7eedd09e7eca14b95a133c41e078208ad71ed29047af8e891e82",
+            "locator": {
+              "kind": "symbol",
+              "name": "task_folder_steps"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The two-level walk never follows a symlink and reports every directory it visits with its depth, so a caller keeps its own budget.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2034ea800cb4513030a30f2affb358db68fb76d4",
+            "content": "sha256:d8c81e1d4161e4ee97757c1fb94474d660877c3308e9969f4b2bd2279163b4b5",
+            "locator": {
+              "kind": "symbol",
+              "name": "canonical_task_folder_steps"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

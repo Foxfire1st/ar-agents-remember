@@ -1,0 +1,39 @@
+{
+  "path": "dashboard/src/panels/changeset/MasterCounterStatus.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Preparation in progress is shown as in progress, never as a zero count.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2d3ec2d37f322a4b5af50944cd67a47badc39ff8",
+            "content": "sha256:cda43c64e5fb2f9272605b94aad5913fdc18a1f5142b2866ba0df9ddb6b1fb86",
+            "locator": {
+              "kind": "symbol",
+              "name": "MasterCounterStatus"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The generation is shown with the state, so a count is attributable to the generation it came from.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2d3ec2d37f322a4b5af50944cd67a47badc39ff8",
+            "content": "sha256:d354e1d172687224acec9bd245bd2b57324c9096fbf235de748be67380d9c4c8",
+            "locator": {
+              "kind": "symbol",
+              "name": "SeriesGenerationTag"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

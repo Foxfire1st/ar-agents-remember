@@ -62,9 +62,9 @@ discarding most of the results.
 ### Repo-Internal References
 
 The module's own top-level surface is listed in Code Commentary; no cross-file citation rows are needed for this split module.
-- The canonical enumeration: three listed levels, the archive/enclosure filter, and a sort over only the kept entries. [1]
+- The canonical enumeration: three listed levels, the archive/enclosure filter, and a sort over only the kept entries. 
 - The named-tail probe, an exact same-order subset of the enumeration. [2]
-- The two listed levels, descended the way `rglob` descends. [3]
+- The two listed levels, descended the way `rglob` descends. 
 
 - One listing level: real directories only; an unreadable folder contributes nothing. [4]
 
@@ -100,3 +100,5 @@ resume identities remain private to recovery.
 These former current claims are retained as history, not as instructions or present implementation evidence.
 
 > Shared file-surface helpers for the observer snapshot readers. The readers split by responsibility (providers, runtime enclosures, analytical surfaces, task documents) share the task-document payload cache, the status payload TTL cache, and the small JSON/stat helpers collected here.
+
+- Retired at the fifth freeze d59c3493: mcp/src/agents_remember/serving/projections/snapshots_impl/_common.py::_iter_task_json - the bytes it recorded now occur 3 times in the file, so no single home can be named and it is not given to the likelier one; mcp/src/agents_remember/serving/projections/snapshots_impl/_common.py::_task_directories - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 58e22246cc09ef0ee12095e284a111a475081c38. Retired means the anchor no longer stands, not that the cited subject was deleted.

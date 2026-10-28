@@ -27,4 +27,9 @@ Absent code and an unreadable side are different facts. The model carries author
 - Per-side fields include explicit range/currentness states and optional locator symbol. [8]
 - The four after-side memory values have a path and nonnegative counts. [9]
 - One entry joins to its invariant by key and optionally carries its memory values. [10]
-- The source declares exact-side locator/excerpt and absence semantics. [11]
+- The source declares exact-side locator/excerpt and absence semantics. 
+
+
+Anchor: "One :class:`ReviewTreeEntry` is one entry ID of K_B or K_C. Its two sides are the code base B and the" [11]
+
+- Retired at the fifth freeze d59c3493: mcp/src/agents_remember/models/knowledge/review_tree_entries.py::ReviewTreeEntry - the bytes it recorded now occur 7 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.

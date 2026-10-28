@@ -1,0 +1,23 @@
+{
+  "path": "mcp/tests/test_object_presence_batches.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "A prefetched presence answer answers present and other-type at once, and a missing object is asked again rather than assumed absent",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "09cf2d60b4652adc34c9fc4148775602151e7c2e",
+            "content": "sha256:d56215a856a623e075a4370e5ea90126454570674d7469033fa9c2ac4f7bc543",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_prefetched_presence_answers_present_other_type_and_asks_again_for_missing"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

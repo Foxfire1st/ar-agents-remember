@@ -1,0 +1,23 @@
+{
+  "path": "dashboard/src/panels/review/explainer/ExplanationView.test-utils.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The explanation view is testable without a live explainer seat, because the stubbed server answers the same reads the real one does.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "648cbe525e4308a88cd207ed78d237d04a4a36cd",
+            "content": "sha256:0be0a8fc4be90abe2b5da2bac48ee8e6e9e35c320e785b731d3f129d225150b2",
+            "locator": {
+              "kind": "symbol",
+              "name": "serve"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

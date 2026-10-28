@@ -23,27 +23,41 @@ These former current claims are retained as history, not as instructions or pres
 > attention_dismissals.py owns the workspace acknowledgement set for actionable-drift, provider-down, failed-setup and blocked-start occurrences.
 
 ## Evidence
+
+- Retained reference account (no fresh execution or acceptance inferred): Durable-store role declaration follows application entry paths: `prepare_mcp_process` declares the MCP role, while dashboard `_dev_app` declares in the reload worker and `run` declares on the foreground/daemon command path.  Anchor: `prepare_mcp_process` `_dev_app` `run`
+
+## Retirements
+
+- Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/dashboard.py:251-285 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 8a2d4b478971bf40cca0f24d5e5d24a0844bd563; mcp/src/agents_remember/cli/dashboard.py:120-166 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 0346da9c572e1eb913a8eb4130e9a9e9d37343c8; mcp/src/agents_remember/cli/dashboard.py:1-553 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 58161c69b8254fe8080805650a2b3984000059d8. Retired means the anchor no longer stands, not that the cited subject was deleted.
+
 - Retained gate logs have strict authority reads and a separate tolerant projection reader; their namespace is not a current lifecycle event stream. [1]
 
 - Retained reference account (no fresh execution or acceptance inferred): Gate policy validation and delegated decision checks. [2]
+
 - The structural gate facade re-exports kernel vocabulary only, not removed public gate-response operations or a native task-state model. [4]
 
 - Provider degradation records its own state/events and can stop a critical provider; no removed operator-inbox posting occurs. [7]
 
 - Guarded durable-store composition preserves coordinator containment and held-lock rewrite. [8]
 
-- Retained reference account (no fresh execution or acceptance inferred): Durable-store role declaration follows application entry paths: `prepare_mcp_process` declares the MCP role, while dashboard `_dev_app` declares in the reload worker and `run` declares on the foreground/daemon command path.  Anchor: `prepare_mcp_process` `_dev_app` `run` [10]
+Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/dashboard.py:251-285 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 8a2d4b478971bf40cca0f24d5e5d24a0844bd563; mcp/src/agents_remember/cli/dashboard.py:120-166 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 0346da9c572e1eb913a8eb4130e9a9e9d37343c8; mcp/src/agents_remember/cli/dashboard.py:1-553 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 58161c69b8254fe8080805650a2b3984000059d8. Retired means the anchor no longer stands, not that the cited subject was deleted [10]
 
 - Undeclared checkout targets are restricted; primary checkout is refused [18]
+
 - Applied gate permits only matching exact-operation recovery [20]
+
 - Default human policy and explicit delegation/pinned kinds are kernel-owned [21]
+
 - Delegation rejects owning-lifecycle decisions and missing required reviewer evidence [22]
+
 - Consumed approval kinds keep applied authority without TTL; explicit removed-stores removal is distinct from native-census-qualified lock-only residue. Old inbox caps/expiry have no current owner here. [28]
 
 - Projection requires exact source identity and owns scratch rather than semantic WAL [38]
+
 - Canonical publication precedes projection invalidation/rebuild and returns refresh failures as effects [39]
 
 - Current role_identity canonicalizes the one earlier specialist spelling to investigator; the removed orchestration packet router has no current ownership. [40]
+
 - Workspace acknowledgements admit only published kinds and reclaim only with complete, time-qualified native observations; partial/unread kinds and newer clicks remain protected. [6]
 
 - Shared kernel exclusion is independent of caller authorization. [9]
@@ -53,7 +67,9 @@ These former current claims are retained as history, not as instructions or pres
 - Daemon ownership checks are advisory and independent of unconditional locking; schema admission rejects unknown majors, without preserving an inbox ownership register. [15]
 
 - Mutex/flock exclusion is reentrant and capability-probed  Anchor: exclusive_file_lock; _verify_lock_capability [16]
+
 - Atomic publication fsyncs content and replaces before directory flush; Windows directory flush is unavailable  Anchor: atomic_write_bytes; _fsync_directory [17]
+
 - Approval spending folds/evaluates/applies under one log lock  Anchor: claim_approval [19]
 
 - Approval claiming keeps fold/evaluate/applied append under one log lock; no existing log yields gateless policy before opening a lock. [42]

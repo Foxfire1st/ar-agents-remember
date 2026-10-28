@@ -93,10 +93,19 @@ No meaningful cross-repository references found.
 A failed input pass sets `_task_refresh_pending`; the next read heals every non-host domain plus pending invalidations and clears the flag only after success. Full task refresh prepares sources before replacing task slots; incremental and later domain work can still mutate slots before another read fails. Failed passes return no new ProjectionInputs aggregate, but do not roll back every changed slot. Host intake remains startup/explicit-invalidation only during retry.
 
 - Projection write edge consumes this retained input state. [1]
-- The serialized worker maps watcher wakes to refresh kinds. [2]
+- The serialized worker maps watcher wakes to refresh kinds. 
 
 ## 20261023-L190-v2 The Live Kinds Report Their Own Ends
 
 `_observe_native_kinds` (:750-786) runs immediately after the native attention read (:470-473), so the observation that reclaims an acknowledgement and the rows that publish (or withhold) its entry are one pass. It collects the ids the builders publish, then replaces the stall set with `stall_occurrences(self._native_attention, entries.tasks)` — a stall row appears only after the deadline, but its interval is live from the moment the task goes idle, and the acknowledgement names the interval.
 
 Proof is gated per kind: `permissions_complete`, `held_complete`, and `_host_activity.known` for stalls. An incomplete kind contributes no observation at all, so `AttentionDismissalStore.reconcile` keeps its records; and an id this same pass still publishes is never reported healthy, so a live cause is acknowledged out of sight and not out of existence.
+
+
+Retired at the fifth freeze d59c3493: mcp/src/agents_remember/serving/projector.py:137-435 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d. Retired means the anchor no longer stands, not that the cited subject was deleted. [2]
+
+- Retired at the fifth freeze d59c3493: mcp/src/agents_remember/serving/projector.py::Projector - the bytes it recorded now occur 4 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.
+
+- The serialized worker maps watcher wakes to refresh kinds.
+
+Retired at the fifth freeze d59c3493: mcp/src/agents_remember/serving/projector.py:137-435 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d. Retired means the anchor no longer stands, not that the cited subject was deleted [2]

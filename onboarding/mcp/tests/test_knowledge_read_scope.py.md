@@ -179,4 +179,6 @@ No meaningful cross-repo references found.
 - The lane row this module occupies.  Anchor: `test_knowledge_read_scope` [34]
 
 
-- The support artifacts and contracts the evidence-lifecycle catalog declares this module a consumer of. [35]
+- The support artifacts and contracts the evidence-lifecycle catalog declares this module a consumer of.
+
+- Retired at the fifth freeze d59c3493: mcp/tests/evidence-lifecycle.toml:1-4036 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit f2b7c648f540efb9d64ceea22e11e651cb5cc914. Retired means the anchor no longer stands, not that the cited subject was deleted.

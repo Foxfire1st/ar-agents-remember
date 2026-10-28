@@ -101,9 +101,9 @@ Investigator dispatch uses the existing selection admission lock; options expose
 
 - Frozen implementation of _revive_execution supporting the stated file behavior. [4]
 
-- The current source implements this file’s stated Investigator boundary. [12]
+- The current source implements this file’s stated Investigator boundary.
 
-- Leaf revival compares current grant-sensitive canonical task/contract scope before bridge use. [13]
+- Leaf revival compares current grant-sensitive canonical task/contract scope before bridge use.
 
 - The registration also mounts `POST /api/role-launch/document-chats/tree` through `register_document_chat_tree_route`, beside the selected-document read and report route. The tree owner supplies bounded receipt-derived pre-click discovery and one live-ID census; dispatch, retry, revive, progress reclamation and launch authority retain their existing owners. [14]
 
@@ -121,3 +121,5 @@ The dispatch endpoint takes the lock first and decides inside it: `role_launch_a
 
 
 - At successful receipt ownership before native execution, _record_manager_start writes the Architect address; _architect_behind verifies Orchestrator.parentAgentId by its Architect launch receipt. Failure to persist the address is caught rather than losing the seat. [22]
+
+- Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/role_launch_routes.py:1-640 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit b40efb87cc614ff1751c296da2c47e6f85b195f4; mcp/src/agents_remember/cli/role_launch_routes.py:1-906 - the region it cited is not in the file at the candidate and no re-point was possible. Retired means the anchor no longer stands, not that the cited subject was deleted.

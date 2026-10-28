@@ -59,12 +59,12 @@
         },
         {
           "anchor": {
-            "blob": "2f417db25d3f58c21b8baeca43751c69834ddffb",
+            "blob": "0312a433230b5868e6030419096bdc9a1bdd0e19",
             "content": "sha256:d3db62dc0f628d4095c34f612e0f31f4458bcefb988bf6e537d5b0bf66a6b876",
             "locator": {
-              "end": 242,
+              "end": 338,
               "kind": "line_range",
-              "start": 239
+              "start": 335
             },
             "path": "mcp/src/agents_remember/memory/conversion/code_objects.py"
           },
@@ -145,12 +145,12 @@
         },
         {
           "anchor": {
-            "blob": "2f417db25d3f58c21b8baeca43751c69834ddffb",
+            "blob": "0312a433230b5868e6030419096bdc9a1bdd0e19",
             "content": "sha256:d3db62dc0f628d4095c34f612e0f31f4458bcefb988bf6e537d5b0bf66a6b876",
             "locator": {
-              "end": 242,
+              "end": 338,
               "kind": "line_range",
-              "start": 239
+              "start": 335
             },
             "path": "mcp/src/agents_remember/memory/conversion/code_objects.py"
           },
@@ -258,12 +258,12 @@
         },
         {
           "anchor": {
-            "blob": "2f417db25d3f58c21b8baeca43751c69834ddffb",
+            "blob": "0312a433230b5868e6030419096bdc9a1bdd0e19",
             "content": "sha256:d3db62dc0f628d4095c34f612e0f31f4458bcefb988bf6e537d5b0bf66a6b876",
             "locator": {
-              "end": 242,
+              "end": 338,
               "kind": "line_range",
-              "start": 239
+              "start": 335
             },
             "path": "mcp/src/agents_remember/memory/conversion/code_objects.py"
           },

@@ -1,0 +1,23 @@
+{
+  "path": "mcp/tests/test_reviewer_worklist_warm.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Warm worklist children keep their imports and never another exact binding's request state",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f10023415aaad10d1d454904db37534c6cadd2f5",
+            "content": "sha256:3257e68d804fd408f4ef87e51c12a542edffc342eeafb912037cd3162511b1bf",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_warm_child_matches_fresh_answers_and_does_not_leak_between_bindings"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -23,7 +23,7 @@ These are declared component or pure-function checks over the fixtures named her
 ## Evidence
 
 - Declared check and its fixture assertions. [12]
-- Declared check and its fixture assertions. [13]
+- Declared check and its fixture assertions.
 - Declared check and its fixture assertions. [14]
 
 ## Historical predecessor account
@@ -71,3 +71,5 @@ The earlier account follows as provenance. Current assertions and removed journe
 > - j selects the second family’s changed member and k returns; an explicit selection of the unknown INV-GGGGGG row fails, leaves that row selected, shows the failure and preserves both families. (historical reference 3)
 > - A partial family has nine complete synthetic-outline rows and no sidebar continuation; its main-page control sends the cursor in one request and keeps the same outline on subsequent family selection. (historical reference 4)
 > - The explicitly selected unknown row names the deliberately failed invariant read and remains selected after failure. (historical reference 10)
+
+- Retired at the fifth freeze d59c3493: dashboard/src/panels/review/ReviewSurface.walkStore.test.tsx:140-167 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 23cb164fa24dcbc4a98a56fa1324e1fb42c1bf41. Retired means the anchor no longer stands, not that the cited subject was deleted.

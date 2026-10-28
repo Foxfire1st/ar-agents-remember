@@ -65,7 +65,7 @@ No configured Domain Documentation source exists for this file.
 
 - The scenario model validates named engine-room scenarios before building frames. [4]
 
-- The real cockpit shell it renders (also the shell rendered against fixtures). [5]
+- The real cockpit shell it renders (also the shell rendered against fixtures). 
 
 
 - The gallery fixtures hydrated by the legacy `?state=` path. [6]
@@ -86,3 +86,7 @@ The bench now registers dedicated Chats scenarios through an authority harness a
 
 The reviewed candidate is still uncommitted. Existing verification hash/date remain pinned to the
 leaf base; closeout owns commit stamping.
+
+- The real cockpit shell it renders (also the shell rendered against fixtures). [5]
+
+- Retired at the fifth freeze d59c3493: dashboard/src/cockpit/Cockpit.tsx:426-707 - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.

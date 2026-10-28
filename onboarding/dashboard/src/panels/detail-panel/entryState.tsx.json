@@ -117,12 +117,12 @@
         },
         {
           "anchor": {
-            "blob": "dc229d234ae888019f18a20c91a1cd0135ada287",
+            "blob": "1f434d49ec1adbb3ff324745748345f4ce909fce",
             "content": "sha256:9f2d92e61273758bdd54bb863e89cc2198feaded093ea7f4f132c5567e680449",
             "locator": {
-              "end": 259,
+              "end": 255,
               "kind": "line_range",
-              "start": 185
+              "start": 181
             },
             "path": "dashboard/src/panels/detail-panel/changeSetBar.tsx"
           },

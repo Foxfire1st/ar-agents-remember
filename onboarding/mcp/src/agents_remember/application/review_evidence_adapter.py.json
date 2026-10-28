@@ -4,8 +4,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "578ec75fd0d5d4a257abd64ddc7fca8063321dee",
-        "content": "sha256:bf66ab763aa8e9f04d985e684245d05b21a6ae7a21235189226b45e43e5572d8",
+        "blob": "b8b49bc4d24d8ecc98d8792388d329b1c8e2a688",
+        "content": "sha256:496619ed4a55bdd20562dd1a90adb7fca905af72232593fa44c4f5b4fbfbbb98",
         "locator": {
           "kind": "symbol",
           "name": "_carried"
@@ -22,8 +22,8 @@
     },
     {
       "anchor": {
-        "blob": "578ec75fd0d5d4a257abd64ddc7fca8063321dee",
-        "content": "sha256:41e881993bb56636c68662d4743221d977cdac8455092e0231c0a6f19d70dd86",
+        "blob": "b8b49bc4d24d8ecc98d8792388d329b1c8e2a688",
+        "content": "sha256:bc0fb29ec4a7ed306ddfbbeb6bb8d42bdd9fe321b9883ff56e23794bb8e6e4af",
         "locator": {
           "kind": "symbol",
           "name": "_memory_state"
@@ -40,8 +40,8 @@
     },
     {
       "anchor": {
-        "blob": "578ec75fd0d5d4a257abd64ddc7fca8063321dee",
-        "content": "sha256:01deaa6e23570686a887d6357648ca9466a3f61eae9b0ac117bf6d600ad97d14",
+        "blob": "b8b49bc4d24d8ecc98d8792388d329b1c8e2a688",
+        "content": "sha256:66ba2fd9d1e2081d6a3157cd56f0952ac486f940c7a133c06f85a76169d6476b",
         "locator": {
           "kind": "symbol",
           "name": "prepare_evidence"
@@ -58,8 +58,8 @@
     },
     {
       "anchor": {
-        "blob": "578ec75fd0d5d4a257abd64ddc7fca8063321dee",
-        "content": "sha256:cf9a3fd84c2dbf93d37f3e7786f8bbfe85a60de16e053f8b922617d712543f69",
+        "blob": "b8b49bc4d24d8ecc98d8792388d329b1c8e2a688",
+        "content": "sha256:cf47f9ed51e2f447ed5a90fc253901353b039c8f6d03427f4a88df5749c566bd",
         "locator": {
           "kind": "symbol",
           "name": "consume_address"
@@ -76,8 +76,8 @@
     },
     {
       "anchor": {
-        "blob": "578ec75fd0d5d4a257abd64ddc7fca8063321dee",
-        "content": "sha256:01deaa6e23570686a887d6357648ca9466a3f61eae9b0ac117bf6d600ad97d14",
+        "blob": "b8b49bc4d24d8ecc98d8792388d329b1c8e2a688",
+        "content": "sha256:66ba2fd9d1e2081d6a3157cd56f0952ac486f940c7a133c06f85a76169d6476b",
         "locator": {
           "kind": "symbol",
           "name": "prepare_evidence"
@@ -94,7 +94,7 @@
     },
     {
       "anchor": {
-        "blob": "578ec75fd0d5d4a257abd64ddc7fca8063321dee",
+        "blob": "b8b49bc4d24d8ecc98d8792388d329b1c8e2a688",
         "content": "sha256:5e6521107981dd609eef4680148291b94524b757f4f89623df7ae56fae1f85e8",
         "locator": {
           "kind": "symbol",
@@ -112,61 +112,13 @@
     }
   ],
   "references": {
-    "1": {
-      "note": "Preparation preserves the comparison owner's measured index and side states.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "578ec75fd0d5d4a257abd64ddc7fca8063321dee",
-            "content": "sha256:01deaa6e23570686a887d6357648ca9466a3f61eae9b0ac117bf6d600ad97d14",
-            "locator": {
-              "kind": "symbol",
-              "name": "prepare_evidence"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "2": {
-      "note": "An address resolves only inside the comparison and owner path that prepared it.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "578ec75fd0d5d4a257abd64ddc7fca8063321dee",
-            "content": "sha256:cf9a3fd84c2dbf93d37f3e7786f8bbfe85a60de16e053f8b922617d712543f69",
-            "locator": {
-              "kind": "symbol",
-              "name": "consume_address"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "3": {
-      "note": "A carried item is matched on its whole identity, not on a single field.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "578ec75fd0d5d4a257abd64ddc7fca8063321dee",
-            "content": "sha256:bf66ab763aa8e9f04d985e684245d05b21a6ae7a21235189226b45e43e5572d8",
-            "locator": {
-              "kind": "symbol",
-              "name": "_carried"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "4": {
       "note": "The current implementation adds the binding-aware intended-claim rule and typed preparation preconditions; the existing comparison-address and measured-state account remains valid.\n\nAnchor: `require_intended_authority`, `prepare_evidence`, `EvidencePrecondition`",
       "targets": [
         {
           "anchor": {
-            "blob": "578ec75fd0d5d4a257abd64ddc7fca8063321dee",
-            "content": "sha256:3c41ca9fce6acb20968dc701ad7032c3ca4c3acf9398065fff2ad645be26ee75",
+            "blob": "b8b49bc4d24d8ecc98d8792388d329b1c8e2a688",
+            "content": "sha256:651c95f276f26ea421d28e023c04e188e5b875eea76f4cd9332b99674b368f45",
             "locator": {
               "kind": "file"
             }

@@ -1,0 +1,23 @@
+{
+  "path": "mcp/src/agents_remember/application/review_memo_store.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "_Stored is the on-disk shape a memo is kept in, keyed by blob.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a7178c6909db11cc6d53483a91bc8cd3d3df94c9",
+            "content": "sha256:c5f84050ca1207128c371b1f573d3e51e63f8285ac42ba62239eee9741364f93",
+            "locator": {
+              "kind": "symbol",
+              "name": "_Stored"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

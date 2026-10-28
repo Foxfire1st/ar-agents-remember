@@ -41,7 +41,7 @@ None recorded.
 
 No configured Domain Documentation source applies; CCR-R21@v2 is the governing packet.
 
-- The R21 packet requires atomic content-addressed storage and exact-reference lookup. [1]
+- Retired: this sentence's citation named the requirement packet `ar-coordination/tasks/agents-remember/260831_closeout-certification-reform/requirements/CCR-R21-v2-content-addressed-phase-certificates.md` — a task document, not the paired code tree — so the packet is named here instead of being anchored at source. The packet is still the evidence for the paragraph; no code anchor is claimed for it.
 
 ### Repo-Internal References
 

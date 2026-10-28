@@ -38,28 +38,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9719c9159d392a3e5377a242638474a1a15b1f37",
+            "blob": "75a04d4049c18ff472b2caefabad7faa53cdb34b",
             "content": "sha256:5d5279ced163a25302240b8fd1de7e6e59fe3f10cde77dc404ca43505d463bcb",
             "locator": {
               "kind": "symbol",
               "name": "_root_selections"
-            },
-            "path": "mcp/tests/test_reviewer_worklist_reads.py"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "13": {
-      "note": "A root probe that raises is recorded as unreadable and nothing is kept.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "9719c9159d392a3e5377a242638474a1a15b1f37",
-            "content": "sha256:3bf7b12c1f3082937f37f7520c12c1a725d905a9747082a3fee52c9c35fda60e",
-            "locator": {
-              "kind": "symbol",
-              "name": "_root_errors"
             },
             "path": "mcp/tests/test_reviewer_worklist_reads.py"
           },
@@ -72,8 +55,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9719c9159d392a3e5377a242638474a1a15b1f37",
-            "content": "sha256:c081cf381bb3f13633d7bf5418bc9534212e3a89628153ff30047098d9b0be43",
+            "blob": "75a04d4049c18ff472b2caefabad7faa53cdb34b",
+            "content": "sha256:267caaf15e6e218966814d04fd2285fd1db099ea6dd45ebe90412f84ac14b800",
             "locator": {
               "kind": "file"
             },
@@ -88,8 +71,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cd9c5537287afcf467e163d880cd215185351a3f",
-            "content": "sha256:e6e886652be10fbe00a654d24ab251858ba9d00e64b0aa84004afa1ddddc11e3",
+            "blob": "fb21438758c57cf647872e223994856f0ee5bd5d",
+            "content": "sha256:1bcf74a1372072144d39d4252082585bbcc86540d62cc4aa888664961a69d8f9",
             "locator": {
               "kind": "file"
             },

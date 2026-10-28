@@ -1,24 +1,6 @@
 {
   "path": "dashboard/src/data/reviewMemoryWatch.test.tsx",
   "realizes": [],
-  "references": {
-    "1": {
-      "note": "Synthetic EventSource exercises a single shared SSE connection: exact live context, readiness reconciliation, duplicate silence, reconnect, superseded connection rejection, recorded/retired/unmounted lifetime and target-scoped watch failure. Native filesystem timing is not proved here.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "9bffb1d74df8a4fbd64682062f6bcd3c37cbfc83",
-            "content": "sha256:3ae4654c134f623432c56094b2762bc633cb5e3710a2bfc9cac1b04e76853c02",
-            "locator": {
-              "end": 116,
-              "kind": "line_range",
-              "start": 1
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    }
-  },
+  "references": {},
   "schema": "ar-onboarding-file/v1"
 }

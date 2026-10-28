@@ -24,7 +24,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "154d7272959eb18a7f5f80927be651dc6bf6789d",
+            "blob": "e35242dec8bb25542d927fd782eb47c25cb42c1e",
             "content": "sha256:339fc3807511945753666053810592f602b2905331e1bbfb29fb4709fbf245ce",
             "locator": {
               "kind": "symbol",
@@ -36,7 +36,7 @@
         },
         {
           "anchor": {
-            "blob": "154d7272959eb18a7f5f80927be651dc6bf6789d",
+            "blob": "e35242dec8bb25542d927fd782eb47c25cb42c1e",
             "content": "sha256:e2b8b4914c48aa5b2702d168bfa750e4dc375f7286129de7c198da12f80d3ae2",
             "locator": {
               "kind": "symbol",
@@ -64,12 +64,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "154d7272959eb18a7f5f80927be651dc6bf6789d",
+            "blob": "e35242dec8bb25542d927fd782eb47c25cb42c1e",
             "content": "sha256:db6bb4edc9133ed8034df4a70f39dad6dbc795d6663bfdf5a02ee8096d746883",
             "locator": {
-              "end": 385,
+              "end": 392,
               "kind": "line_range",
-              "start": 365
+              "start": 372
             },
             "path": "dashboard/src/panels/detail-panel/test-utils.tsx"
           },
@@ -141,7 +141,7 @@
         },
         {
           "anchor": {
-            "blob": "154d7272959eb18a7f5f80927be651dc6bf6789d",
+            "blob": "e35242dec8bb25542d927fd782eb47c25cb42c1e",
             "content": "sha256:b9e9f307bc6ac4e9a8692d0a3fd8aabdbc916a2480798944adf52c2766deb60c",
             "locator": {
               "end": 13,

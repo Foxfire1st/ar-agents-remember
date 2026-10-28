@@ -1,0 +1,23 @@
+{
+  "path": "mcp/src/agents_remember/application/review_tree_overview.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "summarize_inventory projects validated inventory facts without re-deciding them.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "62d0a5f262756b516cf7747e54e7ce41ca3858f4",
+            "content": "sha256:2cc75bee32ffd353042654f82ba0d4ac0f4a2f101516ea4791bb2682a86583fc",
+            "locator": {
+              "kind": "symbol",
+              "name": "summarize_inventory"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

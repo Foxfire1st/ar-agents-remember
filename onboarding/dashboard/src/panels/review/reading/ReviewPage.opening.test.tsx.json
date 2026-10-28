@@ -1,122 +1,19 @@
 {
   "path": "dashboard/src/panels/review/reading/ReviewPage.opening.test.tsx",
-  "proves": [
-    {
-      "anchor": {
-        "blob": "816ab9a91dec03f2765176c93875169b258d1d82",
-        "content": "sha256:a7f9b6e77b369752c27c796a8787d05fef1ce5bec59ee7c7ab76cf11c71ba818",
-        "locator": {
-          "kind": "symbol",
-          "name": "makes exactly the six opening reads and selects nothing"
-        }
-      },
-      "facet": "The captured opening issues the six named review read kinds, requests only the shown invariant at comparison 8 and renders no selected subject/card/tree row.",
-      "id": "PRF-6R3XPV",
-      "invariant": "INV-KEJ5TN",
-      "origin": {
-        "handoffEntry": "RP07",
-        "leaf": "260928-MIK-L89"
-      }
-    },
-    {
-      "anchor": {
-        "blob": "816ab9a91dec03f2765176c93875169b258d1d82",
-        "content": "sha256:742aa5b3fa81e452d654afe77546692d884146715d20533bd9b35ee10f40e732",
-        "locator": {
-          "kind": "symbol",
-          "name": "lets at most READ_BATCH file reads run at a time"
-        }
-      },
-      "facet": "The ReadGate admits READ_BATCH pending file tasks, admits only replacement slots on settlement and never reports more active tasks than READ_BATCH.",
-      "id": "PRF-A5WT3A",
-      "invariant": "INV-FZ473E",
-      "origin": {
-        "handoffEntry": "RP08",
-        "leaf": "260928-MIK-L89"
-      }
-    },
-    {
-      "anchor": {
-        "blob": "816ab9a91dec03f2765176c93875169b258d1d82",
-        "content": "sha256:36431afe736540237d630b52c461c758c51b5172520fae571aff038a98b94571",
-        "locator": {
-          "kind": "symbol",
-          "name": "reads a lane file's classification and text as it comes into view, with no gesture, and a card's marks once in view"
-        }
-      },
-      "facet": "A below-view file starts no extra opening reads, then near-view admission starts its classification/text pair without a gesture; a card marker read starts after engagement and near-view admission.",
-      "id": "PRF-D8MX8W",
-      "invariant": "INV-FZ473E",
-      "origin": {
-        "handoffEntry": "RP08",
-        "leaf": "260928-MIK-L89"
-      }
-    },
-    {
-      "anchor": {
-        "blob": "816ab9a91dec03f2765176c93875169b258d1d82",
-        "content": "sha256:1ea55e171b1cdcedcd5e0caa641de760d1cbe8a5a0213fb536f2404db1cb753d",
-        "locator": {
-          "kind": "symbol",
-          "name": "reads a lane file in view at the first paint once the six opening reads are done, with no gesture"
-        }
-      },
-      "facet": "Holding the opening cards delays the visible lane file; releasing cards starts exactly its classification/text pair without a gesture, while card marker reads wait until engagement.",
-      "id": "PRF-F78HF1",
-      "invariant": "INV-FZ473E",
-      "origin": {
-        "handoffEntry": "RP08",
-        "leaf": "260928-MIK-L89"
-      }
-    }
-  ],
+  "proves": [],
   "realizes": [],
   "references": {
-    "4": {
-      "note": "Opening reads, intersection/gesture admission and the queued file-task limit.\n\nAnchor: \"it('makes exactly the six opening reads and selects nothing', async () => {\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "816ab9a91dec03f2765176c93875169b258d1d82",
-            "content": "sha256:112bda45de28341dcff9791b9daddc241a0feb260563b7deef54c1b9decd3a9b",
-            "locator": {
-              "end": 161,
-              "kind": "line_range",
-              "start": 69
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
     "5": {
       "note": "Closed-group counts/previews and tree-triggered group opening.\n\nAnchor: \"describe('the two closed groups (rule 5)', () => {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "816ab9a91dec03f2765176c93875169b258d1d82",
-            "content": "sha256:e1622361c8125954b690ce9e21370113ba416d69572ebf1bf690fb0ee69cd083",
+            "blob": "5d4b38fa68ade7951c68c72e35010491c4664610",
+            "content": "sha256:5f036801b77f08904f604c5c411c5c42d7a498d63aa586695f52d18291db592b",
             "locator": {
-              "end": 213,
+              "end": 294,
               "kind": "line_range",
-              "start": 164
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "6": {
-      "note": "Added-file newline caps, the one All changes route and code-only-change wording.\n\nAnchor: \"describe('the lane's added-file cap', () => {\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "816ab9a91dec03f2765176c93875169b258d1d82",
-            "content": "sha256:eb4ac672680045bd5899e0da4f6e84704178fc6e4cdcafe95ea9763295454130",
-            "locator": {
-              "end": 276,
-              "kind": "line_range",
-              "start": 216
+              "start": 182
             }
           },
           "kind": "test"

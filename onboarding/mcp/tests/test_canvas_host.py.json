@@ -3,24 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "b06070915c906f35c0e7c4ad19ec25860ca2ac28",
-        "content": "sha256:f5a8f6fd04f438f34b28f00d8b1a040ce92be52f654d1fef5ff6168048435274",
-        "locator": {
-          "kind": "symbol",
-          "name": "test_a_proof_is_bound_to_the_exact_policy_digest"
-        }
-      },
-      "facet": "A proof binds to the exact policy digest served.",
-      "id": "PRF-1XDWGD",
-      "invariant": "INV-6V0ET6",
-      "origin": {
-        "handoffEntry": "MIK-R104-r1-script-gate",
-        "leaf": "260928-MIK-L104"
-      }
-    },
-    {
-      "anchor": {
-        "blob": "b06070915c906f35c0e7c4ad19ec25860ca2ac28",
+        "blob": "b6ad64c94067e4137c29b3405b4f1358b2c3571c",
         "content": "sha256:9827c478391c0e9792555bd54d8ba202828eacff6bfb76c4f050ceecf76eba5b",
         "locator": {
           "kind": "symbol",
@@ -37,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "b06070915c906f35c0e7c4ad19ec25860ca2ac28",
+        "blob": "b6ad64c94067e4137c29b3405b4f1358b2c3571c",
         "content": "sha256:0fa4068acfa2ba2e916bcd9077be61483105346919b552afd27d216968c60a7f",
         "locator": {
           "kind": "symbol",
@@ -54,7 +37,7 @@
     },
     {
       "anchor": {
-        "blob": "b06070915c906f35c0e7c4ad19ec25860ca2ac28",
+        "blob": "b6ad64c94067e4137c29b3405b4f1358b2c3571c",
         "content": "sha256:f8fd3aa6bca0cae6b97bcc03c526d3f22eb5d0c0795516114f41ea2a2c108dfe",
         "locator": {
           "kind": "symbol",
@@ -71,7 +54,7 @@
     },
     {
       "anchor": {
-        "blob": "b06070915c906f35c0e7c4ad19ec25860ca2ac28",
+        "blob": "b6ad64c94067e4137c29b3405b4f1358b2c3571c",
         "content": "sha256:865f074f981acf78796aa868885e84eb2e56391e85eb4693a75e087c74232cd8",
         "locator": {
           "kind": "symbol",
@@ -88,7 +71,7 @@
     },
     {
       "anchor": {
-        "blob": "b06070915c906f35c0e7c4ad19ec25860ca2ac28",
+        "blob": "b6ad64c94067e4137c29b3405b4f1358b2c3571c",
         "content": "sha256:991c7f915c7bed89590825e30ecee6719dd88f3a3c54f052ca8768cbdc6d59aa",
         "locator": {
           "kind": "symbol",
@@ -105,8 +88,8 @@
     },
     {
       "anchor": {
-        "blob": "b06070915c906f35c0e7c4ad19ec25860ca2ac28",
-        "content": "sha256:77289bf6a53c139c283a42cc1b9ae1e53bee1e3f30085372016c9a122ee3b077",
+        "blob": "b6ad64c94067e4137c29b3405b4f1358b2c3571c",
+        "content": "sha256:ba7cbc5e700ef93919a94cb1bbfca0d3e17c7d49a2fe0b1a023d6931522fc79a",
         "locator": {
           "kind": "symbol",
           "name": "test_every_response_carries_its_policy_headers"
@@ -119,85 +102,20 @@
         "handoffEntry": "MIK-R104-r2-frame-sandbox",
         "leaf": "260928-MIK-L104"
       }
-    },
-    {
-      "anchor": {
-        "blob": "b06070915c906f35c0e7c4ad19ec25860ca2ac28",
-        "content": "sha256:1229d666c93fb72916c788d1f47fb3e9750906a7236195e9b266bdbf7baa2392",
-        "locator": {
-          "kind": "symbol",
-          "name": "test_an_unproven_policy_serves_no_script_at_all"
-        }
-      },
-      "facet": "An unproven policy serves no script at all.",
-      "id": "PRF-YNGKRS",
-      "invariant": "INV-6V0ET6",
-      "origin": {
-        "handoffEntry": "MIK-R104-r1-script-gate",
-        "leaf": "260928-MIK-L104"
-      }
     }
   ],
   "realizes": [],
   "references": {
-    "1": {
-      "note": "The case `test_an_unproven_policy_serves_no_script_at_all` protects this behaviour.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "b06070915c906f35c0e7c4ad19ec25860ca2ac28",
-            "content": "sha256:1229d666c93fb72916c788d1f47fb3e9750906a7236195e9b266bdbf7baa2392",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_an_unproven_policy_serves_no_script_at_all"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "2": {
-      "note": "The case `test_a_proof_is_bound_to_the_exact_policy_digest` protects this behaviour.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "b06070915c906f35c0e7c4ad19ec25860ca2ac28",
-            "content": "sha256:f5a8f6fd04f438f34b28f00d8b1a040ce92be52f654d1fef5ff6168048435274",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_a_proof_is_bound_to_the_exact_policy_digest"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
     "3": {
       "note": "The case `test_every_response_carries_its_policy_headers` protects this behaviour.",
       "targets": [
         {
           "anchor": {
-            "blob": "b06070915c906f35c0e7c4ad19ec25860ca2ac28",
-            "content": "sha256:77289bf6a53c139c283a42cc1b9ae1e53bee1e3f30085372016c9a122ee3b077",
+            "blob": "b6ad64c94067e4137c29b3405b4f1358b2c3571c",
+            "content": "sha256:ba7cbc5e700ef93919a94cb1bbfca0d3e17c7d49a2fe0b1a023d6931522fc79a",
             "locator": {
               "kind": "symbol",
               "name": "test_every_response_carries_its_policy_headers"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "4": {
-      "note": "Changing the consumer frontend invalidates its bound proof.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "b06070915c906f35c0e7c4ad19ec25860ca2ac28",
-            "content": "sha256:165af385fbd7a01bf0f33d4c477c575d7387e6a4df3b1b5f9c803834de98e71d",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_a_consumer_frontend_change_invalidates_its_bound_proof"
             }
           },
           "kind": "test"

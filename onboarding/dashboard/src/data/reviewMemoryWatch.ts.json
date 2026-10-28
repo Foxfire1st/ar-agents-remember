@@ -4,8 +4,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "f31d34a7cf4ef5cb486ed71488966d951d9dd35f",
-        "content": "sha256:fe19327e1cd3788bbb9080dd2672974d706f4fa69eacfea16f9a4f0572e32044",
+        "blob": "0ba9b634c8dc962571424e64723fc44a8335f134",
+        "content": "sha256:d312cdec8a773d448a6daa6e01df52ed4b9c0e44f2f9995580d5dda9fdeb315f",
         "locator": {
           "kind": "symbol",
           "name": "useReviewMemoryWatch"
@@ -22,7 +22,7 @@
     },
     {
       "anchor": {
-        "blob": "f31d34a7cf4ef5cb486ed71488966d951d9dd35f",
+        "blob": "0ba9b634c8dc962571424e64723fc44a8335f134",
         "content": "sha256:c5f24a7167e8c1dfb9c78465f7ba31cfff0eafbdcc0e320a9e55ed5ba60bc905",
         "locator": {
           "kind": "symbol",
@@ -40,8 +40,8 @@
     },
     {
       "anchor": {
-        "blob": "f31d34a7cf4ef5cb486ed71488966d951d9dd35f",
-        "content": "sha256:fe19327e1cd3788bbb9080dd2672974d706f4fa69eacfea16f9a4f0572e32044",
+        "blob": "0ba9b634c8dc962571424e64723fc44a8335f134",
+        "content": "sha256:d312cdec8a773d448a6daa6e01df52ed4b9c0e44f2f9995580d5dda9fdeb315f",
         "locator": {
           "kind": "symbol",
           "name": "useReviewMemoryWatch"
@@ -58,8 +58,8 @@
     },
     {
       "anchor": {
-        "blob": "f31d34a7cf4ef5cb486ed71488966d951d9dd35f",
-        "content": "sha256:f7f3a55e0f11ec9e2695f2fe936d8979e59a9ea0537051d8e3e6a605ddb84a67",
+        "blob": "0ba9b634c8dc962571424e64723fc44a8335f134",
+        "content": "sha256:dcbbf852d2ac88f528c0dfb0225d2e22a1262eab4c1c661d46babb0f75349beb",
         "locator": {
           "kind": "symbol",
           "name": "publishReviewExplainerMoved"
@@ -81,27 +81,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f31d34a7cf4ef5cb486ed71488966d951d9dd35f",
+            "blob": "0ba9b634c8dc962571424e64723fc44a8335f134",
             "content": "sha256:b7e4d8f3bffb83c23c83b1a678572cd5349d84796034b187c9a8287d01d716e2",
             "locator": {
               "kind": "symbol",
               "name": "reviewMemoryScope"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "2": {
-      "note": "First/reconnect baseline reconciles once; unchanged matching revisions then stay quiet.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f31d34a7cf4ef5cb486ed71488966d951d9dd35f",
-            "content": "sha256:6c0edb982debcfbf61447406ab93c2e41d2c7b4eb5f6f1ebed38d69f61b6f5de",
-            "locator": {
-              "kind": "symbol",
-              "name": "publishReviewMemory"
             }
           },
           "kind": "code"
@@ -113,7 +97,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f31d34a7cf4ef5cb486ed71488966d951d9dd35f",
+            "blob": "0ba9b634c8dc962571424e64723fc44a8335f134",
             "content": "sha256:1d11c144cafa8f7a39f87af2cd7d1e94fab807e31b73c8e2c9bee4d2e684929c",
             "locator": {
               "kind": "symbol",
@@ -129,29 +113,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f31d34a7cf4ef5cb486ed71488966d951d9dd35f",
-            "content": "sha256:fe19327e1cd3788bbb9080dd2672974d706f4fa69eacfea16f9a4f0572e32044",
+            "blob": "0ba9b634c8dc962571424e64723fc44a8335f134",
+            "content": "sha256:d312cdec8a773d448a6daa6e01df52ed4b9c0e44f2f9995580d5dda9fdeb315f",
             "locator": {
               "kind": "symbol",
               "name": "useReviewMemoryWatch"
             }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "5": {
-      "note": "Existing state transport carries scope query and both memory event types.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "e759eb54b9cbb7db614234415ff2c56f1d345e2c",
-            "content": "sha256:409a7431e06691789ab881a398eafaf586cff9796ac6794bd491a066157c8617",
-            "locator": {
-              "kind": "symbol",
-              "name": "connectState"
-            },
-            "path": "dashboard/src/data/stream.ts"
           },
           "kind": "code"
         }
@@ -162,12 +129,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6f30efcbe166c0fe854c1de9cde75a444ff9c5a5",
+            "blob": "aacb83d79d19978ad947b4ac88eba523ad8e4fb5",
             "content": "sha256:45739110f03a94e625ba9331da1fa946f408304f6402c099b30b20924756ca44",
             "locator": {
-              "end": 608,
+              "end": 619,
               "kind": "line_range",
-              "start": 596
+              "start": 607
             },
             "path": "dashboard/src/panels/review/ReviewSurface.tsx"
           },
@@ -180,8 +147,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f31d34a7cf4ef5cb486ed71488966d951d9dd35f",
-            "content": "sha256:c1f406754e7c98d6d2a1010f18a240b64ecf9e2fd1d13c8f8fdde50507696947",
+            "blob": "0ba9b634c8dc962571424e64723fc44a8335f134",
+            "content": "sha256:a73bf6c6219abab8134fa362baffae4257741e3a61a1255dd3d2c832032b6118",
             "locator": {
               "kind": "file"
             }

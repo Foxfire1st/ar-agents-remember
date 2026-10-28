@@ -17,7 +17,9 @@ States the isolation policy one admitted page executes under, once, so the serve
 
 ## Evidence
 
-- The served policy is hashed into the value a proof record must name. [1]
-- A frame document is sandboxed without `allow-same-origin`. [2]
-- Generated scripts are enabled only when the shipped proof covers the policy now served. [3]
-- Every clause the record does not meet is named. [4]
+- The served policy is hashed into the value a proof record must name.
+- A frame document is sandboxed without `allow-same-origin`. 
+- Generated scripts are enabled only when the shipped proof covers the policy now served. 
+- Every clause the record does not meet is named. 
+
+- Retired at the fifth freeze d59c3493: mcp/src/agents_remember/canvas/policy.py:380-384 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 47f69f11afb982e318006209036aed22f1792976; mcp/src/agents_remember/canvas/policy.py::frame_sandbox - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one; mcp/src/agents_remember/canvas/policy.py::scripts_enabled - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 47f69f11afb982e318006209036aed22f1792976; mcp/src/agents_remember/canvas/policy.py::proof_gaps - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 47f69f11afb982e318006209036aed22f1792976. Retired means the anchor no longer stands, not that the cited subject was deleted.

@@ -32,7 +32,9 @@ The document text this file constrains lives outside it; the card states what th
 - The expected cadence and stage vocabulary are derived from the metrics module and matched by stems. [2]
 - Each document must state the loop in a single paragraph carrying the cadence and the failsafe gate. [3]
 - The observer home the prose must name is read from the degradation and metrics stores, which are required to agree. [4]
-- The safety loop is required to sample, record, evaluate, compact, sleep on the default interval and supply its own stop, with an unconditional start and a non-defaulted stopper. [5]
+- The safety loop is required to sample, record, evaluate, compact, sleep on the default interval and supply its own stop, with an unconditional start and a non-defaulted stopper. 
 - The documented `failSafeEnabled` key is bound to `fail_safe_enabled`. [6]
 - The stop's settings source is bound to the authority path with the generated document as fallback, and the generated document is shown to select no provider. [7]
 - Both documents must state which settings document each stop reader can select from and keep naming the install and cleanup routes. [8]
+
+- Retired at the fifth freeze d59c3493: mcp/tests/test_l192_provider_safety_prose.py::test_the_retained_loop_is_still_the_independent_stop_caller - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.

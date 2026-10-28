@@ -103,4 +103,6 @@ No configured domain documentation could be checked.
 - The lane row this module holds in the sorted `unit-regression` list.  Anchor: "mcp/tests/test_evidence_catalog_gate_boundaries.py" [27]
 
 
-- The catalog declares test_evidence_catalog_gate_boundaries.py as an exact consumer on the evidence-catalog fixture, settings-guard and Node-lockfile artifact rows. These three declarations do not establish invocation. [28]
+- The catalog declares test_evidence_catalog_gate_boundaries.py as an exact consumer on the evidence-catalog fixture, settings-guard and Node-lockfile artifact rows. These three declarations do not establish invocation.
+
+- Retired at the fifth freeze d59c3493: mcp/tests/evidence-lifecycle.toml:1-4036 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit f2b7c648f540efb9d64ceea22e11e651cb5cc914. Retired means the anchor no longer stands, not that the cited subject was deleted.

@@ -2,28 +2,12 @@
   "path": "mcp/tests/test_canvas_presenter_host.py",
   "realizes": [],
   "references": {
-    "1": {
-      "note": "The case `test_start_authors_a_confined_draft_and_persists_the_host_receipt` protects this behaviour.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "69e91afa94784613e9359971fd997f235456ffa5",
-            "content": "sha256:be4a77ebd8c0c4c4af3ec1e3058fa7f039c58980ea3cdf53e06e942f6bdf7ca5",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_start_authors_a_confined_draft_and_persists_the_host_receipt"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
     "2": {
       "note": "The case `test_a_turn_travels_to_the_host_and_its_receipt_is_recorded` protects this behaviour.",
       "targets": [
         {
           "anchor": {
-            "blob": "69e91afa94784613e9359971fd997f235456ffa5",
+            "blob": "6b8508bec7364131aa8f5e857f8dae40434471f1",
             "content": "sha256:f654f3b0754400c8506d4b23d8e148e6fa8203cb73cbe8b808f344e6a9023d6d",
             "locator": {
               "kind": "symbol",
@@ -39,7 +23,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "69e91afa94784613e9359971fd997f235456ffa5",
+            "blob": "6b8508bec7364131aa8f5e857f8dae40434471f1",
             "content": "sha256:6158dafc3df3ee5d54eb73140df130a0a184eff841512f2da2feabb14892811c",
             "locator": {
               "kind": "symbol",
@@ -55,8 +39,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "69e91afa94784613e9359971fd997f235456ffa5",
-            "content": "sha256:7d2c9f6f611cccb3232e90af1124149ee674039841349647b2e9e16ce14931a9",
+            "blob": "6b8508bec7364131aa8f5e857f8dae40434471f1",
+            "content": "sha256:d007933fbe839616a84fb77b1bdcf5b156d70f927b6568f6215fbadf64893b19",
             "locator": {
               "kind": "file"
             }

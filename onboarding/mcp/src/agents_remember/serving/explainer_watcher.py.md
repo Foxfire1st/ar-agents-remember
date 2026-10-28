@@ -28,4 +28,8 @@ For an actively watched leaf without an explainer environment, `unexplained_turn
 - Notices are held in process, bounded per subscriber and deduplicated [5]
 - Seat discovery lists watched leaves' own folders rather than walking the task tree [6]
 
+- The no-environment turn-end path retains a baseline and offers no Update, with an explicit provisional block minimum; exact-leaf subscriptions and latest history remain bounded and close-owned. 
+
 - The no-environment turn-end path retains a baseline and offers no Update, with an explicit provisional block minimum; exact-leaf subscriptions and latest history remain bounded and close-owned. [7]
+
+- Retired at the fifth freeze d59c3493: mcp/src/agents_remember/serving/explainer_watcher.py::leaf_seats - the bytes it recorded now occur 5 times in the file, so no single home can be named and it is not given to the likelier one; mcp/src/agents_remember/serving/explainer_watcher.py::unexplained_turn_notice - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.

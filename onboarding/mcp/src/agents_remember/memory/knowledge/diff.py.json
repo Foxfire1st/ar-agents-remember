@@ -200,12 +200,12 @@
         },
         {
           "anchor": {
-            "blob": "8c1f6f5bcd3dd39fbd974373a48a8d714ddc8bec",
+            "blob": "bfbf190e976da5468ef9928b02043db63c848cff",
             "content": "sha256:d7691bd6730d2013c268c961ac71e995d8f1d62c499745e54d66cbb7016f0075",
             "locator": {
-              "end": 349,
+              "end": 379,
               "kind": "line_range",
-              "start": 302
+              "start": 332
             },
             "path": "mcp/src/agents_remember/memory/knowledge/read_queries.py"
           },

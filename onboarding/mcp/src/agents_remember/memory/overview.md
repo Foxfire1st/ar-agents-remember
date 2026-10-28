@@ -131,166 +131,255 @@ These retired source accounts preserve earlier intent only. Their former citatio
 
 - Historical pre-L57 reference account only; the named supporting-record acquisition/availability/applicability owner is removed, not a current wire guarantee: Retired supporting-record channels remain unavailable without fabricated counts or proof/worklist substitutions. (historical reference 166; retired in L57)
 
-## Evidence
+
 
 - Retained reference account (no fresh execution or acceptance inferred): The per-file detail for the module that gained the export.
 
-Inherited numbered findings [116], [149] retain their exact wording and full targets as historical custody where their candidate9 owner is retired or their account conflicts with the current route. They are not evidence that an absent legacy owner still executes. No guarantee is retired by this proposal; parent disposition remains required. The source-bound current account below is separate.
 
+- Retained reference account (no fresh execution or acceptance inferred): The memo module's tables and admission test. 
 
-- Converted carryover requires matching layouts and exact recovery-leaf authority, writes paired worktree units and leaves curator rows/publication to ordinary closeout. [174]
+- Parser completeness is distinct from validator integrity and history files are retained by path. 
 
+- Packet owner confinement and recorded locator observations support gate memo invalidation before byte rechecks. 
+
+- Retained reference account (no fresh execution or acceptance inferred): The cache refuses a Git working tree. 
+
+- The cache refuses a Git-worktree location and evicts by age/size around temporary-file publication. 
+
+- Retained reference account (no fresh execution or acceptance inferred): The retained line is one consumer entry of the shared curator-coherence fixture author `mcp/tests/curator_coherence_test_support.py`; the former knowledge-merge case harness and its `contract:common-base-merge-cases` registration are retired with the canonical database, and no current contract id replaces them.
+
+Anchor: `_approved_packet_ref` `changed_observations`
+
+- Retired at the fifth freeze d59c3493: mcp/tests/evidence-lifecycle.toml:1159-1159 - the bytes it recorded now occur 3 times in the file, so no single home can be named and it is not given to the likelier one; mcp/src/agents_remember/memory/knowledge/read_anchor_memo.py::BoundedMemo - the bytes it recorded now occur 8 times in the file, so no single home can be named and it is not given to the likelier one; mcp/src/agents_remember/memory/knowledge_index/cache.py::KnowledgeIndexCache - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one; mcp/src/agents_remember/memory/knowledge_index/build.py::_parse_knowledge_file - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one; mcp/src/agents_remember/kernel/recorded_reads.py::changed_observations - the bytes it recorded now occur 3 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.
+
+## Evidence
 
 - Retained reference account (no fresh execution or acceptance inferred): A missing object against a Git failure. [2]
+
 - Retained reference account (no fresh execution or acceptance inferred): Entries at or under a directory, and of the files directly in it. [5]
+
 - Retained reference account (no fresh execution or acceptance inferred): Live entry paths, links to a path, and every record of a kind. [6]
+
 - Retained reference account (no fresh execution or acceptance inferred): The shared link query `_incoming` delegates to. [7]
+
 - Retained reference account (no fresh execution or acceptance inferred): The store's own seal on each projected revision row. [8]
+
 - Retained reference account (no fresh execution or acceptance inferred): The format bump that rebuilds v1 caches. [9]
+
 - Retained reference account (no fresh execution or acceptance inferred): Every record ID of one kind, sorted; since MIK-R29 the reader's `records_of_kind` is built on it. [10]
+
 - Retained reference account (no fresh execution or acceptance inferred): The absence refusal, naming proof claims when the leaf read asks. [13]
-- Retained reference account (no fresh execution or acceptance inferred): The memo module's tables and admission test. [17]
-- Retained reference account (no fresh execution or acceptance inferred): **The partition arithmetic and its four rules, with the one predicate behind both the bucket and the exclusive-outside label.** [20]
-- Retained reference account (no fresh execution or acceptance inferred): **The shared observation vocabulary and its two construction rules.** [21]
-- Retained reference account (no fresh execution or acceptance inferred): **The exported root, and the shipped value it returns.** [23]
-- Retained reference account (no fresh execution or acceptance inferred): The single-file publication the export deliberately does not replace. [24]
-- Retained reference account (no fresh execution or acceptance inferred): **Its first consumer, which derives the whole generation layout from it.** [25]
-- Retained reference account (no fresh execution or acceptance inferred): The per-file detail for the module that gained the export: the durable root and the shipped value it returns. [26]
-- Retained reference account (no fresh execution or acceptance inferred): The two operations and twelve codes the merge added to the shared vocabulary. [39]
-- Retained reference account (no fresh execution or acceptance inferred): **The read half's selection policy: `F0` frozen before membership expansion, the advertised-and-untraversed frontier, and the declared item order.** [41]
-- Retained reference account (no fresh execution or acceptance inferred): Whole-item paging over an already-selected scope. [42]
-- Retained reference account (no fresh execution or acceptance inferred): **The corrected page counts: the declared total on every page, the walk's cumulative figure, and the slice size in `len(page.items)`.** [43]
-- Retained reference account (no fresh execution or acceptance inferred): The count model that refuses its own arithmetic contradiction at construction. [44]
-- Retained reference account (no fresh execution or acceptance inferred): **The three genuinely different facts of a path refusal, and the corrected predicate (`*`, `?`, `[` admitted; leading `:` refused).** [45]
-- Retained reference account (no fresh execution or acceptance inferred): The read's refusal vocabulary, one factory per observable failure point. [46]
-- Retained reference account (no fresh execution or acceptance inferred): **The one decoder a read page and the logical digest share.** [47]
-- Retained reference account (no fresh execution or acceptance inferred): The read's path lookup, which is how a path seed selects. [48]
-- Retained reference account (no fresh execution or acceptance inferred): The edge lookup the directly containing family set is derived from. [49]
-- Retained reference account (no fresh execution or acceptance inferred): The read's composition seam and its three boundaries (read-only handle, task-free baseline, cursor-as-binding). [50]
-- Retained reference account (no fresh execution or acceptance inferred): **The nodes that measure the requirement's stopping rule, the corrected counts and the three path facts.** [51]
-- Retained reference account (no fresh execution or acceptance inferred): The retained logical body encoder and logical digest operate with the one composed CURRENT_GENERATION; its structural guard checks the pin, and the store opener is read-only. No deleted generation registry supplies these current owners. [65]
-- Retained reference account (no fresh execution or acceptance inferred): The two portable operations and the one code they added to the shared vocabulary. [68]
-- Retained reference account (no fresh execution or acceptance inferred): The candidate list is the path and every ancestor, nearest first, ending with the root route `.`; `families_governing` matches routes against exactly this list. [84]
-- Retained reference account (no fresh execution or acceptance inferred): A family routed at the root governs a root-level file and a deep file. [85]
-- Retained reference account (no fresh execution or acceptance inferred): **Every invariant identity the namespace records, ordered by the identity's own column, with no filter and no count.** [88]
-- Retained reference account (no fresh execution or acceptance inferred): **The same enumeration for the surface's other admitted subject kind.** [89]
-- Retained reference account (no fresh execution or acceptance inferred): The row decoder both new reads use, so a listed identity is a decoded identity rather than a column tuple. [90]
-- Retained reference account (no fresh execution or acceptance inferred): The consumer's entry half: the catalogue enumerates every recorded identity of both snapshots under the recorded namespace — no per-subject comparison runs and no subject is dropped to imply a smaller population (`ICR-R09@v1`). [91]
-- Retained reference account (no fresh execution or acceptance inferred): **The status-bearing change: the raw path as the address, Git's status, the renderability and the reason an unknown is unknown.** [95]
-- Retained reference account (no fresh execution or acceptance inferred): **The observation's two renderings and its two honesty rules: paths and entries cannot disagree, and an unrepresentable path implies a partial observation.** [96]
-- Retained reference account (no fresh execution or acceptance inferred): **The probe this route's expansion is reached through, now a one-line delegation to the review's own observation.** [99]
-- Retained reference account (no fresh execution or acceptance inferred): The package map. [101] [106]
-- Retained reference account (no fresh execution or acceptance inferred): The build, which names every failing file. [103]
-- Retained reference account (no fresh execution or acceptance inferred): Retired records are left out of the projection. [104]
-- Retained reference account (no fresh execution or acceptance inferred): The pure conversion, its version pin and its validation. [107]
-- Retained reference account (no fresh execution or acceptance inferred): No anchor text lost: it is kept in the note. [108]
-- Retained reference account (no fresh execution or acceptance inferred): The read-only reader. [109]
-- Retained reference account (no fresh execution or acceptance inferred): Rule 7 for any comparison consumer. [110]
-- Retained reference account (no fresh execution or acceptance inferred): Rule 8's item rules and conflict markers. [111]
-- Retained reference account (no fresh execution or acceptance inferred): Rule 8's steps. [112]
-- Retained reference account (no fresh execution or acceptance inferred): The two proof lookups. [113]
-- Retained reference account (no fresh execution or acceptance inferred): The card authoring's entry. [114]
-- Legacy carryover apply refuses converted targets and unconditionally refuses unconverted targets; planning remains a read. [116]
-- Retained reference account (no fresh execution or acceptance inferred): The index keeps each history file by path. [117]
-- Retained reference account (no fresh execution or acceptance inferred): Two tables with no blank line between them are refused when either holds citations. [118]
-- Retained reference account (no fresh execution or acceptance inferred): The reconsideration step resolves the endpoint and asks for the approval. [129]
-- Retained reference account (no fresh execution or acceptance inferred): A kept gate verdict is served only when no recorded observation changed. [130]
-- Retained reference account (no fresh execution or acceptance inferred): The manifest lookup returns the highest approved version. [131]
-- Retained reference account (no fresh execution or acceptance inferred): A requirement endpoint triggers only on a newer approved version. [132]
-- Retained reference account (no fresh execution or acceptance inferred): The endpoint's state, code, detail, task root and key. [134]
-- Retained reference account (no fresh execution or acceptance inferred): The task root, or none for a repository that is not one directory name. [135]
-- Retained reference account (no fresh execution or acceptance inferred): The resolution: no root, a root outside tasks, or the owner's answer; no packet is recorded here. [136]
-- Retained reference account (no fresh execution or acceptance inferred): The approval answer and the comparison with a version. [137]
-- Retained reference account (no fresh execution or acceptance inferred): The manifest read records the bytes, an absent manifest or a failed read. [138]
-- Retained reference account (no fresh execution or acceptance inferred): The approval lookup with its three states. [139]
-- Retained reference account (no fresh execution or acceptance inferred): The latest approved version of one ID. [140]
-- Retained reference account (no fresh execution or acceptance inferred): The owner the packet question is handed to. [141]
-- Retained reference account (no fresh execution or acceptance inferred): The owner records the two resolutions and the packet's bytes. [142]
-- Retained reference account (no fresh execution or acceptance inferred): An unreadable baseline is refused. [143]
-- Retained reference account (no fresh execution or acceptance inferred): Every write is checked, then written atomically. [144]
-
-- Knowledge text is authority; the retained package owns derived schema/codecs/reads rather than canonical writers or approval. [146]
-- Carryover refuses converted targets and checks cutover refusal rather than acquiring a lock. [149]
-- Parser completeness is distinct from validator integrity and history files are retained by path. [151]
-- History lookup returns every matching path-bearing row and proof absence is informational. [152]
-- Projection uses deterministic identities, store-owned seals and retains retired/unprojectable facts in direct index tables. [154]
-- One composed v9 schema and fingerprint pin replace generation selection; current index layout is v3. [155]
-- Read handles and identity enumeration retain their separate boundaries. [156]
-- Selection freezes directly containing families before expansion; paging preserves total and cumulative counts. [157]
-- Attribution requires a measured denominator and licensed side inspection; no inspected sides license no absence. [159]
-- Path/entry equality is conditional on supplied entries, while unrepresentable changes require partial state. [160]
-- Requirement approval records exact manifest reads and distinguishes approved, not approved and unknown. [161]
-- Packet owner confinement and recorded locator observations support gate memo invalidation before byte rechecks. [162]
-- Converted card authoring prepares all cards, reports refusals, then writes passing Markdown and sidecar files consecutively. [163]
-- Legacy export preserves recorded anchor identity; crossing keeps authored conflicts explicit and separates mechanical edits. [164]
-- Census validation precedes per-file atomic writes; baseline-last creation has an explicit interrupted-creation state. [165]
-- Durable task reports have one shared root, distinct from the single-file publication route. [167]
-
-- Unparsed onboarding versus indexed-record prose companions. [168]
-- Captured symlink modes passed to range/symbol authoring. [169]
-- Paired-code crossing marker provenance. [170]
 
 - Retained reference account (no fresh execution or acceptance inferred): The owner's rule: answers only, keyed by complete ids, availability never remembered, and the two residuals. [16]
+
+- Retained reference account (no fresh execution or acceptance inferred): The memo module's tables and admission test. [17]
+
 - Retained reference account (no fresh execution or acceptance inferred): The bound-checked line-range observation. [18]
+
 - Retained reference account (no fresh execution or acceptance inferred): The symbol observation carrying every defining extent. [19]
+
+- Retained reference account (no fresh execution or acceptance inferred): **The partition arithmetic and its four rules, with the one predicate behind both the bucket and the exclusive-outside label.** [20]
+
+- Retained reference account (no fresh execution or acceptance inferred): **The shared observation vocabulary and its two construction rules.** [21]
+
 - Retained reference account (no fresh execution or acceptance inferred): **The display seam: one observation, the carried partition, the two established omissions, and the deliberate non-replacement.** [22]
 
+- Retained reference account (no fresh execution or acceptance inferred): **The exported root, and the shipped value it returns.** [23]
 
+- Retained reference account (no fresh execution or acceptance inferred): The single-file publication the export deliberately does not replace. [24]
 
+- Retained reference account (no fresh execution or acceptance inferred): **Its first consumer, which derives the whole generation layout from it.** [25]
 
+- Retained reference account (no fresh execution or acceptance inferred): The per-file detail for the module that gained the export: the durable root and the shipped value it returns. [26]
+
+- Retained reference account (no fresh execution or acceptance inferred): The two operations and twelve codes the merge added to the shared vocabulary. [39]
+
+- Retained reference account (no fresh execution or acceptance inferred): **The read half's selection policy: `F0` frozen before membership expansion, the advertised-and-untraversed frontier, and the declared item order.** [41]
+
+- Retained reference account (no fresh execution or acceptance inferred): Whole-item paging over an already-selected scope. [42]
+
+- Retained reference account (no fresh execution or acceptance inferred): **The corrected page counts: the declared total on every page, the walk's cumulative figure, and the slice size in `len(page.items)`.** [43]
+
+- Retained reference account (no fresh execution or acceptance inferred): The count model that refuses its own arithmetic contradiction at construction. [44]
+
+- Retained reference account (no fresh execution or acceptance inferred): **The three genuinely different facts of a path refusal, and the corrected predicate (`*`, `?`, `[` admitted; leading `:` refused).** [45]
+
+- Retained reference account (no fresh execution or acceptance inferred): The read's refusal vocabulary, one factory per observable failure point. [46]
+
+- Retained reference account (no fresh execution or acceptance inferred): **The one decoder a read page and the logical digest share.** [47]
+
+- Retained reference account (no fresh execution or acceptance inferred): The read's path lookup, which is how a path seed selects. [48]
+
+- Retained reference account (no fresh execution or acceptance inferred): The edge lookup the directly containing family set is derived from. [49]
+
+- Retained reference account (no fresh execution or acceptance inferred): The read's composition seam and its three boundaries (read-only handle, task-free baseline, cursor-as-binding). [50]
+
+- Retained reference account (no fresh execution or acceptance inferred): **The nodes that measure the requirement's stopping rule, the corrected counts and the three path facts.** [51]
+
+- Retained reference account (no fresh execution or acceptance inferred): The retained logical body encoder and logical digest operate with the one composed CURRENT_GENERATION; its structural guard checks the pin, and the store opener is read-only. No deleted generation registry supplies these current owners. [65]
+
+- Retained reference account (no fresh execution or acceptance inferred): The two portable operations and the one code they added to the shared vocabulary. [68]
+
+- Retained reference account (no fresh execution or acceptance inferred): The candidate list is the path and every ancestor, nearest first, ending with the root route `.`; `families_governing` matches routes against exactly this list. [84]
+
+- Retained reference account (no fresh execution or acceptance inferred): A family routed at the root governs a root-level file and a deep file. [85]
+
+- Retained reference account (no fresh execution or acceptance inferred): **Every invariant identity the namespace records, ordered by the identity's own column, with no filter and no count.** [88]
+
+- Retained reference account (no fresh execution or acceptance inferred): **The same enumeration for the surface's other admitted subject kind.** [89]
+
+- Retained reference account (no fresh execution or acceptance inferred): The row decoder both new reads use, so a listed identity is a decoded identity rather than a column tuple. [90]
+
+- Retained reference account (no fresh execution or acceptance inferred): The consumer's entry half: the catalogue enumerates every recorded identity of both snapshots under the recorded namespace — no per-subject comparison runs and no subject is dropped to imply a smaller population (`ICR-R09@v1`). [91]
+
+- Retained reference account (no fresh execution or acceptance inferred): **The status-bearing change: the raw path as the address, Git's status, the renderability and the reason an unknown is unknown.** [95]
+
+- Retained reference account (no fresh execution or acceptance inferred): **The observation's two renderings and its two honesty rules: paths and entries cannot disagree, and an unrepresentable path implies a partial observation.** [96]
 
 - Retained reference account (no fresh execution or acceptance inferred): **The advertised command, now the delimiter-safe interface the measurement itself reads.** [97]
+
 - Retained reference account (no fresh execution or acceptance inferred): **The expansion detail that states a partial observation's own limit instead of only counting the paths it could carry.** [98]
+
+- Retained reference account (no fresh execution or acceptance inferred): **The probe this route's expansion is reached through, now a one-line delegation to the review's own observation.** [99]
+
 - Retained reference account (no fresh execution or acceptance inferred): Source-path observation cases moved with meaning preserved. [100]
+
+- Retained reference account (no fresh execution or acceptance inferred): The package map. [101] [106]
+
 - Retained reference account (no fresh execution or acceptance inferred): The captured-state key. [102]
-- Retained reference account (no fresh execution or acceptance inferred): The cache refuses a Git working tree. [105]
+
+- Retained reference account (no fresh execution or acceptance inferred): The build, which names every failing file. [103]
+
+- Retained reference account (no fresh execution or acceptance inferred): Retired records are left out of the projection. [104]
+
+- Retained reference account (no fresh execution or acceptance inferred): The pure conversion, its version pin and its validation. [107]
+
+- Retained reference account (no fresh execution or acceptance inferred): No anchor text lost: it is kept in the note. [108]
+
+- Retained reference account (no fresh execution or acceptance inferred): The read-only reader. [109]
+
+- Retained reference account (no fresh execution or acceptance inferred): Rule 7 for any comparison consumer. [110]
+
+- Retained reference account (no fresh execution or acceptance inferred): Rule 8's item rules and conflict markers. [111]
+
+- Retained reference account (no fresh execution or acceptance inferred): Rule 8's steps. [112]
+
+- Retained reference account (no fresh execution or acceptance inferred): The two proof lookups. [113]
+
+- Retained reference account (no fresh execution or acceptance inferred): The card authoring's entry. [114]
+
+Inherited numbered findings [116], [149] retain their exact wording and full targets as historical custody where their candidate9 owner is retired or their account conflicts with the current route. They are not evidence that an absent legacy owner still executes. No guarantee is retired by this proposal; parent disposition remains required. The source-bound current account below is separate.
+
+- Legacy carryover apply refuses converted targets and unconditionally refuses unconverted targets; planning remains a read. [116]
+
+- Retained reference account (no fresh execution or acceptance inferred): The index keeps each history file by path. [117]
+
+- Retained reference account (no fresh execution or acceptance inferred): Two tables with no blank line between them are refused when either holds citations. [118]
+
 - Retained reference account (no fresh execution or acceptance inferred): The capture copies the index with its time. [119]
-
-
-
-
-
-
-
-
-
-- Retained reference account (no fresh execution or acceptance inferred): The gate's warm pass becomes the refusal when a packet locator is retargeted to identical bytes. [133]
-- Retained reference account (no fresh execution or acceptance inferred): Converted first adoption preserves attributed-history precedence, lists legacy cards and refuses them without a drift waiver. [145]
-- Converted baseline validates a paired immutable tree; publication reads its comparison parent after validation. [147]
-- Adoption distinguishes legacy-card/validator/drift refusals and drift acceptance cannot clear the first two. [148]
-- Captured bytes match a disposable captured tree; sparse-checkout omission is treated distinctly from deletion. [150]
-- The cache refuses a Git-worktree location and evicts by age/size around temporary-file publication. [153]
-- Anchor observation retains two named availability residuals and exact-blob identity can lack a resolved range. [158]
-
-- The response requires judgment and retains knowledge/source identity without the removed supporting-record fields. [171]
-- Selected-subject history and membership rows are rendered in attempt order, with proof entries supplied separately and explicit none/unavailable states. [172]
-- The regression asserts required judgment and absence of removed wire channels; this is source/assertion evidence, not a fresh test run. [173]
-
-- Retained reference account (no fresh execution or acceptance inferred): The retained line is one consumer entry of the shared curator-coherence fixture author `mcp/tests/curator_coherence_test_support.py`; the former knowledge-merge case harness and its `contract:common-base-merge-cases` registration are retired with the canonical database, and no current contract id replaces them. [52]
-
 
 - Retained reference account (no fresh execution or acceptance inferred): The governed-artifact row and the exact consumer list the L5 leaf registered in the shared catalog, which this leaf extended by two modules. [120]
 
-
 - Retained reference account (no fresh execution or acceptance inferred): The registry rows this leaf added: two integration lane rows. [121]
-
 
 - Retained reference account (no fresh execution or acceptance inferred): The registered support artifact the two integration lane rows land in, by its own artifact id. [122]
 
-
 - Retained reference account (no fresh execution or acceptance inferred): The second registered support artifact those rows land in, by its own artifact id. [123]
-
 
 - Retained reference account (no fresh execution or acceptance inferred): The third registered support artifact those rows land in, by its own artifact id. [124]
 
-
 - Retained reference account (no fresh execution or acceptance inferred): The second registered support artifact those rows land in, by its own artifact id. [125]
-
 
 - Retained reference account (no fresh execution or acceptance inferred): The third registered support artifact those rows land in, by its own artifact id. [126]
 
-
 - Retained reference account (no fresh execution or acceptance inferred): The second registered support artifact those rows land in, by its own artifact id. [127]
 
-
 - Retained reference account (no fresh execution or acceptance inferred): The third registered support artifact those rows land in, by its own artifact id. [128]
+
+- Retained reference account (no fresh execution or acceptance inferred): The reconsideration step resolves the endpoint and asks for the approval. [129]
+
+- Retained reference account (no fresh execution or acceptance inferred): A kept gate verdict is served only when no recorded observation changed. [130]
+
+- Retained reference account (no fresh execution or acceptance inferred): The manifest lookup returns the highest approved version. [131]
+
+- Retained reference account (no fresh execution or acceptance inferred): A requirement endpoint triggers only on a newer approved version. [132]
+
+- Retained reference account (no fresh execution or acceptance inferred): The gate's warm pass becomes the refusal when a packet locator is retargeted to identical bytes. [133]
+
+- Retained reference account (no fresh execution or acceptance inferred): The endpoint's state, code, detail, task root and key. [134]
+
+- Retained reference account (no fresh execution or acceptance inferred): The task root, or none for a repository that is not one directory name. [135]
+
+- Retained reference account (no fresh execution or acceptance inferred): The resolution: no root, a root outside tasks, or the owner's answer; no packet is recorded here. [136]
+
+- Retained reference account (no fresh execution or acceptance inferred): The approval answer and the comparison with a version. [137]
+
+- Retained reference account (no fresh execution or acceptance inferred): The manifest read records the bytes, an absent manifest or a failed read. [138]
+
+- Retained reference account (no fresh execution or acceptance inferred): The approval lookup with its three states. [139]
+
+- Retained reference account (no fresh execution or acceptance inferred): The latest approved version of one ID. [140]
+
+- Retained reference account (no fresh execution or acceptance inferred): The owner the packet question is handed to. [141]
+
+- Retained reference account (no fresh execution or acceptance inferred): The owner records the two resolutions and the packet's bytes. [142]
+
+- Retained reference account (no fresh execution or acceptance inferred): An unreadable baseline is refused. [143]
+
+- Retained reference account (no fresh execution or acceptance inferred): Every write is checked, then written atomically. [144]
+
+- Retained reference account (no fresh execution or acceptance inferred): Converted first adoption preserves attributed-history precedence, lists legacy cards and refuses them without a drift waiver. [145]
+
+- Knowledge text is authority; the retained package owns derived schema/codecs/reads rather than canonical writers or approval. [146]
+
+- Converted baseline validates a paired immutable tree; publication reads its comparison parent after validation. [147]
+
+- Adoption distinguishes legacy-card/validator/drift refusals and drift acceptance cannot clear the first two. [148]
+
+- Carryover refuses converted targets and checks cutover refusal rather than acquiring a lock. [149]
+
+- Captured bytes match a disposable captured tree; sparse-checkout omission is treated distinctly from deletion. [150]
+
+Anchor: Build charter, `ParsedTree`, `_parse_knowledge_file` [151]
+
+- History lookup returns every matching path-bearing row and proof absence is informational. [152]
+
+- Projection uses deterministic identities, store-owned seals and retains retired/unprojectable facts in direct index tables. [154]
+
+- One composed v9 schema and fingerprint pin replace generation selection; current index layout is v3. [155]
+
+- Read handles and identity enumeration retain their separate boundaries. [156]
+
+- Selection freezes directly containing families before expansion; paging preserves total and cumulative counts. [157]
+
+- Anchor observation retains two named availability residuals and exact-blob identity can lack a resolved range. [158]
+
+- Attribution requires a measured denominator and licensed side inspection; no inspected sides license no absence. [159]
+
+- Path/entry equality is conditional on supplied entries, while unrepresentable changes require partial state. [160]
+
+- Requirement approval records exact manifest reads and distinguishes approved, not approved and unknown. [161]
+
+Retired at the fifth freeze d59c3493: mcp/src/agents_remember/application/knowledge_gate/memo.py:83-92 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit c052b2593b85d9baf425cc1d5c46f384b13fc9ea. Retired means the anchor no longer stands, not that the cited subject was deleted. [162]
+
+- Converted card authoring prepares all cards, reports refusals, then writes passing Markdown and sidecar files consecutively. [163]
+
+- Legacy export preserves recorded anchor identity; crossing keeps authored conflicts explicit and separates mechanical edits. [164]
+
+- Census validation precedes per-file atomic writes; baseline-last creation has an explicit interrupted-creation state. [165]
+
+- Durable task reports have one shared root, distinct from the single-file publication route. [167]
+
+- Unparsed onboarding versus indexed-record prose companions. [168]
+
+- Captured symlink modes passed to range/symbol authoring. [169]
+
+- Paired-code crossing marker provenance. [170]
+
+- The response requires judgment and retains knowledge/source identity without the removed supporting-record fields. [171]
+
+- Selected-subject history and membership rows are rendered in attempt order, with proof entries supplied separately and explicit none/unavailable states. [172]
+
+- The regression asserts required judgment and absence of removed wire channels; this is source/assertion evidence, not a fresh test run. [173]
+
+- Converted carryover requires matching layouts and exact recovery-leaf authority, writes paired worktree units and leaves curator rows/publication to ordinary closeout. [174]

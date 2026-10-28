@@ -1,0 +1,39 @@
+{
+  "path": "dashboard/src/panels/review/changeSetOverview.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "No ready overview means no summary at all, rather than a summary of zeroes that reads as measured.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0c26d91a818a2bb4881e4c7b7a25c81c7aa8dece",
+            "content": "sha256:963ea3a58953b6527130cf89aaf10e5fe2918a5804de59ddd5b1f10854d94330",
+            "locator": {
+              "kind": "symbol",
+              "name": "completeSummary"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "A subject's currentness is the weakest of its entries, so a summary cannot claim better than its parts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0c26d91a818a2bb4881e4c7b7a25c81c7aa8dece",
+            "content": "sha256:3c8c4e5b397f0ee5680ad47b97b6b32cec200bcbe4bccf7b47c27cf80f6a6dea",
+            "locator": {
+              "kind": "symbol",
+              "name": "entrySummary"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

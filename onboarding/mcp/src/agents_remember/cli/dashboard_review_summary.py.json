@@ -7,12 +7,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "52177e3ff18c4c11e707e0912179f3d91babed57",
+            "blob": "9e3c624b01557f06cfbc0d0e2bd73c7eb1cee711",
             "content": "sha256:1ae5608fc21dfa22ed713ca9fef2bb732ccc8c4ceb994c15b26bfe013d2c62e8",
             "locator": {
-              "end": 64,
+              "end": 71,
               "kind": "line_range",
-              "start": 29
+              "start": 36
             }
           },
           "kind": "code"
@@ -24,29 +24,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "52177e3ff18c4c11e707e0912179f3d91babed57",
+            "blob": "9e3c624b01557f06cfbc0d0e2bd73c7eb1cee711",
             "content": "sha256:ca7d0154dae0eb55d9fe4af01af48b548cb76f8b81164a55ea6d9af5383a7b9c",
             "locator": {
-              "end": 81,
+              "end": 88,
               "kind": "line_range",
-              "start": 67
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "6": {
-      "note": "One numbered/default resolver is composed with native summary and capture observation.\n\nAnchor: \"def review_intent_summary_port(config: McpRuntimeConfig) -> ReviewIntentSummaryPort:\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "52177e3ff18c4c11e707e0912179f3d91babed57",
-            "content": "sha256:c862003d623c103829408afa0d9fd0ec1c96c8dea1182713422595cc96a509e2",
-            "locator": {
-              "end": 96,
-              "kind": "line_range",
-              "start": 84
+              "start": 74
             }
           },
           "kind": "code"

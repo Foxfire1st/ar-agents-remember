@@ -39,8 +39,17 @@
       "note": "The certification facade imports the telemetry surface through this package.\n\nAnchor: \"from agents_remember.certification.telemetry import (\"",
       "targets": [
         {
-          "kind": "unresolved",
-          "text": "mcp/src/agents_remember/certification/__init__.py:146-184"
+          "anchor": {
+            "blob": "04d023138a7dc257185ea1caa76dd9ec1b513d59",
+            "content": "sha256:8fe50396d6509e002d8595b9a7215c8caba3e747a645e2f222ed4a3103e4d28a",
+            "locator": {
+              "end": 183,
+              "kind": "line_range",
+              "start": 145
+            },
+            "path": "mcp/src/agents_remember/certification/__init__.py"
+          },
+          "kind": "code"
         }
       ]
     }

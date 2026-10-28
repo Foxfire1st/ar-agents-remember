@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "198cb180d4f2172455f355cfcf1c5c8abed00446",
+        "blob": "7573080d82feb7f377a69a03daf72b354d84a5b8",
         "content": "sha256:bfb8d69fd44581a2d2453bcf8dbb3151f0225ebb4c4cc6d823650beb2443eaaf",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "198cb180d4f2172455f355cfcf1c5c8abed00446",
+        "blob": "7573080d82feb7f377a69a03daf72b354d84a5b8",
         "content": "sha256:50855a7c4305fec17a5ee01deadc1c85d25eec9b1f6751ac2364e08f1dd4c8a9",
         "locator": {
           "kind": "symbol",
@@ -39,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "198cb180d4f2172455f355cfcf1c5c8abed00446",
+        "blob": "7573080d82feb7f377a69a03daf72b354d84a5b8",
         "content": "sha256:402227e3d6ccbc54b1b343817979d558462cc9c7a7e50c66af6f4ce995a6d396",
         "locator": {
           "kind": "symbol",
@@ -57,28 +57,12 @@
     }
   ],
   "references": {
-    "1": {
-      "note": "A claim's address is read through the same bounded read as other investigation.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "198cb180d4f2172455f355cfcf1c5c8abed00446",
-            "content": "sha256:856742000e852b537fd07735bd0cc5eab43cdf1a40be587284c0c5615488bd19",
-            "locator": {
-              "kind": "symbol",
-              "name": "read_claim_basis"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "2": {
       "note": "A basis resolves only when the packet holds a present item of that identity, revision and owner.",
       "targets": [
         {
           "anchor": {
-            "blob": "198cb180d4f2172455f355cfcf1c5c8abed00446",
+            "blob": "7573080d82feb7f377a69a03daf72b354d84a5b8",
             "content": "sha256:bfb8d69fd44581a2d2453bcf8dbb3151f0225ebb4c4cc6d823650beb2443eaaf",
             "locator": {
               "kind": "symbol",
@@ -94,7 +78,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "198cb180d4f2172455f355cfcf1c5c8abed00446",
+            "blob": "7573080d82feb7f377a69a03daf72b354d84a5b8",
             "content": "sha256:50855a7c4305fec17a5ee01deadc1c85d25eec9b1f6751ac2364e08f1dd4c8a9",
             "locator": {
               "kind": "symbol",

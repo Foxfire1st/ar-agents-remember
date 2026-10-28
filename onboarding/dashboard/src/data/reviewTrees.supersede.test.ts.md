@@ -44,11 +44,13 @@ them with `not-converted`.
 
 - The module comment. [1]
 - The three stub answers: busy, changing and not converted. [2]
-- A superseded request is aborted. [3]
-- Unmounting aborts the request. [4]
+- A superseded request is aborted.
+- Unmounting aborts the request.
 - A refusal that a retry answers is never shown. [5]
 - Loading stays shown during retries; the literal seven delays, seven retries and eight requests are pinned. [6]
 - The inputs_changing refusal is retried too. [7]
 - Unavailable only after the bounded retries. [8]
 - A moved selection aborts the old request, keeps one timer and stops the retries; unmount clears the timer. [9]
 - The hook under test. [10]
+
+- Retired at the fifth freeze d59c3493: dashboard/src/data/reviewTrees.supersede.test.ts:40-67 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit c702e1c2e111ec6e07c6b68a78a5d05add8aceab; dashboard/src/data/reviewTrees.supersede.test.ts:69-82 - the region it cited is not in the file at the candidate and no re-point was possible. Retired means the anchor no longer stands, not that the cited subject was deleted.

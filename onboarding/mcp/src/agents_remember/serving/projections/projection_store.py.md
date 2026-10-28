@@ -170,7 +170,9 @@ the state object. `state.read(...)` is called with a `ProjectionReaders(repo_sur
 `RefreshPass(now=moment, refresh=refresh or ProjectionRefresh.full())`.
 
 - Input acquisition and reclamation belong to the worker-owned state. [7]
-- The complete acquired input bundle is represented by `ProjectionInputs`. [8]
+- The complete acquired input bundle is represented by `ProjectionInputs`.
+
+Retired at the fifth freeze d59c3493: mcp/src/agents_remember/serving/projections/projection_inputs.py:161-298 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 7bf564a663bb61f12844dee39538dd09a1633cdb. Retired means the anchor no longer stands, not that the cited subject was deleted [8]
 - `project_and_write` invokes the input state rather than owning those reads itself. [9]
 - On task-structure or drift invalidation, ProjectionInputState._refresh_drift passes its retained contracts and an actionable-drift observation to pruning before reading analytical snapshots. Pruning deletes valid branch-orphaned snapshots only with complete native branch/contract/snapshot proof; failure of that proof retains snapshots. A deleted checkout/worktree alone does not prove its branch is gone, and a valid changed occurrence remains visible even when a sibling read is incomplete. [10]
 
@@ -185,3 +187,7 @@ carried on `ProjectionTickState.stable` and published afterwards, so the write d
 publication compare the same dump instead of computing it twice. The field is live only for the tick
 that set it and is not part of the state a tick starts from; a tick that did not compute one leaves it
 `None`, and publication then computes the form as before.
+
+## Retirements
+
+- Retired at the fifth freeze d59c3493: mcp/src/agents_remember/serving/projections/projection_inputs.py:161-298 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 7bf564a663bb61f12844dee39538dd09a1633cdb. Retired means the anchor no longer stands, not that the cited subject was deleted.

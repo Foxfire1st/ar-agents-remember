@@ -3,8 +3,8 @@
   "proves": [
     {
       "anchor": {
-        "blob": "ed1ce0d527917e3b242efca02654fe59d0214ac8",
-        "content": "sha256:ea730091c11af227bfd04ffdb1ce27918d6a7f21bb966b5f1d8c4483f60fe611",
+        "blob": "847c21ecabfbefc20554b1e9520d0e90e7600b3c",
+        "content": "sha256:bae06c65e5895c52111647a4f3ca211c608dc7882fc6876c1664c11e2246ee9b",
         "locator": {
           "kind": "symbol",
           "name": "test_a_marker_pointing_at_another_environment_refuses"
@@ -20,8 +20,8 @@
     },
     {
       "anchor": {
-        "blob": "ed1ce0d527917e3b242efca02654fe59d0214ac8",
-        "content": "sha256:aa0d5750949efe490020ac67bb84874637fdb5438c1670388c567bc792c09659",
+        "blob": "847c21ecabfbefc20554b1e9520d0e90e7600b3c",
+        "content": "sha256:77fda51fd7b60b1548deb44018c23d80733ed90d724a8bcdcc4b4846983cb2a2",
         "locator": {
           "kind": "symbol",
           "name": "test_every_tool_of_the_bound_server_answers_a_forged_seat_by_name"
@@ -37,25 +37,8 @@
     },
     {
       "anchor": {
-        "blob": "ed1ce0d527917e3b242efca02654fe59d0214ac8",
-        "content": "sha256:db08ee86a8912dbee955abbeefb319547989b920fb079a7e57c37d83dc371c66",
-        "locator": {
-          "kind": "symbol",
-          "name": "test_a_bound_server_advertises_the_explainers_surface_and_nothing_else"
-        }
-      },
-      "facet": "Exercises launch identity, exact roster, named forbidden dispatch or fail-closed missing binding.",
-      "id": "PRF-7MQ2PC",
-      "invariant": "INV-48203N",
-      "origin": {
-        "handoffEntry": "L183-CUR-ET01-bound-explainer-roster",
-        "leaf": "260928-MIK-L183"
-      }
-    },
-    {
-      "anchor": {
-        "blob": "ed1ce0d527917e3b242efca02654fe59d0214ac8",
-        "content": "sha256:de01f768fb0c11c38551d83ae700c843b226463f214bd681da70302e3ccd3a59",
+        "blob": "847c21ecabfbefc20554b1e9520d0e90e7600b3c",
+        "content": "sha256:4a0b79881954fbd1d716c623f8d99e661e29a0fe09de7f42ad42b013c8b72aaa",
         "locator": {
           "kind": "symbol",
           "name": "test_a_lost_binding_on_a_launched_explainer_seat_refuses_rather_than_taking_the_ordinary_branch"
@@ -71,8 +54,8 @@
     },
     {
       "anchor": {
-        "blob": "ed1ce0d527917e3b242efca02654fe59d0214ac8",
-        "content": "sha256:f16d5cb559b09f861074718d1b0cb2876f3f64107ac0c9915c2b5217546535e3",
+        "blob": "847c21ecabfbefc20554b1e9520d0e90e7600b3c",
+        "content": "sha256:11fba851a78c9827c0cc4ee7f5e24afed490b706e78c8fcd93cbbd06ae3ad78b",
         "locator": {
           "kind": "symbol",
           "name": "test_a_new_generation_refuses_the_old_servers_calls"
@@ -88,24 +71,7 @@
     },
     {
       "anchor": {
-        "blob": "ed1ce0d527917e3b242efca02654fe59d0214ac8",
-        "content": "sha256:e6af4354b199c892f7f048a1bd9ab536723d254e661eb34b439dbeff39898f57",
-        "locator": {
-          "kind": "symbol",
-          "name": "test_a_bound_server_refuses_a_tool_outside_its_surface_by_name"
-        }
-      },
-      "facet": "Exercises launch identity, exact roster, named forbidden dispatch or fail-closed missing binding.",
-      "id": "PRF-V66FKQ",
-      "invariant": "INV-48203N",
-      "origin": {
-        "handoffEntry": "L183-CUR-ET01-bound-explainer-roster",
-        "leaf": "260928-MIK-L183"
-      }
-    },
-    {
-      "anchor": {
-        "blob": "ed1ce0d527917e3b242efca02654fe59d0214ac8",
+        "blob": "847c21ecabfbefc20554b1e9520d0e90e7600b3c",
         "content": "sha256:3e8902c8ca1ac2b6593e331e285972606b8c0c671c5cd4633e4a53e0e3467916",
         "locator": {
           "kind": "symbol",
@@ -123,45 +89,13 @@
   ],
   "realizes": [],
   "references": {
-    "1": {
-      "note": "The case `test_a_bound_server_advertises_the_explainers_surface_and_nothing_else` protects a bound server advertising exactly the explainer's surface.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "ed1ce0d527917e3b242efca02654fe59d0214ac8",
-            "content": "sha256:db08ee86a8912dbee955abbeefb319547989b920fb079a7e57c37d83dc371c66",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_a_bound_server_advertises_the_explainers_surface_and_nothing_else"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "2": {
-      "note": "The case `test_a_bound_server_refuses_a_tool_outside_its_surface_by_name` protects a direct call to a tool outside the surface being refused by name.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "ed1ce0d527917e3b242efca02654fe59d0214ac8",
-            "content": "sha256:e6af4354b199c892f7f048a1bd9ab536723d254e661eb34b439dbeff39898f57",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_a_bound_server_refuses_a_tool_outside_its_surface_by_name"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
     "3": {
       "note": "The case `test_a_lost_binding_on_a_launched_explainer_seat_refuses_rather_than_taking_the_ordinary_branch` protects a launched seat with no binding refusing instead of taking the ordinary branch.",
       "targets": [
         {
           "anchor": {
-            "blob": "ed1ce0d527917e3b242efca02654fe59d0214ac8",
-            "content": "sha256:de01f768fb0c11c38551d83ae700c843b226463f214bd681da70302e3ccd3a59",
+            "blob": "847c21ecabfbefc20554b1e9520d0e90e7600b3c",
+            "content": "sha256:4a0b79881954fbd1d716c623f8d99e661e29a0fe09de7f42ad42b013c8b72aaa",
             "locator": {
               "kind": "symbol",
               "name": "test_a_lost_binding_on_a_launched_explainer_seat_refuses_rather_than_taking_the_ordinary_branch"
@@ -176,27 +110,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ed1ce0d527917e3b242efca02654fe59d0214ac8",
-            "content": "sha256:f16d5cb559b09f861074718d1b0cb2876f3f64107ac0c9915c2b5217546535e3",
+            "blob": "847c21ecabfbefc20554b1e9520d0e90e7600b3c",
+            "content": "sha256:11fba851a78c9827c0cc4ee7f5e24afed490b706e78c8fcd93cbbd06ae3ad78b",
             "locator": {
               "kind": "symbol",
               "name": "test_a_new_generation_refuses_the_old_servers_calls"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "5": {
-      "note": "The case `test_the_production_surface_wires_the_delivery_sender` protects the launch-built surface handing its bound tools the production delivery sender.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "ed1ce0d527917e3b242efca02654fe59d0214ac8",
-            "content": "sha256:2ae08901e7eae5875927ee9c76103b7d17620bd63ac11f867e43554801c2ac16",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_the_production_surface_wires_the_delivery_sender"
             }
           },
           "kind": "test"

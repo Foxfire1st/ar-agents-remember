@@ -22,12 +22,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e759eb54b9cbb7db614234415ff2c56f1d345e2c",
+            "blob": "e1559d93e71ef4cd0150bcd4b3e3f40db6a8bc2f",
             "content": "sha256:9682654ab41bd5564bd9b29a18e8a5fedcea148d3c42c46fb82104d03611fbe7",
             "locator": {
-              "end": 111,
+              "end": 177,
               "kind": "line_range",
-              "start": 111
+              "start": 177
             },
             "path": "dashboard/src/data/stream.ts"
           },

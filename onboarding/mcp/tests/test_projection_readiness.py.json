@@ -1,0 +1,23 @@
+{
+  "path": "mcp/tests/test_projection_readiness.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "An early subscriber and the waiters receive the actual prime once, so no reader is served a placeholder",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2e0756547513d1df315f9ad5895523427fa16cf3",
+            "content": "sha256:b1ebdf290c295566ed0b9c67e1b4adf469bf938e3ca87822f148316783a27463",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_early_subscriber_and_waiters_receive_actual_prime_once"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

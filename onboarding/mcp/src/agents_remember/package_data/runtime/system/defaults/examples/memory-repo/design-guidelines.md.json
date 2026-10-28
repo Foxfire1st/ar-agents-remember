@@ -1,0 +1,24 @@
+{
+  "path": "mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/design-guidelines.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The shipped copy holds process without values, as the tree's example does",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b28964fae14bebeb6cb6b3a9563af0e611c31cb7",
+            "content": "sha256:bf0dd8a2b0bfd7d47bda8061c1e2a2184bcf3b43118d0d4b57df4a60902dbd64",
+            "locator": {
+              "end": 3,
+              "kind": "line_range",
+              "start": 3
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

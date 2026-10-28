@@ -18,4 +18,6 @@ Owns where a task, its presenter attempts and a presenter's working folders live
 
 - A path segment that could leave its directory is refused. [1]
 - A symlinked component below the root or a target resolving outside it is refused. [2]
-- The design text in force is the repository's own text or the shipped default. [3]
+- The design text in force is the repository's own text or the shipped default. 
+
+- Retired at the fifth freeze d59c3493: mcp/src/agents_remember/canvas/paths.py::design_text_source - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 47f69f11afb982e318006209036aed22f1792976. Retired means the anchor no longer stands, not that the cited subject was deleted.

@@ -1,0 +1,39 @@
+{
+  "path": "dashboard/src/data/staleInvariants.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "A changed invariant stays marked until the comparison carrying the change is loaded.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bf3a459bcf60d06bd88a0bfdbc13487a4b042af7",
+            "content": "sha256:cd410ef24662ab8314958834541a93a13ac7730dde9924fda449b3fd3faaf45e",
+            "locator": {
+              "kind": "symbol",
+              "name": "markStale"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "A load that does not mention the marked invariant leaves the mark standing.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bf3a459bcf60d06bd88a0bfdbc13487a4b042af7",
+            "content": "sha256:6477f89bf58d51c57e1519265163932c89601d096464f6825ed9d1be6414a29a",
+            "locator": {
+              "kind": "symbol",
+              "name": "loadedStale"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

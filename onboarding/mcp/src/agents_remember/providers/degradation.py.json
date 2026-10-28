@@ -38,24 +38,6 @@
         }
       ]
     },
-    "10": {
-      "note": "`_metrics_loop` — the sole production caller: `metrics_store.record`, `evaluate_provider_degradation` and `metrics_store.compact` on one 30s tick. This is why the dashboard is the declared compaction owner of both provider stores, and it is where the ownership is enforced structurally.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "fb417e233674d6d9e471a591b5c9c081da7cf2b6",
-            "content": "sha256:01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
-            "locator": {
-              "end": 78,
-              "kind": "line_range",
-              "start": 78
-            },
-            "path": "mcp/src/agents_remember/serving/_app_lifespan.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "11": {
       "note": "Failing-first tests pinning hysteresis and the critical transition's event and failsafe-once record, with the stop failure that still records the event and state.  Anchor: `test_hysteresis_requires_sustained_bad_and_sustained_healthy_samples`, `test_critical_transition_records_event_and_failsafe_once`, `test_critical_stop_failure_still_records_event_and_state`",
       "targets": [
@@ -345,12 +327,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fb417e233674d6d9e471a591b5c9c081da7cf2b6",
-            "content": "sha256:19431733bd6618dbffc17e52be6c534fd560d2bcb5cd20d3108221bbff2df22d",
+            "blob": "af51389b4f95c0828dd133f090c068195df379b4",
+            "content": "sha256:181f293b6dde828b754dd69d0c5207d4b9c9726f04d6c360038e52a7a0a6a3cb",
             "locator": {
-              "end": 129,
+              "end": 143,
               "kind": "line_range",
-              "start": 129
+              "start": 133
             },
             "path": "mcp/src/agents_remember/serving/_app_lifespan.py"
           },
@@ -358,12 +340,12 @@
         },
         {
           "anchor": {
-            "blob": "fb417e233674d6d9e471a591b5c9c081da7cf2b6",
+            "blob": "af51389b4f95c0828dd133f090c068195df379b4",
             "content": "sha256:854764ab5f4f78c17cdb6147bd8976e36131d6257fd9f098b290f7ce4d1b5c00",
             "locator": {
-              "end": 132,
+              "end": 133,
               "kind": "line_range",
-              "start": 132
+              "start": 133
             },
             "path": "mcp/src/agents_remember/serving/_app_lifespan.py"
           },
@@ -371,12 +353,12 @@
         },
         {
           "anchor": {
-            "blob": "fb417e233674d6d9e471a591b5c9c081da7cf2b6",
-            "content": "sha256:19f826cf27ec169660e650b561f67b8ddea5b1c0ffb28784fedc2570edfb44b6",
+            "blob": "af51389b4f95c0828dd133f090c068195df379b4",
+            "content": "sha256:181f293b6dde828b754dd69d0c5207d4b9c9726f04d6c360038e52a7a0a6a3cb",
             "locator": {
-              "end": 127,
+              "end": 143,
               "kind": "line_range",
-              "start": 127
+              "start": 133
             },
             "path": "mcp/src/agents_remember/serving/_app_lifespan.py"
           },

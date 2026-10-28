@@ -4,8 +4,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "5ca2ca69a99e69ac35709a756f52967e156695f9",
-        "content": "sha256:ce7dc75f181f51bd961e0baf5da80feec6a277159bcd5623a1f572b9c2a8c091",
+        "blob": "47c71360442fea62f8e6f6d24aac1759509c72a4",
+        "content": "sha256:1f73e4b8b876fd17aeaea5ee1d51a0dd37966bb39079cba48c47c3d0cedc06ba",
         "locator": {
           "kind": "symbol",
           "name": "_valid_inventory"
@@ -22,8 +22,8 @@
     },
     {
       "anchor": {
-        "blob": "5ca2ca69a99e69ac35709a756f52967e156695f9",
-        "content": "sha256:c3a36b4e80f65e8184ff4cb12cc67780b386e000202952a8feb46b16c0a3ce6d",
+        "blob": "47c71360442fea62f8e6f6d24aac1759509c72a4",
+        "content": "sha256:90282a7f64911198aee6ce9675174723c5a11b6eab1a19085b35b360d3428b6e",
         "locator": {
           "kind": "symbol",
           "name": "_read_result"
@@ -40,7 +40,7 @@
     },
     {
       "anchor": {
-        "blob": "5ca2ca69a99e69ac35709a756f52967e156695f9",
+        "blob": "47c71360442fea62f8e6f6d24aac1759509c72a4",
         "content": "sha256:0fc710c93f5f9507b15a3a212bd84f320be74141d10a63a89101cffe0cef03e6",
         "locator": {
           "kind": "symbol",
@@ -58,8 +58,8 @@
     },
     {
       "anchor": {
-        "blob": "5ca2ca69a99e69ac35709a756f52967e156695f9",
-        "content": "sha256:9f84c0afc5857072563b76a82a109406b8aea689fa6608c334a0c3e5d3bbf643",
+        "blob": "47c71360442fea62f8e6f6d24aac1759509c72a4",
+        "content": "sha256:ca782686326e109250bc7aaa53e5177cd15552fb6b4b7b2f6500cc1053b030d6",
         "locator": {
           "kind": "symbol",
           "name": "BrowserProspectiveLoad"
@@ -76,45 +76,13 @@
     }
   ],
   "references": {
-    "1": {
-      "note": "The prospective revision is loaded once in the selected browser through the package-owned runner.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "5ca2ca69a99e69ac35709a756f52967e156695f9",
-            "content": "sha256:9f84c0afc5857072563b76a82a109406b8aea689fa6608c334a0c3e5d3bbf643",
-            "locator": {
-              "kind": "symbol",
-              "name": "BrowserProspectiveLoad"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "2": {
-      "note": "A success that contradicts its own observations is downgraded.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "5ca2ca69a99e69ac35709a756f52967e156695f9",
-            "content": "sha256:3d45c4c3caea3d87db12b71cad430088f32f09edfbb04d006bd9f5bbefba724a",
-            "locator": {
-              "kind": "symbol",
-              "name": "_consistent"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "3": {
       "note": "The current implementation separates claim IDs from basis references and validates rendered citations/parts before accepting the browser result.\n\nAnchor: `_valid_inventory`, `_validate_rendered_citations`",
       "targets": [
         {
           "anchor": {
-            "blob": "5ca2ca69a99e69ac35709a756f52967e156695f9",
-            "content": "sha256:3482efe567c7550caacd9e6c213ea82950659ad4eaaa6f57ba8de7e46ad788fe",
+            "blob": "47c71360442fea62f8e6f6d24aac1759509c72a4",
+            "content": "sha256:6157b34e3a35dd5e2fe72e4ed799e94719fed096e9b1c1b84eb40845c020f419",
             "locator": {
               "kind": "file"
             }

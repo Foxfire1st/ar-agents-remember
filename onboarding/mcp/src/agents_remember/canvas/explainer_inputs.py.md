@@ -11,12 +11,12 @@ The product-side facts one explainer tool server needs beside its workspace, in 
 ## Code Commentary
 
 - `ExplainerInputs` carries the task folder, the coordination root, both repositories, and takes the fingerprint reader, the report sender and the clock as injectable callables, so a tool server composes without a host.
-- `coordination_of` reads `<coordination>/explainer/<repository>/<task>/<leaf>` back to its coordination root, and refuses `workspace-unplaced` for a path too shallow to be one.
 - `now_iso` answers whole seconds in UTC, so a stored timestamp and its rendered form cannot disagree about the moment.
-- The class and both helpers are the same objects the tool server re-exports, so a caller's import path and a discovery-time import cannot diverge.
+- The tool server re-exports the class only: its `__all__` names `ExplainerInputs`, and `now_iso` is imported for its own use [2]
 
 ## Evidence
 
 - The tool server's inputs are one frozen record, with the root, both repositories and the effectful readers supplied by the caller [1]
-- A workspace too shallow to be an explainer placement is refused rather than read as a coordination root [2]
 - One clock, in UTC, to whole seconds, is what every stored moment is stamped with [3]
+
+- Retired at the fifth freeze d59c3493: mcp/src/agents_remember/canvas/explainer_inputs.py:46-54 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 5f8398b32760677c370e3145add73cfa8388357b. Retired means the anchor no longer stands, not that the cited subject was deleted.

@@ -102,4 +102,6 @@ Selected-task Investigator receipts are per request rather than singleton select
 
 `message_binding_projection_path` is the public name of the binding-file address; the request-id refusal and the discard path use it too. Admission reads the same file a preparation wrote, which is how a retry whose receipt never landed returns to the seat it prepared instead of preparing the root again. Receipt creation, replay and projection semantics are unchanged.
 
-- The one binding-file address, read by admission and written by preparation. [21]
+- The one binding-file address, read by admission and written by preparation. 
+
+- Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/role_launch_receipts.py::message_binding_projection_path - the bytes it recorded now occur 4 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.

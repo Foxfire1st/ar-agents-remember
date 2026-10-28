@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "88c457444f4fabbaee444d04d1131c177f99a9d0",
-        "content": "sha256:ccf1030b9e51907aa7112978496697f6e56278f14e7e85d5e6e97b0786aa5663",
+        "blob": "d02f366f758059bd1e42d8a48f3df07e7e90d36f",
+        "content": "sha256:7575f3d6faca9e2a28f9e77b1045070315d50f0c1acc8a826c67ecb9f86c7cd8",
         "locator": {
           "kind": "file"
         }
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "88c457444f4fabbaee444d04d1131c177f99a9d0",
+        "blob": "d02f366f758059bd1e42d8a48f3df07e7e90d36f",
         "content": "sha256:79b9c4f7e05d7510a2bbbe85ca53a13faefb2b29437a77738ad872cca309aaa6",
         "locator": {
           "kind": "symbol",
@@ -43,12 +43,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "88c457444f4fabbaee444d04d1131c177f99a9d0",
+            "blob": "d02f366f758059bd1e42d8a48f3df07e7e90d36f",
             "content": "sha256:4ce27d4ddf3fab5abfa5266d9878fede16e6515e5c1f50e5b1e601c8b24ffd5d",
             "locator": {
-              "end": 247,
+              "end": 255,
               "kind": "line_range",
-              "start": 214
+              "start": 222
             }
           },
           "kind": "code"
@@ -58,18 +58,6 @@
     "2": {
       "note": "The presentation hook supplies the frame target and scope through chatFrameTarget/chatFrameScope, preferring the named chat and otherwise using the current scoped execution and document selection; this request is separate from observed shown-chat identity.",
       "targets": [
-        {
-          "anchor": {
-            "blob": "88c457444f4fabbaee444d04d1131c177f99a9d0",
-            "content": "sha256:a0e5b684b8267069b42bfb7f338b27e7a91318c35b1e7ee8d79069aedd0b28c9",
-            "locator": {
-              "end": 204,
-              "kind": "line_range",
-              "start": 154
-            }
-          },
-          "kind": "code"
-        },
         {
           "anchor": {
             "blob": "7bc6bcca5d994d77343956d9c967b3c1c06b7234",
@@ -90,12 +78,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "88c457444f4fabbaee444d04d1131c177f99a9d0",
+            "blob": "d02f366f758059bd1e42d8a48f3df07e7e90d36f",
             "content": "sha256:82b99de25fefeed78c7446ed82c86f3830a8800aacf91ad8f102da168e291f32",
             "locator": {
-              "end": 231,
+              "end": 239,
               "kind": "line_range",
-              "start": 207
+              "start": 215
             }
           },
           "kind": "code"

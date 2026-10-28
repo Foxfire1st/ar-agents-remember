@@ -1,24 +1,6 @@
 {
   "path": "dashboard/src/panels/review/reading/LaneSection.counts.test.tsx",
   "realizes": [],
-  "references": {
-    "2": {
-      "note": "The mounted lane file retains both signed counts and the declared size/colour classes.\n\nAnchor: \"it('draws a lane file head's line counts in mint and alarm red at the head's size', async () => {\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "ae722f90edf8091a6d8a6d7d230e512595153da4",
-            "content": "sha256:4c17cf1e326614e2468fe7a0cbdce5e8186d5796d98032ffa048fa20ab37f5f4",
-            "locator": {
-              "end": 37,
-              "kind": "line_range",
-              "start": 20
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    }
-  },
+  "references": {},
   "schema": "ar-onboarding-file/v1"
 }

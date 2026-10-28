@@ -8,6 +8,8 @@
 
 The intent reviewer reads one leaf comparison as a page of changed intent and recorded source locations. Its navigation tree and reading column share one ordered change-set model. A named target selects its subject; an unnamed opening stays unselected. The page presents recorded facts and judgments without authoring knowledge or granting lifecycle approval.
 
+What governs the look is the memory layer's design text, not this card: [`system/DESIGN.md`](../../../../../system/DESIGN.md) for this page's colour roles, measures, density, states and control patterns, and [`system/TREATMENT.md`](../../../../../system/TREATMENT.md) with [`system/TECHNIQUES.md`](../../../../../system/TECHNIQUES.md) for the explanation pages its Explanation tab shows. The process — the reference first, then look and operate in a browser — is [`system/design-guidelines.md`](../../../../../system/design-guidelines.md); the values are `dashboard/src/styles/tokens.css` mirrored in `dashboard/panda.config.ts`.
+
 ## Hot Path Summary
 
 Start at ReviewSurface for the question-bound read cycle, retained comparison frame and cache. reading/useReviewPage composes the shared model, selection, walk and scroll owners. changeSetOrder builds the pure model; tree/ReviewTree renders its compact navigation and reading/ReadingColumn renders its content. The shell supplies the leaf’s retained explainer column outside this route, defaulting to its placeholder while no seat exists. A landed leaf's review opens the comparison its enclosure records as delivered; the page keeps that default apart from the highest recorded number and states once when the comparison on screen is not that pair.
@@ -36,17 +38,32 @@ Server readers own immutable comparison operands, currentness, recorded effects,
 
 ## Evidence
 
+- Mounted fixture assertions distinguish no-gesture lane reads from engagement-gated card marks; these are source assertions with stubbed visibility and transport.
+
+- A landed leaf's review opens the comparison its enclosure records as delivered, and the page keeps that default apart from the highest recorded number. 
+
+- The mismatch line and the delivered identities reuse the page's existing note and technical-details parts.
+
+- Retired at the fifth freeze d59c3493: dashboard/src/panels/review/reading/ReviewPage.opening.test.tsx:90-144 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 10e466b17feee2530c06b2670fef496c6c9e755f; dashboard/src/panels/review/reading/useChangeSet.ts::useChangeSet - the bytes it recorded now occur 3 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.
+
+## Retirements
+
+- Retired at the fifth freeze d59c3493: dashboard/src/panels/review/reading/TechnicalDetails.tsx:194-208 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 10e466b17feee2530c06b2670fef496c6c9e755f. Retired means the anchor no longer stands, not that the cited subject was deleted.
+
 - One ordered model for both page consumers and view/filter boundaries [1]
+
 - One tree scroller with retained navigation and pinned lane [2]
+
 - Shared reading content, notes, lane and provenance composition [3]
+
 - Explicit target selection without catalogue-driven selection [4]
 
 - Opening completion opens the in-view lane path independently of engagement. [5]
-- The shared file gate distinguishes opened and engaged state and admits at most eight file tasks. [6]
-- A visible text lane file holds one gate slot for classification and text together. [7]
-- Mounted fixture assertions distinguish no-gesture lane reads from engagement-gated card marks; these are source assertions with stubbed visibility and transport. [8]
 
-- A landed leaf's review opens the comparison its enclosure records as delivered, and the page keeps that default apart from the highest recorded number. [9]
-- The mismatch line and the delivered identities reuse the page's existing note and technical-details parts. [10]
+- The shared file gate distinguishes opened and engaged state and admits at most eight file tasks. [6]
+
+- A visible text lane file holds one gate slot for classification and text together. [7]
+
+Retired at the fifth freeze d59c3493: dashboard/src/panels/review/reading/TechnicalDetails.tsx:194-208 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 10e466b17feee2530c06b2670fef496c6c9e755f. Retired means the anchor no longer stands, not that the cited subject was deleted [10]
 
 - The Review \| Explanation switch stays in the top line. Each shown or compared saved revision carries its own binding, time, isolated frame and trusted stale list, and a claim return selects its resolved Review block with the walked tree retained. Published categories and grades feed the one change-set model: a category’s declared scale orders drawn changed blocks with Priority ties and an Ungraded (n) group, while chips retain presenter-inference labels, reasons and stale marks. Before work exists, the planned page uses the product’s planned · no changes line, an intended notice and deterministic-only effect orders with inert packet bodies. A matching live no-work move renews deterministic reads; work-bearing moves present the watcher’s notice and explicit Update instead of waking an explainer. [11]

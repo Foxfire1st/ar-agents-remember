@@ -3,8 +3,8 @@
   "proves": [
     {
       "anchor": {
-        "blob": "f11fd4f02f4b001b7e635c058ae6efe3280dca61",
-        "content": "sha256:aab102df7208354b314d047ca117cf6e6017d5d98832d53530d0a1d734437d98",
+        "blob": "42bbe80925db0bf92806ce70110f6d7b56c4b371",
+        "content": "sha256:47ea85822bc5d75485913eee6dcfafa4abc57db6574e9b72ca8f8e91e947df07",
         "locator": {
           "kind": "symbol",
           "name": "lists the seven changes first, selects each and the second family by its row with one read each, and keeps the first family"
@@ -20,8 +20,8 @@
     },
     {
       "anchor": {
-        "blob": "f11fd4f02f4b001b7e635c058ae6efe3280dca61",
-        "content": "sha256:7c687bcb3d4d285828a8c7faad1eaa739abfa05df2494a3cdff8d057a51adf09",
+        "blob": "42bbe80925db0bf92806ce70110f6d7b56c4b371",
+        "content": "sha256:b9cdbc0c49074b08f2b58f6fc50b408e7cff830045d5ed0916e5c39fcc5ffec2",
         "locator": {
           "kind": "symbol",
           "name": "tags a kept family, describes the subject it was read for, and reads one answer for the selected family"
@@ -37,8 +37,8 @@
     },
     {
       "anchor": {
-        "blob": "f11fd4f02f4b001b7e635c058ae6efe3280dca61",
-        "content": "sha256:cf3ed80bb91f3691dc9bb1e0a6b0f26331dadc8f9d77bc9fb9b458f6e5374a33",
+        "blob": "42bbe80925db0bf92806ce70110f6d7b56c4b371",
+        "content": "sha256:92eef37d816cecf32c7cfc756b1c47ec19cdc83cb6d55e3650d7c1f6f4172f6a",
         "locator": {
           "kind": "symbol",
           "name": "keeps the first family when its second family is clicked, and its shared member row selects it under the first family"
@@ -54,8 +54,8 @@
     },
     {
       "anchor": {
-        "blob": "f11fd4f02f4b001b7e635c058ae6efe3280dca61",
-        "content": "sha256:aab102df7208354b314d047ca117cf6e6017d5d98832d53530d0a1d734437d98",
+        "blob": "42bbe80925db0bf92806ce70110f6d7b56c4b371",
+        "content": "sha256:47ea85822bc5d75485913eee6dcfafa4abc57db6574e9b72ca8f8e91e947df07",
         "locator": {
           "kind": "symbol",
           "name": "lists the seven changes first, selects each and the second family by its row with one read each, and keeps the first family"
@@ -73,8 +73,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "f11fd4f02f4b001b7e635c058ae6efe3280dca61",
-        "content": "sha256:28d565a286635f2640d475aa328b92d6980b3e1810df06d7c0f8faba91b8c734",
+        "blob": "42bbe80925db0bf92806ce70110f6d7b56c4b371",
+        "content": "sha256:de4c9a9012c01a7ff32acf69ff6c590e57874e3100c889bd461799277999b759",
         "locator": {
           "kind": "file"
         }
@@ -95,12 +95,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f11fd4f02f4b001b7e635c058ae6efe3280dca61",
-            "content": "sha256:7a51f1fce66abab062a1c2a80e8fa1fbbab04e7b35e9f69a7978c65022311202",
+            "blob": "42bbe80925db0bf92806ce70110f6d7b56c4b371",
+            "content": "sha256:631b7609a7e8c9094e7868c5f399d6d37f31e9f1bcaf6ef383842ef171dbbb6e",
             "locator": {
-              "end": 91,
+              "end": 197,
               "kind": "line_range",
-              "start": 43
+              "start": 44
             }
           },
           "kind": "test"
@@ -112,12 +112,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f11fd4f02f4b001b7e635c058ae6efe3280dca61",
-            "content": "sha256:d1703f79e397ecd8a5888d3345778e094194a242ce41a61c3d7a6b5adea56814",
+            "blob": "42bbe80925db0bf92806ce70110f6d7b56c4b371",
+            "content": "sha256:8d2e8383be1ab1fc6d6075ee0f0ea728d40e5eba50113f2c65e229a723523923",
             "locator": {
-              "end": 121,
+              "end": 197,
               "kind": "line_range",
-              "start": 92
+              "start": 94
             }
           },
           "kind": "test"
@@ -129,12 +129,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f11fd4f02f4b001b7e635c058ae6efe3280dca61",
-            "content": "sha256:f19a8dde463f3bea7865f03c052928eea4c0514e1faf2ed1cdb90c8a8d7c2a52",
+            "blob": "42bbe80925db0bf92806ce70110f6d7b56c4b371",
+            "content": "sha256:4e7cb448859df583c8ce651949db9ee4ff3a149006372005e611c08fc00e4825",
             "locator": {
-              "end": 152,
+              "end": 197,
               "kind": "line_range",
-              "start": 122
+              "start": 124
             }
           },
           "kind": "test"
@@ -146,12 +146,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f11fd4f02f4b001b7e635c058ae6efe3280dca61",
-            "content": "sha256:391c11d5d3a6a7b634b8ee2f9601969c991858abaf69ba1e9d44c13a8018444d",
+            "blob": "42bbe80925db0bf92806ce70110f6d7b56c4b371",
+            "content": "sha256:348c0c91192bd066768271e44bec4106d867e8d12c5681aa5c0adf104fddcb5b",
             "locator": {
-              "end": 167,
+              "end": 197,
               "kind": "line_range",
-              "start": 153
+              "start": 154
             }
           },
           "kind": "test"
@@ -163,12 +163,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f11fd4f02f4b001b7e635c058ae6efe3280dca61",
-            "content": "sha256:8e32121c965441752c7dd405be868b5f766b476248281ad6633d43a5da3d0459",
+            "blob": "42bbe80925db0bf92806ce70110f6d7b56c4b371",
+            "content": "sha256:c4a310650d0cf528e9c0da23924105b5edc40a27811d654579e7d1eef0fbe225",
             "locator": {
-              "end": 185,
+              "end": 197,
               "kind": "line_range",
-              "start": 168
+              "start": 169
             }
           },
           "kind": "test"

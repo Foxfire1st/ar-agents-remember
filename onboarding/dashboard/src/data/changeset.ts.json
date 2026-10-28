@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "ad784b1c6e63764e2f4437c99f28a2b9bd553703",
-        "content": "sha256:3991a7839bfcafd1a3534c2bdaebb09629138b26ca05dc63a7ee0778f9280d22",
+        "blob": "f89adae5ac3dac2355f244579c0521e08cfb7cd9",
+        "content": "sha256:208751f674d4ff70e2972a0ee37017c54eec078d8b360d528a42a7ad0ec813c3",
         "locator": {
           "kind": "file"
         }
@@ -25,7 +25,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ad784b1c6e63764e2f4437c99f28a2b9bd553703",
+            "blob": "f89adae5ac3dac2355f244579c0521e08cfb7cd9",
             "content": "sha256:c87098c78ba81a649a35582f80b2ce8ab8fe1bfaa70cfbda110c34cad0657b48",
             "locator": {
               "end": 63,
@@ -37,7 +37,7 @@
         },
         {
           "anchor": {
-            "blob": "ad784b1c6e63764e2f4437c99f28a2b9bd553703",
+            "blob": "f89adae5ac3dac2355f244579c0521e08cfb7cd9",
             "content": "sha256:3653ba1ba3e72665595c656794db67d919c4c907aba3c304fc3b47ff62a21943",
             "locator": {
               "end": 69,
@@ -49,7 +49,7 @@
         },
         {
           "anchor": {
-            "blob": "ad784b1c6e63764e2f4437c99f28a2b9bd553703",
+            "blob": "f89adae5ac3dac2355f244579c0521e08cfb7cd9",
             "content": "sha256:6e718064d432e3f615529ebd114610cc6182210cdbbaf5888f87bfa3102c05a1",
             "locator": {
               "end": 76,
@@ -66,7 +66,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ad784b1c6e63764e2f4437c99f28a2b9bd553703",
+            "blob": "f89adae5ac3dac2355f244579c0521e08cfb7cd9",
             "content": "sha256:b2f1b1e79a343b046ec3f627073fb977b0b67f72a543096eb08f73e33bc6cd75",
             "locator": {
               "kind": "symbol",
@@ -82,7 +82,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ad784b1c6e63764e2f4437c99f28a2b9bd553703",
+            "blob": "f89adae5ac3dac2355f244579c0521e08cfb7cd9",
             "content": "sha256:de2d059adaf595f3407bd8cbe2e2ce6c2fc3b40ce10177e1898f64135efd289f",
             "locator": {
               "kind": "symbol",
@@ -98,48 +98,24 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ad784b1c6e63764e2f4437c99f28a2b9bd553703",
-            "content": "sha256:71b84ecdd19dc43a61dbccd60b8e3923f802f454e0f25bf69fed600558bffd4f",
-            "locator": {
-              "end": 184,
-              "kind": "line_range",
-              "start": 176
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "ad784b1c6e63764e2f4437c99f28a2b9bd553703",
-            "content": "sha256:96caa1bb9c703d0907f42fce68e51f3d0b92dac60b81b175d92472e23c9dc768",
-            "locator": {
-              "end": 196,
-              "kind": "line_range",
-              "start": 186
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "ad784b1c6e63764e2f4437c99f28a2b9bd553703",
+            "blob": "f89adae5ac3dac2355f244579c0521e08cfb7cd9",
             "content": "sha256:c44d17e6c9922e6c44c6596244d1adc200e72881ff589d449d00e72eeb15d7e5",
             "locator": {
-              "end": 201,
+              "end": 212,
               "kind": "line_range",
-              "start": 198
+              "start": 209
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "ad784b1c6e63764e2f4437c99f28a2b9bd553703",
+            "blob": "f89adae5ac3dac2355f244579c0521e08cfb7cd9",
             "content": "sha256:1353e8dabc40db1564c9fa6400aa2fbf25f36ea57c65eb39f91948b700b21c10",
             "locator": {
-              "end": 206,
+              "end": 217,
               "kind": "line_range",
-              "start": 203
+              "start": 214
             }
           },
           "kind": "code"
@@ -151,28 +127,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ad784b1c6e63764e2f4437c99f28a2b9bd553703",
+            "blob": "f89adae5ac3dac2355f244579c0521e08cfb7cd9",
             "content": "sha256:16f4fc80e1ee01ca1cf10038008ecf98f96f1d6ebf5e3ca1897d329aeb4a8722",
             "locator": {
               "kind": "symbol",
               "name": "stateDetail"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "3": {
-      "note": "The `base`-arg GET helpers build the `/task`, `/file-diff`, `/master` URLs via the shared `qs`.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "ad784b1c6e63764e2f4437c99f28a2b9bd553703",
-            "content": "sha256:27e5788d5d9d73d24a81dbc0a5a74bfa82c9c3b3af99e52af796e90b468a8a3d",
-            "locator": {
-              "end": 167,
-              "kind": "line_range",
-              "start": 167
             }
           },
           "kind": "code"
@@ -184,77 +143,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ad784b1c6e63764e2f4437c99f28a2b9bd553703",
-            "content": "sha256:3991a7839bfcafd1a3534c2bdaebb09629138b26ca05dc63a7ee0778f9280d22",
+            "blob": "f89adae5ac3dac2355f244579c0521e08cfb7cd9",
+            "content": "sha256:208751f674d4ff70e2972a0ee37017c54eec078d8b360d528a42a7ad0ec813c3",
             "locator": {
               "kind": "file"
             }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "5": {
-      "note": "The serving layer that defines the endpoints + response shapes this client mirrors.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "8bdffe4683b00da6aed0b4f57d68f0689505bb48",
-            "content": "sha256:4050ee02fb3f7a59cecf9ef7c5db15527a777f2c116c361ff0a0efe807a36acd",
-            "locator": {
-              "end": 735,
-              "kind": "line_range",
-              "start": 735
-            },
-            "path": "mcp/src/agents_remember/serving/changeset.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "6": {
-      "note": "The viewer's initial list request uses loadChangeSet, while its non-comparison working-leaf poll still calls leafChangeset and refreshes an active diff every 2.5 seconds.\n\nAnchor: initial list request",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "0f255485bc9dc7fc49932bd57f66ff49c8a4564c",
-            "content": "sha256:080be2e5600ac8b7a9949ade0f6ce6cc8585a729473058f3684659ba7aac78a8",
-            "locator": {
-              "kind": "symbol",
-              "name": "useWorkingChangesetPoll"
-            },
-            "path": "dashboard/src/panels/changeset/ChangeSetViewer.tsx"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "0f255485bc9dc7fc49932bd57f66ff49c8a4564c",
-            "content": "sha256:a731cc4e90f11ca290c05e7ac57e21a5c50b27ccc2ee3ecbd93b9978e57cd67a",
-            "locator": {
-              "end": 298,
-              "kind": "line_range",
-              "start": 252
-            },
-            "path": "dashboard/src/panels/changeset/ChangeSetViewer.tsx"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "7": {
-      "note": "`DetailPanel`’s change-set button restores cached data through `peekChangeSet` and reads counters through `loadChangeSet`.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "dc229d234ae888019f18a20c91a1cd0135ada287",
-            "content": "sha256:4298541a4115524647f086766551d5201d22aec319fa90e1490dee02ffbd6dca",
-            "locator": {
-              "end": 103,
-              "kind": "line_range",
-              "start": 83
-            },
-            "path": "dashboard/src/panels/detail-panel/changeSetBar.tsx"
           },
           "kind": "code"
         }
@@ -283,7 +176,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ad784b1c6e63764e2f4437c99f28a2b9bd553703",
+            "blob": "f89adae5ac3dac2355f244579c0521e08cfb7cd9",
             "content": "sha256:1a4ba82be6b143ff3ca51af70f8f89aa90b911011c08e3373efcdc3c5c4baddd",
             "locator": {
               "kind": "symbol",

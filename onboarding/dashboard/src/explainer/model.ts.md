@@ -24,3 +24,5 @@ The explainer column's pure rules: which chat the column selects, the placeholde
 - A build's steps average into its whole percentage [4]
 - Only a failed build names a failed step and a reason [5]
 - The menu holds the explainer first and excludes another task's, another repository's and another master's seats [6]
+
+

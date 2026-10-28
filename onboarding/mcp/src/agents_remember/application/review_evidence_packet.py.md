@@ -17,9 +17,11 @@ Assembles one explanation’s evidence packet from its exact recorded or planned
 
 ## Evidence
 
-- Packet assembly copies the comparison owner's sides instead of inventing them, and fills every collection or names why it is missing. [1]
+- Packet assembly copies the comparison owner's sides instead of inventing them, and fills every collection or names why it is missing. 
 - A packet read as evidence of another comparison is refused on the owner's full identity. [2]
-- Supplied populations are bounded before the packet is assembled. [3]
+- Supplied populations are bounded before the packet is assembled. 
 - A skipped collection is carried as not selected or not read, with its reason. [4]
 
 - The current implementation adds intended source admission and receipt-bound omission accounting; no previous valid full-identity or population-bound statement is removed. [5]
+
+- Retired at the fifth freeze d59c3493: mcp/src/agents_remember/application/review_evidence_packet.py::build_evidence_packet - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one; mcp/src/agents_remember/application/review_evidence_packet.py::_admit_populations - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.

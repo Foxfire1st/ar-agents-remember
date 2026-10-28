@@ -106,12 +106,12 @@
         },
         {
           "anchor": {
-            "blob": "f8278dbb21252d1ffb0922f6be85733f1ccb7d2e",
+            "blob": "46ddab7108c481e5f7516f270db8ed27e640c225",
             "content": "sha256:ba47a7c5399b7012e1a2bbf959243c7014d63882dbf53875c5a99d1e11c9d87a",
             "locator": {
-              "end": 152,
+              "end": 161,
               "kind": "line_range",
-              "start": 152
+              "start": 161
             },
             "path": "mcp/src/agents_remember/serving/projector.py"
           },
@@ -119,12 +119,12 @@
         },
         {
           "anchor": {
-            "blob": "f8278dbb21252d1ffb0922f6be85733f1ccb7d2e",
+            "blob": "46ddab7108c481e5f7516f270db8ed27e640c225",
             "content": "sha256:1bc048a329b741374a79ec926485102fb060c79d82a6fcd448157d4bbafb4a3e",
             "locator": {
-              "end": 446,
+              "end": 469,
               "kind": "line_range",
-              "start": 446
+              "start": 469
             },
             "path": "mcp/src/agents_remember/serving/projector.py"
           },
@@ -132,12 +132,12 @@
         },
         {
           "anchor": {
-            "blob": "f8278dbb21252d1ffb0922f6be85733f1ccb7d2e",
+            "blob": "46ddab7108c481e5f7516f270db8ed27e640c225",
             "content": "sha256:14602b382ca2a8bc280fa2fe5ee0736b592ae516090dc68fdf1c2449cef0e4f3",
             "locator": {
-              "end": 488,
+              "end": 527,
               "kind": "line_range",
-              "start": 488
+              "start": 527
             },
             "path": "mcp/src/agents_remember/serving/projector.py"
           },
@@ -169,12 +169,12 @@
         },
         {
           "anchor": {
-            "blob": "f8278dbb21252d1ffb0922f6be85733f1ccb7d2e",
+            "blob": "46ddab7108c481e5f7516f270db8ed27e640c225",
             "content": "sha256:ba47a7c5399b7012e1a2bbf959243c7014d63882dbf53875c5a99d1e11c9d87a",
             "locator": {
-              "end": 152,
+              "end": 161,
               "kind": "line_range",
-              "start": 152
+              "start": 161
             },
             "path": "mcp/src/agents_remember/serving/projector.py"
           },
@@ -182,12 +182,12 @@
         },
         {
           "anchor": {
-            "blob": "f8278dbb21252d1ffb0922f6be85733f1ccb7d2e",
+            "blob": "46ddab7108c481e5f7516f270db8ed27e640c225",
             "content": "sha256:1bc048a329b741374a79ec926485102fb060c79d82a6fcd448157d4bbafb4a3e",
             "locator": {
-              "end": 446,
+              "end": 469,
               "kind": "line_range",
-              "start": 446
+              "start": 469
             },
             "path": "mcp/src/agents_remember/serving/projector.py"
           },
@@ -195,12 +195,12 @@
         },
         {
           "anchor": {
-            "blob": "f8278dbb21252d1ffb0922f6be85733f1ccb7d2e",
+            "blob": "46ddab7108c481e5f7516f270db8ed27e640c225",
             "content": "sha256:14602b382ca2a8bc280fa2fe5ee0736b592ae516090dc68fdf1c2449cef0e4f3",
             "locator": {
-              "end": 488,
+              "end": 527,
               "kind": "line_range",
-              "start": 488
+              "start": 527
             },
             "path": "mcp/src/agents_remember/serving/projector.py"
           },

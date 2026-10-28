@@ -7,8 +7,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "020b06e2ee9ceaa8b0409e0a819f619bca6bcbbf",
-            "content": "sha256:1d291f7417117779e083362ea7c3dc650f4ff32077d9981c2c5f982aa435d47d",
+            "blob": "fabceb9097c4cb1fcc66107d73bf97239aa1c0f6",
+            "content": "sha256:46caa4810431e35f7586df5e53f50f7fcba27c031d99499360ca3c0d3b1f9e79",
             "locator": {
               "kind": "file"
             }
@@ -22,27 +22,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "020b06e2ee9ceaa8b0409e0a819f619bca6bcbbf",
-            "content": "sha256:1d291f7417117779e083362ea7c3dc650f4ff32077d9981c2c5f982aa435d47d",
+            "blob": "fabceb9097c4cb1fcc66107d73bf97239aa1c0f6",
+            "content": "sha256:46caa4810431e35f7586df5e53f50f7fcba27c031d99499360ca3c0d3b1f9e79",
             "locator": {
               "kind": "file"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "14": {
-      "note": "Excerpt hunk marks and one comparison-pinned classification of the notes file.\n\nAnchor: \"it(\"marks each card excerpt's hunks, one marker per hunk, from the one classification\", async () => {\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "020b06e2ee9ceaa8b0409e0a819f619bca6bcbbf",
-            "content": "sha256:59f851ef07aba8e1bb3e8620c49f1e3146e4a20d64d922a6ffd3c19fcd418ced",
-            "locator": {
-              "end": 137,
-              "kind": "line_range",
-              "start": 118
             }
           },
           "kind": "test"
@@ -54,12 +37,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "020b06e2ee9ceaa8b0409e0a819f619bca6bcbbf",
-            "content": "sha256:5ae0fb56e3dcda402d1bef46bd57423e9c6b0137c302ac7fd1ef8ad5c9748e04",
+            "blob": "fabceb9097c4cb1fcc66107d73bf97239aa1c0f6",
+            "content": "sha256:961152b1b18fa9a01e1a0b80a407c684303f2f8e924259bd5b3e5c3067ecbb99",
             "locator": {
-              "end": 258,
+              "end": 511,
               "kind": "line_range",
-              "start": 139
+              "start": 200
             }
           },
           "kind": "test"
@@ -71,12 +54,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "020b06e2ee9ceaa8b0409e0a819f619bca6bcbbf",
+            "blob": "fabceb9097c4cb1fcc66107d73bf97239aa1c0f6",
             "content": "sha256:1e4f03fc60f7db56325acf3403ed1f6361534effe4bbf0820c4080ec0848c433",
             "locator": {
-              "end": 450,
+              "end": 511,
               "kind": "line_range",
-              "start": 270
+              "start": 331
             }
           },
           "kind": "test"
@@ -88,8 +71,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "020b06e2ee9ceaa8b0409e0a819f619bca6bcbbf",
-            "content": "sha256:1d291f7417117779e083362ea7c3dc650f4ff32077d9981c2c5f982aa435d47d",
+            "blob": "fabceb9097c4cb1fcc66107d73bf97239aa1c0f6",
+            "content": "sha256:46caa4810431e35f7586df5e53f50f7fcba27c031d99499360ca3c0d3b1f9e79",
             "locator": {
               "kind": "file"
             }

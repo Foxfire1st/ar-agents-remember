@@ -104,25 +104,58 @@ The following reference captions describe the prior source epoch. They are prese
 > - Card Full file and expression excerpts pass marks; the former lane-window owner is retired. (historical reference 34)
 
 ## Evidence
+
+- The master request now asks for the per-leaf breakdown; presence of `leaves` is the discriminant. 
+
+- The shell that hosts the takeover + restores the rails. 
+
+- The detail panel button + counters that open this screen. 
+
+- **The generation the open series view is bound to, and the caption that renders it.** 
+
+- **The entry button threading the published generation into the viewer target.**
+
+- Comparison requests are built for the recorded trees
+
+- No-mark gutters, collapsed-run expansion and marked-pane construction.
+
+- The net and leaf summaries are computed separately, over different ranges; leaf working reads require a live worktree, and committed lists publish unrecorded state.
+
+- The existing refusal case checks the reason and clicks the control; no execution is asserted.
+
+- Comparison takes precedence in list and file requests, and the held-lane filter does not classify hunks.
+
+- Target-addressed list loads share the current request/cache owner, and an available cached answer can be restored at selection. 
+
+- Working refresh does not require hasData, excludes comparisons and handles list/diff fulfillment and failure independently before scheduling its next timer. 
+
+- The existing viewer composes delegated filters and one badge map from held facts; same-generation comparison context can accept late matching worklist/lane data without reopening another comparison. 
+
+Anchor: `useReviewCatalogue` `intentReviewEntries` 
+
+Anchor: `useReviewCatalogue` `intentReviewEntries` 
+
+- Retired at the fifth freeze d59c3493: dashboard/src/panels/detail-panel/changeSetBar.tsx:112-125 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit c861abfeff33c9ef8f1ca066604c8f971b613361; dashboard/src/panels/changeset/ChangeSetViewer.tsx:255-275 - the region it cited is not in the file at the candidate and no re-point was possible; dashboard/src/panels/detail-panel/changeSetBar.test.tsx:507-552 - the region it cited is not in the file at the candidate and no re-point was possible; dashboard/src/panels/changeset/ChangeSetViewer.tsx:253-295 - the region it cited is not in the file at the candidate and no re-point was possible; dashboard/src/panels/changeset/reviewChangeSet.ts:24-75 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 20624f979e2b89067a3e42019c9611a8e18ff848; dashboard/src/panels/changeset/ChangeSetViewer.tsx::seriesLeaves - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 2e11db883f77bb1bf2827ae537b5d1d564e020b3; dashboard/src/cockpit/Cockpit.tsx::CockpitShell - the bytes it recorded now occur 13 times in the file, so no single home can be named and it is not given to the likelier one; dashboard/src/panels/detail-panel/changeSetBar.tsx::ChangeSetButton - the bytes it recorded now occur 10 times in the file, so no single home can be named and it is not given to the likelier one; dashboard/src/panels/changeset/ChangeSetViewer.tsx::SeriesGenerationTag - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one; dashboard/src/panels/changeset/ChangeSetViewer.tsx::boundSeriesGeneration - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit f141d164265e926be9249acf6ae680ccf9ffae61; dashboard/src/panels/changeset/ChangeSetViewer.tsx::useChangesetLoad - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one; dashboard/src/panels/changeset/ChangeSetViewer.tsx::applyWorkingRead - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit c861abfeff33c9ef8f1ca066604c8f971b613361; dashboard/src/panels/changeset/ChangeSetViewer.tsx::useWorkingChangesetPoll - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one; dashboard/src/panels/review/ReviewSurface.tsx::useHeldPageLane - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.
+
+- The master request now asks for the per-leaf breakdown; presence of `leaves` is the discriminant.
+
+## Retirements
+
+- Retired at the fifth freeze d59c3493: dashboard/src/panels/file-viewer/markGutter.tsx:292-379 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit d3a22213ad3124603b0210afb7e3d049c5589b82. Retired means the anchor no longer stands, not that the cited subject was deleted.
+
+- Retired at the fifth freeze d59c3493: mcp/src/agents_remember/serving/changeset.py:147-213 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit ee7dabb917b4d8d205da097032c3de3cced909e3; mcp/src/agents_remember/serving/changeset.py:591-634 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit f141d164265e926be9249acf6ae680ccf9ffae61. Retired means the anchor no longer stands, not that the cited subject was deleted.
+
 - The optional marks and the marked pane. [1]
 
 - The two extracted view builders, each with its marks gutter. [2]
 
-
 - The optional first lines and the content-sized host. [3]
-
 
 - The card that passes them. [4]
 
-
-- The master request now asks for the per-leaf breakdown; presence of `leaves` is the discriminant. [5]
-
-
 - The rendered rail and its per-leaf counters, and the click that opens one leaf's own range. [6]
 
-
 - The named refusal and the named measured-empty pane, i.e. the two states that are not a missing selection. [7]
-
 
 - The cockpit re-target that keeps the opened leaf inside this route's takeover. [8]
 
@@ -130,15 +163,7 @@ The following reference captions describe the prior source epoch. They are prese
 
 - The same-origin client wrapping that API. [10]
 
-
-- The shell that hosts the takeover + restores the rails. [11]
-
-
-- The detail panel button + counters that open this screen. [12]
-
-
 - The reused read-only CodeMirror pane + theme + lang map. [13]
-
 
 - The markdown renderer the sidecar column + rendered-markdown toggle reuse. [14]
 
@@ -147,44 +172,34 @@ The following reference captions describe the prior source epoch. They are prese
 - The target variant this route's type gained. [16]
 
 - The declaration's own statement that no change-set request comes from a review, and that an empty object on the field is the task-context entry rather than a missing selector. [17]
+
 - **The reviewer entry: offered for every leaf beside the working/committed actions (the recorded comparison for a closed leaf, `ICR-R12`).** [18]
 
 - **The identity the entry carries instead of a filesystem path: the task context only — `review: {}` for every leaf, live or closed, so a landed leaf opens the review on the pair it delivered rather than its own numbered record.** [19]
-
 
 - **The read that supplies the subject now belongs to the reviewer, taking the comparison's task context and nothing else.** [20]
 
 - **The entry’s code-or-memory worktree existence flags select the working control and live-versus-recorded review context.** [21]
 
-- **The generation the open series view is bound to, and the caption that renders it.** [22]
-
-
-- **The entry button threading the published generation into the viewer target.** [23]
-
-
 - **The target type whose review field may carry no selector, with presence as the marker and an empty object as the task context.** [24]
-
 
 - The detail-panel entry that hands the viewer this leaf's targets: the committed change set and the Intent review entry, whose target carries the task context and no subject. [25]
 
-
 - The surface that receives it and asks for the task's own review. [26]
 
-
-- Comparison requests are built for the recorded trees [27]
-
 - One file's diff reads on the comparison's trees [28]
+
 - Lane filters apply over the held lane facts [29]
 
 - Persisted flags use component state and localStorage. [30]
+
 - Shared numbering, theme and language construction. [31]
-- No-mark gutters, collapsed-run expansion and marked-pane construction. [32]
+
+Retired at the fifth freeze d59c3493: dashboard/src/panels/file-viewer/markGutter.tsx:292-379 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit d3a22213ad3124603b0210afb7e3d049c5589b82. Retired means the anchor no longer stands, not that the cited subject was deleted [32]
 
 - Diff highlight styling, fitting and effect teardown. [33]
 
-
-- The net and leaf summaries are computed separately, over different ranges; leaf working reads require a live worktree, and committed lists publish unrecorded state. [35]
-
+Retired at the fifth freeze d59c3493: mcp/src/agents_remember/serving/changeset.py:147-213 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit ee7dabb917b4d8d205da097032c3de3cced909e3; mcp/src/agents_remember/serving/changeset.py:591-634 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit f141d164265e926be9249acf6ae680ccf9ffae61. Retired means the anchor no longer stands, not that the cited subject was deleted [35]
 
 - Recorded leaf endpoints use closeout cells or their recorded integrated equivalents. [36]
 
@@ -192,41 +207,34 @@ The following reference captions describe the prior source epoch. They are prese
 
 - The counters control distinguishes loading, unrecorded, unmeasured, empty and failure and discloses the reason. [38]
 
-
-- The existing refusal case checks the reason and clicks the control; no execution is asserted. [39]
-
-
 - Leaf entry construction gates working reads, not Intent Review. [40]
-
 
 - Review dispatch, back, mode switches and node opens clear or replace the cockpit takeover. [41]
 
-
 - The reviewer catalogue remains task-bound; navigation threads recorded history and current generation. [42]
-
-
-
-- Comparison takes precedence in list and file requests, and the held-lane filter does not classify hunks. [43]
-
 
 - Recorded comparison ranges retain exact code/memory operands and named unavailable-tree states. [44]
 
-
-
-
-- Target-addressed list loads share the current request/cache owner, and an available cached answer can be restored at selection. [45]
-
-- Working refresh does not require hasData, excludes comparisons and handles list/diff fulfillment and failure independently before scheduling its next timer. [46]
-
 - A list problem and selected-file problem have distinct display owners rather than silently leaving a stale successful pane. [47]
 
-
-- The existing viewer composes delegated filters and one badge map from held facts; same-generation comparison context can accept late matching worklist/lane data without reopening another comparison. [48]
-
 - The partner predicate excludes slash-suffixed overview/entities and .index bases, but root onboarding/overview.md strips to bare overview and can produce an affordance. Target existence/read success is not established; this predicate already exists at both actual BASE operands. [49]
-
 
 - Current expression excerpts pass marks, file origins and the page collapse setting to a content-sized DiffPane; fitted mark updates reconfigure existing gutters, and card Full file is retired. [34]
 
 - The changed-file rail remains mounted and shares one visibility state across wide and narrow workspace orientation. [50]
+
 - The header toggle owns changeset-left visibility outside the changed-file rail. [51]
+
+Anchor: `CockpitShell` [11]
+
+Anchor: `ChangeSetButton` [12]
+
+Anchor: `boundSeriesGeneration` `SeriesGenerationTag` [22]
+
+Anchor: `peekChangeSet` `loadChangeSet` `useChangesetLoad` [45]
+
+- The existing viewer composes delegated filters and one badge map from held facts; same-generation comparison context can accept late matching worklist/lane data without reopening another comparison. [48]
+
+Retired at the fifth freeze d59c3493: dashboard/src/panels/changeset/ChangeSetViewer.tsx:222-222 - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted. [5]
+
+Retired at the fifth freeze d59c3493: dashboard/src/panels/changeset/ChangeSetViewer.tsx:222-222 - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted [5]

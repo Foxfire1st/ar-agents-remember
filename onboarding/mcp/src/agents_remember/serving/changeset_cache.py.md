@@ -24,10 +24,12 @@ the module now documents its id-keyed accepted gap in its own docstring (object 
 ## Evidence
 
 
-- New results are admitted only when all captured inputs remain readable and equal after the request. [1]
+- New results are admitted only when all captured inputs remain readable and equal after the request.
 
 
 - All three retained tables are bounded and LRU. [2]
 
 
 - Reuse requires exact observed generations and returns isolated copies; otherwise native computation runs. [3]
+
+- Retired at the fifth freeze d59c3493: mcp/src/agents_remember/serving/changeset_cache.py:84-92 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit c861abfeff33c9ef8f1ca066604c8f971b613361. Retired means the anchor no longer stands, not that the cited subject was deleted.

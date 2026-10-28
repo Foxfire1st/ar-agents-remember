@@ -50,9 +50,11 @@ No configured live documentation source was available for this pass.
 - Sixty lines, one edit, and the real `DiffPane` with marks. [1]
 - Collapsed runs holding a mark are expanded; others stay collapsed. [2]
 - A focused mark redrawn keeps focus, never against the reader. [3]
-- The hold's pull-back, releases, teardown and frame cap. [4]
+- The hold's pull-back, releases, teardown and frame cap. 
 - The module under test. [5]
 
 ### Cross-Repo References
 
 No cross-repo boundary is crossed by this file.
+
+- Retired at the fifth freeze d59c3493: dashboard/src/panels/file-viewer/markGutter.test.tsx::RELEASES - the bytes it recorded now occur 4 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.

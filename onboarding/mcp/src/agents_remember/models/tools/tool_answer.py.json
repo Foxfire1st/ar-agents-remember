@@ -94,24 +94,6 @@
     {
       "anchor": {
         "blob": "1ba41e6adae7f4dd9700742a2ff8052d78865ae0",
-        "content": "sha256:33e4ed2d3861fd039a9f96d63057667271d5c333e3cbda21457c31bf87a263fe",
-        "locator": {
-          "kind": "symbol",
-          "name": "INTERIM_TOOL_LEAF"
-        }
-      },
-      "id": "RLZ-QMYFDP",
-      "invariant": "INV-48203N",
-      "origin": {
-        "handoffEntry": "L183-CUR-ET01-bound-explainer-roster",
-        "leaf": "260928-MIK-L183"
-      },
-      "rationale": "`INTERIM_TOOL_LEAF` still names `\"explainer_control\": \"L183\"` (221) with no shaped bound or exception row for the tool, so its answer rides the interim bound exactly as the entry says. Its 'until its leaf lands' framing is the code's own comment (219-220): L183's code is in C and the table still lists L183 in INTERIM_LEAVES, as it does the landed L111.",
-      "role": "enforcement"
-    },
-    {
-      "anchor": {
-        "blob": "1ba41e6adae7f4dd9700742a2ff8052d78865ae0",
         "content": "sha256:b8d99303481809c049f573d0bee3c0f80dbe790543257fbc06276db6d40cbc14",
         "locator": {
           "kind": "symbol",

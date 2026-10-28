@@ -1,0 +1,55 @@
+{
+  "path": "mcp/src/agents_remember/canvas/explainer_answer_bounds.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "answer_tokens and bounded decide the bound and whether an answer passes it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "edf611db25fd829a5c973bcbdbc61c49353d32f0",
+            "content": "sha256:80dd053fdb2cedc5c54e6c676444a6a59409357a04136b0edd5df34b7f42f3bd",
+            "locator": {
+              "kind": "symbol",
+              "name": "answer_tokens"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "write_scratch writes an over-bound answer into the workspace instead of truncating it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "edf611db25fd829a5c973bcbdbc61c49353d32f0",
+            "content": "sha256:452ea2d94b758157161456255e9cb7fc8e36cb599d633f37b215f527ef31f6d4",
+            "locator": {
+              "kind": "symbol",
+              "name": "write_scratch"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The four tools it bounds are the whole surface; no read-back tool exists to bound.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "edf611db25fd829a5c973bcbdbc61c49353d32f0",
+            "content": "sha256:067f5c5ef5259a8ae374f11b69710881c687b076521112d343514b39398a2dee",
+            "locator": {
+              "kind": "symbol",
+              "name": "bounded"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

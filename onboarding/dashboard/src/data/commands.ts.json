@@ -17,24 +17,6 @@
         }
       ]
     },
-    "2": {
-      "note": "Reviewer help joins effective bindings to command labels.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "250fce57560de01c95a53957e8b53c6951b7d1de",
-            "content": "sha256:bbcd659f698b3f5e2752d2ef1e6727af471e88d4fcf3583bc52185d5c3644acf",
-            "locator": {
-              "end": 75,
-              "kind": "line_range",
-              "start": 33
-            },
-            "path": "dashboard/src/panels/review/ReviewKeys.tsx"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "3": {
       "note": "Source test rejects a chord whose commandId is not registered; not an executed result.\n\nAnchor: inclusive source span",
       "targets": [

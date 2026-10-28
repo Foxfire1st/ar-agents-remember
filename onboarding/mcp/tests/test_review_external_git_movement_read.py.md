@@ -119,4 +119,6 @@ cross-repo reference row is recorded here.
 - **The lane registration that makes these cases part of the governed `integration` population.** Source caption: `test_review_external_git_movement_read` [27]
 
 
-- **A lifecycle consumer row that names this module, so the artifact census still counts it.** [28]
+- **A lifecycle consumer row that names this module, so the artifact census still counts it.**
+
+- Retired at the fifth freeze d59c3493: mcp/tests/evidence-lifecycle.toml:597-597 - the bytes it recorded now occur 6 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:1369-1369 - the bytes it recorded now occur 12 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.

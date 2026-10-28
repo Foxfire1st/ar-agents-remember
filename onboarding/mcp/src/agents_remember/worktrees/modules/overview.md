@@ -145,123 +145,223 @@ These superseded descriptions retain their historical wording; the current accou
 > - **Retained historical source account — superseded by the current route account:** Future-code identity uses system-temporary capture and complete equality.
 
 ## Evidence
+
+- **Retained historical source account — superseded by the current route account:** Future-code identity uses system-temporary capture and complete equality.
+
+- **Historical source-bound reference account, not an operative override:** Future-code identity uses system-temporary capture and complete equality.
+
+- Retired at the fifth freeze d59c3493: mcp/src/agents_remember/worktrees/modules/future_code_candidate.py:79-106 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 806649b91bdce18f7b915bfbbf6727967f4e7a88. Retired means the anchor no longer stands, not that the cited subject was deleted.
+
 - Retained reference account (no fresh execution or acceptance inferred): The closeout closes the history file and validates and gates its exact tree, restoring on refusal. [1]
+
 - Retained reference account (no fresh execution or acceptance inferred): Record landing probes first, then asks the gate over the landed commit. [2]
+
 - Retained reference account (no fresh execution or acceptance inferred): Master and checkpoint landing wait for valid, current knowledge. [3]
+
 - Parent resolution validates the named or exact folder master and refuses a missing leaf, master or matching row; standalone completion is not an admitted fallback. [4]
+
 - Retained reference account (no fresh execution or acceptance inferred): The folder master through the master sync's helper, with the named-master checks. [5]
+
 - Retained reference account (no fresh execution or acceptance inferred): The placement guard on the leaf and on every master read. [6]
+
 - Retained reference account (no fresh execution or acceptance inferred): Each unnecessary-row finding names its subject. [7]
+
 - Retained reference account (no fresh execution or acceptance inferred): The archive result gains the hook's report; unbound or failed is reported, never raised. [8]
+
 - Retained reference account (no fresh execution or acceptance inferred): The route's new gate over two memory sides. [9]
+
 - Retained reference account (no fresh execution or acceptance inferred): The stored item's open state, as the live gate decides it. [10]
+
 - Retained reference account (no fresh execution or acceptance inferred): The two entry points and the shared missing-onboarding refusal. [11]
+
 - Retained reference account (no fresh execution or acceptance inferred): Retained historical pin identities and exact reader check. [12]
+
 - Retained reference account (no fresh execution or acceptance inferred): Release checks the recorded ref instead of creating a deterministic pin. [13]
+
 - Retained reference account (no fresh execution or acceptance inferred): **Custody over named history only, and the empty set as a statement.** [14]
+
 - Retained reference account (no fresh execution or acceptance inferred): **The third observation, which a record never stores.** [15]
+
 - Retained reference account (no fresh execution or acceptance inferred): The explicit release: a moved ref refused, an absent ref converged, and the custody measured before deletion. [16]
+
 - Retained reference account (no fresh execution or acceptance inferred): Real release guards over refs and named custody. [19]
+
 - Retained reference account (no fresh execution or acceptance inferred): The package is imported through the public worktree manager facade. [20]
+
 - Retained reference account (no fresh execution or acceptance inferred): Focused worktree tests exercise the facade and operation payloads. [21]
+
 - Historical MIK-R38 reference account, not the current R55.9 permission: the earlier tests included standalone success. Current missing-master/row cases assert refusal before any write; no test execution is inferred here. [22]
+
 - Retained reference account (no fresh execution or acceptance inferred): Reclamation belongs to finalization (260831-LOCR-L31): it runs the terminal cleanup procedure and shapes a real successful reclamation through the pure report shaper, deliberately not on a dry run or a nonzero return code. A completed cleanup cell still archives its recorded terminal agents. [23]
+
 - Retained reference account (no fresh execution or acceptance inferred): Integration lands the refs through the shared writer and stops, promising reclamation only at the task edge. [24]
+
 - Retained reference account (no fresh execution or acceptance inferred): Closeout onboarding refresh uses resolved storage authority for deterministic route-index preview and apply. [25]
+
 - Retained reference account (no fresh execution or acceptance inferred): The lifecycle state carries the optional worktree phase the panels render. [26]
+
 - Retained reference account (no fresh execution or acceptance inferred): Master-series startup compares task, repository/memory, and branch edges before protected-branch admission and carries bounded expected/observed refusal facts. [27]
+
 - Retained reference account (no fresh execution or acceptance inferred): `GateStore.claim_approval` — the compare-and-swap this route spends approvals through, and `CONSUMED_APPROVAL_GATE_KINDS`, which stops the resulting `applied` snapshot from being reclaimed. [28]
+
 - Retained reference account (no fresh execution or acceptance inferred): External closeout chooses substantive memory output and refreshes the cache afterwards. [29]
+
 - Retained reference account (no fresh execution or acceptance inferred): Carryover completion is actual memory ancestry. [31]
+
 - Retained reference account (no fresh execution or acceptance inferred): Returned terminals are recorded and selected before recording/process refusal propagation. [32]
+
 - Retained reference account (no fresh execution or acceptance inferred): Recording requires exact admission and physically verified evidence. [33]
+
 - Retained reference account (no fresh execution or acceptance inferred): Gate-record publication bindings retain exact semantic authority and physical generation. [34]
+
 - Retained reference account (no fresh execution or acceptance inferred): All runnable sibling rails retain observed terminal facts. [35]
+
 - Retained reference account (no fresh execution or acceptance inferred): Executed outcomes distinguish unavailable streams and retain exact bytes/files. [36]
+
 - Retained reference account (no fresh execution or acceptance inferred): Bound artifact metadata names actual observed producer bytes. [37]
+
 - Retained reference account (no fresh execution or acceptance inferred): The report branch persists retained bytes and exports the authoritative payload. [38]
+
 - Retained reference account (no fresh execution or acceptance inferred): Required files are checked on the actual publication branch. [39]
+
 - Retained reference account (no fresh execution or acceptance inferred): Execution progress retains per-step outcomes, the gate catalog, publication bytes/file handles and environment reconstruction observations. [40]
+
 - Retained reference account (no fresh execution or acceptance inferred): Closeout public execution boundary. [41]
+
 - Retained reference account (no fresh execution or acceptance inferred): Fail-closed cleanup result. [42]
+
 - Retained reference account (no fresh execution or acceptance inferred): Integration recovery requires exact authority-ref convergence and exact journaled memory-content proof. [43]
+
 - Retained reference account (no fresh execution or acceptance inferred): Start helpers now live below the dedicated startup package marker. [44]
+
 - Retained reference account (no fresh execution or acceptance inferred): Selected execution recomputes canonical reuse, validates exact green retained prefix publications, and refuses Dagger starts outside code gates 1–4. [45]
+
 - Retained reference account (no fresh execution or acceptance inferred): Retained transport membership and byte limits come from frozen producer declarations. [46]
+
 - Retained reference account (no fresh execution or acceptance inferred): The prepared sandbox reobserves actual comparison source selection before manifest publication. [47]
+
 - Retained reference account (no fresh execution or acceptance inferred): The exact-pair resolver, and the branch/base/ancestry proof it performs without mutation. [50]
+
 - Retained reference account (no fresh execution or acceptance inferred): The closeout's memory side asks the lock before any stamping or commit. [51]
 
 - Historical cutover-only leaf-integration account. Current _leaf_landing_lock rejudges a converted landed/landing-line memory pair; only the neither-side-converted branch falls back to leaf_cutover_refusal. [52]
 
-
 - Historical unconverted-memory lock account. Current record landing probes the source line and recorded base, but admits a converted supplied memory output to its own leaf validator even when those prior inputs are unconverted; otherwise the central legacy-format refusal applies. [53]
 
 - Retained reference account (no fresh execution or acceptance inferred): The onboarding gate reads all of a leaf's history files. [54]
+
 - Retained reference account (no fresh execution or acceptance inferred): The validator and the mandatory gate over the leaf's exact memory output. [55]
+
 - Retained reference account (no fresh execution or acceptance inferred): The preview answers the refused preview for a leaf the gate refuses. [56]
+
 - Retained reference account (no fresh execution or acceptance inferred): Series finalization selects the master and any proven typed or correlated seat row; absent or ambiguous correlation is reported as skipped unless a parent was asserted. [58]
+
 - Retained reference account (no fresh execution or acceptance inferred): The selected master-only or master-plus-sprint documents are previewed or published atomically after source rechecks. [59]
+
 - Retained reference account (no fresh execution or acceptance inferred): The finalization result carries the archive step's skip for a series contract. [60]
+
 - Retained reference account (no fresh execution or acceptance inferred): The registered proof preserves startup/Git state and checks the call records. [63]
 
 - Closeout asks the converted candidate gate before publication, then rereads authority/candidate inside the publication owner. [64]
+
 - Fresh approval claim precedes code output, then external-memory output; journal-authorized resume uses its recorded claim. [65]
+
 - External output locks unconverted cutover, closes converted owner history, commits/reuses output and refreshes cache afterwards. [66]
+
 - Exact converted output receives validator plus mandatory gate, and recovered output is judged again. [67]
+
 - Memory publication rechecks admitted tip/tree, restores owned preparations on failure and proves the published commit afterwards. [68]
+
 - Integration/checkpoint apply shares handover and knowledge admission before ancestry proof and preview/apply split. [69]
+
 - Series landing uses the landing gate; leaf landing uses the precise conversion/cutover predicate. [70]
+
 - Protected publication rereads contract/source identity and delegates exact pair ref movement. [71]
+
 - Record landing probes conversion first and freezes parents only for recorded closed-out output. [72]
+
 - Carryover proves both named code and memory ancestries; missing carryover routes to a recovery-leaf plan. [73]
+
 - Converted trace comparison excludes mechanical anchor fields and joins every leaf history attempt. [76]
+
 - Finalization resolves targets before cleanup and reports cleanup/task-publication failures separately. [77]
+
 - Master folders are retained through the archive owner's series skip. [78]
+
 - Admitted terminal transactions reread archive authority and attempt leaf-agent archival before outputs. [79]
+
 - Abandon authority includes carried memory resources even under the removed mode. [80]
+
 - Bootstrap apply preflight and journal/contract publication use the same per-master exclusion owner. [81]
+
 - Explicit quality admission uses a configured profile; strict publication reader declares schema 3.1. [82]
 
 - References-only counted changes. [83]
+
 - Typed current-row answers and own closed provenance. [84]
+
 - Source-bound item construction and stored predicate. [85]
 
 - **Retained historical source account — superseded by the current route account:** Closeout asks the converted candidate gate before publication, then rereads authority/candidate inside the publication owner. [64]
+
 - **Retained historical source account — superseded by the current route account:** Fresh approval claim precedes code output, then external-memory output; journal-authorized resume uses its recorded claim. [65]
+
 - **Retained historical source account — superseded by the current route account:** External output locks unconverted cutover, closes converted owner history, commits/reuses output and refreshes cache afterwards. [66]
+
 - **Retained historical source account — superseded by the current route account:** Exact converted output receives validator plus mandatory gate, and recovered output is judged again. [67]
+
 - **Retained historical source account — superseded by the current route account:** Memory publication rechecks admitted tip/tree, restores owned preparations on failure and proves the published commit afterwards. [68]
+
 - **Retained historical source account — superseded by the current route account:** Integration/checkpoint apply shares handover and knowledge admission before ancestry proof and preview/apply split. [69]
+
 - **Retained historical source account — superseded by the current route account:** Series landing uses the landing gate; leaf landing uses the precise conversion/cutover predicate. [70]
+
 - **Retained historical source account — superseded by the current route account:** Protected publication rereads contract/source identity and delegates exact pair ref movement. [71]
+
 - **Retained historical source account — superseded by the current route account:** Record landing probes conversion first and freezes parents only for recorded closed-out output. [72]
+
 - **Retained historical source account — superseded by the current route account:** Carryover proves both named code and memory ancestries; missing carryover routes to a recovery-leaf plan. [73]
-- **Retained historical source account — superseded by the current route account:** Future-code identity uses system-temporary capture and complete equality. [74]
+
 - Private candidate capture preserves index-time evidence and explicitly limits conversion-rule rereads. Existing historical descriptions retain their own source extent; the moved helper and shared entry are the current owners. [75]
+
 - **Retained historical source account — superseded by the current route account:** Converted trace comparison excludes mechanical anchor fields and joins every leaf history attempt. [76]
+
 - **Retained historical source account — superseded by the current route account:** Finalization resolves targets before cleanup and reports cleanup/task-publication failures separately. [77]
+
 - **Retained historical source account — superseded by the current route account:** Master folders are retained through the archive owner's series skip. [78]
+
 - **Retained historical source account — superseded by the current route account:** Admitted terminal transactions reread archive authority and attempt leaf-agent archival before outputs. [79]
+
 - **Retained historical source account — superseded by the current route account:** Abandon authority includes carried memory resources even under the removed mode. [80]
+
 - **Retained historical source account — superseded by the current route account:** Bootstrap apply preflight and journal/contract publication use the same per-master exclusion owner. [81]
+
 - **Retained historical source account — superseded by the current route account:** Explicit quality admission uses a configured profile; strict publication reader declares schema 3.1. [82]
 
 - The packet-owned landing and terminal routes preserve domain predicates, check order and refusal-before-write while returning recognized task-state failures as state/code/sentence answers. Dry abandon, cleanup and refused closeout agree with the blocked real call rather than promising success; recognized CloseoutQueueError retains its original code. Cleanup's archive-ready/non-rejudgment branch is now factored through _cleanup_terminal_branch, not a new cleanup permission or force override. Integration distinguishes unfinished checkpoint from completed master. Record landing's conversion next step consumes one central probe-made case: exact merge-memory arguments for a converted line, actual first-conversion argv plus shlex.join display for never-converted input, none for unknown. Unrecognized caller/I/O/internal errors remain fail-closed exceptions, and this presentation changes neither sync nor publication authority. [86]
 
 - **Historical source-bound reference account, not an operative override:** Retained reference account (no fresh execution or acceptance inferred): Final memory staging removes and excludes the cache. [30]
+
 - **Historical source-bound reference account, not an operative override:** Retained reference account (no fresh execution or acceptance inferred): The frozen strict future-code route identity, and the capture that derives it without touching the real index. [48]
+
 - **Historical source-bound reference account, not an operative override:** Retained reference account (no fresh execution or acceptance inferred): Currentness is exact equality of the whole bound route identity. [49]
+
 - **Historical source-bound reference account, not an operative override:** Retained reference account (no fresh execution or acceptance inferred): The index made exactly one tree. [57]
+
 - **Historical source-bound reference account, not an operative override:** Retained reference account (no fresh execution or acceptance inferred): One Git command runs against a private index file; a failure keeps its name. [61]
+
 - **Historical source-bound reference account, not an operative override:** Retained reference account (no fresh execution or acceptance inferred): Staging writes a private index file when asked; otherwise the worktree's own index. [62]
 
-- **Historical source-bound reference account, not an operative override:** Future-code identity uses system-temporary capture and complete equality. [74]
-
 - Start/attach share native task-fact publication, preserving attach stage and making exact retries no-ops. [87]
+
 - Master-series activation validates task-stage publication before bootstrap mutation and publishes stage only for an admitted contract. [88]
+
 - Counted native change sets have their own relocated NUL parser and changed-path observation hook. [89]
+
 - A capture observer runs only after an unchanged post-capture baseline is established. [90]
+
 - Abandon publishes contract/task/parent facts with explicit restoration of those publication inputs. [91]
+
 - start_result and attach_result place canonical intent-review checks before their admitted create/re-entry paths, with planning-only attach behavior and a second pre-create guard. [92]
+
 - Start and retry share the retired-provider gate and return before the retained background setup branch. [93]

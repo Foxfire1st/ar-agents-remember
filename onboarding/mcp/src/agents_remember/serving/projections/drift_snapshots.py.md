@@ -68,4 +68,8 @@ No meaningful cross-repo references found.
 
 - `prune_orphaned_drift_snapshots` takes the keyword-only `contracts` snapshot and hands it to `_observe_branches`; the tick-injected snapshot means zero pruning-time contract parses.  Anchor: `prune_orphaned_drift_snapshots`, `_observe_branches` [3]
 
-- Contract snapshots remain immutable shared inputs. [4]
+- Contract snapshots remain immutable shared inputs. 
+
+- The shared per-tick contract snapshot + stat-identity parse cache the pruner consumes.  Anchor: `ContractSnapshot`, `ContractSnapshotCache` [4]
+
+- Retired at the fifth freeze d59c3493: mcp/src/agents_remember/serving/projections/contract_snapshot.py::ContractSnapshotCache - the bytes it recorded now occur 3 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.

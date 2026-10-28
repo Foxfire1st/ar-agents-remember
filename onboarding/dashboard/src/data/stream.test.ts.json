@@ -1,50 +1,15 @@
 {
   "path": "dashboard/src/data/stream.test.ts",
-  "proves": [
-    {
-      "anchor": {
-        "blob": "29e9552de22cfcef425b964752ddd9796793770c",
-        "content": "sha256:026977868ca3503e9335d1f51eaabdc1436e31946b7e9d281ec36121ec86a85c",
-        "locator": {
-          "kind": "symbol",
-          "name": "delivers the named SSE event to a mounted subscriber without a page reopen"
-        }
-      },
-      "facet": "Pins exact-leaf stream delivery and no-work renewal versus explicit Update.",
-      "id": "PRF-PCYW1Z",
-      "invariant": "INV-V0PX2F",
-      "origin": {
-        "handoffEntry": "L183-CUR-FE07-moved-notice",
-        "leaf": "260928-MIK-L183"
-      }
-    }
-  ],
+  "proves": [],
   "realizes": [],
   "references": {
-    "1": {
-      "note": "Controlled state-stream cases cover wake, hidden, error, and never-open paths.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "29e9552de22cfcef425b964752ddd9796793770c",
-            "content": "sha256:7e76cfca0b8b0538acd57cb24c148be98d40aca857f1c3f85f8327b8549901de",
-            "locator": {
-              "end": 122,
-              "kind": "line_range",
-              "start": 38
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
     "2": {
       "note": "Production state-stream transport owns the deadline.\n\nAnchor: `connectState`",
       "targets": [
         {
           "anchor": {
-            "blob": "e759eb54b9cbb7db614234415ff2c56f1d345e2c",
-            "content": "sha256:eee51c3781c7dc641d9a571568caab5341d83b8dfb50133f24064e92cd7223f3",
+            "blob": "e1559d93e71ef4cd0150bcd4b3e3f40db6a8bc2f",
+            "content": "sha256:e99de257558d12a8eb66451aa7963473fcb8d224617e586c45b5560c3eee00a3",
             "locator": {
               "kind": "file"
             },
@@ -54,30 +19,13 @@
         }
       ]
     },
-    "3": {
-      "note": "The test covers dashboard-local state transport.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "29e9552de22cfcef425b964752ddd9796793770c",
-            "content": "sha256:7e76cfca0b8b0538acd57cb24c148be98d40aca857f1c3f85f8327b8549901de",
-            "locator": {
-              "end": 122,
-              "kind": "line_range",
-              "start": 38
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
     "4": {
       "note": "The moved-notice cases drive ControlledSource through the named review.explainer.moved event: a matching mounted subscriber receives the exact payload, another leaf does not, and no-work and cleared notices reach the same subscriber without reopening the page. These are event-wiring assertions over a stubbed EventSource, not live transport latency measurements.\n\nAnchor: file",
       "targets": [
         {
           "anchor": {
-            "blob": "29e9552de22cfcef425b964752ddd9796793770c",
-            "content": "sha256:9c038ff59a5a8647ce03392bee151e09dbd2acd77c3c016fb6040356f651c769",
+            "blob": "44e16cf38bbc7a6028c0759fed7ece2450801025",
+            "content": "sha256:8650164e0ed06cfd27520ce479a9b30312b744ec95fbc3f7386da1efb9de9300",
             "locator": {
               "kind": "file"
             }

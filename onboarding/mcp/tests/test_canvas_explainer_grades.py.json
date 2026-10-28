@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d31fdbfae9c1cb57e93708153064ce22d47ac628",
+            "blob": "68fcde6d3d963fa4f96651e28eebe375c721ca48",
             "content": "sha256:b94653f72b6b46d9fc7cd0b3a7d7f347a95c3cb6f82e9af125a1a36da57cf831",
             "locator": {
               "kind": "symbol",
@@ -23,27 +23,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d31fdbfae9c1cb57e93708153064ce22d47ac628",
+            "blob": "68fcde6d3d963fa4f96651e28eebe375c721ca48",
             "content": "sha256:b2dcbc479ded822f7608c0535d64d18a823c3de34f80c22c27b75fed89c0bcb9",
             "locator": {
               "kind": "symbol",
               "name": "test_the_same_category_name_with_another_scale_is_refused"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "3": {
-      "note": "The case `test_the_category_bound_is_named_and_removal_takes_its_grades` protects the named category bound and a removal taking its grades.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "d31fdbfae9c1cb57e93708153064ce22d47ac628",
-            "content": "sha256:a74aebf338695ba266fde5ef84a2d064fd9780115cc6a1a94fbbe648adeff90c",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_the_category_bound_is_named_and_removal_takes_its_grades"
             }
           },
           "kind": "test"
@@ -55,7 +39,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d31fdbfae9c1cb57e93708153064ce22d47ac628",
+            "blob": "68fcde6d3d963fa4f96651e28eebe375c721ca48",
             "content": "sha256:df3f7e7898e47cf6d3c8ecb12fd3e86a6d815642ab07db002505f41cf0518dc5",
             "locator": {
               "kind": "symbol",
@@ -71,7 +55,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d31fdbfae9c1cb57e93708153064ce22d47ac628",
+            "blob": "68fcde6d3d963fa4f96651e28eebe375c721ca48",
             "content": "sha256:b061403324a382c1476d97712bbf395a90f6f2b2192d31552baae8f1f1a75872",
             "locator": {
               "kind": "symbol",

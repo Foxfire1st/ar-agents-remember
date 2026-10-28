@@ -40,7 +40,7 @@ Seeded render/store assertions consume existence flags, never stat or delete wor
 - The shared existence-truth visibility selector. [2]
 - Hangar tests seed and reset the shared dashboard store: existence cases set enclosures directly, while the owning-task case applies a snapshot with native task entries and their bound worktrees. The store carries tasks keyed by entry.key and enclosures keyed by enclosure, applies snapshots through applySnapshotState and resets through emptyWorkspace; it has no lifecycles store. [3]
 - The `EnclosureNode` shape (incl. `codeWorktreeExists`/`memoryWorktreeExists`) the `enclosure(...)` factory fills. [4]
-- The running-operation test copies `SERVED.enclosures[0].lifecycleOperation` and overrides currentCommand. Its assertions check that the full durable command appears inline and as the operation title; it does not author legalControls: [] or projectionEffects: [] in this fixture. [5]
+- The running-operation test copies `SERVED.enclosures.lifecycleOperation` and overrides currentCommand. Its assertions check that the full durable command appears inline and as the operation title; it does not author legalControls: [] or projectionEffects: [] in this fixture. [5]
 
 ## CCR-R18@v1 Fixture Envelope Fields
 

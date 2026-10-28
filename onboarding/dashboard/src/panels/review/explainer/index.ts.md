@@ -18,6 +18,8 @@ The module's public surface: the top line's switch, the explanation page and its
 
 ## Evidence
 
-- The switch is exported with its prop type and its view type [1]
+- The switch is exported with its prop type and its view type
 - The planned page is exported with the payload readers and pure orders it needs [2]
 - The one read and the limit refusal are exported for the page's owner [3]
+
+- Retired at the fifth freeze d59c3493: dashboard/src/panels/review/explainer/index.ts:23-23 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 5f8398b32760677c370e3145add73cfa8388357b. Retired means the anchor no longer stands, not that the cited subject was deleted.

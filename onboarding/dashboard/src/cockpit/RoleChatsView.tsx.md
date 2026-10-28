@@ -32,7 +32,13 @@ The frame's shown-chat report is separate from the launcher's current execution.
 - RoleChatsView composes the shared launcher, optional native frame, conditional dock and report reader. [1]
 
 
-- The presentation hook supplies the frame target and scope through chatFrameTarget/chatFrameScope, preferring the named chat and otherwise using the current scoped execution and document selection; this request is separate from observed shown-chat identity. [2]
+- The presentation hook supplies the frame target and scope through chatFrameTarget/chatFrameScope, preferring the named chat and otherwise using the current scoped execution and document selection; this request is separate from observed shown-chat identity.
+
+Retired at the fifth freeze d59c3493: dashboard/src/cockpit/RoleChatsView.tsx:154-204 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit c861abfeff33c9ef8f1ca066604c8f971b613361. Retired means the anchor no longer stands, not that the cited subject was deleted [2]
 
 
 - The Chats pane publishes only the agent ID its active, unbound frame reports showing. Until a string report arrives, and while a report takeover or bound launcher owns the surface, it publishes no shown-chat identity. [3]
+
+## Retirements
+
+- Retired at the fifth freeze d59c3493: dashboard/src/cockpit/RoleChatsView.tsx:154-204 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit c861abfeff33c9ef8f1ca066604c8f971b613361. Retired means the anchor no longer stands, not that the cited subject was deleted.

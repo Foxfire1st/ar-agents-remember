@@ -3,25 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "0729e2487febb7fcc3087bbe5a033d9a994ed5b9",
-        "content": "sha256:500b2ef89b711edc5ae41bbf1e976f5a36257d90d5086d59340e8dfa9ec08fcc",
-        "locator": {
-          "kind": "symbol",
-          "name": "_task_directories"
-        }
-      },
-      "id": "RLZ-6W686CWH",
-      "invariant": "INV-P0YZDCS9",
-      "origin": {
-        "leaf": "260921-ICR-L46"
-      },
-      "rationale": "Lists exactly the two directory levels under tasks/ (repository, then task) through _walked_directories, which does not follow symlinked directories and contributes nothing for a folder it cannot list, matching how the replaced recursive glob descended.",
-      "role": "support"
-    },
-    {
-      "anchor": {
-        "blob": "0729e2487febb7fcc3087bbe5a033d9a994ed5b9",
-        "content": "sha256:38555019cde060fc859dc1909193cc15341e8b6ebcfded13c0f49e34d5c3a9c8",
+        "blob": "ebd43acfbc3ada61f3802752cbe36506c5dbecb6",
+        "content": "sha256:c6b237de108b6ea7d4c34958fb206df82f5a72a176c8ec5ef95073f71101534a",
         "locator": {
           "end": 107,
           "kind": "line_range",
@@ -38,8 +21,8 @@
     },
     {
       "anchor": {
-        "blob": "0729e2487febb7fcc3087bbe5a033d9a994ed5b9",
-        "content": "sha256:45b54e5ed6dd2be8acd7f18f3f7ee57c6fae68f5832298a4beb58681b1bdc554",
+        "blob": "ebd43acfbc3ada61f3802752cbe36506c5dbecb6",
+        "content": "sha256:09837c3f4a9d15771ad50e51cfdeae570643f2fe920589fadc4f8e85328c417e",
         "locator": {
           "kind": "symbol",
           "name": "_iter_task_json"
@@ -55,12 +38,12 @@
     },
     {
       "anchor": {
-        "blob": "0729e2487febb7fcc3087bbe5a033d9a994ed5b9",
+        "blob": "ebd43acfbc3ada61f3802752cbe36506c5dbecb6",
         "content": "sha256:128d80f70959b34f4d52fa7cc2e4442fa137a4564b1182cbbb591376c0aaf526",
         "locator": {
-          "end": 221,
+          "end": 227,
           "kind": "line_range",
-          "start": 197
+          "start": 203
         }
       },
       "id": "RLZ-EMQ775",
@@ -74,48 +57,16 @@
     }
   ],
   "references": {
-    "1": {
-      "note": "The canonical enumeration: three listed levels, the archive/enclosure filter, and a sort over only the kept entries.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "0729e2487febb7fcc3087bbe5a033d9a994ed5b9",
-            "content": "sha256:45b54e5ed6dd2be8acd7f18f3f7ee57c6fae68f5832298a4beb58681b1bdc554",
-            "locator": {
-              "kind": "symbol",
-              "name": "_iter_task_json"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "2": {
       "note": "The named-tail probe, an exact same-order subset of the enumeration.",
       "targets": [
         {
           "anchor": {
-            "blob": "0729e2487febb7fcc3087bbe5a033d9a994ed5b9",
-            "content": "sha256:38555019cde060fc859dc1909193cc15341e8b6ebcfded13c0f49e34d5c3a9c8",
+            "blob": "ebd43acfbc3ada61f3802752cbe36506c5dbecb6",
+            "content": "sha256:c6b237de108b6ea7d4c34958fb206df82f5a72a176c8ec5ef95073f71101534a",
             "locator": {
               "kind": "symbol",
               "name": "_canonical_task_json_candidates"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "3": {
-      "note": "The two listed levels, descended the way `rglob` descends.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "0729e2487febb7fcc3087bbe5a033d9a994ed5b9",
-            "content": "sha256:500b2ef89b711edc5ae41bbf1e976f5a36257d90d5086d59340e8dfa9ec08fcc",
-            "locator": {
-              "kind": "symbol",
-              "name": "_task_directories"
             }
           },
           "kind": "code"
@@ -127,8 +78,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0729e2487febb7fcc3087bbe5a033d9a994ed5b9",
-            "content": "sha256:51493ab31c58ab71b2e04913a4d3293939a25d137a3cbda818c91aaf2996a797",
+            "blob": "ebd43acfbc3ada61f3802752cbe36506c5dbecb6",
+            "content": "sha256:8c6724ba5e24d992a7803dce55fa86db60d0d6cb0d74ab85e21e5fa22ba3a647",
             "locator": {
               "kind": "file"
             }
@@ -142,7 +93,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0729e2487febb7fcc3087bbe5a033d9a994ed5b9",
+            "blob": "ebd43acfbc3ada61f3802752cbe36506c5dbecb6",
             "content": "sha256:35d2c236b7be1a224a5fd1487bf4e8bfbe84f319d762016f3b6343e8cf035a49",
             "locator": {
               "end": 65,
@@ -176,7 +127,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e1d561eb43926925f6fefc875db17155ef322eb4",
+            "blob": "c24805fbc70e2548898568ec162737009c1bf601",
             "content": "sha256:a8191ef83faa3d3da3c32fe178c7d4734f5879c0fbb2c64cc3463c93f76a9372",
             "locator": {
               "end": 77,
@@ -189,7 +140,7 @@
         },
         {
           "anchor": {
-            "blob": "e1d561eb43926925f6fefc875db17155ef322eb4",
+            "blob": "c24805fbc70e2548898568ec162737009c1bf601",
             "content": "sha256:a5c24549e28b30175723f439c6cd15a79e703557a54cb355ed36d4e4d2f6debe",
             "locator": {
               "end": 108,
@@ -202,12 +153,12 @@
         },
         {
           "anchor": {
-            "blob": "e1d561eb43926925f6fefc875db17155ef322eb4",
+            "blob": "c24805fbc70e2548898568ec162737009c1bf601",
             "content": "sha256:929d002d8fbf58c11fe63feccfb8e192bb6d289a2af54144921d167f0b882549",
             "locator": {
-              "end": 504,
+              "end": 500,
               "kind": "line_range",
-              "start": 492
+              "start": 488
             },
             "path": "mcp/src/agents_remember/serving/projections/projection_inputs.py"
           },

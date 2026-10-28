@@ -1,0 +1,23 @@
+{
+  "path": "mcp/tests/test_review_answer_open_leaf.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "An open leaf's numbered comparison is answered once, so a second reader is not a second build",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "47cd81cfff59c47c42fb51c64ba418c9eb623b6c",
+            "content": "sha256:322ceb383f6861a46d6f7e83a7649262118c48f2d6c05f63ea35fba499a586a3",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_open_leafs_numbered_comparison_is_answered_once"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

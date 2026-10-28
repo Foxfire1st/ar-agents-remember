@@ -67,3 +67,5 @@ decide the outcome rather than a mocked runner.
 - AnswerAndTextTests owns the skill-sync subprocess using the current interpreter; this is source attribution, not execution. [8]
 
 - The landing text case reads the transferred w-02 closeout workflow through the shared canonical/package helper, and its generator check uses the current interpreter; this is source attribution, not a fresh run. [9]
+
+

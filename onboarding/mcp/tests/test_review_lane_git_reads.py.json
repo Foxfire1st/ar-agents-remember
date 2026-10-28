@@ -1,0 +1,23 @@
+{
+  "path": "mcp/tests/test_review_lane_git_reads.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The lane compares the trees once and reads its blobs in one batch",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "afbcc1ff3dff09d9b202b90a7311b66183c83221",
+            "content": "sha256:02c048ccb7c904aedb89384778c21c0025f47b4933ef5d5c455849f5c324ea55",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_lane_compares_the_trees_once_and_reads_its_blobs_in_one_batch"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

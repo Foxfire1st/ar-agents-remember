@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ca07c9275bbc8f05c4a70adc433bc45345896adb",
+            "blob": "9f877199b89b2f7f8134f54518e9af916607c07f",
             "content": "sha256:628e2f708388cd86200e087a4df2b38b2e2aff74efc153b561f542cebafb5019",
             "locator": {
               "end": 191,
@@ -24,7 +24,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ca07c9275bbc8f05c4a70adc433bc45345896adb",
+            "blob": "9f877199b89b2f7f8134f54518e9af916607c07f",
             "content": "sha256:2fc985862b27f1aff1de57be345967b5b70a6ceb9d4f2fdef25aa41c8c2a18c6",
             "locator": {
               "end": 238,
@@ -41,7 +41,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ca07c9275bbc8f05c4a70adc433bc45345896adb",
+            "blob": "9f877199b89b2f7f8134f54518e9af916607c07f",
             "content": "sha256:ac8607af9e3741aadaa42d7fe319b9597ddc5d843535c388d3d73628d1f4b087",
             "locator": {
               "end": 278,
@@ -58,7 +58,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ca07c9275bbc8f05c4a70adc433bc45345896adb",
+            "blob": "9f877199b89b2f7f8134f54518e9af916607c07f",
             "content": "sha256:6bf637ffd83804aacea8fb7537f8e1b2b4070ee2717313a7092c6aade457a50a",
             "locator": {
               "end": 326,
@@ -75,10 +75,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ca07c9275bbc8f05c4a70adc433bc45345896adb",
-            "content": "sha256:4cde9c8dc1f08041c4f3b4e35a0bfe663abfa52dd25cab6ea037878b3b53c465",
+            "blob": "9f877199b89b2f7f8134f54518e9af916607c07f",
+            "content": "sha256:0462d284b51f4cde27a743c2f75313e01a7d1e52175a85b2920ef5664ee1d00b",
             "locator": {
-              "end": 356,
+              "end": 499,
               "kind": "line_range",
               "start": 327
             }
@@ -92,7 +92,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ca07c9275bbc8f05c4a70adc433bc45345896adb",
+            "blob": "9f877199b89b2f7f8134f54518e9af916607c07f",
             "content": "sha256:6033018dd805981b3f9fb5c776738f642fe3bc596c52dde4f8863c7e72cf7e2a",
             "locator": {
               "end": 425,
@@ -109,29 +109,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ca07c9275bbc8f05c4a70adc433bc45345896adb",
+            "blob": "9f877199b89b2f7f8134f54518e9af916607c07f",
             "content": "sha256:117e670e837b9de2802a465e0bd16d1c35336207fd0129cee08c34fd218c170c",
             "locator": {
               "end": 482,
               "kind": "line_range",
               "start": 426
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "29": {
-      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('keeps the whole review reachable and carries the selector through a paged request', async () => {\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "ca07c9275bbc8f05c4a70adc433bc45345896adb",
-            "content": "sha256:98406568ee438db34f6a24ab6e6b38faae8750956aa93ba1db0f56049afa0f14",
-            "locator": {
-              "end": 498,
-              "kind": "line_range",
-              "start": 483
             }
           },
           "kind": "test"

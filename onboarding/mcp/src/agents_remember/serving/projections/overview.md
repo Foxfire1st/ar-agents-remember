@@ -147,18 +147,23 @@ The body cache records link/target and consumed task/graph/order/grant input ide
 
 ## Evidence
 
+- The bounded canonical enumeration every always-on reader uses. 
 
+- Contract parsing uses stat identity, rejects foreign contracts and prunes departed entries.
 
+- Direct serving callers pass retained tick state and request one task-document body.
+
+- Retired at the fifth freeze d59c3493: mcp/src/agents_remember/serving/projections/contract_snapshot.py:85-131 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 87992ce842079a7a4f161bd4bfcc4aed5307178b; mcp/src/agents_remember/tasks/task_paths.py:78-119 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit b45795d2ae2df7037b2c0a617e5b4abd97b09b07; mcp/src/agents_remember/serving/projections/snapshots_impl/_common.py::_iter_task_json - the bytes it recorded now occur 3 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.
+
+## Retirements
+
+- Retired at the fifth freeze d59c3493: mcp/src/agents_remember/serving/_app_routes.py:215-227 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 662b6266e0e4662acd043c39365bb17969ea6ff9. Retired means the anchor no longer stands, not that the cited subject was deleted.
 
 - Master validation in placement applies only to documented subTasks; other listed kinds retain list placement under existing identity/cycle guards, not a kind-rejection or own-master-validation rule. [22]
 
-
-
 - The observer store-root conventions are kernel-owned. [1]
-- The bounded canonical enumeration every always-on reader uses. [4]
 
 - Serving locally defines equivalent observer paths rather than importing the kernel definitions. [5]
-
 
 - The projection tick consumes these readers. [2]
 
@@ -166,34 +171,30 @@ The body cache records link/target and consumed task/graph/order/grant input ide
 
 - Full task-domain construction stages contracts, enclosures and task_sources in locals and assigns the retained trio only after construction succeeds. Complete incremental dependency refresh is not whole-trio rollback atomic: contracts/enclosures are assigned before affected document closure projection can fail. Any failed read leaves _task_refresh_pending set; a later read forces full healing-domain reconciliation and clears the flag only after success. These guarantees are about the retained trio, not rollback of every cache or aged slot. [6]
 
-
-- Contract parsing uses stat identity, rejects foreign contracts and prunes departed entries. [7]
-
-
 - Task projection tolerates addressed unknown keys, projects graph and typed reader fields, and hashes full semantic values. [8]
 
-
-
 - Current enclosure readers project lifecycle operations with the durable operation reader's tolerant boundary. Earlier inbox/expectation-copying and inbox-compaction accounts are historical, absent from current runtime readers and input slots. [9]
-
 
 - Closeout projection has strict sprint admission and an invalid-empty effective-state boundary. [10]
 
 - Landing observation excludes historical repair and evicts the exact parsed-final entry after successful publication. [11]
 
-
 - Projection files publish separately; the route also invokes durable housekeeping. [12]
 
-
-- Direct serving callers pass retained tick state and request one task-document body. [13]
-
+Retired at the fifth freeze d59c3493: mcp/src/agents_remember/serving/_app_routes.py:215-227 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 662b6266e0e4662acd043c39365bb17969ea6ff9. Retired means the anchor no longer stands, not that the cited subject was deleted [13]
 
 - Actual bound page interest gates discovery and admission; skipped work does not advance publication or terminal attempts. [14]
+
 - Transient due state retains current identities and uses semantic-answer age rather than observation noise. [15]
 
 - Canonical task sources retain declared children, the resolved record master and its original literal for one downstream producer, preserving absent versus unresolvable input. [16]
+
 - Full task refresh prepares contracts, enclosures and sources before assigning the retained trio. [17]
+
 - Incremental task reprojection replaces the whole affected closure and drops newly unreadable/invalid sources. [18]
+
 - Startup and explicit host-domain invalidations trigger host intake; ordinary full healing excludes that domain. [19]
+
 - Requested bodies read only their named graph masters/declared children rather than enumerating the canonical corpus. [20]
+
 - Body generation tracks link/target identities and rejects unreadable or changing captured inputs. [21]

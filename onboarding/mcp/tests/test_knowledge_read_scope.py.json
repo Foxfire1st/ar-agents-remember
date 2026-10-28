@@ -343,12 +343,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5276cd9583d9a33d9094edac37d82b768491aed9",
+            "blob": "00c924961061dbdffe62be2587500d221bd22c23",
             "content": "sha256:f5b00d251564d154c7eb7dd3bc8abd69a02828ecb60413351ebebf2ab0b4587a",
             "locator": {
-              "end": 170,
+              "end": 178,
               "kind": "line_range",
-              "start": 170
+              "start": 178
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -356,12 +356,12 @@
         },
         {
           "anchor": {
-            "blob": "5276cd9583d9a33d9094edac37d82b768491aed9",
+            "blob": "00c924961061dbdffe62be2587500d221bd22c23",
             "content": "sha256:e96a96cc68897cd2cf796e834f8ac55d5e09216383f9ae3be2059e57efbd1734",
             "locator": {
-              "end": 186,
+              "end": 195,
               "kind": "line_range",
-              "start": 186
+              "start": 195
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -369,32 +369,14 @@
         },
         {
           "anchor": {
-            "blob": "5276cd9583d9a33d9094edac37d82b768491aed9",
+            "blob": "00c924961061dbdffe62be2587500d221bd22c23",
             "content": "sha256:c1982547bb989f163509da14ecb063cbb188711a3d8cc19491c6f2ad577f669e",
             "locator": {
-              "end": 155,
+              "end": 163,
               "kind": "line_range",
-              "start": 155
+              "start": 163
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "35": {
-      "note": "The support artifacts and contracts the evidence-lifecycle catalog declares this module a consumer of.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "339dffc9c6794b5fe29fe6980e9e45603b344a09",
-            "content": "sha256:813c5b76e0e2f4f07ac6f66968f8f7986ae9ee7434d12e988dc887d2ca6f8776",
-            "locator": {
-              "end": 4036,
-              "kind": "line_range",
-              "start": 1
-            },
-            "path": "mcp/tests/evidence-lifecycle.toml"
           },
           "kind": "test"
         }

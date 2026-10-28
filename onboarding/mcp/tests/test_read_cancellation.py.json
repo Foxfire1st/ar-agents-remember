@@ -1,0 +1,23 @@
+{
+  "path": "mcp/tests/test_read_cancellation.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "A disconnected client stops the read at its next safe point and is answered nothing",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c27b75e73e991a01ba621a142060652ef9ab583f",
+            "content": "sha256:bf8f783cde4f5b75724a936cddd36bc14bc85669ba160f652080701b5deb7f6e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_disconnected_client_stops_the_read_at_its_next_safe_point_and_is_answered_nothing"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

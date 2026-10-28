@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "6a8001f73e36a11b1a352a77191fbec1a1968c45",
-        "content": "sha256:4ed43a258e0fcf208ac6679b348d6361e14992236f2b52e815c685ed6e0cfc17",
+        "blob": "3bb09b53aebe54085b08d6bb7aef53938f740dc4",
+        "content": "sha256:cbed035c98312d6dcc19e751a874759649832a504b0fc7fa3611b76c1b506f74",
         "locator": {
           "kind": "symbol",
           "name": "build_environment"
@@ -26,12 +26,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6a8001f73e36a11b1a352a77191fbec1a1968c45",
-            "content": "sha256:4ed43a258e0fcf208ac6679b348d6361e14992236f2b52e815c685ed6e0cfc17",
+            "blob": "3bb09b53aebe54085b08d6bb7aef53938f740dc4",
+            "content": "sha256:cbed035c98312d6dcc19e751a874759649832a504b0fc7fa3611b76c1b506f74",
             "locator": {
-              "end": 713,
+              "end": 444,
               "kind": "line_range",
-              "start": 649
+              "start": 416
             }
           },
           "kind": "code"
@@ -43,46 +43,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6a8001f73e36a11b1a352a77191fbec1a1968c45",
-            "content": "sha256:f82f8c0be7c25995ae070b5be998b69c04cfab8ab559fed62a2936c4beabd5cb",
+            "blob": "3bb09b53aebe54085b08d6bb7aef53938f740dc4",
+            "content": "sha256:7c05be08abe3d0b602d20eb2b617ec5bfd2801973dcd26112baca0be5f6edf0a",
             "locator": {
-              "end": 806,
+              "end": 486,
               "kind": "line_range",
-              "start": 716
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "3": {
-      "note": "A snapshot links the files whose blobs are unchanged and writes the rest, recording each one in a read-only manifest\n\nAnchor: `def write_snapshot(`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "6a8001f73e36a11b1a352a77191fbec1a1968c45",
-            "content": "sha256:e0b9a4f4007531e25cb726c0c2e25b7b49e7e01425b7620b1764196cd9e9c802",
-            "locator": {
-              "end": 454,
-              "kind": "line_range",
-              "start": 405
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "4": {
-      "note": "A snapshot number above the bound one is reclaimed, so an interrupted build leaves nothing to reuse\n\nAnchor: `def next_snapshot_number(`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "6a8001f73e36a11b1a352a77191fbec1a1968c45",
-            "content": "sha256:4017fac182693753d99185d1727aea2960cc76e53a42b6d18d689ad448e57618",
-            "locator": {
-              "end": 390,
-              "kind": "line_range",
-              "start": 370
+              "start": 447
             }
           },
           "kind": "code"
@@ -94,12 +60,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6a8001f73e36a11b1a352a77191fbec1a1968c45",
-            "content": "sha256:6328d10097f74a93f89c0c448a4f59af908b375afae2a31149844e27f744511c",
+            "blob": "3bb09b53aebe54085b08d6bb7aef53938f740dc4",
+            "content": "sha256:b196680dd4b1d60e94ad39d32df6748662cd0c6a9bc1ba2192a37535121c573c",
             "locator": {
-              "end": 1066,
+              "end": 714,
               "kind": "line_range",
-              "start": 1042
+              "start": 690
             }
           },
           "kind": "code"
@@ -111,12 +77,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6a8001f73e36a11b1a352a77191fbec1a1968c45",
-            "content": "sha256:20f0de503e3dfcc19be5f4bd4fb1014955229337896c9e3d03ae8420d57b9fb9",
+            "blob": "3bb09b53aebe54085b08d6bb7aef53938f740dc4",
+            "content": "sha256:1b5cd04aafffc95bbf2206bc82fb00f8c2402a1a6e2a391e35b463200a36e38d",
             "locator": {
-              "end": 1142,
+              "end": 797,
               "kind": "line_range",
-              "start": 1090
+              "start": 738
             }
           },
           "kind": "code"

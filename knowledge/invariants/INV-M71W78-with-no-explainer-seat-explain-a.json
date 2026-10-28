@@ -1,10 +1,9 @@
 {
   "admission": {
     "criteria": [
-      "spans_locations",
-      "guarded_by_test"
+      "spans_locations"
     ],
-    "justification": "The form, tray interception and Send state must agree so a click cannot create a seat before Send or duplicate its first request."
+    "justification": "The form, tray interception and Send state must agree so a click cannot create a seat before Send or duplicate its first request. Reassessed at the L201 fifth freeze (head d59c3493): the guarded_by_test criterion is dropped because the proofs that named it were removed with the tests they cited, which are gone at the candidate; the criteria kept are the ones the tree still satisfies."
   },
   "applicability": "The leaf's explainer first-request form, its build request and later Explain action.",
   "conditions": [

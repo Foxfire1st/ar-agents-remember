@@ -149,23 +149,6 @@
         }
       ]
     },
-    "22": {
-      "note": "A manifest read that fails is recorded as unreadable under the manifest's path.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "9719c9159d392a3e5377a242638474a1a15b1f37",
-            "content": "sha256:2f7248110e8cdfa350134673f986810f1d3a99d1bd2c7d2fe50833d84f84c0ad",
-            "locator": {
-              "kind": "symbol",
-              "name": "_packet_reads"
-            },
-            "path": "mcp/tests/test_reviewer_worklist_reads.py"
-          },
-          "kind": "test"
-        }
-      ]
-    },
     "23": {
       "note": "The docstring's recording paragraph (MIK-R09).",
       "targets": [

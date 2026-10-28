@@ -32,10 +32,10 @@ There are five declared cases. This card records their current assertion bodies,
 - Three paired mounts use fixture-backed native task identity, and stubbed fetch replies are real Response instances. [1]
 
 
-- Initial readiness reconciles the selected answer and entry after one pre-arm synthetic edit, while duplicate and unrelated events are silent. [2]
+- Initial readiness reconciles the selected answer and entry after one pre-arm synthetic edit, while duplicate and unrelated events are silent.
 
 
-- A matching edit refreshes the actual selected subject and entry without restoring an old subject answer; catalogue renewal follows changed comparison identity. [3]
+- A matching edit refreshes the actual selected subject and entry without restoring an old subject answer; catalogue renewal follows changed comparison identity.
 
 
 - Initial responses arriving after the reconciled generation cannot replace its answer or count. [4]
@@ -44,4 +44,6 @@ There are five declared cases. This card records their current assertion bodies,
 - Deferred fetch responses and explicit synthetic capture perturbations control the late/failure cases. [5]
 
 
-- Newest response wins; failed edits retain the labelled coherent generation and a later edit recovers it. [6]
+- Newest response wins; failed edits retain the labelled coherent generation and a later edit recovers it.
+
+- Retired at the fifth freeze d59c3493: dashboard/src/panels/review/ReviewSurface.memoryWatch.test.tsx:32-78 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 10e466b17feee2530c06b2670fef496c6c9e755f; dashboard/src/panels/review/ReviewSurface.memoryWatch.test.tsx:80-119 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 20624f979e2b89067a3e42019c9611a8e18ff848; dashboard/src/panels/review/ReviewSurface.memoryWatch.test.tsx:185-222 - the region it cited is not in the file at the candidate and no re-point was possible. Retired means the anchor no longer stands, not that the cited subject was deleted.

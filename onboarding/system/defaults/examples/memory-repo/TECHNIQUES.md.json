@@ -1,0 +1,24 @@
+{
+  "path": "system/defaults/examples/memory-repo/TECHNIQUES.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The technique table steers look, motion and interaction only, and cannot change what the explainer may read, write or start",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "64648c4958c7fa81d419d1d9cc3d76c90bbc857b",
+            "content": "sha256:efdb78108b36766bd464f6132ad647433d5b70da6a7e3fc7bac04046369eeb7e",
+            "locator": {
+              "end": 5,
+              "kind": "line_range",
+              "start": 5
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

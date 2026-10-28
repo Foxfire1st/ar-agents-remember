@@ -770,18 +770,6 @@
       "targets": [
         {
           "anchor": {
-            "blob": "18e5524471a10c4022c89da7e02e556061265092",
-            "content": "sha256:81b9567abe147f942979af153da9ee71939a0699aa897b10cfb114cf47fdf181",
-            "locator": {
-              "kind": "symbol",
-              "name": "_caller"
-            },
-            "path": "mcp/src/agents_remember/cli/paseo_role_caller.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
             "blob": "06312961eb1a285e4dc69292d9973c71884c5620",
             "content": "sha256:4e5e01a0b5e9a05fb4518eb97afca08fbbfb8507d3dada288641e396427a3ee8",
             "locator": {
@@ -1205,8 +1193,8 @@
         },
         {
           "anchor": {
-            "blob": "d7cf354101ba6817e251792551405cd48999b36d",
-            "content": "sha256:6221edc631a52985711521c0c889aa4ebb67cb73c0b84070efe5e851ccb93107",
+            "blob": "fb78e142d61cf5b5b5abb2cba8f6b442d16968b7",
+            "content": "sha256:6c4eecb9294b78e5affc2d3f43c141fae575549d8de58bf629f75c230a48d8a9",
             "locator": {
               "kind": "file"
             },

@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "dda0cb9e09fcbeebf1c68497ad9866e8e6814427",
+            "blob": "5dca27cf936519a33c742bd2e5310d0096cc642f",
             "content": "sha256:8fc205c2980fb1c35b3c06b7cfa6a18b7953ea010e44d202a020840c4e43e413",
             "locator": {
               "kind": "symbol",
@@ -23,7 +23,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "dda0cb9e09fcbeebf1c68497ad9866e8e6814427",
+            "blob": "5dca27cf936519a33c742bd2e5310d0096cc642f",
             "content": "sha256:ad7c7537c1d0d08e58a799935ad826763dd2dfd8ff83248b21e6b530b4f6bb08",
             "locator": {
               "kind": "symbol",
@@ -39,8 +39,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "dda0cb9e09fcbeebf1c68497ad9866e8e6814427",
-            "content": "sha256:7c7ae71b5dae02744a98d2f5aae876635f0b26c9e6290c63db2d3c5f07383912",
+            "blob": "5dca27cf936519a33c742bd2e5310d0096cc642f",
+            "content": "sha256:a1b9b9a442fca85a3e2c3dfb18ecd833247694852da2a19dd8d47f507e943fff",
             "locator": {
               "kind": "symbol",
               "name": "BuildProgress"

@@ -143,41 +143,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "944960a629ae679b6412bdfdc583c9a18b17dfc3",
-            "content": "sha256:505328199b8aa8063d5f3edf27599d3d5c66658a4db5f530607c9b55c3511dff",
+            "blob": "3f3302a8f0d3f3743960dbb22069270aecf18300",
+            "content": "sha256:926bec36aa5d3aa3b9e56da95657348563f04036e913943aa3fab0f7c682a750",
             "locator": {
               "kind": "file"
             },
             "path": "dashboard/src/data/reviewTransport.ts"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "18": {
-      "note": "**The shared client the control case proves unchanged: it still reads only `body.status` and still throws on a non-2xx.**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "05420e58f22ada25400406ce21f18491119d64da",
-            "content": "sha256:aee27bd2070c9668b9d11e34383243d0296956943d9cef550376dbf57313c14f",
-            "locator": {
-              "kind": "symbol",
-              "name": "getJson"
-            },
-            "path": "dashboard/src/data/files.ts"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "05420e58f22ada25400406ce21f18491119d64da",
-            "content": "sha256:68f2cd9abb8c8495ee64946161bcf0b427cbf2099261e7064010023677b47eb9",
-            "locator": {
-              "kind": "symbol",
-              "name": "FilesApiError"
-            },
-            "path": "dashboard/src/data/files.ts"
           },
           "kind": "code"
         }

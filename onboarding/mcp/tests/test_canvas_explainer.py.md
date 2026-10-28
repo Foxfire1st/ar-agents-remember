@@ -18,10 +18,12 @@ One leaf's explainer environment: a snapshot equal to the bound trees with the b
 
 ## Evidence
 
-- The case `test_a_build_writes_the_bound_trees_and_binds_last` protects the snapshot equalling the bound trees and the binding being the last write. [1]
+- The case `test_a_build_writes_the_bound_trees_and_binds_last` protects the snapshot equalling the bound trees and the binding being the last write. 
 - The case `test_an_unchanged_update_answers_current_and_writes_nothing` protects an unchanged Update answering current without touching the binding. [2]
-- The case `test_a_moved_update_links_unchanged_files_and_removes_the_old_snapshot` protects a moved Update linking unchanged files and removing the snapshot it replaced. [3]
+- The case `test_a_moved_update_links_unchanged_files_and_removes_the_old_snapshot` protects a moved Update linking unchanged files and removing the snapshot it replaced. 
 - The case `test_a_symlink_in_the_workspace_is_held_and_reported` protects a planted workspace symlink being held rather than followed. [5]
 
-- The case `test_retire_ends_the_seats_processes_and_leaves_a_receipt` protects Retire ending the seat's processes by both counts and leaving a receipt. [4]
-- The case `test_process_matching_and_signalling_use_exact_markers_and_start_time_identity` protects signalling only on exact markers and a matching start time. [6]
+- The case `test_retire_ends_the_seats_processes_and_leaves_a_receipt` protects Retire ending the seat's processes by both counts and leaving a receipt.
+- The case `test_process_matching_and_signalling_use_exact_markers_and_start_time_identity` protects signalling only on exact markers and a matching start time.
+
+- Retired at the fifth freeze d59c3493: mcp/tests/test_canvas_explainer.py:192-231 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 5f8398b32760677c370e3145add73cfa8388357b; mcp/tests/test_canvas_explainer.py:442-489 - the region it cited is not in the file at the candidate and no re-point was possible; mcp/tests/test_canvas_explainer.py::test_a_build_writes_the_bound_trees_and_binds_last - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 5f8398b32760677c370e3145add73cfa8388357b; mcp/tests/test_canvas_explainer.py::test_a_moved_update_links_unchanged_files_and_removes_the_old_snapshot - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 5f8398b32760677c370e3145add73cfa8388357b. Retired means the anchor no longer stands, not that the cited subject was deleted.

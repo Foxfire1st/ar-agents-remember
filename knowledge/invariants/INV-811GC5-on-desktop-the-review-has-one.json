@@ -1,10 +1,9 @@
 {
   "admission": {
     "criteria": [
-      "spans_locations",
-      "guarded_by_test"
+      "spans_locations"
     ],
-    "justification": "The scroll-owner contract spans the cockpit main, review grid, reading column and content-sized panes; the former narrow clipping made long review content unreachable even with zero horizontal document overflow."
+    "justification": "The scroll-owner contract spans the cockpit main, review grid, reading column and content-sized panes; the former narrow clipping made long review content unreachable even with zero horizontal document overflow. Reassessed at the L201 fifth freeze (head d59c3493): the guarded_by_test criterion is dropped because the proofs that named it were removed with the tests they cited, which are gone at the candidate; the criteria kept are the ones the tree still satisfies."
   },
   "applicability": "Scroll ownership and reachable reading content on the review page across its desktop and stacked layouts.",
   "conditions": [

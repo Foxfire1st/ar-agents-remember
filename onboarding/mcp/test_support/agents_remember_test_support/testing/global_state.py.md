@@ -64,7 +64,7 @@ The reset register also forgets master-architect host adapters, explainer in-fli
 
 
 
-- The closed register gives every state a treatment and causal rationale. [3]
+- The closed register gives every state a treatment and causal rationale. 
 
 
 - Module reset uses already-loaded owners only. [4]
@@ -79,12 +79,12 @@ The reset register also forgets master-architect host adapters, explainer in-fli
 
 
 
-- The closed product-process register now includes agents_remember.kernel.primitives.runtime_config._LEGACY_GATE_DELEGATION_WARNED with the default reset treatment and existing _clear resetter between test modules. It is not a per-test-restored lock. The shared guard and treatment rules remain unchanged; registration is not execution of the reset control. [9]
+- The closed product-process register now includes agents_remember.kernel.primitives.runtime_config._LEGACY_GATE_DELEGATION_WARNED with the default reset treatment and existing _clear resetter between test modules. It is not a per-test-restored lock. The shared guard and treatment rules remain unchanged; registration is not execution of the reset control. 
 
 
 
 
-- The closed register also gives the existing closeout digest-file stats, lifecycle location cache and lifecycle operation-record cache ordinary `_clear` resets at module boundaries. It adds no scanner exemption or production reset; restored rows retain their per-test treatment. [10]
+- The closed register also gives the existing closeout digest-file stats, lifecycle location cache and lifecycle operation-record cache ordinary `_clear` resets at module boundaries. It adds no scanner exemption or production reset; restored rows retain their per-test treatment. 
 
 
 
@@ -97,3 +97,14 @@ and clears the slot, so the next test module builds a fresh pool. A further row 
 keeps — process state a test module must not inherit — not a claim about production behaviour.
 
 - The reset register also forgets master-architect host adapters, explainer in-flight send/build ledgers, and per-root move watches between modules. The obsolete `worktrees.services._current` row and its resetter are removed because the service supplier is now one holder object; the shared pytest module fixture resets that holder explicitly before and after each module. These declarations do not claim a reset was executed in this inspection. [11]
+
+
+Anchor: `PROCESS_MUTABLE_STATES` [10]
+
+
+Anchor: `PROCESS_MUTABLE_STATES` [3]
+
+
+Anchor: `PROCESS_MUTABLE_STATES` [9]
+
+- Retired at the fifth freeze d59c3493: mcp/test_support/agents_remember_test_support/testing/global_state.py::PROCESS_MUTABLE_STATES - the bytes it recorded now occur 3 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.

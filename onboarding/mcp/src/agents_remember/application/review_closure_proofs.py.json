@@ -1,0 +1,23 @@
+{
+  "path": "mcp/src/agents_remember/application/review_closure_proofs.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "ClosureProofStore keeps each closure with its witnesses and layout digests rather than alone.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0c6500dcc307c8b462979486fa4971f27adba67a",
+            "content": "sha256:0347b058e333f1f0e738d67ba3d5bbd80e1ccd57b07c817d7b04b51e790dc2db",
+            "locator": {
+              "kind": "symbol",
+              "name": "ClosureProofStore"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

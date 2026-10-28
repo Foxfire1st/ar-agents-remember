@@ -30,13 +30,15 @@ This is current-source interpretation of the A9 candidate, not a new test result
 
 
 
-- Anchor: Optional review/reader collaborators, distinct missing-port capabilities. [12]
+- Anchor: Optional review/reader collaborators, distinct missing-port capabilities.
 
 
 
 
 
-- Anchor: Current tree-child shutdown hook on collaborator and runtime. [13]
+- Anchor: Current tree-child shutdown hook on collaborator and runtime.
+
+Retired at the fifth freeze d59c3493: mcp/src/agents_remember/serving/_app_common.py:162-231 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 662b6266e0e4662acd043c39365bb17969ea6ff9. Retired means the anchor no longer stands, not that the cited subject was deleted [13]
 
 
 
@@ -61,7 +63,7 @@ This is current-source interpretation of the A9 candidate, not a new test result
 
 
 
-- Anchor: Remaining collaborator fields, not the removed compiler/terminal seams. [21]
+- Anchor: Remaining collaborator fields, not the removed compiler/terminal seams.
 
 
 
@@ -73,13 +75,15 @@ This is current-source interpretation of the A9 candidate, not a new test result
 
 
 
-- Anchor: Distinct tree-view port and its shutdown hook. [23]
+
+- Anchor: Distinct tree-view port and its shutdown hook.
 
 
 
 
 
 - Anchor: Path-reader capability separate from task review. [24]
+
 
 
 
@@ -101,10 +105,21 @@ This is current-source interpretation of the A9 candidate, not a new test result
 
 
 
+
 ## Evidence
 
 - Serving lifespan teardown invokes a supplied review_trees_shutdown hook through the startup-owned worker helper before canceling and draining background tasks. [20]
 
-- ServingCollaborators and _ServingRuntime newly declare optional review_memory_root defaulting to None. ReviewMemoryRootPort is only a callable type alias. The projection stream route explicitly passes the runtime field to multiplex_review_memory. That helper skips root resolution for absent review identity, validates supplied selectors, resolves the port and reports missing adapter/root errors. The native worker enforces its own root-shape checks. These bodies do not prove the composition root's full leaf-admission policy. [31]
+- ServingCollaborators and _ServingRuntime newly declare optional review_memory_root defaulting to None. ReviewMemoryRootPort is only a callable type alias. The projection stream route explicitly passes the runtime field to multiplex_review_memory. That helper skips root resolution for absent review identity, validates supplied selectors, resolves the port and reports missing adapter/root errors. The native worker enforces its own root-shape checks. These bodies do not prove the composition root's full leaf-admission policy.
+
+Retired at the fifth freeze d59c3493: mcp/src/agents_remember/serving/_app_routes.py:161-174 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 5f8398b32760677c370e3145add73cfa8388357b; mcp/src/agents_remember/serving/review_memory_watch.py:199-230 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 20624f979e2b89067a3e42019c9611a8e18ff848; mcp/src/agents_remember/serving/review_memory_watch.py:53-84 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 20624f979e2b89067a3e42019c9611a8e18ff848. Retired means the anchor no longer stands, not that the cited subject was deleted [31]
 
 - Composition carries application-tier explainer ports, native host and master-contract resolver without a serving-to-cli/application import; absence is surfaced as a named unavailable route rather than partial composition. [32]
+
+- Retired at the fifth freeze d59c3493: mcp/src/agents_remember/serving/_app_common.py:169-253 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit de5a7adbb21b2f6f22c3ced0eed9dd7189fe93c7; mcp/src/agents_remember/serving/_app_common.py:162-231 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 662b6266e0e4662acd043c39365bb17969ea6ff9; mcp/src/agents_remember/serving/_app_common.py:219-227 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit b52adc8bc0564f6328d3543e48998e9235f1e417. Retired means the anchor no longer stands, not that the cited subject was deleted.
+
+## Retirements
+
+- Retired at the fifth freeze d59c3493: mcp/src/agents_remember/serving/_app_common.py:162-231 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 662b6266e0e4662acd043c39365bb17969ea6ff9. Retired means the anchor no longer stands, not that the cited subject was deleted.
+
+- Retired at the fifth freeze d59c3493: mcp/src/agents_remember/serving/_app_routes.py:161-174 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 5f8398b32760677c370e3145add73cfa8388357b; mcp/src/agents_remember/serving/review_memory_watch.py:199-230 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 20624f979e2b89067a3e42019c9611a8e18ff848; mcp/src/agents_remember/serving/review_memory_watch.py:53-84 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 20624f979e2b89067a3e42019c9611a8e18ff848. Retired means the anchor no longer stands, not that the cited subject was deleted.

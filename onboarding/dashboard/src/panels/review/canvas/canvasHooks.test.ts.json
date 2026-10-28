@@ -1,0 +1,24 @@
+{
+  "path": "dashboard/src/panels/review/canvas/canvasHooks.test.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "An admitted message is preserved for the current frame protocol; a malformed or oversized message is rejected, and both the in-flight count and its bytes are bounded",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d571a6053523b5781965d87aa6d81a9a35c94412",
+            "content": "sha256:d5a02445c0253f903ee7c0457603ef3bbaf8bc06a0025b51c7d2d77131f0d403",
+            "locator": {
+              "end": 12,
+              "kind": "line_range",
+              "start": 12
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

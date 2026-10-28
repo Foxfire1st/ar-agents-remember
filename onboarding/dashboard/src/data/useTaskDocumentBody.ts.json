@@ -80,7 +80,7 @@
   ],
   "references": {
     "3": {
-      "note": "Current TaskPage passes bodyState into ReaderHead, whose change-set controls are unmounted while loading; the deleted lifecycleBody is not its caller.\n\nAnchor: TaskPage and ReaderHead (inclusive ranges)",
+      "note": "Current TaskPage passes bodyState into ReaderHead, whose change-set controls are unmounted while loading; the deleted lifecycleBody is not its caller.\n\nAnchor: TaskPage and ReaderHead (inclusive ranges)\n\nRetired at the fifth freeze d59c3493: dashboard/src/panels/detail-panel/skeletons.tsx:715-732 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 231622b2c7e272e7ca182ec28d3da61ca1749e0f. Retired means the anchor no longer stands, not that the cited subject was deleted.",
       "targets": [
         {
           "anchor": {
@@ -92,19 +92,6 @@
               "start": 85
             },
             "path": "dashboard/src/panels/detail-panel/taskReader.tsx"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "8bdfed60355162c97f6db2e53d9d0ab3543220a5",
-            "content": "sha256:7ec99986e821c1d335a0476c94f836c45ed14f73cd3751f1c1de703aee711803",
-            "locator": {
-              "end": 732,
-              "kind": "line_range",
-              "start": 715
-            },
-            "path": "dashboard/src/panels/detail-panel/skeletons.tsx"
           },
           "kind": "code"
         }

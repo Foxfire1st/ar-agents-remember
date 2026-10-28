@@ -99,4 +99,6 @@ No meaningful cross-repo references found.
 - OpenWorkCount suppresses loading/undefined values, renders a separate open/all-answered span otherwise and follows supplied optional unexplainedOpen even on a refused intent answer; it is not a MEMORY acceptance grade. [9]
 
 - A closed leaf's entry opens the page's own default, so a landed leaf reaches the comparison it delivered rather than its last recorded number; the summary read, the count label and the one-control shape are unchanged. [10]
-- The leaf-wide view names the leaf's highest recorded number and the delivered notice beside the comparison it resolved. [11]
+- The leaf-wide view names the leaf's highest recorded number and the delivered notice beside the comparison it resolved. 
+
+- Retired at the fifth freeze d59c3493: mcp/src/agents_remember/application/review_tree_knowledge.py::_view - the bytes it recorded now occur 16 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.

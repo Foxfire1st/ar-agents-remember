@@ -79,7 +79,9 @@ No relevant domain documentation was found.
 
 ### Repo-Internal References
 
-- The change-set bar suite retains the exact generation-bound master series entry and compact Intent review controls: a closed leaf's control supplies review: {} — the page's own default, which for a landed leaf is the delivered pair — and explicitly has no review-subject picker, even when knowledge is unavailable; a live leaf supplies the same review: {} and the closed one alone is labelled (recorded), leaving subject selection to the reviewer. The series click carries the published code/memory endpoints and digest. These cases do not exercise complete-catalogue traversal or provide a complete-catalogue picker. Complete-catalogue traversal remains reviewer-owned, not a picker exercised by these cases. [1]
+- The change-set bar suite retains the exact generation-bound master series entry and compact Intent review controls: a closed leaf's control supplies review: {} — the page's own default, which for a landed leaf is the delivered pair — and explicitly has no review-subject picker, even when knowledge is unavailable; a live leaf supplies the same review: {} and the closed one alone is labelled (recorded), leaving subject selection to the reviewer.
+
+Retired at the fifth freeze d59c3493: dashboard/src/panels/detail-panel/changeSetBar.test.tsx:276-368 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 231622b2c7e272e7ca182ec28d3da61ca1749e0f. Retired means the anchor no longer stands, not that the cited subject was deleted [1]
 
 ### Cross-Repo References
 
@@ -108,3 +110,7 @@ cases that measure it:
 
 No live-leaf case changed: the working change-set and the live review entry are exactly what they
 were.
+
+## Retirements
+
+- Retired at the fifth freeze d59c3493: dashboard/src/panels/detail-panel/changeSetBar.test.tsx:276-368 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 231622b2c7e272e7ca182ec28d3da61ca1749e0f. Retired means the anchor no longer stands, not that the cited subject was deleted.

@@ -1,0 +1,23 @@
+{
+  "path": "mcp/tests/test_review_frame_usage_scalar.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The frame's held reservations are counted in the scalar, which matches the detailed listing's held list",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b50f25161ab2448426b035501db1612070f2c63a",
+            "content": "sha256:7a64fb8e066cb781c527e294020236d79edb0a3f88d957218911cb533581eaa4",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_scalar_counts_revisions_metadata_and_live_reservations"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

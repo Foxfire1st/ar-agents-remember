@@ -93,8 +93,10 @@ and its answers and errors are the same.
 - The metadata table of a packet. [20]
 - The requirement owner calls the packet owner and carries its refusal back. [21]
 - A packet link retargeted outside the task and back is recorded by its resolve row; outside, no packet byte is read or recorded. [22]
-- A packet changed and restored while it is read, and a link retargeted during the read, are recorded under the link's own path. [23]
+- A packet changed and restored while it is read, and a link retargeted during the read, are recorded under the link's own path. 
 
 - One confined packet read records caller and resolved-file byte identity; invalid UTF-8 receives a named task-intent refusal. [24]
 
 - Intent-review answer/agreement fields are added to the exhaustive normative allowlists; leaf construction still explicitly supplies TaskIntentV1 slots without intentReview, unlike the master dictionary projection. [25]
+
+- Retired at the fifth freeze d59c3493: mcp/tests/test_reviewer_worklist_reads.py::_packet_reads - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.

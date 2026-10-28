@@ -163,7 +163,7 @@ No configured live documentation source was available for this pass.
 - Whether the store holds a blob; a Git failure is a `CodeReadError`, never absent (R3-2). [36]
 
 - A line range mapped from its recorded blob; an unknown blob has no mapping. [38]
-- The mechanical unique match of definition 6. [39]
+- The mechanical unique match of definition 6. 
 - A changed path's hunks, shared by the gate and the lane (moved from `_path_hunks`). [40]
 - The two callers: the gate's linkage and the lane's classification. [41]
 - Hunk parsing and line-range mapping cases. [42]
@@ -177,7 +177,9 @@ through Git.
 No cross-repo boundary is crossed by this file.
 
 
-- The two trees, the object reader, hunk cache and independent B/C symlink-mode caches. [20]
+- The two trees, the object reader, hunk cache and independent B/C symlink-mode caches.
+
+Retired at the fifth freeze d59c3493: mcp/src/agents_remember/application/knowledge_worklist/code.py:198-402 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit e40c314ca55305f7e4334b4e8e16a10297f6f175. Retired means the anchor no longer stands, not that the cited subject was deleted [20]
 
 
 - Where a locator lands in a blob; selected-side symlink symbols refuse before extraction. [23]
@@ -187,3 +189,9 @@ No cross-repo boundary is crossed by this file.
 
 
 - Current source delta inspected statically: Fix side-aware symlink resolution/caches and entry-blob maps; retain diff and range rules. [44]
+
+- Retired at the fifth freeze d59c3493: mcp/src/agents_remember/application/knowledge_worklist/code.py::unique_binder - the bytes it recorded now occur 5 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.
+
+## Retirements
+
+- Retired at the fifth freeze d59c3493: mcp/src/agents_remember/application/knowledge_worklist/code.py:198-402 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit e40c314ca55305f7e4334b4e8e16a10297f6f175. Retired means the anchor no longer stands, not that the cited subject was deleted.

@@ -16,4 +16,6 @@ The display retains the newest fifty requests and an omitted count. Capacity and
 
 ## Evidence
 
-- The source owns the documented investigation, identity or request boundary. [1]
+- The source owns the documented investigation, identity or request boundary.
+
+- Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/investigator_receipts.py:1-218 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit a1b7c898ab896c00cffe68d31efb643b65538e06. Retired means the anchor no longer stands, not that the cited subject was deleted.

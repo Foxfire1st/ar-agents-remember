@@ -22,5 +22,6 @@ This is the inspected source contract, not an execution certificate. Parent and 
 - Display server gate verdicts, never derive them: `itemAnswerText` owns the described branch. [2]
 - Display server gate verdicts, never derive them: `openCount` owns the described branch. [3]
 - Display server gate verdicts, never derive them: `worklistAnswer` owns the described branch. [4]
-- Display server gate verdicts, never derive them: `fileAnswers` owns the described branch. [5]
+- Display server gate verdicts, never derive them: `fileAnswers` owns the described branch. 
 
+- Retired at the fifth freeze d59c3493: dashboard/src/panels/review/worklistState.ts::fileAnswers - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.

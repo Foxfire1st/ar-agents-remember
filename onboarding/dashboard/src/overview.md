@@ -14,7 +14,7 @@ The current product bar is Chats, Operations, Knowledge and File Viewer. Chats i
 
 Current Chats mounts the native Role Chats pane and embedded Paseo chat. The host owns chat navigation. The dashboard owns the role-launch controls, task/workspace/request addressing and report presentation around that frame. The older FEUI/CHATS structured-conversation architecture remains important inherited intent and child-route history; it is not the present shell's full-page Chats composition.
 
-This overview governs the bounded `cockpit/` and `dev/` slices as well as the source-root composition. Focused children own transport/state, panel composition and visual grammar. The removed dashboard/e2e-chats route supplies no current suite or child overview.
+This overview governs the bounded `cockpit/` and `dev/` slices as well as the source-root composition. Focused children own transport/state, panel composition and visual grammar. The review's explainer column (`explainer/`) has no child overview of its own and is governed here; what governs its look is the memory layer's design text — [`system/TREATMENT.md`](../../../system/TREATMENT.md) and [`system/TECHNIQUES.md`](../../../system/TECHNIQUES.md) for the explanation pages, [`system/DESIGN.md`](../../../system/DESIGN.md) for the dashboard around them, and [`system/design-guidelines.md`](../../../system/design-guidelines.md) for the process. The removed dashboard/e2e-chats route supplies no current suite or child overview.
 
 ## Hot Path Summary
 
@@ -338,13 +338,41 @@ Current review ownership is anchored by ReviewSurface/PageReading; the separate 
 
 ## Current Behavior
 
-Opening the role launcher asks for fresh choices and disables Start while that answer is pending. A saved-only response can show timestamped choices during the wait, with explicit saved provenance rather than an invented failure. Settled parts distinguish fresh, saved and unknown data. Known offerings reject unsupported selections; unknown inventory keeps configured values unchecked. Host IDs and labels match without case, and a catalog refresh does not erase configured overrides. The catalog notice describes choices and provenance; it does not grant permissions or alter execution results.
+Opening the role launcher asks for fresh choices. While that answer is pending nothing is shown until it settles, unless Paseo's saved answer for the same scope is on show: the saved choices then carry this page's remembered role defaults, are selectable, and a start may use them (MIK-R215). Provenance stays explicit — saved, fresh or unknown — rather than an invented failure. The component that used to hold that display was deleted; the behaviour now lives in `cockpit/roleChatExecutionView.ts` and `cockpit/RoleChatsView.tsx`, and its catalog cases in `cockpit/role-launcher/RoleLauncher.catalog.test.tsx`. Settled parts distinguish fresh, saved and unknown data. Known offerings reject unsupported selections; unknown inventory keeps configured values unchecked. Host IDs and labels match without case, and a catalog refresh does not erase configured overrides. The catalog notice describes choices and provenance; it does not grant permissions or alter execution results.
 
 the task entry's page reads now end with the task they belong to. The change-set bar, the changed-intent summary and the full task body each own an `AbortController` and abort on selection change/unmount; `abortableRead.ts` distinguishes an aborted read from a failure, and the stores keep a same-key live joiner alive. The mounted chat case `document-chat/newChatWhilePageReadPending.test.tsx` holds four abandoned page producers and still dispatches and binds the selected leaf's chat before any of them completes. No lifecycle or task-state authority moves into the browser.
 
 **L184.** The tray and the detail panels now show a served provider limit: its word with the time left where a display clock exists, the bare word with the exact reset in hover and accessible name where none does, and one scan in the test tree forbids computing a limit anywhere in application source.
 
 ## Evidence
+
+- Both master readers now ask for the per-leaf breakdown.
+
+- Shell navigation, persistent layers and shared drivers. 
+
+- **The client's inventory types and the request that omits the selector when there is none.** 
+
+- **The shared client this route deliberately does not change, whose throw-on-non-2xx is right for the other serving routes.** 
+
+- Async conditions share one hang guard.
+
+- Review transport reads route-state bodies irrespective of HTTP status
+
+- Conditional reads retain only admitted successful bytes and guard abort/identity before publishing a response. 
+
+- The four-entry product bar and retained product layers remain distinct from injected views; review URL state can override ordinary opening view. 
+
+- Question/read identity and memory-input epoch prevent superseded responses from display or inappropriate unshown reuse; live-watch notification is separately wired by the surface. 
+
+- Responsive shell style and the actual narrow railed/takeover consumers are separate from reviewer-local scroll ownership. 
+
+Retired at the fifth freeze d59c3493: dashboard/src/data/useReviewCatalogue.ts:93-144 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 43b247d5bf30d4191f8fd5eb4dea9cfd72e4258d; dashboard/src/data/review.ts:649-673 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 4a0442d62eb842661a3dd04686c376d0f0dbc61f. Retired means the anchor no longer stands, not that the cited subject was deleted. 
+
+Anchor: `useReviewCatalogue` `DocChangeSetBar` 
+
+Anchor: `useReviewCatalogue` `DocChangeSetBar` 
+
+- Retired at the fifth freeze d59c3493: dashboard/src/test/setup.ts:4-7 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit cf5ef507f2542d6cd2f9d37a6b72148d3b91b340; dashboard/src/panels/changeset/ChangeSetViewer.tsx:222-222 - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one; dashboard/src/data/reviewTransport.ts:162-190 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit d21bc8a6c5d30e2394a72d056bff216b766407c2; dashboard/src/data/files.ts::FilesApiError - the bytes it recorded now occur 4 times in the file, so no single home can be named and it is not given to the likelier one; dashboard/src/panels/review/ReviewReadCycle.ts::memoryWatchActions - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one; dashboard/src/cockpit/Cockpit.tsx::ChangeSetTakeover - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one; dashboard/src/data/files.ts::getJson - cited by 2 anchors in this card; the name occurs 6 times in that file, so no single home can be named and it is not given to the likelier one; dashboard/src/data/conditionalReads.ts::read - the symbol it cited now occurs 11 times in the file, so no single home can be named and it is not given to the likelier one; dashboard/src/cockpit/role-launcher/RoleCatalogStatus.tsx - the component was deleted at the fifth freeze d59c3493; its behaviour now lives in dashboard/src/cockpit/roleChatExecutionView.ts and dashboard/src/cockpit/RoleChatsView.tsx, which the card cites; dashboard/src/cockpit/role-launcher/RoleCatalogStatus.test.tsx - the test was deleted at the fifth freeze d59c3493 with the component it exercised; the catalog cases live in dashboard/src/cockpit/role-launcher/RoleLauncher.catalog.test.tsx. Retired means the anchor no longer stands, not that the cited subject was deleted.
 
 - Master validation in placement applies only to documented subTasks; other listed kinds retain list placement under existing identity/cycle guards, not a kind-rejection or own-master-validation rule. [73]
 
@@ -359,10 +387,6 @@ the task entry's page reads now end with the task they belong to. The change-set
 - The retained Knowledge layer renders the reader beside the path tree; the former transient ViewBody case is gone. [3]
 
 - The header count itself. **Withdrawn in part:** this row cited a tooltip that stated *what* the count counts ("task entries this list carries"), and the L33 revert removed that tooltip with the landed-leaf change, so the h2 is again a bare `Tasks · {count}`. A reader must not read the number as "task entries" on the strength of this card. [4]
-
-- Both master readers now ask for the per-leaf breakdown. [5]
-
-- Shell navigation, persistent layers and shared drivers. [6]
 
 - Fixture-honesty sweep, its five rules, its scanned roots, and the unmarked-module blind spot. The third anchor is the guard header's own question, quoted as it is written; this row previously carried a paraphrase that occurs in no file. [11]
 
@@ -380,11 +404,7 @@ the task entry's page reads now end with the task they belong to. The change-set
 
 - **The review target whose selector is optional, with presence marking a review and an empty object meaning the task context.** [26]
 
-- **The client's inventory types and the request that omits the selector when there is none.** [28]
-
 - The case that measures the browser half: no subject offered, and the target is still a review. [30]
-
-- **The shared client this route deliberately does not change, whose throw-on-non-2xx is right for the other serving routes.** [31]
 
 - **The review route's own decode: the body is the answer whatever the status.** [32]
 
@@ -396,8 +416,6 @@ the task entry's page reads now end with the task they belong to. The change-set
 
 - The route's embedded chat frame. [36]
 
-- Async conditions share one hang guard. [37]
-
 - Test and hook completion share hang guards. [38]
 
 - Bounded source guard scans dashboard test and support files. [39]
@@ -408,14 +426,11 @@ the task entry's page reads now end with the task they belong to. The change-set
 
 - Native execution results are scoped by document identity and, for selections using request receipts, by the active request ID. Stored/saved receipts are selected only under those scopes. [46]
 
-
 - Frame descriptor activation and explicit retry are separate from retained frame identity [47]
 
 - Every leaf's review entry opens the page's own default comparison — the live candidate for a live leaf, the delivered recorded pair for a closed one — independently of summary availability [48]
 
 - Intent and attribution counts have separate partial/unavailable treatment [49]
-
-- Review transport reads route-state bodies irrespective of HTTP status [50]
 
 > Retained earlier citation wording: - Historical Operations admission: physical live-worktree filtering is superseded by the complete served TaskEntry forest; this retained reference is not current task-membership evidence. [52]
 
@@ -457,20 +472,11 @@ the task entry's page reads now end with the task they belong to. The change-set
 
 - Retained body responses are keyed by the revision actually returned, not the requested revision. [68]
 
-- Conditional reads retain only admitted successful bytes and guard abort/identity before publishing a response. [69]
-
 - Task fixtures copy sampled identity/content fields while explicitly choosing planned stage and empty collections/count defaults. [70]
 
 - Topology maps the bound task through shared status presentation; an unbound enclosure is idle. [71]
 
 - A configured Step up action stays in the shared wrapping launcher and sends canonical selection plus a reason, not preview permission overrides. The original request identity and trimmed reason survive saved taskless requests, remount and retry. A stepped-up receipt labels base mode, notes and feature chips non-applied and reports the request's selected model plus its step-up source — the host's observed model replaces it only when the host reports an applied model — with unreported mode/features explicit. This adds no chat navigation or acceptance authority. [72]
-
-
-- The four-entry product bar and retained product layers remain distinct from injected views; review URL state can override ordinary opening view. [44]
-
-- Question/read identity and memory-input epoch prevent superseded responses from display or inappropriate unshown reuse; live-watch notification is separately wired by the surface. [51]
-
-- Responsive shell style and the actual narrow railed/takeover consumers are separate from reviewer-local scroll ownership. [74]
 
 - Current shell owners for the review page account. [75]
 
@@ -534,5 +540,14 @@ the task entry's page reads now end with the task they belong to. The change-set
 
 - The explainer’s exact-task header menu is the explicit way to choose another chat in that column. Explain and the matching first-request signal open a fixed-target form; its Send starts the build, while ordinary opening only reads state. A leaf document in active Operations also exposes the explainer’s Retire control, including from a cold state read. In Review, the top-line Review \| Explanation switch replaces only the reading body, while the tree and shared chat remain outside it; a planned page shows intended effects, and supplied explainer grades remain inference in the shared tree and reading order. [96]
 
-- Launcher choices carry pending, saved and unknown provenance without granting execution authority. [97]
-- Saved previews, unknown selections and known-empty answers have separate component cases. [98]
+- Launcher provenance and its saved, unknown and known-empty catalog cases are stated and cited in the child cards this route points at; the deleted component carries no current claim here. [96]
+
+Anchor: `ReviewSourceInventory` `intentReview` [28]
+
+Anchor: `VIEWS` `MainLayers` `useCockpitShellState` [44]
+
+Anchor: `startRead` `memoryWatchActions` `useSurface` [51]
+
+Anchor: `CockpitShell` [6]
+
+Anchor: `shell` `RailedBody` `ChangeSetTakeover` [74]

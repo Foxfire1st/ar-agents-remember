@@ -26,7 +26,9 @@ These are source-inspected mounted checks with the inputs and replacements named
 
 - Captured reply routing and explicit catalogue/initial-question adapters. [12]
 - Captured reply routing and explicit catalogue/initial-question adapters. [13]
-- Excerpt hunk marks and one comparison-pinned classification of the notes file. [14]
+- Excerpt hunk marks and one comparison-pinned classification of the notes file.
 - Occurrence selection, excerpt origin Back restoration and held-return reading-block focus. [15]
 - Unreadable roster, named partial target and before-absence versus after-unknown cases. [16]
 - Originating notes-card excerpt lookup replaces the removed openFullFile helper. [17]
+
+- Retired at the fifth freeze d59c3493: dashboard/src/panels/review/ReviewSurface.markers.test.tsx:118-137 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 10e466b17feee2530c06b2670fef496c6c9e755f. Retired means the anchor no longer stands, not that the cited subject was deleted.

@@ -22,3 +22,5 @@ The moved watcher's measurement: what a notice names, when no notice is earned, 
 - The case `test_a_planned_moved_notice_follows_the_builds_declared_contract_without_fallback` protects a planned notice following the declared master contract with no capture, message or record. [3]
 - The case `test_no_path_sends_holds_or_writes_a_message` protects the watcher never sending, holding or writing a message. [4]
 - The case `test_the_capture_writes_objects_and_no_ref_or_record` protects a capture writing objects and nothing that would claim a comparison. [5]
+
+

@@ -3,25 +3,8 @@
   "proves": [
     {
       "anchor": {
-        "blob": "1e26ae87bf8252d6f29f35eae651c1f6b2e42098",
-        "content": "sha256:6716b49cdabed83a948a65770a3fbb3900ab7b2e4d5647ece08ad37de5a1cb10",
-        "locator": {
-          "kind": "symbol",
-          "name": "test_f03_r182_a_read_started_at_the_object_end_is_a_measured_absence"
-        }
-      },
-      "facet": "A read started at the object's end offset, one past its last existing byte, returns the measured range absence, with no text, no returned range and no continuation.",
-      "id": "PRF-0ETG2M",
-      "invariant": "INV-18QNN3",
-      "origin": {
-        "handoffEntry": "MIK-R182@v1",
-        "leaf": "260928-MIK-L180"
-      }
-    },
-    {
-      "anchor": {
-        "blob": "1e26ae87bf8252d6f29f35eae651c1f6b2e42098",
-        "content": "sha256:cfb6cc1ec6fbb132e89b44c43e4c3adfc4e6cd12874567419ea922e36cf21636",
+        "blob": "5c95125cbe06e217f9644af4a4e9089462e97099",
+        "content": "sha256:ec43ab143d01494e85c8d46743e31d4563f0e5e78dcf503d79b663973b7a55bb",
         "locator": {
           "kind": "symbol",
           "name": "test_f03_r182_a_start_line_one_past_the_object_end_is_a_measured_absence"
@@ -37,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "1e26ae87bf8252d6f29f35eae651c1f6b2e42098",
+        "blob": "5c95125cbe06e217f9644af4a4e9089462e97099",
         "content": "sha256:0c460407e0245581362a5e5ba8d37368af18320b74dbe6821d294a3d55b8c432",
         "locator": {
           "kind": "symbol",
@@ -46,40 +29,6 @@
       },
       "facet": "A six-line object read at lines 1-100 is present at line 6 with zero remaining, no continuation and no limit, and a detail that names that line.",
       "id": "PRF-3D3S3E",
-      "invariant": "INV-18QNN3",
-      "origin": {
-        "handoffEntry": "MIK-R182@v1",
-        "leaf": "260928-MIK-L180"
-      }
-    },
-    {
-      "anchor": {
-        "blob": "1e26ae87bf8252d6f29f35eae651c1f6b2e42098",
-        "content": "sha256:6ac8bf8177083ccb0f18080b67c822abfed12d0a0d1f2a34d4585cd939306011",
-        "locator": {
-          "kind": "symbol",
-          "name": "test_f03_r182_a_page_past_the_object_end_stops_at_its_last_line"
-        }
-      },
-      "facet": "The 450-line object's first page states the page bound's 50 known remaining lines, the second page is present at line 450, and the pages of the continuations rebuild the object's exact bytes.",
-      "id": "PRF-DRNJ0W",
-      "invariant": "INV-18QNN3",
-      "origin": {
-        "handoffEntry": "MIK-R182@v1",
-        "leaf": "260928-MIK-L180"
-      }
-    },
-    {
-      "anchor": {
-        "blob": "1e26ae87bf8252d6f29f35eae651c1f6b2e42098",
-        "content": "sha256:a551da815fb45e60b16470f30cbb9c884a77435f43b8d2d15eabccd70889df0d",
-        "locator": {
-          "kind": "symbol",
-          "name": "test_f03_r182_an_unmeasured_remainder_is_unknown_not_the_requested_difference"
-        }
-      },
-      "facet": "A 64-byte window that never reached the object's end reports its remainder as unknown with no count.",
-      "id": "PRF-T32TJH",
       "invariant": "INV-18QNN3",
       "origin": {
         "handoffEntry": "MIK-R182@v1",
@@ -94,59 +43,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1e26ae87bf8252d6f29f35eae651c1f6b2e42098",
+            "blob": "5c95125cbe06e217f9644af4a4e9089462e97099",
             "content": "sha256:0c460407e0245581362a5e5ba8d37368af18320b74dbe6821d294a3d55b8c432",
             "locator": {
               "kind": "symbol",
               "name": "test_f03_r182_a_read_past_the_object_end_is_present_at_its_last_line"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "2": {
-      "note": "A page that reaches the object's end is present at its last line, and the pages of its continuations rebuild the object's bytes.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "1e26ae87bf8252d6f29f35eae651c1f6b2e42098",
-            "content": "sha256:6ac8bf8177083ccb0f18080b67c822abfed12d0a0d1f2a34d4585cd939306011",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_f03_r182_a_page_past_the_object_end_stops_at_its_last_line"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "3": {
-      "note": "A byte-capped window that never measured the end states its remainder as unknown, not as the requested difference.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "1e26ae87bf8252d6f29f35eae651c1f6b2e42098",
-            "content": "sha256:a551da815fb45e60b16470f30cbb9c884a77435f43b8d2d15eabccd70889df0d",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_f03_r182_an_unmeasured_remainder_is_unknown_not_the_requested_difference"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "4": {
-      "note": "A read started at the object's end gives the measured range absence, not an empty line.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "1e26ae87bf8252d6f29f35eae651c1f6b2e42098",
-            "content": "sha256:6716b49cdabed83a948a65770a3fbb3900ab7b2e4d5647ece08ad37de5a1cb10",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_f03_r182_a_read_started_at_the_object_end_is_a_measured_absence"
             }
           },
           "kind": "test"
@@ -158,8 +59,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1e26ae87bf8252d6f29f35eae651c1f6b2e42098",
-            "content": "sha256:cfb6cc1ec6fbb132e89b44c43e4c3adfc4e6cd12874567419ea922e36cf21636",
+            "blob": "5c95125cbe06e217f9644af4a4e9089462e97099",
+            "content": "sha256:ec43ab143d01494e85c8d46743e31d4563f0e5e78dcf503d79b663973b7a55bb",
             "locator": {
               "kind": "symbol",
               "name": "test_f03_r182_a_start_line_one_past_the_object_end_is_a_measured_absence"

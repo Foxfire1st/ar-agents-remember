@@ -79,10 +79,16 @@ No configured domain documentation could be checked.
 - The shipped capture owner that derives the resolved source side after the sync. [41]
 
 
-- The durable-evidence pair every record is published and read back through. [42]
+- The durable-evidence pair every record is published and read back through.
+
+Retired at the fifth freeze d59c3493: mcp/src/agents_remember/application/review_sync_rebinding.py:280-285 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 473ad8242bb4c22bdabed5d5253767350381eb3e. Retired means the anchor no longer stands, not that the cited subject was deleted [42]
 
 - **The reopen owner's fifth channel, which is what makes this record a production read rather than a dead one.** [43]
 
 ### Cross-Repo References
 
 No cross-repository contract is established by this file.
+
+## Retirements
+
+- Retired at the fifth freeze d59c3493: mcp/src/agents_remember/application/review_sync_rebinding.py:280-285 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 473ad8242bb4c22bdabed5d5253767350381eb3e. Retired means the anchor no longer stands, not that the cited subject was deleted.

@@ -120,7 +120,9 @@ Architect, Orchestrator and Manager may start Investigator only within their adm
 ## Supported successor's operative seams
 
 
-- After ordinary recipient resolution succeeds, the prologue constructs the filed identity from shared attachment/link/store primitives before that resolved-recipient delivery; unfinished-start holding returns through _hold_for_unresolved before _file_message and has no filed identity. [12]
+- After ordinary recipient resolution succeeds, the prologue constructs the filed identity from shared attachment/link/store primitives before that resolved-recipient delivery; unfinished-start holding returns through _hold_for_unresolved before _file_message and has no filed identity.
+
+Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/paseo_role_tools.py:211-264 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit cfc2f235c62d76d292e999f651b5b689d85c4f55; mcp/src/agents_remember/cli/paseo_role_tools.py:267-329 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit e4bbcd82e3d6205d277d58a07867a72af3663d2c; mcp/src/agents_remember/cli/paseo_role_tools.py:214-267 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit cfc2f235c62d76d292e999f651b5b689d85c4f55; mcp/src/agents_remember/cli/paseo_role_tools.py:270-332 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit e4bbcd82e3d6205d277d58a07867a72af3663d2c; mcp/src/agents_remember/cli/paseo_role_tools.py:208-261 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit ac1eb07f71a35c1093e2e3ee45e585db52f3138c; mcp/src/agents_remember/cli/paseo_role_tools.py:264-326 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit e4bbcd82e3d6205d277d58a07867a72af3663d2c. Retired means the anchor no longer stands, not that the cited subject was deleted [12]
 
 - Unheld native dispatch owns capacity/send/resume and invokes shared long-reply filing after its wait. [13]
 
@@ -128,7 +130,9 @@ Architect, Orchestrator and Manager may start Investigator only within their adm
 
 
 
-- The public message call uses the imported recipient-resolution owner, report collection, prologue filing and held/native dispatch. Leaf revival compares current grant-sensitive canonical task/contract scope before bridge use. [11]
+- The public message call uses the imported recipient-resolution owner, report collection, prologue filing and held/native dispatch. Leaf revival compares current grant-sensitive canonical task/contract scope before bridge use.
+
+Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/paseo_role_tools.py:243-305 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 621ae79abc7e21eec42484b9ffc9a4da811a9a80. Retired means the anchor no longer stands, not that the cited subject was deleted [11]
 
 
 
@@ -155,3 +159,9 @@ Architect, Orchestrator and Manager may start Investigator only within their adm
 
 
 - The start carries the client harness; configured-host choices are checked before dispatch, while a cold root defers binding and validation until after preparation. [20]
+
+## Retirements
+
+- Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/paseo_role_tools.py:243-305 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 621ae79abc7e21eec42484b9ffc9a4da811a9a80. Retired means the anchor no longer stands, not that the cited subject was deleted.
+
+- Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/paseo_role_tools.py:211-264 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit cfc2f235c62d76d292e999f651b5b689d85c4f55; mcp/src/agents_remember/cli/paseo_role_tools.py:267-329 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit e4bbcd82e3d6205d277d58a07867a72af3663d2c; mcp/src/agents_remember/cli/paseo_role_tools.py:214-267 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit cfc2f235c62d76d292e999f651b5b689d85c4f55; mcp/src/agents_remember/cli/paseo_role_tools.py:270-332 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit e4bbcd82e3d6205d277d58a07867a72af3663d2c; mcp/src/agents_remember/cli/paseo_role_tools.py:208-261 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit ac1eb07f71a35c1093e2e3ee45e585db52f3138c; mcp/src/agents_remember/cli/paseo_role_tools.py:264-326 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit e4bbcd82e3d6205d277d58a07867a72af3663d2c. Retired means the anchor no longer stands, not that the cited subject was deleted.

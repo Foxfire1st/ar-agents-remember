@@ -98,6 +98,26 @@ The following reference captions describe the prior source epoch. They are prese
 
 ## Evidence
 
+- The endpoint the comparison call reaches, with no path among its parameters.
+
+- A superseded request is aborted and only the newer answer is shown.
+
+- Review reads share shallow state-bearing-body transport recognition across HTTP statuses.
+
+- Entry catalogue refusal does not remove task-context review reachability.
+
+- The change-set read requests the page's own comparison — `chosen ?? resolved`, the number the page chose else the default the frame's limitations name (`useChangeSet.ts:120-124`) — and enables the leaf-wide trees read on that number (`:129`); a chosen number other than the resolved default is marked older rather than replacing the frame.
+
+- Changed-file navigation uses ChangeList in the existing comparison viewer; review openers bind its recorded comparison and retain a named unavailable-range answer. 
+
+- Whole-file review navigation opens the existing viewer on the recorded comparison; absent range authority produces comparison_not_recorded rather than a substituted source-content expansion. 
+
+- The leaf-wide trees answer carries the highest recorded number and the delivered notice beside the comparison it resolved. 
+
+Retired at the fifth freeze d59c3493: dashboard/src/data/reviewTrees.ts:474-562 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 10e466b17feee2530c06b2670fef496c6c9e755f. Retired means the anchor no longer stands, not that the cited subject was deleted. 
+
+- Retired at the fifth freeze d59c3493: dashboard/src/data/review.ts:435-460 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit c5a74a85af20a8fb48cc44f59de7e926d589d3fc; dashboard/src/panels/review/reading/useChangeSet.ts:188-202 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 10e466b17feee2530c06b2670fef496c6c9e755f; dashboard/src/data/reviewTrees.supersede.test.ts:40-67 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit c702e1c2e111ec6e07c6b68a78a5d05add8aceab; dashboard/src/data/reviewTransport.ts:162-183 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit d21bc8a6c5d30e2394a72d056bff216b766407c2; dashboard/src/data/review.ts:649-673 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 4a0442d62eb842661a3dd04686c376d0f0dbc61f; dashboard/src/data/reviewTrees.ts::mergedCards - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 10e466b17feee2530c06b2670fef496c6c9e755f; dashboard/src/panels/review/ReviewSurface.tsx::useReviewChangePage - the symbol it cited now occurs 2 times in the file, so no single home can be named and it is not given to the likelier one; dashboard/src/panels/review/ReviewSurface.tsx::ReviewChangeOverlay - the symbol it cited now occurs 2 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.
+
 - The store owns task-document resources and separate bounded conditional-read caches for change-set lists, files and intent summaries. [108]
 
 - The mirrored change types and the entry's optional facts. [1]
@@ -136,8 +156,6 @@ The following reference captions describe the prior source epoch. They are prese
 
 - **The entry read's typed envelope, whose refused form carries a refusal and no entries rather than throwing, and whose answered form carries the labelled totals of the whole catalogue.** [32]
 
-- The endpoint the comparison call reaches, with no path among its parameters. [33]
-
 - The closed selector union, the two kinds the server admits. [34]
 
 - The no-store-mutation boundary, stated in the module header. [35]
@@ -168,8 +186,6 @@ The following reference captions describe the prior source epoch. They are prese
 
 - An incoming link may carry the record its history-row source is about. [59]
 
-- A superseded request is aborted and only the newer answer is shown. [71]
-
 - Loading stays shown during the retries. [72]
 
 - Unavailable is shown only after the bounded number of retries. [73]
@@ -198,11 +214,7 @@ The following reference captions describe the prior source epoch. They are prese
 
 - driftSegments reads snapshot counts, orders known classifications before additional supplied classes and computes rounded percentages. EngineRoomImpl separately consumes stable process and ledger slices; this is source ownership, not fresh executed visual proof. [84]
 
-- Review reads share shallow state-bearing-body transport recognition across HTTP statuses. [86]
-
 - Present paging excludes records and allows only knowledge without a cursor. [87]
-
-- Entry catalogue refusal does not remove task-context review reachability. [88]
 
 - Refresh empty-string normalization is specific, rather than universal query normalization. [89]
 
@@ -256,11 +268,7 @@ The following reference captions describe the prior source epoch. They are prese
 
 - The leaf-wide hook: abort on cleanup, sequence number, retry, and the enabled flag. [69]
 
-- The change-set read requests the page's own comparison — `chosen ?? resolved`, the number the page chose else the default the frame's limitations name (`useChangeSet.ts:120-124`) — and enables the leaf-wide trees read on that number (`:129`); a chosen number other than the resolved default is marked older rather than replacing the frame. [70]
-
 - Leaf-wide tree retry is bounded and its hook aborts/sequence-guards superseded reads; the card-entry hook shares in-flight acquisitions without aborting them, suppresses callbacks after cleanup and returns only its current question's cached answer. [103]
-
-- Changed-file navigation uses ChangeList in the existing comparison viewer; review openers bind its recorded comparison and retain a named unavailable-range answer. [42]
 
 - The retained Python source-content model declares six side states; its side validator requires text for present, permits text only for textual states, and keeps absent objects and textless truncation invalid. [43]
 
@@ -271,8 +279,6 @@ The following reference captions describe the prior source epoch. They are prese
 - The retained source-content endpoint serializes its port result and preserves unwired and incomplete-generation responses; the removed dashboard source-content client is historical. [46]
 
 - The retained backend request requires task context, path and both exact tree identities; the response assembly echoes the requested pair. [47]
-
-- Whole-file review navigation opens the existing viewer on the recorded comparison; absent range authority produces comparison_not_recorded rather than a substituted source-content expansion. [48]
 
 - The retained backend reader distinguishes an absent endpoint entry from an unreadable lookup, then classifies an entry's kind before its bytes. [49]
 
@@ -294,6 +300,6 @@ The following reference captions describe the prior source epoch. They are prese
 
 - The catalogue call carries task context and an optional recorded comparison number; it requests navigation identities without a subject selector. [30]
 
-- The leaf-wide trees answer carries the highest recorded number and the delivered notice beside the comparison it resolved. [116]
-
 - The existing state stream also carries review.explainer.moved. Its listener ignores a stopped or replaced EventSource, marks a current event alive and publishes the supplied move or clear notice. The moved subscriber set is keyed by the exact repository, master and leaf; it opens no connection or model turn. ReviewSurface owns whether the notice offers Update or renews the deterministic live reads. [117]
+
+- Changed-file navigation uses ChangeList in the existing comparison viewer; review openers bind its recorded comparison and retain a named unavailable-range answer. [42]

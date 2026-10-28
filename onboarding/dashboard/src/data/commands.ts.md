@@ -17,8 +17,10 @@ Changing bindings belongs to the keymap; changing what a step does belongs to tr
 ## Evidence
 
 
-- Reviewer help joins effective bindings to command labels. [2]
+- Reviewer help joins effective bindings to command labels.
 
 - Source test rejects a chord whose commandId is not registered; not an executed result. [3]
 
 - Command records contain identity and label only, including the two review traversal names. [1]
+
+- Retired at the fifth freeze d59c3493: dashboard/src/panels/review/ReviewKeys.tsx:33-75 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 20624f979e2b89067a3e42019c9611a8e18ff848. Retired means the anchor no longer stands, not that the cited subject was deleted.

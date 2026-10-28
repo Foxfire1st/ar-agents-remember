@@ -53,8 +53,8 @@ The cache location, the reuse-or-build rule and eviction.
 
 - Lookups recompute the key and reuse or build. [4]
 
-- Eviction by age, then size, keeping the file just built. [5]
-- Reuse only for the matching key and format; build through a temporary file and a rename. [6]
+- Eviction by age, then size, keeping the file just built. 
+- Reuse only for the matching key and format; build through a temporary file and a rename. 
 - The cache cases: reuse, rebuild and deletion, eviction, and the working-tree refusal. [7]
 - An edited working tree is never answered from the previous content. [8]
 
@@ -64,6 +64,10 @@ No meaningful cross-repo references found: the index reads one memory tree, addr
 
 No cross-repo boundary is crossed by this file.
 
-- The cache contract: where, what, freshness, eviction, and that deleting it loses nothing.  Anchor: "Deleting the directory, or any file in it, loses nothing" [1]
+- The cache contract: where, what, freshness, eviction, and that deleting it loses nothing.  Anchor: "Deleting the directory, or any file in it, loses nothing"
 - The chosen location and eviction defaults. [2]
-- A location inside a Git working tree is refused before anything is created.  Anchor: "inside a Git working tree" [3]
+- A location inside a Git working tree is refused before anything is created.  Anchor: "inside a Git working tree" 
+
+- Reuse only for the matching key and format; build through a temporary file and a rename. [6]
+
+- Retired at the fifth freeze d59c3493: mcp/src/agents_remember/memory/knowledge_index/cache.py:1-19 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit ffd043f1354e94a7dcf435e10b4b7224495cbcba; mcp/src/agents_remember/memory/knowledge_index/cache.py::KnowledgeIndexCache - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one; mcp/src/agents_remember/memory/knowledge_index/cache.py::evict - the bytes it recorded now occur 3 times in the file, so no single home can be named and it is not given to the likelier one; mcp/src/agents_remember/memory/knowledge_index/cache.py::_build - the bytes it recorded now occur 3 times in the file, so no single home can be named and it is not given to the likelier one; mcp/src/agents_remember/memory/knowledge_index/cache.py::_reuse - the bytes it recorded now occur 3 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.

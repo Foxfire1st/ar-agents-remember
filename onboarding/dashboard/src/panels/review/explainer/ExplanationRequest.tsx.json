@@ -1,0 +1,40 @@
+{
+  "path": "dashboard/src/panels/review/explainer/ExplanationRequest.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "A build is sent for the comparison the reviewer is looking at, with the request body naming that scope.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6f1da0a038a8e8dad438f85a6d17254b3447c00d",
+            "content": "sha256:11dba97e50b5ab88a2c9c0bf53452558a9c60fafd0999b8415dc3803df963c81",
+            "locator": {
+              "kind": "symbol",
+              "name": "requestBody"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Cancelling reaches the build this form started, rather than leaving it running unwatched.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6f1da0a038a8e8dad438f85a6d17254b3447c00d",
+            "content": "sha256:216ffda50c7e2373a4271606a1910a429231e86726fd6c290a859824e70ba610",
+            "locator": {
+              "end": 48,
+              "kind": "line_range",
+              "start": 48
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

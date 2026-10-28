@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "04ee3e4c857823f9fd8e3953c9d6cd80f0bf7363",
-        "content": "sha256:32509e5fcc6cd551bfc35dcf1c9481af78a7f73c16d7563638cd17f9c9410e5d",
+        "blob": "25a62ce8cd26fc5756a36e67dab66aecf362adae",
+        "content": "sha256:335539ef0a4371d1f6225cd7787bed8640a1e660f591e826312915df4901d8f1",
         "locator": {
           "kind": "file"
         }
@@ -20,8 +20,8 @@
     },
     {
       "anchor": {
-        "blob": "04ee3e4c857823f9fd8e3953c9d6cd80f0bf7363",
-        "content": "sha256:a3c92b6eff8a71d6c0b69923d9b6af5f30c93eb78560049a025199a352adfb8c",
+        "blob": "25a62ce8cd26fc5756a36e67dab66aecf362adae",
+        "content": "sha256:d10f8d609ff66668285da439880b9b2b15b13a3308e2f34506cd4451b8295b24",
         "locator": {
           "kind": "symbol",
           "name": "ReceiptWalk"
@@ -38,7 +38,7 @@
     },
     {
       "anchor": {
-        "blob": "04ee3e4c857823f9fd8e3953c9d6cd80f0bf7363",
+        "blob": "25a62ce8cd26fc5756a36e67dab66aecf362adae",
         "content": "sha256:415034a8c55f43eb013e6342602e6dc3461372e3d65b3a51c85645723375637b",
         "locator": {
           "kind": "symbol",

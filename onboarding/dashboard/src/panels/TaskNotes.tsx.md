@@ -121,4 +121,6 @@ A same-origin view over the local notes API; nothing crosses repositories.
 - References resolve through one request; reports read newest-first capped at twenty. [9]
 
 
-- Reference resolution keeps the old joined-text key and reads the current list through useEffectEvent, without treating array identity as another trigger. \ [10]
+- Reference resolution keeps the old joined-text key and reads the current list through useEffectEvent, without treating array identity as another trigger. \ 
+
+

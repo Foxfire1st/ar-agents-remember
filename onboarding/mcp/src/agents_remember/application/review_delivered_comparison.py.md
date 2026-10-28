@@ -48,4 +48,6 @@ Reading the module establishes no review, curation or semantic acceptance of the
 - The default resolution is the delivered pair, or the source-only legacy review for unconverted memory. [8]
 - The notice answers delivered, differs or unavailable and names the delivered identities. [9]
 - The one line names the shown number and the delivered trees, and no verdict about a historical count. [10]
-- The highest recorded number is a separate fact from the resolved comparison. [11]
+- The highest recorded number is a separate fact from the resolved comparison. 
+
+- Retired at the fifth freeze d59c3493: mcp/src/agents_remember/application/review_delivered_comparison.py::recorded_latest - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.

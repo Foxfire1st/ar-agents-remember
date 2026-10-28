@@ -73,15 +73,15 @@ After the nested gate-key construction recording closes, `leaf_view_key` replays
 
 ## Evidence
 
-- The two bounds. [5]
+- The two bounds.
 - The key's fields. [6]
 
 - The key is built with the task lookup's reads recorded; several conditions give no key. [7]
 
-- A kept view is served only when young enough and unchanged, and its rows are replayed. [8]
+- A kept view is served only when young enough and unchanged, and its rows are replayed. 
 - A read with other bytes or an unnamed read is a move; a named document that was not read is not. [9]
 - Task reads are the JSON files directly in the task folder. [10]
-- Failed, absent or moved inputs keep the parts out of the memo. [11]
+- Failed, absent or moved inputs keep the parts out of the memo. 
 
 - The recheck repeats selections before it reads bytes. [12]
 
@@ -97,6 +97,8 @@ After the nested gate-key construction recording closes, `leaf_view_key` replays
 
 
 - The kept value includes the worklist and its optional code-change facts; the actual caller propagates those facts. [18]
-- Caller admission requires readable/settled/decided/facts inputs, then remember separately checks failed/absent/moved observations. [19]
+- Caller admission requires readable/settled/decided/facts inputs, then remember separately checks failed/absent/moved observations.
 - LeafViewParts has worklist and optional code_changes, not worklist alone. [20]
 - Nested gate-key observations are replayed before the absent-key return. [21]
+
+- Retired at the fifth freeze d59c3493: mcp/src/agents_remember/application/review_tree_knowledge.py:301-359 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit c702e1c2e111ec6e07c6b68a78a5d05add8aceab; mcp/src/agents_remember/application/review_leaf_view_memo.py:218-227 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 9547923129aa0b49d6b4f93a758f4fce70233745; mcp/src/agents_remember/application/review_leaf_view_memo.py:97-98 - the region it cited is not in the file at the candidate and no re-point was possible; mcp/src/agents_remember/application/review_leaf_view_memo.py::remembered - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one; mcp/src/agents_remember/application/review_leaf_view_memo.py::remember - the bytes it recorded now occur 17 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.

@@ -25,12 +25,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d60acd0e4be738b9a9a33eb9f333fa6c53974f2b",
+            "blob": "79366831b556a7cf512bc53d396ac55a43734666",
             "content": "sha256:f1db24f3991040c0972bce367f03946a9c1e572104143b564792425e4c6972e9",
             "locator": {
-              "end": 170,
+              "end": 174,
               "kind": "line_range",
-              "start": 170
+              "start": 174
             },
             "path": "mcp/src/agents_remember/serving/app.py"
           },
@@ -38,12 +38,12 @@
         },
         {
           "anchor": {
-            "blob": "d60acd0e4be738b9a9a33eb9f333fa6c53974f2b",
+            "blob": "79366831b556a7cf512bc53d396ac55a43734666",
             "content": "sha256:27f6d2dab206e2569bfd327f5b82ed3e30f9cbb7ba0ae424701d962facad308f",
             "locator": {
-              "end": 216,
+              "end": 219,
               "kind": "line_range",
-              "start": 216
+              "start": 219
             },
             "path": "mcp/src/agents_remember/serving/app.py"
           },
@@ -164,8 +164,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "396f581aa13672645248ee4b089011b1ca781c1b",
-            "content": "sha256:a1e25e610b89188c8b8ee96186b79376eb9947c515ae118097c7dee9e073a595",
+            "blob": "c3404824cd6df7779b6ca88e482e08e63727d831",
+            "content": "sha256:3efba6b9c78b72fd1ff131c6f8f274da87a1ece4c8b1ea4715235f9ad48f5162",
             "locator": {
               "kind": "file"
             },
@@ -175,31 +175,14 @@
         },
         {
           "anchor": {
-            "blob": "396f581aa13672645248ee4b089011b1ca781c1b",
-            "content": "sha256:d86ba7e7cf7f74c5b8c19d590f8b1d4fabb228ba633bfef6358e894af37792b5",
+            "blob": "c3404824cd6df7779b6ca88e482e08e63727d831",
+            "content": "sha256:04f26229530e4c97131639b9f2e1201764c9b59bc84295f052a13b9bc75d9228",
             "locator": {
-              "kind": "symbol",
-              "name": "iter_leaf_enclosure_contracts"
+              "end": 353,
+              "kind": "line_range",
+              "start": 337
             },
             "path": "mcp/src/agents_remember/tasks/task_paths.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "8": {
-      "note": "The `WorktreeContract` (`code_worktree`, `worktree_group`, `cleanup`) + `load_contract`/`ContractError`.  Anchor: \"coordination.worktree_group\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "c9e2847f64ca428bdc799c8173b43aa736f4b0e9",
-            "content": "sha256:e1a34064026cc365304c132cb521e64e16a7c18f2b46777311eb9ac5cf545991",
-            "locator": {
-              "end": 1215,
-              "kind": "line_range",
-              "start": 97
-            },
-            "path": "mcp/src/agents_remember/worktrees/worktree_contract.py"
           },
           "kind": "code"
         }

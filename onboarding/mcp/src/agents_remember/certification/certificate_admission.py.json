@@ -2,15 +2,6 @@
   "path": "mcp/src/agents_remember/certification/certificate_admission.py",
   "realizes": [],
   "references": {
-    "1": {
-      "note": "The R21 packet requires admission to compile and freeze direct-input identities before Gate 1.\n\nAnchor: \"Required Behavior\"; \"Admission compiles and freezes direct-input identities before Gate 1\"",
-      "targets": [
-        {
-          "kind": "unresolved",
-          "text": "ar-coordination/tasks/agents-remember/260831_closeout-certification-reform/requirements/CCR-R21-v2-content-addressed-phase-certificates.md:77-91"
-        }
-      ]
-    },
     "2": {
       "note": "The admission transaction freezes the dual plan authorities and derives gate identities.",
       "targets": [

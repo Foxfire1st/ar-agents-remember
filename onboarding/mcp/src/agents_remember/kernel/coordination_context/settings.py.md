@@ -45,4 +45,6 @@ is recorded and the answers are the same. The text is decoded as UTF-8 with `\r\
 
 - The absent JSON sibling and the consumed Markdown bytes are recorded; a JSON file that appears is a change. [5]
 
-- A settings file changed and restored while a worklist child reads it is seen with the bytes actually parsed. [6]
+- A settings file changed and restored while a worklist child reads it is seen with the bytes actually parsed. 
+
+- Retired at the fifth freeze d59c3493: mcp/tests/test_reviewer_worklist_reads.py::_settings_reads - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.

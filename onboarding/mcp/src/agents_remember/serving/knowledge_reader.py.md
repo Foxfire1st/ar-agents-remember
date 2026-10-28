@@ -59,10 +59,15 @@ No configured live documentation source was available for this pass.
 - The route path. [2]
 - One reader question, and the port type. [3]
 - The GET handler: 503 unwired, 400 for `invalid-request`, 200 otherwise. [4]
-- The collaborator field that carries the port. [5]
+- The collaborator field that carries the port. 
 - The registration in `create_app`. [6]
 - The route cases: every view served, 503 unwired, nothing written; bad requests 400. [7]
 
 ### Cross-Repo References
 
 No cross-repo boundary is crossed by this file.
+
+
+Anchor: "knowledge_reader: KnowledgeReaderPort" [5]
+
+- Retired at the fifth freeze d59c3493: mcp/src/agents_remember/serving/_app_common.py:232-232 - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.

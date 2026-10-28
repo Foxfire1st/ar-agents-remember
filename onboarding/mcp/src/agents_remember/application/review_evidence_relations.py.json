@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "f394fe143b685b2634d3c4f7f227a617d744606e",
-        "content": "sha256:f4a1b7e303b0a2f7174f7e8278f8eb370c590c9d8375ebea143987c2f3723ff8",
+        "blob": "7a2c07ba6cece48743d17acf991ff4010cd79e36",
+        "content": "sha256:4999a24ee0d81b0ecbd7ec9e8cf23a90455a7147eb469a344808bcc92e308560",
         "locator": {
           "kind": "symbol",
           "name": "_Relations"
@@ -21,8 +21,8 @@
     },
     {
       "anchor": {
-        "blob": "f394fe143b685b2634d3c4f7f227a617d744606e",
-        "content": "sha256:f4a1b7e303b0a2f7174f7e8278f8eb370c590c9d8375ebea143987c2f3723ff8",
+        "blob": "7a2c07ba6cece48743d17acf991ff4010cd79e36",
+        "content": "sha256:4999a24ee0d81b0ecbd7ec9e8cf23a90455a7147eb469a344808bcc92e308560",
         "locator": {
           "kind": "symbol",
           "name": "_Relations"
@@ -39,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "f394fe143b685b2634d3c4f7f227a617d744606e",
+        "blob": "7a2c07ba6cece48743d17acf991ff4010cd79e36",
         "content": "sha256:32f534b54c5e3103deb3d576b27c24e4b2d0ac59b5a9727c1a3e0f3c53daf106",
         "locator": {
           "kind": "symbol",
@@ -57,44 +57,12 @@
     }
   ],
   "references": {
-    "1": {
-      "note": "A relationship edge is reported from the owner that records it, with its own semantics.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f394fe143b685b2634d3c4f7f227a617d744606e",
-            "content": "sha256:0084de45d1161f9315030a62b3a47b747345aac24279f9833115558fcc427f6e",
-            "locator": {
-              "kind": "symbol",
-              "name": "read_bound_relationships"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "2": {
-      "note": "A resolved target must carry the requested native identifier; a filename alone is only a locator.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f394fe143b685b2634d3c4f7f227a617d744606e",
-            "content": "sha256:f4a1b7e303b0a2f7174f7e8278f8eb370c590c9d8375ebea143987c2f3723ff8",
-            "locator": {
-              "kind": "symbol",
-              "name": "_Relations"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "3": {
       "note": "A memory file this build does not read is invalid rather than absent.",
       "targets": [
         {
           "anchor": {
-            "blob": "f394fe143b685b2634d3c4f7f227a617d744606e",
+            "blob": "7a2c07ba6cece48743d17acf991ff4010cd79e36",
             "content": "sha256:32f534b54c5e3103deb3d576b27c24e4b2d0ac59b5a9727c1a3e0f3c53daf106",
             "locator": {
               "kind": "symbol",

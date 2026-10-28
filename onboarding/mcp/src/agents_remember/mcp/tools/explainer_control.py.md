@@ -22,8 +22,10 @@ The payload builder behind `explainer_control`: the architect's Update and Retir
 - An unknown action is refused before any lookup or mutation [1]
 - Update and Retire are accepted only from the seat the record names, and a missing record accepts none [2]
 - A claim writes the record first and then moves the master's held reports [3]
-- A timeout or unknown outcome is classified as uncertainty rather than a failure to report [5]
+- A timeout or unknown outcome is classified as uncertainty rather than a failure to report
 
 - A withdrawn report follows delivery, held, unknown or fallback handling; if no backing file exists, fallback attempts to restore the previous held custody [4]
 
 - Provider-limit, unopened, unfinished, permission, waiting-message and active-turn conditions are checked before a send attempt [6]
+
+- Retired at the fifth freeze d59c3493: mcp/src/agents_remember/mcp/tools/explainer_control.py:508-518 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 5f8398b32760677c370e3145add73cfa8388357b. Retired means the anchor no longer stands, not that the cited subject was deleted.

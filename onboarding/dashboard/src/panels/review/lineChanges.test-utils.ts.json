@@ -1,0 +1,23 @@
+{
+  "path": "dashboard/src/panels/review/lineChanges.test-utils.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Line-count expectations come from the producer's measurement rather than a number typed into the test.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d38a592b859ca88a3412aed3e321d560be177675",
+            "content": "sha256:b41cc7d72b121170f11a5219d7b9690e7aec8d9ab7412122a1d316fdfbbf19f2",
+            "locator": {
+              "kind": "symbol",
+              "name": "serveMeasuredTrees"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

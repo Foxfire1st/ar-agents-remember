@@ -23,6 +23,8 @@ The serving surface: the panel reads a saved page and starts nothing, one explic
 - The case `test_a_session_serves_its_own_document_and_assets_only` protects this behaviour. [2]
 - The case `test_revocation_ends_the_channel_without_an_effect` protects this behaviour. [3]
 
-- The shipped record is inert without the built frontend and must prove the available built frontend. [4]
+- The shipped record is inert without the built frontend and must prove the available built frontend. 
 
 - Omitted ASGI ports are normalized without admitting a foreign host or mismatching port. [5]
+
+- Retired at the fifth freeze d59c3493: mcp/tests/test_canvas_serving.py::test_the_shipped_record_matches_the_available_frontend - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 47f69f11afb982e318006209036aed22f1792976. Retired means the anchor no longer stands, not that the cited subject was deleted.

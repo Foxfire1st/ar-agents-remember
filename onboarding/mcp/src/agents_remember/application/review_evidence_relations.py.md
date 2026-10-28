@@ -15,6 +15,8 @@ Follows the recorded relationships of one memory file at a bound side, through t
 
 ## Evidence
 
-- A relationship edge is reported from the owner that records it, with its own semantics. [1]
-- A resolved target must carry the requested native identifier; a filename alone is only a locator. [2]
+- A relationship edge is reported from the owner that records it, with its own semantics. 
+- A resolved target must carry the requested native identifier; a filename alone is only a locator. 
 - A memory file this build does not read is invalid rather than absent. [3]
+
+- Retired at the fifth freeze d59c3493: mcp/src/agents_remember/application/review_evidence_relations.py::read_bound_relationships - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one; mcp/src/agents_remember/application/review_evidence_relations.py::_Relations - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.

@@ -25,12 +25,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "339dffc9c6794b5fe29fe6980e9e45603b344a09",
+            "blob": "67c87a3b0e1d5b34eb51f2aba8689fd6a294542a",
             "content": "sha256:d06ce541acf90c504d7660da1f36e48d22966953e189444c8d53edc24d7d0872",
             "locator": {
-              "end": 2719,
+              "end": 2878,
               "kind": "line_range",
-              "start": 2701
+              "start": 2860
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -139,12 +139,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5276cd9583d9a33d9094edac37d82b768491aed9",
+            "blob": "00c924961061dbdffe62be2587500d221bd22c23",
             "content": "sha256:9e9c992f7dd9525c9b9a27f054bc9266542c4580bdeb8ce762a620bb0d0b25d9",
             "locator": {
-              "end": 191,
+              "end": 200,
               "kind": "line_range",
-              "start": 191
+              "start": 200
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -152,12 +152,12 @@
         },
         {
           "anchor": {
-            "blob": "5276cd9583d9a33d9094edac37d82b768491aed9",
+            "blob": "00c924961061dbdffe62be2587500d221bd22c23",
             "content": "sha256:b7b1484eb0fa1e1fb3744e4db9c6a29b9026c328733a26254ee84d07cde416e7",
             "locator": {
-              "end": 207,
+              "end": 216,
               "kind": "line_range",
-              "start": 207
+              "start": 216
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -165,12 +165,12 @@
         },
         {
           "anchor": {
-            "blob": "5276cd9583d9a33d9094edac37d82b768491aed9",
+            "blob": "00c924961061dbdffe62be2587500d221bd22c23",
             "content": "sha256:7ed6d2ea1379d55b9a055c3301c21735631cf3baf1f8d8f8533ab8e8043731c2",
             "locator": {
-              "end": 176,
+              "end": 185,
               "kind": "line_range",
-              "start": 176
+              "start": 185
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },

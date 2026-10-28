@@ -253,8 +253,8 @@ change-set reads now run on the route family's own bounded admission: `changeset
 
 **L184.** The product reads the host's usage report at a stamped turn end, keeps one limit file, and holds a limited recipient's message; the bridge carries the snapshot's second step and the usage read, and the CLI reaches the limit reader through an injected port.
 
-- **Retained historical source account — superseded by the current route account:** The skill states the three master rules. \[253]
-- The skill states the three master rules. \[253]
+- **Retained historical source account — superseded by the current route account:** The skill states the three master rules. \
+- The skill states the three master rules. \
 
 ## Retained historical wording
 
@@ -381,391 +381,764 @@ Full memory-quality source reading is per check and bounded, with Git owning the
 
 
 ## Evidence
+
+- **Retained historical source account — superseded by the current route account:** The on-demand cards read at the route. 
+
+- **Retained historical source account — superseded by the current route account:** The cache that refuses any location inside a Git working tree. 
+
+- **Retained historical source account — superseded by the current route account:** Current four-tree capture 
+
+- **Retained historical source account — superseded by the current route account:** Exact tree endpoint composition, not candidate directories 
+
+- The shared collaborators bind the knowledge-review and entry-list adapters, beside the source-content, tree, intent-summary and knowledge-reader ports.
+
+- **Retained historical source account — superseded by the current route account:** The one command line of a child, in its own session. 
+
+- It supplies the owner's shutdown to the app.
+
+- **Retained historical source account — superseded by the current route account:** This source owns the route’s Investigator selection or execution boundary.
+
+- **Retained historical source account — superseded by the current route account:** Read revalidation checks selections first and excludes failed observations from memo reuse 
+
+- **Retained historical source account — superseded by the current route account:** Worklist limits count shared computations and deliberately omit an arbitrary result-byte cap
+
+- Exact tree endpoint composition, not candidate directories 
+
+- The shared collaborators bind the knowledge-review and entry-list ports and the listed source-content port.
+
+- The composition root binds distinct knowledge-review and entry-list ports through their application adapters.
+
+- The one command line of a child, in its own session. 
+
+- The composition root creates the reviewer worklist process owner.
+
+- This source owns the route’s Investigator selection or execution boundary.
+
+- The catalogue receives the exact optional comparison number and composes developer routes with the review leaf-memory resolver.
+
+- Developer delivery retains ordered holds and attempted IDs, resumes eligible closed recipients and attributes immediate drain results to this message.
+
+- Settings-selected launch requests same-build bound task server, preapproved surface and capsule system prompt without initial prompt; this is source wiring, not fresh native suppression acceptance.
+
+- The shared collaborators bind the knowledge-review and entry-list ports and the listed source-content port.
+
+- The Paseo launch adapter builds the repeatable role-launch call with the chosen agent identity, workspace, first-message data, parent identity and this build's task tool-server binding.
+
+- Chooses ordinary versus launched-explainer registration; invalid bindings refuse and dispatch checks launched-seat identity. 
+
+- Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/dashboard.py:240-242 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit de5a7adbb21b2f6f22c3ced0eed9dd7189fe93c7; mcp/src/agents_remember/cli/dashboard.py:144-153 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 3104b78bb309a8e1a912503557adb08599b52ef0; mcp/src/agents_remember/cli/investigator_receipts.py:1-218 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit a1b7c898ab896c00cffe68d31efb643b65538e06; mcp/src/agents_remember/kernel/reviewer_worklist_process.py:1-26 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit c702e1c2e111ec6e07c6b68a78a5d05add8aceab; mcp/src/agents_remember/kernel/reviewer_worklist_process.py:53-75 - the region it cited is not in the file at the candidate and no re-point was possible; mcp/src/agents_remember/cli/developer_delivery.py:98-279 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 10e466b17feee2530c06b2670fef496c6c9e755f; mcp/src/agents_remember/serving/review_trees.py::ReviewTreesSelection - the bytes it recorded now occur 4 times in the file, so no single home can be named and it is not given to the likelier one; mcp/src/agents_remember/memory/knowledge_index/cache.py::KnowledgeIndexCache - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one; mcp/src/agents_remember/application/review_tree_comparison.py::live_review_trees - the bytes it recorded now occur 3 times in the file, so no single home can be named and it is not given to the likelier one; mcp/src/agents_remember/kernel/reviewer_worklist_process.py::_launch - the bytes it recorded now occur 5 times in the file, so no single home can be named and it is not given to the likelier one; mcp/src/agents_remember/kernel/recorded_reads.py::changed_observations - the bytes it recorded now occur 3 times in the file, so no single home can be named and it is not given to the likelier one; mcp/src/agents_remember/mcp/server.py::create_server - the bytes it recorded now occur 3 times in the file, so no single home can be named and it is not given to the likelier one; mcp/src/agents_remember/cli/dashboard_review_reads.py:205-223 - moved-destination-unverified at the fifth freeze d59c3493: the module became mcp/src/agents_remember/application/review_answer_preparation.py, but this region is not present there verbatim, so the destination is named and the carry is not claimed; mcp/src/agents_remember/cli/dashboard_review_reads.py:266-287 - moved-not-carried at the fifth freeze d59c3493: the module became mcp/src/agents_remember/application/review_answer_preparation.py, where this region is present verbatim, and the anchor was not carried with it. Retired means the anchor no longer stands, not that the cited subject was deleted.
+
+## Retirements
+
+- Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/paseo_launch.py:396-430 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 26057e5040a55f0a6f900433839b5113ee89b48f. Retired means the anchor no longer stands, not that the cited subject was deleted.
+
+- Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/dashboard.py:252-252 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit c702e1c2e111ec6e07c6b68a78a5d05add8aceab. Retired means the anchor no longer stands, not that the cited subject was deleted.
+
+- Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/dashboard.py:240-242 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit de5a7adbb21b2f6f22c3ced0eed9dd7189fe93c7. Retired means the anchor no longer stands, not that the cited subject was deleted.
+
+- Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/dashboard.py:226-248 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit ce4594231eac0b18950d22d6aee0d3b9f3eba3db. Retired means the anchor no longer stands, not that the cited subject was deleted.
+
+- Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/dashboard.py:240-242 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit de5a7adbb21b2f6f22c3ced0eed9dd7189fe93c7; mcp/src/agents_remember/cli/dashboard.py:155-195 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 3104b78bb309a8e1a912503557adb08599b52ef0. Retired means the anchor no longer stands, not that the cited subject was deleted.
+
+- Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/dashboard.py:150-150 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 3104b78bb309a8e1a912503557adb08599b52ef0. Retired means the anchor no longer stands, not that the cited subject was deleted.
+
+- Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/paseo_explainer_host.py:345-447 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 5f8398b32760677c370e3145add73cfa8388357b. Retired means the anchor no longer stands, not that the cited subject was deleted.
+
 - Synchronous dispatch keeps validation and orders writes through worker completion. [389]
+
 - Citation preview adds modes to the existing declaration. [390]
+
 - Raw Git output prevents newline normalization from collapsing pathname identities. [340]
+
 - A changed candidate tree needs the bounded clean-sync proof at the door. [341]
+
 - Master validation in placement applies only to documented subTasks; other listed kinds retain list placement under existing identity/cycle guards, not a kind-rejection or own-master-validation rule. [336]
+
 - Explicit task preparation follows deterministic bounded archive successors and returns only a validated live workspace; folder opening stays separate. [323]
+
 - **Retained historical source account — superseded by the current route account:** The facts and where they come from. [1]
+
 - **Retained historical source account — superseded by the current route account:** Their vocabulary. [2]
+
 - **Retained historical source account — superseded by the current route account:** The gate over a leaf's exact candidate. [3]
+
 - **Retained historical source account — superseded by the current route account:** Each kind's own predicate, registered beside the kind. [4]
+
 - **Retained historical source account — superseded by the current route account:** The worktree layer's probes, the unbound refusal and the closeout's own write. [5]
+
 - **Retained historical source account — superseded by the current route account:** The history-row rule over every file's subjects and the leaf's own file. [6]
+
 - **Retained historical source account — superseded by the current route account:** The one rule, named for its three writers. [8]
+
 - **Retained historical source account — superseded by the current route account:** The finalizer dispatches a leaf with a named master to _named_parent and a leaf without that name to _folder_parent. [9]
+
 - **Retained historical source account — superseded by the current route account:** The placement guard. [10]
+
 - **Retained historical source account — superseded by the current route account:** The one classification and where it differs from the gate. [11]
+
 - **Retained historical source account — superseded by the current route account:** The three reads. [12]
+
 - **Retained historical source account — superseded by the current route account:** The lane's shapes and validators. [13]
+
 - **Retained historical source account — superseded by the current route account:** The worklist registrant: what is read, the triggers, route and superseded rulings, the items. [14]
+
 - **Retained historical source account — superseded by the current route account:** The writer's rows, the refresh and its link states. [15]
+
 - **Retained historical source account — superseded by the current route account:** The manifest lookup. [16]
+
 - **Retained historical source account — superseded by the current route account:** The reorder guard, registered on import. [17]
+
 - **Retained historical source account — superseded by the current route account:** The reader's entry point: one read-only question per call, the envelope and the typed failures. [19]
+
 - **Retained historical source account — superseded by the current route account:** The route: 200 for typed answers, 400 for invalid requests, 503 unwired. [20]
+
 - **Retained historical source account — superseded by the current route account:** The Knowledge area's own statement. [21]
+
 - **Retained historical source account — superseded by the current route account:** The entries module statement. [22]
-- **Retained historical source account — superseded by the current route account:** The on-demand cards read at the route. [23]
+
 - **Retained historical source account — superseded by the current route account:** The card component's own statement. [24]
+
 - **Retained historical source account — superseded by the current route account:** The chain module statement. [25]
+
 - **Retained historical source account — superseded by the current route account:** The compact row with its family seed. [26]
+
 - **Retained historical source account — superseded by the current route account:** The family seed on the mounted read. [27]
+
 - **Retained historical source account — superseded by the current route account:** The two kinds and the coverage lookup. [29]
+
 - **Retained historical source account — superseded by the current route account:** The subjects and the gate predicate. [30]
+
 - **Retained historical source account — superseded by the current route account:** The four-tree comparison, pinned and recorded. [33]
+
 - **Retained historical source account — superseded by the current route account:** The four-tree comparison, pinned and recorded. [269]
+
 - **Retained historical source account — superseded by the current route account:** The archive hook's identity sources and confinement. [34]
+
 - **Retained historical source account — superseded by the current route account:** The tree view route. [35]
+
 - **Retained historical source account — superseded by the current route account:** The index format bump for the seal fix. [36]
+
 - **Retained historical source account — superseded by the current route account:** The content rules and derived reads. [38]
+
 - **Retained historical source account — superseded by the current route account:** The five registered decision rules. [39]
 > Retained earlier citation wording: - **Retained historical source account — superseded by the current route account:** The owner resolves each requirement endpoint; unresolved is reported. [40] [270]
+
 - **Retained historical source account — superseded by the current route account:** The writer reports each endpoint of the records the run touched. [41]
+
 - **Retained historical source account — superseded by the current route account:** A decision is never an export. [42]
+
 - **Retained historical source account — superseded by the current route account:** The leaf package statement. [43]
+
 - **Retained historical source account — superseded by the current route account:** A path seed of the published-intent block is read as a leaf. [44]
+
 - **Retained historical source account — superseded by the current route account:** The mounted read's leaf response, of a path or (since MIK-R05) a family seed. [317]
+
 - **Retained historical source account — superseded by the current route account:** The module statement. [46]
+
 - **Retained historical source account — superseded by the current route account:** The stored predicate for the gate. [47]
+
 - **Retained historical source account — superseded by the current route account:** Step 6 of the run. [48]
+
 - **Retained historical source account — superseded by the current route account:** The admission rule's module statement. [49]
+
 - The four registered admission rules. [50]
+
 - **Retained historical source account — superseded by the current route account:** The export test. [51]
+
 - **Retained historical source account — superseded by the current route account:** The reconciliation module statement. [52]
+
 - **Retained historical source account — superseded by the current route account:** The declaration on the task document. [53]
+
 - **Retained historical source account — superseded by the current route account:** The planned row. [54]
+
 - **Retained historical source account — superseded by the current route account:** The task owner's strict lookup and decision answer. [55]
+
 - **Retained historical source account — superseded by the current route account:** The paging package statement. [56]
+
 - **Retained historical source account — superseded by the current route account:** The mounted read's converted-tree branch. [57]
+
 - **Retained historical source account — superseded by the current route account:** The whole-block bound of the published-intent block. [58]
+
 - **Retained historical source account — superseded by the current route account:** The rule's statement for converted trees. [59]
+
 - The gate chooser both enforcement points share (since MIK-R09 a probe Git cannot answer is an incomplete side). [61]
+
 - **Retained historical source account — superseded by the current route account:** The package statement. [62]
+
 - **Retained historical source account — superseded by the current route account:** The `knowledge_read` surface, reached through the per-page extras since MIK-R02. [63]
+
 - **Retained historical source account — superseded by the current route account:** The published-intent surface. [64]
+
 - The leaf imports the single recomputation owner from leaf_completion: it computes and persists the worklist, names Git failures as git and turns other failures into an incomplete result; leaf_worklist can receive the gate's exact candidate trees. [65]
+
 - **Retained historical source account — superseded by the current route account:** The CLI subcommand. [66]
+
 - **Retained historical source account — superseded by the current route account:** The two readings of proofs. [67]
+
 - **Retained historical source account — superseded by the current route account:** The package template copy's proof guidance. [68]
+
 - **Retained historical source account — superseded by the current route account:** The umbrella registers the conversion command. [69]
+
 - **Retained historical source account — superseded by the current route account:** The command converts, validates before writing, and commits nothing. [70]
+
 - **Retained historical source account — superseded by the current route account:** The pinned conversion-format version. [71]
+
 - **Retained historical source account — superseded by the current route account:** A raw three-way line merge that writes nothing. [72]
+
 - **Retained historical source account — superseded by the current route account:** A new memory repository is created with the layout marker. [73]
+
 - **Retained historical source account — superseded by the current route account:** A converted overview's sidecar feeds the hot-path hints. [74]
+
 - **Retained historical source account — superseded by the current route account:** The rule 9 refusal for a leaf whose official line is converted and, since L37, the cutover lock for every other unconverted tree. [75]
+
 - **Retained historical source account — superseded by the current route account:** The subcommand registration. [80]
+
 - **Retained historical source account — superseded by the current route account:** Inventory pins the baseline and writes through the census writer. [81]
+
 - **Retained historical source account — superseded by the current route account:** The writer refuses an unconverted memory tree. [82] [256]
+
 - **Retained historical source account — superseded by the current route account:** The subcommand registration. [83]
+
 - **Retained historical source account — superseded by the current route account:** The command reads the families and prints them; it writes nothing. [84]
+
 - The seven route rules in the registry. [85]
+
 - **Retained historical source account — superseded by the current route account:** The subcommand registration. [86]
+
 - **Retained historical source account — superseded by the current route account:** The command's report and exit statuses. [87]
+
 - **Retained historical source account — superseded by the current route account:** The one dataset resolution every knowledge read applies. [88]
-- **Retained historical source account — superseded by the current route account:** The cache that refuses any location inside a Git working tree. [89]
+
 - **Retained historical source account — superseded by the current route account:** The subcommand registration. [90]
+
 - **Retained historical source account — superseded by the current route account:** The command's inputs, scope answer and exit statuses. [91]
+
 - **Retained historical source account — superseded by the current route account:** The shared exclusion predicate. [92]
+
 - **Retained historical source account — superseded by the current route account:** The batch blob reader. [93]
+
 - **Retained historical source account — superseded by the current route account:** The format package's own map and its shape-only boundary. [94]
+
 - **Retained historical source account — superseded by the current route account:** The subcommand registration. [95]
+
 - **Retained historical source account — superseded by the current route account:** The command's exit statuses. [96]
+
 - **Retained historical source account — superseded by the current route account:** The template's informational section. [97]
+
 - **Retained historical source account — superseded by the current route account:** The realization admission owner. [100]
+
 - **Retained historical source account — superseded by the current route account:** The package-owned template copy stating the superseding target shape. [102]
+
 - The current review namespace is the derived KnowledgeIndex.repository_id when that index opens; otherwise the requested repository is retained. The receipt/baseline-generation lookup is historical, not a current namespace mechanism. [105]
+
 - **Retained historical source account — superseded by the current route account:** **The seal's omission set, which is why naming a predecessor changes the derived id — the fact behind the carried non-idempotence limitation.** [106]
+
 - **Retained historical source account — superseded by the current route account:** Custody and release remain; creation is retired [118]
+
 - **Retained historical source account — superseded by the current route account:** Exact retained comparison after cleanup/restart/later landing [121]
+
 - **Retained historical source account — superseded by the current route account:** The new module's whole surface, and the rule that a side's state is read rather than inferred from an empty string. [122]
+
 - **Retained historical source account — superseded by the current route account:** **The projection that keeps a present structured value out of the absence slot, and the contract that makes `None` mean absence.** [123]
+
 - The adapter's delegation, with the composition unchanged. [124]
+
 - Retained historical caption, superseded: the served-value change was described as measured through real composition. The current structured-value case explicitly retires its fixture-driven round-trip and retains only helper key-order equality. [322]
+
 - **Retained historical source account — superseded by the current route account:** The added and the removed statement, each keeping its complete available text beside the named absent side. [126]
+
 - **Retained historical source account — superseded by the current route account:** The renderer that decides the four branches from declared state. [127]
+
 - **Retained historical source account — superseded by the current route account:** Published intent selects converted memory and its derived index [128]
+
 - **Retained historical source account — superseded by the current route account:** File-only ingest arguments/dispatch [131]
+
 - Four mounted knowledge operations are registered here: the read, the diff, the integrity check and the write. [133]
+
 - **Retained historical source account — superseded by the current route account:** Read-side index preflight without canonical placement [142]
-- **Retained historical source account — superseded by the current route account:** Current four-tree capture [147]
+
 - **Retained historical source account — superseded by the current route account:** Development commands, budgets, diagnostic metrics and isolation. [150]
+
 - **Retained historical source account — superseded by the current route account:** Certifying publication and accepting consumers. [151]
+
 - **Retained historical source account — superseded by the current route account:** A ledger view is derived from Git and cache write failure is only an availability result. [156]
+
 - **Retained historical source account — superseded by the current route account:** Existing preparation retains actual Git binding and allows a distinct memory content view. [157]
+
 - **Retained historical source account — superseded by the current route account:** Baseline adoption commits memory content and returns a cache observation. Source caption: `adopt_initial_baseline` `memory_content_commit` [158]
+
 - The launch's instruction value: one of exactly two modes, a capsule compiled for the seat or a named refusal. [159]
+
 - **Retained historical source account — superseded by the current route account:** The one workspace rule and the selection that follows it. [273]
 > - **Retained historical source account — superseded by the current route account:** The compiler the port is bound to, including the eve path that reads the admitted workspace back out of the carrier. [161] [274]
+
 - **Retained historical source account — superseded by the current route account:** D13's repair, on the registered operation's own resolution path. [162]
+
 - **Retained historical source account — superseded by the current route account:** The declared legacy exclusion, and the enumeration case that keeps a fourth launch point from appearing silently. [163]
+
 - **Retained historical source account — superseded by the current route account:** Public closeout payload delegates the current task-bound request. [165]
+
 - **Retained historical source account — superseded by the current route account:** The exact binary-wheel pin and the in-file reason tying it to the session build option. [168]
+
 - **Retained historical source account — superseded by the current route account:** The same pin in the requirements manifest. [169]
+
 - **Retained historical source account — superseded by the current route account:** The storage home and the one-way import direction, declared as charter wording only. [170]
+
 - **Retained historical source account — superseded by the current route account:** The storage package's own boundary statement. [171]
+
 - **Retained historical source account — superseded by the current route account:** The one canonical encoder, its policy and its duplicate-key-refusing decoder. [172]
-- **Retained historical source account — superseded by the current route account:** Exact tree endpoint composition, not candidate directories [183]
+
 - **Retained historical source account — superseded by the current route account:** The one route this leaf adds. [188]
+
 - **Retained historical source account — superseded by the current route account:** The GET-only registration. [189]
+
 - **Retained historical source account — superseded by the current route account:** The typed request the query string parses into, with no path among its inputs. [190]
+
 - The port field on the collaborators dataclass, and the rank reason it exists. [191]
+
 - **Retained historical source account — superseded by the current route account:** The registration that reads that port. [192]
+
 - The composition root's adapters for the review, the entry list, the source-content read, the tree view and the knowledge reader, each bound to this configuration. [193]
 > Retained earlier citation wording: - **Retained historical source account — superseded by the current route account:** The shared collaborators bind the knowledge-review and entry-list ports and the listed source-content port. [268]
+
 - **Retained historical source account — superseded by the current route account:** **The two-shape status idiom the routes inherit, `503` included; the signature now accepts all three typed results.** [195]
-- The shared collaborators bind the knowledge-review and entry-list adapters, beside the source-content, tree, intent-summary and knowledge-reader ports. [196]
+
 - **Retained historical source account — superseded by the current route account:** **The two-shape status idiom both routes inherit, `503` included; the signature now accepts both typed results.** [197]
+
 - **Retained historical source account — superseded by the current route account:** Current contract-scoped file writing [199]
+
 - **Retained historical source account — superseded by the current route account:** **The new application module on this package's route, and the shipped read it delegates to rather than duplicating.** [208]
+
 - **Retained historical source account — superseded by the current route account:** **The response field the block travels on, carried by the strict response model rather than re-declared.** [318]
+
 - **Retained historical source account — superseded by the current route account:** **The generated carrier this package ships, regenerated from the authored root skill by the repository's own sync script.** Original range 173-282 lies beyond the file's current end. [319]
+
 - **Retained historical source account — superseded by the current route account:** **The case that holds the carrier to the payload's real field spellings instead of a second vocabulary.** [320]
+
 - **Retained historical source account — superseded by the current route account:** **The third review route constant, GET-only, with the comment recording why it is a third path rather than a payload field.** [212]
+
 - **Retained historical source account — superseded by the current route account:** **The third collaborator port, with the reason it is a port rather than a field on the review payload.** [213]
+
 - **Retained historical source account — superseded by the current route account:** **The expansion route's own unwired answer, which refuses an unwired process rather than serving an empty file.** [214]
+
 - **Retained historical source account — superseded by the current route account:** **The application owner the port carries: the admitted paths (a changed path of a measured change set, or unchanged context a recorded realization of the same comparison links — decided by the admission owner), both bound trees read by object id, and the per-side states.** [215]
+
 - **Retained historical source account — superseded by the current route account:** The composition root's third review port, and the registration call that passes all three collaborators. [216]
+
 - **Retained historical source account — superseded by the current route account:** **The two new owners this route reaches: the application module's own statement of what it answers and does not own, and the vocabulary's own statement of why it is separate from the review payload.** [217]
+
 - **Retained historical source account — superseded by the current route account:** The production-composition cases that drive the new route over a real enclosure: an incomplete query refused by the transport, an unwired process refused by name, and an unmeasured generation that still confines the path to a measured change set. [218]
+
 - **Retained historical source account — superseded by the current route account:** **The one mapping both adapters reach, and the one body builder it uses.** [219]
+
 - **Retained historical source account — superseded by the current route account:** **The two actions the bodies gained, and the not-found body's offending input.** [220]
+
 - **Retained historical source account — superseded by the current route account:** **The result-to-status mapping, unchanged, which the new bodies are used beside.** [221]
+
 - **Retained historical source account — superseded by the current route account:** The crossing owner's route of knowledge-ingest. [222]
+
 - **Retained historical source account — superseded by the current route account:** The bootstrap's database route takes the cutover lock. [321]
+
 - **Retained historical source account — superseded by the current route account:** The lock every memory route asks. [225]
+
 - **Retained historical source account — superseded by the current route account:** A copied Git index keeps the index file's modification time. [226]
+
 - **Retained historical source account — superseded by the current route account:** The cache's ignore rule alone. [227]
 > - **Retained historical source account — superseded by the current route account:** Current imported source owns this scoped route boundary. [228] [229] [230] [231]
+
 - **Retained historical source account — superseded by the current route account:** The ledger loader reads through the recorder. [232]
+
 - **Retained historical source account — superseded by the current route account:** The limits of the worklist processes. [234]
+
 - **Retained historical source account — superseded by the current route account:** One request: digest, join or start, wait, leave. [235]
-- **Retained historical source account — superseded by the current route account:** The one command line of a child, in its own session. [236]
+
 - **Retained historical source account — superseded by the current route account:** The build-mismatch failure asks for a dashboard restart. [237]
+
 - **Retained historical source account — superseded by the current route account:** The options every parsed diff passes. [238]
+
 - **Retained historical source account — superseded by the current route account:** The shared-read block of the batched blob reader. [239]
+
 - **Retained historical source account — superseded by the current route account:** The composition root creates the process owner. [240]
-- **Retained historical source account — superseded by the current route account:** It supplies the owner's shutdown to the app. [241]
+
+Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/dashboard.py:252-252 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit c702e1c2e111ec6e07c6b68a78a5d05add8aceab. Retired means the anchor no longer stands, not that the cited subject was deleted [241]
+
 - **Retained historical source account — superseded by the current route account:** The waiting bound counts computations, not the requests sharing them. [242]
+
 - **Retained historical source account — superseded by the current route account:** A build mismatch asks for a dashboard restart. [243]
+
 - **Retained historical source account — superseded by the current route account:** Every parsed diff names its own prefix, colour and driver options. [244]
+
 - **Retained historical source account — superseded by the current route account:** Bytes the child consumed are identified across a change and restore, a conflict, an absence and a read error. [245]
+
 - **Retained historical source account — superseded by the current route account:** A recording block collects the rows of one computation. [246]
+
 - **Retained historical source account — superseded by the current route account:** A kept set is checked with its path selections first. [247]
+
 - **Retained historical source account — superseded by the current route account:** A conflict or an unreadable row is a failed observation. [248]
 > Retained earlier citation wording: - **Retained historical source account — superseded by the current route account:** The contract loader reads through the recorder. [249]
+
 - **Retained historical source account — superseded by the current route account:** The removed repository memory root is resolved through the recorder. [250]
+
 - **Retained historical source account — superseded by the current route account:** The host step of the install. [251]
+
 - **Retained historical source account — superseded by the current route account:** The packaged host contract. [252]
-- **Retained historical source account — superseded by the current route account:** This source owns the route’s Investigator selection or execution boundary. [254]
+
 - **Retained historical source account — superseded by the current route account:** The layout-marker test both commands use. [255]
+
 - **Retained historical source account — superseded by the current route account:** **The production port the cases drive, and the two states F09 collapsed.** [258]
+
 - **Retained historical source account — superseded by the current route account:** **The keystone record: the manifest, its layout under the one durable root, the re-derived id and the directory-name agreement.** [259]
+
 - **Retained historical source account — superseded by the current route account:** **The two deletion owners and the record that precedes every deletion.** [260]
+
 - **Retained historical source account — superseded by the current route account:** **The Git-object retention member this route's `worktrees/` gained.** [261]
+
 - **Retained historical source account — superseded by the current route account:** **The two typed failures, and the two boundaries that decide why they are raised.** [262]
+
 - **Retained historical source account — superseded by the current route account:** **The one durable-root owner the layout asks instead of restating.** [263]
+
 - **Retained historical source account — superseded by the current route account:** **The comparison route constant, GET-only.** [264]
+
 - **Retained historical source account — superseded by the current route account:** **The entry route constant, and the comment recording why it is a second path rather than a second adapter.** [265]
+
 - **Retained historical source account — superseded by the current route account:** **The entry route's unwired answer: a named refusal with the "not served rather than served empty" reason, never an empty list.** [266]
+
 - **Retained historical source account — superseded by the current route account:** **The status mapping success reads as `refusal is None`, so one function serves all three typed results; the four candidate codes answer `404` and the expansion's `source_content_unresolved` falls through to `400`.** [267]
+
 - **Retained historical source account — superseded by the current route account:** The batch blob reader. [272]
+
 - **Retained historical source account — superseded by the current route account:** The task reopening tool on the registration surface. [285]
+
 - **Retained historical source account — superseded by the current route account:** The packaged candidate-environment input delegates setup to repository tool notes and records the used interpreter. [286]
+
 - **Retained historical source account — superseded by the current route account:** The previously named comparison-record CLI producer is retired; the current umbrella parser registers converted file authoring and no review-record-comparison command. [103]
 > Retained earlier citation wording: - **Retained historical source account — superseded by the current route account:** Knowledge ingest is the contract-scoped converted file writer; unconverted memory is refused with conversion guidance, not a callable prior-task database publication route. [198] [203]
+
 - **Retained historical source account — superseded by the current route account:** The converted-card workflow's opening. [224]
+
 - **Retained historical source account — superseded by the current route account:** Skills registrar installs resources and mandatory methods; no tools or capability grant [289]
+
 - **Retained historical source account — superseded by the current route account:** Generated lifecycle providers are empty independently of configuration [291]
+
 - **Retained historical source account — superseded by the current route account:** Old-watcher stop failure is reported and installation continues [292]
+
 - **Retained historical source account — superseded by the current route account:** Retrieval uses harness search and bounded source confirmation [293]
+
 - **Retained historical source account — superseded by the current route account:** Ingest plans by default, writes files only, and refuses unconverted memory [294]
+
 - **Retained historical source account — superseded by the current route account:** Worklist scope is one-pass and insertion/deletion linkage is side-specific [295]
+
 - **Retained historical source account — superseded by the current route account:** Closeout invokes mandatory candidate gate before publication [296]
+
 - **Retained historical source account — superseded by the current route account:** Exact memory output is validated/gated against parent tip with leaf-publication context [297]
+
 - **Retained historical source account — superseded by the current route account:** Integration/checkpoint preview and apply encounter knowledge boundary; leaf and series predicates differ [298]
+
 - **Retained historical source account — superseded by the current route account:** Investigator refuses leaf selection and validates canonical topology [301]
+
 - **Retained historical source account — superseded by the current route account:** Leaf sibling handover supplies canonical role/task arguments [302]
+
 - **Retained historical source account — superseded by the current route account:** Replay retains agent identity and typed created/refused/no-answer outcomes; held launch calls omit the first host prompt [303]
+
 - **Retained historical source account — superseded by the current route account:** Candidate environment setup and interpreter disclosure are repository-tool-note obligations [304]
-- **Retained historical source account — superseded by the current route account:** Read revalidation checks selections first and excludes failed observations from memo reuse [305]
-- **Retained historical source account — superseded by the current route account:** Worklist limits count shared computations and deliberately omit an arbitrary result-byte cap [306]
+
 - **Retained historical source account — superseded by the current route account:** Git includes a fourth bulk-remote timeout and fixed parsed-diff options [307]
 > Retained earlier citation wording: - **Retained historical source account — superseded by the current route account:** Finalization delegates task-document resolution/publication and checks blockers before cleanup/publication [308]
+
 - **Retained historical source account — superseded by the current route account:** Current declared collected-case budgets supersede historical totals [309]
+
 - The bridge's internal daemon client and its first-message delivery, and the two chat routes over them: the tree's preloaded live-agent answer and the single-document read that corrects it. [310]
+
 - The retained internal family-complete leaf payload supports path/family seeds; current mounted knowledge_read cuts/projects that payload to naming rows, not full content. [45]
+
 - The structured-value case retains a direct helper key-order equality assertion; it does not exercise a changed served field through composition or round-trip both sides. [125]
+
 - The current capsule test source checks compiler-owned delivery for the same admitted seat and only capsule/refused modes; removed legacy reopen and production-launch enumeration cases are not current witnesses. [163]
+
 - Public closeout payload delegates the current task-bound request. [165]
+
 - The derived knowledge index pins APSW exactly and names the build-time SQLite features its schema requires; knowledge remains text in Git. [356]
+
 - The same pin in the requirements manifest. [169]
+
 - The memory charter places text knowledge in Git and its derived SQLite cache under memory; lower-ranked consumers receive model values or prepared results and do not import memory/knowledge. [357]
+
 - The knowledge package owns the derived-index schema, row codecs and reads, with no canonical knowledge-row writer or approval/task/Git authority; its lower-layer import boundary remains. [358]
+
 - The one canonical encoder, its policy and its duplicate-key-refusing decoder. [172]
-- Exact tree endpoint composition, not candidate directories [183]
+
 - The one route this leaf adds. [188]
+
 - The GET-only registration. [189]
+
 - The typed request the query string parses into, with no path among its inputs. [190]
+
 - The port field on the collaborators dataclass, and the rank reason it exists. [359]
+
 - The registration that reads that port. [192]
+
 - The composition root supplies the application adapters to the serving collaborators. [360]
-- The shared collaborators bind the knowledge-review and entry-list ports and the listed source-content port. [361]
+
+Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/dashboard.py:240-242 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit de5a7adbb21b2f6f22c3ced0eed9dd7189fe93c7. Retired means the anchor no longer stands, not that the cited subject was deleted [361]
+
 - **The two-shape status idiom the routes inherit, `503` included; the signature now accepts all three typed results.** [195]
-- The composition root binds distinct knowledge-review and entry-list ports through their application adapters. [362]
+
+Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/dashboard.py:240-242 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit de5a7adbb21b2f6f22c3ced0eed9dd7189fe93c7; mcp/src/agents_remember/cli/dashboard.py:155-195 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 3104b78bb309a8e1a912503557adb08599b52ef0. Retired means the anchor no longer stands, not that the cited subject was deleted [362]
+
 - **The two-shape status idiom both routes inherit, `503` included; the signature now accepts both typed results.** [197]
+
 - Current contract-scoped file writing [363]
+
 - The retained internal published-intent block delegates to the shared knowledge-read context and scope owners; it does not restore inline content to mounted naming answers. [364]
+
 - Historical published_intent response carrier; current strict ReadArFilesResponse names files and overview locations with state/refusal metadata and has no published_intent field. [209]
+
 - Historical Published Intent Before Planning carrier section; package sync remains, while current retrieval skill requests names and opens files natively. [210]
+
 - Historical published_intent carrier test reference; the current CarrierParityTests case checks naming answer keys and rejects retired carrier spellings, including published_intent. [211]
+
 - **The third review route constant, GET-only, with the comment recording why it is a third path rather than a payload field.** [212]
+
 - **The third collaborator port, with the reason it is a port rather than a field on the review payload.** [213]
+
 - **The expansion route's own unwired answer, which refuses an unwired process rather than serving an empty file.** [214]
+
 - **The application owner the port carries: the admitted paths (a changed path of a measured change set, or unchanged context a recorded realization of the same comparison links — decided by the admission owner), both bound trees read by object id, and the per-side states.** [365]
+
 - The composition root's third review port, and the registration call that passes all three collaborators. [366]
+
 - **The two new owners this route reaches: the application module's own statement of what it answers and does not own, and the vocabulary's own statement of why it is separate from the review payload.** [217]
+
 - The production-composition cases that drive the new route over a real enclosure: an incomplete query refused by the transport, an unwired process refused by name, and an unmeasured generation that still confines the path to a measured change set. [218]
+
 - **The one mapping both adapters reach, and the one body builder it uses.** [219]
+
 - **The two actions the bodies gained, and the not-found body's offending input.** [220]
+
 - **The result-to-status mapping, unchanged, which the new bodies are used beside.** [221]
+
 - The crossing owner's route of knowledge-ingest. [367]
+
 - Historical bootstrap database route took the cutover lock; that writer route is retired. Current _run writes converted files via run_wave_write or refuses unconverted memory with conversion/cutover guidance. [223]
+
 - The lock every memory route asks. [368]
+
 - A copied Git index keeps the index file's modification time. [226]
+
 - The cache's ignore rule alone. [369]
+
 - Current imported source owns this scoped route boundary. [370]
+
 - The ledger loader reads through the recorder. [232]
+
 - The limits of the worklist processes. [234]
+
 - One request: digest, join or start, wait, leave. [235]
-- The one command line of a child, in its own session. [236]
+
 - The build-mismatch failure asks for a dashboard restart. [237]
+
 - The options every parsed diff passes. [238]
+
 - The shared-read block of the batched blob reader. [239]
-- The composition root creates the reviewer worklist process owner. [371]
+
+Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/dashboard.py:150-150 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 3104b78bb309a8e1a912503557adb08599b52ef0. Retired means the anchor no longer stands, not that the cited subject was deleted [371]
+
 - It supplies the owner's shutdown to the app. [241]
+
 - The waiting bound counts computations, not the requests sharing them. [372]
+
 - A build mismatch asks for a dashboard restart. [243]
+
 - Every parsed diff names its own prefix, colour and driver options. [244]
+
 - Bytes the child consumed are identified across a change and restore, a conflict, an absence and a read error. [245]
+
 - A recording block collects the rows of one computation. [373]
+
 - A kept set is checked with its path selections first. [374]
+
 - A conflict or an unreadable row is a failed observation. [248]
+
 - The contract loader reads through the recorder. [375]
+
 - The removed repository memory root is resolved through the recorder. [250]
+
 - The host step of the install. [251]
+
 - The packaged host contract. [252]
-- This source owns the route’s Investigator selection or execution boundary. [254]
+
 - The shared application route owns the converted-layout marker check that the CLI routes import. [376]
+
 - The production review port delegates the candidate-bound complete review through the recorded-answer owner. [377]
+
 - **The keystone record: the manifest, its layout under the one durable root, the re-derived id and the directory-name agreement.** [259]
+
 - Code-object release records deletion before invoking its release owner; snapshot discard verifies and removes present bytes before recording deletion. The two owners preserve their own orderings. [260]
+
 - **The Git-object retention member this route's `worktrees/` gained.** [261]
+
 - **The two typed failures, and the two boundaries that decide why they are raised.** [262]
+
 - **The one durable-root owner the layout asks instead of restating.** [263]
+
 - **The comparison route constant, GET-only.** [264]
+
 - **The entry route constant, and the comment recording why it is a second path rather than a second adapter.** [265]
+
 - **The entry route's unwired answer: a named refusal with the "not served rather than served empty" reason, never an empty list.** [266]
+
 - **The status mapping success reads as `refusal is None`, so one function serves all three typed results; the four candidate codes answer `404` and the expansion's `source_content_unresolved` falls through to `400`.** [267]
+
 - The batch blob reader. [272]
+
 - The task reopening tool on the registration surface. [378]
+
 - The packaged candidate-environment input delegates setup to repository tool notes and records the used interpreter. [286]
+
 - The previously named comparison-record CLI producer is retired; the current umbrella parser registers converted file authoring and no review-record-comparison command. [379]
+
 - Knowledge ingest is the contract-scoped converted file writer; unconverted memory is refused with conversion guidance, not a callable prior-task database publication route. [380]
+
 - The converted-card workflow's opening. [381]
+
 - Historical L113 source census recorded 40 public names after dispatch removal; its grouped bounded-landing and role-duty co-targets retain that source epoch. PUBLIC_TOOLS is one literal tuple of 44 public names, including native role, retirement and knowledge operations and excluding dispatch_agent. This source census does not establish live advertisement, a CODE grade or MEMORY acceptance. The landing-answer helper separately keeps cut/added counts and bounds inline rows; the Curator instructions require an independent statement-by-statement fact-check before closeout. [288]
+
 - The shared application route resolves the paired memory base and passes that base, the contract-bound code root and worklist to the normal knowledge writer. [315]
+
 - Named reporting and refusing routes. [312]
+
 - Source bindings, membership and record models. [313]
+
 - Non-author statement/diff/omission fact-check. [314]
+
 - The current literal roster has 44 names, including mounted knowledge_write, user_settings_init, explainer_control and citation_note_revision; preceding roster counts remain historical source epochs. Existing task/public-delivery and no-acceptance qualifications stand. [316]
+
 - The runtime synchronizer declares four targets without docs; retained packaged tool details do not add a fifth generator target. [311]
+
 - Task stage is authored; only started tasks receive known bound host activity and contributing event time. [324]
+
 - Complete current-boot host reconciliation and the supervisor subscription precede binding activity to tasks. [325]
+
 - Replayed role launch publishes receipt identity before invoking its host launch call. [326]
+
 - TaskSummary bodies use a separate bounded generation-qualified cache, with content-derived revision. [327]
+
 - Obsolete terminal lock cleanup requires a complete canonical-contract census and preserves any subject not proved terminal. [328]
+
 - The current declared pair is 10000 unit and 2000 integration selected cases. Earlier unit-only raises kept their integration ceiling unchanged at that time. [329]
+
 - User alternatives select by manual/prior/threshold facts with no cross-scope choice carry. [330]
+
 - Worker code and Curator memory failures count independently; incomplete history stays unknown. [331]
+
 - Replacement rechecks idle and pending permission at every saved archival call. [332]
+
 - Step-up launch metadata is reconciled through the canonical task writer. [333]
+
 - Frozen detail identities and bytes are checked rather than recomputed. [334]
+
 - Only settled empty stepped-up creation failures retain saved-call retry. [335]
+
 - The response requires judgment and retains knowledge/source identity without the removed supporting-record fields. [337]
+
 - Selected-subject history and membership rows are rendered in attempt order, with proof entries supplied separately and explicit none/unavailable states. [338]
+
 - The regression asserts required judgment and absence of removed wire channels; this is source/assertion evidence, not a fresh test run. [339]
+
 - sendExtras omits empty extras and validates complete image/text lists before returning the payload. [342]
+
 - The helper rejects non-lists and malformed image/text entries with the named bridge-payload failure; base64 text is not decoded here. [343]
-- The catalogue receives the exact optional comparison number and composes developer routes with the review leaf-memory resolver. [344]
+
+Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/dashboard.py:226-248 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit ce4594231eac0b18950d22d6aee0d3b9f3eba3db. Retired means the anchor no longer stands, not that the cited subject was deleted [344]
+
 - The subject catalogue's reuse key includes the comparison number; failed recorded tree/card reads are not kept. [345]
+
 - Numbered summaries observe the comparison directory and resolve the named comparison. [346]
+
 - The request-head bound is 64 KiB in both foreground and reload serving. [347]
+
 - The seat list uses current bounded launch records and the host census, retaining incomplete-read facts. [348]
+
 - Written forms use settings-bound roots, check comparison consistency and read record revisions at the named memory tree. [349]
+
 - The server validates picks, provenance, references and decoded byte bounds before filing. [350]
+
 - Ordered picks are filed and passed as native attachments; oversized or invalid request bodies have named refusal answers. [351]
+
 - The bridge validates attachment extras before recipient inspection and applies them to idle and active-turn sends. [352]
+
 - Filing removes only newly created orphan pick blobs on pre-message failure. [353]
+
 - Sent logs are bounded working views and settle held outcomes from launch records without delivery. [354]
-- Developer delivery retains ordered holds and attempted IDs, resumes eligible closed recipients and attributes immediate drain results to this message. [355]
+
 - One holder builds pending supplier at first operation use; discovery does not construct services. [384]
+
 - Open intentReview refuses leaf-role preparation before enclosure/seat mutations; same existing native task-fact owner handles admitted found planning enclosure. [385]
+
 - Qualified Manager starter lineage writes master-to-Architect address; unrelated/dashboard starters do not. [386]
+
 - Additional host-checked explainer-binding source is distinct from ordinary role launch-record listing and adds none for taskless scope. [387]
+
 - Explainer seats are excluded from automatic warmup; showing or writing the chat owns their resume instead of host restart. [388]
-- One holder builds pending supplier at first operation use; discovery does not construct services. [384]
-- Open intentReview refuses leaf-role preparation before enclosure/seat mutations; same existing native task-fact owner handles admitted found planning enclosure. [385]
-- Additional host-checked explainer-binding source is distinct from ordinary role launch-record listing and adds none for taskless scope. [387]
-- Explainer seats are excluded from automatic warmup; showing or writing the chat owns their resume instead of host restart. [388]
+
 - The current literal ordinary roster has 44 names, including mounted `knowledge_write`, `user_settings_init`, `citation_note_revision` and `explainer_control`; preceding roster counts remain historical source epochs. Existing task/public-delivery and no-acceptance qualifications stand. [316]
-- Settings-selected launch requests same-build bound task server, preapproved surface and capsule system prompt without initial prompt; this is source wiring, not fresh native suppression acceptance. [383]
+
+Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/paseo_explainer_host.py:345-447 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 5f8398b32760677c370e3145add73cfa8388357b. Retired means the anchor no longer stands, not that the cited subject was deleted [383]
+
 - The owner resolves each requirement endpoint; unresolved is reported. [270]
+
 - The owner resolves each requirement endpoint; unresolved is reported. [40]
+
 - Knowledge ingest is the contract-scoped converted file writer; unconverted memory is refused with conversion guidance, not a callable prior-task database publication route. [198]
+
 - The launch compiler routes task-attached requests through _compile_admitted_task, resolves the canonical task document, and compiles the admitted task capsule. [161]
+
 - The Paseo runtime CLI requires an explicit config for provision, status and stop, loads that config's host settings, and returns a single JSON report with defined refusal and failure exits. [228]
-- The shared collaborators bind the knowledge-review and entry-list ports and the listed source-content port. [268]
+
 - Knowledge ingest is the contract-scoped converted file writer; unconverted memory is refused with conversion guidance, not a callable prior-task database publication route. [203]
-- The Paseo launch adapter builds the repeatable role-launch call with the chosen agent identity, workspace, first-message data, parent identity and this build's task tool-server binding. [229]
+
+Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/paseo_launch.py:396-430 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 26057e5040a55f0a6f900433839b5113ee89b48f. Retired means the anchor no longer stands, not that the cited subject was deleted [229]
+
 - The knowledge-write CLI adapter validates the explicit authorization and hand-off input, then submits the leaf write to the shared application route and prints that route's report. [231]
+
 - The launch compiler routes task-attached requests through _compile_admitted_task, resolves the canonical task document, and compiles the admitted task capsule. [274]
+
 - Task-scoped MCP reader configuration derives a call-local repository entry only from the admitted canonical task and enclosure contract; a reader without task_context retains the configured Projects roots. [230]
+
 - **Retained historical source account — superseded by the current route account:** The contract loader reads through the recorder. Anchor: `load_contract` [249]
+
 - Finalization delegates task-document resolution/publication and checks blockers before cleanup/publication [308]
-- One holder builds pending supplier at first operation use; discovery does not construct services. [384]
-- Open intentReview refuses leaf-role preparation before enclosure/seat mutations; same existing native task-fact owner handles admitted found planning enclosure. [385]
-- Additional host-checked explainer-binding source is distinct from ordinary role launch-record listing and adds none for taskless scope. [387]
-- Explainer seats are excluded from automatic warmup; showing or writing the chat owns their resume instead of host restart. [388]
-- Settings-selected launch requests same-build bound task server, preapproved surface and capsule system prompt without initial prompt; this is source wiring, not fresh native suppression acceptance. [383]
-- The owner resolves each requirement endpoint; unresolved is reported. [270]
-- The owner resolves each requirement endpoint; unresolved is reported. [40]
-- Knowledge ingest is the contract-scoped converted file writer; unconverted memory is refused with conversion guidance, not a callable prior-task database publication route. [198]
-- The launch compiler routes task-attached requests through _compile_admitted_task, resolves the canonical task document, and compiles the admitted task capsule. [161]
-- The Paseo runtime CLI requires an explicit config for provision, status and stop, loads that config's host settings, and returns a single JSON report with defined refusal and failure exits. [228]
-- The shared collaborators bind the knowledge-review and entry-list ports and the listed source-content port. [268]
-- Knowledge ingest is the contract-scoped converted file writer; unconverted memory is refused with conversion guidance, not a callable prior-task database publication route. [203]
-- The Paseo launch adapter builds the repeatable role-launch call with the chosen agent identity, workspace, first-message data, parent identity and this build's task tool-server binding. [229]
-- The knowledge-write CLI adapter validates the explicit authorization and hand-off input, then submits the leaf write to the shared application route and prints that route's report. [231]
-- The launch compiler routes task-attached requests through _compile_admitted_task, resolves the canonical task document, and compiles the admitted task capsule. [274]
-- Task-scoped MCP reader configuration derives a call-local repository entry only from the admitted canonical task and enclosure contract; a reader without task_context retains the configured Projects roots. [230]
+
 - A delete-only hunk is linked only by a K_B range (and, since MIK-R09, an insertion-only hunk only by a K_C range). Anchor: "def _linked("; "hunk.new_count > 0 and any(hits_new(hunk, span) for span in candidate_spans)" The Anchor caption above records the historical `_linked`/`candidate_spans` spelling. Current enforcement is `linkage._classify_hunk`: the before and after comprehensions require changed lines on their own side (`old_count > 0` with `hits_old`, and `new_count > 0` with `hits_new`). [31]
-- **Retained historical source account — superseded by the current route account:** The contract loader reads through the recorder. Anchor: `load_contract` [249]
-- Finalization delegates task-document resolution/publication and checks blockers before cleanup/publication [308]
+
 - The root configuration declares the current selected-case ceilings of 10000 unit and 2000 integration; deliberate raises update the declaration and its independent screens together. [287]
+
 - The lane row. [18]
+
 - The lane row. [28]
+
 - The lane row. [32]
+
 - The two lane rows. [37]
+
 - **Retained historical source account — superseded by the current route account:** The memory-quality dispatch between the two gates.  Anchor: `_onboarding_refresh_gate` [60]
+
 - **Retained historical source account — superseded by the current route account:** Exact contract scope, full check and curator worklist publication.  Anchor: `_resolve_execution` `_execute_memory_quality` `_attach_curator_checklist` [152]
+
 - **Retained historical source account — superseded by the current route account:** Interactive catalog names missing authority without eligibility. [153]
+
 - The two lane rows. [233]
+
 - **Retained historical source account — superseded by the current route account:** Dispatch advertisement is closed and undeclared inputs refuse before handler  Anchor: `AgentsRememberMCP` [290]
+
 - **Retained historical source account — superseded by the current route account:** Raw quality status and combined coherence readiness remain distinct; a coherence refusal retains its code and next action [299]
-- Chooses ordinary versus launched-explainer registration; invalid bindings refuse and dispatch checks launched-seat identity. [382]
+
 - Each operation asks fresh; its local context shares the answer, and saved-only reads do not discover or write. [391]
+
 - Durable parts preserve successful answers and distinguish saved from unknown after failures. [392]
+
 - Host names match IDs before labels, without case. [393]
+
+- Exact tree endpoint composition, not candidate directories [183]
+
+- **Retained historical source account — superseded by the current route account:** The on-demand cards read at the route. [23]

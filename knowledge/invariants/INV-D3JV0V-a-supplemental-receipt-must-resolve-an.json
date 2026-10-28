@@ -27,6 +27,6 @@
   "revision": 1,
   "schema": "ar-invariant/v1",
   "statement": "A supplemental receipt must resolve an admitted canonical source to the bytes actually examined and must not carry a different document under the earlier source identity.",
-  "status": "proposed",
+  "status": "retired",
   "supersedes": []
 }

@@ -1,0 +1,24 @@
+{
+  "path": "dashboard/src/cockpit/Cockpit.tabMemory.test.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Each cockpit tab keeps its own page: returning to a tab returns to the page it was left on, and an address names the page it opens",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "486c1519fac09a6dad3fd3b4fdef88947b7a2e76",
+            "content": "sha256:e1967ff3eb1c700bb65d64df8f71e65794c4ebb6c11f28310f5e1b47aa979ab5",
+            "locator": {
+              "end": 81,
+              "kind": "line_range",
+              "start": 81
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

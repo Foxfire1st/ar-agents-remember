@@ -25,12 +25,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5276cd9583d9a33d9094edac37d82b768491aed9",
+            "blob": "00c924961061dbdffe62be2587500d221bd22c23",
             "content": "sha256:40ce044f407c55eaa7eeb69631efdc7c36aa0d0bd71cf5cfa6b10996318621fb",
             "locator": {
-              "end": 425,
+              "end": 474,
               "kind": "line_range",
-              "start": 425
+              "start": 474
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -212,20 +212,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0729e2487febb7fcc3087bbe5a033d9a994ed5b9",
-            "content": "sha256:45b54e5ed6dd2be8acd7f18f3f7ee57c6fae68f5832298a4beb58681b1bdc554",
-            "locator": {
-              "kind": "symbol",
-              "name": "_iter_task_json"
-            },
-            "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_common.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "0729e2487febb7fcc3087bbe5a033d9a994ed5b9",
-            "content": "sha256:38555019cde060fc859dc1909193cc15341e8b6ebcfded13c0f49e34d5c3a9c8",
+            "blob": "ebd43acfbc3ada61f3802752cbe36506c5dbecb6",
+            "content": "sha256:c6b237de108b6ea7d4c34958fb206df82f5a72a176c8ec5ef95073f71101534a",
             "locator": {
               "kind": "symbol",
               "name": "_canonical_task_json_candidates"

@@ -115,12 +115,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e1d561eb43926925f6fefc875db17155ef322eb4",
+            "blob": "c24805fbc70e2548898568ec162737009c1bf601",
             "content": "sha256:6eab6a92cc74865b69bebe5842f18d02e8b884da4dc36d46198a49b9665259b9",
             "locator": {
-              "end": 404,
+              "end": 400,
               "kind": "line_range",
-              "start": 399
+              "start": 395
             },
             "path": "mcp/src/agents_remember/serving/projections/projection_inputs.py"
           },
@@ -128,12 +128,12 @@
         },
         {
           "anchor": {
-            "blob": "e1d561eb43926925f6fefc875db17155ef322eb4",
+            "blob": "c24805fbc70e2548898568ec162737009c1bf601",
             "content": "sha256:8436c4fba7d70574cea8d96196073b5d538c533dff77ef994a41a6b98a3bec4f",
             "locator": {
-              "end": 720,
+              "end": 716,
               "kind": "line_range",
-              "start": 677
+              "start": 673
             },
             "path": "mcp/src/agents_remember/serving/projections/projection_inputs.py"
           },

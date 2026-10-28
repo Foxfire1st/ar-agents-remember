@@ -1,0 +1,39 @@
+{
+  "path": "mcp/src/agents_remember/canvas/explainer_worktrees.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "checkout_tree provisions a detached worktree at the requested commit.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "14cd7fb7f3e821a8d6e564d6786cb5b94b498d71",
+            "content": "sha256:02ac2574d063cb897b4baba8ebe681b01c83333f2642bd434a373da051f41e12",
+            "locator": {
+              "kind": "symbol",
+              "name": "checkout_tree"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "remove_checkout and prune_worktrees take the trees away through Git rather than by copying or deleting files.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "14cd7fb7f3e821a8d6e564d6786cb5b94b498d71",
+            "content": "sha256:ee95534d1805f5fe411c9884d0cff1af31c3a0f3ca3a4d0cbf643bd882535e5b",
+            "locator": {
+              "kind": "symbol",
+              "name": "remove_checkout"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

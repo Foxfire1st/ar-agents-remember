@@ -148,4 +148,10 @@ No cross-repo boundary is crossed by this file.
 - The unit-lane row. Source caption: "mcp/tests/test_unexplained_change_disposition.py" [13]
 
 
-- The catalog consumer row. [14]
+- The catalog consumer row.
+
+Retired at the fifth freeze d59c3493: mcp/tests/evidence-lifecycle.toml:1920-1920 - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted [14]
+
+## Retirements
+
+- Retired at the fifth freeze d59c3493: mcp/tests/evidence-lifecycle.toml:1920-1920 - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.

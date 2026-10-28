@@ -7,12 +7,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b5a53cf21bb5dc09293ac1c03bd879ca64c1eba8",
-            "content": "sha256:d4f2ac86c9ece367aea73cec25fc716a360ec93391eef1c0975a891eb4af5344",
+            "blob": "ccfdccb81a723ee4919337fede54e88d9a61167a",
+            "content": "sha256:5d18dfdfb00bff6b2dcee43ee3a926698ae4ff0665e692915b2bb33cf36ee6c6",
             "locator": {
-              "end": 43,
+              "end": 29,
               "kind": "line_range",
-              "start": 29
+              "start": 21
             }
           },
           "kind": "code"
@@ -20,17 +20,18 @@
       ]
     },
     "2": {
-      "note": "A workspace too shallow to be an explainer placement is refused rather than read as a coordination root\n\nAnchor: `def coordination_of(`",
+      "note": "The tool server’s import of `ExplainerInputs` and `now_iso`, under the comment that `__all__` names `ExplainerInputs` alone.",
       "targets": [
         {
           "anchor": {
-            "blob": "b5a53cf21bb5dc09293ac1c03bd879ca64c1eba8",
-            "content": "sha256:23f85fa4add5a04468e6da276d2e5e1bc7489cbff5b6ede478e3eac06ea8e9ab",
+            "blob": "0697b5c5c41f1c6837a50517c68412c4f22890fb",
+            "content": "sha256:246f144f47289eb7436d5bcc146d32d29667e62709b0cf3eb416414dc5015dfd",
             "locator": {
-              "end": 54,
+              "end": 58,
               "kind": "line_range",
-              "start": 46
-            }
+              "start": 56
+            },
+            "path": "mcp/src/agents_remember/canvas/explainer_server.py"
           },
           "kind": "code"
         }
@@ -41,12 +42,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b5a53cf21bb5dc09293ac1c03bd879ca64c1eba8",
+            "blob": "ccfdccb81a723ee4919337fede54e88d9a61167a",
             "content": "sha256:b738dbd1171029143ae5a36ccf49a9416c4734364475653db0edda38f6e12833",
             "locator": {
-              "end": 58,
+              "end": 33,
               "kind": "line_range",
-              "start": 57
+              "start": 32
             }
           },
           "kind": "code"

@@ -120,7 +120,9 @@ The module's own top-level surface is listed in Code Commentary; no cross-file c
 - The durable-data writer takes an already-validated document, so it can write no unknown key. [9]
 
 
-- No summary count cap remains, but the current population is canonical direct task-root JSON with the explicit raw task schema and a successful tolerant parse; canonical sources project each admitted document, not a second series population. Missing/bad-schema/failed parses are not a completeness promise. Retain the silent-eviction removal rationale. [10]
+- No summary count cap remains, but the current population is canonical direct task-root JSON with the explicit raw task schema and a successful tolerant parse; canonical sources project each admitted document, not a second series population. Missing/bad-schema/failed parses are not a completeness promise. Retain the silent-eviction removal rationale.
+
+Retired at the fifth freeze d59c3493: mcp/src/agents_remember/serving/projections/snapshots_impl/_common.py:38-84 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 7bf564a663bb61f12844dee39538dd09a1633cdb. Retired means the anchor no longer stands, not that the cited subject was deleted [10]
 
 - The legacy-bare-node `ref` synthesis that leaves one loc path unprunable. [12]
 - The closeout-queue reader skips a payload that fails model validation. Historical site counting and unchanged-source comparison belong to the retained task evidence, not this current-source reference. [13]
@@ -265,3 +267,7 @@ corpus the isolated HTTP route median fell from 0.591 s to 0.019 s for a leaf an
 
 
 - The shared source builder carries both normalized parent identity and the original master literal into TaskDocumentSource, preserving absent-versus-unresolvable input. [21]
+
+## Retirements
+
+- Retired at the fifth freeze d59c3493: mcp/src/agents_remember/serving/projections/snapshots_impl/_common.py:38-84 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 7bf564a663bb61f12844dee39538dd09a1633cdb. Retired means the anchor no longer stands, not that the cited subject was deleted.

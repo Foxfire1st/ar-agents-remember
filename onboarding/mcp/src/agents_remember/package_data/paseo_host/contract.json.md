@@ -22,5 +22,5 @@ The release-owned host contract: the host package, its one exact version and the
 - The contract file consumed by the host pin. [1]
 
 
-- Official v26.11.1 distribution checksums identify the selected linux-x64 archive digest; the retained inspection is dated2026-10-08T08:39:28Z. [2]
-- The official release index inspected2026-10-08T09:54:43Z lists26.11.1 as the newest26 release; this retrieval does not assert later releases. [3]
+- Official v26.11.1 distribution checksums identify the selected linux-x64 archive digest. Re-fetched 2026-10-28T06:12Z: the file still publishes node-v26.11.1-linux-x64.tar.xz as 3883bfc73f9a680ca4eab04b196068aaaab1373ffa77d8fc1a4408222495b651, which is the digest this contract retains. [2]
+- MIK-R107 v1 rule 1 asks the contract to name the newest 26.x.y that nodejs.org lists on the day of the build, with each archive's address and SHA-256 from the official SHASUMS256.txt. On 2026-10-08, the build day, the newest was v26.11.1, and v26.11.1 is what this contract names — the pin is what satisfying the rule left behind. Re-fetched 2026-10-28T06:12Z the newest is v26.12.1, so the rule was satisfied on its build day and the contract does not claim to satisfy it today. [3]

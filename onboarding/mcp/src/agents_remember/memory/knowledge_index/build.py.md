@@ -61,15 +61,15 @@ The parser, the builder and the row writers.
 
 - What one build reports. [3]
 
-- Parsing skips Markdown companions before decoding; indexed JSON decode/schema failures become named problems. [4]
+- Parsing skips Markdown companions before decoding; indexed JSON decode/schema failures become named problems. 
 
-- Location, kind, file-name and duplicate-ID rules for record and sidecar files. [5]
+- Location, kind, file-name and duplicate-ID rules for record and sidecar files. 
 - One transaction: the store schema, the `ix_*` tables, the rows, the projection and the metadata. [6]
 - The row writers: records, entries, members, routes, links, references and history rows. [7]
 - The metadata row set a cached file is checked against. [8]
 - A file failing its schema marks the index partial and is named; an unconverted tree indexes empty. [9]
 
-- The parsed tree keeps each history file by path and each owner's merged history. [10]
+- The parsed tree keeps each history file by path and each owner's merged history. 
 - History rows are written per file, under the file's own path. [11]
 
 ### Cross-Repo References
@@ -77,3 +77,7 @@ The parser, the builder and the row writers.
 No meaningful cross-repo references found: the index reads one memory tree, addressed explicitly by the caller, and nothing else.
 
 No cross-repo boundary is crossed by this file.
+
+- The parsed tree keeps each history file by path and each owner's merged history. [10]
+
+- Retired at the fifth freeze d59c3493: mcp/src/agents_remember/memory/knowledge_index/build.py::parse_tree - the bytes it recorded now occur 3 times in the file, so no single home can be named and it is not given to the likelier one; mcp/src/agents_remember/memory/knowledge_index/build.py::_parse_onboarding_file - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one; mcp/src/agents_remember/memory/knowledge_index/build.py::_parse_knowledge_file - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.

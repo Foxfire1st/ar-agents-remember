@@ -4,7 +4,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "00dbff88a35b8e2bcb41c27d8fd4dbb239decc67",
+        "blob": "77ed3251b5ba88023ded1af8a52472449f890a60",
         "content": "sha256:13aaf574b6e483c1bdeef8d9fb3c6bf67b347e7cae4a9a58c663863b63eec274",
         "locator": {
           "kind": "symbol",
@@ -22,7 +22,7 @@
     },
     {
       "anchor": {
-        "blob": "00dbff88a35b8e2bcb41c27d8fd4dbb239decc67",
+        "blob": "77ed3251b5ba88023ded1af8a52472449f890a60",
         "content": "sha256:3906a46d742fa21e581aa436122da39db34575f53e0aa52f7479d72c7b8cdb07",
         "locator": {
           "kind": "symbol",
@@ -40,8 +40,8 @@
     },
     {
       "anchor": {
-        "blob": "00dbff88a35b8e2bcb41c27d8fd4dbb239decc67",
-        "content": "sha256:9085d3c667d46f61ade6abfc183659063af9cc5b6ddf118739ee56a778a9eea0",
+        "blob": "77ed3251b5ba88023ded1af8a52472449f890a60",
+        "content": "sha256:58c95707316a19ea750b745f6d5fed6a75d59a2bddedd66d95c6a2d924de2485",
         "locator": {
           "kind": "symbol",
           "name": "_register_projection_routes"
@@ -58,8 +58,8 @@
     },
     {
       "anchor": {
-        "blob": "00dbff88a35b8e2bcb41c27d8fd4dbb239decc67",
-        "content": "sha256:c463d68605a8321caf579f7270ad1d6e817382696c0ef8f0322d6d54ca6fab67",
+        "blob": "77ed3251b5ba88023ded1af8a52472449f890a60",
+        "content": "sha256:4aab52211c73a20184310f31c88a177760717945199c4ab452fd1d8ae0a38a1b",
         "locator": {
           "kind": "symbol",
           "name": "api_stream"
@@ -76,7 +76,7 @@
     },
     {
       "anchor": {
-        "blob": "00dbff88a35b8e2bcb41c27d8fd4dbb239decc67",
+        "blob": "77ed3251b5ba88023ded1af8a52472449f890a60",
         "content": "sha256:e4178b7ceb63f539ffb08005bbae6c31f5006b9fd78da33f285d940265e08517",
         "locator": {
           "kind": "symbol",
@@ -94,7 +94,7 @@
     },
     {
       "anchor": {
-        "blob": "00dbff88a35b8e2bcb41c27d8fd4dbb239decc67",
+        "blob": "77ed3251b5ba88023ded1af8a52472449f890a60",
         "content": "sha256:baffae246adc8ca34e1a4978e4f637a5d07bf112180da7c81905697ed5c5cf10",
         "locator": {
           "kind": "symbol",
@@ -117,83 +117,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "00dbff88a35b8e2bcb41c27d8fd4dbb239decc67",
-            "content": "sha256:8f89c82c843251008faf48e5e755d90a8e824c4c99d29caed57c71eb612d9aa3",
+            "blob": "77ed3251b5ba88023ded1af8a52472449f890a60",
+            "content": "sha256:f439b773bf39e580bd8927aa89a82039a5ea056a0b58f680dbd48b82ae7d662b",
             "locator": {
               "kind": "file"
             }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "2": {
-      "note": "The state SSE route passes ordinary snapshot/delta events through the optional review-memory multiplexer under aclosing; the distinct raw-event route still forwards observer records and its own ready marker.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "00dbff88a35b8e2bcb41c27d8fd4dbb239decc67",
-            "content": "sha256:63f413dcd93928ce66ba1b3ae312e3b86dbfd14febe9e72ede0c34466b8d4baf",
-            "locator": {
-              "end": 274,
-              "kind": "line_range",
-              "start": 235
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "00dbff88a35b8e2bcb41c27d8fd4dbb239decc67",
-            "content": "sha256:91704bae042925876115f062334973d1798e585aab58e5c7d5345f61005f8162",
-            "locator": {
-              "end": 307,
-              "kind": "line_range",
-              "start": 287
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "0c7b9ca2d4d5e35569c252b5d2decddec3a4bc33",
-            "content": "sha256:837a64d6bb17f73ad233d08db0f72a1a9bf8b2b8efbb8d26ba161882bedb9f47",
-            "locator": {
-              "end": 230,
-              "kind": "line_range",
-              "start": 199
-            },
-            "path": "mcp/src/agents_remember/serving/review_memory_watch.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "3": {
-      "note": "All omitted review selectors opt out; any supplied selector forms a normalized three-string identity for the resolver. The multiplexer—not normalization—checks segments/root admission, emits review.memory.error on admitted failure paths and keeps ordinary events flowing.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "00dbff88a35b8e2bcb41c27d8fd4dbb239decc67",
-            "content": "sha256:b64bb4012eeadd576aa78fc64d01b827dfae256c3bd78e0cd8cc5a226bdb9239",
-            "locator": {
-              "end": 274,
-              "kind": "line_range",
-              "start": 246
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "0c7b9ca2d4d5e35569c252b5d2decddec3a4bc33",
-            "content": "sha256:72c7faf1cc0386533c5620f4f3c3b4eb5321ffc7e93e18ae3b8e2dafa59628f0",
-            "locator": {
-              "end": 230,
-              "kind": "line_range",
-              "start": 190
-            },
-            "path": "mcp/src/agents_remember/serving/review_memory_watch.py"
           },
           "kind": "code"
         }
@@ -204,8 +132,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "00dbff88a35b8e2bcb41c27d8fd4dbb239decc67",
-            "content": "sha256:8f89c82c843251008faf48e5e755d90a8e824c4c99d29caed57c71eb612d9aa3",
+            "blob": "77ed3251b5ba88023ded1af8a52472449f890a60",
+            "content": "sha256:f439b773bf39e580bd8927aa89a82039a5ea056a0b58f680dbd48b82ae7d662b",
             "locator": {
               "kind": "file"
             }

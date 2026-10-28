@@ -133,23 +133,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b57a7faeabd73c5872db8d333a7970835083e727",
+            "blob": "76448da20fe8c1c57050ff52099e23ce2db06b49",
             "content": "sha256:e2084926cf923c0f10655025803960784c6289f7ea2eb9605ad5c137d00c903c",
             "locator": {
               "kind": "symbol",
               "name": "ContractSnapshot"
-            },
-            "path": "mcp/src/agents_remember/serving/projections/contract_snapshot.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "b57a7faeabd73c5872db8d333a7970835083e727",
-            "content": "sha256:44c4cb5f4bc6789d4ef0d90decc659bd1afd279a48ccb1d0ce6f7d25ec7e4166",
-            "locator": {
-              "kind": "symbol",
-              "name": "ContractSnapshotCache"
             },
             "path": "mcp/src/agents_remember/serving/projections/contract_snapshot.py"
           },

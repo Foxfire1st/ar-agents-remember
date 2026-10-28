@@ -320,9 +320,7 @@ PUBLIC_TOOLS = (
 
 > Historical custody only. This section is not current advertisement, a callable-tool instruction or executed acceptance; the incoming L109 source held41 names; the composed L113 declaration holds40 names, with both resolve_context and dispatch_agent absent.
 
-- The tuple's order is the order `mcp/registration/` publishes tools in; order is part of the
   advertisement contract, so an edit here is a wire change and not a cosmetic reorder.
-- Membership is maintained in one place and one place only. `mcp/tools/base.py` re-exports this
   object through `__all__`; it must never re-declare a second tuple.
 
 ### Invariants And Boundaries
@@ -330,15 +328,11 @@ PUBLIC_TOOLS = (
 
 > Historical custody only. This section is not current advertisement, a callable-tool instruction or executed acceptance; the incoming L109 source held41 names; the composed L113 declaration holds40 names, with both resolve_context and dispatch_agent absent.
 
-- **Zero runtime imports, deliberately.** `models/worktree.py` imports this module at module scope,
   and it does so while `models.tools.tool_registry` may still be initializing. Any import added here
   can therefore create the cycle this relocation removed.
-- **This module never imports `mcp`.** `layers.toml` ranks `models` = 2 and `mcp` = 22, and the
   `mcp` charter forbids any import from below; a `models → mcp` edge is a layering violation.
-- `PUBLIC_TOOLS` is the *advertised* name set, not the *registered* name set. A tool can be
   registered (`models/tools/tool_registry.py`) and deliberately absent here — `session_retire` is the
   live example.
-- Do not add a second roster, a frozenset mirror, or a derived copy. `PUBLIC_TOOL_RESPONSE_MODELS`
   derives the response-model subset; nothing derives the tuple.
 
 ### Role Runtime and Scope
@@ -363,11 +357,8 @@ envelope declared **none** of those three keys, so the values crossed the wire v
 unchecked. Enforcing the vocabulary at the model boundary requires `models/worktree.py` to read
 `PUBLIC_TOOLS`, and while the tuple lived in `mcp` that read was not expressible:
 
-- `models → mcp` is a layering violation (`layers.toml` ranks `models` = 2, `mcp` = 22; the `mcp`
   charter forbids any import from below).
-- A function-local import is unwritable here: `ruff` rule `PLC0415` refuses it and suppressions are
   forbidden in this repository.
-- Module-level imports in either direction are circular (`mcp.tools.base` → `models.worktree` →
   `mcp.tools.base`).
 
 Moving the tuple to a zero-import `models` leaf makes the check *expressible* instead of
@@ -386,15 +377,9 @@ violations with no `models → mcp` edge and no new cycle.
 > Historical custody only. This section is not current advertisement, a callable-tool instruction or executed acceptance; the incoming L109 source held41 names; the composed L113 declaration holds40 names, with both resolve_context and dispatch_agent absent.
 
 - The roster's single definition, 74 ordered names, in a module that imports nothing. [1]
-- The stop's advertised name, placed immediately after its sync sibling in the working half of the tuple. [2]
 - The three capsule/skill-serving advertised names, appended at the tail with the registrar and registry rows that publish them. (historical reference3, retained in memory base c855ef3ee; no current target or fresh validation claimed)
 - The five `knowledge_*` names 260915-KS-L20 appended at the tail, with the comment naming the family, published in the same change as their registrar and registry rows. [4]
-- The adapter re-exports this object through `__all__` instead of declaring its own tuple. [5]
-- The response model that reads the roster to enforce the worktree surface's next-move vocabulary. [6]
 - The by-name response-model registry the roster is compared against, and the deliberate non-public names it excludes. [7]
-- The live registered-order comparison that treats this tuple as the advertised authority. [8]
-- The executor that pins the worktree surface's enforcement of this roster in both directions. [9]
-- The registrar that publishes the three capsule/skill names, whose order the tuple must match. [10]
 - The registrar that publishes the five `knowledge_*` names appended to `TOOL_REGISTRARS` in the same change. [11]
 
 ### Cross-Repo References

@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "7237b0af5c95b86b89ce3574fae21d7bce0a3f8f",
+        "blob": "86cb580f9a8694354d61564b316e02c78fa2dc0d",
         "content": "sha256:f84c2e7b3c2e890204d0da426f1263aa184ecc21ce906b8d56651948ac01a392",
         "locator": {
           "kind": "symbol",
@@ -21,8 +21,8 @@
     },
     {
       "anchor": {
-        "blob": "7237b0af5c95b86b89ce3574fae21d7bce0a3f8f",
-        "content": "sha256:eda7e766fff4d1c9142ad834126009604e45cd962a71261c10de10a474d81b80",
+        "blob": "86cb580f9a8694354d61564b316e02c78fa2dc0d",
+        "content": "sha256:5e3532464cc4f947b0e42f557d45da101ff16bbf8516158341331cfe8e427324",
         "locator": {
           "kind": "symbol",
           "name": "_after_side"
@@ -39,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "7237b0af5c95b86b89ce3574fae21d7bce0a3f8f",
+        "blob": "86cb580f9a8694354d61564b316e02c78fa2dc0d",
         "content": "sha256:95f542909c88f32a55a0df6f4c846272d0670efa2fb5c428d516ada325b63ed3",
         "locator": {
           "kind": "symbol",
@@ -62,12 +62,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7237b0af5c95b86b89ce3574fae21d7bce0a3f8f",
-            "content": "sha256:e4fd5f06df166210443e8a2e89c37b8b628da9641d30a638634bd103db6fbf64",
+            "blob": "86cb580f9a8694354d61564b316e02c78fa2dc0d",
+            "content": "sha256:90eab7e21bbfe1062de95e0db4a7ad7f185f6c5a2bb060cdbd8e2fc6d0965368",
             "locator": {
-              "end": 153,
+              "end": 102,
               "kind": "line_range",
-              "start": 85
+              "start": 98
             }
           },
           "kind": "code"
@@ -79,12 +79,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7237b0af5c95b86b89ce3574fae21d7bce0a3f8f",
+            "blob": "86cb580f9a8694354d61564b316e02c78fa2dc0d",
             "content": "sha256:535bae96df6290a9d91611861f72947a7a865cafba5dffc93d08c89b135ca4e0",
             "locator": {
-              "end": 197,
+              "end": 316,
               "kind": "line_range",
-              "start": 156
+              "start": 275
             }
           },
           "kind": "code"
@@ -96,29 +96,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7237b0af5c95b86b89ce3574fae21d7bce0a3f8f",
-            "content": "sha256:722dd274e2564195c9be2b7da1ee86c1fa1c190fdde55549b006f7c9719a28e1",
+            "blob": "86cb580f9a8694354d61564b316e02c78fa2dc0d",
+            "content": "sha256:8b8c26c416e2fd2b027ed9a616ec75fcfbafb0abd6b16f45e234dbed4ddf7df1",
             "locator": {
-              "end": 287,
+              "end": 400,
               "kind": "line_range",
-              "start": 209
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "15": {
-      "note": "Pinned code placement and exact bounded excerpts keep absence/read failure distinct.\n\nAnchor: \"def _placed(entry: Entry, code: OpenedCodeTree) -> dict[str, Any]:\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "7237b0af5c95b86b89ce3574fae21d7bce0a3f8f",
-            "content": "sha256:6277c7b49606c17e3b389278f7d95b3e8196263d35fadcbc3fb0dc303c948e30",
-            "locator": {
-              "end": 341,
-              "kind": "line_range",
-              "start": 291
+              "start": 394
             }
           },
           "kind": "code"
@@ -130,12 +113,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7237b0af5c95b86b89ce3574fae21d7bce0a3f8f",
+            "blob": "86cb580f9a8694354d61564b316e02c78fa2dc0d",
             "content": "sha256:2ef3adcdd6aaa1205d161ded4d2a7407b49691921c0450a330f7052e7451c18d",
             "locator": {
-              "end": 381,
+              "end": 547,
               "kind": "line_range",
-              "start": 344
+              "start": 510
             }
           },
           "kind": "code"
@@ -147,12 +130,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7237b0af5c95b86b89ce3574fae21d7bce0a3f8f",
-            "content": "sha256:5934cf67e6698e46c89ca2cb83caa1dde83edb9317721d0effad50b00e91931c",
+            "blob": "86cb580f9a8694354d61564b316e02c78fa2dc0d",
+            "content": "sha256:957f4f7778bf2c1eaadfd9dc0a75ad24b8ab19b0e155c9663b2b13c8e266bd00",
             "locator": {
-              "end": 73,
+              "end": 84,
               "kind": "line_range",
-              "start": 71
+              "start": 82
             }
           },
           "kind": "code"

@@ -3,25 +3,8 @@
   "proves": [
     {
       "anchor": {
-        "blob": "9473a5d8b14569ba7b6d2c3969d951a05529228f",
-        "content": "sha256:4169cb469379dc3f88f811a2ec43f4fc218c569c60df4d0e3ec2ec461634b8c4",
-        "locator": {
-          "kind": "symbol",
-          "name": "immediately shows MovedNotice and Update when explainer work exists, and renews live deterministic reads when no explainer work exists"
-        }
-      },
-      "facet": "Pins exact-leaf stream delivery and no-work renewal versus explicit Update.",
-      "id": "PRF-2560Q6",
-      "invariant": "INV-V0PX2F",
-      "origin": {
-        "handoffEntry": "L183-CUR-FE07-moved-notice",
-        "leaf": "260928-MIK-L183"
-      }
-    },
-    {
-      "anchor": {
-        "blob": "9473a5d8b14569ba7b6d2c3969d951a05529228f",
-        "content": "sha256:ec568becb94e480537a1c96e34963a344770d85d8bc63232784a7ca263400c42",
+        "blob": "3a41b22ca4a770d8b1e31a2bf52fbf0f5e83a4a7",
+        "content": "sha256:73e1032dfd4af170e6ccfb2d4bfcbed9b30196d588fd4346b6b8d605b355f380",
         "locator": {
           "kind": "symbol",
           "name": "mounts ExplanationSwitch in the top line, renders ExplanationView with tree and chat outside, and selects the exact claim block on return"
@@ -37,8 +20,8 @@
     },
     {
       "anchor": {
-        "blob": "9473a5d8b14569ba7b6d2c3969d951a05529228f",
-        "content": "sha256:749cb834a75352920b24a0896af647fcd7f09813425e350ed2aab6fdd935da64",
+        "blob": "3a41b22ca4a770d8b1e31a2bf52fbf0f5e83a4a7",
+        "content": "sha256:b2f7d37fc7da43b9b6ad9f64a45c09fceb72ae394f308732bfb8a92901305e21",
         "locator": {
           "kind": "symbol",
           "name": "mounts PlannedReview when the leaf is in planning mode (/planned)"
@@ -54,8 +37,8 @@
     },
     {
       "anchor": {
-        "blob": "9473a5d8b14569ba7b6d2c3969d951a05529228f",
-        "content": "sha256:ec568becb94e480537a1c96e34963a344770d85d8bc63232784a7ca263400c42",
+        "blob": "3a41b22ca4a770d8b1e31a2bf52fbf0f5e83a4a7",
+        "content": "sha256:73e1032dfd4af170e6ccfb2d4bfcbed9b30196d588fd4346b6b8d605b355f380",
         "locator": {
           "kind": "symbol",
           "name": "mounts ExplanationSwitch in the top line, renders ExplanationView with tree and chat outside, and selects the exact claim block on return"
@@ -71,8 +54,8 @@
     },
     {
       "anchor": {
-        "blob": "9473a5d8b14569ba7b6d2c3969d951a05529228f",
-        "content": "sha256:4ee7106e8f85d9d0a972e86b08859659f92d7e6f04c24d26db7ffa35524dab6b",
+        "blob": "3a41b22ca4a770d8b1e31a2bf52fbf0f5e83a4a7",
+        "content": "sha256:0fe795319efc1d8c6be7f1f561ebfdc24f3b945b75a08b696d085920d363baa5",
         "locator": {
           "kind": "symbol",
           "name": "orders blocks by judgment scale with Priority tie-break, groups ungraded last under Ungraded (n), preserves stale marks, and renders active-first hover reasons including carried merged grades"
@@ -94,12 +77,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9473a5d8b14569ba7b6d2c3969d951a05529228f",
-            "content": "sha256:ec568becb94e480537a1c96e34963a344770d85d8bc63232784a7ca263400c42",
+            "blob": "3a41b22ca4a770d8b1e31a2bf52fbf0f5e83a4a7",
+            "content": "sha256:3c25f8e3579a0a3fbfa45d3d2abfa6eca8bc93400754f042d5c74435506fde24",
             "locator": {
-              "end": 201,
+              "end": 912,
               "kind": "line_range",
-              "start": 68
+              "start": 95
             }
           },
           "kind": "test"
@@ -111,29 +94,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9473a5d8b14569ba7b6d2c3969d951a05529228f",
-            "content": "sha256:749cb834a75352920b24a0896af647fcd7f09813425e350ed2aab6fdd935da64",
+            "blob": "3a41b22ca4a770d8b1e31a2bf52fbf0f5e83a4a7",
+            "content": "sha256:64b92cbe73e88d19ef68e94298ad74fee4d0a3d6b9b9c78cd39e1b9d9eff1a98",
             "locator": {
-              "end": 298,
+              "end": 912,
               "kind": "line_range",
-              "start": 203
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "3": {
-      "note": "A moved event shows the notice at once where work exists, and renews the deterministic reads where none does\n\nAnchor: `immediately shows MovedNotice and Update when explainer work exists, and renews live deterministic reads when no explainer work exists`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "9473a5d8b14569ba7b6d2c3969d951a05529228f",
-            "content": "sha256:4169cb469379dc3f88f811a2ec43f4fc218c569c60df4d0e3ec2ec461634b8c4",
-            "locator": {
-              "end": 604,
-              "kind": "line_range",
-              "start": 486
+              "start": 338
             }
           },
           "kind": "test"

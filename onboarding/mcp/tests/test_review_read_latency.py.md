@@ -66,7 +66,7 @@ The same-size, same-second Git rewrite scenario imports the single `rewrite_in_t
 
 - An unreadable or absent task input is observed and nothing is kept. [13]
 - An edit restored during the computation is computed twice and answered as inputs_changing. [14]
-- The memo's bounds and keys. [15]
+- The memo's bounds and keys. 
 
 - A read after an edit shows the new content.  Anchor: `test_a_read_after_an_edit_shows_the_new_content_and_nothing_composed_is_kept` [18]
 
@@ -89,4 +89,6 @@ The same-size, same-second Git rewrite scenario imports the single `rewrite_in_t
 Three further retained declarations cover recorded answers: identical closed-tree inputs reuse the composed tree-view body, a new comparison-directory input set composes again, and loss of a recorded root tree or descendant object invalidates the kept answer in favour of the matching cold result. The descendant parameter table exercises removal, unreadability and a truncated compressed blob whose header remains readable. These assertions already exist in the base; the optional comparison-argument adaptation did not add them.
 
 - Entry and summary adapters provide the optional comparison argument. [24]
-- The measured live entry read passes None and retains one-resolution/capture and index assertions. [25]
+- The measured live entry read passes None and retains one-resolution/capture and index assertions.
+
+- Retired at the fifth freeze d59c3493: mcp/tests/test_review_read_latency.py:229-274 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 9547923129aa0b49d6b4f93a758f4fce70233745; mcp/tests/test_review_read_latency.py::test_the_view_memo_is_bounded_by_count_and_by_age_and_never_answers_another_key - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 9547923129aa0b49d6b4f93a758f4fce70233745. Retired means the anchor no longer stands, not that the cited subject was deleted.

@@ -7,12 +7,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1647f4dd12e70224576a34874fb812bbfc568670",
-            "content": "sha256:c7305a7724fc8658cb757487cee0ecfbc0abe3023ff36c6eb107e773f8025ed2",
+            "blob": "a5bcd8b7780f6718dd3d2da15869108315e1e26a",
+            "content": "sha256:21ff383a5bac28da52edca79440d3f9eff593208720850dc4c8c60923edcfe47",
             "locator": {
-              "end": 200,
+              "end": 1116,
               "kind": "line_range",
-              "start": 43
+              "start": 44
             }
           },
           "kind": "test"
@@ -24,29 +24,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1647f4dd12e70224576a34874fb812bbfc568670",
-            "content": "sha256:2d3ffc8a4a2cb9a383f8dfe5ba9b696a115d446c19137c4283be721f0d0dfdbb",
+            "blob": "a5bcd8b7780f6718dd3d2da15869108315e1e26a",
+            "content": "sha256:871277365cf57bf33d97ba036b900625a8129235c8fa9a63ea573e7964621903",
             "locator": {
-              "end": 638,
+              "end": 1116,
               "kind": "line_range",
-              "start": 205
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "6": {
-      "note": "Node replacement, vanished/surviving-line spacers, excerpt/marks continuity and selected-slot skeleton.\n\nAnchor: \"it('keeps the line when a card excerpt across the column's top is rebuilt while the cards above shrink', async () => {\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "1647f4dd12e70224576a34874fb812bbfc568670",
-            "content": "sha256:a0343c585176b39a93ebd6de62e83537141500a6d75f7ba3c0f18f1b4327c845",
-            "locator": {
-              "end": 1127,
-              "kind": "line_range",
-              "start": 642
+              "start": 217
             }
           },
           "kind": "test"

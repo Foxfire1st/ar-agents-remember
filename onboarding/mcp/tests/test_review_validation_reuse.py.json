@@ -1,0 +1,23 @@
+{
+  "path": "mcp/tests/test_review_validation_reuse.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Exact-input reuse retains native Git integrity and the candidate-parse boundaries",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e5ccb898286e5590196b7a81eaba6c417a725bc8",
+            "content": "sha256:d9a75736f1407e73c0674659416af17b394a6a4bb2b1cafacdd8f8a8910568a5",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_recorded_closure_reuses_body_validation_only_for_unchanged_storage"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

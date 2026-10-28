@@ -4,7 +4,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "1d06daecf8740ea6de32c4565dc4d24506617c0d",
+        "blob": "f02c66bf634f3db709b05706fd41125d90092f39",
         "content": "sha256:268aaa77dc1b552dbc9360dcac3865c38fef9366f2213c2e986ff926600f5d7d",
         "locator": {
           "end": 204,
@@ -23,7 +23,7 @@
     },
     {
       "anchor": {
-        "blob": "1d06daecf8740ea6de32c4565dc4d24506617c0d",
+        "blob": "f02c66bf634f3db709b05706fd41125d90092f39",
         "content": "sha256:cd701df369ce2b4945dadf6575293fe93ec053552aaa60bb6095648743ec0cc3",
         "locator": {
           "kind": "symbol",
@@ -41,7 +41,7 @@
     },
     {
       "anchor": {
-        "blob": "1d06daecf8740ea6de32c4565dc4d24506617c0d",
+        "blob": "f02c66bf634f3db709b05706fd41125d90092f39",
         "content": "sha256:dd42f8568cf691d1a33e5c8ebf0283b47f782376ed0d1ab103a166feadfe00a8",
         "locator": {
           "kind": "symbol",
@@ -59,7 +59,7 @@
     },
     {
       "anchor": {
-        "blob": "1d06daecf8740ea6de32c4565dc4d24506617c0d",
+        "blob": "f02c66bf634f3db709b05706fd41125d90092f39",
         "content": "sha256:d60d750a89d77ac02d7426bd0146003ebc9b949f939a9914c705ae02294ded7d",
         "locator": {
           "kind": "symbol",
@@ -77,7 +77,7 @@
     },
     {
       "anchor": {
-        "blob": "1d06daecf8740ea6de32c4565dc4d24506617c0d",
+        "blob": "f02c66bf634f3db709b05706fd41125d90092f39",
         "content": "sha256:44092296cea2440c514fed6c75569bba587801576fb40501b033b7203993778d",
         "locator": {
           "end": 127,
@@ -101,29 +101,13 @@
       "targets": [
         {
           "anchor": {
-            "blob": "db4ee81eefe2ea8e744d09543e10feec070a2b46",
-            "content": "sha256:e29a0ae65685a8b9a1a8b41013f668d69aa49aec462004040e1477fbcb99ef95",
+            "blob": "e23e68eb2a31165781bb22894b445d6d8bc18b66",
+            "content": "sha256:2d24c867ca31e1b03d8f8e8a739931b87d1d7942b4cf007041b870ea2b1b29a1",
             "locator": {
               "kind": "symbol",
               "name": "listFolder"
             },
             "path": "dashboard/src/data/notes.ts"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "10": {
-      "note": "Reference resolution keeps the old joined-text key and reads the current list through useEffectEvent, without treating array identity as another trigger. \\",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "1d06daecf8740ea6de32c4565dc4d24506617c0d",
-            "content": "sha256:59bebb3e951a81ae0760dbbb178f415e4127df07eb2c3ee58b9c5d46a49c64ca",
-            "locator": {
-              "kind": "symbol",
-              "name": "useResolvedNotes"
-            }
           },
           "kind": "code"
         }
@@ -151,7 +135,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1d06daecf8740ea6de32c4565dc4d24506617c0d",
+            "blob": "f02c66bf634f3db709b05706fd41125d90092f39",
             "content": "sha256:40d20102cd94a91b127838a0ee32e7e23ff85564542f9374d67f8267f7e2e7db",
             "locator": {
               "end": 23,
@@ -257,8 +241,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6750d1d06d2d778b6dd37df6689771e9b0ae6b6f",
-            "content": "sha256:8280aa4a7fcde4ee60537f6f70929c4028123e0295c8673bde2258576074e133",
+            "blob": "3070c20a72bc518963b29b04d09db5b95b740dc8",
+            "content": "sha256:ec3cff00e71fd4bd5aebef6f30d83de579d14afeb3ab802a0955ce31e4e3e68d",
             "locator": {
               "kind": "file"
             },
@@ -273,7 +257,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1d06daecf8740ea6de32c4565dc4d24506617c0d",
+            "blob": "f02c66bf634f3db709b05706fd41125d90092f39",
             "content": "sha256:d60d750a89d77ac02d7426bd0146003ebc9b949f939a9914c705ae02294ded7d",
             "locator": {
               "kind": "symbol",
@@ -289,8 +273,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1d06daecf8740ea6de32c4565dc4d24506617c0d",
-            "content": "sha256:16777e69212429051dac863d0dff5e83ccbce71dafed078bec65a573f52c3072",
+            "blob": "f02c66bf634f3db709b05706fd41125d90092f39",
+            "content": "sha256:86768c2f73aaf4211588f49da8c710642ab6022be7819a385f6c57cfec332997",
             "locator": {
               "kind": "file"
             }

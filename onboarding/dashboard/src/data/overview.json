@@ -48,7 +48,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "42427cf2c755ff5dd21db48d8561569ecc82c094",
+            "blob": "7a5f2e16883465216bc2170e7e5df96b58e72a6e",
             "content": "sha256:899b2a9e8ec6be0f995ce1a6ae41fcae5bda1749fbaf8e489de391f7921fc627",
             "locator": {
               "end": 210,
@@ -61,12 +61,12 @@
         },
         {
           "anchor": {
-            "blob": "42427cf2c755ff5dd21db48d8561569ecc82c094",
+            "blob": "7a5f2e16883465216bc2170e7e5df96b58e72a6e",
             "content": "sha256:7a6edf9b56b9290a93fb635cd5be841cca0c286dcc93a8600383f3352fb37284",
             "locator": {
-              "end": 277,
+              "end": 279,
               "kind": "line_range",
-              "start": 249
+              "start": 251
             },
             "path": "dashboard/src/data/reviewLane.ts"
           },
@@ -128,8 +128,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "182e7b6b618f5f3485b278a84d16dc19f7e720a6",
-            "content": "sha256:5fad02ef64ffbff2c42ad214d1bed81138203b4377a90464ca2eebb99beac421",
+            "blob": "0e69a371f1c81dd1fdb854476f50f1d23c43a8cf",
+            "content": "sha256:6b3c3f3c8a9be8bb0421c6d68a40b40c86e38f3389a798efdf8a71709119805e",
             "locator": {
               "kind": "file"
             },
@@ -284,8 +284,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "182e7b6b618f5f3485b278a84d16dc19f7e720a6",
-            "content": "sha256:5fad02ef64ffbff2c42ad214d1bed81138203b4377a90464ca2eebb99beac421",
+            "blob": "0e69a371f1c81dd1fdb854476f50f1d23c43a8cf",
+            "content": "sha256:6b3c3f3c8a9be8bb0421c6d68a40b40c86e38f3389a798efdf8a71709119805e",
             "locator": {
               "kind": "file"
             },
@@ -300,23 +300,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "182e7b6b618f5f3485b278a84d16dc19f7e720a6",
+            "blob": "0e69a371f1c81dd1fdb854476f50f1d23c43a8cf",
             "content": "sha256:7542b756f670622abecdec2079bad7f41224088d2623e8a53db6a0a24c57e9e3",
             "locator": {
               "kind": "symbol",
               "name": "keepableCardAnswer"
-            },
-            "path": "dashboard/src/data/reviewTrees.ts"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "182e7b6b618f5f3485b278a84d16dc19f7e720a6",
-            "content": "sha256:4f7ef88cf00fde32f3e6ada8c6e305c55e6ba26dd9643fa619537f5443afa97c",
-            "locator": {
-              "kind": "symbol",
-              "name": "fetchCardEntries"
             },
             "path": "dashboard/src/data/reviewTrees.ts"
           },
@@ -329,7 +317,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "182e7b6b618f5f3485b278a84d16dc19f7e720a6",
+            "blob": "0e69a371f1c81dd1fdb854476f50f1d23c43a8cf",
             "content": "sha256:f445d9876c6071b239be4d7baaa1ca91615b50dfec52f16a97fff7f744d85b9a",
             "locator": {
               "kind": "symbol",
@@ -341,7 +329,7 @@
         },
         {
           "anchor": {
-            "blob": "182e7b6b618f5f3485b278a84d16dc19f7e720a6",
+            "blob": "0e69a371f1c81dd1fdb854476f50f1d23c43a8cf",
             "content": "sha256:35addcb9192d92b8086d49ae0d6a3db7778e0ed7b0fde48a9ca802a794bd1120",
             "locator": {
               "kind": "symbol",
@@ -353,20 +341,8 @@
         },
         {
           "anchor": {
-            "blob": "182e7b6b618f5f3485b278a84d16dc19f7e720a6",
-            "content": "sha256:1fa61188476acdc749083ae4484280cf9e83be41d2f261379406300997118881",
-            "locator": {
-              "kind": "symbol",
-              "name": "mergedCards"
-            },
-            "path": "dashboard/src/data/reviewTrees.ts"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "182e7b6b618f5f3485b278a84d16dc19f7e720a6",
-            "content": "sha256:3c0133ef85ea41914c1addbd673a71b9680a65f12460998ac8b047fd13e421a0",
+            "blob": "0e69a371f1c81dd1fdb854476f50f1d23c43a8cf",
+            "content": "sha256:97b55869fcad9deb90967ac5e381293c2453c8330113711936df324e6afbdf6d",
             "locator": {
               "kind": "symbol",
               "name": "useChangeSetCards"
@@ -382,8 +358,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5e94e860bdcfd117a4e496db152da5bfdb241e53",
-            "content": "sha256:a9f299815da9664a1cafce6e7affbb659fe91d282a219f3a20695c8a73f48425",
+            "blob": "ce89268a33bb0945a416e077ebb738159b133809",
+            "content": "sha256:e470c7af378ec882122a77bf080a3c8d115848d26b0bbe570bf422af45d7c4bb",
             "locator": {
               "kind": "symbol",
               "name": "intentReviewEntries"
@@ -399,8 +375,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "421fcf655416c82d0bd4d4e7c4e93a8449682d08",
-            "content": "sha256:c79eab348993831ae8a2c377487e00c4ccd5c8922fe6b5f9eda102e8cc01f51f",
+            "blob": "73fa1d355d2dc4410a2b30bb85fd00413dbd9452",
+            "content": "sha256:780491a1b7a07a5c0592961ed3caf204693ee543c04870c0e337bbc9af03b168",
             "locator": {
               "kind": "symbol",
               "name": "useReviewCatalogue"
@@ -469,30 +445,13 @@
         }
       ]
     },
-    "116": {
-      "note": "The leaf-wide trees answer carries the highest recorded number and the delivered notice beside the comparison it resolved.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "182e7b6b618f5f3485b278a84d16dc19f7e720a6",
-            "content": "sha256:ed54ac56eb988dd01cf0f482fc7d5b1acab4ab550d0e3619cacadb737503fc2e",
-            "locator": {
-              "kind": "symbol",
-              "name": "ReviewTreesResult"
-            },
-            "path": "dashboard/src/data/reviewTrees.ts"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "117": {
       "note": "The existing state stream also carries review.explainer.moved. Its listener ignores a stopped or replaced EventSource, marks a current event alive and publishes the supplied move or clear notice. The moved subscriber set is keyed by the exact repository, master and leaf; it opens no connection or model turn. ReviewSurface owns whether the notice offers Update or renews the deterministic live reads.\n\nAnchor: `attachReviewListeners`",
       "targets": [
         {
           "anchor": {
-            "blob": "e759eb54b9cbb7db614234415ff2c56f1d345e2c",
-            "content": "sha256:eee51c3781c7dc641d9a571568caab5341d83b8dfb50133f24064e92cd7223f3",
+            "blob": "e1559d93e71ef4cd0150bcd4b3e3f40db6a8bc2f",
+            "content": "sha256:e99de257558d12a8eb66451aa7963473fcb8d224617e586c45b5560c3eee00a3",
             "locator": {
               "kind": "file"
             },
@@ -553,8 +512,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "421fcf655416c82d0bd4d4e7c4e93a8449682d08",
-            "content": "sha256:4c3fd11e4b0a15e8e0fe08a126594e4cf000fb021985f67854c1fb7d71e06619",
+            "blob": "73fa1d355d2dc4410a2b30bb85fd00413dbd9452",
+            "content": "sha256:93636c1b2d30a2760d953db6f7ab43c584c69412119977a471cac57465de3e3b",
             "locator": {
               "kind": "file"
             },
@@ -596,7 +555,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "42427cf2c755ff5dd21db48d8561569ecc82c094",
+            "blob": "7a5f2e16883465216bc2170e7e5df96b58e72a6e",
             "content": "sha256:3ab1fb18ca09c216fe1c383361d6ed98476f8a2756d27a6f27df31eddca8b5a9",
             "locator": {
               "kind": "symbol",
@@ -797,7 +756,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5e94e860bdcfd117a4e496db152da5bfdb241e53",
+            "blob": "ce89268a33bb0945a416e077ebb738159b133809",
             "content": "sha256:faef4dafa9f822bbd133039f932b85f3ed53963e045da9f0fe5d9d5c12e62e89",
             "locator": {
               "end": 435,
@@ -833,8 +792,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5e94e860bdcfd117a4e496db152da5bfdb241e53",
-            "content": "sha256:a9f299815da9664a1cafce6e7affbb659fe91d282a219f3a20695c8a73f48425",
+            "blob": "ce89268a33bb0945a416e077ebb738159b133809",
+            "content": "sha256:e470c7af378ec882122a77bf080a3c8d115848d26b0bbe570bf422af45d7c4bb",
             "locator": {
               "kind": "symbol",
               "name": "intentReviewEntries"
@@ -850,7 +809,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5e94e860bdcfd117a4e496db152da5bfdb241e53",
+            "blob": "ce89268a33bb0945a416e077ebb738159b133809",
             "content": "sha256:cfc7befc6219e0e7c595423f21071ccb794f0c8622a50e6090535c95f0a6dcc7",
             "locator": {
               "kind": "symbol",
@@ -862,7 +821,7 @@
         },
         {
           "anchor": {
-            "blob": "5e94e860bdcfd117a4e496db152da5bfdb241e53",
+            "blob": "ce89268a33bb0945a416e077ebb738159b133809",
             "content": "sha256:494d09652a67833a98c55a7fa7f5647a9630d71c6355a7cb85d093dc166ba880",
             "locator": {
               "kind": "symbol",
@@ -874,12 +833,12 @@
         },
         {
           "anchor": {
-            "blob": "5e94e860bdcfd117a4e496db152da5bfdb241e53",
+            "blob": "ce89268a33bb0945a416e077ebb738159b133809",
             "content": "sha256:24c209e91cf40031f894eb6d0385fc2b83a75e687b0061b6ffdbe464622a4708",
             "locator": {
-              "end": 581,
+              "end": 583,
               "kind": "line_range",
-              "start": 581
+              "start": 583
             },
             "path": "dashboard/src/data/review.ts"
           },
@@ -892,28 +851,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5e94e860bdcfd117a4e496db152da5bfdb241e53",
-            "content": "sha256:65b7f98cb5ff7962303f5258fab14cfff5acc73adf5a464ce722d0a3f9fa800f",
+            "blob": "ce89268a33bb0945a416e077ebb738159b133809",
+            "content": "sha256:3a72132f0e91797658680ee56804a30bd93c76a74d449d6f3d58b4e7c0b8e002",
             "locator": {
               "kind": "file"
-            },
-            "path": "dashboard/src/data/review.ts"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "33": {
-      "note": "The endpoint the comparison call reaches, with no path among its parameters.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "5e94e860bdcfd117a4e496db152da5bfdb241e53",
-            "content": "sha256:1b0ba6ded67ab3766300e0dea9ad82553875fd843dd265dabad3cab47290aa26",
-            "locator": {
-              "end": 460,
-              "kind": "line_range",
-              "start": 435
             },
             "path": "dashboard/src/data/review.ts"
           },
@@ -926,7 +867,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5e94e860bdcfd117a4e496db152da5bfdb241e53",
+            "blob": "ce89268a33bb0945a416e077ebb738159b133809",
             "content": "sha256:c6674657db0814be58796a9bc79afe11430ad85e446b4dcbb9ede76ed2ef88a9",
             "locator": {
               "end": 67,
@@ -944,7 +885,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5e94e860bdcfd117a4e496db152da5bfdb241e53",
+            "blob": "ce89268a33bb0945a416e077ebb738159b133809",
             "content": "sha256:9b1b00c8d99758ebca583aad6b9dd2478b4631ba89c975e3b1d9626474386b90",
             "locator": {
               "end": 4,
@@ -962,7 +903,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5e94e860bdcfd117a4e496db152da5bfdb241e53",
+            "blob": "ce89268a33bb0945a416e077ebb738159b133809",
             "content": "sha256:120ee0b56342b5eef6994cc6b88801676ac536ccce4757950a23d7d01ca2c02e",
             "locator": {
               "end": 401,
@@ -980,7 +921,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5e94e860bdcfd117a4e496db152da5bfdb241e53",
+            "blob": "ce89268a33bb0945a416e077ebb738159b133809",
             "content": "sha256:8180393cd0c5609e7551fcae068f9d4a94397f6829ea5768ff30b8c98aec0f40",
             "locator": {
               "kind": "symbol",
@@ -992,7 +933,7 @@
         },
         {
           "anchor": {
-            "blob": "5e94e860bdcfd117a4e496db152da5bfdb241e53",
+            "blob": "ce89268a33bb0945a416e077ebb738159b133809",
             "content": "sha256:9ae896a10dad7d4c5f4f7cab603a529c3c5e41269f3c6d22f6128aae1e8f54dd",
             "locator": {
               "kind": "symbol",
@@ -1022,7 +963,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5e94e860bdcfd117a4e496db152da5bfdb241e53",
+            "blob": "ce89268a33bb0945a416e077ebb738159b133809",
             "content": "sha256:f0562673993cbc1b914392217debb15c996e78e15fd7ad216ed341d97623e366",
             "locator": {
               "kind": "symbol",
@@ -1034,7 +975,7 @@
         },
         {
           "anchor": {
-            "blob": "5e94e860bdcfd117a4e496db152da5bfdb241e53",
+            "blob": "ce89268a33bb0945a416e077ebb738159b133809",
             "content": "sha256:fa61b803b77cd44bd7425f4b38c5153b6416be5ea89e7fc711f68ffaa35c0541",
             "locator": {
               "kind": "symbol",
@@ -1046,7 +987,7 @@
         },
         {
           "anchor": {
-            "blob": "5e94e860bdcfd117a4e496db152da5bfdb241e53",
+            "blob": "ce89268a33bb0945a416e077ebb738159b133809",
             "content": "sha256:950d3b870b93a5113e6a5ee6a9023583438a80b65df212ca5ca4dbe31e289909",
             "locator": {
               "kind": "symbol",
@@ -1063,7 +1004,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5e94e860bdcfd117a4e496db152da5bfdb241e53",
+            "blob": "ce89268a33bb0945a416e077ebb738159b133809",
             "content": "sha256:8c360500d2f45ded1ac5c1873960483d26dd7dccd7e48a99c18bc5ec20b176b0",
             "locator": {
               "kind": "symbol",
@@ -1075,7 +1016,7 @@
         },
         {
           "anchor": {
-            "blob": "5e94e860bdcfd117a4e496db152da5bfdb241e53",
+            "blob": "ce89268a33bb0945a416e077ebb738159b133809",
             "content": "sha256:0d1fc3fb34c2a83ac997a203c89912e95c91fddf442d21f980b500da2b9f12c1",
             "locator": {
               "kind": "symbol",
@@ -1092,7 +1033,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "42427cf2c755ff5dd21db48d8561569ecc82c094",
+            "blob": "7a5f2e16883465216bc2170e7e5df96b58e72a6e",
             "content": "sha256:e3e612114faf1e0e5a02a7cf6829e77627e7d4f9bd8ceaef6d3e943393d47b1a",
             "locator": {
               "end": 16,
@@ -1110,8 +1051,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5e94e860bdcfd117a4e496db152da5bfdb241e53",
-            "content": "sha256:65b7f98cb5ff7962303f5258fab14cfff5acc73adf5a464ce722d0a3f9fa800f",
+            "blob": "ce89268a33bb0945a416e077ebb738159b133809",
+            "content": "sha256:3a72132f0e91797658680ee56804a30bd93c76a74d449d6f3d58b4e7c0b8e002",
             "locator": {
               "kind": "file"
             },
@@ -1126,8 +1067,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5e94e860bdcfd117a4e496db152da5bfdb241e53",
-            "content": "sha256:65b7f98cb5ff7962303f5258fab14cfff5acc73adf5a464ce722d0a3f9fa800f",
+            "blob": "ce89268a33bb0945a416e077ebb738159b133809",
+            "content": "sha256:3a72132f0e91797658680ee56804a30bd93c76a74d449d6f3d58b4e7c0b8e002",
             "locator": {
               "kind": "file"
             },
@@ -1142,25 +1083,13 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0f255485bc9dc7fc49932bd57f66ff49c8a4564c",
+            "blob": "f573a5c5c9d295de071c004326eb932c2d61dd8d",
             "content": "sha256:8e3dc14b56c971b106e75dff7e72407f165fa28801829cf68d27165906c1a86d",
             "locator": {
               "kind": "symbol",
               "name": "ChangeList"
             },
             "path": "dashboard/src/panels/changeset/ChangeSetViewer.tsx"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "6f30efcbe166c0fe854c1de9cde75a444ff9c5a5",
-            "content": "sha256:81973936fcd0ce8ad6257098b6fd7b8f33b8c63302e7ea464a98092415ff86f1",
-            "locator": {
-              "kind": "symbol",
-              "name": "useReviewChangePage"
-            },
-            "path": "dashboard/src/panels/review/ReviewSurface.tsx"
           },
           "kind": "code"
         }
@@ -1234,7 +1163,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6add444a4a97d7a6620d640d6ffd27c4b3ec8734",
+            "blob": "050a7b3c21af1530d738d777cb78427adf3f57ca",
             "content": "sha256:a7e5ba6f8331c12effad7c41e71338de141f4769efb00994a3181bf88c33f1b3",
             "locator": {
               "kind": "symbol",
@@ -1246,7 +1175,7 @@
         },
         {
           "anchor": {
-            "blob": "6add444a4a97d7a6620d640d6ffd27c4b3ec8734",
+            "blob": "050a7b3c21af1530d738d777cb78427adf3f57ca",
             "content": "sha256:1272bac5ce2f7595b1d3bf178f8f23fceb8ae7c37096a6de10d8d163257da323",
             "locator": {
               "kind": "symbol",
@@ -1287,35 +1216,6 @@
         }
       ]
     },
-    "48": {
-      "note": "Whole-file review navigation opens the existing viewer on the recorded comparison; absent range authority produces comparison_not_recorded rather than a substituted source-content expansion.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "6f30efcbe166c0fe854c1de9cde75a444ff9c5a5",
-            "content": "sha256:81973936fcd0ce8ad6257098b6fd7b8f33b8c63302e7ea464a98092415ff86f1",
-            "locator": {
-              "kind": "symbol",
-              "name": "useReviewChangePage"
-            },
-            "path": "dashboard/src/panels/review/ReviewSurface.tsx"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "6f30efcbe166c0fe854c1de9cde75a444ff9c5a5",
-            "content": "sha256:26c91e84efbfa06d542f24876ca3ef92df5089a733eed1ce5b216728c669a9d6",
-            "locator": {
-              "kind": "symbol",
-              "name": "ReviewChangeOverlay"
-            },
-            "path": "dashboard/src/panels/review/ReviewSurface.tsx"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "49": {
       "note": "The retained backend reader distinguishes an absent endpoint entry from an unreadable lookup, then classifies an entry's kind before its bytes.",
       "targets": [
@@ -1350,7 +1250,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "42427cf2c755ff5dd21db48d8561569ecc82c094",
+            "blob": "7a5f2e16883465216bc2170e7e5df96b58e72a6e",
             "content": "sha256:ca044fb554d86b53ee7a9f656cea4fe94166872e1b7e6a168623a2f29fb13b6a",
             "locator": {
               "kind": "symbol",
@@ -1362,7 +1262,7 @@
         },
         {
           "anchor": {
-            "blob": "42427cf2c755ff5dd21db48d8561569ecc82c094",
+            "blob": "7a5f2e16883465216bc2170e7e5df96b58e72a6e",
             "content": "sha256:3ab1fb18ca09c216fe1c383361d6ed98476f8a2756d27a6f27df31eddca8b5a9",
             "locator": {
               "kind": "symbol",
@@ -1379,7 +1279,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ad784b1c6e63764e2f4437c99f28a2b9bd553703",
+            "blob": "f89adae5ac3dac2355f244579c0521e08cfb7cd9",
             "content": "sha256:518ba97a2e876a750a674facde42ec49d1f01b376028d44f80204506341ecca1",
             "locator": {
               "kind": "symbol",
@@ -1391,7 +1291,7 @@
         },
         {
           "anchor": {
-            "blob": "ad784b1c6e63764e2f4437c99f28a2b9bd553703",
+            "blob": "f89adae5ac3dac2355f244579c0521e08cfb7cd9",
             "content": "sha256:e2a13520375f7b850be1252be1a1a0852a60585640444d8778b26b8651a29b2c",
             "locator": {
               "kind": "symbol",
@@ -1403,7 +1303,7 @@
         },
         {
           "anchor": {
-            "blob": "ad784b1c6e63764e2f4437c99f28a2b9bd553703",
+            "blob": "f89adae5ac3dac2355f244579c0521e08cfb7cd9",
             "content": "sha256:5916c4a623a8d92d33dd2e79fe2de9624a4b08b8f31d531a8769a86d5dda886a",
             "locator": {
               "kind": "symbol",
@@ -1415,7 +1315,7 @@
         },
         {
           "anchor": {
-            "blob": "ad784b1c6e63764e2f4437c99f28a2b9bd553703",
+            "blob": "f89adae5ac3dac2355f244579c0521e08cfb7cd9",
             "content": "sha256:6e718064d432e3f615529ebd114610cc6182210cdbbaf5888f87bfa3102c05a1",
             "locator": {
               "end": 76,
@@ -1433,7 +1333,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5e94e860bdcfd117a4e496db152da5bfdb241e53",
+            "blob": "ce89268a33bb0945a416e077ebb738159b133809",
             "content": "sha256:114a20ea3c0c3d3fa220bd8e7c7a5daa2f3ef8dc752f24577b7d6d4dfac5dc82",
             "locator": {
               "end": 61,
@@ -1462,8 +1362,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5e94e860bdcfd117a4e496db152da5bfdb241e53",
-            "content": "sha256:65b7f98cb5ff7962303f5258fab14cfff5acc73adf5a464ce722d0a3f9fa800f",
+            "blob": "ce89268a33bb0945a416e077ebb738159b133809",
+            "content": "sha256:3a72132f0e91797658680ee56804a30bd93c76a74d449d6f3d58b4e7c0b8e002",
             "locator": {
               "kind": "file"
             },
@@ -1478,7 +1378,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5e94e860bdcfd117a4e496db152da5bfdb241e53",
+            "blob": "ce89268a33bb0945a416e077ebb738159b133809",
             "content": "sha256:137525d41889415ab9ccb0afdfa3865247a8fc7ad6da62a549ee88672da90b15",
             "locator": {
               "end": 105,
@@ -1496,7 +1396,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5e94e860bdcfd117a4e496db152da5bfdb241e53",
+            "blob": "ce89268a33bb0945a416e077ebb738159b133809",
             "content": "sha256:bfb55936f3767abe2ffe70c120e449eea1f901a74fe802942dccde0fa063dc1a",
             "locator": {
               "kind": "symbol",
@@ -1549,7 +1449,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "182e7b6b618f5f3485b278a84d16dc19f7e720a6",
+            "blob": "0e69a371f1c81dd1fdb854476f50f1d23c43a8cf",
             "content": "sha256:cf5519e02414956742c682ebaa184de29ca2a1237035f55f7b64e0df2eeab89e",
             "locator": {
               "end": 24,
@@ -1567,8 +1467,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "182e7b6b618f5f3485b278a84d16dc19f7e720a6",
-            "content": "sha256:5fad02ef64ffbff2c42ad214d1bed81138203b4377a90464ca2eebb99beac421",
+            "blob": "0e69a371f1c81dd1fdb854476f50f1d23c43a8cf",
+            "content": "sha256:6b3c3f3c8a9be8bb0421c6d68a40b40c86e38f3389a798efdf8a71709119805e",
             "locator": {
               "kind": "file"
             },
@@ -1583,8 +1483,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "182e7b6b618f5f3485b278a84d16dc19f7e720a6",
-            "content": "sha256:5fad02ef64ffbff2c42ad214d1bed81138203b4377a90464ca2eebb99beac421",
+            "blob": "0e69a371f1c81dd1fdb854476f50f1d23c43a8cf",
+            "content": "sha256:6b3c3f3c8a9be8bb0421c6d68a40b40c86e38f3389a798efdf8a71709119805e",
             "locator": {
               "kind": "file"
             },
@@ -1599,8 +1499,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "182e7b6b618f5f3485b278a84d16dc19f7e720a6",
-            "content": "sha256:5fad02ef64ffbff2c42ad214d1bed81138203b4377a90464ca2eebb99beac421",
+            "blob": "0e69a371f1c81dd1fdb854476f50f1d23c43a8cf",
+            "content": "sha256:6b3c3f3c8a9be8bb0421c6d68a40b40c86e38f3389a798efdf8a71709119805e",
             "locator": {
               "kind": "file"
             },
@@ -1615,12 +1515,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "182e7b6b618f5f3485b278a84d16dc19f7e720a6",
+            "blob": "0e69a371f1c81dd1fdb854476f50f1d23c43a8cf",
             "content": "sha256:6b05bb6f8f5397db18de287811001a9b61522792739f52b9d17d44795c1f7924",
             "locator": {
-              "end": 312,
+              "end": 355,
               "kind": "line_range",
-              "start": 310
+              "start": 353
             },
             "path": "dashboard/src/data/reviewTrees.ts"
           },
@@ -1633,8 +1533,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "182e7b6b618f5f3485b278a84d16dc19f7e720a6",
-            "content": "sha256:5fad02ef64ffbff2c42ad214d1bed81138203b4377a90464ca2eebb99beac421",
+            "blob": "0e69a371f1c81dd1fdb854476f50f1d23c43a8cf",
+            "content": "sha256:6b3c3f3c8a9be8bb0421c6d68a40b40c86e38f3389a798efdf8a71709119805e",
             "locator": {
               "kind": "file"
             },
@@ -1649,8 +1549,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "182e7b6b618f5f3485b278a84d16dc19f7e720a6",
-            "content": "sha256:5fad02ef64ffbff2c42ad214d1bed81138203b4377a90464ca2eebb99beac421",
+            "blob": "0e69a371f1c81dd1fdb854476f50f1d23c43a8cf",
+            "content": "sha256:6b3c3f3c8a9be8bb0421c6d68a40b40c86e38f3389a798efdf8a71709119805e",
             "locator": {
               "kind": "file"
             },
@@ -1665,8 +1565,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "182e7b6b618f5f3485b278a84d16dc19f7e720a6",
-            "content": "sha256:5fad02ef64ffbff2c42ad214d1bed81138203b4377a90464ca2eebb99beac421",
+            "blob": "0e69a371f1c81dd1fdb854476f50f1d23c43a8cf",
+            "content": "sha256:6b3c3f3c8a9be8bb0421c6d68a40b40c86e38f3389a798efdf8a71709119805e",
             "locator": {
               "kind": "file"
             },
@@ -1681,8 +1581,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "182e7b6b618f5f3485b278a84d16dc19f7e720a6",
-            "content": "sha256:3c0133ef85ea41914c1addbd673a71b9680a65f12460998ac8b047fd13e421a0",
+            "blob": "0e69a371f1c81dd1fdb854476f50f1d23c43a8cf",
+            "content": "sha256:97b55869fcad9deb90967ac5e381293c2453c8330113711936df324e6afbdf6d",
             "locator": {
               "kind": "symbol",
               "name": "useChangeSetCards"
@@ -1693,8 +1593,8 @@
         },
         {
           "anchor": {
-            "blob": "182e7b6b618f5f3485b278a84d16dc19f7e720a6",
-            "content": "sha256:97b943f987f48d6f3bcd3e2317f8e39915d089afbcbd56419ad0a90dd0db3d4c",
+            "blob": "0e69a371f1c81dd1fdb854476f50f1d23c43a8cf",
+            "content": "sha256:5d63650957fd9323b60edd88bc1925525d8422f17dc6d0b31659174031f5977f",
             "locator": {
               "end": 562,
               "kind": "line_range",
@@ -1711,8 +1611,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "182e7b6b618f5f3485b278a84d16dc19f7e720a6",
-            "content": "sha256:5fad02ef64ffbff2c42ad214d1bed81138203b4377a90464ca2eebb99beac421",
+            "blob": "0e69a371f1c81dd1fdb854476f50f1d23c43a8cf",
+            "content": "sha256:6b3c3f3c8a9be8bb0421c6d68a40b40c86e38f3389a798efdf8a71709119805e",
             "locator": {
               "kind": "file"
             },
@@ -1751,53 +1651,17 @@
         }
       ]
     },
-    "70": {
-      "note": "The change-set read requests the page's own comparison — `chosen ?? resolved`, the number the page chose else the default the frame's limitations name (`useChangeSet.ts:120-124`) — and enables the leaf-wide trees read on that number (`:129`); a chosen number other than the resolved default is marked older rather than replacing the frame.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "b43f30893a1d83f202278f31bcdc9bd4a68de218",
-            "content": "sha256:cc5ab4a8a269511378ecac5eba5242334569f29a632c237ae9a1bff71b3cfee0",
-            "locator": {
-              "end": 202,
-              "kind": "line_range",
-              "start": 188
-            },
-            "path": "dashboard/src/panels/review/reading/useChangeSet.ts"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "71": {
-      "note": "A superseded request is aborted and only the newer answer is shown.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "65199f438a6c465e47d5f0ebcc5fc45567949ba4",
-            "content": "sha256:3ec032bfc52bc8e27501546c3684360c5cea29502f98037f73e10dd8d50cf24b",
-            "locator": {
-              "end": 67,
-              "kind": "line_range",
-              "start": 40
-            },
-            "path": "dashboard/src/data/reviewTrees.supersede.test.ts"
-          },
-          "kind": "test"
-        }
-      ]
-    },
     "72": {
       "note": "Loading stays shown during the retries.",
       "targets": [
         {
           "anchor": {
-            "blob": "65199f438a6c465e47d5f0ebcc5fc45567949ba4",
+            "blob": "4525d62a68bc2073bf6b8583506a094332291854",
             "content": "sha256:b6818013d07cbbdb1e24315b2a7fc49d274c35a2fecb9239429abca70d563ef4",
             "locator": {
-              "end": 127,
+              "end": 129,
               "kind": "line_range",
-              "start": 113
+              "start": 115
             },
             "path": "dashboard/src/data/reviewTrees.supersede.test.ts"
           },
@@ -1810,12 +1674,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "65199f438a6c465e47d5f0ebcc5fc45567949ba4",
+            "blob": "4525d62a68bc2073bf6b8583506a094332291854",
             "content": "sha256:3f96c4620e98330349b152c75a905e3983c3942a7d131963b5aafec57657c3b5",
             "locator": {
-              "end": 149,
+              "end": 151,
               "kind": "line_range",
-              "start": 139
+              "start": 141
             },
             "path": "dashboard/src/data/reviewTrees.supersede.test.ts"
           },
@@ -1846,7 +1710,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "944960a629ae679b6412bdfdc583c9a18b17dfc3",
+            "blob": "3f3302a8f0d3f3743960dbb22069270aecf18300",
             "content": "sha256:7b9fe6175f1d844ad530843fa9ed0f9d23c69e1763a7f719181b8dc227269084",
             "locator": {
               "end": 16,
@@ -1864,8 +1728,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "944960a629ae679b6412bdfdc583c9a18b17dfc3",
-            "content": "sha256:505328199b8aa8063d5f3edf27599d3d5c66658a4db5f530607c9b55c3511dff",
+            "blob": "3f3302a8f0d3f3743960dbb22069270aecf18300",
+            "content": "sha256:926bec36aa5d3aa3b9e56da95657348563f04036e913943aa3fab0f7c682a750",
             "locator": {
               "kind": "file"
             },
@@ -1880,8 +1744,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "944960a629ae679b6412bdfdc583c9a18b17dfc3",
-            "content": "sha256:505328199b8aa8063d5f3edf27599d3d5c66658a4db5f530607c9b55c3511dff",
+            "blob": "3f3302a8f0d3f3743960dbb22069270aecf18300",
+            "content": "sha256:926bec36aa5d3aa3b9e56da95657348563f04036e913943aa3fab0f7c682a750",
             "locator": {
               "kind": "file"
             },
@@ -1896,8 +1760,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "944960a629ae679b6412bdfdc583c9a18b17dfc3",
-            "content": "sha256:505328199b8aa8063d5f3edf27599d3d5c66658a4db5f530607c9b55c3511dff",
+            "blob": "3f3302a8f0d3f3743960dbb22069270aecf18300",
+            "content": "sha256:926bec36aa5d3aa3b9e56da95657348563f04036e913943aa3fab0f7c682a750",
             "locator": {
               "kind": "file"
             },
@@ -1912,8 +1776,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "944960a629ae679b6412bdfdc583c9a18b17dfc3",
-            "content": "sha256:505328199b8aa8063d5f3edf27599d3d5c66658a4db5f530607c9b55c3511dff",
+            "blob": "3f3302a8f0d3f3743960dbb22069270aecf18300",
+            "content": "sha256:926bec36aa5d3aa3b9e56da95657348563f04036e913943aa3fab0f7c682a750",
             "locator": {
               "kind": "file"
             },
@@ -1945,7 +1809,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5e94e860bdcfd117a4e496db152da5bfdb241e53",
+            "blob": "ce89268a33bb0945a416e077ebb738159b133809",
             "content": "sha256:b71314fb5e5acaa72506630b980bfc48c5715f9e6250aaa6030c670511ec0301",
             "locator": {
               "end": 32,
@@ -2048,41 +1912,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5e94e860bdcfd117a4e496db152da5bfdb241e53",
-            "content": "sha256:65b7f98cb5ff7962303f5258fab14cfff5acc73adf5a464ce722d0a3f9fa800f",
+            "blob": "ce89268a33bb0945a416e077ebb738159b133809",
+            "content": "sha256:3a72132f0e91797658680ee56804a30bd93c76a74d449d6f3d58b4e7c0b8e002",
             "locator": {
               "kind": "file"
-            },
-            "path": "dashboard/src/data/review.ts"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "86": {
-      "note": "Review reads share shallow state-bearing-body transport recognition across HTTP statuses.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "944960a629ae679b6412bdfdc583c9a18b17dfc3",
-            "content": "sha256:9fa07a9fa80b8efa9dd375036002d801dc4ee1efbf4dab73ac3ebb406cc18507",
-            "locator": {
-              "end": 183,
-              "kind": "line_range",
-              "start": 162
-            },
-            "path": "dashboard/src/data/reviewTransport.ts"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "5e94e860bdcfd117a4e496db152da5bfdb241e53",
-            "content": "sha256:1b0ba6ded67ab3766300e0dea9ad82553875fd843dd265dabad3cab47290aa26",
-            "locator": {
-              "end": 460,
-              "kind": "line_range",
-              "start": 435
             },
             "path": "dashboard/src/data/review.ts"
           },
@@ -2095,7 +1928,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5e94e860bdcfd117a4e496db152da5bfdb241e53",
+            "blob": "ce89268a33bb0945a416e077ebb738159b133809",
             "content": "sha256:aa41a3bc886f40d6b6e027809b5283b42d9fdf16d291b0472d2fe1a6473f715d",
             "locator": {
               "end": 105,
@@ -2108,35 +1941,17 @@
         }
       ]
     },
-    "88": {
-      "note": "Entry catalogue refusal does not remove task-context review reachability.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "5e94e860bdcfd117a4e496db152da5bfdb241e53",
-            "content": "sha256:8c6a46bb92828c59be722a66bdb2ad5413906cc3679f4d507ac4803b7a915687",
-            "locator": {
-              "end": 673,
-              "kind": "line_range",
-              "start": 649
-            },
-            "path": "dashboard/src/data/review.ts"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "89": {
       "note": "Refresh empty-string normalization is specific, rather than universal query normalization.",
       "targets": [
         {
           "anchor": {
-            "blob": "5e94e860bdcfd117a4e496db152da5bfdb241e53",
+            "blob": "ce89268a33bb0945a416e077ebb738159b133809",
             "content": "sha256:0fd9b133872cdd857136be3e3c2930c47bf8c4fa8c691cc1ea5d6901170701ec",
             "locator": {
-              "end": 500,
+              "end": 502,
               "kind": "line_range",
-              "start": 466
+              "start": 468
             },
             "path": "dashboard/src/data/review.ts"
           },
@@ -2166,8 +1981,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "421fcf655416c82d0bd4d4e7c4e93a8449682d08",
-            "content": "sha256:c79eab348993831ae8a2c377487e00c4ccd5c8922fe6b5f9eda102e8cc01f51f",
+            "blob": "73fa1d355d2dc4410a2b30bb85fd00413dbd9452",
+            "content": "sha256:780491a1b7a07a5c0592961ed3caf204693ee543c04870c0e337bbc9af03b168",
             "locator": {
               "kind": "symbol",
               "name": "useReviewCatalogue"
@@ -2183,12 +1998,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ad784b1c6e63764e2f4437c99f28a2b9bd553703",
+            "blob": "f89adae5ac3dac2355f244579c0521e08cfb7cd9",
             "content": "sha256:ac8d022d7e770b84eaf514687701d00d66ee5bf7bdff00f0963ed28381e70877",
             "locator": {
-              "end": 163,
+              "end": 169,
               "kind": "line_range",
-              "start": 117
+              "start": 123
             },
             "path": "dashboard/src/data/changeset.ts"
           },

@@ -72,7 +72,9 @@ the reason on the payload; and **the record is checked against the store before 
 measurement of a generation**, because a forged record is internally consistent.
 
 
-- The module docstring states what it measures — the exact post-sync code and memory candidates against one retained tree comparison — and that a missing comparison, capture or evidence is a result state rather than an admission gate, with historical v1 records readable but proving no memory-tree coverage. [1]
+- The module docstring states what it measures — the exact post-sync code and memory candidates against one retained tree comparison — and that a missing comparison, capture or evidence is a result state rather than an admission gate, with historical v1 records readable but proving no memory-tree coverage.
+
+Retired at the fifth freeze d59c3493: mcp/src/agents_remember/application/review_sync_rebinding.py:1-42 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit b52adc8bc0564f6328d3543e48998e9235f1e417. Retired means the anchor no longer stands, not that the cited subject was deleted [1]
 
 
 - The module's surface: the two result dataclasses, the per-generation reader and the result block, with the record types imported from the knowledge model module. [2]
@@ -157,3 +159,7 @@ a publication location that all lie inside the contract's own repository boundar
 that follows from a recorded absolute path is stated above.
 
 No meaningful cross-repo references found.
+
+## Retirements
+
+- Retired at the fifth freeze d59c3493: mcp/src/agents_remember/application/review_sync_rebinding.py:1-42 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit b52adc8bc0564f6328d3543e48998e9235f1e417. Retired means the anchor no longer stands, not that the cited subject was deleted.

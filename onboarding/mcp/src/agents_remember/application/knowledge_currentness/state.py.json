@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e73fb9f42abfa199fbc018cba44b007c66975803",
+            "blob": "64ad4159e9a2a8a547b63dec71f20ba36e2ba9f3",
             "content": "sha256:420efdfc8746573c34e5f2de73b44e1301a6ca3583f636ac2839e104567643eb",
             "locator": {
               "end": 20,
@@ -24,8 +24,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "035d30df74bd1bad93ddc28456d591c1024b28d2",
-            "content": "sha256:58f2f830be97427187427103b14ba610b4a99dad8ba64e42c299bd5fd25f7478",
+            "blob": "c64091cd2f1a3a0d73504db0df74632caf04d235",
+            "content": "sha256:b8fe1b612c4a4d2852e14ba1cdd4e8afb3014a60c205d1f6f560e72115f39daf",
             "locator": {
               "kind": "file"
             },
@@ -40,7 +40,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "035d30df74bd1bad93ddc28456d591c1024b28d2",
+            "blob": "c64091cd2f1a3a0d73504db0df74632caf04d235",
             "content": "sha256:60b320f601e7c8aa1bb63fbb20ff9286b0e7f505071fb2c7e3b361d8cbb22e39",
             "locator": {
               "kind": "symbol",
@@ -57,8 +57,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e73fb9f42abfa199fbc018cba44b007c66975803",
-            "content": "sha256:2ddba6c08e734d89c6b8fe972dc5efe1e8d9c1a852cb95bd483a47da7418f647",
+            "blob": "64ad4159e9a2a8a547b63dec71f20ba36e2ba9f3",
+            "content": "sha256:98215fa1b132b04514ec883edb4392d8b9cfa4f79d0d51ea3baf3ff55493a2fb",
             "locator": {
               "kind": "file"
             }
@@ -72,7 +72,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e73fb9f42abfa199fbc018cba44b007c66975803",
+            "blob": "64ad4159e9a2a8a547b63dec71f20ba36e2ba9f3",
             "content": "sha256:2e96a274286e994a9a12540f854a34ff4a97b0fff1b0eb6a8307b1cc5ca8fd39",
             "locator": {
               "kind": "symbol",
@@ -83,7 +83,7 @@
         },
         {
           "anchor": {
-            "blob": "e73fb9f42abfa199fbc018cba44b007c66975803",
+            "blob": "64ad4159e9a2a8a547b63dec71f20ba36e2ba9f3",
             "content": "sha256:1ea3dae5e184984850f05b206d0f41d3095af3dd4298600057f61e9be9bd46e3",
             "locator": {
               "kind": "symbol",
@@ -99,7 +99,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e73fb9f42abfa199fbc018cba44b007c66975803",
+            "blob": "64ad4159e9a2a8a547b63dec71f20ba36e2ba9f3",
             "content": "sha256:64561530bfbd39466037f711f36681dd0117cbf4fb4e283a2096002bd22aa2b3",
             "locator": {
               "kind": "symbol",
@@ -115,8 +115,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e73fb9f42abfa199fbc018cba44b007c66975803",
-            "content": "sha256:2ddba6c08e734d89c6b8fe972dc5efe1e8d9c1a852cb95bd483a47da7418f647",
+            "blob": "64ad4159e9a2a8a547b63dec71f20ba36e2ba9f3",
+            "content": "sha256:98215fa1b132b04514ec883edb4392d8b9cfa4f79d0d51ea3baf3ff55493a2fb",
             "locator": {
               "kind": "file"
             }
@@ -130,7 +130,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e73fb9f42abfa199fbc018cba44b007c66975803",
+            "blob": "64ad4159e9a2a8a547b63dec71f20ba36e2ba9f3",
             "content": "sha256:d068fd57d2a4fb12c5b26042d170a680430fcfc2467988823c7b593cbf1fc186",
             "locator": {
               "kind": "symbol",
@@ -146,43 +146,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e73fb9f42abfa199fbc018cba44b007c66975803",
+            "blob": "64ad4159e9a2a8a547b63dec71f20ba36e2ba9f3",
             "content": "sha256:091bf6b71ea561b3c32ad2a0fedbb7ed081b6e9ca415a19bc773879778c8b6b4",
             "locator": {
               "kind": "symbol",
               "name": "Currentness"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "7": {
-      "note": "The function: family members expanded, realizations and proofs observed alike.\n\nAnchor: `knowledge.proofs`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "e73fb9f42abfa199fbc018cba44b007c66975803",
-            "content": "sha256:b029f4b411580cf26df4ad0ad467daad97781d7a5f215546e3a6b7883881769d",
-            "locator": {
-              "kind": "symbol",
-              "name": "invariant_currentness"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "8": {
-      "note": "Unknown IDs are left out.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "e73fb9f42abfa199fbc018cba44b007c66975803",
-            "content": "sha256:cb7023ba1f2b81c5aa5dc8beefe1e0723689638490143c9879f217fc8526c29e",
-            "locator": {
-              "kind": "symbol",
-              "name": "_is_record"
             }
           },
           "kind": "code"
@@ -194,7 +162,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "035d30df74bd1bad93ddc28456d591c1024b28d2",
+            "blob": "c64091cd2f1a3a0d73504db0df74632caf04d235",
             "content": "sha256:33ede548960e0a284c923df27a572df43a517aef48c54fddb10366218fcea731",
             "locator": {
               "kind": "symbol",

@@ -1,10 +1,9 @@
 {
   "admission": {
     "criteria": [
-      "spans_locations",
-      "guarded_by_test"
+      "spans_locations"
     ],
-    "justification": "The stream adapter, scoped subscriber and refresh must agree so one leaf cannot refresh a sibling or retain stale no-work facts."
+    "justification": "The stream adapter, scoped subscriber and refresh must agree so one leaf cannot refresh a sibling or retain stale no-work facts. Reassessed at the L201 fifth freeze (head d59c3493): the guarded_by_test criterion is dropped because the proofs that named it were removed with the tests they cited, which are gone at the candidate; the criteria kept are the ones the tree still satisfies."
   },
   "applicability": "A mounted live review receiving review.explainer.moved, including planning-master moves and cleared notices.",
   "conditions": [

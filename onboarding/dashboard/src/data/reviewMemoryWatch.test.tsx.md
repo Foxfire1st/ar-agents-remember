@@ -27,4 +27,6 @@ The source declares these checks. This card does not attest that pytest/Vitest, 
 
 ## Evidence
 
-- Synthetic EventSource exercises a single shared SSE connection: exact live context, readiness reconciliation, duplicate silence, reconnect, superseded connection rejection, recorded/retired/unmounted lifetime and target-scoped watch failure. Native filesystem timing is not proved here. [1]
+- Synthetic EventSource exercises a single shared SSE connection: exact live context, readiness reconciliation, duplicate silence, reconnect, superseded connection rejection, recorded/retired/unmounted lifetime and target-scoped watch failure. Native filesystem timing is not proved here.
+
+- Retired at the fifth freeze d59c3493: dashboard/src/data/reviewMemoryWatch.test.tsx:1-116 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 20624f979e2b89067a3e42019c9611a8e18ff848. Retired means the anchor no longer stands, not that the cited subject was deleted.

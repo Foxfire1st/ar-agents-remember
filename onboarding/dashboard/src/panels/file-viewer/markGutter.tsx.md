@@ -101,8 +101,8 @@ No configured live documentation source was available for this pass.
 - The gutter widths (the phone-width compact gutter, review R1 F2) and the reveal and hold frame counts. [3]
 - Focus kept across a redraw, only while focus is on the body (review R2-F1). [4]
 - The marker set on the pane's own file lines, and the gutter that is absent without marks. [5]
-- The hold: bounded, released by the reader's pointer, key or wheel (passive), by focus moved elsewhere and by teardown; listeners removed. [6]
-- The reveal: scroll to the line, focus the mark once drawn, then hold. [7]
+- The hold: bounded, released by the reader's pointer, key or wheel (passive), by focus moved elsewhere and by teardown; listeners removed. 
+- The reveal: scroll to the line, focus the mark once drawn, then hold. 
 - The marks exposed to assistive technology; line numbers and change bar stay hidden. [8]
 - A collapsed run holding a mark is expanded, in the sibling editor too (ruling Q4). [9]
 - What a pane gets: portals, placement, the gutter per editor and `drawn`. [10]
@@ -112,3 +112,7 @@ No configured live documentation source was available for this pass.
 ### Cross-Repo References
 
 No cross-repo boundary is crossed by this file.
+
+- The hold: bounded, released by the reader's pointer, key or wheel (passive), by focus moved elsewhere and by teardown; listeners removed. [6]
+
+- Retired at the fifth freeze d59c3493: dashboard/src/panels/file-viewer/markGutter.tsx::HOLD_RELEASES - the bytes it recorded now occur 5 times in the file, so no single home can be named and it is not given to the likelier one; dashboard/src/panels/file-viewer/markGutter.tsx::revealMark - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one; dashboard/src/panels/file-viewer/markGutter.tsx::hostEntry - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one; dashboard/src/panels/file-viewer/markGutter.tsx::MarkedPane - the bytes it recorded now occur 3 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.

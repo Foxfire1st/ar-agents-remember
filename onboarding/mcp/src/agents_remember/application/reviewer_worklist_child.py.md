@@ -24,8 +24,8 @@ No domain documentation source is configured. Current repository source establis
 
 - Default process ownership, optional review input, read replay before error and document/adjunct return. [10]
 - Exact contract fields and typed path/tuple reconstruction. [11]
-- Request/build validation, shared recorded computation, recorded/live owner branch and explicit reply fields. [12]
-- The one child entry point owns lifetime, JSON framing and dedicated build-mismatch exit. [13]
+- Request/build validation, shared recorded computation, recorded/live owner branch and explicit reply fields.
+- The one child entry point owns lifetime, JSON framing and dedicated build-mismatch exit.
 
 ## Historical predecessor account
 
@@ -96,3 +96,5 @@ and no cache.
 - The child's document, reads and body equal the in-process computation at two sizes; the child does no second capture, pairing or conversion. (historical reference 7)
 - The bytes the child consumed reach the parent for a changed-and-restored, a twice-read, an absent and an unreadable task document. (historical reference 8)
 - A child that exits with the build-mismatch status, or answers with another source, asks for a dashboard restart. (historical reference 9)
+
+- Retired at the fifth freeze d59c3493: mcp/src/agents_remember/application/reviewer_worklist_child.py:104-151 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit c702e1c2e111ec6e07c6b68a78a5d05add8aceab; mcp/src/agents_remember/application/reviewer_worklist_child.py:154-167 - the region it cited is not in the file at the candidate and no re-point was possible. Retired means the anchor no longer stands, not that the cited subject was deleted.

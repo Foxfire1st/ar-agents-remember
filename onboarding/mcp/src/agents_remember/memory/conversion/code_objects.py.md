@@ -93,7 +93,7 @@ No configured live documentation source was available for this pass.
 The object store's read-only surface.
 
 
-- The read-only class retains raw blobs and instance-local blob-keyed split lines; no persistent worklist is stored. [1]
+- The read-only class retains raw blobs and instance-local blob-keyed split lines; no persistent worklist is stored. 
 
 
 
@@ -108,12 +108,14 @@ The object store's read-only surface.
 
 
 
-- Git's not-found exit, and a Git failure named rather than read as absent (R3-2). [5]
+- Git's not-found exit, and a Git failure named rather than read as absent (R3-2).
+
+Retired at the fifth freeze d59c3493: mcp/src/agents_remember/memory/conversion/code_objects.py:176-201 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 8b0254263c6998b1d4814b2e97c1bd231d39350f. Retired means the anchor no longer stands, not that the cited subject was deleted [5]
 
 
 - Batched blob reads. [6]
 
-- Symbol extraction is cached by blob, grammar and path, preserves the selected symlink context, and supports the explicit top-level reading for recorded claims. [7]
+- Symbol extraction is cached by blob, grammar and path, preserves the selected symlink context, and supports the explicit top-level reading for recorded claims.
 
 - Exact nonrecursive entry-mode observation distinguishes present empty trees from absence without broadening recursive source inventory. [12]
 
@@ -129,3 +131,12 @@ The object store's read-only surface.
 No meaningful cross-repo references found: the file reads and writes only the memory and code repositories its caller names.
 
 No cross-repo boundary is crossed by this file.
+
+
+Anchor: `CodeObjects` [1]
+
+- Retired at the fifth freeze d59c3493: mcp/src/agents_remember/memory/conversion/code_objects.py:219-260 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 8b0254263c6998b1d4814b2e97c1bd231d39350f; mcp/src/agents_remember/memory/conversion/code_objects.py:203-244 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit c052b2593b85d9baf425cc1d5c46f384b13fc9ea; mcp/src/agents_remember/memory/conversion/code_objects.py::CodeObjects - the bytes it recorded now occur 4 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.
+
+## Retirements
+
+- Retired at the fifth freeze d59c3493: mcp/src/agents_remember/memory/conversion/code_objects.py:176-201 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 8b0254263c6998b1d4814b2e97c1bd231d39350f. Retired means the anchor no longer stands, not that the cited subject was deleted.

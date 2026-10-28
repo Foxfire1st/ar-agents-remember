@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ec25892b22ca4d5b42b437c1fd3f4b2c924ac14f",
+            "blob": "ea5b52c5b44c5cbc9d2e35ca26e403d5f1550bcc",
             "content": "sha256:dc17ff4f228913616c50052cb3e2d5e3bbb5703bf4dc4b0de9bbcbade080f097",
             "locator": {
               "kind": "symbol",
@@ -23,27 +23,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ec25892b22ca4d5b42b437c1fd3f4b2c924ac14f",
+            "blob": "ea5b52c5b44c5cbc9d2e35ca26e403d5f1550bcc",
             "content": "sha256:b1ebf1a605b94e9fac010de2f2d8474168071f82b03a634e5bd29bebaa5fde2c",
             "locator": {
               "kind": "symbol",
               "name": "worklist_answers"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "3": {
-      "note": "Auxiliary open counts are omitted rather than guessed for absent or undecidable stored work.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "ec25892b22ca4d5b42b437c1fd3f4b2c924ac14f",
-            "content": "sha256:45fb9c352cae1882f8b0b85cf0e91d1946cb9270b3d84b9a5a480a3b98488aaf",
-            "locator": {
-              "kind": "symbol",
-              "name": "stored_unexplained_open"
             }
           },
           "kind": "code"

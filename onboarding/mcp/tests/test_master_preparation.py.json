@@ -1,0 +1,23 @@
+{
+  "path": "mcp/tests/test_master_preparation.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Startup and HTTP join one exact net, and the net does not wait on leaves, witnessed by test_startup_and_http_join_one_exact_net_and_net_does_not_wait_for_leaves",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4ffb695c03d1d6faf05c49b02203bf784b338a3e",
+            "content": "sha256:97f9d3d2298d5b46007c68a264a484e5069c7a5e6de5bb4fd157a76ee92886f4",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_startup_and_http_join_one_exact_net_and_net_does_not_wait_for_leaves"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

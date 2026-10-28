@@ -23,5 +23,7 @@ The caller supplies the exact question key and input set. This store writes no f
 ## Evidence
 
 - Stable hits are copied; fresh values also pass the optional keep predicate and matching before/after observations. [5]
-- Every supplied input must be readable and match its admitted stamp. [6]
+- Every supplied input must be readable and match its admitted stamp.
 - LRU capacity and finite age bound stored answers. [7]
+
+- Retired at the fifth freeze d59c3493: mcp/src/agents_remember/serving/review_answer_reuse.py:92-115 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 3104b78bb309a8e1a912503557adb08599b52ef0. Retired means the anchor no longer stands, not that the cited subject was deleted.

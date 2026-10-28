@@ -88,7 +88,7 @@ The snapshot reuses the worktree subsystem's own enumeration and parser (`iter_l
 build; the three consumers accept the snapshot via keyword-only injection.
 
 
-- The immutable snapshot and builder hold only admitted members and name read/parse failures or foreign nonmembers in skipped. [2]
+- The immutable snapshot and builder hold only admitted members and name read/parse failures or foreign nonmembers in skipped. 
 
 
 
@@ -101,10 +101,10 @@ Same-repository projection concern only.
 - Module docstring: one pass per tick, three prior walks, stat-identity cache, and the serialized-tick concurrency discipline.  Anchor: "One immutable leaf-enclosure-contract snapshot per projection tick" [1]
 
 
-- Full builds enumerate/reconcile; scoped builds ignore archived/notes names, stat/parse other named paths and retain unrelated cached members. Failed or foreign parsed members are evicted; retry and live-set pruning claims require relevant/full builds. [3]
+- Full builds enumerate/reconcile; scoped builds ignore archived/notes names, stat/parse other named paths and retain unrelated cached members. Failed or foreign parsed members are evicted; retry and live-set pruning claims require relevant/full builds. 
 
 
-- `_cached_contract` reuses a parse only while all three stat fields hold; `_safe_stat` failure falls through to the uncached parse instead of introducing a new skip path; `build_contract_snapshot` is the standalone one-shot.  Anchor: "def build_contract_snapshot" [4]
+- `_cached_contract` reuses a parse only while all three stat fields hold; `_safe_stat` failure falls through to the uncached parse instead of introducing a new skip path; `build_contract_snapshot` is the standalone one-shot.  Anchor: "def build_contract_snapshot" 
 - Snapshot construction uses the shared enclosure iterator and contract parser, rather than reimplementing either.  Anchor: "from agents_remember.tasks.task_paths import (", "from agents_remember.worktrees.worktree_contract import (" [5]
 - `projection_store` owns the module-level `_contract_snapshot_cache` (with the three-walks rationale) and injects it into the per-tick `ProjectionInputState`.  Anchor: "class ProjectionTickState" [6]
 
@@ -113,3 +113,13 @@ Same-repository projection concern only.
 - `read_enclosures` and `read_engine_process_facts` take the keyword-only injected snapshot; `contracts=None` builds a local one with identical behavior.  Anchor: "def read_enclosures" [8]
 
 - Drift-snapshot pruning consumes the same snapshot, removing the third per-tick walk.  Anchor: "def prune_orphaned_drift_snapshots" [9]
+
+
+Anchor: `ContractSnapshot` `build` [2]
+
+
+Anchor: `ContractSnapshotCache` [3]
+
+- `_cached_contract` reuses a parse only while all three stat fields hold; `_safe_stat` failure falls through to the uncached parse instead of introducing a new skip path; `build_contract_snapshot` is the standalone one-shot.  Anchor: "def build_contract_snapshot" [4]
+
+- Retired at the fifth freeze d59c3493: mcp/src/agents_remember/serving/projections/contract_snapshot.py::build - the bytes it recorded now occur 12 times in the file, so no single home can be named and it is not given to the likelier one; mcp/src/agents_remember/serving/projections/contract_snapshot.py::ContractSnapshotCache - the bytes it recorded now occur 3 times in the file, so no single home can be named and it is not given to the likelier one; mcp/src/agents_remember/serving/projections/contract_snapshot.py:185-185 - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.

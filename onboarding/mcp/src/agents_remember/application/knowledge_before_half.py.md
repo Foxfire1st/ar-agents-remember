@@ -179,7 +179,9 @@ The references below describe the current derived-index readers and their actual
 
 
 
-- read_dataset_identity returns SnapshotIdentity or a reason for a non-file and for KnowledgeStorageError, apsw.Error or OSError; dataset_identity opens the selected index read-only and closes its connection. [10]
+- read_dataset_identity returns SnapshotIdentity or a reason for a non-file and for KnowledgeStorageError, apsw.Error or OSError; dataset_identity opens the selected index read-only and closes its connection.
+
+Retired at the fifth freeze d59c3493: mcp/src/agents_remember/memory/knowledge/logical.py:151-173 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 3332a4ce7029777d49feca22b499350435a9f83c. Retired means the anchor no longer stands, not that the cited subject was deleted [10]
 
 
 
@@ -192,7 +194,8 @@ The references below describe the current derived-index readers and their actual
 
 
 
-- dataset_identity produces the SnapshotIdentity used by this module. The separate whole-pair preflight sequences absent-half, unreadable-index and candidate-namespace/receipt refusals; the receipt preflight delegates to review_namespace rather than reading the retired baseline-origin record. [18]
+- dataset_identity produces the SnapshotIdentity used by this module. The separate whole-pair preflight sequences absent-half, unreadable-index and candidate-namespace/receipt refusals; the receipt preflight delegates to review_namespace rather than reading the retired baseline-origin record.
+
 
 
 ### Cross-Repo References
@@ -200,3 +203,7 @@ The references below describe the current derived-index readers and their actual
 No cross-repository behavior is implemented in this file. Callers supply the two selected derived-index paths; this module does not create or require the retired leaf knowledge-root layout. The read identity carries the namespace, schema and logical digest the storage owner reads from that index.
 
 No meaningful cross-repo references found.
+
+## Retirements
+
+- Retired at the fifth freeze d59c3493: mcp/src/agents_remember/memory/knowledge/logical.py:151-173 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 3332a4ce7029777d49feca22b499350435a9f83c. Retired means the anchor no longer stands, not that the cited subject was deleted.

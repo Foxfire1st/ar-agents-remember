@@ -125,7 +125,7 @@ and every non-answer. Every anchor in a row occurs inside the range that row cit
 
 - The decode these cases pin, and the error whose type the existing catchers keep. [17]
 
-- **The shared client the control case proves unchanged: it still reads only `body.status` and still throws on a non-2xx.** [18]
+- **The shared client the control case proves unchanged: it still reads only `body.status` and still throws on a non-2xx.** 
 
 - **The mounted counterpart that consumes the same classification, so the transport contract and the rendered states are pinned against one table.** [19]
 
@@ -142,3 +142,5 @@ same-origin `fetch` and names one repository namespace.
 No meaningful cross-repo references found.
 
 - The two real client functions and the error type under test, imported from the public entries. [2]
+
+- Retired at the fifth freeze d59c3493: dashboard/src/data/files.ts::FilesApiError - the bytes it recorded now occur 4 times in the file, so no single home can be named and it is not given to the likelier one; dashboard/src/data/files.ts::getJson - cited by 2 anchors in this card; the name occurs 6 times in that file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.

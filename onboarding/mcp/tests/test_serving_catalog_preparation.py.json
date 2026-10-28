@@ -1,0 +1,23 @@
+{
+  "path": "mcp/tests/test_serving_catalog_preparation.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Cold launcher discovery runs beside serving startup and drains with that lifetime",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6f323c0763525775ff301210fbf45f389c159b10",
+            "content": "sha256:6cb99311c961b790cd804adc04a81ca4bfea0f5e0184dfc93b5e05149bbe5021",
+            "locator": {
+              "kind": "symbol",
+              "name": "CatalogPreparationLifetimeTests"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

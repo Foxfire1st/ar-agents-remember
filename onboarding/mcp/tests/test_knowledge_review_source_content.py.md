@@ -149,7 +149,7 @@ served body together.
 - **The shared R01 production fixture these cases extend rather than duplicate.** [5]
 
 
-- **The routes wired as the composition root wires them, over the real application owners.** [6]
+- **The routes wired as the composition root wires them, over the real application owners.** 
 
 - The listing read and the expansion read, with the status carried beside the body so a refusal is asserted as one. [7]
 - The falsifiers for path confinement: the recorded base's paths that no change set contains. [8]
@@ -187,4 +187,15 @@ No meaningful cross-repo references found.
 
 
 
-- **The lane row and the two consumer rows this module's registration produced, with the counts they do not move.**  Anchor: "mcp/tests/test_knowledge_review_source_content.py" [22]
+- **The lane row and the two consumer rows this module's registration produced, with the counts they do not move.**  Anchor: "mcp/tests/test_knowledge_review_source_content.py"
+
+Retired at the fifth freeze d59c3493: mcp/tests/evidence-lifecycle.toml:3339-3372 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit ad0c3a1296eae9863f6505d3fabc0c73e17bd166. Retired means the anchor no longer stands, not that the cited subject was deleted [22]
+
+
+Anchor: `_served` `register_review_routes` `read_review_source_content` [6]
+
+- Retired at the fifth freeze d59c3493: mcp/src/agents_remember/serving/review.py::register_review_routes - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.
+
+## Retirements
+
+- Retired at the fifth freeze d59c3493: mcp/tests/evidence-lifecycle.toml:3339-3372 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit ad0c3a1296eae9863f6505d3fabc0c73e17bd166. Retired means the anchor no longer stands, not that the cited subject was deleted.

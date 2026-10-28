@@ -18,6 +18,8 @@ Specifies the column's pure rules without a DOM: the selection and status words,
 ## Evidence
 
 - The placeholder is selected while no seat exists, never the Worker [1]
-- Send is refused with nothing to send [2]
+- Send is refused with nothing to send
 - Only a failed build names the failed step and its reason [3]
 - The menu filters by exact repository, master and task path [4]
+
+- Retired at the fifth freeze d59c3493: dashboard/src/explainer/model.test.ts:145-150 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 5f8398b32760677c370e3145add73cfa8388357b. Retired means the anchor no longer stands, not that the cited subject was deleted.

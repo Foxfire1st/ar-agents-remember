@@ -6,12 +6,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8eb051387c16afe11160ad0c3dae3acd22e02e31",
+            "blob": "672ce8fd4dd62a7f6c9945096f467600b5c4543a",
             "content": "sha256:ac86d898c7593aa3db700a2e0e04efe2cbeb1d582bfa0b7b4c28720e20c8e2ef",
             "locator": {
-              "end": 895,
+              "end": 548,
               "kind": "line_range",
-              "start": 867
+              "start": 520
             },
             "path": "dashboard/src/panels/review/changeSetOrder.ts"
           },
@@ -24,27 +24,14 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a4437134e68f8873a8c743741de16606ae21ab24",
+            "blob": "7bce135c0162daeefcec8350c30bc6c36d8aab7c",
             "content": "sha256:4eec5afda1d2df049434fd1e1e6f45416180d24ee65c38527af925c5a49311dc",
             "locator": {
-              "end": 272,
+              "end": 275,
               "kind": "line_range",
-              "start": 242
+              "start": 245
             },
             "path": "dashboard/src/panels/review/reading/pageParts.tsx"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "3e14fb1fccef577763fb2c32feedf9053f59214f",
-            "content": "sha256:26a6c1ff415a072ed2b68244c048d039981183434836f09ea02f65e0a67eecb9",
-            "locator": {
-              "end": 208,
-              "kind": "line_range",
-              "start": 194
-            },
-            "path": "dashboard/src/panels/review/reading/TechnicalDetails.tsx"
           },
           "kind": "code"
         }
@@ -55,8 +42,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6f30efcbe166c0fe854c1de9cde75a444ff9c5a5",
-            "content": "sha256:f5925b247bc0b3f32fd03a1d161cce6b638234ad4531a1d9d6053f9309a26368",
+            "blob": "aacb83d79d19978ad947b4ac88eba523ad8e4fb5",
+            "content": "sha256:ba77287e15f39970a8964523103e46e7263d4d0479b7f377a370d3485757ac0a",
             "locator": {
               "kind": "file"
             },
@@ -71,12 +58,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6f87c467389525d0f6107bffd59fde2506e090f7",
-            "content": "sha256:dde2a678cadc3d6232a8d8e8dfe01497221ac67a3b1f72dfab9205ea38b799d1",
+            "blob": "23b4b91094455811bf1a94a416461ad26b7a6937",
+            "content": "sha256:79667ad63106b58464f78c2c6f54556a43dc0f03764f2716516c9acd46e159c2",
             "locator": {
-              "end": 350,
+              "end": 381,
               "kind": "line_range",
-              "start": 291
+              "start": 318
             },
             "path": "dashboard/src/panels/review/tree/ReviewTree.tsx"
           },
@@ -89,12 +76,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cbb0fb03fba632567069cea912eccf846596c396",
-            "content": "sha256:2c159e3744c5251b35c53fdfbdc5f39db5f6f61326e812a20c1c18d49a35eb32",
+            "blob": "6ad6d3a0f7add2f77d6450f5347b61416090768c",
+            "content": "sha256:c35375dd33e3168059c40ca83a0daad019b5df17d8de07c905390ca9e03c26d2",
             "locator": {
-              "end": 274,
+              "end": 155,
               "kind": "line_range",
-              "start": 206
+              "start": 106
             },
             "path": "dashboard/src/panels/review/reading/ReadingColumn.tsx"
           },
@@ -125,12 +112,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cbb0fb03fba632567069cea912eccf846596c396",
-            "content": "sha256:7c483968fcc745fb2cf9770389a6eff44efe83c1d43319eb28e8b713ae1cde11",
+            "blob": "6ad6d3a0f7add2f77d6450f5347b61416090768c",
+            "content": "sha256:c35375dd33e3168059c40ca83a0daad019b5df17d8de07c905390ca9e03c26d2",
             "locator": {
-              "end": 222,
+              "end": 155,
               "kind": "line_range",
-              "start": 206
+              "start": 106
             },
             "path": "dashboard/src/panels/review/reading/ReadingColumn.tsx"
           },
@@ -156,12 +143,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1b1535d937ca964ea1a17441f1a33fce583b8e20",
+            "blob": "bdbedad45f630b1680d1cfbe1ff737929679ef46",
             "content": "sha256:3692a385a2536ef3e19ac875aaa23d9a7fdeb948a98e469ad5056f44aac62e0c",
             "locator": {
-              "end": 90,
+              "end": 91,
               "kind": "line_range",
-              "start": 15
+              "start": 16
             },
             "path": "dashboard/src/panels/review/reading/readGate.ts"
           },
@@ -182,41 +169,6 @@
               "start": 105
             },
             "path": "dashboard/src/panels/review/reading/LaneSection.tsx"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "8": {
-      "note": "Mounted fixture assertions distinguish no-gesture lane reads from engagement-gated card marks; these are source assertions with stubbed visibility and transport.\n\nAnchor: \"reads a lane file in view at the first paint once the six opening reads are done, with no gesture\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "816ab9a91dec03f2765176c93875169b258d1d82",
-            "content": "sha256:0882d5840c3ad97beb4723b25534709c50583534e5b1461645054755ef48433f",
-            "locator": {
-              "end": 144,
-              "kind": "line_range",
-              "start": 90
-            },
-            "path": "dashboard/src/panels/review/reading/ReviewPage.opening.test.tsx"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "9": {
-      "note": "A landed leaf's review opens the comparison its enclosure records as delivered, and the page keeps that default apart from the highest recorded number.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "b43f30893a1d83f202278f31bcdc9bd4a68de218",
-            "content": "sha256:eeb1adb6d58f4d8aee916e5d7d75d5de322e0ee7564d1f6e9add16355c5721fd",
-            "locator": {
-              "kind": "symbol",
-              "name": "useChangeSet"
-            },
-            "path": "dashboard/src/panels/review/reading/useChangeSet.ts"
           },
           "kind": "code"
         }

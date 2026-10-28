@@ -1,45 +1,10 @@
 {
   "path": "dashboard/src/panels/review/ReviewSurface.narrow.test.tsx",
-  "proves": [
-    {
-      "anchor": {
-        "blob": "3f2434e1257d2ade6a157f68aabbc6dc203fc8b5",
-        "content": "sha256:9e6b46b980425d17f1157dbce130deccf55560c24e120c64860b5bc7570706b4",
-        "locator": {
-          "kind": "symbol",
-          "name": "makes the review's main the stacked page's one scroller, under the column's sticky head"
-        }
-      },
-      "facet": "Mounting through the real ReviewMain wrapper, the test-local class-declaration model identifies main as the reading head's nearest scroll container at 40rem and below, with hidden/auto overflow; the reading column has clip/visible overflow and no scroll container, and the intervening elements have no inline overflow. Above 40rem that model identifies the reading column as the nearest scroll container. This demonstrates the declared scroll-owner structure, not measured wheel, touch, sticky-position or reachability behavior in a browser.",
-      "id": "PRF-H5CDYP",
-      "invariant": "INV-811GC5",
-      "origin": {
-        "handoffEntry": "L89-W6-PROOF-INV-811GC5",
-        "leaf": "260928-MIK-L89"
-      }
-    },
-    {
-      "anchor": {
-        "blob": "3f2434e1257d2ade6a157f68aabbc6dc203fc8b5",
-        "content": "sha256:b9b33555636c5f3004eb63147c61ea0a670b8d3bb9bf1ed668fd35b1ae282cbd",
-        "locator": {
-          "kind": "symbol",
-          "name": "keeps the root still and makes the reading column the page scroller"
-        }
-      },
-      "facet": "With the surface mounted, the root declares full height, zero minimum height and hidden overflow above 40rem, and auto height with visible overflow at 40rem and below. The named reading-column scroller declares vertical auto and horizontal hidden overflow, switching its vertical overflow to visible in the narrow rule; the root has no inline overflowY. This checks rendered class declarations, not browser wheel, touch or geometry behavior.",
-      "id": "PRF-SHNJCD",
-      "invariant": "INV-811GC5",
-      "origin": {
-        "handoffEntry": "L89-W6-PROOF-INV-811GC5",
-        "leaf": "260928-MIK-L89"
-      }
-    }
-  ],
+  "proves": [],
   "realizes": [
     {
       "anchor": {
-        "blob": "3f2434e1257d2ade6a157f68aabbc6dc203fc8b5",
+        "blob": "f9650e75ff8841b19d2f7bd8c4920f09d738420c",
         "content": "sha256:817ca51a2584717c41bfbcf80bbff328da952586677739e71f84fa1d17e43418",
         "locator": {
           "kind": "symbol",
@@ -57,8 +22,8 @@
     },
     {
       "anchor": {
-        "blob": "3f2434e1257d2ade6a157f68aabbc6dc203fc8b5",
-        "content": "sha256:a873311b1a6fd80268d4bb351b1b96ea44337f688de70fc6a248af06d33874f1",
+        "blob": "f9650e75ff8841b19d2f7bd8c4920f09d738420c",
+        "content": "sha256:811d4d08562a2c796e74dfcf1eebe5278571e0dc6efba7747fb7d28f9630ffe1",
         "locator": {
           "end": 270,
           "kind": "line_range",
@@ -81,7 +46,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3f2434e1257d2ade6a157f68aabbc6dc203fc8b5",
+            "blob": "f9650e75ff8841b19d2f7bd8c4920f09d738420c",
             "content": "sha256:4c30579907b999c40a4435bc09861b1f2929bc9e778bc7c61929537f316abab8",
             "locator": {
               "end": 198,
@@ -98,7 +63,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3f2434e1257d2ade6a157f68aabbc6dc203fc8b5",
+            "blob": "f9650e75ff8841b19d2f7bd8c4920f09d738420c",
             "content": "sha256:6dc99d0b6e284e7df01b2dc42b1e1f144933ed1c6163d24db4f1a4dac5eebaf1",
             "locator": {
               "end": 217,
@@ -115,7 +80,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3f2434e1257d2ade6a157f68aabbc6dc203fc8b5",
+            "blob": "f9650e75ff8841b19d2f7bd8c4920f09d738420c",
             "content": "sha256:16997c1a029e3d441ebe63d9fc2441fca0eb150c6eb168f4f5f9148040ab04e4",
             "locator": {
               "end": 235,
@@ -132,29 +97,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3f2434e1257d2ade6a157f68aabbc6dc203fc8b5",
+            "blob": "f9650e75ff8841b19d2f7bd8c4920f09d738420c",
             "content": "sha256:92b03f164ce8fb489ab594a423ebf4d8c35edcacefb72def74dce9d42393169d",
             "locator": {
               "end": 250,
               "kind": "line_range",
               "start": 236
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "18": {
-      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it(\"makes the review's main the stacked page's one scroller, under the column's sticky head\", async () => {\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "3f2434e1257d2ade6a157f68aabbc6dc203fc8b5",
-            "content": "sha256:a7b7e7c58d836ce79128fe4736132db1c5e6b7bba40c072e39a4b68a60244840",
-            "locator": {
-              "end": 270,
-              "kind": "line_range",
-              "start": 251
             }
           },
           "kind": "test"

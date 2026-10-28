@@ -975,8 +975,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a7ffdba484f4eaafa7f3a0a0860e045504f33755",
-            "content": "sha256:e43779b643a5347584f7acf8bdbaafaaf2b0969fd5de3af06b46da3195049899",
+            "blob": "1feda3e0e721c91e435f6b638b26c88dc538b55b",
+            "content": "sha256:777220ef238380cec7dc741f8164393c60d3a2b29c88373ffdd887fc0ad282bc",
             "locator": {
               "kind": "file"
             },
@@ -991,7 +991,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a7ffdba484f4eaafa7f3a0a0860e045504f33755",
+            "blob": "1feda3e0e721c91e435f6b638b26c88dc538b55b",
             "content": "sha256:17f16f59ace55fdd047bff323298ebe96c6d6196baee84abe362aaa5e242d4c2",
             "locator": {
               "kind": "symbol",
@@ -1495,24 +1495,6 @@
         }
       ]
     },
-    "74": {
-      "note": "Future-code identity uses system-temporary capture and complete equality.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "a7ffdba484f4eaafa7f3a0a0860e045504f33755",
-            "content": "sha256:fb5d636ec8dc526d7b0242de21f11dbe5d3fa6ab777b2d31cc958694c270c7bc",
-            "locator": {
-              "end": 106,
-              "kind": "line_range",
-              "start": 79
-            },
-            "path": "mcp/src/agents_remember/worktrees/modules/future_code_candidate.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "75": {
       "note": "Private candidate capture preserves index-time evidence and explicitly limits conversion-rule rereads. Existing historical descriptions retain their own source extent; the moved helper and shared entry are the current owners.\n\nAnchor: `worktree_candidate_tree` `_tree_from_index_copy`",
       "targets": [
@@ -1921,8 +1903,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "517c52d2bf14b9587f91d75a20f13b98c9662b02",
-            "content": "sha256:d387064b4daa305628eb532ca7b1a1a136112e2de6f7ce3b4b35bb30aaa5e8a2",
+            "blob": "52a6db529897bcb149711a83297dd6eb55672c3f",
+            "content": "sha256:fa41376d20bebde74e198a4628e7be49cea729c672da48d5d08947c10df93847",
             "locator": {
               "kind": "file"
             },

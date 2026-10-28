@@ -74,7 +74,7 @@ No relevant domain documentation was found.
 
 ### Repo-Internal References
 
-- The shared JSON transport and query-string helper the client is built on. [1]
+- The shared JSON transport and query-string helper the client is built on. 
 - The listing and content shapes this client returns. [2]
 - The server surface behind the two endpoints (task-context root selection + packet walk). [3]
 - The grammar provider that supplies the registered-packet listing to Markdown/TaskNotes. [4]
@@ -85,3 +85,5 @@ No relevant domain documentation was found.
 No cross-repository implementation boundary is owned here.
 
 A same-origin view over the local serving API; nothing crosses repositories.
+
+- Retired at the fifth freeze d59c3493: dashboard/src/data/files.ts::qs - the bytes it recorded now occur 5 times in the file, so no single home can be named and it is not given to the likelier one; dashboard/src/data/files.ts::getJson - cited by 2 anchors in this card; the name occurs 6 times in that file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.

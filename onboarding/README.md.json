@@ -130,12 +130,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "126d045c43fbd830d1f124ab63fee6589db5d1ff",
+            "blob": "bc2b3c3dbc712476532455c18ff3364128b6b280",
             "content": "sha256:b4ad4c71a918e5f0be486f601582fb810d349496c065d01bf110b49328c0d563",
             "locator": {
-              "end": 577,
+              "end": 947,
               "kind": "line_range",
-              "start": 541
+              "start": 911
             },
             "path": "mcp/src/agents_remember/cli/dashboard.py"
           },

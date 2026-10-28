@@ -3,8 +3,8 @@
   "proves": [
     {
       "anchor": {
-        "blob": "53a0a9aab44372af2659cc805d8cba7943e99727",
-        "content": "sha256:039216b89b5764c2f751e376e23b8162c83faced796c58808b4e5934ba42a876",
+        "blob": "a299beb4ef3337f8a5a1ec713a793e28ead801cf",
+        "content": "sha256:c276d9b9b9f625cb34918ecdc83502b351ed3df6be3b26b27fdd89af2dbafb53",
         "locator": {
           "kind": "symbol",
           "name": "opens in one isolated frame with no model: a channel for its revision and nothing else"
@@ -17,23 +17,6 @@
         "handoffEntry": "L183-CUR-FE04-saved-reading",
         "leaf": "260928-MIK-L183"
       }
-    },
-    {
-      "anchor": {
-        "blob": "53a0a9aab44372af2659cc805d8cba7943e99727",
-        "content": "sha256:b04995e75fcf294191fea73cd0d0168153bed7ad883dc0cd14803172b3ffe5b7",
-        "locator": {
-          "kind": "symbol",
-          "name": "shows the trusted stale list whatever the frame draws, and whatever it fails to draw"
-        }
-      },
-      "facet": "Pins the authoritative stale list even when the generated frame hides or fails to render its own marks.",
-      "id": "PRF-2SDSV2",
-      "invariant": "INV-ZAW3HJ",
-      "origin": {
-        "handoffEntry": "L183-CUR-FE-ATTACH-trusted-staleness",
-        "leaf": "260928-MIK-L183"
-      }
     }
   ],
   "realizes": [],
@@ -43,46 +26,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "53a0a9aab44372af2659cc805d8cba7943e99727",
-            "content": "sha256:039216b89b5764c2f751e376e23b8162c83faced796c58808b4e5934ba42a876",
+            "blob": "a299beb4ef3337f8a5a1ec713a793e28ead801cf",
+            "content": "sha256:5ae7ef93a7cef86ae7339f8ff4c2efbd8c3570ad125379ee2e9606f56a26269d",
             "locator": {
-              "end": 262,
+              "end": 1044,
               "kind": "line_range",
-              "start": 245
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "2": {
-      "note": "The trusted stale list is drawn from the host's answer even when the frame cannot be shown\n\nAnchor: `shows the trusted stale list whatever the frame draws, and whatever it fails to draw`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "53a0a9aab44372af2659cc805d8cba7943e99727",
-            "content": "sha256:b04995e75fcf294191fea73cd0d0168153bed7ad883dc0cd14803172b3ffe5b7",
-            "locator": {
-              "end": 290,
-              "kind": "line_range",
-              "start": 264
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "3": {
-      "note": "Every claim is marked and all four bases are named in the legend\n\nAnchor: `marks every claim and names all four bases in the legend`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "53a0a9aab44372af2659cc805d8cba7943e99727",
-            "content": "sha256:1ee7bc3af429e14f9f5c85e4a8ed2627d758cbd74edc047f238add853c5aefe9",
-            "locator": {
-              "end": 392,
-              "kind": "line_range",
-              "start": 366
+              "start": 160
             }
           },
           "kind": "test"
@@ -94,12 +43,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "53a0a9aab44372af2659cc805d8cba7943e99727",
-            "content": "sha256:74fc23e9e619445cb96c531eeaa3fe50dda52bf8bc75172af9f0ae18444ea2c3",
+            "blob": "a299beb4ef3337f8a5a1ec713a793e28ead801cf",
+            "content": "sha256:2f69972b38d0ac6dd7444a4f63bd5445bc2e052fea1f4486aafa4e8ed5454d58",
             "locator": {
-              "end": 916,
+              "end": 1044,
               "kind": "line_range",
-              "start": 873
+              "start": 913
             }
           },
           "kind": "test"

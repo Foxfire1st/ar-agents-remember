@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "3481658063386a8b4603fa1894661999e177c263",
+        "blob": "457f8862e7fd7acbc906860d75d31f8283449466",
         "content": "sha256:62376e8e7ff6568ad4e6656fdf82e8936a0c290689efe2992293601649312ce7",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "3481658063386a8b4603fa1894661999e177c263",
+        "blob": "457f8862e7fd7acbc906860d75d31f8283449466",
         "content": "sha256:8cbcc190c4dcd389822a5283d4172e1c0199ac1ca52a4c72bf07ad79af6388ed",
         "locator": {
           "kind": "symbol",
@@ -43,8 +43,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3481658063386a8b4603fa1894661999e177c263",
-            "content": "sha256:7dd4bb63ad8bae9721bd91fa9dafb796f8db4215486e486d306ba8fa138cef4e",
+            "blob": "457f8862e7fd7acbc906860d75d31f8283449466",
+            "content": "sha256:6b5980bb39f6b8bc2c91d49d6e0376473d4a69d6c38718970dfa892ba7892580",
             "locator": {
               "kind": "symbol",
               "name": "test_a_claim_belongs_to_the_innermost_part"
@@ -59,7 +59,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3481658063386a8b4603fa1894661999e177c263",
+            "blob": "457f8862e7fd7acbc906860d75d31f8283449466",
             "content": "sha256:df1c56d2aabae245d81062a02e6d6346316b1f82ebb3f367d6af326f2144002d",
             "locator": {
               "kind": "symbol",
@@ -75,7 +75,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3481658063386a8b4603fa1894661999e177c263",
+            "blob": "457f8862e7fd7acbc906860d75d31f8283449466",
             "content": "sha256:9300bfe70eb9e911872f4efbe30b30a8d0845000f1975a4b6034b60a97261ae6",
             "locator": {
               "kind": "symbol",
@@ -91,7 +91,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3481658063386a8b4603fa1894661999e177c263",
+            "blob": "457f8862e7fd7acbc906860d75d31f8283449466",
             "content": "sha256:62376e8e7ff6568ad4e6656fdf82e8936a0c290689efe2992293601649312ce7",
             "locator": {
               "kind": "symbol",
@@ -107,7 +107,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3481658063386a8b4603fa1894661999e177c263",
+            "blob": "457f8862e7fd7acbc906860d75d31f8283449466",
             "content": "sha256:cd41a1cd9cc8f4f34cb241128f5074dc37351d07139d6505b6d6f5329575c58f",
             "locator": {
               "kind": "symbol",
@@ -123,7 +123,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3481658063386a8b4603fa1894661999e177c263",
+            "blob": "457f8862e7fd7acbc906860d75d31f8283449466",
             "content": "sha256:d12c68cc6f283b98dd77e4d18681c624ac084dccac2b7407afda1c0a5c03f198",
             "locator": {
               "kind": "symbol",

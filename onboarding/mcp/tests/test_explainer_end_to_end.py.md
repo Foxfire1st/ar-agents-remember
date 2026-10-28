@@ -11,7 +11,7 @@ One in-process run of the whole chain — open the review page's explainer for a
 ## Code Commentary
 
 - The four steps run once against the real composition with only the model harness stubbed, so nothing about the chain is mocked except what would call a model.
-- Each answer is asserted as what the developer would see, which is what makes the composition trustworthy rather than each seam alone.
+- Each answer is asserted as what the developer would see, which is what makes the composition trustworthy rather than each seam alone. The suite it belongs to exercises that four-tool surface - `render`, `define_category`, `remove_category` and `grade` - and the workspace it writes into, not a read-back tool; removal archives the chat and deletes the workspace.
 
 ## Evidence
 

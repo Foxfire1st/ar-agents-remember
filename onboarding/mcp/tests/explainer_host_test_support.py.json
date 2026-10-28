@@ -1,0 +1,23 @@
+{
+  "path": "mcp/tests/explainer_host_test_support.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "It names the host identities the tests address - the server name, the leaf and the task - and builds the workspace those tests read, so a host test exercises the same configuration another host test does.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "efd5594b1bebe70b1a9426b70c41527a5d844df9",
+            "content": "sha256:2a4e66733f04eee67fb881ae75222e3dba61deb72d97066f56107502c21c88c3",
+            "locator": {
+              "kind": "symbol",
+              "name": "_text_of"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

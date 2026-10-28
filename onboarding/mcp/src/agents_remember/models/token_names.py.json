@@ -1,25 +1,6 @@
 {
   "path": "mcp/src/agents_remember/models/token_names.py",
-  "realizes": [
-    {
-      "anchor": {
-        "blob": "bdb8f1513aaa5736273e1fb3f39858ff6ec967e5",
-        "content": "sha256:7131b6e29f23d1aa84129d6e463061d383bab7881404be84f2699e0659edab2c",
-        "locator": {
-          "kind": "symbol",
-          "name": "TOKENIZER_NAME"
-        }
-      },
-      "id": "RLZ-J5HVAK",
-      "invariant": "INV-990KQM",
-      "origin": {
-        "handoffEntry": "L183-deferred-discovery-implementation",
-        "leaf": "260928-MIK-L183"
-      },
-      "rationale": "The light owner names tiktoken:o200k_base without importing the counter; the guard test pins it to the real counter name.",
-      "role": "enforcement"
-    }
-  ],
+  "realizes": [],
   "references": {
     "1": {
       "note": "The tokenizer's name is one literal with no computation at import\n\nAnchor: `TOKENIZER_NAME = \"tiktoken:o200k_base\"`",

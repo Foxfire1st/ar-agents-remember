@@ -174,19 +174,19 @@ No configured domain documentation could be checked.
 
 - `logical_body_from_tables` owns the current boundary described above. [16]
 - `logical_digest` owns the current boundary described above. [17]
-- `dataset_identity` owns the current boundary described above. [18]
+- `dataset_identity` owns the current boundary described above. 
 - `bound_repository` owns the current boundary described above. [19]
 
 - - The declared primary key per canonical table, including the non-leading-column case. [20]
 - - The typed JSON columns decoded at the portable boundary. [21]
 - - The body version and the digest over the canonical body. [22]
 - - **The one body constructor, and the digest over an already-encoded table mapping — the entry point the portable export seals through, so the scan and the artifact cannot define the body twice.** [23]
-- - The row ordering, the cell decoding and the JSON-text-is-not-knowledge rule. [24]
+- - The row ordering, the cell decoding and the JSON-text-is-not-knowledge rule. 
 - - **The public spelling of that one decoder, added by 260915-KS-L7 so the selective read and this digest cannot disagree about a stored cell.** [25]
 - - The reader that calls it, instead of decoding a typed JSON column a second time. [26]
 - - The key-versus-manifest honesty check, now reached by both the scan and the artifact path. [27]
 - - The identity packaging and the defensive namespace read. [28]
-- - **The file-level identity entry point this leaf added, and the ambiguous-namespace read it depends on.** [29]
+- - **The file-level identity entry point this leaf added, and the ambiguous-namespace read it depends on.** 
 - - The read-only connection the file-level entry point must use, so a comparison cannot repair what it measures. [30]
 - - The kernel canonical encoder the digest is computed through. [31]
 - - The JSON decoder a typed column is compared through, which refuses ambiguous stored text. [32]
@@ -198,3 +198,5 @@ No cross-repository behavior is implemented in this file. The digest deliberatel
 ledger rows, so nothing here reads a second repository.
 
 No meaningful cross-repo references found.
+
+- Retired at the fifth freeze d59c3493: mcp/src/agents_remember/memory/knowledge/logical.py::dataset_identity - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one; mcp/src/agents_remember/memory/knowledge/logical.py::_rows_of - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.

@@ -12,7 +12,7 @@ This source-bound correction covers the described L54 seams only. Unrelated inhe
 
 ## Current evidence
 
-- Bindings add recognized named non-Python test cases while retaining normal declaration semantics. [16]
+- Bindings add recognized named non-Python test cases while retaining normal declaration semantics.
 
 
 
@@ -113,7 +113,9 @@ The following complete predecessor retains useful explanations, old observations
 
 
 
-- Defines the function `typescript_anchor_identifier` — The direct identifier rooted by a complete TS call or generic type spelling.. [4]
+- Defines the function `typescript_anchor_identifier` — The direct identifier rooted by a complete TS call or generic type spelling..
+
+Retired at the fifth freeze d59c3493: mcp/src/agents_remember/memory_quality/style/citations/grammars.py:1-357 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060. Retired means the anchor no longer stands, not that the cited subject was deleted [4]
 
 
 > Retained earlier card wording; superseded by the current account above:
@@ -133,7 +135,8 @@ The following complete predecessor retains useful explanations, old observations
 
 
 
-- `definitions` is not defined in this module any more: the walk lives in `memory_quality/style/citations/extents.py`, returning every name a file binds at any depth with the extent of the construct that binds it. Source caption: `definitions` [7]
+- `definitions` is not defined in this module any more: the walk lives in `memory_quality/style/citations/extents.py`, returning every name a file binds at any depth with the extent of the construct that binds it. Source caption: `definitions`
+
 
 
 
@@ -157,7 +160,8 @@ The following complete predecessor retains useful explanations, old observations
 
 
 
-- Defines the function `_span` — The one-based line range ``node`` occupies.. [10]
+- Defines the function `_span` — The one-based line range ``node`` occupies..
+
 
 
 > Retained earlier card wording; superseded by the current account above:
@@ -203,3 +207,9 @@ The following complete predecessor retains useful explanations, old observations
 
 > Retained earlier card wording; superseded by the current account above:
 > - Defines the function `_script_targets` (lines 326-343) — The names a declarator binds, unpacking destructuring one alternative at a time.. [15]
+
+- Retired at the fifth freeze d59c3493: mcp/src/agents_remember/memory_quality/style/citations/grammars.py:209-243 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 0b30d9358b6ef00be9af1bdeb6c22eb802bf8d1e. Retired means the anchor no longer stands, not that the cited subject was deleted.
+
+## Retirements
+
+- Retired at the fifth freeze d59c3493: mcp/src/agents_remember/memory_quality/style/citations/grammars.py:1-357 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060. Retired means the anchor no longer stands, not that the cited subject was deleted.

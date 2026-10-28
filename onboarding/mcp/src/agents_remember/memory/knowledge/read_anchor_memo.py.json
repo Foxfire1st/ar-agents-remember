@@ -8,7 +8,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "79e5b6f0ee4b5d0d731ae7c34661666cee1e7e4f",
+            "blob": "26c98d72487feab063b5b251ace4715d718282ca",
             "content": "sha256:1b6ff17f20f17bcdce4e952b5fcb4b57839244d3fedd3e9fd4cf43b1dc6decc3",
             "locator": {
               "end": 27,
@@ -25,27 +25,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "79e5b6f0ee4b5d0d731ae7c34661666cee1e7e4f",
+            "blob": "26c98d72487feab063b5b251ace4715d718282ca",
             "content": "sha256:c4ba63173ceac4c2cbe54e5f9fc9b50dbd88e7258425f570017b9bc44d16bf4d",
             "locator": {
               "kind": "symbol",
               "name": "is_complete_object_id"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "3": {
-      "note": "**The weight-bounded LRU table: the one-tuple hit, the refused oversized value, eviction past the bound, and a lock never held across Git or parsing.**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "79e5b6f0ee4b5d0d731ae7c34661666cee1e7e4f",
-            "content": "sha256:da9c2b35a5d015c5b865515497b144a2ebff59b01ef5b295070caa6360a28ad7",
-            "locator": {
-              "kind": "symbol",
-              "name": "BoundedMemo"
             }
           },
           "kind": "code"
@@ -57,7 +41,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "79e5b6f0ee4b5d0d731ae7c34661666cee1e7e4f",
+            "blob": "26c98d72487feab063b5b251ace4715d718282ca",
             "content": "sha256:6cd60d6a37f5ae307dc4e5c38b4fddf2da6445ffcc141abb926b604b3ff2092d",
             "locator": {
               "kind": "symbol",
@@ -68,7 +52,7 @@
         },
         {
           "anchor": {
-            "blob": "79e5b6f0ee4b5d0d731ae7c34661666cee1e7e4f",
+            "blob": "26c98d72487feab063b5b251ace4715d718282ca",
             "content": "sha256:99b959da4ce6745179b087bbf07e82922c2550089b609fc1e6683d99889e2429",
             "locator": {
               "kind": "symbol",
@@ -79,7 +63,7 @@
         },
         {
           "anchor": {
-            "blob": "79e5b6f0ee4b5d0d731ae7c34661666cee1e7e4f",
+            "blob": "26c98d72487feab063b5b251ace4715d718282ca",
             "content": "sha256:f3f4d5c274f6a21e932e45aa545c0c821fc1ea72d07d217117cc636a32fd7b3d",
             "locator": {
               "kind": "symbol",
@@ -95,7 +79,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "79e5b6f0ee4b5d0d731ae7c34661666cee1e7e4f",
+            "blob": "26c98d72487feab063b5b251ace4715d718282ca",
             "content": "sha256:a1e619b09a94dc7184ec1cddedce393267506cd55c6b29341d82885c08d8b05c",
             "locator": {
               "kind": "symbol",
@@ -106,7 +90,7 @@
         },
         {
           "anchor": {
-            "blob": "79e5b6f0ee4b5d0d731ae7c34661666cee1e7e4f",
+            "blob": "26c98d72487feab063b5b251ace4715d718282ca",
             "content": "sha256:891f54bfde7ea955ccfd00677b92922fda14e8be7672f51bdcf33a802eb58c8b",
             "locator": {
               "kind": "symbol",
@@ -117,7 +101,7 @@
         },
         {
           "anchor": {
-            "blob": "79e5b6f0ee4b5d0d731ae7c34661666cee1e7e4f",
+            "blob": "26c98d72487feab063b5b251ace4715d718282ca",
             "content": "sha256:ed6a6768e30a5ae6ce728d95ce8d94089466ddf369ed22d678550f1a1b9b1f4d",
             "locator": {
               "kind": "symbol",
@@ -133,7 +117,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "79e5b6f0ee4b5d0d731ae7c34661666cee1e7e4f",
+            "blob": "26c98d72487feab063b5b251ace4715d718282ca",
             "content": "sha256:712cefe57298b0f6dae74656a096d4c23fc70206b81aeb6583acf29e025098a0",
             "locator": {
               "kind": "symbol",

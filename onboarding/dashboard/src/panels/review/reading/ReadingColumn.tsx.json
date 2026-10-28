@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "cbb0fb03fba632567069cea912eccf846596c396",
-        "content": "sha256:2c159e3744c5251b35c53fdfbdc5f39db5f6f61326e812a20c1c18d49a35eb32",
+        "blob": "6ad6d3a0f7add2f77d6450f5347b61416090768c",
+        "content": "sha256:c35375dd33e3168059c40ca83a0daad019b5df17d8de07c905390ca9e03c26d2",
         "locator": {
           "kind": "symbol",
           "name": "ReadingColumn"
@@ -21,8 +21,8 @@
     },
     {
       "anchor": {
-        "blob": "cbb0fb03fba632567069cea912eccf846596c396",
-        "content": "sha256:2c159e3744c5251b35c53fdfbdc5f39db5f6f61326e812a20c1c18d49a35eb32",
+        "blob": "6ad6d3a0f7add2f77d6450f5347b61416090768c",
+        "content": "sha256:c35375dd33e3168059c40ca83a0daad019b5df17d8de07c905390ca9e03c26d2",
         "locator": {
           "kind": "symbol",
           "name": "ReadingColumn"
@@ -39,8 +39,8 @@
     },
     {
       "anchor": {
-        "blob": "cbb0fb03fba632567069cea912eccf846596c396",
-        "content": "sha256:2c159e3744c5251b35c53fdfbdc5f39db5f6f61326e812a20c1c18d49a35eb32",
+        "blob": "6ad6d3a0f7add2f77d6450f5347b61416090768c",
+        "content": "sha256:c35375dd33e3168059c40ca83a0daad019b5df17d8de07c905390ca9e03c26d2",
         "locator": {
           "kind": "symbol",
           "name": "ReadingColumn"
@@ -57,8 +57,8 @@
     },
     {
       "anchor": {
-        "blob": "cbb0fb03fba632567069cea912eccf846596c396",
-        "content": "sha256:7b5f9b30a688468c978a34a6df6fb6d7c3799e1a4daf26efc9b21d895ac4d3d2",
+        "blob": "6ad6d3a0f7add2f77d6450f5347b61416090768c",
+        "content": "sha256:d76266e29eb7a5eb00f3eb3eb9dc97756fe5da4cea6f129db3bc1fa6910f0da1",
         "locator": {
           "kind": "symbol",
           "name": "readingColumn"
@@ -75,83 +75,17 @@
     }
   ],
   "references": {
-    "1": {
-      "note": "Render sticky reading head plus permanently mounted notes, active subjects, lane, retained canvas slot and provenance.\n\nAnchor: \"function useHeadPadding(scroller: React.RefObject<HTMLDivElement \\| null>): void {\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "cbb0fb03fba632567069cea912eccf846596c396",
-            "content": "sha256:c0fd27eb8c50d03825ae55c6bea3db0d46cfb4b18ee43e57d0485008e736f9c4",
-            "locator": {
-              "end": 41,
-              "kind": "line_range",
-              "start": 25
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "2": {
       "note": "Render sticky reading head plus permanently mounted notes, active subjects, lane, retained canvas slot and provenance.\n\nAnchor: \"const readingColumn = css({\"",
       "targets": [
         {
           "anchor": {
-            "blob": "cbb0fb03fba632567069cea912eccf846596c396",
-            "content": "sha256:269912571f361d189b524bfddc49841ad657ae5af9a7795994a83f15f0536ca3",
+            "blob": "6ad6d3a0f7add2f77d6450f5347b61416090768c",
+            "content": "sha256:95caa0ed50e4841990b7549da65ed221309bb59ac2f7f55addd90e8cdcc24f54",
             "locator": {
-              "end": 69,
+              "end": 155,
               "kind": "line_range",
-              "start": 42
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "3": {
-      "note": "Render sticky reading head plus permanently mounted notes, active subjects, lane, retained canvas slot and provenance.\n\nAnchor: \"const head = css({\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "cbb0fb03fba632567069cea912eccf846596c396",
-            "content": "sha256:14d3565929756e761306be509999fb0eda2d1e8ea32cf3e1eac4aaec5669d56b",
-            "locator": {
-              "end": 92,
-              "kind": "line_range",
-              "start": 70
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "4": {
-      "note": "The page-level Code context control selects Changes only or Full context through the persisted code-context store; the old ExpressionControls callbacks are retired.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "cbb0fb03fba632567069cea912eccf846596c396",
-            "content": "sha256:9571e46164f011c1eff4cd8d3f2ddcba08d9fd9575c062e8b37640f921319603",
-            "locator": {
-              "kind": "symbol",
-              "name": "CodeContextSwitch"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "5": {
-      "note": "ReadingColumn renders the shared model's subject groups and lane under its page-level control; the retired ReviewExpressions file accordion is not this composition.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "cbb0fb03fba632567069cea912eccf846596c396",
-            "content": "sha256:2c159e3744c5251b35c53fdfbdc5f39db5f6f61326e812a20c1c18d49a35eb32",
-            "locator": {
-              "kind": "symbol",
-              "name": "ReadingColumn"
+              "start": 17
             }
           },
           "kind": "code"

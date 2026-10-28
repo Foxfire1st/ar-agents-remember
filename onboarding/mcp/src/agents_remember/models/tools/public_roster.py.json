@@ -5,24 +5,6 @@
     {
       "anchor": {
         "blob": "d0b0ddd9f150e32116b430ecc74907fcf68fee97",
-        "content": "sha256:77300d3d8d990814a8c85c25a0c314254dde308fd394c4a03ff87c1fd34e2cb3",
-        "locator": {
-          "kind": "symbol",
-          "name": "PUBLIC_TOOLS"
-        }
-      },
-      "id": "RLZ-5XSE8N",
-      "invariant": "INV-48203N",
-      "origin": {
-        "handoffEntry": "L183-CUR-ET01-bound-explainer-roster",
-        "leaf": "260928-MIK-L183"
-      },
-      "rationale": "PUBLIC_TOOLS at C still lists `explainer_control` (72) as the architect's Update/Retire/claim entry on the ordinary roster, which is the claim; the symbol anchor is C's.",
-      "role": "enforcement"
-    },
-    {
-      "anchor": {
-        "blob": "d0b0ddd9f150e32116b430ecc74907fcf68fee97",
         "content": "sha256:fdef15e2ca9d39f66c8570a7147cb894dda16f47c7d3558bb4454e5b4714875f",
         "locator": {
           "kind": "file"

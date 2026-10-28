@@ -26,4 +26,6 @@ This file consumes comparison and owner state; it does not author knowledge or d
 - Keep raw movement/comparison/limitations and identifiers as one provenance disclosure below content; paging remains outside. [2]
 - Keep raw movement/comparison/limitations and identifiers as one provenance disclosure below content; paging remains outside. [3]
 
-- The delivered pair's identities are one supplied fact line inside the existing disclosure. [4]
+- The delivered pair's identities are one supplied fact line inside the existing disclosure. 
+
+- Retired at the fifth freeze d59c3493: dashboard/src/panels/review/reading/TechnicalDetails.tsx::TechnicalDetails - the bytes it recorded now occur 6 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.

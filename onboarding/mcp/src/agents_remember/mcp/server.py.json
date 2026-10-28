@@ -4,26 +4,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "c32522a60857504ad69c2b55c97baed38f637142",
-        "content": "sha256:7c93dc3a6013ffe3e783e310481cd1801a32363bcf21fbb1ebe192aca457695a",
-        "locator": {
-          "kind": "symbol",
-          "name": "AgentsRememberMCP.list_tools"
-        }
-      },
-      "id": "RLZ-0VABP5",
-      "invariant": "INV-990KQM",
-      "origin": {
-        "handoffEntry": "L183-deferred-discovery-implementation",
-        "leaf": "260928-MIK-L183"
-      },
-      "rationale": "list_tools produces the FastMCP answer before loop.call_soon schedules start_after_discovery with this server config. The scheduled owner starts one sweep and conditional dashboard attempt; source order does not establish serialized client receipt.",
-      "role": "enforcement"
-    },
-    {
-      "anchor": {
-        "blob": "c32522a60857504ad69c2b55c97baed38f637142",
-        "content": "sha256:a0f83948be17a52e49ae3ea3458054d02d413132a902ccf88db97b841eeef676",
+        "blob": "94f708b9e1972b2fad7432cf32f20b67989ccea8",
+        "content": "sha256:67af5c5f3b8171491a76f68c2c356979bcca1a6ab64fa225732a9160c70ede18",
         "locator": {
           "kind": "symbol",
           "name": "create_server"
@@ -40,7 +22,7 @@
     },
     {
       "anchor": {
-        "blob": "c32522a60857504ad69c2b55c97baed38f637142",
+        "blob": "94f708b9e1972b2fad7432cf32f20b67989ccea8",
         "content": "sha256:312d3f75f123cb354fd03fd95f8dd3fc94d3693499546a4be82abdd2bf7cf3a9",
         "locator": {
           "kind": "symbol",
@@ -58,7 +40,7 @@
     },
     {
       "anchor": {
-        "blob": "c32522a60857504ad69c2b55c97baed38f637142",
+        "blob": "94f708b9e1972b2fad7432cf32f20b67989ccea8",
         "content": "sha256:0e6725422a3eeea913b4bcd5b3deadefa0ea96e4ce447473d731c92ff3196b21",
         "locator": {
           "kind": "symbol",
@@ -76,8 +58,8 @@
     },
     {
       "anchor": {
-        "blob": "c32522a60857504ad69c2b55c97baed38f637142",
-        "content": "sha256:a0f83948be17a52e49ae3ea3458054d02d413132a902ccf88db97b841eeef676",
+        "blob": "94f708b9e1972b2fad7432cf32f20b67989ccea8",
+        "content": "sha256:67af5c5f3b8171491a76f68c2c356979bcca1a6ab64fa225732a9160c70ede18",
         "locator": {
           "kind": "symbol",
           "name": "create_server"
@@ -94,7 +76,7 @@
     },
     {
       "anchor": {
-        "blob": "c32522a60857504ad69c2b55c97baed38f637142",
+        "blob": "94f708b9e1972b2fad7432cf32f20b67989ccea8",
         "content": "sha256:fdfd078bb233e7616bdacc47766168eea5c696b7cf50c0a719787b863b635663",
         "locator": {
           "kind": "symbol",
@@ -112,43 +94,7 @@
     },
     {
       "anchor": {
-        "blob": "c32522a60857504ad69c2b55c97baed38f637142",
-        "content": "sha256:9f7adae5e4b51dc439ad612741f9e30ff56da4e9e1476c142b175bf4003f5b8e",
-        "locator": {
-          "kind": "symbol",
-          "name": "AgentsRememberMCP.call_tool"
-        }
-      },
-      "id": "RLZ-DESP0H",
-      "invariant": "INV-990KQM",
-      "origin": {
-        "handoffEntry": "L183-deferred-discovery-implementation",
-        "leaf": "260928-MIK-L183"
-      },
-      "rationale": "call_tool invokes start_after_discovery with the stored config before surface checks and dispatch, using the same once latch as discovery for clients that never list. The sweep starts on that first attempt even with no config; dashboard supervision remains conditional.",
-      "role": "enforcement"
-    },
-    {
-      "anchor": {
-        "blob": "c32522a60857504ad69c2b55c97baed38f637142",
-        "content": "sha256:9f7adae5e4b51dc439ad612741f9e30ff56da4e9e1476c142b175bf4003f5b8e",
-        "locator": {
-          "kind": "symbol",
-          "name": "AgentsRememberMCP.call_tool"
-        }
-      },
-      "id": "RLZ-FPDHZQ",
-      "invariant": "INV-48203N",
-      "origin": {
-        "handoffEntry": "L183-CUR-ET01-bound-explainer-roster",
-        "leaf": "260928-MIK-L183"
-      },
-      "rationale": "`call_tool` at C enforces the bound surface and the launched seat ahead of `super().call_tool` (100-120), so one check covers all 22 tools and a named-but-unexposed tool is refused by name rather than merely absent from discovery.",
-      "role": "enforcement"
-    },
-    {
-      "anchor": {
-        "blob": "c32522a60857504ad69c2b55c97baed38f637142",
+        "blob": "94f708b9e1972b2fad7432cf32f20b67989ccea8",
         "content": "sha256:3464bef016f8108190a72784cc6b2fdccfc803d36d70efe351eb894b0fa68496",
         "locator": {
           "kind": "symbol",
@@ -166,8 +112,8 @@
     },
     {
       "anchor": {
-        "blob": "c32522a60857504ad69c2b55c97baed38f637142",
-        "content": "sha256:a0f83948be17a52e49ae3ea3458054d02d413132a902ccf88db97b841eeef676",
+        "blob": "94f708b9e1972b2fad7432cf32f20b67989ccea8",
+        "content": "sha256:67af5c5f3b8171491a76f68c2c356979bcca1a6ab64fa225732a9160c70ede18",
         "locator": {
           "kind": "symbol",
           "name": "create_server"
@@ -184,7 +130,7 @@
     },
     {
       "anchor": {
-        "blob": "c32522a60857504ad69c2b55c97baed38f637142",
+        "blob": "94f708b9e1972b2fad7432cf32f20b67989ccea8",
         "content": "sha256:8ce2eb6e2ad3532311d6372118b2c1b5dd587656b2df2867d6e74b20ee73228f",
         "locator": {
           "kind": "symbol",
@@ -202,8 +148,8 @@
     },
     {
       "anchor": {
-        "blob": "c32522a60857504ad69c2b55c97baed38f637142",
-        "content": "sha256:a0f83948be17a52e49ae3ea3458054d02d413132a902ccf88db97b841eeef676",
+        "blob": "94f708b9e1972b2fad7432cf32f20b67989ccea8",
+        "content": "sha256:67af5c5f3b8171491a76f68c2c356979bcca1a6ab64fa225732a9160c70ede18",
         "locator": {
           "kind": "symbol",
           "name": "create_server"
@@ -225,19 +171,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c32522a60857504ad69c2b55c97baed38f637142",
-            "content": "sha256:a0f83948be17a52e49ae3ea3458054d02d413132a902ccf88db97b841eeef676",
-            "locator": {
-              "kind": "symbol",
-              "name": "create_server"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "c32522a60857504ad69c2b55c97baed38f637142",
-            "content": "sha256:51aabd4a109dee3ed422848ba7df15577c0cdd83fd80309e6668f594a29fc514",
+            "blob": "94f708b9e1972b2fad7432cf32f20b67989ccea8",
+            "content": "sha256:51f72c9e21d93c397c1cad01152d976e289d22ca230c769b19a5303c8882a204",
             "locator": {
               "kind": "file"
             }
@@ -251,12 +186,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c32522a60857504ad69c2b55c97baed38f637142",
+            "blob": "94f708b9e1972b2fad7432cf32f20b67989ccea8",
             "content": "sha256:fdfd078bb233e7616bdacc47766168eea5c696b7cf50c0a719787b863b635663",
             "locator": {
-              "end": 143,
+              "end": 133,
               "kind": "line_range",
-              "start": 129
+              "start": 119
             }
           },
           "kind": "code"
@@ -268,7 +203,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c32522a60857504ad69c2b55c97baed38f637142",
+            "blob": "94f708b9e1972b2fad7432cf32f20b67989ccea8",
             "content": "sha256:b500dba00d72e964c33584080b15292c3ca591ab4f4a69285f610cdcfdf8b851",
             "locator": {
               "kind": "symbol",
@@ -284,7 +219,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c32522a60857504ad69c2b55c97baed38f637142",
+            "blob": "94f708b9e1972b2fad7432cf32f20b67989ccea8",
             "content": "sha256:3464bef016f8108190a72784cc6b2fdccfc803d36d70efe351eb894b0fa68496",
             "locator": {
               "kind": "symbol",
@@ -446,7 +381,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c32522a60857504ad69c2b55c97baed38f637142",
+            "blob": "94f708b9e1972b2fad7432cf32f20b67989ccea8",
             "content": "sha256:623450c4c9e101bc8c5b6858ee7c0c1b15b27a9579668bba5dcce472ee7d4017",
             "locator": {
               "kind": "symbol",
@@ -462,19 +397,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c32522a60857504ad69c2b55c97baed38f637142",
-            "content": "sha256:a0f83948be17a52e49ae3ea3458054d02d413132a902ccf88db97b841eeef676",
-            "locator": {
-              "kind": "symbol",
-              "name": "create_server"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "c32522a60857504ad69c2b55c97baed38f637142",
-            "content": "sha256:51aabd4a109dee3ed422848ba7df15577c0cdd83fd80309e6668f594a29fc514",
+            "blob": "94f708b9e1972b2fad7432cf32f20b67989ccea8",
+            "content": "sha256:51f72c9e21d93c397c1cad01152d976e289d22ca230c769b19a5303c8882a204",
             "locator": {
               "kind": "file"
             }
@@ -488,48 +412,24 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c32522a60857504ad69c2b55c97baed38f637142",
-            "content": "sha256:a0f83948be17a52e49ae3ea3458054d02d413132a902ccf88db97b841eeef676",
-            "locator": {
-              "end": 314,
-              "kind": "line_range",
-              "start": 281
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "c32522a60857504ad69c2b55c97baed38f637142",
+            "blob": "94f708b9e1972b2fad7432cf32f20b67989ccea8",
             "content": "sha256:7c93dc3a6013ffe3e783e310481cd1801a32363bcf21fbb1ebe192aca457695a",
             "locator": {
-              "end": 91,
+              "end": 87,
               "kind": "line_range",
-              "start": 79
+              "start": 75
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "c32522a60857504ad69c2b55c97baed38f637142",
-            "content": "sha256:9f7adae5e4b51dc439ad612741f9e30ff56da4e9e1476c142b175bf4003f5b8e",
-            "locator": {
-              "end": 127,
-              "kind": "line_range",
-              "start": 93
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "c32522a60857504ad69c2b55c97baed38f637142",
+            "blob": "94f708b9e1972b2fad7432cf32f20b67989ccea8",
             "content": "sha256:8ce2eb6e2ad3532311d6372118b2c1b5dd587656b2df2867d6e74b20ee73228f",
             "locator": {
-              "end": 344,
+              "end": 332,
               "kind": "line_range",
-              "start": 321
+              "start": 309
             }
           },
           "kind": "code"
@@ -567,48 +467,24 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c32522a60857504ad69c2b55c97baed38f637142",
-            "content": "sha256:a0f83948be17a52e49ae3ea3458054d02d413132a902ccf88db97b841eeef676",
-            "locator": {
-              "end": 314,
-              "kind": "line_range",
-              "start": 281
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "c32522a60857504ad69c2b55c97baed38f637142",
+            "blob": "94f708b9e1972b2fad7432cf32f20b67989ccea8",
             "content": "sha256:7c93dc3a6013ffe3e783e310481cd1801a32363bcf21fbb1ebe192aca457695a",
             "locator": {
-              "end": 91,
+              "end": 87,
               "kind": "line_range",
-              "start": 79
+              "start": 75
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "c32522a60857504ad69c2b55c97baed38f637142",
-            "content": "sha256:9f7adae5e4b51dc439ad612741f9e30ff56da4e9e1476c142b175bf4003f5b8e",
-            "locator": {
-              "end": 127,
-              "kind": "line_range",
-              "start": 93
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "c32522a60857504ad69c2b55c97baed38f637142",
+            "blob": "94f708b9e1972b2fad7432cf32f20b67989ccea8",
             "content": "sha256:8ce2eb6e2ad3532311d6372118b2c1b5dd587656b2df2867d6e74b20ee73228f",
             "locator": {
-              "end": 344,
+              "end": 332,
               "kind": "line_range",
-              "start": 321
+              "start": 309
             }
           },
           "kind": "code"

@@ -3,26 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "03e74e0fa30bcdfad2b5fc0e0b6942d7aebd455c",
-        "content": "sha256:a64d37b0a45ae7cafa4d16720d8d6930afc33acbdfd94742b8cb236d2bfadebf",
-        "locator": {
-          "kind": "symbol",
-          "name": "validate_asset_read_bounds"
-        }
-      },
-      "id": "RLZ-0V59XY",
-      "invariant": "INV-5VVSTD",
-      "origin": {
-        "handoffEntry": "L102-F10",
-        "leaf": "260928-MIK-L102"
-      },
-      "rationale": "`validate_asset_read_bounds` still bounds every stored metadata read and validates the descriptor population and aggregate before any asset payload is opened, so a corrupt store cannot authorise an over-cap read.",
-      "role": "enforcement"
-    },
-    {
-      "anchor": {
-        "blob": "03e74e0fa30bcdfad2b5fc0e0b6942d7aebd455c",
-        "content": "sha256:4781c32578deada535366c9de9a499f06d9e718f3641f0ca5b6fc017232b86c2",
+        "blob": "35b0789157780a116645ce616b36eb73aefd9328",
+        "content": "sha256:28b0151fd4e1bc2f054b40fc49873217d4932dcf35c3ba8e831cf860042f3f73",
         "locator": {
           "kind": "symbol",
           "name": "read_frame_bytes"
@@ -44,27 +26,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "03e74e0fa30bcdfad2b5fc0e0b6942d7aebd455c",
-            "content": "sha256:4781c32578deada535366c9de9a499f06d9e718f3641f0ca5b6fc017232b86c2",
+            "blob": "35b0789157780a116645ce616b36eb73aefd9328",
+            "content": "sha256:28b0151fd4e1bc2f054b40fc49873217d4932dcf35c3ba8e831cf860042f3f73",
             "locator": {
               "kind": "symbol",
               "name": "read_frame_bytes"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "2": {
-      "note": "A modified manifest cannot authorize more assets than the admitted revision holds.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "03e74e0fa30bcdfad2b5fc0e0b6942d7aebd455c",
-            "content": "sha256:a64d37b0a45ae7cafa4d16720d8d6930afc33acbdfd94742b8cb236d2bfadebf",
-            "locator": {
-              "kind": "symbol",
-              "name": "validate_asset_read_bounds"
             }
           },
           "kind": "code"

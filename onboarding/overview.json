@@ -26,7 +26,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9fd75d5e4d6c3ddd6368df459517c5de74099533",
+            "blob": "85f114bd0c22ec4da82807255db52e5107afd7ff",
             "content": "sha256:4e77b2a1a88bc765ec36507e0e735caefa2e8b5fc79ab93ed78346ea10fddc65",
             "locator": {
               "kind": "symbol",
@@ -60,7 +60,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2afe4df9e979efb37c12c123b75809a993a53534",
+            "blob": "a443dea86729b9cb6bb9c1c0d74a1d53931c6c93",
             "content": "sha256:d5f3a51648e530c865d620beda11d1ea1d153ffb54066f09fde040e685a9038e",
             "locator": {
               "end": 30,
@@ -211,24 +211,6 @@
               "start": 1
             },
             "path": "mcp/src/agents_remember/serving/__init__.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "118": {
-      "note": "Retained reference account (no fresh execution or acceptance inferred): the dashboard answers a published action against the current projection, recording an attention-item dismissal through the control plane and refusing an item the projection does not publish.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "00dbff88a35b8e2bcb41c27d8fd4dbb239decc67",
-            "content": "sha256:db2872bd7608d0ab222e227a962021aee282797dc3e33c03a4edcf70b24b8370",
-            "locator": {
-              "end": 259,
-              "kind": "line_range",
-              "start": 246
-            },
-            "path": "mcp/src/agents_remember/serving/_app_routes.py"
           },
           "kind": "code"
         }
@@ -415,8 +397,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "07979a6e10a7cde98e4a4ce1dcaca7a203241e3f",
-            "content": "sha256:6e94e3f710e3074a2f9def9a24032a21aee42476e665e4ea421cba0067b627bb",
+            "blob": "5dfbf6cd67f7e14564e4273b5de10a80b4b3e2e1",
+            "content": "sha256:71f68120e935fccaeb6eee2a77531d7c1e4a3649634192293a2db8092bfda15e",
             "locator": {
               "kind": "file"
             },
@@ -534,7 +516,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9bb74647f6b0b1b06178972710d51364539d642f",
+            "blob": "356af2fbfc68dbcf1528f5517e095623d30ad5b2",
             "content": "sha256:d464b721ab61acb5e0c79ad3210870eadeddf5510a8dc5f096c0c0468b32f7e5",
             "locator": {
               "end": 5,
@@ -2313,7 +2295,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c7ee6796c238d63d1e061ee0c8c1c84b4b214cec",
+            "blob": "cf1a7a3024b89c4ce174451e062bcf2cf3fa4a98",
             "content": "sha256:b98f34753d256efb09111e7053b5f37280f7e2a8c1c75fcfa48463b43eb35366",
             "locator": {
               "end": 27,
@@ -2476,12 +2458,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "07979a6e10a7cde98e4a4ce1dcaca7a203241e3f",
+            "blob": "5dfbf6cd67f7e14564e4273b5de10a80b4b3e2e1",
             "content": "sha256:b344ad01251b5c2a7a392f415aef4c0dfec5822d46dbf58007b94725f0252e88",
             "locator": {
-              "end": 175,
+              "end": 181,
               "kind": "line_range",
-              "start": 137
+              "start": 143
             },
             "path": "mcp/src/agents_remember/kernel/git_command.py"
           },
@@ -2780,12 +2762,12 @@
         },
         {
           "anchor": {
-            "blob": "2f417db25d3f58c21b8baeca43751c69834ddffb",
+            "blob": "0312a433230b5868e6030419096bdc9a1bdd0e19",
             "content": "sha256:ab2d1870feb094de29e4d04437eefe49a20c1bc949e4e6926fe96408cbb78683",
             "locator": {
-              "end": 161,
+              "end": 192,
               "kind": "line_range",
-              "start": 144
+              "start": 175
             },
             "path": "mcp/src/agents_remember/memory/conversion/code_objects.py"
           },
@@ -2804,12 +2786,12 @@
         },
         {
           "anchor": {
-            "blob": "2f417db25d3f58c21b8baeca43751c69834ddffb",
+            "blob": "0312a433230b5868e6030419096bdc9a1bdd0e19",
             "content": "sha256:da0b54225087c70b68ff362613557c5860bca7d5204c26c5b19d565be6316b87",
             "locator": {
-              "end": 151,
+              "end": 182,
               "kind": "line_range",
-              "start": 142
+              "start": 173
             },
             "path": "mcp/src/agents_remember/memory/conversion/code_objects.py"
           },
@@ -4224,7 +4206,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "396f581aa13672645248ee4b089011b1ca781c1b",
+            "blob": "c3404824cd6df7779b6ca88e482e08e63727d831",
             "content": "sha256:07aa32c0e77d63c049371f15d5886529004d1e17196a290f9ee4b2fd00c8539b",
             "locator": {
               "kind": "symbol",
@@ -4236,7 +4218,7 @@
         },
         {
           "anchor": {
-            "blob": "396f581aa13672645248ee4b089011b1ca781c1b",
+            "blob": "c3404824cd6df7779b6ca88e482e08e63727d831",
             "content": "sha256:5a6fa392e1f7610062dd278030098648d72aabda7cf4cacb138194006dfed9b2",
             "locator": {
               "kind": "symbol",

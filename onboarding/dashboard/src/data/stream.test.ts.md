@@ -45,7 +45,7 @@ No relevant external documentation is configured.
 ### Repo-Internal References
 
 
-- Controlled state-stream cases cover wake, hidden, error, and never-open paths. [1]
+- Controlled state-stream cases cover wake, hidden, error, and never-open paths.
 
 
 - Production state-stream transport owns the deadline. [2]
@@ -56,8 +56,10 @@ No relevant external documentation is configured.
 No meaningful cross-repository references found.
 
 
-- The test covers dashboard-local state transport. [3]
+- The test covers dashboard-local state transport.
 
 The moved-notice cases drive ControlledSource through the named review.explainer.moved event: a matching mounted subscriber receives the exact payload, another leaf does not, and no-work and cleared notices reach the same subscriber without reopening the page. These are event-wiring assertions over a stubbed EventSource, not live transport latency measurements.
 
 - The moved-notice cases drive ControlledSource through the named review.explainer.moved event: a matching mounted subscriber receives the exact payload, another leaf does not, and no-work and cleared notices reach the same subscriber without reopening the page. These are event-wiring assertions over a stubbed EventSource, not live transport latency measurements. [4]
+
+- Retired at the fifth freeze d59c3493: dashboard/src/data/stream.test.ts:38-122 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 842b487b854503d95c9c2d9dce1841198ba93c7d. Retired means the anchor no longer stands, not that the cited subject was deleted.

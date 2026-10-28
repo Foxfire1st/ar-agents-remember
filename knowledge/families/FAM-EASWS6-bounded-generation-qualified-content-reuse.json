@@ -31,14 +31,14 @@
     "leaf": "260928-MIK-L168",
     "task": "260928-MIK"
   },
-  "revision": 3,
+  "revision": 4,
   "routes": [
     "dashboard/src/data",
     "dashboard/src/panels",
     "mcp/src/agents_remember/serving",
     "dashboard/src/grammar",
     "mcp/src/agents_remember/worktrees/modules",
-    "mcp/src/agents_remember/cli"
+    "mcp/src/agents_remember/application"
   ],
   "schema": "ar-family/v1",
   "status": "proposed",

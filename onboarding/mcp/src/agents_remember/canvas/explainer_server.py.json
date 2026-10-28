@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "1c4bde322b6b015ca3dfec796b2c4dda3e4ce1d1",
-        "content": "sha256:9b26812358188c4bf18ac138c1f7be79561003af6318c8c310cd0c6401e42fe8",
+        "blob": "0697b5c5c41f1c6837a50517c68412c4f22890fb",
+        "content": "sha256:b555b69912c215ee9ef6efd82c6c2be2d5e676f7793517e194a1ff0e0c5ba416",
         "locator": {
           "kind": "symbol",
           "name": "render_and_publish"
@@ -21,8 +21,8 @@
     },
     {
       "anchor": {
-        "blob": "1c4bde322b6b015ca3dfec796b2c4dda3e4ce1d1",
-        "content": "sha256:57b7513ec777f40593db3267541f6cbf3d3d5ee1a2e1efccad521cf9eff61c15",
+        "blob": "0697b5c5c41f1c6837a50517c68412c4f22890fb",
+        "content": "sha256:c9c1f05d5a7e1a5008bd0f0203a1d89a4da9b0b056869cf0f25d5bbb033a689f",
         "locator": {
           "kind": "symbol",
           "name": "explainer_authoring"
@@ -39,8 +39,8 @@
     },
     {
       "anchor": {
-        "blob": "1c4bde322b6b015ca3dfec796b2c4dda3e4ce1d1",
-        "content": "sha256:9b26812358188c4bf18ac138c1f7be79561003af6318c8c310cd0c6401e42fe8",
+        "blob": "0697b5c5c41f1c6837a50517c68412c4f22890fb",
+        "content": "sha256:b555b69912c215ee9ef6efd82c6c2be2d5e676f7793517e194a1ff0e0c5ba416",
         "locator": {
           "kind": "symbol",
           "name": "render_and_publish"
@@ -62,12 +62,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1c4bde322b6b015ca3dfec796b2c4dda3e4ce1d1",
-            "content": "sha256:38e81dcdaa399eccfa1d189767ec9be27db3fa40a802115ffae4023112e5615f",
+            "blob": "0697b5c5c41f1c6837a50517c68412c4f22890fb",
+            "content": "sha256:fbcd9e202928437d08908b92e776ac317dab15f88ed65afc7f68fe4380dcd16f",
             "locator": {
-              "end": 294,
+              "end": 227,
               "kind": "line_range",
-              "start": 250
+              "start": 183
             }
           },
           "kind": "code"
@@ -79,12 +79,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1c4bde322b6b015ca3dfec796b2c4dda3e4ce1d1",
-            "content": "sha256:27d3905ea492addaf15aced1e488d7d8ad1a65196e982abc0ddbe5e7d8ee2da8",
+            "blob": "0697b5c5c41f1c6837a50517c68412c4f22890fb",
+            "content": "sha256:a0b6554ba6f9db2e2b5c52cccc59d26d7df8873e4868535a057689751f2e1a84",
             "locator": {
-              "end": 317,
+              "end": 250,
               "kind": "line_range",
-              "start": 297
+              "start": 230
             }
           },
           "kind": "code"
@@ -96,46 +96,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1c4bde322b6b015ca3dfec796b2c4dda3e4ce1d1",
-            "content": "sha256:1653074540466e3bdbcb02b6390a968d0a06e08f89d070d92775cc24b91a9a1f",
+            "blob": "0697b5c5c41f1c6837a50517c68412c4f22890fb",
+            "content": "sha256:044fa4d05e91887f3e29d7237c91e15595d94d28a161d67142e37fa8d48c9398",
             "locator": {
-              "end": 332,
+              "end": 275,
               "kind": "line_range",
-              "start": 320
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "4": {
-      "note": "One report per filed tray message, with the developer's words copied byte for byte and their digests answered\n\nAnchor: `def report(`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "1c4bde322b6b015ca3dfec796b2c4dda3e4ce1d1",
-            "content": "sha256:485088230b6f2abc5bc261571239fda13cfff030903551a7658d862bad84eecb",
-            "locator": {
-              "end": 517,
-              "kind": "line_range",
-              "start": 446
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "5": {
-      "note": "A report with no recorded architect goes back to the developer's tray instead of to a seat that would not receive it\n\nAnchor: `def _deliver(`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "1c4bde322b6b015ca3dfec796b2c4dda3e4ce1d1",
-            "content": "sha256:50078d2ec592240c082423d42da7a989826d04a6601581c2cd4fe59bade043d3",
-            "locator": {
-              "end": 603,
-              "kind": "line_range",
-              "start": 581
+              "start": 253
             }
           },
           "kind": "code"
@@ -143,16 +109,16 @@
       ]
     },
     "6": {
-      "note": "Publication happens only after the draft loaded and the readiness check passed, and a refusal leaves the ready revision untouched\n\nAnchor: `def render_and_publish(`",
+      "note": "Publication happens only after the draft loaded and the readiness check passed, and a refusal leaves the ready revision untouched\n\nAnchor: `def _render_and_publish(`",
       "targets": [
         {
           "anchor": {
-            "blob": "1c4bde322b6b015ca3dfec796b2c4dda3e4ce1d1",
-            "content": "sha256:9b26812358188c4bf18ac138c1f7be79561003af6318c8c310cd0c6401e42fe8",
+            "blob": "0697b5c5c41f1c6837a50517c68412c4f22890fb",
+            "content": "sha256:139d1ff52a11f018f68f222da070fef30db98ebd76316a6aec4ec0042d82346f",
             "locator": {
-              "end": 1338,
+              "end": 618,
               "kind": "line_range",
-              "start": 1261
+              "start": 508
             }
           },
           "kind": "code"

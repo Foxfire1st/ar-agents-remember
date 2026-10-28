@@ -1,0 +1,23 @@
+{
+  "path": "mcp/src/agents_remember/application/review_evidence_map.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "_group_map groups measured evidence without discarding the detail inside a group.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5617037f3cc02a70c410421821ddf2a9efac669d",
+            "content": "sha256:7f3a6cdc4677531448a4830095c2c65c3d98ba18f48f1b428dc1c80a2a68b9ea",
+            "locator": {
+              "kind": "symbol",
+              "name": "_group_map"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

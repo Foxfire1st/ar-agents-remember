@@ -7,29 +7,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ec79902ff5606bf93712b5c97a3dce493c0f4089",
-            "content": "sha256:591b53972d6f6de9bbd58b60284d721d166a551ed9528319657404fa888e5238",
+            "blob": "585f8dc687506ab6ad8898dfbabe4d24ac9612ed",
+            "content": "sha256:b0bb6ef0c5d5cfbc7e7d628b19319303b212ba00efc9530c2f5b0409688a6f50",
             "locator": {
-              "end": 160,
+              "end": 234,
               "kind": "line_range",
-              "start": 1
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "6": {
-      "note": "Shared priority/authored order, synthetic weaken precedence and click-based word/focus/context preservation.\n\nAnchor: \"it(\"lists the centre's members in the tree's displayed order, under every sort\", async () => {\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "ec79902ff5606bf93712b5c97a3dce493c0f4089",
-            "content": "sha256:1f7767dd3c9e75632ca831d10274a84e6968b36ec3e9a32ad4e76b9171034ced",
-            "locator": {
-              "end": 237,
-              "kind": "line_range",
-              "start": 161
+              "start": 6
             }
           },
           "kind": "test"

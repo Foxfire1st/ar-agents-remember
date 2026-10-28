@@ -12,6 +12,7 @@ Watches the mounted frame for the document-presence messages the host bootstrap 
 
 - `useDocumentPresence` binds the window message listener for one session and reports the phase it observed instead of assuming a healthy frame.
 - Navigation is reported as departure, which is the signal the panel revokes on.
+- The departed document's port is closed at departure, before `onDeparture` runs, rather than later when React runs the effect's cleanup: nothing reads the port once the document has departed.
 
 ## Evidence
 

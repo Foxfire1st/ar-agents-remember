@@ -26,12 +26,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8bdffe4683b00da6aed0b4f57d68f0689505bb48",
+            "blob": "ae9be69551cbadc20563cb5e3ce7db43ea99b200",
             "content": "sha256:66b56015678e6a808098b76cdaf13c413267b851d4bf851d8827f7817ce66c47",
             "locator": {
-              "end": 80,
+              "end": 87,
               "kind": "line_range",
-              "start": 80
+              "start": 87
             },
             "path": "mcp/src/agents_remember/serving/changeset.py"
           },
@@ -39,12 +39,12 @@
         },
         {
           "anchor": {
-            "blob": "8bdffe4683b00da6aed0b4f57d68f0689505bb48",
+            "blob": "ae9be69551cbadc20563cb5e3ce7db43ea99b200",
             "content": "sha256:5a806c50edfc5197e173a83194140f5608aa5687bdaf1bc524dc1ac65824d405",
             "locator": {
-              "end": 67,
+              "end": 74,
               "kind": "line_range",
-              "start": 67
+              "start": 74
             },
             "path": "mcp/src/agents_remember/serving/changeset.py"
           },
@@ -119,8 +119,8 @@
         },
         {
           "anchor": {
-            "blob": "396f581aa13672645248ee4b089011b1ca781c1b",
-            "content": "sha256:a1e25e610b89188c8b8ee96186b79376eb9947c515ae118097c7dee9e073a595",
+            "blob": "c3404824cd6df7779b6ca88e482e08e63727d831",
+            "content": "sha256:3efba6b9c78b72fd1ff131c6f8f274da87a1ece4c8b1ea4715235f9ad48f5162",
             "locator": {
               "kind": "file"
             },
@@ -141,8 +141,8 @@
         },
         {
           "anchor": {
-            "blob": "396f581aa13672645248ee4b089011b1ca781c1b",
-            "content": "sha256:d86ba7e7cf7f74c5b8c19d590f8b1d4fabb228ba633bfef6358e894af37792b5",
+            "blob": "c3404824cd6df7779b6ca88e482e08e63727d831",
+            "content": "sha256:2a048328658ef57f37cf7e056285aa7ae07a945735bf69584367506efb2655f5",
             "locator": {
               "kind": "symbol",
               "name": "iter_leaf_enclosure_contracts"
@@ -158,7 +158,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c9e2847f64ca428bdc799c8173b43aa736f4b0e9",
+            "blob": "758a00879439672a413425ed6c40686fe3626bd9",
             "content": "sha256:9d7bdb395ee1911989911a31d4f82b84b3fd1ef9fc7505a24f62fe4709a1bcf1",
             "locator": {
               "end": 491,

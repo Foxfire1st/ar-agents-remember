@@ -1,24 +1,6 @@
 {
   "path": "dashboard/src/panels/review/ReviewCardsMounted.test.tsx",
   "realizes": [],
-  "references": {
-    "2": {
-      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('keeps the opening card read the only one, and says when it failed', async () => {\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "6520f6afc106f95674a81987fae43a45edbac402",
-            "content": "sha256:cab3b7af0f85fab2b8bc60cf95733bdf31d7d1d2a568788aa79f4acbf2560013",
-            "locator": {
-              "end": 110,
-              "kind": "line_range",
-              "start": 79
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    }
-  },
+  "references": {},
   "schema": "ar-onboarding-file/v1"
 }

@@ -1,0 +1,23 @@
+{
+  "path": "dashboard/src/explainer/retireReceipt.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "A receipt is shown only for the generation that retired, never for the seat that replaced it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cc17c27c9b2ad6c591038ff79cc0a33751372e43",
+            "content": "sha256:e851643e4a28d8fa64d513e545aa8bf7171dcb6bad2fb2038937b6cea4e7eb7e",
+            "locator": {
+              "kind": "symbol",
+              "name": "useRetireReceipt"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

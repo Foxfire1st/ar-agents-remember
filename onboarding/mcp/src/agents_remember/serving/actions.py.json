@@ -71,12 +71,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "00dbff88a35b8e2bcb41c27d8fd4dbb239decc67",
+            "blob": "77ed3251b5ba88023ded1af8a52472449f890a60",
             "content": "sha256:142a5e594b7a980f474f7d6a7dd3ba9db880a5e1a26d49bc44ff0a030cbaf9b7",
             "locator": {
-              "end": 366,
+              "end": 492,
               "kind": "line_range",
-              "start": 347
+              "start": 473
             },
             "path": "mcp/src/agents_remember/serving/_app_routes.py"
           },

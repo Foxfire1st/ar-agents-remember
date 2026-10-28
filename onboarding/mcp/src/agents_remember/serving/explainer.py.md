@@ -6,7 +6,7 @@
 
 ## Purpose
 
-The explainer's HTTP routes on the review page — build, Send, Update, Retire, cancel, state, stale, revisions, removal and planned — as transport over one composed seat service.
+The read side of the explainer page: `explainer_composition` wires the seat service, and the reads are assembled here from the frame store's retained revisions, the leaf's agreed number, grades and the moved-notice account, bound to the selected comparison. The HTTP handlers that serve those reads live in `serving/explainer_routes.py`, and no read here starts a model.
 
 ## Code Commentary
 
@@ -24,10 +24,14 @@ Update and Retire clear the leaf's process-local moved notice only after their s
 ## Evidence
 
 - A process that cannot compose the seat service refuses every route by name [1]
-- History, message, request id and comparison number are validated before the seat is touched [2]
-- A Send against a comparison the leaf has left is refused with both numbers [3]
-- A planning leaf's comparison is built at the contract's line tips with nothing else substituted [4]
-- An unresolvable line falls back only to its fork base, never to the repository's HEAD [5]
-- Cancel reports whether a turn stopped and whether publication was prevented [6]
+- History, message, request id and comparison number are validated before the seat is touched
+- A Send against a comparison the leaf has left is refused with both numbers
+- A planning leaf's comparison is built at the contract's line tips with nothing else substituted
+- An unresolvable line falls back only to its fork base, never to the repository's HEAD
+- Cancel reports whether a turn stopped and whether publication was prevented
+
+- Comparison/evidence preparation rechecks operands; retained state carries its own claims and staleness; Update/Retire clear notices after service results; explicit removal and planned reads retain owner refusals; cancel preserves host uncertainty and measured revision equality. 
 
 - Comparison/evidence preparation rechecks operands; retained state carries its own claims and staleness; Update/Retire clear notices after service results; explicit removal and planned reads retain owner refusals; cancel preserves host uncertainty and measured revision equality. [7]
+
+- Retired at the fifth freeze d59c3493: mcp/src/agents_remember/serving/explainer.py:1104-1136 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 5f8398b32760677c370e3145add73cfa8388357b; mcp/src/agents_remember/serving/explainer.py:338-366 - the region it cited is not in the file at the candidate and no re-point was possible; mcp/src/agents_remember/serving/explainer.py:403-476 - the region it cited is not in the file at the candidate and no re-point was possible; mcp/src/agents_remember/serving/explainer.py:508-526 - the region it cited is not in the file at the candidate and no re-point was possible; mcp/src/agents_remember/serving/explainer.py:1333-1364 - the region it cited is not in the file at the candidate and no re-point was possible; mcp/src/agents_remember/serving/explainer.py::handle_cancel - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 5f8398b32760677c370e3145add73cfa8388357b; mcp/src/agents_remember/serving/explainer.py::handle_planned - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 5f8398b32760677c370e3145add73cfa8388357b; mcp/src/agents_remember/serving/explainer.py::handle_retire - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 5f8398b32760677c370e3145add73cfa8388357b; mcp/src/agents_remember/serving/explainer.py::handle_update - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 5f8398b32760677c370e3145add73cfa8388357b; mcp/src/agents_remember/serving/explainer.py::handle_remove_revisions - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 5f8398b32760677c370e3145add73cfa8388357b; mcp/src/agents_remember/serving/explainer.py::_prepare - the bytes it recorded now occur 6 times in the file, so no single home can be named and it is not given to the likelier one; mcp/src/agents_remember/serving/explainer.py::_prepared_trees - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.

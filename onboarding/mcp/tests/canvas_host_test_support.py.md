@@ -18,6 +18,8 @@ Shared support for the canvas host cases: real published revisions, request help
 
 - The support builds its published revisions through the real publication path. [1]
 
-- Consumer proof fixtures use fabricated frontend bytes with real source bindings; they are not browser observations. [2]
+- Consumer proof fixtures use fabricated frontend bytes with real source bindings; they are not browser observations. 
 
-- The consumer record is rebound to its fixture using the actual binding and digest functions. [3]
+- The consumer record is rebound to its fixture using the actual binding and digest functions. 
+
+- Retired at the fifth freeze d59c3493: mcp/tests/canvas_host_test_support.py::proof_frontend - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 47f69f11afb982e318006209036aed22f1792976; mcp/tests/canvas_host_test_support.py::proof_bundle - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 47f69f11afb982e318006209036aed22f1792976. Retired means the anchor no longer stands, not that the cited subject was deleted.

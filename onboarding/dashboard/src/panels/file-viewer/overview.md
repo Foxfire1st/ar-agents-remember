@@ -44,8 +44,17 @@ The File Viewer's DualPane also supplies a tray target from its repository and t
 
 ## Evidence
 
+- The bounded, passive hold released by the reader's pointer, key or wheel. 
+
+- The shell registers and keeps the file view mounted.
+
+- Retired at the fifth freeze d59c3493: dashboard/src/panels/file-viewer/markGutter.tsx::HOLD_RELEASES - the bytes it recorded now occur 5 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.
+
+## Retirements
+
+- Retired at the fifth freeze d59c3493: dashboard/src/cockpit/Cockpit.tsx:802-807 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 7c56c11d651972515723b4090b8174087eb5236f. Retired means the anchor no longer stands, not that the cited subject was deleted.
+
 - The marks gutter a pane hosts: portals, placement, the gutter per editor and `drawn`. [1]
-- The bounded, passive hold released by the reader's pointer, key or wheel. [2]
 
 - The code pane's optional marks. [3]
 
@@ -54,17 +63,21 @@ The File Viewer's DualPane also supplies a tray target from its repository and t
 - The code pane's optional first line and content-sized host. [5]
 
 - The L1 read-only files API this view consumes. [6]
+
 - The same-origin client wrapping that API. [7]
 
-- The shell registers and keeps the file view mounted. [8]
-
-
+Retired at the fifth freeze d59c3493: dashboard/src/cockpit/Cockpit.tsx:802-807 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 7c56c11d651972515723b4090b8174087eb5236f. Retired means the anchor no longer stands, not that the cited subject was deleted [8]
 
 - The markdown renderer the sidecar pane reuses. [9]
 
-
 - Fitted excerpts grow without an internal maximum-height scrolling box. [10]
+
 - Only a fully specified tray file target installs the line-pick gutter. [11]
+
 - DualPane passes the File Viewer repository and each file scope/path into the code pane. [12]
+
 - File Viewer owns independent Explorer visibility and active repository tray context. [13]
+
 - The toolbar control remains outside the mounted hidden Explorer panel and handle. [14]
+
+- The bounded, passive hold released by the reader's pointer, key or wheel. [2]

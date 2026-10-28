@@ -2,34 +2,17 @@
   "path": "dashboard/src/panels/review/ReviewSurface.wordDiff.test.tsx",
   "realizes": [],
   "references": {
-    "12": {
-      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it(\"word-diffs a tree review's member statement and family guarantee in the center\", async () => {\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "9b74578ddee88e6a8a7df19cfcb92fca01161cd4",
-            "content": "sha256:37a2911d5d8b06669f3fa0cb532079fc209ad7d6a5cd11a110262a007292bbb4",
-            "locator": {
-              "end": 116,
-              "kind": "line_range",
-              "start": 78
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
     "13": {
       "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('never calls one guarantee revision unchanged when its texts differ, anywhere on a tree review', async () => {\"",
       "targets": [
         {
           "anchor": {
-            "blob": "9b74578ddee88e6a8a7df19cfcb92fca01161cd4",
+            "blob": "901e645fee179a71db6f4cfe5f6bbeadc302fd64",
             "content": "sha256:3b31e0b26af02df1e3d5bb21cb24275b4ea98ccfd4dcbc552c26e4c7a5e2a004",
             "locator": {
-              "end": 130,
+              "end": 141,
               "kind": "line_range",
-              "start": 117
+              "start": 128
             }
           },
           "kind": "test"

@@ -323,21 +323,23 @@ No domain documentation is configured for this repository; the current account i
 - The latest-value ref helper. [2]
 - No read starts while held. [3]
 - The source header records keyed questions, newest-only display, single-read refresh identity, coherent family continuation and compatible whole-task unshown reuse; current memory-notification behavior is implemented separately below the header. [4]
-- The module's imports: the review wire types and the client, and the read state with its mapper. [5]
+- The module's imports: the review wire types and the client, and the read state with its mapper.
 - ReviewPageRequest carries the shared current wire collection union, cursor and optional size; offered first-page collections are a separate client policy. [6]
 - **The question's identity: task, record, question and page position, with the page's own reason for participating.** [7]
-- **The one read: the nine-argument client call, the previous identity passed as the ninth, and the answer handed to the caller's callback rather than written to state.** [8]
-- startRead consumes a sequence and cache input epoch, admits only current answers, validates continuation before display, and rejects old input epochs before even the compatible unshown whole-task exception. [9]
+- **The one read: the nine-argument client call, the previous identity passed as the ninth, and the answer handed to the caller's callback rather than written to state.** 
+- startRead consumes a sequence and cache input epoch, admits only current answers, validates continuation before display, and rejects old input epochs before even the compatible unshown whole-task exception. 
 - **Admission writes the keyed read, the retained generation and the frame together.** [10]
 - **The read for the question on screen, derived per render.** [11]
 - **The frame: the last admitted payload of one task context.** [12]
 - **The identity paired with the one read it belongs to — the read number, the question key and the digest — and the defect the pairing closes.** [13]
 - The hook returns read, retained payload, carried identity, refresh, memoryChanged, memoryWatchFailed and task-context frame. [14]
 - The complete hook owns keyed answer/retention/frame/carried state, refresh nonce, memoised request, request sequence and current-value refs, with one read-starting effect. [15]
-- **`refresh` files the identity with the question it was displayed for and the read number that will replace it, and asks the effect to run again — a refresh with nothing displayed carries nothing.** [16]
+- **`refresh` files the identity with the question it was displayed for and the read number that will replace it, and asks the effect to run again — a refresh with nothing displayed carries nothing.**
+
+Retired at the fifth freeze d59c3493: dashboard/src/panels/review/ReviewReadCycle.ts:458-474 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 972b44cc07b307929535fe7974d6a30d53c9c4f1. Retired means the anchor no longer stands, not that the cited subject was deleted [16]
 - **All three conjuncts of the described identity, and the same-flush defect that makes the question key non-redundant with the read number.** [17]
 - **The read state and its mapper: the four phases this module sets, and the client's typed answer projected into them.** [18]
-- **The client's ninth argument and the one query string it is assembled into, with the empty/undefined spellings collapsed once.** [19]
+- **The client's ninth argument and the one query string it is assembled into, with the empty/undefined spellings collapsed once.** 
 - **The one spelling of the query parameter the server admits, named once so a call site cannot silently stop carrying the identity.** [20]
 
 - The surface calls the shared read cycle, checks its retained target key, and supplies the resulting generation to refresh. [21]
@@ -350,8 +352,20 @@ No domain documentation is configured for this repository; the current account i
 - Rejected continuation becomes a failed read without installing the raw response. [25]
 - Sparse updates preserve exact content and claim identity within independent walks (moved unchanged to `familyWalkMerge.ts` by L48). [26]
 - Only the bound comparison and exact family-side-revision walk are composed. [27]
-- memoryChanged advances the request sequence, invalidates only cached whole reviews through the cache owner, then invokes the normal refresh. memoryWatchFailed advances the sequence and writes a keyed failed outcome without replacing retained payload/frame; this module owns neither stream connection nor retry timer. [28]
+- memoryChanged advances the request sequence, invalidates only cached whole reviews through the cache owner, then invokes the normal refresh. memoryWatchFailed advances the sequence and writes a keyed failed outcome without replacing retained payload/frame; this module owns neither stream connection nor retry timer. 
 
 ### Cross-Repo References
 
 No separate cross-repository implementation boundary is claimed.
+
+
+Anchor: `intentReview` `reviewQuery` [19]
+
+
+Anchor: `memoryWatchActions` `startRead` [28]
+
+- Retired at the fifth freeze d59c3493: dashboard/src/panels/review/ReviewReadCycle.ts:58-70 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit a5bec6c3b3b413cd3066d0e8d302b4854d1b513a; dashboard/src/panels/review/ReviewReadCycle.ts::askReview - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one; dashboard/src/panels/review/ReviewReadCycle.ts::startRead - the bytes it recorded now occur 5 times in the file, so no single home can be named and it is not given to the likelier one; dashboard/src/data/review.ts::intentReview - the bytes it recorded now occur 3 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.
+
+## Retirements
+
+- Retired at the fifth freeze d59c3493: dashboard/src/panels/review/ReviewReadCycle.ts:458-474 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 972b44cc07b307929535fe7974d6a30d53c9c4f1. Retired means the anchor no longer stands, not that the cited subject was deleted.

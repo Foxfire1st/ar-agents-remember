@@ -38,4 +38,6 @@ installed server, a review's latency, or the recorded reads that supply real sou
 
 - An answer a fresh store returns is byte-identical to a fresh computation of the same inputs. [1]
 - A changed input is never served from the kept answer. [2]
-- An answer is not served after the declared age bound. [3]
+- An answer is not served after the declared age bound. 
+
+- Retired at the fifth freeze d59c3493: mcp/tests/test_review_answer_reuse.py::test_an_answer_is_not_served_after_the_age_bound - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 3104b78bb309a8e1a912503557adb08599b52ef0. Retired means the anchor no longer stands, not that the cited subject was deleted.

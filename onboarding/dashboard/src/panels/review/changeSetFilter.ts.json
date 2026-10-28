@@ -1,0 +1,58 @@
+{
+  "path": "dashboard/src/panels/review/changeSetFilter.ts",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "62539ee4a3737ab0a46897a8465cdbe5a98c58eb",
+        "content": "sha256:9e4dbd32c623b141ec431e2f5a9b3c069bf3c1e652c5271b99887625d65aa398",
+        "locator": {
+          "kind": "symbol",
+          "name": "filterTree"
+        }
+      },
+      "id": "RLZ-X5HCD5",
+      "invariant": "INV-DEDX8T",
+      "origin": {
+        "handoffEntry": "MIK-R86@v1 rule 9",
+        "leaf": "260928-MIK-L86"
+      },
+      "rationale": "It applies the active-view query to family, subject and location fields and keeps the matching group for a folded location.",
+      "role": "presentation"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "An empty query returns the tree unchanged, not a filtered copy of it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "62539ee4a3737ab0a46897a8465cdbe5a98c58eb",
+            "content": "sha256:9e4dbd32c623b141ec431e2f5a9b3c069bf3c1e652c5271b99887625d65aa398",
+            "locator": {
+              "kind": "symbol",
+              "name": "filterTree"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "A path is matched on what it is, including code without an invariant, not on a display label.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "62539ee4a3737ab0a46897a8465cdbe5a98c58eb",
+            "content": "sha256:2ec86522d1da15d433e85344d719bd6089ad235cb38be78e465379ecdcacdddd",
+            "locator": {
+              "kind": "symbol",
+              "name": "laneFileMatches"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -4,8 +4,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "d60acd0e4be738b9a9a33eb9f333fa6c53974f2b",
-        "content": "sha256:697f70089d3099fdcedc901eb364accc561069e1488477627e558ac5db67e630",
+        "blob": "79366831b556a7cf512bc53d396ac55a43734666",
+        "content": "sha256:d59ff148a41b13ec9104f58c10d25a3c17ca8f515680e0083ad04d24f6c5b595",
         "locator": {
           "kind": "symbol",
           "name": "create_app"
@@ -22,8 +22,8 @@
     },
     {
       "anchor": {
-        "blob": "d60acd0e4be738b9a9a33eb9f333fa6c53974f2b",
-        "content": "sha256:c51c97b245e2535a92ab41c805b3a40b611f860b17b3836ec40c0be6a61abe53",
+        "blob": "79366831b556a7cf512bc53d396ac55a43734666",
+        "content": "sha256:ce420730463b6f8b0ebb68ac51cde958f9401616bde6ddb051ddfd69664c1039",
         "locator": {
           "end": 136,
           "kind": "line_range",
@@ -41,7 +41,7 @@
     },
     {
       "anchor": {
-        "blob": "d60acd0e4be738b9a9a33eb9f333fa6c53974f2b",
+        "blob": "79366831b556a7cf512bc53d396ac55a43734666",
         "content": "sha256:594e15b9b4fbc0139d61473bf108a57d9edcf8058d3d535c0c2ff0e90e8b6d51",
         "locator": {
           "kind": "symbol",
@@ -59,8 +59,8 @@
     },
     {
       "anchor": {
-        "blob": "d60acd0e4be738b9a9a33eb9f333fa6c53974f2b",
-        "content": "sha256:b598dab3806164c780ac4f80371f262fa95fec0bd8d84052d94651de5f73c5d3",
+        "blob": "79366831b556a7cf512bc53d396ac55a43734666",
+        "content": "sha256:decaea3d124e3ac2a1f9513e96461c781b4020cbf241bf594f7dbb8a94077f52",
         "locator": {
           "kind": "file"
         }
@@ -76,68 +76,16 @@
     }
   ],
   "references": {
-    "31": {
-      "note": "One runtime composition shares its ledger/landing interest and forwards actual supplied collaborators.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "d60acd0e4be738b9a9a33eb9f333fa6c53974f2b",
-            "content": "sha256:c51c97b245e2535a92ab41c805b3a40b611f860b17b3836ec40c0be6a61abe53",
-            "locator": {
-              "end": 136,
-              "kind": "line_range",
-              "start": 86
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "32": {
-      "note": "The leaf adds review_memory_root to the runtime beside the retained child-shutdown port.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "d60acd0e4be738b9a9a33eb9f333fa6c53974f2b",
-            "content": "sha256:62523f13b3ef210038ad77d3541765c21366598e92763ff79c30c8f3f20cb475",
-            "locator": {
-              "end": 135,
-              "kind": "line_range",
-              "start": 125
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "33": {
       "note": "Lifespan/gzip, shared changeset cache, built-in and optional routes precede the static mount.",
       "targets": [
         {
           "anchor": {
-            "blob": "d60acd0e4be738b9a9a33eb9f333fa6c53974f2b",
-            "content": "sha256:b598dab3806164c780ac4f80371f262fa95fec0bd8d84052d94651de5f73c5d3",
+            "blob": "79366831b556a7cf512bc53d396ac55a43734666",
+            "content": "sha256:decaea3d124e3ac2a1f9513e96461c781b4020cbf241bf594f7dbb8a94077f52",
             "locator": {
               "kind": "file"
             }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "34": {
-      "note": "The stream consumer forwards the optional review identity and runtime root port into the multiplexer.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "00dbff88a35b8e2bcb41c27d8fd4dbb239decc67",
-            "content": "sha256:b64bb4012eeadd576aa78fc64d01b827dfae256c3bd78e0cd8cc5a226bdb9239",
-            "locator": {
-              "end": 274,
-              "kind": "line_range",
-              "start": 246
-            },
-            "path": "mcp/src/agents_remember/serving/_app_routes.py"
           },
           "kind": "code"
         }
@@ -148,8 +96,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d60acd0e4be738b9a9a33eb9f333fa6c53974f2b",
-            "content": "sha256:b598dab3806164c780ac4f80371f262fa95fec0bd8d84052d94651de5f73c5d3",
+            "blob": "79366831b556a7cf512bc53d396ac55a43734666",
+            "content": "sha256:decaea3d124e3ac2a1f9513e96461c781b4020cbf241bf594f7dbb8a94077f52",
             "locator": {
               "kind": "file"
             }
@@ -163,8 +111,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d60acd0e4be738b9a9a33eb9f333fa6c53974f2b",
-            "content": "sha256:b598dab3806164c780ac4f80371f262fa95fec0bd8d84052d94651de5f73c5d3",
+            "blob": "79366831b556a7cf512bc53d396ac55a43734666",
+            "content": "sha256:decaea3d124e3ac2a1f9513e96461c781b4020cbf241bf594f7dbb8a94077f52",
             "locator": {
               "kind": "file"
             }

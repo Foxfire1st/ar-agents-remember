@@ -26,9 +26,11 @@ This is current-source interpretation of the admitted frozen candidate, not a ne
 - The state response uses projector revision weak ETags, refuses an absent snapshot, returns bodyless 304 on a match, otherwise copies the memoized projection and adds the served-state tail. [1]
 
 
-- The state SSE route passes ordinary snapshot/delta events through the optional review-memory multiplexer under aclosing; the distinct raw-event route still forwards observer records and its own ready marker. [2]
+- The state SSE route passes ordinary snapshot/delta events through the optional review-memory multiplexer under aclosing; the distinct raw-event route still forwards observer records and its own ready marker.
 
 
-- All omitted review selectors opt out; any supplied selector forms a normalized three-string identity for the resolver. The multiplexer—not normalization—checks segments/root admission, emits review.memory.error on admitted failure paths and keeps ordinary events flowing. [3]
+- All omitted review selectors opt out; any supplied selector forms a normalized three-string identity for the resolver. The multiplexer—not normalization—checks segments/root admission, emits review.memory.error on admitted failure paths and keeps ordinary events flowing.
 
 - The review stream multiplexes projection/memory invalidation with moved notices. _merged_stream lets notice exhaustion leave the page stream alive and ordinary stream exhaustion close it; finally cancels/gathers pending next-event tasks and aclosing releases subscriptions. [4]
+
+- Retired at the fifth freeze d59c3493: mcp/src/agents_remember/serving/_app_routes.py:235-274 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 662b6266e0e4662acd043c39365bb17969ea6ff9; mcp/src/agents_remember/serving/_app_routes.py:287-307 - the region it cited is not in the file at the candidate and no re-point was possible; mcp/src/agents_remember/serving/review_memory_watch.py:199-230 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 20624f979e2b89067a3e42019c9611a8e18ff848; mcp/src/agents_remember/serving/_app_routes.py:246-274 - the region it cited is not in the file at the candidate and no re-point was possible; mcp/src/agents_remember/serving/review_memory_watch.py:190-230 - the region it cited is not in the file at the candidate and no re-point was possible. Retired means the anchor no longer stands, not that the cited subject was deleted.

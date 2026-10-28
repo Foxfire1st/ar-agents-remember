@@ -22,6 +22,8 @@ Where one leaf's explainer environment lives: its folder outside every worktree 
 - A target and every ancestor below the coordination or task root are admitted, and a symlinked component is held rather than followed [1]
 - The leaf's workspace and its three writable folders are created only after the landing folder is admitted, and a symlinked workspace is refused [2]
 - Every caller of the leaf lock names one file on disk, with no doubled suffix [3]
-- Clearing a workspace keeps its retired marker and removes nothing behind a symlink [4]
+- Clearing a workspace keeps its retired marker and removes nothing behind a symlink
 - A receipt id is one path segment, so it cannot leave the leaf's receipt folder [5]
 - A repository the runtime does not name, or one with no checkout, is refused rather than resolved relative to the process [6]
+
+- Retired at the fifth freeze d59c3493: mcp/src/agents_remember/canvas/explainer_paths.py:464-495 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 5f8398b32760677c370e3145add73cfa8388357b. Retired means the anchor no longer stands, not that the cited subject was deleted.

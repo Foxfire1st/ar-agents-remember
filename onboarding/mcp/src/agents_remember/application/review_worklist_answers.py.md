@@ -22,4 +22,6 @@ No Domain Documentation source is configured for this repository. Requirement pa
 
 - A worklist must match all comparison tree operands and memory-base commit. [1]
 - The reviewer delegates item judgments to the public gate API over exact after trees. [2]
-- Auxiliary open counts are omitted rather than guessed for absent or undecidable stored work. [3]
+- Auxiliary open counts are omitted rather than guessed for absent or undecidable stored work. 
+
+- Retired at the fifth freeze d59c3493: mcp/src/agents_remember/application/review_worklist_answers.py::stored_unexplained_open - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.

@@ -41,8 +41,11 @@ All shapes use the shared frozen bounded model conventions. They record trees, o
 - A card memory read names its after tree, completeness or unavailable reason. [22]
 
 - The delivered value names the pair, its four trees and the notice state, without becoming a review. [23]
-- The leaf-wide result separates the highest recorded number from the comparison it resolved. [24]
+- The leaf-wide result separates the highest recorded number from the comparison it resolved. 
+
+- The frozen TreeKnowledge and ReviewTrees carriers hold wire/index and comparison-side facts, return before then after, and perform no tree capture, ref pinning or candidate validation. 
+
 
 - The frozen TreeKnowledge and ReviewTrees carriers hold wire/index and comparison-side facts, return before then after, and perform no tree capture, ref pinning or candidate validation. [25]
 
-- The frozen TreeKnowledge and ReviewTrees carriers hold wire/index and comparison-side facts, return before then after, and perform no tree capture, ref pinning or candidate validation. [25]
+- Retired at the fifth freeze d59c3493: mcp/src/agents_remember/models/knowledge/review_trees.py::ReviewTreesResult - the bytes it recorded now occur 3 times in the file, so no single home can be named and it is not given to the likelier one; mcp/src/agents_remember/models/knowledge/review_trees.py::ReviewTrees - the bytes it recorded now occur 8 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.

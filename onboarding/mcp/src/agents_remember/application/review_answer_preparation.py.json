@@ -1,0 +1,146 @@
+{
+  "path": "mcp/src/agents_remember/application/review_answer_preparation.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "dae22fe42ef790307272b20b5949c31bb9231b1b",
+        "content": "sha256:3b531d18e4ddfd744ca18834e4dc03feb7b88e882fa7fad47c193f0e1e890b44",
+        "locator": {
+          "kind": "symbol",
+          "name": "RecordedReviewAnswers"
+        }
+      },
+      "id": "RLZ-9VH1AA",
+      "invariant": "INV-YTPBCF",
+      "origin": {
+        "handoffEntry": "L177-INV-RECORDED-ANSWER-REUSE",
+        "leaf": "260928-MIK-L177"
+      },
+      "rationale": "The composition root that binds a recorded comparison's exact inputs and hands its three routes to the reuse store, so a kept answer and a fresh one come from the same call.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "dae22fe42ef790307272b20b5949c31bb9231b1b",
+        "content": "sha256:c4866907e0c2184039e7c5d32238e955def26a603b5cb608ff88e058e3596a55",
+        "locator": {
+          "kind": "symbol",
+          "name": "_trees_still_readable"
+        }
+      },
+      "id": "RLZ-XFDNYB",
+      "invariant": "INV-YTPBCF",
+      "origin": {
+        "handoffEntry": "L177-INV-RECORDED-ANSWER-REUSE",
+        "leaf": "260928-MIK-L177"
+      },
+      "rationale": "The object dependency: each of the four recorded trees is probed before any reuse, because equal object counts do not establish that a tree can still be read.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "10": {
+      "note": "Every query selector participates in the tree key.\n\nAnchor: \"def _tree_key(query: ReviewTreesQuery) -> tuple[object, ...]:\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dae22fe42ef790307272b20b5949c31bb9231b1b",
+            "content": "sha256:c13e962c161a7055c95e61b20a4b7188edb71d09eaf3af788d642ecb4997c0f3",
+            "locator": {
+              "end": 1125,
+              "kind": "line_range",
+              "start": 1109
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Valid leaf addressing supplies exact contract/directory/worklist/store dependencies.\n\nAnchor: \"def recorded_answer_sources(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dae22fe42ef790307272b20b5949c31bb9231b1b",
+            "content": "sha256:0105135ae4aa8e43019e4e328ac58bf8206dfb739b3c3436336f643ea357e7bd",
+            "locator": {
+              "end": 106,
+              "kind": "line_range",
+              "start": 98
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Recorded closures and object bodies are checked rather than inferred from counts.\n\nAnchor: \"def _recorded_sides(task_root: Path, leaf_id: str) -> tuple[tuple[Path, str], ...]:\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dae22fe42ef790307272b20b5949c31bb9231b1b",
+            "content": "sha256:b668a4946ed81bed143d0f00d6fc3369b7c69cc2747674cea85d7693a99d9e83",
+            "locator": {
+              "end": 208,
+              "kind": "line_range",
+              "start": 183
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Intent, numbered entries and tree questions keep their own recorded/closed rules.\n\nAnchor: \"class RecordedReviewAnswers:\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dae22fe42ef790307272b20b5949c31bb9231b1b",
+            "content": "sha256:3b531d18e4ddfd744ca18834e4dc03feb7b88e882fa7fad47c193f0e1e890b44",
+            "locator": {
+              "end": 1070,
+              "kind": "line_range",
+              "start": 536
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The common path validates record/closure before reuse.\n\nAnchor: \"def _answer[T](\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dae22fe42ef790307272b20b5949c31bb9231b1b",
+            "content": "sha256:91da9aa53fb0333de3f580263f105b60ff6dae819b22f4d59ab81db92a4488e4",
+            "locator": {
+              "end": 991,
+              "kind": "line_range",
+              "start": 934
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Transient index/card-memory failures are returned but not retained.\n\nAnchor: \"def _keepable_tree_view(value: object) -> bool:\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dae22fe42ef790307272b20b5949c31bb9231b1b",
+            "content": "sha256:073e396da65095b7c9f909135a6ce8a01db73fd6028c7b7d0f9626ca7b9fea83",
+            "locator": {
+              "end": 1093,
+              "kind": "line_range",
+              "start": 1073
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "b02f700b1e4638a76c8a3aedcd3e6518fe485e5f",
+        "blob": "88bde14b46d513d6afca8f2c70463a7c9d2f4d9f",
         "content": "sha256:ce996142045de09a494d15a34fa1ce5023f9da881d75d5bdfbccbb3b44edcc18",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "b02f700b1e4638a76c8a3aedcd3e6518fe485e5f",
+        "blob": "88bde14b46d513d6afca8f2c70463a7c9d2f4d9f",
         "content": "sha256:8156314f578e4c0bb708e0f9fd0fb7e02c8b6687f1812efe170ada3a3b70c5a3",
         "locator": {
           "kind": "symbol",
@@ -37,8 +37,8 @@
     },
     {
       "anchor": {
-        "blob": "b02f700b1e4638a76c8a3aedcd3e6518fe485e5f",
-        "content": "sha256:6764764169a2febf95a51481025ee73938b98de6edb7f15be4ce6d9b3781d0a5",
+        "blob": "88bde14b46d513d6afca8f2c70463a7c9d2f4d9f",
+        "content": "sha256:d27c7499761839ee5863174ceb725d9741ba4603068225302640916ccc7e89e1",
         "locator": {
           "kind": "symbol",
           "name": "keeps the task context's state when a subject's read fails, and states the failure in its slot"
@@ -54,8 +54,8 @@
     },
     {
       "anchor": {
-        "blob": "b02f700b1e4638a76c8a3aedcd3e6518fe485e5f",
-        "content": "sha256:45ab22288f30979a968e1dfb487e0a301dca853d7e53bbd6c12a5aa1f6bcec02",
+        "blob": "88bde14b46d513d6afca8f2c70463a7c9d2f4d9f",
+        "content": "sha256:dfc1542e58ce804a1a233d959e240230834baf1b34b54a660080424853997443",
         "locator": {
           "kind": "symbol",
           "name": "shows an older number read-only, with that number on its reads, and reads no subject there"
@@ -71,7 +71,7 @@
     },
     {
       "anchor": {
-        "blob": "b02f700b1e4638a76c8a3aedcd3e6518fe485e5f",
+        "blob": "88bde14b46d513d6afca8f2c70463a7c9d2f4d9f",
         "content": "sha256:6d36d01de0d92bfd22bebb24ffd9218d9cdfeb022f82b09f2b042207bdd83598",
         "locator": {
           "kind": "symbol",
@@ -88,8 +88,8 @@
     },
     {
       "anchor": {
-        "blob": "b02f700b1e4638a76c8a3aedcd3e6518fe485e5f",
-        "content": "sha256:5d8a8ded92bb69ff4ac36754c3abeb81657e2b285e39e487f57d88fa47ef9698",
+        "blob": "88bde14b46d513d6afca8f2c70463a7c9d2f4d9f",
+        "content": "sha256:80fd4593d6b4774cb6ced5cb68a2d61e0137883031fd3830d469f6da544a8f3f",
         "locator": {
           "kind": "symbol",
           "name": "reads #k's own file list under an older comparison and labels the latest's records"
@@ -105,7 +105,7 @@
     },
     {
       "anchor": {
-        "blob": "b02f700b1e4638a76c8a3aedcd3e6518fe485e5f",
+        "blob": "88bde14b46d513d6afca8f2c70463a7c9d2f4d9f",
         "content": "sha256:d0d618b475e5242a09baededc2036860ee611a83d7c8f71e87601bbece6b95a4",
         "locator": {
           "kind": "symbol",
@@ -128,12 +128,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b02f700b1e4638a76c8a3aedcd3e6518fe485e5f",
-            "content": "sha256:6ccfe3d0e4d68a9b15aa74de1eb214cfabbc57358e330c518f5c74c09022a7d4",
+            "blob": "88bde14b46d513d6afca8f2c70463a7c9d2f4d9f",
+            "content": "sha256:3484e2f2ded7221e480a64c7e48994031ca1a8a4774b67b196b1bdc5cad948c6",
             "locator": {
-              "end": 231,
+              "end": 444,
               "kind": "line_range",
-              "start": 81
+              "start": 82
             }
           },
           "kind": "test"
@@ -145,12 +145,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b02f700b1e4638a76c8a3aedcd3e6518fe485e5f",
-            "content": "sha256:ec5852191fd5c7f1d39ab9520195ddd3765b08d3ac8bcecd7c2707cb91aa28c5",
+            "blob": "88bde14b46d513d6afca8f2c70463a7c9d2f4d9f",
+            "content": "sha256:ea2fe93c123d7456ce3e887cea103b314c690cad2d430d342f40456a7b2eb231",
             "locator": {
-              "end": 370,
+              "end": 444,
               "kind": "line_range",
-              "start": 233
+              "start": 234
             }
           },
           "kind": "test"
@@ -162,12 +162,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b02f700b1e4638a76c8a3aedcd3e6518fe485e5f",
+            "blob": "88bde14b46d513d6afca8f2c70463a7c9d2f4d9f",
             "content": "sha256:27e3df7a2f0d13c3dc826b8792cff315b352bc7b2fc2293511a7f82cf3985f70",
             "locator": {
-              "end": 440,
+              "end": 444,
               "kind": "line_range",
-              "start": 372
+              "start": 376
             }
           },
           "kind": "test"

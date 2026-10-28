@@ -53,8 +53,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "035d30df74bd1bad93ddc28456d591c1024b28d2",
-            "content": "sha256:58f2f830be97427187427103b14ba610b4a99dad8ba64e42c299bd5fd25f7478",
+            "blob": "c64091cd2f1a3a0d73504db0df74632caf04d235",
+            "content": "sha256:b8fe1b612c4a4d2852e14ba1cdd4e8afb3014a60c205d1f6f560e72115f39daf",
             "locator": {
               "kind": "file"
             },
@@ -64,7 +64,7 @@
         },
         {
           "anchor": {
-            "blob": "035d30df74bd1bad93ddc28456d591c1024b28d2",
+            "blob": "c64091cd2f1a3a0d73504db0df74632caf04d235",
             "content": "sha256:f661cccb6214678afe8e668525b5f561ef5c285207806be7772f5e89089c066c",
             "locator": {
               "kind": "symbol",
@@ -81,8 +81,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "035d30df74bd1bad93ddc28456d591c1024b28d2",
-            "content": "sha256:58f2f830be97427187427103b14ba610b4a99dad8ba64e42c299bd5fd25f7478",
+            "blob": "c64091cd2f1a3a0d73504db0df74632caf04d235",
+            "content": "sha256:b8fe1b612c4a4d2852e14ba1cdd4e8afb3014a60c205d1f6f560e72115f39daf",
             "locator": {
               "kind": "file"
             },
@@ -92,7 +92,7 @@
         },
         {
           "anchor": {
-            "blob": "035d30df74bd1bad93ddc28456d591c1024b28d2",
+            "blob": "c64091cd2f1a3a0d73504db0df74632caf04d235",
             "content": "sha256:8eafa74e77e1208a1bc9f6b56f8deb48035926357fd13502a59e0e4d8f265a4d",
             "locator": {
               "kind": "symbol",

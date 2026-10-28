@@ -8,10 +8,12 @@
   },
   "applicability": "Every frame document and admitted asset the canvas host serves.",
   "conditions": [
-    "The session names one admitted revision."
+    "The session names one admitted revision.",
+    "The response carries the headers the policy module builds, and the frame cannot redefine them."
   ],
   "exclusions": [
-    "The panel's trusted API answers, which are not frame documents."
+    "The panel's trusted API answers, which are not frame documents.",
+    "A page examined by the static readiness check, which executes nothing and is served no script."
   ],
   "id": "INV-K302DH",
   "origin": {
@@ -25,9 +27,11 @@
     "leaf": "260928-MIK-L104",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
-  "statement": "The frame document is served under a sandbox that never carries allow-same-origin, every document and asset response carries the policy headers, and a live session serves only its own admitted revision's document and assets.",
+  "statement": "The frame document is served under a sandbox that never carries allow-same-origin and runs script only inside a closed resource policy that admits the host's own admitted assets and inline script, with credentials absent by construction: every document and asset response carries the policy headers, scripts always run inside that policy, and a live session serves only its own admitted revision's document and assets.",
   "status": "proposed",
-  "supersedes": []
+  "supersedes": [
+    "INV-6V0ET6"
+  ]
 }

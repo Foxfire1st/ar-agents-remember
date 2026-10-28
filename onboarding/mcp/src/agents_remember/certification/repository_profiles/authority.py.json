@@ -113,8 +113,17 @@
       "note": "The sandbox admits the profile execution against its prepared candidate tree.\n\nAnchor: \"def _admit_prepared_profile\"",
       "targets": [
         {
-          "kind": "unresolved",
-          "text": "mcp/src/agents_remember/worktrees/modules/quality/execution/sandbox.py:42-66"
+          "anchor": {
+            "blob": "ee971f9439bb92610e7057de9349aa72968a2eab",
+            "content": "sha256:2909c7c1992a9a2014a465dac364f98e3596222c250335a3dd64c791443401c9",
+            "locator": {
+              "end": 66,
+              "kind": "line_range",
+              "start": 42
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/quality/execution/sandbox.py"
+          },
+          "kind": "code"
         }
       ]
     }

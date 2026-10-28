@@ -298,8 +298,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1cca4998bfa9489d579e6d86646763bc880a5e18",
-            "content": "sha256:716a14a69fa7b83afdfb6331ab2aa600e4193122b96e0c41f23ed88a4cc16392",
+            "blob": "fb21b7c177ee42cdcd3cbdc8e1e9ee2acf7b8302",
+            "content": "sha256:01680f64ff731a5953529e24ab0e0e7dc2d289802d415a07c0875bb5e9ab7738",
             "locator": {
               "kind": "file"
             },
@@ -363,12 +363,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "29ed714893983a0e886cebec6a8da231dc255ff8",
+            "blob": "e2893b2a4053a2e934a6dd262dbd4e9c397a7d1c",
             "content": "sha256:21276d40d9fd521f37d482c3fd99f34938c9dbbc406db52d816c89ff77dba7c3",
             "locator": {
-              "end": 195,
+              "end": 196,
               "kind": "line_range",
-              "start": 112
+              "start": 113
             },
             "path": "mcp/src/agents_remember/application/review_external_git_movement.py"
           },
@@ -497,30 +497,12 @@
         }
       ]
     },
-    "27": {
-      "note": "The public explainer_control reference declares hosted Architect claim, master-record-gated leaf actions, developer dashboard routes and first-request/no-model-turn controls.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "1cca4998bfa9489d579e6d86646763bc880a5e18",
-            "content": "sha256:8c8dfbb10e9a3cf65b678e3a32134293018b836c307ea9398cfc834a209d66bf",
-            "locator": {
-              "end": 251,
-              "kind": "line_range",
-              "start": 235
-            },
-            "path": "docs/reference/mcp-tools.md"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "28": {
       "note": "Public signatures distinguish flat citation arguments from quality requests.\n\nAnchor: \"citation_fix\"",
       "targets": [
         {
           "anchor": {
-            "blob": "1cca4998bfa9489d579e6d86646763bc880a5e18",
+            "blob": "fb21b7c177ee42cdcd3cbdc8e1e9ee2acf7b8302",
             "content": "sha256:1b7433c5a465fc3a2c8bc01a7c963e13fccf46adb465c677689eed240170221d",
             "locator": {
               "end": 87,

@@ -112,16 +112,18 @@ No configured live documentation source was available for this pass.
 ### Repo-Internal References
 
 - The three reads and the membership-state rule, in the module's own words. [1]
-- The entry's count: buckets only; unavailable, partial or counted. [2]
+- The entry's count: buckets only; unavailable, partial or counted. 
 - The unmeasured scope named. [3]
-- The two destinations, the totals and every path's bucket (ruling Q1). [4]
+- The two destinations, the totals and every path's bucket (ruling Q1). 
 - A destination: its bucket's files, then attributed files carrying its class or its gate linkage. [5]
 - One listed file with its unknown reasons. [6]
 - The per-file response, or the typed refusal with clipped input (review F2). [7]
 - Both sides, every entry's range or reason, and every hunk. [8]
 - The membership states (ruling Q5). [10]
 
-- The lane and file reads dispatched. [11]
+- The lane and file reads dispatched.
+
+Retired at the fifth freeze d59c3493: mcp/src/agents_remember/application/review_tree_knowledge.py:165-170 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 87992ce842079a7a4f161bd4bfcc4aed5307178b. Retired means the anchor no longer stands, not that the cited subject was deleted [11]
 
 
 - The entry's count carried on the summary. [12]
@@ -137,3 +139,9 @@ No cross-repo boundary is crossed by this file.
 - _link preserves entry ID/kind, optional proof facet, invariant identity key, optional invariant revision/key and supplied range, and obtains families through _occurrences. With no listed family, _occurrences keeps the completeness-based state and supplies an own-side reason only for membership_unknown. Named occurrences preserve family identity/key/revision and the unchanged _membership state; _occurrence supplies an other-side reason only for membership_unknown. _membership_reason uses the reading's side name and detail, or its incomplete-family sentence, and passes the result through bounded_text. Other states receive reason=None. [9]
 
 - The current implementation adds content-addressed hunk identity for grades; the existing attribution classification and membership rules remain valid. [16]
+
+- Retired at the fifth freeze d59c3493: mcp/src/agents_remember/application/review_unexplained_lane.py::lane_summary - the bytes it recorded now occur 3 times in the file, so no single home can be named and it is not given to the likelier one; mcp/src/agents_remember/application/review_unexplained_lane.py::unexplained_lane - the bytes it recorded now occur 3 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.
+
+## Retirements
+
+- Retired at the fifth freeze d59c3493: mcp/src/agents_remember/application/review_tree_knowledge.py:165-170 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 87992ce842079a7a4f161bd4bfcc4aed5307178b. Retired means the anchor no longer stands, not that the cited subject was deleted.

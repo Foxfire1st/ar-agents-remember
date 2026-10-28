@@ -3,8 +3,8 @@
   "proves": [
     {
       "anchor": {
-        "blob": "5df2f3708e41738500a94d42561a1210977d5ea2",
-        "content": "sha256:a0ed9bb66be4e0bd6d5a500df70a0c631e07fd90e76880a408d64013f40242c5",
+        "blob": "78d516a665fb9f206f16b17adfe387b74c4c497a",
+        "content": "sha256:da56c288363001c17f933fb7a4de502088650d753e90976c408ea2fd699fc030",
         "locator": {
           "kind": "symbol",
           "name": "test_every_metadata_writer_refuses_a_planted_task_folder_ancestor_link"
@@ -20,8 +20,8 @@
     },
     {
       "anchor": {
-        "blob": "5df2f3708e41738500a94d42561a1210977d5ea2",
-        "content": "sha256:a0ed9bb66be4e0bd6d5a500df70a0c631e07fd90e76880a408d64013f40242c5",
+        "blob": "78d516a665fb9f206f16b17adfe387b74c4c497a",
+        "content": "sha256:da56c288363001c17f933fb7a4de502088650d753e90976c408ea2fd699fc030",
         "locator": {
           "kind": "symbol",
           "name": "test_every_metadata_writer_refuses_a_planted_task_folder_ancestor_link"
@@ -37,8 +37,8 @@
     },
     {
       "anchor": {
-        "blob": "5df2f3708e41738500a94d42561a1210977d5ea2",
-        "content": "sha256:c95365d69e2e8a8324b4ef1beeff4a978983ece7ca38c0cd9df230a4eefb062e",
+        "blob": "78d516a665fb9f206f16b17adfe387b74c4c497a",
+        "content": "sha256:790ec254cca7ceaaa16b691d4175be0632e42c63602cb7fae26ff41aa88f71e4",
         "locator": {
           "kind": "symbol",
           "name": "test_workspace_removal_holds_a_nested_link_instead_of_rmtree_following_it"
@@ -54,25 +54,8 @@
     },
     {
       "anchor": {
-        "blob": "5df2f3708e41738500a94d42561a1210977d5ea2",
-        "content": "sha256:60092ce08f74351c178423670338b70b791135190770f928c0a3164f64bb35af",
-        "locator": {
-          "kind": "symbol",
-          "name": "test_binding_and_marker_writers_refuse_a_planted_workspace_link"
-        }
-      },
-      "facet": "Binding and retired-marker writers reject a symlinked workspace before writing to its outside target.",
-      "id": "PRF-DXD8EV",
-      "invariant": "INV-8JY29Q",
-      "origin": {
-        "handoffEntry": "the-explainers-folder-is-confined",
-        "leaf": "260928-MIK-L183"
-      }
-    },
-    {
-      "anchor": {
-        "blob": "5df2f3708e41738500a94d42561a1210977d5ea2",
-        "content": "sha256:8901b99ce34ad13ec81b9df73525895ddbb4a03eeb2d99ecf2a6bfdf1d989758",
+        "blob": "78d516a665fb9f206f16b17adfe387b74c4c497a",
+        "content": "sha256:90abcc35111befc7b851cb65f371e31a074bdfc4efea524a83c142a8e607fc9c",
         "locator": {
           "kind": "symbol",
           "name": "test_the_seat_lock_refuses_a_planted_lock_link_before_locking"
@@ -94,8 +77,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5df2f3708e41738500a94d42561a1210977d5ea2",
-            "content": "sha256:a0ed9bb66be4e0bd6d5a500df70a0c631e07fd90e76880a408d64013f40242c5",
+            "blob": "78d516a665fb9f206f16b17adfe387b74c4c497a",
+            "content": "sha256:da56c288363001c17f933fb7a4de502088650d753e90976c408ea2fd699fc030",
             "locator": {
               "kind": "symbol",
               "name": "test_every_metadata_writer_refuses_a_planted_task_folder_ancestor_link"
@@ -110,7 +93,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5df2f3708e41738500a94d42561a1210977d5ea2",
+            "blob": "78d516a665fb9f206f16b17adfe387b74c4c497a",
             "content": "sha256:b53ee28a141b5f33109256dc0bd2d5533fdff72c1b22919e1387f0b3044d9bad",
             "locator": {
               "kind": "symbol",
@@ -126,8 +109,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5df2f3708e41738500a94d42561a1210977d5ea2",
-            "content": "sha256:8901b99ce34ad13ec81b9df73525895ddbb4a03eeb2d99ecf2a6bfdf1d989758",
+            "blob": "78d516a665fb9f206f16b17adfe387b74c4c497a",
+            "content": "sha256:90abcc35111befc7b851cb65f371e31a074bdfc4efea524a83c142a8e607fc9c",
             "locator": {
               "kind": "symbol",
               "name": "test_the_seat_lock_refuses_a_planted_lock_link_before_locking"
@@ -142,27 +125,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5df2f3708e41738500a94d42561a1210977d5ea2",
-            "content": "sha256:c95365d69e2e8a8324b4ef1beeff4a978983ece7ca38c0cd9df230a4eefb062e",
+            "blob": "78d516a665fb9f206f16b17adfe387b74c4c497a",
+            "content": "sha256:790ec254cca7ceaaa16b691d4175be0632e42c63602cb7fae26ff41aa88f71e4",
             "locator": {
               "kind": "symbol",
               "name": "test_workspace_removal_holds_a_nested_link_instead_of_rmtree_following_it"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "5": {
-      "note": "The case `test_an_update_faulted_in_a_pre_bind_write_leaves_the_old_generation_coherent` protects the old generation staying coherent when an Update faults before the bind.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "5df2f3708e41738500a94d42561a1210977d5ea2",
-            "content": "sha256:a37582e76f67b8e19df18f0798c3f8d1b7e4be895ca0a950dcbdce3357af7d20",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_an_update_faulted_in_a_pre_bind_write_leaves_the_old_generation_coherent"
             }
           },
           "kind": "test"

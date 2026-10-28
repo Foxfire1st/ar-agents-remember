@@ -3,8 +3,8 @@
   "proves": [
     {
       "anchor": {
-        "blob": "9295c96ff6bdd676ce0aa4f29cdf7643f4483c5c",
-        "content": "sha256:ad115e0f13ed6f11a922d50a4c952e741430e9b0220c7d7e03e871b96e370fb0",
+        "blob": "1a51e42c0efc8105efea450f4971eeb99b1f40a9",
+        "content": "sha256:3420f3760eeed0ad9bbc5d8edb8aa82ea4cffd9eba13cfa2169933417fdcd948",
         "locator": {
           "kind": "symbol",
           "name": "test_discovery_loads_no_implementation_module"
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "9295c96ff6bdd676ce0aa4f29cdf7643f4483c5c",
+        "blob": "1a51e42c0efc8105efea450f4971eeb99b1f40a9",
         "content": "sha256:e8ca7372a93d3c8979b3e56e1a44862e997345f1e5fd20d229faa31690167434",
         "locator": {
           "kind": "symbol",
@@ -29,40 +29,6 @@
       },
       "facet": "The fresh-process fixed import guard catches a deliberately eager implementation import, its positive control.",
       "id": "PRF-JJM6R9",
-      "invariant": "INV-990KQM",
-      "origin": {
-        "handoffEntry": "L183-deferred-discovery-implementation",
-        "leaf": "260928-MIK-L183"
-      }
-    },
-    {
-      "anchor": {
-        "blob": "9295c96ff6bdd676ce0aa4f29cdf7643f4483c5c",
-        "content": "sha256:d6a77d58e606f26c84761ef6a7ffaff18f1967b6a7d62dc8cb4dd37c2c75e348",
-        "locator": {
-          "kind": "symbol",
-          "name": "test_first_call_preserves_immutable_boot_identity_and_refuses_unexposed_explainer_dispatch"
-        }
-      },
-      "facet": "An explainer server refuses a tool outside its frozen exposed roster at its first call; ordinary boot identity preservation is a separate facet.",
-      "id": "PRF-KBVT3V",
-      "invariant": "INV-48203N",
-      "origin": {
-        "handoffEntry": "L183-CUR-ET01-bound-explainer-roster",
-        "leaf": "260928-MIK-L183"
-      }
-    },
-    {
-      "anchor": {
-        "blob": "9295c96ff6bdd676ce0aa4f29cdf7643f4483c5c",
-        "content": "sha256:d6a77d58e606f26c84761ef6a7ffaff18f1967b6a7d62dc8cb4dd37c2c75e348",
-        "locator": {
-          "kind": "symbol",
-          "name": "test_first_call_preserves_immutable_boot_identity_and_refuses_unexposed_explainer_dispatch"
-        }
-      },
-      "facet": "The first dependent tool call retains the immutable boot-time caller identity instead of adopting later environment identity.",
-      "id": "PRF-ZQK925",
       "invariant": "INV-990KQM",
       "origin": {
         "handoffEntry": "L183-deferred-discovery-implementation",
@@ -77,8 +43,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9295c96ff6bdd676ce0aa4f29cdf7643f4483c5c",
-            "content": "sha256:ad115e0f13ed6f11a922d50a4c952e741430e9b0220c7d7e03e871b96e370fb0",
+            "blob": "1a51e42c0efc8105efea450f4971eeb99b1f40a9",
+            "content": "sha256:3420f3760eeed0ad9bbc5d8edb8aa82ea4cffd9eba13cfa2169933417fdcd948",
             "locator": {
               "kind": "symbol",
               "name": "test_discovery_loads_no_implementation_module"
@@ -93,7 +59,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9295c96ff6bdd676ce0aa4f29cdf7643f4483c5c",
+            "blob": "1a51e42c0efc8105efea450f4971eeb99b1f40a9",
             "content": "sha256:e8ca7372a93d3c8979b3e56e1a44862e997345f1e5fd20d229faa31690167434",
             "locator": {
               "kind": "symbol",
@@ -109,7 +75,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9295c96ff6bdd676ce0aa4f29cdf7643f4483c5c",
+            "blob": "1a51e42c0efc8105efea450f4971eeb99b1f40a9",
             "content": "sha256:f9a3471b7dee9d5167fd0367b423f8bccfff1056af02ce55a46f2a1e286a89e6",
             "locator": {
               "kind": "symbol",
@@ -125,27 +91,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9295c96ff6bdd676ce0aa4f29cdf7643f4483c5c",
-            "content": "sha256:7e6e9509bd315eefe6b79413b4f30a7d18d3be0edbf2e14e867aad5c799125d2",
+            "blob": "1a51e42c0efc8105efea450f4971eeb99b1f40a9",
+            "content": "sha256:0bf59342c76c5a1b4e5c0ef119b0a6cfecef7ce07cffef011391a06a69615cc0",
             "locator": {
               "kind": "symbol",
               "name": "test_the_real_command_answers_initialize_and_tools_list"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "5": {
-      "note": "The case `test_first_call_preserves_immutable_boot_identity_and_refuses_unexposed_explainer_dispatch` protects the first call keeping the boot identity and refusing an unexposed explainer dispatch.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "9295c96ff6bdd676ce0aa4f29cdf7643f4483c5c",
-            "content": "sha256:d6a77d58e606f26c84761ef6a7ffaff18f1967b6a7d62dc8cb4dd37c2c75e348",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_first_call_preserves_immutable_boot_identity_and_refuses_unexposed_explainer_dispatch"
             }
           },
           "kind": "test"

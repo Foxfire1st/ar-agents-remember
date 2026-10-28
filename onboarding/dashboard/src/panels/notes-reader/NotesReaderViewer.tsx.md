@@ -145,3 +145,5 @@ A same-origin view over the local notes API; nothing crosses repositories.
 - NotePane maps fetched content to DualPane, adds the Markdown truncation banner and keeps local status placeholders; this is viewer integration, not proof of DualPane internals. [1]
 - The notes-target reader retains the same note and keyed tree lifetime. [10]
 - The shared notes-left state controls both the rail panel and its resize handle; the header toggle is rendered only when a rail exists. [11]
+
+

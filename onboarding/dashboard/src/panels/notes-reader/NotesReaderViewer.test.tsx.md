@@ -130,7 +130,7 @@ A frontend component test; nothing crosses repositories.
 
 - The viewer routes takeover content through the shared pane without a second reader. [9]
 
-> Retained earlier citation wording: - Retained folder/content viewer and shell takeover owners remain. [17] [18]
+> Retained earlier citation wording: - Retained folder/content viewer and shell takeover owners remain. [17]
 
 - `masterDoc` and `seedMaster` — the cast-free seed, which builds its entry through the shared `taskEntry` builder instead of a double cast. [19]
 
@@ -141,7 +141,9 @@ A frontend component test; nothing crosses repositories.
 
 - Shared builders provide generated WorkspaceProjection. [22]
 
-- The shell driven by the takeover-wiring test. [18]
+- The shell driven by the takeover-wiring test.
 
 
 - Obsolete Analytics collection/metricsFor lifecycle reference claims are retired.
+
+- Retired at the fifth freeze d59c3493: dashboard/src/cockpit/Cockpit.tsx:791-842 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit c861abfeff33c9ef8f1ca066604c8f971b613361. Retired means the anchor no longer stands, not that the cited subject was deleted.

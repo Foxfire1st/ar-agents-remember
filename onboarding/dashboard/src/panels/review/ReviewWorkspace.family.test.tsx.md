@@ -31,7 +31,7 @@ Captured operands, synthetic catalogue/summary, direct roster projection and exp
 - Declared check and its fixture assertions. [59]
 - Declared check and its fixture assertions. [60]
 - Declared check and its fixture assertions. [61]
-- Declared check and its fixture assertions. [62]
+- Declared check and its fixture assertions.
 - Declared check and its fixture assertions. [63]
 - Declared check and its fixture assertions. [64]
 - Declared check and its fixture assertions. [65]
@@ -340,3 +340,5 @@ The earlier account follows as provenance. Current assertions and removed journe
 > ## Evidence
 >
 > - Selector-keyed fixture routing and direct FamilyReviewCenter controls distinguish bounded, uncarried, one-sided and measured-empty contexts; compare exact word-diff operands and judgment facts; reject a foreign walk; retain admitted continuation state; and deduplicate source expressions without losing memberships. Omission probes and panel-local geometry are synthetic, not native producer or real-390px browser measurements. (historical reference 56)
+
+- Retired at the fifth freeze d59c3493: dashboard/src/panels/review/ReviewWorkspace.family.test.tsx:331-366 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 10e466b17feee2530c06b2670fef496c6c9e755f. Retired means the anchor no longer stands, not that the cited subject was deleted.

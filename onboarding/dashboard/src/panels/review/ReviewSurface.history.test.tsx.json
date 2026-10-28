@@ -1,41 +1,6 @@
 {
   "path": "dashboard/src/panels/review/ReviewSurface.history.test.tsx",
   "realizes": [],
-  "references": {
-    "19": {
-      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it(\"asks for the leaf's recorded comparison and says so when the entry carries the record\", async () => {\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "52abe8a88af2bad8742e8fba66ab85a815ff6214",
-            "content": "sha256:6b277f32a80d4197c4f6b3119d10db59335e01557be242d2f7caaa99b501e985",
-            "locator": {
-              "end": 123,
-              "kind": "line_range",
-              "start": 86
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "20": {
-      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it(\"asks for the live candidate and claims no record when the entry names none\", async () => {\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "52abe8a88af2bad8742e8fba66ab85a815ff6214",
-            "content": "sha256:7a93ea72e4913ca481f803831bd2fedb95e8f722f857fd741cdf9436863dba64",
-            "locator": {
-              "end": 144,
-              "kind": "line_range",
-              "start": 124
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    }
-  },
+  "references": {},
   "schema": "ar-onboarding-file/v1"
 }

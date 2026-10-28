@@ -73,3 +73,5 @@ The current source-backed Notes Reader integration is recorded by the repository
 - The task-body fixture returns the path-addressed native entry summary or 404; the cockpit seed uses canonical native wire fixture builders. [8]
 
 - ReaderLayout exposes the shared left toggle only for a present rail and applies the same visibility state to the panel and handle. [9]
+
+

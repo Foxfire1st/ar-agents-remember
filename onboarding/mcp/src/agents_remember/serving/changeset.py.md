@@ -300,10 +300,10 @@ limit widening. `LeafSummary` rows carry the new `state` (`committed`/`working`,
 
 - **The thin delegating entry: pins in, selection resolved, endpoint-to-endpoint diffs per side, `generation` + `currentness` + `scope` published; unknown master degrades, missing code endpoints refuse.** [12]
 
-- **One side's net between two validated commits: empty pair degrades to `[]`, failed read refuses as `unresolvable`, missing repository refuses as `no-repository`.** [13]
+- **One side's net between two validated commits: empty pair degrades to `[]`, failed read refuses as `unresolvable`, missing repository refuses as `no-repository`.** 
 - **The pinned AFTER side: live integrated result unpinned, exact recorded tip pinned; unresolvable pins refused, never re-resolved.** [14]
 - **Whether a breakdown row shows live work or its landed delta.** [15]
-- **The two bundled master selectors and their pin extractors, plus the one shared master 400/404 mapping.** [16]
+- **The two bundled master selectors and their pin extractors, plus the one shared master 400/404 mapping.** 
 - **The new collaborator that owns the selection this entry delegates to.** [17]
 - **The F1 refusal case: a post-validation diff failure is refused, never an empty net.** [18]
 
@@ -364,9 +364,19 @@ an empty `stateDetail`.
 - All three change-set routes share and return one app-owned conditional-read cache. [28]
 
 
-- Only actual successful response bytes get the ETag/no-cache and matching bodyless 304 path. [29]
+- Only actual successful response bytes get the ETag/no-cache and matching bodyless 304 path.
 
 
 - The serving entry caches and reuses the worktree mutator's own NUL-delimited count/status read rather than implementing a second one. [30]
 
-- The persisted WorktreeContract model and load_contract loader support master/leaf accumulation. normalize_contract_leaf_id resolves legacy leaf IDs through the canonical task-document reference; worktree_folder_name separately applies "slug = slugify(worktree_name)" to folder names. `slugify` is defined in `tasks/task_paths.py` and re-exported by `worktrees/task_resolver.py`. [5]
+- The persisted WorktreeContract model and load_contract loader support master/leaf accumulation. normalize_contract_leaf_id resolves legacy leaf IDs through the canonical task-document reference; worktree_folder_name separately applies "slug = slugify(worktree_name)" to folder names. `slugify` is defined in `tasks/task_paths.py` and re-exported by `worktrees/task_resolver.py`.
+
+Retired at the fifth freeze d59c3493: mcp/src/agents_remember/worktrees/worktree_contract.py:246-685 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060. Retired means the anchor no longer stands, not that the cited subject was deleted [5]
+
+- **The two bundled master selectors and their pin extractors, plus the one shared master 400/404 mapping.** [16]
+
+- Retired at the fifth freeze d59c3493: mcp/src/agents_remember/serving/changeset_cache.py:202-212 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit a00506b8e644a1da55d6539df3fb17ad77137f7b; mcp/src/agents_remember/serving/changeset.py::_net_diff - the bytes it recorded now occur 4 times in the file, so no single home can be named and it is not given to the likelier one; mcp/src/agents_remember/serving/changeset.py::_pins_from_master_ref - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit f141d164265e926be9249acf6ae680ccf9ffae61; mcp/src/agents_remember/serving/changeset.py::MasterChangesetRef - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.
+
+## Retirements
+
+- Retired at the fifth freeze d59c3493: mcp/src/agents_remember/worktrees/worktree_contract.py:246-685 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060. Retired means the anchor no longer stands, not that the cited subject was deleted.

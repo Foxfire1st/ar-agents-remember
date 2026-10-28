@@ -6,8 +6,17 @@
       "note": "The public context facade imports CGC exports through this subpackage facade.\n\nAnchor: \"agents_remember.providers.cgc.context\"",
       "targets": [
         {
-          "kind": "unresolved",
-          "text": "mcp/src/agents_remember/providers/context/__init__.py:13-13"
+          "anchor": {
+            "blob": "591ec2e0d4994c995c673515adb4e0b9e14be500",
+            "content": "sha256:dc32e45ac2bf0e8b7107b9530d23934ed5e12f3dc0b6b85ae2098aa3599e349a",
+            "locator": {
+              "end": 13,
+              "kind": "line_range",
+              "start": 13
+            },
+            "path": "mcp/src/agents_remember/providers/context/__init__.py"
+          },
+          "kind": "code"
         }
       ]
     }

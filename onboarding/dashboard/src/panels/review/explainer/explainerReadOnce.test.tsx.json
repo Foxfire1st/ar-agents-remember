@@ -1,0 +1,24 @@
+{
+  "path": "dashboard/src/panels/review/explainer/explainerReadOnce.test.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The full state and the revision list are read once under StrictMode with nothing aborted, and the badge is read once without asking for a seat state or revision list",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c14351f10aa780678cbc489cdb5e7e471996e06a",
+            "content": "sha256:96cf8e8beaea2b284a28227195fed0570001d7ca12dc75656756a4c56f9d7773",
+            "locator": {
+              "end": 69,
+              "kind": "line_range",
+              "start": 69
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

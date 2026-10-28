@@ -183,7 +183,7 @@ No configured live documentation source was available for this pass.
 
 
 
-- K_C and C read once; the invariant kinds first; a failed read is incomplete. [8]
+- K_C and C read once; the invariant kinds first; a failed read is incomplete. 
 
 
 - The validator at the gate, as a leaf publication. [9]
@@ -219,3 +219,8 @@ No configured live documentation source was available for this pass.
 No meaningful cross-repo references found: the gate reads the leaf's own code and memory repositories.
 
 No cross-repo boundary is crossed by this file.
+
+
+Anchor: `_candidate` `_item_findings` `_decided` [8]
+
+- Retired at the fifth freeze d59c3493: mcp/src/agents_remember/application/knowledge_gate/gate.py::_candidate - the bytes it recorded now occur 5 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.

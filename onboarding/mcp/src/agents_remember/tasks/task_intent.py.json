@@ -187,7 +187,7 @@
         },
         {
           "anchor": {
-            "blob": "9fd75d5e4d6c3ddd6368df459517c5de74099533",
+            "blob": "85f114bd0c22ec4da82807255db52e5107afd7ff",
             "content": "sha256:da29e572316bf1ad53a864d6c7ab899e91629c97f6d1ddfa0be41d5d04d4701c",
             "locator": {
               "end": 189,
@@ -346,28 +346,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9719c9159d392a3e5377a242638474a1a15b1f37",
+            "blob": "75a04d4049c18ff472b2caefabad7faa53cdb34b",
             "content": "sha256:525de24ac76e4627bf2b0ffd1ba7d5e701c5ec644922ae6ffdbf7c3ae47c2e32",
             "locator": {
               "kind": "symbol",
               "name": "_packet_confinement"
-            },
-            "path": "mcp/tests/test_reviewer_worklist_reads.py"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "23": {
-      "note": "A packet changed and restored while it is read, and a link retargeted during the read, are recorded under the link's own path.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "9719c9159d392a3e5377a242638474a1a15b1f37",
-            "content": "sha256:2f7248110e8cdfa350134673f986810f1d3a99d1bd2c7d2fe50833d84f84c0ad",
-            "locator": {
-              "kind": "symbol",
-              "name": "_packet_reads"
             },
             "path": "mcp/tests/test_reviewer_worklist_reads.py"
           },

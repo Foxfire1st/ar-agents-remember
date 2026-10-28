@@ -203,7 +203,7 @@ memory trees (never a copy); a pin failure or an unreadable side is a `ReviewRef
 
 - `resolve_review_candidate` owns the current boundary described above. [23]
 - `_live_resolution` owns the current boundary described above. [24]
-- `require_current_candidate_identity` owns the current boundary described above. [25]
+- `require_current_candidate_identity` owns the current boundary described above. 
 - **The module's own statement of what it binds, why the two sides are immutable object identities, why the working tree is never an endpoint, and that every failure is a named state.** [26]
 - The three capture fields with the words a refusal names them by, in the owner's own observation order, and the one recapture action three refusals share. [27]
 - **The resolution value: the two datasets (for a tree comparison, the two memory trees' derived indexes), the two code roots, the two tree ids, the carried contract, the captured identity the recheck re-derives, and MIK-R25's `trees` and `knowledge_unavailable`.** [28]
@@ -218,8 +218,8 @@ memory trees (never a copy); a pin failure or an unreadable side is a `ReviewRef
 - **The one owner for the unreadable-candidate refusal: the code, the detail naming the candidate's own failure, the once-stated repair action, and the preflight form that turns the same question into a value.** [33]
 - **The one construction of the reviewed candidate's reference, shared by the subject review and the task-context review so the two cannot name different leaves for the same resolution.** [34]
 - The single refusal builder this surface uses, public because the adapter builds the entry route's refusal with it too. [35]
-- **The capture is the existing owner's and stays the owner's: this module only turns its typed failure into the surface's named state.** [36]
-- The capture owner's own mid-capture head check, which is what makes a head that moves *during* the capture a named state rather than a stale tree. [37]
+- **The capture is the existing owner's and stays the owner's: this module only turns its typed failure into the surface's named state.** 
+- The capture owner's own mid-capture head check, which is what makes a head that moves *during* the capture a named state rather than a stale tree. 
 - The surface's rendering of one capture-owner failure, naming the candidate side and the owner's own status word. [38]
 - The one contract locator: the recorded task root, the globbed enclosures, the `repo_name`/`cleanup` skips and the leaf-id slug match. [39]
 - **The case module that measures the bound endpoints through the real resolution, the real capture and the real comparison.** [40]
@@ -237,3 +237,5 @@ notes the whole census it received, so `capture_baseline_unchanged` can re-check
 from that census instead of walking it. The observation is taken once, at capture, and is nothing the
 request reads twice. The code side's recheck passes the resolved `observedCodeHead` into the same
 proof, so one native status supplies HEAD and the eligible untracked names.
+
+- Retired at the fifth freeze d59c3493: mcp/src/agents_remember/application/review_candidate_resolution.py::require_current_candidate_identity - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one; mcp/src/agents_remember/application/review_candidate_resolution.py::_captured_candidate - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.

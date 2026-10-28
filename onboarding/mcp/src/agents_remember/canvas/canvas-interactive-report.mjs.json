@@ -1,0 +1,40 @@
+{
+  "path": "mcp/src/agents_remember/canvas/canvas-interactive-report.mjs",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Every initially present control is exercised at both widths, so a control that does nothing cannot pass as covered.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3933cf324eac11897a241637768e81f5267f7374",
+            "content": "sha256:bb4e3dc5a52ca5542dc9246ec008fcaabe7ee892c957c3c7c7f046b479776e7d",
+            "locator": {
+              "end": 151,
+              "kind": "line_range",
+              "start": 151
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "A control found in an earlier pass is not re-exercised at the cost of one never reached.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3933cf324eac11897a241637768e81f5267f7374",
+            "content": "sha256:25383f65e28f753cad4cbe15711f12ee911c36ae5d6f98ebd74735032841e650",
+            "locator": {
+              "kind": "symbol",
+              "name": "earlierPass"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

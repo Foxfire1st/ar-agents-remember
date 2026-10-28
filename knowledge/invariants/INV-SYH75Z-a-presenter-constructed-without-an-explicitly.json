@@ -30,6 +30,6 @@
   "revision": 1,
   "schema": "ar-invariant/v1",
   "statement": "A presenter constructed without an explicitly wired runner refuses authoring as no-confined-harness and prepares no native host launch.",
-  "status": "proposed",
+  "status": "retired",
   "supersedes": []
 }

@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0450305f2d239254836b05fdff4a74e2f9c29233",
+            "blob": "71688e28a82b6f4c519f51da2283e9535e5e628a",
             "content": "sha256:558fb5a146ad4c210ae3d547d3cc6dff8a8f4611edba23420f64f23e2eba1281",
             "locator": {
               "kind": "symbol",
@@ -23,7 +23,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0450305f2d239254836b05fdff4a74e2f9c29233",
+            "blob": "71688e28a82b6f4c519f51da2283e9535e5e628a",
             "content": "sha256:a045b46f4ebf9282cf4a1f0f304509df496fea2bf2a6c9ad3257e8b2107a13ba",
             "locator": {
               "kind": "symbol",
@@ -39,27 +39,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0450305f2d239254836b05fdff4a74e2f9c29233",
+            "blob": "71688e28a82b6f4c519f51da2283e9535e5e628a",
             "content": "sha256:e1319942174458ff72cf9b9e1429c294ae58c967e664e2d10b30884ec1c13ddf",
             "locator": {
               "kind": "symbol",
               "name": "test_a_revision_a_retained_lineage_names_is_refused"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "4": {
-      "note": "The case `test_retention_and_the_per_revision_ceiling_still_hold_after_a_removal` protects retention and the per-revision ceiling holding after a removal.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "0450305f2d239254836b05fdff4a74e2f9c29233",
-            "content": "sha256:bc6c872479bc7439654b82248c0acbb24b105c50917ceea634f2b9fff5f31f96",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_retention_and_the_per_revision_ceiling_still_hold_after_a_removal"
             }
           },
           "kind": "test"
@@ -71,7 +55,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0450305f2d239254836b05fdff4a74e2f9c29233",
+            "blob": "71688e28a82b6f4c519f51da2283e9535e5e628a",
             "content": "sha256:da998f5d596a7043147e17069540bbef29849b65cbeef1e00e6580d0b801600e",
             "locator": {
               "kind": "symbol",

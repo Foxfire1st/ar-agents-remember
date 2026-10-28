@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ad6c2cbc4cd5699281c3328e01ff5eff4b81dd85",
+            "blob": "048b32b6982011c16588c213c0e77d2c806b8886",
             "content": "sha256:d4a498189b572064fcd25cc36f014dbad368adb39c5ab29e02db8dccd069ec0c",
             "locator": {
               "kind": "symbol",
@@ -23,8 +23,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ad6c2cbc4cd5699281c3328e01ff5eff4b81dd85",
-            "content": "sha256:c9ac6810ed78a857148d44276e833ca8219ebb7c918dd0e65f7cb19f76984372",
+            "blob": "048b32b6982011c16588c213c0e77d2c806b8886",
+            "content": "sha256:f4f5b3713cde05e8dc0f2ab1deec608cc2d005d0cbd51835a1056a8df349c22a",
             "locator": {
               "kind": "symbol",
               "name": "resolveLauncherCatalog"

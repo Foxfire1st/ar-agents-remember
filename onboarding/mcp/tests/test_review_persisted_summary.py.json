@@ -1,0 +1,23 @@
+{
+  "path": "mcp/tests/test_review_persisted_summary.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "A summary answered from disk preserves the native selection and every current input",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "692bb516ea06104405c820c4e5534802da3c2a1f",
+            "content": "sha256:6b24b76dacf614ab4f2ed01c7fd8c121c4f43cb78944ad03c8b3d0b5a1991493",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_summary_survives_a_fresh_owner_and_resolves_the_native_question_each_time"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

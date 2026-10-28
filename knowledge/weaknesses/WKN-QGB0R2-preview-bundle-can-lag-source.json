@@ -1,0 +1,29 @@
+{
+  "anchor": {
+    "blob": "2630946c35dd86bc184c6dcedd7c8234c1829901",
+    "content": "sha256:372f3d9f0445e74baed8e4b2b3dcf556e0e6ade38b37ca06bc788c44b1ce3484",
+    "locator": {
+      "kind": "symbol",
+      "name": "SOURCE"
+    },
+    "path": "scripts/sync-dashboard.py"
+  },
+  "id": "WKN-QGB0R2",
+  "kind": "compute",
+  "origin": {
+    "handoff": {
+      "path": "l201-records-history.json"
+    },
+    "handoffEntry": "w3",
+    "leaf": "260928-MIK-L201",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-weakness/v1",
+  "seen": {
+    "role": "worker",
+    "task": "260928-MIK-L201"
+  },
+  "state": "open",
+  "statement": "The dashboard bundle a preview serves is a build product and can lag the source; the demo's page claims before 16:29Z on 2026-10-27 were made on the 2026-10-25 bundle."
+}

@@ -8,8 +8,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4706a83eea5f4a686f850036c79c40b13328d5a6",
-            "content": "sha256:05f0296b0096a62c5af8ff3e1496d6b28788a40a01ae4f4b422a83ae22b58d9d",
+            "blob": "850d93cf5ed952e2e11779b72cf7a029bb4290bd",
+            "content": "sha256:a4c75b16aa8487c17d0eefa7b9e71fb9a2f89fdc6a37bea3b3ec1dee65594392",
             "locator": {
               "kind": "symbol",
               "name": "useMarkedPane"
@@ -125,19 +125,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4706a83eea5f4a686f850036c79c40b13328d5a6",
-            "content": "sha256:0ed560a08aa99f75b54c3d963d7d128d2e20170d7ad695fe3d41f60782ea7b53",
-            "locator": {
-              "kind": "symbol",
-              "name": "HOLD_RELEASES"
-            },
-            "path": "dashboard/src/panels/file-viewer/markGutter.tsx"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "4706a83eea5f4a686f850036c79c40b13328d5a6",
+            "blob": "850d93cf5ed952e2e11779b72cf7a029bb4290bd",
             "content": "sha256:64213601425704d8e499826d02012d9afae18e0c1dab113a7b49670984b4efd1",
             "locator": {
               "kind": "symbol",
@@ -247,7 +235,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "05420e58f22ada25400406ce21f18491119d64da",
+            "blob": "5114f5644a55359a177e60b5dbfa197f8a1f271a",
             "content": "sha256:a879d0bcbaa95db21c2edddeca08097f838923b4b3e3511cb142f3e8ba739967",
             "locator": {
               "kind": "symbol",
@@ -264,7 +252,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1b839113b8d511b4a8343230e70a8de0be01b79f",
+            "blob": "0239f2882fd18ac2d5ceabd66eef472ab201ea5d",
             "content": "sha256:52b08d60b309c3dda6a0349577b96c3ebe2f1390414d68edcb6e9dc0b7ee250a",
             "locator": {
               "end": 81,
@@ -277,20 +265,7 @@
         },
         {
           "anchor": {
-            "blob": "1b839113b8d511b4a8343230e70a8de0be01b79f",
-            "content": "sha256:5f9bebc0a4bf3a820a52a396bf0d1e83c152bae918ef9f7e70b4ed545b229d9b",
-            "locator": {
-              "end": 807,
-              "kind": "line_range",
-              "start": 802
-            },
-            "path": "dashboard/src/cockpit/Cockpit.tsx"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "1b839113b8d511b4a8343230e70a8de0be01b79f",
+            "blob": "0239f2882fd18ac2d5ceabd66eef472ab201ea5d",
             "content": "sha256:3c93dc7f2fe3857b8a3f711ea54983fa385dbb79b676d1a3e1b127209dea89cc",
             "locator": {
               "end": 81,
@@ -303,7 +278,7 @@
         },
         {
           "anchor": {
-            "blob": "1b839113b8d511b4a8343230e70a8de0be01b79f",
+            "blob": "0239f2882fd18ac2d5ceabd66eef472ab201ea5d",
             "content": "sha256:872cd410448e56a9478c502e6001bff04706a81fcd559a8e2b426284aed25ff3",
             "locator": {
               "end": 82,
@@ -316,7 +291,7 @@
         },
         {
           "anchor": {
-            "blob": "1b839113b8d511b4a8343230e70a8de0be01b79f",
+            "blob": "0239f2882fd18ac2d5ceabd66eef472ab201ea5d",
             "content": "sha256:0b026a57754a1df551ff3f0ad05a198c53ec076fa6772025d7ff6bbe09ab3e36",
             "locator": {
               "end": 82,
@@ -329,7 +304,7 @@
         },
         {
           "anchor": {
-            "blob": "1b839113b8d511b4a8343230e70a8de0be01b79f",
+            "blob": "0239f2882fd18ac2d5ceabd66eef472ab201ea5d",
             "content": "sha256:702b2c2e1862fc60409c48f729e89dc75f68be9c596c3cff68d7d516447731e5",
             "locator": {
               "end": 78,
@@ -342,7 +317,7 @@
         },
         {
           "anchor": {
-            "blob": "1b839113b8d511b4a8343230e70a8de0be01b79f",
+            "blob": "0239f2882fd18ac2d5ceabd66eef472ab201ea5d",
             "content": "sha256:01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
             "locator": {
               "end": 78,

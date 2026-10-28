@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "9ca8d2182f453b9ef35c7143ed8f308f222ece30",
+        "blob": "2a808478d0ab5f3e922ec70603c89db8e7f1fd5b",
         "content": "sha256:fdd0b5a1f1204e56553117823d19503ebd9c24e65f9d4b2115e646167a2053d9",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "9ca8d2182f453b9ef35c7143ed8f308f222ece30",
+        "blob": "2a808478d0ab5f3e922ec70603c89db8e7f1fd5b",
         "content": "sha256:38085772019073de9c2ad1a33e0a0060287dba720cc0109abb62b94e2bf83326",
         "locator": {
           "kind": "symbol",
@@ -44,7 +44,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9ca8d2182f453b9ef35c7143ed8f308f222ece30",
+            "blob": "2a808478d0ab5f3e922ec70603c89db8e7f1fd5b",
             "content": "sha256:38085772019073de9c2ad1a33e0a0060287dba720cc0109abb62b94e2bf83326",
             "locator": {
               "kind": "symbol",
@@ -60,27 +60,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9ca8d2182f453b9ef35c7143ed8f308f222ece30",
+            "blob": "2a808478d0ab5f3e922ec70603c89db8e7f1fd5b",
             "content": "sha256:fdd0b5a1f1204e56553117823d19503ebd9c24e65f9d4b2115e646167a2053d9",
             "locator": {
               "kind": "symbol",
               "name": "guard_path"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "3": {
-      "note": "The design text in force is the repository's own text or the shipped default.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "9ca8d2182f453b9ef35c7143ed8f308f222ece30",
-            "content": "sha256:38cff86b54aad089db12f331efb8ddeb38ce4d6eeb6d991c5c774f33ef19c1e0",
-            "locator": {
-              "kind": "symbol",
-              "name": "design_text_source"
             }
           },
           "kind": "code"

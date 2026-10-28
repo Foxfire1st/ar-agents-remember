@@ -4,8 +4,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "e759eb54b9cbb7db614234415ff2c56f1d345e2c",
-        "content": "sha256:50ecd99adeea344eab59e1b9a5a7d0e71dc09a700ff0a66c3954afbe0b7ab1e2",
+        "blob": "e1559d93e71ef4cd0150bcd4b3e3f40db6a8bc2f",
+        "content": "sha256:808e29d99056316d7c5633dfc088129917a628701ba753e2d5fc42b0b97d334a",
         "locator": {
           "kind": "symbol",
           "name": "connectEvents"
@@ -22,8 +22,8 @@
     },
     {
       "anchor": {
-        "blob": "e759eb54b9cbb7db614234415ff2c56f1d345e2c",
-        "content": "sha256:d7f0c9fea0a9995f1c42c1067ce8c4f273b8b2cf5f04e7a31661157525cdc132",
+        "blob": "e1559d93e71ef4cd0150bcd4b3e3f40db6a8bc2f",
+        "content": "sha256:214bd4b1b218d19e24c980620b4a3068d3859ef3f7678d1dc2dcedf0ab530eab",
         "locator": {
           "kind": "symbol",
           "name": "attachReviewListeners"
@@ -40,12 +40,12 @@
     },
     {
       "anchor": {
-        "blob": "e759eb54b9cbb7db614234415ff2c56f1d345e2c",
+        "blob": "e1559d93e71ef4cd0150bcd4b3e3f40db6a8bc2f",
         "content": "sha256:b6f6beed0a519476bf5ee3e319bea8d3b23560e4c434279e1801eb8f12e15a9d",
         "locator": {
-          "end": 20,
+          "end": 23,
           "kind": "line_range",
-          "start": 13
+          "start": 16
         }
       },
       "id": "RLZ-C5YJ9B",
@@ -59,8 +59,8 @@
     },
     {
       "anchor": {
-        "blob": "e759eb54b9cbb7db614234415ff2c56f1d345e2c",
-        "content": "sha256:409a7431e06691789ab881a398eafaf586cff9796ac6794bd491a066157c8617",
+        "blob": "e1559d93e71ef4cd0150bcd4b3e3f40db6a8bc2f",
+        "content": "sha256:f7c7abe02f78737992a6030e2a80576fd6b56217649fd607bb3ad9d3e0cd1dd6",
         "locator": {
           "kind": "symbol",
           "name": "connectState"
@@ -82,8 +82,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e759eb54b9cbb7db614234415ff2c56f1d345e2c",
-            "content": "sha256:eee51c3781c7dc641d9a571568caab5341d83b8dfb50133f24064e92cd7223f3",
+            "blob": "e1559d93e71ef4cd0150bcd4b3e3f40db6a8bc2f",
+            "content": "sha256:e99de257558d12a8eb66451aa7963473fcb8d224617e586c45b5560c3eee00a3",
             "locator": {
               "kind": "file"
             }
@@ -93,29 +93,16 @@
       ]
     },
     "10": {
-      "note": "The watch owner selects the first registered scope. Registration changes notify scope listeners when that selected scope changes and reset the revision baseline. publishReviewMemory checks matching scope and a string revision, then notifies matching registrations for an undefined baseline, initial message or changed revision. publishReviewMemoryError invokes matching failure callbacks. These are client coordination checks, not authentication.\n\nAnchor: inclusive source ranges",
+      "note": "The watch owner selects the first registered scope. Registration changes notify scope listeners when that selected scope changes and reset the revision baseline. publishReviewMemory checks matching scope and a string revision, then notifies matching registrations for an undefined baseline, initial message or changed revision. publishReviewMemoryError invokes matching failure callbacks. These are client coordination checks, not authentication.\n\nAnchor: inclusive source ranges\n\nRetired at the fifth freeze d59c3493: dashboard/src/data/reviewMemoryWatch.ts:12-32 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 5f8398b32760677c370e3145add73cfa8388357b; dashboard/src/data/reviewMemoryWatch.ts:76-84 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 20624f979e2b89067a3e42019c9611a8e18ff848. Retired means the anchor no longer stands, not that the cited subject was deleted.",
       "targets": [
         {
           "anchor": {
-            "blob": "f31d34a7cf4ef5cb486ed71488966d951d9dd35f",
-            "content": "sha256:fd91d98c290ee0c8663f2c084e84b20b1e7ff0f960e183692198c8ca12e5b50b",
-            "locator": {
-              "end": 32,
-              "kind": "line_range",
-              "start": 12
-            },
-            "path": "dashboard/src/data/reviewMemoryWatch.ts"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "f31d34a7cf4ef5cb486ed71488966d951d9dd35f",
+            "blob": "0ba9b634c8dc962571424e64723fc44a8335f134",
             "content": "sha256:6100f6dbfe26a57cccd6513f50791b700a5e258c12e7079b122f38b5ece962f8",
             "locator": {
-              "end": 42,
+              "end": 96,
               "kind": "line_range",
-              "start": 34
+              "start": 88
             },
             "path": "dashboard/src/data/reviewMemoryWatch.ts"
           },
@@ -123,12 +110,12 @@
         },
         {
           "anchor": {
-            "blob": "f31d34a7cf4ef5cb486ed71488966d951d9dd35f",
+            "blob": "0ba9b634c8dc962571424e64723fc44a8335f134",
             "content": "sha256:0b5f53874d3458370941e5a22cb83a7834de5ed45c54ae18f0cc1ea68513d716",
             "locator": {
-              "end": 48,
+              "end": 102,
               "kind": "line_range",
-              "start": 43
+              "start": 97
             },
             "path": "dashboard/src/data/reviewMemoryWatch.ts"
           },
@@ -136,25 +123,12 @@
         },
         {
           "anchor": {
-            "blob": "f31d34a7cf4ef5cb486ed71488966d951d9dd35f",
-            "content": "sha256:6c0edb982debcfbf61447406ab93c2e41d2c7b4eb5f6f1ebed38d69f61b6f5de",
-            "locator": {
-              "end": 84,
-              "kind": "line_range",
-              "start": 76
-            },
-            "path": "dashboard/src/data/reviewMemoryWatch.ts"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "f31d34a7cf4ef5cb486ed71488966d951d9dd35f",
+            "blob": "0ba9b634c8dc962571424e64723fc44a8335f134",
             "content": "sha256:1d11c144cafa8f7a39f87af2cd7d1e94fab807e31b73c8e2c9bee4d2e684929c",
             "locator": {
-              "end": 90,
+              "end": 170,
               "kind": "line_range",
-              "start": 85
+              "start": 165
             },
             "path": "dashboard/src/data/reviewMemoryWatch.ts"
           },
@@ -167,8 +141,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e759eb54b9cbb7db614234415ff2c56f1d345e2c",
-            "content": "sha256:eee51c3781c7dc641d9a571568caab5341d83b8dfb50133f24064e92cd7223f3",
+            "blob": "e1559d93e71ef4cd0150bcd4b3e3f40db6a8bc2f",
+            "content": "sha256:e99de257558d12a8eb66451aa7963473fcb8d224617e586c45b5560c3eee00a3",
             "locator": {
               "kind": "file"
             }
@@ -182,21 +156,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e759eb54b9cbb7db614234415ff2c56f1d345e2c",
-            "content": "sha256:eee51c3781c7dc641d9a571568caab5341d83b8dfb50133f24064e92cd7223f3",
+            "blob": "e1559d93e71ef4cd0150bcd4b3e3f40db6a8bc2f",
+            "content": "sha256:e99de257558d12a8eb66451aa7963473fcb8d224617e586c45b5560c3eee00a3",
             "locator": {
               "kind": "file"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "e759eb54b9cbb7db614234415ff2c56f1d345e2c",
-            "content": "sha256:409a7431e06691789ab881a398eafaf586cff9796ac6794bd491a066157c8617",
-            "locator": {
-              "kind": "symbol",
-              "name": "connectState"
             }
           },
           "kind": "code"
@@ -208,8 +171,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e759eb54b9cbb7db614234415ff2c56f1d345e2c",
-            "content": "sha256:eee51c3781c7dc641d9a571568caab5341d83b8dfb50133f24064e92cd7223f3",
+            "blob": "e1559d93e71ef4cd0150bcd4b3e3f40db6a8bc2f",
+            "content": "sha256:e99de257558d12a8eb66451aa7963473fcb8d224617e586c45b5560c3eee00a3",
             "locator": {
               "kind": "file"
             }
@@ -218,30 +181,13 @@
         },
         {
           "anchor": {
-            "blob": "e759eb54b9cbb7db614234415ff2c56f1d345e2c",
-            "content": "sha256:50ecd99adeea344eab59e1b9a5a7d0e71dc09a700ff0a66c3954afbe0b7ab1e2",
+            "blob": "e1559d93e71ef4cd0150bcd4b3e3f40db6a8bc2f",
+            "content": "sha256:8f3e6fe8acbd3e4f23812dd25f7f9092b732b232d85ea00c36152f4bd9983635",
             "locator": {
-              "kind": "symbol",
-              "name": "connectEvents"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "4": {
-      "note": "`Cockpit` passes `markEventsHydrated` as the raw stream ready callback.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "1b839113b8d511b4a8343230e70a8de0be01b79f",
-            "content": "sha256:00188797c5d9f76dfb0207983a26511e8f0e8ac0c9e2c0b61f41f2ac9c990950",
-            "locator": {
-              "end": 383,
+              "end": 272,
               "kind": "line_range",
-              "start": 383
-            },
-            "path": "dashboard/src/cockpit/Cockpit.tsx"
+              "start": 225
+            }
           },
           "kind": "code"
         }
@@ -265,65 +211,12 @@
         }
       ]
     },
-    "6": {
-      "note": "The client opens this package’s state and raw-event endpoints through the separate connectState and connectEvents owners; memory scope reuses the existing state connection.\n\nAnchor: inclusive source ranges",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "e759eb54b9cbb7db614234415ff2c56f1d345e2c",
-            "content": "sha256:f50347bc3fe801bcecc224f8c0367402935d2ed79ee59320a6357c62c48aabd1",
-            "locator": {
-              "end": 129,
-              "kind": "line_range",
-              "start": 29
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "e759eb54b9cbb7db614234415ff2c56f1d345e2c",
-            "content": "sha256:0826cbcb755e3180ab9356c0a8ec838e56a7aac4c2c4bec9ec81403297e622fb",
-            "locator": {
-              "end": 150,
-              "kind": "line_range",
-              "start": 141
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "e759eb54b9cbb7db614234415ff2c56f1d345e2c",
-            "content": "sha256:5f1decbb6a22b0ffcd87e01683eb0761fe7cbe909ba6fde4936dd02f9bcdb2cf",
-            "locator": {
-              "end": 131,
-              "kind": "line_range",
-              "start": 31
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "e759eb54b9cbb7db614234415ff2c56f1d345e2c",
-            "content": "sha256:0a054ef4817f06b4d81d3c9dd078f5e22f7dac26658e9e1d71c3b63f472602bd",
-            "locator": {
-              "end": 171,
-              "kind": "line_range",
-              "start": 162
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "7": {
       "note": "The browser listener table has task/count and operational events, but no closeoutQueues named listener.",
       "targets": [
         {
           "anchor": {
-            "blob": "e759eb54b9cbb7db614234415ff2c56f1d345e2c",
+            "blob": "e1559d93e71ef4cd0150bcd4b3e3f40db6a8bc2f",
             "content": "sha256:d23f779d5201673d9248f1afd850c1fddf0d3b9c477087e2829b72e561aa7f17",
             "locator": {
               "kind": "symbol",
@@ -352,76 +245,16 @@
       ]
     },
     "9": {
-      "note": "connectState reads optional review-memory scope into request parameters, guards handlers against stopped or replaced sources, publishes parsed memory messages with an initial flag reset on open, and publishes parsed errors separately. Memory messages mark watchdog liveness; memory errors do not. Disposal unsubscribes scope notifications.\n\nAnchor: inclusive source ranges",
+      "note": "connectState reads optional review-memory scope into request parameters, guards handlers against stopped or replaced sources, publishes parsed memory messages with an initial flag reset on open, and publishes parsed errors separately. Memory messages mark watchdog liveness; memory errors do not. Disposal unsubscribes scope notifications.\n\nAnchor: inclusive source ranges\n\nRetired at the fifth freeze d59c3493: dashboard/src/data/stream.ts:45-64 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 20624f979e2b89067a3e42019c9611a8e18ff848; dashboard/src/data/stream.ts:76-78 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 20624f979e2b89067a3e42019c9611a8e18ff848; dashboard/src/data/stream.ts:120-128 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 5f8398b32760677c370e3145add73cfa8388357b; dashboard/src/data/stream.ts:47-66 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 5f8398b32760677c370e3145add73cfa8388357b; dashboard/src/data/stream.ts:141-149 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 842b487b854503d95c9c2d9dce1841198ba93c7d. Retired means the anchor no longer stands, not that the cited subject was deleted.",
       "targets": [
         {
           "anchor": {
-            "blob": "e759eb54b9cbb7db614234415ff2c56f1d345e2c",
-            "content": "sha256:e533c4bde762495bd5224170f503456e6760b11946ca3212c5ee111c9e6f8957",
-            "locator": {
-              "end": 64,
-              "kind": "line_range",
-              "start": 45
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "e759eb54b9cbb7db614234415ff2c56f1d345e2c",
-            "content": "sha256:50e56ad0a1df61970ad6a3903f5a9f49adf76601965a1bf54871a45744207fe7",
-            "locator": {
-              "end": 78,
-              "kind": "line_range",
-              "start": 76
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "e759eb54b9cbb7db614234415ff2c56f1d345e2c",
-            "content": "sha256:e2f7040814ee2dc716d8df4ed879ab6e64a15cce7584141d2547b365deb21c15",
-            "locator": {
-              "end": 128,
-              "kind": "line_range",
-              "start": 120
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "e759eb54b9cbb7db614234415ff2c56f1d345e2c",
-            "content": "sha256:ed3db731c818bd34bab064bfdad61970b28dfc7b8aae846b3983af809cfed4ea",
-            "locator": {
-              "end": 66,
-              "kind": "line_range",
-              "start": 47
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "e759eb54b9cbb7db614234415ff2c56f1d345e2c",
+            "blob": "e1559d93e71ef4cd0150bcd4b3e3f40db6a8bc2f",
             "content": "sha256:e417c6c00b4c21d359d1e61352875e4650a5e636d12c7ac01f5e7a2b884be865",
             "locator": {
-              "end": 80,
+              "end": 154,
               "kind": "line_range",
-              "start": 78
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "e759eb54b9cbb7db614234415ff2c56f1d345e2c",
-            "content": "sha256:358b3e4f84f7e52c6b3ab5ae5b857f39eafd27d9019018a189fb883f1e766811",
-            "locator": {
-              "end": 149,
-              "kind": "line_range",
-              "start": 141
+              "start": 152
             }
           },
           "kind": "code"

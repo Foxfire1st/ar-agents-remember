@@ -70,17 +70,17 @@ replay does not turn incomplete or conflicting inputs into cacheable results.
 
 ### Repo-Internal References
 
-- The module docstring: what the key names, the inputs outside the trees, the bounds, what is never kept. [10]
-- The two bounds. [11]
+- The module docstring: what the key names, the inputs outside the trees, the bounds, what is never kept.
+- The two bounds.
 - The key's fields. [12]
-- A kept verdict is current when no recorded observation changed. [13]
+- A kept verdict is current when no recorded observation changed. 
 
 - The key from contract bytes, the strict task lookup and the build stamp. [14]
 
 
 - A kept verdict is served only when young enough and unchanged. [15]
 
-- Only a memoisable verdict without a failed observation is kept. [16]
+- Only a memoisable verdict without a failed observation is kept. 
 
 - The gate asks the memo, records its reads and offers the verdict. [17]
 
@@ -96,4 +96,6 @@ replay does not turn incomplete or conflicting inputs into cacheable results.
 
 
 - Contract and found task-document reads record their digest or read failure while constructing the exact memo key. [24]
-- A valid memo hit replays its kept observations; memo admission still excludes failed observations. [25]
+- A valid memo hit replays its kept observations; memo admission still excludes failed observations.
+
+- Retired at the fifth freeze d59c3493: mcp/src/agents_remember/application/knowledge_gate/memo.py:1-36 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit c052b2593b85d9baf425cc1d5c46f384b13fc9ea; mcp/src/agents_remember/application/knowledge_gate/memo.py:66-67 - the region it cited is not in the file at the candidate and no re-point was possible; mcp/src/agents_remember/application/knowledge_gate/memo.py:148-167 - the region it cited is not in the file at the candidate and no re-point was possible; mcp/src/agents_remember/application/knowledge_gate/memo.py::_Kept - the bytes it recorded now occur 3 times in the file, so no single home can be named and it is not given to the likelier one; mcp/src/agents_remember/application/knowledge_gate/memo.py::remember - the bytes it recorded now occur 11 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.

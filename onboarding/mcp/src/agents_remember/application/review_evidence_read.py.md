@@ -17,10 +17,12 @@ Bounded investigation reads at a comparison's exact trees: the operand is the co
 
 - A read resolves its side through the comparison and names the effective and stored memory-base trees apart. [1]
 - A path spelling that could name another operand is refused rather than repaired. [2]
-- One bounded read returns a window, an honest remainder and a progressing continuation. [3]
-- A line cut by the window is returned as the decoded prefix text it examined, with the next byte offset, never as absence. [4]
+- One bounded read returns a window, an honest remainder and a progressing continuation. 
+- A line cut by the window is returned as the decoded prefix text it examined, with the next byte offset, never as absence. 
 
 - A scan that could not reach the requested line says so instead of certifying an empty range. [5]
 
-- A requested range that runs past the object's end ends at its last line and is complete, with no continuation and no limit. [6]
-- A read started at or past the object's end is a measured range absence, never an empty line and never a continuation that reads no byte. [7]
+- A requested range that runs past the object's end ends at its last line and is complete, with no continuation and no limit. 
+- A read started at or past the object's end is a measured range absence, never an empty line and never a continuation that reads no byte. 
+
+- Retired at the fifth freeze d59c3493: mcp/src/agents_remember/application/review_evidence_read.py::read_bound_source - the bytes it recorded now occur 3 times in the file, so no single home can be named and it is not given to the likelier one; mcp/src/agents_remember/application/review_evidence_read.py::_take_window - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 6df6b68c1b9714d360296e4cdeb978f5c22f7eea; mcp/src/agents_remember/application/review_evidence_read.py::_measured_object_end - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 4ce96ad77b243a4d55e28535e23d7557997b2d87; mcp/src/agents_remember/application/review_evidence_read.py::_remainder - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 6df6b68c1b9714d360296e4cdeb978f5c22f7eea; mcp/src/agents_remember/application/review_evidence_read.py::_scan_to_line - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 6df6b68c1b9714d360296e4cdeb978f5c22f7eea; mcp/src/agents_remember/application/review_evidence_read.py::_object_end_absence - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 4ce96ad77b243a4d55e28535e23d7557997b2d87; mcp/src/agents_remember/application/review_evidence_read.py::_located_start - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 4ce96ad77b243a4d55e28535e23d7557997b2d87. Retired means the anchor no longer stands, not that the cited subject was deleted.

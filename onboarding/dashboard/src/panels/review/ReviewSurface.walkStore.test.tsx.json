@@ -3,8 +3,8 @@
   "proves": [
     {
       "anchor": {
-        "blob": "0c66321263e5b1e6e1bb9d969daae7f30e843f4b",
-        "content": "sha256:03d8941ee02bec8d4cd2ef7bb2706f36d7bac976cad3390fada15b133e77a64c",
+        "blob": "328d6f910823358b8a88670c9ff5bffc6d6c86c5",
+        "content": "sha256:5449417bb7510acb5e4f2ad8df0c61dea77e95bc3f1db6afd2c54acc92b3b951",
         "locator": {
           "kind": "symbol",
           "name": "keeps the first family when a member of the second is opened from its slot, and marks it under the second family"
@@ -22,8 +22,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "0c66321263e5b1e6e1bb9d969daae7f30e843f4b",
-        "content": "sha256:073ab8428c5e53c354cdea986f23f48bdffcf65b27dc9aaa7a4a821d34f67120",
+        "blob": "328d6f910823358b8a88670c9ff5bffc6d6c86c5",
+        "content": "sha256:8057a443311213c8d4ccc4b9b491faddf9a8a97c7d76d628e635254256271b19",
         "locator": {
           "kind": "file"
         }
@@ -39,8 +39,8 @@
     },
     {
       "anchor": {
-        "blob": "0c66321263e5b1e6e1bb9d969daae7f30e843f4b",
-        "content": "sha256:4678c7ac91ab0af30713826bc4db7f1233c1e091a8014d8ebaaa11141d3d4795",
+        "blob": "328d6f910823358b8a88670c9ff5bffc6d6c86c5",
+        "content": "sha256:e93e20bdcd79276401346b28215934e2910ff6a4fd690cef5eae6b7d41b35432",
         "locator": {
           "end": 133,
           "kind": "line_range",
@@ -58,7 +58,7 @@
     },
     {
       "anchor": {
-        "blob": "0c66321263e5b1e6e1bb9d969daae7f30e843f4b",
+        "blob": "328d6f910823358b8a88670c9ff5bffc6d6c86c5",
         "content": "sha256:80294103366a589b11d097947595faf6dc9408f4e6ac0b743dff4857109b5d73",
         "locator": {
           "end": 57,
@@ -82,29 +82,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0c66321263e5b1e6e1bb9d969daae7f30e843f4b",
+            "blob": "328d6f910823358b8a88670c9ff5bffc6d6c86c5",
             "content": "sha256:90d909e67f2fe19980b54ddd0afe361052aa8921a6a38fc66cbd56f005439862",
             "locator": {
-              "end": 139,
+              "end": 144,
               "kind": "line_range",
-              "start": 100
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "13": {
-      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('keeps complete outline rows while a partial family continues in the main page', async () => {\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "0c66321263e5b1e6e1bb9d969daae7f30e843f4b",
-            "content": "sha256:10823188980c4fa102390664a7b0488cee8e01eea7e3825e23ffd84429b2a790",
-            "locator": {
-              "end": 167,
-              "kind": "line_range",
-              "start": 140
+              "start": 105
             }
           },
           "kind": "test"
@@ -116,12 +99,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0c66321263e5b1e6e1bb9d969daae7f30e843f4b",
-            "content": "sha256:03d8941ee02bec8d4cd2ef7bb2706f36d7bac976cad3390fada15b133e77a64c",
+            "blob": "328d6f910823358b8a88670c9ff5bffc6d6c86c5",
+            "content": "sha256:5449417bb7510acb5e4f2ad8df0c61dea77e95bc3f1db6afd2c54acc92b3b951",
             "locator": {
-              "end": 187,
+              "end": 197,
               "kind": "line_range",
-              "start": 168
+              "start": 176
             }
           },
           "kind": "test"

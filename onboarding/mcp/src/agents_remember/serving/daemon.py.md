@@ -86,7 +86,9 @@ protocol.
 ### Repo-Internal References
 
 
-- CLI dispatch (`--daemon`/`--status`/`--stop`) and the `--no-access-log` child flag. [1]
+- CLI dispatch (`--daemon`/`--status`/`--stop`) and the `--no-access-log` child flag.
+
+Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/dashboard.py:97-193 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 20624f979e2b89067a3e42019c9611a8e18ff848. Retired means the anchor no longer stands, not that the cited subject was deleted [1]
 
 - The `dashboard` settings key (`DashboardSettings`: autoStart, port) it consumes. [2]
 - The MCP boot seam calling `maybe_autostart_dashboard`. [3]
@@ -118,3 +120,7 @@ This entry supersedes any earlier description in this sidecar that conflicts wit
 
 - The daemon ensure the dashboard calls. [5]
 - The spawn path the host is not part of. [6]
+
+## Retirements
+
+- Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/dashboard.py:97-193 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 20624f979e2b89067a3e42019c9611a8e18ff848. Retired means the anchor no longer stands, not that the cited subject was deleted.

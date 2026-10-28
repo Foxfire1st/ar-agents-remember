@@ -4,7 +4,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "fb417e233674d6d9e471a591b5c9c081da7cf2b6",
+        "blob": "af51389b4f95c0828dd133f090c068195df379b4",
         "content": "sha256:d103f78490028d5071df7d816b91d3cfe4c93b2e23629d060f9e60b345a6be34",
         "locator": {
           "kind": "symbol",
@@ -22,7 +22,7 @@
     },
     {
       "anchor": {
-        "blob": "fb417e233674d6d9e471a591b5c9c081da7cf2b6",
+        "blob": "af51389b4f95c0828dd133f090c068195df379b4",
         "content": "sha256:2078006d528ed120367cdbaff430b3c8a884c697282d74206e04d1568c35b858",
         "locator": {
           "kind": "symbol",
@@ -40,8 +40,8 @@
     },
     {
       "anchor": {
-        "blob": "fb417e233674d6d9e471a591b5c9c081da7cf2b6",
-        "content": "sha256:cbbe39f1a4af0dd6173ec494bd7b9959d755f6d07fa0b79db26c4ccbfa84ca4a",
+        "blob": "af51389b4f95c0828dd133f090c068195df379b4",
+        "content": "sha256:093fbfff778e59550993cab5b2f6dd5cc9eb221a29e435e6ee369812bcea44ee",
         "locator": {
           "kind": "file"
         }
@@ -57,8 +57,8 @@
     },
     {
       "anchor": {
-        "blob": "fb417e233674d6d9e471a591b5c9c081da7cf2b6",
-        "content": "sha256:bbc1c5c15333fae84871885946c3ff72ce642418d93ba01ac561f806b9c9ab6d",
+        "blob": "af51389b4f95c0828dd133f090c068195df379b4",
+        "content": "sha256:4d55d66a5848c43c374e321d1618ad666f51a4211296ae7311369feb7ee51c93",
         "locator": {
           "end": 420,
           "kind": "line_range",
@@ -76,12 +76,12 @@
     },
     {
       "anchor": {
-        "blob": "fb417e233674d6d9e471a591b5c9c081da7cf2b6",
+        "blob": "af51389b4f95c0828dd133f090c068195df379b4",
         "content": "sha256:ad2bae9b4636ad639cb42c916442297460ce550fb8cae6845509efd7c5ff0e2e",
         "locator": {
-          "end": 142,
+          "end": 143,
           "kind": "line_range",
-          "start": 111
+          "start": 112
         }
       },
       "id": "RLZ-BHYSBK",
@@ -95,7 +95,7 @@
     },
     {
       "anchor": {
-        "blob": "fb417e233674d6d9e471a591b5c9c081da7cf2b6",
+        "blob": "af51389b4f95c0828dd133f090c068195df379b4",
         "content": "sha256:5dcd3af06b4b19698cc77d3ad124c7a4165a49f254bb380b22fd8a78fe2a6813",
         "locator": {
           "kind": "symbol",
@@ -113,7 +113,7 @@
     },
     {
       "anchor": {
-        "blob": "fb417e233674d6d9e471a591b5c9c081da7cf2b6",
+        "blob": "af51389b4f95c0828dd133f090c068195df379b4",
         "content": "sha256:5dcd3af06b4b19698cc77d3ad124c7a4165a49f254bb380b22fd8a78fe2a6813",
         "locator": {
           "kind": "symbol",
@@ -131,7 +131,7 @@
     },
     {
       "anchor": {
-        "blob": "fb417e233674d6d9e471a591b5c9c081da7cf2b6",
+        "blob": "af51389b4f95c0828dd133f090c068195df379b4",
         "content": "sha256:ad2bae9b4636ad639cb42c916442297460ce550fb8cae6845509efd7c5ff0e2e",
         "locator": {
           "kind": "symbol",
@@ -149,8 +149,8 @@
     },
     {
       "anchor": {
-        "blob": "fb417e233674d6d9e471a591b5c9c081da7cf2b6",
-        "content": "sha256:cbbe39f1a4af0dd6173ec494bd7b9959d755f6d07fa0b79db26c4ccbfa84ca4a",
+        "blob": "af51389b4f95c0828dd133f090c068195df379b4",
+        "content": "sha256:093fbfff778e59550993cab5b2f6dd5cc9eb221a29e435e6ee369812bcea44ee",
         "locator": {
           "kind": "file"
         }
@@ -166,46 +166,29 @@
     }
   ],
   "references": {
-    "11": {
-      "note": "Anchor: Actual startup task set and shutdown order.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "fb417e233674d6d9e471a591b5c9c081da7cf2b6",
-            "content": "sha256:bbc1c5c15333fae84871885946c3ff72ce642418d93ba01ac561f806b9c9ab6d",
-            "locator": {
-              "end": 420,
-              "kind": "line_range",
-              "start": 360
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "16": {
       "note": "Anchor: Shielded thread worker is drained before cancellation escapes.",
       "targets": [
         {
           "anchor": {
-            "blob": "fb417e233674d6d9e471a591b5c9c081da7cf2b6",
+            "blob": "af51389b4f95c0828dd133f090c068195df379b4",
             "content": "sha256:864e390c10f98eead1f7dc0962c0f5717b9f0258e66b99b4004b2e87425894bd",
             "locator": {
-              "end": 84,
+              "end": 85,
               "kind": "line_range",
-              "start": 69
+              "start": 70
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "d81a9faa36598c3b57a6b1214e745404d8caa905",
+            "blob": "1fefbd4071035b1f6a3c99de43218b2ec9d23149",
             "content": "sha256:4125b8413319c43814d375cf30adb8fb8c2182bf18d247d558d67ee532bba429",
             "locator": {
-              "end": 608,
+              "end": 610,
               "kind": "line_range",
-              "start": 570
+              "start": 572
             },
             "path": "mcp/src/agents_remember/serving/background_accounting.py"
           },
@@ -218,24 +201,24 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fb417e233674d6d9e471a591b5c9c081da7cf2b6",
+            "blob": "af51389b4f95c0828dd133f090c068195df379b4",
             "content": "sha256:864e390c10f98eead1f7dc0962c0f5717b9f0258e66b99b4004b2e87425894bd",
             "locator": {
-              "end": 84,
+              "end": 85,
               "kind": "line_range",
-              "start": 69
+              "start": 70
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "d81a9faa36598c3b57a6b1214e745404d8caa905",
+            "blob": "1fefbd4071035b1f6a3c99de43218b2ec9d23149",
             "content": "sha256:4125b8413319c43814d375cf30adb8fb8c2182bf18d247d558d67ee532bba429",
             "locator": {
-              "end": 608,
+              "end": 610,
               "kind": "line_range",
-              "start": 570
+              "start": 572
             },
             "path": "mcp/src/agents_remember/serving/background_accounting.py"
           },
@@ -248,12 +231,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fb417e233674d6d9e471a591b5c9c081da7cf2b6",
+            "blob": "af51389b4f95c0828dd133f090c068195df379b4",
             "content": "sha256:2078006d528ed120367cdbaff430b3c8a884c697282d74206e04d1568c35b858",
             "locator": {
-              "end": 108,
+              "end": 109,
               "kind": "line_range",
-              "start": 87
+              "start": 88
             }
           },
           "kind": "code"
@@ -265,36 +248,36 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fb417e233674d6d9e471a591b5c9c081da7cf2b6",
+            "blob": "af51389b4f95c0828dd133f090c068195df379b4",
             "content": "sha256:ad2bae9b4636ad639cb42c916442297460ce550fb8cae6845509efd7c5ff0e2e",
             "locator": {
-              "end": 142,
+              "end": 143,
               "kind": "line_range",
-              "start": 111
+              "start": 112
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "fb417e233674d6d9e471a591b5c9c081da7cf2b6",
+            "blob": "af51389b4f95c0828dd133f090c068195df379b4",
             "content": "sha256:864e390c10f98eead1f7dc0962c0f5717b9f0258e66b99b4004b2e87425894bd",
             "locator": {
-              "end": 84,
+              "end": 85,
               "kind": "line_range",
-              "start": 69
+              "start": 70
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "d81a9faa36598c3b57a6b1214e745404d8caa905",
+            "blob": "1fefbd4071035b1f6a3c99de43218b2ec9d23149",
             "content": "sha256:4125b8413319c43814d375cf30adb8fb8c2182bf18d247d558d67ee532bba429",
             "locator": {
-              "end": 608,
+              "end": 610,
               "kind": "line_range",
-              "start": 570
+              "start": 572
             },
             "path": "mcp/src/agents_remember/serving/background_accounting.py"
           },
@@ -307,41 +290,24 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fb417e233674d6d9e471a591b5c9c081da7cf2b6",
+            "blob": "af51389b4f95c0828dd133f090c068195df379b4",
             "content": "sha256:5cafd1dbd1e8b89d1c41bf624f33a333c1277f69d76f47c848926863fc3941dd",
             "locator": {
-              "end": 28,
+              "end": 29,
               "kind": "line_range",
-              "start": 23
+              "start": 24
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "fb417e233674d6d9e471a591b5c9c081da7cf2b6",
+            "blob": "af51389b4f95c0828dd133f090c068195df379b4",
             "content": "sha256:2078006d528ed120367cdbaff430b3c8a884c697282d74206e04d1568c35b858",
             "locator": {
-              "end": 108,
+              "end": 109,
               "kind": "line_range",
-              "start": 87
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "26": {
-      "note": "Anchor: Initial river compaction, projector prime, background tasks, child shutdown and drain.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "fb417e233674d6d9e471a591b5c9c081da7cf2b6",
-            "content": "sha256:bbc1c5c15333fae84871885946c3ff72ce642418d93ba01ac561f806b9c9ab6d",
-            "locator": {
-              "end": 420,
-              "kind": "line_range",
-              "start": 360
+              "start": 88
             }
           },
           "kind": "code"
@@ -353,7 +319,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fb417e233674d6d9e471a591b5c9c081da7cf2b6",
+            "blob": "af51389b4f95c0828dd133f090c068195df379b4",
             "content": "sha256:ad2bae9b4636ad639cb42c916442297460ce550fb8cae6845509efd7c5ff0e2e",
             "locator": {
               "kind": "symbol",
@@ -364,7 +330,7 @@
         },
         {
           "anchor": {
-            "blob": "fb417e233674d6d9e471a591b5c9c081da7cf2b6",
+            "blob": "af51389b4f95c0828dd133f090c068195df379b4",
             "content": "sha256:ad2bae9b4636ad639cb42c916442297460ce550fb8cae6845509efd7c5ff0e2e",
             "locator": {
               "kind": "symbol",
@@ -397,8 +363,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fb417e233674d6d9e471a591b5c9c081da7cf2b6",
-            "content": "sha256:cbbe39f1a4af0dd6173ec494bd7b9959d755f6d07fa0b79db26c4ccbfa84ca4a",
+            "blob": "af51389b4f95c0828dd133f090c068195df379b4",
+            "content": "sha256:093fbfff778e59550993cab5b2f6dd5cc9eb221a29e435e6ee369812bcea44ee",
             "locator": {
               "kind": "file"
             }

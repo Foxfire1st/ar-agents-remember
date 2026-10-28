@@ -111,7 +111,7 @@ The explainer cleanup retires every discovered environment first, then removes i
 
 ## Evidence
 
-- The archive reclaims the task's published frames through the store's own owner and records what it removed or held. [20]
+- The archive reclaims the task's published frames through the store's own owner and records what it removed or held. 
 
 ### Docs References
 
@@ -189,3 +189,5 @@ No cross-repo boundary is crossed by this file.
 - Verified snapshot unlink precedes snapshot history, leaving a static failure window. [19]
 
 - The current implementation adds the environment and explainer-artifact classes, pending-retirement preservation and explicit explainer-root confinement. [21]
+
+- Retired at the fifth freeze d59c3493: mcp/src/agents_remember/application/review_artifact_cleanup.py::_delete_frames - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.

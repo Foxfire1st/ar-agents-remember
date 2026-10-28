@@ -1,0 +1,39 @@
+{
+  "path": "dashboard/src/panels/review/changeSetTypes.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "A group and its rows describe the same read, because they are shaped together rather than separately.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7131027dd14d1db99c891439fd8a817fd84c0b99",
+            "content": "sha256:98a74fd703921b8f1865a5d54098409ec2a713c07695e793bb6ba176eedb5386",
+            "locator": {
+              "kind": "symbol",
+              "name": "invariantsChanged"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The role label a read arrived with is carried, not replaced by a display name.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7131027dd14d1db99c891439fd8a817fd84c0b99",
+            "content": "sha256:9db31c37ead6d7da578bd714155162459a76f6fe4ef7f59df70753782740b98d",
+            "locator": {
+              "kind": "symbol",
+              "name": "roleLabel"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

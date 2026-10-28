@@ -137,24 +137,16 @@ the launcher is not a role.
   admitted corpus root, which is why the same manifest can be read from the authored tree or from the
   packaged copy without editing a path.
 
-- **The manifest carries no instruction prose.** It selects sources; the prose lives in `core/`,
   `roles/`, `operations/`, `criteria/` and `templates/`, and the notes state that this file "carries
   no instruction prose and no copies of any source section."
-- **The role registry is exactly `role_order`.** Ten roles; the launcher is a routing condition with
   `is_role: false` and is not an eleventh entry.
-- **The declared vocabulary is authoritative over the file.** The consumer parses these bytes against
   frozen role and operation sets and refuses a manifest that disagrees, so an edit cannot mint a role
   or a tenth operation by writing one.
-- **Operation applicability must agree on both sides.** A role's `operations` list and the
   operation's `applies_to_roles` list are checked against each other at parse time; a disagreement is
   a `manifest-inconsistent-applicability` refusal rather than a selection-time surprise.
-- **One source per instruction.** A block is authored once and referenced by path; a role file states
   its own seat's side of a shared rule and never restates the whole of it.
-- **Task facts are not part of the manifest.** They travel as a separate context channel.
-- **Reference-only trees do not enter a capsule.** The `references` entries are marked
   `injected: false`, and `lenses.md` is described as material for the scoping seats rather than
   something "a dispatched role" picks.
-- **The corpus root is the consumer's, not the file's.** Every declared path is relative to the
   admitted corpus root, which is why the same manifest can be read from the authored tree or from the
   packaged copy without editing a path.
 

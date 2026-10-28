@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "ea7a3f0649df8d2f0e8ebb69a320eced33e5c2fa",
+        "blob": "7648883defbabbaf2d855721f766fbdcce2bb99a",
         "content": "sha256:0eec46ab95cb5f05e7213fdd08b93624900f6c42f7f2a2489eb9fc962d333de2",
         "locator": {
           "kind": "symbol",
@@ -21,8 +21,8 @@
     },
     {
       "anchor": {
-        "blob": "ea7a3f0649df8d2f0e8ebb69a320eced33e5c2fa",
-        "content": "sha256:e6fdc11115c06b7bad72c50bf3c42316da8996f1ee1044cf5a6e119e0ee8c03e",
+        "blob": "7648883defbabbaf2d855721f766fbdcce2bb99a",
+        "content": "sha256:3c1b280f14f8c2c670f0921f7cff56e9271498bd45cb43b2a4df8eca176e2242",
         "locator": {
           "kind": "symbol",
           "name": "remembered"
@@ -39,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "ea7a3f0649df8d2f0e8ebb69a320eced33e5c2fa",
+        "blob": "7648883defbabbaf2d855721f766fbdcce2bb99a",
         "content": "sha256:d0c75c1b1f556d322b0a75a50ff548a9600174dd82b33c5112163ea124c9ddee",
         "locator": {
           "kind": "symbol",
@@ -57,7 +57,7 @@
     },
     {
       "anchor": {
-        "blob": "ea7a3f0649df8d2f0e8ebb69a320eced33e5c2fa",
+        "blob": "7648883defbabbaf2d855721f766fbdcce2bb99a",
         "content": "sha256:0eec46ab95cb5f05e7213fdd08b93624900f6c42f7f2a2489eb9fc962d333de2",
         "locator": {
           "kind": "symbol",
@@ -75,8 +75,8 @@
     },
     {
       "anchor": {
-        "blob": "ea7a3f0649df8d2f0e8ebb69a320eced33e5c2fa",
-        "content": "sha256:3d16e67ac7e159315d363192723bd7f0f5adb2bd2d1b2413e9cf426c08a17e71",
+        "blob": "7648883defbabbaf2d855721f766fbdcce2bb99a",
+        "content": "sha256:a44ed17da93f424b5040882b8ec98265b35fc46404d42057532b091232ec097c",
         "locator": {
           "kind": "symbol",
           "name": "remember"
@@ -93,8 +93,8 @@
     },
     {
       "anchor": {
-        "blob": "ea7a3f0649df8d2f0e8ebb69a320eced33e5c2fa",
-        "content": "sha256:6798b8709c203b1597e511d4bd7157d8a2dccfb7bc3bc241286a11d07b98424a",
+        "blob": "7648883defbabbaf2d855721f766fbdcce2bb99a",
+        "content": "sha256:d4396dd07e2b5208d4339a2d6847e2bb632b0126860ed40f62e7bd9870405579",
         "locator": {
           "kind": "symbol",
           "name": "_Kept"
@@ -116,27 +116,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ea7a3f0649df8d2f0e8ebb69a320eced33e5c2fa",
+            "blob": "7648883defbabbaf2d855721f766fbdcce2bb99a",
             "content": "sha256:ac71b894fbfa7e24f72510bc047d8f61524a44ef94b66366ff5c5a28b0dc56b0",
             "locator": {
               "kind": "symbol",
               "name": "_task_reads"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "11": {
-      "note": "Failed, absent or moved inputs keep the parts out of the memo.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "ea7a3f0649df8d2f0e8ebb69a320eced33e5c2fa",
-            "content": "sha256:3d16e67ac7e159315d363192723bd7f0f5adb2bd2d1b2413e9cf426c08a17e71",
-            "locator": {
-              "kind": "symbol",
-              "name": "remember"
             }
           },
           "kind": "code"
@@ -148,8 +132,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8e5fe3cc06555aa24b7a8353a5a2649d6e080876",
-            "content": "sha256:574d273db8bc349dc8ece9848026ece0a58843d54edd522c348c35d4ff5b22e9",
+            "blob": "8a23691198bebbe2d0f859101a6f6dab3b9b29d0",
+            "content": "sha256:8ffb4484face95cb08e182c862449827b752195befae946dae537bed77adfd2e",
             "locator": {
               "kind": "file"
             },
@@ -164,7 +148,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9719c9159d392a3e5377a242638474a1a15b1f37",
+            "blob": "75a04d4049c18ff472b2caefabad7faa53cdb34b",
             "content": "sha256:c3f475897dcd14f7a97836eec5863e97be6516602151f2871c7ddd4accbe3ae1",
             "locator": {
               "kind": "symbol",
@@ -181,7 +165,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9719c9159d392a3e5377a242638474a1a15b1f37",
+            "blob": "75a04d4049c18ff472b2caefabad7faa53cdb34b",
             "content": "sha256:60616374187df50a50efa1efae51e8a02ebfb96f22f513da676c714dce3621e1",
             "locator": {
               "kind": "symbol",
@@ -198,7 +182,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9719c9159d392a3e5377a242638474a1a15b1f37",
+            "blob": "75a04d4049c18ff472b2caefabad7faa53cdb34b",
             "content": "sha256:808982e2fcff62915535c1d9d898c204240cc8938c0734c777c67bea85d0a706",
             "locator": {
               "kind": "symbol",
@@ -215,8 +199,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a936536068f5b5c599585cd9bc975e04e8906848",
-            "content": "sha256:4bc36d38c4fb8b8aa27abf2dc7591aeb566b0417f6db0b47bfcc4d2152a5b3e7",
+            "blob": "eba9ada60f9f10e5dd378a3092de6a1f4425a5f2",
+            "content": "sha256:889b4d4df7f6c4f3fa6078a9b27d3909316d5c1874d01fd04c3acf2a887d7c35",
             "locator": {
               "kind": "file"
             },
@@ -231,8 +215,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a936536068f5b5c599585cd9bc975e04e8906848",
-            "content": "sha256:4bc36d38c4fb8b8aa27abf2dc7591aeb566b0417f6db0b47bfcc4d2152a5b3e7",
+            "blob": "eba9ada60f9f10e5dd378a3092de6a1f4425a5f2",
+            "content": "sha256:889b4d4df7f6c4f3fa6078a9b27d3909316d5c1874d01fd04c3acf2a887d7c35",
             "locator": {
               "kind": "file"
             },
@@ -247,56 +231,26 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ea7a3f0649df8d2f0e8ebb69a320eced33e5c2fa",
+            "blob": "7648883defbabbaf2d855721f766fbdcce2bb99a",
             "content": "sha256:a61e6c42933e90c535fd55c7b5d38af3c8a6b73b5e14dd3b0505ba857fb1d40c",
             "locator": {
-              "end": 118,
+              "end": 115,
               "kind": "line_range",
-              "start": 113
+              "start": 110
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "a956af1c8d6d0ae8752c70bec8277c64a19a3022",
+            "blob": "32b468e307d43909fa4abb9ad4cf27f31384665f",
             "content": "sha256:3931efd74b39a7336bb56c4a4b94c7935fa6b037d8216f5316844855c8411c5e",
             "locator": {
-              "end": 359,
+              "end": 567,
               "kind": "line_range",
-              "start": 340
+              "start": 548
             },
             "path": "mcp/src/agents_remember/application/review_tree_knowledge.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "19": {
-      "note": "Caller admission requires readable/settled/decided/facts inputs, then remember separately checks failed/absent/moved observations.\n\nAnchor: current admission boundaries",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "a956af1c8d6d0ae8752c70bec8277c64a19a3022",
-            "content": "sha256:ac53887638782f9d7ea572e7549f0b651e0caafb8a5c28b6cd75b637b9d73024",
-            "locator": {
-              "end": 359,
-              "kind": "line_range",
-              "start": 301
-            },
-            "path": "mcp/src/agents_remember/application/review_tree_knowledge.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "ea7a3f0649df8d2f0e8ebb69a320eced33e5c2fa",
-            "content": "sha256:3d16e67ac7e159315d363192723bd7f0f5adb2bd2d1b2413e9cf426c08a17e71",
-            "locator": {
-              "end": 227,
-              "kind": "line_range",
-              "start": 218
-            }
           },
           "kind": "code"
         }
@@ -307,7 +261,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ea7a3f0649df8d2f0e8ebb69a320eced33e5c2fa",
+            "blob": "7648883defbabbaf2d855721f766fbdcce2bb99a",
             "content": "sha256:a61e6c42933e90c535fd55c7b5d38af3c8a6b73b5e14dd3b0505ba857fb1d40c",
             "locator": {
               "kind": "symbol",
@@ -323,28 +277,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ea7a3f0649df8d2f0e8ebb69a320eced33e5c2fa",
+            "blob": "7648883defbabbaf2d855721f766fbdcce2bb99a",
             "content": "sha256:d0c75c1b1f556d322b0a75a50ff548a9600174dd82b33c5112163ea124c9ddee",
             "locator": {
               "kind": "symbol",
               "name": "leaf_view_key"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "5": {
-      "note": "The two bounds.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "ea7a3f0649df8d2f0e8ebb69a320eced33e5c2fa",
-            "content": "sha256:2455132d7632567651a05d122b9f7a7074d6d69310a413f686ea042a0f25c331",
-            "locator": {
-              "end": 98,
-              "kind": "line_range",
-              "start": 97
             }
           },
           "kind": "code"
@@ -356,7 +293,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ea7a3f0649df8d2f0e8ebb69a320eced33e5c2fa",
+            "blob": "7648883defbabbaf2d855721f766fbdcce2bb99a",
             "content": "sha256:9e266c70363803ee282c5a5b8109f245643c5952b4fdcbd86e1ed93428de29ab",
             "locator": {
               "kind": "symbol",
@@ -372,26 +309,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ea7a3f0649df8d2f0e8ebb69a320eced33e5c2fa",
-            "content": "sha256:6db8e9535d2ddca60102923ac82b84a5d3fe190903cd457c14d315d2a2b1ab09",
+            "blob": "7648883defbabbaf2d855721f766fbdcce2bb99a",
+            "content": "sha256:108498f60b2ba7cab98c94deea783f7d08f2ff07b0af76a617c932d4172363f9",
             "locator": {
               "kind": "file"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "8": {
-      "note": "A kept view is served only when young enough and unchanged, and its rows are replayed.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "ea7a3f0649df8d2f0e8ebb69a320eced33e5c2fa",
-            "content": "sha256:e6fdc11115c06b7bad72c50bf3c42316da8996f1ee1044cf5a6e119e0ee8c03e",
-            "locator": {
-              "kind": "symbol",
-              "name": "remembered"
             }
           },
           "kind": "code"
@@ -403,7 +324,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ea7a3f0649df8d2f0e8ebb69a320eced33e5c2fa",
+            "blob": "7648883defbabbaf2d855721f766fbdcce2bb99a",
             "content": "sha256:0eec46ab95cb5f05e7213fdd08b93624900f6c42f7f2a2489eb9fc962d333de2",
             "locator": {
               "kind": "symbol",

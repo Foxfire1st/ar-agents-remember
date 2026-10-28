@@ -91,7 +91,7 @@ The extraction of _git_run shares the former run_git setup; it does not make the
 
 ## Current Behavior
 
-The shared runner accepts a cancellation event through `_GIT_CANCELLATION` and `cancellable_git_commands` (lines 517–529). `_run_git` uses `_wait_process` when a cancellation event is present or a new session is requested (lines 356–412). The wait polls at intervals of at most 0.05 seconds when cancellation is enabled; `_kill_process_group` is the runner's one process-group kill owner for a timeout or abandoned read (lines 415–468). Without an event, the ordinary timeout behavior remains. [57] [58]
+The shared runner accepts a cancellation event through `_GIT_CANCELLATION` and `cancellable_git_commands` (lines 517–529). `_run_git` uses `_wait_process` when a cancellation event is present or a new session is requested (lines 356–412). The wait polls at intervals of at most 0.05 seconds when cancellation is enabled; `_kill_process_group` is the runner's one process-group kill owner for a timeout or abandoned read (lines 415–468). Without an event, the ordinary timeout behavior remains. [57] 
 
 
 ## Evidence
@@ -138,4 +138,6 @@ The shared runner accepts a cancellation event through `_GIT_CANCELLATION` and `
 - The runner keeps memo ownership and imports exact-object eligibility from its direct sibling. [53]
 - The CAS helper builds expected-old update-ref arguments with an optional reflog reason; it does not execute them. [56]
 - The cancellation context supplies one event to the shared runner. [57]
-- The shared wait bounds cancellation polling and owns timeout and abandoned-read termination. [58]
+- The shared wait bounds cancellation polling and owns timeout and abandoned-read termination. 
+
+- Retired at the fifth freeze d59c3493: mcp/src/agents_remember/kernel/git_command.py::_wait_process - the bytes it recorded now occur 5 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.

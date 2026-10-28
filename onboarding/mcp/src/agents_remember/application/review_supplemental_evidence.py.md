@@ -17,8 +17,10 @@ The task root is never admitted wholesale and `DEVELOPER-DIRECTION.md` stays exc
 
 ## Evidence
 
-- A supplemental source is resolved inside the task's own admitted roots. [1]
+- A supplemental source is resolved inside the task's own admitted roots. 
 - A capture binds the bytes examined and states that it is supplemental. [2]
 - A later read answers a successor receipt and never rewrites the earlier one. [3]
 
 - The current implementation adds leaf-bound document reread and manifest-version staleness; the earlier successor-receipt identity account remains valid. [4]
+
+- Retired at the fifth freeze d59c3493: mcp/src/agents_remember/application/review_supplemental_evidence.py::admit_supplemental - the bytes it recorded now occur 4 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.

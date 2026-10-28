@@ -95,8 +95,8 @@ each returns what the plain call returns and raises what it raises.
 - Nested recording inherits or accepts a separate examined audit bucket; examined reads use its conflict handling without becoming kept dependencies. [27]
 
 
-- The module docstring: the three byte identities, the two selection namespaces and the conflict rule. [7]
-- The identity of a file at this moment. [8]
+- The module docstring: the three byte identities, the two selection namespaces and the conflict rule.
+- The identity of a file at this moment. 
 
 - The recording block sets and restores the context variable. [9]
 
@@ -110,8 +110,8 @@ each returns what the plain call returns and raises what it raises.
 
 - The validation of a row that arrives from another process. [13]
 
-- The recheck repeats the recorded operation. [14]
-- Selections are rechecked before bytes, and bytes only when no selection moved. [15]
+- The recheck repeats the recorded operation. 
+- Selections are rechecked before bytes, and bytes only when no selection moved. 
 - A conflict or an unreadable row marks the set as failed. [16]
 - The recorded resolution keeps the absolute logical path as its key. [17]
 - The recorded existence probe of a path, also for a directory. [18]
@@ -121,9 +121,11 @@ each returns what the plain call returns and raises what it raises.
 - The absent higher-priority settings file, the absent JSON sibling and the consumed Markdown file are rows of one recording. [21]
 
 - A retargeted packet locator is seen through its resolve row, and no byte outside the task is read for the recheck. [22]
-- A failed root probe is recorded as unreadable and the view is not kept. [23]
+- A failed root probe is recorded as unreadable and the view is not kept. 
 - A malformed row from the child is refused by the parent. [24]
 
 - Every file the gate reads is in its read set, and a conflicting read is never kept. [25]
 
 - The direct JSON listing of a folder is recorded as one `json-files:` row, empty listing included. [26]
+
+- Retired at the fifth freeze d59c3493: mcp/src/agents_remember/kernel/recorded_reads.py:1-19 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit c052b2593b85d9baf425cc1d5c46f384b13fc9ea; mcp/src/agents_remember/kernel/recorded_reads.py::file_identity - the bytes it recorded now occur 5 times in the file, so no single home can be named and it is not given to the likelier one; mcp/src/agents_remember/kernel/recorded_reads.py::observation_identity - the bytes it recorded now occur 4 times in the file, so no single home can be named and it is not given to the likelier one; mcp/src/agents_remember/kernel/recorded_reads.py::changed_observations - the bytes it recorded now occur 3 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/test_reviewer_worklist_reads.py::_root_errors - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.
