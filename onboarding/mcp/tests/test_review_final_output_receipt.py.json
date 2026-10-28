@@ -98,12 +98,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "00c924961061dbdffe62be2587500d221bd22c23",
-            "content": "sha256:cdfe6b89975b92062224baf59395e70e8687cd699475f5dd83314438b819cb7d",
+            "blob": "ac006b11f74a4c64ab964edc3378b4c96f153872",
+            "content": "sha256:67f58c58dbc55122e84f30cab52617992ecf9b03d80f0738288afe38aac190bf",
             "locator": {
-              "end": 381,
+              "end": 411,
               "kind": "line_range",
-              "start": 381
+              "start": 411
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -111,27 +111,27 @@
         },
         {
           "anchor": {
-            "blob": "00c924961061dbdffe62be2587500d221bd22c23",
-            "content": "sha256:efbce7e8e992e3a78052c7d6fb7c9d869951b36bae361c1add238771fd27c079",
+            "blob": "b9e272ef623574e517181e36b3dc949a3ac78e19",
+            "content": "sha256:8bb2cd4a920cf995bfb0c334096a87b15d3a6a878525a7de6ff69900e081228a",
             "locator": {
-              "end": 403,
+              "end": 867,
               "kind": "line_range",
-              "start": 403
+              "start": 150
             },
-            "path": "mcp/tests/test-evidence-lanes.toml"
+            "path": "mcp/tests/evidence-lifecycle.toml"
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "00c924961061dbdffe62be2587500d221bd22c23",
-            "content": "sha256:795ef4ca69e05fc25a8ae9fc9a05183b3df3a9461da43e8c0a55c295dfea76f3",
+            "blob": "b9e272ef623574e517181e36b3dc949a3ac78e19",
+            "content": "sha256:e1b5e89203741ca33a2fd0a4a8ce7e6efb9c2a136c13f0bb9e057bf8d0c25aa8",
             "locator": {
-              "end": 269,
+              "end": 2699,
               "kind": "line_range",
-              "start": 269
+              "start": 1982
             },
-            "path": "mcp/tests/test-evidence-lanes.toml"
+            "path": "mcp/tests/evidence-lifecycle.toml"
           },
           "kind": "test"
         }

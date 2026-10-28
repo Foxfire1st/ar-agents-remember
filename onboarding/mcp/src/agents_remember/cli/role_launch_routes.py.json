@@ -4,7 +4,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "356af2fbfc68dbcf1528f5517e095623d30ad5b2",
+        "blob": "b7d5bcb01c2f0a57fc52879d47e6af720a1e8db3",
         "content": "sha256:c66af9c85cd326f4a585ffaf27da472e2b8490f9b8ccc51ed0f0e125ca59bfbd",
         "locator": {
           "kind": "symbol",
@@ -22,8 +22,8 @@
     },
     {
       "anchor": {
-        "blob": "356af2fbfc68dbcf1528f5517e095623d30ad5b2",
-        "content": "sha256:98fc21e296318ae86d2b63e98e90f49212cb87fbae8ed4e5e4ac280cfeb1b37d",
+        "blob": "b7d5bcb01c2f0a57fc52879d47e6af720a1e8db3",
+        "content": "sha256:192171bfe316c83330527f17ad244639e941ef0ddf23804a8f2c14c20b419ddc",
         "locator": {
           "kind": "symbol",
           "name": "_launch_prepared_role_session"
@@ -40,8 +40,8 @@
     },
     {
       "anchor": {
-        "blob": "356af2fbfc68dbcf1528f5517e095623d30ad5b2",
-        "content": "sha256:98fc21e296318ae86d2b63e98e90f49212cb87fbae8ed4e5e4ac280cfeb1b37d",
+        "blob": "b7d5bcb01c2f0a57fc52879d47e6af720a1e8db3",
+        "content": "sha256:192171bfe316c83330527f17ad244639e941ef0ddf23804a8f2c14c20b419ddc",
         "locator": {
           "kind": "symbol",
           "name": "_launch_prepared_role_session"
@@ -58,7 +58,7 @@
     },
     {
       "anchor": {
-        "blob": "356af2fbfc68dbcf1528f5517e095623d30ad5b2",
+        "blob": "b7d5bcb01c2f0a57fc52879d47e6af720a1e8db3",
         "content": "sha256:e5a6159e125ad5f9700f3da219ee09af0124bd46de52a42b4596f168edf5216d",
         "locator": {
           "kind": "symbol",
@@ -76,7 +76,25 @@
     },
     {
       "anchor": {
-        "blob": "356af2fbfc68dbcf1528f5517e095623d30ad5b2",
+        "blob": "b7d5bcb01c2f0a57fc52879d47e6af720a1e8db3",
+        "content": "sha256:192171bfe316c83330527f17ad244639e941ef0ddf23804a8f2c14c20b419ddc",
+        "locator": {
+          "kind": "symbol",
+          "name": "_launch_prepared_role_session"
+        }
+      },
+      "id": "RLZ-D5Z9J7",
+      "invariant": "INV-G841F9",
+      "origin": {
+        "handoffEntry": "MIK-R216@v1",
+        "leaf": "260928-MIK-L203"
+      },
+      "rationale": "This session builder appends the instruction before the first message is published and records the acpInstruction receipt, so the retry check still matches and the capsule stays byte-identical.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "b7d5bcb01c2f0a57fc52879d47e6af720a1e8db3",
         "content": "sha256:fc2a1a7ef4a0889005c2cab69753b8915b5b64a9d172c1e25bc308028591a225",
         "locator": {
           "kind": "symbol",
@@ -94,8 +112,8 @@
     },
     {
       "anchor": {
-        "blob": "356af2fbfc68dbcf1528f5517e095623d30ad5b2",
-        "content": "sha256:8f04be34eb5799c19c2075a28d8f6662fedade78b336a0046a681edcb2fea8e0",
+        "blob": "b7d5bcb01c2f0a57fc52879d47e6af720a1e8db3",
+        "content": "sha256:be8af700c1038b87da7566a3242db151c36aa3c09d5d89e1400a12c938b18bda",
         "locator": {
           "kind": "file"
         }
@@ -111,7 +129,7 @@
     },
     {
       "anchor": {
-        "blob": "356af2fbfc68dbcf1528f5517e095623d30ad5b2",
+        "blob": "b7d5bcb01c2f0a57fc52879d47e6af720a1e8db3",
         "content": "sha256:add318f5f52459454ace603b7301aeecf2076960e72cbde7ce198c17d4c4fc7a",
         "locator": {
           "kind": "symbol",
@@ -129,7 +147,7 @@
     },
     {
       "anchor": {
-        "blob": "356af2fbfc68dbcf1528f5517e095623d30ad5b2",
+        "blob": "b7d5bcb01c2f0a57fc52879d47e6af720a1e8db3",
         "content": "sha256:4c24f13a69cee68fbd2c1dde8d15129b0122f9473303ec967c7745d772f6758b",
         "locator": {
           "kind": "symbol",
@@ -147,8 +165,8 @@
     },
     {
       "anchor": {
-        "blob": "356af2fbfc68dbcf1528f5517e095623d30ad5b2",
-        "content": "sha256:98fc21e296318ae86d2b63e98e90f49212cb87fbae8ed4e5e4ac280cfeb1b37d",
+        "blob": "b7d5bcb01c2f0a57fc52879d47e6af720a1e8db3",
+        "content": "sha256:192171bfe316c83330527f17ad244639e941ef0ddf23804a8f2c14c20b419ddc",
         "locator": {
           "kind": "symbol",
           "name": "_launch_prepared_role_session"
@@ -165,7 +183,7 @@
     },
     {
       "anchor": {
-        "blob": "356af2fbfc68dbcf1528f5517e095623d30ad5b2",
+        "blob": "b7d5bcb01c2f0a57fc52879d47e6af720a1e8db3",
         "content": "sha256:8c83d02a661f8baef0a21913522f22a75806dcdec82e8958500fa64d354f04a3",
         "locator": {
           "kind": "symbol",
@@ -183,8 +201,8 @@
     },
     {
       "anchor": {
-        "blob": "356af2fbfc68dbcf1528f5517e095623d30ad5b2",
-        "content": "sha256:98fc21e296318ae86d2b63e98e90f49212cb87fbae8ed4e5e4ac280cfeb1b37d",
+        "blob": "b7d5bcb01c2f0a57fc52879d47e6af720a1e8db3",
+        "content": "sha256:192171bfe316c83330527f17ad244639e941ef0ddf23804a8f2c14c20b419ddc",
         "locator": {
           "kind": "symbol",
           "name": "_launch_prepared_role_session"
@@ -206,8 +224,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "356af2fbfc68dbcf1528f5517e095623d30ad5b2",
-            "content": "sha256:8f04be34eb5799c19c2075a28d8f6662fedade78b336a0046a681edcb2fea8e0",
+            "blob": "b7d5bcb01c2f0a57fc52879d47e6af720a1e8db3",
+            "content": "sha256:be8af700c1038b87da7566a3242db151c36aa3c09d5d89e1400a12c938b18bda",
             "locator": {
               "kind": "file"
             }
@@ -257,8 +275,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "356af2fbfc68dbcf1528f5517e095623d30ad5b2",
-            "content": "sha256:8f04be34eb5799c19c2075a28d8f6662fedade78b336a0046a681edcb2fea8e0",
+            "blob": "b7d5bcb01c2f0a57fc52879d47e6af720a1e8db3",
+            "content": "sha256:be8af700c1038b87da7566a3242db151c36aa3c09d5d89e1400a12c938b18bda",
             "locator": {
               "kind": "file"
             }
@@ -272,8 +290,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "356af2fbfc68dbcf1528f5517e095623d30ad5b2",
-            "content": "sha256:8f04be34eb5799c19c2075a28d8f6662fedade78b336a0046a681edcb2fea8e0",
+            "blob": "b7d5bcb01c2f0a57fc52879d47e6af720a1e8db3",
+            "content": "sha256:be8af700c1038b87da7566a3242db151c36aa3c09d5d89e1400a12c938b18bda",
             "locator": {
               "kind": "file"
             }
@@ -287,7 +305,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "356af2fbfc68dbcf1528f5517e095623d30ad5b2",
+            "blob": "b7d5bcb01c2f0a57fc52879d47e6af720a1e8db3",
             "content": "sha256:e5a6159e125ad5f9700f3da219ee09af0124bd46de52a42b4596f168edf5216d",
             "locator": {
               "kind": "symbol",
@@ -303,7 +321,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "356af2fbfc68dbcf1528f5517e095623d30ad5b2",
+            "blob": "b7d5bcb01c2f0a57fc52879d47e6af720a1e8db3",
             "content": "sha256:de581ef4da625e4f6867fa2525c309ad0371fccedcf1af7e5e44c6a4af768d65",
             "locator": {
               "kind": "symbol",
@@ -319,8 +337,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "356af2fbfc68dbcf1528f5517e095623d30ad5b2",
-            "content": "sha256:98fc21e296318ae86d2b63e98e90f49212cb87fbae8ed4e5e4ac280cfeb1b37d",
+            "blob": "b7d5bcb01c2f0a57fc52879d47e6af720a1e8db3",
+            "content": "sha256:192171bfe316c83330527f17ad244639e941ef0ddf23804a8f2c14c20b419ddc",
             "locator": {
               "kind": "symbol",
               "name": "_launch_prepared_role_session"
@@ -352,7 +370,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "356af2fbfc68dbcf1528f5517e095623d30ad5b2",
+            "blob": "b7d5bcb01c2f0a57fc52879d47e6af720a1e8db3",
             "content": "sha256:e5a6159e125ad5f9700f3da219ee09af0124bd46de52a42b4596f168edf5216d",
             "locator": {
               "kind": "symbol",
@@ -368,7 +386,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "356af2fbfc68dbcf1528f5517e095623d30ad5b2",
+            "blob": "b7d5bcb01c2f0a57fc52879d47e6af720a1e8db3",
             "content": "sha256:add318f5f52459454ace603b7301aeecf2076960e72cbde7ce198c17d4c4fc7a",
             "locator": {
               "kind": "symbol",
@@ -409,12 +427,12 @@
       ]
     },
     "22": {
-      "note": "At successful receipt ownership before native execution, _record_manager_start writes the Architect address; _architect_behind verifies Orchestrator.parentAgentId by its Architect launch receipt. Failure to persist the address is caught rather than losing the seat.\n\nAnchor: `remember_master_architect`",
+      "note": "At successful receipt ownership before native execution, _record_manager_start writes the Architect address; _architect_behind verifies Orchestrator.parentAgentId by its Architect launch receipt. Failure to persist the address is caught rather than losing the seat.",
       "targets": [
         {
           "anchor": {
-            "blob": "356af2fbfc68dbcf1528f5517e095623d30ad5b2",
-            "content": "sha256:8f04be34eb5799c19c2075a28d8f6662fedade78b336a0046a681edcb2fea8e0",
+            "blob": "b7d5bcb01c2f0a57fc52879d47e6af720a1e8db3",
+            "content": "sha256:be8af700c1038b87da7566a3242db151c36aa3c09d5d89e1400a12c938b18bda",
             "locator": {
               "kind": "file"
             }
@@ -428,8 +446,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "356af2fbfc68dbcf1528f5517e095623d30ad5b2",
-            "content": "sha256:98fc21e296318ae86d2b63e98e90f49212cb87fbae8ed4e5e4ac280cfeb1b37d",
+            "blob": "b7d5bcb01c2f0a57fc52879d47e6af720a1e8db3",
+            "content": "sha256:192171bfe316c83330527f17ad244639e941ef0ddf23804a8f2c14c20b419ddc",
             "locator": {
               "kind": "symbol",
               "name": "_launch_prepared_role_session"
@@ -444,7 +462,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "356af2fbfc68dbcf1528f5517e095623d30ad5b2",
+            "blob": "b7d5bcb01c2f0a57fc52879d47e6af720a1e8db3",
             "content": "sha256:4c24f13a69cee68fbd2c1dde8d15129b0122f9473303ec967c7745d772f6758b",
             "locator": {
               "kind": "symbol",

@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "4973808b24e87c4f48217316928eb053db0fa69b",
-        "content": "sha256:7a20a4770517aeb358d7d1a02f45cbafd50b35b38a7f5b6d5e70e67225d8ce88",
+        "blob": "acdc137a6ab486cb38fbef91f2a4cdd6b83fc247",
+        "content": "sha256:bab14eb5eda4ffe75c9a1454e1a58d1052326d2c1ea66d4ba890fdb8866f2b40",
         "locator": {
           "kind": "file"
         }
@@ -25,43 +25,13 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4973808b24e87c4f48217316928eb053db0fa69b",
+            "blob": "acdc137a6ab486cb38fbef91f2a4cdd6b83fc247",
             "content": "sha256:35ecc2899a8c36630d942bdebe99144e8e526d74f6e49718f19a83d8009715dd",
             "locator": {
-              "end": 50,
+              "end": 53,
               "kind": "line_range",
-              "start": 47
+              "start": 50
             }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "2": {
-      "note": "The entry composes independent activity publication/RPC and parent-wake registration, with explicit initialization and unload failure handling.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "4973808b24e87c4f48217316928eb053db0fa69b",
-            "content": "sha256:b92378c07125e1db9fa829fdad89fbfc55ef32bb63d99f1966188f7985e0e400",
-            "locator": {
-              "end": 44,
-              "kind": "line_range",
-              "start": 1
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "dc867726c9071a79792d76230a55b4be0f68908c",
-            "content": "sha256:4b28047d3fdeb79a7f95dd7a51e7282e13992884ee34ca45140631d391f7d329",
-            "locator": {
-              "end": 60,
-              "kind": "line_range",
-              "start": 1
-            },
-            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_events.ts"
           },
           "kind": "code"
         }

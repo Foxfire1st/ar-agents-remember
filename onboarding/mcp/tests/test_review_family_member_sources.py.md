@@ -139,3 +139,6 @@ No meaningful cross-repo references found.
 - The shared-fixture consumer registration.
 
 - Retired at the fifth freeze d59c3493: mcp/tests/evidence-lifecycle.toml:3324-3324 - the bytes it recorded now occur 67 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:1955-1955 - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.
+
+
+- The shared-fixture consumer registration. In merged A3 this reference cites all 5 artifact blocks whose exact consumers list names this module. The earlier occurrence count and first-occurrence wording described unrelated narrow text, already unrelated in the parked source, and did not establish this module's consumer membership. Those targets are replaced by this complete membership set. Former member identity is not recovered or claimed. [35]

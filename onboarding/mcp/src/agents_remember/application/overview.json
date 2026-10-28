@@ -7599,12 +7599,25 @@
         },
         {
           "anchor": {
-            "blob": "356af2fbfc68dbcf1528f5517e095623d30ad5b2",
-            "content": "sha256:a467a526097475301964f25efa8803cbe3b101678f5c1aa2005a075c8d8983ef",
+            "blob": "b7d5bcb01c2f0a57fc52879d47e6af720a1e8db3",
+            "content": "sha256:192171bfe316c83330527f17ad244639e941ef0ddf23804a8f2c14c20b419ddc",
             "locator": {
-              "end": 905,
+              "end": 775,
               "kind": "line_range",
-              "start": 747
+              "start": 612
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_routes.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b7d5bcb01c2f0a57fc52879d47e6af720a1e8db3",
+            "content": "sha256:f283095054de1829707b97db5c978052fbfffc613c11a174edf16fadb8929a9f",
+            "locator": {
+              "end": 924,
+              "kind": "line_range",
+              "start": 877
             },
             "path": "mcp/src/agents_remember/cli/role_launch_routes.py"
           },

@@ -167,3 +167,6 @@ and in `test_the_memory_quality_controller_persists_the_worklist_and_renders_it_
 - The census-derived consumer row.
 
 - Retired at the fifth freeze d59c3493: mcp/tests/evidence-lifecycle.toml:2080-2080 - the bytes it recorded now occur 5 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.
+
+
+- The census-derived consumer row. In merged A3 this reference cites all 2 artifact blocks whose exact consumers list names this module. The earlier occurrence count and first-occurrence wording described unrelated narrow text, already unrelated in the parked source, and did not establish this module's consumer membership. Those targets are replaced by this complete membership set. Former member identity is not recovered or claimed. [40]

@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "e6b977b32897772eb2c4bb4e5fffc0cc82030316",
-        "content": "sha256:dd931a41ae1f7df5364a3ea153d5fdf6260eb2475579ae027a522af34ea47580",
+        "blob": "4f087ca2c4a81881c17a0a75921d8858c36f04de",
+        "content": "sha256:7376ad80894ecf5ecaf1ab8895b287b56bc1f3f3ab74d0b0e95fe70fdfc18efc",
         "locator": {
           "kind": "file"
         }
@@ -16,6 +16,24 @@
         "leaf": "260928-MIK-L184"
       },
       "rationale": "The tracker is where the list and the events are reconciled, so the one-generation rule is realized here.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "4f087ca2c4a81881c17a0a75921d8858c36f04de",
+        "content": "sha256:17a96b187625bfcc6c87da16c6d629055050b55a60487ce26dd2e48fa22a1e01",
+        "locator": {
+          "kind": "symbol",
+          "name": "SubagentTracker.onNativeProvider"
+        }
+      },
+      "id": "RLZ-JKMV2G",
+      "invariant": "INV-G841F9",
+      "origin": {
+        "handoffEntry": "MIK-R216@v1",
+        "leaf": "260928-MIK-L203"
+      },
+      "rationale": "This sink is how a natively-reporting provider drops out whatever the helper's parent is, before the parent is even read.",
       "role": "enforcement"
     }
   ],

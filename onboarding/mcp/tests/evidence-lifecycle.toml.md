@@ -2,7 +2,7 @@
 
 ## Current paired source contract — scoped assertions and incoming catalogs
 
-The current parsed catalog declares 17 contracts and 91 artifacts (the leaf's own contract and shared-support artifact included). Compared with base91bb7e2d, L57 adds two permanent integration/local-composition shared supports: `review_curator_fixture_support.py`, with three consumers and an integrity-rejection replacement node, and `reviewer_leaf_view_support.py`, with five consumers and a real-child-parity replacement node. Eight existing artifact consumer lists change; existing non-consumer fields and all contract rows are preserved. Three permanent shared-support artifacts cover reconsideration setup, writer-correction fixtures and the native persisted-worklist prerequisite; their replacement nodes and exact consumer lists declare reusable evidence ownership, not invocation. The earlier 12-contract/70-artifact catalog preceded these support declarations. Its regeneration account—25 added settings-guard consumers and six deleted plus one duplicate Node-fixture consumers removed—remains historical, as do the older 14-contract/102-artifact populations. Source-owned canonicalization preserves unaffected lifecycle metadata and applies the owner’s complete supported delta.
+The current parsed catalog declares 17 contracts and 93 artifacts (the leaf's own contract and shared-support artifact included). Compared with base91bb7e2d, L57 adds two permanent integration/local-composition shared supports: `review_curator_fixture_support.py`, with three consumers and an integrity-rejection replacement node, and `reviewer_leaf_view_support.py`, with five consumers and a real-child-parity replacement node. The merged A3 catalog now gives these two supports three and seven exact consumers respectively; the five-consumer introduction count is historical. Eight existing artifact consumer lists change; existing non-consumer fields and all contract rows are preserved. Three permanent shared-support artifacts cover reconsideration setup, writer-correction fixtures and the native persisted-worklist prerequisite; their replacement nodes and exact consumer lists declare reusable evidence ownership, not invocation. The earlier 12-contract/70-artifact catalog preceded these support declarations. Its regeneration account—25 added settings-guard consumers and six deleted plus one duplicate Node-fixture consumers removed—remains historical, as do the older 14-contract/102-artifact populations. Source-owned canonicalization preserves unaffected lifecycle metadata and applies the owner’s complete supported delta.
 
 The held catalog declares consumers for held queues, native retirement, role_start_set, comparison changesets, the citation/quality/packaging shaped memory-tool row modules, coherence file transport, takeover and uv-minimum bootstrap modules. The permanent tool_answer_l110_rows support has an artifact declaration and a replacement test node. The role-agent and role-message declarations remain on the existing settings-guard, Node-lockfile, Paseo-launch and Paseo-runtime rows, and since MIK-R200 the settings-guard and Node-lockfile rows also declare the four new native-attention modules, with `test_attention_native_inputs.py` declared on the Paseo-runtime row. test_paseo_role_agents.py is declared on settings-guard, Node-lockfile and Paseo-runtime; test_role_message_files.py on those three plus Paseo-launch; test_role_message_wording.py on Node-lockfile. These are present catalog declarations, not a source-diff account or evidence of invocation. Node-lockfile membership follows the syntactic dependency oracle and does not by itself establish use of that particular fixture. The existing nine Doc14 fixture rows and validator support also declare `test_mik_r53_judgment_rows.py` and `test_mik_r53_report_only_rules.py`; writer support declares judgment_rows and onboarding_gate; the Node lockfile row declares all three. This extends consumer reachability only, not artifact/contract identity, lane assignment or execution.
 
@@ -80,7 +80,7 @@ The pre-support-split catalog declared 12 contracts and 70 artifacts; CODE6/pass
 
 ### Current Contract
 
-The current source TOML declares 17 contract rows and 91 artifact rows, including the retained `canvas-host-and-presenter-cases` contract and its shared-support artifact. The retired closeout fixture-support artifact is absent from this current catalog; the earlier 70-artifact epoch preceded the three shared-support declarations. L113 removes retired owners and their governed artifacts; the earlier composed 14-contract/102-artifact population is historical. The remaining R111 shaped-row support retains its declaration and replacement contract. Counts are source inventory, not executed catalog validation or acceptance.
+The current source TOML declares 17 contract rows and 93 artifact rows, including the retained `canvas-host-and-presenter-cases` contract and its shared-support artifact. The retired closeout fixture-support artifact is absent from this current catalog; the earlier 70-artifact epoch preceded the three shared-support declarations. L113 removes retired owners and their governed artifacts; the earlier composed 14-contract/102-artifact population is historical. The remaining R111 shaped-row support retains its declaration and replacement contract. Counts are source inventory, not executed catalog validation or acceptance.
 The incoming 101-artifact and prior 14-contract/102-artifact populations remain historical on their own objects. Native source-reference currency alone cannot establish semantic correspondence.
 
 
@@ -224,7 +224,7 @@ The catalog declares the grant, dashboard, direct-leaf integration/role-start an
 
 ## Task-Document Order Consumer
 
-`mcp/tests/test_task_document_order.py` is an exact declared consumer of both `mcp/tests/fixtures/repository_profiles/node/package-lock.json` and the canonical support artifact `mcp/tests/_user_settings_guard.py`. The current parsed inventory has 17 contracts and 91 artifacts (the retained canvas contract and shared-support artifact included); the earlier 70-artifact inventory predates the three shared-support declarations. These registrations change consumer membership, not artifact identity, lifetime, fidelity, replacement contract or other metadata. TOML declaration/parsing is not fixture use, loader or test execution.
+`mcp/tests/test_task_document_order.py` is an exact declared consumer of both `mcp/tests/fixtures/repository_profiles/node/package-lock.json` and the canonical support artifact `mcp/tests/_user_settings_guard.py`. The current parsed inventory has 17 contracts and 93 artifacts (the retained canvas contract and shared-support artifact included); the earlier 70-artifact inventory predates the three shared-support declarations. These registrations change consumer membership, not artifact identity, lifetime, fidelity, replacement contract or other metadata. TOML declaration/parsing is not fixture use, loader or test execution.
 
 
 - Existing Node package-lock artifact includes test_task_document_order.py as an exact consumer; no new artifact/contract or executed invocation is inferred.
@@ -247,7 +247,7 @@ The derived lifecycle catalogue registers `test_review_evidence_packet.py` and `
 
 ## Composed consumer selection
 
-The composed catalog still declares 17 contracts and 91 artifacts. The canonical settings-guard and portable Node-lockfile consumer lists each include the nine retired-provider regression modules declared in the lane catalog. The Paseo runtime support also declares test_l192_projection_watch_roots.py. The retired test_provider_current_state.py is absent from the catalog consumer lists. Compared with the preserved pre-composition source, these are consumer-membership changes only: contract rows, artifact identities and every non-consumer lifecycle field remain unchanged. The after-discovery regression and retained publication/landing-workflow modules remain declared on both shared lists. Membership is dependency reachability, not invocation or a passing result.
+The composed catalog still declares 17 contracts and 93 artifacts. The canonical settings-guard and portable Node-lockfile consumer lists each include the nine retired-provider regression modules declared in the lane catalog. The Paseo runtime support also declares test_l192_projection_watch_roots.py. The retired test_provider_current_state.py is absent from the catalog consumer lists. Compared with the preserved pre-composition source, these are consumer-membership changes only: contract rows, artifact identities and every non-consumer lifecycle field remain unchanged. The after-discovery regression and retained publication/landing-workflow modules remain declared on both shared lists. Membership is dependency reachability, not invocation or a passing result.
 
 ## Evidence
 
@@ -1033,7 +1033,7 @@ The source-owned regeneration adds `mcp/tests/test_mik_r177_gate_groups_identica
 
 ## MIK-R118/R124 mark-suite consumers
 
-The source declares `mcp/tests/test_mik_r118_r124_marks.py` as a consumer on sixteen existing artifacts: `_user_settings_guard.py` and the Node-profile `package-lock.json`, `anchor_fixture_models.py`, the nine `fixtures/knowledge_files/` records (including `layout.json`), and `knowledge_index_test_support.py`, `knowledge_rows_test_support.py`, `knowledge_validator_test_support.py` and `knowledge_writer_test_support.py`. In that registration epoch, artifact and contract populations stayed at 13 contracts and 76 artifacts; the current parsed inventory is 17 contracts and 91 artifacts, and every non-consumer field, replacement node, category, scope, guard and limit is preserved; only those `consumers` lists grow, in canonical order. This is consumer reachability, not an execution claim.
+The source declares `mcp/tests/test_mik_r118_r124_marks.py` as a consumer on sixteen existing artifacts: `_user_settings_guard.py` and the Node-profile `package-lock.json`, `anchor_fixture_models.py`, the nine `fixtures/knowledge_files/` records (including `layout.json`), and `knowledge_index_test_support.py`, `knowledge_rows_test_support.py`, `knowledge_validator_test_support.py` and `knowledge_writer_test_support.py`. In that registration epoch, artifact and contract populations stayed at 13 contracts and 76 artifacts; the current parsed inventory is 17 contracts and 93 artifacts, and every non-consumer field, replacement node, category, scope, guard and limit is preserved; only those `consumers` lists grow, in canonical order. This is consumer reachability, not an execution claim.
 
 ## Current account — this leaf's lifecycle rows
 
@@ -1052,14 +1052,14 @@ The lifecycle registry gains the leaf's new evidence files: the case-extent test
 
 
 
-The existing curator-coherence and read-boundary-oracle artifact consumer lists include `mcp/tests/test_terminal_notice_commit_recovery.py` for its new fixture imports. These two source-derived memberships preserve every other consumer and non-consumer field, all 17 contracts and 91 artifacts, and lane metadata. This is dependency accounting, not proof of execution or acceptance.
+The existing curator-coherence and read-boundary-oracle artifact consumer lists include `mcp/tests/test_terminal_notice_commit_recovery.py` for its new fixture imports. These two source-derived memberships preserve every other consumer and non-consumer field, all 17 contracts and 93 artifacts, and lane metadata. This is dependency accounting, not proof of execution or acceptance.
 
 
 
 
 ## Request-locator consumer registration
 
-`mcp/tests/test_role_handover_locator.py` and `mcp/tests/test_role_locator_replay.py` are declared as consumers on the two existing rows whose exact lists name every governed test module: the shared user-settings guard, `mcp/tests/_user_settings_guard.py`, and the portable Node-profile lockfile fixture, `mcp/tests/fixtures/repository_profiles/node/package-lock.json`. Each list holds each module once, in canonical order between the neighbouring role modules. The change is those consumer entries only: the catalog keeps its 17 contracts and 91 artifacts, and artifact identities, owners, kinds, authority, category, fidelity, cadence, lifetimes, replacement contracts and every other consumer list remain as they were. Registration is dependency reachability, not an execution or acceptance claim.
+`mcp/tests/test_role_handover_locator.py` and `mcp/tests/test_role_locator_replay.py` are declared as consumers on the two existing rows whose exact lists name every governed test module: the shared user-settings guard, `mcp/tests/_user_settings_guard.py`, and the portable Node-profile lockfile fixture, `mcp/tests/fixtures/repository_profiles/node/package-lock.json`. Each list holds each module once, in canonical order between the neighbouring role modules. The change is those consumer entries only: the catalog keeps its 17 contracts and 93 artifacts, and artifact identities, owners, kinds, authority, category, fidelity, cadence, lifetimes, replacement contracts and every other consumer list remain as they were. Registration is dependency reachability, not an execution or acceptance claim.
 
 The current catalog names `test_dashboard_autostart_after_discovery.py` on the canonical settings-guard and Node-lockfile consumer lists. This is the replacement for the removed first-call-only test path: its source assertions cover scheduling after the discovery answer is produced and the first-call fallback through one latch. The existing L194 publication/landing-workflow consumers remain in both shared lists. These memberships select evidence and establish no invocation or live-host startup result.
 
@@ -1088,7 +1088,7 @@ The following source-bound captions restore this card's inherited evidence uses.
 
 
 
-The source-file quality regression is an additional consumer of the converted-knowledge and memory-quality-sync contracts. It adds no contract or artifact identity: the catalog remains 17 contracts and 91 artifacts.
+The source-file quality regression is an additional consumer of the converted-knowledge and memory-quality-sync contracts. It adds no contract or artifact identity: the catalog remains 17 contracts and 93 artifacts.
 
 
 
@@ -1310,9 +1310,8 @@ The source-file quality regression is an additional consumer of the converted-kn
 
 
 
-- Durable-artifact declarations include the R53 judgment-row and report-only consumers on the nine retained knowledge_files fixture rows; lane rows remain in test-evidence-lanes.toml.
+- Durable-artifact declarations include the R53 judgment-row and report-only consumers on the nine retained knowledge_files fixture rows; lane rows remain in test-evidence-lanes.toml. [14]
 
-Retired at the fifth freeze d59c3493: mcp/tests/evidence-lifecycle.toml:1257-1290 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit de5a7adbb21b2f6f22c3ced0eed9dd7189fe93c7; mcp/tests/evidence-lifecycle.toml:1261-1262 - the bytes it recorded now occur 3 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:1292-1293 - the bytes it recorded now occur 10 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:1323-1324 - the bytes it recorded now occur 10 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:1354-1355 - the bytes it recorded now occur 10 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:1385-1386 - the bytes it recorded now occur 9 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:1416-1417 - the bytes it recorded now occur 9 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:1447-1448 - the bytes it recorded now occur 47 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:1478-1479 - the bytes it recorded now occur 20 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted [14]
 
 
 
@@ -1324,9 +1323,8 @@ Retired at the fifth freeze d59c3493: mcp/tests/evidence-lifecycle.toml:1257-129
 
 
 
-- **Historical source-bound reference account, not an operative override:** The Node lockfile artifact declares the two reviewer-worklist modules as consumers.
 
-Retired at the fifth freeze d59c3493: mcp/tests/evidence-lifecycle.toml:2297-2298 - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted [95]
+- **Historical source-bound reference account, not an operative override:** The Node lockfile artifact declares the two reviewer-worklist modules as consumers. [95]
 
 
 
@@ -1398,15 +1396,14 @@ Retired at the fifth freeze d59c3493: mcp/tests/evidence-lifecycle.toml:1249-125
 
 
 
-- **Historical source-bound reference account, not an operative override:** The conversion-toolchain module is declared on the curator-coherence and read-scope artifact rows. Generation support currently declares test_knowledge_read_boundaries.py and test_knowledge_read_paths.py.
 
-Retired at the fifth freeze d59c3493: mcp/tests/evidence-lifecycle.toml:3298-3298 - the bytes it recorded now occur 4 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted [225]
-
+- **Historical source-bound reference account, not an operative override:** The conversion-toolchain module is declared on the curator-coherence and read-scope artifact rows. Generation support currently declares test_knowledge_read_boundaries.py and test_knowledge_read_paths.py. [225]
 
 
 
 
-- Historical source-bound account: the earlier five-artifact consumer count for test_knowledge_proofs.py is retained as historical. The current catalog declares the module on exact artifact consumer lists; these declarations establish no invocation.
+
+- Historical source-bound account: the earlier five-artifact consumer count for test_knowledge_proofs.py is retained as historical. The current catalog declares the module on exact artifact consumer lists; these declarations establish no invocation. [226]
 
 
 
@@ -1418,7 +1415,7 @@ Retired at the fifth freeze d59c3493: mcp/tests/evidence-lifecycle.toml:3298-329
 
 
 
-- Historical source-bound account: the earlier one-list consumer account for test_knowledge_worklist_leaf.py is retained as historical. The current catalog declares the module on exact artifact consumer lists; membership establishes no execution.
+- Historical source-bound account: the earlier one-list consumer account for test_knowledge_worklist_leaf.py is retained as historical. The current catalog declares the module on exact artifact consumer lists; membership establishes no execution. [228]
 
 
 
@@ -1430,7 +1427,7 @@ Retired at the fifth freeze d59c3493: mcp/tests/evidence-lifecycle.toml:3298-329
 
 
 
-- **Historical source-bound reference account, not an operative override:** The current catalog declares mcp/tests/test_knowledge_currentness.py on 1 exact artifact consumer list.
+- The earlier caption in memory base adc69d4c, paired with code d59c3493, reported one exact consumer list for test_knowledge_currentness.py. Re-reading that code tree and frozen A2 (0f88e54b) finds two: _user_settings_guard.py and the Node package-lock fixture. The merged A3 catalog retains those same two lists. The one-list count was incorrect; these memberships are declarations, not execution evidence. [230]
 
 
 
@@ -1442,7 +1439,7 @@ Retired at the fifth freeze d59c3493: mcp/tests/evidence-lifecycle.toml:3298-329
 
 
 
-- **Historical source-bound reference account, not an operative override:** The Node lockfile artifact declares mcp/tests/test_knowledge_paging.py as a consumer.
+- **Historical source-bound reference account, not an operative override:** The Node lockfile artifact declares mcp/tests/test_knowledge_paging.py as a consumer. [232]
 
 
 
@@ -1450,13 +1447,13 @@ Retired at the fifth freeze d59c3493: mcp/tests/evidence-lifecycle.toml:3298-329
 
 - Historical empty-caption carriers: these preserved numbers have no operative proposition and confer no current declaration, execution or acceptance. Their recorded source custody is not a missing semantic claim to invent. [237]
 
-Retired at the fifth freeze d59c3493: mcp/tests/evidence-lifecycle.toml:1-4036 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit f2b7c648f540efb9d64ceea22e11e651cb5cc914. Retired means the anchor no longer stands, not that the cited subject was deleted [233]
+- Historical empty-caption carriers: these preserved numbers have no operative proposition and confer no current declaration, execution or acceptance. Their recorded source custody is not a missing semantic claim to invent. [233]
 
 
 
 
 
-- Historical source-bound account: the earlier one-list consumer account for test_planned_knowledge_effects.py is retained as historical. The current catalog declares the module on exact artifact consumer lists; membership establishes no execution.
+- Historical source-bound account: the earlier one-list consumer account for test_planned_knowledge_effects.py is retained as historical. The current catalog declares the module on exact artifact consumer lists; membership establishes no execution. [234]
 
 
 
@@ -1468,7 +1465,7 @@ Retired at the fifth freeze d59c3493: mcp/tests/evidence-lifecycle.toml:1-4036 -
 
 
 
-- **Historical source-bound reference account, not an operative override:** The Node lockfile artifact declares mcp/tests/test_knowledge_leaf_read.py as a consumer.
+- **Historical source-bound reference account, not an operative override:** The Node lockfile artifact declares mcp/tests/test_knowledge_leaf_read.py as a consumer. [236]
 
 
 
@@ -1487,7 +1484,7 @@ Retired at the fifth freeze d59c3493: mcp/tests/evidence-lifecycle.toml:1-4036 -
 
 
 
-- **Historical source-bound reference account, not an operative override:** The Node lockfile artifact declares mcp/tests/test_unexplained_change_disposition.py as a consumer.
+- **Historical source-bound reference account, not an operative override:** The Node lockfile artifact declares mcp/tests/test_unexplained_change_disposition.py as a consumer. [239]
 
 
 
@@ -1507,7 +1504,7 @@ Retired at the fifth freeze d59c3493: mcp/tests/evidence-lifecycle.toml:397-397 
 
 
 
-- Historical source-bound account: the earlier one-list consumer account for test_reconsideration_surfacing.py is retained as historical. The current catalog declares the module on exact artifact consumer lists; membership establishes no execution.
+- Historical source-bound account: the earlier one-list consumer account for test_reconsideration_surfacing.py is retained as historical. The current catalog declares the module on exact artifact consumer lists; membership establishes no execution. [242]
 
 
 
@@ -1531,7 +1528,7 @@ Retired at the fifth freeze d59c3493: mcp/tests/evidence-lifecycle.toml:397-397 
 
 
 
-- **Historical source-bound reference account, not an operative override:** Closeout fixture support declares the retained code/memory transaction test as its replacement node. [246]
+- **Historical source-bound reference account, not an operative override:** The retired closeout fixture-support artifact formerly declared the retained code/memory transaction replacement. It is absent from the merged A3 catalog. The former narrow target at evidence-lifecycle.toml:1026 is withdrawn because it now names checkpoint_landing_test_support.py and cannot witness the retired artifact; the current whole-file target witnesses absence, not the historical replacement declaration. [246]
 
 
 
@@ -1604,7 +1601,7 @@ Retired at the fifth freeze d59c3493: mcp/tests/evidence-lifecycle.toml:397-397 
 
 
 
-- The Node lockfile artifact declares test_worktree_own_environment.py as a consumer; this is dependency accounting, not evidence execution.
+- The Node lockfile artifact declares test_worktree_own_environment.py as a consumer; this is dependency accounting, not evidence execution. [261]
 
 
 
@@ -1663,7 +1660,7 @@ Retired at the fifth freeze d59c3493: mcp/tests/evidence-lifecycle.toml:145-738 
 
 
 
-- The two L57 supports remain permanent integration/local-composition declarations with three and five exact consumers respectively; declarations establish no invocation or acceptance. [271]
+- The two L57 supports remain permanent integration/local-composition declarations. In merged A3, review_curator_fixture_support.py declares three exact consumers and reviewer_leaf_view_support.py declares seven. The earlier three-and-five caption describes the pre-merge source account; five is no longer the current second-list count. Declarations establish no invocation or acceptance. [271]
 
 
 
@@ -1685,19 +1682,19 @@ Retired at the fifth freeze d59c3493: mcp/tests/evidence-lifecycle.toml:1-4036 -
 
 
 
-- Historical source-bound account: the fifteen-artifact STOP-delta caption and its scoped source/grade history remain at their earlier epoch; that count is not the current catalog population. The retained L162 account described task-order consumers on existing Node-lockfile/user-settings-guard artifacts coexisting with landed L61 guard-consumer maintenance; artifact identity and non-consumer metadata stayed distinct from membership, and neither established execution or acceptance.
+- Historical source-bound account: the fifteen-artifact STOP-delta caption and its scoped source/grade history remain at their earlier epoch; that count is not the current catalog population. The retained L162 account described task-order consumers on existing Node-lockfile/user-settings-guard artifacts coexisting with landed L61 guard-consumer maintenance; artifact identity and non-consumer metadata stayed distinct from membership, and neither established execution or acceptance. [274]
 
 
 
 
 
-- The held consumers of `mcp/tests/anchor_fixture_models.py` include `mcp/tests/test_landing_state_refusals.py`, `mcp/tests/test_tool_answer_rows_l111.py`. The existing artifact identity and metadata remain declared; this is not a new addition or execution account.
+- The held consumers of `mcp/tests/anchor_fixture_models.py` include `mcp/tests/test_landing_state_refusals.py`, `mcp/tests/test_tool_answer_rows_l111.py`. The existing artifact identity and metadata remain declared; this is not a new addition or execution account. [275]
 
 
 
 
 
-- The held consumers of `mcp/tests/curator_coherence_test_support.py` include `mcp/tests/test_tool_answer_rows_l111.py`. The existing artifact identity and metadata remain declared; this is not a new addition or execution account.
+- The held consumers of `mcp/tests/curator_coherence_test_support.py` include `mcp/tests/test_tool_answer_rows_l111.py`. The existing artifact identity and metadata remain declared; this is not a new addition or execution account. [276]
 
 
 
@@ -1757,7 +1754,7 @@ Retired at the fifth freeze d59c3493: mcp/tests/evidence-lifecycle.toml:1-4036 -
 
 
 
-- The held consumers of `mcp/tests/knowledge_rows_test_support.py` include `mcp/tests/test_landing_state_refusals.py`, `mcp/tests/test_tool_answer_rows_l111.py`. The existing artifact identity and metadata remain declared; this is not a new addition or execution account.
+- The held consumers of `mcp/tests/knowledge_rows_test_support.py` include `mcp/tests/test_landing_state_refusals.py`, `mcp/tests/test_tool_answer_rows_l111.py`. The existing artifact identity and metadata remain declared; this is not a new addition or execution account. [286]
 
 
 
@@ -1785,13 +1782,13 @@ Retired at the fifth freeze d59c3493: mcp/tests/evidence-lifecycle.toml:3339-338
 
 
 
-- **Historical source-bound caption:** Existing Node package-lock artifact includes test_task_document_order.py as an exact consumer; no new artifact/contract or executed invocation is inferred.
+- **Historical source-bound caption:** Existing Node package-lock artifact includes test_task_document_order.py as an exact consumer; no new artifact/contract or executed invocation is inferred. [290]
 
 
 
 
 
-- **Historical source-bound caption:** The existing canonical user-settings guard artifact declares test_task_document_order.py as an exact consumer; membership alone is not test execution.
+- **Historical source-bound caption:** The existing canonical user-settings guard artifact declares test_task_document_order.py as an exact consumer; membership alone is not test execution. [291]
 
 
 
@@ -1811,7 +1808,7 @@ Retired at the fifth freeze d59c3493: mcp/tests/evidence-lifecycle.toml:503-503 
 
 
 
-- The deletion-cancellation module joins the existing settings-guard and Node-lockfile consumer lists without new artifact or replacement contracts.
+- The deletion-cancellation module joins the existing settings-guard and Node-lockfile consumer lists without new artifact or replacement contracts. [294]
 
 
 
@@ -1825,7 +1822,7 @@ Retired at the fifth freeze d59c3493: mcp/tests/evidence-lifecycle.toml:1938-193
 
 
 
-- The current exact consumer populations are seven for comparison, twelve for overview-order and fifteen for repeated cleanup; reviewer-worklist-process support remains declared and the retired conversation/Eve artifacts are not declared. Catalog membership is source reachability, not invocation or acceptance.
+- The current exact consumer populations are seven for comparison, twelve for overview-order and fifteen for repeated cleanup; reviewer-worklist-process support remains declared and the retired conversation/Eve artifacts are not declared. Catalog membership is source reachability, not invocation or acceptance. [296]
 
 
 
@@ -1839,13 +1836,13 @@ Retired at the fifth freeze d59c3493: mcp/tests/evidence-lifecycle.toml:3491-353
 
 
 
-- The settings-guard artifact declares test_route_review_clean_sync_door.py as an exact consumer. The earlier derived-unit caption is historical; this declaration establishes no test invocation.
+- The settings-guard artifact declares test_route_review_clean_sync_door.py as an exact consumer. The earlier derived-unit caption is historical; this declaration establishes no test invocation. [298]
 
 
 
 
 
-- Historical affected-closure registration account: the named module is test_route_review_clean_sync_door.py. The current Node package-lock artifact declares that module as an exact consumer; this is source reachability, not an Owner closure plan or execution evidence.
+- Historical affected-closure registration account: the named module is test_route_review_clean_sync_door.py. The current Node package-lock artifact declares that module as an exact consumer; this is source reachability, not an Owner closure plan or execution evidence. [299]
 
 
 
@@ -1864,7 +1861,7 @@ Retired at the fifth freeze d59c3493: mcp/tests/evidence-lifecycle.toml:3491-353
 
 
 
-- **Historical source-bound reference account, not an operative override:** The Node lockfile artifact declares test_worktree_own_environment.py as a consumer; this is dependency accounting, not evidence execution.
+- **Historical source-bound reference account, not an operative override:** The Node lockfile artifact declares test_worktree_own_environment.py as a consumer; this is dependency accounting, not evidence execution. [302]
 
 
 
@@ -1884,25 +1881,25 @@ Retired at the fifth freeze d59c3493: mcp/tests/evidence-lifecycle.toml:3339-338
 
 
 
-- The review-evidence suites are declared consumers of the shared settings guard and the portable Node lockfile, and of no review-read artifact.
+- The review-evidence suites are declared consumers of the shared settings guard and the portable Node lockfile, and of no review-read artifact. [305]
 
 
 
 
 
-- The evidence catalogue registers the `canvas-host-and-presenter-cases` contract and its shared-support artifact `mcp/tests/canvas_host_test_support.py` with internal-canonical authority, affected cadence, permanent lifetime and its exact consumers, so the builders that make a task directory, admitted packet, published revision and comparison answer are declared once for every canvas case.
+- The evidence catalogue registers the `canvas-host-and-presenter-cases` contract and its shared-support artifact `mcp/tests/canvas_host_test_support.py` with internal-canonical authority, affected cadence, permanent lifetime and its exact consumers, so the builders that make a task directory, admitted packet, published revision and comparison answer are declared once for every canvas case. [306]
 
 
 
 
 
-- The settings guard row retains its metadata and gains the developer-message consumer.
+- The settings guard row retains its metadata and gains the developer-message consumer. [307]
 
 
 
 
 
-- The existing portable Node lockfile row gains the same consumer while preserving its independent-boundary declaration.
+- The existing portable Node lockfile row gains the same consumer while preserving its independent-boundary declaration. [308]
 
 
 
@@ -1916,7 +1913,7 @@ Retired at the fifth freeze d59c3493: mcp/tests/evidence-lifecycle.toml:3204-327
 
 
 
-- The current parsed inventory declares 17 contracts and 91 artifacts; earlier catalog populations and landed-L162 comparisons remain historical.
+- The current parsed inventory declares 17 contracts and 93 artifacts; earlier catalog populations and landed-L162 comparisons remain historical. [311]
 
 
 
@@ -1936,21 +1933,20 @@ Retired at the fifth freeze d59c3493: mcp/tests/test-evidence-lanes.toml:344-352
 
 
 
-- The catalog declares 17 contracts and 91 artifacts, including extracted support owners; declarations and replacement nodes are not invocation evidence.
+- The catalog declares 17 contracts and 93 artifacts, including extracted support owners; declarations and replacement nodes are not invocation evidence. [315]
 
 
 
 
 
-- The current settings-guard and Node-lockfile artifact rows both declare test_task_document_order.py as a consumer. Contract/artifact identity and non-consumer metadata are distinct from membership; these declarations establish neither execution nor acceptance.
+- The current settings-guard and Node-lockfile artifact rows both declare test_task_document_order.py as a consumer. Contract/artifact identity and non-consumer metadata are distinct from membership; these declarations establish neither execution nor acceptance. [316]
 
 
 
 
 
-- The existing curator-coherence and read-boundary-oracle artifact lists declare test_terminal_notice_commit_recovery.py as a consumer; declarations establish dependency reachability, not execution.
 
-Retired at the fifth freeze d59c3493: mcp/tests/evidence-lifecycle.toml:1173-1177 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit de5a7adbb21b2f6f22c3ced0eed9dd7189fe93c7; mcp/tests/evidence-lifecycle.toml:3342-3366 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit ad0c3a1296eae9863f6505d3fabc0c73e17bd166. Retired means the anchor no longer stands, not that the cited subject was deleted [317]
+- The existing curator-coherence and read-boundary-oracle artifact lists declare test_terminal_notice_commit_recovery.py as a consumer; declarations establish dependency reachability, not execution. [317]
 
 
 
@@ -1964,7 +1960,7 @@ Retired at the fifth freeze d59c3493: mcp/tests/evidence-lifecycle.toml:1954-195
 
 
 
-- The composed catalog still declares 17 contracts and 91 artifacts. The canonical settings-guard and portable Node-lockfile consumer lists each include the nine retired-provider regression modules declared in the lane catalog. The Paseo runtime support also declares test_l192_projection_watch_roots.py. The retired test_provider_current_state.py is absent from the catalog consumer lists. Compared with the preserved pre-composition source, these are consumer-membership changes only: contract rows, artifact identities and every non-consumer lifecycle field remain unchanged. The after-discovery regression and retained publication/landing-workflow modules remain declared on both shared lists. Membership is dependency reachability, not invocation or a passing result. [319]
+- The composed catalog still declares 17 contracts and 93 artifacts. The canonical settings-guard and portable Node-lockfile consumer lists each include the nine retired-provider regression modules declared in the lane catalog. The Paseo runtime support also declares test_l192_projection_watch_roots.py. The retired test_provider_current_state.py is absent from the catalog consumer lists. Compared with the preserved pre-composition source, these are consumer-membership changes only: contract rows, artifact identities and every non-consumer lifecycle field remain unchanged. The after-discovery regression and retained publication/landing-workflow modules remain declared on both shared lists. Membership is dependency reachability, not invocation or a passing result. [319]
 
 
 

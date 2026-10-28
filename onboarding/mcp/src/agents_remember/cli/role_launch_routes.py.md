@@ -55,6 +55,7 @@ The options and dispatch endpoints share a `launcher_catalog_question` context f
 
 - Frozen takeover and requested reason are recorded before the host call. [18]
 
+
 - Missing-copy and step-up warnings coexist in the launch request rules. [19]
 
 
@@ -98,6 +99,7 @@ Investigator dispatch uses the existing selection admission lock; options expose
 - Frozen implementation of _start_execution supporting the stated file behavior. [2]
 
 - Frozen implementation of _launch_prepared_role_session supporting the stated file behavior. [3]
+
 
 - Frozen implementation of _revive_execution supporting the stated file behavior. [4]
 

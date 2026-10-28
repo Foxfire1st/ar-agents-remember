@@ -10,6 +10,8 @@ The provider subagents the host reports for AR's role agents: one subscription p
 
 ## Code Commentary
 
+The subagent publication carries the provider each helper runs on: the upsert row's `provider` is read from the host's own payload, and its absence is itself the signal — an ACP client emits no such event, so a provider that reports its helpers is told apart from one that does not by whether that field is there.
+
 The plugin subscribes once per boot to `agent.provider_subagents.update` and keeps the subagents whose last `upsert` says `running`, with their `createdAt`. It never polls and holds no timer. Traffic it does not keep is skipped rather than counted — a `timeline` row and an update for a parent outside `role-agents.json` change nothing and cause no write, because the publication emits its ignored events with every write.
 
 Both stores are bounded like the plugin's other stores, and a count beyond a bound is published as the bound, so the publication never grows with the host's traffic.

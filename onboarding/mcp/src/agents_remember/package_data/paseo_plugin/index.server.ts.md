@@ -10,6 +10,8 @@ The canonical server entry exposes the provisioned embed list, composes host-act
 
 ## Code Commentary
 
+The boot writes **one** row file and now shares it: `createTurnEndLog(home)` is built once, so MIK-R183's turn-end rows and MIK-R216's provider verdict row land in the same sink rather than two. The ACP verdict is read at this point too — `createAcpProviderSet` over the installation the plugin runs against — and held for the turn-end decisions that ask whether a seat may declare a helper wait; `PASEO_HOME` is resolved here, so a boot without it is answered at the entry rather than at the first write.
+
 contribute reads the list once at load, logs the entry count and registers ar.embed-list with that value. Provisioning/reload owns refresh, while malformed present data fails visibly.
 
 A host-activity publisher is created from PASEO_HOME, registers its own event handlers, and supplies the explicit ar.host-activity-snapshot RPC: a full reconciliation returns the publisher boot identity. Initialization and unload-publication failures are logged; an unavailable publisher makes the RPC fail visibly. Unload marks publication incomplete. registerParentWakeEvents separately owns its tracker, host-state reads, log sink and steer sends, and returns the cleanup that stops every pending seat wait when the plugin unloads, preserving turn/permission gates without conflating wake behavior with task-state publication. Embed data remains load-time data; neither owner starts a poll.
@@ -27,4 +29,4 @@ The current source and test assertions below establish the documented ownership;
 
 - The server entry reads the embed list at load and registers the existing embed RPC. [1]
 
-- The entry composes independent activity publication/RPC and parent-wake registration, with explicit initialization and unload failure handling. [2]
+- The entry composes independent activity publication/RPC and parent-wake registration, with explicit initialization and unload failure handling.

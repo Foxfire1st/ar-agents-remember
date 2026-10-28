@@ -1,0 +1,90 @@
+{
+  "path": "mcp/src/agents_remember/observer/acp_providers.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "bbb12d34a5ef4aaed3993881dd4f8f537cc9c7e8",
+        "content": "sha256:638731d6c4a120192652783bfa65303c59638d2313e20cce45078a345bf42d9d",
+        "locator": {
+          "kind": "symbol",
+          "name": "ACP_WAIT_INSTRUCTION"
+        }
+      },
+      "id": "RLZ-69EK53",
+      "invariant": "INV-G841F9",
+      "origin": {
+        "handoffEntry": "MIK-R216@v1",
+        "leaf": "260928-MIK-L203"
+      },
+      "rationale": "This constant is rule 3's verbatim launch instruction, the only new sentence an ACP seat's first message carries.",
+      "role": "presentation"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "One frozen schema admits the document; a foreign schema, extra key or unreadable body reads as no answer and never raises.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bbb12d34a5ef4aaed3993881dd4f8f537cc9c7e8",
+            "content": "sha256:962e031c1f5e9dc4f64f7066e681eac0dab268baa5d697c2a4f714b86f53a1fb",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_acp_providers"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Strict frozen models with `extra=\"forbid\"` are what make a foreign document unreadable rather than partly trusted.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bbb12d34a5ef4aaed3993881dd4f8f537cc9c7e8",
+            "content": "sha256:bfa16b5070a7b8053a44e44f6a07a99835f88b9f6b5269dfe5e4117df67ae592",
+            "locator": {
+              "kind": "symbol",
+              "name": "AcpProviders"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Only an explicit ACP verdict adds the instruction, and each outcome carries its own reason.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bbb12d34a5ef4aaed3993881dd4f8f537cc9c7e8",
+            "content": "sha256:348394c3dca3768c44b97d1d7c8fc26540d8e226963e8a59f664ab275268b848",
+            "locator": {
+              "kind": "symbol",
+              "name": "acp_launch_instruction"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The one instruction sentence the launch appends, with the declaration keyword the plugin scans for.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bbb12d34a5ef4aaed3993881dd4f8f537cc9c7e8",
+            "content": "sha256:638731d6c4a120192652783bfa65303c59638d2313e20cce45078a345bf42d9d",
+            "locator": {
+              "kind": "symbol",
+              "name": "ACP_WAIT_INSTRUCTION"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

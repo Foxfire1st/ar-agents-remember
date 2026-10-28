@@ -1,0 +1,22 @@
+{
+  "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/subagent_wait.test.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The module declares eighteen test cases for the helper-wait contract; declarations and assertions do not establish an invocation or pass.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c3354630cf819a2241c813e04c976bb9d28016b4",
+            "content": "sha256:808b9140043a8d1655d4dbd48c240ee5b39d30d97b2f221ccf27df87064ac414",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

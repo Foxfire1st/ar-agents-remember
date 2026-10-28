@@ -12,6 +12,8 @@ File-surface acquisition, shared task/contract inputs, host-to-task binding, lan
 
 ## Hot Path Summary
 
+The route also holds `acp_providers.py`, which decides whether a seat's provider is on ACP: it reads the host's `acp-providers.json` at the installation the plugin runs against and answers for one provider id — the answer a launch uses to append the wait sentence.
+
 1. task_entries.py is the one task/state/membership join; projection.py owns native TaskState, TaskEntry, optional structured list disagreements and workspace counts. Documented-subTask master precedence and genuinely absent-master list fallback are resolved here, not in the browser. Their present contrary/unresolvable masters stay explicit and unbound, and each distinct disagreement is reported once per declaring master. Other listed kinds use list placement under identity/cycle guards; this path does not reject their kind or validate their own master.
 2. host_activity.py validates published host states and event timestamps; serving/projections/host_activity.py owns publication acquisition and caller/parent task binding.
 3. reducer.project_workspace composes supplied facts, passes native tasks/counts through and returns only unbound worktrees in the separate enclosure collection.
