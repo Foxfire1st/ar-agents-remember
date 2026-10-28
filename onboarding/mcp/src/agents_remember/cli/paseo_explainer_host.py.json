@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "a67037d3e15ba9410fd30a4b66d4a23641b135b1",
-        "content": "sha256:de16352747a25c5d79d9de76e6816f738a6fde70d9e8dc9b3fb04ac7168b0dbc",
+        "blob": "53ffe2a0331299a366356ca0b1b3e0dc6317c750",
+        "content": "sha256:733986ba28b858e9075b59196dfee7fdc6bcd309a718d555767580717234fbf1",
         "locator": {
           "kind": "symbol",
           "name": "PaseoExplainerHost.cancel"
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "a67037d3e15ba9410fd30a4b66d4a23641b135b1",
+        "blob": "53ffe2a0331299a366356ca0b1b3e0dc6317c750",
         "content": "sha256:c7a6dde00df7e3e295aa2c9cb7679c67d075358b17f44fee6333c2cc42969260",
         "locator": {
           "kind": "symbol",
@@ -36,24 +36,6 @@
       },
       "rationale": "Produces both launch identity words and refuses empty supplied words.",
       "role": "enforcement"
-    },
-    {
-      "anchor": {
-        "blob": "a67037d3e15ba9410fd30a4b66d4a23641b135b1",
-        "content": "sha256:d08f1af235499e41567a6985593a4ed6ce048e0e18d42f187a0d684711fd6fca",
-        "locator": {
-          "kind": "symbol",
-          "name": "PaseoExplainerHost._require_confined_host"
-        }
-      },
-      "id": "RLZ-TVWART",
-      "invariant": "INV-9DMNQS",
-      "origin": {
-        "handoffEntry": "L183-CUR-ET-ATTACH-confined-host-arguments",
-        "leaf": "260928-MIK-L183"
-      },
-      "rationale": "Refuses unread or nonempty host argument maps before create/send/resume/cancel, retaining the confined-capability no-extra-arguments guarantee after presenter_native removal.",
-      "role": "enforcement"
     }
   ],
   "references": {
@@ -62,8 +44,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a67037d3e15ba9410fd30a4b66d4a23641b135b1",
-            "content": "sha256:4c8abd3a7ab646935396f9e1c79c63259a615bcaec8ca8a8d41533cea63ce7a3",
+            "blob": "53ffe2a0331299a366356ca0b1b3e0dc6317c750",
+            "content": "sha256:fa9c45e249cef9bb55a8f4c1eaa37c57eb7d4302034c40a3aa4659345047f0a7",
             "locator": {
               "kind": "file"
             }
@@ -77,29 +59,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a67037d3e15ba9410fd30a4b66d4a23641b135b1",
+            "blob": "53ffe2a0331299a366356ca0b1b3e0dc6317c750",
             "content": "sha256:1b2e75b4208ae2aec1fe7b2e695c7112cfd69cca4aa9709fdba45281c4f0d195",
             "locator": {
-              "end": 239,
+              "end": 265,
               "kind": "line_range",
-              "start": 196
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "3": {
-      "note": "A confined step refuses while the host's provider map hands a harness extra arguments\n\nAnchor: `def _require_confined_host(`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "a67037d3e15ba9410fd30a4b66d4a23641b135b1",
-            "content": "sha256:d08f1af235499e41567a6985593a4ed6ce048e0e18d42f187a0d684711fd6fca",
-            "locator": {
-              "end": 343,
-              "kind": "line_range",
-              "start": 311
+              "start": 222
             }
           },
           "kind": "code"
@@ -111,12 +76,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a67037d3e15ba9410fd30a4b66d4a23641b135b1",
-            "content": "sha256:303aa67bc4e7ec870d3e4239d84aea205ddead7c73e4a364bb24e3e69b30a7f1",
+            "blob": "53ffe2a0331299a366356ca0b1b3e0dc6317c750",
+            "content": "sha256:72e305c8b05854306c1afb29ea540812f6643b4e429e0281593383f9d65bd6a0",
             "locator": {
-              "end": 447,
+              "end": 432,
               "kind": "line_range",
-              "start": 345
+              "start": 337
             }
           },
           "kind": "code"
@@ -128,12 +93,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a67037d3e15ba9410fd30a4b66d4a23641b135b1",
-            "content": "sha256:16cb00f39de37e3d4d8d82811962f32a15c869d34e4d1306aab95335e2083e80",
+            "blob": "53ffe2a0331299a366356ca0b1b3e0dc6317c750",
+            "content": "sha256:69b0d54a0b21f3527606b2b74e5d6ef3dea2989ff437457ae789416e23ef3a57",
             "locator": {
-              "end": 502,
+              "end": 568,
               "kind": "line_range",
-              "start": 449
+              "start": 516
             }
           },
           "kind": "code"
@@ -145,12 +110,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a67037d3e15ba9410fd30a4b66d4a23641b135b1",
-            "content": "sha256:de16352747a25c5d79d9de76e6816f738a6fde70d9e8dc9b3fb04ac7168b0dbc",
+            "blob": "53ffe2a0331299a366356ca0b1b3e0dc6317c750",
+            "content": "sha256:72064b7ca27f4e529838e3517499155069ca4734113076324f99efab9dc20207",
             "locator": {
-              "end": 638,
+              "end": 707,
               "kind": "line_range",
-              "start": 599
+              "start": 664
             }
           },
           "kind": "code"

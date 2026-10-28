@@ -1,0 +1,23 @@
+{
+  "path": "mcp/tests/test_review_closure_proofs.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "A restarted process takes the stored proof without consuming the bodies again",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "86dd42dec9d39a63c9604777c5de8d84856a4e88",
+            "content": "sha256:d48f17c6004886d13aacab1e016f360b04af9316c20743efd33fd31a13375194",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_restarted_process_takes_the_stored_proof_without_consuming_the_bodies_again"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

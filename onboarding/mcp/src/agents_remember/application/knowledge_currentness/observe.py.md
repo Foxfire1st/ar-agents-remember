@@ -137,7 +137,7 @@ summary is not an unconditional unchanged-blob guarantee.
 - Which locator kinds cannot be re-resolved in a changed blob. [12]
 - Resolution through the worklist's resolver; a missing line-range blob is raised as `CodeObjectUnavailable`, and only answers are put in the cache. [13]
 
-- The reused resolver: the worklist's tree reader and its `resolve`. [14]
+- The reused resolver: the worklist's tree reader and its `resolve`. 
 
 
 - The order cases: unchanged Markdown is current, changed is unverifiable, deleted is stale. [15]
@@ -156,3 +156,8 @@ No meaningful cross-repo references found: the module reads one code repository'
 its caller.
 
 No cross-repo boundary is crossed by this file.
+
+
+Anchor: `CodeTrees` `has_blob` [14]
+
+- Retired at the fifth freeze d59c3493: mcp/src/agents_remember/application/knowledge_worklist/code.py::CodeTrees - the bytes it recorded now occur 6 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.

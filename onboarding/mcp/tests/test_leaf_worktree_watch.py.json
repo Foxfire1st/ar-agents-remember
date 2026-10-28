@@ -1,0 +1,23 @@
+{
+  "path": "mcp/tests/test_leaf_worktree_watch.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The watched directories are exactly the Git-eligible ones, witnessed by test_the_directories_are_the_git_eligible_ones",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e42cf1cf5e6b9246263cdf02e5ad6735d99a8a87",
+            "content": "sha256:3fceb28dd9c2b2b019843563ae471fa2e18ee4bfc569dfbd2940f743a36159c0",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_directories_are_the_git_eligible_ones"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

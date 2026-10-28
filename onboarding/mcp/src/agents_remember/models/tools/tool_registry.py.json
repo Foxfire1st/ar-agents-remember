@@ -35,24 +35,6 @@
       },
       "rationale": "Maps citation_note_revision to CitationNoteRevisionResponse so its public answer is validated by the shared response registry; registration grants no write authority.",
       "role": "unclassified"
-    },
-    {
-      "anchor": {
-        "blob": "ca5af906298a90f3101a98a5542005e3549b3c0a",
-        "content": "sha256:e32d72e73c43c68526666e351964e31154f7ccc5f262554de0776dac177d9e07",
-        "locator": {
-          "kind": "symbol",
-          "name": "TOOL_RESPONSE_MODELS"
-        }
-      },
-      "id": "RLZ-D68QX2",
-      "invariant": "INV-48203N",
-      "origin": {
-        "handoffEntry": "L183-CUR-ET01-bound-explainer-roster",
-        "leaf": "260928-MIK-L183"
-      },
-      "rationale": "TOOL_RESPONSE_MODELS still maps `explainer_control` to `ExplainerControlResponse` (127) and leaves every other response model as it was, so the registry gained one strict model and weakened none.",
-      "role": "enforcement"
     }
   ],
   "references": {

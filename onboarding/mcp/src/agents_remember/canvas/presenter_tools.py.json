@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "c6d51fe267e5a72c0fa7d4aefd0dc711af9fb3d9",
-        "content": "sha256:827460694cfc18c5dd9ccc564446583ec7d18cd812d8a5ed6a9a1a15cdd762d4",
+        "blob": "b4dd69ffa2141b0e24ed49d9d835e75c341c5b8d",
+        "content": "sha256:8548552e374058641d1e8f4b3cb00ef8d2f4eb50ab1cf15e29f61bf0f195e4d9",
         "locator": {
           "kind": "symbol",
           "name": "AuthoringTools"
@@ -26,26 +26,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c6d51fe267e5a72c0fa7d4aefd0dc711af9fb3d9",
-            "content": "sha256:daadee1eab7320cc38395c68d0ba872d1933f075e318a27b03629e6bdd3b4ddd",
+            "blob": "b4dd69ffa2141b0e24ed49d9d835e75c341c5b8d",
+            "content": "sha256:9324a22ea57299596e459be2abf70d8dac4280dbacdd8bfbf258b5e3b3831c39",
             "locator": {
               "kind": "file"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "2": {
-      "note": "The documentation surface is a bounded, separate read.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "c6d51fe267e5a72c0fa7d4aefd0dc711af9fb3d9",
-            "content": "sha256:d2e1c418712a6d57732dc9205bf3c283b0124e6987c34db723ec0551d3521dc9",
-            "locator": {
-              "kind": "symbol",
-              "name": "DOCUMENTATION_HOSTS"
             }
           },
           "kind": "code"
@@ -57,8 +41,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c6d51fe267e5a72c0fa7d4aefd0dc711af9fb3d9",
-            "content": "sha256:daadee1eab7320cc38395c68d0ba872d1933f075e318a27b03629e6bdd3b4ddd",
+            "blob": "b4dd69ffa2141b0e24ed49d9d835e75c341c5b8d",
+            "content": "sha256:9324a22ea57299596e459be2abf70d8dac4280dbacdd8bfbf258b5e3b3831c39",
             "locator": {
               "kind": "file"
             }

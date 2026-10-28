@@ -20,24 +20,6 @@
         }
       ]
     },
-    "18": {
-      "note": "The shell driven by the takeover-wiring test.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "1b839113b8d511b4a8343230e70a8de0be01b79f",
-            "content": "sha256:1ac52653a51e3f6baa0cd6d608709287a3c4c3f8e993d65d3bf8e2170c817edc",
-            "locator": {
-              "end": 842,
-              "kind": "line_range",
-              "start": 791
-            },
-            "path": "dashboard/src/cockpit/Cockpit.tsx"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "19": {
       "note": "`masterDoc` and `seedMaster` — the cast-free seed, which builds its entry through the shared `taskEntry` builder instead of a double cast.\n\nAnchor: `masterDoc`",
       "targets": [

@@ -20,6 +20,8 @@ Fetch, intersections and group geometry are controlled by fixtures. READ_BATCH i
 
 ## Evidence
 
-- Opening reads, intersection/gesture admission and the queued file-task limit. [4]
+- Opening reads, intersection/gesture admission and the queued file-task limit.
 - Closed-group counts/previews and tree-triggered group opening. [5]
-- Added-file newline caps, the one All changes route and code-only-change wording. [6]
+- Added-file newline caps, the one All changes route and code-only-change wording.
+
+- Retired at the fifth freeze d59c3493: dashboard/src/panels/review/reading/ReviewPage.opening.test.tsx:69-161 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 10e466b17feee2530c06b2670fef496c6c9e755f; dashboard/src/panels/review/reading/ReviewPage.opening.test.tsx:216-276 - the region it cited is not in the file at the candidate and no re-point was possible. Retired means the anchor no longer stands, not that the cited subject was deleted.

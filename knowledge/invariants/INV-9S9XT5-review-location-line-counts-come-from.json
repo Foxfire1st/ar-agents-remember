@@ -1,10 +1,9 @@
 {
   "admission": {
     "criteria": [
-      "spans_locations",
-      "guarded_by_test"
+      "spans_locations"
     ],
-    "justification": "Focused numeric cases guard false add/remove totals from treating an unreadable side as empty or counting a trailing terminator as code."
+    "justification": "Focused numeric cases guard false add/remove totals from treating an unreadable side as empty or counting a trailing terminator as code. Reassessed at the L201 fifth freeze (head d59c3493): the guarded_by_test criterion is dropped because the proofs that named it were removed with the tests they cited, which are gone at the candidate; the criteria kept are the ones the tree still satisfies."
   },
   "applicability": "Location added/removed line accounting in the review change-set model and its row/card count presentation.",
   "conditions": [

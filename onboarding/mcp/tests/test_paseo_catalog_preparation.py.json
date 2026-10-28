@@ -1,0 +1,23 @@
+{
+  "path": "mcp/tests/test_paseo_catalog_preparation.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "One operation asks Paseo's catalog once for its preparation and its launch: the modes are metadata then selected, two calls, not four",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e69d38f0b7f1979070cb4731683c8204c4dc704e",
+            "content": "sha256:799b37c3e4d6d6c868586d258639a4725f6fd8e7a227a73b6b53914a3a9cffc3",
+            "locator": {
+              "kind": "symbol",
+              "name": "_modes"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

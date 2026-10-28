@@ -269,19 +269,6 @@
             }
           },
           "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "0729e2487febb7fcc3087bbe5a033d9a994ed5b9",
-            "content": "sha256:1b93354ce790b5b99de83fe5551ac87d02d7c8956bfce1c555e6abe6fe38f330",
-            "locator": {
-              "end": 84,
-              "kind": "line_range",
-              "start": 38
-            },
-            "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_common.py"
-          },
-          "kind": "code"
         }
       ]
     },
@@ -338,7 +325,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8f2ec4583a3bba0ad34652582466b680714fa213",
+            "blob": "d7b32dd73eac8bdb5be126db5ff1fa9738f1e447",
             "content": "sha256:537bf191e7ce1a541098f60a1d6e6d8abec11008aa72a6f51f941099d643ed8e",
             "locator": {
               "kind": "symbol",
@@ -439,8 +426,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0729e2487febb7fcc3087bbe5a033d9a994ed5b9",
-            "content": "sha256:38555019cde060fc859dc1909193cc15341e8b6ebcfded13c0f49e34d5c3a9c8",
+            "blob": "ebd43acfbc3ada61f3802752cbe36506c5dbecb6",
+            "content": "sha256:c6b237de108b6ea7d4c34958fb206df82f5a72a176c8ec5ef95073f71101534a",
             "locator": {
               "kind": "symbol",
               "name": "_canonical_task_json_candidates"
@@ -473,8 +460,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "00dbff88a35b8e2bcb41c27d8fd4dbb239decc67",
-            "content": "sha256:8f89c82c843251008faf48e5e755d90a8e824c4c99d29caed57c71eb612d9aa3",
+            "blob": "77ed3251b5ba88023ded1af8a52472449f890a60",
+            "content": "sha256:f439b773bf39e580bd8927aa89a82039a5ea056a0b58f680dbd48b82ae7d662b",
             "locator": {
               "kind": "file"
             },
@@ -484,7 +471,7 @@
         },
         {
           "anchor": {
-            "blob": "00dbff88a35b8e2bcb41c27d8fd4dbb239decc67",
+            "blob": "77ed3251b5ba88023ded1af8a52472449f890a60",
             "content": "sha256:185e3a48375bc5974a9dfaeffff14b387f9632b99a55cd42b637fc719977748c",
             "locator": {
               "kind": "symbol",

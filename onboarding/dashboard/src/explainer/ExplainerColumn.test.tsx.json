@@ -3,24 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "a29d5be62dac4e891aa5c7053ba2634da1a5aa75",
-        "content": "sha256:b4582af054662269601bfeba087e8b13b1b3334ef8fce1f0b4f9922e3b518ff0",
-        "locator": {
-          "kind": "symbol",
-          "name": "keeps his request when the build fails, and names the step"
-        }
-      },
-      "facet": "Pins the explicit request path and refusal/cancel/in-flight handling with a counted scripted transport.",
-      "id": "PRF-3H7S2Y",
-      "invariant": "INV-M71W78",
-      "origin": {
-        "handoffEntry": "L183-CUR-FE02-first-request",
-        "leaf": "260928-MIK-L183"
-      }
-    },
-    {
-      "anchor": {
-        "blob": "a29d5be62dac4e891aa5c7053ba2634da1a5aa75",
+        "blob": "89d873d01340bda0edc71f5a723577a32836c700",
         "content": "sha256:95728bb69241d8621983f5d2705448e5b9d282a8b22e753bbc86204012105875",
         "locator": {
           "kind": "symbol",
@@ -34,57 +17,6 @@
         "handoffEntry": "L183-CUR-FE-ATTACH-outside-frame-tray",
         "leaf": "260928-MIK-L183"
       }
-    },
-    {
-      "anchor": {
-        "blob": "a29d5be62dac4e891aa5c7053ba2634da1a5aa75",
-        "content": "sha256:8402b489a2d53b4df515d4a09800baa389fd83c4dc05a059b0620989dbd78d45",
-        "locator": {
-          "kind": "symbol",
-          "name": "opens the first-request form with the tray’s picks and intercepts native tray Send"
-        }
-      },
-      "facet": "Pins the explicit request path and refusal/cancel/in-flight handling with a counted scripted transport.",
-      "id": "PRF-VZ01CN",
-      "invariant": "INV-M71W78",
-      "origin": {
-        "handoffEntry": "L183-CUR-FE02-first-request",
-        "leaf": "260928-MIK-L183"
-      }
-    },
-    {
-      "anchor": {
-        "blob": "a29d5be62dac4e891aa5c7053ba2634da1a5aa75",
-        "content": "sha256:d53d12cde114cddb8da3e9b7e4c390c6c6decec05a8939a03075c0950d1e84f8",
-        "locator": {
-          "kind": "symbol",
-          "name": "never posts a second build for a second press while the first runs"
-        }
-      },
-      "facet": "Pins the explicit request path and refusal/cancel/in-flight handling with a counted scripted transport.",
-      "id": "PRF-ZKJQ15",
-      "invariant": "INV-M71W78",
-      "origin": {
-        "handoffEntry": "L183-CUR-FE02-first-request",
-        "leaf": "260928-MIK-L183"
-      }
-    },
-    {
-      "anchor": {
-        "blob": "a29d5be62dac4e891aa5c7053ba2634da1a5aa75",
-        "content": "sha256:7abc52363c37399d287d15162847db2bc08e107e546899c981cdb135b6532b4b",
-        "locator": {
-          "kind": "symbol",
-          "name": "leaves the placeholder on Cancel, and no seat or environment exists before Send"
-        }
-      },
-      "facet": "Pins the explicit request path and refusal/cancel/in-flight handling with a counted scripted transport.",
-      "id": "PRF-ZNJX76",
-      "invariant": "INV-M71W78",
-      "origin": {
-        "handoffEntry": "L183-CUR-FE02-first-request",
-        "leaf": "260928-MIK-L183"
-      }
     }
   ],
   "realizes": [],
@@ -94,12 +26,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a29d5be62dac4e891aa5c7053ba2634da1a5aa75",
+            "blob": "89d873d01340bda0edc71f5a723577a32836c700",
             "content": "sha256:477a8825bc9383c37a9c1680992367764e5260946cc60f8734853728b3a4be41",
             "locator": {
-              "end": 558,
+              "end": 629,
               "kind": "line_range",
-              "start": 542
+              "start": 613
             }
           },
           "kind": "test"
@@ -111,29 +43,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a29d5be62dac4e891aa5c7053ba2634da1a5aa75",
+            "blob": "89d873d01340bda0edc71f5a723577a32836c700",
             "content": "sha256:2eafdc1879589a077a254cf589e49195fd7822b41f9c91d045386b937032c6b6",
             "locator": {
-              "end": 565,
+              "end": 636,
               "kind": "line_range",
-              "start": 560
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "3": {
-      "note": "A Send with nothing to send is refused by the form and posts nothing\n\nAnchor: `never posts a second build for a second press while the first runs`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "a29d5be62dac4e891aa5c7053ba2634da1a5aa75",
-            "content": "sha256:d53d12cde114cddb8da3e9b7e4c390c6c6decec05a8939a03075c0950d1e84f8",
-            "locator": {
-              "end": 377,
-              "kind": "line_range",
-              "start": 365
+              "start": 631
             }
           },
           "kind": "test"
@@ -145,7 +60,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a29d5be62dac4e891aa5c7053ba2634da1a5aa75",
+            "blob": "89d873d01340bda0edc71f5a723577a32836c700",
             "content": "sha256:b4582af054662269601bfeba087e8b13b1b3334ef8fce1f0b4f9922e3b518ff0",
             "locator": {
               "end": 318,

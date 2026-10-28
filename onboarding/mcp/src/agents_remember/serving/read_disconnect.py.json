@@ -1,0 +1,23 @@
+{
+  "path": "mcp/src/agents_remember/serving/read_disconnect.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "read_while_connected stops a read when its client disconnects.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4dff78238eeed1b8052e0af36c9e82b57d4a32f5",
+            "content": "sha256:f37ed35029fe2cd67058da60e0ce4b814778caf111ff75c24c3d703d72a41629",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_while_connected"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

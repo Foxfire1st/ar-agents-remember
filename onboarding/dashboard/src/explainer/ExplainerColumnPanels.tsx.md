@@ -21,3 +21,5 @@ The column's sub-blocks: the header with the task's chats, the placeholder, the 
 - The header's status word, ✦ Explain and the Retire offer follow the phase and the seat [1]
 - The placeholder fixes the role, names the settings role and offers no Start control [2]
 - The build panel states the whole percentage, each step's own mark and count, and a failure's reason and step [3]
+
+

@@ -20,5 +20,7 @@ Specifies the review page's explainer column rule by rule: the selection, the pl
 
 - An open column reads the state once, posts nothing and reads no document chat, warmup or dispatch [1]
 - A closed column issues no request at all [2]
-- A Send with nothing to send is refused by the form and posts nothing [3]
+- A Send with nothing to send is refused by the form and posts nothing
 - The case `keeps his request when the build fails, and names the step` shows a refused build keeping the request and reusing its id [4]
+
+- Retired at the fifth freeze d59c3493: dashboard/src/explainer/ExplainerColumn.test.tsx:365-377 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 5f8398b32760677c370e3145add73cfa8388357b. Retired means the anchor no longer stands, not that the cited subject was deleted.

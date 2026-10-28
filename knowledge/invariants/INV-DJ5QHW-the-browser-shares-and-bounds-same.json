@@ -1,10 +1,9 @@
 {
   "admission": {
     "criteria": [
-      "guarded_by_test",
       "prevents_costly_mistake"
     ],
-    "justification": "A failed bound-index read must not become an immutable browser success that survives explicit Refresh; sharing pending work and isolating the question also prevent duplicate remount requests and cross-selection cards. Existing mounted tests directly assert those failures and recovery boundaries."
+    "justification": "A failed bound-index read must not become an immutable browser success that survives explicit Refresh; sharing pending work and isolating the question also prevent duplicate remount requests and cross-selection cards. Existing mounted tests directly assert those failures and recovery boundaries. Reassessed at the L201 fifth freeze (head d59c3493): the guarded_by_test criterion is dropped because the proofs that named it were removed with the tests they cited, which are gone at the candidate; the criteria kept are the ones the tree still satisfies."
   },
   "applicability": "The dashboard browser module-shared card-answer/in-flight stores and useChangeSetCards consumer for a selected recorded comparison number and shown invariant chunks.",
   "conditions": [

@@ -8,8 +8,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0c7b9ca2d4d5e35569c252b5d2decddec3a4bc33",
-            "content": "sha256:837a64d6bb17f73ad233d08db0f72a1a9bf8b2b8efbb8d26ba161882bedb9f47",
+            "blob": "f884d317176ef56edeba08afba6ebc87737fa1b5",
+            "content": "sha256:0222d39ee8635bb76186f7f8448069f042a2a55ccf702c14c656ac04214e057e",
             "locator": {
               "kind": "symbol",
               "name": "multiplex_review_memory"
@@ -24,91 +24,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0c7b9ca2d4d5e35569c252b5d2decddec3a4bc33",
+            "blob": "f884d317176ef56edeba08afba6ebc87737fa1b5",
             "content": "sha256:4fb7a6d38f9c9c2f31d3c121ed8132e1b33db7e4aa1c2f893ee044d9b0581d70",
             "locator": {
               "kind": "symbol",
               "name": "_resolve_root"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "3": {
-      "note": "Generated/cache/editor spellings are excluded from native watch input.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "0c7b9ca2d4d5e35569c252b5d2decddec3a4bc33",
-            "content": "sha256:d8ea71cf421408fd13a245353ba4306fc3b8eb987c03dba3e305979765380f7f",
-            "locator": {
-              "kind": "symbol",
-              "name": "_admitted"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "4": {
-      "note": "Directory enumeration does not follow symlink directories.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "0c7b9ca2d4d5e35569c252b5d2decddec3a4bc33",
-            "content": "sha256:3d19db367b1149b4cd80340e854f8714107d81590053110f44efe3ee9f28e351",
-            "locator": {
-              "kind": "symbol",
-              "name": "_directories"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "5": {
-      "note": "Nonrecursive native handles are installed and event-reconciled with replacement-before-retirement ordering.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "0c7b9ca2d4d5e35569c252b5d2decddec3a4bc33",
-            "content": "sha256:d9f2db673379acc58d534a3b18520ae6ad39b7de629a3dce884dcad4acf4abf6",
-            "locator": {
-              "kind": "symbol",
-              "name": "_native_worker"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "6": {
-      "note": "The native wait uses a zero timeout and no filesystem polling loop.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "0c7b9ca2d4d5e35569c252b5d2decddec3a4bc33",
-            "content": "sha256:0594a51bfb700b3743ca9c3034047bebd109cfef7ea9668adb2bf32636dc707b",
-            "locator": {
-              "kind": "symbol",
-              "name": "_native_changes"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "7": {
-      "note": "Readiness is separate from coalesced updates; revisions are connection-local and close joins the worker.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "0c7b9ca2d4d5e35569c252b5d2decddec3a4bc33",
-            "content": "sha256:c5e0c9278dd3b314684bc0023270436c0818bfc3524f44d19c3df52b91bcfd61",
-            "locator": {
-              "kind": "symbol",
-              "name": "_memory_events"
             }
           },
           "kind": "code"
@@ -120,8 +40,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1a6140554ebe69d0d46765d8062068d9065096cb",
-            "content": "sha256:7c93a4fb5f596dc0da5a86626d51e57d4c1cd0fe8b64789c8b6384c0be0f155d",
+            "blob": "9b2989fbdc3060b3f34d8360d8ef291e51533e06",
+            "content": "sha256:42f70f7ac0ac55785da2e2cdfbb320357d6899dd6c0c5c811a844bc0f9f9c045",
             "locator": {
               "kind": "file"
             },
@@ -136,8 +56,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1a6140554ebe69d0d46765d8062068d9065096cb",
-            "content": "sha256:7c93a4fb5f596dc0da5a86626d51e57d4c1cd0fe8b64789c8b6384c0be0f155d",
+            "blob": "9b2989fbdc3060b3f34d8360d8ef291e51533e06",
+            "content": "sha256:42f70f7ac0ac55785da2e2cdfbb320357d6899dd6c0c5c811a844bc0f9f9c045",
             "locator": {
               "kind": "file"
             },

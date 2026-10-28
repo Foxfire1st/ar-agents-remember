@@ -227,4 +227,10 @@ the fixture it is pinned against lives in this repository.
 - The lane row D9's fail-closed loader requires for every new test module.  Anchor: "mcp/tests/test_capsule_launch_wiring.py" [15]
 
 
-- The three governed-artifact rows registering this module as a consumer. [21]
+- The three governed-artifact rows registering this module as a consumer.
+
+Retired at the fifth freeze d59c3493: mcp/tests/evidence-lifecycle.toml:1064-1064 - the bytes it recorded now occur 91 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:1885-1885 - the bytes it recorded now occur 3 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:402-402 - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:760-760 - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted [21]
+
+## Retirements
+
+- Retired at the fifth freeze d59c3493: mcp/tests/evidence-lifecycle.toml:1064-1064 - the bytes it recorded now occur 91 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:1885-1885 - the bytes it recorded now occur 3 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:402-402 - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:760-760 - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.

@@ -59,24 +59,6 @@
     {
       "anchor": {
         "blob": "186284cc5a3f3e1d6a49a2378e0605ddfc5b1724",
-        "content": "sha256:776e89f50dd72e08a3143d5b08ea5cb7381bc51822b99a0e1a8daa4520d637de",
-        "locator": {
-          "kind": "symbol",
-          "name": "_PostDiscoveryStartLatch.start"
-        }
-      },
-      "id": "RLZ-7HS33R",
-      "invariant": "INV-990KQM",
-      "origin": {
-        "handoffEntry": "L183-deferred-discovery-implementation",
-        "leaf": "260928-MIK-L183"
-      },
-      "rationale": "The process latch marks its first attempt once under a lock before attempting the sweep even without config, then conditionally invokes the existing dashboard launcher when config exists. Discovery scheduling and direct-call fallback share this owner; failures are contained and later attempts do nothing.",
-      "role": "enforcement"
-    },
-    {
-      "anchor": {
-        "blob": "186284cc5a3f3e1d6a49a2378e0605ddfc5b1724",
         "content": "sha256:3c50eca9ecb4285b8aae618987a0451c15475bfd0478c335fa60a636e8b48f9e",
         "locator": {
           "kind": "file"
@@ -210,25 +192,12 @@
         },
         {
           "anchor": {
-            "blob": "c32522a60857504ad69c2b55c97baed38f637142",
+            "blob": "94f708b9e1972b2fad7432cf32f20b67989ccea8",
             "content": "sha256:7c93dc3a6013ffe3e783e310481cd1801a32363bcf21fbb1ebe192aca457695a",
             "locator": {
-              "end": 91,
+              "end": 87,
               "kind": "line_range",
-              "start": 79
-            },
-            "path": "mcp/src/agents_remember/mcp/server.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "c32522a60857504ad69c2b55c97baed38f637142",
-            "content": "sha256:9f7adae5e4b51dc439ad612741f9e30ff56da4e9e1476c142b175bf4003f5b8e",
-            "locator": {
-              "end": 127,
-              "kind": "line_range",
-              "start": 93
+              "start": 75
             },
             "path": "mcp/src/agents_remember/mcp/server.py"
           },

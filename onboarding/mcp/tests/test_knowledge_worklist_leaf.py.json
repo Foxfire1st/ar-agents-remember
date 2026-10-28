@@ -175,7 +175,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6255576ebc9394ffd9e9e8a1dd0ca50a787028ab",
+            "blob": "44b9070e2ee796b4a12d3cfe31a734b1f363ce2d",
             "content": "sha256:abafcdb467fd570de9c45647ea00c8748d46a43a39359b135720ca1eff1ffcfd",
             "locator": {
               "kind": "symbol",
@@ -430,24 +430,6 @@
               "kind": "symbol",
               "name": "test_converted_bases_are_cached_by_commit_version_and_code_commit"
             }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "40": {
-      "note": "The census-derived consumer row.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "339dffc9c6794b5fe29fe6980e9e45603b344a09",
-            "content": "sha256:da02548ce4ede5f08c6d261a0d17d44df0708ada720380fbf5906306bcf3b81e",
-            "locator": {
-              "end": 2080,
-              "kind": "line_range",
-              "start": 2080
-            },
-            "path": "mcp/tests/evidence-lifecycle.toml"
           },
           "kind": "test"
         }

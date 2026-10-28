@@ -70,7 +70,7 @@ No configured live documentation source was available for this pass.
 - A link's keys and family occurrences; the per-file response. [3]
 - A destination, one path's bucket, and the lane with `paths`. [4]
 - The read states, and an answer without its value read as unavailable. [5]
-- One answer kept with its URL; `null` asks nothing. [6]
+- One answer kept with its URL; `null` asks nothing. 
 
 - The lane hook asks nothing without a comparison; one-file classification remains a single-shot marker read, not a hook. [7]
 
@@ -85,7 +85,7 @@ No cross-repo boundary is crossed by this file.
 
 
 
-- The lane read is acquired once by the reading surface's change-set hook, with the comparison number that hook resolved or `undefined`, and the surface carries that one read into the open change page without asking for the lane itself. [10]
+- The lane read is acquired once by the reading surface's change-set hook, with the comparison number that hook resolved or `undefined`, and the surface carries that one read into the open change page without asking for the lane itself.
 
 
 - laneUrl constructs the comparison-bound tree-view request. useReviewLane suppresses the request when comparison is undefined and selects the lane answer otherwise. This module retains readFileClassification as a single-shot file read and declares no exported useReviewFileClassification hook; these local targets do not prove global focused-view removal. [14]
@@ -94,3 +94,5 @@ No cross-repo boundary is crossed by this file.
 
 
 - `treeComparisonNumber` returns the number in the first `review:trees:<digits>` limitation token and `undefined` when there is none; the surface uses it to number the comparison it shows and to check an evidence destination against it, never branching on dataset kind. [16]
+
+- Retired at the fifth freeze d59c3493: dashboard/src/panels/review/reading/useChangeSet.ts:118-138 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 10e466b17feee2530c06b2670fef496c6c9e755f; dashboard/src/panels/review/reading/useReviewPage.ts:125-134 - the region it cited is not in the file at the candidate and no re-point was possible; dashboard/src/panels/review/ReviewSurface.tsx:835-849 - the region it cited is not in the file at the candidate and no re-point was possible. Retired means the anchor no longer stands, not that the cited subject was deleted.

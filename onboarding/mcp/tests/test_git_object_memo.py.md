@@ -14,9 +14,7 @@ The suite checks same object lookup twice starts one child; distinct lookups eac
 
 ## Boundaries
 
-Local implementation and executable evidence do not replace requirement authority or the owning transaction. Retained source semantics and explicit unavailable/failure states remain binding.
-
-`ReplaceFreshnessTests` adds the unchanged replacement-sensitive controls moved from the runner suite. Both modules import `_init` and `_commit` from the shared test-support owner; neither keeps a duplicate fixture.
+The obligation above is the whole of what this file must keep true; the route account says what the surrounding surface promises.
 
 ## Evidence
 

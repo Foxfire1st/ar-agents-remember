@@ -84,4 +84,6 @@ calls without relying on browser playback that jsdom does not implement.
 
 ### Clock And Settlement Evidence
 
-- `configure({ asyncUtilTimeout: 20_000 })` supplies the shared async utility hang guard. Tests wait for observable conditions or control product timers with fake time; this guard expresses no operation-speed requirement. The unhandled-error trap and browser stubs remain independent of that guard. [4]
+- `configure({ asyncUtilTimeout: 20_000 })` supplies the shared async utility hang guard. Tests wait for observable conditions or control product timers with fake time; this guard expresses no operation-speed requirement. The unhandled-error trap and browser stubs remain independent of that guard.
+
+- Retired at the fifth freeze d59c3493: dashboard/src/test/setup.ts:4-7 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit cf5ef507f2542d6cd2f9d37a6b72148d3b91b340. Retired means the anchor no longer stands, not that the cited subject was deleted.

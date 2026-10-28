@@ -20,12 +20,14 @@ The task-confined frame store: leases an authoring draft in its working folder, 
 
 - Every store act is verified against the admitted task and frame before it touches the filesystem. [1]
 - A draft is leased in its caller's working folder and imported only under the task lock after digest checks. [2]
-- A publication validates everything before it writes, then moves the ready pointer last. [3]
+- A publication validates everything before it writes, then moves the ready pointer last. 
 - A stored metadata read is bounded by the admitted byte sentinel. [4]
-- Reopening, serving and regeneration read one verified snapshot of manifest and assets. [5]
+- Reopening, serving and regeneration read one verified snapshot of manifest and assets. 
 - Staleness names the comparison sides that moved and starts no regeneration. [6]
-- Reclamation records intent before removal and the outcome after it, under the task lock. [7]
+- Reclamation records intent before removal and the outcome after it, under the task lock. 
 
 - `_media_type` names the same plain-text type for an extensionless `LICENSE`, which is what lets a frame serve a pinned kit licence at all. [8]
 
 - The current implementation adds binding recheck, intended-authority validation and part-map persistence, while replacing lineage/count eviction with byte-only admission. [9]
+
+- Retired at the fifth freeze d59c3493: mcp/src/agents_remember/application/review_frame_store.py::publish_revision - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one; mcp/src/agents_remember/application/review_frame_store.py::_snapshot - the bytes it recorded now occur 7 times in the file, so no single home can be named and it is not given to the likelier one; mcp/src/agents_remember/application/review_frame_store.py::reclaim_task_frames - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.

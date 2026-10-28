@@ -7,12 +7,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a0fee04577fffdc23ec025ebcb3b1fb8d92bfa29",
+            "blob": "1bf0be0e9be4bf1b4eb10ca84a79fed261108241",
             "content": "sha256:8baf9ce6b8bf1ff624304e033db61184ae1e35efc9441507d95dd85c129f0a1b",
             "locator": {
-              "end": 31,
+              "end": 32,
               "kind": "line_range",
-              "start": 23
+              "start": 24
             }
           },
           "kind": "test"
@@ -24,12 +24,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a0fee04577fffdc23ec025ebcb3b1fb8d92bfa29",
+            "blob": "1bf0be0e9be4bf1b4eb10ca84a79fed261108241",
             "content": "sha256:e1b175c95c3dcf26d469a25b8faac337fae84dc61401497ab0eeaff1b425367b",
             "locator": {
-              "end": 46,
+              "end": 47,
               "kind": "line_range",
-              "start": 45
+              "start": 46
             }
           },
           "kind": "test"
@@ -41,12 +41,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a0fee04577fffdc23ec025ebcb3b1fb8d92bfa29",
+            "blob": "1bf0be0e9be4bf1b4eb10ca84a79fed261108241",
             "content": "sha256:b91f6e64aace2b1ef31b03bf25ade6b48b454912a1e39bead293bf906501689e",
             "locator": {
-              "end": 52,
+              "end": 53,
               "kind": "line_range",
-              "start": 49
+              "start": 50
             }
           },
           "kind": "test"
@@ -58,7 +58,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "05420e58f22ada25400406ce21f18491119d64da",
+            "blob": "5114f5644a55359a177e60b5dbfa197f8a1f271a",
             "content": "sha256:68f2cd9abb8c8495ee64946161bcf0b427cbf2099261e7064010023677b47eb9",
             "locator": {
               "kind": "symbol",
@@ -86,8 +86,17 @@
           "kind": "code"
         },
         {
-          "kind": "unresolved",
-          "text": "mcp/src/agents_remember/serving/scope.py:207-227"
+          "anchor": {
+            "blob": "6b5c163ab7290f3ff778e1a69a54324e7da1d022",
+            "content": "sha256:cf18e1b4612890662ae0cedcde62fdb7fd5948c9539a62b2526c69a1ea1f46c5",
+            "locator": {
+              "end": 249,
+              "kind": "line_range",
+              "start": 229
+            },
+            "path": "mcp/src/agents_remember/serving/scope.py"
+          },
+          "kind": "code"
         }
       ]
     }

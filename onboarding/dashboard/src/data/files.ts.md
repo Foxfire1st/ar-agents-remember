@@ -70,7 +70,9 @@ No configured Domain Documentation source exists for this file.
 ### Repo-Internal References
 
 - Typed result contracts mirror the L1 endpoints' camelCase JSON (catalog, dir listing, file content, forward/reverse pairing). [1]
-- `getJson` maps every non-ok response to a thrown `FilesApiError` carrying the server status code. [2]
+- `getJson` maps every non-ok response to a thrown `FilesApiError` carrying the server status code.
+
+Retired at the fifth freeze d59c3493: dashboard/src/data/files.ts:90-97 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 86639933d61528387ce106dbd4d7a334bd468671. Retired means the anchor no longer stands, not that the cited subject was deleted [2]
 
 - Five `base`-arg GET helpers build the `/repos`, `/list`, `/read`, and `/onboarding` (forward+reverse) URLs. [3]
 
@@ -82,7 +84,7 @@ No configured Domain Documentation source exists for this file.
 
 - `DualPane` consumes the `FileContent` type for its code side. Source caption: `FileContent` [9]
 
-- The vitest contract test pins the endpoint URLs and the `FilesApiError` mapping. [10]
+- The vitest contract test pins the endpoint URLs and the `FilesApiError` mapping.
 
 ### Cross-Repo References
 
@@ -90,3 +92,9 @@ This card maps a repository-local agents-remember source. Import and task-bounda
 cross-repository implementation source that governs its behavior.
 
 No applicable cross-repository source was found.
+
+- Retired at the fifth freeze d59c3493: dashboard/src/data/files.test.ts:1-35 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 027d61def194c7a6d21d57e32ae64f252945e5b4. Retired means the anchor no longer stands, not that the cited subject was deleted.
+
+## Retirements
+
+- Retired at the fifth freeze d59c3493: dashboard/src/data/files.ts:90-97 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 86639933d61528387ce106dbd4d7a334bd468671. Retired means the anchor no longer stands, not that the cited subject was deleted.

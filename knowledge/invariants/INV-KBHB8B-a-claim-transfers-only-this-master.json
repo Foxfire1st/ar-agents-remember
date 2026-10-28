@@ -1,10 +1,9 @@
 {
   "admission": {
     "criteria": [
-      "spans_locations",
       "guarded_by_test"
     ],
-    "justification": "The master log, held-message storage, transfer candidate admission and host-send classification must agree to avoid crossing masters, dropping custody or repeating uncertain delivery; explicit claim fixture tests cover limited/timeout/full/unavailable destinations and restoration."
+    "justification": "The master log, held-message storage, transfer candidate admission and host-send classification must agree to avoid crossing masters, dropping custody or repeating uncertain delivery; explicit claim fixture tests cover limited/timeout/full/unavailable destinations and restoration. Reassessed at the L201 fifth freeze (head d59c3493): the claim-transfer record is realised in mcp/src/agents_remember/application/master_architect_record.py alone, so the spans_locations criterion no longer describes it and is dropped rather than left standing."
   },
   "applicability": "explainer_control claim transfers between an earlier architect seat and the newly claiming seat.",
   "conditions": [
@@ -33,6 +32,6 @@
   "revision": 1,
   "schema": "ar-invariant/v1",
   "statement": "A claim transfers only this master's still-held reports: it withdraws each admitted row before sending, logs the new delivery state, and does not resend a report whose outcome was logged unknown. A destination that cannot accept the report returns its backing file to the tray where possible, or restores prior held custody when no backing file exists.",
-  "status": "proposed",
+  "status": "retired",
   "supersedes": []
 }

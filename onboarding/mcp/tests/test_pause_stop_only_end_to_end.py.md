@@ -227,4 +227,6 @@ No meaningful cross-repository reference applies to this repository-owned bounda
 - The lane this module is registered in. Source caption: "mcp/tests/test_pause_stop_only_end_to_end.py" [13]
 
 
-- The curator-coherence shared-support artifact declares test_pause_stop_only_end_to_end.py as an exact consumer; declaration does not establish invocation. [14]
+- The curator-coherence shared-support artifact declares test_pause_stop_only_end_to_end.py as an exact consumer; declaration does not establish invocation.
+
+- Retired at the fifth freeze d59c3493: mcp/tests/evidence-lifecycle.toml:1126-1126 - the bytes it recorded now occur 3 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.

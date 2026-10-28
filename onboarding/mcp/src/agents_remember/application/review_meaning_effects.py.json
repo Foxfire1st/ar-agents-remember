@@ -142,12 +142,12 @@
         },
         {
           "anchor": {
-            "blob": "86f24d733e3cbbc5a513f6cfb86d2c0849c8dd3e",
+            "blob": "f96d18c15313b3678be4b1ab3097dd93a32de955",
             "content": "sha256:1dc1ee781774b33c39205f0cc309a6cf1e702204c1c17be18a63236c2179b7f4",
             "locator": {
-              "end": 263,
+              "end": 316,
               "kind": "line_range",
-              "start": 262
+              "start": 315
             },
             "path": "mcp/src/agents_remember/memory/knowledge_index/query.py"
           },
@@ -155,7 +155,7 @@
         },
         {
           "anchor": {
-            "blob": "a6515857de6dc513423fab0fd7e0e0c2e8cf3caa",
+            "blob": "8956b095d29551a323f720e81379174ab9ea902a",
             "content": "sha256:a6fcf22f2f60f6d0f9cf2b21b8be819e0ca04fc0352f7a6c946b0dd91853597f",
             "locator": {
               "end": 196,

@@ -1,0 +1,24 @@
+{
+  "path": "dashboard/src/panels/review/reading/ReadingColumn.selection.test.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The reading column opens on compact family summaries with no code cards or subject read, and selecting a member keeps the family context that member belongs to",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "70c4cb343bc8c600aace8a18b7e81f6a853807a4",
+            "content": "sha256:5defed8270fec3d81e6c35c9ae73598bbe77726e26a40e551639257f98bf66cc",
+            "locator": {
+              "end": 58,
+              "kind": "line_range",
+              "start": 58
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

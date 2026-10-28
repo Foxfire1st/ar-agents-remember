@@ -324,4 +324,10 @@ Current pins (L130): `ENVELOPE_LOSING_RAISERS` holds `worktree_checkpoint_landin
 
 
 
-- The lane row that keeps this module in the default selection. [40]
+- The lane row that keeps this module in the default selection.
+
+Retired at the fifth freeze d59c3493: mcp/tests/test-evidence-lanes.toml:364-365 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 3104b78bb309a8e1a912503557adb08599b52ef0. Retired means the anchor no longer stands, not that the cited subject was deleted [40]
+
+## Retirements
+
+- Retired at the fifth freeze d59c3493: mcp/tests/test-evidence-lanes.toml:364-365 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 3104b78bb309a8e1a912503557adb08599b52ef0. Retired means the anchor no longer stands, not that the cited subject was deleted.

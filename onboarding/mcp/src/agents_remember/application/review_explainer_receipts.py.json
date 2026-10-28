@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "96aaf3ab11f3bec9ae37f1164219478ad1a9249d",
-        "content": "sha256:22684eb73ad4de4fd0905e42d423456bf625d903a3ea6e0a78fbdd0b7c573ea9",
+        "blob": "5688805898786f4a637bb0bedbdb3a3ae0c55595",
+        "content": "sha256:e3b4e7b8550700407aadb9bf9f1b6455341405a0e340fe3fbf985620ab311512",
         "locator": {
           "kind": "symbol",
           "name": "compose_receipts"
@@ -26,29 +26,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "96aaf3ab11f3bec9ae37f1164219478ad1a9249d",
-            "content": "sha256:22684eb73ad4de4fd0905e42d423456bf625d903a3ea6e0a78fbdd0b7c573ea9",
+            "blob": "5688805898786f4a637bb0bedbdb3a3ae0c55595",
+            "content": "sha256:e3b4e7b8550700407aadb9bf9f1b6455341405a0e340fe3fbf985620ab311512",
             "locator": {
-              "end": 161,
+              "end": 167,
               "kind": "line_range",
-              "start": 127
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "2": {
-      "note": "The required yardsticks are reserved before packets and reference files at the read ceiling\n\nAnchor: `def _admitted_read_ids(`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "96aaf3ab11f3bec9ae37f1164219478ad1a9249d",
-            "content": "sha256:f107459530b99078ff2d5f5c9f9f45b02880c4b41119b4cbf2244801c9798cf2",
-            "locator": {
-              "end": 177,
-              "kind": "line_range",
-              "start": 164
+              "start": 134
             }
           },
           "kind": "code"
@@ -60,12 +43,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "96aaf3ab11f3bec9ae37f1164219478ad1a9249d",
+            "blob": "5688805898786f4a637bb0bedbdb3a3ae0c55595",
             "content": "sha256:2adaed590787f2e98f407a2cb2e5518121afb77e5943710441530f4527381b81",
             "locator": {
-              "end": 115,
+              "end": 122,
               "kind": "line_range",
-              "start": 91
+              "start": 98
             }
           },
           "kind": "code"
@@ -77,12 +60,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "96aaf3ab11f3bec9ae37f1164219478ad1a9249d",
+            "blob": "5688805898786f4a637bb0bedbdb3a3ae0c55595",
             "content": "sha256:6ceaab0d2c88bc30b4811a44b214480c39d3b362bf28e87a075fb0936f7d93a0",
             "locator": {
-              "end": 53,
+              "end": 52,
               "kind": "line_range",
-              "start": 45
+              "start": 44
             }
           },
           "kind": "code"
@@ -94,12 +77,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "96aaf3ab11f3bec9ae37f1164219478ad1a9249d",
-            "content": "sha256:dee30b265564310a3bde258d6e8a136243c897e3d28601231098bae9e3cb71a9",
+            "blob": "5688805898786f4a637bb0bedbdb3a3ae0c55595",
+            "content": "sha256:d54e486ec19386d639e210e92d9950005eaf40a315b41a68a098421878c3f7de",
             "locator": {
-              "end": 224,
+              "end": 198,
               "kind": "line_range",
-              "start": 180
+              "start": 170
             }
           },
           "kind": "code"

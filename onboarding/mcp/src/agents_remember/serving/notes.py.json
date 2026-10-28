@@ -286,12 +286,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d60acd0e4be738b9a9a33eb9f333fa6c53974f2b",
+            "blob": "79366831b556a7cf512bc53d396ac55a43734666",
             "content": "sha256:5b618c916233fbb800ee634903cc0930bb1d1e99c6bbc106d13abe9f2987055f",
             "locator": {
-              "end": 219,
+              "end": 228,
               "kind": "line_range",
-              "start": 219
+              "start": 228
             },
             "path": "mcp/src/agents_remember/serving/app.py"
           },
@@ -416,7 +416,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "34e4545d629a9c120e19f9f8f1eef3965b0da458",
+            "blob": "a3a2210b12a2fe760312652a13f1f7366c306e92",
             "content": "sha256:7b27dd0903646ae944feecd369ce9dfd548bfcb3c95b9baac2c849372adbcc57",
             "locator": {
               "kind": "symbol",
@@ -546,8 +546,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "db4ee81eefe2ea8e744d09543e10feec070a2b46",
-            "content": "sha256:1c1e47b037c0ea2d513ce72bada4469a15726501e1873ab0781739fce9b1dfe5",
+            "blob": "e23e68eb2a31165781bb22894b445d6d8bc18b66",
+            "content": "sha256:1c5fce9a739883de864d730bfb7adbc295e64e474fba2f6be2c7719707abb03f",
             "locator": {
               "kind": "file"
             },

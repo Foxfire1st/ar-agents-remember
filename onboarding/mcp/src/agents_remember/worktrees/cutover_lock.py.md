@@ -52,7 +52,6 @@ converted candidate or replace its ordinary gate/coherence checks.
 
 - The central legacy refusal and conversion guidance survive retirement of the separate prepared-certification adapter. [13]
 
-- The central legacy refusal and conversion guidance survive retirement of the separate prepared-certification adapter. [13]
 
 ### Docs References
 

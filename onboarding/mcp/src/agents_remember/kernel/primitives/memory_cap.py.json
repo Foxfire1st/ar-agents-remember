@@ -6,8 +6,17 @@
       "note": "Preview reports the selected resource mode and planned command.\n\nAnchor: `code_quality_gate_preview`",
       "targets": [
         {
-          "kind": "unresolved",
-          "text": "mcp/src/agents_remember/worktrees/modules/quality/gate.py:145-188"
+          "anchor": {
+            "blob": "b2f9f1624c63b2e7e58d9486c5d024f84fd7903e",
+            "content": "sha256:c1c4c725f8875825ffbf289e9a27e3dd98489f514d9f0b851ae7b4e90be5f62b",
+            "locator": {
+              "end": 190,
+              "kind": "line_range",
+              "start": 147
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/quality/gate.py"
+          },
+          "kind": "code"
         }
       ]
     },
@@ -15,8 +24,17 @@
       "note": "Execution follows the selected capped or uncapped command plan.\n\nAnchor: `run_strict_code_quality_gate`",
       "targets": [
         {
-          "kind": "unresolved",
-          "text": "mcp/src/agents_remember/worktrees/modules/quality/gate.py:268-361"
+          "anchor": {
+            "blob": "b2f9f1624c63b2e7e58d9486c5d024f84fd7903e",
+            "content": "sha256:0b8e81dabc38bf52508d0b69e49181896d735d9c135cd227f69eed1d20e394a2",
+            "locator": {
+              "end": 364,
+              "kind": "line_range",
+              "start": 270
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/quality/gate.py"
+          },
+          "kind": "code"
         }
       ]
     },

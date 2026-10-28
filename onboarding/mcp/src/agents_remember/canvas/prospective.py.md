@@ -18,7 +18,9 @@ The browser’s legacy evidence references and `data-evidence-claim` ids are rea
 
 ## Evidence
 
-- The prospective revision is loaded once in the selected browser through the package-owned runner. [1]
-- A success that contradicts its own observations is downgraded. [2]
+- The prospective revision is loaded once in the selected browser through the package-owned runner. 
+- A success that contradicts its own observations is downgraded. 
 
 - The current implementation separates claim IDs from basis references and validates rendered citations/parts before accepting the browser result. [3]
+
+- Retired at the fifth freeze d59c3493: mcp/src/agents_remember/canvas/prospective.py::BrowserProspectiveLoad - the bytes it recorded now occur 3 times in the file, so no single home can be named and it is not given to the likelier one; mcp/src/agents_remember/canvas/prospective.py::_consistent - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.

@@ -35,6 +35,105 @@ Snapshots/deltas, raw observer events and separately requested bodies are differ
 
 Old terminal/session launch-site, provider-specific carrier and first-prompt acceptance claims are withdrawn as current facts. Retained source declarations and static tests are not fresh runtime/test acceptance; the existing bounded producer seals remain literal and separately graded.
 
+## Retirements
+
+- Retired at the fifth freeze d59c3493: mcp/src/agents_remember/serving/_app_common.py:220-225 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit b52adc8bc0564f6328d3543e48998e9235f1e417; mcp/src/agents_remember/serving/app.py:185-185 - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one; mcp/src/agents_remember/serving/_app_common.py:221-226 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit b52adc8bc0564f6328d3543e48998e9235f1e417. Retired means the anchor no longer stands, not that the cited subject was deleted.
+
+- Retired at the fifth freeze d59c3493: mcp/src/agents_remember/serving/review.py:627-709 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit c5a74a85af20a8fb48cc44f59de7e926d589d3fc; mcp/src/agents_remember/serving/app.py:218-231 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit c861abfeff33c9ef8f1ca066604c8f971b613361. Retired means the anchor no longer stands, not that the cited subject was deleted.
+
+- Retired at the fifth freeze d59c3493: mcp/src/agents_remember/serving/review.py:644-655 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 4a0442d62eb842661a3dd04686c376d0f0dbc61f. Retired means the anchor no longer stands, not that the cited subject was deleted.
+
+- Retired at the fifth freeze d59c3493: mcp/src/agents_remember/serving/_app_common.py:215-216 - the bytes it recorded now occur 42 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ## Retained Route And Coverage Metadata
 
 These inherited tables are retained verbatim for navigation and custody. Their status/coverage cells are not a new lifecycle, test, or acceptance verdict.
@@ -101,7 +200,6 @@ Source account retained from the parked claim (anchor currency not renewed here)
 
 Source account retained from the parked claim (anchor currency not renewed here): `mcp/src/agents_remember/serving/review.py:644-655`.
 
-- The registration that must precede the static mount.  Anchor: "def register_review_routes("
 
 Source account retained from the parked claim (anchor currency not renewed here): `mcp/src/agents_remember/serving/review.py:627-709`.
 
@@ -155,14 +253,61 @@ the change-set routes now run on a dedicated `_BoundedReads` scheduler: eight wo
 
 **L184.** The serving tick reads usage reports at a new stamped end, writes the one limit file whole under an exclusive lock, pauses a limited recipient's drain before any host read, and reaches the bridge through the port the composition root binds.
 
+
+- The collaborator port and the registration before the static mount.
+
+- The 404 for a candidate that does not resolve.
+
+- **The registration that must precede the static mount and that takes all three ports.**  Anchor: "def register_review_routes("
+
+- Review route registration precedes the static mount and accepts knowledge-review, entry-list and source-content ports. 
+
+- **The 200/refusal split the entry handler makes: `entries` serves `200`, anything else goes through `_status_for`.**  Anchor: "def api_review_intent_entries("
+
+- The registration that must precede the static mount.  Anchor: "def register_review_routes("
+
+- **The route's optional query parameters and the `400` body that now names the "omit both" option and reports whichever parameter was supplied.** 
+
+- The collaborator that stops the route's child computations.
+
+- The composition root composes one worklist process owner.
+
+- The tree port passes the process owner to the application.
+
+- A live read reuses the record of the same trees, and pins before it writes a new record. 
+
+- The value handed to the port, and whether it asks a focused question. 
+
+- The one selection value and its refusals. 
+
+- The port runs on the route's executor with cancellation and arrival bound; a disconnect and a cancellation set the event. 
+
+- The route: its own executor, the unwired 503, the selection's 400 and the typed 200. 
+
+- Tick cancellation drains filesystem work; state commits before subscriber notification.
+
+- Shared app composition binds real landing interest before startup. 
+
+- Pending cache results are retained only when fresh post-read input observations match their captured generation. 
+
+- The transport still maps the literal legacy candidate_dataset_absent refusal code to404; a status mapping does not establish a currently produced dataset candidate path. 
+
+- The connection-owned watcher filters generated/temporary paths, separates ready from coalesced changes, emits invalidation revisions rather than tree identities and drains its worker/merge ownership on closure. 
+
+- The summary reader keys retention by the numbered question and current age window. 
+
+- The native recorded-answer cache returns predicate-rejected values without retaining them. 
+
+- Serving composition refuses retired canvas authoring before registration, composes explicit explainer ports and comparison-bound routes, and owns moved-notice stream/watch lifetime. Ordinary roster has 44 names while explainer surface selection is separate. 
+
+- Retired at the fifth freeze d59c3493: mcp/src/agents_remember/serving/changeset_comparison.py:18-29 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 23cb164fa24dcbc4a98a56fa1324e1fb42c1bf41; mcp/src/agents_remember/serving/projector.py:348-434 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit a66314c555d873dd01b4dbefbe18fb3f2ee44d4b; mcp/src/agents_remember/serving/review.py:667-715 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit c5a74a85af20a8fb48cc44f59de7e926d589d3fc; mcp/src/agents_remember/serving/review.py:715-715 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit a8d2431926d6b130012ca81ed2e85b14721c0615; mcp/src/agents_remember/cli/dashboard.py:71-96 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit de5a7adbb21b2f6f22c3ced0eed9dd7189fe93c7; mcp/src/agents_remember/cli/dashboard.py:149-168 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 3104b78bb309a8e1a912503557adb08599b52ef0; mcp/src/agents_remember/cli/dashboard.py:75-100 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 842b487b854503d95c9c2d9dce1841198ba93c7d; mcp/src/agents_remember/cli/dashboard.py:153-172 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit c702e1c2e111ec6e07c6b68a78a5d05add8aceab; mcp/src/agents_remember/cli/dashboard.py:139-142 - the region it cited is not in the file at the candidate and no re-point was possible; mcp/src/agents_remember/cli/dashboard.py:143-146 - the region it cited is not in the file at the candidate and no re-point was possible; mcp/src/agents_remember/serving/review.py::register_review_routes - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one; mcp/src/agents_remember/serving/review.py::api_review_intent - the bytes it recorded now occur 3 times in the file, so no single home can be named and it is not given to the likelier one; mcp/src/agents_remember/application/review_tree_comparison.py::_recorded - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one; mcp/src/agents_remember/serving/review_trees.py::ReviewTreesQuery - the bytes it recorded now occur 5 times in the file, so no single home can be named and it is not given to the likelier one; mcp/src/agents_remember/serving/review_trees.py::ReviewTreesSelection - the bytes it recorded now occur 4 times in the file, so no single home can be named and it is not given to the likelier one; mcp/src/agents_remember/serving/review_trees.py::_request_result - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit c702e1c2e111ec6e07c6b68a78a5d05add8aceab; mcp/src/agents_remember/serving/review_trees.py::register_review_trees_route - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one; mcp/src/agents_remember/serving/app.py::_build_serving_runtime - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one; mcp/src/agents_remember/serving/changeset_cache.py::finish - the bytes it recorded now occur 5 times in the file, so no single home can be named and it is not given to the likelier one; mcp/src/agents_remember/serving/review_memory_watch.py::_memory_events - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one; mcp/src/agents_remember/serving/review_memory_watch.py::_native_worker - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 20624f979e2b89067a3e42019c9611a8e18ff848; mcp/src/agents_remember/serving/review_memory_watch.py::_admitted - the bytes it recorded now occur 5 times in the file, so no single home can be named and it is not given to the likelier one; mcp/src/agents_remember/serving/intent_summary_cache.py::_response - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one; mcp/src/agents_remember/serving/review_answer_reuse.py::answer - the bytes it recorded now occur 60 times in the file, so no single home can be named and it is not given to the likelier one; mcp/src/agents_remember/serving/explainer_watcher.py::unexplained_turn_notice - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one; mcp/src/agents_remember/serving/change_watcher.py::MoveNoticeWatch - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 5f8398b32760677c370e3145add73cfa8388357b; mcp/src/agents_remember/serving/explainer.py::_comparison - the bytes it recorded now occur 4 times in the file, so no single home can be named and it is not given to the likelier one; mcp/src/agents_remember/serving/explainer.py::explainer_composition - the bytes it recorded now occur 3 times in the file, so no single home can be named and it is not given to the likelier one; mcp/src/agents_remember/serving/app.py::create_app - the bytes it recorded now occur 4 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.
+
 ## Evidence
 
-
-- Master validation in placement applies only to documented subTasks; other listed kinds retain list placement under existing identity/cycle guards, not a kind-rejection or own-master-validation rule. [137]
-
-
 - The query, the port and the GET handler with its three answer classes. [3]
-- The collaborator port and the registration before the static mount. [4]
+
+Retired at the fifth freeze d59c3493: mcp/src/agents_remember/serving/_app_common.py:220-225 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit b52adc8bc0564f6328d3543e48998e9235f1e417; mcp/src/agents_remember/serving/app.py:185-185 - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one; mcp/src/agents_remember/serving/_app_common.py:221-226 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit b52adc8bc0564f6328d3543e48998e9235f1e417. Retired means the anchor no longer stands, not that the cited subject was deleted [4]
+
 - LaunchCapsuleMode has only capsule/refused and no resolver or legacy carrier policy. [9]
 
 - Internal compile_launch_capsule admits task/free-agent seats through retained compiler ownership and returns a generic delivery/refusal. [13]
@@ -171,154 +316,170 @@ the change-set routes now run on a dedicated `_BoundedReads` scheduler: eight wo
 
 - Every-directory filtering retains lock suffix exclusion. [22]
 
-
-- **The comparison route's handler over its injected port.**  Anchor: "def api_review_intent(" [29]
-
-
-
+- The catalogue handler forwards task context and its optional recorded comparison number; an unwired process still returns a named refusal rather than an empty list. [30]
 
 - **The expansion route's handler and the module-level transport behind it (`260921-ICR-L3`).**  Anchor: "def api_review_intent_source_content(" [31]
 
 - **The unwired-entry body: `unavailable` with the "not served rather than served empty" reason and next action — and, since `260921-ICR-L3`, its sibling for the expansion route.** [32]
+
 - **The entry route constant, and the comment recording why it is a second path rather than a second adapter.** [33]
+
 - The two admitted selector kinds, refused rather than mapped. [34] [46]
 
 - The query parser that admits only those two.  Anchor: "def review_request_from_query(" [35]
 
+- **The status mapping the routes inherit from the change-set routes: success is `refusal is None`, and the four candidate codes — including `subject_unresolved` — answer `404`.** [36]
+
+- The refusal code a process with no adapter produces. [37] [49]
+
+- The 400 a selector kind outside the admitted set gets. [38]
+
+Retired at the fifth freeze d59c3493: mcp/src/agents_remember/serving/review.py:627-709 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit c5a74a85af20a8fb48cc44f59de7e926d589d3fc; mcp/src/agents_remember/serving/app.py:218-231 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit c861abfeff33c9ef8f1ca066604c8f971b613361. Retired means the anchor no longer stands, not that the cited subject was deleted [40]
+
+- **The entry port type: the task context in, one typed entry result out — and, since `260921-ICR-L3`, the expansion port beside it.** [41]
+
+- **The unwired-entry body: `unavailable` with the "not served rather than served empty" reason and next action.** [42]
+
+- **The entry port type: the task context in, one typed entry result out.** [44]
 
 - The query parser that admits only those two.  Anchor: "def review_request_from_query(" [47]
 
-- **The status mapping the routes inherit from the change-set routes: success is `refusal is None`, and the four candidate codes — including `subject_unresolved` — answer `404`.** [36]
-- The refusal code a process with no adapter produces. [37] [49]
-- The 400 a selector kind outside the admitted set gets. [38]
-- The 404 for a candidate that does not resolve. [39]
-
-- **The registration that must precede the static mount and that takes all three ports.**  Anchor: "def register_review_routes(" [40]
-
-- **The entry port type: the task context in, one typed entry result out — and, since `260921-ICR-L3`, the expansion port beside it.** [41]
-- **The unwired-entry body: `unavailable` with the "not served rather than served empty" reason and next action.** [42]
-- Review route registration precedes the static mount and accepts knowledge-review, entry-list and source-content ports. [43]
-- **The entry port type: the task context in, one typed entry result out.** [44]
-
-- The GET-only route handler over the injected port.  Anchor: "def api_review_intent(" [45]
-
-
 - **The status mapping the routes inherit from the change-set routes; the signature accepts all three typed results and reads success as `refusal is None`.**  Anchor: "def _status_for(" [48]
 
+- The transport still maps the literal legacy candidate_dataset_absent refusal code to404; a status mapping does not establish a currently produced dataset candidate path. [51]
 
-- **The 400 a selector kind outside the admitted set gets, inside the comparison handler.**  Anchor: "def api_review_intent(" [50]
-
-
-
-- **The 200/refusal split the entry handler makes: `entries` serves `200`, anything else goes through `_status_for`.**  Anchor: "def api_review_intent_entries(" [52]
-
+Retired at the fifth freeze d59c3493: mcp/src/agents_remember/serving/review.py:644-655 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 4a0442d62eb842661a3dd04686c376d0f0dbc61f. Retired means the anchor no longer stands, not that the cited subject was deleted [52]
 
 - The registration that must precede the static mount.  Anchor: "def register_review_routes(" [53]
 
 - The status mapper accepts the three review result types; success is refusal absence, with distinct unavailable and missing-subject/candidate refusals. [54]
+
 - **The new owner: which exact Git objects a committed range binds, the three absence kinds, and the one absence that may degrade to empty.** [55]
+
 - **The caller that owns the degradation policy and (260921-ICR-L25) carries the code half's named absence instead of raising it: the two sides resolve independently, and only an unrecorded memory half empties.** [56]
+
 - **The doc-reader entry point that publishes the unrecorded state in the body.** [57]
+
+- **The cases that measure this route's half of the change: the recorded range bound and unmoved by a later commit, the state answered instead of a `HEAD` read with the route's own `200`, and the one-half degradation.** [58]
+
 - **The new owner: which exact commits a master net binds, the deterministic digest, same-call currentness, and the named refusal for a missing endpoint.** [59]
+
 - **The thin delegating entry and the pinned file view, with the shared master 400/404 mapping.** [60]
+
 - **The served vocabulary: the generation identity, the net's `generation` + `currentness` + `scope`, and the `committed`/`working` leaf-row state.** [61]
+
 - **The nine cases that measure this route's half of the change, through real contracts, repos and routes.** [62]
+
 - **The parser's two admitted shapes, and the refusals it keeps: a half-named selector and an unadmitted kind still return `None`.** [63]
-- **The route's optional query parameters and the `400` body that now names the "omit both" option and reports whichever parameter was supplied.** [64]
+
 - The status mapping and the serializer, unchanged by that leaf (the mapping serves a third result type since `260921-ICR-L3`). [65]
+
 - **The composition the task-context answer reaches, which is where the complete inventory is measured.** [66]
+
+- **The case that admits exactly the two reviewable selector kinds and refuses every other spelling, and the case that drives the same route with no selector parameters at all.** [67]
+
 - **The third route constant, GET-only, with the comment recording why it is a third path rather than a payload field: the inventory is the whole task's change set and a payload carrying every file's text would be a document dump.** [68]
+
 - **The expansion's whole selector as one value: the task context, the entry path, and both camel-case tree ids, which travel together because any one alone selects nothing.** [69]
+
 - **The parse that refuses a blank component rather than defaulting it — a defaulted tree id would make the server choose a generation.** [70]
+
 - **The one-line route registration, and the module-level transport behind it: the unwired `503`, the incomplete-generation `400`, and the same two exception shapes the comparison handler uses.** [71]
+
 - **The expansion route's own unwired answer: "not served rather than served as an empty file".** [72]
 
 - **The third port type and the third collaborator field, with the reason it is a port rather than a payload field.** [73]
 
 - **The status mapping widened to the third result type, where the expansion's refusal code reaches `400` through the same fall-through as `comparison_refused`.** [74]
+
 - The `400` body for a query that did not name the generation whole, and the exact expected set it names. [75]
+
+- The registration call in the app factory, which passes all three collaborator ports and still precedes the greedy static mount.  Anchor: `register_review_routes` [76]
 
 - **The composition root's third review port, whose docstring names the two facts the route rests on: the caller's generation rather than the server's choice, and no working tree or `HEAD` as a source of bytes.**  Anchor: `read_review_source_content` [77]
 
 - **The application owner behind the port: the admitted paths (a changed path of a measured change set, or unchanged context a recorded realization of the same comparison links — decided by the admission owner), both bound trees read by object id, and the per-side states.** [78]
+
 - **The cases that drive the new route through the real composition: an incomplete query refused by the transport, an unwired process refused by name, and an unmeasured generation that still confines the path to a measured change set.** [79]
+
 - **The one mapping and the one body builder: the `400`/`404` idiom cannot differ between the two adapters.** [80]
+
 - **The two actions the bodies gained, and where they are named.** [81]
+
 - The expansion read's whole transport, whose docstring now states the shared mapping. [82]
+
 - The published surface, unchanged: the three route constants, the three ports and the two parsers. [83]
+
+- Current imported source owns this scoped route boundary. [84]
+
 - Current imported source owns this scoped route boundary. [84] [85] [86] [87] [88]
-- The collaborator that stops the route's child computations. [89]
+
+- Current imported source owns this scoped route boundary. [85]
+
+- Current imported source owns this scoped route boundary.   [86] [87] [88]
+
+Retired at the fifth freeze d59c3493: mcp/src/agents_remember/serving/_app_common.py:215-216 - the bytes it recorded now occur 42 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted [89]
+
 - The runtime receives the shutdown callable from the collaborators. [90]
+
 - Serving shutdown calls it on a worker thread before the background tasks are cancelled. [91]
 
-- The composition root composes one worklist process owner. [92]
-
 - It supplies that owner's shutdown to the app. [93]
-- The tree port passes the process owner to the application. [94]
-- A live read reuses the record of the same trees, and pins before it writes a new record. [95]
+
+- An enabled live leaf-wide tree read may start without a comparison number; focused card-entry reads require one. Absence of a number does not imply a dataset review. [96]
 
 - A busy default executor cannot delay a tree read. [97]
+
 - A disconnect, the deadline, shutdown and a queued request each end with the children reaped. [98]
-- Current imported source owns this scoped route boundary.   [86] [87] [88]
+
 - The bounds of a selection and the size of the route's thread pool. [100]
-- The value handed to the port, and whether it asks a focused question. [101]
-- The one selection value and its refusals. [102]
-- The port runs on the route's executor with cancellation and arrival bound; a disconnect and a cancellation set the event. [103]
-- The route: its own executor, the unwired 503, the selection's 400 and the typed 200. [104]
+
 - The start-only supervision the dashboard composes. [105]
+
 - The install host part. [106]
+
 - The host acquisition. [107]
-- A numbered recorded comparison is looked up exactly; code/memory ranges use its recorded sides (converted memory base when present), and the list returns those four tree operands. [108] [109]
 
 - App registers three intent handlers plus separate summary, tree and reader ports before static delivery.  Anchor: create_app [110]
 
 - Startup ordering, native held-message sweep registration, worklist-first shutdown, and awaited background teardown are explicit.  Anchor: `_serving_lifespan`, `_held_delivery_loop`, `_to_thread_owned` (delegating to accounted cancellation-drained offload) [111]
+
 - Leaf-archive recovery alone uses the retained completion-relative background loop; no terminal-observation prime/poll remains. [112]
 
 - Live pacing adds post-completion rest, so interval/heartbeat alone is not a total freshness bound.  Anchor: projection_completed; _next_deadline [113]
 
-
-
 - Missing wheel exits degraded; watch establishment, retry and native-watch options are explicit.  Anchor: run; _watch_once [114]
 
-
-- Tick cancellation drains filesystem work; state commits before subscriber notification. [115]
 - Source content admits attributed unchanged context only with measured requested inventory. [120]
+
 - Leaf range returns empty for missing repository before endpoint-owner admission. [121]
+
 - Host ensure is start-only, with observation, lock, and outcome receipt. [128]
-- A numbered recorded comparison is looked up exactly; code/memory ranges use its recorded sides (converted memory base when present), and the list returns those four tree operands. [109]
 
-- **The cases that measure this route's half of the change: the recorded range bound and unmoved by a later commit, the state answered instead of a `HEAD` read with the route's own `200`, and the one-half degradation.** [58]
-- **The case that admits exactly the two reviewable selector kinds and refuses every other spelling, and the case that drives the same route with no selector parameters at all.** [67]
-- The registration call in the app factory, which passes all three collaborator ports and still precedes the greedy static mount.  Anchor: `register_review_routes` [76]
-- Current imported source owns this scoped route boundary. [84]
-- Current imported source owns this scoped route boundary. [85]
-
-- Shared app composition binds real landing interest before startup. [129]
 - Landing interest gates actual discovery and probe admission, while due policy retains exact identities. [130]
-- Provider safety remains an independent periodic sequence. [131]
 
+- Provider safety remains an independent periodic sequence. [131]
 
 - Complete reconciled host input joins role-agent task identities only while its supervisor observation is armed. [132]
 
 - Native cache values reuse only complete matching input generations; additional consumed inputs must have pre-read observations. [133]
-- Pending cache results are retained only when fresh post-read input observations match their captured generation. [134]
+
 - Full TaskSummary preparation has separate bounded retention and generation checks, not a second task-status producer. [135]
+
 - Task-body 304 requires a still-current captured generation and matching content revision. [136]
 
-- The transport still maps the literal legacy candidate_dataset_absent refusal code to404; a status mapping does not establish a currently produced dataset candidate path. [51]
-
-- An enabled live leaf-wide tree read may start without a comparison number; focused card-entry reads require one. Absence of a number does not imply a dataset review. [96]
+- Master validation in placement applies only to documented subTasks; other listed kinds retain list placement under existing identity/cycle guards, not a kind-rejection or own-master-validation rule. [137]
 
 - The injected canonical memory-root port is carried from collaborators into the shared serving runtime, not resolved from arbitrary client roots. [138]
+
 - The existing state stream opts into review-memory invalidations only through supplied review identity; no-selector streams retain their ordinary event path. [139]
+
 - The connection-owned watcher filters generated/temporary paths, separates ready from coalesced changes, emits invalidation revisions rather than tree identities and drains its worker/merge ownership on closure. [140]
 
 - The catalogue handler admits optional comparison, refuses negative values and forwards all four port arguments. [141]
+
 - The summary handler forwards optional comparison and names a negative number as unavailable. [142]
+
 - Summary ports and cache keys include exact optional comparison identity. [143]
-- The summary reader keys retention by the numbered question and current age window. [144]
-- The native recorded-answer cache returns predicate-rejected values without retaining them. [145]
-- The catalogue handler forwards task context and its optional recorded comparison number; an unwired process still returns a named refusal rather than an empty list. [30]
 
 - Serving composition refuses retired canvas authoring before registration, composes explicit explainer ports and comparison-bound routes, and owns moved-notice stream/watch lifetime. Ordinary roster has 44 names while explainer surface selection is separate. [146]

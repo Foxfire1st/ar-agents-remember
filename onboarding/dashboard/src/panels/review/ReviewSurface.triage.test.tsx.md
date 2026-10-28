@@ -23,4 +23,6 @@ These are source-inspected mounted checks with the inputs and replacements named
 ## Evidence
 
 - Captured semantic replies, synthetic outline adapter and invariant-granularity order comparison. [5]
-- Shared priority/authored order, synthetic weaken precedence and click-based word/focus/context preservation. [6]
+- Shared priority/authored order, synthetic weaken precedence and click-based word/focus/context preservation.
+
+- Retired at the fifth freeze d59c3493: dashboard/src/panels/review/ReviewSurface.triage.test.tsx:161-237 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 10e466b17feee2530c06b2670fef496c6c9e755f. Retired means the anchor no longer stands, not that the cited subject was deleted.

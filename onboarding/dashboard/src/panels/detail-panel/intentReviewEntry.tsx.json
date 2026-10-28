@@ -71,23 +71,6 @@
         }
       ]
     },
-    "11": {
-      "note": "The leaf-wide view names the leaf's highest recorded number and the delivered notice beside the comparison it resolved.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "a956af1c8d6d0ae8752c70bec8277c64a19a3022",
-            "content": "sha256:260f363d37a83573eca269d6286e31718fe05af30e0c7e02ffe79af751c1b718",
-            "locator": {
-              "kind": "symbol",
-              "name": "_view"
-            },
-            "path": "mcp/src/agents_remember/application/review_tree_knowledge.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "2": {
       "note": "IntentCounts displays loading/refusal or supplied revision counts, with a partial marker where appropriate.",
       "targets": [
@@ -197,7 +180,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "dc229d234ae888019f18a20c91a1cd0135ada287",
+            "blob": "1f434d49ec1adbb3ff324745748345f4ce909fce",
             "content": "sha256:14e80730ab07d7d43dc99018799af181b630e96b07f7bc9ba74c1111b4c462a1",
             "locator": {
               "kind": "symbol",
@@ -209,7 +192,7 @@
         },
         {
           "anchor": {
-            "blob": "dc229d234ae888019f18a20c91a1cd0135ada287",
+            "blob": "1f434d49ec1adbb3ff324745748345f4ce909fce",
             "content": "sha256:c9916dfeff8632353c5ff9e5577530b17de00762552e772fd092288914935ec3",
             "locator": {
               "kind": "symbol",

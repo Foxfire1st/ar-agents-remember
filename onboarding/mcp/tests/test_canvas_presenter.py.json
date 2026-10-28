@@ -3,41 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "65ea24aeb3632c12929876def014cb6b962259a2",
-        "content": "sha256:d751617684c3476193784ec1596862638b8fc0cf9fd031befb0f0877210f148d",
-        "locator": {
-          "kind": "symbol",
-          "name": "test_a_start_requires_explicit_activation_and_this_pages_comparison"
-        }
-      },
-      "facet": "A start requires explicit activation and this page's comparison.",
-      "id": "PRF-B60HZ2",
-      "invariant": "INV-GWMA1V",
-      "origin": {
-        "handoffEntry": "MIK-R105-r1-explicit-confined-publication",
-        "leaf": "260928-MIK-L104"
-      }
-    },
-    {
-      "anchor": {
-        "blob": "65ea24aeb3632c12929876def014cb6b962259a2",
-        "content": "sha256:44257db859c1a254aff10c40cbba7dbbbb9a22b30d91de297fa1731f2308dc93",
-        "locator": {
-          "kind": "symbol",
-          "name": "test_a_presenter_without_a_runner_refuses_the_retired_native_seat"
-        }
-      },
-      "facet": "A Presenter built with no runner uses UnconfiguredPresenterRunner, fails no-confined-harness and creates no host/prepared-start.json.",
-      "id": "PRF-BQCSHZ",
-      "invariant": "INV-SYH75Z",
-      "origin": {
-        "handoffEntry": "L183-presenter-default-unconfigured",
-        "leaf": "260928-MIK-L183"
-      }
-    },
-    {
-      "anchor": {
-        "blob": "65ea24aeb3632c12929876def014cb6b962259a2",
+        "blob": "e4ac52c8feb276242bcf07388d06875854dbd737",
         "content": "sha256:7bb9afcabcb3708ca77097b980e1956899a583b5120c197ab06a86968d6f4043",
         "locator": {
           "kind": "symbol",
@@ -54,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "65ea24aeb3632c12929876def014cb6b962259a2",
+        "blob": "e4ac52c8feb276242bcf07388d06875854dbd737",
         "content": "sha256:7bb9afcabcb3708ca77097b980e1956899a583b5120c197ab06a86968d6f4043",
         "locator": {
           "kind": "symbol",
@@ -72,60 +38,12 @@
   ],
   "realizes": [],
   "references": {
-    "1": {
-      "note": "The case `test_a_start_requires_explicit_activation_and_this_pages_comparison` protects this behaviour.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "65ea24aeb3632c12929876def014cb6b962259a2",
-            "content": "sha256:d751617684c3476193784ec1596862638b8fc0cf9fd031befb0f0877210f148d",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_a_start_requires_explicit_activation_and_this_pages_comparison"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "2": {
-      "note": "The case `test_the_design_text_is_resolved_bounded_and_named` protects this behaviour.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "65ea24aeb3632c12929876def014cb6b962259a2",
-            "content": "sha256:0096e17e4aaaf410d1a566a9d035f35ae44340fad99afbd5230ad292fe10746c",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_the_design_text_is_resolved_bounded_and_named"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "3": {
-      "note": "The case `test_the_capability_text_is_shipped_inside_its_budget` protects this behaviour.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "65ea24aeb3632c12929876def014cb6b962259a2",
-            "content": "sha256:a9a0e6222ba3d3b50aa568a2bb795cf35d95ed05eb687b3ae48ab89d529cf710",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_the_capability_text_is_shipped_inside_its_budget"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
     "4": {
       "note": "An event-coordinated late receipt cannot revive a cancelled attempt; the shared hang guard only bounds a stuck wait.",
       "targets": [
         {
           "anchor": {
-            "blob": "65ea24aeb3632c12929876def014cb6b962259a2",
+            "blob": "e4ac52c8feb276242bcf07388d06875854dbd737",
             "content": "sha256:7bb9afcabcb3708ca77097b980e1956899a583b5120c197ab06a86968d6f4043",
             "locator": {
               "kind": "symbol",
@@ -141,8 +59,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "65ea24aeb3632c12929876def014cb6b962259a2",
-            "content": "sha256:6ab7e9f5474ec75c6e6271a15d641a3f5679ac6e773c319ac27ca4788327bae0",
+            "blob": "e4ac52c8feb276242bcf07388d06875854dbd737",
+            "content": "sha256:97232b786b87e4e0007878b40d1ec54d829b05addcbd4a28da85dc39db7a5749",
             "locator": {
               "kind": "file"
             }

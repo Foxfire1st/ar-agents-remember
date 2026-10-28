@@ -1,0 +1,24 @@
+{
+  "path": "dashboard/src/panels/review/reading/SummaryLine.test.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Inventory totals are shown while the selected invariant's code has not been requested, so the opening line never waits on a read it does not need",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4c899aa0588b8cdb2c5d24f3b3b03a0baa29314d",
+            "content": "sha256:b3445213fb2d778e33452976da8d11dfd6fb362c86e1ce5c9c71c4d0e0c3f2e1",
+            "locator": {
+              "end": 18,
+              "kind": "line_range",
+              "start": 18
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

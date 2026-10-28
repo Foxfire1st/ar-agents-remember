@@ -41,7 +41,7 @@ Recovery runtime fixtures carry a real BackgroundLedger. The lifespan case parks
 - Current, history and retry selection preserve every artifact. [5]
 - Predecessor debt survives host failure and automatic recovery advances it. [6]
 - Debt-write failure recovers from terminal truth after restart. [7]
-- The existing observer archives terminal debt without a person calling recovery. [8]
+- The existing observer archives terminal debt without a person calling recovery.
 - Empty, unreadable and conflicting records are named without host calls. [9]
 - Host budget and receipt settlement stay bounded at two scales. [10]
 - The automatic scan is bounded and does not starve the tail. [11]
@@ -51,3 +51,5 @@ Recovery runtime fixtures carry a real BackgroundLedger. The lifespan case parks
 - A rejected terminal archive never calls the host or removes worktrees. [15]
 
 - Recovery runtime fixtures carry a real BackgroundLedger. The lifespan case parks warmup-watch explicitly and asserts it beside the five earlier started owners, retaining the recovery interval and settlement/failure/cancellation assertions. These are fixture obligations, not a new archival policy or real-host witness. [16]
+
+- Retired at the fifth freeze d59c3493: mcp/tests/test_leaf_agent_archive.py:1-635 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit b35b38bd46aa449704f0e69996879cc8b927faa3. Retired means the anchor no longer stands, not that the cited subject was deleted.

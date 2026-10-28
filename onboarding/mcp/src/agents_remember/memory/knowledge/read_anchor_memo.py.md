@@ -85,7 +85,7 @@ No configured domain documentation could be checked.
 
 - **Content facts are functions of the id; availability is never remembered here; only complete ids are admitted; answers only.** [1]
 - The one admission test for a key. [2]
-- **The weight-bounded LRU table: the one-tuple hit, the refused oversized value, eviction past the bound, and a lock never held across Git or parsing.** [3]
+- **The weight-bounded LRU table: the one-tuple hit, the refused oversized value, eviction past the bound, and a lock never held across Git or parsing.** 
 - The definitions value shape and the two weigh functions. [4]
 - **The three tables, their keys and capacities, and the approximate-weight statement above them.** [5]
 - The complete-id pattern is the storage models' own object-id pattern (imported from `models/knowledge/base.py`), compiled once for the admission test. [6]
@@ -99,3 +99,5 @@ No configured domain documentation could be checked.
 No cross-repository behavior is implemented in this file.
 
 No meaningful cross-repo references found.
+
+- Retired at the fifth freeze d59c3493: mcp/src/agents_remember/memory/knowledge/read_anchor_memo.py::BoundedMemo - the bytes it recorded now occur 8 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.

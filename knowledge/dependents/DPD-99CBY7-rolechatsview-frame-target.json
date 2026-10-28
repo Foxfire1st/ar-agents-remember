@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "4ffeeb98c6ddf7594ebdea7eac26bb7298f2dd72",
-    "commit": "d0be84f714df97c4c4f63406dc5ba190fa53c325",
+    "codeTree": "8c35437a8f3e19b8eff04b68f112ef3b1bcefb33",
+    "commit": "d59c3493ec682c2ab58fd9d1ed127d08038e90c4",
     "role": "curator",
-    "statement": "At A6b, RoleChatsView still publishes shown-chat identity only from the frame's own report, with no identity before that report; the requested frame target remains separate from observed identity.",
-    "task": "260928-MIK-L202",
+    "statement": "At the L201 fifth freeze (d59c3493) RoleChatsView publishes shown-chat identity only from the frame's own report: shownAgent() returns the reported agent or null, the pane publishes null unless the page is active, unbound and showing no report, and a requested frame target never becomes shown identity.",
+    "task": "260928-MIK-L201",
     "uncommitted": true
   },
   "document": "dashboard/src/cockpit/RoleChatsView.tsx",
@@ -17,12 +17,12 @@
     "leaf": "260928-MIK-L190",
     "task": "260928-MIK"
   },
-  "revision": 2,
+  "revision": 3,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
       "anchor": {
-        "blob": "88c457444f4fabbaee444d04d1131c177f99a9d0",
+        "blob": "d02f366f758059bd1e42d8a48f3df07e7e90d36f",
         "content": "sha256:79b9c4f7e05d7510a2bbbe85ca53a13faefb2b29437a77738ad872cca309aaa6",
         "locator": {
           "kind": "symbol",

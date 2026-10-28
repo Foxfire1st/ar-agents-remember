@@ -16,7 +16,7 @@ When the account database cannot supply a home, comparison uses `_EARLIEST_OBSER
 
 ## Boundaries
 
-This is a test-support write boundary, not a change to product settings ownership. Pytest continues to move configuration through its existing conftest. Merely detecting pytest, saving and restoring a live settings file, or swallowing an unknown-home refusal is not an alternative isolation mechanism. A nonmatching path is not proof about every possible filesystem race or hard-link alias.
+This card states a fact about what the file provides, not an obligation: it asserts nothing on its own, and what it builds is exercised by the suites that read it.
 
 ## Evidence
 

@@ -4,7 +4,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "098c8bc5466fb77d9c950816bd520aa22a46a8b3",
+        "blob": "d1fad00ceed9cc357314ce0ac91368ea6dd5e0e8",
         "content": "sha256:355e3f2cb523441546cbfe8a0005b48b4b7bfcf27132b0c711b926eba3977905",
         "locator": {
           "kind": "symbol",
@@ -22,8 +22,8 @@
     },
     {
       "anchor": {
-        "blob": "098c8bc5466fb77d9c950816bd520aa22a46a8b3",
-        "content": "sha256:701737942010b97877bdb161022bd43595f84f03ec4bca5a111c3c7de8cce651",
+        "blob": "d1fad00ceed9cc357314ce0ac91368ea6dd5e0e8",
+        "content": "sha256:82f2bdcfffb2580e2e8c4a801f45c15032957faf7e8ddbbd073f871784d3a772",
         "locator": {
           "kind": "symbol",
           "name": "admit_supplemental"
@@ -40,7 +40,7 @@
     },
     {
       "anchor": {
-        "blob": "098c8bc5466fb77d9c950816bd520aa22a46a8b3",
+        "blob": "d1fad00ceed9cc357314ce0ac91368ea6dd5e0e8",
         "content": "sha256:b3b26bb72153ec5dadd5af32fa05bdb9b88d2c1210f07bbfda7b09316c53370f",
         "locator": {
           "kind": "symbol",
@@ -58,12 +58,12 @@
     },
     {
       "anchor": {
-        "blob": "098c8bc5466fb77d9c950816bd520aa22a46a8b3",
+        "blob": "d1fad00ceed9cc357314ce0ac91368ea6dd5e0e8",
         "content": "sha256:a3ca82e7dfef88df32c527fd49f5fc6cd6b5349728c871fca54050ef634a493b",
         "locator": {
-          "end": 40,
+          "end": 45,
           "kind": "line_range",
-          "start": 38
+          "start": 43
         }
       },
       "id": "RLZ-BGQQXF",
@@ -77,7 +77,7 @@
     },
     {
       "anchor": {
-        "blob": "098c8bc5466fb77d9c950816bd520aa22a46a8b3",
+        "blob": "d1fad00ceed9cc357314ce0ac91368ea6dd5e0e8",
         "content": "sha256:5254e9043b79a380d1ae1e8193e94ac994d93ca17f93b52341ce8dc09fcc680b",
         "locator": {
           "kind": "symbol",
@@ -95,7 +95,7 @@
     },
     {
       "anchor": {
-        "blob": "098c8bc5466fb77d9c950816bd520aa22a46a8b3",
+        "blob": "d1fad00ceed9cc357314ce0ac91368ea6dd5e0e8",
         "content": "sha256:8dcb7c5b7fc3ec63b7fa142b40f8a786bc6f33f9926e960644c2a8ab5cbe7f5c",
         "locator": {
           "kind": "symbol",
@@ -113,7 +113,7 @@
     },
     {
       "anchor": {
-        "blob": "098c8bc5466fb77d9c950816bd520aa22a46a8b3",
+        "blob": "d1fad00ceed9cc357314ce0ac91368ea6dd5e0e8",
         "content": "sha256:f929300b5c68b1565a8f9c65d424ecdf09fc5de94fd3cfb3d0b31a909b8defe5",
         "locator": {
           "kind": "symbol",
@@ -131,28 +131,12 @@
     }
   ],
   "references": {
-    "1": {
-      "note": "A supplemental source is resolved inside the task's own admitted roots.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "098c8bc5466fb77d9c950816bd520aa22a46a8b3",
-            "content": "sha256:701737942010b97877bdb161022bd43595f84f03ec4bca5a111c3c7de8cce651",
-            "locator": {
-              "kind": "symbol",
-              "name": "admit_supplemental"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "2": {
       "note": "A capture binds the bytes examined and states that it is supplemental.",
       "targets": [
         {
           "anchor": {
-            "blob": "098c8bc5466fb77d9c950816bd520aa22a46a8b3",
+            "blob": "d1fad00ceed9cc357314ce0ac91368ea6dd5e0e8",
             "content": "sha256:b3b26bb72153ec5dadd5af32fa05bdb9b88d2c1210f07bbfda7b09316c53370f",
             "locator": {
               "kind": "symbol",
@@ -168,7 +152,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "098c8bc5466fb77d9c950816bd520aa22a46a8b3",
+            "blob": "d1fad00ceed9cc357314ce0ac91368ea6dd5e0e8",
             "content": "sha256:f929300b5c68b1565a8f9c65d424ecdf09fc5de94fd3cfb3d0b31a909b8defe5",
             "locator": {
               "kind": "symbol",
@@ -184,8 +168,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "098c8bc5466fb77d9c950816bd520aa22a46a8b3",
-            "content": "sha256:37606a4426a60b45d6a110050e0134728db8b978680f7a3e631284787bc43b5b",
+            "blob": "d1fad00ceed9cc357314ce0ac91368ea6dd5e0e8",
+            "content": "sha256:6a932072b28987f180edb21e207b86d5a9989464e03ac229457ac1b0a2b3828d",
             "locator": {
               "kind": "file"
             }

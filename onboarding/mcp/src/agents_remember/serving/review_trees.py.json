@@ -4,8 +4,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "d01fab7c887ce5127ca0f3677f82eca9ec27053b",
-        "content": "sha256:17b99f2e3d4db2cbed1017cdb738551f19704d3aa657a8c1071930a7f8f360cf",
+        "blob": "ffb62b059733fa92509b8a34342b5a834fb8bb54",
+        "content": "sha256:719dd0d2d4f8f602df6a97d1c6aa0c268620aa0cf74a28ef6597e91086241597",
         "locator": {
           "kind": "file"
         }
@@ -18,98 +18,16 @@
       },
       "rationale": "The serving view renders the source-only identity.",
       "role": "presentation"
-    },
-    {
-      "anchor": {
-        "blob": "d01fab7c887ce5127ca0f3677f82eca9ec27053b",
-        "content": "sha256:50b3c4762ccf1629bc3917e56d65d51dd7ac556cfe9e7f2e0ce257bf6866f0b2",
-        "locator": {
-          "kind": "symbol",
-          "name": "_request_result"
-        }
-      },
-      "id": "RLZ-BFPX3W",
-      "invariant": "INV-HHZP57",
-      "origin": {
-        "handoffEntry": "MIK-R42@v2-child-lifetime",
-        "leaf": "260928-MIK-L42"
-      },
-      "rationale": "Binds a cancellation event to the request, sets it when the client disconnects or the request is cancelled, and waits for the worker before the cancellation propagates, so the child is reaped before the request ends.",
-      "role": "propagation-persistence"
     }
   ],
   "references": {
-    "10": {
-      "note": "The query handed to the port.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "d01fab7c887ce5127ca0f3677f82eca9ec27053b",
-            "content": "sha256:6d36bd9e40b722ac8501d72d82061f75870c8f1e8346d29e69b4367ca76ac281",
-            "locator": {
-              "kind": "symbol",
-              "name": "ReviewTreesQuery"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "11": {
-      "note": "The selection and the reasons it is refused.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "d01fab7c887ce5127ca0f3677f82eca9ec27053b",
-            "content": "sha256:7d23597cdb1340f4d27c8a79530c19eb558d1fcb54338382541e99d75926cd2e",
-            "locator": {
-              "kind": "symbol",
-              "name": "ReviewTreesSelection"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "12": {
-      "note": "The port runs on the route's executor inside the request's context; disconnect and cancellation set the event.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "d01fab7c887ce5127ca0f3677f82eca9ec27053b",
-            "content": "sha256:50b3c4762ccf1629bc3917e56d65d51dd7ac556cfe9e7f2e0ce257bf6866f0b2",
-            "locator": {
-              "kind": "symbol",
-              "name": "_request_result"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "13": {
-      "note": "The route: own executor, 503 without a port, 400 for a refused selection, one serialized result.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "d01fab7c887ce5127ca0f3677f82eca9ec27053b",
-            "content": "sha256:d239eb495d1abf807028753628f2814238afd971d5fcf95160e066b7fc2fb52e",
-            "locator": {
-              "kind": "symbol",
-              "name": "register_review_trees_route"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "14": {
       "note": "The request context that binds cancellation and arrival.",
       "targets": [
         {
           "anchor": {
-            "blob": "21a424c0ceba2885a766a768450e734806b787e5",
-            "content": "sha256:497b53cf506c8f181078c791d408561da395109611094c9eb17923cda1308713",
+            "blob": "c0e0b4b6e064eb8ae0c96bf4079901a625a992c5",
+            "content": "sha256:40e1151c6eb9b6b7f8b949c853c26544acccd47f3e8edb2eca2cebd61d31383d",
             "locator": {
               "kind": "symbol",
               "name": "worklist_request"
@@ -125,8 +43,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "27133970f3efd75083fdda0b036762cfe19db511",
-            "content": "sha256:0d5dcf1893f5dd43166d599a4319981049775a685e6d32beb6c990ad5663ab30",
+            "blob": "e29e1b9902f5b27cd11779b2b92b5e3fb6c28560",
+            "content": "sha256:c93f8f457e10d852a32030fc63a946d52eabbec586a630c99c64dfd99b4ef413",
             "locator": {
               "kind": "file"
             },
@@ -141,8 +59,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "27133970f3efd75083fdda0b036762cfe19db511",
-            "content": "sha256:0d5dcf1893f5dd43166d599a4319981049775a685e6d32beb6c990ad5663ab30",
+            "blob": "e29e1b9902f5b27cd11779b2b92b5e3fb6c28560",
+            "content": "sha256:c93f8f457e10d852a32030fc63a946d52eabbec586a630c99c64dfd99b4ef413",
             "locator": {
               "kind": "file"
             },
@@ -157,8 +75,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "27133970f3efd75083fdda0b036762cfe19db511",
-            "content": "sha256:0d5dcf1893f5dd43166d599a4319981049775a685e6d32beb6c990ad5663ab30",
+            "blob": "e29e1b9902f5b27cd11779b2b92b5e3fb6c28560",
+            "content": "sha256:c93f8f457e10d852a32030fc63a946d52eabbec586a630c99c64dfd99b4ef413",
             "locator": {
               "kind": "file"
             },
@@ -173,7 +91,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a506364a7279215809b5412e4b4c2a9af86ab0a0",
+            "blob": "9a147aaa605089d27bacf86c342ebf9939d1ff33",
             "content": "sha256:b0b9575dba191615bb0df1d6fe9fd6126a1998967ee4eea85cd780e34e28581c",
             "locator": {
               "kind": "symbol",
@@ -185,34 +103,17 @@
         }
       ]
     },
-    "8": {
-      "note": "The module docstring: transport only, the query's meaning and the status codes.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "d01fab7c887ce5127ca0f3677f82eca9ec27053b",
-            "content": "sha256:a4921aa4a86e456fb0346bbc4c48706628f19c04f34e6863ca9d2724b53fbde5",
-            "locator": {
-              "end": 14,
-              "kind": "line_range",
-              "start": 1
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "9": {
       "note": "The route path, the bounds of a selection and the size of the route's thread pool.",
       "targets": [
         {
           "anchor": {
-            "blob": "d01fab7c887ce5127ca0f3677f82eca9ec27053b",
+            "blob": "ffb62b059733fa92509b8a34342b5a834fb8bb54",
             "content": "sha256:a27dc3d844bb99bb456ec955405c7b46850ccc1509b9e0df63475facba6bd839",
             "locator": {
-              "end": 57,
+              "end": 64,
               "kind": "line_range",
-              "start": 45
+              "start": 52
             }
           },
           "kind": "code"

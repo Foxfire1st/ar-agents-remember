@@ -77,33 +77,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1b839113b8d511b4a8343230e70a8de0be01b79f",
-            "content": "sha256:1ac52653a51e3f6baa0cd6d608709287a3c4c3f8e993d65d3bf8e2170c817edc",
-            "locator": {
-              "kind": "symbol",
-              "name": "CockpitShell"
-            },
-            "path": "dashboard/src/cockpit/Cockpit.tsx"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "1b839113b8d511b4a8343230e70a8de0be01b79f",
-            "content": "sha256:054d4cc1aaabba6284f7cdfeae8f609aba3d6af75651bac7e4bba96a06df3b1c",
-            "locator": {
-              "end": 666,
-              "kind": "line_range",
-              "start": 385
-            },
-            "path": "dashboard/src/cockpit/Cockpit.tsx"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "1b839113b8d511b4a8343230e70a8de0be01b79f",
-            "content": "sha256:a8152c8952fadad87a17271c8a6febccb6420f118def2bd84f341dab609d41c2",
+            "blob": "0239f2882fd18ac2d5ceabd66eef472ab201ea5d",
+            "content": "sha256:3a6ace367f4b19538d38b3734e093a1368d90174ab38ed09782342f0bb36bd11",
             "locator": {
               "kind": "file"
             },

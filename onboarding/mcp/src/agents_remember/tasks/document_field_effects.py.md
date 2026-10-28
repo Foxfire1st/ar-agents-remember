@@ -140,7 +140,7 @@ evidenced by the repository-owned references below.
 
 - The effect-to-mutation-class map and the exact before/candidate classifier drive projection invalidation decisions. [6]
 - Missing or stale mutation mappings and unclassified models refuse before write. [7]
-- Runtime schema discovery refuses missing, stale, or empty classifications. [8]
+- Runtime schema discovery refuses missing, stale, or empty classifications. 
 - Effect projection retains only fields classified for the requested plane. [9]
 
 ### Cross-Repo References
@@ -152,3 +152,7 @@ None; this is the task-schema authority inside agents-remember.
 - Exact mutation effects recurse through nested models; identical inputs have no delta. [11]
 
 - intentReview and its state/decisionRef/agreedRevision, plus revisionId/sha256/packetVersions, are NORMATIVE fields. [17]
+
+- Runtime schema discovery refuses missing, stale, or empty classifications. [8]
+
+- Retired at the fifth freeze d59c3493: mcp/src/agents_remember/tasks/document_field_effects.py::validate_task_document_field_effects - the bytes it recorded now occur 8 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.

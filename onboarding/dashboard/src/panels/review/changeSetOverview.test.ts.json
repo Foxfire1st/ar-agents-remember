@@ -1,0 +1,24 @@
+{
+  "path": "dashboard/src/panels/review/changeSetOverview.test.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "An unavailable summary keeps its state and reason rather than becoming a known zero, and same-region entries stay counted",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "28d8230b43cca9e60bcdeb71714ba258b5bb4850",
+            "content": "sha256:a58f1d29353e7ee3b5bf65320404110da18b718cac3b44aa58bb99eedaf8403a",
+            "locator": {
+              "end": 53,
+              "kind": "line_range",
+              "start": 53
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

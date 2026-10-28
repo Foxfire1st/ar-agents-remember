@@ -21,4 +21,6 @@ Every writer of the environment's durable facts checks the physical confinement 
 - The case `test_the_generation_writers_refuse_a_planted_counter_link` protects a symlinked counter being refused while the outside file keeps its bytes. [2]
 - The case `test_the_seat_lock_refuses_a_planted_lock_link_before_locking` protects a symlinked lock file being admitted physically before the kernel opens it. [3]
 - The case `test_workspace_removal_holds_a_nested_link_instead_of_rmtree_following_it` protects a nested link holding a workspace removal. [4]
-- The case `test_an_update_faulted_in_a_pre_bind_write_leaves_the_old_generation_coherent` protects the old generation staying coherent when an Update faults before the bind. [5]
+- The case `test_an_update_faulted_in_a_pre_bind_write_leaves_the_old_generation_coherent` protects the old generation staying coherent when an Update faults before the bind. 
+
+- Retired at the fifth freeze d59c3493: mcp/tests/test_explainer_confinement.py::test_an_update_faulted_in_a_pre_bind_write_leaves_the_old_generation_coherent - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 5f8398b32760677c370e3145add73cfa8388357b. Retired means the anchor no longer stands, not that the cited subject was deleted.

@@ -1,0 +1,23 @@
+{
+  "path": "mcp/src/agents_remember/serving/master_preparation.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "MasterPreparation runs one job per exact key and does not serve another key's result.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "618e3cb9a20f9ca6c9c5db537d65f0fd1077bddb",
+            "content": "sha256:ad38c4c3a584ce07c63095fbbc3925ccbcbba32988e9949e8d7acb105e537ef0",
+            "locator": {
+              "kind": "symbol",
+              "name": "MasterPreparation"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -171,7 +171,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f8278dbb21252d1ffb0922f6be85733f1ccb7d2e",
+            "blob": "46ddab7108c481e5f7516f270db8ed27e640c225",
             "content": "sha256:c52d2078d26138a4597480b9927d42db90c5b019174b217c604124fbfca9813f",
             "locator": {
               "kind": "symbol",
@@ -183,21 +183,8 @@
         },
         {
           "anchor": {
-            "blob": "f8278dbb21252d1ffb0922f6be85733f1ccb7d2e",
-            "content": "sha256:b46854bf74894141a3e0b8814921ecd36c7a2542fd06a6f140b464fc066271fb",
-            "locator": {
-              "end": 323,
-              "kind": "line_range",
-              "start": 220
-            },
-            "path": "mcp/src/agents_remember/serving/projector.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "126d045c43fbd830d1f124ab63fee6589db5d1ff",
-            "content": "sha256:46c5e49607dc31e2f7cc4d0109b23ffcf419a4a9b04c24d0af483843012913b4",
+            "blob": "bc2b3c3dbc712476532455c18ff3364128b6b280",
+            "content": "sha256:4ccf5fc3ee970c93ca13ada46e80519603b8bdd6c3dc19918577cd1e7e1a5c6b",
             "locator": {
               "kind": "file"
             },

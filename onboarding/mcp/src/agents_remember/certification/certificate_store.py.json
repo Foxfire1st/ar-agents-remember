@@ -2,15 +2,6 @@
   "path": "mcp/src/agents_remember/certification/certificate_store.py",
   "realizes": [],
   "references": {
-    "1": {
-      "note": "The R21 packet requires atomic content-addressed storage and exact-reference lookup.\n\nAnchor: \"Expected Implementation Evidence\"; \"Failure And Recovery\"",
-      "targets": [
-        {
-          "kind": "unresolved",
-          "text": "ar-coordination/tasks/agents-remember/260831_closeout-certification-reform/requirements/CCR-R21-v2-content-addressed-phase-certificates.md:118-136"
-        }
-      ]
-    },
     "10": {
       "note": "`_object_digest` owns the corresponding behavior described above.",
       "targets": [

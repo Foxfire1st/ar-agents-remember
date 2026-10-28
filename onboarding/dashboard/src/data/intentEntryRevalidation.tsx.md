@@ -70,12 +70,20 @@ No meaningful cross-repo references found.
 
 
 
-- The cockpit shell wraps its body in `IntentEntryRevalidation`, shown true for the Operations view only while neither a takeover nor the in-grid review page is showing. [4]
+- The cockpit shell wraps its body in `IntentEntryRevalidation`, shown true for the Operations view only while neither a takeover nor the in-grid review page is showing.
 
 
 
-- DocChangeSetBar appends context generation to leaf facts and passes them to LeafEntries; IntentReviewEntry passes facts to useIntentReviewSummary, whose key/effect includes facts. ChangeSetButton separately consumes the same generation in its load effect dependencies. Generation is not a summary-only input. [6]
+- DocChangeSetBar appends context generation to leaf facts and passes them to LeafEntries; IntentReviewEntry passes facts to useIntentReviewSummary, whose key/effect includes facts. ChangeSetButton separately consumes the same generation in its load effect dependencies. Generation is not a summary-only input.
+
+Retired at the fifth freeze d59c3493: dashboard/src/panels/detail-panel/changeSetBar.tsx:83-108 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 04729d84383a6787afe84ed33183fdc457a20f6e. Retired means the anchor no longer stands, not that the cited subject was deleted [6]
 
 - The current stored test bodies assert summary-read counts and catalogue isolation for re-show/task switching, opening from another view, reviewer return and explicit refresh. These are static assertions, not new execution or proof of memory-event/reconnect request counts. Both former target ranges are replaced by the current complete scenario extents. [7]
 
 - ReviewRefresh obtains the shared entry revalidation callback, and its actual button onClick calls onRefresh followed by revalidateEntry. The callback declaration alone is not the invocation witness. [5]
+
+- Retired at the fifth freeze d59c3493: dashboard/src/cockpit/Cockpit.tsx:804-841 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit a414bf4725215f2cf236d6d492bc070a973bce08. Retired means the anchor no longer stands, not that the cited subject was deleted.
+
+## Retirements
+
+- Retired at the fifth freeze d59c3493: dashboard/src/panels/detail-panel/changeSetBar.tsx:83-108 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 04729d84383a6787afe84ed33183fdc457a20f6e. Retired means the anchor no longer stands, not that the cited subject was deleted.

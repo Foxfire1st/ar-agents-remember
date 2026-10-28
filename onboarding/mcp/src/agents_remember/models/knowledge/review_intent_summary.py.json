@@ -42,32 +42,14 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1e87d0a39c00f0f34c2be2952a0f05e7f5c56550",
+            "blob": "381116756a49c43ba3161b123d2f65708d31334c",
             "content": "sha256:674871b6d55c8ca9bca48c6646bfb18bc2d4803efe437858e39857762981bb31",
             "locator": {
-              "end": 181,
+              "end": 180,
               "kind": "line_range",
-              "start": 151
+              "start": 150
             },
             "path": "mcp/src/agents_remember/application/review_intent_summary.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "12": {
-      "note": "Stored-open counts require complete bound work and no undecided relevant verdict.\n\nAnchor: \"def stored_unexplained_open(contract: WorktreeContract \\| None, trees: ReviewTrees) -> int \\| None:\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "ec25892b22ca4d5b42b437c1fd3f4b2c924ac14f",
-            "content": "sha256:d14d828f3da5bdf06adea7ed3b16f55741a7eaab550917fab183e7ff9b6c2eda",
-            "locator": {
-              "end": 57,
-              "kind": "line_range",
-              "start": 20
-            },
-            "path": "mcp/src/agents_remember/application/review_worklist_answers.py"
           },
           "kind": "code"
         }

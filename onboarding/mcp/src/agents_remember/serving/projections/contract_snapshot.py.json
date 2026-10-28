@@ -4,8 +4,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "b57a7faeabd73c5872db8d333a7970835083e727",
-        "content": "sha256:5b806fc7db0020a90078216e041a449dbd3a46410158b2fa9a941156ffd586cd",
+        "blob": "76448da20fe8c1c57050ff52099e23ce2db06b49",
+        "content": "sha256:85be2007b0fe8cc492cdc9aaffcc8d8f0a247f3b8b0b6417f5356bf4a98d8a56",
         "locator": {
           "kind": "symbol",
           "name": "ContractSnapshotCache.build"
@@ -27,7 +27,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b57a7faeabd73c5872db8d333a7970835083e727",
+            "blob": "76448da20fe8c1c57050ff52099e23ce2db06b49",
             "content": "sha256:c700528b83fd4eaf0cf79a3f5589aa61b0c3a064c56302d12ce1e9a11e84017c",
             "locator": {
               "end": 18,
@@ -44,8 +44,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b57a7faeabd73c5872db8d333a7970835083e727",
-            "content": "sha256:1821f42e5a6f397a1fdb8c7513b91772060d35c05cd7f5816d54f16b6bbad6f4",
+            "blob": "76448da20fe8c1c57050ff52099e23ce2db06b49",
+            "content": "sha256:bd29749b6e40f154ca3e6943c13cca27d437f1b1092776ab5d4c5a0b62e59940",
             "locator": {
               "kind": "file"
             }
@@ -54,22 +54,11 @@
         },
         {
           "anchor": {
-            "blob": "b57a7faeabd73c5872db8d333a7970835083e727",
+            "blob": "76448da20fe8c1c57050ff52099e23ce2db06b49",
             "content": "sha256:e2084926cf923c0f10655025803960784c6289f7ea2eb9605ad5c137d00c903c",
             "locator": {
               "kind": "symbol",
               "name": "ContractSnapshot"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "b57a7faeabd73c5872db8d333a7970835083e727",
-            "content": "sha256:5b806fc7db0020a90078216e041a449dbd3a46410158b2fa9a941156ffd586cd",
-            "locator": {
-              "kind": "symbol",
-              "name": "build"
             }
           },
           "kind": "code"
@@ -81,21 +70,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b57a7faeabd73c5872db8d333a7970835083e727",
-            "content": "sha256:1821f42e5a6f397a1fdb8c7513b91772060d35c05cd7f5816d54f16b6bbad6f4",
+            "blob": "76448da20fe8c1c57050ff52099e23ce2db06b49",
+            "content": "sha256:bd29749b6e40f154ca3e6943c13cca27d437f1b1092776ab5d4c5a0b62e59940",
             "locator": {
               "kind": "file"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "b57a7faeabd73c5872db8d333a7970835083e727",
-            "content": "sha256:44c4cb5f4bc6789d4ef0d90decc659bd1afd279a48ccb1d0ce6f7d25ec7e4166",
-            "locator": {
-              "kind": "symbol",
-              "name": "ContractSnapshotCache"
             }
           },
           "kind": "code"
@@ -107,24 +85,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b57a7faeabd73c5872db8d333a7970835083e727",
+            "blob": "76448da20fe8c1c57050ff52099e23ce2db06b49",
             "content": "sha256:df7ea781396690ce5aaa0902cd952e30373c9e90204eeb1e95ecbd9ae9fea1b7",
             "locator": {
-              "end": 184,
+              "end": 191,
               "kind": "line_range",
-              "start": 184
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "b57a7faeabd73c5872db8d333a7970835083e727",
-            "content": "sha256:01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
-            "locator": {
-              "end": 185,
-              "kind": "line_range",
-              "start": 185
+              "start": 191
             }
           },
           "kind": "code"
@@ -136,7 +102,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b57a7faeabd73c5872db8d333a7970835083e727",
+            "blob": "76448da20fe8c1c57050ff52099e23ce2db06b49",
             "content": "sha256:2a2071e8ef1ebe7747ecd821a0b86d23e8ed33edf280e41d120be6377c6be391",
             "locator": {
               "end": 38,
@@ -148,7 +114,7 @@
         },
         {
           "anchor": {
-            "blob": "b57a7faeabd73c5872db8d333a7970835083e727",
+            "blob": "76448da20fe8c1c57050ff52099e23ce2db06b49",
             "content": "sha256:166184f5c35df79934002fea51eb2611272069d750228f800b2a09cc3c756180",
             "locator": {
               "end": 39,
@@ -196,12 +162,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e1d561eb43926925f6fefc875db17155ef322eb4",
+            "blob": "c24805fbc70e2548898568ec162737009c1bf601",
             "content": "sha256:9f48cc565b4f54100ed7a56c58f99c537e714c4ebea8ab36f7ed5cd3f1109419",
             "locator": {
-              "end": 282,
+              "end": 278,
               "kind": "line_range",
-              "start": 263
+              "start": 259
             },
             "path": "mcp/src/agents_remember/serving/projections/projection_inputs.py"
           },

@@ -103,12 +103,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5276cd9583d9a33d9094edac37d82b768491aed9",
+            "blob": "00c924961061dbdffe62be2587500d221bd22c23",
             "content": "sha256:e9f37594ca1b6132717a735ebfd36f985324316d02993b164f00f04f1756a5e8",
             "locator": {
-              "end": 561,
+              "end": 614,
               "kind": "line_range",
-              "start": 561
+              "start": 614
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -178,32 +178,14 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5276cd9583d9a33d9094edac37d82b768491aed9",
+            "blob": "00c924961061dbdffe62be2587500d221bd22c23",
             "content": "sha256:e9f37594ca1b6132717a735ebfd36f985324316d02993b164f00f04f1756a5e8",
             "locator": {
-              "end": 561,
+              "end": 614,
               "kind": "line_range",
-              "start": 561
+              "start": 614
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "14": {
-      "note": "The curator-coherence shared-support artifact declares test_pause_stop_only_end_to_end.py as an exact consumer; declaration does not establish invocation.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "339dffc9c6794b5fe29fe6980e9e45603b344a09",
-            "content": "sha256:ede9980f3e3646d3c60d87c9c4793d261fc423f60a973b3b43cca5bb3d74bc61",
-            "locator": {
-              "end": 1126,
-              "kind": "line_range",
-              "start": 1126
-            },
-            "path": "mcp/tests/evidence-lifecycle.toml"
           },
           "kind": "test"
         }

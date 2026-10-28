@@ -1,0 +1,23 @@
+{
+  "path": "mcp/src/agents_remember/serving/leaf_worktree_watch.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "WatchBudget bounds what the single watch admits, and read_budget what a read may consume.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8f660b676796e04a4eed1efa33169b6b34493290",
+            "content": "sha256:858ad7bb4ecee8f85d6b6cd78a3e3babeaefc825d97a2952e16e456800eb8e81",
+            "locator": {
+              "kind": "symbol",
+              "name": "WatchBudget"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

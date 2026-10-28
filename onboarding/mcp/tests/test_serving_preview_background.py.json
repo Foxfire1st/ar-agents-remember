@@ -1,0 +1,23 @@
+{
+  "path": "mcp/tests/test_serving_preview_background.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The preview switch suppresses exactly the five live loops when set truthy, and an absent or false value suppresses none of them",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c34219640fb711dcc8a52d632e8b35ccab901b3a",
+            "content": "sha256:ef7bded77b68cb0a824d39f6e6d36a3bef5ed33011a657b49bfbd4e7807f1f0f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_recorder"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

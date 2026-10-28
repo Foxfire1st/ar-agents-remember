@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "7ed768713099f287e38fa5edc2d8b24fa888feee",
-        "content": "sha256:4e24b2020ec1ca150e41d54fe7fd835463aa8d1dd116cd70082847c268622019",
+        "blob": "a3d5c552fe14c15e8526ef572cfdff0dd4941f16",
+        "content": "sha256:bff353ecb80092d5ca2e446b8bbdaa70e99198223c6d4c828dff4ae100216627",
         "locator": {
           "kind": "symbol",
           "name": "_prepared_trees"
@@ -21,26 +21,8 @@
     },
     {
       "anchor": {
-        "blob": "7ed768713099f287e38fa5edc2d8b24fa888feee",
-        "content": "sha256:bea9c9541738cc8e53b4ad16f3532cb0ce001746f424ff71f5f9a6907680a4ca",
-        "locator": {
-          "kind": "symbol",
-          "name": "handle_cancel"
-        }
-      },
-      "id": "RLZ-H76NMX",
-      "invariant": "INV-VCAQVB",
-      "origin": {
-        "handoffEntry": "L183-exact-seat-cancel-state",
-        "leaf": "260928-MIK-L183"
-      },
-      "rationale": "The cancel HTTP boundary requires the exact nonempty requestId and returns the seat service cancellation state for the selected leaf; malformed input is a named400 refusal and an unwired service refuses before host action.",
-      "role": "enforcement"
-    },
-    {
-      "anchor": {
-        "blob": "7ed768713099f287e38fa5edc2d8b24fa888feee",
-        "content": "sha256:9ecf3f354da65c653b5abaf2c922af74a0998c9d0fd6e46ecf012e270b5f58db",
+        "blob": "a3d5c552fe14c15e8526ef572cfdff0dd4941f16",
+        "content": "sha256:a6983bc4f4e020e79459ce4f3e95c9e7ff7aab1aeb0f93994367b3f33d7cc9fd",
         "locator": {
           "kind": "symbol",
           "name": "_prepare"
@@ -62,97 +44,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7ed768713099f287e38fa5edc2d8b24fa888feee",
-            "content": "sha256:c2cebfaadfa9540bf329840c0f1d71b56d521bea8d03f12e0b7b83ce67d3394c",
+            "blob": "a3d5c552fe14c15e8526ef572cfdff0dd4941f16",
+            "content": "sha256:2582b8ec6566aaf2ddbb4f2b7ae75e6f345c077fc9f4b7a69f7fd9a41262742e",
             "locator": {
-              "end": 758,
+              "end": 457,
               "kind": "line_range",
-              "start": 716
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "2": {
-      "note": "History, message, request id and comparison number are validated before the seat is touched\n\nAnchor: `def _send_facts(`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "7ed768713099f287e38fa5edc2d8b24fa888feee",
-            "content": "sha256:6e9b471754255601fbf5a2847fc92caf6b4e360dfd6bbb08c7ded8477683d799",
-            "locator": {
-              "end": 1136,
-              "kind": "line_range",
-              "start": 1104
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "3": {
-      "note": "A Send against a comparison the leaf has left is refused with both numbers\n\nAnchor: `def _check_requested_number(`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "7ed768713099f287e38fa5edc2d8b24fa888feee",
-            "content": "sha256:65ceb2eb9a0fcc30574d509009b6d54a88af171dbce93a3b24d470a87bca207c",
-            "locator": {
-              "end": 366,
-              "kind": "line_range",
-              "start": 338
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "4": {
-      "note": "A planning leaf's comparison is built at the contract's line tips with nothing else substituted\n\nAnchor: `def _planned(`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "7ed768713099f287e38fa5edc2d8b24fa888feee",
-            "content": "sha256:afdbbda3b6020de8d1a621aa69a2f8bce7444343ba13d01e9e4a0c49b0f1e8b9",
-            "locator": {
-              "end": 476,
-              "kind": "line_range",
-              "start": 403
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "5": {
-      "note": "An unresolvable line falls back only to its fork base, never to the repository's HEAD\n\nAnchor: `def _line_tip_commit(`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "7ed768713099f287e38fa5edc2d8b24fa888feee",
-            "content": "sha256:aaecedaf07d4cf96987247a52877feba66115a9ba9057bea4231dc6b6388e935",
-            "locator": {
-              "end": 526,
-              "kind": "line_range",
-              "start": 508
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "6": {
-      "note": "Cancel reports whether a turn stopped and whether publication was prevented\n\nAnchor: `def handle_cancel(`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "7ed768713099f287e38fa5edc2d8b24fa888feee",
-            "content": "sha256:bea9c9541738cc8e53b4ad16f3532cb0ce001746f424ff71f5f9a6907680a4ca",
-            "locator": {
-              "end": 1364,
-              "kind": "line_range",
-              "start": 1333
+              "start": 406
             }
           },
           "kind": "code"
@@ -164,88 +61,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7ed768713099f287e38fa5edc2d8b24fa888feee",
-            "content": "sha256:4e24b2020ec1ca150e41d54fe7fd835463aa8d1dd116cd70082847c268622019",
-            "locator": {
-              "kind": "symbol",
-              "name": "_prepared_trees"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "7ed768713099f287e38fa5edc2d8b24fa888feee",
-            "content": "sha256:9ecf3f354da65c653b5abaf2c922af74a0998c9d0fd6e46ecf012e270b5f58db",
-            "locator": {
-              "kind": "symbol",
-              "name": "_prepare"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "7ed768713099f287e38fa5edc2d8b24fa888feee",
-            "content": "sha256:c2e5883bf5f4cf8840ba3fbbe1068dc251e4a2b744a995cd32db1d53d7009f8e",
+            "blob": "a3d5c552fe14c15e8526ef572cfdff0dd4941f16",
+            "content": "sha256:b8ee67ba84bbecf41be76e8da1a12acf27316c71f9c4234e599e0cb64554bb8a",
             "locator": {
               "kind": "symbol",
               "name": "_state_payload"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "7ed768713099f287e38fa5edc2d8b24fa888feee",
-            "content": "sha256:70077a8e5d0a0fa4ba17ab850287f5af31b8782a92f579d87145760971f448cb",
-            "locator": {
-              "kind": "symbol",
-              "name": "handle_remove_revisions"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "7ed768713099f287e38fa5edc2d8b24fa888feee",
-            "content": "sha256:874ec414b92b708d7c20a1eaf50e621c925dc2e30aa8d48ddf0e42381cfba420",
-            "locator": {
-              "kind": "symbol",
-              "name": "handle_update"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "7ed768713099f287e38fa5edc2d8b24fa888feee",
-            "content": "sha256:c90fef756fe380e75e1f2e86e74a96da804ca084aa8e5cf60d3e630b5f046e97",
-            "locator": {
-              "kind": "symbol",
-              "name": "handle_retire"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "7ed768713099f287e38fa5edc2d8b24fa888feee",
-            "content": "sha256:6382900a4ac4fea108f3876f9de31f70a3353a5761c2a8c4ad1619f9416374a2",
-            "locator": {
-              "kind": "symbol",
-              "name": "handle_planned"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "7ed768713099f287e38fa5edc2d8b24fa888feee",
-            "content": "sha256:bea9c9541738cc8e53b4ad16f3532cb0ce001746f424ff71f5f9a6907680a4ca",
-            "locator": {
-              "kind": "symbol",
-              "name": "handle_cancel"
             }
           },
           "kind": "code"

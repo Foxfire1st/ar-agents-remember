@@ -60,12 +60,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2f417db25d3f58c21b8baeca43751c69834ddffb",
+            "blob": "0312a433230b5868e6030419096bdc9a1bdd0e19",
             "content": "sha256:1d8638b4aab27aa8189c10d98425d4399028e8666f4277639b8513253ffae23c",
             "locator": {
-              "end": 150,
+              "end": 181,
               "kind": "line_range",
-              "start": 141
+              "start": 172
             },
             "path": "mcp/src/agents_remember/memory/conversion/code_objects.py"
           },

@@ -19,8 +19,10 @@ The review-presenter capability: one exact comparison, one authored page. It adm
 
 ## Evidence
 
-- An explicit activation starts one durable authoring attempt. [1]
+- An explicit activation starts one durable authoring attempt. 
 - Publication loads the prospective revision once without a model before any ready pointer moves. [2]
 - A runner that cannot confine its writes refuses by name. [3]
 
 - The current implementation adds readiness part-map persistence and typed publication refusal propagation; the existing prospective-load and attempt identity account remains valid. [4]
+
+- Retired at the fifth freeze d59c3493: mcp/src/agents_remember/canvas/presenter.py::Presenter - the bytes it recorded now occur 64 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.

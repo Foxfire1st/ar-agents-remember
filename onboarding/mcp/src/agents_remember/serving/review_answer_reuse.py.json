@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "5fda4192810bf846ddc11abe82c94d78d39edbf6",
-        "content": "sha256:d218940ce11f79e01b8463bd34f61ee5e4e5c0d5e4008724cdf653bcf26fab70",
+        "blob": "141dbff7ec35bacf0f84ee6a6b2ae8eb24559931",
+        "content": "sha256:be5e918b7e5825f69452b7cce5bfcadc636a21070b3e62e8ebf7c208b9b01e32",
         "locator": {
           "kind": "symbol",
           "name": "RecordedAnswerReuse"
@@ -26,29 +26,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5fda4192810bf846ddc11abe82c94d78d39edbf6",
-            "content": "sha256:51d7c306608fe4e3baa88c61de2c13f2f02d770880bee8689faf43eb670fe476",
+            "blob": "141dbff7ec35bacf0f84ee6a6b2ae8eb24559931",
+            "content": "sha256:6d158815c345713a8442e4ffa576f6d7e66ba4e5199907ee0730915ca4a0214f",
             "locator": {
-              "end": 83,
+              "end": 275,
               "kind": "line_range",
-              "start": 57
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "6": {
-      "note": "Every supplied input must be readable and match its admitted stamp.\n\nAnchor: \"def _fresh(self, key: tuple[object, ...], sources: tuple[ReadInput, ...]) -> _Kept \\| None:\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "5fda4192810bf846ddc11abe82c94d78d39edbf6",
-            "content": "sha256:c8f8e53113367e828dd97a5b7366f22f7b56e56ddd9a6d01e869e303c7184f71",
-            "locator": {
-              "end": 115,
-              "kind": "line_range",
-              "start": 92
+              "start": 218
             }
           },
           "kind": "code"
@@ -60,12 +43,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5fda4192810bf846ddc11abe82c94d78d39edbf6",
-            "content": "sha256:c21cecd57e6bd1065df053a3f11fd269aa69d734425baf39104b6c99714be190",
+            "blob": "141dbff7ec35bacf0f84ee6a6b2ae8eb24559931",
+            "content": "sha256:98f0791be324596a1e687017b65f8c801610f88fa3bd7cbca8eb121467df2175",
             "locator": {
-              "end": 133,
+              "end": 410,
               "kind": "line_range",
-              "start": 117
+              "start": 405
             }
           },
           "kind": "code"

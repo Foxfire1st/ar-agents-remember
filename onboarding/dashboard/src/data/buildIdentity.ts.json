@@ -26,7 +26,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1b839113b8d511b4a8343230e70a8de0be01b79f",
+            "blob": "0239f2882fd18ac2d5ceabd66eef472ab201ea5d",
             "content": "sha256:e57836a7bded493be6880aeceeda5dc025ed8d9e2840ea88d2cf95991982f44e",
             "locator": {
               "kind": "symbol",
@@ -38,12 +38,12 @@
         },
         {
           "anchor": {
-            "blob": "1b839113b8d511b4a8343230e70a8de0be01b79f",
+            "blob": "0239f2882fd18ac2d5ceabd66eef472ab201ea5d",
             "content": "sha256:472cf6a2e02a3ca636277df5bb65561f8f50bf1ed84c1499f67ecb165b32b818",
             "locator": {
-              "end": 990,
+              "end": 1035,
               "kind": "line_range",
-              "start": 964
+              "start": 1009
             },
             "path": "dashboard/src/cockpit/Cockpit.tsx"
           },
@@ -51,8 +51,8 @@
         },
         {
           "anchor": {
-            "blob": "1b839113b8d511b4a8343230e70a8de0be01b79f",
-            "content": "sha256:a8152c8952fadad87a17271c8a6febccb6420f118def2bd84f341dab609d41c2",
+            "blob": "0239f2882fd18ac2d5ceabd66eef472ab201ea5d",
+            "content": "sha256:3a6ace367f4b19538d38b3734e093a1368d90174ab38ed09782342f0bb36bd11",
             "locator": {
               "kind": "file"
             },
@@ -67,12 +67,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "681a4b96e9c2991c06ed62b101a14c261ee57608",
+            "blob": "f869fa55173e9ff48cd9c5499a042c30ee385b72",
             "content": "sha256:0c8fce771c825e03611f52bf97aa084a608af92e6861dd334e75029f033e25f0",
             "locator": {
-              "end": 65,
+              "end": 98,
               "kind": "line_range",
-              "start": 65
+              "start": 98
             },
             "path": "dashboard/vite.config.ts"
           },

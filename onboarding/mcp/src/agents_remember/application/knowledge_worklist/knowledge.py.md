@@ -70,9 +70,9 @@ No configured live documentation source was available for this pass.
 - Sides are parsed by the index builder; a side that does not parse whole is unreadable input. [1]
 - The unreadable-side error naming each failing file. [2]
 - An entry's anchor with its source path. [3]
-- Parsing a snapshot, refusing any problem. [4]
+- Parsing a snapshot, refusing any problem. 
 
-- A side from the validator's tree retains indexed JSON and unparsed Markdown companions for exact worklist comparison. [5]
+- A side from the validator's tree retains indexed JSON and unparsed Markdown companions for exact worklist comparison.
 
 - Entries grouped by invariant and by path. [6]
 - Each invariant's families by membership. [7]
@@ -85,3 +85,5 @@ No configured live documentation source was available for this pass.
 No meaningful cross-repo references found: the module parses memory trees handed to it as snapshots.
 
 No cross-repo boundary is crossed by this file.
+
+- Retired at the fifth freeze d59c3493: mcp/src/agents_remember/application/knowledge_worklist/knowledge.py:75-81 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit e40c314ca55305f7e4334b4e8e16a10297f6f175; mcp/src/agents_remember/application/knowledge_worklist/knowledge.py::from_snapshot - the bytes it recorded now occur 3 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.

@@ -151,7 +151,7 @@ rejected, never silently re-rooted).
 
 - The leaf-enclosure contract enumerator the catalog walks. [7]
 
-> Retained earlier citation wording: - The `WorktreeContract` (`code_worktree`, `worktree_group`, `cleanup`) + `load_contract`/`ContractError`. [8]
+> Retained earlier citation wording: - The `WorktreeContract` (`code_worktree`, `worktree_group`, `cleanup`) + `load_contract`/`ContractError`.
 
 - The `table_metadata` drift reader + the `mirror_onboarding_path` sidecar mapper. [9]
 
@@ -165,4 +165,6 @@ rejected, never silently re-rooted).
 
 This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
 
-- The `WorktreeContract` (`code_worktree`, `worktree_group`, `cleanup`) + `load_contract`/`ContractError`.  Anchor: "coordination.worktree_group" [8]
+- The `WorktreeContract` (`code_worktree`, `worktree_group`, `cleanup`) + `load_contract`/`ContractError`.  Anchor: "coordination.worktree_group"
+
+- Retired at the fifth freeze d59c3493: mcp/src/agents_remember/worktrees/worktree_contract.py:97-1215 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit c20a3292e667d227a3be0c1fb276f8a701df814f. Retired means the anchor no longer stands, not that the cited subject was deleted.

@@ -1,0 +1,23 @@
+{
+  "path": "mcp/tests/test_review_live_answers.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "A live task-context answer is computed once while its inputs are identical",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "619ebc9e0bf52e200ebed967515d32a17c2a051d",
+            "content": "sha256:9fd4df6e68ce1401ecc453640615708a19e095cce045d2a103feb62b288e8ea0",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_live_task_context_answer_is_computed_once_while_its_inputs_are_identical"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

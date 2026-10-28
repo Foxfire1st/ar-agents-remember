@@ -27,7 +27,6 @@ The named changed seams supersede the older accounts below. Unchanged duties rem
 
 This packaged copy makes role messages short wake-ups naming requested work or a handover and its files. Complete report, verdict, list and evidence contents travel through file-only `body` or existing-file `attach`, never pasted into message text. Within a shared task, message files remain with its record and a leaf workspace exposes the message-folder link. Wake text uses the effective settings limit, not a number pinned in this role/template. This transport account changes neither the file's existing role/write boundaries nor requirement, review, curation or landing authority.
 
-- Messages wake; complete payloads and evidence travel as files.
 
 
 ## Governing Overview
@@ -76,7 +75,7 @@ No external domain source governs this synchronized projection.
 ### Repo-Internal References
 
 
-- The hosted child-authority and no-fallback boundary is embedded in the brief. \[2]
+- The hosted child-authority and no-fallback boundary is embedded in the brief. \
 
 - The canonical root skills tree is synchronized into the MCP package-data runtime skill tree; current generated-copies.json declares that sole skills target. [7]
 

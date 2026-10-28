@@ -472,9 +472,9 @@ No configured domain documentation; source owners support this current account.
 - **The count shape whose optional value beside its optional reason is how a quantity with no meaning states why rather than reporting a zero.** [12]
 - ReviewStaleness describes current, stale, not_compared or not-measured identity state; ReviewSubmission permits unavailable or disabled_stale. Neither is semantic approval. [14]
 - The whole payload — including the optional `family_context` whose absence is a fact of its own — and the two response shapes. [15]
-- **The comparison request: a task context, one recorded subject and a same-origin default, with no path.** [16]
+- **The comparison request: a task context, one recorded subject and a same-origin default, with no path.** 
 - **The reviewed subject as the server selected it — the entry's only legitimate selector source, with no path field on purpose.** [17]
-- **The error idiom this route deliberately steps outside of: `getJson` throws on a non-OK status, while a refused source read arrives with a typed refusal in the body.** [24]
+- **The error idiom this route deliberately steps outside of: `getJson` throws on a non-OK status, while a refused source read arrives with a typed refusal in the body.** 
 - The sibling taskChangeset read is a distinct client/transport boundary, not an implementation of this review client. [25]
 
 - **The catalogue consumer: since `260921-ICR-L47` the reviewer (not the task entry) reads this client's subject catalogue when it opens, keyed on the comparison's identity; the task entry reads the changed-intent summary instead, and a refused or empty catalogue still leaves the task-context review available.** [27]
@@ -499,3 +499,8 @@ No separate cross-repository implementation claim.
 - The catalogue answer optionally carries the outline [30]
 - Catalogue reads need no new endpoint [31]
 - Family values and types, including current change-fact and source-locator vocabulary, are re-exported from their actual mirror rather than implemented here. [2]
+
+
+Anchor: `getJson` `FilesApiError` `qs` [24]
+
+- Retired at the fifth freeze d59c3493: dashboard/src/data/files.ts::FilesApiError - the bytes it recorded now occur 4 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.

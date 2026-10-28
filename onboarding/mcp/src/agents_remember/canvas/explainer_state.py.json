@@ -2,34 +2,17 @@
   "path": "mcp/src/agents_remember/canvas/explainer_state.py",
   "realizes": [],
   "references": {
-    "1": {
-      "note": "A refusal carries a nameable reason and an actionable detail, never an untyped failure\n\nAnchor: `class ExplainerRefused`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "b7a21628f3d7c742294099d5c91bee95e5625bb6",
-            "content": "sha256:ed00074254e1d8de5203d020f4a1f2eb4929b07c83f48dfd91a4538d027775fc",
-            "locator": {
-              "end": 110,
-              "kind": "line_range",
-              "start": 104
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "2": {
       "note": "The seat id is derived from the workspace and the generation, so it is stable across a lost reply and never reused\n\nAnchor: `def agent_id(`",
       "targets": [
         {
           "anchor": {
-            "blob": "b7a21628f3d7c742294099d5c91bee95e5625bb6",
-            "content": "sha256:e87ba8587e46b0560a513089dd330908274fdeac236e2c478e564214a2e18623",
+            "blob": "2ae0638d1795363f3720d48ac449c9f2df179c09",
+            "content": "sha256:e88c07914b69ff507dfd6b6ef559d0b2f554b8a46e2a02905535af5e94bb6ca0",
             "locator": {
-              "end": 308,
+              "end": 317,
               "kind": "line_range",
-              "start": 305
+              "start": 304
             }
           },
           "kind": "code"
@@ -41,12 +24,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b7a21628f3d7c742294099d5c91bee95e5625bb6",
+            "blob": "2ae0638d1795363f3720d48ac449c9f2df179c09",
             "content": "sha256:a7931d279c61237bd935a1488c3ca784b24932fabef64389acc2c7d49bb9300f",
             "locator": {
-              "end": 271,
+              "end": 266,
               "kind": "line_range",
-              "start": 263
+              "start": 258
             }
           },
           "kind": "code"
@@ -58,12 +41,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b7a21628f3d7c742294099d5c91bee95e5625bb6",
+            "blob": "2ae0638d1795363f3720d48ac449c9f2df179c09",
             "content": "sha256:56aab17d76304c79cadb0228d82fb5d385108ea93cd72207979073b1e2f7a380",
             "locator": {
-              "end": 231,
+              "end": 225,
               "kind": "line_range",
-              "start": 226
+              "start": 220
             }
           },
           "kind": "code"
@@ -75,12 +58,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b7a21628f3d7c742294099d5c91bee95e5625bb6",
+            "blob": "2ae0638d1795363f3720d48ac449c9f2df179c09",
             "content": "sha256:9d4660f42b3197d5bb81fafc7d11afbdcbc06392e90765866064f7a89de56721",
             "locator": {
-              "end": 500,
+              "end": 584,
               "kind": "line_range",
-              "start": 464
+              "start": 548
             }
           },
           "kind": "code"
@@ -92,12 +75,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b7a21628f3d7c742294099d5c91bee95e5625bb6",
+            "blob": "2ae0638d1795363f3720d48ac449c9f2df179c09",
             "content": "sha256:7621da33b055ec6082c970076b55f89edd52ccef4ca6296a3b966900e116cf76",
             "locator": {
-              "end": 612,
+              "end": 696,
               "kind": "line_range",
-              "start": 572
+              "start": 656
             }
           },
           "kind": "code"

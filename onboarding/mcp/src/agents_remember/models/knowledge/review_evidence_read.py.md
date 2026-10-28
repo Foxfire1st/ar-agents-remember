@@ -15,6 +15,8 @@ The receipt shapes one bounded evidence read answers with: the side and tree act
 
 ## Evidence
 
-- A read receipt states the side and tree read, the examined window, the returned range and every limit that shaped it. [1]
-- A relationship read reports the edge its own owner records, with depth and cut. [2]
-- A claim resolution is mechanical: each basis must resolve against the packet that cites it. [3]
+- A read receipt states the side and tree read, the examined window, the returned range and every limit that shaped it. 
+- A relationship read reports the edge its own owner records, with depth and cut. 
+- A claim resolution is mechanical: each basis must resolve against the packet that cites it. 
+
+- Retired at the fifth freeze d59c3493: mcp/src/agents_remember/models/knowledge/review_evidence_read.py::EvidenceReadReceipt - the bytes it recorded now occur 3 times in the file, so no single home can be named and it is not given to the likelier one; mcp/src/agents_remember/models/knowledge/review_evidence_read.py::EvidenceRelationshipRead - the bytes it recorded now occur 3 times in the file, so no single home can be named and it is not given to the likelier one; mcp/src/agents_remember/models/knowledge/review_evidence_read.py::ClaimResolution - the bytes it recorded now occur 3 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.

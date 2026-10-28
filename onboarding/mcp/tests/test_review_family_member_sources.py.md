@@ -136,4 +136,6 @@ No meaningful cross-repo references found.
 - The lane registration. Source caption: `test_review_family_member_sources` [34]
 
 
-- The shared-fixture consumer registration. [35]
+- The shared-fixture consumer registration.
+
+- Retired at the fifth freeze d59c3493: mcp/tests/evidence-lifecycle.toml:3324-3324 - the bytes it recorded now occur 67 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:1955-1955 - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.

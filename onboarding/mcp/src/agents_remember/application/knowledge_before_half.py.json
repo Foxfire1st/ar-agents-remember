@@ -34,19 +34,6 @@
             }
           },
           "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "4d65b32afc0da2f5b016054c83eadd52d0f2bcb4",
-            "content": "sha256:793a7cb2f90b6d7e9ffd268240928c1f4241714c1d1581cc59150741b7fdd51d",
-            "locator": {
-              "end": 173,
-              "kind": "line_range",
-              "start": 151
-            },
-            "path": "mcp/src/agents_remember/memory/knowledge/logical.py"
-          },
-          "kind": "code"
         }
       ]
     },
@@ -90,19 +77,6 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4d65b32afc0da2f5b016054c83eadd52d0f2bcb4",
-            "content": "sha256:793a7cb2f90b6d7e9ffd268240928c1f4241714c1d1581cc59150741b7fdd51d",
-            "locator": {
-              "end": 173,
-              "kind": "line_range",
-              "start": 151
-            },
-            "path": "mcp/src/agents_remember/memory/knowledge/logical.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
             "blob": "e35a60680f871cd002ce6b1ccd3a831d69561ae2",
             "content": "sha256:4c460ffbfdbf7449e3e20aa81a5d117e56dc60b9e8623f9e866ea34473af68e8",
             "locator": {
@@ -116,7 +90,7 @@
         },
         {
           "anchor": {
-            "blob": "e3af58a3091d7364172ee73c5443ed98c970efa1",
+            "blob": "1d90d4f0e878dfd10c90e1cc30e2037832907004",
             "content": "sha256:56d8449441ba28672f50dff3a1acde386e7571a9713592c15c268f340e8da2eb",
             "locator": {
               "end": 450,

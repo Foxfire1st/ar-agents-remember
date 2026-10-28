@@ -95,12 +95,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4706a83eea5f4a686f850036c79c40b13328d5a6",
+            "blob": "850d93cf5ed952e2e11779b72cf7a029bb4290bd",
             "content": "sha256:29969799cd0e15a896993191e961070b630a3e5a8991e8255fe6fdc6d202cdbf",
             "locator": {
-              "end": 294,
+              "end": 323,
               "kind": "line_range",
-              "start": 282
+              "start": 311
             },
             "path": "dashboard/src/panels/file-viewer/markGutter.tsx"
           },

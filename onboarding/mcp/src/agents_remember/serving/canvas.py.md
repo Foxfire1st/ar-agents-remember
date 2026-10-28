@@ -20,14 +20,16 @@ Hosts retained generated revisions and their bounded frame-message sessions. The
 
 ## Evidence
 
-- The frame route serves one live session's own document and admitted assets. [1]
+- The frame route serves one live session's own document and admitted assets. 
 - A frame message is bound, bounded and refused by name before it is applied. [3]
-- Both surfaces are registered before the static mount. [4]
+- Both surfaces are registered before the static mount. 
 
-- The direct legacy Generate helper validates explicit activation before preparing evidence. [2]
+- The direct legacy Generate helper validates explicit activation before preparing evidence. 
 - An explicit positive revision opens only its retained manifest; absence opens the saved ready revision. [5]
 - Pinned replacement matches revision and slot, while an unpinned opening replaces the frame's channels. [6]
 - A selection offer preserves its text in one replaceable revision-scoped explainer pick and starts no model. [7]
 - An explanation request returns its full question in a removable explainer pick without sending or starting. [8]
 - A missing named frame directory refuses before another frame can supply bytes. [9]
 - Evidence lookup reads the pinned revision's manifest or requires the unpinned ready revision to match. [10]
+
+- Retired at the fifth freeze d59c3493: mcp/src/agents_remember/serving/canvas.py::page - the bytes it recorded now occur 19 times in the file, so no single home can be named and it is not given to the likelier one; mcp/src/agents_remember/serving/canvas.py::register_canvas_routes - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one; mcp/src/agents_remember/serving/canvas.py::generate - the recorded locator no longer resolves at the candidate: the name is present in the file but not as the definition the note cited, so the anchor cannot be re-pointed by resemblance. Retired means the anchor no longer stands, not that the cited subject was deleted.

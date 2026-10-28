@@ -22,4 +22,6 @@ Heights, scroll clamping, intersections, resize reports and request timing are s
 
 - Held subject/card reads retain the next settled block across success and failure. [4]
 - Fractional/clamp corrections, sticky-head clearance, lane reservations and ready/skeleton height holds. [5]
-- Node replacement, vanished/surviving-line spacers, excerpt/marks continuity and selected-slot skeleton. [6]
+- Node replacement, vanished/surviving-line spacers, excerpt/marks continuity and selected-slot skeleton.
+
+- Retired at the fifth freeze d59c3493: dashboard/src/panels/review/reading/ReviewPage.readerLine.test.tsx:642-1127 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 10e466b17feee2530c06b2670fef496c6c9e755f. Retired means the anchor no longer stands, not that the cited subject was deleted.

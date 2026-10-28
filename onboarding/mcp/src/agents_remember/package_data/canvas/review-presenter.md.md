@@ -18,4 +18,6 @@ The shipped explainer instructions, identical to the canonical canvas copy and b
 
 ## Evidence
 
-- The shipped capability text states the explainer assignment and bounds. [1]
+- The shipped capability text states the explainer assignment and bounds.
+
+- Retired at the fifth freeze d59c3493: mcp/src/agents_remember/package_data/canvas/review-presenter.md:1-86 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 5f8398b32760677c370e3145add73cfa8388357b. Retired means the anchor no longer stands, not that the cited subject was deleted.

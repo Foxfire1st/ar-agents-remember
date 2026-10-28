@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "944428509cf7b3537978dee20497a1337b24bfa7",
+        "blob": "89c67d9421a6de581d792a1b16f073854a25289a",
         "content": "sha256:d28d5a6811637257d870cb07145e6c8d2964577a261ffcbdf5e6e5069b018c71",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "944428509cf7b3537978dee20497a1337b24bfa7",
+        "blob": "89c67d9421a6de581d792a1b16f073854a25289a",
         "content": "sha256:c2e5e9951c8b949e3c35b76735d0746fb4ab2290d78c24b72ca22281b2346fbe",
         "locator": {
           "kind": "symbol",
@@ -37,7 +37,7 @@
     },
     {
       "anchor": {
-        "blob": "944428509cf7b3537978dee20497a1337b24bfa7",
+        "blob": "89c67d9421a6de581d792a1b16f073854a25289a",
         "content": "sha256:e6ff31fdf529563ead61aad75791bb01f4a74ec8a8881327d5dbe12cb25bc118",
         "locator": {
           "kind": "symbol",
@@ -54,24 +54,7 @@
     },
     {
       "anchor": {
-        "blob": "944428509cf7b3537978dee20497a1337b24bfa7",
-        "content": "sha256:adc33b1cfc725feccd136689a2c59486dc7cb736df46b101f809531845314d64",
-        "locator": {
-          "kind": "symbol",
-          "name": "counts a removed file's lines as removed, and keeps the range where a side's text is not known"
-        }
-      },
-      "facet": "A known absent after side reports zero additions and the complete supplied before-line count; unresolved, unread and truncated sides retain their mapped ranges instead of becoming empty.",
-      "id": "PRF-731GMP",
-      "invariant": "INV-9S9XT5",
-      "origin": {
-        "handoffEntry": "RP14",
-        "leaf": "260928-MIK-L89"
-      }
-    },
-    {
-      "anchor": {
-        "blob": "944428509cf7b3537978dee20497a1337b24bfa7",
+        "blob": "89c67d9421a6de581d792a1b16f073854a25289a",
         "content": "sha256:1573e2c9cff658da620ddc0b12cf3ce8460afba846f72f5c7937e339cd636364",
         "locator": {
           "kind": "symbol",
@@ -88,7 +71,7 @@
     },
     {
       "anchor": {
-        "blob": "944428509cf7b3537978dee20497a1337b24bfa7",
+        "blob": "89c67d9421a6de581d792a1b16f073854a25289a",
         "content": "sha256:cf07cd3a48e2e73c97bdaf7459e46fdd9f9cac4b13ae841ed725515c930d5598",
         "locator": {
           "kind": "symbol",
@@ -105,7 +88,7 @@
     },
     {
       "anchor": {
-        "blob": "944428509cf7b3537978dee20497a1337b24bfa7",
+        "blob": "89c67d9421a6de581d792a1b16f073854a25289a",
         "content": "sha256:1e49ae2b8aec0215d620a19d33b0c3235678ba934944c65052d2059a0a24efe2",
         "locator": {
           "kind": "symbol",
@@ -122,24 +105,7 @@
     },
     {
       "anchor": {
-        "blob": "944428509cf7b3537978dee20497a1337b24bfa7",
-        "content": "sha256:d57a7e3d2c61c48642a5cdd39c503e7abbb52cd1b50612b1e683b38764b04a87",
-        "locator": {
-          "kind": "symbol",
-          "name": "counts a location row's lines from its two excerpts, else shows its span (W10)"
-        }
-      },
-      "facet": "The captured location reason contains signed line counts and a concrete three-line edit returns two additions and one removal.",
-      "id": "PRF-CM7KES",
-      "invariant": "INV-9S9XT5",
-      "origin": {
-        "handoffEntry": "RP14",
-        "leaf": "260928-MIK-L89"
-      }
-    },
-    {
-      "anchor": {
-        "blob": "944428509cf7b3537978dee20497a1337b24bfa7",
+        "blob": "89c67d9421a6de581d792a1b16f073854a25289a",
         "content": "sha256:2bdb8e237ec2535cf9b3da82bc19a6cc05c5e779f5fbc335a8c5618ede4b63c8",
         "locator": {
           "kind": "symbol",
@@ -156,7 +122,7 @@
     },
     {
       "anchor": {
-        "blob": "944428509cf7b3537978dee20497a1337b24bfa7",
+        "blob": "89c67d9421a6de581d792a1b16f073854a25289a",
         "content": "sha256:2efe5b33d63bf62a1f1d14e32c4eb27b6341ff182d941968bec657ad65f83ec6",
         "locator": {
           "kind": "symbol",
@@ -173,7 +139,7 @@
     },
     {
       "anchor": {
-        "blob": "944428509cf7b3537978dee20497a1337b24bfa7",
+        "blob": "89c67d9421a6de581d792a1b16f073854a25289a",
         "content": "sha256:d3b3b035a63c3e54eb7c9f36a5681a999f3b5ca52111ec3586c7464085fb9af5",
         "locator": {
           "kind": "symbol",
@@ -190,7 +156,7 @@
     },
     {
       "anchor": {
-        "blob": "944428509cf7b3537978dee20497a1337b24bfa7",
+        "blob": "89c67d9421a6de581d792a1b16f073854a25289a",
         "content": "sha256:2357dfc78ef43d361c5180d5d7e84587596bb2bf02c069bd6ed70f1e5376f12e",
         "locator": {
           "kind": "symbol",
@@ -207,7 +173,7 @@
     },
     {
       "anchor": {
-        "blob": "944428509cf7b3537978dee20497a1337b24bfa7",
+        "blob": "89c67d9421a6de581d792a1b16f073854a25289a",
         "content": "sha256:42086b8031748de14587e38aeeace500939299bc35fa86e850b8c8d24da719c8",
         "locator": {
           "kind": "symbol",
@@ -224,7 +190,7 @@
     },
     {
       "anchor": {
-        "blob": "944428509cf7b3537978dee20497a1337b24bfa7",
+        "blob": "89c67d9421a6de581d792a1b16f073854a25289a",
         "content": "sha256:d442b81703a9b827e8aae516dcdaa1292baaad37b089b7d78ffe1caddeb1a13b",
         "locator": {
           "kind": "symbol",
@@ -241,7 +207,7 @@
     },
     {
       "anchor": {
-        "blob": "944428509cf7b3537978dee20497a1337b24bfa7",
+        "blob": "89c67d9421a6de581d792a1b16f073854a25289a",
         "content": "sha256:837fc822548e1f9b96c4296916dedc19dbb71251f0c6011ad33dc56d681e31b8",
         "locator": {
           "kind": "symbol",
@@ -255,23 +221,6 @@
         "handoffEntry": "RP05",
         "leaf": "260928-MIK-L89"
       }
-    },
-    {
-      "anchor": {
-        "blob": "944428509cf7b3537978dee20497a1337b24bfa7",
-        "content": "sha256:076600a855d4f3f77ea3ebb94cfb38b1b659fcee5dc3a45f1124fb84b6e819ff",
-        "locator": {
-          "kind": "symbol",
-          "name": "counts a side with no file as no lines: an added file's lines are all added (MIK-R86 v2 rule 2)"
-        }
-      },
-      "facet": "Known absent before sides in the captured realization and proof produce exactly +35 −0 and +59 −0.",
-      "id": "PRF-YMEQSP",
-      "invariant": "INV-9S9XT5",
-      "origin": {
-        "handoffEntry": "RP14",
-        "leaf": "260928-MIK-L89"
-      }
     }
   ],
   "realizes": [],
@@ -281,12 +230,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "944428509cf7b3537978dee20497a1337b24bfa7",
-            "content": "sha256:0cfc35f118fbb4b2e0da8fd3d8d06cb902bad2d8d1b8b8921a408fc231a42bd4",
+            "blob": "89c67d9421a6de581d792a1b16f073854a25289a",
+            "content": "sha256:9610db154ff86a7c3363f267ca18a5a84638e65b60163f2e742220e021acae62",
             "locator": {
-              "end": 138,
+              "end": 637,
               "kind": "line_range",
-              "start": 42
+              "start": 45
             }
           },
           "kind": "test"
@@ -298,12 +247,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "944428509cf7b3537978dee20497a1337b24bfa7",
-            "content": "sha256:60336296df31a42c97a57adb81334863802bd729781aad866f50e0270443fb6c",
+            "blob": "89c67d9421a6de581d792a1b16f073854a25289a",
+            "content": "sha256:f7e0b83154e02d694ea12186f06865052e90b9dd1a4a30f9bca653d51497fdf5",
             "locator": {
-              "end": 330,
+              "end": 637,
               "kind": "line_range",
-              "start": 140
+              "start": 146
             }
           },
           "kind": "test"
@@ -315,12 +264,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "944428509cf7b3537978dee20497a1337b24bfa7",
+            "blob": "89c67d9421a6de581d792a1b16f073854a25289a",
             "content": "sha256:3dca4a0bfeecefc53192621a4886358250221536e37999448a8e35cdec5fdfd1",
             "locator": {
-              "end": 448,
+              "end": 637,
               "kind": "line_range",
-              "start": 332
+              "start": 521
             }
           },
           "kind": "test"

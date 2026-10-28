@@ -24,4 +24,6 @@ This composition owns dependency wiring, not intent-count semantics, path author
 
 - Initial observations include record-directory selection for numbered reads and preserve absence. [4]
 - Resolved repositories, record and database contents are additional inputs. [5]
-- One numbered/default resolver is composed with native summary and capture observation. [6]
+- One numbered/default resolver is composed with native summary and capture observation.
+
+- Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/dashboard_review_summary.py:84-96 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit c861abfeff33c9ef8f1ca066604c8f971b613361. Retired means the anchor no longer stands, not that the cited subject was deleted.

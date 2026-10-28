@@ -8,57 +8,13 @@
       "targets": [
         {
           "anchor": {
-            "blob": "42427cf2c755ff5dd21db48d8561569ecc82c094",
+            "blob": "7a5f2e16883465216bc2170e7e5df96b58e72a6e",
             "content": "sha256:e3e612114faf1e0e5a02a7cf6829e77627e7d4f9bd8ceaef6d3e943393d47b1a",
             "locator": {
               "end": 16,
               "kind": "line_range",
               "start": 1
             }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "10": {
-      "note": "The lane read is acquired once by the reading surface's change-set hook, with the comparison number that hook resolved or `undefined`, and the surface carries that one read into the open change page without asking for the lane itself.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "b43f30893a1d83f202278f31bcdc9bd4a68de218",
-            "content": "sha256:069a7e4d5aab908ff3d4e9642804f625af7f95494078809c428bac4e46c17385",
-            "locator": {
-              "end": 138,
-              "kind": "line_range",
-              "start": 118
-            },
-            "path": "dashboard/src/panels/review/reading/useChangeSet.ts"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "c6b8e96b4754cb08807babd1483628c20ec09d33",
-            "content": "sha256:855f99bda2ad00c77fc1caef2d9fc15eb6ace783ba79cb46cbccca6c011865d4",
-            "locator": {
-              "end": 134,
-              "kind": "line_range",
-              "start": 125
-            },
-            "path": "dashboard/src/panels/review/reading/useReviewPage.ts"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "6f30efcbe166c0fe854c1de9cde75a444ff9c5a5",
-            "content": "sha256:313fa4a69697137aed00b1bb36c8488b397f5c2a97ac3999671c165d29265265",
-            "locator": {
-              "end": 849,
-              "kind": "line_range",
-              "start": 835
-            },
-            "path": "dashboard/src/panels/review/ReviewSurface.tsx"
           },
           "kind": "code"
         }
@@ -98,7 +54,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "42427cf2c755ff5dd21db48d8561569ecc82c094",
+            "blob": "7a5f2e16883465216bc2170e7e5df96b58e72a6e",
             "content": "sha256:ca044fb554d86b53ee7a9f656cea4fe94166872e1b7e6a168623a2f29fb13b6a",
             "locator": {
               "kind": "symbol",
@@ -114,7 +70,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "42427cf2c755ff5dd21db48d8561569ecc82c094",
+            "blob": "7a5f2e16883465216bc2170e7e5df96b58e72a6e",
             "content": "sha256:e4fd818a484a072780fa152651b5dfbad944eb2facc444b0b97448528dc2b176",
             "locator": {
               "end": 203,
@@ -126,12 +82,12 @@
         },
         {
           "anchor": {
-            "blob": "42427cf2c755ff5dd21db48d8561569ecc82c094",
+            "blob": "7a5f2e16883465216bc2170e7e5df96b58e72a6e",
             "content": "sha256:adeded5837deed40ce045846e3e4646e6f29b62d426d3ab29d976886ce5eb5af",
             "locator": {
-              "end": 259,
+              "end": 261,
               "kind": "line_range",
-              "start": 249
+              "start": 251
             }
           },
           "kind": "code"
@@ -143,7 +99,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "42427cf2c755ff5dd21db48d8561569ecc82c094",
+            "blob": "7a5f2e16883465216bc2170e7e5df96b58e72a6e",
             "content": "sha256:c55c40363c2c39f5fc2c6a519cc7abe01607f80e1ccb8fea0be1752262928acf",
             "locator": {
               "end": 60,
@@ -155,7 +111,7 @@
         },
         {
           "anchor": {
-            "blob": "42427cf2c755ff5dd21db48d8561569ecc82c094",
+            "blob": "7a5f2e16883465216bc2170e7e5df96b58e72a6e",
             "content": "sha256:d5e75c4289a51117ee095dd569352bdbb37ed8bf83987e3b91aa1333fcdba41e",
             "locator": {
               "end": 74,
@@ -198,12 +154,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "182e7b6b618f5f3485b278a84d16dc19f7e720a6",
+            "blob": "0e69a371f1c81dd1fdb854476f50f1d23c43a8cf",
             "content": "sha256:a3d5442795eea509cb163dee4e42b5e386801f9bc9109659dc3c9f072c41fe9d",
             "locator": {
-              "end": 402,
+              "end": 445,
               "kind": "line_range",
-              "start": 396
+              "start": 439
             },
             "path": "dashboard/src/data/reviewTrees.ts"
           },
@@ -211,12 +167,12 @@
         },
         {
           "anchor": {
-            "blob": "6f30efcbe166c0fe854c1de9cde75a444ff9c5a5",
+            "blob": "aacb83d79d19978ad947b4ac88eba523ad8e4fb5",
             "content": "sha256:74f791c9c2a17ef8a71b0d42259665bb5ee89a007fbd371b054287a367fb0eba",
             "locator": {
-              "end": 539,
+              "end": 550,
               "kind": "line_range",
-              "start": 503
+              "start": 514
             },
             "path": "dashboard/src/panels/review/ReviewSurface.tsx"
           },
@@ -229,7 +185,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "42427cf2c755ff5dd21db48d8561569ecc82c094",
+            "blob": "7a5f2e16883465216bc2170e7e5df96b58e72a6e",
             "content": "sha256:e82fdd7d6309a4161f9dc2cc880e216df96dc89630d50018a09e324a0a37edee",
             "locator": {
               "kind": "symbol",
@@ -245,7 +201,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "42427cf2c755ff5dd21db48d8561569ecc82c094",
+            "blob": "7a5f2e16883465216bc2170e7e5df96b58e72a6e",
             "content": "sha256:d5e75c4289a51117ee095dd569352bdbb37ed8bf83987e3b91aa1333fcdba41e",
             "locator": {
               "kind": "symbol",
@@ -256,7 +212,7 @@
         },
         {
           "anchor": {
-            "blob": "42427cf2c755ff5dd21db48d8561569ecc82c094",
+            "blob": "7a5f2e16883465216bc2170e7e5df96b58e72a6e",
             "content": "sha256:2850ce6c8646c12bb58d689ffbb2dbe156fa004f7a52c2893b615b52dab1d53e",
             "locator": {
               "kind": "symbol",
@@ -272,7 +228,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "42427cf2c755ff5dd21db48d8561569ecc82c094",
+            "blob": "7a5f2e16883465216bc2170e7e5df96b58e72a6e",
             "content": "sha256:72fc1761b8a733ac25a03f51abe9eb21c35011f7e13d3a7b9e1dbc07564a107e",
             "locator": {
               "kind": "symbol",
@@ -283,7 +239,7 @@
         },
         {
           "anchor": {
-            "blob": "42427cf2c755ff5dd21db48d8561569ecc82c094",
+            "blob": "7a5f2e16883465216bc2170e7e5df96b58e72a6e",
             "content": "sha256:1750aa24fce9157a2212b9301afca3550b1138ff5ac8cd2d2d5454be97aef8b1",
             "locator": {
               "kind": "symbol",
@@ -294,7 +250,7 @@
         },
         {
           "anchor": {
-            "blob": "42427cf2c755ff5dd21db48d8561569ecc82c094",
+            "blob": "7a5f2e16883465216bc2170e7e5df96b58e72a6e",
             "content": "sha256:79c99187876fb3bcca1d90c817283adbde84eddd2efc60a7973ea7abae94008e",
             "locator": {
               "kind": "symbol",
@@ -310,7 +266,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "42427cf2c755ff5dd21db48d8561569ecc82c094",
+            "blob": "7a5f2e16883465216bc2170e7e5df96b58e72a6e",
             "content": "sha256:db847eeeb253d265ec8d73796aa715fac4b8d09fca424aeb4ea9e8b7d956bd0f",
             "locator": {
               "kind": "symbol",
@@ -321,27 +277,11 @@
         },
         {
           "anchor": {
-            "blob": "42427cf2c755ff5dd21db48d8561569ecc82c094",
+            "blob": "7a5f2e16883465216bc2170e7e5df96b58e72a6e",
             "content": "sha256:899b2a9e8ec6be0f995ce1a6ae41fcae5bda1749fbaf8e489de391f7921fc627",
             "locator": {
               "kind": "symbol",
               "name": "readOf"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "6": {
-      "note": "One answer kept with its URL; `null` asks nothing.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "42427cf2c755ff5dd21db48d8561569ecc82c094",
-            "content": "sha256:46b959119dcff79d88307fb45283ee89124e6235b0b06838f5acbb768616560e",
-            "locator": {
-              "kind": "symbol",
-              "name": "useLaneAnswer"
             }
           },
           "kind": "code"
@@ -353,8 +293,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "42427cf2c755ff5dd21db48d8561569ecc82c094",
-            "content": "sha256:50efbb66ae022fe895d52f3a09ddb3139654a65529b73a6048ca5896e0b48e63",
+            "blob": "7a5f2e16883465216bc2170e7e5df96b58e72a6e",
+            "content": "sha256:d8c25f203419e9e3fe11fe938450ef46b13140c26474a6ca0e378ce642b9afa5",
             "locator": {
               "kind": "file"
             }
@@ -368,7 +308,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "42427cf2c755ff5dd21db48d8561569ecc82c094",
+            "blob": "7a5f2e16883465216bc2170e7e5df96b58e72a6e",
             "content": "sha256:3ab1fb18ca09c216fe1c383361d6ed98476f8a2756d27a6f27df31eddca8b5a9",
             "locator": {
               "kind": "symbol",

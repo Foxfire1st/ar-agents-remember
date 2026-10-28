@@ -50,25 +50,12 @@
         },
         {
           "anchor": {
-            "blob": "126d045c43fbd830d1f124ab63fee6589db5d1ff",
-            "content": "sha256:1575f0df50485d6f27827a60d26428c5347e77d042624540b01e4f00586319b2",
-            "locator": {
-              "end": 285,
-              "kind": "line_range",
-              "start": 251
-            },
-            "path": "mcp/src/agents_remember/cli/dashboard.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "126d045c43fbd830d1f124ab63fee6589db5d1ff",
+            "blob": "bc2b3c3dbc712476532455c18ff3364128b6b280",
             "content": "sha256:cbf84bdba619aefa1d80c91f3328f9ffb27e17ec2e2442228904a3f88f4f2067",
             "locator": {
-              "end": 409,
+              "end": 777,
               "kind": "line_range",
-              "start": 366
+              "start": 734
             },
             "path": "mcp/src/agents_remember/cli/dashboard.py"
           },
@@ -76,25 +63,12 @@
         },
         {
           "anchor": {
-            "blob": "126d045c43fbd830d1f124ab63fee6589db5d1ff",
-            "content": "sha256:73c79f2e55097c316c1f58bce935563e2be3df65391837be6f4e7fd36ffdf7c9",
-            "locator": {
-              "end": 166,
-              "kind": "line_range",
-              "start": 120
-            },
-            "path": "mcp/src/agents_remember/cli/dashboard.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "126d045c43fbd830d1f124ab63fee6589db5d1ff",
+            "blob": "bc2b3c3dbc712476532455c18ff3364128b6b280",
             "content": "sha256:b2a07885fecc6dc8c7ace0056428751a0b66df82ecebe6e26a1f7df04dbdc0f9",
             "locator": {
-              "end": 120,
+              "end": 156,
               "kind": "line_range",
-              "start": 120
+              "start": 156
             },
             "path": "mcp/src/agents_remember/cli/dashboard.py"
           },
@@ -102,7 +76,7 @@
         },
         {
           "anchor": {
-            "blob": "126d045c43fbd830d1f124ab63fee6589db5d1ff",
+            "blob": "bc2b3c3dbc712476532455c18ff3364128b6b280",
             "content": "sha256:e26ef8683885e4c13344e79d00129018e3092fe07925ce6c1070a5facd649158",
             "locator": {
               "end": 1,
@@ -123,19 +97,6 @@
               "start": 1
             },
             "path": "mcp/src/agents_remember/application/runtime/startup.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "126d045c43fbd830d1f124ab63fee6589db5d1ff",
-            "content": "sha256:a2af8b9844717427d3f0e00fa1f32fc098185fa8a0cd7501acef2f6159c81557",
-            "locator": {
-              "end": 553,
-              "kind": "line_range",
-              "start": 1
-            },
-            "path": "mcp/src/agents_remember/cli/dashboard.py"
           },
           "kind": "code"
         }

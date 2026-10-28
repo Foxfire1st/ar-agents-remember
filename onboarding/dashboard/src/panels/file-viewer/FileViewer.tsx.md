@@ -70,7 +70,7 @@ switches and is full-bleed (drops the rails), like the Engine Room / Topology / 
 - The persisted split/single flag (`localStorage`-backed). [3]
 - The files API client — `fetchRepos`/`readFile`/`resolveForward`/`resolveReverse` + types. [4]
 
-- The shell that registers + keeps this view mounted across tab switches. [5]
+- The shell that registers + keeps this view mounted across tab switches. 
 
 - The route overview that governs this page. 
 
@@ -83,3 +83,7 @@ memoized between meaningful `active` transitions.
 
 - The page owns files-left visibility and publishes only its active repository for tray context. [7]
 - The Explorer remains mounted when hidden; its external toggle and code target stay in the page. [8]
+
+- The shell that registers + keeps this view mounted across tab switches. [5]
+
+- Retired at the fifth freeze d59c3493: dashboard/src/cockpit/Cockpit.tsx::CockpitShell - the bytes it recorded now occur 13 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.

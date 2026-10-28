@@ -19,6 +19,8 @@ Measures the mounted explanation page against a stubbed transport: what the save
 ## Evidence
 
 - A saved page opens one isolated frame for its exact revision and starts nothing [1]
-- The trusted stale list is drawn from the host's answer even when the frame cannot be shown [2]
-- Every claim is marked and all four bases are named in the legend [3]
+- The trusted stale list is drawn from the host's answer even when the frame cannot be shown
+- Every claim is marked and all four bases are named in the legend
 - A navigated or departed frame is revoked alone, and its sibling keeps its document [4]
+
+- Retired at the fifth freeze d59c3493: dashboard/src/panels/review/explainer/ExplanationView.test.tsx:264-290 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 5f8398b32760677c370e3145add73cfa8388357b; dashboard/src/panels/review/explainer/ExplanationView.test.tsx:366-392 - the region it cited is not in the file at the candidate and no re-point was possible. Retired means the anchor no longer stands, not that the cited subject was deleted.

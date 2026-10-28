@@ -1,0 +1,23 @@
+{
+  "path": "mcp/tests/test_projection_watch_plan_native.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The watch plan parks on the real condition and registers no synthetic early signal, so the inputs it names are the ones the watcher reports",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c27e14f7ce0b1dd9185fb21a19cb573079a99b5b",
+            "content": "sha256:a774858599333555a062eebeb8e767eb46489b045030f279a57446960c88af84",
+            "locator": {
+              "kind": "symbol",
+              "name": "Trace"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

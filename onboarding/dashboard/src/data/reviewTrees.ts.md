@@ -93,11 +93,11 @@ nothing and grants no acceptance of that pair.
 
 - The module comment: what the adapter carries and the three answers it keeps apart. [10]
 
-- The result mirrors current tree comparison, knowledge/code sides, optional gate/currentness/code-change data, entries and refusal. [11]
+- The result mirrors current tree comparison, knowledge/code sides, optional gate/currentness/code-change data, entries and refusal. 
 
 - The worklist carries source/bound facts, rows and optional native item verdicts/witnesses rather than deriving a gate grade from annotations. [12]
 
-- The request, addressed by number, recorded or invariants, with the optional signal. [13]
+- The request, addressed by number, recorded or invariants, with the optional signal. 
 
 - The transient codes and the retry delays. [14]
 
@@ -121,5 +121,5 @@ nothing and grants no acceptance of that pair.
 - Shown-set cards use sorted distinct chunks, stable answer retention and retryable per-mount failures. [19]
 - Entry symbols and supplied memory values retain their optional and unavailable states. [28]
 
-- The answer carries the highest recorded number, separate from the comparison it resolved. [29]
+- The answer carries the highest recorded number, separate from the comparison it resolved. 
 - The delivered notice value names the pair and its trees without becoming a review. [30]

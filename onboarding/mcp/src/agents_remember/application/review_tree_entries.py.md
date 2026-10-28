@@ -31,6 +31,8 @@ Nothing is written, re-anchored or judged. An unreadable memory side is not an a
 - The focused result includes entries and explicit after-memory state from one index opening. [12]
 - Memory measurements share the after index and fail independently with a bounded unavailable reason. [13]
 - Each card preserves own-side authored/currentness values, carries the locator symbol and derives change conservatively. [14]
-- Pinned code placement and exact bounded excerpts keep absence/read failure distinct. [15]
+- Pinned code placement and exact bounded excerpts keep absence/read failure distinct.
 - The observation-key cache stores answers only; unsupported locators and failed resolution keep named outcomes. [16]
 - The placement memo is bounded at 8192 entries. [17]
+
+- Retired at the fifth freeze d59c3493: mcp/src/agents_remember/application/review_tree_entries.py:291-341 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit b54d1b0331f67454bcf245a7a338b04900181c3c. Retired means the anchor no longer stands, not that the cited subject was deleted.

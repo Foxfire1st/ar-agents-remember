@@ -1,0 +1,23 @@
+{
+  "path": "mcp/tests/test_review_card_carry.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Cards are carried exactly when every read they were made from still holds",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f1ae9c3e331d5babc6711217c78709de75ae1249",
+            "content": "sha256:40e797f12bee31e789d93d70112f3d1f26fbe1c4a732e0fadc3d5c51a9b86890",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_cards_are_carried_exactly_when_every_read_they_were_made_from_holds"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

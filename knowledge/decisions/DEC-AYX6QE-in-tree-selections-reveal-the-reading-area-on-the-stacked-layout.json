@@ -59,8 +59,8 @@
       "alternative": 1,
       "relation": "reconsider_on",
       "target": {
-        "blob": "bad733825fa948cd921b26f52b9bd08707c2a292",
-        "content": "sha256:9d41481d6897db661410ed7aee888a84c5f3b3d1885d830478c46bec178e5827",
+        "blob": "e5a39d2696fb623960725d081d87a81d303feb34",
+        "content": "sha256:bd87300f145db9978548756295b019a5e012f775c32f9ad670009e988bddf66f",
         "locator": {
           "kind": "file"
         },
@@ -127,7 +127,7 @@
     "leaf": "260928-MIK-L39",
     "task": "260928-MIK"
   },
-  "revision": 2,
+  "revision": 3,
   "schema": "ar-decision/v1",
   "status": "active",
   "supersedes": []

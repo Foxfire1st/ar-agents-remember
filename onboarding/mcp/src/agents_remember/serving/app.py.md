@@ -27,10 +27,10 @@ The complete previous account is retained historically, including earlier route-
 
 No domain documentation source is configured. Current repository source establishes these local claims; former test/timing accounts below remain historical only.
 
-- One runtime composition shares its ledger/landing interest and forwards actual supplied collaborators. [31]
-- The leaf adds review_memory_root to the runtime beside the retained child-shutdown port. [32]
+- One runtime composition shares its ledger/landing interest and forwards actual supplied collaborators.
+- The leaf adds review_memory_root to the runtime beside the retained child-shutdown port.
 - Lifespan/gzip, shared changeset cache, built-in and optional routes precede the static mount. [33]
-- The stream consumer forwards the optional review identity and runtime root port into the multiplexer. [34]
+- The stream consumer forwards the optional review identity and runtime root port into the multiplexer.
 
 ## Historical predecessor account
 
@@ -187,3 +187,5 @@ call plus the import.
 - `create_app` registers the canvas host and the presenter surface through `register_canvas_routes` after the API routes and before the static mount, then installs `RefuseCrossOriginWrites` and `RefuseForeignHosts`, so both surfaces sit behind the origin and host guards. [35]
 
 - Typed409 refusal routes are registered before canvas routes, so first-match routing refuses old authoring while retained reads keep their owners; explainer routes are wired only through explicit collaborators. [36]
+
+- Retired at the fifth freeze d59c3493: mcp/src/agents_remember/serving/app.py:86-136 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit de5a7adbb21b2f6f22c3ced0eed9dd7189fe93c7; mcp/src/agents_remember/serving/app.py:125-135 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit f3115ce8603f83b7b5cbd82aa402f66ec1d8a29d; mcp/src/agents_remember/serving/_app_routes.py:246-274 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 662b6266e0e4662acd043c39365bb17969ea6ff9. Retired means the anchor no longer stands, not that the cited subject was deleted.

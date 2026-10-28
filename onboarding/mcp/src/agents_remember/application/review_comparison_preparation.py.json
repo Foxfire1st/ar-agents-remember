@@ -1,0 +1,39 @@
+{
+  "path": "mcp/src/agents_remember/application/review_comparison_preparation.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "SharedComparisonPreparation is the single admission both surfaces use.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c87ac239f5dfcbec06744de3dbd59ad28af681a0",
+            "content": "sha256:97ffe7864bc1b1a0b7cc0948d10e072d26484caa241f2c577631bd428d9883e8",
+            "locator": {
+              "kind": "symbol",
+              "name": "SharedComparisonPreparation"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "ComparisonInputWitness is the currentness witness a prepared comparison is served under.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c87ac239f5dfcbec06744de3dbd59ad28af681a0",
+            "content": "sha256:bceebe89057b40ba0cbb9f95a04845920ca32960b6b737fec69c4b3443c66d51",
+            "locator": {
+              "kind": "symbol",
+              "name": "ComparisonInputWitness"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

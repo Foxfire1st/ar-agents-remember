@@ -43,30 +43,6 @@
     {
       "relation": "constrains",
       "target": {
-        "blob": "aab19c668bc860807d186ba6ea5c23e5f8ee034d",
-        "content": "sha256:26c91e84efbfa06d542f24876ca3ef92df5089a733eed1ce5b216728c669a9d6",
-        "locator": {
-          "kind": "symbol",
-          "name": "ReviewChangeOverlay"
-        },
-        "path": "dashboard/src/panels/review/ReviewSurface.tsx"
-      }
-    },
-    {
-      "relation": "constrains",
-      "target": {
-        "blob": "aab19c668bc860807d186ba6ea5c23e5f8ee034d",
-        "content": "sha256:35dbdb4f323fdfcad787d2a9937877770e64ae01ebcfd0f2e773d04b763fb7bc",
-        "locator": {
-          "kind": "symbol",
-          "name": "WorklistView"
-        },
-        "path": "dashboard/src/panels/review/ReviewSurface.tsx"
-      }
-    },
-    {
-      "relation": "constrains",
-      "target": {
         "blob": "7d93eb292cff4db200e775504be284256f58938e",
         "content": "sha256:65c1724fbac8f4f5e001bf3def4a41f0f42c711b225db3bad6a5a3e756708923",
         "locator": {
@@ -121,7 +97,7 @@
     "leaf": "260928-MIK-L86",
     "task": "260928-MIK"
   },
-  "revision": 3,
+  "revision": 4,
   "schema": "ar-decision/v1",
   "status": "active",
   "supersedes": []

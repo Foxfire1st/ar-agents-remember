@@ -29,3 +29,5 @@ The cancel route forwards the exact seat/request pair from the leaf ledger, repo
 - The case `test_a_stale_comparison_number_and_an_unknown_history_are_refused_before_the_seat` protects a stale comparison number and unknown history being refused before the seat. [6]
 
 - The cancel route forwards the exact seat/request pair from the leaf ledger, reports stopped-turn and prevented-publication facts from its host reply, marks a request the ledger never saw uncertain, and rejects a missing request ID. This fixture-level route assertion does not certify a live host cancellation. [7]
+
+

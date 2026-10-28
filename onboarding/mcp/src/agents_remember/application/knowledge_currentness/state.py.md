@@ -80,8 +80,8 @@ No configured live documentation source was available for this pass.
 
 - The family header with its stale members. [5]
 - The block, its counts and the read-wide reason. [6]
-- The function: family members expanded, realizations and proofs observed alike. [7]
-- Unknown IDs are left out. [8]
+- The function: family members expanded, realizations and proofs observed alike. 
+- Unknown IDs are left out. 
 - Precedence cases. [9]
 
 - The stale-proof cases. [10]
@@ -94,3 +94,5 @@ No meaningful cross-repo references found: the function reads one memory tree's 
 both named by its caller.
 
 No cross-repo boundary is crossed by this file.
+
+- Retired at the fifth freeze d59c3493: mcp/src/agents_remember/application/knowledge_currentness/state.py::invariant_currentness - the bytes it recorded now occur 3 times in the file, so no single home can be named and it is not given to the likelier one; mcp/src/agents_remember/application/knowledge_currentness/state.py::_is_record - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 719acba61e491d0b7f1ee82dbeea5314ecec5083. Retired means the anchor no longer stands, not that the cited subject was deleted.

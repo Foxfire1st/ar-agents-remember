@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "9361e1cdbce3684c70b9b2927c33e4a95ef03c91",
-        "content": "sha256:afe49329f6fcc6a34d05df632b208097eb80487f9a9452cc96108786e2a29889",
+        "blob": "a8a781425fec891612af4838bc49e7409a23f974",
+        "content": "sha256:53c856b7d45bc71f230bff53c92a5ed40b6cfe8857f7fafb5f8b83fb17522b0d",
         "locator": {
           "kind": "symbol",
           "name": "_Read.finish"
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "9361e1cdbce3684c70b9b2927c33e4a95ef03c91",
+        "blob": "a8a781425fec891612af4838bc49e7409a23f974",
         "content": "sha256:09ca8abb3bb0cc2c8c8e735571a03c7afdeb83412e1f8011cf77456df0c68ea5",
         "locator": {
           "kind": "symbol",
@@ -39,8 +39,8 @@
     },
     {
       "anchor": {
-        "blob": "9361e1cdbce3684c70b9b2927c33e4a95ef03c91",
-        "content": "sha256:f38be14a4fc595b2e6e5973a13207dba305d5126074dfec0e5215fc831a43bf8",
+        "blob": "a8a781425fec891612af4838bc49e7409a23f974",
+        "content": "sha256:0ec10a5fa8298786b17a4f1069ec014773d091f1604f3be8c77b141ec266e771",
         "locator": {
           "kind": "symbol",
           "name": "ChangesetCache"
@@ -57,8 +57,8 @@
     },
     {
       "anchor": {
-        "blob": "9361e1cdbce3684c70b9b2927c33e4a95ef03c91",
-        "content": "sha256:f38be14a4fc595b2e6e5973a13207dba305d5126074dfec0e5215fc831a43bf8",
+        "blob": "a8a781425fec891612af4838bc49e7409a23f974",
+        "content": "sha256:0ec10a5fa8298786b17a4f1069ec014773d091f1604f3be8c77b141ec266e771",
         "locator": {
           "kind": "symbol",
           "name": "ChangesetCache"
@@ -75,30 +75,13 @@
     }
   ],
   "references": {
-    "1": {
-      "note": "New results are admitted only when all captured inputs remain readable and equal after the request.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "9361e1cdbce3684c70b9b2927c33e4a95ef03c91",
-            "content": "sha256:b40a1e47df8d94fe81fafecfe7544769a1fbe8501a29723b7bfbad6051560669",
-            "locator": {
-              "end": 92,
-              "kind": "line_range",
-              "start": 84
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "2": {
       "note": "All three retained tables are bounded and LRU.\n\nAnchor: `ChangesetCache`",
       "targets": [
         {
           "anchor": {
-            "blob": "9361e1cdbce3684c70b9b2927c33e4a95ef03c91",
-            "content": "sha256:f39dcc62bada377cf7074131dc6f49096ce489f8b0761a24163bdee2b54af29a",
+            "blob": "a8a781425fec891612af4838bc49e7409a23f974",
+            "content": "sha256:3f4ef8779f96b1087b7bc6122b1cad18e4fc23138aaeace3f8021c5859c9c581",
             "locator": {
               "kind": "file"
             }
@@ -112,8 +95,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9361e1cdbce3684c70b9b2927c33e4a95ef03c91",
-            "content": "sha256:f39dcc62bada377cf7074131dc6f49096ce489f8b0761a24163bdee2b54af29a",
+            "blob": "a8a781425fec891612af4838bc49e7409a23f974",
+            "content": "sha256:3f4ef8779f96b1087b7bc6122b1cad18e4fc23138aaeace3f8021c5859c9c581",
             "locator": {
               "kind": "file"
             }

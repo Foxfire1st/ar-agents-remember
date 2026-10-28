@@ -166,7 +166,7 @@ Potentially mutating synchronous calls hold one per-server lock until their work
 
 
 
-- `create_server` builds the FastMCP instance and invokes the registered tool families.  Anchor: `create_server` [1]
+- `create_server` builds the FastMCP instance and invokes the registered tool families.  Anchor: `create_server` 
 
 
 
@@ -174,12 +174,25 @@ Potentially mutating synchronous calls hold one per-server lock until their work
 
 
 
-- Frozen implementation of create_server supporting the stated file behavior.  Anchor: `create_server` [7]
+- Frozen implementation of create_server supporting the stated file behavior.  Anchor: `create_server` 
 
 
 
-- Current transport wiring retains boot-time caller identity and lazy worktree service construction. It schedules a shared post-discovery sweep/conditional-dashboard latch after producing the list answer, with first-call fallback; application initialization installs no ambient lifecycle. [8]
+- Current transport wiring retains boot-time caller identity and lazy worktree service construction. It schedules a shared post-discovery sweep/conditional-dashboard latch after producing the list answer, with first-call fallback; application initialization installs no ambient lifecycle.
+
+Retired at the fifth freeze d59c3493: mcp/src/agents_remember/mcp/server.py:281-314 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit d445e83e7d28e3c34b15d8299d279d65ab9183b9; mcp/src/agents_remember/mcp/server.py:93-127 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit dc03c64a91947cee470622c560c516854eec86b5. Retired means the anchor no longer stands, not that the cited subject was deleted [8]
 
 
 
 - Initialization names the worktree supplier and selects the ordinary or bound surface. list_tools produces its answer before scheduling start_after_discovery; call_tool invokes the same latch before bound-name/exact-seat checks. The latch starts the sweep even without config and starts dashboard supervision only with config/settings; bound checks and raised-call logging retain their owners. [9]
+
+
+- `create_server` builds the FastMCP instance and invokes the registered tool families.  Anchor: `create_server` [1]
+
+- Frozen implementation of create_server supporting the stated file behavior.  Anchor: `create_server` [7]
+
+- Retired at the fifth freeze d59c3493: mcp/src/agents_remember/mcp/server.py::create_server - the bytes it recorded now occur 3 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.
+
+## Retirements
+
+- Retired at the fifth freeze d59c3493: mcp/src/agents_remember/mcp/server.py:281-314 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit d445e83e7d28e3c34b15d8299d279d65ab9183b9; mcp/src/agents_remember/mcp/server.py:93-127 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit dc03c64a91947cee470622c560c516854eec86b5. Retired means the anchor no longer stands, not that the cited subject was deleted.

@@ -2,29 +2,12 @@
   "path": "dashboard/src/panels/review/explainer/index.ts",
   "realizes": [],
   "references": {
-    "1": {
-      "note": "The switch is exported with its prop type and its view type\n\nAnchor: `export { ExplanationSwitch`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "f9610b514848935a4a488f6c751c6912c047e543",
-            "content": "sha256:1cdd60710cbeb5a84d9cb9f8ecb430930ff9136f82d159acc90268754c46234d",
-            "locator": {
-              "end": 23,
-              "kind": "line_range",
-              "start": 23
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "2": {
       "note": "The planned page is exported with the payload readers and pure orders it needs\n\nAnchor: `export { PlannedReview`",
       "targets": [
         {
           "anchor": {
-            "blob": "f9610b514848935a4a488f6c751c6912c047e543",
+            "blob": "5af90c99d9e0d5ef4c6decac233db85badcebc3d",
             "content": "sha256:ab4022f7371ba6d12dfd6e9a51ea1d7d4b12d1f5bb312e59aa5b9fd57f4b4973",
             "locator": {
               "end": 30,
@@ -41,7 +24,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f9610b514848935a4a488f6c751c6912c047e543",
+            "blob": "5af90c99d9e0d5ef4c6decac233db85badcebc3d",
             "content": "sha256:c0532a7360b0d10b06dde6b3fb4ac835a6b0b3d2445d3ec42b08915ba383ea7d",
             "locator": {
               "end": 48,

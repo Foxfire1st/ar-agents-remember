@@ -603,8 +603,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "92ae1bfa857dbaf808ea47e97592015fb49a034e",
-            "content": "sha256:810f4e3750a0365227a2cb677133ef85646d2923fca5c5e03a2a61e4ecddf3f0",
+            "blob": "0ea106246ac1a8053fa263b23190863c57ebd295",
+            "content": "sha256:83e37400860eadb6a861d04f8903f8a187caf59aec360961d3a98d2ab9f3cab5",
             "locator": {
               "kind": "file"
             },
@@ -614,7 +614,7 @@
         },
         {
           "anchor": {
-            "blob": "92ae1bfa857dbaf808ea47e97592015fb49a034e",
+            "blob": "0ea106246ac1a8053fa263b23190863c57ebd295",
             "content": "sha256:466d3853142e9f8f7eba582f33a15200367fc6e2f56ca624340d62ab1df1d47d",
             "locator": {
               "kind": "symbol",
@@ -631,7 +631,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "92ae1bfa857dbaf808ea47e97592015fb49a034e",
+            "blob": "0ea106246ac1a8053fa263b23190863c57ebd295",
             "content": "sha256:466d3853142e9f8f7eba582f33a15200367fc6e2f56ca624340d62ab1df1d47d",
             "locator": {
               "kind": "symbol",
@@ -643,12 +643,12 @@
         },
         {
           "anchor": {
-            "blob": "92ae1bfa857dbaf808ea47e97592015fb49a034e",
+            "blob": "0ea106246ac1a8053fa263b23190863c57ebd295",
             "content": "sha256:ad4b61e7390a940b0e324744a2f640308551f688bf3169ed1a26bf50c26fdd1b",
             "locator": {
-              "end": 48,
+              "end": 49,
               "kind": "line_range",
-              "start": 25
+              "start": 26
             },
             "path": "mcp/src/agents_remember/serving/changeset_reads.py"
           },
@@ -719,12 +719,12 @@
         },
         {
           "anchor": {
-            "blob": "07979a6e10a7cde98e4a4ce1dcaca7a203241e3f",
+            "blob": "5dfbf6cd67f7e14564e4273b5de10a80b4b3e2e1",
             "content": "sha256:1ce13ae86c3b7f29490adfe9da0eab9d81ab15abd2f98117395ea1fc9f14d683",
             "locator": {
-              "end": 158,
+              "end": 164,
               "kind": "line_range",
-              "start": 146
+              "start": 152
             },
             "path": "mcp/src/agents_remember/kernel/git_command.py"
           },
@@ -732,12 +732,12 @@
         },
         {
           "anchor": {
-            "blob": "9b90e039ac7b04b6ea75036e5c171b3f53590a62",
+            "blob": "cb3b9f4243e5856d4a5a30813fc27c97c515c489",
             "content": "sha256:2c79c3b514ec9eb6abb1f6b979d3fc080ab73a76af897ff3584bed10d22ce78a",
             "locator": {
-              "end": 647,
+              "end": 658,
               "kind": "line_range",
-              "start": 635
+              "start": 646
             },
             "path": "mcp/tests/test_changeset_cache.py"
           },
@@ -745,12 +745,12 @@
         },
         {
           "anchor": {
-            "blob": "07979a6e10a7cde98e4a4ce1dcaca7a203241e3f",
+            "blob": "5dfbf6cd67f7e14564e4273b5de10a80b4b3e2e1",
             "content": "sha256:ede69db9a6a83701b6ff1391da1e3ff7578f3387510f13def4187f7a7af9d53b",
             "locator": {
-              "end": 149,
+              "end": 155,
               "kind": "line_range",
-              "start": 137
+              "start": 143
             },
             "path": "mcp/src/agents_remember/kernel/git_command.py"
           },
@@ -758,12 +758,12 @@
         },
         {
           "anchor": {
-            "blob": "9b90e039ac7b04b6ea75036e5c171b3f53590a62",
+            "blob": "cb3b9f4243e5856d4a5a30813fc27c97c515c489",
             "content": "sha256:0d534bb3f33fe58247a8a23e5caead8e79c523ecc16d7605730a86464bdb15ea",
             "locator": {
-              "end": 559,
+              "end": 570,
               "kind": "line_range",
-              "start": 547
+              "start": 558
             },
             "path": "mcp/tests/test_changeset_cache.py"
           },

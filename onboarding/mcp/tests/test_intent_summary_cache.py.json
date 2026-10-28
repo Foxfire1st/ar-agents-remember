@@ -1,41 +1,6 @@
 {
   "path": "mcp/tests/test_intent_summary_cache.py",
-  "proves": [
-    {
-      "anchor": {
-        "blob": "1d8d85ebc3c28b81701244be40cee96578b30a8e",
-        "content": "sha256:616aae437334392d95f4ffea033720ca35c3474e74e44949eb0b5e462d9741f4",
-        "locator": {
-          "kind": "symbol",
-          "name": "test_a_kept_summary_answer_expires_and_is_then_produced_again"
-        }
-      },
-      "facet": "The summary answer expires at the declared age and is then produced natively.",
-      "id": "PRF-G3DNHZ",
-      "invariant": "INV-WC3BS4",
-      "origin": {
-        "handoffEntry": "L177-INV-SUMMARY-WINDOW",
-        "leaf": "260928-MIK-L177"
-      }
-    },
-    {
-      "anchor": {
-        "blob": "1d8d85ebc3c28b81701244be40cee96578b30a8e",
-        "content": "sha256:df0e58faa8dda66fa6028faba778e3299ab515fdb084ed979704d3b306332569",
-        "locator": {
-          "kind": "symbol",
-          "name": "test_a_bounded_admission_table_cannot_resurrect_an_over_age_answer"
-        }
-      },
-      "facet": "An over-age answer is recomputed even after its admission record was evicted.",
-      "id": "PRF-JM59VR",
-      "invariant": "INV-WC3BS4",
-      "origin": {
-        "handoffEntry": "L177-INV-SUMMARY-WINDOW",
-        "leaf": "260928-MIK-L177"
-      }
-    }
-  ],
+  "proves": [],
   "realizes": [],
   "references": {
     "10": {
@@ -43,12 +8,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1d8d85ebc3c28b81701244be40cee96578b30a8e",
+            "blob": "097d667e8377daaf7fbc1611c38c2bf3a0cffc6b",
             "content": "sha256:9e712d5e7f447afc64291ceb6d4a1fdd91704e8463d7d9e08ea772008d63d091",
             "locator": {
-              "end": 259,
+              "end": 257,
               "kind": "line_range",
-              "start": 141
+              "start": 139
             }
           },
           "kind": "test"
@@ -60,12 +25,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1d8d85ebc3c28b81701244be40cee96578b30a8e",
+            "blob": "097d667e8377daaf7fbc1611c38c2bf3a0cffc6b",
             "content": "sha256:e71a2a1f72b088211ca0ecc96ac0b4e461312c48e0218d23771b6cbd76ccf257",
             "locator": {
-              "end": 309,
+              "end": 307,
               "kind": "line_range",
-              "start": 262
+              "start": 260
             }
           },
           "kind": "test"
@@ -77,29 +42,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1d8d85ebc3c28b81701244be40cee96578b30a8e",
+            "blob": "097d667e8377daaf7fbc1611c38c2bf3a0cffc6b",
             "content": "sha256:73c2ed4e8921d02bd8d4d235ea600ba50cb8e5b2a149a6dd8c20c05f44d02b17",
             "locator": {
-              "end": 353,
+              "end": 351,
               "kind": "line_range",
-              "start": 312
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "13": {
-      "note": "Clock, changed-input and admission-eviction cases retain bounded reuse with a four-part summary key.\n\nAnchor: \"class _Elapsed:\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "1d8d85ebc3c28b81701244be40cee96578b30a8e",
-            "content": "sha256:25d75dc02120a5b5ee78c6b39edf1691e9e1851f8787842deb8e3cb247e79809",
-            "locator": {
-              "end": 491,
-              "kind": "line_range",
-              "start": 356
+              "start": 310
             }
           },
           "kind": "test"
@@ -111,12 +59,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1d8d85ebc3c28b81701244be40cee96578b30a8e",
+            "blob": "097d667e8377daaf7fbc1611c38c2bf3a0cffc6b",
             "content": "sha256:cc580df8bdbeca93b173840f57054ef61e56e40a328730a9089afcefad1e7ca4",
             "locator": {
-              "end": 138,
+              "end": 136,
               "kind": "line_range",
-              "start": 67
+              "start": 65
             }
           },
           "kind": "test"

@@ -7,8 +7,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "70a416e2fdf01a2ffc004eebfcb8e11df8282dcb",
-            "content": "sha256:2786fff3b7f88a280f30ad8c338b17d01e459bdc0841264c3dfa088d58917855",
+            "blob": "8799d6d6981650390a58d64d0007a51344dafb84",
+            "content": "sha256:a841878655cb5b9241573075b6acab3fe077d0b21450d5a3881f79cd105a99e0",
             "locator": {
               "kind": "symbol",
               "name": "test_the_explainer_end_to_end_open_request_grade_retire"

@@ -125,30 +125,58 @@ The existing `citation_fix` signature is flat: its default sync mode still previ
 
 
 ## Evidence
+
+- The public explainer_control reference declares hosted Architect claim, master-record-gated leaf actions, developer dashboard routes and first-request/no-model-turn controls.
+
+- Retired at the fifth freeze d59c3493: docs/reference/mcp-tools.md:235-251 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 5f8398b32760677c370e3145add73cfa8388357b. Retired means the anchor no longer stands, not that the cited subject was deleted.
+
 - Public signatures distinguish flat citation arguments from quality requests. [28]
 Inherited finding [23] retains its exact wording/target as the historical profile-required closeout account; parent adjudicates that outdated prerequisite. Current requested-certification and invariant-gated transaction are separate:
+
 - Requested certification is explicitly selected repository-profile work through Dagger and commits nothing. The profile and loader are still authority for that requested Gates 1–4 work; a selection named `closeout` is not an automatic closeout invocation. Ordinary closeout runs no gate but the invariant gate, retains exact candidate/approval/lineage checks and code-then-memory Git publication, and does not run certification, code-quality checks, test suites or independent review. A missing profile or certification result does not block that transaction. This does not remove canonical Curator/Reviewer duties or confer independent semantic acceptance on diagnostics. [26]
+
 - Retained reference account (no fresh execution or acceptance inferred): The normalized public input has only two commit legs. [1]
+
 - Retained reference account (no fresh execution or acceptance inferred): The settings reference describes the active MCP authority, user role settings and their distinct merge and precedence boundaries. [3]
+
 - Retained reference account (no fresh execution or acceptance inferred): The Paseo catalog adapter is the source owner for the configured host catalog route. [4]
+
 - Retained reference account (no fresh execution or acceptance inferred): The settings document's host section. [5]
+
 - Retained reference account (no fresh execution or acceptance inferred): The runtime layout document. [6]
+
 - Current literal public roster has 44 names, including knowledge_write, user_settings_init, explainer_control and citation_note_revision; historical populations retain their own epochs and supply no live-advertisement acceptance. [7]
+
 - Ordered family registration owns the advertised tool definitions. [8]
+
 - Bound role starts retain caller/role constraints, request reconciliation and no caller permission-feature authority; set starts are Manager-only and preserve held siblings. [9]
+
 - Pre-baseline writes require the declared converted root, no baseline and no dependent linked worktree. [12]
+
 - Converted citation repair excludes refused cards from its mechanical second stage in both list and singleton paths. [13]
+
 - Unscoped route-index apply enters the pre-baseline guard; leaf apply enters the leaf writer guard. [14]
+
 - Current pre-push targeted body repeats deterministic non-test checks rather than invoking acceptance. [17]
+
 - Metric findings are diagnostic; missing or unusable report inputs remain failures. [18]
+
 - Normalized closeout input carries two commit legs and refuses blank enabled messages. [19]
+
 - Finalization requires the exact contract-bound leaf and its named or exact folder master row; missing authority refuses, without a standalone fallback. [20]
+
 - Activation waiting is scoped to this contract's own reconciliation. [21]
+
 - Raw-Git support matrix keeps unsupported transitions and ancestry limits explicit. [22]
+
 - Source-quality profile requirement has an explicit no-code-commit exception. [23]
+
 - Setup reports the knowledge state and hands foundation work to the user-started Architect's regular task and its Curator; the following provider stage retires providers. [24]
+
 - Current literal public roster has 44 names, including knowledge_write, user_settings_init, explainer_control and citation_note_revision; historical populations retain their own epochs and supply no live-advertisement acceptance. [25]
+
 - Retained reference account (no fresh execution or acceptance inferred): The public tool reference maps the current tool surface to its registered families and owning routes. [2]
+
 - Poll includes optional contract scope while extra execution-only fields are forbidden.  Anchor: _MemoryQualityExecutionRequest / MemoryQualityPollRequest / MemoryQualityCheckRequest [10]
+
 - Memory preparation distinguishes diagnostic scope, raw readiness, coherence validation and capacity refusal. [11]
-- The public explainer_control reference declares hosted Architect claim, master-record-gated leaf actions, developer dashboard routes and first-request/no-model-turn controls. [27]

@@ -8,28 +8,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "154d7272959eb18a7f5f80927be651dc6bf6789d",
-            "content": "sha256:6f8f3cf452d0cdd632afc241785af9e5bd63487eff348093f1e93f4eb042b786",
-            "locator": {
-              "kind": "file"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "154d7272959eb18a7f5f80927be651dc6bf6789d",
-            "content": "sha256:339fc3807511945753666053810592f602b2905331e1bbfb29fb4709fbf245ce",
-            "locator": {
-              "kind": "symbol",
-              "name": "seedProjection"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "154d7272959eb18a7f5f80927be651dc6bf6789d",
+            "blob": "e35242dec8bb25542d927fd782eb47c25cb42c1e",
             "content": "sha256:0d7c9af1ffa331486b66efaf15733a190bfd873d13789b47d50ce038ca69015e",
             "locator": {
               "kind": "symbol",
@@ -40,8 +19,8 @@
         },
         {
           "anchor": {
-            "blob": "154d7272959eb18a7f5f80927be651dc6bf6789d",
-            "content": "sha256:46fec41e97022e6e5c6b1d32fe8c3bb5ae96c5d1f24f988e535741577cb8b423",
+            "blob": "e35242dec8bb25542d927fd782eb47c25cb42c1e",
+            "content": "sha256:2f3d93beffcc2c72f1cad3230602f6ea73d9f79ef7aa79f8a422c20480800ac4",
             "locator": {
               "kind": "symbol",
               "name": "stubCounters"
@@ -56,12 +35,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "154d7272959eb18a7f5f80927be651dc6bf6789d",
+            "blob": "e35242dec8bb25542d927fd782eb47c25cb42c1e",
             "content": "sha256:4ca5fcad89cbee99ad5205430acf29da88590b57b167c979c333a7eec50b4fec",
             "locator": {
-              "end": 382,
+              "end": 389,
               "kind": "line_range",
-              "start": 370
+              "start": 377
             }
           },
           "kind": "code"

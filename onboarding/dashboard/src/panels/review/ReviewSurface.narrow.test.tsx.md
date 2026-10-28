@@ -27,7 +27,7 @@ These are declared component or pure-function checks over the fixtures named her
 - Declared check and its fixture assertions. [15]
 - Declared check and its fixture assertions. [16]
 - Declared check and its fixture assertions. [17]
-- Declared check and its fixture assertions. [18]
+- Declared check and its fixture assertions.
 
 ## Historical predecessor account
 
@@ -159,3 +159,5 @@ The earlier account follows as provenance. Current assertions and removed journe
 >
 > - Case 2 asserts exactly three reading-area nodes, their min-width-zero atomic classes, inherited anywhere wrapping without local resets, and the scope's fixture reference. (historical reference 6)
 > - Case 3 checks provenance details and reference text, workspace wide/narrow grid classes, header wrapping and surface/scope wrapping classes. It does not assert the old disclosure-grid inline style. (historical reference 7)
+
+- Retired at the fifth freeze d59c3493: dashboard/src/panels/review/ReviewSurface.narrow.test.tsx:251-270 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 10e466b17feee2530c06b2670fef496c6c9e755f. Retired means the anchor no longer stands, not that the cited subject was deleted.

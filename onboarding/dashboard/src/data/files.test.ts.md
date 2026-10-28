@@ -52,7 +52,17 @@ No configured Domain Documentation source exists for this file.
 - Asserts the catalog / list / read / onboarding URLs (including `%2F` path encoding and `direction`). [2]
 - Asserts a non-ok response throws `FilesApiError`. [3]
 - Subject under test: the helpers, result types, and `FilesApiError` mapping pinned here. [4]
-- Contract counterpart: the serving layer emits the 404/400 status codes this test stubs. [5]
+- Contract counterpart: the serving layer emits the 404/400 status codes this test stubs.
+
+Anchor: `run_scoped` in serving/scope.py, whose 404 unknown-repo/unknown-scope/not-found and 400 bad-path responses were read at the candidate at 239-249 rather than shifted, so this re-point is a match on the idiom, not on the number.
+
+Anchor: `run_scoped` in serving/scope.py, whose 404 unknown-repo/unknown-scope/not-found and 400 bad-path responses were read at the candidate at 239-249 rather than shifted, so this re-point is a match on the idiom, not on the number.
+
+Anchor: `run_scoped` in serving/scope.py, whose 404 unknown-repo/unknown-scope/not-found and 400 bad-path responses were read at the candidate at 239-249 rather than shifted, so this re-point is a match on the idiom, not on the number.
+
+Anchor: `run_scoped` in serving/scope.py, whose 404 unknown-repo/unknown-scope/not-found and 400 bad-path responses were read at the candidate at 239-249 rather than shifted, so this re-point is a match on the idiom, not on the number.
+
+Anchor: `run_scoped` in serving/scope.py, whose 404 unknown-repo/unknown-scope/not-found and 400 bad-path responses were read at the candidate at 239-249 rather than shifted, so this re-point is a match on the idiom, not on the number [5]
 
 ### Cross-Repo References
 
@@ -60,3 +70,16 @@ This card maps a repository-local agents-remember source. Import and task-bounda
 cross-repository implementation source that governs its behavior.
 
 No applicable cross-repository source was found.
+
+## Retirements
+
+- Anchor: `run_scoped` in serving/scope.py, whose 404 unknown-repo/unknown-scope/not-found and 400 bad-path responses were read at the candidate at 239-249 rather than shifted, so this re-point is a match on the idiom, not on the number.
+
+
+Anchor: `run_scoped` in serving/scope.py, whose 404 unknown-repo/unknown-scope/not-found and 400 bad-path responses were read at the candidate at 239-249 rather than shifted, so this re-point is a match on the idiom, not on the number.
+
+Anchor: `run_scoped` in serving/scope.py, whose 404 unknown-repo/unknown-scope/not-found and 400 bad-path responses were read at the candidate at 239-249 rather than shifted, so this re-point is a match on the idiom, not on the number.
+
+Anchor: `run_scoped` in serving/scope.py, whose 404 unknown-repo/unknown-scope/not-found and 400 bad-path responses were read at the candidate at 239-249 rather than shifted, so this re-point is a match on the idiom, not on the number.
+
+Anchor: `run_scoped` in serving/scope.py, whose 404 unknown-repo/unknown-scope/not-found and 400 bad-path responses were read at the candidate at 239-249 rather than shifted, so this re-point is a match on the idiom, not on the number.

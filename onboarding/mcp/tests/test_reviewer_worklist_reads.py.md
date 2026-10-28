@@ -94,25 +94,44 @@ reach the parent, the answer the reader gets, and that nothing wrong is kept. Th
 
 - The long case: the leaf's document, then settings, contract, packet, root, ledger and gate parts. [1]
 
-- The external ledger's bytes, change, absence and failure. [10]
+- The external ledger's bytes, change, absence and failure. 
 
 - A failed contract read behind the gate keeps nothing. [11]
 - Documents the view did not read do not invalidate it. [12]
 - A second claimant is computed again. [13]
-- One recomputation, then inputs_changing. [14]
-- No task document read is not a change. [15]
+- One recomputation, then inputs_changing.
+
+Retired at the fifth freeze d59c3493: mcp/tests/test_reviewer_worklist_reads.py:973-1003 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit c702e1c2e111ec6e07c6b68a78a5d05add8aceab. Retired means the anchor no longer stands, not that the cited subject was deleted [14]
+- No task document read is not a change.
+
+Retired at the fifth freeze d59c3493: mcp/tests/test_reviewer_worklist_reads.py:1006-1020 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit c702e1c2e111ec6e07c6b68a78a5d05add8aceab. Retired means the anchor no longer stands, not that the cited subject was deleted [15]
 - The judgments of moved_inputs. [16]
 - The gate's warm pass becomes the refusal. [17]
 - Canonical decision bytes and parent-tip carriage establish the real packet-gate prerequisites. [18]
-- The launch replacement for faulty children. [2]
-- Settings changed, restored and unreadable during the child's read. [3]
+- The launch replacement for faulty children. 
+- Settings changed, restored and unreadable during the child's read. 
 
 - The rows of the settings selection. [4]
 
 
 - The fallback contract read and a sibling read at two identities. [5]
 
-- Packet bytes, a link retargeted during the read, and a failed manifest read. [6]
+- Packet bytes, a link retargeted during the read, and a failed manifest read. 
 - The packet link outside, inside and outside again, for the view and the gate. [7]
-- A contract link retargeted during the read. [8]
+- A contract link retargeted during the read. 
 - Root absence, retargeting, the removed sidecar root, and probe errors. [9]
+
+
+Retired at the fifth freeze d59c3493: mcp/tests/test_reviewer_worklist_reads.py:761-846 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit c702e1c2e111ec6e07c6b68a78a5d05add8aceab. Retired means the anchor no longer stands, not that the cited subject was deleted. [10]
+
+- Retired at the fifth freeze d59c3493: mcp/tests/test_reviewer_worklist_reads.py::_child_script - the bytes it recorded now occur 14 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/test_reviewer_worklist_reads.py::_settings_reads - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/test_reviewer_worklist_reads.py::_packet_reads - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/test_reviewer_worklist_reads.py::_contract_alias - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/test_reviewer_worklist_reads.py::_external_ledger - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.
+
+- The external ledger's bytes, change, absence and failure.
+
+Retired at the fifth freeze d59c3493: mcp/tests/test_reviewer_worklist_reads.py:761-846 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit c702e1c2e111ec6e07c6b68a78a5d05add8aceab. Retired means the anchor no longer stands, not that the cited subject was deleted [10]
+
+## Retirements
+
+- Retired at the fifth freeze d59c3493: mcp/tests/test_reviewer_worklist_reads.py:973-1003 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit c702e1c2e111ec6e07c6b68a78a5d05add8aceab. Retired means the anchor no longer stands, not that the cited subject was deleted.
+
+- Retired at the fifth freeze d59c3493: mcp/tests/test_reviewer_worklist_reads.py:1006-1020 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit c702e1c2e111ec6e07c6b68a78a5d05add8aceab. Retired means the anchor no longer stands, not that the cited subject was deleted.

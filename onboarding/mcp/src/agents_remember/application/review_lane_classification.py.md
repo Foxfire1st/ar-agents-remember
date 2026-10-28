@@ -200,7 +200,7 @@ repository sources below, not a source registry or a copied code comment as inde
 - The hunks the gate and the lane share (definition 2). [18]
 - The shared non-text file-locator predicate is defined in linkage, not in the compute re-export. [19]
 - The bounds on a reason: ten named entries, clipped details. [2]
-- The lane's reads over this module. [20]
+- The lane's reads over this module. 
 - Buckets, exact-blob hunks, pre- and post-curation. [21]
 - An unread side, a partial index, and bounded reasons. [22]
 - changes_lines is exported and the change-kind unknown-range check reuses that per-side rule. [23]
@@ -217,3 +217,7 @@ repository sources below, not a source registry or a copied code comment as inde
 ### Cross-Repo References
 
 No new cross-repository boundary is introduced by these helpers.
+
+- The lane's reads over this module. [20]
+
+- Retired at the fifth freeze d59c3493: mcp/src/agents_remember/application/review_unexplained_lane.py::unexplained_lane - the bytes it recorded now occur 3 times in the file, so no single home can be named and it is not given to the likelier one; mcp/src/agents_remember/application/review_unexplained_lane.py::lane_summary - the bytes it recorded now occur 3 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.

@@ -65,12 +65,12 @@
         },
         {
           "anchor": {
-            "blob": "7de34abd58a60d8a07b3f81b6f7c7f5250b522e2",
+            "blob": "17e7ecdee54cf62a53e910f58877fc330d9aab33",
             "content": "sha256:3c2facd67caf9a2854420dfe1f1ffc9443ebad19a2c6f619f03abbeaee794709",
             "locator": {
-              "end": 322,
+              "end": 335,
               "kind": "line_range",
-              "start": 320
+              "start": 333
             },
             "path": "mcp/src/agents_remember/models/knowledge/review_trees.py"
           },
@@ -78,12 +78,12 @@
         },
         {
           "anchor": {
-            "blob": "7de34abd58a60d8a07b3f81b6f7c7f5250b522e2",
+            "blob": "17e7ecdee54cf62a53e910f58877fc330d9aab33",
             "content": "sha256:1502bba5be539e44ce370f5799a3fd14c09a36099fc5ef5e2b3cd1c109833f52",
             "locator": {
-              "end": 326,
+              "end": 344,
               "kind": "line_range",
-              "start": 324
+              "start": 342
             },
             "path": "mcp/src/agents_remember/models/knowledge/review_trees.py"
           },
@@ -91,12 +91,12 @@
         },
         {
           "anchor": {
-            "blob": "7de34abd58a60d8a07b3f81b6f7c7f5250b522e2",
+            "blob": "17e7ecdee54cf62a53e910f58877fc330d9aab33",
             "content": "sha256:0e0f1cc272fad1beaae61f56a5d574fb6516142d7c9ef11c644de3368f0ead1d",
             "locator": {
-              "end": 269,
+              "end": 274,
               "kind": "line_range",
-              "start": 267
+              "start": 272
             },
             "path": "mcp/src/agents_remember/models/knowledge/review_trees.py"
           },

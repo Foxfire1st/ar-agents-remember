@@ -22,7 +22,7 @@ Wide Operations columns use saved widths and give a hidden sidebar's width to th
 
 The shell publishes the shown page and repository for tray provenance and filing scope: Review names its repository, Operations names the viewed document's repository, and File Viewer leaves repository publication to its own owner. The Tray button is outside the four-view tab group, and the page-wide tray layer is outside the railed body.
 
-TopBar consumes served counts and ordered queue state, shows waiting only when nonzero, and names unavailable host activity. Serving build mismatch is a diagnostic tooltip. EffectsToggle updates local effects state/storage; shared animation and boot state remain separate owners. Task selection and the Engine Room stable-empty process fallback remain separate projections. [69] [70] [71] [94] [95]
+TopBar consumes served counts and ordered queue state, shows waiting only when nonzero, and names unavailable host activity. Serving build mismatch is a diagnostic tooltip. EffectsToggle updates local effects state/storage; shared animation and boot state remain separate owners. Task selection and the Engine Room stable-empty process fallback remain separate projections. [69] [70] [71] [94]
 
 ## Preserved earlier explanation
 
@@ -372,13 +372,13 @@ No configured domain documentation; source owners support this current account.
 No separate cross-repository implementation claim.
 
 
-- The shell defaults to Chats; a valid review hash selects Operations and a valid knowledge-reader hash selects Knowledge. Persistent product layers remain mounted independently of takeover selection. [33]
+- The shell defaults to Chats; a valid review hash selects Operations and a valid knowledge-reader hash selects Knowledge. Persistent product layers remain mounted independently of takeover selection.
 
 
 - Knowledge is a full-bleed, hidden-not-unmounted layer. [34]
 
 
-- Full-bleed is derived for the product and retained machine-map views. [35]
+- Full-bleed is derived for the product and retained machine-map views.
 
 
 - A page outside the bar mounts only through an injected view. [36]
@@ -387,12 +387,12 @@ No separate cross-repository implementation claim.
 - The Knowledge reader the retained layer mounts. [39]
 
 
-- The revalidation provider is shown only for ordinary Operations outside takeover and review. [64]
+- The revalidation provider is shown only for ordinary Operations outside takeover and review.
 
 - RailedBody applies saved Operations sidebar widths or the review's reading/chat tracks; its narrow path uses one column. [65]
 - Files, Engine Room, Topology, Knowledge, and Chats request the full-bleed layout. [66]
 
-- Rail fade properties are selected by the animation permission. [67]
+- Rail fade properties are selected by the animation permission.
 
 
 - The `chatsLayer` keep-alive class used by the Chats layer. [68]
@@ -406,13 +406,17 @@ No separate cross-repository implementation claim.
 - The right rail keeps one unkeyed chat wrapper across Operations and review; Operations' River still mounts conditionally. [92]
 - The hidden chat side stays mounted but out of reach behind display:none and aria-hidden. [93]
 
-- Native task selection and memoization are separate from the Engine Room stable-empty fallback. [95]
+- Native task selection and memoization are separate from the Engine Room stable-empty fallback.
 
 
-- The shell starts the screen wake lock once on mount; the wake-lock helper follows document visibility and releases its held sentinel on stop. [96]
+- The shell starts the screen wake lock once on mount; the wake-lock helper follows document visibility and releases its held sentinel on stop.
+
+Retired at the fifth freeze d59c3493: dashboard/src/cockpit/Cockpit.tsx:730-780 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit a414bf4725215f2cf236d6d492bc070a973bce08. Retired means the anchor no longer stands, not that the cited subject was deleted [96]
 
 
-- Base review navigation names repo/master/leaf and recorded history. Separate reviewer hash helpers persist selection/comparison through replaceState without changing that target or adding browser-history entries. [97]
+- Base review navigation names repo/master/leaf and recorded history. Separate reviewer hash helpers persist selection/comparison through replaceState without changing that target or adding browser-history entries.
+
+Retired at the fifth freeze d59c3493: dashboard/src/cockpit/Cockpit.tsx:182-244 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 10e466b17feee2530c06b2670fef496c6c9e755f; dashboard/src/cockpit/reviewHash.ts:58-88 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 20624f979e2b89067a3e42019c9611a8e18ff848; dashboard/src/cockpit/reviewHash.ts:45-56 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 10e466b17feee2530c06b2670fef496c6c9e755f. Retired means the anchor no longer stands, not that the cited subject was deleted [97]
 
 
 - At at-most40rem the shell admits vertical overflow and single-column railed content. The ordinary change-set takeover uses the fixed takeover body; review is rendered in the railed body. [98]
@@ -423,8 +427,16 @@ No separate cross-repository implementation claim.
 - Operations/sidebar and review/chat column sizing. [102]
 - Shown page/repository provenance values. [103]
 
-- Tray button outside the view group and layer outside railed body. [104]
+- Tray button outside the view group and layer outside railed body.
 
 The shared RightRail now forwards the review leaf's explainer target into the same DocumentChat wrapper. Operations still uses its ordinary document chat; its active leaf document also mounts ViewedLeafExplainerControl, which can read and retire an existing explainer without visiting Review. The Operations active predicate is shared with DetailPanel, and switching pages adds neither a frame wrapper nor a frame key.
 
 - The shared RightRail now forwards the review leaf's explainer target into the same DocumentChat wrapper. Operations still uses its ordinary document chat; its active leaf document also mounts ViewedLeafExplainerControl, which can read and retire an existing explainer without visiting Review. The Operations active predicate is shared with DetailPanel, and switching pages adds neither a frame wrapper nor a frame key. [105]
+
+- Retired at the fifth freeze d59c3493: dashboard/src/cockpit/Cockpit.tsx:730-780 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit a414bf4725215f2cf236d6d492bc070a973bce08; dashboard/src/cockpit/Cockpit.tsx:182-244 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 10e466b17feee2530c06b2670fef496c6c9e755f. Retired means the anchor no longer stands, not that the cited subject was deleted.
+
+## Retirements
+
+- Retired at the fifth freeze d59c3493: dashboard/src/cockpit/Cockpit.tsx:730-780 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit a414bf4725215f2cf236d6d492bc070a973bce08. Retired means the anchor no longer stands, not that the cited subject was deleted.
+
+- Retired at the fifth freeze d59c3493: dashboard/src/cockpit/Cockpit.tsx:182-244 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 10e466b17feee2530c06b2670fef496c6c9e755f; dashboard/src/cockpit/reviewHash.ts:58-88 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 20624f979e2b89067a3e42019c9611a8e18ff848; dashboard/src/cockpit/reviewHash.ts:45-56 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 10e466b17feee2530c06b2670fef496c6c9e755f. Retired means the anchor no longer stands, not that the cited subject was deleted.

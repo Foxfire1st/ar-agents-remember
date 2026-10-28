@@ -4,7 +4,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "e3af58a3091d7364172ee73c5443ed98c970efa1",
+        "blob": "1d90d4f0e878dfd10c90e1cc30e2037832907004",
         "content": "sha256:08e0849315ec773c9bb78b7819bfb8660701cc99de5aa6b2258c355a972dfa06",
         "locator": {
           "kind": "symbol",
@@ -22,7 +22,7 @@
     },
     {
       "anchor": {
-        "blob": "e3af58a3091d7364172ee73c5443ed98c970efa1",
+        "blob": "1d90d4f0e878dfd10c90e1cc30e2037832907004",
         "content": "sha256:1048677485b9d7a25cc429abe9365cd2d264b278c7097db437b9bacaac0b70ea",
         "locator": {
           "kind": "symbol",
@@ -45,7 +45,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e3af58a3091d7364172ee73c5443ed98c970efa1",
+            "blob": "1d90d4f0e878dfd10c90e1cc30e2037832907004",
             "content": "sha256:4e4b8d0b11ba0b4b883e800b2d38fd3d28493533828c7af9029fd00fadb3e304",
             "locator": {
               "end": 203,
@@ -62,27 +62,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e3af58a3091d7364172ee73c5443ed98c970efa1",
+            "blob": "1d90d4f0e878dfd10c90e1cc30e2037832907004",
             "content": "sha256:1048677485b9d7a25cc429abe9365cd2d264b278c7097db437b9bacaac0b70ea",
             "locator": {
               "kind": "symbol",
               "name": "_live_resolution"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "25": {
-      "note": "`require_current_candidate_identity` owns the current boundary described above.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "e3af58a3091d7364172ee73c5443ed98c970efa1",
-            "content": "sha256:7d917ad76d87397bbf5e02bff49cf9c74122a645e26f0f24f1dfc6ab8882771a",
-            "locator": {
-              "kind": "symbol",
-              "name": "require_current_candidate_identity"
             }
           },
           "kind": "code"
@@ -94,7 +78,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e3af58a3091d7364172ee73c5443ed98c970efa1",
+            "blob": "1d90d4f0e878dfd10c90e1cc30e2037832907004",
             "content": "sha256:08e0849315ec773c9bb78b7819bfb8660701cc99de5aa6b2258c355a972dfa06",
             "locator": {
               "kind": "symbol",
@@ -110,7 +94,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e3af58a3091d7364172ee73c5443ed98c970efa1",
+            "blob": "1d90d4f0e878dfd10c90e1cc30e2037832907004",
             "content": "sha256:3d666b1f8a9f03bb8c9e6b44bae0931f22fe1efb8d4296bb988ab868265f4190",
             "locator": {
               "kind": "symbol",
@@ -126,7 +110,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e3af58a3091d7364172ee73c5443ed98c970efa1",
+            "blob": "1d90d4f0e878dfd10c90e1cc30e2037832907004",
             "content": "sha256:c2d0d2845aede68ef62da4920815be1fac37cd60aa5078d8f5ff99eab7c42348",
             "locator": {
               "kind": "symbol",
@@ -142,8 +126,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e3af58a3091d7364172ee73c5443ed98c970efa1",
-            "content": "sha256:7e9ac77f2f5915763ef1f783b4f702cb301873552bf902458c10e481c3590527",
+            "blob": "1d90d4f0e878dfd10c90e1cc30e2037832907004",
+            "content": "sha256:8de3b4a99e46a7a49e39828cefaeed2dd86dcfc20fc33eb37b8f80a4de26b653",
             "locator": {
               "kind": "file"
             }
@@ -157,8 +141,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e3af58a3091d7364172ee73c5443ed98c970efa1",
-            "content": "sha256:7e9ac77f2f5915763ef1f783b4f702cb301873552bf902458c10e481c3590527",
+            "blob": "1d90d4f0e878dfd10c90e1cc30e2037832907004",
+            "content": "sha256:8de3b4a99e46a7a49e39828cefaeed2dd86dcfc20fc33eb37b8f80a4de26b653",
             "locator": {
               "kind": "file"
             }
@@ -172,7 +156,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e3af58a3091d7364172ee73c5443ed98c970efa1",
+            "blob": "1d90d4f0e878dfd10c90e1cc30e2037832907004",
             "content": "sha256:54760985fe298df2564471a2a5d88d3ae26c50cd98714347b95ecfe75a987d7f",
             "locator": {
               "kind": "symbol",
@@ -188,7 +172,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e3af58a3091d7364172ee73c5443ed98c970efa1",
+            "blob": "1d90d4f0e878dfd10c90e1cc30e2037832907004",
             "content": "sha256:0d05ffdfb2da4aa38cd6554d47584c2b728fdcf102760c843abac8261f89f853",
             "locator": {
               "kind": "symbol",
@@ -204,7 +188,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e3af58a3091d7364172ee73c5443ed98c970efa1",
+            "blob": "1d90d4f0e878dfd10c90e1cc30e2037832907004",
             "content": "sha256:8626962ebf26eb0057ef5a7ad1d64e2b8b48246a485b6e370d2a8083301be2c8",
             "locator": {
               "kind": "symbol",
@@ -220,7 +204,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e3af58a3091d7364172ee73c5443ed98c970efa1",
+            "blob": "1d90d4f0e878dfd10c90e1cc30e2037832907004",
             "content": "sha256:9e9e4b89469641daa8c6c1fdbeaf8c6aebc395bf80b7c6526e355739a1bd416b",
             "locator": {
               "kind": "symbol",
@@ -236,43 +220,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e3af58a3091d7364172ee73c5443ed98c970efa1",
+            "blob": "1d90d4f0e878dfd10c90e1cc30e2037832907004",
             "content": "sha256:5253ef9d1e9288b27fa89cd339905e8e77f1f9c5f6a02ac6d1dad6aac02e5488",
             "locator": {
               "kind": "symbol",
               "name": "refusal"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "36": {
-      "note": "**The capture is the existing owner's and stays the owner's: this module only turns its typed failure into the surface's named state.**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "e3af58a3091d7364172ee73c5443ed98c970efa1",
-            "content": "sha256:de50cfc9953fa37050355e720edbd8db5b1da17e46885bc80b09ce707a4ee694",
-            "locator": {
-              "kind": "symbol",
-              "name": "_captured_candidate"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "37": {
-      "note": "The capture owner's own mid-capture head check, which is what makes a head that moves *during* the capture a named state rather than a stale tree.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "e3af58a3091d7364172ee73c5443ed98c970efa1",
-            "content": "sha256:de50cfc9953fa37050355e720edbd8db5b1da17e46885bc80b09ce707a4ee694",
-            "locator": {
-              "kind": "symbol",
-              "name": "_captured_candidate"
             }
           },
           "kind": "code"
@@ -284,7 +236,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e3af58a3091d7364172ee73c5443ed98c970efa1",
+            "blob": "1d90d4f0e878dfd10c90e1cc30e2037832907004",
             "content": "sha256:473ff555fb446e5b3e192558047711c2c2360d6b23c2e3707d65965f5a843f25",
             "locator": {
               "kind": "symbol",
@@ -300,7 +252,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e3af58a3091d7364172ee73c5443ed98c970efa1",
+            "blob": "1d90d4f0e878dfd10c90e1cc30e2037832907004",
             "content": "sha256:9c381ea6e004519d7c6ba165045aa12a4d8916eb2f36d7beda07e89a149490ac",
             "locator": {
               "kind": "symbol",
@@ -316,7 +268,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bcbcc496c1dec9b0ec440122d7a990d82dcb69a1",
+            "blob": "003b509b7309b3cd122be4091f29d71b1335eb1a",
             "content": "sha256:564140faa47e724db0dd9192e84cf504d73c80c27791a19f1e9cb654eb79b75d",
             "locator": {
               "kind": "symbol",
@@ -333,8 +285,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2afe4df9e979efb37c12c123b75809a993a53534",
-            "content": "sha256:3147e28937d48faa64e30fd683f95e0496c974813d839c8d7d75ca0108f40eda",
+            "blob": "a443dea86729b9cb6bb9c1c0d74a1d53931c6c93",
+            "content": "sha256:c016af62caf6f04f18066e62fabd1018fc831aa02e8bb03fa4d3710046da3063",
             "locator": {
               "kind": "file"
             },
@@ -344,8 +296,8 @@
         },
         {
           "anchor": {
-            "blob": "e3af58a3091d7364172ee73c5443ed98c970efa1",
-            "content": "sha256:7e9ac77f2f5915763ef1f783b4f702cb301873552bf902458c10e481c3590527",
+            "blob": "1d90d4f0e878dfd10c90e1cc30e2037832907004",
+            "content": "sha256:8de3b4a99e46a7a49e39828cefaeed2dd86dcfc20fc33eb37b8f80a4de26b653",
             "locator": {
               "kind": "file"
             }
@@ -359,7 +311,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e3af58a3091d7364172ee73c5443ed98c970efa1",
+            "blob": "1d90d4f0e878dfd10c90e1cc30e2037832907004",
             "content": "sha256:f79828a334af86204bbd62fd359d94c5d52d82d174e855fa76741348b3335f4c",
             "locator": {
               "kind": "symbol",

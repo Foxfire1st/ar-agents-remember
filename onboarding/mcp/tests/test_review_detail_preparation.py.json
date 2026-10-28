@@ -1,0 +1,23 @@
+{
+  "path": "mcp/tests/test_review_detail_preparation.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Details follow the opening answers in their order, so the page fills in the order it was promised",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b223607840470794ddacec6fa6d66ea4ed81a596",
+            "content": "sha256:d0f8f79b1d6261155fcccf73c700cfc8b0ddbb5c5ec4a2a9a5e38479f90b4777",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_details_follow_the_opening_answers_in_their_order"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -31,7 +31,7 @@ No file-local implementation change is requested by this reconciliation.
 ## Evidence
 
 
-- The new test-title cases cover qualified/bare names, escapes, UTF-16/lone-unit handling, ambiguity, semantic-first arguments and explicit unsupported-form refusals. [11]
+- The new test-title cases cover qualified/bare names, escapes, UTF-16/lone-unit handling, ambiguity, semantic-first arguments and explicit unsupported-form refusals.
 
 
 
@@ -62,3 +62,5 @@ Fixture repositories and protocol doubles do not establish a live external integ
 The supported-case pins now assert the changed texts: the symbol refusal offers the exact `line_range`, the modifiers are read by name, and a form that runs and that no name reaches is offered its extent while a form that does not run is offered none.
 
 - The unsupported-form cases assert the reason and that the offered remedy is a line range only where a range reaches the case. [12]
+
+- Retired at the fifth freeze d59c3493: mcp/tests/test_memory_citation_grammars.py:26-117 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 0b30d9358b6ef00be9af1bdeb6c22eb802bf8d1e. Retired means the anchor no longer stands, not that the cited subject was deleted.

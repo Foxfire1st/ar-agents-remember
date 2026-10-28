@@ -1,0 +1,23 @@
+{
+  "path": "mcp/src/agents_remember/application/review_card_carry.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "carried_entries carries only the entries whose inputs still hold, and CardCarry is the shape a caller receives.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a2604a25b757f7c51b9bab6dbbab302d007d1a3e",
+            "content": "sha256:43236216aea01684b2a6955eea4ca6212753695551964ef941c0d38f3bd758dd",
+            "locator": {
+              "kind": "symbol",
+              "name": "carried_entries"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -103,25 +103,27 @@ No configured Domain Documentation source exists for this file.
 - Generation pins, the published generation identity, and the `committed`/`working` leaf-row state the master client threads and mirrors. [1]
 - Typed result contracts mirror the L3 endpoints' camelCase JSON (changed files, counters, file-diff, master accumulation), and (260921-ICR-L25) the leaf view's `state`/`stateDetail` pair that keeps an unrecorded range apart from a measured-empty one. [2]
 
-- The `base`-arg GET helpers build the `/task`, `/file-diff`, `/master` URLs via the shared `qs`. [3]
+- The `base`-arg GET helpers build the `/task`, `/file-diff`, `/master` URLs via the shared `qs`.
 
 
 - Change-set reads use qs and their own refusal-preserving getChangeSetJson, throwing ReviewTransportError rather than discarding refusal detail. [4]
 
 
-- The serving layer that defines the endpoints + response shapes this client mirrors. [5]
+- The serving layer that defines the endpoints + response shapes this client mirrors.
 
-- The viewer's initial list request uses loadChangeSet, while its non-comparison working-leaf poll still calls leafChangeset and refreshes an active diff every 2.5 seconds. [6]
+- The viewer's initial list request uses loadChangeSet, while its non-comparison working-leaf poll still calls leafChangeset and refreshes an active diff every 2.5 seconds. 
 
 
-- `DetailPanel`’s change-set button restores cached data through `peekChangeSet` and reads counters through `loadChangeSet`. [7]
+- `DetailPanel`’s change-set button restores cached data through `peekChangeSet` and reads counters through `loadChangeSet`.
 
 
 - The vitest contract test pins the endpoint URLs + the `FilesApiError` mapping. [8]
 
 
 
-- List addresses share one URL builder and store-backed peek/load API; the comparison list reuses the task endpoint with a number and no mode. [13]
+- List addresses share one URL builder and store-backed peek/load API; the comparison list reuses the task endpoint with a number and no mode.
+
+Retired at the fifth freeze d59c3493: dashboard/src/data/changeset.ts:176-184 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit c861abfeff33c9ef8f1ca066604c8f971b613361; dashboard/src/data/changeset.ts:186-196 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit c861abfeff33c9ef8f1ca066604c8f971b613361. Retired means the anchor no longer stands, not that the cited subject was deleted [13]
 
 
 ### Cross-Repo References
@@ -133,3 +135,9 @@ No applicable cross-repository source was found.
 - A comparison answer is the task shape plus identity [9]
 - File diffs name which half of the comparison they read [10]
 - The comparison file diff adds kind and path [12]
+
+- Retired at the fifth freeze d59c3493: dashboard/src/data/changeset.ts:167-167 - the bytes it recorded now occur 12 times in the file, so no single home can be named and it is not given to the likelier one; mcp/src/agents_remember/serving/changeset.py:735-735 - the bytes it recorded now occur 9 times in the file, so no single home can be named and it is not given to the likelier one; dashboard/src/panels/detail-panel/changeSetBar.tsx:83-103 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 04729d84383a6787afe84ed33183fdc457a20f6e; dashboard/src/panels/changeset/ChangeSetViewer.tsx:252-298 - the bytes it cited (252-298) now occur 2 times in the file, so no single home can be named. Retired means the anchor no longer stands, not that the cited subject was deleted.
+
+## Retirements
+
+- Retired at the fifth freeze d59c3493: dashboard/src/data/changeset.ts:176-184 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit c861abfeff33c9ef8f1ca066604c8f971b613361; dashboard/src/data/changeset.ts:186-196 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit c861abfeff33c9ef8f1ca066604c8f971b613361. Retired means the anchor no longer stands, not that the cited subject was deleted.

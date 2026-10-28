@@ -3,8 +3,8 @@
   "proves": [
     {
       "anchor": {
-        "blob": "37e00ade7ca960a03c374ee0f4a99964e9dc1285",
-        "content": "sha256:48d309c86ecdd4c92f739002cb35cc3553c71f4b2e90e1ce021e60676403a8e7",
+        "blob": "5a595bf65846499570155b94f63c55171d88ecce",
+        "content": "sha256:a18c9f8c842ea297db68dba967d6372a884cbf82f736ccffb3b851ad92b719dd",
         "locator": {
           "kind": "symbol",
           "name": "reads the catalogue once on entry, opens on the task context, then asks the review only for the subject chosen"
@@ -22,8 +22,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "37e00ade7ca960a03c374ee0f4a99964e9dc1285",
-        "content": "sha256:b08e7192dbc3d6203f670d01ced060c96a9af6daeec3373ec90503077ef98867",
+        "blob": "5a595bf65846499570155b94f63c55171d88ecce",
+        "content": "sha256:2f4f5b9aee039f23f66c1bd4de1daa2c26e625afe68cdf552dbfc3ee5f989c9d",
         "locator": {
           "kind": "file"
         }
@@ -44,10 +44,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "37e00ade7ca960a03c374ee0f4a99964e9dc1285",
-            "content": "sha256:7342f5fb442b95babe7e999d0494ebc617a83b079db6e278aca3c95fc1481865",
+            "blob": "5a595bf65846499570155b94f63c55171d88ecce",
+            "content": "sha256:a86951c6b7e357c8f82f5a92ba0be69b322a99c3459c7400da0ade82d4daab86",
             "locator": {
-              "end": 144,
+              "end": 176,
               "kind": "line_range",
               "start": 89
             }
@@ -61,12 +61,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "37e00ade7ca960a03c374ee0f4a99964e9dc1285",
+            "blob": "5a595bf65846499570155b94f63c55171d88ecce",
             "content": "sha256:6270d84c569317be83ef591defea5998a517eae727866b4515ee52613fff6923",
             "locator": {
-              "end": 170,
+              "end": 176,
               "kind": "line_range",
-              "start": 145
+              "start": 151
             }
           },
           "kind": "test"

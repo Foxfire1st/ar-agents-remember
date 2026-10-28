@@ -53,13 +53,13 @@ the port answers 503 with `status: unavailable`.
 ## Evidence
 
 
-- The module docstring: transport only, the query's meaning and the status codes. [8]
+- The module docstring: transport only, the query's meaning and the status codes.
 
 - The route path, the bounds of a selection and the size of the route's thread pool. [9]
-- The query handed to the port. [10]
-- The selection and the reasons it is refused. [11]
-- The port runs on the route's executor inside the request's context; disconnect and cancellation set the event. [12]
-- The route: own executor, 503 without a port, 400 for a refused selection, one serialized result. [13]
+- The query handed to the port. 
+- The selection and the reasons it is refused. 
+- The port runs on the route's executor inside the request's context; disconnect and cancellation set the event. 
+- The route: own executor, 503 without a port, 400 for a refused selection, one serialized result. 
 - The request context that binds cancellation and arrival. [14]
 
 - A tree read answers in under a second while the default executor is full. [15]
@@ -71,3 +71,5 @@ the port answers 503 with `status: unavailable`.
 - The deadline runs from the request's arrival, so work before the child spends it. [17]
 
 - The route serves the port and refuses when it is not wired. [18]
+
+- Retired at the fifth freeze d59c3493: mcp/src/agents_remember/serving/review_trees.py:1-14 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 8a2d4b478971bf40cca0f24d5e5d24a0844bd563; mcp/src/agents_remember/serving/review_trees.py::ReviewTreesQuery - the bytes it recorded now occur 5 times in the file, so no single home can be named and it is not given to the likelier one; mcp/src/agents_remember/serving/review_trees.py::ReviewTreesSelection - the bytes it recorded now occur 4 times in the file, so no single home can be named and it is not given to the likelier one; mcp/src/agents_remember/serving/review_trees.py::_request_result - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit c702e1c2e111ec6e07c6b68a78a5d05add8aceab; mcp/src/agents_remember/serving/review_trees.py::register_review_trees_route - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.

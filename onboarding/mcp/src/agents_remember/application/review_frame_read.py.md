@@ -15,4 +15,6 @@ Finite stored-byte reads for frame metadata and assets: reads one sentinel byte 
 ## Evidence
 
 - Stored metadata and assets are read through a finite sentinel bound, not whole-then-check. [1]
-- A modified manifest cannot authorize more assets than the admitted revision holds. [2]
+- A modified manifest cannot authorize more assets than the admitted revision holds. 
+
+- Retired at the fifth freeze d59c3493: mcp/src/agents_remember/application/review_frame_read.py::validate_asset_read_bounds - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 6df6b68c1b9714d360296e4cdeb978f5c22f7eea. Retired means the anchor no longer stands, not that the cited subject was deleted.

@@ -101,23 +101,6 @@
           "kind": "file"
         }
       },
-      "id": "RLZ-ZH0BJB",
-      "invariant": "INV-9DMNQS",
-      "origin": {
-        "handoffEntry": "NEW-R192-EXTRA-ARGS",
-        "leaf": "260928-MIK-L184"
-      },
-      "rationale": "This reference documents the extra-argument keys, where they are allowed and what a role entry set to false removes: presentation and support of the documented key. The runtime enforcement stays with the settings parser, the defaults assembly and the launch plan, which are separate links.",
-      "role": "support"
-    },
-    {
-      "anchor": {
-        "blob": "6d8cc9b75acea207484aeaf2f87c0e5cafd6640e",
-        "content": "sha256:75c64f4096f37bb14d4fd91208bbcf2fd462d84510758129af718a695d943ac4",
-        "locator": {
-          "kind": "file"
-        }
-      },
       "id": "RLZ-ZSHMC5",
       "invariant": "INV-DKN3CG",
       "origin": {

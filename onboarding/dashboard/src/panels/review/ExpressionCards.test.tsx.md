@@ -35,7 +35,7 @@ These declared component controls use captured entries plus explicitly edited st
 - Declared check and its fixture assertions. [13]
 - Declared check and its fixture assertions. [14]
 - Declared check and its fixture assertions. [15]
-- Declared check and its fixture assertions. [16]
+- Declared check and its fixture assertions.
 - Declared check and its fixture assertions. [17]
 - Declared check and its fixture assertions. [18]
 - Declared check and its fixture assertions. [19]
@@ -118,3 +118,5 @@ The earlier account follows as provenance. Current assertions and removed journe
 > - The F1, F2 (with R2-5) and F4 cases.  Anchor: "opens one full file, in the card that asked, with one read (F1)"; "cover only the loaded members and points to the walk (F2)"; "marks an entry that is not current on its side with its MIK-R03 state (F4)" (historical reference 4)
 >
 > - F2 uses separate bounded and complete captures, checks the disjoint-member union against the widest-side total, and distinguishes incomplete after content even when loaded equals total: identify the unread, missing or unreadable side without offering a false load-the-rest action. (historical reference 5)
+
+- Retired at the fifth freeze d59c3493: dashboard/src/panels/review/ExpressionCards.test.tsx:221-247 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 10e466b17feee2530c06b2670fef496c6c9e755f. Retired means the anchor no longer stands, not that the cited subject was deleted.

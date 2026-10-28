@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e05fa8c807295172fb295f493f2df9f161338501",
+            "blob": "235a0c49c09689434b2e349525891fa36715582a",
             "content": "sha256:2943706506f37ee2b56e79236b68fb296de94b6fa631d8bcb4347285c9a6acf7",
             "locator": {
               "end": 30,
@@ -19,51 +19,17 @@
         }
       ]
     },
-    "2": {
-      "note": "Initial readiness reconciles the selected answer and entry after one pre-arm synthetic edit, while duplicate and unrelated events are silent.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "e05fa8c807295172fb295f493f2df9f161338501",
-            "content": "sha256:a0eda80287e9a88d44f7d90a9a83fa183a460b5423d929d2a3ab6123815abb52",
-            "locator": {
-              "end": 78,
-              "kind": "line_range",
-              "start": 32
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "3": {
-      "note": "A matching edit refreshes the actual selected subject and entry without restoring an old subject answer; catalogue renewal follows changed comparison identity.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "e05fa8c807295172fb295f493f2df9f161338501",
-            "content": "sha256:60a4780a62a0d313ae2e4a35829c0b58d422f62f1313b78293f006f5866084e6",
-            "locator": {
-              "end": 119,
-              "kind": "line_range",
-              "start": 80
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
     "4": {
       "note": "Initial responses arriving after the reconciled generation cannot replace its answer or count.",
       "targets": [
         {
           "anchor": {
-            "blob": "e05fa8c807295172fb295f493f2df9f161338501",
+            "blob": "235a0c49c09689434b2e349525891fa36715582a",
             "content": "sha256:3a902a9b64887b6057b3e225118a33805137913522cbd5b42da059a3618d8d22",
             "locator": {
-              "end": 155,
+              "end": 162,
               "kind": "line_range",
-              "start": 121
+              "start": 128
             }
           },
           "kind": "test"
@@ -75,29 +41,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e05fa8c807295172fb295f493f2df9f161338501",
+            "blob": "235a0c49c09689434b2e349525891fa36715582a",
             "content": "sha256:0a655edeb3bfa1e62a71f85adc3551f1d119965db592522dcad2b9954a1854c1",
             "locator": {
-              "end": 183,
+              "end": 190,
               "kind": "line_range",
-              "start": 157
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "6": {
-      "note": "Newest response wins; failed edits retain the labelled coherent generation and a later edit recovers it.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "e05fa8c807295172fb295f493f2df9f161338501",
-            "content": "sha256:4fbec790557029293bf6294e064f9589e10b3d7f47c52c9dc443fca45c7bc7b5",
-            "locator": {
-              "end": 222,
-              "kind": "line_range",
-              "start": 185
+              "start": 164
             }
           },
           "kind": "test"

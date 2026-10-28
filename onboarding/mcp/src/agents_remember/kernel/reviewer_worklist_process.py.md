@@ -133,12 +133,12 @@ moment the flight is created until its thread has reaped the child.
 - Joining: a cancelled flight is absent, and the bound applies only to a new flight. [12]
 
 - Leaving: the last requester of an unfinished flight cancels it. [13]
-- Waiting: cancellation, the request's deadline and the flight's error. [14]
-- One thread per flight admits, runs, validates and always reaps. [15]
-- The first-in-first-out wait for one of the two child slots. [16]
-- The one command line of a child, in its own session. [17]
-- Draining the pipes in slices, the deadline, and the exit statuses. [18]
-- Shutdown stops every active child. [19]
+- Waiting: cancellation, the request's deadline and the flight's error. 
+- One thread per flight admits, runs, validates and always reaps. 
+- The first-in-first-out wait for one of the two child slots. 
+- The one command line of a child, in its own session. 
+- Draining the pipes in slices, the deadline, and the exit statuses. 
+- Shutdown stops every active child. 
 
 - The deadline is overload while waiting and a failure once a child ran. [20]
 
@@ -148,7 +148,7 @@ moment the flight is created until its thread has reaped the child.
 - Four identical requests get one child; three other computations get one each, and at most two children run at once. [23]
 
 
-- The controlled test starts twelve requesters for one flight, including eleven additional sharers, and seven other computations. It expects refusal of a ninth distinct computation, then nineteen answers and eight children after release. These are stored assertions, not a fresh timing measurement. [24]
+- The controlled test starts twelve requesters for one flight, including eleven additional sharers, and seven other computations. It expects refusal of a ninth distinct computation, then nineteen answers and eight children after release. These are stored assertions, not a fresh timing measurement. 
 
 
 - Overload is raised at once past the bound and at the deadline for a flight without a child. [25]
@@ -166,3 +166,7 @@ moment the flight is created until its thread has reaped the child.
 - The child's own alarm ends it and its Git process. [29]
 
 - Malformed, truncated, misidentified and non-finite replies are refused and nothing is kept. [30]
+
+- The controlled test starts twelve requesters for one flight, including eleven additional sharers, and seven other computations. It expects refusal of a ninth distinct computation, then nineteen answers and eight children after release. These are stored assertions, not a fresh timing measurement. [24]
+
+- Retired at the fifth freeze d59c3493: mcp/src/agents_remember/kernel/reviewer_worklist_process.py::_await - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one; mcp/src/agents_remember/kernel/reviewer_worklist_process.py::_fly - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one; mcp/src/agents_remember/kernel/reviewer_worklist_process.py::_admit - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one; mcp/src/agents_remember/kernel/reviewer_worklist_process.py::_launch - the bytes it recorded now occur 5 times in the file, so no single home can be named and it is not given to the likelier one; mcp/src/agents_remember/kernel/reviewer_worklist_process.py::_collect - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one; mcp/src/agents_remember/kernel/reviewer_worklist_process.py::shutdown - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/test_reviewer_worklist_process.py::_prove_computation_bound - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.

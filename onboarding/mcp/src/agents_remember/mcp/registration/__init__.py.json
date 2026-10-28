@@ -1,34 +1,15 @@
 {
   "path": "mcp/src/agents_remember/mcp/registration/__init__.py",
   "proves": [],
-  "realizes": [
-    {
-      "anchor": {
-        "blob": "de6a43ed2001fc740bfc55163c3d1a0d70ae39bb",
-        "content": "sha256:ba5f80c4312577cf05ce7edf0740f0539e8ca3817e94705c6d618c18813ab107",
-        "locator": {
-          "kind": "symbol",
-          "name": "TOOL_REGISTRARS"
-        }
-      },
-      "id": "RLZ-QKA3DE",
-      "invariant": "INV-48203N",
-      "origin": {
-        "handoffEntry": "L183-CUR-ET01-bound-explainer-roster",
-        "leaf": "260928-MIK-L183"
-      },
-      "rationale": "Ordinary registration adds explainer_control through register_explainer_tools; bound explainer registration is selected separately by create_server, rather than appending ordinary registrars.",
-      "role": "enforcement"
-    }
-  ],
+  "realizes": [],
   "references": {
     "1": {
       "note": "The `create_server` consumer iterates `TOOL_REGISTRARS`.  Anchor: `create_server`",
       "targets": [
         {
           "anchor": {
-            "blob": "c32522a60857504ad69c2b55c97baed38f637142",
-            "content": "sha256:51aabd4a109dee3ed422848ba7df15577c0cdd83fd80309e6668f594a29fc514",
+            "blob": "94f708b9e1972b2fad7432cf32f20b67989ccea8",
+            "content": "sha256:51f72c9e21d93c397c1cad01152d976e289d22ca230c769b19a5303c8882a204",
             "locator": {
               "kind": "file"
             },
@@ -86,8 +67,17 @@
       "note": "The registrar appended last so no existing registration order moved.\n\nAnchor: `register_knowledge_tools`",
       "targets": [
         {
-          "kind": "unresolved",
-          "text": "mcp/src/agents_remember/mcp/registration/knowledge.py:44-57"
+          "anchor": {
+            "blob": "b7ef5fc94fc32347b301880b444fe2a2f85775a9",
+            "content": "sha256:6940317dcf65978f081aea3eaa77d0c44ee8dee0c297217398cdb6b0f3926173",
+            "locator": {
+              "end": 81,
+              "kind": "line_range",
+              "start": 68
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/knowledge.py"
+          },
+          "kind": "code"
         }
       ]
     },
@@ -95,8 +85,17 @@
       "note": "The five advertised names the appended registrar publishes, at the tail of both surfaces.\n\nAnchor: `knowledge_read`; `knowledge_change`; `knowledge_diff`; `knowledge_integrity_check`; `knowledge_project`",
       "targets": [
         {
-          "kind": "unresolved",
-          "text": "mcp/src/agents_remember/models/tools/public_roster.py:92-96"
+          "anchor": {
+            "blob": "d0b0ddd9f150e32116b430ecc74907fcf68fee97",
+            "content": "sha256:0923d28ccefa8b417dc7890e6c0126600576eda2ce93384990bdd609e8cf0f73",
+            "locator": {
+              "end": 74,
+              "kind": "line_range",
+              "start": 67
+            },
+            "path": "mcp/src/agents_remember/models/tools/public_roster.py"
+          },
+          "kind": "code"
         }
       ]
     },

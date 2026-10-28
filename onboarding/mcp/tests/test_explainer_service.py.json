@@ -7,28 +7,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6f822fa44e116acf373942608218e1b1dd1f79fe",
+            "blob": "2e0a0c9c967717b5d7f8c9da875b4ab41d1aa7de",
             "content": "sha256:534b38dce0eda16be859529462f482c27a9ee72bb4bf1c77003f731b366d4868",
             "locator": {
               "kind": "symbol",
               "name": "test_a_closed_seat_is_resumed_by_the_send_that_reaches_it"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "2": {
-      "note": "The case `test_an_update_refuses_while_the_lock_is_held` protects an Update refusing instead of waiting on a held lock.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "6f822fa44e116acf373942608218e1b1dd1f79fe",
-            "content": "sha256:fc169ba43d80e4c65df957d130aeeb207aa8cdddce590806f99a57c60c571d07",
-            "locator": {
-              "end": 368,
-              "kind": "line_range",
-              "start": 328
             }
           },
           "kind": "test"
@@ -40,8 +23,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6f822fa44e116acf373942608218e1b1dd1f79fe",
-            "content": "sha256:54a6f77e03969410d27f4a87ccb5f0aa1614db34ec142299201100cdf742cf92",
+            "blob": "2e0a0c9c967717b5d7f8c9da875b4ab41d1aa7de",
+            "content": "sha256:7ae92c3f8330f24ff5b0e4f1b61640e4504ef08fac1160c3d49bc4f0c303748e",
             "locator": {
               "kind": "symbol",
               "name": "test_a_build_faulted_before_the_seat_rolls_back_every_effect"
@@ -56,8 +39,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6f822fa44e116acf373942608218e1b1dd1f79fe",
-            "content": "sha256:08b809faeecd81a947a3940a807d4160db2ef3b337866b713757005d5e117ef6",
+            "blob": "2e0a0c9c967717b5d7f8c9da875b4ab41d1aa7de",
+            "content": "sha256:0fc2029ab8f4dc0f850c9f21165f0426151b74aacebfb429c9ea8758be800378",
             "locator": {
               "kind": "symbol",
               "name": "test_failed_retire_stays_pending_and_resumes_original_receipt_and_prunes_gone_grades"
@@ -72,8 +55,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6f822fa44e116acf373942608218e1b1dd1f79fe",
-            "content": "sha256:b93e445ea06accd3419e85616af0a342feb1a9198a6902aa59dbade341e407eb",
+            "blob": "2e0a0c9c967717b5d7f8c9da875b4ab41d1aa7de",
+            "content": "sha256:9dfd56a35106cd22a1c0ce077468d43ad80d6125251b219d4ef1ceea24277290",
             "locator": {
               "kind": "symbol",
               "name": "test_a_comparison_that_moves_during_the_build_wins_over_the_packet"

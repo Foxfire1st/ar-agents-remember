@@ -1,0 +1,23 @@
+{
+  "path": "mcp/src/agents_remember/serving/projections/task_input_plan.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "task_input_plan is the single input plan both paths use.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "777f38e68f2fab4c21d6c343dd6d64fd9910dabe",
+            "content": "sha256:ce32c36c7aca1cde0519800c943a9e27bfc541e32d9e0efabfb3356d73b8f998",
+            "locator": {
+              "kind": "symbol",
+              "name": "task_input_plan"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

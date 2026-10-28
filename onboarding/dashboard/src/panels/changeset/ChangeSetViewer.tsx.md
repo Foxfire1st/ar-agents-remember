@@ -256,11 +256,11 @@ declarations support the scoped account, not fresh execution acceptance.
 ### Repo-Internal References
 
 
-- Target changes pass the complete address through the shared list loader, reset selection-local values and ignore completed results after effect cleanup. [1]
-- Listed generation wins over entry pins and is carried to file reads; the header displays its digest/currentness/scope rather than selecting a new tip. [2]
+- Target changes pass the complete address through the shared list loader, reset selection-local values and ignore completed results after effect cleanup. 
+- Listed generation wins over entry pins and is carried to file reads; the header displays its digest/currentness/scope rather than selecting a new tip. 
 - The main file opener sequences its own responses and delegates comparison-first, then leaf/master/scope diff selection to the real request owner. [3]
 - Forward/reverse partner mapping admits code/ordinary Markdown sidecars and excludes overview/entities/index reverse partners. [4]
-- The list/diff delegates call the shared change-set client; comparison address and generation pins remain explicit rather than another selected range. [5]
+- The list/diff delegates call the shared change-set client; comparison address and generation pins remain explicit rather than another selected range. 
 
 - The current workspace mounts the selected main pane and a second partner pane only when its supplied partner value exists. [6]
 
@@ -272,7 +272,7 @@ declarations support the scoped account, not fresh execution acceptance.
 - The current task/detail controls supply change-set targets; their caller, not this viewer, owns entry selection. [9]
 
 - Stored component cases with seeded API results assert loading, Back, a master file read and listed-generation pins; these are source assertions, not a fresh route/test run. [10]
-- The shared list URL requests the master per-leaf breakdown; the viewer reads returned leaves by field presence rather than inventing them. [11]
+- The shared list URL requests the master per-leaf breakdown; the viewer reads returned leaves by field presence rather than inventing them. 
 - The leaf rail prints each supplied state and its separate code/memory counters. [12]
 
 - Leaf-row callbacks choose working versus committed from the returned row and compose its repo/master/leaf target through the supplied callback. [13]
@@ -283,15 +283,21 @@ declarations support the scoped account, not fresh execution acceptance.
 - The cockpit forwards leaf reopening into the existing takeover instead of requiring another document-navigation path. [16]
 
 - Stored seeded component cases assert per-leaf counters, both leaf modes, a named refusal and measured-empty wording; historical captured-body comments are not fresh server execution. [17]
-- A numbered comparison is forwarded intact to the shared list URL owner before other range choices. [18]
+- A numbered comparison is forwarded intact to the shared list URL owner before other range choices. 
 - Per-file comparison reads take the explicit comparison address before leaf/master/scope fallbacks. [19]
 - Shared ReviewFilters, not removed local functions, owns destination labels/counts, non-all eligibility and by-design explanation text. [20]
 
 - The comparison header names its number, Back destination and abbreviated code trees; it does not display all four full operands. [21]
 
 - The comparison entry/filter effect opens the matching initial file, or clears the selection when there is none. [22]
-- A rendered list builds reviewFileBadges once from already supplied lane/inventory/worklist facts; no per-file gate request or classification is added. [23]
-- Eligible working leaf polls schedule the next refresh after both list/open-file requests settle; no explicit initial-load dependency or fixed wall-clock cadence is enforced. [24]
+- A rendered list builds reviewFileBadges once from already supplied lane/inventory/worklist facts; no per-file gate request or classification is added. 
+- Eligible working leaf polls schedule the next refresh after both list/open-file requests settle; no explicit initial-load dependency or fixed wall-clock cadence is enforced. 
 
 - The shared changed-file rail toggle controls mounted visibility. [25]
 - The header retains the shared sidebar toggle while the changed-file rail is hidden. [26]
+
+- A rendered list builds reviewFileBadges once from already supplied lane/inventory/worklist facts; no per-file gate request or classification is added. [23]
+
+- The list/diff delegates call the shared change-set client; comparison address and generation pins remain explicit rather than another selected range. [5]
+
+- Retired at the fifth freeze d59c3493: dashboard/src/panels/changeset/ChangeSetViewer.tsx::useChangesetLoad - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one; dashboard/src/panels/changeset/ChangeSetViewer.tsx::useChangesetState - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one; dashboard/src/panels/changeset/ChangeSetViewer.tsx::SeriesGenerationTag - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one; dashboard/src/panels/changeset/ChangeSetViewer.tsx::boundSeriesGeneration - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit f141d164265e926be9249acf6ae680ccf9ffae61; dashboard/src/panels/changeset/ChangeSetViewer.tsx::seriesListMeta - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit f141d164265e926be9249acf6ae680ccf9ffae61; dashboard/src/panels/changeset/ChangeSetViewer.tsx::changesetListRequest - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 7c56c11d651972515723b4090b8174087eb5236f; dashboard/src/panels/changeset/ChangeSetViewer.tsx::seriesLeaves - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 2e11db883f77bb1bf2827ae537b5d1d564e020b3; dashboard/src/data/changeset.ts::listUrl - the bytes it recorded now occur 5 times in the file, so no single home can be named and it is not given to the likelier one; dashboard/src/panels/changeset/reviewChangeSet.ts::reviewFileBadges - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one; dashboard/src/panels/changeset/ChangeSetViewer.tsx::useWorkingChangesetPoll - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.

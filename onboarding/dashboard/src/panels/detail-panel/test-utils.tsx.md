@@ -77,3 +77,11 @@ No applicable cross-repository source was found.
 
 
 - The fetch route table delegates to named payload helpers; task body and empty recorded-report payloads have dedicated branches. [2]
+
+
+Anchor: `seedProjection` `seedPromotedLeaf` `stubCounters` 
+
+
+Anchor: `seedProjection` `seedPromotedLeaf` `stubCounters` 
+
+- Retired at the fifth freeze d59c3493: dashboard/src/panels/detail-panel/test-utils.tsx::seedProjection - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one; dashboard/src/panels/detail-panel/test-utils.tsx:None-None - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.

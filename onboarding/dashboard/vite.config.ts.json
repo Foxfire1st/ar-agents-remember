@@ -1,0 +1,71 @@
+{
+  "path": "dashboard/vite.config.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The dev server proxies both prefixes to one backend target: /api and /canvas read the same BACKEND constant, so a second prefix cannot drift from the first.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f869fa55173e9ff48cd9c5499a042c30ee385b72",
+            "content": "sha256:fec8cb374d9c4fcd6f7339548954e500b61781f65cd9dbefb8314e1589220ed7",
+            "locator": {
+              "end": 67,
+              "kind": "line_range",
+              "start": 67
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "forwardedOrigin keeps the proxy's own Host for admission and states the browser's origin on X-Forwarded-Host with X-Forwarded-Proto, which is what lets the backend admit the request and still build the frame policy from the browser's origin.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f869fa55173e9ff48cd9c5499a042c30ee385b72",
+            "content": "sha256:2b8caa75637b16eaa02abb10beec2dec89f561c5c68b0c0e21cb431ec54b531d",
+            "locator": {
+              "end": 92,
+              "kind": "line_range",
+              "start": 86
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f869fa55173e9ff48cd9c5499a042c30ee385b72",
+            "content": "sha256:2298768eb37a0fe25f1d5ffc5e1392190a30a2fae7676af539eac0a4a3ad1f5a",
+            "locator": {
+              "end": 107,
+              "kind": "line_range",
+              "start": 107
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "_origin reads X-Forwarded-Host only in host[:port] shape and ignores anything carrying a scheme, path or whitespace, so a malformed forwarded value falls back to the request's own host rather than widening the frame policy.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ef1bbd4c6b36c763b8b0a0b5610c848f26f08b88",
+            "content": "sha256:70868f60b1a65677945a14ad65d71111c8e3734600fffbbf0cee228562683b85",
+            "locator": {
+              "end": 184,
+              "kind": "line_range",
+              "start": 163
+            },
+            "path": "mcp/src/agents_remember/serving/canvas.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

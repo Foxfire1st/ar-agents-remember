@@ -1,24 +1,6 @@
 {
   "path": "mcp/src/agents_remember/canvas",
   "references": {
-    "1": {
-      "note": "One policy, hashed into the value a proof record must name, so served bytes, the proof and the runtime gate cannot drift apart.\n\nAnchor: `policy_digest`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "d0f7530ed99157030a45086691f10b4f65923ded",
-            "content": "sha256:c9fb90fdf4f691be27b6947615d8f777616d56df09769e175298c8cef4d0ded2",
-            "locator": {
-              "end": 384,
-              "kind": "line_range",
-              "start": 380
-            },
-            "path": "mcp/src/agents_remember/canvas/policy.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "10": {
       "note": "The host resolves an evidence reference only against the revision's own admitted packet, or refuses it by name.",
       "targets": [
@@ -36,29 +18,12 @@
         }
       ]
     },
-    "11": {
-      "note": "An explicit activation starts one authoring attempt, which is recorded durably before any host call.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "b660b126885ae705cd1c9da3ed54888d2a767d2f",
-            "content": "sha256:a89ba86e6ce3f4fc1fdef5d30245f3c36b56a17c6d3f753332462de2b90b5c37",
-            "locator": {
-              "kind": "symbol",
-              "name": "Presenter"
-            },
-            "path": "mcp/src/agents_remember/canvas/presenter.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "12": {
       "note": "Publication loads the exact prospective revision once without a model before any ready pointer moves.",
       "targets": [
         {
           "anchor": {
-            "blob": "b660b126885ae705cd1c9da3ed54888d2a767d2f",
+            "blob": "560327480bc431b5c381b1341fecbfe988acdd33",
             "content": "sha256:e9bd5b14dc7760b083ce06c23dbdaa9ee9be067e1d6a9d0feebcf032bc46db8e",
             "locator": {
               "kind": "symbol",
@@ -75,30 +40,13 @@
       "targets": [
         {
           "anchor": {
-            "blob": "923c43f47e920930d325fc082182d3c934a16de0",
+            "blob": "d4e183afce9e090f773a85ec0093b6a8d77241b5",
             "content": "sha256:de3a88264aaed8d46e8c01191923f4836e40e77394e485e7e38271f786b90190",
             "locator": {
               "kind": "symbol",
               "name": "check_page"
             },
             "path": "mcp/src/agents_remember/canvas/readiness.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "14": {
-      "note": "The prospective load runs in the selected browser through the package-owned runner and cannot report a pass that contradicts its own observations.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "5ca2ca69a99e69ac35709a756f52967e156695f9",
-            "content": "sha256:9f84c0afc5857072563b76a82a109406b8aea689fa6608c334a0c3e5d3bbf643",
-            "locator": {
-              "kind": "symbol",
-              "name": "BrowserProspectiveLoad"
-            },
-            "path": "mcp/src/agents_remember/canvas/prospective.py"
           },
           "kind": "code"
         }
@@ -155,57 +103,6 @@
         }
       ]
     },
-    "18": {
-      "note": "The frame surface serves one live session's own document and admitted assets and nothing else.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "0e8924061ad376de479020d84377b3ccc75d78ca",
-            "content": "sha256:830ef8e16f743aaea58b5a2b47cc56d870a7d3aa0c3aede4ac9e6449bd0647ce",
-            "locator": {
-              "kind": "symbol",
-              "name": "page"
-            },
-            "path": "mcp/src/agents_remember/serving/canvas.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "19": {
-      "note": "Both canvas surfaces are registered after the API routes and before the static mount.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "0e8924061ad376de479020d84377b3ccc75d78ca",
-            "content": "sha256:85b2dbd643babe2e5185e0bc149d0a8821003ba348957b8e1012661287b32cb6",
-            "locator": {
-              "kind": "symbol",
-              "name": "register_canvas_routes"
-            },
-            "path": "mcp/src/agents_remember/serving/canvas.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "2": {
-      "note": "A frame document is sandboxed without `allow-same-origin`, so the generated document runs on an opaque origin.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "d0f7530ed99157030a45086691f10b4f65923ded",
-            "content": "sha256:4806da4c8c9e7eb40453aedfeacb5589efebad43e8ad94a81415faf067df2ef6",
-            "locator": {
-              "kind": "symbol",
-              "name": "frame_sandbox"
-            },
-            "path": "mcp/src/agents_remember/canvas/policy.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "20": {
       "note": "The current implementation introduces bound grades, per-part staleness and explicit regeneration; the existing isolated-page, evidence and kit guarantees remain.\n\nAnchor: `parse_frame_message`, `parse_host_message`, `Presenter`, `EXPLAINER_SURFACE`, `build_seat`, `update_seat`, `retire_seat`, `_check_parts`, `part_staleness`, `GradeStore`",
       "targets": [
@@ -222,8 +119,8 @@
         },
         {
           "anchor": {
-            "blob": "b660b126885ae705cd1c9da3ed54888d2a767d2f",
-            "content": "sha256:1da1d547a7e5498ef78cc046813ae28ae1827239f332926c0ef078c8b6c5d023",
+            "blob": "560327480bc431b5c381b1341fecbfe988acdd33",
+            "content": "sha256:15342eb648138b47fd5c27cd077a86757e78bb48613c0cfbaa1ae4bd3452e3d7",
             "locator": {
               "kind": "file"
             },
@@ -233,8 +130,8 @@
         },
         {
           "anchor": {
-            "blob": "9d6d70702e51219adf180447e69ddf89e77ab96e",
-            "content": "sha256:fcb596618cf0a2a1029f301225adc1e07ec302aea60fffa1ff1348437d62e4e2",
+            "blob": "74eef9c0dcde10b14d3df3f3c44214cb67d05201",
+            "content": "sha256:8344136c353ad91c81acedf77ba3919dd890803bb1c112b6da8eab273541542a",
             "locator": {
               "kind": "file"
             },
@@ -244,8 +141,8 @@
         },
         {
           "anchor": {
-            "blob": "cbff26bf8ea2b052ad972854c9e39cd644ece18e",
-            "content": "sha256:4a111ca372ef47521086ce0f62c77ece274fc8675fc53adeacd03caa7c561ba1",
+            "blob": "80a4160ab85549d0b9ef773aec16c9609a661974",
+            "content": "sha256:6bec01328ea0a358e850c6dfe008cf2e244bd0899ace1833867f97af054dbb40",
             "locator": {
               "kind": "file"
             },
@@ -255,8 +152,8 @@
         },
         {
           "anchor": {
-            "blob": "923c43f47e920930d325fc082182d3c934a16de0",
-            "content": "sha256:575a44297bf4aece1e38c6ece9283ccb872adf8edaa99f96dda4102c7fc12c3e",
+            "blob": "d4e183afce9e090f773a85ec0093b6a8d77241b5",
+            "content": "sha256:9c21082900e6e75f72e196d9f817747377189faf792020070fe5afab438a9c7f",
             "locator": {
               "kind": "file"
             },
@@ -277,8 +174,8 @@
         },
         {
           "anchor": {
-            "blob": "8c8af6e2e719765cbfa3ecceccc25315ad381a58",
-            "content": "sha256:836af3da59a7136ddc44440556032fe920c9937304557f9355d991b369c4237b",
+            "blob": "b200cb46205832852ad5998ec9eb180146a847e2",
+            "content": "sha256:94425fe54db51c7058377a3449e8336461f13935eeaf5b3a761dec7943226022",
             "locator": {
               "kind": "file"
             },
@@ -288,63 +185,12 @@
         },
         {
           "anchor": {
-            "blob": "b977f16845495bebfcfa43045a025f9174852e73",
-            "content": "sha256:24c5464b388d025d51499b17d100cd957cf568878712ad8503e6b21f3777b1ba",
+            "blob": "67f8b73c7c956edb2e18c92195e786684ec8777b",
+            "content": "sha256:738f3495b5a4a1bd1e7bd24f1b9c607c7d31015c8e26577970f4af2e6c0dabcb",
             "locator": {
               "kind": "file"
             },
             "path": "mcp/src/agents_remember/canvas/canvas-prospective-load.mjs"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "3": {
-      "note": "Generated scripts are served enabled only when the shipped proof covers the policy now served.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "d0f7530ed99157030a45086691f10b4f65923ded",
-            "content": "sha256:b537d2abacf2557225dce366a976ffe8dadb8a76933e803195090c9e71815e68",
-            "locator": {
-              "kind": "symbol",
-              "name": "scripts_enabled"
-            },
-            "path": "mcp/src/agents_remember/canvas/policy.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "4": {
-      "note": "The proof record's own check table and observations must cover every clause; a table that cannot be read covers nothing.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "d0f7530ed99157030a45086691f10b4f65923ded",
-            "content": "sha256:adb8fe739c248a0d135b540b1af0f784129855cf51d4cb5c51c21f78f118f04f",
-            "locator": {
-              "kind": "symbol",
-              "name": "proof_gaps"
-            },
-            "path": "mcp/src/agents_remember/canvas/policy.py"
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "5": {
-      "note": "One session is created per frame and bound to the frame, immutable revision and comparison the bytes were served from.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "cf3487f3615147bd03a0cb9fbc6e2d687f11a6ff",
-            "content": "sha256:c3c334b012a3c58162270e2adb1e19009081c2ab18ae1c2e77861dbb1c46a2e0",
-            "locator": {
-              "kind": "symbol",
-              "name": "SessionRegistry"
-            },
-            "path": "mcp/src/agents_remember/canvas/sessions.py"
           },
           "kind": "code"
         }
@@ -355,7 +201,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cf3487f3615147bd03a0cb9fbc6e2d687f11a6ff",
+            "blob": "463f5d42482415a98b7acd08b6be102c6dc95af2",
             "content": "sha256:dd0fdfb9aa606d08603c4489690951b8861a9bb43c96c79345a5ba4847c4fa38",
             "locator": {
               "kind": "symbol",
@@ -372,8 +218,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e3f614c4ac0fc8d46256b5ee81754cc35115f8bd",
-            "content": "sha256:a79488ab4244bfe4a1a65c712a6422d069a8812e011daafe4162ec35886243e4",
+            "blob": "394fa0843197b351b30df497c037e39e84f249cf",
+            "content": "sha256:e3fa195d209072f30d66e80794e5481c369ad3bc928742dcf14a01883bab64c9",
             "locator": {
               "kind": "symbol",
               "name": "bound_document"

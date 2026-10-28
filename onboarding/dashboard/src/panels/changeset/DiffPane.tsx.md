@@ -70,3 +70,5 @@ only draws what it is given. The no-marks gutter remains empty. Fitted statement
 - The content-sized host an expression card uses (MIK-L31). [8]
 - Folds expose native keyboard-equivalent expansion. [13]
 - Fitted mark updates reconfigure dedicated gutter compartments without destroying current editors. [14]
+
+

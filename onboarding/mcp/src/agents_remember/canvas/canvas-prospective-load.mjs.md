@@ -18,6 +18,10 @@ The loopback server serves only the staged directory under the canvas-page prefi
 
 ## Evidence
 
-- The prospective Chromium observation keeps basis references and claim ids separate through bounded post-load mutations; Python resolves both against the immutable packet. Load, isolation and paint observations establish no explanation correctness or arbitrary later-script behavior. [1]
+- The prospective Chromium observation keeps basis references and claim ids separate through bounded post-load mutations; Python resolves both against the immutable packet. Load, isolation and paint observations establish no explanation correctness or arbitrary later-script behavior.
 
-- The prospective Chromium observation keeps basis references and claim ids separate through bounded post-load mutations; Python resolves both against the immutable packet. Load, isolation and paint observations establish no explanation correctness or arbitrary later-script behavior. [1]
+Retired at the fifth freeze d59c3493: mcp/src/agents_remember/canvas/canvas-prospective-load.mjs:152-177 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 47f69f11afb982e318006209036aed22f1792976; mcp/src/agents_remember/canvas/canvas-prospective-load.mjs:210-248 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 47f69f11afb982e318006209036aed22f1792976. Retired means the anchor no longer stands, not that the cited subject was deleted [1]
+
+## Retirements
+
+- Retired at the fifth freeze d59c3493: mcp/src/agents_remember/canvas/canvas-prospective-load.mjs:152-177 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 47f69f11afb982e318006209036aed22f1792976; mcp/src/agents_remember/canvas/canvas-prospective-load.mjs:210-248 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 47f69f11afb982e318006209036aed22f1792976. Retired means the anchor no longer stands, not that the cited subject was deleted.

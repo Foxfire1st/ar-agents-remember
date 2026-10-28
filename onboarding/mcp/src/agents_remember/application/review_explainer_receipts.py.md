@@ -19,7 +19,9 @@ The supplemental receipts every explainer packet carries: the leaf's own packets
 ## Evidence
 
 - Every source one build or Update carries is receipted through the task that owns it [1]
-- The required yardsticks are reserved before packets and reference files at the read ceiling [2]
+- The required yardsticks are reserved before packets and reference files at the read ceiling
 - An agreed revision that does not resolve or verify yields an unavailable receipt with its reason [3]
 - The requirement files are taken from the leaf's own document in the order it names them [4]
 - A source past the ceiling reads as a truncated-read omission, never as a read file [5]
+
+- Retired at the fifth freeze d59c3493: mcp/src/agents_remember/application/review_explainer_receipts.py:164-177 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 5f8398b32760677c370e3145add73cfa8388357b. Retired means the anchor no longer stands, not that the cited subject was deleted.

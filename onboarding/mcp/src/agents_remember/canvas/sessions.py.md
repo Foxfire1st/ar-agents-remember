@@ -16,5 +16,7 @@ The host-created sessions one frame is served under, and their revocation. An or
 
 ## Evidence
 
-- One session is created per frame and bound to frame, revision and comparison. [1]
+- One session is created per frame and bound to frame, revision and comparison. 
 - Revocation names its reason and keeps no content. [2]
+
+- Retired at the fifth freeze d59c3493: mcp/src/agents_remember/canvas/sessions.py::SessionRegistry - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.

@@ -1,24 +1,6 @@
 {
   "path": "mcp/src/agents_remember/package_data/canvas/review-presenter.md",
   "realizes": [],
-  "references": {
-    "1": {
-      "note": "The shipped capability text states the explainer assignment and bounds.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "69eeba12857160bdc2eff9be351ce81327109ed2",
-            "content": "sha256:83d182d9e6890418c240e2b881fe9d7a641d2d605e5044c67e855a50f75fd8b7",
-            "locator": {
-              "end": 86,
-              "kind": "line_range",
-              "start": 1
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    }
-  },
+  "references": {},
   "schema": "ar-onboarding-file/v1"
 }

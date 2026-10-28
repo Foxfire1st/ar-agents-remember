@@ -198,7 +198,7 @@ current complete-review, tree and reader semantics; these quotations do not over
 - The finite64KiB incomplete-header allowance is an explicit serving constant. [65]
 - The root admits only the matching canonical external live-leaf memory directory. [66]
 
-- Numbered catalogue questions and developer-tray routes use configuration-scoped owners. [67]
+- Numbered catalogue questions and developer-tray routes use configuration-scoped owners.
 
 - Reload workers declare their own role and bind archive-aware services. [68]
 - Foreground serving passes the finite header limit and cleans sim state. [69]
@@ -206,3 +206,5 @@ current complete-review, tree and reader semantics; these quotations do not over
 - Live/sim composition and supervision retain separate ownership and outcomes. [71]
 
 - The composition root wires PaseoExplainerHost, application ports and the master contract locator into serving. _master_contract uses the declared master series contract or existing canonical folder contract; no other line is borrowed. [72]
+
+- Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/dashboard.py:119-244 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 0346da9c572e1eb913a8eb4130e9a9e9d37343c8. Retired means the anchor no longer stands, not that the cited subject was deleted.

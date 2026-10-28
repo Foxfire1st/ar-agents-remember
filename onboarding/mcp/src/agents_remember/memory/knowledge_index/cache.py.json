@@ -2,29 +2,12 @@
   "path": "mcp/src/agents_remember/memory/knowledge_index/cache.py",
   "realizes": [],
   "references": {
-    "1": {
-      "note": "The cache contract: where, what, freshness, eviction, and that deleting it loses nothing.  Anchor: \"Deleting the directory, or any file in it, loses nothing\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "865fcec1dc0e560d592557629c3b7cded3b2af7d",
-            "content": "sha256:3d1e02b65e698c7aab63f4e3c48ad4eae206407720fa13729372dd0c8c95da65",
-            "locator": {
-              "end": 19,
-              "kind": "line_range",
-              "start": 1
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "2": {
       "note": "The chosen location and eviction defaults.",
       "targets": [
         {
           "anchor": {
-            "blob": "865fcec1dc0e560d592557629c3b7cded3b2af7d",
+            "blob": "69cdf53fcee74f39532de9beb47c69eac568778b",
             "content": "sha256:e1edb9c0000b5af1a403e9bf1a822a4bcd8ea7846b5af47dcd8ccf84e67aa97c",
             "locator": {
               "kind": "symbol",
@@ -35,7 +18,7 @@
         },
         {
           "anchor": {
-            "blob": "865fcec1dc0e560d592557629c3b7cded3b2af7d",
+            "blob": "69cdf53fcee74f39532de9beb47c69eac568778b",
             "content": "sha256:c2a8d161f346fb4f777e75b89cf8cc9fb971a3296a960a95bd67a2465031abb9",
             "locator": {
               "kind": "symbol",
@@ -46,7 +29,7 @@
         },
         {
           "anchor": {
-            "blob": "865fcec1dc0e560d592557629c3b7cded3b2af7d",
+            "blob": "69cdf53fcee74f39532de9beb47c69eac568778b",
             "content": "sha256:a86e9b04cf2b0c189f9121360acdb900a16e9c3fd5f929c81931e23eb7161584",
             "locator": {
               "kind": "symbol",
@@ -57,27 +40,11 @@
         },
         {
           "anchor": {
-            "blob": "865fcec1dc0e560d592557629c3b7cded3b2af7d",
+            "blob": "69cdf53fcee74f39532de9beb47c69eac568778b",
             "content": "sha256:2ed879b0f9b7814345cc200e0a0f193f95d3a71131cd5fdad1f9ecc9abc70951",
             "locator": {
               "kind": "symbol",
               "name": "default_cache_directory"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "3": {
-      "note": "A location inside a Git working tree is refused before anything is created.  Anchor: \"inside a Git working tree\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "865fcec1dc0e560d592557629c3b7cded3b2af7d",
-            "content": "sha256:e6ab6a9950c1de95aa672c31da131ff3bc1f26c3746a19f36fdffa881ec2cd60",
-            "locator": {
-              "kind": "symbol",
-              "name": "KnowledgeIndexCache"
             }
           },
           "kind": "code"
@@ -89,26 +56,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "865fcec1dc0e560d592557629c3b7cded3b2af7d",
-            "content": "sha256:fd7d67f13fbf69eb8ca0c941b66758303e6f9b77a951d3ea93d76bad1d58d314",
+            "blob": "69cdf53fcee74f39532de9beb47c69eac568778b",
+            "content": "sha256:648f87b3358b802b3e2b5f6ce7c536e835386e45a97789256d040d6a518fbe04",
             "locator": {
               "kind": "file"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "5": {
-      "note": "Eviction by age, then size, keeping the file just built.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "865fcec1dc0e560d592557629c3b7cded3b2af7d",
-            "content": "sha256:57e8e00be25f70714277fd3d0d3c9d7ab24c3b14e745300e7255929ed5f453dc",
-            "locator": {
-              "kind": "symbol",
-              "name": "evict"
             }
           },
           "kind": "code"
@@ -120,29 +71,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "865fcec1dc0e560d592557629c3b7cded3b2af7d",
-            "content": "sha256:3a4f91f2db75a930734ae49dce50260d9bca788b129fe4e25f4f63e344fd8fdb",
-            "locator": {
-              "kind": "symbol",
-              "name": "_reuse"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "865fcec1dc0e560d592557629c3b7cded3b2af7d",
-            "content": "sha256:c8bd9e3fbede75908b66c9fa8b21a62e5b9a8e2ac1f6f78cab9102f1014b6814",
-            "locator": {
-              "kind": "symbol",
-              "name": "_build"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "865fcec1dc0e560d592557629c3b7cded3b2af7d",
+            "blob": "69cdf53fcee74f39532de9beb47c69eac568778b",
             "content": "sha256:81dc260e4d59f7baba1a4af5dd7bdefc3b9012cce7511d36121548387e0fb955",
             "locator": {
               "kind": "symbol",
@@ -158,8 +87,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e4a53476146e78db3c031470f7e8031206813443",
-            "content": "sha256:8dea9a1d7bde966c165214e45ca6bc652b3f4d2f59f38d179077404dbb0f9b35",
+            "blob": "21d471fd2afb3c773c9c4b2b4eeeabecb946fb1c",
+            "content": "sha256:ccd626cf9b37cd415c7884de3676c23a4063275d726554246aec0865768aa106",
             "locator": {
               "kind": "symbol",
               "name": "test_the_cache_reuses_rebuilds_and_loses_nothing_when_deleted"
@@ -170,8 +99,8 @@
         },
         {
           "anchor": {
-            "blob": "e4a53476146e78db3c031470f7e8031206813443",
-            "content": "sha256:9cb2383f3ff49b309cc40da855f557ce5d2ba68b1dd825e57dcde49332fe3706",
+            "blob": "21d471fd2afb3c773c9c4b2b4eeeabecb946fb1c",
+            "content": "sha256:f6cc02aeae7ad68edf6715db1a5657f50ed03633b5677c517b4cf0d854a232a7",
             "locator": {
               "kind": "symbol",
               "name": "test_old_and_excess_index_files_are_evicted"
@@ -182,7 +111,7 @@
         },
         {
           "anchor": {
-            "blob": "e4a53476146e78db3c031470f7e8031206813443",
+            "blob": "21d471fd2afb3c773c9c4b2b4eeeabecb946fb1c",
             "content": "sha256:f2001808a18864adeafdddb1615972f8aad215d103b38d9f0b49748d5f6b6859",
             "locator": {
               "kind": "symbol",
@@ -199,7 +128,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e4a53476146e78db3c031470f7e8031206813443",
+            "blob": "21d471fd2afb3c773c9c4b2b4eeeabecb946fb1c",
             "content": "sha256:ba9a51bb05419c5c919c4516d9bfb58c2c822519aa7098289778528e6d48114f",
             "locator": {
               "kind": "symbol",

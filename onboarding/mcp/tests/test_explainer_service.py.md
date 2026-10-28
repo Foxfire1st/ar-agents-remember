@@ -23,4 +23,6 @@ The seat order rather than the bytes: one environment per leaf, a generation tha
 - The case `test_failed_retire_stays_pending_and_resumes_original_receipt_and_prunes_gone_grades` protects a failed Retire staying pending and resuming its own receipt. [4]
 - The case `test_a_comparison_that_moves_during_the_build_wins_over_the_packet` protects a comparison that moved mid-build winning over the packet. [5]
 
-- The case `test_an_update_refuses_while_the_lock_is_held` protects an Update refusing instead of waiting on a held lock. [2]
+- The case `test_an_update_refuses_while_the_lock_is_held` protects an Update refusing instead of waiting on a held lock.
+
+- Retired at the fifth freeze d59c3493: mcp/tests/test_explainer_service.py:328-368 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 5f8398b32760677c370e3145add73cfa8388357b. Retired means the anchor no longer stands, not that the cited subject was deleted.

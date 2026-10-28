@@ -27,4 +27,6 @@ This module selects and compares nothing. Missing knowledge cannot become measur
 - Declared head-count totals equal invariant/guarantee parts and keep relationship-only counts separate. [9]
 - Outcome validation and optional attribution/open/comparison fields retain independent meanings. [10]
 - The tree producer attaches its number and separate lane/stored-open facts. [11]
-- Stored-open counts require complete bound work and no undecided relevant verdict. [12]
+- Stored-open counts require complete bound work and no undecided relevant verdict.
+
+- Retired at the fifth freeze d59c3493: mcp/src/agents_remember/application/review_worklist_answers.py:20-57 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 20624f979e2b89067a3e42019c9611a8e18ff848. Retired means the anchor no longer stands, not that the cited subject was deleted.

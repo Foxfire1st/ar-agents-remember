@@ -134,8 +134,11 @@ of one run.
 
 No cross-repo boundary is crossed by this file.
 
-- The shared class order, with B-side resolution explicitly selected and C-side resolution using the candidate default; the definition-4 ruling and definition-7 rules remain. [1]
+- The shared class order, with B-side resolution explicitly selected and C-side resolution using the candidate default; the definition-4 ruling and definition-7 rules remain.
+
+Retired at the fifth freeze d59c3493: mcp/src/agents_remember/application/knowledge_worklist/classify.py:222-225 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit b1fd058f854ed5edcf7c1d9b5d52c4828c70595b. Retired means the anchor no longer stands, not that the cited subject was deleted [1]
 - Current source delta inspected statically: Select B/C symlink modes without changing class precedence, link identity or carry; qualify the historical moved-code claim and caption. [19]
+
 
 
 ## Current source contract
@@ -152,3 +155,7 @@ These spans and input-card identities were independently rechecked after the sup
 - Unavailable recorded line-range blobs add a reason without replacing classification precedence. [21]
 
 - A failed blob-existence read raises CodeReadError rather than proving absence. [22]
+
+## Retirements
+
+- Retired at the fifth freeze d59c3493: mcp/src/agents_remember/application/knowledge_worklist/classify.py:222-225 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit b1fd058f854ed5edcf7c1d9b5d52c4828c70595b. Retired means the anchor no longer stands, not that the cited subject was deleted.

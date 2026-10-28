@@ -87,45 +87,14 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5276cd9583d9a33d9094edac37d82b768491aed9",
+            "blob": "00c924961061dbdffe62be2587500d221bd22c23",
             "content": "sha256:1d207f7d2930249781c43576862bf64c8bd1df3f4bac4491156a47e8f2753e02",
             "locator": {
-              "end": 572,
+              "end": 625,
               "kind": "line_range",
-              "start": 572
+              "start": 625
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "28": {
-      "note": "**A lifecycle consumer row that names this module, so the artifact census still counts it.**",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "339dffc9c6794b5fe29fe6980e9e45603b344a09",
-            "content": "sha256:16234a39a37eb8b1eabc854ac56e12d9df97019c44de9c53dabe91af3146d1f8",
-            "locator": {
-              "end": 597,
-              "kind": "line_range",
-              "start": 597
-            },
-            "path": "mcp/tests/evidence-lifecycle.toml"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "339dffc9c6794b5fe29fe6980e9e45603b344a09",
-            "content": "sha256:c4e85d64fdc7f29c7fda8e7aa62b309f8a5b467cb6434d6330fe919ddbe05f20",
-            "locator": {
-              "end": 1369,
-              "kind": "line_range",
-              "start": 1369
-            },
-            "path": "mcp/tests/evidence-lifecycle.toml"
           },
           "kind": "test"
         }

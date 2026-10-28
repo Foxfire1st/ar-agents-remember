@@ -275,25 +275,12 @@
         },
         {
           "anchor": {
-            "blob": "c32522a60857504ad69c2b55c97baed38f637142",
+            "blob": "94f708b9e1972b2fad7432cf32f20b67989ccea8",
             "content": "sha256:7c93dc3a6013ffe3e783e310481cd1801a32363bcf21fbb1ebe192aca457695a",
             "locator": {
-              "end": 91,
+              "end": 87,
               "kind": "line_range",
-              "start": 79
-            },
-            "path": "mcp/src/agents_remember/mcp/server.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "c32522a60857504ad69c2b55c97baed38f637142",
-            "content": "sha256:9f7adae5e4b51dc439ad612741f9e30ff56da4e9e1476c142b175bf4003f5b8e",
-            "locator": {
-              "end": 127,
-              "kind": "line_range",
-              "start": 93
+              "start": 75
             },
             "path": "mcp/src/agents_remember/mcp/server.py"
           },

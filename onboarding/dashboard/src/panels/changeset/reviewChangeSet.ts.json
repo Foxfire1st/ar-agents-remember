@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "d5135eb9e9a5b59401def9955ed068665b05a4ea",
+        "blob": "d61ea44cfb7ccfd7ecd616d46c1e88b31a05833c",
         "content": "sha256:8bf1d07a52431616198b78b8466407e2048feeda505aafd24f78a466da02568e",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "d5135eb9e9a5b59401def9955ed068665b05a4ea",
+        "blob": "d61ea44cfb7ccfd7ecd616d46c1e88b31a05833c",
         "content": "sha256:b37c3f6b7f99e791d9c61e6403c71e36c5e8ac9af05f24b6f64af8a9b6e1b1cb",
         "locator": {
           "kind": "symbol",
@@ -39,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "d5135eb9e9a5b59401def9955ed068665b05a4ea",
+        "blob": "d61ea44cfb7ccfd7ecd616d46c1e88b31a05833c",
         "content": "sha256:3f2564afd871c13f0a9b107cd079dac0e036a9e0624c1feb81843d72374db506",
         "locator": {
           "kind": "symbol",
@@ -62,7 +62,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d5135eb9e9a5b59401def9955ed068665b05a4ea",
+            "blob": "d61ea44cfb7ccfd7ecd616d46c1e88b31a05833c",
             "content": "sha256:542611513065194cbcd0ada275e8aa05a65d8d51d3c1541154aeccbfd0dea445",
             "locator": {
               "kind": "symbol",
@@ -78,12 +78,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d5135eb9e9a5b59401def9955ed068665b05a4ea",
+            "blob": "d61ea44cfb7ccfd7ecd616d46c1e88b31a05833c",
             "content": "sha256:45f932f3f5f0b9c8b88cc8eb84832dffab084af319b3ce1ee9fdc770ead65d50",
             "locator": {
-              "end": 25,
+              "end": 26,
               "kind": "line_range",
-              "start": 20
+              "start": 21
             }
           },
           "kind": "code"
@@ -95,7 +95,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d5135eb9e9a5b59401def9955ed068665b05a4ea",
+            "blob": "d61ea44cfb7ccfd7ecd616d46c1e88b31a05833c",
             "content": "sha256:3f2564afd871c13f0a9b107cd079dac0e036a9e0624c1feb81843d72374db506",
             "locator": {
               "kind": "symbol",
@@ -111,7 +111,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d5135eb9e9a5b59401def9955ed068665b05a4ea",
+            "blob": "d61ea44cfb7ccfd7ecd616d46c1e88b31a05833c",
             "content": "sha256:8bf1d07a52431616198b78b8466407e2048feeda505aafd24f78a466da02568e",
             "locator": {
               "kind": "symbol",
@@ -123,52 +123,40 @@
       ]
     },
     "5": {
-      "note": "fileBadge delegates to reviewFileBadges and reads the requested path. reviewFileBadges combines labels from both lane destinations with fileAnswers lookups only for the unexplained page filter, then overrides exact-inventory non-text and mode-change paths with non-text while retaining the lookup. Lane labels use no invariant or N hunks, no invariant for unexplained cases; unknown labels remain unchanged. Calling fileBadge repeatedly rebuilds the map.\n\nAnchor: inclusive source ranges",
+      "note": "fileBadge delegates to reviewFileBadges and reads the requested path. reviewFileBadges combines labels from both lane destinations with fileAnswers lookups only for the unexplained page filter, then overrides exact-inventory non-text and mode-change paths with non-text while retaining the lookup. Lane labels use no invariant or N hunks, no invariant for unexplained cases; unknown labels remain unchanged. Calling fileBadge repeatedly rebuilds the map.\n\nAnchor: inclusive source ranges\n\nRetired at the fifth freeze d59c3493: dashboard/src/panels/changeset/reviewChangeSet.ts:59-70 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 20624f979e2b89067a3e42019c9611a8e18ff848. Retired means the anchor no longer stands, not that the cited subject was deleted.",
       "targets": [
         {
           "anchor": {
-            "blob": "d5135eb9e9a5b59401def9955ed068665b05a4ea",
+            "blob": "d61ea44cfb7ccfd7ecd616d46c1e88b31a05833c",
             "content": "sha256:b37c3f6b7f99e791d9c61e6403c71e36c5e8ac9af05f24b6f64af8a9b6e1b1cb",
             "locator": {
-              "end": 56,
+              "end": 57,
               "kind": "line_range",
-              "start": 54
+              "start": 55
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "d5135eb9e9a5b59401def9955ed068665b05a4ea",
-            "content": "sha256:79ee58dc2dab3ca56857e15e1d1ef020ef60e8d199c9f38ef886094893f97cb0",
-            "locator": {
-              "end": 70,
-              "kind": "line_range",
-              "start": 59
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "d5135eb9e9a5b59401def9955ed068665b05a4ea",
+            "blob": "d61ea44cfb7ccfd7ecd616d46c1e88b31a05833c",
             "content": "sha256:c08e1283b0f6d6250c4662fcd42100a5eecbed346e885bcf999fe0c2e1cc95c1",
             "locator": {
-              "end": 75,
+              "end": 76,
               "kind": "line_range",
-              "start": 71
+              "start": 72
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "d5135eb9e9a5b59401def9955ed068665b05a4ea",
+            "blob": "d61ea44cfb7ccfd7ecd616d46c1e88b31a05833c",
             "content": "sha256:459dd0278077a27773e223742dec92b9831c7340b5c4238f416112d01b0f20c5",
             "locator": {
-              "end": 83,
+              "end": 84,
               "kind": "line_range",
-              "start": 76
+              "start": 77
             }
           },
           "kind": "code"

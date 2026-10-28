@@ -42,27 +42,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9719c9159d392a3e5377a242638474a1a15b1f37",
-            "content": "sha256:c081cf381bb3f13633d7bf5418bc9534212e3a89628153ff30047098d9b0be43",
+            "blob": "75a04d4049c18ff472b2caefabad7faa53cdb34b",
+            "content": "sha256:267caaf15e6e218966814d04fd2285fd1db099ea6dd45ebe90412f84ac14b800",
             "locator": {
               "kind": "file"
-            },
-            "path": "mcp/tests/test_reviewer_worklist_reads.py"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "6": {
-      "note": "A settings file changed and restored while a worklist child reads it is seen with the bytes actually parsed.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "9719c9159d392a3e5377a242638474a1a15b1f37",
-            "content": "sha256:c078ebe5f0226cd4aa3168108fd2f8acc48329db8769a74229b8890efb901816",
-            "locator": {
-              "kind": "symbol",
-              "name": "_settings_reads"
             },
             "path": "mcp/tests/test_reviewer_worklist_reads.py"
           },

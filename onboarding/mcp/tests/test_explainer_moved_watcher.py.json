@@ -7,8 +7,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "616c8d93f3811dbf08ea17b3e3435ec4548ee59d",
-            "content": "sha256:1b3cc4e13c74ae4fd25012e428b50705f5a12a31d21d94fad7df71c57dc0d310",
+            "blob": "c8fdc137c4d07fc461bf136e3ed2822078b079c3",
+            "content": "sha256:9c2a7735a0d8de11d0b2f4243d4c5bc9ebd3348f9b18af8fa2ae0d6959ccfa45",
             "locator": {
               "kind": "symbol",
               "name": "test_the_native_turn_end_loop_runs_the_workers_turn_end_without_writes_or_messages"
@@ -23,7 +23,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "616c8d93f3811dbf08ea17b3e3435ec4548ee59d",
+            "blob": "c8fdc137c4d07fc461bf136e3ed2822078b079c3",
             "content": "sha256:c5845b283a53e5513ef59acd38e7bd161c1b6ee9ffc75b63b6332cdc95258308",
             "locator": {
               "kind": "symbol",
@@ -39,7 +39,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "616c8d93f3811dbf08ea17b3e3435ec4548ee59d",
+            "blob": "c8fdc137c4d07fc461bf136e3ed2822078b079c3",
             "content": "sha256:fcb9656ae981313702784c1b68ad0b9556c2969eeb6e4969d928501951cbb7fc",
             "locator": {
               "kind": "symbol",

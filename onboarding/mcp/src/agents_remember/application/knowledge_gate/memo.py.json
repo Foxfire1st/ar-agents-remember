@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "3757f3ea9584a7d0d02c49e3df9d27e0590b50a6",
-        "content": "sha256:d4387f176962b40e3cb6e1fe5d8de862e52bfdb35cd9373e00d9af9faf7a7878",
+        "blob": "3078da5a68a54af6da5b09d38d2d4f08715e2a61",
+        "content": "sha256:a4b8c3d8f66fe43c7e3fc954b66e599bc720b6e9248ca90b7cdb72c8a7ba807d",
         "locator": {
           "kind": "symbol",
           "name": "_Kept"
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "3757f3ea9584a7d0d02c49e3df9d27e0590b50a6",
+        "blob": "3078da5a68a54af6da5b09d38d2d4f08715e2a61",
         "content": "sha256:c5a9d47dc523af4fae2607acdf66554200cd2e8bd1f4c866c038d40df8626399",
         "locator": {
           "kind": "symbol",
@@ -39,8 +39,8 @@
     },
     {
       "anchor": {
-        "blob": "3757f3ea9584a7d0d02c49e3df9d27e0590b50a6",
-        "content": "sha256:96b092d4d4a66f0747bbafba84cb48420a17836884d23279ea5b47d18f31d7a9",
+        "blob": "3078da5a68a54af6da5b09d38d2d4f08715e2a61",
+        "content": "sha256:ad04419ef9439b7fa3e28b949be2f26ad8cb9f2cef8bccceedeef7d05756c49b",
         "locator": {
           "kind": "symbol",
           "name": "remember"
@@ -57,8 +57,8 @@
     },
     {
       "anchor": {
-        "blob": "3757f3ea9584a7d0d02c49e3df9d27e0590b50a6",
-        "content": "sha256:b39177eaf8b3e81dfe79efe83442283b20c4396ec8d18929cd6562fc8d41fbe1",
+        "blob": "3078da5a68a54af6da5b09d38d2d4f08715e2a61",
+        "content": "sha256:ab8c43d7462271b00d28215b0e6389d0cdc911c320e0f8965db1a09a52f004d8",
         "locator": {
           "kind": "symbol",
           "name": "remembered"
@@ -75,7 +75,7 @@
     },
     {
       "anchor": {
-        "blob": "3757f3ea9584a7d0d02c49e3df9d27e0590b50a6",
+        "blob": "3078da5a68a54af6da5b09d38d2d4f08715e2a61",
         "content": "sha256:e400485720addf668d9714aae3e9dcec952731a90ef9e533ed61f8b4314a6b58",
         "locator": {
           "kind": "symbol",
@@ -93,66 +93,16 @@
     }
   ],
   "references": {
-    "10": {
-      "note": "The module docstring: what the key names, the inputs outside the trees, the bounds, what is never kept.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "3757f3ea9584a7d0d02c49e3df9d27e0590b50a6",
-            "content": "sha256:b15d1f6b81e9a221ebd9c3d648d0696359dc6ba353ff330d7853f9595499f3f8",
-            "locator": {
-              "end": 36,
-              "kind": "line_range",
-              "start": 1
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "11": {
-      "note": "The two bounds.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "3757f3ea9584a7d0d02c49e3df9d27e0590b50a6",
-            "content": "sha256:55915acaf0717a6bc45f1bfd22f0947e187787359d6b88944394b280fa234504",
-            "locator": {
-              "end": 67,
-              "kind": "line_range",
-              "start": 66
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "12": {
       "note": "The key's fields.",
       "targets": [
         {
           "anchor": {
-            "blob": "3757f3ea9584a7d0d02c49e3df9d27e0590b50a6",
+            "blob": "3078da5a68a54af6da5b09d38d2d4f08715e2a61",
             "content": "sha256:aab67928384bb56185a5012e48968fc984b9903efe98efd451719d8da9852db6",
             "locator": {
               "kind": "symbol",
               "name": "GateMemoKey"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "13": {
-      "note": "A kept verdict is current when no recorded observation changed.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "3757f3ea9584a7d0d02c49e3df9d27e0590b50a6",
-            "content": "sha256:d4387f176962b40e3cb6e1fe5d8de862e52bfdb35cd9373e00d9af9faf7a7878",
-            "locator": {
-              "kind": "symbol",
-              "name": "_Kept"
             }
           },
           "kind": "code"
@@ -164,8 +114,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3757f3ea9584a7d0d02c49e3df9d27e0590b50a6",
-            "content": "sha256:fa702b8e116561c2083bc3fe3c53c602dc889160847ea403fec4b3f35052fcb7",
+            "blob": "3078da5a68a54af6da5b09d38d2d4f08715e2a61",
+            "content": "sha256:1ff71cf107836b013b2df97b909ec83371429f9410fcd6d6fcf6d1ec0e689ae6",
             "locator": {
               "kind": "file"
             }
@@ -179,26 +129,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3757f3ea9584a7d0d02c49e3df9d27e0590b50a6",
-            "content": "sha256:fa702b8e116561c2083bc3fe3c53c602dc889160847ea403fec4b3f35052fcb7",
+            "blob": "3078da5a68a54af6da5b09d38d2d4f08715e2a61",
+            "content": "sha256:1ff71cf107836b013b2df97b909ec83371429f9410fcd6d6fcf6d1ec0e689ae6",
             "locator": {
               "kind": "file"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "16": {
-      "note": "Only a memoisable verdict without a failed observation is kept.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "3757f3ea9584a7d0d02c49e3df9d27e0590b50a6",
-            "content": "sha256:96b092d4d4a66f0747bbafba84cb48420a17836884d23279ea5b47d18f31d7a9",
-            "locator": {
-              "kind": "symbol",
-              "name": "remember"
             }
           },
           "kind": "code"
@@ -210,8 +144,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c7ee6796c238d63d1e061ee0c8c1c84b4b214cec",
-            "content": "sha256:f9dcdd0f960f2e21d31bc302d3c6aa8539197d87f2d3bd4ba5ff7049b88bb623",
+            "blob": "cf1a7a3024b89c4ce174451e062bcf2cf3fa4a98",
+            "content": "sha256:9c50fa8900ad1086748427f41ff4eefd597790146ac56b0ef3b324d4e2cc0f3a",
             "locator": {
               "kind": "file"
             },
@@ -226,7 +160,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9719c9159d392a3e5377a242638474a1a15b1f37",
+            "blob": "75a04d4049c18ff472b2caefabad7faa53cdb34b",
             "content": "sha256:1446cc189bdfc847e52f08f12e39dc316d9482c56ebba34c7493d19936aa29de",
             "locator": {
               "kind": "symbol",
@@ -243,7 +177,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9719c9159d392a3e5377a242638474a1a15b1f37",
+            "blob": "75a04d4049c18ff472b2caefabad7faa53cdb34b",
             "content": "sha256:525de24ac76e4627bf2b0ffd1ba7d5e701c5ec644922ae6ffdbf7c3ae47c2e32",
             "locator": {
               "kind": "symbol",
@@ -260,7 +194,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9719c9159d392a3e5377a242638474a1a15b1f37",
+            "blob": "75a04d4049c18ff472b2caefabad7faa53cdb34b",
             "content": "sha256:34bdc078eebaf81a6714ca4f9ec68744347a1449fe40e06e26a458638d867962",
             "locator": {
               "kind": "symbol",
@@ -277,8 +211,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cd9c5537287afcf467e163d880cd215185351a3f",
-            "content": "sha256:e6e886652be10fbe00a654d24ab251858ba9d00e64b0aa84004afa1ddddc11e3",
+            "blob": "fb21438758c57cf647872e223994856f0ee5bd5d",
+            "content": "sha256:1bcf74a1372072144d39d4252082585bbcc86540d62cc4aa888664961a69d8f9",
             "locator": {
               "kind": "file"
             },
@@ -293,7 +227,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "cd9c5537287afcf467e163d880cd215185351a3f",
+            "blob": "fb21438758c57cf647872e223994856f0ee5bd5d",
             "content": "sha256:208b8ef141a1c32d17061d4ba27d38bd67d44d2ba97e3898f030725c419679f5",
             "locator": {
               "kind": "symbol",
@@ -326,29 +260,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3757f3ea9584a7d0d02c49e3df9d27e0590b50a6",
+            "blob": "3078da5a68a54af6da5b09d38d2d4f08715e2a61",
             "content": "sha256:d95f05732be7fdccf66028ec8adf539d0dd2af05f3b55b7122573976db020a91",
             "locator": {
-              "end": 145,
+              "end": 142,
               "kind": "line_range",
-              "start": 103
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "25": {
-      "note": "A valid memo hit replays its kept observations; memo admission still excludes failed observations.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "3757f3ea9584a7d0d02c49e3df9d27e0590b50a6",
-            "content": "sha256:8c35db0cbe32f7d608f07f9c38cc0650dd0cb7b6fba2578254f05931317925ea",
-            "locator": {
-              "end": 167,
-              "kind": "line_range",
-              "start": 148
+              "start": 100
             }
           },
           "kind": "code"

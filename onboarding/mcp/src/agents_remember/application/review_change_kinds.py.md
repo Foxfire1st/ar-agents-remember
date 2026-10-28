@@ -183,7 +183,7 @@ repository sources below, not a source registry or a copied code comment as inde
 - The module describes family occurrence facts and the new leaf-wide implementation-fact view, both from recorded comparison inputs. [1]
 - The unconditional unknown for an unresolved range, the lane's reason in a reviewer's words, and a non-file entry at a non-text change. [10]
 - Base-entry class reuse requires an equal indexed base entry; absent/mismatched shared classification falls back to the local one-entry classifier. [11]
-- Records and entries read through each side's index; an unparsed record or sidecar answers why instead. [12]
+- Records and entries read through each side's index; an unparsed record or sidecar answers why instead. 
 - Change inventory and per-path results are memoized locally; supplied computed paths project through from_worklist, otherwise the lane classifies. [13]
 - The composed subject review passes its family context through the family-enrichment entry point; this is not the module sole caller after leaf-wide facts were added. [14]
 - Fact, Known, RecordChanges and problems are imported from the shared recorded-meaning owner. [15]
@@ -201,8 +201,12 @@ repository sources below, not a source registry or a copied code comment as inde
 - Membership on each side of this family's record. [7]
 - Implementation (a): added, retired or re-anchored; only the mechanical carry is exempt (review R1 F1); stale-at-base repairs worded apart. [8]
 - Implementation (b) through the lane's links only, and definition 8 on a changed non-text file. [9]
-- Leaf-wide implementation facts enumerate sorted invariant identities from realization/proof entries on either readable index, reuse the family implementation owner and bound evidence/reason excerpts. [22]
+- Leaf-wide implementation facts enumerate sorted invariant identities from realization/proof entries on either readable index, reuse the family implementation owner and bound evidence/reason excerpts. 
 
 ### Cross-Repo References
 
 No new cross-repository boundary is introduced by these helpers.
+
+- Records and entries read through each side's index; an unparsed record or sidecar answers why instead. [12]
+
+- Retired at the fifth freeze d59c3493: mcp/src/agents_remember/application/review_change_kinds.py::_entries - the bytes it recorded now occur 6 times in the file, so no single home can be named and it is not given to the likelier one; mcp/src/agents_remember/application/review_change_kinds.py::implementation_facts - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.

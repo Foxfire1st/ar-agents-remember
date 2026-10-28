@@ -15,7 +15,9 @@ The five cases hold MIK-R182@v1 against the shipped reader rather than a stand-i
 ## Evidence
 
 - The six-line object read at lines 1–100 is present at its last line, with no remaining line, continuation or limit. [1]
-- A page that reaches the object's end is present at its last line, and the pages of its continuations rebuild the object's bytes. [2]
-- A byte-capped window that never measured the end states its remainder as unknown, not as the requested difference. [3]
-- A read started at the object's end gives the measured range absence, not an empty line. [4]
+- A page that reaches the object's end is present at its last line, and the pages of its continuations rebuild the object's bytes. 
+- A byte-capped window that never measured the end states its remainder as unknown, not as the requested difference. 
+- A read started at the object's end gives the measured range absence, not an empty line. 
 - A start line one past the object's end is also a measured range absence. [5]
+
+- Retired at the fifth freeze d59c3493: mcp/tests/test_review_evidence_eof.py::test_f03_r182_a_page_past_the_object_end_stops_at_its_last_line - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 4ce96ad77b243a4d55e28535e23d7557997b2d87; mcp/tests/test_review_evidence_eof.py::test_f03_r182_an_unmeasured_remainder_is_unknown_not_the_requested_difference - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 4ce96ad77b243a4d55e28535e23d7557997b2d87; mcp/tests/test_review_evidence_eof.py::test_f03_r182_a_read_started_at_the_object_end_is_a_measured_absence - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 4ce96ad77b243a4d55e28535e23d7557997b2d87. Retired means the anchor no longer stands, not that the cited subject was deleted.

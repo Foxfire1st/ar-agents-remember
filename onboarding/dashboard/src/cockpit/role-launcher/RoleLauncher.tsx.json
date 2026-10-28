@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "50f423ccd5a6d36f86fb770c54719420ea2a42d6",
+        "blob": "40c7ba7f8ba356ee8d7abe94a7b0c1785c0de21b",
         "content": "sha256:576e9d51377d25993beaa73cbb22b6e1d2f4ecfb3d7c8cf27eed15a770948fe6",
         "locator": {
           "end": 818,
@@ -22,8 +22,8 @@
     },
     {
       "anchor": {
-        "blob": "50f423ccd5a6d36f86fb770c54719420ea2a42d6",
-        "content": "sha256:6c92bcf7a4abb9ee094f9c02deb173e5aa3c7088ad83614813f797905e9af228",
+        "blob": "40c7ba7f8ba356ee8d7abe94a7b0c1785c0de21b",
+        "content": "sha256:41ee0c38173647b37aa3ccb1316bc7221f48a54d76c1b289b62655c904785513",
         "locator": {
           "kind": "symbol",
           "name": "RoleLauncher"
@@ -40,8 +40,8 @@
     },
     {
       "anchor": {
-        "blob": "50f423ccd5a6d36f86fb770c54719420ea2a42d6",
-        "content": "sha256:6c92bcf7a4abb9ee094f9c02deb173e5aa3c7088ad83614813f797905e9af228",
+        "blob": "40c7ba7f8ba356ee8d7abe94a7b0c1785c0de21b",
+        "content": "sha256:41ee0c38173647b37aa3ccb1316bc7221f48a54d76c1b289b62655c904785513",
         "locator": {
           "kind": "symbol",
           "name": "RoleLauncher"
@@ -58,7 +58,7 @@
     },
     {
       "anchor": {
-        "blob": "50f423ccd5a6d36f86fb770c54719420ea2a42d6",
+        "blob": "40c7ba7f8ba356ee8d7abe94a7b0c1785c0de21b",
         "content": "sha256:b86f86bed78f99f0d2aea43d8777da52b524be369474c1858449c6e583be1c7f",
         "locator": {
           "end": 1105,
@@ -77,7 +77,7 @@
     },
     {
       "anchor": {
-        "blob": "50f423ccd5a6d36f86fb770c54719420ea2a42d6",
+        "blob": "40c7ba7f8ba356ee8d7abe94a7b0c1785c0de21b",
         "content": "sha256:ae01e6a809cd47819b696aee450d63c9dec59f9e0be5b9c54b718c11e5fdabdb",
         "locator": {
           "kind": "symbol",
@@ -95,7 +95,7 @@
     },
     {
       "anchor": {
-        "blob": "50f423ccd5a6d36f86fb770c54719420ea2a42d6",
+        "blob": "40c7ba7f8ba356ee8d7abe94a7b0c1785c0de21b",
         "content": "sha256:74a4a0bf6399224b7bd7195c7c8a3e0eb5bab58f0faf288f23d851395bf5f88b",
         "locator": {
           "end": 568,
@@ -114,8 +114,8 @@
     },
     {
       "anchor": {
-        "blob": "50f423ccd5a6d36f86fb770c54719420ea2a42d6",
-        "content": "sha256:6c92bcf7a4abb9ee094f9c02deb173e5aa3c7088ad83614813f797905e9af228",
+        "blob": "40c7ba7f8ba356ee8d7abe94a7b0c1785c0de21b",
+        "content": "sha256:41ee0c38173647b37aa3ccb1316bc7221f48a54d76c1b289b62655c904785513",
         "locator": {
           "kind": "symbol",
           "name": "RoleLauncher"
@@ -132,8 +132,8 @@
     },
     {
       "anchor": {
-        "blob": "50f423ccd5a6d36f86fb770c54719420ea2a42d6",
-        "content": "sha256:6c92bcf7a4abb9ee094f9c02deb173e5aa3c7088ad83614813f797905e9af228",
+        "blob": "40c7ba7f8ba356ee8d7abe94a7b0c1785c0de21b",
+        "content": "sha256:41ee0c38173647b37aa3ccb1316bc7221f48a54d76c1b289b62655c904785513",
         "locator": {
           "kind": "symbol",
           "name": "RoleLauncher"
@@ -150,7 +150,7 @@
     },
     {
       "anchor": {
-        "blob": "50f423ccd5a6d36f86fb770c54719420ea2a42d6",
+        "blob": "40c7ba7f8ba356ee8d7abe94a7b0c1785c0de21b",
         "content": "sha256:3ce7369a5577704e0156be3fde1ae43e6b2aa2c9eafabc52ca7ec8f99b6e715b",
         "locator": {
           "end": 693,
@@ -169,8 +169,8 @@
     },
     {
       "anchor": {
-        "blob": "50f423ccd5a6d36f86fb770c54719420ea2a42d6",
-        "content": "sha256:6c92bcf7a4abb9ee094f9c02deb173e5aa3c7088ad83614813f797905e9af228",
+        "blob": "40c7ba7f8ba356ee8d7abe94a7b0c1785c0de21b",
+        "content": "sha256:41ee0c38173647b37aa3ccb1316bc7221f48a54d76c1b289b62655c904785513",
         "locator": {
           "kind": "symbol",
           "name": "RoleLauncher"
@@ -187,7 +187,7 @@
     },
     {
       "anchor": {
-        "blob": "50f423ccd5a6d36f86fb770c54719420ea2a42d6",
+        "blob": "40c7ba7f8ba356ee8d7abe94a7b0c1785c0de21b",
         "content": "sha256:696f8896048836abf48e1da40fed093d12aa0f2a229d7252984f71bf22bfab13",
         "locator": {
           "end": 1063,
@@ -206,8 +206,8 @@
     },
     {
       "anchor": {
-        "blob": "50f423ccd5a6d36f86fb770c54719420ea2a42d6",
-        "content": "sha256:6c92bcf7a4abb9ee094f9c02deb173e5aa3c7088ad83614813f797905e9af228",
+        "blob": "40c7ba7f8ba356ee8d7abe94a7b0c1785c0de21b",
+        "content": "sha256:41ee0c38173647b37aa3ccb1316bc7221f48a54d76c1b289b62655c904785513",
         "locator": {
           "kind": "symbol",
           "name": "RoleLauncher"
@@ -229,29 +229,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "50f423ccd5a6d36f86fb770c54719420ea2a42d6",
+            "blob": "40c7ba7f8ba356ee8d7abe94a7b0c1785c0de21b",
             "content": "sha256:b1bb4a25b25a077f144005d93d9649d2ab97891acec17f0926c6b522308d3ce3",
             "locator": {
               "end": 842,
               "kind": "line_range",
               "start": 832
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "10": {
-      "note": "The shared launcher retains the reasoned StepUp/base-preview composition, runs seeded document repair only, and adds catalog provenance without pruning configured overrides.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "50f423ccd5a6d36f86fb770c54719420ea2a42d6",
-            "content": "sha256:b5df0934a040e1d9ef2aee7248af6fa96d3b22ee6b29cb83e9e4eb1d8564b23e",
-            "locator": {
-              "end": 1182,
-              "kind": "line_range",
-              "start": 1108
             }
           },
           "kind": "code"
@@ -299,7 +282,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "50f423ccd5a6d36f86fb770c54719420ea2a42d6",
+            "blob": "40c7ba7f8ba356ee8d7abe94a7b0c1785c0de21b",
             "content": "sha256:6e12c73e518e0dad2a470a82303f8f9f7e83170c8fbf27b24a3acdcc76b3dd43",
             "locator": {
               "kind": "symbol",
@@ -315,19 +298,19 @@
       "targets": [
         {
           "anchor": {
-            "blob": "50f423ccd5a6d36f86fb770c54719420ea2a42d6",
+            "blob": "40c7ba7f8ba356ee8d7abe94a7b0c1785c0de21b",
             "content": "sha256:8b6e5f5f4a4cc02e4f7d96f245b49676c3521fc8e31461166314907a0e6f041a",
             "locator": {
-              "end": 187,
+              "end": 186,
               "kind": "line_range",
-              "start": 185
+              "start": 184
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "50f423ccd5a6d36f86fb770c54719420ea2a42d6",
+            "blob": "40c7ba7f8ba356ee8d7abe94a7b0c1785c0de21b",
             "content": "sha256:e6d5ccc8b69c02c2baa25b2e5923c3e44b90539dfc1eed2f2993db9403ca70c4",
             "locator": {
               "end": 1115,
@@ -339,19 +322,7 @@
         },
         {
           "anchor": {
-            "blob": "50f423ccd5a6d36f86fb770c54719420ea2a42d6",
-            "content": "sha256:06219f1c6ff8a1b8e4bd3c095769c8ea5e093ee3abcf933d4812ad3fcba67675",
-            "locator": {
-              "end": 1183,
-              "kind": "line_range",
-              "start": 1142
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "50f423ccd5a6d36f86fb770c54719420ea2a42d6",
+            "blob": "40c7ba7f8ba356ee8d7abe94a7b0c1785c0de21b",
             "content": "sha256:696f8896048836abf48e1da40fed093d12aa0f2a229d7252984f71bf22bfab13",
             "locator": {
               "end": 1063,
@@ -389,23 +360,6 @@
         }
       ]
     },
-    "4": {
-      "note": "The shared composition wires field sections, seeded document repair, catalog provenance and the action bar; no catalog override-pruning effect remains.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "50f423ccd5a6d36f86fb770c54719420ea2a42d6",
-            "content": "sha256:6c92bcf7a4abb9ee094f9c02deb173e5aa3c7088ad83614813f797905e9af228",
-            "locator": {
-              "end": 1183,
-              "kind": "line_range",
-              "start": 1108
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "5": {
       "note": "Readiness retains ordinary singleton gating and the request-scoped exception.",
       "targets": [
@@ -428,12 +382,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "50f423ccd5a6d36f86fb770c54719420ea2a42d6",
+            "blob": "40c7ba7f8ba356ee8d7abe94a7b0c1785c0de21b",
             "content": "sha256:1b82c274556b2944144ea73674c31503477db1b7786ae43f615e1ee735c9f4c4",
             "locator": {
-              "end": 60,
+              "end": 59,
               "kind": "line_range",
-              "start": 46
+              "start": 45
             }
           },
           "kind": "code"
@@ -445,12 +399,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "50f423ccd5a6d36f86fb770c54719420ea2a42d6",
+            "blob": "40c7ba7f8ba356ee8d7abe94a7b0c1785c0de21b",
             "content": "sha256:05331be8d9ead03bbfb923615d590e1096e6b46362fd4eddc413b73934d8d931",
             "locator": {
-              "end": 175,
+              "end": 174,
               "kind": "line_range",
-              "start": 161
+              "start": 160
             }
           },
           "kind": "code"
@@ -462,7 +416,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "50f423ccd5a6d36f86fb770c54719420ea2a42d6",
+            "blob": "40c7ba7f8ba356ee8d7abe94a7b0c1785c0de21b",
             "content": "sha256:0ed142ed6c75866f1322e2dec119ef8f604322b6c36fc8a028ba077dd679a38d",
             "locator": {
               "end": 802,
@@ -479,7 +433,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "50f423ccd5a6d36f86fb770c54719420ea2a42d6",
+            "blob": "40c7ba7f8ba356ee8d7abe94a7b0c1785c0de21b",
             "content": "sha256:4db9be4875f23f837d8a33716eec436ad511a2faad14073aaa6e03ffac1b0e5d",
             "locator": {
               "end": 1062,

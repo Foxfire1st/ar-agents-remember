@@ -18,6 +18,8 @@ The shared guarded authoring implementation for a prepared input folder and an o
 
 - The shared authoring implementation admits the prepared folder and its exact input grants. [1]
 
-- The documentation surface is a bounded, separate read. [2]
+- The documentation surface is a bounded, separate read. 
 
 - AuthoringTools admits the prepared input grants and output folder; the standalone presenter server constructor and CLI entry are removed. [3]
+
+- Retired at the fifth freeze d59c3493: mcp/src/agents_remember/canvas/presenter_tools.py::DOCUMENTATION_HOSTS - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 47f69f11afb982e318006209036aed22f1792976. Retired means the anchor no longer stands, not that the cited subject was deleted.

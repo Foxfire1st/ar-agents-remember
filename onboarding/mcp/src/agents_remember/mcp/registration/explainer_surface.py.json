@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "3966c4eceac90f2cc333d03437735b825a0c01ae",
+        "blob": "567816510b3d22da93f35b7d067b56bc73bc4893",
         "content": "sha256:316a8cd7651c28109925e761f2abf51e54637780756416b01223c898a726e150",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "3966c4eceac90f2cc333d03437735b825a0c01ae",
+        "blob": "567816510b3d22da93f35b7d067b56bc73bc4893",
         "content": "sha256:6e6273facf4fadc7d6ce1e57ef3728e2db9974c2cd08738b76bd608af85d9270",
         "locator": {
           "kind": "symbol",
@@ -44,7 +44,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3966c4eceac90f2cc333d03437735b825a0c01ae",
+            "blob": "567816510b3d22da93f35b7d067b56bc73bc4893",
             "content": "sha256:316a8cd7651c28109925e761f2abf51e54637780756416b01223c898a726e150",
             "locator": {
               "end": 94,
@@ -61,7 +61,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3966c4eceac90f2cc333d03437735b825a0c01ae",
+            "blob": "567816510b3d22da93f35b7d067b56bc73bc4893",
             "content": "sha256:6e6273facf4fadc7d6ce1e57ef3728e2db9974c2cd08738b76bd608af85d9270",
             "locator": {
               "end": 132,
@@ -78,7 +78,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3966c4eceac90f2cc333d03437735b825a0c01ae",
+            "blob": "567816510b3d22da93f35b7d067b56bc73bc4893",
             "content": "sha256:9c3989facdc5e772dec0c331552a6284e526a08b2eefcfb533d51f94e0e010c7",
             "locator": {
               "end": 173,
@@ -95,7 +95,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3966c4eceac90f2cc333d03437735b825a0c01ae",
+            "blob": "567816510b3d22da93f35b7d067b56bc73bc4893",
             "content": "sha256:c3d74e0de54cec8ce5a1531545ef5b14fa74a184b04889bf6257a58e757a175e",
             "locator": {
               "end": 156,
@@ -112,29 +112,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3966c4eceac90f2cc333d03437735b825a0c01ae",
-            "content": "sha256:e35b6e54d9a4d044ebfa524bb5cce380e86d9201c551adad589ab26fb6898bd3",
+            "blob": "567816510b3d22da93f35b7d067b56bc73bc4893",
+            "content": "sha256:40e66b1ada1e08e88817c8b85bd5e2ecd16a1f2aab8334ccf40ac7c0a6ea6dc2",
             "locator": {
-              "end": 213,
+              "end": 210,
               "kind": "line_range",
               "start": 182
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "6": {
-      "note": "A tool outside the surface is refused by name\n\nAnchor: `def refuse_unexposed(`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "3966c4eceac90f2cc333d03437735b825a0c01ae",
-            "content": "sha256:1d686e3a49e542ae851df78896e57f85897ea06cda042e4dc289c9778d02ed76",
-            "locator": {
-              "end": 260,
-              "kind": "line_range",
-              "start": 253
             }
           },
           "kind": "code"

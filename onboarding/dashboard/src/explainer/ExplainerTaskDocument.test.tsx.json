@@ -3,8 +3,8 @@
   "proves": [
     {
       "anchor": {
-        "blob": "bd49a79cc7c510824ad73a152a0b0c6645a8c7ec",
-        "content": "sha256:10f0554ee8f51289bd482f34443fd8caa1817b26b04df866365a827945fb790d",
+        "blob": "84aa726e0dec365ceac418b4a240751ff9685146",
+        "content": "sha256:150e0a0d0d09997d4a51ce214ddbe5ecfe032ec86b4df9a2152327b6dcc104c3",
         "locator": {
           "kind": "symbol",
           "name": "retires an existing explainer directly from a cold task document without visiting Review first"
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "bd49a79cc7c510824ad73a152a0b0c6645a8c7ec",
+        "blob": "84aa726e0dec365ceac418b4a240751ff9685146",
         "content": "sha256:3df0c25911573397344138b2e70c115160f4e4501eada83006e45b6befce412b",
         "locator": {
           "kind": "symbol",
@@ -43,7 +43,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bd49a79cc7c510824ad73a152a0b0c6645a8c7ec",
+            "blob": "84aa726e0dec365ceac418b4a240751ff9685146",
             "content": "sha256:0d2ae1ce2c17a378397bad27532b3aed47dea5c357c2f2875985f170ac3341c8",
             "locator": {
               "end": 22,
@@ -60,10 +60,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bd49a79cc7c510824ad73a152a0b0c6645a8c7ec",
-            "content": "sha256:10f0554ee8f51289bd482f34443fd8caa1817b26b04df866365a827945fb790d",
+            "blob": "84aa726e0dec365ceac418b4a240751ff9685146",
+            "content": "sha256:359812d66f8b6586edaaa63650ef840e1f9af1d3c847b3d0192285e7c9744d21",
             "locator": {
-              "end": 46,
+              "end": 110,
               "kind": "line_range",
               "start": 24
             }
@@ -77,12 +77,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bd49a79cc7c510824ad73a152a0b0c6645a8c7ec",
+            "blob": "84aa726e0dec365ceac418b4a240751ff9685146",
             "content": "sha256:3df0c25911573397344138b2e70c115160f4e4501eada83006e45b6befce412b",
             "locator": {
-              "end": 87,
+              "end": 95,
               "kind": "line_range",
-              "start": 65
+              "start": 73
             }
           },
           "kind": "test"

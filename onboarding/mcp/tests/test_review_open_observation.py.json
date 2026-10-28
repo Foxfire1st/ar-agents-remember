@@ -1,0 +1,23 @@
+{
+  "path": "mcp/tests/test_review_open_observation.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "One open observes each input once across its six concurrent reads",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "02effb8bc27b6912e7b2491c1c61bd3ab1db07e2",
+            "content": "sha256:3d1e6e331166c0fde2c1f7addfcd880d67921e2599e8ac38f87e8876b336a0cb",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_one_open_observes_each_input_once_across_its_six_concurrent_reads"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -20,4 +20,6 @@ Measures the switch, the explanation page and the planned page inside the mounte
 
 - The switch sits in the top line, the explanation page keeps the tree and chat outside it, and a claim link selects its exact block on return [1]
 - A planning-mode leaf mounts the planned page [2]
-- A moved event shows the notice at once where work exists, and renews the deterministic reads where none does [3]
+- A moved event shows the notice at once where work exists, and renews the deterministic reads where none does
+
+- Retired at the fifth freeze d59c3493: dashboard/src/panels/review/explainer/ReviewExplainerIntegration.test.tsx:486-604 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 5f8398b32760677c370e3145add73cfa8388357b. Retired means the anchor no longer stands, not that the cited subject was deleted.

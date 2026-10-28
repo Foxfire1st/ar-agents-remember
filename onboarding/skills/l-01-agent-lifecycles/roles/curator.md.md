@@ -151,7 +151,6 @@ Reviewer records the separate memory lane, leaving code state intact. Method rel
 - The named authoring detail requires each hand-off target’s authored rationale before ingest; a missing producer explanation is authored from evidence under the unchanged template. [4]
 - On converted memory the curator follows the converted-card workflow. [6]
 - On converted memory knowledge-ingest is the file writer and publishes no dataset. [7]
-- Restated guarantees carry an authored effect; the writer fills the revision. [8]
 - Current settings-budget, recorded approval and preserved stage/ownership boundaries are carried by this canonical instruction source. [9]
 
 - The named authoring detail retains continuing-decision lifting; task-only choices stay task-local. [5]

@@ -37,8 +37,8 @@
         },
         {
           "anchor": {
-            "blob": "e1d561eb43926925f6fefc875db17155ef322eb4",
-            "content": "sha256:b587decdc4759fbe040b7cad855befcc7b342d9523ac108060ef6932868ced65",
+            "blob": "c24805fbc70e2548898568ec162737009c1bf601",
+            "content": "sha256:b62bf58d7d54176cbe990779da8891281adc9f0984d8e24aa0347fced92fbe8c",
             "locator": {
               "kind": "file"
             },

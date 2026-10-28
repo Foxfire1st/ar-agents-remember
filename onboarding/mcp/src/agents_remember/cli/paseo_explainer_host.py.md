@@ -20,9 +20,11 @@ The explainer seat's `cli` half on the Paseo host: create without a turn, send, 
 ## Evidence
 
 - A seat the host launched on other values than the settings chose is refused [2]
-- A confined step refuses while the host's provider map hands a harness extra arguments [3]
+- A confined step refuses while the host's provider map hands a harness extra arguments
 - A seat is created with the capsule as its instructions and the surface's tools preapproved [4]
 - A send whose outcome was unknown is reconciled by message id before any resend [5]
 - Cancellation names the exact request and never archives or replaces the seat [6]
 
 - Launch identity values must be nonempty; the browser module is supplied only when available [1]
+
+- Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/paseo_explainer_host.py:311-343 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 5f8398b32760677c370e3145add73cfa8388357b. Retired means the anchor no longer stands, not that the cited subject was deleted.

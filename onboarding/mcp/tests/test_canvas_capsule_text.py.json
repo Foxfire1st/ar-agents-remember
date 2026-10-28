@@ -3,8 +3,8 @@
   "proves": [
     {
       "anchor": {
-        "blob": "0361daacfaac38672edb4146532cf41b4e180d4f",
-        "content": "sha256:9f2539cf6a5e9a57881e3b4f901afb3782f8dc512febb9511ae235bfc99196c4",
+        "blob": "8dd3c23a552244403d139230f45ac288bed365db",
+        "content": "sha256:76a5cd13ef1c708fbd533cedc85e95bb3be6b5f21dae1920c05823ffd33d00ec",
         "locator": {
           "kind": "symbol",
           "name": "test_the_launch_record_names_the_baseline_the_addition_or_the_replacement"
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "0361daacfaac38672edb4146532cf41b4e180d4f",
+        "blob": "8dd3c23a552244403d139230f45ac288bed365db",
         "content": "sha256:67b8308e8db7f7b5425d6e05773c40430b244b4cffec5656f7721717dc0ca2ef",
         "locator": {
           "kind": "symbol",
@@ -43,7 +43,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0361daacfaac38672edb4146532cf41b4e180d4f",
+            "blob": "8dd3c23a552244403d139230f45ac288bed365db",
             "content": "sha256:67b8308e8db7f7b5425d6e05773c40430b244b4cffec5656f7721717dc0ca2ef",
             "locator": {
               "kind": "symbol",
@@ -59,8 +59,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0361daacfaac38672edb4146532cf41b4e180d4f",
-            "content": "sha256:9f2539cf6a5e9a57881e3b4f901afb3782f8dc512febb9511ae235bfc99196c4",
+            "blob": "8dd3c23a552244403d139230f45ac288bed365db",
+            "content": "sha256:76a5cd13ef1c708fbd533cedc85e95bb3be6b5f21dae1920c05823ffd33d00ec",
             "locator": {
               "kind": "symbol",
               "name": "test_the_launch_record_names_the_baseline_the_addition_or_the_replacement"
@@ -75,8 +75,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0361daacfaac38672edb4146532cf41b4e180d4f",
-            "content": "sha256:d8927f83681cc7c874bb419ea7e54084925e72267db474d59873e0d245ab2b1d",
+            "blob": "8dd3c23a552244403d139230f45ac288bed365db",
+            "content": "sha256:8247dc3aeb748066759df5b6140d1fa033cff7e1265da6720a5c7b49105fbcb2",
             "locator": {
               "kind": "file"
             }

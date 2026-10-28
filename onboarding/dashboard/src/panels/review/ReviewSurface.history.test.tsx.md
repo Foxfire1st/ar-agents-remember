@@ -22,8 +22,7 @@ These are declared component or pure-function checks over the fixtures named her
 
 ## Evidence
 
-- Declared check and its fixture assertions. [19]
-- Declared check and its fixture assertions. [20]
+- Declared check and its fixture assertions.
 
 ## Historical predecessor account
 
@@ -161,3 +160,5 @@ The earlier account follows as provenance. Current assertions and removed journe
 > - Stubbed fetch with captured request URLs (historical reference 16)
 > - Provenance of the recorded leaf answer (historical reference 17)
 > - Live-candidate fetch mock claiming no record (historical reference 18)
+
+- Retired at the fifth freeze d59c3493: dashboard/src/panels/review/ReviewSurface.history.test.tsx:86-123 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit c422dc00273d4ae7a5d8c9c8db97365b8c85d640; dashboard/src/panels/review/ReviewSurface.history.test.tsx:124-144 - the region it cited is not in the file at the candidate and no re-point was possible. Retired means the anchor no longer stands, not that the cited subject was deleted.

@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "ebb9479f6b5a06247f609da6c7c5cc6043a3e020",
+        "blob": "ef8e64baf28adf35f3157ef9bc28a146b427f281",
         "content": "sha256:28d150c1d0542f6b041c67516ed7e8beb1bab925267b740cbd75c04b7bde8a6e",
         "locator": {
           "kind": "symbol",
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "ebb9479f6b5a06247f609da6c7c5cc6043a3e020",
+        "blob": "ef8e64baf28adf35f3157ef9bc28a146b427f281",
         "content": "sha256:28d150c1d0542f6b041c67516ed7e8beb1bab925267b740cbd75c04b7bde8a6e",
         "locator": {
           "kind": "symbol",
@@ -39,8 +39,8 @@
     },
     {
       "anchor": {
-        "blob": "ebb9479f6b5a06247f609da6c7c5cc6043a3e020",
-        "content": "sha256:76dac756a92940f736744dfd63d7fcdcac9bfa7fc9e2c0114e8a8fca209d5458",
+        "blob": "ef8e64baf28adf35f3157ef9bc28a146b427f281",
+        "content": "sha256:29998f4a3e3b20b2844f3d48d1f5b242b00e6eaa48fec9940911b23bcc940c77",
         "locator": {
           "kind": "symbol",
           "name": "_run"
@@ -57,8 +57,8 @@
     },
     {
       "anchor": {
-        "blob": "ebb9479f6b5a06247f609da6c7c5cc6043a3e020",
-        "content": "sha256:b1f85f1dde4c3a8064c2576050d490fb8ce31d166ddcf2846481105c5ff807a3",
+        "blob": "ef8e64baf28adf35f3157ef9bc28a146b427f281",
+        "content": "sha256:52208f9a00d08484e43908c6639a07249b9a984bd3adb79fb988303062e93662",
         "locator": {
           "kind": "symbol",
           "name": "main"
@@ -80,12 +80,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ebb9479f6b5a06247f609da6c7c5cc6043a3e020",
+            "blob": "ef8e64baf28adf35f3157ef9bc28a146b427f281",
             "content": "sha256:329ffb1d9e0580782b9a7f996225207a64aee9dd1d44f08727b959d3a75b3602",
             "locator": {
-              "end": 80,
+              "end": 84,
               "kind": "line_range",
-              "start": 44
+              "start": 48
             }
           },
           "kind": "code"
@@ -97,46 +97,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ebb9479f6b5a06247f609da6c7c5cc6043a3e020",
+            "blob": "ef8e64baf28adf35f3157ef9bc28a146b427f281",
             "content": "sha256:9be4e7d32d4935c6b1ef66f13f591e381748f3c8457d65b4f65b79512b16b4c2",
             "locator": {
-              "end": 101,
+              "end": 105,
               "kind": "line_range",
-              "start": 89
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "12": {
-      "note": "Request/build validation, shared recorded computation, recorded/live owner branch and explicit reply fields.\n\nAnchor: child computation",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "ebb9479f6b5a06247f609da6c7c5cc6043a3e020",
-            "content": "sha256:76dac756a92940f736744dfd63d7fcdcac9bfa7fc9e2c0114e8a8fca209d5458",
-            "locator": {
-              "end": 151,
-              "kind": "line_range",
-              "start": 104
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "13": {
-      "note": "The one child entry point owns lifetime, JSON framing and dedicated build-mismatch exit.\n\nAnchor: child entry point",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "ebb9479f6b5a06247f609da6c7c5cc6043a3e020",
-            "content": "sha256:0e0132d8ee5b267bc7f69f5fa9226687bf471eea8cb0caab6432d7f9eaf84977",
-            "locator": {
-              "end": 167,
-              "kind": "line_range",
-              "start": 154
+              "start": 93
             }
           },
           "kind": "code"

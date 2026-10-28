@@ -242,7 +242,7 @@ No configured live documentation source was available for this pass.
 ### Repo-Internal References
 
 
-- Step 7 in the docstring: the linkage marking, the delete-only rule and MIK-R10's items. [45]
+- Step 7 in the docstring: the linkage marking, the delete-only rule and MIK-R10's items. 
 
 - The schema name. [46]
 - One item, its ID from the registry, and `extra` for a registrant's top-level fields (MIK-R06 `satisfiedBy`). [47]
@@ -250,7 +250,7 @@ No configured live documentation source was available for this pass.
 - The one representation of unreadable input. [49]
 - Inventory and renames; a partial inventory is incomplete, naming the paths. [50]
 
-- The document: the items of every step, one sort and the digest. [51]
+- The document: the items of every step, one sort and the digest. 
 
 - Steps 1 to 4, split out of `document` at the L06/L11 merge. [52]
 - The persisted `scope` and `entries`. [53]
@@ -263,7 +263,7 @@ No configured live documentation source was available for this pass.
 - The leaf's declarations, one input of the run. [58]
 - Step 6: the route items, with `satisfiedBy` carried in `extra`. [61]
 
-- Step 8 in the docstring: MIK-R14's reconsideration candidates. [63]
+- Step 8 in the docstring: MIK-R14's reconsideration candidates. 
 
 
 - A hunk links only through a side where it changes lines: a delete-only hunk only by a K_B range (L10 ruling Q2), an insertion-only hunk only by a K_C range (MIK-R09, the L10 N3 carry). [65]
@@ -338,9 +338,20 @@ These spans and input-card identities were independently rechecked after the sup
 
 - Retained persistent link targets surface removed route, path or symbol observations. [81]
 
-- Route-chain context is a mechanical projection over the parsed candidate. [82]
+- Route-chain context is a mechanical projection over the parsed candidate.
 
 
 - The orchestrator shares its actual classifier, exact pairing and candidate knowledge side with the active request-scoped classification owner before computing scope/linkage. [83]
 
 - The classification context clears classifier, candidate, pairing and path references on exit, including failures; no active context makes share_classifier inert. [84]
+
+
+Anchor: `_Run` [45]
+
+
+Anchor: `_Run` [51]
+
+
+Anchor: `_Run` [63]
+
+- Retired at the fifth freeze d59c3493: mcp/src/agents_remember/application/knowledge_worklist/route_context.py:71-117 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 0b30d9358b6ef00be9af1bdeb6c22eb802bf8d1e; mcp/src/agents_remember/application/knowledge_worklist/route_context.py:70-116 - the region it cited is not in the file at the candidate and no re-point was possible; mcp/src/agents_remember/application/knowledge_worklist/compute.py::_Run - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.

@@ -54,7 +54,7 @@
       ]
     },
     "4": {
-      "note": "The local memory-layer template is the project-specific copy used by `agents-remember` agents.\n\nAnchor: `# Code Quality Report Template`",
+      "note": "The local memory-layer template is the project-specific copy used by `agents-remember` agents.\n\nAnchor: `# Code Quality Report Template`\n\nOut of scope: out of scope for the code census: the target, system/code-quality-report-template.md, is present at its blob in the memory tree and is cited from this code record deliberately; nothing here is deleted.",
       "targets": [
         {
           "kind": "unresolved",

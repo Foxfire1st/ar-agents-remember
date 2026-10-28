@@ -4,8 +4,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "7de34abd58a60d8a07b3f81b6f7c7f5250b522e2",
-        "content": "sha256:9cb1258001d5f85078ab0c9e55d3e2fc39fa8722296f8a10fc97a3507454f652",
+        "blob": "17e7ecdee54cf62a53e910f58877fc330d9aab33",
+        "content": "sha256:3e1662116c0686f6083f18088abee713c4fd4ed07609f945aa985131f55a9769",
         "locator": {
           "kind": "symbol",
           "name": "ReviewTreesResult"
@@ -22,8 +22,8 @@
     },
     {
       "anchor": {
-        "blob": "7de34abd58a60d8a07b3f81b6f7c7f5250b522e2",
-        "content": "sha256:d9bdd29b38aa9f04cbf4d83c357c90a5250992b827192e3f86dd6e4979dc4e7e",
+        "blob": "17e7ecdee54cf62a53e910f58877fc330d9aab33",
+        "content": "sha256:a3b3d00a11bafeaee340b1e8c0feb41a41144d9351d24487e35d54f116c36fcc",
         "locator": {
           "kind": "file"
         }
@@ -44,12 +44,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7de34abd58a60d8a07b3f81b6f7c7f5250b522e2",
+            "blob": "17e7ecdee54cf62a53e910f58877fc330d9aab33",
             "content": "sha256:06c7d109aaa47a1083ad40fcf47176f144572afbbda323c050043d37549339d1",
             "locator": {
-              "end": 106,
+              "end": 111,
               "kind": "line_range",
-              "start": 64
+              "start": 69
             }
           },
           "kind": "code"
@@ -61,12 +61,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7de34abd58a60d8a07b3f81b6f7c7f5250b522e2",
+            "blob": "17e7ecdee54cf62a53e910f58877fc330d9aab33",
             "content": "sha256:176fd9907300fceef534d12d92cfc1a32b184c1008a020c70503eeb014a142cd",
             "locator": {
-              "end": 149,
+              "end": 154,
               "kind": "line_range",
-              "start": 109
+              "start": 114
             }
           },
           "kind": "code"
@@ -78,12 +78,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7de34abd58a60d8a07b3f81b6f7c7f5250b522e2",
+            "blob": "17e7ecdee54cf62a53e910f58877fc330d9aab33",
             "content": "sha256:f3359c91b81f415315f67ff238aee9fad9a56d1da031e51ee25bc9ca09035736",
             "locator": {
-              "end": 174,
+              "end": 179,
               "kind": "line_range",
-              "start": 152
+              "start": 157
             }
           },
           "kind": "code"
@@ -95,12 +95,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7de34abd58a60d8a07b3f81b6f7c7f5250b522e2",
+            "blob": "17e7ecdee54cf62a53e910f58877fc330d9aab33",
             "content": "sha256:2349c5564a4ce3caaca5ab7515c9e54bf127c705b8cb39e404ab8d4117402aff",
             "locator": {
-              "end": 244,
+              "end": 249,
               "kind": "line_range",
-              "start": 225
+              "start": 230
             }
           },
           "kind": "code"
@@ -112,12 +112,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7de34abd58a60d8a07b3f81b6f7c7f5250b522e2",
+            "blob": "17e7ecdee54cf62a53e910f58877fc330d9aab33",
             "content": "sha256:b42a3f7aea2b0db7845817dbec4eb2851c0cbf61c21de9f27de53e98bb5a3f5e",
             "locator": {
-              "end": 259,
+              "end": 264,
               "kind": "line_range",
-              "start": 247
+              "start": 252
             }
           },
           "kind": "code"
@@ -129,27 +129,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7de34abd58a60d8a07b3f81b6f7c7f5250b522e2",
+            "blob": "17e7ecdee54cf62a53e910f58877fc330d9aab33",
             "content": "sha256:a98a0c19a485b04ecc5a2f51fdc9f384962b0b5037e03682f4602e2d699225c9",
             "locator": {
               "kind": "symbol",
               "name": "ReviewDeliveredComparison"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "24": {
-      "note": "The leaf-wide result separates the highest recorded number from the comparison it resolved.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "7de34abd58a60d8a07b3f81b6f7c7f5250b522e2",
-            "content": "sha256:9cb1258001d5f85078ab0c9e55d3e2fc39fa8722296f8a10fc97a3507454f652",
-            "locator": {
-              "kind": "symbol",
-              "name": "ReviewTreesResult"
             }
           },
           "kind": "code"
@@ -161,22 +145,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7de34abd58a60d8a07b3f81b6f7c7f5250b522e2",
+            "blob": "17e7ecdee54cf62a53e910f58877fc330d9aab33",
             "content": "sha256:3e81a6d220d71abaf1eec9b1c8b62084967a2c3cfd40ddab7c166cc73196eb71",
             "locator": {
               "kind": "symbol",
               "name": "TreeKnowledge"
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "7de34abd58a60d8a07b3f81b6f7c7f5250b522e2",
-            "content": "sha256:b7eef2bf2ab6b914fe336bb684cd0696633679ef6cdc08228f530b8a6eede24f",
-            "locator": {
-              "kind": "symbol",
-              "name": "ReviewTrees"
             }
           },
           "kind": "code"

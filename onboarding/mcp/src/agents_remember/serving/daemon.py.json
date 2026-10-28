@@ -8,7 +8,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "126d045c43fbd830d1f124ab63fee6589db5d1ff",
+            "blob": "bc2b3c3dbc712476532455c18ff3364128b6b280",
             "content": "sha256:2e5a3f6a67c7eedf93890c6d22d619be978f54bef2bf8e73188ba49749236aab",
             "locator": {
               "kind": "symbol",
@@ -20,21 +20,8 @@
         },
         {
           "anchor": {
-            "blob": "126d045c43fbd830d1f124ab63fee6589db5d1ff",
-            "content": "sha256:ed50a6ffe6d4953255a112f223876f44520dd00b4f09e24ef9985ccc84ad338a",
-            "locator": {
-              "end": 193,
-              "kind": "line_range",
-              "start": 97
-            },
-            "path": "mcp/src/agents_remember/cli/dashboard.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "126d045c43fbd830d1f124ab63fee6589db5d1ff",
-            "content": "sha256:46c5e49607dc31e2f7cc4d0109b23ffcf419a4a9b04c24d0af483843012913b4",
+            "blob": "bc2b3c3dbc712476532455c18ff3364128b6b280",
+            "content": "sha256:4ccf5fc3ee970c93ca13ada46e80519603b8bdd6c3dc19918577cd1e7e1a5c6b",
             "locator": {
               "kind": "file"
             },

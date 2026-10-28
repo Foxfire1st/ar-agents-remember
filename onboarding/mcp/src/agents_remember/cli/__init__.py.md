@@ -27,7 +27,11 @@ The nearest route overview documents the umbrella CLI under `cli/`.
 - The umbrella entrypoint dispatches subcommands for this package. [2]
 
 
-- The dashboard subcommand adapter registered by the umbrella parser. [3]
+- The dashboard subcommand adapter registered by the umbrella parser. 
 
 
 - The context-packet CLI adapter peer. [4]
+
+- The dashboard subcommand adapter registered by the umbrella parser. [3]
+
+- Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/dashboard.py::run - the bytes it recorded now occur 26 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.

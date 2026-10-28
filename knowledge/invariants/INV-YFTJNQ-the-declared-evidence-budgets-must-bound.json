@@ -1,9 +1,9 @@
 {
   "admission": {
     "criteria": [
-      "guarded_by_test"
+      "spans_locations"
     ],
-    "justification": "An unbounded read would spend the store's bytes and pages before the declared limit applied."
+    "justification": "An unbounded read would spend the store's bytes and pages before the declared limit applied. Reassessed at the L201 fifth freeze (head d59c3493): the guarded_by_test criterion is dropped because the proofs that named it were removed with the tests they cited, which are gone at the candidate; the criteria kept are the ones the tree still satisfies."
   },
   "applicability": "Evidence packet and investigation reads whose declared byte, path, record, depth or page budgets bound the work.",
   "conditions": [

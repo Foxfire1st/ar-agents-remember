@@ -335,13 +335,16 @@ The existing unit-regression lane declares `test_l192_projection_watch_roots.py`
 
 
 
-- Earlier unnamed-module registration caption is not an L162 addition. The current lane catalog declares test populations; no invocation or pass is implied. [839]
+- Earlier unnamed-module registration caption is not an L162 addition. The current lane catalog declares test populations; no invocation or pass is implied. [858]
+
+Retired at the fifth freeze d59c3493: mcp/tests/test-evidence-lanes.toml:1-635 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit a06d2ffcfae2c277f2ae19330c17d09c616b77e8. Retired means the anchor no longer stands, not that the cited subject was deleted [839]
 
 
 
 
 
 - The current lane catalog retains host-module and other declared populations; lists select evidence and do not establish execution. [840]
+
 
 
 
@@ -371,7 +374,7 @@ The existing unit-regression lane declares `test_l192_projection_watch_roots.py`
 
 
 
-- The lane manifest selects mcp/tests/test_paseo_role_agents.py and mcp/tests/test_paseo_role_messages.py in unit-regression. Membership does not establish execution. [846]
+- The lane manifest selects mcp/tests/test_paseo_role_agents.py and mcp/tests/test_paseo_role_messages.py in unit-regression. Membership does not establish execution.
 
 
 
@@ -395,13 +398,13 @@ The existing unit-regression lane declares `test_l192_projection_watch_roots.py`
 
 
 
-- The seven retained lane identities select surviving test-module paths and retain test_task_document_order.py. The earlier L113 account of eight removed local-hosted memberships remains historical; lane selection establishes neither execution nor a waiver of full-final coverage. [850]
+- The seven retained lane identities select surviving test-module paths and retain test_task_document_order.py. The earlier L113 account of eight removed local-hosted memberships remains historical; lane selection establishes neither execution nor a waiver of full-final coverage.
 
 
 
 
 
-- The current catalog declares seven lane identities; validator-link-target and the split writer/worklist modules are declared in unit-regression. The earlier canonicalization account concerns ordering and membership preservation, not newly executed evidence. [851]
+- The current catalog declares seven lane identities; validator-link-target and the split writer/worklist modules are declared in unit-regression. The earlier canonicalization account concerns ordering and membership preservation, not newly executed evidence.
 
 
 
@@ -425,13 +428,13 @@ The existing unit-regression lane declares `test_l192_projection_watch_roots.py`
 
 
 
-- Historical comparison account, retained verbatim: Seven new modules are added to unit-regression: capsule replay integrity, memory review lane, role capsule audiences, manifest edges, role step up, step-up choice validation and step-up recovery. Existing lane identities, other memberships and case-budget policy are not changed. Current declaration account: these seven named modules remain declared in unit-regression; membership selects evidence and establishes no invocation. The earlier additions and unchanged-lane/membership/budget comparison are historical, not a newly qualified current delta. [855]
+- Historical comparison account, retained verbatim: Seven new modules are added to unit-regression: capsule replay integrity, memory review lane, role capsule audiences, manifest edges, role step up, step-up choice validation and step-up recovery. Existing lane identities, other memberships and case-budget policy are not changed. Current declaration account: these seven named modules remain declared in unit-regression; membership selects evidence and establishes no invocation. The earlier additions and unchanged-lane/membership/budget comparison are historical, not a newly qualified current delta.
 
 
 
 
 
-- The unit-regression roster declares test_route_review_clean_sync_door.py; membership selects evidence and establishes no invocation. [856]
+- The unit-regression roster declares test_route_review_clean_sync_door.py; membership selects evidence and establishes no invocation.
 
 
 
@@ -443,7 +446,8 @@ The existing unit-regression lane declares `test_l192_projection_watch_roots.py`
 
 
 
-- Earlier unnamed-module registration caption is not an L162 addition. The current lane catalog declares test populations; no invocation or pass is implied. [858]
+- Earlier unnamed-module registration caption is not an L162 addition. The current lane catalog declares test populations; no invocation or pass is implied.
+
 
 
 
@@ -455,13 +459,14 @@ The existing unit-regression lane declares `test_l192_projection_watch_roots.py`
 
 
 
+
 - The lane manifest registers the three review-evidence modules test_review_evidence_eof.py, test_review_evidence_packet.py and test_review_evidence_residuals.py, and test_review_frame_store.py, once each in unit-regression. Membership does not establish execution. [860]
 
 
 
 
 
-- Historical registration account: the lane added the thirteen canvas case files as one affected-cadence member set so the generated page's host and presenter were protected by named cases in the declared lane rather than by an unlaned module. The current unit-regression lane declares seventeen canvas case modules; the earlier thirteen is a retained source-epoch count, not today's membership. The lifecycle catalog declares canvas_host_test_support.py with affected cadence and a shared-builder rationale: host, presenter and route cases use one task, packet, published-revision and comparison shape. Membership and support declarations establish no execution or acceptance. [861]
+- Historical registration account: the lane added the thirteen canvas case files as one affected-cadence member set so the generated page's host and presenter were protected by named cases in the declared lane rather than by an unlaned module. The current unit-regression lane declares seventeen canvas case modules; the earlier thirteen is a retained source-epoch count, not today's membership. The lifecycle catalog declares canvas_host_test_support.py with affected cadence and a shared-builder rationale: host, presenter and route cases use one task, packet, published-revision and comparison shape. Membership and support declarations establish no execution or acceptance.
 
 
 
@@ -479,13 +484,15 @@ The existing unit-regression lane declares `test_l192_projection_watch_roots.py`
 
 
 
+
 - The seven new test modules are each selected once in `unit-regression`, in canonical order beside their neighbours [864]
 
 
 
 
 
-- Historical L186 registration account: seven named modules were added to unit-regression without a lane-identity or case-budget change, with other membership sets unchanged at that comparison. The current catalog declares seven lane identities; that historical comparison does not assert unchanged membership on later candidates or establish execution. [865]
+
+- Historical L186 registration account: seven named modules were added to unit-regression without a lane-identity or case-budget change, with other membership sets unchanged at that comparison. The current catalog declares seven lane identities; that historical comparison does not assert unchanged membership on later candidates or establish execution.
 
 
 
@@ -510,3 +517,9 @@ The existing unit-regression lane declares `test_l192_projection_watch_roots.py`
 
 
 - The parsed source selects 646 distinct modules across the seven existing lane identities: 512 unit-regression, 3 public-contract, 109 integration and 22 architecture-fitness; provider-conformance, stress-durability and migration are empty. It retains the after-discovery, explainer and publication/landing-workflow modules together with the nine incoming retired-provider regressions, and omits the retired provider-current-state module. The 603 and 622 captions below retain earlier source epochs. The declarations select evidence; they establish no invocation or passing result. [869]
+
+- Retired at the fifth freeze d59c3493: mcp/tests/test-evidence-lanes.toml:278-281 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 857c7e5f9a2ef20d68b4f7a8921ecb7c0b4f3f34; mcp/tests/test-evidence-lanes.toml:1-635 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit a06d2ffcfae2c277f2ae19330c17d09c616b77e8; mcp/tests/test-evidence-lanes.toml:394-405 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit b52adc8bc0564f6328d3543e48998e9235f1e417; mcp/tests/test-evidence-lanes.toml:26-38 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 5f8398b32760677c370e3145add73cfa8388357b; mcp/tests/evidence-lifecycle.toml:872-899 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 2f699606998a68c42994b9cc102cd22d56cfae37. Retired means the anchor no longer stands, not that the cited subject was deleted.
+
+## Retirements
+
+- Retired at the fifth freeze d59c3493: mcp/tests/test-evidence-lanes.toml:1-635 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit a06d2ffcfae2c277f2ae19330c17d09c616b77e8. Retired means the anchor no longer stands, not that the cited subject was deleted.

@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "55a429ffe0a41bb74f32d56c35de1f6a3dbed293",
+        "blob": "0bb1170f54e90690a584bee1e7a994c9ecf74ca2",
         "content": "sha256:efcf3ff7e48e2b87d117e44bf5d7c7ed6f3cb59886a33640093056b896ef64bc",
         "locator": {
           "kind": "symbol",
@@ -21,8 +21,8 @@
     },
     {
       "anchor": {
-        "blob": "55a429ffe0a41bb74f32d56c35de1f6a3dbed293",
-        "content": "sha256:afb15f7cf7ccf77823947e7ca62097e4f1bbf2f99ef8f19e427978b8fe610246",
+        "blob": "0bb1170f54e90690a584bee1e7a994c9ecf74ca2",
+        "content": "sha256:7c82637adf0dd4bee10673be7c5928a33b4ac327aef5def431716ba2f8bda692",
         "locator": {
           "kind": "symbol",
           "name": "_read_off_the_loop"
@@ -39,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "55a429ffe0a41bb74f32d56c35de1f6a3dbed293",
+        "blob": "0bb1170f54e90690a584bee1e7a994c9ecf74ca2",
         "content": "sha256:efcf3ff7e48e2b87d117e44bf5d7c7ed6f3cb59886a33640093056b896ef64bc",
         "locator": {
           "kind": "symbol",
@@ -57,7 +57,7 @@
     },
     {
       "anchor": {
-        "blob": "55a429ffe0a41bb74f32d56c35de1f6a3dbed293",
+        "blob": "0bb1170f54e90690a584bee1e7a994c9ecf74ca2",
         "content": "sha256:ed3b7c1d673250901b2b2533c20e8fb9021374a19ade16a27da7e3ffe5d4def2",
         "locator": {
           "kind": "symbol",

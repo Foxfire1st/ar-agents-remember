@@ -3,12 +3,12 @@
   "proves": [
     {
       "anchor": {
-        "blob": "ff2da9cc714f3cca092eb0e4f3c7ff2aa4318145",
+        "blob": "5ae91bf7556a2cde3b347c66f823c7d5713c8594",
         "content": "sha256:2a64cacb0be5be2b4054ebdfbc52cb4f40bd740e0c5a01a285f4f70641606d2e",
         "locator": {
-          "end": 177,
+          "end": 181,
           "kind": "line_range",
-          "start": 129
+          "start": 133
         }
       },
       "facet": "The exact controlled source case cancelled watch intake releases admitted claim after worker drains; this is a focused executable facet, not installed-runtime or full performance acceptance.",
@@ -21,7 +21,7 @@
     },
     {
       "anchor": {
-        "blob": "ff2da9cc714f3cca092eb0e4f3c7ff2aa4318145",
+        "blob": "5ae91bf7556a2cde3b347c66f823c7d5713c8594",
         "content": "sha256:915d4bf531b1f07a7313075c8c9d7ed38605f21a9bfcb7954d0bfbbdcd2d6b2e",
         "locator": {
           "kind": "symbol",
@@ -38,12 +38,12 @@
     },
     {
       "anchor": {
-        "blob": "ff2da9cc714f3cca092eb0e4f3c7ff2aa4318145",
+        "blob": "5ae91bf7556a2cde3b347c66f823c7d5713c8594",
         "content": "sha256:0c9c5124ac1cca725bc22d5db26446a9969c316c7b39a32aa6b6feaf7c9c89d8",
         "locator": {
-          "end": 322,
+          "end": 326,
           "kind": "line_range",
-          "start": 304
+          "start": 308
         }
       },
       "facet": "The named controlled case forces failure of the initial claim-record publication, checks that the start is not consumed, and checks early-holder retirement and same-start retry with a new generation. It does not separately force post-admission progress publication failure.",
@@ -62,8 +62,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ff2da9cc714f3cca092eb0e4f3c7ff2aa4318145",
-            "content": "sha256:24651a6a758d6f8ee1dd08e84c52e1416c73734c0466e2bbc6d93b5873826aa3",
+            "blob": "5ae91bf7556a2cde3b347c66f823c7d5713c8594",
+            "content": "sha256:1d9678c4cc665e3b52585387ae34dbe832504356ad03ed0b31c033b1457d4aa8",
             "locator": {
               "kind": "file"
             }

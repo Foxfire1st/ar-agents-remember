@@ -147,12 +147,12 @@
         },
         {
           "anchor": {
-            "blob": "e1d40f3cd8b8ad7c20b47ba43bf08632f20a09c5",
+            "blob": "6154b9faf722a53bee781911e8d565946104fe9d",
             "content": "sha256:c2d699400575ad6ab78c30a6441b8243181d27c8922437c6704286cde095c593",
             "locator": {
-              "end": 235,
+              "end": 236,
               "kind": "line_range",
-              "start": 218
+              "start": 219
             },
             "path": "mcp/src/agents_remember/application/review_sync_rebinding.py"
           },

@@ -1,0 +1,23 @@
+{
+  "path": "mcp/src/agents_remember/serving/review_publication_watch.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "PublicationInputs names the exact directories a connection is watching.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d3ae9e9893243225df641812e7fae2251a9c01a3",
+            "content": "sha256:89d1bbe3d106d9fd87665f0a1e11be95e15b49cfef46af36eff0b72a24455921",
+            "locator": {
+              "kind": "symbol",
+              "name": "PublicationInputs"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

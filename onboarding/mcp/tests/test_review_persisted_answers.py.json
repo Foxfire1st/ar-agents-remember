@@ -1,0 +1,23 @@
+{
+  "path": "mcp/tests/test_review_persisted_answers.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "A fresh owner reuses a typed answer, and a mutation returned to a caller cannot corrupt the stored one",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ed284cfe1b894622c127c3585687976cd3e1c600",
+            "content": "sha256:43ce4c00e05b84b1347e6778507bf2a8d0e15b9d84ad042205a9fe4c7f3b0568",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_fresh_owner_reuses_typed_answer_and_isolates_returned_mutation"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

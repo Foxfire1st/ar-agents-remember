@@ -118,26 +118,55 @@ No lifecycle/status metadata in this overview grants execution or acceptance aut
 
 
 ## Evidence
+
+- Helper test imports, source figures, historical Git pin and conditional record availability.
+
+## Retirements
+
+- Retired at the fifth freeze d59c3493: mcp/tests/test-evidence-lanes.toml:1-635 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit a06d2ffcfae2c277f2ae19330c17d09c616b77e8. Retired means the anchor no longer stands, not that the cited subject was deleted.
+
 - The current root policy is 10000 unit and 2000 integration selected cases. Collection rejects a lane above its declared ceiling; the raise changes headroom and preserves the guard. [12]
+
 - The current root policy is 10000 unit and 2000 integration selected cases. Collection rejects a lane above its declared ceiling; the raise changes headroom and preserves the guard. [1]
+
 - Certifying publication and accepting consumers. [2]
+
 - Exact profile scope and suite execution. [13]
+
 - Plan composition and typed command steps. [14]
+
 - Both catalog versions use the shared parser; retain the original deciding range. [16]
+
 - Catalog narrowing preserves removed consumers; parser errors remain named refusals. [17]
+
 - Profile selection declares full mode explicitly and retains incomplete targeted inputs. [19]
+
 - Repository declarations override catalog consumers and must match observed import/literal consumers. [20]
+
 - Literal edges use deciding path/read predicates; standalone prose strings are excluded. [21]
+
 - Canonical form and source-derived consumer completeness are separate catalog checks. [22]
+
 - Record comparisons state both populations; completion requires document status and completed steps; optional comparisons require inputs. [23]
+
 - Instrument admissibility and byte-exact producer reproduction. [24]
+
 - Retry artifacts retain admitted identity, digest checks and passing-delta merge ownership. [26]
+
 - Child environments remove outer invocation controls through the executing caller. [27]
+
 - Missing causal authority fails preflight without suppressing the selected population. [28]
+
 - The current root policy is 10000 unit and 2000 integration selected cases. Collection rejects a lane above its declared ceiling; the raise changes headroom and preserves the guard. [29]
+
 - Projection generation validates schema vocabulary and exact supplemental definitions. [18]
+
 - The retained named vocabularies are attention severity, lane and item class, plus process fact state and process health; the removed session state and phase vocabularies are not among them. [30]
+
 - Ordinary schema interfaces are rendered without a lifecycle-count extension or injected metrics factory/legacy subtask union. [31]
+
 - Exact contract scope, the full check and curator worklist publication, including the informational without-proof list.  Anchor: `_execute_memory_quality` `_answered_quality_response` `_attach_curator_checklist` [10]
+
 - Interactive catalog names missing authority without eligibility. [11]
-- Helper test imports, source figures, historical Git pin and conditional record availability. [25]
+
+Retired at the fifth freeze d59c3493: mcp/tests/test-evidence-lanes.toml:1-635 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit a06d2ffcfae2c277f2ae19330c17d09c616b77e8. Retired means the anchor no longer stands, not that the cited subject was deleted [25]

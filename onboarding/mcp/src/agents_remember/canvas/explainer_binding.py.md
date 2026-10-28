@@ -15,7 +15,7 @@ The launch's explainer binding: the capability word, the closed tool surface, th
 - `_check_workspace` refuses a workspace that is not `<coordination>/explainer/<repository>/<task>/<leaf>`, one that resolves outside the named coordination root, one whose task folder is absent, and one that is a symlink or not on disk.
 - `require_current_seat` derives the seat id from the workspace and the current generation counter, so a stale generation, a marker pointing at another workspace, an unreadable counter and a caller with no identity are each refused by their own name.
 - `require_launched_seat` compares what the calling process is with what the binding names, so no tool argument, repository text or workspace marker widens a binding or selects another seat.
-- `read_explainer_binding` refuses a missing binding on a process that carries the workspace marker: a lost binding is not the ordinary roster.
+- `read_explainer_binding` refuses a missing binding on a process that carries the workspace marker: a lost binding is not the ordinary roster. The explainer surface is four tools - `render`, `define_category`, `remove_category` and `grade` - and no tool that reads the workspace back: an answer names files on disk and is bounded, so a long answer or a picture is written to the workspace and cited rather than returned in full.
 
 ## Evidence
 

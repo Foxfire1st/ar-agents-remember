@@ -1,0 +1,24 @@
+{
+  "path": "dashboard/src/panels/review/explainer/RevisionFrameProtocol.test.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "No further response bodies are inspected or serialized while four requests are already in flight",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "49d4fa81a178e22c5d362440d53739cd5dbeaa5f",
+            "content": "sha256:926ec5b465e4f40aedb6f34e010177840dd888ae1ce897bc69924321128a2ce6",
+            "locator": {
+              "end": 81,
+              "kind": "line_range",
+              "start": 81
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

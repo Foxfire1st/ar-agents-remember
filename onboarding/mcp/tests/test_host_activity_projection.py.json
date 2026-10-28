@@ -3,8 +3,8 @@
   "proves": [
     {
       "anchor": {
-        "blob": "a339dfc94fe9ff7259b538c9ac0bd1bfa7dc26ee",
-        "content": "sha256:65c89a131bc3ab48c97ebad70c2c646732619fee55d08afa1415401f15574030",
+        "blob": "c7e1f6f7845b9e8dff781456ab9cbf5342dfc19d",
+        "content": "sha256:2095eadc8d81129028081ff92b4ea384efa13f7e58c2a0b7bc420e05fdd8b50f",
         "locator": {
           "kind": "symbol",
           "name": "test_periodic_full_and_degraded_wakes_retain_host_without_reads"
@@ -20,8 +20,8 @@
     },
     {
       "anchor": {
-        "blob": "a339dfc94fe9ff7259b538c9ac0bd1bfa7dc26ee",
-        "content": "sha256:70ee01f2462af39bfe2a744fbb2ff9e788a2798240cbcb4f15506246edda3b41",
+        "blob": "c7e1f6f7845b9e8dff781456ab9cbf5342dfc19d",
+        "content": "sha256:119ef6476994b169a5ca6d240ee16c65bf20b2f4fd5900c344599af48207d8f0",
         "locator": {
           "kind": "symbol",
           "name": "test_a_new_host_boot_and_a_new_dashboard_each_require_the_whole_read"
@@ -37,8 +37,8 @@
     },
     {
       "anchor": {
-        "blob": "a339dfc94fe9ff7259b538c9ac0bd1bfa7dc26ee",
-        "content": "sha256:4025f00e938f36fcd1345aea4f2de931ec00bda6dfc95c2660355a1073af8f89",
+        "blob": "c7e1f6f7845b9e8dff781456ab9cbf5342dfc19d",
+        "content": "sha256:98abdf1dced38ae3bf7966eccbd1a9bd5b454e6c44b7680f6903f167e74cc6f4",
         "locator": {
           "kind": "symbol",
           "name": "test_idle_heartbeats_do_not_read_activity_or_launch_another_snapshot"
@@ -56,8 +56,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "a339dfc94fe9ff7259b538c9ac0bd1bfa7dc26ee",
-        "content": "sha256:57bba1e85257402e00bca3fe919993d7eab69aefbbf2f654b296a56178edf6a6",
+        "blob": "c7e1f6f7845b9e8dff781456ab9cbf5342dfc19d",
+        "content": "sha256:aa5e6d560be3d021718f86967a82451f985366932011b2f98da33aebc1dc6e45",
         "locator": {
           "kind": "file"
         }
@@ -78,8 +78,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a339dfc94fe9ff7259b538c9ac0bd1bfa7dc26ee",
-            "content": "sha256:8ed3c47a3a64e62450b12f5c997f6547a5785dfbdf0ef1c5e72e5023475ba49c",
+            "blob": "c7e1f6f7845b9e8dff781456ab9cbf5342dfc19d",
+            "content": "sha256:efc79184a1ebbb8128b054c3ad68eeb96cd359704ec4e62941f13a11f22a05a8",
             "locator": {
               "kind": "symbol",
               "name": "test_supervisor_lease_heartbeat_is_not_a_host_activity_input"
@@ -94,7 +94,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a339dfc94fe9ff7259b538c9ac0bd1bfa7dc26ee",
+            "blob": "c7e1f6f7845b9e8dff781456ab9cbf5342dfc19d",
             "content": "sha256:2f9b67ebf0f9fa417a790ab4d1ede0e1f37e603a34e6233ac788c3d68123f87f",
             "locator": {
               "kind": "symbol",
@@ -110,8 +110,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a339dfc94fe9ff7259b538c9ac0bd1bfa7dc26ee",
-            "content": "sha256:61d92044ddf1da7d826246696516e1fdd0d7e618ff2e1d052551756295d276d5",
+            "blob": "c7e1f6f7845b9e8dff781456ab9cbf5342dfc19d",
+            "content": "sha256:66a159f0b22452db3272eab6993425254fb89c812be4edb110942e6168cb701d",
             "locator": {
               "kind": "symbol",
               "name": "test_startup_replaces_old_activity_before_it_can_be_served"
@@ -126,8 +126,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a339dfc94fe9ff7259b538c9ac0bd1bfa7dc26ee",
-            "content": "sha256:70ee01f2462af39bfe2a744fbb2ff9e788a2798240cbcb4f15506246edda3b41",
+            "blob": "c7e1f6f7845b9e8dff781456ab9cbf5342dfc19d",
+            "content": "sha256:119ef6476994b169a5ca6d240ee16c65bf20b2f4fd5900c344599af48207d8f0",
             "locator": {
               "kind": "symbol",
               "name": "test_a_new_host_boot_and_a_new_dashboard_each_require_the_whole_read"
@@ -142,8 +142,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a339dfc94fe9ff7259b538c9ac0bd1bfa7dc26ee",
-            "content": "sha256:57bba1e85257402e00bca3fe919993d7eab69aefbbf2f654b296a56178edf6a6",
+            "blob": "c7e1f6f7845b9e8dff781456ab9cbf5342dfc19d",
+            "content": "sha256:aa5e6d560be3d021718f86967a82451f985366932011b2f98da33aebc1dc6e45",
             "locator": {
               "kind": "file"
             }
@@ -157,8 +157,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a339dfc94fe9ff7259b538c9ac0bd1bfa7dc26ee",
-            "content": "sha256:57bba1e85257402e00bca3fe919993d7eab69aefbbf2f654b296a56178edf6a6",
+            "blob": "c7e1f6f7845b9e8dff781456ab9cbf5342dfc19d",
+            "content": "sha256:aa5e6d560be3d021718f86967a82451f985366932011b2f98da33aebc1dc6e45",
             "locator": {
               "kind": "file"
             }
@@ -172,8 +172,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a339dfc94fe9ff7259b538c9ac0bd1bfa7dc26ee",
-            "content": "sha256:657c81f0bca6a3a7f93cd2503b1e31f6283716859818c06fd738baa68a29e8d4",
+            "blob": "c7e1f6f7845b9e8dff781456ab9cbf5342dfc19d",
+            "content": "sha256:02339937f3a910a1d1668760c6da7f57bff5df5c9266393bcf9d9be1cf4ccbfe",
             "locator": {
               "kind": "symbol",
               "name": "test_failed_boot_reconcile_retries_only_after_a_new_publication"

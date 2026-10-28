@@ -1,0 +1,23 @@
+{
+  "path": "mcp/test_support/agents_remember_test_support/testing/prepared_comparison.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "FixturePreparation states the witness a fixture-backed test is prepared under.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "019d53eea755e160ece26300d76259bdf4396684",
+            "content": "sha256:a2364e299d6e5c58038c6fb2fd62c2df14d2c7d87e366655639ee1fd2078359c",
+            "locator": {
+              "kind": "symbol",
+              "name": "FixturePreparation"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

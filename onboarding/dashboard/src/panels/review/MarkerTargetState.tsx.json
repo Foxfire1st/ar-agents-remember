@@ -42,12 +42,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "020b06e2ee9ceaa8b0409e0a819f619bca6bcbbf",
+            "blob": "fabceb9097c4cb1fcc66107d73bf97239aa1c0f6",
             "content": "sha256:601c4238421eadfe0932f0674a5cd6c052a9a5d9d8fb205ddf00fb7da14a3b64",
             "locator": {
-              "end": 375,
+              "end": 436,
               "kind": "line_range",
-              "start": 360
+              "start": 421
             },
             "path": "dashboard/src/panels/review/ReviewSurface.markers.test.tsx"
           },
@@ -319,12 +319,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4095799b28ad43d058b245f5e7c54dfd0e71685c",
+            "blob": "c954ca8abccc60fe09f526a635ba090b3535e564",
             "content": "sha256:1c68a4e1a049f5928a69ba081064dcb709a24731df1bfbf76dba66cb865df37e",
             "locator": {
-              "end": 532,
+              "end": 568,
               "kind": "line_range",
-              "start": 525
+              "start": 561
             },
             "path": "dashboard/src/panels/review/ReviewWorkspace.tsx"
           },
@@ -337,12 +337,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4095799b28ad43d058b245f5e7c54dfd0e71685c",
+            "blob": "c954ca8abccc60fe09f526a635ba090b3535e564",
             "content": "sha256:229c7942935aa326517635f650faf7229c1dffec913773d793b79dfcd17e1dc6",
             "locator": {
-              "end": 599,
+              "end": 635,
               "kind": "line_range",
-              "start": 593
+              "start": 629
             },
             "path": "dashboard/src/panels/review/ReviewWorkspace.tsx"
           },

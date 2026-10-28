@@ -20,10 +20,13 @@ The evidence packet's shapes for one bound review comparison: its binding, the c
 
 - The packet is bound to one existing comparison's full identity, with the stored and compared memory-base trees named separately. [1]
 - A collection states its producer, population and read state: `present` carries a positive count, `measured-empty` exactly zero, and no other state a positive count. [2]
-- Claim classifications differ in what they require of a basis, and a claim map refuses a duplicate local identity. [3]
-- Coverage counts carry their denominator, and an unassessed remainder cannot be counted as passed. [4]
-- The packet reports what it still owes a reader instead of filling it with a default. [5]
+- Claim classifications differ in what they require of a basis, and a claim map refuses a duplicate local identity. 
+- Coverage counts carry their denominator, and an unassessed remainder cannot be counted as passed. 
+- The packet reports what it still owes a reader instead of filling it with a default. 
+
+- An intended claim needs an inspected supplemental receipt whose reference and receipt_id agree. Packet validation rejects duplicate receipt ids or canonical sources, unknown receipt citations and basis states that contradict the examined receipt. 
+
 
 - An intended claim needs an inspected supplemental receipt whose reference and receipt_id agree. Packet validation rejects duplicate receipt ids or canonical sources, unknown receipt citations and basis states that contradict the examined receipt. [6]
 
-- An intended claim needs an inspected supplemental receipt whose reference and receipt_id agree. Packet validation rejects duplicate receipt ids or canonical sources, unknown receipt citations and basis states that contradict the examined receipt. [6]
+- Retired at the fifth freeze d59c3493: mcp/src/agents_remember/models/knowledge/review_evidence.py::EvidenceClaim - the bytes it recorded now occur 6 times in the file, so no single home can be named and it is not given to the likelier one; mcp/src/agents_remember/models/knowledge/review_evidence.py::CoverageCount - the bytes it recorded now occur 4 times in the file, so no single home can be named and it is not given to the likelier one; mcp/src/agents_remember/models/knowledge/review_evidence.py::packet_errors - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one; mcp/src/agents_remember/models/knowledge/review_evidence.py::ClaimBasis - the bytes it recorded now occur 5 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.

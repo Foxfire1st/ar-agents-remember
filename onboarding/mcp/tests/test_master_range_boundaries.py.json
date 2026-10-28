@@ -1,0 +1,23 @@
+{
+  "path": "mcp/tests/test_master_range_boundaries.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Master range batches respect capacity and bytes at two scales, witnessed by test_master_range_batches_respect_capacity_and_bytes_at_two_scales",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "da8b8491897e43e1a0eedcf9450886bdaff24a9d",
+            "content": "sha256:afe5671aceabd54957fde75ced894537a9e2f368449e9d5a7733be3e1036512b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_master_range_batches_respect_capacity_and_bytes_at_two_scales"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

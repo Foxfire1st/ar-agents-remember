@@ -18,25 +18,6 @@
       },
       "rationale": "Exports the new tool module with the others on the memory surface.",
       "role": "unclassified"
-    },
-    {
-      "anchor": {
-        "blob": "0a29daece8de46849bc5b8afc1f6e66a0b6a4f5c",
-        "content": "sha256:9758079924e30ddc058b3d0e45f0f28d2d1a9150396fe49599644056c8d9ca51",
-        "locator": {
-          "end": 22,
-          "kind": "line_range",
-          "start": 22
-        }
-      },
-      "id": "RLZ-TCRKBJ",
-      "invariant": "INV-48203N",
-      "origin": {
-        "handoffEntry": "L183-CUR-ET01-bound-explainer-roster",
-        "leaf": "260928-MIK-L183"
-      },
-      "rationale": "Line 22 of mcp/tools/__init__.py still exports `ExplainerControlCall` and `explainer_control_payload` from the one implementation, so the facade adds no second command; the line resolves at C with the recorded bytes.",
-      "role": "enforcement"
     }
   ],
   "references": {

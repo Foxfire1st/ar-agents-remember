@@ -23,3 +23,5 @@ These are source-defined test assertions and instrumentation, not fresh executio
 - The direct adapter keeps the worklist’s own bytes and adds review facts without persistence. [1]
 - The observer records validated child replies and actual transport metadata. [2]
 - The child-script instrumentation separately asserts actual classification reuse and released run-local state. [3]
+
+

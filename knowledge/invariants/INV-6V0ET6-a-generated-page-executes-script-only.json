@@ -9,12 +9,11 @@
   },
   "applicability": "Every generated page served by the canvas host on a live session.",
   "conditions": [
-    "The shipped proof record is readable and names the policy digest now served.",
-    "The record's enforcement bindings name the enforcement modules' own current bytes."
+    "The shipped proof record names the policy digest and the enforcement source it binds, and the record was taken on the tree that serves the page.",
+    "Every browser check the record requires has an observed value, and a check that was not observed leaves the policy uncovered."
   ],
   "exclusions": [
-    "A page examined by the static readiness check, which executes nothing.",
-    "A record produced for a different policy digest."
+    "A page served by a check the record does not name, which is served with no script at all rather than on a promise."
   ],
   "id": "INV-6V0ET6",
   "origin": {
@@ -28,9 +27,9 @@
     "leaf": "260928-MIK-L104",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-invariant/v1",
   "statement": "A generated page executes script only under a served isolation policy the shipped proof record covers: the policy digest, the enforcement source bindings and every required browser check with its observed value must hold, and a policy any of them does not cover is served with no script at all.",
-  "status": "proposed",
+  "status": "retired",
   "supersedes": []
 }

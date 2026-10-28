@@ -21,7 +21,7 @@ These are declared component or pure-function checks over the fixtures named her
 
 ## Evidence
 
-- Declared check and its fixture assertions. [2]
+- Declared check and its fixture assertions.
 
 ## Historical predecessor account
 
@@ -48,3 +48,5 @@ The earlier account follows as provenance. Current assertions and removed journe
 > ## Evidence
 >
 > - Exercise the mounted ReviewCardsMounted owner and its delivered read/selection states. (historical reference 1)
+
+- Retired at the fifth freeze d59c3493: dashboard/src/panels/review/ReviewCardsMounted.test.tsx:79-110 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 10e466b17feee2530c06b2670fef496c6c9e755f. Retired means the anchor no longer stands, not that the cited subject was deleted.

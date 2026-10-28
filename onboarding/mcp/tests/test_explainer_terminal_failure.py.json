@@ -1,0 +1,23 @@
+{
+  "path": "mcp/tests/test_explainer_terminal_failure.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "A precreate failure records its stage and reason without leaving a seat or a delivery behind, witnessed by test_precreate_failure_records_stage_and_reason_without_seat_or_delivery",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ad827c7127970fb25a6f021f2894ffa68adc7d59",
+            "content": "sha256:45d2fb273a7a84029615ad5cafc9be0076642289a1945df3f34cb9f2768da309",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_precreate_failure_records_stage_and_reason_without_seat_or_delivery"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

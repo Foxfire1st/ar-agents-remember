@@ -68,4 +68,6 @@ Cases use `paseo_role_tools_test_support` for the bridge and message fixtures, a
 
 
 
-- Controlled-runtime cases hold permission, start-unfinished and unwritable-turn messages, deliver waiting work in order, refuse two live leaf occupants, and keep a completed holder's seat until archived. [3]
+- Controlled-runtime cases hold permission, start-unfinished and unwritable-turn messages, deliver waiting work in order, refuse two live leaf occupants, and keep a completed holder's seat until archived.
+
+- Retired at the fifth freeze d59c3493: mcp/tests/test_paseo_role_messages.py:1-966 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit ac1eb07f71a35c1093e2e3ee45e585db52f3138c. Retired means the anchor no longer stands, not that the cited subject was deleted.

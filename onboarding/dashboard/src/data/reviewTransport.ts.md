@@ -161,7 +161,7 @@ and outside this leaf's packet:
 - The error a review read throws. [25]
 
 - A typed refusal becomes a failure with its fields unchanged. [27]
-- A superseded request's signal is aborted. [28]
+- A superseded request's signal is aborted.
 
 ### Docs References
 
@@ -181,7 +181,7 @@ bodies. Every anchor in a row occurs inside the range that row cites.
 
 - **The header's own record of the defect this module exists for, and of its two boundaries: the body is the answer whatever the status, and the shared client keeps throwing for the routes that use it.** [29]
 
-- **The shared client whose throw-on-non-2xx idiom is right for the other serving routes and dropped this route's typed refusal whole: the behaviour this module deliberately does not change.** [30]
+- **The shared client whose throw-on-non-2xx idiom is right for the other serving routes and dropped this route's typed refusal whole: the behaviour this module deliberately does not change.** 
 
 - **The failure vocabulary: one token per answer that is not a review, including the two honest fallbacks, and the explicit statement that `loading`/`known-empty` are not members.** [31]
 
@@ -223,3 +223,5 @@ No cross-repository behavior is implemented in this file. The module talks to it
 one repository namespace in the query string.
 
 No meaningful cross-repo references found.
+
+- Retired at the fifth freeze d59c3493: dashboard/src/data/reviewTrees.supersede.test.ts:40-67 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit c702e1c2e111ec6e07c6b68a78a5d05add8aceab; dashboard/src/data/files.ts::getJson - cited by 1 anchor in this card; the name occurs 6 times in that file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.

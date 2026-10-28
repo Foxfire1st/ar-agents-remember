@@ -1,0 +1,23 @@
+{
+  "path": "dashboard/src/panels/changeset/useWorkingChangeset.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "An open file's changeset keeps being read, so what the reviewer sees keeps up with what they changed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b24e8077d1077f8027f6b562fcccdff1121d6313",
+            "content": "sha256:06470f0d9f175b706d20207ea11c561ccc35f1720d686bded1e681affe23ea6a",
+            "locator": {
+              "kind": "symbol",
+              "name": "useWorkingChangesetPoll"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

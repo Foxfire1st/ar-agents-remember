@@ -1,0 +1,24 @@
+{
+  "path": "dashboard/src/panels/review/worklistSummary.test.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The worklist's summary counts what the list contains, so a reader is never told a total the rows below it contradict",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d39541ae7aa445387d1f9bfc6f642792254cd225",
+            "content": "sha256:dfe18f2f5872273793b58273346e3cc5957b5dea3b019e4b29b7bb2c32da8d16",
+            "locator": {
+              "end": 7,
+              "kind": "line_range",
+              "start": 7
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

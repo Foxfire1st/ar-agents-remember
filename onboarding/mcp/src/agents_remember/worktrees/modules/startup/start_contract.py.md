@@ -313,7 +313,9 @@ the same spec, dry-run, activation arguments and operation label without a secon
 - The start operation creates its enclosure through `_create_start_enclosure`. [13]
 
 
-- `_task_vocabulary` and `validate_contract` are distinct sources of `ContractError`.  Anchor: `_task_vocabulary` `validate_contract` [14]
+- `_task_vocabulary` and `validate_contract` are distinct sources of `ContractError`.  Anchor: `_task_vocabulary` `validate_contract`
+
+Retired at the fifth freeze d59c3493: mcp/src/agents_remember/worktrees/worktree_contract.py:168-957 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit e52edaf5b655f495580efd93306afdf922b19b51. Retired means the anchor no longer stands, not that the cited subject was deleted [14]
 
 
 - The existing builder returns a leaf plus its same-request preview-only parent.  Anchor: `_build_start_contract` [18]
@@ -335,3 +337,7 @@ the same spec, dry-run, activation arguments and operation label without a secon
 
 
 - The leaf-admission operation label that survives the seal removal and still names the caller's operation inside the master-series admission refusals. [6]
+
+## Retirements
+
+- Retired at the fifth freeze d59c3493: mcp/src/agents_remember/worktrees/worktree_contract.py:168-957 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit e52edaf5b655f495580efd93306afdf922b19b51. Retired means the anchor no longer stands, not that the cited subject was deleted.

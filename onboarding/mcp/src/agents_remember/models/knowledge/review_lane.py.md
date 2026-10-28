@@ -105,4 +105,3 @@ No cross-repo boundary is crossed by this file.
 
 - A lane hunk may carry the changed-line content identity of its base and candidate in a bounded subject. An unhashable hunk has no subject and cannot receive a grade; attribution class is unchanged. [12]
 
-- A lane hunk may carry the changed-line content identity of its base and candidate in a bounded subject. An unhashable hunk has no subject and cannot receive a grade; attribution class is unchanged. [12]

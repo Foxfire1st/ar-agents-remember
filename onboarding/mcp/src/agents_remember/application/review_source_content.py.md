@@ -233,9 +233,14 @@ No meaningful cross-repo references found.
 
 - **The one measurement this module calls instead of re-deriving: the change inventory of a bound tree pair, and the side value that binds a tree id to the root it resolves in.** [25]
 
-- The resolution this module re-uses to bind the leaf, and the shipped recheck it calls for currentness rather than inventing a second capture. [26]
+- The resolution this module re-uses to bind the leaf, and the shipped recheck it calls for currentness rather than inventing a second capture. 
 
 - **The attributed-unchanged cases: admission without counting, cross-comparison refusal, historical bytes after the tree moves, exact spelling, and undetermined refusal.** [31]
 
 
 - The retained source-content route accepts exact generation input, invokes its typed port and serializes content or refusal; the application assembles the requested sides and their generation/admission facts without a current SourceContent renderer. [32]
+
+
+Anchor: `resolve_review_candidate` `require_current_candidate_identity` [26]
+
+- Retired at the fifth freeze d59c3493: mcp/src/agents_remember/application/review_candidate_resolution.py::require_current_candidate_identity - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.

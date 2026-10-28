@@ -20,7 +20,9 @@ The caller check, the record and the report move on the master-to-architect path
 
 - The case `test_an_architect_claim_writes_the_record` protects the architect's claim writing the record. [1]
 - The case `test_a_non_architect_claim_is_refused_and_writes_nothing` protects a non-architect claim being refused without a write. [2]
-- The case `test_a_claim_moves_one_held_report_to_the_claiming_seat` protects a claim moving exactly one held report to the claiming seat. [3]
+- The case `test_a_claim_moves_one_held_report_to_the_claiming_seat` protects a claim moving exactly one held report to the claiming seat. 
 - The case `test_update_by_another_seat_is_refused_and_names_claim` protects an Update from a seat the record does not name being refused as a claim. [4]
 - The case `test_update_and_retire_reach_the_real_seat_service` protects both seat actions reaching the composed seat service. [5]
 - The case `test_a_path_receipt_id_is_refused_at_the_tool_boundary_and_leaves_outside_bytes` protects a path receipt id being refused at the tool boundary with no outside write. [6]
+
+- Retired at the fifth freeze d59c3493: mcp/tests/test_explainer_control.py::test_a_claim_moves_one_held_report_to_the_claiming_seat - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 5f8398b32760677c370e3145add73cfa8388357b. Retired means the anchor no longer stands, not that the cited subject was deleted.

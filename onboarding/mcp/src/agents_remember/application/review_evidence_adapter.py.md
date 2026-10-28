@@ -17,8 +17,10 @@ On a planned comparison, `require_intended_authority` refuses `recorded-fact` or
 
 ## Evidence
 
-- Preparation preserves the comparison owner's measured index and side states. [1]
-- An address resolves only inside the comparison and owner path that prepared it. [2]
-- A carried item is matched on its whole identity, not on a single field. [3]
+- Preparation preserves the comparison owner's measured index and side states. 
+- An address resolves only inside the comparison and owner path that prepared it. 
+- A carried item is matched on its whole identity, not on a single field. 
 
 - The current implementation adds the binding-aware intended-claim rule and typed preparation preconditions; the existing comparison-address and measured-state account remains valid. [4]
+
+- Retired at the fifth freeze d59c3493: mcp/src/agents_remember/application/review_evidence_adapter.py::prepare_evidence - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one; mcp/src/agents_remember/application/review_evidence_adapter.py::consume_address - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one; mcp/src/agents_remember/application/review_evidence_adapter.py::_carried - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.

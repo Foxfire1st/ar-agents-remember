@@ -3,44 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "d7cf354101ba6817e251792551405cd48999b36d",
-        "content": "sha256:dfca9b69177df547c2487db07515d84c4720d2bbc881d3478ce106b6d7d7b53a",
-        "locator": {
-          "kind": "symbol",
-          "name": "_fallback_or_restore"
-        }
-      },
-      "id": "RLZ-03HKDS",
-      "invariant": "INV-KBHB8B",
-      "origin": {
-        "handoffEntry": "L183-CUR-ET03-claim-report-custody",
-        "leaf": "260928-MIK-L183"
-      },
-      "rationale": "Returns an available report file through the tray fallback; with no backing file it attempts to restore the previous held row. The log records held at the prior Architect only after successful restoration, and not reported if restoration fails. The return count remains not reported even when prior held custody is restored.",
-      "role": "enforcement"
-    },
-    {
-      "anchor": {
-        "blob": "d7cf354101ba6817e251792551405cd48999b36d",
-        "content": "sha256:71ca219bb5c4328e63f0e8a4d4c2df36a16de0d12fa9091a5de3aa192a6da34d",
-        "locator": {
-          "kind": "symbol",
-          "name": "_admitted_held_row"
-        }
-      },
-      "id": "RLZ-1TGENK",
-      "invariant": "INV-KBHB8B",
-      "origin": {
-        "handoffEntry": "L183-CUR-ET03-claim-report-custody",
-        "leaf": "260928-MIK-L183"
-      },
-      "rationale": "Filters foreign IDs and logged non-held outcomes.",
-      "role": "enforcement"
-    },
-    {
-      "anchor": {
-        "blob": "d7cf354101ba6817e251792551405cd48999b36d",
-        "content": "sha256:b5c927268011139f6963f171c09147161b86489a502a24c2dae43c351f4c3093",
+        "blob": "fb78e142d61cf5b5b5abb2cba8f6b442d16968b7",
+        "content": "sha256:e512c1becdf7b555ef6e8566cafc2e61c130bb4057e015262e3bb77fd1e321d4",
         "locator": {
           "kind": "symbol",
           "name": "_seat_action"
@@ -57,8 +21,8 @@
     },
     {
       "anchor": {
-        "blob": "d7cf354101ba6817e251792551405cd48999b36d",
-        "content": "sha256:edc4defef8384fdda65eab883ab3f28e8f9dda957214e586d2a694ddf5819c4e",
+        "blob": "fb78e142d61cf5b5b5abb2cba8f6b442d16968b7",
+        "content": "sha256:2e409a94a05fd17e25096ec85d594f54d276e97f1756740baddd7916f77e1417",
         "locator": {
           "kind": "symbol",
           "name": "_claim"
@@ -72,24 +36,6 @@
       },
       "rationale": "Checks canonical architect binding and writes record before moving custody.",
       "role": "enforcement"
-    },
-    {
-      "anchor": {
-        "blob": "d7cf354101ba6817e251792551405cd48999b36d",
-        "content": "sha256:41c952ae7912f040b812f9b5a7cdd3265df680c32f78805b11e002e88d7f12fc",
-        "locator": {
-          "kind": "symbol",
-          "name": "_transfer_withdrawn_report"
-        }
-      },
-      "id": "RLZ-94QKZV",
-      "invariant": "INV-KBHB8B",
-      "origin": {
-        "handoffEntry": "L183-CUR-ET03-claim-report-custody",
-        "leaf": "260928-MIK-L183"
-      },
-      "rationale": "Routes an already-withdrawn report through delivered/unknown, held, or fallback handling and returns that branch’s state after its calls complete; it does not prove exception-free logging or exactly-once delivery.",
-      "role": "enforcement"
     }
   ],
   "references": {
@@ -98,12 +44,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d7cf354101ba6817e251792551405cd48999b36d",
+            "blob": "fb78e142d61cf5b5b5abb2cba8f6b442d16968b7",
             "content": "sha256:61b43250af83907ebd646bb36ac4d74c4a9c7ef5ef02edcaa631dd07e645105d",
             "locator": {
-              "end": 191,
+              "end": 155,
               "kind": "line_range",
-              "start": 183
+              "start": 147
             }
           },
           "kind": "code"
@@ -115,12 +61,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d7cf354101ba6817e251792551405cd48999b36d",
-            "content": "sha256:b5c927268011139f6963f171c09147161b86489a502a24c2dae43c351f4c3093",
+            "blob": "fb78e142d61cf5b5b5abb2cba8f6b442d16968b7",
+            "content": "sha256:e512c1becdf7b555ef6e8566cafc2e61c130bb4057e015262e3bb77fd1e321d4",
             "locator": {
-              "end": 805,
+              "end": 281,
               "kind": "line_range",
-              "start": 744
+              "start": 217
             }
           },
           "kind": "code"
@@ -132,12 +78,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d7cf354101ba6817e251792551405cd48999b36d",
-            "content": "sha256:edc4defef8384fdda65eab883ab3f28e8f9dda957214e586d2a694ddf5819c4e",
+            "blob": "fb78e142d61cf5b5b5abb2cba8f6b442d16968b7",
+            "content": "sha256:2e409a94a05fd17e25096ec85d594f54d276e97f1756740baddd7916f77e1417",
             "locator": {
-              "end": 243,
+              "end": 197,
               "kind": "line_range",
-              "start": 206
+              "start": 170
             }
           },
           "kind": "code"
@@ -149,27 +95,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d7cf354101ba6817e251792551405cd48999b36d",
-            "content": "sha256:6221edc631a52985711521c0c889aa4ebb67cb73c0b84070efe5e851ccb93107",
+            "blob": "fb78e142d61cf5b5b5abb2cba8f6b442d16968b7",
+            "content": "sha256:6c4eecb9294b78e5affc2d3f43c141fae575549d8de58bf629f75c230a48d8a9",
             "locator": {
               "kind": "file"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "5": {
-      "note": "A timeout or unknown outcome is classified as uncertainty rather than a failure to report\n\nAnchor: `def _classify_send_exception(`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "d7cf354101ba6817e251792551405cd48999b36d",
-            "content": "sha256:3e4c1c6a7105bb43954e7728e51fd145fc074f34348d2cb8af50166236c0d716",
-            "locator": {
-              "end": 518,
-              "kind": "line_range",
-              "start": 508
             }
           },
           "kind": "code"
@@ -181,8 +110,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d7cf354101ba6817e251792551405cd48999b36d",
-            "content": "sha256:6221edc631a52985711521c0c889aa4ebb67cb73c0b84070efe5e851ccb93107",
+            "blob": "fb78e142d61cf5b5b5abb2cba8f6b442d16968b7",
+            "content": "sha256:6c4eecb9294b78e5affc2d3f43c141fae575549d8de58bf629f75c230a48d8a9",
             "locator": {
               "kind": "file"
             }

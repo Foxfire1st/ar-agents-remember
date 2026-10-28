@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "91901cbaa3c636714fc4d6ba9b77aa46e9d2eda5",
+        "blob": "e313c439296199f770ad61aa309117ff72ae0dc5",
         "content": "sha256:666bd2fb9eeeb6116196a46f6842baf671e8b6aad29310a2772dc13808b489fd",
         "locator": {
           "kind": "symbol",
@@ -26,7 +26,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "91901cbaa3c636714fc4d6ba9b77aa46e9d2eda5",
+            "blob": "e313c439296199f770ad61aa309117ff72ae0dc5",
             "content": "sha256:f8aefad88d807c0ef504e1fc04aa566ca41d6571b732788016519571e44c9f92",
             "locator": {
               "kind": "symbol",
@@ -42,7 +42,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "91901cbaa3c636714fc4d6ba9b77aa46e9d2eda5",
+            "blob": "e313c439296199f770ad61aa309117ff72ae0dc5",
             "content": "sha256:e74fdd14914e52113d76c510e7a6372d89a392f5155484990f11c1463bf89bc4",
             "locator": {
               "kind": "symbol",
@@ -58,7 +58,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "91901cbaa3c636714fc4d6ba9b77aa46e9d2eda5",
+            "blob": "e313c439296199f770ad61aa309117ff72ae0dc5",
             "content": "sha256:c54c8f0032c71f1de86cf23183d0782d074c87b51c2ca855e4a5ac9e23ead1b6",
             "locator": {
               "kind": "symbol",
@@ -74,7 +74,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "91901cbaa3c636714fc4d6ba9b77aa46e9d2eda5",
+            "blob": "e313c439296199f770ad61aa309117ff72ae0dc5",
             "content": "sha256:4d3871aa26c89c1075e7defba6abe97b0c299a8ef2c892e1d3267683d0b356c0",
             "locator": {
               "kind": "symbol",
@@ -90,8 +90,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "91901cbaa3c636714fc4d6ba9b77aa46e9d2eda5",
-            "content": "sha256:a7f6dec93c4343e6337dfadf6a0a22f99443bd4141275d4d2a17cfc0f8315478",
+            "blob": "e313c439296199f770ad61aa309117ff72ae0dc5",
+            "content": "sha256:a4f96c496537f4b0f1389f9f34887df0063dfed1d10f9da88ee0cb5672cac7c0",
             "locator": {
               "kind": "symbol",
               "name": "test_the_reads_start_nothing"
@@ -106,8 +106,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "91901cbaa3c636714fc4d6ba9b77aa46e9d2eda5",
-            "content": "sha256:4b4f559cb9a4d6d8f24a6dedd042a8ade28162d2804a8ed2122d02b49eafce9e",
+            "blob": "e313c439296199f770ad61aa309117ff72ae0dc5",
+            "content": "sha256:9f8aac8d848e9edd55e1c08dd0c960598cdb6b7757f265c6d922abac1a809258",
             "locator": {
               "kind": "symbol",
               "name": "test_a_stale_comparison_number_and_an_unknown_history_are_refused_before_the_seat"
@@ -122,8 +122,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "91901cbaa3c636714fc4d6ba9b77aa46e9d2eda5",
-            "content": "sha256:3c51476ad2af745c9c17672510bc47d8e5a8ffe7be1c80a27d7b2bd8b1d68cdd",
+            "blob": "e313c439296199f770ad61aa309117ff72ae0dc5",
+            "content": "sha256:6d6f9e5384d4484ec2b38e66636c9dd893361dc498ecb1af6a76d7254eacb86d",
             "locator": {
               "kind": "file"
             }

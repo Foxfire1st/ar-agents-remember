@@ -30,7 +30,7 @@ Typed payloads and opaque literal cursors are synthetic controls, including a sh
 - Declared check and its fixture assertions. [26]
 - Declared check and its fixture assertions. [27]
 - Declared check and its fixture assertions. [28]
-- Declared check and its fixture assertions. [29]
+- Declared check and its fixture assertions.
 
 ## Historical predecessor account
 
@@ -174,3 +174,5 @@ The earlier account follows as provenance. Current assertions and removed journe
 > - RECORDS_CURSOR is an opaque fixture literal reused as the continuation of the second knowledge page; it does not demonstrate a records-page journey. (historical reference 17)
 > - payloadWith returns a typed synthetic ReviewPayload, including judgment and a nullable page. (historical reference 18)
 > - mountSubject supplies repository, master, leaf and invariant selector props without an initial page selection; cases use it for both paging and whole-review checks. (historical reference 20)
+
+- Retired at the fifth freeze d59c3493: dashboard/src/panels/review/ReviewSurface.paging.test.tsx:483-498 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit ad0c3a1296eae9863f6505d3fabc0c73e17bd166. Retired means the anchor no longer stands, not that the cited subject was deleted.

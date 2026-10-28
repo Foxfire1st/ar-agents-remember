@@ -58,13 +58,13 @@ No relevant external documentation is needed beyond the browser EventSource API 
 ### Repo-Internal References
 
 
-- State stream snapshot and named deltas merge into the Zustand store. [2]
+- State stream snapshot and named deltas merge into the Zustand store. 
 
 
 - Raw event stream forwards `event` rows and the backend `ready` marker. [3]
 
 
-- `Cockpit` passes `markEventsHydrated` as the raw stream ready callback. [4]
+- `Cockpit` passes `markEventsHydrated` as the raw stream ready callback.
 
 
 - The backend raw stream emits a `ready` event once after backlog delivery. [5]
@@ -79,8 +79,13 @@ No meaningful cross-repo references found.
 
 - connectState reads optional review-memory scope into request parameters, guards handlers against stopped or replaced sources, publishes parsed memory messages with an initial flag reset on open, and publishes parsed errors separately. Memory messages mark watchdog liveness; memory errors do not. Disposal unsubscribes scope notifications. [9]
 - The watch owner selects the first registered scope. Registration changes notify scope listeners when that selected scope changes and reset the revision baseline. publishReviewMemory checks matching scope and a string revision, then notifies matching registrations for an undefined baseline, initial message or changed revision. publishReviewMemoryError invokes matching failure callbacks. These are client coordination checks, not authentication. [10]
-- The client opens this package’s state and raw-event endpoints through the separate connectState and connectEvents owners; memory scope reuses the existing state connection. [6]
+- The client opens this package’s state and raw-event endpoints through the separate connectState and connectEvents owners; memory scope reuses the existing state connection.
 
 attachReviewListeners now owns the guarded review.memory, review.memory.error and review.explainer.moved listeners. A current moved event marks watchdog liveness and publishes to the exact-scope moved-notice subscribers; it does not change snapshot/delta ownership. One isCurrent predicate excludes a stopped or replaced source for all state handlers. The memory initial-baseline flag is a shared mutable holder reset on open, preserving the prior reconciliation behavior.
 
 - attachReviewListeners now owns the guarded review.memory, review.memory.error and review.explainer.moved listeners. A current moved event marks watchdog liveness and publishes to the exact-scope moved-notice subscribers; it does not change snapshot/delta ownership. One isCurrent predicate excludes a stopped or replaced source for all state handlers. The memory initial-baseline flag is a shared mutable holder reset on open, preserving the prior reconciliation behavior. [11]
+
+
+Anchor: `connectState` [2]
+
+- Retired at the fifth freeze d59c3493: dashboard/src/cockpit/Cockpit.tsx:383-383 - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one; dashboard/src/data/stream.ts:29-129 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 842b487b854503d95c9c2d9dce1841198ba93c7d; dashboard/src/data/stream.ts:141-150 - the region it cited is not in the file at the candidate and no re-point was possible; dashboard/src/data/stream.ts:31-131 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit de5a7adbb21b2f6f22c3ced0eed9dd7189fe93c7; dashboard/src/data/stream.ts:162-171 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit a145b98949e9ade6a12d096568bc7d014c71607b. Retired means the anchor no longer stands, not that the cited subject was deleted.

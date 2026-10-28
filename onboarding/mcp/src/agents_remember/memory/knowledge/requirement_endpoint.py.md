@@ -114,7 +114,7 @@ approves.
 - The manifest is read once and recorded as bytes, absent or unreadable. [19]
 - The approval of one stable ID. [20]
 - The comparison of versions. [21]
-- A manifest read that fails is recorded as unreadable under the manifest's path. [22]
+- A manifest read that fails is recorded as unreadable under the manifest's path. 
 
 ### Docs References
 
@@ -158,3 +158,5 @@ The locator, the resolver and its proof.
 No cross-repo boundary is crossed: the task plane read is the coordination root's `tasks/` tree of the same workspace, not another repository.
 
 No cross-repo boundary is crossed by this file.
+
+- Retired at the fifth freeze d59c3493: mcp/tests/test_reviewer_worklist_reads.py::_packet_reads - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.

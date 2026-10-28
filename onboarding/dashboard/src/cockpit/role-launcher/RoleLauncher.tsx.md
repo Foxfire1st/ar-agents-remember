@@ -34,7 +34,9 @@ This account is bound to the candidate source, not a claim of a running serving 
 - Bound mode omits the reference fields the selection already determines. [2]
 
 
-- Preparation is carried by the Start label rather than an extra ordinary status line. [3]
+- Preparation is carried by the Start label rather than an extra ordinary status line.
+
+Retired at the fifth freeze d59c3493: dashboard/src/cockpit/role-launcher/RoleLauncher.tsx:1142-1183 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 6a8b5b78bbc182bfdcef9e6120de94290e1710bb. Retired means the anchor no longer stands, not that the cited subject was deleted [3]
 
 
 
@@ -59,7 +61,7 @@ Ordinary singleton and Projects bound rows still adopt an open request and disab
 ## Refreshed current evidence
 
 
-- The shared composition wires field sections, seeded document repair, catalog provenance and the action bar; no catalog override-pruning effect remains. [4]
+- The shared composition wires field sections, seeded document repair, catalog provenance and the action bar; no catalog override-pruning effect remains.
 
 
 
@@ -69,9 +71,15 @@ Ordinary singleton and Projects bound rows still adopt an open request and disab
 - File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence. [9]
 
 
-- The shared launcher retains the reasoned StepUp/base-preview composition, runs seeded document repair only, and adds catalog provenance without pruning configured overrides. [10]
+- The shared launcher retains the reasoned StepUp/base-preview composition, runs seeded document repair only, and adds catalog provenance without pruning configured overrides.
 
 
 - Worker/Curator typed review census, record-only exclusion and unknown history. [11]
 
 - Reason admission, threshold and differing-harness/model inheritance boundary. [12]
+
+- Retired at the fifth freeze d59c3493: dashboard/src/cockpit/role-launcher/RoleLauncher.tsx:1108-1182 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 511e2b7e7810ead439e63fb4e926305f341e95c8; dashboard/src/cockpit/role-launcher/RoleLauncher.tsx:1108-1183 - the region it cited is not in the file at the candidate and no re-point was possible. Retired means the anchor no longer stands, not that the cited subject was deleted.
+
+## Retirements
+
+- Retired at the fifth freeze d59c3493: dashboard/src/cockpit/role-launcher/RoleLauncher.tsx:1142-1183 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 6a8b5b78bbc182bfdcef9e6120de94290e1710bb. Retired means the anchor no longer stands, not that the cited subject was deleted.

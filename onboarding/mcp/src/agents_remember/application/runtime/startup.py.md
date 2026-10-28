@@ -57,4 +57,10 @@ None.
 
 
 
-- Process preparation only declares ownership. A produced tools/list answer schedules the one joint post-discovery start; a first tool call is its fallback. The first attempt starts the sweep even without config and consumes the latch; dashboard supervision needs config and respects autoStart. The sweep runs in a child with MCP stdin disconnected, keeping the heavy worktree owner out of the serving process. [2]
+- Process preparation only declares ownership. A produced tools/list answer schedules the one joint post-discovery start; a first tool call is its fallback. The first attempt starts the sweep even without config and consumes the latch; dashboard supervision needs config and respects autoStart. The sweep runs in a child with MCP stdin disconnected, keeping the heavy worktree owner out of the serving process.
+
+Retired at the fifth freeze d59c3493: mcp/src/agents_remember/mcp/server.py:93-127 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit dc03c64a91947cee470622c560c516854eec86b5. Retired means the anchor no longer stands, not that the cited subject was deleted [2]
+
+## Retirements
+
+- Retired at the fifth freeze d59c3493: mcp/src/agents_remember/mcp/server.py:93-127 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit dc03c64a91947cee470622c560c516854eec86b5. Retired means the anchor no longer stands, not that the cited subject was deleted.

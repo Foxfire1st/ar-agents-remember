@@ -399,25 +399,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5276cd9583d9a33d9094edac37d82b768491aed9",
+            "blob": "00c924961061dbdffe62be2587500d221bd22c23",
             "content": "sha256:1cd7cffb581f993106b803780b7bee2bac4293ea64dc77b180f6532ff7c1f8d4",
             "locator": {
-              "end": 460,
+              "end": 513,
               "kind": "line_range",
-              "start": 460
-            },
-            "path": "mcp/tests/test-evidence-lanes.toml"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "5276cd9583d9a33d9094edac37d82b768491aed9",
-            "content": "sha256:18518a07de7bd16425cceaea61bc9cea57307ca93166b70c632c4d6ac2106e3d",
-            "locator": {
-              "end": 365,
-              "kind": "line_range",
-              "start": 364
+              "start": 513
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },

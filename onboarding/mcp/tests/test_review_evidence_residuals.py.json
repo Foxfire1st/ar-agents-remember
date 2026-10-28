@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "4127f8e11d77d7cc33b9874c7e13ed61af7f94dd",
+        "blob": "43434ddd6e6d861c4a782aad3ed55414921ed130",
         "content": "sha256:c131af125622d0bc9309a277c5d9ea628c4f624c09c625e67fb2d3811042e3eb",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "4127f8e11d77d7cc33b9874c7e13ed61af7f94dd",
+        "blob": "43434ddd6e6d861c4a782aad3ed55414921ed130",
         "content": "sha256:5bc13191782e0d44b2e94a487c41a3cb4bc64b88ae92978a6ab564e2f8b2a15c",
         "locator": {
           "kind": "symbol",
@@ -39,7 +39,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "4127f8e11d77d7cc33b9874c7e13ed61af7f94dd",
+        "blob": "43434ddd6e6d861c4a782aad3ed55414921ed130",
         "content": "sha256:5bc13191782e0d44b2e94a487c41a3cb4bc64b88ae92978a6ab564e2f8b2a15c",
         "locator": {
           "kind": "symbol",
@@ -57,7 +57,7 @@
     },
     {
       "anchor": {
-        "blob": "4127f8e11d77d7cc33b9874c7e13ed61af7f94dd",
+        "blob": "43434ddd6e6d861c4a782aad3ed55414921ed130",
         "content": "sha256:e65555fd0bf6cea59791e98221f4517cf38f4efa8dcdd3037db2a5b5f3a3ef5a",
         "locator": {
           "kind": "symbol",
@@ -80,27 +80,11 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4127f8e11d77d7cc33b9874c7e13ed61af7f94dd",
+            "blob": "43434ddd6e6d861c4a782aad3ed55414921ed130",
             "content": "sha256:c131af125622d0bc9309a277c5d9ea628c4f624c09c625e67fb2d3811042e3eb",
             "locator": {
               "kind": "symbol",
               "name": "test_f05_filename_is_only_a_locator_not_the_native_identity"
-            }
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "2": {
-      "note": "Corrupt stored metadata stops at the admitted byte bound.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "4127f8e11d77d7cc33b9874c7e13ed61af7f94dd",
-            "content": "sha256:5115eb09545b7dda340f9c691a67534fed7176f979865f5112fefc9e16d84fe4",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_f10_corrupt_store_reads_stop_at_the_admitted_byte_bound"
             }
           },
           "kind": "test"
@@ -112,7 +96,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "4127f8e11d77d7cc33b9874c7e13ed61af7f94dd",
+            "blob": "43434ddd6e6d861c4a782aad3ed55414921ed130",
             "content": "sha256:5bc13191782e0d44b2e94a487c41a3cb4bc64b88ae92978a6ab564e2f8b2a15c",
             "locator": {
               "kind": "symbol",

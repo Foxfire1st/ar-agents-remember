@@ -1,0 +1,23 @@
+{
+  "path": "dashboard/src/panels/changeset/useInspectionChangeset.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The changeset shown is the one for the comparison inspected, not one that arrived for another.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dabedd63bf436902f54b6284e30b85c0db4d3eda",
+            "content": "sha256:2d8d55f43b4c1d5f655a550f8d715907f39ba02ac99ca36c2994de6c675893ef",
+            "locator": {
+              "kind": "symbol",
+              "name": "useChangesetLoad"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

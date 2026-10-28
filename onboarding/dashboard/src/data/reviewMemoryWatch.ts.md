@@ -22,14 +22,16 @@ The same module also has a separate moved-notice subscriber set keyed by exact r
 
 - First effective registration owns the scope and scope changes reset the baseline. [1]
 
-- First/reconnect baseline reconciles once; unchanged matching revisions then stay quiet. [2]
+- First/reconnect baseline reconciles once; unchanged matching revisions then stay quiet. 
 
 - Errors are matched to the effective scope and forwarded as named failures. [3]
 
 - Only live non-recorded reviews register; matching changes retain selection then refresh cycle/entry. [4]
 
-- Existing state transport carries scope query and both memory event types. [5]
+- Existing state transport carries scope query and both memory event types. 
 
 - ReviewSurface supplies the watch its scope and cycle only: `useReviewMemoryWatch({ repo, master, leaf, history }, cycle)`; no retain-selection callback travels with it. [6]
 
 - The same module also has a separate moved-notice subscriber set keyed by exact repository/master/leaf. publishReviewExplainerMoved accepts the host's repo/repository, master/task and leaf/leaf_id spellings, rejects an unaddressed payload and notifies only matching subscriptions. It carries comparison/master moves and cleared notices without opening an EventSource, re-reading state or waking an agent itself. [7]
+
+- Retired at the fifth freeze d59c3493: dashboard/src/data/stream.ts::connectState - the symbol it cited now occurs 2 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.

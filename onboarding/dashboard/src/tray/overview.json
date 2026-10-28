@@ -134,12 +134,12 @@
         },
         {
           "anchor": {
-            "blob": "88c457444f4fabbaee444d04d1131c177f99a9d0",
+            "blob": "d02f366f758059bd1e42d8a48f3df07e7e90d36f",
             "content": "sha256:34da2e16be948c504943031daafba241cee6d0be50475122638442192df6f410",
             "locator": {
-              "end": 224,
+              "end": 232,
               "kind": "line_range",
-              "start": 204
+              "start": 212
             },
             "path": "dashboard/src/cockpit/RoleChatsView.tsx"
           },
@@ -163,12 +163,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "54c712c28a98c98014150a7e80fe4b316267704c",
+            "blob": "1966b41dd85b7de3f0205cd0231ded65a7772c78",
             "content": "sha256:a1f01c07a14499804c1f08f4368ffc7749b58d33c651426b87315cad698c225d",
             "locator": {
-              "end": 174,
+              "end": 211,
               "kind": "line_range",
-              "start": 153
+              "start": 190
             },
             "path": "dashboard/src/cockpit/reviewChat.ts"
           },

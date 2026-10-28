@@ -10,23 +10,6 @@
           "name": "at the task total, names the refusal and offers only unpinned revisions"
         }
       },
-      "facet": "Pins the named task-total refusal and the developer’s explicit selected removal list with the agreed revision excluded.",
-      "id": "PRF-KTKAN8",
-      "invariant": "INV-5VVSTD",
-      "origin": {
-        "handoffEntry": "L183-CUR-FE-ATTACH-explicit-revision-removal",
-        "leaf": "260928-MIK-L183"
-      }
-    },
-    {
-      "anchor": {
-        "blob": "5193891f9ea9f8bec2fe0406c1217eb103c60985",
-        "content": "sha256:fc9793c9b46f57fb8436c57e54252c928cdbfe6c262455257332b6132dcbfe8c",
-        "locator": {
-          "kind": "symbol",
-          "name": "at the task total, names the refusal and offers only unpinned revisions"
-        }
-      },
       "facet": "Pins revision-specific placement, isolation and controls over the mounted stubbed transport.",
       "id": "PRF-SN0XMQ",
       "invariant": "INV-YY035T",

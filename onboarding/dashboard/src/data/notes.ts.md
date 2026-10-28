@@ -75,4 +75,10 @@ No configured Domain Documentation source exists for this file.
 - The task page owns the Notes line and delegates reader opening. [3]
 
 - The test suite for this module. [4]
-- The shared transport (`getJson`, `qs`, `FilesApiError`) reused here. [2]
+- The shared transport (`getJson`, `qs`, `FilesApiError`) reused here.
+
+Retired at the fifth freeze d59c3493: dashboard/src/data/files.ts:90-97 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 86639933d61528387ce106dbd4d7a334bd468671. Retired means the anchor no longer stands, not that the cited subject was deleted [2]
+
+## Retirements
+
+- Retired at the fifth freeze d59c3493: dashboard/src/data/files.ts:90-97 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 86639933d61528387ce106dbd4d7a334bd468671. Retired means the anchor no longer stands, not that the cited subject was deleted.

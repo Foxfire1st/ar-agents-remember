@@ -22,7 +22,7 @@
   ],
   "references": {
     "1": {
-      "note": "The local provider increments generation on a false-to-true shown transition and on revalidate. useReviewMemoryWatch registers only for an active live enclosure and non-recorded history, invokes shared entry revalidation alongside review invalidation/refresh, and filters notifications by exact registered scope. publishReviewMemory reconciles first/initial baselines and changed revisions. connectState carries that scope and dispatches memory events through its existing SSE connection. The original header-only no-signal account is superseded.\n\nAnchor: inclusive source ranges",
+      "note": "The local provider increments generation on a false-to-true shown transition and on revalidate. useReviewMemoryWatch registers only for an active live enclosure and non-recorded history, invokes shared entry revalidation alongside review invalidation/refresh, and filters notifications by exact registered scope. publishReviewMemory reconciles first/initial baselines and changed revisions. connectState carries that scope and dispatches memory events through its existing SSE connection. The original header-only no-signal account is superseded.\n\nAnchor: inclusive source ranges\n\nRetired at the fifth freeze d59c3493: dashboard/src/data/reviewMemoryWatch.ts:91-113 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 20624f979e2b89067a3e42019c9611a8e18ff848; dashboard/src/data/reviewMemoryWatch.ts:76-84 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 20624f979e2b89067a3e42019c9611a8e18ff848; dashboard/src/data/stream.ts:47-65 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 5f8398b32760677c370e3145add73cfa8388357b. Retired means the anchor no longer stands, not that the cited subject was deleted.",
       "targets": [
         {
           "anchor": {
@@ -33,45 +33,6 @@
               "kind": "line_range",
               "start": 27
             }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "f31d34a7cf4ef5cb486ed71488966d951d9dd35f",
-            "content": "sha256:fe19327e1cd3788bbb9080dd2672974d706f4fa69eacfea16f9a4f0572e32044",
-            "locator": {
-              "end": 113,
-              "kind": "line_range",
-              "start": 91
-            },
-            "path": "dashboard/src/data/reviewMemoryWatch.ts"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "f31d34a7cf4ef5cb486ed71488966d951d9dd35f",
-            "content": "sha256:6c0edb982debcfbf61447406ab93c2e41d2c7b4eb5f6f1ebed38d69f61b6f5de",
-            "locator": {
-              "end": 84,
-              "kind": "line_range",
-              "start": 76
-            },
-            "path": "dashboard/src/data/reviewMemoryWatch.ts"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "e759eb54b9cbb7db614234415ff2c56f1d345e2c",
-            "content": "sha256:593acea3169a61949df9bff6881f0002878ad9cdd5d5c65429e108d0de2bf99d",
-            "locator": {
-              "end": 65,
-              "kind": "line_range",
-              "start": 47
-            },
-            "path": "dashboard/src/data/stream.ts"
           },
           "kind": "code"
         }
@@ -131,24 +92,6 @@
         }
       ]
     },
-    "4": {
-      "note": "The cockpit shell wraps its body in `IntentEntryRevalidation`, shown true for the Operations view only while neither a takeover nor the in-grid review page is showing.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "1b839113b8d511b4a8343230e70a8de0be01b79f",
-            "content": "sha256:0115639032ffd490ae135b20a696dfc9a7f6b046acc4c0d0a72b48a6d2a0a8ad",
-            "locator": {
-              "end": 841,
-              "kind": "line_range",
-              "start": 804
-            },
-            "path": "dashboard/src/cockpit/Cockpit.tsx"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "5": {
       "note": "ReviewRefresh obtains the shared entry revalidation callback, and its actual button onClick calls onRefresh followed by revalidateEntry. The callback declaration alone is not the invocation witness.",
       "targets": [
@@ -172,25 +115,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "dc229d234ae888019f18a20c91a1cd0135ada287",
+            "blob": "1f434d49ec1adbb3ff324745748345f4ce909fce",
             "content": "sha256:507af4b6d58e46ba209a89bf9e7e3ba5fda9df541712fe3d8af2193a693e13be",
             "locator": {
-              "end": 387,
+              "end": 383,
               "kind": "line_range",
-              "start": 341
-            },
-            "path": "dashboard/src/panels/detail-panel/changeSetBar.tsx"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "dc229d234ae888019f18a20c91a1cd0135ada287",
-            "content": "sha256:a0af81e8313924e66d4d190167762cb5ee0c471fd27ee587aa66f09ca9adb4ad",
-            "locator": {
-              "end": 108,
-              "kind": "line_range",
-              "start": 83
+              "start": 337
             },
             "path": "dashboard/src/panels/detail-panel/changeSetBar.tsx"
           },

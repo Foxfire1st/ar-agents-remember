@@ -169,7 +169,7 @@ No configured external domain documentation source.
 
 ### Repo-Internal References
 
-- The source records why recursive worktree watching would repeat scan cost, crash on container permissions and react to WAL churn; admitted roots exclude that tree. [13]
+- The source records why recursive worktree watching would repeat scan cost, crash on container permissions and react to WAL churn; admitted roots exclude that tree. 
 - Native watching skips unreadable subdirectories as defence-in-depth. [14]
 - Defaults are 0.1-second debounce and 15-second heartbeat; max delay defaults to interval and the pacer starts degraded. [15]
 - Debounce/max-delay/heartbeat deadlines retain interval and completion floors, subject to the one-use task/host rest exception and due full healing. [16]
@@ -211,13 +211,13 @@ all domains so correctness fails open to a full refresh.
 - Reader-derived roots and every-directory input filtering; live provider-runtime trees are excluded. [1]
 
 
-- Accepted paths map to reader domains; unknown accepted paths request every domain. [2]
+- Accepted paths map to reader domains; unknown accepted paths request every domain.
 
 
 - Typed wake reason/domains, structural watcher seams and complete pacer scheduling. [3]
 
 
-- Watcher root discovery, degraded empty-root behavior, explicit awatch arguments and retry lifecycle. [4]
+- Watcher root discovery, degraded empty-root behavior, explicit awatch arguments and retry lifecycle. 
 
 
 - Shared lock naming and transaction mechanics keep filtering aligned. [5]
@@ -228,7 +228,9 @@ all domains so correctness fails open to a full refresh.
 
 - The live-input model selects actual watcher participation. [8]
 
-- Dashboard reload entry carries the pacing configuration. [9]
+- Dashboard reload entry carries the pacing configuration.
+
+Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/dashboard.py:101-153 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 20624f979e2b89067a3e42019c9611a8e18ff848. Retired means the anchor no longer stands, not that the cited subject was deleted [9]
 
 - Native registration is explicit and retains watcher lifecycle.  Anchor: `ProjectionInputWatcher._watch_once` [10]
 
@@ -239,6 +241,18 @@ all domains so correctness fails open to a full refresh.
 - Completion rest participates in change/degraded/heartbeat deadlines.  Anchor: `ChangePacer._next_deadline` [12]
 
 
-- After child drain, root-refresher loss or established native-watch loss reconciles all domains; pre-registration native failure keeps ordinary degraded healing. The existing outage and retry owner remains. [25]
+- After child drain, root-refresher loss or established native-watch loss reconciles all domains; pre-registration native failure keeps ordinary degraded healing. The existing outage and retry owner remains.
+
+Retired at the fifth freeze d59c3493: mcp/src/agents_remember/serving/change_watcher.py:852-889 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit a66314c555d873dd01b4dbefbe18fb3f2ee44d4b; mcp/src/agents_remember/serving/change_watcher.py:891-951 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 87992ce842079a7a4f161bd4bfcc4aed5307178b; mcp/src/agents_remember/serving/change_watcher.py:886-923 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 5e34b4fe25c386dde75b04f6b63d3c64e62afe39; mcp/src/agents_remember/serving/change_watcher.py:925-985 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit a414bf4725215f2cf236d6d492bc070a973bce08. Retired means the anchor no longer stands, not that the cited subject was deleted [25]
 
 - One watcher per coordination root and ports-object identity caches by current binding generation/comparison/snapshot, captures only through its comparison owner, filters planning turn-end checks and emits notices without seat wakeups. [26]
+
+- The source records why recursive worktree watching would repeat scan cost, crash on container permissions and react to WAL churn; admitted roots exclude that tree. [13]
+
+- Retired at the fifth freeze d59c3493: mcp/src/agents_remember/serving/change_watcher.py:234-280 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit a414bf4725215f2cf236d6d492bc070a973bce08; mcp/src/agents_remember/serving/change_watcher.py::ProjectionInputWatcher - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one; mcp/src/agents_remember/serving/change_watcher.py::projection_input_roots - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit a414bf4725215f2cf236d6d492bc070a973bce08. Retired means the anchor no longer stands, not that the cited subject was deleted.
+
+## Retirements
+
+- Retired at the fifth freeze d59c3493: mcp/src/agents_remember/serving/change_watcher.py:852-889 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit a66314c555d873dd01b4dbefbe18fb3f2ee44d4b; mcp/src/agents_remember/serving/change_watcher.py:891-951 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 87992ce842079a7a4f161bd4bfcc4aed5307178b; mcp/src/agents_remember/serving/change_watcher.py:886-923 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 5e34b4fe25c386dde75b04f6b63d3c64e62afe39; mcp/src/agents_remember/serving/change_watcher.py:925-985 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit a414bf4725215f2cf236d6d492bc070a973bce08. Retired means the anchor no longer stands, not that the cited subject was deleted.
+
+- Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/dashboard.py:101-153 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 20624f979e2b89067a3e42019c9611a8e18ff848. Retired means the anchor no longer stands, not that the cited subject was deleted.

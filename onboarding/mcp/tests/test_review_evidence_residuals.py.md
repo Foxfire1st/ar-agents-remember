@@ -15,5 +15,7 @@ Each case measures the defect it guards: the native-identifier mismatch is unrea
 ## Evidence
 
 - A filename match alone cannot supply a record's revision or origin. [1]
-- Corrupt stored metadata stops at the admitted byte bound. [2]
+- Corrupt stored metadata stops at the admitted byte bound. 
 - A real partial index and a cold rebuild keep the owner's measured state in the packet. [3]
+
+- Retired at the fifth freeze d59c3493: mcp/tests/test_review_evidence_residuals.py::test_f10_corrupt_store_reads_stop_at_the_admitted_byte_bound - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 6df6b68c1b9714d360296e4cdeb978f5c22f7eea. Retired means the anchor no longer stands, not that the cited subject was deleted.

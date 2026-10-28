@@ -20,10 +20,14 @@ The durable frame's shapes: one presentation lineage, its immutable revisions an
 ## Evidence
 
 - A revision binds the comparison's every side and the conversion tree, and its artifact digest covers asset bytes only. [1]
-- A manifest refuses an inconsistent asset digest, an unlisted entrypoint and a parent that is not older. [2]
+- A manifest refuses an inconsistent asset digest, an unlisted entrypoint and a parent that is not older. 
 - A draft is a leased attempt, separate from the ready pointer. [3]
 - A reclamation record is written as intent before removal and as outcome after it. [4]
 
 - `_suffix` maps a kit licence's extensionless `LICENSE` basename to `.txt`, so a pinned licence is served under the plain-text type its manifest entry declares. [5]
 
+- Recorded and planned bindings retain distinct owners and addresses. Limits omit revision-count and lineage-byte eviction thresholds; part maps keep each revision’s own claims and supplemental receipts match the packet exactly. Stale-part reasons are present only on stale revisions. 
+
 - Recorded and planned bindings retain distinct owners and addresses. Limits omit revision-count and lineage-byte eviction thresholds; part maps keep each revision’s own claims and supplemental receipts match the packet exactly. Stale-part reasons are present only on stale revisions. [6]
+
+- Retired at the fifth freeze d59c3493: mcp/src/agents_remember/models/knowledge/review_frame.py::FrameManifest - the bytes it recorded now occur 4 times in the file, so no single home can be named and it is not given to the likelier one; mcp/src/agents_remember/models/knowledge/review_frame.py::FrameStalePart - the bytes it recorded now occur 3 times in the file, so no single home can be named and it is not given to the likelier one; mcp/src/agents_remember/models/knowledge/review_frame.py::_parts_are_true - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one; mcp/src/agents_remember/models/knowledge/review_frame.py::FramePart - the bytes it recorded now occur 4 times in the file, so no single home can be named and it is not given to the likelier one; mcp/src/agents_remember/models/knowledge/review_frame.py::FrameLimits - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.

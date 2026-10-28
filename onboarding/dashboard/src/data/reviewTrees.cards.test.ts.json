@@ -1,92 +1,6 @@
 {
   "path": "dashboard/src/data/reviewTrees.cards.test.ts",
-  "proves": [
-    {
-      "anchor": {
-        "blob": "95090e0aab65da813fa91724e029579d31abe31b",
-        "content": "sha256:5346acc4e2a37d2182812053caa39fbb0e49f35cf5818baae88c41af3f988c50",
-        "locator": {
-          "kind": "symbol",
-          "name": "keeps no answer whose memory values failed, and reads it again on a refresh"
-        }
-      },
-      "facet": "With available after knowledge but unavailable memory facts, shared Refresh issues a second card request and recovers available facts; another Refresh/remount reuses that recovered answer. A separate legacy-unavailable after-side trees answer remains reusable rather than being retried as a transient failure.",
-      "id": "PRF-2AN4QE",
-      "invariant": "INV-DJ5QHW",
-      "origin": {
-        "handoffEntry": "RP20_CARD_CACHE",
-        "leaf": "260928-MIK-L89"
-      }
-    },
-    {
-      "anchor": {
-        "blob": "95090e0aab65da813fa91724e029579d31abe31b",
-        "content": "sha256:7dab6cb58ad4cf5f0ca7c054de061c07412ac6561ce4b05d0a1093d35f2652d8",
-        "locator": {
-          "kind": "symbol",
-          "name": "never shows an old answer under a new question"
-        }
-      },
-      "facet": "After INV-A cards resolve, rerendering the hook with INV-B shows loading and sends the INV-B question rather than exposing the INV-A cards.",
-      "id": "PRF-DDMZEQ",
-      "invariant": "INV-DJ5QHW",
-      "origin": {
-        "handoffEntry": "RP20_CARD_CACHE",
-        "leaf": "260928-MIK-L89"
-      }
-    },
-    {
-      "anchor": {
-        "blob": "95090e0aab65da813fa91724e029579d31abe31b",
-        "content": "sha256:60a599165d49af095e17ec5d620ab9cfbcf0387850359f7f42150142e19416b6",
-        "locator": {
-          "kind": "symbol",
-          "name": "sends no second request when the same set remounts through pending and answer"
-        }
-      },
-      "facet": "Mounting the same sorted invariant set after an unmount while its request is pending issues one request; the second mount receives the shared answer and no second request is sent.",
-      "id": "PRF-E3KE39",
-      "invariant": "INV-DJ5QHW",
-      "origin": {
-        "handoffEntry": "RP20_CARD_CACHE",
-        "leaf": "260928-MIK-L89"
-      }
-    },
-    {
-      "anchor": {
-        "blob": "95090e0aab65da813fa91724e029579d31abe31b",
-        "content": "sha256:47888873e8a98c8685ef7b857a8151fd931995705929f8ac8608c08d3c4fadaf",
-        "locator": {
-          "kind": "symbol",
-          "name": "shows a failed chunk on this mount and asks again on a remount"
-        }
-      },
-      "facet": "A mocked500/unreadable body yields visible unavailable on the first mount, and remounting the same invariant set sends a second request instead of retaining that failure.",
-      "id": "PRF-GCBNYC",
-      "invariant": "INV-DJ5QHW",
-      "origin": {
-        "handoffEntry": "RP20_CARD_CACHE",
-        "leaf": "260928-MIK-L89"
-      }
-    },
-    {
-      "anchor": {
-        "blob": "95090e0aab65da813fa91724e029579d31abe31b",
-        "content": "sha256:641b0d71e46bb3bea21e8b2baeffd9eb0c78ea5ef63a7fe54b1bd3dbde38a0fc",
-        "locator": {
-          "kind": "symbol",
-          "name": "reads at most CARD_CHUNK invariants at a time"
-        }
-      },
-      "facet": "A request of two chunks plus one invariant emits 500, 500 and 1 identities and settles into one cards state.",
-      "id": "PRF-JYJQPE",
-      "invariant": "INV-KEJ5TN",
-      "origin": {
-        "handoffEntry": "RP07",
-        "leaf": "260928-MIK-L89"
-      }
-    }
-  ],
+  "proves": [],
   "realizes": [],
   "references": {
     "1": {
@@ -94,12 +8,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "95090e0aab65da813fa91724e029579d31abe31b",
-            "content": "sha256:7589f671646fecda09009904cd4536997f61b2fd85e6e1c6594c84ddd7a2c317",
+            "blob": "d5ed97945759dd5041309f62cc415ecbca93330c",
+            "content": "sha256:b5601e03c8e5aff25ce7917e1a79da2e8addcd834ac0d39600cbe92f76d82436",
             "locator": {
-              "end": 190,
+              "end": 194,
               "kind": "line_range",
-              "start": 1
+              "start": 8
             }
           },
           "kind": "test"

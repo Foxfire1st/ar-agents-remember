@@ -7,12 +7,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a1563788774ce9013a3f3190cd82ee8d8ed58872",
+            "blob": "af74b1d113244711f2150119f48ee7d19a379ea0",
             "content": "sha256:0a26c6a32cd39492e713ec5d05a3e1f7572f7a9a163b4b34f3b6812657139520",
             "locator": {
-              "end": 72,
+              "end": 70,
               "kind": "line_range",
-              "start": 57
+              "start": 55
             }
           },
           "kind": "test"
@@ -24,12 +24,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a1563788774ce9013a3f3190cd82ee8d8ed58872",
+            "blob": "af74b1d113244711f2150119f48ee7d19a379ea0",
             "content": "sha256:59962fe0ce9e85cb5e5ae3c0a9fc41cb8a162a54685609886038e4bf5ebf9d3f",
             "locator": {
-              "end": 84,
+              "end": 82,
               "kind": "line_range",
-              "start": 74
+              "start": 72
             }
           },
           "kind": "test"

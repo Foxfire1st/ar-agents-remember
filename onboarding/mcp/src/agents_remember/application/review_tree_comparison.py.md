@@ -84,19 +84,19 @@ Both sides may share the existing index-cache owner, but cache construction rema
 
 ## Evidence
 
-- The comparison, each memory side's index, the live flag and the code sides. [22]
+- The comparison, each memory side's index, the live flag and the code sides. 
 - A tree comparison applies when the worktree or the official line holds the layout marker. [23]
 - The task segment of a review ref is the task directory's name. [24]
 - The ref name and the refused segments. [25]
-- Capture, pin, record and open a live leaf's comparison. [26]
-- The four sides of a live draft, K_B through the worklist's pairing. [27]
-- A moved memory candidate is refused before publication. [28]
+- Capture, pin, record and open a live leaf's comparison. 
+- The four sides of a live draft, K_B through the worklist's pairing. 
+- A moved memory candidate is refused before publication. 
 - Committed only when the durable line's tip holds exactly this tree. [29]
 - The held converted tree is used only for the same inputs and while Git holds it. [30]
 - Converted files are written as objects only. [31]
 - The recording lock and the pin retry constants. [32]
 - Recording takes turns inside one process. [33]
-- Reuse on the same trees, else number, pin, write; a record another reader wrote first is returned. [34]
+- Reuse on the same trees, else number, pin, write; a record another reader wrote first is returned. 
 - Each candidate with a ref is pinned; a refusal removes only the pins this call created. [35]
 - One pin: same tree is success, another tree is refused, a held lock is retried. [36]
 - Each memory side is opened through its tree's index. [37]
@@ -115,6 +115,8 @@ produced, so `recheck_memory_candidate` proves movement from that census rather 
 tree identities, the pins and the record are unchanged; only the proof that the memory worktree did
 not move while the comparison was composed became cheaper, not weaker.
 
-- The record is published by an exclusive create, so a lost race answers the winning record or refuses by name instead of replacing bytes a reader already holds. [45]
+- The record is published by an exclusive create, so a lost race answers the winning record or refuses by name instead of replacing bytes a reader already holds. 
 
 - The current implementation moves shared payload types and reduces redundant Git observations without changing create-only pins, full operands or named unavailable-history behavior. [46]
+
+- Retired at the fifth freeze d59c3493: mcp/src/agents_remember/models/knowledge/review_trees.py::ReviewTrees - the bytes it recorded now occur 8 times in the file, so no single home can be named and it is not given to the likelier one; mcp/src/agents_remember/application/review_tree_comparison.py::live_review_trees - the bytes it recorded now occur 3 times in the file, so no single home can be named and it is not given to the likelier one; mcp/src/agents_remember/application/review_tree_comparison.py::_live_draft - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one; mcp/src/agents_remember/application/review_tree_comparison.py::recheck_memory_candidate - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one; mcp/src/agents_remember/application/review_tree_comparison.py::_recorded - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.

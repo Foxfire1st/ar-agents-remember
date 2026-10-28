@@ -3,8 +3,8 @@
   "proves": [
     {
       "anchor": {
-        "blob": "d8705e3154baa5717a369f982d34042332d0d441",
-        "content": "sha256:b0fa24745318f073b1850e5dc8251ebcce5c515be3008d679ac5cb6507849ea8",
+        "blob": "fc74e61f10ebc3a1e11817b242ad24df0299038d",
+        "content": "sha256:061e2414621519571b3ff6a1d143cb40bd3717e6bcf8be96e9755c373a1ba1bf",
         "locator": {
           "kind": "symbol",
           "name": "test_a_notice_and_a_held_queue_write_wake_their_domains_without_a_poll"
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "d8705e3154baa5717a369f982d34042332d0d441",
+        "blob": "fc74e61f10ebc3a1e11817b242ad24df0299038d",
         "content": "sha256:1094630dad93d09d6dbaeef7654aa832d229207a03fe76658847f8137b6f5b8d",
         "locator": {
           "kind": "symbol",
@@ -37,7 +37,7 @@
     },
     {
       "anchor": {
-        "blob": "d8705e3154baa5717a369f982d34042332d0d441",
+        "blob": "fc74e61f10ebc3a1e11817b242ad24df0299038d",
         "content": "sha256:fe8020948493287ef7a61d7407f7fb63823656cb3cec19d50eea2d3b7dd139da",
         "locator": {
           "kind": "symbol",

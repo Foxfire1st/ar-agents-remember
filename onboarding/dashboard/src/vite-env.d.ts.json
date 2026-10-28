@@ -24,12 +24,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "681a4b96e9c2991c06ed62b101a14c261ee57608",
+            "blob": "f869fa55173e9ff48cd9c5499a042c30ee385b72",
             "content": "sha256:0c8fce771c825e03611f52bf97aa084a608af92e6861dd334e75029f033e25f0",
             "locator": {
-              "end": 65,
+              "end": 98,
               "kind": "line_range",
-              "start": 65
+              "start": 98
             },
             "path": "dashboard/vite.config.ts"
           },

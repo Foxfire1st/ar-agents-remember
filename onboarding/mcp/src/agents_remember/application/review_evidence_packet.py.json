@@ -4,7 +4,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "bda0fbd9cd53ed294adcfc037a28673399bb6a90",
+        "blob": "cc9ebe67fdb9e64b98216d05e9d835eb7c8f7a5b",
         "content": "sha256:4603c0bff999862ff52eb0165c35eed17a61f36b9ce885a5c161d57b0606ee36",
         "locator": {
           "kind": "symbol",
@@ -22,7 +22,7 @@
     },
     {
       "anchor": {
-        "blob": "bda0fbd9cd53ed294adcfc037a28673399bb6a90",
+        "blob": "cc9ebe67fdb9e64b98216d05e9d835eb7c8f7a5b",
         "content": "sha256:544bbc0d82337ce2cb6c78b817ae0a5ff64f5a626406dc74ef19adefc127638e",
         "locator": {
           "kind": "symbol",
@@ -40,7 +40,7 @@
     },
     {
       "anchor": {
-        "blob": "bda0fbd9cd53ed294adcfc037a28673399bb6a90",
+        "blob": "cc9ebe67fdb9e64b98216d05e9d835eb7c8f7a5b",
         "content": "sha256:8d89340ed9182e91367148071264da5cf4f232ddced488e664e04ff08dd10914",
         "locator": {
           "kind": "symbol",
@@ -58,8 +58,8 @@
     },
     {
       "anchor": {
-        "blob": "bda0fbd9cd53ed294adcfc037a28673399bb6a90",
-        "content": "sha256:ac33387394a5d0ee7ea6ed825de5f439b4a970a3fc502cf5e5d23e5937211746",
+        "blob": "cc9ebe67fdb9e64b98216d05e9d835eb7c8f7a5b",
+        "content": "sha256:c71aab6233ee3a8a15161486d133c7b0ac7a4852df7baa1f00cdfa55329d246b",
         "locator": {
           "kind": "symbol",
           "name": "build_evidence_packet"
@@ -76,7 +76,7 @@
     },
     {
       "anchor": {
-        "blob": "bda0fbd9cd53ed294adcfc037a28673399bb6a90",
+        "blob": "cc9ebe67fdb9e64b98216d05e9d835eb7c8f7a5b",
         "content": "sha256:83de7a2344f0c5c715f96b886e83551560d848ee43eba4fcbf1cc0d00f3faf45",
         "locator": {
           "end": 85,
@@ -95,7 +95,7 @@
     },
     {
       "anchor": {
-        "blob": "bda0fbd9cd53ed294adcfc037a28673399bb6a90",
+        "blob": "cc9ebe67fdb9e64b98216d05e9d835eb7c8f7a5b",
         "content": "sha256:9e3ef13fbff4787a742c592f26b35766d22c4b021227857911097c2ccb63ed52",
         "locator": {
           "kind": "symbol",
@@ -113,8 +113,8 @@
     },
     {
       "anchor": {
-        "blob": "bda0fbd9cd53ed294adcfc037a28673399bb6a90",
-        "content": "sha256:19d62eae84bf5ea6a57ec6148d14a1f36975a9265031235e30882440ce25ecb2",
+        "blob": "cc9ebe67fdb9e64b98216d05e9d835eb7c8f7a5b",
+        "content": "sha256:2349c8e74115b2ecd9e2d680599ec1a4fe15cd52e4fa9c5c2d06a6348b8b00e5",
         "locator": {
           "kind": "symbol",
           "name": "_admit_populations"
@@ -131,48 +131,16 @@
     }
   ],
   "references": {
-    "1": {
-      "note": "Packet assembly copies the comparison owner's sides instead of inventing them, and fills every collection or names why it is missing.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "bda0fbd9cd53ed294adcfc037a28673399bb6a90",
-            "content": "sha256:ac33387394a5d0ee7ea6ed825de5f439b4a970a3fc502cf5e5d23e5937211746",
-            "locator": {
-              "kind": "symbol",
-              "name": "build_evidence_packet"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "2": {
       "note": "A packet read as evidence of another comparison is refused on the owner's full identity.",
       "targets": [
         {
           "anchor": {
-            "blob": "bda0fbd9cd53ed294adcfc037a28673399bb6a90",
+            "blob": "cc9ebe67fdb9e64b98216d05e9d835eb7c8f7a5b",
             "content": "sha256:544bbc0d82337ce2cb6c78b817ae0a5ff64f5a626406dc74ef19adefc127638e",
             "locator": {
               "kind": "symbol",
               "name": "require_same_binding"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "3": {
-      "note": "Supplied populations are bounded before the packet is assembled.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "bda0fbd9cd53ed294adcfc037a28673399bb6a90",
-            "content": "sha256:19d62eae84bf5ea6a57ec6148d14a1f36975a9265031235e30882440ce25ecb2",
-            "locator": {
-              "kind": "symbol",
-              "name": "_admit_populations"
             }
           },
           "kind": "code"
@@ -184,7 +152,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bda0fbd9cd53ed294adcfc037a28673399bb6a90",
+            "blob": "cc9ebe67fdb9e64b98216d05e9d835eb7c8f7a5b",
             "content": "sha256:77297362bf0269dbcdcdeaca1e0286f56cc5f1d4a7a12d1428f436494b448c7a",
             "locator": {
               "kind": "symbol",
@@ -200,8 +168,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "bda0fbd9cd53ed294adcfc037a28673399bb6a90",
-            "content": "sha256:0598e330321af2300f2e160d9eef9b73cb9e64fbebe5ba31b5a2d1e2825deb96",
+            "blob": "cc9ebe67fdb9e64b98216d05e9d835eb7c8f7a5b",
+            "content": "sha256:d5cd08f1e3d3613b167c77458e23a225dbca17c0d5c848d03c473bdf08a7eab2",
             "locator": {
               "kind": "file"
             }

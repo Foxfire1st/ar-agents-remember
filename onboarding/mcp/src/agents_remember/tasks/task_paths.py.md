@@ -21,7 +21,10 @@ here resolves it without a second definition and without touching `layers.toml`.
 
 ### Logic
 
-The layout constants name `series-contract.md`, `0_archive`, `enclosures` and `notes`.
+The layout constants name `series-contract.md`, `enclosures` and `notes`, and `CLEANUP_REPORT_NAME`
+(`review-artifact-cleanup.json`) is served from here. `ARCHIVE_DIR` and `task_folder_steps` are the two exceptions
+the docstring names: they belong to the walk and are defined with it in `kernel/coordination_context/task_folders.py`,
+imported here and re-exported, so a caller keeps importing them from this module while the walk that means them owns them.
 
 `slugify` lowercases, strips, collapses every run outside `[a-z0-9._-]` into `-`, trims
 leading/trailing `.`, `-` and `_`, and falls back to `"task"` for an input that normalizes to nothing —
@@ -36,7 +39,8 @@ is membership of `ARCHIVE_DIR` among the path's parts, so it holds at any depth.
 
 `iter_leaf_enclosure_contracts` returns enclosure-position candidates in sorted order, and since MIK-R83
 rules 1 and 2 it takes them from the canonical places only: `iter_task_folders` yields a repository's live
-task folders (the direct children of `tasks/<repository>/`, the archive segment excluded) and
+task folders (the direct children of `tasks/<repository>/`, the archive segment excluded), asking
+`task_folder_steps` for the steps rather than walking the tree itself, and
 `_enclosure_contracts` reads `enclosures/<leaf>/series-contract.md` in each of them. One walk therefore
 answers "which folders are tasks", and no lookup walks the tree itself, so a copy under `notes/`,
 `requirements/` or a deeper folder is never met; `canonical_contract_place` states the depth rule for a

@@ -35,4 +35,6 @@ The surviving unit vehicle is `server_info` with its required response fields. M
 - Every append lands at or under the ceiling. [3]
 
 
-- Role-message fixtures carry UUID recipients and current binding/sender shapes at the actual lookup boundary. [4]
+- Role-message fixtures carry UUID recipients and current binding/sender shapes at the actual lookup boundary.
+
+- Retired at the fifth freeze d59c3493: mcp/tests/test_tool_event_river.py:618-647 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit a145b98949e9ade6a12d096568bc7d014c71607b. Retired means the anchor no longer stands, not that the cited subject was deleted.

@@ -1,10 +1,9 @@
 {
   "admission": {
     "criteria": [
-      "spans_locations",
-      "guarded_by_test"
+      "spans_locations"
     ],
-    "justification": "The staged-read and batch proofs prevent a first-paint fanout or a permanent first-gesture wait that leaves visible code unread."
+    "justification": "The staged-read and batch proofs prevent a first-paint fanout or a permanent first-gesture wait that leaves visible code unread. Reassessed at the L201 fifth freeze (head d59c3493): the guarded_by_test criterion is dropped because the proofs that named it were removed with the tests they cited, which are gone at the candidate; the criteria kept are the ones the tree still satisfies."
   },
   "applicability": "Incremental marker and lane classification/text reads inside the review reading column.",
   "conditions": [

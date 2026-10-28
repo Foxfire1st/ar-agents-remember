@@ -120,12 +120,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3f0a6693c859f3300eb3e4a2ed3439fb33e1d04f",
+            "blob": "4e29b07249c3d3096f247af46f87f64a495403a2",
             "content": "sha256:333d1475e602493cd94f1e8dd3998389fa627cd2d07b20e4e260e6580a40a904",
             "locator": {
-              "end": 129,
+              "end": 136,
               "kind": "line_range",
-              "start": 129
+              "start": 136
             },
             "path": "mcp/src/agents_remember/serving/_app_common.py"
           },
@@ -133,12 +133,12 @@
         },
         {
           "anchor": {
-            "blob": "3f0a6693c859f3300eb3e4a2ed3439fb33e1d04f",
+            "blob": "4e29b07249c3d3096f247af46f87f64a495403a2",
             "content": "sha256:ab5afe9326787a6e38519a2857d379c30e17271a4c7758a4202f82b22d411054",
             "locator": {
-              "end": 95,
+              "end": 102,
               "kind": "line_range",
-              "start": 95
+              "start": 102
             },
             "path": "mcp/src/agents_remember/serving/_app_common.py"
           },
@@ -146,12 +146,12 @@
         },
         {
           "anchor": {
-            "blob": "3f0a6693c859f3300eb3e4a2ed3439fb33e1d04f",
+            "blob": "4e29b07249c3d3096f247af46f87f64a495403a2",
             "content": "sha256:8e5edeb641d69e13c474106df2d1b18aec18b1575842e0646fcbdd1e2002c124",
             "locator": {
-              "end": 96,
+              "end": 103,
               "kind": "line_range",
-              "start": 96
+              "start": 103
             },
             "path": "mcp/src/agents_remember/serving/_app_common.py"
           },
@@ -159,12 +159,12 @@
         },
         {
           "anchor": {
-            "blob": "3f0a6693c859f3300eb3e4a2ed3439fb33e1d04f",
+            "blob": "4e29b07249c3d3096f247af46f87f64a495403a2",
             "content": "sha256:04790d900d586d9961da1142df0528b529a7605a5363cb9c126d0c8d6f7dadcd",
             "locator": {
-              "end": 82,
+              "end": 89,
               "kind": "line_range",
-              "start": 82
+              "start": 89
             },
             "path": "mcp/src/agents_remember/serving/_app_common.py"
           },

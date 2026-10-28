@@ -24,19 +24,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "05420e58f22ada25400406ce21f18491119d64da",
-            "content": "sha256:aee27bd2070c9668b9d11e34383243d0296956943d9cef550376dbf57313c14f",
-            "locator": {
-              "kind": "symbol",
-              "name": "getJson"
-            },
-            "path": "dashboard/src/data/files.ts"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "05420e58f22ada25400406ce21f18491119d64da",
+            "blob": "5114f5644a55359a177e60b5dbfa197f8a1f271a",
             "content": "sha256:11bda74086b107d0f8086147192b1bb72ed321ba4a7307b33e0cba67e2a3ad2b",
             "locator": {
               "kind": "symbol",
@@ -48,24 +36,11 @@
         },
         {
           "anchor": {
-            "blob": "05420e58f22ada25400406ce21f18491119d64da",
+            "blob": "5114f5644a55359a177e60b5dbfa197f8a1f271a",
             "content": "sha256:68f2cd9abb8c8495ee64946161bcf0b427cbf2099261e7064010023677b47eb9",
             "locator": {
               "kind": "symbol",
               "name": "FilesApiError"
-            },
-            "path": "dashboard/src/data/files.ts"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "05420e58f22ada25400406ce21f18491119d64da",
-            "content": "sha256:21bfb5b2643dd6bf18c7bfee7063b020fa02725476791b85e3d2832880586da4",
-            "locator": {
-              "end": 97,
-              "kind": "line_range",
-              "start": 90
             },
             "path": "dashboard/src/data/files.ts"
           },
@@ -78,8 +53,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1d06daecf8740ea6de32c4565dc4d24506617c0d",
-            "content": "sha256:16777e69212429051dac863d0dff5e83ccbce71dafed078bec65a573f52c3072",
+            "blob": "f02c66bf634f3db709b05706fd41125d90092f39",
+            "content": "sha256:86768c2f73aaf4211588f49da8c710642ab6022be7819a385f6c57cfec332997",
             "locator": {
               "kind": "file"
             },

@@ -54,24 +54,44 @@ The explainer’s categories and grades remain its judgment, separate from chang
 
 ## Evidence
 
-- One policy, hashed into the value a proof record must name, so served bytes, the proof and the runtime gate cannot drift apart. [1]
-- A frame document is sandboxed without `allow-same-origin`, so the generated document runs on an opaque origin. [2]
-- Generated scripts are served enabled only when the shipped proof covers the policy now served. [3]
-- The proof record's own check table and observations must cover every clause; a table that cannot be read covers nothing. [4]
-- One session is created per frame and bound to the frame, immutable revision and comparison the bytes were served from. [5]
+- One policy, hashed into the value a proof record must name, so served bytes, the proof and the runtime gate cannot drift apart.
+
+- A frame document is sandboxed without `allow-same-origin`, so the generated document runs on an opaque origin. 
+
+- Generated scripts are served enabled only when the shipped proof covers the policy now served. 
+
+- The proof record's own check table and observations must cover every clause; a table that cannot be read covers nothing. 
+
+- One session is created per frame and bound to the frame, immutable revision and comparison the bytes were served from. 
+
+- An explicit activation starts one authoring attempt, which is recorded durably before any host call. 
+
+- The prospective load runs in the selected browser through the package-owned runner and cannot report a pass that contradicts its own observations. 
+
+- The frame surface serves one live session's own document and admitted assets and nothing else. 
+
+- Both canvas surfaces are registered after the API routes and before the static mount. 
+
+- Retired at the fifth freeze d59c3493: mcp/src/agents_remember/canvas/policy.py:380-384 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 47f69f11afb982e318006209036aed22f1792976; mcp/src/agents_remember/canvas/policy.py::frame_sandbox - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one; mcp/src/agents_remember/canvas/policy.py::scripts_enabled - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 47f69f11afb982e318006209036aed22f1792976; mcp/src/agents_remember/canvas/policy.py::proof_gaps - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 47f69f11afb982e318006209036aed22f1792976; mcp/src/agents_remember/canvas/sessions.py::SessionRegistry - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one; mcp/src/agents_remember/canvas/presenter.py::Presenter - the bytes it recorded now occur 64 times in the file, so no single home can be named and it is not given to the likelier one; mcp/src/agents_remember/canvas/prospective.py::BrowserProspectiveLoad - the bytes it recorded now occur 3 times in the file, so no single home can be named and it is not given to the likelier one; mcp/src/agents_remember/serving/canvas.py::page - the bytes it recorded now occur 19 times in the file, so no single home can be named and it is not given to the likelier one; mcp/src/agents_remember/serving/canvas.py::register_canvas_routes - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.
+
 - Revocation ends one channel or every channel of a frame, and the tombstone keeps the reason rather than the content. [6]
+
 - The binding is delivered to the admitted document, never to a navigated window, and departure is announced on pagehide. [7]
+
 - One protocol version with a closed operation set validates an envelope against the session's binding before any effect. [8]
+
 - A request is debited from the session's rate before the caller parses it, so refusal work is bounded as well. [9]
+
 - The host resolves an evidence reference only against the revision's own admitted packet, or refuses it by name. [10]
-- An explicit activation starts one authoring attempt, which is recorded durably before any host call. [11]
+
 - Publication loads the exact prospective revision once without a model before any ready pointer moves. [12]
+
 - The static readiness check refuses a page that names something its revision does not carry. [13]
-- The prospective load runs in the selected browser through the package-owned runner and cannot report a pass that contradicts its own observations. [14]
+
 - Kit files are carried under the manifest's contract path and compared with the manifest when carried; nothing refuses a kit path afterwards, so the kit is the page's offline toolbox and the sandbox is the boundary. [15]
+
 - A state-changing browser request from another page is refused with a named 403 before it reaches a route. [16]
+
 - Every request, reads included, answers only the dashboard's own host and port, against DNS rebinding. [17]
-- The frame surface serves one live session's own document and admitted assets and nothing else. [18]
-- Both canvas surfaces are registered after the API routes and before the static mount. [19]
 
 - The current implementation introduces bound grades, per-part staleness and explicit regeneration; the existing isolated-page, evidence and kit guarantees remain. [20]

@@ -93,7 +93,7 @@ No relevant external or domain documentation was found for this repository-local
 - After the unknown-API guard, the absent-bundle static surface answers 503 on GET/HEAD and 405 on other methods, mirroring `StaticFiles`. [2]
 - The release build step places the tree this module resolves; it refuses to place a stale one. [3]
 
-- The serving app registers API routes before the static mount. [4]
+- The serving app registers API routes before the static mount. 
 
 
 
@@ -111,3 +111,12 @@ The reviewed behavior is wholly repository-local.
 - Frozen implementation of mount_static supporting the stated file behavior. [6]
 - Checks unknown API roots/descendants return 404 for GET/HEAD/POST/PUT/DELETE with and without bundle; known route wrong method stays 405. [7]
 - Composed app former four host paths have no route and answer Not Found for GET/POST/PUT/DELETE. [8]
+
+
+Retired at the fifth freeze d59c3493: mcp/src/agents_remember/serving/app.py:260-260 - the bytes it recorded now occur 13 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted. [4]
+
+- Retired at the fifth freeze d59c3493: mcp/src/agents_remember/serving/app.py:271-271 - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.
+
+- The serving app registers API routes before the static mount.
+
+Retired at the fifth freeze d59c3493: mcp/src/agents_remember/serving/app.py:260-260 - the bytes it recorded now occur 13 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted [4]

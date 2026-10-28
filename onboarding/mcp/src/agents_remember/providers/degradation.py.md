@@ -271,7 +271,7 @@ No external/product documentation governs this protocol; it is a repository-inte
 
 - `providerDegradation` settings this module consumes (thresholds, `fail_safe_enabled`, `recent_sample_limit`). [9]
 
-- `_metrics_loop` — the sole production caller: `metrics_store.record`, `evaluate_provider_degradation` and `metrics_store.compact` on one 30s tick. This is why the dashboard is the declared compaction owner of both provider stores, and it is where the ownership is enforced structurally. [10]
+- `_metrics_loop` — the sole production caller: `metrics_store.record`, `evaluate_provider_degradation` and `metrics_store.compact` on one 30s tick. This is why the dashboard is the declared compaction owner of both provider stores, and it is where the ownership is enforced structurally. 
 
 
 
@@ -316,3 +316,5 @@ Current alert/inbox vocabulary addresses Investigator. The degradation protocol�
 
 
 </details>
+
+- Retired at the fifth freeze d59c3493: mcp/src/agents_remember/serving/_app_lifespan.py:78-78 - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.

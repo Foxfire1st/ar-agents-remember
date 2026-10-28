@@ -14,9 +14,11 @@
 
 ## Evidence
 
-- Comparison N loads from the leaf's comparison record [1]
+- Comparison N loads from the leaf's comparison record 
 - One diff per half supplies status and counts, renames off [2]
 
 - The list echoes recorded code/memory trees and uses the shared native counters. [3]
 
 - File diffs read immutable trees and confine memory paths [4]
+
+- Retired at the fifth freeze d59c3493: mcp/src/agents_remember/serving/changeset_comparison.py::recorded_comparison - the bytes it recorded now occur 3 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.

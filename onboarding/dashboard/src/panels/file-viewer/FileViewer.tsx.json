@@ -97,7 +97,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "05420e58f22ada25400406ce21f18491119d64da",
+            "blob": "5114f5644a55359a177e60b5dbfa197f8a1f271a",
             "content": "sha256:a879d0bcbaa95db21c2edddeca08097f838923b4b3e3511cb142f3e8ba739967",
             "locator": {
               "kind": "symbol",
@@ -109,7 +109,7 @@
         },
         {
           "anchor": {
-            "blob": "05420e58f22ada25400406ce21f18491119d64da",
+            "blob": "5114f5644a55359a177e60b5dbfa197f8a1f271a",
             "content": "sha256:e4ab790ad49ae4a24686b39e83f5038b85315bc6e2dbce5a9fc986beb3cc2f2d",
             "locator": {
               "kind": "symbol",
@@ -121,7 +121,7 @@
         },
         {
           "anchor": {
-            "blob": "05420e58f22ada25400406ce21f18491119d64da",
+            "blob": "5114f5644a55359a177e60b5dbfa197f8a1f271a",
             "content": "sha256:17203a5a26c14b39c397cb26f7f7c7dafb5dce2e77618ddc150226164d34545b",
             "locator": {
               "kind": "symbol",
@@ -133,7 +133,7 @@
         },
         {
           "anchor": {
-            "blob": "05420e58f22ada25400406ce21f18491119d64da",
+            "blob": "5114f5644a55359a177e60b5dbfa197f8a1f271a",
             "content": "sha256:75065c8f2fe955d2fe6565cb8fa85cf63f6f1cd57c302eb1b4d45c704998b159",
             "locator": {
               "kind": "symbol",
@@ -145,23 +145,10 @@
         },
         {
           "anchor": {
-            "blob": "05420e58f22ada25400406ce21f18491119d64da",
+            "blob": "5114f5644a55359a177e60b5dbfa197f8a1f271a",
             "content": "sha256:7f0b42eb80272b73f6e4ceef8790cab1991706ca24f1d8fe0cf84f6183dc0c85",
             "locator": {
-              "end": 121,
-              "kind": "line_range",
-              "start": 116
-            },
-            "path": "dashboard/src/data/files.ts"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "05420e58f22ada25400406ce21f18491119d64da",
-            "content": "sha256:d140673ef8d242ea5e4def8bdda96981236944e5d794bbee46c7ac1f0ff8f0b6",
-            "locator": {
-              "end": 131,
+              "end": 128,
               "kind": "line_range",
               "start": 123
             },
@@ -171,12 +158,12 @@
         },
         {
           "anchor": {
-            "blob": "05420e58f22ada25400406ce21f18491119d64da",
-            "content": "sha256:d2684ca45e9472081c3b879f1c984d4349d5ec530eaa79255b01c7cd771caac3",
+            "blob": "5114f5644a55359a177e60b5dbfa197f8a1f271a",
+            "content": "sha256:d140673ef8d242ea5e4def8bdda96981236944e5d794bbee46c7ac1f0ff8f0b6",
             "locator": {
-              "end": 141,
+              "end": 138,
               "kind": "line_range",
-              "start": 133
+              "start": 130
             },
             "path": "dashboard/src/data/files.ts"
           },
@@ -184,12 +171,25 @@
         },
         {
           "anchor": {
-            "blob": "05420e58f22ada25400406ce21f18491119d64da",
+            "blob": "5114f5644a55359a177e60b5dbfa197f8a1f271a",
+            "content": "sha256:d2684ca45e9472081c3b879f1c984d4349d5ec530eaa79255b01c7cd771caac3",
+            "locator": {
+              "end": 148,
+              "kind": "line_range",
+              "start": 140
+            },
+            "path": "dashboard/src/data/files.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5114f5644a55359a177e60b5dbfa197f8a1f271a",
             "content": "sha256:d172ffd91a44e4b0855c9e5359ede731c468dd64bfc04ad9ef9d0c05ff518631",
             "locator": {
-              "end": 93,
+              "end": 94,
               "kind": "line_range",
-              "start": 93
+              "start": 94
             },
             "path": "dashboard/src/data/files.ts"
           },
@@ -202,24 +202,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1b839113b8d511b4a8343230e70a8de0be01b79f",
-            "content": "sha256:1ac52653a51e3f6baa0cd6d608709287a3c4c3f8e993d65d3bf8e2170c817edc",
-            "locator": {
-              "kind": "symbol",
-              "name": "CockpitShell"
-            },
-            "path": "dashboard/src/cockpit/Cockpit.tsx"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "1b839113b8d511b4a8343230e70a8de0be01b79f",
+            "blob": "0239f2882fd18ac2d5ceabd66eef472ab201ea5d",
             "content": "sha256:054d4cc1aaabba6284f7cdfeae8f609aba3d6af75651bac7e4bba96a06df3b1c",
             "locator": {
-              "end": 666,
+              "end": 707,
               "kind": "line_range",
-              "start": 385
+              "start": 426
             },
             "path": "dashboard/src/cockpit/Cockpit.tsx"
           },
@@ -227,8 +215,8 @@
         },
         {
           "anchor": {
-            "blob": "1b839113b8d511b4a8343230e70a8de0be01b79f",
-            "content": "sha256:a8152c8952fadad87a17271c8a6febccb6420f118def2bd84f341dab609d41c2",
+            "blob": "0239f2882fd18ac2d5ceabd66eef472ab201ea5d",
+            "content": "sha256:3a6ace367f4b19538d38b3734e093a1368d90174ab38ed09782342f0bb36bd11",
             "locator": {
               "kind": "file"
             },

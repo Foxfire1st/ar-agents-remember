@@ -36,7 +36,7 @@ This is current-source interpretation of the A9 candidate, not a new test result
 
 
 
-- Anchor: Actual startup task set and shutdown order. [11]
+- Anchor: Actual startup task set and shutdown order.
 
 
 
@@ -72,7 +72,7 @@ This is current-source interpretation of the A9 candidate, not a new test result
 
 
 
-- Anchor: Initial river compaction, projector prime, background tasks, child shutdown and drain. [26]
+- Anchor: Initial river compaction, projector prime, background tasks, child shutdown and drain.
 
 
 
@@ -80,3 +80,5 @@ This is current-source interpretation of the A9 candidate, not a new test result
 - Controlled real-loop tests cover revoked, between-tick, restarted and malformed authority while keeping launch refusal separate. [28]
 
 - Held-delivery collaborators keep usage-read-before-delivery ordering, then trigger moved comparison after ended-seat delivery. The dedicated watcher task joins the owned shutdown task list. [29]
+
+- Retired at the fifth freeze d59c3493: mcp/src/agents_remember/serving/_app_lifespan.py:360-420 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 87992ce842079a7a4f161bd4bfcc4aed5307178b. Retired means the anchor no longer stands, not that the cited subject was deleted.

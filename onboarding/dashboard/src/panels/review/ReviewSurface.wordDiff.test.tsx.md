@@ -22,7 +22,7 @@ These are declared component or pure-function checks over the fixtures named her
 
 ## Evidence
 
-- Declared check and its fixture assertions. [12]
+- Declared check and its fixture assertions.
 - Declared check and its fixture assertions. [13]
 
 ## Historical predecessor account
@@ -138,3 +138,5 @@ The earlier account follows as provenance. Current assertions and removed journe
 > ## Evidence
 >
 > - Retained L37 successor operands drive four changed passages and their revision/text labels; the same-revision adversarial metadata remains explicitly synthetic. Dataset rendering and its dataset-only same-revision control are removed rather than silently counted as tree-review coverage. (historical reference 11)
+
+- Retired at the fifth freeze d59c3493: dashboard/src/panels/review/ReviewSurface.wordDiff.test.tsx:78-116 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 07d6584afba8a9504e4a3cf2e80eac41f68b28a9. Retired means the anchor no longer stands, not that the cited subject was deleted.
