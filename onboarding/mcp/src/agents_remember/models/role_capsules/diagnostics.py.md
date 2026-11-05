@@ -66,14 +66,14 @@ No relevant documentation found after checking live sources.
 ### Repo-Internal References
 
 
-- The content half whose digest must stay independent of these shapes. [1]
+- The content half whose digest must stay independent of these shapes.
 
 - The builder that fills the success-shaped manifest, and the two refusal-shaped builders. [2]
 
-- The digest document that must not reference any field of this module. [3]
+- The digest document that must not reference any field of this module.
 
 
-- The application outcome that pairs a capsule or a refusal with this manifest. [4]
+- The application outcome that pairs a capsule or a refusal with this manifest.
 
 - The conflict kind vocabulary these rows are expressed in. [5]
 
@@ -82,3 +82,7 @@ No relevant documentation found after checking live sources.
 No sibling-repository contract consumes these shapes.
 
 No meaningful cross-repo references found.
+
+- The content half whose digest must stay independent of these shapes. Anchor: `CapsuleCapsule` `CapsuleCompilationResult` [1]
+- The digest document that must not reference any field of this module. Anchor: `semantic_digest` [3]
+- The application outcome that pairs a capsule or a refusal with this manifest. Anchor: `CapsuleCompilationOutcome` `render_explanation` [4]

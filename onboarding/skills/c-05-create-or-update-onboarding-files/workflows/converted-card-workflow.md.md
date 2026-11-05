@@ -18,11 +18,18 @@ Body maintenance comes before anchors. Mechanical blob/content/line refreshes do
 
 The newly built normal gate accepts current source-bound updated/no_impact statements; updated needs a counted card/reference change, and realization/proof-only changes do not count. A governing route has its own subject. L53's own changed cards are exempt from updated rows under amended rule 1 and answered by their measured counted changes; that rollout qualification is not the general post-landing workflow. Sidecar JSON, source pins and reference numbers are never manually fabricated.
 
-## Evidence
+Use the fixer and writer first. Only a covered correct-input refusal reaches the same-tool write-refusal procedure; a missing admitted writer is reported with the records still unwritten. The normal reference/typed-entry split does not itself authorize a hidden or unadmitted manual write.
 
+## Evidence
 ### Repo-Internal References
 
-- Converted prose, citation targets and sidecar writers have distinct ownership; route overviews preserve purpose-first layout. [1]
+Retained authoring-row wording:
+
+Finding: Converted prose, citation targets and sidecar writers have distinct ownership; route overviews preserve purpose-first layout.
+
+Anchor:
+
+Source: skills/c-05-create-or-update-onboarding-files/workflows/converted-card-workflow.md:7-35
 - Native citation preview/apply resolves new and exact-key references and exposes refused/unresolved results. [2]
 - Move/delete handling preserves behavior and entry ownership, then ordinary current-row treatment answers the source and route. [3]
 
@@ -191,4 +198,15 @@ Inherited reference 9 commentary (not a revalidated target):
 The authored file is the canonical contract; its measured byte-equal package copy is a distribution carrier, not an independent role, task or permission authority. The following whole-file reference locates that authored contract; it does not convert inherited statements into executed or whole-card acceptance.
 
 
+Retained authoring-row wording:
+
+Finding: The authored source owns this contract; the distribution copy is not a separate authority.
+
+Anchor:
+
+Source: skills/c-05-create-or-update-onboarding-files/workflows/converted-card-workflow.md
+
+- Converted prose, citation targets and sidecar writers have distinct ownership; route overviews preserve purpose-first layout. [1]
 - The authored source owns this contract; the distribution copy is not a separate authority. [4]
+
+- Use the fixer and writer first. Only a covered correct-input refusal reaches the same-tool write-refusal procedure; a missing admitted writer is reported with the records still unwritten. The normal reference/typed-entry split does not itself authorize a hidden or unadmitted manual write. [5]

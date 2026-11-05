@@ -1,0 +1,40 @@
+{
+  "path": "mcp/tests/test_agent_eval_evidence_selection.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "933fe69527f95ed01330762d3a31107d24789c9a",
+        "content": "sha256:bbcb78c9e72360cc15c0e93b7b701af1c01a989ff1c0addaedfa79d984abc0e2",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-QZXYDX",
+      "invariant": "INV-SYN8W6",
+      "origin": {
+        "handoffEntry": "L62-fd6462b8-judge-package",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "This regression module checks this obligation through test_all_fourteen_have_bounded_explicit_policy, test_declared_judge_authorities_reach_request_without_actor_mutation, test_ce01_native_prose_scope_reuses_existing_seven_criterion_mapping, test_exact_native_references_select_calls_but_not_similar_names and its remaining test cases.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The source defines this file's responsibility and the boundaries described here.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "933fe69527f95ed01330762d3a31107d24789c9a",
+            "content": "sha256:bbcb78c9e72360cc15c0e93b7b701af1c01a989ff1c0addaedfa79d984abc0e2",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

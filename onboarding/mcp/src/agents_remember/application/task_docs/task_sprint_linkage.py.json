@@ -262,14 +262,16 @@
       ]
     },
     "3": {
-      "note": "The public tool-layer operation routing.\n\nAnchor: `task_doc_tool`",
+      "note": "The public tool-layer operation routing. Anchor: `task_doc_tool`",
       "targets": [
         {
           "anchor": {
-            "blob": "f174a79f72375a38aa57f50907312424f3fc2c3c",
-            "content": "sha256:4639ac7fede07fbf8fd4a606e94345d3e15fdc3bc40ee0f57fba307bccd95505",
+            "blob": "d0b8e6fa2c415dec4821469774f9dc8f0bcccb63",
+            "content": "sha256:36946f9f594b3e343adf324da581e0d104f623f686bd83a9d2844ab5533ac0ba",
             "locator": {
-              "kind": "file"
+              "end": 1186,
+              "kind": "line_range",
+              "start": 1
             },
             "path": "mcp/src/agents_remember/application/task_docs/task_doc_tools.py"
           },
@@ -277,11 +279,12 @@
         },
         {
           "anchor": {
-            "blob": "f174a79f72375a38aa57f50907312424f3fc2c3c",
+            "blob": "d0b8e6fa2c415dec4821469774f9dc8f0bcccb63",
             "content": "sha256:da66207966111f9ba7d9196396a13f7c5325ea40eed2fe489f1170ec78500d91",
             "locator": {
-              "kind": "symbol",
-              "name": "task_doc_tool"
+              "end": 376,
+              "kind": "line_range",
+              "start": 363
             },
             "path": "mcp/src/agents_remember/application/task_docs/task_doc_tools.py"
           },

@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "541f15fba478277772b410bd15974fb889feaabc",
-        "content": "sha256:743206fd0aa45bc40d42fdaa4c664eb1ceeee8b594a9f3bc20e95988ed500d8f",
+        "blob": "cd8592766583b510530dc20a52461970ab25acb8",
+        "content": "sha256:127ead9498fbd9811abe4acfab1edbb53a446122a58924e1d1f045443759a651",
         "locator": {
           "kind": "file"
         }
@@ -21,14 +21,28 @@
   ],
   "references": {
     "1": {
-      "note": "This source owns the stated current Investigator scope or canonical vocabulary.",
+      "note": "Orientation takes an Investigator concern from its actual parent or, when parentless, the developer; it keeps canonical task identity, exact launch bindings and developer-question provenance.",
       "targets": [
         {
           "anchor": {
-            "blob": "541f15fba478277772b410bd15974fb889feaabc",
-            "content": "sha256:743206fd0aa45bc40d42fdaa4c664eb1ceeee8b594a9f3bc20e95988ed500d8f",
+            "blob": "cd8592766583b510530dc20a52461970ab25acb8",
+            "content": "sha256:7673b0f29ce9873b30f5c532fbc74c1418b55df2a5edb353eeaf5987f9207451",
             "locator": {
-              "kind": "file"
+              "end": 19,
+              "kind": "line_range",
+              "start": 4
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cd8592766583b510530dc20a52461970ab25acb8",
+            "content": "sha256:bc5d28d6ff0b697040b4a1a332c971fe8eb3e66bd13ca728920713de61e17eef",
+            "locator": {
+              "end": 40,
+              "kind": "line_range",
+              "start": 30
             }
           },
           "kind": "code"
@@ -40,7 +54,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "541f15fba478277772b410bd15974fb889feaabc",
+            "blob": "cd8592766583b510530dc20a52461970ab25acb8",
             "content": "sha256:90c1134af65243f7ac535323798edcb2b590b7ff96945970bce4dfdc463ef128",
             "locator": {
               "end": 4,
@@ -53,12 +67,12 @@
         },
         {
           "anchor": {
-            "blob": "541f15fba478277772b410bd15974fb889feaabc",
-            "content": "sha256:b5dd7e76af9ae885092e013ed37f601ae0f3fb90bd166d075e39de593a088c20",
+            "blob": "cd8592766583b510530dc20a52461970ab25acb8",
+            "content": "sha256:bc5d28d6ff0b697040b4a1a332c971fe8eb3e66bd13ca728920713de61e17eef",
             "locator": {
-              "end": 23,
+              "end": 40,
               "kind": "line_range",
-              "start": 19
+              "start": 30
             },
             "path": "skills/l-01-agent-lifecycles/operations/orientation.md"
           },
@@ -71,7 +85,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2f3ce46a32a38d86f474252bb23d8081e91f0a6e",
+            "blob": "353b98ba0c8d4e0b72caee82f9f0a988a1f82768",
             "content": "sha256:5c9b9a2d722535694c4bee2d90985e22c5ef9251bec964fbd36e2af201299f3b",
             "locator": {
               "end": 54,
@@ -89,7 +103,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "541f15fba478277772b410bd15974fb889feaabc",
+            "blob": "cd8592766583b510530dc20a52461970ab25acb8",
             "content": "sha256:2b7260aa7dec000b8500726aef3283b2e3aec4799f1e8d873b58ab31fd07c14c",
             "locator": {
               "end": 2,
@@ -115,6 +129,36 @@
               "start": 11
             },
             "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Taskless scope, exact task-bound reads, role-admitted task_doc-first edits, paired surfaces, bound server and covered recovery.\n\nAnchor: lines 4-25",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cd8592766583b510530dc20a52461970ab25acb8",
+            "content": "sha256:e79cd5f98120469106ed93210309809355d8a465a6476fb5903a8f739497a847",
+            "locator": {
+              "end": 25,
+              "kind": "line_range",
+              "start": 4
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "77193c73e40d8dcf1ac8b7158debe508e2d02065",
+            "content": "sha256:3ff6e63392f70b84be8b931dffb38749b9ac474888052a0e153205ddbc32a888",
+            "locator": {
+              "end": 38,
+              "kind": "line_range",
+              "start": 24
+            },
+            "path": "skills/l-01-agent-lifecycles/reference/refused-write.md"
           },
           "kind": "code"
         }

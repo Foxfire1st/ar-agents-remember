@@ -4,12 +4,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "fb21b7c177ee42cdcd3cbdc8e1e9ee2acf7b8302",
+        "blob": "d5a7eaf6f7a789ca19fa38b3a367c269be36f962",
         "content": "sha256:789c07c35bb07b48125149f8d927a74707c811ea4548e4b14a347d9b741504dd",
         "locator": {
-          "end": 189,
+          "end": 223,
           "kind": "line_range",
-          "start": 188
+          "start": 222
         }
       },
       "id": "RLZ-F6DSAT",
@@ -23,12 +23,12 @@
     },
     {
       "anchor": {
-        "blob": "fb21b7c177ee42cdcd3cbdc8e1e9ee2acf7b8302",
+        "blob": "d5a7eaf6f7a789ca19fa38b3a367c269be36f962",
         "content": "sha256:789c07c35bb07b48125149f8d927a74707c811ea4548e4b14a347d9b741504dd",
         "locator": {
-          "end": 189,
+          "end": 223,
           "kind": "line_range",
-          "start": 188
+          "start": 222
         }
       },
       "id": "RLZ-N47KE8",
@@ -42,8 +42,8 @@
     },
     {
       "anchor": {
-        "blob": "fb21b7c177ee42cdcd3cbdc8e1e9ee2acf7b8302",
-        "content": "sha256:01680f64ff731a5953529e24ab0e0e7dc2d289802d415a07c0875bb5e9ab7738",
+        "blob": "d5a7eaf6f7a789ca19fa38b3a367c269be36f962",
+        "content": "sha256:e78db7db14fd63cddb31b56b69755e6fb29c7437299a3023c85d25ace0c32d2e",
         "locator": {
           "kind": "file"
         }
@@ -59,8 +59,8 @@
     },
     {
       "anchor": {
-        "blob": "fb21b7c177ee42cdcd3cbdc8e1e9ee2acf7b8302",
-        "content": "sha256:01680f64ff731a5953529e24ab0e0e7dc2d289802d415a07c0875bb5e9ab7738",
+        "blob": "d5a7eaf6f7a789ca19fa38b3a367c269be36f962",
+        "content": "sha256:e78db7db14fd63cddb31b56b69755e6fb29c7437299a3023c85d25ace0c32d2e",
         "locator": {
           "kind": "file"
         }
@@ -81,7 +81,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fb21b7c177ee42cdcd3cbdc8e1e9ee2acf7b8302",
+            "blob": "d5a7eaf6f7a789ca19fa38b3a367c269be36f962",
             "content": "sha256:f9e8d8278ea6c455e34139e07f4eb8439d2ce07b7074c4e361c3daddafccff76",
             "locator": {
               "end": 5,
@@ -105,14 +105,40 @@
       ]
     },
     "2": {
-      "note": "Source reference records retirement of structural/lifecycle/provider/benchmark/capsule tools; backend existence is not advertisement.",
+      "note": "The source reference retains retired structural, lifecycle, provider, benchmark and capsule/catalog accounts as unavailable routes and names registration modules/response models as the authoritative advertised surface; a documentation row is not backend registration.",
       "targets": [
         {
           "anchor": {
-            "blob": "fb21b7c177ee42cdcd3cbdc8e1e9ee2acf7b8302",
-            "content": "sha256:01680f64ff731a5953529e24ab0e0e7dc2d289802d415a07c0875bb5e9ab7738",
+            "blob": "d5a7eaf6f7a789ca19fa38b3a367c269be36f962",
+            "content": "sha256:f830511c4f62c22e7965dc06064b2b9d76daf2031a058dedbf6c4295a1fd6fa0",
             "locator": {
-              "kind": "file"
+              "end": 74,
+              "kind": "line_range",
+              "start": 27
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d5a7eaf6f7a789ca19fa38b3a367c269be36f962",
+            "content": "sha256:2336696b9446853246534160c429950395d95574f02dc7f827ffe2edd750a2a3",
+            "locator": {
+              "end": 454,
+              "kind": "line_range",
+              "start": 429
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d5a7eaf6f7a789ca19fa38b3a367c269be36f962",
+            "content": "sha256:78b3873206ec624658a775b9d411cdb2c5b8ef2d976593cd6e393eefffca843d",
+            "locator": {
+              "end": 427,
+              "kind": "line_range",
+              "start": 416
             }
           },
           "kind": "code"
@@ -120,16 +146,16 @@
       ]
     },
     "3": {
-      "note": "The reference publishes the flat preview modes beside the request-object quality modes.\n\nAnchor: \"citation_fix\"",
+      "note": "The public citation_fix row keeps flat sync/start/poll arguments and preview-only background start beside the discriminated memory_quality_check request; optional leaf scope and official/pre-baseline boundaries are explicit.",
       "targets": [
         {
           "anchor": {
-            "blob": "fb21b7c177ee42cdcd3cbdc8e1e9ee2acf7b8302",
-            "content": "sha256:1b7433c5a465fc3a2c8bc01a7c963e13fccf46adb465c677689eed240170221d",
+            "blob": "d5a7eaf6f7a789ca19fa38b3a367c269be36f962",
+            "content": "sha256:ca1b631139a9903c5ae94cc55512b90f6e0eeaa6d8b079c16263edff78126b07",
             "locator": {
-              "end": 87,
+              "end": 145,
               "kind": "line_range",
-              "start": 86
+              "start": 112
             }
           },
           "kind": "code"

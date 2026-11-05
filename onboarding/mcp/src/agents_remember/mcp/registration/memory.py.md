@@ -34,6 +34,12 @@ The retained `citation_fix` declaration adds flat `mode="sync"|"start"|"poll"` a
 - The public declaration forwards mode, run ID and frozen selectors through one payload owner. [20]
 
 
+## Current source contract
+
+The memory-quality description names knowledgeWorklist state/path/digest/counts/unreadable inputs and knowledgeGate exact-tree verdict/finding counts in full leaf logs. It keeps validated curator_coherence separate and states that conversion, index building, formatting and worklist computation have no separate MCP tool. These descriptions do not change the admitted request or make the quality result semantic certification.
+
+- MQC docstring names knowledgeWorklist and knowledgeGate full-log fields and retains coherence boundary. [21]
+
 ## Historical original card — preserved, not the current operative account
 
 <details>
@@ -267,5 +273,13 @@ acceptance pair.
 - Registration exposes converted worktree-only carryover and finite citation selectors without retired commit-message, caller-exclude or expected-snapshot arguments. [18]
 
 
+
+Retained authoring-row wording:
+
+Finding: Memory health, baseline and carryover declarations retain their models and request discriminators, but payloads and operation-only memory request types are resolved on the matching call.  Anchor: `_register_memory_health_tools`
+
+Anchor:
+
+Source: mcp/src/agents_remember/mcp/registration/memory.py
 
 - Memory health, baseline and carryover declarations retain their models and request discriminators, but payloads and operation-only memory request types are resolved on the matching call.  Anchor: `_register_memory_health_tools` [19]

@@ -1,0 +1,40 @@
+{
+  "path": "scripts/agent_evals/graders/ladder.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "50daf35418d94daaa05b0041e4e52b43776eb1fb",
+        "content": "sha256:35b190cd203d6967fbfc678c95d0446197ff65d1e1c1253061a8110876fc50da",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-BDETT3",
+      "invariant": "INV-NMBR0E",
+      "origin": {
+        "handoffEntry": "L62-fd6462b8-trajectory-route",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "It checks GT5 disclosed same-tool/input-class repair against retained native calls and artifact evidence.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The source defines this file's responsibility and the boundaries described here.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "50daf35418d94daaa05b0041e4e52b43776eb1fb",
+            "content": "sha256:35b190cd203d6967fbfc678c95d0446197ff65d1e1c1253061a8110876fc50da",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

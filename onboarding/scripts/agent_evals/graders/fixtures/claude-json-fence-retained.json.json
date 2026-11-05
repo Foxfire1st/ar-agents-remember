@@ -1,0 +1,40 @@
+{
+  "path": "scripts/agent_evals/graders/fixtures/claude-json-fence-retained.json",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "b595137416c295270a9aba4fb1b73b545e3a8c6d",
+        "content": "sha256:6417d06e7f432bc6d6d261abaf7714a7688206980df3a90cf2e8ea54b5ed2755",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-DX7HGY",
+      "invariant": "INV-3X1VPQ",
+      "origin": {
+        "handoffEntry": "L62-fd6462b8-case-grading",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "It retains the whole-response fenced JSON record that proves decoding changes preserve strict verdict validation.",
+      "role": "support"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The source defines this file's responsibility and the boundaries described here.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b595137416c295270a9aba4fb1b73b545e3a8c6d",
+            "content": "sha256:6417d06e7f432bc6d6d261abaf7714a7688206980df3a90cf2e8ea54b5ed2755",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

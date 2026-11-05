@@ -1,0 +1,22 @@
+{
+  "path": "mcp/tests/test_agent_eval_trials.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The source defines this file's responsibility and the boundaries described here.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4912d6ca7c2b40e448909e3f6082913e8a25c415",
+            "content": "sha256:fa4d135d77f068ee7d5c36e146010a3d7320e64969cce0b902b9a3a0f6d7aaf5",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

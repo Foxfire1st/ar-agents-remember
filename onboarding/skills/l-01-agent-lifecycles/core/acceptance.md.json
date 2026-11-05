@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "2a112bdb1148478a8a719636588cb908fab01cac",
-        "content": "sha256:d5befbda41400231019fb7e8114fe9dede7e0156279e01e3a63477f8b2b4bcb7",
+        "blob": "47288b84fc830870de597a9ba3aa5f895d99fdcb",
+        "content": "sha256:4cc9fe7eeee2508297caea004b93471c74e9636f01d03e1a271c45e90704eca6",
         "locator": {
           "kind": "file"
         }
@@ -25,8 +25,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2a112bdb1148478a8a719636588cb908fab01cac",
-            "content": "sha256:5f751456b63f2e6f3938c662f9154b87dc851fd198fbe5b1db8c8940c9b355b6",
+            "blob": "47288b84fc830870de597a9ba3aa5f895d99fdcb",
+            "content": "sha256:63e03e7c03e45519e6d7b00ffbf3a725991a559337ca9f0aeb22e590923f9dbc",
             "locator": {
               "end": 25,
               "kind": "line_range",
@@ -42,12 +42,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2a112bdb1148478a8a719636588cb908fab01cac",
+            "blob": "47288b84fc830870de597a9ba3aa5f895d99fdcb",
             "content": "sha256:e45d40052ad3a1054cc3d351cef0e1c7cd4fb683d9a2bffb1ed5a12ea8dd65b5",
             "locator": {
-              "end": 77,
+              "end": 78,
               "kind": "line_range",
-              "start": 44
+              "start": 45
             }
           },
           "kind": "code"
@@ -55,12 +55,12 @@
       ]
     },
     "11": {
-      "note": "Requirement revisions and formal delivery attempts have separate immutable lineage. [11]\n\nAnchor: source extent 79–116",
+      "note": "Requirement revisions and formal delivery attempts have separate immutable lineage.",
       "targets": [
         {
           "anchor": {
-            "blob": "2a112bdb1148478a8a719636588cb908fab01cac",
-            "content": "sha256:81a39d100c2261a6c5b71e4c22154182bb73da55478cd87b6feed7a696bafdc8",
+            "blob": "47288b84fc830870de597a9ba3aa5f895d99fdcb",
+            "content": "sha256:330a1acf6a88278c38d1bd49770148c9c99d73091beef5fd3fa9528ee3352c48",
             "locator": {
               "end": 116,
               "kind": "line_range",
@@ -76,12 +76,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2a112bdb1148478a8a719636588cb908fab01cac",
+            "blob": "47288b84fc830870de597a9ba3aa5f895d99fdcb",
             "content": "sha256:5364aa15699f91bebe4d5cff19d19691b72f4efb0d62c5d847bf7e49f66f4748",
             "locator": {
-              "end": 142,
+              "end": 139,
               "kind": "line_range",
-              "start": 126
+              "start": 123
             }
           },
           "kind": "code"
@@ -89,12 +89,12 @@
       ]
     },
     "2": {
-      "note": "Seat/artifact/validator duties and no second completion row.\n\nAnchor: \"## Which artifact each seat hands over, and who validates\"",
+      "note": "Seat/artifact/validator duties and no second completion row.",
       "targets": [
         {
           "anchor": {
-            "blob": "2a112bdb1148478a8a719636588cb908fab01cac",
-            "content": "sha256:f3e8156709459f850000138c7a722004f1c0a9b2d2f5475959b948d80551a2bd",
+            "blob": "47288b84fc830870de597a9ba3aa5f895d99fdcb",
+            "content": "sha256:884a4cbed3bf3cd50484fa362e16e15ec53f4eb77f2ae646dcf06d8bc5c5a5b0",
             "locator": {
               "end": 42,
               "kind": "line_range",
@@ -110,12 +110,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2a112bdb1148478a8a719636588cb908fab01cac",
+            "blob": "47288b84fc830870de597a9ba3aa5f895d99fdcb",
             "content": "sha256:e45d40052ad3a1054cc3d351cef0e1c7cd4fb683d9a2bffb1ed5a12ea8dd65b5",
             "locator": {
-              "end": 77,
+              "end": 78,
               "kind": "line_range",
-              "start": 44
+              "start": 45
             }
           },
           "kind": "code"
@@ -123,12 +123,12 @@
       ]
     },
     "4": {
-      "note": "Immutable attempts, malformed-row correction, candidate-specific review and successor rules.\n\nAnchor: \"## Requirement revisions and delivery attempts are separate axes\"",
+      "note": "Immutable attempts, malformed-row correction, candidate-specific review and successor rules.",
       "targets": [
         {
           "anchor": {
-            "blob": "2a112bdb1148478a8a719636588cb908fab01cac",
-            "content": "sha256:81a39d100c2261a6c5b71e4c22154182bb73da55478cd87b6feed7a696bafdc8",
+            "blob": "47288b84fc830870de597a9ba3aa5f895d99fdcb",
+            "content": "sha256:330a1acf6a88278c38d1bd49770148c9c99d73091beef5fd3fa9528ee3352c48",
             "locator": {
               "end": 116,
               "kind": "line_range",
@@ -144,12 +144,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2a112bdb1148478a8a719636588cb908fab01cac",
+            "blob": "47288b84fc830870de597a9ba3aa5f895d99fdcb",
             "content": "sha256:4ec210df4448129f58df7e7d8f70eac24de904054c6469ff5d08d80ca772021a",
             "locator": {
-              "end": 124,
+              "end": 121,
               "kind": "line_range",
-              "start": 118
+              "start": 115
             }
           },
           "kind": "code"
@@ -161,12 +161,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2a112bdb1148478a8a719636588cb908fab01cac",
+            "blob": "47288b84fc830870de597a9ba3aa5f895d99fdcb",
             "content": "sha256:5364aa15699f91bebe4d5cff19d19691b72f4efb0d62c5d847bf7e49f66f4748",
             "locator": {
-              "end": 142,
+              "end": 139,
               "kind": "line_range",
-              "start": 126
+              "start": 123
             }
           },
           "kind": "code"
@@ -174,16 +174,16 @@
       ]
     },
     "7": {
-      "note": "Selected Worker transport includes direct freeze handoff and producer-preserving post-PASS Curator list.\n\nAnchor: \"After code PASS\"",
+      "note": "Selected Worker transport includes direct freeze handoff and producer-preserving post-PASS Curator list.",
       "targets": [
         {
           "anchor": {
-            "blob": "e9cdae3d6c37b0b2b5b725d99d3dba0218b0822f",
-            "content": "sha256:3a10683d368086ac0139fc1328c73ac7fc08613e6e2c193ba7964ab30b09258f",
+            "blob": "c631f6b28ae2bc2485d4dcf263e612407f9318c2",
+            "content": "sha256:94f2544cd0a27977250ff04085b0241b02c1559ef43ddcf55798347affd9bb96",
             "locator": {
-              "end": 20,
+              "end": 39,
               "kind": "line_range",
-              "start": 18
+              "start": 30
             },
             "path": "skills/l-01-agent-lifecycles/roles/worker.md"
           },
@@ -196,7 +196,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2a112bdb1148478a8a719636588cb908fab01cac",
+            "blob": "47288b84fc830870de597a9ba3aa5f895d99fdcb",
             "content": "sha256:3a072ccf201c1f7d8f62bae3fefbd240016ed62734efbe01bb42011761368191",
             "locator": {
               "end": 14,
@@ -209,12 +209,12 @@
       ]
     },
     "9": {
-      "note": "Each seat has its own artifact and distinct validator. [9]\n\nAnchor: source extent 27–42",
+      "note": "Each seat has its own artifact and distinct validator.",
       "targets": [
         {
           "anchor": {
-            "blob": "2a112bdb1148478a8a719636588cb908fab01cac",
-            "content": "sha256:f3e8156709459f850000138c7a722004f1c0a9b2d2f5475959b948d80551a2bd",
+            "blob": "47288b84fc830870de597a9ba3aa5f895d99fdcb",
+            "content": "sha256:884a4cbed3bf3cd50484fa362e16e15ec53f4eb77f2ae646dcf06d8bc5c5a5b0",
             "locator": {
               "end": 42,
               "kind": "line_range",

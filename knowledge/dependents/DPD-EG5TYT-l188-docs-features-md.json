@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "300537da1300dd821338b5b7a5eb58d7cdc89d8b",
-    "commit": "296dadd7a66d28903e0b65b5e869a783718fcaa8",
+    "codeTree": "6db7c75557a5d040db6cc2938c3f8a53f658bebe",
+    "commit": "59b01fb8f72a38d2d27f9c37b8b9ca2513fd3fa0",
     "role": "curator",
-    "statement": "The feature page retains package-served skills and repository-owned system guidance, states that both lookup providers are retired and by-path reads carry the product, and names task-publication.md as the landing-and-publication primitive.",
-    "task": "260928-MIK-L192",
+    "statement": "The revised feature page’s package-served skills claim still matches the unchanged shipped_skill_tree provider.",
+    "task": "260928-MIK-L62",
     "uncommitted": true
   },
   "document": "docs/features.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L188",
     "task": "260928-MIK"
   },
-  "revision": 3,
+  "revision": 4,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {

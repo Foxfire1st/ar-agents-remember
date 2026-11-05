@@ -216,6 +216,12 @@ The governing workflow opens an independent memory review after CODE PASS on the
 
 This account is bound to the candidate source, not a claim of a running serving build or a fresh execution/acceptance verdict. Existing historical accounts remain historical.
 
+## Current source contract
+
+After the ordinary candidate passes validation, task_doc_tools derives alignment_sweep before publication and adds it only when the published result has ok=true and advice exists. Dry-run publication uses this same enclosing path. Review-lane result wrapping and file rows remain their existing owners. Advisory metadata does not grant packet release or bypass validation.
+
+- Computes alignment advice after candidate validation, adds it only to successful publication results. [41]
+
 ## Evidence
 
 
@@ -239,7 +245,13 @@ This account is bound to the candidate source, not a claim of a running serving 
 - `_replace` validates a full document through the shared create/build path and refuses a replacement whose slug/kind would move the JSON document path. [6]
 - **Retained historical source account — superseded by the current contract:** Focused application-layer tests prove `replace` rewrites `steps`, `codeExamples`, and `decisions`, preserves dry-run no-mutation behavior, and rejects document path changes. [7]
 
-- Leaf operations plan master sync, include it in previews, and write changed leaf/master docs together. Anchor: "master_sync = plan_master_sync(task_root" [8]
+Retained authoring-row wording:
+
+Finding: Leaf operations plan master sync, include it in previews, and write changed leaf/master docs together. Anchor: "master_sync = plan_master_sync(task_root"
+
+Anchor:
+
+Source: mcp/src/agents_remember/application/task_docs/task_doc_tools.py; mcp/src/agents_remember/application/task_docs/task_doc_tools.py:503-588
 - The planner owns same-root master discovery, row derivation, manual-scope preservation, and derived master status. [9]
 
 
@@ -255,7 +267,13 @@ This account is bound to the candidate source, not a claim of a running serving 
 
 
 
-- Normal dispatch prepares and validates the complete candidate; publication retains accepted sources and includes a resolved parent for changed sync, explicit waitsFor refresh, or changed normalized dependencies, requires accepted parent bytes and a selected named parent to agree with its in-place write target, and supplies prepared-batch overrides to dry-run rendering. [15]
+Retained authoring-row wording:
+
+Finding: Normal dispatch prepares and validates the complete candidate; publication retains accepted sources and includes a resolved parent for changed sync, explicit waitsFor refresh, or changed normalized dependencies, requires accepted parent bytes and a selected named parent to agree with its in-place write target, and supplies prepared-batch overrides to dry-run rendering.
+
+Anchor:
+
+Source: mcp/src/agents_remember/application/task_docs/task_doc_tools.py:503-588; mcp/src/agents_remember/application/task_docs/task_doc_tools.py:357-431; mcp/src/agents_remember/application/task_docs/task_doc_tools.py
 
 - The public dispatcher enters the task-root lock before its private body prepares and validates the edit, then delegates preview/apply to the central boundary. [32]
 - Create and replace share `_build_doc`, which invokes the raw-section scaffolding boundary before task-model validation. [16]
@@ -347,7 +365,13 @@ an authoring lock and not an owner of claimed-operation lifecycle evidence.
 ### Reconciled Source Evidence
 
 
-- This facade exposes TaskDocTarget, TaskDocEdit and task_doc_tool, while scalar/prose implementations are imported from task_doc_content_edits. [26]
+Retained authoring-row wording:
+
+Finding: This facade exposes TaskDocTarget, TaskDocEdit and task_doc_tool, while scalar/prose implementations are imported from task_doc_content_edits.
+
+Anchor:
+
+Source: mcp/src/agents_remember/application/task_docs/task_doc_tools.py:160-171; mcp/src/agents_remember/application/task_docs/task_doc_tools.py:175-193; mcp/src/agents_remember/application/task_docs/task_doc_tools.py:357-431; mcp/src/agents_remember/application/task_docs/task_doc_tools.py:68-79; mcp/src/agents_remember/application/task_docs/task_doc_tools.py:163-174; mcp/src/agents_remember/application/task_docs/task_doc_tools.py:178-196
 ## Historical 260913-LCA-L5 Build-Time Master-Link Guard
 
 The following is the earlier guard account. R55 replaces the local `_require_bindable_leaf_authoring` check with central transaction master/row validation; no current implementation or permission should be inferred from the old helper name below.
@@ -390,7 +414,13 @@ constant, by `mcp/tests/test_tool_response_conformance.py::test_task_doc_descrip
 
 - Retained history: get formerly showed readable directGrant without an authored grant field. Current get/read_steps are removed; rendered/projected grant display is a separate input and never canonical task JSON. [30]
 
-- Canonical mutation, removed-read refusal, inline/by-file exclusivity and post-read byte budget, prepared-candidate validation, validly addressed answered sync failure, invalid named-master refusal, parent in-place guard and parent Order refresh remain separate boundaries. Shared field filtering belongs to phrases/content_edits; review evidence is not a grant. [31]
+Retained authoring-row wording:
+
+Finding: Canonical mutation, removed-read refusal, inline/by-file exclusivity and post-read byte budget, prepared-candidate validation, validly addressed answered sync failure, invalid named-master refusal, parent in-place guard and parent Order refresh remain separate boundaries. Shared field filtering belongs to phrases/content_edits; review evidence is not a grant.
+
+Anchor:
+
+Source: mcp/src/agents_remember/application/task_docs/task_doc_tools.py:463-500; mcp/src/agents_remember/application/task_docs/task_doc_tools.py:503-588; mcp/src/agents_remember/application/task_docs/task_doc_tools.py:277-298; mcp/src/agents_remember/application/task_docs/task_doc_tools.py:301-349; mcp/src/agents_remember/application/task_docs/task_doc_phrases.py:22-46; mcp/src/agents_remember/application/task_docs/task_doc_tools.py; mcp/src/agents_remember/application/task_docs/task_doc_tools.py:280-301; mcp/src/agents_remember/application/task_docs/task_doc_tools.py:304-352
 
 ## Current source evidence
 
@@ -403,8 +433,34 @@ constant, by `mcp/tests/test_tool_response_conformance.py::test_task_doc_descrip
 
 - Record-only memory identity comes from memory authority, never the sibling code root. [37]
 
+Retained authoring-row wording:
+
+Finding: File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence.
+
+Anchor:
+
+Source: mcp/src/agents_remember/application/task_docs/task_doc_tools.py:360-458; mcp/src/agents_remember/application/task_docs/task_doc_tools.py:363-460
+
+Retained authoring-row wording:
+
+Finding: File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence.
+
+Anchor:
+
+Source: mcp/src/agents_remember/application/task_docs/task_doc_tools.py:360-458; mcp/src/agents_remember/application/task_docs/task_doc_tools.py:363-460
+
+Retained authoring-row wording:
+
+Finding: Create defaults a new subTask to pending; replace preserves an omitted existing review and candidate validation checks caller authority, erasure and stage refusal before publication.
+
+Anchor:
+
+Source: mcp/src/agents_remember/application/task_docs/task_doc_tools.py
+
+- Leaf operations plan master sync, include it in previews, and write changed leaf/master docs together. Anchor: "master_sync = plan_master_sync(task_root" [8]
+- Normal dispatch prepares and validates the complete candidate; publication retains accepted sources and includes a resolved parent for changed sync, explicit waitsFor refresh, or changed normalized dependencies, requires accepted parent bytes and a selected named parent to agree with its in-place write target, and supplies prepared-batch overrides to dry-run rendering. [15]
+- This facade exposes TaskDocTarget, TaskDocEdit and task_doc_tool, while scalar/prose implementations are imported from task_doc_content_edits. [26]
+- Canonical mutation, removed-read refusal, inline/by-file exclusivity and post-read byte budget, prepared-candidate validation, validly addressed answered sync failure, invalid named-master refusal, parent in-place guard and parent Order refresh remain separate boundaries. Shared field filtering belongs to phrases/content_edits; review evidence is not a grant. [31]
 - File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence. [38]
-
 - File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence. [39]
-
 - Create defaults a new subTask to pending; replace preserves an omitted existing review and candidate validation checks caller authority, erasure and stage refusal before publication. [40]

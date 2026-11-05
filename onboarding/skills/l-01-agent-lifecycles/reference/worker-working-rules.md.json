@@ -1,0 +1,41 @@
+{
+  "path": "skills/l-01-agent-lifecycles/reference/worker-working-rules.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Evidence mapping and scripted Curator data are renewed at each freeze.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1d3b6d828975e7b542377f943e4c73761c6a1a61",
+            "content": "sha256:76902ea6e933e1dcd88ae4db7dc658ff2a913ebcf2eb86ae1a0c9b1907344d17",
+            "locator": {
+              "end": 9,
+              "kind": "line_range",
+              "start": 3
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Removal checks and sandbox launch-home use preserve their stated final-byte and credential boundaries.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1d3b6d828975e7b542377f943e4c73761c6a1a61",
+            "content": "sha256:4d923f8ce8d82479ebdb7e6eef09988a4c6a7d9791f59bab51ae077ebfa9c979",
+            "locator": {
+              "end": 17,
+              "kind": "line_range",
+              "start": 11
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -8,11 +8,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7e009d4b32c2f82a0a22371f55a3f93aaf5906d1",
+            "blob": "0efc8cc4ef2107ae05cd51f89d2c8949693ddb09",
             "content": "sha256:5b171cd9b3d429d8ddbc768fdf5e59bfaa1d8e3958ff5a981a998f968c986ed2",
             "locator": {
-              "kind": "symbol",
-              "name": "test_the_over_cap_fixture_really_crosses_the_cap"
+              "end": 131,
+              "kind": "line_range",
+              "start": 105
             }
           },
           "kind": "test"
@@ -24,11 +25,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "dfdb836bfc18d9b6ab8567fd5923c41a1170b0bf",
+            "blob": "57d707d85cd92b037c1dc86bfb3a310db97446eb",
             "content": "sha256:0ebd69c7f2f756c10cc61570742ea9630c3128a285fb0ed31d57ce800d4796e8",
             "locator": {
-              "kind": "symbol",
-              "name": "REPORT_DIRECTORY"
+              "end": 34,
+              "kind": "line_range",
+              "start": 34
             },
             "path": "scripts/e2e_harness/run_fresh_user.py"
           },
@@ -41,15 +43,45 @@
       "targets": [
         {
           "anchor": {
-            "blob": "dfdb836bfc18d9b6ab8567fd5923c41a1170b0bf",
+            "blob": "57d707d85cd92b037c1dc86bfb3a310db97446eb",
             "content": "sha256:440f3fd8fe4d19a66afa3ecddf13c0f91c9fb2f4726ac8c020ede725dd828257",
             "locator": {
-              "kind": "symbol",
-              "name": "main"
+              "end": 80,
+              "kind": "line_range",
+              "start": 49
             },
             "path": "scripts/e2e_harness/run_fresh_user.py"
           },
           "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The unchanged GOVERNED_HARNESS_MODULES tuple names fixture, scenario, reporting and runner; the current package-qualified loader/root account shares cached module identity, and the existence assertion checks each declared path.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0efc8cc4ef2107ae05cd51f89d2c8949693ddb09",
+            "content": "sha256:45e9fde04dd3507db32729bf74a83ad27f94aab7b7b7581077ce9cbe833cc19a",
+            "locator": {
+              "end": 86,
+              "kind": "line_range",
+              "start": 47
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "0efc8cc4ef2107ae05cd51f89d2c8949693ddb09",
+            "content": "sha256:7e195c87e6a36e46ccedc444705cf265d35cce4d41df94a93fd32863638b8dd7",
+            "locator": {
+              "end": 197,
+              "kind": "line_range",
+              "start": 193
+            }
+          },
+          "kind": "test"
         }
       ]
     },
@@ -58,11 +90,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7e009d4b32c2f82a0a22371f55a3f93aaf5906d1",
+            "blob": "0efc8cc4ef2107ae05cd51f89d2c8949693ddb09",
             "content": "sha256:a6895ccdbf4a698b6160ff1f54ba89ca00e2e77e22f75efad61ff3601d864f90",
             "locator": {
-              "kind": "symbol",
-              "name": "test_the_plain_fixture_stays_inside_every_cap"
+              "end": 143,
+              "kind": "line_range",
+              "start": 133
             }
           },
           "kind": "test"
@@ -74,11 +107,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7e009d4b32c2f82a0a22371f55a3f93aaf5906d1",
+            "blob": "0efc8cc4ef2107ae05cd51f89d2c8949693ddb09",
             "content": "sha256:5460b292f9a65abbdad07620944308e167dff75f844da8a0d372aead0ca07c5e",
             "locator": {
-              "kind": "symbol",
-              "name": "test_the_fixture_owns_everything_under_its_own_run_root"
+              "end": 161,
+              "kind": "line_range",
+              "start": 145
             }
           },
           "kind": "test"
@@ -90,11 +124,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7e009d4b32c2f82a0a22371f55a3f93aaf5906d1",
+            "blob": "0efc8cc4ef2107ae05cd51f89d2c8949693ddb09",
             "content": "sha256:8594016a671f475c4cc186876c41467e8f3781c6bcb9ae9838a31a38725bd30a",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_step_that_cannot_run_is_blocked_by_name_and_not_completed"
+              "end": 191,
+              "kind": "line_range",
+              "start": 167
             }
           },
           "kind": "test"
@@ -102,36 +137,40 @@
       ]
     },
     "5": {
-      "note": "Every governed harness module this suite answers for exists.\n\nAnchor: `test_every_governed_harness_module_this_suite_answers_for_exists` `GOVERNED_HARNESS_MODULES`",
+      "note": "Every governed harness module this suite answers for exists. Anchor: `test_every_governed_harness_module_this_suite_answers_for_exists` `GOVERNED_HARNESS_MODULES`",
       "targets": [
         {
           "anchor": {
-            "blob": "7e009d4b32c2f82a0a22371f55a3f93aaf5906d1",
-            "content": "sha256:4ee16273b01c1a9d9db5ea4c5319fbb5153f8407f03a53b915d9a88d9be4accf",
+            "blob": "0efc8cc4ef2107ae05cd51f89d2c8949693ddb09",
+            "content": "sha256:10f6dc6b8b0356fe26c4e37fdabeff4b41709ffc309afd81b0be89850e8d81c1",
             "locator": {
-              "kind": "file"
+              "end": 210,
+              "kind": "line_range",
+              "start": 1
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "7e009d4b32c2f82a0a22371f55a3f93aaf5906d1",
+            "blob": "0efc8cc4ef2107ae05cd51f89d2c8949693ddb09",
             "content": "sha256:7e195c87e6a36e46ccedc444705cf265d35cce4d41df94a93fd32863638b8dd7",
             "locator": {
-              "kind": "symbol",
-              "name": "test_every_governed_harness_module_this_suite_answers_for_exists"
+              "end": 197,
+              "kind": "line_range",
+              "start": 193
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "7e009d4b32c2f82a0a22371f55a3f93aaf5906d1",
+            "blob": "0efc8cc4ef2107ae05cd51f89d2c8949693ddb09",
             "content": "sha256:bb855847aae5de0d2d11982a02647fd6c86c592820983fcc06b17a44cc790bbf",
             "locator": {
-              "kind": "symbol",
-              "name": "GOVERNED_HARNESS_MODULES"
+              "end": 79,
+              "kind": "line_range",
+              "start": 74
             }
           },
           "kind": "test"
@@ -143,11 +182,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7e009d4b32c2f82a0a22371f55a3f93aaf5906d1",
+            "blob": "0efc8cc4ef2107ae05cd51f89d2c8949693ddb09",
             "content": "sha256:fe0eba03697351152f8bd778b6f74cfb28519f87192e72c6146156535b3de661",
             "locator": {
-              "kind": "symbol",
-              "name": "test_the_entry_point_requires_reports_and_defaults_the_run_root"
+              "end": 206,
+              "kind": "line_range",
+              "start": 199
             }
           },
           "kind": "test"
@@ -159,22 +199,24 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7e009d4b32c2f82a0a22371f55a3f93aaf5906d1",
-            "content": "sha256:025eb852de02efbf8609481986e70cf8f05e7d1538552365f3c9c2bcf8da444a",
+            "blob": "0efc8cc4ef2107ae05cd51f89d2c8949693ddb09",
+            "content": "sha256:b819394819d0d4498569e4c85154805aed0cea14a1f45e22941b2f0c18f89d61",
             "locator": {
-              "kind": "symbol",
-              "name": "HARNESS_ROOT"
+              "end": 49,
+              "kind": "line_range",
+              "start": 49
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "7e009d4b32c2f82a0a22371f55a3f93aaf5906d1",
+            "blob": "0efc8cc4ef2107ae05cd51f89d2c8949693ddb09",
             "content": "sha256:633f6b7913af21ade96398db2c1254693d73113e438b5482e98e78669538bd4b",
             "locator": {
-              "kind": "symbol",
-              "name": "MCP_SRC"
+              "end": 54,
+              "kind": "line_range",
+              "start": 54
             }
           },
           "kind": "test"
@@ -182,15 +224,16 @@
       ]
     },
     "8": {
-      "note": "A governed harness module is loaded by path, since the harness root is not a package.",
+      "note": "The loader uses importlib.import_module with the e2e_harness-qualified module name. The test and scenario share cached module objects and fixture-class identity; a missing module raises rather than yielding an empty fixture.",
       "targets": [
         {
           "anchor": {
-            "blob": "7e009d4b32c2f82a0a22371f55a3f93aaf5906d1",
-            "content": "sha256:3add22d894fbea4a91477e04606268568efd63b38892f7dbdcd29221d21e2161",
+            "blob": "0efc8cc4ef2107ae05cd51f89d2c8949693ddb09",
+            "content": "sha256:9e1a700fa51818581b7a371934fe95fc0f94cdbcc0c74c8f1ab3804084b98e1e",
             "locator": {
-              "kind": "symbol",
-              "name": "_load"
+              "end": 66,
+              "kind": "line_range",
+              "start": 59
             }
           },
           "kind": "test"

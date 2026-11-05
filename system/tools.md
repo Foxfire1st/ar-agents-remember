@@ -112,6 +112,18 @@ developer-requested quality run remains lifecycle-owned; focused host results do
 
 ---
 
+### Generated-copy checks
+
+From the source repository root, with its registered development Python environment, run the current canonical generators in check mode:
+
+```text
+python scripts/sync-projection-types.py --check
+python scripts/sync-skills.py --check
+python scripts/sync-runtime.py --check
+```
+
+These check the retained projection, skill and runtime copies. Repair a mismatch through its canonical owner and regenerate; do not edit a generated carrier by hand or restore retired mirrors.
+
 ### Ruff
 
 Ruff handles Python linting, import sorting, and formatting. The active rules are defined in `pyproject.toml`.
@@ -328,6 +340,7 @@ become production CRAP inputs.
 The host-side deterministic hook and PR check may run these from `dashboard/`:
 
 ```text
+npm run codegen      # panda codegen; create checkout-local generated styles before typecheck.
 npm run lint         # eslint .
 npm run typecheck    # tsc -b
 ```

@@ -362,14 +362,16 @@
       ]
     },
     "12": {
-      "note": "Pins delivered worker doctrine: freeze the candidate and hand it directly to the leaf's Reviewer; the Manager receives no routine report notice. A dashboard-started Worker has no parent, and a finished turn is not AR acceptance.",
+      "note": "The Worker handover test requires a first freeze notice to the Manager to start the Reviewer, followed by direct complete freeze handover to that Reviewer; the Manager does not relay it or receive routine report notices. It also checks parentless Worker and turn-end-versus-acceptance wording, with mutation cases for every required route clause.",
       "targets": [
         {
           "anchor": {
-            "blob": "74a051a27a76bfa2d21ab404b581911d5e391701",
-            "content": "sha256:aa48fe416b66858a80f0e78f0780efcad0ed9caa4b6123f32b4a29ba4f1a2ead",
+            "blob": "cf8666eec9cf0c9f0b803c0b7eff39be4718f9d8",
+            "content": "sha256:68e13b4b0280d43661f0c67fcbd35ca7a87e3ba3ccbe99b46027f3c11d604160",
             "locator": {
-              "kind": "file"
+              "end": 1177,
+              "kind": "line_range",
+              "start": 1
             },
             "path": "mcp/tests/test_lifecycle_turn_truth_doctrine.py"
           },
@@ -378,14 +380,16 @@
       ]
     },
     "13": {
-      "note": "Composes delivered architect/manager/orchestrator capsule text, requires current diff/evidence inspection and owner acceptance clauses, and detects removal of manager inspection; this proves instruction delivery rather than runtime no-mutation.",
+      "note": "The test joins the shipped Architect/review, Manager/coordination and Orchestrator/coordination source texts, checks their candidate-evidence and owner-acceptance clauses, and detects removal of Manager inspection. This checks that source composition’s wording; it runs no capsule admission/compilation and proves no runtime no-mutation property.",
       "targets": [
         {
           "anchor": {
-            "blob": "74a051a27a76bfa2d21ab404b581911d5e391701",
-            "content": "sha256:aa48fe416b66858a80f0e78f0780efcad0ed9caa4b6123f32b4a29ba4f1a2ead",
+            "blob": "cf8666eec9cf0c9f0b803c0b7eff39be4718f9d8",
+            "content": "sha256:68e13b4b0280d43661f0c67fcbd35ca7a87e3ba3ccbe99b46027f3c11d604160",
             "locator": {
-              "kind": "file"
+              "end": 1177,
+              "kind": "line_range",
+              "start": 1
             },
             "path": "mcp/tests/test_lifecycle_turn_truth_doctrine.py"
           },

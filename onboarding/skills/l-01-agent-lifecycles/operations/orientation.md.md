@@ -24,6 +24,18 @@ A final Curator-only region supplies the existing development producer boundary 
 No separate reference list: the file's sidecar carries the realization entries this leaf re-anchored.
 
 
-- Marks common text all-role and adds Curator-only serving-build producer constraints so they remain inline in this stage. [1]
+Retained authoring-row wording:
 
-- Marks common text all-role and adds Curator-only serving-build producer constraints so they remain inline in this stage. [2]
+Finding: Marks common text all-role and adds Curator-only serving-build producer constraints so they remain inline in this stage.
+
+Anchor:
+
+Source: skills/l-01-agent-lifecycles/operations/orientation.md:4-44
+
+- The current Curator-only orientation section binds deciding and writing to the starting tool server or its serving-build CLI and names clean main serving commit as the ruler. [2]
+
+- Marks common text all-role and adds Curator-only serving-build producer constraints so they remain inline in this stage.
+
+Source epoch: `skills/l-01-agent-lifecycles/operations/orientation.md` at Git blob `541f15fba478277772b410bd15974fb889feaabc`. The preceding retained wording is detached from the live citation number; the current clause is supported separately.
+
+- Marks common text all-role and adds Curator-only serving-build producer constraints so they remain inline in this stage. [1]

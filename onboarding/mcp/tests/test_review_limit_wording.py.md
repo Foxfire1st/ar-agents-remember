@@ -34,20 +34,26 @@ which is what makes it a class detector rather than a spelling list.
 
 ### Conventions
 
-`REVIEWER_STAGE_EQUIVALENTS` and `CURATOR_STAGE_EQUIVALENTS` hold role-scoped alternatives, and `STOPS` and
-`STAGE_PARTS` define the section boundary the facets are bound to.
+`REVIEWER_STAGE_EQUIVALENTS` holds Reviewer alternatives. Curator facets directly name its current stage-end obligations, including manual provenance and covered-write recovery. `STOPS` and `STAGE_PARTS` define the section boundary the facets are bound to.
 
 ### Invariants And Boundaries
 
 - A limit is stated as a property of the settings, never as a number in a text.
 - A facet outside the extracted section does not satisfy the check.
 
-## Evidence
+Worker stage completion requires the handover checks named in workspace.memoryRoot/system/coding-guidelines.md on a clean copy of final bytes. A dedicated control rejects replacement by or reinsertion of the retired fixed focused-tests/lint/type sentence. Curator stage facets directly preserve covered-write recovery, manual provenance and stop boundaries. These are source assertions/support behavior, not a fresh invocation, host result or AR acceptance.
 
+## Evidence
 - Positive detector controls and the intentional label and allowance exemptions. [1]
 
-- Stage facets are bound to the extracted section rather than satisfied by relocated source text. [2]
+- Stage facets are bound to the extracted section rather than satisfied by relocated source text. Anchor: `test_stage_section_binding_fails_on_deletion_and_relocation` `test_compiled_section_binding_fails_on_deletion_and_relocation` [2]
 
 - The Reviewer, Worker and Manager property and construction sentences survive source and compiled projections. [3]
 
-- Reviewer/Curator facet alternatives are explicitly role scoped. Presence, deletion and relocation checks still bind to the extracted Stage end section. Source and compiled controls assert the original surface is complete and mutation actually changes text; compiled relocation is now exercised as well as deletion. The four roles are parametrized individually; numeric budget detector and rule-nine cases remain. [4]
+- Reviewer facet alternatives are role scoped; Curator facets directly pin its current stage-end text, including manual provenance and covered-write recovery. Source and compiled deletion/relocation controls bind every facet to its own stage section and prove a real mutation; number and rule-nine guards remain. [Past-epoch source caption, detached from live reference 4. Recorded citation custody: mcp/tests/test_review_limit_wording.py blob a53d58ed9a10e4386e8fbc84dea41386c8f74893 (available); historical event commit not identified. No historical event or intent inferred.]
+
+Current source: Stage-end checks bind each role’s required facets to its own section in source and compiled text. Reviewer equivalents remain role-scoped; Curator facets include clean quality, installed-writer versus manual provenance and covered-write recovery. Deletion/relocation controls require a real mutation, while round-number and rule-nine guards remain.
+
+- Stage-end checks bind each role’s required facets to its own section in source and compiled text. Reviewer equivalents remain role-scoped; Curator facets include clean quality, installed-writer versus manual provenance and covered-write recovery. Deletion/relocation controls require a real mutation, while round-number and rule-nine guards remain. [4]
+
+- Worker stage completion requires the handover checks named in workspace.memoryRoot/system/coding-guidelines.md on a clean copy of final bytes. A dedicated control rejects replacement by or reinsertion of the retired fixed focused-tests/lint/type sentence. Curator stage facets directly preserve covered-write recovery, manual provenance and stop boundaries. These are source assertions/support behavior, not a fresh invocation, host result or AR acceptance. [5]

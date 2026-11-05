@@ -15,7 +15,7 @@ checks the document's own shape and collects every problem, so one refusal names
 
 ### Logic
 
-- **Entries** keep the producer's thirteen fields unchanged. Curator keys beside them decide what the entry
+- **Entries** keep producer-owned fields unchanged. Curator keys beside them decide what the entry
   becomes: `scope` and `admission` (optionally `status`) author a new invariant from the verbatim
   `statement`; `invariant_id` updates a stored invariant; `supersedes` takes `INV-…` IDs or entry IDs;
   `proofs: [{test, facet}]` records curator-confirmed proofs; every `target` becomes a realization entry.
@@ -134,7 +134,13 @@ is the hand-off shape:
 
 - The path check: remove plus path, and a path that is not a repository path, are named problems. [6]
 
-- The four refusals and the relocation, end to end. [7]
+Retained authoring-row wording:
+
+Finding: The four refusals and the relocation, end to end.
+
+Anchor:
+
+Source: mcp/tests/test_knowledge_writer.py
 
 
 ## 260928-MIK-L37 A Cover May Carry A Rationale
@@ -166,6 +172,12 @@ The reader adds three distinct inputs without resolving their authority. Case ev
 `_row` forwards `items` to `read_row_items` and attaches every refusal to the row position and subject. It no longer silently filters malformed tokens through `_identifiers`. This shape-reading boundary preserves string spelling for downstream item-format checks; it is not a worklist lookup and does not claim to authenticate an item ID.
 
 
+## Current source contract
+
+read_handoff_shapes uses the same entry, record and history decoders as full writer intake, but reads entries through read_producer_entry and skips attached-ruling enforcement. It therefore checks producer shapes without inventing Curator scope/admission decisions. read_handoff still takes the full path: _entry requires the applicable scope and new-invariant admission, and _read_document enforces ruling attachment. Both paths retain distinct-handle and shared field checks.
+
+- Shared producer shape decoding is separated from full Curator intake, without weakening full-writer scope/admission checks. [31]
+
 ## Evidence
 
 ### Docs References
@@ -186,35 +198,83 @@ The document's sections and their readers.
 - The template's `incidental` is written as `support`. [8]
 - One refusal reason: where, and what. [9]
 
-- An entry and its curator keys; a ruling authors no invariant; the tests its evidence cites come from `tests_named_in`. [10]
+Retained authoring-row wording:
+
+Finding: An entry and its curator keys; a ruling authors no invariant; the tests its evidence cites come from `tests_named_in`.
+
+Anchor:
+
+Source: mcp/src/agents_remember/application/knowledge_writer/handoff.py
 
 
-- The two test forms and the bare test module, read in order and once each. [11]
+Retained authoring-row wording:
 
-- Read the three sections, collecting every problem. [12]
+Finding: The two test forms and the bare test module, read in order and once each.
+
+Anchor:
+
+Source: mcp/src/agents_remember/application/knowledge_writer/handoff.py
+
+Retained authoring-row wording:
+
+Finding: Read the three sections, collecting every problem.
+
+Anchor:
+
+Source: mcp/src/agents_remember/application/knowledge_writer/handoff.py:318-321; mcp/src/agents_remember/application/knowledge_writer/handoff.py:334-371
 - A ruling no record names is refused, and so are proofs on it. [13]
 - Locators in the file form: symbol, line range, whole file. [14]
 - Targets through the shipped realization rules. [15]
 - Proofs carry the curator's facet. [16]
 
-- An entry: new invariant needs scope, admission and a statement. [17]
+Retained authoring-row wording:
+
+Finding: An entry: new invariant needs scope, admission and a statement.
+
+Anchor:
+
+Source: mcp/src/agents_remember/application/knowledge_writer/handoff.py
 
 
-- A record: kind, fields, and the writer-owned fields refused. [18]
+Retained authoring-row wording:
+
+Finding: A record: kind, fields, and the writer-owned fields refused.
+
+Anchor:
+
+Source: mcp/src/agents_remember/application/knowledge_writer/handoff.py
 
 
 
-- History input refuses caller-owned id/revision/sources and malformed considered examinations; the empty list remains intentional. [19]
+Retained authoring-row wording:
+
+Finding: History input refuses caller-owned id/revision/sources and malformed considered examinations; the empty list remains intentional.
+
+Anchor:
+
+Source: mcp/src/agents_remember/application/knowledge_writer/handoff.py
 
 
 
-- The row keys and the request field a planned row's `ref` travels in. [20]
+Retained authoring-row wording:
+
+Finding: The row keys and the request field a planned row's `ref` travels in.
+
+Anchor:
+
+Source: mcp/src/agents_remember/application/knowledge_writer/handoff.py
 
 - Four problems refused in one operation, each named. [21]
 - An entry that names no record is refused. [22]
 
 - Case evidence decodes JSON-quoted JavaScript/TypeScript test titles, merges them with Python references in appearance order and deduplicates them. [26]
-- The entry reader validates replace_evidence as a boolean before constructing the request, and only literal true sets its flag. [27]
+Retained authoring-row wording:
+
+Finding: The entry reader validates replace_evidence as a boolean before constructing the request, and only literal true sets its flag.
+
+Anchor:
+
+Source: mcp/src/agents_remember/application/knowledge_writer/handoff.py:642-674
 - History item parsing uses read_row_items and attaches its refusals to the specific row and subject. [28]
 
 ### Cross-Repo References
@@ -230,4 +290,21 @@ A proof's `test` may now be `{path, locator: {kind: "line_range", start, end}}`,
 
 - A test reference may name a case by its lines, and only a line-range locator says where a case sits. [29]
 
+Retained authoring-row wording:
+
+Finding: A `repoint` row item names one fired link's position, the path and the locator, and is refused if it renames a link.
+
+Anchor:
+
+Source: mcp/src/agents_remember/application/knowledge_writer/handoff.py
+
+- The four refusals and the relocation, end to end. [7]
+- An entry and its curator keys; a ruling authors no invariant; the tests its evidence cites come from `tests_named_in`. [10]
+- The two test forms and the bare test module, read in order and once each. [11]
+- Read the three sections, collecting every problem. [12]
+- An entry: new invariant needs scope, admission and a statement. [17]
+- A record: kind, fields, and the writer-owned fields refused. [18]
+- History input refuses caller-owned id/revision/sources and malformed considered examinations; the empty list remains intentional. [19]
+- The row keys and the request field a planned row's `ref` travels in. [20]
+- The entry reader validates replace_evidence as a boolean before constructing the request, and only literal true sets its flag. [27]
 - A `repoint` row item names one fired link's position, the path and the locator, and is refused if it renames a link. [30]

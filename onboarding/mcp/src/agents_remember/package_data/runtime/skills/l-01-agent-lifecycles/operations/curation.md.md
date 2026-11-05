@@ -7,7 +7,7 @@ MEMORY review stays separately sealed/counted and never opens or resets CODE rev
 This account controls the named changed seams; contradictory earlier card wording below is retained only as historical evidence. Unchanged role duties and R117 file-only wake/report transport are preserved. Source inspection supplies no new runtime test, CODE verdict, review counter or acceptance.
 
 
-- MEMORY review stays separately sealed/counted and never opens or resets CODE review. Beyond the settings limit the architect or developer authorizes the pass and Manager records it. Curator owns corrected input/body/coherence work; transaction steps and external effects stay with their owners. The installed-build quality/coherence outcome and direct Reviewer handover remain separate from independent acceptance. [4]
+- MEMORY review stays separately sealed/counted and never opens or resets CODE review. Beyond the settings limit the architect or developer authorizes the pass and Manager records it. Curator owns corrected input/body/coherence work; transaction steps and external effects stay with their owners. The installed-build quality/coherence outcome and direct Reviewer handover remain separate from independent acceptance.
 
 
 
@@ -38,9 +38,9 @@ Reconcile current intent, ruled change intent and implemented reality, maintain 
 
 MEMORY review keeps separate sealed reports, finding IDs and its own pass count, opening no CODE round or resetting its verdict/baseline. Its budget is the same settings limit as CODE; a further pass needs the Architect’s or developer’s words recorded by the Manager.
 
-On an AR-launched Paseo capsule, taskDocReadArgs supplies exact rendered_path and json_path file locations, opened with the harness's own file tools. task_doc writes and does not read. AR calls use agents-remember-task and the actual reader schemas: knowledge_read takes memoryRoot; only read_ar_files carries task_context with the canonical task and enclosure contract. Read immutable baseline/candidate knowledge before semantic changes, contain outputs in the selected memory root and read admitted records back.
+On an AR-launched Paseo capsule, `documents[0].taskDocReadArgs` supplies exact rendered_path and json_path file locations, opened with the harness's own file tools. task_doc writes and does not read. AR calls use agents-remember-task and the actual reader schemas: knowledge_read takes memoryRoot; only read_ar_files carries task_context with the canonical task and enclosure contract. Read immutable baseline/candidate knowledge before semantic changes, contain outputs in the selected memory root and read admitted records back.
 
-MIK’s writer remains authoritative. On converted memory, admitted `knowledge-ingest --contract … --list … --authorization-ref … --commit --json` writes files with `entries`, `records` and `history`, including worklist/onboarding judgments and governing decisions; it publishes no dataset and refuses `--baseline`, `--publish` and `--publish-to`. Capsule-specific missing writer/command admission is reported as records not written; it does not erase MIK’s writer or admit another runtime/internal writer.
+MIK’s writer remains authoritative. On converted memory, normally admitted `knowledge-ingest --contract … --list … --authorization-ref … --commit --json` writes files with `entries`, `records` and `history`, including worklist/onboarding judgments and governing decisions; it publishes no dataset and refuses `--baseline`, `--publish` and `--publish-to`. Capsule-specific missing writer/command admission is reported as records not written; it does not erase MIK’s writer or admit another runtime/internal writer.
 
 Normal curation requires the complete contract-scoped memory-quality operation, repair or exact blocked escalation of every curator-actionable finding, and reruns until the raw quality checklist is ready. Missing/stale coherence is cleared by the existing prepare → publish → validate authority. Scoped checks cannot stand for that full operation.
 
@@ -56,7 +56,7 @@ Author semantic scope and each target’s rationale. Examine a family’s own gu
 
 Repository foundation is regular task work: the user-started Architect opens the real foundation task, standalone or under a master or sprint, and the Curator seat starts on that task document with its actual enclosure contract. Bootstrap reads and reports the foundation state and names the Architect as the next step; no instructed session substitutes for task admission. Foundation authoring uses the contract-scoped leaf writer, and the developer's commit word is the whole of the write act. No invented task document or enclosure manufactures either admission.
 
-- Bound curation intake reads supplied canonical files; knowledge_read uses memoryRoot and only read_ar_files uses task_context. Foundation authoring is regular task work inside the task the user-started Architect opens; the Curator seat is started on that task document with its actual enclosure contract, and no instructed session substitutes for task admission. \[6] Anchor: Foundation carrier and admission [7]
+- Bound curation intake reads supplied canonical files; knowledge_read uses memoryRoot and only read_ar_files uses task_context. Foundation authoring is regular task work inside the task the user-started Architect opens; the Curator seat is started on that task document with its actual enclosure contract, and no instructed session substitutes for task admission. \[6] Anchor: Foundation carrier and admission
 
 ## Conventions
 
@@ -64,7 +64,7 @@ Canonical skills/l-01-agent-lifecycles/operations/curation.md owns the instructi
 
 ## Invariants And Boundaries
 
-Do not edit source/task/lifecycle/Git state, invent a dataset destination or source stamp, fabricate family membership, or route a refusal through another installation. Native clarification uses the actual parent/task role via bound messaging; developer questions go to the parent when one exists, and only a parentless session uses its own chat. The former own-chat-only account is historical, not the current route.
+Do not edit source/task-status/lifecycle/Git state, invent a dataset destination or source stamp, fabricate family membership, or route a refusal through another installation. Native clarification uses the actual parent/task role via bound messaging; developer questions go to the parent when one exists, and only a parentless session uses its own chat. The former own-chat-only account is historical, not the current route.
 
 ## The Same Authoring Fields, Mirrored (MIK-R48)
 
@@ -102,13 +102,33 @@ No additional work is asserted by this card. Actual project publication and sema
 
 ## Evidence
 
+
+Superseded card wording retained for custody (not certified as true of any source epoch or measured candidate):
+
+> Finding: Bound native intake, report-only admission and converted MIK file writer.
+>
+> Anchor: lines 54-113
+>
+> Source caption: mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/operations/curation.md:54-113
+
+> Finding: Exact family/sibling/source coverage and admitted comparison producer.
+>
+> Anchor: lines 114-179
+>
+> Source caption: mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/operations/curation.md:114-179
+
+> Finding: Complete normal curation guards, role/write prohibitions and handoff.
+>
+> Anchor: lines 181-310
+>
+> Source caption: mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/operations/curation.md:181-310
+
+
 ### Repo-Internal References
 
-| Finding | Anchor | References |
-| --- | --- | --- |
-| Bound native intake, report-only admission and converted MIK file writer. | lines 54-113 | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/operations/curation.md:54-113 |
-| Exact family/sibling/source coverage and admitted comparison producer. | lines 114-179 | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/operations/curation.md:114-179 |
-| Complete normal curation guards, role/write prohibitions and handoff. | lines 181-310 | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/operations/curation.md:181-310 |
+- Bound native intake, converted-card pre-read, selected-root writer ownership and the starting-server ruler. [8]
+- Normal workflow reconciles meaning, states invariant scope and grouping guarantees, and runs full quality and independent fact-check before bounded repair. [9]
+- Authority/failure boundaries preserve source and transaction ownership, tool scope and coherence; handoff goes directly to Reviewer and permission refusals are not bypassed. [10]
 
 
 - An independent nonauthor fact-checks every changed curated statement and history-row judgment before converted-memory closeout; blocking repairs rerun full quality. The check is a lifecycle step that closeout does not mechanically perform. [5]
@@ -142,3 +162,6 @@ No meaningful cross-repository implementation dependency.
 
 
 - Bound curation intake reads supplied canonical files; knowledge_read uses memoryRoot and only read_ar_files uses task_context.
+
+- Memory review has separate sealed reports, IDs and pass count, preserves code state and uses the code-review limit; extra passes need Architect/developer approval recorded by Manager. Curation requires the complete quality operation and independent fact-check, keeps direct Reviewer handover, and leaves acceptance and transactions to their owners. [4]
+- Bound curation intake reads the supplied canonical files and scopes its writer to the selected memory root. The intake detail gives knowledge_read workspace.memoryRoot and read_ar_files task_context; the foundation detail requires the real task opened by the user-started Architect and its actual enclosure contract, with no fabricated task or instructed-session substitute. [7]

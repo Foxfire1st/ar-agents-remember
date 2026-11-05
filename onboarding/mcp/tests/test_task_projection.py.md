@@ -124,7 +124,7 @@ The cases, the fixture value objects that vary one fact at a time, and the seam 
 - The failure-taxonomy case: each unresolvable input has its own status. [7]
 - The seam case: the provider satisfies the compiler protocol, and the knowledge channel is optional. [8]
 - The package the cases exercise, whose read plan they pin. [9]
-- The compiler seam these cases verify through, including its digest refusal. [10]
+- The compiler seam these cases verify through, including its digest refusal.
 
 - The fail-closed loader: it raises for any test file without an explicit lane. [16]
 - The error type the loader raises. [17]
@@ -157,3 +157,5 @@ No meaningful cross-repo references found.
 
 
 - The retained stored-operation-record row is separate from the added test_task_projection.py membership row. Catalog membership selects evidence and does not establish execution. [21]
+
+- The compiler seam these cases verify through, including its digest refusal. [10]

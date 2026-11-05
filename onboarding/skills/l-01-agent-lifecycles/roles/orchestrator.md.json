@@ -3,12 +3,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "2d58c15304831b65be687127ce05ace5c0f87cec",
+        "blob": "5dbb22b1e2e5bdf76448b97bbfe180badc453f2d",
         "content": "sha256:fb1cf7d88495c263b9de3fa539e40bf476622dda21da761de3f2f807d56d1d4b",
         "locator": {
-          "end": 36,
+          "end": 48,
           "kind": "line_range",
-          "start": 34
+          "start": 46
         }
       },
       "id": "RLZ-20AC2N",
@@ -22,8 +22,8 @@
     },
     {
       "anchor": {
-        "blob": "2d58c15304831b65be687127ce05ace5c0f87cec",
-        "content": "sha256:e1a2eef2ab61b6c4b36edb85b55641d0b0460fb89690d702aaf89192901bd682",
+        "blob": "5dbb22b1e2e5bdf76448b97bbfe180badc453f2d",
+        "content": "sha256:d76954ce7ecb2fb0ff8511c3d3ddcc7b20ea0de25523449f63ea7088be3a91b1",
         "locator": {
           "kind": "file"
         }
@@ -39,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "2d58c15304831b65be687127ce05ace5c0f87cec",
+        "blob": "5dbb22b1e2e5bdf76448b97bbfe180badc453f2d",
         "content": "sha256:48db0f66afbbe06e68d88b492073362b6bfe09bc1da519a689ff19dfb0efab6c",
         "locator": {
           "end": 8,
@@ -58,12 +58,12 @@
     },
     {
       "anchor": {
-        "blob": "2d58c15304831b65be687127ce05ace5c0f87cec",
-        "content": "sha256:01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+        "blob": "5dbb22b1e2e5bdf76448b97bbfe180badc453f2d",
+        "content": "sha256:7b412bc2640f985bc311cb505711aca38ad48ab8729baead850c5776f1aa5c25",
         "locator": {
-          "end": 31,
+          "end": 40,
           "kind": "line_range",
-          "start": 31
+          "start": 40
         }
       },
       "id": "RLZ-D5ZTR6",
@@ -77,12 +77,12 @@
     },
     {
       "anchor": {
-        "blob": "2d58c15304831b65be687127ce05ace5c0f87cec",
-        "content": "sha256:01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+        "blob": "5dbb22b1e2e5bdf76448b97bbfe180badc453f2d",
+        "content": "sha256:5b5abd5ab67d55a2d84a38c4e7f1782ebdea4a76d7f6fcf7bcc76c262ee643f3",
         "locator": {
-          "end": 17,
+          "end": 20,
           "kind": "line_range",
-          "start": 17
+          "start": 20
         }
       },
       "id": "RLZ-HB7AP1",
@@ -96,8 +96,8 @@
     },
     {
       "anchor": {
-        "blob": "2d58c15304831b65be687127ce05ace5c0f87cec",
-        "content": "sha256:e1a2eef2ab61b6c4b36edb85b55641d0b0460fb89690d702aaf89192901bd682",
+        "blob": "5dbb22b1e2e5bdf76448b97bbfe180badc453f2d",
+        "content": "sha256:d76954ce7ecb2fb0ff8511c3d3ddcc7b20ea0de25523449f63ea7088be3a91b1",
         "locator": {
           "kind": "file"
         }
@@ -113,12 +113,12 @@
     },
     {
       "anchor": {
-        "blob": "2d58c15304831b65be687127ce05ace5c0f87cec",
-        "content": "sha256:8bbcbc2df513dc45bbdecf3c5ba2d56311fecd9ced8261daf7e0f642ca31b7f7",
+        "blob": "5dbb22b1e2e5bdf76448b97bbfe180badc453f2d",
+        "content": "sha256:f02c5bee267fb10dbde95498e3a0697e76e5c76f4a4853c4f1e5349ef1d7a94f",
         "locator": {
-          "end": 50,
+          "end": 28,
           "kind": "line_range",
-          "start": 1
+          "start": 8
         }
       },
       "id": "RLZ-NHDAV2",
@@ -132,8 +132,8 @@
     },
     {
       "anchor": {
-        "blob": "2d58c15304831b65be687127ce05ace5c0f87cec",
-        "content": "sha256:e1a2eef2ab61b6c4b36edb85b55641d0b0460fb89690d702aaf89192901bd682",
+        "blob": "5dbb22b1e2e5bdf76448b97bbfe180badc453f2d",
+        "content": "sha256:d76954ce7ecb2fb0ff8511c3d3ddcc7b20ea0de25523449f63ea7088be3a91b1",
         "locator": {
           "kind": "file"
         }
@@ -149,8 +149,8 @@
     },
     {
       "anchor": {
-        "blob": "2d58c15304831b65be687127ce05ace5c0f87cec",
-        "content": "sha256:e1a2eef2ab61b6c4b36edb85b55641d0b0460fb89690d702aaf89192901bd682",
+        "blob": "5dbb22b1e2e5bdf76448b97bbfe180badc453f2d",
+        "content": "sha256:d76954ce7ecb2fb0ff8511c3d3ddcc7b20ea0de25523449f63ea7088be3a91b1",
         "locator": {
           "kind": "file"
         }
@@ -166,12 +166,12 @@
     },
     {
       "anchor": {
-        "blob": "2d58c15304831b65be687127ce05ace5c0f87cec",
-        "content": "sha256:01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+        "blob": "5dbb22b1e2e5bdf76448b97bbfe180badc453f2d",
+        "content": "sha256:9b91705cae4f2c2bf734b3eb50e31634ac665953e2ceecbc0a211ceccc1a7573",
         "locator": {
-          "end": 21,
+          "end": 26,
           "kind": "line_range",
-          "start": 21
+          "start": 26
         }
       },
       "id": "RLZ-YF74AS",
@@ -185,12 +185,12 @@
     },
     {
       "anchor": {
-        "blob": "2d58c15304831b65be687127ce05ace5c0f87cec",
-        "content": "sha256:01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+        "blob": "5dbb22b1e2e5bdf76448b97bbfe180badc453f2d",
+        "content": "sha256:75f5c37f0f36c2360cd587fa573bc6b588ccc8f3ae9dab1f9163f3a7c6be63c2",
         "locator": {
-          "end": 25,
+          "end": 30,
           "kind": "line_range",
-          "start": 25
+          "start": 30
         }
       },
       "id": "RLZ-ZP7734",
@@ -205,14 +205,40 @@
   ],
   "references": {
     "16": {
-      "note": "The seat coordinates one sprint above Managers and verifies delivery without taking over the loop.",
+      "note": "Orchestrator coordinates one selected sprint through its Managers, follows started work through canonical facts and verifies delivery without taking over the Manager's leaf diff, repair and evidence loop.",
       "targets": [
         {
           "anchor": {
-            "blob": "2d58c15304831b65be687127ce05ace5c0f87cec",
-            "content": "sha256:e1a2eef2ab61b6c4b36edb85b55641d0b0460fb89690d702aaf89192901bd682",
+            "blob": "5dbb22b1e2e5bdf76448b97bbfe180badc453f2d",
+            "content": "sha256:6c4384da6ad3888cfbf52d2bd1ebe56e9e9f0ff5942dd984df5d2ebccff058d1",
             "locator": {
-              "kind": "file"
+              "end": 12,
+              "kind": "line_range",
+              "start": 8
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5dbb22b1e2e5bdf76448b97bbfe180badc453f2d",
+            "content": "sha256:bf467646c56e39de1127e8e7555188f9ef1be55ae50d66e11f5726155fd0e931",
+            "locator": {
+              "end": 30,
+              "kind": "line_range",
+              "start": 20
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5dbb22b1e2e5bdf76448b97bbfe180badc453f2d",
+            "content": "sha256:6c61ba22a9cc4ff30212b6b41381b3c7cdaec6fc9af4df16e85c75a6a2666bdb",
+            "locator": {
+              "end": 44,
+              "kind": "line_range",
+              "start": 38
             }
           },
           "kind": "code"
@@ -220,14 +246,16 @@
       ]
     },
     "17": {
-      "note": "The owed result is collected whole in the Result contract.",
+      "note": "The Orchestrator Result contract names its rulings and status artifacts, developer-decision and final report-path messages, verified Manager delivery and separately addressed reports, findings, review, curation and publication.",
       "targets": [
         {
           "anchor": {
-            "blob": "2d58c15304831b65be687127ce05ace5c0f87cec",
-            "content": "sha256:e1a2eef2ab61b6c4b36edb85b55641d0b0460fb89690d702aaf89192901bd682",
+            "blob": "5dbb22b1e2e5bdf76448b97bbfe180badc453f2d",
+            "content": "sha256:fb1cf7d88495c263b9de3fa539e40bf476622dda21da761de3f2f807d56d1d4b",
             "locator": {
-              "kind": "file"
+              "end": 48,
+              "kind": "line_range",
+              "start": 46
             }
           },
           "kind": "code"
@@ -235,14 +263,28 @@
       ]
     },
     "18": {
-      "note": "Developer questions go to the parent Architect; children's questions are answered or passed up.",
+      "note": "A parent-started Orchestrator sends only developer-needed matters and permission notices upward, continues independent work when delivery fails, and uses its own chat for developer decisions when dashboard-started without a parent.",
       "targets": [
         {
           "anchor": {
-            "blob": "2d58c15304831b65be687127ce05ace5c0f87cec",
-            "content": "sha256:e1a2eef2ab61b6c4b36edb85b55641d0b0460fb89690d702aaf89192901bd682",
+            "blob": "5dbb22b1e2e5bdf76448b97bbfe180badc453f2d",
+            "content": "sha256:1e4a6adfee35e24800ff976ff699b7d9412c2d79c516cde2498d75c1477a0c3b",
             "locator": {
-              "kind": "file"
+              "end": 32,
+              "kind": "line_range",
+              "start": 24
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5dbb22b1e2e5bdf76448b97bbfe180badc453f2d",
+            "content": "sha256:51e2e402aee8537172f9a114cb796441138d62018df545233ff2d6211e99a3a2",
+            "locator": {
+              "end": 72,
+              "kind": "line_range",
+              "start": 68
             }
           },
           "kind": "code"
@@ -250,14 +292,16 @@
       ]
     },
     "19": {
-      "note": "The Orchestrator may start Investigator under its own sprint as a child concern and report carrier.",
+      "note": "Orchestrator may assign an Investigator a concern under its own sprint or sprint/master, never a leaf; the scoped concern is its first message to the returned Investigator ID.",
       "targets": [
         {
           "anchor": {
-            "blob": "2d58c15304831b65be687127ce05ace5c0f87cec",
-            "content": "sha256:e1a2eef2ab61b6c4b36edb85b55641d0b0460fb89690d702aaf89192901bd682",
+            "blob": "5dbb22b1e2e5bdf76448b97bbfe180badc453f2d",
+            "content": "sha256:95c9a2f523fa17b7ed8be274e4b249ce3c414db9bf1e8887397d4066d425d6db",
             "locator": {
-              "kind": "file"
+              "end": 28,
+              "kind": "line_range",
+              "start": 20
             }
           },
           "kind": "code"
@@ -265,16 +309,52 @@
       ]
     },
     "20": {
-      "note": "The only changed permission seam now answers held, propagates the named child permission upward, and leaves eventual delivery to the product; no prompt is answered and no duplicate message is sent. Sprint/master containment, Manager coordination, ordinary role/task returns and actual-parent-ID developer questions retain their distinct authority.",
+      "note": "Orchestrator keeps canonical sprint/master containment, Manager leaf ownership, separately addressed review/publication evidence and actual-parent developer questions. Held child permissions use the coordination notice route; covered correct-write recovery is separate from product guards.",
       "targets": [
         {
           "anchor": {
-            "blob": "2d58c15304831b65be687127ce05ace5c0f87cec",
-            "content": "sha256:e1a2eef2ab61b6c4b36edb85b55641d0b0460fb89690d702aaf89192901bd682",
+            "blob": "5dbb22b1e2e5bdf76448b97bbfe180badc453f2d",
+            "content": "sha256:2dc73201262a5766c8600b548e299079fd83540d21c57eba05eec3ab72e85169",
             "locator": {
-              "end": 56,
+              "end": 14,
               "kind": "line_range",
-              "start": 1
+              "start": 8
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5dbb22b1e2e5bdf76448b97bbfe180badc453f2d",
+            "content": "sha256:4bcbba83b181c08a796af13e760146a87f2065cc254c5c1c045f5b5c0caf2889",
+            "locator": {
+              "end": 32,
+              "kind": "line_range",
+              "start": 20
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5dbb22b1e2e5bdf76448b97bbfe180badc453f2d",
+            "content": "sha256:6c61ba22a9cc4ff30212b6b41381b3c7cdaec6fc9af4df16e85c75a6a2666bdb",
+            "locator": {
+              "end": 44,
+              "kind": "line_range",
+              "start": 38
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5dbb22b1e2e5bdf76448b97bbfe180badc453f2d",
+            "content": "sha256:51e2e402aee8537172f9a114cb796441138d62018df545233ff2d6211e99a3a2",
+            "locator": {
+              "end": 72,
+              "kind": "line_range",
+              "start": 68
             }
           },
           "kind": "code"

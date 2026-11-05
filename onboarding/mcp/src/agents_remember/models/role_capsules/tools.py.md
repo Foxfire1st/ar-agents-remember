@@ -58,7 +58,7 @@ No relevant documentation found after checking live sources.
 - The admitted policy snapshot and the request/`ToolId` shapes this module works with. [1]
 - The refusal code for a request outside the admitted snapshot. [2]
 
-- The compiler step that narrows requests before sealing the digest. [3]
+- The compiler step that narrows requests before sealing the digest.
 
 
 - The architect seat's declared tool requests in the canonical manifest, which name `role_message` and `role_start` for child-seat messaging. [4]
@@ -70,3 +70,5 @@ No relevant documentation found after checking live sources.
 No sibling-repository contract defines this narrowing rule.
 
 No meaningful cross-repo references found.
+
+- The compiler step that narrows requests before sealing the digest. Anchor: `compile_role_capsule` [3]

@@ -100,7 +100,26 @@ Inherited reference 2 commentary (not a revalidated target):
 The byte-equal package copy is a distribution carrier, not an independent role, task or permission authority. Whole-file source evidence does not certify inherited statements, execution, grading or the whole card.
 
 
+Retained authoring-row wording:
+
+Finding: The authored source owns this contract; the distribution copy is not a separate authority.
+
+Anchor:
+
+Source: skills/l-01-agent-lifecycles/operations/recovery.md
+
+
+- Marks common text all-role and adds Curator-only serving-build constraints for recovery.
+
+Source epoch: `skills/l-01-agent-lifecycles/operations/recovery.md` at Git blob `3f533feee9cabfd511381109657b10c3cbf0b859`. The preceding retained wording is detached from the live citation number; the current clause is supported separately.
+
+Retained authoring-row wording:
+
+Finding: The current recovery instruction keeps same-identity recovery and the clean-sync reviewed-result rule, then binds Curator deciding and writing to the serving build.
+
+Anchor:
+
+Source: skills/l-01-agent-lifecycles/operations/recovery.md:4-19
+
 - The authored source owns this contract; the distribution copy is not a separate authority. [1]
-
-
-- Marks common text all-role and adds Curator-only serving-build constraints for recovery. [2]
+- The current recovery instruction keeps same-identity recovery and the clean-sync reviewed-result rule, then binds Curator deciding and writing to the serving build. [2]

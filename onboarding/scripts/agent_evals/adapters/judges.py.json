@@ -1,0 +1,40 @@
+{
+  "path": "scripts/agent_evals/adapters/judges.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "ca1fad6cffba7fa4eeb8946285e0e4d96be4a4ed",
+        "content": "sha256:87019a5f83b5cd85814de42238eb289fcabbc45ca93344d9a6efc519d01cb9ae",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-JJD8Z6",
+      "invariant": "INV-JCSQVZ",
+      "origin": {
+        "handoffEntry": "L62-fd6462b8-judge-execution",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "It declares judge profiles and identical task instructions and records opened, searched and not-seen observations without a measurable completeness rate.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The source defines this file's responsibility and the boundaries described here.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ca1fad6cffba7fa4eeb8946285e0e4d96be4a4ed",
+            "content": "sha256:87019a5f83b5cd85814de42238eb289fcabbc45ca93344d9a6efc519d01cb9ae",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

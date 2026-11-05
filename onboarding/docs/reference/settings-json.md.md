@@ -29,11 +29,19 @@ The role settings reference now documents a single user-owned `stepUp` alternati
 ## Evidence
 
 
-- Five settings homes/cadences, exact user-owned open/close commands and nonmutating live-mode reporting are declared by the current reference. [4]
+Historical source account (detached from live reference 4; docs/reference/settings-json.md blob 6d8cc9b75acea207484aeaf2f87c0e5cafd6640e):
+
+- Five settings homes/cadences, exact user-owned open/close commands and nonmutating live-mode reporting are declared by the current reference.
+
+- The reference states five settings homes/cadences, explicit user-owned open/close commands and nonmutating exact-path mode reporting; role agents do not acquire user-settings write authority.
 
 
 
-- The complete reference separates current host role/features from accepted-but-unused retired settings and product answer authority. [5]
+Historical source account (detached from live reference 5; docs/reference/settings-json.md blob 6d8cc9b75acea207484aeaf2f87c0e5cafd6640e):
+
+- The complete reference separates current host role/features from accepted-but-unused retired settings and product answer authority.
+
+- The reference distinguishes per-use host/role choices and permission authority from retained accepted-but-unread settings. Its new receipt-scope and same-tool correct-input canonical-amendment passages preserve permission, read/check/validation/sync and transaction stops.
 
 
 
@@ -41,13 +49,26 @@ No external Domain Documentation source or fresh executed acceptance is inferred
 
 
 
-- The new roles table/paragraphs document one user-layer, nonnested stepUp alternative, default positive afterTries=3 only for Worker/Curator, code versus memory recorded-round tries, record-only nontries and exact-key refusals. The next start validates catalog choices before normal idle-seat retirement; active turn/prompt refuses. Explicit step_up reason/UI Step up use the same alternative without adding permission authority. Cross-harness/model omissions use identified host defaults, durable decisions retain task choice, and reviewer limits/findings do not reset. Removing the alternative changes the next start, not the running actor. [6]
+Historical source account (detached from live reference 6; docs/reference/settings-json.md blob 6d8cc9b75acea207484aeaf2f87c0e5cafd6640e):
+
+- The new roles table/paragraphs document one user-layer, nonnested stepUp alternative, default positive afterTries=3 only for Worker/Curator, code versus memory recorded-round tries, record-only nontries and exact-key refusals. The next start validates catalog choices before normal idle-seat retirement; active turn/prompt refuses. Explicit step_up reason/UI Step up use the same alternative without adding permission authority. Cross-harness/model omissions use identified host defaults, durable decisions retain task choice, and reviewer limits/findings do not reset. Removing the alternative changes the next start, not the running actor.
+
+- The user-owned nonnested stepUp alternative defaults afterTries to three only for Worker/Curator recorded code/memory rounds; record-only repeats do not count. Next-start validation and idle replacement preserve permission, host-default provenance, task decisions and review limits; removing it affects later starts only.
 
 
 
 
-- The same `orchestration.roles` family admits the non-seat capability id `review-presenter`: every rule above validates its row, it is never dispatchable as a lifecycle seat, and it applies `harness`, `model`, `effort`, `mode`, `serviceTier`, `featureValues` and `notes` through the native launch. A row naming `stepUp` alone refuses that capability's launch by name because it owns no seat replacement ladder. [7]
+Historical source account (detached from live reference 7; docs/reference/settings-json.md blob 6d8cc9b75acea207484aeaf2f87c0e5cafd6640e):
+
+- The same `orchestration.roles` family admits the non-seat capability id `review-presenter`: every rule above validates its row, it is never dispatchable as a lifecycle seat, and it applies `harness`, `model`, `effort`, `mode`, `serviceTier`, `featureValues` and `notes` through the native launch. A row naming `stepUp` alone refuses that capability's launch by name because it owns no seat replacement ladder.
+
+- The same role-settings family admits review-presenter as a validated non-seat capability; native launch uses its configured choices, but a stepUp-only capability row refuses because it has no seat-replacement ladder.
 
 
 
 **L184 — NEW-R192-EXTRA-ARGS.** This is the document that states what the settings file's keys mean, so a new key has to be described here rather than inferred from code. The obligation this leaf records for this place is stated in the invariant named here; the card's earlier account of this file stands, and this paragraph adds what the change made true.
+
+- The reference states five settings homes/cadences, explicit user-owned open/close commands and nonmutating exact-path mode reporting; role agents do not acquire user-settings write authority. [4]
+- The reference distinguishes per-use host/role choices and permission authority from retained accepted-but-unread settings. Its new receipt-scope and same-tool correct-input canonical-amendment passages preserve permission, read/check/validation/sync and transaction stops. [5]
+- The user-owned nonnested stepUp alternative defaults afterTries to three only for Worker/Curator recorded code/memory rounds; record-only repeats do not count. Next-start validation and idle replacement preserve permission, host-default provenance, task decisions and review limits; removing it affects later starts only. [6]
+- The same role-settings family admits review-presenter as a validated non-seat capability; native launch uses its configured choices, but a stepUp-only capability row refuses because it has no seat-replacement ladder. [7]

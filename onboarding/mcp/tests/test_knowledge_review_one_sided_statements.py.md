@@ -201,10 +201,14 @@ Retired at the fifth freeze d59c3493: mcp/tests/evidence-lifecycle.toml:3309-330
 
 - The `consumer_scope = "exact"` artifact whose list this module joined.
 
-Retired at the fifth freeze d59c3493: mcp/tests/evidence-lifecycle.toml:3339-3367 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit ad0c3a1296eae9863f6505d3fabc0c73e17bd166. Retired means the anchor no longer stands, not that the cited subject was deleted [17]
+Retired at the fifth freeze d59c3493: mcp/tests/evidence-lifecycle.toml:3339-3367 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit ad0c3a1296eae9863f6505d3fabc0c73e17bd166. Retired means the anchor no longer stands, not that the cited subject was deleted [Past-epoch source caption, detached from live reference 17. Recorded citation custody: mcp/tests/evidence-lifecycle.toml blob b9e272ef623574e517181e36b3dc949a3ac78e19 (available); recorded commits code d59c3493ec682c2ab58fd9d1ed127d08038e90c4, code ad0c3a1296eae9863f6505d3fabc0c73e17bd166. No historical event or intent inferred.]
+
+Current source: The current lifecycle catalog declares test_knowledge_review_one_sided_statements.py as an exact consumer of mcp/tests/_user_settings_guard.py, mcp/tests/anchor_fixture_models.py, mcp/tests/fixtures/repository_profiles/node/package-lock.json, mcp/tests/knowledge_rows_test_support.py, mcp/tests/read_scope_test_support.py. These current declarations establish no invocation or passing result; no former narrow-window identity is inferred.
 
 ## Retirements
 
 - Retired at the fifth freeze d59c3493: mcp/tests/evidence-lifecycle.toml:3309-3309 - the bytes it recorded now occur 32 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:1672-1672 - the bytes it recorded now occur 8 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.
 
 - Retired at the fifth freeze d59c3493: mcp/tests/evidence-lifecycle.toml:3339-3367 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit ad0c3a1296eae9863f6505d3fabc0c73e17bd166. Retired means the anchor no longer stands, not that the cited subject was deleted.
+
+- The current lifecycle catalog declares test_knowledge_review_one_sided_statements.py as an exact consumer of mcp/tests/_user_settings_guard.py, mcp/tests/anchor_fixture_models.py, mcp/tests/fixtures/repository_profiles/node/package-lock.json, mcp/tests/knowledge_rows_test_support.py, mcp/tests/read_scope_test_support.py. These current declarations establish no invocation or passing result; no former narrow-window identity is inferred. [17]

@@ -427,12 +427,12 @@
         },
         {
           "anchor": {
-            "blob": "2f3ce46a32a38d86f474252bb23d8081e91f0a6e",
+            "blob": "353b98ba0c8d4e0b72caee82f9f0a988a1f82768",
             "content": "sha256:58e059b7c8b5f73b806483acc5531824790614e851b70da7ba9a4d918c564e8b",
             "locator": {
-              "end": 256,
+              "end": 262,
               "kind": "line_range",
-              "start": 249
+              "start": 255
             },
             "path": "skills/l-01-agent-lifecycles/composition-manifest.json"
           },
@@ -458,12 +458,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2a112bdb1148478a8a719636588cb908fab01cac",
+            "blob": "47288b84fc830870de597a9ba3aa5f895d99fdcb",
             "content": "sha256:e45d40052ad3a1054cc3d351cef0e1c7cd4fb683d9a2bffb1ed5a12ea8dd65b5",
             "locator": {
-              "end": 77,
+              "end": 78,
               "kind": "line_range",
-              "start": 44
+              "start": 45
             },
             "path": "skills/l-01-agent-lifecycles/core/acceptance.md"
           },
@@ -471,12 +471,12 @@
         },
         {
           "anchor": {
-            "blob": "2a112bdb1148478a8a719636588cb908fab01cac",
+            "blob": "47288b84fc830870de597a9ba3aa5f895d99fdcb",
             "content": "sha256:4e970b2fc818c268b67c85b9dc3ee85bab842a29bbf01d44f80c80bd56ac0fce",
             "locator": {
-              "end": 142,
+              "end": 139,
               "kind": "line_range",
-              "start": 140
+              "start": 137
             },
             "path": "skills/l-01-agent-lifecycles/core/acceptance.md"
           },
@@ -485,18 +485,44 @@
       ]
     },
     "8": {
-      "note": "Attempt lineage separates semantic versions from candidate-bound delivery history and gives regression invalidation to independent proof plus the owning seat.\n\nAnchor: `## Requirement revisions and delivery attempts are separate axes`; `## Requirement revisions and delivery attempts are separate axes`",
+      "note": "Semantic requirement versions and exact-candidate formal attempts keep separate immutable lineage; internal reruns mint no attempt. Reviewer records bind the exact attempt and candidate. In the requested-review completion workflow, an accepted attempt remains closed unless the independent reviewer proves direct regression and the owning Manager (Architect in a flat run) records bounded invalidation, or an approved requirement revision affects that manifestation. Outside-list observations alone go through the parent to the developer without adding or reopening findings or resetting review.",
       "targets": [
         {
           "anchor": {
-            "blob": "2a112bdb1148478a8a719636588cb908fab01cac",
-            "content": "sha256:81a39d100c2261a6c5b71e4c22154182bb73da55478cd87b6feed7a696bafdc8",
+            "blob": "47288b84fc830870de597a9ba3aa5f895d99fdcb",
+            "content": "sha256:330a1acf6a88278c38d1bd49770148c9c99d73091beef5fd3fa9528ee3352c48",
             "locator": {
               "end": 116,
               "kind": "line_range",
               "start": 79
             },
             "path": "skills/l-01-agent-lifecycles/core/acceptance.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "dd7163001634a6ba0ec87c6ea5e932bde08784c5",
+            "content": "sha256:c711c02c25c9e915711a70d5c5ab0f843e309a642958fef2c64d40ea024e9148",
+            "locator": {
+              "end": 293,
+              "kind": "line_range",
+              "start": 284
+            },
+            "path": "skills/w-02-light-task-workflow/workflow.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "92e293440342d9d75642480f01c9aecaa76669c6",
+            "content": "sha256:4ca4373c4a9df2a4009d324135ed429b531290b92c49a99f72ee0a1232cb3ec3",
+            "locator": {
+              "end": 84,
+              "kind": "line_range",
+              "start": 82
+            },
+            "path": "skills/l-01-agent-lifecycles/core/loop.md"
           },
           "kind": "code"
         }
@@ -507,12 +533,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2a112bdb1148478a8a719636588cb908fab01cac",
+            "blob": "47288b84fc830870de597a9ba3aa5f895d99fdcb",
             "content": "sha256:b19fa165fdb81f64d4c08822c5cc58916c018422c991bc6c630bf8d4603de123",
             "locator": {
-              "end": 120,
+              "end": 117,
               "kind": "line_range",
-              "start": 120
+              "start": 117
             },
             "path": "skills/l-01-agent-lifecycles/core/acceptance.md"
           },

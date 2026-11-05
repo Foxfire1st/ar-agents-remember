@@ -130,53 +130,80 @@ The existing `citation_fix` signature is flat: its default sync mode still previ
 
 - Retired at the fifth freeze d59c3493: docs/reference/mcp-tools.md:235-251 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 5f8398b32760677c370e3145add73cfa8388357b. Retired means the anchor no longer stands, not that the cited subject was deleted.
 
-- Public signatures distinguish flat citation arguments from quality requests. [28]
+Historical source account (detached from live reference 28; docs/reference/mcp-tools.md blob fb21b7c177ee42cdcd3cbdc8e1e9ee2acf7b8302):
+
+- Public signatures distinguish flat citation arguments from quality requests.
+
+- Public signatures distinguish flat citation_fix sync/start/poll preview arguments from the memory_quality_check request object, with explicit admitted scope boundaries.
+
+
+
+Historical source account (detached from live reference 3; docs/reference/settings-json.md blob 6d8cc9b75acea207484aeaf2f87c0e5cafd6640e):
+
+- Retained reference account (no fresh execution or acceptance inferred): The settings reference describes the active MCP authority, user role settings and their distinct merge and precedence boundaries.
+
+- The settings reference separates MCP boot authority, per-use host runtime, memory topology and global/repository agentic settings; user configuration is not MCP boot authority, and merge/permission boundaries remain explicit.
+
+
+Historical source account (detached from live reference 5; docs/reference/settings-json.md blob 6d8cc9b75acea207484aeaf2f87c0e5cafd6640e):
+
+- Retained reference account (no fresh execution or acceptance inferred): The settings document's host section.
+
+- The host-runtime section keeps paseoRuntime in the active MCP authority file, reads it per use, lets cold Bootstrap create an absent block once, preserves an existing block and refuses unknown host keys.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Historical source account (detached from live reference 2; docs/reference/mcp-tools.md blob fb21b7c177ee42cdcd3cbdc8e1e9ee2acf7b8302):
+
+- Retained reference account (no fresh execution or acceptance inferred): The public tool reference maps the current tool surface to its registered families and owning routes.
+
+- The public tool document maps operation families but is not a complete roster; registration/response owners remain authoritative. It now documents converted knowledge reads, integrity/worklist, file-writing-without-Git knowledge_write and separate coherence authority.
+
+
+Historical source account (detached from live reference 11; mcp/src/agents_remember/mcp/registration/memory.py blob 6782d184c8982f54e6e72e5f11a61aa2c8f88627; mcp/src/agents_remember/application/memory_quality/controller.py blob f3bf4bfa27b8bfd44cd242540d16a2dbf31ec1c4; mcp/src/agents_remember/mcp/registration/memory.py blob 6782d184c8982f54e6e72e5f11a61aa2c8f88627):
+
+- Memory preparation distinguishes diagnostic scope, raw readiness, coherence validation and capacity refusal.
+
+- Memory preparation separates full leaf scope and logged worklist/gate facts from semantic certification, requires validated coherence after raw readiness, and returns a named capacity refusal when async admission is full.
+
+- The public tool document maps operation families but is not a complete roster; registration/response owners remain authoritative. It now documents converted knowledge reads, integrity/worklist, file-writing-without-Git knowledge_write and separate coherence authority. [2]
+- The settings reference separates MCP boot authority, per-use host runtime, memory topology and global/repository agentic settings; user configuration is not MCP boot authority, and merge/permission boundaries remain explicit. [3]
+- The host-runtime section keeps paseoRuntime in the active MCP authority file, reads it per use, lets cold Bootstrap create an absent block once, preserves an existing block and refuses unknown host keys. [5]
+- Memory preparation separates full leaf scope and logged worklist/gate facts from semantic certification, requires validated coherence after raw readiness, and returns a named capacity refusal when async admission is full. [11]
+- Public signatures distinguish flat citation_fix sync/start/poll preview arguments from the memory_quality_check request object, with explicit admitted scope boundaries. [28]
+
 Inherited finding [23] retains its exact wording/target as the historical profile-required closeout account; parent adjudicates that outdated prerequisite. Current requested-certification and invariant-gated transaction are separate:
-
 - Requested certification is explicitly selected repository-profile work through Dagger and commits nothing. The profile and loader are still authority for that requested Gates 1–4 work; a selection named `closeout` is not an automatic closeout invocation. Ordinary closeout runs no gate but the invariant gate, retains exact candidate/approval/lineage checks and code-then-memory Git publication, and does not run certification, code-quality checks, test suites or independent review. A missing profile or certification result does not block that transaction. This does not remove canonical Curator/Reviewer duties or confer independent semantic acceptance on diagnostics. [26]
-
 - Retained reference account (no fresh execution or acceptance inferred): The normalized public input has only two commit legs. [1]
-
-- Retained reference account (no fresh execution or acceptance inferred): The settings reference describes the active MCP authority, user role settings and their distinct merge and precedence boundaries. [3]
-
 - Retained reference account (no fresh execution or acceptance inferred): The Paseo catalog adapter is the source owner for the configured host catalog route. [4]
-
-- Retained reference account (no fresh execution or acceptance inferred): The settings document's host section. [5]
-
 - Retained reference account (no fresh execution or acceptance inferred): The runtime layout document. [6]
-
 - Current literal public roster has 44 names, including knowledge_write, user_settings_init, explainer_control and citation_note_revision; historical populations retain their own epochs and supply no live-advertisement acceptance. [7]
-
 - Ordered family registration owns the advertised tool definitions. [8]
-
 - Bound role starts retain caller/role constraints, request reconciliation and no caller permission-feature authority; set starts are Manager-only and preserve held siblings. [9]
-
 - Pre-baseline writes require the declared converted root, no baseline and no dependent linked worktree. [12]
-
 - Converted citation repair excludes refused cards from its mechanical second stage in both list and singleton paths. [13]
-
 - Unscoped route-index apply enters the pre-baseline guard; leaf apply enters the leaf writer guard. [14]
-
 - Current pre-push targeted body repeats deterministic non-test checks rather than invoking acceptance. [17]
-
 - Metric findings are diagnostic; missing or unusable report inputs remain failures. [18]
-
 - Normalized closeout input carries two commit legs and refuses blank enabled messages. [19]
-
 - Finalization requires the exact contract-bound leaf and its named or exact folder master row; missing authority refuses, without a standalone fallback. [20]
-
 - Activation waiting is scoped to this contract's own reconciliation. [21]
-
 - Raw-Git support matrix keeps unsupported transitions and ancestry limits explicit. [22]
-
 - Source-quality profile requirement has an explicit no-code-commit exception. [23]
-
 - Setup reports the knowledge state and hands foundation work to the user-started Architect's regular task and its Curator; the following provider stage retires providers. [24]
-
 - Current literal public roster has 44 names, including knowledge_write, user_settings_init, explainer_control and citation_note_revision; historical populations retain their own epochs and supply no live-advertisement acceptance. [25]
-
-- Retained reference account (no fresh execution or acceptance inferred): The public tool reference maps the current tool surface to its registered families and owning routes. [2]
-
 - Poll includes optional contract scope while extra execution-only fields are forbidden.  Anchor: _MemoryQualityExecutionRequest / MemoryQualityPollRequest / MemoryQualityCheckRequest [10]
-
-- Memory preparation distinguishes diagnostic scope, raw readiness, coherence validation and capacity refusal. [11]

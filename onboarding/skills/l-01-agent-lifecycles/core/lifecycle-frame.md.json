@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "17a2e16e6ba4cd7ef8eafe7a4e2b0d7be30289e0",
-        "content": "sha256:74440c36a999b3945860e2fc1676c34d343bf0fa62107e774e5036de29d11e3d",
+        "blob": "401a6023b8ba2ea2c9c89487baed0bd40dc87e90",
+        "content": "sha256:50c7d2a5dd7659f8a9066bbff343ae32bb422b10068582e69627bfe28b2ae608",
         "locator": {
           "kind": "file"
         }
@@ -21,16 +21,16 @@
   ],
   "references": {
     "1": {
-      "note": "Worktree location records, the landing contract and structural seat bindings; Architect starts without a document.\n\nAnchor: lines 1-20",
+      "note": "Worktree location records, the landing contract and structural seat bindings; Architect starts without a document.",
       "targets": [
         {
           "anchor": {
-            "blob": "17a2e16e6ba4cd7ef8eafe7a4e2b0d7be30289e0",
-            "content": "sha256:68568839b31e900f8d180f795edc34487536baf650ef94370b39bc4bfb79098f",
+            "blob": "401a6023b8ba2ea2c9c89487baed0bd40dc87e90",
+            "content": "sha256:f3e6bb44745cf4ce2d26390bfc5313007cb8af8d64d5bb47736d9c5c8a0c4d18",
             "locator": {
-              "end": 20,
+              "end": 16,
               "kind": "line_range",
-              "start": 1
+              "start": 3
             }
           },
           "kind": "code"
@@ -38,16 +38,16 @@
       ]
     },
     "2": {
-      "note": "Opening trust checkpoint and provider-degradation report/order/no-kill boundaries, not restored runtime authority.\n\nAnchor: lines 22-53",
+      "note": "Opening trust checkpoint and provider-degradation report/order/no-kill boundaries, not restored runtime authority.",
       "targets": [
         {
           "anchor": {
-            "blob": "17a2e16e6ba4cd7ef8eafe7a4e2b0d7be30289e0",
-            "content": "sha256:6389773650a4e37f8e391491f59f45a45d0244182022e3f4fa7e7d9c2329034a",
+            "blob": "401a6023b8ba2ea2c9c89487baed0bd40dc87e90",
+            "content": "sha256:ae16757b425e14e4ff0a455ab441393eba0b5aa2efdfd6d9336d4903cce3bd35",
             "locator": {
-              "end": 53,
+              "end": 37,
               "kind": "line_range",
-              "start": 22
+              "start": 18
             }
           },
           "kind": "code"

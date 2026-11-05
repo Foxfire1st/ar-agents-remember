@@ -32,7 +32,13 @@ The module directly calls compute_next_step(contract, tool, guidance=...) on two
 - **The plan's case, driven as a sequence: two addressed contracts yield two different hints and neither body carries the other's path.** [10]
 
 
-- **The stated reach: the one carrier that declares no address — `TaskDocResponse` — has its hint WITHHELD, asserted against the model's own fields. `260918-TSIP-L10` renamed this case because it asserted the opposite until that leaf; the row is corrected with it.** [11]
+- **The stated reach: the one carrier that declares no address — `TaskDocResponse` — has its hint WITHHELD, asserted against the model's own fields. `260918-TSIP-L10` renamed this case because it asserted the opposite until that leaf; the row is corrected with it.** [Past-epoch source caption, detached from live reference 11. Recorded citation custody: mcp/tests/test_next_step_address_binding.py blob d1d22b20b04b8f4ae8fe80c1bbeb5e5d125616c9 (available); mcp/src/agents_remember/models/task_doc.py blob e7d80ed372402d196e9af03c6aa40d32a018d7e2 (available); historical event commit not identified. No historical event or intent inferred.]
+
+[Past-epoch source caption, detached from live reference 11. Recorded citation custody: mcp/tests/test_next_step_address_binding.py blob d1d22b20b04b8f4ae8fe80c1bbeb5e5d125616c9 (available); mcp/src/agents_remember/models/task_doc.py blob e7d80ed372402d196e9af03c6aa40d32a018d7e2 (available); historical event commit not identified. No historical event or intent inferred.]
+
+Anchor: `test_an_envelope_with_no_address_has_its_hint_withheld` `TaskDocResponse`
+
+Current source: The current test asserts TaskDocResponse declares neither contractPath nor enclosurePath and bound_next_step returns None for a foreign-address hint on that response. Its docstring records the earlier L10 rename separately; these source assertions establish no new execution or historical repair event.
 
 
 
@@ -47,3 +53,5 @@ The module directly calls compute_next_step(contract, tool, guidance=...) on two
 
 
 - The lane manifest registers mcp/tests/test_next_step_address_binding.py in unit-regression. Membership selects evidence and does not establish execution. [12]
+
+- The current test asserts TaskDocResponse declares neither contractPath nor enclosurePath and bound_next_step returns None for a foreign-address hint on that response. Its docstring records the earlier L10 rename separately; these source assertions establish no new execution or historical repair event. [11]

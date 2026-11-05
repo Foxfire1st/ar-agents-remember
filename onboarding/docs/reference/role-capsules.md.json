@@ -1,0 +1,41 @@
+{
+  "path": "docs/reference/role-capsules.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Launch resources and held-message semantics distinguish delivery state from consumption.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ca9541f36b78e7e542dc2720b5218cbe3a203286",
+            "content": "sha256:ede06200c54f9e85c2b3a42aea8698c7e8e9ad5e7947f850c73ca1580b8bc8c0",
+            "locator": {
+              "end": 19,
+              "kind": "line_range",
+              "start": 3
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Message-file and receipt scope is tied to the narrowest shared task and actual receipt store.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ca9541f36b78e7e542dc2720b5218cbe3a203286",
+            "content": "sha256:f717750669b04ab5fa6bc39d2c051ff1209c5f2eb98db7d94433db6a06a7ab31",
+            "locator": {
+              "end": 28,
+              "kind": "line_range",
+              "start": 21
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

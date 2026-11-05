@@ -138,7 +138,7 @@ completion blockers, while any other row resolves the terminal leaf doc exactly 
 
 
 
-- The public tool-layer operation routing. [3]
+- The public tool-layer operation routing.
 
 - The shared judgment verifier and completion gate. [4]
 
@@ -214,3 +214,5 @@ lock or lifecycle evidence owner.
 
 
 - linkage_report is the surviving observation surface; it does not mirror task_doc.get. Non-dry reporting writes JSON and answers factKinds/reportPath under enclosure reports or the UTC-day detail folder; an unwritable destination is a named failure. Dry run computes facts without that per-call report. Best-effort reclamation keeps the bounded 50-member report group. Fact collection remains tolerant, but the whole reporting operation is not guaranteed never to raise. Attach/detach preserve their per-document previews internally; bounded task delivery uses aggregate diff/wouldLose, not rendered document dumps. [18]
+
+- The public tool-layer operation routing. Anchor: `task_doc_tool` [3]

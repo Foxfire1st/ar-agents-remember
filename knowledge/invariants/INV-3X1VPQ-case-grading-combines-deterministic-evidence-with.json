@@ -1,0 +1,36 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "prevents_costly_mistake"
+    ],
+    "justification": "Invalid or prose-wrapped verdicts and missing binary evidence could otherwise become fabricated behavioral passes."
+  },
+  "applicability": "Deterministic and rubric resolution of Curator eval case outcomes.",
+  "conditions": [
+    "A deterministic failure has precedence over rubric success.",
+    "Rubric model, criterion order, outcomes and evidence schema are validated.",
+    "Binary artifacts remain hash/size references and incomplete semantic observations remain unknown."
+  ],
+  "exclusions": [
+    "Actor success prose as a grading authority.",
+    "A valid JSON verdict as proof that every required disk file was read."
+  ],
+  "id": "INV-3X1VPQ",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Frozen tree fd6462b85ba9d06f004e323384ea800f9aa5144a, base 59b01fb8f72a38d2d27f9c37b8b9ca2513fd3fa0; path bindings and source hashes in producer-manifest.json; Reviewer R4 and d229-repairs/report.md."
+      ],
+      "path": "L62-unaffected-evaluation-obligations"
+    },
+    "handoffEntry": "L62-fd6462b8-case-grading",
+    "leaf": "260928-MIK-L62",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Case grading combines deterministic evidence with strictly validated rubric verdicts, preserving unreadable binary artifacts as references and semantic unknowns as unknowns.",
+  "status": "proposed",
+  "supersedes": []
+}

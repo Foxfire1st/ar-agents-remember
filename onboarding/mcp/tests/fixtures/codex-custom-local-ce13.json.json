@@ -1,0 +1,40 @@
+{
+  "path": "mcp/tests/fixtures/codex-custom-local-ce13.json",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "f9de77ac0c275ea7169f7287c15187936068e1c3",
+        "content": "sha256:6a23962558b285a9fbc664369d792352ddef6aef4ba8f5d864d9d873e0729f4e",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-771WM3",
+      "invariant": "INV-R4JZ3F",
+      "origin": {
+        "handoffEntry": "L62-fd6462b8-codex-capture",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "These local custom-tool records cover the CE13 dispatch wire.",
+      "role": "support"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The source defines this file's responsibility and the boundaries described here.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f9de77ac0c275ea7169f7287c15187936068e1c3",
+            "content": "sha256:6a23962558b285a9fbc664369d792352ddef6aef4ba8f5d864d9d873e0729f4e",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

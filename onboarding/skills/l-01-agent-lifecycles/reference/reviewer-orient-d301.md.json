@@ -7,12 +7,29 @@
       "targets": [
         {
           "anchor": {
-            "blob": "48827ca041a1c3a5854d33c8649fdbc4725aabfe",
+            "blob": "59355e278fba6f8597c31ee33200f10fe81e962b",
             "content": "sha256:14ae0ecf03bdee7ef46fdf1de80ba056281630549d7ec76567d11ec7f231d662",
             "locator": {
               "end": 6,
               "kind": "line_range",
               "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "An omission repair lists and checks every behavior introduced by the diff. Card-date claims are checked against the adding commit, verdict times use a same-step clock read, and every-member findings use a whole-candidate scan rerun at verification.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "59355e278fba6f8597c31ee33200f10fe81e962b",
+            "content": "sha256:d717b3b789fc245ae4fe674eb0870275e3d4c6c84eec3a675f54ea8aed9b2adf",
+            "locator": {
+              "end": 18,
+              "kind": "line_range",
+              "start": 8
             }
           },
           "kind": "code"

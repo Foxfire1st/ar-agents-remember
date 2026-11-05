@@ -4,7 +4,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "fa17709a127c9b18641196b921b59caa9f7ec2b2",
+        "blob": "551d4ee801406a1faf1ccde0cfa641425c5ee4e0",
         "content": "sha256:c0f9d3841851168cbe0bb4355b8e0d3231e395615b4e87956c289bc5e15ed2d5",
         "locator": {
           "kind": "symbol",
@@ -23,14 +23,16 @@
   ],
   "references": {
     "1": {
-      "note": "Registered direct/ordinary closeout and integration tools expose no ledger message or landed-ledger argument.\n\nAnchor: `_register_direct_landing_tools`",
+      "note": "Registered direct/ordinary closeout and integration tools expose no ledger message or landed-ledger argument.",
       "targets": [
         {
           "anchor": {
-            "blob": "fa17709a127c9b18641196b921b59caa9f7ec2b2",
-            "content": "sha256:dce036a193b04613f2a25218717eea07994829364ae04d13b6ce63c1a99b2de2",
+            "blob": "551d4ee801406a1faf1ccde0cfa641425c5ee4e0",
+            "content": "sha256:595bf15a1be758eaa5ba44719cd837715b81d6f11175d532db981e88751305f6",
             "locator": {
-              "kind": "file"
+              "end": 255,
+              "kind": "line_range",
+              "start": 1
             }
           },
           "kind": "code"
@@ -42,7 +44,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fa17709a127c9b18641196b921b59caa9f7ec2b2",
+            "blob": "551d4ee801406a1faf1ccde0cfa641425c5ee4e0",
             "content": "sha256:c0f9d3841851168cbe0bb4355b8e0d3231e395615b4e87956c289bc5e15ed2d5",
             "locator": {
               "kind": "symbol",
@@ -54,14 +56,16 @@
       ]
     },
     "11": {
-      "note": "This registrar delegates transaction eligibility and execution to their established owners. Its compact descriptions name reached states, blocked/refused outcomes and state/next/log presentation, with docs/reference/mcp-tools.md carrying the longer account. Reachable task-state refusals retain original codes/check order and occur before writes; a blocked dry run agrees with the blocked real call rather than promising would-succeed. Short descriptions are not a substitute for checkpoint-versus-pause, archival, approval or publication predicates, and do not assert every internal exception was converted.",
+      "note": "This registrar delegates transaction eligibility and execution to their established payload owners. Compact descriptions name reached states, next calls and retained logs; converted-memory closeout descriptions name exact-tree invariant judgment and knowledge-gate-refused findings. Descriptions alone grant no transaction authority or execution proof.",
       "targets": [
         {
           "anchor": {
-            "blob": "fa17709a127c9b18641196b921b59caa9f7ec2b2",
-            "content": "sha256:dce036a193b04613f2a25218717eea07994829364ae04d13b6ce63c1a99b2de2",
+            "blob": "551d4ee801406a1faf1ccde0cfa641425c5ee4e0",
+            "content": "sha256:595bf15a1be758eaa5ba44719cd837715b81d6f11175d532db981e88751305f6",
             "locator": {
-              "kind": "file"
+              "end": 255,
+              "kind": "line_range",
+              "start": 1
             }
           },
           "kind": "code"
@@ -69,14 +73,33 @@
       ]
     },
     "12": {
-      "note": "Closeout, integration and reclamation signatures keep their declared requests while payload builders and DirectLandingRequest load only inside the call.\n\nAnchor: `register_closeout_tools`",
+      "note": "Closeout, integration and reclamation signatures keep their declared requests while payload builders and DirectLandingRequest load only inside the call.",
       "targets": [
         {
           "anchor": {
-            "blob": "fa17709a127c9b18641196b921b59caa9f7ec2b2",
-            "content": "sha256:dce036a193b04613f2a25218717eea07994829364ae04d13b6ce63c1a99b2de2",
+            "blob": "551d4ee801406a1faf1ccde0cfa641425c5ee4e0",
+            "content": "sha256:595bf15a1be758eaa5ba44719cd837715b81d6f11175d532db981e88751305f6",
             "locator": {
-              "kind": "file"
+              "end": 255,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "Closeout docstrings name exact-tree invariant judgment and knowledge-gate-refused findings.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "551d4ee801406a1faf1ccde0cfa641425c5ee4e0",
+            "content": "sha256:b2a6842501108d9df9889de9f9176da4dbb03faa7705ab4040a1fb8b769d8fd7",
+            "locator": {
+              "end": 133,
+              "kind": "line_range",
+              "start": 92
             }
           },
           "kind": "code"
@@ -189,12 +212,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fa17709a127c9b18641196b921b59caa9f7ec2b2",
+            "blob": "551d4ee801406a1faf1ccde0cfa641425c5ee4e0",
             "content": "sha256:e645def706db273be4a8fc86f2a25d1d732fa06a6f772cf519fb5aa1789f0bf3",
             "locator": {
-              "end": 182,
+              "end": 184,
               "kind": "line_range",
-              "start": 169
+              "start": 171
             }
           },
           "kind": "code"

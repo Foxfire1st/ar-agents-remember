@@ -8,7 +8,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f59be949fc3fa155da0ce68d6c8301c02ac3e624",
+            "blob": "a87bb07cf86afb478306f599a0a80a4579ae4389",
             "content": "sha256:71008f419ddeb28d82ad7d9e3deee3ba0467de59dedc94cbe79b486c1b8abd55",
             "locator": {
               "kind": "symbol",
@@ -20,25 +20,16 @@
       ]
     },
     "10": {
-      "note": "The registered description and the refusal name the same `kind` vocabulary.\n\nAnchor: `test_task_doc_description_and_refusal_name_the_same_kind_vocabulary`",
+      "note": "The registered description and the refusal name the same `kind` vocabulary. Anchor: `test_task_doc_description_and_refusal_name_the_same_kind_vocabulary`",
       "targets": [
         {
           "anchor": {
-            "blob": "f59be949fc3fa155da0ce68d6c8301c02ac3e624",
-            "content": "sha256:be58db0b4bd445f33d60894388f32d419f2b27d55d0e2933870095fd73ce20c1",
+            "blob": "a87bb07cf86afb478306f599a0a80a4579ae4389",
+            "content": "sha256:05b6a852e64fbc9a7a19f12568a125278cd10109e2ac16258ac1741822d8b70b",
             "locator": {
-              "kind": "file"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "f59be949fc3fa155da0ce68d6c8301c02ac3e624",
-            "content": "sha256:f04412ed9dae0bc176c2e8bfc1973e838f9062eaafab55c1999493c21a15fa36",
-            "locator": {
-              "kind": "symbol",
-              "name": "test_task_doc_description_and_refusal_name_the_same_kind_vocabulary"
+              "end": 764,
+              "kind": "line_range",
+              "start": 727
             }
           },
           "kind": "test"
@@ -46,25 +37,16 @@
       ]
     },
     "11": {
-      "note": "Every `next_tool=` literal the lifecycle package passes is declared on the response model.\n\nAnchor: `test_every_next_tool_its_own_refusals_advertise_is_declared`",
+      "note": "Every `next_tool=` literal the lifecycle package passes is declared on the response model. Anchor: `test_every_next_tool_its_own_refusals_advertise_is_declared`",
       "targets": [
         {
           "anchor": {
-            "blob": "f59be949fc3fa155da0ce68d6c8301c02ac3e624",
-            "content": "sha256:be58db0b4bd445f33d60894388f32d419f2b27d55d0e2933870095fd73ce20c1",
-            "locator": {
-              "kind": "file"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "f59be949fc3fa155da0ce68d6c8301c02ac3e624",
+            "blob": "a87bb07cf86afb478306f599a0a80a4579ae4389",
             "content": "sha256:8e838319984d9e09e3ffafd67f72cb9ca0f01175313ab96dcb1b6801866e8d53",
             "locator": {
-              "kind": "symbol",
-              "name": "test_every_next_tool_its_own_refusals_advertise_is_declared"
+              "end": 863,
+              "kind": "line_range",
+              "start": 811
             }
           },
           "kind": "test"
@@ -160,12 +142,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ac006b11f74a4c64ab964edc3378b4c96f153872",
+            "blob": "2c675ac4ed53a3b28cae8c0c32cd13c617d8f6ed",
             "content": "sha256:b8fa47d0ac57d66635cfaba93efe83a1167ba84b70f00142a1cc66be6e186d05",
             "locator": {
-              "end": 689,
+              "end": 728,
               "kind": "line_range",
-              "start": 689
+              "start": 728
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -174,14 +156,82 @@
       ]
     },
     "22": {
-      "note": "Current literal source populations are 44 roster names, 14 adapter modules and 46 handlers, while strict/flexible sets remain derived. Anchor: `ROSTER_SIZE`, `TOOL_MODULE_COUNT`, `TOOL_HANDLER_COUNT`",
+      "note": "The literal PUBLIC_TOOLS source tuple contains 44 names. The conformance test source pins ROSTER_SIZE = 44, TOOL_MODULE_COUNT = 14 and TOOL_HANDLER_COUNT = 46 and derives strict/flexible model sets from base classes and extra configuration. These are literal declarations and test assertions, not a fresh module/handler collection or execution result.",
       "targets": [
         {
           "anchor": {
-            "blob": "f59be949fc3fa155da0ce68d6c8301c02ac3e624",
-            "content": "sha256:be58db0b4bd445f33d60894388f32d419f2b27d55d0e2933870095fd73ce20c1",
+            "blob": "a87bb07cf86afb478306f599a0a80a4579ae4389",
+            "content": "sha256:37eedb5c6b0753d3e048deff47a81b83bb8b8e6637365198320db10b75eb014b",
             "locator": {
-              "kind": "file"
+              "end": 863,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "d0b0ddd9f150e32116b430ecc74907fcf68fee97",
+            "content": "sha256:fdef15e2ca9d39f66c8570a7147cb894dda16f47c7d3558bb4454e5b4714875f",
+            "locator": {
+              "end": 74,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/src/agents_remember/models/tools/public_roster.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "23": {
+      "note": "Registered TaskDocResponse validation distinguishes available rows carrying requirements (including an empty list) from unavailable rows without them. Empty sibling populations are valid; unknown or missing states, incompatible requirements and extra fields fail. The description oracle requires the literal Kind: subTask or master. These are source assertions/support behavior, not a fresh invocation, host result or AR acceptance.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a87bb07cf86afb478306f599a0a80a4579ae4389",
+            "content": "sha256:21a5d37969d25d10a814d2750edf3e015c0a8f48a16ceb371fef5a45d4cc0eba",
+            "locator": {
+              "end": 44,
+              "kind": "line_range",
+              "start": 40
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "a87bb07cf86afb478306f599a0a80a4579ae4389",
+            "content": "sha256:ace563336c39c2c6e3b12e62a88ab669707f4f058d6d10ece69e57dbcff51f06",
+            "locator": {
+              "end": 76,
+              "kind": "line_range",
+              "start": 72
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "a87bb07cf86afb478306f599a0a80a4579ae4389",
+            "content": "sha256:05b6a852e64fbc9a7a19f12568a125278cd10109e2ac16258ac1741822d8b70b",
+            "locator": {
+              "end": 764,
+              "kind": "line_range",
+              "start": 727
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "a87bb07cf86afb478306f599a0a80a4579ae4389",
+            "content": "sha256:c473acddf2ad160dfdf7eff65743bc683687e2c2d1fb587382dcd9b8e4af5f5d",
+            "locator": {
+              "end": 807,
+              "kind": "line_range",
+              "start": 766
             }
           },
           "kind": "test"
@@ -189,25 +239,16 @@
       ]
     },
     "3": {
-      "note": "The fixtures' models are the registry's own objects.\n\nAnchor: `test_the_models_these_fixtures_validate_are_the_registered_ones`",
+      "note": "The fixtures' models are the registry's own objects. Anchor: `test_the_models_these_fixtures_validate_are_the_registered_ones`",
       "targets": [
         {
           "anchor": {
-            "blob": "f59be949fc3fa155da0ce68d6c8301c02ac3e624",
-            "content": "sha256:be58db0b4bd445f33d60894388f32d419f2b27d55d0e2933870095fd73ce20c1",
-            "locator": {
-              "kind": "file"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "f59be949fc3fa155da0ce68d6c8301c02ac3e624",
+            "blob": "a87bb07cf86afb478306f599a0a80a4579ae4389",
             "content": "sha256:dd131eb690b30ddcc7c1555da13e60450cef7deaea0bd876e5b7b7542de61f4f",
             "locator": {
-              "kind": "symbol",
-              "name": "test_the_models_these_fixtures_validate_are_the_registered_ones"
+              "end": 384,
+              "kind": "line_range",
+              "start": 370
             }
           },
           "kind": "test"
@@ -215,14 +256,16 @@
       ]
     },
     "4": {
-      "note": "Every registered model is strict or declared flexible, and the split is derived twice — from the declared base class and from each model's own `extra` config — so the two derivations must agree by name.\n\nAnchor: `test_every_registered_model_is_strict_or_declared_flexible`",
+      "note": "Every registered model is strict or declared flexible, and the split is derived twice — from the declared base class and from each model's own `extra` config — so the two derivations must agree by name. Anchor: `test_every_registered_model_is_strict_or_declared_flexible`",
       "targets": [
         {
           "anchor": {
-            "blob": "f59be949fc3fa155da0ce68d6c8301c02ac3e624",
-            "content": "sha256:be58db0b4bd445f33d60894388f32d419f2b27d55d0e2933870095fd73ce20c1",
+            "blob": "a87bb07cf86afb478306f599a0a80a4579ae4389",
+            "content": "sha256:9b30d3dd20a4ab4c46eea6db42003379cc0785081968928d10c2b22e87466109",
             "locator": {
-              "kind": "file"
+              "end": 429,
+              "kind": "line_range",
+              "start": 386
             }
           },
           "kind": "test"
@@ -230,25 +273,16 @@
       ]
     },
     "5": {
-      "note": "Every tool adapter module routes through the `_tool_payload` choke point, per handler on the return.\n\nAnchor: `test_every_tool_adapter_module_routes_through_the_choke_point`",
+      "note": "Every tool adapter module routes through the `_tool_payload` choke point, per handler on the return. Anchor: `test_every_tool_adapter_module_routes_through_the_choke_point`",
       "targets": [
         {
           "anchor": {
-            "blob": "f59be949fc3fa155da0ce68d6c8301c02ac3e624",
-            "content": "sha256:be58db0b4bd445f33d60894388f32d419f2b27d55d0e2933870095fd73ce20c1",
-            "locator": {
-              "kind": "file"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "f59be949fc3fa155da0ce68d6c8301c02ac3e624",
+            "blob": "a87bb07cf86afb478306f599a0a80a4579ae4389",
             "content": "sha256:360db21bdbf1c242bc44a8eba5ec778921a7a72cb1d2d8d6d9e8d7fcb8ee74a9",
             "locator": {
-              "kind": "symbol",
-              "name": "test_every_tool_adapter_module_routes_through_the_choke_point"
+              "end": 498,
+              "kind": "line_range",
+              "start": 431
             }
           },
           "kind": "test"
@@ -256,25 +290,16 @@
       ]
     },
     "6": {
-      "note": "`lifecycle_finalize_task` validates with the series release produced, and asserts it reached the emitting branch.\n\nAnchor: `test_lifecycle_finalize_validates_with_the_series_release_produced`",
+      "note": "`lifecycle_finalize_task` validates with the series release produced, and asserts it reached the emitting branch. Anchor: `test_lifecycle_finalize_validates_with_the_series_release_produced`",
       "targets": [
         {
           "anchor": {
-            "blob": "f59be949fc3fa155da0ce68d6c8301c02ac3e624",
-            "content": "sha256:be58db0b4bd445f33d60894388f32d419f2b27d55d0e2933870095fd73ce20c1",
-            "locator": {
-              "kind": "file"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "f59be949fc3fa155da0ce68d6c8301c02ac3e624",
+            "blob": "a87bb07cf86afb478306f599a0a80a4579ae4389",
             "content": "sha256:dd1f3b8dd7e919a0e30cd9cf6b9e4d99f6fa11f765ce9dad80c391ce7c2e6be1",
             "locator": {
-              "kind": "symbol",
-              "name": "test_lifecycle_finalize_validates_with_the_series_release_produced"
+              "end": 584,
+              "kind": "line_range",
+              "start": 553
             }
           },
           "kind": "test"
@@ -286,7 +311,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f59be949fc3fa155da0ce68d6c8301c02ac3e624",
+            "blob": "a87bb07cf86afb478306f599a0a80a4579ae4389",
             "content": "sha256:77fb2fc4c029d7c3830a75adbc316db7b6a7afea31777b10b10f8cf8e970d63a",
             "locator": {
               "kind": "symbol",
@@ -302,7 +327,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f59be949fc3fa155da0ce68d6c8301c02ac3e624",
+            "blob": "a87bb07cf86afb478306f599a0a80a4579ae4389",
             "content": "sha256:afd6f7681d39f08c133ae77cc7fcf455726b80680450f9479c2cd045526b9717",
             "locator": {
               "kind": "symbol",

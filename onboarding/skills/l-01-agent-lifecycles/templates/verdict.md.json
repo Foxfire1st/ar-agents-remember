@@ -4,8 +4,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "430acce71b81cbf5df02b4855c77371886cd9472",
-        "content": "sha256:a2fdbf95360c80dc226b07e05a328b46b1750c7da3fcd2a7d041ebbf9ba60d01",
+        "blob": "a6671df8d3eca13f20d0202f09ec844fed45a2f0",
+        "content": "sha256:b725d8fd9eda315282c37672a7d443f3f10598979040e5e450dc5fa1606d61da",
         "locator": {
           "kind": "file"
         }
@@ -21,8 +21,8 @@
     },
     {
       "anchor": {
-        "blob": "430acce71b81cbf5df02b4855c77371886cd9472",
-        "content": "sha256:a2fdbf95360c80dc226b07e05a328b46b1750c7da3fcd2a7d041ebbf9ba60d01",
+        "blob": "a6671df8d3eca13f20d0202f09ec844fed45a2f0",
+        "content": "sha256:b725d8fd9eda315282c37672a7d443f3f10598979040e5e450dc5fa1606d61da",
         "locator": {
           "kind": "file"
         }
@@ -39,14 +39,28 @@
   ],
   "references": {
     "1": {
-      "note": "Independent exact-attempt/candidate adjudication is mandatory in every variant.",
+      "note": "Every verdict variant requires independently authored exact-ID/version, Worker-attempt and candidate adjudication in a separate immutable journal record with evidence-class and refutation rationale; a rejected requirement forbids PASS and PASS-WITH-NOTES.",
       "targets": [
         {
           "anchor": {
-            "blob": "430acce71b81cbf5df02b4855c77371886cd9472",
-            "content": "sha256:a2fdbf95360c80dc226b07e05a328b46b1750c7da3fcd2a7d041ebbf9ba60d01",
+            "blob": "a6671df8d3eca13f20d0202f09ec844fed45a2f0",
+            "content": "sha256:2c4c4fbe688737d7c9fc916d7b43c187743ecb363217fd79d28ef144b96cfd23",
             "locator": {
-              "kind": "file"
+              "end": 53,
+              "kind": "line_range",
+              "start": 31
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a6671df8d3eca13f20d0202f09ec844fed45a2f0",
+            "content": "sha256:2334c5a1235fd1bf787d28833eaf875e087c289732ca87a33b49f1eb6b79d414",
+            "locator": {
+              "end": 98,
+              "kind": "line_range",
+              "start": 55
             }
           },
           "kind": "code"
@@ -54,14 +68,40 @@
       ]
     },
     "2": {
-      "note": "Leaf review accounts for every material route and returns a recordable packet.",
+      "note": "Organizational leaf and accumulated atomic-master variants account for every major route with its backing report, bound candidate and recordable packet; atomic children receive no separate route-review verdict.",
       "targets": [
         {
           "anchor": {
-            "blob": "430acce71b81cbf5df02b4855c77371886cd9472",
-            "content": "sha256:a2fdbf95360c80dc226b07e05a328b46b1750c7da3fcd2a7d041ebbf9ba60d01",
+            "blob": "a6671df8d3eca13f20d0202f09ec844fed45a2f0",
+            "content": "sha256:dbe1d910ee6d1bd4c26b2110717bd048e5876c0c8d34fec71bcaf6ab9b2d5c52",
             "locator": {
-              "kind": "file"
+              "end": 9,
+              "kind": "line_range",
+              "start": 3
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a6671df8d3eca13f20d0202f09ec844fed45a2f0",
+            "content": "sha256:98f99e1967079293a7b3a141462898b5c522cd045a4f7bb4133e7294878be069",
+            "locator": {
+              "end": 158,
+              "kind": "line_range",
+              "start": 101
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a6671df8d3eca13f20d0202f09ec844fed45a2f0",
+            "content": "sha256:9caea9532989369834f9178591bc7de846b3e5db00e6b98bd6a78089d18aeb2e",
+            "locator": {
+              "end": 214,
+              "kind": "line_range",
+              "start": 161
             }
           },
           "kind": "code"
@@ -69,14 +109,16 @@
       ]
     },
     "3": {
-      "note": "A delta review appends a dated delta section to the same verdict artifact, rechecks only the sealed outstanding IDs and their worker fixes, and retains earlier accepted adjudications instead of opening a new full review.",
+      "note": "A delta verification appends to the same verdict, checks only sealed outstanding IDs and their fixes, retains accepted adjudications and returns new routes or criteria to the developer rather than adding or reopening successor findings.",
       "targets": [
         {
           "anchor": {
-            "blob": "430acce71b81cbf5df02b4855c77371886cd9472",
-            "content": "sha256:a2fdbf95360c80dc226b07e05a328b46b1750c7da3fcd2a7d041ebbf9ba60d01",
+            "blob": "a6671df8d3eca13f20d0202f09ec844fed45a2f0",
+            "content": "sha256:dcc36dfad7e5eb4f0ea3d5a07a713db52e306225fed5f3fedbf472e1c450e1cc",
             "locator": {
-              "kind": "file"
+              "end": 369,
+              "kind": "line_range",
+              "start": 364
             }
           },
           "kind": "code"
@@ -84,14 +126,40 @@
       ]
     },
     "4": {
-      "note": "Current settings-budget, recorded approval and preserved stage/ownership boundaries are carried by this canonical instruction source.",
+      "note": "The verdict template keeps ordinary Reviewer CODE recording, separately counted MEMORY review, Manager gate acceptance and recorded beyond-settings approval distinct; its artifact is recommendation evidence rather than a gate decision.",
       "targets": [
         {
           "anchor": {
-            "blob": "430acce71b81cbf5df02b4855c77371886cd9472",
-            "content": "sha256:a2fdbf95360c80dc226b07e05a328b46b1750c7da3fcd2a7d041ebbf9ba60d01",
+            "blob": "a6671df8d3eca13f20d0202f09ec844fed45a2f0",
+            "content": "sha256:1b3a2d2aa792e2d810b3c86716837f5954b077854cfbac5dceedb57325f99353",
             "locator": {
-              "kind": "file"
+              "end": 20,
+              "kind": "line_range",
+              "start": 18
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a6671df8d3eca13f20d0202f09ec844fed45a2f0",
+            "content": "sha256:537d4ba6329b965f5d9e902474e6e43c5e9a91ed3529bc2236c9df45c67b4cca",
+            "locator": {
+              "end": 158,
+              "kind": "line_range",
+              "start": 146
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a6671df8d3eca13f20d0202f09ec844fed45a2f0",
+            "content": "sha256:dcc36dfad7e5eb4f0ea3d5a07a713db52e306225fed5f3fedbf472e1c450e1cc",
+            "locator": {
+              "end": 369,
+              "kind": "line_range",
+              "start": 364
             }
           },
           "kind": "code"
@@ -99,16 +167,28 @@
       ]
     },
     "5": {
-      "note": "The Reviewer records ordinary CODE round/result; the task document and recorded architect/developer approval govern beyond-settings work. Fix verification is an ordinary round, not an unqualified D107 extra look. Verdict content is carried as a file, and remains evidence for the gate owner rather than a decision. The supported-sync source had a disclosed trailing stashed-change marker absent from K_B; that static composition observation was sent to Worker and Reviewer for the assigned D140, not silently adopted as clean source or a new CODE PASS.",
+      "note": "Reviewer records its ordinary CODE begin/result under the task document; Manager retains gate acceptance and recorded beyond-settings approval. Code PASS first goes to Manager to start Curator; peer artifacts travel directly as files, MEMORY stays separate and ready-for-closeout names both verdicts. Repaired-item verification is an ordinary round.",
       "targets": [
         {
           "anchor": {
-            "blob": "430acce71b81cbf5df02b4855c77371886cd9472",
-            "content": "sha256:a2fdbf95360c80dc226b07e05a328b46b1750c7da3fcd2a7d041ebbf9ba60d01",
+            "blob": "a6671df8d3eca13f20d0202f09ec844fed45a2f0",
+            "content": "sha256:537d4ba6329b965f5d9e902474e6e43c5e9a91ed3529bc2236c9df45c67b4cca",
             "locator": {
-              "end": 372,
+              "end": 158,
               "kind": "line_range",
-              "start": 1
+              "start": 146
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a6671df8d3eca13f20d0202f09ec844fed45a2f0",
+            "content": "sha256:e5dbbc3fd7d7fde7cabb8749f2746675ca613fbd56f154bf4f2d4531ad0d87ca",
+            "locator": {
+              "end": 373,
+              "kind": "line_range",
+              "start": 364
             }
           },
           "kind": "code"
@@ -116,14 +196,40 @@
       ]
     },
     "6": {
-      "note": "The verdict keeps exact-candidate independent evidence, monotonic sealed-ID successor scope and separate CODE/MEMORY lanes without deciding a gate.",
+      "note": "Verdict structure binds exact independent candidate evidence, immutable per-attempt adjudication and monotonic sealed successor scope; CODE and MEMORY remain separate and no verdict decides the gate.",
       "targets": [
         {
           "anchor": {
-            "blob": "430acce71b81cbf5df02b4855c77371886cd9472",
-            "content": "sha256:a2fdbf95360c80dc226b07e05a328b46b1750c7da3fcd2a7d041ebbf9ba60d01",
+            "blob": "a6671df8d3eca13f20d0202f09ec844fed45a2f0",
+            "content": "sha256:5023fc47279c9b002a4d1ff9110e8cbda8c021820399809feccf8261a6b26f9f",
             "locator": {
-              "kind": "file"
+              "end": 53,
+              "kind": "line_range",
+              "start": 18
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a6671df8d3eca13f20d0202f09ec844fed45a2f0",
+            "content": "sha256:537d4ba6329b965f5d9e902474e6e43c5e9a91ed3529bc2236c9df45c67b4cca",
+            "locator": {
+              "end": 158,
+              "kind": "line_range",
+              "start": 146
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a6671df8d3eca13f20d0202f09ec844fed45a2f0",
+            "content": "sha256:dcc36dfad7e5eb4f0ea3d5a07a713db52e306225fed5f3fedbf472e1c450e1cc",
+            "locator": {
+              "end": 369,
+              "kind": "line_range",
+              "start": 364
             }
           },
           "kind": "code"
@@ -135,12 +241,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c2d38cd0a82b9efe96a765c4512f2242c6a9d3e6",
+            "blob": "3ea09011d0657bf89935264047f646078913e415",
             "content": "sha256:83977738db41426244730104c6bc2a9e58a79f04121154ee89c3c48ba6b5c66d",
             "locator": {
-              "end": 55,
+              "end": 61,
               "kind": "line_range",
-              "start": 55
+              "start": 61
             },
             "path": "skills/l-01-agent-lifecycles/roles/curator.md"
           },
@@ -148,12 +254,12 @@
         },
         {
           "anchor": {
-            "blob": "ab9a2e087d2cfd299ad5ffbac061aac232c8e831",
+            "blob": "62a4500b617979c0fc10d9726ce52b57b8b3c922",
             "content": "sha256:f0e10f4491be65b9f9a8c4940aa1d1a591d031f64996f2879d483e1c7418c9c2",
             "locator": {
-              "end": 70,
+              "end": 81,
               "kind": "line_range",
-              "start": 66
+              "start": 77
             },
             "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
           },

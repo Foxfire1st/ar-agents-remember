@@ -7,12 +7,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a4fb12cb9329000e5fadaa3c3de5edb2e76d748e",
+            "blob": "517cc6e74a8a0c87323155730732afcdb3329ef0",
             "content": "sha256:4d6bce282402d8cf492624b089bb5bcdb03eb6c62b096c2639d1add42d983ff0",
             "locator": {
-              "end": 299,
+              "end": 411,
               "kind": "line_range",
-              "start": 277
+              "start": 389
             }
           },
           "kind": "test"
@@ -24,12 +24,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a4fb12cb9329000e5fadaa3c3de5edb2e76d748e",
+            "blob": "517cc6e74a8a0c87323155730732afcdb3329ef0",
             "content": "sha256:a13edc06f41ee2db5aa46f9a4735a6a7c76d3989ef3bc09519c12027dc865fc7",
             "locator": {
-              "end": 328,
+              "end": 440,
               "kind": "line_range",
-              "start": 302
+              "start": 414
             }
           },
           "kind": "test"
@@ -37,16 +37,16 @@
       ]
     },
     "12": {
-      "note": "Anchor: Curator compiler shape, not taskless seat admission.",
+      "note": "The compiled-Curator-shape test checks the actual delivered foundation pointer and procedure text. Its docstring explicitly limits this to compiler shape and admits no taskless Curator; foundation authoring requires real task admission. These are source assertions, not a workflow run.",
       "targets": [
         {
           "anchor": {
-            "blob": "a4fb12cb9329000e5fadaa3c3de5edb2e76d748e",
-            "content": "sha256:b0f0c932671b763d0d5f2a1ddc62028fc3b3c07d9bb5cb1c7a546395b857f99b",
+            "blob": "517cc6e74a8a0c87323155730732afcdb3329ef0",
+            "content": "sha256:c7acfdadb439856a266273f52f5903f378007bf523de095b63fd449af22d4291",
             "locator": {
-              "end": 350,
+              "end": 467,
               "kind": "line_range",
-              "start": 331
+              "start": 443
             }
           },
           "kind": "test"
@@ -58,12 +58,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a4fb12cb9329000e5fadaa3c3de5edb2e76d748e",
+            "blob": "517cc6e74a8a0c87323155730732afcdb3329ef0",
             "content": "sha256:e3c24b9831303ebd3ee4cf39f32ecf362c406da453ad6d83ccc050b13d2209a1",
             "locator": {
-              "end": 376,
+              "end": 493,
               "kind": "line_range",
-              "start": 353
+              "start": 470
             }
           },
           "kind": "test"
@@ -101,17 +101,82 @@
         }
       ]
     },
+    "15": {
+      "note": "`delivered_foundation` binds source, role, delivery step, pointer, delivered bytes and heading to the compiled manifest. Its controls mutate the budget, heading, required sentence and declared pointer independently. A synthetic Curator capsule proves this delivered procedure, while the procedure still requires real foundation task admission. These are source assertions/support behavior, not a fresh invocation, host result or AR acceptance.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "517cc6e74a8a0c87323155730732afcdb3329ef0",
+            "content": "sha256:c5f7734d005aeff49ef357fdbf50daf2cba3f6f5da1513136575000f4dff1344",
+            "locator": {
+              "end": 76,
+              "kind": "line_range",
+              "start": 67
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "517cc6e74a8a0c87323155730732afcdb3329ef0",
+            "content": "sha256:3a3dbd0cbde8f4846f3ce796f9ca054cbb4f3cf09f9f022e41a1a1f41e784581",
+            "locator": {
+              "end": 98,
+              "kind": "line_range",
+              "start": 89
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "517cc6e74a8a0c87323155730732afcdb3329ef0",
+            "content": "sha256:5fba3bdecd9f719da05b8873e1fbd26c893e8e6d180c50eb7ce238bc78430c84",
+            "locator": {
+              "end": 156,
+              "kind": "line_range",
+              "start": 123
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "517cc6e74a8a0c87323155730732afcdb3329ef0",
+            "content": "sha256:db2eae89344550deaaf309760b2fe66932a1f85bdd6e2e356f8aab76d9604c56",
+            "locator": {
+              "end": 209,
+              "kind": "line_range",
+              "start": 159
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "517cc6e74a8a0c87323155730732afcdb3329ef0",
+            "content": "sha256:c7acfdadb439856a266273f52f5903f378007bf523de095b63fd449af22d4291",
+            "locator": {
+              "end": 467,
+              "kind": "line_range",
+              "start": 443
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
     "5": {
       "note": "Anchor: Served body retrieval for byte comparison.",
       "targets": [
         {
           "anchor": {
-            "blob": "a4fb12cb9329000e5fadaa3c3de5edb2e76d748e",
+            "blob": "517cc6e74a8a0c87323155730732afcdb3329ef0",
             "content": "sha256:29c5174c2e6838b8b91e37b4ba94b8e74fd7339bcbe4475b73e664b242d50892",
             "locator": {
-              "end": 185,
+              "end": 297,
               "kind": "line_range",
-              "start": 165
+              "start": 277
             }
           },
           "kind": "test"
@@ -123,12 +188,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a4fb12cb9329000e5fadaa3c3de5edb2e76d748e",
+            "blob": "517cc6e74a8a0c87323155730732afcdb3329ef0",
             "content": "sha256:5d5f8c4ec2d7d614a4b4728c30b580eaf9fb9af1a10674e47872bc20414a452c",
             "locator": {
-              "end": 224,
+              "end": 336,
               "kind": "line_range",
-              "start": 198
+              "start": 310
             }
           },
           "kind": "test"
@@ -140,12 +205,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a4fb12cb9329000e5fadaa3c3de5edb2e76d748e",
+            "blob": "517cc6e74a8a0c87323155730732afcdb3329ef0",
             "content": "sha256:c3f58cdf5d6b2dc329bafd8517d38d8a9fbc4e8ad21ed971df127cf810d767c1",
             "locator": {
-              "end": 247,
+              "end": 359,
               "kind": "line_range",
-              "start": 227
+              "start": 339
             }
           },
           "kind": "test"
@@ -157,12 +222,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a4fb12cb9329000e5fadaa3c3de5edb2e76d748e",
+            "blob": "517cc6e74a8a0c87323155730732afcdb3329ef0",
             "content": "sha256:52de85908d4bbbcb1ce740f567c0f5c2c09c25763f8264b9423ae938d780ea37",
             "locator": {
-              "end": 274,
+              "end": 386,
               "kind": "line_range",
-              "start": 250
+              "start": 362
             }
           },
           "kind": "test"

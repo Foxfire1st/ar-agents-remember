@@ -51,8 +51,9 @@ dispatch/tools rows are structural documentation, not settings keys.
 
 The designer keeps its planning duties and gains the same harness freedom and boundary paragraph as the other roles.
 
-## Evidence
+For UI design work, read the resolved memory layer's system/design-guidelines.md. Knowledge commands and message/shared-working details are read at their named step; collect helpers and continue the assigned stage. This changes neither the design artifact boundary nor implementation/acceptance ownership.
 
+## Evidence
 ### Docs References
 
 No relevant documentation was configured in the resolved source registry; task artifacts and the final candidate are the direct evidence.
@@ -65,3 +66,5 @@ overview supplies the shared lifecycle frame.
 ### Cross-Repo References
 
 No meaningful cross-repo references.
+
+- For UI design work, read the resolved memory layer's system/design-guidelines.md. Knowledge commands and message/shared-working details are read at their named step; collect helpers and continue the assigned stage. This changes neither the design artifact boundary nor implementation/acceptance ownership. [2]

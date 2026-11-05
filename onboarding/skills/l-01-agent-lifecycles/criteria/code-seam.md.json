@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "433f8190ab1b43e83eb600ffa449bf029d9a8d8c",
+            "blob": "272ca9c4d1892352756810902af3d365667c0392",
             "content": "sha256:fbad8bf037bfbbf08ccaa8a8ed7e935aba037411d7a9a263331b0c5b0e9bea40",
             "locator": {
               "end": 12,
@@ -24,7 +24,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "433f8190ab1b43e83eb600ffa449bf029d9a8d8c",
+            "blob": "272ca9c4d1892352756810902af3d365667c0392",
             "content": "sha256:67ae0d3753141effb9741a130cd0deccb97c566b2f6464161c5bde7e1d5295ee",
             "locator": {
               "end": 84,
@@ -41,10 +41,29 @@
       "targets": [
         {
           "anchor": {
-            "blob": "433f8190ab1b43e83eb600ffa449bf029d9a8d8c",
-            "content": "sha256:f22dd49bd8b8ee58c5e28c0e63d42c0ba84b70c8ba4a0412b01824a573dc22d9",
+            "blob": "272ca9c4d1892352756810902af3d365667c0392",
+            "content": "sha256:fe0759b9189efc06eb2005bcd934b427bc6b9aaacd019a1e52c667f43fbbc1b3",
             "locator": {
-              "kind": "file"
+              "end": 107,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The current criterion also treats a new UI control that duplicates an existing primitive as a finding and names the primitive to reuse. This is a check within the requested review, not another automatic review gate.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "272ca9c4d1892352756810902af3d365667c0392",
+            "content": "sha256:7fdcb0f236e7f57475bdba4f679b202d3e39846864ddafeadcbd05b57074e1f2",
+            "locator": {
+              "end": 107,
+              "kind": "line_range",
+              "start": 105
             }
           },
           "kind": "code"

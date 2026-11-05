@@ -80,17 +80,21 @@
             "blob": "f0f6b560a8bb165ff2303ba062a149f660c8e1cb",
             "content": "sha256:7e5dd9935ec1cd797a317769585b0cc325a12d7943089bc6583ec9b86b5a6999",
             "locator": {
-              "kind": "file"
+              "end": 516,
+              "kind": "line_range",
+              "start": 1
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "145be631612f52c363b97b82d253839028ebc907",
-            "content": "sha256:7506db63d2859ad92c4253de6434644d804afd2902e09a42ccda9e72b3f59f3b",
+            "blob": "a12f918499ebed5c67d253ce5956a1a3f7705656",
+            "content": "sha256:d4419241535f8cc0f0b8e8685fc6b740dea5a79428fec70d372001fd95d6a711",
             "locator": {
-              "kind": "file"
+              "end": 205,
+              "kind": "line_range",
+              "start": 1
             },
             "path": "skills/l-01-agent-lifecycles/operations/curation.md"
           },

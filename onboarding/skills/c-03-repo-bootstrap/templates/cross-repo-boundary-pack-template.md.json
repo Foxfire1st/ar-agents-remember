@@ -73,18 +73,44 @@
       ]
     },
     "5": {
-      "note": "Converted cards use writer-owned companions rather than legacy verification metadata or in-card history.\n\nAnchor: \"## What a converted card is\"",
+      "note": "Converted cards use writer-owned companions without legacy verification metadata or in-card history. The fixer and writer are the normal first route; only a covered correct-input refusal admits the declared same-tool/input-class recovery, with its owner-notice, provenance, check and defect-issue duties. Missing admission and guard, validation, sync, gate and permission stops are not waived.",
       "targets": [
         {
           "anchor": {
-            "blob": "07f4fbb59134af0846462f3929091464962f171f",
-            "content": "sha256:c37c684764deb1c742f510fd62758673324a7bfe663c6447d4150822d0483643",
+            "blob": "f7ea3c8b7f6e2ce1a210dbc43dcc9694cd25721b",
+            "content": "sha256:b526393cd8ec6bff04ee0b35cbb041cd30eadd98a7a5f7f1a1504453d77ffaa7",
             "locator": {
-              "end": 33,
+              "end": 35,
               "kind": "line_range",
               "start": 7
             },
             "path": "skills/c-05-create-or-update-onboarding-files/workflows/converted-card-workflow.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f4accad939315db39d9f7f7dd3af0f5d3f0687ac",
+            "content": "sha256:8031e11efa86fb44f60b8d3cc33f99f92fb3bcff145decd47bb4d04c96df2e1e",
+            "locator": {
+              "end": 63,
+              "kind": "line_range",
+              "start": 56
+            },
+            "path": "skills/c-05-create-or-update-onboarding-files/SKILL.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "77193c73e40d8dcf1ac8b7158debe508e2d02065",
+            "content": "sha256:52ce87cbd8720457b6cdffb7d69b8f1e24e421042c4946c15de23a9e9daeeb87",
+            "locator": {
+              "end": 38,
+              "kind": "line_range",
+              "start": 3
+            },
+            "path": "skills/l-01-agent-lifecycles/reference/refused-write.md"
           },
           "kind": "code"
         }

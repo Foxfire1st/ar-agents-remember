@@ -1,0 +1,40 @@
+{
+  "path": "scripts/agent_evals/adapters/__init__.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "0e51855160cbf83d4de792918d6f32f2770e3dc6",
+        "content": "sha256:524feb9e89bedaa42f9fe11d31a7fc4498f6943784795fa5f95754a82208c22b",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-9VPB7V",
+      "invariant": "INV-XKDZD4",
+      "origin": {
+        "handoffEntry": "L62-fd6462b8-evidence-values",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "It exports the native capture adapter surface consumed by the tooling.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The source defines this file's responsibility and the boundaries described here.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0e51855160cbf83d4de792918d6f32f2770e3dc6",
+            "content": "sha256:524feb9e89bedaa42f9fe11d31a7fc4498f6943784795fa5f95754a82208c22b",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

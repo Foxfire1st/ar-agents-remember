@@ -144,7 +144,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6782d184c8982f54e6e72e5f11a61aa2c8f88627",
+            "blob": "4866d73b380b132fb7b293e23bf44175e4cbf33f",
             "content": "sha256:e680829e47db58265b7a93e8d891f6a09ba122ed9a80bec82f3dcc04a8a1cfad",
             "locator": {
               "end": 93,
@@ -158,15 +158,16 @@
       ]
     },
     "3": {
-      "note": "Retained reference account (no fresh execution or acceptance inferred): The update-history fixer is a dedicated mutating module rather than a `memory_quality_check` option.",
+      "note": "The registered memory_quality_check dispatches sync/start/poll requests and returns findings, worklist and checklist evidence rather than semantic certification; formatting remains writer-owned.",
       "targets": [
         {
           "anchor": {
-            "blob": "6782d184c8982f54e6e72e5f11a61aa2c8f88627",
-            "content": "sha256:a5ff3c8235677e4cf8e075a2d73e2fc7313e631861dfeb91375f2e8740c11bda",
+            "blob": "4866d73b380b132fb7b293e23bf44175e4cbf33f",
+            "content": "sha256:275845a2f77f125f3714f8a467012e311f24a739fbdfb8a6b4eba32dfae00ffd",
             "locator": {
-              "kind": "symbol",
-              "name": "memory_quality_check"
+              "end": 52,
+              "kind": "line_range",
+              "start": 35
             },
             "path": "mcp/src/agents_remember/mcp/registration/memory.py"
           },

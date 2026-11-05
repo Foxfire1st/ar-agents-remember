@@ -18,8 +18,8 @@ writer's admission for the selected runtime, and the tool grants the manifest gi
 text a seat receives, with `STARTERS` naming the starter roles the manifest describes.
 
 - **Authoring routes.** `test_current_coordination_and_curator_rules` requires the Curator's role text to
-  name both authoring routes, to say no other route writes knowledge, and to write `--commit` as
-  `commit: true`.
+  name mounted `knowledge_write` or the admitted serving-build CLI, to write `--commit` as
+  `commit: true`, and to qualify manual recovery by the failed tool and input class.
 - **Manifest descriptions.** `test_manifest_descriptions_follow_the_coordination_default` keeps each
   description on the coordination default rather than a local variant.
 - **Writer admission.** `test_the_curator_writer_is_admitted_for_the_selected_runtime` pins the admission in
@@ -35,12 +35,16 @@ seat actually reads.
 
 ### Invariants And Boundaries
 
-- One authoring route writes knowledge; the Curator's text says so.
+- Normal knowledge authoring uses the admitted serving writer. The wording guard also pins the narrowly scoped correct-write-refusal recovery exception.
 - A writer option that was removed is refused by the parser, not ignored.
 
+The foundation and correction cases require a real task/enclosure, producer handoff-check evidence and correction of every contradicted body claim. Manager publication is distinguished from organizational completion, and sentence/card scope controls remove each actual clause to prove the guard fails. These are source assertions/support behavior, not a fresh invocation, host result or AR acceptance.
+
 ## Evidence
+- The Curator wording guard names mounted knowledge_write or the admitted serving-build CLI, explicit file-write commit, and the scoped correct-write recovery exception; it does not assert unconditional route exclusivity.
 
+- The writer admission is pinned in the role, detail and operation texts, and the parser refuses the removed options with exit 2 [2]
 
-- The Curator's role text names both authoring routes, says no other route writes knowledge, and writes `--commit` as `commit: true`. [1]
+- The Curator wording guard names mounted knowledge_write or the admitted serving-build CLI, explicit file-write commit, and the scoped correct-write recovery exception; it does not assert unconditional route exclusivity. Anchor: `CuratorInstructionWordingTests.test_current_coordination_and_curator_rules` [1]
 
-- The writer admission is pinned in the role, detail and operation texts, and the parser refuses the removed options with exit 2. [2]
+- The foundation and correction cases require a real task/enclosure, producer handoff-check evidence and correction of every contradicted body claim. Manager publication is distinguished from organizational completion, and sentence/card scope controls remove each actual clause to prove the guard fails. These are source assertions/support behavior, not a fresh invocation, host result or AR acceptance. [3]

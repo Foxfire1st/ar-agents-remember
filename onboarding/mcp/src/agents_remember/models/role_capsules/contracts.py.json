@@ -1,0 +1,24 @@
+{
+  "path": "mcp/src/agents_remember/models/role_capsules/contracts.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "New strict source marker parser, source-location carrier and render stripper.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "244f2c36f3efa74d21b47cbfaf0108fb9d1e4f35",
+            "content": "sha256:a59ffc07e73a869f18c6db6c96606b761e4059f089720d17c878ce4609728314",
+            "locator": {
+              "end": 97,
+              "kind": "line_range",
+              "start": 21
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

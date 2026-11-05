@@ -75,40 +75,16 @@
       ]
     },
     "10": {
-      "note": "The consumer that turns this family into a value with an explanation instead of an escaping exception.\n\nAnchor: `compile_admitted_capsule` `CapsuleCompilationOutcome`",
+      "note": "The consumer that turns this family into a value with an explanation instead of an escaping exception. Anchor: `compile_admitted_capsule` `CapsuleCompilationOutcome`",
       "targets": [
         {
           "anchor": {
-            "blob": "0de84f83644c391b29759b1623034309cabc8c72",
-            "content": "sha256:29ee69ed5c555d4e83c8cfa80f90ed3f888989d4fc019082f917c3acbbd8cac6",
+            "blob": "a9ebc25e9f72b32db990eb7c7582f967d6fbd021",
+            "content": "sha256:d83e2d57f2e37404de9d44a0dd51cfb781229885bb74bc9f34618a97fcef8b59",
             "locator": {
-              "kind": "symbol",
-              "name": "compile_admitted_capsule"
-            },
-            "path": "mcp/src/agents_remember/application/role_capsules/compilation.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "0de84f83644c391b29759b1623034309cabc8c72",
-            "content": "sha256:7b16c4a32019a3e8f4ccf82b15f964d954f4c2df5c97d530d7128a382caa421b",
-            "locator": {
-              "kind": "symbol",
-              "name": "CapsuleCompilationOutcome"
-            },
-            "path": "mcp/src/agents_remember/application/role_capsules/compilation.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "0de84f83644c391b29759b1623034309cabc8c72",
-            "content": "sha256:08368e1ce84e4ac275d87a6323fa926ebceb6cbd57b92d19e00d0d74f4a5ba61",
-            "locator": {
-              "end": 80,
+              "end": 134,
               "kind": "line_range",
-              "start": 44
+              "start": 93
             },
             "path": "mcp/src/agents_remember/application/role_capsules/compilation.py"
           },
@@ -116,10 +92,25 @@
         },
         {
           "anchor": {
-            "blob": "0de84f83644c391b29759b1623034309cabc8c72",
-            "content": "sha256:fa7dbb04c116a8a6d6767c3d85c3b723091f0af5bfd84f27ffc91b7b7e9f8f52",
+            "blob": "a9ebc25e9f72b32db990eb7c7582f967d6fbd021",
+            "content": "sha256:7be3af594bb85101f4afaa7916d8c206942a3c220b384c15d5ff6e61b8a485d8",
             "locator": {
-              "kind": "file"
+              "end": 90,
+              "kind": "line_range",
+              "start": 45
+            },
+            "path": "mcp/src/agents_remember/application/role_capsules/compilation.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a9ebc25e9f72b32db990eb7c7582f967d6fbd021",
+            "content": "sha256:27f665a3c0c821e21a0eaa4cafcf4389a35cce689e06e81a63d72b38079bec0f",
+            "locator": {
+              "end": 164,
+              "kind": "line_range",
+              "start": 1
             },
             "path": "mcp/src/agents_remember/application/role_capsules/compilation.py"
           },
@@ -149,7 +140,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9946e7fc31fa11992782193f4af92050e7c18e46",
+            "blob": "fad1e5a1891afa9e3781b07d856907c922e210e7",
             "content": "sha256:f68be40622b6abfe0d2362438100ef630301619d57ed967748239daeade96d73",
             "locator": {
               "kind": "symbol",
@@ -161,12 +152,12 @@
         },
         {
           "anchor": {
-            "blob": "9946e7fc31fa11992782193f4af92050e7c18e46",
+            "blob": "fad1e5a1891afa9e3781b07d856907c922e210e7",
             "content": "sha256:079569ddf8eff689aabcd9b7a2a97cdaed597ce68ea79db471edf0186f471fcf",
             "locator": {
-              "end": 907,
+              "end": 963,
               "kind": "line_range",
-              "start": 893
+              "start": 949
             },
             "path": "mcp/tests/test_role_capsule_compiler.py"
           },

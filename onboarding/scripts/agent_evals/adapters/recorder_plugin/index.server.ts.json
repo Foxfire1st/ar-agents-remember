@@ -1,0 +1,40 @@
+{
+  "path": "scripts/agent_evals/adapters/recorder_plugin/index.server.ts",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "cea1cb7cadae67de7d67747646d4f22fdedb2222",
+        "content": "sha256:9bafc7d7c0c57a0922ebfecb0b9e1803e4ff1d0fbfac43861cf527561a9ad518",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-7RKRZN",
+      "invariant": "INV-QFMMYM",
+      "origin": {
+        "handoffEntry": "L62-fd6462b8-native-launch",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "It records supported Paseo turn and subagent signals through the existing plugin API.",
+      "role": "support"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The source defines this file's responsibility and the boundaries described here.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cea1cb7cadae67de7d67747646d4f22fdedb2222",
+            "content": "sha256:9bafc7d7c0c57a0922ebfecb0b9e1803e4ff1d0fbfac43861cf527561a9ad518",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

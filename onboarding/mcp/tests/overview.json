@@ -8,12 +8,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ddd77babbaaddf51063d6e23856c0cadd142d461",
+            "blob": "abb3d0e320df1c428284a14d602ec93ad778bdbe",
             "content": "sha256:002c95e9664b637b3ae9616eda783b0f69e2004e6b7eb5c068d564f4a966e355",
             "locator": {
-              "end": 344,
+              "end": 345,
               "kind": "line_range",
-              "start": 341
+              "start": 342
             },
             "path": "pyproject.toml"
           },
@@ -77,12 +77,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ac006b11f74a4c64ab964edc3378b4c96f153872",
+            "blob": "2c675ac4ed53a3b28cae8c0c32cd13c617d8f6ed",
             "content": "sha256:6389a4bae14d3ffef42e5c4d6ab9bbe3138659ddce6374270829781d0260d022",
             "locator": {
-              "end": 366,
+              "end": 403,
               "kind": "line_range",
-              "start": 366
+              "start": 403
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -145,12 +145,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ac006b11f74a4c64ab964edc3378b4c96f153872",
+            "blob": "2c675ac4ed53a3b28cae8c0c32cd13c617d8f6ed",
             "content": "sha256:65870d8bf072581aae2e74e46f3f91600d874e4babbd72a6acac9137900ba98a",
             "locator": {
-              "end": 144,
+              "end": 181,
               "kind": "line_range",
-              "start": 144
+              "start": 181
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -216,12 +216,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ac006b11f74a4c64ab964edc3378b4c96f153872",
+            "blob": "2c675ac4ed53a3b28cae8c0c32cd13c617d8f6ed",
             "content": "sha256:16ddbce4256d21c34536ab3e4aa0e2d936b073ec9d3b41fae81bda53679563b9",
             "locator": {
-              "end": 402,
+              "end": 439,
               "kind": "line_range",
-              "start": 402
+              "start": 439
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -250,12 +250,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ac006b11f74a4c64ab964edc3378b4c96f153872",
+            "blob": "2c675ac4ed53a3b28cae8c0c32cd13c617d8f6ed",
             "content": "sha256:4a39e0fccce5a736c9676f5d0015441e750f88931a3e36276047ee371e324a1e",
             "locator": {
-              "end": 343,
+              "end": 380,
               "kind": "line_range",
-              "start": 343
+              "start": 380
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -320,12 +320,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ac006b11f74a4c64ab964edc3378b4c96f153872",
+            "blob": "2c675ac4ed53a3b28cae8c0c32cd13c617d8f6ed",
             "content": "sha256:cc80fc3ab3b91d70e98443711d6381a8ad6bca7810a332d1ab36e2fca35eb724",
             "locator": {
-              "end": 179,
+              "end": 216,
               "kind": "line_range",
-              "start": 179
+              "start": 216
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -437,12 +437,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ac006b11f74a4c64ab964edc3378b4c96f153872",
+            "blob": "2c675ac4ed53a3b28cae8c0c32cd13c617d8f6ed",
             "content": "sha256:11dc123b5aea780e250e25816f2595c33acabe2cfa9800b858604e73a3abe0c0",
             "locator": {
-              "end": 522,
+              "end": 561,
               "kind": "line_range",
-              "start": 522
+              "start": 561
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -489,12 +489,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ac006b11f74a4c64ab964edc3378b4c96f153872",
+            "blob": "2c675ac4ed53a3b28cae8c0c32cd13c617d8f6ed",
             "content": "sha256:7ac750e7f6557538944a353b12fa8cd1ffe625416ad92d51323aa60cf194856a",
             "locator": {
-              "end": 384,
+              "end": 421,
               "kind": "line_range",
-              "start": 384
+              "start": 421
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -541,12 +541,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ac006b11f74a4c64ab964edc3378b4c96f153872",
+            "blob": "2c675ac4ed53a3b28cae8c0c32cd13c617d8f6ed",
             "content": "sha256:3e2d3bf1cd55c642d3a3038ab1d5452853452bbd3666bc8ba9fb671acd3661da",
             "locator": {
-              "end": 157,
+              "end": 194,
               "kind": "line_range",
-              "start": 157
+              "start": 194
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -555,14 +555,16 @@
       ]
     },
     "1443": {
-      "note": "**Retained historical source account — superseded by the current route account:** A lifted decision round-trips with its requirement endpoints reported.\n\nAnchor: `test_a_lifted_decision_round_trips_and_its_requirement_endpoints_are_reported`",
+      "note": "The lifted-decision test source first asserts a version-mismatched requirement endpoint is reported with refusal and unchanged memory, then repairs that endpoint and asserts the decision is written and an identical second ingest is unchanged. These are test assertions, not a new execution result.",
       "targets": [
         {
           "anchor": {
-            "blob": "1a6235931c50a4a8f6b146a51598cdff7f55a233",
-            "content": "sha256:075ff4475087a14dafb700ce617d28082fae430f3313c7e64333ca644f5dc9fe",
+            "blob": "7e02efe56a42a670bb818ea1f56af7d09c48e5f3",
+            "content": "sha256:ef75fe3bb71580be8939b21649b4721f4e3e68e4353c4373a24976196eda9f48",
             "locator": {
-              "kind": "file"
+              "end": 1002,
+              "kind": "line_range",
+              "start": 971
             },
             "path": "mcp/tests/test_knowledge_writer.py"
           },
@@ -587,34 +589,149 @@
       ]
     },
     "1445": {
-      "note": "**Retained historical source account — superseded by the current route account:** The leaf-read lane row.",
+      "note": "The current unit-regression lane selects test_knowledge_leaf_read.py. The current lifecycle catalog declares test_knowledge_leaf_read.py as an exact consumer of mcp/tests/_user_settings_guard.py, mcp/tests/anchor_fixture_models.py, mcp/tests/fixtures/repository_profiles/node/package-lock.json, mcp/tests/knowledge_index_test_support.py, mcp/tests/knowledge_rows_test_support.py. These current declarations establish no test execution or acceptance.",
       "targets": [
         {
           "anchor": {
-            "blob": "b9e272ef623574e517181e36b3dc949a3ac78e19",
-            "content": "sha256:551be195bebaa900153bb95f42542d6501b0feffd0a4fa65d508218ebec4479c",
+            "blob": "f9d31f21c64890dc36a2c835faab4ae6860bcc68",
+            "content": "sha256:0a6ea03efe9703712535f05efeacc13a561b6fd40cb34b4ed9fe1a7122ed7558",
             "locator": {
-              "end": 287,
+              "end": 821,
               "kind": "line_range",
-              "start": 285
+              "start": 65
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f9d31f21c64890dc36a2c835faab4ae6860bcc68",
+            "content": "sha256:e564cc759829f5f9f62e7c34088af338e3aec3532c06eaa4a262da81e97a04d7",
+            "locator": {
+              "end": 911,
+              "kind": "line_range",
+              "start": 822
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f9d31f21c64890dc36a2c835faab4ae6860bcc68",
+            "content": "sha256:e8d358fc83b0cd78d30c45fd0bf4727490538eac4f97a69b212a2078f94c56cf",
+            "locator": {
+              "end": 3096,
+              "kind": "line_range",
+              "start": 2340
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f9d31f21c64890dc36a2c835faab4ae6860bcc68",
+            "content": "sha256:dcaf9a0c7c5ddf2bfe07e9592820346f58a087b9254536caa58fc6a463b258de",
+            "locator": {
+              "end": 3428,
+              "kind": "line_range",
+              "start": 3370
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f9d31f21c64890dc36a2c835faab4ae6860bcc68",
+            "content": "sha256:805d7797a7fae9ec28aad08e648e479d992075059bc3506487c9d04c20d4c746",
+            "locator": {
+              "end": 3556,
+              "kind": "line_range",
+              "start": 3467
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "2c675ac4ed53a3b28cae8c0c32cd13c617d8f6ed",
+            "content": "sha256:17c58056cb585da559d494ef67c2b9bbf8cbb729c5d510ecf6a26e7bd988f0b7",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
           },
           "kind": "test"
         }
       ]
     },
     "1446": {
-      "note": "**Retained historical source account — superseded by the current route account:** The leaf-read module's two consumer lines.",
+      "note": "The current lifecycle catalog declares test_knowledge_leaf_read.py as an exact consumer of mcp/tests/_user_settings_guard.py, mcp/tests/anchor_fixture_models.py, mcp/tests/fixtures/repository_profiles/node/package-lock.json, mcp/tests/knowledge_index_test_support.py, mcp/tests/knowledge_rows_test_support.py. These current declarations establish no test execution or acceptance.",
       "targets": [
         {
           "anchor": {
-            "blob": "b9e272ef623574e517181e36b3dc949a3ac78e19",
-            "content": "sha256:551be195bebaa900153bb95f42542d6501b0feffd0a4fa65d508218ebec4479c",
+            "blob": "f9d31f21c64890dc36a2c835faab4ae6860bcc68",
+            "content": "sha256:0a6ea03efe9703712535f05efeacc13a561b6fd40cb34b4ed9fe1a7122ed7558",
             "locator": {
-              "end": 287,
+              "end": 821,
               "kind": "line_range",
-              "start": 285
+              "start": 65
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f9d31f21c64890dc36a2c835faab4ae6860bcc68",
+            "content": "sha256:e564cc759829f5f9f62e7c34088af338e3aec3532c06eaa4a262da81e97a04d7",
+            "locator": {
+              "end": 911,
+              "kind": "line_range",
+              "start": 822
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f9d31f21c64890dc36a2c835faab4ae6860bcc68",
+            "content": "sha256:e8d358fc83b0cd78d30c45fd0bf4727490538eac4f97a69b212a2078f94c56cf",
+            "locator": {
+              "end": 3096,
+              "kind": "line_range",
+              "start": 2340
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f9d31f21c64890dc36a2c835faab4ae6860bcc68",
+            "content": "sha256:dcaf9a0c7c5ddf2bfe07e9592820346f58a087b9254536caa58fc6a463b258de",
+            "locator": {
+              "end": 3428,
+              "kind": "line_range",
+              "start": 3370
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f9d31f21c64890dc36a2c835faab4ae6860bcc68",
+            "content": "sha256:805d7797a7fae9ec28aad08e648e479d992075059bc3506487c9d04c20d4c746",
+            "locator": {
+              "end": 3556,
+              "kind": "line_range",
+              "start": 3467
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -627,12 +744,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ac006b11f74a4c64ab964edc3378b4c96f153872",
+            "blob": "2c675ac4ed53a3b28cae8c0c32cd13c617d8f6ed",
             "content": "sha256:7884d57221380d94b4d747691cb1662fc382c8fd47f6b0dd03831ca991036337",
             "locator": {
-              "end": 110,
+              "end": 146,
               "kind": "line_range",
-              "start": 110
+              "start": 146
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -678,7 +795,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1a6235931c50a4a8f6b146a51598cdff7f55a233",
+            "blob": "7e02efe56a42a670bb818ea1f56af7d09c48e5f3",
             "content": "sha256:7e48993ba5bdb343df0182dfe1029efbb930397557db7522e8449a5cd59ea14b",
             "locator": {
               "kind": "symbol",
@@ -695,12 +812,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ac006b11f74a4c64ab964edc3378b4c96f153872",
+            "blob": "2c675ac4ed53a3b28cae8c0c32cd13c617d8f6ed",
             "content": "sha256:428ff498dfcc49daf8e6d86d287049be15c25e09cf695dd79e6a1922eda80656",
             "locator": {
-              "end": 314,
+              "end": 351,
               "kind": "line_range",
-              "start": 314
+              "start": 351
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -713,12 +830,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ac006b11f74a4c64ab964edc3378b4c96f153872",
+            "blob": "2c675ac4ed53a3b28cae8c0c32cd13c617d8f6ed",
             "content": "sha256:fde5414644db933687ef3dc92a72c705e41bb48100b4411cf4d910e62dc8d752",
             "locator": {
-              "end": 173,
+              "end": 210,
               "kind": "line_range",
-              "start": 173
+              "start": 210
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -726,12 +843,12 @@
         },
         {
           "anchor": {
-            "blob": "b9e272ef623574e517181e36b3dc949a3ac78e19",
+            "blob": "f9d31f21c64890dc36a2c835faab4ae6860bcc68",
             "content": "sha256:0a8f9444024d6e1134f63922628268d5eead55a272221f6d608d04562f2ec38f",
             "locator": {
-              "end": 869,
+              "end": 823,
               "kind": "line_range",
-              "start": 867
+              "start": 821
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -744,12 +861,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ac006b11f74a4c64ab964edc3378b4c96f153872",
+            "blob": "2c675ac4ed53a3b28cae8c0c32cd13c617d8f6ed",
             "content": "sha256:34e6b24f63ad6d3203cc5f6f0f181b45f2d2481ad35a2592054fe8e19c743b2d",
             "locator": {
-              "end": 271,
+              "end": 308,
               "kind": "line_range",
-              "start": 271
+              "start": 308
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -780,12 +897,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ac006b11f74a4c64ab964edc3378b4c96f153872",
+            "blob": "2c675ac4ed53a3b28cae8c0c32cd13c617d8f6ed",
             "content": "sha256:37ef1f10db420bf2f737a1dad465b7b2f934b2075cdcfe7a056eabd040680f53",
             "locator": {
-              "end": 153,
+              "end": 190,
               "kind": "line_range",
-              "start": 153
+              "start": 190
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -798,12 +915,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ac006b11f74a4c64ab964edc3378b4c96f153872",
+            "blob": "2c675ac4ed53a3b28cae8c0c32cd13c617d8f6ed",
             "content": "sha256:6c6eb717921aed553123e6ec0c05af608f1f0bb22e31ccf714a7e2642a3bd270",
             "locator": {
-              "end": 206,
+              "end": 243,
               "kind": "line_range",
-              "start": 206
+              "start": 243
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -816,12 +933,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ac006b11f74a4c64ab964edc3378b4c96f153872",
+            "blob": "2c675ac4ed53a3b28cae8c0c32cd13c617d8f6ed",
             "content": "sha256:be3624b9a56456ad2f4c1cb6f90e31aa332d75e5c7912ab6beb1f8017cdb4f2c",
             "locator": {
-              "end": 174,
+              "end": 211,
               "kind": "line_range",
-              "start": 174
+              "start": 211
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -850,12 +967,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ac006b11f74a4c64ab964edc3378b4c96f153872",
+            "blob": "2c675ac4ed53a3b28cae8c0c32cd13c617d8f6ed",
             "content": "sha256:c6902ff7c8aa692bca9430990230becb82a9fb157809e18098e9b4671e599c45",
             "locator": {
-              "end": 145,
+              "end": 182,
               "kind": "line_range",
-              "start": 145
+              "start": 182
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -868,12 +985,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ac006b11f74a4c64ab964edc3378b4c96f153872",
+            "blob": "2c675ac4ed53a3b28cae8c0c32cd13c617d8f6ed",
             "content": "sha256:80113ca7e17900675d5038a5646b87f18bc3ec4022df3105c4bdc8c7490e1d71",
             "locator": {
-              "end": 208,
+              "end": 245,
               "kind": "line_range",
-              "start": 208
+              "start": 245
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -919,12 +1036,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ac006b11f74a4c64ab964edc3378b4c96f153872",
+            "blob": "2c675ac4ed53a3b28cae8c0c32cd13c617d8f6ed",
             "content": "sha256:f39d577b3c4181c2fffc0a72dec54d96dbaa16d9dd66ce53402e2d0e858c5de5",
             "locator": {
-              "end": 142,
+              "end": 179,
               "kind": "line_range",
-              "start": 142
+              "start": 179
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -1003,12 +1120,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ac006b11f74a4c64ab964edc3378b4c96f153872",
+            "blob": "2c675ac4ed53a3b28cae8c0c32cd13c617d8f6ed",
             "content": "sha256:61702945bc475c8a7678039142ea7b697a4a501f04203b65f01df6e74bf0afd9",
             "locator": {
-              "end": 166,
+              "end": 203,
               "kind": "line_range",
-              "start": 166
+              "start": 203
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -1054,12 +1171,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ac006b11f74a4c64ab964edc3378b4c96f153872",
+            "blob": "2c675ac4ed53a3b28cae8c0c32cd13c617d8f6ed",
             "content": "sha256:a030c166ca646be6ba8660755a3045e04d6f7e624177ca6a9292fb454ccf9e2c",
             "locator": {
-              "end": 203,
+              "end": 240,
               "kind": "line_range",
-              "start": 203
+              "start": 240
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -1106,12 +1223,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ac006b11f74a4c64ab964edc3378b4c96f153872",
+            "blob": "2c675ac4ed53a3b28cae8c0c32cd13c617d8f6ed",
             "content": "sha256:7cd6eca5c0e08d858b3f7c7a4643016321862cf75c45f6c984a8d39543a1a4ff",
             "locator": {
-              "end": 165,
+              "end": 202,
               "kind": "line_range",
-              "start": 165
+              "start": 202
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -1141,12 +1258,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ac006b11f74a4c64ab964edc3378b4c96f153872",
+            "blob": "2c675ac4ed53a3b28cae8c0c32cd13c617d8f6ed",
             "content": "sha256:2fa53d75d1a4d6ef8e4c45600fb5f9678bb7206ba3b69dd24ee8963593f7ebfd",
             "locator": {
-              "end": 162,
+              "end": 199,
               "kind": "line_range",
-              "start": 162
+              "start": 199
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -1248,12 +1365,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ac006b11f74a4c64ab964edc3378b4c96f153872",
+            "blob": "2c675ac4ed53a3b28cae8c0c32cd13c617d8f6ed",
             "content": "sha256:222a6ff244f67693b41c16ff732f292d763843984688f77f46c8f03400b9bb92",
             "locator": {
-              "end": 186,
+              "end": 223,
               "kind": "line_range",
-              "start": 186
+              "start": 223
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -1298,12 +1415,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ac006b11f74a4c64ab964edc3378b4c96f153872",
+            "blob": "2c675ac4ed53a3b28cae8c0c32cd13c617d8f6ed",
             "content": "sha256:40ce044f407c55eaa7eeb69631efdc7c36aa0d0bd71cf5cfa6b10996318621fb",
             "locator": {
-              "end": 475,
+              "end": 513,
               "kind": "line_range",
-              "start": 475
+              "start": 513
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -1351,12 +1468,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ac006b11f74a4c64ab964edc3378b4c96f153872",
+            "blob": "2c675ac4ed53a3b28cae8c0c32cd13c617d8f6ed",
             "content": "sha256:a37d171635064aa14d726c4722a22b22583264942184fa31b68ee931ebcd2969",
             "locator": {
-              "end": 337,
+              "end": 374,
               "kind": "line_range",
-              "start": 337
+              "start": 374
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -1365,18 +1482,31 @@
       ]
     },
     "1498": {
-      "note": "**Retained historical source account — superseded by the current route account:** The three new lane rows beside their siblings.",
+      "note": "The current mcp/tests/evidence-lifecycle.toml declares schema_version = \"ar-test-evidence-lifecycle/v3\", 17 contract records and 117 artifact records. These are source declarations, not test execution, code delivery or acceptance evidence. The current mcp/tests/test-evidence-lanes.toml selects 740 distinct test modules across its existing lane identities; this count states no earlier insertion, displacement or consumer-addition event.",
       "targets": [
         {
           "anchor": {
-            "blob": "b9e272ef623574e517181e36b3dc949a3ac78e19",
-            "content": "sha256:12e8554fbf9a8d637f7987379ac2d94895f2de655f567a9cdb5a292eb69ee797",
+            "blob": "f9d31f21c64890dc36a2c835faab4ae6860bcc68",
+            "content": "sha256:fb392b28cf974645a027a66e83ae0e915330ab1a77a993f2c1d7fe48a727f610",
             "locator": {
-              "end": 301,
+              "end": 4852,
               "kind": "line_range",
-              "start": 299
+              "start": 1
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "2c675ac4ed53a3b28cae8c0c32cd13c617d8f6ed",
+            "content": "sha256:17c58056cb585da559d494ef67c2b9bbf8cbb729c5d510ecf6a26e7bd988f0b7",
+            "locator": {
+              "end": 764,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
           },
           "kind": "test"
         }
@@ -1521,7 +1651,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ac006b11f74a4c64ab964edc3378b4c96f153872",
+            "blob": "2c675ac4ed53a3b28cae8c0c32cd13c617d8f6ed",
             "content": "sha256:06825f71b027f3b49cb717ee9df6a258f90b94a43b1594a0cefab0ef51ea5b50",
             "locator": {
               "end": 5,
@@ -1908,36 +2038,62 @@
       ]
     },
     "1529": {
-      "note": "**Retained historical source account — superseded by the current route account:** **The lane row the insertion created, and the two rows it displaced.**",
+      "note": "The current mcp/tests/evidence-lifecycle.toml declares schema_version = \"ar-test-evidence-lifecycle/v3\", 17 contract records and 117 artifact records. These are source declarations, not test execution, code delivery or acceptance evidence. The current mcp/tests/test-evidence-lanes.toml selects 740 distinct test modules across its existing lane identities; this count states no earlier insertion, displacement or consumer-addition event.",
       "targets": [
         {
           "anchor": {
-            "blob": "b9e272ef623574e517181e36b3dc949a3ac78e19",
-            "content": "sha256:6817f06e14d718304e7def1b4ccf7822851c0e82c5058dfe033a1d195451eb97",
+            "blob": "f9d31f21c64890dc36a2c835faab4ae6860bcc68",
+            "content": "sha256:fb392b28cf974645a027a66e83ae0e915330ab1a77a993f2c1d7fe48a727f610",
             "locator": {
-              "end": 303,
+              "end": 4852,
               "kind": "line_range",
-              "start": 301
+              "start": 1
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "2c675ac4ed53a3b28cae8c0c32cd13c617d8f6ed",
+            "content": "sha256:17c58056cb585da559d494ef67c2b9bbf8cbb729c5d510ecf6a26e7bd988f0b7",
+            "locator": {
+              "end": 764,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
           },
           "kind": "test"
         }
       ]
     },
     "1530": {
-      "note": "**Retained historical source account — superseded by the current route account:** **The two consumer rows this module joined, and the counts they do not move.**",
+      "note": "The current mcp/tests/evidence-lifecycle.toml declares schema_version = \"ar-test-evidence-lifecycle/v3\", 17 contract records and 117 artifact records. These are source declarations, not test execution, code delivery or acceptance evidence. The current mcp/tests/test-evidence-lanes.toml selects 740 distinct test modules across its existing lane identities; this count states no earlier insertion, displacement or consumer-addition event.",
       "targets": [
         {
           "anchor": {
-            "blob": "b9e272ef623574e517181e36b3dc949a3ac78e19",
-            "content": "sha256:6817f06e14d718304e7def1b4ccf7822851c0e82c5058dfe033a1d195451eb97",
+            "blob": "f9d31f21c64890dc36a2c835faab4ae6860bcc68",
+            "content": "sha256:fb392b28cf974645a027a66e83ae0e915330ab1a77a993f2c1d7fe48a727f610",
             "locator": {
-              "end": 303,
+              "end": 4852,
               "kind": "line_range",
-              "start": 301
+              "start": 1
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "2c675ac4ed53a3b28cae8c0c32cd13c617d8f6ed",
+            "content": "sha256:17c58056cb585da559d494ef67c2b9bbf8cbb729c5d510ecf6a26e7bd988f0b7",
+            "locator": {
+              "end": 764,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
           },
           "kind": "test"
         }
@@ -2115,12 +2271,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ac006b11f74a4c64ab964edc3378b4c96f153872",
+            "blob": "2c675ac4ed53a3b28cae8c0c32cd13c617d8f6ed",
             "content": "sha256:0fd2577dfe67d57a7a5e92c91462879a6140fcd001a05795c26a8556aab88bee",
             "locator": {
-              "end": 190,
+              "end": 227,
               "kind": "line_range",
-              "start": 190
+              "start": 227
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -2441,12 +2597,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ac006b11f74a4c64ab964edc3378b4c96f153872",
+            "blob": "2c675ac4ed53a3b28cae8c0c32cd13c617d8f6ed",
             "content": "sha256:8f66854b40d930f7c746cf7384e9cb4cb5638b3288e2005824d574c78c84baaf",
             "locator": {
-              "end": 43,
+              "end": 79,
               "kind": "line_range",
-              "start": 43
+              "start": 79
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -2491,16 +2647,16 @@
       ]
     },
     "1570": {
-      "note": "Retained historical source account: the earlier three-new-artifact description remains historical. The current lifecycle catalog declares mcp/tests/test_fresh_user_harness.py as an exact consumer of the fresh_user_fixture.py, fresh_user_scenario.py and run_fresh_user.py support artifacts. The suite contains fixture-shape assertions for oversized source, vendored content, non-default spear and distinct sprint branches, plain fixtures and confinement under the run root. Its scenario assertions require an unrun step to report blocked with reason and owner, unreachable and not completed; it also checks governed-module existence and required report arguments. Catalog declarations and test assertions establish neither test invocation nor acceptance.",
+      "note": "The lifecycle catalog declares four permanent scripts/e2e_harness artifacts with exact-source consumer sets: fresh_user_fixture.py lists test_fresh_user_harness.py, fresh_user_scenario.py and run_fresh_user.py; fresh_user_scenario.py lists test_fresh_user_harness.py and run_fresh_user.py; reporting.py lists test_fresh_user_harness.py, fresh_user_scenario.py and run_fresh_user.py; run_fresh_user.py lists test_fresh_user_harness.py. The scenario and runner use e2e_harness-qualified imports from the scripts root, exposing the package edges to the unchanged derivation. The five consumer lines missing at the superseded6414 tree are restored; the four catalog rows equal their base records member for member. These source declarations establish no fresh harness execution, whole-system consumer completeness or acceptance. The test source asserts oversized/vendored/non-default-spear/distinct-sprint/plain fixtures and confinement, blocked-step reason and owner with unreachable/not-completed status, governed-module existence and required report arguments; these source assertions establish no execution or fresh-user acceptance.",
       "targets": [
         {
           "anchor": {
-            "blob": "b9e272ef623574e517181e36b3dc949a3ac78e19",
-            "content": "sha256:c7f88acb894facffec57a95c70a6d070be289eb0d444c0856efb025b176fd889",
+            "blob": "f9d31f21c64890dc36a2c835faab4ae6860bcc68",
+            "content": "sha256:816a1406045a83c19d562fba596972024da994a15314f3c5c59a08c333b3175e",
             "locator": {
-              "end": 4298,
+              "end": 4711,
               "kind": "line_range",
-              "start": 4223
+              "start": 4692
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -2508,25 +2664,116 @@
         },
         {
           "anchor": {
-            "blob": "7e009d4b32c2f82a0a22371f55a3f93aaf5906d1",
-            "content": "sha256:526f63ef951cb952687e2aac052bff2ec6da73ca62e64f4f7dc0ef7534f80953",
+            "blob": "f9d31f21c64890dc36a2c835faab4ae6860bcc68",
+            "content": "sha256:3fb39db555599cfb75583e8777c17c410791ef6d331ca558ccc2ea556bc34495",
             "locator": {
-              "end": 170,
+              "end": 4730,
               "kind": "line_range",
-              "start": 114
+              "start": 4712
             },
-            "path": "mcp/tests/test_fresh_user_harness.py"
+            "path": "mcp/tests/evidence-lifecycle.toml"
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "7e009d4b32c2f82a0a22371f55a3f93aaf5906d1",
-            "content": "sha256:6251e0335a92c5af3b7b00de9e01c8ab41650c7f767a3809f95e2daa30a226fa",
+            "blob": "f9d31f21c64890dc36a2c835faab4ae6860bcc68",
+            "content": "sha256:5928ed38f47907de790a5850b85a59160c634c51cf009022aad9fcf67925f7ed",
             "locator": {
-              "end": 215,
+              "end": 4750,
               "kind": "line_range",
-              "start": 176
+              "start": 4731
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f9d31f21c64890dc36a2c835faab4ae6860bcc68",
+            "content": "sha256:0a831837e7cbd6e2210905fdabcafc9844ad2b1c3c4342393b46c81d3b624bc1",
+            "locator": {
+              "end": 4768,
+              "kind": "line_range",
+              "start": 4751
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "42d1bd975f759c016726524381462c1a7ba0b59a",
+            "content": "sha256:0d50eb38b2d3c24b97d25d711afc99131152ceb1a99f234bf6f6b8c98de9b43a",
+            "locator": {
+              "end": 75,
+              "kind": "line_range",
+              "start": 68
+            },
+            "path": "scripts/e2e_harness/fresh_user_scenario.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "57d707d85cd92b037c1dc86bfb3a310db97446eb",
+            "content": "sha256:3e5fa02f1359253aa0b154c049a573e5c2fadc7aa45202c8731398366c431ab1",
+            "locator": {
+              "end": 32,
+              "kind": "line_range",
+              "start": 23
+            },
+            "path": "scripts/e2e_harness/run_fresh_user.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b4447f012e0a159da29a8f802259e78e3f659c30",
+            "content": "sha256:d08ec0d06483db38542408e4390af797735806e7a84547251e0cf76cb9b88e87",
+            "locator": {
+              "end": 160,
+              "kind": "line_range",
+              "start": 138
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/dependency_facts.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b4447f012e0a159da29a8f802259e78e3f659c30",
+            "content": "sha256:3dcef8d8773e2d6dd2a4d8f4c355f1c89a1a0bb2a7431f2550a23bab8f1d5bdc",
+            "locator": {
+              "end": 450,
+              "kind": "line_range",
+              "start": 423
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/dependency_facts.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2e8dd72b490c3556329054d80b4dac24f3758de7",
+            "content": "sha256:61a81b2b7c22c316005103371d39594f78348aa6fa693c3d58d666871a62d604",
+            "locator": {
+              "end": 212,
+              "kind": "line_range",
+              "start": 206
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/catalog_canonical.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0efc8cc4ef2107ae05cd51f89d2c8949693ddb09",
+            "content": "sha256:b5b7497a4907740015b97ba23de084538d2a3f11d6a8957d1b20da793ff1f4d5",
+            "locator": {
+              "end": 206,
+              "kind": "line_range",
+              "start": 47
             },
             "path": "mcp/tests/test_fresh_user_harness.py"
           },
@@ -2539,7 +2786,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ac006b11f74a4c64ab964edc3378b4c96f153872",
+            "blob": "2c675ac4ed53a3b28cae8c0c32cd13c617d8f6ed",
             "content": "sha256:7700d68dcf4855295d022fa726b30b7d6da58a42755ce8d37843d680b6327b07",
             "locator": {
               "end": 5,
@@ -2552,12 +2799,12 @@
         },
         {
           "anchor": {
-            "blob": "ac006b11f74a4c64ab964edc3378b4c96f153872",
+            "blob": "2c675ac4ed53a3b28cae8c0c32cd13c617d8f6ed",
             "content": "sha256:b8a86a12ffb77e5b6523c1ac8d1d1f58280207696c50b9479bcda3880cea45a9",
             "locator": {
-              "end": 114,
+              "end": 150,
               "kind": "line_range",
-              "start": 114
+              "start": 150
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -2566,146 +2813,978 @@
       ]
     },
     "1572": {
-      "note": "**Retained historical source account — superseded by the current route account:** The three `scripts/e2e_harness` [[artifact]] rows a leaf under that permanent support root must register.",
+      "note": "The lifecycle catalog declares four permanent scripts/e2e_harness artifacts with exact-source consumer sets: fresh_user_fixture.py lists test_fresh_user_harness.py, fresh_user_scenario.py and run_fresh_user.py; fresh_user_scenario.py lists test_fresh_user_harness.py and run_fresh_user.py; reporting.py lists test_fresh_user_harness.py, fresh_user_scenario.py and run_fresh_user.py; run_fresh_user.py lists test_fresh_user_harness.py. The scenario and runner use e2e_harness-qualified imports from the scripts root, exposing the package edges to the unchanged derivation. The five consumer lines missing at the superseded6414 tree are restored; the four catalog rows equal their base records member for member. These source declarations establish no fresh harness execution, whole-system consumer completeness or acceptance.",
       "targets": [
         {
           "anchor": {
-            "blob": "b9e272ef623574e517181e36b3dc949a3ac78e19",
-            "content": "sha256:c7f88acb894facffec57a95c70a6d070be289eb0d444c0856efb025b176fd889",
+            "blob": "f9d31f21c64890dc36a2c835faab4ae6860bcc68",
+            "content": "sha256:816a1406045a83c19d562fba596972024da994a15314f3c5c59a08c333b3175e",
             "locator": {
-              "end": 4298,
+              "end": 4711,
               "kind": "line_range",
-              "start": 4223
+              "start": 4692
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
           "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f9d31f21c64890dc36a2c835faab4ae6860bcc68",
+            "content": "sha256:3fb39db555599cfb75583e8777c17c410791ef6d331ca558ccc2ea556bc34495",
+            "locator": {
+              "end": 4730,
+              "kind": "line_range",
+              "start": 4712
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f9d31f21c64890dc36a2c835faab4ae6860bcc68",
+            "content": "sha256:5928ed38f47907de790a5850b85a59160c634c51cf009022aad9fcf67925f7ed",
+            "locator": {
+              "end": 4750,
+              "kind": "line_range",
+              "start": 4731
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f9d31f21c64890dc36a2c835faab4ae6860bcc68",
+            "content": "sha256:0a831837e7cbd6e2210905fdabcafc9844ad2b1c3c4342393b46c81d3b624bc1",
+            "locator": {
+              "end": 4768,
+              "kind": "line_range",
+              "start": 4751
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "42d1bd975f759c016726524381462c1a7ba0b59a",
+            "content": "sha256:0d50eb38b2d3c24b97d25d711afc99131152ceb1a99f234bf6f6b8c98de9b43a",
+            "locator": {
+              "end": 75,
+              "kind": "line_range",
+              "start": 68
+            },
+            "path": "scripts/e2e_harness/fresh_user_scenario.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "57d707d85cd92b037c1dc86bfb3a310db97446eb",
+            "content": "sha256:3e5fa02f1359253aa0b154c049a573e5c2fadc7aa45202c8731398366c431ab1",
+            "locator": {
+              "end": 32,
+              "kind": "line_range",
+              "start": 23
+            },
+            "path": "scripts/e2e_harness/run_fresh_user.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b4447f012e0a159da29a8f802259e78e3f659c30",
+            "content": "sha256:d08ec0d06483db38542408e4390af797735806e7a84547251e0cf76cb9b88e87",
+            "locator": {
+              "end": 160,
+              "kind": "line_range",
+              "start": 138
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/dependency_facts.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b4447f012e0a159da29a8f802259e78e3f659c30",
+            "content": "sha256:3dcef8d8773e2d6dd2a4d8f4c355f1c89a1a0bb2a7431f2550a23bab8f1d5bdc",
+            "locator": {
+              "end": 450,
+              "kind": "line_range",
+              "start": 423
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/dependency_facts.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2e8dd72b490c3556329054d80b4dac24f3758de7",
+            "content": "sha256:61a81b2b7c22c316005103371d39594f78348aa6fa693c3d58d666871a62d604",
+            "locator": {
+              "end": 212,
+              "kind": "line_range",
+              "start": 206
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/catalog_canonical.py"
+          },
+          "kind": "code"
         }
       ]
     },
     "1573": {
-      "note": "**Retained historical source account — superseded by the current route account:** The three `scripts/e2e_harness` [[artifact]] rows a leaf under that permanent support root must register.",
+      "note": "The lifecycle catalog declares four permanent scripts/e2e_harness artifacts with exact-source consumer sets: fresh_user_fixture.py lists test_fresh_user_harness.py, fresh_user_scenario.py and run_fresh_user.py; fresh_user_scenario.py lists test_fresh_user_harness.py and run_fresh_user.py; reporting.py lists test_fresh_user_harness.py, fresh_user_scenario.py and run_fresh_user.py; run_fresh_user.py lists test_fresh_user_harness.py. The scenario and runner use e2e_harness-qualified imports from the scripts root, exposing the package edges to the unchanged derivation. The five consumer lines missing at the superseded6414 tree are restored; the four catalog rows equal their base records member for member. These source declarations establish no fresh harness execution, whole-system consumer completeness or acceptance.",
       "targets": [
         {
           "anchor": {
-            "blob": "b9e272ef623574e517181e36b3dc949a3ac78e19",
-            "content": "sha256:c7f88acb894facffec57a95c70a6d070be289eb0d444c0856efb025b176fd889",
+            "blob": "f9d31f21c64890dc36a2c835faab4ae6860bcc68",
+            "content": "sha256:816a1406045a83c19d562fba596972024da994a15314f3c5c59a08c333b3175e",
             "locator": {
-              "end": 4298,
+              "end": 4711,
               "kind": "line_range",
-              "start": 4223
+              "start": 4692
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
           "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f9d31f21c64890dc36a2c835faab4ae6860bcc68",
+            "content": "sha256:3fb39db555599cfb75583e8777c17c410791ef6d331ca558ccc2ea556bc34495",
+            "locator": {
+              "end": 4730,
+              "kind": "line_range",
+              "start": 4712
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f9d31f21c64890dc36a2c835faab4ae6860bcc68",
+            "content": "sha256:5928ed38f47907de790a5850b85a59160c634c51cf009022aad9fcf67925f7ed",
+            "locator": {
+              "end": 4750,
+              "kind": "line_range",
+              "start": 4731
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f9d31f21c64890dc36a2c835faab4ae6860bcc68",
+            "content": "sha256:0a831837e7cbd6e2210905fdabcafc9844ad2b1c3c4342393b46c81d3b624bc1",
+            "locator": {
+              "end": 4768,
+              "kind": "line_range",
+              "start": 4751
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "42d1bd975f759c016726524381462c1a7ba0b59a",
+            "content": "sha256:0d50eb38b2d3c24b97d25d711afc99131152ceb1a99f234bf6f6b8c98de9b43a",
+            "locator": {
+              "end": 75,
+              "kind": "line_range",
+              "start": 68
+            },
+            "path": "scripts/e2e_harness/fresh_user_scenario.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "57d707d85cd92b037c1dc86bfb3a310db97446eb",
+            "content": "sha256:3e5fa02f1359253aa0b154c049a573e5c2fadc7aa45202c8731398366c431ab1",
+            "locator": {
+              "end": 32,
+              "kind": "line_range",
+              "start": 23
+            },
+            "path": "scripts/e2e_harness/run_fresh_user.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b4447f012e0a159da29a8f802259e78e3f659c30",
+            "content": "sha256:d08ec0d06483db38542408e4390af797735806e7a84547251e0cf76cb9b88e87",
+            "locator": {
+              "end": 160,
+              "kind": "line_range",
+              "start": 138
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/dependency_facts.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b4447f012e0a159da29a8f802259e78e3f659c30",
+            "content": "sha256:3dcef8d8773e2d6dd2a4d8f4c355f1c89a1a0bb2a7431f2550a23bab8f1d5bdc",
+            "locator": {
+              "end": 450,
+              "kind": "line_range",
+              "start": 423
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/dependency_facts.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2e8dd72b490c3556329054d80b4dac24f3758de7",
+            "content": "sha256:61a81b2b7c22c316005103371d39594f78348aa6fa693c3d58d666871a62d604",
+            "locator": {
+              "end": 212,
+              "kind": "line_range",
+              "start": 206
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/catalog_canonical.py"
+          },
+          "kind": "code"
         }
       ]
     },
     "1574": {
-      "note": "**Retained historical source account — superseded by the current route account:** The three `scripts/e2e_harness` [[artifact]] rows a leaf under that permanent support root must register.",
+      "note": "The lifecycle catalog declares four permanent scripts/e2e_harness artifacts with exact-source consumer sets: fresh_user_fixture.py lists test_fresh_user_harness.py, fresh_user_scenario.py and run_fresh_user.py; fresh_user_scenario.py lists test_fresh_user_harness.py and run_fresh_user.py; reporting.py lists test_fresh_user_harness.py, fresh_user_scenario.py and run_fresh_user.py; run_fresh_user.py lists test_fresh_user_harness.py. The scenario and runner use e2e_harness-qualified imports from the scripts root, exposing the package edges to the unchanged derivation. The five consumer lines missing at the superseded6414 tree are restored; the four catalog rows equal their base records member for member. These source declarations establish no fresh harness execution, whole-system consumer completeness or acceptance.",
       "targets": [
         {
           "anchor": {
-            "blob": "b9e272ef623574e517181e36b3dc949a3ac78e19",
-            "content": "sha256:c7f88acb894facffec57a95c70a6d070be289eb0d444c0856efb025b176fd889",
+            "blob": "f9d31f21c64890dc36a2c835faab4ae6860bcc68",
+            "content": "sha256:816a1406045a83c19d562fba596972024da994a15314f3c5c59a08c333b3175e",
             "locator": {
-              "end": 4298,
+              "end": 4711,
               "kind": "line_range",
-              "start": 4223
+              "start": 4692
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
           "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f9d31f21c64890dc36a2c835faab4ae6860bcc68",
+            "content": "sha256:3fb39db555599cfb75583e8777c17c410791ef6d331ca558ccc2ea556bc34495",
+            "locator": {
+              "end": 4730,
+              "kind": "line_range",
+              "start": 4712
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f9d31f21c64890dc36a2c835faab4ae6860bcc68",
+            "content": "sha256:5928ed38f47907de790a5850b85a59160c634c51cf009022aad9fcf67925f7ed",
+            "locator": {
+              "end": 4750,
+              "kind": "line_range",
+              "start": 4731
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f9d31f21c64890dc36a2c835faab4ae6860bcc68",
+            "content": "sha256:0a831837e7cbd6e2210905fdabcafc9844ad2b1c3c4342393b46c81d3b624bc1",
+            "locator": {
+              "end": 4768,
+              "kind": "line_range",
+              "start": 4751
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "42d1bd975f759c016726524381462c1a7ba0b59a",
+            "content": "sha256:0d50eb38b2d3c24b97d25d711afc99131152ceb1a99f234bf6f6b8c98de9b43a",
+            "locator": {
+              "end": 75,
+              "kind": "line_range",
+              "start": 68
+            },
+            "path": "scripts/e2e_harness/fresh_user_scenario.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "57d707d85cd92b037c1dc86bfb3a310db97446eb",
+            "content": "sha256:3e5fa02f1359253aa0b154c049a573e5c2fadc7aa45202c8731398366c431ab1",
+            "locator": {
+              "end": 32,
+              "kind": "line_range",
+              "start": 23
+            },
+            "path": "scripts/e2e_harness/run_fresh_user.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b4447f012e0a159da29a8f802259e78e3f659c30",
+            "content": "sha256:d08ec0d06483db38542408e4390af797735806e7a84547251e0cf76cb9b88e87",
+            "locator": {
+              "end": 160,
+              "kind": "line_range",
+              "start": 138
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/dependency_facts.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b4447f012e0a159da29a8f802259e78e3f659c30",
+            "content": "sha256:3dcef8d8773e2d6dd2a4d8f4c355f1c89a1a0bb2a7431f2550a23bab8f1d5bdc",
+            "locator": {
+              "end": 450,
+              "kind": "line_range",
+              "start": 423
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/dependency_facts.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2e8dd72b490c3556329054d80b4dac24f3758de7",
+            "content": "sha256:61a81b2b7c22c316005103371d39594f78348aa6fa693c3d58d666871a62d604",
+            "locator": {
+              "end": 212,
+              "kind": "line_range",
+              "start": 206
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/catalog_canonical.py"
+          },
+          "kind": "code"
         }
       ]
     },
     "1575": {
-      "note": "**Retained historical source account — superseded by the current route account:** The three `scripts/e2e_harness` [[artifact]] rows a leaf under that permanent support root must register.",
+      "note": "The lifecycle catalog declares four permanent scripts/e2e_harness artifacts with exact-source consumer sets: fresh_user_fixture.py lists test_fresh_user_harness.py, fresh_user_scenario.py and run_fresh_user.py; fresh_user_scenario.py lists test_fresh_user_harness.py and run_fresh_user.py; reporting.py lists test_fresh_user_harness.py, fresh_user_scenario.py and run_fresh_user.py; run_fresh_user.py lists test_fresh_user_harness.py. The scenario and runner use e2e_harness-qualified imports from the scripts root, exposing the package edges to the unchanged derivation. The five consumer lines missing at the superseded6414 tree are restored; the four catalog rows equal their base records member for member. These source declarations establish no fresh harness execution, whole-system consumer completeness or acceptance.",
       "targets": [
         {
           "anchor": {
-            "blob": "b9e272ef623574e517181e36b3dc949a3ac78e19",
-            "content": "sha256:c7f88acb894facffec57a95c70a6d070be289eb0d444c0856efb025b176fd889",
+            "blob": "f9d31f21c64890dc36a2c835faab4ae6860bcc68",
+            "content": "sha256:816a1406045a83c19d562fba596972024da994a15314f3c5c59a08c333b3175e",
             "locator": {
-              "end": 4298,
+              "end": 4711,
               "kind": "line_range",
-              "start": 4223
+              "start": 4692
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
           "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f9d31f21c64890dc36a2c835faab4ae6860bcc68",
+            "content": "sha256:3fb39db555599cfb75583e8777c17c410791ef6d331ca558ccc2ea556bc34495",
+            "locator": {
+              "end": 4730,
+              "kind": "line_range",
+              "start": 4712
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f9d31f21c64890dc36a2c835faab4ae6860bcc68",
+            "content": "sha256:5928ed38f47907de790a5850b85a59160c634c51cf009022aad9fcf67925f7ed",
+            "locator": {
+              "end": 4750,
+              "kind": "line_range",
+              "start": 4731
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f9d31f21c64890dc36a2c835faab4ae6860bcc68",
+            "content": "sha256:0a831837e7cbd6e2210905fdabcafc9844ad2b1c3c4342393b46c81d3b624bc1",
+            "locator": {
+              "end": 4768,
+              "kind": "line_range",
+              "start": 4751
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "42d1bd975f759c016726524381462c1a7ba0b59a",
+            "content": "sha256:0d50eb38b2d3c24b97d25d711afc99131152ceb1a99f234bf6f6b8c98de9b43a",
+            "locator": {
+              "end": 75,
+              "kind": "line_range",
+              "start": 68
+            },
+            "path": "scripts/e2e_harness/fresh_user_scenario.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "57d707d85cd92b037c1dc86bfb3a310db97446eb",
+            "content": "sha256:3e5fa02f1359253aa0b154c049a573e5c2fadc7aa45202c8731398366c431ab1",
+            "locator": {
+              "end": 32,
+              "kind": "line_range",
+              "start": 23
+            },
+            "path": "scripts/e2e_harness/run_fresh_user.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b4447f012e0a159da29a8f802259e78e3f659c30",
+            "content": "sha256:d08ec0d06483db38542408e4390af797735806e7a84547251e0cf76cb9b88e87",
+            "locator": {
+              "end": 160,
+              "kind": "line_range",
+              "start": 138
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/dependency_facts.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b4447f012e0a159da29a8f802259e78e3f659c30",
+            "content": "sha256:3dcef8d8773e2d6dd2a4d8f4c355f1c89a1a0bb2a7431f2550a23bab8f1d5bdc",
+            "locator": {
+              "end": 450,
+              "kind": "line_range",
+              "start": 423
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/dependency_facts.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2e8dd72b490c3556329054d80b4dac24f3758de7",
+            "content": "sha256:61a81b2b7c22c316005103371d39594f78348aa6fa693c3d58d666871a62d604",
+            "locator": {
+              "end": 212,
+              "kind": "line_range",
+              "start": 206
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/catalog_canonical.py"
+          },
+          "kind": "code"
         }
       ]
     },
     "1576": {
-      "note": "**Retained historical source account — superseded by the current route account:** The three `scripts/e2e_harness` [[artifact]] rows a leaf under that permanent support root must register.",
+      "note": "The lifecycle catalog declares four permanent scripts/e2e_harness artifacts with exact-source consumer sets: fresh_user_fixture.py lists test_fresh_user_harness.py, fresh_user_scenario.py and run_fresh_user.py; fresh_user_scenario.py lists test_fresh_user_harness.py and run_fresh_user.py; reporting.py lists test_fresh_user_harness.py, fresh_user_scenario.py and run_fresh_user.py; run_fresh_user.py lists test_fresh_user_harness.py. The scenario and runner use e2e_harness-qualified imports from the scripts root, exposing the package edges to the unchanged derivation. The five consumer lines missing at the superseded6414 tree are restored; the four catalog rows equal their base records member for member. These source declarations establish no fresh harness execution, whole-system consumer completeness or acceptance.",
       "targets": [
         {
           "anchor": {
-            "blob": "b9e272ef623574e517181e36b3dc949a3ac78e19",
-            "content": "sha256:c7f88acb894facffec57a95c70a6d070be289eb0d444c0856efb025b176fd889",
+            "blob": "f9d31f21c64890dc36a2c835faab4ae6860bcc68",
+            "content": "sha256:816a1406045a83c19d562fba596972024da994a15314f3c5c59a08c333b3175e",
             "locator": {
-              "end": 4298,
+              "end": 4711,
               "kind": "line_range",
-              "start": 4223
+              "start": 4692
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
           "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f9d31f21c64890dc36a2c835faab4ae6860bcc68",
+            "content": "sha256:3fb39db555599cfb75583e8777c17c410791ef6d331ca558ccc2ea556bc34495",
+            "locator": {
+              "end": 4730,
+              "kind": "line_range",
+              "start": 4712
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f9d31f21c64890dc36a2c835faab4ae6860bcc68",
+            "content": "sha256:5928ed38f47907de790a5850b85a59160c634c51cf009022aad9fcf67925f7ed",
+            "locator": {
+              "end": 4750,
+              "kind": "line_range",
+              "start": 4731
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f9d31f21c64890dc36a2c835faab4ae6860bcc68",
+            "content": "sha256:0a831837e7cbd6e2210905fdabcafc9844ad2b1c3c4342393b46c81d3b624bc1",
+            "locator": {
+              "end": 4768,
+              "kind": "line_range",
+              "start": 4751
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "42d1bd975f759c016726524381462c1a7ba0b59a",
+            "content": "sha256:0d50eb38b2d3c24b97d25d711afc99131152ceb1a99f234bf6f6b8c98de9b43a",
+            "locator": {
+              "end": 75,
+              "kind": "line_range",
+              "start": 68
+            },
+            "path": "scripts/e2e_harness/fresh_user_scenario.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "57d707d85cd92b037c1dc86bfb3a310db97446eb",
+            "content": "sha256:3e5fa02f1359253aa0b154c049a573e5c2fadc7aa45202c8731398366c431ab1",
+            "locator": {
+              "end": 32,
+              "kind": "line_range",
+              "start": 23
+            },
+            "path": "scripts/e2e_harness/run_fresh_user.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b4447f012e0a159da29a8f802259e78e3f659c30",
+            "content": "sha256:d08ec0d06483db38542408e4390af797735806e7a84547251e0cf76cb9b88e87",
+            "locator": {
+              "end": 160,
+              "kind": "line_range",
+              "start": 138
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/dependency_facts.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b4447f012e0a159da29a8f802259e78e3f659c30",
+            "content": "sha256:3dcef8d8773e2d6dd2a4d8f4c355f1c89a1a0bb2a7431f2550a23bab8f1d5bdc",
+            "locator": {
+              "end": 450,
+              "kind": "line_range",
+              "start": 423
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/dependency_facts.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2e8dd72b490c3556329054d80b4dac24f3758de7",
+            "content": "sha256:61a81b2b7c22c316005103371d39594f78348aa6fa693c3d58d666871a62d604",
+            "locator": {
+              "end": 212,
+              "kind": "line_range",
+              "start": 206
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/catalog_canonical.py"
+          },
+          "kind": "code"
         }
       ]
     },
     "1577": {
-      "note": "**Retained historical source account — superseded by the current route account:** The three `scripts/e2e_harness` [[artifact]] rows a leaf under that permanent support root must register.",
+      "note": "The lifecycle catalog declares four permanent scripts/e2e_harness artifacts with exact-source consumer sets: fresh_user_fixture.py lists test_fresh_user_harness.py, fresh_user_scenario.py and run_fresh_user.py; fresh_user_scenario.py lists test_fresh_user_harness.py and run_fresh_user.py; reporting.py lists test_fresh_user_harness.py, fresh_user_scenario.py and run_fresh_user.py; run_fresh_user.py lists test_fresh_user_harness.py. The scenario and runner use e2e_harness-qualified imports from the scripts root, exposing the package edges to the unchanged derivation. The five consumer lines missing at the superseded6414 tree are restored; the four catalog rows equal their base records member for member. These source declarations establish no fresh harness execution, whole-system consumer completeness or acceptance.",
       "targets": [
         {
           "anchor": {
-            "blob": "b9e272ef623574e517181e36b3dc949a3ac78e19",
-            "content": "sha256:c7f88acb894facffec57a95c70a6d070be289eb0d444c0856efb025b176fd889",
+            "blob": "f9d31f21c64890dc36a2c835faab4ae6860bcc68",
+            "content": "sha256:816a1406045a83c19d562fba596972024da994a15314f3c5c59a08c333b3175e",
             "locator": {
-              "end": 4298,
+              "end": 4711,
               "kind": "line_range",
-              "start": 4223
+              "start": 4692
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
           "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f9d31f21c64890dc36a2c835faab4ae6860bcc68",
+            "content": "sha256:3fb39db555599cfb75583e8777c17c410791ef6d331ca558ccc2ea556bc34495",
+            "locator": {
+              "end": 4730,
+              "kind": "line_range",
+              "start": 4712
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f9d31f21c64890dc36a2c835faab4ae6860bcc68",
+            "content": "sha256:5928ed38f47907de790a5850b85a59160c634c51cf009022aad9fcf67925f7ed",
+            "locator": {
+              "end": 4750,
+              "kind": "line_range",
+              "start": 4731
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f9d31f21c64890dc36a2c835faab4ae6860bcc68",
+            "content": "sha256:0a831837e7cbd6e2210905fdabcafc9844ad2b1c3c4342393b46c81d3b624bc1",
+            "locator": {
+              "end": 4768,
+              "kind": "line_range",
+              "start": 4751
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "42d1bd975f759c016726524381462c1a7ba0b59a",
+            "content": "sha256:0d50eb38b2d3c24b97d25d711afc99131152ceb1a99f234bf6f6b8c98de9b43a",
+            "locator": {
+              "end": 75,
+              "kind": "line_range",
+              "start": 68
+            },
+            "path": "scripts/e2e_harness/fresh_user_scenario.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "57d707d85cd92b037c1dc86bfb3a310db97446eb",
+            "content": "sha256:3e5fa02f1359253aa0b154c049a573e5c2fadc7aa45202c8731398366c431ab1",
+            "locator": {
+              "end": 32,
+              "kind": "line_range",
+              "start": 23
+            },
+            "path": "scripts/e2e_harness/run_fresh_user.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b4447f012e0a159da29a8f802259e78e3f659c30",
+            "content": "sha256:d08ec0d06483db38542408e4390af797735806e7a84547251e0cf76cb9b88e87",
+            "locator": {
+              "end": 160,
+              "kind": "line_range",
+              "start": 138
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/dependency_facts.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b4447f012e0a159da29a8f802259e78e3f659c30",
+            "content": "sha256:3dcef8d8773e2d6dd2a4d8f4c355f1c89a1a0bb2a7431f2550a23bab8f1d5bdc",
+            "locator": {
+              "end": 450,
+              "kind": "line_range",
+              "start": 423
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/dependency_facts.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2e8dd72b490c3556329054d80b4dac24f3758de7",
+            "content": "sha256:61a81b2b7c22c316005103371d39594f78348aa6fa693c3d58d666871a62d604",
+            "locator": {
+              "end": 212,
+              "kind": "line_range",
+              "start": 206
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/catalog_canonical.py"
+          },
+          "kind": "code"
         }
       ]
     },
     "1578": {
-      "note": "**Retained historical source account — superseded by the current route account:** The three `scripts/e2e_harness` [[artifact]] rows a leaf under that permanent support root must register.",
+      "note": "The lifecycle catalog declares four permanent scripts/e2e_harness artifacts with exact-source consumer sets: fresh_user_fixture.py lists test_fresh_user_harness.py, fresh_user_scenario.py and run_fresh_user.py; fresh_user_scenario.py lists test_fresh_user_harness.py and run_fresh_user.py; reporting.py lists test_fresh_user_harness.py, fresh_user_scenario.py and run_fresh_user.py; run_fresh_user.py lists test_fresh_user_harness.py. The scenario and runner use e2e_harness-qualified imports from the scripts root, exposing the package edges to the unchanged derivation. The five consumer lines missing at the superseded6414 tree are restored; the four catalog rows equal their base records member for member. These source declarations establish no fresh harness execution, whole-system consumer completeness or acceptance.",
       "targets": [
         {
           "anchor": {
-            "blob": "b9e272ef623574e517181e36b3dc949a3ac78e19",
-            "content": "sha256:c7f88acb894facffec57a95c70a6d070be289eb0d444c0856efb025b176fd889",
+            "blob": "f9d31f21c64890dc36a2c835faab4ae6860bcc68",
+            "content": "sha256:816a1406045a83c19d562fba596972024da994a15314f3c5c59a08c333b3175e",
             "locator": {
-              "end": 4298,
+              "end": 4711,
               "kind": "line_range",
-              "start": 4223
+              "start": 4692
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
           "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f9d31f21c64890dc36a2c835faab4ae6860bcc68",
+            "content": "sha256:3fb39db555599cfb75583e8777c17c410791ef6d331ca558ccc2ea556bc34495",
+            "locator": {
+              "end": 4730,
+              "kind": "line_range",
+              "start": 4712
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f9d31f21c64890dc36a2c835faab4ae6860bcc68",
+            "content": "sha256:5928ed38f47907de790a5850b85a59160c634c51cf009022aad9fcf67925f7ed",
+            "locator": {
+              "end": 4750,
+              "kind": "line_range",
+              "start": 4731
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f9d31f21c64890dc36a2c835faab4ae6860bcc68",
+            "content": "sha256:0a831837e7cbd6e2210905fdabcafc9844ad2b1c3c4342393b46c81d3b624bc1",
+            "locator": {
+              "end": 4768,
+              "kind": "line_range",
+              "start": 4751
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "42d1bd975f759c016726524381462c1a7ba0b59a",
+            "content": "sha256:0d50eb38b2d3c24b97d25d711afc99131152ceb1a99f234bf6f6b8c98de9b43a",
+            "locator": {
+              "end": 75,
+              "kind": "line_range",
+              "start": 68
+            },
+            "path": "scripts/e2e_harness/fresh_user_scenario.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "57d707d85cd92b037c1dc86bfb3a310db97446eb",
+            "content": "sha256:3e5fa02f1359253aa0b154c049a573e5c2fadc7aa45202c8731398366c431ab1",
+            "locator": {
+              "end": 32,
+              "kind": "line_range",
+              "start": 23
+            },
+            "path": "scripts/e2e_harness/run_fresh_user.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b4447f012e0a159da29a8f802259e78e3f659c30",
+            "content": "sha256:d08ec0d06483db38542408e4390af797735806e7a84547251e0cf76cb9b88e87",
+            "locator": {
+              "end": 160,
+              "kind": "line_range",
+              "start": 138
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/dependency_facts.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b4447f012e0a159da29a8f802259e78e3f659c30",
+            "content": "sha256:3dcef8d8773e2d6dd2a4d8f4c355f1c89a1a0bb2a7431f2550a23bab8f1d5bdc",
+            "locator": {
+              "end": 450,
+              "kind": "line_range",
+              "start": 423
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/dependency_facts.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2e8dd72b490c3556329054d80b4dac24f3758de7",
+            "content": "sha256:61a81b2b7c22c316005103371d39594f78348aa6fa693c3d58d666871a62d604",
+            "locator": {
+              "end": 212,
+              "kind": "line_range",
+              "start": 206
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/catalog_canonical.py"
+          },
+          "kind": "code"
         }
       ]
     },
     "1579": {
-      "note": "**Retained historical source account — superseded by the current route account:** The three `scripts/e2e_harness` [[artifact]] rows a leaf under that permanent support root must register.",
+      "note": "The lifecycle catalog declares four permanent scripts/e2e_harness artifacts with exact-source consumer sets: fresh_user_fixture.py lists test_fresh_user_harness.py, fresh_user_scenario.py and run_fresh_user.py; fresh_user_scenario.py lists test_fresh_user_harness.py and run_fresh_user.py; reporting.py lists test_fresh_user_harness.py, fresh_user_scenario.py and run_fresh_user.py; run_fresh_user.py lists test_fresh_user_harness.py. The scenario and runner use e2e_harness-qualified imports from the scripts root, exposing the package edges to the unchanged derivation. The five consumer lines missing at the superseded6414 tree are restored; the four catalog rows equal their base records member for member. These source declarations establish no fresh harness execution, whole-system consumer completeness or acceptance.",
       "targets": [
         {
           "anchor": {
-            "blob": "b9e272ef623574e517181e36b3dc949a3ac78e19",
-            "content": "sha256:c7f88acb894facffec57a95c70a6d070be289eb0d444c0856efb025b176fd889",
+            "blob": "f9d31f21c64890dc36a2c835faab4ae6860bcc68",
+            "content": "sha256:816a1406045a83c19d562fba596972024da994a15314f3c5c59a08c333b3175e",
             "locator": {
-              "end": 4298,
+              "end": 4711,
               "kind": "line_range",
-              "start": 4223
+              "start": 4692
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
           "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f9d31f21c64890dc36a2c835faab4ae6860bcc68",
+            "content": "sha256:3fb39db555599cfb75583e8777c17c410791ef6d331ca558ccc2ea556bc34495",
+            "locator": {
+              "end": 4730,
+              "kind": "line_range",
+              "start": 4712
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f9d31f21c64890dc36a2c835faab4ae6860bcc68",
+            "content": "sha256:5928ed38f47907de790a5850b85a59160c634c51cf009022aad9fcf67925f7ed",
+            "locator": {
+              "end": 4750,
+              "kind": "line_range",
+              "start": 4731
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f9d31f21c64890dc36a2c835faab4ae6860bcc68",
+            "content": "sha256:0a831837e7cbd6e2210905fdabcafc9844ad2b1c3c4342393b46c81d3b624bc1",
+            "locator": {
+              "end": 4768,
+              "kind": "line_range",
+              "start": 4751
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "42d1bd975f759c016726524381462c1a7ba0b59a",
+            "content": "sha256:0d50eb38b2d3c24b97d25d711afc99131152ceb1a99f234bf6f6b8c98de9b43a",
+            "locator": {
+              "end": 75,
+              "kind": "line_range",
+              "start": 68
+            },
+            "path": "scripts/e2e_harness/fresh_user_scenario.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "57d707d85cd92b037c1dc86bfb3a310db97446eb",
+            "content": "sha256:3e5fa02f1359253aa0b154c049a573e5c2fadc7aa45202c8731398366c431ab1",
+            "locator": {
+              "end": 32,
+              "kind": "line_range",
+              "start": 23
+            },
+            "path": "scripts/e2e_harness/run_fresh_user.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b4447f012e0a159da29a8f802259e78e3f659c30",
+            "content": "sha256:d08ec0d06483db38542408e4390af797735806e7a84547251e0cf76cb9b88e87",
+            "locator": {
+              "end": 160,
+              "kind": "line_range",
+              "start": 138
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/dependency_facts.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b4447f012e0a159da29a8f802259e78e3f659c30",
+            "content": "sha256:3dcef8d8773e2d6dd2a4d8f4c355f1c89a1a0bb2a7431f2550a23bab8f1d5bdc",
+            "locator": {
+              "end": 450,
+              "kind": "line_range",
+              "start": 423
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/dependency_facts.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2e8dd72b490c3556329054d80b4dac24f3758de7",
+            "content": "sha256:61a81b2b7c22c316005103371d39594f78348aa6fa693c3d58d666871a62d604",
+            "locator": {
+              "end": 212,
+              "kind": "line_range",
+              "start": 206
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/catalog_canonical.py"
+          },
+          "kind": "code"
         }
       ]
     },
@@ -2714,7 +3793,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ac006b11f74a4c64ab964edc3378b4c96f153872",
+            "blob": "2c675ac4ed53a3b28cae8c0c32cd13c617d8f6ed",
             "content": "sha256:7700d68dcf4855295d022fa726b30b7d6da58a42755ce8d37843d680b6327b07",
             "locator": {
               "end": 5,
@@ -2727,12 +3806,12 @@
         },
         {
           "anchor": {
-            "blob": "ac006b11f74a4c64ab964edc3378b4c96f153872",
+            "blob": "2c675ac4ed53a3b28cae8c0c32cd13c617d8f6ed",
             "content": "sha256:b8a86a12ffb77e5b6523c1ac8d1d1f58280207696c50b9479bcda3880cea45a9",
             "locator": {
-              "end": 114,
+              "end": 150,
               "kind": "line_range",
-              "start": 114
+              "start": 150
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -2778,12 +3857,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ac006b11f74a4c64ab964edc3378b4c96f153872",
+            "blob": "2c675ac4ed53a3b28cae8c0c32cd13c617d8f6ed",
             "content": "sha256:3a31681b184fadb905d049231e9b088d23714459be4934c4c332cca8c41cfb04",
             "locator": {
-              "end": 229,
+              "end": 266,
               "kind": "line_range",
-              "start": 229
+              "start": 266
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -2791,12 +3870,12 @@
         },
         {
           "anchor": {
-            "blob": "b9e272ef623574e517181e36b3dc949a3ac78e19",
+            "blob": "f9d31f21c64890dc36a2c835faab4ae6860bcc68",
             "content": "sha256:d8f069f62abc81db6006f5344a38561cb03c835eabeff11e2effc4a8973595cc",
             "locator": {
-              "end": 1847,
+              "end": 2187,
               "kind": "line_range",
-              "start": 1845
+              "start": 2185
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -2861,12 +3940,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ac006b11f74a4c64ab964edc3378b4c96f153872",
+            "blob": "2c675ac4ed53a3b28cae8c0c32cd13c617d8f6ed",
             "content": "sha256:432c9c5cdad977352024ad9824dfef05e5fdda879f965d7f21f243e6b177ae76",
             "locator": {
-              "end": 604,
+              "end": 643,
               "kind": "line_range",
-              "start": 604
+              "start": 643
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -2879,12 +3958,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ac006b11f74a4c64ab964edc3378b4c96f153872",
+            "blob": "2c675ac4ed53a3b28cae8c0c32cd13c617d8f6ed",
             "content": "sha256:58001ace8fe9c0ee3c69d3ce99de51f704d654620fb0f7044fbc2aaa3d96c937",
             "locator": {
-              "end": 228,
+              "end": 265,
               "kind": "line_range",
-              "start": 228
+              "start": 265
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -3180,12 +4259,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b9e272ef623574e517181e36b3dc949a3ac78e19",
+            "blob": "f9d31f21c64890dc36a2c835faab4ae6860bcc68",
             "content": "sha256:ffb0114b575d503e236977d47b97156ba49cd0ed7b171845390e4aeb3a642782",
             "locator": {
-              "end": 32,
+              "end": 4797,
               "kind": "line_range",
-              "start": 30
+              "start": 4795
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -3198,12 +4277,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b9e272ef623574e517181e36b3dc949a3ac78e19",
+            "blob": "f9d31f21c64890dc36a2c835faab4ae6860bcc68",
             "content": "sha256:a5a69b53a58dff42b2855eb9b137c3707af6dac687337586bda61a510d39bac6",
             "locator": {
-              "end": 34,
+              "end": 4799,
               "kind": "line_range",
-              "start": 32
+              "start": 4797
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -3216,12 +4295,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ac006b11f74a4c64ab964edc3378b4c96f153872",
+            "blob": "2c675ac4ed53a3b28cae8c0c32cd13c617d8f6ed",
             "content": "sha256:b26d10cf07a413774534d95a37e39441a8b2fb1804b8c5cf6c7863583506481b",
             "locator": {
-              "end": 597,
+              "end": 636,
               "kind": "line_range",
-              "start": 596
+              "start": 635
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -3229,12 +4308,12 @@
         },
         {
           "anchor": {
-            "blob": "b9e272ef623574e517181e36b3dc949a3ac78e19",
+            "blob": "f9d31f21c64890dc36a2c835faab4ae6860bcc68",
             "content": "sha256:17cd780fd48f931b12b1213c0078a9095617e14b4b2cc5ded46a00b1ddde3a6a",
             "locator": {
-              "end": 871,
+              "end": 825,
               "kind": "line_range",
-              "start": 869
+              "start": 823
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -3247,12 +4326,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b9e272ef623574e517181e36b3dc949a3ac78e19",
+            "blob": "f9d31f21c64890dc36a2c835faab4ae6860bcc68",
             "content": "sha256:ffb0114b575d503e236977d47b97156ba49cd0ed7b171845390e4aeb3a642782",
             "locator": {
-              "end": 32,
+              "end": 4797,
               "kind": "line_range",
-              "start": 30
+              "start": 4795
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -3265,12 +4344,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b9e272ef623574e517181e36b3dc949a3ac78e19",
+            "blob": "f9d31f21c64890dc36a2c835faab4ae6860bcc68",
             "content": "sha256:a5a69b53a58dff42b2855eb9b137c3707af6dac687337586bda61a510d39bac6",
             "locator": {
-              "end": 34,
+              "end": 4799,
               "kind": "line_range",
-              "start": 32
+              "start": 4797
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -3365,12 +4444,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b9e272ef623574e517181e36b3dc949a3ac78e19",
+            "blob": "f9d31f21c64890dc36a2c835faab4ae6860bcc68",
             "content": "sha256:929342408eab986b85e474007d33b0398ae3cda343cf39c7a584d5cf1ebf0936",
             "locator": {
-              "end": 17,
+              "end": 4782,
               "kind": "line_range",
-              "start": 15
+              "start": 4780
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -3383,12 +4462,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b9e272ef623574e517181e36b3dc949a3ac78e19",
+            "blob": "f9d31f21c64890dc36a2c835faab4ae6860bcc68",
             "content": "sha256:929342408eab986b85e474007d33b0398ae3cda343cf39c7a584d5cf1ebf0936",
             "locator": {
-              "end": 17,
+              "end": 4782,
               "kind": "line_range",
-              "start": 15
+              "start": 4780
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -3567,12 +4646,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b9e272ef623574e517181e36b3dc949a3ac78e19",
+            "blob": "f9d31f21c64890dc36a2c835faab4ae6860bcc68",
             "content": "sha256:625ef3f6d144761540680ace49bdf598cd4131a520507bf4bfe597d1b91012c0",
             "locator": {
-              "end": 62,
+              "end": 4827,
               "kind": "line_range",
-              "start": 60
+              "start": 4825
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -3585,12 +4664,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b9e272ef623574e517181e36b3dc949a3ac78e19",
+            "blob": "f9d31f21c64890dc36a2c835faab4ae6860bcc68",
             "content": "sha256:ffb0114b575d503e236977d47b97156ba49cd0ed7b171845390e4aeb3a642782",
             "locator": {
-              "end": 32,
+              "end": 4797,
               "kind": "line_range",
-              "start": 30
+              "start": 4795
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -3603,12 +4682,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ac006b11f74a4c64ab964edc3378b4c96f153872",
+            "blob": "2c675ac4ed53a3b28cae8c0c32cd13c617d8f6ed",
             "content": "sha256:b26d10cf07a413774534d95a37e39441a8b2fb1804b8c5cf6c7863583506481b",
             "locator": {
-              "end": 597,
+              "end": 636,
               "kind": "line_range",
-              "start": 596
+              "start": 635
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -3621,12 +4700,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b9e272ef623574e517181e36b3dc949a3ac78e19",
+            "blob": "f9d31f21c64890dc36a2c835faab4ae6860bcc68",
             "content": "sha256:929342408eab986b85e474007d33b0398ae3cda343cf39c7a584d5cf1ebf0936",
             "locator": {
-              "end": 17,
+              "end": 4782,
               "kind": "line_range",
-              "start": 15
+              "start": 4780
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -3722,18 +4801,31 @@
       ]
     },
     "1647": {
-      "note": "**Retained historical source account — superseded by the current route account:** The two `consumers` registrations the module obliged.",
+      "note": "The current mcp/tests/evidence-lifecycle.toml declares schema_version = \"ar-test-evidence-lifecycle/v3\", 17 contract records and 117 artifact records. These are source declarations, not test execution, code delivery or acceptance evidence. The current mcp/tests/test-evidence-lanes.toml selects 740 distinct test modules across its existing lane identities; this count states no earlier insertion, displacement or consumer-addition event.",
       "targets": [
         {
           "anchor": {
-            "blob": "b9e272ef623574e517181e36b3dc949a3ac78e19",
-            "content": "sha256:e6602704c5ed8fe7e6b31f51631643b105c3e91d02406ee384b428513a08649b",
+            "blob": "f9d31f21c64890dc36a2c835faab4ae6860bcc68",
+            "content": "sha256:fb392b28cf974645a027a66e83ae0e915330ab1a77a993f2c1d7fe48a727f610",
             "locator": {
-              "end": 305,
+              "end": 4852,
               "kind": "line_range",
-              "start": 303
+              "start": 1
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "2c675ac4ed53a3b28cae8c0c32cd13c617d8f6ed",
+            "content": "sha256:17c58056cb585da559d494ef67c2b9bbf8cbb729c5d510ecf6a26e7bd988f0b7",
+            "locator": {
+              "end": 764,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
           },
           "kind": "test"
         }
@@ -3744,12 +4836,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ac006b11f74a4c64ab964edc3378b4c96f153872",
+            "blob": "2c675ac4ed53a3b28cae8c0c32cd13c617d8f6ed",
             "content": "sha256:8add48108fe714e0ef2bdb7cd10882b3527d5cd72c49bb186a8198750542663a",
             "locator": {
-              "end": 265,
+              "end": 302,
               "kind": "line_range",
-              "start": 265
+              "start": 302
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -3762,12 +4854,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "b9e272ef623574e517181e36b3dc949a3ac78e19",
+            "blob": "f9d31f21c64890dc36a2c835faab4ae6860bcc68",
             "content": "sha256:6a77f5f75d151f8e877400f89c3e1f5cb8f793409e8fc72805f73f03f0d822a3",
             "locator": {
-              "end": 108,
+              "end": 23,
               "kind": "line_range",
-              "start": 106
+              "start": 21
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -4094,12 +5186,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ac006b11f74a4c64ab964edc3378b4c96f153872",
+            "blob": "2c675ac4ed53a3b28cae8c0c32cd13c617d8f6ed",
             "content": "sha256:2625134fcfb83406e5b418d78ad93206a4edd00e8b5bd448da21ece7e92e0138",
             "locator": {
-              "end": 181,
+              "end": 218,
               "kind": "line_range",
-              "start": 181
+              "start": 218
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -4196,7 +5288,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ac006b11f74a4c64ab964edc3378b4c96f153872",
+            "blob": "2c675ac4ed53a3b28cae8c0c32cd13c617d8f6ed",
             "content": "sha256:7700d68dcf4855295d022fa726b30b7d6da58a42755ce8d37843d680b6327b07",
             "locator": {
               "end": 5,
@@ -4209,12 +5301,12 @@
         },
         {
           "anchor": {
-            "blob": "ac006b11f74a4c64ab964edc3378b4c96f153872",
+            "blob": "2c675ac4ed53a3b28cae8c0c32cd13c617d8f6ed",
             "content": "sha256:b8a86a12ffb77e5b6523c1ac8d1d1f58280207696c50b9479bcda3880cea45a9",
             "locator": {
-              "end": 114,
+              "end": 150,
               "kind": "line_range",
-              "start": 114
+              "start": 150
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -4223,146 +5315,978 @@
       ]
     },
     "1680": {
-      "note": "**Retained historical source account — superseded by the current route account:** The three `scripts/e2e_harness` [[artifact]] rows a leaf under that permanent support root must register.",
+      "note": "The lifecycle catalog declares four permanent scripts/e2e_harness artifacts with exact-source consumer sets: fresh_user_fixture.py lists test_fresh_user_harness.py, fresh_user_scenario.py and run_fresh_user.py; fresh_user_scenario.py lists test_fresh_user_harness.py and run_fresh_user.py; reporting.py lists test_fresh_user_harness.py, fresh_user_scenario.py and run_fresh_user.py; run_fresh_user.py lists test_fresh_user_harness.py. The scenario and runner use e2e_harness-qualified imports from the scripts root, exposing the package edges to the unchanged derivation. The five consumer lines missing at the superseded6414 tree are restored; the four catalog rows equal their base records member for member. These source declarations establish no fresh harness execution, whole-system consumer completeness or acceptance.",
       "targets": [
         {
           "anchor": {
-            "blob": "b9e272ef623574e517181e36b3dc949a3ac78e19",
-            "content": "sha256:c7f88acb894facffec57a95c70a6d070be289eb0d444c0856efb025b176fd889",
+            "blob": "f9d31f21c64890dc36a2c835faab4ae6860bcc68",
+            "content": "sha256:816a1406045a83c19d562fba596972024da994a15314f3c5c59a08c333b3175e",
             "locator": {
-              "end": 4298,
+              "end": 4711,
               "kind": "line_range",
-              "start": 4223
+              "start": 4692
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
           "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f9d31f21c64890dc36a2c835faab4ae6860bcc68",
+            "content": "sha256:3fb39db555599cfb75583e8777c17c410791ef6d331ca558ccc2ea556bc34495",
+            "locator": {
+              "end": 4730,
+              "kind": "line_range",
+              "start": 4712
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f9d31f21c64890dc36a2c835faab4ae6860bcc68",
+            "content": "sha256:5928ed38f47907de790a5850b85a59160c634c51cf009022aad9fcf67925f7ed",
+            "locator": {
+              "end": 4750,
+              "kind": "line_range",
+              "start": 4731
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f9d31f21c64890dc36a2c835faab4ae6860bcc68",
+            "content": "sha256:0a831837e7cbd6e2210905fdabcafc9844ad2b1c3c4342393b46c81d3b624bc1",
+            "locator": {
+              "end": 4768,
+              "kind": "line_range",
+              "start": 4751
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "42d1bd975f759c016726524381462c1a7ba0b59a",
+            "content": "sha256:0d50eb38b2d3c24b97d25d711afc99131152ceb1a99f234bf6f6b8c98de9b43a",
+            "locator": {
+              "end": 75,
+              "kind": "line_range",
+              "start": 68
+            },
+            "path": "scripts/e2e_harness/fresh_user_scenario.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "57d707d85cd92b037c1dc86bfb3a310db97446eb",
+            "content": "sha256:3e5fa02f1359253aa0b154c049a573e5c2fadc7aa45202c8731398366c431ab1",
+            "locator": {
+              "end": 32,
+              "kind": "line_range",
+              "start": 23
+            },
+            "path": "scripts/e2e_harness/run_fresh_user.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b4447f012e0a159da29a8f802259e78e3f659c30",
+            "content": "sha256:d08ec0d06483db38542408e4390af797735806e7a84547251e0cf76cb9b88e87",
+            "locator": {
+              "end": 160,
+              "kind": "line_range",
+              "start": 138
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/dependency_facts.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b4447f012e0a159da29a8f802259e78e3f659c30",
+            "content": "sha256:3dcef8d8773e2d6dd2a4d8f4c355f1c89a1a0bb2a7431f2550a23bab8f1d5bdc",
+            "locator": {
+              "end": 450,
+              "kind": "line_range",
+              "start": 423
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/dependency_facts.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2e8dd72b490c3556329054d80b4dac24f3758de7",
+            "content": "sha256:61a81b2b7c22c316005103371d39594f78348aa6fa693c3d58d666871a62d604",
+            "locator": {
+              "end": 212,
+              "kind": "line_range",
+              "start": 206
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/catalog_canonical.py"
+          },
+          "kind": "code"
         }
       ]
     },
     "1681": {
-      "note": "**Retained historical source account — superseded by the current route account:** The three `scripts/e2e_harness` [[artifact]] rows a leaf under that permanent support root must register.",
+      "note": "The lifecycle catalog declares four permanent scripts/e2e_harness artifacts with exact-source consumer sets: fresh_user_fixture.py lists test_fresh_user_harness.py, fresh_user_scenario.py and run_fresh_user.py; fresh_user_scenario.py lists test_fresh_user_harness.py and run_fresh_user.py; reporting.py lists test_fresh_user_harness.py, fresh_user_scenario.py and run_fresh_user.py; run_fresh_user.py lists test_fresh_user_harness.py. The scenario and runner use e2e_harness-qualified imports from the scripts root, exposing the package edges to the unchanged derivation. The five consumer lines missing at the superseded6414 tree are restored; the four catalog rows equal their base records member for member. These source declarations establish no fresh harness execution, whole-system consumer completeness or acceptance.",
       "targets": [
         {
           "anchor": {
-            "blob": "b9e272ef623574e517181e36b3dc949a3ac78e19",
-            "content": "sha256:c7f88acb894facffec57a95c70a6d070be289eb0d444c0856efb025b176fd889",
+            "blob": "f9d31f21c64890dc36a2c835faab4ae6860bcc68",
+            "content": "sha256:816a1406045a83c19d562fba596972024da994a15314f3c5c59a08c333b3175e",
             "locator": {
-              "end": 4298,
+              "end": 4711,
               "kind": "line_range",
-              "start": 4223
+              "start": 4692
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
           "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f9d31f21c64890dc36a2c835faab4ae6860bcc68",
+            "content": "sha256:3fb39db555599cfb75583e8777c17c410791ef6d331ca558ccc2ea556bc34495",
+            "locator": {
+              "end": 4730,
+              "kind": "line_range",
+              "start": 4712
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f9d31f21c64890dc36a2c835faab4ae6860bcc68",
+            "content": "sha256:5928ed38f47907de790a5850b85a59160c634c51cf009022aad9fcf67925f7ed",
+            "locator": {
+              "end": 4750,
+              "kind": "line_range",
+              "start": 4731
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f9d31f21c64890dc36a2c835faab4ae6860bcc68",
+            "content": "sha256:0a831837e7cbd6e2210905fdabcafc9844ad2b1c3c4342393b46c81d3b624bc1",
+            "locator": {
+              "end": 4768,
+              "kind": "line_range",
+              "start": 4751
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "42d1bd975f759c016726524381462c1a7ba0b59a",
+            "content": "sha256:0d50eb38b2d3c24b97d25d711afc99131152ceb1a99f234bf6f6b8c98de9b43a",
+            "locator": {
+              "end": 75,
+              "kind": "line_range",
+              "start": 68
+            },
+            "path": "scripts/e2e_harness/fresh_user_scenario.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "57d707d85cd92b037c1dc86bfb3a310db97446eb",
+            "content": "sha256:3e5fa02f1359253aa0b154c049a573e5c2fadc7aa45202c8731398366c431ab1",
+            "locator": {
+              "end": 32,
+              "kind": "line_range",
+              "start": 23
+            },
+            "path": "scripts/e2e_harness/run_fresh_user.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b4447f012e0a159da29a8f802259e78e3f659c30",
+            "content": "sha256:d08ec0d06483db38542408e4390af797735806e7a84547251e0cf76cb9b88e87",
+            "locator": {
+              "end": 160,
+              "kind": "line_range",
+              "start": 138
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/dependency_facts.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b4447f012e0a159da29a8f802259e78e3f659c30",
+            "content": "sha256:3dcef8d8773e2d6dd2a4d8f4c355f1c89a1a0bb2a7431f2550a23bab8f1d5bdc",
+            "locator": {
+              "end": 450,
+              "kind": "line_range",
+              "start": 423
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/dependency_facts.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2e8dd72b490c3556329054d80b4dac24f3758de7",
+            "content": "sha256:61a81b2b7c22c316005103371d39594f78348aa6fa693c3d58d666871a62d604",
+            "locator": {
+              "end": 212,
+              "kind": "line_range",
+              "start": 206
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/catalog_canonical.py"
+          },
+          "kind": "code"
         }
       ]
     },
     "1682": {
-      "note": "**Retained historical source account — superseded by the current route account:** The three `scripts/e2e_harness` [[artifact]] rows a leaf under that permanent support root must register.",
+      "note": "The lifecycle catalog declares four permanent scripts/e2e_harness artifacts with exact-source consumer sets: fresh_user_fixture.py lists test_fresh_user_harness.py, fresh_user_scenario.py and run_fresh_user.py; fresh_user_scenario.py lists test_fresh_user_harness.py and run_fresh_user.py; reporting.py lists test_fresh_user_harness.py, fresh_user_scenario.py and run_fresh_user.py; run_fresh_user.py lists test_fresh_user_harness.py. The scenario and runner use e2e_harness-qualified imports from the scripts root, exposing the package edges to the unchanged derivation. The five consumer lines missing at the superseded6414 tree are restored; the four catalog rows equal their base records member for member. These source declarations establish no fresh harness execution, whole-system consumer completeness or acceptance.",
       "targets": [
         {
           "anchor": {
-            "blob": "b9e272ef623574e517181e36b3dc949a3ac78e19",
-            "content": "sha256:c7f88acb894facffec57a95c70a6d070be289eb0d444c0856efb025b176fd889",
+            "blob": "f9d31f21c64890dc36a2c835faab4ae6860bcc68",
+            "content": "sha256:816a1406045a83c19d562fba596972024da994a15314f3c5c59a08c333b3175e",
             "locator": {
-              "end": 4298,
+              "end": 4711,
               "kind": "line_range",
-              "start": 4223
+              "start": 4692
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
           "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f9d31f21c64890dc36a2c835faab4ae6860bcc68",
+            "content": "sha256:3fb39db555599cfb75583e8777c17c410791ef6d331ca558ccc2ea556bc34495",
+            "locator": {
+              "end": 4730,
+              "kind": "line_range",
+              "start": 4712
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f9d31f21c64890dc36a2c835faab4ae6860bcc68",
+            "content": "sha256:5928ed38f47907de790a5850b85a59160c634c51cf009022aad9fcf67925f7ed",
+            "locator": {
+              "end": 4750,
+              "kind": "line_range",
+              "start": 4731
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f9d31f21c64890dc36a2c835faab4ae6860bcc68",
+            "content": "sha256:0a831837e7cbd6e2210905fdabcafc9844ad2b1c3c4342393b46c81d3b624bc1",
+            "locator": {
+              "end": 4768,
+              "kind": "line_range",
+              "start": 4751
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "42d1bd975f759c016726524381462c1a7ba0b59a",
+            "content": "sha256:0d50eb38b2d3c24b97d25d711afc99131152ceb1a99f234bf6f6b8c98de9b43a",
+            "locator": {
+              "end": 75,
+              "kind": "line_range",
+              "start": 68
+            },
+            "path": "scripts/e2e_harness/fresh_user_scenario.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "57d707d85cd92b037c1dc86bfb3a310db97446eb",
+            "content": "sha256:3e5fa02f1359253aa0b154c049a573e5c2fadc7aa45202c8731398366c431ab1",
+            "locator": {
+              "end": 32,
+              "kind": "line_range",
+              "start": 23
+            },
+            "path": "scripts/e2e_harness/run_fresh_user.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b4447f012e0a159da29a8f802259e78e3f659c30",
+            "content": "sha256:d08ec0d06483db38542408e4390af797735806e7a84547251e0cf76cb9b88e87",
+            "locator": {
+              "end": 160,
+              "kind": "line_range",
+              "start": 138
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/dependency_facts.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b4447f012e0a159da29a8f802259e78e3f659c30",
+            "content": "sha256:3dcef8d8773e2d6dd2a4d8f4c355f1c89a1a0bb2a7431f2550a23bab8f1d5bdc",
+            "locator": {
+              "end": 450,
+              "kind": "line_range",
+              "start": 423
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/dependency_facts.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2e8dd72b490c3556329054d80b4dac24f3758de7",
+            "content": "sha256:61a81b2b7c22c316005103371d39594f78348aa6fa693c3d58d666871a62d604",
+            "locator": {
+              "end": 212,
+              "kind": "line_range",
+              "start": 206
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/catalog_canonical.py"
+          },
+          "kind": "code"
         }
       ]
     },
     "1683": {
-      "note": "**Retained historical source account — superseded by the current route account:** The three `scripts/e2e_harness` [[artifact]] rows a leaf under that permanent support root must register.",
+      "note": "The lifecycle catalog declares four permanent scripts/e2e_harness artifacts with exact-source consumer sets: fresh_user_fixture.py lists test_fresh_user_harness.py, fresh_user_scenario.py and run_fresh_user.py; fresh_user_scenario.py lists test_fresh_user_harness.py and run_fresh_user.py; reporting.py lists test_fresh_user_harness.py, fresh_user_scenario.py and run_fresh_user.py; run_fresh_user.py lists test_fresh_user_harness.py. The scenario and runner use e2e_harness-qualified imports from the scripts root, exposing the package edges to the unchanged derivation. The five consumer lines missing at the superseded6414 tree are restored; the four catalog rows equal their base records member for member. These source declarations establish no fresh harness execution, whole-system consumer completeness or acceptance.",
       "targets": [
         {
           "anchor": {
-            "blob": "b9e272ef623574e517181e36b3dc949a3ac78e19",
-            "content": "sha256:c7f88acb894facffec57a95c70a6d070be289eb0d444c0856efb025b176fd889",
+            "blob": "f9d31f21c64890dc36a2c835faab4ae6860bcc68",
+            "content": "sha256:816a1406045a83c19d562fba596972024da994a15314f3c5c59a08c333b3175e",
             "locator": {
-              "end": 4298,
+              "end": 4711,
               "kind": "line_range",
-              "start": 4223
+              "start": 4692
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
           "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f9d31f21c64890dc36a2c835faab4ae6860bcc68",
+            "content": "sha256:3fb39db555599cfb75583e8777c17c410791ef6d331ca558ccc2ea556bc34495",
+            "locator": {
+              "end": 4730,
+              "kind": "line_range",
+              "start": 4712
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f9d31f21c64890dc36a2c835faab4ae6860bcc68",
+            "content": "sha256:5928ed38f47907de790a5850b85a59160c634c51cf009022aad9fcf67925f7ed",
+            "locator": {
+              "end": 4750,
+              "kind": "line_range",
+              "start": 4731
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f9d31f21c64890dc36a2c835faab4ae6860bcc68",
+            "content": "sha256:0a831837e7cbd6e2210905fdabcafc9844ad2b1c3c4342393b46c81d3b624bc1",
+            "locator": {
+              "end": 4768,
+              "kind": "line_range",
+              "start": 4751
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "42d1bd975f759c016726524381462c1a7ba0b59a",
+            "content": "sha256:0d50eb38b2d3c24b97d25d711afc99131152ceb1a99f234bf6f6b8c98de9b43a",
+            "locator": {
+              "end": 75,
+              "kind": "line_range",
+              "start": 68
+            },
+            "path": "scripts/e2e_harness/fresh_user_scenario.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "57d707d85cd92b037c1dc86bfb3a310db97446eb",
+            "content": "sha256:3e5fa02f1359253aa0b154c049a573e5c2fadc7aa45202c8731398366c431ab1",
+            "locator": {
+              "end": 32,
+              "kind": "line_range",
+              "start": 23
+            },
+            "path": "scripts/e2e_harness/run_fresh_user.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b4447f012e0a159da29a8f802259e78e3f659c30",
+            "content": "sha256:d08ec0d06483db38542408e4390af797735806e7a84547251e0cf76cb9b88e87",
+            "locator": {
+              "end": 160,
+              "kind": "line_range",
+              "start": 138
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/dependency_facts.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b4447f012e0a159da29a8f802259e78e3f659c30",
+            "content": "sha256:3dcef8d8773e2d6dd2a4d8f4c355f1c89a1a0bb2a7431f2550a23bab8f1d5bdc",
+            "locator": {
+              "end": 450,
+              "kind": "line_range",
+              "start": 423
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/dependency_facts.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2e8dd72b490c3556329054d80b4dac24f3758de7",
+            "content": "sha256:61a81b2b7c22c316005103371d39594f78348aa6fa693c3d58d666871a62d604",
+            "locator": {
+              "end": 212,
+              "kind": "line_range",
+              "start": 206
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/catalog_canonical.py"
+          },
+          "kind": "code"
         }
       ]
     },
     "1684": {
-      "note": "**Retained historical source account — superseded by the current route account:** The three `scripts/e2e_harness` [[artifact]] rows a leaf under that permanent support root must register.",
+      "note": "The lifecycle catalog declares four permanent scripts/e2e_harness artifacts with exact-source consumer sets: fresh_user_fixture.py lists test_fresh_user_harness.py, fresh_user_scenario.py and run_fresh_user.py; fresh_user_scenario.py lists test_fresh_user_harness.py and run_fresh_user.py; reporting.py lists test_fresh_user_harness.py, fresh_user_scenario.py and run_fresh_user.py; run_fresh_user.py lists test_fresh_user_harness.py. The scenario and runner use e2e_harness-qualified imports from the scripts root, exposing the package edges to the unchanged derivation. The five consumer lines missing at the superseded6414 tree are restored; the four catalog rows equal their base records member for member. These source declarations establish no fresh harness execution, whole-system consumer completeness or acceptance.",
       "targets": [
         {
           "anchor": {
-            "blob": "b9e272ef623574e517181e36b3dc949a3ac78e19",
-            "content": "sha256:c7f88acb894facffec57a95c70a6d070be289eb0d444c0856efb025b176fd889",
+            "blob": "f9d31f21c64890dc36a2c835faab4ae6860bcc68",
+            "content": "sha256:816a1406045a83c19d562fba596972024da994a15314f3c5c59a08c333b3175e",
             "locator": {
-              "end": 4298,
+              "end": 4711,
               "kind": "line_range",
-              "start": 4223
+              "start": 4692
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
           "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f9d31f21c64890dc36a2c835faab4ae6860bcc68",
+            "content": "sha256:3fb39db555599cfb75583e8777c17c410791ef6d331ca558ccc2ea556bc34495",
+            "locator": {
+              "end": 4730,
+              "kind": "line_range",
+              "start": 4712
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f9d31f21c64890dc36a2c835faab4ae6860bcc68",
+            "content": "sha256:5928ed38f47907de790a5850b85a59160c634c51cf009022aad9fcf67925f7ed",
+            "locator": {
+              "end": 4750,
+              "kind": "line_range",
+              "start": 4731
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f9d31f21c64890dc36a2c835faab4ae6860bcc68",
+            "content": "sha256:0a831837e7cbd6e2210905fdabcafc9844ad2b1c3c4342393b46c81d3b624bc1",
+            "locator": {
+              "end": 4768,
+              "kind": "line_range",
+              "start": 4751
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "42d1bd975f759c016726524381462c1a7ba0b59a",
+            "content": "sha256:0d50eb38b2d3c24b97d25d711afc99131152ceb1a99f234bf6f6b8c98de9b43a",
+            "locator": {
+              "end": 75,
+              "kind": "line_range",
+              "start": 68
+            },
+            "path": "scripts/e2e_harness/fresh_user_scenario.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "57d707d85cd92b037c1dc86bfb3a310db97446eb",
+            "content": "sha256:3e5fa02f1359253aa0b154c049a573e5c2fadc7aa45202c8731398366c431ab1",
+            "locator": {
+              "end": 32,
+              "kind": "line_range",
+              "start": 23
+            },
+            "path": "scripts/e2e_harness/run_fresh_user.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b4447f012e0a159da29a8f802259e78e3f659c30",
+            "content": "sha256:d08ec0d06483db38542408e4390af797735806e7a84547251e0cf76cb9b88e87",
+            "locator": {
+              "end": 160,
+              "kind": "line_range",
+              "start": 138
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/dependency_facts.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b4447f012e0a159da29a8f802259e78e3f659c30",
+            "content": "sha256:3dcef8d8773e2d6dd2a4d8f4c355f1c89a1a0bb2a7431f2550a23bab8f1d5bdc",
+            "locator": {
+              "end": 450,
+              "kind": "line_range",
+              "start": 423
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/dependency_facts.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2e8dd72b490c3556329054d80b4dac24f3758de7",
+            "content": "sha256:61a81b2b7c22c316005103371d39594f78348aa6fa693c3d58d666871a62d604",
+            "locator": {
+              "end": 212,
+              "kind": "line_range",
+              "start": 206
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/catalog_canonical.py"
+          },
+          "kind": "code"
         }
       ]
     },
     "1685": {
-      "note": "**Retained historical source account — superseded by the current route account:** The three `scripts/e2e_harness` [[artifact]] rows a leaf under that permanent support root must register.",
+      "note": "The lifecycle catalog declares four permanent scripts/e2e_harness artifacts with exact-source consumer sets: fresh_user_fixture.py lists test_fresh_user_harness.py, fresh_user_scenario.py and run_fresh_user.py; fresh_user_scenario.py lists test_fresh_user_harness.py and run_fresh_user.py; reporting.py lists test_fresh_user_harness.py, fresh_user_scenario.py and run_fresh_user.py; run_fresh_user.py lists test_fresh_user_harness.py. The scenario and runner use e2e_harness-qualified imports from the scripts root, exposing the package edges to the unchanged derivation. The five consumer lines missing at the superseded6414 tree are restored; the four catalog rows equal their base records member for member. These source declarations establish no fresh harness execution, whole-system consumer completeness or acceptance.",
       "targets": [
         {
           "anchor": {
-            "blob": "b9e272ef623574e517181e36b3dc949a3ac78e19",
-            "content": "sha256:c7f88acb894facffec57a95c70a6d070be289eb0d444c0856efb025b176fd889",
+            "blob": "f9d31f21c64890dc36a2c835faab4ae6860bcc68",
+            "content": "sha256:816a1406045a83c19d562fba596972024da994a15314f3c5c59a08c333b3175e",
             "locator": {
-              "end": 4298,
+              "end": 4711,
               "kind": "line_range",
-              "start": 4223
+              "start": 4692
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
           "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f9d31f21c64890dc36a2c835faab4ae6860bcc68",
+            "content": "sha256:3fb39db555599cfb75583e8777c17c410791ef6d331ca558ccc2ea556bc34495",
+            "locator": {
+              "end": 4730,
+              "kind": "line_range",
+              "start": 4712
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f9d31f21c64890dc36a2c835faab4ae6860bcc68",
+            "content": "sha256:5928ed38f47907de790a5850b85a59160c634c51cf009022aad9fcf67925f7ed",
+            "locator": {
+              "end": 4750,
+              "kind": "line_range",
+              "start": 4731
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f9d31f21c64890dc36a2c835faab4ae6860bcc68",
+            "content": "sha256:0a831837e7cbd6e2210905fdabcafc9844ad2b1c3c4342393b46c81d3b624bc1",
+            "locator": {
+              "end": 4768,
+              "kind": "line_range",
+              "start": 4751
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "42d1bd975f759c016726524381462c1a7ba0b59a",
+            "content": "sha256:0d50eb38b2d3c24b97d25d711afc99131152ceb1a99f234bf6f6b8c98de9b43a",
+            "locator": {
+              "end": 75,
+              "kind": "line_range",
+              "start": 68
+            },
+            "path": "scripts/e2e_harness/fresh_user_scenario.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "57d707d85cd92b037c1dc86bfb3a310db97446eb",
+            "content": "sha256:3e5fa02f1359253aa0b154c049a573e5c2fadc7aa45202c8731398366c431ab1",
+            "locator": {
+              "end": 32,
+              "kind": "line_range",
+              "start": 23
+            },
+            "path": "scripts/e2e_harness/run_fresh_user.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b4447f012e0a159da29a8f802259e78e3f659c30",
+            "content": "sha256:d08ec0d06483db38542408e4390af797735806e7a84547251e0cf76cb9b88e87",
+            "locator": {
+              "end": 160,
+              "kind": "line_range",
+              "start": 138
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/dependency_facts.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b4447f012e0a159da29a8f802259e78e3f659c30",
+            "content": "sha256:3dcef8d8773e2d6dd2a4d8f4c355f1c89a1a0bb2a7431f2550a23bab8f1d5bdc",
+            "locator": {
+              "end": 450,
+              "kind": "line_range",
+              "start": 423
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/dependency_facts.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2e8dd72b490c3556329054d80b4dac24f3758de7",
+            "content": "sha256:61a81b2b7c22c316005103371d39594f78348aa6fa693c3d58d666871a62d604",
+            "locator": {
+              "end": 212,
+              "kind": "line_range",
+              "start": 206
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/catalog_canonical.py"
+          },
+          "kind": "code"
         }
       ]
     },
     "1686": {
-      "note": "**Retained historical source account — superseded by the current route account:** The three `scripts/e2e_harness` [[artifact]] rows a leaf under that permanent support root must register.",
+      "note": "The lifecycle catalog declares four permanent scripts/e2e_harness artifacts with exact-source consumer sets: fresh_user_fixture.py lists test_fresh_user_harness.py, fresh_user_scenario.py and run_fresh_user.py; fresh_user_scenario.py lists test_fresh_user_harness.py and run_fresh_user.py; reporting.py lists test_fresh_user_harness.py, fresh_user_scenario.py and run_fresh_user.py; run_fresh_user.py lists test_fresh_user_harness.py. The scenario and runner use e2e_harness-qualified imports from the scripts root, exposing the package edges to the unchanged derivation. The five consumer lines missing at the superseded6414 tree are restored; the four catalog rows equal their base records member for member. These source declarations establish no fresh harness execution, whole-system consumer completeness or acceptance.",
       "targets": [
         {
           "anchor": {
-            "blob": "b9e272ef623574e517181e36b3dc949a3ac78e19",
-            "content": "sha256:c7f88acb894facffec57a95c70a6d070be289eb0d444c0856efb025b176fd889",
+            "blob": "f9d31f21c64890dc36a2c835faab4ae6860bcc68",
+            "content": "sha256:816a1406045a83c19d562fba596972024da994a15314f3c5c59a08c333b3175e",
             "locator": {
-              "end": 4298,
+              "end": 4711,
               "kind": "line_range",
-              "start": 4223
+              "start": 4692
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
           "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f9d31f21c64890dc36a2c835faab4ae6860bcc68",
+            "content": "sha256:3fb39db555599cfb75583e8777c17c410791ef6d331ca558ccc2ea556bc34495",
+            "locator": {
+              "end": 4730,
+              "kind": "line_range",
+              "start": 4712
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f9d31f21c64890dc36a2c835faab4ae6860bcc68",
+            "content": "sha256:5928ed38f47907de790a5850b85a59160c634c51cf009022aad9fcf67925f7ed",
+            "locator": {
+              "end": 4750,
+              "kind": "line_range",
+              "start": 4731
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f9d31f21c64890dc36a2c835faab4ae6860bcc68",
+            "content": "sha256:0a831837e7cbd6e2210905fdabcafc9844ad2b1c3c4342393b46c81d3b624bc1",
+            "locator": {
+              "end": 4768,
+              "kind": "line_range",
+              "start": 4751
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "42d1bd975f759c016726524381462c1a7ba0b59a",
+            "content": "sha256:0d50eb38b2d3c24b97d25d711afc99131152ceb1a99f234bf6f6b8c98de9b43a",
+            "locator": {
+              "end": 75,
+              "kind": "line_range",
+              "start": 68
+            },
+            "path": "scripts/e2e_harness/fresh_user_scenario.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "57d707d85cd92b037c1dc86bfb3a310db97446eb",
+            "content": "sha256:3e5fa02f1359253aa0b154c049a573e5c2fadc7aa45202c8731398366c431ab1",
+            "locator": {
+              "end": 32,
+              "kind": "line_range",
+              "start": 23
+            },
+            "path": "scripts/e2e_harness/run_fresh_user.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b4447f012e0a159da29a8f802259e78e3f659c30",
+            "content": "sha256:d08ec0d06483db38542408e4390af797735806e7a84547251e0cf76cb9b88e87",
+            "locator": {
+              "end": 160,
+              "kind": "line_range",
+              "start": 138
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/dependency_facts.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b4447f012e0a159da29a8f802259e78e3f659c30",
+            "content": "sha256:3dcef8d8773e2d6dd2a4d8f4c355f1c89a1a0bb2a7431f2550a23bab8f1d5bdc",
+            "locator": {
+              "end": 450,
+              "kind": "line_range",
+              "start": 423
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/dependency_facts.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2e8dd72b490c3556329054d80b4dac24f3758de7",
+            "content": "sha256:61a81b2b7c22c316005103371d39594f78348aa6fa693c3d58d666871a62d604",
+            "locator": {
+              "end": 212,
+              "kind": "line_range",
+              "start": 206
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/catalog_canonical.py"
+          },
+          "kind": "code"
         }
       ]
     },
     "1687": {
-      "note": "**Retained historical source account — superseded by the current route account:** The three `scripts/e2e_harness` [[artifact]] rows a leaf under that permanent support root must register.",
+      "note": "The lifecycle catalog declares four permanent scripts/e2e_harness artifacts with exact-source consumer sets: fresh_user_fixture.py lists test_fresh_user_harness.py, fresh_user_scenario.py and run_fresh_user.py; fresh_user_scenario.py lists test_fresh_user_harness.py and run_fresh_user.py; reporting.py lists test_fresh_user_harness.py, fresh_user_scenario.py and run_fresh_user.py; run_fresh_user.py lists test_fresh_user_harness.py. The scenario and runner use e2e_harness-qualified imports from the scripts root, exposing the package edges to the unchanged derivation. The five consumer lines missing at the superseded6414 tree are restored; the four catalog rows equal their base records member for member. These source declarations establish no fresh harness execution, whole-system consumer completeness or acceptance.",
       "targets": [
         {
           "anchor": {
-            "blob": "b9e272ef623574e517181e36b3dc949a3ac78e19",
-            "content": "sha256:c7f88acb894facffec57a95c70a6d070be289eb0d444c0856efb025b176fd889",
+            "blob": "f9d31f21c64890dc36a2c835faab4ae6860bcc68",
+            "content": "sha256:816a1406045a83c19d562fba596972024da994a15314f3c5c59a08c333b3175e",
             "locator": {
-              "end": 4298,
+              "end": 4711,
               "kind": "line_range",
-              "start": 4223
+              "start": 4692
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
           "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f9d31f21c64890dc36a2c835faab4ae6860bcc68",
+            "content": "sha256:3fb39db555599cfb75583e8777c17c410791ef6d331ca558ccc2ea556bc34495",
+            "locator": {
+              "end": 4730,
+              "kind": "line_range",
+              "start": 4712
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f9d31f21c64890dc36a2c835faab4ae6860bcc68",
+            "content": "sha256:5928ed38f47907de790a5850b85a59160c634c51cf009022aad9fcf67925f7ed",
+            "locator": {
+              "end": 4750,
+              "kind": "line_range",
+              "start": 4731
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f9d31f21c64890dc36a2c835faab4ae6860bcc68",
+            "content": "sha256:0a831837e7cbd6e2210905fdabcafc9844ad2b1c3c4342393b46c81d3b624bc1",
+            "locator": {
+              "end": 4768,
+              "kind": "line_range",
+              "start": 4751
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "42d1bd975f759c016726524381462c1a7ba0b59a",
+            "content": "sha256:0d50eb38b2d3c24b97d25d711afc99131152ceb1a99f234bf6f6b8c98de9b43a",
+            "locator": {
+              "end": 75,
+              "kind": "line_range",
+              "start": 68
+            },
+            "path": "scripts/e2e_harness/fresh_user_scenario.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "57d707d85cd92b037c1dc86bfb3a310db97446eb",
+            "content": "sha256:3e5fa02f1359253aa0b154c049a573e5c2fadc7aa45202c8731398366c431ab1",
+            "locator": {
+              "end": 32,
+              "kind": "line_range",
+              "start": 23
+            },
+            "path": "scripts/e2e_harness/run_fresh_user.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b4447f012e0a159da29a8f802259e78e3f659c30",
+            "content": "sha256:d08ec0d06483db38542408e4390af797735806e7a84547251e0cf76cb9b88e87",
+            "locator": {
+              "end": 160,
+              "kind": "line_range",
+              "start": 138
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/dependency_facts.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b4447f012e0a159da29a8f802259e78e3f659c30",
+            "content": "sha256:3dcef8d8773e2d6dd2a4d8f4c355f1c89a1a0bb2a7431f2550a23bab8f1d5bdc",
+            "locator": {
+              "end": 450,
+              "kind": "line_range",
+              "start": 423
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/dependency_facts.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2e8dd72b490c3556329054d80b4dac24f3758de7",
+            "content": "sha256:61a81b2b7c22c316005103371d39594f78348aa6fa693c3d58d666871a62d604",
+            "locator": {
+              "end": 212,
+              "kind": "line_range",
+              "start": 206
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/catalog_canonical.py"
+          },
+          "kind": "code"
         }
       ]
     },
@@ -4371,7 +6295,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ac006b11f74a4c64ab964edc3378b4c96f153872",
+            "blob": "2c675ac4ed53a3b28cae8c0c32cd13c617d8f6ed",
             "content": "sha256:7700d68dcf4855295d022fa726b30b7d6da58a42755ce8d37843d680b6327b07",
             "locator": {
               "end": 5,
@@ -4384,12 +6308,12 @@
         },
         {
           "anchor": {
-            "blob": "ac006b11f74a4c64ab964edc3378b4c96f153872",
+            "blob": "2c675ac4ed53a3b28cae8c0c32cd13c617d8f6ed",
             "content": "sha256:b8a86a12ffb77e5b6523c1ac8d1d1f58280207696c50b9479bcda3880cea45a9",
             "locator": {
-              "end": 114,
+              "end": 150,
               "kind": "line_range",
-              "start": 114
+              "start": 150
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -4402,12 +6326,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ac006b11f74a4c64ab964edc3378b4c96f153872",
+            "blob": "2c675ac4ed53a3b28cae8c0c32cd13c617d8f6ed",
             "content": "sha256:3a31681b184fadb905d049231e9b088d23714459be4934c4c332cca8c41cfb04",
             "locator": {
-              "end": 229,
+              "end": 266,
               "kind": "line_range",
-              "start": 229
+              "start": 266
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -4415,12 +6339,12 @@
         },
         {
           "anchor": {
-            "blob": "b9e272ef623574e517181e36b3dc949a3ac78e19",
+            "blob": "f9d31f21c64890dc36a2c835faab4ae6860bcc68",
             "content": "sha256:d8f069f62abc81db6006f5344a38561cb03c835eabeff11e2effc4a8973595cc",
             "locator": {
-              "end": 1847,
+              "end": 2187,
               "kind": "line_range",
-              "start": 1845
+              "start": 2185
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -4451,12 +6375,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ac006b11f74a4c64ab964edc3378b4c96f153872",
+            "blob": "2c675ac4ed53a3b28cae8c0c32cd13c617d8f6ed",
             "content": "sha256:313ed0aea69f94d6889c191e0ef012ae79630aae743f75e7373d0b3122379659",
             "locator": {
-              "end": 580,
+              "end": 619,
               "kind": "line_range",
-              "start": 580
+              "start": 619
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -4469,12 +6393,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ac006b11f74a4c64ab964edc3378b4c96f153872",
+            "blob": "2c675ac4ed53a3b28cae8c0c32cd13c617d8f6ed",
             "content": "sha256:432c9c5cdad977352024ad9824dfef05e5fdda879f965d7f21f243e6b177ae76",
             "locator": {
-              "end": 604,
+              "end": 643,
               "kind": "line_range",
-              "start": 604
+              "start": 643
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -4487,12 +6411,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ac006b11f74a4c64ab964edc3378b4c96f153872",
+            "blob": "2c675ac4ed53a3b28cae8c0c32cd13c617d8f6ed",
             "content": "sha256:58001ace8fe9c0ee3c69d3ce99de51f704d654620fb0f7044fbc2aaa3d96c937",
             "locator": {
-              "end": 228,
+              "end": 265,
               "kind": "line_range",
-              "start": 228
+              "start": 265
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -4505,12 +6429,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ac006b11f74a4c64ab964edc3378b4c96f153872",
+            "blob": "2c675ac4ed53a3b28cae8c0c32cd13c617d8f6ed",
             "content": "sha256:432c9c5cdad977352024ad9824dfef05e5fdda879f965d7f21f243e6b177ae76",
             "locator": {
-              "end": 604,
+              "end": 643,
               "kind": "line_range",
-              "start": 604
+              "start": 643
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -4518,12 +6442,12 @@
         },
         {
           "anchor": {
-            "blob": "ac006b11f74a4c64ab964edc3378b4c96f153872",
+            "blob": "2c675ac4ed53a3b28cae8c0c32cd13c617d8f6ed",
             "content": "sha256:e9f37594ca1b6132717a735ebfd36f985324316d02993b164f00f04f1756a5e8",
             "locator": {
-              "end": 615,
+              "end": 654,
               "kind": "line_range",
-              "start": 615
+              "start": 654
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -4531,12 +6455,12 @@
         },
         {
           "anchor": {
-            "blob": "ac006b11f74a4c64ab964edc3378b4c96f153872",
+            "blob": "2c675ac4ed53a3b28cae8c0c32cd13c617d8f6ed",
             "content": "sha256:f65cc12571e207748b8140f72a5797dea13dd61fa0687ceda8c4da9c0eecd259",
             "locator": {
-              "end": 680,
+              "end": 719,
               "kind": "line_range",
-              "start": 680
+              "start": 719
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -4635,14 +6559,29 @@
       ]
     },
     "1704": {
-      "note": "**Retained historical source account — superseded by the current route account:** The sweep judges every tool and aspect on its own subTest with the pins exact in both directions.",
+      "note": "The sweep source gives each tool separate unvalidatable and boundary-validation subTests, then separate raiser, unmarked and census subTests. It compares observed error-arm tools with ENVELOPE_LOSING_RAISERS and bare-not-ok tools with UNMARKED_NOT_OK by equality, and separately asserts the error pin in both directions. These are source assertions, not execution results.",
       "targets": [
         {
           "anchor": {
-            "blob": "1fe4dc4416c2727815fcab3f9558e152bb422ee4",
-            "content": "sha256:ac977ef5869212f7443d157e025e8d6ec5761e0de2b398d07aea7dbe9cad4089",
+            "blob": "0e1aa8704720217e5a24a2c269089eaee490de4d",
+            "content": "sha256:7991154da41374bfca8f6450500696a9e20feb064efc8e791cfde2e12ff52dd4",
             "locator": {
-              "kind": "file"
+              "end": 208,
+              "kind": "line_range",
+              "start": 167
+            },
+            "path": "mcp/tests/test_tool_entry_point_sweep.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "0e1aa8704720217e5a24a2c269089eaee490de4d",
+            "content": "sha256:dc2d25bea2752cb56009ec7b5103d5dfae6b56a604d3da0dc63de3111d684992",
+            "locator": {
+              "end": 230,
+              "kind": "line_range",
+              "start": 210
             },
             "path": "mcp/tests/test_tool_entry_point_sweep.py"
           },
@@ -4651,14 +6590,68 @@
       ]
     },
     "1705": {
-      "note": "**Retained historical source account — superseded by the current route account:** A returned call is judged from the whole result and the delivered answer through one shared classifier.",
+      "note": "For a returned call, classify routes through _returned_arm, which reads the whole result from the answer-named file; missing/unreadable/non-object files are unvalidatable. _judge_delivered validates the whole result with the tool response model and separately judges the delivered answer, including stripped-envelope and same-place key checks. This is the shared classifier implementation, not proof of a sweep run.",
       "targets": [
         {
           "anchor": {
-            "blob": "fd07730a1a1bd23acfdd526b3ac57a628c498940",
-            "content": "sha256:7f66ab8eb3447252a65b2ae3749cde0e7635d735a7fa4fc354aa40504a0c9417",
+            "blob": "58ee72c4439cca6d4d7a830fa424b3bc0804d82b",
+            "content": "sha256:37578a1f10cb0bfb736dc16bace943a4034c864a0d510646723f7ba78e95ada6",
             "locator": {
-              "kind": "file"
+              "end": 350,
+              "kind": "line_range",
+              "start": 338
+            },
+            "path": "mcp/tests/tool_entry_point_world.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "58ee72c4439cca6d4d7a830fa424b3bc0804d82b",
+            "content": "sha256:0f306524e822c2ba7fdc3e1c1007d96a0fabab7e2d6d03f04c2b7e9c5bb71836",
+            "locator": {
+              "end": 292,
+              "kind": "line_range",
+              "start": 283
+            },
+            "path": "mcp/tests/tool_entry_point_world.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "58ee72c4439cca6d4d7a830fa424b3bc0804d82b",
+            "content": "sha256:60905a49bb6b00060bd9c4f7a88e5370debc600e0aca023dd28fbbe65078ffe9",
+            "locator": {
+              "end": 280,
+              "kind": "line_range",
+              "start": 259
+            },
+            "path": "mcp/tests/tool_entry_point_world.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "58ee72c4439cca6d4d7a830fa424b3bc0804d82b",
+            "content": "sha256:1a14a08ab972157de8f02b4d4a9c64ca6781ff905af4fdaa824bf69c2772ddd1",
+            "locator": {
+              "end": 319,
+              "kind": "line_range",
+              "start": 295
+            },
+            "path": "mcp/tests/tool_entry_point_world.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "58ee72c4439cca6d4d7a830fa424b3bc0804d82b",
+            "content": "sha256:0bb9dcf312899e8d73b23a525dacb80fddd8925f0f02c9568e408670d8070c62",
+            "locator": {
+              "end": 256,
+              "kind": "line_range",
+              "start": 236
             },
             "path": "mcp/tests/tool_entry_point_world.py"
           },
@@ -4809,12 +6802,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ddd77babbaaddf51063d6e23856c0cadd142d461",
+            "blob": "abb3d0e320df1c428284a14d602ec93ad778bdbe",
             "content": "sha256:d54efa326c1d4128e0c15e19ae1c2e3f9fb44b9af2c0cfbcfa5bca0306be0494",
             "locator": {
-              "end": 334,
+              "end": 335,
               "kind": "line_range",
-              "start": 320
+              "start": 321
             },
             "path": "pyproject.toml"
           },
@@ -4911,12 +6904,12 @@
         },
         {
           "anchor": {
-            "blob": "ddd77babbaaddf51063d6e23856c0cadd142d461",
+            "blob": "abb3d0e320df1c428284a14d602ec93ad778bdbe",
             "content": "sha256:d54efa326c1d4128e0c15e19ae1c2e3f9fb44b9af2c0cfbcfa5bca0306be0494",
             "locator": {
-              "end": 334,
+              "end": 335,
               "kind": "line_range",
-              "start": 320
+              "start": 321
             },
             "path": "pyproject.toml"
           },
@@ -4950,12 +6943,12 @@
         },
         {
           "anchor": {
-            "blob": "ddd77babbaaddf51063d6e23856c0cadd142d461",
+            "blob": "abb3d0e320df1c428284a14d602ec93ad778bdbe",
             "content": "sha256:726c2da9bfddd07a5a8133463a6c918ba867479c2e4c48a5d88d64de85eba3eb",
             "locator": {
-              "end": 355,
+              "end": 356,
               "kind": "line_range",
-              "start": 337
+              "start": 338
             },
             "path": "pyproject.toml"
           },
@@ -4964,7 +6957,7 @@
       ]
     },
     "1718": {
-      "note": "**Retained historical source account — superseded by the current route account:** Source cases separate named renames, copies, Git metadata, full-removal threshold and proven/unproven absence.",
+      "note": "Current targets retain the landing-report regression cases and host-test policy; the root declaration is 10000 unit and 2000 integration cases and now classifies scripts/agent_evals as verification. These live targets are not an archive of the retained source account quoted above.\n\nAnchor: Current declared source extent",
       "targets": [
         {
           "anchor": {
@@ -5010,7 +7003,9 @@
             "blob": "5b327cf79df68aff9dfc26bbbb015d0784173608",
             "content": "sha256:a9e681846fd246e4ad76c20ecc6de33222652a0a472bf39d9393e9a73ec4cd03",
             "locator": {
-              "kind": "file"
+              "end": 691,
+              "kind": "line_range",
+              "start": 1
             },
             "path": "mcp/tests/test_landing_report.py"
           },
@@ -5021,7 +7016,9 @@
             "blob": "0d19e9bdf51497de71bacf7a9830b69978d96dc7",
             "content": "sha256:e1e3d8365a62fc5a5f5f54f499dc4c5e7203b70b369e307d47f30e350c5eb4b7",
             "locator": {
-              "kind": "file"
+              "end": 53,
+              "kind": "line_range",
+              "start": 1
             },
             "path": "docs/design/python-pytest-bootstrap.md"
           },
@@ -5029,10 +7026,12 @@
         },
         {
           "anchor": {
-            "blob": "ddd77babbaaddf51063d6e23856c0cadd142d461",
-            "content": "sha256:9dec078b3143f2a2444d4f4541b8ef34bfa9b9786f0b102431fa870f2fd47e06",
+            "blob": "abb3d0e320df1c428284a14d602ec93ad778bdbe",
+            "content": "sha256:030596cef7d9fea970513ce9975de6839a71c38510ba0531432b1dc3f75be9a8",
             "locator": {
-              "kind": "file"
+              "end": 413,
+              "kind": "line_range",
+              "start": 1
             },
             "path": "pyproject.toml"
           },
@@ -5240,7 +7239,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ac006b11f74a4c64ab964edc3378b4c96f153872",
+            "blob": "2c675ac4ed53a3b28cae8c0c32cd13c617d8f6ed",
             "content": "sha256:7700d68dcf4855295d022fa726b30b7d6da58a42755ce8d37843d680b6327b07",
             "locator": {
               "end": 5,
@@ -5253,12 +7252,12 @@
         },
         {
           "anchor": {
-            "blob": "ac006b11f74a4c64ab964edc3378b4c96f153872",
+            "blob": "2c675ac4ed53a3b28cae8c0c32cd13c617d8f6ed",
             "content": "sha256:396c0cc1fca4b32eba1dcb7ca5f37411a4c6bef2e8984dc06479ae136f87b8b2",
             "locator": {
-              "end": 213,
+              "end": 250,
               "kind": "line_range",
-              "start": 213
+              "start": 250
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -5266,12 +7265,12 @@
         },
         {
           "anchor": {
-            "blob": "d27b57b9ce20fcfcc981f64f791af071b4769e5c",
+            "blob": "25b3cb991b3fb7f75377478cc7516ae6e0b44ff6",
             "content": "sha256:5704fc11ec38995660625848b1f8ad4d84ca13041c2ec170cd8cc12ec690cd04",
             "locator": {
-              "end": 225,
+              "end": 226,
               "kind": "line_range",
-              "start": 194
+              "start": 195
             },
             "path": "mcp/tests/tool_entry_point_sweep_support.py"
           },
@@ -5280,68 +7279,83 @@
       ]
     },
     "1723": {
-      "note": "The lifecycle catalogue declares test_landing_report.py as an exact consumer of the three governed artifact/replacement-contract records for _user_settings_guard.py, curator_coherence_test_support.py and the Node package-lock fixture. These bindings cite those existing artifact/replacement-contract identities; they are declarations, not runtime fixture-consumption evidence. ENVELOPE_LOSING_RAISERS is empty and the current sweep case compares it with observed error arms. STATE_DEPENDENT_RAISERS and the ambient lifecycle-state matrix/population are absent, not retained as empty live structures; lifecycle_finalize_task is an ordinary contract-addressed dry-run request in the main sweep, not evidence of membership in a separate state population. The earlier four-worktree-raiser and finalize-population captions are historical, not current claims. The former tool_entry_point_sweep_support.py:786-790 target is withdrawn because it configures worktree_record_landing, not the finalize request or raiser comparison; the retained finalize-request and comparison targets carry those claims.",
+      "note": "The lifecycle catalog declares test_landing_report.py among the consumers of _user_settings_guard.py, curator_coherence_test_support.py and the Node package-lock fixture; this named subset is not its whole declared artifact population. ENVELOPE_LOSING_RAISERS is empty, and the sweep compares its observed error-arm population with that pin. No executable STATE_DEPENDENT_RAISERS or ambient lifecycle-state matrix remains in the sweep/support/world; lifecycle_finalize_task has an ordinary contract-addressed dry-run request in the main benign table. These are declarations and source assertions, not a fresh run.",
       "targets": [
         {
           "anchor": {
-            "blob": "d27b57b9ce20fcfcc981f64f791af071b4769e5c",
-            "content": "sha256:2f7b1f3a64892b0f25d529b1dd07f11ee4d73cb10f58f769533c1fd4c199ae48",
+            "blob": "f9d31f21c64890dc36a2c835faab4ae6860bcc68",
+            "content": "sha256:0a6ea03efe9703712535f05efeacc13a561b6fd40cb34b4ed9fe1a7122ed7558",
             "locator": {
-              "end": 85,
+              "end": 821,
               "kind": "line_range",
-              "start": 55
-            },
-            "path": "mcp/tests/tool_entry_point_sweep_support.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "1fe4dc4416c2727815fcab3f9558e152bb422ee4",
-            "content": "sha256:8f98c978ff1203325816c13dbb23d1e81f670496ab77d302e3baadfcf6d96957",
-            "locator": {
-              "end": 196,
-              "kind": "line_range",
-              "start": 133
-            },
-            "path": "mcp/tests/test_tool_entry_point_sweep.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "d27b57b9ce20fcfcc981f64f791af071b4769e5c",
-            "content": "sha256:d90c939c39609e60cd14b3169f4ae768fcf2136b3d5dda96621cfbff3ce1ab89",
-            "locator": {
-              "end": 801,
-              "kind": "line_range",
-              "start": 797
-            },
-            "path": "mcp/tests/tool_entry_point_sweep_support.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "d27b57b9ce20fcfcc981f64f791af071b4769e5c",
-            "content": "sha256:9e54c6782585a6bc5442885e972ea08c38426901775f23e4d11b6040a845b3da",
-            "locator": {
-              "end": 803,
-              "kind": "line_range",
-              "start": 799
-            },
-            "path": "mcp/tests/tool_entry_point_sweep_support.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "b9e272ef623574e517181e36b3dc949a3ac78e19",
-            "content": "sha256:7897fb40e5c032a535ff68a71e30a676a37248f2c174ffefd20a7d524cdb39dd",
-            "locator": {
-              "kind": "file"
+              "start": 65
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f9d31f21c64890dc36a2c835faab4ae6860bcc68",
+            "content": "sha256:27ada4a3d5995ef2a9e4ed6de487ad9bb21a156504da9369d7c0736bdec39c61",
+            "locator": {
+              "end": 1257,
+              "kind": "line_range",
+              "start": 1109
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f9d31f21c64890dc36a2c835faab4ae6860bcc68",
+            "content": "sha256:e8d358fc83b0cd78d30c45fd0bf4727490538eac4f97a69b212a2078f94c56cf",
+            "locator": {
+              "end": 3096,
+              "kind": "line_range",
+              "start": 2340
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "25b3cb991b3fb7f75377478cc7516ae6e0b44ff6",
+            "content": "sha256:a765e9d3152e20036f466b7a78a1b346674ef0982da12a06bb7cc0e11cfdbcf5",
+            "locator": {
+              "end": 881,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/tests/tool_entry_point_sweep_support.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "58ee72c4439cca6d4d7a830fa424b3bc0804d82b",
+            "content": "sha256:f55f2cb63aa2086f6a03f7397289728ff4ed6119f0809d0d7f2c829f929a9785",
+            "locator": {
+              "end": 912,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/tests/tool_entry_point_world.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "0e1aa8704720217e5a24a2c269089eaee490de4d",
+            "content": "sha256:614c2bf8ff9a6dbe99d62f089cac8d9e8b863313a1234e97b104f8e717a95bc3",
+            "locator": {
+              "end": 410,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/tests/test_tool_entry_point_sweep.py"
           },
           "kind": "test"
         }
@@ -5364,12 +7378,12 @@
         },
         {
           "anchor": {
-            "blob": "fd07730a1a1bd23acfdd526b3ac57a628c498940",
+            "blob": "58ee72c4439cca6d4d7a830fa424b3bc0804d82b",
             "content": "sha256:4f312f4a2f270eca6593f9fd8fde82630154c73b269d3378276070940811a224",
             "locator": {
-              "end": 401,
+              "end": 402,
               "kind": "line_range",
-              "start": 389
+              "start": 390
             },
             "path": "mcp/tests/tool_entry_point_world.py"
           },
@@ -5377,12 +7391,12 @@
         },
         {
           "anchor": {
-            "blob": "fd07730a1a1bd23acfdd526b3ac57a628c498940",
+            "blob": "58ee72c4439cca6d4d7a830fa424b3bc0804d82b",
             "content": "sha256:946508b8befef4ba6abb24f258846d3cd42e0ec92b9fdab6fd8d05ac100ea2a7",
             "locator": {
-              "end": 456,
+              "end": 457,
               "kind": "line_range",
-              "start": 447
+              "start": 448
             },
             "path": "mcp/tests/tool_entry_point_world.py"
           },
@@ -5602,18 +7616,31 @@
       ]
     },
     "1733": {
-      "note": "Historical L111 source declarations were41 public tools,20 adapter modules and65 handlers; the later source epoch cited by this retained caption had42 entries in `PUBLIC_TOOLS`, not the current W9 roster; no current module/handler count or execution is asserted here. The envelope-loss pin is empty. Pre-sync population and catalog figures in the earlier caption below are historical, not current. Earlier Curator caption retained as historical/withdrawn where it contradicts these current populations: Current source pins distinguish42 advertised tools,20 modules and66 handlers; the source declaration is not fresh collection, execution or live advertisement. ENVELOPE_LOSING_RAISERS is empty; its former four L111 worktree pins are historical and separate from the ambient-state/finalize population. The earlier no-L111-row description is historical/withdrawn: the current assembled table imports ToolAnswerRow and _apply_l111_shaped_rows from tool_answer_l111_test_support and applies nonempty L111 shaped rows after L109; interim-map declarations and retained L100/L109 rows remain separate. Removed task reads are asserted as operation-removed; rich review/linkage/retirement assertions read canonical state or retained whole logs rather than claiming every delivered field survived. Fixed40 roots normalize ordinary token controls, distinct from content/location measurements. Packet-owned refusal tests preserve positive gates and full no-write frames; the runnable-step tests use answer-supplied arguments/display on space/quote/dollar roots, with converted-line and unknown seam limits explicit. Requirement-copy fixtures cover metadata, missing notices, source drift and rollback seams, not real-host acceptance. The earlier 14-contract/94-artifact census is historical and superseded: the L166 landing had 12 contracts and 70 artifact identities; the composed catalog had 12 contracts and 74 artifact identities after retaining L54’s three shared-support artifacts, including the declared permanent local-composition support and L57’s two extracted support modules; declaration, source assertions and prior grades remain different evidence classes.",
+      "note": "The literal PUBLIC_TOOLS roster contains 44 names; the conformance source pins ROSTER_SIZE = 44, TOOL_MODULE_COUNT = 14 and TOOL_HANDLER_COUNT = 46. ENVELOPE_LOSING_RAISERS is empty. The assembled tool-answer table now lives in tool_answer_table_support.py: it imports ToolAnswerRow and _apply_l111_shaped_rows from tool_answer_l111_test_support.py, installs the retained L109 shaped rows, then applies the nonempty L111 shaped-row builder; the test module imports and checks the assembled table. Removed task-read tests assert operation-removed. Ordinary-write token tests normalize the coordination root to 40 characters. Packet-refusal tests assert positive conversion gates and unchanged ref/file/contract frames; the runnable recovery-step case takes nextArgs and command from the answer on roots containing a space, quote and dollar sign and checks their shell parsing, while converted-line and unknown-status cases have their own assertions. Requirement-copy tests assert copied metadata, missing notices, source drift and rollback. These current source declarations/assertions are not collection, execution, live advertisement or real-host acceptance. The separate historical rich review/linkage/retirement account is preserved as past-epoch prose and is not promoted into a current delivery claim by this citation.",
       "targets": [
         {
           "anchor": {
-            "blob": "1fe4dc4416c2727815fcab3f9558e152bb422ee4",
-            "content": "sha256:ac977ef5869212f7443d157e025e8d6ec5761e0de2b398d07aea7dbe9cad4089",
+            "blob": "0e1aa8704720217e5a24a2c269089eaee490de4d",
+            "content": "sha256:614c2bf8ff9a6dbe99d62f089cac8d9e8b863313a1234e97b104f8e717a95bc3",
             "locator": {
-              "end": 376,
+              "end": 410,
               "kind": "line_range",
               "start": 1
             },
             "path": "mcp/tests/test_tool_entry_point_sweep.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "25b3cb991b3fb7f75377478cc7516ae6e0b44ff6",
+            "content": "sha256:a765e9d3152e20036f466b7a78a1b346674ef0982da12a06bb7cc0e11cfdbcf5",
+            "locator": {
+              "end": 881,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/tests/tool_entry_point_sweep_support.py"
           },
           "kind": "test"
         },
@@ -5627,6 +7654,19 @@
               "start": 1
             },
             "path": "mcp/tests/test_tool_answer_table.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "30cc33614b7ad9177eb2b105ce504bb1808b5c2e",
+            "content": "sha256:e9b41d5b0a10196c01095cdc3a74bc0604be2950e927c44964569be1d656649e",
+            "locator": {
+              "end": 744,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/tests/tool_answer_table_support.py"
           },
           "kind": "test"
         },
@@ -5646,9 +7686,9 @@
         {
           "anchor": {
             "blob": "88c495f124574184e99e00613afe85497d2d39c2",
-            "content": "sha256:fc579aab9f6fe84f26d3377a01525ebd123802b40338630440c0f609594c8ff8",
+            "content": "sha256:3246f80280324e70674b6b67d0078fff37ab151cdd8cd0b181fb72459c05db5c",
             "locator": {
-              "end": 1034,
+              "end": 1041,
               "kind": "line_range",
               "start": 1
             },
@@ -5671,10 +7711,10 @@
         },
         {
           "anchor": {
-            "blob": "e4e620043416ffbfe53aa6457addc3a83d2f1716",
-            "content": "sha256:6b1301fbe8c19ba03fa6c00805a25f5e3a7e3d4ad3d17c4f0692924e47c68367",
+            "blob": "e0dbd355348cbc857269c6b86115565a9d946065",
+            "content": "sha256:d7d97b3388922af0714139357a452f53f630d23830bf72840ec63645dd9408ef",
             "locator": {
-              "end": 969,
+              "end": 986,
               "kind": "line_range",
               "start": 1
             },
@@ -5685,9 +7725,9 @@
         {
           "anchor": {
             "blob": "d0b0ddd9f150e32116b430ecc74907fcf68fee97",
-            "content": "sha256:f82582161178607098188ce54ae00e6a6a46c2f2773d549a221c3725d79092c4",
+            "content": "sha256:fdef15e2ca9d39f66c8570a7147cb894dda16f47c7d3558bb4454e5b4714875f",
             "locator": {
-              "end": 72,
+              "end": 74,
               "kind": "line_range",
               "start": 1
             },
@@ -5697,12 +7737,40 @@
         },
         {
           "anchor": {
-            "blob": "f59be949fc3fa155da0ce68d6c8301c02ac3e624",
-            "content": "sha256:be58db0b4bd445f33d60894388f32d419f2b27d55d0e2933870095fd73ce20c1",
+            "blob": "a87bb07cf86afb478306f599a0a80a4579ae4389",
+            "content": "sha256:37eedb5c6b0753d3e048deff47a81b83bb8b8e6637365198320db10b75eb014b",
             "locator": {
-              "kind": "file"
+              "end": 863,
+              "kind": "line_range",
+              "start": 1
             },
             "path": "mcp/tests/test_tool_response_conformance.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f9d31f21c64890dc36a2c835faab4ae6860bcc68",
+            "content": "sha256:dac8eadb35faff624a5ba43d7292ab511bd7508606ad9ef0b8671bfdb82d1022",
+            "locator": {
+              "end": 4426,
+              "kind": "line_range",
+              "start": 4395
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f9d31f21c64890dc36a2c835faab4ae6860bcc68",
+            "content": "sha256:f23a9f5e8e56ed734c31a21b16915d36e30a45ddbc6952e2681e46d0b0c05522",
+            "locator": {
+              "end": 4456,
+              "kind": "line_range",
+              "start": 4427
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
           },
           "kind": "test"
         }
@@ -6010,14 +8078,16 @@
       ]
     },
     "1751": {
-      "note": "Historical raiser-population account: the earlier four-worktree and separate finalize-population captions are superseded. The current sweep compares the observed envelope-losing raisers with its explicit pin; the retained source assertions do not prove execution. Former lifecycle-catalog windows 1184-1190, 1510-1524, 1982-1988, 1144-1150 and 1940-1946 are withdrawn: none states a raiser population, and no catalog block can replace that evidence; the sweep source remains the witness.",
+      "note": "The current sweep source compares observed error-arm tools with the explicit ENVELOPE_LOSING_RAISERS pin by equality in both directions. This source assertion establishes no execution or acceptance.",
       "targets": [
         {
           "anchor": {
-            "blob": "1fe4dc4416c2727815fcab3f9558e152bb422ee4",
-            "content": "sha256:ac977ef5869212f7443d157e025e8d6ec5761e0de2b398d07aea7dbe9cad4089",
+            "blob": "0e1aa8704720217e5a24a2c269089eaee490de4d",
+            "content": "sha256:dc2d25bea2752cb56009ec7b5103d5dfae6b56a604d3da0dc63de3111d684992",
             "locator": {
-              "kind": "file"
+              "end": 230,
+              "kind": "line_range",
+              "start": 210
             },
             "path": "mcp/tests/test_tool_entry_point_sweep.py"
           },
@@ -6026,7 +8096,7 @@
       ]
     },
     "1752": {
-      "note": "**Retained historical source account — superseded by the current route account:** Source cases separate named renames, copies, Git metadata, full-removal threshold and proven/unproven absence.",
+      "note": "Current targets retain the landing-report regression cases and host-test policy; the root declaration is 10000 unit and 2000 integration cases and now classifies scripts/agent_evals as verification. These live targets are not an archive of the retained source account quoted above.\n\nAnchor: Current declared source extent",
       "targets": [
         {
           "anchor": {
@@ -6072,7 +8142,9 @@
             "blob": "5b327cf79df68aff9dfc26bbbb015d0784173608",
             "content": "sha256:a9e681846fd246e4ad76c20ecc6de33222652a0a472bf39d9393e9a73ec4cd03",
             "locator": {
-              "kind": "file"
+              "end": 691,
+              "kind": "line_range",
+              "start": 1
             },
             "path": "mcp/tests/test_landing_report.py"
           },
@@ -6083,7 +8155,9 @@
             "blob": "0d19e9bdf51497de71bacf7a9830b69978d96dc7",
             "content": "sha256:e1e3d8365a62fc5a5f5f54f499dc4c5e7203b70b369e307d47f30e350c5eb4b7",
             "locator": {
-              "kind": "file"
+              "end": 53,
+              "kind": "line_range",
+              "start": 1
             },
             "path": "docs/design/python-pytest-bootstrap.md"
           },
@@ -6091,10 +8165,12 @@
         },
         {
           "anchor": {
-            "blob": "ddd77babbaaddf51063d6e23856c0cadd142d461",
-            "content": "sha256:9dec078b3143f2a2444d4f4541b8ef34bfa9b9786f0b102431fa870f2fd47e06",
+            "blob": "abb3d0e320df1c428284a14d602ec93ad778bdbe",
+            "content": "sha256:030596cef7d9fea970513ce9975de6839a71c38510ba0531432b1dc3f75be9a8",
             "locator": {
-              "kind": "file"
+              "end": 413,
+              "kind": "line_range",
+              "start": 1
             },
             "path": "pyproject.toml"
           },
@@ -6103,16 +8179,16 @@
       ]
     },
     "1753": {
-      "note": "Historical consumer-addition account: the earlier two-artifact count is retained as historical. The current catalog names test_landing_report.py on four existing artifact consumer lists; these declarations establish no execution or new artifact identity.",
+      "note": "The current lifecycle catalog declares test_landing_report.py as an exact consumer of mcp/tests/_user_settings_guard.py, mcp/tests/curator_coherence_test_support.py, mcp/tests/fixtures/repository_profiles/node/package-lock.json, mcp/tests/landing_report_test_support.py. These are source declarations, not invocation, code delivery or acceptance evidence.",
       "targets": [
         {
           "anchor": {
-            "blob": "b9e272ef623574e517181e36b3dc949a3ac78e19",
-            "content": "sha256:fb61edaea0563153c751a37379bc395dc344ee07921febd672066daccadf6499",
+            "blob": "f9d31f21c64890dc36a2c835faab4ae6860bcc68",
+            "content": "sha256:0a6ea03efe9703712535f05efeacc13a561b6fd40cb34b4ed9fe1a7122ed7558",
             "locator": {
-              "end": 1988,
+              "end": 821,
               "kind": "line_range",
-              "start": 1982
+              "start": 65
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -6120,12 +8196,12 @@
         },
         {
           "anchor": {
-            "blob": "b9e272ef623574e517181e36b3dc949a3ac78e19",
-            "content": "sha256:8bb2cd4a920cf995bfb0c334096a87b15d3a6a878525a7de6ff69900e081228a",
+            "blob": "f9d31f21c64890dc36a2c835faab4ae6860bcc68",
+            "content": "sha256:27ada4a3d5995ef2a9e4ed6de487ad9bb21a156504da9369d7c0736bdec39c61",
             "locator": {
-              "end": 867,
+              "end": 1257,
               "kind": "line_range",
-              "start": 150
+              "start": 1109
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -6133,12 +8209,12 @@
         },
         {
           "anchor": {
-            "blob": "b9e272ef623574e517181e36b3dc949a3ac78e19",
-            "content": "sha256:433d1b54bb3f1e0858f70b822629679ace2ba0a9c192a67a80e46a62ff6d6d2e",
+            "blob": "f9d31f21c64890dc36a2c835faab4ae6860bcc68",
+            "content": "sha256:e8d358fc83b0cd78d30c45fd0bf4727490538eac4f97a69b212a2078f94c56cf",
             "locator": {
-              "end": 1302,
+              "end": 3096,
               "kind": "line_range",
-              "start": 1155
+              "start": 2340
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -6146,25 +8222,12 @@
         },
         {
           "anchor": {
-            "blob": "b9e272ef623574e517181e36b3dc949a3ac78e19",
-            "content": "sha256:e1b5e89203741ca33a2fd0a4a8ce7e6efb9c2a136c13f0bb9e057bf8d0c25aa8",
-            "locator": {
-              "end": 2699,
-              "kind": "line_range",
-              "start": 1982
-            },
-            "path": "mcp/tests/evidence-lifecycle.toml"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "b9e272ef623574e517181e36b3dc949a3ac78e19",
+            "blob": "f9d31f21c64890dc36a2c835faab4ae6860bcc68",
             "content": "sha256:76096f7e5ceee316cd057a81eeadae0538a303e30b4824163fab35bc672096a0",
             "locator": {
-              "end": 3220,
+              "end": 3678,
               "kind": "line_range",
-              "start": 3202
+              "start": 3660
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -6172,10 +8235,12 @@
         },
         {
           "anchor": {
-            "blob": "1fe4dc4416c2727815fcab3f9558e152bb422ee4",
-            "content": "sha256:ac977ef5869212f7443d157e025e8d6ec5761e0de2b398d07aea7dbe9cad4089",
+            "blob": "0e1aa8704720217e5a24a2c269089eaee490de4d",
+            "content": "sha256:614c2bf8ff9a6dbe99d62f089cac8d9e8b863313a1234e97b104f8e717a95bc3",
             "locator": {
-              "kind": "file"
+              "end": 410,
+              "kind": "line_range",
+              "start": 1
             },
             "path": "mcp/tests/test_tool_entry_point_sweep.py"
           },
@@ -6485,12 +8550,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ddd77babbaaddf51063d6e23856c0cadd142d461",
+            "blob": "abb3d0e320df1c428284a14d602ec93ad778bdbe",
             "content": "sha256:d54efa326c1d4128e0c15e19ae1c2e3f9fb44b9af2c0cfbcfa5bca0306be0494",
             "locator": {
-              "end": 334,
+              "end": 335,
               "kind": "line_range",
-              "start": 320
+              "start": 321
             },
             "path": "pyproject.toml"
           },
@@ -6816,7 +8881,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "73dd5b9660c6d872dc71217bedde72df528fcec0",
+            "blob": "1620c13122fd85d7430c24b28bbadc4084fdcec0",
             "content": "sha256:8cdd4bef411ef7643acefbaa4ff0ecc3307640ba485748ecd65d269c8dfa4be1",
             "locator": {
               "kind": "symbol",
@@ -7455,12 +9520,12 @@
         },
         {
           "anchor": {
-            "blob": "ddd77babbaaddf51063d6e23856c0cadd142d461",
+            "blob": "abb3d0e320df1c428284a14d602ec93ad778bdbe",
             "content": "sha256:d54efa326c1d4128e0c15e19ae1c2e3f9fb44b9af2c0cfbcfa5bca0306be0494",
             "locator": {
-              "end": 334,
+              "end": 335,
               "kind": "line_range",
-              "start": 320
+              "start": 321
             },
             "path": "pyproject.toml"
           },
@@ -7491,14 +9556,29 @@
       ]
     },
     "1807": {
-      "note": "The literal public roster currently registers 44 names in `PUBLIC_TOOLS`, including the architect's `explainer_control` and `citation_note_revision`; the same source pins 14 adapter modules and 46 handlers.\n\nAnchor: `ROSTER_SIZE`",
+      "note": "The literal PUBLIC_TOOLS tuple in models/tools/public_roster.py contains 44 names, including explainer_control and citation_note_revision. The separate conformance test source pins ROSTER_SIZE = 44, TOOL_MODULE_COUNT = 14 and TOOL_HANDLER_COUNT = 46. A literal roster and source pins are distinct from a fresh collection or execution result.",
       "targets": [
         {
           "anchor": {
-            "blob": "f59be949fc3fa155da0ce68d6c8301c02ac3e624",
-            "content": "sha256:be58db0b4bd445f33d60894388f32d419f2b27d55d0e2933870095fd73ce20c1",
+            "blob": "d0b0ddd9f150e32116b430ecc74907fcf68fee97",
+            "content": "sha256:fdef15e2ca9d39f66c8570a7147cb894dda16f47c7d3558bb4454e5b4714875f",
             "locator": {
-              "kind": "file"
+              "end": 74,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/src/agents_remember/models/tools/public_roster.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a87bb07cf86afb478306f599a0a80a4579ae4389",
+            "content": "sha256:37eedb5c6b0753d3e048deff47a81b83bb8b8e6637365198320db10b75eb014b",
+            "locator": {
+              "end": 863,
+              "kind": "line_range",
+              "start": 1
             },
             "path": "mcp/tests/test_tool_response_conformance.py"
           },
@@ -7507,14 +9587,14 @@
       ]
     },
     "1808": {
-      "note": "The replacement after-discovery test source asserts one joint sweep/dashboard start across scheduling and no-list fallback in fresh autoStart=true processes; parsed catalog declarations retain 17 lifecycle contracts, 93 artifacts and 701 selected lane members. The launchers and reconciliation seam are recorders; no execution is asserted here.",
+      "note": "The replacement after-discovery test source asserts one joint sweep/dashboard start across scheduling and no-list fallback in fresh autoStart=true processes; parsed catalog declarations contain 17 lifecycle contracts, 117 artifacts and 740 selected lane members. The launchers and reconciliation seam are recorders; no execution is asserted here.",
       "targets": [
         {
           "anchor": {
             "blob": "fa392c631e8973beb464de5d5f1c437342cee5db",
-            "content": "sha256:a40fbda59ef5b9579705f4bdad3527c4a5bc23d5809ab7fdd94b035252b692f6",
+            "content": "sha256:0fb57b7b073fc69daf4d913ec0fbc4d2ad8df2d451498439455a5f28f43695cb",
             "locator": {
-              "end": 230,
+              "end": 280,
               "kind": "line_range",
               "start": 227
             },
@@ -7524,36 +9604,12 @@
         },
         {
           "anchor": {
-            "blob": "fa392c631e8973beb464de5d5f1c437342cee5db",
-            "content": "sha256:0f1297ae5cbc8adc17f27790172141af9542efb9d0bfdabaf521cd3e000ea7bd",
+            "blob": "f9d31f21c64890dc36a2c835faab4ae6860bcc68",
+            "content": "sha256:fb392b28cf974645a027a66e83ae0e915330ab1a77a993f2c1d7fe48a727f610",
             "locator": {
-              "end": 236,
+              "end": 4852,
               "kind": "line_range",
-              "start": 233
-            },
-            "path": "mcp/tests/test_dashboard_autostart_after_discovery.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "fa392c631e8973beb464de5d5f1c437342cee5db",
-            "content": "sha256:6ded61fba73f061c96db7bb110275528f71fe888eaa019ea865d4c122bdbdcdf",
-            "locator": {
-              "end": 280,
-              "kind": "line_range",
-              "start": 239
-            },
-            "path": "mcp/tests/test_dashboard_autostart_after_discovery.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "b9e272ef623574e517181e36b3dc949a3ac78e19",
-            "content": "sha256:7897fb40e5c032a535ff68a71e30a676a37248f2c174ffefd20a7d524cdb39dd",
-            "locator": {
-              "kind": "file"
+              "start": 1
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -7561,10 +9617,12 @@
         },
         {
           "anchor": {
-            "blob": "ac006b11f74a4c64ab964edc3378b4c96f153872",
-            "content": "sha256:171b4c615e079f4e00cffdd1190b5c1f451a8c1c6f8fc5fa079d77f6c42c37fe",
+            "blob": "2c675ac4ed53a3b28cae8c0c32cd13c617d8f6ed",
+            "content": "sha256:17c58056cb585da559d494ef67c2b9bbf8cbb729c5d510ecf6a26e7bd988f0b7",
             "locator": {
-              "kind": "file"
+              "end": 764,
+              "kind": "line_range",
+              "start": 1
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -7656,7 +9714,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "745a442a0f4ceddd82ffb810e6b077504eb9a55b",
+            "blob": "b289bf5ca49432471525be6981e6f22202ea9401",
             "content": "sha256:a8ccc7c0fe03f45a32d328523ac9b62650ef51072dbc2822789413f9d2313249",
             "locator": {
               "end": 30,
@@ -7674,12 +9732,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ddd77babbaaddf51063d6e23856c0cadd142d461",
+            "blob": "abb3d0e320df1c428284a14d602ec93ad778bdbe",
             "content": "sha256:d54efa326c1d4128e0c15e19ae1c2e3f9fb44b9af2c0cfbcfa5bca0306be0494",
             "locator": {
-              "end": 334,
+              "end": 335,
               "kind": "line_range",
-              "start": 320
+              "start": 321
             },
             "path": "pyproject.toml"
           },

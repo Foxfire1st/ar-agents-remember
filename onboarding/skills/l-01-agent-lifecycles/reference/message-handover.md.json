@@ -1,0 +1,116 @@
+{
+  "path": "skills/l-01-agent-lifecycles/reference/message-handover.md",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "1e006f679fb322bbd74e0377548c29c2a387f77d",
+        "content": "sha256:4d762fcf036808650e5e206413adc09ccdac85f570a888df0a332c59b6af8cd8",
+        "locator": {
+          "end": 5,
+          "kind": "line_range",
+          "start": 5
+        }
+      },
+      "id": "RLZ-76BXNW",
+      "invariant": "INV-6R279E",
+      "origin": {
+        "handoffEntry": "L117-R07",
+        "leaf": "260928-MIK-L117"
+      },
+      "rationale": "The shared payload home states messages-as-files, body/attach and the settings limit; the Worker receives this content through its named Messages step pointer.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "1e006f679fb322bbd74e0377548c29c2a387f77d",
+        "content": "sha256:4e4be134bbfe9d1e60fb57afbe0a97eb0d3b0c6ddc5922e3db40dc860fe788a0",
+        "locator": {
+          "end": 9,
+          "kind": "line_range",
+          "start": 9
+        }
+      },
+      "id": "RLZ-MX6XHJ",
+      "invariant": "INV-QZW2X2",
+      "origin": {
+        "handoffEntry": "L62-CUR-6db-attach-INV-QZW2X2",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "The sender must message the waiting seat with the finished object and evidence path; a filed report/ended turn is not that act.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "1e006f679fb322bbd74e0377548c29c2a387f77d",
+        "content": "sha256:4d762fcf036808650e5e206413adc09ccdac85f570a888df0a332c59b6af8cd8",
+        "locator": {
+          "end": 5,
+          "kind": "line_range",
+          "start": 5
+        }
+      },
+      "id": "RLZ-P09WX0",
+      "invariant": "INV-6R279E",
+      "origin": {
+        "handoffEntry": "L62-CUR-6db-attach-INV-6R279E",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "The payload sentence uses files for evidence and body/attach with the settings limit rather than a pinned numeric message cap.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The sender names the finished object and its files through the existing role/task route.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1e006f679fb322bbd74e0377548c29c2a387f77d",
+            "content": "sha256:c39b1b5a42f20d8a39fabd876f383e84c47de55502c7cdc0f39df16f491a1a6c",
+            "locator": {
+              "end": 9,
+              "kind": "line_range",
+              "start": 3
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Held delivery, full-store refusal and withdrawal have distinct handling.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1e006f679fb322bbd74e0377548c29c2a387f77d",
+            "content": "sha256:96ab633250b58c47c0a2dab12b4f2b2c7880e6bc484632461eb9b4301fe17002",
+            "locator": {
+              "end": 15,
+              "kind": "line_range",
+              "start": 11
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Filing and receipt searches use their actual shared-task and transcript scopes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1e006f679fb322bbd74e0377548c29c2a387f77d",
+            "content": "sha256:b50ea89eaea6a79b0aaf7ddd0a476494eda1eb55982f6d07ec85d46a2f7d38a3",
+            "locator": {
+              "end": 21,
+              "kind": "line_range",
+              "start": 17
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

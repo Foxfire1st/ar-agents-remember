@@ -4,12 +4,24 @@
 
 This template feeds document values into the starting Worker's compiled first message; role_start_set or role_start carries no pasted brief. The Worker writes candidate code in the repository-defined environment, records its actual interpreter and exact targeted-check outcomes, and never substitutes a primary-checkout environment. Supported sync sends native memory conflicts to the Curator for content, the Manager for capture/verification/staging, then the Worker for the advertised continuation. The leaf owns exactly one primary stable ID/version acceptance block; other applicable revisions are dependency/preservation constraints, not additional closure claims. Candidate-bound handoff attempts, prior findings and append-only journal authority are separate from experimental reruns. The Worker sends producer wording and fields directly to the Curator, leaving the four Curator-owned fields null. The template supplies no onboarding, commit or lifecycle authority beyond its stated role-owned operations; complete memory quality is the Curator's duty, not a Worker full-suite claim.
 
+Current qualification: the retained clause “role_start_set or role_start carries no pasted brief.” describes its past source epoch. role_start carries no pasted brief.
+
 This qualification governs the named current seams; incompatible earlier generalizations remain historical, not restored authority. No source inspection here establishes execution, a launch, a test result, a CODE/MEMORY grade or a completed closeout.
 
 
 
 
-- Worker input values preserve one primary revision, actual candidate environment, owner-separated sync and direct Curator producer-field handoff. [9]
+- Worker input values preserve one primary revision, actual candidate environment, owner-separated sync and direct Curator producer-field handoff.
+
+Earlier caption detached from live reference 9: its original target declared the source text at `skills/l-01-agent-lifecycles/templates/worker-brief.md` at original blob `d7b1922ce5f6fd565f852582ec28c80614728338`, lines 33–50; `skills/l-01-agent-lifecycles/templates/worker-brief.md` at original blob `d7b1922ce5f6fd565f852582ec28c80614728338`, lines 66–85; `skills/l-01-agent-lifecycles/templates/worker-brief.md` at original blob `d7b1922ce5f6fd565f852582ec28c80614728338`, lines 105–118. The caption above is retained as prose; the numbered clause below describes the current source.
+
+Retained authoring-row wording:
+
+Finding: Worker input values preserve one owned primary revision, repository-defined candidate environment and actual interpreter, clean-sync versus overlap ownership, and direct exact-freeze Curator producer fields with the four Curator fields null.
+
+Anchor: `current role or template contract`
+
+Source: skills/l-01-agent-lifecycles/templates/worker-brief.md:33-50; skills/l-01-agent-lifecycles/templates/worker-brief.md:66-85; skills/l-01-agent-lifecycles/templates/worker-brief.md:111-131
 
 
 
@@ -120,7 +132,17 @@ The Worker-only sync row echoes the owning implementation boundary; it does not 
 
 ## Evidence
 
-- The Worker template distinguishes clean sync from overlap or failed focused tests while preserving native conflict ownership and continuation. [11]
+- The Worker template distinguishes clean sync from overlap or failed focused tests while preserving native conflict ownership and continuation.
+
+Earlier caption detached from live reference 11: its original target declared the source text at `skills/l-01-agent-lifecycles/templates/worker-brief.md` at original blob `d7b1922ce5f6fd565f852582ec28c80614728338`, lines 38–47. The caption above is retained as prose; the numbered clause below describes the current source.
+
+Retained authoring-row wording:
+
+Finding: Worker brief distinguishes clean sync from overlap or a failing focused test, leaves native memory content to Curator and capture/verification/staging to Manager, and lets Worker continue the supported transaction; own task edits use task_doc first and only correct-input writer refusal uses the named recovery.
+
+Anchor: `current role or template contract`
+
+Source: skills/l-01-agent-lifecycles/templates/worker-brief.md:38-46
 
 
 ### Docs References
@@ -133,9 +155,29 @@ No external Domain Documentation source governs this worker template.
 - The same block compiles leaf manifestation, attempt/predecessor lineage, and candidate identity before handoff. [2]
 
 
-- Repository-defined checks and artifact lifecycle remain separate obligations. [3]
+- Repository-defined checks and artifact lifecycle remain separate obligations.
 
-- The final report links attempt records, check outcomes, curator inputs and continuity state. [4]
+Earlier caption detached from live reference 3: its original target declared the source text at `skills/l-01-agent-lifecycles/templates/worker-brief.md` at original blob `d7b1922ce5f6fd565f852582ec28c80614728338`, lines 24–31; `skills/l-01-agent-lifecycles/templates/worker-brief.md` at original blob `d7b1922ce5f6fd565f852582ec28c80614728338`, lines 101–103. The caption above is retained as prose; the numbered clause below describes the current source.
+
+Retained authoring-row wording:
+
+Finding: Worker brief separates its code-write/memory-context roots and append-only journal from repository coding/design guidelines and final-byte targeted handover checks; the Worker never commits and actual repository tools own the commands.
+
+Anchor: `current role or template contract`
+
+Source: skills/l-01-agent-lifecycles/templates/worker-brief.md:24-31; skills/l-01-agent-lifecycles/templates/worker-brief.md:94-109
+
+- The final report links attempt records, check outcomes, curator inputs and continuity state.
+
+Earlier caption detached from live reference 4: its original target declared the source text at `skills/l-01-agent-lifecycles/templates/worker-brief.md` at original blob `d7b1922ce5f6fd565f852582ec28c80614728338`, lines 122–126. The caption above is retained as prose; the numbered clause below describes the current source.
+
+Retained authoring-row wording:
+
+Finding: Worker brief compiles per-primary attempt/candidate/evidence values, exact-freeze Curator inputs with four fields null, and a final report linking new journal anchors, exact check commands/results, changed paths and continuity state.
+
+Anchor: `current role or template contract`
+
+Source: skills/l-01-agent-lifecycles/templates/worker-brief.md:66-85; skills/l-01-agent-lifecycles/templates/worker-brief.md:111-135
 
 - The template declares itself an input-feeder whose stated rules live in the seat's own files. [5]
 
@@ -379,3 +421,8 @@ Inherited reference 3 commentary (not a revalidated target):
 The verified byte-equal package copy is derived output, not an independent role/task/permission authority. Whole-source evidence does not certify inherited statements or a whole requirement.
 
 - The Curator owner requires the complete curation operation; optional full-quality/test requests do not waive it. [10]
+
+- Worker brief separates its code-write/memory-context roots and append-only journal from repository coding/design guidelines and final-byte targeted handover checks; the Worker never commits and actual repository tools own the commands. [3]
+- Worker brief compiles per-primary attempt/candidate/evidence values, exact-freeze Curator inputs with four fields null, and a final report linking new journal anchors, exact check commands/results, changed paths and continuity state. [4]
+- Worker input values preserve one owned primary revision, repository-defined candidate environment and actual interpreter, clean-sync versus overlap ownership, and direct exact-freeze Curator producer fields with the four Curator fields null. [9]
+- Worker brief distinguishes clean sync from overlap or a failing focused test, leaves native memory content to Curator and capture/verification/staging to Manager, and lets Worker continue the supported transaction; own task edits use task_doc first and only correct-input writer refusal uses the named recovery. [11]

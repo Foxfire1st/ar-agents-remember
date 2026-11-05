@@ -24,9 +24,15 @@ Catalog content should describe real entities and their projections, not a gener
 
 The template describes the fingerprint/inventory match but implements no comparer or parser. The retained entity workflow under c-05 requires review of changed evidence and names c-05 as the reporter of fingerprint drift, missing fingerprint rows and orphaned rows or missing paths. This is the instruction contract, not an independent execution of a comparer. The catalog template’s metadata and history comment are legacy source-description details, not requirements for the converted card documenting this file.
 
-This card describes a template as source; it is not an instance of that template. Converted onboarding uses mirrored Markdown and a companion authored by the supported writers: no metadata table or in-card Update History, and no hand-authored companion JSON. Citation tables are authoring input for the fixer, not the final evidence representation. Describing an older template format does not authorize new legacy-format memory writes.
+This card describes a template as source; it is not an instance of that template. Converted onboarding uses mirrored Markdown and a companion authored by the supported writers: no metadata table or in-card Update History, and normally no hand-authored companion JSON. Citation tables are authoring input for the fixer, not the final evidence representation. Describing an older template format does not authorize new legacy-format memory writes. Use the fixer and writer first. Only a covered correct-input write refusal permits the declared same-tool/input-class recovery, with owner notification, manual provenance, checks and a defect issue. Missing admission/capability is not such a refusal; read/check/validation/sync, starts, product guards, commit gates and denied or unanswered permission requests keep their stops.
 
 ## Evidence
+
+
+Superseded card wording retained for custody (not certified as true of any source epoch or measured candidate):
+
+> This card describes a template as source; it is not an instance of that template. Converted onboarding uses mirrored Markdown and a companion authored by the supported writers: no metadata table or in-card Update History, and no hand-authored companion JSON. Citation tables are authoring input for the fixer, not the final evidence representation. Describing an older template format does not authorize new legacy-format memory writes.
+
 
 ### Docs References
 
@@ -42,8 +48,20 @@ The source supplies the inventory, projection and fingerprint shapes. The actual
 - The c-05 source names file-level units and repository entity catalogs as its two artifact types. [4]
 
 - The retained c-05 entity workflow requires evidence review and names its current fingerprint-drift and inventory-coverage reporting owner; the template itself performs neither comparison nor parsing. [5]
-- The converted workflow requires a source-mirrored Markdown/companion card without manually authored metadata, history or sidecar JSON. [6]
+Past-epoch caption (retained wording): - The converted workflow requires a source-mirrored Markdown/companion card without manually authored metadata, history or sidecar JSON.
+
+Original-target custody: `skills/c-05-create-or-update-onboarding-files/workflows/converted-card-workflow.md`, blob `07f4fbb59134af0846462f3929091464962f171f`, declared “A converted card is two files at the mirrored path: ```text <onboarding-root>/<source path>.md     the prose: title, governing overview, purpose, commentary, evidence <onboarding-root>/<source path>.json   the sidecar: references (and the r”. The earlier caption is detached from the live number; the current table carries only the current clause and target.
+
+Retained authoring-row wording:
+
+Finding: Converted cards are source-mirrored Markdown/sidecar pairs without legacy metadata or in-card history. The fixer and writer own normal sidecar authoring; a covered correct-input refusal uses only the declared same-tool recovery.
+
+Anchor:
+
+Source: skills/c-05-create-or-update-onboarding-files/workflows/converted-card-workflow.md:7-35; skills/l-01-agent-lifecycles/reference/refused-write.md:1-38
 
 ### Cross-Repo References
 
 Reality/Firmware/Backend/Frontend labels describe possible layers, not evidence that this template crosses repositories or authorizes reading or updating a sibling repository.
+
+- Converted cards are source-mirrored Markdown/sidecar pairs without legacy metadata or in-card history. The fixer and writer own normal sidecar authoring; a covered correct-input refusal uses only the declared same-tool recovery. [6]

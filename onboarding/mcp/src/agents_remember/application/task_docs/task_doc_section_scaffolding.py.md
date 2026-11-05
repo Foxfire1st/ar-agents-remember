@@ -53,7 +53,7 @@ The source and focused application tests prove the raw-shape and no-write bounda
 
 - The helper validates the entire raw list before copying and scaffolding only missing registers. [1]
 
-- `_build_doc` routes create and replace candidates through this helper (after the `kind` default) and only then through `_validate`, the canonical model validation. [2]
+- `_build_doc` routes create and replace candidates through this helper (after the `kind` default) and only then through `_validate`, the canonical model validation.
 
 - Register section scaffolding has one production entry point and validates the supplied section collection. [3]
 
@@ -62,3 +62,5 @@ The source and focused application tests prove the raw-shape and no-write bounda
 No cross-repository boundary is owned by this file.
 
 No meaningful cross-repository references were found.
+
+- `_build_doc` routes create and replace candidates through this helper (after the `kind` default) and only then through `_validate`, the canonical model validation. Anchor: `_build_doc` [2]

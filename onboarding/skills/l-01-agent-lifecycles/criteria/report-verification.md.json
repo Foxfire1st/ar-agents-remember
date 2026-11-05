@@ -7,12 +7,29 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5c75e9ce27286f2452a9bf06200dc7cf73a16f11",
+            "blob": "59c845afb492207c664e74cb9f4afb093233d9cf",
             "content": "sha256:4567047561af0de0e464f04e27fe1035d20edafa9215b4a10f84b041636f586b",
             "locator": {
               "end": 10,
               "kind": "line_range",
               "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "RV-6 is standing by requirement beside RV-1, RV-2, RV-4 and RV-5; RV-3 remains a candidate. RV-6 checks what a claimed complete or gate run included and omitted, requires the same message/subtest cause on the base before a failure is called pre-existing, and permits carried evidence only when the files it exercises remain byte-identical to the earlier run.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "59c845afb492207c664e74cb9f4afb093233d9cf",
+            "content": "sha256:9f889a4ad9845380ffdc551cc8e0e57cc7fb2b042a1203bfe18610db4ecfb37d",
+            "locator": {
+              "end": 105,
+              "kind": "line_range",
+              "start": 100
             }
           },
           "kind": "code"
@@ -60,12 +77,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ab9a2e087d2cfd299ad5ffbac061aac232c8e831",
+            "blob": "62a4500b617979c0fc10d9726ce52b57b8b3c922",
             "content": "sha256:313d6ae5d5d3eea6d4393cfae149e951e5d6fd2f165516d17d276b153d78b921",
             "locator": {
-              "end": 49,
+              "end": 57,
               "kind": "line_range",
-              "start": 40
+              "start": 48
             },
             "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
           },
@@ -78,7 +95,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5c75e9ce27286f2452a9bf06200dc7cf73a16f11",
+            "blob": "59c845afb492207c664e74cb9f4afb093233d9cf",
             "content": "sha256:82fff9cace9b4cc5830e527e3d81a796d30a40a0636efb363c2dec0bc152d2e0",
             "locator": {
               "end": 25,
@@ -95,7 +112,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5c75e9ce27286f2452a9bf06200dc7cf73a16f11",
+            "blob": "59c845afb492207c664e74cb9f4afb093233d9cf",
             "content": "sha256:fb758055f17c5605ff7c13f6f217871b28ed0fe06aac6076ce73d034c2d94b08",
             "locator": {
               "end": 46,
@@ -112,7 +129,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5c75e9ce27286f2452a9bf06200dc7cf73a16f11",
+            "blob": "59c845afb492207c664e74cb9f4afb093233d9cf",
             "content": "sha256:c34489b8b6468023c56eb0766c5924a91959718fa75db23f81be90df0c0ca93c",
             "locator": {
               "end": 81,
@@ -129,7 +146,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5c75e9ce27286f2452a9bf06200dc7cf73a16f11",
+            "blob": "59c845afb492207c664e74cb9f4afb093233d9cf",
             "content": "sha256:435c38a8b6ccec6945a58cda9d5969d4eb573c709bbc5e13a10bf82be9142e95",
             "locator": {
               "end": 98,
@@ -146,12 +163,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5c75e9ce27286f2452a9bf06200dc7cf73a16f11",
+            "blob": "59c845afb492207c664e74cb9f4afb093233d9cf",
             "content": "sha256:6e65a3317092a75d950e5f15f1657498a9cd681780c1a95f81bd698693e894c3",
             "locator": {
-              "end": 135,
+              "end": 141,
               "kind": "line_range",
-              "start": 100
+              "start": 106
             }
           },
           "kind": "code"

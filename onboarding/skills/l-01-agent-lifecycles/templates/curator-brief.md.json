@@ -118,16 +118,16 @@
       ]
     },
     "9": {
-      "note": "The Manager starts a leaf’s Worker, Reviewer and Curator as one `role_start_set` and refers leaf coordination to `operations/coordination.md`. That procedure starts the Curator held until its first message and routes the frozen change set, hand-off lists and passed code verdict directly from the Worker and Reviewer. The Curator brief carries the leaf task, approved requirement-corpus ruling, exact requirement revision and packet, and requested requirement-adjudication inputs.  Historical note (superseded Manager-owned ordering and complete-brief claim): Manager doctrine owns the ordered pre-curator gate, exact packet/adjudication inputs, and complete brief.  Anchor: \"Hand the curator its brief\"; \"curator-brief.md\"",
+      "note": "The current Manager and Coordination owners require individual starts: Worker at build, Reviewer at freeze and Curator after code PASS, with direct candidate/list/verdict handovers. The Curator template carries exact task, approved packets and producer fields; its opening and compiler note still retain the older held role_start_set wording, and its own single-home clause gives the role and operation precedence.",
       "targets": [
         {
           "anchor": {
-            "blob": "3c2cfd97c8d64a0cd6245c1b87c6f6bd45457380",
-            "content": "sha256:9b1c4aeb1b3b1e2f52fde083443798cbc1b42f8573a9867a6bc8413434c2211a",
+            "blob": "0f539ae53bac7b99b39337ae847c7b4b56b95ccc",
+            "content": "sha256:95fb739e2f303e28aaae15f2c650d6a43099e2e7950e88e5520dfd681208e81e",
             "locator": {
-              "end": 22,
+              "end": 34,
               "kind": "line_range",
-              "start": 18
+              "start": 24
             },
             "path": "skills/l-01-agent-lifecycles/roles/manager.md"
           },
@@ -135,10 +135,10 @@
         },
         {
           "anchor": {
-            "blob": "dee346f3da2aa768e464f5895f9489da5f4ad6bd",
-            "content": "sha256:c87d7cac77783aa1e85b122f3f27ca5e1eea1756352508f6ab0b9776e9dbc120",
+            "blob": "cae239eb383e7e6a0679cf80d64d182e2d36fc0f",
+            "content": "sha256:dd9d4522fba019ff9cf7d90c009975c380eae918713f4b1019592e17d4e0ae94",
             "locator": {
-              "end": 12,
+              "end": 18,
               "kind": "line_range",
               "start": 12
             },
@@ -149,9 +149,9 @@
         {
           "anchor": {
             "blob": "37ba5fc7aa32f1b6099fa654c50be7f6b35cbb2e",
-            "content": "sha256:070bfe8eb685b5f51aeabf72ddca3ffd0df207bd0ffd3c6c6f5cd77e413a88ad",
+            "content": "sha256:df2b2c08bcee7040f501629398eeeed9ac0a59481a454673d5a569c4e028bd9d",
             "locator": {
-              "end": 10,
+              "end": 16,
               "kind": "line_range",
               "start": 3
             }
@@ -161,11 +161,23 @@
         {
           "anchor": {
             "blob": "37ba5fc7aa32f1b6099fa654c50be7f6b35cbb2e",
-            "content": "sha256:37fd4709c2192ce74c35dd0afe409ba3715c3e8271eb6f554e82bee1dcb0e80d",
+            "content": "sha256:7a47ba4d47152a87a9185b915b4472efa42b1a99ebe4dd821a7b67aa05f6bdd3",
             "locator": {
-              "end": 58,
+              "end": 73,
               "kind": "line_range",
               "start": 47
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "37ba5fc7aa32f1b6099fa654c50be7f6b35cbb2e",
+            "content": "sha256:9b4583405f75cf244840dccc66e66a3836d312e2dc4731237bd822080d08970e",
+            "locator": {
+              "end": 123,
+              "kind": "line_range",
+              "start": 115
             }
           },
           "kind": "code"

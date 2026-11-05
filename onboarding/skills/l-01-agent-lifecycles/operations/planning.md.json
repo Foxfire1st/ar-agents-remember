@@ -8,12 +8,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "39174489f4ffee8369bf9973ae1be09ef15b5307",
+            "blob": "3563523e9875f94323bfaf8dfcd2bdcf5a38b0c5",
             "content": "sha256:905477a73eb39f2cce3446be15e29751fcf57051d49d2d9d9982dafbbfbbe4fd",
             "locator": {
-              "end": 6,
+              "end": 24,
               "kind": "line_range",
-              "start": 6
+              "start": 24
             }
           },
           "kind": "code"
@@ -21,12 +21,12 @@
       ]
     },
     "2": {
-      "note": "Each independently falsifiable obligation gets a stable ID, version and canonical packet before topology.\n\nAnchor: \"assign a stable requirement ID/version\"",
+      "note": "Each independently falsifiable obligation gets a stable ID, version and canonical packet before topology.",
       "targets": [
         {
           "anchor": {
-            "blob": "39174489f4ffee8369bf9973ae1be09ef15b5307",
-            "content": "sha256:50bcc494e6d2c7a9aaadc66db6ab152e575bdc124415bd8420f92949c9bc757c",
+            "blob": "3563523e9875f94323bfaf8dfcd2bdcf5a38b0c5",
+            "content": "sha256:ef9c3f942919b9d97918a97dafe834b3bc9b7376adff2a2663fbd5f87ce9fa48",
             "locator": {
               "end": 4,
               "kind": "line_range",
@@ -38,16 +38,16 @@
       ]
     },
     "3": {
-      "note": "A packet-named recorded invariant/family effect is declared by the Architect before implementation; no named effect means no declaration.\n\nAnchor: `expectedKnowledgeEffects`",
+      "note": "A packet-named recorded invariant/family effect is declared by the Architect before implementation; no named effect means no declaration.",
       "targets": [
         {
           "anchor": {
-            "blob": "39174489f4ffee8369bf9973ae1be09ef15b5307",
-            "content": "sha256:906fdabfc96eb8ecded4f70ae179fff5a0880efde8bb94a3b6f1655beaa2abe6",
+            "blob": "3563523e9875f94323bfaf8dfcd2bdcf5a38b0c5",
+            "content": "sha256:21526c22afb70fde0ba372d37ce39fe367ea726f5b53c8c788e14f266b32c5a3",
             "locator": {
-              "end": 9,
+              "end": 31,
               "kind": "line_range",
-              "start": 9
+              "start": 28
             }
           },
           "kind": "code"
@@ -59,10 +59,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "39174489f4ffee8369bf9973ae1be09ef15b5307",
-            "content": "sha256:d2e094479cb924799a40eb93de188b08ee126aa47d5b90722f319c57a1e08190",
+            "blob": "3563523e9875f94323bfaf8dfcd2bdcf5a38b0c5",
+            "content": "sha256:ec4e036bb3190f1e55609b940535c59cceaf5563d3116f54041cb7cbdc28de5c",
             "locator": {
-              "kind": "file"
+              "end": 51,
+              "kind": "line_range",
+              "start": 1
             }
           },
           "kind": "code"
@@ -70,16 +72,16 @@
       ]
     },
     "5": {
-      "note": "Marks all common text all-role and limits the preimplementation expectedKnowledgeEffects declaration to Architect, restoring all-role afterward.\n\nAnchor: Candidate instruction body, lines 1–14",
+      "note": "Planning marks the Architect-only alignment, Prepared-context, effect-declaration and intent-review work explicitly, with all-role planning scope and permission boundaries outside that audience slice.",
       "targets": [
         {
           "anchor": {
-            "blob": "39174489f4ffee8369bf9973ae1be09ef15b5307",
-            "content": "sha256:d2e094479cb924799a40eb93de188b08ee126aa47d5b90722f319c57a1e08190",
+            "blob": "3563523e9875f94323bfaf8dfcd2bdcf5a38b0c5",
+            "content": "sha256:0abf423d44ffef03dcfaa10fd81e39c57c74152190c1897eb8b0df53a9754831",
             "locator": {
-              "end": 14,
+              "end": 42,
               "kind": "line_range",
-              "start": 1
+              "start": 6
             }
           },
           "kind": "code"
@@ -91,12 +93,53 @@
       "targets": [
         {
           "anchor": {
-            "blob": "39174489f4ffee8369bf9973ae1be09ef15b5307",
-            "content": "sha256:906fdabfc96eb8ecded4f70ae179fff5a0880efde8bb94a3b6f1655beaa2abe6",
+            "blob": "3563523e9875f94323bfaf8dfcd2bdcf5a38b0c5",
+            "content": "sha256:21526c22afb70fde0ba372d37ce39fe367ea726f5b53c8c788e14f266b32c5a3",
             "locator": {
-              "end": 9,
+              "end": 31,
               "kind": "line_range",
-              "start": 9
+              "start": 28
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Before release, a reader other than the drafter compares a new or revised packet in both directions against every open leaf packet of its master, before the intent-review choice and again before go after review changes. Changed promises go to the developer; stale facts are fixed through registered revisions, and an issue stays in its original leaf unless another charter already covers it. Before any seat starts, Prepared context names record IDs/state, code/files/lines, unattributed callers and traps, including complete paged knowledge and the code it leaves unattributed. A packet adding a row, disposition, writer field or gate states how its own curation completes on the installed build; new behavior is proven on fixtures and scratch copies. Reported complete checks name included and excluded work, and pre-existing failures need same-cause base evidence. Under developer-chosen direct coordination, the Reviewer receives its exact bound intake first; plan/super-exit reviews have no startable seat and go through the Architect. The Architect reports an hour-long small item or a second repair round/freeze that day with a proposal to bound it. A UI fix is called working only after observation on the developer installation; otherwise it is landed and not verified there. At a handover or held/full-store result, the named message-handover detail owns sender and receipt handling.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3563523e9875f94323bfaf8dfcd2bdcf5a38b0c5",
+            "content": "sha256:b61d506cc6cddf28708301c8f2e8b3c0e1bd58b46c4372916b7948271b74d813",
+            "locator": {
+              "end": 22,
+              "kind": "line_range",
+              "start": 4
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3563523e9875f94323bfaf8dfcd2bdcf5a38b0c5",
+            "content": "sha256:0d028d29066bb7319076c906e36c1a4617cb4acf8295ac050caf4c9296d09a7f",
+            "locator": {
+              "end": 42,
+              "kind": "line_range",
+              "start": 26
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3563523e9875f94323bfaf8dfcd2bdcf5a38b0c5",
+            "content": "sha256:6606a45af0fa9239ba4d9a517148a19677268b67a2235b9c535893c47dfd290e",
+            "locator": {
+              "end": 51,
+              "kind": "line_range",
+              "start": 47
             }
           },
           "kind": "code"

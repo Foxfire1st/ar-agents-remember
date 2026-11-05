@@ -98,7 +98,14 @@ The present test module no longer contains that test or asserts those installed-
 
 
 
-- The current settings-guard and portable Node-lockfile artifact rows both declare test_capsule_experiment_install.py as a consumer. The original two-row addition account belongs to its prior source epoch; these declarations establish no invocation. [6]
+- The current settings-guard and portable Node-lockfile artifact rows both declare test_capsule_experiment_install.py as a consumer. The original two-row addition account belongs to its prior source epoch; these declarations establish no invocation. [Past-epoch source caption, detached from live reference 6. Recorded citation custody: mcp/tests/evidence-lifecycle.toml blob b9e272ef623574e517181e36b3dc949a3ac78e19 (available); mcp/tests/evidence-lifecycle.toml blob 0b04e782b9627695554aeeebd05967506794d78d (available); historical event commit not identified. No historical event or intent inferred.]
+
+Current source: The current lifecycle catalog declares test_capsule_experiment_install.py among the exact consumers of mcp/tests/_user_settings_guard.py, mcp/tests/fixtures/repository_profiles/node/package-lock.json. These current declarations establish no invocation or addition event.
 
 
-- The current settings-guard and portable Node-lockfile artifact rows both declare test_capsule_experiment_install.py as a consumer. The original two-row addition account belongs to its prior source epoch; these declarations establish no invocation. [7]
+- The current settings-guard and portable Node-lockfile artifact rows both declare test_capsule_experiment_install.py as a consumer. The original two-row addition account belongs to its prior source epoch; these declarations establish no invocation. [Past-epoch source caption, detached from live reference 7. Recorded citation custody: mcp/tests/evidence-lifecycle.toml blob b9e272ef623574e517181e36b3dc949a3ac78e19 (available); mcp/tests/evidence-lifecycle.toml blob 0b04e782b9627695554aeeebd05967506794d78d (available); historical event commit not identified. No historical event or intent inferred.]
+
+Current source: The current lifecycle catalog declares test_capsule_experiment_install.py among the exact consumers of mcp/tests/_user_settings_guard.py, mcp/tests/fixtures/repository_profiles/node/package-lock.json. These current declarations establish no invocation or addition event.
+
+- The current lifecycle catalog declares test_capsule_experiment_install.py among the exact consumers of mcp/tests/_user_settings_guard.py, mcp/tests/fixtures/repository_profiles/node/package-lock.json. These current declarations establish no invocation or addition event. [6]
+- The current lifecycle catalog declares test_capsule_experiment_install.py among the exact consumers of mcp/tests/_user_settings_guard.py, mcp/tests/fixtures/repository_profiles/node/package-lock.json. These current declarations establish no invocation or addition event. [7]

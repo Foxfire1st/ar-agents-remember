@@ -12,7 +12,7 @@ Recover the selected native role assignment and canonical inputs without derivin
 
 The role launcher supports these eight role IDs: `architect`, `investigator`, `orchestrator`, `manager`, `worker`, `reviewer`, `curator`, and `bootstrap`; `bootstrap` is the taskless setup role the one start call reaches. `system-specialist` is the earlier ID of the same Investigator role. Missing, unsupported, inapplicable or conflicting role/operation/task bindings are reported rather than inferred. Projects is an execution location, not a repository identity. A manually selected taskless Architect asks only for missing outcome or registered repository details. An Investigator accepts a scoped concern of any kind from its actual parent's first message and asks that parent for missing concern/report scope; without a parent it uses the developer's request and own chat. Investigator may be selected at Projects, on a sprint, or on a sprint and master, never on a leaf. No synthetic repository, sprint, master, task or parent is created. Existing work recovers durable requirements, rulings, approvals, agent IDs and reports; reconnects do not invalidate supplied approval.
 
-Task-bound reads use the rendered task-document files named in the handover, read with the harness's own file tools before acting; change documents through `task_doc` only, because edits to copies are never read back and are lost on the next publication. Read only the selected packet/task scope and verify role, requirement revision, altitude, paired roots, contract and report agree.
+Task-bound reads use the rendered task-document files named in the handover and the harness’s own file tools before acting. For canonical task-document edits admitted to the role, use `task_doc` first; only a covered correct-input write refusal follows the declared same-tool/input-class recovery. Rendered copies are never parsed back and are refreshed by the owner’s next task_doc publication. Read only the selected packet/task scope and verify role, requirement revision, altitude, paired roots, contract and report agree. Missing admission/capability and read, validation, sync, guard, gate and permission stops remain unchanged.
 
 Use the launching build’s `agents-remember-task` server through its actual harness tool surface and schemas. The tool-server binding supplies identity; the handover supplies a parent when one exists. With a parent named in host.parent, every question requiring the developer's decision goes to that actual parent through bound role_message. Continue independent work; if none remains, record the state and await the parent's message. An actual busy refusal stays pending and is retried before ending; a product-held answer instead waits for product delivery and must not be sent again. Neither result permits own-chat escalation. Only a parentless agent, or an agent whose parent cannot be reached at all with the exact refusal recorded, asks the developer in its own chat. Peer communication retains its bound role-message route.
 
@@ -32,11 +32,17 @@ None recorded.
 
 ## Evidence
 
+
+Superseded card wording retained for custody (not certified as true of any source epoch or measured candidate):
+
+> Task-bound reads use the rendered task-document files named in the handover, read with the harness's own file tools before acting; change documents through `task_doc` only, because edits to copies are never read back and are lost on the next publication. Read only the selected packet/task scope and verify role, requirement revision, altitude, paired roots, contract and report agree.
+
+>  —  Taskless/approved-scope intake, exact task reads, paired write surfaces, bound server and same-task recovery.  —  lines 3-13  —  mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/operations/orientation.md:3-13  —
+
+
 ### Repo-Internal References
 
-| Finding | Anchor | References |
-| --- | --- | --- |
-| Taskless/approved-scope intake, exact task reads, paired write surfaces, bound server and same-task recovery. | lines 3-13 | mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/operations/orientation.md:3-13 |
+- Taskless scope, exact task-bound reads, role-admitted task_doc-first edits, paired surfaces, bound server and covered recovery. [6]
 
 ### Docs References
 
@@ -69,11 +75,14 @@ No meaningful cross-repo references found.
 Parentless Projects Investigator intake asks only for the missing concern/report scope from the developer request. Selected sprint/master intake uses the supplied actual references and concern channel. No repository, task or parent is synthesized; reconnecting preserves durable approvals and evidence.
 
 
-- This source owns the stated current Investigator scope or canonical vocabulary. [1]
+- This source owns the stated current Investigator scope or canonical vocabulary.
 
 
 
 ## Current intake and developer-question evidence
 
 
+- Investigator takes any scoped concern from the actual parent, uses the developer request only without a parent, and never synthesizes task identity; developer decisions follow the parent channel with the stated parentless and unreachable exceptions.
+
+- Orientation takes an Investigator concern from its actual parent or, when parentless, the developer; it keeps canonical task identity, exact launch bindings and developer-question provenance. [1]
 - Investigator takes any scoped concern from the actual parent, uses the developer request only without a parent, and never synthesizes task identity; developer decisions follow the parent channel with the stated parentless and unreachable exceptions. [2]

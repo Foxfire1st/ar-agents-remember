@@ -5,17 +5,18 @@
     ],
     "justification": "The budget test bounds every fresh compiled capsule within its recorded budget; without it an overgrown capsule would silently break instruction composition. Registry totals are evidenced by the registry cells and the A8 decisions, not by the test."
   },
-  "applicability": "All 38 role, operation and launcher capsules and every declared step-detail file budgeted by skills/l-01-agent-lifecycles/capsule-budgets.json.",
+  "applicability": "All 38 role/operation/launcher capsule cells, every manifest-declared step detail and the admitted shared every-role digest in capsule-budgets.json.",
   "conditions": [
-    "Each stored budget equals the smaller of ceil(stored size_words * 11 / 10) and its kind's ceiling; fresh measured sizes stay at or under budget, and fresh size, recorded size and budget stay at or below the ceiling.",
-    "The capsule ceiling is 3700 words and the declared detail-file ceiling is 2500 words, under the source-owned whitespace-split counting convention.",
-    "The registry has 38 capsule cells and a detail-files budget for every manifest-declared step detail, with no orphan detail budget keys; its updates carry their decision record.",
-    "Prior L101/A8 raw, adjusted and compiled totals remain dated evidence, not current-size guarantees."
+    "At every stage Architect 4631 words, Manager 4513, Curator/Reviewer/Bootstrap 4000 and every other role 3700 are the current literal capsule ceilings.",
+    "Each recorded budget is min(ceil(size_words*11/10),its applicable literal ceiling); fresh size stays within recorded budget and both within the ceiling.",
+    "Every manifest-declared step detail is budgeted, with 2500 words as its literal ceiling; current detail count is inventory data, not a permanent count in the statement.",
+    "The shared digest is separately recorded and delivered, with 1100 words as its current literal ceiling.",
+    "Registry updates retain developer-authorized raises and their measured operands; historical totals remain dated evidence."
   ],
   "exclusions": [
-    "Historical era sums (62748, a1b7 109616, master 107226) and the dated A8 compiled total 93905 as current contract terms.",
-    "The L101 83786 raw and 82200 A8-adjusted totals as current contract terms.",
-    "Treating a word-count or budget pass as proof that the capsule preserves meaning."
+    "The separate handover projection 3300-token obligation, whose record remains JKD5DE.",
+    "Old 3700-all-role or dated capsule/detail totals as current guarantees.",
+    "A budget pass as proof that meaning, audience, claims or acceptance are correct."
   ],
   "id": "INV-Y6GVZ7",
   "origin": {
@@ -29,9 +30,9 @@
     "leaf": "260928-MIK-L101",
     "task": "260928-MIK"
   },
-  "revision": 3,
+  "revision": 4,
   "schema": "ar-invariant/v1",
-  "statement": "The 38-cell capsule registry and its declared step-detail files record current sizes with each budget equal to min(ceil(size_words*11/10), ceiling): 3700 words per capsule and 2500 per detail file. Fresh sizes stay within recorded budgets, and measurements and budgets stay within those ceilings. Registry updates carry their decisions; dated leaf totals remain measurements, not reusable numeric contract terms.",
+  "statement": "The 38-cell capsule registry and declared details record current sizes under the developer-authorized role ceilings and min(ceil(size_words*11/10),applicable ceiling); the separately delivered shared digest has its own literal word ceiling and budget, and dated totals remain measurements.",
   "status": "proposed",
   "supersedes": []
 }

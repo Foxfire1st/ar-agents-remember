@@ -22,15 +22,23 @@ Host-language comment delimiters remain abstract. The adapter description change
 
 Within the documented inline adapter, `sourceDigest` is recomputed from the source body with the onboarding block removed; stable markers and keys support parsing rather than defining a separate documentation model. The governing-overview placeholder asks for a Markdown link consistent with its adapter field. These are properties of the inline source example, not metadata requirements for a converted Markdown/companion card. The current c-05 Converted Memory section and converted workflow govern this card instead.
 
-This card describes a template as source; it is not an instance of that template. Converted onboarding uses mirrored Markdown and a companion authored by the supported writers: no metadata table or in-card Update History, and no hand-authored companion JSON. Citation tables are authoring input for the fixer, not the final evidence representation. Describing an older template format does not authorize new legacy-format memory writes.
+This card describes a template as source; it is not an instance of that template. Converted onboarding uses mirrored Markdown and a companion authored by the supported writers: no metadata table or in-card Update History, and normally no hand-authored companion JSON. Citation tables are authoring input for the fixer, not the final evidence representation. Describing an older template format does not authorize new legacy-format memory writes. Use the fixer and writer first. Only a covered correct-input write refusal permits the declared same-tool/input-class recovery, with owner notification, manual provenance, checks and a defect issue. Missing admission/capability is not such a refusal; read/check/validation/sync, starts, product guards, commit gates and denied or unanswered permission requests keep their stops.
 
-The converted workflow’s moved-source section documents entries first through the writer, then moving/re-authoring the card and retiring the old companion. That ordering belongs to the workflow, not to this inline template. The absence of typed entries does not grant permission to hand-edit a companion or execute a move.
+The converted workflow’s moved-source section documents entries first through the writer, then moving/re-authoring the card and retiring the old companion. That ordering belongs to the workflow, not to this inline template. The absence of typed entries does not grant permission to hand-edit a companion or execute a move. Only an already-admitted, covered correct-input refusal can reach the declared same-tool recovery; absence of typed entries alone grants nothing.
 
 ### Todos
 
 The inherited todo asked to refresh verification metadata after a working-tree update landed. Retain that as historical adapter-maintenance context only; it is not an outstanding converted-card field update, and establishes no current landing or metadata refresh.
 
 ## Evidence
+
+
+Superseded card wording retained for custody (not certified as true of any source epoch or measured candidate):
+
+> This card describes a template as source; it is not an instance of that template. Converted onboarding uses mirrored Markdown and a companion authored by the supported writers: no metadata table or in-card Update History, and no hand-authored companion JSON. Citation tables are authoring input for the fixer, not the final evidence representation. Describing an older template format does not authorize new legacy-format memory writes.
+
+> The converted workflow’s moved-source section documents entries first through the writer, then moving/re-authoring the card and retiring the old companion. That ordering belongs to the workflow, not to this inline template. The absence of typed entries does not grant permission to hand-edit a companion or execute a move.
+
 
 ### Docs References
 
@@ -51,8 +59,20 @@ The inline sample proves markers, semantic-section alignment, overview placement
 - The c-05 converted-memory branch selects the converted workflow rather than legacy metadata and history rules. [6]
 
 - The converted workflow, not the inline template, documents writer entry movement before card relocation and reference re-authoring. [7]
-- Converted cards have no legacy metadata table or in-card Update History and do not hand-author sidecars. [8]
+Past-epoch caption (retained wording): - Converted cards have no legacy metadata table or in-card Update History and do not hand-author sidecars.
+
+Original-target custody: `skills/c-05-create-or-update-onboarding-files/workflows/converted-card-workflow.md`, blob `07f4fbb59134af0846462f3929091464962f171f`, declared “A converted card is two files at the mirrored path: ```text <onboarding-root>/<source path>.md     the prose: title, governing overview, purpose, commentary, evidence <onboarding-root>/<source path>.json   the sidecar: references (and the r”. The earlier caption is detached from the live number; the current table carries only the current clause and target.
+
+Retained authoring-row wording:
+
+Finding: Converted Markdown has no metadata table or in-card Update History. Use the fixer and writer first for sidecars; only a covered correct-input refusal admits the declared same-tool recovery, and missing admitted capability stays unwritten.
+
+Anchor:
+
+Source: skills/c-05-create-or-update-onboarding-files/workflows/converted-card-workflow.md:7-35; skills/l-01-agent-lifecycles/reference/refused-write.md:1-38
 
 ### Cross-Repo References
 
 The inherited explanation needed no sibling-repository evidence and recorded no meaningful cross-repository references. The source-template description establishes no external boundary.
+
+- Converted Markdown has no metadata table or in-card Update History. Use the fixer and writer first for sidecars; only a covered correct-input refusal admits the declared same-tool recovery, and missing admitted capability stays unwritten. [8]

@@ -1,0 +1,40 @@
+{
+  "path": "scripts/agent_evals/adapters/stdio_probe.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "ec6fec89d4fbbee5d68ffa84089c131c77b61a5c",
+        "content": "sha256:623f8d222ba29e0f7f71cd9be44deefbb382435b94bb1853386eac977ec932a0",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-V9FVX2",
+      "invariant": "INV-QFMMYM",
+      "origin": {
+        "handoffEntry": "L62-fd6462b8-native-launch",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "It initializes and probes the tool server through the exact stdio definition the actor receives.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The source defines this file's responsibility and the boundaries described here.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ec6fec89d4fbbee5d68ffa84089c131c77b61a5c",
+            "content": "sha256:623f8d222ba29e0f7f71cd9be44deefbb382435b94bb1853386eac977ec932a0",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,58 @@
+{
+  "path": "mcp/tests/test_task_doc_alignment_sweep.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Sibling states, missing declarations and malformed inputs preserve their distinct meanings.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b466c42b0c2de7207c52a5d1cc260f3cd50f9af4",
+            "content": "sha256:664a24a5f52c56282eceb46a9ae428c8778a03714caffb24ebfa466cf2ad4031",
+            "locator": {
+              "end": 214,
+              "kind": "line_range",
+              "start": 94
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Creation and requirement edits carry deduplicated sibling identities and omit terminal or irrelevant cases.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b466c42b0c2de7207c52a5d1cc260f3cd50f9af4",
+            "content": "sha256:75a4cfeea648f7a178a2fe37977e09ab8c90f30e82d1505263f0f3cfcc09cff1",
+            "locator": {
+              "end": 302,
+              "kind": "line_range",
+              "start": 218
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The sweep response stays bounded and remains separate from the written task document.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b466c42b0c2de7207c52a5d1cc260f3cd50f9af4",
+            "content": "sha256:fb5c4d46065332d99583643fda5f3cf544beaa34679cdc88a761bc9a4d094620",
+            "locator": {
+              "end": 358,
+              "kind": "line_range",
+              "start": 305
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

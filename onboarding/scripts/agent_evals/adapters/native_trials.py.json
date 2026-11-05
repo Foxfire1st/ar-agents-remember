@@ -1,0 +1,40 @@
+{
+  "path": "scripts/agent_evals/adapters/native_trials.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "8645edc76fca726a1f4c8d7822788d447c0f0281",
+        "content": "sha256:e856371076f5efc28f4a113ee624c167e9157c48d09fb09a7388ac26cab49825",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-SHN76V",
+      "invariant": "INV-JCSQVZ",
+      "origin": {
+        "handoffEntry": "L62-fd6462b8-judge-execution",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "It binds fixture-log capture before cleanup, enforces the final paid boundary and retains the native judge capture and folder comparison.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The source defines this file's responsibility and the boundaries described here.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8645edc76fca726a1f4c8d7822788d447c0f0281",
+            "content": "sha256:e856371076f5efc28f4a113ee624c167e9157c48d09fb09a7388ac26cab49825",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

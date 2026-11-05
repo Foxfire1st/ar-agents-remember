@@ -16,11 +16,18 @@ The ordinary new onboarding contract is source-bound and row-only. This leaf's o
 
 OM-4 evaluates plausibility of admission justifications beyond structural presence and two checkable criteria: copied leaf acceptance criteria or a choice without real alternatives is not durable knowledge. OM-3 remains a candidate for legacy history ordering. Novel lenses and the promotion ratchet belong only to baseline review; fix-verification cannot enlarge its sealed finding set. These are lifecycle review duties, not newly enforced closeout predicates or fresh execution evidence.
 
-## Evidence
+OM-1 also checks affected paired notes and sibling cards found by a bounded search, including dated sections. Repair or withdraw the encountered false-claim class on every such current carrier and preserve true present-tense statements about retired things. The independent second reader still checks statements, history meaning and important omissions before closeout.
 
+## Evidence
 ### Repo-Internal References
 
-- Current body claims are checked against shipped code under OM-1. [1]
+Retained authoring-row wording:
+
+Finding: Current body claims are checked against shipped code under OM-1.
+
+Anchor:
+
+Source: skills/l-01-agent-lifecycles/criteria/onboarding-memory.md:12-36
 - OM-2 requires a non-author second reader for final statements, history meanings and omissions before closeout. [2]
 
 - Plausible admission, baseline exploration and the promotion/fix-verification boundaries remain distinct. [3]
@@ -152,7 +159,13 @@ Inherited reference 4 commentary (not a revalidated target):
 The authored file is the canonical contract; its measured byte-equal package copy is a distribution carrier, not an independent role, task or permission authority. The following whole-file reference locates that authored contract; it does not convert inherited statements into executed or whole-card acceptance.
 
 
-- The authored source owns this contract; the distribution copy is not a separate authority. [4]
+Retained authoring-row wording:
+
+Finding: The authored source owns this contract; the distribution copy is not a separate authority.
+
+Anchor:
+
+Source: skills/l-01-agent-lifecycles/criteria/onboarding-memory.md
 
 
 ## Current account — OM-5, what a re-point and a reconsidered revision judge
@@ -160,3 +173,8 @@ The authored file is the canonical contract; its measured byte-equal package cop
 OM-5 asks the reviewer to judge a `repoint` as a judgment: the new target is the code the alternative's `reconsider_when` is about, and the row's reason says against that code why the condition is not met, with a reason that leaves the question open finding that the row should have been a `raise`. A reconsidered revision written after a raise is judged against the developer's recorded answer: the alternative's status matches it, a link re-pointed in `records` names the code the condition is about, and the `changed` row cites the answer.
 
 - OM-5 makes each re-point and each reconsidered revision after a raise a judged obligation the reviewer checks against the code and the recorded answer. [5]
+
+- Current body claims are checked against shipped code under OM-1. [1]
+- The authored source owns this contract; the distribution copy is not a separate authority. [4]
+
+- OM-1 also checks affected paired notes and sibling cards found by a bounded search, including dated sections. Repair or withdraw the encountered false-claim class on every such current carrier and preserve true present-tense statements about retired things. The independent second reader still checks statements, history meaning and important omissions before closeout. [6]

@@ -60,8 +60,10 @@ No meaningful cross-repo references found.
 
 - The lane row and the exact-scope consumer row this module is registered in.
 
-- The lane row and the exact-scope consumer row this module is registered in. [24]
+- The lane row and the exact-scope consumer row this module is registered in.
 
 ## Retirements
 
 - Retired at the fifth freeze d59c3493: mcp/tests/evidence-lifecycle.toml:2279-2279 - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:1374-1374 - the bytes it recorded now occur 93 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.
+
+- The lane row and the exact-scope consumer row this module is registered in. [24]

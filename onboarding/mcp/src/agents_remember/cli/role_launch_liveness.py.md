@@ -68,10 +68,18 @@ Selected-task Investigator starts reconcile their exact request instead of adopt
 
 
 
-- Pins delivered worker doctrine: freeze the candidate and hand it directly to the leaf's Reviewer; the Manager receives no routine report notice. A dashboard-started Worker has no parent, and a finished turn is not AR acceptance. [11]
+Past-epoch account (retained wording): - Pins delivered worker doctrine: freeze the candidate and hand it directly to the leaf's Reviewer; the Manager receives no routine report notice. A dashboard-started Worker has no parent, and a finished turn is not AR acceptance.
+
+Custody: the preceding sentence is detached from live reference 11; its original target blob(s) were `74a051a27a76bfa2d21ab404b581911d5e391701`. The current clause below is separately bound.
+
+- The Worker handover test requires a first freeze notice to the Manager to start the Reviewer, followed by direct complete freeze handover to that Reviewer; the Manager does not relay it or receive routine report notices. It also checks parentless Worker and turn-end-versus-acceptance wording, with mutation cases for every required route clause.
 
 
-- Composes delivered architect/manager/orchestrator capsule text, requires current diff/evidence inspection and owner acceptance clauses, and detects removal of manager inspection; this proves instruction delivery rather than runtime no-mutation. [12]
+Past-epoch account (retained wording): - Composes delivered architect/manager/orchestrator capsule text, requires current diff/evidence inspection and owner acceptance clauses, and detects removal of manager inspection; this proves instruction delivery rather than runtime no-mutation.
+
+Custody: the preceding sentence is detached from live reference 12; original target blob(s): `74a051a27a76bfa2d21ab404b581911d5e391701`.
+
+- The test joins the shipped Architect/review, Manager/coordination and Orchestrator/coordination source texts, checks their candidate-evidence and owner-acceptance clauses, and detects removal of Manager inspection. This checks that source composition’s wording; it runs no capsule admission/compilation and proves no runtime no-mutation property.
 
 
 - Digest-bound same-request replay reconciles decisions and empty successors. [14]
@@ -85,3 +93,6 @@ Selected-task Investigator starts reconcile their exact request instead of adopt
 
 
 - Test source checks turn/prompt/unreachable recovery and no archive/create. [17]
+
+- The Worker handover test requires a first freeze notice to the Manager to start the Reviewer, followed by direct complete freeze handover to that Reviewer; the Manager does not relay it or receive routine report notices. It also checks parentless Worker and turn-end-versus-acceptance wording, with mutation cases for every required route clause. [11]
+- The test joins the shipped Architect/review, Manager/coordination and Orchestrator/coordination source texts, checks their candidate-evidence and owner-acceptance clauses, and detects removal of Manager inspection. This checks that source composition’s wording; it runs no capsule admission/compilation and proves no runtime no-mutation property. [12]

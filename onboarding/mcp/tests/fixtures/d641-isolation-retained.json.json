@@ -1,0 +1,40 @@
+{
+  "path": "mcp/tests/fixtures/d641-isolation-retained.json",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "2e39cc0ded200578a835896670ddb0bb51ee40c9",
+        "content": "sha256:56a0e10e1265cd596cecb53476e49ed631b33a22beabcef63a374d9709f9a73d",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-QSHJF3",
+      "invariant": "INV-A8FVPH",
+      "origin": {
+        "handoffEntry": "L62-fd6462b8-trial-isolation",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "These retained setup records pin the trial home and serving-build isolation observations; developer homes are normalized test data.",
+      "role": "support"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The source defines this file's responsibility and the boundaries described here.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2e39cc0ded200578a835896670ddb0bb51ee40c9",
+            "content": "sha256:56a0e10e1265cd596cecb53476e49ed631b33a22beabcef63a374d9709f9a73d",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

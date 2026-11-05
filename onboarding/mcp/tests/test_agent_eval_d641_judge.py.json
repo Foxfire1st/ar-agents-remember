@@ -1,0 +1,40 @@
+{
+  "path": "mcp/tests/test_agent_eval_d641_judge.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "4dbcf3cf372a874fb79c3895fb3e722c465eee1e",
+        "content": "sha256:282615ab988ce6071b6f8fda3f186136b98fc1d9535c9ddc10d377b3e4f7f569",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-8EVWSN",
+      "invariant": "INV-JCSQVZ",
+      "origin": {
+        "handoffEntry": "L62-fd6462b8-judge-execution",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "This regression module checks this obligation through test_real_firm_fail_wins_and_unknown_only_stays_unknown, test_real_new_scratch_repository_is_content_not_an_existing_repository_change, test_real_changed_carrier_keeps_every_final_byte_in_judge_input, test_judge_instructions_distinguish_absence_from_missing_collection_and_resolution and its remaining test cases.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The source defines this file's responsibility and the boundaries described here.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4dbcf3cf372a874fb79c3895fb3e722c465eee1e",
+            "content": "sha256:282615ab988ce6071b6f8fda3f186136b98fc1d9535c9ddc10d377b3e4f7f569",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

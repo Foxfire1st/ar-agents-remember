@@ -1,0 +1,40 @@
+{
+  "path": "mcp/tests/fixtures/ce09-runtime-real-records.json.gz",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "61b0fc860f8ee9290e88c6237c0e599f60bbd05e",
+        "content": "sha256:a5242fc4a85ead13c71c844adcf2b6f42f55d86fcf4b5d8480094bdce668027d",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-975ZC9",
+      "invariant": "INV-NMBR0E",
+      "origin": {
+        "handoffEntry": "L62-fd6462b8-trajectory-route",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "These retained CE09 command/result records pin route identity resolution from the trial snapshot, not the observer PATH.",
+      "role": "support"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The source defines this file's responsibility and the boundaries described here.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "61b0fc860f8ee9290e88c6237c0e599f60bbd05e",
+            "content": "sha256:a5242fc4a85ead13c71c844adcf2b6f42f55d86fcf4b5d8480094bdce668027d",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

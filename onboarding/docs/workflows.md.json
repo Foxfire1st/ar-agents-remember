@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6e323e36091e8dbd6349c51e15e675f29cfc9149",
+            "blob": "b3c887ed66e21d7f6c637a87c55d389daeb3ba28",
             "content": "sha256:3023d7f3a631cd58d9826f342dceeea0933e173bec2f6f01c34fef1105958c2b",
             "locator": {
               "end": 12,
@@ -20,16 +20,28 @@
       ]
     },
     "2": {
-      "note": "The source lists the five rules every build keeps, from context resolution to the checks the resolved memory's tools file names.",
+      "note": "Shared Discipline now puts current card, sidecar and knowledge-record curation against approved changes in the leaf memory worktree before publication, alongside context, drift, implementation approval and configured checks. Knowledge in a Leaf separately requires fresh full quality/worklist/gate evidence and validated coherence without granting Git approval.",
       "targets": [
         {
           "anchor": {
-            "blob": "6e323e36091e8dbd6349c51e15e675f29cfc9149",
-            "content": "sha256:50bf41ebbf5bdc4747af3d34ec495224ad067adfce0743b8b9d3e98059f15304",
+            "blob": "b3c887ed66e21d7f6c637a87c55d389daeb3ba28",
+            "content": "sha256:501b7cf90660551387ea4ec8c48dbe7138db6d560418f376ce7b8fcfd82358e4",
             "locator": {
               "end": 22,
               "kind": "line_range",
               "start": 14
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b3c887ed66e21d7f6c637a87c55d389daeb3ba28",
+            "content": "sha256:8c5b389f6964562d805b78a3a91057dfe2eb7c8c61b0b0ef608f79f1d6c4daf8",
+            "locator": {
+              "end": 88,
+              "kind": "line_range",
+              "start": 70
             }
           },
           "kind": "code"
@@ -41,7 +53,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6e323e36091e8dbd6349c51e15e675f29cfc9149",
+            "blob": "b3c887ed66e21d7f6c637a87c55d389daeb3ba28",
             "content": "sha256:0ca2c306475b4e92d53a494c301fbb2a6c79a7e50bd1d2d09bdd67422990e25f",
             "locator": {
               "end": 54,
@@ -58,7 +70,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6e323e36091e8dbd6349c51e15e675f29cfc9149",
+            "blob": "b3c887ed66e21d7f6c637a87c55d389daeb3ba28",
             "content": "sha256:7eff8cc3b714733b30dd0ef924a82f790303d2a35914cb2c724ff009beb940dc",
             "locator": {
               "end": 68,
@@ -75,12 +87,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6e323e36091e8dbd6349c51e15e675f29cfc9149",
+            "blob": "b3c887ed66e21d7f6c637a87c55d389daeb3ba28",
             "content": "sha256:007294631aab5bf6264eedfc3b372d2cef98dcd44b844c80444fa300f6a444dc",
             "locator": {
-              "end": 78,
+              "end": 98,
               "kind": "line_range",
-              "start": 70
+              "start": 90
             }
           },
           "kind": "code"

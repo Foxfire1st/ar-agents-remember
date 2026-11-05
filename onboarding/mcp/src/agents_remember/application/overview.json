@@ -3228,7 +3228,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0fcaee614b530fbfb7a642fa65cbaf53214d3a9f",
+            "blob": "0618c0ae683f37668ba21c42c15ced9c0081f595",
             "content": "sha256:481f7a4d15f351042c8c4997d3adb0dad9e4ffd14dfbd32c48d071a355e45148",
             "locator": {
               "kind": "symbol",
@@ -3240,7 +3240,7 @@
         },
         {
           "anchor": {
-            "blob": "0fcaee614b530fbfb7a642fa65cbaf53214d3a9f",
+            "blob": "0618c0ae683f37668ba21c42c15ced9c0081f595",
             "content": "sha256:23dfd8ed108bc3d03ae7f96897fd0d906f00d098127d0e14edabb5cf0ffa5c95",
             "locator": {
               "kind": "symbol",
@@ -3979,7 +3979,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0fcaee614b530fbfb7a642fa65cbaf53214d3a9f",
+            "blob": "0618c0ae683f37668ba21c42c15ced9c0081f595",
             "content": "sha256:5002592f62323f531a413309e656754812f63dae539270ff037a2240252bafb6",
             "locator": {
               "kind": "symbol",
@@ -6467,15 +6467,16 @@
       ]
     },
     "423": {
-      "note": "The capsule compilation outcome shape: `CapsuleCompilationOutcome` carries exactly one of a compiled capsule or the typed refusal explaining it, with the manifest present in both shapes (`role_capsules/compilation.py:46-60`). The operation itself is `_compile_task_capsule` → `_compile_routed` (`skill_resources/capsule.py:223,257`).",
+      "note": "The capsule compilation outcome shape: `CapsuleCompilationOutcome` carries exactly one of a compiled capsule or the typed refusal explaining it, with the manifest present in both shapes (`role_capsules/compilation.py:46-90`). The operation itself is `_compile_task_capsule` → `_compile_routed` (`skill_resources/capsule.py:223,257`).",
       "targets": [
         {
           "anchor": {
-            "blob": "0de84f83644c391b29759b1623034309cabc8c72",
-            "content": "sha256:7b16c4a32019a3e8f4ccf82b15f964d954f4c2df5c97d530d7128a382caa421b",
+            "blob": "a9ebc25e9f72b32db990eb7c7582f967d6fbd021",
+            "content": "sha256:7be3af594bb85101f4afaa7916d8c206942a3c220b384c15d5ff6e61b8a485d8",
             "locator": {
-              "kind": "symbol",
-              "name": "CapsuleCompilationOutcome"
+              "end": 90,
+              "kind": "line_range",
+              "start": 45
             },
             "path": "mcp/src/agents_remember/application/role_capsules/compilation.py"
           },
@@ -7764,10 +7765,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f174a79f72375a38aa57f50907312424f3fc2c3c",
-            "content": "sha256:4639ac7fede07fbf8fd4a606e94345d3e15fdc3bc40ee0f57fba307bccd95505",
+            "blob": "d0b8e6fa2c415dec4821469774f9dc8f0bcccb63",
+            "content": "sha256:36946f9f594b3e343adf324da581e0d104f623f686bd83a9d2844ab5533ac0ba",
             "locator": {
-              "kind": "file"
+              "end": 1186,
+              "kind": "line_range",
+              "start": 1
             },
             "path": "mcp/src/agents_remember/application/task_docs/task_doc_tools.py"
           },
@@ -7778,7 +7781,9 @@
             "blob": "a0b5ad238d8c829320217d9994826ecc6c88a546",
             "content": "sha256:dd847fac2054b56fec8c6aafd65ddde455cec04d2d3a8376a61d1425c527e52a",
             "locator": {
-              "kind": "file"
+              "end": 837,
+              "kind": "line_range",
+              "start": 1
             },
             "path": "mcp/src/agents_remember/application/task_docs/task_sprint_linkage.py"
           },
@@ -7786,10 +7791,12 @@
         },
         {
           "anchor": {
-            "blob": "6295b3c90a86ff77e4b13ec5bab3ab1830114d78",
-            "content": "sha256:0f905b1146695b02aa37ee2020bd2bcde7ef88e9de252981eb5a0b2cedbf220a",
+            "blob": "5a268dbcd0664e077105e782e568babce86bcf33",
+            "content": "sha256:d52ee99f33c8c6e37fbc3584efcef6cae97903ea1ab67089126b2199ebd586ed",
             "locator": {
-              "kind": "file"
+              "end": 1089,
+              "kind": "line_range",
+              "start": 1
             },
             "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
           },
@@ -7800,7 +7807,9 @@
             "blob": "c0dd4c37619f916f75c34be98b90018a3ccb6061",
             "content": "sha256:01c9eca1b5b80bee68f3aaaa3e5c14d8529f479bf0441e4a7449987145ced87a",
             "locator": {
-              "kind": "file"
+              "end": 1136,
+              "kind": "line_range",
+              "start": 1
             },
             "path": "mcp/src/agents_remember/worktrees/task_document_copies.py"
           },
@@ -9406,15 +9415,16 @@
       ]
     },
     "99": {
-      "note": "The capsule compilation outcome shape: `CapsuleCompilationOutcome` carries exactly one of a compiled capsule or the typed refusal explaining it, with the manifest present in both shapes (`role_capsules/compilation.py:46-60`). The operation itself is `_compile_task_capsule` → `_compile_routed` (`skill_resources/capsule.py:223,257`).",
+      "note": "The capsule compilation outcome shape: `CapsuleCompilationOutcome` carries exactly one of a compiled capsule or the typed refusal explaining it, with the manifest present in both shapes (`role_capsules/compilation.py:46-90`). The operation itself is `_compile_task_capsule` → `_compile_routed` (`skill_resources/capsule.py:223,257`).",
       "targets": [
         {
           "anchor": {
-            "blob": "0de84f83644c391b29759b1623034309cabc8c72",
-            "content": "sha256:7b16c4a32019a3e8f4ccf82b15f964d954f4c2df5c97d530d7128a382caa421b",
+            "blob": "a9ebc25e9f72b32db990eb7c7582f967d6fbd021",
+            "content": "sha256:7be3af594bb85101f4afaa7916d8c206942a3c220b384c15d5ff6e61b8a485d8",
             "locator": {
-              "kind": "symbol",
-              "name": "CapsuleCompilationOutcome"
+              "end": 90,
+              "kind": "line_range",
+              "start": 45
             },
             "path": "mcp/src/agents_remember/application/role_capsules/compilation.py"
           },

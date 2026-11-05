@@ -8,7 +8,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "593a85bdc8b09268d79cfe0abc62be5957330709",
+            "blob": "88eee5a3e412e261ceee4f1d858eb283ef3138d4",
             "content": "sha256:4b798506f80b100d62092176e695cb65788d16efa306bb3ca0665c474cbd4ce5",
             "locator": {
               "kind": "symbol",
@@ -52,7 +52,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ddd77babbaaddf51063d6e23856c0cadd142d461",
+            "blob": "abb3d0e320df1c428284a14d602ec93ad778bdbe",
             "content": "sha256:3cf29d3ca7682b6651c5944ff70aa77ec90c7f2e16d6df26e1244a14174dd8c4",
             "locator": {
               "end": 38,
@@ -272,7 +272,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6782d184c8982f54e6e72e5f11a61aa2c8f88627",
+            "blob": "4866d73b380b132fb7b293e23bf44175e4cbf33f",
             "content": "sha256:8c8970683147f31767f3c402cb5be5e66ff82056236a64dead9f16f9747fc52e",
             "locator": {
               "kind": "symbol",
@@ -285,15 +285,16 @@
       ]
     },
     "24": {
-      "note": "[23] mcp/src/agents_remember/mcp/registration/memory.py — symbol citation_fix",
+      "note": "The role-agent registrar mounts role_start, role_start_set and role_message; the callables preserve their declared argument shapes and delegate to their application payload owners.",
       "targets": [
         {
           "anchor": {
-            "blob": "d7a350b97b2ba83910cf0f815eef07fa8d044f8c",
-            "content": "sha256:58f8bc4c49b594830e76029269db88b1de6418b833cffa7f81f1b88752f20afc",
+            "blob": "3f91234661460904091f50cb41164456aa515f04",
+            "content": "sha256:8ec9fa9c67ef661e617e2a1fd5d91e1f659cb1d41ff8208cce462f290df64f42",
             "locator": {
-              "kind": "symbol",
-              "name": "register_role_agent_tools"
+              "end": 208,
+              "kind": "line_range",
+              "start": 84
             },
             "path": "mcp/src/agents_remember/mcp/registration/role_agents.py"
           },
@@ -301,11 +302,12 @@
         },
         {
           "anchor": {
-            "blob": "d7a350b97b2ba83910cf0f815eef07fa8d044f8c",
+            "blob": "3f91234661460904091f50cb41164456aa515f04",
             "content": "sha256:5a704496656c0aff16cbdc2495936483d24a641f89dad79ad5ce86d676717ee9",
             "locator": {
-              "kind": "symbol",
-              "name": "role_start"
+              "end": 119,
+              "kind": "line_range",
+              "start": 87
             },
             "path": "mcp/src/agents_remember/mcp/registration/role_agents.py"
           },
@@ -313,11 +315,12 @@
         },
         {
           "anchor": {
-            "blob": "d7a350b97b2ba83910cf0f815eef07fa8d044f8c",
+            "blob": "3f91234661460904091f50cb41164456aa515f04",
             "content": "sha256:346e0407356a876361763afd6d7a0dcbe8da56e35e07a2902d046c097eef1031",
             "locator": {
-              "kind": "symbol",
-              "name": "role_start_set"
+              "end": 159,
+              "kind": "line_range",
+              "start": 121
             },
             "path": "mcp/src/agents_remember/mcp/registration/role_agents.py"
           },
@@ -325,11 +328,12 @@
         },
         {
           "anchor": {
-            "blob": "d7a350b97b2ba83910cf0f815eef07fa8d044f8c",
-            "content": "sha256:75fbbc5111a81997cc89f331fb0f0dfc4c2dc8868ca1d6cb9484240c1113c2fc",
+            "blob": "3f91234661460904091f50cb41164456aa515f04",
+            "content": "sha256:d5fccfa00edaf41799345ca2547bb87aaf2a0a09355e4a3997599019a505cd27",
             "locator": {
-              "kind": "symbol",
-              "name": "role_message"
+              "end": 208,
+              "kind": "line_range",
+              "start": 179
             },
             "path": "mcp/src/agents_remember/mcp/registration/role_agents.py"
           },
@@ -451,15 +455,16 @@
       ]
     },
     "33": {
-      "note": "[32] mcp/src/agents_remember/mcp/registration/skills_extension.py — lines 133-214; mcp/src/agents_remember/mcp/registration/skills_extension.py — lines 235-294",
+      "note": "The task registrar composes closeout queue, curator coherence, task reopen and finalizer tools with task_doc registration; the shared task_doc description names write operations and alignmentSweep.",
       "targets": [
         {
           "anchor": {
-            "blob": "593a85bdc8b09268d79cfe0abc62be5957330709",
+            "blob": "88eee5a3e412e261ceee4f1d858eb283ef3138d4",
             "content": "sha256:4d31e5049bb9a3ebaa611e04d347596ef4cedf8358845ba7fa42554f50968103",
             "locator": {
-              "kind": "symbol",
-              "name": "_register_closeout_queue_tools"
+              "end": 24,
+              "kind": "line_range",
+              "start": 18
             },
             "path": "mcp/src/agents_remember/mcp/registration/tasks.py"
           },
@@ -467,11 +472,12 @@
         },
         {
           "anchor": {
-            "blob": "593a85bdc8b09268d79cfe0abc62be5957330709",
+            "blob": "88eee5a3e412e261ceee4f1d858eb283ef3138d4",
             "content": "sha256:2551434e724a6763e4bb2c3c5ddb06137013df9bbd881cb708b55c6341625e34",
             "locator": {
-              "kind": "symbol",
-              "name": "_register_curator_coherence_tools"
+              "end": 31,
+              "kind": "line_range",
+              "start": 27
             },
             "path": "mcp/src/agents_remember/mcp/registration/tasks.py"
           },
@@ -479,11 +485,12 @@
         },
         {
           "anchor": {
-            "blob": "593a85bdc8b09268d79cfe0abc62be5957330709",
+            "blob": "88eee5a3e412e261ceee4f1d858eb283ef3138d4",
             "content": "sha256:d84e9a91cb5e4f0a0edb4cf4644d903f169844892b73bf1052455e0f8120731e",
             "locator": {
-              "kind": "symbol",
-              "name": "_register_task_reopen_tools"
+              "end": 43,
+              "kind": "line_range",
+              "start": 34
             },
             "path": "mcp/src/agents_remember/mcp/registration/tasks.py"
           },
@@ -491,11 +498,12 @@
         },
         {
           "anchor": {
-            "blob": "593a85bdc8b09268d79cfe0abc62be5957330709",
+            "blob": "88eee5a3e412e261ceee4f1d858eb283ef3138d4",
             "content": "sha256:a766a8ed126d6bbcc3a9a8d03f5d2c9ea550d5ba3b4fd04691ed0868302fd989",
             "locator": {
-              "kind": "symbol",
-              "name": "_register_task_finalizer_tools"
+              "end": 72,
+              "kind": "line_range",
+              "start": 46
             },
             "path": "mcp/src/agents_remember/mcp/registration/tasks.py"
           },
@@ -503,11 +511,12 @@
         },
         {
           "anchor": {
-            "blob": "593a85bdc8b09268d79cfe0abc62be5957330709",
-            "content": "sha256:1b05f9da36ec3e14d0d484571e1def8adf54ccac0d41c499c1a44176c06c6140",
+            "blob": "88eee5a3e412e261ceee4f1d858eb283ef3138d4",
+            "content": "sha256:8a9fd0bcbaddafaa58cc24755ef325741fe8cd53e62d0036559686356ca00ebe",
             "locator": {
-              "kind": "symbol",
-              "name": "_TASK_DOC_TOOL_DESCRIPTION"
+              "end": 75,
+              "kind": "line_range",
+              "start": 75
             },
             "path": "mcp/src/agents_remember/mcp/registration/tasks.py"
           },
@@ -515,11 +524,12 @@
         },
         {
           "anchor": {
-            "blob": "593a85bdc8b09268d79cfe0abc62be5957330709",
+            "blob": "88eee5a3e412e261ceee4f1d858eb283ef3138d4",
             "content": "sha256:f75bfc78f7b6cafbe4847030de23115333c08e4d02e817cd10a2533719847c83",
             "locator": {
-              "kind": "symbol",
-              "name": "_register_task_document_tools"
+              "end": 120,
+              "kind": "line_range",
+              "start": 78
             },
             "path": "mcp/src/agents_remember/mcp/registration/tasks.py"
           },
@@ -527,11 +537,12 @@
         },
         {
           "anchor": {
-            "blob": "593a85bdc8b09268d79cfe0abc62be5957330709",
+            "blob": "88eee5a3e412e261ceee4f1d858eb283ef3138d4",
             "content": "sha256:28565e891ca67b1483c64db677e32e2112b4454130c76fc29db51bf18a1951b2",
             "locator": {
-              "kind": "symbol",
-              "name": "register_task_tools"
+              "end": 128,
+              "kind": "line_range",
+              "start": 123
             },
             "path": "mcp/src/agents_remember/mcp/registration/tasks.py"
           },
@@ -547,7 +558,9 @@
             "blob": "d0b0ddd9f150e32116b430ecc74907fcf68fee97",
             "content": "sha256:fdef15e2ca9d39f66c8570a7147cb894dda16f47c7d3558bb4454e5b4714875f",
             "locator": {
-              "kind": "file"
+              "end": 74,
+              "kind": "line_range",
+              "start": 1
             },
             "path": "mcp/src/agents_remember/models/tools/public_roster.py"
           },
@@ -555,10 +568,12 @@
         },
         {
           "anchor": {
-            "blob": "593a85bdc8b09268d79cfe0abc62be5957330709",
-            "content": "sha256:dcf9e9c7c5d77f335952069c99aa9a5cb7c999a29eb3e965e6ee9f296a078e89",
+            "blob": "88eee5a3e412e261ceee4f1d858eb283ef3138d4",
+            "content": "sha256:bcc8f0cf4c36713979b2d314f88b10875dcb2216ce2e4afecaba44a15e14513f",
             "locator": {
-              "kind": "file"
+              "end": 128,
+              "kind": "line_range",
+              "start": 1
             },
             "path": "mcp/src/agents_remember/mcp/registration/tasks.py"
           },
@@ -569,7 +584,9 @@
             "blob": "6cab8ed468b7f66a0ab4a5f89bbda5cad2022867",
             "content": "sha256:59abaad5244554e405946dfece37df1be3de69ae4a8b9ed9ec1fd5d9a3ff55dd",
             "locator": {
-              "kind": "file"
+              "end": 208,
+              "kind": "line_range",
+              "start": 1
             },
             "path": "mcp/src/agents_remember/mcp/registration/worktrees.py"
           },
@@ -577,10 +594,12 @@
         },
         {
           "anchor": {
-            "blob": "fa17709a127c9b18641196b921b59caa9f7ec2b2",
-            "content": "sha256:dce036a193b04613f2a25218717eea07994829364ae04d13b6ce63c1a99b2de2",
+            "blob": "551d4ee801406a1faf1ccde0cfa641425c5ee4e0",
+            "content": "sha256:595bf15a1be758eaa5ba44719cd837715b81d6f11175d532db981e88751305f6",
             "locator": {
-              "kind": "file"
+              "end": 255,
+              "kind": "line_range",
+              "start": 1
             },
             "path": "mcp/src/agents_remember/mcp/registration/closeout.py"
           },
@@ -588,10 +607,12 @@
         },
         {
           "anchor": {
-            "blob": "d7a350b97b2ba83910cf0f815eef07fa8d044f8c",
-            "content": "sha256:3e0136ac2d223e2a37422b565a2104228271445025cae7eaaabf07cb271fab72",
+            "blob": "3f91234661460904091f50cb41164456aa515f04",
+            "content": "sha256:310a67575a14cff92e1bcebd1e8f270cfcfc70b25eb6681a972f6fbad24bfbbb",
             "locator": {
-              "kind": "file"
+              "end": 211,
+              "kind": "line_range",
+              "start": 1
             },
             "path": "mcp/src/agents_remember/mcp/registration/role_agents.py"
           },
@@ -618,15 +639,16 @@
       ]
     },
     "40": {
-      "note": "[39] mcp/src/agents_remember/mcp/registration/role_agents.py — symbol caller_harness_name",
+      "note": "register_role_agent_tools owns the mounted role-agent declarations and dispatches them to their existing application payload owners.",
       "targets": [
         {
           "anchor": {
-            "blob": "d7a350b97b2ba83910cf0f815eef07fa8d044f8c",
-            "content": "sha256:58f8bc4c49b594830e76029269db88b1de6418b833cffa7f81f1b88752f20afc",
+            "blob": "3f91234661460904091f50cb41164456aa515f04",
+            "content": "sha256:8ec9fa9c67ef661e617e2a1fd5d91e1f659cb1d41ff8208cce462f290df64f42",
             "locator": {
-              "kind": "symbol",
-              "name": "register_role_agent_tools"
+              "end": 208,
+              "kind": "line_range",
+              "start": 84
             },
             "path": "mcp/src/agents_remember/mcp/registration/role_agents.py"
           },
@@ -666,7 +688,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6782d184c8982f54e6e72e5f11a61aa2c8f88627",
+            "blob": "4866d73b380b132fb7b293e23bf44175e4cbf33f",
             "content": "sha256:8c8970683147f31767f3c402cb5be5e66ff82056236a64dead9f16f9747fc52e",
             "locator": {
               "kind": "symbol",

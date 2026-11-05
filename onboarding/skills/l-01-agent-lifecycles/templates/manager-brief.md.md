@@ -4,12 +4,24 @@
 
 The template supplies master-document values, not a separate rule authority. A Manager starts with role_start and sprint/master references; the call carries no pasted brief. Source-edge selection follows execution nature and supported sync, not a guessed checkout branch. A leaf trio starts with role_start_set. One owned primary revision is compiled separately from dependency/preservation requirements, and formal handoff attempts remain distinct from internal experimental reruns. Requested review keeps a sealed, monotonic finding set with settings-bound extra-round authority; the Reviewer records CODE while the Manager retains transaction decisions. Closeout-door and queue facts do not lock valid task edits or create permission to land. The source explicitly keeps complete curator memory quality as a standing operation whose result the Git transaction carries, not an opt-in full-test rule. Earlier wording grouping full memory quality with developer-request-only quality/tests is superseded on that seam.
 
+Current qualification: the retained clause “A leaf trio starts with role_start_set.” describes its past source epoch. Leaf seats start individually through role_start: Worker at build, Reviewer at freeze and Curator after code PASS.
+
 The requested baseline-review clause now names organizational leaf code-change sessions; the former standalone clause was removed and is not restored by the inherited card. Host archival retains reports at leaf finalization/cleanup/abandonment, excludes Manager/Orchestrator, and retire_child belongs only to the agent that started the child.
 
 This qualification governs the named current seams; incompatible earlier generalizations remain historical, not restored authority. No source inspection here establishes execution, a launch, a test result, a CODE/MEMORY grade or a completed closeout.
 
 
-- Master input values preserve role_start/set, primary-revision ownership, sealed review and the complete-curation transaction boundary. [6]
+- Master input values preserve role_start/set, primary-revision ownership, sealed review and the complete-curation transaction boundary.
+
+Earlier caption detached from live reference 6: its original target declared the source text at `skills/l-01-agent-lifecycles/templates/manager-brief.md` at original blob `a19c83fe53c4c9665440257c0af26afce3742463`, whole file. The caption above is retained as prose; the numbered clause below describes the current source.
+
+Retained authoring-row wording:
+
+Finding: Master input values require individual leaf role_start stages, one owned primary revision, sealed requested review and separate attempt lineage; full curation remains a standing prerequisite of the authorized transaction, distinct from opt-in full code/test operations.
+
+Anchor: `current role or template contract`
+
+Source: skills/l-01-agent-lifecycles/templates/manager-brief.md:55-87; skills/l-01-agent-lifecycles/templates/manager-brief.md:108-140
 
 
 > Retained earlier citation wording: - The Curator owner requires the complete curation operation; optional full-quality/test requests do not waive it. [7]
@@ -23,7 +35,17 @@ The compiled master brief preserves the monotonic sealed finding list across rou
 This account controls the named changed seams; contradictory earlier card wording below is retained only as historical evidence. Unchanged role duties and R117 file-only wake/report transport are preserved. Source inspection supplies no new runtime test, CODE verdict, review counter or acceptance.
 
 
-- The compiled master brief preserves the monotonic sealed finding list across rounds within the settings limit and names recorded architect/developer approval beyond it. Values in the brief cannot create a routine transaction gate or alter role/operation authority; direct peer file packages and Manager transaction ordering remain separate. [5]
+- The compiled master brief preserves the monotonic sealed finding list across rounds within the settings limit and names recorded architect/developer approval beyond it. Values in the brief cannot create a routine transaction gate or alter role/operation authority; direct peer file packages and Manager transaction ordering remain separate.
+
+Earlier caption detached from live reference 5: its original target declared the source text at `skills/l-01-agent-lifecycles/templates/manager-brief.md` at original blob `a19c83fe53c4c9665440257c0af26afce3742463`, lines 7–10; `skills/l-01-agent-lifecycles/templates/manager-brief.md` at original blob `a19c83fe53c4c9665440257c0af26afce3742463`, lines 46–53; `skills/l-01-agent-lifecycles/templates/manager-brief.md` at original blob `a19c83fe53c4c9665440257c0af26afce3742463`, lines 102–113; `skills/l-01-agent-lifecycles/templates/manager-brief.md` at original blob `a19c83fe53c4c9665440257c0af26afce3742463`, lines 124–134; `skills/l-01-agent-lifecycles/templates/manager-brief.md` at original blob `a19c83fe53c4c9665440257c0af26afce3742463`, lines 149–154; `skills/l-01-agent-lifecycles/templates/manager-brief.md` at original blob `a19c83fe53c4c9665440257c0af26afce3742463`, lines 166–167. The caption above is retained as prose; the numbered clause below describes the current source.
+
+Retained authoring-row wording:
+
+Finding: Template values defer to canonical role/operation/core owners; requested review preserves exact sealed IDs and recorded extra-round authority. The Reviewer records CODE, the Manager owns the transaction and the normal Curator pass supplies complete memory-quality evidence.
+
+Anchor: `current role or template contract`
+
+Source: skills/l-01-agent-lifecycles/templates/manager-brief.md:7-10; skills/l-01-agent-lifecycles/templates/manager-brief.md:46-53; skills/l-01-agent-lifecycles/templates/manager-brief.md:108-137; skills/l-01-agent-lifecycles/templates/manager-brief.md:157-174
 
 
 
@@ -115,12 +137,32 @@ No external Domain Documentation source governs this dispatch template.
 ### Repo-Internal References
 
 
-- The source edge and every requirement revision are compiled before worker dispatch. [1]
+- The source edge and every requirement revision are compiled before worker dispatch.
+
+Earlier caption detached from live reference 1: its original target declared the source text at `skills/l-01-agent-lifecycles/templates/manager-brief.md` at original blob `a19c83fe53c4c9665440257c0af26afce3742463`, whole file. The caption above is retained as prose; the numbered clause below describes the current source.
+
+Retained authoring-row wording:
+
+Finding: Manager brief values bind execution nature, canonical source edge and supported role_start environment without guessing source branches; each leaf's exact owned primary revision is compiled separately from adjacent constraints before dispatch.
+
+Anchor: `current role or template contract`
+
+Source: skills/l-01-agent-lifecycles/templates/manager-brief.md:34-44; skills/l-01-agent-lifecycles/templates/manager-brief.md:65-87
 
 - Master exit carries the full revision set and independent adjudications. [2]
 
 
-- Attempt dispatch, bounded invalidation, and the non-gating master summary are explicit manager obligations. [3]
+- Attempt dispatch, bounded invalidation, and the non-gating master summary are explicit manager obligations.
+
+Earlier caption detached from live reference 3: its original target declared the source text at `skills/l-01-agent-lifecycles/templates/manager-brief.md` at original blob `a19c83fe53c4c9665440257c0af26afce3742463`, whole file. The caption above is retained as prose; the numbered clause below describes the current source.
+
+Retained authoring-row wording:
+
+Finding: The Manager brief compiles candidate-bound immutable formal attempts, preserves accepted attempts and phase-sensitive malformed-row correction, and keeps the master attempt summary rebuildable and non-gating.
+
+Anchor: `current role or template contract`
+
+Source: skills/l-01-agent-lifecycles/templates/manager-brief.md:75-87; skills/l-01-agent-lifecycles/templates/manager-brief.md:120-127
 
 
 ### Cross-Repo References
@@ -142,7 +184,17 @@ This template now sends each leaf role through `role_start` as the operation tha
 ## Current Source Evidence
 
 
-- Current settings-budget, recorded approval and preserved stage/ownership boundaries are carried by this canonical instruction source. [4]
+- Current settings-budget, recorded approval and preserved stage/ownership boundaries are carried by this canonical instruction source.
+
+Earlier caption detached from live reference 4: its original target declared the source text at `skills/l-01-agent-lifecycles/templates/manager-brief.md` at original blob `a19c83fe53c4c9665440257c0af26afce3742463`, whole file. The caption above is retained as prose; the numbered clause below describes the current source.
+
+Retained authoring-row wording:
+
+Finding: The Manager brief preserves sealed review IDs and settings-bound recorded extra-round approval, keeps closeout and integration with the authorized transaction owner, and requires reporting concrete failed/not-run checks.
+
+Anchor: `current role or template contract`
+
+Source: skills/l-01-agent-lifecycles/templates/manager-brief.md:108-137; skills/l-01-agent-lifecycles/templates/manager-brief.md:157-163
 
 
 
@@ -360,3 +412,9 @@ Inherited reference 2 commentary (not a revalidated target):
 The verified byte-equal package copy is derived output, not an independent role/task/permission authority. Whole-source evidence does not certify inherited statements or a whole requirement.
 
 - The Curator owner requires the complete curation operation; optional full-quality/test requests do not waive it. [7]
+
+- Manager brief values bind execution nature, canonical source edge and supported role_start environment without guessing source branches; each leaf's exact owned primary revision is compiled separately from adjacent constraints before dispatch. [1]
+- The Manager brief compiles candidate-bound immutable formal attempts, preserves accepted attempts and phase-sensitive malformed-row correction, and keeps the master attempt summary rebuildable and non-gating. [3]
+- The Manager brief preserves sealed review IDs and settings-bound recorded extra-round approval, keeps closeout and integration with the authorized transaction owner, and requires reporting concrete failed/not-run checks. [4]
+- Template values defer to canonical role/operation/core owners; requested review preserves exact sealed IDs and recorded extra-round authority. The Reviewer records CODE, the Manager owns the transaction and the normal Curator pass supplies complete memory-quality evidence. [5]
+- Master input values require individual leaf role_start stages, one owned primary revision, sealed requested review and separate attempt lineage; full curation remains a standing prerequisite of the authorized transaction, distinct from opt-in full code/test operations. [6]

@@ -14,7 +14,7 @@ reaches a worker capsule; requested tools are narrowed while skill references ar
 every documented refusal happens for its own reason and advertises its remedy; composition needs
 neither model nor network; and an unknown role or operation is refused instead of falling back.
 
-The frozen source has **47 test function definitions** (static inspection). Collected case totals and execution results were not measured by this pass.
+**Historical source account, superseded by the current clause below:** The frozen source has **47 test function definitions** (static inspection). Collected case totals and execution results were not measured by this pass. [Historical source custody: `mcp/tests/test_role_capsule_compiler.py` blob `9946e7fc31fa11992782193f4af92050e7c18e46` at code base `59b01fb8f72a38d2d27f9c37b8b9ca2513fd3fa0`; this is no current implementation claim.]
 
 ## Code Commentary
 
@@ -133,8 +133,9 @@ None recorded.
 
 The minimal manifest fixture explicitly declares `audience: all` for every operation, keeping its unsectioned synthetic text whole under the expanded schema. The existing compiler property assertions and their source bodies are unchanged. Audience projection and malformed-marker launch behavior belong to the separate audience/manifest-edge suites; old recorded run totals stay historical.
 
-## Evidence
+A one-byte equal-length change to the declared every-role source changes semantic_digest while rendered role/operation instructions stay identical and no shared core instruction block composes. Omission of that required source refuses by identity and path. Static parsing of the final file finds 48 test function definitions; this is not collection or execution. These are source assertions/support behavior, not a fresh invocation, host result or AR acceptance.
 
+## Evidence
 ### Docs References
 
 No external or domain documentation is configured for this memory root
@@ -145,7 +146,9 @@ No relevant documentation found after checking live sources.
 ### Repo-Internal References
 
 
-- The module under test and its pipeline. [1]
+- The module under test and its pipeline. [Past-epoch source caption, detached from live reference 1. Recorded citation custody: mcp/src/agents_remember/models/role_capsules/compiler.py blob 762c104a0bcdc0375416163993d106dc37c5fb18 (available); historical event commit not identified. No historical event or intent inferred.]
+
+Current source: compile_role_capsule parses and selects the manifest scope, admits and resolves the source set, reads typed contract markers, projects operation audiences and strips those markers. It verifies the separate task projection, narrows tools, carries skills/details, seals the selected content plus every-role/detail revisions, and returns the capsule with an explanation manifest.
 
 - The carried skill channel these cases pin. [2]
 - The `source-not-utf8` and revision/blank-content refusals the source-value cases pin. [3]
@@ -153,11 +156,19 @@ No relevant documentation found after checking live sources.
 - The identity-resolution outcomes the duplicate and override cases pin. [5]
 - The tool-policy narrowing the tool cases pin. [6]
 
-- The outcome shape whose exactly-one-of rule the two outcome cases pin. [7]
+- The outcome shape whose exactly-one-of rule the two outcome cases pin. [Past-epoch source caption, detached from live reference 7. Recorded citation custody: mcp/src/agents_remember/application/role_capsules/compilation.py blob 0de84f83644c391b29759b1623034309cabc8c72 (available); historical event commit not identified. No historical event or intent inferred.]
+
+Current source: CapsuleCompilationOutcome requires exactly one of result and error while retaining a manifest in both shapes; the two compiler-suite controls construct both-present and both-absent outcomes and require ValueError.
 
 - The admission cases live in the sibling module, not here, where the capsule composes only the operations its own role declares and the independently compared routing side is retired. [8]
 
-- The corpus test preserved by the earlier leaf; this pass retains that historical evidence and asserts no fresh execution result. [9]
+- The corpus test preserved by the earlier leaf; this pass retains that historical evidence and asserts no fresh execution result. [Past-epoch source caption, detached from live reference 9. Recorded citation custody: mcp/tests/test_role_instruction_corpus.py blob d5d78bb15fa14ec0cbd3a7ef0be4ee21715faf09 (available); historical event commit not identified. No historical event or intent inferred.]
+
+[Past-epoch source caption, detached from live reference 9. Recorded citation custody: mcp/tests/test_role_instruction_corpus.py blob d5d78bb15fa14ec0cbd3a7ef0be4ee21715faf09 (available); historical event commit not identified. No historical event or intent inferred.]
+
+Anchor: `ROLE_ORDER` `OPERATION_KEYS`
+
+Current source: The current instruction-corpus test declares the canonical role order and operation keys, checks every manifest role/operation source resolves, keeps launcher routing metadata separate, and rejects copied instruction prose in the manifest. These source-defined assertions establish no fresh run or earlier-leaf execution event.
 
 
 The falsifiability probe that exercised these cases (seeds M01–M10, `all 10 seeded mutations were
@@ -175,4 +186,17 @@ No sibling-repository contract is exercised by these cases.
 No meaningful cross-repo references found.
 
 
-- The semantic test change is only audience=all in fixture_manifest_document. One introductory determinism bullet is rewrapped without changing words. Existing property assertions, test definitions and synthetic source bodies are unchanged; sections projection is covered separately. [10]
+- The semantic test change is only audience=all in fixture_manifest_document. One introductory determinism bullet is rewrapped without changing words. Existing property assertions, test definitions and synthetic source bodies are unchanged; sections projection is covered separately. [Past-epoch source caption, detached from live reference 10. Recorded citation custody: mcp/tests/test_role_capsule_compiler.py blob 9946e7fc31fa11992782193f4af92050e7c18e46 (available); historical event commit not identified. No historical event or intent inferred.]
+
+[Past-epoch source caption, detached from live reference 10. Recorded citation custody: mcp/tests/test_role_capsule_compiler.py blob 9946e7fc31fa11992782193f4af92050e7c18e46 (available); historical event commit not identified. No historical event or intent inferred.]
+
+Anchor: Current test/support source
+
+Current source: fixture_manifest_document defines a complete synthetic registry whose operations use audience=all. The compiler suite declares determinism, instruction ordering, selected/unrelated-source digest and refusal cases; audience-section projection is exercised in the distinct audience module. The source does not itself prove that these are the only semantic changes since an earlier leaf.
+
+- compile_role_capsule parses and selects the manifest scope, admits and resolves the source set, reads typed contract markers, projects operation audiences and strips those markers. It verifies the separate task projection, narrows tools, carries skills/details, seals the selected content plus every-role/detail revisions, and returns the capsule with an explanation manifest. [1]
+- CapsuleCompilationOutcome requires exactly one of result and error while retaining a manifest in both shapes; the two compiler-suite controls construct both-present and both-absent outcomes and require ValueError. [7]
+- The current instruction-corpus test declares the canonical role order and operation keys, checks every manifest role/operation source resolves, keeps launcher routing metadata separate, and rejects copied instruction prose in the manifest. These source-defined assertions establish no fresh run or earlier-leaf execution event. [9]
+- fixture_manifest_document defines a complete synthetic registry whose operations use audience=all. The compiler suite declares determinism, instruction ordering, selected/unrelated-source digest and refusal cases; audience-section projection is exercised in the distinct audience module. The source does not itself prove that these are the only semantic changes since an earlier leaf. [10]
+
+- A one-byte equal-length change to the declared every-role source changes semantic_digest while rendered role/operation instructions stay identical and no shared core instruction block composes. Omission of that required source refuses by identity and path. Static parsing of the final file finds 48 test function definitions; this is not collection or execution. These are source assertions/support behavior, not a fresh invocation, host result or AR acceptance. [11]

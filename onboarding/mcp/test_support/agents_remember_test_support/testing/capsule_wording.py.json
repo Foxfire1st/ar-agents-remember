@@ -3,17 +3,47 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The source declares the qualified helper/document contract above; no execution is inferred.\n\nAnchor: complete source",
+      "note": "The helper checks affirmative clauses on delivered role/stage surfaces, compiles Curator instructions, obtains moved facets through delivered_step and checks the exact delivered Git-comparison sentence; this source inspection executes none of those checks.",
       "targets": [
         {
           "anchor": {
-            "blob": "09f2c74edf8eddefa3aabd30414a40628d75575b",
-            "content": "sha256:b5264fb8727b9483511e67dc03f05aac443d01ab16fc07bdde0dbad3d5930a35",
+            "blob": "7045585c9a5fcd1d9bd95924908841cdfe54f78a",
+            "content": "sha256:92cc41ef92247c70c07b6b5bc2859fd0008021886c2923fa9b5db98879876c1f",
             "locator": {
-              "end": 151,
+              "end": 183,
               "kind": "line_range",
               "start": 1
             }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Current clause_surface resolves the busy-retry facet through the actual Worker, Reviewer or Curator role-operation pair and the independently pinned message-handover source and step, requiring its declared pointer before delivered_step. The Curator memory-leaves-code-untouched facet still uses its exact declared handoff detail.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7045585c9a5fcd1d9bd95924908841cdfe54f78a",
+            "content": "sha256:aa04be41789afbe8b93e5d342399493ec8be117d179f1b695ee8ed4fc3c8dcfd",
+            "locator": {
+              "end": 139,
+              "kind": "line_range",
+              "start": 99
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4961419e1d630a8702ba5e28562a275ffa800329",
+            "content": "sha256:7e9a1968ac3efb884478222ee7ebab121d978d3cb0f3132d01b0d13dd39462a4",
+            "locator": {
+              "end": 86,
+              "kind": "line_range",
+              "start": 82
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/leaf_instruction_wording.py"
           },
           "kind": "code"
         }

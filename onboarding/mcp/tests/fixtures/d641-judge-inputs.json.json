@@ -1,0 +1,40 @@
+{
+  "path": "mcp/tests/fixtures/d641-judge-inputs.json",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "fe467a205ddc77c114717b5a560f8fb42ad7cbde",
+        "content": "sha256:d3e2f51c38a7bd86bd88e10dd5078caf275db8bebb9cadf77158ce98477c4aca",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-2G3DGW",
+      "invariant": "INV-SYN8W6",
+      "origin": {
+        "handoffEntry": "L62-fd6462b8-judge-package",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "These retained judge inputs exercise the explicit evidence-selection and blinding bindings.",
+      "role": "support"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The source defines this file's responsibility and the boundaries described here.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fe467a205ddc77c114717b5a560f8fb42ad7cbde",
+            "content": "sha256:d3e2f51c38a7bd86bd88e10dd5078caf275db8bebb9cadf77158ce98477c4aca",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

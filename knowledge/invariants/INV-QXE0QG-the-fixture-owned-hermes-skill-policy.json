@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "prevents_costly_mistake"
+    ],
+    "justification": "An actor that mutates the skill/configuration policy could change its own experimental conditions while still receiving a clean trial result."
+  },
+  "applicability": "The fixed skill-management policy installed inside each private Hermes eval home.",
+  "conditions": [
+    "The named skill_manage matcher uses the fixed deny hook while list/view access stays available.",
+    "The runner checks its policy and private configuration integrity after execution."
+  ],
+  "exclusions": [
+    "A blanket host skill prohibition.",
+    "Sweeping or editing a live developer home."
+  ],
+  "id": "INV-QXE0QG",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Frozen tree fd6462b85ba9d06f004e323384ea800f9aa5144a, base 59b01fb8f72a38d2d27f9c37b8b9ca2513fd3fa0; path bindings and source hashes in producer-manifest.json; Reviewer R4 and d229-repairs/report.md."
+      ],
+      "path": "L62-unaffected-evaluation-obligations"
+    },
+    "handoffEntry": "L62-fd6462b8-skill-policy",
+    "leaf": "260928-MIK-L62",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The fixture-owned Hermes skill policy denies skill mutation while preserving list/view access and detects actor changes to its policy or config.",
+  "status": "proposed",
+  "supersedes": []
+}

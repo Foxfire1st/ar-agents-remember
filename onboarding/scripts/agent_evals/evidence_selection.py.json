@@ -1,0 +1,40 @@
+{
+  "path": "scripts/agent_evals/evidence_selection.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "973fc3bef27b6c1f6d091188ee79ddaea3a06a88",
+        "content": "sha256:9f72b4becccfd4d9faef0bd4584c57c4a2d0cfdc7c209a36fb3789abde71d3ae",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-K9HWNV",
+      "invariant": "INV-SYN8W6",
+      "origin": {
+        "handoffEntry": "L62-fd6462b8-judge-package",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "It binds each case criterion to explicit native evidence and changed report entries, keeping broken typed reports distinct from missing reports.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The source defines this file's responsibility and the boundaries described here.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "973fc3bef27b6c1f6d091188ee79ddaea3a06a88",
+            "content": "sha256:9f72b4becccfd4d9faef0bd4584c57c4a2d0cfdc7c209a36fb3789abde71d3ae",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -7,7 +7,7 @@ The whole requirement verdict, findings and coverage ends this independent stage
 This account controls the named changed seams; contradictory earlier card wording below is retained only as historical evidence. Unchanged role duties and R117 file-only wake/report transport are preserved. Source inspection supplies no new runtime test, CODE verdict, review counter or acceptance.
 
 
-> Retained earlier citation wording: - The whole requirement verdict, findings and coverage ends this independent stage. Reviewer records ordinary begin/result within the actual review-state settings limit; Manager records architect/developer authorization beyond it. A record-only check preserves the last round only on byte-identical candidate with all candidate findings closed. A finding states the broken required property; a case is its proof, not a replacement finding or automatic new round. MEMORY stays a separate sealed lane. [7]
+> Retained earlier citation wording: - The whole requirement verdict, findings and coverage ends this independent stage. Reviewer records ordinary begin/result within the actual review-state settings limit; Manager records architect/developer authorization beyond it. A record-only check preserves the last round only on byte-identical candidate with all candidate findings closed. A finding states the broken required property; a case is its proof, not a replacement finding or automatic new round. MEMORY stays a separate sealed lane.
 
 
 
@@ -125,7 +125,17 @@ No role starts, code/onboarding writes or Git publication are granted. Non-leaf 
 
 ## Evidence
 
-- Organizational leaf route review retains its Worker/Curator destinations and does not advertise a standalone seam. [9]
+- Organizational leaf route review retains its Worker/Curator destinations and does not advertise a standalone seam.
+
+Earlier caption detached from live reference 9: its original target declared the source text at `skills/l-01-agent-lifecycles/roles/reviewer.md` at original blob `ab9a2e087d2cfd299ad5ffbac061aac232c8e831`, lines 30–33. The caption above is retained as prose; the numbered clause below describes the current source.
+
+Retained authoring-row wording:
+
+Finding: Organizational leaf route review sends code findings to Worker and memory findings to Curator; code PASS first notifies Manager so it can start Curator, and readiness for closeout names both passed lanes.
+
+Anchor: `current role or template contract`
+
+Source: skills/l-01-agent-lifecycles/roles/reviewer.md:32-42; skills/l-01-agent-lifecycles/roles/reviewer.md:84-85; skills/l-01-agent-lifecycles/roles/reviewer.md:114-122
 
 
 ### Docs References
@@ -145,7 +155,7 @@ Worker envelope, reviewer verdict template, manager exact-set dispatch, and gove
 
 
 
-> Retained earlier citation wording: - The seat's seam table fixes the five seams and where each verdict goes. [5]
+> Retained earlier citation wording: - The seat's seam table fixes the five seams and where each verdict goes.
 
 
 ### Cross-Repo References
@@ -178,41 +188,186 @@ The review budget is the settings number `orchestration.loops.defaults.maxRounds
 ## Current Source Evidence
 
 
-> Retained earlier citation wording: - Current settings-budget, recorded approval and preserved stage/ownership boundaries are carried by this canonical instruction source. [6]
+> Retained earlier citation wording: - Current settings-budget, recorded approval and preserved stage/ownership boundaries are carried by this canonical instruction source.
 
 
 
-> Retained earlier citation wording: - Rewords without claimed semantic approval, extracts named-step checks, consolidates baseline outputs inline, adds post-landing memory recording and passed-review-only own-step completion. [10]
+> Retained earlier citation wording: - Rewords without claimed semantic approval, extracts named-step checks, consolidates baseline outputs inline, adds post-landing memory recording and passed-review-only own-step completion.
 
-- Rewords without claimed semantic approval, extracts named-step checks, consolidates baseline outputs inline, adds post-landing memory recording and passed-review-only own-step completion. [11]
-- Rewords without claimed semantic approval, extracts named-step checks, consolidates baseline outputs inline, adds post-landing memory recording and passed-review-only own-step completion. [12]
-- Rewords without claimed semantic approval, extracts named-step checks, consolidates baseline outputs inline, adds post-landing memory recording and passed-review-only own-step completion. [13]
+- Rewords without claimed semantic approval, extracts named-step checks, consolidates baseline outputs inline, adds post-landing memory recording and passed-review-only own-step completion.
 
-> Retained earlier citation wording: - Rewords without claimed semantic approval, extracts named-step checks, consolidates baseline outputs inline, adds post-landing memory recording and passed-review-only own-step completion. [14]
+Earlier caption detached from live reference 11: its original target declared the source text at `skills/l-01-agent-lifecycles/roles/reviewer.md` at original blob `ab9a2e087d2cfd299ad5ffbac061aac232c8e831`, lines 11–52. The caption above is retained as prose; the numbered clause below describes the current source.
 
-- Rewords without claimed semantic approval, extracts named-step checks, consolidates baseline outputs inline, adds post-landing memory recording and passed-review-only own-step completion. [15]
+Retained authoring-row wording:
+
+Finding: Reviewer requires the dispatched exact stable IDs and versions, durable corpus ruling, exact candidate and Worker attempts, and its bound catalogs and repository tools rather than choosing a rubric on the spot.
+
+Anchor: `current role or template contract`
+
+Source: skills/l-01-agent-lifecycles/roles/reviewer.md:44-61
+- Rewords without claimed semantic approval, extracts named-step checks, consolidates baseline outputs inline, adds post-landing memory recording and passed-review-only own-step completion.
+
+Earlier caption detached from live reference 12: its original target declared the source text at `skills/l-01-agent-lifecycles/roles/reviewer.md` at original blob `ab9a2e087d2cfd299ad5ffbac061aac232c8e831`, lines 11–52. The caption above is retained as prose; the numbered clause below describes the current source.
+
+Retained authoring-row wording:
+
+Finding: Reviewer inspects every changed file of the complete candidate diff and reads the step-3 baseline detail at that step; a subset never replaces the Curator's complete authoring memory-quality operation.
+
+Anchor: `current role or template contract`
+
+Source: skills/l-01-agent-lifecycles/roles/reviewer.md:69-78
+- Rewords without claimed semantic approval, extracts named-step checks, consolidates baseline outputs inline, adds post-landing memory recording and passed-review-only own-step completion.
+
+Earlier caption detached from live reference 13: its original target declared the source text at `skills/l-01-agent-lifecycles/roles/reviewer.md` at original blob `ab9a2e087d2cfd299ad5ffbac061aac232c8e831`, lines 11–52. The caption above is retained as prose; the numbered clause below describes the current source.
+
+Retained authoring-row wording:
+
+Finding: Baseline is sealed under the step-3 instructions; fix verification reuses that sealed evidence and only listed IDs without a new-lens or whole-seam rediscovery mandate.
+
+Anchor: `current role or template contract`
+
+Source: skills/l-01-agent-lifecycles/roles/reviewer.md:79-81
+
+> Retained earlier citation wording: - Rewords without claimed semantic approval, extracts named-step checks, consolidates baseline outputs inline, adds post-landing memory recording and passed-review-only own-step completion.
+
+- Rewords without claimed semantic approval, extracts named-step checks, consolidates baseline outputs inline, adds post-landing memory recording and passed-review-only own-step completion.
+
+Earlier caption detached from live reference 15: its original target declared the source text at `skills/l-01-agent-lifecycles/roles/reviewer.md` at original blob `ab9a2e087d2cfd299ad5ffbac061aac232c8e831`, lines 11–52. The caption above is retained as prose; the numbered clause below describes the current source.
+
+Retained authoring-row wording:
+
+Finding: The Reviewer emits every bound standing criterion, sealed findings, complete route coverage, a seam-shaped verdict and producer-data handoff list plus durable per-route reports.
+
+Anchor: `current role or template contract`
+
+Source: skills/l-01-agent-lifecycles/roles/reviewer.md:97-113
 
 - The baseline steps bind the catalogs, all three lenses and the exploratory mandate, require evidence of the requirement's own class, and hold that a recorded weakness or a document's staleness outside the task's scope is never a finding. [16]
 
-- Rewords without claimed semantic approval, extracts named-step checks, consolidates baseline outputs inline, adds post-landing memory recording and passed-review-only own-step completion. [17]
-- Rewords without claimed semantic approval, extracts named-step checks, consolidates baseline outputs inline, adds post-landing memory recording and passed-review-only own-step completion. [18]
-- Rewords without claimed semantic approval, extracts named-step checks, consolidates baseline outputs inline, adds post-landing memory recording and passed-review-only own-step completion. [19]
-- Rewords without claimed semantic approval, extracts named-step checks, consolidates baseline outputs inline, adds post-landing memory recording and passed-review-only own-step completion. [20]
+- Rewords without claimed semantic approval, extracts named-step checks, consolidates baseline outputs inline, adds post-landing memory recording and passed-review-only own-step completion.
+
+Earlier caption detached from live reference 17: its original target declared the source text at `skills/l-01-agent-lifecycles/roles/reviewer.md` at original blob `ab9a2e087d2cfd299ad5ffbac061aac232c8e831`, lines 11–52. The caption above is retained as prose; the numbered clause below describes the current source.
+
+Retained authoring-row wording:
+
+Finding: The Reviewer records ordinary leaf CODE begin/result and separate MEMORY rounds with unchanged code state; Manager records beyond-settings authorization and retains gate acceptance.
+
+Anchor: `current role or template contract`
+
+Source: skills/l-01-agent-lifecycles/roles/reviewer.md:158-166
+- Rewords without claimed semantic approval, extracts named-step checks, consolidates baseline outputs inline, adds post-landing memory recording and passed-review-only own-step completion.
+
+Earlier caption detached from live reference 18: its original target declared the source text at `skills/l-01-agent-lifecycles/roles/reviewer.md` at original blob `ab9a2e087d2cfd299ad5ffbac061aac232c8e831`, lines 11–52. The caption above is retained as prose; the numbered clause below describes the current source.
+
+Retained authoring-row wording:
+
+Finding: A moved review candidate is stale and requires a successor exact Worker attempt and reviewer record; changed scope or identity does not manufacture a new first review.
+
+Anchor: `current role or template contract`
+
+Source: skills/l-01-agent-lifecycles/roles/reviewer.md:179-184
+- Rewords without claimed semantic approval, extracts named-step checks, consolidates baseline outputs inline, adds post-landing memory recording and passed-review-only own-step completion.
+
+Earlier caption detached from live reference 19: its original target declared the source text at `skills/l-01-agent-lifecycles/roles/reviewer.md` at original blob `ab9a2e087d2cfd299ad5ffbac061aac232c8e831`, lines 11–52. The caption above is retained as prose; the numbered clause below describes the current source.
+
+Retained authoring-row wording:
+
+Finding: Reviewer marks only its own named review step done after the last round is recorded passed, and its stage ends at a recorded verdict covering the whole requirement, findings and coverage.
+
+Anchor: `current role or template contract`
+
+Source: skills/l-01-agent-lifecycles/roles/reviewer.md:190-195
+- Rewords without claimed semantic approval, extracts named-step checks, consolidates baseline outputs inline, adds post-landing memory recording and passed-review-only own-step completion.
+
+Earlier caption detached from live reference 20: its original target declared the source text at `skills/l-01-agent-lifecycles/roles/reviewer.md` at original blob `ab9a2e087d2cfd299ad5ffbac061aac232c8e831`, lines 11–52. The caption above is retained as prose; the numbered clause below describes the current source.
+
+Retained authoring-row wording:
+
+Finding: Reviewer repairs its own recording or evidence faults and answers input-fault refusals through the same tool; record-only repair preserves a round only while all candidate findings are closed and candidate bytes remain unchanged.
+
+Anchor: `current role or template contract`
+
+Source: skills/l-01-agent-lifecycles/roles/reviewer.md:196-208
 
 ## 260928-MIK-L198 — the reviewer writes outside the projects home only in the named outside root
 
 The Reviewer's closing paragraph now sends temporary files, experiments and working copies to the hand-over's real `workspace.scratchRoot` and, for what must not live under the projects home (a sandbox root) and for one short `TMPDIR`, to `workspace.outsideScratchRoot`, with `XDG_CONFIG_HOME` inside `workspace.scratchRoot` and that root never removed. Product/tooling temporary files, test-runner temporary files and explicitly admitted repository sandboxes keep their own owners, and reports and evidence stay in the hand-over's local report folder for the product to copy to canonical notes before removal. The same change keeps temporaries outside code, memory and tasks, and the launch projection carries the new field as `outsideScratchRoot` beside `scratchRoot`.
 
-- Rewords without claimed semantic approval, extracts named-step checks, consolidates baseline outputs inline, adds post-landing memory recording and passed-review-only own-step completion. [10]
+- Rewords without claimed semantic approval, extracts named-step checks, consolidates baseline outputs inline, adds post-landing memory recording and passed-review-only own-step completion.
+
+Earlier caption detached from live reference 10: its original target declared the source text at `skills/l-01-agent-lifecycles/roles/reviewer.md` at original blob `ab9a2e087d2cfd299ad5ffbac061aac232c8e831`, lines 11–52. The caption above is retained as prose; the numbered clause below describes the current source.
+
+Retained authoring-row wording:
+
+Finding: Reviewer intake uses exact rendered/JSON paths and actual scoped read schemas, reads only the assigned seam and writes only contained task-local report artifacts.
+
+Anchor: `current role or template contract`
+
+Source: skills/l-01-agent-lifecycles/roles/reviewer.md:13-16
 
 
-- Rewords without claimed semantic approval, extracts named-step checks, consolidates baseline outputs inline, adds post-landing memory recording and passed-review-only own-step completion. [14]
+- Rewords without claimed semantic approval, extracts named-step checks, consolidates baseline outputs inline, adds post-landing memory recording and passed-review-only own-step completion.
+
+Earlier caption detached from live reference 14: its original target declared the source text at `skills/l-01-agent-lifecycles/roles/reviewer.md` at original blob `ab9a2e087d2cfd299ad5ffbac061aac232c8e831`, lines 11–52. The caption above is retained as prose; the numbered clause below describes the current source.
+
+Retained authoring-row wording:
+
+Finding: Each exact requirement revision is adjudicated accepted or rejected against its Worker attempt/candidate in a separate immutable reviewer record in the same leaf journal; Worker and earlier records stay unchanged.
+
+Anchor: `current role or template contract`
+
+Source: skills/l-01-agent-lifecycles/roles/reviewer.md:82-85
 
 
-- The seat's seam table fixes the five seams and where each verdict goes. [5]
+- The seat's seam table fixes the five seams and where each verdict goes.
+
+Earlier caption detached from live reference 5: its original target declared the source text at `skills/l-01-agent-lifecycles/roles/reviewer.md` at original blob `ab9a2e087d2cfd299ad5ffbac061aac232c8e831`, whole file. The caption above is retained as prose; the numbered clause below describes the current source.
+
+Retained authoring-row wording:
+
+Finding: The Reviewer seam table names organizational leaf, atomic-master integration, master-exit, portfolio plan and super-exit scope, start selection and verdict recipient; candidate identity comes from the intake rather than the hosting enclosure.
+
+Anchor: `current role or template contract`
+
+Source: skills/l-01-agent-lifecycles/roles/reviewer.md:30-42
 
 
-- Current settings-budget, recorded approval and preserved stage/ownership boundaries are carried by this canonical instruction source. [6]
+- Current settings-budget, recorded approval and preserved stage/ownership boundaries are carried by this canonical instruction source.
+
+Earlier caption detached from live reference 6: its original target declared the source text at `skills/l-01-agent-lifecycles/roles/reviewer.md` at original blob `ab9a2e087d2cfd299ad5ffbac061aac232c8e831`, whole file. The caption above is retained as prose; the numbered clause below describes the current source.
+
+Retained authoring-row wording:
+
+Finding: The Reviewer records ordinary CODE rounds and separately sealed MEMORY rounds under the actual task review-state limit; Manager gate acceptance and recorded architect/developer approval beyond the limit remain separate.
+
+Anchor: `current role or template contract`
+
+Source: skills/l-01-agent-lifecycles/roles/reviewer.md:158-166; skills/l-01-agent-lifecycles/roles/reviewer.md:182-184
 
 
-- The whole requirement verdict, findings and coverage ends this independent stage. Reviewer records ordinary begin/result within the actual review-state settings limit; Manager records architect/developer authorization beyond it. A record-only check preserves the last round only on byte-identical candidate with all candidate findings closed. A finding states the broken required property; a case is its proof, not a replacement finding or automatic new round. MEMORY stays a separate sealed lane. [7]
+- The whole requirement verdict, findings and coverage ends this independent stage. Reviewer records ordinary begin/result within the actual review-state settings limit; Manager records architect/developer authorization beyond it. A record-only check preserves the last round only on byte-identical candidate with all candidate findings closed. A finding states the broken required property; a case is its proof, not a replacement finding or automatic new round. MEMORY stays a separate sealed lane.
+
+Earlier caption detached from live reference 7: its original target declared the source text at `skills/l-01-agent-lifecycles/roles/reviewer.md` at original blob `ab9a2e087d2cfd299ad5ffbac061aac232c8e831`, whole file. The caption above is retained as prose; the numbered clause below describes the current source.
+
+Retained authoring-row wording:
+
+Finding: The Reviewer stage ends at a recorded verdict covering the whole requirement, findings and coverage. Own-step completion waits for a passed recorded last round; record-only repair reuses the last round only with every candidate finding closed and candidate bytes unchanged; a finding states the required property its case proves.
+
+Anchor: `current role or template contract`
+
+Source: skills/l-01-agent-lifecycles/roles/reviewer.md:190-208; skills/l-01-agent-lifecycles/roles/reviewer.md:160-164
+
+- The Reviewer seam table names organizational leaf, atomic-master integration, master-exit, portfolio plan and super-exit scope, start selection and verdict recipient; candidate identity comes from the intake rather than the hosting enclosure. [5]
+- The Reviewer records ordinary CODE rounds and separately sealed MEMORY rounds under the actual task review-state limit; Manager gate acceptance and recorded architect/developer approval beyond the limit remain separate. [6]
+- The Reviewer stage ends at a recorded verdict covering the whole requirement, findings and coverage. Own-step completion waits for a passed recorded last round; record-only repair reuses the last round only with every candidate finding closed and candidate bytes unchanged; a finding states the required property its case proves. [7]
+- Organizational leaf route review sends code findings to Worker and memory findings to Curator; code PASS first notifies Manager so it can start Curator, and readiness for closeout names both passed lanes. [9]
+- Reviewer intake uses exact rendered/JSON paths and actual scoped read schemas, reads only the assigned seam and writes only contained task-local report artifacts. [10]
+- Reviewer requires the dispatched exact stable IDs and versions, durable corpus ruling, exact candidate and Worker attempts, and its bound catalogs and repository tools rather than choosing a rubric on the spot. [11]
+- Reviewer inspects every changed file of the complete candidate diff and reads the step-3 baseline detail at that step; a subset never replaces the Curator's complete authoring memory-quality operation. [12]
+- Baseline is sealed under the step-3 instructions; fix verification reuses that sealed evidence and only listed IDs without a new-lens or whole-seam rediscovery mandate. [13]
+- Each exact requirement revision is adjudicated accepted or rejected against its Worker attempt/candidate in a separate immutable reviewer record in the same leaf journal; Worker and earlier records stay unchanged. [14]
+- The Reviewer emits every bound standing criterion, sealed findings, complete route coverage, a seam-shaped verdict and producer-data handoff list plus durable per-route reports. [15]
+- The Reviewer records ordinary leaf CODE begin/result and separate MEMORY rounds with unchanged code state; Manager records beyond-settings authorization and retains gate acceptance. [17]
+- A moved review candidate is stale and requires a successor exact Worker attempt and reviewer record; changed scope or identity does not manufacture a new first review. [18]
+- Reviewer marks only its own named review step done after the last round is recorded passed, and its stage ends at a recorded verdict covering the whole requirement, findings and coverage. [19]
+- Reviewer repairs its own recording or evidence faults and answers input-fault refusals through the same tool; record-only repair preserves a round only while all candidate findings are closed and candidate bytes remain unchanged. [20]

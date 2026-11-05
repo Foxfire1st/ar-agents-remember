@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "444675a543d9cd7229e80434a7fb56952a1b88c2",
-        "content": "sha256:562897be089dbf428ba9a3f451073b856d19a2401f305ea8dca1b101525e0fe7",
+        "blob": "92e293440342d9d75642480f01c9aecaa76669c6",
+        "content": "sha256:7dd7e3c186a345bb3cfe9e803e73f68f820d67066f70fea9792860c8d1ec90f5",
         "locator": {
           "kind": "file"
         }
@@ -25,10 +25,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "444675a543d9cd7229e80434a7fb56952a1b88c2",
-            "content": "sha256:562897be089dbf428ba9a3f451073b856d19a2401f305ea8dca1b101525e0fe7",
+            "blob": "92e293440342d9d75642480f01c9aecaa76669c6",
+            "content": "sha256:f3c73ed7f108fcbed803c29045ff9e672685d341200480e7bac7a083eea149ff",
             "locator": {
-              "kind": "file"
+              "end": 9,
+              "kind": "line_range",
+              "start": 3
             }
           },
           "kind": "code"
@@ -36,14 +38,16 @@
       ]
     },
     "2": {
-      "note": "Review is opt-in with tiers tuning depth; rounds follow the settings limit and retain sealed lists.",
+      "note": "Review is opt-in on an agreed seam and explicit baseline/fix-verification mode. Baseline covers the complete agreed diff; fix verification retains sealed findings, with rounds governed by the settings limit and recorded extra-round authority.",
       "targets": [
         {
           "anchor": {
-            "blob": "444675a543d9cd7229e80434a7fb56952a1b88c2",
-            "content": "sha256:562897be089dbf428ba9a3f451073b856d19a2401f305ea8dca1b101525e0fe7",
+            "blob": "92e293440342d9d75642480f01c9aecaa76669c6",
+            "content": "sha256:46ad31953cc90146485a06391681be2fd39e62cd5adc491273eb6f2fc52ef062",
             "locator": {
-              "kind": "file"
+              "end": 51,
+              "kind": "line_range",
+              "start": 11
             }
           },
           "kind": "code"
@@ -55,10 +59,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "444675a543d9cd7229e80434a7fb56952a1b88c2",
-            "content": "sha256:562897be089dbf428ba9a3f451073b856d19a2401f305ea8dca1b101525e0fe7",
+            "blob": "92e293440342d9d75642480f01c9aecaa76669c6",
+            "content": "sha256:2a4f18e6e688aaf57c326fb1f373596d2df94788d2c3cc13945684268946e0ef",
             "locator": {
-              "kind": "file"
+              "end": 83,
+              "kind": "line_range",
+              "start": 69
             }
           },
           "kind": "code"
@@ -70,10 +76,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "444675a543d9cd7229e80434a7fb56952a1b88c2",
-            "content": "sha256:562897be089dbf428ba9a3f451073b856d19a2401f305ea8dca1b101525e0fe7",
+            "blob": "92e293440342d9d75642480f01c9aecaa76669c6",
+            "content": "sha256:0498fd7cd8069fc48b2da826598fdfe6d1c7c5303c80de3c9dcc0063a65ed6dc",
             "locator": {
-              "kind": "file"
+              "end": 51,
+              "kind": "line_range",
+              "start": 29
             }
           },
           "kind": "code"
@@ -85,10 +93,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "444675a543d9cd7229e80434a7fb56952a1b88c2",
-            "content": "sha256:562897be089dbf428ba9a3f451073b856d19a2401f305ea8dca1b101525e0fe7",
+            "blob": "92e293440342d9d75642480f01c9aecaa76669c6",
+            "content": "sha256:23f3f340002fb25d05e9e0169a421794dafa56744fa643ceb5a0627518bbb3ff",
             "locator": {
-              "kind": "file"
+              "end": 51,
+              "kind": "line_range",
+              "start": 25
             }
           },
           "kind": "code"
@@ -100,10 +110,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "444675a543d9cd7229e80434a7fb56952a1b88c2",
-            "content": "sha256:562897be089dbf428ba9a3f451073b856d19a2401f305ea8dca1b101525e0fe7",
+            "blob": "92e293440342d9d75642480f01c9aecaa76669c6",
+            "content": "sha256:7dd7e3c186a345bb3cfe9e803e73f68f820d67066f70fea9792860c8d1ec90f5",
             "locator": {
-              "kind": "file"
+              "end": 84,
+              "kind": "line_range",
+              "start": 1
             }
           },
           "kind": "code"

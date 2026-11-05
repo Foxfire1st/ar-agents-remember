@@ -50,7 +50,11 @@ Citation repair keeps synchronous preview and writes, and adds background previe
 Synchronous tool bodies run off the event loop so other reads and polls can answer while they run. Potentially mutating synchronous calls keep one server-local ordering lock until the worker stops; existing asynchronous handlers retain their original path. This is not a blanket guarantee that every tool is side-effect-free or that a timeout cancels a worker.
 
 
-- The reference publishes the flat preview modes beside the request-object quality modes. [3]
+Historical source account (detached from live reference 3; docs/reference/mcp-tools.md blob fb21b7c177ee42cdcd3cbdc8e1e9ee2acf7b8302):
+
+- The reference publishes the flat preview modes beside the request-object quality modes.
+
+- The public citation_fix row keeps flat sync/start/poll arguments and preview-only background start beside the discriminated memory_quality_check request; optional leaf scope and official/pre-baseline boundaries are explicit.
 
 
 - The detailed contract describes shared preview runs and synchronous write ordering. [4]
@@ -135,4 +139,11 @@ task itself is not completed, is unchanged. The same clauses are in the register
 
 
 
-- Source reference records retirement of structural/lifecycle/provider/benchmark/capsule tools; backend existence is not advertisement. [2]
+Historical source account (detached from live reference 2; docs/reference/mcp-tools.md blob fb21b7c177ee42cdcd3cbdc8e1e9ee2acf7b8302):
+
+- Source reference records retirement of structural/lifecycle/provider/benchmark/capsule tools; backend existence is not advertisement.
+
+- The source reference retains retired structural, lifecycle, provider, benchmark and capsule/catalog accounts as unavailable routes and names registration modules/response models as the authoritative advertised surface; a documentation row is not backend registration.
+
+- The source reference retains retired structural, lifecycle, provider, benchmark and capsule/catalog accounts as unavailable routes and names registration modules/response models as the authoritative advertised surface; a documentation row is not backend registration. [2]
+- The public citation_fix row keeps flat sync/start/poll arguments and preview-only background start beside the discriminated memory_quality_check request; optional leaf scope and official/pre-baseline boundaries are explicit. [3]

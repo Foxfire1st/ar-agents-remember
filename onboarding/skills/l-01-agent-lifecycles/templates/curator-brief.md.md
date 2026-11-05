@@ -4,6 +4,10 @@
 
 The Manager ensures the leaf documents hold the Curator inputs; role_start_set starts the Curator held and its first message opens it. Worker and Reviewer feed the candidate-bound list/freeze/verdict directly. The template feeds values, not new duties; current role/operation/acceptance sources remain the rule owners. No synthetic brief, grade or new acceptance is authored.
 
+Current qualification: the retained clause “  The Manager ensures the leaf documents hold the Curator inputs; role_start_set starts the Curator held and its first message opens it.” describes its past source epoch.
+
+The template still describes a held role_start_set start in its opening and compiler note. Its single-home clause gives the owning role and operation precedence: Manager and Coordination now require an individual Curator start after code PASS.
+
 - The Manager ensures the leaf documents hold the Curator inputs; role_start_set starts the Curator held and its first message opens it. Worker and Reviewer feed the candidate-bound list/freeze/verdict directly. The template feeds values, not new duties; current role/operation/acceptance sources remain the rule owners. No synthetic brief, grade or new acceptance is authored. [7]
 
 
@@ -264,4 +268,16 @@ The authored file is the canonical contract; its measured byte-equal package cop
 
 - The authored source owns this contract; the distribution copy is not a separate authority. [8]
 
-- The Manager starts a leaf’s Worker, Reviewer and Curator as one `role_start_set` and refers leaf coordination to `operations/coordination.md`. That procedure starts the Curator held until its first message and routes the frozen change set, hand-off lists and passed code verdict directly from the Worker and Reviewer. The Curator brief carries the leaf task, approved requirement-corpus ruling, exact requirement revision and packet, and requested requirement-adjudication inputs.  Historical note (superseded Manager-owned ordering and complete-brief claim): Manager doctrine owns the ordered pre-curator gate, exact packet/adjudication inputs, and complete brief.  Anchor: "Hand the curator its brief"; "curator-brief.md" [9]
+- The Manager starts a leaf’s Worker, Reviewer and Curator as one `role_start_set` and refers leaf coordination to `operations/coordination.md`. That procedure starts the Curator held until its first message and routes the frozen change set, hand-off lists and passed code verdict directly from the Worker and Reviewer. The Curator brief carries the leaf task, approved requirement-corpus ruling, exact requirement revision and packet, and requested requirement-adjudication inputs.  Historical note (superseded Manager-owned ordering and complete-brief claim): Manager doctrine owns the ordered pre-curator gate, exact packet/adjudication inputs, and complete brief.  Anchor: "Hand the curator its brief"; "curator-brief.md"
+
+Earlier caption detached from live reference 9: its original target declared the source text at `skills/l-01-agent-lifecycles/roles/manager.md` at original blob `3c2cfd97c8d64a0cd6245c1b87c6f6bd45457380`, lines 18–22; `skills/l-01-agent-lifecycles/operations/coordination.md` at original blob `dee346f3da2aa768e464f5895f9489da5f4ad6bd`, lines 12–12; `skills/l-01-agent-lifecycles/templates/curator-brief.md` at original blob `37ba5fc7aa32f1b6099fa654c50be7f6b35cbb2e`, lines 3–10; `skills/l-01-agent-lifecycles/templates/curator-brief.md` at original blob `37ba5fc7aa32f1b6099fa654c50be7f6b35cbb2e`, lines 47–58. The caption above is retained as prose; the numbered clause below describes the current source.
+
+Retained authoring-row wording:
+
+Finding: The current Manager and Coordination owners require individual starts: Worker at build, Reviewer at freeze and Curator after code PASS, with direct candidate/list/verdict handovers. The Curator template carries exact task, approved packets and producer fields; its opening and compiler note still retain the older held role_start_set wording, and its own single-home clause gives the role and operation precedence.
+
+Anchor: `current role or template contract`
+
+Source: skills/l-01-agent-lifecycles/roles/manager.md:24-34; skills/l-01-agent-lifecycles/operations/coordination.md:12-18; skills/l-01-agent-lifecycles/templates/curator-brief.md:3-16; skills/l-01-agent-lifecycles/templates/curator-brief.md:47-73; skills/l-01-agent-lifecycles/templates/curator-brief.md:115-123
+
+- The current Manager and Coordination owners require individual starts: Worker at build, Reviewer at freeze and Curator after code PASS, with direct candidate/list/verdict handovers. The Curator template carries exact task, approved packets and producer fields; its opening and compiler note still retain the older held role_start_set wording, and its own single-home clause gives the role and operation precedence. [9]

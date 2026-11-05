@@ -32,21 +32,78 @@ Worker repairs a sealed finding directly in its own task files. No plan, account
 
 ## Evidence
 
-- Worker distinguishes a clean sync from an overlapping path or failing focused test, and repairs owned findings without prior approval. [6]
-- Each repaired finding has its own freeze entry; code PASS carries the same entries and changed paths directly to Curator. [7]
+Retained authoring-row wording:
 
-- The Worker-only operation now carries conditional sync, direct repair and per-finding freeze evidence; its all-role audience marker adds no other seat. [5]
+Finding: Worker distinguishes a clean sync from an overlapping path or failing focused test, and repairs owned findings without prior approval.
+
+Anchor:
+
+Source: skills/l-01-agent-lifecycles/operations/implementation.md:8-34
+
+Retained authoring-row wording:
+
+Finding: Finding
+
+Anchor: Anchor
+
+Source: Source
+
+Retained authoring-row wording:
+
+Finding: ---
+
+Anchor: ---
+
+Source: ---
+
+Retained authoring-row wording:
+
+Finding: Each repaired finding has its own freeze entry; code PASS carries the same entries and changed paths directly to Curator.
+
+Anchor:
+
+Source: skills/l-01-agent-lifecycles/operations/implementation.md:8-34
+
+Retained authoring-row wording:
+
+Finding: The Worker-only operation now carries conditional sync, direct repair and per-finding freeze evidence; its all-role audience marker adds no other seat.
+
+Anchor:
+
+Source: skills/l-01-agent-lifecycles/operations/implementation.md
 
 
 
 
-- The freeze handover goes directly to the Reviewer and carries the appended journal records. [1]
+Past-epoch caption (retained wording): - The freeze handover goes directly to the Reviewer and carries the appended journal records.
+
+Original-target custody: `skills/l-01-agent-lifecycles/operations/implementation.md`, blob `9ebdee8141a018420e8edba3c96161db8a2e5297`, declared “The Worker implements the selected leaf's primary requirement and explicit constraints in the supplied code root. Read the rendered task-document files named in your handover with your harness's own file tools before acting; change document”. The earlier caption is detached from the live number; the current table carries only the current clause and target.
+
+Retained authoring-row wording:
+
+Finding: Worker first tells Manager to start Reviewer at freeze, then hands that Reviewer the exact freeze and journal records directly once the seat exists. After code PASS and Curator start, its exact-freeze producer list goes directly to Curator.
+
+Anchor:
+
+Source: skills/l-01-agent-lifecycles/operations/implementation.md
 
 
-- The candidate stays uncommitted and the seat starts no role and stages nothing. [2]
+Retained authoring-row wording:
+
+Finding: The candidate stays uncommitted and the seat starts no role and stages nothing.
+
+Anchor:
+
+Source: skills/l-01-agent-lifecycles/operations/implementation.md
 
 
-- A hand-over counts only on a reply naming its exact object; busy refusals are retried. [3]
+Retained authoring-row wording:
+
+Finding: A hand-over counts only on a reply naming its exact object; busy refusals are retried.
+
+Anchor:
+
+Source: skills/l-01-agent-lifecycles/operations/implementation.md
 
 
 ## Inherited Source-Epoch Commentary
@@ -137,4 +194,18 @@ Inherited reference 3 commentary (not a revalidated target):
 The byte-equal package copy is a distribution carrier, not an independent role, task or permission authority. Whole-file source evidence does not certify inherited statements, execution, grading or the whole card.
 
 
+Retained authoring-row wording:
+
+Finding: The authored source owns this contract; the distribution copy is not a separate authority.
+
+Anchor:
+
+Source: skills/l-01-agent-lifecycles/operations/implementation.md
+
+- Worker first tells Manager to start Reviewer at freeze, then hands that Reviewer the exact freeze and journal records directly once the seat exists. After code PASS and Curator start, its exact-freeze producer list goes directly to Curator. [1]
+- The candidate stays uncommitted and the seat starts no role and stages nothing. [2]
+- A hand-over counts only on a reply naming its exact object; busy refusals are retried. [3]
 - The authored source owns this contract; the distribution copy is not a separate authority. [4]
+- The Worker-only operation now carries conditional sync, direct repair and per-finding freeze evidence; its all-role audience marker adds no other seat. [5]
+- Worker distinguishes a clean sync from an overlapping path or failing focused test, and repairs owned findings without prior approval. [6]
+- Each repaired finding has its own freeze entry; code PASS carries the same entries and changed paths directly to Curator. [7]

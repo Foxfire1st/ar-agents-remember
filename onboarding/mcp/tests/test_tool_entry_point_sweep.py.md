@@ -167,8 +167,9 @@ literals.
   `L111` for the four lifecycle raisers, `L110` for the bare `memory_quality_check` surface — not to
   this module. The pins were first measured under `L6`; the owners above are current.
 
-## Evidence
+Both ordinary and support worlds are exercised with RuntimeWarning messages that are nonempty or empty. The cases require the captured detail string, actual exception type and innermost traceback file:line. These are source assertions/support behavior, not a fresh invocation, host result or AR acceptance.
 
+## Evidence
 ### Docs References
 
 No external Domain Documentation source is configured in this memory root. These are
@@ -182,26 +183,44 @@ The anchors below identify current behaviour of this module; they are not execut
 they make no acceptance claim.
 
 
-- `EntryPointProbeTests` owns the current boundary described above. [47]
+- `EntryPointProbeTests` owns the current boundary described above.
 
 
 
 
-- `T34`'s surviving repaired tool stays repaired, and the envelope-losing raiser pin is empty because the four lifecycle preconditions were repaired. [26]
+- `T34`'s surviving repaired tool stays repaired, and the envelope-losing raiser pin is empty because the four lifecycle preconditions were repaired. [Past-epoch source caption, detached from live reference 26. Recorded citation custody: mcp/tests/test_tool_entry_point_sweep.py blob 1fe4dc4416c2727815fcab3f9558e152bb422ee4 (available); historical event commit not identified. No historical event or intent inferred.]
+
+[Past-epoch source caption, detached from live reference 26. Recorded citation custody: mcp/tests/test_tool_entry_point_sweep.py blob 1fe4dc4416c2727815fcab3f9558e152bb422ee4 (available); historical event commit not identified. No historical event or intent inferred.]
+
+Anchor: `ENVELOPE_LOSING_RAISERS`
+
+Current source: The current support source declares ENVELOPE_LOSING_RAISERS as an empty frozenset and T34_REPAIRED_TOOLS as the one-member memory_baseline_adopt set. The sweep source asserts equality with observed error-arm tools in both directions and a named refusal for that surviving T34 member. These are source declarations/assertions, not a fresh run or current four-tool backlog.
 
 
 
-- The sweep itself: one world, one run, and the equality assertions that bind every pin. [28]
+- The sweep itself: one world, one run, and the equality assertions that bind every pin.
 
 
 - A refusal's own marks, read from the payload rather than from the arm. [29]
 
 
-- The bare-answer pin is empty since L110 repaired the `memory_quality_check` coherence refusal; T64's citation-preview repair remains. [30]
+- The bare-answer pin is empty since L110 repaired the `memory_quality_check` coherence refusal; T64's citation-preview repair remains. [Past-epoch source caption, detached from live reference 30. Recorded citation custody: mcp/tests/tool_entry_point_world.py blob fd07730a1a1bd23acfdd526b3ac57a628c498940 (available); historical event commit not identified. No historical event or intent inferred.]
+
+[Past-epoch source caption, detached from live reference 30. Recorded citation custody: mcp/tests/tool_entry_point_world.py blob fd07730a1a1bd23acfdd526b3ac57a628c498940 (available); historical event commit not identified. No historical event or intent inferred.]
+
+Anchor: `UNMARKED_NOT_OK`
+
+Current source: The ordinary world source declares UNMARKED_NOT_OK as an empty dictionary and the main sweep compares the observed bare-not-ok population with the pin by equality. This is a source assertion, not a new sweep result; the L110/T64 repair account remains historical source commentary.
 
 
 
-- The world: one scratch coordination root, two repositories, one real leaf enclosure, then the opened lifecycle ended. [31]
+- The world: one scratch coordination root, two repositories, one real leaf enclosure, then the opened lifecycle ended. [Past-epoch source caption, detached from live reference 31. Recorded citation custody: mcp/tests/tool_entry_point_world.py blob fd07730a1a1bd23acfdd526b3ac57a628c498940 (available); historical event commit not identified. No historical event or intent inferred.]
+
+[Past-epoch source caption, detached from live reference 31. Recorded citation custody: mcp/tests/tool_entry_point_world.py blob fd07730a1a1bd23acfdd526b3ac57a628c498940 (available); historical event commit not identified. No historical event or intent inferred.]
+
+Anchor: `EntryPointWorld`
+
+Current source: The ordinary EntryPointWorld source constructs one temporary coordination root, code and memory repositories and a real leaf enclosure through the public tools. Its close method cleans the temporary world; the retained opened-lifecycle/ended caption is historical and does not describe a current lifecycle API call.
 
 
 - The refused model's identity, which separates a response-model break from the caller's invalid arguments. [32]
@@ -256,7 +275,7 @@ they make no acceptance claim.
 - The validation the positive control drives directly. [44]
 
 
-- The three 60-second phase limits and the named timeout that the classifier does not count as a product raiser. [45]
+- The three 60-second phase limits and the named timeout that the classifier does not count as a product raiser.
 
 
 - The control that holds an answer back and requires the named failure, the closed handler and a working next call. [46]
@@ -264,10 +283,22 @@ they make no acceptance claim.
 
 - Every tool and every aspect is judged on its own subTest on the final bytes. [48]
 
-- The lifecycle pin is exact in both directions; T34's original nine must remain repaired. [49]
+- The lifecycle pin is exact in both directions; T34's original nine must remain repaired. [Past-epoch source caption, detached from live reference 49. Recorded citation custody: mcp/tests/test_tool_entry_point_sweep.py blob 1fe4dc4416c2727815fcab3f9558e152bb422ee4 (available); historical event commit not identified. No historical event or intent inferred.]
+
+[Past-epoch source caption, detached from live reference 49. Recorded citation custody: mcp/tests/test_tool_entry_point_sweep.py blob 1fe4dc4416c2727815fcab3f9558e152bb422ee4 (available); historical event commit not identified. No historical event or intent inferred.]
+
+Anchor: `test_the_pinned_raisers_are_exactly_the_ones_that_lose_the_envelope`
+
+Current source: The current sweep asserts exact equality between observed error-arm tools and ENVELOPE_LOSING_RAISERS in both directions, then asserts none of the current T34_REPAIRED_TOOLS population raises. That population now contains only memory_baseline_adopt; the original nine-tool caption is historical. No source assertion is an executed result.
 
 
-- The four lifecycle raisers are pinned empty after L111 repaired them, and the equality is still asserted in both directions. [50]
+- The four lifecycle raisers are pinned empty after L111 repaired them, and the equality is still asserted in both directions. [Past-epoch source caption, detached from live reference 50. Recorded citation custody: mcp/tests/test_tool_entry_point_sweep.py blob 1fe4dc4416c2727815fcab3f9558e152bb422ee4 (available); historical event commit not identified. No historical event or intent inferred.]
+
+[Past-epoch source caption, detached from live reference 50. Recorded citation custody: mcp/tests/test_tool_entry_point_sweep.py blob 1fe4dc4416c2727815fcab3f9558e152bb422ee4 (available); historical event commit not identified. No historical event or intent inferred.]
+
+Anchor: `ENVELOPE_LOSING_RAISERS`
+
+Current source: The current support source declares ENVELOPE_LOSING_RAISERS as an empty frozenset and T34_REPAIRED_TOOLS as the one-member memory_baseline_adopt set. The sweep source asserts equality with observed error-arm tools in both directions and a named refusal for that surviving T34 member. These are source declarations/assertions, not a fresh run or current four-tool backlog.
 
 
 ### Cross-Repo References
@@ -310,15 +341,15 @@ Current pins (L130): `ENVELOPE_LOSING_RAISERS` holds `worktree_checkpoint_landin
 
 
 
-- ENVELOPE_LOSING_RAISERS is empty on the current source, and exact bidirectional equality still pins it; the four L111 raisers it once carried are historical, not today's backlog. No sweep execution, broader acceptance or relaxed pin is implied by this declaration. [57]
+- ENVELOPE_LOSING_RAISERS is empty on the current source, and exact bidirectional equality still pins it; the four L111 raisers it once carried are historical, not today's backlog. No sweep execution, broader acceptance or relaxed pin is implied by this declaration.
 
 
 ## Current source evidence
 
 
-- Envelope loss is pinned empty; the positive T34 population retains only memory_baseline_adopt. [58]
+- Envelope loss is pinned empty; the positive T34 population retains only memory_baseline_adopt.
 
-- The main probe retains exact equality between observed raisers and the current pin. [59]
+- The main probe retains exact equality between observed raisers and the current pin.
 
 
 
@@ -326,8 +357,25 @@ Current pins (L130): `ENVELOPE_LOSING_RAISERS` holds `worktree_checkpoint_landin
 
 - The lane row that keeps this module in the default selection.
 
-Retired at the fifth freeze d59c3493: mcp/tests/test-evidence-lanes.toml:364-365 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 3104b78bb309a8e1a912503557adb08599b52ef0. Retired means the anchor no longer stands, not that the cited subject was deleted [40]
+Retired at the fifth freeze d59c3493: mcp/tests/test-evidence-lanes.toml:364-365 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 3104b78bb309a8e1a912503557adb08599b52ef0. Retired means the anchor no longer stands, not that the cited subject was deleted [Past-epoch source caption, detached from live reference 40. Recorded citation custody: mcp/tests/test-evidence-lanes.toml blob 9a4619c222e8fb25a05e0f7b7254ff2f9ce3d51c (available); mcp/tests/test_tool_entry_point_sweep.py blob 1fe4dc4416c2727815fcab3f9558e152bb422ee4 (available); recorded commits code d59c3493ec682c2ab58fd9d1ed127d08038e90c4, code 3104b78bb309a8e1a912503557adb08599b52ef0. No historical event or intent inferred.]
+
+Current source: The current lane catalog selects mcp/tests/test_tool_entry_point_sweep.py once in unit-regression. This declaration selects evidence and establishes no invocation or passing result.
 
 ## Retirements
 
 - Retired at the fifth freeze d59c3493: mcp/tests/test-evidence-lanes.toml:364-365 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 3104b78bb309a8e1a912503557adb08599b52ef0. Retired means the anchor no longer stands, not that the cited subject was deleted.
+
+- The current support source declares ENVELOPE_LOSING_RAISERS as an empty frozenset and T34_REPAIRED_TOOLS as the one-member memory_baseline_adopt set. The sweep source asserts equality with observed error-arm tools in both directions and a named refusal for that surviving T34 member. These are source declarations/assertions, not a fresh run or current four-tool backlog. [26]
+- The sweep itself: one world, one run, and the equality assertions that bind every pin. Anchor: `EntryPointProbeTests` [28]
+- The ordinary world source declares UNMARKED_NOT_OK as an empty dictionary and the main sweep compares the observed bare-not-ok population with the pin by equality. This is a source assertion, not a new sweep result; the L110/T64 repair account remains historical source commentary. [30]
+- The ordinary EntryPointWorld source constructs one temporary coordination root, code and memory repositories and a real leaf enclosure through the public tools. Its close method cleans the temporary world; the retained opened-lifecycle/ended caption is historical and does not describe a current lifecycle API call. [31]
+- The current lane catalog selects mcp/tests/test_tool_entry_point_sweep.py once in unit-regression. This declaration selects evidence and establishes no invocation or passing result. [40]
+- The three 60-second phase limits and the named timeout that the classifier does not count as a product raiser. [45]
+- `EntryPointProbeTests` owns the current boundary described above. Anchor: `EntryPointProbeTests` [47]
+- The current sweep asserts exact equality between observed error-arm tools and ENVELOPE_LOSING_RAISERS in both directions, then asserts none of the current T34_REPAIRED_TOOLS population raises. That population now contains only memory_baseline_adopt; the original nine-tool caption is historical. No source assertion is an executed result. [49]
+- The current support source declares ENVELOPE_LOSING_RAISERS as an empty frozenset and T34_REPAIRED_TOOLS as the one-member memory_baseline_adopt set. The sweep source asserts equality with observed error-arm tools in both directions and a named refusal for that surviving T34 member. These are source declarations/assertions, not a fresh run or current four-tool backlog. [50]
+- ENVELOPE_LOSING_RAISERS is empty on the current source, and exact bidirectional equality still pins it; the four L111 raisers it once carried are historical, not today's backlog. No sweep execution, broader acceptance or relaxed pin is implied by this declaration. [57]
+- Envelope loss is pinned empty; the positive T34 population retains only memory_baseline_adopt. [58]
+- The main probe retains exact equality between observed raisers and the current pin. Anchor: `EntryPointProbeTests.test_the_pinned_raisers_are_exactly_the_ones_that_lose_the_envelope` [59]
+
+- Both ordinary and support worlds are exercised with RuntimeWarning messages that are nonempty or empty. The cases require the captured detail string, actual exception type and innermost traceback file:line. These are source assertions/support behavior, not a fresh invocation, host result or AR acceptance. [60]

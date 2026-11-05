@@ -4,7 +4,7 @@
 
 This packaged copy makes role messages short wake-ups naming requested work or a handover and its files. Complete report, verdict, list and evidence contents travel through file-only `body` or existing-file `attach`, never pasted into message text. Within a shared task, message files remain with its record and a leaf workspace exposes the message-folder link. Wake text uses the effective settings limit, not a number pinned in this role/template. This transport account changes neither the file's existing role/write boundaries nor requirement, review, curation or landing authority.
 
-- Messages wake; complete payloads and evidence travel as files. [1]
+- Messages wake; complete payloads and evidence travel as files.
 
 
 ## Current operative account — MIK-R112
@@ -28,7 +28,7 @@ Source inspection supplies no new test, native-host, whole-build, landing or mem
 ## Current source contract evidence
 
 
-- Current source declarations support the qualified naming or fixture account; no executed test or acceptance is inferred. [2]
+- Current source declarations support the qualified naming or fixture account; no executed test or acceptance is inferred.
 
 
 
@@ -119,3 +119,6 @@ No meaningful cross-repo references found.
 This sidecar describes the generated runtime copy, not canonical ownership. The source is synchronized from the canonical l-01-agent-lifecycles doctrine by the skill-sync process. L4 defines spawned-unbriefed → harness-ready → briefed: spawn is creation only, exact-session readiness proves the target harness is ready, and one durable dispatch-brief advances the seat only with delivered plus harness-log-confirmed proof. Spawned-only or not-ready is not active work; sessionCommands remain launch configuration and promptKeywords apply once after readiness.
 
 </details>
+
+- Messages wake; complete payloads and evidence travel as files. [1]
+- Designer scopes the plan and its blind spots to one master, authors the named task documents and evidence artifacts, and claims neither an approved plan nor a build from its handover. [2]

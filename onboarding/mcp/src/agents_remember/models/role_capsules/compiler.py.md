@@ -30,13 +30,13 @@ contract:
 The work is split across sibling modules so each part can be understood and tested alone. What
 *this* module owns is the seal: the semantic digest and the diagnostic manifest.
 
-**The digest covers admitted facts and the composed bytes, and nothing else.**
+**The digest covers admitted facts, composed bytes and the declared every-role source revision.**
 cit:([`semantic_digest`], mcp/src/agents_remember/models/role_capsules/compiler.py:224-269) builds a canonical `\t`-separated document from
 the seat kind, seat key, role, operation, repository, work branch, task reference and its
 document digest, the requirement identities, the specializations **actually composed**, one
 `block` line per composed block with its source revision and the digest of its selected content, one `tool` line per requested tool id, one
 `skill` line per carried skill reference (`origin`, `identity`, `revision`), and the task
-context's origin/revision/digest. It deliberately excludes unselected sources, refusal
+context's origin/revision/digest. It deliberately excludes other unselected sources, refusal
 detail, wall-clock values, and the diagnostic manifest itself — so the identity of a
 compilation does not move when only diagnostics do. Note the asymmetry that carries real
 weight: cit:([`_selected_specializations`], mcp/src/agents_remember/models/role_capsules/compiler.py:293-294) contributes only specializations that
@@ -72,8 +72,8 @@ format and is itself part of the digest document.
   denied; the module imports no network client. The shipped cases assert both.
 - **Compilation failure never becomes a partially valid capsule.** Every defect raises a typed
   `CapsuleCompilationError` before any content is returned.
-- The semantic digest excludes ephemeral facts. Adding a timestamp, an unselected source, or a
-  refusal message to it would make two identical compilations differ.
+- The semantic digest excludes ephemeral facts. Timestamps, unrelated unselected sources and
+  refusal messages remain outside it; the declared every-role revision is deliberately sealed.
 - An admitted-but-unselected specialization is diagnostics, not identity.
 - A task projection whose bytes do not match its declared digest is refused, not carried.
 - `UNREAD_REVISION` must stay distinguishable from a real content digest; never substitute a
@@ -103,6 +103,12 @@ After normal instruction resolution, only operation-root blocks pass through sel
 
 This account is bound to the candidate source, not a claim of a running serving build or a fresh execution/acceptance verdict. Existing historical accounts remain historical.
 
+## Current source contract
+
+The compiler reads and validates contract markers in role and operation blocks before operation audience selection, then strips valid marker lines before detail parsing, block digesting and instruction rendering. The selected markers are carried separately on CapsuleCapsule. For a role with a declared core:every-role, the source must be admitted or missing-required-instruction refuses; its revision extends the semantic digest even though its diagnostic source record has selected=false and it is not a composed instruction block. Other unselected sources and diagnostic metadata remain outside identity.
+
+- Validates source-addressed contract markers before audience filtering; strips them before render/seal; seals declared every-role revision separately. [14]
+
 ## Evidence
 
 
@@ -111,7 +117,13 @@ This account is bound to the candidate source, not a claim of a running serving 
 - Replay validates regular opened files and frozen revisions at deterministic detail names beside the saved handover in its recorded canonical folder, not mutable corpus sources. [10]
 
 - Per-request detail artifacts use exact admitted bytes beside the handover and write-once publication. [11]
-- File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence. [12]
+Retained authoring-row wording:
+
+Finding: File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence.
+
+Anchor:
+
+Source: mcp/src/agents_remember/models/role_capsules/compiler.py:124-189
 - File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence. [13]
 
 ### Docs References
@@ -124,7 +136,13 @@ No relevant documentation found after checking live sources.
 ### Repo-Internal References
 
 
-- The application entry point that admits bytes from disk and calls this compiler, returning success or refusal as a value. [1]
+Retained authoring-row wording:
+
+Finding: The application entry point that admits bytes from disk and calls this compiler, returning success or refusal as a value.
+
+Anchor:
+
+Source: mcp/src/agents_remember/application/role_capsules/compilation.py:93-134; mcp/src/agents_remember/application/role_capsules/compilation.py:45-90; mcp/src/agents_remember/application/role_capsules/compilation.py
 
 - The diagnostic shapes this module fills and the ordering rule that keeps them out of the digest. [2]
 - **The carried skill channel** — one content-addressed reference per declared skill, built with no policy call. [3]
@@ -141,3 +159,6 @@ was eve's dynamic resolver; that is a design input recorded in the leaf's requir
 not a runtime boundary of this module, and no eve code is imported.
 
 No meaningful cross-repo references found.
+
+- The application entry point that admits bytes from disk and calls this compiler, returning success or refusal as a value. [1]
+- File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence. [12]

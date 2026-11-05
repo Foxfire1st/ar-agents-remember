@@ -2,15 +2,19 @@
 
 ## Current operative account — MIK-R199
 
+The inherited source account below is retained verbatim at its earlier source blob `24ae5ecc1c485103ade43601a1a6b742f33be711`; its inline line addresses belong to that source epoch and are detached from current live citation authority. Current numbered clauses below bind the separately specified current source targets.
+
 - The file is the LLM-facing summary of the product documentation, published from the docs root and linked from the
   repository and package READMEs as `https://foxfire1st.github.io/agents-remember/llms.txt`. Its first line pins
   `Version: 2.8.0 | Creation-Date: 2026-06-10T08:42:24Z | Hash: f62c732`, i.e. it is a dated snapshot of documentation
   prose rather than prose whose home this is. No script or config in the tracked tree references this path, so the
   wording is treated here as edited in the file.
-- The opening summary bullet recasts search: semantic and code-graph lookup "were optional accelerators" over the same
+Historical source wording retained verbatim (docs/llms.txt blob 24ae5ecc1c485103ade43601a1a6b742f33be711; detached from live citation authority): - The opening summary bullet recasts search: semantic and code-graph lookup "were optional accelerators" over the same
   reviewable Markdown, and "both providers are retired, so by-path reads carry the product". The bullet beneath it in the
   same list still credits "provider indexes that clone into a worktree instead of rebuilding", so the summary list keeps
   the index-cloning claim while retiring the providers that produced the indexes.
+
+The current summary pairs retired-provider/by-path framing with paired publication and a disposable knowledge index; only the later cheap-isolation section retains residual live provider-index cloning prose.
 - The trust paragraph states the same position as history: semantic and graph search "were optional accelerators for
   *finding* a note — both are retired now, and neither was ever the thing you trust." The trust claim itself is unchanged:
   the note, plus Git's answer on whether it still matches the code.
@@ -23,10 +27,12 @@
   `Intent`. The retirement is asserted in the prose around the list, not by removing list entries.
 - The read-only tool bullet now gives its examples as orienting on a repository, checking drift, and previewing a
   closeout. Provider health summarisation and graph or semantic-index queries are gone from the list.
-- The first-run paragraph says `c-13-install-and-onboard` verifies the MCP server, runs or checks `runtime_install()`,
+Historical first-run source wording (old docs/llms.txt blob 24ae5ecc1c485103ade43601a1a6b742f33be711; detached from current authority): - The first-run paragraph says `c-13-install-and-onboard` verifies the MCP server, runs or checks `runtime_install()`,
   initializes or adopts memory, bootstraps onboarding when needed, "and starts nothing provider-side — the two former
   search providers are retired." The by-path claim that follows is unchanged: the core path works without Docker or
   providers.
+
+Current first-run text registers the server, serves packaged skills and starts Bootstrap with one role_start call; optional onboarding and knowledge foundation go to the user-started Architect task, and setup excludes provider indexing and setup-authored knowledge.
 - The MCP authority-settings bullet now declares which repositories the server may touch, with "(old provider keys are
   reported once as unused)" as the disposition of the retired keys. Transcript location, timeout caps and root
   containment stay in the bullet unchanged.
@@ -86,7 +92,11 @@
 ## Evidence
 
 - The file is a versioned, dated snapshot of documentation prose, published from the docs root. [1]
-- The product summary says both search providers are retired and by-path reads carry the product, while the same list still credits provider indexes cloned into a worktree. [2]
+Historical source account (detached from live reference 2; docs/llms.txt blob 24ae5ecc1c485103ade43601a1a6b742f33be711):
+
+- The product summary says both search providers are retired and by-path reads carry the product, while the same list still credits provider indexes cloned into a worktree.
+
+- The summary still retires semantic/code-graph providers, but its Git-memory bullet now names paired code/memory publication and a disposable knowledge index rebuilt from the selected text tree; the separate cheap-isolation section still contains residual live provider-cloning prose.
 - The trust paragraph keeps the note as the thing trusted and marks search as retired history. [3]
 - The retrieval routes are stated in the past tense with their providers retired, while by-path stays always available. [4]
 - The read-only tool list no longer includes provider health, graph or semantic-index queries. [5]
@@ -95,3 +105,5 @@
 - The isolation section still describes provider indexes as live machinery and says providers can be created with a worktree. [8]
 - The composition summary still credits index cloning as what makes isolation cheap. [9]
 - The Providers link now describes retired providers and leftover-state cleanup. [10]
+
+- The summary still retires semantic/code-graph providers, but its Git-memory bullet now names paired code/memory publication and a disposable knowledge index rebuilt from the selected text tree; the separate cheap-isolation section still contains residual live provider-cloning prose. [2]

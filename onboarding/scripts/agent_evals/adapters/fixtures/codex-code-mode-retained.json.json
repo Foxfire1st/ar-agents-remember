@@ -1,0 +1,40 @@
+{
+  "path": "scripts/agent_evals/adapters/fixtures/codex-code-mode-retained.json",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "13a54162b28515a638f6e1184ff7da28ef7d8c6e",
+        "content": "sha256:4f8ad9a06cfb9414f0ff610d4f488a461e9ca901b35caf41bf99c08f0dd27498",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-YQKW33",
+      "invariant": "INV-R4JZ3F",
+      "origin": {
+        "handoffEntry": "L62-fd6462b8-codex-capture",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "It retains the native code-mode wire consumed by the dispatch adapter regressions.",
+      "role": "support"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The source defines this file's responsibility and the boundaries described here.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "13a54162b28515a638f6e1184ff7da28ef7d8c6e",
+            "content": "sha256:4f8ad9a06cfb9414f0ff610d4f488a461e9ca901b35caf41bf99c08f0dd27498",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

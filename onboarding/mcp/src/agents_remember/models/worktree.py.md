@@ -61,7 +61,7 @@ The following source-backed definitions and producer seams retain the broader re
 - **Retained historical source account — superseded by the current contract:** WorkflowKind is the shared chat-task/light-task wire vocabulary. [122]
 - **Retained historical source account — superseded by the current contract:** The guidance module imports NextOperation, NextTool and WorktreePhase from the model and obtains guidance by calling lifecycle_guidance(contract). Recovery aliases remain separate. [123]
 
-- **Retained historical source account — superseded by the current contract:** TaskDocResponse is a ToolResponse rather than a WorktreeCommandResponse and declares nextTool as str or None; the worktree roster validator does not govern this class. [124]
+- **Retained historical source account — superseded by the current contract:** TaskDocResponse is a ToolResponse rather than a WorktreeCommandResponse and declares nextTool as str or None; the worktree roster validator does not govern this class.
 
 - **Retained historical source account — superseded by the current contract:** worktree_sync_tool admits its configured contract, delegates to the worktree manager and forwards resolution.action as resolution_action. [125]
 - **Retained historical source account — superseded by the current contract:** SourceLineageEdge, SourceLineageRecovery and SourceLineageProjection expose the typed source-lineage boundary. [126]
@@ -169,3 +169,5 @@ The following source-backed definitions and producer seams retain the broader re
 
 
 - WorktreeSummary is the strict context summary, distinct from flexible command envelopes. Its optional taskDocumentCopies string carries a notice only when the copy checker emits one. Absence means no notice, not exhaustive byte equality or acceptance of every copy. Existing state and source-lineage fields retain their own domain meanings. [164]
+
+- **Retained historical source account — superseded by the current contract:** TaskDocResponse is a ToolResponse rather than a WorktreeCommandResponse and declares nextTool as str or None; the worktree roster validator does not govern this class. Anchor: `TaskDocResponse` [124]

@@ -1,0 +1,40 @@
+{
+  "path": "mcp/tests/test_agent_eval_history_helpers.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "720a09330c92da28f6d228687479b547c2ed36a8",
+        "content": "sha256:6d772055c64633f943b12b14bc0e9a51f27cacf01e0b1d08b0ca5f6d2030f6bc",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-J4E51A",
+      "invariant": "INV-A0B83R",
+      "origin": {
+        "handoffEntry": "L62-fd6462b8-hermes-capture",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "This regression module checks this obligation through test_complete_native_adapters_ignore_only_known_non_helper_shapes, test_five_invariant_dispositions_use_actual_rows_trees_and_pending_rubric, test_history_cannot_hide_meaning_revision_or_actual_anchor_change, test_admission_only_changed_row_does_not_invent_revision_or_disposition and its remaining test cases.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The source defines this file's responsibility and the boundaries described here.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "720a09330c92da28f6d228687479b547c2ed36a8",
+            "content": "sha256:6d772055c64633f943b12b14bc0e9a51f27cacf01e0b1d08b0ca5f6d2030f6bc",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

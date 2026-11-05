@@ -22,8 +22,8 @@ The current source facts below replace the former operative inventory. The separ
 
 ### Source and authority bounds
 
-- Source comparison: `mcp/tests/test_capsule_launch_wiring.py:1017-1050`.
-- Source comparison: `git diff HEAD -- mcp/tests/test_capsule_launch_wiring.py (D13 successor)`.
+- Current D13 case: `mcp/tests/test_capsule_launch_wiring.py:381-414` (its `pytest.mark.anyio` decorator is at line380).
+- Frozen module comparison: `git diff 59b01fb8f72a38d2d27f9c37b8b9ca2513fd3fa0 6db7c75557a5d040db6cc2938c3f8a53f658bebe -- mcp/tests/test_capsule_launch_wiring.py`. This names source inputs and claims no test execution.
 
 Source inspection supplies no new test, native-host, whole-build, landing or memory acceptance. Retained internal services and historical fixtures do not re-advertise deleted MCP tools. Numbered references retain historical custody and may include disclosed inherited stale targets; currentness or proof truth is not inferred from them.
 
@@ -164,6 +164,14 @@ A copied-corpus fixture changes only the source corpus seen by the real launch c
 
 ## Evidence
 
+
+Superseded card wording retained for custody (not certified as true of any source epoch or measured candidate):
+
+> - Source comparison: `mcp/tests/test_capsule_launch_wiring.py:1017-1050`.
+
+> - Source comparison: `git diff HEAD -- mcp/tests/test_capsule_launch_wiring.py (D13 successor)`.
+
+
 ### Docs References
 
 No Domain Documentation source is configured in the resolved source registry for this pass.
@@ -229,8 +237,10 @@ the fixture it is pinned against lives in this repository.
 
 - The three governed-artifact rows registering this module as a consumer.
 
-- The three governed-artifact rows registering this module as a consumer. [21]
+- The three governed-artifact rows registering this module as a consumer.
 
 ## Retirements
 
 - Retired at the fifth freeze d59c3493: mcp/tests/evidence-lifecycle.toml:1064-1064 - the bytes it recorded now occur 91 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:1885-1885 - the bytes it recorded now occur 3 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:402-402 - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:760-760 - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.
+
+- The three governed-artifact rows registering this module as a consumer. [21]

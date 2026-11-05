@@ -1,0 +1,58 @@
+{
+  "path": "skills/l-01-agent-lifecycles/reference/shared-working-rules.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Times, counts and tool mismatches use producing evidence and the serving build.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0f565b0a13181975f27dabb571dda645442fb27e",
+            "content": "sha256:cea90a4aedc115715e3d372ea1da34a494554c4be25068ff6e32ad416fdd5210",
+            "locator": {
+              "end": 13,
+              "kind": "line_range",
+              "start": 3
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Sandbox setup and measurement claims retain their stated identity and user-setting boundaries.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0f565b0a13181975f27dabb571dda645442fb27e",
+            "content": "sha256:e5a47e339fe54e3a3c0c1b694b47ff98cd8c36b82b7356dd1ce98bce2007c8da",
+            "locator": {
+              "end": 41,
+              "kind": "line_range",
+              "start": 15
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Process signals and live-host operations remain bounded by checked identity and existing authority.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0f565b0a13181975f27dabb571dda645442fb27e",
+            "content": "sha256:eb75becc9b715f079aa7f7fa540f1d7d171ec39924d1bc1d6cbb922b5d2698b5",
+            "locator": {
+              "end": 45,
+              "kind": "line_range",
+              "start": 43
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

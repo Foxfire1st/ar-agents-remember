@@ -83,7 +83,7 @@ The consumer-facing sequence this module documents, and the owners each step con
 - The computation and its declared extra inputs. [2]
 - The compiler-facing conversion and the provider behind the one-method protocol. [3]
 - Every public name this module exports is importable from the package root. [4]
-- The task-context seam this package fills: the protocol, the DTO it converts into, and the compiler that re-verifies the digest. [5]
+- The task-context seam this package fills: the protocol, the DTO it converts into, and the compiler that re-verifies the digest.
 - The import surface of every module under this package is asserted, not assumed. [6]
 - The **other** "projection" in this repository — the closeout-queue projection this package is not. [7]
 
@@ -92,3 +92,5 @@ The consumer-facing sequence this module documents, and the owners each step con
 No sibling-repository contract consumes this boundary.
 
 No meaningful cross-repo references found.
+
+- The task-context seam this package fills: the protocol, the DTO it converts into, and the compiler that re-verifies the digest. [5]

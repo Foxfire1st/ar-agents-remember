@@ -1,0 +1,40 @@
+{
+  "path": "scripts/agent_evals/graders/history.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "4dfb398e50c335461863535194c631845947cb86",
+        "content": "sha256:9837da9d2428a8f9175245fe49b049209b472fcc3f1672d9f66a72c600e8821f",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-P83R1A",
+      "invariant": "INV-21Z5X6",
+      "origin": {
+        "handoffEntry": "L62-fd6462b8-history",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "It checks revisions, entry sets and existing history rows through the product record schemas while preserving case-specific no_impact duties.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The source defines this file's responsibility and the boundaries described here.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4dfb398e50c335461863535194c631845947cb86",
+            "content": "sha256:9837da9d2428a8f9175245fe49b049209b472fcc3f1672d9f66a72c600e8821f",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

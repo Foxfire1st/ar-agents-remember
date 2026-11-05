@@ -1,0 +1,40 @@
+{
+  "path": "scripts/agent_evals/trial_isolation.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "c4670e2ae392285be8d595571a593db67d269e28",
+        "content": "sha256:a4751e678da996a9477de7f030f7b7bc1007130be14affcce91bc8da0d85fe8d",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-FDTJY2",
+      "invariant": "INV-A8FVPH",
+      "origin": {
+        "handoffEntry": "L62-fd6462b8-trial-isolation",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "It builds the trial-local Hermes config and provider state and deletes private credential files on normal and deferred-cleanup paths.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The source defines this file's responsibility and the boundaries described here.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c4670e2ae392285be8d595571a593db67d269e28",
+            "content": "sha256:a4751e678da996a9477de7f030f7b7bc1007130be14affcce91bc8da0d85fe8d",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

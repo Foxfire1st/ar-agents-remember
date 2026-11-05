@@ -73,14 +73,16 @@
       ]
     },
     "16": {
-      "note": "A moved row relocates the entry; before and after name the old and new paths; a rerun is byte-identical.\n\nAnchor: `test_a_moved_row_whose_after_names_another_path_relocates_the_entry`",
+      "note": "A moved row relocates the entry; before and after name the old and new paths; a rerun is byte-identical. Anchor: `test_a_moved_row_whose_after_names_another_path_relocates_the_entry`",
       "targets": [
         {
           "anchor": {
-            "blob": "1a6235931c50a4a8f6b146a51598cdff7f55a233",
-            "content": "sha256:075ff4475087a14dafb700ce617d28082fae430f3313c7e64333ca644f5dc9fe",
+            "blob": "7e02efe56a42a670bb818ea1f56af7d09c48e5f3",
+            "content": "sha256:fbc845ca4136164eb34326e37e70dbd2f85612fd718321f3d76bc113c85e1515",
             "locator": {
-              "kind": "file"
+              "end": 1144,
+              "kind": "line_range",
+              "start": 1
             },
             "path": "mcp/tests/test_knowledge_writer.py"
           },
@@ -353,14 +355,16 @@
       ]
     },
     "41": {
-      "note": "The conforming example: decision, realization and proof, validated.\n\nAnchor: `test_a_decision_a_realization_and_a_tested_evidence_produce_validated_files`",
+      "note": "The conforming example: decision, realization and proof, validated. Anchor: `test_a_decision_a_realization_and_a_tested_evidence_produce_validated_files`",
       "targets": [
         {
           "anchor": {
-            "blob": "1a6235931c50a4a8f6b146a51598cdff7f55a233",
-            "content": "sha256:075ff4475087a14dafb700ce617d28082fae430f3313c7e64333ca644f5dc9fe",
+            "blob": "7e02efe56a42a670bb818ea1f56af7d09c48e5f3",
+            "content": "sha256:fbc845ca4136164eb34326e37e70dbd2f85612fd718321f3d76bc113c85e1515",
             "locator": {
-              "kind": "file"
+              "end": 1144,
+              "kind": "line_range",
+              "start": 1
             },
             "path": "mcp/tests/test_knowledge_writer.py"
           },
@@ -373,7 +377,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1a6235931c50a4a8f6b146a51598cdff7f55a233",
+            "blob": "7e02efe56a42a670bb818ea1f56af7d09c48e5f3",
             "content": "sha256:3a9d6a609a1e3eeb2e279c87d61f4ebcd2bbd6600eb0be404a287788ef5ba97a",
             "locator": {
               "kind": "symbol",
@@ -390,7 +394,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1a6235931c50a4a8f6b146a51598cdff7f55a233",
+            "blob": "7e02efe56a42a670bb818ea1f56af7d09c48e5f3",
             "content": "sha256:3b523eaeeb4be4815040d0d69bdb3f8f3a1bd22fded4df9de4a2574b908ff11c",
             "locator": {
               "kind": "symbol",
@@ -472,7 +476,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1a6235931c50a4a8f6b146a51598cdff7f55a233",
+            "blob": "7e02efe56a42a670bb818ea1f56af7d09c48e5f3",
             "content": "sha256:1712a1257f62c997aec217ec04a8dda4094703d092abc8e1cecb1330d4581348",
             "locator": {
               "kind": "symbol",

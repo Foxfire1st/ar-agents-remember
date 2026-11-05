@@ -3,12 +3,69 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "a5e74f1a57f73c4f392379af6fbbb06b2e82f1e7",
+        "blob": "197d357ccee5b36298f6b1e3afc714c112ca7fac",
+        "content": "sha256:0285bfe421b56a9eca8ad82552be50d42a21a071a1408802bc7c372731161808",
+        "locator": {
+          "end": 31,
+          "kind": "line_range",
+          "start": 10
+        }
+      },
+      "id": "RLZ-72RX6B",
+      "invariant": "INV-BCEZZM",
+      "origin": {
+        "handoffEntry": "L62-CUR-6db-attach-INV-BCEZZM",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "The deciding CLI is compared with the starting server stamp, unavailable/mismatched binding is reported, and an unreported commit stays unknown.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "197d357ccee5b36298f6b1e3afc714c112ca7fac",
+        "content": "sha256:377ca82add0b96fb7736df78570d4ebb9a3ceb62c26997cb745b4a043f0740f9",
+        "locator": {
+          "end": 49,
+          "kind": "line_range",
+          "start": 18
+        }
+      },
+      "id": "RLZ-7DW125",
+      "invariant": "INV-945YZ4",
+      "origin": {
+        "handoffEntry": "L62-CUR-6db-attach-INV-945YZ4",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "The command procedure prefers the mounted writer, preserves the admitted launch interpreter spelling and explicit serving package, compares identity, and distinguishes plan/write/empty-written outcomes.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "197d357ccee5b36298f6b1e3afc714c112ca7fac",
+        "content": "sha256:8d6ddd968aabf74e6a7e55bf9d1f09ba23d77adf2e20fc4262c353710046daba",
+        "locator": {
+          "end": 16,
+          "kind": "line_range",
+          "start": 10
+        }
+      },
+      "id": "RLZ-KCSKJN",
+      "invariant": "INV-945YZ4",
+      "origin": {
+        "handoffEntry": "L62-CUR-6db-attach-INV-945YZ4",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "The command procedure prefers the mounted writer, preserves the admitted launch interpreter spelling and explicit serving package, compares identity, and distinguishes plan/write/empty-written outcomes.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "197d357ccee5b36298f6b1e3afc714c112ca7fac",
         "content": "sha256:aef9769872505f712226bfc8d924dead6a24d3c07a185ead6836acf9e51f95c5",
         "locator": {
-          "end": 35,
+          "end": 66,
           "kind": "line_range",
-          "start": 33
+          "start": 64
         }
       },
       "id": "RLZ-PAE912",
@@ -23,16 +80,28 @@
   ],
   "references": {
     "1": {
-      "note": "New step-2 writer command/options and step-3 family/external/readback detail; same admitted writer remains owner.\n\nAnchor: Candidate instruction body, lines 3–18",
+      "note": "Before any CLI deciding run or write, read the serving-build command section and verify its original launch interpreter and identity. Read the remaining writer formats before ingest; the normal writer owns file writes and report/readback truth.",
       "targets": [
         {
           "anchor": {
-            "blob": "a5e74f1a57f73c4f392379af6fbbb06b2e82f1e7",
-            "content": "sha256:efd53bc392b890c52fca2f5f8c01b346991a6405bb6c13579126f01bc26f3fd2",
+            "blob": "197d357ccee5b36298f6b1e3afc714c112ca7fac",
+            "content": "sha256:0caf13d1d8e785fe65d713149f53cce66e60709faabf8f268542ddae3e576752",
             "locator": {
-              "end": 18,
+              "end": 49,
               "kind": "line_range",
               "start": 3
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "197d357ccee5b36298f6b1e3afc714c112ca7fac",
+            "content": "sha256:8b87edb5bb5884dd19bfc3e192bf3a935723e2eb9a3b179dd54ada325ee7126a",
+            "locator": {
+              "end": 75,
+              "kind": "line_range",
+              "start": 64
             }
           },
           "kind": "code"
@@ -40,16 +109,16 @@
       ]
     },
     "2": {
-      "note": "New step-2 writer command/options and step-3 family/external/readback detail; same admitted writer remains owner.",
+      "note": "The current serving-writer command uses the original admitted interpreter and explicit package path, verifies the serving stamp before CLI deciding or writing, persists the contract-scoped worklist, and distinguishes planned/written/refused report evidence and readback.",
       "targets": [
         {
           "anchor": {
-            "blob": "a5e74f1a57f73c4f392379af6fbbb06b2e82f1e7",
-            "content": "sha256:69ecad41caf43ad328b978a418dfd1dc813ce148e4def3c7bed7db5aafbde643",
+            "blob": "197d357ccee5b36298f6b1e3afc714c112ca7fac",
+            "content": "sha256:7da6ba53693289d3b46c9732a9dc32a55637f9cdbb899d4f071041ab56c7a7cf",
             "locator": {
-              "end": 40,
+              "end": 49,
               "kind": "line_range",
-              "start": 20
+              "start": 10
             }
           },
           "kind": "code"

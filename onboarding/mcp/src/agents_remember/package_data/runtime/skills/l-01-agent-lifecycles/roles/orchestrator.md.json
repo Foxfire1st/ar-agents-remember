@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "2d58c15304831b65be687127ce05ace5c0f87cec",
-        "content": "sha256:e1a2eef2ab61b6c4b36edb85b55641d0b0460fb89690d702aaf89192901bd682",
+        "blob": "5dbb22b1e2e5bdf76448b97bbfe180badc453f2d",
+        "content": "sha256:d76954ce7ecb2fb0ff8511c3d3ddcc7b20ea0de25523449f63ea7088be3a91b1",
         "locator": {
           "kind": "file"
         }
@@ -21,14 +21,16 @@
   ],
   "references": {
     "1": {
-      "note": "This source owns the stated current Investigator scope or canonical vocabulary.",
+      "note": "Orchestrator coordinates its selected sprint through Managers, reuses named existing Managers, and assigns a non-leaf investigation within its own sprint scope without inventing a parent or task.",
       "targets": [
         {
           "anchor": {
-            "blob": "2d58c15304831b65be687127ce05ace5c0f87cec",
-            "content": "sha256:e1a2eef2ab61b6c4b36edb85b55641d0b0460fb89690d702aaf89192901bd682",
+            "blob": "5dbb22b1e2e5bdf76448b97bbfe180badc453f2d",
+            "content": "sha256:d76954ce7ecb2fb0ff8511c3d3ddcc7b20ea0de25523449f63ea7088be3a91b1",
             "locator": {
-              "kind": "file"
+              "end": 74,
+              "kind": "line_range",
+              "start": 1
             }
           },
           "kind": "code"
@@ -40,7 +42,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2d58c15304831b65be687127ce05ace5c0f87cec",
+            "blob": "5dbb22b1e2e5bdf76448b97bbfe180badc453f2d",
             "content": "sha256:bb027ed51e4124b2628d15f8c590801a98ebfc067500116bf652c11ab16d5e86",
             "locator": {
               "end": 4,
@@ -53,17 +55,43 @@
       ]
     },
     "3": {
-      "note": "The only changed permission seam now answers held, propagates the named child permission upward, and leaves eventual delivery to the product; no prompt is answered and no duplicate message is sent. Sprint/master containment, Manager coordination, ordinary role/task returns and actual-parent-ID developer questions retain their distinct authority.",
+      "note": "Orchestrator keeps sprint/master containment, Manager coordination, ordinary role/task returns and actual-parent developer questions distinct; child-permission notices follow the common coordination rule and held receipts are not resubmitted.",
       "targets": [
         {
           "anchor": {
-            "blob": "2d58c15304831b65be687127ce05ace5c0f87cec",
-            "content": "sha256:e1a2eef2ab61b6c4b36edb85b55641d0b0460fb89690d702aaf89192901bd682",
+            "blob": "5dbb22b1e2e5bdf76448b97bbfe180badc453f2d",
+            "content": "sha256:9c99815cd4309380af3a4dd96abb6388ce20f16e7643704539cd48b4fe5aeca4",
             "locator": {
-              "end": 56,
+              "end": 72,
               "kind": "line_range",
-              "start": 1
+              "start": 8
             }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cae239eb383e7e6a0679cf80d64d182e2d36fc0f",
+            "content": "sha256:e5a702cb44501ff020ef129cc6c8e465327c207b1ae3dcd1b0c7f5ddf050b835",
+            "locator": {
+              "end": 40,
+              "kind": "line_range",
+              "start": 38
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/coordination.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1e006f679fb322bbd74e0377548c29c2a387f77d",
+            "content": "sha256:cface40d75bb6e5983aaafef9a299ed0f02e80bb1e889e068f862eb017bcef09",
+            "locator": {
+              "end": 15,
+              "kind": "line_range",
+              "start": 9
+            },
+            "path": "skills/l-01-agent-lifecycles/reference/message-handover.md"
           },
           "kind": "code"
         }

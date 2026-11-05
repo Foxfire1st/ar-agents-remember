@@ -6,7 +6,17 @@ A leaf Worker/Reviewer/Curator is started as one set, not Worker+Reviewer follow
 
 This account controls the named changed seams; contradictory earlier card wording below is retained only as historical evidence. Unchanged role duties and R117 file-only wake/report transport are preserved. Source inspection supplies no new runtime test, CODE verdict, review counter or acceptance.
 
-- A leaf Worker/Reviewer/Curator is started as one set, not Worker+Reviewer followed by Curator at freeze. Manager keeps whole-stage sync/closeout/integration/task/start boundaries and repairs own recording/address/input faults. Extra rounds beyond settings are requested from the task architect with the Worker property/construction account and recorded approval. Permission-held messages are product-owned for delivery; ordinary leaf peer artifacts are not couriered through Manager. [9]
+- A leaf Worker/Reviewer/Curator is started as one set, not Worker+Reviewer followed by Curator at freeze. Manager keeps whole-stage sync/closeout/integration/task/start boundaries and repairs own recording/address/input faults. Extra rounds beyond settings are requested from the task architect with the Worker property/construction account and recorded approval. Permission-held messages are product-owned for delivery; ordinary leaf peer artifacts are not couriered through Manager.
+
+Earlier caption detached from live reference 9: its original target declared the source text at `skills/l-01-agent-lifecycles/roles/manager.md` at original blob `3c2cfd97c8d64a0cd6245c1b87c6f6bd45457380`, lines 1–70. The caption above is retained as prose; the numbered clause below describes the current source.
+
+Retained authoring-row wording:
+
+Finding: Manager starts Worker, Reviewer and Curator individually at build, freeze and code PASS; ordinary peer handovers stay direct. It owns whole-stage transaction boundaries, repairs its own recording/address/input faults and asks the architect for beyond-settings rounds with the Worker's property-and-construction account.
+
+Anchor: `current role or template contract`
+
+Source: skills/l-01-agent-lifecycles/roles/manager.md:24-34; skills/l-01-agent-lifecycles/roles/manager.md:54-56; skills/l-01-agent-lifecycles/roles/manager.md:76-84
 ## Task-stage publication boundary
 
 Start, finalize and abandon publish the task stage and mirror the master row themselves. Manager does not follow those operations with a second status write. `task_doc set_status` remains the explicit correction route and the completion act for an organizational master; closeout/integration and acceptance ownership remain unchanged.
@@ -45,6 +55,10 @@ it before host creation. It consumes the worker's targeted-check
 report and curator's scoped onboarding handoff before the closeout transaction. Closeout and
 integration do not launch or require full quality, full tests, full memory quality, certification, or
 review; any explicitly requested operation remains owned by its existing lifecycle workflow.
+
+Current qualification: the retained clause “For each dependency-ready real leaf, the manager starts Worker, Reviewer and Curator as one set with native `role_start_set` on the `agents-remember-task` tool server,” describes its past source epoch. For each dependency-ready real leaf, the Manager starts Worker alone at build, Reviewer at the Worker freeze and Curator after code PASS, with individual `role_start` calls on `agents-remember-task`,
+
+Current qualification: the retained clause “It consumes the worker's targeted-check report and curator's scoped onboarding handoff before the closeout transaction. Closeout and integration do not launch or require full quality, full tests, full memory quality, certification, or review; any explicitly requested operation remains owned by its existing lifecycle workflow.” describes its past source epoch. It consumes the Worker's targeted-check report and Curator's complete onboarding/check handoff before the authorized closeout transaction. The normal Curator authoring pass includes full memory quality; optional full code-quality/test operations remain distinct and the transaction does not rerun the other seats' checks.
 
 The canonical Manager coordinates its own master through the retained role tools and exact task references. The leaf trio starts as a set; an Investigator has its separately admitted concern scope. A dashboard-started Manager needs no fabricated parent or Architect ID. Tool capability is not a grant to infer caller kind, adopt removed ambient authority or bypass a refusal.
 
@@ -109,6 +123,8 @@ This role card follows the transaction-only lifecycle boundary: the role reports
 
 The Manager no longer carries freezes, findings, verdicts or memory changes between a leaf's agents: it starts the Worker, Reviewer and Curator as one set, reads the leaf's state from reports and task records, hears from the leaf only on its named occasions (closeout readiness, rule-5/6 notices, ownership or authority, an extra round or pass, a disputed Curator code finding, a Manager-owned sync step), decides the gate and keeps closeout, integration, acceptance and landing order. Task-stage publication follows the native start/finalize/abandon operation; an explicit correction or organizational-master completion uses the admitted task_doc status operation. It gains the same harness-freedom paragraph.
 
+Current qualification: the retained clause “it starts the Worker, Reviewer and Curator as one set, reads the leaf's state from reports and task records” describes its past source epoch. it starts Worker, Reviewer and Curator individually at their admitted stages and reads the leaf's state from reports and task records
+
 ## 260928-MIK-R93 — questions received from children
 
 The Manager answers a child's developer question itself where its authority reaches and says the answer is its own, or passes it up unchanged with the originating role, task and agent id and its own recommendation apart; without a parent it puts it to the developer in its own chat. A child that waits at a permission prompt is reported at once with the permission as supplied or "not supplied", and the try-once-per-turn occasion applies until MIK-R100 lands. Developer answers travel down with the receiving agent's id and the quoted words, and every parent passes those three unchanged. Its own developer questions now go to its parent when it has one.
@@ -131,7 +147,17 @@ A Worker repairing an owned finding needs no plan, account or go-ahead from Mana
 
 - The role text's publication sentence names both moments in the role text itself — the claim and `In progress` before the start, the close after the landing and both pushes — and publishes nothing where the resolved memory lacks the file; the board `Status` and the refusal cases it routes to are stated in that file. [14]
 
-- Manager adds no pre-repair go-ahead, receives the clean-sync result for its closeout preview, and settles covered precedents before escalation. [13]
+- Manager adds no pre-repair go-ahead, receives the clean-sync result for its closeout preview, and settles covered precedents before escalation.
+
+Earlier caption detached from live reference 13: its original target declared the source text at `skills/l-01-agent-lifecycles/roles/manager.md` at original blob `3c2cfd97c8d64a0cd6245c1b87c6f6bd45457380`, lines 16–28. The caption above is retained as prose; the numbered clause below describes the current source.
+
+Retained authoring-row wording:
+
+Finding: Manager gives no prior go-ahead for a Worker repairing its own sealed finding; after a clean sync focused tests run once and closeout preview decides, while overlaps or failures require the exact repair and one Reviewer look. Before escalating, Manager applies a prior ruling of the same kind and names it in its record.
+
+Anchor: `current role or template contract`
+
+Source: skills/l-01-agent-lifecycles/roles/manager.md:24-24; skills/l-01-agent-lifecycles/roles/manager.md:54-54
 ### Repo-Internal References
 
 
@@ -182,36 +208,106 @@ independent reviewer rejection permits a successor.
 The Manager retains its master’s leaf diff, direct repair and transaction ownership. A check or investigation belonging to no leaf may be assigned to Investigator within the Manager’s admitted master; leaf checks remain with the actual Worker or Reviewer. A forbidden start is sent to the known parent, or named as a blocker without one. This added delegation permission does not require an Orchestrator above one master or transfer onboarding/code ownership.
 
 
-- This source owns the stated current Investigator scope or canonical vocabulary. [7]
+- This source owns the stated current Investigator scope or canonical vocabulary.
+
+Earlier caption detached from live reference 7: its original target declared the source text at `skills/l-01-agent-lifecycles/roles/manager.md` at original blob `3c2cfd97c8d64a0cd6245c1b87c6f6bd45457380`, lines 1–76. The caption above is retained as prose; the numbered clause below describes the current source.
+
+Retained authoring-row wording:
+
+Finding: The Manager may start an Investigator under its own sprint/master for a check belonging to no leaf, sends the scoped concern first to its returned ID, and keeps ordinary requirement interpretation and operational decisions within the intended promise.
+
+Anchor: `current role or template contract`
+
+Source: skills/l-01-agent-lifecycles/roles/manager.md:38-38
 
 ## Refreshed current evidence
 
 
-- One manager owns one canonical master and the complete leaf closeout chain. [1]
+- One manager owns one canonical master and the complete leaf closeout chain.
+
+Earlier caption detached from live reference 1: its original target declared the source text at `skills/l-01-agent-lifecycles/roles/manager.md` at original blob `3c2cfd97c8d64a0cd6245c1b87c6f6bd45457380`, lines 1–76. The caption above is retained as prose; the numbered clause below describes the current source.
+
+Retained authoring-row wording:
+
+Finding: One Manager coordinates one canonical master, reads complete changed-file evidence and both verdicts, and retains closeout, integration, acceptance and landing order without editing Curator-owned memory or substituting a finished turn for acceptance.
+
+Anchor: `current role or template contract`
+
+Source: skills/l-01-agent-lifecycles/roles/manager.md:8-14; skills/l-01-agent-lifecycles/roles/manager.md:32-34; skills/l-01-agent-lifecycles/roles/manager.md:74-74
 
 
-> Retained historical citation wording: - Hosted child dispatch uses leaf document, role, and complete brief without retained occupant ids. [2]
+> Retained historical citation wording: - Hosted child dispatch uses leaf document, role, and complete brief without retained occupant ids.
 
 
-- Manager starts permitted roles on its own canonical master through role_start; a leaf's Worker, Reviewer and Curator start together through role_start_set. Canonical task references and the chosen request ID select the assignment, and the start writes the complete handover and returns the agent ID and artifact paths for retained addressing. [2]
+- Manager starts permitted roles on its own canonical master through role_start; a leaf's Worker, Reviewer and Curator start together through role_start_set. Canonical task references and the chosen request ID select the assignment, and the start writes the complete handover and returns the agent ID and artifact paths for retained addressing.
+
+Earlier caption detached from live reference 2: its original target declared the source text at `skills/l-01-agent-lifecycles/roles/manager.md` at original blob `3c2cfd97c8d64a0cd6245c1b87c6f6bd45457380`, lines 1–76; `skills/l-01-agent-lifecycles/operations/coordination.md` at original blob `dee346f3da2aa768e464f5895f9489da5f4ad6bd`, lines 8–12. The caption above is retained as prose; the numbered clause below describes the current source.
+
+Retained authoring-row wording:
+
+Finding: The Manager starts Worker alone at build, Reviewer at Worker freeze and Curator after code PASS using individual role_start calls under its canonical master. Returned IDs, report and handover paths bind each assignment and reconcile an unknown start through its original request ID.
+
+Anchor: `current role or template contract`
+
+Source: skills/l-01-agent-lifecycles/roles/manager.md:24-28; skills/l-01-agent-lifecycles/operations/coordination.md:8-13
 
 
-> Retained historical citation wording: - The leaf loop sequences builder, reviewer, exact-packet/adjudication curator intake, closeout, integration, and cleanup duties. [3]
+> Retained historical citation wording: - The leaf loop sequences builder, reviewer, exact-packet/adjudication curator intake, closeout, integration, and cleanup duties.
 
 
-- The Manager starts the Worker, Reviewer and Curator as one role_start_set; their freeze, finding, passed-code input and memory-verdict handovers run directly between the three seats. Curator intake remains bound to the leaf task, approved version-bound requirement packets, the exact passed freeze and both producers' requirement-shaped hand-off items. Manager reads the reports and both verdicts, decides the gate and retains closeout, integration, task-stage publication, acceptance and landing order. [3]
+- The Manager starts the Worker, Reviewer and Curator as one role_start_set; their freeze, finding, passed-code input and memory-verdict handovers run directly between the three seats. Curator intake remains bound to the leaf task, approved version-bound requirement packets, the exact passed freeze and both producers' requirement-shaped hand-off items. Manager reads the reports and both verdicts, decides the gate and retains closeout, integration, task-stage publication, acceptance and landing order.
+
+Earlier caption detached from live reference 3: its original target declared the source text at `skills/l-01-agent-lifecycles/roles/manager.md` at original blob `3c2cfd97c8d64a0cd6245c1b87c6f6bd45457380`, lines 1–76; `skills/l-01-agent-lifecycles/operations/coordination.md` at original blob `dee346f3da2aa768e464f5895f9489da5f4ad6bd`, lines 8–12; `skills/l-01-agent-lifecycles/roles/curator.md` at original blob `8a4ef9dbf8f3a76f168d50666f6479717261ab69`, lines 24–31. The caption above is retained as prose; the numbered clause below describes the current source.
+
+Retained authoring-row wording:
+
+Finding: Normal leaf starts are individual stages: Worker at build, Reviewer at freeze and Curator after code PASS. Peer candidate, producer-list and memory handovers remain direct; Curator receives candidate-bound inputs and the Manager reads both verdicts and owns gate and transaction decisions.
+
+Anchor: `current role or template contract`
+
+Source: skills/l-01-agent-lifecycles/roles/manager.md:24-34; skills/l-01-agent-lifecycles/operations/coordination.md:12-18; skills/l-01-agent-lifecycles/roles/curator.md:24-35
 
 
 
-- Master exit and handover use durable verdict/packet evidence and structural ownership. [4]
+- Master exit and handover use durable verdict/packet evidence and structural ownership.
+
+Earlier caption detached from live reference 4: its original target declared the source text at `skills/l-01-agent-lifecycles/roles/manager.md` at original blob `3c2cfd97c8d64a0cd6245c1b87c6f6bd45457380`, lines 1–76. The caption above is retained as prose; the numbered clause below describes the current source.
+
+Retained authoring-row wording:
+
+Finding: The Manager's result contract names its rulings, requirement-change and status records, developer-decision and finished-or-unfinishable report messages, exact handover evidence and pending questions; its boundary keeps task truth and paired Git publication with their existing owners.
+
+Anchor: `current role or template contract`
+
+Source: skills/l-01-agent-lifecycles/roles/manager.md:68-74
 
 
 
-- Structural parent/child messages are the role's communication path. [5]
+- Structural parent/child messages are the role's communication path.
+
+Earlier caption detached from live reference 5: its original target declared the source text at `skills/l-01-agent-lifecycles/roles/manager.md` at original blob `3c2cfd97c8d64a0cd6245c1b87c6f6bd45457380`, lines 1–76. The caption above is retained as prose; the numbered clause below describes the current source.
+
+Retained authoring-row wording:
+
+Finding: Manager sends developer-needed matters to the recorded parent or instructed reporting recipient, retains ordinary operational rulings, records undelivered matters and continues independent work; the final report-path return uses the parent role with task references.
+
+Anchor: `current role or template contract`
+
+Source: skills/l-01-agent-lifecycles/roles/manager.md:60-66
 
 
 
-- Manager dispatch carries each leaf's one primary requirement revision, with inherited or adjacent requirements remaining constraints, and preserves stable requirement and finding IDs while keeping implementation, review, curation and publication status distinct. [6]
+- Manager dispatch carries each leaf's one primary requirement revision, with inherited or adjacent requirements remaining constraints, and preserves stable requirement and finding IDs while keeping implementation, review, curation and publication status distinct.
+
+Earlier caption detached from live reference 6: its original target declared the source text at `skills/l-01-agent-lifecycles/roles/manager.md` at original blob `3c2cfd97c8d64a0cd6245c1b87c6f6bd45457380`, lines 1–76. The caption above is retained as prose; the numbered clause below describes the current source.
+
+Retained authoring-row wording:
+
+Finding: Each leaf has one primary requirement revision; adjacent revisions remain constraints. The Manager inspects the complete changed-file diff and both verdicts, preserves stable requirement/finding IDs and distinguishes implementation, review, curation and publication.
+
+Anchor: `current role or template contract`
+
+Source: skills/l-01-agent-lifecycles/roles/manager.md:12-14; skills/l-01-agent-lifecycles/roles/manager.md:32-34
 
 ## Stage Boundary
 
@@ -224,11 +320,54 @@ The review budget is the settings number `orchestration.loops.defaults.maxRounds
 ## Current Source Evidence
 
 
-- Current settings-budget, recorded approval and preserved stage/ownership boundaries are carried by this canonical instruction source. [8]
+- Current settings-budget, recorded approval and preserved stage/ownership boundaries are carried by this canonical instruction source.
+
+Earlier caption detached from live reference 8: its original target declared the source text at `skills/l-01-agent-lifecycles/roles/manager.md` at original blob `3c2cfd97c8d64a0cd6245c1b87c6f6bd45457380`, lines 1–76. The caption above is retained as prose; the numbered clause below describes the current source.
+
+Retained authoring-row wording:
+
+Finding: The Manager records approval for a round beyond the settings limit, sends developer-reserved changes upward, and owns stage boundaries and repair of its own mistaken records or addresses; covered correct writes use the named recovery route.
+
+Anchor: `current role or template contract`
+
+Source: skills/l-01-agent-lifecycles/roles/manager.md:16-16; skills/l-01-agent-lifecycles/roles/manager.md:54-66; skills/l-01-agent-lifecycles/roles/manager.md:76-84
 
 
-- Native operations publish mirrored task stage; explicit correction and organizational-master completion retain task_doc ownership. [10]
+- Native operations publish mirrored task stage; explicit correction and organizational-master completion retain task_doc ownership.
 
-- Adds an express prohibition on completing another agent’s task step; coordination, gate and publication powers remain unchanged. [11]
+Earlier caption detached from live reference 10: its original target declared the source text at `skills/l-01-agent-lifecycles/roles/manager.md` at original blob `3c2cfd97c8d64a0cd6245c1b87c6f6bd45457380`, lines 1–70. The caption above is retained as prose; the numbered clause below describes the current source.
+
+Retained authoring-row wording:
+
+Finding: Start, finalize and abandon publish task stage and mirror it into the master row; explicit status correction and organizational-master completion use task_doc set_status. The Manager also writes the master parts changed by each start and landing in that turn.
+
+Anchor: `current role or template contract`
+
+Source: skills/l-01-agent-lifecycles/roles/manager.md:32-34
+
+- Adds an express prohibition on completing another agent’s task step; coordination, gate and publication powers remain unchanged.
+
+Earlier caption detached from live reference 11: its original target declared the source text at `skills/l-01-agent-lifecycles/roles/manager.md` at original blob `3c2cfd97c8d64a0cd6245c1b87c6f6bd45457380`, lines 8–30. The caption above is retained as prose; the numbered clause below describes the current source.
+
+Retained authoring-row wording:
+
+Finding: The Manager sets no step for another agent; a Worker repairs its own sealed finding directly, and clean sync versus overlap/failing focused tests follows the separately stated review rule.
+
+Anchor: `current role or template contract`
+
+Source: skills/l-01-agent-lifecycles/roles/manager.md:24-24
 
 - Adds an express prohibition on completing another agent’s task step; coordination, gate and publication powers remain unchanged. [12]
+
+- One Manager coordinates one canonical master, reads complete changed-file evidence and both verdicts, and retains closeout, integration, acceptance and landing order without editing Curator-owned memory or substituting a finished turn for acceptance. [1]
+- The Manager starts Worker alone at build, Reviewer at Worker freeze and Curator after code PASS using individual role_start calls under its canonical master. Returned IDs, report and handover paths bind each assignment and reconcile an unknown start through its original request ID. [2]
+- Normal leaf starts are individual stages: Worker at build, Reviewer at freeze and Curator after code PASS. Peer candidate, producer-list and memory handovers remain direct; Curator receives candidate-bound inputs and the Manager reads both verdicts and owns gate and transaction decisions. [3]
+- The Manager's result contract names its rulings, requirement-change and status records, developer-decision and finished-or-unfinishable report messages, exact handover evidence and pending questions; its boundary keeps task truth and paired Git publication with their existing owners. [4]
+- Manager sends developer-needed matters to the recorded parent or instructed reporting recipient, retains ordinary operational rulings, records undelivered matters and continues independent work; the final report-path return uses the parent role with task references. [5]
+- Each leaf has one primary requirement revision; adjacent revisions remain constraints. The Manager inspects the complete changed-file diff and both verdicts, preserves stable requirement/finding IDs and distinguishes implementation, review, curation and publication. [6]
+- The Manager may start an Investigator under its own sprint/master for a check belonging to no leaf, sends the scoped concern first to its returned ID, and keeps ordinary requirement interpretation and operational decisions within the intended promise. [7]
+- The Manager records approval for a round beyond the settings limit, sends developer-reserved changes upward, and owns stage boundaries and repair of its own mistaken records or addresses; covered correct writes use the named recovery route. [8]
+- Manager starts Worker, Reviewer and Curator individually at build, freeze and code PASS; ordinary peer handovers stay direct. It owns whole-stage transaction boundaries, repairs its own recording/address/input faults and asks the architect for beyond-settings rounds with the Worker's property-and-construction account. [9]
+- Start, finalize and abandon publish task stage and mirror it into the master row; explicit status correction and organizational-master completion use task_doc set_status. The Manager also writes the master parts changed by each start and landing in that turn. [10]
+- The Manager sets no step for another agent; a Worker repairs its own sealed finding directly, and clean sync versus overlap/failing focused tests follows the separately stated review rule. [11]
+- Manager gives no prior go-ahead for a Worker repairing its own sealed finding; after a clean sync focused tests run once and closeout preview decides, while overlaps or failures require the exact repair and one Reviewer look. Before escalating, Manager applies a prior ruling of the same kind and names it in its record. [13]

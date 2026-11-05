@@ -14,7 +14,9 @@
 
 The landed IAS README now documents ordinary isolated pytest development, explicit integration selection and genuine Dagger-only certification. Its lines269–271 still contain superseded 90%/CRAP30 wording at d3610903; the current policy is diagnostic coverage and production CRAP20 review as declared by AGENTS.md and docs/design/python-pytest-bootstrap.md. This mismatch is a documentation defect, not authority to restore a floor. The primary implementation checkout carries the correction for subsequent delivery.
 
-The README's `<h3>` headline now frames Agents Remember in two parts — git-verified records of what coding agents know, and a control plane for what they do — sharpening the earlier single-line "durable" framing toward the records-plus-control-plane positioning. Below it, the README uses `## Core Features` as the fast product pitch. It frames Agents Remember as project memory coding agents can verify and act on, shows the source-file to onboarding-unit mapping, and names the user-facing features a skimming reader needs in the first thirty seconds: path-addressed memory, Git-proven freshness, memory that lands with code through external-memory ledgers and dual worktrees, repo-owned `system/` behavior, and harness-ready first-run packages. Its `Search that finds, not decides` bullet and its Docker note still offer the optional semantic-memory and code-graph providers; that is residual source wording, because the two search providers and their public retrieval and setup surfaces are retired and it describes no available capability. Its `Harness-ready first run` bullet still says starter packages carry the native MCP, skills, hooks, rules and instruction files, which the Quickstart's statement that no starter package, rendered settings or skill folder is copied contradicts; that table sentence is retained source text, not a corrected claim. The previous `## Core Model` section carried the same conceptual spine but was less effective as a public feature pitch.
+The README's `<h3>` headline now frames Agents Remember in two parts — git-verified records of what coding agents know, and a control plane for what they do — sharpening the earlier single-line "durable" framing toward the records-plus-control-plane positioning. Below it, the README uses `## Core Features` as the fast product pitch. It frames Agents Remember as project memory coding agents can verify and act on, shows the source-file to onboarding-unit mapping, and names the user-facing features a skimming reader needs in the first thirty seconds: path-addressed memory, Git-proven freshness, memory that lands with code through external-memory ledgers and dual worktrees, repo-owned `system/` behavior, and harness-ready first-run packages. Historical source wording retained verbatim (README.md blob 2ed65e524afd1f228f7bab90bc65c309a6926862; detached from live citation authority): Its `Search that finds, not decides` bullet and its Docker note still offer the optional semantic-memory and code-graph providers; that is residual source wording, because the two search providers and their public retrieval and setup surfaces are retired and it describes no available capability.
+
+The current Core Features bullet instead names by-path evidence and explicitly retires the former providers. Converted cards, records and Curator rows replace the old ledger account; the retained starter-package bullet still conflicts with Quickstart.  Its `Harness-ready first run` bullet still says starter packages carry the native MCP, skills, hooks, rules and instruction files, which the Quickstart's statement that no starter package, rendered settings or skill folder is copied contradicts; that table sentence is retained source text, not a corrected claim. The previous `## Core Model` section carried the same conceptual spine but was less effective as a public feature pitch.
 
 The first-run model the page now states is neither an MCP install of skills nor a copied
 starter package. Quickstart step 1 is the MCP authority settings file — copy
@@ -107,15 +109,27 @@ No external documentation is needed to prove the root README's current structure
 
 The README routes readers into the split documentation tree and gives the current runtime/source layout.
 
-- The README now has a `## Core Features` section that replaces `## Core Model`; it shows the source-file to onboarding-unit mapping, pitches path-addressed memory, Git-proven freshness, external-memory ledgers and dual worktrees, repo-owned `system/` behavior, and harness-ready first-run packages, then links to `docs/features.md`. Its optional semantic/code-graph discovery and its Docker/provider wording are residual source text: the two search providers are retired, so neither describes an available capability. Its retained `Harness-ready first run` bullet still says starter packages carry skills, hooks, rules and instruction files, which the Quickstart's no-copied-package statement contradicts. Anchor: `## Core Features` [1]
-- The README shows a `## What It Looks Like In Practice` mini-transcript: a source file's by-path onboarding note, the task-start `context_packet`/`memory_quality_check` calls, and the read-then-propose-then-refresh loop. [2]
+Historical source account (detached from live reference 1; README.md blob 2ed65e524afd1f228f7bab90bc65c309a6926862):
+
+- The README now has a `## Core Features` section that replaces `## Core Model`; it shows the source-file to onboarding-unit mapping, pitches path-addressed memory, Git-proven freshness, external-memory ledgers and dual worktrees, repo-owned `system/` behavior, and harness-ready first-run packages, then links to `docs/features.md`. Its optional semantic/code-graph discovery and its Docker/provider wording are residual source text: the two search providers are retired, so neither describes an available capability. Its retained `Harness-ready first run` bullet still says starter packages carry skills, hooks, rules and instruction files, which the Quickstart's no-copied-package statement contradicts. Anchor: `## Core Features`
+
+- Core Features now names external Markdown/JSON memory, path-derived evidence, retired search providers, paired worktrees, structured records and Curator judgments with exact-tree publication checks; memory.md is an ignored attribution cache. The retained starter-package bullet still contradicts Quickstart's no-copied-package statement.
+Historical source account (detached from live reference 2; README.md blob 2ed65e524afd1f228f7bab90bc65c309a6926862):
+
+- The README shows a `## What It Looks Like In Practice` mini-transcript: a source file's by-path onboarding note, the task-start `context_packet`/`memory_quality_check` calls, and the read-then-propose-then-refresh loop.
+
+- The by-path mini-transcript reads source and card together; its current continuation puts Curator card/sidecar/record reconciliation and the recomputed worklist, validator and exact-tree gate before publication.
 - The README has a `## Live Demo` section stating Agents Remember runs on itself and linking the project's own published memory repo (`Foxfire1st/ar-agents-remember`) as a live, inspectable by-path onboarding example. [3]
 
 - The Requirements section names Python 3.14, the bounded package range, the historical published 3.13 artifact, and the canonical repository-development runtime documentation. [4]
 
 - The quickstart is a short, harness-agnostic three-step agent-driven flow: write the MCP authority settings file from `examples/mcp/settings.example.json`, register the locally built wheel with `uvx --config` and restart the harness once, then make one `role_start(role="bootstrap", request_id="<UUID>")` call whose dashboard chat continues setup; no starter package, rendered settings or skill folder is copied. Anchor: `## Quickstart`; `uvx`; `role_start`; `bootstrap` [5]
 
-- The README routes readers first to the new Features tour, then to setup, concepts, workflows, benchmark methodology, guides, settings, and skills documentation under `docs/`. [6]
+Historical source account (detached from live reference 6; README.md blob 2ed65e524afd1f228f7bab90bc65c309a6926862):
+
+- The README routes readers first to the new Features tour, then to setup, concepts, workflows, benchmark methodology, guides, settings, and skills documentation under `docs/`.
+
+- The documentation list starts with Features and now explicitly links the Knowledge system reference alongside getting started, concepts, architecture, workflows, benchmarks, guides, settings and served skills.
 
 
 - The `## Run The Dashboard` section: local-wheel build/sync and install first-class, discovery-backed flag-free `dashboard`, daemon mode + autoStart, and the historical published pin named as the 3.13 artifact. [7]
@@ -130,7 +144,9 @@ The README routes readers into the split documentation tree and gives the curren
 
 
 
-> Retained earlier citation wording: - `docs/features.md` carries the full feature tour, including the new table of contents plus harness-native setup and operational guardrails for MCP authority, baseline adoption, branch carryover, cross-repo gates, benchmarks, and source quality tooling. [13]
+Historical source account (detached from live reference 13; docs/features.md blob 63b36c83fdfd0d75126ab6e73a7a3931e340b9ee):
+
+> Retained earlier citation wording: - `docs/features.md` carries the full feature tour, including the new table of contents plus harness-native setup and operational guardrails for MCP authority, baseline adoption, branch carryover, cross-repo gates, benchmarks, and source quality tooling.
 
 
 
@@ -239,4 +255,13 @@ The following source-epoch wording is retained as history. It does not restore a
 - The docs index now includes `docs/features.md` as the concentrated product tour alongside getting-started, concepts, workflows, install guides, guides, and reference pages. [12]
 
 
-- `docs/features.md` carries the full feature tour, including the new table of contents plus harness-native setup and operational guardrails for MCP authority, baseline adoption, branch carryover, cross-repo gates, benchmarks, and source quality tooling. [13]
+Historical source account (detached from live reference 13; docs/features.md blob 63b36c83fdfd0d75126ab6e73a7a3931e340b9ee):
+
+- `docs/features.md` carries the full feature tour, including the new table of contents plus harness-native setup and operational guardrails for MCP authority, baseline adoption, branch carryover, cross-repo gates, benchmarks, and source quality tooling.
+
+- The feature tour describes external Markdown/JSON memory, converted cards and sidecars, shared records and Curator judgment history; it retains the setup and operational-guardrail tour and the residual present-tense provider-index isolation section.
+
+- Core Features now names external Markdown/JSON memory, path-derived evidence, retired search providers, paired worktrees, structured records and Curator judgments with exact-tree publication checks; memory.md is an ignored attribution cache. The retained starter-package bullet still contradicts Quickstart's no-copied-package statement. [1]
+- The by-path mini-transcript reads source and card together; its current continuation puts Curator card/sidecar/record reconciliation and the recomputed worklist, validator and exact-tree gate before publication. [2]
+- The documentation list starts with Features and now explicitly links the Knowledge system reference alongside getting started, concepts, architecture, workflows, benchmarks, guides, settings and served skills. [6]
+- The feature tour describes external Markdown/JSON memory, converted cards and sidecars, shared records and Curator judgment history; it retains the setup and operational-guardrail tour and the residual present-tense provider-index isolation section. [13]

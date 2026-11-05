@@ -1,0 +1,41 @@
+{
+  "path": "mcp/tests/test_handoff_check.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Producer, proof, record-link and candidate-field cases distinguish checker validation from writer judgment.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bb65f7fb8ca6bc338d546860ad5c76203b459404",
+            "content": "sha256:4a022aa482ea389219f841d7f137c79b13285403e8e777b5485205b4b8c21997",
+            "locator": {
+              "end": 207,
+              "kind": "line_range",
+              "start": 43
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The named-tree and byte-snapshot cases assert read-only behavior and invocation-error status.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bb65f7fb8ca6bc338d546860ad5c76203b459404",
+            "content": "sha256:1564d0f0f3b4d9c8809b4685e8756ff07bc7318599a751a2bf80d0e21d35ce3b",
+            "locator": {
+              "end": 260,
+              "kind": "line_range",
+              "start": 210
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

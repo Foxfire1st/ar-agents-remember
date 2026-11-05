@@ -35,6 +35,8 @@ resolve the conflict at selection time.
 
 **Retained core metadata.** The six `core` entries still name authority, invariants, lifecycle-frame, loop, acceptance and launcher sources. This map is inert metadata for compiler compatibility: the current native route injects no shared core block. The lifecycle-frame purpose names task worktree records and the landing chain contract lifecycle, not ambient adoption.
 
+Current qualification: the retained clause “The six `core` entries still name authority, invariants, lifecycle-frame, loop, acceptance and launcher sources.” describes its past source epoch. The seven `core` entries name authority, invariants, lifecycle-frame, loop, acceptance, launcher and the separately delivered every-role digest.
+
 **`roles` is the per-seat registry and is where the selection actually happens.** Each of the ten
 entries carries `file` (the role source under `roles/`), `altitude`, `tools` (the tool ids the seat
 may use), `skills` (the skill pointers it may reference), `seat` (the one-line statement of what the
@@ -55,6 +57,8 @@ across servers." `launcher` is the ambient launcher's composition: `is_role: fal
 condition it belongs to, `core/launcher.md` as its instruction source, the `launcher` core block,
 orientation and coordination as its operations, and `architect-brief.md` as its one template. The `references` block retains rationale, rulings, lenses, criteria and templates and contains fifteen named step details plus visual-explainer guidance. Entries carry `injected: false`; step details declare their reader roles and read step, rather than entering the inline instruction body.
 
+Current qualification: the retained clause “contains fifteen named step details plus visual-explainer guidance.” describes its past source epoch. The current references registry has 34 entries, including 28 named step details; visual-explainer guidance remains outside step_detail.
+
 **The identity keys say what the file is and where its authority sits.** `schema` fixes the document
 vocabulary at `ar-role-capsule-composition/v1`; `authority` names `SKILL.md` as the thin router and
 this file as metadata only; `entry_router` names the router file a session enters through;
@@ -71,6 +75,8 @@ direction; the parser refuses a manifest where the two disagree rather than lett
 resolve the conflict at selection time.
 
 **`core` names the block sources the corpus holds, but a dispatched role seat composes none of them into its capsule.** The manifest's `composition_order` is exactly `role` then `operation` (canonical manifest `600-606`); the frozen core map remains metadata for compiler compatibility and shared core blocks are not injected. `models/role_capsules/selection.py:158-163` returns `core_blocks=()` for a dispatched role seat (developer ruling 2026-09-17): the manifest declaration tells a reader where the doctrine lives, it is not what the seat is sent, and the role file states every obligation that binds the seat.
+
+Current qualification: the retained clause “the role file states every obligation that binds the seat.” describes its past source epoch. Current binding instructions include the selected role and operation, the shared every-role digest and each detail delivered at its named step; the role file alone is not the full obligation surface.
 
 **`roles` is the per-seat registry and is where the selection actually happens.** Each of the ten
 entries carries `file` (the role source under `roles/`), `altitude`, `tools` (the tool ids the seat
@@ -160,6 +166,8 @@ Operations now declare `audience`: `sections` for the eight marked operation sou
 
 The references registry now includes fourteen extracted detail files, the shared writing profile and optional visual-explainer guidance, in addition to its earlier reference trees. Fifteen entries declare `step_detail: true`, step text and eligible roles, with `injected: false`; they are separate named-step material, not a second instruction authority. Visual-explainer guidance is reference-only without step_detail. Registration is not proof of a real start or a read at the named step.
 
+Current qualification: the retained clause “The references registry now includes fourteen extracted detail files, the shared writing profile and optional visual-explainer guidance, in addition to its earlier reference trees. Fifteen entries declare `step_detail: true`, step text and eligible roles, with `injected: false`; they are separate named-step material, not a second instruction authority.” describes its past source epoch. The current references registry contains 34 entries, 28 marked `step_detail: true`, with explicit step text and role audiences where declared; the referenced files remain non-injected material read at their named steps, not another instruction authority.
+
 Retained core metadata remains non-injected for native role capsules; the ten-role/nine-operation vocabulary is distinct from the eight-role native launcher roster. Requested tools are metadata, not grants; public start admission owns may-start permission.
 
 
@@ -183,7 +191,13 @@ install-time corpus anchor, and the corpus test that pins the registry wiring.
 
 
 
-- Retained core-source map names task worktree records and the landing contract, not session adoption. [4]
+Retained authoring-row wording:
+
+Finding: Retained core-source map names task worktree records and the landing contract, not session adoption.
+
+Anchor:
+
+Source: skills/l-01-agent-lifecycles/composition-manifest.json:139-167; skills/l-01-agent-lifecycles/core/lifecycle-frame.md:3-16
 
 
 
@@ -204,15 +218,37 @@ install-time corpus anchor, and the corpus test that pins the registry wiring.
 
 - The six block names the corpus holds (including the launcher block authored here so the registry holds only roles); the manifest composes role then operation only, and a dispatched seat receives no shared core block (`models/role_capsules/selection.py:158-163` returns `core_blocks=()`).
 
-- The role registry itself and the two role entries that show the per-seat shape. [18]
+Retained authoring-row wording:
+
+Finding: The role registry itself and the two role entries that show the per-seat shape.
+
+Anchor:
+
+Source: skills/l-01-agent-lifecycles/composition-manifest.json:169-568
 
 
-- The per-role entry fields a consumer selects on: the altitude, the tool ids, and the one-line seat statement. [19]
+Retained authoring-row wording:
+
+Finding: The per-role entry fields a consumer selects on: the altitude, the tool ids, and the one-line seat statement.
+
+Anchor:
+
+Source: skills/l-01-agent-lifecycles/composition-manifest.json:169-237; skills/l-01-agent-lifecycles/composition-manifest.json:490-568
 
 - The four template lists that register the curator hand-off list, one per seat on either side of that contract (each anchor quotes a sibling entry of the same list, because the shared file name appears in all four). [20]
 - The launcher entry: a routing condition with its own core block, its operations, and the brief it compiles. [21]
 
-- The reference-only trees that never enter a capsule, the composition order, and the notes that state what the file is not. [22]
+Past-epoch caption (retained wording): - The reference-only trees that never enter a capsule, the composition order, and the notes that state what the file is not.
+
+Original-target custody: `skills/l-01-agent-lifecycles/composition-manifest.json`, blob `55259ddca41116db3f52f669fff07974e16a0642`, declared “"references": { "curator-authoring-d301": { "source": "reference/curator-authoring-d301.md", "description": "Named-step authoring procedures; capsule retains inputs, whole output and step limits.", "injected": false, "step_detail": true, "s”. The earlier caption is detached from the live number; the current table carries only the current clause and target.
+
+Retained authoring-row wording:
+
+Finding: The manifest records reference material and declared named-step details with injected:false, composes role then operation, and keeps shared core blocks out of that stream. The shared digest travels beside the capsule in its first message.
+
+Anchor:
+
+Source: skills/l-01-agent-lifecycles/composition-manifest.json:584-954
 
 
 - The consumer that parses these bytes: the schema constant it checks against, and the pure parser that builds the typed manifest and refuses a vocabulary disagreement. [23]
@@ -235,7 +271,17 @@ No meaningful cross-repo references found.
 The manifest exposes canonical Investigator among the eight native roles, requests the seven Investigator reading tools and preserves explicit Projects/sprint/master launch scope. The single earlier spelling is read normalization outside this routing metadata, not another manifest role. Registry/compiler vocabulary is not a permission grant.
 
 
-- The manifest retains canonical Investigator with its seven requested reading tools, and separately names Bootstrap; the current public LauncherRole roster has eight canonical roles plus the system-specialist alias, not a second Investigator role. [14]
+Past-epoch caption (retained wording): - The manifest retains canonical Investigator with its seven requested reading tools, and separately names Bootstrap; the current public LauncherRole roster has eight canonical roles plus the system-specialist alias, not a second Investigator role.
+
+Original-target custody: `skills/l-01-agent-lifecycles/composition-manifest.json`, blob `55259ddca41116db3f52f669fff07974e16a0642`, declared “"investigator": { "file": "roles/investigator.md", "altitude": "sprint", "tools": [ "context_packet", "read_ar_files", "role_message", "knowledge_diff", "knowledge_read", "task_doc", "worktree_status" ], "skills": [ "l-01-agent-lifecycles" ”; `mcp/src/agents_remember/models/role_launcher.py`, blob `d2551603e8f9ee3fd9a1e650477fd1dacb08f5b9`, declared “LauncherRole = Literal[ "architect", "investigator", "system-specialist", "orchestrator", "manager", "worker", "reviewer", "curator", "bootstrap", ]”. The earlier caption is detached from the live number; the current table carries only the current clause and target.
+
+Retained authoring-row wording:
+
+Finding: The manifest retains canonical Investigator with seven declared tool IDs and separately names Bootstrap; the current public LauncherRole roster has eight canonical roles plus the system-specialist alias, not a second Investigator role.
+
+Anchor:
+
+Source: skills/l-01-agent-lifecycles/composition-manifest.json:490-568; mcp/src/agents_remember/models/role_launcher.py:23-68
 
 
 
@@ -251,16 +297,38 @@ The manifest exposes canonical Investigator among the eight native roles, reques
 - The nine operation blocks, each with its source, purpose and the roles that may run it. [3]
 
 
-- The role registry itself and the two role entries that show the per-seat shape. [5]
+Retained authoring-row wording:
+
+Finding: The role registry itself and the two role entries that show the per-seat shape.
+
+Anchor:
+
+Source: skills/l-01-agent-lifecycles/composition-manifest.json:169-568
 
 
-- The per-role entry fields a consumer selects on: the altitude, the tool ids, and the one-line seat statement. [6]
+Retained authoring-row wording:
+
+Finding: The per-role entry fields a consumer selects on: the altitude, the tool ids, and the one-line seat statement.
+
+Anchor:
+
+Source: skills/l-01-agent-lifecycles/composition-manifest.json:169-237; skills/l-01-agent-lifecycles/composition-manifest.json:490-568
 
 
 - The launcher entry: a routing condition with its own core block, its operations, and the brief it compiles. [8]
 
 
-- The reference-only trees that never enter a capsule, the composition order, and the notes that state what the file is not. [9]
+Past-epoch caption (retained wording): - The reference-only trees that never enter a capsule, the composition order, and the notes that state what the file is not.
+
+Original-target custody: `skills/l-01-agent-lifecycles/composition-manifest.json`, blob `55259ddca41116db3f52f669fff07974e16a0642`, declared “"references": { "curator-authoring-d301": { "source": "reference/curator-authoring-d301.md", "description": "Named-step authoring procedures; capsule retains inputs, whole output and step limits.", "injected": false, "step_detail": true, "s”. The earlier caption is detached from the live number; the current table carries only the current clause and target.
+
+Retained authoring-row wording:
+
+Finding: The manifest records reference material and declared named-step details with injected:false, composes role then operation, and keeps shared core blocks out of that stream. The shared digest travels beside the capsule in its first message.
+
+Anchor:
+
+Source: skills/l-01-agent-lifecycles/composition-manifest.json:584-954
 
 
 ## Inherited Source-Epoch Commentary
@@ -505,17 +573,47 @@ Inherited reference 9 commentary (not a revalidated target):
 The byte-equal package copy is a distribution carrier, not an independent role, task or permission authority. Whole-file source evidence does not certify inherited statements, execution, grading or the whole card.
 
 
-- The authored source owns this contract; the distribution copy is not a separate authority. [27]
+Retained authoring-row wording:
+
+Finding: The authored source owns this contract; the distribution copy is not a separate authority.
+
+Anchor:
+
+Source: skills/l-01-agent-lifecycles/composition-manifest.json
 
 
 
 - The earlier audience-selection change added audience fields for all nine operations and fifteen reference entries, fourteen then marked step_detail. Those counts describe that change before the Bootstrap failure-state detail was added; they are not the current registry totals. [28]
 
 
-- Adds audience selection to all nine operations and marks fifteen of the twenty-one reference entries `step_detail`. [29]
+- Adds audience selection to all nine operations and marks fifteen of the twenty-one reference entries `step_detail`.
+
+Source epoch: `skills/l-01-agent-lifecycles/composition-manifest.json` at Git blob `2f3ce46a32a38d86f474252bb23d8081e91f0a6e`. The preceding retained wording is detached from the live citation number; the current clause is supported separately.
+
+Past-epoch caption (retained wording): - All nine operation entries declare audience selection. The current reference registry contains 22 entries, 16 marked step_detail; these are current totals, distinct from the earlier audience-change counts.
+
+Original-target custody: `skills/l-01-agent-lifecycles/composition-manifest.json`, blob `55259ddca41116db3f52f669fff07974e16a0642`, declared “"operations": { "orientation": { "source": "operations/orientation.md", "purpose": "Read the supplied role binding and durable inputs; ask only for missing taskless target facts.", "audience": "sections", "applies_to_roles": [ "architect", ”; `skills/l-01-agent-lifecycles/composition-manifest.json`, blob `55259ddca41116db3f52f669fff07974e16a0642`, declared “"references": { "curator-authoring-d301": { "source": "reference/curator-authoring-d301.md", "description": "Named-step authoring procedures; capsule retains inputs, whole output and step limits.", "injected": false, "step_detail": true, "s”. The earlier caption is detached from the live number; the current table carries only the current clause and target.
+
+Retained authoring-row wording:
+
+Finding: All nine operation entries declare audience selection. The current references registry contains 34 entries, 28 marked step_detail; the shared digest is declared separately in core metadata. These are parsed registry declarations, not a compiled capsule or execution result.
+
+Anchor:
+
+Source: skills/l-01-agent-lifecycles/composition-manifest.json:38-137; skills/l-01-agent-lifecycles/composition-manifest.json:584-954
 
 
-- The earlier audience-selection account retains its recorded fifteen reference entries and fourteen marked step_detail; those are historical change counts. [30]
+Past-epoch caption (retained wording): - The earlier audience-selection account retains its recorded fifteen reference entries and fourteen marked step_detail; those are historical change counts.
+
+Original-target custody: `skills/l-01-agent-lifecycles/composition-manifest.json`, blob `55259ddca41116db3f52f669fff07974e16a0642`, declared “}, "rationale": { "source": "reference/rationale.md", "description": "Reference-only: rationale, provenance, and credits consolidated out of the normative path.", "injected": false }, "rulings": { "source": "reference/rulings.md", "descript”. The earlier caption is detached from the live number; the current table carries only the current clause and target.
+
+Retained authoring-row wording:
+
+Finding: The current manifest retains audience selection for all nine operations and records 34 reference entries, 28 marked step_detail. Earlier fifteen-entry/fourteen-detail counts describe their own source epoch. The current role/operation order and the separately delivered shared digest are explicit routing declarations.
+
+Anchor:
+
+Source: skills/l-01-agent-lifecycles/composition-manifest.json:38-137; skills/l-01-agent-lifecycles/composition-manifest.json:584-954
 
 ## Current account — the curator's requested tool list
 
@@ -523,4 +621,31 @@ The curator role's `tools` list requests `knowledge_write` beside `knowledge_rea
 
 - The curator role requests `knowledge_write` beside the other knowledge operations, so the mounted writer is among the tools its capsule may name. [31]
 
-- The current registry has fifteen non-injected step-detail entries, including the added Bootstrap failure-state detail; visual-explainer guidance is not a step detail. [33]
+- The current registry has fifteen non-injected step-detail entries, including the added Bootstrap failure-state detail; visual-explainer guidance is not a step detail.
+
+Source epoch: `skills/l-01-agent-lifecycles/composition-manifest.json` at Git blob `2f3ce46a32a38d86f474252bb23d8081e91f0a6e`. The preceding retained wording is detached from the live citation number; the current clause is supported separately.
+
+Past-epoch caption (retained wording): - The current registry contains 16 non-injected step-detail entries, including conditional Curator refused-write guidance; visual-explainer guidance remains outside step_detail.
+
+Original-target custody: `skills/l-01-agent-lifecycles/composition-manifest.json`, blob `55259ddca41116db3f52f669fff07974e16a0642`, declared “"references": { "curator-authoring-d301": { "source": "reference/curator-authoring-d301.md", "description": "Named-step authoring procedures; capsule retains inputs, whole output and step limits.", "injected": false, "step_detail": true, "s”. The earlier caption is detached from the live number; the current table carries only the current clause and target.
+
+Retained authoring-row wording:
+
+Finding: The current registry contains 28 non-injected step-detail entries, including Curator correct-write recovery; visual-explainer guidance remains outside step_detail. Named readers and steps are declarations, not proof that a particular role read a file.
+
+Anchor:
+
+Source: skills/l-01-agent-lifecycles/composition-manifest.json:584-944
+
+- Retained core-source map names task worktree records and the landing contract, not session adoption. [4]
+- The role registry itself and the two role entries that show the per-seat shape. [5]
+- The per-role entry fields a consumer selects on: the altitude, the tool ids, and the one-line seat statement. [6]
+- The manifest records reference material and declared named-step details with injected:false, composes role then operation, and keeps shared core blocks out of that stream. The shared digest travels beside the capsule in its first message. [9]
+- The manifest retains canonical Investigator with seven declared tool IDs and separately names Bootstrap; the current public LauncherRole roster has eight canonical roles plus the system-specialist alias, not a second Investigator role. [14]
+- The role registry itself and the two role entries that show the per-seat shape. [18]
+- The per-role entry fields a consumer selects on: the altitude, the tool ids, and the one-line seat statement. [19]
+- The manifest records reference material and declared named-step details with injected:false, composes role then operation, and keeps shared core blocks out of that stream. The shared digest travels beside the capsule in its first message. [22]
+- The authored source owns this contract; the distribution copy is not a separate authority. [27]
+- All nine operation entries declare audience selection. The current references registry contains 34 entries, 28 marked step_detail; the shared digest is declared separately in core metadata. These are parsed registry declarations, not a compiled capsule or execution result. [29]
+- The current manifest retains audience selection for all nine operations and records 34 reference entries, 28 marked step_detail. Earlier fifteen-entry/fourteen-detail counts describe their own source epoch. The current role/operation order and the separately delivered shared digest are explicit routing declarations. [30]
+- The current registry contains 28 non-injected step-detail entries, including Curator correct-write recovery; visual-explainer guidance remains outside step_detail. Named readers and steps are declarations, not proof that a particular role read a file. [33]

@@ -43,10 +43,16 @@ former path is probed with.
   must name it.
 - A previous line's on-disk state is neither read as a receipt nor rewritten.
 
+The fixed allowance includes exactly two incidental matches in judge-claude-usage-real.json. The declared reason distinguishes the retained encoded carrier from its decoded accounting projection; this is source-owned allowance data, not a new decode, recording or execution result. These are source assertions/support behavior, not a fresh invocation, host result or AR acceptance.
+
 ## Evidence
+- The tracked tree names the previous host nowhere outside the allow-list, and the former block loads as absent. [Past-epoch source caption, detached from live reference 1. Recorded citation custody: mcp/tests/test_previous_host_removed.py blob 745a442a0f4ceddd82ffb810e6b077504eb9a55b (available); historical event commit not identified. No historical event or intent inferred.]
 
-
-- The tracked tree names the previous host nowhere outside the allow-list, and the former block loads as absent. [1]
+Current source: The test source asserts that tracked paths/content name the previous host only under its counted allow-list and that a settings file carrying the former block loads as if absent. Those are declared regression assertions, not a fresh tracked-tree scan or runtime result.
 
 
 - Eleven current launcher routes include GET /api/role-launch/warmup and GET /api/role-launch/saved-catalog while every former-path 404 check remains. [2]
+
+- The test source asserts that tracked paths/content name the previous host only under its counted allow-list and that a settings file carrying the former block loads as if absent. Those are declared regression assertions, not a fresh tracked-tree scan or runtime result. [1]
+
+- The fixed allowance includes exactly two incidental matches in judge-claude-usage-real.json. The declared reason distinguishes the retained encoded carrier from its decoded accounting projection; this is source-owned allowance data, not a new decode, recording or execution result. These are source assertions/support behavior, not a fresh invocation, host result or AR acceptance. [3]

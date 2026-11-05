@@ -1,0 +1,40 @@
+{
+  "path": "mcp/tests/test_agent_eval_judge_reads.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "05db7c32da303de0dc9d68ef84859c5aafef36fe",
+        "content": "sha256:b04b017bb96ff29605145e681a8cba40270221d14831d77f42f6d7c5ad8a678f",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-2MFB6M",
+      "invariant": "INV-JCSQVZ",
+      "origin": {
+        "handoffEntry": "L62-fd6462b8-judge-execution",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "This regression module checks this obligation through test_claude_successful_read_proves_opened_must_read, test_claude_outside_read_is_recorded_without_capture_unknown, test_outside_read_without_bound_result_does_not_invent_a_read_or_refusal, test_unopened_referenced_evidence_has_metrics_without_capture_unknown and its remaining test cases.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The source defines this file's responsibility and the boundaries described here.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "05db7c32da303de0dc9d68ef84859c5aafef36fe",
+            "content": "sha256:b04b017bb96ff29605145e681a8cba40270221d14831d77f42f6d7c5ad8a678f",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,40 @@
+{
+  "path": "mcp/tests/test_agent_eval_hermes_opaque.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "a4a96ee681ad5135876dfd5de6d94a57c4e8c626",
+        "content": "sha256:b0b0c1772bf8fd5ceb2b74601e308c918abb9086f066a49b7060a2197a00bb2c",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-Y2K761",
+      "invariant": "INV-A0B83R",
+      "origin": {
+        "handoffEntry": "L62-fd6462b8-hermes-capture",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "This regression module checks this obligation through test_retained_pair_fixture_identity, test_full_native_wrapper_and_outputs_are_one_opaque_action, test_all_outputs_remain_full_and_unrelated_unknown_remains, test_material_pair_absence_is_named_capture_absent.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The source defines this file's responsibility and the boundaries described here.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a4a96ee681ad5135876dfd5de6d94a57c4e8c626",
+            "content": "sha256:b0b0c1772bf8fd5ceb2b74601e308c918abb9086f066a49b7060a2197a00bb2c",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

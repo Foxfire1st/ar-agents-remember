@@ -1,0 +1,40 @@
+{
+  "path": "scripts/agent_evals/adapters/paseo_session.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "896117eadeed98e69d37f17d814306921470884a",
+        "content": "sha256:380a66a3adb0abe1323537251dd3fdfe5973ba540d124f9b929dfd8081cd3f12",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-VVYYZM",
+      "invariant": "INV-QFMMYM",
+      "origin": {
+        "handoffEntry": "L62-fd6462b8-native-launch",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "It reads actor/provider identity from the exact fixture Paseo stored agent.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The source defines this file's responsibility and the boundaries described here.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "896117eadeed98e69d37f17d814306921470884a",
+            "content": "sha256:380a66a3adb0abe1323537251dd3fdfe5973ba540d124f9b929dfd8081cd3f12",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

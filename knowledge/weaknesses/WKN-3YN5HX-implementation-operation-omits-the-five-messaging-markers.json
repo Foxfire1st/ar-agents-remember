@@ -1,11 +1,16 @@
 {
   "anchor": {
-    "blob": "9ebdee8141a018420e8edba3c96161db8a2e5297",
-    "content": "sha256:c069dd1880ca2ab39ca3678233e29d41e38f2ee0dff431d89f25d2045d166760",
+    "blob": "218393b48ed815f8108902ef82778bad06accf66",
+    "content": "sha256:f79d875a5459baea525fba1d9b6e0b924517fc636c5b0041b5a428c810945a38",
     "locator": {
       "kind": "file"
     },
     "path": "skills/l-01-agent-lifecycles/operations/implementation.md"
+  },
+  "closed": {
+    "commit": "d8869a4b7206536a83d5e18bf5865a4d6dde08c4",
+    "reason": "The literal marker absence in implementation.md is no longer the current delivered-message contract: implementation points to message-handover at the relevant step; that detail supplies all five file/limit markers, and the operation wording guard resolves the same role-specific delivered detail before checking them. Close the obsolete inline-only gap without denying its original 50-miss measurement or claiming a new test run.",
+    "task": "260928-MIK-L62"
   },
   "id": "WKN-3YN5HX",
   "kind": "debt",
@@ -24,12 +29,12 @@
     "leaf": "260928-MIK-L194",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-weakness/v1",
   "seen": {
     "role": "worker",
     "task": "260928-MIK-L194"
   },
-  "state": "open",
+  "state": "closed",
   "statement": "The implementation operation states none of the five messaging markers that every operation file is required to carry, so its wording guard fails on every surface."
 }

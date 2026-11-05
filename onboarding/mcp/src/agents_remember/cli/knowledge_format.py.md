@@ -67,7 +67,7 @@ The formatting rules live in the model package; this adapter only walks paths an
 - Arguments. [1]
 - Cache files and hidden directories are skipped through the validator's shared predicate. [2]
 - Exit statuses and the atomic rewrite. [3]
-- Registration in the umbrella. [4]
+- Registration in the umbrella.
 - The command's check, rewrite and skip behaviour is tested end to end. [5]
 
 ### Cross-Repo References
@@ -75,3 +75,5 @@ The formatting rules live in the model package; this adapter only walks paths an
 No meaningful cross-repo references found: the command rewrites only the files it is given.
 
 No cross-repo boundary is crossed by this file.
+
+- Registration in the umbrella. Anchor: "knowledge-format" [4]

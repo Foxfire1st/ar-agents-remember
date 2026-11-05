@@ -72,7 +72,7 @@ The protocol implementation, the conversion, and the seam owner on the other sid
 - The single origin vocabulary a capsule names its task context by. [3]
 - The frozen one-method protocol this class fills. [4]
 - The frozen DTO and the shared digest primitive, both consumed rather than redefined. [5]
-- The compiler that accepts this source and re-verifies the supplied digest. [6]
+- The compiler that accepts this source and re-verifies the supplied digest.
 - The refusal this module raises instead of returning `None`. [7]
 - The case that proves the provider serves the compiler protocol and the knowledge seam stays optional. [8]
 
@@ -81,3 +81,5 @@ The protocol implementation, the conversion, and the seam owner on the other sid
 No sibling-repository contract consumes this provider directly.
 
 No meaningful cross-repo references found.
+
+- The compiler that accepts this source and re-verifies the supplied digest. [6]

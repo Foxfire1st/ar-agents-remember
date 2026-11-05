@@ -89,7 +89,7 @@ No relevant documentation found after checking live sources.
 
 - The literal/tuple agreement guard, the launcher-is-not-a-role guard, and the ten-role/nine-operation census the leaf extended. [1]
 
-- The independent role census this module's runtime tuple is compared against. [2]
+- The independent role census this module's runtime tuple is compared against.
 
 
 - The parser that is handed this vocabulary and refuses a manifest that disagrees. [3]
@@ -110,3 +110,5 @@ No relevant documentation found after checking live sources.
 No sibling-repository contract defines this vocabulary.
 
 No meaningful cross-repo references found.
+
+- The independent role census this module's runtime tuple is compared against. Anchor: `SHIPPED_ROLES` `SHIPPED_OPERATIONS` [2]

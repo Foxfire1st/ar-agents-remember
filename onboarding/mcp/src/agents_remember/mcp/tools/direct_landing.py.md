@@ -48,9 +48,11 @@ No configured Domain Documentation source applies.
 - Registered as a public tool. [3]
 
 
-- The registration declaration. [4]
+- The registration declaration.
 
 
 ### Cross-Repo References
 
 No meaningful cross-repository reference applies.
+
+- The registration declaration. [4]

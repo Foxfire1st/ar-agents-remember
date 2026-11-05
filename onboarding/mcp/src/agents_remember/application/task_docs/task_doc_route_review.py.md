@@ -103,7 +103,7 @@ No configured Domain Documentation source applies.
 
 - The typed candidate ref derived from the selected path. [7]
 
-- The facade that dispatches into this module. [8]
+- The facade that dispatches into this module.
 
 
 ### Cross-Repo References
@@ -120,3 +120,5 @@ semantics. Part of the landed L25 candidate `99dc249b`.
 
 
 - Branch review is canonical-leaf opt-in under the live grant, not a runtime setting. [9]
+
+- The facade that dispatches into this module. Anchor: `task_doc_tool` [8]

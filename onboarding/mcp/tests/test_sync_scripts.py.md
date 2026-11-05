@@ -99,4 +99,6 @@ No meaningful cross-repo references found.
 - The projection mechanism whose behavior this module pins. [1]
 - The generated-skills profile scope and declaration select the single MCP package tree from canonical skills. [2]
 - The doctrine guard that owns which clauses each surface owes, whose wording this table quotes. [4]
+- The projected current acceptance and Worker boundaries retain their canonical owners and must reach every declared package copy; this is propagation evidence rather than a second meaning definition.
+
 - The projected current acceptance and Worker boundaries retain their canonical owners and must reach every declared package copy; this is propagation evidence rather than a second meaning definition. [5]

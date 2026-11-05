@@ -1,0 +1,40 @@
+{
+  "path": "mcp/tests/fixtures/hermes-refusal-real-records.json",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "2c625933ef0d2ab51ca24817b8b8dcc28abb5bc9",
+        "content": "sha256:2b11c07969cd71a026cb96fe533534529597655ae9f165cfe31ffad134a3e53a",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-EKSJFM",
+      "invariant": "INV-A0B83R",
+      "origin": {
+        "handoffEntry": "L62-fd6462b8-hermes-capture",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "These four retained refusal pairs preserve planned counts and refused status while using synthetic test-data homes.",
+      "role": "support"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The source defines this file's responsibility and the boundaries described here.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2c625933ef0d2ab51ca24817b8b8dcc28abb5bc9",
+            "content": "sha256:2b11c07969cd71a026cb96fe533534529597655ae9f165cfe31ffad134a3e53a",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

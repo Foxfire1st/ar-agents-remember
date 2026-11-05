@@ -1,29 +1,37 @@
 {
   "path": "skills/c-05-create-or-update-onboarding-files/SKILL.md",
   "proves": [],
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "f4accad939315db39d9f7f7dd3af0f5d3f0687ac",
+        "content": "sha256:35e557d01102b32233eddb4f13f3294624b9eb90de4e0d16123d26c7b239d5bc",
+        "locator": {
+          "end": 63,
+          "kind": "line_range",
+          "start": 57
+        }
+      },
+      "id": "RLZ-3PWXHB",
+      "invariant": "INV-945YZ4",
+      "origin": {
+        "handoffEntry": "L62-CUR-6db-attach-INV-945YZ4",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "The seven changed lines replace an absolute authorship route with primary-tool-first, same-input-class correct-write recovery; build/route checks, owner notice, manual provenance and remaining permission/validation/transaction stops stay explicit.",
+      "role": "primary-authority"
+    }
+  ],
   "references": {
     "15": {
       "note": "The canonical skill owns artifact types, seat routing, structural routing and converted dispatch.",
       "targets": [
         {
           "anchor": {
-            "blob": "7544470421d07347f2127e91131a701490676138",
-            "content": "sha256:8d77f99e302aeca8049524e9e8b10dd027ad47093e804ba3dd5566124e64ecd3",
+            "blob": "f4accad939315db39d9f7f7dd3af0f5d3f0687ac",
+            "content": "sha256:610736a29fd35bd4d28d6ffe71d9ea2b1d07536c05a8df44f8bc0d3e172fd8c5",
             "locator": {
-              "end": 35,
-              "kind": "line_range",
-              "start": 8
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "7544470421d07347f2127e91131a701490676138",
-            "content": "sha256:ded0a37646f5bb829be12c1751d4585cb778a01b2f287e72f482b1320661e732",
-            "locator": {
-              "end": 57,
+              "end": 67,
               "kind": "line_range",
               "start": 46
             }
@@ -37,12 +45,31 @@
       "targets": [
         {
           "anchor": {
-            "blob": "07f4fbb59134af0846462f3929091464962f171f",
-            "content": "sha256:4e96ce5e2d8df463581dd6b7b389e93a5d177d57aac6a52ca881e431b29307fc",
+            "blob": "f7ea3c8b7f6e2ce1a210dbc43dcc9694cd25721b",
+            "content": "sha256:8f9c7b20ccb7c89989e61a3307fb91e0b814790bed0ade1b50c5ac6b2ec744cb",
             "locator": {
-              "kind": "file"
+              "end": 187,
+              "kind": "line_range",
+              "start": 1
             },
             "path": "skills/c-05-create-or-update-onboarding-files/workflows/converted-card-workflow.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "Normal citation and record writes use their primary tools first. A covered correct-input refusal follows the named same-tool/input-class ladder: retain actual inputs/refusals, verify build and route, notify the owner before a disclosed manual write, keep provenance and working checks, and record the defect. Missing capability and permission, read/check/validation/sync/start or commit gates do not enter that exception.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f4accad939315db39d9f7f7dd3af0f5d3f0687ac",
+            "content": "sha256:35e557d01102b32233eddb4f13f3294624b9eb90de4e0d16123d26c7b239d5bc",
+            "locator": {
+              "end": 63,
+              "kind": "line_range",
+              "start": 57
+            }
           },
           "kind": "code"
         }

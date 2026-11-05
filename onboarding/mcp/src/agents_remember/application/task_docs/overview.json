@@ -2,14 +2,16 @@
   "path": "mcp/src/agents_remember/application/task_docs",
   "references": {
     "13": {
-      "note": "Source preparation and central publication use the repository lock, exclude nested publication and validate accepted bytes; the unbound-subTask guard reads its actual master and matching row number rather than only path existence.\n\nAnchor: `run_task_doc_call` `publish_task_doc_transaction_and_refresh` `validate_task_doc_transaction` `task_doc_tool`",
+      "note": "Source preparation and central publication use the repository lock, exclude nested publication and validate accepted bytes; the unbound-subTask guard reads its actual master and matching row number rather than only path existence. Anchor: `run_task_doc_call` `publish_task_doc_transaction_and_refresh` `validate_task_doc_transaction` `task_doc_tool`",
       "targets": [
         {
           "anchor": {
             "blob": "3cdbb47739fd9663671343886ca7985545584789",
             "content": "sha256:6543e82cfa71a38f1f0ddb4c92ba517cdd337bf181e07c119bc10b368774263e",
             "locator": {
-              "kind": "file"
+              "end": 386,
+              "kind": "line_range",
+              "start": 1
             },
             "path": "mcp/src/agents_remember/application/task_docs/task_doc_publication.py"
           },
@@ -17,10 +19,12 @@
         },
         {
           "anchor": {
-            "blob": "f174a79f72375a38aa57f50907312424f3fc2c3c",
-            "content": "sha256:4639ac7fede07fbf8fd4a606e94345d3e15fdc3bc40ee0f57fba307bccd95505",
+            "blob": "d0b8e6fa2c415dec4821469774f9dc8f0bcccb63",
+            "content": "sha256:36946f9f594b3e343adf324da581e0d104f623f686bd83a9d2844ab5533ac0ba",
             "locator": {
-              "kind": "file"
+              "end": 1186,
+              "kind": "line_range",
+              "start": 1
             },
             "path": "mcp/src/agents_remember/application/task_docs/task_doc_tools.py"
           },
@@ -33,10 +37,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f174a79f72375a38aa57f50907312424f3fc2c3c",
-            "content": "sha256:4639ac7fede07fbf8fd4a606e94345d3e15fdc3bc40ee0f57fba307bccd95505",
+            "blob": "d0b8e6fa2c415dec4821469774f9dc8f0bcccb63",
+            "content": "sha256:36946f9f594b3e343adf324da581e0d104f623f686bd83a9d2844ab5533ac0ba",
             "locator": {
-              "kind": "file"
+              "end": 1186,
+              "kind": "line_range",
+              "start": 1
             },
             "path": "mcp/src/agents_remember/application/task_docs/task_doc_tools.py"
           },
@@ -47,7 +53,9 @@
             "blob": "ca1e93a9ad54fc0eca4cb8612ed3661b1ee21487",
             "content": "sha256:1c7f1637467a3a8468c0795177ccfa132dcb43972e3d95418f3324cba414675f",
             "locator": {
-              "kind": "file"
+              "end": 198,
+              "kind": "line_range",
+              "start": 1
             },
             "path": "mcp/src/agents_remember/application/task_docs/task_doc_phrases.py"
           },
@@ -58,7 +66,9 @@
             "blob": "a0b5ad238d8c829320217d9994826ecc6c88a546",
             "content": "sha256:dd847fac2054b56fec8c6aafd65ddde455cec04d2d3a8376a61d1425c527e52a",
             "locator": {
-              "kind": "file"
+              "end": 837,
+              "kind": "line_range",
+              "start": 1
             },
             "path": "mcp/src/agents_remember/application/task_docs/task_sprint_linkage.py"
           },
@@ -66,10 +76,12 @@
         },
         {
           "anchor": {
-            "blob": "e7d80ed372402d196e9af03c6aa40d32a018d7e2",
-            "content": "sha256:c7dc3ccede6258becfe2c8d886d1ef79e04279f32d2f56f30d6d1c8fd90242c4",
+            "blob": "cd8894a7e858b103972f9a0c9ec3a13e5fc41f48",
+            "content": "sha256:667882012ebd38bb51518f072cfa2239734d4aa86714747c7082f0e34bec837b",
             "locator": {
-              "kind": "file"
+              "end": 293,
+              "kind": "line_range",
+              "start": 1
             },
             "path": "mcp/src/agents_remember/models/task_doc.py"
           },
@@ -80,7 +92,9 @@
             "blob": "c0dd4c37619f916f75c34be98b90018a3ccb6061",
             "content": "sha256:01c9eca1b5b80bee68f3aaaa3e5c14d8529f479bf0441e4a7449987145ced87a",
             "locator": {
-              "kind": "file"
+              "end": 1136,
+              "kind": "line_range",
+              "start": 1
             },
             "path": "mcp/src/agents_remember/worktrees/task_document_copies.py"
           },
@@ -178,8 +192,9 @@
             "blob": "715d185a5e3d1fbbc097f731d4726964d8ee63e4",
             "content": "sha256:e47bb5d4b5ca7fb83e41e6473cf031cca5c5e9337dc758cb29d2cb6a5c5627c4",
             "locator": {
-              "kind": "symbol",
-              "name": "enforce_intent_review_candidate"
+              "end": 50,
+              "kind": "line_range",
+              "start": 27
             },
             "path": "mcp/src/agents_remember/application/task_docs/task_doc_content_edits.py"
           },
@@ -190,8 +205,9 @@
             "blob": "f854045dec27bba63edeb981464f908f197bfc6e",
             "content": "sha256:fa1a5de7cf0ce0bd6dab25973bea355afa973ec0582392f77282c72968b49fd3",
             "locator": {
-              "kind": "symbol",
-              "name": "archive_hook"
+              "end": 60,
+              "kind": "line_range",
+              "start": 33
             },
             "path": "mcp/src/agents_remember/application/task_docs/task_retirement_shared.py"
           },
@@ -202,8 +218,9 @@
             "blob": "f854045dec27bba63edeb981464f908f197bfc6e",
             "content": "sha256:6a101cedba2c2c7820b0b94ecad78a3709e1a3c3bae3d821b52becb5a9e2ad8a",
             "locator": {
-              "kind": "symbol",
-              "name": "hook_failed"
+              "end": 96,
+              "kind": "line_range",
+              "start": 84
             },
             "path": "mcp/src/agents_remember/application/task_docs/task_retirement_shared.py"
           },
@@ -211,12 +228,71 @@
         },
         {
           "anchor": {
-            "blob": "f174a79f72375a38aa57f50907312424f3fc2c3c",
-            "content": "sha256:4639ac7fede07fbf8fd4a606e94345d3e15fdc3bc40ee0f57fba307bccd95505",
+            "blob": "d0b8e6fa2c415dec4821469774f9dc8f0bcccb63",
+            "content": "sha256:36946f9f594b3e343adf324da581e0d104f623f686bd83a9d2844ab5533ac0ba",
             "locator": {
-              "kind": "file"
+              "end": 1186,
+              "kind": "line_range",
+              "start": 1
             },
             "path": "mcp/src/agents_remember/application/task_docs/task_doc_tools.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "Packet requirement edits use alignment_sweep to report the master’s declared open siblings and their requirement identities as advice. task_doc_tools validates the candidate before deriving that advice, publishes task truth through its existing owner and adds the advice only to an ok result. The sweep edits no sibling packet and grants no release; response shaping carries its metadata separately.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2b404a232e26fe0d01c0b0bca046f18ad9fb6922",
+            "content": "sha256:c4d0b3cfb4464dc3467f4aee7e911ad23e68ea9ba492e0091ec304c47dd91b4c",
+            "locator": {
+              "end": 97,
+              "kind": "line_range",
+              "start": 49
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/alignment_sweep.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d0b8e6fa2c415dec4821469774f9dc8f0bcccb63",
+            "content": "sha256:190f75581818fdfe52e3d44c0c4174725dc23c441333a60cd230274e0abcc3b9",
+            "locator": {
+              "end": 460,
+              "kind": "line_range",
+              "start": 379
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_doc_tools.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a481ef53230e2f8c242f3522a37c6638908d97a0",
+            "content": "sha256:a7c7dce2e7f1889ec03211fca275ead24d98e28898bf7631070920d51b9ea0ca",
+            "locator": {
+              "end": 703,
+              "kind": "line_range",
+              "start": 664
+            },
+            "path": "mcp/src/agents_remember/application/landing_answer_shapes.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a481ef53230e2f8c242f3522a37c6638908d97a0",
+            "content": "sha256:3838533d65cb4855c05eba6a16d5d9e19afdc7f1ac73231021306d47816b97fd",
+            "locator": {
+              "end": 661,
+              "kind": "line_range",
+              "start": 645
+            },
+            "path": "mcp/src/agents_remember/application/landing_answer_shapes.py"
           },
           "kind": "code"
         }

@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "fde55d2ad1129fead83a4561a005af560d720d55",
-        "content": "sha256:4dff3a45902b42d5e49e5824e16a551b80573248093798cae2eb488c8e27bea6",
+        "blob": "2c812979fc9072342c50ba1dbaa5e3575e17cea2",
+        "content": "sha256:31d750f9fc72a40da8a15be0b670549d0fb5d1d318c60f41330160eecbeaf488",
         "locator": {
           "kind": "file"
         }
@@ -20,8 +20,8 @@
     },
     {
       "anchor": {
-        "blob": "fde55d2ad1129fead83a4561a005af560d720d55",
-        "content": "sha256:4dff3a45902b42d5e49e5824e16a551b80573248093798cae2eb488c8e27bea6",
+        "blob": "2c812979fc9072342c50ba1dbaa5e3575e17cea2",
+        "content": "sha256:31d750f9fc72a40da8a15be0b670549d0fb5d1d318c60f41330160eecbeaf488",
         "locator": {
           "kind": "file"
         }
@@ -37,8 +37,8 @@
     },
     {
       "anchor": {
-        "blob": "fde55d2ad1129fead83a4561a005af560d720d55",
-        "content": "sha256:4dff3a45902b42d5e49e5824e16a551b80573248093798cae2eb488c8e27bea6",
+        "blob": "2c812979fc9072342c50ba1dbaa5e3575e17cea2",
+        "content": "sha256:31d750f9fc72a40da8a15be0b670549d0fb5d1d318c60f41330160eecbeaf488",
         "locator": {
           "kind": "file"
         }
@@ -55,16 +55,28 @@
   ],
   "references": {
     "1": {
-      "note": "Canonical Bootstrap message instructions use wake text and file-carried body/attachments without a pinned settings limit.\n\nAnchor: Messages",
+      "note": "Bootstrap sends no role messages: it writes a developer question in its own reply and ends the turn. Its sole durable report names its own exact path and its foundation state is reported as read, never as authored.",
       "targets": [
         {
           "anchor": {
-            "blob": "fde55d2ad1129fead83a4561a005af560d720d55",
-            "content": "sha256:ff714056759f645a3ef1f2ae15362f164ebc2590b124b5da9c97c66d11b31809",
+            "blob": "2c812979fc9072342c50ba1dbaa5e3575e17cea2",
+            "content": "sha256:cddfb2bb54097feb97c595165d9e47aecbf493ff2ef914e6b6c1a96de92a776f",
             "locator": {
-              "end": 150,
+              "end": 36,
               "kind": "line_range",
-              "start": 147
+              "start": 34
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2c812979fc9072342c50ba1dbaa5e3575e17cea2",
+            "content": "sha256:3fe351b65b4e817d2181a314a1bcf614ad3086755859e67a5a9cb257427c58af",
+            "locator": {
+              "end": 118,
+              "kind": "line_range",
+              "start": 110
             }
           },
           "kind": "code"
@@ -76,12 +88,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fde55d2ad1129fead83a4561a005af560d720d55",
+            "blob": "2c812979fc9072342c50ba1dbaa5e3575e17cea2",
             "content": "sha256:2bfbb93222d3d945ff90d4d37b0562dea61cd20c1edf7eec5981426a5af88e87",
             "locator": {
-              "end": 117,
+              "end": 119,
               "kind": "line_range",
-              "start": 77
+              "start": 79
             }
           },
           "kind": "code"

@@ -3,8 +3,8 @@
   "proves": [
     {
       "anchor": {
-        "blob": "17d6acd1f48bded76920424ca5fe5b1de2e153b0",
-        "content": "sha256:3f010d76368f2c7d2dbe47f6b3b34afeaabac4d190d52323516fe2d8e5a47329",
+        "blob": "90ac087998bfd37bec6202ec5ce03a59d9d53fd3",
+        "content": "sha256:60596990b264dfc7910d376f41059031a0ab5c5f154f46a7dcb2b0006ff37b5c",
         "locator": {
           "kind": "symbol",
           "name": "test_every_yielded_capsule_has_a_budget_and_no_other_key_does"
@@ -20,25 +20,25 @@
     },
     {
       "anchor": {
-        "blob": "17d6acd1f48bded76920424ca5fe5b1de2e153b0",
-        "content": "sha256:0c6ca7dd0173e655fbe1fdabae1004e65beeb63e4dc905d636bd481841f7a00b",
+        "blob": "90ac087998bfd37bec6202ec5ce03a59d9d53fd3",
+        "content": "sha256:73564870d9ad95c1c2a2073b8eb3f601629b378211170bc5cd4887ec9fd47b77",
         "locator": {
           "kind": "symbol",
           "name": "test_no_capsule_exceeds_its_recorded_budget"
         }
       },
-      "facet": "Fresh capsule and declared-detail sizes stay within recorded budgets; measured size, recorded size and budget stay within their respective 3700/2500 ceilings, and each stored budget follows the capped eleven-tenths formula.",
-      "id": "PRF-G72M5K",
+      "facet": "Checks fresh capsule, declared-detail and separately recorded shared-digest sizes and recorded budgets against their respective role-specific, 2500-word and 1100-word literal ceilings, and checks each budget against the capped eleven-tenths formula.",
+      "id": "PRF-CMBT97",
       "invariant": "INV-Y6GVZ7",
       "origin": {
-        "handoffEntry": "L88-R125-current-budget-proof-facets",
-        "leaf": "260928-MIK-L88"
+        "handoffEntry": "L62-CUR-6414-replacement-proof-PRF-G72M5K",
+        "leaf": "260928-MIK-L62"
       }
     },
     {
       "anchor": {
-        "blob": "17d6acd1f48bded76920424ca5fe5b1de2e153b0",
-        "content": "sha256:b4e48b15714781e0b92c5e3f690fe79483dc2c74620f559c4f7071d52589e77e",
+        "blob": "90ac087998bfd37bec6202ec5ce03a59d9d53fd3",
+        "content": "sha256:8694f8095aa60cdea47ff1737b75bf34abb1b48aa1c0cb8ca011cd542eeb76e1",
         "locator": {
           "kind": "symbol",
           "name": "test_budget_guard_rejects_growth_ceiling_and_unregistered_details"
@@ -56,16 +56,40 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "Registry keys equal the yielded capsule matrix and declared step-file set.\n\nAnchor: Current substantive owner; original historical evidence remains in the memory base",
+      "note": "The budget registry test requires capsule keys to equal the manifest-derived role/operation/launcher matrix, detail keys to equal every declared detail source, and the digest entry to have exactly size_words and budget_words.",
       "targets": [
         {
           "anchor": {
-            "blob": "17d6acd1f48bded76920424ca5fe5b1de2e153b0",
-            "content": "sha256:420b7353050c98b2aa9f11a7e4caf8a9aa7065b6073abb2066afc39b68232674",
+            "blob": "90ac087998bfd37bec6202ec5ce03a59d9d53fd3",
+            "content": "sha256:abd53b56df301564da99a6ecb80d1f03cfb18c686c1597147951310683291cd3",
             "locator": {
-              "end": 193,
+              "end": 54,
               "kind": "line_range",
-              "start": 1
+              "start": 44
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "90ac087998bfd37bec6202ec5ce03a59d9d53fd3",
+            "content": "sha256:7dff536f0ef1b96ea21436fba17d9885cfa6a4abf8a2c94de1d3bad34de682c9",
+            "locator": {
+              "end": 103,
+              "kind": "line_range",
+              "start": 97
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "90ac087998bfd37bec6202ec5ce03a59d9d53fd3",
+            "content": "sha256:60596990b264dfc7910d376f41059031a0ab5c5f154f46a7dcb2b0006ff37b5c",
+            "locator": {
+              "end": 162,
+              "kind": "line_range",
+              "start": 157
             }
           },
           "kind": "test"
@@ -73,16 +97,16 @@
       ]
     },
     "2": {
-      "note": "The shared guard bounds capsule and detail words under their capped eleven-tenths budgets and absolute ceilings.\n\nAnchor: Current substantive owner; original historical evidence remains in the memory base",
+      "note": "The shared budget guard rejects missing/orphan entries, any actual/stored/budget size over its supplied ceiling, a budget different from min(ceil(stored size_words*11/10),ceiling), and actual size over budget. capsule_ceiling selects Architect4631, Manager4513, Curator/Reviewer/Bootstrap4000 and3700 for other roles; the caller separately guards details2500 and the shared digest1100.",
       "targets": [
         {
           "anchor": {
-            "blob": "17d6acd1f48bded76920424ca5fe5b1de2e153b0",
-            "content": "sha256:420b7353050c98b2aa9f11a7e4caf8a9aa7065b6073abb2066afc39b68232674",
+            "blob": "90ac087998bfd37bec6202ec5ce03a59d9d53fd3",
+            "content": "sha256:ea3ac15b4272085993ab50f5c49cc082a80fb75a6399e5bb0728dc49e5a6832d",
             "locator": {
-              "end": 193,
+              "end": 175,
               "kind": "line_range",
-              "start": 1
+              "start": 111
             }
           },
           "kind": "test"
@@ -90,16 +114,117 @@
       ]
     },
     "3": {
-      "note": "Measures fresh render_instructions whitespace words for the role/operation/launcher matrix and complete source text for every declared detail. Exact registry keys forbid missing/orphan entries. Each stored budget is min(ceil(stored size_words*11/10), ceiling); actual size, stored size and budget must each stay within 3700 capsule/2500 detail ceilings and actual size fit budget. Seed controls invoke the same real guard with mutated inputs, not a duplicate implementation.\n\nAnchor: Current test/support source",
+      "note": "The tests measure whitespace-split words from freshly rendered capsule instructions and complete declared detail sources, plus the separately delivered every-role digest. Exact registry keys reject omissions and orphans. The same capped eleven-tenths guard applies to role-specific capsule ceilings (Architect4631, Manager4513, Curator/Reviewer/Bootstrap4000, otherwise3700), details2500 and digest1100; mutation controls invoke the real guard with changed inputs at and beyond those limits.",
       "targets": [
         {
           "anchor": {
-            "blob": "17d6acd1f48bded76920424ca5fe5b1de2e153b0",
-            "content": "sha256:420b7353050c98b2aa9f11a7e4caf8a9aa7065b6073abb2066afc39b68232674",
+            "blob": "90ac087998bfd37bec6202ec5ce03a59d9d53fd3",
+            "content": "sha256:d9a1aae60c76a2f99069140decfac6125dc441b5814271ded88b90fd662022f1",
             "locator": {
-              "end": 193,
+              "end": 188,
               "kind": "line_range",
-              "start": 1
+              "start": 44
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "90ac087998bfd37bec6202ec5ce03a59d9d53fd3",
+            "content": "sha256:8694f8095aa60cdea47ff1737b75bf34abb1b48aa1c0cb8ca011cd542eeb76e1",
+            "locator": {
+              "end": 310,
+              "kind": "line_range",
+              "start": 191
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Absolute capsule ceilings are 4631 words for Architect, 4513 for Manager, 4000 for Curator/Reviewer/Bootstrap and 3700 for other roles. Step details have a 2500-word ceiling and the separately delivered every-role digest has a 1100-word ceiling. Registry completeness, capped eleven-tenths budgets and exact/over-limit mutation controls apply independently. These are source assertions/support behavior, not a fresh invocation, host result or AR acceptance.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "90ac087998bfd37bec6202ec5ce03a59d9d53fd3",
+            "content": "sha256:f988e85a7f74977e5180f278a041568daa58ee2ba3d31a7f4630434e564f4df1",
+            "locator": {
+              "end": 11,
+              "kind": "line_range",
+              "start": 5
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "90ac087998bfd37bec6202ec5ce03a59d9d53fd3",
+            "content": "sha256:99bbf12042ba8605edf6542ca8733f4c869977749b4f1837950f9857439c05bd",
+            "locator": {
+              "end": 108,
+              "kind": "line_range",
+              "start": 106
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "90ac087998bfd37bec6202ec5ce03a59d9d53fd3",
+            "content": "sha256:be122461f170df76b14d717700c42457a14a03cb60e41a54c183a78e1d36371d",
+            "locator": {
+              "end": 142,
+              "kind": "line_range",
+              "start": 131
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "90ac087998bfd37bec6202ec5ce03a59d9d53fd3",
+            "content": "sha256:5c322312db551598a2fb7ae8cd353630db699c8597b87a05c74282308951df5a",
+            "locator": {
+              "end": 154,
+              "kind": "line_range",
+              "start": 145
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "90ac087998bfd37bec6202ec5ce03a59d9d53fd3",
+            "content": "sha256:60596990b264dfc7910d376f41059031a0ab5c5f154f46a7dcb2b0006ff37b5c",
+            "locator": {
+              "end": 162,
+              "kind": "line_range",
+              "start": 157
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "90ac087998bfd37bec6202ec5ce03a59d9d53fd3",
+            "content": "sha256:73564870d9ad95c1c2a2073b8eb3f601629b378211170bc5cd4887ec9fd47b77",
+            "locator": {
+              "end": 188,
+              "kind": "line_range",
+              "start": 165
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "90ac087998bfd37bec6202ec5ce03a59d9d53fd3",
+            "content": "sha256:8694f8095aa60cdea47ff1737b75bf34abb1b48aa1c0cb8ca011cd542eeb76e1",
+            "locator": {
+              "end": 310,
+              "kind": "line_range",
+              "start": 191
             }
           },
           "kind": "test"

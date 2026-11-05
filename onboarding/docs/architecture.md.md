@@ -2,6 +2,8 @@
 
 ## Current operative account — MIK-R199
 
+The inherited source account below is retained verbatim at its earlier source blob `b3181fbe25f6169b3f1271484242227b99b4855d`; its inline line addresses belong to that source epoch and are detached from current live citation authority. Current numbered clauses below bind the separately specified current source targets.
+
 - The retrieval-substrates section keeps by-path (Intent) as "always available; needs no
   provider", and says the by-meaning route's "provider is retired; the route has no engine now"
   while the by-relationship route's "provider is retired as well" (`docs/architecture.md:85-89`).
@@ -65,10 +67,46 @@
 
 ## Evidence
 
-- By-path needs no provider; by-meaning has a retired provider and no engine, and by-relationship has a retired provider. [1]
-- GrepAI and CodeGraphContext are named as retired, with no product path installing, enabling, starting, indexing or querying them. [2]
-- `runtime_install` stops a leftover provider watcher and reports old provider keys once; folder deletion belongs to the explicit `providers-remove` command. [3]
-- Provider leftovers are handled by `runtime_install` and `providers-remove`, not by memory or workflow skills, and no provider lifecycle belongs to anything now. [4]
-- Runtime ownership names provider-leftover cleanup and keeps no parallel `scripts/` route. [5]
-- The layout block still draws a `providers/` subtree. [6]
-- The page is silent on Docker/Ollama requirements, command flags, the unused-key field name, the safety detector and any provider panel. [7]
+Historical source account (detached from live reference 1; docs/architecture.md blob b3181fbe25f6169b3f1271484242227b99b4855d):
+
+- By-path needs no provider; by-meaning has a retired provider and no engine, and by-relationship has a retired provider.
+
+- By-path Intent needs no provider; meaning and relationship providers remain retired and have no active search engine.
+Historical source account (detached from live reference 2; docs/architecture.md blob b3181fbe25f6169b3f1271484242227b99b4855d):
+
+- GrepAI and CodeGraphContext are named as retired, with no product path installing, enabling, starting, indexing or querying them.
+
+- GrepAI and CodeGraphContext remain retired; the architecture page names no product route installing, enabling, starting, indexing or querying them, and labels the providers subtree as older-install leftovers.
+Historical source account (detached from live reference 3; docs/architecture.md blob b3181fbe25f6169b3f1271484242227b99b4855d):
+
+- `runtime_install` stops a leftover provider watcher and reports old provider keys once; folder deletion belongs to the explicit `providers-remove` command.
+
+- The architecture page keeps durable Markdown/JSON plus Git as truth, assigns leftover-watcher stop and unused-key reporting to runtime_install, and leaves folder deletion to explicit providers-remove.
+Historical source account (detached from live reference 4; docs/architecture.md blob b3181fbe25f6169b3f1271484242227b99b4855d):
+
+- Provider leftovers are handled by `runtime_install` and `providers-remove`, not by memory or workflow skills, and no provider lifecycle belongs to anything now.
+
+- Provider leftovers remain owned by runtime_install and providers-remove rather than memory/workflow skills; provider lifecycle remains retired.
+Historical source account (detached from live reference 5; docs/architecture.md blob b3181fbe25f6169b3f1271484242227b99b4855d):
+
+- Runtime ownership names provider-leftover cleanup and keeps no parallel `scripts/` route.
+
+- The installed runtime has no parallel scripts execution route; package-local modules/MCP own install, provider-leftover cleanup, worktree, memory and benchmark operations.
+Historical source account (detached from live reference 6; docs/architecture.md blob b3181fbe25f6169b3f1271484242227b99b4855d):
+
+- The layout block still draws a `providers/` subtree.
+
+- The installed-runtime layout still draws the providers subtree; the retrieval section qualifies it as old-install leftovers.
+Historical source account (detached from live reference 7; docs/architecture.md blob b3181fbe25f6169b3f1271484242227b99b4855d):
+
+- The page is silent on Docker/Ollama requirements, command flags, the unused-key field name, the safety detector and any provider panel.
+
+- This architecture page does not specify Docker/Ollama requirements, provider command flags, the unused-key field name, a safety detector or provider UI; the new converted-knowledge layout/gate sections do not advertise a provider engine.
+
+- By-path Intent needs no provider; meaning and relationship providers remain retired and have no active search engine. [1]
+- GrepAI and CodeGraphContext remain retired; the architecture page names no product route installing, enabling, starting, indexing or querying them, and labels the providers subtree as older-install leftovers. [2]
+- The architecture page keeps durable Markdown/JSON plus Git as truth, assigns leftover-watcher stop and unused-key reporting to runtime_install, and leaves folder deletion to explicit providers-remove. [3]
+- Provider leftovers remain owned by runtime_install and providers-remove rather than memory/workflow skills; provider lifecycle remains retired. [4]
+- The installed runtime has no parallel scripts execution route; package-local modules/MCP own install, provider-leftover cleanup, worktree, memory and benchmark operations. [5]
+- The installed-runtime layout still draws the providers subtree; the retrieval section qualifies it as old-install leftovers. [6]
+- This architecture page does not specify Docker/Ollama requirements, provider command flags, the unused-key field name, a safety detector or provider UI; the new converted-knowledge layout/gate sections do not advertise a provider engine. [7]

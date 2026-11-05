@@ -16,19 +16,28 @@ Current memory lines are converted. The canonical converted-card workflow replac
 
 Converted carryover selects paired content and missing records into a recovery worktree, commits nothing and imports no source history; the recovery curator supplies own rows and normal gated closeout publishes. Do not fabricate sidecar JSON, anchors, reference numbers, legacy metadata or Update History. Useful inherited explanation below is historical scope, not a request to recreate removed legacy authors.
 
+Normal citation and record writes use their primary tools first. A covered correct-input refusal follows the named same-tool/input-class ladder: retain actual inputs/refusals, verify build and route, notify the owner before a disclosed manual write, keep provenance and working checks, and record the defect. Missing capability and permission, read/check/validation/sync/start or commit gates do not enter that exception.
+
 ## Evidence
+Retained authoring-row wording:
+
+Finding: The canonical skill owns artifact types, seat routing, structural routing and converted dispatch.
+
+Anchor:
+
+Source: skills/c-05-create-or-update-onboarding-files/SKILL.md:46-67
 
 
 
 
 
-- The canonical skill owns artifact types, seat routing, structural routing and converted dispatch. [15]
+Retained authoring-row wording:
 
+Finding: Converted-card authorship separates prose, native references, typed entries and current trace rows.
 
+Anchor:
 
-
-
-- Converted-card authorship separates prose, native references, typed entries and current trace rows. [16]
+Source: skills/c-05-create-or-update-onboarding-files/workflows/converted-card-workflow.md
 
 
 
@@ -116,3 +125,8 @@ The following complete predecessor account is retained historical scope, not a s
 > - Converted-card structure and citation authoring distinguish temporary table input from retained evidence lines and fixer-owned references. (historical reference 12)
 > - Changed cards and nearest routes require current updated/no_impact history answers; converted metadata and carryover apply are forbidden, and route indexes are uncommitted caches. (historical reference 13)
 > - Canonical Curator guidance supplies converted source-bound trace, complete curation and pre-closeout non-author statement/diff/omission checking without making review evidence a new closeout gate. (historical reference 14)
+
+- The canonical skill owns artifact types, seat routing, structural routing and converted dispatch. [15]
+- Converted-card authorship separates prose, native references, typed entries and current trace rows. [16]
+
+- Normal citation and record writes use their primary tools first. A covered correct-input refusal follows the named same-tool/input-class ladder: retain actual inputs/refusals, verify build and route, notify the owner before a disclosed manual write, keep provenance and working checks, and record the defect. Missing capability and permission, read/check/validation/sync/start or commit gates do not enter that exception. [17]

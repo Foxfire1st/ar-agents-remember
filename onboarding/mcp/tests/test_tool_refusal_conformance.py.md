@@ -187,10 +187,10 @@ they make no acceptance claim.
 - The driver that refuses a table which is not the roster before it drives anything. [12]
 
 
-- The one `T34` tool the sweep still repairs — `memory_baseline_adopt` — re-exported by the sweep module beside the pin it left. [13]
+- The one `T34` tool the sweep still repairs — `memory_baseline_adopt` — re-exported by the sweep module beside the pin it left.
 
 
-- The sweep whose benign half this module completes, and the world both share. [14]
+- The sweep whose benign half this module completes, and the world both share.
 
 
 - The advertised roster the population is derived from and asserted equal to. [15]
@@ -225,3 +225,6 @@ No repository or external-system boundary is proved by this module.
 
 
 - The lane row that keeps this module in the default selection. Source caption: "mcp/tests/test_tool_refusal_conformance.py" [16]
+
+- The one `T34` tool the sweep still repairs — `memory_baseline_adopt` — re-exported by the sweep module beside the pin it left. Anchor: `T34_REPAIRED_TOOLS` [13]
+- The sweep whose benign half this module completes, and the world both share. Anchor: `EntryPointWorld` [14]

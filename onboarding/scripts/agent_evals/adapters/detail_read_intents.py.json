@@ -1,0 +1,40 @@
+{
+  "path": "scripts/agent_evals/adapters/detail_read_intents.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "92547837159fb97534d22495c2242f01b0ba6fb0",
+        "content": "sha256:9dd9bb519685670f50d377bcfb26f919604d9f53e4fbbfcf52c37164f5fcae1c",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-8Z449T",
+      "invariant": "INV-HXTSVY",
+      "origin": {
+        "handoffEntry": "L62-fd6462b8-text-delivery",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "It recognizes finite literal read intents, including compound commands, without executing commands or guessing expansions.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The source defines this file's responsibility and the boundaries described here.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "92547837159fb97534d22495c2242f01b0ba6fb0",
+            "content": "sha256:9dd9bb519685670f50d377bcfb26f919604d9f53e4fbbfcf52c37164f5fcae1c",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

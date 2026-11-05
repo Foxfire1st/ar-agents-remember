@@ -12,8 +12,9 @@
 
 This package owns the application seam for task-document authoring: operation dispatch, candidate validation, publication, checklist edits, execution-graph authoring, sprint linkage, and master retirement. `task_ref` provides typed task references and `task_reopen` provides the leaf-reopen route. Shared concerns have separate owners so the dispatcher does not duplicate their rules.
 
-## Hot Path Summary
+Packet requirement edits use alignment_sweep to report the master’s declared open siblings and their requirement identities as advice. task_doc_tools validates the candidate before deriving that advice, publishes task truth through its existing owner and adds the advice only to an ok result. The sweep edits no sibling packet and grants no release; response shaping carries its metadata separately.
 
+## Hot Path Summary
 task_doc_field_homes centralizes newly reserved section/head-note remedies and validates explicit nonempty waitsFor writes against same-master membership, self-reference and cycles before publication. Legacy sections/notes remain editable and removable. task_doc_content_edits owns content operations; task_doc_tools composes the prepared candidate with existing proof and publication guards. Dependencies are information, not a new start/refusal gate.
 
 task_doc authoring no longer exposes successful get/read_steps projections or step_payloads. The early operation-removed answer guides canonical JSON/rendered-file reading. Ordinary writes deliver bounded phrases, create retains renderedPath, changed reviewState stays visible, and dry answers carry wouldLose/diff with independently retained locations; rich identity/preview/masterSync remains whole-result custody and a validly addressed parent-sync failure is an answered refusal. Invalid caller master references are refused by the shared master_json_path_from_ref resolver with TaskDocError during candidate validation after retirement-proof comparison, before publication; a changed or Order-refreshed parent must also pass the in-place document guard. Linkage reporting writes its facts JSON and delivers counts/location; attach/detach retain per-document previews internally. Shared task_doc_phrases owns the actual mutable allowlist, excluding seriesContractPath/enclosures. Publication refreshes the own leaf plus declared requirement copies with rollback, without turning copies into task authority. Strict model facts come from models/task_doc.py; no historical pending-model statement certifies a live session.
@@ -127,17 +128,24 @@ A newly created subTask with no supplied `intentReview` receives `pending`. The 
 ## Evidence
 
 
-- The shared set-field allowlist includes the knowledge-effect declaration and belongs to the phrase owner. [5]
 
-- Source preparation and central publication use the repository lock, exclude nested publication and validate accepted bytes; the unbound-subTask guard reads its actual master and matching row number rather than only path existence. [13]
-
+- Source preparation and central publication use the repository lock, exclude nested publication and validate accepted bytes; the unbound-subTask guard reads its actual master and matching row number rather than only path existence.
 
 
+
+- task_doc authoring no longer exposes successful get/read_steps projections or step_payloads. The early operation-removed answer guides canonical JSON/rendered-file reading. Ordinary writes deliver bounded phrases, create retains renderedPath, changed reviewState stays visible, and dry answers carry wouldLose/diff with independently retained locations; rich identity/preview/masterSync remains whole-result custody and a validly addressed parent-sync failure is an answered refusal. Invalid caller master references are refused by the shared master_json_path_from_ref resolver with TaskDocError during candidate validation after retirement-proof comparison, before publication; a changed or Order-refreshed parent must also pass the in-place document guard. Linkage reporting writes its facts JSON and delivers counts/location; attach/detach retain per-document previews internally. Shared task_doc_phrases owns the actual mutable allowlist, excluding seriesContractPath/enclosures. Publication refreshes the own leaf plus declared requirement copies with rollback, without turning copies into task authority. Strict model facts come from models/task_doc.py; no historical pending-model statement certifies a live session.
+
+
+
+
+- Task authoring defaults and preserves the intent-review answer; its candidate guard checks caller and stage. The existing archive hook carries the task-derived explainer root and retains cleanup failures.
+
+- Source preparation and central publication use the repository lock, exclude nested publication and validate accepted bytes; the unbound-subTask guard reads its actual master and matching row number rather than only path existence. Anchor: `run_task_doc_call` `publish_task_doc_transaction_and_refresh` `validate_task_doc_transaction` `task_doc_tool` [13]
 - task_doc authoring no longer exposes successful get/read_steps projections or step_payloads. The early operation-removed answer guides canonical JSON/rendered-file reading. Ordinary writes deliver bounded phrases, create retains renderedPath, changed reviewState stays visible, and dry answers carry wouldLose/diff with independently retained locations; rich identity/preview/masterSync remains whole-result custody and a validly addressed parent-sync failure is an answered refusal. Invalid caller master references are refused by the shared master_json_path_from_ref resolver with TaskDocError during candidate validation after retirement-proof comparison, before publication; a changed or Order-refreshed parent must also pass the in-place document guard. Linkage reporting writes its facts JSON and delivers counts/location; attach/detach retain per-document previews internally. Shared task_doc_phrases owns the actual mutable allowlist, excluding seriesContractPath/enclosures. Publication refreshes the own leaf plus declared requirement copies with rollback, without turning copies into task authority. Strict model facts come from models/task_doc.py; no historical pending-model statement certifies a live session. [15]
+- Task authoring defaults and preserves the intent-review answer; its candidate guard checks caller and stage. The existing archive hook carries the task-derived explainer root and retains cleanup failures. [18]
 
-
-
+- The shared set-field allowlist includes the knowledge-effect declaration and belongs to the phrase owner. [5]
 - Task-document batches keep each root/document destination, check one graph-bearing document and refuse task-root escapes before the common batch publisher. [16]
 - Audited never-started discard retains source/evidence CAS and central preview/publication; reopen delegates the exact same contract identity to its owner. [17]
 
-- Task authoring defaults and preserves the intent-review answer; its candidate guard checks caller and stage. The existing archive hook carries the task-derived explainer root and retains cleanup failures. [18]
+- Packet requirement edits use alignment_sweep to report the master’s declared open siblings and their requirement identities as advice. task_doc_tools validates the candidate before deriving that advice, publishes task truth through its existing owner and adds the advice only to an ok result. The sweep edits no sibling packet and grants no release; response shaping carries its metadata separately. [19]

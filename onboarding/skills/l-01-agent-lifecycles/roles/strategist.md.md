@@ -7,7 +7,17 @@ Delta scope remains monotonic over the preceding rejected set. Rounds within the
 This account controls the named changed seams; contradictory earlier card wording below is retained only as historical evidence. Unchanged role duties and R117 file-only wake/report transport are preserved. Source inspection supplies no new runtime test, CODE verdict, review counter or acceptance.
 
 
-- Delta scope remains monotonic over the preceding rejected set. Rounds within the settings limit are ordinary; beyond it requires recorded approval under the review operation. This changes no target-only dispatch authority, role write boundary, requirement or acceptance owner. [1]
+- Delta scope remains monotonic over the preceding rejected set. Rounds within the settings limit are ordinary; beyond it requires recorded approval under the review operation. This changes no target-only dispatch authority, role write boundary, requirement or acceptance owner.
+
+Earlier caption detached from live reference 1: its original target declared the source text at `skills/l-01-agent-lifecycles/roles/strategist.md` at original blob `28cbe55d2100b6fb6780c7126fab86611025738a`, lines 1–125. The caption above is retained as prose; the numbered clause below describes the current source.
+
+Retained authoring-row wording:
+
+Finding: Successor plan review verifies only sealed outstanding IDs, gives every prior ID a fixed/unfixed disposition and keeps the remaining set monotonic; rounds within settings are ordinary and beyond-settings rounds need recorded approval.
+
+Anchor: `current role or template contract`
+
+Source: skills/l-01-agent-lifecycles/roles/strategist.md:54-60
 
 
 
@@ -100,3 +110,5 @@ journal; it does not prove that the former integrated or terminated.
 
 The strategist keeps planning truth upstream of runtime selection. Queue or selector state may
 inform current feasibility, but cannot veto task authoring or rewrite dependency judgment.
+
+- Successor plan review verifies only sealed outstanding IDs, gives every prior ID a fixed/unfixed disposition and keeps the remaining set monotonic; rounds within settings are ordinary and beyond-settings rounds need recorded approval. [1]

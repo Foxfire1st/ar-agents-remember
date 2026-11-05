@@ -1,0 +1,22 @@
+{
+  "path": "scripts/agent_evals/run_curator.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The source defines this file's responsibility and the boundaries described here.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d950d14d90314b8229a636873c196e6114992be8",
+            "content": "sha256:5ed177cc2fcc5cec1aee61e4dd19aff01648bec9d1167bd612441c9df2149b07",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

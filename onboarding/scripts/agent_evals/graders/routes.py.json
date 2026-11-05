@@ -1,0 +1,40 @@
+{
+  "path": "scripts/agent_evals/graders/routes.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "d0adc1177259d977ab8b372236c85eec64d56990",
+        "content": "sha256:423b8b670336fba303eee68257566e77022e554c990584177722ae817924470b",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-6MD2Q2",
+      "invariant": "INV-NMBR0E",
+      "origin": {
+        "handoffEntry": "L62-fd6462b8-trajectory-route",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "It evaluates explicit admitted current routes and records unresolved command identity without treating it as proof of a stale build.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The source defines this file's responsibility and the boundaries described here.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d0adc1177259d977ab8b372236c85eec64d56990",
+            "content": "sha256:423b8b670336fba303eee68257566e77022e554c990584177722ae817924470b",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -4,8 +4,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "24ae5ecc1c485103ade43601a1a6b742f33be711",
-        "content": "sha256:2465e879a084250b052d460dce0d700670b3833dc21fcc9835773971c823bdd6",
+        "blob": "fcaa118c8e610318ae15ccf39943b51d1e954640",
+        "content": "sha256:1d7faa278eb8ce06931e45979010586cc4d79fe8d6838b0300234c01d28bbc2c",
         "locator": {
           "kind": "file"
         }
@@ -26,7 +26,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "24ae5ecc1c485103ade43601a1a6b742f33be711",
+            "blob": "fcaa118c8e610318ae15ccf39943b51d1e954640",
             "content": "sha256:ee9b486b27b677e0bfd84cfd64a13ed90f249ab24e4c9d5615e04f4712f7e96a",
             "locator": {
               "end": 1,
@@ -43,12 +43,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "24ae5ecc1c485103ade43601a1a6b742f33be711",
+            "blob": "fcaa118c8e610318ae15ccf39943b51d1e954640",
             "content": "sha256:4471d88d00d6c4bb54b28c5a0a84642d2c5fde141700d52716f19a36dfaee521",
             "locator": {
-              "end": 478,
+              "end": 481,
               "kind": "line_range",
-              "start": 477
+              "start": 480
             }
           },
           "kind": "code"
@@ -56,16 +56,28 @@
       ]
     },
     "2": {
-      "note": "The product summary says both search providers are retired and by-path reads carry the product, while the same list still credits provider indexes cloned into a worktree.\n\nAnchor: `both providers are retired`",
+      "note": "The summary still retires semantic/code-graph providers, but its Git-memory bullet now names paired code/memory publication and a disposable knowledge index rebuilt from the selected text tree; the separate cheap-isolation section still contains residual live provider-cloning prose.",
       "targets": [
         {
           "anchor": {
-            "blob": "24ae5ecc1c485103ade43601a1a6b742f33be711",
-            "content": "sha256:8e8d46784b43ac71b9922bb65c81149bea6f0cbd976ec360d2d21b5b919203bf",
+            "blob": "fcaa118c8e610318ae15ccf39943b51d1e954640",
+            "content": "sha256:e18f9167e267c3832aad8c3bd21de192591e4506b961673830ef9bf6d2f8ec64",
             "locator": {
-              "end": 33,
+              "end": 39,
               "kind": "line_range",
-              "start": 27
+              "start": 25
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fcaa118c8e610318ae15ccf39943b51d1e954640",
+            "content": "sha256:2ab26ae67e99c02b6183948272a21ddc06b712ecc029748be1bf01446ba513cd",
+            "locator": {
+              "end": 297,
+              "kind": "line_range",
+              "start": 262
             }
           },
           "kind": "code"
@@ -77,7 +89,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "24ae5ecc1c485103ade43601a1a6b742f33be711",
+            "blob": "fcaa118c8e610318ae15ccf39943b51d1e954640",
             "content": "sha256:2824265b587c4a40ec4d5a5dc92350d91fa19fe15b5ab43e2eb073355c3c6f84",
             "locator": {
               "end": 78,
@@ -94,12 +106,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "24ae5ecc1c485103ade43601a1a6b742f33be711",
+            "blob": "fcaa118c8e610318ae15ccf39943b51d1e954640",
             "content": "sha256:766f3196063e4e1a9cd8bfd24537188b18bb65907632c0051964f82cae91dbd2",
             "locator": {
-              "end": 220,
+              "end": 223,
               "kind": "line_range",
-              "start": 199
+              "start": 202
             }
           },
           "kind": "code"
@@ -111,12 +123,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "24ae5ecc1c485103ade43601a1a6b742f33be711",
+            "blob": "fcaa118c8e610318ae15ccf39943b51d1e954640",
             "content": "sha256:99eb37adddcf99eebcd5217f97af1a6d28fe8ad9c00816681388628a9c1030d7",
             "locator": {
-              "end": 350,
+              "end": 353,
               "kind": "line_range",
-              "start": 348
+              "start": 351
             }
           },
           "kind": "code"
@@ -128,12 +140,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "24ae5ecc1c485103ade43601a1a6b742f33be711",
+            "blob": "fcaa118c8e610318ae15ccf39943b51d1e954640",
             "content": "sha256:71796918acdd434aa0feb6687cfbf1d16d3a3aa174e7c3c87ada33532278c3f1",
             "locator": {
-              "end": 407,
+              "end": 410,
               "kind": "line_range",
-              "start": 402
+              "start": 405
             }
           },
           "kind": "code"
@@ -145,12 +157,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "24ae5ecc1c485103ade43601a1a6b742f33be711",
+            "blob": "fcaa118c8e610318ae15ccf39943b51d1e954640",
             "content": "sha256:79e5ce7d24272aff523cc00607bc931381eb1ec3d9955cca662dbf47daca35db",
             "locator": {
-              "end": 423,
+              "end": 426,
               "kind": "line_range",
-              "start": 420
+              "start": 423
             }
           },
           "kind": "code"
@@ -162,12 +174,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "24ae5ecc1c485103ade43601a1a6b742f33be711",
+            "blob": "fcaa118c8e610318ae15ccf39943b51d1e954640",
             "content": "sha256:2ab26ae67e99c02b6183948272a21ddc06b712ecc029748be1bf01446ba513cd",
             "locator": {
-              "end": 294,
+              "end": 297,
               "kind": "line_range",
-              "start": 259
+              "start": 262
             }
           },
           "kind": "code"
@@ -179,12 +191,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "24ae5ecc1c485103ade43601a1a6b742f33be711",
+            "blob": "fcaa118c8e610318ae15ccf39943b51d1e954640",
             "content": "sha256:6fe28ae1575865ec66f03e483e1255c0bbcfe9a6bcf0356f551bffdbc1d04a7a",
             "locator": {
-              "end": 453,
+              "end": 456,
               "kind": "line_range",
-              "start": 453
+              "start": 456
             }
           },
           "kind": "code"

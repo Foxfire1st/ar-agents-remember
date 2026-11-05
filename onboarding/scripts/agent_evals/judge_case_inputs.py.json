@@ -1,0 +1,40 @@
+{
+  "path": "scripts/agent_evals/judge_case_inputs.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "04b5868f24e3e1cb5f1f1350f873535ab032f2f6",
+        "content": "sha256:46644c5a3aaa3d9ec980549e43f5817e00121b5833de9cdf93dd86b3d02fed0d",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-44PKSK",
+      "invariant": "INV-SYN8W6",
+      "origin": {
+        "handoffEntry": "L62-fd6462b8-judge-package",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "It materializes only explicitly declared hash-bound inputs needed by the judge.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The source defines this file's responsibility and the boundaries described here.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "04b5868f24e3e1cb5f1f1350f873535ab032f2f6",
+            "content": "sha256:46644c5a3aaa3d9ec980549e43f5817e00121b5833de9cdf93dd86b3d02fed0d",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -61,7 +61,13 @@ both success and failure.
 
 ### Todos
 
-None recorded. The compilation outcome carries `shared_block`, the slot a later leaf fills; empty or absent text writes no block.
+None recorded. The compilation outcome now fills `shared_block` from admitted `core/every-role.md`; absent text writes no block.
+
+## Current source contract
+
+On successful compilation, compile_admitted_capsule returns shared_block from the admitted core-root source whose path is core/every-role.md; if that source is absent from the admitted set, the slot is None. It remains separate from render_instructions. Compilation refusals retain the existing typed error and manifest shape.
+
+- Admitted core/every-role.md now populates the shared_block outcome slot. [6]
 
 ## Evidence
 
@@ -75,10 +81,22 @@ No relevant documentation found after checking live sources.
 ### Repo-Internal References
 
 
-- The pure compiler this entry point calls and the refusal-shaped manifest builders it selects between. [1]
+Retained authoring-row wording:
+
+Finding: The pure compiler this entry point calls and the refusal-shaped manifest builders it selects between.
+
+Anchor:
+
+Source: mcp/src/agents_remember/models/role_capsules/compiler.py; mcp/src/agents_remember/models/role_capsules/compiler.py:99-189; mcp/src/agents_remember/models/role_capsules/compiler.py:501-514; mcp/src/agents_remember/models/role_capsules/compiler.py:517-529
 
 - The admission step whose refusal is converted into the same outcome shape. [2]
-- The task-projection seam accepted here and verified inside the compiler. [3]
+Retained authoring-row wording:
+
+Finding: The task-projection seam accepted here and verified inside the compiler.
+
+Anchor:
+
+Source: mcp/src/agents_remember/application/role_capsules/compilation.py:93-134; mcp/src/agents_remember/models/role_capsules/compiler.py:260-283
 - The typed refusal carried as a value. [4]
 - A supplied projection is carried in its own channel, an unverifiable one is refused, and no projection yields no context with a stable digest. [5]
 
@@ -88,3 +106,6 @@ No sibling-repository contract consumes this entry point. The projection seam it
 consumed by a later leaf inside this master, not by another repository.
 
 No meaningful cross-repo references found.
+
+- The pure compiler this entry point calls and the refusal-shaped manifest builders it selects between. [1]
+- The task-projection seam accepted here and verified inside the compiler. [3]

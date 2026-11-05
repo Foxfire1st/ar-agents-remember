@@ -1,0 +1,36 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "prevents_costly_mistake"
+    ],
+    "justification": "A trimmed or differently serialized package could let a judge grade incomplete evidence or send a request whose measured budget describes different bytes."
+  },
+  "applicability": "Disk evidence and canonical inline objects submitted to native rubric judges.",
+  "conditions": [
+    "Required criterion evidence stays byte-exact and hash-bound, including rubric-referenced complete changed carriers.",
+    "The final canonical submitted object is checked against its actual UTF-8 byte and provider character limits before invocation.",
+    "A local over-budget rejection records the exact request identity and zero invocations."
+  ],
+  "exclusions": [
+    "Trimming required evidence merely to meet an advisory token target.",
+    "Estimated tokens as actual provider usage or guaranteed provider acceptance."
+  ],
+  "id": "INV-SYN8W6",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Frozen tree fd6462b85ba9d06f004e323384ea800f9aa5144a, base 59b01fb8f72a38d2d27f9c37b8b9ca2513fd3fa0; path bindings and source hashes in producer-manifest.json; Reviewer R4 and d229-repairs/report.md."
+      ],
+      "path": "L62-unaffected-evaluation-obligations"
+    },
+    "handoffEntry": "L62-fd6462b8-judge-package",
+    "leaf": "260928-MIK-L62",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Blind judge requests bind complete byte-exact disk evidence and validate the canonical submitted object against provider-specific character and byte limits.",
+  "status": "proposed",
+  "supersedes": []
+}

@@ -1,0 +1,40 @@
+{
+  "path": "mcp/tests/fixtures/judge-claude-inline-read-real.json",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "33496eff780fb10232fdc7693b1b0f46a3156b9b",
+        "content": "sha256:4dbd56ad110dad6ff53c7bf7d40e9dd14b07b9f3bb5dec76d649edff1c12e58d",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-E7AP4A",
+      "invariant": "INV-JCSQVZ",
+      "origin": {
+        "handoffEntry": "L62-fd6462b8-judge-execution",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "These retained read records pin an actual CE05 content read and its evidence binding.",
+      "role": "support"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The source defines this file's responsibility and the boundaries described here.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "33496eff780fb10232fdc7693b1b0f46a3156b9b",
+            "content": "sha256:4dbd56ad110dad6ff53c7bf7d40e9dd14b07b9f3bb5dec76d649edff1c12e58d",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

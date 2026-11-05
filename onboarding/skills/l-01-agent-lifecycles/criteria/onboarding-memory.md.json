@@ -3,12 +3,69 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "38daf6f3a9e1766c06dbbe2cc50c5b44db32d5f1",
+        "blob": "aafe9cceed66e44b929375098b30e6b65b0a4d79",
+        "content": "sha256:e59b9d79161e8faf48361fcbbb84c6ba81caf32017fb8b74c081b1bc0b4a65df",
+        "locator": {
+          "end": 37,
+          "kind": "line_range",
+          "start": 27
+        }
+      },
+      "id": "RLZ-61E5ND",
+      "invariant": "INV-9DAS08",
+      "origin": {
+        "handoffEntry": "L62-CUR-6414-curator-healing",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "OM2 owns the converted-memory second-reader and content-bound trace duty.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "aafe9cceed66e44b929375098b30e6b65b0a4d79",
+        "content": "sha256:3d1709936e588269503d3564218ba868baa8edc20455f0a12e4fa7fa648f5908",
+        "locator": {
+          "end": 18,
+          "kind": "line_range",
+          "start": 13
+        }
+      },
+      "id": "RLZ-NHPXYF",
+      "invariant": "INV-6A3N48",
+      "origin": {
+        "handoffEntry": "L62-CUR-6414-current-truth",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "OM1 requires all-carrier current truth and keeps true retired-subject statements.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "aafe9cceed66e44b929375098b30e6b65b0a4d79",
+        "content": "sha256:eba7369a0ed23b6c06566e21210b242aa5fd61721d426a769852cdc8aa608055",
+        "locator": {
+          "end": 21,
+          "kind": "line_range",
+          "start": 19
+        }
+      },
+      "id": "RLZ-P0EHMW",
+      "invariant": "INV-JHB89M",
+      "origin": {
+        "handoffEntry": "L62-CUR-6db-attach-L62-CUR-6414-claim-check",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "OM1 separately checks counts/prose line references against code and rejects a true added paragraph as repair for a contradicting body.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "aafe9cceed66e44b929375098b30e6b65b0a4d79",
         "content": "sha256:a76c9cdea1f77370a24a981ea0206e261c9c6fcb754015a6965003a494e5a0b9",
         "locator": {
-          "end": 68,
+          "end": 72,
           "kind": "line_range",
-          "start": 51
+          "start": 55
         }
       },
       "id": "RLZ-SYBPB2",
@@ -19,6 +76,44 @@
       },
       "rationale": "The standing criterion a curation pass is checked against: OM-5 asks the reviewer to judge each re-point's target and reason, which is the instruction side of the re-point obligation this record states.",
       "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "aafe9cceed66e44b929375098b30e6b65b0a4d79",
+        "content": "sha256:e59b9d79161e8faf48361fcbbb84c6ba81caf32017fb8b74c081b1bc0b4a65df",
+        "locator": {
+          "end": 37,
+          "kind": "line_range",
+          "start": 27
+        }
+      },
+      "id": "RLZ-X5BFFX",
+      "invariant": "INV-JHB89M",
+      "origin": {
+        "handoffEntry": "L62-CUR-6414-claim-check",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "OM2 owns the converted-memory second-reader and content-bound trace duty.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "aafe9cceed66e44b929375098b30e6b65b0a4d79",
+        "content": "sha256:69f76b794bc16196fbbcbd193bd87485ada086cca6f386a7b6e64fc3ca09206a",
+        "locator": {
+          "end": 18,
+          "kind": "line_range",
+          "start": 15
+        }
+      },
+      "id": "RLZ-XVA5YX",
+      "invariant": "INV-6A3N48",
+      "origin": {
+        "handoffEntry": "L62-CUR-6db-attach-L62-CUR-6414-current-truth",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "OM1 checks each present claim, paired note and bounded sibling carrier against as-landed code, retaining true retired-subject statements and moving past accounts to history.",
+      "role": "propagation-persistence"
     }
   ],
   "references": {
@@ -27,12 +122,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "38daf6f3a9e1766c06dbbe2cc50c5b44db32d5f1",
-            "content": "sha256:7610f5d7d6a039667279c36815e7e1748d5f82831101ccf0947d9fa778fd1fb9",
+            "blob": "aafe9cceed66e44b929375098b30e6b65b0a4d79",
+            "content": "sha256:ea7f71ef8bb55de4d6970c62b62ba110c24ea31adefb197291132c2cf8e1cc21",
             "locator": {
-              "end": 24,
+              "end": 36,
               "kind": "line_range",
-              "start": 13
+              "start": 12
             }
           },
           "kind": "code"
@@ -44,12 +139,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "38daf6f3a9e1766c06dbbe2cc50c5b44db32d5f1",
+            "blob": "aafe9cceed66e44b929375098b30e6b65b0a4d79",
             "content": "sha256:573343f4fdfdb33d3f6efc3ea4a612d700a9e7e15d444ec3554978146057d2ec",
             "locator": {
-              "end": 36,
+              "end": 40,
               "kind": "line_range",
-              "start": 26
+              "start": 30
             }
           },
           "kind": "code"
@@ -61,12 +156,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "38daf6f3a9e1766c06dbbe2cc50c5b44db32d5f1",
+            "blob": "aafe9cceed66e44b929375098b30e6b65b0a4d79",
             "content": "sha256:3b58ad315c5421d9c1da51a37e3b9088d6fc0c1b80166859e74bbb5d0faf81ea",
             "locator": {
-              "end": 86,
+              "end": 90,
               "kind": "line_range",
-              "start": 38
+              "start": 42
             }
           },
           "kind": "code"
@@ -78,10 +173,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "38daf6f3a9e1766c06dbbe2cc50c5b44db32d5f1",
-            "content": "sha256:656d2d69e3144d9e2967e9c82d10ecbe280006228bfb8043360c92d56f244b60",
+            "blob": "aafe9cceed66e44b929375098b30e6b65b0a4d79",
+            "content": "sha256:f191942a447e80c6cc3e96b3bf874febc1e9a433e4e9d1b858f933c6d63ef05b",
             "locator": {
-              "kind": "file"
+              "end": 109,
+              "kind": "line_range",
+              "start": 1
             }
           },
           "kind": "code"
@@ -93,12 +190,41 @@
       "targets": [
         {
           "anchor": {
-            "blob": "38daf6f3a9e1766c06dbbe2cc50c5b44db32d5f1",
+            "blob": "aafe9cceed66e44b929375098b30e6b65b0a4d79",
             "content": "sha256:a76c9cdea1f77370a24a981ea0206e261c9c6fcb754015a6965003a494e5a0b9",
             "locator": {
-              "end": 68,
+              "end": 72,
               "kind": "line_range",
-              "start": 51
+              "start": 55
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "OM-1 also checks affected paired notes and sibling cards found by a bounded search, including dated sections. Repair or withdraw the encountered false-claim class on every such current carrier and preserve true present-tense statements about retired things. The independent second reader still checks statements, history meaning and important omissions before closeout.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aafe9cceed66e44b929375098b30e6b65b0a4d79",
+            "content": "sha256:41ec9bb92941f0676a23d6b90f652efe0e1c2a3779401fdfe9785d7948955056",
+            "locator": {
+              "end": 24,
+              "kind": "line_range",
+              "start": 13
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "aafe9cceed66e44b929375098b30e6b65b0a4d79",
+            "content": "sha256:573343f4fdfdb33d3f6efc3ea4a612d700a9e7e15d444ec3554978146057d2ec",
+            "locator": {
+              "end": 40,
+              "kind": "line_range",
+              "start": 30
             }
           },
           "kind": "code"

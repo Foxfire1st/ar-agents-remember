@@ -37,14 +37,16 @@
       ]
     },
     "2": {
-      "note": "A lifted decision round-trips; one endpoint resolved, one reported unresolved; the rerun is unchanged.\n\nAnchor: `test_a_lifted_decision_round_trips_and_its_requirement_endpoints_are_reported`",
+      "note": "The lifted-decision test first refuses the mismatched requirement endpoint without writes, reports the resolved and unresolved endpoints, then repairs that endpoint and checks a successful round-trip plus an unchanged rerun. Anchor: test_a_lifted_decision_round_trips_and_its_requirement_endpoints_are_reported.",
       "targets": [
         {
           "anchor": {
-            "blob": "1a6235931c50a4a8f6b146a51598cdff7f55a233",
-            "content": "sha256:075ff4475087a14dafb700ce617d28082fae430f3313c7e64333ca644f5dc9fe",
+            "blob": "7e02efe56a42a670bb818ea1f56af7d09c48e5f3",
+            "content": "sha256:fbc845ca4136164eb34326e37e70dbd2f85612fd718321f3d76bc113c85e1515",
             "locator": {
-              "kind": "file"
+              "end": 1144,
+              "kind": "line_range",
+              "start": 1
             },
             "path": "mcp/tests/test_knowledge_writer.py"
           },

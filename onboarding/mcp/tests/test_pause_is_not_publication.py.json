@@ -140,14 +140,16 @@
       ]
     },
     "6": {
-      "note": "The route this guard exists to keep the stop away from.\n\nAnchor: `worktree_checkpoint_landing`",
+      "note": "The route this guard exists to keep the stop away from. Anchor: `worktree_checkpoint_landing`",
       "targets": [
         {
           "anchor": {
-            "blob": "fa17709a127c9b18641196b921b59caa9f7ec2b2",
-            "content": "sha256:dce036a193b04613f2a25218717eea07994829364ae04d13b6ce63c1a99b2de2",
+            "blob": "551d4ee801406a1faf1ccde0cfa641425c5ee4e0",
+            "content": "sha256:f239aaed53e583a0aa6274b05c3059a122ae73f4d75c2cf63103598131127abf",
             "locator": {
-              "kind": "file"
+              "end": 175,
+              "kind": "line_range",
+              "start": 163
             },
             "path": "mcp/src/agents_remember/mcp/registration/closeout.py"
           },
@@ -155,15 +157,15 @@
         },
         {
           "anchor": {
-            "blob": "fa17709a127c9b18641196b921b59caa9f7ec2b2",
-            "content": "sha256:506db74f7d583089c7ac1ad013f07818f4ee1c28fc341cf24036bdf097c2d4c6",
+            "blob": "a24443a30248d8bc65193ddde2d9f9ca3bd89244",
+            "content": "sha256:d09cf773d6ed395be2ec715ee4f7d545884cdc8438b5d54aaf019d59296ffd1a",
             "locator": {
-              "kind": "symbol",
-              "name": "worktree_checkpoint_landing"
-            },
-            "path": "mcp/src/agents_remember/mcp/registration/closeout.py"
+              "end": 202,
+              "kind": "line_range",
+              "start": 1
+            }
           },
-          "kind": "code"
+          "kind": "test"
         }
       ]
     },
@@ -216,12 +218,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ac006b11f74a4c64ab964edc3378b4c96f153872",
+            "blob": "2c675ac4ed53a3b28cae8c0c32cd13c617d8f6ed",
             "content": "sha256:f65cc12571e207748b8140f72a5797dea13dd61fa0687ceda8c4da9c0eecd259",
             "locator": {
-              "end": 680,
+              "end": 719,
               "kind": "line_range",
-              "start": 680
+              "start": 719
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },

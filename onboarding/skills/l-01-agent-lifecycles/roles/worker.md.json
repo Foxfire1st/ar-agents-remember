@@ -4,10 +4,10 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "e9cdae3d6c37b0b2b5b725d99d3dba0218b0822f",
-        "content": "sha256:c9e4ec21e3b43360e42db9f7fc8297b081953d341d9b3e6da604e79d1fc2b850",
+        "blob": "c631f6b28ae2bc2485d4dcf263e612407f9318c2",
+        "content": "sha256:2d9776e4a3ae508fe360dda1dc084865dc3f14f9afba8325080f7ac3728d93c6",
         "locator": {
-          "end": 14,
+          "end": 18,
           "kind": "line_range",
           "start": 8
         }
@@ -23,12 +23,12 @@
     },
     {
       "anchor": {
-        "blob": "e9cdae3d6c37b0b2b5b725d99d3dba0218b0822f",
-        "content": "sha256:192abee0ba936a2346e5374ed7b68c822f2a5aa8d33acffa18bbf681a1617217",
+        "blob": "c631f6b28ae2bc2485d4dcf263e612407f9318c2",
+        "content": "sha256:ca6cdb5fc75b7c49a984bdeebe4f334d7008a0ba253a0f38cee9f44653968188",
         "locator": {
-          "end": 36,
+          "end": 33,
           "kind": "line_range",
-          "start": 36
+          "start": 33
         }
       },
       "id": "RLZ-6P4D1B",
@@ -37,17 +37,17 @@
         "handoffEntry": "L100-R100-doctrine-coherence",
         "leaf": "260928-MIK-L100"
       },
-      "rationale": "The startup sentence now states the one set call with Worker open and Reviewer/Curator held, and hands the freeze to the Reviewer directly.",
+      "rationale": "Worker first tells Manager to start Reviewer, then hands the exact freeze directly to the started Reviewer; the same clause sends the producer list only after code PASS.",
       "role": "primary-authority"
     },
     {
       "anchor": {
-        "blob": "e9cdae3d6c37b0b2b5b725d99d3dba0218b0822f",
+        "blob": "c631f6b28ae2bc2485d4dcf263e612407f9318c2",
         "content": "sha256:e41fafc8b37c5fbba5c971104e2036dcedb4e59cfeec8b6dc49db480c0a4190e",
         "locator": {
-          "end": 66,
+          "end": 93,
           "kind": "line_range",
-          "start": 64
+          "start": 91
         }
       },
       "id": "RLZ-6QVTKY",
@@ -61,27 +61,8 @@
     },
     {
       "anchor": {
-        "blob": "e9cdae3d6c37b0b2b5b725d99d3dba0218b0822f",
-        "content": "sha256:d0dd37230635b4bf60eb9afa2f995a981c26d820d440db56374f8aaa8e0cceca",
-        "locator": {
-          "end": 28,
-          "kind": "line_range",
-          "start": 28
-        }
-      },
-      "id": "RLZ-76BXNW",
-      "invariant": "INV-6R279E",
-      "origin": {
-        "handoffEntry": "L117-R07",
-        "leaf": "260928-MIK-L117"
-      },
-      "rationale": "The worker's Messages paragraph is the canonical wording the nine generated copies and the oracle both follow.",
-      "role": "presentation"
-    },
-    {
-      "anchor": {
-        "blob": "e9cdae3d6c37b0b2b5b725d99d3dba0218b0822f",
-        "content": "sha256:b95f84c8f907eeebadf154a945e500d8093e2a963c023c1e6ac5f6a6d9559dba",
+        "blob": "c631f6b28ae2bc2485d4dcf263e612407f9318c2",
+        "content": "sha256:8cc45eaf2fac5f180dbd904da6575fffab0eb238e11e03a70772c0a7bd318825",
         "locator": {
           "kind": "file"
         }
@@ -97,8 +78,8 @@
     },
     {
       "anchor": {
-        "blob": "e9cdae3d6c37b0b2b5b725d99d3dba0218b0822f",
-        "content": "sha256:b95f84c8f907eeebadf154a945e500d8093e2a963c023c1e6ac5f6a6d9559dba",
+        "blob": "c631f6b28ae2bc2485d4dcf263e612407f9318c2",
+        "content": "sha256:8cc45eaf2fac5f180dbd904da6575fffab0eb238e11e03a70772c0a7bd318825",
         "locator": {
           "kind": "file"
         }
@@ -114,10 +95,10 @@
     },
     {
       "anchor": {
-        "blob": "e9cdae3d6c37b0b2b5b725d99d3dba0218b0822f",
-        "content": "sha256:c9e4ec21e3b43360e42db9f7fc8297b081953d341d9b3e6da604e79d1fc2b850",
+        "blob": "c631f6b28ae2bc2485d4dcf263e612407f9318c2",
+        "content": "sha256:2d9776e4a3ae508fe360dda1dc084865dc3f14f9afba8325080f7ac3728d93c6",
         "locator": {
-          "end": 14,
+          "end": 18,
           "kind": "line_range",
           "start": 8
         }
@@ -128,17 +109,17 @@
         "handoffEntry": "L71-CURRENT242-W-19",
         "leaf": "260928-MIK-L71"
       },
-      "rationale": "The canonical roles/worker.md carries the applicable own-file first-read/task_doc-only write and report/scratch instructions for its role/operation; it is the source the public generator ships.",
+      "rationale": "Canonical Worker inputs retain its primary task/enclosure, exact rendered/canonical reader arguments and scoped reader context, including a direct knowledge-use detail; the package copy propagates the source.",
       "role": "primary-authority"
     },
     {
       "anchor": {
-        "blob": "e9cdae3d6c37b0b2b5b725d99d3dba0218b0822f",
-        "content": "sha256:5920dad602942bb5f3dc6789c82b0b637d2d6c627dbf5efaf9011f580e2b4cfb",
+        "blob": "c631f6b28ae2bc2485d4dcf263e612407f9318c2",
+        "content": "sha256:481b1b4174d8392ed173bcfd263b1313329cc21e4124133669c44be859187e70",
         "locator": {
-          "end": 32,
+          "end": 55,
           "kind": "line_range",
-          "start": 30
+          "start": 51
         }
       },
       "id": "RLZ-KCZHQB",
@@ -152,12 +133,12 @@
     },
     {
       "anchor": {
-        "blob": "e9cdae3d6c37b0b2b5b725d99d3dba0218b0822f",
-        "content": "sha256:8fbff667f9c086632c313deb42e998ff450493ebce1f17288c98626793be1b9d",
+        "blob": "c631f6b28ae2bc2485d4dcf263e612407f9318c2",
+        "content": "sha256:974804726dae704bf04bb40ef1d6dfc1535e6b36c8751e5aa82fccfeba1eabcc",
         "locator": {
-          "end": 44,
+          "end": 69,
           "kind": "line_range",
-          "start": 36
+          "start": 33
         }
       },
       "id": "RLZ-MXJ3HX",
@@ -171,12 +152,12 @@
     },
     {
       "anchor": {
-        "blob": "e9cdae3d6c37b0b2b5b725d99d3dba0218b0822f",
-        "content": "sha256:1bd04d2211b5c466b5ea0f5ddcf4d296835c7d59d0a851c1d31bac8d008e8364",
+        "blob": "c631f6b28ae2bc2485d4dcf263e612407f9318c2",
+        "content": "sha256:671084707903e241574fc040c5d94a760c6b658aa6824f0ff9132d88400c5cb3",
         "locator": {
-          "end": 62,
+          "end": 87,
           "kind": "line_range",
-          "start": 46
+          "start": 71
         }
       },
       "id": "RLZ-QDM8GH",
@@ -190,12 +171,12 @@
     },
     {
       "anchor": {
-        "blob": "e9cdae3d6c37b0b2b5b725d99d3dba0218b0822f",
-        "content": "sha256:192abee0ba936a2346e5374ed7b68c822f2a5aa8d33acffa18bbf681a1617217",
+        "blob": "c631f6b28ae2bc2485d4dcf263e612407f9318c2",
+        "content": "sha256:8c78244e5ce782799ccdd415ce8742937f1b223ea4ea330170d8e61bbee5458a",
         "locator": {
-          "end": 36,
+          "end": 59,
           "kind": "line_range",
-          "start": 36
+          "start": 59
         }
       },
       "id": "RLZ-X136N6",
@@ -210,16 +191,28 @@
   ],
   "references": {
     "1": {
-      "note": "The worker is one leaf-scoped builder whose terminal state is checks plus report.\n\nAnchor: \"You build one leaf.\"; `# Worker`",
+      "note": "Worker implements only the selected leaf's approved primary requirement and preservation constraints; its handover supplies canonical task, exact packet, paired roots, contract and report path, and its completed stage requires final-byte handover checks plus a report with Reviewer.",
       "targets": [
         {
           "anchor": {
-            "blob": "e9cdae3d6c37b0b2b5b725d99d3dba0218b0822f",
-            "content": "sha256:686a8207c0dee987b39b28c96f5992ba859e06ba1e7598abef1c9a74baea4025",
+            "blob": "c631f6b28ae2bc2485d4dcf263e612407f9318c2",
+            "content": "sha256:c661956f16ca4d2976257208691e0519a39d9b7a8be8fdd3ceeec432287cde95",
             "locator": {
-              "end": 17,
+              "end": 8,
               "kind": "line_range",
-              "start": 6
+              "start": 8
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c631f6b28ae2bc2485d4dcf263e612407f9318c2",
+            "content": "sha256:5c5dbddc974494517fb6a7686321a8c4d504dd969768ba4a766b7db6abb8fd6e",
+            "locator": {
+              "end": 83,
+              "kind": "line_range",
+              "start": 81
             }
           },
           "kind": "code"
@@ -231,7 +224,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e9cdae3d6c37b0b2b5b725d99d3dba0218b0822f",
+            "blob": "c631f6b28ae2bc2485d4dcf263e612407f9318c2",
             "content": "sha256:9488bb0fa5ef244884263bd378263ac1cf511273fbedaaa16b1b734cdf575e9c",
             "locator": {
               "end": 9,
@@ -244,14 +237,28 @@
       ]
     },
     "11": {
-      "note": "Current settings-budget, recorded approval and preserved stage/ownership boundaries are carried by this canonical instruction source.",
+      "note": "Worker escalates three unsuccessful own repairs and costly/repeated small repairs to Manager, preserves build-only authority, and uses the bounded writer ladder only for its admitted tool class while validation/transaction guards retain their stops.",
       "targets": [
         {
           "anchor": {
-            "blob": "e9cdae3d6c37b0b2b5b725d99d3dba0218b0822f",
-            "content": "sha256:b95f84c8f907eeebadf154a945e500d8093e2a963c023c1e6ac5f6a6d9559dba",
+            "blob": "c631f6b28ae2bc2485d4dcf263e612407f9318c2",
+            "content": "sha256:086f99e83f31cf34a0acb867a6f28f9b17f1e5278d1dcd850d7b2d281b9cce8a",
             "locator": {
-              "kind": "file"
+              "end": 63,
+              "kind": "line_range",
+              "start": 57
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c631f6b28ae2bc2485d4dcf263e612407f9318c2",
+            "content": "sha256:005723300ba47ccbda6dae6f5c998d481739b3bf54feef8d184497f146df0842",
+            "locator": {
+              "end": 87,
+              "kind": "line_range",
+              "start": 76
             }
           },
           "kind": "code"
@@ -259,16 +266,40 @@
       ]
     },
     "12": {
-      "note": "The Manager starts the three leaf seats as a set; Worker cannot start its checker or accept/publish its own implementation. Its stage requires final candidate meeting the requirement, relevant tests/lint/type checks passing and the report with Reviewer. Own failures are corrected on its own ground; blocked/unrun evidence remains explicit. A record-only repair stays on the same review round only with candidate unchanged; repeated cases demand property/construction reasoning rather than case chasing.",
+      "note": "Worker first notifies Manager at freeze so Reviewer can be started; after code PASS Manager starts Curator. Worker starts no role, cannot accept its own implementation, repairs its own failing checks and retains a record-only review round only while candidate bytes stay unchanged.",
       "targets": [
         {
           "anchor": {
-            "blob": "e9cdae3d6c37b0b2b5b725d99d3dba0218b0822f",
-            "content": "sha256:be8b1d53999f724b9657042a21820ee639927b4b1394ff2e61b6ceed46134443",
+            "blob": "c631f6b28ae2bc2485d4dcf263e612407f9318c2",
+            "content": "sha256:f2911aaab97d7e45cf7d35fd1887c28e90e2b2ceb2a2c7e3db405146aa5e9e88",
             "locator": {
-              "end": 60,
+              "end": 34,
               "kind": "line_range",
-              "start": 1
+              "start": 30
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c631f6b28ae2bc2485d4dcf263e612407f9318c2",
+            "content": "sha256:c8a5d5ff6915bf72510d15091db9cc0ac50ec258fc3ca530992f586d58849594",
+            "locator": {
+              "end": 65,
+              "kind": "line_range",
+              "start": 57
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c631f6b28ae2bc2485d4dcf263e612407f9318c2",
+            "content": "sha256:3f2fbc0772e1b942fa1b3d90eac10ba59f156f0e1bae16c42285440b9a0354bf",
+            "locator": {
+              "end": 89,
+              "kind": "line_range",
+              "start": 81
             }
           },
           "kind": "code"
@@ -276,16 +307,16 @@
       ]
     },
     "13": {
-      "note": "Adds completion-only own build/evidence step marking and stopping after three unsuccessful own repairs of one check/finding.\n\nAnchor: Candidate instruction body, lines 8–22",
+      "note": "Worker marks only its own build/evidence step done when complete through task_doc, never curation, review, task status or acceptance.",
       "targets": [
         {
           "anchor": {
-            "blob": "e9cdae3d6c37b0b2b5b725d99d3dba0218b0822f",
-            "content": "sha256:c7e13613c29cd416cc0fddc1987f6cf63a7aa8d6afd8317051bcad2f9c70e1d0",
+            "blob": "c631f6b28ae2bc2485d4dcf263e612407f9318c2",
+            "content": "sha256:ee42876c43fd986af94493c6c204b25633d84f5418368908b67cabc92848becc",
             "locator": {
-              "end": 22,
+              "end": 74,
               "kind": "line_range",
-              "start": 8
+              "start": 71
             }
           },
           "kind": "code"
@@ -293,16 +324,16 @@
       ]
     },
     "14": {
-      "note": "Adds completion-only own build/evidence step marking and stopping after three unsuccessful own repairs of one check/finding.\n\nAnchor: Candidate instruction body, lines 8–22",
+      "note": "After three unsuccessful own repairs of the same check or finding, Worker records its attempts and remaining failure and tells Manager rather than continuing that repair loop.",
       "targets": [
         {
           "anchor": {
-            "blob": "e9cdae3d6c37b0b2b5b725d99d3dba0218b0822f",
-            "content": "sha256:c7e13613c29cd416cc0fddc1987f6cf63a7aa8d6afd8317051bcad2f9c70e1d0",
+            "blob": "c631f6b28ae2bc2485d4dcf263e612407f9318c2",
+            "content": "sha256:01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
             "locator": {
-              "end": 22,
+              "end": 76,
               "kind": "line_range",
-              "start": 8
+              "start": 76
             }
           },
           "kind": "code"
@@ -310,16 +341,16 @@
       ]
     },
     "15": {
-      "note": "Adds completion-only own build/evidence step marking and stopping after three unsuccessful own repairs of one check/finding.\n\nAnchor: Candidate instruction body, lines 8–22",
+      "note": "Worker stage completion requires final-byte coding-guidelines checks on a clean copy and its report with Reviewer; its own failing checks are repaired rather than bypassed or excused as pre-existing.",
       "targets": [
         {
           "anchor": {
-            "blob": "e9cdae3d6c37b0b2b5b725d99d3dba0218b0822f",
-            "content": "sha256:c7e13613c29cd416cc0fddc1987f6cf63a7aa8d6afd8317051bcad2f9c70e1d0",
+            "blob": "c631f6b28ae2bc2485d4dcf263e612407f9318c2",
+            "content": "sha256:f7e0de0e769f280e73027b60d5ddc401d3d5cb8e6f5d96c5b13877defe681cd2",
             "locator": {
-              "end": 22,
+              "end": 85,
               "kind": "line_range",
-              "start": 8
+              "start": 81
             }
           },
           "kind": "code"
@@ -327,16 +358,16 @@
       ]
     },
     "16": {
-      "note": "The Worker boundary requires direct repair and per-finding freeze evidence and delegates sync procedure to implementation.",
+      "note": "A sealed finding in the Worker's own task files is repaired directly without prior plan, census or Manager go-ahead, and the freeze reports per-finding failing-before/passing-after evidence; supported sync remains implementation-owned.",
       "targets": [
         {
           "anchor": {
-            "blob": "e9cdae3d6c37b0b2b5b725d99d3dba0218b0822f",
-            "content": "sha256:8fbff667f9c086632c313deb42e998ff450493ebce1f17288c98626793be1b9d",
+            "blob": "c631f6b28ae2bc2485d4dcf263e612407f9318c2",
+            "content": "sha256:0e3c78487e2b84ed400bc4c0e046801dbef466e8d7aab873fade44b3daa453e6",
             "locator": {
-              "end": 44,
+              "end": 69,
               "kind": "line_range",
-              "start": 36
+              "start": 69
             }
           },
           "kind": "code"
@@ -344,16 +375,16 @@
       ]
     },
     "2": {
-      "note": "Intake binds writes to the named code worktree and report path.\n\nAnchor: \"Where your inputs live.\"; \"Your writable areas are your\"",
+      "note": "Worker reads the exact rendered/JSON locations in its handover, verifies paired roots, writes code only and reads memory as context; a missing binding is reported from its canonical source and field without guessing a different task or workspace.",
       "targets": [
         {
           "anchor": {
-            "blob": "e9cdae3d6c37b0b2b5b725d99d3dba0218b0822f",
-            "content": "sha256:d568e93a471713751c5660bdeb9da0a6fc22d8f8093c6c80fb73d74c1578ee57",
+            "blob": "c631f6b28ae2bc2485d4dcf263e612407f9318c2",
+            "content": "sha256:675267e149aa2dfa168bf041dd2dc82035f9e476aeb477c2e151b6adb51a0ce3",
             "locator": {
-              "end": 34,
+              "end": 18,
               "kind": "line_range",
-              "start": 30
+              "start": 16
             }
           },
           "kind": "code"
@@ -361,24 +392,29 @@
       ]
     },
     "3": {
-      "note": "Orientation requires current worktree reads and coding guidelines before edits.\n\nAnchor: \"**Before your first edit:**\"; \"native read is your edit precondition\"",
+      "note": "Worker reads the selected requirement/task with its own file tools, follows supplied repository coding/test rules and knowledge detail at editing or failure, and reads existing design guidelines before its first UI edit.",
       "targets": [
         {
           "anchor": {
-            "blob": "e9cdae3d6c37b0b2b5b725d99d3dba0218b0822f",
-            "content": "sha256:b564066723bd3c38f3df230b0a7cdd790214ce4c8981035082f84f1e095a0fbd",
+            "blob": "c631f6b28ae2bc2485d4dcf263e612407f9318c2",
+            "content": "sha256:f731f4198dbb23a776d9f65654622afad141ed327c0f78c7ff3a6c51a4fa8b94",
             "locator": {
-              "end": 24,
+              "end": 20,
               "kind": "line_range",
-              "start": 22
+              "start": 14
             }
           },
           "kind": "code"
-        },
+        }
+      ]
+    },
+    "4": {
+      "note": "Worker freezes and first asks Manager to start Reviewer, then sends that Reviewer its exact freeze and journal attempt IDs; after code PASS it sends the Curator the exact-freeze structured producer list after serving-build handoff-check.",
+      "targets": [
         {
           "anchor": {
-            "blob": "e9cdae3d6c37b0b2b5b725d99d3dba0218b0822f",
-            "content": "sha256:d568e93a471713751c5660bdeb9da0a6fc22d8f8093c6c80fb73d74c1578ee57",
+            "blob": "c631f6b28ae2bc2485d4dcf263e612407f9318c2",
+            "content": "sha256:f2911aaab97d7e45cf7d35fd1887c28e90e2b2ceb2a2c7e3db405146aa5e9e88",
             "locator": {
               "end": 34,
               "kind": "line_range",
@@ -389,44 +425,17 @@
         }
       ]
     },
-    "4": {
-      "note": "Build produces implementation plus evidence for the separate curator.\n\nAnchor: \"Implement exactly the leaf plan\"; `## Process`; \"Produce the builder facts\"",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "e9cdae3d6c37b0b2b5b725d99d3dba0218b0822f",
-            "content": "sha256:7259137a0d5ea45e549edbd80b3267b81bff1aed03c8a06627ce973d09cae4b1",
-            "locator": {
-              "end": 49,
-              "kind": "line_range",
-              "start": 36
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "e9cdae3d6c37b0b2b5b725d99d3dba0218b0822f",
-            "content": "sha256:efb3f44e6549872096e89982bc97d0b76ae641462741e865c87afff6c1c647ae",
-            "locator": {
-              "end": 46,
-              "kind": "line_range",
-              "start": 42
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "5": {
-      "note": "The worker appends authoritative attempts to the single journal and links them from the mandatory turn report.\n\nAnchor: \"**The requirement attempt record**\"; \"**The turn report**\"",
+      "note": "Worker writes one canonical task report, carries the leaf Requirement Attempt Journal attempt IDs with its freeze and reads the turn-report shape at that freeze; the detailed implementation output procedure remains the owner.",
       "targets": [
         {
           "anchor": {
-            "blob": "e9cdae3d6c37b0b2b5b725d99d3dba0218b0822f",
-            "content": "sha256:b95f84c8f907eeebadf154a945e500d8093e2a963c023c1e6ac5f6a6d9559dba",
+            "blob": "c631f6b28ae2bc2485d4dcf263e612407f9318c2",
+            "content": "sha256:34f8ef7de2fbe7243339b861543b76759005c4d94514c385edc932fb5840cbde",
             "locator": {
-              "kind": "file"
+              "end": 34,
+              "kind": "line_range",
+              "start": 28
             }
           },
           "kind": "code"
@@ -434,14 +443,16 @@
       ]
     },
     "6": {
-      "note": "The worker emits its requirement-shaped items as one curator hand-off list in the shared producer shape.\n\nAnchor: \"**The curator hand-off list**\"",
+      "note": "After code PASS, Worker sends Curator structured producer data verbatim for that exact freeze in the shared template shape and first runs serving-build handoff-check against that freeze.",
       "targets": [
         {
           "anchor": {
-            "blob": "e9cdae3d6c37b0b2b5b725d99d3dba0218b0822f",
-            "content": "sha256:b95f84c8f907eeebadf154a945e500d8093e2a963c023c1e6ac5f6a6d9559dba",
+            "blob": "c631f6b28ae2bc2485d4dcf263e612407f9318c2",
+            "content": "sha256:d695de79ad60074db55cdb9229b15e5f5352ae844b2988c96694eb52db7aa65f",
             "locator": {
-              "kind": "file"
+              "end": 32,
+              "kind": "line_range",
+              "start": 30
             }
           },
           "kind": "code"
@@ -449,14 +460,28 @@
       ]
     },
     "7": {
-      "note": "Tool authority excludes lifecycle/status, gates and memory writes; only completed matching own build/evidence steps are marked done, not task acceptance.\n\nAnchor: `## What you must not do`; \"No closeout, integration, gates, task-document bookkeeping\"",
+      "note": "Worker owns code and its build/evidence step completion, not memory, review, lifecycle/status, commits or acceptance; its completed matching own steps may be marked done through task_doc and unfinished work is never marked complete.",
       "targets": [
         {
           "anchor": {
-            "blob": "e9cdae3d6c37b0b2b5b725d99d3dba0218b0822f",
-            "content": "sha256:b95f84c8f907eeebadf154a945e500d8093e2a963c023c1e6ac5f6a6d9559dba",
+            "blob": "c631f6b28ae2bc2485d4dcf263e612407f9318c2",
+            "content": "sha256:086f99e83f31cf34a0acb867a6f28f9b17f1e5278d1dcd850d7b2d281b9cce8a",
             "locator": {
-              "kind": "file"
+              "end": 63,
+              "kind": "line_range",
+              "start": 57
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c631f6b28ae2bc2485d4dcf263e612407f9318c2",
+            "content": "sha256:ee42876c43fd986af94493c6c204b25633d84f5418368908b67cabc92848becc",
+            "locator": {
+              "end": 74,
+              "kind": "line_range",
+              "start": 71
             }
           },
           "kind": "code"
@@ -480,16 +505,16 @@
       ]
     },
     "9": {
-      "note": "Checks have their own explicit reportable step.\n\nAnchor: \"### The checks you owe\"; \"Record the exact commands, the selected scope and the results\"",
+      "note": "Worker stage completion requires the requirement met and coding-guidelines handover checks passing on a clean copy of final candidate bytes. It repairs failing checks on its own ground and reports checks it cannot pass or run without relabelling them.",
       "targets": [
         {
           "anchor": {
-            "blob": "e9cdae3d6c37b0b2b5b725d99d3dba0218b0822f",
-            "content": "sha256:9b73fd7cba137ace23f5d0157ab3aacd4a481559765a4c879ab55266e1c3cd7d",
+            "blob": "c631f6b28ae2bc2485d4dcf263e612407f9318c2",
+            "content": "sha256:f7e0de0e769f280e73027b60d5ddc401d3d5cb8e6f5d96c5b13877defe681cd2",
             "locator": {
-              "end": 66,
+              "end": 85,
               "kind": "line_range",
-              "start": 50
+              "start": 81
             }
           },
           "kind": "code"

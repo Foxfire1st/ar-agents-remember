@@ -7,10 +7,10 @@
 ## Purpose
 
 `cli/__main__.py` is the umbrella `agents-remember` console entrypoint: a single front door
-that dispatches subcommands. It registers **seventeen** of them — `dashboard`, `memory-citations`,
-`memory-backfill`, `knowledge-ingest`, `knowledge-bootstrap`, `knowledge-format`,
+that dispatches subcommands. It registers **nineteen** of them — `dashboard`, `memory-citations`,
+`memory-backfill`, `handoff-check`, `knowledge-ingest`, `knowledge-bootstrap`, `knowledge-format`,
 `knowledge-convert`, `knowledge-validate`, `knowledge-index`, `knowledge-worklist`, `knowledge-routes`,
-`knowledge-census`, `knowledge-copies`, `tool-log-stats` (MIK-R108 rule 8), `paseo`, `upgrade-user-settings` and `providers-remove` — and
+`knowledge-census`, `knowledge-copies`, `tool-log-stats` (MIK-R108 rule 8), `paseo`, `upgrade-user-settings`, `providers-remove` and `removed-stores` — and
 further CLI adapters slot in as subparsers. Backed by the
 `agents-remember = agents_remember.cli.__main__:main` console script.
 
@@ -38,7 +38,7 @@ parses and dispatches to `args.func(args)`, returning its int exit code. Before 
 the internal `leaf_enclosure_start.COMMAND` child-process route delegates to its own entry point;
 it is not an additional advertised public subcommand.
 
-**The two knowledge subcommands are two different admissions, and the help text says which.**
+**The two knowledge authoring subcommands are two different admissions, and the help text says which.**
 `knowledge-ingest` is described as "the knowledge write plane's production entry point" for a
 *leaf's* curator hand-off list; `knowledge-bootstrap` is described as "the taskless bootstrap's
 production entry point", which is what a repository with no leaf reaches. They are separate
@@ -104,6 +104,12 @@ The paseo command group joins existing knowledge-ingest, taskless bootstrap and 
 - This module dispatches; it implements no operation of its own. A new subcommand is a
   registration line here plus an adapter module that owns its arguments and its exit code.
 
+## Current source contract
+
+The knowledge-command registry also exposes handoff-check, delegating its arguments and execution to cli.handoff_check. It reads producer lists against a named code tree and optional memory directory; it is separate from knowledge-ingest and supplies no write or acceptance authority.
+
+- Registers read-only handoff-check command. [20]
+
 ## Evidence
 
 ### Repo-Internal References
@@ -133,14 +139,33 @@ The paseo command group joins existing knowledge-ingest, taskless bootstrap and 
 - The `knowledge-copies` subparser adds: retired knowledge-database leftover copies listed with their deciding rule (`--apply` deletes MIK-R26 rule 6 names), registered the same declarative way. [15]
 
 
-- The `upgrade-user-settings` subparser this leaf adds: the explicit whole-file move from the old coordination settings file to the user configuration directory, with `--coordination-root` and `--dry-run`. [18]
+- The `upgrade-user-settings` subparser this leaf adds: the explicit whole-file move from the old coordination settings file to the user configuration directory, with `--coordination-root` and `--dry-run`.
+
+The original source already registered upgrade-user-settings and its adapter before this change added handoff-check; the earlier caption’s “this leaf” does not identify L62. Earlier caption retained as prose; its original citation used mcp/src/agents_remember/cli/__main__.py at blob `6e7bd5a18da5ea781594e67999b9b01f305937d4`. Reference 18 now carries the current clause and current source targets; it does not retain those earlier targets.
+
+Retained authoring-row wording:
+
+Finding: The current runtime-command registry still registers upgrade-user-settings with its existing adapter; this leaf adds handoff-check separately in the knowledge-command registry.
+
+Anchor:
+
+Source: mcp/src/agents_remember/cli/__main__.py
 
 
 ### Runtime Source References
 
 
-- Frozen implementation of build_parser supporting the stated file behavior. [16]
+Retained authoring-row wording:
+
+Finding: Frozen implementation of build_parser supporting the stated file behavior.
+
+Anchor:
+
+Source: mcp/src/agents_remember/cli/__main__.py
 
 - Frozen implementation of main supporting the stated file behavior. [17]
 
 - The current umbrella additionally registers providers-remove as an explicit operator command; it does not restore any provider setup or MCP provider tool. [19]
+
+- Frozen implementation of build_parser supporting the stated file behavior. [16]
+- The current runtime-command registry still registers upgrade-user-settings with its existing adapter; this leaf adds handoff-check separately in the knowledge-command registry. [18]

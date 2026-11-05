@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "ddc4e0152814a7b8e396988f3bdb89c35da6ff1d",
+        "blob": "098344bc78e783c79747283535e3578c80cb5c03",
         "content": "sha256:4c95b6bccacc8aacdae473649b4c1a1dcd2455ba4e2c6c7b8faae6b5f2f82805",
         "locator": {
           "kind": "symbol",
@@ -20,8 +20,8 @@
     },
     {
       "anchor": {
-        "blob": "ddc4e0152814a7b8e396988f3bdb89c35da6ff1d",
-        "content": "sha256:ece909d587bfb4b1b2f1d3b82d362afc61f400b5f280c1627bd99c4047e67928",
+        "blob": "098344bc78e783c79747283535e3578c80cb5c03",
+        "content": "sha256:c1dfa36d6684235c6f9fc3c10d9998f575fd7a725f4538c0de6dd308dfad514e",
         "locator": {
           "kind": "symbol",
           "name": "test_each_parent_has_upward_notice_and_unchanged_downward_answer_duties"
@@ -37,7 +37,7 @@
     },
     {
       "anchor": {
-        "blob": "ddc4e0152814a7b8e396988f3bdb89c35da6ff1d",
+        "blob": "098344bc78e783c79747283535e3578c80cb5c03",
         "content": "sha256:19d28f4d232caef57721e6e512145676b42b4b3527a8f5cea05dc692b37fecd5",
         "locator": {
           "kind": "symbol",
@@ -54,7 +54,7 @@
     },
     {
       "anchor": {
-        "blob": "ddc4e0152814a7b8e396988f3bdb89c35da6ff1d",
+        "blob": "098344bc78e783c79747283535e3578c80cb5c03",
         "content": "sha256:393e9f2d9dd43c40978f3a8d4acd60736b12c1658217067ed2fe476e76ac38d8",
         "locator": {
           "kind": "symbol",
@@ -71,8 +71,8 @@
     },
     {
       "anchor": {
-        "blob": "ddc4e0152814a7b8e396988f3bdb89c35da6ff1d",
-        "content": "sha256:f1e0c160a5d37c58d17e9940f3c860554276bd061ffde0c3fcd11fc243c2bb10",
+        "blob": "098344bc78e783c79747283535e3578c80cb5c03",
+        "content": "sha256:3a4d33639cf59cc6892b4a0cc13341489ec2be84289743ab9acff8c08bde39ca",
         "locator": {
           "kind": "symbol",
           "name": "test_each_parentable_role_has_question_recovery_and_answer_provenance"
@@ -90,14 +90,28 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The parentable roles carry the question, recovery, provenance and notice clauses.",
+      "note": "The parentable-role test checks question recovery and answer provenance in the shared orientation home, requires each selected role to refer to that home without copying it, and checks transport clauses through the declared delivered message step.",
       "targets": [
         {
           "anchor": {
-            "blob": "ddc4e0152814a7b8e396988f3bdb89c35da6ff1d",
-            "content": "sha256:2832e6a287fdf818743f49d4979bc33754ea52470600682f9d1a4d9680c17e09",
+            "blob": "098344bc78e783c79747283535e3578c80cb5c03",
+            "content": "sha256:80090112afa63191ab3976edf3437df5d026dedcc01df36d56ba274c7f3f68bb",
             "locator": {
-              "kind": "file"
+              "end": 59,
+              "kind": "line_range",
+              "start": 21
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "098344bc78e783c79747283535e3578c80cb5c03",
+            "content": "sha256:3a4d33639cf59cc6892b4a0cc13341489ec2be84289743ab9acff8c08bde39ca",
+            "locator": {
+              "end": 94,
+              "kind": "line_range",
+              "start": 62
             }
           },
           "kind": "test"
@@ -105,14 +119,28 @@
       ]
     },
     "2": {
-      "note": "Every starter role carries the upward notice and unchanged downward answer duties.",
+      "note": "Starter-role checks require the shared upward permission notice, declared transport recovery and child-question step; the answer clauses retain an own-authority answer, otherwise an unchanged upward question and unchanged quoted developer-answer provenance on the return path.",
       "targets": [
         {
           "anchor": {
-            "blob": "ddc4e0152814a7b8e396988f3bdb89c35da6ff1d",
-            "content": "sha256:2832e6a287fdf818743f49d4979bc33754ea52470600682f9d1a4d9680c17e09",
+            "blob": "098344bc78e783c79747283535e3578c80cb5c03",
+            "content": "sha256:80090112afa63191ab3976edf3437df5d026dedcc01df36d56ba274c7f3f68bb",
             "locator": {
-              "kind": "file"
+              "end": 59,
+              "kind": "line_range",
+              "start": 21
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "098344bc78e783c79747283535e3578c80cb5c03",
+            "content": "sha256:c1dfa36d6684235c6f9fc3c10d9998f575fd7a725f4538c0de6dd308dfad514e",
+            "locator": {
+              "end": 124,
+              "kind": "line_range",
+              "start": 97
             }
           },
           "kind": "test"
@@ -124,7 +152,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ddc4e0152814a7b8e396988f3bdb89c35da6ff1d",
+            "blob": "098344bc78e783c79747283535e3578c80cb5c03",
             "content": "sha256:4c95b6bccacc8aacdae473649b4c1a1dcd2455ba4e2c6c7b8faae6b5f2f82805",
             "locator": {
               "kind": "symbol",
@@ -136,14 +164,16 @@
       ]
     },
     "4": {
-      "note": "The leaf `ownerRelation` keeps peer results and named parent occasions.",
+      "note": "The compiled leaf ownerRelation test keeps Worker, Reviewer and Curator peer results direct, reserves named authority/developer occasions to the parent, and requires sibling role/task arguments instead of routine parent result notices.",
       "targets": [
         {
           "anchor": {
-            "blob": "ddc4e0152814a7b8e396988f3bdb89c35da6ff1d",
-            "content": "sha256:2832e6a287fdf818743f49d4979bc33754ea52470600682f9d1a4d9680c17e09",
+            "blob": "098344bc78e783c79747283535e3578c80cb5c03",
+            "content": "sha256:393e9f2d9dd43c40978f3a8d4acd60736b12c1658217067ed2fe476e76ac38d8",
             "locator": {
-              "kind": "file"
+              "end": 201,
+              "kind": "line_range",
+              "start": 165
             }
           },
           "kind": "test"
@@ -151,14 +181,16 @@
       ]
     },
     "5": {
-      "note": "Each exact retired directive is detected as an independent sentence.",
+      "note": "The retired-directive control reads the current Manager, Orchestrator and router surfaces, appends each exact retired sentence separately and requires detection; the Architect own-chat sentence is retained as an allowed contrast.",
       "targets": [
         {
           "anchor": {
-            "blob": "ddc4e0152814a7b8e396988f3bdb89c35da6ff1d",
-            "content": "sha256:2832e6a287fdf818743f49d4979bc33754ea52470600682f9d1a4d9680c17e09",
+            "blob": "098344bc78e783c79747283535e3578c80cb5c03",
+            "content": "sha256:19d28f4d232caef57721e6e512145676b42b4b3527a8f5cea05dc692b37fecd5",
             "locator": {
-              "kind": "file"
+              "end": 220,
+              "kind": "line_range",
+              "start": 204
             }
           },
           "kind": "test"
@@ -166,14 +198,93 @@
       ]
     },
     "6": {
-      "note": "The compiled leaf `ownerRelation` carries the current Manager role and task return address separately from the descriptive starter identity.\n\nAnchor: `test_leaf_owner_relation_keeps_peer_results_and_named_parent_occasions`",
+      "note": "The compiled leaf ownerRelation test records the descriptive starter identity separately from host.parent.returnAddress: returns use the Manager role and canonical sprint/master task references, while peer results keep sibling leaf addresses.",
       "targets": [
         {
           "anchor": {
-            "blob": "ddc4e0152814a7b8e396988f3bdb89c35da6ff1d",
-            "content": "sha256:2832e6a287fdf818743f49d4979bc33754ea52470600682f9d1a4d9680c17e09",
+            "blob": "098344bc78e783c79747283535e3578c80cb5c03",
+            "content": "sha256:393e9f2d9dd43c40978f3a8d4acd60736b12c1658217067ed2fe476e76ac38d8",
             "locator": {
-              "kind": "file"
+              "end": 201,
+              "kind": "line_range",
+              "start": 165
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "`question_step` uses the declared source, role audience, pointer and exact delivery step. Its clause-deletion controls read actual message-handover and child-question details for busy/held recovery and unchanged developer-answer provenance; the other cases continue to read canonical source or compiled ownerRelation as appropriate. These are source assertions/support behavior, not a fresh invocation, host result or AR acceptance.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "098344bc78e783c79747283535e3578c80cb5c03",
+            "content": "sha256:dca39478b2c18c2345472182feaa10b6b38370b700ce711b872bae82c50524c6",
+            "locator": {
+              "end": 11,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "098344bc78e783c79747283535e3578c80cb5c03",
+            "content": "sha256:5cc8b7ff90a2c19076d7d829252b524ee7fb3d6a3fbaada93f8c407391e1921d",
+            "locator": {
+              "end": 55,
+              "kind": "line_range",
+              "start": 45
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "098344bc78e783c79747283535e3578c80cb5c03",
+            "content": "sha256:12a5e52e9e7a331e95c1f0d6ab13139344c9e097ed0aaadf000d1c3037f6f36e",
+            "locator": {
+              "end": 59,
+              "kind": "line_range",
+              "start": 58
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "098344bc78e783c79747283535e3578c80cb5c03",
+            "content": "sha256:3a4d33639cf59cc6892b4a0cc13341489ec2be84289743ab9acff8c08bde39ca",
+            "locator": {
+              "end": 94,
+              "kind": "line_range",
+              "start": 62
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "098344bc78e783c79747283535e3578c80cb5c03",
+            "content": "sha256:c1dfa36d6684235c6f9fc3c10d9998f575fd7a725f4538c0de6dd308dfad514e",
+            "locator": {
+              "end": 124,
+              "kind": "line_range",
+              "start": 97
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "098344bc78e783c79747283535e3578c80cb5c03",
+            "content": "sha256:37c43ad7fd1c60c1286808ed18ac4fb20d16a99c6d6de7df1b73087e90efa5fb",
+            "locator": {
+              "end": 137,
+              "kind": "line_range",
+              "start": 127
             }
           },
           "kind": "test"

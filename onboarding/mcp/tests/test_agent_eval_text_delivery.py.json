@@ -1,0 +1,42 @@
+{
+  "path": "mcp/tests/test_agent_eval_text_delivery.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "43b226d3d982d07269e28e31c0e29f7844c49ed7",
+        "content": "sha256:fa8b33282d30e498f3d59dcdda8aedc9d3225934dc76113758d299fa8a07761c",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-5CBMSV",
+      "invariant": "INV-HXTSVY",
+      "origin": {
+        "handoffEntry": "L62-fd6462b8-text-delivery",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "This regression module checks this obligation through test_native_first_message_carries_bound_text_for_both_arms, test_marker_is_selected_from_instructions_and_absent_from_entire_case_inventory, test_markdown_instruction_sentence_remains_a_verbatim_bound_substring, test_marker_in_case_json_cannot_prove_text_delivery and its remaining test cases.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The source defines this file's responsibility and the boundaries described here.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "43b226d3d982d07269e28e31c0e29f7844c49ed7",
+            "content": "sha256:fa8b33282d30e498f3d59dcdda8aedc9d3225934dc76113758d299fa8a07761c",
+            "locator": {
+              "end": 830,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,40 @@
+{
+  "path": "scripts/agent_evals/adapters/host_events.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "e7ff77f8115f3f546097defb1e5db13b05afa8d0",
+        "content": "sha256:f4f2ce77c3e9e0cbd2adcba35018556b6d42156434b044a3bb3f9284d21a658a",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-HJA6PX",
+      "invariant": "INV-QFMMYM",
+      "origin": {
+        "handoffEntry": "L62-fd6462b8-native-launch",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "It merges exact-owner host events with dated native records without treating a durable file as process liveness.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The source defines this file's responsibility and the boundaries described here.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e7ff77f8115f3f546097defb1e5db13b05afa8d0",
+            "content": "sha256:f4f2ce77c3e9e0cbd2adcba35018556b6d42156434b044a3bb3f9284d21a658a",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

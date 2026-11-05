@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "2ed65e524afd1f228f7bab90bc65c309a6926862",
+        "blob": "8ddcb980af3245c35f9350349a83452d8f8530ff",
         "content": "sha256:5bfbbc74bf4a199cbaa61d6cb6510c42b8cb3f04ddeb2f853c009f28b2ae931e",
         "locator": {
           "end": 101,
@@ -23,16 +23,28 @@
   ],
   "references": {
     "1": {
-      "note": "The README now has a `## Core Features` section that replaces `## Core Model`; it shows the source-file to onboarding-unit mapping, pitches path-addressed memory, Git-proven freshness, optional semantic/code-graph discovery, external-memory ledgers and dual worktrees, repo-owned `system/` behavior, and harness-ready first-run packages, then links to `docs/features.md`. Its retained `Harness-ready first run` bullet still says starter packages carry skills, hooks, rules and instruction files, which the Quickstart's no-copied-package statement contradicts. Anchor: `## Core Features`",
+      "note": "Core Features now names external Markdown/JSON memory, path-derived evidence, retired search providers, paired worktrees, structured records and Curator judgments with exact-tree publication checks; memory.md is an ignored attribution cache. The retained starter-package bullet still contradicts Quickstart's no-copied-package statement.",
       "targets": [
         {
           "anchor": {
-            "blob": "2ed65e524afd1f228f7bab90bc65c309a6926862",
-            "content": "sha256:084adacfb6fa35356d75567a154270e09ac04ba0ecc4c526b993a6c3ebda9977",
+            "blob": "8ddcb980af3245c35f9350349a83452d8f8530ff",
+            "content": "sha256:98fe261076229b41de6c646ea50198f022643a42fb47dafed8cf76e57b8639b7",
             "locator": {
-              "end": 62,
+              "end": 61,
               "kind": "line_range",
               "start": 45
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8ddcb980af3245c35f9350349a83452d8f8530ff",
+            "content": "sha256:c2081a43de1ff476c839a6be8daf163f16107f22bf5b7fc1c5ad507610b80ac9",
+            "locator": {
+              "end": 147,
+              "kind": "line_range",
+              "start": 142
             }
           },
           "kind": "code"
@@ -44,12 +56,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2ed65e524afd1f228f7bab90bc65c309a6926862",
+            "blob": "8ddcb980af3245c35f9350349a83452d8f8530ff",
             "content": "sha256:9952d1d0ed63d0a9a008a962196f8a449654b60428251f8791c785029c5a0ffd",
             "locator": {
-              "end": 355,
+              "end": 356,
               "kind": "line_range",
-              "start": 347
+              "start": 348
             }
           },
           "kind": "code"
@@ -61,12 +73,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2ed65e524afd1f228f7bab90bc65c309a6926862",
+            "blob": "8ddcb980af3245c35f9350349a83452d8f8530ff",
             "content": "sha256:f6e757f50314de45ed752df3d2fb828221716fb822264b73bd592d3f9fb919ad",
             "locator": {
-              "end": 355,
+              "end": 356,
               "kind": "line_range",
-              "start": 351
+              "start": 352
             }
           },
           "kind": "code"
@@ -92,16 +104,68 @@
       ]
     },
     "13": {
-      "note": "`docs/features.md` carries the full feature tour, including the new table of contents plus harness-native setup and operational guardrails for MCP authority, baseline adoption, branch carryover, cross-repo gates, benchmarks, and source quality tooling.",
+      "note": "The feature tour describes external Markdown/JSON memory, converted cards and sidecars, shared records and Curator judgment history; it retains the setup and operational-guardrail tour and the residual present-tense provider-index isolation section.",
       "targets": [
         {
           "anchor": {
-            "blob": "63b36c83fdfd0d75126ab6e73a7a3931e340b9ee",
-            "content": "sha256:bd42263a8a45e258f65e1e789c92eb632659ab611625e77ebeecab42eba436e9",
+            "blob": "afc95b79a45af293f89cc550c0230256de3e7317",
+            "content": "sha256:d0bd7dc45bf57693fb2cee6fab9312ccd71ba6a755773c599c96f6ed529faa2e",
             "locator": {
-              "end": 479,
+              "end": 39,
               "kind": "line_range",
-              "start": 1
+              "start": 11
+            },
+            "path": "docs/features.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "afc95b79a45af293f89cc550c0230256de3e7317",
+            "content": "sha256:399223afb8f6a1867781949085c80b73d87f59bc4d8b98467486458b5c89e383",
+            "locator": {
+              "end": 106,
+              "kind": "line_range",
+              "start": 87
+            },
+            "path": "docs/features.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "afc95b79a45af293f89cc550c0230256de3e7317",
+            "content": "sha256:2ab26ae67e99c02b6183948272a21ddc06b712ecc029748be1bf01446ba513cd",
+            "locator": {
+              "end": 295,
+              "kind": "line_range",
+              "start": 260
+            },
+            "path": "docs/features.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "afc95b79a45af293f89cc550c0230256de3e7317",
+            "content": "sha256:8d6e60080d96b373a63e4eb454f33e531da293f31bc0b4f78bf211b8036f3c44",
+            "locator": {
+              "end": 440,
+              "kind": "line_range",
+              "start": 392
+            },
+            "path": "docs/features.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "afc95b79a45af293f89cc550c0230256de3e7317",
+            "content": "sha256:80a09831457634cfae67481c06dc2afb57313d474dbe6110da4199a18c4e2316",
+            "locator": {
+              "end": 482,
+              "kind": "line_range",
+              "start": 469
             },
             "path": "docs/features.md"
           },
@@ -144,14 +208,14 @@
       ]
     },
     "2": {
-      "note": "The README shows a `## What It Looks Like In Practice` mini-transcript: a source file's by-path onboarding note, the task-start `context_packet`/`memory_quality_check` calls, and the read-then-propose-then-refresh loop.\n\nAnchor: `## What It Looks Like In Practice`",
+      "note": "The by-path mini-transcript reads source and card together; its current continuation puts Curator card/sidecar/record reconciliation and the recomputed worklist, validator and exact-tree gate before publication.",
       "targets": [
         {
           "anchor": {
-            "blob": "2ed65e524afd1f228f7bab90bc65c309a6926862",
-            "content": "sha256:303140747a515f3b23e7dc6ddca01d65b90f4dc0f39b285aecc6c4eabc098bb4",
+            "blob": "8ddcb980af3245c35f9350349a83452d8f8530ff",
+            "content": "sha256:cfc2442abcd89f0f6ac580ddda0d814be98ed874c4f7f9f8f4284e46689b0949",
             "locator": {
-              "end": 80,
+              "end": 79,
               "kind": "line_range",
               "start": 63
             }
@@ -165,7 +229,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2ed65e524afd1f228f7bab90bc65c309a6926862",
+            "blob": "8ddcb980af3245c35f9350349a83452d8f8530ff",
             "content": "sha256:27793a31e5e56505cb00d8e7fa4ecad35c2f727a103c20e651e8fc3f3d5ffeaf",
             "locator": {
               "end": 87,
@@ -182,7 +246,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2ed65e524afd1f228f7bab90bc65c309a6926862",
+            "blob": "8ddcb980af3245c35f9350349a83452d8f8530ff",
             "content": "sha256:5bfbbc74bf4a199cbaa61d6cb6510c42b8cb3f04ddeb2f853c009f28b2ae931e",
             "locator": {
               "end": 101,
@@ -199,7 +263,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2ed65e524afd1f228f7bab90bc65c309a6926862",
+            "blob": "8ddcb980af3245c35f9350349a83452d8f8530ff",
             "content": "sha256:be1a0b839916c13aee0b040a04281bc5b050a801e5b5632b24081cb7fc0d0eae",
             "locator": {
               "end": 145,
@@ -212,16 +276,16 @@
       ]
     },
     "6": {
-      "note": "The README routes readers first to the new Features tour, then to setup, concepts, workflows, benchmark methodology, guides, settings, and skills documentation under `docs/`.",
+      "note": "The documentation list starts with Features and now explicitly links the Knowledge system reference alongside getting started, concepts, architecture, workflows, benchmarks, guides, settings and served skills.",
       "targets": [
         {
           "anchor": {
-            "blob": "2ed65e524afd1f228f7bab90bc65c309a6926862",
-            "content": "sha256:caa098a3cfb4aa7cf0962c0cb4f6e447ff6ac19a6c0f105fbde44731b07dd0b2",
+            "blob": "8ddcb980af3245c35f9350349a83452d8f8530ff",
+            "content": "sha256:3f32e3d17a6c09cac4460958ea5a8396492fb3762d85de2333f4524f4c79e0e7",
             "locator": {
-              "end": 202,
+              "end": 207,
               "kind": "line_range",
-              "start": 185
+              "start": 194
             }
           },
           "kind": "code"
@@ -233,7 +297,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2ed65e524afd1f228f7bab90bc65c309a6926862",
+            "blob": "8ddcb980af3245c35f9350349a83452d8f8530ff",
             "content": "sha256:9ff24d32008702a166f7f672a63282996cba0367c7d1bab1bb47989ab2b92c69",
             "locator": {
               "end": 178,
@@ -250,12 +314,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2ed65e524afd1f228f7bab90bc65c309a6926862",
+            "blob": "8ddcb980af3245c35f9350349a83452d8f8530ff",
             "content": "sha256:d43961968a132e6010be80e7ad8b6f4ef114686cb3cb64da58f8f594b73dc080",
             "locator": {
-              "end": 339,
+              "end": 340,
               "kind": "line_range",
-              "start": 208
+              "start": 209
             }
           },
           "kind": "code"
@@ -267,12 +331,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2ed65e524afd1f228f7bab90bc65c309a6926862",
+            "blob": "8ddcb980af3245c35f9350349a83452d8f8530ff",
             "content": "sha256:0970a65e338421915476b4ff49c4c2bfce0f2909b6adcef3dc894a77eb1b8832",
             "locator": {
-              "end": 350,
+              "end": 351,
               "kind": "line_range",
-              "start": 341
+              "start": 342
             }
           },
           "kind": "code"

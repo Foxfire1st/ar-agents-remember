@@ -46,8 +46,9 @@ None.
 
 This criteria catalog supplies evidence only when the corresponding review is explicitly requested. It does not create a closeout or integration prerequisite; routine handoff uses the worker and curator targeted/scoped check records and preserves any failed or not-run state.
 
-## Evidence
+The current criterion also treats a new UI control that duplicates an existing primitive as a finding and names the primitive to reuse. This is a check within the requested review, not another automatic review gate.
 
+## Evidence
 ### Docs References
 
 No relevant external documentation found after checking the resolved source registry; the
@@ -179,4 +180,14 @@ Inherited reference 3 commentary (not a revalidated target):
 
 The authored file is the canonical contract; its measured byte-equal package copy is a distribution carrier, not an independent role, task or permission authority. The following whole-file reference locates that authored contract; it does not convert inherited statements into executed or whole-card acceptance.
 
+Retained authoring-row wording:
+
+Finding: The authored source owns this contract; the distribution copy is not a separate authority.
+
+Anchor:
+
+Source: skills/l-01-agent-lifecycles/criteria/code-seam.md
+
 - The authored source owns this contract; the distribution copy is not a separate authority. [3]
+
+- The current criterion also treats a new UI control that duplicates an existing primitive as a finding and names the primitive to reuse. This is a check within the requested review, not another automatic review gate. [4]

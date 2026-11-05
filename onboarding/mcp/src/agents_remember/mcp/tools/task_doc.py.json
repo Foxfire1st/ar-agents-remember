@@ -4,14 +4,16 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The application entry point this builder forwards to.\n\nAnchor: `task_doc_tool`",
+      "note": "The application entry point this builder forwards to. Anchor: `task_doc_tool`",
       "targets": [
         {
           "anchor": {
-            "blob": "f174a79f72375a38aa57f50907312424f3fc2c3c",
-            "content": "sha256:4639ac7fede07fbf8fd4a606e94345d3e15fdc3bc40ee0f57fba307bccd95505",
+            "blob": "d0b8e6fa2c415dec4821469774f9dc8f0bcccb63",
+            "content": "sha256:36946f9f594b3e343adf324da581e0d104f623f686bd83a9d2844ab5533ac0ba",
             "locator": {
-              "kind": "file"
+              "end": 1186,
+              "kind": "line_range",
+              "start": 1
             },
             "path": "mcp/src/agents_remember/application/task_docs/task_doc_tools.py"
           },
@@ -36,14 +38,16 @@
       ]
     },
     "3": {
-      "note": "The response model the payload validates against.\n\nAnchor: `TaskDocResponse`",
+      "note": "The response model the payload validates against. Anchor: `TaskDocResponse`",
       "targets": [
         {
           "anchor": {
-            "blob": "e7d80ed372402d196e9af03c6aa40d32a018d7e2",
-            "content": "sha256:c7dc3ccede6258becfe2c8d886d1ef79e04279f32d2f56f30d6d1c8fd90242c4",
+            "blob": "cd8894a7e858b103972f9a0c9ec3a13e5fc41f48",
+            "content": "sha256:667882012ebd38bb51518f072cfa2239734d4aa86714747c7082f0e34bec837b",
             "locator": {
-              "kind": "file"
+              "end": 293,
+              "kind": "line_range",
+              "start": 1
             },
             "path": "mcp/src/agents_remember/models/task_doc.py"
           },

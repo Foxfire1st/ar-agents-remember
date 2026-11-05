@@ -30,7 +30,11 @@ Citation repair keeps synchronous preview and writes, and adds background previe
 Synchronous tool bodies run off the event loop so other reads and polls can answer while they run. Potentially mutating synchronous calls keep one server-local ordering lock until the worker stops; existing asynchronous handlers retain their original path. This is not a blanket guarantee that every tool is side-effect-free or that a timeout cancels a worker.
 
 
-- The reference publishes the flat preview modes beside the request-object quality modes. [2]
+Historical source account (detached from live reference 2; docs/reference/mcp-tools.md blob fb21b7c177ee42cdcd3cbdc8e1e9ee2acf7b8302):
+
+- The reference publishes the flat preview modes beside the request-object quality modes.
+
+- The public tool reference puts citation_fix flat sync/start/poll preview arguments beside the discriminated quality request and states leaf/official/pre-baseline scope boundaries.
 
 
 - The detailed contract describes shared preview runs and synchronous write ordering. [3]
@@ -40,3 +44,5 @@ Synchronous tool bodies run off the event loop so other reads and polls can answ
 
 
 - The source describes the current instructions summarized above. [1]
+
+- The public tool reference puts citation_fix flat sync/start/poll preview arguments beside the discriminated quality request and states leaf/official/pre-baseline scope boundaries. [2]

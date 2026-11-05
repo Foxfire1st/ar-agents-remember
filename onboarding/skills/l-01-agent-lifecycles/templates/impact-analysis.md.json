@@ -107,16 +107,16 @@
       ]
     },
     "7": {
-      "note": "The Orchestrator verifies delivery and keeps reports, findings, review, curation and publication distinct.\n\nAnchor: `Keep reports, findings, review, curation, and Git publication separately addressed.`",
+      "note": "Orchestrator verifies Manager delivery while leaving the Manager's leaf diff, repair and evidence loop intact, and keeps reports, findings, review, curation and Git publication separately addressed.",
       "targets": [
         {
           "anchor": {
-            "blob": "2d58c15304831b65be687127ce05ace5c0f87cec",
-            "content": "sha256:882e30a056eada781901dce76a1d0d488379cec7560d73f9057e21f4ca382db5",
+            "blob": "5dbb22b1e2e5bdf76448b97bbfe180badc453f2d",
+            "content": "sha256:6c61ba22a9cc4ff30212b6b41381b3c7cdaec6fc9af4df16e85c75a6a2666bdb",
             "locator": {
-              "end": 32,
+              "end": 44,
               "kind": "line_range",
-              "start": 28
+              "start": 38
             },
             "path": "skills/l-01-agent-lifecycles/roles/orchestrator.md"
           },

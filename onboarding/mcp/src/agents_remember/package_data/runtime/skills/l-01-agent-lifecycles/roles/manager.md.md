@@ -2,14 +2,22 @@
 
 ## Current supported-pair account — R100/R116 composition
 
-A leaf Worker/Reviewer/Curator is started as one set, not Worker+Reviewer followed by Curator at freeze. Manager keeps whole-stage sync/closeout/integration/task/start boundaries and repairs own recording/address/input faults. Extra rounds beyond settings are requested from the task architect with the Worker property/construction account and recorded approval. Permission-held messages are product-owned for delivery; ordinary leaf peer artifacts are not couriered through Manager.
+Past-epoch account (retained wording): A leaf Worker/Reviewer/Curator is started as one set, not Worker+Reviewer followed by Curator at freeze. Manager keeps whole-stage sync/closeout/integration/task/start boundaries and repairs own recording/address/input faults. Extra rounds beyond settings are requested from the task architect with the Worker property/construction account and recorded approval. Permission-held messages are product-owned for delivery; ordinary leaf peer artifacts are not couriered through Manager.
+
+Custody: the preceding sentence(s) retain their original target blob(s) `3c2cfd97c8d64a0cd6245c1b87c6f6bd45457380`; live reference 8 labels only the separately stated current account below.
+
+Manager starts Worker at build, Reviewer at the Worker freeze and Curator after code PASS, each through an individual role_start. Manager keeps whole-stage sync/closeout/integration/task/start boundaries and repairs own recording/address/input faults. Extra rounds beyond settings are requested from the task architect with the Worker property/construction account and recorded approval. Permission-held messages are product-owned for delivery; ordinary leaf peer artifacts are not couriered through Manager.
 
 This account controls the named changed seams; contradictory earlier card wording below is retained only as historical evidence. Unchanged role duties and R117 file-only wake/report transport are preserved. Source inspection supplies no new runtime test, CODE verdict, review counter or acceptance.
 
 
 
 
-- A leaf Worker/Reviewer/Curator is started as one set, not Worker+Reviewer followed by Curator at freeze. Manager keeps whole-stage sync/closeout/integration/task/start boundaries and repairs own recording/address/input faults. Extra rounds beyond settings are requested from the task architect with the Worker property/construction account and recorded approval. Permission-held messages are product-owned for delivery; ordinary leaf peer artifacts are not couriered through Manager. [8]
+Past-epoch account (retained wording): - A leaf Worker/Reviewer/Curator is started as one set, not Worker+Reviewer followed by Curator at freeze. Manager keeps whole-stage sync/closeout/integration/task/start boundaries and repairs own recording/address/input faults. Extra rounds beyond settings are requested from the task architect with the Worker property/construction account and recorded approval. Permission-held messages are product-owned for delivery; ordinary leaf peer artifacts are not couriered through Manager.
+
+Custody: the preceding sentence(s) retain their original target blob(s) `3c2cfd97c8d64a0cd6245c1b87c6f6bd45457380`; live reference 8 labels only the separately stated current account below.
+
+- Manager starts Worker at build, Reviewer at the Worker freeze and Curator after code PASS, each through an individual role_start. Manager keeps whole-stage sync/closeout/integration/task/start boundaries and repairs own recording/address/input faults. Extra rounds beyond settings are requested from the task architect with the Worker property/construction account and recorded approval. Permission-held messages are product-owned for delivery; ordinary leaf peer artifacts are not couriered through Manager.
 
 
 
@@ -35,7 +43,11 @@ Each of these stages repairs faults in its own work or instrument and corrects i
 
 Use the supplied sprint/master/requirement/candidate/report references. Read the rendered task-document files named in the handover, read with the harness's own file tools before acting; change documents through `task_doc` only, because edits to copies are never read back and are lost on the next publication. Each leaf owns one primary requirement; inherited/adjacent requirements remain constraints. Leaf work uses the AR paired enclosure rather than an independent Paseo worktree.
 
-Start a leaf’s Worker, Reviewer and Curator as one `role_start_set` under the selected master and retain their actual IDs. Worker opens at once; Reviewer and Curator are held until their first addressed work, unless Reviewer work is supplied in the call. The leaf's Reviewer sends finding-specific repair to the same Worker directly; independent review runs when required by task/plan, and fix verification preserves its sealed baseline.
+Past-epoch account (retained wording): Start a leaf’s Worker, Reviewer and Curator as one `role_start_set` under the selected master and retain their actual IDs. Worker opens at once; Reviewer and Curator are held until their first addressed work, unless Reviewer work is supplied in the call. The leaf's Reviewer sends finding-specific repair to the same Worker directly; independent review runs when required by task/plan, and fix verification preserves its sealed baseline.
+
+Custody: the preceding sentence(s) retain their original target blob(s) `3c2cfd97c8d64a0cd6245c1b87c6f6bd45457380`; live reference 8 labels only the separately stated current account below.
+
+Start Worker at build, Reviewer at the Worker freeze and Curator after code PASS, using individual `role_start` calls under the selected master and retaining their actual IDs. The leaf's Reviewer sends finding-specific repair to the same Worker directly; independent review runs when required by task/plan, and fix verification preserves its sealed baseline.
 
 Inspect actual deliverables, complete changed-file diff, checks and reports before handoff. Preserve requirement/finding IDs and separate implementation, review, curation and publication facts. Its own decisions cover leaf order and starts, operational problems, ordinary requirement readings, repair rounds, landing checks and delegated closeout/integration; only the four developer-needed categories plus the once-only final report go to the parent or the instructed reporting recipient. A real parent is addressed from the handover; dashboard launch needs none.
 
@@ -77,7 +89,7 @@ When the master line moves, Worker runs its supported leaf sync. If no path chan
 
 
 
-- The generated role carries its canonical repair-loop instructions without independent authority. [9]
+- The generated role carries its canonical repair-loop instructions without independent authority.
 
 
 
@@ -93,7 +105,7 @@ When the master line moves, Worker runs its supported leaf sync. If no path chan
 
 
 
-- The packaged manager is one master-scoped owner of the leaf closeout chain. Source caption: `# Manager` [2]
+- The packaged manager is one master-scoped owner of the leaf closeout chain. Source caption: `# Manager`
 
 
 
@@ -103,7 +115,7 @@ When the master line moves, Worker runs its supported leaf sync. If no path chan
 
 
 
-- Its hosted child dispatch uses structural task document and role. Source caption: `role_start` [3]
+- Its hosted child dispatch uses structural task document and role. Source caption: `role_start`
 
 
 
@@ -111,7 +123,11 @@ When the master line moves, Worker runs its supported leaf sync. If no path chan
 
 
 
-- Its starts follow `../operations/coordination.md`: a start names the role and the exact canonical references, and a leaf's Worker, Reviewer and Curator are started as one set with `role_start_set`. [4]
+Past-epoch account (retained wording): - Its starts follow `../operations/coordination.md`: a start names the role and the exact canonical references, and a leaf's Worker, Reviewer and Curator are started as one set with `role_start_set`.
+
+Custody: the preceding sentence(s) retain their original target blob(s) `3c2cfd97c8d64a0cd6245c1b87c6f6bd45457380`; live reference 4 labels only the separately stated current account below.
+
+- Its starts follow `../operations/coordination.md`: each stage uses individual `role_start` with exact canonical references—Worker at build, Reviewer at freeze and Curator after code PASS.
 
 
 - The canonical source owns this doctrine. [5]
@@ -124,7 +140,7 @@ This packaged copy derives from the canonical roles/manager.md. The Manager reta
 
 
 
-- This source owns the stated current Investigator scope or canonical vocabulary. [1]
+- This source owns the stated current Investigator scope or canonical vocabulary.
 
 
 
@@ -134,4 +150,12 @@ This packaged copy derives from the canonical roles/manager.md. The Manager reta
 
 
 
-- Current stage boundaries, settings-owned review budget and recorded approval duties are carried by these instruction sources. [7]
+- Current stage boundaries, settings-owned review budget and recorded approval duties are carried by these instruction sources.
+
+- Manager assigns non-leaf checks to an Investigator within its own master, sends the scoped concern as a first message and reports a forbidden start without inventing an Architect. [1]
+- The packaged manager is one master-scoped owner of the leaf closeout chain. Source caption: `# Manager` [2]
+- Manager starts roles with the exact canonical scope from its handover and follows the common Coordination start procedure; no task identity is inferred from a workspace name. [3]
+- Manager follows the common Coordination operation and starts individual stages: Worker at build, Reviewer at the Worker freeze and Curator after code PASS. [4]
+- Manager owns gate decisions, paired transactions and whole-stage delivery; it records beyond-limit approvals while preserving the roles’ ordinary direct repair and handover duties. [7]
+- Manager starts Worker at build, Reviewer at the freeze and Curator after code PASS. It owns sync/closeout/integration/task boundaries, repairs its own record/address/input faults, and obtains and records beyond-settings authority from the task Architect; ordinary peer artifacts stay direct. [8]
+- The generated role carries its canonical repair-loop instructions without independent authority. [9]

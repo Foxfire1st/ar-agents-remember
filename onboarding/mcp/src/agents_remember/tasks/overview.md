@@ -103,17 +103,26 @@ A subTask may hold the canonical `intentReview` answer: `pending`, `review-first
 
 ## Evidence
 
+
+
+
+
+- Retained reference account (no fresh execution or acceptance inferred): The `task_doc` application entry point authors documents through this package.
+
+
+
+
+- Task intent-review models, rendering, order and normative allowlists share the canonical answer; open review is visible but absent from ready_ids, and the strict agreed revision rides go.
+
+- Retained reference account (no fresh execution or acceptance inferred): The `task_doc` application entry point authors documents through this package. Anchor: `task_doc_tool` [5]
+- Task intent-review models, rendering, order and normative allowlists share the canonical answer; open review is visible but absent from ready_ids, and the strict agreed revision rides go. [58]
+
 - The persisted route-review record declares the optional base stamp. [56]
 - The exhaustive field taxonomy classifies the stamp as evidence. [57]
-
-
-
-
 - Retained reference account (no fresh execution or acceptance inferred): Canonical task intent is hashed from the validated normative projection. [1]
 - Retained reference account (no fresh execution or acceptance inferred): Exact task text remains mandatory alongside supplemental packet references. [2]
 - Retained reference account (no fresh execution or acceptance inferred): Task-document publication rejects a route review missing intent identity. [3]
 - Retained reference account (no fresh execution or acceptance inferred): Mutation classification consumes the accepted/candidate field delta. [4]
-- Retained reference account (no fresh execution or acceptance inferred): The `task_doc` application entry point authors documents through this package. [5]
 - Retained reference account (no fresh execution or acceptance inferred): Leaf writes keep same-root master rows synchronized through the dedicated planner. [6]
 - Retained reference account (no fresh execution or acceptance inferred): The task-document renderer regenerates markdown from the validated `TaskDocument`. [7]
 - Retained reference account (no fresh execution or acceptance inferred): The persisted worktree contract is the analogous model-to-text precedent. [8]
@@ -141,7 +150,6 @@ A subTask may hold the canonical `intentReview` answer: `pending`, `review-first
 - Retained reference account (no fresh execution or acceptance inferred): The missing-master message names the sprint, the master, the archive location and the retire operation. [32]
 - Retained reference account (no fresh execution or acceptance inferred): The retirement probe refuses a model that cannot parse a retired row. [33]
 - Retained reference account (no fresh execution or acceptance inferred): Shared sprint census reports commanding, recording and unreadable populations with caller-specific refusal policy. [34]
-
 - Task reads record consumed bytes; the source-pair reader parses retained bytes separately [35]
 - Prepared writes use atomic replacements and restoration; publication only locally requires review intent identity [36]
 - Strict lookup retains claimant/nonplain identities or all observations for no claimant [37]
@@ -162,10 +170,6 @@ A subTask may hold the canonical `intentReview` answer: `pending`, `review-first
 - Retirement census explicitly preserves different caller refusal policies [51]
 - Notes/dispositions independently make step checkbox lines visible [52]
 - Title joins use qualified leaf keys and a separate direct JSON reader [53]
-
 - A kept view ignores every task document it did not read. [29]
 - A document that begins to claim the leaf is not hidden by a kept view. [30]
-
 - Code reviewState and the post-landing memoryReviewState are independent persisted evidence lanes. Recorded rounds retain their kind and findings-remain facts for step-up counts; record-only checks add no try, and a memory result cannot reset passed code. Ordinary reads remain strict. The private launch-only fallback preserves malformed raw review evidence without making it a counted or accepted round; in-flight pre-rollout memory checks are not migrated. [55]
-
-- Task intent-review models, rendering, order and normative allowlists share the canonical answer; open review is visible but absent from ready_ids, and the strict agreed revision rides go. [58]

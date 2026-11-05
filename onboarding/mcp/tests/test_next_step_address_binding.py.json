@@ -47,47 +47,28 @@
       ]
     },
     "11": {
-      "note": "**The stated reach: the one carrier that declares no address — `TaskDocResponse` — has its hint WITHHELD, asserted against the model's own fields. `260918-TSIP-L10` renamed this case because it asserted the opposite until that leaf; the row is corrected with it.**\n\nAnchor: `test_an_envelope_with_no_address_has_its_hint_withheld` `TaskDocResponse`",
+      "note": "The current test asserts TaskDocResponse declares neither contractPath nor enclosurePath and bound_next_step returns None for a foreign-address hint on that response. Its docstring records the earlier L10 rename separately; these source assertions establish no new execution or historical repair event.",
       "targets": [
-        {
-          "anchor": {
-            "blob": "d1d22b20b04b8f4ae8fe80c1bbeb5e5d125616c9",
-            "content": "sha256:ab601b54aad2c2d578e5297494b508a80b9568d21c70f3c9cc347dde644d3350",
-            "locator": {
-              "kind": "file"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "e7d80ed372402d196e9af03c6aa40d32a018d7e2",
-            "content": "sha256:c7dc3ccede6258becfe2c8d886d1ef79e04279f32d2f56f30d6d1c8fd90242c4",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "mcp/src/agents_remember/models/task_doc.py"
-          },
-          "kind": "code"
-        },
         {
           "anchor": {
             "blob": "d1d22b20b04b8f4ae8fe80c1bbeb5e5d125616c9",
             "content": "sha256:9612031039a374929d654988fda4070ea4bd63a743ed45cf25731aded99e640f",
             "locator": {
-              "kind": "symbol",
-              "name": "test_an_envelope_with_no_address_has_its_hint_withheld"
+              "end": 205,
+              "kind": "line_range",
+              "start": 168
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "e7d80ed372402d196e9af03c6aa40d32a018d7e2",
-            "content": "sha256:f14d1dbb54c44b86dae12dbb5121f560f3dc931238a6c0c25900de4bb525ca70",
+            "blob": "cd8894a7e858b103972f9a0c9ec3a13e5fc41f48",
+            "content": "sha256:4508fec046752eaaf65e8b0ca0d94ead487d65fa07c4e6d83c2019ec5c3cf3c9",
             "locator": {
-              "kind": "symbol",
-              "name": "TaskDocResponse"
+              "end": 287,
+              "kind": "line_range",
+              "start": 152
             },
             "path": "mcp/src/agents_remember/models/task_doc.py"
           },
@@ -100,12 +81,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ac006b11f74a4c64ab964edc3378b4c96f153872",
+            "blob": "2c675ac4ed53a3b28cae8c0c32cd13c617d8f6ed",
             "content": "sha256:8add48108fe714e0ef2bdb7cd10882b3527d5cd72c49bb186a8198750542663a",
             "locator": {
-              "end": 265,
+              "end": 302,
               "kind": "line_range",
-              "start": 265
+              "start": 302
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },

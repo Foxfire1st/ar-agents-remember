@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "1fe4dc4416c2727815fcab3f9558e152bb422ee4",
+        "blob": "0e1aa8704720217e5a24a2c269089eaee490de4d",
         "content": "sha256:dc2d25bea2752cb56009ec7b5103d5dfae6b56a604d3da0dc63de3111d684992",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "1fe4dc4416c2727815fcab3f9558e152bb422ee4",
+        "blob": "0e1aa8704720217e5a24a2c269089eaee490de4d",
         "content": "sha256:7991154da41374bfca8f6450500696a9e20feb064efc8e791cfde2e12ff52dd4",
         "locator": {
           "kind": "symbol",
@@ -37,7 +37,7 @@
     },
     {
       "anchor": {
-        "blob": "1fe4dc4416c2727815fcab3f9558e152bb422ee4",
+        "blob": "0e1aa8704720217e5a24a2c269089eaee490de4d",
         "content": "sha256:7991154da41374bfca8f6450500696a9e20feb064efc8e791cfde2e12ff52dd4",
         "locator": {
           "kind": "symbol",
@@ -54,12 +54,12 @@
     },
     {
       "anchor": {
-        "blob": "1fe4dc4416c2727815fcab3f9558e152bb422ee4",
+        "blob": "0e1aa8704720217e5a24a2c269089eaee490de4d",
         "content": "sha256:7991154da41374bfca8f6450500696a9e20feb064efc8e791cfde2e12ff52dd4",
         "locator": {
-          "end": 174,
+          "end": 208,
           "kind": "line_range",
-          "start": 133
+          "start": 167
         }
       },
       "facet": "Every sweep aspect runs on its own subTest even when an earlier one fails.",
@@ -74,12 +74,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "1fe4dc4416c2727815fcab3f9558e152bb422ee4",
+        "blob": "0e1aa8704720217e5a24a2c269089eaee490de4d",
         "content": "sha256:7991154da41374bfca8f6450500696a9e20feb064efc8e791cfde2e12ff52dd4",
         "locator": {
-          "end": 174,
+          "end": 208,
           "kind": "line_range",
-          "start": 133
+          "start": 167
         }
       },
       "id": "RLZ-8E1MYK",
@@ -93,7 +93,7 @@
     },
     {
       "anchor": {
-        "blob": "1fe4dc4416c2727815fcab3f9558e152bb422ee4",
+        "blob": "0e1aa8704720217e5a24a2c269089eaee490de4d",
         "content": "sha256:8302a031037ec0811de6b2d01ec3d144c2d51a1eda3e1eb266938d85312aacbf",
         "locator": {
           "end": 26,
@@ -112,7 +112,7 @@
     },
     {
       "anchor": {
-        "blob": "1fe4dc4416c2727815fcab3f9558e152bb422ee4",
+        "blob": "0e1aa8704720217e5a24a2c269089eaee490de4d",
         "content": "sha256:dc2d25bea2752cb56009ec7b5103d5dfae6b56a604d3da0dc63de3111d684992",
         "locator": {
           "kind": "symbol",
@@ -130,7 +130,7 @@
     },
     {
       "anchor": {
-        "blob": "1fe4dc4416c2727815fcab3f9558e152bb422ee4",
+        "blob": "0e1aa8704720217e5a24a2c269089eaee490de4d",
         "content": "sha256:b49022c9deeed0a84490b978b301fe516f420e645d3b0ea7f9c542dfe8a6d770",
         "locator": {
           "kind": "symbol",
@@ -149,14 +149,41 @@
   ],
   "references": {
     "26": {
-      "note": "`T34`'s surviving repaired tool stays repaired, and the envelope-losing raiser pin is empty because the four lifecycle preconditions were repaired.\n\nAnchor: `ENVELOPE_LOSING_RAISERS`",
+      "note": "The current support source declares ENVELOPE_LOSING_RAISERS as an empty frozenset and T34_REPAIRED_TOOLS as the one-member memory_baseline_adopt set. The sweep source asserts equality with observed error-arm tools in both directions and a named refusal for that surviving T34 member. These are source declarations/assertions, not a fresh run or current four-tool backlog.",
       "targets": [
         {
           "anchor": {
-            "blob": "1fe4dc4416c2727815fcab3f9558e152bb422ee4",
-            "content": "sha256:ac977ef5869212f7443d157e025e8d6ec5761e0de2b398d07aea7dbe9cad4089",
+            "blob": "25b3cb991b3fb7f75377478cc7516ae6e0b44ff6",
+            "content": "sha256:a765e9d3152e20036f466b7a78a1b346674ef0982da12a06bb7cc0e11cfdbcf5",
             "locator": {
-              "kind": "file"
+              "end": 881,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/tests/tool_entry_point_sweep_support.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "0e1aa8704720217e5a24a2c269089eaee490de4d",
+            "content": "sha256:dc2d25bea2752cb56009ec7b5103d5dfae6b56a604d3da0dc63de3111d684992",
+            "locator": {
+              "end": 230,
+              "kind": "line_range",
+              "start": 210
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "0e1aa8704720217e5a24a2c269089eaee490de4d",
+            "content": "sha256:249923026fe0bdfe11e78351ca411af475246872b282bc4b75d1e0d6bdaca082",
+            "locator": {
+              "end": 281,
+              "kind": "line_range",
+              "start": 232
             }
           },
           "kind": "test"
@@ -164,25 +191,16 @@
       ]
     },
     "28": {
-      "note": "The sweep itself: one world, one run, and the equality assertions that bind every pin.\n\nAnchor: `EntryPointProbeTests`",
+      "note": "The sweep itself: one world, one run, and the equality assertions that bind every pin. Anchor: `EntryPointProbeTests`",
       "targets": [
         {
           "anchor": {
-            "blob": "1fe4dc4416c2727815fcab3f9558e152bb422ee4",
-            "content": "sha256:ac977ef5869212f7443d157e025e8d6ec5761e0de2b398d07aea7dbe9cad4089",
-            "locator": {
-              "kind": "file"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "1fe4dc4416c2727815fcab3f9558e152bb422ee4",
+            "blob": "0e1aa8704720217e5a24a2c269089eaee490de4d",
             "content": "sha256:420b891dab5f22c9c670a7b318c3287fa210ff3f66b1125211ba44013eed9f82",
             "locator": {
-              "kind": "symbol",
-              "name": "EntryPointProbeTests"
+              "end": 410,
+              "kind": "line_range",
+              "start": 152
             }
           },
           "kind": "test"
@@ -194,7 +212,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fd07730a1a1bd23acfdd526b3ac57a628c498940",
+            "blob": "58ee72c4439cca6d4d7a830fa424b3bc0804d82b",
             "content": "sha256:616725463860034f01645ef22c9b069790e16605dd50f886654cbdcbdb5299b8",
             "locator": {
               "kind": "symbol",
@@ -207,30 +225,16 @@
       ]
     },
     "30": {
-      "note": "The bare-answer pin is empty since L110 repaired the `memory_quality_check` coherence refusal; T64's citation-preview repair remains.\n\nAnchor: `UNMARKED_NOT_OK`",
+      "note": "The ordinary world source declares UNMARKED_NOT_OK as an empty dictionary and the main sweep compares the observed bare-not-ok population with the pin by equality. This is a source assertion, not a new sweep result; the L110/T64 repair account remains historical source commentary.",
       "targets": [
         {
           "anchor": {
-            "blob": "fd07730a1a1bd23acfdd526b3ac57a628c498940",
-            "content": "sha256:7f66ab8eb3447252a65b2ae3749cde0e7635d735a7fa4fc354aa40504a0c9417",
+            "blob": "58ee72c4439cca6d4d7a830fa424b3bc0804d82b",
+            "content": "sha256:f55f2cb63aa2086f6a03f7397289728ff4ed6119f0809d0d7f2c829f929a9785",
             "locator": {
-              "kind": "file"
-            },
-            "path": "mcp/tests/tool_entry_point_world.py"
-          },
-          "kind": "test"
-        }
-      ]
-    },
-    "31": {
-      "note": "The world: one scratch coordination root, two repositories, one real leaf enclosure, then the opened lifecycle ended.\n\nAnchor: `EntryPointWorld`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "fd07730a1a1bd23acfdd526b3ac57a628c498940",
-            "content": "sha256:7f66ab8eb3447252a65b2ae3749cde0e7635d735a7fa4fc354aa40504a0c9417",
-            "locator": {
-              "kind": "file"
+              "end": 912,
+              "kind": "line_range",
+              "start": 1
             },
             "path": "mcp/tests/tool_entry_point_world.py"
           },
@@ -238,11 +242,29 @@
         },
         {
           "anchor": {
-            "blob": "fd07730a1a1bd23acfdd526b3ac57a628c498940",
-            "content": "sha256:a4e42bb55a3a3897dec25d7b3af2b158959e2377bf420826ad2794f1318a96e8",
+            "blob": "0e1aa8704720217e5a24a2c269089eaee490de4d",
+            "content": "sha256:7991154da41374bfca8f6450500696a9e20feb064efc8e791cfde2e12ff52dd4",
             "locator": {
-              "kind": "symbol",
-              "name": "EntryPointWorld"
+              "end": 208,
+              "kind": "line_range",
+              "start": 167
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "31": {
+      "note": "The ordinary EntryPointWorld source constructs one temporary coordination root, code and memory repositories and a real leaf enclosure through the public tools. Its close method cleans the temporary world; the retained opened-lifecycle/ended caption is historical and does not describe a current lifecycle API call.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "58ee72c4439cca6d4d7a830fa424b3bc0804d82b",
+            "content": "sha256:ab2082ad4c5e3259abfa9f756bc81377110d0fd33d9c23e3f138859c5b373e3a",
+            "locator": {
+              "end": 912,
+              "kind": "line_range",
+              "start": 384
             },
             "path": "mcp/tests/tool_entry_point_world.py"
           },
@@ -255,7 +277,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fd07730a1a1bd23acfdd526b3ac57a628c498940",
+            "blob": "58ee72c4439cca6d4d7a830fa424b3bc0804d82b",
             "content": "sha256:995a2e5792acde634a2f8609a360561be5b5fb9942e5d80573a5a6fcb7e7c852",
             "locator": {
               "kind": "symbol",
@@ -272,7 +294,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fd07730a1a1bd23acfdd526b3ac57a628c498940",
+            "blob": "58ee72c4439cca6d4d7a830fa424b3bc0804d82b",
             "content": "sha256:f18c14781ddeecc0fca17b58d2b4d8d3f97930328f9c497895ac89df4713fc79",
             "locator": {
               "kind": "symbol",
@@ -284,24 +306,24 @@
         },
         {
           "anchor": {
-            "blob": "1fe4dc4416c2727815fcab3f9558e152bb422ee4",
+            "blob": "0e1aa8704720217e5a24a2c269089eaee490de4d",
             "content": "sha256:b132a2a2d4d753b575dfd386512b6e9a21bc2e7750c918e2461d1138e1a51eaa",
             "locator": {
-              "end": 327,
+              "end": 361,
               "kind": "line_range",
-              "start": 315
+              "start": 349
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "1fe4dc4416c2727815fcab3f9558e152bb422ee4",
+            "blob": "0e1aa8704720217e5a24a2c269089eaee490de4d",
             "content": "sha256:8f14734706c32adc59706968b0a18f752e8465450d9bf46d360cda834511b7ae",
             "locator": {
-              "end": 343,
+              "end": 377,
               "kind": "line_range",
-              "start": 329
+              "start": 363
             }
           },
           "kind": "test"
@@ -313,12 +335,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fd07730a1a1bd23acfdd526b3ac57a628c498940",
+            "blob": "58ee72c4439cca6d4d7a830fa424b3bc0804d82b",
             "content": "sha256:8588ea46dee3b21b36167a64c4c0d71d9e0a2cb728851ec289261177ff118a3c",
             "locator": {
-              "end": 477,
+              "end": 478,
               "kind": "line_range",
-              "start": 462
+              "start": 463
             },
             "path": "mcp/tests/tool_entry_point_world.py"
           },
@@ -395,16 +417,16 @@
       ]
     },
     "40": {
-      "note": "The lane row that keeps this module in the default selection.",
+      "note": "The current lane catalog selects mcp/tests/test_tool_entry_point_sweep.py once in unit-regression. This declaration selects evidence and establishes no invocation or passing result.",
       "targets": [
         {
           "anchor": {
-            "blob": "ac006b11f74a4c64ab964edc3378b4c96f153872",
-            "content": "sha256:1cd7cffb581f993106b803780b7bee2bac4293ea64dc77b180f6532ff7c1f8d4",
+            "blob": "2c675ac4ed53a3b28cae8c0c32cd13c617d8f6ed",
+            "content": "sha256:171ddebacbf664d00fdcf83eaa546bb02da4596111fc8eb2e16c6cc0785397b1",
             "locator": {
-              "end": 514,
+              "end": 579,
               "kind": "line_range",
-              "start": 514
+              "start": 579
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -412,12 +434,12 @@
         },
         {
           "anchor": {
-            "blob": "1fe4dc4416c2727815fcab3f9558e152bb422ee4",
-            "content": "sha256:b7d8c5eebe6ace19a88c5c8d86a2458bff070b5f72c4b869690e3a57b3561fde",
+            "blob": "0e1aa8704720217e5a24a2c269089eaee490de4d",
+            "content": "sha256:614c2bf8ff9a6dbe99d62f089cac8d9e8b863313a1234e97b104f8e717a95bc3",
             "locator": {
-              "end": 77,
+              "end": 410,
               "kind": "line_range",
-              "start": 75
+              "start": 1
             }
           },
           "kind": "test"
@@ -567,8 +589,34 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fd07730a1a1bd23acfdd526b3ac57a628c498940",
-            "content": "sha256:7a0ad366490b4757f2733b07c064848e5f9f5fb375a3e32ef5ba06d3e6a314df",
+            "blob": "58ee72c4439cca6d4d7a830fa424b3bc0804d82b",
+            "content": "sha256:c4bac9584ff57d79b197e1ae2162e83f182902c091e0956914a3b6bebd602048",
+            "locator": {
+              "end": 507,
+              "kind": "line_range",
+              "start": 488
+            },
+            "path": "mcp/tests/tool_entry_point_world.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "58ee72c4439cca6d4d7a830fa424b3bc0804d82b",
+            "content": "sha256:e33e96dd94141fc597c4a422e03f4f6a1de7c73b57f87d47305f37ccf25e19f1",
+            "locator": {
+              "end": 528,
+              "kind": "line_range",
+              "start": 509
+            },
+            "path": "mcp/tests/tool_entry_point_world.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "58ee72c4439cca6d4d7a830fa424b3bc0804d82b",
+            "content": "sha256:6d38fc22f52ea994529c7cb3ae3a3c9dca4e2f05db81f3fd359840039f11b8bc",
             "locator": {
               "end": 48,
               "kind": "line_range",
@@ -580,12 +628,12 @@
         },
         {
           "anchor": {
-            "blob": "fd07730a1a1bd23acfdd526b3ac57a628c498940",
-            "content": "sha256:b7ed0ed5d00dcb3dcfc8a2a183c79a5a7c16c95606ac5bba47169a355502932f",
+            "blob": "58ee72c4439cca6d4d7a830fa424b3bc0804d82b",
+            "content": "sha256:cdee253b37027f823794d963e164401d59d8a3df94597f8731eca5d854c71375",
             "locator": {
-              "end": 522,
+              "end": 49,
               "kind": "line_range",
-              "start": 487
+              "start": 48
             },
             "path": "mcp/tests/tool_entry_point_world.py"
           },
@@ -611,12 +659,12 @@
         },
         {
           "anchor": {
-            "blob": "fd07730a1a1bd23acfdd526b3ac57a628c498940",
+            "blob": "58ee72c4439cca6d4d7a830fa424b3bc0804d82b",
             "content": "sha256:013fea916dec48472c2c0310925822170f04fab585b568a0384ad1cdc4dc413d",
             "locator": {
-              "end": 514,
+              "end": 515,
               "kind": "line_range",
-              "start": 487
+              "start": 488
             },
             "path": "mcp/tests/tool_entry_point_world.py"
           },
@@ -625,14 +673,16 @@
       ]
     },
     "47": {
-      "note": "`EntryPointProbeTests` owns the current boundary described above.\n\nAnchor: `EntryPointProbeTests`",
+      "note": "`EntryPointProbeTests` owns the current boundary described above. Anchor: `EntryPointProbeTests`",
       "targets": [
         {
           "anchor": {
-            "blob": "1fe4dc4416c2727815fcab3f9558e152bb422ee4",
-            "content": "sha256:ac977ef5869212f7443d157e025e8d6ec5761e0de2b398d07aea7dbe9cad4089",
+            "blob": "0e1aa8704720217e5a24a2c269089eaee490de4d",
+            "content": "sha256:420b891dab5f22c9c670a7b318c3287fa210ff3f66b1125211ba44013eed9f82",
             "locator": {
-              "kind": "file"
+              "end": 410,
+              "kind": "line_range",
+              "start": 152
             }
           },
           "kind": "test"
@@ -644,7 +694,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1fe4dc4416c2727815fcab3f9558e152bb422ee4",
+            "blob": "0e1aa8704720217e5a24a2c269089eaee490de4d",
             "content": "sha256:7991154da41374bfca8f6450500696a9e20feb064efc8e791cfde2e12ff52dd4",
             "locator": {
               "kind": "symbol",
@@ -656,40 +706,71 @@
       ]
     },
     "49": {
-      "note": "The lifecycle pin is exact in both directions; T34's original nine must remain repaired.\n\nAnchor: `test_the_pinned_raisers_are_exactly_the_ones_that_lose_the_envelope`",
+      "note": "The current sweep asserts exact equality between observed error-arm tools and ENVELOPE_LOSING_RAISERS in both directions, then asserts none of the current T34_REPAIRED_TOOLS population raises. That population now contains only memory_baseline_adopt; the original nine-tool caption is historical. No source assertion is an executed result.",
       "targets": [
         {
           "anchor": {
-            "blob": "1fe4dc4416c2727815fcab3f9558e152bb422ee4",
-            "content": "sha256:ac977ef5869212f7443d157e025e8d6ec5761e0de2b398d07aea7dbe9cad4089",
+            "blob": "0e1aa8704720217e5a24a2c269089eaee490de4d",
+            "content": "sha256:dc2d25bea2752cb56009ec7b5103d5dfae6b56a604d3da0dc63de3111d684992",
             "locator": {
-              "kind": "file"
+              "end": 230,
+              "kind": "line_range",
+              "start": 210
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "1fe4dc4416c2727815fcab3f9558e152bb422ee4",
-            "content": "sha256:dc2d25bea2752cb56009ec7b5103d5dfae6b56a604d3da0dc63de3111d684992",
+            "blob": "25b3cb991b3fb7f75377478cc7516ae6e0b44ff6",
+            "content": "sha256:a765e9d3152e20036f466b7a78a1b346674ef0982da12a06bb7cc0e11cfdbcf5",
             "locator": {
-              "kind": "symbol",
-              "name": "test_the_pinned_raisers_are_exactly_the_ones_that_lose_the_envelope"
-            }
+              "end": 881,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/tests/tool_entry_point_sweep_support.py"
           },
           "kind": "test"
         }
       ]
     },
     "50": {
-      "note": "The four lifecycle raisers are pinned empty after L111 repaired them, and the equality is still asserted in both directions.\n\nAnchor: `ENVELOPE_LOSING_RAISERS`",
+      "note": "The current support source declares ENVELOPE_LOSING_RAISERS as an empty frozenset and T34_REPAIRED_TOOLS as the one-member memory_baseline_adopt set. The sweep source asserts equality with observed error-arm tools in both directions and a named refusal for that surviving T34 member. These are source declarations/assertions, not a fresh run or current four-tool backlog.",
       "targets": [
         {
           "anchor": {
-            "blob": "1fe4dc4416c2727815fcab3f9558e152bb422ee4",
-            "content": "sha256:ac977ef5869212f7443d157e025e8d6ec5761e0de2b398d07aea7dbe9cad4089",
+            "blob": "25b3cb991b3fb7f75377478cc7516ae6e0b44ff6",
+            "content": "sha256:a765e9d3152e20036f466b7a78a1b346674ef0982da12a06bb7cc0e11cfdbcf5",
             "locator": {
-              "kind": "file"
+              "end": 881,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/tests/tool_entry_point_sweep_support.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "0e1aa8704720217e5a24a2c269089eaee490de4d",
+            "content": "sha256:dc2d25bea2752cb56009ec7b5103d5dfae6b56a604d3da0dc63de3111d684992",
+            "locator": {
+              "end": 230,
+              "kind": "line_range",
+              "start": 210
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "0e1aa8704720217e5a24a2c269089eaee490de4d",
+            "content": "sha256:249923026fe0bdfe11e78351ca411af475246872b282bc4b75d1e0d6bdaca082",
+            "locator": {
+              "end": 281,
+              "kind": "line_range",
+              "start": 232
             }
           },
           "kind": "test"
@@ -729,7 +810,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fd07730a1a1bd23acfdd526b3ac57a628c498940",
+            "blob": "58ee72c4439cca6d4d7a830fa424b3bc0804d82b",
             "content": "sha256:f5ab20eb78fe980df8ce04556764cd4ffc1b830432ac75476c47207d5b13f5c9",
             "locator": {
               "kind": "symbol",
@@ -791,12 +872,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d27b57b9ce20fcfcc981f64f791af071b4769e5c",
+            "blob": "25b3cb991b3fb7f75377478cc7516ae6e0b44ff6",
             "content": "sha256:cdbb6dd9c7ccc74f5e839b769fc874eeac369f4ed852fcb2edda56b2566abeb2",
             "locator": {
-              "end": 307,
+              "end": 308,
               "kind": "line_range",
-              "start": 298
+              "start": 299
             },
             "path": "mcp/tests/tool_entry_point_sweep_support.py"
           },
@@ -804,12 +885,12 @@
         },
         {
           "anchor": {
-            "blob": "d27b57b9ce20fcfcc981f64f791af071b4769e5c",
+            "blob": "25b3cb991b3fb7f75377478cc7516ae6e0b44ff6",
             "content": "sha256:085ecc8fc2c5cee5697884a127337702d7c5b0eb793590ff1e26e6ff5369ceaf",
             "locator": {
-              "end": 380,
+              "end": 381,
               "kind": "line_range",
-              "start": 365
+              "start": 366
             },
             "path": "mcp/tests/tool_entry_point_sweep_support.py"
           },
@@ -822,12 +903,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d27b57b9ce20fcfcc981f64f791af071b4769e5c",
+            "blob": "25b3cb991b3fb7f75377478cc7516ae6e0b44ff6",
             "content": "sha256:0ffcbdb934f0cd8b5a0d688f2a810ed051f7f42b95ddee2a78d31f7d7a1a62cf",
             "locator": {
-              "end": 647,
+              "end": 653,
               "kind": "line_range",
-              "start": 632
+              "start": 638
             },
             "path": "mcp/tests/tool_entry_point_sweep_support.py"
           },
@@ -835,12 +916,12 @@
         },
         {
           "anchor": {
-            "blob": "d27b57b9ce20fcfcc981f64f791af071b4769e5c",
+            "blob": "25b3cb991b3fb7f75377478cc7516ae6e0b44ff6",
             "content": "sha256:6a0ff73aa2143f39a0c75485ffecef4e3d13b41e55e54b9fd5cc4de9fef3b8d9",
             "locator": {
-              "end": 753,
+              "end": 759,
               "kind": "line_range",
-              "start": 741
+              "start": 747
             },
             "path": "mcp/tests/tool_entry_point_sweep_support.py"
           },
@@ -853,10 +934,37 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1fe4dc4416c2727815fcab3f9558e152bb422ee4",
-            "content": "sha256:ac977ef5869212f7443d157e025e8d6ec5761e0de2b398d07aea7dbe9cad4089",
+            "blob": "25b3cb991b3fb7f75377478cc7516ae6e0b44ff6",
+            "content": "sha256:a765e9d3152e20036f466b7a78a1b346674ef0982da12a06bb7cc0e11cfdbcf5",
             "locator": {
-              "kind": "file"
+              "end": 881,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/tests/tool_entry_point_sweep_support.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "0e1aa8704720217e5a24a2c269089eaee490de4d",
+            "content": "sha256:dc2d25bea2752cb56009ec7b5103d5dfae6b56a604d3da0dc63de3111d684992",
+            "locator": {
+              "end": 230,
+              "kind": "line_range",
+              "start": 210
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "0e1aa8704720217e5a24a2c269089eaee490de4d",
+            "content": "sha256:249923026fe0bdfe11e78351ca411af475246872b282bc4b75d1e0d6bdaca082",
+            "locator": {
+              "end": 281,
+              "kind": "line_range",
+              "start": 232
             }
           },
           "kind": "test"
@@ -868,10 +976,66 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d27b57b9ce20fcfcc981f64f791af071b4769e5c",
-            "content": "sha256:ec4a3f44514531485aacae93fd43a669878d9169482bd3ea34444607c29da9c7",
+            "blob": "25b3cb991b3fb7f75377478cc7516ae6e0b44ff6",
+            "content": "sha256:a765e9d3152e20036f466b7a78a1b346674ef0982da12a06bb7cc0e11cfdbcf5",
             "locator": {
-              "kind": "file"
+              "end": 881,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/tests/tool_entry_point_sweep_support.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "0e1aa8704720217e5a24a2c269089eaee490de4d",
+            "content": "sha256:dc2d25bea2752cb56009ec7b5103d5dfae6b56a604d3da0dc63de3111d684992",
+            "locator": {
+              "end": 230,
+              "kind": "line_range",
+              "start": 210
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "0e1aa8704720217e5a24a2c269089eaee490de4d",
+            "content": "sha256:249923026fe0bdfe11e78351ca411af475246872b282bc4b75d1e0d6bdaca082",
+            "locator": {
+              "end": 281,
+              "kind": "line_range",
+              "start": 232
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "59": {
+      "note": "The main probe retains exact equality between observed raisers and the current pin. Anchor: `EntryPointProbeTests.test_the_pinned_raisers_are_exactly_the_ones_that_lose_the_envelope`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0e1aa8704720217e5a24a2c269089eaee490de4d",
+            "content": "sha256:dc2d25bea2752cb56009ec7b5103d5dfae6b56a604d3da0dc63de3111d684992",
+            "locator": {
+              "end": 230,
+              "kind": "line_range",
+              "start": 210
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "25b3cb991b3fb7f75377478cc7516ae6e0b44ff6",
+            "content": "sha256:a765e9d3152e20036f466b7a78a1b346674ef0982da12a06bb7cc0e11cfdbcf5",
+            "locator": {
+              "end": 881,
+              "kind": "line_range",
+              "start": 1
             },
             "path": "mcp/tests/tool_entry_point_sweep_support.py"
           },
@@ -879,15 +1043,41 @@
         }
       ]
     },
-    "59": {
-      "note": "The main probe retains exact equality between observed raisers and the current pin.\n\nAnchor: `EntryPointProbeTests.test_the_pinned_raisers_are_exactly_the_ones_that_lose_the_envelope`",
+    "60": {
+      "note": "Both ordinary and support worlds are exercised with RuntimeWarning messages that are nonempty or empty. The cases require the captured detail string, actual exception type and innermost traceback file:line. These are source assertions/support behavior, not a fresh invocation, host result or AR acceptance.",
       "targets": [
         {
           "anchor": {
-            "blob": "1fe4dc4416c2727815fcab3f9558e152bb422ee4",
-            "content": "sha256:ac977ef5869212f7443d157e025e8d6ec5761e0de2b398d07aea7dbe9cad4089",
+            "blob": "0e1aa8704720217e5a24a2c269089eaee490de4d",
+            "content": "sha256:df743f5e7f7e317b34ff4f2c2a165a3431943c3b2f0b920a91e861dee3e63caf",
             "locator": {
-              "kind": "file"
+              "end": 80,
+              "kind": "line_range",
+              "start": 73
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "0e1aa8704720217e5a24a2c269089eaee490de4d",
+            "content": "sha256:c2943e7b1283f34228d34a5d7d4c9bb2e58621a7448ae09b3691b1c58fa405d4",
+            "locator": {
+              "end": 96,
+              "kind": "line_range",
+              "start": 92
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "0e1aa8704720217e5a24a2c269089eaee490de4d",
+            "content": "sha256:05787262395841694ed34b2d86809d436b8adebbc2ba3597e969375b0e09122f",
+            "locator": {
+              "end": 129,
+              "kind": "line_range",
+              "start": 102
             }
           },
           "kind": "test"

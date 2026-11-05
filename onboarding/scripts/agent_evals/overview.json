@@ -1,0 +1,129 @@
+{
+  "path": "scripts/agent_evals",
+  "references": {
+    "1": {
+      "note": "CLI dispatch and concrete trial orchestration retain separate command, setup, capture and grading responsibilities.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d950d14d90314b8229a636873c196e6114992be8",
+            "content": "sha256:5ed177cc2fcc5cec1aee61e4dd19aff01648bec9d1167bd612441c9df2149b07",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "scripts/agent_evals/run_curator.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "76baa8a7d10eebd94b44b8df971220de4edbf08b",
+            "content": "sha256:eacc2dfaae337d1ae2ad0de8bfd896b1eae9b465df0517ab0dcca8f31647ef52",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "scripts/agent_evals/trials.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Disposable setup binds host, actor state, source authority and native repositories before actor launch.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "691792ddb56e8277470d1df5a4d4326fe77f71c9",
+            "content": "sha256:a65952786eac426e9ca782a54266cbc121deb229ea605265f1d4e0fc283b4e65",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "scripts/agent_evals/trial_setup.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "271802d1e254eda3d74e244cca5c2422be69d05d",
+            "content": "sha256:6c16e1bd4654c1402a1c5ad0bd44dbf7f80a061651c73d0831b0720cbcc498ee",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "scripts/agent_evals/trial_native_setup.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Captures and grades retain explicit evidence identities and semantic unknowns.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6d119630034e393ddbe02ba5460f4fee55a6dcb6",
+            "content": "sha256:a4d0227f86b60d938946b4012ddd3a617932d381a520866c22f5f98c9ef352ba",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "scripts/agent_evals/adapters/models.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8e5409110fd0974afccc3ff3b5bfe8aec8b2c0f9",
+            "content": "sha256:0c6cbc33efdf59f3c641e34d613e7e3f733b295a7e0b506c4172301c7c0cecb8",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "scripts/agent_evals/graders/models.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2640bd3db4f52a42d88f73cc2f086f239227130d",
+            "content": "sha256:d2063f1557237fe22c73b1197f19eac41eafba5dd4360c9c827971bc08000caf",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "scripts/agent_evals/graders/cases.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Accounting and regrading retain observed attempts and separate tooling checks from measurement results.\n\nAnchor: Current declared source extent",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3d9dac5508226545350568731334244889727d36",
+            "content": "sha256:c898a0cf2c0a95586154664c0d4dbc2faa54e3fac40fd6bdf4d5391428e4488c",
+            "locator": {
+              "end": 520,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "scripts/agent_evals/accounting.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "273c4776efbcbe1b91e4327a0b097e4419fab1ee",
+            "content": "sha256:60471aae154d98ffc432e28c3bcf3af56f49d84fe9bf4624b6620f357485f3b3",
+            "locator": {
+              "end": 1193,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "scripts/agent_evals/regrade.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-route/v1"
+}

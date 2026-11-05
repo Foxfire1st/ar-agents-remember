@@ -6,7 +6,13 @@ A record-only repair is checked on the last recorded round only when every candi
 
 This account controls the named changed seams; contradictory earlier card wording below is retained only as historical evidence. Unchanged role duties and R117 file-only wake/report transport are preserved. Source inspection supplies no new runtime test, CODE verdict, review counter or acceptance.
 
-- A record-only repair is checked on the last recorded round only when every candidate finding is closed and candidate bytes are identical; begin_review is not called and the count stays. A repair that changes the candidate uses the ordinary next round; a clean sync with passing focused tests sends no new freeze and begins no round. Fix verification within the settings limit is an ordinary round; a beyond-limit round needs recorded architect/developer approval, not the superseded unconditional D107 further-look account. Separate MEMORY reports/counts do not reset CODE. [4]
+Retained authoring-row wording:
+
+Finding: A record-only repair is checked on the last recorded round only when every candidate finding is closed and candidate bytes are identical; begin_review is not called and the count stays. A repair that changes the candidate uses the ordinary next round; a clean sync with passing focused tests sends no new freeze and begins no round. Fix verification within the settings limit is an ordinary round; a beyond-limit round needs recorded architect/developer approval, not the superseded unconditional D107 further-look account. Separate MEMORY reports/counts do not reset CODE.
+
+Anchor:
+
+Source: skills/l-01-agent-lifecycles/operations/review.md:33-55
 
 
 ## Message/file transport
@@ -39,19 +45,51 @@ Reviewer receives no freeze and opens no round for a clean sync with passing foc
 
 ## Evidence
 
-- Reviewer returns a repair freeze missing its per-finding entries without counting a round, and receives no new freeze or round for a clean sync. [8]
+Retained authoring-row wording:
+
+Finding: Reviewer returns a repair freeze missing its per-finding entries without counting a round, and receives no new freeze or round for a clean sync.
+
+Anchor:
+
+Source: skills/l-01-agent-lifecycles/operations/review.md:29-35
 
 
 
-- The verdict goes directly to the Worker and code PASS directly to the Curator. [1]
+Past-epoch caption (retained wording): - The verdict goes directly to the Worker and code PASS directly to the Curator.
+
+Original-target custody: `skills/l-01-agent-lifecycles/operations/review.md`, blob `cc04f76ead30b37896b315dd8532f3bb79e2f6d6`, declared “Review is independent and runs only when the task or owner requests it. Its inputs are the exact requirement revision, candidate/base, review mode, criteria, and report path. A first cold requirement read has no code candidate or Worker att”. The earlier caption is detached from the live number; the current table carries only the current clause and target.
+
+Retained authoring-row wording:
+
+Finding: On leaf code PASS, Reviewer first tells Manager to start Curator, then hands the verdict directly to Worker and the passed freeze/verdict to Curator once that seat exists. Memory review and its verdict stay direct and separate.
+
+Anchor:
+
+Source: skills/l-01-agent-lifecycles/operations/review.md:29-35
 
 
 
-- Fix-verification checks the sealed outstanding IDs; ordinary rounds follow the settings limit and extras need recorded Architect-or-developer approval. [2]
+Retained authoring-row wording:
+
+Finding: Fix-verification checks the sealed outstanding IDs; ordinary rounds follow the settings limit and extras need recorded Architect-or-developer approval.
+
+Anchor:
+
+Source: skills/l-01-agent-lifecycles/operations/review.md:38-55
 
 
 
-- The Reviewer never edits, accepts, starts a role or publishes. [3]
+Past-epoch caption (retained wording): - The Reviewer never edits, accepts, starts a role or publishes.
+
+Original-target custody: `skills/l-01-agent-lifecycles/operations/review.md`, blob `cc04f76ead30b37896b315dd8532f3bb79e2f6d6`, declared “Review is independent and runs only when the task or owner requests it. Its inputs are the exact requirement revision, candidate/base, review mode, criteria, and report path. A first cold requirement read has no code candidate or Worker att”. The earlier caption is detached from the live number; the current table carries only the current clause and target.
+
+Retained authoring-row wording:
+
+Finding: Reviewer does not implement, accept tasks, start roles or publish Git. It records its ordinary review begin/result; separately recorded MEMORY reports, IDs and pass counts do not reset CODE, and scoped record-write recovery retains its own conditions.
+
+Anchor:
+
+Source: skills/l-01-agent-lifecycles/operations/review.md:50-55; skills/l-01-agent-lifecycles/reference/refused-write.md:1-38
 
 
 ## Inherited Source-Epoch Commentary
@@ -169,10 +207,45 @@ Inherited reference 4 commentary (not a revalidated target):
 The byte-equal package copy is a distribution carrier, not an independent role, task or permission authority. Whole-file source evidence does not certify inherited statements, execution, grading or the whole card.
 
 
+Retained authoring-row wording:
+
+Finding: The authored source owns this contract; the distribution copy is not a separate authority.
+
+Anchor:
+
+Source: skills/l-01-agent-lifecycles/operations/review.md
+
+
+
+Past-epoch caption (retained wording): - Partitions Reviewer-only handover/record-only/code-concern method from common review rules and adds the post-landing recorded memory lane.
+
+Original-target custody: `skills/l-01-agent-lifecycles/operations/review.md`, blob `cc04f76ead30b37896b315dd8532f3bb79e2f6d6`, declared “Review is independent and runs only when the task or owner requests it. Its inputs are the exact requirement revision, candidate/base, review mode, criteria, and report path. A first cold requirement read has no code candidate or Worker att”. The earlier caption is detached from the live number; the current table carries only the current clause and target.
+
+Retained authoring-row wording:
+
+Finding: Current review separates common mode/round boundaries from Reviewer handover, record-only repair and code-concern duties. It records MEMORY as a separate lane under the same settings limit; existing reviews finish as begun and recorded lanes apply after landing.
+
+Anchor:
+
+Source: skills/l-01-agent-lifecycles/operations/review.md:12-65
+
+Past-epoch caption (retained wording): - Partitions Reviewer-only handover/record-only/code-concern method from common review rules and adds the post-landing recorded memory lane.
+
+Original-target custody: `skills/l-01-agent-lifecycles/operations/review.md`, blob `cc04f76ead30b37896b315dd8532f3bb79e2f6d6`, declared “Messages wake; files carry. A message says what is asked or what is handed over, and names the files: evidence, verdicts, lists and logs are files, never pasted into a message. The full text goes in `body` and its files in `attach`; the too”. The earlier caption is detached from the live number; the current table carries only the current clause and target.
+
+Retained authoring-row wording:
+
+Finding: Current review separates common mode/round boundaries from Reviewer handover, record-only repair and code-concern duties. It records MEMORY as a separate lane under the same settings limit; existing reviews finish as begun and recorded lanes apply after landing.
+
+Anchor:
+
+Source: skills/l-01-agent-lifecycles/operations/review.md:12-65
+
+- On leaf code PASS, Reviewer first tells Manager to start Curator, then hands the verdict directly to Worker and the passed freeze/verdict to Curator once that seat exists. Memory review and its verdict stay direct and separate. [1]
+- Fix-verification checks the sealed outstanding IDs; ordinary rounds follow the settings limit and extras need recorded Architect-or-developer approval. [2]
+- Reviewer does not implement, accept tasks, start roles or publish Git. It records its ordinary review begin/result; separately recorded MEMORY reports, IDs and pass counts do not reset CODE, and scoped record-write recovery retains its own conditions. [3]
+- A record-only repair is checked on the last recorded round only when every candidate finding is closed and candidate bytes are identical; begin_review is not called and the count stays. A repair that changes the candidate uses the ordinary next round; a clean sync with passing focused tests sends no new freeze and begins no round. Fix verification within the settings limit is an ordinary round; a beyond-limit round needs recorded architect/developer approval, not the superseded unconditional D107 further-look account. Separate MEMORY reports/counts do not reset CODE. [4]
 - The authored source owns this contract; the distribution copy is not a separate authority. [5]
-
-
-
-- Partitions Reviewer-only handover/record-only/code-concern method from common review rules and adds the post-landing recorded memory lane. [6]
-
-- Partitions Reviewer-only handover/record-only/code-concern method from common review rules and adds the post-landing recorded memory lane. [7]
+- Current review separates common mode/round boundaries from Reviewer handover, record-only repair and code-concern duties. It records MEMORY as a separate lane under the same settings limit; existing reviews finish as begun and recorded lanes apply after landing. [6]
+- Current review separates common mode/round boundaries from Reviewer handover, record-only repair and code-concern duties. It records MEMORY as a separate lane under the same settings limit; existing reviews finish as begun and recorded lanes apply after landing. [7]
+- Reviewer returns a repair freeze missing its per-finding entries without counting a round, and receives no new freeze or round for a clean sync. [8]

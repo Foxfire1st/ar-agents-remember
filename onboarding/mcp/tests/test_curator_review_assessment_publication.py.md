@@ -48,7 +48,7 @@ The load-bearing properties:
   that does not read back blocks with the destination and the digest; a published byte removed after
   publication is a blocked absent state; a refused submission leaves the canonical authority
   byte-identical.
-- `TestPublisherCallerAddress` (`:759-836`) — item 19's two cases. A **bare** leaf-document file name
+- `TestPublisherCallerAddress` (class `:784-855`, case bodies `:795-855`) — item 19's two cases. A **bare** leaf-document file name
   that names the addressed document publishes, and the stored record's `taskDocumentRef.path` and
   `publishedBy` carry the canonical `<task-dir>/<leaf>.json` rather than the caller's spelling. A bare
   name for a **different** document is refused through the application boundary
@@ -56,7 +56,7 @@ The load-bearing properties:
   shape `<task-slug>/<leaf-document-file>` **and** this contract's exact canonical path in the detail,
   plus the `expected`/`observed` refs. Red if resolution is removed, if the refusal names nothing
   again, or if a bare name for another document starts being accepted.
-- `TestAttestationDurability` (`:881-932`) — item 18's second half. The bound attestation is copied
+- `TestAttestationDurability` (class `:910-963`, case bodies `:919-963`) — item 18's second half. The bound attestation is copied
   into the surviving task tree; the case then removes the enclosure's `reports` directory — the thing
   finalize reclaims — and reopens the copy **by the path the record carries**, re-verifying its digest
   and asserting the recorded source-candidate list equals the attestation's own. The second case pins
@@ -64,7 +64,7 @@ The load-bearing properties:
   rewriting an immutable one. Red if the copy is not written, not recorded, not the bound bytes, or if
   the enclosure path is the only one that works.
 
-The module-level helper `_tool_publish_bare_name` (`:839-878`) drives the refusal case through the
+The module-level helper `_tool_publish_bare_name` (`:858-892`) drives the refusal case through the
 application boundary rather than the domain function, so the asserted code is the code a caller
 receives.
 
@@ -96,6 +96,16 @@ the production path to drive.
   a mismatched judgment set on a record that carries assessments.
 
 ## Evidence
+
+
+Superseded card wording retained for custody (not certified as true of any source epoch or measured candidate):
+
+> `TestPublisherCallerAddress` (`:759-836`)
+
+> `TestAttestationDurability` (`:881-932`)
+
+> `_tool_publish_bare_name` (`:839-878`)
+
 
 ### Repo-Internal References
 
@@ -193,8 +203,10 @@ assessment, and the same `curator_coherence_subject_assessment_state` projection
 
 - The lifecycle catalog declares this suite as an exact consumer of curator_coherence_test_support.py and the Node package-lock fixture. Declaration is not invocation.
 
-- The lifecycle catalog declares this suite as an exact consumer of curator_coherence_test_support.py and the Node package-lock fixture. Declaration is not invocation. [3]
+- The lifecycle catalog declares this suite as an exact consumer of curator_coherence_test_support.py and the Node package-lock fixture. Declaration is not invocation.
 
 ## Retirements
 
 - Retired at the fifth freeze d59c3493: mcp/tests/evidence-lifecycle.toml:1951-1951 - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.
+
+- The lifecycle catalog declares this suite as an exact consumer of curator_coherence_test_support.py and the Node package-lock fixture. Declaration is not invocation. [3]

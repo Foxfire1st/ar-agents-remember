@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "c2d38cd0a82b9efe96a765c4512f2242c6a9d3e6",
-        "content": "sha256:bf84a3ed8c01ec6b196ea32aefcba2d0b8d3ba25d5ca9879640d6e153bc2c9a5",
+        "blob": "3ea09011d0657bf89935264047f646078913e415",
+        "content": "sha256:d8a9e0a838a2074862aff79c874ea350dd48652aec3a8f002cd553845d3cd8e4",
         "locator": {
           "kind": "file"
         }
@@ -25,7 +25,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0fcaee614b530fbfb7a642fa65cbaf53214d3a9f",
+            "blob": "0618c0ae683f37668ba21c42c15ced9c0081f595",
             "content": "sha256:e5634b2fde999a70250356a80b5b8e8bfebac4a25e60d6f7c75c56d985354f01",
             "locator": {
               "kind": "symbol",
@@ -42,12 +42,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c2d38cd0a82b9efe96a765c4512f2242c6a9d3e6",
+            "blob": "3ea09011d0657bf89935264047f646078913e415",
             "content": "sha256:fa818773877dec6d068de4be9fd08a8ce079eaffb73e52e06ff61809bb915ec8",
             "locator": {
-              "end": 65,
+              "end": 71,
               "kind": "line_range",
-              "start": 59
+              "start": 65
             },
             "path": "skills/l-01-agent-lifecycles/roles/curator.md"
           },
@@ -55,12 +55,12 @@
         },
         {
           "anchor": {
-            "blob": "6ebd065137efa6511deb754505556d60730f4647",
+            "blob": "7278abbdd039628f4afa41f7e871051e41866547",
             "content": "sha256:d06e0b525746fbafe6e3ad6d41b81b07a86d36cbfbe00e09c201256c82c5644b",
             "locator": {
-              "end": 12,
+              "end": 27,
               "kind": "line_range",
-              "start": 7
+              "start": 22
             },
             "path": "skills/l-01-agent-lifecycles/reference/curator-card-details.md"
           },
@@ -69,16 +69,16 @@
       ]
     },
     "12": {
-      "note": "Current curation contract separates normal judgment domains from rollout and lifecycle ownership.",
+      "note": "Current curation keeps reconciliation separate from transaction ownership, runs the full quality and independent fact-check workflow, and leaves Git base/candidate comparison to the Reviewer.",
       "targets": [
         {
           "anchor": {
-            "blob": "145be631612f52c363b97b82d253839028ebc907",
+            "blob": "a12f918499ebed5c67d253ce5956a1a3f7705656",
             "content": "sha256:f46dcb1a56028f631a030ff88a0c28e75e84188d1d91b2acb12af3f7d2fe9450",
             "locator": {
-              "end": 29,
+              "end": 28,
               "kind": "line_range",
-              "start": 26
+              "start": 25
             },
             "path": "skills/l-01-agent-lifecycles/operations/curation.md"
           },
@@ -86,10 +86,10 @@
         },
         {
           "anchor": {
-            "blob": "145be631612f52c363b97b82d253839028ebc907",
-            "content": "sha256:a8e1d190918d1438f9d67e211ee09809dfcae576409a9ee14a60fde969c1c74d",
+            "blob": "a12f918499ebed5c67d253ce5956a1a3f7705656",
+            "content": "sha256:7952eecd2c315628656620276b0011517dd71628f12ba784cc01382b99c099f5",
             "locator": {
-              "end": 100,
+              "end": 109,
               "kind": "line_range",
               "start": 75
             },
@@ -99,12 +99,12 @@
         },
         {
           "anchor": {
-            "blob": "145be631612f52c363b97b82d253839028ebc907",
+            "blob": "a12f918499ebed5c67d253ce5956a1a3f7705656",
             "content": "sha256:c49a27f05bdf3b87d666fb6a88ad454a3992d44d087e2362e2d006bb03b7711a",
             "locator": {
-              "end": 111,
+              "end": 118,
               "kind": "line_range",
-              "start": 111
+              "start": 118
             },
             "path": "skills/l-01-agent-lifecycles/operations/curation.md"
           },
@@ -113,29 +113,55 @@
       ]
     },
     "13": {
-      "note": "Foundation authoring is task work inside the Architect's task under the Curator rules; the seat is leaf-bound, and no taskless session stands in for task admission. [12] Anchor: Foundation carrier and admission",
+      "note": "The leaf pass requires its admitted leaf task and enclosure. For repository foundation, c-14 allows a real Architect-opened leaf either standalone, under a master or under a sprint, with its own task document and enclosure; the existing foundation detail describes the under-master case. No taskless session or fabricated leaf substitutes for task admission.",
       "targets": [
         {
           "anchor": {
-            "blob": "c2d38cd0a82b9efe96a765c4512f2242c6a9d3e6",
-            "content": "sha256:28227192feeb0f70c57e549a4d51193a936b2cb4f70721adabae7d82ba085f4e",
+            "blob": "3ea09011d0657bf89935264047f646078913e415",
+            "content": "sha256:17d30d022454d0f0f094c3c23b95a38d28cb5458181b9fdbee086dc781a5a73b",
             "locator": {
-              "end": 61,
+              "end": 45,
               "kind": "line_range",
-              "start": 51
+              "start": 41
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "c2d38cd0a82b9efe96a765c4512f2242c6a9d3e6",
-            "content": "sha256:b15db4ca0df6af1ac5b501e0b3fc66f35f6247549df7712a7204ee5263ea8d91",
+            "blob": "3ea09011d0657bf89935264047f646078913e415",
+            "content": "sha256:40c2ae246e1761cc987ffcc4e3482e7cad60f2948c044dfe2d2ee25b7d261f99",
             "locator": {
-              "end": 125,
+              "end": 108,
               "kind": "line_range",
-              "start": 114
+              "start": 104
             }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6f1b7f17a083434b9512a5614aaf5a9d344a7e09",
+            "content": "sha256:3518e92e94b8d2e963cd88e9f0333406e1693ab260408b6c6dd31d7f2ce70a8f",
+            "locator": {
+              "end": 7,
+              "kind": "line_range",
+              "start": 3
+            },
+            "path": "skills/l-01-agent-lifecycles/reference/curator-repository-foundation.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "47cce8a3d91019d3f99f61dc10a142cd06ce209e",
+            "content": "sha256:ebc4c54f8e8b0b0e0fda2163e029a7401437c6d39ba8d9032359b2ac11fd9c1d",
+            "locator": {
+              "end": 57,
+              "kind": "line_range",
+              "start": 52
+            },
+            "path": "skills/c-14-knowledge-bootstrap/SKILL.md"
           },
           "kind": "code"
         }
@@ -146,13 +172,70 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c2d38cd0a82b9efe96a765c4512f2242c6a9d3e6",
+            "blob": "3ea09011d0657bf89935264047f646078913e415",
             "content": "sha256:8afd32a91dbe3f21c503c60671caf19d815046f13a0f5d4f92d02b1e0effee18",
             "locator": {
-              "end": 79,
+              "end": 82,
               "kind": "line_range",
-              "start": 79
+              "start": 82
             }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "Current curation continues from a report to the next authorized step without a new Manager go. It verifies card sentences against source, repairs wrong or missing memory encountered along its way beyond quality-check findings, names each repair and makes no broad sweep. Code changes, requirement decisions and another leaf’s work return to their owner. A correction qualifies every affected false body claim; full checks and the independent fact-check run before handover.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a12f918499ebed5c67d253ce5956a1a3f7705656",
+            "content": "sha256:26d15a8474644613070af3dc356746c599dd45e5956032e51909a27df3ae174e",
+            "locator": {
+              "end": 82,
+              "kind": "line_range",
+              "start": 75
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/curation.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a12f918499ebed5c67d253ce5956a1a3f7705656",
+            "content": "sha256:67c667cbed17d2ee093394b4cef63126c03e63e03d30612fd1e787b7ec6485b6",
+            "locator": {
+              "end": 109,
+              "kind": "line_range",
+              "start": 100
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/curation.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3ea09011d0657bf89935264047f646078913e415",
+            "content": "sha256:72fadf303fbbddb96fe8d68c9d150aea7569fb17eaeb5d4a8dd79655d2c68184",
+            "locator": {
+              "end": 84,
+              "kind": "line_range",
+              "start": 73
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3ea09011d0657bf89935264047f646078913e415",
+            "content": "sha256:d8577622179dcbace8ad4c5d9e92f6121381f21cad17f964c58942b0e0018cc6",
+            "locator": {
+              "end": 150,
+              "kind": "line_range",
+              "start": 137
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
           },
           "kind": "code"
         }
@@ -163,10 +246,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "69517ee942d200d941aa32f6439d9be3dec88d70",
-            "content": "sha256:b106d164720ae94cda96f04c1b38578f67b868ede055feb803394923342b1ab8",
+            "blob": "96c7d8ea9d2d51612af52f18df65ebd97d06c4e3",
+            "content": "sha256:b046e8d40ca7536f6e6d1649c97a69a6a8152c3dafa538ee5b127b086025f98b",
             "locator": {
-              "end": 27,
+              "end": 41,
               "kind": "line_range",
               "start": 21
             },
@@ -176,12 +259,12 @@
         },
         {
           "anchor": {
-            "blob": "69517ee942d200d941aa32f6439d9be3dec88d70",
+            "blob": "96c7d8ea9d2d51612af52f18df65ebd97d06c4e3",
             "content": "sha256:8a9a087bcfa7acc5393e36301bdea328977aef46d7704bee9c431ef85b0b7c45",
             "locator": {
-              "end": 39,
+              "end": 53,
               "kind": "line_range",
-              "start": 31
+              "start": 45
             },
             "path": "skills/l-01-agent-lifecycles/reference/curator-authoring-d301.md"
           },
@@ -189,12 +272,12 @@
         },
         {
           "anchor": {
-            "blob": "69517ee942d200d941aa32f6439d9be3dec88d70",
+            "blob": "96c7d8ea9d2d51612af52f18df65ebd97d06c4e3",
             "content": "sha256:244a5e0c650543adac4951f6642e9d4c868ca7cd3940238d59e2885e483f7ea3",
             "locator": {
-              "end": 92,
+              "end": 114,
               "kind": "line_range",
-              "start": 86
+              "start": 108
             },
             "path": "skills/l-01-agent-lifecycles/reference/curator-authoring-d301.md"
           },
@@ -202,12 +285,12 @@
         },
         {
           "anchor": {
-            "blob": "c2d38cd0a82b9efe96a765c4512f2242c6a9d3e6",
-            "content": "sha256:0f16232f63b23d731f3a46fe76299115f107cff50511eaefb7bfda17481e8447",
+            "blob": "3ea09011d0657bf89935264047f646078913e415",
+            "content": "sha256:abdfbfc75ec375a14b7ddf5b752210df870d96d48b38fcd3f73c672f060eaeca",
             "locator": {
-              "end": 65,
+              "end": 70,
               "kind": "line_range",
-              "start": 54
+              "start": 53
             },
             "path": "skills/l-01-agent-lifecycles/roles/curator.md"
           },
@@ -216,16 +299,16 @@
       ]
     },
     "3": {
-      "note": "The curator’s prohibited writes and source-stamp boundary.",
+      "note": "The Curator performs no Git writes or code/gate/lifecycle/contract/closeout changes. Task-document edits use task_doc first with only its scoped correct-write recovery; source stamps cannot be advanced onto an uncommitted tree.",
       "targets": [
         {
           "anchor": {
-            "blob": "c2d38cd0a82b9efe96a765c4512f2242c6a9d3e6",
-            "content": "sha256:2cc8c50f6a8715285333d93e4243c8b6968e46534c650ac3bc0a9c40eb62a2ac",
+            "blob": "3ea09011d0657bf89935264047f646078913e415",
+            "content": "sha256:b670e5e8fbcfee44ee84f5d3fd6d789fce64eb772f02cf18f8266d7abe44cb1e",
             "locator": {
-              "end": 120,
+              "end": 123,
               "kind": "line_range",
-              "start": 112
+              "start": 114
             },
             "path": "skills/l-01-agent-lifecycles/roles/curator.md"
           },
@@ -238,8 +321,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "69517ee942d200d941aa32f6439d9be3dec88d70",
-            "content": "sha256:c071e691e1f2eeb5ec32e53a6258618391b56f4c1d4d2b0588199ba26477c7b7",
+            "blob": "96c7d8ea9d2d51612af52f18df65ebd97d06c4e3",
+            "content": "sha256:a4c86efc5de273fa8002c498bd37e6cf4835ce7cff207f8770df5f8a540d2c92",
             "locator": {
               "end": 12,
               "kind": "line_range",
@@ -251,12 +334,12 @@
         },
         {
           "anchor": {
-            "blob": "c2d38cd0a82b9efe96a765c4512f2242c6a9d3e6",
+            "blob": "3ea09011d0657bf89935264047f646078913e415",
             "content": "sha256:fa818773877dec6d068de4be9fd08a8ce079eaffb73e52e06ff61809bb915ec8",
             "locator": {
-              "end": 65,
+              "end": 71,
               "kind": "line_range",
-              "start": 59
+              "start": 65
             },
             "path": "skills/l-01-agent-lifecycles/roles/curator.md"
           },
@@ -264,12 +347,12 @@
         },
         {
           "anchor": {
-            "blob": "38daf6f3a9e1766c06dbbe2cc50c5b44db32d5f1",
+            "blob": "aafe9cceed66e44b929375098b30e6b65b0a4d79",
             "content": "sha256:0ba25bf7bd5021c9fc0c70d75575bbcf5c18009e7fb268ab093b3dd9a0c2c5a1",
             "locator": {
-              "end": 35,
+              "end": 39,
               "kind": "line_range",
-              "start": 28
+              "start": 32
             },
             "path": "skills/l-01-agent-lifecycles/criteria/onboarding-memory.md"
           },
@@ -282,12 +365,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c2d38cd0a82b9efe96a765c4512f2242c6a9d3e6",
+            "blob": "3ea09011d0657bf89935264047f646078913e415",
             "content": "sha256:3cf92085343c90e04efb30ec0ca0148475584e307dffedde80d3e67c2f149b02",
             "locator": {
-              "end": 35,
+              "end": 39,
               "kind": "line_range",
-              "start": 33
+              "start": 37
             },
             "path": "skills/l-01-agent-lifecycles/roles/curator.md"
           },
@@ -295,12 +378,12 @@
         },
         {
           "anchor": {
-            "blob": "c2d38cd0a82b9efe96a765c4512f2242c6a9d3e6",
-            "content": "sha256:bf8af09eeb56aafbbb73a958e64e3bf5bab6c1d6bc79878cf06e12790e352624",
+            "blob": "3ea09011d0657bf89935264047f646078913e415",
+            "content": "sha256:f42534d6759b458fcf40b7e80eb67bcccee6bc1b93b89f12ab124deb9ebcc63f",
             "locator": {
-              "end": 107,
+              "end": 108,
               "kind": "line_range",
-              "start": 103
+              "start": 107
             },
             "path": "skills/l-01-agent-lifecycles/roles/curator.md"
           },
@@ -313,12 +396,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c2d38cd0a82b9efe96a765c4512f2242c6a9d3e6",
-            "content": "sha256:5fa674b1f6fa14eaf33ae796f319b854ed175ecf5921787e267a34814d0d9ecb",
+            "blob": "3ea09011d0657bf89935264047f646078913e415",
+            "content": "sha256:5ffbf6fc0877ee6d347f690d78499536494a986eefd53c4924f7985c3e77906f",
             "locator": {
-              "end": 65,
+              "end": 150,
               "kind": "line_range",
-              "start": 49
+              "start": 129
             },
             "path": "skills/l-01-agent-lifecycles/roles/curator.md"
           },
@@ -326,12 +409,12 @@
         },
         {
           "anchor": {
-            "blob": "145be631612f52c363b97b82d253839028ebc907",
+            "blob": "a12f918499ebed5c67d253ce5956a1a3f7705656",
             "content": "sha256:37acace39292198a835dda5aaac31a302750023a2974d39086c18f9f26a3d5c0",
             "locator": {
-              "end": 176,
+              "end": 180,
               "kind": "line_range",
-              "start": 176
+              "start": 180
             },
             "path": "skills/l-01-agent-lifecycles/operations/curation.md"
           },
@@ -339,12 +422,12 @@
         },
         {
           "anchor": {
-            "blob": "ab9a2e087d2cfd299ad5ffbac061aac232c8e831",
+            "blob": "62a4500b617979c0fc10d9726ce52b57b8b3c922",
             "content": "sha256:9cdd501356748fca03a98de167e62906d558d2392d58ca3d3e47c49caae79b8f",
             "locator": {
-              "end": 157,
+              "end": 166,
               "kind": "line_range",
-              "start": 152
+              "start": 161
             },
             "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
           },
@@ -353,28 +436,28 @@
       ]
     },
     "9": {
-      "note": "Batch changed-card citation previews and repairs with one documents list per wave. The stage writes, checks and publishes task knowledge with the installed build and a clean quality check; own-input/coherence faults are corrected through the same admitted tool, never relabeled or bypassed. Valid product/permission/authority/out-of-ground blockers stop dependent work. MEMORY beyond-settings authority comes from architect/developer through the recorded Manager act; independent review and publication are not acceptance.",
+      "note": "Batch citation previews and repairs use one documents list per wave. The stage ends with task knowledge written and checked and quality clean, distinguishing installed-writer publication from scoped manual provenance. Own-input and coherence faults are repaired through the same admitted tool; other correct-input refusals, permission, ownership and requirement questions stop dependent work except covered correct-write recovery. Beyond-settings memory review needs architect/developer approval recorded by Manager; review or publication is not acceptance.",
       "targets": [
         {
           "anchor": {
-            "blob": "c2d38cd0a82b9efe96a765c4512f2242c6a9d3e6",
-            "content": "sha256:00582ac4ef21bd40018009a78a235a9675b7f0214fc07894e7545cd872720bfb",
+            "blob": "3ea09011d0657bf89935264047f646078913e415",
+            "content": "sha256:899f53ac3e7fe08f39480ce07351e6ead109d0e948ff41ce2c9451d20410aebb",
             "locator": {
-              "end": 147,
+              "end": 150,
               "kind": "line_range",
-              "start": 124
+              "start": 135
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "6ebd065137efa6511deb754505556d60730f4647",
+            "blob": "7278abbdd039628f4afa41f7e871051e41866547",
             "content": "sha256:17285fd2535f8db51753f8b0c481afa531f4c4e1b7e3b5f3e11d3024c07e6712",
             "locator": {
-              "end": 31,
+              "end": 51,
               "kind": "line_range",
-              "start": 27
+              "start": 47
             },
             "path": "skills/l-01-agent-lifecycles/reference/curator-card-details.md"
           },
@@ -395,12 +478,12 @@
         },
         {
           "anchor": {
-            "blob": "145be631612f52c363b97b82d253839028ebc907",
-            "content": "sha256:2d4f1e4a04674e22d8784c2bb1c449585ddd025da78757343777ede50708908c",
+            "blob": "a12f918499ebed5c67d253ce5956a1a3f7705656",
+            "content": "sha256:8d8a0e638d84fc8380d3e64b07e2a420456155f33c376362e972568540cb4fa7",
             "locator": {
-              "end": 32,
+              "end": 166,
               "kind": "line_range",
-              "start": 20
+              "start": 160
             },
             "path": "skills/l-01-agent-lifecycles/operations/curation.md"
           },

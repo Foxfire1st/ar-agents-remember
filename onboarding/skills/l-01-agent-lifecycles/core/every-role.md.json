@@ -1,0 +1,100 @@
+{
+  "path": "skills/l-01-agent-lifecycles/core/every-role.md",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "a3fdda5e3a9ee3d079399ded09f9fdd0dcdccfed",
+        "content": "sha256:df50f254778164ec73e8e2c1de1974c1b283fc7c55d7ae55a687e83a97cab8d0",
+        "locator": {
+          "end": 12,
+          "kind": "line_range",
+          "start": 11
+        }
+      },
+      "id": "RLZ-2N35WC",
+      "invariant": "INV-JAACMT",
+      "origin": {
+        "handoffEntry": "L62-CUR-6db-attach-L62-CUR-6414-continuation",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "For its Curator audience these two shared lines deliver helper collection and the declared ACP wait/continuation facet; they are not a claim about all other digest duties.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "a3fdda5e3a9ee3d079399ded09f9fdd0dcdccfed",
+        "content": "sha256:86d2193247e424af6794ed28698cb850403491e81c0f21c8b1192dfbe2759cca",
+        "locator": {
+          "end": 12,
+          "kind": "line_range",
+          "start": 10
+        }
+      },
+      "id": "RLZ-8YK88K",
+      "invariant": "INV-JAACMT",
+      "origin": {
+        "handoffEntry": "L62-CUR-6414-continuation",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "Shared digest explicitly preserves native within-turn collection and ACP declared-wait behavior.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "a3fdda5e3a9ee3d079399ded09f9fdd0dcdccfed",
+        "content": "sha256:f0b16c5f421ca806c85b44f3d425db81637c3d9bd3b314616dfbebcf3ce13dcc",
+        "locator": {
+          "end": 38,
+          "kind": "line_range",
+          "start": 38
+        }
+      },
+      "id": "RLZ-DAQF88",
+      "invariant": "INV-5TKYXM",
+      "origin": {
+        "handoffEntry": "L62-CUR-6db-attach-INV-5TKYXM",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "The completion line explicitly separates ended turns from artifact handoff and acceptance.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The digest states shared and role-qualified duties with retained source-unit IDs.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a3fdda5e3a9ee3d079399ded09f9fdd0dcdccfed",
+            "content": "sha256:fad9d9a793efd91e379357a9a89023c9875730a0c3050443b0dff4c69f84c4ba",
+            "locator": {
+              "end": 45,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The manifest describes the shared digest as first-message delivery beside the capsule rather than composition into it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "353b98ba0c8d4e0b72caee82f9f0a988a1f82768",
+            "content": "sha256:7d9a9de4a29ba19274fa564f3b4a6525e0465f131ce2cb1afadf0aecacefd96e",
+            "locator": {
+              "end": 168,
+              "kind": "line_range",
+              "start": 164
+            },
+            "path": "skills/l-01-agent-lifecycles/composition-manifest.json"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

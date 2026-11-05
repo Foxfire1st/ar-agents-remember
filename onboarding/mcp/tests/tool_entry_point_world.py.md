@@ -45,13 +45,13 @@ against the answer alone.
 - A missing whole result is a finding, not a licence to judge the answer by itself.
 - A reply arriving after the deadline is a named timeout, not a product refusal.
 
+`call` returns a non-timeout BaseException observation with str detail, concrete exceptionType and innermost traceback exceptionLocation. _ToolCallTimeout still reaches the ordinary sweep deadline handling and is classified as unvalidatable rather than as a product exception. These are source assertions/support behavior, not a fresh invocation, host result or AR acceptance.
+
 ## Evidence
+- The whole result is read back from the file the answer names, and a missing or unreadable file is an unvalidatable finding.
 
 
-- The whole result is read back from the file the answer names, and a missing or unreadable file is an unvalidatable finding. [2]
-
-
-- A returned call validates the whole result under its model and judges the delivered answer as delivered. [3]
+- A returned call validates the whole result under its model and judges the delivered answer as delivered.
 
 - One shared classifier serves the sweep and the controls. [4]
 - A passed phase limit names the tool and the phase, outside the product-raiser classifier. [5]
@@ -62,15 +62,28 @@ against the answer alone.
 - The delivered-answer refusal arm classifies `ok: false` from the delivered code and actionable-next marks. [9]
 
 
-- The shared benign table carries the 44 current roster keys, including `citation_note_revision` and `explainer_control`; this leaf adds that stimulus to the 42-key base. It supplies a dry run with a nonexistent selected sidecar and zero base digest so the product returns its named refusal without a note write. Table membership is preparation, not registration or execution. [10]
+- The shared benign table carries the 44 current roster keys, including `citation_note_revision` and `explainer_control`; this leaf adds that stimulus to the 42-key base. It supplies a dry run with a nonexistent selected sidecar and zero base digest so the product returns its named refusal without a note write. Table membership is preparation, not registration or execution. [Past-epoch source caption, detached from live reference 10. Recorded citation custody: mcp/tests/tool_entry_point_world.py blob fd07730a1a1bd23acfdd526b3ac57a628c498940 (available); mcp/src/agents_remember/models/tools/public_roster.py blob d0b0ddd9f150e32116b430ecc74907fcf68fee97 (available); historical event commit not identified. No historical event or intent inferred.]
+
+[Past-epoch source caption, detached from live reference 10. Recorded citation custody: mcp/tests/tool_entry_point_world.py blob fd07730a1a1bd23acfdd526b3ac57a628c498940 (available); mcp/src/agents_remember/models/tools/public_roster.py blob d0b0ddd9f150e32116b430ecc74907fcf68fee97 (available); historical event commit not identified. No historical event or intent inferred.]
+
+The shared benign table carries44 current roster keys, including explainer_control; the earlier42-key account preceded that entry, and the41-key account preceded user_settings_init. Table membership is preparation, not registration or execution.
+
+Current source: The ordinary benign table has 44 distinct literal keys matching the 44-name PUBLIC_TOOLS tuple, including citation_note_revision and explainer_control. The citation-note stimulus names an absent sidecar, uses a zero base digest and requests dry_run. This is source preparation, not registration or execution; prior 41/42-key and addition captions remain historical.
 
 
 
-- The shared world supplies an object-form read_ar_files stimulus and validates whole results and delivered answers through classifier helpers. Its sweep records timeouts as unvalidatable and continues; the separate self-contained support sweep propagates a timeout from call. These are source assertions, not execution. [11]
+- The shared world supplies an object-form read_ar_files stimulus and validates whole results and delivered answers through classifier helpers. Its sweep records timeouts as unvalidatable and continues; the separate self-contained support sweep propagates a timeout from call. These are source assertions, not execution.
 
 - `build()` authors and starts the addressed enclosure without a session lifecycle option. [13]
 - The shared sweep uses fixed fixture labels and preserves the named timeout continuation. [14]
 
 - A fake-account child imports this worktree's world, receives the guard's refusal and leaves the fake configuration home empty — `test_building_the_world_with_the_users_own_environment_is_refused` in mcp/tests/test_user_settings_guard.py. [7]
 
-- The shared benign table carries 44 current roster keys, including explainer_control; the earlier42-key account preceded that entry, and the41-key account preceded user_settings_init. Table membership is preparation, not registration or execution. [10]
+- The shared benign table carries 44 current roster keys, including explainer_control; the earlier42-key account preceded that entry, and the41-key account preceded user_settings_init. Table membership is preparation, not registration or execution. [Past-epoch source caption, detached from live reference 10. Recorded citation custody: mcp/tests/tool_entry_point_world.py blob fd07730a1a1bd23acfdd526b3ac57a628c498940 (available); mcp/src/agents_remember/models/tools/public_roster.py blob d0b0ddd9f150e32116b430ecc74907fcf68fee97 (available); historical event commit not identified. No historical event or intent inferred.]
+
+- The whole result is read back from the file the answer names, and a missing or unreadable file is an unvalidatable finding. Anchor: `_read_whole_result` [2]
+- A returned call validates the whole result under its model and judges the delivered answer as delivered. Anchor: `_returned_arm` [3]
+- The ordinary benign table has 44 distinct literal keys matching the 44-name PUBLIC_TOOLS tuple, including citation_note_revision and explainer_control. The citation-note stimulus names an absent sidecar, uses a zero base digest and requests dry_run. This is source preparation, not registration or execution; prior 41/42-key and addition captions remain historical. [10]
+- The shared world supplies an object-form read_ar_files stimulus and validates whole results and delivered answers through classifier helpers. Its sweep records timeouts as unvalidatable and continues; the separate self-contained support sweep propagates a timeout from call. These are source assertions, not execution. [11]
+
+- `call` returns a non-timeout BaseException observation with str detail, concrete exceptionType and innermost traceback exceptionLocation. _ToolCallTimeout still reaches the ordinary sweep deadline handling and is classified as unvalidatable rather than as a product exception. These are source assertions/support behavior, not a fresh invocation, host result or AR acceptance. [15]

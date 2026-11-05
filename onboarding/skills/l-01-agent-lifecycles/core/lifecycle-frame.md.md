@@ -26,8 +26,37 @@ Provider-start/degradation instructions are retained source residue, not authori
 
 
 
-- Worktree location records, the landing contract and structural seat bindings; Architect starts without a document. [1]
-- Opening trust checkpoint and provider-degradation report/order/no-kill boundaries, not restored runtime authority. [2]
+Retained authoring-row wording:
+
+Finding: Worktree location records, the landing contract and structural seat bindings; Architect starts without a document.
+
+Anchor:
+
+Source: skills/l-01-agent-lifecycles/core/lifecycle-frame.md:3-16
+
+Retained authoring-row wording:
+
+Finding: Finding
+
+Anchor: Anchor
+
+Source: Source
+
+Retained authoring-row wording:
+
+Finding: ---
+
+Anchor: ---
+
+Source: ---
+
+Retained authoring-row wording:
+
+Finding: Opening trust checkpoint and provider-degradation report/order/no-kill boundaries, not restored runtime authority.
+
+Anchor:
+
+Source: skills/l-01-agent-lifecycles/core/lifecycle-frame.md:18-37
 
 
 
@@ -36,3 +65,6 @@ Provider-start/degradation instructions are retained source residue, not authori
 ### External evidence
 
 No entries are configured in the resolved source registry. This card records repository-local instruction evidence only; no external source, host execution or acceptance is inferred.
+
+- Worktree location records, the landing contract and structural seat bindings; Architect starts without a document. [1]
+- Opening trust checkpoint and provider-degradation report/order/no-kill boundaries, not restored runtime authority. [2]

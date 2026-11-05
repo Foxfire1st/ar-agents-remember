@@ -107,8 +107,9 @@ early return fails instead of passing quietly. The deleted sweep was also
 - Importing `test_agent_notifier` for its fixtures means this module shares that module's world
   builder; it does not re-run or certify it.
 
-## Evidence
+Registered TaskDocResponse validation distinguishes available rows carrying requirements (including an empty list) from unavailable rows without them. Empty sibling populations are valid; unknown or missing states, incompatible requirements and extra fields fail. The description oracle requires the literal Kind: subTask or master. These are source assertions/support behavior, not a fresh invocation, host result or AR acceptance.
 
+## Evidence
 ### Docs References
 
 No external Domain Documentation source is configured in this memory root. These are
@@ -123,20 +124,20 @@ they make no acceptance claim.
 
 - Registration and adapter id sets are derived from source and asserted equal both ways. [1]
 
-- The fixtures' models are the registry's own objects. [3]
+- The fixtures' models are the registry's own objects.
 
-- Every registered model is strict or declared flexible, and the split is derived twice — from the declared base class and from each model's own `extra` config — so the two derivations must agree by name. [4]
+- Every registered model is strict or declared flexible, and the split is derived twice — from the declared base class and from each model's own `extra` config — so the two derivations must agree by name.
 
-- Every tool adapter module routes through the `_tool_payload` choke point, per handler on the return. [5]
+- Every tool adapter module routes through the `_tool_payload` choke point, per handler on the return.
 
-- `lifecycle_finalize_task` validates with the series release produced, and asserts it reached the emitting branch. [6]
+- `lifecycle_finalize_task` validates with the series release produced, and asserts it reached the emitting branch.
 
 - The same response validates on the `activation-release-blocked` arm, where only the release key is present. [7]
 - The declaring set for the two atomic-series keys is exactly `lifecycle_finalize_task`. [8]
 
-- The registered description and the refusal name the same `kind` vocabulary. [10]
+- The registered description and the refusal name the same `kind` vocabulary.
 
-- Every `next_tool=` literal the lifecycle package passes is declared on the response model. [11]
+- Every `next_tool=` literal the lifecycle package passes is declared on the response model.
 
 - The choke point whose guarantee this module moves into the suite. [17]
 
@@ -154,10 +155,22 @@ No repository or external-system boundary is proved by this module.
 
 ## Current source evidence
 
-- Current literal source populations are 44 roster names, 14 adapter modules and 46 handlers, while strict/flexible sets remain derived. Anchor: `ROSTER_SIZE`, `TOOL_MODULE_COUNT`, `TOOL_HANDLER_COUNT` [22]
+- Current literal source populations are 44 roster names, 14 adapter modules and 46 handlers, while strict/flexible sets remain derived. Anchor: `ROSTER_SIZE`, `TOOL_MODULE_COUNT`, `TOOL_HANDLER_COUNT` [Past-epoch source caption, detached from live reference 22. Recorded citation custody: mcp/tests/test_tool_response_conformance.py blob f59be949fc3fa155da0ce68d6c8301c02ac3e624 (available); historical event commit not identified. No historical event or intent inferred.]
+
+Current source: The literal PUBLIC_TOOLS source tuple contains 44 names. The conformance test source pins ROSTER_SIZE = 44, TOOL_MODULE_COUNT = 14 and TOOL_HANDLER_COUNT = 46 and derives strict/flexible model sets from base classes and extra configuration. These are literal declarations and test assertions, not a fresh module/handler collection or execution result.
 
 
 
 
 
 - The lane manifest registers mcp/tests/test_tool_response_conformance.py in architecture-fitness. Membership selects evidence and does not establish execution. [20]
+
+- The fixtures' models are the registry's own objects. Anchor: `test_the_models_these_fixtures_validate_are_the_registered_ones` [3]
+- Every registered model is strict or declared flexible, and the split is derived twice — from the declared base class and from each model's own `extra` config — so the two derivations must agree by name. Anchor: `test_every_registered_model_is_strict_or_declared_flexible` [4]
+- Every tool adapter module routes through the `_tool_payload` choke point, per handler on the return. Anchor: `test_every_tool_adapter_module_routes_through_the_choke_point` [5]
+- `lifecycle_finalize_task` validates with the series release produced, and asserts it reached the emitting branch. Anchor: `test_lifecycle_finalize_validates_with_the_series_release_produced` [6]
+- The registered description and the refusal name the same `kind` vocabulary. Anchor: `test_task_doc_description_and_refusal_name_the_same_kind_vocabulary` [10]
+- Every `next_tool=` literal the lifecycle package passes is declared on the response model. Anchor: `test_every_next_tool_its_own_refusals_advertise_is_declared` [11]
+- The literal PUBLIC_TOOLS source tuple contains 44 names. The conformance test source pins ROSTER_SIZE = 44, TOOL_MODULE_COUNT = 14 and TOOL_HANDLER_COUNT = 46 and derives strict/flexible model sets from base classes and extra configuration. These are literal declarations and test assertions, not a fresh module/handler collection or execution result. [22]
+
+- Registered TaskDocResponse validation distinguishes available rows carrying requirements (including an empty list) from unavailable rows without them. Empty sibling populations are valid; unknown or missing states, incompatible requirements and extra fields fail. The description oracle requires the literal Kind: subTask or master. These are source assertions/support behavior, not a fresh invocation, host result or AR acceptance. [23]

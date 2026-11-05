@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3283618c85b66070d98755f6d21a3f2e66f407ff",
+            "blob": "8673a0cc0f664527b38318f5c02481ab5826e739",
             "content": "sha256:4b407a4db5a6f1bee881e948f14ada7d20478e608329d406a8ce2e243128e4a6",
             "locator": {
               "kind": "symbol",
@@ -19,7 +19,7 @@
         },
         {
           "anchor": {
-            "blob": "3283618c85b66070d98755f6d21a3f2e66f407ff",
+            "blob": "8673a0cc0f664527b38318f5c02481ab5826e739",
             "content": "sha256:388ea62fbd05485dc8ef4132c6a41454d3b12c01d3c37e497d9cfad30598cd6d",
             "locator": {
               "kind": "symbol",
@@ -31,7 +31,7 @@
         },
         {
           "anchor": {
-            "blob": "3283618c85b66070d98755f6d21a3f2e66f407ff",
+            "blob": "8673a0cc0f664527b38318f5c02481ab5826e739",
             "content": "sha256:f8075c57d7c634c239e55f159c753e476797f728d5b4d9d4077513ef426794a5",
             "locator": {
               "kind": "symbol",
@@ -43,12 +43,12 @@
         },
         {
           "anchor": {
-            "blob": "3283618c85b66070d98755f6d21a3f2e66f407ff",
+            "blob": "8673a0cc0f664527b38318f5c02481ab5826e739",
             "content": "sha256:042ccb09469ae02fd5cdb7827ba26299f5865ede573a83e7bcb521bcf6491052",
             "locator": {
-              "end": 197,
+              "end": 198,
               "kind": "line_range",
-              "start": 182
+              "start": 183
             },
             "path": "mcp/src/agents_remember/models/role_capsules/types.py"
           },
@@ -56,12 +56,12 @@
         },
         {
           "anchor": {
-            "blob": "3283618c85b66070d98755f6d21a3f2e66f407ff",
+            "blob": "8673a0cc0f664527b38318f5c02481ab5826e739",
             "content": "sha256:809e738f5c46803fdf6be8fee09920068e621c4bb8de6ebfd2c0e72539f9fff7",
             "locator": {
-              "end": 450,
+              "end": 451,
               "kind": "line_range",
-              "start": 435
+              "start": 436
             },
             "path": "mcp/src/agents_remember/models/role_capsules/types.py"
           },
@@ -87,14 +87,16 @@
       ]
     },
     "3": {
-      "note": "The compiler step that narrows requests before sealing the digest.\n\nAnchor: `compile_role_capsule`",
+      "note": "The compiler step that narrows requests before sealing the digest. Anchor: `compile_role_capsule`",
       "targets": [
         {
           "anchor": {
-            "blob": "762c104a0bcdc0375416163993d106dc37c5fb18",
-            "content": "sha256:157949db0f9acdf0d70ebbd6959fb382dccab34600bf2e6cfd9b12f0b9079a74",
+            "blob": "a744d8de93cda92f20309cc2f735c24a2bf27ce4",
+            "content": "sha256:13434aabd680330e1ebe5e763eb65226c1c4e8ccf6e6fda0178dc94410915c2f",
             "locator": {
-              "kind": "file"
+              "end": 590,
+              "kind": "line_range",
+              "start": 1
             },
             "path": "mcp/src/agents_remember/models/role_capsules/compiler.py"
           },
@@ -107,12 +109,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2f3ce46a32a38d86f474252bb23d8081e91f0a6e",
+            "blob": "353b98ba0c8d4e0b72caee82f9f0a988a1f82768",
             "content": "sha256:9d833a0f8de397314e26669e2017f1dc0f7101305ca546b2672f3c3d96ea23b7",
             "locator": {
-              "end": 174,
+              "end": 178,
               "kind": "line_range",
-              "start": 165
+              "start": 169
             },
             "path": "skills/l-01-agent-lifecycles/composition-manifest.json"
           },
@@ -125,7 +127,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9946e7fc31fa11992782193f4af92050e7c18e46",
+            "blob": "fad1e5a1891afa9e3781b07d856907c922e210e7",
             "content": "sha256:7e0c6365385b12fba26957748e6c2d7772bcb45751e5f23fc982b170d78c58a7",
             "locator": {
               "kind": "symbol",
@@ -137,7 +139,7 @@
         },
         {
           "anchor": {
-            "blob": "9946e7fc31fa11992782193f4af92050e7c18e46",
+            "blob": "fad1e5a1891afa9e3781b07d856907c922e210e7",
             "content": "sha256:b69551206acd005f97914e357da0b1bcfd30f223e08f73284b3cc2ae35da2079",
             "locator": {
               "kind": "symbol",
@@ -149,7 +151,7 @@
         },
         {
           "anchor": {
-            "blob": "fde424ce1c4b108a144b9b7ab8f0d9fe8a807bf1",
+            "blob": "1e5141a382cecb6e2e7ba393452cbeedcb8d01e5",
             "content": "sha256:f34f06d8b39dee094e6d46952b91a62907f1e7d458fb471227d48cb6a9469142",
             "locator": {
               "kind": "symbol",

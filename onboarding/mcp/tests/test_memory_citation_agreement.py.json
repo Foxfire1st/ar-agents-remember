@@ -386,12 +386,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ac006b11f74a4c64ab964edc3378b4c96f153872",
+            "blob": "2c675ac4ed53a3b28cae8c0c32cd13c617d8f6ed",
             "content": "sha256:766f303bc7e15e82fd24136e1f75c57daa2d42f95ed1533239ab313812f24b13",
             "locator": {
-              "end": 232,
+              "end": 269,
               "kind": "line_range",
-              "start": 232
+              "start": 269
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -399,12 +399,12 @@
         },
         {
           "anchor": {
-            "blob": "ac006b11f74a4c64ab964edc3378b4c96f153872",
+            "blob": "2c675ac4ed53a3b28cae8c0c32cd13c617d8f6ed",
             "content": "sha256:f077da38793d14168158a19a2d41f7fbcff188affdbc98de0e9dccf33bef430a",
             "locator": {
-              "end": 261,
+              "end": 298,
               "kind": "line_range",
-              "start": 261
+              "start": 298
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -433,12 +433,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ddd77babbaaddf51063d6e23856c0cadd142d461",
+            "blob": "abb3d0e320df1c428284a14d602ec93ad778bdbe",
             "content": "sha256:d54efa326c1d4128e0c15e19ae1c2e3f9fb44b9af2c0cfbcfa5bca0306be0494",
             "locator": {
-              "end": 334,
+              "end": 335,
               "kind": "line_range",
-              "start": 320
+              "start": 321
             },
             "path": "pyproject.toml"
           },
@@ -483,12 +483,12 @@
         },
         {
           "anchor": {
-            "blob": "ddd77babbaaddf51063d6e23856c0cadd142d461",
+            "blob": "abb3d0e320df1c428284a14d602ec93ad778bdbe",
             "content": "sha256:a45f05c153d1b724bd7bfe5527b5534499d94b58cd5742e0a22db07b37cb65f7",
             "locator": {
-              "end": 334,
+              "end": 335,
               "kind": "line_range",
-              "start": 333
+              "start": 334
             },
             "path": "pyproject.toml"
           },
