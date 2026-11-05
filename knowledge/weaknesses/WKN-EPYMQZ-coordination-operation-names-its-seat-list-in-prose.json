@@ -1,13 +1,18 @@
 {
   "anchor": {
-    "blob": "e7bf8919f6e0f4a2918e849bb6598bc0a650d47c",
-    "content": "sha256:ea70ef513d87d7d323249ac4213969380061c7ad35d6d248ebdcee88bf250316",
+    "blob": "cae239eb383e7e6a0679cf80d64d182e2d36fc0f",
+    "content": "sha256:c9fbcd0bf661a3471dfb936a9cd82fbe066b09344edaea092fd4735fbd43ad8f",
     "locator": {
       "end": 22,
       "kind": "line_range",
       "start": 22
     },
     "path": "skills/l-01-agent-lifecycles/operations/coordination.md"
+  },
+  "closed": {
+    "commit": "d8869a4b7206536a83d5e18bf5865a4d6dde08c4",
+    "reason": "The current coordination operation explicitly spells leafSeats.roleMessageArguments in its leaf-handover sentence, so the recorded literal-versus-prose gap is closed on this tree. The original one-clause measurement stays historical provenance.",
+    "task": "260928-MIK-L62"
   },
   "id": "WKN-EPYMQZ",
   "kind": "debt",
@@ -26,12 +31,12 @@
     "leaf": "260928-MIK-L194",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-weakness/v1",
   "seen": {
     "role": "worker",
     "task": "260928-MIK-L194"
   },
-  "state": "open",
+  "state": "closed",
   "statement": "The coordination operation names its seat list in prose where a pinned guard requires the literal `leafSeats.roleMessageArguments`, so that clause subfails while the sentence it replaced stays unpinned."
 }
