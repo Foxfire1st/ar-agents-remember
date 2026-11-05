@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "c3faa196a67cf6e587107890375c4ab82a1118c8",
+        "blob": "a481ef53230e2f8c242f3522a37c6638908d97a0",
         "content": "sha256:ca91c86191d4109203694cb52e0a200e334b59b9002fc57c978edfc7233d472b",
         "locator": {
           "kind": "symbol",
@@ -21,8 +21,8 @@
     },
     {
       "anchor": {
-        "blob": "c3faa196a67cf6e587107890375c4ab82a1118c8",
-        "content": "sha256:efee72c0f5d1c7eb55ee2d7b2a5bc6dd50552def0ae20ba4c490957f1d9a2c3f",
+        "blob": "a481ef53230e2f8c242f3522a37c6638908d97a0",
+        "content": "sha256:48b13ed2e45eca6cabbf0dce48300425f5aa646ec2133211d82c934afb2c1633",
         "locator": {
           "kind": "file"
         }
@@ -38,8 +38,8 @@
     },
     {
       "anchor": {
-        "blob": "c3faa196a67cf6e587107890375c4ab82a1118c8",
-        "content": "sha256:efee72c0f5d1c7eb55ee2d7b2a5bc6dd50552def0ae20ba4c490957f1d9a2c3f",
+        "blob": "a481ef53230e2f8c242f3522a37c6638908d97a0",
+        "content": "sha256:48b13ed2e45eca6cabbf0dce48300425f5aa646ec2133211d82c934afb2c1633",
         "locator": {
           "kind": "file"
         }
@@ -55,8 +55,8 @@
     },
     {
       "anchor": {
-        "blob": "c3faa196a67cf6e587107890375c4ab82a1118c8",
-        "content": "sha256:c016fe4b0ebe9fd73ca3ed067cfe9400a17b43bcc1e18dc16a1a55c4fa18798f",
+        "blob": "a481ef53230e2f8c242f3522a37c6638908d97a0",
+        "content": "sha256:a7c7dce2e7f1889ec03211fca275ead24d98e28898bf7631070920d51b9ea0ca",
         "locator": {
           "kind": "symbol",
           "name": "project_task_doc_answer"
@@ -73,7 +73,7 @@
     },
     {
       "anchor": {
-        "blob": "c3faa196a67cf6e587107890375c4ab82a1118c8",
+        "blob": "a481ef53230e2f8c242f3522a37c6638908d97a0",
         "content": "sha256:b25c16c7bc27c73169c837588029ceb3db014eb77358974ce7fa09959e2b6cf1",
         "locator": {
           "kind": "symbol",
@@ -91,7 +91,7 @@
     },
     {
       "anchor": {
-        "blob": "c3faa196a67cf6e587107890375c4ab82a1118c8",
+        "blob": "a481ef53230e2f8c242f3522a37c6638908d97a0",
         "content": "sha256:b25c16c7bc27c73169c837588029ceb3db014eb77358974ce7fa09959e2b6cf1",
         "locator": {
           "kind": "symbol",
@@ -114,7 +114,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c3faa196a67cf6e587107890375c4ab82a1118c8",
+            "blob": "a481ef53230e2f8c242f3522a37c6638908d97a0",
             "content": "sha256:ca91c86191d4109203694cb52e0a200e334b59b9002fc57c978edfc7233d472b",
             "locator": {
               "kind": "symbol",
@@ -130,7 +130,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c3faa196a67cf6e587107890375c4ab82a1118c8",
+            "blob": "a481ef53230e2f8c242f3522a37c6638908d97a0",
             "content": "sha256:17a7d71678f73331b855d34651afd5b6d482dcd202ef6c383205ab26fc74adc2",
             "locator": {
               "kind": "symbol",
@@ -146,7 +146,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c3faa196a67cf6e587107890375c4ab82a1118c8",
+            "blob": "a481ef53230e2f8c242f3522a37c6638908d97a0",
             "content": "sha256:b25c16c7bc27c73169c837588029ceb3db014eb77358974ce7fa09959e2b6cf1",
             "locator": {
               "kind": "symbol",
@@ -162,11 +162,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c3faa196a67cf6e587107890375c4ab82a1118c8",
-            "content": "sha256:c016fe4b0ebe9fd73ca3ed067cfe9400a17b43bcc1e18dc16a1a55c4fa18798f",
+            "blob": "a481ef53230e2f8c242f3522a37c6638908d97a0",
+            "content": "sha256:a7c7dce2e7f1889ec03211fca275ead24d98e28898bf7631070920d51b9ea0ca",
             "locator": {
-              "kind": "symbol",
-              "name": "project_task_doc_answer"
+              "end": 703,
+              "kind": "line_range",
+              "start": 664
             }
           },
           "kind": "code"
@@ -178,10 +179,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c3faa196a67cf6e587107890375c4ab82a1118c8",
-            "content": "sha256:efee72c0f5d1c7eb55ee2d7b2a5bc6dd50552def0ae20ba4c490957f1d9a2c3f",
+            "blob": "a481ef53230e2f8c242f3522a37c6638908d97a0",
+            "content": "sha256:48b13ed2e45eca6cabbf0dce48300425f5aa646ec2133211d82c934afb2c1633",
             "locator": {
-              "kind": "file"
+              "end": 703,
+              "kind": "line_range",
+              "start": 1
             }
           },
           "kind": "code"
@@ -189,16 +192,16 @@
       ]
     },
     "6": {
-      "note": "File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence.\n\nAnchor: L642–L675",
+      "note": "File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence.",
       "targets": [
         {
           "anchor": {
-            "blob": "c3faa196a67cf6e587107890375c4ab82a1118c8",
-            "content": "sha256:74c120ab2ac81f943440a32266b2d32e5d4313ea3a17f164003aaa00398f62c5",
+            "blob": "a481ef53230e2f8c242f3522a37c6638908d97a0",
+            "content": "sha256:f50cd1b8182c714ece66f448915c04eab8fe732a0f17f132368d375ca0775c22",
             "locator": {
-              "end": 675,
+              "end": 703,
               "kind": "line_range",
-              "start": 642
+              "start": 645
             }
           },
           "kind": "code"
@@ -210,11 +213,28 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c3faa196a67cf6e587107890375c4ab82a1118c8",
+            "blob": "a481ef53230e2f8c242f3522a37c6638908d97a0",
             "content": "sha256:e0f726d565cfcc5f3dfc7ca17342df9b1391c9a717213b510316e8ddb133a276",
             "locator": {
               "kind": "symbol",
               "name": "_ROLE_START_SUCCESS_KEPT"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Both task-doc dry and successful ordinary answer projections retain supplied alignmentSweep.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a481ef53230e2f8c242f3522a37c6638908d97a0",
+            "content": "sha256:af65f01a2a727014f508cfe632e2e46c0361cb214b5549b453579369b9f58421",
+            "locator": {
+              "end": 700,
+              "kind": "line_range",
+              "start": 645
             }
           },
           "kind": "code"

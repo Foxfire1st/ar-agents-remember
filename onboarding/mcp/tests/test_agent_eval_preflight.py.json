@@ -1,0 +1,40 @@
+{
+  "path": "mcp/tests/test_agent_eval_preflight.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "b2d62384cc96de68170f4184a85938f1f2ca11db",
+        "content": "sha256:240bef005d57a4c73c0c3a20d6ade856ee0a1daf853c81500cd5964d4db92129",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-FN75YG",
+      "invariant": "INV-9KC11K",
+      "origin": {
+        "handoffEntry": "L62-fd6462b8-case-admission",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "This regression module checks this obligation through test_whole_writer_tree_requires_link_closure_and_preserves_inputs, test_reports_all_fourteen_without_short_circuit_or_models, test_trial_refuses_before_host_text_or_approver_and_writes_evidence, test_cli_failure_reports_and_tamper_is_invalid and its remaining test cases.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The source defines this file's responsibility and the boundaries described here.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b2d62384cc96de68170f4184a85938f1f2ca11db",
+            "content": "sha256:240bef005d57a4c73c0c3a20d6ade856ee0a1daf853c81500cd5964d4db92129",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

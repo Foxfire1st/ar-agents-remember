@@ -89,6 +89,12 @@ The governing workflow opens an independent memory review after CODE PASS on the
 
 This account is bound to the candidate source, not a claim of a running serving build or a fresh execution/acceptance verdict. Existing historical accounts remain historical.
 
+## Current source contract
+
+TaskDocResponse adds optional alignmentSweep. Its strict nested model declares the advice message, optional openLeaves bounded to twelve rows, optional openLeafCount greater than twelve and optional masterTaskDocument. Available leaf rows require id, state=available and requirements; unavailable leaf rows have only id and state=unavailable. The sweep producer chooses the short or large-master representation; the model does not enforce a mutual-exclusion rule between those optional fields. These declarations admit response metadata without changing persisted task documents or making the advice a gate.
+
+- Declares strict optional bounded alignmentSweep response metadata. [12]
+
 ## Evidence
 
 
@@ -105,13 +111,25 @@ This account is bound to the candidate source, not a claim of a running serving 
 - The persisted task-document model this response describes (not returns), whose class body now ends at its integration-branch normaliser. [3]
 
 
-- The application entry point builds the optional `masterSync` payload for real and dry-run leaf writes. [4]
+Retained authoring-row wording:
+
+Finding: The application entry point builds the optional `masterSync` payload for real and dry-run leaf writes.
+
+Anchor:
+
+Source: mcp/src/agents_remember/application/task_docs/task_doc_tools.py; mcp/src/agents_remember/application/task_docs/task_doc_tools.py:363-376
 
 
 - The special-op identity merge that pairs with the declared wire fields. [5]
 
 
-- The response model declares optional retirement record, state, readiness, preview and archive-result fields for retire_master. [6]
+Retained authoring-row wording:
+
+Finding: The response model declares optional retirement record, state, readiness, preview and archive-result fields for retire_master.
+
+Anchor:
+
+Source: mcp/src/agents_remember/models/task_doc.py; mcp/src/agents_remember/models/task_doc.py:152-287
 
 
 ## 260815-DAG Master Full-Gate Repair
@@ -151,4 +169,14 @@ was retired; these model and application owners remain the current contract auth
 > `mcp/tests/test_tool_response_conformance.py::test_task_doc_read_steps_validates_and_returns_the_checklist`.
 
 
+Retained authoring-row wording:
+
+Finding: TaskDocResponse remains the strict rich producer/result model, not a promise that every field appears in the bounded delivered answer. Removed-read refusal permits missing parsed identity only for ok=false/code=operation-removed; successful writes still require identity. TaskDocStepRead/TaskDocSubStepRead/steps are removed. Optional masterSync error/paths, updated/inputFile/inputFileSha256 and factKinds/reportPath support the surviving authoring/reporting routes. Generic undeclared fields remain refused.
+
+Anchor:
+
+Source: mcp/src/agents_remember/models/task_doc.py
+
+- The application entry point builds the optional `masterSync` payload for real and dry-run leaf writes. [4]
+- The response model declares optional retirement record, state, readiness, preview and archive-result fields for retire_master. [6]
 - TaskDocResponse remains the strict rich producer/result model, not a promise that every field appears in the bounded delivered answer. Removed-read refusal permits missing parsed identity only for ok=false/code=operation-removed; successful writes still require identity. TaskDocStepRead/TaskDocSubStepRead/steps are removed. Optional masterSync error/paths, updated/inputFile/inputFileSha256 and factKinds/reportPath support the surviving authoring/reporting routes. Generic undeclared fields remain refused. [7]

@@ -1,0 +1,40 @@
+{
+  "path": "mcp/tests/fixtures/judge-package-budget-real.json.gz",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "f9190d1453ef5ca40f18460bdba143df7fcc06f4",
+        "content": "sha256:0dbccda58d0ed2f2ce87c97573ea79a97264248074aeee1dfd3786e8e116e857",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-B9Q1NA",
+      "invariant": "INV-SYN8W6",
+      "origin": {
+        "handoffEntry": "L62-fd6462b8-judge-package",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "This compressed retained package data pins canonical envelope limits without the retired summarizer.",
+      "role": "support"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The source defines this file's responsibility and the boundaries described here.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f9190d1453ef5ca40f18460bdba143df7fcc06f4",
+            "content": "sha256:0dbccda58d0ed2f2ce87c97573ea79a97264248074aeee1dfd3786e8e116e857",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

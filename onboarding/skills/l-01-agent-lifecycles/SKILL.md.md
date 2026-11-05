@@ -112,7 +112,17 @@ No configured domain documentation was available.
 The following requirement and attempt references retain their source-epoch evidence. Applicable approved packets and owning role records determine current authority; this thin router does not inject the former shared sources.
 
 - Requirement acceptance is exact, per-ID, independently adjudicated, and separate from evidence promotion. [7]
-- Attempt lineage separates semantic versions from candidate-bound delivery history and gives regression invalidation to independent proof plus the owning seat. [8]
+Past-epoch caption (retained wording): - Attempt lineage separates semantic versions from candidate-bound delivery history and gives regression invalidation to independent proof plus the owning seat.
+
+Original-target custody: `skills/l-01-agent-lifecycles/core/acceptance.md`, blob `2a112bdb1148478a8a719636588cb908fab01cac`, declared “The canonical `ID@version` states semantic intent and changes only through explicit developer approval. A leaf-local attempt ID states what one exact candidate was handed to independent review for one leaf manifestation of that revision. - ”. The earlier caption is detached from the live number; the current table carries only the current clause and target.
+
+Retained authoring-row wording:
+
+Finding: Semantic requirement versions and exact-candidate formal attempts keep separate immutable lineage; internal reruns mint no attempt. Reviewer records bind the exact attempt and candidate. In the requested-review completion workflow, an accepted attempt remains closed unless the independent reviewer proves direct regression and the owning Manager (Architect in a flat run) records bounded invalidation, or an approved requirement revision affects that manifestation. Outside-list observations alone go through the parent to the developer without adding or reopening findings or resetting review.
+
+Anchor:
+
+Source: skills/l-01-agent-lifecycles/core/acceptance.md:79-116; skills/w-02-light-task-workflow/workflow.md:284-293; skills/l-01-agent-lifecycles/core/loop.md:82-84
 - Leaf journals are authority and the master summary is explicitly rebuildable and non-gating. [9]
 
 ## Historical L23 Dispatch Admission
@@ -258,3 +268,5 @@ The byte-equal package copy is a distribution carrier, not an independent role, 
 - Canonical role-capsule doctrine and the packaged byte-equal carrier have one authored owner; the package is a generated distribution extent. [18]
 
 - The composition manifest registers `curator-handoff-list.md` alongside brief templates. That template defines the producers’ curator hand-off output shape. The thin router names the manifest as the routing metadata authority.  Historical source caption: "Anchor: \"the **producer's output shape**\"" [19]
+
+- Semantic requirement versions and exact-candidate formal attempts keep separate immutable lineage; internal reruns mint no attempt. Reviewer records bind the exact attempt and candidate. In the requested-review completion workflow, an accepted attempt remains closed unless the independent reviewer proves direct regression and the owning Manager (Architect in a flat run) records bounded invalidation, or an approved requirement revision affects that manifestation. Outside-list observations alone go through the parent to the developer without adding or reopening findings or resetting review. [8]

@@ -1,0 +1,40 @@
+{
+  "path": "scripts/agent_evals/trial_native_setup.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "271802d1e254eda3d74e244cca5c2422be69d05d",
+        "content": "sha256:6c16e1bd4654c1402a1c5ad0bd44dbf7f80a061651c73d0831b0720cbcc498ee",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-1PTDNJ",
+      "invariant": "INV-A8FVPH",
+      "origin": {
+        "handoffEntry": "L62-fd6462b8-trial-isolation",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "It places native code/memory sides and checks resolved actor and auxiliary destinations before launch.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The source defines this file's responsibility and the boundaries described here.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "271802d1e254eda3d74e244cca5c2422be69d05d",
+            "content": "sha256:6c16e1bd4654c1402a1c5ad0bd44dbf7f80a061651c73d0831b0720cbcc498ee",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

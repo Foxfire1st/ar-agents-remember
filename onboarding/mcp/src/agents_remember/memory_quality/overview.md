@@ -158,6 +158,14 @@ Full synchronous quality uses the per-check Git source reader: listed but unread
 
 
 ## Evidence
+Past-epoch account (retained wording): - Retained reference account (no fresh execution or acceptance inferred): The update-history fixer is a dedicated mutating module rather than a `memory_quality_check` option.
+
+Custody: the preceding sentence(s) retain their original target blob(s) `6782d184c8982f54e6e72e5f11a61aa2c8f88627`; live reference 3 labels only the separately stated current account below.
+
+- The registered memory_quality_check dispatches sync/start/poll requests and returns findings, worklist and checklist evidence rather than semantic certification; formatting remains writer-owned.
+
+- The registered memory_quality_check dispatches sync/start/poll requests and returns findings, worklist and checklist evidence rather than semantic certification; formatting remains writer-owned. [3]
+
 - Retained reference account (no fresh execution or acceptance inferred): The missing-onboarding checker catches newly added worktree files before code commit. [4]
 - Retained reference account (no fresh execution or acceptance inferred): The context-packet application entry point that returns `DriftSummaryPacket` from its drift seam. [6]
 - Retained reference account (no fresh execution or acceptance inferred): The curator checklist renderer owns deterministic grouping, closeout-provenance separation, and atomic publication. [7]
@@ -230,7 +238,6 @@ Full synchronous quality uses the per-check Git source reader: listed but unread
 - Named converted-base refusal depends on the supplied port; no-port HEAD reads can yield no bases; reported base failure withholds anchor-path refusals.  Anchor: `_comparison_bases` `converted_knowledge_check` [81]
 - Retained reference account (no fresh execution or acceptance inferred): The MCP application entry point builds drift context, including temporary leaf-base provenance, and calls the package runner.  Anchor: `run_memory_quality_request` `_execute_memory_quality` [1]
 - Retained reference account (no fresh execution or acceptance inferred): Tool metadata and server registration expose `memory_quality_check` to agents.  Anchor: `memory_quality_check_payload` `create_server` [2]
-- Retained reference account (no fresh execution or acceptance inferred): The update-history fixer is a dedicated mutating module rather than a `memory_quality_check` option. [3]
 - Retained reference account (no fresh execution or acceptance inferred): The shared drift model declares the vocabulary used by drift-check wire responses. [5]
 - Retained reference account (no fresh execution or acceptance inferred): The application surface projects readiness with no affected-closure plan. [16]
 - Retained reference account (no fresh execution or acceptance inferred): The caller-exclude surface on the registered tool and the CLI. [25]

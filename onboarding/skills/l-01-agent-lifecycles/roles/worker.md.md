@@ -4,9 +4,23 @@
 
 The Manager starts the three leaf seats as a set; Worker cannot start its checker or accept/publish its own implementation. Its stage requires final candidate meeting the requirement, relevant tests/lint/type checks passing and the report with Reviewer. Own failures are corrected on its own ground; blocked/unrun evidence remains explicit. A record-only repair stays on the same review round only with candidate unchanged; repeated cases demand property/construction reasoning rather than case chasing.
 
+Current qualification: the retained clause “  The Manager starts the three leaf seats as a set; Worker cannot start its checker or accept/publish its own implementation.” describes its past source epoch.
+
+Worker first tells Manager at the freeze so Reviewer can be started; Manager starts Curator after code PASS. Worker cannot start its checker or accept/publish its own implementation.
+
 This account controls the named changed seams; contradictory earlier card wording below is retained only as historical evidence. Unchanged role duties and R117 file-only wake/report transport are preserved. Source inspection supplies no new runtime test, CODE verdict, review counter or acceptance.
 
-- The Manager starts the three leaf seats as a set; Worker cannot start its checker or accept/publish its own implementation. Its stage requires final candidate meeting the requirement, relevant tests/lint/type checks passing and the report with Reviewer. Own failures are corrected on its own ground; blocked/unrun evidence remains explicit. A record-only repair stays on the same review round only with candidate unchanged; repeated cases demand property/construction reasoning rather than case chasing. [12]
+- The Manager starts the three leaf seats as a set; Worker cannot start its checker or accept/publish its own implementation. Its stage requires final candidate meeting the requirement, relevant tests/lint/type checks passing and the report with Reviewer. Own failures are corrected on its own ground; blocked/unrun evidence remains explicit. A record-only repair stays on the same review round only with candidate unchanged; repeated cases demand property/construction reasoning rather than case chasing.
+
+Earlier caption detached from live reference 12: its original target declared the source text at `skills/l-01-agent-lifecycles/roles/worker.md` at original blob `e9cdae3d6c37b0b2b5b725d99d3dba0218b0822f`, lines 1–60. The caption above is retained as prose; the numbered clause below describes the current source.
+
+Retained authoring-row wording:
+
+Finding: Worker first notifies Manager at freeze so Reviewer can be started; after code PASS Manager starts Curator. Worker starts no role, cannot accept its own implementation, repairs its own failing checks and retains a record-only review round only while candidate bytes stay unchanged.
+
+Anchor: `current role or template contract`
+
+Source: skills/l-01-agent-lifecycles/roles/worker.md:30-34; skills/l-01-agent-lifecycles/roles/worker.md:57-65; skills/l-01-agent-lifecycles/roles/worker.md:81-89
 
 
 ## Message/file transport
@@ -128,28 +142,118 @@ These are instruction obligations, not proof that a particular Worker run compli
 
 ## Evidence
 
-- The Worker boundary requires direct repair and per-finding freeze evidence and delegates sync procedure to implementation. [16]
+- The Worker boundary requires direct repair and per-finding freeze evidence and delegates sync procedure to implementation.
+
+Earlier caption detached from live reference 16: its original target declared the source text at `skills/l-01-agent-lifecycles/roles/worker.md` at original blob `e9cdae3d6c37b0b2b5b725d99d3dba0218b0822f`, lines 36–44. The caption above is retained as prose; the numbered clause below describes the current source.
+
+Retained authoring-row wording:
+
+Finding: A sealed finding in the Worker's own task files is repaired directly without prior plan, census or Manager go-ahead, and the freeze reports per-finding failing-before/passing-after evidence; supported sync remains implementation-owned.
+
+Anchor: `current role or template contract`
+
+Source: skills/l-01-agent-lifecycles/roles/worker.md:69-69
 
 
 ### Repo-Internal References
 
-- The worker is one leaf-scoped builder whose terminal state is checks plus report. [1]
+- The worker is one leaf-scoped builder whose terminal state is checks plus report.
 
-- Intake binds writes to the named code worktree and report path. [2]
+Earlier caption detached from live reference 1: its original target declared the source text at `skills/l-01-agent-lifecycles/roles/worker.md` at original blob `e9cdae3d6c37b0b2b5b725d99d3dba0218b0822f`, lines 6–17. The caption above is retained as prose; the numbered clause below describes the current source.
 
-- Orientation requires current worktree reads and coding guidelines before edits. [3]
+Retained authoring-row wording:
 
-- Build produces implementation plus evidence for the separate curator. [4]
+Finding: Worker implements only the selected leaf's approved primary requirement and preservation constraints; its handover supplies canonical task, exact packet, paired roots, contract and report path, and its completed stage requires final-byte handover checks plus a report with Reviewer.
 
-- The worker appends authoritative attempts to the single journal and links them from the mandatory turn report. [5]
+Anchor: `current role or template contract`
 
-- The worker emits its requirement-shaped items as one curator hand-off list in the shared producer shape. [6]
+Source: skills/l-01-agent-lifecycles/roles/worker.md:8-8; skills/l-01-agent-lifecycles/roles/worker.md:81-83
 
-- Tool authority excludes lifecycle/status, gates and memory writes; only completed matching own build/evidence steps are marked done, not task acceptance. [7]
+- Intake binds writes to the named code worktree and report path.
+
+Earlier caption detached from live reference 2: its original target declared the source text at `skills/l-01-agent-lifecycles/roles/worker.md` at original blob `e9cdae3d6c37b0b2b5b725d99d3dba0218b0822f`, lines 30–34. The caption above is retained as prose; the numbered clause below describes the current source.
+
+Retained authoring-row wording:
+
+Finding: Worker reads the exact rendered/JSON locations in its handover, verifies paired roots, writes code only and reads memory as context; a missing binding is reported from its canonical source and field without guessing a different task or workspace.
+
+Anchor: `current role or template contract`
+
+Source: skills/l-01-agent-lifecycles/roles/worker.md:16-18
+
+- Orientation requires current worktree reads and coding guidelines before edits.
+
+Earlier caption detached from live reference 3: its original target declared the source text at `skills/l-01-agent-lifecycles/roles/worker.md` at original blob `e9cdae3d6c37b0b2b5b725d99d3dba0218b0822f`, lines 22–24; `skills/l-01-agent-lifecycles/roles/worker.md` at original blob `e9cdae3d6c37b0b2b5b725d99d3dba0218b0822f`, lines 30–34. The caption above is retained as prose; the numbered clause below describes the current source.
+
+Retained authoring-row wording:
+
+Finding: Worker reads the selected requirement/task with its own file tools, follows supplied repository coding/test rules and knowledge detail at editing or failure, and reads existing design guidelines before its first UI edit.
+
+Anchor: `current role or template contract`
+
+Source: skills/l-01-agent-lifecycles/roles/worker.md:14-20
+
+- Build produces implementation plus evidence for the separate curator.
+
+Earlier caption detached from live reference 4: its original target declared the source text at `skills/l-01-agent-lifecycles/roles/worker.md` at original blob `e9cdae3d6c37b0b2b5b725d99d3dba0218b0822f`, lines 36–49; `skills/l-01-agent-lifecycles/roles/worker.md` at original blob `e9cdae3d6c37b0b2b5b725d99d3dba0218b0822f`, lines 42–46. The caption above is retained as prose; the numbered clause below describes the current source.
+
+Retained authoring-row wording:
+
+Finding: Worker freezes and first asks Manager to start Reviewer, then sends that Reviewer its exact freeze and journal attempt IDs; after code PASS it sends the Curator the exact-freeze structured producer list after serving-build handoff-check.
+
+Anchor: `current role or template contract`
+
+Source: skills/l-01-agent-lifecycles/roles/worker.md:30-34
+
+- The worker appends authoritative attempts to the single journal and links them from the mandatory turn report.
+
+Earlier caption detached from live reference 5: its original target declared the source text at `skills/l-01-agent-lifecycles/roles/worker.md` at original blob `e9cdae3d6c37b0b2b5b725d99d3dba0218b0822f`, whole file. The caption above is retained as prose; the numbered clause below describes the current source.
+
+Retained authoring-row wording:
+
+Finding: Worker writes one canonical task report, carries the leaf Requirement Attempt Journal attempt IDs with its freeze and reads the turn-report shape at that freeze; the detailed implementation output procedure remains the owner.
+
+Anchor: `current role or template contract`
+
+Source: skills/l-01-agent-lifecycles/roles/worker.md:28-34
+
+- The worker emits its requirement-shaped items as one curator hand-off list in the shared producer shape.
+
+Earlier caption detached from live reference 6: its original target declared the source text at `skills/l-01-agent-lifecycles/roles/worker.md` at original blob `e9cdae3d6c37b0b2b5b725d99d3dba0218b0822f`, whole file. The caption above is retained as prose; the numbered clause below describes the current source.
+
+Retained authoring-row wording:
+
+Finding: After code PASS, Worker sends Curator structured producer data verbatim for that exact freeze in the shared template shape and first runs serving-build handoff-check against that freeze.
+
+Anchor: `current role or template contract`
+
+Source: skills/l-01-agent-lifecycles/roles/worker.md:30-32
+
+- Tool authority excludes lifecycle/status, gates and memory writes; only completed matching own build/evidence steps are marked done, not task acceptance.
+
+Earlier caption detached from live reference 7: its original target declared the source text at `skills/l-01-agent-lifecycles/roles/worker.md` at original blob `e9cdae3d6c37b0b2b5b725d99d3dba0218b0822f`, whole file. The caption above is retained as prose; the numbered clause below describes the current source.
+
+Retained authoring-row wording:
+
+Finding: Worker owns code and its build/evidence step completion, not memory, review, lifecycle/status, commits or acceptance; its completed matching own steps may be marked done through task_doc and unfinished work is never marked complete.
+
+Anchor: `current role or template contract`
+
+Source: skills/l-01-agent-lifecycles/roles/worker.md:57-63; skills/l-01-agent-lifecycles/roles/worker.md:71-74
 
 - The worker records the complete acceptance envelope once for every stable requirement ID. [8]
 
-- Checks have their own explicit reportable step. [9]
+- Checks have their own explicit reportable step.
+
+Earlier caption detached from live reference 9: its original target declared the source text at `skills/l-01-agent-lifecycles/roles/worker.md` at original blob `e9cdae3d6c37b0b2b5b725d99d3dba0218b0822f`, lines 50–66. The caption above is retained as prose; the numbered clause below describes the current source.
+
+Retained authoring-row wording:
+
+Finding: Worker stage completion requires the requirement met and coding-guidelines handover checks passing on a clean copy of final candidate bytes. It repairs failing checks on its own ground and reports checks it cannot pass or run without relabelling them.
+
+Anchor: `current role or template contract`
+
+Source: skills/l-01-agent-lifecycles/roles/worker.md:81-85
 
 - The worker builds one leaf in one session and delivers one scoped change set plus one report. [10]
 
@@ -185,12 +289,67 @@ The review budget is the settings number `orchestration.loops.defaults.maxRounds
 ## Current Source Evidence
 
 
-- Current settings-budget, recorded approval and preserved stage/ownership boundaries are carried by this canonical instruction source. [11]
+- Current settings-budget, recorded approval and preserved stage/ownership boundaries are carried by this canonical instruction source.
 
-- Adds completion-only own build/evidence step marking and stopping after three unsuccessful own repairs of one check/finding. [13]
-- Adds completion-only own build/evidence step marking and stopping after three unsuccessful own repairs of one check/finding. [14]
-- Adds completion-only own build/evidence step marking and stopping after three unsuccessful own repairs of one check/finding. [15]
+Earlier caption detached from live reference 11: its original target declared the source text at `skills/l-01-agent-lifecycles/roles/worker.md` at original blob `e9cdae3d6c37b0b2b5b725d99d3dba0218b0822f`, whole file. The caption above is retained as prose; the numbered clause below describes the current source.
+
+Retained authoring-row wording:
+
+Finding: Worker escalates three unsuccessful own repairs and costly/repeated small repairs to Manager, preserves build-only authority, and uses the bounded writer ladder only for its admitted tool class while validation/transaction guards retain their stops.
+
+Anchor: `current role or template contract`
+
+Source: skills/l-01-agent-lifecycles/roles/worker.md:57-63; skills/l-01-agent-lifecycles/roles/worker.md:76-87
+
+- Adds completion-only own build/evidence step marking and stopping after three unsuccessful own repairs of one check/finding.
+
+Earlier caption detached from live reference 13: its original target declared the source text at `skills/l-01-agent-lifecycles/roles/worker.md` at original blob `e9cdae3d6c37b0b2b5b725d99d3dba0218b0822f`, lines 8–22. The caption above is retained as prose; the numbered clause below describes the current source.
+
+Retained authoring-row wording:
+
+Finding: Worker marks only its own build/evidence step done when complete through task_doc, never curation, review, task status or acceptance.
+
+Anchor: `current role or template contract`
+
+Source: skills/l-01-agent-lifecycles/roles/worker.md:71-74
+- Adds completion-only own build/evidence step marking and stopping after three unsuccessful own repairs of one check/finding.
+
+Earlier caption detached from live reference 14: its original target declared the source text at `skills/l-01-agent-lifecycles/roles/worker.md` at original blob `e9cdae3d6c37b0b2b5b725d99d3dba0218b0822f`, lines 8–22. The caption above is retained as prose; the numbered clause below describes the current source.
+
+Retained authoring-row wording:
+
+Finding: After three unsuccessful own repairs of the same check or finding, Worker records its attempts and remaining failure and tells Manager rather than continuing that repair loop.
+
+Anchor: `current role or template contract`
+
+Source: skills/l-01-agent-lifecycles/roles/worker.md:76-76
+- Adds completion-only own build/evidence step marking and stopping after three unsuccessful own repairs of one check/finding.
+
+Earlier caption detached from live reference 15: its original target declared the source text at `skills/l-01-agent-lifecycles/roles/worker.md` at original blob `e9cdae3d6c37b0b2b5b725d99d3dba0218b0822f`, lines 8–22. The caption above is retained as prose; the numbered clause below describes the current source.
+
+Retained authoring-row wording:
+
+Finding: Worker stage completion requires final-byte coding-guidelines checks on a clean copy and its report with Reviewer; its own failing checks are repaired rather than bypassed or excused as pre-existing.
+
+Anchor: `current role or template contract`
+
+Source: skills/l-01-agent-lifecycles/roles/worker.md:81-85
 
 ## 260928-MIK-L198 — the hand-over names an outside scratch root beside the leaf scratch root
 
 The Worker's closing paragraph now names the real `workspace.outsideScratchRoot` beside the real `workspace.scratchRoot` and sends there what must not live under the projects home — a sandbox root above all — and one short `TMPDIR` when a tool refuses the scratch path, with `XDG_CONFIG_HOME` kept inside `workspace.scratchRoot`. Everything else stays in `workspace.scratchRoot`; no agent names another location or removes the outside root, which the product deletes with the enclosure. Agent-authored temporaries stay out of code, memory and task folders, and product/tooling, test-runner and explicitly admitted repository sandbox temporaries keep their own owners. The launch projection's workspace field list now carries `outsideScratchRoot` directly after `scratchRoot`, so the field arrives under the dotted name the role text uses.
+
+- Worker implements only the selected leaf's approved primary requirement and preservation constraints; its handover supplies canonical task, exact packet, paired roots, contract and report path, and its completed stage requires final-byte handover checks plus a report with Reviewer. [1]
+- Worker reads the exact rendered/JSON locations in its handover, verifies paired roots, writes code only and reads memory as context; a missing binding is reported from its canonical source and field without guessing a different task or workspace. [2]
+- Worker reads the selected requirement/task with its own file tools, follows supplied repository coding/test rules and knowledge detail at editing or failure, and reads existing design guidelines before its first UI edit. [3]
+- Worker freezes and first asks Manager to start Reviewer, then sends that Reviewer its exact freeze and journal attempt IDs; after code PASS it sends the Curator the exact-freeze structured producer list after serving-build handoff-check. [4]
+- Worker writes one canonical task report, carries the leaf Requirement Attempt Journal attempt IDs with its freeze and reads the turn-report shape at that freeze; the detailed implementation output procedure remains the owner. [5]
+- After code PASS, Worker sends Curator structured producer data verbatim for that exact freeze in the shared template shape and first runs serving-build handoff-check against that freeze. [6]
+- Worker owns code and its build/evidence step completion, not memory, review, lifecycle/status, commits or acceptance; its completed matching own steps may be marked done through task_doc and unfinished work is never marked complete. [7]
+- Worker stage completion requires the requirement met and coding-guidelines handover checks passing on a clean copy of final candidate bytes. It repairs failing checks on its own ground and reports checks it cannot pass or run without relabelling them. [9]
+- Worker escalates three unsuccessful own repairs and costly/repeated small repairs to Manager, preserves build-only authority, and uses the bounded writer ladder only for its admitted tool class while validation/transaction guards retain their stops. [11]
+- Worker first notifies Manager at freeze so Reviewer can be started; after code PASS Manager starts Curator. Worker starts no role, cannot accept its own implementation, repairs its own failing checks and retains a record-only review round only while candidate bytes stay unchanged. [12]
+- Worker marks only its own build/evidence step done when complete through task_doc, never curation, review, task status or acceptance. [13]
+- After three unsuccessful own repairs of the same check or finding, Worker records its attempts and remaining failure and tells Manager rather than continuing that repair loop. [14]
+- Worker stage completion requires final-byte coding-guidelines checks on a clean copy and its report with Reviewer; its own failing checks are repaired rather than bypassed or excused as pre-existing. [15]
+- A sealed finding in the Worker's own task files is repaired directly without prior plan, census or Manager go-ahead, and the freeze reports per-finding failing-before/passing-after evidence; supported sync remains implementation-owned. [16]

@@ -36,7 +36,7 @@ A changed fingerprint is a review prompt, not automatic proof that prose is wron
 
 The retained workflow/template place `entities.md` directly under the onboarding root alongside, not instead of, `overview.md`. They include repository, document type, `lastUpdated`, draft/active status and newest-first append-only Update History. Maintenance refreshes the timestamp when entries, prose, evidence paths or fingerprints meaningfully change. Those are the retained catalog's schema instructions, not fields or a history section to add to this converted file card.
 
-The canonical skill's Converted Memory section governs file cards and overviews even though this catalog workflow has no local converted-memory preamble. It directs converted cards to `converted-card-workflow.md`, makes unconverted memory read-only after cutover and prohibits hand-authored sidecar JSON. The converted-card workflow uses a canonical source title, nearest-governing relative link, purpose and commentary, with temporary citation-table input before the fixer authors references. The fixer owns reference allocation; the writer owns typed entries and source/nearest-route history rows. Catalog templates do not grant operations or establish that a legacy-format catalog can be written into converted memory unchanged.
+The canonical skill's Converted Memory section governs file cards and overviews even though this catalog workflow has no local converted-memory preamble. It directs converted cards to `converted-card-workflow.md`, makes unconverted memory read-only after cutover and prohibits ordinary hand-authored sidecar JSON. The converted-card workflow uses a canonical source title, nearest-governing relative link, purpose and commentary, with temporary citation-table input before the fixer authors references. The fixer owns reference allocation; the writer owns typed entries and source/nearest-route history rows. Catalog templates do not grant operations or establish that a legacy-format catalog can be written into converted memory unchanged. Use the fixer and writer first. Only a covered correct-input write refusal permits the declared same-tool/input-class recovery, with owner notification, manual provenance, checks and a defect issue. Missing admission/capability is not such a refusal; read/check/validation/sync, starts, product guards, commit gates and denied or unanswered permission requests keep their stops.
 
 ### Invariants And Boundaries
 
@@ -47,6 +47,12 @@ Preserve current reusable entity meaning and source-backed cross-layer relations
 The inherited TODO calls for verification-metadata refresh after its working-tree change lands. Preserve it as a historical legacy-format follow-up, not an operative converted-card stamp instruction or a claim that landing occurred. The inherited documentation notes say this repository-local workflow required no external domain documentation, the then-resolved registry had no configured Domain Documentation entries, and no relevant external material was found after live checks. Its boundary notes say sibling evidence was unnecessary and no meaningful cross-repo references were found. These remain scoped past-discovery statements, not fresh registry or network observations. Source and template evidence support the contract description; the discovery observations remain historical.
 
 ## Evidence
+
+
+Superseded card wording retained for custody (not certified as true of any source epoch or measured candidate):
+
+> The canonical skill's Converted Memory section governs file cards and overviews even though this catalog workflow has no local converted-memory preamble. It directs converted cards to `converted-card-workflow.md`, makes unconverted memory read-only after cutover and prohibits hand-authored sidecar JSON. The converted-card workflow uses a canonical source title, nearest-governing relative link, purpose and commentary, with temporary citation-table input before the fixer authors references. The fixer owns reference allocation; the writer owns typed entries and source/nearest-route history rows. Catalog templates do not grant operations or establish that a legacy-format catalog can be written into converted memory unchanged.
+
 
 - The workflow selects one repo-level catalog of load-bearing real entities, not a glossary or exhaustive ontology. [1]
 - Entity discovery follows configured domain evidence, treats live sources as authoritative and cites proving materials rather than the registry. [2]
@@ -60,8 +66,27 @@ The inherited TODO calls for verification-metadata refresh after its working-tre
 - The template retains metadata and append-only Update History as legacy catalog shape, not converted-card requirements. [8]
 - The retained c-05 maintenance workflow requires evidence review and names c-05 fingerprint-drift and coverage reporting. [9]
 
-- Canonical converted-memory precedence forbids hand-written sidecar JSON and does not permit ordinary unconverted writes. [10]
+Past-epoch caption (retained wording): - Canonical converted-memory precedence forbids hand-written sidecar JSON and does not permit ordinary unconverted writes.
 
-- Converted cards use a source-path title, relative governing link and temporary evidence-table authoring with fixer-owned references. [11]
+Original-target custody: `skills/c-05-create-or-update-onboarding-files/SKILL.md`, blob `7544470421d07347f2127e91131a701490676138`, declared “Check the memory tree first. When it holds `knowledge/layout.json` it is **converted** (MIK-R21), and file cards and route overviews follow `workflows/converted-card-workflow.md`: - a card's evidence is `- <finding> [n]` lines over sidecar ”. The earlier caption is detached from the live number; the current table carries only the current clause and target.
+
+Retained authoring-row wording:
+
+Finding: Converted-memory precedence uses the fixer and writer first, with only the declared correct-input same-tool recovery. It permits no ordinary unconverted writes and does not treat missing capability as a refused correct write.
+
+Anchor:
+
+Source: skills/c-05-create-or-update-onboarding-files/SKILL.md:46-67; skills/l-01-agent-lifecycles/reference/refused-write.md:1-38
+
+Retained authoring-row wording:
+
+Finding: Converted cards use a source-path title, relative governing link and temporary evidence-table authoring with fixer-owned references.
+
+Anchor:
+
+Source: skills/c-05-create-or-update-onboarding-files/workflows/converted-card-workflow.md:7-35
 
 - Converted no-impact answers use writer-owned source and route history rows, and converted cards exclude legacy metadata/history and self-assigned references. [12]
+
+- Converted-memory precedence uses the fixer and writer first, with only the declared correct-input same-tool recovery. It permits no ordinary unconverted writes and does not treat missing capability as a refused correct write. [10]
+- Converted cards use a source-path title, relative governing link and temporary evidence-table authoring with fixer-owned references. [11]

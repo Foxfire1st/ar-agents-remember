@@ -13,6 +13,8 @@ Messages are short wake-ups naming work and files; report/verdict/evidence conte
 
 The packaged mirror of the canonical scoped Investigator role.
 
+The Investigator reports what is and what is not, with evidence for each. It states no requirement, ruling or duty of its own; a needed change is an open question for the parent, not a fix to apply.
+
 ## Code Commentary
 
 The canonical skills/l-01-agent-lifecycles/roles/investigator.md owns the concern, selection and read/report/mutation boundaries. scripts/sync-skills.py regenerates this packaged copy, the sole generated skill target the tool server serves as MCP resources; this file authors no independent role. The scoped concern may be of any kind, checks remain scratch/sandbox-only, code/memory/task mutations remain with their owners, and provider/system remediation remains report-first and explicitly ordered. Projects, sprint and sprint/master starts preserve the actual parent concern channel and no invented task identity.
@@ -24,4 +26,9 @@ Agent-authored temporary files, experiments and working copies live only in the 
 ## Evidence
 
 
-- The source owns the documented investigation, identity or request boundary. [1]
+- The source owns the documented investigation, identity or request boundary.
+
+- The Investigator reports what is and what is not, with evidence for each. It states no requirement, ruling or duty of its own; a needed change is an open question for the parent, not a fix to apply.
+
+- Investigator reads and reports one scoped concern from its actual starter, retains parent/developer question routing and makes no source, memory or task mutations. [1]
+- The Investigator reports what is and what is not, with evidence for each. It states no requirement, ruling or duty of its own; a needed change is an open question for the parent, not a fix to apply. [2]

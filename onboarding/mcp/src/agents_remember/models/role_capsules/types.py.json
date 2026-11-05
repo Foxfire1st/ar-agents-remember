@@ -69,16 +69,33 @@
       ]
     },
     "10": {
-      "note": "File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence.\n\nAnchor: L450–L496",
+      "note": "File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence.",
       "targets": [
         {
           "anchor": {
-            "blob": "3283618c85b66070d98755f6d21a3f2e66f407ff",
-            "content": "sha256:34e323312c9aa00997fdb03b7ac526547641a294f8662453653cd18c3dab8aeb",
+            "blob": "8673a0cc0f664527b38318f5c02481ab5826e739",
+            "content": "sha256:232993025ca1ea0d9be316304235cd3be024e912f7e17cdd916ac3dde37da185",
             "locator": {
-              "end": 496,
+              "end": 504,
               "kind": "line_range",
-              "start": 450
+              "start": 452
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "Adds default-empty contract_markers tuple on capsule result.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8673a0cc0f664527b38318f5c02481ab5826e739",
+            "content": "sha256:2308a612e97aa01376403e3918dc59c729c930ec2d66ebac4f4c224a921ad46e",
+            "locator": {
+              "end": 476,
+              "kind": "line_range",
+              "start": 451
             }
           },
           "kind": "code"
@@ -107,24 +124,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "762c104a0bcdc0375416163993d106dc37c5fb18",
-            "content": "sha256:1887eaccb5d5f005cb1e74f059d46449876977184df1293db4f51a2b4c61e567",
+            "blob": "a744d8de93cda92f20309cc2f735c24a2bf27ce4",
+            "content": "sha256:6bdfa8672b22d1767b78410897a7c8a4109f3c5f07c43f15155cf1d13168e39d",
             "locator": {
-              "kind": "symbol",
-              "name": "compile_role_capsule"
-            },
-            "path": "mcp/src/agents_remember/models/role_capsules/compiler.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "762c104a0bcdc0375416163993d106dc37c5fb18",
-            "content": "sha256:7da71c1033e7996e3c68235b718fbe5ad09f889aba6844e369e21d9f0f69acf8",
-            "locator": {
-              "end": 139,
+              "end": 189,
               "kind": "line_range",
-              "start": 84
+              "start": 99
             },
             "path": "mcp/src/agents_remember/models/role_capsules/compiler.py"
           },
@@ -132,10 +137,25 @@
         },
         {
           "anchor": {
-            "blob": "762c104a0bcdc0375416163993d106dc37c5fb18",
-            "content": "sha256:157949db0f9acdf0d70ebbd6959fb382dccab34600bf2e6cfd9b12f0b9079a74",
+            "blob": "a744d8de93cda92f20309cc2f735c24a2bf27ce4",
+            "content": "sha256:6eda893e3218425c956d3d51c75917f2a93c9becee44e3dd34f782e984e84390",
             "locator": {
-              "kind": "file"
+              "end": 156,
+              "kind": "line_range",
+              "start": 92
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/compiler.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a744d8de93cda92f20309cc2f735c24a2bf27ce4",
+            "content": "sha256:13434aabd680330e1ebe5e763eb65226c1c4e8ccf6e6fda0178dc94410915c2f",
+            "locator": {
+              "end": 590,
+              "kind": "line_range",
+              "start": 1
             },
             "path": "mcp/src/agents_remember/models/role_capsules/compiler.py"
           },
@@ -215,11 +235,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0de84f83644c391b29759b1623034309cabc8c72",
-            "content": "sha256:29ee69ed5c555d4e83c8cfa80f90ed3f888989d4fc019082f917c3acbbd8cac6",
+            "blob": "a9ebc25e9f72b32db990eb7c7582f967d6fbd021",
+            "content": "sha256:d83e2d57f2e37404de9d44a0dd51cfb781229885bb74bc9f34618a97fcef8b59",
             "locator": {
-              "kind": "symbol",
-              "name": "compile_admitted_capsule"
+              "end": 134,
+              "kind": "line_range",
+              "start": 93
             },
             "path": "mcp/src/agents_remember/application/role_capsules/compilation.py"
           },
@@ -230,8 +251,9 @@
             "blob": "5b2145bba70163c198afb85dbe914657fc8c6b9f",
             "content": "sha256:915fd89222d1328505df921b788cb9559a7190b597c8b7549b071d961fa0e4f3",
             "locator": {
-              "kind": "symbol",
-              "name": "admit_capsule_sources"
+              "end": 92,
+              "kind": "line_range",
+              "start": 78
             },
             "path": "mcp/src/agents_remember/application/role_capsules/sources.py"
           },
@@ -257,7 +279,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9946e7fc31fa11992782193f4af92050e7c18e46",
+            "blob": "fad1e5a1891afa9e3781b07d856907c922e210e7",
             "content": "sha256:473474c07b91cebc974210786d8cc7b9818bcc0a13b81d9a7507d283c83df510",
             "locator": {
               "kind": "symbol",
@@ -269,7 +291,7 @@
         },
         {
           "anchor": {
-            "blob": "9946e7fc31fa11992782193f4af92050e7c18e46",
+            "blob": "fad1e5a1891afa9e3781b07d856907c922e210e7",
             "content": "sha256:396f24d73d20453da02daf14bb34f184ac316c06e029e9b9649b3a7cd5b40e07",
             "locator": {
               "kind": "symbol",
@@ -281,7 +303,7 @@
         },
         {
           "anchor": {
-            "blob": "9946e7fc31fa11992782193f4af92050e7c18e46",
+            "blob": "fad1e5a1891afa9e3781b07d856907c922e210e7",
             "content": "sha256:af0689e280645346bf39bdb24a61d66c358135d1dc894f09389c80c72d18f1fe",
             "locator": {
               "end": 388,
@@ -294,7 +316,7 @@
         },
         {
           "anchor": {
-            "blob": "9946e7fc31fa11992782193f4af92050e7c18e46",
+            "blob": "fad1e5a1891afa9e3781b07d856907c922e210e7",
             "content": "sha256:2f4dfead8ec9ce69279fc95f0315fe1d3a38aa543f12346e2aae63e65ab0015e",
             "locator": {
               "end": 446,

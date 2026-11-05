@@ -3,8 +3,8 @@
   "proves": [
     {
       "anchor": {
-        "blob": "4cec94249db175d2ad18bef512477765ff722e18",
-        "content": "sha256:67e29bfd09dcd417e85f95f0b887ae3ce56e13bfa103659f94ff55fd6069bd7f",
+        "blob": "342be991c483ba6636b1b42ced13cdad5a11b608",
+        "content": "sha256:bd4abdd736d2a20dccb70af3685870c650147a20a93058306e4b1dd2ca11734a",
         "locator": {
           "kind": "symbol",
           "name": "CuratorInstructionWordingTests.test_current_coordination_and_curator_rules"
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "4cec94249db175d2ad18bef512477765ff722e18",
+        "blob": "342be991c483ba6636b1b42ced13cdad5a11b608",
         "content": "sha256:2784247703adc1e43cba86b6ac1f4f9a4319aaf49d06b318f6c2465ae04c16ba",
         "locator": {
           "kind": "symbol",
@@ -37,8 +37,8 @@
     },
     {
       "anchor": {
-        "blob": "4cec94249db175d2ad18bef512477765ff722e18",
-        "content": "sha256:67e29bfd09dcd417e85f95f0b887ae3ce56e13bfa103659f94ff55fd6069bd7f",
+        "blob": "342be991c483ba6636b1b42ced13cdad5a11b608",
+        "content": "sha256:bd4abdd736d2a20dccb70af3685870c650147a20a93058306e4b1dd2ca11734a",
         "locator": {
           "kind": "symbol",
           "name": "CuratorInstructionWordingTests.test_current_coordination_and_curator_rules"
@@ -54,8 +54,8 @@
     },
     {
       "anchor": {
-        "blob": "4cec94249db175d2ad18bef512477765ff722e18",
-        "content": "sha256:67e29bfd09dcd417e85f95f0b887ae3ce56e13bfa103659f94ff55fd6069bd7f",
+        "blob": "342be991c483ba6636b1b42ced13cdad5a11b608",
+        "content": "sha256:bd4abdd736d2a20dccb70af3685870c650147a20a93058306e4b1dd2ca11734a",
         "locator": {
           "kind": "symbol",
           "name": "CuratorInstructionWordingTests.test_current_coordination_and_curator_rules"
@@ -71,8 +71,8 @@
     },
     {
       "anchor": {
-        "blob": "4cec94249db175d2ad18bef512477765ff722e18",
-        "content": "sha256:67e29bfd09dcd417e85f95f0b887ae3ce56e13bfa103659f94ff55fd6069bd7f",
+        "blob": "342be991c483ba6636b1b42ced13cdad5a11b608",
+        "content": "sha256:bd4abdd736d2a20dccb70af3685870c650147a20a93058306e4b1dd2ca11734a",
         "locator": {
           "kind": "symbol",
           "name": "CuratorInstructionWordingTests.test_current_coordination_and_curator_rules"
@@ -88,8 +88,8 @@
     },
     {
       "anchor": {
-        "blob": "4cec94249db175d2ad18bef512477765ff722e18",
-        "content": "sha256:67e29bfd09dcd417e85f95f0b887ae3ce56e13bfa103659f94ff55fd6069bd7f",
+        "blob": "342be991c483ba6636b1b42ced13cdad5a11b608",
+        "content": "sha256:bd4abdd736d2a20dccb70af3685870c650147a20a93058306e4b1dd2ca11734a",
         "locator": {
           "kind": "symbol",
           "name": "CuratorInstructionWordingTests.test_current_coordination_and_curator_rules"
@@ -105,8 +105,8 @@
     },
     {
       "anchor": {
-        "blob": "4cec94249db175d2ad18bef512477765ff722e18",
-        "content": "sha256:67e29bfd09dcd417e85f95f0b887ae3ce56e13bfa103659f94ff55fd6069bd7f",
+        "blob": "342be991c483ba6636b1b42ced13cdad5a11b608",
+        "content": "sha256:bd4abdd736d2a20dccb70af3685870c650147a20a93058306e4b1dd2ca11734a",
         "locator": {
           "kind": "symbol",
           "name": "CuratorInstructionWordingTests.test_current_coordination_and_curator_rules"
@@ -122,8 +122,8 @@
     },
     {
       "anchor": {
-        "blob": "4cec94249db175d2ad18bef512477765ff722e18",
-        "content": "sha256:67e29bfd09dcd417e85f95f0b887ae3ce56e13bfa103659f94ff55fd6069bd7f",
+        "blob": "342be991c483ba6636b1b42ced13cdad5a11b608",
+        "content": "sha256:bd4abdd736d2a20dccb70af3685870c650147a20a93058306e4b1dd2ca11734a",
         "locator": {
           "kind": "symbol",
           "name": "CuratorInstructionWordingTests.test_current_coordination_and_curator_rules"
@@ -139,25 +139,25 @@
     },
     {
       "anchor": {
-        "blob": "4cec94249db175d2ad18bef512477765ff722e18",
-        "content": "sha256:67e29bfd09dcd417e85f95f0b887ae3ce56e13bfa103659f94ff55fd6069bd7f",
+        "blob": "342be991c483ba6636b1b42ced13cdad5a11b608",
+        "content": "sha256:bd4abdd736d2a20dccb70af3685870c650147a20a93058306e4b1dd2ca11734a",
         "locator": {
           "kind": "symbol",
           "name": "CuratorInstructionWordingTests.test_current_coordination_and_curator_rules"
         }
       },
-      "facet": "Requires the Curator role text to name the mounted knowledge_write among the authoring routes and to say no other route writes knowledge.",
-      "id": "PRF-N575P7",
+      "facet": "Pins normal mounted/admitted serving-build authoring and the scoped same-tool/input-class correct-write exception in the Curator role; it does not assert an absolute no-other-route ban.",
+      "id": "PRF-PC91ZT",
       "invariant": "INV-945YZ4",
       "origin": {
-        "handoffEntry": "MIK-R194@v1 rule 10",
-        "leaf": "260928-MIK-L186"
+        "handoffEntry": "L62-CUR-6414-replacement-proof-PRF-N575P7",
+        "leaf": "260928-MIK-L62"
       }
     },
     {
       "anchor": {
-        "blob": "4cec94249db175d2ad18bef512477765ff722e18",
-        "content": "sha256:67e29bfd09dcd417e85f95f0b887ae3ce56e13bfa103659f94ff55fd6069bd7f",
+        "blob": "342be991c483ba6636b1b42ced13cdad5a11b608",
+        "content": "sha256:bd4abdd736d2a20dccb70af3685870c650147a20a93058306e4b1dd2ca11734a",
         "locator": {
           "kind": "symbol",
           "name": "CuratorInstructionWordingTests.test_current_coordination_and_curator_rules"
@@ -173,8 +173,8 @@
     },
     {
       "anchor": {
-        "blob": "4cec94249db175d2ad18bef512477765ff722e18",
-        "content": "sha256:786d40cfcfd97dcd5208520a128537823ba6ef478d2abfbaee5e3b18c2aa53fd",
+        "blob": "342be991c483ba6636b1b42ced13cdad5a11b608",
+        "content": "sha256:3afa34c6503c9407efcc8e95885952f9f2fd0660551ee6bc6123cc9b276e3c61",
         "locator": {
           "kind": "symbol",
           "name": "CuratorInstructionWordingTests.test_the_curator_writer_is_admitted_for_the_selected_runtime"
@@ -192,14 +192,40 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The Curator's role text names both authoring routes, says no other route writes knowledge, and writes `--commit` as `commit: true`.\n\nAnchor: `test_current_coordination_and_curator_rules`",
+      "note": "The Curator wording guard names mounted knowledge_write or the admitted serving-build CLI, explicit file-write commit, and the scoped correct-write recovery exception; it does not assert unconditional route exclusivity. Anchor: `CuratorInstructionWordingTests.test_current_coordination_and_curator_rules`",
       "targets": [
         {
           "anchor": {
-            "blob": "4cec94249db175d2ad18bef512477765ff722e18",
-            "content": "sha256:dca259efe483c0dddf7ac9efb9dc47c202a1c7185e959f138771a0b28bbdc159",
+            "blob": "342be991c483ba6636b1b42ced13cdad5a11b608",
+            "content": "sha256:bd4abdd736d2a20dccb70af3685870c650147a20a93058306e4b1dd2ca11734a",
             "locator": {
-              "kind": "file"
+              "end": 291,
+              "kind": "line_range",
+              "start": 180
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "342be991c483ba6636b1b42ced13cdad5a11b608",
+            "content": "sha256:94248276e2bd28bd503a4416abd88335886b655c9724149b16c4cd116a2c8ed5",
+            "locator": {
+              "end": 151,
+              "kind": "line_range",
+              "start": 144
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "342be991c483ba6636b1b42ced13cdad5a11b608",
+            "content": "sha256:ac93444d0accab5226995f112da3b70f07b09fe0d3c07cd4eada3f70d16c72ab",
+            "locator": {
+              "end": 178,
+              "kind": "line_range",
+              "start": 153
             }
           },
           "kind": "test"
@@ -207,15 +233,129 @@
       ]
     },
     "2": {
-      "note": "The writer admission is pinned in the role, detail and operation texts, and the parser refuses the removed options with exit 2",
+      "note": "The writer admission is pinned in the role, detail and operation texts, and the parser refuses the removed options with exit 2\n\nAnchor: `CuratorInstructionWordingTests.test_the_curator_writer_is_admitted_for_the_selected_runtime`",
       "targets": [
         {
           "anchor": {
-            "blob": "4cec94249db175d2ad18bef512477765ff722e18",
-            "content": "sha256:786d40cfcfd97dcd5208520a128537823ba6ef478d2abfbaee5e3b18c2aa53fd",
+            "blob": "342be991c483ba6636b1b42ced13cdad5a11b608",
+            "content": "sha256:3afa34c6503c9407efcc8e95885952f9f2fd0660551ee6bc6123cc9b276e3c61",
             "locator": {
-              "kind": "symbol",
-              "name": "test_the_curator_writer_is_admitted_for_the_selected_runtime"
+              "end": 380,
+              "kind": "line_range",
+              "start": 312
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The foundation and correction cases require a real task/enclosure, producer handoff-check evidence and correction of every contradicted body claim. Manager publication is distinguished from organizational completion, and sentence/card scope controls remove each actual clause to prove the guard fails. These are source assertions/support behavior, not a fresh invocation, host result or AR acceptance.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "342be991c483ba6636b1b42ced13cdad5a11b608",
+            "content": "sha256:f53c5cea0a3ba89324830cf7858fe467840ef915b61a6bf4133156981c0e1018",
+            "locator": {
+              "end": 16,
+              "kind": "line_range",
+              "start": 12
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "342be991c483ba6636b1b42ced13cdad5a11b608",
+            "content": "sha256:2a45a09f5dd8bbcbc5c62d7d91afb10e715fe284f630c02a8a16d7179d0d6271",
+            "locator": {
+              "end": 27,
+              "kind": "line_range",
+              "start": 22
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "342be991c483ba6636b1b42ced13cdad5a11b608",
+            "content": "sha256:ce2d847d944cd5572d3a04bb62aca153fb3813a38c3abe6c7de51628a95167ef",
+            "locator": {
+              "end": 91,
+              "kind": "line_range",
+              "start": 45
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "342be991c483ba6636b1b42ced13cdad5a11b608",
+            "content": "sha256:e139723b0c189c4b2d80c7d907bd0f7b26719558364bc3d0e39c1bbb6545b414",
+            "locator": {
+              "end": 114,
+              "kind": "line_range",
+              "start": 93
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "342be991c483ba6636b1b42ced13cdad5a11b608",
+            "content": "sha256:1c50a03b4baba571733ede16cf4baa1b29f558663068f1a966142c23deb9debf",
+            "locator": {
+              "end": 142,
+              "kind": "line_range",
+              "start": 116
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "342be991c483ba6636b1b42ced13cdad5a11b608",
+            "content": "sha256:94248276e2bd28bd503a4416abd88335886b655c9724149b16c4cd116a2c8ed5",
+            "locator": {
+              "end": 151,
+              "kind": "line_range",
+              "start": 144
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "342be991c483ba6636b1b42ced13cdad5a11b608",
+            "content": "sha256:ac93444d0accab5226995f112da3b70f07b09fe0d3c07cd4eada3f70d16c72ab",
+            "locator": {
+              "end": 178,
+              "kind": "line_range",
+              "start": 153
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "342be991c483ba6636b1b42ced13cdad5a11b608",
+            "content": "sha256:bd4abdd736d2a20dccb70af3685870c650147a20a93058306e4b1dd2ca11734a",
+            "locator": {
+              "end": 291,
+              "kind": "line_range",
+              "start": 180
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "342be991c483ba6636b1b42ced13cdad5a11b608",
+            "content": "sha256:3afa34c6503c9407efcc8e95885952f9f2fd0660551ee6bc6123cc9b276e3c61",
+            "locator": {
+              "end": 380,
+              "kind": "line_range",
+              "start": 312
             }
           },
           "kind": "test"

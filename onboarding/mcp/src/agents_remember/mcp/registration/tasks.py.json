@@ -4,7 +4,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "593a85bdc8b09268d79cfe0abc62be5957330709",
+        "blob": "88eee5a3e412e261ceee4f1d858eb283ef3138d4",
         "content": "sha256:f75bfc78f7b6cafbe4847030de23115333c08e4d02e817cd10a2533719847c83",
         "locator": {
           "kind": "symbol",
@@ -56,7 +56,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "593a85bdc8b09268d79cfe0abc62be5957330709",
+            "blob": "88eee5a3e412e261ceee4f1d858eb283ef3138d4",
             "content": "sha256:59024859859a75b210005e367c13660aed8b93ef556d4bc1f49adb908de066f5",
             "locator": {
               "end": 70,
@@ -104,14 +104,16 @@
       ]
     },
     "5": {
-      "note": "The `task_doc` description lists `retire_master` among the compact operation vocabulary and states only that writes answer `ok` while dry runs answer `wouldLose` and the diff.\n\nAnchor: `_TASK_DOC_TOOL_DESCRIPTION`",
+      "note": "The `task_doc` description lists `retire_master` among the compact operation vocabulary and states only that writes answer `ok` while dry runs answer `wouldLose` and the diff.",
       "targets": [
         {
           "anchor": {
-            "blob": "593a85bdc8b09268d79cfe0abc62be5957330709",
-            "content": "sha256:dcf9e9c7c5d77f335952069c99aa9a5cb7c999a29eb3e965e6ee9f296a078e89",
+            "blob": "88eee5a3e412e261ceee4f1d858eb283ef3138d4",
+            "content": "sha256:bcc8f0cf4c36713979b2d314f88b10875dcb2216ce2e4afecaba44a15e14513f",
             "locator": {
-              "kind": "file"
+              "end": 128,
+              "kind": "line_range",
+              "start": 1
             }
           },
           "kind": "code"
@@ -123,10 +125,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "593a85bdc8b09268d79cfe0abc62be5957330709",
-            "content": "sha256:dcf9e9c7c5d77f335952069c99aa9a5cb7c999a29eb3e965e6ee9f296a078e89",
+            "blob": "88eee5a3e412e261ceee4f1d858eb283ef3138d4",
+            "content": "sha256:bcc8f0cf4c36713979b2d314f88b10875dcb2216ce2e4afecaba44a15e14513f",
             "locator": {
-              "kind": "file"
+              "end": 128,
+              "kind": "line_range",
+              "start": 1
             }
           },
           "kind": "code"
@@ -138,8 +142,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "593a85bdc8b09268d79cfe0abc62be5957330709",
-            "content": "sha256:11357f2c1fb35cec3af2b17473551a281967aad9e1baa39f240f1a4a7025c654",
+            "blob": "88eee5a3e412e261ceee4f1d858eb283ef3138d4",
+            "content": "sha256:34e8f8dbbe5f8aba3eeb620c1efd62e02f631e307654b5d46738ae4ee15bdf14",
             "locator": {
               "end": 80,
               "kind": "line_range",
@@ -150,8 +154,8 @@
         },
         {
           "anchor": {
-            "blob": "593a85bdc8b09268d79cfe0abc62be5957330709",
-            "content": "sha256:1b05f9da36ec3e14d0d484571e1def8adf54ccac0d41c499c1a44176c06c6140",
+            "blob": "88eee5a3e412e261ceee4f1d858eb283ef3138d4",
+            "content": "sha256:8a9fd0bcbaddafaa58cc24755ef325741fe8cd53e62d0036559686356ca00ebe",
             "locator": {
               "end": 75,
               "kind": "line_range",
@@ -163,14 +167,33 @@
       ]
     },
     "8": {
-      "note": "Closeout/coherence/finalize/reopen/task_doc declarations retain canonical light models; task_doc operation/edit/target constructors load inside its call.\n\nAnchor: `_register_task_document_tools`",
+      "note": "Closeout/coherence/finalize/reopen/task_doc declarations retain canonical light models; task_doc operation/edit/target constructors load inside its call.",
       "targets": [
         {
           "anchor": {
-            "blob": "593a85bdc8b09268d79cfe0abc62be5957330709",
-            "content": "sha256:dcf9e9c7c5d77f335952069c99aa9a5cb7c999a29eb3e965e6ee9f296a078e89",
+            "blob": "88eee5a3e412e261ceee4f1d858eb283ef3138d4",
+            "content": "sha256:bcc8f0cf4c36713979b2d314f88b10875dcb2216ce2e4afecaba44a15e14513f",
             "locator": {
-              "kind": "file"
+              "end": 128,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Task-doc compact description names alignmentSweep advice.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "88eee5a3e412e261ceee4f1d858eb283ef3138d4",
+            "content": "sha256:0b46ed9dbc692cb1f4902bdfdcf43bb80d677c1775f12b70381534740353c323",
+            "locator": {
+              "end": 79,
+              "kind": "line_range",
+              "start": 75
             }
           },
           "kind": "code"

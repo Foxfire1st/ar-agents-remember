@@ -42,10 +42,30 @@ The inherited card recorded no template-local TODO and required no sibling-repos
 - Check statuses, conditional coherence, drift and ledger fields describe what must be reported, not successful execution. [4]
 - Overview and handoff fields require explicit gaps and forbid full-green overclaiming. [5]
 
-- Three-way reconciliation separates current intent, ruled change and implemented reality. [6]
+- Three-way reconciliation separates current intent, ruled change and implemented reality.
+
+Earlier caption detached from live reference 6: its original target declared the source text at `skills/l-01-agent-lifecycles/operations/curation.md` at original blob `6947cf9e89af1c6de302364d6df952c5c3baf2dc`, lines 101–109. The caption above is retained as prose; the numbered clause below describes the current source.
+
+Retained authoring-row wording:
+
+Finding: Curation reconciles current intent, ruled change and implemented reality sentence by sentence against code; invariant scope states applicability, conditions and exclusions, while grouping and entity edits require their own meaning checks.
+
+Anchor: `current role or template contract`
+
+Source: skills/l-01-agent-lifecycles/operations/curation.md:81-90
 
 
-- The owning curation loop requires the full operation, actionable repairs/blocked codes and conditional coherence. [7]
+- The owning curation loop requires the full operation, actionable repairs/blocked codes and conditional coherence.
+
+Earlier caption detached from live reference 7: its original target declared the source text at `skills/l-01-agent-lifecycles/operations/curation.md` at original blob `6947cf9e89af1c6de302364d6df952c5c3baf2dc`, lines 89–103; `skills/l-01-agent-lifecycles/operations/curation.md` at original blob `6947cf9e89af1c6de302364d6df952c5c3baf2dc`, lines 140–146; `skills/l-01-agent-lifecycles/operations/curation.md` at original blob `6947cf9e89af1c6de302364d6df952c5c3baf2dc`, lines 159–165. The caption above is retained as prose; the numbered clause below describes the current source.
+
+Retained authoring-row wording:
+
+Finding: The curation owner runs changed sidecar/overview/entity checks, memory-worktree diff check and full memory quality; every actionable finding is repaired or escalated with its returned code, conditional coherence is completed before closeout, and independent fact-checking checks every changed statement and history row.
+
+Anchor: `current role or template contract`
+
+Source: skills/l-01-agent-lifecycles/operations/curation.md:93-108; skills/l-01-agent-lifecycles/operations/curation.md:141-147
 
 - Curator reconciliation and memory authoring do not own Git publication or landing. [8]
 
@@ -63,3 +83,6 @@ The inherited card recorded no template-local TODO and required no sibling-repos
 
 
 - Reviewer outputs include both durable route-report templates. [11]
+
+- Curation reconciles current intent, ruled change and implemented reality sentence by sentence against code; invariant scope states applicability, conditions and exclusions, while grouping and entity edits require their own meaning checks. [6]
+- The curation owner runs changed sidecar/overview/entity checks, memory-worktree diff check and full memory quality; every actionable finding is repaired or escalated with its returned code, conditional coherence is completed before closeout, and independent fact-checking checks every changed statement and history row. [7]

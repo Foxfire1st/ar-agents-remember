@@ -176,12 +176,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "74a051a27a76bfa2d21ab404b581911d5e391701",
+            "blob": "cf8666eec9cf0c9f0b803c0b7eff39be4718f9d8",
             "content": "sha256:fac708389f4be2411d00eed64bafb5eb9308c15e9062f27e0bb70e64e2d23a41",
             "locator": {
-              "end": 491,
+              "end": 498,
               "kind": "line_range",
-              "start": 465
+              "start": 472
             },
             "path": "mcp/tests/test_lifecycle_turn_truth_doctrine.py"
           },
@@ -189,7 +189,7 @@
         },
         {
           "anchor": {
-            "blob": "74a051a27a76bfa2d21ab404b581911d5e391701",
+            "blob": "cf8666eec9cf0c9f0b803c0b7eff39be4718f9d8",
             "content": "sha256:5ab4ab9a064cc24839c0886fef84aeef6ee17f03ca54927b8d1187a9aa3d6b18",
             "locator": {
               "end": 112,
@@ -207,12 +207,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2a112bdb1148478a8a719636588cb908fab01cac",
-            "content": "sha256:b88bca6d05f450b838f05a02a435b4c8b7e201ac80829d7effbdb64e91ccc0a0",
+            "blob": "47288b84fc830870de597a9ba3aa5f895d99fdcb",
+            "content": "sha256:4cc9fe7eeee2508297caea004b93471c74e9636f01d03e1a271c45e90704eca6",
             "locator": {
-              "end": 24,
+              "end": 139,
               "kind": "line_range",
-              "start": 3
+              "start": 1
             },
             "path": "skills/l-01-agent-lifecycles/core/acceptance.md"
           },
@@ -220,12 +220,12 @@
         },
         {
           "anchor": {
-            "blob": "e9cdae3d6c37b0b2b5b725d99d3dba0218b0822f",
-            "content": "sha256:41507c4be51e297e8490caa46dbcaf31821ce544dbed265bdffdf089a4068f93",
+            "blob": "c631f6b28ae2bc2485d4dcf263e612407f9318c2",
+            "content": "sha256:8cc45eaf2fac5f180dbd904da6575fffab0eb238e11e03a70772c0a7bd318825",
             "locator": {
-              "end": 38,
+              "end": 97,
               "kind": "line_range",
-              "start": 34
+              "start": 1
             },
             "path": "skills/l-01-agent-lifecycles/roles/worker.md"
           },
@@ -234,11 +234,11 @@
         {
           "anchor": {
             "blob": "d8d6485f71b25f0443538b015acbb8645352309d",
-            "content": "sha256:01809f4b5ef55de4e179ce9d4fc4d6b59dff9d5afed0a385af87c2bd40384f6d",
+            "content": "sha256:81048cf1574047eb159b42caaccadab6709f9ae6e942183f0ee98e12cae46dc5",
             "locator": {
-              "end": 131,
+              "end": 638,
               "kind": "line_range",
-              "start": 109
+              "start": 1
             }
           },
           "kind": "test"
@@ -246,15 +246,39 @@
         {
           "anchor": {
             "blob": "74a8d41dcbdc4e464b14c732a08b61f0b89ceda9",
-            "content": "sha256:a8269d77ff04383c8f99546b76d35f94d616e3bb91b96a61d3634cb5b8a85c95",
+            "content": "sha256:3e317251168bcda42f7a0f9a00a7e1763990a7d2204d6512415b528df6a006f1",
             "locator": {
-              "end": 10,
+              "end": 13,
               "kind": "line_range",
-              "start": 3
+              "start": 1
             },
             "path": "generated-copies.json"
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d8d6485f71b25f0443538b015acbb8645352309d",
+            "content": "sha256:713db2fc9a66c6019298bca81e6a4cb4edfc4fc287002d1dfc5cd7b2893bb53a",
+            "locator": {
+              "end": 614,
+              "kind": "line_range",
+              "start": 596
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "d8d6485f71b25f0443538b015acbb8645352309d",
+            "content": "sha256:3855579ed58f760ba8ec846d6d2803feaf8f14e1bb1b7cc661449bace67a6f9a",
+            "locator": {
+              "end": 634,
+              "kind": "line_range",
+              "start": 616
+            }
+          },
+          "kind": "test"
         }
       ]
     },

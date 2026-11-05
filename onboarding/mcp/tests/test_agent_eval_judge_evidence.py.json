@@ -1,0 +1,42 @@
+{
+  "path": "mcp/tests/test_agent_eval_judge_evidence.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "2f66ea10ca317b1d41c2bb3927f02c3efb8d3c8d",
+        "content": "sha256:cc638bc19774f021bf46c719745e9bdb5d9572eb6019ed64400d1105a92a2a7c",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-HCMCD2",
+      "invariant": "INV-SYN8W6",
+      "origin": {
+        "handoffEntry": "L62-fd6462b8-judge-package",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "This regression module checks this obligation through test_grading_note_is_trusted_task_text_and_changes_the_package_identity, test_optional_large_file_is_exact_disk_not_summary, test_mandatory_carrier_always_complete_on_disk_and_must_read, test_all_actions_preserve_order_and_opaque_payload_pair and its remaining test cases.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The source defines this file's responsibility and the boundaries described here.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2f66ea10ca317b1d41c2bb3927f02c3efb8d3c8d",
+            "content": "sha256:cc638bc19774f021bf46c719745e9bdb5d9572eb6019ed64400d1105a92a2a7c",
+            "locator": {
+              "end": 859,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

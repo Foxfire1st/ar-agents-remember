@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "a3d178a8905817f7cc22aaf92039a5c7dd0a3e70",
+        "blob": "817c7c676c7576b9349ba9306e2111ab05685c64",
         "content": "sha256:eadf5d90f2995759314532376b6c1861dc537618d4e80eb6b62888687a1391c7",
         "locator": {
           "kind": "symbol",
@@ -22,7 +22,26 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "a3d178a8905817f7cc22aaf92039a5c7dd0a3e70",
+        "blob": "817c7c676c7576b9349ba9306e2111ab05685c64",
+        "content": "sha256:9dee62ec7a331a29d3d48db203963a44ed4a961491936bb2777310066c1c6ee6",
+        "locator": {
+          "end": 121,
+          "kind": "line_range",
+          "start": 121
+        }
+      },
+      "id": "RLZ-1X9C1T",
+      "invariant": "INV-CV3MW4",
+      "origin": {
+        "handoffEntry": "L62-CUR-6db-attach-INV-CV3MW4",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "The Worker stage oracle now points to the repository memory-layer handover checks and a clean copy of final bytes.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "817c7c676c7576b9349ba9306e2111ab05685c64",
         "content": "sha256:2dbaab4852fc1c95bca0dc735510379693e43c1bf198438e89efe440d4c9f92c",
         "locator": {
           "kind": "symbol",
@@ -40,7 +59,7 @@
     },
     {
       "anchor": {
-        "blob": "a3d178a8905817f7cc22aaf92039a5c7dd0a3e70",
+        "blob": "817c7c676c7576b9349ba9306e2111ab05685c64",
         "content": "sha256:0082bede94098b533177d6979c25286c6a80ca2e7026b71482011ed23b72c19d",
         "locator": {
           "kind": "symbol",
@@ -55,6 +74,44 @@
       },
       "rationale": "This extractor binds every facet assertion to the single stage section so whole-file presence can never satisfy the check.",
       "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "817c7c676c7576b9349ba9306e2111ab05685c64",
+        "content": "sha256:089933f53620bb7b04db03c3d2e899f1d55001fc1d13c53f6e7fdb143a207765",
+        "locator": {
+          "end": 152,
+          "kind": "line_range",
+          "start": 140
+        }
+      },
+      "id": "RLZ-FPZCPA",
+      "invariant": "INV-CV3MW4",
+      "origin": {
+        "handoffEntry": "L62-CUR-6db-attach-INV-CV3MW4",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "The Curator stage oracle names current publication/provenance, repair/report, pending-parent and genuine-stop facets in the required stage section.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "817c7c676c7576b9349ba9306e2111ab05685c64",
+        "content": "sha256:01fe2c264322ab6c6fbf70816c6efbb8f342061cf12e346cb392f9d9d0957d5a",
+        "locator": {
+          "end": 333,
+          "kind": "line_range",
+          "start": 320
+        }
+      },
+      "id": "RLZ-M9GPDG",
+      "invariant": "INV-CV3MW4",
+      "origin": {
+        "handoffEntry": "L62-CUR-6db-attach-INV-CV3MW4",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "The new control requires the current clean-copy named-check stage sentence and rejects replacement by, or coexistence with, the retired generic focused/lint/type sentence.",
+      "role": "enforcement"
     }
   ],
   "references": {
@@ -63,7 +120,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a3d178a8905817f7cc22aaf92039a5c7dd0a3e70",
+            "blob": "817c7c676c7576b9349ba9306e2111ab05685c64",
             "content": "sha256:af98bd8aa55fb122c2c941301dd2eb8bef5362a48b52102b2c69487ad0b990b0",
             "locator": {
               "kind": "symbol",
@@ -75,14 +132,16 @@
       ]
     },
     "2": {
-      "note": "Stage facets are bound to the extracted section rather than satisfied by relocated source text.\n\nAnchor: `test_stage_section_binding_fails_on_deletion_and_relocation` `test_compiled_section_binding_fails_on_deletion_and_relocation`",
+      "note": "Stage facets are bound to the extracted section rather than satisfied by relocated source text. Anchor: `test_stage_section_binding_fails_on_deletion_and_relocation` `test_compiled_section_binding_fails_on_deletion_and_relocation`",
       "targets": [
         {
           "anchor": {
-            "blob": "a3d178a8905817f7cc22aaf92039a5c7dd0a3e70",
-            "content": "sha256:a1dcb9e98b511cc0c71dd718321b2a21a89b716e3f7d8b9534109c3bf0867376",
+            "blob": "817c7c676c7576b9349ba9306e2111ab05685c64",
+            "content": "sha256:ee551e13a341e98357956fe19e25200eb47f34bb8532d3b7491d60fb43519cb6",
             "locator": {
-              "kind": "file"
+              "end": 462,
+              "kind": "line_range",
+              "start": 415
             }
           },
           "kind": "test"
@@ -94,7 +153,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "a3d178a8905817f7cc22aaf92039a5c7dd0a3e70",
+            "blob": "817c7c676c7576b9349ba9306e2111ab05685c64",
             "content": "sha256:2705e46482371922d94e3970e0acf1bbda85cbd87350ce62dfeb248111b2d881",
             "locator": {
               "kind": "symbol",
@@ -106,16 +165,105 @@
       ]
     },
     "4": {
-      "note": "Reviewer/Curator facet alternatives are explicitly role scoped. Presence, deletion and relocation checks still bind to the extracted Stage end section. Source and compiled controls assert the original surface is complete and mutation actually changes text; compiled relocation is now exercised as well as deletion. The four roles are parametrized individually; numeric budget detector and rule-nine cases remain.",
+      "note": "Stage-end checks bind each role’s required facets to its own section in source and compiled text. Reviewer equivalents remain role-scoped; Curator facets include clean quality, installed-writer versus manual provenance and covered-write recovery. Deletion/relocation controls require a real mutation, while round-number and rule-nine guards remain.",
       "targets": [
         {
           "anchor": {
-            "blob": "a3d178a8905817f7cc22aaf92039a5c7dd0a3e70",
-            "content": "sha256:a1dcb9e98b511cc0c71dd718321b2a21a89b716e3f7d8b9534109c3bf0867376",
+            "blob": "817c7c676c7576b9349ba9306e2111ab05685c64",
+            "content": "sha256:71f7d10a1ba89181beb796781a7faedd4fdf32aa704e46957295447f7a13819c",
             "locator": {
-              "end": 463,
+              "end": 203,
               "kind": "line_range",
-              "start": 1
+              "start": 108
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "817c7c676c7576b9349ba9306e2111ab05685c64",
+            "content": "sha256:edf54d6e792e4f87f92c65a5495e3387365946e402eeee713fc04da57f069575",
+            "locator": {
+              "end": 360,
+              "kind": "line_range",
+              "start": 273
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "817c7c676c7576b9349ba9306e2111ab05685c64",
+            "content": "sha256:3c4ee0588c1c173ef3c5ff3247155537361c284b16538e22c6517d2f51b6f63b",
+            "locator": {
+              "end": 478,
+              "kind": "line_range",
+              "start": 363
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Worker stage completion requires the handover checks named in workspace.memoryRoot/system/coding-guidelines.md on a clean copy of final bytes. A dedicated control rejects replacement by or reinsertion of the retired fixed focused-tests/lint/type sentence. Curator stage facets directly preserve covered-write recovery, manual provenance and stop boundaries. These are source assertions/support behavior, not a fresh invocation, host result or AR acceptance.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "817c7c676c7576b9349ba9306e2111ab05685c64",
+            "content": "sha256:d0182e854df77842d328c1fbb03f6ae5bfbe5e60c5004a0bb45b9b4cadef7903",
+            "locator": {
+              "end": 106,
+              "kind": "line_range",
+              "start": 102
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "817c7c676c7576b9349ba9306e2111ab05685c64",
+            "content": "sha256:fe7bc03925605058f71dea07d49f1b856e30d4db51127777883f749502b3bf23",
+            "locator": {
+              "end": 123,
+              "kind": "line_range",
+              "start": 119
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "817c7c676c7576b9349ba9306e2111ab05685c64",
+            "content": "sha256:aa5b0908258f00101d7c56fef6866f52e85a9646f316bdf28a85d0934c30ddf8",
+            "locator": {
+              "end": 154,
+              "kind": "line_range",
+              "start": 138
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "817c7c676c7576b9349ba9306e2111ab05685c64",
+            "content": "sha256:7f8c1a4aa9345128c62619792d69f6cdf1882a16a86e5f08657408ecf59bfec0",
+            "locator": {
+              "end": 317,
+              "kind": "line_range",
+              "start": 305
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "817c7c676c7576b9349ba9306e2111ab05685c64",
+            "content": "sha256:01fe2c264322ab6c6fbf70816c6efbb8f342061cf12e346cb392f9d9d0957d5a",
+            "locator": {
+              "end": 333,
+              "kind": "line_range",
+              "start": 320
             }
           },
           "kind": "test"

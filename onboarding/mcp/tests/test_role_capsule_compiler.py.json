@@ -3,7 +3,24 @@
   "proves": [
     {
       "anchor": {
-        "blob": "9946e7fc31fa11992782193f4af92050e7c18e46",
+        "blob": "fad1e5a1891afa9e3781b07d856907c922e210e7",
+        "content": "sha256:62c4c180c456dab8b2ff35749a5aa6c1b3bade743f7a577efe4a41942747ae72",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_shared_core_change_does_not_reach_a_role_capsule"
+        }
+      },
+      "facet": "Editing the admitted core:authority source leaves this role fixture’s rendered instruction bytes and semantic digest unchanged and adds no core instruction block. This case does not cover the separately sealed every-role revision.",
+      "id": "PRF-3ZWCKD",
+      "invariant": "INV-VTGJJK",
+      "origin": {
+        "handoffEntry": "L62-CUR-6db-replacement-proof-PRF-VRB9S1",
+        "leaf": "260928-MIK-L62"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "fad1e5a1891afa9e3781b07d856907c922e210e7",
         "content": "sha256:3fd748ec64359ef4a82172912513ed082ea7ba4c79bf07c9b2ab9a744fe925c0",
         "locator": {
           "kind": "symbol",
@@ -17,50 +34,21 @@
         "handoffEntry": "MIK-PNT-DOCTRINE-CAPSULE-SELECTION@draft1",
         "leaf": "260928-MIK-L90"
       }
-    },
-    {
-      "anchor": {
-        "blob": "9946e7fc31fa11992782193f4af92050e7c18e46",
-        "content": "sha256:62c4c180c456dab8b2ff35749a5aa6c1b3bade743f7a577efe4a41942747ae72",
-        "locator": {
-          "kind": "symbol",
-          "name": "test_a_shared_core_change_does_not_reach_a_role_capsule"
-        }
-      },
-      "facet": "Changing a genuinely admitted shared core source leaves the delivered role capsule instruction bytes and semantic digest unchanged.",
-      "id": "PRF-VRB9S1",
-      "invariant": "INV-VTGJJK",
-      "origin": {
-        "handoffEntry": "MIK-PNT-DOCTRINE-CAPSULE-SELECTION@draft1",
-        "leaf": "260928-MIK-L90"
-      }
     }
   ],
   "realizes": [],
   "references": {
     "1": {
-      "note": "The module under test and its pipeline.",
+      "note": "compile_role_capsule parses and selects the manifest scope, admits and resolves the source set, reads typed contract markers, projects operation audiences and strips those markers. It verifies the separate task projection, narrows tools, carries skills/details, seals the selected content plus every-role/detail revisions, and returns the capsule with an explanation manifest.",
       "targets": [
         {
           "anchor": {
-            "blob": "762c104a0bcdc0375416163993d106dc37c5fb18",
-            "content": "sha256:1887eaccb5d5f005cb1e74f059d46449876977184df1293db4f51a2b4c61e567",
+            "blob": "a744d8de93cda92f20309cc2f735c24a2bf27ce4",
+            "content": "sha256:6bdfa8672b22d1767b78410897a7c8a4109f3c5f07c43f15155cf1d13168e39d",
             "locator": {
-              "kind": "symbol",
-              "name": "compile_role_capsule"
-            },
-            "path": "mcp/src/agents_remember/models/role_capsules/compiler.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "762c104a0bcdc0375416163993d106dc37c5fb18",
-            "content": "sha256:01728ce69a762bc1321deb33e85cf450cc3fd0385638b7952cf92498b2d1fec4",
-            "locator": {
-              "end": 269,
+              "end": 189,
               "kind": "line_range",
-              "start": 224
+              "start": 99
             },
             "path": "mcp/src/agents_remember/models/role_capsules/compiler.py"
           },
@@ -68,10 +56,12 @@
         },
         {
           "anchor": {
-            "blob": "762c104a0bcdc0375416163993d106dc37c5fb18",
-            "content": "sha256:157949db0f9acdf0d70ebbd6959fb382dccab34600bf2e6cfd9b12f0b9079a74",
+            "blob": "a744d8de93cda92f20309cc2f735c24a2bf27ce4",
+            "content": "sha256:cc62e7475c5984edca40ec586055f13074185a7fdbb1af84435cb3695c172d84",
             "locator": {
-              "kind": "file"
+              "end": 283,
+              "kind": "line_range",
+              "start": 220
             },
             "path": "mcp/src/agents_remember/models/role_capsules/compiler.py"
           },
@@ -80,14 +70,92 @@
       ]
     },
     "10": {
-      "note": "The semantic test change is only audience=all in fixture_manifest_document. One introductory determinism bullet is rewrapped without changing words. Existing property assertions, test definitions and synthetic source bodies are unchanged; sections projection is covered separately.\n\nAnchor: Current test/support source",
+      "note": "fixture_manifest_document defines a complete synthetic registry whose operations use audience=all. The compiler suite declares determinism, instruction ordering, selected/unrelated-source digest and refusal cases; audience-section projection is exercised in the distinct audience module. The source does not itself prove that these are the only semantic changes since an earlier leaf.",
       "targets": [
         {
           "anchor": {
-            "blob": "9946e7fc31fa11992782193f4af92050e7c18e46",
-            "content": "sha256:7f8f1e61b40684046d38a6a451ab8ec2c61330a5404e576406dcaeaddf183512",
+            "blob": "fad1e5a1891afa9e3781b07d856907c922e210e7",
+            "content": "sha256:69cfd8106aff684cc90708877d08ce25ee1562cdd84934c3ca14d4c9e63a6f8d",
             "locator": {
-              "end": 1199,
+              "end": 188,
+              "kind": "line_range",
+              "start": 139
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "fad1e5a1891afa9e3781b07d856907c922e210e7",
+            "content": "sha256:3a19e03f1b68b26d4e2337f6671e118e2c701d0560b63a9db6c3cfd60a15e884",
+            "locator": {
+              "end": 560,
+              "kind": "line_range",
+              "start": 381
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "fad1e5a1891afa9e3781b07d856907c922e210e7",
+            "content": "sha256:0a93bc77f4e8d83b51eed2a60b33e1161b07000fc6ecd45e05cd87fd9a9395a7",
+            "locator": {
+              "end": 622,
+              "kind": "line_range",
+              "start": 568
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e3bc66497ff969640b8a89f9c828dbca9cc3698f",
+            "content": "sha256:91071933f1c686b8f234b0a11efb836dc1eab70ceb306a6e399c7e24b57c6653",
+            "locator": {
+              "end": 64,
+              "kind": "line_range",
+              "start": 39
+            },
+            "path": "mcp/tests/test_role_capsule_audiences.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "A one-byte equal-length change to the declared every-role source changes semantic_digest while rendered role/operation instructions stay identical and no shared core instruction block composes. Omission of that required source refuses by identity and path. Static parsing of the final file finds 48 test function definitions; this is not collection or execution. These are source assertions/support behavior, not a fresh invocation, host result or AR acceptance.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fad1e5a1891afa9e3781b07d856907c922e210e7",
+            "content": "sha256:ff54ba0f7499e83bf8083b9f47adb6d1c28f698906f637dc49878771dadb71aa",
+            "locator": {
+              "end": 560,
+              "kind": "line_range",
+              "start": 521
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "fad1e5a1891afa9e3781b07d856907c922e210e7",
+            "content": "sha256:64e809fffb0527ac7e4c8304e937d0940334e4c021ef632167579b87fad81e5f",
+            "locator": {
+              "end": 667,
+              "kind": "line_range",
+              "start": 630
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "fad1e5a1891afa9e3781b07d856907c922e210e7",
+            "content": "sha256:94895b09649a3225dcb804aa73c1bbba76dc2769778004145ebce98661d1e991",
+            "locator": {
+              "end": 1255,
               "kind": "line_range",
               "start": 1
             }
@@ -101,12 +169,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "762c104a0bcdc0375416163993d106dc37c5fb18",
+            "blob": "a744d8de93cda92f20309cc2f735c24a2bf27ce4",
             "content": "sha256:ff997d6960152a420d7b0d10a870728d9c9ba02fba08c8054c25edb8dda93a71",
             "locator": {
-              "end": 214,
+              "end": 257,
               "kind": "line_range",
-              "start": 177
+              "start": 220
             },
             "path": "mcp/src/agents_remember/models/role_capsules/compiler.py"
           },
@@ -114,12 +182,12 @@
         },
         {
           "anchor": {
-            "blob": "3283618c85b66070d98755f6d21a3f2e66f407ff",
+            "blob": "8673a0cc0f664527b38318f5c02481ab5826e739",
             "content": "sha256:99345eadac6c75c3a4347255ea1a62f481d3d3897c7260b3dc146d718db7da09",
             "locator": {
-              "end": 431,
+              "end": 432,
               "kind": "line_range",
-              "start": 414
+              "start": 415
             },
             "path": "mcp/src/agents_remember/models/role_capsules/types.py"
           },
@@ -234,43 +302,44 @@
       ]
     },
     "7": {
-      "note": "The outcome shape whose exactly-one-of rule the two outcome cases pin.",
+      "note": "CapsuleCompilationOutcome requires exactly one of result and error while retaining a manifest in both shapes; the two compiler-suite controls construct both-present and both-absent outcomes and require ValueError.",
       "targets": [
         {
           "anchor": {
-            "blob": "0de84f83644c391b29759b1623034309cabc8c72",
-            "content": "sha256:7b16c4a32019a3e8f4ccf82b15f964d954f4c2df5c97d530d7128a382caa421b",
+            "blob": "a9ebc25e9f72b32db990eb7c7582f967d6fbd021",
+            "content": "sha256:3582dec10d76cdc696f982f5c45c9c7cbe2a72abc7c9986c7c0633ec40c6983c",
             "locator": {
-              "kind": "symbol",
-              "name": "CapsuleCompilationOutcome"
-            },
-            "path": "mcp/src/agents_remember/application/role_capsules/compilation.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "0de84f83644c391b29759b1623034309cabc8c72",
-            "content": "sha256:fa7dbb04c116a8a6d6767c3d85c3b723091f0af5bfd84f27ffc91b7b7e9f8f52",
-            "locator": {
-              "kind": "file"
-            },
-            "path": "mcp/src/agents_remember/application/role_capsules/compilation.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "0de84f83644c391b29759b1623034309cabc8c72",
-            "content": "sha256:44b7b0e2bbd5167de246c297f3e1fc598638b1ecf36348770e53421b8e779e14",
-            "locator": {
-              "end": 88,
+              "end": 90,
               "kind": "line_range",
               "start": 46
             },
             "path": "mcp/src/agents_remember/application/role_capsules/compilation.py"
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fad1e5a1891afa9e3781b07d856907c922e210e7",
+            "content": "sha256:91d17a9de224593acf888179b0e02110eef180fc2f8e7c41a508eaed84a1514f",
+            "locator": {
+              "end": 1157,
+              "kind": "line_range",
+              "start": 1149
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "fad1e5a1891afa9e3781b07d856907c922e210e7",
+            "content": "sha256:ff7eafbb026cfa184861b289430dd2409eb1e774359d3e0737e1c1473d9ef349",
+            "locator": {
+              "end": 1166,
+              "kind": "line_range",
+              "start": 1160
+            }
+          },
+          "kind": "test"
         }
       ]
     },
@@ -279,7 +348,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fde424ce1c4b108a144b9b7ab8f0d9fe8a807bf1",
+            "blob": "1e5141a382cecb6e2e7ba393452cbeedcb8d01e5",
             "content": "sha256:ca9e17369d26c82f56020182e6b3d2aab135ccfd389587897d4c4effca97501f",
             "locator": {
               "kind": "symbol",
@@ -292,14 +361,29 @@
       ]
     },
     "9": {
-      "note": "The corpus test preserved by the earlier leaf; this pass retains that historical evidence and asserts no fresh execution result.\n\nAnchor: `ROLE_ORDER` `OPERATION_KEYS`",
+      "note": "The current instruction-corpus test declares the canonical role order and operation keys, checks every manifest role/operation source resolves, keeps launcher routing metadata separate, and rejects copied instruction prose in the manifest. These source-defined assertions establish no fresh run or earlier-leaf execution event.",
       "targets": [
         {
           "anchor": {
-            "blob": "d5d78bb15fa14ec0cbd3a7ef0be4ee21715faf09",
-            "content": "sha256:d52c2f22ddcaab6c4fe089db94e707c79ae1bc2400e4d3b8f4cf44870d289ac4",
+            "blob": "e2aa34ce785d08c8720a6440e2f97c04f950e1ce",
+            "content": "sha256:176ba50d9d8b684144694e8abd6237083ce0c1f7ae13d8e1a0692ee79a58f3c1",
             "locator": {
-              "kind": "file"
+              "end": 77,
+              "kind": "line_range",
+              "start": 43
+            },
+            "path": "mcp/tests/test_role_instruction_corpus.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e2aa34ce785d08c8720a6440e2f97c04f950e1ce",
+            "content": "sha256:011de498f697771478b7cae1c1ebab8354b9576cc26808530646c294138ff4d8",
+            "locator": {
+              "end": 281,
+              "kind": "line_range",
+              "start": 257
             },
             "path": "mcp/tests/test_role_instruction_corpus.py"
           },

@@ -58,12 +58,12 @@
       "alternative": 1,
       "relation": "reconsider_on",
       "target": {
-        "blob": "3940f282abb6f48c2dc00a01de5e55b87d64b2f6",
-        "content": "sha256:c08dc6be0a2feb68eb5b93e97850d59820945cdbbd3054ee287d6bf3ac6aab6c",
+        "blob": "0f539ae53bac7b99b39337ae847c7b4b56b95ccc",
+        "content": "sha256:d94a20c5b5355afda1f87ed201426e2f126b7414ad1b2fb003aa59edf59a6699",
         "locator": {
-          "end": 30,
+          "end": 58,
           "kind": "line_range",
-          "start": 24
+          "start": 42
         },
         "path": "skills/l-01-agent-lifecycles/roles/manager.md"
       }
@@ -77,7 +77,7 @@
     "leaf": "260928-MIK-L72",
     "task": "260928-MIK"
   },
-  "revision": 6,
+  "revision": 7,
   "schema": "ar-decision/v1",
   "status": "active",
   "supersedes": []

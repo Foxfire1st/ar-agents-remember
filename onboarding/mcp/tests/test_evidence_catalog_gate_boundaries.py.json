@@ -75,12 +75,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ac006b11f74a4c64ab964edc3378b4c96f153872",
+            "blob": "2c675ac4ed53a3b28cae8c0c32cd13c617d8f6ed",
             "content": "sha256:66583e2395f029c41ed546bcfba81d8db83a928e36f0c3372e3eadc643a0ace8",
             "locator": {
-              "end": 102,
+              "end": 138,
               "kind": "line_range",
-              "start": 102
+              "start": 138
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -88,12 +88,12 @@
         },
         {
           "anchor": {
-            "blob": "ac006b11f74a4c64ab964edc3378b4c96f153872",
+            "blob": "2c675ac4ed53a3b28cae8c0c32cd13c617d8f6ed",
             "content": "sha256:1d0174394ac949359d686292321739390d691490cf94038d9e8f95e831d8624a",
             "locator": {
-              "end": 104,
+              "end": 140,
               "kind": "line_range",
-              "start": 104
+              "start": 140
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -101,12 +101,12 @@
         },
         {
           "anchor": {
-            "blob": "ac006b11f74a4c64ab964edc3378b4c96f153872",
+            "blob": "2c675ac4ed53a3b28cae8c0c32cd13c617d8f6ed",
             "content": "sha256:37887d6235acabbc2d0497958ebd21a90e6e39dcd35fe3666d712915446f13cf",
             "locator": {
-              "end": 91,
+              "end": 127,
               "kind": "line_range",
-              "start": 91
+              "start": 127
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -115,16 +115,16 @@
       ]
     },
     "26": {
-      "note": "The two exact-scope consumer registrations this module obliged.  Anchor: `test_evidence_catalog_gate_boundaries`",
+      "note": "The current lifecycle catalog declares test_evidence_catalog_gate_boundaries.py as an exact consumer of mcp/tests/_evidence_catalog_fixture.py, mcp/tests/_user_settings_guard.py, mcp/tests/fixtures/repository_profiles/node/package-lock.json. These three current artifact registrations establish no invocation or passing result; the earlier two-registration caption remains historical.",
       "targets": [
         {
           "anchor": {
-            "blob": "b9e272ef623574e517181e36b3dc949a3ac78e19",
-            "content": "sha256:6a77f5f75d151f8e877400f89c3e1f5cb8f793409e8fc72805f73f03f0d822a3",
+            "blob": "f9d31f21c64890dc36a2c835faab4ae6860bcc68",
+            "content": "sha256:9e7dabd6818c2bb2d1435d7f7d3212781645d3efa37d141100ec776e17afedcd",
             "locator": {
-              "end": 108,
+              "end": 25,
               "kind": "line_range",
-              "start": 106
+              "start": 4
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -132,12 +132,25 @@
         },
         {
           "anchor": {
-            "blob": "b9e272ef623574e517181e36b3dc949a3ac78e19",
-            "content": "sha256:b297b1802ce34784596454866d69d42fc759190f0ff8db354597960d3ba45d63",
+            "blob": "f9d31f21c64890dc36a2c835faab4ae6860bcc68",
+            "content": "sha256:0a6ea03efe9703712535f05efeacc13a561b6fd40cb34b4ed9fe1a7122ed7558",
             "locator": {
-              "end": 88,
+              "end": 821,
               "kind": "line_range",
-              "start": 86
+              "start": 65
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f9d31f21c64890dc36a2c835faab4ae6860bcc68",
+            "content": "sha256:e8d358fc83b0cd78d30c45fd0bf4727490538eac4f97a69b212a2078f94c56cf",
+            "locator": {
+              "end": 3096,
+              "kind": "line_range",
+              "start": 2340
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -150,12 +163,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ac006b11f74a4c64ab964edc3378b4c96f153872",
+            "blob": "2c675ac4ed53a3b28cae8c0c32cd13c617d8f6ed",
             "content": "sha256:66583e2395f029c41ed546bcfba81d8db83a928e36f0c3372e3eadc643a0ace8",
             "locator": {
-              "end": 102,
+              "end": 138,
               "kind": "line_range",
-              "start": 102
+              "start": 138
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },

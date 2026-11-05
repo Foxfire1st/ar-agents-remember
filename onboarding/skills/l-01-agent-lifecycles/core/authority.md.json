@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "c43823ed0215be2bd0ae9e12b8f7c961f5f8fcbb",
-        "content": "sha256:1c964d530cce44c4b24e70577d9c0bd935b60b642937afccb0b4ab6eb5fd767a",
+        "blob": "fff08e3cef4891f6ea1d05fe4327f6794782a099",
+        "content": "sha256:4ccb7e95482d04ff2b4865088b70df63cf565b3ea3d90260575063feb71c909e",
         "locator": {
           "kind": "file"
         }
@@ -20,8 +20,8 @@
     },
     {
       "anchor": {
-        "blob": "c43823ed0215be2bd0ae9e12b8f7c961f5f8fcbb",
-        "content": "sha256:1c964d530cce44c4b24e70577d9c0bd935b60b642937afccb0b4ab6eb5fd767a",
+        "blob": "fff08e3cef4891f6ea1d05fe4327f6794782a099",
+        "content": "sha256:4ccb7e95482d04ff2b4865088b70df63cf565b3ea3d90260575063feb71c909e",
         "locator": {
           "kind": "file"
         }
@@ -37,8 +37,27 @@
     },
     {
       "anchor": {
-        "blob": "c43823ed0215be2bd0ae9e12b8f7c961f5f8fcbb",
-        "content": "sha256:1c964d530cce44c4b24e70577d9c0bd935b60b642937afccb0b4ab6eb5fd767a",
+        "blob": "fff08e3cef4891f6ea1d05fe4327f6794782a099",
+        "content": "sha256:29319c20f0f3639efd8877e52f1e22a4b9eac3e6042ba315a5f6a30be38ce100",
+        "locator": {
+          "end": 124,
+          "kind": "line_range",
+          "start": 37
+        }
+      },
+      "id": "RLZ-RJJN3V",
+      "invariant": "INV-JAACMT",
+      "origin": {
+        "handoffEntry": "L62-CUR-6414-continuation",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "AU10.3 describes collection, progress checks, declaration and no watcher/polling mechanism. Core authoring rule retains same helper boundary.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "fff08e3cef4891f6ea1d05fe4327f6794782a099",
+        "content": "sha256:4ccb7e95482d04ff2b4865088b70df63cf565b3ea3d90260575063feb71c909e",
         "locator": {
           "kind": "file"
         }
@@ -55,16 +74,16 @@
   ],
   "references": {
     "1": {
-      "note": "Canonical structural seat and parent authority; shared corpus is not proof of capsule injection.\n\nAnchor: lines 1-164",
+      "note": "Canonical structural seat and parent authority; shared corpus is not proof of capsule injection.",
       "targets": [
         {
           "anchor": {
-            "blob": "c43823ed0215be2bd0ae9e12b8f7c961f5f8fcbb",
-            "content": "sha256:1c964d530cce44c4b24e70577d9c0bd935b60b642937afccb0b4ab6eb5fd767a",
+            "blob": "fff08e3cef4891f6ea1d05fe4327f6794782a099",
+            "content": "sha256:323611fd29905476ea8de1b757ade01f2ffe9beb8409761d95abe2ef161533b5",
             "locator": {
-              "end": 164,
+              "end": 131,
               "kind": "line_range",
-              "start": 1
+              "start": 3
             }
           },
           "kind": "code"

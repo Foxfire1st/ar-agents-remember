@@ -4,8 +4,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "b3181fbe25f6169b3f1271484242227b99b4855d",
-        "content": "sha256:354e4d10004a32eeb09b0fd8f15f5a5afeef40deae700d355e68b8ca77dd98bb",
+        "blob": "486df76371233ac389a477475154153b54d0a8e0",
+        "content": "sha256:7aeeba6281080bc7e8dae194990fd8dc383ddc1d35ad7b72544adc931e98fe16",
         "locator": {
           "kind": "file"
         }
@@ -22,14 +22,16 @@
   ],
   "references": {
     "1": {
-      "note": "By-path needs no provider; by-meaning has a retired provider and no engine, and by-relationship has a retired provider.\n\nAnchor: `docs/architecture.md:85-89`",
+      "note": "By-path Intent needs no provider; meaning and relationship providers remain retired and have no active search engine.",
       "targets": [
         {
           "anchor": {
-            "blob": "b3181fbe25f6169b3f1271484242227b99b4855d",
-            "content": "sha256:354e4d10004a32eeb09b0fd8f15f5a5afeef40deae700d355e68b8ca77dd98bb",
+            "blob": "486df76371233ac389a477475154153b54d0a8e0",
+            "content": "sha256:3d976934134098f14c86cf7efe6e0d7644b98c006bb175ebdb349b5f5a6fc994",
             "locator": {
-              "kind": "file"
+              "end": 114,
+              "kind": "line_range",
+              "start": 104
             }
           },
           "kind": "code"
@@ -37,14 +39,16 @@
       ]
     },
     "2": {
-      "note": "GrepAI and CodeGraphContext are named as retired, with no product path installing, enabling, starting, indexing or querying them.\n\nAnchor: `docs/architecture.md:91`",
+      "note": "GrepAI and CodeGraphContext remain retired; the architecture page names no product route installing, enabling, starting, indexing or querying them, and labels the providers subtree as older-install leftovers.",
       "targets": [
         {
           "anchor": {
-            "blob": "b3181fbe25f6169b3f1271484242227b99b4855d",
-            "content": "sha256:354e4d10004a32eeb09b0fd8f15f5a5afeef40deae700d355e68b8ca77dd98bb",
+            "blob": "486df76371233ac389a477475154153b54d0a8e0",
+            "content": "sha256:b49ecf83af94da80edd152a20159f1ee41f1466fd70d57839c24826d7c3ab3bc",
             "locator": {
-              "kind": "file"
+              "end": 114,
+              "kind": "line_range",
+              "start": 112
             }
           },
           "kind": "code"
@@ -52,14 +56,16 @@
       ]
     },
     "3": {
-      "note": "`runtime_install` stops a leftover provider watcher and reports old provider keys once; folder deletion belongs to the explicit `providers-remove` command.\n\nAnchor: `docs/architecture.md:93`",
+      "note": "The architecture page keeps durable Markdown/JSON plus Git as truth, assigns leftover-watcher stop and unused-key reporting to runtime_install, and leaves folder deletion to explicit providers-remove.",
       "targets": [
         {
           "anchor": {
-            "blob": "b3181fbe25f6169b3f1271484242227b99b4855d",
-            "content": "sha256:354e4d10004a32eeb09b0fd8f15f5a5afeef40deae700d355e68b8ca77dd98bb",
+            "blob": "486df76371233ac389a477475154153b54d0a8e0",
+            "content": "sha256:95e6eac54fc8d3b1785ec93d98278de8e2f161959c8decd02d3cd2c98c0687b9",
             "locator": {
-              "kind": "file"
+              "end": 114,
+              "kind": "line_range",
+              "start": 114
             }
           },
           "kind": "code"
@@ -67,14 +73,16 @@
       ]
     },
     "4": {
-      "note": "Provider leftovers are handled by `runtime_install` and `providers-remove`, not by memory or workflow skills, and no provider lifecycle belongs to anything now.\n\nAnchor: `docs/architecture.md:115`",
+      "note": "Provider leftovers remain owned by runtime_install and providers-remove rather than memory/workflow skills; provider lifecycle remains retired.",
       "targets": [
         {
           "anchor": {
-            "blob": "b3181fbe25f6169b3f1271484242227b99b4855d",
-            "content": "sha256:354e4d10004a32eeb09b0fd8f15f5a5afeef40deae700d355e68b8ca77dd98bb",
+            "blob": "486df76371233ac389a477475154153b54d0a8e0",
+            "content": "sha256:a704b74dfc69b732d5d2ee4407b5a18dbb6c99572e073ea513aea419fe9960e7",
             "locator": {
-              "kind": "file"
+              "end": 136,
+              "kind": "line_range",
+              "start": 136
             }
           },
           "kind": "code"
@@ -82,14 +90,16 @@
       ]
     },
     "5": {
-      "note": "Runtime ownership names provider-leftover cleanup and keeps no parallel `scripts/` route.\n\nAnchor: `docs/architecture.md:47`",
+      "note": "The installed runtime has no parallel scripts execution route; package-local modules/MCP own install, provider-leftover cleanup, worktree, memory and benchmark operations.",
       "targets": [
         {
           "anchor": {
-            "blob": "b3181fbe25f6169b3f1271484242227b99b4855d",
-            "content": "sha256:354e4d10004a32eeb09b0fd8f15f5a5afeef40deae700d355e68b8ca77dd98bb",
+            "blob": "486df76371233ac389a477475154153b54d0a8e0",
+            "content": "sha256:c014469cb96c7778015a1921c51e6f3e76cc6fd72a96613be64cbc9ea794fdd4",
             "locator": {
-              "kind": "file"
+              "end": 47,
+              "kind": "line_range",
+              "start": 46
             }
           },
           "kind": "code"
@@ -97,14 +107,28 @@
       ]
     },
     "6": {
-      "note": "The layout block still draws a `providers/` subtree.\n\nAnchor: `docs/architecture.md:28-44`",
+      "note": "The installed-runtime layout still draws the providers subtree; the retrieval section qualifies it as old-install leftovers.",
       "targets": [
         {
           "anchor": {
-            "blob": "b3181fbe25f6169b3f1271484242227b99b4855d",
-            "content": "sha256:354e4d10004a32eeb09b0fd8f15f5a5afeef40deae700d355e68b8ca77dd98bb",
+            "blob": "486df76371233ac389a477475154153b54d0a8e0",
+            "content": "sha256:f8df8f22005883765df38707cc77bcb386621e0eb72b092a594cc81a9a966233",
             "locator": {
-              "kind": "file"
+              "end": 44,
+              "kind": "line_range",
+              "start": 28
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "486df76371233ac389a477475154153b54d0a8e0",
+            "content": "sha256:b49ecf83af94da80edd152a20159f1ee41f1466fd70d57839c24826d7c3ab3bc",
+            "locator": {
+              "end": 114,
+              "kind": "line_range",
+              "start": 112
             }
           },
           "kind": "code"
@@ -112,14 +136,16 @@
       ]
     },
     "7": {
-      "note": "The page is silent on Docker/Ollama requirements, command flags, the unused-key field name, the safety detector and any provider panel.\n\nAnchor: `docs/architecture.md:1-140`",
+      "note": "This architecture page does not specify Docker/Ollama requirements, provider command flags, the unused-key field name, a safety detector or provider UI; the new converted-knowledge layout/gate sections do not advertise a provider engine.",
       "targets": [
         {
           "anchor": {
-            "blob": "b3181fbe25f6169b3f1271484242227b99b4855d",
-            "content": "sha256:354e4d10004a32eeb09b0fd8f15f5a5afeef40deae700d355e68b8ca77dd98bb",
+            "blob": "486df76371233ac389a477475154153b54d0a8e0",
+            "content": "sha256:7aeeba6281080bc7e8dae194990fd8dc383ddc1d35ad7b72544adc931e98fe16",
             "locator": {
-              "kind": "file"
+              "end": 161,
+              "kind": "line_range",
+              "start": 1
             }
           },
           "kind": "code"

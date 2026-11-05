@@ -81,8 +81,16 @@ Selected-task Investigator receipts are per request rather than singleton select
 - Changes task/capsule/prompt inputs and verifies repeat returns or replays saved receipt without new preparation. [7]
 
 - Through leaf/taskless routes checks restoration/refusal, exact advice and unchanged receipt/foreign link target. [9]
-- Pins delivered worker doctrine: freeze the candidate and hand it directly to the leaf's Reviewer; the Manager receives no routine report notice. A dashboard-started Worker has no parent, and a finished turn is not AR acceptance. [12]
-- Composes delivered architect/manager/orchestrator capsule text, requires current diff/evidence inspection and owner acceptance clauses, and detects removal of manager inspection; this proves instruction delivery rather than runtime no-mutation. [13]
+Past-epoch account (retained wording): - Pins delivered worker doctrine: freeze the candidate and hand it directly to the leaf's Reviewer; the Manager receives no routine report notice. A dashboard-started Worker has no parent, and a finished turn is not AR acceptance.
+
+Custody: the preceding sentence is detached from live reference 12; its original target blob(s) were `74a051a27a76bfa2d21ab404b581911d5e391701`. The current clause below is separately bound.
+
+- The Worker handover test requires a first freeze notice to the Manager to start the Reviewer, followed by direct complete freeze handover to that Reviewer; the Manager does not relay it or receive routine report notices. It also checks parentless Worker and turn-end-versus-acceptance wording, with mutation cases for every required route clause.
+Past-epoch account (retained wording): - Composes delivered architect/manager/orchestrator capsule text, requires current diff/evidence inspection and owner acceptance clauses, and detects removal of manager inspection; this proves instruction delivery rather than runtime no-mutation.
+
+Custody: the preceding sentence is detached from live reference 13; original target blob(s): `74a051a27a76bfa2d21ab404b581911d5e391701`.
+
+- The test joins the shipped Architect/review, Manager/coordination and Orchestrator/coordination source texts, checks their candidate-evidence and owner-acceptance clauses, and detects removal of Manager inspection. This checks that source composition’s wording; it runs no capsule admission/compilation and proves no runtime no-mutation property.
 
 ## Current contract evidence
 
@@ -102,6 +110,9 @@ Selected-task Investigator receipts are per request rather than singleton select
 
 `message_binding_projection_path` is the public name of the binding-file address; the request-id refusal and the discard path use it too. Admission reads the same file a preparation wrote, which is how a retry whose receipt never landed returns to the seat it prepared instead of preparing the root again. Receipt creation, replay and projection semantics are unchanged.
 
-- The one binding-file address, read by admission and written by preparation. 
+- The one binding-file address, read by admission and written by preparation.
 
 - Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/role_launch_receipts.py::message_binding_projection_path - the bytes it recorded now occur 4 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.
+
+- The Worker handover test requires a first freeze notice to the Manager to start the Reviewer, followed by direct complete freeze handover to that Reviewer; the Manager does not relay it or receive routine report notices. It also checks parentless Worker and turn-end-versus-acceptance wording, with mutation cases for every required route clause. [12]
+- The test joins the shipped Architect/review, Manager/coordination and Orchestrator/coordination source texts, checks their candidate-evidence and owner-acceptance clauses, and detects removal of Manager inspection. This checks that source composition’s wording; it runs no capsule admission/compilation and proves no runtime no-mutation property. [13]

@@ -7,12 +7,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2f3ce46a32a38d86f474252bb23d8081e91f0a6e",
+            "blob": "353b98ba0c8d4e0b72caee82f9f0a988a1f82768",
             "content": "sha256:fcf49be53196b5ca2dc6f048d106d691918e2d180ffb7a5fcbc2bc057fc12243",
             "locator": {
-              "end": 563,
+              "end": 577,
               "kind": "line_range",
-              "start": 558
+              "start": 572
             },
             "path": "skills/l-01-agent-lifecycles/composition-manifest.json"
           },
@@ -42,12 +42,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2f3ce46a32a38d86f474252bb23d8081e91f0a6e",
+            "blob": "353b98ba0c8d4e0b72caee82f9f0a988a1f82768",
             "content": "sha256:b1bdcda378b2c9ed67c0a782d1b21eef6e1014734f26c3762775c5a3b51d12c0",
             "locator": {
-              "end": 530,
+              "end": 543,
               "kind": "line_range",
-              "start": 518
+              "start": 531
             },
             "path": "skills/l-01-agent-lifecycles/composition-manifest.json"
           },
@@ -178,16 +178,16 @@
       ]
     },
     "2": {
-      "note": "The current manifest order is role then operation; the old core-first manifest claim is historical.\n\nAnchor: `\"composition_order\"`",
+      "note": "The current manifest order is role then operation; the old core-first manifest claim is historical.",
       "targets": [
         {
           "anchor": {
-            "blob": "2f3ce46a32a38d86f474252bb23d8081e91f0a6e",
-            "content": "sha256:f184b155d9ef15df3ea506df8864ca5d9f62fb2f256c485415c047e030de9d72",
+            "blob": "353b98ba0c8d4e0b72caee82f9f0a988a1f82768",
+            "content": "sha256:2e43c537bf6dfd4a9503598fa42eac0369f8e27dae5e17f79536b7279d1913b7",
             "locator": {
-              "end": 731,
+              "end": 954,
               "kind": "line_range",
-              "start": 723
+              "start": 584
             },
             "path": "skills/l-01-agent-lifecycles/composition-manifest.json"
           },

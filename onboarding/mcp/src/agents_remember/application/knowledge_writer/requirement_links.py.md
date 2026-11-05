@@ -18,7 +18,11 @@ This source-bound correction covers the described L54 seams only. Unrelated inhe
 - Each requirement link target of the run's records, with the owner's resolution. [1]
 
 
-- A lifted decision round-trips; one endpoint resolved, one reported unresolved; the rerun is unchanged. [2]
+Past-epoch account (retained wording): - A lifted decision round-trips; one endpoint resolved, one reported unresolved; the rerun is unchanged.
+
+Custody: the preceding sentence is detached from live reference 2; its original target blob(s) were `1a6235931c50a4a8f6b146a51598cdff7f55a233`. The current clause below is separately bound.
+
+- The lifted-decision test first refuses the mismatched requirement endpoint without writes, reports the resolved and unresolved endpoints, then repairs that endpoint and checks a successful round-trip plus an unchanged rerun. Anchor: test_a_lifted_decision_round_trips_and_its_requirement_endpoints_are_reported.
 
 
 ## Inherited source-epoch account (non-operative)
@@ -87,10 +91,12 @@ The following complete predecessor retains useful explanations, old observations
 > The one function.
 >
 > - Each requirement link target of the run's records, with the owner's resolution. [1]
-> - A lifted decision round-trips; one endpoint resolved, one reported unresolved; the rerun is unchanged. [2]
+> - A lifted decision round-trips; one endpoint resolved, one reported unresolved; the rerun is unchanged.
 >
 > ### Cross-Repo References
 >
 > No cross-repo boundary is crossed: the writer reads the paired code worktree, writes the paired memory worktree, and only reads task packets under the coordination root.
 >
 > No cross-repo boundary is crossed by this file.
+
+- The lifted-decision test first refuses the mismatched requirement endpoint without writes, reports the resolved and unresolved endpoints, then repairs that endpoint and checks a successful round-trip plus an unchanged rerun. Anchor: test_a_lifted_decision_round_trips_and_its_requirement_endpoints_are_reported. [2]

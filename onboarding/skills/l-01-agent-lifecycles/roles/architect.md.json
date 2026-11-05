@@ -4,12 +4,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "f8df4537fd2ad81ad0e51743831f41509c24dcfe",
+        "blob": "8ca057bb1cb5bca8355ced1c5aa9eff7128c2e0f",
         "content": "sha256:04f85c885112f262597c83158ab41e4fde68690d0a3ab55b439757ab78c7aa24",
         "locator": {
-          "end": 56,
+          "end": 104,
           "kind": "line_range",
-          "start": 56
+          "start": 104
         }
       },
       "id": "RLZ-1GCP9C",
@@ -23,12 +23,12 @@
     },
     {
       "anchor": {
-        "blob": "f8df4537fd2ad81ad0e51743831f41509c24dcfe",
+        "blob": "8ca057bb1cb5bca8355ced1c5aa9eff7128c2e0f",
         "content": "sha256:1a037eb21173fb839661b344bf5886756e560da5642dc4347b03911c6587ed3c",
         "locator": {
-          "end": 40,
+          "end": 80,
           "kind": "line_range",
-          "start": 40
+          "start": 80
         }
       },
       "id": "RLZ-2T4Z9R",
@@ -42,12 +42,12 @@
     },
     {
       "anchor": {
-        "blob": "f8df4537fd2ad81ad0e51743831f41509c24dcfe",
+        "blob": "8ca057bb1cb5bca8355ced1c5aa9eff7128c2e0f",
         "content": "sha256:d0e58240a8ee948790a53c0651e5f0785f352743d624d082c1f513c85d0555c0",
         "locator": {
-          "end": 58,
+          "end": 106,
           "kind": "line_range",
-          "start": 58
+          "start": 106
         }
       },
       "id": "RLZ-418WGG",
@@ -61,8 +61,8 @@
     },
     {
       "anchor": {
-        "blob": "f8df4537fd2ad81ad0e51743831f41509c24dcfe",
-        "content": "sha256:4a0a5d9f8e5202460cee5e0870e801a644d2432900685a5a54114a1dab9cc219",
+        "blob": "8ca057bb1cb5bca8355ced1c5aa9eff7128c2e0f",
+        "content": "sha256:a176d9b1a6ad4068e83cb3d7f72aba06d1b6fc3bfde2e276e838339aeca5518b",
         "locator": {
           "kind": "file"
         }
@@ -78,12 +78,12 @@
     },
     {
       "anchor": {
-        "blob": "f8df4537fd2ad81ad0e51743831f41509c24dcfe",
+        "blob": "8ca057bb1cb5bca8355ced1c5aa9eff7128c2e0f",
         "content": "sha256:b86ed0ec194e278b441cef1148daa0cf7592bd50a2542659a5f085efe326d984",
         "locator": {
-          "end": 26,
+          "end": 54,
           "kind": "line_range",
-          "start": 26
+          "start": 54
         }
       },
       "id": "RLZ-8W0HVX",
@@ -97,8 +97,8 @@
     },
     {
       "anchor": {
-        "blob": "f8df4537fd2ad81ad0e51743831f41509c24dcfe",
-        "content": "sha256:4a0a5d9f8e5202460cee5e0870e801a644d2432900685a5a54114a1dab9cc219",
+        "blob": "8ca057bb1cb5bca8355ced1c5aa9eff7128c2e0f",
+        "content": "sha256:a176d9b1a6ad4068e83cb3d7f72aba06d1b6fc3bfde2e276e838339aeca5518b",
         "locator": {
           "kind": "file"
         }
@@ -114,7 +114,7 @@
     },
     {
       "anchor": {
-        "blob": "f8df4537fd2ad81ad0e51743831f41509c24dcfe",
+        "blob": "8ca057bb1cb5bca8355ced1c5aa9eff7128c2e0f",
         "content": "sha256:0aee283aaa2809cb302a1129df61f643ee37549eb4d577a120817c87d17d8338",
         "locator": {
           "end": 10,
@@ -133,12 +133,12 @@
     },
     {
       "anchor": {
-        "blob": "f8df4537fd2ad81ad0e51743831f41509c24dcfe",
+        "blob": "8ca057bb1cb5bca8355ced1c5aa9eff7128c2e0f",
         "content": "sha256:8954e24288f5e81d675e3ce856592924eb75933b4cc3ca2626896200d59d9581",
         "locator": {
-          "end": 28,
+          "end": 58,
           "kind": "line_range",
-          "start": 28
+          "start": 58
         }
       },
       "id": "RLZ-QVQ9HA",
@@ -152,12 +152,12 @@
     },
     {
       "anchor": {
-        "blob": "f8df4537fd2ad81ad0e51743831f41509c24dcfe",
+        "blob": "8ca057bb1cb5bca8355ced1c5aa9eff7128c2e0f",
         "content": "sha256:beb680d06c4adf9d4d1fa54719c8035f522b3291e395fe1ceded3bba42016d85",
         "locator": {
-          "end": 22,
+          "end": 50,
           "kind": "line_range",
-          "start": 22
+          "start": 50
         }
       },
       "id": "RLZ-SV2W4A",
@@ -171,8 +171,8 @@
     },
     {
       "anchor": {
-        "blob": "f8df4537fd2ad81ad0e51743831f41509c24dcfe",
-        "content": "sha256:4a0a5d9f8e5202460cee5e0870e801a644d2432900685a5a54114a1dab9cc219",
+        "blob": "8ca057bb1cb5bca8355ced1c5aa9eff7128c2e0f",
+        "content": "sha256:a176d9b1a6ad4068e83cb3d7f72aba06d1b6fc3bfde2e276e838339aeca5518b",
         "locator": {
           "kind": "file"
         }
@@ -188,12 +188,12 @@
     },
     {
       "anchor": {
-        "blob": "f8df4537fd2ad81ad0e51743831f41509c24dcfe",
+        "blob": "8ca057bb1cb5bca8355ced1c5aa9eff7128c2e0f",
         "content": "sha256:5a219c38640b4709e7f81f0e82ff9a1ba5547048ae641b89cf5f293a052a9efd",
         "locator": {
-          "end": 46,
+          "end": 90,
           "kind": "line_range",
-          "start": 46
+          "start": 90
         }
       },
       "id": "RLZ-XSMK0N",
@@ -207,12 +207,12 @@
     },
     {
       "anchor": {
-        "blob": "f8df4537fd2ad81ad0e51743831f41509c24dcfe",
+        "blob": "8ca057bb1cb5bca8355ced1c5aa9eff7128c2e0f",
         "content": "sha256:4b2c97839463054b2f5307414e25c52bc948a6e1929f9f1a2b90ef7baf9d2a19",
         "locator": {
-          "end": 36,
+          "end": 76,
           "kind": "line_range",
-          "start": 36
+          "start": 76
         }
       },
       "id": "RLZ-Y1FRYJ",
@@ -226,7 +226,7 @@
     },
     {
       "anchor": {
-        "blob": "f8df4537fd2ad81ad0e51743831f41509c24dcfe",
+        "blob": "8ca057bb1cb5bca8355ced1c5aa9eff7128c2e0f",
         "content": "sha256:cff008a580b31483b82250166a7d30f245042524986ab6a536f026323e0baaf1",
         "locator": {
           "end": 8,
@@ -245,8 +245,27 @@
     },
     {
       "anchor": {
-        "blob": "f8df4537fd2ad81ad0e51743831f41509c24dcfe",
-        "content": "sha256:4a0a5d9f8e5202460cee5e0870e801a644d2432900685a5a54114a1dab9cc219",
+        "blob": "8ca057bb1cb5bca8355ced1c5aa9eff7128c2e0f",
+        "content": "sha256:ba8f889dfc6108ab403f35befaf9c5cbe8967308091228a240316a457a66c967",
+        "locator": {
+          "end": 36,
+          "kind": "line_range",
+          "start": 20
+        }
+      },
+      "id": "RLZ-ZSC252",
+      "invariant": "INV-EM1Y66",
+      "origin": {
+        "handoffEntry": "L62-CUR-6414-architect-advice",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "The exact advice/factual-correction/developer-rule-change distinction remains at requirement-writing step.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "8ca057bb1cb5bca8355ced1c5aa9eff7128c2e0f",
+        "content": "sha256:a176d9b1a6ad4068e83cb3d7f72aba06d1b6fc3bfde2e276e838339aeca5518b",
         "locator": {
           "kind": "file"
         }
@@ -263,14 +282,40 @@
   ],
   "references": {
     "1": {
-      "note": "This source owns the stated current Investigator scope or canonical vocabulary.",
+      "note": "The Architect owns the developer conversation and approved requirements, delegates one master to a Manager or multiple masters to an Orchestrator, and may check on a copy without replacing leaf build, review, curation or gate authority.",
       "targets": [
         {
           "anchor": {
-            "blob": "f8df4537fd2ad81ad0e51743831f41509c24dcfe",
-            "content": "sha256:4a0a5d9f8e5202460cee5e0870e801a644d2432900685a5a54114a1dab9cc219",
+            "blob": "8ca057bb1cb5bca8355ced1c5aa9eff7128c2e0f",
+            "content": "sha256:cff008a580b31483b82250166a7d30f245042524986ab6a536f026323e0baaf1",
             "locator": {
-              "kind": "file"
+              "end": 8,
+              "kind": "line_range",
+              "start": 8
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8ca057bb1cb5bca8355ced1c5aa9eff7128c2e0f",
+            "content": "sha256:10952f2bf370df24f94b217c7c7cf96567b8427745e7874df08aec5c7ca74a7e",
+            "locator": {
+              "end": 58,
+              "kind": "line_range",
+              "start": 50
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8ca057bb1cb5bca8355ced1c5aa9eff7128c2e0f",
+            "content": "sha256:a44d905dbd2c543fcb17cf0cfd38155217e14bc5f720406f6301bad5737f77a3",
+            "locator": {
+              "end": 106,
+              "kind": "line_range",
+              "start": 104
             }
           },
           "kind": "code"
@@ -278,14 +323,40 @@
       ]
     },
     "2": {
-      "note": "Architect may grant a beyond-settings round for a concrete shrinking repair set; an unchanged failed repair or disputed requirement meaning needs a ruling instead of another round. Permission/non-finished starts are held by the product, and held permission notices propagate without message resubmission. Scope/parent identity and orchestration release stay distinct from native transport and AR acceptance.",
+      "note": "Beyond-settings rounds may be granted for a shrinking sealed list with a concrete repair; unchanged failed repairs or requirement-meaning disputes need a ruling. The Architect releases execution coordination and retains actual returned role identities, while permission decisions remain within its own permissions.",
       "targets": [
         {
           "anchor": {
-            "blob": "f8df4537fd2ad81ad0e51743831f41509c24dcfe",
-            "content": "sha256:4a0a5d9f8e5202460cee5e0870e801a644d2432900685a5a54114a1dab9cc219",
+            "blob": "8ca057bb1cb5bca8355ced1c5aa9eff7128c2e0f",
+            "content": "sha256:8954e24288f5e81d675e3ce856592924eb75933b4cc3ca2626896200d59d9581",
             "locator": {
-              "kind": "file"
+              "end": 58,
+              "kind": "line_range",
+              "start": 58
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8ca057bb1cb5bca8355ced1c5aa9eff7128c2e0f",
+            "content": "sha256:cad8bae7c3d2d6a5196fbe44642e72b918fbf86863657592074a8cd981c27e37",
+            "locator": {
+              "end": 80,
+              "kind": "line_range",
+              "start": 74
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8ca057bb1cb5bca8355ced1c5aa9eff7128c2e0f",
+            "content": "sha256:6e67ac9c0347fba54ccc0f98ebefaac5dc9f3b5018a186be9acc8b10bae07a1f",
+            "locator": {
+              "end": 98,
+              "kind": "line_range",
+              "start": 94
             }
           },
           "kind": "code"
@@ -297,12 +368,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f8df4537fd2ad81ad0e51743831f41509c24dcfe",
+            "blob": "8ca057bb1cb5bca8355ced1c5aa9eff7128c2e0f",
             "content": "sha256:2128e942e3b0ccb9cbd2e813f09585bea2ec8c46d7bf92e0085fd8452be1ddf0",
             "locator": {
-              "end": 18,
+              "end": 40,
               "kind": "line_range",
-              "start": 18
+              "start": 40
             }
           },
           "kind": "code"
@@ -314,12 +385,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f8df4537fd2ad81ad0e51743831f41509c24dcfe",
+            "blob": "8ca057bb1cb5bca8355ced1c5aa9eff7128c2e0f",
             "content": "sha256:a0f25cd9907e94e0a691e762cc7c49aeca193218d79948e1dc5193df32ae1c3c",
             "locator": {
-              "end": 16,
+              "end": 38,
               "kind": "line_range",
-              "start": 16
+              "start": 38
             }
           },
           "kind": "code"
@@ -331,12 +402,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f8df4537fd2ad81ad0e51743831f41509c24dcfe",
+            "blob": "8ca057bb1cb5bca8355ced1c5aa9eff7128c2e0f",
             "content": "sha256:5b673a74c35ebecb9d5c2d62886df69ae934edca9156d954b5fd993744d25405",
             "locator": {
-              "end": 34,
+              "end": 74,
               "kind": "line_range",
-              "start": 34
+              "start": 74
             }
           },
           "kind": "code"
@@ -344,14 +415,16 @@
       ]
     },
     "6": {
-      "note": "This source owns the stated current Investigator scope or canonical vocabulary.",
+      "note": "The Architect may check product, host and harness sources and run checks on a copy; a leaf check it delegates goes through the coordinating owner, or to Worker/Reviewer under developer-chosen direct coordination, while a non-leaf concern goes to Investigator.",
       "targets": [
         {
           "anchor": {
-            "blob": "f8df4537fd2ad81ad0e51743831f41509c24dcfe",
-            "content": "sha256:4a0a5d9f8e5202460cee5e0870e801a644d2432900685a5a54114a1dab9cc219",
+            "blob": "8ca057bb1cb5bca8355ced1c5aa9eff7128c2e0f",
+            "content": "sha256:a44d905dbd2c543fcb17cf0cfd38155217e14bc5f720406f6301bad5737f77a3",
             "locator": {
-              "kind": "file"
+              "end": 106,
+              "kind": "line_range",
+              "start": 104
             }
           },
           "kind": "code"
@@ -363,12 +436,29 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f8df4537fd2ad81ad0e51743831f41509c24dcfe",
+            "blob": "8ca057bb1cb5bca8355ced1c5aa9eff7128c2e0f",
             "content": "sha256:0aee283aaa2809cb302a1129df61f643ee37549eb4d577a120817c87d17d8338",
             "locator": {
               "end": 10,
               "kind": "line_range",
               "start": 10
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Reviews, cold reads, re-checks, sweeps and Investigator reports advise the Architect; a fact correction may be applied, but adding, narrowing or overriding a rule beyond the developer's words requires the developer's decision with both texts quoted.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8ca057bb1cb5bca8355ced1c5aa9eff7128c2e0f",
+            "content": "sha256:0f16ae738e30bc0020b9f0e05f3737b8435aaa300719837aa33eb4eaa4c265ac",
+            "locator": {
+              "end": 36,
+              "kind": "line_range",
+              "start": 36
             }
           },
           "kind": "code"

@@ -4,10 +4,22 @@
 
 The Manager starts Worker, Reviewer and Curator together through one role_start_set; Worker opens immediately, the other seats are held unless first Reviewer work is supplied. Public messaging takes a unique live seat, refuses ambiguity, and holds behind already-held messages when a start, permission prompt or non-steerable turn prevents delivery. Permission decisions are never answered by transport; the upward notice names the role/task/agent/permission, and the product delivers held work when admissible without sender resubmission. CODE and MEMORY lanes keep separate counts; the settings limit and recorded architect/developer authority govern extra rounds. Direct peer packages are not relayed by Manager.
 
+Current qualification: the retained set-start sentence “The Manager starts Worker, Reviewer and Curator together through one role_start_set; Worker opens immediately, the other seats are held unless first Reviewer work is supplied.” describes its past source epoch. Normal leaf stages start individually: Worker at build, Reviewer at freeze and Curator after code PASS; required notices reach Manager before direct peer handovers. Messaging resolves one live seat or refuses ambiguity. Further messages are held behind already waiting work; unfinished starts, pending permission and turns whose providers do not take steering postpone delivery without answering the permission. The product’s active sweep or ended-turn drain delivers admissible held work without sender resubmission. CODE and MEMORY keep separate recorded counts under the settings limit and recorded extra-round authority. Manager retains gate and transaction ownership and relays no peer contents.
+
 This account controls the named changed seams; contradictory earlier card wording below is retained only as historical evidence. Unchanged role duties and R117 file-only wake/report transport are preserved. Source inspection supplies no new runtime test, CODE verdict, review counter or acceptance.
 
 
-- The Manager starts Worker, Reviewer and Curator together through one role_start_set; Worker opens immediately, the other seats are held unless first Reviewer work is supplied. Public messaging takes a unique live seat, refuses ambiguity, and holds behind already-held messages when a start, permission prompt or non-steerable turn prevents delivery. Permission decisions are never answered by transport; the upward notice names the role/task/agent/permission, and the product delivers held work when admissible without sender resubmission. CODE and MEMORY lanes keep separate counts; the settings limit and recorded architect/developer authority govern extra rounds. Direct peer packages are not relayed by Manager. [1]
+Past-epoch caption (retained wording): - The Manager starts Worker, Reviewer and Curator together through one role_start_set; Worker opens immediately, the other seats are held unless first Reviewer work is supplied. Public messaging takes a unique live seat, refuses ambiguity, and holds behind already-held messages when a start, permission prompt or non-steerable turn prevents delivery. Permission decisions are never answered by transport; the upward notice names the role/task/agent/permission, and the product delivers held work when admissible without sender resubmission. CODE and MEMORY lanes keep separate counts; the settings limit and recorded architect/developer authority govern extra rounds. Direct peer packages are not relayed by Manager.
+
+Original-target custody: `skills/l-01-agent-lifecycles/operations/coordination.md`, blob `dee346f3da2aa768e464f5895f9489da5f4ad6bd`, declared “Paseo runs the role agents; you start and reach them through two tools on the `agents-remember-task` tool server: `role_start` and `role_message`. Bind each started role to its exact canonical AR task and requirement. Your tool server's bin”. The earlier caption is detached from the live number; the current table carries only the current clause and target.
+
+Retained authoring-row wording:
+
+Finding: Normal leaf stages start individually: Worker at build, Reviewer at freeze and Curator after code PASS; required notices reach Manager before direct peer handovers. Messaging resolves one live seat or refuses ambiguity. Further messages are held behind already waiting work; unfinished starts, pending permission and turns whose providers do not take steering postpone delivery without answering the permission. The product’s active sweep or ended-turn drain delivers admissible held work without sender resubmission. CODE and MEMORY keep separate recorded counts under the settings limit and recorded extra-round authority. Manager retains gate and transaction ownership and relays no peer contents.
+
+Anchor:
+
+Source: skills/l-01-agent-lifecycles/operations/coordination.md:4-43; skills/l-01-agent-lifecycles/reference/message-handover.md:1-21; mcp/src/agents_remember/cli/paseo_role_tools.py:480-514; mcp/src/agents_remember/controlplane/held_store_layout.py:398-438; mcp/src/agents_remember/cli/role_held_messages.py:232-270; mcp/src/agents_remember/cli/role_held_messages.py:367-414; mcp/src/agents_remember/cli/paseo_bridge.mjs:1193-1220; mcp/src/agents_remember/cli/role_held_messages.py:928-978; mcp/src/agents_remember/cli/role_held_messages.py:995-1021
 
 
 
@@ -38,12 +50,20 @@ When a start is refused as `intent-review-open`, the Manager waits for the Archi
 
 The common instructions retain explicit canonical bindings, allowed role starts, sibling leaf preparation with role_start_set, direct peer repair handovers, same-request recovery and exact-seat refusal. Held messages, permission-prompt handling, file payloads and ordinary report returns retain their established boundaries.
 
+Current qualification: the retained clause “sibling leaf preparation with role_start_set” describes its past source epoch. individual leaf-stage starts (Worker at build, Reviewer at freeze, Curator after code PASS)
+
 Only the paragraph assigning Manager report reading, next-seat/time tracking and the sender retry occasion is marked Manager-only; the following all-role marker restores common message-delivery and permission rules. This is a delivery-audience change, not a transfer of Manager work to other coordinating roles or an independent new authority.
 
 
 ## Evidence
 
-- A Manager receiving intent-review-open waits for the Architect's go and never retries the start. [5]
+Retained authoring-row wording:
+
+Finding: A Manager receiving intent-review-open waits for the Architect's go and never retries the start.
+
+Anchor:
+
+Source: skills/l-01-agent-lifecycles/operations/coordination.md:23-25
 
 The file's sidecar retains the realization entries for its current anchors.
 
@@ -168,10 +188,42 @@ Inherited reference 5 commentary (not a revalidated target):
 The byte-equal package copy is a distribution carrier, not an independent role, task or permission authority. Whole-file source evidence does not certify inherited statements, execution, grading or the whole card.
 
 
+Retained authoring-row wording:
+
+Finding: The authored source owns this contract; the distribution copy is not a separate authority.
+
+Anchor:
+
+Source: skills/l-01-agent-lifecycles/operations/coordination.md
+
+
+
+Past-epoch caption (retained wording): - Marks common operation text all-role and isolates the Manager-only report/retry-occasion paragraph; no substantive start/message rule is rewritten.
+
+Original-target custody: `skills/l-01-agent-lifecycles/operations/coordination.md`, blob `dee346f3da2aa768e464f5895f9489da5f4ad6bd`, declared “Paseo runs the role agents; you start and reach them through two tools on the `agents-remember-task` tool server: `role_start` and `role_message`. Bind each started role to its exact canonical AR task and requirement. Your tool server's bin”. The earlier caption is detached from the live number; the current table carries only the current clause and target.
+
+Retained authoring-row wording:
+
+Finding: Current common coordination text retains exact role/task bindings, individual stage starts, direct peer handovers and receipt/permission boundaries. Its Manager audience receives start notices, routine-state/report duties and the first-intake instruction; audience markers do not create another owner.
+
+Anchor:
+
+Source: skills/l-01-agent-lifecycles/operations/coordination.md:4-43
+
+Past-epoch caption (retained wording): - Marks common operation text all-role and isolates the Manager-only report/retry-occasion paragraph; no substantive start/message rule is rewritten.
+
+Original-target custody: `skills/l-01-agent-lifecycles/operations/coordination.md`, blob `dee346f3da2aa768e464f5895f9489da5f4ad6bd`, declared “Send one message to one agent with `role_message` on `agents-remember-task`, addressed by agent ID or by role plus task references. A leaf hand-over uses the role and exact task reference in `leafSeats.roleMessageArguments`; use a product-s”. The earlier caption is detached from the live number; the current table carries only the current clause and target.
+
+Retained authoring-row wording:
+
+Finding: Current coordination distinguishes common seat/message boundaries from the Manager-specific start, intake and report duties. Worker starts at build, Reviewer at freeze and Curator after code PASS; the recipient reads the exact object and the sender does not resend a held message.
+
+Anchor:
+
+Source: skills/l-01-agent-lifecycles/operations/coordination.md:4-43
+
+- Normal leaf stages start individually: Worker at build, Reviewer at freeze and Curator after code PASS; required notices reach Manager before direct peer handovers. Messaging resolves one live seat or refuses ambiguity. Further messages are held behind already waiting work; unfinished starts, pending permission and turns whose providers do not take steering postpone delivery without answering the permission. The product’s active sweep or ended-turn drain delivers admissible held work without sender resubmission. CODE and MEMORY keep separate recorded counts under the settings limit and recorded extra-round authority. Manager retains gate and transaction ownership and relays no peer contents. [1]
 - The authored source owns this contract; the distribution copy is not a separate authority. [2]
-
-
-
-- Marks common operation text all-role and isolates the Manager-only report/retry-occasion paragraph; no substantive start/message rule is rewritten. [3]
-
-- Marks common operation text all-role and isolates the Manager-only report/retry-occasion paragraph; no substantive start/message rule is rewritten. [4]
+- Current common coordination text retains exact role/task bindings, individual stage starts, direct peer handovers and receipt/permission boundaries. Its Manager audience receives start notices, routine-state/report duties and the first-intake instruction; audience markers do not create another owner. [3]
+- Current coordination distinguishes common seat/message boundaries from the Manager-specific start, intake and report duties. Worker starts at build, Reviewer at freeze and Curator after code PASS; the recipient reads the exact object and the sender does not resend a held message. [4]
+- A Manager receiving intent-review-open waits for the Architect's go and never retries the start. [5]

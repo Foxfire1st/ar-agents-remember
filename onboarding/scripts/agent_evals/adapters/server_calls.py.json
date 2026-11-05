@@ -1,0 +1,42 @@
+{
+  "path": "scripts/agent_evals/adapters/server_calls.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "26bee05d615c7698b104a39c5f6dd20e9d0fe882",
+        "content": "sha256:c5655d6e2847055b7b6833c8d3e46f920bdd72063ca37e342e145acd56bcff32",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-6NQB35",
+      "invariant": "INV-027RMH",
+      "origin": {
+        "handoffEntry": "L62-fd6462b8-opaque-crosscheck",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "It checkpoints fixture logs, counts blank lines and cross-checks per-call records against captured actions and opaque intervals.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The source defines this file's responsibility and the boundaries described here.\n\nAnchor: Current declared source extent",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "26bee05d615c7698b104a39c5f6dd20e9d0fe882",
+            "content": "sha256:c5655d6e2847055b7b6833c8d3e46f920bdd72063ca37e342e145acd56bcff32",
+            "locator": {
+              "end": 606,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

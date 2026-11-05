@@ -24,7 +24,14 @@ The source now checks the addressed Curator surface for distinct authority/outco
 
 This is a current source account, not an executed test, CODE/MEMORY grade, live producer grant or landing result. No Domain Documentation source is configured for this slice; no external-system guarantee is inferred.
 
+The foundation-authority check reads the actual delivered detail and its mutation controls. The refused-write detail must retain the actual refusal, each input, same-tool/input-class limit, owner notice, provenance, working checks and issue/report evidence. A missing writer remains distinct from a refused correct write; Git and acceptance authority do not follow from file-write admission. These are source assertions/support behavior, not a fresh invocation, host result or AR acceptance.
+
 ## Evidence
+- Describes source-level checks that canonical curator/planner guidance and writer/gate docstrings explain supported corrections. Marker assertions protect documentation compatibility, not implementation behavior, runtime installation or full semantic acceptance of every sentence in the referenced guides.
+
+- Adds a compiled addressed-Curator positive guard for distinct authority/outcome clauses. Existing handoff/role marker check follows declared detail placeholders. New tests require the shared profile to teach actor/trigger/required/forbidden/quantifier/condition/exception preservation, independent boundary-case review, verbatim producer fields, frozen history and no semantic validator; actual authoring links resolve to the single profile, and turn-report reaches the explainer guide.
 
 - Describes source-level checks that canonical curator/planner guidance and writer/gate docstrings explain supported corrections. Marker assertions protect documentation compatibility, not implementation behavior, runtime installation or full semantic acceptance of every sentence in the referenced guides. [1]
 - Adds a compiled addressed-Curator positive guard for distinct authority/outcome clauses. Existing handoff/role marker check follows declared detail placeholders. New tests require the shared profile to teach actor/trigger/required/forbidden/quantifier/condition/exception preservation, independent boundary-case review, verbatim producer fields, frozen history and no semantic validator; actual authoring links resolve to the single profile, and turn-report reaches the explainer guide. [2]
+
+- The foundation-authority check reads the actual delivered detail and its mutation controls. The refused-write detail must retain the actual refusal, each input, same-tool/input-class limit, owner notice, provenance, working checks and issue/report evidence. A missing writer remains distinct from a refused correct write; Git and acceptance authority do not follow from file-write admission. These are source assertions/support behavior, not a fresh invocation, host result or AR acceptance. [3]

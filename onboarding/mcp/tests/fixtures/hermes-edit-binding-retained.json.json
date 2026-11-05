@@ -1,0 +1,40 @@
+{
+  "path": "mcp/tests/fixtures/hermes-edit-binding-retained.json",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "d0cedbca3860ce2f8f94ef9cbcc73cef59c970c5",
+        "content": "sha256:8ea134a1216e3ec7dfe831f831fd26b69ae6470717e3e2afe734b1edc08165a6",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-NRKYTA",
+      "invariant": "INV-A8FVPH",
+      "origin": {
+        "handoffEntry": "L62-fd6462b8-trial-isolation",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "These real edit-prompt records pin fixture-local writable targets and the incomplete-binding diagnosis.",
+      "role": "support"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The source defines this file's responsibility and the boundaries described here.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d0cedbca3860ce2f8f94ef9cbcc73cef59c970c5",
+            "content": "sha256:8ea134a1216e3ec7dfe831f831fd26b69ae6470717e3e2afe734b1edc08165a6",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

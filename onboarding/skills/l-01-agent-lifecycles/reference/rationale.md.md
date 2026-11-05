@@ -16,7 +16,7 @@ The opening declaration makes this reference-only. The file retains its four-way
 
 The provenance section records the experimental master, IAS base, branch and carried LOCR doctrine while expressly excluding LOCR serving/runtime changes. The manifest-versus-generator explanation says metadata contains no prose and places the deterministic compiler in a later leaf; that is the consolidation-era account, not a claim that the current corpus has no compiler.
 
-The launcher remains a routing condition rather than a role. The reference's ten-role registry and bootstrap free-agent/session-open story are retained history, not native-launcher availability. The current manifest retains ten role IDs and a bootstrap entry, while the canonical router exposes only seven current role IDs. Registry membership, native launchability and the historical bootstrap launch account are distinct.
+The launcher remains a routing condition rather than a role. The reference's ten-role registry and bootstrap free-agent/session-open story are retained history, not native-launcher availability. The current manifest retains ten role IDs and a bootstrap entry, while the canonical router exposes eight current role IDs. Registry membership, native launchability and the historical bootstrap launch account are distinct.
 
 The older card described a core → role → operation → specialization manifest order and concluded that a rationale edit could not move any capsule or digest. The current manifest instead declares role → operation and explicitly leaves its core map as compatibility metadata. The vocabulary retains the older CAPSULE_COMPOSITION_ORDER while separately declaring CAPSULE_ROLE_COMPOSITION_ORDER as role plus operation. references.rationale remains injected:false. These static declarations support reference exclusion from the declared role composition, not an executed universal no-digest-change or whole-runtime claim.
 
@@ -93,12 +93,24 @@ The quotations below preserve the earlier packaged card’s account. They are hi
 
 ## Evidence
 
+
+Superseded card wording retained for custody (not certified as true of any source epoch or measured candidate):
+
+> The launcher remains a routing condition rather than a role. The reference's ten-role registry and bootstrap free-agent/session-open story are retained history, not native-launcher availability. The current manifest retains ten role IDs and a bootstrap entry, while the canonical router exposes only seven current role IDs. Registry membership, native launchability and the historical bootstrap launch account are distinct.
+
+
 The rows cite canonical source text and narrowly relevant neighbor definitions. A historical example or declared check remains distinct from a check result. The packaged source is a propagation twin, not an independent authority.
 
 
 - The manifest declares rationale reference-only and non-injected. [1]
 
-- The current manifest order is role then operation; the old core-first manifest claim is historical. [2]
+Retained authoring-row wording:
+
+Finding: The current manifest order is role then operation; the old core-first manifest claim is historical.
+
+Anchor:
+
+Source: skills/l-01-agent-lifecycles/composition-manifest.json:584-954
 - The compiler vocabulary retains the older generic composition order without proving a current role capsule used it. [3]
 - The role-specific vocabulary separately declares role plus operation, not injected shared core. [4]
 - The reference retains its four-way separation and source-epoch operations count. [5]
@@ -119,3 +131,5 @@ The rows cite canonical source text and narrowly relevant neighbor definitions. 
 
 - Consolidation provenance, excluded LOCR runtime changes and the later-compiler account are historical reference content. [17]
 - Template categories, credits and historical notes remain reference prose, not universal role injection. [18]
+
+- The current manifest order is role then operation; the old core-first manifest claim is historical. [2]

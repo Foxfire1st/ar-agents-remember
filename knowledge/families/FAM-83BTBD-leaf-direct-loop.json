@@ -23,13 +23,14 @@
     "leaf": "260928-MIK-L99",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "routes": [
     "skills/l-01-agent-lifecycles/roles",
     "skills/l-01-agent-lifecycles/operations",
     "skills/l-01-agent-lifecycles/templates",
     "mcp/tests",
-    "mcp/src/agents_remember/cli"
+    "mcp/src/agents_remember/cli",
+    "mcp/test_support/agents_remember_test_support/testing"
   ],
   "schema": "ar-family/v1",
   "status": "proposed",

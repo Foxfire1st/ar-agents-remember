@@ -6,7 +6,7 @@ The only changed permission seam now answers held, propagates the named child pe
 
 This account controls the named changed seams; contradictory earlier card wording below is retained only as historical evidence. Unchanged role duties and R117 file-only wake/report transport are preserved. Source inspection supplies no new runtime test, CODE verdict, review counter or acceptance.
 
-- The only changed permission seam now answers held, propagates the named child permission upward, and leaves eventual delivery to the product; no prompt is answered and no duplicate message is sent. Sprint/master containment, Manager coordination, ordinary role/task returns and actual-parent-ID developer questions retain their distinct authority. [3]
+- The only changed permission seam now answers held, propagates the named child permission upward, and leaves eventual delivery to the product; no prompt is answered and no duplicate message is sent. Sprint/master containment, Manager coordination, ordinary role/task returns and actual-parent-ID developer questions retain their distinct authority.
 
 
 ## Message/file transport and return addressing
@@ -104,4 +104,7 @@ own lifecycle owner.
 This packaged copy derives from the canonical roles/orchestrator.md. The Orchestrator coordinates concurrent masters through their Managers and may start Investigator under its own sprint for a concern/check belonging to no leaf. Leaf checks stay with their Worker/Reviewer. A refusal preserves actual parent routing or the parentless blocker; no invented Architect or recipient identity replaces it. Investigator is a child concern/report carrier, not a leaf transaction owner. Mirror synchronization remains the owner; this file adds no independent instruction.
 
 
-- This source owns the stated current Investigator scope or canonical vocabulary. [1]
+- This source owns the stated current Investigator scope or canonical vocabulary.
+
+- Orchestrator coordinates its selected sprint through Managers, reuses named existing Managers, and assigns a non-leaf investigation within its own sprint scope without inventing a parent or task. [1]
+- Orchestrator keeps sprint/master containment, Manager coordination, ordinary role/task returns and actual-parent developer questions distinct; child-permission notices follow the common coordination rule and held receipts are not resubmitted. [3]

@@ -379,7 +379,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ddd77babbaaddf51063d6e23856c0cadd142d461",
+            "blob": "abb3d0e320df1c428284a14d602ec93ad778bdbe",
             "content": "sha256:22b47af4643ca57af5fc2b20ea693b15dc794169080cdd900465ea6c0361df12",
             "locator": {
               "end": 41,
@@ -462,12 +462,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2a112bdb1148478a8a719636588cb908fab01cac",
+            "blob": "47288b84fc830870de597a9ba3aa5f895d99fdcb",
             "content": "sha256:7038a04cb7fa89277eebc526c48cbc6d61b4704bc2b131d80acf38a5cab34dc7",
             "locator": {
-              "end": 89,
+              "end": 90,
               "kind": "line_range",
-              "start": 79
+              "start": 80
             },
             "path": "skills/l-01-agent-lifecycles/core/acceptance.md"
           },
@@ -548,14 +548,42 @@
       ]
     },
     "139": {
-      "note": "Retained reference account (no fresh execution or acceptance inferred): The subcommands of the `agents-remember` command.\n\nAnchor: `build_parser`",
+      "note": "build_parser requires a subcommand, registers dashboard, and delegates memory, knowledge and runtime/settings command registration to three helpers. main parses the public command arguments and calls the selected handler; its internal leaf-enclosure entry is handled before that public parser.",
       "targets": [
         {
           "anchor": {
-            "blob": "6e7bd5a18da5ea781594e67999b9b01f305937d4",
-            "content": "sha256:57963a8c05a50b4d7b23ed1e71af1f6df4675bb345acf2864f756afcd68470ec",
+            "blob": "009c76004ec4b54cf39affd07edbc7882459d597",
+            "content": "sha256:9e558da01a53d54790fceb28322c6df46062d4f9cf64f8714e2a3b0a017d7184",
             "locator": {
-              "kind": "file"
+              "end": 53,
+              "kind": "line_range",
+              "start": 44
+            },
+            "path": "mcp/src/agents_remember/cli/__main__.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "009c76004ec4b54cf39affd07edbc7882459d597",
+            "content": "sha256:7fd8e300c787b7a4c3180be620966f6bb846c4d835875aeae1a7cf2151eab64b",
+            "locator": {
+              "end": 195,
+              "kind": "line_range",
+              "start": 56
+            },
+            "path": "mcp/src/agents_remember/cli/__main__.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "009c76004ec4b54cf39affd07edbc7882459d597",
+            "content": "sha256:a649e278c48beac158b4c587a7846138dd5517a656836701ab739dae5178ec22",
+            "locator": {
+              "end": 205,
+              "kind": "line_range",
+              "start": 198
             },
             "path": "mcp/src/agents_remember/cli/__main__.py"
           },
@@ -747,16 +775,16 @@
       ]
     },
     "146": {
-      "note": "Retained reference account (no fresh execution or acceptance inferred): The canonical role owns this concern and mutation boundary.",
+      "note": "The Investigator examines one scoped concern and writes a report, distinguishes observed facts from hypotheses, and names the owning Worker or Curator for needed code or memory changes. It edits no code checkout, memory or task document and starts no role; a separate order grants no Worker or Curator authority.",
       "targets": [
         {
           "anchor": {
-            "blob": "61e88989c300f3783c4e50987a0ec98378fc2ab0",
-            "content": "sha256:40d46754baffe5df72878da9ed24886f0b5b59e7ac0920606dc454a8f4918eef",
+            "blob": "f860965f1283a2c5f7bfbc360891b2f040525963",
+            "content": "sha256:1f39a1758a3254f1aad668f1565ee83c6f09ab51337219230026e4a85e72f7bb",
             "locator": {
               "end": 36,
               "kind": "line_range",
-              "start": 1
+              "start": 8
             },
             "path": "skills/l-01-agent-lifecycles/roles/investigator.md"
           },
@@ -919,12 +947,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c2d38cd0a82b9efe96a765c4512f2242c6a9d3e6",
+            "blob": "3ea09011d0657bf89935264047f646078913e415",
             "content": "sha256:6f43a4c7657cf7fd48209b5f06dc7bec826614cf08693b4a8b530f5a62012f3b",
             "locator": {
-              "end": 128,
+              "end": 133,
               "kind": "line_range",
-              "start": 128
+              "start": 133
             },
             "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/curator.md"
           },
@@ -986,12 +1014,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "38daf6f3a9e1766c06dbbe2cc50c5b44db32d5f1",
+            "blob": "aafe9cceed66e44b929375098b30e6b65b0a4d79",
             "content": "sha256:b3e34349a0c5cc7ef7f312ae57e06b6245a150e03b2b4f0535558ee7f10d8183",
             "locator": {
-              "end": 38,
+              "end": 42,
               "kind": "line_range",
-              "start": 38
+              "start": 42
             },
             "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/criteria/onboarding-memory.md"
           },
@@ -1004,7 +1032,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "968e68d13a6fe3bc2029e4cef991f90fc172e22c",
+            "blob": "47cce8a3d91019d3f99f61dc10a142cd06ce209e",
             "content": "sha256:3aa5642f02b79ba6e10f1587feee72fe7572f76c107f8014e3ee72f99b517da9",
             "locator": {
               "end": 158,
@@ -1040,12 +1068,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ab9a2e087d2cfd299ad5ffbac061aac232c8e831",
+            "blob": "62a4500b617979c0fc10d9726ce52b57b8b3c922",
             "content": "sha256:f2f930aefadd18620edc7f70a5662d45d9c0f22f67e66aa9503942e8349a3ff0",
             "locator": {
-              "end": 101,
+              "end": 112,
               "kind": "line_range",
-              "start": 101
+              "start": 112
             },
             "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md"
           },
@@ -1370,7 +1398,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2ed65e524afd1f228f7bab90bc65c309a6926862",
+            "blob": "8ddcb980af3245c35f9350349a83452d8f8530ff",
             "content": "sha256:5212c9894d9bcb63611f9483b53561523d0545faa9e817ce2a6fecbbb360441e",
             "locator": {
               "end": 163,
@@ -1618,7 +1646,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "07f4fbb59134af0846462f3929091464962f171f",
+            "blob": "f7ea3c8b7f6e2ce1a210dbc43dcc9694cd25721b",
             "content": "sha256:81ecbee4d4e5cff2abf2b36a9dc2ed8ff4d5fda2482759c083a40d74c449b578",
             "locator": {
               "end": 5,
@@ -1823,12 +1851,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c2d38cd0a82b9efe96a765c4512f2242c6a9d3e6",
+            "blob": "3ea09011d0657bf89935264047f646078913e415",
             "content": "sha256:6f43a4c7657cf7fd48209b5f06dc7bec826614cf08693b4a8b530f5a62012f3b",
             "locator": {
-              "end": 128,
+              "end": 133,
               "kind": "line_range",
-              "start": 128
+              "start": 133
             },
             "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/curator.md"
           },
@@ -1986,7 +2014,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d7b1922ce5f6fd565f852582ec28c80614728338",
+            "blob": "b6107ca4494da6e3d0379b2865375608bc53e2cd",
             "content": "sha256:1e546a9c150fa884bdb29ec9e0659cc43d21acb34fa93743b9253dd0713cd856",
             "locator": {
               "end": 50,
@@ -2137,12 +2165,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c2d38cd0a82b9efe96a765c4512f2242c6a9d3e6",
+            "blob": "3ea09011d0657bf89935264047f646078913e415",
             "content": "sha256:96425703bcaf10d200ba61b3690cc034c47ac6a9f5410fc495d8b1376022dc8f",
             "locator": {
-              "end": 64,
+              "end": 70,
               "kind": "line_range",
-              "start": 59
+              "start": 65
             },
             "path": "skills/l-01-agent-lifecycles/roles/curator.md"
           },
@@ -2150,12 +2178,12 @@
         },
         {
           "anchor": {
-            "blob": "c2d38cd0a82b9efe96a765c4512f2242c6a9d3e6",
+            "blob": "3ea09011d0657bf89935264047f646078913e415",
             "content": "sha256:aea67481f60b2037728bdcd361f8ca895782fc77ae426aced63f7db782289fb5",
             "locator": {
-              "end": 157,
+              "end": 177,
               "kind": "line_range",
-              "start": 157
+              "start": 177
             },
             "path": "skills/l-01-agent-lifecycles/roles/curator.md"
           },
@@ -2220,12 +2248,12 @@
         },
         {
           "anchor": {
-            "blob": "c2d38cd0a82b9efe96a765c4512f2242c6a9d3e6",
+            "blob": "3ea09011d0657bf89935264047f646078913e415",
             "content": "sha256:8afd32a91dbe3f21c503c60671caf19d815046f13a0f5d4f92d02b1e0effee18",
             "locator": {
-              "end": 79,
+              "end": 82,
               "kind": "line_range",
-              "start": 79
+              "start": 82
             },
             "path": "skills/l-01-agent-lifecycles/roles/curator.md"
           },
@@ -2234,16 +2262,16 @@
       ]
     },
     "316": {
-      "note": "Independent MEMORY review reaches its rule through process step 8's memory checks in `reference/reviewer-memory-d301.md`: text removed without a named change is a finding, and an added file outside the knowledge without a place in the task's requirement is a finding.  Anchor: Process step 8 and the memory checks reference  Converted onboarding counts substantive content/history, keeps unreadable candidates open and names nearest-route subjects.  Anchor: Trace rules and counted-sidecar predicate",
+      "note": "Independent memory review follows Reviewer process step 8 into reference/reviewer-memory-d301.md: removed text without a named change and an added file outside knowledge without a place in the task requirement are findings. Converted onboarding raises changed-card and nearest-route subjects; Markdown changes or matching source-bound history can satisfy them. Sidecar references count only beyond mechanical anchor fields, realizes/proves-only changes do not count, and unreadable sidecars do not satisfy the trace.",
       "targets": [
         {
           "anchor": {
-            "blob": "ab9a2e087d2cfd299ad5ffbac061aac232c8e831",
-            "content": "sha256:025ce38940e8c1f4f4fa0fbbc52ea74ecae175c10198825aa2ccf387b380bb87",
+            "blob": "62a4500b617979c0fc10d9726ce52b57b8b3c922",
+            "content": "sha256:2b0fafd6ce66488e00ae5068ac0da83481bcc40d8de553f1974cf4ba8c20d107",
             "locator": {
-              "end": 110,
+              "end": 88,
               "kind": "line_range",
-              "start": 104
+              "start": 87
             },
             "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
           },
@@ -2251,10 +2279,23 @@
         },
         {
           "anchor": {
-            "blob": "f6091818f7a3fdfaef7337e48da6b832bbe01f71",
-            "content": "sha256:258e74a1dfd8d7100b9209f7b0607a20de284e21c854bf3ed400697c867a1105",
+            "blob": "49a8301d2f85c2182938d3a9123bcaf84dee7a37",
+            "content": "sha256:dbfdd274c550b6896abe3fa44d87269e647fea08ca058d53af6c14811632ba96",
             "locator": {
-              "end": 26,
+              "end": 5,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "skills/l-01-agent-lifecycles/reference/reviewer-memory-d301.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f6091818f7a3fdfaef7337e48da6b832bbe01f71",
+            "content": "sha256:67906733c2062db34875bd3a16a7b56ea1a46556476434558a15a783578754e7",
+            "locator": {
+              "end": 30,
               "kind": "line_range",
               "start": 1
             },
@@ -2265,9 +2306,9 @@
         {
           "anchor": {
             "blob": "f6091818f7a3fdfaef7337e48da6b832bbe01f71",
-            "content": "sha256:39745e49ef31bccb314de21c10e0c68b7f417f4886235ee7102ec705b1dc8133",
+            "content": "sha256:912401a9376215b30ea9f157b1b36b141a7794830017524f82f3243a341192e3",
             "locator": {
-              "end": 163,
+              "end": 179,
               "kind": "line_range",
               "start": 137
             },
@@ -2278,11 +2319,11 @@
         {
           "anchor": {
             "blob": "f6091818f7a3fdfaef7337e48da6b832bbe01f71",
-            "content": "sha256:b7cab312a15cff4df0bace0f59deca02c9a86ee1a0e97926502b031bad85b640",
+            "content": "sha256:28822568d2ec8dce6eaf53b2900386b6442555106e5dd2057c6c0d297d233d8d",
             "locator": {
-              "end": 207,
+              "end": 210,
               "kind": "line_range",
-              "start": 186
+              "start": 182
             },
             "path": "mcp/src/agents_remember/worktrees/modules/onboarding_trace.py"
           },
@@ -2616,12 +2657,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "38daf6f3a9e1766c06dbbe2cc50c5b44db32d5f1",
+            "blob": "aafe9cceed66e44b929375098b30e6b65b0a4d79",
             "content": "sha256:573343f4fdfdb33d3f6efc3ea4a612d700a9e7e15d444ec3554978146057d2ec",
             "locator": {
-              "end": 36,
+              "end": 40,
               "kind": "line_range",
-              "start": 26
+              "start": 30
             },
             "path": "skills/l-01-agent-lifecycles/criteria/onboarding-memory.md"
           },
@@ -2856,16 +2897,16 @@
       ]
     },
     "337": {
-      "note": "Manager instructions assign native stage publication and master-row mirroring to start/finalize/abandon; explicit corrections retain their separate route.\n\nAnchor: \"Start, finalize and abandon publish task stage\"",
+      "note": "Manager instructions assign task-stage publication and master-row mirroring to start, finalize and abandon; a separate status write does not follow those acts. task_doc set_status remains the route for an explicit correction and organizational-master completion.",
       "targets": [
         {
           "anchor": {
-            "blob": "3c2cfd97c8d64a0cd6245c1b87c6f6bd45457380",
-            "content": "sha256:9b8a0bd77133a911eda02d798594b6181aac50e9399f1000649385784cc6dc27",
+            "blob": "0f539ae53bac7b99b39337ae847c7b4b56b95ccc",
+            "content": "sha256:e2cfdf7ac3d421add7a5b46e1c0469c92492b9458578cb403c85a188a6d5c7b6",
             "locator": {
-              "end": 22,
+              "end": 32,
               "kind": "line_range",
-              "start": 22
+              "start": 32
             },
             "path": "skills/l-01-agent-lifecycles/roles/manager.md"
           },
@@ -2919,7 +2960,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2f3ce46a32a38d86f474252bb23d8081e91f0a6e",
+            "blob": "353b98ba0c8d4e0b72caee82f9f0a988a1f82768",
             "content": "sha256:d3a0b45666d20afadd425be7e96531a01ae50af0551a336b29dcaa74af20e8bd",
             "locator": {
               "end": 137,
@@ -2955,7 +2996,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2f3ce46a32a38d86f474252bb23d8081e91f0a6e",
+            "blob": "353b98ba0c8d4e0b72caee82f9f0a988a1f82768",
             "content": "sha256:d3a0b45666d20afadd425be7e96531a01ae50af0551a336b29dcaa74af20e8bd",
             "locator": {
               "end": 137,
@@ -2969,14 +3010,14 @@
       ]
     },
     "341": {
-      "note": "Role/operation and step-detail budgets are declared here, with historical declarations for completion-only step marking, serving-build Curator authoring and the separately recorded memory-review lane; declarations do not prove execution or acceptance.",
+      "note": "The registry declares 38 role-operation capsules and 28 step-detail rows, separate handover budgets, a shared digest budget and developer-owned per-role ceilings. Current literal ceilings are Architect 4,631, Manager 4,513, Curator/Reviewer/Bootstrap 4,000 and other roles 3,700; step files remain 2,500, shared digest 1,100 and handovers 3,300 tokens. Earlier decision blocks retain their own measured source epochs; declarations do not prove a fresh run or acceptance.",
       "targets": [
         {
           "anchor": {
-            "blob": "32588f695124b7d325ef8e5c24ad430a9a85ee81",
-            "content": "sha256:d96c256c4fa193de34c7ff4c85e34d3b785c566a21b488539af8e72d8284d927",
+            "blob": "9666326b219ed7dceb72e020d3bc5a57dcda6460",
+            "content": "sha256:05586b0a6eac99ca49c4635ae43b4835a333d9c7788882bf01e8b7ffc4c4ce41",
             "locator": {
-              "end": 4,
+              "end": 307,
               "kind": "line_range",
               "start": 1
             },
@@ -2986,51 +3027,12 @@
         },
         {
           "anchor": {
-            "blob": "32588f695124b7d325ef8e5c24ad430a9a85ee81",
-            "content": "sha256:4fce5f17e755b648d4cec0100701b681c91d7b1a57b77072390293a1f005cf82",
+            "blob": "9666326b219ed7dceb72e020d3bc5a57dcda6460",
+            "content": "sha256:8416a713fca287f3900e180df4ca2bd0a384dd29d9aa9a2874b24e9a1e404c04",
             "locator": {
-              "end": 3440,
+              "end": 3611,
               "kind": "line_range",
-              "start": 1
-            },
-            "path": "skills/l-01-agent-lifecycles/capsule-budgets.json"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "32588f695124b7d325ef8e5c24ad430a9a85ee81",
-            "content": "sha256:e897d1cafe9128b6fb04df07551041935b7eb98e996d6977edf55bad6e2bb6c1",
-            "locator": {
-              "end": 202,
-              "kind": "line_range",
-              "start": 194
-            },
-            "path": "skills/l-01-agent-lifecycles/capsule-budgets.json"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "32588f695124b7d325ef8e5c24ad430a9a85ee81",
-            "content": "sha256:6708895977ce799cf5205dde6eb795ac609b036b946735242c11e25bd88f5738",
-            "locator": {
-              "end": 354,
-              "kind": "line_range",
-              "start": 350
-            },
-            "path": "skills/l-01-agent-lifecycles/capsule-budgets.json"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "32588f695124b7d325ef8e5c24ad430a9a85ee81",
-            "content": "sha256:da27652df2bdab9928a901fb4f89322681f4f56d14b89406295a1e41381b588b",
-            "locator": {
-              "end": 2854,
-              "kind": "line_range",
-              "start": 2849
+              "start": 3492
             },
             "path": "skills/l-01-agent-lifecycles/capsule-budgets.json"
           },
@@ -3043,7 +3045,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2f3ce46a32a38d86f474252bb23d8081e91f0a6e",
+            "blob": "353b98ba0c8d4e0b72caee82f9f0a988a1f82768",
             "content": "sha256:d3a0b45666d20afadd425be7e96531a01ae50af0551a336b29dcaa74af20e8bd",
             "locator": {
               "end": 137,
@@ -3061,7 +3063,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2f3ce46a32a38d86f474252bb23d8081e91f0a6e",
+            "blob": "353b98ba0c8d4e0b72caee82f9f0a988a1f82768",
             "content": "sha256:d3a0b45666d20afadd425be7e96531a01ae50af0551a336b29dcaa74af20e8bd",
             "locator": {
               "end": 137,
@@ -3079,7 +3081,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2f3ce46a32a38d86f474252bb23d8081e91f0a6e",
+            "blob": "353b98ba0c8d4e0b72caee82f9f0a988a1f82768",
             "content": "sha256:d3a0b45666d20afadd425be7e96531a01ae50af0551a336b29dcaa74af20e8bd",
             "locator": {
               "end": 137,
@@ -3097,7 +3099,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2f3ce46a32a38d86f474252bb23d8081e91f0a6e",
+            "blob": "353b98ba0c8d4e0b72caee82f9f0a988a1f82768",
             "content": "sha256:d3a0b45666d20afadd425be7e96531a01ae50af0551a336b29dcaa74af20e8bd",
             "locator": {
               "end": 137,
@@ -3115,7 +3117,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2f3ce46a32a38d86f474252bb23d8081e91f0a6e",
+            "blob": "353b98ba0c8d4e0b72caee82f9f0a988a1f82768",
             "content": "sha256:d3a0b45666d20afadd425be7e96531a01ae50af0551a336b29dcaa74af20e8bd",
             "locator": {
               "end": 137,
@@ -3129,16 +3131,16 @@
       ]
     },
     "347": {
-      "note": "Manager declarations cover master-scoped three-seat coordination, settings-owned review limits and whole-stage boundaries; these declarations do not prove execution, review, curation or acceptance.",
+      "note": "The Manager coordinates one master and starts leaf stages individually: Worker first, Reviewer at freeze and Curator after code PASS. Review and memory passes keep settings-owned limits and recorded extra-round approval; whole-stage boundaries and correct-input refusal stops remain explicit. These source declarations prove no execution, review result, curation result or acceptance.",
       "targets": [
         {
           "anchor": {
-            "blob": "3c2cfd97c8d64a0cd6245c1b87c6f6bd45457380",
-            "content": "sha256:b329953d646d93a6ed8cb75abc8a49fc1b99b74ae7c98e47c0d8712d45a19817",
+            "blob": "0f539ae53bac7b99b39337ae847c7b4b56b95ccc",
+            "content": "sha256:1d39c69da5517ac9a294590ffb340f16cc35db2e15900869dac77f72def81418",
             "locator": {
-              "end": 30,
+              "end": 14,
               "kind": "line_range",
-              "start": 16
+              "start": 8
             },
             "path": "skills/l-01-agent-lifecycles/roles/manager.md"
           },
@@ -3146,14 +3148,66 @@
         },
         {
           "anchor": {
-            "blob": "3c2cfd97c8d64a0cd6245c1b87c6f6bd45457380",
-            "content": "sha256:0a7dc3e827c8519d3c2f9215a6e24fdc560c6af1230254d2b77eddba8b8e5866",
+            "blob": "0f539ae53bac7b99b39337ae847c7b4b56b95ccc",
+            "content": "sha256:3a4c543dfeb2c31c79b3163901308af73e89e7c7ebaf058905928957b1e97262",
+            "locator": {
+              "end": 32,
+              "kind": "line_range",
+              "start": 24
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/manager.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0f539ae53bac7b99b39337ae847c7b4b56b95ccc",
+            "content": "sha256:9683bec4d77cd0b5fe896204fdf8b51140f31d62b9b31d20964a562584ae396a",
             "locator": {
               "end": 56,
               "kind": "line_range",
-              "start": 50
+              "start": 54
             },
             "path": "skills/l-01-agent-lifecycles/roles/manager.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0f539ae53bac7b99b39337ae847c7b4b56b95ccc",
+            "content": "sha256:5f2b3534187ac1f08da41b8656a816d06a160df7707b25fc271efd47e1b1b6fd",
+            "locator": {
+              "end": 84,
+              "kind": "line_range",
+              "start": 76
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/manager.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "92e293440342d9d75642480f01c9aecaa76669c6",
+            "content": "sha256:4ba1f23fde436c1be9ac873edf12cfdde2aad8c33e278db287be4db874cf7db3",
+            "locator": {
+              "end": 36,
+              "kind": "line_range",
+              "start": 29
+            },
+            "path": "skills/l-01-agent-lifecycles/core/loop.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cae239eb383e7e6a0679cf80d64d182e2d36fc0f",
+            "content": "sha256:1c189faf0b1d3e0279f6255733f4f10450ff3349263ceb77714a34f641f79177",
+            "locator": {
+              "end": 18,
+              "kind": "line_range",
+              "start": 18
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/coordination.md"
           },
           "kind": "code"
         }
@@ -3164,7 +3218,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2f3ce46a32a38d86f474252bb23d8081e91f0a6e",
+            "blob": "353b98ba0c8d4e0b72caee82f9f0a988a1f82768",
             "content": "sha256:d3a0b45666d20afadd425be7e96531a01ae50af0551a336b29dcaa74af20e8bd",
             "locator": {
               "end": 137,
@@ -3182,7 +3236,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2f3ce46a32a38d86f474252bb23d8081e91f0a6e",
+            "blob": "353b98ba0c8d4e0b72caee82f9f0a988a1f82768",
             "content": "sha256:d3a0b45666d20afadd425be7e96531a01ae50af0551a336b29dcaa74af20e8bd",
             "locator": {
               "end": 137,
@@ -3218,7 +3272,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2f3ce46a32a38d86f474252bb23d8081e91f0a6e",
+            "blob": "353b98ba0c8d4e0b72caee82f9f0a988a1f82768",
             "content": "sha256:d3a0b45666d20afadd425be7e96531a01ae50af0551a336b29dcaa74af20e8bd",
             "locator": {
               "end": 137,
@@ -3236,7 +3290,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2f3ce46a32a38d86f474252bb23d8081e91f0a6e",
+            "blob": "353b98ba0c8d4e0b72caee82f9f0a988a1f82768",
             "content": "sha256:d3a0b45666d20afadd425be7e96531a01ae50af0551a336b29dcaa74af20e8bd",
             "locator": {
               "end": 137,
@@ -3250,14 +3304,16 @@
       ]
     },
     "352": {
-      "note": "Canonical Worker and Reviewer boundaries distinguish clean sync from repair evidence.",
+      "note": "After a supported leaf sync with no path changed on both sides, focused tests run again and the Manager closeout preview decides without a new freeze or review round. A shared changed path or failing focused test is repaired and sent once to the same Reviewer. Memory conflict content goes to the Curator; the Manager stages the resolution and the Worker continues the supported sync.",
       "targets": [
         {
           "anchor": {
-            "blob": "9ebdee8141a018420e8edba3c96161db8a2e5297",
-            "content": "sha256:c069dd1880ca2ab39ca3678233e29d41e38f2ee0dff431d89f25d2045d166760",
+            "blob": "218393b48ed815f8108902ef82778bad06accf66",
+            "content": "sha256:b2a6d689000be065bff6caf0c012a28eb5bba120176be1524050cac318db316b",
             "locator": {
-              "kind": "file"
+              "end": 34,
+              "kind": "line_range",
+              "start": 24
             },
             "path": "skills/l-01-agent-lifecycles/operations/implementation.md"
           },
@@ -3406,7 +3462,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "968e68d13a6fe3bc2029e4cef991f90fc172e22c",
+            "blob": "47cce8a3d91019d3f99f61dc10a142cd06ce209e",
             "content": "sha256:ee5c5466394b40ad16cec540b7508c61eda13a424b43bf773db4c3a2d59bab13",
             "locator": {
               "end": 65,
@@ -3493,12 +3549,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ddd77babbaaddf51063d6e23856c0cadd142d461",
+            "blob": "abb3d0e320df1c428284a14d602ec93ad778bdbe",
             "content": "sha256:d54efa326c1d4128e0c15e19ae1c2e3f9fb44b9af2c0cfbcfa5bca0306be0494",
             "locator": {
-              "end": 334,
+              "end": 335,
               "kind": "line_range",
-              "start": 320
+              "start": 321
             },
             "path": "pyproject.toml"
           },
@@ -3514,6 +3570,132 @@
               "start": 83
             },
             "path": "CONTRIBUTING.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "364": {
+      "note": "Development evaluation commands, concrete trial orchestration and attempt accounting have separate responsibilities.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d950d14d90314b8229a636873c196e6114992be8",
+            "content": "sha256:5ed177cc2fcc5cec1aee61e4dd19aff01648bec9d1167bd612441c9df2149b07",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "scripts/agent_evals/run_curator.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "76baa8a7d10eebd94b44b8df971220de4edbf08b",
+            "content": "sha256:eacc2dfaae337d1ae2ad0de8bfd896b1eae9b465df0517ab0dcca8f31647ef52",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "scripts/agent_evals/trials.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3d9dac5508226545350568731334244889727d36",
+            "content": "sha256:c898a0cf2c0a95586154664c0d4dbc2faa54e3fac40fd6bdf4d5391428e4488c",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "scripts/agent_evals/accounting.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "365": {
+      "note": "Current registry policy applies a role-specific capsule ceiling at every stage: Architect 4,631 words; Manager 4,513; Curator, Reviewer and Bootstrap 4,000; other roles 3,700. Budgets remain min(ceil(size_words * 11 / 10), the applicable ceiling). The registry has 38 capsule rows and 28 step-detail rows; step details retain the 2,500-word ceiling. The separately delivered shared digest records size_words 1,000 and budget_words 1,100. These are stored declarations, not a new compilation or test run.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9666326b219ed7dceb72e020d3bc5a57dcda6460",
+            "content": "sha256:a3cd3157ca03a580cb438299414a454b10d06be0c54ca914966c187fd1855eff",
+            "locator": {
+              "end": 4,
+              "kind": "line_range",
+              "start": 2
+            },
+            "path": "skills/l-01-agent-lifecycles/capsule-budgets.json"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9666326b219ed7dceb72e020d3bc5a57dcda6460",
+            "content": "sha256:f511b5a282eda043522e7930cc35a4202201a4a835e4a77ea7f99e86bb5cc71a",
+            "locator": {
+              "end": 307,
+              "kind": "line_range",
+              "start": 40
+            },
+            "path": "skills/l-01-agent-lifecycles/capsule-budgets.json"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9666326b219ed7dceb72e020d3bc5a57dcda6460",
+            "content": "sha256:10a1c97c85b2b5a81e7ef99df73f8cdba9e1641b63f765c59f6c3bdce5158365",
+            "locator": {
+              "end": 3525,
+              "kind": "line_range",
+              "start": 3513
+            },
+            "path": "skills/l-01-agent-lifecycles/capsule-budgets.json"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "366": {
+      "note": "AR's role launcher resolves hierarchy, canonical selection, workspace, capsule and report scope, chooses the agent identity and records launch/reconciliation. Paseo owns the actor, workspace identity and agent execution. Execution receipts do not update task, review, curation or Git truth. Manager-owned `role_start_set` prepares Worker, Reviewer and Curator as sibling leaf seats: Worker opens immediately, Reviewer and Curator are held for their first addressed work, with optional immediate Reviewer work. The leaf resolver refuses multiple live occupants. AR persists held messages and a serving-lifetime loop attempts later delivery without a sender/model turn; permission-held messages retain the named-chat notice and are not resent by the parent. The capsule router launches architect, investigator, orchestrator, manager, worker, reviewer, curator and bootstrap; other manifest entries are not automatically launchable. Past-epoch composition account: A capsule contains the selected role and one operation; `core/` is compiler metadata, not shared injected instructions. Current delivery: The instruction stream still contains the selected role and one operation. The admitted `core/every-role.md` digest is delivered separately in the first message; its revision contributes to capsule semantic identity, without injecting the larger core doctrine into rendered instructions. Missing or unsupported selection fields refuse rather than being inferred from nearby documents.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "353b98ba0c8d4e0b72caee82f9f0a988a1f82768",
+            "content": "sha256:7d9a9de4a29ba19274fa564f3b4a6525e0465f131ce2cb1afadf0aecacefd96e",
+            "locator": {
+              "end": 168,
+              "kind": "line_range",
+              "start": 164
+            },
+            "path": "skills/l-01-agent-lifecycles/composition-manifest.json"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a9ebc25e9f72b32db990eb7c7582f967d6fbd021",
+            "content": "sha256:d11cef6c005f45844f7586e6723416924cdeeed44ed9c89c350f30aa33bc2b50",
+            "locator": {
+              "end": 61,
+              "kind": "line_range",
+              "start": 55
+            },
+            "path": "mcp/src/agents_remember/application/role_capsules/compilation.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a744d8de93cda92f20309cc2f735c24a2bf27ce4",
+            "content": "sha256:9ac522a29bfcca8ff89d6b6eed651afd56910cb742b9c5915a58e0658942b63c",
+            "locator": {
+              "end": 160,
+              "kind": "line_range",
+              "start": 155
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/compiler.py"
           },
           "kind": "code"
         }
@@ -3806,7 +3988,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "07f4fbb59134af0846462f3929091464962f171f",
+            "blob": "f7ea3c8b7f6e2ce1a210dbc43dcc9694cd25721b",
             "content": "sha256:6e18a2ceb104df56df4b5f463662bf5fb6a85a5911185802174cfb4cef8d71eb",
             "locator": {
               "end": 6,
@@ -3820,16 +4002,16 @@
       ]
     },
     "68": {
-      "note": "Retained reference account (no fresh execution or acceptance inferred): The curator role's step for converted memory.",
+      "note": "The Curator marks only its completed curation step done through task_doc; incomplete work is not marked done, and this act changes neither task status nor acceptance or landing. The stage ends when task knowledge is written and checked and quality is clean.",
       "targets": [
         {
           "anchor": {
-            "blob": "c2d38cd0a82b9efe96a765c4512f2242c6a9d3e6",
-            "content": "sha256:8c21419d25cf8e02a39ef2f6c71cd48cdc624ab075e21309dd74f32074a3d15f",
+            "blob": "3ea09011d0657bf89935264047f646078913e415",
+            "content": "sha256:960e4de7810be88ab383d1bdf31c8e24857890cd56cf09949613e0e3c41430b7",
             "locator": {
-              "end": 126,
+              "end": 138,
               "kind": "line_range",
-              "start": 121
+              "start": 129
             },
             "path": "skills/l-01-agent-lifecycles/roles/curator.md"
           },
@@ -3964,12 +4146,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ddd77babbaaddf51063d6e23856c0cadd142d461",
+            "blob": "abb3d0e320df1c428284a14d602ec93ad778bdbe",
             "content": "sha256:a45f05c153d1b724bd7bfe5527b5534499d94b58cd5742e0a22db07b37cb65f7",
             "locator": {
-              "end": 334,
+              "end": 335,
               "kind": "line_range",
-              "start": 333
+              "start": 334
             },
             "path": "pyproject.toml"
           },
@@ -4115,18 +4297,83 @@
       ]
     },
     "86": {
-      "note": "Retained reference account (no fresh execution or acceptance inferred): Dispatch is one transaction with two caller kinds, and a plane refusal never falls back to ambient.",
+      "note": "The launcher and role-start tool share one locked dispatch path for preparation, launch, receipts and same-request reconciliation. The role-start facade accepts an AR-bound caller or a genuinely unbound chat caller; malformed bindings, bound policy violations and other caller refusals return their named refusal rather than switching to the unbound route. The unbound caller has no parent and cannot replace a seat holder.",
       "targets": [
         {
           "anchor": {
-            "blob": "c43823ed0215be2bd0ae9e12b8f7c961f5f8fcbb",
-            "content": "sha256:768db8d79ee5304caea996b8f2476069397bd64f6ebef0cc2d2a03c3e19be2fe",
+            "blob": "fff08e3cef4891f6ea1d05fe4327f6794782a099",
+            "content": "sha256:98d9277fc1f3e8c64e25de8d68ad12279aec17278b2e24a927e58475f7be5198",
             "locator": {
-              "end": 77,
+              "end": 64,
               "kind": "line_range",
-              "start": 51
+              "start": 42
             },
             "path": "skills/l-01-agent-lifecycles/core/authority.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "374d6d9650fe069cc8eb9ad69a39e036c1edfa82",
+            "content": "sha256:e7268b9f4c5403a6a21dbbab92cdcb9c1b618744aa3bb35686d800f61282bbf1",
+            "locator": {
+              "end": 249,
+              "kind": "line_range",
+              "start": 213
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_role_start.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "374d6d9650fe069cc8eb9ad69a39e036c1edfa82",
+            "content": "sha256:fdfabe9aeeafc86f1e349dab1e6e2ad832f1860b144a923121c92e8fc45d0009",
+            "locator": {
+              "end": 329,
+              "kind": "line_range",
+              "start": 252
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_role_start.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fa7edd155c1b68898b05d219f757fec23ddf56b6",
+            "content": "sha256:7a2998b8a51aa687f2dd434bad08d920d5b891c756400a798a9f519dfc01ce7f",
+            "locator": {
+              "end": 42,
+              "kind": "line_range",
+              "start": 32
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_role_caller.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fa7edd155c1b68898b05d219f757fec23ddf56b6",
+            "content": "sha256:7d1e77434f1ece959cd8f20db179a9a3f78d0a06c010410e11bbf2635a3c8323",
+            "locator": {
+              "end": 132,
+              "kind": "line_range",
+              "start": 122
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_role_caller.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b7d5bcb01c2f0a57fc52879d47e6af720a1e8db3",
+            "content": "sha256:7928e80a269ad98095e1ab1f7a6085424da6acfb557dc9969c3f5f15ec78cbbb",
+            "locator": {
+              "end": 301,
+              "kind": "line_range",
+              "start": 262
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_routes.py"
           },
           "kind": "code"
         }
@@ -4318,14 +4565,16 @@
       ]
     },
     "98": {
-      "note": "Retained reference account (no fresh execution or acceptance inferred): The task tool refuses to author a light document.\n\nAnchor: `_build_doc`",
+      "note": "In task_doc construction, _build_doc refuses kind=\"light\" with a TaskDocError directing the caller to a master or subTask; when kind is omitted, a leaf contract selects subTask and otherwise the default is master.",
       "targets": [
         {
           "anchor": {
-            "blob": "f174a79f72375a38aa57f50907312424f3fc2c3c",
-            "content": "sha256:4639ac7fede07fbf8fd4a606e94345d3e15fdc3bc40ee0f57fba307bccd95505",
+            "blob": "d0b8e6fa2c415dec4821469774f9dc8f0bcccb63",
+            "content": "sha256:ac79289be96ec4ae39eb257c5d7f746466b05dc237ddb41377085cffaca6b20e",
             "locator": {
-              "kind": "file"
+              "end": 838,
+              "kind": "line_range",
+              "start": 821
             },
             "path": "mcp/src/agents_remember/application/task_docs/task_doc_tools.py"
           },

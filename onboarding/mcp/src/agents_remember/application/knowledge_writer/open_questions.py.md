@@ -89,7 +89,7 @@ No configured live documentation source was available for this pass.
 - The strict leaf-document lookup it reuses (L11). [6]
 
 
-- The task owner's tool entry point. [7]
+- The task owner's tool entry point.
 
 
 - A real `task_doc` append that keeps the earlier question, re-renders, is idempotent and refuses a missing leaf. [8]
@@ -102,3 +102,5 @@ repositories; this module reaches it only through `task_doc`.
 
 
 - The edit is addressed by repository, contract path and slug. [9]
+
+- The task owner's tool entry point. Anchor: `task_doc_tool` [7]

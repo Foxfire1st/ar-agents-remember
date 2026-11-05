@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "74a051a27a76bfa2d21ab404b581911d5e391701",
+        "blob": "cf8666eec9cf0c9f0b803c0b7eff39be4718f9d8",
         "content": "sha256:5c15a1060d7db02ad50b4abcf1d25bfad79af84f205c9b577853cce254de643a",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "74a051a27a76bfa2d21ab404b581911d5e391701",
+        "blob": "cf8666eec9cf0c9f0b803c0b7eff39be4718f9d8",
         "content": "sha256:063c8695dc795bbad5e8779d073b6d4b23e0760cc8bbdf3eb751a799709cdc8b",
         "locator": {
           "kind": "symbol",
@@ -37,7 +37,7 @@
     },
     {
       "anchor": {
-        "blob": "74a051a27a76bfa2d21ab404b581911d5e391701",
+        "blob": "cf8666eec9cf0c9f0b803c0b7eff39be4718f9d8",
         "content": "sha256:e0f1cb203b018a760be7900c53cfa9d1c7e7169373135b21239c125573a96df2",
         "locator": {
           "kind": "symbol",
@@ -56,7 +56,26 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "74a051a27a76bfa2d21ab404b581911d5e391701",
+        "blob": "cf8666eec9cf0c9f0b803c0b7eff39be4718f9d8",
+        "content": "sha256:4e22ae6713630729385f1191d87540ab092448296376fe6323eaef27e762ccce",
+        "locator": {
+          "end": 722,
+          "kind": "line_range",
+          "start": 686
+        }
+      },
+      "id": "RLZ-1PRTFZ",
+      "invariant": "INV-ZNJ14G",
+      "origin": {
+        "handoffEntry": "L62-CUR-6db-attach-INV-ZNJ14G",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "Route-specific Worker and implementation source checks preserve Manager start notice, direct Reviewer delivery and exact-object handover content.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "cf8666eec9cf0c9f0b803c0b7eff39be4718f9d8",
         "content": "sha256:5ab4ab9a064cc24839c0886fef84aeef6ee17f03ca54927b8d1187a9aa3d6b18",
         "locator": {
           "kind": "symbol",
@@ -71,18 +90,37 @@
       },
       "rationale": "The tuple declares expected vocabulary speakers; the independent corpus census detects both undeclared speakers and declared surfaces that became silent. The raw Curator role is not a speaker, while the curation operation retains its owed terminal-only reading. The roster does not exempt unlisted files from the whole-corpus contradiction sweep.",
       "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "cf8666eec9cf0c9f0b803c0b7eff39be4718f9d8",
+        "content": "sha256:8553c53e1da3960d4320adf19fcb1fa209fc3f5957f6ba5d99a1b49c1151269a",
+        "locator": {
+          "end": 740,
+          "kind": "line_range",
+          "start": 725
+        }
+      },
+      "id": "RLZ-TM9N6T",
+      "invariant": "INV-ZNJ14G",
+      "origin": {
+        "handoffEntry": "L62-CUR-6db-attach-INV-ZNJ14G",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "The route helper checks each Worker/operation handover clause and removes each clause in a mutant to ensure direct-route omissions fail.",
+      "role": "enforcement"
     }
   ],
   "references": {
     "1": {
-      "note": "The common home owns terminal-only truth, recipient validation and the separate acceptance authority.",
+      "note": "The shared acceptance home distinguishes mechanical turn-end truth from artifact validity, requires the structurally current owner to validate before advancing state, and keeps recipient checks for direct peer handovers separate from Manager gate acceptance.",
       "targets": [
         {
           "anchor": {
-            "blob": "2a112bdb1148478a8a719636588cb908fab01cac",
-            "content": "sha256:5f751456b63f2e6f3938c662f9154b87dc851fd198fbe5b1db8c8940c9b355b6",
+            "blob": "47288b84fc830870de597a9ba3aa5f895d99fdcb",
+            "content": "sha256:7dda9e47e660291c4ce3e7d7cd45a3a9e093221ce2d67611c751b61665eb9289",
             "locator": {
-              "end": 25,
+              "end": 26,
               "kind": "line_range",
               "start": 3
             },
@@ -97,7 +135,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "74a051a27a76bfa2d21ab404b581911d5e391701",
+            "blob": "cf8666eec9cf0c9f0b803c0b7eff39be4718f9d8",
             "content": "sha256:5ab4ab9a064cc24839c0886fef84aeef6ee17f03ca54927b8d1187a9aa3d6b18",
             "locator": {
               "kind": "symbol",
@@ -108,7 +146,7 @@
         },
         {
           "anchor": {
-            "blob": "74a051a27a76bfa2d21ab404b581911d5e391701",
+            "blob": "cf8666eec9cf0c9f0b803c0b7eff39be4718f9d8",
             "content": "sha256:53e5f76153d8946cde38f784d15496fae2efc137f8f64c56c1ef1705878e9306",
             "locator": {
               "kind": "symbol",
@@ -120,36 +158,28 @@
       ]
     },
     "3": {
-      "note": "The per-surface owed clauses, and the relay-mechanics surfaces the corpus still names.\n\nAnchor: `OWED_STATEMENTS` `RELAY_MECHANICS_SURFACES`",
+      "note": "OWED_STATEMENTS declares each named surface’s required boundary clauses. RELAY_MECHANICS_SURFACES names the retained turn-report template; it is separate from the completion-truth roster and the mechanical-only reading vocabulary.",
       "targets": [
         {
           "anchor": {
-            "blob": "74a051a27a76bfa2d21ab404b581911d5e391701",
-            "content": "sha256:aa48fe416b66858a80f0e78f0780efcad0ed9caa4b6123f32b4a29ba4f1a2ead",
+            "blob": "cf8666eec9cf0c9f0b803c0b7eff39be4718f9d8",
+            "content": "sha256:c6842cef218eb3d61aaada498ea346911aa724af25ba6e3c72d073bfb2b8a700",
             "locator": {
-              "kind": "file"
+              "end": 126,
+              "kind": "line_range",
+              "start": 101
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "74a051a27a76bfa2d21ab404b581911d5e391701",
-            "content": "sha256:fac708389f4be2411d00eed64bafb5eb9308c15e9062f27e0bb70e64e2d23a41",
+            "blob": "cf8666eec9cf0c9f0b803c0b7eff39be4718f9d8",
+            "content": "sha256:6e8db2d846da25081a2ae87d921a60b76adfc47b7d8fe0b18dc9ebe90d511dbe",
             "locator": {
-              "kind": "symbol",
-              "name": "OWED_STATEMENTS"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "74a051a27a76bfa2d21ab404b581911d5e391701",
-            "content": "sha256:9bbbb0e799c59d6f98178260cfd077b24c68e7f807b90e9aa65b8c79eebc35d5",
-            "locator": {
-              "kind": "symbol",
-              "name": "RELAY_MECHANICS_SURFACES"
+              "end": 498,
+              "kind": "line_range",
+              "start": 460
             }
           },
           "kind": "test"
@@ -157,48 +187,40 @@
       ]
     },
     "4": {
-      "note": "The whole-corpus contradiction sweep and three-state classifier retain the declared retired-claim vocabulary and explicit-denial handling.\n\nAnchor: `RETIRED_CLAIMS`, `contradictions`, `_reading_is_denied_in_place`, `classify_reading`",
+      "note": "The detector scans promise views for the declared RETIRED_CLAIMS and classifies each text as stated, absent or contradicted. Contradictions take priority over a matching mechanical-only phrase, and an in-place denial does not count as a positive statement.",
       "targets": [
         {
           "anchor": {
-            "blob": "74a051a27a76bfa2d21ab404b581911d5e391701",
-            "content": "sha256:028391563038f60f7658a909b0618282034a74303d094f3d3a05977447f4f9f5",
+            "blob": "cf8666eec9cf0c9f0b803c0b7eff39be4718f9d8",
+            "content": "sha256:31727a13a63633cb54db7b99d6f94f35466f5fef9525453282a9d4ed7be8ce89",
             "locator": {
-              "kind": "symbol",
-              "name": "RETIRED_CLAIMS"
+              "end": 458,
+              "kind": "line_range",
+              "start": 375
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "74a051a27a76bfa2d21ab404b581911d5e391701",
-            "content": "sha256:dbca338b49f766c17a34ee9bb9f918062314cc1e4148ed7d634e123c6f63425b",
+            "blob": "cf8666eec9cf0c9f0b803c0b7eff39be4718f9d8",
+            "content": "sha256:f1749f701752accbc042e1e783409ab7b99cac27c56412d0b606e8afc89494df",
             "locator": {
-              "kind": "symbol",
-              "name": "contradictions"
+              "end": 566,
+              "kind": "line_range",
+              "start": 501
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "74a051a27a76bfa2d21ab404b581911d5e391701",
-            "content": "sha256:edb78bdc1a080604b6e8cd81ee248127191058b301c3a5442ccf41b7297ca5a1",
+            "blob": "cf8666eec9cf0c9f0b803c0b7eff39be4718f9d8",
+            "content": "sha256:dd53cf2d0734cc2f21cb42e07c7c269b29f5ba49fc16f563539d536d2573b39e",
             "locator": {
-              "kind": "symbol",
-              "name": "_reading_is_denied_in_place"
-            }
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "74a051a27a76bfa2d21ab404b581911d5e391701",
-            "content": "sha256:ae874c7ac9d61bf0e511e34073776e69d79a8f2449c74178fc3352ec49b83297",
-            "locator": {
-              "kind": "symbol",
-              "name": "classify_reading"
+              "end": 209,
+              "kind": "line_range",
+              "start": 169
             }
           },
           "kind": "test"
@@ -206,37 +228,40 @@
       ]
     },
     "5": {
-      "note": "Silence/contradiction controls, detector teeth and declared limits distinguish equivalent turn-end-only wording from acceptance; the compact and expanded state-plus-acceptance controls remain.\n\nAnchor: `SilenceIsNotContradictionTests`, `DetectorTeethTests`, `DeclaredLimitsTests`",
+      "note": "The silence controls distinguish stated, absent and contradicted readings, including compact and expanded turn-end wording, split acceptance claims and in-place denial. Detector controls retain per-claim samples and whole-tree census; the declared-limit case pins the detector’s proximity-based misreading of another agent’s acceptance inside its window.",
       "targets": [
         {
           "anchor": {
-            "blob": "74a051a27a76bfa2d21ab404b581911d5e391701",
+            "blob": "cf8666eec9cf0c9f0b803c0b7eff39be4718f9d8",
             "content": "sha256:ba9232c7c2fb971d0bdf45c0c1f28e9e8d97f79e18746f40609282d091c40682",
             "locator": {
-              "kind": "symbol",
-              "name": "SilenceIsNotContradictionTests"
+              "end": 1053,
+              "kind": "line_range",
+              "start": 907
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "74a051a27a76bfa2d21ab404b581911d5e391701",
-            "content": "sha256:37e187cb99bf9dac347b9cb19bbe30e1cce2a79ba47c819207ee96217137bd71",
+            "blob": "cf8666eec9cf0c9f0b803c0b7eff39be4718f9d8",
+            "content": "sha256:904c8715b7dd7d352fbe6c4ddbe572e1571ba2e607b8a77b83adfcfed31402aa",
             "locator": {
-              "kind": "symbol",
-              "name": "DetectorTeethTests"
+              "end": 1139,
+              "kind": "line_range",
+              "start": 1056
             }
           },
           "kind": "test"
         },
         {
           "anchor": {
-            "blob": "74a051a27a76bfa2d21ab404b581911d5e391701",
+            "blob": "cf8666eec9cf0c9f0b803c0b7eff39be4718f9d8",
             "content": "sha256:d71edfb2ebe126f7c502b46929fbc270f2109b5801a4aa565ce9acac6f925d2a",
             "locator": {
-              "kind": "symbol",
-              "name": "DeclaredLimitsTests"
+              "end": 1173,
+              "kind": "line_range",
+              "start": 1142
             }
           },
           "kind": "test"
@@ -254,6 +279,47 @@
               "kind": "file"
             },
             "path": "mcp/tests/test_sync_scripts.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "The relay detector requires an attributed relay action rather than mere co-occurrence of sweep, open and packet words; active and passive artifact-inspection examples still fail. Worker handoff checks bind Manager-first Reviewer creation and subsequent direct frozen-object delivery to their real sections, with per-clause deletion controls. These are source assertions/support behavior, not a fresh invocation, host result or AR acceptance.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cf8666eec9cf0c9f0b803c0b7eff39be4718f9d8",
+            "content": "sha256:1b20316afe45f6920e167f54a81a5af3e589fd2dc74c57b551aa8b2f68acb90f",
+            "locator": {
+              "end": 391,
+              "kind": "line_range",
+              "start": 378
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "cf8666eec9cf0c9f0b803c0b7eff39be4718f9d8",
+            "content": "sha256:e93453fc97a7b79f0deada5731d091431fcd28cd6278a8dc0055c9a5181e9e64",
+            "locator": {
+              "end": 746,
+              "kind": "line_range",
+              "start": 685
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "cf8666eec9cf0c9f0b803c0b7eff39be4718f9d8",
+            "content": "sha256:a59f9ae087ffc29c59fef2194da15fa1a7bd55ab573e1061355766328dfa86c7",
+            "locator": {
+              "end": 1075,
+              "kind": "line_range",
+              "start": 1059
+            }
           },
           "kind": "test"
         }

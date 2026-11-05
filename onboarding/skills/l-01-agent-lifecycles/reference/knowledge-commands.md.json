@@ -1,0 +1,78 @@
+{
+  "path": "skills/l-01-agent-lifecycles/reference/knowledge-commands.md",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "0dd9f8eaf50d4cf0c5249613c41e6822d578cdce",
+        "content": "sha256:a7dadbed5632d13ba2acab5e6d2f8d7ffa065cdba1089a84b08de6adff4358a4",
+        "locator": {
+          "end": 18,
+          "kind": "line_range",
+          "start": 11
+        }
+      },
+      "id": "RLZ-BV2C0H",
+      "invariant": "INV-945YZ4",
+      "origin": {
+        "handoffEntry": "L62-CUR-6db-attach-INV-945YZ4",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "The new command reference supplies exact public names, effects, callers/examples and supporting tool boundaries. Its interpreter/stamp paragraph supports the serving-writer binding; the rest is command documentation, including existing capabilities that grant no Bootstrap or other role new authority by their presence. Candidate-shape checks do not prove fired links or semantic acceptance.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The reference preserves task authority and the admitted serving-build command binding.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0dd9f8eaf50d4cf0c5249613c41e6822d578cdce",
+            "content": "sha256:ea549ca0271a32995dccbdf5bea8df3b7b7b8a9cd7de921711acd6938ce7438b",
+            "locator": {
+              "end": 18,
+              "kind": "line_range",
+              "start": 3
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The CLI and MCP tables identify effects, callers, examples and supporting tool boundaries.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0dd9f8eaf50d4cf0c5249613c41e6822d578cdce",
+            "content": "sha256:48a0683ceb51232e28576ed3d72184542a3ca9ed6be194127c9427816d015811",
+            "locator": {
+              "end": 105,
+              "kind": "line_range",
+              "start": 20
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Producer checking resolves the named frozen tree and leaves writer judgment and publication separate.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0dd9f8eaf50d4cf0c5249613c41e6822d578cdce",
+            "content": "sha256:a4d800411fc98c46cc4b9b16c866ea470a91cbf1ab7d10446afd57afd921f95a",
+            "locator": {
+              "end": 143,
+              "kind": "line_range",
+              "start": 112
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

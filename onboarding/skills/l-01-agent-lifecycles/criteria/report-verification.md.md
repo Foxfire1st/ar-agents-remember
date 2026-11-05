@@ -12,7 +12,7 @@ Canonical report-verification catalog for an assigned adversarial review and for
 
 ### Logic And Boundaries
 
-The standing criteria are RV-1, RV-2, RV-4 and RV-5; RV-3 remains a candidate. RV-1 opens the artifact behind each claim and forbids sampling the load-bearing ones. A complete-tree claim checks content and mode rows in the same filesystem view, including executable-bit changes that content-only diffs miss.
+**Historical source account, superseded by the current clause below:** The standing criteria are RV-1, RV-2, RV-4 and RV-5; RV-3 remains a candidate. RV-1 opens the artifact behind each claim and forbids sampling the load-bearing ones. A complete-tree claim checks content and mode rows in the same filesystem view, including executable-bit changes that content-only diffs miss. [Historical source custody: `skills/l-01-agent-lifecycles/criteria/report-verification.md` blob `5c75e9ce27286f2452a9bf06200dc7cf73a16f11` at code base `59b01fb8f72a38d2d27f9c37b8b9ca2513fd3fa0`; no current standing-list census is inferred.]
 
 The same complete-tree claim covers every nonignored untracked path using NUL-delimited or equivalently path-safe enumeration. Inspection is no-follow: record type, numeric mode, executable significance and intention; regular files get size and bounded escaped text or a binary/sensitive classification with hash; symlinks get link text without dereference; directories and special objects need an explicit disposition. Races or inaccessible objects are disclosed and a consistent view is re-established, never silently skipped. This is semantic evidence work, not another verifier or authority to dump sensitive bytes.
 
@@ -80,8 +80,9 @@ The quotations below preserve the earlier packaged card’s account. They are hi
 > carried mode-only changes (100755→100644, incl. `.githooks/pre-commit`) absent from the worker's
 > file list.
 
-## Evidence
+RV-6 is standing by requirement beside RV-1, RV-2, RV-4 and RV-5; RV-3 remains a candidate. RV-6 checks what a claimed complete or gate run included and omitted, requires the same message/subtest cause on the base before a failure is called pre-existing, and permits carried evidence only when the files it exercises remain byte-identical to the earlier run.
 
+## Evidence
 The rows cite canonical source text and narrowly relevant neighbor definitions. A historical example or declared check remains distinct from a check result. The packaged source is a propagation twin, not an independent authority.
 
 - The canonical catalog owns report-verification doctrine rather than the generated bundle. [1]
@@ -93,3 +94,5 @@ The rows cite canonical source text and narrowly relevant neighbor definitions. 
 - RV-2 enumerates sibling classes; RV-4 records load-bearing disclosures in the decision log. [7]
 - RV-5 proves the resolved invocation source and contract rather than trusting nominally canonical commands. [8]
 - RV-3 remains a candidate; baseline exploration and promotion do not expand sealed fix-verification. [9]
+
+- RV-6 is standing by requirement beside RV-1, RV-2, RV-4 and RV-5; RV-3 remains a candidate. RV-6 checks what a claimed complete or gate run included and omitted, requires the same message/subtest cause on the base before a failure is called pre-existing, and permits carried evidence only when the files it exercises remain byte-identical to the earlier run. [10]

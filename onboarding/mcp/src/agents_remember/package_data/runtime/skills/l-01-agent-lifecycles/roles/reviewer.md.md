@@ -46,7 +46,7 @@ The whole requirement verdict, findings and coverage ends this independent stage
 This account controls the named changed seams; contradictory earlier card wording below is retained only as historical evidence. Unchanged role duties and R117 file-only wake/report transport are preserved. Source inspection supplies no new runtime test, CODE verdict, review counter or acceptance.
 
 
-- The whole requirement verdict, findings and coverage ends this independent stage. Reviewer records ordinary begin/result within the actual review-state settings limit; Manager records architect/developer authorization beyond it. A record-only check preserves the last round only on byte-identical candidate with all candidate findings closed. A finding states the broken required property; a case is its proof, not a replacement finding or automatic new round. MEMORY stays a separate sealed lane. [32]
+- The whole requirement verdict, findings and coverage ends this independent stage. Reviewer records ordinary begin/result within the actual review-state settings limit; Manager records architect/developer authorization beyond it. A record-only check preserves the last round only on byte-identical candidate with all candidate findings closed. A finding states the broken required property; a case is its proof, not a replacement finding or automatic new round. MEMORY stays a separate sealed lane.
 
 
 
@@ -200,13 +200,13 @@ Agent-authored temporary files, experiments and working copies live only in the 
 ### Repo-Internal References
 
 
-> Retained earlier citation wording: - Bound explicit review intake and parent/dashboard transport. [26]
+> Retained earlier citation wording: - Bound explicit review intake and parent/dashboard transport.
 
 
-- Complete diff, required evidence, standing criteria, exact attempts and sealed findings. [27]
+- Complete diff, required evidence, standing criteria, exact attempts and sealed findings.
 
 
-- Permitted read surface, role/recording prohibitions and retained seam duties. [28]
+- Permitted read surface, role/recording prohibitions and retained seam duties.
 
 
 > Retained earlier citation wording: - Reviewer leaf communications use role_message on agents-remember-task with the handover's sibling role and exact leaf task references; product-supplied IDs remain whole and unchanged. [29]
@@ -255,7 +255,7 @@ Agent-authored temporary files, experiments and working copies live only in the 
 
 - The verdict artifact and terminal/finalizer truth are the completion signal; the reviewer does not author a duplicate completion row. [21]
 
-- The permitted review surface is read-only retrieval and scoped checks, report/journal artifacts, bound leaf messages, and ordinary review-round begin/result recording. [22]
+- The permitted review surface is read-only retrieval and scoped checks, report/journal artifacts, bound leaf messages, and ordinary review-round begin/result recording.
 
 
 - The role presents Inputs, Process and Outputs in order. Its operator-knob passage is a prohibition on setting harness, model, effort and serviceTier, not a launch-default block. [23]
@@ -313,7 +313,7 @@ a malformed handed-off attempt requires independent rejection before successor h
 ## Current Contract Evidence
 
 
-- Current stage boundaries, settings-owned review budget and recorded approval duties are carried by these instruction sources. Messages wake and complete payloads travel as files; retained operator knobs are harness, model, effort and serviceTier. [31]
+- Current stage boundaries, settings-owned review budget and recorded approval duties are carried by these instruction sources. Messages wake and complete payloads travel as files; retained operator knobs are harness, model, effort and serviceTier.
 
 
 </details>
@@ -321,10 +321,17 @@ a malformed handed-off attempt requires independent rejection before successor h
 
 > Retained earlier citation wording: - Reviewer opens supplied canonical file locations; independent authority and no-alternate-server/read-scope boundaries remain. [34]
 
-- Bound explicit review intake and parent/dashboard transport. [26]
+- Bound explicit review intake and parent/dashboard transport.
 
 
 - Reviewer leaf communications use role_message on agents-remember-task with the handover's sibling role and exact leaf task references; product-supplied IDs remain whole and unchanged. [29]
 
 
 - Reviewer opens supplied canonical file locations; independent authority and no-alternate-server/read-scope boundaries remain. [34]
+
+- The permitted review surface is read-only retrieval and scoped checks, report/journal artifacts, bound leaf messages, and ordinary review-round begin/result recording. [22]
+- Bound explicit review intake and parent/dashboard transport. [26]
+- Complete diff, required evidence, standing criteria, exact attempts and sealed findings. [27]
+- Permitted read surface, role/recording prohibitions and retained seam duties. [28]
+- Current stage boundaries, settings-owned review budget and recorded approval duties are carried by these instruction sources. Messages wake and complete payloads travel as files; retained operator knobs are harness, model, effort and serviceTier. [31]
+- The whole requirement verdict, findings and coverage ends this independent stage. Reviewer records ordinary begin/result within the actual review-state settings limit; Manager records architect/developer authorization beyond it. A record-only check preserves the last round only on byte-identical candidate with all candidate findings closed. A finding states the broken required property; a case is its proof, not a replacement finding or automatic new round. MEMORY stays a separate sealed lane. [32]

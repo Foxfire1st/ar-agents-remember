@@ -155,16 +155,16 @@ No Domain Documentation source is configured for this memory root.
 When approved, the strategist is spawned by the architect and hands its plan back for ruling and
 adoption.
 
-- Canonical source this bundle copy is sync-propagated from. [1]
+- Canonical source this bundle copy is sync-propagated from.
 - The role declares the readable order — Inputs, Process, Outputs — with no inherited-sources line and no operator-knob block. [2]
 
 - The reader-not-mutator boundary the role must preserve. [3]
 
 
-- The strategist names no sibling role file at all: the corpus test's sanctioned-sibling map has entries for the architect and the orchestrator only. [4]
+- The strategist names no sibling role file at all: the corpus test's sanctioned-sibling map has entries for the architect and the orchestrator only.
 
 
-- The orchestrator coordinates one selected sprint through role agents and task owners; the same complete orchestration task after a sanctioned strategist skip is stated in the orchestration-task template. [6]
+- The orchestrator coordinates one selected sprint through role agents and task owners; the same complete orchestration task after a sanctioned strategist skip is stated in the orchestration-task template.
 
 
 - The deliverable's template separates mandatory planning from optional persisted graph structure and defines complete graph bootstrap. [7]
@@ -235,6 +235,11 @@ A successor strategy review now carries the sealed issue list, fixed/unfixed dis
 ## Current Contract Evidence
 
 
-- Current stage boundaries, settings-owned review budget and recorded approval duties are carried by these instruction sources. [9]
+- Current stage boundaries, settings-owned review budget and recorded approval duties are carried by these instruction sources.
 
 - The composition manifest retains a `strategist` entry, but the thin router’s supported eight-role launch set excludes it; loop doctrine retains its single home in `core/loop.md`.  Historical source caption: "Anchor: `## The Role Registry`; `# Core — The Three-Party Loop (one home — this file owns the loop doctrine)`" [13]
+
+- Canonical source this bundle copy is sync-propagated from. Anchor: `# Strategist` [1]
+- The strategist names no sibling role file at all: the corpus test's sanctioned-sibling map has entries for the architect and the orchestrator only. [4]
+- The orchestrator coordinates one selected sprint through role agents and task owners; the same complete orchestration task after a sanctioned strategist skip is stated in the orchestration-task template. [6]
+- Strategist drawing-board successors retain the sealed outstanding set; ordinary rounds use the settings limit, extra rounds need recorded approval, and the Architect rules the plan before adoption. [9]

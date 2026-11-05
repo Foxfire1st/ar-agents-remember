@@ -13,6 +13,8 @@ Messages are short wake-ups naming work and files; report/verdict/evidence conte
 
 The canonical role contract for one scoped investigation.
 
+The Investigator reports what is and what is not, with evidence for each. It states no requirement, ruling or duty of its own; a needed change is an open question for the parent, not a fix to apply.
+
 ## Code Commentary
 
 The concern may be a provider/system problem, source route, stalled check, procedure, comparison or command cost. Parent-started concern arrives in the actual parent’s first role_message; missing concern or scope is asked of that parent. A parentless launch uses the developer request without inventing repository, task or parent identity. Allowed selections are Projects, sprint or sprint/master; a leaf is named inside the concern and never selected as this role’s start altitude.
@@ -22,4 +24,29 @@ Reading needed source, memory, tasks, reports, logs and provider state and check
 ## Evidence
 
 
-- The source owns the documented investigation, identity or request boundary. [1]
+- The source owns the documented investigation, identity or request boundary.
+
+Earlier caption detached from live reference 1: its original target declared the source text at `skills/l-01-agent-lifecycles/roles/investigator.md` at original blob `eb63dbc815a05912a902009f108793bae70c64e7`, lines 8–26; `skills/l-01-agent-lifecycles/roles/investigator.md` at original blob `eb63dbc815a05912a902009f108793bae70c64e7`, lines 34–34. The caption above is retained as prose; the numbered clause below describes the current source.
+
+Retained authoring-row wording:
+
+Finding: Investigator has Projects, sprint or sprint/master scope, never a leaf launch; it investigates one scoped concern, distinguishes facts from hypotheses, names code/memory owners and changes no code, memory or task state.
+
+Anchor: `current role or template contract`
+
+Source: skills/l-01-agent-lifecycles/roles/investigator.md:8-10; skills/l-01-agent-lifecycles/roles/investigator.md:16-30; skills/l-01-agent-lifecycles/roles/investigator.md:36-36
+
+- The Investigator reports what is and what is not, with evidence for each. It states no requirement, ruling or duty of its own; a needed change is an open question for the parent, not a fix to apply.
+
+Earlier caption detached from live reference 2: its original target declared the source text at `skills/l-01-agent-lifecycles/roles/investigator.md` at original blob `eb63dbc815a05912a902009f108793bae70c64e7`, lines 18–22. The caption above is retained as prose; the numbered clause below describes the current source.
+
+Retained authoring-row wording:
+
+Finding: Investigator reports what is and what is not with evidence, states no requirement, ruling or duty of its own, and names a needed change as an open question for its parent rather than a fix to apply.
+
+Anchor: `current role or template contract`
+
+Source: skills/l-01-agent-lifecycles/roles/investigator.md:26-28
+
+- Investigator has Projects, sprint or sprint/master scope, never a leaf launch; it investigates one scoped concern, distinguishes facts from hypotheses, names code/memory owners and changes no code, memory or task state. [1]
+- Investigator reports what is and what is not with evidence, states no requirement, ruling or duty of its own, and names a needed change as an open question for its parent rather than a fix to apply. [2]

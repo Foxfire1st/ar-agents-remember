@@ -76,6 +76,12 @@ CapsuleDetailReference is a frozen slotted value holding source_path, revision, 
 
 This account is bound to the candidate source, not a claim of a running serving build or a fresh execution/acceptance verdict. Existing historical accounts remain historical.
 
+## Current source contract
+
+CapsuleCapsule additionally carries a default-empty tuple of CapsuleContractMarker values. These source-addressed endpoints are separate from rendered instruction blocks and detail bodies; the contract parser validates them during compilation. This field alone grants no delivery or write authority.
+
+- Adds default-empty contract_markers tuple on capsule result. [11]
+
 ## Evidence
 
 
@@ -84,7 +90,13 @@ This account is bound to the candidate source, not a claim of a running serving 
 - Replay validates regular opened files and frozen revisions at deterministic detail names beside the saved handover in its recorded canonical folder, not mutable corpus sources. [8]
 
 - Per-request detail artifacts use exact admitted bytes beside the handover and write-once publication. [9]
-- File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence. [10]
+Retained authoring-row wording:
+
+Finding: File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence.
+
+Anchor:
+
+Source: mcp/src/agents_remember/models/role_capsules/types.py:452-504
 
 ### Docs References
 
@@ -100,10 +112,22 @@ No relevant documentation found after checking live sources.
 
 - The stable refusal codes a binding or selection defect resolves to. [2]
 
-- The pure compiler that consumes these shapes and produces the sealed result. [3]
+Retained authoring-row wording:
+
+Finding: The pure compiler that consumes these shapes and produces the sealed result.
+
+Anchor:
+
+Source: mcp/src/agents_remember/models/role_capsules/compiler.py:99-189; mcp/src/agents_remember/models/role_capsules/compiler.py:92-156; mcp/src/agents_remember/models/role_capsules/compiler.py
 
 - The diagnostic half of the contract, kept structurally out of the digest. [4]
-- The application boundary that does the I/O this module refuses to do. [5]
+Retained authoring-row wording:
+
+Finding: The application boundary that does the I/O this module refuses to do.
+
+Anchor:
+
+Source: mcp/src/agents_remember/application/role_capsules/compilation.py:93-134; mcp/src/agents_remember/application/role_capsules/sources.py:78-92; mcp/src/agents_remember/application/role_capsules/sources.py:68-89
 - Compound identity, digest and order properties are pinned by executable cases. [6]
 
 ### Cross-Repo References
@@ -113,3 +137,7 @@ master studied is eve's dynamic resolver, which is a design input to CAPS-R02 ra
 runtime boundary of this module; no eve code is imported here.
 
 No meaningful cross-repo references found.
+
+- The pure compiler that consumes these shapes and produces the sealed result. [3]
+- The application boundary that does the I/O this module refuses to do. [5]
+- File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence. [10]

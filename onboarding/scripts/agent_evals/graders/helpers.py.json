@@ -1,0 +1,40 @@
+{
+  "path": "scripts/agent_evals/graders/helpers.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "0ab5edfb216f9a764624710e9c346afa0c124294",
+        "content": "sha256:9311e6def8af3d12926de74bcfb4bf12f1c66c6d0621b6202cc8b9d2087447b0",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-53TP5T",
+      "invariant": "INV-5JEVAZ",
+      "origin": {
+        "handoffEntry": "L62-fd6462b8-helper-boundary",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "It grades HW1 from native helper states, scoped turn ends and actual wait-check delivery.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The source defines this file's responsibility and the boundaries described here.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0ab5edfb216f9a764624710e9c346afa0c124294",
+            "content": "sha256:9311e6def8af3d12926de74bcfb4bf12f1c66c6d0621b6202cc8b9d2087447b0",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

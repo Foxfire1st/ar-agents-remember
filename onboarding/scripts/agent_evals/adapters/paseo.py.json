@@ -1,0 +1,40 @@
+{
+  "path": "scripts/agent_evals/adapters/paseo.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "fb8da28ffc5c1aea719de1f557f1a312ba913359",
+        "content": "sha256:36a192b9f10ea5a6e2e6aa1341bf5614daaa9917e078ca3f113ecae5ea4b5975",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-F6BM3M",
+      "invariant": "INV-QFMMYM",
+      "origin": {
+        "handoffEntry": "L62-fd6462b8-native-launch",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "It uses the existing Paseo bridge for create/prompt/wait and names actor deadline or bridge failures.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The source defines this file's responsibility and the boundaries described here.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fb8da28ffc5c1aea719de1f557f1a312ba913359",
+            "content": "sha256:36a192b9f10ea5a6e2e6aa1341bf5614daaa9917e078ca3f113ecae5ea4b5975",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

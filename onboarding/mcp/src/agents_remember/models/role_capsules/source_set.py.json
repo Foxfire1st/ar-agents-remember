@@ -149,14 +149,16 @@
       ]
     },
     "3": {
-      "note": "The compiler step that runs this validation before resolution.\n\nAnchor: `compile_role_capsule`",
+      "note": "The compiler step that runs this validation before resolution. Anchor: `compile_role_capsule`",
       "targets": [
         {
           "anchor": {
-            "blob": "762c104a0bcdc0375416163993d106dc37c5fb18",
-            "content": "sha256:157949db0f9acdf0d70ebbd6959fb382dccab34600bf2e6cfd9b12f0b9079a74",
+            "blob": "a744d8de93cda92f20309cc2f735c24a2bf27ce4",
+            "content": "sha256:13434aabd680330e1ebe5e763eb65226c1c4e8ccf6e6fda0178dc94410915c2f",
             "locator": {
-              "kind": "file"
+              "end": 590,
+              "kind": "line_range",
+              "start": 1
             },
             "path": "mcp/src/agents_remember/models/role_capsules/compiler.py"
           },
@@ -185,11 +187,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9946e7fc31fa11992782193f4af92050e7c18e46",
-            "content": "sha256:6db09a53f2ae7a8af9723114102530780c50e198cb965cefb4fa6cfeb3cdd6b4",
+            "blob": "fad1e5a1891afa9e3781b07d856907c922e210e7",
+            "content": "sha256:64e809fffb0527ac7e4c8304e937d0940334e4c021ef632167579b87fad81e5f",
             "locator": {
-              "kind": "symbol",
-              "name": "test_missing_mandatory_material_is_refused_rather_than_omitted"
+              "end": 667,
+              "kind": "line_range",
+              "start": 630
             },
             "path": "mcp/tests/test_role_capsule_compiler.py"
           },
@@ -197,11 +200,12 @@
         },
         {
           "anchor": {
-            "blob": "9946e7fc31fa11992782193f4af92050e7c18e46",
+            "blob": "fad1e5a1891afa9e3781b07d856907c922e210e7",
             "content": "sha256:ad6b03053ce452ebd58b3cd633bb69971cbcec1bbde9bf66dd036d42e85647d6",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_source_the_manifest_does_not_declare_is_refused"
+              "end": 674,
+              "kind": "line_range",
+              "start": 670
             },
             "path": "mcp/tests/test_role_capsule_compiler.py"
           },
@@ -209,11 +213,12 @@
         },
         {
           "anchor": {
-            "blob": "9946e7fc31fa11992782193f4af92050e7c18e46",
+            "blob": "fad1e5a1891afa9e3781b07d856907c922e210e7",
             "content": "sha256:b166927f64c89e1e382ddc3c321ce6a5d57c6adfb278d5db5c022de2abba0940",
             "locator": {
-              "kind": "symbol",
-              "name": "test_a_source_read_from_the_wrong_composition_root_is_refused"
+              "end": 684,
+              "kind": "line_range",
+              "start": 677
             },
             "path": "mcp/tests/test_role_capsule_compiler.py"
           },
@@ -221,50 +226,12 @@
         },
         {
           "anchor": {
-            "blob": "9946e7fc31fa11992782193f4af92050e7c18e46",
+            "blob": "fad1e5a1891afa9e3781b07d856907c922e210e7",
             "content": "sha256:bf86bb84f3b36ab21196af36571956d25d87f5f2d5cf787c6a28987f79849578",
             "locator": {
-              "kind": "symbol",
-              "name": "test_repository_specialization_must_be_admitted_on_the_binding"
-            },
-            "path": "mcp/tests/test_role_capsule_compiler.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "9946e7fc31fa11992782193f4af92050e7c18e46",
-            "content": "sha256:2a90a678caf7cec61e047da6504ca45f45a900f151ec754f713732e98895ff39",
-            "locator": {
-              "end": 606,
+              "end": 692,
               "kind": "line_range",
-              "start": 583
-            },
-            "path": "mcp/tests/test_role_capsule_compiler.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "9946e7fc31fa11992782193f4af92050e7c18e46",
-            "content": "sha256:0bab6f81d3809808ee5f9410def2d8003de58ef6845ba4eae73ca1c178e60245",
-            "locator": {
-              "end": 623,
-              "kind": "line_range",
-              "start": 616
-            },
-            "path": "mcp/tests/test_role_capsule_compiler.py"
-          },
-          "kind": "test"
-        },
-        {
-          "anchor": {
-            "blob": "9946e7fc31fa11992782193f4af92050e7c18e46",
-            "content": "sha256:6d4b486f7e5739c0686d8f4a40f2ccc24b21a71acec43abf4ba4c5fe467e7986",
-            "locator": {
-              "end": 631,
-              "kind": "line_range",
-              "start": 626
+              "start": 687
             },
             "path": "mcp/tests/test_role_capsule_compiler.py"
           },
@@ -288,7 +255,7 @@
         },
         {
           "anchor": {
-            "blob": "fde424ce1c4b108a144b9b7ab8f0d9fe8a807bf1",
+            "blob": "1e5141a382cecb6e2e7ba393452cbeedcb8d01e5",
             "content": "sha256:4dc1ee0cc5c50876754bd141161d54fbd568ed3980f2068c571474c66ace4ded",
             "locator": {
               "kind": "symbol",
@@ -300,7 +267,7 @@
         },
         {
           "anchor": {
-            "blob": "fde424ce1c4b108a144b9b7ab8f0d9fe8a807bf1",
+            "blob": "1e5141a382cecb6e2e7ba393452cbeedcb8d01e5",
             "content": "sha256:f1fd300c429f32339032ca6f709d70611c47aeb765cfd715ba209c21edb03567",
             "locator": {
               "kind": "symbol",

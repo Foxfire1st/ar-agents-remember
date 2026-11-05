@@ -64,29 +64,16 @@
       ]
     },
     "4": {
-      "note": "Registration in the umbrella.\n\nAnchor: \"knowledge-format\"",
+      "note": "Registration in the umbrella. Anchor: \"knowledge-format\"",
       "targets": [
         {
           "anchor": {
-            "blob": "6e7bd5a18da5ea781594e67999b9b01f305937d4",
-            "content": "sha256:3388fbb7e7f9b0c026db8d63e6e9e2b9c92f6d44ccebe8f06a6a0b45b97f516c",
+            "blob": "009c76004ec4b54cf39affd07edbc7882459d597",
+            "content": "sha256:d1f92d08e59b833c3f3dccbc58696f295cc8f61975e7f4b4350e81283ad5a1e1",
             "locator": {
-              "end": 92,
+              "end": 102,
               "kind": "line_range",
-              "start": 92
-            },
-            "path": "mcp/src/agents_remember/cli/__main__.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "6e7bd5a18da5ea781594e67999b9b01f305937d4",
-            "content": "sha256:9433d0ea9ecf2f39c9a50407395ee41172fe682c9c885a3508f75bdee151efff",
-            "locator": {
-              "end": 78,
-              "kind": "line_range",
-              "start": 78
+              "start": 97
             },
             "path": "mcp/src/agents_remember/cli/__main__.py"
           },

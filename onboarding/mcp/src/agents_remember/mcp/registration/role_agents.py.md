@@ -33,6 +33,12 @@ The existing role_start registrar accepts optional step_up and passes it unchang
 
 This account is bound to the candidate source, not a claim of a running serving build or a fresh execution/acceptance verdict. Existing historical accounts remain historical.
 
+## Current source contract
+
+The role_message description distinguishes host acceptance from AR acceptance: a waited consuming turn ending is not AR acceptance. Held means queued for delivery when the recipient can take it, and the caller must never resend held; only a full twenty-message store is recipient-busy. Input shape, host delivery ownership and permission boundaries remain unchanged.
+
+- Message docstring clarifies host-only acceptance, queued held delivery and no resend. [10]
+
 ## Evidence
 
 
@@ -52,15 +58,48 @@ This account is bound to the candidate source, not a claim of a running serving 
 
 ## Refreshed current evidence
 
-- **Retained historical source account — superseded by the current contract:** Current registration declares the public input/delegation surface and its normative promises; it does not independently qualify composed filing, held waits or DTO completeness. [1]
+- **Retained historical source account — superseded by the current contract:** Current registration declares the public input/delegation surface and its normative promises; it does not independently qualify composed filing, held waits or DTO completeness.
 
-- The existing typed start/message/set registrars remain the public surface. Current compact descriptions advertise start ok/id/handover and message wait/held/cancellation outcomes plus the longer reference. Mode/feature policy, attachments/hashes, capacity, successor and receipt authority stay with the input/application/reference owners, not a claim that every detail is still inline in the short docstrings. Held answer overrides remain distinct from ordinary compact delivery. [3]
+The original registrar delegated typed role calls and described host acceptance, held status and capacity; its message description did not yet contain the current never-resend-held instruction. Earlier caption retained as prose; its original citation used mcp/src/agents_remember/mcp/registration/role_agents.py at blob `d7a350b97b2ba83910cf0f815eef07fa8d044f8c`. Reference 1 now carries the current clause and current source targets; it does not retain those earlier targets.
+
+Retained authoring-row wording:
+
+Finding: The registrar declares typed start/set/message inputs and delegates to their payload owners. The current role_message description distinguishes host acceptance from AR acceptance and says held is queued and must never be resent.
+
+Anchor:
+
+Source: mcp/src/agents_remember/mcp/registration/role_agents.py
+
+Retained authoring-row wording:
+
+Finding: The existing typed start/message/set registrars remain the public surface. Current compact descriptions advertise start ok/id/handover and message wait/held/cancellation outcomes plus the longer reference. Mode/feature policy, attachments/hashes, capacity, successor and receipt authority stay with the input/application/reference owners, not a claim that every detail is still inline in the short docstrings. Held answer overrides remain distinct from ordinary compact delivery.
+
+Anchor:
+
+Source: mcp/src/agents_remember/mcp/registration/role_agents.py
 
 ## The caller's harness name and the settings tool
 
 `caller_harness_name` reads the client name the calling harness sent in its `initialize` request from the served request context, and answers `None` for a client that named nothing or for a call made outside a served request, so the launch reports an unknown caller harness rather than inventing one. `user_settings_init` is registered beside the three role tools, takes a target, an optional harness or per-role harnesses and a dry run, and runs its payload builder in a thread.
 
 - The transport's own client name, or no name at all. [7]
-- The registration that mounts the role tools and the settings initializer. [8]
+Retained authoring-row wording:
 
+Finding: The registration that mounts the role tools and the settings initializer.
+
+Anchor:
+
+Source: mcp/src/agents_remember/mcp/registration/role_agents.py:84-208
+
+Retained authoring-row wording:
+
+Finding: Role calls build their existing strict call models, then resolve the existing payload before offloading it. Registration imports no role payload implementation.
+
+Anchor:
+
+Source: mcp/src/agents_remember/mcp/registration/role_agents.py
+
+- The registrar declares typed start/set/message inputs and delegates to their payload owners. The current role_message description distinguishes host acceptance from AR acceptance and says held is queued and must never be resent. [1]
+- The existing typed start/message/set registrars remain the public surface. Current compact descriptions advertise start ok/id/handover and message wait/held/cancellation outcomes plus the longer reference. Mode/feature policy, attachments/hashes, capacity, successor and receipt authority stay with the input/application/reference owners, not a claim that every detail is still inline in the short docstrings. Held answer overrides remain distinct from ordinary compact delivery. [3]
+- The registration that mounts the role tools and the settings initializer. [8]
 - Role calls build their existing strict call models, then resolve the existing payload before offloading it. Registration imports no role payload implementation. [9]

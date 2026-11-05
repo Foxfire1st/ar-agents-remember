@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5439394ca5c6553d2ab157745d8b1c1a034f0cdd",
+            "blob": "42d1bd975f759c016726524381462c1a7ba0b59a",
             "content": "sha256:ceea01788551f8dd778f3a2c9f47adc3aa094d6c075e514f70f86ffb16541788",
             "locator": {
               "end": 176,
@@ -24,7 +24,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5439394ca5c6553d2ab157745d8b1c1a034f0cdd",
+            "blob": "42d1bd975f759c016726524381462c1a7ba0b59a",
             "content": "sha256:7f51f17434e792c8f35bd7a8b4330c53499d61d4d7db662435bf79467c7caa40",
             "locator": {
               "end": 386,
@@ -36,7 +36,7 @@
         },
         {
           "anchor": {
-            "blob": "5439394ca5c6553d2ab157745d8b1c1a034f0cdd",
+            "blob": "42d1bd975f759c016726524381462c1a7ba0b59a",
             "content": "sha256:f4e18a5a553c45cf22f957df6fa774260a161d0d863a5cd1f0a6aa7976624b06",
             "locator": {
               "end": 417,
@@ -53,7 +53,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5439394ca5c6553d2ab157745d8b1c1a034f0cdd",
+            "blob": "42d1bd975f759c016726524381462c1a7ba0b59a",
             "content": "sha256:f0238f33d87aa10742dc38a33244b1fbf7362bee67c8e424701fecfcf9894089",
             "locator": {
               "end": 481,
@@ -70,7 +70,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5439394ca5c6553d2ab157745d8b1c1a034f0cdd",
+            "blob": "42d1bd975f759c016726524381462c1a7ba0b59a",
             "content": "sha256:0556c4cba75ee70525a4ee3f163af06579b6e79fde1743359b8f339670fecc8c",
             "locator": {
               "end": 1007,
@@ -82,12 +82,55 @@
         }
       ]
     },
+    "13": {
+      "note": "Scenario fixture and reporting imports use the e2e_harness-qualified module identities. The runner and test select the scripts root, and the test loader uses importlib.import_module for those shared identities.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "42d1bd975f759c016726524381462c1a7ba0b59a",
+            "content": "sha256:0d50eb38b2d3c24b97d25d711afc99131152ceb1a99f234bf6f6b8c98de9b43a",
+            "locator": {
+              "end": 75,
+              "kind": "line_range",
+              "start": 68
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "57d707d85cd92b037c1dc86bfb3a310db97446eb",
+            "content": "sha256:3e5fa02f1359253aa0b154c049a573e5c2fadc7aa45202c8731398366c431ab1",
+            "locator": {
+              "end": 32,
+              "kind": "line_range",
+              "start": 23
+            },
+            "path": "scripts/e2e_harness/run_fresh_user.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0efc8cc4ef2107ae05cd51f89d2c8949693ddb09",
+            "content": "sha256:45e9fde04dd3507db32729bf74a83ad27f94aab7b7b7581077ce9cbe833cc19a",
+            "locator": {
+              "end": 86,
+              "kind": "line_range",
+              "start": 47
+            },
+            "path": "mcp/tests/test_fresh_user_harness.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
     "3": {
       "note": "Anchor: Actual candidate package-source guard.",
       "targets": [
         {
           "anchor": {
-            "blob": "5439394ca5c6553d2ab157745d8b1c1a034f0cdd",
+            "blob": "42d1bd975f759c016726524381462c1a7ba0b59a",
             "content": "sha256:146b9ccd5d57e2ee59d46d2bf6c8ffd4735e0c2a0be79d206951e96050741ae8",
             "locator": {
               "end": 198,
@@ -99,7 +142,7 @@
         },
         {
           "anchor": {
-            "blob": "5439394ca5c6553d2ab157745d8b1c1a034f0cdd",
+            "blob": "42d1bd975f759c016726524381462c1a7ba0b59a",
             "content": "sha256:28eba8b65b6d984e337f6c9c07eec0723938c4cf1be169824b57ffed6d69089f",
             "locator": {
               "end": 186,
@@ -116,7 +159,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5439394ca5c6553d2ab157745d8b1c1a034f0cdd",
+            "blob": "42d1bd975f759c016726524381462c1a7ba0b59a",
             "content": "sha256:25cdd1f54345bac026896ac58fc1cdbe70a006f204c2c058b653f387866f3f6d",
             "locator": {
               "end": 792,
@@ -133,7 +176,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5439394ca5c6553d2ab157745d8b1c1a034f0cdd",
+            "blob": "42d1bd975f759c016726524381462c1a7ba0b59a",
             "content": "sha256:aec13a57ebfbb49d4ac31c089f8ca903e9b27d37b7e3532aa748ac970d39abda",
             "locator": {
               "end": 990,
@@ -150,7 +193,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5439394ca5c6553d2ab157745d8b1c1a034f0cdd",
+            "blob": "42d1bd975f759c016726524381462c1a7ba0b59a",
             "content": "sha256:395971011845bfcccfd6d826b2a1ed071a303bc8e5e5af2edc4c69fbefe8ab82",
             "locator": {
               "end": 825,
@@ -167,7 +210,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5439394ca5c6553d2ab157745d8b1c1a034f0cdd",
+            "blob": "42d1bd975f759c016726524381462c1a7ba0b59a",
             "content": "sha256:40f88859406a353b419d0078bdb03256964176f7604dab511840235e47ae0101",
             "locator": {
               "end": 848,
@@ -184,7 +227,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "5439394ca5c6553d2ab157745d8b1c1a034f0cdd",
+            "blob": "42d1bd975f759c016726524381462c1a7ba0b59a",
             "content": "sha256:f30d84e1585938f147125d1ad89021e2308c6d181efbf33be963832f779909d9",
             "locator": {
               "end": 905,

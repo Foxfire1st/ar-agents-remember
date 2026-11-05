@@ -1,0 +1,40 @@
+{
+  "path": "mcp/tests/fixtures/claude-prose-verdict-retained.json",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "f17aaa1669a015ed2df90fadaf92ad34cdca148a",
+        "content": "sha256:376327ed1a76bdce82d9797a0acf2b809e7ebb259a91b62057c60162ec629707",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-PWSG2Z",
+      "invariant": "INV-3X1VPQ",
+      "origin": {
+        "handoffEntry": "L62-fd6462b8-case-grading",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "This retained prose-plus-fenced response pins the supported producer format and ambiguous-valid-candidate rejection.",
+      "role": "support"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The source defines this file's responsibility and the boundaries described here.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f17aaa1669a015ed2df90fadaf92ad34cdca148a",
+            "content": "sha256:376327ed1a76bdce82d9797a0acf2b809e7ebb259a91b62057c60162ec629707",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

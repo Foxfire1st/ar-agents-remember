@@ -7,12 +7,29 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0a33b0151854b4970da05b7ecfa1fcc42af54b25",
+            "blob": "acdc11f4c305feba661be10ff8499978b4877cc1",
             "content": "sha256:3a0eb643149e4f028a6888e98aa386cbb9b8eb4668397f2eab633b2a3a826e87",
             "locator": {
               "end": 19,
               "kind": "line_range",
               "start": 3
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Select focused tests across every changed surface and relevant gate; run a full suite only when explicitly requested.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "acdc11f4c305feba661be10ff8499978b4877cc1",
+            "content": "sha256:01dc3988198ce22e7cdf0f4534824a38f72af77d578a04a8ed40cd8f06b3117b",
+            "locator": {
+              "end": 28,
+              "kind": "line_range",
+              "start": 26
             }
           },
           "kind": "code"

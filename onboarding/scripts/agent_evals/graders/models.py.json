@@ -1,0 +1,40 @@
+{
+  "path": "scripts/agent_evals/graders/models.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "8e5409110fd0974afccc3ff3b5bfe8aec8b2c0f9",
+        "content": "sha256:0c6cbc33efdf59f3c641e34d613e7e3f733b295a7e0b506c4172301c7c0cecb8",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-6R3PZB",
+      "invariant": "INV-XKDZD4",
+      "origin": {
+        "handoffEntry": "L62-fd6462b8-evidence-values",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "It binds grade observations to producer sources and native event references.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The source defines this file's responsibility and the boundaries described here.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8e5409110fd0974afccc3ff3b5bfe8aec8b2c0f9",
+            "content": "sha256:0c6cbc33efdf59f3c641e34d613e7e3f733b295a7e0b506c4172301c7c0cecb8",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

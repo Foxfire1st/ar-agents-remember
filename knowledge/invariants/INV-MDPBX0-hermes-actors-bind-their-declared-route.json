@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "prevents_costly_mistake"
+    ],
+    "justification": "An unbound model window or launcher could make token/compaction measurements describe a different actor than the one launched."
+  },
+  "applicability": "Prepared Hermes actor profiles admitted by the eval runner.",
+  "conditions": [
+    "Provider/model/route and the prepared interpreter/launcher identity are bound before launch.",
+    "The compaction threshold derives from the resolver-observed model context window."
+  ],
+  "exclusions": [
+    "An unobserved outgoing-request effort claim.",
+    "Runtime installation or repair by the profile binder."
+  ],
+  "id": "INV-MDPBX0",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Frozen tree fd6462b85ba9d06f004e323384ea800f9aa5144a, base 59b01fb8f72a38d2d27f9c37b8b9ca2513fd3fa0; path bindings and source hashes in producer-manifest.json; Reviewer R4 and d229-repairs/report.md."
+      ],
+      "path": "L62-unaffected-evaluation-obligations"
+    },
+    "handoffEntry": "L62-fd6462b8-hermes-profile",
+    "leaf": "260928-MIK-L62",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Hermes actors bind their declared route, prepared runtime and resolver-derived window before deriving the absolute 400000-token compaction threshold.",
+  "status": "proposed",
+  "supersedes": []
+}

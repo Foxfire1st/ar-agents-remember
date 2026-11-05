@@ -84,4 +84,12 @@ The inherited series-contract note agrees with the current canonical skill’s m
 
 - The workflow’s master-series section separates durable requirement/attempt records from disposable summary and assigns leaf enclosure integration and finalization. [8]
 
+Retained authoring-row wording:
+
+Finding: Converted onboarding follows a metadata-free card/reference model instead of inheriting legacy task-era verification mechanics.
+
+Anchor:
+
+Source: skills/c-05-create-or-update-onboarding-files/workflows/converted-card-workflow.md:7-35
+
 - Converted onboarding follows a metadata-free card/reference model instead of inheriting legacy task-era verification mechanics. [9]

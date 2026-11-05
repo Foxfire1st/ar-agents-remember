@@ -23,13 +23,53 @@ The shared planning contract still requires bounded approved canonical packets, 
 The `expectedKnowledgeEffects` declaration is selected only for Architect: when a leaf packet names a recorded invariant/family effect, Architect records it before implementation; no named effect means no declaration. This audience change removes an Architect-only instruction from Designer/Strategist/Orchestrator capsules without changing its actor or weakening the common planning and permission boundaries.
 
 
-## Evidence
+Before release, a reader other than the drafter compares a new or revised packet in both directions against every open leaf packet of its master, before the intent-review choice and again before go after review changes. Changed promises go to the developer; stale facts are fixed through registered revisions, and an issue stays in its original leaf unless another charter already covers it. Before any seat starts, Prepared context names record IDs/state, code/files/lines, unattributed callers and traps, including complete paged knowledge and the code it leaves unattributed.
 
-- Before a new leaf starts, the Architect asks once for go or review first, discloses the planned comparison and first-Explain workspace, and records the choice; intent-review-open holds until go. [6]
+A packet adding a row, disposition, writer field or gate states how its own curation completes on the installed build; new behavior is proven on fixtures and scratch copies. Reported complete checks name included and excluded work, and pre-existing failures need same-cause base evidence. Under developer-chosen direct coordination, the Reviewer receives its exact bound intake first; plan/super-exit reviews have no startable seat and go through the Architect.
+
+The Architect reports an hour-long small item or a second repair round/freeze that day with a proposal to bound it. A UI fix is called working only after observation on the developer installation; otherwise it is landed and not verified there. At a handover or held/full-store result, the named message-handover detail owns sender and receipt handling.
+
+## Evidence
+Retained authoring-row wording:
+
+Finding: Before a new leaf starts, the Architect asks once for go or review first, discloses the planned comparison and first-Explain workspace, and records the choice; intent-review-open holds until go.
+
+Anchor:
+
+Source: skills/l-01-agent-lifecycles/operations/planning.md:28-31
 
 - One master takes one Manager, two or more take one Orchestrator; direct coordination is the developer-chosen exception. [1]
-- Each independently falsifiable obligation gets a stable ID, version and canonical packet before topology. [2]
-- A packet-named recorded invariant/family effect is declared by the Architect before implementation; no named effect means no declaration. [3]
+Retained authoring-row wording:
+
+Finding: Each independently falsifiable obligation gets a stable ID, version and canonical packet before topology.
+
+Anchor:
+
+Source: skills/l-01-agent-lifecycles/operations/planning.md:4-4
+
+Retained authoring-row wording:
+
+Finding: Finding
+
+Anchor: Anchor
+
+Source: Source
+
+Retained authoring-row wording:
+
+Finding: ---
+
+Anchor: ---
+
+Source: ---
+
+Retained authoring-row wording:
+
+Finding: A packet-named recorded invariant/family effect is declared by the Architect before implementation; no named effect means no declaration.
+
+Anchor:
+
+Source: skills/l-01-agent-lifecycles/operations/planning.md:28-31
 
 ## Inherited Source-Epoch Commentary
 
@@ -108,7 +148,31 @@ Inherited reference 2 commentary (not a revalidated target):
 The authored file is the canonical contract; its measured byte-equal package copy is a distribution carrier, not an independent role, task or permission authority. The following whole-file reference locates that authored contract; it does not convert inherited statements into executed or whole-card acceptance.
 
 
+Retained authoring-row wording:
+
+Finding: The authored source owns this contract; the distribution copy is not a separate authority.
+
+Anchor:
+
+Source: skills/l-01-agent-lifecycles/operations/planning.md
+
+
+Past-epoch caption (retained wording): - Marks all common text all-role and limits the preimplementation expectedKnowledgeEffects declaration to Architect, restoring all-role afterward.
+
+Original-target custody: `skills/l-01-agent-lifecycles/operations/planning.md`, blob `39174489f4ffee8369bf9973ae1be09ef15b5307`, declared “Use the developer's outcome and applicable current knowledge to shape a bounded plan. For new scope, assign a stable requirement ID/version and one canonical packet per independently falsifiable obligation; keep one primary requirement per ”. The earlier caption is detached from the live number; the current table carries only the current clause and target.
+
+Retained authoring-row wording:
+
+Finding: Planning marks the Architect-only alignment, Prepared-context, effect-declaration and intent-review work explicitly, with all-role planning scope and permission boundaries outside that audience slice.
+
+Anchor:
+
+Source: skills/l-01-agent-lifecycles/operations/planning.md:6-42
+
+- Each independently falsifiable obligation gets a stable ID, version and canonical packet before topology. [2]
+- A packet-named recorded invariant/family effect is declared by the Architect before implementation; no named effect means no declaration. [3]
 - The authored source owns this contract; the distribution copy is not a separate authority. [4]
+- Planning marks the Architect-only alignment, Prepared-context, effect-declaration and intent-review work explicitly, with all-role planning scope and permission boundaries outside that audience slice. [5]
+- Before a new leaf starts, the Architect asks once for go or review first, discloses the planned comparison and first-Explain workspace, and records the choice; intent-review-open holds until go. [6]
 
-
-- Marks all common text all-role and limits the preimplementation expectedKnowledgeEffects declaration to Architect, restoring all-role afterward. [5]
+- Before release, a reader other than the drafter compares a new or revised packet in both directions against every open leaf packet of its master, before the intent-review choice and again before go after review changes. Changed promises go to the developer; stale facts are fixed through registered revisions, and an issue stays in its original leaf unless another charter already covers it. Before any seat starts, Prepared context names record IDs/state, code/files/lines, unattributed callers and traps, including complete paged knowledge and the code it leaves unattributed. A packet adding a row, disposition, writer field or gate states how its own curation completes on the installed build; new behavior is proven on fixtures and scratch copies. Reported complete checks name included and excluded work, and pre-existing failures need same-cause base evidence. Under developer-chosen direct coordination, the Reviewer receives its exact bound intake first; plan/super-exit reviews have no startable seat and go through the Architect. The Architect reports an hour-long small item or a second repair round/freeze that day with a proposal to bound it. A UI fix is called working only after observation on the developer installation; otherwise it is landed and not verified there. At a handover or held/full-store result, the named message-handover detail owns sender and receipt handling. [7]

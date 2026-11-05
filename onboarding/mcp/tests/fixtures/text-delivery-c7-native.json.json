@@ -1,0 +1,42 @@
+{
+  "path": "mcp/tests/fixtures/text-delivery-c7-native.json",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "2755a880fb46654b7eb9b1a0fefdc8ad65e0e0bf",
+        "content": "sha256:28c9ccb3056e1555a222e8d6ca031948eae991a10483b7d25142f0adcb2bfa89",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-Q4WKAD",
+      "invariant": "INV-HXTSVY",
+      "origin": {
+        "handoffEntry": "L62-fd6462b8-text-delivery",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "This retained actor carrier ties the marker and instructions to the native received text.",
+      "role": "support"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The source defines this file's responsibility and the boundaries described here.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2755a880fb46654b7eb9b1a0fefdc8ad65e0e0bf",
+            "content": "sha256:28c9ccb3056e1555a222e8d6ca031948eae991a10483b7d25142f0adcb2bfa89",
+            "locator": {
+              "end": 187,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

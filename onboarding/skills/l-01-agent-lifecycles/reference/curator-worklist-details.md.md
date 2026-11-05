@@ -10,9 +10,9 @@ Read at curation step 2 before ingest/worklist answers. Governing changed rows, 
 
 Grouped uncovered equal changes bind every source blob; covered/card-bearing paths keep their items. Broken-link and refresh-not-current conditions require real link repair, not a judgment row. Recompute stale reconsideration items; links follow unique exact option text or are restated. Equal declared copies differ from divergent copies. A rerun changing rationale/role replaces this leaf's entry content while keeping its entry ID. This is procedural detail, not proof that any ID was changed.
 
+Read the persisted worklist and full memory-quality log together. A computed block reports state, path, digest and total item kinds, not proof that the items are answered; an absent block is neither pass nor empty. The gate separately reports pass/refused, owner, worklist identity and finding/open/incomplete/violation/report-only counts. Do not sum its subtotals into a verdict or count report-only observations as blockers; a changed pair needs its own check.
+
 ## Evidence
-
-
 - New step-2 worklist/target/proof/link repair detail plus same-ID target rationale/role correction. [1]
 
 
@@ -22,3 +22,5 @@ The file is compressed within its word budget: it says skipped and todo cases pr
 
 
 - The worklist detail names the line-range proof and the template's exact forms without raising its word budget. [3]
+
+- Read the persisted worklist and full memory-quality log together. A computed block reports state, path, digest and total item kinds, not proof that the items are answered; an absent block is neither pass nor empty. The gate separately reports pass/refused, owner, worklist identity and finding/open/incomplete/violation/report-only counts. Do not sum its subtotals into a verdict or count report-only observations as blockers; a changed pair needs its own check. [4]

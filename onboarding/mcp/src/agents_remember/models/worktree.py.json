@@ -319,14 +319,16 @@
       ]
     },
     "124": {
-      "note": "**Retained historical source account — superseded by the current contract:** TaskDocResponse is a ToolResponse rather than a WorktreeCommandResponse and declares nextTool as str or None; the worktree roster validator does not govern this class.\n\nAnchor: `TaskDocResponse`",
+      "note": "**Retained historical source account — superseded by the current contract:** TaskDocResponse is a ToolResponse rather than a WorktreeCommandResponse and declares nextTool as str or None; the worktree roster validator does not govern this class. Anchor: `TaskDocResponse`",
       "targets": [
         {
           "anchor": {
-            "blob": "e7d80ed372402d196e9af03c6aa40d32a018d7e2",
-            "content": "sha256:c7dc3ccede6258becfe2c8d886d1ef79e04279f32d2f56f30d6d1c8fd90242c4",
+            "blob": "cd8894a7e858b103972f9a0c9ec3a13e5fc41f48",
+            "content": "sha256:667882012ebd38bb51518f072cfa2239734d4aa86714747c7082f0e34bec837b",
             "locator": {
-              "kind": "file"
+              "end": 293,
+              "kind": "line_range",
+              "start": 1
             },
             "path": "mcp/src/agents_remember/models/task_doc.py"
           },

@@ -4,7 +4,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "3130ee4f5a48915d9acc66c8f21f10b8bb1eeef8",
+        "blob": "b3c34b20dd7043af3f908b01459beac2fa1d2b5b",
         "content": "sha256:117cf11c0828775f1b56b948879c541782e828208fbb89880b663ca48a119689",
         "locator": {
           "kind": "symbol",
@@ -22,7 +22,7 @@
     },
     {
       "anchor": {
-        "blob": "3130ee4f5a48915d9acc66c8f21f10b8bb1eeef8",
+        "blob": "b3c34b20dd7043af3f908b01459beac2fa1d2b5b",
         "content": "sha256:1d8a6fa5c3ffb0899420b99c69d907fbf080a5fad904e5c20fabe0932ed26565",
         "locator": {
           "kind": "symbol",
@@ -40,7 +40,7 @@
     },
     {
       "anchor": {
-        "blob": "3130ee4f5a48915d9acc66c8f21f10b8bb1eeef8",
+        "blob": "b3c34b20dd7043af3f908b01459beac2fa1d2b5b",
         "content": "sha256:c24a53040b93f6dc9585c0f4ca16ed891f26317dedd641b904c5f90682548b83",
         "locator": {
           "kind": "symbol",
@@ -58,12 +58,12 @@
     },
     {
       "anchor": {
-        "blob": "3130ee4f5a48915d9acc66c8f21f10b8bb1eeef8",
+        "blob": "b3c34b20dd7043af3f908b01459beac2fa1d2b5b",
         "content": "sha256:dde50cf0bec6cf7fc7a6809b96a87f20c5c75ea29c2713f3a59f6303f8c04b74",
         "locator": {
-          "end": 219,
+          "end": 220,
           "kind": "line_range",
-          "start": 157
+          "start": 158
         }
       },
       "id": "RLZ-H1FD2Z",
@@ -77,7 +77,7 @@
     },
     {
       "anchor": {
-        "blob": "3130ee4f5a48915d9acc66c8f21f10b8bb1eeef8",
+        "blob": "b3c34b20dd7043af3f908b01459beac2fa1d2b5b",
         "content": "sha256:665053f8d2822bfd03cee886c0d16ad38befd56ec6b3ea59830aba8c0e5c0a76",
         "locator": {
           "kind": "symbol",
@@ -95,7 +95,7 @@
     },
     {
       "anchor": {
-        "blob": "3130ee4f5a48915d9acc66c8f21f10b8bb1eeef8",
+        "blob": "b3c34b20dd7043af3f908b01459beac2fa1d2b5b",
         "content": "sha256:dde50cf0bec6cf7fc7a6809b96a87f20c5c75ea29c2713f3a59f6303f8c04b74",
         "locator": {
           "kind": "symbol",
@@ -113,7 +113,7 @@
     },
     {
       "anchor": {
-        "blob": "3130ee4f5a48915d9acc66c8f21f10b8bb1eeef8",
+        "blob": "b3c34b20dd7043af3f908b01459beac2fa1d2b5b",
         "content": "sha256:c24a53040b93f6dc9585c0f4ca16ed891f26317dedd641b904c5f90682548b83",
         "locator": {
           "kind": "symbol",
@@ -131,7 +131,26 @@
     },
     {
       "anchor": {
-        "blob": "3130ee4f5a48915d9acc66c8f21f10b8bb1eeef8",
+        "blob": "b3c34b20dd7043af3f908b01459beac2fa1d2b5b",
+        "content": "sha256:0ee628d1946500942833b106d510c0a4460b2a89740c3187b707aef9e25c33ba",
+        "locator": {
+          "end": 70,
+          "kind": "line_range",
+          "start": 59
+        }
+      },
+      "id": "RLZ-VXG5HX",
+      "invariant": "INV-G5APSX",
+      "origin": {
+        "handoffEntry": "L62-CUR-6db-attach-INV-G5APSX",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "Use the already validated named reference when resolving each child JSON; unavailable child files still take the declared-row status fallback. Skip references whose Path has no name before with_suffix/read, leaving the existing declared-row fallback instead of crashing.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "b3c34b20dd7043af3f908b01459beac2fa1d2b5b",
         "content": "sha256:8ff3ed975ec2710dea9083ef003e91d8d5e024780af092efce99ed76870b0be1",
         "locator": {
           "kind": "symbol",
@@ -149,7 +168,7 @@
     },
     {
       "anchor": {
-        "blob": "3130ee4f5a48915d9acc66c8f21f10b8bb1eeef8",
+        "blob": "b3c34b20dd7043af3f908b01459beac2fa1d2b5b",
         "content": "sha256:c24a53040b93f6dc9585c0f4ca16ed891f26317dedd641b904c5f90682548b83",
         "locator": {
           "kind": "symbol",
@@ -172,10 +191,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3130ee4f5a48915d9acc66c8f21f10b8bb1eeef8",
-            "content": "sha256:bae5f810eb2f2ab91ff372f651d626e3766048c13a13665f6aaa5cc50a4dd13c",
+            "blob": "b3c34b20dd7043af3f908b01459beac2fa1d2b5b",
+            "content": "sha256:1dc392f655ec1040c2fc33c90d587853fa8aafaa77478361edf437ce6893f80c",
             "locator": {
-              "kind": "file"
+              "end": 253,
+              "kind": "line_range",
+              "start": 1
             }
           },
           "kind": "code"
@@ -183,14 +204,33 @@
       ]
     },
     "2": {
-      "note": "MasterOrderTask carries the review state and the existing ready_ids filter excludes a non-go present review; dependency/cycle readiness rules remain.\n\nAnchor: `derive_master_order`",
+      "note": "MasterOrderTask carries the review state and the existing ready_ids filter excludes a non-go present review; dependency/cycle readiness rules remain.",
       "targets": [
         {
           "anchor": {
-            "blob": "3130ee4f5a48915d9acc66c8f21f10b8bb1eeef8",
-            "content": "sha256:bae5f810eb2f2ab91ff372f651d626e3766048c13a13665f6aaa5cc50a4dd13c",
+            "blob": "b3c34b20dd7043af3f908b01459beac2fa1d2b5b",
+            "content": "sha256:1dc392f655ec1040c2fc33c90d587853fa8aafaa77478361edf437ce6893f80c",
             "locator": {
-              "kind": "file"
+              "end": 253,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Skips nameless row.file Path values before reading explicit children.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b3c34b20dd7043af3f908b01459beac2fa1d2b5b",
+            "content": "sha256:16d73817ea1282b5ae549d656a156f0329892580f1f6ee0509da0b27e3cab440",
+            "locator": {
+              "end": 73,
+              "kind": "line_range",
+              "start": 52
             }
           },
           "kind": "code"

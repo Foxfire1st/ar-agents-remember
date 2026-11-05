@@ -80,7 +80,7 @@ No configured domain documentation could be checked.
 ### Repo-Internal References
 
 
-- Converted target parsing collects the pure guard's named problems and the writer refuses the whole handoff before its physical write step. [8]
+- Converted target parsing collects the pure guard's named problems and the writer refuses the whole handoff before its physical write step.
 
 
 
@@ -98,3 +98,5 @@ No cross-repository behavior is implemented in this file. The hand-off template 
 this shape is a same-repository skill file (`skills/l-01-agent-lifecycles/templates/curator-handoff-list.md`).
 
 No meaningful cross-repo references found.
+
+- Converted target parsing collects the pure guard's named problems and the writer refuses the whole handoff before its physical write step. Anchor: `_targets` `write_knowledge` [8]

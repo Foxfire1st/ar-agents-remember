@@ -70,8 +70,9 @@ in the `unit-regression` lane, using real Git repository fixtures. This card rec
 
 None recorded.
 
-## Evidence
+Producer-shape validation accepts absent Curator scope/admission without authorizing a writer call. Full intake refuses that partial input without changing memory bytes. Malformed rationale, locator, evidence and proof fields yield identical structural refusals through both readers. These are source assertions/support behavior, not a fresh invocation, host result or AR acceptance.
 
+## Evidence
 ### Docs References
 
 No domain documentation source is configured for this repository (`system/sources.md` carries no
@@ -88,13 +89,13 @@ No configured live documentation source was available for this pass.
 The cases.
 
 
-- Every kind through the command line. [2]
+- Every kind through the command line.
 
 - Unresolvable evidence reported and kept. [3]
 - A bootstrap of converted memory writes as a wave. [4]
 - A rerun that changes a locator removes this leaf's old entry only. [5]
 
-- The bootstrap command dispatch. [6]
+- The bootstrap command dispatch.
 
 - MIK-R27: the writer refuses an unsupported admission claim and writes nothing, and writes once the proof is added. [7]
 - Route rules: report in the writer, refusal at commit. [8]
@@ -112,7 +113,7 @@ The cases.
 
 
 
-- A master line's crossing records its rows through the writer. [15]
+- A master line's crossing records its rows through the writer.
 
 
 - A cover revises a realization entry's rationale in place. [16]
@@ -140,3 +141,9 @@ No cross-repo boundary is crossed by this file.
 The leaf fixtures supply the persisted worklist the current admission requires. Refused report assertions explicitly expose empty committed-action collections and honest nothing-written text. Relocation coverage still proves the moved path and stable entry fields, not permission to use this leaf's repaired writer for its own memory. Endpoint cases now distinguish refusal-time observations from post-repair publication. No tests were executed by this curation pass.
 
 - The validator refusal reports no committed records, entries, rows or carries. [18]
+
+- Every kind through the command line. Anchor: `test_the_command_line_round_trips_every_kind` [2]
+- The bootstrap command dispatch. Anchor: `test_the_bootstrap_command_dispatches_converted_memory_to_the_file_writer` [6]
+- A master line's crossing records its rows through the writer. Anchor: `test_a_master_line_crossing_records_its_rows_through_the_writer` [15]
+
+- Producer-shape validation accepts absent Curator scope/admission without authorizing a writer call. Full intake refuses that partial input without changing memory bytes. Malformed rationale, locator, evidence and proof fields yield identical structural refusals through both readers. These are source assertions/support behavior, not a fresh invocation, host result or AR acceptance. [19]

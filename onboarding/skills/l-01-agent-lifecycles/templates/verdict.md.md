@@ -7,7 +7,17 @@ The verdict is an independent evidence artifact and recommendation, never the de
 This qualification governs the named current seams; incompatible earlier generalizations remain historical, not restored authority. No source inspection here establishes execution, a launch, a test result, a CODE/MEMORY grade or a completed closeout.
 
 
-- The verdict keeps exact-candidate independent evidence, monotonic sealed-ID successor scope and separate CODE/MEMORY lanes without deciding a gate. [6]
+- The verdict keeps exact-candidate independent evidence, monotonic sealed-ID successor scope and separate CODE/MEMORY lanes without deciding a gate.
+
+Earlier caption detached from live reference 6: its original target declared the source text at `skills/l-01-agent-lifecycles/templates/verdict.md` at original blob `430acce71b81cbf5df02b4855c77371886cd9472`, whole file. The caption above is retained as prose; the numbered clause below describes the current source.
+
+Retained authoring-row wording:
+
+Finding: Verdict structure binds exact independent candidate evidence, immutable per-attempt adjudication and monotonic sealed successor scope; CODE and MEMORY remain separate and no verdict decides the gate.
+
+Anchor: `current role or template contract`
+
+Source: skills/l-01-agent-lifecycles/templates/verdict.md:18-53; skills/l-01-agent-lifecycles/templates/verdict.md:146-158; skills/l-01-agent-lifecycles/templates/verdict.md:364-369
 
 
 > Retained earlier citation wording: - The Curator owner requires the complete curation operation; optional full-quality/test requests do not waive it. [7]
@@ -21,7 +31,17 @@ The Reviewer records ordinary CODE round/result; the task document and recorded 
 This account controls the named changed seams; contradictory earlier card wording below is retained only as historical evidence. Unchanged role duties and R117 file-only wake/report transport are preserved. Source inspection supplies no new runtime test, CODE verdict, review counter or acceptance.
 
 
-- The Reviewer records ordinary CODE round/result; the task document and recorded architect/developer approval govern beyond-settings work. Fix verification is an ordinary round, not an unqualified D107 extra look. Verdict content is carried as a file, and remains evidence for the gate owner rather than a decision. The supported-sync source had a disclosed trailing stashed-change marker absent from K_B; that static composition observation was sent to Worker and Reviewer for the assigned D140, not silently adopted as clean source or a new CODE PASS. [5]
+- The Reviewer records ordinary CODE round/result; the task document and recorded architect/developer approval govern beyond-settings work. Fix verification is an ordinary round, not an unqualified D107 extra look. Verdict content is carried as a file, and remains evidence for the gate owner rather than a decision. The supported-sync source had a disclosed trailing stashed-change marker absent from K_B; that static composition observation was sent to Worker and Reviewer for the assigned D140, not silently adopted as clean source or a new CODE PASS.
+
+Earlier caption detached from live reference 5: its original target declared the source text at `skills/l-01-agent-lifecycles/templates/verdict.md` at original blob `430acce71b81cbf5df02b4855c77371886cd9472`, lines 1–372. The caption above is retained as prose; the numbered clause below describes the current source.
+
+Retained authoring-row wording:
+
+Finding: Reviewer records its ordinary CODE begin/result under the task document; Manager retains gate acceptance and recorded beyond-settings approval. Code PASS first goes to Manager to start Curator; peer artifacts travel directly as files, MEMORY stays separate and ready-for-closeout names both verdicts. Repaired-item verification is an ordinary round.
+
+Anchor: `current role or template contract`
+
+Source: skills/l-01-agent-lifecycles/templates/verdict.md:146-158; skills/l-01-agent-lifecycles/templates/verdict.md:364-373
 
 
 
@@ -111,15 +131,45 @@ No external Domain Documentation source governs this verdict template.
 ### Repo-Internal References
 
 
-- Independent exact-attempt/candidate adjudication is mandatory in every variant. [1]
+- Independent exact-attempt/candidate adjudication is mandatory in every variant.
+
+Earlier caption detached from live reference 1: its original target declared the source text at `skills/l-01-agent-lifecycles/templates/verdict.md` at original blob `430acce71b81cbf5df02b4855c77371886cd9472`, whole file. The caption above is retained as prose; the numbered clause below describes the current source.
+
+Retained authoring-row wording:
+
+Finding: Every verdict variant requires independently authored exact-ID/version, Worker-attempt and candidate adjudication in a separate immutable journal record with evidence-class and refutation rationale; a rejected requirement forbids PASS and PASS-WITH-NOTES.
+
+Anchor: `current role or template contract`
+
+Source: skills/l-01-agent-lifecycles/templates/verdict.md:31-53; skills/l-01-agent-lifecycles/templates/verdict.md:55-98
 
 
 
-- Leaf review accounts for every material route and returns a recordable packet. [2]
+- Leaf review accounts for every material route and returns a recordable packet.
+
+Earlier caption detached from live reference 2: its original target declared the source text at `skills/l-01-agent-lifecycles/templates/verdict.md` at original blob `430acce71b81cbf5df02b4855c77371886cd9472`, whole file. The caption above is retained as prose; the numbered clause below describes the current source.
+
+Retained authoring-row wording:
+
+Finding: Organizational leaf and accumulated atomic-master variants account for every major route with its backing report, bound candidate and recordable packet; atomic children receive no separate route-review verdict.
+
+Anchor: `current role or template contract`
+
+Source: skills/l-01-agent-lifecycles/templates/verdict.md:3-9; skills/l-01-agent-lifecycles/templates/verdict.md:101-158; skills/l-01-agent-lifecycles/templates/verdict.md:161-214
 
 
 
-- A delta review appends a dated delta section to the same verdict artifact, rechecks only the sealed outstanding IDs and their worker fixes, and retains earlier accepted adjudications instead of opening a new full review. [3]
+- A delta review appends a dated delta section to the same verdict artifact, rechecks only the sealed outstanding IDs and their worker fixes, and retains earlier accepted adjudications instead of opening a new full review.
+
+Earlier caption detached from live reference 3: its original target declared the source text at `skills/l-01-agent-lifecycles/templates/verdict.md` at original blob `430acce71b81cbf5df02b4855c77371886cd9472`, whole file. The caption above is retained as prose; the numbered clause below describes the current source.
+
+Retained authoring-row wording:
+
+Finding: A delta verification appends to the same verdict, checks only sealed outstanding IDs and their fixes, retains accepted adjudications and returns new routes or criteria to the developer rather than adding or reopening successor findings.
+
+Anchor: `current role or template contract`
+
+Source: skills/l-01-agent-lifecycles/templates/verdict.md:364-369
 
 
 ### Cross-Repo References
@@ -137,7 +187,17 @@ independent reviewer rejection permits a successor.
 ## Current Source Evidence
 
 
-- Current settings-budget, recorded approval and preserved stage/ownership boundaries are carried by this canonical instruction source. [4]
+- Current settings-budget, recorded approval and preserved stage/ownership boundaries are carried by this canonical instruction source.
+
+Earlier caption detached from live reference 4: its original target declared the source text at `skills/l-01-agent-lifecycles/templates/verdict.md` at original blob `430acce71b81cbf5df02b4855c77371886cd9472`, whole file. The caption above is retained as prose; the numbered clause below describes the current source.
+
+Retained authoring-row wording:
+
+Finding: The verdict template keeps ordinary Reviewer CODE recording, separately counted MEMORY review, Manager gate acceptance and recorded beyond-settings approval distinct; its artifact is recommendation evidence rather than a gate decision.
+
+Anchor: `current role or template contract`
+
+Source: skills/l-01-agent-lifecycles/templates/verdict.md:18-20; skills/l-01-agent-lifecycles/templates/verdict.md:146-158; skills/l-01-agent-lifecycles/templates/verdict.md:364-369
 
 
 
@@ -344,3 +404,10 @@ Inherited reference 9 commentary (not a revalidated target):
 The verified byte-equal package copy is derived output, not an independent role/task/permission authority. Whole-source evidence does not certify inherited statements or a whole requirement.
 
 - The Curator owner requires the complete curation operation; optional full-quality/test requests do not waive it. [7]
+
+- Every verdict variant requires independently authored exact-ID/version, Worker-attempt and candidate adjudication in a separate immutable journal record with evidence-class and refutation rationale; a rejected requirement forbids PASS and PASS-WITH-NOTES. [1]
+- Organizational leaf and accumulated atomic-master variants account for every major route with its backing report, bound candidate and recordable packet; atomic children receive no separate route-review verdict. [2]
+- A delta verification appends to the same verdict, checks only sealed outstanding IDs and their fixes, retains accepted adjudications and returns new routes or criteria to the developer rather than adding or reopening successor findings. [3]
+- The verdict template keeps ordinary Reviewer CODE recording, separately counted MEMORY review, Manager gate acceptance and recorded beyond-settings approval distinct; its artifact is recommendation evidence rather than a gate decision. [4]
+- Reviewer records its ordinary CODE begin/result under the task document; Manager retains gate acceptance and recorded beyond-settings approval. Code PASS first goes to Manager to start Curator; peer artifacts travel directly as files, MEMORY stays separate and ready-for-closeout names both verdicts. Repaired-item verification is an ordinary round. [5]
+- Verdict structure binds exact independent candidate evidence, immutable per-attempt adjudication and monotonic sealed successor scope; CODE and MEMORY remain separate and no verdict decides the gate. [6]

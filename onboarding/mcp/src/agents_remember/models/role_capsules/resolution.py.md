@@ -73,7 +73,7 @@ No relevant documentation found after checking live sources.
 - The override and selection-reason value types this module consumes. [1]
 - The stopped-conflict code the equal-authority case resolves to. [2]
 
-- The compiler step that calls gathering and resolution in this order. [3]
+- The compiler step that calls gathering and resolution in this order.
 
 - The declared plan and admitted sources this module reduces over. [4]
 - The collapse, stop, override-provenance and override-ordering cases. [5]
@@ -83,3 +83,5 @@ No relevant documentation found after checking live sources.
 No sibling-repository contract defines this resolution rule.
 
 No meaningful cross-repo references found.
+
+- The compiler step that calls gathering and resolution in this order. Anchor: `compile_role_capsule` [3]

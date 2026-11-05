@@ -121,9 +121,21 @@ recreates everything.
 > - Document schema validation, master/leaf rules, and the reopen refusals live in
 >   `application/task_doc_tools.py` and `application/worktree_tools.py`.
 
+## Current source contract
+
+The task_doc compact description now names sibling advice in alignmentSweep on packet writes, while keeping canonical JSON and rendered Markdown reading distinct. The description does not implement the sweep, authorize release or change task-write admission.
+
+- Task-doc compact description names alignmentSweep advice. [9]
+
 ## Evidence
 
-- Descriptions include keyed open-question writes and require master authority for finalization. [7]
+Retained authoring-row wording:
+
+Finding: Descriptions include keyed open-question writes and require master authority for finalization.
+
+Anchor:
+
+Source: mcp/src/agents_remember/mcp/registration/tasks.py:54-80; mcp/src/agents_remember/mcp/registration/tasks.py:75-75
 
 
 ### Repo-Internal References
@@ -140,7 +152,13 @@ recreates everything.
 
 
 
-- The `task_doc` description lists `retire_master` among the compact operation vocabulary and states only that writes answer `ok` while dry runs answer `wouldLose` and the diff. [5]
+Retained authoring-row wording:
+
+Finding: The `task_doc` description lists `retire_master` among the compact operation vocabulary and states only that writes answer `ok` while dry runs answer `wouldLose` and the diff.
+
+Anchor:
+
+Source: mcp/src/agents_remember/mcp/registration/tasks.py
 
 
 
@@ -209,6 +227,23 @@ The current compact curator_coherence description names its four actions, all ni
 > `mcp/tests/test_tool_response_conformance.py::test_task_doc_description_and_refusal_name_the_same_kind_vocabulary`.
 
 
-- The compact task_doc description names write/linkage operations and canonical generated-file reading. get/read_steps are removed and answered with operation-removed; they are not usable observations. Flat fields_file/section_body_file inputs are forwarded to the authoring owner. Delivered writes use ok/updated phrases; dry answers use wouldLose/diff and retained locations. Review, linkage, retirement and curator-coherence authorities remain at their established application/reference owners; short descriptions and a finished tool turn do not certify them. [6]
+Retained authoring-row wording:
 
+Finding: The compact task_doc description names write/linkage operations and canonical generated-file reading. get/read_steps are removed and answered with operation-removed; they are not usable observations. Flat fields_file/section_body_file inputs are forwarded to the authoring owner. Delivered writes use ok/updated phrases; dry answers use wouldLose/diff and retained locations. Review, linkage, retirement and curator-coherence authorities remain at their established application/reference owners; short descriptions and a finished tool turn do not certify them.
+
+Anchor:
+
+Source: mcp/src/agents_remember/mcp/registration/tasks.py
+
+Retained authoring-row wording:
+
+Finding: Closeout/coherence/finalize/reopen/task_doc declarations retain canonical light models; task_doc operation/edit/target constructors load inside its call.
+
+Anchor:
+
+Source: mcp/src/agents_remember/mcp/registration/tasks.py
+
+- The `task_doc` description lists `retire_master` among the compact operation vocabulary and states only that writes answer `ok` while dry runs answer `wouldLose` and the diff. [5]
+- The compact task_doc description names write/linkage operations and canonical generated-file reading. get/read_steps are removed and answered with operation-removed; they are not usable observations. Flat fields_file/section_body_file inputs are forwarded to the authoring owner. Delivered writes use ok/updated phrases; dry answers use wouldLose/diff and retained locations. Review, linkage, retirement and curator-coherence authorities remain at their established application/reference owners; short descriptions and a finished tool turn do not certify them. [6]
+- Descriptions include keyed open-question writes and require master authority for finalization. [7]
 - Closeout/coherence/finalize/reopen/task_doc declarations retain canonical light models; task_doc operation/edit/target constructors load inside its call. [8]

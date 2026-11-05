@@ -24,12 +24,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ab9a2e087d2cfd299ad5ffbac061aac232c8e831",
+            "blob": "62a4500b617979c0fc10d9726ce52b57b8b3c922",
             "content": "sha256:a4d4c7e8371cc1b3b0f486c9809721cdfe1bd3bfc3f67d30902f3523bf31fd65",
             "locator": {
-              "end": 70,
+              "end": 81,
               "kind": "line_range",
-              "start": 68
+              "start": 79
             },
             "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
           },
@@ -42,12 +42,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ab9a2e087d2cfd299ad5ffbac061aac232c8e831",
+            "blob": "62a4500b617979c0fc10d9726ce52b57b8b3c922",
             "content": "sha256:29e7ad9fe2962ce68e22bdd5b82bbc822add75ffd6bb5211626dcd5799e0218f",
             "locator": {
-              "end": 99,
+              "end": 110,
               "kind": "line_range",
-              "start": 97
+              "start": 108
             },
             "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
           },
@@ -142,16 +142,16 @@
       ]
     },
     "6": {
-      "note": "Three-way reconciliation separates current intent, ruled change and implemented reality.",
+      "note": "Curation reconciles current intent, ruled change and implemented reality sentence by sentence against code; invariant scope states applicability, conditions and exclusions, while grouping and entity edits require their own meaning checks.",
       "targets": [
         {
           "anchor": {
-            "blob": "145be631612f52c363b97b82d253839028ebc907",
-            "content": "sha256:ace0ecf9af7e8a31f418146efdae4e3c79a359c1de1147b24bee456d0d5238e3",
+            "blob": "a12f918499ebed5c67d253ce5956a1a3f7705656",
+            "content": "sha256:63bf307650bc1e3417788a623e86a50a14f48e89c52acd19a2ca2bff13d5cc8e",
             "locator": {
-              "end": 106,
+              "end": 90,
               "kind": "line_range",
-              "start": 98
+              "start": 81
             },
             "path": "skills/l-01-agent-lifecycles/operations/curation.md"
           },
@@ -160,16 +160,29 @@
       ]
     },
     "7": {
-      "note": "The owning curation loop requires the full operation, actionable repairs/blocked codes and conditional coherence.",
+      "note": "The curation owner runs changed sidecar/overview/entity checks, memory-worktree diff check and full memory quality; every actionable finding is repaired or escalated with its returned code, conditional coherence is completed before closeout, and independent fact-checking checks every changed statement and history row.",
       "targets": [
         {
           "anchor": {
-            "blob": "145be631612f52c363b97b82d253839028ebc907",
-            "content": "sha256:e2f158a891e7deac0152fc807122877dec4f46971000224f1332ef1f7c883a05",
+            "blob": "a12f918499ebed5c67d253ce5956a1a3f7705656",
+            "content": "sha256:fef6aef1ee50b7c238419f1fcd77f2e45ea9ff23b48d9196ef29ecc0d4be6e8f",
             "locator": {
-              "end": 165,
+              "end": 108,
               "kind": "line_range",
-              "start": 151
+              "start": 93
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/curation.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a12f918499ebed5c67d253ce5956a1a3f7705656",
+            "content": "sha256:893177d2cf334b4c5476d992dac742c1348d0fd48d807f01ba1246594994d9f7",
+            "locator": {
+              "end": 147,
+              "kind": "line_range",
+              "start": 141
             },
             "path": "skills/l-01-agent-lifecycles/operations/curation.md"
           },
@@ -182,12 +195,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "145be631612f52c363b97b82d253839028ebc907",
+            "blob": "a12f918499ebed5c67d253ce5956a1a3f7705656",
             "content": "sha256:f46dcb1a56028f631a030ff88a0c28e75e84188d1d91b2acb12af3f7d2fe9450",
             "locator": {
-              "end": 29,
+              "end": 28,
               "kind": "line_range",
-              "start": 26
+              "start": 25
             },
             "path": "skills/l-01-agent-lifecycles/operations/curation.md"
           },
@@ -200,12 +213,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "145be631612f52c363b97b82d253839028ebc907",
+            "blob": "a12f918499ebed5c67d253ce5956a1a3f7705656",
             "content": "sha256:ae9ca0fc86f0ae408b4a5639afaef0cbec546f155550c1c7d885836546e4c089",
             "locator": {
-              "end": 135,
+              "end": 139,
               "kind": "line_range",
-              "start": 128
+              "start": 132
             },
             "path": "skills/l-01-agent-lifecycles/operations/curation.md"
           },

@@ -19,10 +19,11 @@
     "leaf": "260928-MIK-L88",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "routes": [
     "mcp/src/agents_remember/models/role_capsules",
-    "mcp/src/agents_remember/cli"
+    "mcp/src/agents_remember/cli",
+    "skills/l-01-agent-lifecycles/operations"
   ],
   "schema": "ar-family/v1",
   "status": "proposed",

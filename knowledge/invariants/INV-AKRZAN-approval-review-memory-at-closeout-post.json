@@ -3,7 +3,7 @@
     "criteria": [
       "spans_locations"
     ],
-    "justification": "Realized in operations/closeout.md, the byte-identical closeout contract, and in roles/curator.md:104, the preserved closeout-evidence sentence the master had dropped; two files carry the obligation."
+    "justification": "The nine protected kept-by-name clauses are carried by multiple role/operation homes. In the examined closeout pair, operations/closeout.md retains every base paragraph byte-for-byte at current lines1,3,5,11 while adding separate paragraphs; roles/curator.md:71 retains the closeout-evidence boundary sentence. This describes retained protected wording, not current whole-file byte identity."
   },
   "applicability": "The nine kept-by-name clauses wherever they stand, and operations/closeout.md with the named role closeout and integration passages.",
   "conditions": [

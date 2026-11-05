@@ -212,7 +212,7 @@ The following complete predecessor retains useful explanations, old observations
 > - The malformed-path and remove-plus-path refusals are the hand-off reader's (`handoff._cover_path`, review
 >   F1 and N7).
 >
-> - A moved row relocates the entry; before and after name the old and new paths; a rerun is byte-identical. [16]
+> - A moved row relocates the entry; before and after name the old and new paths; a rerun is byte-identical.
 >
 > ## 260928-MIK-L10 The No-Invariant Row And The Retired-Attach Refusal (MIK-R10)
 >
@@ -337,7 +337,7 @@ The following complete predecessor retains useful explanations, old observations
 >
 >
 >
-> - The conforming example: decision, realization and proof, validated. [41]
+> - The conforming example: decision, realization and proof, validated.
 > - Rerun idempotence. [42]
 > - Revision increments once; foreign evidence goes to this leaf's row. [43]
 >
@@ -379,7 +379,7 @@ The following complete predecessor retains useful explanations, old observations
 - The writer's planned rows and every refusal. [11]
 
 
-- A moved row relocates the entry; before and after name the old and new paths; a rerun is byte-identical. [16]
+- A moved row relocates the entry; before and after name the old and new paths; a rerun is byte-identical.
 
 - The retired-attach guard, called before the record is placed. [17]
 - The refusal names the invariant and the alternatives. [18]
@@ -406,7 +406,7 @@ The following complete predecessor retains useful explanations, old observations
 - What became of a test the evidence names, and a test file named without a test is `unresolvable`. [37]
 
 
-- The conforming example: decision, realization and proof, validated. [41]
+- The conforming example: decision, realization and proof, validated.
 
 - Rerun idempotence. [42]
 - Revision increments once; foreign evidence goes to this leaf's row. [43]
@@ -421,3 +421,6 @@ The following complete predecessor retains useful explanations, old observations
 
 
 - Current source delta inspected statically: Refresh inherited-row facts and stale no_impact-only, dispatch and permanent-report captions while retaining origin, revision, relocation and attempt mechanics. [53]
+
+- A moved row relocates the entry; before and after name the old and new paths; a rerun is byte-identical. Anchor: `test_a_moved_row_whose_after_names_another_path_relocates_the_entry` [16]
+- The conforming example: decision, realization and proof, validated. Anchor: `test_a_decision_a_realization_and_a_tested_evidence_produce_validated_files` [41]

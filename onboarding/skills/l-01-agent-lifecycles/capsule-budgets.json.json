@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "32588f695124b7d325ef8e5c24ad430a9a85ee81",
-        "content": "sha256:4fce5f17e755b648d4cec0100701b681c91d7b1a57b77072390293a1f005cf82",
+        "blob": "9666326b219ed7dceb72e020d3bc5a57dcda6460",
+        "content": "sha256:b62a2d8a6318b6d22c3bc49d93fedbaa7426eeaf3ff26c55191991c2a51cc94a",
         "locator": {
           "kind": "file"
         }
@@ -20,8 +20,8 @@
     },
     {
       "anchor": {
-        "blob": "32588f695124b7d325ef8e5c24ad430a9a85ee81",
-        "content": "sha256:4fce5f17e755b648d4cec0100701b681c91d7b1a57b77072390293a1f005cf82",
+        "blob": "9666326b219ed7dceb72e020d3bc5a57dcda6460",
+        "content": "sha256:b62a2d8a6318b6d22c3bc49d93fedbaa7426eeaf3ff26c55191991c2a51cc94a",
         "locator": {
           "kind": "file"
         }
@@ -37,8 +37,8 @@
     },
     {
       "anchor": {
-        "blob": "32588f695124b7d325ef8e5c24ad430a9a85ee81",
-        "content": "sha256:4fce5f17e755b648d4cec0100701b681c91d7b1a57b77072390293a1f005cf82",
+        "blob": "9666326b219ed7dceb72e020d3bc5a57dcda6460",
+        "content": "sha256:b62a2d8a6318b6d22c3bc49d93fedbaa7426eeaf3ff26c55191991c2a51cc94a",
         "locator": {
           "kind": "file"
         }
@@ -59,8 +59,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "32588f695124b7d325ef8e5c24ad430a9a85ee81",
-            "content": "sha256:504275419d2b48c33c1170e2a7124dde78718ef2841b1019f6fe0bb375f05207",
+            "blob": "9666326b219ed7dceb72e020d3bc5a57dcda6460",
+            "content": "sha256:a3cd3157ca03a580cb438299414a454b10d06be0c54ca914966c187fd1855eff",
             "locator": {
               "end": 4,
               "kind": "line_range",
@@ -71,8 +71,8 @@
         },
         {
           "anchor": {
-            "blob": "32588f695124b7d325ef8e5c24ad430a9a85ee81",
-            "content": "sha256:9b4f53f7128be9858aae9424b703b202681907bad92e097164204b7ea02ade3a",
+            "blob": "9666326b219ed7dceb72e020d3bc5a57dcda6460",
+            "content": "sha256:a1ea126bf39875bc86dd44088934192bde90b9a3e479cb82970ad58f0cfa95d5",
             "locator": {
               "end": 193,
               "kind": "line_range",
@@ -80,20 +80,138 @@
             }
           },
           "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9666326b219ed7dceb72e020d3bc5a57dcda6460",
+            "content": "sha256:10a1c97c85b2b5a81e7ef99df73f8cdba9e1641b63f765c59f6c3bdce5158365",
+            "locator": {
+              "end": 3525,
+              "kind": "line_range",
+              "start": 3513
+            }
+          },
+          "kind": "code"
         }
       ]
     },
     "10": {
-      "note": "The registry's current capsule, step-detail and handover rows retain their capped formulas and recorded values.\n\nAnchor: \"handover\"",
+      "note": "The registry's current capsule, step-detail and handover rows retain their capped formulas and recorded values.",
       "targets": [
         {
           "anchor": {
-            "blob": "32588f695124b7d325ef8e5c24ad430a9a85ee81",
-            "content": "sha256:78e87fc490c42038a92cc4b749caa98574f617501dca65e99bc652fdcf3a77e8",
+            "blob": "9666326b219ed7dceb72e020d3bc5a57dcda6460",
+            "content": "sha256:c413bb5a5ba88cca9f2035f292ded13d561abd873e2522b950c8bc95de5a2c8e",
             "locator": {
-              "end": 255,
+              "end": 38,
               "kind": "line_range",
-              "start": 1
+              "start": 2
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9666326b219ed7dceb72e020d3bc5a57dcda6460",
+            "content": "sha256:f511b5a282eda043522e7930cc35a4202201a4a835e4a77ea7f99e86bb5cc71a",
+            "locator": {
+              "end": 307,
+              "kind": "line_range",
+              "start": 40
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9666326b219ed7dceb72e020d3bc5a57dcda6460",
+            "content": "sha256:10a1c97c85b2b5a81e7ef99df73f8cdba9e1641b63f765c59f6c3bdce5158365",
+            "locator": {
+              "end": 3525,
+              "kind": "line_range",
+              "start": 3513
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "Current registry policy applies a role-specific capsule ceiling at every stage: Architect 4,631 words; Manager 4,513; Curator, Reviewer and Bootstrap 4,000; other roles 3,700. Budgets remain min(ceil(size_words * 11 / 10), the applicable ceiling). The registry has 38 capsule rows and 28 step-detail rows; step details retain the 2,500-word ceiling. The separately delivered shared digest records size_words 1,000 and budget_words 1,100. These are stored declarations, not a new compilation or test run.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9666326b219ed7dceb72e020d3bc5a57dcda6460",
+            "content": "sha256:a3cd3157ca03a580cb438299414a454b10d06be0c54ca914966c187fd1855eff",
+            "locator": {
+              "end": 4,
+              "kind": "line_range",
+              "start": 2
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9666326b219ed7dceb72e020d3bc5a57dcda6460",
+            "content": "sha256:f511b5a282eda043522e7930cc35a4202201a4a835e4a77ea7f99e86bb5cc71a",
+            "locator": {
+              "end": 307,
+              "kind": "line_range",
+              "start": 40
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9666326b219ed7dceb72e020d3bc5a57dcda6460",
+            "content": "sha256:10a1c97c85b2b5a81e7ef99df73f8cdba9e1641b63f765c59f6c3bdce5158365",
+            "locator": {
+              "end": 3525,
+              "kind": "line_range",
+              "start": 3513
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "Current registry policy applies a role-specific capsule ceiling at every stage: Architect 4,631 words; Manager 4,513; Curator, Reviewer and Bootstrap 4,000; other roles 3,700. Budgets remain min(ceil(size_words * 11 / 10), the applicable ceiling). The registry has 38 capsule rows and 28 step-detail rows; step details retain the 2,500-word ceiling. The separately delivered shared digest records size_words 1,000 and budget_words 1,100. These are stored declarations, not a new compilation or test run.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9666326b219ed7dceb72e020d3bc5a57dcda6460",
+            "content": "sha256:a3cd3157ca03a580cb438299414a454b10d06be0c54ca914966c187fd1855eff",
+            "locator": {
+              "end": 4,
+              "kind": "line_range",
+              "start": 2
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9666326b219ed7dceb72e020d3bc5a57dcda6460",
+            "content": "sha256:f511b5a282eda043522e7930cc35a4202201a4a835e4a77ea7f99e86bb5cc71a",
+            "locator": {
+              "end": 307,
+              "kind": "line_range",
+              "start": 40
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9666326b219ed7dceb72e020d3bc5a57dcda6460",
+            "content": "sha256:10a1c97c85b2b5a81e7ef99df73f8cdba9e1641b63f765c59f6c3bdce5158365",
+            "locator": {
+              "end": 3525,
+              "kind": "line_range",
+              "start": 3513
             }
           },
           "kind": "code"
@@ -105,12 +223,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "17d6acd1f48bded76920424ca5fe5b1de2e153b0",
-            "content": "sha256:0c6ca7dd0173e655fbe1fdabae1004e65beeb63e4dc905d636bd481841f7a00b",
+            "blob": "90ac087998bfd37bec6202ec5ce03a59d9d53fd3",
+            "content": "sha256:07397e3fc8ea12f3afe923ccac01c03071e93b0a4264aaa38a2ff2a4139493d5",
             "locator": {
-              "end": 137,
+              "end": 154,
               "kind": "line_range",
-              "start": 132
+              "start": 111
             },
             "path": "mcp/tests/test_role_capsule_budgets.py"
           },
@@ -118,12 +236,12 @@
         },
         {
           "anchor": {
-            "blob": "17d6acd1f48bded76920424ca5fe5b1de2e153b0",
-            "content": "sha256:d634a7439a17046937afb5babbcc2a33ca374c3f8271805ad5fb90aa52fae8e4",
+            "blob": "90ac087998bfd37bec6202ec5ce03a59d9d53fd3",
+            "content": "sha256:9f56cf1bb7842b7c7ee0b53493a94c160ebb104be624418f10df61c23a68dab0",
             "locator": {
-              "end": 122,
+              "end": 175,
               "kind": "line_range",
-              "start": 105
+              "start": 165
             },
             "path": "mcp/tests/test_role_capsule_budgets.py"
           },
@@ -132,16 +250,28 @@
       ]
     },
     "3": {
-      "note": "The registry retains 38 capped capsule rows and fifteen step-file rows; its decisions retain the provenance of their own measured changes.  Anchor: current definitions",
+      "note": "The current registry contains 38 capsule rows and 28 step-detail rows under capped eleven-tenths formulas and the recorded developer-owned ceilings. Current literals include the named later Architect 4,631 and Manager 4,513 raises; the other high roles remain 4,000, other roles 3,700 and step files 2,500.",
       "targets": [
         {
           "anchor": {
-            "blob": "32588f695124b7d325ef8e5c24ad430a9a85ee81",
-            "content": "sha256:8f2cb7756b51b80dbabced1f249a44c45c78c7456f9f6c4c6e880a10b10b6889",
+            "blob": "9666326b219ed7dceb72e020d3bc5a57dcda6460",
+            "content": "sha256:f511b5a282eda043522e7930cc35a4202201a4a835e4a77ea7f99e86bb5cc71a",
             "locator": {
-              "end": 255,
+              "end": 307,
               "kind": "line_range",
               "start": 40
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9666326b219ed7dceb72e020d3bc5a57dcda6460",
+            "content": "sha256:53e9ded506babc937b809c4502cddc8c5852458347b778061a15932ef912cfa6",
+            "locator": {
+              "end": 3611,
+              "kind": "line_range",
+              "start": 3513
             }
           },
           "kind": "code"
@@ -153,10 +283,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "32588f695124b7d325ef8e5c24ad430a9a85ee81",
-            "content": "sha256:4fce5f17e755b648d4cec0100701b681c91d7b1a57b77072390293a1f005cf82",
+            "blob": "9666326b219ed7dceb72e020d3bc5a57dcda6460",
+            "content": "sha256:b62a2d8a6318b6d22c3bc49d93fedbaa7426eeaf3ff26c55191991c2a51cc94a",
             "locator": {
-              "end": 3440,
+              "end": 3611,
               "kind": "line_range",
               "start": 1
             }
@@ -170,12 +300,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "32588f695124b7d325ef8e5c24ad430a9a85ee81",
+            "blob": "9666326b219ed7dceb72e020d3bc5a57dcda6460",
             "content": "sha256:96a6a7eced12da510ccf0a2ff81cdee0733966138fe5f59117cd49b0c21d1bb1",
             "locator": {
-              "end": 349,
+              "end": 401,
               "kind": "line_range",
-              "start": 256
+              "start": 308
             }
           },
           "kind": "code"
@@ -187,24 +317,24 @@
       "targets": [
         {
           "anchor": {
-            "blob": "32588f695124b7d325ef8e5c24ad430a9a85ee81",
+            "blob": "9666326b219ed7dceb72e020d3bc5a57dcda6460",
             "content": "sha256:96a6a7eced12da510ccf0a2ff81cdee0733966138fe5f59117cd49b0c21d1bb1",
             "locator": {
-              "end": 349,
+              "end": 401,
               "kind": "line_range",
-              "start": 256
+              "start": 308
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "32588f695124b7d325ef8e5c24ad430a9a85ee81",
+            "blob": "9666326b219ed7dceb72e020d3bc5a57dcda6460",
             "content": "sha256:1730cd003b24c75b698915352555aee6b29888aabaa2abbf6b17ae4f8271f531",
             "locator": {
-              "end": 447,
+              "end": 499,
               "kind": "line_range",
-              "start": 350
+              "start": 402
             }
           },
           "kind": "code"
@@ -216,24 +346,24 @@
       "targets": [
         {
           "anchor": {
-            "blob": "32588f695124b7d325ef8e5c24ad430a9a85ee81",
+            "blob": "9666326b219ed7dceb72e020d3bc5a57dcda6460",
             "content": "sha256:96a6a7eced12da510ccf0a2ff81cdee0733966138fe5f59117cd49b0c21d1bb1",
             "locator": {
-              "end": 349,
+              "end": 401,
               "kind": "line_range",
-              "start": 256
+              "start": 308
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "32588f695124b7d325ef8e5c24ad430a9a85ee81",
+            "blob": "9666326b219ed7dceb72e020d3bc5a57dcda6460",
             "content": "sha256:1730cd003b24c75b698915352555aee6b29888aabaa2abbf6b17ae4f8271f531",
             "locator": {
-              "end": 447,
+              "end": 499,
               "kind": "line_range",
-              "start": 350
+              "start": 402
             }
           },
           "kind": "code"
@@ -241,16 +371,16 @@
       ]
     },
     "8": {
-      "note": "The registry records the instruction-change measurements and reasons under the existing capped budget policy.",
+      "note": "The registry retains the earlier instruction-change measurement decisions alongside named later D656 ceiling decisions. Each historical measurement describes its own source epoch; the retained decisions are not fresh compiler execution or acceptance.",
       "targets": [
         {
           "anchor": {
-            "blob": "32588f695124b7d325ef8e5c24ad430a9a85ee81",
-            "content": "sha256:e52a28f644fe8f3a0ad84b71f4db3ee6a0ad779043123feb3a11b9c1c26232ec",
+            "blob": "9666326b219ed7dceb72e020d3bc5a57dcda6460",
+            "content": "sha256:61e30e0f323ac3bbf83b300657ef6bd7eeda123984599dc074699fd7258911b1",
             "locator": {
-              "end": 3440,
+              "end": 3611,
               "kind": "line_range",
-              "start": 256
+              "start": 308
             }
           },
           "kind": "code"
@@ -258,16 +388,16 @@
       ]
     },
     "9": {
-      "note": "The registry records the instruction-change measurements and reasons under the existing capped budget policy.\n\nAnchor: `decision_L198_post_L194_sync`",
+      "note": "The current registry retains decision_L198_post_L194_sync as its historical measurement account. Its recorded values and provenance describe that source epoch, rather than the current matrix or a new execution.",
       "targets": [
         {
           "anchor": {
-            "blob": "32588f695124b7d325ef8e5c24ad430a9a85ee81",
-            "content": "sha256:40a6bb1ccf1d3144db311ad6a034581e2a73525c84eefb07776c62a13d6ab362",
+            "blob": "9666326b219ed7dceb72e020d3bc5a57dcda6460",
+            "content": "sha256:78d058ec63d7d3fc8adc39ecb7bc4a8be5c23f711e347bea6e2425b4541c996a",
             "locator": {
-              "end": 3439,
+              "end": 3490,
               "kind": "line_range",
-              "start": 3220
+              "start": 3272
             }
           },
           "kind": "code"

@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "145be631612f52c363b97b82d253839028ebc907",
-        "content": "sha256:7506db63d2859ad92c4253de6434644d804afd2902e09a42ccda9e72b3f59f3b",
+        "blob": "a12f918499ebed5c67d253ce5956a1a3f7705656",
+        "content": "sha256:d4419241535f8cc0f0b8e8685fc6b740dea5a79428fec70d372001fd95d6a711",
         "locator": {
           "kind": "file"
         }
@@ -25,7 +25,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0fcaee614b530fbfb7a642fa65cbaf53214d3a9f",
+            "blob": "0618c0ae683f37668ba21c42c15ced9c0081f595",
             "content": "sha256:e5634b2fde999a70250356a80b5b8e8bfebac4a25e60d6f7c75c56d985354f01",
             "locator": {
               "kind": "symbol",
@@ -37,17 +37,46 @@
         }
       ]
     },
+    "10": {
+      "note": "Authority/failure boundaries preserve source and transaction ownership, tool scope and coherence; handoff goes directly to Reviewer and permission refusals are not bypassed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a12f918499ebed5c67d253ce5956a1a3f7705656",
+            "content": "sha256:fbd48e78ae3b3f890a9041eeb1cd07ec46f6083bf17bb82e33e4a0d93181e261",
+            "locator": {
+              "end": 166,
+              "kind": "line_range",
+              "start": 122
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a12f918499ebed5c67d253ce5956a1a3f7705656",
+            "content": "sha256:67b03481ef8426c5e539f9e7226a2b9aaf27c61b846af0104dd8d03e649ff1d3",
+            "locator": {
+              "end": 205,
+              "kind": "line_range",
+              "start": 170
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
     "2": {
       "note": "Before ingest, each hand-off target requires an authored rationale, directly or through an applicable entry-level default; the writer refuses unexplained targets on every run, before any file is written.",
       "targets": [
         {
           "anchor": {
-            "blob": "69517ee942d200d941aa32f6439d9be3dec88d70",
+            "blob": "96c7d8ea9d2d51612af52f18df65ebd97d06c4e3",
             "content": "sha256:238b8063355de4192d07169863f62548470ccc19e96ebe99ad9d443d54dc273b",
             "locator": {
-              "end": 38,
+              "end": 52,
               "kind": "line_range",
-              "start": 31
+              "start": 45
             },
             "path": "skills/l-01-agent-lifecycles/reference/curator-authoring-d301.md"
           },
@@ -73,12 +102,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "145be631612f52c363b97b82d253839028ebc907",
+            "blob": "a12f918499ebed5c67d253ce5956a1a3f7705656",
             "content": "sha256:f46dcb1a56028f631a030ff88a0c28e75e84188d1d91b2acb12af3f7d2fe9450",
             "locator": {
-              "end": 29,
+              "end": 28,
               "kind": "line_range",
-              "start": 26
+              "start": 25
             },
             "path": "skills/l-01-agent-lifecycles/operations/curation.md"
           },
@@ -86,12 +115,12 @@
         },
         {
           "anchor": {
-            "blob": "145be631612f52c363b97b82d253839028ebc907",
+            "blob": "a12f918499ebed5c67d253ce5956a1a3f7705656",
             "content": "sha256:37acace39292198a835dda5aaac31a302750023a2974d39086c18f9f26a3d5c0",
             "locator": {
-              "end": 176,
+              "end": 180,
               "kind": "line_range",
-              "start": 176
+              "start": 180
             },
             "path": "skills/l-01-agent-lifecycles/operations/curation.md"
           },
@@ -100,16 +129,52 @@
       ]
     },
     "4": {
-      "note": "MEMORY review stays separately sealed/counted and never opens or resets CODE review. Beyond the settings limit the architect or developer authorizes the pass and Manager records it. Curator owns corrected input/body/coherence work; transaction steps and external effects stay with their owners. The installed-build quality/coherence outcome and direct Reviewer handover remain separate from independent acceptance.",
+      "note": "Memory review has separate sealed reports, IDs and pass count, preserves code state and uses the code-review limit; extra passes need Architect/developer approval recorded by Manager. Curation requires the complete quality operation and independent fact-check, keeps direct Reviewer handover, and leaves acceptance and transactions to their owners.",
       "targets": [
         {
           "anchor": {
-            "blob": "145be631612f52c363b97b82d253839028ebc907",
-            "content": "sha256:7506db63d2859ad92c4253de6434644d804afd2902e09a42ccda9e72b3f59f3b",
+            "blob": "a12f918499ebed5c67d253ce5956a1a3f7705656",
+            "content": "sha256:37acace39292198a835dda5aaac31a302750023a2974d39086c18f9f26a3d5c0",
             "locator": {
-              "end": 198,
+              "end": 180,
               "kind": "line_range",
-              "start": 1
+              "start": 180
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a12f918499ebed5c67d253ce5956a1a3f7705656",
+            "content": "sha256:a4504ad8f34ef9d2842ba7f1b96a8de63559c76ddf589161b58867382175b62c",
+            "locator": {
+              "end": 107,
+              "kind": "line_range",
+              "start": 90
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a12f918499ebed5c67d253ce5956a1a3f7705656",
+            "content": "sha256:f6df80b3eeb51661fdd31fdfe0ed494edaa2d2abc0c1ba23769caa60002f2dcf",
+            "locator": {
+              "end": 166,
+              "kind": "line_range",
+              "start": 159
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a12f918499ebed5c67d253ce5956a1a3f7705656",
+            "content": "sha256:d91a1f4cdc2055e0ebd197dce9ab8120820d6eca0cea6c2b9ae12d508bd8d0e2",
+            "locator": {
+              "end": 186,
+              "kind": "line_range",
+              "start": 173
             }
           },
           "kind": "code"
@@ -121,12 +186,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "145be631612f52c363b97b82d253839028ebc907",
+            "blob": "a12f918499ebed5c67d253ce5956a1a3f7705656",
             "content": "sha256:cd9fd56d57e1b04b0b88fc0a79ba5daaf1d59ccb825726ceedc673449e7956c0",
             "locator": {
-              "end": 100,
+              "end": 107,
               "kind": "line_range",
-              "start": 93
+              "start": 100
             },
             "path": "skills/l-01-agent-lifecycles/operations/curation.md"
           },
@@ -139,12 +204,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "145be631612f52c363b97b82d253839028ebc907",
-            "content": "sha256:f46dcb1a56028f631a030ff88a0c28e75e84188d1d91b2acb12af3f7d2fe9450",
+            "blob": "a12f918499ebed5c67d253ce5956a1a3f7705656",
+            "content": "sha256:29079d1c484d414bed82fcae1a5878428ec9a62d4df0fe74fb49a2d57dbfae9f",
             "locator": {
-              "end": 29,
+              "end": 31,
               "kind": "line_range",
-              "start": 26
+              "start": 25
             },
             "path": "skills/l-01-agent-lifecycles/operations/curation.md"
           },
@@ -152,12 +217,12 @@
         },
         {
           "anchor": {
-            "blob": "145be631612f52c363b97b82d253839028ebc907",
-            "content": "sha256:a8e1d190918d1438f9d67e211ee09809dfcae576409a9ee14a60fde969c1c74d",
+            "blob": "a12f918499ebed5c67d253ce5956a1a3f7705656",
+            "content": "sha256:1454e308de2165275aaf992694b4bb8ee63a2d0d0d1520e50a461010f134bd5e",
             "locator": {
-              "end": 100,
+              "end": 107,
               "kind": "line_range",
-              "start": 75
+              "start": 81
             },
             "path": "skills/l-01-agent-lifecycles/operations/curation.md"
           },
@@ -165,12 +230,12 @@
         },
         {
           "anchor": {
-            "blob": "145be631612f52c363b97b82d253839028ebc907",
+            "blob": "a12f918499ebed5c67d253ce5956a1a3f7705656",
             "content": "sha256:c49a27f05bdf3b87d666fb6a88ad454a3992d44d087e2362e2d006bb03b7711a",
             "locator": {
-              "end": 111,
+              "end": 118,
               "kind": "line_range",
-              "start": 111
+              "start": 118
             },
             "path": "skills/l-01-agent-lifecycles/operations/curation.md"
           },
@@ -179,38 +244,100 @@
       ]
     },
     "7": {
-      "note": "Bound curation intake reads supplied canonical files; knowledge_read uses memoryRoot and only read_ar_files uses task_context. Foundation authoring is regular task work inside the task the user-started Architect opens; the Curator seat is started on that task document with its actual enclosure contract, and no instructed session substitutes for task admission. [6] Anchor: Foundation carrier and admission",
+      "note": "Bound curation intake reads the supplied canonical files and scopes its writer to the selected memory root. The intake detail gives knowledge_read workspace.memoryRoot and read_ar_files task_context; the foundation detail requires the real task opened by the user-started Architect and its actual enclosure contract, with no fabricated task or instructed-session substitute.",
       "targets": [
         {
           "anchor": {
-            "blob": "145be631612f52c363b97b82d253839028ebc907",
-            "content": "sha256:66d0bc8f115a657019dd34edd0e697f3ae81f8546670d2940c85c565154777e6",
+            "blob": "a12f918499ebed5c67d253ce5956a1a3f7705656",
+            "content": "sha256:15f2e9b1cc9e77b5101679e45c27ca7a6cef7f7573c53f5a3cdfbdb42faf69b4",
             "locator": {
-              "end": 33,
+              "end": 25,
               "kind": "line_range",
-              "start": 28
+              "start": 16
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "145be631612f52c363b97b82d253839028ebc907",
-            "content": "sha256:a917dcb96e7d3537526b86625dffe2b116c7bdc821e23852321ae7177169a263",
+            "blob": "a12f918499ebed5c67d253ce5956a1a3f7705656",
+            "content": "sha256:1a95bda4f59185d1af3e205da3dea2c1d7c23a03255a2ea5cc0b48359606fa2b",
+            "locator": {
+              "end": 62,
+              "kind": "line_range",
+              "start": 54
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a12f918499ebed5c67d253ce5956a1a3f7705656",
+            "content": "sha256:aebf8fc2713cc432a1f3230e1c3ff688d4298097b364d2f629260c0dcf4c8824",
             "locator": {
               "end": 198,
               "kind": "line_range",
-              "start": 182
+              "start": 189
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "145be631612f52c363b97b82d253839028ebc907",
-            "content": "sha256:7506db63d2859ad92c4253de6434644d804afd2902e09a42ccda9e72b3f59f3b",
+            "blob": "e5545375ff6ae1cca5c2c6a0580d1779332b1e9a",
+            "content": "sha256:ff6c18c98d9b7554ff7f8bdcf9902cd08a9b59c4836ba7f7123205d52139be82",
             "locator": {
-              "kind": "file"
+              "end": 7,
+              "kind": "line_range",
+              "start": 3
+            },
+            "path": "skills/l-01-agent-lifecycles/reference/curator-intake-details.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6f1b7f17a083434b9512a5614aaf5a9d344a7e09",
+            "content": "sha256:3518e92e94b8d2e963cd88e9f0333406e1693ab260408b6c6dd31d7f2ce70a8f",
+            "locator": {
+              "end": 7,
+              "kind": "line_range",
+              "start": 3
+            },
+            "path": "skills/l-01-agent-lifecycles/reference/curator-repository-foundation.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Bound native intake, converted-card pre-read, selected-root writer ownership and the starting-server ruler.\n\nAnchor: lines 54-69",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a12f918499ebed5c67d253ce5956a1a3f7705656",
+            "content": "sha256:5efb669bc849c5dc3287773e64c61fa8003150199e83c22db1a753d5682fb976",
+            "locator": {
+              "end": 69,
+              "kind": "line_range",
+              "start": 54
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Normal workflow reconciles meaning, states invariant scope and grouping guarantees, and runs full quality and independent fact-check before bounded repair.\n\nAnchor: lines 75-109",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a12f918499ebed5c67d253ce5956a1a3f7705656",
+            "content": "sha256:7952eecd2c315628656620276b0011517dd71628f12ba784cc01382b99c099f5",
+            "locator": {
+              "end": 109,
+              "kind": "line_range",
+              "start": 75
             }
           },
           "kind": "code"

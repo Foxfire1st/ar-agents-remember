@@ -184,12 +184,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fa17709a127c9b18641196b921b59caa9f7ec2b2",
+            "blob": "551d4ee801406a1faf1ccde0cfa641425c5ee4e0",
             "content": "sha256:7b1130828c97fc13ad0c6c5c74b0e63baff4a713546aeba8cd5e8bf20aac96f1",
             "locator": {
-              "end": 203,
+              "end": 205,
               "kind": "line_range",
-              "start": 184
+              "start": 186
             },
             "path": "mcp/src/agents_remember/mcp/registration/closeout.py"
           },

@@ -38,4 +38,16 @@ The inherited card recorded no template-local TODO and required no sibling-repos
 - Scope, current/future collisions, resolution suggestions and landed regression risks are retained. [4]
 - Evidence inventory requires naming followed by native opens, and the bottom line claims no mutation. [5]
 - Harness helpers hold no AR seat; boundary acts and one Curator writer remain with the seat. [6]
-- The Orchestrator verifies delivery and keeps reports, findings, review, curation and publication distinct. [7]
+- The Orchestrator verifies delivery and keeps reports, findings, review, curation and publication distinct.
+
+Earlier caption detached from live reference 7: its original target declared the source text at `skills/l-01-agent-lifecycles/roles/orchestrator.md` at original blob `2d58c15304831b65be687127ce05ace5c0f87cec`, lines 28–32. The caption above is retained as prose; the numbered clause below describes the current source.
+
+Retained authoring-row wording:
+
+Finding: Orchestrator verifies Manager delivery while leaving the Manager's leaf diff, repair and evidence loop intact, and keeps reports, findings, review, curation and Git publication separately addressed.
+
+Anchor: `current role or template contract`
+
+Source: skills/l-01-agent-lifecycles/roles/orchestrator.md:38-44
+
+- Orchestrator verifies Manager delivery while leaving the Manager's leaf diff, repair and evidence loop intact, and keeps reports, findings, review, curation and Git publication separately addressed. [7]

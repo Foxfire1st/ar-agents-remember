@@ -71,7 +71,7 @@ No relevant documentation found after checking live sources.
 - The parsed manifest and its per-role applicability entries. [3]
 
 
-- The compiler step that calls this selection first. [4]
+- The compiler step that calls this selection first.
 
 - The unknown-role, unknown-operation, non-applicable-operation and launcher cases. [5]
 
@@ -80,3 +80,5 @@ No relevant documentation found after checking live sources.
 No sibling-repository contract defines this selection rule.
 
 No meaningful cross-repo references found.
+
+- The compiler step that calls this selection first. Anchor: `compile_role_capsule` [4]

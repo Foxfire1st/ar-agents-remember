@@ -3,8 +3,27 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "762c104a0bcdc0375416163993d106dc37c5fb18",
-        "content": "sha256:1887eaccb5d5f005cb1e74f059d46449876977184df1293db4f51a2b4c61e567",
+        "blob": "a744d8de93cda92f20309cc2f735c24a2bf27ce4",
+        "content": "sha256:867c13d92c5987afb32ef78411433e2e26df7df6a61c746b70763d5611062510",
+        "locator": {
+          "end": 428,
+          "kind": "line_range",
+          "start": 415
+        }
+      },
+      "id": "RLZ-BJ1D9M",
+      "invariant": "INV-VTGJJK",
+      "origin": {
+        "handoffEntry": "L62-CUR-6db-attach-INV-VTGJJK",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "The source record seals core:every-role with selected=False and expressly records that it is not a composed instruction block.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "a744d8de93cda92f20309cc2f735c24a2bf27ce4",
+        "content": "sha256:6bdfa8672b22d1767b78410897a7c8a4109f3c5f07c43f15155cf1d13168e39d",
         "locator": {
           "kind": "symbol",
           "name": "compile_role_capsule"
@@ -18,19 +37,39 @@
       },
       "rationale": "Composes the selected role/stage instruction stream under the manifest contract.",
       "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "a744d8de93cda92f20309cc2f735c24a2bf27ce4",
+        "content": "sha256:0dc72173dcf544060d245533d9f338fb00c3440db6da4d8a79b6078f886e0453",
+        "locator": {
+          "end": 212,
+          "kind": "line_range",
+          "start": 192
+        }
+      },
+      "id": "RLZ-XG015T",
+      "invariant": "INV-VTGJJK",
+      "origin": {
+        "handoffEntry": "L62-CUR-6db-attach-INV-VTGJJK",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "A selected role with a declared every-role source requires that admitted source, refuses its missing revision by name, and returns it separately rather than composing it.",
+      "role": "propagation-persistence"
     }
   ],
   "references": {
     "1": {
-      "note": "The application entry point that admits bytes from disk and calls this compiler, returning success or refusal as a value.\n\nAnchor: `compile_admitted_capsule` `CapsuleCompilationOutcome`",
+      "note": "The application entry point that admits bytes from disk and calls this compiler, returning success or refusal as a value.",
       "targets": [
         {
           "anchor": {
-            "blob": "0de84f83644c391b29759b1623034309cabc8c72",
-            "content": "sha256:29ee69ed5c555d4e83c8cfa80f90ed3f888989d4fc019082f917c3acbbd8cac6",
+            "blob": "a9ebc25e9f72b32db990eb7c7582f967d6fbd021",
+            "content": "sha256:d83e2d57f2e37404de9d44a0dd51cfb781229885bb74bc9f34618a97fcef8b59",
             "locator": {
-              "kind": "symbol",
-              "name": "compile_admitted_capsule"
+              "end": 134,
+              "kind": "line_range",
+              "start": 93
             },
             "path": "mcp/src/agents_remember/application/role_capsules/compilation.py"
           },
@@ -38,11 +77,12 @@
         },
         {
           "anchor": {
-            "blob": "0de84f83644c391b29759b1623034309cabc8c72",
-            "content": "sha256:7b16c4a32019a3e8f4ccf82b15f964d954f4c2df5c97d530d7128a382caa421b",
+            "blob": "a9ebc25e9f72b32db990eb7c7582f967d6fbd021",
+            "content": "sha256:7be3af594bb85101f4afaa7916d8c206942a3c220b384c15d5ff6e61b8a485d8",
             "locator": {
-              "kind": "symbol",
-              "name": "CapsuleCompilationOutcome"
+              "end": 90,
+              "kind": "line_range",
+              "start": 45
             },
             "path": "mcp/src/agents_remember/application/role_capsules/compilation.py"
           },
@@ -50,10 +90,12 @@
         },
         {
           "anchor": {
-            "blob": "0de84f83644c391b29759b1623034309cabc8c72",
-            "content": "sha256:fa7dbb04c116a8a6d6767c3d85c3b723091f0af5bfd84f27ffc91b7b7e9f8f52",
+            "blob": "a9ebc25e9f72b32db990eb7c7582f967d6fbd021",
+            "content": "sha256:27f665a3c0c821e21a0eaa4cafcf4389a35cce689e06e81a63d72b38079bec0f",
             "locator": {
-              "kind": "file"
+              "end": 164,
+              "kind": "line_range",
+              "start": 1
             },
             "path": "mcp/src/agents_remember/application/role_capsules/compilation.py"
           },
@@ -98,16 +140,16 @@
       ]
     },
     "12": {
-      "note": "File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence.\n\nAnchor: L105–L169",
+      "note": "File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence.",
       "targets": [
         {
           "anchor": {
-            "blob": "762c104a0bcdc0375416163993d106dc37c5fb18",
-            "content": "sha256:ee255fa155c531dc069a95b5aec956e6cd368473ea8d07355cb77ce649d529a9",
+            "blob": "a744d8de93cda92f20309cc2f735c24a2bf27ce4",
+            "content": "sha256:2c7d4eb0802fba9ccafd268d7ba0f812c25e6ff3bc765d44be16f42114b81814",
             "locator": {
-              "end": 169,
+              "end": 189,
               "kind": "line_range",
-              "start": 105
+              "start": 124
             }
           },
           "kind": "code"
@@ -119,12 +161,41 @@
       "targets": [
         {
           "anchor": {
-            "blob": "762c104a0bcdc0375416163993d106dc37c5fb18",
+            "blob": "a744d8de93cda92f20309cc2f735c24a2bf27ce4",
             "content": "sha256:08b6fc4a146967951932e336b949c60d323f3f9c5cdc81fc5c7c924c8069f2f2",
             "locator": {
-              "end": 295,
+              "end": 338,
               "kind": "line_range",
-              "start": 249
+              "start": 292
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "Validates source-addressed contract markers before audience filtering; strips them before render/seal; seals declared every-role revision separately.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a744d8de93cda92f20309cc2f735c24a2bf27ce4",
+            "content": "sha256:2da9e4b96ac1e404128ca5841a11d3d83bda596411aef81afe98238a183b7f9b",
+            "locator": {
+              "end": 212,
+              "kind": "line_range",
+              "start": 124
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a744d8de93cda92f20309cc2f735c24a2bf27ce4",
+            "content": "sha256:ed2c9f0e1800999ed50908e3e9c037b20e2563bfac7dd8d00ce7ec7de22f904b",
+            "locator": {
+              "end": 431,
+              "kind": "line_range",
+              "start": 412
             }
           },
           "kind": "code"
@@ -216,7 +287,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "762c104a0bcdc0375416163993d106dc37c5fb18",
+            "blob": "a744d8de93cda92f20309cc2f735c24a2bf27ce4",
             "content": "sha256:ff997d6960152a420d7b0d10a870728d9c9ba02fba08c8054c25edb8dda93a71",
             "locator": {
               "kind": "symbol",
@@ -232,7 +303,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9946e7fc31fa11992782193f4af92050e7c18e46",
+            "blob": "fad1e5a1891afa9e3781b07d856907c922e210e7",
             "content": "sha256:473474c07b91cebc974210786d8cc7b9818bcc0a13b81d9a7507d283c83df510",
             "locator": {
               "kind": "symbol",
@@ -244,7 +315,7 @@
         },
         {
           "anchor": {
-            "blob": "9946e7fc31fa11992782193f4af92050e7c18e46",
+            "blob": "fad1e5a1891afa9e3781b07d856907c922e210e7",
             "content": "sha256:396f24d73d20453da02daf14bb34f184ac316c06e029e9b9649b3a7cd5b40e07",
             "locator": {
               "kind": "symbol",
@@ -256,7 +327,7 @@
         },
         {
           "anchor": {
-            "blob": "9946e7fc31fa11992782193f4af92050e7c18e46",
+            "blob": "fad1e5a1891afa9e3781b07d856907c922e210e7",
             "content": "sha256:7f6088caf1914a50ea7f6016a0b5573bd63a4d7ee29439c66c82c42723f83e56",
             "locator": {
               "kind": "symbol",
@@ -273,7 +344,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9946e7fc31fa11992782193f4af92050e7c18e46",
+            "blob": "fad1e5a1891afa9e3781b07d856907c922e210e7",
             "content": "sha256:2628f23bafe64d1e27e4be35c56e9fd1b539d7746fd4f195febbd461ac3a373f",
             "locator": {
               "kind": "symbol",
@@ -285,7 +356,7 @@
         },
         {
           "anchor": {
-            "blob": "9946e7fc31fa11992782193f4af92050e7c18e46",
+            "blob": "fad1e5a1891afa9e3781b07d856907c922e210e7",
             "content": "sha256:96e522b9106d44be40439301a8aeccaa8143e27b7d1e5a88574acdcbf786ef0b",
             "locator": {
               "kind": "symbol",
@@ -297,7 +368,7 @@
         },
         {
           "anchor": {
-            "blob": "9946e7fc31fa11992782193f4af92050e7c18e46",
+            "blob": "fad1e5a1891afa9e3781b07d856907c922e210e7",
             "content": "sha256:cde89307f7a031255b9f02801ae6b2b58853979b2027c2dc8f7835476757fe5b",
             "locator": {
               "kind": "symbol",
@@ -314,7 +385,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9946e7fc31fa11992782193f4af92050e7c18e46",
+            "blob": "fad1e5a1891afa9e3781b07d856907c922e210e7",
             "content": "sha256:1c7be34037305e689c446275eab98b47307989cabcdb57e58a5f15f6d160b527",
             "locator": {
               "kind": "symbol",
@@ -326,7 +397,7 @@
         },
         {
           "anchor": {
-            "blob": "9946e7fc31fa11992782193f4af92050e7c18e46",
+            "blob": "fad1e5a1891afa9e3781b07d856907c922e210e7",
             "content": "sha256:c776f8c06880ce3914eae0dc24aa503d828a05340ff31eee6d0e8790dabfdd6e",
             "locator": {
               "kind": "symbol",
@@ -338,12 +409,12 @@
         },
         {
           "anchor": {
-            "blob": "9946e7fc31fa11992782193f4af92050e7c18e46",
+            "blob": "fad1e5a1891afa9e3781b07d856907c922e210e7",
             "content": "sha256:fd3c5ee5684f439f0f58bfbad3a0f7808e2eccd996a54c854f9b67fc296fe1c9",
             "locator": {
-              "end": 929,
+              "end": 985,
               "kind": "line_range",
-              "start": 910
+              "start": 966
             },
             "path": "mcp/tests/test_role_capsule_compiler.py"
           },
@@ -351,12 +422,12 @@
         },
         {
           "anchor": {
-            "blob": "9946e7fc31fa11992782193f4af92050e7c18e46",
+            "blob": "fad1e5a1891afa9e3781b07d856907c922e210e7",
             "content": "sha256:f4d7fcc172924568359bfaf8ae34878e8c1d677f62df9bf02e854122db72edf7",
             "locator": {
-              "end": 961,
+              "end": 1017,
               "kind": "line_range",
-              "start": 932
+              "start": 988
             },
             "path": "mcp/tests/test_role_capsule_compiler.py"
           },
@@ -369,7 +440,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9946e7fc31fa11992782193f4af92050e7c18e46",
+            "blob": "fad1e5a1891afa9e3781b07d856907c922e210e7",
             "content": "sha256:f68be40622b6abfe0d2362438100ef630301619d57ed967748239daeade96d73",
             "locator": {
               "kind": "symbol",
@@ -381,7 +452,7 @@
         },
         {
           "anchor": {
-            "blob": "9946e7fc31fa11992782193f4af92050e7c18e46",
+            "blob": "fad1e5a1891afa9e3781b07d856907c922e210e7",
             "content": "sha256:d5c34ac6d955df25f6b7d2ca9bf555dbd4a57bfbb3dd318b25550cc4d08032d0",
             "locator": {
               "kind": "symbol",
@@ -393,12 +464,12 @@
         },
         {
           "anchor": {
-            "blob": "9946e7fc31fa11992782193f4af92050e7c18e46",
+            "blob": "fad1e5a1891afa9e3781b07d856907c922e210e7",
             "content": "sha256:079569ddf8eff689aabcd9b7a2a97cdaed597ce68ea79db471edf0186f471fcf",
             "locator": {
-              "end": 907,
+              "end": 963,
               "kind": "line_range",
-              "start": 893
+              "start": 949
             },
             "path": "mcp/tests/test_role_capsule_compiler.py"
           },
@@ -406,12 +477,12 @@
         },
         {
           "anchor": {
-            "blob": "9946e7fc31fa11992782193f4af92050e7c18e46",
+            "blob": "fad1e5a1891afa9e3781b07d856907c922e210e7",
             "content": "sha256:68096c57e97e205f5f3163e6d230b5063533eba3a4ef80003c9c06ff9601f981",
             "locator": {
-              "end": 876,
+              "end": 932,
               "kind": "line_range",
-              "start": 864
+              "start": 920
             },
             "path": "mcp/tests/test_role_capsule_compiler.py"
           },

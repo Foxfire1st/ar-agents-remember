@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6d672d3445e36d61529eab5788ef10633dbf6d77",
+            "blob": "b36bc9e889991a8c1f20d1a6b4a4981f1b88e001",
             "content": "sha256:ee3656b577ac3b41f1bfc9af88c88d654b4a5568766fa73131696d0ac9dd58bb",
             "locator": {
               "end": 354,
@@ -19,7 +19,7 @@
         },
         {
           "anchor": {
-            "blob": "6d672d3445e36d61529eab5788ef10633dbf6d77",
+            "blob": "b36bc9e889991a8c1f20d1a6b4a4981f1b88e001",
             "content": "sha256:59cd6b62d402c8d0a88da76d79f66c0977bdf91669cf82335d1fac075af29560",
             "locator": {
               "end": 354,
@@ -36,7 +36,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6d672d3445e36d61529eab5788ef10633dbf6d77",
+            "blob": "b36bc9e889991a8c1f20d1a6b4a4981f1b88e001",
             "content": "sha256:162da5204e2b02dabbc9644da169776902466e0ccf2f775570cf33794fdb6fbf",
             "locator": {
               "kind": "symbol",
@@ -48,14 +48,15 @@
       ]
     },
     "3": {
-      "note": "Actual validator results derive integrity answer cases.\n\nAnchor: `IntegrityProductionTests`",
+      "note": "Actual validator results derive integrity answer cases. Anchor: `IntegrityProductionTests`",
       "targets": [
         {
           "anchor": {
-            "blob": "6d672d3445e36d61529eab5788ef10633dbf6d77",
-            "content": "sha256:7e7339c3360d4af9a3a4563a565bed6550e448982fc6607ba612afc76aa028ea",
+            "blob": "b36bc9e889991a8c1f20d1a6b4a4981f1b88e001",
+            "content": "sha256:ab470390f4f89273305115fbbd2088afa5d33706c9f24973f1a8c065481e237a",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "IntegrityProductionTests"
             }
           },
           "kind": "test"
@@ -67,7 +68,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6d672d3445e36d61529eab5788ef10633dbf6d77",
+            "blob": "b36bc9e889991a8c1f20d1a6b4a4981f1b88e001",
             "content": "sha256:11ed838af0dfc9e8ba01b06a7861dea7cbaf84fb95f5cfa7270070284daf4ee6",
             "locator": {
               "kind": "symbol",
@@ -83,8 +84,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6d672d3445e36d61529eab5788ef10633dbf6d77",
-            "content": "sha256:03fa776ab3c630ab4ea244c0770d6b57e56d82cbec8beeaf9ce9af5007146ab6",
+            "blob": "b36bc9e889991a8c1f20d1a6b4a4981f1b88e001",
+            "content": "sha256:85d3929540360c8bf7aba91b8a47a8a658e909a4fb87d313701e52279211e515",
             "locator": {
               "kind": "symbol",
               "name": "_fixed_width_case_root"
@@ -99,7 +100,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6d672d3445e36d61529eab5788ef10633dbf6d77",
+            "blob": "b36bc9e889991a8c1f20d1a6b4a4981f1b88e001",
             "content": "sha256:bb3972e97bdaafef025ac35956cc99aa9ae002488e9f022563945af413a3648c",
             "locator": {
               "kind": "symbol",
@@ -115,7 +116,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6d672d3445e36d61529eab5788ef10633dbf6d77",
+            "blob": "b36bc9e889991a8c1f20d1a6b4a4981f1b88e001",
             "content": "sha256:ac72a16b665675f225524aa477bbb79a5a41543e4ad14a9a01f32906e1bbdc4a",
             "locator": {
               "end": 68,
@@ -145,12 +146,29 @@
         },
         {
           "anchor": {
-            "blob": "6d672d3445e36d61529eab5788ef10633dbf6d77",
+            "blob": "b36bc9e889991a8c1f20d1a6b4a4981f1b88e001",
             "content": "sha256:66daf1f61e34ef86d10e6ca6db6c74a01c467106714deb3ddd75e27434a88fc3",
             "locator": {
               "end": 483,
               "kind": "line_range",
               "start": 403
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "`_fixed_width_case_root` uses the literal /tmp parent for its unique constant-width fixture roots. The separate coherence fixture continues to use tempfile.gettempdir(). Raw emitted responses, existing bounds and density floors remain the assertion inputs; paths are not rewritten to fit. These are source assertions/support behavior, not a fresh invocation, host result or AR acceptance.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b36bc9e889991a8c1f20d1a6b4a4981f1b88e001",
+            "content": "sha256:515d8fb88513db21608d2d3156b355793c73bcb9b57c8f85ec05e347b7a08d17",
+            "locator": {
+              "end": 96,
+              "kind": "line_range",
+              "start": 90
             }
           },
           "kind": "test"

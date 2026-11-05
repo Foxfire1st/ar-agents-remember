@@ -1,0 +1,40 @@
+{
+  "path": "scripts/agent_evals/adapters/helper_wait.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "f6bdcbd290575756fe8ddedd8d5292f0086f4efe",
+        "content": "sha256:496ebfcbecc9013a8537a4d75f2e8990a9263a59f34890fd80257eeba096b410",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-JZX05M",
+      "invariant": "INV-5JEVAZ",
+      "origin": {
+        "handoffEntry": "L62-fd6462b8-helper-boundary",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "It binds launched helper identities and observed boundary facts without claiming a receipt proves process-local liveness.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The source defines this file's responsibility and the boundaries described here.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f6bdcbd290575756fe8ddedd8d5292f0086f4efe",
+            "content": "sha256:496ebfcbecc9013a8537a4d75f2e8990a9263a59f34890fd80257eeba096b410",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

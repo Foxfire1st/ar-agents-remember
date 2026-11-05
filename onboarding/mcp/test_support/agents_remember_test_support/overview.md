@@ -56,7 +56,7 @@ Repository-owned design descriptions live in `docs/design/python-evidence-system
 - Production coverage is diagnostic and CRAP20 is a review trigger. Lint, typing, structural rules, real test failures and malformed diagnostic inputs remain enforcing.
 - The retired causal/retry route-evidence and route-measurement machinery must not be restored as a duplicate measurement path, and removed tests must not be treated as current protection.
 
-Case budgets belong to the root `pyproject.toml` rather than this overview or a test-local default. Its current declarations at `pyproject.toml:333-334` are `unit_case_budget = 10000` and `integration_case_budget = 2000`; the unit ceiling has been raised three times since D226's 4000 — to 5000, to 6000 by L54 and to 10000 by L193's D460 — and the unit ceiling remains 10000 and D579 raises integration to 2000; guard behavior is unchanged. Readers must re-read that owner when the limits change.
+Case budgets belong to the root `pyproject.toml` rather than this overview or a test-local default. Its current declarations at `pyproject.toml:334-335` are `unit_case_budget = 10000` and `integration_case_budget = 2000`; the unit ceiling has been raised three times since D226's 4000 — to 5000, to 6000 by L54 and to 10000 by L193's D460 — and the unit ceiling remains 10000 and D579 raises integration to 2000; guard behavior is unchanged. Readers must re-read that owner when the limits change.
 
 ## File-Level Onboarding Map
 
@@ -86,6 +86,14 @@ File-level onboarding is intended to cover every current Python source below thi
 
 On 2026-10-26, the integration ceiling rises from 1000 to 2000; unit remains 10000. The source-file cases protect Git listing, bounded reads and readable excluded citations. The original 16-case shape measured 18.56 s and independently 20.15 s; grouping preserved its scenarios in four cases and 14 subtests at 19.70 s. The two link-class regressions produce four cases and 16 subtests: v2 measured 27.47 s and v3 38.20 s. No case was weakened or moved to the unit lane. Both over-budget refusal directions remain enforced. These are scenario-run measurements, not whole-suite runtime or a claimed speedup.
 
+
+Superseded card wording retained for custody (not the current source locator or capture account):
+
+> Case budgets belong to the root `pyproject.toml` rather than this overview or a test-local default. Its current declarations at `pyproject.toml:333-334` are `unit_case_budget = 10000` and `integration_case_budget = 2000`; the unit ceiling has been raised three times since D226's 4000 — to 5000, to 6000 by L54 and to 10000 by L193's D460 — and the unit ceiling remains 10000 and D579 raises integration to 2000; guard behavior is unchanged. Readers must re-read that owner when the limits change.
+
+Retained earlier citation wording, outside its current number: - Root configuration classifies product and verification packages; full static scope covers tracked Python while behavioral metrics use product roots.
+
+
 ## Evidence
 - Canonical POSIX-string sorting retains duplicate path entries. [2]
 - The root declares 10000 unit and 2000 integration selected cases. The current integration raise preserves marker classification and both over-budget refusal directions. [3]
@@ -93,7 +101,7 @@ On 2026-10-26, the integration ceiling rises from 1000 to 2000; unit remains 100
 - Development dependencies and checkout import paths are distinct from installed product-package discovery. [4]
 > Retained earlier citation wording: - Certifying pytest startup requires admission before preparing candidate state and loading the certifying plugin. [5]
 - The package initializer exports no facade; the certifying plugin composes shared services and worktree-service fixtures. [6]
-- Root configuration classifies product and verification packages; full static scope covers tracked Python while behavioral metrics use product roots. [7]
+- Root configuration classifies product and verification packages by operational ownership: scripts/agent_evals is now explicitly a verification root beside the Dagger quality package and test support. Full static scope covers tracked Python while behavioral metrics use product roots. [7]
 - Targeted ownership remains typed-incomplete and refuses executable quality configuration when unresolved. [8]
 - Exact-candidate cache reuse checks selection identity. [9]
 - The adapter constructs an explicit phase-report path; the quality-plan owner registers its reporting plugin. [10]

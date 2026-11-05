@@ -20,10 +20,12 @@ developer where the work sits. It states the architect's phase axis (request, tr
 reframe-research, decide, build, close) and says the job type is a lens during reframe-research
 rather than a gate, so the only task-format decision is the build-mode step. [1]
 
+Historical source account (detached from live reference 2; docs/workflows.md blob 6e323e36091e8dbd6349c51e15e675f29cfc9149):
+
 Shared Discipline lists the five rules every build keeps: resolve the active context, run drift
 detection before planning against onboarding, wait for the developer's approval before
 implementation, update onboarding live per completed plan section, and run the checks the resolved
-memory's `system/tools.md` lists. [2]
+memory's `system/tools.md` lists.
 
 At `decide` the architect picks one of three modes. A research-only exit answers and changes no
 code — no worktree, no task file, no closeout. A durable task takes the minimal
@@ -46,7 +48,13 @@ The page closes with a table mapping five situations to a build mode. [5]
 ### Repo-Internal References
 
 - The source describes the routing paragraph as summarized above. [1]
-- The source lists the five shared-discipline rules. [2]
+Historical source account (detached from live reference 2; docs/workflows.md blob 6e323e36091e8dbd6349c51e15e675f29cfc9149):
+
+- The source lists the five shared-discipline rules.
+
+- Shared Discipline now puts current card, sidecar and knowledge-record curation against approved changes in the leaf memory worktree before publication, alongside context, drift, implementation approval and configured checks. Knowledge in a Leaf separately requires fresh full quality/worklist/gate evidence and validated coherence without granting Git approval.
 - The source names the three build modes and what each produces. [3]
 - The source states the worktree ladder and defers landing to `system/task-publication.md` with the `landing.workflow` setting. [4]
 - The source's closing table maps situations to build modes. [5]
+
+- Shared Discipline now puts current card, sidecar and knowledge-record curation against approved changes in the leaf memory worktree before publication, alongside context, drift, implementation approval and configured checks. Knowledge in a Leaf separately requires fresh full quality/worklist/gate evidence and validated coherence without granting Git approval. [2]

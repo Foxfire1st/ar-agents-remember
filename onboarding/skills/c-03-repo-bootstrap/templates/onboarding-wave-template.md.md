@@ -43,9 +43,17 @@ The following same-repository source ranges support the template description and
 - Phase 4H uses this manifest, delegates file-level work to c-05, defines bounded sizing and reading duties, and calls for index refresh. [5]
 - The canonical bootstrap skill names c-05 as owner of file-level semantics and delegates file output rules to it. [6]
 
-- c-05 remains the public onboarding entry point. A knowledge/layout.json marker selects its converted-card workflow and admitted citation/trace writers; old-format memory is refused pending conversion. [7]
+Retained authoring-row wording:
+
+Finding: c-05 remains the public onboarding entry point. A knowledge/layout.json marker selects its converted-card workflow and admitted citation/trace writers; old-format memory is refused pending conversion.
+
+Anchor:
+
+Source: skills/c-05-create-or-update-onboarding-files/SKILL.md:46-67
 
 
 ### Cross-Repo References
 
 Inherited boundary note: the old card reported no sibling-repository evidence needed and no meaningful cross-repository references found. The account is supported by same-repository evidence; the inherited absence statement does not establish the absence of relevant evidence in every sibling repository.
+
+- c-05 remains the public onboarding entry point. A knowledge/layout.json marker selects its converted-card workflow and admitted citation/trace writers; old-format memory is refused pending conversion. [7]

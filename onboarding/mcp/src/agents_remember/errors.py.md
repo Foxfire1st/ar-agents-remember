@@ -99,7 +99,7 @@ The error families preserve distinct authority, recovery and transport meanings.
 - Role-capsule compilation refusal with its stable status, remedy and frozen conflict rows. [8]
 - The two capsule subclasses that mark which boundary refused. `CapsuleBindingError` was removed on the A3 candidate and must not be cited. [9]
 
-- The consumer that turns this family into a value with an explanation instead of an escaping exception. [10]
+- The consumer that turns this family into a value with an explanation instead of an escaping exception.
 
 - The registered refusal-code vocabulary these errors carry. [11]
 - The failure cases that assert a refusal advertises its own reason and remedy. [12]
@@ -141,3 +141,5 @@ No cross-repository evidence is required for these file-local claims.
 `SourceFileUnavailableError` carries the reason a cited file cannot be read within the quality check's source policy. Anchor observation handles it as a named not-indexed result rather than aborting the synchronous check.
 
 - Source-read unavailability carries a reason for the reference observer. [25]
+
+- The consumer that turns this family into a value with an explanation instead of an escaping exception. Anchor: `compile_admitted_capsule` `CapsuleCompilationOutcome` [10]

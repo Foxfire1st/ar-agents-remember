@@ -1,0 +1,40 @@
+{
+  "path": "mcp/tests/test_agent_eval_isolation.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "367990e878a518ec09ba84466fb060fdabbd328b",
+        "content": "sha256:2ee1fc4c8a1aea008f9432972df3e250181b59d965cac226ecc3c28770e58739",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-GNMR51",
+      "invariant": "INV-A8FVPH",
+      "origin": {
+        "handoffEntry": "L62-fd6462b8-trial-isolation",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "This regression module checks this obligation through test_retained_home_alias_is_replaced_by_trial_home, test_retained_shared_checkout_write_cannot_change_candidate, test_provider_copy_excludes_developer_state_and_receipt_secrets, test_kimi_environment_uses_go_seed_and_leaves_effort_to_provider and its remaining test cases.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The source defines this file's responsibility and the boundaries described here.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "367990e878a518ec09ba84466fb060fdabbd328b",
+            "content": "sha256:2ee1fc4c8a1aea008f9432972df3e250181b59d965cac226ecc3c28770e58739",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

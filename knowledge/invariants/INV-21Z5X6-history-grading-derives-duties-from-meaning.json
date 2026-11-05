@@ -1,0 +1,36 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "prevents_costly_mistake"
+    ],
+    "justification": "Manufacturing a missing-row duty from a metadata-only change would falsely fail valid curation; ignoring explicit expected rows would falsely pass it."
+  },
+  "applicability": "Eval grading of actual invariant/family/onboarding history duties from captured trees and explicit case authority.",
+  "conditions": [
+    "Product meaning comparison distinguishes revision, status, existence, entry-set and row changes.",
+    "Admission-only metadata does not invent a generic required row.",
+    "Hash-bound expected outcomes and case-specific rubric authority can explicitly require a row."
+  ],
+  "exclusions": [
+    "Inferring a row duty from actor success text.",
+    "Deleting retained withdrawn-duty evidence or claiming an instrument correction proves actor success."
+  ],
+  "id": "INV-21Z5X6",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Frozen tree fd6462b85ba9d06f004e323384ea800f9aa5144a, base 59b01fb8f72a38d2d27f9c37b8b9ca2513fd3fa0; path bindings and source hashes in producer-manifest.json; Reviewer R4 and d229-repairs/report.md."
+      ],
+      "path": "L62-unaffected-evaluation-obligations"
+    },
+    "handoffEntry": "L62-fd6462b8-history",
+    "leaf": "260928-MIK-L62",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "History grading derives duties from meaning, stated case outcomes and rubric authority rather than manufacturing a row from an admission-only field change.",
+  "status": "proposed",
+  "supersedes": []
+}

@@ -112,4 +112,6 @@ Converted full-quality dispatch constructs `QualitySourceFiles` from the paired 
 
 - Converted dispatch supplies the per-check source reader and both comparison ports. [19]
 
+- The registered `memory_quality_check` dispatches typed sync/start/poll requests to their payload builders; its description names candidate leaf-contract scope and required coherence validation.
+
 - The registered `memory_quality_check` dispatches typed sync/start/poll requests to their payload builders; its description names candidate leaf-contract scope and required coherence validation. [1]

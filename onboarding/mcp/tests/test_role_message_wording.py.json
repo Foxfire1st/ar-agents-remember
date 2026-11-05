@@ -7,12 +7,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fd950b5bddb08db7f5a90d98012137aa487537aa",
+            "blob": "d438d637246dfba724903c70c5e496831f8a8fb1",
             "content": "sha256:bbd21ddb4eaf78a34493f5f4e865d5d8ccf1618d7b40d6371fa4506e78767f9b",
             "locator": {
-              "end": 338,
+              "end": 366,
               "kind": "line_range",
-              "start": 313
+              "start": 341
             }
           },
           "kind": "test"
@@ -24,12 +24,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "fd950b5bddb08db7f5a90d98012137aa487537aa",
+            "blob": "d438d637246dfba724903c70c5e496831f8a8fb1",
             "content": "sha256:1de39e87afc108bc02e331a4c803db49d54dc66a87b3b384828a04df14bfba65",
             "locator": {
-              "end": 365,
+              "end": 393,
               "kind": "line_range",
-              "start": 340
+              "start": 368
             }
           },
           "kind": "test"
@@ -37,16 +37,52 @@
       ]
     },
     "3": {
-      "note": "Parentless compiled capsules exercise the shared producer and preserve its file-message markers.\n\nAnchor: `RoleMessageWordingTests.test_compiled_capsules_state_messages_as_files`",
+      "note": "The parentless compiled-text helper collects each selected role’s prompt and handover. The compiled-capsule test obtains the role’s declared message step, combines that detail with its prompt for the file-message markers and scans both prompt/detail and serialized handover for forbidden wording.",
       "targets": [
         {
           "anchor": {
-            "blob": "fd950b5bddb08db7f5a90d98012137aa487537aa",
-            "content": "sha256:60d3f2f1308cd51bbe47aa2286d1a2f5c17bf90a7872104c70d206ef44c0e953",
+            "blob": "d438d637246dfba724903c70c5e496831f8a8fb1",
+            "content": "sha256:5e6e22f5c38a42c50310b7075c5668fc956a0f70998a071006d4b226b83d8129",
             "locator": {
-              "end": 386,
+              "end": 337,
               "kind": "line_range",
-              "start": 367
+              "start": 325
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "d438d637246dfba724903c70c5e496831f8a8fb1",
+            "content": "sha256:a0fb3e91332312978d648df64d0580fc502a8cc51ad6b613e5b940cf56c54d62",
+            "locator": {
+              "end": 198,
+              "kind": "line_range",
+              "start": 188
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "d438d637246dfba724903c70c5e496831f8a8fb1",
+            "content": "sha256:f1442d5507c7bd0f85419b681acb2ecc4ac7a5b9c68de9a3a2b26efd15f15d63",
+            "locator": {
+              "end": 211,
+              "kind": "line_range",
+              "start": 201
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "d438d637246dfba724903c70c5e496831f8a8fb1",
+            "content": "sha256:c8ad6344843fa673b5e2f94afc968ea80ffb2baacd3a8e1ac31b99245eae79b5",
+            "locator": {
+              "end": 411,
+              "kind": "line_range",
+              "start": 395
             }
           },
           "kind": "test"
@@ -54,14 +90,52 @@
       ]
     },
     "4": {
-      "note": "The implementation operation's markers are read from the delivered Worker text; every other surface states them in its own words.",
+      "note": "Message-file markers are checked through the declared shared message step for role, template and addressed-operation surfaces. Operation checks visit every declared recipient, including Worker implementation and Curator/Manager curation, and compiled prompt checks combine the role text with its delivered detail.",
       "targets": [
         {
           "anchor": {
-            "blob": "fd950b5bddb08db7f5a90d98012137aa487537aa",
-            "content": "sha256:0731e5b0209a14f28ce360ba8bca387e861ecbe151854fe8af6c457e30d2f672",
+            "blob": "d438d637246dfba724903c70c5e496831f8a8fb1",
+            "content": "sha256:a7ca094629132a5de76ad51de97962e342200219891d50d475809943dbbf9d9e",
             "locator": {
-              "kind": "file"
+              "end": 124,
+              "kind": "line_range",
+              "start": 107
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "d438d637246dfba724903c70c5e496831f8a8fb1",
+            "content": "sha256:74ebe29902100df440087c7b7511c2a72afa430aeecf44ede9463ee254dff107",
+            "locator": {
+              "end": 146,
+              "kind": "line_range",
+              "start": 127
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "d438d637246dfba724903c70c5e496831f8a8fb1",
+            "content": "sha256:d666b200edd9cec523030b38faaf33802cfbb336937b4919ac51afeb68ec761d",
+            "locator": {
+              "end": 211,
+              "kind": "line_range",
+              "start": 188
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "d438d637246dfba724903c70c5e496831f8a8fb1",
+            "content": "sha256:d8a91c21471fc714e03147dc79ddfe1a8037034f68b72a36b4ebd6d3084a22e9",
+            "locator": {
+              "end": 411,
+              "kind": "line_range",
+              "start": 368
             }
           },
           "kind": "test"
@@ -69,15 +143,189 @@
       ]
     },
     "5": {
-      "note": "The oracle keeps role-specific Reviewer/Curator marker alternatives and deletion/cross-role controls, checking curation as both actual Curator and Manager addressed capsules on every known surface.",
+      "note": "The oracle keeps Reviewer- and Curator-specific file-message marker alternatives and requires each current delivered shared-step facet. Deleting a real marker must fail, and each role’s alternatives must fail on unrelated surfaces. Declared operation recipients include both Curator and Manager curation; pointer, declaration, audience and step mutations must also fail.",
       "targets": [
         {
           "anchor": {
-            "blob": "fd950b5bddb08db7f5a90d98012137aa487537aa",
-            "content": "sha256:0c2fb0af9177ed5feabd15ebc6d08edebc156c34d0724a99b83b35c2a9113b98",
+            "blob": "d438d637246dfba724903c70c5e496831f8a8fb1",
+            "content": "sha256:04c6719e23ad668c65a96bb070534956dcc2f47632ffa3be91782ceae29c54b7",
             "locator": {
-              "kind": "symbol",
-              "name": "delivered_text"
+              "end": 160,
+              "kind": "line_range",
+              "start": 107
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "d438d637246dfba724903c70c5e496831f8a8fb1",
+            "content": "sha256:d666b200edd9cec523030b38faaf33802cfbb336937b4919ac51afeb68ec761d",
+            "locator": {
+              "end": 211,
+              "kind": "line_range",
+              "start": 188
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "d438d637246dfba724903c70c5e496831f8a8fb1",
+            "content": "sha256:05c9ef57b253150d3553f9ebff469543fa6fec854fec7fe30df42da75553db47",
+            "locator": {
+              "end": 393,
+              "kind": "line_range",
+              "start": 386
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "d438d637246dfba724903c70c5e496831f8a8fb1",
+            "content": "sha256:6bcb48efbe4a35fcf9f857ae54df818b33a040349aaac18fbadecadee8f7e0a1",
+            "locator": {
+              "end": 558,
+              "kind": "line_range",
+              "start": 496
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "`message_step` reads the actual role/operation-aware shared detail instead of concatenating raw Worker prose or a Curator-only payload file. Reviewer direct-verdict ownership is checked at Process 8 and duplicate Outputs clauses fail reinsertion controls. Six curation handoff targets must resolve to exact headings; Bootstrap keeps its no-message own-chat route, and pointer/declaration/audience/step mutations fail. These are source assertions/support behavior, not a fresh invocation, host result or AR acceptance.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d438d637246dfba724903c70c5e496831f8a8fb1",
+            "content": "sha256:55318614b15a13e39155cfbb7356db81ba5a42835317a33611ebb31197af8818",
+            "locator": {
+              "end": 35,
+              "kind": "line_range",
+              "start": 20
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "d438d637246dfba724903c70c5e496831f8a8fb1",
+            "content": "sha256:64c293f83c783e8af6eaecd0e6f82ec7017d0ed7e3adee70e842f84a35a3e017",
+            "locator": {
+              "end": 114,
+              "kind": "line_range",
+              "start": 105
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "d438d637246dfba724903c70c5e496831f8a8fb1",
+            "content": "sha256:67c129f5a449433f667c699de7200460464c26743c252990c344cb919c46f95f",
+            "locator": {
+              "end": 168,
+              "kind": "line_range",
+              "start": 146
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "d438d637246dfba724903c70c5e496831f8a8fb1",
+            "content": "sha256:83b7a0ae9b5bc5727239cb1a34f0cb299a823db68f422af89a7c1579ca29b5ce",
+            "locator": {
+              "end": 185,
+              "kind": "line_range",
+              "start": 171
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "d438d637246dfba724903c70c5e496831f8a8fb1",
+            "content": "sha256:a0fb3e91332312978d648df64d0580fc502a8cc51ad6b613e5b940cf56c54d62",
+            "locator": {
+              "end": 198,
+              "kind": "line_range",
+              "start": 188
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "d438d637246dfba724903c70c5e496831f8a8fb1",
+            "content": "sha256:762253db7cfefa043521fa4d241cc5730d4dc730c167cb5c25aca973f72f08e5",
+            "locator": {
+              "end": 322,
+              "kind": "line_range",
+              "start": 288
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "d438d637246dfba724903c70c5e496831f8a8fb1",
+            "content": "sha256:c8ad6344843fa673b5e2f94afc968ea80ffb2baacd3a8e1ac31b99245eae79b5",
+            "locator": {
+              "end": 411,
+              "kind": "line_range",
+              "start": 395
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "d438d637246dfba724903c70c5e496831f8a8fb1",
+            "content": "sha256:de52a4cf4e7860452383118913a349c41794990268162339784bfd28dfeb9472",
+            "locator": {
+              "end": 480,
+              "kind": "line_range",
+              "start": 436
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "d438d637246dfba724903c70c5e496831f8a8fb1",
+            "content": "sha256:146f58217d8b7676516c361ba5148b1413ec7cd5b30f63ef1998637c786828e4",
+            "locator": {
+              "end": 494,
+              "kind": "line_range",
+              "start": 482
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "d438d637246dfba724903c70c5e496831f8a8fb1",
+            "content": "sha256:27c657caea8917b5d48dcb6ab95a5d162e01a9618c2d1e14ba6ebd1c109c9c3a",
+            "locator": {
+              "end": 518,
+              "kind": "line_range",
+              "start": 496
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "d438d637246dfba724903c70c5e496831f8a8fb1",
+            "content": "sha256:fa8fb000f86ac1438c91d1e52747f323e0789a49b04a42ad61d359fc9022ac0d",
+            "locator": {
+              "end": 558,
+              "kind": "line_range",
+              "start": 520
             }
           },
           "kind": "test"

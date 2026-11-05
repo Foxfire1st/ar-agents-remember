@@ -1,0 +1,40 @@
+{
+  "path": "mcp/tests/test_agent_eval_trajectory.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "5cfd84d2f1b7756c1be888f87189e4343c79b465",
+        "content": "sha256:4b7c5b8c9c729f555e34b2c2ff7860aa1c477814324ad4f6da75e13797aa2c2c",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-0KXJDK",
+      "invariant": "INV-NMBR0E",
+      "origin": {
+        "handoffEntry": "L62-fd6462b8-trajectory-route",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "This regression module checks this obligation through test_path_commands_use_admitted_routes_without_requiring_historical_builds, test_success_prose_does_not_prove_continuation_or_healing, test_routes_grade_source_native_command_argv_and_cwd, test_disclosed_manual_write_requires_rubric_and_is_not_itself_failed and its remaining test cases.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The source defines this file's responsibility and the boundaries described here.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5cfd84d2f1b7756c1be888f87189e4343c79b465",
+            "content": "sha256:4b7c5b8c9c729f555e34b2c2ff7860aa1c477814324ad4f6da75e13797aa2c2c",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

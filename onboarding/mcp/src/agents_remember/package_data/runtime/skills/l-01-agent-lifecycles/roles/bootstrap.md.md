@@ -2,9 +2,17 @@
 
 ## Message/file transport
 
-This packaged copy makes role messages short wake-ups naming requested work or a handover and its files. Complete report, verdict, list and evidence contents travel through file-only `body` or existing-file `attach`, never pasted into message text. Within a shared task, message files remain with its record and a leaf workspace exposes the message-folder link. Wake text uses the effective settings limit, not a number pinned in this role/template. This transport account changes neither the file's existing role/write boundaries nor requirement, review, curation or landing authority.
+Past-epoch account (retained wording): This packaged copy makes role messages short wake-ups naming requested work or a handover and its files. Complete report, verdict, list and evidence contents travel through file-only `body` or existing-file `attach`, never pasted into message text. Within a shared task, message files remain with its record and a leaf workspace exposes the message-folder link. Wake text uses the effective settings limit, not a number pinned in this role/template. This transport account changes neither the file's existing role/write boundaries nor requirement, review, curation or landing authority.
 
-- Messages wake; complete payloads and evidence travel as files. [15]
+Custody: the preceding sentence(s) retain their original target blob(s) `fde55d2ad1129fead83a4561a005af560d720d55`; live reference 15 labels only the separately stated current account below.
+
+Bootstrap starts no role and messages none; developer questions go in its own chat, and it reports the setup state without task-transaction messaging.
+
+Past-epoch account (retained wording): - Messages wake; complete payloads and evidence travel as files.
+
+Custody: the preceding sentence(s) retain their original target blob(s) `fde55d2ad1129fead83a4561a005af560d720d55`; live reference 15 labels only the separately stated current account below.
+
+- Bootstrap starts no role and messages none; its developer questions go in its own chat.
 
 
 ## Current operative account — MIK-R112
@@ -29,7 +37,7 @@ Source inspection supplies no new test, native-host, whole-build, landing or mem
 ## Current source contract evidence
 
 
-- Current synced source supports the qualified account; declarations, mirrors and fixture assertions are not executed acceptance. [16]
+- Current synced source supports the qualified account; declarations, mirrors and fixture assertions are not executed acceptance.
 
 
 
@@ -170,7 +178,7 @@ No relevant documentation found after checking live sources.
 - The role declares no inherited core blocks — it is a free agent, not a task seat, and is started by a call. [2]
 
 
-- The role's start is a call rather than a dispatch: nothing dispatches this agent, and nothing names its report path. [3]
+- The role's start is a call rather than a dispatch: nothing dispatches this agent, and nothing names its report path.
 
 
 - The seat sits outside the task-dispatch transaction as its shape: a task document, gate, packet, or compiled brief is not an input, and its absence is not an error. [4]
@@ -179,7 +187,7 @@ No relevant documentation found after checking live sources.
 - The role's instructions are the capsule itself — this page plus the bootstrap operation — and its brief is not a brief. [5]
 
 
-- The permitted-write surface, the stop-and-report cases, and the report's own inline shape, which no template file owns. [6]
+- The permitted-write surface, the stop-and-report cases, and the report's own inline shape, which no template file owns.
 
 - The operation block the role carries: workflow, failure inventory and authority gates. [7]
 - The manifest entry declaring the free-agent altitude, its five tools and its three operations. [8]
@@ -228,3 +236,8 @@ and those are separate facts rather than one verdict.
 by `scripts/sync-skills.py` into this package-owned copy and the eight harness starter packages.
 
 </details>
+
+- Bootstrap describes its start as the dashboard call of a parentless free agent; its own report contract requires a durable developer-visible path stated on the report’s first line. [3]
+- The permitted-write surface, the stop-and-report cases, and the report's own inline shape, which no template file owns. [6]
+- Bootstrap starts no role and messages none; developer questions go in its own chat, and it reports the setup state without task-transaction messaging. [15]
+- Bootstrap is a parentless setup/report role: it uses the named setup surfaces, writes one developer-visible report, authors neither onboarding nor knowledge and sends no role messages. [16]

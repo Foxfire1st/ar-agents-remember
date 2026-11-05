@@ -51,16 +51,16 @@
       ]
     },
     "11": {
-      "note": "Memory preparation distinguishes diagnostic scope, raw readiness, coherence validation and capacity refusal.",
+      "note": "Memory preparation separates full leaf scope and logged worklist/gate facts from semantic certification, requires validated coherence after raw readiness, and returns a named capacity refusal when async admission is full.",
       "targets": [
         {
           "anchor": {
-            "blob": "6782d184c8982f54e6e72e5f11a61aa2c8f88627",
-            "content": "sha256:3f5bd2a2ca393e41c75ab33ff834703c899571c620043265f696d39870f9635e",
+            "blob": "4866d73b380b132fb7b293e23bf44175e4cbf33f",
+            "content": "sha256:275845a2f77f125f3714f8a467012e311f24a739fbdfb8a6b4eba32dfae00ffd",
             "locator": {
-              "end": 70,
+              "end": 52,
               "kind": "line_range",
-              "start": 36
+              "start": 35
             },
             "path": "mcp/src/agents_remember/mcp/registration/memory.py"
           },
@@ -81,14 +81,14 @@
         },
         {
           "anchor": {
-            "blob": "6782d184c8982f54e6e72e5f11a61aa2c8f88627",
-            "content": "sha256:11c35b13c9c4aaabb5ef4fb90e9d14e3692de6f952310dd552dc30300b2649d9",
+            "blob": "f3bf4bfa27b8bfd44cd242540d16a2dbf31ec1c4",
+            "content": "sha256:0c161eccbe0bd6e26018eb3d037bf32dc5e85f85f1361db82da57796944e207e",
             "locator": {
-              "end": 69,
+              "end": 1185,
               "kind": "line_range",
-              "start": 35
+              "start": 1151
             },
-            "path": "mcp/src/agents_remember/mcp/registration/memory.py"
+            "path": "mcp/src/agents_remember/application/memory_quality/controller.py"
           },
           "kind": "code"
         }
@@ -294,14 +294,42 @@
       ]
     },
     "2": {
-      "note": "Retained reference account (no fresh execution or acceptance inferred): The public tool reference maps the current tool surface to its registered families and owning routes.",
+      "note": "The public tool document maps operation families but is not a complete roster; registration/response owners remain authoritative. It now documents converted knowledge reads, integrity/worklist, file-writing-without-Git knowledge_write and separate coherence authority.",
       "targets": [
         {
           "anchor": {
-            "blob": "fb21b7c177ee42cdcd3cbdc8e1e9ee2acf7b8302",
-            "content": "sha256:01680f64ff731a5953529e24ab0e0e7dc2d289802d415a07c0875bb5e9ab7738",
+            "blob": "d5a7eaf6f7a789ca19fa38b3a367c269be36f962",
+            "content": "sha256:ea42db9d83ad6ebc45b77d75f399941298589040109501093eb5048ea224e6ee",
             "locator": {
-              "kind": "file"
+              "end": 18,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "docs/reference/mcp-tools.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d5a7eaf6f7a789ca19fa38b3a367c269be36f962",
+            "content": "sha256:c1faed3310bcb4f7be3364fa3c33d34df58f801cd0aecdaea1b10e5da010fd79",
+            "locator": {
+              "end": 405,
+              "kind": "line_range",
+              "start": 391
+            },
+            "path": "docs/reference/mcp-tools.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d5a7eaf6f7a789ca19fa38b3a367c269be36f962",
+            "content": "sha256:a662a61930f6cdf0db9ea04fbdf718b9da9d859836f88d1da6960f94d2db483e",
+            "locator": {
+              "end": 454,
+              "kind": "line_range",
+              "start": 451
             },
             "path": "docs/reference/mcp-tools.md"
           },
@@ -498,16 +526,16 @@
       ]
     },
     "28": {
-      "note": "Public signatures distinguish flat citation arguments from quality requests.\n\nAnchor: \"citation_fix\"",
+      "note": "Public signatures distinguish flat citation_fix sync/start/poll preview arguments from the memory_quality_check request object, with explicit admitted scope boundaries.",
       "targets": [
         {
           "anchor": {
-            "blob": "fb21b7c177ee42cdcd3cbdc8e1e9ee2acf7b8302",
-            "content": "sha256:1b7433c5a465fc3a2c8bc01a7c963e13fccf46adb465c677689eed240170221d",
+            "blob": "d5a7eaf6f7a789ca19fa38b3a367c269be36f962",
+            "content": "sha256:ca1b631139a9903c5ae94cc55512b90f6e0eeaa6d8b079c16263edff78126b07",
             "locator": {
-              "end": 87,
+              "end": 145,
               "kind": "line_range",
-              "start": 86
+              "start": 112
             },
             "path": "docs/reference/mcp-tools.md"
           },
@@ -516,14 +544,55 @@
       ]
     },
     "3": {
-      "note": "Retained reference account (no fresh execution or acceptance inferred): The settings reference describes the active MCP authority, user role settings and their distinct merge and precedence boundaries.",
+      "note": "The settings reference separates MCP boot authority, per-use host runtime, memory topology and global/repository agentic settings; user configuration is not MCP boot authority, and merge/permission boundaries remain explicit.",
       "targets": [
         {
           "anchor": {
-            "blob": "6d8cc9b75acea207484aeaf2f87c0e5cafd6640e",
-            "content": "sha256:75c64f4096f37bb14d4fd91208bbcf2fd462d84510758129af718a695d943ac4",
+            "blob": "2cbfd7803f2a1351f1ee784758b4847b81a58df0",
+            "content": "sha256:6218019904e7118fb33056307ef55ecfe213f44da6519d2635c2c6722e705804",
             "locator": {
-              "kind": "file"
+              "end": 54,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "docs/reference/settings-json.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2cbfd7803f2a1351f1ee784758b4847b81a58df0",
+            "content": "sha256:5819bd68e8f485b8358e37dc1901bc0d027bc82378c1eff8886d681860720cb5",
+            "locator": {
+              "end": 165,
+              "kind": "line_range",
+              "start": 151
+            },
+            "path": "docs/reference/settings-json.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2cbfd7803f2a1351f1ee784758b4847b81a58df0",
+            "content": "sha256:4605d023883bb2c740960607b9528948aeca0bbf56566ec51e44984959682582",
+            "locator": {
+              "end": 554,
+              "kind": "line_range",
+              "start": 502
+            },
+            "path": "docs/reference/settings-json.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2cbfd7803f2a1351f1ee784758b4847b81a58df0",
+            "content": "sha256:79a6cc08c93430273c2a97d0180cce1084240081de73d1af68b9861f508044c5",
+            "locator": {
+              "end": 640,
+              "kind": "line_range",
+              "start": 583
             },
             "path": "docs/reference/settings-json.md"
           },
@@ -548,14 +617,16 @@
       ]
     },
     "5": {
-      "note": "Retained reference account (no fresh execution or acceptance inferred): The settings document's host section.",
+      "note": "The host-runtime section keeps paseoRuntime in the active MCP authority file, reads it per use, lets cold Bootstrap create an absent block once, preserves an existing block and refuses unknown host keys.",
       "targets": [
         {
           "anchor": {
-            "blob": "6d8cc9b75acea207484aeaf2f87c0e5cafd6640e",
-            "content": "sha256:75c64f4096f37bb14d4fd91208bbcf2fd462d84510758129af718a695d943ac4",
+            "blob": "2cbfd7803f2a1351f1ee784758b4847b81a58df0",
+            "content": "sha256:5819bd68e8f485b8358e37dc1901bc0d027bc82378c1eff8886d681860720cb5",
             "locator": {
-              "kind": "file"
+              "end": 165,
+              "kind": "line_range",
+              "start": 151
             },
             "path": "docs/reference/settings-json.md"
           },
@@ -620,7 +691,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d7a350b97b2ba83910cf0f815eef07fa8d044f8c",
+            "blob": "3f91234661460904091f50cb41164456aa515f04",
             "content": "sha256:1ae942a6dabcd6e3f71fa737bafeabd4e2ed2bdf9c37a04d659d43462026d525",
             "locator": {
               "end": 163,

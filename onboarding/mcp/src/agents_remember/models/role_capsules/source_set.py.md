@@ -94,12 +94,12 @@ No relevant documentation found after checking live sources.
 - The locked plan and admitted-source shapes this module compares. [1]
 - The refusals this module raises. [2]
 
-- The compiler step that runs this validation before resolution. [3]
+- The compiler step that runs this validation before resolution.
 
 
 - The YAML-free source of the declared plan: the parsed canonical manifest. [4]
 
-- Missing mandatory material and wrongly-rooted/undeclared sources are refused rather than omitted. [5]
+- Missing mandatory material and wrongly-rooted/undeclared sources are refused rather than omitted.
 - **The declared-skill gate** and its two directions: an incomplete admitted set refuses, and a referenced-but-missing skill refuses. [6]
 
 ### Cross-Repo References
@@ -107,3 +107,6 @@ No relevant documentation found after checking live sources.
 No sibling-repository contract defines this validation.
 
 No meaningful cross-repo references found.
+
+- The compiler step that runs this validation before resolution. Anchor: `compile_role_capsule` [3]
+- Missing mandatory material and wrongly-rooted/undeclared sources are refused rather than omitted. [5]

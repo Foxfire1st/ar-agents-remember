@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "996720cf82edf70b0777cfbc9fe3a594268303b8",
-        "content": "sha256:a5e12d548f019cc9130f7264821096beafa731a7e49930e6be72d4f1b303e6a5",
+        "blob": "7a9d6c0fdfe4bfa1af36c161505514c5e6726f98",
+        "content": "sha256:f599f5d57acac05df18300c9ee6a3c11dc1b98d81325e991bec6d006d3ac061a",
         "locator": {
           "kind": "file"
         }
@@ -25,27 +25,42 @@
       "targets": [
         {
           "anchor": {
-            "blob": "996720cf82edf70b0777cfbc9fe3a594268303b8",
-            "content": "sha256:d0dd37230635b4bf60eb9afa2f995a981c26d820d440db56374f8aaa8e0cceca",
+            "blob": "7a9d6c0fdfe4bfa1af36c161505514c5e6726f98",
+            "content": "sha256:74c76afc86e080f2208bcee6226df7c8747a405357955a16709b5ac5386a09fb",
             "locator": {
-              "end": 110,
+              "end": 112,
               "kind": "line_range",
               "start": 110
             }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1e006f679fb322bbd74e0377548c29c2a387f77d",
+            "content": "sha256:33e5b6fa5643bc623d7ed2e81de5b2018153ed537080d0ae39ba90f59c167a8c",
+            "locator": {
+              "end": 15,
+              "kind": "line_range",
+              "start": 3
+            },
+            "path": "skills/l-01-agent-lifecycles/reference/message-handover.md"
           },
           "kind": "code"
         }
       ]
     },
     "2": {
-      "note": "Current source declarations support the qualified naming or fixture account; no executed test or acceptance is inferred.",
+      "note": "Designer scopes the plan and its blind spots to one master, authors the named task documents and evidence artifacts, and claims neither an approved plan nor a build from its handover.",
       "targets": [
         {
           "anchor": {
-            "blob": "996720cf82edf70b0777cfbc9fe3a594268303b8",
-            "content": "sha256:a5e12d548f019cc9130f7264821096beafa731a7e49930e6be72d4f1b303e6a5",
+            "blob": "7a9d6c0fdfe4bfa1af36c161505514c5e6726f98",
+            "content": "sha256:f599f5d57acac05df18300c9ee6a3c11dc1b98d81325e991bec6d006d3ac061a",
             "locator": {
-              "kind": "file"
+              "end": 124,
+              "kind": "line_range",
+              "start": 1
             }
           },
           "kind": "code"
@@ -57,12 +72,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "996720cf82edf70b0777cfbc9fe3a594268303b8",
+            "blob": "7a9d6c0fdfe4bfa1af36c161505514c5e6726f98",
             "content": "sha256:c3a2c97387f2d65b60a5f8522a5bd2f327413579cb7c8660d997d56e5438ace6",
             "locator": {
-              "end": 96,
+              "end": 98,
               "kind": "line_range",
-              "start": 85
+              "start": 87
             }
           },
           "kind": "code"

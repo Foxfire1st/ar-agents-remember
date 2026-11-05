@@ -1,0 +1,40 @@
+{
+  "path": "mcp/tests/test_agent_eval_hermes_skill_policy.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "146b3969a329e24f73d25da6269882e5286d6d44",
+        "content": "sha256:9c2b111d45cbdcf31404ca25eb39b2dc373474e58b7546a93ded30c34c477ebb",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-FTAFDV",
+      "invariant": "INV-QXE0QG",
+      "origin": {
+        "handoffEntry": "L62-fd6462b8-skill-policy",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "This regression module checks this obligation through test_trial_seed_installs_fixed_skill_manage_deny_hook, test_fixed_command_binds_home_with_spaces_and_returns_native_block, test_both_arms_have_same_semantic_policy_and_hook_bytes, test_snapshot_binds_only_policy_files_and_ignores_credential_changes and its remaining test cases.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The source defines this file's responsibility and the boundaries described here.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "146b3969a329e24f73d25da6269882e5286d6d44",
+            "content": "sha256:9c2b111d45cbdcf31404ca25eb39b2dc373474e58b7546a93ded30c34c477ebb",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

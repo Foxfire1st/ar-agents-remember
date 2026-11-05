@@ -116,8 +116,9 @@ Corpus helpers and disposable fixtures declare no network/provider access. Corpu
 
 None recorded.
 
-## Evidence
+Packet-alignment and independent-preparation cases bind each clause to its actual step and reject deletion or relocation. Separate cases require knowledge worklist and landing-gate explanations at their current owners and check the admitted parser/tool surfaces; they do not grant relay artifact-inspection authority. These are source assertions/support behavior, not a fresh invocation, host result or AR acceptance.
 
+## Evidence
 ### Docs References
 
 No external or domain documentation governs this repository-local corpus check.
@@ -147,3 +148,5 @@ No meaningful cross-repo references found.
 ## Current source evidence
 
 - The handoff checks consume the canonical corpus and declared generated roots; the fragment-one control derives its surface instead of naming retired c02. [6]
+
+- Packet-alignment and independent-preparation cases bind each clause to its actual step and reject deletion or relocation. Separate cases require knowledge worklist and landing-gate explanations at their current owners and check the admitted parser/tool surfaces; they do not grant relay artifact-inspection authority. These are source assertions/support behavior, not a fresh invocation, host result or AR acceptance. [7]

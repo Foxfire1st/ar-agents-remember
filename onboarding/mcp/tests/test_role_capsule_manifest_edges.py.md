@@ -22,8 +22,9 @@ Owns six whole edge tests extracted from admission, retaining role/skill lookup,
 
 This card describes assertion/support/document source, not a test invocation, independent verdict or publication.
 
-## Evidence
+Real-corpus cases bind Investigator concern review, coordination progress judgment and Architect measurement details to declared source, audience and exact step. The frozen core-unit map checks each range digest and exact non-heading line coverage. Inherited detail audiences retain source and undeclared-file negative controls. These are source assertions/support behavior, not a fresh invocation, host result or AR acceptance.
 
+## Evidence
 - Source assertion: test_launch_refuses_malformed_audience_markers_after_common_or_excluded_passages. The declaration is not an execution receipt. [1]
 - Source assertion: test_the_role_lookup_answers_through_the_one_narrowing_gate. The declaration is not an execution receipt. [2]
 - Source assertion: test_launch_identity_seals_audience_projection_but_not_unrelated_sources. The declaration is not an execution receipt. [3]
@@ -32,3 +33,5 @@ This card describes assertion/support/document source, not a test invocation, in
 - Source assertion: test_a_source_root_that_is_not_a_path_is_refused. The declaration is not an execution receipt. [6]
 - Source assertion: test_an_admitted_set_that_drops_the_manifest_mid_compile_is_refused. The declaration is not an execution receipt. [7]
 - Source assertion: test_composing_roots_answers_what_each_seat_kind_can_actually_contribute. The declaration is not an execution receipt. [8]
+
+- Real-corpus cases bind Investigator concern review, coordination progress judgment and Architect measurement details to declared source, audience and exact step. The frozen core-unit map checks each range digest and exact non-heading line coverage. Inherited detail audiences retain source and undeclared-file negative controls. These are source assertions/support behavior, not a fresh invocation, host result or AR acceptance. [9]

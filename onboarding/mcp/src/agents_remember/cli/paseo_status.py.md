@@ -33,11 +33,19 @@ STATUS_TABLE applies its first matching row: unreadable host preserves receipt f
 
 
 
-- Pins delivered worker doctrine: freeze the candidate and hand its report file directly to the leaf's Reviewer, not to the Manager for relay; dashboard-started workers need no parent. A finished turn is not AR acceptance.  Anchor: `AgreementAcrossTheRoleSetTests.test_a_worker_hands_its_frozen_report_directly_to_the_reviewer` [10]
+Past-epoch account (retained wording): - Pins delivered worker doctrine: freeze the candidate and hand its report file directly to the leaf's Reviewer, not to the Manager for relay; dashboard-started workers need no parent. A finished turn is not AR acceptance.  Anchor: `AgreementAcrossTheRoleSetTests.test_a_worker_hands_its_frozen_report_directly_to_the_reviewer`
+
+Custody: the preceding sentence is detached from live reference 10; its original target blob(s) were `74a051a27a76bfa2d21ab404b581911d5e391701`, `9ebdee8141a018420e8edba3c96161db8a2e5297`. The current clause below is separately bound.
+
+- The Worker handover test requires a first freeze notice to the Manager to start the Reviewer, followed by direct complete freeze handover to that Reviewer; the Manager does not relay it or receive routine report notices. It also checks parentless Worker and turn-end-versus-acceptance wording, with mutation cases for every required route clause.
 
 
 
-- Composes delivered architect/manager/orchestrator capsule text, requires current diff/evidence inspection and owner acceptance clauses, and detects removal of manager inspection; this proves instruction delivery rather than runtime no-mutation. [11]
+Past-epoch account (retained wording): - Composes delivered architect/manager/orchestrator capsule text, requires current diff/evidence inspection and owner acceptance clauses, and detects removal of manager inspection; this proves instruction delivery rather than runtime no-mutation.
+
+Custody: the preceding sentence is detached from live reference 11; original target blob(s): `74a051a27a76bfa2d21ab404b581911d5e391701`.
+
+- The test joins the shipped Architect/review, Manager/coordination and Orchestrator/coordination source texts, checks their candidate-evidence and owner-acceptance clauses, and detects removal of Manager inspection. This checks that source composition’s wording; it runs no capsule admission/compilation and proves no runtime no-mutation property.
 
 
 ## Current contract evidence
@@ -47,3 +55,6 @@ STATUS_TABLE applies its first matching row: unreadable host preserves receipt f
 - Frozen implementation of read_agent supporting the stated file behavior. [3]
 - Frozen implementation of resume_agent supporting the stated file behavior. [4]
 - `read_live_agents` makes one read-only `agents-live` bridge call and validates a string-ID list plus a boolean completeness flag. Bridge failures and malformed answers become unreachable readings with a reason; a valid incomplete listing keeps its known IDs and cannot classify an absent recorded agent as gone. The existing per-agent first-match status table and explicit resume path remain unchanged. [12]
+
+- The Worker handover test requires a first freeze notice to the Manager to start the Reviewer, followed by direct complete freeze handover to that Reviewer; the Manager does not relay it or receive routine report notices. It also checks parentless Worker and turn-end-versus-acceptance wording, with mutation cases for every required route clause. [10]
+- The test joins the shipped Architect/review, Manager/coordination and Orchestrator/coordination source texts, checks their candidate-evidence and owner-acceptance clauses, and detects removal of Manager inspection. This checks that source composition’s wording; it runs no capsule admission/compilation and proves no runtime no-mutation property. [11]

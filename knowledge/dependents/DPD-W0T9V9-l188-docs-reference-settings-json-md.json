@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "4ffeeb98c6ddf7594ebdea7eac26bb7298f2dd72",
-    "commit": "d0be84f714df97c4c4f63406dc5ba190fa53c325",
+    "codeTree": "6db7c75557a5d040db6cc2938c3f8a53f658bebe",
+    "commit": "59b01fb8f72a38d2d27f9c37b8b9ca2513fd3fa0",
     "role": "curator",
-    "statement": "At A6b, the settings reference describes fresh host choice queries with saved-part fallback and ID-before-label matching, while retired provider settings remain parsed and reported unused.",
-    "task": "260928-MIK-L202",
+    "statement": "The revised settings reference’s catalog fallback and ID-before-label rules still agree with launcher_catalog and named, and its recorded host-authority and role-initialization dependencies remain intact.",
+    "task": "260928-MIK-L62",
     "uncommitted": true
   },
   "document": "docs/reference/settings-json.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L188",
     "task": "260928-MIK"
   },
-  "revision": 3,
+  "revision": 4,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {

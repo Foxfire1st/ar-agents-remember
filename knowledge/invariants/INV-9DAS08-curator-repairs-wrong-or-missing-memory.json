@@ -1,0 +1,41 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "prevents_costly_mistake"
+    ],
+    "justification": "Deferring a known stale surrounding card because it predates the leaf lets the next planner consume a known contradiction."
+  },
+  "applicability": "Memory faults encountered while carrying out admitted curation.",
+  "conditions": [
+    "Keep independent fact-check, coherence and the normal full checks.",
+    "Route a needed code change, requirement decision or another leaf’s open work to its owner."
+  ],
+  "exclusions": [
+    "Repairing code or expanding into unrelated memory.",
+    "Automatically deferring encountered faulty memory because another author left it."
+  ],
+  "id": "INV-9DAS08",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Admitted code tree 6db7c75557a5d040db6cc2938c3f8a53f658bebe; unchanged source meanings and exact locators renewed from the6414 rehearsal by native Git blob equality.",
+        "Current Worker producer list: /home/firefox/projects/ar-coordination/worktrees/agents-remember/62_instructions-and-documentation-descri-e8e4920fc1-ar/role-reports/worker/db30bb98-270f-4b0e-aefe-8aa8f1202292/role-launch/producer-successor-6db7c755/producer-list.json sha256:0a86fcdbcecf101f39edb967a3d79bcb4b70f73b00196f88e58e6c20d2b1a152",
+        "Source analysis inputs and exact per-locator renewal are recorded in /home/firefox/projects/ar-coordination/worktrees/agents-remember/62_instructions-and-documentation-descri-e8e4920fc1-ar/scratch/curator/73230181-c727-4e12-9a7d-59bcc4479653/combined-knowledge-6db.review.json",
+        "Precise candidate hunk IDs: sha256:f088e10857c857fabb09a6e86e8793e3d842b1c407b271b9376412693a25d8d5",
+        "/home/firefox/projects/ar-coordination/worktrees/agents-remember/62_instructions-and-documentation-descri-e8e4920fc1-ar/scratch/curator/73230181-c727-4e12-9a7d-59bcc4479653/covered90-semantic-judgments-6414.json sha256:f59981975c1b343f3059ab7592a6c82f760546f9a7cf8f6fee62360a6f5b419f",
+        "/home/firefox/projects/ar-coordination/worktrees/agents-remember/62_instructions-and-documentation-descri-e8e4920fc1-ar/scratch/curator/73230181-c727-4e12-9a7d-59bcc4479653/skills-source-onboarding56-uncovered40-final6db.json sha256:47b7b3d443ab387274e6b5c4a15f85ac36926df7996562dd7bcf38397bf2a27c",
+        "No new invariant identity or semantic revision is inferred from these attachments."
+      ],
+      "path": "L62-final6db-curation"
+    },
+    "handoffEntry": "L62-CUR-6414-curator-healing",
+    "leaf": "260928-MIK-L62",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Curator repairs wrong or missing memory encountered during its assigned work, whoever left it, reports the repair and continues without a broad sweep.",
+  "status": "proposed",
+  "supersedes": []
+}

@@ -21,32 +21,45 @@
       ]
     },
     "10": {
-      "note": "Canonical converted-memory precedence forbids hand-written sidecar JSON and does not permit ordinary unconverted writes.",
+      "note": "Converted-memory precedence uses the fixer and writer first, with only the declared correct-input same-tool recovery. It permits no ordinary unconverted writes and does not treat missing capability as a refused correct write.",
       "targets": [
         {
           "anchor": {
-            "blob": "7544470421d07347f2127e91131a701490676138",
-            "content": "sha256:94b74f2e0b77aec344ec5066148cfccfbafd096e3e10a72a7d04706142d161f3",
+            "blob": "f4accad939315db39d9f7f7dd3af0f5d3f0687ac",
+            "content": "sha256:610736a29fd35bd4d28d6ffe71d9ea2b1d07536c05a8df44f8bc0d3e172fd8c5",
             "locator": {
-              "end": 57,
+              "end": 67,
               "kind": "line_range",
-              "start": 48
+              "start": 46
             },
             "path": "skills/c-05-create-or-update-onboarding-files/SKILL.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "77193c73e40d8dcf1ac8b7158debe508e2d02065",
+            "content": "sha256:c1c9eaecfc614b2b83262b80580096eb99d1d34056cc4439649c71ddad0e5b72",
+            "locator": {
+              "end": 38,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "skills/l-01-agent-lifecycles/reference/refused-write.md"
           },
           "kind": "code"
         }
       ]
     },
     "11": {
-      "note": "Converted cards use a source-path title, relative governing link and temporary evidence-table authoring with fixer-owned references.\n\nAnchor: `## What a converted card is`; `## Create a card for a new source file`",
+      "note": "Converted cards use a source-path title, relative governing link and temporary evidence-table authoring with fixer-owned references.",
       "targets": [
         {
           "anchor": {
-            "blob": "07f4fbb59134af0846462f3929091464962f171f",
-            "content": "sha256:b875ec336bc6b654781a768a9778d4fd41a7a8356dd97552bd49827685997804",
+            "blob": "f7ea3c8b7f6e2ce1a210dbc43dcc9694cd25721b",
+            "content": "sha256:b526393cd8ec6bff04ee0b35cbb041cd30eadd98a7a5f7f1a1504453d77ffaa7",
             "locator": {
-              "end": 87,
+              "end": 35,
               "kind": "line_range",
               "start": 7
             },
@@ -61,12 +74,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "07f4fbb59134af0846462f3929091464962f171f",
+            "blob": "f7ea3c8b7f6e2ce1a210dbc43dcc9694cd25721b",
             "content": "sha256:8963946dcc6fea4aa25fcb5067c2a6ac0a44d4f1a95df5f96a54dbb6cea7a37a",
             "locator": {
-              "end": 185,
+              "end": 187,
               "kind": "line_range",
-              "start": 159
+              "start": 161
             },
             "path": "skills/c-05-create-or-update-onboarding-files/workflows/converted-card-workflow.md"
           },

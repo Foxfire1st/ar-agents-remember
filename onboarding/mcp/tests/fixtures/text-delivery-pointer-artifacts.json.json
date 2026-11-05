@@ -1,0 +1,40 @@
+{
+  "path": "mcp/tests/fixtures/text-delivery-pointer-artifacts.json",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "a9bcf5e842df915cd9b2e1ff2e2b82ec27cf3d73",
+        "content": "sha256:1bb7818bc3d1115ea07f8c56a17a8336194b6ec30038dc3eee8b81a6174fe8e8",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-S4046D",
+      "invariant": "INV-HXTSVY",
+      "origin": {
+        "handoffEntry": "L62-fd6462b8-text-delivery",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "These retained artifacts bind production-shaped detail pointers to their delivered bytes.",
+      "role": "support"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The source defines this file's responsibility and the boundaries described here.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a9bcf5e842df915cd9b2e1ff2e2b82ec27cf3d73",
+            "content": "sha256:1bb7818bc3d1115ea07f8c56a17a8336194b6ec30038dc3eee8b81a6174fe8e8",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

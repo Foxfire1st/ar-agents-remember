@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "28cbe55d2100b6fb6780c7126fab86611025738a",
-        "content": "sha256:e3da6f98ec29ec9b204b950e17c80b8a9ff13ec621467ab71a6b901582061377",
+        "blob": "360518ce1a3540d1d0e41008a19c347b42d586d2",
+        "content": "sha256:a3370011ba16a502f2d0d3e7297261a5f0c7ba076be03c1ea656e604bde0a2fb",
         "locator": {
           "kind": "file"
         }
@@ -20,8 +20,8 @@
     },
     {
       "anchor": {
-        "blob": "28cbe55d2100b6fb6780c7126fab86611025738a",
-        "content": "sha256:e3da6f98ec29ec9b204b950e17c80b8a9ff13ec621467ab71a6b901582061377",
+        "blob": "360518ce1a3540d1d0e41008a19c347b42d586d2",
+        "content": "sha256:a3370011ba16a502f2d0d3e7297261a5f0c7ba076be03c1ea656e604bde0a2fb",
         "locator": {
           "kind": "file"
         }
@@ -38,16 +38,16 @@
   ],
   "references": {
     "1": {
-      "note": "Delta scope remains monotonic over the preceding rejected set. Rounds within the settings limit are ordinary; beyond it requires recorded approval under the review operation. This changes no target-only dispatch authority, role write boundary, requirement or acceptance owner.",
+      "note": "Successor plan review verifies only sealed outstanding IDs, gives every prior ID a fixed/unfixed disposition and keeps the remaining set monotonic; rounds within settings are ordinary and beyond-settings rounds need recorded approval.",
       "targets": [
         {
           "anchor": {
-            "blob": "28cbe55d2100b6fb6780c7126fab86611025738a",
-            "content": "sha256:e3da6f98ec29ec9b204b950e17c80b8a9ff13ec621467ab71a6b901582061377",
+            "blob": "360518ce1a3540d1d0e41008a19c347b42d586d2",
+            "content": "sha256:4589b49cbca1d5df948ec80b594c80293abe8ac5eacabfda3249f0eca6c7e95f",
             "locator": {
-              "end": 125,
+              "end": 60,
               "kind": "line_range",
-              "start": 1
+              "start": 54
             }
           },
           "kind": "code"
@@ -59,12 +59,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "28cbe55d2100b6fb6780c7126fab86611025738a",
+            "blob": "360518ce1a3540d1d0e41008a19c347b42d586d2",
             "content": "sha256:3a8a5aa2e184efd3d9074487d8dc629a267ca67204d932b9c29ddc66053ffdb5",
             "locator": {
-              "end": 105,
+              "end": 107,
               "kind": "line_range",
-              "start": 93
+              "start": 95
             }
           },
           "kind": "code"

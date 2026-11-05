@@ -103,12 +103,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ac006b11f74a4c64ab964edc3378b4c96f153872",
+            "blob": "2c675ac4ed53a3b28cae8c0c32cd13c617d8f6ed",
             "content": "sha256:e9f37594ca1b6132717a735ebfd36f985324316d02993b164f00f04f1756a5e8",
             "locator": {
-              "end": 615,
+              "end": 654,
               "kind": "line_range",
-              "start": 615
+              "start": 654
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -178,12 +178,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ac006b11f74a4c64ab964edc3378b4c96f153872",
+            "blob": "2c675ac4ed53a3b28cae8c0c32cd13c617d8f6ed",
             "content": "sha256:e9f37594ca1b6132717a735ebfd36f985324316d02993b164f00f04f1756a5e8",
             "locator": {
-              "end": 615,
+              "end": 654,
               "kind": "line_range",
-              "start": 615
+              "start": 654
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -192,14 +192,16 @@
       ]
     },
     "15": {
-      "note": "The separate publication no case here reaches.\n\nAnchor: `worktree_checkpoint_landing`",
+      "note": "The separate publication no case here reaches. Anchor: `worktree_checkpoint_landing`",
       "targets": [
         {
           "anchor": {
-            "blob": "fa17709a127c9b18641196b921b59caa9f7ec2b2",
-            "content": "sha256:dce036a193b04613f2a25218717eea07994829364ae04d13b6ce63c1a99b2de2",
+            "blob": "551d4ee801406a1faf1ccde0cfa641425c5ee4e0",
+            "content": "sha256:f239aaed53e583a0aa6274b05c3059a122ae73f4d75c2cf63103598131127abf",
             "locator": {
-              "kind": "file"
+              "end": 175,
+              "kind": "line_range",
+              "start": 163
             },
             "path": "mcp/src/agents_remember/mcp/registration/closeout.py"
           },
@@ -207,15 +209,15 @@
         },
         {
           "anchor": {
-            "blob": "fa17709a127c9b18641196b921b59caa9f7ec2b2",
-            "content": "sha256:506db74f7d583089c7ac1ad013f07818f4ee1c28fc341cf24036bdf097c2d4c6",
+            "blob": "ea4492b964ab7b9ce5113501e5f706b70e4d44b0",
+            "content": "sha256:9e025f404d3c1f4800dac930edbecb621958a1a3b29a5d37e51e0b54c8553713",
             "locator": {
-              "kind": "symbol",
-              "name": "worktree_checkpoint_landing"
-            },
-            "path": "mcp/src/agents_remember/mcp/registration/closeout.py"
+              "end": 603,
+              "kind": "line_range",
+              "start": 1
+            }
           },
-          "kind": "code"
+          "kind": "test"
         }
       ]
     },
@@ -224,12 +226,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ddd77babbaaddf51063d6e23856c0cadd142d461",
+            "blob": "abb3d0e320df1c428284a14d602ec93ad778bdbe",
             "content": "sha256:78ac6b541627510e77069ecad30b3e04b06d47ffee54cd49d93f4e602f6dc780",
             "locator": {
-              "end": 334,
+              "end": 335,
               "kind": "line_range",
-              "start": 334
+              "start": 335
             },
             "path": "pyproject.toml"
           },

@@ -62,11 +62,23 @@ No relevant documentation found after checking live sources.
 - The host relays mechanical turn completion without inspecting acceptance artifacts. \[8] [8]
 
 
-- Each seat has its own artifact and distinct validator. \[2] [9]
+Retained authoring-row wording:
+
+Finding: Each seat has its own artifact and distinct validator.
+
+Anchor:
+
+Source: skills/l-01-agent-lifecycles/core/acceptance.md:27-42
 
 - Acceptance is per owned stable ID and version with complete rationale/citations/evidence. \[3] [10]
 
-- Requirement revisions and formal delivery attempts have separate immutable lineage. \[4] [11]
+Retained authoring-row wording:
+
+Finding: Requirement revisions and formal delivery attempts have separate immutable lineage.
+
+Anchor:
+
+Source: skills/l-01-agent-lifecycles/core/acceptance.md:79-116
 
 - Stable-contract or expiry evidence promotion is independent of requirement acceptance. \[5] [12]
 
@@ -132,13 +144,44 @@ The earlier packaged-path card described the same completion boundary, envelope,
 The quoted anchors below are literal strings in the canonical source ranges. They establish declarations and selected instruction boundaries, not executed outcomes.
 
 
-- Mechanical completion, artifact-blind relay, owner validation and unchanged authority. [1]
+Retained authoring-row wording:
 
-- Seat/artifact/validator duties and no second completion row. [2]
+Finding: Mechanical completion, artifact-blind relay, owner validation and unchanged authority.
+
+Anchor:
+
+Source: skills/l-01-agent-lifecycles/core/acceptance.md:3-25
+
+Retained authoring-row wording:
+
+Finding: Seat/artifact/validator duties and no second completion row.
+
+Anchor:
+
+Source: skills/l-01-agent-lifecycles/core/acceptance.md:27-42
 - One primary revision, six-part envelope and independent adjudication. [3]
-- Immutable attempts, malformed-row correction, candidate-specific review and successor rules. [4]
+Retained authoring-row wording:
+
+Finding: Immutable attempts, malformed-row correction, candidate-specific review and successor rules.
+
+Anchor:
+
+Source: skills/l-01-agent-lifecycles/core/acceptance.md:79-116
 - Leaf journals are authority; summaries cannot gate work. [5]
 - Stable contract or expiry disposition remains independent of requirement acceptance. [6]
-- Selected Worker transport includes direct freeze handoff and producer-preserving post-PASS Curator list. [7]
+Retained authoring-row wording:
+
+Finding: Selected Worker transport includes direct freeze handoff and producer-preserving post-PASS Curator list.
+
+Anchor:
+
+Source: skills/l-01-agent-lifecycles/roles/worker.md:30-39
 
 </details>
+
+- Mechanical completion, artifact-blind relay, owner validation and unchanged authority. [1]
+- Seat/artifact/validator duties and no second completion row. [2]
+- Immutable attempts, malformed-row correction, candidate-specific review and successor rules. [4]
+- Selected Worker transport includes direct freeze handoff and producer-preserving post-PASS Curator list. [7]
+- Each seat has its own artifact and distinct validator. [9]
+- Requirement revisions and formal delivery attempts have separate immutable lineage. [11]

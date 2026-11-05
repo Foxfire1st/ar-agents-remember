@@ -42,14 +42,16 @@
       ]
     },
     "2": {
-      "note": "`_build_doc` routes create and replace candidates through this helper (after the `kind` default) and only then through `_validate`, the canonical model validation.\n\nAnchor: `_build_doc`",
+      "note": "`_build_doc` routes create and replace candidates through this helper (after the `kind` default) and only then through `_validate`, the canonical model validation. Anchor: `_build_doc`",
       "targets": [
         {
           "anchor": {
-            "blob": "f174a79f72375a38aa57f50907312424f3fc2c3c",
-            "content": "sha256:4639ac7fede07fbf8fd4a606e94345d3e15fdc3bc40ee0f57fba307bccd95505",
+            "blob": "d0b8e6fa2c415dec4821469774f9dc8f0bcccb63",
+            "content": "sha256:36946f9f594b3e343adf324da581e0d104f623f686bd83a9d2844ab5533ac0ba",
             "locator": {
-              "kind": "file"
+              "end": 1186,
+              "kind": "line_range",
+              "start": 1
             },
             "path": "mcp/src/agents_remember/application/task_docs/task_doc_tools.py"
           },

@@ -1,0 +1,39 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "A reviewer’s proposed restriction could otherwise silently become a binding requirement without the developer’s decision."
+  },
+  "applicability": "Architect requirement writing and amendment from review/investigation findings.",
+  "conditions": [
+    "A finding that adds, narrows or overrides a rule beyond the developer’s words is quoted beside those earlier words."
+  ],
+  "exclusions": [
+    "Treating review findings as requirements in their own right.",
+    "Escalating a factual correction as though it necessarily changed a rule."
+  ],
+  "id": "INV-EM1Y66",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Admitted code tree 6db7c75557a5d040db6cc2938c3f8a53f658bebe; unchanged source meanings and exact locators renewed from the6414 rehearsal by native Git blob equality.",
+        "Current Worker producer list: /home/firefox/projects/ar-coordination/worktrees/agents-remember/62_instructions-and-documentation-descri-e8e4920fc1-ar/role-reports/worker/db30bb98-270f-4b0e-aefe-8aa8f1202292/role-launch/producer-successor-6db7c755/producer-list.json sha256:0a86fcdbcecf101f39edb967a3d79bcb4b70f73b00196f88e58e6c20d2b1a152",
+        "Source analysis inputs and exact per-locator renewal are recorded in /home/firefox/projects/ar-coordination/worktrees/agents-remember/62_instructions-and-documentation-descri-e8e4920fc1-ar/scratch/curator/73230181-c727-4e12-9a7d-59bcc4479653/combined-knowledge-6db.review.json",
+        "Precise candidate hunk IDs: sha256:20f24e2cbb55561ff399fc09a61cbb32a0990d9f7749eb45bc71121f6a53fe01",
+        "/home/firefox/projects/ar-coordination/worktrees/agents-remember/62_instructions-and-documentation-descri-e8e4920fc1-ar/scratch/curator/73230181-c727-4e12-9a7d-59bcc4479653/covered90-semantic-judgments-6414.json sha256:f59981975c1b343f3059ab7592a6c82f760546f9a7cf8f6fee62360a6f5b419f",
+        "/home/firefox/projects/ar-coordination/worktrees/agents-remember/62_instructions-and-documentation-descri-e8e4920fc1-ar/scratch/curator/73230181-c727-4e12-9a7d-59bcc4479653/skills-source-onboarding56-uncovered40-final6db.json sha256:47b7b3d443ab387274e6b5c4a15f85ac36926df7996562dd7bcf38397bf2a27c",
+        "No new invariant identity or semantic revision is inferred from these attachments."
+      ],
+      "path": "L62-final6db-curation"
+    },
+    "handoffEntry": "L62-CUR-6414-architect-advice",
+    "leaf": "260928-MIK-L62",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Architect treats reviews, cold reads, re-checks, sweeps and Investigator reports as advice; it may correct a wrong fact, but takes a finding that changes a rule beyond the developer’s words to the developer first with both quotations.",
+  "status": "proposed",
+  "supersedes": []
+}

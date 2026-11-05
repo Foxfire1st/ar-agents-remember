@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "61e88989c300f3783c4e50987a0ec98378fc2ab0",
-        "content": "sha256:4cf9656f8621f433e4db4c68b65f2b168fc66cab629ded109fdc9b473357f82e",
+        "blob": "f860965f1283a2c5f7bfbc360891b2f040525963",
+        "content": "sha256:1422a784e3e117184f58475045293b255534e3f29b4ec78ae00fe26ce4f8c342",
         "locator": {
           "kind": "file"
         }
@@ -21,16 +21,45 @@
   ],
   "references": {
     "1": {
-      "note": "The source owns the documented investigation, identity or request boundary.",
+      "note": "Investigator reads and reports one scoped concern from its actual starter, retains parent/developer question routing and makes no source, memory or task mutations.",
       "targets": [
         {
           "anchor": {
-            "blob": "61e88989c300f3783c4e50987a0ec98378fc2ab0",
-            "content": "sha256:40d46754baffe5df72878da9ed24886f0b5b59e7ac0920606dc454a8f4918eef",
+            "blob": "f860965f1283a2c5f7bfbc360891b2f040525963",
+            "content": "sha256:a3f333e8b053caea01f0fb1c2cf42af5a58116eed947e4adf017c520715527ce",
             "locator": {
-              "end": 36,
+              "end": 28,
               "kind": "line_range",
-              "start": 1
+              "start": 8
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f860965f1283a2c5f7bfbc360891b2f040525963",
+            "content": "sha256:c1ecdf09b17272fddd1d11a81f35c1581f021fd96075cb4b49c6aa93dfc56bce",
+            "locator": {
+              "end": 34,
+              "kind": "line_range",
+              "start": 34
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The Investigator reports what is and what is not, with evidence for each. It states no requirement, ruling or duty of its own; a needed change is an open question for the parent, not a fix to apply.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f860965f1283a2c5f7bfbc360891b2f040525963",
+            "content": "sha256:9d451e4c364967a1ea3658fbe72f1a58e6ff1331fd02255291b175fb53ae3577",
+            "locator": {
+              "end": 26,
+              "kind": "line_range",
+              "start": 26
             }
           },
           "kind": "code"

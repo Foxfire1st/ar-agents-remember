@@ -8,34 +8,72 @@
 
 The one home of the loop doctrine: owner, builder and reviewer at every level that owns work, with opt-in review, complexity-scored tiers, bounded rounds, standing criteria catalogs, per-level agent sets, and requirement compilation before task topology.
 
+Current qualification: the retained clause “with opt-in review, complexity-scored tiers, bounded rounds, standing criteria catalogs, per-level agent sets, and requirement compilation before task topology.” describes its past source epoch. with opt-in review on the agreed seam, explicit baseline/fix-verification modes, settings-governed rounds, standing criteria catalogs, per-level agent sets, and requirement compilation before task topology.
+
 ## Code Commentary
 
 The owner never self-approves, the builder never lands, the reviewer never decides — verdicts are evidence. Review runs only when requested, with an explicit mode; independence needs another agent. Tiers (direct, builder-verified, full loop) tune depth without creating review. A governed review follows the settings limit with sealed fix-verification lists; the candidate, source, requirement, model, seat, route or report label never resets the list. The baseline runs the standing `criteria/` catalogs; requirement compilation into stable ID and version packets precedes all task topology, and cold readers must recover change, stability, failure states and proof from the packet alone.
 
+Current qualification: the retained clause “Tiers (direct, builder-verified, full loop) tune depth without creating review.” describes its past source epoch. Current review scope follows the agreed seam and explicit mode rather than an invented score; baseline covers the complete agreed diff and fix-verification covers sealed findings.
+
 ## Evidence
 
 
-- Owner, builder and reviewer never take each other's acts; verdicts are evidence. [1]
+Retained authoring-row wording:
+
+Finding: Owner, builder and reviewer never take each other's acts; verdicts are evidence.
+
+Anchor:
+
+Source: skills/l-01-agent-lifecycles/core/loop.md:3-9
 
 
-- Review is opt-in with tiers tuning depth; rounds follow the settings limit and retain sealed lists. [2]
+Past-epoch caption (retained wording): - Review is opt-in with tiers tuning depth; rounds follow the settings limit and retain sealed lists.
+
+Original-target custody: `skills/l-01-agent-lifecycles/core/loop.md`, blob `444675a543d9cd7229e80434a7fb56952a1b88c2`, declared “**OWNER → BUILDER → REVIEWER → owner, at every level that owns work.** The owner never self-approves; the builder never lands; the reviewer never decides — **verdicts are evidence**. The owner checks the verdict and either redispatches a bu”. The earlier caption is detached from the live number; the current table carries only the current clause and target.
+
+Retained authoring-row wording:
+
+Finding: Review is opt-in on an agreed seam and explicit baseline/fix-verification mode. Baseline covers the complete agreed diff; fix verification retains sealed findings, with rounds governed by the settings limit and recorded extra-round authority.
+
+Anchor:
+
+Source: skills/l-01-agent-lifecycles/core/loop.md:11-51
 
 
 
-- Requirement compilation into stable ID and version packets precedes task topology. [3]
+Retained authoring-row wording:
+
+Finding: Requirement compilation into stable ID and version packets precedes task topology.
+
+Anchor:
+
+Source: skills/l-01-agent-lifecycles/core/loop.md:69-83
 
 
 ## Current Source Evidence
 
 
-- Current settings-budget, recorded approval and preserved stage/ownership boundaries are carried by this canonical instruction source. [4]
+Retained authoring-row wording:
+
+Finding: Current settings-budget, recorded approval and preserved stage/ownership boundaries are carried by this canonical instruction source.
+
+Anchor:
+
+Source: skills/l-01-agent-lifecycles/core/loop.md:29-51
 
 
 ## Current source qualification
 
 Atomic child leaves defer a requested route review to their master integration seam; the changed sentence retains organizational leaves' requested review scope and no longer advertises the former standalone-leaf clause. The L113 change removes the hosted label from the list of review labels, not independence, opt-in review, the settings limit or the sealed monotone finding set. A different candidate/label still supplies no reset or new review authority.
 
-- The current review-scope sentence omits the former standalone clause and the review-label list omits hosted without resetting sealed findings. [5]
+Retained authoring-row wording:
+
+Finding: The current review-scope sentence omits the former standalone clause and the review-label list omits hosted without resetting sealed findings.
+
+Anchor:
+
+Source: skills/l-01-agent-lifecycles/core/loop.md:25-51
 
 
 ## Inherited Source-Epoch Commentary
@@ -157,4 +195,17 @@ Inherited reference 1 commentary (not a revalidated target):
 
 The byte-equal package copy is a distribution carrier, not an independent role, task or permission authority. Whole-file source evidence does not certify inherited statements, execution, grading or the whole card.
 
+Retained authoring-row wording:
+
+Finding: The authored source owns this contract; the distribution copy is not a separate authority.
+
+Anchor:
+
+Source: skills/l-01-agent-lifecycles/core/loop.md
+
+- Owner, builder and reviewer never take each other's acts; verdicts are evidence. [1]
+- Review is opt-in on an agreed seam and explicit baseline/fix-verification mode. Baseline covers the complete agreed diff; fix verification retains sealed findings, with rounds governed by the settings limit and recorded extra-round authority. [2]
+- Requirement compilation into stable ID and version packets precedes task topology. [3]
+- Current settings-budget, recorded approval and preserved stage/ownership boundaries are carried by this canonical instruction source. [4]
+- The current review-scope sentence omits the former standalone clause and the review-label list omits hosted without resetting sealed findings. [5]
 - The authored source owns this contract; the distribution copy is not a separate authority. [6]

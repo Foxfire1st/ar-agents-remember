@@ -1,0 +1,40 @@
+{
+  "path": "mcp/tests/fixtures/judge-codex-read-real.json",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "993b8a2d37cf2cbf2cd888f2833007cb2916a6ae",
+        "content": "sha256:2f09ee67d993341cbca4ddfa7f134151308883b7ad4e9a1476b2e2ad8a331487",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-GQK7M0",
+      "invariant": "INV-JCSQVZ",
+      "origin": {
+        "handoffEntry": "L62-fd6462b8-judge-execution",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "These retained Codex reads pin the ordinary workspace route and recorded outside read attempt.",
+      "role": "support"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The source defines this file's responsibility and the boundaries described here.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "993b8a2d37cf2cbf2cd888f2833007cb2916a6ae",
+            "content": "sha256:2f09ee67d993341cbca4ddfa7f134151308883b7ad4e9a1476b2e2ad8a331487",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

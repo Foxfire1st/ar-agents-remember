@@ -4,12 +4,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "145be631612f52c363b97b82d253839028ebc907",
-        "content": "sha256:e4e43a4a9022d9519496fef3bea0110276f676a446a273b0537104c417522496",
+        "blob": "a12f918499ebed5c67d253ce5956a1a3f7705656",
+        "content": "sha256:5efb669bc849c5dc3287773e64c61fa8003150199e83c22db1a753d5682fb976",
         "locator": {
-          "end": 68,
+          "end": 69,
           "kind": "line_range",
-          "start": 55
+          "start": 54
         }
       },
       "id": "RLZ-090539",
@@ -23,12 +23,12 @@
     },
     {
       "anchor": {
-        "blob": "145be631612f52c363b97b82d253839028ebc907",
-        "content": "sha256:fa0535d108d0a99c4580bae426744eefab90eb8dcb7fe523660e3e5a584f9e9c",
+        "blob": "a12f918499ebed5c67d253ce5956a1a3f7705656",
+        "content": "sha256:1a95bda4f59185d1af3e205da3dea2c1d7c23a03255a2ea5cc0b48359606fa2b",
         "locator": {
-          "end": 61,
+          "end": 62,
           "kind": "line_range",
-          "start": 55
+          "start": 54
         }
       },
       "id": "RLZ-0GEXHP",
@@ -42,10 +42,67 @@
     },
     {
       "anchor": {
-        "blob": "145be631612f52c363b97b82d253839028ebc907",
-        "content": "sha256:c393ff51b431981b08e58c81ddcee4925cea7b4a1781e5924ae87a0b8bd6c014",
+        "blob": "a12f918499ebed5c67d253ce5956a1a3f7705656",
+        "content": "sha256:cd9fd56d57e1b04b0b88fc0a79ba5daaf1d59ccb825726ceedc673449e7956c0",
         "locator": {
-          "end": 68,
+          "end": 107,
+          "kind": "line_range",
+          "start": 100
+        }
+      },
+      "id": "RLZ-0MD7QE",
+      "invariant": "INV-JHB89M",
+      "origin": {
+        "handoffEntry": "L62-CUR-6414-claim-check",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "Independent fact-check is required; findings repaired with full-operation rerun.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "a12f918499ebed5c67d253ce5956a1a3f7705656",
+        "content": "sha256:18352a71380c3edb2c51c15ff2a04e458ed5c978f29a8ac67f3b4e65ad94211f",
+        "locator": {
+          "end": 78,
+          "kind": "line_range",
+          "start": 78
+        }
+      },
+      "id": "RLZ-1K4M96",
+      "invariant": "INV-JAACMT",
+      "origin": {
+        "handoffEntry": "L62-CUR-6db-attach-L62-CUR-6414-continuation",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "A report naming an authorized next step needs no new Manager go and continues through the whole handover while retaining repairs, escalation and genuine stops.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "a12f918499ebed5c67d253ce5956a1a3f7705656",
+        "content": "sha256:07e8ed96ad1bf69b7a330d55d46975acea6cb8f181387720bffd032f3a0c05d9",
+        "locator": {
+          "end": 160,
+          "kind": "line_range",
+          "start": 160
+        }
+      },
+      "id": "RLZ-27TVRT",
+      "invariant": "INV-945YZ4",
+      "origin": {
+        "handoffEntry": "L62-CUR-6db-attach-INV-945YZ4",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "Faulty input is corrected through the same writer; covered correct-write refusal triggers the named recovery detail and validator/gate findings remain repairs.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "a12f918499ebed5c67d253ce5956a1a3f7705656",
+        "content": "sha256:3a2dd9635cfcb0354a384bae2f4e225f38342aeddcdc3e826878ff6fd1ff66a4",
+        "locator": {
+          "end": 69,
           "kind": "line_range",
           "start": 68
         }
@@ -56,17 +113,36 @@
         "handoffEntry": "MIK-R101@v1 rule 8",
         "leaf": "260928-MIK-L101"
       },
-      "rationale": "This block is the amended single-producer clause with the exact no-install sentence.",
+      "rationale": "The inline selected-serving-build/clean-main producer clause remains in curation; installation, guard disabling and substituted producers remain excluded, subject only to the separately scoped correct-write recovery.",
       "role": "primary-authority"
     },
     {
       "anchor": {
-        "blob": "145be631612f52c363b97b82d253839028ebc907",
+        "blob": "a12f918499ebed5c67d253ce5956a1a3f7705656",
+        "content": "sha256:1b65aabaf3851260ba2d7f608a33f48b927a94ee10911e8802fb4b186e789209",
+        "locator": {
+          "end": 126,
+          "kind": "line_range",
+          "start": 124
+        }
+      },
+      "id": "RLZ-3VJ8EH",
+      "invariant": "INV-BCEZZM",
+      "origin": {
+        "handoffEntry": "L62-CUR-6db-attach-INV-BCEZZM",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "The Manager-directed authority paragraph retains the no-code/no-gate/no-lifecycle boundary while qualifying task-document edits only by the scoped recovery route.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "a12f918499ebed5c67d253ce5956a1a3f7705656",
         "content": "sha256:56db6310803e625bba16b7f88e519e226ca083fd3e8934c2597a678791537349",
         "locator": {
-          "end": 182,
+          "end": 186,
           "kind": "line_range",
-          "start": 182
+          "start": 186
         }
       },
       "id": "RLZ-4YAPS7",
@@ -80,12 +156,69 @@
     },
     {
       "anchor": {
-        "blob": "145be631612f52c363b97b82d253839028ebc907",
-        "content": "sha256:eff218058531fd40386894cb196cce5cdc2c1313a7badb65986a4b851d3c9113",
+        "blob": "a12f918499ebed5c67d253ce5956a1a3f7705656",
+        "content": "sha256:d6d3fa9a931a49f88c9ac151b8e1f5846526f5e40c780796e4ff2fe2b2224004",
         "locator": {
-          "end": 173,
+          "end": 5,
           "kind": "line_range",
-          "start": 172
+          "start": 5
+        }
+      },
+      "id": "RLZ-7JXN0P",
+      "invariant": "INV-MTRR08",
+      "origin": {
+        "handoffEntry": "L62-CUR-6db-attach-INV-MTRR08",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "Ordinary Curator start follows code PASS, while an approved prerequisite memory-sync reconciliation has its explicitly named early-start exception.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "a12f918499ebed5c67d253ce5956a1a3f7705656",
+        "content": "sha256:0bd11a6111f4aacc1638df7ea257c6a647322141ed523604b281a0d735899d46",
+        "locator": {
+          "end": 109,
+          "kind": "line_range",
+          "start": 109
+        }
+      },
+      "id": "RLZ-9AWEEA",
+      "invariant": "INV-9DAS08",
+      "origin": {
+        "handoffEntry": "L62-CUR-6db-attach-L62-CUR-6414-curator-healing",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "Step8 names bounded encountered-memory repairs, requires each repair be reported, forbids broad sweeps and reruns complete checks/fact-check before handover.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "a12f918499ebed5c67d253ce5956a1a3f7705656",
+        "content": "sha256:ab43d73cacd990aacdf5f241f78997d67306c42508e6a32f2ecba6f481bc193f",
+        "locator": {
+          "end": 82,
+          "kind": "line_range",
+          "start": 77
+        }
+      },
+      "id": "RLZ-B0CM8K",
+      "invariant": "INV-JAACMT",
+      "origin": {
+        "handoffEntry": "L62-CUR-6414-continuation",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "A next-authorized-step report needs no new Manager go; continue through the whole handover.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "a12f918499ebed5c67d253ce5956a1a3f7705656",
+        "content": "sha256:376c3ef34dadb9d5e430ccb31138838d092848ee9c60eed1805fb4c43ba35414",
+        "locator": {
+          "end": 177,
+          "kind": "line_range",
+          "start": 176
         }
       },
       "id": "RLZ-EEEG4W",
@@ -94,17 +227,17 @@
         "handoffEntry": "MIK-R70@v1 rule 4",
         "leaf": "260928-MIK-L70"
       },
-      "rationale": "The sentence that makes the curation operation a participant: terminal/finalizer evidence attests only that this turn ended and wakes the manager, who validates it.",
+      "rationale": "The curation handoff says terminal/finalizer evidence proves turn end only; it preserves direct independent memory review and excludes tool-generated acceptance claims.",
       "role": "primary-authority"
     },
     {
       "anchor": {
-        "blob": "145be631612f52c363b97b82d253839028ebc907",
+        "blob": "a12f918499ebed5c67d253ce5956a1a3f7705656",
         "content": "sha256:0965794460729d53e487afa54f336dbcb1defa8d220296156a68cfe5ef89859f",
         "locator": {
-          "end": 162,
+          "end": 166,
           "kind": "line_range",
-          "start": 159
+          "start": 163
         }
       },
       "id": "RLZ-K60P42",
@@ -118,12 +251,31 @@
     },
     {
       "anchor": {
-        "blob": "145be631612f52c363b97b82d253839028ebc907",
-        "content": "sha256:eff218058531fd40386894cb196cce5cdc2c1313a7badb65986a4b851d3c9113",
+        "blob": "a12f918499ebed5c67d253ce5956a1a3f7705656",
+        "content": "sha256:07e8ed96ad1bf69b7a330d55d46975acea6cb8f181387720bffd032f3a0c05d9",
         "locator": {
-          "end": 173,
+          "end": 160,
           "kind": "line_range",
-          "start": 172
+          "start": 160
+        }
+      },
+      "id": "RLZ-MSJDKH",
+      "invariant": "INV-BCEZZM",
+      "origin": {
+        "handoffEntry": "L62-CUR-6db-attach-INV-BCEZZM",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "The partial/refused report-state boundary remains truthful, and scoped correct-write recovery does not waive validator or gate findings.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "a12f918499ebed5c67d253ce5956a1a3f7705656",
+        "content": "sha256:376c3ef34dadb9d5e430ccb31138838d092848ee9c60eed1805fb4c43ba35414",
+        "locator": {
+          "end": 177,
+          "kind": "line_range",
+          "start": 176
         }
       },
       "id": "RLZ-PDP66S",
@@ -132,17 +284,17 @@
         "handoffEntry": "MIK-R70@v1 rule 4",
         "leaf": "260928-MIK-L70"
       },
-      "rationale": "The sentence that makes the curator role a participant, and the place realization RLZ-V1AKR1 of INV-4E130M already anchors.",
+      "rationale": "This curation-operation handoff retains the turn-end-only boundary and direct Reviewer delivery; it is not a separate Curator certification.",
       "role": "primary-authority"
     },
     {
       "anchor": {
-        "blob": "145be631612f52c363b97b82d253839028ebc907",
-        "content": "sha256:fa0535d108d0a99c4580bae426744eefab90eb8dcb7fe523660e3e5a584f9e9c",
+        "blob": "a12f918499ebed5c67d253ce5956a1a3f7705656",
+        "content": "sha256:1a95bda4f59185d1af3e205da3dea2c1d7c23a03255a2ea5cc0b48359606fa2b",
         "locator": {
-          "end": 61,
+          "end": 62,
           "kind": "line_range",
-          "start": 55
+          "start": 54
         }
       },
       "id": "RLZ-PFT43W",
@@ -156,12 +308,12 @@
     },
     {
       "anchor": {
-        "blob": "145be631612f52c363b97b82d253839028ebc907",
+        "blob": "a12f918499ebed5c67d253ce5956a1a3f7705656",
         "content": "sha256:56b0c778734c767ddff49a86236102c099824580e231dba432ec64ebb2362fcd",
         "locator": {
-          "end": 194,
+          "end": 198,
           "kind": "line_range",
-          "start": 194
+          "start": 198
         }
       },
       "id": "RLZ-R4SKXV",
@@ -175,12 +327,12 @@
     },
     {
       "anchor": {
-        "blob": "145be631612f52c363b97b82d253839028ebc907",
-        "content": "sha256:33ca0e2577c1a109c73df306c67afedf2c86e675c4d51e2031f448ce8159f0ff",
+        "blob": "a12f918499ebed5c67d253ce5956a1a3f7705656",
+        "content": "sha256:066fd5bf7715e3f7aaef220271777cdc4b3b2911490b1694ec954ea3581497dc",
         "locator": {
-          "end": 189,
+          "end": 194,
           "kind": "line_range",
-          "start": 169
+          "start": 173
         }
       },
       "id": "RLZ-VESCVY",
@@ -194,12 +346,12 @@
     },
     {
       "anchor": {
-        "blob": "145be631612f52c363b97b82d253839028ebc907",
-        "content": "sha256:e4e43a4a9022d9519496fef3bea0110276f676a446a273b0537104c417522496",
+        "blob": "a12f918499ebed5c67d253ce5956a1a3f7705656",
+        "content": "sha256:5efb669bc849c5dc3287773e64c61fa8003150199e83c22db1a753d5682fb976",
         "locator": {
-          "end": 68,
+          "end": 69,
           "kind": "line_range",
-          "start": 55
+          "start": 54
         }
       },
       "id": "RLZ-VXHQMN",
@@ -208,17 +360,36 @@
         "handoffEntry": "L71-CURRENT242-W-19",
         "leaf": "260928-MIK-L71"
       },
-      "rationale": "The canonical roles/curator.md carries the applicable own-file first-read/task_doc-only write and report/scratch instructions for its role/operation; it is the source the public generator ships.",
+      "rationale": "Canonical operations/curation.md carries task-bound own-file first reads, exact reader scope, selected memory root and the inline serving-build producer boundary; its generated package copy ships those source instructions.",
       "role": "primary-authority"
     },
     {
       "anchor": {
-        "blob": "145be631612f52c363b97b82d253839028ebc907",
-        "content": "sha256:e4e43a4a9022d9519496fef3bea0110276f676a446a273b0537104c417522496",
+        "blob": "a12f918499ebed5c67d253ce5956a1a3f7705656",
+        "content": "sha256:67c667cbed17d2ee093394b4cef63126c03e63e03d30612fd1e787b7ec6485b6",
         "locator": {
-          "end": 68,
+          "end": 109,
           "kind": "line_range",
-          "start": 55
+          "start": 100
+        }
+      },
+      "id": "RLZ-WJQ4HW",
+      "invariant": "INV-9DAS08",
+      "origin": {
+        "handoffEntry": "L62-CUR-6414-curator-healing",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "After bounded repairs, complete checks and independent fact-check remain before handover. Independent fact-check is required; findings repaired with full-operation rerun.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "a12f918499ebed5c67d253ce5956a1a3f7705656",
+        "content": "sha256:5efb669bc849c5dc3287773e64c61fa8003150199e83c22db1a753d5682fb976",
+        "locator": {
+          "end": 69,
+          "kind": "line_range",
+          "start": 54
         }
       },
       "id": "RLZ-X79EQQ",
@@ -229,6 +400,25 @@
       },
       "rationale": "Curation verifies launching-build identity and supplied context before its public writer.",
       "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "a12f918499ebed5c67d253ce5956a1a3f7705656",
+        "content": "sha256:99bcd2a038f471539fce01caeaa077103983fc7335430c257dd085eb0d064e4d",
+        "locator": {
+          "end": 82,
+          "kind": "line_range",
+          "start": 82
+        }
+      },
+      "id": "RLZ-YFDXH3",
+      "invariant": "INV-JHB89M",
+      "origin": {
+        "handoffEntry": "L62-CUR-6db-attach-L62-CUR-6414-claim-check",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "The Curator must personally verify each card sentence against code; a memory line is not proof.",
+      "role": "propagation-persistence"
     }
   ],
   "references": {
@@ -237,36 +427,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "145be631612f52c363b97b82d253839028ebc907",
-            "content": "sha256:969a3eb14f58970bb2c6917074f047773099723feea3cf77fa77a2d9a99c7f79",
+            "blob": "a12f918499ebed5c67d253ce5956a1a3f7705656",
+            "content": "sha256:954ec5a796908160d11393d00eafa85e5aa2d4377c25372dc5ad6973a1733669",
             "locator": {
-              "end": 32,
+              "end": 205,
               "kind": "line_range",
-              "start": 6
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "145be631612f52c363b97b82d253839028ebc907",
-            "content": "sha256:0f1029f1cec4f712d9084a91e8790559629e4f2a05028945c1826ea33e4ac1bf",
-            "locator": {
-              "end": 100,
-              "kind": "line_range",
-              "start": 60
-            }
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "145be631612f52c363b97b82d253839028ebc907",
-            "content": "sha256:e8975b842b93e89e1200c2a8e48d5d2b09850264837d397e0e024acc9dad30cd",
-            "locator": {
-              "end": 176,
-              "kind": "line_range",
-              "start": 137
+              "start": 5
             }
           },
           "kind": "code"
@@ -274,51 +440,375 @@
       ]
     },
     "10": {
-      "note": "Partitions all-role versus Curator/Manager text, consolidates inputs/output in the role, extracts named-step authoring details and states the post-landing recorded memory-review lane.\n\nAnchor: Current source; preserved L88 property 7",
+      "note": "Current curation keeps Manager transaction ownership separate, requires full intake/repair MQC and the independent fact-check, and records MEMORY review separately. The normal workflow continues through bounded repair and handover without a fresh Manager go, subject to the role’s genuine stops and own-repair escalation. Canonical task edits use the primary tool and scoped correct-write recovery; none of this grants Git, closeout or acceptance authority.",
       "targets": [
         {
           "anchor": {
-            "blob": "145be631612f52c363b97b82d253839028ebc907",
-            "content": "sha256:1b60529184401258f1c835939cabbc6e3d6598c745cb18abda44c4c6285eacb2",
+            "blob": "a12f918499ebed5c67d253ce5956a1a3f7705656",
+            "content": "sha256:29079d1c484d414bed82fcae1a5878428ec9a62d4df0fe74fb49a2d57dbfae9f",
             "locator": {
-              "end": 146,
+              "end": 31,
               "kind": "line_range",
-              "start": 117
+              "start": 25
             }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a12f918499ebed5c67d253ce5956a1a3f7705656",
+            "content": "sha256:7952eecd2c315628656620276b0011517dd71628f12ba784cc01382b99c099f5",
+            "locator": {
+              "end": 109,
+              "kind": "line_range",
+              "start": 75
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a12f918499ebed5c67d253ce5956a1a3f7705656",
+            "content": "sha256:b2f8ea248366c69b4b9da57b9546a3c4e5c30fc4a052ddb82ddd05bce24a92a4",
+            "locator": {
+              "end": 147,
+              "kind": "line_range",
+              "start": 118
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a12f918499ebed5c67d253ce5956a1a3f7705656",
+            "content": "sha256:e6c9cfb40e35f2ae81083309aac12ece3b36620ba716e1ac63f96e3827ccc561",
+            "locator": {
+              "end": 180,
+              "kind": "line_range",
+              "start": 173
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3ea09011d0657bf89935264047f646078913e415",
+            "content": "sha256:79f9621314b7a61021c8a4c6fb2f87b493235fce0c04a20b0dc605109e142f15",
+            "locator": {
+              "end": 47,
+              "kind": "line_range",
+              "start": 24
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3ea09011d0657bf89935264047f646078913e415",
+            "content": "sha256:fcbf4be5d4f7ad36979b9a1a2e1c29ce0850adedf5e61b97c7ba0a79a28de4fc",
+            "locator": {
+              "end": 86,
+              "kind": "line_range",
+              "start": 79
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "96c7d8ea9d2d51612af52f18df65ebd97d06c4e3",
+            "content": "sha256:b9c6c4697e91ff94768f37c53085588fa01c0e44ecfcbc3ede1d4a0585254342",
+            "locator": {
+              "end": 17,
+              "kind": "line_range",
+              "start": 3
+            },
+            "path": "skills/l-01-agent-lifecycles/reference/curator-authoring-d301.md"
           },
           "kind": "code"
         }
       ]
     },
     "11": {
-      "note": "Partitions all-role versus Curator/Manager text, consolidates inputs/output in the role, extracts named-step authoring details and states the post-landing recorded memory-review lane.\n\nAnchor: Current source; preserved L88 property 7",
+      "note": "Current curation keeps Manager transaction ownership separate, requires full intake/repair MQC and the independent fact-check, and records MEMORY review separately. The normal workflow continues through bounded repair and handover without a fresh Manager go, subject to the role’s genuine stops and own-repair escalation. Canonical task edits use the primary tool and scoped correct-write recovery; none of this grants Git, closeout or acceptance authority.",
       "targets": [
         {
           "anchor": {
-            "blob": "145be631612f52c363b97b82d253839028ebc907",
-            "content": "sha256:1b60529184401258f1c835939cabbc6e3d6598c745cb18abda44c4c6285eacb2",
+            "blob": "a12f918499ebed5c67d253ce5956a1a3f7705656",
+            "content": "sha256:29079d1c484d414bed82fcae1a5878428ec9a62d4df0fe74fb49a2d57dbfae9f",
             "locator": {
-              "end": 146,
+              "end": 31,
               "kind": "line_range",
-              "start": 117
+              "start": 25
             }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a12f918499ebed5c67d253ce5956a1a3f7705656",
+            "content": "sha256:7952eecd2c315628656620276b0011517dd71628f12ba784cc01382b99c099f5",
+            "locator": {
+              "end": 109,
+              "kind": "line_range",
+              "start": 75
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a12f918499ebed5c67d253ce5956a1a3f7705656",
+            "content": "sha256:b2f8ea248366c69b4b9da57b9546a3c4e5c30fc4a052ddb82ddd05bce24a92a4",
+            "locator": {
+              "end": 147,
+              "kind": "line_range",
+              "start": 118
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a12f918499ebed5c67d253ce5956a1a3f7705656",
+            "content": "sha256:e6c9cfb40e35f2ae81083309aac12ece3b36620ba716e1ac63f96e3827ccc561",
+            "locator": {
+              "end": 180,
+              "kind": "line_range",
+              "start": 173
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3ea09011d0657bf89935264047f646078913e415",
+            "content": "sha256:79f9621314b7a61021c8a4c6fb2f87b493235fce0c04a20b0dc605109e142f15",
+            "locator": {
+              "end": 47,
+              "kind": "line_range",
+              "start": 24
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3ea09011d0657bf89935264047f646078913e415",
+            "content": "sha256:fcbf4be5d4f7ad36979b9a1a2e1c29ce0850adedf5e61b97c7ba0a79a28de4fc",
+            "locator": {
+              "end": 86,
+              "kind": "line_range",
+              "start": 79
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "96c7d8ea9d2d51612af52f18df65ebd97d06c4e3",
+            "content": "sha256:b9c6c4697e91ff94768f37c53085588fa01c0e44ecfcbc3ede1d4a0585254342",
+            "locator": {
+              "end": 17,
+              "kind": "line_range",
+              "start": 3
+            },
+            "path": "skills/l-01-agent-lifecycles/reference/curator-authoring-d301.md"
           },
           "kind": "code"
         }
       ]
     },
     "12": {
-      "note": "Partitions all-role versus Curator/Manager text, consolidates inputs/output in the role, extracts named-step authoring details and states the post-landing recorded memory-review lane.\n\nAnchor: Current source; preserved L88 property 7",
+      "note": "Current curation keeps Manager transaction ownership separate, requires full intake/repair MQC and the independent fact-check, and records MEMORY review separately. The normal workflow continues through bounded repair and handover without a fresh Manager go, subject to the role’s genuine stops and own-repair escalation. Canonical task edits use the primary tool and scoped correct-write recovery; none of this grants Git, closeout or acceptance authority.",
       "targets": [
         {
           "anchor": {
-            "blob": "145be631612f52c363b97b82d253839028ebc907",
-            "content": "sha256:1b60529184401258f1c835939cabbc6e3d6598c745cb18abda44c4c6285eacb2",
+            "blob": "a12f918499ebed5c67d253ce5956a1a3f7705656",
+            "content": "sha256:29079d1c484d414bed82fcae1a5878428ec9a62d4df0fe74fb49a2d57dbfae9f",
             "locator": {
-              "end": 146,
+              "end": 31,
               "kind": "line_range",
-              "start": 117
+              "start": 25
             }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a12f918499ebed5c67d253ce5956a1a3f7705656",
+            "content": "sha256:7952eecd2c315628656620276b0011517dd71628f12ba784cc01382b99c099f5",
+            "locator": {
+              "end": 109,
+              "kind": "line_range",
+              "start": 75
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a12f918499ebed5c67d253ce5956a1a3f7705656",
+            "content": "sha256:b2f8ea248366c69b4b9da57b9546a3c4e5c30fc4a052ddb82ddd05bce24a92a4",
+            "locator": {
+              "end": 147,
+              "kind": "line_range",
+              "start": 118
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a12f918499ebed5c67d253ce5956a1a3f7705656",
+            "content": "sha256:e6c9cfb40e35f2ae81083309aac12ece3b36620ba716e1ac63f96e3827ccc561",
+            "locator": {
+              "end": 180,
+              "kind": "line_range",
+              "start": 173
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3ea09011d0657bf89935264047f646078913e415",
+            "content": "sha256:79f9621314b7a61021c8a4c6fb2f87b493235fce0c04a20b0dc605109e142f15",
+            "locator": {
+              "end": 47,
+              "kind": "line_range",
+              "start": 24
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3ea09011d0657bf89935264047f646078913e415",
+            "content": "sha256:fcbf4be5d4f7ad36979b9a1a2e1c29ce0850adedf5e61b97c7ba0a79a28de4fc",
+            "locator": {
+              "end": 86,
+              "kind": "line_range",
+              "start": 79
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "96c7d8ea9d2d51612af52f18df65ebd97d06c4e3",
+            "content": "sha256:b9c6c4697e91ff94768f37c53085588fa01c0e44ecfcbc3ede1d4a0585254342",
+            "locator": {
+              "end": 17,
+              "kind": "line_range",
+              "start": 3
+            },
+            "path": "skills/l-01-agent-lifecycles/reference/curator-authoring-d301.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "Current substantive locations: curator-writer-details.md:64–66 requires a changed family history row with the Curator’s effect when a guarantee is restated, with the writer filling the family revision. curator-authoring-d301.md:55–72 contains family examination, route/readback and Prepared-context attribution guidance. The role reads authoring at reconcile and card formats before ingest.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "197d357ccee5b36298f6b1e3afc714c112ca7fac",
+            "content": "sha256:aef9769872505f712226bfc8d924dead6a24d3c07a185ead6836acf9e51f95c5",
+            "locator": {
+              "end": 66,
+              "kind": "line_range",
+              "start": 64
+            },
+            "path": "skills/l-01-agent-lifecycles/reference/curator-writer-details.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "96c7d8ea9d2d51612af52f18df65ebd97d06c4e3",
+            "content": "sha256:27d602adcc100b43edfed6855561bb015849f568b696eaa78980445fb9aad76b",
+            "locator": {
+              "end": 72,
+              "kind": "line_range",
+              "start": 55
+            },
+            "path": "skills/l-01-agent-lifecycles/reference/curator-authoring-d301.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3ea09011d0657bf89935264047f646078913e415",
+            "content": "sha256:332057df28661a7cf35660f251f6158f0fd5d505ff9b9cc076b8135a6b358c9a",
+            "locator": {
+              "end": 60,
+              "kind": "line_range",
+              "start": 51
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "Current curation continues from a report to the next authorized step without a new Manager go. It verifies card sentences against source, repairs wrong or missing memory encountered along its way beyond quality-check findings, names each repair and makes no broad sweep. Code changes, requirement decisions and another leaf’s work return to their owner. A correction qualifies every affected false body claim; full checks and the independent fact-check run before handover.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a12f918499ebed5c67d253ce5956a1a3f7705656",
+            "content": "sha256:26d15a8474644613070af3dc356746c599dd45e5956032e51909a27df3ae174e",
+            "locator": {
+              "end": 82,
+              "kind": "line_range",
+              "start": 75
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a12f918499ebed5c67d253ce5956a1a3f7705656",
+            "content": "sha256:67c667cbed17d2ee093394b4cef63126c03e63e03d30612fd1e787b7ec6485b6",
+            "locator": {
+              "end": 109,
+              "kind": "line_range",
+              "start": 100
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3ea09011d0657bf89935264047f646078913e415",
+            "content": "sha256:72fadf303fbbddb96fe8d68c9d150aea7569fb17eaeb5d4a8dd79655d2c68184",
+            "locator": {
+              "end": 84,
+              "kind": "line_range",
+              "start": 73
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3ea09011d0657bf89935264047f646078913e415",
+            "content": "sha256:d8577622179dcbace8ad4c5d9e92f6121381f21cad17f964c58942b0e0018cc6",
+            "locator": {
+              "end": 150,
+              "kind": "line_range",
+              "start": 137
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
           },
           "kind": "code"
         }
@@ -329,36 +819,36 @@
       "targets": [
         {
           "anchor": {
-            "blob": "145be631612f52c363b97b82d253839028ebc907",
+            "blob": "a12f918499ebed5c67d253ce5956a1a3f7705656",
             "content": "sha256:07a91f6c0ce675ba1e3fe7ad1edcf413fcd523c56de9808a259cb6cde3d76da1",
             "locator": {
-              "end": 100,
+              "end": 107,
               "kind": "line_range",
-              "start": 86
+              "start": 93
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "145be631612f52c363b97b82d253839028ebc907",
+            "blob": "a12f918499ebed5c67d253ce5956a1a3f7705656",
             "content": "sha256:893177d2cf334b4c5476d992dac742c1348d0fd48d807f01ba1246594994d9f7",
             "locator": {
-              "end": 143,
+              "end": 147,
               "kind": "line_range",
-              "start": 137
+              "start": 141
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "145be631612f52c363b97b82d253839028ebc907",
+            "blob": "a12f918499ebed5c67d253ce5956a1a3f7705656",
             "content": "sha256:05fd03cb0a48c862708faf03b51694d935af36784004f9db04343b5bec8b9b62",
             "locator": {
-              "end": 59,
+              "end": 58,
               "kind": "line_range",
-              "start": 54
+              "start": 53
             }
           },
           "kind": "code"
@@ -366,16 +856,16 @@
       ]
     },
     "3": {
-      "note": "Foundation authoring is regular work in the real Architect task, with its leaf admission, actual enclosure and task/Manager ownership; no incidental code delta is required. Setup reads and reports state.\n\nAnchor: current source",
+      "note": "Foundation authoring is regular work in the real Architect task, with its leaf admission, actual enclosure and task/Manager ownership; no incidental code delta is required. Setup reads and reports state.",
       "targets": [
         {
           "anchor": {
-            "blob": "c2d38cd0a82b9efe96a765c4512f2242c6a9d3e6",
-            "content": "sha256:0c8d7ab6901498a84ffa765a41a0743c1724128e79ccbb8ee9479ba1cc5e89e0",
+            "blob": "3ea09011d0657bf89935264047f646078913e415",
+            "content": "sha256:28922ae2f50362b9ad6379c8ace256f584dad41b4de41dd2edb47d701c8aede8",
             "locator": {
-              "end": 39,
+              "end": 177,
               "kind": "line_range",
-              "start": 37
+              "start": 8
             },
             "path": "skills/l-01-agent-lifecycles/roles/curator.md"
           },
@@ -383,116 +873,566 @@
         },
         {
           "anchor": {
-            "blob": "c2d38cd0a82b9efe96a765c4512f2242c6a9d3e6",
-            "content": "sha256:2e3f520beaeb4a178d9575ff6fbf359338d3a8b3f8c627ee6ac7f15a6028bad9",
+            "blob": "6f1b7f17a083434b9512a5614aaf5a9d344a7e09",
+            "content": "sha256:3518e92e94b8d2e963cd88e9f0333406e1693ab260408b6c6dd31d7f2ce70a8f",
             "locator": {
-              "end": 108,
+              "end": 7,
               "kind": "line_range",
-              "start": 106
+              "start": 3
             },
-            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+            "path": "skills/l-01-agent-lifecycles/reference/curator-repository-foundation.md"
           },
           "kind": "code"
         }
       ]
     },
     "4": {
-      "note": "Partitions all-role versus Curator/Manager text, consolidates inputs/output in the role, extracts named-step authoring details and states the post-landing recorded memory-review lane.\n\nAnchor: Current source; preserved L88 property 7",
+      "note": "Current curation keeps Manager transaction ownership separate, requires full intake/repair MQC and the independent fact-check, and records MEMORY review separately. The normal workflow continues through bounded repair and handover without a fresh Manager go, subject to the role’s genuine stops and own-repair escalation. Canonical task edits use the primary tool and scoped correct-write recovery; none of this grants Git, closeout or acceptance authority.",
       "targets": [
         {
           "anchor": {
-            "blob": "145be631612f52c363b97b82d253839028ebc907",
-            "content": "sha256:1b60529184401258f1c835939cabbc6e3d6598c745cb18abda44c4c6285eacb2",
+            "blob": "a12f918499ebed5c67d253ce5956a1a3f7705656",
+            "content": "sha256:29079d1c484d414bed82fcae1a5878428ec9a62d4df0fe74fb49a2d57dbfae9f",
             "locator": {
-              "end": 146,
+              "end": 31,
               "kind": "line_range",
-              "start": 117
+              "start": 25
             }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a12f918499ebed5c67d253ce5956a1a3f7705656",
+            "content": "sha256:7952eecd2c315628656620276b0011517dd71628f12ba784cc01382b99c099f5",
+            "locator": {
+              "end": 109,
+              "kind": "line_range",
+              "start": 75
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a12f918499ebed5c67d253ce5956a1a3f7705656",
+            "content": "sha256:b2f8ea248366c69b4b9da57b9546a3c4e5c30fc4a052ddb82ddd05bce24a92a4",
+            "locator": {
+              "end": 147,
+              "kind": "line_range",
+              "start": 118
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a12f918499ebed5c67d253ce5956a1a3f7705656",
+            "content": "sha256:e6c9cfb40e35f2ae81083309aac12ece3b36620ba716e1ac63f96e3827ccc561",
+            "locator": {
+              "end": 180,
+              "kind": "line_range",
+              "start": 173
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3ea09011d0657bf89935264047f646078913e415",
+            "content": "sha256:79f9621314b7a61021c8a4c6fb2f87b493235fce0c04a20b0dc605109e142f15",
+            "locator": {
+              "end": 47,
+              "kind": "line_range",
+              "start": 24
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3ea09011d0657bf89935264047f646078913e415",
+            "content": "sha256:fcbf4be5d4f7ad36979b9a1a2e1c29ce0850adedf5e61b97c7ba0a79a28de4fc",
+            "locator": {
+              "end": 86,
+              "kind": "line_range",
+              "start": 79
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "96c7d8ea9d2d51612af52f18df65ebd97d06c4e3",
+            "content": "sha256:b9c6c4697e91ff94768f37c53085588fa01c0e44ecfcbc3ede1d4a0585254342",
+            "locator": {
+              "end": 17,
+              "kind": "line_range",
+              "start": 3
+            },
+            "path": "skills/l-01-agent-lifecycles/reference/curator-authoring-d301.md"
           },
           "kind": "code"
         }
       ]
     },
     "5": {
-      "note": "Partitions all-role versus Curator/Manager text, consolidates inputs/output in the role, extracts named-step authoring details and states the post-landing recorded memory-review lane.\n\nAnchor: Current source; preserved L88 property 7",
+      "note": "Current curation keeps Manager transaction ownership separate, requires full intake/repair MQC and the independent fact-check, and records MEMORY review separately. The normal workflow continues through bounded repair and handover without a fresh Manager go, subject to the role’s genuine stops and own-repair escalation. Canonical task edits use the primary tool and scoped correct-write recovery; none of this grants Git, closeout or acceptance authority.",
       "targets": [
         {
           "anchor": {
-            "blob": "145be631612f52c363b97b82d253839028ebc907",
-            "content": "sha256:1b60529184401258f1c835939cabbc6e3d6598c745cb18abda44c4c6285eacb2",
+            "blob": "a12f918499ebed5c67d253ce5956a1a3f7705656",
+            "content": "sha256:29079d1c484d414bed82fcae1a5878428ec9a62d4df0fe74fb49a2d57dbfae9f",
             "locator": {
-              "end": 146,
+              "end": 31,
               "kind": "line_range",
-              "start": 117
+              "start": 25
             }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a12f918499ebed5c67d253ce5956a1a3f7705656",
+            "content": "sha256:7952eecd2c315628656620276b0011517dd71628f12ba784cc01382b99c099f5",
+            "locator": {
+              "end": 109,
+              "kind": "line_range",
+              "start": 75
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a12f918499ebed5c67d253ce5956a1a3f7705656",
+            "content": "sha256:b2f8ea248366c69b4b9da57b9546a3c4e5c30fc4a052ddb82ddd05bce24a92a4",
+            "locator": {
+              "end": 147,
+              "kind": "line_range",
+              "start": 118
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a12f918499ebed5c67d253ce5956a1a3f7705656",
+            "content": "sha256:e6c9cfb40e35f2ae81083309aac12ece3b36620ba716e1ac63f96e3827ccc561",
+            "locator": {
+              "end": 180,
+              "kind": "line_range",
+              "start": 173
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3ea09011d0657bf89935264047f646078913e415",
+            "content": "sha256:79f9621314b7a61021c8a4c6fb2f87b493235fce0c04a20b0dc605109e142f15",
+            "locator": {
+              "end": 47,
+              "kind": "line_range",
+              "start": 24
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3ea09011d0657bf89935264047f646078913e415",
+            "content": "sha256:fcbf4be5d4f7ad36979b9a1a2e1c29ce0850adedf5e61b97c7ba0a79a28de4fc",
+            "locator": {
+              "end": 86,
+              "kind": "line_range",
+              "start": 79
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "96c7d8ea9d2d51612af52f18df65ebd97d06c4e3",
+            "content": "sha256:b9c6c4697e91ff94768f37c53085588fa01c0e44ecfcbc3ede1d4a0585254342",
+            "locator": {
+              "end": 17,
+              "kind": "line_range",
+              "start": 3
+            },
+            "path": "skills/l-01-agent-lifecycles/reference/curator-authoring-d301.md"
           },
           "kind": "code"
         }
       ]
     },
     "6": {
-      "note": "Partitions all-role versus Curator/Manager text, consolidates inputs/output in the role, extracts named-step authoring details and states the post-landing recorded memory-review lane.\n\nAnchor: Current source; preserved L88 property 7",
+      "note": "Current curation keeps Manager transaction ownership separate, requires full intake/repair MQC and the independent fact-check, and records MEMORY review separately. The normal workflow continues through bounded repair and handover without a fresh Manager go, subject to the role’s genuine stops and own-repair escalation. Canonical task edits use the primary tool and scoped correct-write recovery; none of this grants Git, closeout or acceptance authority.",
       "targets": [
         {
           "anchor": {
-            "blob": "145be631612f52c363b97b82d253839028ebc907",
-            "content": "sha256:1b60529184401258f1c835939cabbc6e3d6598c745cb18abda44c4c6285eacb2",
+            "blob": "a12f918499ebed5c67d253ce5956a1a3f7705656",
+            "content": "sha256:29079d1c484d414bed82fcae1a5878428ec9a62d4df0fe74fb49a2d57dbfae9f",
             "locator": {
-              "end": 146,
+              "end": 31,
               "kind": "line_range",
-              "start": 117
+              "start": 25
             }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a12f918499ebed5c67d253ce5956a1a3f7705656",
+            "content": "sha256:7952eecd2c315628656620276b0011517dd71628f12ba784cc01382b99c099f5",
+            "locator": {
+              "end": 109,
+              "kind": "line_range",
+              "start": 75
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a12f918499ebed5c67d253ce5956a1a3f7705656",
+            "content": "sha256:b2f8ea248366c69b4b9da57b9546a3c4e5c30fc4a052ddb82ddd05bce24a92a4",
+            "locator": {
+              "end": 147,
+              "kind": "line_range",
+              "start": 118
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a12f918499ebed5c67d253ce5956a1a3f7705656",
+            "content": "sha256:e6c9cfb40e35f2ae81083309aac12ece3b36620ba716e1ac63f96e3827ccc561",
+            "locator": {
+              "end": 180,
+              "kind": "line_range",
+              "start": 173
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3ea09011d0657bf89935264047f646078913e415",
+            "content": "sha256:79f9621314b7a61021c8a4c6fb2f87b493235fce0c04a20b0dc605109e142f15",
+            "locator": {
+              "end": 47,
+              "kind": "line_range",
+              "start": 24
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3ea09011d0657bf89935264047f646078913e415",
+            "content": "sha256:fcbf4be5d4f7ad36979b9a1a2e1c29ce0850adedf5e61b97c7ba0a79a28de4fc",
+            "locator": {
+              "end": 86,
+              "kind": "line_range",
+              "start": 79
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "96c7d8ea9d2d51612af52f18df65ebd97d06c4e3",
+            "content": "sha256:b9c6c4697e91ff94768f37c53085588fa01c0e44ecfcbc3ede1d4a0585254342",
+            "locator": {
+              "end": 17,
+              "kind": "line_range",
+              "start": 3
+            },
+            "path": "skills/l-01-agent-lifecycles/reference/curator-authoring-d301.md"
           },
           "kind": "code"
         }
       ]
     },
     "7": {
-      "note": "Partitions all-role versus Curator/Manager text, consolidates inputs/output in the role, extracts named-step authoring details and states the post-landing recorded memory-review lane.\n\nAnchor: Current source; preserved L88 property 7",
+      "note": "Current curation keeps Manager transaction ownership separate, requires full intake/repair MQC and the independent fact-check, and records MEMORY review separately. The normal workflow continues through bounded repair and handover without a fresh Manager go, subject to the role’s genuine stops and own-repair escalation. Canonical task edits use the primary tool and scoped correct-write recovery; none of this grants Git, closeout or acceptance authority.",
       "targets": [
         {
           "anchor": {
-            "blob": "145be631612f52c363b97b82d253839028ebc907",
-            "content": "sha256:1b60529184401258f1c835939cabbc6e3d6598c745cb18abda44c4c6285eacb2",
+            "blob": "a12f918499ebed5c67d253ce5956a1a3f7705656",
+            "content": "sha256:29079d1c484d414bed82fcae1a5878428ec9a62d4df0fe74fb49a2d57dbfae9f",
             "locator": {
-              "end": 146,
+              "end": 31,
               "kind": "line_range",
-              "start": 117
+              "start": 25
             }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a12f918499ebed5c67d253ce5956a1a3f7705656",
+            "content": "sha256:7952eecd2c315628656620276b0011517dd71628f12ba784cc01382b99c099f5",
+            "locator": {
+              "end": 109,
+              "kind": "line_range",
+              "start": 75
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a12f918499ebed5c67d253ce5956a1a3f7705656",
+            "content": "sha256:b2f8ea248366c69b4b9da57b9546a3c4e5c30fc4a052ddb82ddd05bce24a92a4",
+            "locator": {
+              "end": 147,
+              "kind": "line_range",
+              "start": 118
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a12f918499ebed5c67d253ce5956a1a3f7705656",
+            "content": "sha256:e6c9cfb40e35f2ae81083309aac12ece3b36620ba716e1ac63f96e3827ccc561",
+            "locator": {
+              "end": 180,
+              "kind": "line_range",
+              "start": 173
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3ea09011d0657bf89935264047f646078913e415",
+            "content": "sha256:79f9621314b7a61021c8a4c6fb2f87b493235fce0c04a20b0dc605109e142f15",
+            "locator": {
+              "end": 47,
+              "kind": "line_range",
+              "start": 24
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3ea09011d0657bf89935264047f646078913e415",
+            "content": "sha256:fcbf4be5d4f7ad36979b9a1a2e1c29ce0850adedf5e61b97c7ba0a79a28de4fc",
+            "locator": {
+              "end": 86,
+              "kind": "line_range",
+              "start": 79
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "96c7d8ea9d2d51612af52f18df65ebd97d06c4e3",
+            "content": "sha256:b9c6c4697e91ff94768f37c53085588fa01c0e44ecfcbc3ede1d4a0585254342",
+            "locator": {
+              "end": 17,
+              "kind": "line_range",
+              "start": 3
+            },
+            "path": "skills/l-01-agent-lifecycles/reference/curator-authoring-d301.md"
           },
           "kind": "code"
         }
       ]
     },
     "8": {
-      "note": "Partitions all-role versus Curator/Manager text, consolidates inputs/output in the role, extracts named-step authoring details and states the post-landing recorded memory-review lane.\n\nAnchor: Current source; preserved L88 property 7",
+      "note": "Current curation keeps Manager transaction ownership separate, requires full intake/repair MQC and the independent fact-check, and records MEMORY review separately. The normal workflow continues through bounded repair and handover without a fresh Manager go, subject to the role’s genuine stops and own-repair escalation. Canonical task edits use the primary tool and scoped correct-write recovery; none of this grants Git, closeout or acceptance authority.",
       "targets": [
         {
           "anchor": {
-            "blob": "145be631612f52c363b97b82d253839028ebc907",
-            "content": "sha256:1b60529184401258f1c835939cabbc6e3d6598c745cb18abda44c4c6285eacb2",
+            "blob": "a12f918499ebed5c67d253ce5956a1a3f7705656",
+            "content": "sha256:29079d1c484d414bed82fcae1a5878428ec9a62d4df0fe74fb49a2d57dbfae9f",
             "locator": {
-              "end": 146,
+              "end": 31,
               "kind": "line_range",
-              "start": 117
+              "start": 25
             }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a12f918499ebed5c67d253ce5956a1a3f7705656",
+            "content": "sha256:7952eecd2c315628656620276b0011517dd71628f12ba784cc01382b99c099f5",
+            "locator": {
+              "end": 109,
+              "kind": "line_range",
+              "start": 75
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a12f918499ebed5c67d253ce5956a1a3f7705656",
+            "content": "sha256:b2f8ea248366c69b4b9da57b9546a3c4e5c30fc4a052ddb82ddd05bce24a92a4",
+            "locator": {
+              "end": 147,
+              "kind": "line_range",
+              "start": 118
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a12f918499ebed5c67d253ce5956a1a3f7705656",
+            "content": "sha256:e6c9cfb40e35f2ae81083309aac12ece3b36620ba716e1ac63f96e3827ccc561",
+            "locator": {
+              "end": 180,
+              "kind": "line_range",
+              "start": 173
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3ea09011d0657bf89935264047f646078913e415",
+            "content": "sha256:79f9621314b7a61021c8a4c6fb2f87b493235fce0c04a20b0dc605109e142f15",
+            "locator": {
+              "end": 47,
+              "kind": "line_range",
+              "start": 24
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3ea09011d0657bf89935264047f646078913e415",
+            "content": "sha256:fcbf4be5d4f7ad36979b9a1a2e1c29ce0850adedf5e61b97c7ba0a79a28de4fc",
+            "locator": {
+              "end": 86,
+              "kind": "line_range",
+              "start": 79
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "96c7d8ea9d2d51612af52f18df65ebd97d06c4e3",
+            "content": "sha256:b9c6c4697e91ff94768f37c53085588fa01c0e44ecfcbc3ede1d4a0585254342",
+            "locator": {
+              "end": 17,
+              "kind": "line_range",
+              "start": 3
+            },
+            "path": "skills/l-01-agent-lifecycles/reference/curator-authoring-d301.md"
           },
           "kind": "code"
         }
       ]
     },
     "9": {
-      "note": "Partitions all-role versus Curator/Manager text, consolidates inputs/output in the role, extracts named-step authoring details and states the post-landing recorded memory-review lane.\n\nAnchor: Current source; preserved L88 property 7",
+      "note": "Current curation keeps Manager transaction ownership separate, requires full intake/repair MQC and the independent fact-check, and records MEMORY review separately. The normal workflow continues through bounded repair and handover without a fresh Manager go, subject to the role’s genuine stops and own-repair escalation. Canonical task edits use the primary tool and scoped correct-write recovery; none of this grants Git, closeout or acceptance authority.",
       "targets": [
         {
           "anchor": {
-            "blob": "145be631612f52c363b97b82d253839028ebc907",
-            "content": "sha256:1b60529184401258f1c835939cabbc6e3d6598c745cb18abda44c4c6285eacb2",
+            "blob": "a12f918499ebed5c67d253ce5956a1a3f7705656",
+            "content": "sha256:29079d1c484d414bed82fcae1a5878428ec9a62d4df0fe74fb49a2d57dbfae9f",
             "locator": {
-              "end": 146,
+              "end": 31,
               "kind": "line_range",
-              "start": 117
+              "start": 25
             }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a12f918499ebed5c67d253ce5956a1a3f7705656",
+            "content": "sha256:7952eecd2c315628656620276b0011517dd71628f12ba784cc01382b99c099f5",
+            "locator": {
+              "end": 109,
+              "kind": "line_range",
+              "start": 75
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a12f918499ebed5c67d253ce5956a1a3f7705656",
+            "content": "sha256:b2f8ea248366c69b4b9da57b9546a3c4e5c30fc4a052ddb82ddd05bce24a92a4",
+            "locator": {
+              "end": 147,
+              "kind": "line_range",
+              "start": 118
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a12f918499ebed5c67d253ce5956a1a3f7705656",
+            "content": "sha256:e6c9cfb40e35f2ae81083309aac12ece3b36620ba716e1ac63f96e3827ccc561",
+            "locator": {
+              "end": 180,
+              "kind": "line_range",
+              "start": 173
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3ea09011d0657bf89935264047f646078913e415",
+            "content": "sha256:79f9621314b7a61021c8a4c6fb2f87b493235fce0c04a20b0dc605109e142f15",
+            "locator": {
+              "end": 47,
+              "kind": "line_range",
+              "start": 24
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3ea09011d0657bf89935264047f646078913e415",
+            "content": "sha256:fcbf4be5d4f7ad36979b9a1a2e1c29ce0850adedf5e61b97c7ba0a79a28de4fc",
+            "locator": {
+              "end": 86,
+              "kind": "line_range",
+              "start": 79
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "96c7d8ea9d2d51612af52f18df65ebd97d06c4e3",
+            "content": "sha256:b9c6c4697e91ff94768f37c53085588fa01c0e44ecfcbc3ede1d4a0585254342",
+            "locator": {
+              "end": 17,
+              "kind": "line_range",
+              "start": 3
+            },
+            "path": "skills/l-01-agent-lifecycles/reference/curator-authoring-d301.md"
           },
           "kind": "code"
         }

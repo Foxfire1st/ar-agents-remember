@@ -1,0 +1,40 @@
+{
+  "path": "scripts/agent_evals/adapters/text_delivery.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "31000220dae64059c2df6844a9a4fa245a128703",
+        "content": "sha256:9e0c9a61928aa42642b461734f3935961e61aa77eb0c8e312d5f004d46e7b5d2",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-R6N838",
+      "invariant": "INV-HXTSVY",
+      "origin": {
+        "handoffEntry": "L62-fd6462b8-text-delivery",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "It binds the instruction-only marker, validates every detail link and checks the native received instruction carrier.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The source defines this file's responsibility and the boundaries described here.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "31000220dae64059c2df6844a9a4fa245a128703",
+            "content": "sha256:9e0c9a61928aa42642b461734f3935961e61aa77eb0c8e312d5f004d46e7b5d2",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

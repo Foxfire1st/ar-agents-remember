@@ -35,4 +35,6 @@ This is a current source account, not an executed test, CODE/MEMORY grade, live 
 
 
 
+- Retained paired-Git regression declarations cover relocation, stable no-write refusals and genuine own-row recovery; source declarations do not authorize using leaf code as the live leaf producer.
+
 - Retained paired-Git regression declarations cover relocation, stable no-write refusals and genuine own-row recovery; source declarations do not authorize using leaf code as the live leaf producer. [1]

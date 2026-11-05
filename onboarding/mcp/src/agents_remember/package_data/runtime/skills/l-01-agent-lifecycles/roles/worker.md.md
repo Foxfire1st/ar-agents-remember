@@ -2,12 +2,20 @@
 
 ## Current supported-pair account — R100/R116 composition
 
-The Manager starts the three leaf seats as a set; Worker cannot start its checker or accept/publish its own implementation. Its stage requires final candidate meeting the requirement, relevant tests/lint/type checks passing and the report with Reviewer. Own failures are corrected on its own ground; blocked/unrun evidence remains explicit. A record-only repair stays on the same review round only with candidate unchanged; repeated cases demand property/construction reasoning rather than case chasing.
+Past-epoch account (retained wording): The Manager starts the three leaf seats as a set; Worker cannot start its checker or accept/publish its own implementation. Its stage requires final candidate meeting the requirement, relevant tests/lint/type checks passing and the report with Reviewer. Own failures are corrected on its own ground; blocked/unrun evidence remains explicit. A record-only repair stays on the same review round only with candidate unchanged; repeated cases demand property/construction reasoning rather than case chasing.
+
+Custody: the preceding sentence(s) retain their original target blob(s) `e9cdae3d6c37b0b2b5b725d99d3dba0218b0822f`; live reference 6 labels only the separately stated current account below.
+
+Manager starts Worker at build, Reviewer at freeze and Curator after code PASS; Worker cannot start its checker or accept/publish its own implementation. Its stage requires a final candidate meeting the requirement, the memory coding guidelines’ handover checks passing on a clean copy of its final bytes, and the report with Reviewer. Own failures are corrected on its own ground; blocked/unrun evidence remains explicit. A record-only repair stays on the same review round only with candidate unchanged; repeated cases demand property/construction reasoning rather than case chasing.
 
 This account controls the named changed seams; contradictory earlier card wording below is retained only as historical evidence. Unchanged role duties and R117 file-only wake/report transport are preserved. Source inspection supplies no new runtime test, CODE verdict, review counter or acceptance.
 
 
-- The Manager starts the three leaf seats as a set; Worker cannot start its checker or accept/publish its own implementation. Its stage requires final candidate meeting the requirement, relevant tests/lint/type checks passing and the report with Reviewer. Own failures are corrected on its own ground; blocked/unrun evidence remains explicit. A record-only repair stays on the same review round only with candidate unchanged; repeated cases demand property/construction reasoning rather than case chasing. [6]
+Past-epoch account (retained wording): - The Manager starts the three leaf seats as a set; Worker cannot start its checker or accept/publish its own implementation. Its stage requires final candidate meeting the requirement, relevant tests/lint/type checks passing and the report with Reviewer. Own failures are corrected on its own ground; blocked/unrun evidence remains explicit. A record-only repair stays on the same review round only with candidate unchanged; repeated cases demand property/construction reasoning rather than case chasing.
+
+Custody: the preceding sentence(s) retain their original target blob(s) `e9cdae3d6c37b0b2b5b725d99d3dba0218b0822f`; live reference 6 labels only the separately stated current account below.
+
+- Manager starts Worker at build, Reviewer at freeze and Curator after code PASS; Worker cannot start its checker or accept/publish its own implementation. Its stage requires a final candidate meeting the requirement, the memory coding guidelines’ handover checks passing on a clean copy of its final bytes, and the report with Reviewer. Own failures are corrected on its own ground; blocked/unrun evidence remains explicit. A record-only repair stays on the same review round only with candidate unchanged; repeated cases demand property/construction reasoning rather than case chasing.
 
 
 
@@ -30,7 +38,7 @@ The source-owner repair restored the explicit workspace.scratchRoot temporary-fi
 ## Current source contract evidence
 
 
-> Retained earlier citation wording: - Current synced source supports the qualified account; declarations, mirrors and fixture assertions are not executed acceptance. [7]
+> Retained earlier citation wording: - Current synced source supports the qualified account; declarations, mirrors and fixture assertions are not executed acceptance.
 
 
 ## Purpose
@@ -41,7 +49,11 @@ The Manager prepares this seat alongside its Reviewer and Curator. Preparing hel
 
 ## Current Contract
 
-The Worker’s stage ends when the candidate meets the requirement, focused tests/lint/type checks pass on final bytes, and the report is with the Reviewer. Each of these stages repairs faults in its own work or instrument and corrects invalid input through the same tool, reports the repair, and continues. It stops for an open permission prompt, a guard/tool refusal that survives correct input or names unowned state, a requirement-meaning question, or an effect outside its own worktree, scratch folder and task. An unfinished final turn names what it awaits and from whom; the existing role-specific stops and write boundaries remain.
+Past-epoch account (retained wording): The Worker’s stage ends when the candidate meets the requirement, focused tests/lint/type checks pass on final bytes, and the report is with the Reviewer. Each of these stages repairs faults in its own work or instrument and corrects invalid input through the same tool, reports the repair, and continues. It stops for an open permission prompt, a guard/tool refusal that survives correct input or names unowned state, a requirement-meaning question, or an effect outside its own worktree, scratch folder and task. An unfinished final turn names what it awaits and from whom; the existing role-specific stops and write boundaries remain.
+
+Custody: the preceding sentence(s) retain their original target blob(s) `e9cdae3d6c37b0b2b5b725d99d3dba0218b0822f`; live reference 6 labels only the separately stated current account below.
+
+The Worker’s stage ends when the candidate meets the requirement, the handover checks named by the memory coding guidelines pass on a clean copy of its final bytes, and the report is with Reviewer. Each of these stages repairs faults in its own work or instrument and corrects invalid input through the same tool, reports the repair, and continues. It stops for an open permission prompt, a guard/tool refusal that survives correct input or names unowned state, a requirement-meaning question, or an effect outside its own worktree, scratch folder and task. An unfinished final turn names what it awaits and from whom; the existing role-specific stops and write boundaries remain.
 
 When all candidate findings are closed and only the Worker’s report/evidence/hash/anchor remains to repair, the same Reviewer records the repaired record on its last round without `begin_review` or a count increase. This requires the candidate to remain byte-for-byte unchanged; a changed or unproven candidate requires `begin_review`, and remaining finding IDs can only shrink.
 
@@ -101,7 +113,7 @@ When the master line moves, Worker runs its supported leaf sync. If no path chan
 ## Evidence
 
 
-> Retained earlier citation wording: - The generated role carries its canonical repair-loop instructions without independent authority. [9]
+> Retained earlier citation wording: - The generated role carries its canonical repair-loop instructions without independent authority.
 
 
 
@@ -130,20 +142,26 @@ acceptance, leaf integration does not rerun it, and full acceptance belongs to m
 
 
 
-> Retained earlier citation wording: - Current stage boundaries, settings-owned review budget and recorded approval duties are carried by these instruction sources. [5]
+> Retained earlier citation wording: - Current stage boundaries, settings-owned review budget and recorded approval duties are carried by these instruction sources.
 
 
 
 
-> Retained earlier citation wording: - Worker intake opens exact rendered_path/json_path files and uses actual named-memory reader arguments without restoring task_doc reads. [8]
+> Retained earlier citation wording: - Worker intake opens exact rendered_path/json_path files and uses actual named-memory reader arguments without restoring task_doc reads.
 
-- Current stage boundaries, settings-owned review budget and recorded approval duties are carried by these instruction sources. [5]
-
-
-- Current synced source supports the qualified account; declarations, mirrors and fixture assertions are not executed acceptance. [7]
+- Current stage boundaries, settings-owned review budget and recorded approval duties are carried by these instruction sources.
 
 
-- Worker intake opens exact rendered_path/json_path files and uses actual named-memory reader arguments without restoring task_doc reads. [8]
+- Current synced source supports the qualified account; declarations, mirrors and fixture assertions are not executed acceptance.
 
 
+- Worker intake opens exact rendered_path/json_path files and uses actual named-memory reader arguments without restoring task_doc reads.
+
+
+- The generated role carries its canonical repair-loop instructions without independent authority.
+
+- Worker ends at a final candidate meeting the requirement, clean-copy handover checks named by the memory coding guidelines and a report with Reviewer; own-fault repair and the three-repairs escalation remain explicit. [5]
+- Manager starts Worker at build, Reviewer at freeze and Curator after code PASS; Worker starts no checker and accepts or publishes no implementation. Its stage needs the final candidate and the coding guidelines’ clean-copy handover checks, with its report at Reviewer. Own faults are repaired; record-only checks reuse the round only with identical candidate and all candidate findings closed; repeated cases require the property and construction. [6]
+- This packaged Worker role is byte-identical to its canonical source and carries its actual stage and repair duties; that mirror identity establishes no executed check or acceptance. [7]
+- Worker intake opens exact rendered_path/json_path files natively; task_doc on agents-remember-task writes rather than reads, and only read_ar_files carries the canonical task_context. [8]
 - The generated role carries its canonical repair-loop instructions without independent authority. [9]

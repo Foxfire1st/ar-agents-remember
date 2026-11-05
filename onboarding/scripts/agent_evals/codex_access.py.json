@@ -1,0 +1,40 @@
+{
+  "path": "scripts/agent_evals/codex_access.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "e182e34bb2e3a843960c2ed9676d93116da87b23",
+        "content": "sha256:a1c65fd3cf8e0e6f359e9f2d2768e14c53c0813bc3b045d47ec3ceaa057be3ce",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-S94YH7",
+      "invariant": "INV-Z3VS0B",
+      "origin": {
+        "handoffEntry": "L62-fd6462b8-access-only",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "It enforces private file ownership and mode, rejects refresh material and revalidates identity and expiry at use.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The source defines this file's responsibility and the boundaries described here.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e182e34bb2e3a843960c2ed9676d93116da87b23",
+            "content": "sha256:a1c65fd3cf8e0e6f359e9f2d2768e14c53c0813bc3b045d47ec3ceaa057be3ce",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

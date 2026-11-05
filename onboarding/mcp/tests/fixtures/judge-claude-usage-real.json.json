@@ -1,0 +1,40 @@
+{
+  "path": "mcp/tests/fixtures/judge-claude-usage-real.json",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "37bc963061260ca1a7e4fbbcfb3d60045f4a01b3",
+        "content": "sha256:e356ae5a0d6c96aafe56bb2d73f5de3bde0af79d4497769f096be37a95186329",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-2J2WCZ",
+      "invariant": "INV-5SX38A",
+      "origin": {
+        "handoffEntry": "L62-fd6462b8-usage",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "This retained multi-turn usage record distinguishes session counters from the final call and preserves tool-result byte observations.",
+      "role": "support"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The source defines this file's responsibility and the boundaries described here.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "37bc963061260ca1a7e4fbbcfb3d60045f4a01b3",
+            "content": "sha256:e356ae5a0d6c96aafe56bb2d73f5de3bde0af79d4497769f096be37a95186329",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

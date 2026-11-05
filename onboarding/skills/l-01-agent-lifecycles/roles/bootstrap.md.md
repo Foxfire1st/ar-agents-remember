@@ -12,8 +12,24 @@ Its sole durable output names its own exact report path and records resolved sta
 
 This canonical role/operation requires messages to be short wake-ups naming requested work or a handover and its files. Report, verdict, list and evidence contents travel through file-only `body` or existing-file `attach`, not pasted into message text. Within a shared task, files stay with its record and a leaf workspace exposes the message-folder link. Text uses the effective settings limit without a pinned number. The canonical source and the packaged copy the tool server serves share this contract; transport does not change their write/start powers, peer destinations or independent acceptance authority.
 
+Current qualification: the retained clause “This canonical role/operation requires messages to be short wake-ups naming requested work or a handover and its files. Report, verdict, list and evidence contents travel through file-only `body` or existing-file `attach`, not pasted into message text. Within a shared task, files stay with its record and a leaf workspace exposes the message-folder link. Text uses the effective settings limit without a pinned number. The canonical source and the packaged copy the tool server serves share this contract; transport does not change their write/start powers, peer destinations or independent acceptance authority.” describes its past source epoch. Earlier transport account, retained as prose: This canonical role/operation requires messages to be short wake-ups naming requested work or a handover and its files. Report, verdict, list and evidence contents travel through file-only `body` or existing-file `attach`, not pasted into message text. Within a shared task, files stay with its record and a leaf workspace exposes the message-folder link. Text uses the effective settings limit without a pinned number. The canonical source and the packaged copy the tool server serves share this contract; transport does not change their write/start powers, peer destinations or independent acceptance authority.
 
-- Canonical Bootstrap message instructions use wake text and file-carried body/attachments without a pinned settings limit. [1]
+Current Bootstrap authority is narrower: the role sends no role_message; developer questions are its own reply and end the turn. Its report is its one durable artifact and names its own path.
+
+
+- Canonical Bootstrap message instructions use wake text and file-carried body/attachments without a pinned settings limit.
+
+Earlier caption detached from live reference 1: its original target declared the source text at `skills/l-01-agent-lifecycles/roles/bootstrap.md` at original blob `fde55d2ad1129fead83a4561a005af560d720d55`, lines 147–150. The caption above is retained as prose; the numbered clause below describes the current source.
+
+Retained authoring-row wording:
+
+Finding: Bootstrap sends no role messages: it writes a developer question in its own reply and ends the turn. Its sole durable report names its own exact path and its foundation state is reported as read, never as authored.
+
+Anchor: `current role or template contract`
+
+Source: skills/l-01-agent-lifecycles/roles/bootstrap.md:34-36; skills/l-01-agent-lifecycles/roles/bootstrap.md:110-118
 
 
 - Bootstrap reads through the retained naming surface, identifies resolve_context as removed and forbids retire_child beyond its setup powers. [2]
+
+- Bootstrap sends no role messages: it writes a developer question in its own reply and ends the turn. Its sole durable report names its own exact path and its foundation state is reported as read, never as authored. [1]

@@ -7,7 +7,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "936fa0ad1e94fd9c02b1fce1e40b99905b00535f",
+            "blob": "12a734702c9b2339b41337d4b25524d7d5496620",
             "content": "sha256:dad18b9bd671c7df807a864ba1ce3aebbbd5246b8a75fb1e0d28fa55ae52b335",
             "locator": {
               "kind": "symbol",
@@ -19,14 +19,15 @@
       ]
     },
     "2": {
-      "note": "Retired detector vectors are inert data, never called\n\nAnchor: `test_retired_detector_vectors_are_inert_data_never_called`",
+      "note": "Retired detector vectors are inert data, never called Anchor: `test_retired_detector_vectors_are_inert_data_never_called`",
       "targets": [
         {
           "anchor": {
-            "blob": "936fa0ad1e94fd9c02b1fce1e40b99905b00535f",
-            "content": "sha256:baa1707eeeedfa270a7978e1b0fbd004ec01a4c5d053d81439ed5cf66adce644",
+            "blob": "12a734702c9b2339b41337d4b25524d7d5496620",
+            "content": "sha256:4cd7466ede2254f20af02f9bdfd6e1bccffdb0683f763ece161f1aa14f8564aa",
             "locator": {
-              "kind": "file"
+              "kind": "symbol",
+              "name": "test_retired_detector_vectors_are_inert_data_never_called"
             }
           },
           "kind": "test"
@@ -38,7 +39,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "936fa0ad1e94fd9c02b1fce1e40b99905b00535f",
+            "blob": "12a734702c9b2339b41337d4b25524d7d5496620",
             "content": "sha256:3fb10eecb45a038640b2238a09f6def89d8439a65b1a19b3425d910e05cf5208",
             "locator": {
               "kind": "symbol",
@@ -54,7 +55,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "936fa0ad1e94fd9c02b1fce1e40b99905b00535f",
+            "blob": "12a734702c9b2339b41337d4b25524d7d5496620",
             "content": "sha256:e6d4352240d002d3dd3dbb0aca607a13a6a8f2e72e6363951b3f1c417538ec8a",
             "locator": {
               "kind": "symbol",
@@ -70,11 +71,40 @@
       "targets": [
         {
           "anchor": {
-            "blob": "936fa0ad1e94fd9c02b1fce1e40b99905b00535f",
+            "blob": "12a734702c9b2339b41337d4b25524d7d5496620",
             "content": "sha256:c3b43e42fb4305453d4e99a961e84fa4014c9e21eb19d67674598e9460e1b5be",
             "locator": {
               "kind": "symbol",
               "name": "test_the_census_exception_is_exactly_the_stated_one"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "`_index_tables` classifies each SQL statement separately. Interpolation in VALUES does not make a fixed sessions/messages target dynamic; index targets, incomplete target prefixes and unknown targets remain detectable, including a mixed fixed-target/dynamic-target fragment. These are source assertions/support behavior, not a fresh invocation, host result or AR acceptance.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "12a734702c9b2339b41337d4b25524d7d5496620",
+            "content": "sha256:ee1f97bc0043cff4ef7738a64af7aa840454c71dd62f9e89dcbe21f723ab23b8",
+            "locator": {
+              "end": 111,
+              "kind": "line_range",
+              "start": 85
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "12a734702c9b2339b41337d4b25524d7d5496620",
+            "content": "sha256:806d1f42033c62e74969250035cc4f472c52dd563dc446639c6958d9534cab41",
+            "locator": {
+              "end": 419,
+              "kind": "line_range",
+              "start": 409
             }
           },
           "kind": "test"

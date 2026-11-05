@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "d26f7a71fe3a996c2c34acccc3af29f5d88d16a3",
+        "blob": "1624f1c805d7b11098ab741352f0f4bd8f5ec09c",
         "content": "sha256:bfd543f8f89f301f5c3eab6e35f8bba6a78a2237bbedc36f5b3ecdf48a3d3901",
         "locator": {
           "kind": "symbol",
@@ -20,7 +20,7 @@
     },
     {
       "anchor": {
-        "blob": "d26f7a71fe3a996c2c34acccc3af29f5d88d16a3",
+        "blob": "1624f1c805d7b11098ab741352f0f4bd8f5ec09c",
         "content": "sha256:3efde9b8c1fc990a5c0eb061c7c8c49e42667b72632334189d15e3803e8ee7c1",
         "locator": {
           "kind": "symbol",
@@ -39,14 +39,28 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The handover names the tool server, its two tools and the host, and tells a parentless role it needs none.",
+      "note": "The handover test asserts Paseo and agents-remember-task host fields, the role_start/role_message tool names, scoped reader-discovery instructions and held/permission wording. The parentless control requires no invented parent; a started role records its actual starter and role/task return address.",
       "targets": [
         {
           "anchor": {
-            "blob": "d26f7a71fe3a996c2c34acccc3af29f5d88d16a3",
-            "content": "sha256:944dd4bc371c126fd10ac87d22d575a16b0f9ea615e38eb5a710e864d19c2154",
+            "blob": "1624f1c805d7b11098ab741352f0f4bd8f5ec09c",
+            "content": "sha256:270915da46fee44871d1df39eb7b6d2d9951007d3cf144fef6c9e63f1c3db892",
             "locator": {
-              "kind": "file"
+              "end": 508,
+              "kind": "line_range",
+              "start": 405
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "1624f1c805d7b11098ab741352f0f4bd8f5ec09c",
+            "content": "sha256:d4da21666ffea9f52024c3bbe8c39b98a0fd289bb60851917287fe62f714d715",
+            "locator": {
+              "end": 544,
+              "kind": "line_range",
+              "start": 510
             }
           },
           "kind": "test"
@@ -54,14 +68,45 @@
       ]
     },
     "2": {
-      "note": "No first message and none of the three tool descriptions names a forbidden host string.",
+      "note": "The first-message control rejects forbidden host strings across generated role prompts. The description control checks three role-agent tool descriptions—role_start, role_message and role_start_set—and separately checks user_settings_init; no stored description or first-message assertion proves host delivery.",
       "targets": [
         {
           "anchor": {
-            "blob": "d26f7a71fe3a996c2c34acccc3af29f5d88d16a3",
-            "content": "sha256:944dd4bc371c126fd10ac87d22d575a16b0f9ea615e38eb5a710e864d19c2154",
+            "blob": "1624f1c805d7b11098ab741352f0f4bd8f5ec09c",
+            "content": "sha256:e8f1f207fbc887160e0c4111a83ea298bd63d1f2ce659be0b8fef7b12329e65a",
             "locator": {
-              "kind": "file"
+              "end": 378,
+              "kind": "line_range",
+              "start": 346
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "1624f1c805d7b11098ab741352f0f4bd8f5ec09c",
+            "content": "sha256:113f32f25268d5149b3dc11b48e560a76a2debdc9db34946a978a3383c436787",
+            "locator": {
+              "end": 648,
+              "kind": "line_range",
+              "start": 548
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The compact role_message description stays within 600 characters and states the host mid-turn promise, queued held delivery and no resend of held messages. Host acceptance or consuming-turn completion is distinct from AR acceptance; the source check remains separate from live message delivery. These are source assertions/support behavior, not a fresh invocation, host result or AR acceptance.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1624f1c805d7b11098ab741352f0f4bd8f5ec09c",
+            "content": "sha256:113f32f25268d5149b3dc11b48e560a76a2debdc9db34946a978a3383c436787",
+            "locator": {
+              "end": 648,
+              "kind": "line_range",
+              "start": 548
             }
           },
           "kind": "test"

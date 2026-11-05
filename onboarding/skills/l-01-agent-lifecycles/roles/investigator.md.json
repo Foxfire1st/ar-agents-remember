@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "61e88989c300f3783c4e50987a0ec98378fc2ab0",
-        "content": "sha256:4cf9656f8621f433e4db4c68b65f2b168fc66cab629ded109fdc9b473357f82e",
+        "blob": "f860965f1283a2c5f7bfbc360891b2f040525963",
+        "content": "sha256:1422a784e3e117184f58475045293b255534e3f29b4ec78ae00fe26ce4f8c342",
         "locator": {
           "kind": "file"
         }
@@ -20,8 +20,8 @@
     },
     {
       "anchor": {
-        "blob": "61e88989c300f3783c4e50987a0ec98378fc2ab0",
-        "content": "sha256:4cf9656f8621f433e4db4c68b65f2b168fc66cab629ded109fdc9b473357f82e",
+        "blob": "f860965f1283a2c5f7bfbc360891b2f040525963",
+        "content": "sha256:1422a784e3e117184f58475045293b255534e3f29b4ec78ae00fe26ce4f8c342",
         "locator": {
           "kind": "file"
         }
@@ -37,8 +37,27 @@
     },
     {
       "anchor": {
-        "blob": "61e88989c300f3783c4e50987a0ec98378fc2ab0",
-        "content": "sha256:4cf9656f8621f433e4db4c68b65f2b168fc66cab629ded109fdc9b473357f82e",
+        "blob": "f860965f1283a2c5f7bfbc360891b2f040525963",
+        "content": "sha256:8e6ee72f195f6fbb1cee3958cf96c3bc83d748953038791762e9d3abfd7dafa5",
+        "locator": {
+          "end": 30,
+          "kind": "line_range",
+          "start": 8
+        }
+      },
+      "id": "RLZ-4CP22X",
+      "invariant": "INV-EXP68S",
+      "origin": {
+        "handoffEntry": "L62-CUR-6414-investigator-evidence",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "Actual report step states what is/is not, evidence, no self-authored requirement/ruling/duty and open parent question. Actual parent first concern and no fabricated scope/task. Scoped concern, scratch checks, report before explicitly authorized remediation and unchanged code/memory/task prohibition.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "f860965f1283a2c5f7bfbc360891b2f040525963",
+        "content": "sha256:1422a784e3e117184f58475045293b255534e3f29b4ec78ae00fe26ce4f8c342",
         "locator": {
           "kind": "file"
         }
@@ -54,8 +73,8 @@
     },
     {
       "anchor": {
-        "blob": "61e88989c300f3783c4e50987a0ec98378fc2ab0",
-        "content": "sha256:4cf9656f8621f433e4db4c68b65f2b168fc66cab629ded109fdc9b473357f82e",
+        "blob": "f860965f1283a2c5f7bfbc360891b2f040525963",
+        "content": "sha256:1422a784e3e117184f58475045293b255534e3f29b4ec78ae00fe26ce4f8c342",
         "locator": {
           "kind": "file"
         }
@@ -71,8 +90,8 @@
     },
     {
       "anchor": {
-        "blob": "61e88989c300f3783c4e50987a0ec98378fc2ab0",
-        "content": "sha256:4cf9656f8621f433e4db4c68b65f2b168fc66cab629ded109fdc9b473357f82e",
+        "blob": "f860965f1283a2c5f7bfbc360891b2f040525963",
+        "content": "sha256:1422a784e3e117184f58475045293b255534e3f29b4ec78ae00fe26ce4f8c342",
         "locator": {
           "kind": "file"
         }
@@ -88,8 +107,8 @@
     },
     {
       "anchor": {
-        "blob": "61e88989c300f3783c4e50987a0ec98378fc2ab0",
-        "content": "sha256:4cf9656f8621f433e4db4c68b65f2b168fc66cab629ded109fdc9b473357f82e",
+        "blob": "f860965f1283a2c5f7bfbc360891b2f040525963",
+        "content": "sha256:1422a784e3e117184f58475045293b255534e3f29b4ec78ae00fe26ce4f8c342",
         "locator": {
           "kind": "file"
         }
@@ -105,8 +124,8 @@
     },
     {
       "anchor": {
-        "blob": "61e88989c300f3783c4e50987a0ec98378fc2ab0",
-        "content": "sha256:4cf9656f8621f433e4db4c68b65f2b168fc66cab629ded109fdc9b473357f82e",
+        "blob": "f860965f1283a2c5f7bfbc360891b2f040525963",
+        "content": "sha256:1422a784e3e117184f58475045293b255534e3f29b4ec78ae00fe26ce4f8c342",
         "locator": {
           "kind": "file"
         }
@@ -122,7 +141,7 @@
     },
     {
       "anchor": {
-        "blob": "61e88989c300f3783c4e50987a0ec98378fc2ab0",
+        "blob": "f860965f1283a2c5f7bfbc360891b2f040525963",
         "content": "sha256:e881e74a4df65491672d2262d8bd37652610292484ddcf59e4edd03acbe01619",
         "locator": {
           "end": 10,
@@ -141,8 +160,8 @@
     },
     {
       "anchor": {
-        "blob": "61e88989c300f3783c4e50987a0ec98378fc2ab0",
-        "content": "sha256:4cf9656f8621f433e4db4c68b65f2b168fc66cab629ded109fdc9b473357f82e",
+        "blob": "f860965f1283a2c5f7bfbc360891b2f040525963",
+        "content": "sha256:1422a784e3e117184f58475045293b255534e3f29b4ec78ae00fe26ce4f8c342",
         "locator": {
           "kind": "file"
         }
@@ -158,8 +177,8 @@
     },
     {
       "anchor": {
-        "blob": "61e88989c300f3783c4e50987a0ec98378fc2ab0",
-        "content": "sha256:4cf9656f8621f433e4db4c68b65f2b168fc66cab629ded109fdc9b473357f82e",
+        "blob": "f860965f1283a2c5f7bfbc360891b2f040525963",
+        "content": "sha256:1422a784e3e117184f58475045293b255534e3f29b4ec78ae00fe26ce4f8c342",
         "locator": {
           "kind": "file"
         }
@@ -176,16 +195,57 @@
   ],
   "references": {
     "1": {
-      "note": "The source owns the documented investigation, identity or request boundary.",
+      "note": "Investigator has Projects, sprint or sprint/master scope, never a leaf launch; it investigates one scoped concern, distinguishes facts from hypotheses, names code/memory owners and changes no code, memory or task state.",
       "targets": [
         {
           "anchor": {
-            "blob": "61e88989c300f3783c4e50987a0ec98378fc2ab0",
-            "content": "sha256:40d46754baffe5df72878da9ed24886f0b5b59e7ac0920606dc454a8f4918eef",
+            "blob": "f860965f1283a2c5f7bfbc360891b2f040525963",
+            "content": "sha256:f7211fcd9f8cc04f442aeb21638d8b18f7cd701cf0eb1c5e0ace846782d86334",
+            "locator": {
+              "end": 10,
+              "kind": "line_range",
+              "start": 8
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f860965f1283a2c5f7bfbc360891b2f040525963",
+            "content": "sha256:0cf46048a47c615caca2f8f4cb4bb9cea74cdaecb2d290439c285343cab86583",
+            "locator": {
+              "end": 30,
+              "kind": "line_range",
+              "start": 16
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f860965f1283a2c5f7bfbc360891b2f040525963",
+            "content": "sha256:86b1f8b7cf2d7f623e8414a6e45bb9ab75426feaea0a04926789845353ca2d0a",
             "locator": {
               "end": 36,
               "kind": "line_range",
-              "start": 1
+              "start": 36
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Investigator reports what is and what is not with evidence, states no requirement, ruling or duty of its own, and names a needed change as an open question for its parent rather than a fix to apply.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f860965f1283a2c5f7bfbc360891b2f040525963",
+            "content": "sha256:8b8d21684d02a3e2b28a042746d69e7c08d8f6e5354b9d11a93109522dd1bfa9",
+            "locator": {
+              "end": 28,
+              "kind": "line_range",
+              "start": 26
             }
           },
           "kind": "code"

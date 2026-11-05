@@ -1,0 +1,40 @@
+{
+  "path": "mcp/tests/test_agent_eval_validation.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "006dad6e6419bc6c738ce809ad02e125936bef49",
+        "content": "sha256:a6b9af9b32e00e8387b56c3a80c90f13500f500429f4b9e1d6a603332b813d0b",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-HK3NCV",
+      "invariant": "INV-9KC11K",
+      "origin": {
+        "handoffEntry": "L62-fd6462b8-case-admission",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "This regression module checks this obligation through test_untouched_inherited_fault_is_recorded_with_exact_hashes, test_touched_inheritor_refuses_even_identical_diagnostic, test_repair_of_inherited_fault_is_allowed, test_deleted_target_blocks_on_untouched_referrer and its remaining test cases.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The source defines this file's responsibility and the boundaries described here.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "006dad6e6419bc6c738ce809ad02e125936bef49",
+            "content": "sha256:a6b9af9b32e00e8387b56c3a80c90f13500f500429f4b9e1d6a603332b813d0b",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

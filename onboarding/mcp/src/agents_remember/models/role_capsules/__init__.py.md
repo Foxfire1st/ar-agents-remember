@@ -52,6 +52,12 @@ None recorded.
 
 ## Evidence
 
+
+Superseded card wording retained for custody (not certified as true of any source epoch or measured candidate):
+
+> - The fitness function and where its result is produced. **Measured on this candidate: the tree does not yet satisfy its own declared target — 16 pre-existing violations, all `worktrees -> memory_quality` and its siblings; none names a role-capsule module and there are 0 undeclared imports.** Do not read this contract as currently satisfied. \[5]
+
+
 ### Docs References
 
 No external or domain documentation is configured for this memory root
@@ -62,12 +68,12 @@ No relevant documentation found after checking live sources.
 ### Repo-Internal References
 
 
-- The frozen DTO surface this package re-exports. [1]
+- The frozen DTO surface this package re-exports.
 
-- The I/O boundary this package deliberately does not contain. [2]
+- The I/O boundary this package deliberately does not contain.
 - The sibling package that owns admitted-context resolution and reading. [3]
 - The layer contract that places these value types in `models` and the I/O in `application`; it declares the target order (`errors < kernel < models < … < application < mcp < cli`) and states that it fails against the tree until the named leaf moves the code. [4]
-- The fitness function and where its result is produced. **Measured on this candidate: the tree does not yet satisfy its own declared target — 16 pre-existing violations, all `worktrees -> memory_quality` and its siblings; none names a role-capsule module and there are 0 undeclared imports.** Do not read this contract as currently satisfied. [5]
+- check_layering reads layers.toml, loads its contract and builds a report for mcp/src/agents_remember. LayeringReport.ok requires no violations, cycles, stale present flags, undeclared directories or undeclared imports. These definitions establish no candidate-specific violation count or fresh execution result. [5]
 - The unit tests that pin the fitness function itself (not this candidate's result). [6]
 
 ### Cross-Repo References
@@ -75,3 +81,6 @@ No relevant documentation found after checking live sources.
 No sibling-repository contract consumes this package directly.
 
 No meaningful cross-repo references found.
+
+- The frozen DTO surface this package re-exports. Anchor: `CapsuleAdmittedFacts` `CapsuleCapsule` `CapsuleCompilationResult` `CapsuleBinding` [1]
+- The I/O boundary this package deliberately does not contain. [2]

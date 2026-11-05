@@ -39,16 +39,16 @@
       ]
     },
     "2": {
-      "note": "The reference publishes the flat preview modes beside the request-object quality modes.\n\nAnchor: \"citation_fix\"",
+      "note": "The public tool reference puts citation_fix flat sync/start/poll preview arguments beside the discriminated quality request and states leaf/official/pre-baseline scope boundaries.",
       "targets": [
         {
           "anchor": {
-            "blob": "fb21b7c177ee42cdcd3cbdc8e1e9ee2acf7b8302",
-            "content": "sha256:1b7433c5a465fc3a2c8bc01a7c963e13fccf46adb465c677689eed240170221d",
+            "blob": "d5a7eaf6f7a789ca19fa38b3a367c269be36f962",
+            "content": "sha256:ca1b631139a9903c5ae94cc55512b90f6e0eeaa6d8b079c16263edff78126b07",
             "locator": {
-              "end": 87,
+              "end": 145,
               "kind": "line_range",
-              "start": 86
+              "start": 112
             },
             "path": "docs/reference/mcp-tools.md"
           },

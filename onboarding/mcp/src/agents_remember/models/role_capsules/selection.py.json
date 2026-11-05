@@ -193,14 +193,16 @@
       ]
     },
     "4": {
-      "note": "The compiler step that calls this selection first.\n\nAnchor: `compile_role_capsule`",
+      "note": "The compiler step that calls this selection first. Anchor: `compile_role_capsule`",
       "targets": [
         {
           "anchor": {
-            "blob": "762c104a0bcdc0375416163993d106dc37c5fb18",
-            "content": "sha256:157949db0f9acdf0d70ebbd6959fb382dccab34600bf2e6cfd9b12f0b9079a74",
+            "blob": "a744d8de93cda92f20309cc2f735c24a2bf27ce4",
+            "content": "sha256:13434aabd680330e1ebe5e763eb65226c1c4e8ccf6e6fda0178dc94410915c2f",
             "locator": {
-              "kind": "file"
+              "end": 590,
+              "kind": "line_range",
+              "start": 1
             },
             "path": "mcp/src/agents_remember/models/role_capsules/compiler.py"
           },
@@ -208,11 +210,12 @@
         },
         {
           "anchor": {
-            "blob": "762c104a0bcdc0375416163993d106dc37c5fb18",
-            "content": "sha256:1887eaccb5d5f005cb1e74f059d46449876977184df1293db4f51a2b4c61e567",
+            "blob": "a744d8de93cda92f20309cc2f735c24a2bf27ce4",
+            "content": "sha256:6bdfa8672b22d1767b78410897a7c8a4109f3c5f07c43f15155cf1d13168e39d",
             "locator": {
-              "kind": "symbol",
-              "name": "compile_role_capsule"
+              "end": 189,
+              "kind": "line_range",
+              "start": 99
             },
             "path": "mcp/src/agents_remember/models/role_capsules/compiler.py"
           },
@@ -225,7 +228,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9946e7fc31fa11992782193f4af92050e7c18e46",
+            "blob": "fad1e5a1891afa9e3781b07d856907c922e210e7",
             "content": "sha256:8ed65327877d3be0f1b3f9a59eaa2f203a4cb6af2d00b2a036c5f74e9bb174a3",
             "locator": {
               "kind": "symbol",
@@ -237,7 +240,7 @@
         },
         {
           "anchor": {
-            "blob": "9946e7fc31fa11992782193f4af92050e7c18e46",
+            "blob": "fad1e5a1891afa9e3781b07d856907c922e210e7",
             "content": "sha256:3a92fe8fd182fad2f9b0ab3412b11d646fd36cca8906ee1848a7bbfb964bcf0a",
             "locator": {
               "kind": "symbol",
@@ -249,7 +252,7 @@
         },
         {
           "anchor": {
-            "blob": "9946e7fc31fa11992782193f4af92050e7c18e46",
+            "blob": "fad1e5a1891afa9e3781b07d856907c922e210e7",
             "content": "sha256:0a49cc6a6539ce4cf3e28eb6cad84efc18b9e19754048c2b6c1eb29b8d3e58cd",
             "locator": {
               "kind": "symbol",
@@ -261,7 +264,7 @@
         },
         {
           "anchor": {
-            "blob": "9946e7fc31fa11992782193f4af92050e7c18e46",
+            "blob": "fad1e5a1891afa9e3781b07d856907c922e210e7",
             "content": "sha256:7bd4b5a3154aa74960b8eccb44e9e6706933811c2d5fe00c166302864abf9099",
             "locator": {
               "kind": "symbol",

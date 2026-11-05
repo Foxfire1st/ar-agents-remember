@@ -4,8 +4,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "63b36c83fdfd0d75126ab6e73a7a3931e340b9ee",
-        "content": "sha256:bd42263a8a45e258f65e1e789c92eb632659ab611625e77ebeecab42eba436e9",
+        "blob": "afc95b79a45af293f89cc550c0230256de3e7317",
+        "content": "sha256:7ce873c194ed6e464f76516c86b2a120eb707a1296a45ae16ff1b2516f4b1dc4",
         "locator": {
           "kind": "file"
         }
@@ -22,14 +22,16 @@
   ],
   "references": {
     "1": {
-      "note": "Search is described as a past-tense accelerator, with by-path reads carrying the product.\n\nAnchor: `docs/features.md:25-28`",
+      "note": "The opening tour keeps semantic/code-graph lookup as retired accelerators and by-path as the product route; its Git-memory bullet now names paired publication and a disposable knowledge index rebuilt from the selected text tree.",
       "targets": [
         {
           "anchor": {
-            "blob": "63b36c83fdfd0d75126ab6e73a7a3931e340b9ee",
-            "content": "sha256:bd42263a8a45e258f65e1e789c92eb632659ab611625e77ebeecab42eba436e9",
+            "blob": "afc95b79a45af293f89cc550c0230256de3e7317",
+            "content": "sha256:d0bd7dc45bf57693fb2cee6fab9312ccd71ba6a755773c599c96f6ed529faa2e",
             "locator": {
-              "kind": "file"
+              "end": 39,
+              "kind": "line_range",
+              "start": 11
             }
           },
           "kind": "code"
@@ -37,14 +39,16 @@
       ]
     },
     "2": {
-      "note": "Semantic and graph search were accelerators, are retired, and were never the thing trusted.\n\nAnchor: `docs/features.md:72-76`",
+      "note": "Semantic and graph search remain retired historical accelerators; the note and Git currentness remain the documented trust controls.",
       "targets": [
         {
           "anchor": {
-            "blob": "63b36c83fdfd0d75126ab6e73a7a3931e340b9ee",
-            "content": "sha256:bd42263a8a45e258f65e1e789c92eb632659ab611625e77ebeecab42eba436e9",
+            "blob": "afc95b79a45af293f89cc550c0230256de3e7317",
+            "content": "sha256:2824265b587c4a40ec4d5a5dc92350d91fa19fe15b5ab43e2eb073355c3c6f84",
             "locator": {
-              "kind": "file"
+              "end": 76,
+              "kind": "line_range",
+              "start": 72
             }
           },
           "kind": "code"
@@ -52,14 +56,16 @@
       ]
     },
     "3": {
-      "note": "The by-meaning and by-relationship routes are past tense with retired providers; the router works on by-path and intent alone.\n\nAnchor: `docs/features.md:199-204`",
+      "note": "Meaning and relationship are past-tense retired-provider routes; the router works on by-path/Intent and provider output remains candidate evidence rather than proof.",
       "targets": [
         {
           "anchor": {
-            "blob": "63b36c83fdfd0d75126ab6e73a7a3931e340b9ee",
-            "content": "sha256:bd42263a8a45e258f65e1e789c92eb632659ab611625e77ebeecab42eba436e9",
+            "blob": "afc95b79a45af293f89cc550c0230256de3e7317",
+            "content": "sha256:41f81f0d0fa07d641bb8909ea0beca727b97f2216cc986753ddf803b359c4d6e",
             "locator": {
-              "kind": "file"
+              "end": 227,
+              "kind": "line_range",
+              "start": 194
             }
           },
           "kind": "code"
@@ -67,14 +73,16 @@
       ]
     },
     "4": {
-      "note": "The pre-code session checks drift and not provider state.\n\nAnchor: `docs/features.md:310-312`",
+      "note": "The pre-code session passage requires context resolution, drift checking, evidence and agreement before choosing how to build; it does not require provider-state checking.",
       "targets": [
         {
           "anchor": {
-            "blob": "63b36c83fdfd0d75126ab6e73a7a3931e340b9ee",
-            "content": "sha256:bd42263a8a45e258f65e1e789c92eb632659ab611625e77ebeecab42eba436e9",
+            "blob": "afc95b79a45af293f89cc550c0230256de3e7317",
+            "content": "sha256:0228c8aa193f3a96d05a69054c5b29ba93042629bfe7643ff34fe09dc70991d1",
             "locator": {
-              "kind": "file"
+              "end": 323,
+              "kind": "line_range",
+              "start": 313
             }
           },
           "kind": "code"
@@ -82,14 +90,16 @@
       ]
     },
     "5": {
-      "note": "The read-only tool list omits provider health and graph/semantic queries.\n\nAnchor: `docs/features.md:346-348`",
+      "note": "The read-only examples name repository orientation, drift and closeout preview, omitting provider-health and graph/semantic-query examples.",
       "targets": [
         {
           "anchor": {
-            "blob": "63b36c83fdfd0d75126ab6e73a7a3931e340b9ee",
-            "content": "sha256:bd42263a8a45e258f65e1e789c92eb632659ab611625e77ebeecab42eba436e9",
+            "blob": "afc95b79a45af293f89cc550c0230256de3e7317",
+            "content": "sha256:ff8905d597c1014f224a761e65973e81b9efd0fe215526ced2ec86f569f9ee19",
             "locator": {
-              "kind": "file"
+              "end": 355,
+              "kind": "line_range",
+              "start": 346
             }
           },
           "kind": "code"
@@ -97,14 +107,28 @@
       ]
     },
     "6": {
-      "note": "First-run setup starts nothing provider-side, and the by-path memory path works without Docker or providers.\n\nAnchor: `docs/features.md:400-405`",
+      "note": "Harness-native setup now registers the server, serves packaged skills and starts Bootstrap with one role_start call; setup-authored knowledge and provider indexing are excluded. The separate by-path assurance still needs no Docker/provider.",
       "targets": [
         {
           "anchor": {
-            "blob": "63b36c83fdfd0d75126ab6e73a7a3931e340b9ee",
-            "content": "sha256:bd42263a8a45e258f65e1e789c92eb632659ab611625e77ebeecab42eba436e9",
+            "blob": "afc95b79a45af293f89cc550c0230256de3e7317",
+            "content": "sha256:c378785662c32b3b8e79cb87ea53475f4f232b913c7e6f28520adfc0e1fdffa0",
             "locator": {
-              "kind": "file"
+              "end": 130,
+              "kind": "line_range",
+              "start": 129
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "afc95b79a45af293f89cc550c0230256de3e7317",
+            "content": "sha256:92e0aeeada046d40fa8d7de890fab6ed11826274024bfa645e0a17f122da32d9",
+            "locator": {
+              "end": 410,
+              "kind": "line_range",
+              "start": 392
             }
           },
           "kind": "code"
@@ -112,14 +136,16 @@
       ]
     },
     "7": {
-      "note": "Authority settings declare repositories, with old provider keys reported once as unused.\n\nAnchor: `docs/features.md:418-421`",
+      "note": "MCP authority settings declare permitted repositories, transcript location, timeout caps and root containment; old provider keys are reported once as unused.",
       "targets": [
         {
           "anchor": {
-            "blob": "63b36c83fdfd0d75126ab6e73a7a3931e340b9ee",
-            "content": "sha256:bd42263a8a45e258f65e1e789c92eb632659ab611625e77ebeecab42eba436e9",
+            "blob": "afc95b79a45af293f89cc550c0230256de3e7317",
+            "content": "sha256:8d2186594be3bd3e9eabd438b13d425f3cc1db81863908f760964314928e56b6",
             "locator": {
-              "kind": "file"
+              "end": 421,
+              "kind": "line_range",
+              "start": 418
             }
           },
           "kind": "code"
@@ -127,14 +153,16 @@
       ]
     },
     "8": {
-      "note": "The Learn more entry describes the Providers page as retirement plus old-install cleanup.\n\nAnchor: `docs/features.md:475-476`",
+      "note": "Learn more describes the Providers guide as retirement and older-install leftover cleanup.",
       "targets": [
         {
           "anchor": {
-            "blob": "63b36c83fdfd0d75126ab6e73a7a3931e340b9ee",
-            "content": "sha256:bd42263a8a45e258f65e1e789c92eb632659ab611625e77ebeecab42eba436e9",
+            "blob": "afc95b79a45af293f89cc550c0230256de3e7317",
+            "content": "sha256:367c862bc149a6a2d7c05db03d5e0276cc4c857546b340fe2f3a653778853d00",
             "locator": {
-              "kind": "file"
+              "end": 476,
+              "kind": "line_range",
+              "start": 475
             }
           },
           "kind": "code"
@@ -142,14 +170,28 @@
       ]
     },
     "9": {
-      "note": "A present-tense provider-index cloning account remains in the page, including per-worktree provider stacks and index seeding.\n\nAnchor: `docs/features.md:257-292`",
+      "note": "The cheap-isolation section still describes provider-index cloning, namespaced stacks and watcher seeding in present tense. The opening Git-memory bullet now describes paired publication and disposable knowledge-index rebuilding instead; the residual section does not restore retired provider capability.",
       "targets": [
         {
           "anchor": {
-            "blob": "63b36c83fdfd0d75126ab6e73a7a3931e340b9ee",
-            "content": "sha256:bd42263a8a45e258f65e1e789c92eb632659ab611625e77ebeecab42eba436e9",
+            "blob": "afc95b79a45af293f89cc550c0230256de3e7317",
+            "content": "sha256:3327dfdac1d1aafe83e10aa65189a5b369303be3d903a9555ccf8f1674ab9927",
             "locator": {
-              "kind": "file"
+              "end": 31,
+              "kind": "line_range",
+              "start": 25
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "afc95b79a45af293f89cc550c0230256de3e7317",
+            "content": "sha256:2ab26ae67e99c02b6183948272a21ddc06b712ecc029748be1bf01446ba513cd",
+            "locator": {
+              "end": 295,
+              "kind": "line_range",
+              "start": 260
             }
           },
           "kind": "code"

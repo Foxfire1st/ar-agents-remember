@@ -95,4 +95,12 @@ Inherited reference 2 commentary (not a revalidated target):
 The byte-equal package copy is a distribution carrier, not an independent role, task or permission authority. Whole-file source evidence does not certify inherited statements, execution, grading or the whole card.
 
 
+Retained authoring-row wording:
+
+Finding: The authored source owns this contract; the distribution copy is not a separate authority.
+
+Anchor:
+
+Source: skills/l-01-agent-lifecycles/operations/closeout.md
+
 - The authored source owns this contract; the distribution copy is not a separate authority. [1]

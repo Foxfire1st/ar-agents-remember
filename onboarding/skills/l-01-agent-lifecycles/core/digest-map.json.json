@@ -1,0 +1,75 @@
+{
+  "path": "skills/l-01-agent-lifecycles/core/digest-map.json",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The mapping preserves its baseline inventory and stable unit IDs.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b8d74848408e0cd8a5a8ee19370ee18c37e20c57",
+            "content": "sha256:dd793256971b540b4cbd475303478ce0f3cb76d2d5188f40eec7f792b0d9102b",
+            "locator": {
+              "end": 12,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The unit definition explains ID preservation and the role vocabulary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b8d74848408e0cd8a5a8ee19370ee18c37e20c57",
+            "content": "sha256:2ab98acd09fd6ca3bd1b7972ecbbdcd0cdfd41d11c56d07d177c94fbd7f6cf43",
+            "locator": {
+              "end": 1620,
+              "kind": "line_range",
+              "start": 1608
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Current units distinguish reference evidence from selected digest lines.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b8d74848408e0cd8a5a8ee19370ee18c37e20c57",
+            "content": "sha256:7be78890609e54de5ce47bb5ebacef0bfb286f6e623ee318db2c344c79c2756c",
+            "locator": {
+              "end": 1665,
+              "kind": "line_range",
+              "start": 1621
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The digest block binds the rendered digest path, hash and word ceiling.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b8d74848408e0cd8a5a8ee19370ee18c37e20c57",
+            "content": "sha256:133e5f47710d81067994974d094152e25e3cf6a8a1787bfcbc3f76ce63e9f016",
+            "locator": {
+              "end": 6095,
+              "kind": "line_range",
+              "start": 6088
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -192,7 +192,7 @@ No Domain Documentation source is configured for this memory root.
 > Retained earlier citation wording: - The curator-coherence shared-support artifact declares test_pause_stop_only_end_to_end.py as an exact consumer; declaration does not establish invocation.
 
 
-- The separate publication no case here reaches. [15]
+- The separate publication no case here reaches.
 
 
 
@@ -230,3 +230,5 @@ No meaningful cross-repository reference applies to this repository-owned bounda
 - The curator-coherence shared-support artifact declares test_pause_stop_only_end_to_end.py as an exact consumer; declaration does not establish invocation.
 
 - Retired at the fifth freeze d59c3493: mcp/tests/evidence-lifecycle.toml:1126-1126 - the bytes it recorded now occur 3 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.
+
+- The separate publication no case here reaches. Anchor: `worktree_checkpoint_landing` [15]

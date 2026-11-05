@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "c07f76b0559b9764d4dfdb1ffce19e2b16b1aa60",
-        "content": "sha256:5792285c5b5606253dcd9bb8cfa5e5dd7c139b180d8395810390c022cf2e9146",
+        "blob": "48dd42e88eb0ad63b801272e1675645d1ed24cb4",
+        "content": "sha256:2861b5d5b09c9e4f84c6c217cfe418849592e197f0d5e9c5cc9a5c42110fc0cc",
         "locator": {
           "kind": "file"
         }
@@ -15,12 +15,12 @@
         "handoffEntry": "MIK-R101@v1 rule 4",
         "leaf": "260928-MIK-L101"
       },
-      "rationale": "This file is the byte-identical closeout contract; role passages verified present.",
+      "rationale": "The protected closeout contract paragraphs retained from the leaf code base remain byte-for-byte at current lines3,5,11; new gate and handover paragraphs at7,9,13 lie outside that preserved old wording. This is protection of the kept passages, not whole-file byte identity.",
       "role": "primary-authority"
     },
     {
       "anchor": {
-        "blob": "c07f76b0559b9764d4dfdb1ffce19e2b16b1aa60",
+        "blob": "48dd42e88eb0ad63b801272e1675645d1ed24cb4",
         "content": "sha256:286bee59bb11dd90a33100c68f0419a774f6b328dfe024f41bc47f7d313ef273",
         "locator": {
           "end": 3,
@@ -39,12 +39,12 @@
     },
     {
       "anchor": {
-        "blob": "c07f76b0559b9764d4dfdb1ffce19e2b16b1aa60",
+        "blob": "48dd42e88eb0ad63b801272e1675645d1ed24cb4",
         "content": "sha256:8fb316124faed8664023c9a15d6314fb939a959cbc4c3ba9670343b5e1f7e927",
         "locator": {
-          "end": 7,
+          "end": 11,
           "kind": "line_range",
-          "start": 7
+          "start": 11
         }
       },
       "id": "RLZ-ZHVQ2K",
@@ -63,10 +63,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "c07f76b0559b9764d4dfdb1ffce19e2b16b1aa60",
-            "content": "sha256:5792285c5b5606253dcd9bb8cfa5e5dd7c139b180d8395810390c022cf2e9146",
+            "blob": "48dd42e88eb0ad63b801272e1675645d1ed24cb4",
+            "content": "sha256:2861b5d5b09c9e4f84c6c217cfe418849592e197f0d5e9c5cc9a5c42110fc0cc",
             "locator": {
-              "kind": "file"
+              "end": 13,
+              "kind": "line_range",
+              "start": 1
             }
           },
           "kind": "code"

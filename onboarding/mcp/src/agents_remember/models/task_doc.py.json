@@ -70,12 +70,41 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e7d80ed372402d196e9af03c6aa40d32a018d7e2",
+            "blob": "cd8894a7e858b103972f9a0c9ec3a13e5fc41f48",
             "content": "sha256:5c30e0ea7d83307edc26375e86a6a52b98fee24e8dd5b11983ff02b40b31a8a1",
             "locator": {
-              "end": 237,
+              "end": 273,
               "kind": "line_range",
-              "start": 215
+              "start": 251
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "Declares strict optional bounded alignmentSweep response metadata.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cd8894a7e858b103972f9a0c9ec3a13e5fc41f48",
+            "content": "sha256:aaa38972ef8dd03ed155819997608978c0d0ae462167c6d9b2c4ef58d1b7d968",
+            "locator": {
+              "end": 151,
+              "kind": "line_range",
+              "start": 117
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cd8894a7e858b103972f9a0c9ec3a13e5fc41f48",
+            "content": "sha256:bdef489820cb7c1b84c43ed89b4da3c50307f638d2d5bb2341705c0633378b3a",
+            "locator": {
+              "end": 185,
+              "kind": "line_range",
+              "start": 179
             }
           },
           "kind": "code"
@@ -118,14 +147,16 @@
       ]
     },
     "4": {
-      "note": "The application entry point builds the optional `masterSync` payload for real and dry-run leaf writes.\n\nAnchor: `task_doc_tool`",
+      "note": "The application entry point builds the optional `masterSync` payload for real and dry-run leaf writes.",
       "targets": [
         {
           "anchor": {
-            "blob": "f174a79f72375a38aa57f50907312424f3fc2c3c",
-            "content": "sha256:4639ac7fede07fbf8fd4a606e94345d3e15fdc3bc40ee0f57fba307bccd95505",
+            "blob": "d0b8e6fa2c415dec4821469774f9dc8f0bcccb63",
+            "content": "sha256:36946f9f594b3e343adf324da581e0d104f623f686bd83a9d2844ab5533ac0ba",
             "locator": {
-              "kind": "file"
+              "end": 1186,
+              "kind": "line_range",
+              "start": 1
             },
             "path": "mcp/src/agents_remember/application/task_docs/task_doc_tools.py"
           },
@@ -133,11 +164,12 @@
         },
         {
           "anchor": {
-            "blob": "f174a79f72375a38aa57f50907312424f3fc2c3c",
+            "blob": "d0b8e6fa2c415dec4821469774f9dc8f0bcccb63",
             "content": "sha256:da66207966111f9ba7d9196396a13f7c5325ea40eed2fe489f1170ec78500d91",
             "locator": {
-              "kind": "symbol",
-              "name": "task_doc_tool"
+              "end": 376,
+              "kind": "line_range",
+              "start": 363
             },
             "path": "mcp/src/agents_remember/application/task_docs/task_doc_tools.py"
           },
@@ -150,7 +182,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f174a79f72375a38aa57f50907312424f3fc2c3c",
+            "blob": "d0b8e6fa2c415dec4821469774f9dc8f0bcccb63",
             "content": "sha256:4c41eeb73d547a361a9886505f37ee554236b88d5903a84294f59c8d37179fba",
             "locator": {
               "kind": "symbol",
@@ -163,25 +195,28 @@
       ]
     },
     "6": {
-      "note": "The response model declares optional retirement record, state, readiness, preview and archive-result fields for retire_master.\n\nAnchor: `TaskDocResponse`",
+      "note": "The response model declares optional retirement record, state, readiness, preview and archive-result fields for retire_master.",
       "targets": [
         {
           "anchor": {
-            "blob": "e7d80ed372402d196e9af03c6aa40d32a018d7e2",
-            "content": "sha256:c7dc3ccede6258becfe2c8d886d1ef79e04279f32d2f56f30d6d1c8fd90242c4",
+            "blob": "cd8894a7e858b103972f9a0c9ec3a13e5fc41f48",
+            "content": "sha256:667882012ebd38bb51518f072cfa2239734d4aa86714747c7082f0e34bec837b",
             "locator": {
-              "kind": "file"
+              "end": 293,
+              "kind": "line_range",
+              "start": 1
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "e7d80ed372402d196e9af03c6aa40d32a018d7e2",
-            "content": "sha256:f14d1dbb54c44b86dae12dbb5121f560f3dc931238a6c0c25900de4bb525ca70",
+            "blob": "cd8894a7e858b103972f9a0c9ec3a13e5fc41f48",
+            "content": "sha256:4508fec046752eaaf65e8b0ca0d94ead487d65fa07c4e6d83c2019ec5c3cf3c9",
             "locator": {
-              "kind": "symbol",
-              "name": "TaskDocResponse"
+              "end": 287,
+              "kind": "line_range",
+              "start": 152
             }
           },
           "kind": "code"
@@ -193,10 +228,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e7d80ed372402d196e9af03c6aa40d32a018d7e2",
-            "content": "sha256:c7dc3ccede6258becfe2c8d886d1ef79e04279f32d2f56f30d6d1c8fd90242c4",
+            "blob": "cd8894a7e858b103972f9a0c9ec3a13e5fc41f48",
+            "content": "sha256:667882012ebd38bb51518f072cfa2239734d4aa86714747c7082f0e34bec837b",
             "locator": {
-              "kind": "file"
+              "end": 293,
+              "kind": "line_range",
+              "start": 1
             }
           },
           "kind": "code"

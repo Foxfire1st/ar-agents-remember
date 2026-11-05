@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "745a442a0f4ceddd82ffb810e6b077504eb9a55b",
+        "blob": "b289bf5ca49432471525be6981e6f22202ea9401",
         "content": "sha256:ec4baf3a73e6d6211644eb8434a114d0b3f0d36750811f120e1beb85ed3219c6",
         "locator": {
           "kind": "symbol",
@@ -22,14 +22,16 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The tracked tree names the previous host nowhere outside the allow-list, and the former block loads as absent.",
+      "note": "The test source asserts that tracked paths/content name the previous host only under its counted allow-list and that a settings file carrying the former block loads as if absent. Those are declared regression assertions, not a fresh tracked-tree scan or runtime result.",
       "targets": [
         {
           "anchor": {
-            "blob": "745a442a0f4ceddd82ffb810e6b077504eb9a55b",
-            "content": "sha256:dfe21e120409b5c02ed2ecf2157b6a8a47f6ba11ba934f76e78a72ba26791e88",
+            "blob": "b289bf5ca49432471525be6981e6f22202ea9401",
+            "content": "sha256:f4ed6532987773402bc28942a0fe38f705bf56b21000b293cf06c8d55a976262",
             "locator": {
-              "kind": "file"
+              "end": 610,
+              "kind": "line_range",
+              "start": 1
             }
           },
           "kind": "test"
@@ -41,11 +43,40 @@
       "targets": [
         {
           "anchor": {
-            "blob": "745a442a0f4ceddd82ffb810e6b077504eb9a55b",
+            "blob": "b289bf5ca49432471525be6981e6f22202ea9401",
             "content": "sha256:8aad748ebbf9a30d7d0081c87a3b25d65ece21cfb7eb749e27a801611934ce1b",
             "locator": {
               "kind": "symbol",
               "name": "ROUTES"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The fixed allowance includes exactly two incidental matches in judge-claude-usage-real.json. The declared reason distinguishes the retained encoded carrier from its decoded accounting projection; this is source-owned allowance data, not a new decode, recording or execution result. These are source assertions/support behavior, not a fresh invocation, host result or AR acceptance.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b289bf5ca49432471525be6981e6f22202ea9401",
+            "content": "sha256:d841ae7f1a30a39d1a1f380f290283ae72714822e0a3cf31db65a642e7a0ceca",
+            "locator": {
+              "end": 90,
+              "kind": "line_range",
+              "start": 82
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b289bf5ca49432471525be6981e6f22202ea9401",
+            "content": "sha256:ffeea60df3860199864abe1f570549b8d558f98cca06cd3d6f34f2e4c31b4d12",
+            "locator": {
+              "end": 238,
+              "kind": "line_range",
+              "start": 201
             }
           },
           "kind": "test"

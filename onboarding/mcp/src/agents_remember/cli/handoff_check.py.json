@@ -1,0 +1,48 @@
+{
+  "path": "mcp/src/agents_remember/cli/handoff_check.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "New read-only whole-document checker resolves handoff targets against an explicitly named candidate.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eabc327441cce19a7dca6f461448fdab6985d6c3",
+            "content": "sha256:33e7b28f6bf72c651eaf631b3ce7e74da2d7d2349721acb61df4f5f8fa2900b2",
+            "locator": {
+              "end": 46,
+              "kind": "line_range",
+              "start": 38
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "eabc327441cce19a7dca6f461448fdab6985d6c3",
+            "content": "sha256:c3160241cf887156c8593c7f5916448d9c6a089ef3e23c40d68adef576a263ac",
+            "locator": {
+              "end": 200,
+              "kind": "line_range",
+              "start": 71
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "eabc327441cce19a7dca6f461448fdab6985d6c3",
+            "content": "sha256:bf5ff55a1215d1421ed0ad551803b245c26c301c197b919edb0f00713204a54a",
+            "locator": {
+              "end": 225,
+              "kind": "line_range",
+              "start": 202
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

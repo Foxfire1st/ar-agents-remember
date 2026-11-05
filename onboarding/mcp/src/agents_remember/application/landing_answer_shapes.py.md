@@ -31,21 +31,49 @@ Task-document writes retain the changed-unit/value phrase, file-input digest whe
 
 This account is bound to the candidate source, not a claim of a running serving build or a fresh execution/acceptance verdict. Existing historical accounts remain historical.
 
+## Current source contract
+
+Task-document dry-run answers and successful ordinary write answers retain a supplied alignmentSweep. The projection carries this producer advice without deriving sibling rows or turning it into release authority; the complete validated result remains separately logged.
+
+- Both task-doc dry and successful ordinary answer projections retain supplied alignmentSweep. [8]
+
 ## Evidence
 
 
-- File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence. [6]
+Retained authoring-row wording:
+
+Finding: File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence.
+
+Anchor:
+
+Source: mcp/src/agents_remember/application/landing_answer_shapes.py:645-703
 
 - Landing tools select their declared answer fields and preserve producer refusals without altering the transaction. [1]
 - A successful start retains the new agent and handover, while failures keep their shape. [2]
 - Role-addressed and waited messages retain only the conditional information their caller needs, including cancellation warnings and reply beginnings. [3]
-- Writes, dry runs, create, review changes and master-sync failures have distinct task-document projections. [4]
+Retained authoring-row wording:
+
+Finding: Writes, dry runs, create, review changes and master-sync failures have distinct task-document projections.
+
+Anchor:
+
+Source: mcp/src/agents_remember/application/landing_answer_shapes.py:664-703
 
 
-- Ordinary refusals keep producer code and reason without error; raised answers keep error; diagnostic blocks remain in the whole log. [5]
+Retained authoring-row wording:
+
+Finding: Ordinary refusals keep producer code and reason without error; raised answers keep error; diagnostic blocks remain in the whole log.
+
+Anchor:
+
+Source: mcp/src/agents_remember/application/landing_answer_shapes.py
 
 ## The success answer keeps the seat's continuation
 
 `_ROLE_START_SUCCESS_KEPT` is the one place a successful `role_start` answer is filtered, so a field the producer emits and the whitelist omits never reaches the caller. The whitelist was written before the one call promised an address, so a successful start could not cross it: the two addresses, their reasons and the producer's one following move are named there beside the identity and the handover paths. Refused, rejected and unknown starts keep their own shape and read why from their detail; no other role sets `nextAction` on a successful start.
 
 - The kept-field set of a successful role start, which now carries the continuation beside the identity. [7]
+
+- Writes, dry runs, create, review changes and master-sync failures have distinct task-document projections. [4]
+- Ordinary refusals keep producer code and reason without error; raised answers keep error; diagnostic blocks remain in the whole log. [5]
+- File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence. [6]

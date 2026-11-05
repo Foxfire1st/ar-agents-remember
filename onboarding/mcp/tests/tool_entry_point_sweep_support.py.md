@@ -16,18 +16,24 @@ The hermetic world and the vocabulary classifier the entry-point sweep runs in: 
 
 The classifier is one implementation, so a control that passes proves the sweep and not a second reading of it. Refusal marks are read from the payload, never from the arm the classifier assigned. Git lock and pid files are transient and never evidence, and the timeout class is the sweep's own deadline rather than a product exception to classify.
 
-## Evidence
+`call` returns a non-timeout BaseException observation with str detail, concrete exceptionType and innermost traceback exceptionLocation. Timeout propagation and the classifier remain separate; a captured exception is not a product acceptance result. These are source assertions/support behavior, not a fresh invocation, host result or AR acceptance.
 
+## Evidence
 ### Repo-Internal References
 
 
-- One classifier assigns the declared arms, separating the two raise shapes by model identity rather than by wording. [1]
+- One classifier assigns the declared arms, separating the two raise shapes by model identity rather than by wording.
 
 
 
-- The census reads the world by digest, with the coordination boundary split by declared write zone. [2]
+- The census reads the world by digest, with the coordination boundary split by declared write zone.
 
 
 - A usable logged whole-result mapping is read from disk; an absent, unreadable or non-mapping log leaves the delivered payload as the classifier input. [3]
 
 - Preparation is a no-op and sweep state fields are fixed none labels rather than observations. [4]
+
+- One classifier assigns the declared arms, separating the two raise shapes by model identity rather than by wording. [1]
+- The census reads the world by digest, with the coordination boundary split by declared write zone. [2]
+
+- `call` returns a non-timeout BaseException observation with str detail, concrete exceptionType and innermost traceback exceptionLocation. Timeout propagation and the classifier remain separate; a captured exception is not a product acceptance result. These are source assertions/support behavior, not a fresh invocation, host result or AR acceptance. [5]

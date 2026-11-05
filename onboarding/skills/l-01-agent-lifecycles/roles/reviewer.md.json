@@ -4,12 +4,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "ab9a2e087d2cfd299ad5ffbac061aac232c8e831",
-        "content": "sha256:2ed13e9eb192ba65bbb4d545dbe1279f43772e4fb4ea57c6d3b680e8fd40d29c",
+        "blob": "62a4500b617979c0fc10d9726ce52b57b8b3c922",
+        "content": "sha256:645812bbeb8e8200eee7cefe24883c419f8d92206cdf1f4751b5486f17720fa8",
         "locator": {
-          "end": 191,
+          "end": 206,
           "kind": "line_range",
-          "start": 177
+          "start": 190
         }
       },
       "id": "RLZ-165F81",
@@ -23,12 +23,12 @@
     },
     {
       "anchor": {
-        "blob": "ab9a2e087d2cfd299ad5ffbac061aac232c8e831",
+        "blob": "62a4500b617979c0fc10d9726ce52b57b8b3c922",
         "content": "sha256:e41fafc8b37c5fbba5c971104e2036dcedb4e59cfeec8b6dc49db480c0a4190e",
         "locator": {
-          "end": 199,
+          "end": 218,
           "kind": "line_range",
-          "start": 197
+          "start": 216
         }
       },
       "id": "RLZ-AHY1E5",
@@ -42,7 +42,7 @@
     },
     {
       "anchor": {
-        "blob": "ab9a2e087d2cfd299ad5ffbac061aac232c8e831",
+        "blob": "62a4500b617979c0fc10d9726ce52b57b8b3c922",
         "content": "sha256:9cdf0cb0253ce239318b566967690b3293390a447d4163b0479afdf091cacf5a",
         "locator": {
           "end": 14,
@@ -61,12 +61,12 @@
     },
     {
       "anchor": {
-        "blob": "ab9a2e087d2cfd299ad5ffbac061aac232c8e831",
-        "content": "sha256:0e5018d7771d3e3ad2a445ab4c4a9f312fa6bb42fad27e6411131a66e4bf0c53",
+        "blob": "62a4500b617979c0fc10d9726ce52b57b8b3c922",
+        "content": "sha256:4f4b17e51a3b10b84fe3b50da827ba57928eb6ac61c423e0360597c162e6cef2",
         "locator": {
-          "end": 117,
+          "end": 126,
           "kind": "line_range",
-          "start": 105
+          "start": 87
         }
       },
       "id": "RLZ-JH0BAQ",
@@ -80,7 +80,7 @@
     },
     {
       "anchor": {
-        "blob": "ab9a2e087d2cfd299ad5ffbac061aac232c8e831",
+        "blob": "62a4500b617979c0fc10d9726ce52b57b8b3c922",
         "content": "sha256:9cdf0cb0253ce239318b566967690b3293390a447d4163b0479afdf091cacf5a",
         "locator": {
           "end": 14,
@@ -99,8 +99,8 @@
     },
     {
       "anchor": {
-        "blob": "ab9a2e087d2cfd299ad5ffbac061aac232c8e831",
-        "content": "sha256:5917f9a2974c1b5bc0ee232304095d6dafc0d708766cee1903538fa52b34e5ad",
+        "blob": "62a4500b617979c0fc10d9726ce52b57b8b3c922",
+        "content": "sha256:7243360414c46e081ffc5bb33d3fb9eec4031b82f97bff0f7c9304b888558cba",
         "locator": {
           "kind": "file"
         }
@@ -116,12 +116,12 @@
     },
     {
       "anchor": {
-        "blob": "ab9a2e087d2cfd299ad5ffbac061aac232c8e831",
+        "blob": "62a4500b617979c0fc10d9726ce52b57b8b3c922",
         "content": "sha256:2dbd11202571d80781d9a5f8866e2e82d509699d6d81446284a59dd36f2f47ff",
         "locator": {
-          "end": 115,
+          "end": 124,
           "kind": "line_range",
-          "start": 111
+          "start": 120
         }
       },
       "id": "RLZ-QBXQTV",
@@ -135,12 +135,12 @@
     },
     {
       "anchor": {
-        "blob": "ab9a2e087d2cfd299ad5ffbac061aac232c8e831",
+        "blob": "62a4500b617979c0fc10d9726ce52b57b8b3c922",
         "content": "sha256:9100dd9f9032e5e530a035fc3432e10f34aeeb41dc03f560e7380ca46f583345",
         "locator": {
-          "end": 84,
+          "end": 95,
           "kind": "line_range",
-          "start": 84
+          "start": 95
         }
       },
       "id": "RLZ-R22534",
@@ -154,8 +154,8 @@
     },
     {
       "anchor": {
-        "blob": "ab9a2e087d2cfd299ad5ffbac061aac232c8e831",
-        "content": "sha256:5917f9a2974c1b5bc0ee232304095d6dafc0d708766cee1903538fa52b34e5ad",
+        "blob": "62a4500b617979c0fc10d9726ce52b57b8b3c922",
+        "content": "sha256:7243360414c46e081ffc5bb33d3fb9eec4031b82f97bff0f7c9304b888558cba",
         "locator": {
           "kind": "file"
         }
@@ -176,12 +176,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ab9a2e087d2cfd299ad5ffbac061aac232c8e831",
+            "blob": "62a4500b617979c0fc10d9726ce52b57b8b3c922",
             "content": "sha256:2ac074a6324aa5874ca21f3989a7aca619112418d86aa5808e979eced3aa25eb",
             "locator": {
-              "end": 100,
+              "end": 111,
               "kind": "line_range",
-              "start": 97
+              "start": 108
             }
           },
           "kind": "code"
@@ -189,16 +189,16 @@
       ]
     },
     "10": {
-      "note": "Rewords without claimed semantic approval, extracts named-step checks, consolidates baseline outputs inline, adds post-landing memory recording and passed-review-only own-step completion.\n\nAnchor: Candidate instruction body, lines 11–52",
+      "note": "Reviewer intake uses exact rendered/JSON paths and actual scoped read schemas, reads only the assigned seam and writes only contained task-local report artifacts.",
       "targets": [
         {
           "anchor": {
-            "blob": "ab9a2e087d2cfd299ad5ffbac061aac232c8e831",
-            "content": "sha256:140c11356fba5685c0f941ff68e4487b0d0b97170623e542a21e80af19d9de2c",
+            "blob": "62a4500b617979c0fc10d9726ce52b57b8b3c922",
+            "content": "sha256:932d78d8a601259ac0243380be58f3a910dbad430082f84d1ad5542b6a42272e",
             "locator": {
-              "end": 52,
+              "end": 16,
               "kind": "line_range",
-              "start": 11
+              "start": 13
             }
           },
           "kind": "code"
@@ -206,16 +206,16 @@
       ]
     },
     "11": {
-      "note": "Rewords without claimed semantic approval, extracts named-step checks, consolidates baseline outputs inline, adds post-landing memory recording and passed-review-only own-step completion.\n\nAnchor: Candidate instruction body, lines 11–52",
+      "note": "Reviewer requires the dispatched exact stable IDs and versions, durable corpus ruling, exact candidate and Worker attempts, and its bound catalogs and repository tools rather than choosing a rubric on the spot.",
       "targets": [
         {
           "anchor": {
-            "blob": "ab9a2e087d2cfd299ad5ffbac061aac232c8e831",
-            "content": "sha256:140c11356fba5685c0f941ff68e4487b0d0b97170623e542a21e80af19d9de2c",
+            "blob": "62a4500b617979c0fc10d9726ce52b57b8b3c922",
+            "content": "sha256:ba1b1a8463eb343052c7e3ee06e62444de10650506fb67846118eed190067695",
             "locator": {
-              "end": 52,
+              "end": 61,
               "kind": "line_range",
-              "start": 11
+              "start": 44
             }
           },
           "kind": "code"
@@ -223,16 +223,16 @@
       ]
     },
     "12": {
-      "note": "Rewords without claimed semantic approval, extracts named-step checks, consolidates baseline outputs inline, adds post-landing memory recording and passed-review-only own-step completion.\n\nAnchor: Candidate instruction body, lines 11–52",
+      "note": "Reviewer inspects every changed file of the complete candidate diff and reads the step-3 baseline detail at that step; a subset never replaces the Curator's complete authoring memory-quality operation.",
       "targets": [
         {
           "anchor": {
-            "blob": "ab9a2e087d2cfd299ad5ffbac061aac232c8e831",
-            "content": "sha256:140c11356fba5685c0f941ff68e4487b0d0b97170623e542a21e80af19d9de2c",
+            "blob": "62a4500b617979c0fc10d9726ce52b57b8b3c922",
+            "content": "sha256:e0c5eb248c26443bae64df3c133ec553c0da28d6f389be94c22cdf9cc12c35c6",
             "locator": {
-              "end": 52,
+              "end": 78,
               "kind": "line_range",
-              "start": 11
+              "start": 69
             }
           },
           "kind": "code"
@@ -240,16 +240,16 @@
       ]
     },
     "13": {
-      "note": "Rewords without claimed semantic approval, extracts named-step checks, consolidates baseline outputs inline, adds post-landing memory recording and passed-review-only own-step completion.\n\nAnchor: Candidate instruction body, lines 11–52",
+      "note": "Baseline is sealed under the step-3 instructions; fix verification reuses that sealed evidence and only listed IDs without a new-lens or whole-seam rediscovery mandate.",
       "targets": [
         {
           "anchor": {
-            "blob": "ab9a2e087d2cfd299ad5ffbac061aac232c8e831",
-            "content": "sha256:140c11356fba5685c0f941ff68e4487b0d0b97170623e542a21e80af19d9de2c",
+            "blob": "62a4500b617979c0fc10d9726ce52b57b8b3c922",
+            "content": "sha256:a4d4c7e8371cc1b3b0f486c9809721cdfe1bd3bfc3f67d30902f3523bf31fd65",
             "locator": {
-              "end": 52,
+              "end": 81,
               "kind": "line_range",
-              "start": 11
+              "start": 79
             }
           },
           "kind": "code"
@@ -257,16 +257,16 @@
       ]
     },
     "14": {
-      "note": "Rewords without claimed semantic approval, extracts named-step checks, consolidates baseline outputs inline, adds post-landing memory recording and passed-review-only own-step completion.\n\nAnchor: Candidate instruction body, lines 11–52",
+      "note": "Each exact requirement revision is adjudicated accepted or rejected against its Worker attempt/candidate in a separate immutable reviewer record in the same leaf journal; Worker and earlier records stay unchanged.",
       "targets": [
         {
           "anchor": {
-            "blob": "ab9a2e087d2cfd299ad5ffbac061aac232c8e831",
-            "content": "sha256:140c11356fba5685c0f941ff68e4487b0d0b97170623e542a21e80af19d9de2c",
+            "blob": "62a4500b617979c0fc10d9726ce52b57b8b3c922",
+            "content": "sha256:fc7c89abf0caaf1c71a406cb61fa85bc5927a74e92c87fd66d9c4c2337d386a8",
             "locator": {
-              "end": 52,
+              "end": 85,
               "kind": "line_range",
-              "start": 11
+              "start": 82
             }
           },
           "kind": "code"
@@ -274,16 +274,16 @@
       ]
     },
     "15": {
-      "note": "Rewords without claimed semantic approval, extracts named-step checks, consolidates baseline outputs inline, adds post-landing memory recording and passed-review-only own-step completion.\n\nAnchor: Candidate instruction body, lines 11–52",
+      "note": "The Reviewer emits every bound standing criterion, sealed findings, complete route coverage, a seam-shaped verdict and producer-data handoff list plus durable per-route reports.",
       "targets": [
         {
           "anchor": {
-            "blob": "ab9a2e087d2cfd299ad5ffbac061aac232c8e831",
-            "content": "sha256:140c11356fba5685c0f941ff68e4487b0d0b97170623e542a21e80af19d9de2c",
+            "blob": "62a4500b617979c0fc10d9726ce52b57b8b3c922",
+            "content": "sha256:5ef26f69bb29d9cc5b0e491d364db663562b6582fa5be88820a948e592ee221a",
             "locator": {
-              "end": 52,
+              "end": 113,
               "kind": "line_range",
-              "start": 11
+              "start": 97
             }
           },
           "kind": "code"
@@ -295,7 +295,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0a33b0151854b4970da05b7ecfa1fcc42af54b25",
+            "blob": "acdc11f4c305feba661be10ff8499978b4877cc1",
             "content": "sha256:6b65e897e4373fef42a68e4f8bb8db66c0e6ba571849e812ff3bdb36bf768310",
             "locator": {
               "end": 19,
@@ -309,16 +309,16 @@
       ]
     },
     "17": {
-      "note": "Rewords without claimed semantic approval, extracts named-step checks, consolidates baseline outputs inline, adds post-landing memory recording and passed-review-only own-step completion.\n\nAnchor: Candidate instruction body, lines 11–52",
+      "note": "The Reviewer records ordinary leaf CODE begin/result and separate MEMORY rounds with unchanged code state; Manager records beyond-settings authorization and retains gate acceptance.",
       "targets": [
         {
           "anchor": {
-            "blob": "ab9a2e087d2cfd299ad5ffbac061aac232c8e831",
-            "content": "sha256:140c11356fba5685c0f941ff68e4487b0d0b97170623e542a21e80af19d9de2c",
+            "blob": "62a4500b617979c0fc10d9726ce52b57b8b3c922",
+            "content": "sha256:4d24bc63b7d995c31341c99a332799b3935b93aa8bb65cb15e0c6ff4a3340115",
             "locator": {
-              "end": 52,
+              "end": 166,
               "kind": "line_range",
-              "start": 11
+              "start": 158
             }
           },
           "kind": "code"
@@ -326,16 +326,16 @@
       ]
     },
     "18": {
-      "note": "Rewords without claimed semantic approval, extracts named-step checks, consolidates baseline outputs inline, adds post-landing memory recording and passed-review-only own-step completion.\n\nAnchor: Candidate instruction body, lines 11–52",
+      "note": "A moved review candidate is stale and requires a successor exact Worker attempt and reviewer record; changed scope or identity does not manufacture a new first review.",
       "targets": [
         {
           "anchor": {
-            "blob": "ab9a2e087d2cfd299ad5ffbac061aac232c8e831",
-            "content": "sha256:140c11356fba5685c0f941ff68e4487b0d0b97170623e542a21e80af19d9de2c",
+            "blob": "62a4500b617979c0fc10d9726ce52b57b8b3c922",
+            "content": "sha256:e9664b62cad00251a2c54920169743a73021c3ad41aff15865a0af2e0e49b14c",
             "locator": {
-              "end": 52,
+              "end": 184,
               "kind": "line_range",
-              "start": 11
+              "start": 179
             }
           },
           "kind": "code"
@@ -343,16 +343,16 @@
       ]
     },
     "19": {
-      "note": "Rewords without claimed semantic approval, extracts named-step checks, consolidates baseline outputs inline, adds post-landing memory recording and passed-review-only own-step completion.\n\nAnchor: Candidate instruction body, lines 11–52",
+      "note": "Reviewer marks only its own named review step done after the last round is recorded passed, and its stage ends at a recorded verdict covering the whole requirement, findings and coverage.",
       "targets": [
         {
           "anchor": {
-            "blob": "ab9a2e087d2cfd299ad5ffbac061aac232c8e831",
-            "content": "sha256:140c11356fba5685c0f941ff68e4487b0d0b97170623e542a21e80af19d9de2c",
+            "blob": "62a4500b617979c0fc10d9726ce52b57b8b3c922",
+            "content": "sha256:6cc98f093574e054c268add5fb44883f4e945e0fd894a304518b358747f7ae7b",
             "locator": {
-              "end": 52,
+              "end": 195,
               "kind": "line_range",
-              "start": 11
+              "start": 190
             }
           },
           "kind": "code"
@@ -364,7 +364,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "430acce71b81cbf5df02b4855c77371886cd9472",
+            "blob": "a6671df8d3eca13f20d0202f09ec844fed45a2f0",
             "content": "sha256:7626ba80bd5da998b74d17dd724a798b3b59af5f9c42c97f8b4d56b9c918b552",
             "locator": {
               "end": 55,
@@ -378,16 +378,16 @@
       ]
     },
     "20": {
-      "note": "Rewords without claimed semantic approval, extracts named-step checks, consolidates baseline outputs inline, adds post-landing memory recording and passed-review-only own-step completion.\n\nAnchor: Candidate instruction body, lines 11–52",
+      "note": "Reviewer repairs its own recording or evidence faults and answers input-fault refusals through the same tool; record-only repair preserves a round only while all candidate findings are closed and candidate bytes remain unchanged.",
       "targets": [
         {
           "anchor": {
-            "blob": "ab9a2e087d2cfd299ad5ffbac061aac232c8e831",
-            "content": "sha256:140c11356fba5685c0f941ff68e4487b0d0b97170623e542a21e80af19d9de2c",
+            "blob": "62a4500b617979c0fc10d9726ce52b57b8b3c922",
+            "content": "sha256:ffef43e8ed2ad63fe19504d74ed4cfb44eb3c4da6a9cfa9ee30bd246a6ced845",
             "locator": {
-              "end": 52,
+              "end": 208,
               "kind": "line_range",
-              "start": 11
+              "start": 196
             }
           },
           "kind": "code"
@@ -399,12 +399,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "ab9a2e087d2cfd299ad5ffbac061aac232c8e831",
+            "blob": "62a4500b617979c0fc10d9726ce52b57b8b3c922",
             "content": "sha256:7c76fe404a6ed73da027bb9f3296acfcade1280d427d5355e91aea6741cae9ef",
             "locator": {
-              "end": 133,
+              "end": 142,
               "kind": "line_range",
-              "start": 126
+              "start": 135
             }
           },
           "kind": "code"
@@ -412,14 +412,16 @@
       ]
     },
     "5": {
-      "note": "The seat's seam table fixes the five seams and where each verdict goes.",
+      "note": "The Reviewer seam table names organizational leaf, atomic-master integration, master-exit, portfolio plan and super-exit scope, start selection and verdict recipient; candidate identity comes from the intake rather than the hosting enclosure.",
       "targets": [
         {
           "anchor": {
-            "blob": "ab9a2e087d2cfd299ad5ffbac061aac232c8e831",
-            "content": "sha256:5917f9a2974c1b5bc0ee232304095d6dafc0d708766cee1903538fa52b34e5ad",
+            "blob": "62a4500b617979c0fc10d9726ce52b57b8b3c922",
+            "content": "sha256:8a6c6e964393cbbbe5653c41cd6ae1374733c30ce6206c0f9c74e1d0804a7a7f",
             "locator": {
-              "kind": "file"
+              "end": 42,
+              "kind": "line_range",
+              "start": 30
             }
           },
           "kind": "code"
@@ -427,14 +429,28 @@
       ]
     },
     "6": {
-      "note": "Current settings-budget, recorded approval and preserved stage/ownership boundaries are carried by this canonical instruction source.",
+      "note": "The Reviewer records ordinary CODE rounds and separately sealed MEMORY rounds under the actual task review-state limit; Manager gate acceptance and recorded architect/developer approval beyond the limit remain separate.",
       "targets": [
         {
           "anchor": {
-            "blob": "ab9a2e087d2cfd299ad5ffbac061aac232c8e831",
-            "content": "sha256:5917f9a2974c1b5bc0ee232304095d6dafc0d708766cee1903538fa52b34e5ad",
+            "blob": "62a4500b617979c0fc10d9726ce52b57b8b3c922",
+            "content": "sha256:4d24bc63b7d995c31341c99a332799b3935b93aa8bb65cb15e0c6ff4a3340115",
             "locator": {
-              "kind": "file"
+              "end": 166,
+              "kind": "line_range",
+              "start": 158
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "62a4500b617979c0fc10d9726ce52b57b8b3c922",
+            "content": "sha256:11742e4220c2f728a4d74d5b7a867426a9569424b636b52f6b96597d2b7433e6",
+            "locator": {
+              "end": 184,
+              "kind": "line_range",
+              "start": 182
             }
           },
           "kind": "code"
@@ -442,14 +458,28 @@
       ]
     },
     "7": {
-      "note": "The whole requirement verdict, findings and coverage ends this independent stage. Reviewer records ordinary begin/result within the actual review-state settings limit; Manager records architect/developer authorization beyond it. A record-only check preserves the last round only on byte-identical candidate with all candidate findings closed. A finding states the broken required property; a case is its proof, not a replacement finding or automatic new round. MEMORY stays a separate sealed lane.",
+      "note": "The Reviewer stage ends at a recorded verdict covering the whole requirement, findings and coverage. Own-step completion waits for a passed recorded last round; record-only repair reuses the last round only with every candidate finding closed and candidate bytes unchanged; a finding states the required property its case proves.",
       "targets": [
         {
           "anchor": {
-            "blob": "ab9a2e087d2cfd299ad5ffbac061aac232c8e831",
-            "content": "sha256:5917f9a2974c1b5bc0ee232304095d6dafc0d708766cee1903538fa52b34e5ad",
+            "blob": "62a4500b617979c0fc10d9726ce52b57b8b3c922",
+            "content": "sha256:1578fcd9ece14bad5e4d31ebe4127bdc3dcad7f6fb29afc752b05466df31fe31",
             "locator": {
-              "kind": "file"
+              "end": 208,
+              "kind": "line_range",
+              "start": 190
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "62a4500b617979c0fc10d9726ce52b57b8b3c922",
+            "content": "sha256:c4cbbc8b8e67712d490d99ed4a0b8cc70288161d346e546f0efb05327f2fa172",
+            "locator": {
+              "end": 164,
+              "kind": "line_range",
+              "start": 160
             }
           },
           "kind": "code"
@@ -457,16 +487,40 @@
       ]
     },
     "9": {
-      "note": "Organizational leaf route review retains its Worker/Curator destinations and does not advertise a standalone seam.",
+      "note": "Organizational leaf route review sends code findings to Worker and memory findings to Curator; code PASS first notifies Manager so it can start Curator, and readiness for closeout names both passed lanes.",
       "targets": [
         {
           "anchor": {
-            "blob": "ab9a2e087d2cfd299ad5ffbac061aac232c8e831",
-            "content": "sha256:2a9d9687849770fd97decafa0d5307b9c63bdd8dc3779617821844065f817416",
+            "blob": "62a4500b617979c0fc10d9726ce52b57b8b3c922",
+            "content": "sha256:9847789dc2208a5088e875cc466cced23ae1a8719a9778bf2c357eeca7455d1a",
             "locator": {
-              "end": 33,
+              "end": 42,
               "kind": "line_range",
-              "start": 30
+              "start": 32
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "62a4500b617979c0fc10d9726ce52b57b8b3c922",
+            "content": "sha256:641f73c56243b1980919e3d0d0ad0bfa6f27b6a735652ab36f988c6bbed6a9f5",
+            "locator": {
+              "end": 85,
+              "kind": "line_range",
+              "start": 84
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "62a4500b617979c0fc10d9726ce52b57b8b3c922",
+            "content": "sha256:3b253a096882760919d478d3729b655e0dfd0e709d676ad04b003d68a604b536",
+            "locator": {
+              "end": 122,
+              "kind": "line_range",
+              "start": 114
             }
           },
           "kind": "code"

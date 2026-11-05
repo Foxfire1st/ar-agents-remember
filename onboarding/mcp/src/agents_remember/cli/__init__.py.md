@@ -24,10 +24,10 @@ This package marker is documented by the nearest mcp route overview and the real
 - The package docstring names the CLI adapter role. [1]
 The nearest route overview documents the umbrella CLI under `cli/`.
 
-- The umbrella entrypoint dispatches subcommands for this package. [2]
+- The umbrella entrypoint dispatches subcommands for this package.
 
 
-- The dashboard subcommand adapter registered by the umbrella parser. 
+- The dashboard subcommand adapter registered by the umbrella parser.
 
 
 - The context-packet CLI adapter peer. [4]
@@ -35,3 +35,5 @@ The nearest route overview documents the umbrella CLI under `cli/`.
 - The dashboard subcommand adapter registered by the umbrella parser. [3]
 
 - Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/dashboard.py::run - the bytes it recorded now occur 26 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.
+
+- The umbrella entrypoint dispatches subcommands for this package. Anchor: `main` [2]

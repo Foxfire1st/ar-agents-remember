@@ -1,0 +1,40 @@
+{
+  "path": "scripts/agent_evals/hermes_window.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "297a32a44fb852274333779d5dded4f97afb3b41",
+        "content": "sha256:462fe437a83375bbc1e9b8ee5072b00fb9b2c23008f3ae70fb7706f768fc9bf5",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-3ZA9WB",
+      "invariant": "INV-MDPBX0",
+      "origin": {
+        "handoffEntry": "L62-fd6462b8-hermes-profile",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "It resolves the context window with the named profile/host/purpose admission while retaining refusals outside that admission.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The source defines this file's responsibility and the boundaries described here.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "297a32a44fb852274333779d5dded4f97afb3b41",
+            "content": "sha256:462fe437a83375bbc1e9b8ee5072b00fb9b2c23008f3ae70fb7706f768fc9bf5",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

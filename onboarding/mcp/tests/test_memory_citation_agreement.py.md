@@ -41,7 +41,7 @@ Five unittest classes contain 26 statically observed test-method definitions, no
   is GFM's own reading.
 
 - **The budget screen** (`BudgetAgreementTests`, `:378-654`). The declared pair is read from
-  `pyproject.toml` at run time. The current declaration assertion pins 10,000/2,000, and the stub mirror must follow it; the repaired sentence must state that pair and the declaration's line range as computed by `declared_lines` (currently `pyproject.toml:333-334`). This corrects the changed budget assertion only; the retained pair-specific census and historical pin accounts below are not new measurements or current-candidate acceptance. The
+  `pyproject.toml` at run time. The current declaration assertion pins 10,000/2,000, and the stub mirror must follow it; the repaired sentence must state that pair and the declaration's line range as computed by `declared_lines` (currently `pyproject.toml:334-335`). This corrects the changed budget assertion only; the retained pair-specific census and historical pin accounts below are not new measurements or current-candidate acceptance. The
   declarations on `conftest.py` must register both names and state no value; the two stale-figure
   classes are counted separately; and the superseded-pair worklist is pinned as **the count
   `superseded_pair_sites` returns**, not as a literal.
@@ -157,6 +157,11 @@ bounds) belong to whatever change next touches the module. `T138` — the tool r
 divergence — is registered and not this module's.
 
 The escaped-pipe row case derives stripped cell text from the live cell_spans offsets after removal of the unused split_row wrapper. The same row still has three cells and yields the original useEffect anchor; its inputs and assertions are preserved. This source-path maintenance adds no population measurement or execution claim.
+
+
+Superseded card wording retained for custody (not the current source locator or capture account):
+
+>   `pyproject.toml` at run time. The current declaration assertion pins 10,000/2,000, and the stub mirror must follow it; the repaired sentence must state that pair and the declaration's line range as computed by `declared_lines` (currently `pyproject.toml:333-334`). This corrects the changed budget assertion only; the retained pair-specific census and historical pin accounts below are not new measurements or current-candidate acceptance. The
 
 ## Evidence
 

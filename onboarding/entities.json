@@ -250,12 +250,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f174a79f72375a38aa57f50907312424f3fc2c3c",
-            "content": "sha256:d84c7d0d4d88007ba22dca50e8af66e6a32efc690bf4a2e761e656c033d243c0",
+            "blob": "d0b8e6fa2c415dec4821469774f9dc8f0bcccb63",
+            "content": "sha256:a5b2d69de905a95d34d8c7d4aa06e4005b38c23fc3a8fa935e579395f0314748",
             "locator": {
-              "end": 458,
+              "end": 460,
               "kind": "line_range",
-              "start": 354
+              "start": 355
             },
             "path": "mcp/src/agents_remember/application/task_docs/task_doc_tools.py"
           },
@@ -439,16 +439,16 @@
       ]
     },
     "21": {
-      "note": "Manager guidance distinguishes native stage publication from explicit correction and organizational-master completion.\n\nAnchor: \"Start, finalize and abandon publish task stage\"",
+      "note": "Manager guidance distinguishes native stage publication from explicit correction and organizational-master completion.",
       "targets": [
         {
           "anchor": {
-            "blob": "3c2cfd97c8d64a0cd6245c1b87c6f6bd45457380",
-            "content": "sha256:9b8a0bd77133a911eda02d798594b6181aac50e9399f1000649385784cc6dc27",
+            "blob": "0f539ae53bac7b99b39337ae847c7b4b56b95ccc",
+            "content": "sha256:e2cfdf7ac3d421add7a5b46e1c0469c92492b9458578cb403c85a188a6d5c7b6",
             "locator": {
-              "end": 22,
+              "end": 32,
               "kind": "line_range",
-              "start": 22
+              "start": 32
             },
             "path": "skills/l-01-agent-lifecycles/roles/manager.md"
           },
@@ -474,12 +474,25 @@
         },
         {
           "anchor": {
-            "blob": "762c104a0bcdc0375416163993d106dc37c5fb18",
-            "content": "sha256:157949db0f9acdf0d70ebbd6959fb382dccab34600bf2e6cfd9b12f0b9079a74",
+            "blob": "a744d8de93cda92f20309cc2f735c24a2bf27ce4",
+            "content": "sha256:de8b623a61d200af023d61f7bbd8e95fe487ac47a9c95a7e9d743716a9d57fc3",
             "locator": {
-              "end": 531,
+              "end": 190,
               "kind": "line_range",
-              "start": 1
+              "start": 99
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/compiler.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a744d8de93cda92f20309cc2f735c24a2bf27ce4",
+            "content": "sha256:08040f5bb25251b6016378aaf6eecd4585a177bdad78bbf1d39864bf5fa76ff6",
+            "locator": {
+              "end": 497,
+              "kind": "line_range",
+              "start": 472
             },
             "path": "mcp/src/agents_remember/models/role_capsules/compiler.py"
           },

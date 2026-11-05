@@ -4,8 +4,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "f8df4537fd2ad81ad0e51743831f41509c24dcfe",
-        "content": "sha256:4a0a5d9f8e5202460cee5e0870e801a644d2432900685a5a54114a1dab9cc219",
+        "blob": "8ca057bb1cb5bca8355ced1c5aa9eff7128c2e0f",
+        "content": "sha256:a176d9b1a6ad4068e83cb3d7f72aba06d1b6fc3bfde2e276e838339aeca5518b",
         "locator": {
           "kind": "file"
         }
@@ -22,14 +22,40 @@
   ],
   "references": {
     "1": {
-      "note": "This source owns the stated current Investigator scope or canonical vocabulary.",
+      "note": "Architect scope is the developer conversation and semantic plan; it preserves explicit delegation and starts an Investigator with a scoped first message without fabricating task identity.",
       "targets": [
         {
           "anchor": {
-            "blob": "f8df4537fd2ad81ad0e51743831f41509c24dcfe",
-            "content": "sha256:4a0a5d9f8e5202460cee5e0870e801a644d2432900685a5a54114a1dab9cc219",
+            "blob": "8ca057bb1cb5bca8355ced1c5aa9eff7128c2e0f",
+            "content": "sha256:cff008a580b31483b82250166a7d30f245042524986ab6a536f026323e0baaf1",
             "locator": {
-              "kind": "file"
+              "end": 8,
+              "kind": "line_range",
+              "start": 8
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8ca057bb1cb5bca8355ced1c5aa9eff7128c2e0f",
+            "content": "sha256:953b9c5c2e5aa8305345d49f87b9ec2a5bfbd0dcdbbfe0572ac8534a010b1439",
+            "locator": {
+              "end": 84,
+              "kind": "line_range",
+              "start": 82
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8ca057bb1cb5bca8355ced1c5aa9eff7128c2e0f",
+            "content": "sha256:10952f2bf370df24f94b217c7c7cf96567b8427745e7874df08aec5c7ca74a7e",
+            "locator": {
+              "end": 58,
+              "kind": "line_range",
+              "start": 50
             }
           },
           "kind": "code"
@@ -41,7 +67,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f8df4537fd2ad81ad0e51743831f41509c24dcfe",
+            "blob": "8ca057bb1cb5bca8355ced1c5aa9eff7128c2e0f",
             "content": "sha256:cff008a580b31483b82250166a7d30f245042524986ab6a536f026323e0baaf1",
             "locator": {
               "end": 8,
@@ -58,7 +84,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f8df4537fd2ad81ad0e51743831f41509c24dcfe",
+            "blob": "8ca057bb1cb5bca8355ced1c5aa9eff7128c2e0f",
             "content": "sha256:4642e8ea8de713715fb38326664bdaf76cf0a44f38d3a41013c8c03980288394",
             "locator": {
               "end": 6,
@@ -72,14 +98,40 @@
       ]
     },
     "4": {
-      "note": "Current stage boundaries, settings-owned review budget and recorded approval duties are carried by these instruction sources.",
+      "note": "Architect beyond-settings review authority depends on a shrinking sealed repair set; formal permission remains within its own permissions, and its checks and developer decisions remain separate from independent leaf acceptance.",
       "targets": [
         {
           "anchor": {
-            "blob": "f8df4537fd2ad81ad0e51743831f41509c24dcfe",
-            "content": "sha256:4a0a5d9f8e5202460cee5e0870e801a644d2432900685a5a54114a1dab9cc219",
+            "blob": "8ca057bb1cb5bca8355ced1c5aa9eff7128c2e0f",
+            "content": "sha256:5f14784fbed919ec54832c7287bbd07a2e7466343e6c44eeb26ffb74bfbc29bf",
             "locator": {
-              "kind": "file"
+              "end": 78,
+              "kind": "line_range",
+              "start": 74
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8ca057bb1cb5bca8355ced1c5aa9eff7128c2e0f",
+            "content": "sha256:66bae430f3319ec9838944db63049974f5c63b7393a649dabc0a733d77077156",
+            "locator": {
+              "end": 106,
+              "kind": "line_range",
+              "start": 94
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8ca057bb1cb5bca8355ced1c5aa9eff7128c2e0f",
+            "content": "sha256:3b4603c5322ebc909cce9b07e28049ed998dc237e278b0438a75f9b3d09084ad",
+            "locator": {
+              "end": 122,
+              "kind": "line_range",
+              "start": 120
             }
           },
           "kind": "code"
@@ -87,29 +139,125 @@
       ]
     },
     "5": {
-      "note": "Architect may grant a beyond-settings round for a concrete shrinking repair set; an unchanged failed repair or disputed requirement meaning needs a ruling instead of another round. Permission/non-finished starts are held by the product, and held permission notices propagate without message resubmission. Scope/parent identity and orchestration release stay distinct from native transport and AR acceptance.",
+      "note": "Architect may grant a beyond-settings round for a concrete shrinking repair set; repeated unchanged repairs or disputed requirement meaning need a ruling. It releases execution coordination after handover and handles formal permissions only within its own permissions. Child-permission notices follow the common procedure and held message receipts are not resubmitted.",
       "targets": [
         {
           "anchor": {
-            "blob": "f8df4537fd2ad81ad0e51743831f41509c24dcfe",
-            "content": "sha256:4a0a5d9f8e5202460cee5e0870e801a644d2432900685a5a54114a1dab9cc219",
+            "blob": "8ca057bb1cb5bca8355ced1c5aa9eff7128c2e0f",
+            "content": "sha256:5f14784fbed919ec54832c7287bbd07a2e7466343e6c44eeb26ffb74bfbc29bf",
             "locator": {
-              "kind": "file"
+              "end": 78,
+              "kind": "line_range",
+              "start": 74
             }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8ca057bb1cb5bca8355ced1c5aa9eff7128c2e0f",
+            "content": "sha256:10952f2bf370df24f94b217c7c7cf96567b8427745e7874df08aec5c7ca74a7e",
+            "locator": {
+              "end": 58,
+              "kind": "line_range",
+              "start": 50
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8ca057bb1cb5bca8355ced1c5aa9eff7128c2e0f",
+            "content": "sha256:66bae430f3319ec9838944db63049974f5c63b7393a649dabc0a733d77077156",
+            "locator": {
+              "end": 106,
+              "kind": "line_range",
+              "start": 94
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cae239eb383e7e6a0679cf80d64d182e2d36fc0f",
+            "content": "sha256:e5a702cb44501ff020ef129cc6c8e465327c207b1ae3dcd1b0c7f5ddf050b835",
+            "locator": {
+              "end": 40,
+              "kind": "line_range",
+              "start": 38
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/coordination.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8ca057bb1cb5bca8355ced1c5aa9eff7128c2e0f",
+            "content": "sha256:3b4603c5322ebc909cce9b07e28049ed998dc237e278b0438a75f9b3d09084ad",
+            "locator": {
+              "end": 122,
+              "kind": "line_range",
+              "start": 120
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/architect.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1e006f679fb322bbd74e0377548c29c2a387f77d",
+            "content": "sha256:cface40d75bb6e5983aaafef9a299ed0f02e80bb1e889e068f862eb017bcef09",
+            "locator": {
+              "end": 15,
+              "kind": "line_range",
+              "start": 9
+            },
+            "path": "skills/l-01-agent-lifecycles/reference/message-handover.md"
           },
           "kind": "code"
         }
       ]
     },
     "6": {
-      "note": "Current source declarations support the qualified naming or fixture account; no executed test or acceptance is inferred.",
+      "note": "A gate or validator repair preserves the serving-build/sync route; Architect checks run on copies, replace no leaf build/review/curation/gate and confer no self-acceptance.",
       "targets": [
         {
           "anchor": {
-            "blob": "f8df4537fd2ad81ad0e51743831f41509c24dcfe",
-            "content": "sha256:4a0a5d9f8e5202460cee5e0870e801a644d2432900685a5a54114a1dab9cc219",
+            "blob": "8ca057bb1cb5bca8355ced1c5aa9eff7128c2e0f",
+            "content": "sha256:6437f8c6e3ee892e948c10efd940f151c68573457b404510238c5205f97a8d81",
             "locator": {
-              "kind": "file"
+              "end": 22,
+              "kind": "line_range",
+              "start": 22
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8ca057bb1cb5bca8355ced1c5aa9eff7128c2e0f",
+            "content": "sha256:a44d905dbd2c543fcb17cf0cfd38155217e14bc5f720406f6301bad5737f77a3",
+            "locator": {
+              "end": 106,
+              "kind": "line_range",
+              "start": 104
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Reviews, cold reads, re-checks, sweeps and Investigator reports advise the Architect. A factual correction may be applied; a finding that adds, narrows or overrides a rule beyond the developer’s words goes to the developer first, quoted beside those earlier words.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8ca057bb1cb5bca8355ced1c5aa9eff7128c2e0f",
+            "content": "sha256:0f16ae738e30bc0020b9f0e05f3737b8435aaa300719837aa33eb4eaa4c265ac",
+            "locator": {
+              "end": 36,
+              "kind": "line_range",
+              "start": 36
             }
           },
           "kind": "code"

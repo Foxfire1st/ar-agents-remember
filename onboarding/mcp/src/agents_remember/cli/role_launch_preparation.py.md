@@ -53,7 +53,19 @@ The same module carries the one instruction every role's first message repeats a
 
 ## Current source contract evidence
 
-- Current synced source supports the qualified account; declarations, mirrors and fixture assertions are not executed acceptance. [10]
+- Current synced source supports the qualified account; declarations, mirrors and fixture assertions are not executed acceptance.
+
+Retained R111 pre-sync qualified source account; volatile numbers name that earlier epoch, not the composed source: The launch preparer consumes resolved task identity and canonical files without calling the removed task_doc.get. Read metadata names json_path/rendered_path instead of an operation=get request. taskDocumentFiles includes the own-leaf copy set derived from INDEX, absolute file locations and missingCopies. Compiled task context and launch admission keep their existing owners; file copies do not become task authority or a historical approval witness.
+
+The original source carried canonical/read-copy metadata and parent/peer handover values, but its first-read sentence still said task_doc only rather than the current scoped refusal recovery. Earlier caption retained as prose; its original citation used mcp/src/agents_remember/cli/role_launch_preparation.py at blob `6295b3c90a86ff77e4b13ec5bab3ab1830114d78`. Reference 10 now carries the current clause and current source targets; it does not retain those earlier targets.
+
+Retained authoring-row wording:
+
+Finding: The preparer carries bound canonical/read-copy metadata, composes source-bound instructions and preserves parent/peer routing. Source inspection establishes these implementation boundaries, not live-host execution or acceptance.
+
+Anchor:
+
+Source: mcp/src/agents_remember/cli/role_launch_preparation.py:1-1065
 
 
 
@@ -61,6 +73,12 @@ The same module carries the one instruction every role's first message repeats a
 
 Granted direct-leaf revival binds the canonical leaf to its master series contract through the readable explicit grant; other leaves keep enclosure binding. Unreadable grant data refuses rather than falling back. This new-base preservation is not a Curator-issued grant.
 
+
+## Current source contract
+
+Task-document first-read metadata says task_doc first, followed only on correct-input refusal by logged canonical amendment under reference/refused-write.md. The owning next publication refreshes renders/projections, and rendered copies are never parsed back. The same instruction retains stops for read/check/validation/sync, starts, product guards and commit gates; it is not a general fallback or permission bypass.
+
+- First-read metadata replaces absolute task_doc-only wording with qualified same-tool refusal recovery. [17]
 
 ## Historical original card — preserved, not the current operative account
 
@@ -127,20 +145,38 @@ The enclosure preparation owner moved to `role_launch_workspace.py`: `_leaf_cont
 Investigator’s actual started_by parent selects the concern-from-first-message assignment; a parentless start uses the developer request. Selected sprint/master report paths are task-owned and request-qualified. Only the approved Investigator and coordinating-role handover wording changes and derived seals depart from the earlier preservation rule; exact parent identity, leafSeats peer arguments and unrelated handover behavior remain unchanged.
 
 
-- The current source implements this file’s stated Investigator boundary. [8]
+Retained authoring-row wording:
+
+Finding: The current source implements this file’s stated Investigator boundary.
+
+Anchor:
+
+Source: mcp/src/agents_remember/cli/role_launch_preparation.py:1-752
 
 
 
 ## Refreshed current evidence
 
-- Frozen implementation of the narrow parented-coordinator handover values. [4]
+Retained authoring-row wording:
+
+Finding: Frozen implementation of the narrow parented-coordinator handover values.
+
+Anchor:
+
+Source: mcp/src/agents_remember/cli/role_launch_preparation.py
 
 - Checks that every view and start asks fresh and explicit refresh rescans provider discovery. [5]
 
 
 </details>
 
-- Leaf revival compares current grant-sensitive canonical task/contract scope before bridge use. [9]
+Retained authoring-row wording:
+
+Finding: Leaf revival compares current grant-sensitive canonical task/contract scope before bridge use.
+
+Anchor:
+
+Source: mcp/src/agents_remember/cli/role_launch_preparation.py:1-963
 
 
 
@@ -166,3 +202,8 @@ Investigator’s actual started_by parent selects the concern-from-first-message
 
 
 - The `_resolve_workspace` implementation now lives in its extracted owner.  Anchor: actual current supporting source [3]
+
+- Frozen implementation of the narrow parented-coordinator handover values. [4]
+- The current source implements this file’s stated Investigator boundary. [8]
+- Leaf revival compares current grant-sensitive canonical task/contract scope before bridge use. [9]
+- The preparer carries bound canonical/read-copy metadata, composes source-bound instructions and preserves parent/peer routing. Source inspection establishes these implementation boundaries, not live-host execution or acceptance. [10]

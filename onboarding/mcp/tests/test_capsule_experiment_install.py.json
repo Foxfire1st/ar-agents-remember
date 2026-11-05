@@ -98,16 +98,16 @@
       ]
     },
     "6": {
-      "note": "The current settings-guard and portable Node-lockfile artifact rows both declare test_capsule_experiment_install.py as a consumer. The original two-row addition account belongs to its prior source epoch; these declarations establish no invocation.",
+      "note": "The current lifecycle catalog declares test_capsule_experiment_install.py among the exact consumers of mcp/tests/_user_settings_guard.py, mcp/tests/fixtures/repository_profiles/node/package-lock.json. These current declarations establish no invocation or addition event.",
       "targets": [
         {
           "anchor": {
-            "blob": "b9e272ef623574e517181e36b3dc949a3ac78e19",
-            "content": "sha256:cc01aa81b98cbba00bbd0d158e04e1c677d0ea96d8ece418a214cb90932b3cd9",
+            "blob": "f9d31f21c64890dc36a2c835faab4ae6860bcc68",
+            "content": "sha256:0a6ea03efe9703712535f05efeacc13a561b6fd40cb34b4ed9fe1a7122ed7558",
             "locator": {
-              "end": 207,
+              "end": 821,
               "kind": "line_range",
-              "start": 207
+              "start": 65
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -115,12 +115,12 @@
         },
         {
           "anchor": {
-            "blob": "b9e272ef623574e517181e36b3dc949a3ac78e19",
-            "content": "sha256:7f928fec3d90578643c5a10e2e23d16436c6170a8faeafc95393ed9b6760fd22",
+            "blob": "f9d31f21c64890dc36a2c835faab4ae6860bcc68",
+            "content": "sha256:e8d358fc83b0cd78d30c45fd0bf4727490538eac4f97a69b212a2078f94c56cf",
             "locator": {
-              "end": 1990,
+              "end": 3096,
               "kind": "line_range",
-              "start": 1990
+              "start": 2340
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -129,16 +129,16 @@
       ]
     },
     "7": {
-      "note": "The current settings-guard and portable Node-lockfile artifact rows both declare test_capsule_experiment_install.py as a consumer. The original two-row addition account belongs to its prior source epoch; these declarations establish no invocation.",
+      "note": "The current lifecycle catalog declares test_capsule_experiment_install.py among the exact consumers of mcp/tests/_user_settings_guard.py, mcp/tests/fixtures/repository_profiles/node/package-lock.json. These current declarations establish no invocation or addition event.",
       "targets": [
         {
           "anchor": {
-            "blob": "b9e272ef623574e517181e36b3dc949a3ac78e19",
-            "content": "sha256:cc01aa81b98cbba00bbd0d158e04e1c677d0ea96d8ece418a214cb90932b3cd9",
+            "blob": "f9d31f21c64890dc36a2c835faab4ae6860bcc68",
+            "content": "sha256:0a6ea03efe9703712535f05efeacc13a561b6fd40cb34b4ed9fe1a7122ed7558",
             "locator": {
-              "end": 207,
+              "end": 821,
               "kind": "line_range",
-              "start": 207
+              "start": 65
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },
@@ -146,12 +146,12 @@
         },
         {
           "anchor": {
-            "blob": "b9e272ef623574e517181e36b3dc949a3ac78e19",
-            "content": "sha256:7f928fec3d90578643c5a10e2e23d16436c6170a8faeafc95393ed9b6760fd22",
+            "blob": "f9d31f21c64890dc36a2c835faab4ae6860bcc68",
+            "content": "sha256:e8d358fc83b0cd78d30c45fd0bf4727490538eac4f97a69b212a2078f94c56cf",
             "locator": {
-              "end": 1990,
+              "end": 3096,
               "kind": "line_range",
-              "start": 1990
+              "start": 2340
             },
             "path": "mcp/tests/evidence-lifecycle.toml"
           },

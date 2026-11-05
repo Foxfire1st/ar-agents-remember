@@ -1,0 +1,40 @@
+{
+  "path": "mcp/tests/fixtures/helper-wait-real-dispatches.json",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "cc5f0cff8abe79df87daf14975ec552406aca5c2",
+        "content": "sha256:950fe94532681a6fe1e49b2705a6ea96accab48d08a313383a723673ecb9682e",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-9C67F7",
+      "invariant": "INV-5JEVAZ",
+      "origin": {
+        "handoffEntry": "L62-fd6462b8-helper-boundary",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "These retained CE05/CE06 dispatch receipts distinguish dispatch, completion and delivered-result evidence.",
+      "role": "support"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The source defines this file's responsibility and the boundaries described here.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cc5f0cff8abe79df87daf14975ec552406aca5c2",
+            "content": "sha256:950fe94532681a6fe1e49b2705a6ea96accab48d08a313383a723673ecb9682e",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

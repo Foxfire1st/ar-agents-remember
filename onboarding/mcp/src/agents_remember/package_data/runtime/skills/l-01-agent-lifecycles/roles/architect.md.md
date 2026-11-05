@@ -2,12 +2,20 @@
 
 ## Current supported-pair account — R100/R116 composition
 
-Architect may grant a beyond-settings round for a concrete shrinking repair set; an unchanged failed repair or disputed requirement meaning needs a ruling instead of another round. Permission/non-finished starts are held by the product, and held permission notices propagate without message resubmission. Scope/parent identity and orchestration release stay distinct from native transport and AR acceptance.
+Past-epoch account (retained wording): Architect may grant a beyond-settings round for a concrete shrinking repair set; an unchanged failed repair or disputed requirement meaning needs a ruling instead of another round. Permission/non-finished starts are held by the product, and held permission notices propagate without message resubmission. Scope/parent identity and orchestration release stay distinct from native transport and AR acceptance.
+
+Custody: the preceding sentence(s) retain their original target blob(s) `0ae6b320075e6ba40c38064b985eadb31b596fe9`; live reference 5 labels only the separately stated current account below.
+
+Architect may grant a beyond-settings round for a concrete shrinking repair set; an unchanged failed repair or disputed requirement meaning needs a ruling instead of another round. For permission-held receipts, the Architect follows the child-permission notice procedure and the no-resubmission rule for held messages. Scope/parent identity and orchestration release stay distinct from native transport and AR acceptance.
 
 This account controls the named changed seams; contradictory earlier card wording below is retained only as historical evidence. Unchanged role duties and R117 file-only wake/report transport are preserved. Source inspection supplies no new runtime test, CODE verdict, review counter or acceptance.
 
 
-- Architect may grant a beyond-settings round for a concrete shrinking repair set; an unchanged failed repair or disputed requirement meaning needs a ruling instead of another round. Permission/non-finished starts are held by the product, and held permission notices propagate without message resubmission. Scope/parent identity and orchestration release stay distinct from native transport and AR acceptance. [5]
+Past-epoch account (retained wording): - Architect may grant a beyond-settings round for a concrete shrinking repair set; an unchanged failed repair or disputed requirement meaning needs a ruling instead of another round. Permission/non-finished starts are held by the product, and held permission notices propagate without message resubmission. Scope/parent identity and orchestration release stay distinct from native transport and AR acceptance.
+
+Custody: the preceding sentence(s) retain their original target blob(s) `0ae6b320075e6ba40c38064b985eadb31b596fe9`; live reference 5 labels only the separately stated current account below.
+
+- Architect may grant a beyond-settings round for a concrete shrinking repair set; an unchanged failed repair or disputed requirement meaning needs a ruling instead of another round. For permission-held receipts, the Architect follows the child-permission notice procedure and the no-resubmission rule for held messages. Scope/parent identity and orchestration release stay distinct from native transport and AR acceptance.
 
 
 
@@ -28,7 +36,7 @@ Before planning repository work, name relevant records through knowledge_read on
 ## Current source contract evidence
 
 
-- Current source declarations support the qualified naming or fixture account; no executed test or acceptance is inferred. [6]
+- Current source declarations support the qualified naming or fixture account; no executed test or acceptance is inferred.
 
 
 ## Purpose
@@ -56,6 +64,8 @@ No inferred task/repository/parent, self-approval, hidden proxy or duplicate own
 ## Working folders and reports
 
 Agent-authored temporary files, experiments and working copies live only in the handover's real `workspace.scratchRoot`, outside code, memory and task folders; reports and evidence go in the handover's local report folder, which the product copies to canonical notes before removal.
+
+Reviews, cold reads, re-checks, sweeps and Investigator reports advise the Architect. A factual correction may be applied; a finding that adds, narrows or overrides a rule beyond the developer’s words goes to the developer first, quoted beside those earlier words.
 
 ## Evidence
 
@@ -85,11 +95,19 @@ No meaningful cross-repo references found.
 This packaged copy derives from the canonical roles/architect.md. The Architect keeps the developer conversation and may check, measure, run tests and builds, read the code and sources of the product, the host and the harnesses, and try things out in a sandbox himself, on a copy; that work never stands in for a leaf's build, review, curation or gate, and a check before a landing is not a landing step. Checks he does not do himself go under delegation through the actual Manager or Orchestrator; developer-chosen direct coordination assigns a leaf check to Worker/Reviewer and a non-leaf concern to Investigator. Investigator starts remain within admitted Projects, sprint or master containment, and still-forbidden starts route to the actual parent or a parentless blocker. One Manager remains the default for one master. Mirror synchronization remains the owner; this file adds no independent instruction.
 
 
-- This source owns the stated current Investigator scope or canonical vocabulary. [1]
+- This source owns the stated current Investigator scope or canonical vocabulary.
 
 
 ## Current Contract Evidence
 
 
 
-- Current stage boundaries, settings-owned review budget and recorded approval duties are carried by these instruction sources. [4]
+- Current stage boundaries, settings-owned review budget and recorded approval duties are carried by these instruction sources.
+
+- Reviews, cold reads, re-checks, sweeps and Investigator reports advise the Architect. A factual correction may be applied; a finding that adds, narrows or overrides a rule beyond the developer’s words goes to the developer first, quoted beside those earlier words.
+
+- Architect scope is the developer conversation and semantic plan; it preserves explicit delegation and starts an Investigator with a scoped first message without fabricating task identity. [1]
+- Architect beyond-settings review authority depends on a shrinking sealed repair set; formal permission remains within its own permissions, and its checks and developer decisions remain separate from independent leaf acceptance. [4]
+- Architect may grant a beyond-settings round for a concrete shrinking repair set; repeated unchanged repairs or disputed requirement meaning need a ruling. It releases execution coordination after handover and handles formal permissions only within its own permissions. Child-permission notices follow the common procedure and held message receipts are not resubmitted. [5]
+- A gate or validator repair preserves the serving-build/sync route; Architect checks run on copies, replace no leaf build/review/curation/gate and confer no self-acceptance. [6]
+- Reviews, cold reads, re-checks, sweeps and Investigator reports advise the Architect. A factual correction may be applied; a finding that adds, narrows or overrides a rule beyond the developer’s words goes to the developer first, quoted beside those earlier words. [7]

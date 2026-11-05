@@ -8,12 +8,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6d8cc9b75acea207484aeaf2f87c0e5cafd6640e",
-            "content": "sha256:505f109a8af4bdc46cc0094a439e2c82cda2a3f6a4856f4196566986e418ef28",
+            "blob": "2cbfd7803f2a1351f1ee784758b4847b81a58df0",
+            "content": "sha256:49aa7d2dc9d201934f970289c80bb1b3b56ef13c697e13f67cf36e4707b29ab3",
             "locator": {
-              "end": 526,
+              "end": 485,
               "kind": "line_range",
-              "start": 1
+              "start": 446
             },
             "path": "docs/reference/settings-json.md"
           },

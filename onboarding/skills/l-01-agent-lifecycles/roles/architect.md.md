@@ -7,7 +7,17 @@ Architect may grant a beyond-settings round for a concrete shrinking repair set;
 This account controls the named changed seams; contradictory earlier card wording below is retained only as historical evidence. Unchanged role duties and R117 file-only wake/report transport are preserved. Source inspection supplies no new runtime test, CODE verdict, review counter or acceptance.
 
 
-- Architect may grant a beyond-settings round for a concrete shrinking repair set; an unchanged failed repair or disputed requirement meaning needs a ruling instead of another round. Permission/non-finished starts are held by the product, and held permission notices propagate without message resubmission. Scope/parent identity and orchestration release stay distinct from native transport and AR acceptance. [2]
+- Architect may grant a beyond-settings round for a concrete shrinking repair set; an unchanged failed repair or disputed requirement meaning needs a ruling instead of another round. Permission/non-finished starts are held by the product, and held permission notices propagate without message resubmission. Scope/parent identity and orchestration release stay distinct from native transport and AR acceptance.
+
+Earlier caption detached from live reference 2: its original target declared the source text at `skills/l-01-agent-lifecycles/roles/architect.md` at original blob `0ae6b320075e6ba40c38064b985eadb31b596fe9`, lines 36–38; `skills/l-01-agent-lifecycles/roles/architect.md` at original blob `0ae6b320075e6ba40c38064b985eadb31b596fe9`, lines 52–60; `skills/l-01-agent-lifecycles/roles/architect.md` at original blob `0ae6b320075e6ba40c38064b985eadb31b596fe9`, lines 68–70. The caption above is retained as prose; the numbered clause below describes the current source.
+
+Retained authoring-row wording:
+
+Finding: Beyond-settings rounds may be granted for a shrinking sealed list with a concrete repair; unchanged failed repairs or requirement-meaning disputes need a ruling. The Architect releases execution coordination and retains actual returned role identities, while permission decisions remain within its own permissions.
+
+Anchor: `current role or template contract`
+
+Source: skills/l-01-agent-lifecycles/roles/architect.md:58-58; skills/l-01-agent-lifecycles/roles/architect.md:74-80; skills/l-01-agent-lifecycles/roles/architect.md:94-98
 
 - The Architect may grant a beyond-settings round for a concrete shrinking repair set, and an unchanged failed repair or disputed requirement meaning needs a ruling instead. [5]
 
@@ -29,6 +39,8 @@ This canonical role/operation requires messages to be short wake-ups naming requ
 ## Purpose
 
 This canonical Architect owns the developer conversation, semantic requirements and approved plan. Its explicit Projects launch may be taskless: missing outcome or registered repository is asked for, never inferred. New independently falsifiable obligations become approved stable-ID/version packets before task topology; an existing assignment recovers durable approvals and current task evidence.
+
+Reviews, cold reads, re-checks, sweeps and Investigator reports advise the Architect. A factual correction may be applied; a finding that adds, narrows or overrides a rule beyond the developer’s words goes to the developer first, quoted beside those earlier words.
 
 ## Code Commentary
 
@@ -142,9 +154,46 @@ free a runtime selection.
 The Architect keeps the developer conversation and may check, measure, run tests and builds, read the code and sources of the product, the host and the harnesses, and try things out in a sandbox himself, on a copy; that work informs his rulings, his requirements and the developer but never stands in for a leaf's build, review, curation or gate, and he changes no leaf's code or memory. A check before a landing is not a landing step. A check or investigation he does not do himself goes under delegation to the actual Manager or Orchestrator; developer-chosen direct coordination assigns a leaf check to Worker/Reviewer and a non-leaf concern to Investigator. Investigator starts remain within admitted Projects, sprint or master containment, and still-forbidden starts route to the actual parent or a parentless blocker. One Manager remains the default for one master.
 
 
-- This source owns the stated current Investigator scope or canonical vocabulary. [1]
+- This source owns the stated current Investigator scope or canonical vocabulary.
 
-- This source owns the stated current Investigator scope or canonical vocabulary. [6]
+Earlier caption detached from live reference 1: its original target declared the source text at `skills/l-01-agent-lifecycles/roles/architect.md` at original blob `0ae6b320075e6ba40c38064b985eadb31b596fe9`, lines 8–8; `skills/l-01-agent-lifecycles/roles/architect.md` at original blob `0ae6b320075e6ba40c38064b985eadb31b596fe9`, lines 24–28; `skills/l-01-agent-lifecycles/roles/architect.md` at original blob `0ae6b320075e6ba40c38064b985eadb31b596fe9`, lines 52–60. The caption above is retained as prose; the numbered clause below describes the current source.
+
+Retained authoring-row wording:
+
+Finding: The Architect owns the developer conversation and approved requirements, delegates one master to a Manager or multiple masters to an Orchestrator, and may check on a copy without replacing leaf build, review, curation or gate authority.
+
+Anchor: `current role or template contract`
+
+Source: skills/l-01-agent-lifecycles/roles/architect.md:8-8; skills/l-01-agent-lifecycles/roles/architect.md:50-58; skills/l-01-agent-lifecycles/roles/architect.md:104-106
+
+- This source owns the stated current Investigator scope or canonical vocabulary.
+
+Earlier caption detached from live reference 6: its original target declared the source text at `skills/l-01-agent-lifecycles/roles/architect.md` at original blob `0ae6b320075e6ba40c38064b985eadb31b596fe9`, lines 8–8; `skills/l-01-agent-lifecycles/roles/architect.md` at original blob `0ae6b320075e6ba40c38064b985eadb31b596fe9`, lines 24–28; `skills/l-01-agent-lifecycles/roles/architect.md` at original blob `0ae6b320075e6ba40c38064b985eadb31b596fe9`, lines 52–60. The caption above is retained as prose; the numbered clause below describes the current source.
+
+Retained authoring-row wording:
+
+Finding: The Architect may check product, host and harness sources and run checks on a copy; a leaf check it delegates goes through the coordinating owner, or to Worker/Reviewer under developer-chosen direct coordination, while a non-leaf concern goes to Investigator.
+
+Anchor: `current role or template contract`
+
+Source: skills/l-01-agent-lifecycles/roles/architect.md:104-106
 
 
 The earlier fixed-three budget wording is superseded by MIK-R116: the settings limit governs ordinary CODE and separately counted MEMORY rounds, with recorded Architect-or-developer extras. This updates the operative transaction-boundary account, not the retained historical task authority.
+
+- Reviews, cold reads, re-checks, sweeps and Investigator reports advise the Architect. A factual correction may be applied; a finding that adds, narrows or overrides a rule beyond the developer’s words goes to the developer first, quoted beside those earlier words.
+
+Earlier caption detached from live reference 8: its original target declared the source text at `skills/l-01-agent-lifecycles/roles/architect.md` at original blob `0ae6b320075e6ba40c38064b985eadb31b596fe9`, lines 14–16. The caption above is retained as prose; the numbered clause below describes the current source.
+
+Retained authoring-row wording:
+
+Finding: Reviews, cold reads, re-checks, sweeps and Investigator reports advise the Architect; a fact correction may be applied, but adding, narrowing or overriding a rule beyond the developer's words requires the developer's decision with both texts quoted.
+
+Anchor: `current role or template contract`
+
+Source: skills/l-01-agent-lifecycles/roles/architect.md:36-36
+
+- The Architect owns the developer conversation and approved requirements, delegates one master to a Manager or multiple masters to an Orchestrator, and may check on a copy without replacing leaf build, review, curation or gate authority. [1]
+- Beyond-settings rounds may be granted for a shrinking sealed list with a concrete repair; unchanged failed repairs or requirement-meaning disputes need a ruling. The Architect releases execution coordination and retains actual returned role identities, while permission decisions remain within its own permissions. [2]
+- The Architect may check product, host and harness sources and run checks on a copy; a leaf check it delegates goes through the coordinating owner, or to Worker/Reviewer under developer-chosen direct coordination, while a non-leaf concern goes to Investigator. [6]
+- Reviews, cold reads, re-checks, sweeps and Investigator reports advise the Architect; a fact correction may be applied, but adding, narrowing or overriding a rule beyond the developer's words requires the developer's decision with both texts quoted. [8]

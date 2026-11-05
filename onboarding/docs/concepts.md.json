@@ -3,14 +3,16 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "Onboarding units map one-to-one from source file to mirrored Markdown note and carry what the code does not make obvious.\n\nAnchor: `docs/concepts.md:5-16`",
+      "note": "An onboarding unit maps source to a mirrored Markdown card; converted memory pairs it with a JSON sidecar for references, realizations and test proofs, while shared truths live under knowledge/.",
       "targets": [
         {
           "anchor": {
-            "blob": "a1beb13a88bb5d47505c4d600d416789ce823ae8",
-            "content": "sha256:9abd4f71ca4eb0e5e5e5a8c3d44f757a8805135781e854053a34d643ca7e73a9",
+            "blob": "3149cd659f89609cc7ba11f5728190720014379c",
+            "content": "sha256:8f19e8a16e7c478ec402f472cc3a43c0f75e2b7bbc1e63bfa9440fb228bc0db1",
             "locator": {
-              "kind": "file"
+              "end": 22,
+              "kind": "line_range",
+              "start": 5
             }
           },
           "kind": "code"
@@ -18,14 +20,16 @@
       ]
     },
     "2": {
-      "note": "By path is direct and index-free; by meaning and by relationship are past tense with retired providers and no engine.\n\nAnchor: `docs/concepts.md:41-49`",
+      "note": "By-path notes remain direct and index-free; meaning and relationship are retired provider routes with no current engine.",
       "targets": [
         {
           "anchor": {
-            "blob": "a1beb13a88bb5d47505c4d600d416789ce823ae8",
-            "content": "sha256:9abd4f71ca4eb0e5e5e5a8c3d44f757a8805135781e854053a34d643ca7e73a9",
+            "blob": "3149cd659f89609cc7ba11f5728190720014379c",
+            "content": "sha256:3a36e5ea03ef56befe90cd63a150a7740b41ef9e29b48ff2ae6720ebdae7a6ad",
             "locator": {
-              "kind": "file"
+              "end": 55,
+              "kind": "line_range",
+              "start": 47
             }
           },
           "kind": "code"
@@ -33,14 +37,16 @@
       ]
     },
     "3": {
-      "note": "The substrate trio is Intention/Semantics/Relationship; `Semantics` and `Relationship` carry the retirement, `Intent` remains the default.\n\nAnchor: `docs/concepts.md:51-72`",
+      "note": "The router names Intent, Semantics and Relationship; Semantics/Relationship retain their retired-provider boundaries and Intent uses onboarding plus bounded source confirmation.",
       "targets": [
         {
           "anchor": {
-            "blob": "a1beb13a88bb5d47505c4d600d416789ce823ae8",
-            "content": "sha256:9abd4f71ca4eb0e5e5e5a8c3d44f757a8805135781e854053a34d643ca7e73a9",
+            "blob": "3149cd659f89609cc7ba11f5728190720014379c",
+            "content": "sha256:b7ec6f5fe423d0fbdb92dcbc2cad9a94457636c19e7b23c09740de92a1aa8e4e",
             "locator": {
-              "kind": "file"
+              "end": 77,
+              "kind": "line_range",
+              "start": 57
             }
           },
           "kind": "code"
@@ -48,14 +54,16 @@
       ]
     },
     "4": {
-      "note": "Provider output is candidate routing evidence, not proof; source, onboarding, drift and approval remain the truth controls.\n\nAnchor: `docs/concepts.md:77-79`",
+      "note": "Provider output remains candidate routing evidence rather than proof; source, verified onboarding, drift, branch validity and approved promotion retain truth authority.",
       "targets": [
         {
           "anchor": {
-            "blob": "a1beb13a88bb5d47505c4d600d416789ce823ae8",
-            "content": "sha256:9abd4f71ca4eb0e5e5e5a8c3d44f757a8805135781e854053a34d643ca7e73a9",
+            "blob": "3149cd659f89609cc7ba11f5728190720014379c",
+            "content": "sha256:5cd4ca092722232539f4eb801ea303e53fca3fcf58e9633979652ac582fb337f",
             "locator": {
-              "kind": "file"
+              "end": 85,
+              "kind": "line_range",
+              "start": 79
             }
           },
           "kind": "code"
@@ -63,14 +71,16 @@
       ]
     },
     "5": {
-      "note": "Drift outcomes, approval gating, route-local overviews and the memory ledger keep their definitions.\n\nAnchor: `docs/concepts.md:81-115`",
+      "note": "Converted sidecars carry current code anchors and the named drift outcomes. Approval gating and route-local overviews remain; knowledge history rows answer a recomputed worklist under the exact-tree gate, while memory.md is an ignored attribution cache outside transaction authority.",
       "targets": [
         {
           "anchor": {
-            "blob": "a1beb13a88bb5d47505c4d600d416789ce823ae8",
-            "content": "sha256:9abd4f71ca4eb0e5e5e5a8c3d44f757a8805135781e854053a34d643ca7e73a9",
+            "blob": "3149cd659f89609cc7ba11f5728190720014379c",
+            "content": "sha256:5e8608294469f72840045f0f6eca581a1364747edc13f89d27ca68e8a586a06b",
             "locator": {
-              "kind": "file"
+              "end": 139,
+              "kind": "line_range",
+              "start": 87
             }
           },
           "kind": "code"

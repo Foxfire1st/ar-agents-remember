@@ -25,6 +25,10 @@ keeps coordination seats as `task_doc` leaves with attached chats. `## The spine
 worktree` fixes what creates a branch or worktree, that design and portfolio work never touch git, and
 that chat is never a build route.
 
+Current qualification: the retained clause “sets parallel-by-default up to the `orchestration.concurrency` cap,” describes its past source epoch. states parallel-by-default without an invented concurrency cap; only the developer authorizes a limit,
+
+Current qualification: the retained clause “keeps coordination seats as `task_doc` leaves with attached chats.” describes its past source epoch. Current observability attaches coordinating roles to their selected task documents and chats; a taskless Architect or Bootstrap needs no invented task document.
+
 `## Default behavior, and where it is overridden` states the fill-small-blanks default, the one-rung
 escalation for a plan delta beyond blank-filling, and that the **spirit test is orchestrator-only**.
 `## Knob resolution and capability doctrine` fixes the resolution order (role-file defaults < global
@@ -33,6 +37,8 @@ files, and `role_start` as the harness-independent role-agent fan-out. Current l
 assigns task-collaboration doctrine to `tasks/AGENTS.md`, the task format to
 `w-02-light-task-workflow`, repository specifics to the memory layer, and the corpus's own division of
 labour to `roles/` / `operations/` / `reference/`.
+
+Current qualification: the retained clause “fixes the resolution order (role-file defaults < global settings < repo-local settings),” describes its past source epoch. Current deployment settings come from the admitted settings document: global defaults, repository rows and effective role/level rows with explicit call overrides. Role files state duties rather than deployment defaults.
 
 ### Conventions
 
@@ -64,13 +70,25 @@ No relevant documentation found after checking live sources.
 
 - Task intent creates its branch and build worktree; design and chat are not build routes. \[1] [10]
 
-- Launch settings own current knob rows; removed launchArgs/sessionCommands/promptKeywords load but are unused. \[2] [11]
+Retained authoring-row wording:
+
+Finding: Launch settings own current knob rows; removed launchArgs/sessionCommands/promptKeywords load but are unused.
+
+Anchor:
+
+Source: skills/l-01-agent-lifecycles/core/invariants.md:62-77
 
 
 
 
 
-- Task collaboration, format, memory-specific commands and role/operation duties have separate instruction owners. \[12] Source caption: source extent 84–94 [12]
+Retained authoring-row wording:
+
+Finding: Task collaboration, format, memory-specific commands and role/operation duties have separate instruction owners.
+
+Anchor:
+
+Source: skills/l-01-agent-lifecycles/core/invariants.md:79-90
 
 
 
@@ -79,7 +97,17 @@ No relevant documentation found after checking live sources.
 
 
 
-- Core inheritance is retained corpus doctrine and does not prove current native capsule contents. \[13] Source caption: source extent 84–94 [13]
+Past-epoch caption (retained wording): - Core inheritance is retained corpus doctrine and does not prove current native capsule contents. \[13] Source caption: source extent 84–94
+
+Original-target custody: `skills/l-01-agent-lifecycles/core/invariants.md`, blob `ec06d070fd680fae7715b1c662fd7a2e95fc6275`, declared “- `tasks/AGENTS.md` owns the task-collaboration doctrine (meta-questioning, reframe-before-execution, evidence-first, visible planning). Seats that scope work apply it; they do not paraphrase it. - `w-02-light-task-workflow` owns the task f”. The earlier caption is detached from the live number; the current table carries only the current clause and target.
+
+Retained authoring-row wording:
+
+Finding: The instruction-boundary rule states that a started role receives its role text, operation text and the shared every-role digest in its first message, and loads no other core file. Retained core corpus is an authoring reference, not evidence of a particular launch.
+
+Anchor:
+
+Source: skills/l-01-agent-lifecycles/core/invariants.md:79-90
 
 
 
@@ -142,24 +170,98 @@ The quoted anchors below are literal strings in the canonical source ranges. The
 
 - Shared durable continuity and artifact-of-record obligation. [1]
 
-- Questions, analysis, rulings and retained Architect relay. [2]
-- Dependency-based sequencing and retained observability doctrine. [3]
+Retained authoring-row wording:
+
+Finding: Questions, analysis, rulings and retained Architect relay.
+
+Anchor:
+
+Source: skills/l-01-agent-lifecycles/core/invariants.md:13-19
+
+Retained authoring-row wording:
+
+Finding: Finding
+
+Anchor: Anchor
+
+Source: Source
+
+Retained authoring-row wording:
+
+Finding: ---
+
+Anchor: ---
+
+Source: ---
+
+Retained authoring-row wording:
+
+Finding: Dependency-based sequencing and retained observability doctrine.
+
+Anchor:
+
+Source: skills/l-01-agent-lifecycles/core/invariants.md:21-34
 - Task/branch/worktree intent and chat/build boundary. [4]
-- Small blanks, one-rung escalation and Orchestrator-only spirit test. [5]
+Retained authoring-row wording:
 
-- Portable roles, settings precedence, permitted launch keys and harness-independent dispatch. [6]
+Finding: Small blanks, one-rung escalation and Orchestrator-only spirit test.
+
+Anchor:
+
+Source: skills/l-01-agent-lifecycles/core/invariants.md:50-60
+
+Retained authoring-row wording:
+
+Finding: Portable roles, settings precedence, permitted launch keys and harness-independent dispatch.
+
+Anchor:
+
+Source: skills/l-01-agent-lifecycles/core/invariants.md:62-77
 
 
 
 
 
-- Task, memory, role, operation and rationale ownership; retained core composition sentence. Source caption: "## Instruction-surface boundaries" [7]
+Past-epoch caption (retained wording): - Task, memory, role, operation and rationale ownership; retained core composition sentence. Source caption: "## Instruction-surface boundaries"
+
+Original-target custody: `skills/l-01-agent-lifecycles/core/invariants.md`, blob `ec06d070fd680fae7715b1c662fd7a2e95fc6275`, declared “- `tasks/AGENTS.md` owns the task-collaboration doctrine (meta-questioning, reframe-before-execution, evidence-first, visible planning). Seats that scope work apply it; they do not paraphrase it. - `w-02-light-task-workflow` owns the task f”. The earlier caption is detached from the live number; the current table carries only the current clause and target.
+
+Retained authoring-row wording:
+
+Finding: Task collaboration, task format, repository memory commands, role duties, operation procedures and reference details have separate owners. A started role receives its own role, operation and every-role digest; it loads no other core file.
+
+Anchor:
+
+Source: skills/l-01-agent-lifecycles/core/invariants.md:79-90
 
 
 
-- Selected Orientation starts from supplied assignment and forbids loading other role/core files. [8]
+Retained authoring-row wording:
 
-- Present parent routing and explicit parentless exception qualify the retained universal Architect-only statement. [9]
+Finding: Selected Orientation starts from supplied assignment and forbids loading other role/core files.
+
+Anchor:
+
+Source: skills/l-01-agent-lifecycles/operations/orientation.md:4-19
+
+Retained authoring-row wording:
+
+Finding: Present parent routing and explicit parentless exception qualify the retained universal Architect-only statement.
+
+Anchor:
+
+Source: skills/l-01-agent-lifecycles/operations/orientation.md:22-40; skills/l-01-agent-lifecycles/core/invariants.md:15-34
 
 
 </details>
+
+- Questions, analysis, rulings and retained Architect relay. [2]
+- Dependency-based sequencing and retained observability doctrine. [3]
+- Small blanks, one-rung escalation and Orchestrator-only spirit test. [5]
+- Portable roles, settings precedence, permitted launch keys and harness-independent dispatch. [6]
+- Task collaboration, task format, repository memory commands, role duties, operation procedures and reference details have separate owners. A started role receives its own role, operation and every-role digest; it loads no other core file. [7]
+- Selected Orientation starts from supplied assignment and forbids loading other role/core files. [8]
+- Present parent routing and explicit parentless exception qualify the retained universal Architect-only statement. [9]
+- Launch settings own current knob rows; removed launchArgs/sessionCommands/promptKeywords load but are unused. [11]
+- Task collaboration, format, memory-specific commands and role/operation duties have separate instruction owners. [12]
+- The instruction-boundary rule states that a started role receives its role text, operation text and the shared every-role digest in its first message, and loads no other core file. Retained core corpus is an authoring reference, not evidence of a particular launch. [13]

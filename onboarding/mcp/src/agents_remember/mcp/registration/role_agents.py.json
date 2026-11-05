@@ -4,8 +4,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "d7a350b97b2ba83910cf0f815eef07fa8d044f8c",
-        "content": "sha256:75fbbc5111a81997cc89f331fb0f0dfc4c2dc8868ca1d6cb9484240c1113c2fc",
+        "blob": "3f91234661460904091f50cb41164456aa515f04",
+        "content": "sha256:d5fccfa00edaf41799345ca2547bb87aaf2a0a09355e4a3997599019a505cd27",
         "locator": {
           "kind": "symbol",
           "name": "role_message"
@@ -22,8 +22,8 @@
     },
     {
       "anchor": {
-        "blob": "d7a350b97b2ba83910cf0f815eef07fa8d044f8c",
-        "content": "sha256:3e0136ac2d223e2a37422b565a2104228271445025cae7eaaabf07cb271fab72",
+        "blob": "3f91234661460904091f50cb41164456aa515f04",
+        "content": "sha256:310a67575a14cff92e1bcebd1e8f270cfcfc70b25eb6681a972f6fbad24bfbbb",
         "locator": {
           "kind": "file"
         }
@@ -39,8 +39,8 @@
     },
     {
       "anchor": {
-        "blob": "d7a350b97b2ba83910cf0f815eef07fa8d044f8c",
-        "content": "sha256:58f8bc4c49b594830e76029269db88b1de6418b833cffa7f81f1b88752f20afc",
+        "blob": "3f91234661460904091f50cb41164456aa515f04",
+        "content": "sha256:8ec9fa9c67ef661e617e2a1fd5d91e1f659cb1d41ff8208cce462f290df64f42",
         "locator": {
           "kind": "symbol",
           "name": "register_role_agent_tools"
@@ -58,14 +58,33 @@
   ],
   "references": {
     "1": {
-      "note": "Current registration declares the public input/delegation surface and its normative promises; it does not independently qualify composed filing, held waits or DTO completeness.\n\nAnchor: register_role_agent_tools",
+      "note": "The registrar declares typed start/set/message inputs and delegates to their payload owners. The current role_message description distinguishes host acceptance from AR acceptance and says held is queued and must never be resent.",
       "targets": [
         {
           "anchor": {
-            "blob": "d7a350b97b2ba83910cf0f815eef07fa8d044f8c",
-            "content": "sha256:3e0136ac2d223e2a37422b565a2104228271445025cae7eaaabf07cb271fab72",
+            "blob": "3f91234661460904091f50cb41164456aa515f04",
+            "content": "sha256:310a67575a14cff92e1bcebd1e8f270cfcfc70b25eb6681a972f6fbad24bfbbb",
             "locator": {
-              "kind": "file"
+              "end": 211,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "Message docstring clarifies host-only acceptance, queued held delivery and no resend.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3f91234661460904091f50cb41164456aa515f04",
+            "content": "sha256:3813693bdba56cad51f7ec9420d5c56cd59cccf4f0dc5990c6968fe5f36a82be",
+            "locator": {
+              "end": 203,
+              "kind": "line_range",
+              "start": 180
             }
           },
           "kind": "code"
@@ -77,7 +96,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d7a350b97b2ba83910cf0f815eef07fa8d044f8c",
+            "blob": "3f91234661460904091f50cb41164456aa515f04",
             "content": "sha256:39dab55c022bc0709501958f85a78da7c1f3addd5927b9dfa1f46c5eaf35c2e2",
             "locator": {
               "end": 141,
@@ -94,10 +113,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d7a350b97b2ba83910cf0f815eef07fa8d044f8c",
-            "content": "sha256:3e0136ac2d223e2a37422b565a2104228271445025cae7eaaabf07cb271fab72",
+            "blob": "3f91234661460904091f50cb41164456aa515f04",
+            "content": "sha256:310a67575a14cff92e1bcebd1e8f270cfcfc70b25eb6681a972f6fbad24bfbbb",
             "locator": {
-              "kind": "file"
+              "end": 211,
+              "kind": "line_range",
+              "start": 1
             }
           },
           "kind": "code"
@@ -145,7 +166,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d7a350b97b2ba83910cf0f815eef07fa8d044f8c",
+            "blob": "3f91234661460904091f50cb41164456aa515f04",
             "content": "sha256:3f8073c584feeaddac1f37c933b10989bf48c89890b4cf4a4afc3fbf54da2ef1",
             "locator": {
               "end": 100,
@@ -162,7 +183,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d7a350b97b2ba83910cf0f815eef07fa8d044f8c",
+            "blob": "3f91234661460904091f50cb41164456aa515f04",
             "content": "sha256:657f593e3e436906b417024f5f642d403e08fe9d49a20fb85617cad97694e5d8",
             "locator": {
               "kind": "symbol",
@@ -178,11 +199,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d7a350b97b2ba83910cf0f815eef07fa8d044f8c",
-            "content": "sha256:58f8bc4c49b594830e76029269db88b1de6418b833cffa7f81f1b88752f20afc",
+            "blob": "3f91234661460904091f50cb41164456aa515f04",
+            "content": "sha256:8ec9fa9c67ef661e617e2a1fd5d91e1f659cb1d41ff8208cce462f290df64f42",
             "locator": {
-              "kind": "symbol",
-              "name": "register_role_agent_tools"
+              "end": 208,
+              "kind": "line_range",
+              "start": 84
             }
           },
           "kind": "code"
@@ -190,14 +212,16 @@
       ]
     },
     "9": {
-      "note": "Role calls build their existing strict call models, then resolve the existing payload before offloading it. Registration imports no role payload implementation.\n\nAnchor: `register_role_agent_tools`",
+      "note": "Role calls build their existing strict call models, then resolve the existing payload before offloading it. Registration imports no role payload implementation.",
       "targets": [
         {
           "anchor": {
-            "blob": "d7a350b97b2ba83910cf0f815eef07fa8d044f8c",
-            "content": "sha256:3e0136ac2d223e2a37422b565a2104228271445025cae7eaaabf07cb271fab72",
+            "blob": "3f91234661460904091f50cb41164456aa515f04",
+            "content": "sha256:310a67575a14cff92e1bcebd1e8f270cfcfc70b25eb6681a972f6fbad24bfbbb",
             "locator": {
-              "kind": "file"
+              "end": 211,
+              "kind": "line_range",
+              "start": 1
             }
           },
           "kind": "code"

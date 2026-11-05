@@ -51,14 +51,18 @@ No relevant documentation found after checking live sources.
 ### Repo-Internal References
 
 
-- The admitted compile entry point this package exports. [1]
+- The admitted compile entry point this package exports.
 
 - The root-confined source admission this package exports. [2]
 
-- The pure compiler this boundary feeds, which owns every selection rule. [3]
+Past-epoch account (retained wording): - The pure compiler this boundary feeds, which owns every selection rule.
+
+Custody: the preceding sentence is detached from live reference 3; its original target blob(s) were `762c104a0bcdc0375416163993d106dc37c5fb18`. The current clause below is separately bound.
+
+- The pure compile_role_capsule function integrates admitted source selection, operation audiences, verified task context, tools, skills and detail identities into a compiled capsule and its semantic digest.
 
 
-- The sibling model package whose contract this boundary resolves inputs for. [4]
+- The sibling model package whose contract this boundary resolves inputs for.
 
 
 ### Cross-Repo References
@@ -66,3 +70,7 @@ No relevant documentation found after checking live sources.
 No sibling-repository contract consumes this boundary.
 
 No meaningful cross-repo references found.
+
+- The admitted compile entry point this package exports. Anchor: `compile_admitted_capsule` `CapsuleCompilationOutcome` [1]
+- The pure compile_role_capsule function integrates admitted source selection, operation audiences, verified task context, tools, skills and detail identities into a compiled capsule and its semantic digest. [3]
+- The sibling model package whose contract this boundary resolves inputs for. Anchor: `CapsuleBinding` `CapsuleSource` [4]

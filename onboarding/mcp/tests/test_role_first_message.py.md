@@ -15,9 +15,9 @@ added to the may-start rule is exercised without a new case.
 
 ### Logic
 
-`FirstMessageMatrixTests` builds one start per allowed combination and reads the message the launch
+**Historical source account, superseded by the current clause below:** `FirstMessageMatrixTests` builds one start per allowed combination and reads the message the launch
 actually emits. `shared_block()` fills the block at the compiler, as a later source fills it, so the
-shared-block case reads the compiler's outcome rather than a copy written into the message. The world and shared checks live in `role_first_message_support.py`; send-time whole-path negative controls and held-delivery guard cases live in `test_role_first_message_guards.py`.
+shared-block case reads the compiler's outcome rather than a copy written into the message. The world and shared checks live in `role_first_message_support.py`; send-time whole-path negative controls and held-delivery guard cases live in `test_role_first_message_guards.py`. [Historical source custody: `mcp/tests/test_role_first_message.py` blob `cc2abd63701c52fbf53d57df04d23c5db4f4d05d` at code base `59b01fb8f72a38d2d27f9c37b8b9ca2513fd3fa0`; this is no current implementation claim.]
 
 - **Both start paths.** `test_the_shared_block_comes_from_the_compilation_on_both_start_paths` covers a
   task-bound leaf role and a taskless architect.
@@ -42,9 +42,12 @@ second path is caught by the same expectation.
 - The shared block has one producer: the compiler.
 - A restored launch sends what was saved; it does not recompile the message.
 
-## Evidence
+`composition_corpus` supplies real copied corpus and manifest bytes while leaving production admission and compilation intact. Declared every-role bytes reach both task-bound Worker and taskless Architect exactly once; an undeclared shared source emits no shared block. These are source assertions/support behavior, not a fresh invocation, host result or AR acceptance.
 
-- The main matrix derives its allowed start combinations from the code and checks the emitted messages. [1]
+## Evidence
+- The main matrix derives its allowed start combinations from the code and checks the emitted messages. [Past-epoch source caption, detached from live reference 1. Recorded citation custody: mcp/tests/test_role_first_message.py blob cc2abd63701c52fbf53d57df04d23c5db4f4d05d (available); historical event commit not identified. No historical event or intent inferred.]
+
+Current source: FirstMessageMatrixTests derives its start cases from imported role, harness, parent, leaf and taskless tables and checks emitted or held-opening messages for parentless, parented, held-seat, set-start, successor, step-up and restored launches. Separate controls require an admitted shared block exactly once and no heading when the source is undeclared.
 
 
 - Which emitted paths must exist is decided by one predicate in the shared first-message support. [2]
@@ -52,3 +55,7 @@ second path is caught by the same expectation.
 - The guard case checks whole whitespace paths, send snapshots and absence of a required snapshot. [3]
 
 - The shared helper reads emitted whole paths from delimited message text and structured projection values. [4]
+
+- FirstMessageMatrixTests derives its start cases from imported role, harness, parent, leaf and taskless tables and checks emitted or held-opening messages for parentless, parented, held-seat, set-start, successor, step-up and restored launches. Separate controls require an admitted shared block exactly once and no heading when the source is undeclared. [1]
+
+- `composition_corpus` supplies real copied corpus and manifest bytes while leaving production admission and compilation intact. Declared every-role bytes reach both task-bound Worker and taskless Architect exactly once; an undeclared shared source emits no shared block. These are source assertions/support behavior, not a fresh invocation, host result or AR acceptance. [5]

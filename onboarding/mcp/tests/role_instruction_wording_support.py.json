@@ -3,14 +3,16 @@
   "realizes": [],
   "references": {
     "1": {
-      "note": "The forbidden strings and the one matcher are defined here, and the role set is derived from the launcher roles.",
+      "note": "The support module defines the forbidden vocabulary and its case-insensitive forbidden_in matcher. LAUNCHER_ROLES is deduplicated from canonicalized LauncherRole type arguments.",
       "targets": [
         {
           "anchor": {
-            "blob": "aceb964495974f29ca5783af5f87cbb1b9350f8c",
-            "content": "sha256:cbe7f6b007f328b9b7ac80740c5bbdd66e264d6a0bb5cf354fd61aa66f99cf1e",
+            "blob": "ad4f47f50c6f201f318ea14e696c0f6e541793e6",
+            "content": "sha256:bd256409258edf0dd5638a99e5f85d656f5f0f0265f76ceb87b1dc15591c4e71",
             "locator": {
-              "kind": "file"
+              "end": 84,
+              "kind": "line_range",
+              "start": 38
             }
           },
           "kind": "test"
@@ -18,14 +20,57 @@
       ]
     },
     "2": {
-      "note": "The instruction set comes from the lifecycle composition manifest: the router, the role files and their operations.",
+      "note": "instruction_files reads the lifecycle composition manifest and returns its router, launcher-role files and sorted operations whose applies_to_roles intersects the launcher-role set.",
       "targets": [
         {
           "anchor": {
-            "blob": "aceb964495974f29ca5783af5f87cbb1b9350f8c",
-            "content": "sha256:cbe7f6b007f328b9b7ac80740c5bbdd66e264d6a0bb5cf354fd61aa66f99cf1e",
+            "blob": "ad4f47f50c6f201f318ea14e696c0f6e541793e6",
+            "content": "sha256:3b7defca2857b1b639140d01f57a492adfa8a0f0e1a1a267c45fe17757f85f7b",
             "locator": {
-              "kind": "file"
+              "end": 97,
+              "kind": "line_range",
+              "start": 87
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "ad4f47f50c6f201f318ea14e696c0f6e541793e6",
+            "content": "sha256:8c88c135e14a03958cdec0a5d524dd43cf5aea9b8a19c1ab4615a66f9faae863",
+            "locator": {
+              "end": 76,
+              "kind": "line_range",
+              "start": 71
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "`assert_message_handover_delivery` checks the real shared message-handover detail for every non-Bootstrap sender. It distinguishes queued held delivery from full-store busy refusal and checks withdrawal, no polling, receipt scope and the absence of semantic acceptance from a receipt. These are source assertions/support behavior, not a fresh invocation, host result or AR acceptance.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ad4f47f50c6f201f318ea14e696c0f6e541793e6",
+            "content": "sha256:c76a261ea4113a61d4f5e7230ce597cb6f8b15f74cf1cb89327bd0ad1ac598b8",
+            "locator": {
+              "end": 29,
+              "kind": "line_range",
+              "start": 13
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "ad4f47f50c6f201f318ea14e696c0f6e541793e6",
+            "content": "sha256:f214d7454460340e1eace3dbc218367aa5659a80a68e68bb5617bbbf97a56e20",
+            "locator": {
+              "end": 137,
+              "kind": "line_range",
+              "start": 108
             }
           },
           "kind": "test"

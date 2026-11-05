@@ -4,8 +4,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "6782d184c8982f54e6e72e5f11a61aa2c8f88627",
-        "content": "sha256:964401d8dba1135172d27776facd48e9e7d9de5c325c937ada5e7795114b37ff",
+        "blob": "4866d73b380b132fb7b293e23bf44175e4cbf33f",
+        "content": "sha256:14d3e28109cc04c1a36750066b033359105473bf7276e620816572d5d1e909e8",
         "locator": {
           "kind": "symbol",
           "name": "_register_memory_health_tools"
@@ -22,8 +22,8 @@
     },
     {
       "anchor": {
-        "blob": "6782d184c8982f54e6e72e5f11a61aa2c8f88627",
-        "content": "sha256:964401d8dba1135172d27776facd48e9e7d9de5c325c937ada5e7795114b37ff",
+        "blob": "4866d73b380b132fb7b293e23bf44175e4cbf33f",
+        "content": "sha256:14d3e28109cc04c1a36750066b033359105473bf7276e620816572d5d1e909e8",
         "locator": {
           "kind": "symbol",
           "name": "_register_memory_health_tools"
@@ -40,8 +40,8 @@
     },
     {
       "anchor": {
-        "blob": "6782d184c8982f54e6e72e5f11a61aa2c8f88627",
-        "content": "sha256:ff0cdc1a8f23a1c42a3947a525e87c0cf6d9c930f06f79b04a623276529ac759",
+        "blob": "4866d73b380b132fb7b293e23bf44175e4cbf33f",
+        "content": "sha256:99b4e1c479b74f286fc5a135f5d047e6dc51d2c0bce04e0df11e22034f93f0ac",
         "locator": {
           "kind": "file"
         }
@@ -62,7 +62,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6782d184c8982f54e6e72e5f11a61aa2c8f88627",
+            "blob": "4866d73b380b132fb7b293e23bf44175e4cbf33f",
             "content": "sha256:dc303c009fee10719834f1b3294579d032ff9b1a31dfe7e8d0fccd3a7e702d4d",
             "locator": {
               "kind": "symbol",
@@ -106,7 +106,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6782d184c8982f54e6e72e5f11a61aa2c8f88627",
+            "blob": "4866d73b380b132fb7b293e23bf44175e4cbf33f",
             "content": "sha256:e680829e47db58265b7a93e8d891f6a09ba122ed9a80bec82f3dcc04a8a1cfad",
             "locator": {
               "end": 93,
@@ -172,7 +172,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6782d184c8982f54e6e72e5f11a61aa2c8f88627",
+            "blob": "4866d73b380b132fb7b293e23bf44175e4cbf33f",
             "content": "sha256:cab05899bedafd53520adfbc53526a3b92c684ac434bf63cceea0f3d82a66b0a",
             "locator": {
               "end": 201,
@@ -202,7 +202,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6782d184c8982f54e6e72e5f11a61aa2c8f88627",
+            "blob": "4866d73b380b132fb7b293e23bf44175e4cbf33f",
             "content": "sha256:f6773d34aa7cd5ce69e5776b325f65d0464896d68cd92d4c204388caf6d77d59",
             "locator": {
               "end": 91,
@@ -214,7 +214,7 @@
         },
         {
           "anchor": {
-            "blob": "6782d184c8982f54e6e72e5f11a61aa2c8f88627",
+            "blob": "4866d73b380b132fb7b293e23bf44175e4cbf33f",
             "content": "sha256:6264a9090f02cc8d816656020f15ce2537faf2ac797e1499009c7119bebc659e",
             "locator": {
               "end": 82,
@@ -231,10 +231,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6782d184c8982f54e6e72e5f11a61aa2c8f88627",
-            "content": "sha256:ff0cdc1a8f23a1c42a3947a525e87c0cf6d9c930f06f79b04a623276529ac759",
+            "blob": "4866d73b380b132fb7b293e23bf44175e4cbf33f",
+            "content": "sha256:99b4e1c479b74f286fc5a135f5d047e6dc51d2c0bce04e0df11e22034f93f0ac",
             "locator": {
-              "kind": "file"
+              "end": 224,
+              "kind": "line_range",
+              "start": 1
             }
           },
           "kind": "code"
@@ -274,11 +276,28 @@
       "targets": [
         {
           "anchor": {
-            "blob": "6782d184c8982f54e6e72e5f11a61aa2c8f88627",
+            "blob": "4866d73b380b132fb7b293e23bf44175e4cbf33f",
             "content": "sha256:8c8970683147f31767f3c402cb5be5e66ff82056236a64dead9f16f9747fc52e",
             "locator": {
               "kind": "symbol",
               "name": "citation_fix"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "MQC docstring names knowledgeWorklist and knowledgeGate full-log fields and retains coherence boundary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4866d73b380b132fb7b293e23bf44175e4cbf33f",
+            "content": "sha256:8ac100494368c3d2ba1b2423415b8f18f11e9292d7761156e3ab77975ea90634",
+            "locator": {
+              "end": 52,
+              "kind": "line_range",
+              "start": 36
             }
           },
           "kind": "code"

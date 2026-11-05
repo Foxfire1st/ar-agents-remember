@@ -4,12 +4,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "2f3ce46a32a38d86f474252bb23d8081e91f0a6e",
+        "blob": "353b98ba0c8d4e0b72caee82f9f0a988a1f82768",
         "content": "sha256:f0e5f1ddda35f33ad0d76ff1c2fe6870a84e9a567b5aca9d8c3003a70d1f4843",
         "locator": {
-          "end": 233,
+          "end": 238,
           "kind": "line_range",
-          "start": 233
+          "start": 238
         }
       },
       "id": "RLZ-031YY4",
@@ -23,12 +23,31 @@
     },
     {
       "anchor": {
-        "blob": "2f3ce46a32a38d86f474252bb23d8081e91f0a6e",
+        "blob": "353b98ba0c8d4e0b72caee82f9f0a988a1f82768",
+        "content": "sha256:d08cca587a6331dbcdb555c3853d7dd6d663b410ca87a844a988b68cc9994478",
+        "locator": {
+          "end": 741,
+          "kind": "line_range",
+          "start": 737
+        }
+      },
+      "id": "RLZ-0XJWN1",
+      "invariant": "INV-945YZ4",
+      "origin": {
+        "handoffEntry": "L62-CUR-6db-attach-INV-945YZ4",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "The writer-detail reference is reached before a CLI deciding run or write, while record formats remain at before-ingest Curation2.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "353b98ba0c8d4e0b72caee82f9f0a988a1f82768",
         "content": "sha256:2fa7b5ec23e247702fc2471a649873e5be15b3bf2f7940224fab1131e612af55",
         "locator": {
-          "end": 338,
+          "end": 346,
           "kind": "line_range",
-          "start": 338
+          "start": 346
         }
       },
       "id": "RLZ-5G6AGC",
@@ -42,12 +61,88 @@
     },
     {
       "anchor": {
-        "blob": "2f3ce46a32a38d86f474252bb23d8081e91f0a6e",
+        "blob": "353b98ba0c8d4e0b72caee82f9f0a988a1f82768",
+        "content": "sha256:c6ea9cbe97eb5ab70462d863ea0467dd31d6097d709efe67b30eecd56d902d11",
+        "locator": {
+          "end": 703,
+          "kind": "line_range",
+          "start": 700
+        }
+      },
+      "id": "RLZ-60QKQ2",
+      "invariant": "INV-1YSMF5",
+      "origin": {
+        "handoffEntry": "L62-CUR-6db-attach-L62-CUR-6414-history-selection",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "The card-format/history detail is directly read at Curation2 Before ingest, before choosing authored dispositions.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "353b98ba0c8d4e0b72caee82f9f0a988a1f82768",
+        "content": "sha256:6313fb89aa71dd2ba7604406484b1bb72265db04426a11068030c8930c5e8e4d",
+        "locator": {
+          "end": 481,
+          "kind": "line_range",
+          "start": 480
+        }
+      },
+      "id": "RLZ-66Y6Y1",
+      "invariant": "INV-VTGJJK",
+      "origin": {
+        "handoffEntry": "L62-CUR-6db-attach-INV-VTGJJK",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "Each role core-source admission list gains the separately declared every-role digest; compiler selection still marks that digest noncomposed.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "353b98ba0c8d4e0b72caee82f9f0a988a1f82768",
+        "content": "sha256:6313fb89aa71dd2ba7604406484b1bb72265db04426a11068030c8930c5e8e4d",
+        "locator": {
+          "end": 353,
+          "kind": "line_range",
+          "start": 352
+        }
+      },
+      "id": "RLZ-6BJQC6",
+      "invariant": "INV-VTGJJK",
+      "origin": {
+        "handoffEntry": "L62-CUR-6db-attach-INV-VTGJJK",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "Each role core-source admission list gains the separately declared every-role digest; compiler selection still marks that digest noncomposed.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "353b98ba0c8d4e0b72caee82f9f0a988a1f82768",
+        "content": "sha256:6313fb89aa71dd2ba7604406484b1bb72265db04426a11068030c8930c5e8e4d",
+        "locator": {
+          "end": 399,
+          "kind": "line_range",
+          "start": 398
+        }
+      },
+      "id": "RLZ-6HJ4DW",
+      "invariant": "INV-VTGJJK",
+      "origin": {
+        "handoffEntry": "L62-CUR-6db-attach-INV-VTGJJK",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "Each role core-source admission list gains the separately declared every-role digest; compiler selection still marks that digest noncomposed.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "353b98ba0c8d4e0b72caee82f9f0a988a1f82768",
         "content": "sha256:f63b06707e1c361d62ec6467bfe4b95d9f69925c0094e10b6ede103867b43d45",
         "locator": {
-          "end": 506,
+          "end": 518,
           "kind": "line_range",
-          "start": 490
+          "start": 502
         }
       },
       "id": "RLZ-6W76SN",
@@ -61,7 +156,7 @@
     },
     {
       "anchor": {
-        "blob": "2f3ce46a32a38d86f474252bb23d8081e91f0a6e",
+        "blob": "353b98ba0c8d4e0b72caee82f9f0a988a1f82768",
         "content": "sha256:d4a12d5c146197e4304e0b7d638b884b09f48878c611eddf27b3afd7a3702606",
         "locator": {
           "end": 27,
@@ -80,7 +175,64 @@
     },
     {
       "anchor": {
-        "blob": "2f3ce46a32a38d86f474252bb23d8081e91f0a6e",
+        "blob": "353b98ba0c8d4e0b72caee82f9f0a988a1f82768",
+        "content": "sha256:6313fb89aa71dd2ba7604406484b1bb72265db04426a11068030c8930c5e8e4d",
+        "locator": {
+          "end": 282,
+          "kind": "line_range",
+          "start": 281
+        }
+      },
+      "id": "RLZ-ACQEP9",
+      "invariant": "INV-VTGJJK",
+      "origin": {
+        "handoffEntry": "L62-CUR-6db-attach-INV-VTGJJK",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "Each role core-source admission list gains the separately declared every-role digest; compiler selection still marks that digest noncomposed.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "353b98ba0c8d4e0b72caee82f9f0a988a1f82768",
+        "content": "sha256:6313fb89aa71dd2ba7604406484b1bb72265db04426a11068030c8930c5e8e4d",
+        "locator": {
+          "end": 309,
+          "kind": "line_range",
+          "start": 308
+        }
+      },
+      "id": "RLZ-AZBC81",
+      "invariant": "INV-VTGJJK",
+      "origin": {
+        "handoffEntry": "L62-CUR-6db-attach-INV-VTGJJK",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "Each role core-source admission list gains the separately declared every-role digest; compiler selection still marks that digest noncomposed.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "353b98ba0c8d4e0b72caee82f9f0a988a1f82768",
+        "content": "sha256:6313fb89aa71dd2ba7604406484b1bb72265db04426a11068030c8930c5e8e4d",
+        "locator": {
+          "end": 245,
+          "kind": "line_range",
+          "start": 244
+        }
+      },
+      "id": "RLZ-BKB9YC",
+      "invariant": "INV-VTGJJK",
+      "origin": {
+        "handoffEntry": "L62-CUR-6db-attach-INV-VTGJJK",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "Each role core-source admission list gains the separately declared every-role digest; compiler selection still marks that digest noncomposed.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "353b98ba0c8d4e0b72caee82f9f0a988a1f82768",
         "content": "sha256:e91a9e18b058506863abb8bfafb7e45d6c8b6f8f7023b93dcdce5c0f8413ddfc",
         "locator": {
           "end": 36,
@@ -99,12 +251,50 @@
     },
     {
       "anchor": {
-        "blob": "2f3ce46a32a38d86f474252bb23d8081e91f0a6e",
+        "blob": "353b98ba0c8d4e0b72caee82f9f0a988a1f82768",
+        "content": "sha256:6313fb89aa71dd2ba7604406484b1bb72265db04426a11068030c8930c5e8e4d",
+        "locator": {
+          "end": 443,
+          "kind": "line_range",
+          "start": 442
+        }
+      },
+      "id": "RLZ-BNA84H",
+      "invariant": "INV-VTGJJK",
+      "origin": {
+        "handoffEntry": "L62-CUR-6db-attach-INV-VTGJJK",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "Each role core-source admission list gains the separately declared every-role digest; compiler selection still marks that digest noncomposed.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "353b98ba0c8d4e0b72caee82f9f0a988a1f82768",
+        "content": "sha256:6313fb89aa71dd2ba7604406484b1bb72265db04426a11068030c8930c5e8e4d",
+        "locator": {
+          "end": 522,
+          "kind": "line_range",
+          "start": 521
+        }
+      },
+      "id": "RLZ-CTTS3C",
+      "invariant": "INV-VTGJJK",
+      "origin": {
+        "handoffEntry": "L62-CUR-6db-attach-INV-VTGJJK",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "Each role core-source admission list gains the separately declared every-role digest; compiler selection still marks that digest noncomposed.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "353b98ba0c8d4e0b72caee82f9f0a988a1f82768",
         "content": "sha256:049e07153602a51202aa82c5e8a72bf741f8b30e6dac36373c2c308edc359ff2",
         "locator": {
-          "end": 187,
+          "end": 191,
           "kind": "line_range",
-          "start": 187
+          "start": 191
         }
       },
       "id": "RLZ-HGSMDT",
@@ -118,12 +308,50 @@
     },
     {
       "anchor": {
-        "blob": "2f3ce46a32a38d86f474252bb23d8081e91f0a6e",
-        "content": "sha256:f184b155d9ef15df3ea506df8864ca5d9f62fb2f256c485415c047e030de9d72",
+        "blob": "353b98ba0c8d4e0b72caee82f9f0a988a1f82768",
+        "content": "sha256:6313fb89aa71dd2ba7604406484b1bb72265db04426a11068030c8930c5e8e4d",
         "locator": {
-          "end": 731,
+          "end": 550,
           "kind": "line_range",
-          "start": 723
+          "start": 549
+        }
+      },
+      "id": "RLZ-J3KCTG",
+      "invariant": "INV-VTGJJK",
+      "origin": {
+        "handoffEntry": "L62-CUR-6db-attach-INV-VTGJJK",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "Each role core-source admission list gains the separately declared every-role digest; compiler selection still marks that digest noncomposed.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "353b98ba0c8d4e0b72caee82f9f0a988a1f82768",
+        "content": "sha256:6313fb89aa71dd2ba7604406484b1bb72265db04426a11068030c8930c5e8e4d",
+        "locator": {
+          "end": 198,
+          "kind": "line_range",
+          "start": 197
+        }
+      },
+      "id": "RLZ-K2CFP2",
+      "invariant": "INV-VTGJJK",
+      "origin": {
+        "handoffEntry": "L62-CUR-6db-attach-INV-VTGJJK",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "Each role core-source admission list gains the separately declared every-role digest; compiler selection still marks that digest noncomposed.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "353b98ba0c8d4e0b72caee82f9f0a988a1f82768",
+        "content": "sha256:2ccdc434062e1472c7905da70132e1d4f1558b8f88a1a8670201be31d6e9c38a",
+        "locator": {
+          "end": 952,
+          "kind": "line_range",
+          "start": 945
         }
       },
       "id": "RLZ-NNHVHW",
@@ -132,12 +360,50 @@
         "handoffEntry": "MIK-PNT-DOCTRINE-CAPSULE-SELECTION@draft1",
         "leaf": "260928-MIK-L90"
       },
-      "rationale": "The declared composition order and notes preserve role then operation and identify the retained core map as inert metadata rather than injected instruction prose.",
+      "rationale": "The manifest declares role then operation instruction composition and keeps task/workspace data and the shared-role digest beside those blocks, rather than injecting shared core instruction blocks.",
       "role": "primary-authority"
     },
     {
       "anchor": {
-        "blob": "2f3ce46a32a38d86f474252bb23d8081e91f0a6e",
+        "blob": "353b98ba0c8d4e0b72caee82f9f0a988a1f82768",
+        "content": "sha256:3d58fd093bb30d97ed8675d5a8af781ee54d388e458626e9efb141d2c1b30db7",
+        "locator": {
+          "end": 166,
+          "kind": "line_range",
+          "start": 164
+        }
+      },
+      "id": "RLZ-T2X2V2",
+      "invariant": "INV-VTGJJK",
+      "origin": {
+        "handoffEntry": "L62-CUR-6db-attach-INV-VTGJJK",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "The manifest declares core/every-role as a shared digest delivered beside the first-message capsule and explicitly not composed into its blocks.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "353b98ba0c8d4e0b72caee82f9f0a988a1f82768",
+        "content": "sha256:6979c46f5d61ab7656877e8371b2ef88b13c8f8f2d3ff346cf19e7d362a3af80",
+        "locator": {
+          "end": 730,
+          "kind": "line_range",
+          "start": 715
+        }
+      },
+      "id": "RLZ-TTD2BQ",
+      "invariant": "INV-945YZ4",
+      "origin": {
+        "handoffEntry": "L62-CUR-6db-attach-INV-945YZ4",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "The refused-write detail declares the same-tool/input-class correct-write-refusal trigger and eligible record-writing roles, including Curator.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "353b98ba0c8d4e0b72caee82f9f0a988a1f82768",
         "content": "sha256:28505dbb3f7e2ed85116de1c35f58e92c921b4259d27ba9e27b961993fc25988",
         "locator": {
           "end": 58,
@@ -161,7 +427,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2f3ce46a32a38d86f474252bb23d8081e91f0a6e",
+            "blob": "353b98ba0c8d4e0b72caee82f9f0a988a1f82768",
             "content": "sha256:82d27b986ff7e90eeecd010dc4e925c28c0cdf759215e447ac6aacfa82d63508",
             "locator": {
               "end": 5,
@@ -267,7 +533,7 @@
         },
         {
           "anchor": {
-            "blob": "d5d78bb15fa14ec0cbd3a7ef0be4ee21715faf09",
+            "blob": "e2aa34ce785d08c8720a6440e2f97c04f950e1ce",
             "content": "sha256:11d5e725544b800c18eb49ec2165f047ec61603bda9a2b143868f6fa4386622d",
             "locator": {
               "kind": "symbol",
@@ -280,14 +546,14 @@
       ]
     },
     "14": {
-      "note": "The manifest retains canonical Investigator with its seven requested reading tools, and separately names Bootstrap; the current public LauncherRole roster has eight canonical roles plus the system-specialist alias, not a second Investigator role.",
+      "note": "The manifest retains canonical Investigator with seven declared tool IDs and separately names Bootstrap; the current public LauncherRole roster has eight canonical roles plus the system-specialist alias, not a second Investigator role.",
       "targets": [
         {
           "anchor": {
-            "blob": "2f3ce46a32a38d86f474252bb23d8081e91f0a6e",
-            "content": "sha256:1d3f73456b87709f764ec74c6d9229efbcfb30083bbc80ed2c5aa0badbccd281",
+            "blob": "353b98ba0c8d4e0b72caee82f9f0a988a1f82768",
+            "content": "sha256:919f88da12c140903bcd7009bb58d59b332c0d62c0917394cb428ac1d251ed7d",
             "locator": {
-              "end": 545,
+              "end": 568,
               "kind": "line_range",
               "start": 490
             }
@@ -297,9 +563,9 @@
         {
           "anchor": {
             "blob": "d2551603e8f9ee3fd9a1e650477fd1dacb08f5b9",
-            "content": "sha256:68344a48d2b5e430444f8027b6a24bf1a79f329df337e2b50733de7cf9f2ab41",
+            "content": "sha256:5df61910e7fde4ff07381b1e76c4da0fbfcc7b3cd90000c2cdf8e701d880723f",
             "locator": {
-              "end": 37,
+              "end": 68,
               "kind": "line_range",
               "start": 23
             },
@@ -314,7 +580,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2f3ce46a32a38d86f474252bb23d8081e91f0a6e",
+            "blob": "353b98ba0c8d4e0b72caee82f9f0a988a1f82768",
             "content": "sha256:f26dbe6f0c682f33740a4cc4008ccaec3f68f15f6d78caf8daaff58ead18b52b",
             "locator": {
               "end": 5,
@@ -331,7 +597,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2f3ce46a32a38d86f474252bb23d8081e91f0a6e",
+            "blob": "353b98ba0c8d4e0b72caee82f9f0a988a1f82768",
             "content": "sha256:d3a0b45666d20afadd425be7e96531a01ae50af0551a336b29dcaa74af20e8bd",
             "locator": {
               "end": 137,
@@ -348,12 +614,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2f3ce46a32a38d86f474252bb23d8081e91f0a6e",
-            "content": "sha256:b4f4b1388b25942a3b518cda0c237a510824c7b25c8ea0c604cd96d4bf3ff6bc",
+            "blob": "353b98ba0c8d4e0b72caee82f9f0a988a1f82768",
+            "content": "sha256:8f35b13b6c7431c837b18fa5370e92ecbae4597b8f6cbc76e7ce3ee569adecbe",
             "locator": {
-              "end": 545,
+              "end": 568,
               "kind": "line_range",
-              "start": 165
+              "start": 169
             }
           },
           "kind": "code"
@@ -365,22 +631,22 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2f3ce46a32a38d86f474252bb23d8081e91f0a6e",
-            "content": "sha256:3ad29d20729107d839b87baf6ea197dea9d7f8aafbfb19794c280be0ad0d03fe",
+            "blob": "353b98ba0c8d4e0b72caee82f9f0a988a1f82768",
+            "content": "sha256:a402658824b6eaf8198cc18ff8f8c0f9bf795b65dc978297b51c608f9370f39b",
             "locator": {
-              "end": 209,
+              "end": 237,
               "kind": "line_range",
-              "start": 166
+              "start": 169
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "2f3ce46a32a38d86f474252bb23d8081e91f0a6e",
-            "content": "sha256:1d3f73456b87709f764ec74c6d9229efbcfb30083bbc80ed2c5aa0badbccd281",
+            "blob": "353b98ba0c8d4e0b72caee82f9f0a988a1f82768",
+            "content": "sha256:919f88da12c140903bcd7009bb58d59b332c0d62c0917394cb428ac1d251ed7d",
             "locator": {
-              "end": 545,
+              "end": 568,
               "kind": "line_range",
               "start": 490
             }
@@ -394,12 +660,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2f3ce46a32a38d86f474252bb23d8081e91f0a6e",
+            "blob": "353b98ba0c8d4e0b72caee82f9f0a988a1f82768",
             "content": "sha256:cdfa580d1029033c5053c051080c28ee152916dcc36a9bf92ac8812a31142890",
             "locator": {
-              "end": 481,
+              "end": 493,
               "kind": "line_range",
-              "start": 476
+              "start": 488
             }
           },
           "kind": "code"
@@ -411,12 +677,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2f3ce46a32a38d86f474252bb23d8081e91f0a6e",
+            "blob": "353b98ba0c8d4e0b72caee82f9f0a988a1f82768",
             "content": "sha256:795d480a4648c3d4f318d5cc448e237de7f0469f3066deac78f542096901fb89",
             "locator": {
-              "end": 569,
+              "end": 583,
               "kind": "line_range",
-              "start": 554
+              "start": 568
             }
           },
           "kind": "code"
@@ -424,16 +690,16 @@
       ]
     },
     "22": {
-      "note": "The reference-only trees that never enter a capsule, the composition order, and the notes that state what the file is not.",
+      "note": "The manifest records reference material and declared named-step details with injected:false, composes role then operation, and keeps shared core blocks out of that stream. The shared digest travels beside the capsule in its first message.",
       "targets": [
         {
           "anchor": {
-            "blob": "2f3ce46a32a38d86f474252bb23d8081e91f0a6e",
-            "content": "sha256:978a2a2bab174d92ac5b50a79c9e3c88d6c60d6050ab2238dbe89f2ee3c85627",
+            "blob": "353b98ba0c8d4e0b72caee82f9f0a988a1f82768",
+            "content": "sha256:2e43c537bf6dfd4a9503598fa42eac0369f8e27dae5e17f79536b7279d1913b7",
             "locator": {
-              "end": 734,
+              "end": 954,
               "kind": "line_range",
-              "start": 570
+              "start": 584
             }
           },
           "kind": "code"
@@ -514,10 +780,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2f3ce46a32a38d86f474252bb23d8081e91f0a6e",
-            "content": "sha256:460a1992fc70ee756123ed031434d224008a5a3d30aae8a322b993dcdd221308",
+            "blob": "353b98ba0c8d4e0b72caee82f9f0a988a1f82768",
+            "content": "sha256:ddd3fee28376e08816029e90b0e40c7d480d3e566235c051a5d470d0a379bd48",
             "locator": {
-              "end": 734,
+              "end": 956,
               "kind": "line_range",
               "start": 1
             }
@@ -531,7 +797,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2f3ce46a32a38d86f474252bb23d8081e91f0a6e",
+            "blob": "353b98ba0c8d4e0b72caee82f9f0a988a1f82768",
             "content": "sha256:d3a0b45666d20afadd425be7e96531a01ae50af0551a336b29dcaa74af20e8bd",
             "locator": {
               "end": 137,
@@ -544,16 +810,28 @@
       ]
     },
     "29": {
-      "note": "Adds audience selection to all nine operations and marks fifteen of the twenty-one reference entries `step_detail`.",
+      "note": "All nine operation entries declare audience selection. The current references registry contains 34 entries, 28 marked step_detail; the shared digest is declared separately in core metadata. These are parsed registry declarations, not a compiled capsule or execution result.",
       "targets": [
         {
           "anchor": {
-            "blob": "2f3ce46a32a38d86f474252bb23d8081e91f0a6e",
-            "content": "sha256:4f6073f7439b39c5b2793297eaed9673f96d68fd89b19c352bfedc89f77be709",
+            "blob": "353b98ba0c8d4e0b72caee82f9f0a988a1f82768",
+            "content": "sha256:d3a0b45666d20afadd425be7e96531a01ae50af0551a336b29dcaa74af20e8bd",
             "locator": {
-              "end": 685,
+              "end": 137,
               "kind": "line_range",
-              "start": 568
+              "start": 38
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "353b98ba0c8d4e0b72caee82f9f0a988a1f82768",
+            "content": "sha256:2e43c537bf6dfd4a9503598fa42eac0369f8e27dae5e17f79536b7279d1913b7",
+            "locator": {
+              "end": 954,
+              "kind": "line_range",
+              "start": 584
             }
           },
           "kind": "code"
@@ -565,7 +843,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2f3ce46a32a38d86f474252bb23d8081e91f0a6e",
+            "blob": "353b98ba0c8d4e0b72caee82f9f0a988a1f82768",
             "content": "sha256:d3a0b45666d20afadd425be7e96531a01ae50af0551a336b29dcaa74af20e8bd",
             "locator": {
               "end": 137,
@@ -578,16 +856,28 @@
       ]
     },
     "30": {
-      "note": "Adds audience selection for all nine operations and fifteen reference entries, fourteen marked step_detail. Routing vocabulary, applicability, role order and role/operation composition order are unchanged.\n\nAnchor: Current source; preserved L88 property 30",
+      "note": "The current manifest retains audience selection for all nine operations and records 34 reference entries, 28 marked step_detail. Earlier fifteen-entry/fourteen-detail counts describe their own source epoch. The current role/operation order and the separately delivered shared digest are explicit routing declarations.",
       "targets": [
         {
           "anchor": {
-            "blob": "2f3ce46a32a38d86f474252bb23d8081e91f0a6e",
-            "content": "sha256:db9d2c12b4d3b2ac25978216edf20dccb0c908ba9b77eb385f9f4f3dac28a037",
+            "blob": "353b98ba0c8d4e0b72caee82f9f0a988a1f82768",
+            "content": "sha256:d3a0b45666d20afadd425be7e96531a01ae50af0551a336b29dcaa74af20e8bd",
             "locator": {
-              "end": 732,
+              "end": 137,
               "kind": "line_range",
-              "start": 696
+              "start": 38
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "353b98ba0c8d4e0b72caee82f9f0a988a1f82768",
+            "content": "sha256:2e43c537bf6dfd4a9503598fa42eac0369f8e27dae5e17f79536b7279d1913b7",
+            "locator": {
+              "end": 954,
+              "kind": "line_range",
+              "start": 584
             }
           },
           "kind": "code"
@@ -599,12 +889,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2f3ce46a32a38d86f474252bb23d8081e91f0a6e",
+            "blob": "353b98ba0c8d4e0b72caee82f9f0a988a1f82768",
             "content": "sha256:fbd81613cb8dbf4cb8a976f96f6bc16cdb22f230436dca7179d4ac1855a9a7f8",
             "locator": {
-              "end": 425,
+              "end": 435,
               "kind": "line_range",
-              "start": 405
+              "start": 415
             }
           },
           "kind": "code"
@@ -616,7 +906,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2f3ce46a32a38d86f474252bb23d8081e91f0a6e",
+            "blob": "353b98ba0c8d4e0b72caee82f9f0a988a1f82768",
             "content": "sha256:1e362faf730d7ac27bb50ff9739e525d0f20c4fc3b433e535915c4d5dae75ef8",
             "locator": {
               "end": 37,
@@ -629,16 +919,16 @@
       ]
     },
     "33": {
-      "note": "The current registry has fifteen non-injected step-detail entries, including the added Bootstrap failure-state detail; visual-explainer guidance is not a step detail.\n\nAnchor: current definitions",
+      "note": "The current registry contains 28 non-injected step-detail entries, including Curator correct-write recovery; visual-explainer guidance remains outside step_detail. Named readers and steps are declarations, not proof that a particular role read a file.",
       "targets": [
         {
           "anchor": {
-            "blob": "2f3ce46a32a38d86f474252bb23d8081e91f0a6e",
-            "content": "sha256:47944ec3f2d7d4a64700be24ad89f3d99d28cb8714d30f51a53f0cfff8a5c55b",
+            "blob": "353b98ba0c8d4e0b72caee82f9f0a988a1f82768",
+            "content": "sha256:09a20d2cb606b2349d1e5e14d39674b5c63aeb1a1390d9c05374f2f561730455",
             "locator": {
-              "end": 695,
+              "end": 944,
               "kind": "line_range",
-              "start": 570
+              "start": 584
             }
           },
           "kind": "code"
@@ -646,17 +936,30 @@
       ]
     },
     "4": {
-      "note": "Retained core-source map names task worktree records and the landing contract, not session adoption.\n\nAnchor: lines 130-155",
+      "note": "Retained core-source map names task worktree records and the landing contract, not session adoption.",
       "targets": [
         {
           "anchor": {
-            "blob": "2f3ce46a32a38d86f474252bb23d8081e91f0a6e",
-            "content": "sha256:88ed6728edc7b582a001a249d7c519d96f0598ad8a0bb43ded034bc2fc812e80",
+            "blob": "353b98ba0c8d4e0b72caee82f9f0a988a1f82768",
+            "content": "sha256:063a10cd87d69f5f2742917d69866553ec6b093465f68ca47d6651b7aebc8e1f",
             "locator": {
-              "end": 164,
+              "end": 167,
               "kind": "line_range",
               "start": 139
             }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "401a6023b8ba2ea2c9c89487baed0bd40dc87e90",
+            "content": "sha256:f3e6bb44745cf4ce2d26390bfc5313007cb8af8d64d5bb47736d9c5c8a0c4d18",
+            "locator": {
+              "end": 16,
+              "kind": "line_range",
+              "start": 3
+            },
+            "path": "skills/l-01-agent-lifecycles/core/lifecycle-frame.md"
           },
           "kind": "code"
         }
@@ -667,12 +970,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2f3ce46a32a38d86f474252bb23d8081e91f0a6e",
-            "content": "sha256:b4f4b1388b25942a3b518cda0c237a510824c7b25c8ea0c604cd96d4bf3ff6bc",
+            "blob": "353b98ba0c8d4e0b72caee82f9f0a988a1f82768",
+            "content": "sha256:8f35b13b6c7431c837b18fa5370e92ecbae4597b8f6cbc76e7ce3ee569adecbe",
             "locator": {
-              "end": 545,
+              "end": 568,
               "kind": "line_range",
-              "start": 165
+              "start": 169
             }
           },
           "kind": "code"
@@ -684,22 +987,22 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2f3ce46a32a38d86f474252bb23d8081e91f0a6e",
-            "content": "sha256:3ad29d20729107d839b87baf6ea197dea9d7f8aafbfb19794c280be0ad0d03fe",
+            "blob": "353b98ba0c8d4e0b72caee82f9f0a988a1f82768",
+            "content": "sha256:a402658824b6eaf8198cc18ff8f8c0f9bf795b65dc978297b51c608f9370f39b",
             "locator": {
-              "end": 209,
+              "end": 237,
               "kind": "line_range",
-              "start": 166
+              "start": 169
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "2f3ce46a32a38d86f474252bb23d8081e91f0a6e",
-            "content": "sha256:1d3f73456b87709f764ec74c6d9229efbcfb30083bbc80ed2c5aa0badbccd281",
+            "blob": "353b98ba0c8d4e0b72caee82f9f0a988a1f82768",
+            "content": "sha256:919f88da12c140903bcd7009bb58d59b332c0d62c0917394cb428ac1d251ed7d",
             "locator": {
-              "end": 545,
+              "end": 568,
               "kind": "line_range",
               "start": 490
             }
@@ -713,48 +1016,48 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2f3ce46a32a38d86f474252bb23d8081e91f0a6e",
+            "blob": "353b98ba0c8d4e0b72caee82f9f0a988a1f82768",
             "content": "sha256:58e059b7c8b5f73b806483acc5531824790614e851b70da7ba9a4d918c564e8b",
             "locator": {
-              "end": 256,
+              "end": 262,
               "kind": "line_range",
-              "start": 249
+              "start": 255
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "2f3ce46a32a38d86f474252bb23d8081e91f0a6e",
+            "blob": "353b98ba0c8d4e0b72caee82f9f0a988a1f82768",
             "content": "sha256:4e4f3530c7b7ca1f69da355c08aa89c131d23dd288ff0be6cd146746260a1992",
             "locator": {
-              "end": 400,
+              "end": 410,
               "kind": "line_range",
-              "start": 396
+              "start": 406
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "2f3ce46a32a38d86f474252bb23d8081e91f0a6e",
+            "blob": "353b98ba0c8d4e0b72caee82f9f0a988a1f82768",
             "content": "sha256:73ddba3c61588b6ae8054b74a1bf52c5bac932b1cd552ad7f74fd5626a1630e5",
             "locator": {
-              "end": 442,
+              "end": 453,
               "kind": "line_range",
-              "start": 439
+              "start": 450
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "2f3ce46a32a38d86f474252bb23d8081e91f0a6e",
+            "blob": "353b98ba0c8d4e0b72caee82f9f0a988a1f82768",
             "content": "sha256:cdfa580d1029033c5053c051080c28ee152916dcc36a9bf92ac8812a31142890",
             "locator": {
-              "end": 481,
+              "end": 493,
               "kind": "line_range",
-              "start": 476
+              "start": 488
             }
           },
           "kind": "code"
@@ -766,12 +1069,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2f3ce46a32a38d86f474252bb23d8081e91f0a6e",
+            "blob": "353b98ba0c8d4e0b72caee82f9f0a988a1f82768",
             "content": "sha256:e72fa1b6e7eccd141667414db5d17352bd8d2dad7a7f1bf5351e2a0bb63c697e",
             "locator": {
-              "end": 568,
+              "end": 582,
               "kind": "line_range",
-              "start": 554
+              "start": 568
             }
           },
           "kind": "code"
@@ -779,16 +1082,16 @@
       ]
     },
     "9": {
-      "note": "The reference-only trees that never enter a capsule, the composition order, and the notes that state what the file is not.",
+      "note": "The manifest records reference material and declared named-step details with injected:false, composes role then operation, and keeps shared core blocks out of that stream. The shared digest travels beside the capsule in its first message.",
       "targets": [
         {
           "anchor": {
-            "blob": "2f3ce46a32a38d86f474252bb23d8081e91f0a6e",
-            "content": "sha256:978a2a2bab174d92ac5b50a79c9e3c88d6c60d6050ab2238dbe89f2ee3c85627",
+            "blob": "353b98ba0c8d4e0b72caee82f9f0a988a1f82768",
+            "content": "sha256:2e43c537bf6dfd4a9503598fa42eac0369f8e27dae5e17f79536b7279d1913b7",
             "locator": {
-              "end": 734,
+              "end": 954,
               "kind": "line_range",
-              "start": 570
+              "start": 584
             }
           },
           "kind": "code"

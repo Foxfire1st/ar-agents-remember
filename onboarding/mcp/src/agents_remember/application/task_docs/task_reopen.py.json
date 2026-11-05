@@ -52,38 +52,38 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f174a79f72375a38aa57f50907312424f3fc2c3c",
+            "blob": "d0b8e6fa2c415dec4821469774f9dc8f0bcccb63",
             "content": "sha256:ec31505c30bb916d352c10fd5caf27ff799adeab4f6140ec198e1b366df14b89",
-            "locator": {
-              "end": 120,
-              "kind": "line_range",
-              "start": 116
-            },
-            "path": "mcp/src/agents_remember/application/task_docs/task_doc_tools.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "f174a79f72375a38aa57f50907312424f3fc2c3c",
-            "content": "sha256:5404d8f594b8635610d5cafae8b3ff70ae6d8fccc7b30298283c9b89f2e9a1c6",
-            "locator": {
-              "end": 123,
-              "kind": "line_range",
-              "start": 119
-            },
-            "path": "mcp/src/agents_remember/application/task_docs/task_doc_tools.py"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "f174a79f72375a38aa57f50907312424f3fc2c3c",
-            "content": "sha256:0194f5b4c621e19b9e6ed3a46a6db6434edc57c3cd44a53a50dc44a6739fa4e6",
             "locator": {
               "end": 121,
               "kind": "line_range",
               "start": 117
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_doc_tools.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d0b8e6fa2c415dec4821469774f9dc8f0bcccb63",
+            "content": "sha256:5404d8f594b8635610d5cafae8b3ff70ae6d8fccc7b30298283c9b89f2e9a1c6",
+            "locator": {
+              "end": 124,
+              "kind": "line_range",
+              "start": 120
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_doc_tools.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d0b8e6fa2c415dec4821469774f9dc8f0bcccb63",
+            "content": "sha256:0194f5b4c621e19b9e6ed3a46a6db6434edc57c3cd44a53a50dc44a6739fa4e6",
+            "locator": {
+              "end": 122,
+              "kind": "line_range",
+              "start": 118
             },
             "path": "mcp/src/agents_remember/application/task_docs/task_doc_tools.py"
           },

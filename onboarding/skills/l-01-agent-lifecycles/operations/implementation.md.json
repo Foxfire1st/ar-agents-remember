@@ -3,10 +3,10 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "9ebdee8141a018420e8edba3c96161db8a2e5297",
-        "content": "sha256:7bd690349781880ab353668530859c3965c75536e8586dd6cd793256018a3a81",
+        "blob": "218393b48ed815f8108902ef82778bad06accf66",
+        "content": "sha256:7dce5ca680145c5c000c12584ca843d64e7d2f13777cdc6227076808a23367b4",
         "locator": {
-          "end": 10,
+          "end": 16,
           "kind": "line_range",
           "start": 4
         }
@@ -22,12 +22,12 @@
     },
     {
       "anchor": {
-        "blob": "9ebdee8141a018420e8edba3c96161db8a2e5297",
-        "content": "sha256:2fbab30e287a3c6ed4fb8b02554db542766e1f54b5912dd8468e316b595f957b",
+        "blob": "218393b48ed815f8108902ef82778bad06accf66",
+        "content": "sha256:ec6956a389409d834247ec0fa17f19497905ab6aa3e7ad6f9cf4a5bfcb6995ba",
         "locator": {
-          "end": 22,
+          "end": 32,
           "kind": "line_range",
-          "start": 16
+          "start": 26
         }
       },
       "id": "RLZ-3QTBC5",
@@ -41,8 +41,8 @@
     },
     {
       "anchor": {
-        "blob": "9ebdee8141a018420e8edba3c96161db8a2e5297",
-        "content": "sha256:c069dd1880ca2ab39ca3678233e29d41e38f2ee0dff431d89f25d2045d166760",
+        "blob": "218393b48ed815f8108902ef82778bad06accf66",
+        "content": "sha256:f79d875a5459baea525fba1d9b6e0b924517fc636c5b0041b5a428c810945a38",
         "locator": {
           "kind": "file"
         }
@@ -58,12 +58,12 @@
     },
     {
       "anchor": {
-        "blob": "9ebdee8141a018420e8edba3c96161db8a2e5297",
-        "content": "sha256:2fbab30e287a3c6ed4fb8b02554db542766e1f54b5912dd8468e316b595f957b",
+        "blob": "218393b48ed815f8108902ef82778bad06accf66",
+        "content": "sha256:ec6956a389409d834247ec0fa17f19497905ab6aa3e7ad6f9cf4a5bfcb6995ba",
         "locator": {
-          "end": 22,
+          "end": 32,
           "kind": "line_range",
-          "start": 16
+          "start": 26
         }
       },
       "id": "RLZ-7KXE63",
@@ -77,10 +77,10 @@
     },
     {
       "anchor": {
-        "blob": "9ebdee8141a018420e8edba3c96161db8a2e5297",
-        "content": "sha256:7bd690349781880ab353668530859c3965c75536e8586dd6cd793256018a3a81",
+        "blob": "218393b48ed815f8108902ef82778bad06accf66",
+        "content": "sha256:7dce5ca680145c5c000c12584ca843d64e7d2f13777cdc6227076808a23367b4",
         "locator": {
-          "end": 10,
+          "end": 16,
           "kind": "line_range",
           "start": 4
         }
@@ -91,20 +91,22 @@
         "handoffEntry": "L71-CURRENT242-W-19",
         "leaf": "260928-MIK-L71"
       },
-      "rationale": "The canonical operations/implementation.md carries the applicable own-file first-read/task_doc-only write and report/scratch instructions for its role/operation; it is the source the public generator ships.",
+      "rationale": "Canonical Implementation owns task-bound own-file reads, task_doc-first edits with scoped correct-write recovery, memory as read-only context, truthful report/check evidence and direct freeze delivery; generated copies add no independent authority.",
       "role": "primary-authority"
     }
   ],
   "references": {
     "1": {
-      "note": "The freeze handover goes directly to the Reviewer and carries the appended journal records.",
+      "note": "Worker first tells Manager to start Reviewer at freeze, then hands that Reviewer the exact freeze and journal records directly once the seat exists. After code PASS and Curator start, its exact-freeze producer list goes directly to Curator.",
       "targets": [
         {
           "anchor": {
-            "blob": "9ebdee8141a018420e8edba3c96161db8a2e5297",
-            "content": "sha256:c069dd1880ca2ab39ca3678233e29d41e38f2ee0dff431d89f25d2045d166760",
+            "blob": "218393b48ed815f8108902ef82778bad06accf66",
+            "content": "sha256:f79d875a5459baea525fba1d9b6e0b924517fc636c5b0041b5a428c810945a38",
             "locator": {
-              "kind": "file"
+              "end": 36,
+              "kind": "line_range",
+              "start": 1
             }
           },
           "kind": "code"
@@ -116,10 +118,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9ebdee8141a018420e8edba3c96161db8a2e5297",
-            "content": "sha256:c069dd1880ca2ab39ca3678233e29d41e38f2ee0dff431d89f25d2045d166760",
+            "blob": "218393b48ed815f8108902ef82778bad06accf66",
+            "content": "sha256:f79d875a5459baea525fba1d9b6e0b924517fc636c5b0041b5a428c810945a38",
             "locator": {
-              "kind": "file"
+              "end": 36,
+              "kind": "line_range",
+              "start": 1
             }
           },
           "kind": "code"
@@ -131,10 +135,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9ebdee8141a018420e8edba3c96161db8a2e5297",
-            "content": "sha256:c069dd1880ca2ab39ca3678233e29d41e38f2ee0dff431d89f25d2045d166760",
+            "blob": "218393b48ed815f8108902ef82778bad06accf66",
+            "content": "sha256:f79d875a5459baea525fba1d9b6e0b924517fc636c5b0041b5a428c810945a38",
             "locator": {
-              "kind": "file"
+              "end": 36,
+              "kind": "line_range",
+              "start": 1
             }
           },
           "kind": "code"
@@ -146,10 +152,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9ebdee8141a018420e8edba3c96161db8a2e5297",
-            "content": "sha256:c069dd1880ca2ab39ca3678233e29d41e38f2ee0dff431d89f25d2045d166760",
+            "blob": "218393b48ed815f8108902ef82778bad06accf66",
+            "content": "sha256:f79d875a5459baea525fba1d9b6e0b924517fc636c5b0041b5a428c810945a38",
             "locator": {
-              "kind": "file"
+              "end": 36,
+              "kind": "line_range",
+              "start": 1
             }
           },
           "kind": "code"
@@ -161,10 +169,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9ebdee8141a018420e8edba3c96161db8a2e5297",
-            "content": "sha256:c069dd1880ca2ab39ca3678233e29d41e38f2ee0dff431d89f25d2045d166760",
+            "blob": "218393b48ed815f8108902ef82778bad06accf66",
+            "content": "sha256:f79d875a5459baea525fba1d9b6e0b924517fc636c5b0041b5a428c810945a38",
             "locator": {
-              "kind": "file"
+              "end": 36,
+              "kind": "line_range",
+              "start": 1
             }
           },
           "kind": "code"
@@ -176,12 +186,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9ebdee8141a018420e8edba3c96161db8a2e5297",
-            "content": "sha256:2fbab30e287a3c6ed4fb8b02554db542766e1f54b5912dd8468e316b595f957b",
+            "blob": "218393b48ed815f8108902ef82778bad06accf66",
+            "content": "sha256:151b95656d39d2911a19c33b0f91f59b6f2395cbfd117dc4a7acf76202639b95",
             "locator": {
-              "end": 22,
+              "end": 34,
               "kind": "line_range",
-              "start": 16
+              "start": 8
             }
           },
           "kind": "code"
@@ -193,10 +203,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "9ebdee8141a018420e8edba3c96161db8a2e5297",
-            "content": "sha256:910bce8f88798a87f9479c1e2bafe7074eb4e9e0a8ece93d416e4cb84fc07abe",
+            "blob": "218393b48ed815f8108902ef82778bad06accf66",
+            "content": "sha256:151b95656d39d2911a19c33b0f91f59b6f2395cbfd117dc4a7acf76202639b95",
             "locator": {
-              "end": 10,
+              "end": 34,
               "kind": "line_range",
               "start": 8
             }

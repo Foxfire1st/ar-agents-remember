@@ -6,7 +6,17 @@ The only changed permission seam now answers held, propagates the named child pe
 
 This account controls the named changed seams; contradictory earlier card wording below is retained only as historical evidence. Unchanged role duties and R117 file-only wake/report transport are preserved. Source inspection supplies no new runtime test, CODE verdict, review counter or acceptance.
 
-- The only changed permission seam now answers held, propagates the named child permission upward, and leaves eventual delivery to the product; no prompt is answered and no duplicate message is sent. Sprint/master containment, Manager coordination, ordinary role/task returns and actual-parent-ID developer questions retain their distinct authority. [20]
+- The only changed permission seam now answers held, propagates the named child permission upward, and leaves eventual delivery to the product; no prompt is answered and no duplicate message is sent. Sprint/master containment, Manager coordination, ordinary role/task returns and actual-parent-ID developer questions retain their distinct authority.
+
+Earlier caption detached from live reference 20: its original target declared the source text at `skills/l-01-agent-lifecycles/roles/orchestrator.md` at original blob `2d58c15304831b65be687127ce05ace5c0f87cec`, lines 1–56. The caption above is retained as prose; the numbered clause below describes the current source.
+
+Retained authoring-row wording:
+
+Finding: Orchestrator keeps canonical sprint/master containment, Manager leaf ownership, separately addressed review/publication evidence and actual-parent developer questions. Held child permissions use the coordination notice route; covered correct-write recovery is separate from product guards.
+
+Anchor: `current role or template contract`
+
+Source: skills/l-01-agent-lifecycles/roles/orchestrator.md:8-14; skills/l-01-agent-lifecycles/roles/orchestrator.md:20-32; skills/l-01-agent-lifecycles/roles/orchestrator.md:38-44; skills/l-01-agent-lifecycles/roles/orchestrator.md:68-72
 
 
 ## Message/file transport and return addressing
@@ -164,17 +174,63 @@ write undone because a closeout generation exists and forbids mutating an old qu
 The Orchestrator coordinates concurrent masters through their Managers and may start Investigator under its own sprint for a concern or check belonging to no leaf. Leaf checks stay with their Worker and Reviewer. A refusal preserves actual parent routing or the parentless blocker; no invented Architect or recipient identity replaces it.
 
 
-- The Orchestrator may start Investigator under its own sprint as a child concern and report carrier. [19]
+- The Orchestrator may start Investigator under its own sprint as a child concern and report carrier.
+
+Earlier caption detached from live reference 19: its original target declared the source text at `skills/l-01-agent-lifecycles/roles/orchestrator.md` at original blob `2d58c15304831b65be687127ce05ace5c0f87cec`, whole file. The caption above is retained as prose; the numbered clause below describes the current source.
+
+Retained authoring-row wording:
+
+Finding: Orchestrator may assign an Investigator a concern under its own sprint or sprint/master, never a leaf; the scoped concern is its first message to the returned Investigator ID.
+
+Anchor: `current role or template contract`
+
+Source: skills/l-01-agent-lifecycles/roles/orchestrator.md:20-28
 
 
 
 ## Evidence
 
 
-- The seat coordinates one sprint above Managers and verifies delivery without taking over the loop. [16]
+- The seat coordinates one sprint above Managers and verifies delivery without taking over the loop.
+
+Earlier caption detached from live reference 16: its original target declared the source text at `skills/l-01-agent-lifecycles/roles/orchestrator.md` at original blob `2d58c15304831b65be687127ce05ace5c0f87cec`, whole file. The caption above is retained as prose; the numbered clause below describes the current source.
+
+Retained authoring-row wording:
+
+Finding: Orchestrator coordinates one selected sprint through its Managers, follows started work through canonical facts and verifies delivery without taking over the Manager's leaf diff, repair and evidence loop.
+
+Anchor: `current role or template contract`
+
+Source: skills/l-01-agent-lifecycles/roles/orchestrator.md:8-12; skills/l-01-agent-lifecycles/roles/orchestrator.md:20-30; skills/l-01-agent-lifecycles/roles/orchestrator.md:38-44
 
 
-- The owed result is collected whole in the Result contract. [17]
+- The owed result is collected whole in the Result contract.
+
+Earlier caption detached from live reference 17: its original target declared the source text at `skills/l-01-agent-lifecycles/roles/orchestrator.md` at original blob `2d58c15304831b65be687127ce05ace5c0f87cec`, whole file. The caption above is retained as prose; the numbered clause below describes the current source.
+
+Retained authoring-row wording:
+
+Finding: The Orchestrator Result contract names its rulings and status artifacts, developer-decision and final report-path messages, verified Manager delivery and separately addressed reports, findings, review, curation and publication.
+
+Anchor: `current role or template contract`
+
+Source: skills/l-01-agent-lifecycles/roles/orchestrator.md:46-48
 
 
-- Developer questions go to the parent Architect; children's questions are answered or passed up. [18]
+- Developer questions go to the parent Architect; children's questions are answered or passed up.
+
+Earlier caption detached from live reference 18: its original target declared the source text at `skills/l-01-agent-lifecycles/roles/orchestrator.md` at original blob `2d58c15304831b65be687127ce05ace5c0f87cec`, whole file. The caption above is retained as prose; the numbered clause below describes the current source.
+
+Retained authoring-row wording:
+
+Finding: A parent-started Orchestrator sends only developer-needed matters and permission notices upward, continues independent work when delivery fails, and uses its own chat for developer decisions when dashboard-started without a parent.
+
+Anchor: `current role or template contract`
+
+Source: skills/l-01-agent-lifecycles/roles/orchestrator.md:24-32; skills/l-01-agent-lifecycles/roles/orchestrator.md:68-72
+
+- Orchestrator coordinates one selected sprint through its Managers, follows started work through canonical facts and verifies delivery without taking over the Manager's leaf diff, repair and evidence loop. [16]
+- The Orchestrator Result contract names its rulings and status artifacts, developer-decision and final report-path messages, verified Manager delivery and separately addressed reports, findings, review, curation and publication. [17]
+- A parent-started Orchestrator sends only developer-needed matters and permission notices upward, continues independent work when delivery fails, and uses its own chat for developer decisions when dashboard-started without a parent. [18]
+- Orchestrator may assign an Investigator a concern under its own sprint or sprint/master, never a leaf; the scoped concern is its first message to the returned Investigator ID. [19]
+- Orchestrator keeps canonical sprint/master containment, Manager leaf ownership, separately addressed review/publication evidence and actual-parent developer questions. Held child permissions use the coordination notice route; covered correct-write recovery is separate from product guards. [20]

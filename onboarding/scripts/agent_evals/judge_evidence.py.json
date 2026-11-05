@@ -1,0 +1,40 @@
+{
+  "path": "scripts/agent_evals/judge_evidence.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "c480ff288157325e9c7db0a7e9673aa5d1fcd541",
+        "content": "sha256:dfce1d1e5bc06bb6d87e93ab0950d80777dad48bf0f587cd09ab4759d6db2eae",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-HWKQHK",
+      "invariant": "INV-SYN8W6",
+      "origin": {
+        "handoffEntry": "L62-fd6462b8-judge-package",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "It selects and packages evidence without actor arm, expected outcome or run identity in the blind request.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The source defines this file's responsibility and the boundaries described here.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c480ff288157325e9c7db0a7e9673aa5d1fcd541",
+            "content": "sha256:dfce1d1e5bc06bb6d87e93ab0950d80777dad48bf0f587cd09ab4759d6db2eae",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

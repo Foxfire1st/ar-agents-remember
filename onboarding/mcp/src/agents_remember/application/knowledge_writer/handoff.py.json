@@ -3,7 +3,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "0fcaee614b530fbfb7a642fa65cbaf53214d3a9f",
+        "blob": "0618c0ae683f37668ba21c42c15ced9c0081f595",
         "content": "sha256:877078cb8ce0609792a85cd9031174880499cf2aa932168c838629c0d2ec7eb4",
         "locator": {
           "kind": "symbol",
@@ -21,8 +21,8 @@
     },
     {
       "anchor": {
-        "blob": "0fcaee614b530fbfb7a642fa65cbaf53214d3a9f",
-        "content": "sha256:6017027e97bd41a8459e9fdae086c50c94841c9dcb9611b8fb6d329176a4b3e7",
+        "blob": "0618c0ae683f37668ba21c42c15ced9c0081f595",
+        "content": "sha256:56b4b1c6857f40157750668951592e74e26426e78d6c6a635198058a287a5beb",
         "locator": {
           "kind": "symbol",
           "name": "_entry"
@@ -39,7 +39,7 @@
     },
     {
       "anchor": {
-        "blob": "0fcaee614b530fbfb7a642fa65cbaf53214d3a9f",
+        "blob": "0618c0ae683f37668ba21c42c15ced9c0081f595",
         "content": "sha256:b2bb98729f08af1c1d9912329a04b6550719237d072d2bdf91dae09ecc9621f7",
         "locator": {
           "kind": "symbol",
@@ -57,7 +57,7 @@
     },
     {
       "anchor": {
-        "blob": "0fcaee614b530fbfb7a642fa65cbaf53214d3a9f",
+        "blob": "0618c0ae683f37668ba21c42c15ced9c0081f595",
         "content": "sha256:e5634b2fde999a70250356a80b5b8e8bfebac4a25e60d6f7c75c56d985354f01",
         "locator": {
           "kind": "symbol",
@@ -75,8 +75,8 @@
     },
     {
       "anchor": {
-        "blob": "0fcaee614b530fbfb7a642fa65cbaf53214d3a9f",
-        "content": "sha256:e479229e390480e45139ef071f72d388dcd648c2025f34f1cb08be559ada9ec9",
+        "blob": "0618c0ae683f37668ba21c42c15ced9c0081f595",
+        "content": "sha256:9c45635d9680b053825219744ed2cb085e0ed39efc6205935a3c7256457167aa",
         "locator": {
           "kind": "file"
         }
@@ -109,14 +109,16 @@
       ]
     },
     "10": {
-      "note": "An entry and its curator keys; a ruling authors no invariant; the tests its evidence cites come from `tests_named_in`.\n\nAnchor: `EntryRequest` `cited_tests`",
+      "note": "An entry and its curator keys; a ruling authors no invariant; the tests its evidence cites come from `tests_named_in`.",
       "targets": [
         {
           "anchor": {
-            "blob": "0fcaee614b530fbfb7a642fa65cbaf53214d3a9f",
-            "content": "sha256:e479229e390480e45139ef071f72d388dcd648c2025f34f1cb08be559ada9ec9",
+            "blob": "0618c0ae683f37668ba21c42c15ced9c0081f595",
+            "content": "sha256:9c45635d9680b053825219744ed2cb085e0ed39efc6205935a3c7256457167aa",
             "locator": {
-              "kind": "file"
+              "end": 909,
+              "kind": "line_range",
+              "start": 1
             }
           },
           "kind": "code"
@@ -124,14 +126,16 @@
       ]
     },
     "11": {
-      "note": "The two test forms and the bare test module, read in order and once each.\n\nAnchor: `_SELECTED_TEST` `_TEST_FILE` `TestFileMention` `tests_named_in`",
+      "note": "The two test forms and the bare test module, read in order and once each.",
       "targets": [
         {
           "anchor": {
-            "blob": "0fcaee614b530fbfb7a642fa65cbaf53214d3a9f",
-            "content": "sha256:e479229e390480e45139ef071f72d388dcd648c2025f34f1cb08be559ada9ec9",
+            "blob": "0618c0ae683f37668ba21c42c15ced9c0081f595",
+            "content": "sha256:9c45635d9680b053825219744ed2cb085e0ed39efc6205935a3c7256457167aa",
             "locator": {
-              "kind": "file"
+              "end": 909,
+              "kind": "line_range",
+              "start": 1
             }
           },
           "kind": "code"
@@ -143,11 +147,24 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0fcaee614b530fbfb7a642fa65cbaf53214d3a9f",
-            "content": "sha256:21979d893176ed12a400bcfa7e6d1716dfe96385679ec7027afa1339271d4278",
+            "blob": "0618c0ae683f37668ba21c42c15ced9c0081f595",
+            "content": "sha256:afe225e668ac89dbc64251b8baff9eb950324e382fef953bdc3516919652e185",
             "locator": {
-              "kind": "symbol",
-              "name": "read_handoff"
+              "end": 321,
+              "kind": "line_range",
+              "start": 318
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0618c0ae683f37668ba21c42c15ced9c0081f595",
+            "content": "sha256:09f07bfe4d73d32868060de133d9dda519bc45f01bae66d3124ed37b58738c98",
+            "locator": {
+              "end": 371,
+              "kind": "line_range",
+              "start": 334
             }
           },
           "kind": "code"
@@ -159,7 +176,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0fcaee614b530fbfb7a642fa65cbaf53214d3a9f",
+            "blob": "0618c0ae683f37668ba21c42c15ced9c0081f595",
             "content": "sha256:276970b5aa7b2189d3ee26ed3b4067b0769064e20b6f970ad2df76f4643a400d",
             "locator": {
               "kind": "symbol",
@@ -175,7 +192,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0fcaee614b530fbfb7a642fa65cbaf53214d3a9f",
+            "blob": "0618c0ae683f37668ba21c42c15ced9c0081f595",
             "content": "sha256:d6721ea4e23ab050b94450996a49f7aee57144ec3f376e0c15e4b7de68e49f91",
             "locator": {
               "kind": "symbol",
@@ -191,7 +208,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0fcaee614b530fbfb7a642fa65cbaf53214d3a9f",
+            "blob": "0618c0ae683f37668ba21c42c15ced9c0081f595",
             "content": "sha256:5a5c4f47f8364e929f773c384fae0cc2ce8bc3c390fd6fabf3568e5b71a52a22",
             "locator": {
               "kind": "symbol",
@@ -207,7 +224,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0fcaee614b530fbfb7a642fa65cbaf53214d3a9f",
+            "blob": "0618c0ae683f37668ba21c42c15ced9c0081f595",
             "content": "sha256:65fb3cecc57f968d0a9a203a81da32119706a5a36fb1aeebb16678738bb33603",
             "locator": {
               "kind": "symbol",
@@ -219,14 +236,16 @@
       ]
     },
     "17": {
-      "note": "An entry: new invariant needs scope, admission and a statement.\n\nAnchor: `_entry`",
+      "note": "An entry: new invariant needs scope, admission and a statement.",
       "targets": [
         {
           "anchor": {
-            "blob": "0fcaee614b530fbfb7a642fa65cbaf53214d3a9f",
-            "content": "sha256:e479229e390480e45139ef071f72d388dcd648c2025f34f1cb08be559ada9ec9",
+            "blob": "0618c0ae683f37668ba21c42c15ced9c0081f595",
+            "content": "sha256:9c45635d9680b053825219744ed2cb085e0ed39efc6205935a3c7256457167aa",
             "locator": {
-              "kind": "file"
+              "end": 909,
+              "kind": "line_range",
+              "start": 1
             }
           },
           "kind": "code"
@@ -234,14 +253,16 @@
       ]
     },
     "18": {
-      "note": "A record: kind, fields, and the writer-owned fields refused.\n\nAnchor: `_record`",
+      "note": "A record: kind, fields, and the writer-owned fields refused.",
       "targets": [
         {
           "anchor": {
-            "blob": "0fcaee614b530fbfb7a642fa65cbaf53214d3a9f",
-            "content": "sha256:e479229e390480e45139ef071f72d388dcd648c2025f34f1cb08be559ada9ec9",
+            "blob": "0618c0ae683f37668ba21c42c15ced9c0081f595",
+            "content": "sha256:9c45635d9680b053825219744ed2cb085e0ed39efc6205935a3c7256457167aa",
             "locator": {
-              "kind": "file"
+              "end": 909,
+              "kind": "line_range",
+              "start": 1
             }
           },
           "kind": "code"
@@ -249,14 +270,16 @@
       ]
     },
     "19": {
-      "note": "History input refuses caller-owned id/revision/sources and malformed considered examinations; the empty list remains intentional.\n\nAnchor: `_row`",
+      "note": "History input refuses caller-owned id/revision/sources and malformed considered examinations; the empty list remains intentional.",
       "targets": [
         {
           "anchor": {
-            "blob": "0fcaee614b530fbfb7a642fa65cbaf53214d3a9f",
-            "content": "sha256:e479229e390480e45139ef071f72d388dcd648c2025f34f1cb08be559ada9ec9",
+            "blob": "0618c0ae683f37668ba21c42c15ced9c0081f595",
+            "content": "sha256:9c45635d9680b053825219744ed2cb085e0ed39efc6205935a3c7256457167aa",
             "locator": {
-              "kind": "file"
+              "end": 909,
+              "kind": "line_range",
+              "start": 1
             }
           },
           "kind": "code"
@@ -280,14 +303,16 @@
       ]
     },
     "20": {
-      "note": "The row keys and the request field a planned row's `ref` travels in.\n\nAnchor: `_ROW_KEYS` `RowRequest`",
+      "note": "The row keys and the request field a planned row's `ref` travels in.",
       "targets": [
         {
           "anchor": {
-            "blob": "0fcaee614b530fbfb7a642fa65cbaf53214d3a9f",
-            "content": "sha256:e479229e390480e45139ef071f72d388dcd648c2025f34f1cb08be559ada9ec9",
+            "blob": "0618c0ae683f37668ba21c42c15ced9c0081f595",
+            "content": "sha256:9c45635d9680b053825219744ed2cb085e0ed39efc6205935a3c7256457167aa",
             "locator": {
-              "kind": "file"
+              "end": 909,
+              "kind": "line_range",
+              "start": 1
             }
           },
           "kind": "code"
@@ -299,7 +324,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1a6235931c50a4a8f6b146a51598cdff7f55a233",
+            "blob": "7e02efe56a42a670bb818ea1f56af7d09c48e5f3",
             "content": "sha256:c97c263f4303e06cabcdfc7b776da00f1591ac09277e02f248cc82b352661c90",
             "locator": {
               "kind": "symbol",
@@ -316,7 +341,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "1a6235931c50a4a8f6b146a51598cdff7f55a233",
+            "blob": "7e02efe56a42a670bb818ea1f56af7d09c48e5f3",
             "content": "sha256:87a60b9c98129eddc20542723944e3c9dd3a5aaed76c4cd7881d6f9c49d6bc11",
             "locator": {
               "kind": "symbol",
@@ -333,7 +358,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0fcaee614b530fbfb7a642fa65cbaf53214d3a9f",
+            "blob": "0618c0ae683f37668ba21c42c15ced9c0081f595",
             "content": "sha256:c070e80e2c44655919cc3c29fcd01e000093271874a4de51d649d8d621273656",
             "locator": {
               "kind": "symbol",
@@ -349,7 +374,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0fcaee614b530fbfb7a642fa65cbaf53214d3a9f",
+            "blob": "0618c0ae683f37668ba21c42c15ced9c0081f595",
             "content": "sha256:efc3b7f53ee7bc7c27566fe4054ef723c09a764acf806a7e0765dd26b068846c",
             "locator": {
               "kind": "symbol",
@@ -365,7 +390,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0fcaee614b530fbfb7a642fa65cbaf53214d3a9f",
+            "blob": "0618c0ae683f37668ba21c42c15ced9c0081f595",
             "content": "sha256:e5634b2fde999a70250356a80b5b8e8bfebac4a25e60d6f7c75c56d985354f01",
             "locator": {
               "kind": "symbol",
@@ -381,7 +406,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0fcaee614b530fbfb7a642fa65cbaf53214d3a9f",
+            "blob": "0618c0ae683f37668ba21c42c15ced9c0081f595",
             "content": "sha256:481f7a4d15f351042c8c4997d3adb0dad9e4ffd14dfbd32c48d071a355e45148",
             "locator": {
               "end": 214,
@@ -398,12 +423,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0fcaee614b530fbfb7a642fa65cbaf53214d3a9f",
-            "content": "sha256:18ed37c2b053956e2b44b167b4a847c18946c7ad66a2d34a8d6cd431bf639a31",
+            "blob": "0618c0ae683f37668ba21c42c15ced9c0081f595",
+            "content": "sha256:3936bc9c49708359acdb54ec805ab71537dd7ac510f28a2c992f71e6aa1f484d",
             "locator": {
-              "end": 657,
+              "end": 674,
               "kind": "line_range",
-              "start": 626
+              "start": 642
             }
           },
           "kind": "code"
@@ -415,12 +440,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0fcaee614b530fbfb7a642fa65cbaf53214d3a9f",
+            "blob": "0618c0ae683f37668ba21c42c15ced9c0081f595",
             "content": "sha256:4825f9f5ea15c84bc0f74cdaae4cfa2602665acd41942cb1f5da9efb1c1cd8dc",
             "locator": {
-              "end": 881,
+              "end": 907,
               "kind": "line_range",
-              "start": 861
+              "start": 887
             }
           },
           "kind": "code"
@@ -445,7 +470,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0fcaee614b530fbfb7a642fa65cbaf53214d3a9f",
+            "blob": "0618c0ae683f37668ba21c42c15ced9c0081f595",
             "content": "sha256:b2bb98729f08af1c1d9912329a04b6550719237d072d2bdf91dae09ecc9621f7",
             "locator": {
               "kind": "symbol",
@@ -461,7 +486,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0fcaee614b530fbfb7a642fa65cbaf53214d3a9f",
+            "blob": "0618c0ae683f37668ba21c42c15ced9c0081f595",
             "content": "sha256:36a005432e3e35fea0efbe95d6394ff1db316a4ada75900c733795db4a5b7e9b",
             "locator": {
               "end": 25,
@@ -474,14 +499,45 @@
       ]
     },
     "30": {
-      "note": "A `repoint` row item names one fired link's position, the path and the locator, and is refused if it renames a link.\n\nAnchor: `_repoints`",
+      "note": "A `repoint` row item names one fired link's position, the path and the locator, and is refused if it renames a link.",
       "targets": [
         {
           "anchor": {
-            "blob": "0fcaee614b530fbfb7a642fa65cbaf53214d3a9f",
-            "content": "sha256:e479229e390480e45139ef071f72d388dcd648c2025f34f1cb08be559ada9ec9",
+            "blob": "0618c0ae683f37668ba21c42c15ced9c0081f595",
+            "content": "sha256:9c45635d9680b053825219744ed2cb085e0ed39efc6205935a3c7256457167aa",
             "locator": {
-              "kind": "file"
+              "end": 909,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "31": {
+      "note": "Shared producer shape decoding is separated from full Curator intake, without weakening full-writer scope/admission checks.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0618c0ae683f37668ba21c42c15ced9c0081f595",
+            "content": "sha256:466578ca8098eea6245543c59dd5a3e9935c1f63f20dfcee5ead3cf57eea2539",
+            "locator": {
+              "end": 371,
+              "kind": "line_range",
+              "start": 318
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0618c0ae683f37668ba21c42c15ced9c0081f595",
+            "content": "sha256:a39bea481dbe2d718b033078945ab259c71039982d34fa80cff3f1ebe0d64c85",
+            "locator": {
+              "end": 701,
+              "kind": "line_range",
+              "start": 642
             }
           },
           "kind": "code"
@@ -493,7 +549,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0fcaee614b530fbfb7a642fa65cbaf53214d3a9f",
+            "blob": "0618c0ae683f37668ba21c42c15ced9c0081f595",
             "content": "sha256:c070e80e2c44655919cc3c29fcd01e000093271874a4de51d649d8d621273656",
             "locator": {
               "kind": "symbol",
@@ -509,7 +565,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0fcaee614b530fbfb7a642fa65cbaf53214d3a9f",
+            "blob": "0618c0ae683f37668ba21c42c15ced9c0081f595",
             "content": "sha256:3eed69c77304c799ca62699a51a59036a12a3c9a94900d6f40b6709a5e8b11f5",
             "locator": {
               "kind": "symbol",
@@ -520,7 +576,7 @@
         },
         {
           "anchor": {
-            "blob": "0fcaee614b530fbfb7a642fa65cbaf53214d3a9f",
+            "blob": "0618c0ae683f37668ba21c42c15ced9c0081f595",
             "content": "sha256:0fb9b0d63eb22b10ad86446975899b47bf4947e97e403170b869db063d9b7b09",
             "locator": {
               "kind": "symbol",
@@ -536,7 +592,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0fcaee614b530fbfb7a642fa65cbaf53214d3a9f",
+            "blob": "0618c0ae683f37668ba21c42c15ced9c0081f595",
             "content": "sha256:5002592f62323f531a413309e656754812f63dae539270ff037a2240252bafb6",
             "locator": {
               "kind": "symbol",
@@ -548,14 +604,16 @@
       ]
     },
     "7": {
-      "note": "The four refusals and the relocation, end to end.\n\nAnchor: `test_a_moved_row_whose_after_names_another_path_relocates_the_entry`",
+      "note": "The four refusals and the relocation, end to end.",
       "targets": [
         {
           "anchor": {
-            "blob": "1a6235931c50a4a8f6b146a51598cdff7f55a233",
-            "content": "sha256:075ff4475087a14dafb700ce617d28082fae430f3313c7e64333ca644f5dc9fe",
+            "blob": "7e02efe56a42a670bb818ea1f56af7d09c48e5f3",
+            "content": "sha256:fbc845ca4136164eb34326e37e70dbd2f85612fd718321f3d76bc113c85e1515",
             "locator": {
-              "kind": "file"
+              "end": 1144,
+              "kind": "line_range",
+              "start": 1
             },
             "path": "mcp/tests/test_knowledge_writer.py"
           },
@@ -568,7 +626,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0fcaee614b530fbfb7a642fa65cbaf53214d3a9f",
+            "blob": "0618c0ae683f37668ba21c42c15ced9c0081f595",
             "content": "sha256:e036ba9adf09f8dec93b86b370da427a7144a891036fefbd42727c11b456d69a",
             "locator": {
               "kind": "symbol",
@@ -584,7 +642,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0fcaee614b530fbfb7a642fa65cbaf53214d3a9f",
+            "blob": "0618c0ae683f37668ba21c42c15ced9c0081f595",
             "content": "sha256:9f5367452d899fa56b1ccf9854a568c3eed6ee306d40d90ddc16e278dcfa9105",
             "locator": {
               "kind": "symbol",

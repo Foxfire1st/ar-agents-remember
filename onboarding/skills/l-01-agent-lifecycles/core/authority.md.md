@@ -12,13 +12,21 @@ Retained shared authority corpus defining structural seat addresses, escalation 
 
 The current source binds ordinary seats to canonical task selection plus role at role_start, while the Architect starts at Projects without a document. Task worktree location records and the landing chain contract lifecycle do not define whether a role has a structural seat. The caller of role_start is the started agent's parent; a dashboard or roleless-chat start has none. An identical request ID/selection reconciles one agent; a refused start has no alternative-tool fallback, and a leaf trio uses role_start_set. Harness helpers hold no AR seat or independent-review authority. Questions travel one rung to the actual parent, the watcher ban remains, and host turn-end wake-up replaces the old notifier. A source clause about capsule composition does not establish actual runtime injection. Curation supplies full memory-quality evidence; the transaction carries it and owns Git. The removed dispatch_agent transaction, plane/ambient caller split and queued notifier vocabulary are historical, not current launch instructions.
 
+Current qualification: the retained clause “and a leaf trio uses role_start_set.” describes its past source epoch. and normal leaf starts are individual role_start calls: Worker at build, Reviewer at freeze and Curator after code PASS.
+
 ## Canonical Source Ownership
 
 The byte-equal packaged skill is a distribution carrier, not an independent role, task or permission authority. The current source account above does not certify inherited prose, actual execution, launch delivery or grading.
 
 
 
-- Canonical structural seat and parent authority; shared corpus is not proof of capsule injection. [1]
+Retained authoring-row wording:
+
+Finding: Canonical structural seat and parent authority; shared corpus is not proof of capsule injection.
+
+Anchor:
+
+Source: skills/l-01-agent-lifecycles/core/authority.md:3-131
 
 
 
@@ -135,3 +143,5 @@ Inherited reference 5 commentary (not a revalidated target):
 > Retained corpus inheritance is a source-text convention, not evidence that native launch injects this shared core. (historical reference 5)
 >
 > Anchor: source extent 1–14
+
+- Canonical structural seat and parent authority; shared corpus is not proof of capsule injection. [1]

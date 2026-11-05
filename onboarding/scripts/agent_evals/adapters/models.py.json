@@ -1,0 +1,40 @@
+{
+  "path": "scripts/agent_evals/adapters/models.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "6d119630034e393ddbe02ba5460f4fee55a6dcb6",
+        "content": "sha256:a4d0227f86b60d938946b4012ddd3a617932d381a520866c22f5f98c9ef352ba",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-059XES",
+      "invariant": "INV-XKDZD4",
+      "origin": {
+        "handoffEntry": "L62-fd6462b8-evidence-values",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "It defines source files, native events and captures with their provenance and installed-server-call attribution.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The source defines this file's responsibility and the boundaries described here.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6d119630034e393ddbe02ba5460f4fee55a6dcb6",
+            "content": "sha256:a4d0227f86b60d938946b4012ddd3a617932d381a520866c22f5f98c9ef352ba",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

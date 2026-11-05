@@ -7,10 +7,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8f9a16c43d43af7f46c2fecae4d2f10cb6094546",
-            "content": "sha256:1840df9fd4e96ff410d3079b8e203f6ee27531c1b3167370df0be9c6790e73a1",
+            "blob": "2f09e1175b0b522a29c57497c0f104e7f41e8770",
+            "content": "sha256:53a9bedd2fcc6f5a5d7d5beeb1d5ba137a16fd04209c9609169d0e1dc35429cb",
             "locator": {
-              "kind": "file"
+              "end": 150,
+              "kind": "line_range",
+              "start": 1
             }
           },
           "kind": "test"
@@ -22,12 +24,41 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8f9a16c43d43af7f46c2fecae4d2f10cb6094546",
-            "content": "sha256:1840df9fd4e96ff410d3079b8e203f6ee27531c1b3167370df0be9c6790e73a1",
+            "blob": "2f09e1175b0b522a29c57497c0f104e7f41e8770",
+            "content": "sha256:53a9bedd2fcc6f5a5d7d5beeb1d5ba137a16fd04209c9609169d0e1dc35429cb",
             "locator": {
-              "end": 111,
+              "end": 150,
               "kind": "line_range",
               "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The foundation-authority check reads the actual delivered detail and its mutation controls. The refused-write detail must retain the actual refusal, each input, same-tool/input-class limit, owner notice, provenance, working checks and issue/report evidence. A missing writer remains distinct from a refused correct write; Git and acceptance authority do not follow from file-write admission. These are source assertions/support behavior, not a fresh invocation, host result or AR acceptance.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2f09e1175b0b522a29c57497c0f104e7f41e8770",
+            "content": "sha256:3cfae978afd70c04306b5daf4af48fba232cc34929d3c5b6b1502c03155db815",
+            "locator": {
+              "end": 17,
+              "kind": "line_range",
+              "start": 7
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "2f09e1175b0b522a29c57497c0f104e7f41e8770",
+            "content": "sha256:11d4683dcb0418f3277230a761f2ecd9b275d1f6226a6f85a5afc12294dd866b",
+            "locator": {
+              "end": 62,
+              "kind": "line_range",
+              "start": 20
             }
           },
           "kind": "test"

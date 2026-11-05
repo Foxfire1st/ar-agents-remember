@@ -3,12 +3,10 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "e9cdae3d6c37b0b2b5b725d99d3dba0218b0822f",
-        "content": "sha256:05743cee4e9013385259219ed7f9a0a2d542ce0f8bac4e9d35d31cd019454b17",
+        "blob": "c631f6b28ae2bc2485d4dcf263e612407f9318c2",
+        "content": "sha256:8cc45eaf2fac5f180dbd904da6575fffab0eb238e11e03a70772c0a7bd318825",
         "locator": {
-          "end": 66,
-          "kind": "line_range",
-          "start": 1
+          "kind": "file"
         }
       },
       "id": "RLZ-02MMZJ",
@@ -17,7 +15,7 @@
         "handoffEntry": "L71-CURRENT242-W-19",
         "leaf": "260928-MIK-L71"
       },
-      "rationale": "The mcp/src/agents_remember/package_data/runtime shipped copy propagates the skills/l-01-agent-lifecycles/roles/worker.md instructions to that installation surface; it is generated output and does not independently set role/task or permission authority.",
+      "rationale": "This entire generated packaged Worker role is byte-identical to its canonical skill source at the frozen tree; the carrier propagates the complete role and sets no independent role/task/permission authority. A whole-file locator names that complete propagation claim, rather than retaining the old66-line truncated extent.",
       "role": "propagation-persistence"
     }
   ],
@@ -27,7 +25,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e9cdae3d6c37b0b2b5b725d99d3dba0218b0822f",
+            "blob": "c631f6b28ae2bc2485d4dcf263e612407f9318c2",
             "content": "sha256:a5eb4e0652510068a91419176ce8ff8bfec77c79a11a686de3cb00a90fe830c8",
             "locator": {
               "end": 8,
@@ -44,7 +42,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e9cdae3d6c37b0b2b5b725d99d3dba0218b0822f",
+            "blob": "c631f6b28ae2bc2485d4dcf263e612407f9318c2",
             "content": "sha256:c661956f16ca4d2976257208691e0519a39d9b7a8be8fdd3ceeec432287cde95",
             "locator": {
               "end": 8,
@@ -61,7 +59,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e9cdae3d6c37b0b2b5b725d99d3dba0218b0822f",
+            "blob": "c631f6b28ae2bc2485d4dcf263e612407f9318c2",
             "content": "sha256:5f3d1154ebbd6680d1333d73a7b95ee7d823f0fe4084db5391fde6c9c649dc5a",
             "locator": {
               "end": 4,
@@ -78,7 +76,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e9cdae3d6c37b0b2b5b725d99d3dba0218b0822f",
+            "blob": "c631f6b28ae2bc2485d4dcf263e612407f9318c2",
             "content": "sha256:5f3d1154ebbd6680d1333d73a7b95ee7d823f0fe4084db5391fde6c9c649dc5a",
             "locator": {
               "end": 4,
@@ -91,16 +89,16 @@
       ]
     },
     "5": {
-      "note": "Current stage boundaries, settings-owned review budget and recorded approval duties are carried by these instruction sources.",
+      "note": "Worker ends at a final candidate meeting the requirement, clean-copy handover checks named by the memory coding guidelines and a report with Reviewer; own-fault repair and the three-repairs escalation remain explicit.",
       "targets": [
         {
           "anchor": {
-            "blob": "e9cdae3d6c37b0b2b5b725d99d3dba0218b0822f",
-            "content": "sha256:b95f84c8f907eeebadf154a945e500d8093e2a963c023c1e6ac5f6a6d9559dba",
+            "blob": "c631f6b28ae2bc2485d4dcf263e612407f9318c2",
+            "content": "sha256:1b31915258b3bdd00ee2d14b74c6ade44ac9fcca3e7acd8d00e852b04dde936b",
             "locator": {
-              "end": 68,
+              "end": 89,
               "kind": "line_range",
-              "start": 1
+              "start": 71
             }
           },
           "kind": "code"
@@ -108,31 +106,44 @@
       ]
     },
     "6": {
-      "note": "The Manager starts the three leaf seats as a set; Worker cannot start its checker or accept/publish its own implementation. Its stage requires final candidate meeting the requirement, relevant tests/lint/type checks passing and the report with Reviewer. Own failures are corrected on its own ground; blocked/unrun evidence remains explicit. A record-only repair stays on the same review round only with candidate unchanged; repeated cases demand property/construction reasoning rather than case chasing.",
+      "note": "Manager starts Worker at build, Reviewer at freeze and Curator after code PASS; Worker starts no checker and accepts or publishes no implementation. Its stage needs the final candidate and the coding guidelines’ clean-copy handover checks, with its report at Reviewer. Own faults are repaired; record-only checks reuse the round only with identical candidate and all candidate findings closed; repeated cases require the property and construction.",
       "targets": [
         {
           "anchor": {
-            "blob": "e9cdae3d6c37b0b2b5b725d99d3dba0218b0822f",
-            "content": "sha256:be8b1d53999f724b9657042a21820ee639927b4b1394ff2e61b6ceed46134443",
+            "blob": "c631f6b28ae2bc2485d4dcf263e612407f9318c2",
+            "content": "sha256:78f53a82a33d5b23884fd7c7ce5ecf41b1d0574ad5b7615cf806bb848aec3fbe",
             "locator": {
-              "end": 60,
+              "end": 89,
               "kind": "line_range",
-              "start": 1
+              "start": 59
             }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0f539ae53bac7b99b39337ae847c7b4b56b95ccc",
+            "content": "sha256:38207166e95b9254fd2f708c7042deb4d449a4b985eea55d307db66703450eb5",
+            "locator": {
+              "end": 28,
+              "kind": "line_range",
+              "start": 26
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/manager.md"
           },
           "kind": "code"
         }
       ]
     },
     "7": {
-      "note": "Current synced source supports the qualified account; declarations, mirrors and fixture assertions are not executed acceptance.",
+      "note": "This packaged Worker role is byte-identical to its canonical source and carries its actual stage and repair duties; that mirror identity establishes no executed check or acceptance.",
       "targets": [
         {
           "anchor": {
-            "blob": "e9cdae3d6c37b0b2b5b725d99d3dba0218b0822f",
-            "content": "sha256:b95f84c8f907eeebadf154a945e500d8093e2a963c023c1e6ac5f6a6d9559dba",
+            "blob": "c631f6b28ae2bc2485d4dcf263e612407f9318c2",
+            "content": "sha256:8cc45eaf2fac5f180dbd904da6575fffab0eb238e11e03a70772c0a7bd318825",
             "locator": {
-              "end": 68,
+              "end": 97,
               "kind": "line_range",
               "start": 1
             }
@@ -142,16 +153,16 @@
       ]
     },
     "8": {
-      "note": "Worker intake opens exact rendered_path/json_path files and uses actual named-memory reader arguments without restoring task_doc reads.",
+      "note": "Worker intake opens exact rendered_path/json_path files natively; task_doc on agents-remember-task writes rather than reads, and only read_ar_files carries the canonical task_context.",
       "targets": [
         {
           "anchor": {
-            "blob": "e9cdae3d6c37b0b2b5b725d99d3dba0218b0822f",
-            "content": "sha256:4192f34748d86789f90c318a977aeb04a6fae73c97228180287046787af8b98e",
+            "blob": "c631f6b28ae2bc2485d4dcf263e612407f9318c2",
+            "content": "sha256:675267e149aa2dfa168bf041dd2dc82035f9e476aeb477c2e151b6adb51a0ce3",
             "locator": {
-              "end": 14,
+              "end": 18,
               "kind": "line_range",
-              "start": 12
+              "start": 16
             }
           },
           "kind": "code"
@@ -163,12 +174,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e9cdae3d6c37b0b2b5b725d99d3dba0218b0822f",
-            "content": "sha256:df6aaf0a5cc5aa43727d0ceb6110a8b583cc5cd55c3c502641074246681d2816",
+            "blob": "c631f6b28ae2bc2485d4dcf263e612407f9318c2",
+            "content": "sha256:78f53a82a33d5b23884fd7c7ce5ecf41b1d0574ad5b7615cf806bb848aec3fbe",
             "locator": {
-              "end": 62,
+              "end": 89,
               "kind": "line_range",
-              "start": 36
+              "start": 59
             }
           },
           "kind": "code"

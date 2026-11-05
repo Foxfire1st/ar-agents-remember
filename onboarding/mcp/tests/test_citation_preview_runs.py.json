@@ -37,8 +37,8 @@
     },
     {
       "anchor": {
-        "blob": "88f2f7bf2713204f5c46aac40ff7449a65ecd6ca",
-        "content": "sha256:17139015c432a406d6501103df31c1ed365108d9ff0df073a805456360c6017d",
+        "blob": "27f88bcba540a9812ca5bf0d34e3d8334466006e",
+        "content": "sha256:31da83cae289562eb01465253b154e2682528aa0d9bac73afa2602609f4b6a32",
         "locator": {
           "kind": "symbol",
           "name": "CitationPreviewRunTests.test_shared_capacity_identity_kind_and_responsive_poll"

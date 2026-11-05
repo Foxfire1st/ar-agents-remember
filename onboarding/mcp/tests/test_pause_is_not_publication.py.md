@@ -101,7 +101,7 @@ No Domain Documentation source is configured for this memory root.
 - The case: disjointness from every publication module, then the three non-vacuity checks and the two named witnesses. [4]
 - The method limits recorded in the module docstring: static AST graph, `TYPE_CHECKING` excluded, no dynamic imports, per-module rather than process-wide. [5]
 
-- The route this guard exists to keep the stop away from. [6]
+- The route this guard exists to keep the stop away from.
 
 - The stop module whose closure is measured, and the release authority the closure is required to reach. [7]
 
@@ -122,3 +122,5 @@ No meaningful cross-repository reference applies to this repository-owned struct
 
 
 - The lane this module is registered in. Source caption: "mcp/tests/test_pause_is_not_publication.py" [8]
+
+- The route this guard exists to keep the stop away from. Anchor: `worktree_checkpoint_landing` [6]

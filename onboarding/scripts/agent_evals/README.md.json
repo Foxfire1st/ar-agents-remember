@@ -1,0 +1,106 @@
+{
+  "path": "scripts/agent_evals/README.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Development ownership and CLI trial, tooling-check and measurement boundaries. [1]",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "39df3362793ed90df98f28abcf46f61343190bcd",
+            "content": "sha256:420a293e10ca31045253d1663fde3986d6f487acda4ba7bba5097865212bfd8d",
+            "locator": {
+              "end": 43,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Documented non-GPT whole-file versus GPT selected-entry auth observations and their limits. [2]",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "39df3362793ed90df98f28abcf46f61343190bcd",
+            "content": "sha256:621d201b79c60185d2406bdb84baf86095b93f4d446a171220c82255da197602",
+            "locator": {
+              "end": 65,
+              "kind": "line_range",
+              "start": 53
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Selected-entry canonicalization and single-use whole-file/selected-subject comparison implementation. [3]",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9996b93feea0078a030ea116c35265f0171cb796",
+            "content": "sha256:e2eceaee8043e37acb2a4b31725b465e75be87dc363087ee7e6356c66d2a6308",
+            "locator": {
+              "end": 78,
+              "kind": "line_range",
+              "start": 45
+            },
+            "path": "scripts/agent_evals/auth_observation.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9996b93feea0078a030ea116c35265f0171cb796",
+            "content": "sha256:868070589a1d1bfcbf644c4051fb265210d05c2d7b2831c441534b01cb2f545d",
+            "locator": {
+              "end": 119,
+              "kind": "line_range",
+              "start": 83
+            },
+            "path": "scripts/agent_evals/auth_observation.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Case preflight, native quality intake and before/after eval attribution preserve the product whole-tree validators. [4]",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "39df3362793ed90df98f28abcf46f61343190bcd",
+            "content": "sha256:0953bedcb97c83ad176e64ca8a5f45dda474804b444ca905a2a16cee42195703",
+            "locator": {
+              "end": 328,
+              "kind": "line_range",
+              "start": 308
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Usage documentation distinguishes command hooks and focused tests from measurements, and census/regrade from actor reruns. [5]",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "39df3362793ed90df98f28abcf46f61343190bcd",
+            "content": "sha256:908f8125e6afe68ae400cf51468b67d37b97a9aabf2348c486629b865eff80d2",
+            "locator": {
+              "end": 202,
+              "kind": "line_range",
+              "start": 168
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

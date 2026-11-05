@@ -3408,7 +3408,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "e7d80ed372402d196e9af03c6aa40d32a018d7e2",
+            "blob": "cd8894a7e858b103972f9a0c9ec3a13e5fc41f48",
             "content": "sha256:6038ea35a7ffb093ab5e3f8084150b0e70be83ba152a5b957ba52622e78e7ff8",
             "locator": {
               "kind": "symbol",
@@ -3966,12 +3966,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "762c104a0bcdc0375416163993d106dc37c5fb18",
-            "content": "sha256:1b90e8d3d1b82f6b71225ecb2162809916b5e4876af5f276705d708c303ac624",
+            "blob": "a744d8de93cda92f20309cc2f735c24a2bf27ce4",
+            "content": "sha256:6bdfa8672b22d1767b78410897a7c8a4109f3c5f07c43f15155cf1d13168e39d",
             "locator": {
-              "end": 190,
+              "end": 189,
               "kind": "line_range",
-              "start": 103
+              "start": 99
             },
             "path": "mcp/src/agents_remember/models/role_capsules/compiler.py"
           },
@@ -3979,12 +3979,12 @@
         },
         {
           "anchor": {
-            "blob": "762c104a0bcdc0375416163993d106dc37c5fb18",
-            "content": "sha256:01728ce69a762bc1321deb33e85cf450cc3fd0385638b7952cf92498b2d1fec4",
+            "blob": "a744d8de93cda92f20309cc2f735c24a2bf27ce4",
+            "content": "sha256:c6d826c4ee869200b8875ec1996b06854bea1c36a837c6955a90979f6b49a93e",
             "locator": {
-              "end": 269,
+              "end": 338,
               "kind": "line_range",
-              "start": 224
+              "start": 291
             },
             "path": "mcp/src/agents_remember/models/role_capsules/compiler.py"
           },
@@ -4099,9 +4099,9 @@
         {
           "anchor": {
             "blob": "d0b0ddd9f150e32116b430ecc74907fcf68fee97",
-            "content": "sha256:f82582161178607098188ce54ae00e6a6a46c2f2773d549a221c3725d79092c4",
+            "content": "sha256:fdef15e2ca9d39f66c8570a7147cb894dda16f47c7d3558bb4454e5b4714875f",
             "locator": {
-              "end": 72,
+              "end": 74,
               "kind": "line_range",
               "start": 1
             },
@@ -4112,9 +4112,9 @@
         {
           "anchor": {
             "blob": "1ba41e6adae7f4dd9700742a2ff8052d78865ae0",
-            "content": "sha256:e5639cff8348ca42dbcd284c125ffce7ed0a3ccfd2bb8853f71f4667db65b792",
+            "content": "sha256:3928dc7286631ed6f0f447d9c406201da902895761c897cff651fee3db69dc5f",
             "locator": {
-              "end": 660,
+              "end": 663,
               "kind": "line_range",
               "start": 1
             },
@@ -4124,10 +4124,10 @@
         },
         {
           "anchor": {
-            "blob": "e7d80ed372402d196e9af03c6aa40d32a018d7e2",
-            "content": "sha256:c7dc3ccede6258becfe2c8d886d1ef79e04279f32d2f56f30d6d1c8fd90242c4",
+            "blob": "cd8894a7e858b103972f9a0c9ec3a13e5fc41f48",
+            "content": "sha256:3ad763aa7ea21b8b7309e7f7954e7195626081120e56e2fb7d1089ec5b03a5ae",
             "locator": {
-              "end": 257,
+              "end": 287,
               "kind": "line_range",
               "start": 1
             },
@@ -4646,6 +4646,76 @@
               "name": "CitationFixResponse"
             },
             "path": "mcp/src/agents_remember/models/memory.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "339": {
+      "note": "role_capsules/contracts.py retains source-addressed needs/gives endpoints, validates marker shape before operation audience selection and removes valid markers from instruction text. CapsuleCapsule carries those endpoints separately. TaskDocResponse carries optional bounded alignmentSweep advice; these value objects establish neither actual endpoint delivery nor packet release or persisted task state.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "244f2c36f3efa74d21b47cbfaf0108fb9d1e4f35",
+            "content": "sha256:e7e26edbecbb5a6c4dde95093d521719809a8f7bba4477a29e2e8bcfd976b037",
+            "locator": {
+              "end": 76,
+              "kind": "line_range",
+              "start": 33
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/contracts.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "244f2c36f3efa74d21b47cbfaf0108fb9d1e4f35",
+            "content": "sha256:0b264e29cf938cd07b5ff6b54aafd98b1f706fae1a422f4b6112e423b972229e",
+            "locator": {
+              "end": 89,
+              "kind": "line_range",
+              "start": 79
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/contracts.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8673a0cc0f664527b38318f5c02481ab5826e739",
+            "content": "sha256:c8bf35d50966c3c65511d02a774a303ba5875d2cb94f6ef7048d26715c71c687",
+            "locator": {
+              "end": 476,
+              "kind": "line_range",
+              "start": 462
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/types.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cd8894a7e858b103972f9a0c9ec3a13e5fc41f48",
+            "content": "sha256:f5170fbc81eb536a5ecf8c2753b4da6055a3abec1975dd663c1504658e615abc",
+            "locator": {
+              "end": 149,
+              "kind": "line_range",
+              "start": 141
+            },
+            "path": "mcp/src/agents_remember/models/task_doc.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cd8894a7e858b103972f9a0c9ec3a13e5fc41f48",
+            "content": "sha256:4508fec046752eaaf65e8b0ca0d94ead487d65fa07c4e6d83c2019ec5c3cf3c9",
+            "locator": {
+              "end": 287,
+              "kind": "line_range",
+              "start": 152
+            },
+            "path": "mcp/src/agents_remember/models/task_doc.py"
           },
           "kind": "code"
         }

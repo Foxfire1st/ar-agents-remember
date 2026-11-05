@@ -1,0 +1,41 @@
+{
+  "path": "skills/l-01-agent-lifecycles/reference/knowledge-use.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Shared retrieval uses the selected pair, complete paging and native reads, and states gaps explicitly.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a3fd737e2212038bb5eeef208043834698265eaa",
+            "content": "sha256:b7657529bd6ea10f2e933a938e452a657755b223e5a09e84c526dc3d116aec4e",
+            "locator": {
+              "end": 9,
+              "kind": "line_range",
+              "start": 3
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Role-specific use connects attribution with diagnosis and source inspection without filtering the complete diff.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a3fd737e2212038bb5eeef208043834698265eaa",
+            "content": "sha256:e8c0dde22c5f3e91f45000175146af854ed25740bd14ae75dc563fe6ea94f10f",
+            "locator": {
+              "end": 25,
+              "kind": "line_range",
+              "start": 11
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

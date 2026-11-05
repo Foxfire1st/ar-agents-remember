@@ -1,19 +1,160 @@
 {
   "path": "skills/l-01-agent-lifecycles/reference/curator-card-details.md",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "7278abbdd039628f4afa41f7e871051e41866547",
+        "content": "sha256:922d8d333dc28f68bda09cba92fbc4ae6583c12f1ee3fe2fdc38e4b8637d1f9d",
+        "locator": {
+          "end": 20,
+          "kind": "line_range",
+          "start": 18
+        }
+      },
+      "id": "RLZ-21A4G2",
+      "invariant": "INV-9DAS08",
+      "origin": {
+        "handoffEntry": "L62-CUR-6414-curator-healing",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "Explicit changed claims/counts/prose-line check, anchor containment, structural-not-truth, deterministic-only fixes and semantic decisions.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "7278abbdd039628f4afa41f7e871051e41866547",
+        "content": "sha256:3b5637f503d2944381f496c2f19169ab321a202f8479a3cd4e5e16124e2f654c",
+        "locator": {
+          "end": 16,
+          "kind": "line_range",
+          "start": 8
+        }
+      },
+      "id": "RLZ-4ZJR75",
+      "invariant": "INV-1YSMF5",
+      "origin": {
+        "handoffEntry": "L62-CUR-6db-attach-L62-CUR-6414-history-selection",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "These exact lines require earlier-row reading and define the five invariant dispositions while keeping family/onboarding schemas separate.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "7278abbdd039628f4afa41f7e871051e41866547",
+        "content": "sha256:2d891e3fc6792c8f8052ceb15041a8e0f1dcb4c9f3c544396302d7a098641bbc",
+        "locator": {
+          "end": 32,
+          "kind": "line_range",
+          "start": 31
+        }
+      },
+      "id": "RLZ-EVQ3Z5",
+      "invariant": "INV-6A3N48",
+      "origin": {
+        "handoffEntry": "L62-CUR-6db-attach-L62-CUR-6414-current-truth",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "The new Current card content section points back to the already-delivered sentence/current-carrier rule at its named earlier step. It propagates that candidate rule rather than replacing its actor, conditions or historical-custody ruling.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "7278abbdd039628f4afa41f7e871051e41866547",
+        "content": "sha256:8c829f17a7a9de1ecf51cf14ef2ed5e2a4f26d8fbdff8794f67c495f50c8578c",
+        "locator": {
+          "end": 20,
+          "kind": "line_range",
+          "start": 6
+        }
+      },
+      "id": "RLZ-KDG9G9",
+      "invariant": "INV-JHB89M",
+      "origin": {
+        "handoffEntry": "L62-CUR-6414-claim-check",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "Explicit changed claims/counts/prose-line check, anchor containment, structural-not-truth, deterministic-only fixes and semantic decisions. Earlier rows; all five invariant disposition meanings; separate family/onboarding schemas; claim checks.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "7278abbdd039628f4afa41f7e871051e41866547",
+        "content": "sha256:922d8d333dc28f68bda09cba92fbc4ae6583c12f1ee3fe2fdc38e4b8637d1f9d",
+        "locator": {
+          "end": 20,
+          "kind": "line_range",
+          "start": 18
+        }
+      },
+      "id": "RLZ-M87310",
+      "invariant": "INV-JHB89M",
+      "origin": {
+        "handoffEntry": "L62-CUR-6db-attach-L62-CUR-6414-claim-check",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "This exact extent requires checks of claims/counts/prose lines and a non-author statement check rather than treating valid anchors as proof of prose.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "7278abbdd039628f4afa41f7e871051e41866547",
+        "content": "sha256:8c829f17a7a9de1ecf51cf14ef2ed5e2a4f26d8fbdff8794f67c495f50c8578c",
+        "locator": {
+          "end": 20,
+          "kind": "line_range",
+          "start": 6
+        }
+      },
+      "id": "RLZ-MDYS0X",
+      "invariant": "INV-1YSMF5",
+      "origin": {
+        "handoffEntry": "L62-CUR-6414-history-selection",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "Earlier rows; all five invariant disposition meanings; separate family/onboarding schemas; claim checks.",
+      "role": "primary-authority"
+    }
+  ],
   "references": {
     "1": {
-      "note": "New step-local card/citation/trace format reference; no handwritten-sidecar or authored-trace permission change.\n\nAnchor: Candidate instruction body, lines 3–31",
+      "note": "Read earlier subject rows before ingest; invariant changed/moved/deleted/extended/no_impact have defined meanings, while family and onboarding rows keep their own schemas. Check each changed claim, count and prose line reference against code, including line references inside their citation anchor. Keep an independent statement-by-statement fact-check; citation_fix makes deterministic fixes, while semantic or ambiguous items need Curator judgment without claiming an unbuilt L68 feature. Converted citations and batched repairs keep their declared owner and scoped correct-write recovery.",
       "targets": [
         {
           "anchor": {
-            "blob": "6ebd065137efa6511deb754505556d60730f4647",
-            "content": "sha256:9866f1d3f7e136d032517d1bbf4a8e52cb1747d5acd0844af01cc2eb6cd1dd1a",
+            "blob": "7278abbdd039628f4afa41f7e871051e41866547",
+            "content": "sha256:4a261255b0a44409af5a9186cfdd97c1c0a13f8b82756591c3d8fab17a9962dc",
             "locator": {
-              "end": 31,
+              "end": 51,
               "kind": "line_range",
               "start": 3
             }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3ea09011d0657bf89935264047f646078913e415",
+            "content": "sha256:f42534d6759b458fcf40b7e80eb67bcccee6bc1b93b89f12ab124deb9ebcc63f",
+            "locator": {
+              "end": 108,
+              "kind": "line_range",
+              "start": 107
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "77193c73e40d8dcf1ac8b7158debe508e2d02065",
+            "content": "sha256:52ce87cbd8720457b6cdffb7d69b8f1e24e421042c4946c15de23a9e9daeeb87",
+            "locator": {
+              "end": 38,
+              "kind": "line_range",
+              "start": 3
+            },
+            "path": "skills/l-01-agent-lifecycles/reference/refused-write.md"
           },
           "kind": "code"
         }

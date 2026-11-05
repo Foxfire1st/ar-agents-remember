@@ -10,7 +10,9 @@ Read for baseline route/evidence/sealing work. Organize the assigned work with o
 
 Rendering needs mounted UI evidence, scheduling operation-level evidence, persisted shape parsed artifacts, and doctrine source plus enforcement. Wrong-class evidence is a finding, not PASS. An empty first-pass issue list may terminate. The whole route-coverage, standing-criteria and sealed-findings outputs remain inline in the Reviewer role rather than being replaced by this detail.
 
+Select focused tests across every changed surface and relevant gate; run a full suite only when explicitly requested.
+
 ## Evidence
-
-
 - New steps-3–5 detail preserving independent evidence-class/lens inspection and empty-baseline termination. [1]
+
+- Select focused tests across every changed surface and relevant gate; run a full suite only when explicitly requested. [2]

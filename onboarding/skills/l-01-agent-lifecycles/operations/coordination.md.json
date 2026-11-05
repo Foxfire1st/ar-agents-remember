@@ -4,12 +4,12 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "dee346f3da2aa768e464f5895f9489da5f4ad6bd",
+        "blob": "cae239eb383e7e6a0679cf80d64d182e2d36fc0f",
         "content": "sha256:c9b63c1e3adebd96a786775a959d55a38d3743b94be125d317c288ac4fafbf8a",
         "locator": {
-          "end": 24,
+          "end": 32,
           "kind": "line_range",
-          "start": 24
+          "start": 32
         }
       },
       "id": "RLZ-3PNEK4",
@@ -18,17 +18,36 @@
         "handoffEntry": "L117-R07",
         "leaf": "260928-MIK-L117"
       },
-      "rationale": "The coordination operation carries the same rule for every seat that sends or receives.",
+      "rationale": "The coordination operation retains the complete message-files/body/attach/settings-limit transport paragraph for its addressed seats.",
       "role": "presentation"
     },
     {
       "anchor": {
-        "blob": "dee346f3da2aa768e464f5895f9489da5f4ad6bd",
-        "content": "sha256:9ad51fdeb3904959900a0d7e6c9703bfd5e1aa4bd15b73d50518812627043239",
+        "blob": "cae239eb383e7e6a0679cf80d64d182e2d36fc0f",
+        "content": "sha256:f79f7eb21dee02438af3e36859cd242ed570021e1d69e0eb440631b83e1f4283",
         "locator": {
-          "end": 30,
+          "end": 8,
           "kind": "line_range",
-          "start": 28
+          "start": 8
+        }
+      },
+      "id": "RLZ-AH5XYY",
+      "invariant": "INV-MTRR08",
+      "origin": {
+        "handoffEntry": "L62-CUR-6db-attach-INV-MTRR08",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "The generic start paragraph removes the obsolete role_start_set directive and defers Manager leaf staging to the actual stage-start paragraph.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "cae239eb383e7e6a0679cf80d64d182e2d36fc0f",
+        "content": "sha256:fc658340153fb2aff88c4b2cbe722290b335ba07f1e8435975057e99865cea22",
+        "locator": {
+          "end": 40,
+          "kind": "line_range",
+          "start": 36
         }
       },
       "id": "RLZ-GNQNEF",
@@ -42,12 +61,12 @@
     },
     {
       "anchor": {
-        "blob": "dee346f3da2aa768e464f5895f9489da5f4ad6bd",
-        "content": "sha256:cf493f936208176596c3c4236d6b340db2bfc43a7da45174fa3f346c4578ccbc",
+        "blob": "cae239eb383e7e6a0679cf80d64d182e2d36fc0f",
+        "content": "sha256:484f3851d68df9b063e36cf84b4ffa2612568f10d7daa7069651832fb889c358",
         "locator": {
-          "end": 22,
+          "end": 30,
           "kind": "line_range",
-          "start": 22
+          "start": 30
         }
       },
       "id": "RLZ-H0W6SX",
@@ -61,12 +80,12 @@
     },
     {
       "anchor": {
-        "blob": "dee346f3da2aa768e464f5895f9489da5f4ad6bd",
-        "content": "sha256:cf493f936208176596c3c4236d6b340db2bfc43a7da45174fa3f346c4578ccbc",
+        "blob": "cae239eb383e7e6a0679cf80d64d182e2d36fc0f",
+        "content": "sha256:ec8ab946f6b86e4cf35b3169c50af48c47982769eeb441faa08a0858d3170013",
         "locator": {
-          "end": 22,
+          "end": 30,
           "kind": "line_range",
-          "start": 22
+          "start": 23
         }
       },
       "id": "RLZ-JF7EP8",
@@ -75,17 +94,17 @@
         "handoffEntry": "L100-R100-doctrine-coherence",
         "leaf": "260928-MIK-L100"
       },
-      "rationale": "The resolver sentence now reaches a seat's single live agent, matching the refusal of doubled seats.",
+      "rationale": "Coordination carries the two Manager stage notices, complete individual Reviewer intake and the single-live-agent refusing resolver.",
       "role": "primary-authority"
     },
     {
       "anchor": {
-        "blob": "dee346f3da2aa768e464f5895f9489da5f4ad6bd",
+        "blob": "cae239eb383e7e6a0679cf80d64d182e2d36fc0f",
         "content": "sha256:fd97efca3521a234676e5b0bcdc806fbdd0827156b2fbdf22900b9a55b5410f8",
         "locator": {
-          "end": 26,
+          "end": 34,
           "kind": "line_range",
-          "start": 26
+          "start": 34
         }
       },
       "id": "RLZ-P0ZH30",
@@ -99,7 +118,7 @@
     },
     {
       "anchor": {
-        "blob": "dee346f3da2aa768e464f5895f9489da5f4ad6bd",
+        "blob": "cae239eb383e7e6a0679cf80d64d182e2d36fc0f",
         "content": "sha256:59e877c574495767f31cf0b20fa0a22d6f52860614cfc0e1def7045aa6fab7d2",
         "locator": {
           "end": 6,
@@ -118,12 +137,12 @@
     },
     {
       "anchor": {
-        "blob": "dee346f3da2aa768e464f5895f9489da5f4ad6bd",
-        "content": "sha256:d1d2e01905a6704b90fb0c05fefb424b730e62d940e6b1566c0082dd75fe4a48",
+        "blob": "cae239eb383e7e6a0679cf80d64d182e2d36fc0f",
+        "content": "sha256:e4a085429371e477646de8aa7d54f12fb9fbd4fb1aeaa5d7a12ffcac9a43dba3",
         "locator": {
-          "end": 22,
+          "end": 30,
           "kind": "line_range",
-          "start": 12
+          "start": 13
         }
       },
       "id": "RLZ-XF8A3Q",
@@ -138,17 +157,121 @@
   ],
   "references": {
     "1": {
-      "note": "The Manager starts Worker, Reviewer and Curator together through one role_start_set; Worker opens immediately, the other seats are held unless first Reviewer work is supplied. Public messaging takes a unique live seat, refuses ambiguity, and holds behind already-held messages when a start, permission prompt or non-steerable turn prevents delivery. Permission decisions are never answered by transport; the upward notice names the role/task/agent/permission, and the product delivers held work when admissible without sender resubmission. CODE and MEMORY lanes keep separate counts; the settings limit and recorded architect/developer authority govern extra rounds. Direct peer packages are not relayed by Manager.",
+      "note": "Normal leaf stages start individually: Worker at build, Reviewer at freeze and Curator after code PASS; required notices reach Manager before direct peer handovers. Messaging resolves one live seat or refuses ambiguity. Further messages are held behind already waiting work; unfinished starts, pending permission and turns whose providers do not take steering postpone delivery without answering the permission. The product’s active sweep or ended-turn drain delivers admissible held work without sender resubmission. CODE and MEMORY keep separate recorded counts under the settings limit and recorded extra-round authority. Manager retains gate and transaction ownership and relays no peer contents.",
       "targets": [
         {
           "anchor": {
-            "blob": "dee346f3da2aa768e464f5895f9489da5f4ad6bd",
-            "content": "sha256:396d52c1c19866d0c91fd23179093b44677c779ac0096b05ad0fa7243c985af3",
+            "blob": "cae239eb383e7e6a0679cf80d64d182e2d36fc0f",
+            "content": "sha256:ac3943b09cd53dcad8bcfa358cd803343d54252b07981070934ea2516bce36d0",
             "locator": {
-              "end": 29,
+              "end": 43,
+              "kind": "line_range",
+              "start": 4
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1e006f679fb322bbd74e0377548c29c2a387f77d",
+            "content": "sha256:937685898b7082134b865eae2288592a1c937c1a853537c90178e0d836d49f66",
+            "locator": {
+              "end": 21,
               "kind": "line_range",
               "start": 1
-            }
+            },
+            "path": "skills/l-01-agent-lifecycles/reference/message-handover.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3981b9aee8073316f4a7d14e2f33cb7346f4adac",
+            "content": "sha256:18047a903ab86ebc63bfb05b15a195b3e10a448a0bb6230c148faf6126b19d63",
+            "locator": {
+              "end": 514,
+              "kind": "line_range",
+              "start": 480
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_role_tools.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ab10f3cdc3aba28b9e189c902501164cc29da34b",
+            "content": "sha256:27ef107a06c8e8d5524c7a13f6ebe5d6d084b0cb271fc639b06cf1c4369793da",
+            "locator": {
+              "end": 438,
+              "kind": "line_range",
+              "start": 398
+            },
+            "path": "mcp/src/agents_remember/controlplane/held_store_layout.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fcd65d7a10c8de5491de92eede3df7d713ada660",
+            "content": "sha256:80aef136984e05536c634823ad28f449d12a06370b01b623979575f68b8ce9c7",
+            "locator": {
+              "end": 270,
+              "kind": "line_range",
+              "start": 232
+            },
+            "path": "mcp/src/agents_remember/cli/role_held_messages.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fcd65d7a10c8de5491de92eede3df7d713ada660",
+            "content": "sha256:3516329f6059493302ec76d225836a50edce02047537681817ca9bed27877f5b",
+            "locator": {
+              "end": 414,
+              "kind": "line_range",
+              "start": 367
+            },
+            "path": "mcp/src/agents_remember/cli/role_held_messages.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "27cde45f71617a873b3d3c7c33c8fc7a59871503",
+            "content": "sha256:f633e9b58ad2567a3f1a80672465bb4923934912e7457c0d55a59b5291eebc2b",
+            "locator": {
+              "end": 1220,
+              "kind": "line_range",
+              "start": 1193
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_bridge.mjs"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fcd65d7a10c8de5491de92eede3df7d713ada660",
+            "content": "sha256:cb91f3750f43ab30ba438bf51309fbc88be8b2f4a226faf22715731159bc07f4",
+            "locator": {
+              "end": 978,
+              "kind": "line_range",
+              "start": 928
+            },
+            "path": "mcp/src/agents_remember/cli/role_held_messages.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fcd65d7a10c8de5491de92eede3df7d713ada660",
+            "content": "sha256:a6e03ae162ead1a55e19cd540059d13548454e11de187ad32117171984471bad",
+            "locator": {
+              "end": 1021,
+              "kind": "line_range",
+              "start": 995
+            },
+            "path": "mcp/src/agents_remember/cli/role_held_messages.py"
           },
           "kind": "code"
         }
@@ -159,25 +282,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "dee346f3da2aa768e464f5895f9489da5f4ad6bd",
-            "content": "sha256:18410397f62207e8cffc50b1391e63c1048cf0d523fb03af8c3fd54737e827be",
+            "blob": "cae239eb383e7e6a0679cf80d64d182e2d36fc0f",
+            "content": "sha256:e3cb95ab87a89b81e4c2015f8ca9d616d5819187405fb9964e165710434e9afb",
             "locator": {
-              "kind": "file"
-            }
-          },
-          "kind": "code"
-        }
-      ]
-    },
-    "3": {
-      "note": "Marks common operation text all-role and isolates the Manager-only report/retry-occasion paragraph; no substantive start/message rule is rewritten.\n\nAnchor: Current source; preserved L88 property 3",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "dee346f3da2aa768e464f5895f9489da5f4ad6bd",
-            "content": "sha256:dfca8b4325f63597c26c181e0554d354ee33a054777e3d028f092bf66304c32d",
-            "locator": {
-              "end": 20,
+              "end": 44,
               "kind": "line_range",
               "start": 1
             }
@@ -186,17 +294,34 @@
         }
       ]
     },
-    "4": {
-      "note": "Marks common operation text all-role and isolates the Manager-only report/retry-occasion paragraph; no substantive start/message rule is rewritten.\n\nAnchor: Current source; preserved L88 property 4",
+    "3": {
+      "note": "Current common coordination text retains exact role/task bindings, individual stage starts, direct peer handovers and receipt/permission boundaries. Its Manager audience receives start notices, routine-state/report duties and the first-intake instruction; audience markers do not create another owner.",
       "targets": [
         {
           "anchor": {
-            "blob": "dee346f3da2aa768e464f5895f9489da5f4ad6bd",
-            "content": "sha256:992a8ad9f19bc6e3a081b5c0c544509494276e8dc1452f5ccdb747545a225967",
+            "blob": "cae239eb383e7e6a0679cf80d64d182e2d36fc0f",
+            "content": "sha256:ac3943b09cd53dcad8bcfa358cd803343d54252b07981070934ea2516bce36d0",
             "locator": {
-              "end": 32,
+              "end": 43,
               "kind": "line_range",
-              "start": 22
+              "start": 4
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Current coordination distinguishes common seat/message boundaries from the Manager-specific start, intake and report duties. Worker starts at build, Reviewer at freeze and Curator after code PASS; the recipient reads the exact object and the sender does not resend a held message.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cae239eb383e7e6a0679cf80d64d182e2d36fc0f",
+            "content": "sha256:ac3943b09cd53dcad8bcfa358cd803343d54252b07981070934ea2516bce36d0",
+            "locator": {
+              "end": 43,
+              "kind": "line_range",
+              "start": 4
             }
           },
           "kind": "code"
@@ -208,12 +333,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "dee346f3da2aa768e464f5895f9489da5f4ad6bd",
-            "content": "sha256:0be429bce9018a40b3a01e84336a6131dcecf4fc7eda0d6ee05a70a79b231e87",
+            "blob": "cae239eb383e7e6a0679cf80d64d182e2d36fc0f",
+            "content": "sha256:4b74a662c41c5270ee06890d885b3b2ffde05e203a356be4549be13e10951395",
             "locator": {
-              "end": 19,
+              "end": 25,
               "kind": "line_range",
-              "start": 19
+              "start": 23
             }
           },
           "kind": "code"

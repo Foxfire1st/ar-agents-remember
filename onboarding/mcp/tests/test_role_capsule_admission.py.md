@@ -76,8 +76,9 @@ None recorded.
 
 Current assertion ownership differs from the retained historical inventory: six edge functions now live in `test_role_capsule_manifest_edges.py`, with the same current test names and contracts. Entries/ranges in the old inventory that name them here are historical locations, not instructions to restore duplicate tests. `_shipped_request` also admits role-addressed step details, and the frontmatter check removes audience metadata from expected delivered text while keeping the whole-source revision. No historical pass/count becomes current merely through this maintenance.
 
-## Evidence
+The every-role digest source remains required while additional admitted shared core stays out of rendered instructions. Omission of that digest refuses by name. Delivered-prose comparison removes only closed typed composition metadata and retains the complete remaining prose; the revision still addresses whole source bytes. These are source assertions/support behavior, not a fresh invocation, host result or AR acceptance.
 
+## Evidence
 ### Docs References
 
 No external or domain documentation is configured for this memory root
@@ -97,11 +98,19 @@ No relevant documentation found after checking live sources.
 - The both-directions plan validation, including the skill-root gate. [4]
 - **The carried skill channel** these cases pin, and the helper that names a skill identity. [5]
 
-- The application entry point that converts an admission refusal into an outcome value — including an **emptied source**, whose refusal reaches the caller as a value rather than as an escaping exception (D25). [6]
+- The application entry point that converts an admission refusal into an outcome value — including an **emptied source**, whose refusal reaches the caller as a value rather than as an escaping exception (D25). [Past-epoch source caption, detached from live reference 6. Recorded citation custody: mcp/src/agents_remember/application/role_capsules/compilation.py blob 0de84f83644c391b29759b1623034309cabc8c72 (available); mcp/src/agents_remember/models/role_capsules/sources.py blob 11345e10ceb2c3818e6f7ad4790607a78658f59b (available); historical event commit not identified. No historical event or intent inferred.]
+
+[Past-epoch source caption, detached from live reference 6. Recorded citation custody: mcp/src/agents_remember/application/role_capsules/compilation.py blob 0de84f83644c391b29759b1623034309cabc8c72 (available); mcp/src/agents_remember/models/role_capsules/sources.py blob 11345e10ceb2c3818e6f7ad4790607a78658f59b (available); historical event commit not identified. No historical event or intent inferred.]
+
+Anchor: `compile_admitted_capsule` `CapsuleCompilationOutcome`
+
+Current source: compile_admitted_capsule returns a CapsuleCompilationOutcome for admission or compilation refusals, with a manifest in both shapes and exactly one of result/error. Empty admitted instruction text raises the typed source-empty error; errors from reading the shared block or compiling are caught and returned as refusal outcomes.
 
 
 
-- The real corpus this module and the distinct audience/launch/manifest-edge modules read. [7]
+- The real corpus this module and the distinct audience/launch/manifest-edge modules read. [Past-epoch source caption, detached from live reference 7. Recorded citation custody: skills/l-01-agent-lifecycles/composition-manifest.json blob 2f3ce46a32a38d86f474252bb23d8081e91f0a6e (available); mcp/tests/test_role_capsule_admission.py blob fde424ce1c4b108a144b9b7ab8f0d9fe8a807bf1 (available); mcp/tests/test_role_capsule_manifest_edges.py blob e9fe68b54da9fc973d516589d64bdc3d3391df10 (available); mcp/tests/test_role_capsule_audiences.py blob ee20e82cebeed3333d4831fe27894c9806cfb48c (available); historical event commit not identified. No historical event or intent inferred.]
+
+Current source: Admission tests read the shipped lifecycle manifest and form role/operation requests and bindings. The separate manifest-edge module checks lookup, malformed selections and composing roots; the audience module compiles declared role/operation pairs and checks addressed operation content against pinned seals.
 
 
 - The sibling module that owns the compiler's own property cases. [8]
@@ -113,4 +122,16 @@ No sibling-repository contract is exercised by these cases.
 No meaningful cross-repo references found.
 
 
-- The shipped request now admits role-addressed declared details together with skills. The no-frontmatter case compares delivered body after removing audience metadata lines while retaining full-source revision. Six edge-test functions move into test_role_capsule_manifest_edges.py: role lookup, specialization shape/blank declared identity, absent override winner, invalid path root, missing selected manifest and composing-root accessor. Remaining admission cases retain their existing assertions. [9]
+- The shipped request now admits role-addressed declared details together with skills. The no-frontmatter case compares delivered body after removing audience metadata lines while retaining full-source revision. Six edge-test functions move into test_role_capsule_manifest_edges.py: role lookup, specialization shape/blank declared identity, absent override winner, invalid path root, missing selected manifest and composing-root accessor. Remaining admission cases retain their existing assertions. [Past-epoch source caption, detached from live reference 9. Recorded citation custody: mcp/tests/test_role_capsule_admission.py blob fde424ce1c4b108a144b9b7ab8f0d9fe8a807bf1 (available); historical event commit not identified. No historical event or intent inferred.]
+
+[Past-epoch source caption, detached from live reference 9. Recorded citation custody: mcp/tests/test_role_capsule_admission.py blob fde424ce1c4b108a144b9b7ab8f0d9fe8a807bf1 (available); historical event commit not identified. No historical event or intent inferred.]
+
+Anchor: Current test/support source
+
+Current source: The shipped request includes role-addressed declared details in its admitted skill sources. The no-frontmatter check independently reconstructs delivered prose after removing a closed leading frontmatter block and typed composition-metadata lines, while retaining the complete source revision; deletion, relocation, leaked metadata and wrong-revision controls must fail. Six edge concerns are defined in the distinct manifest-edge module: lookup, specialization shape/blank identity, absent override winner, invalid root, missing selected manifest and composing roots.
+
+- compile_admitted_capsule returns a CapsuleCompilationOutcome for admission or compilation refusals, with a manifest in both shapes and exactly one of result/error. Empty admitted instruction text raises the typed source-empty error; errors from reading the shared block or compiling are caught and returned as refusal outcomes. [6]
+- Admission tests read the shipped lifecycle manifest and form role/operation requests and bindings. The separate manifest-edge module checks lookup, malformed selections and composing roots; the audience module compiles declared role/operation pairs and checks addressed operation content against pinned seals. [7]
+- The shipped request includes role-addressed declared details in its admitted skill sources. The no-frontmatter check independently reconstructs delivered prose after removing a closed leading frontmatter block and typed composition-metadata lines, while retaining the complete source revision; deletion, relocation, leaked metadata and wrong-revision controls must fail. Six edge concerns are defined in the distinct manifest-edge module: lookup, specialization shape/blank identity, absent override winner, invalid root, missing selected manifest and composing roots. [9]
+
+- The every-role digest source remains required while additional admitted shared core stays out of rendered instructions. Omission of that digest refuses by name. Delivered-prose comparison removes only closed typed composition metadata and retains the complete remaining prose; the revision still addresses whole source bytes. These are source assertions/support behavior, not a fresh invocation, host result or AR acceptance. [10]
