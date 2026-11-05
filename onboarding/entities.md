@@ -16,6 +16,8 @@ Task Document remains authored JSON with optional external render annotation. Cl
 
 ## Historical CCR Committed-Fingerprint Boundary
 
+Past-epoch custody (verbatim; own old target `4ffeeb98c6ddf7594ebdea7eac26bb7298f2dd72`; retained wording is not a claim about the current table):
+
 The catalog was reconciled to prepared code candidate
 `602143bd1d48226f4d53b83ff7c5002a695dcdff` (tree `4c6b7bc2362bc03d50fc7a0643f34b591b805d45`) when this boundary was recorded: entity fingerprints then resolved
 `602143bd1d48226f4d53b83ff7c5002a695dcdff:<path>` committed blobs only, no working-tree fingerprint or provisional verification
@@ -25,9 +27,15 @@ implementation candidate, not aggregate acceptance. It is history rather than a 
 reproduce at `602143bd1d48226f4d53b83ff7c5002a695dcdff` — nine of the twenty-two name an evidence path that does not exist at that
 commit — and the table reproduces at `4ffeeb98c6ddf7594ebdea7eac26bb7298f2dd72`.
 
+Current clause: the current table reproduces at committed code `d8869a4b7206536a83d5e18bf5865a4d6dde08c4`; its four moved cells and the held `Seat Landing Archive` cell are distinguished in the current fingerprint clause below. The retained wording keeps its own old `4ffeeb98` target.
+
 ### Recorded Scoped Committed-Source Review
 
+Past-epoch custody (verbatim; own old target `4ffeeb98c6ddf7594ebdea7eac26bb7298f2dd72`; retained wording is not a claim about the current table):
+
 A second historical record: a refresh from committed code `7cbda30d9a9a4c2944382fbef46ac58b85329935` covered 11 entity fingerprints — `Onboarding Unit`, `File-Level Onboarding Content Model`, `Light Task Artifact`, `External Memory Ledger`, `Closeout Effective Input`, `Closeout Mutation Evidence`, `Memory Baseline Adoption`, `Worktree Contract`, `Source Lineage`, `Worktree Integration`, `Seat Landing Archive` — and its [scoped refresh receipt](ar-coordination/tasks/agents-remember/260913_ledger-commit-attribution/notes/reports/2026-09-15-live-cutover/entity-fingerprint-refresh.json) is the record of it, the External Memory Ledger evidence set including the committed cache owner. It is a genuine historical receipt, not this table's values: 0 of its 11 stored cells equals its recorded fingerprint, while four of its eleven fingerprints do reproduce at `7cbda30d9a9a4c2944382fbef46ac58b85329935` when hashed over the receipt's own recorded paths — External Memory Ledger, Closeout Mutation Evidence, Memory Baseline Adoption and Worktree Contract — and the other seven do not. The table below reproduces at `4ffeeb98c6ddf7594ebdea7eac26bb7298f2dd72`. Nothing here certifies the full catalog or restamps unrelated entities and global verification fields.
+
+Current clause: the current table reproduces at committed code `d8869a4b7206536a83d5e18bf5865a4d6dde08c4`; its four moved cells and the held `Seat Landing Archive` cell are distinguished in the current fingerprint clause below. The retained wording keeps its own old `4ffeeb98` target.
 
 ## Entity Fingerprints
 
@@ -35,7 +43,11 @@ A second historical record: a refresh from committed code `7cbda30d9a9a4c2944382
 
 The removed native delivery injector, adapter capability/submission machinery and supervisor sweep have no current catalog entry or preserved historical-reference route. Task-bound seat identity and retirement belong to native host receipts; enclosure landing proof remains contract-owned and separate. The surviving source-lineage/provider duties name their actual remaining owners.
 
+Past-epoch custody (verbatim; own old target `4ffeeb98c6ddf7594ebdea7eac26bb7298f2dd72`; retained wording is not a claim about the current table):
+
 Every row in the table below is `git-blob-set-v1` over that row's own evidence paths at `4ffeeb98c6ddf7594ebdea7eac26bb7298f2dd72`, the code commit whose tree this leaf lands: the paths in sorted order, each followed by its blob at that tree, joined path-NUL-blob-newline. All twenty-two rows reproduce at that commit — a row whose evidence this leaf does not change reproduces there because its value is the same at the base — so no row in this block is a historical reading. The closeout's entity-fingerprint refresh re-derives each value at the landing code commit; a change to a row's evidence set requires recomputing that row, and this records no future commit or landing.
+
+Current clause: all twenty-two stored cells reproduce over their own evidence paths at code commit `d8869a4b7206536a83d5e18bf5865a4d6dde08c4` (tree `546c67286572068e6ae5779f5ea6708d2f854272`). The governed refresh from memory `85ff7305ce91b78e5c91cbe9ebb057e151dae8d2` to `683fe842c30dff4456171d716be5d93766938994` moved four cells: `Onboarding Unit`, `File-Level Onboarding Content Model`, `Closeout Effective Input` and `Source Lineage`. `Seat Landing Archive` held its existing cell across that refresh; held does not mean that cell reproduces at the old `4ffeeb98` target.
 
 
 | Entity                              | Algorithm         | Fingerprint                                                               | Evidence Paths                                                                                                                                                                                                                                                                                                                                                                                                                                        |
@@ -616,7 +628,11 @@ The earlier cumulative certification/aggregate-quality account is historical and
 
 ### Ledger-Retirement Fingerprint Follow-Up
 
+Past-epoch custody (verbatim; own old target `4ffeeb98c6ddf7594ebdea7eac26bb7298f2dd72`; retained wording is not a claim about the current table):
+
 When `260913-LCA-L9` recorded this follow-up (2026-09-15), six fingerprint values were deferred at that pass's committed baseline: the External Memory Ledger row was re-pointed to the focused owners `mcp/src/agents_remember/kernel/memory_attribution.py`, `mcp/src/agents_remember/kernel/memory_cache.py`, `mcp/src/agents_remember/kernel/memory_ledger.py` and `mcp/src/agents_remember/worktrees/ledger_projection.py`; `memory_cache.py` then had no committed blob in the base as reviewed, its retained digest was left stale for the changed set, and the other five sets awaited a committed-source refresh. Those are past states. `memory_cache.py` now has committed blob `7a62e25249db9a1da4bcc623e29b4af7faaf91e9` at both `d0be84f71` and `4ffeeb98c6ddf7594ebdea7eac26bb7298f2dd72`; the External Memory Ledger row computes `git-blob-set-v1` `sha256:b4114ad55f38ee8a1ca89234a13fddb8ea869725c1926de1e7f2dbcaba55ce38` over its four evidence paths at `4ffeeb98`, which is its stored cell. No deferred value is stale today: all twenty-two rows of the fingerprint block reproduce at that commit.
+
+Current clause: the current table reproduces at committed code `d8869a4b7206536a83d5e18bf5865a4d6dde08c4`; its four moved cells and the held `Seat Landing Archive` cell are distinguished in the current fingerprint clause above. The retained wording keeps its own old `4ffeeb98` target.
 
 ### Knowledge-Storage Entity Deferral (260915-KS-L1)
 
@@ -696,7 +712,11 @@ The R93 change edits the canonical `l-01-agent-lifecycles` role, operation, core
 - **Source Lineage** — the evidence set includes the `package_data` `roles/manager.md` and `templates/curator-brief.md` copies; the manager copy's developer-question sentence changed in this leaf.
 - **Seat Landing Archive** — the evidence set includes the `package_data` `roles/manager.md`, `roles/orchestrator.md` and `templates/manager-brief.md` copies; those copies' question and forward/notice sentences changed in this leaf.
 
+Past-epoch custody (verbatim; own old target `4ffeeb98c6ddf7594ebdea7eac26bb7298f2dd72`; retained wording is not a claim about the current table):
+
 When `260928-MIK-L93` recorded this (2026-10-08), both rows stayed at that pass's committed baseline because `git-blob-set-v1` resolves committed `HEAD:<path>` blobs and the change sat in a deliberately uncommitted candidate; no value was hand-edited then, and the governed closeout was to recompute both rows at the actual code commit. On the bytes this leaf lands both reproduce at `4ffeeb98c6ddf7594ebdea7eac26bb7298f2dd72`: Source Lineage `sha256:0804b499a554d5ea329b01c68459248a22cc4594fbd12b2b218020d1b882805e` over its seven evidence paths and Seat Landing Archive `sha256:82b5cbb9da8eabedb0e23533190292ec2b4501407a340446337981bc307e4e06` over its three, each equal to its stored cell. The governed closeout still recomputes both at its own landing commit, and the route contract itself is carried by the role, operation and CLI cards and by the rule-13 invariant.
+
+Current clause: `Source Lineage` is one of the four cells moved by the governed refresh named above; `Seat Landing Archive` held its immediately preceding stored cell. Both current cells reproduce at committed code `d8869a4b7206536a83d5e18bf5865a4d6dde08c4`, not the old values quoted in this custody account. The retained sentence keeps its own `4ffeeb98` target.
 
 ## Working-source entity: Direct Execution Grant
 
