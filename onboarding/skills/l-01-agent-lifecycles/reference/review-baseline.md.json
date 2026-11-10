@@ -1,13 +1,33 @@
 {
   "path": "skills/l-01-agent-lifecycles/reference/review-baseline.md",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "5ff6fa27f8af03076cef47a1eff305618f6611a9",
+        "content": "sha256:b793d77e5a9af1a8a5f19818495a2f9ecdaa1e705f3b5dbeffbe0bf3727a0223",
+        "locator": {
+          "end": 34,
+          "kind": "line_range",
+          "start": 34
+        }
+      },
+      "id": "RLZ-Y13CKW",
+      "invariant": "INV-TCZP9Y",
+      "origin": {
+        "handoffEntry": "MIK-R218.4@v1",
+        "leaf": "260928-MIK-L205"
+      },
+      "rationale": "The baseline detail's focused-test pointer is the single pointer the packet requires.",
+      "role": "propagation-persistence"
+    }
+  ],
   "references": {
     "1": {
       "note": "Route work is organised by the Reviewer with optional harness helpers.",
       "targets": [
         {
           "anchor": {
-            "blob": "0eb41ca41e71fe01629cea89a1b74f46f8dc7f9e",
+            "blob": "5ff6fa27f8af03076cef47a1eff305618f6611a9",
             "content": "sha256:a2da08de0419d8020999cfc20186d099eed7632c01130ce760c107b4606d633b",
             "locator": {
               "end": 7,
@@ -24,7 +44,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0eb41ca41e71fe01629cea89a1b74f46f8dc7f9e",
+            "blob": "5ff6fa27f8af03076cef47a1eff305618f6611a9",
             "content": "sha256:44f495fca212bfa6c91343e88779c987030458ee67837de7571aa601631989e3",
             "locator": {
               "end": 20,
@@ -41,7 +61,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0eb41ca41e71fe01629cea89a1b74f46f8dc7f9e",
+            "blob": "5ff6fa27f8af03076cef47a1eff305618f6611a9",
             "content": "sha256:4b43af94b238cd7211a1ba8b501310d70543e05f90b4536dd8dc4fa89a83646d",
             "locator": {
               "end": 26,
@@ -54,12 +74,12 @@
       ]
     },
     "4": {
-      "note": "An empty first-pass list terminates the baseline; focused tests cover every changed surface, with full-suite authority in the role.",
+      "note": "An empty first-pass list terminates the baseline; focused tests follow the review-stage rule, with full-suite authority in the role.\n\nAnchor: \"An empty first-pass issue list is a valid terminating baseline.\"",
       "targets": [
         {
           "anchor": {
-            "blob": "0eb41ca41e71fe01629cea89a1b74f46f8dc7f9e",
-            "content": "sha256:4eec2a75c57f52f942c5cd4ec98e29d063063cd0ccb010f20f7b85a2d792c52e",
+            "blob": "5ff6fa27f8af03076cef47a1eff305618f6611a9",
+            "content": "sha256:cd621f99ccc03bd49172249274f7738c117710a7e746adca9ce68e231418d896",
             "locator": {
               "end": 34,
               "kind": "line_range",

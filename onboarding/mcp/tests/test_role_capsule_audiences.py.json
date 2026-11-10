@@ -248,12 +248,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7abeac8a7f1762d40a037256fbe0adc0f7f7fe22",
+            "blob": "778d8bf121da98696a3b9a8b382007ae99277f00",
             "content": "sha256:6d6c044c515d8a9d4c5f6655e86b094789d473a302ab286442f4117960acd9dc",
             "locator": {
-              "end": 77,
+              "end": 81,
               "kind": "line_range",
-              "start": 75
+              "start": 79
             },
             "path": "skills/l-01-agent-lifecycles/operations/review.md"
           },
@@ -266,15 +266,13 @@
       "targets": [
         {
           "anchor": {
-            "blob": "2360e5f8e62f11d9afc77db8bff1def8464ffba7",
-            "content": "sha256:34006de306733972c5491d0bbb542e92054e4f507e6e5dc8e2007d0fec0033e2",
+            "blob": "9394f4b0123d01519b291a9bd9d7961d1e3c2122",
+            "content": "sha256:e7e28da0fb061b0b4914bb0be61b2bda85c8d008911084a8aa02e7bf7f7ec481",
             "locator": {
-              "kind": "symbol",
-              "name": "V13_OPERATION_SHA256"
-            },
-            "path": "mcp/test_support/agents_remember_test_support/testing/capsule_audience_v13_fixtures.py"
+              "kind": "file"
+            }
           },
-          "kind": "code"
+          "kind": "test"
         }
       ]
     },

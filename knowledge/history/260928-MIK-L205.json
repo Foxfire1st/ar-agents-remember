@@ -1,0 +1,529 @@
+{
+  "closed": true,
+  "leaf": "260928-MIK-L205",
+  "rows": [
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "9f9d3c088f7f66b2c348754fb1f8da0839cee9ba",
+            "content": "sha256:94c3d3c4628a450586a9522c436ee1c1f1e4478ee9b1e6af0feb8cb73582caa8",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/implementation.md"
+          },
+          "before": {
+            "blob": "3ced1293eb5a72b969424a768fbea7e5a086143b",
+            "content": "sha256:a4ab1088ea6a45a3c900a15960d864e2c59386af7c01f1f6dc77d16b2cadb596",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/implementation.md"
+          },
+          "id": "RLZ-75F34B"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-0306D3",
+      "items": [
+        "sha256:c927e50c7a1db66304cd60e024fcbaffc3d5f173a37edecccbd12b0a2c9374e4"
+      ],
+      "reason": "The implementation operation gained a sentence, so its whole-file realization is re-anchored; the first-message projection the invariant governs is untouched.",
+      "revision": 1,
+      "subject": "INV-ZVD184"
+    },
+    {
+      "considered": [],
+      "disposition": "no_family",
+      "id": "ROW-0WDPYV",
+      "items": [
+        "sha256:7c1cc20b095b343500495765023a81a6cce2a049069e2a4b9b009543dd2ef05d"
+      ],
+      "reason": "The obligation is a selection or review duty stated in lifecycle stage text; no recorded family promises it jointly with other obligations, and no examined family guarantee covers it.",
+      "revision": 1,
+      "subject": "membership:INV-972YFR"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "9d14b8713e0f3b3d61bfaee5180ce9ca0cc164ab",
+            "content": "sha256:c7df5fbe07b582204d95b5b73fd24bdb5ebc8605900c0b019ae7ec2c401a30a3",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/core/digest-map.json"
+          },
+          "before": {
+            "blob": "ccf598b992b2a5524e1dfd13d4f57f572b563963",
+            "content": "sha256:6c0704944d9d957412fd657e9173cf6045455c8672ba5cffe091b5fe828a3a80",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/core/digest-map.json"
+          },
+          "id": "RLZ-BZ71PH"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-1PYA49",
+      "items": [
+        "sha256:738fcc7157d525a073759634453232e093b0ee8e499ff0077fac78e914c9cc8d"
+      ],
+      "reason": "Two stage texts gained lines, so the digest map's recorded source line ranges for them moved while the map stays an audit record; its realization is re-anchored to the edited file.",
+      "revision": 1,
+      "subject": "INV-40JW44"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-63Z0MN",
+          "revision": 3
+        },
+        {
+          "id": "INV-DKN3CG",
+          "revision": 4
+        },
+        {
+          "id": "INV-NNQR91",
+          "revision": 3
+        }
+      ],
+      "id": "ROW-370EVW",
+      "items": [
+        "sha256:a91a1fae22ae9d96019cbdef71d3f93b6dd5672a4f79c6a6c77aa862df0121b4"
+      ],
+      "reason": "Examined every member at its current revision. The change edits canonical skills, regenerates their single packaged serving copy, and leaves the dashboard launcher and the settings reference untouched, so the joint guarantee that each reached surface carries the change holds unchanged.",
+      "revision": 6,
+      "subject": "FAM-GDXSJG"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-40JW44",
+          "revision": 1
+        },
+        {
+          "id": "INV-7KDG7C",
+          "revision": 1
+        },
+        {
+          "id": "INV-MQ3K06",
+          "revision": 1
+        },
+        {
+          "id": "INV-WR3J18",
+          "revision": 1
+        },
+        {
+          "id": "INV-ZA67WW",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-8CGN4T",
+      "items": [
+        "sha256:927d279d8906327c1d2092ebcbee13eb42fb9b6e0f1c5df1e46cec3b4aec5133"
+      ],
+      "reason": "Examined every member at its current revision. The two stage texts gained sentences and the digest map moved its source ranges, but selection, immutable detail delivery and the separate audit map are unchanged, so the joint guarantee holds.",
+      "revision": 3,
+      "subject": "FAM-N36SWD"
+    },
+    {
+      "considered": [],
+      "disposition": "no_family",
+      "id": "ROW-8N9SGX",
+      "items": [
+        "sha256:bf438831216f8c26236e44a5525e4495999edcacf4eec8f5fa1b673776a6e2ee"
+      ],
+      "reason": "The obligation is a selection or review duty stated in lifecycle stage text; no recorded family promises it jointly with other obligations, and no examined family guarantee covers it.",
+      "revision": 1,
+      "subject": "membership:INV-YGXGEC"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-8WKCV4",
+      "items": [
+        "sha256:3d5023f745c3f39b762644d7c6eda4030bb74805fdc2322316fb2fa52b87233f"
+      ],
+      "reason": "The card now states the baseline rerun-and-repeat duty and the fix-verification case, and its evidence cites the new section.",
+      "sources": [
+        {
+          "blob": "778d8bf121da98696a3b9a8b382007ae99277f00",
+          "path": "skills/l-01-agent-lifecycles/operations/review.md"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/operations/review.md"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-9WS0VK",
+      "items": [
+        "sha256:79e12462dba89e5cb8cb4ab24ef0f5cfedd7b95a350887afb5c5b88aa0a445fa",
+        "sha256:b7d82d4f4c87b8af20a388b2b73736d6684b7755a1ec97888a3c3f1acd94c753"
+      ],
+      "reason": "The card now states that the record fingerprint is a hash of the record, so any edit to the budget record renews it in the same change.",
+      "sources": [
+        {
+          "blob": "7e6c25daf3eb9e6306f3d8198ce2108f26e7783b",
+          "path": "mcp/test_support/agents_remember_test_support/testing/capsule_budget_d695.py"
+        }
+      ],
+      "subject": "onboarding:mcp/test_support/agents_remember_test_support/testing/capsule_budget_d695.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-B7MNDQ",
+      "items": [
+        "sha256:392f8f1b4625968546132e0e4559b93a2bd07094c0ccf0396e5ff24c266d6f11",
+        "sha256:97b83cfc92cbdf24242295addc6f9cc611081528651925660c651d9eb7d16fe2",
+        "sha256:a0bedab00126f55e6cbc5bcdfb4fa17e96b45bb269c438c2044ebfa03ba3b6ad",
+        "sha256:b080373e3b9fe2df3dc5b55d5701df291f3909e0a3de2e37123ac0485f3761d6",
+        "sha256:b1591beb94f5d1c70abe7ed21446a80e3f8517440122364fce1318b2ecb6d374"
+      ],
+      "reason": "The card now states that all four pin tables are renewed together in the change that alters an operation source or a compiled stage.",
+      "sources": [
+        {
+          "blob": "01322ca33dd186fe19fcccab405ab30a611a9bef",
+          "path": "mcp/test_support/agents_remember_test_support/testing/capsule_audience_v13_fixtures.py"
+        }
+      ],
+      "subject": "onboarding:mcp/test_support/agents_remember_test_support/testing/capsule_audience_v13_fixtures.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "10c9e08a87fbab98a3cad51d0aed342c4506bcb6",
+            "content": "sha256:fe2af8a6f2d9befc25c902aaf924018ecdad010c2a64cf3e34db3bb2f332d18b",
+            "locator": {
+              "end": 5028,
+              "kind": "line_range",
+              "start": 4676
+            },
+            "path": "skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+          },
+          "before": {
+            "blob": "7753e090bc36773c67e31607c93cbb49f25d3f42",
+            "content": "sha256:fe2af8a6f2d9befc25c902aaf924018ecdad010c2a64cf3e34db3bb2f332d18b",
+            "locator": {
+              "end": 5028,
+              "kind": "line_range",
+              "start": 4676
+            },
+            "path": "skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+          },
+          "id": "RLZ-DFYHWJ"
+        },
+        {
+          "after": {
+            "blob": "10c9e08a87fbab98a3cad51d0aed342c4506bcb6",
+            "content": "sha256:8a5b2e6ecf2509662b3fef1d0e524f903031cc4b7b45d749166a0f37c3918dd3",
+            "locator": {
+              "end": 15,
+              "kind": "line_range",
+              "start": 15
+            },
+            "path": "skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+          },
+          "before": {
+            "blob": "7753e090bc36773c67e31607c93cbb49f25d3f42",
+            "content": "sha256:663b9a25958f965281d7af205de7f3590a65da78e8ec86072fde5a368ac1b2ba",
+            "locator": {
+              "end": 15,
+              "kind": "line_range",
+              "start": 15
+            },
+            "path": "skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+          },
+          "id": "RLZ-HP4QWK"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-C4K60N",
+      "items": [
+        "sha256:ac2e0c1717644f76bc12a6b3cadd0f3b22250735b75f7f2ee038816f2cd0c1ce"
+      ],
+      "reason": "The renewed measurement record keeps the obligation: exactly one sub-record claims current, the decision-level digest-map hash is renewed to the current map, and the realization anchors move with the edited file.",
+      "revision": 1,
+      "subject": "INV-12JAM7"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-D4Y65E",
+      "items": [
+        "sha256:d67e027d1b5ec2cb9cc49280309bb00f99ad70ad96408e5ab6e07a3b3d20792f"
+      ],
+      "reason": "Reviewed for the three renewed fixtures: the overview names them as the capsule audience and budget fixtures, which remains exactly what they are.",
+      "sources": [
+        {
+          "blob": "2f498cb202266eae5d69227b1dbe954dce990b22",
+          "path": "mcp/test_support/agents_remember_test_support/testing/capsule_audience_fixtures.py"
+        },
+        {
+          "blob": "01322ca33dd186fe19fcccab405ab30a611a9bef",
+          "path": "mcp/test_support/agents_remember_test_support/testing/capsule_audience_v13_fixtures.py"
+        },
+        {
+          "blob": "7e6c25daf3eb9e6306f3d8198ce2108f26e7783b",
+          "path": "mcp/test_support/agents_remember_test_support/testing/capsule_budget_d695.py"
+        }
+      ],
+      "subject": "onboarding:mcp/test_support/agents_remember_test_support/testing/overview"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-D7RR9Z",
+      "items": [
+        "sha256:2b66ef83f0f301c42005ce3365baeaa527a1396f11efd668f4bf86194ee23252",
+        "sha256:8b4082fc6931a5e1f2c73ab37a897712277fa6064ae4f2239b1f786711dc12bd",
+        "sha256:ce1d29f558ef4ee3d73f63c8af30bdcd799781e86c3fe78f12173b4ef291bfaf",
+        "sha256:fd69b20e4870de12d6a73459e31a703dd5b41f1b63b6f125aad3d7180e17fe58"
+      ],
+      "reason": "The card now states that a pin or grouped-detail clause moves only with the bytes it pins or covers, and its evidence is re-anchored to the two tables and the clause table this change renewed.",
+      "sources": [
+        {
+          "blob": "2f498cb202266eae5d69227b1dbe954dce990b22",
+          "path": "mcp/test_support/agents_remember_test_support/testing/capsule_audience_fixtures.py"
+        }
+      ],
+      "subject": "onboarding:mcp/test_support/agents_remember_test_support/testing/capsule_audience_fixtures.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-FHNG6R",
+      "items": [
+        "sha256:3227ad5ae8a4288bd141872008318e1265c3af9013e23d40702eccece070c718"
+      ],
+      "reason": "The card's focused-test sentence now describes the review-stage rule it points to instead of restating the old instruction, and its evidence follows.",
+      "sources": [
+        {
+          "blob": "5ff6fa27f8af03076cef47a1eff305618f6611a9",
+          "path": "skills/l-01-agent-lifecycles/reference/review-baseline.md"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/reference/review-baseline.md"
+    },
+    {
+      "considered": [],
+      "disposition": "no_family",
+      "id": "ROW-H10MXE",
+      "items": [
+        "sha256:594daed76694d5df7763fa94f687832da9b1862acaee5d03ab4e903bf4ee8535"
+      ],
+      "reason": "The obligation is a selection or review duty stated in lifecycle stage text; no recorded family promises it jointly with other obligations, and no examined family guarantee covers it.",
+      "revision": 1,
+      "subject": "membership:INV-93DBZJ"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-JM487V",
+      "items": [
+        "sha256:41c4cf95b9e0bc166fcff8a791751489b8854a2a90d5be0ea3eeb02ca9a6eebf"
+      ],
+      "reason": "Reviewed for the two edited operations, the detail and the two records: the overview describes the area's composition, routing and curation contracts, and the new selection rule changes none of its statements.",
+      "sources": [
+        {
+          "blob": "10c9e08a87fbab98a3cad51d0aed342c4506bcb6",
+          "path": "skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+        },
+        {
+          "blob": "9d14b8713e0f3b3d61bfaee5180ce9ca0cc164ab",
+          "path": "skills/l-01-agent-lifecycles/core/digest-map.json"
+        },
+        {
+          "blob": "9f9d3c088f7f66b2c348754fb1f8da0839cee9ba",
+          "path": "skills/l-01-agent-lifecycles/operations/implementation.md"
+        },
+        {
+          "blob": "778d8bf121da98696a3b9a8b382007ae99277f00",
+          "path": "skills/l-01-agent-lifecycles/operations/review.md"
+        },
+        {
+          "blob": "5ff6fa27f8af03076cef47a1eff305618f6611a9",
+          "path": "skills/l-01-agent-lifecycles/reference/review-baseline.md"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/overview"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-M2XT6N",
+      "items": [
+        "sha256:eaa84475644f8464896e95438ebbb086dc909d79ac5613d76ae4928804efc301"
+      ],
+      "reason": "The card now states that a changed digest map renews the recorded map hash beside a re-measured text, which is what this change did to the measurement record.",
+      "sources": [
+        {
+          "blob": "10c9e08a87fbab98a3cad51d0aed342c4506bcb6",
+          "path": "skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-R316KA",
+      "items": [
+        "sha256:b0f6cd7ca54b0c50b403d6af785854c8e2d06afa2337a04255a92a6ac67727d8"
+      ],
+      "reason": "The card now states the freeze's focused-test selection rule and its repair case, and its evidence cites the new sentence.",
+      "sources": [
+        {
+          "blob": "9f9d3c088f7f66b2c348754fb1f8da0839cee9ba",
+          "path": "skills/l-01-agent-lifecycles/operations/implementation.md"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/operations/implementation.md"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "9f9d3c088f7f66b2c348754fb1f8da0839cee9ba",
+            "content": "sha256:1df4cde6c66f5c8102da746a0602cb603eb198610f5a625ee25578910ca97d57",
+            "locator": {
+              "end": 52,
+              "kind": "line_range",
+              "start": 4
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/implementation.md"
+          },
+          "before": {
+            "blob": "3ced1293eb5a72b969424a768fbea7e5a086143b",
+            "content": "sha256:3deb9c9eb9f10a3bd2448ca80a5415fb5e0b383d6b3895aafcb3f3e202be5f25",
+            "locator": {
+              "end": 52,
+              "kind": "line_range",
+              "start": 4
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/implementation.md"
+          },
+          "id": "RLZ-1AP8C0"
+        },
+        {
+          "after": {
+            "blob": "9f9d3c088f7f66b2c348754fb1f8da0839cee9ba",
+            "content": "sha256:1df4cde6c66f5c8102da746a0602cb603eb198610f5a625ee25578910ca97d57",
+            "locator": {
+              "end": 52,
+              "kind": "line_range",
+              "start": 4
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/implementation.md"
+          },
+          "before": {
+            "blob": "3ced1293eb5a72b969424a768fbea7e5a086143b",
+            "content": "sha256:3deb9c9eb9f10a3bd2448ca80a5415fb5e0b383d6b3895aafcb3f3e202be5f25",
+            "locator": {
+              "end": 52,
+              "kind": "line_range",
+              "start": 4
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/implementation.md"
+          },
+          "id": "RLZ-DRT32D"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-SECRT0",
+      "items": [
+        "sha256:ec9b0f4b6429b7e9d4c4b33c1b4c94329c4af97beb28ef710ec9bd5d419243fc"
+      ],
+      "reason": "The canonical implementation and review operations changed and their packaged serving copies were regenerated byte-equal; propagation is unchanged, so the two realizations in the edited operation are re-anchored.",
+      "revision": 3,
+      "subject": "INV-NNQR91"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-SWQF8J",
+      "items": [
+        "sha256:ffc35aa9bedacf6bf8de950910092cf71f6e90e68f7bcff670a92c6467619a7b"
+      ],
+      "reason": "The card now states that a unit's recorded lines move with its source while its own text digest does not, which is what happened to the edited operations' entries.",
+      "sources": [
+        {
+          "blob": "9d14b8713e0f3b3d61bfaee5180ce9ca0cc164ab",
+          "path": "skills/l-01-agent-lifecycles/core/digest-map.json"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/core/digest-map.json"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-V9G5ZY",
+      "items": [
+        "sha256:b6d9d7816448cbc12a502f94f4e346af134350036a27a33b4254a20f7706bc17"
+      ],
+      "reason": "Reviewed for the changed packaged skill copies under mcp/src/agents_remember/package_data/runtime/skills: the overview describes the server and its tools, and generated skill propagation changes none of its statements.",
+      "sources": [
+        {
+          "blob": "10c9e08a87fbab98a3cad51d0aed342c4506bcb6",
+          "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+        },
+        {
+          "blob": "9d14b8713e0f3b3d61bfaee5180ce9ca0cc164ab",
+          "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/core/digest-map.json"
+        },
+        {
+          "blob": "9f9d3c088f7f66b2c348754fb1f8da0839cee9ba",
+          "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/operations/implementation.md"
+        },
+        {
+          "blob": "778d8bf121da98696a3b9a8b382007ae99277f00",
+          "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/operations/review.md"
+        },
+        {
+          "blob": "5ff6fa27f8af03076cef47a1eff305618f6611a9",
+          "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/reference/review-baseline.md"
+        }
+      ],
+      "subject": "onboarding:mcp/overview"
+    },
+    {
+      "considered": [],
+      "disposition": "no_family",
+      "id": "ROW-VGYBSD",
+      "items": [
+        "sha256:b234fe3cd36d850986e8e34fbb49f5311ae2ae56dd32dc00bdc708fd200344d4"
+      ],
+      "reason": "The obligation is a selection or review duty stated in lifecycle stage text; no recorded family promises it jointly with other obligations, and no examined family guarantee covers it.",
+      "revision": 1,
+      "subject": "membership:INV-TCZP9Y"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "10c9e08a87fbab98a3cad51d0aed342c4506bcb6",
+            "content": "sha256:b8c7c756415ad8f589f7ce9f3df4d321e4cd54da524f15fe11c9fba34e7e509c",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+          },
+          "before": {
+            "blob": "7753e090bc36773c67e31607c93cbb49f25d3f42",
+            "content": "sha256:2971af30c0349b6a60981ea8b7a9a77cdb3b50d11b59e6fec7b00657b3ea7e3d",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+          },
+          "id": "RLZ-9FX5WR"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-VVWP7S",
+      "items": [
+        "sha256:bdc60702e75177d8e985474f78303df20d8abfaf1c75002ff64dac99d59ef3fa"
+      ],
+      "reason": "The measurement record gained re-measured worker and reviewer stage sizes and the detail size, inside the existing ceilings; the record's meaning and the guard are unchanged, so its whole-file realization is re-anchored.",
+      "revision": 5,
+      "subject": "INV-Y6GVZ7"
+    }
+  ],
+  "schema": "ar-history/v1"
+}

@@ -119,6 +119,7 @@ Complete V13 operation and per-recipient stage digest literals pin the current a
 
 - The current Reviewer-addressed review paragraph says a clean sync opens no new freeze or round, sends shared-path/test-failure repairs for one look, and returns a freeze whose finding entries are missing without counting a round. The real-operation audience test binds each addressed review block to its stored stage seal. [23]
 
+
 - `V13_OPERATION_SHA256` records the current implementation and review source seals alongside the other operations, and the operation-source test compares actual source bytes with those recorded values. This describes stored assertions, not a new approval or repinning event. [24]
 
 - The current planning text asks the developer once "go, or review first?", discloses planned comparison without a task workspace and explainer-workspace creation on first Explain, and records the intentReview answer. Current coordination says intent-review-open waits for Architect go and is not retried. The audience tests retain separate source and addressed-stage seal tables for those operation texts. [25]

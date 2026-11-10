@@ -295,7 +295,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "0eb41ca41e71fe01629cea89a1b74f46f8dc7f9e",
+            "blob": "5ff6fa27f8af03076cef47a1eff305618f6611a9",
             "content": "sha256:08de0ac08202fc4ad82748e59c6e4c843c0b465114dbed60fd2928e1d8259db7",
             "locator": {
               "end": 26,
@@ -313,12 +313,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7abeac8a7f1762d40a037256fbe0adc0f7f7fe22",
+            "blob": "778d8bf121da98696a3b9a8b382007ae99277f00",
             "content": "sha256:7c0dd38e30c539ade85749ce78f0b16d2e33d8459d20d8bd4680c15a501f4dce",
             "locator": {
-              "end": 84,
+              "end": 88,
               "kind": "line_range",
-              "start": 84
+              "start": 88
             },
             "path": "skills/l-01-agent-lifecycles/operations/review.md"
           },
@@ -326,12 +326,12 @@
         },
         {
           "anchor": {
-            "blob": "7abeac8a7f1762d40a037256fbe0adc0f7f7fe22",
+            "blob": "778d8bf121da98696a3b9a8b382007ae99277f00",
             "content": "sha256:9e9944d63194f324901c323ea44e17de128c1ec91130b5f6db17f985d0bdda27",
             "locator": {
-              "end": 114,
+              "end": 118,
               "kind": "line_range",
-              "start": 112
+              "start": 116
             },
             "path": "skills/l-01-agent-lifecycles/operations/review.md"
           },
@@ -408,12 +408,12 @@
         },
         {
           "anchor": {
-            "blob": "7abeac8a7f1762d40a037256fbe0adc0f7f7fe22",
+            "blob": "778d8bf121da98696a3b9a8b382007ae99277f00",
             "content": "sha256:41f9de9a713c3271a0ae2eb70ba8597c21c2113bd07cedd961f480ab970b0da2",
             "locator": {
-              "end": 91,
+              "end": 95,
               "kind": "line_range",
-              "start": 89
+              "start": 93
             },
             "path": "skills/l-01-agent-lifecycles/operations/review.md"
           },
@@ -460,12 +460,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "7abeac8a7f1762d40a037256fbe0adc0f7f7fe22",
+            "blob": "778d8bf121da98696a3b9a8b382007ae99277f00",
             "content": "sha256:7c0dd38e30c539ade85749ce78f0b16d2e33d8459d20d8bd4680c15a501f4dce",
             "locator": {
-              "end": 84,
+              "end": 88,
               "kind": "line_range",
-              "start": 84
+              "start": 88
             },
             "path": "skills/l-01-agent-lifecycles/operations/review.md"
           },
@@ -473,12 +473,12 @@
         },
         {
           "anchor": {
-            "blob": "7abeac8a7f1762d40a037256fbe0adc0f7f7fe22",
+            "blob": "778d8bf121da98696a3b9a8b382007ae99277f00",
             "content": "sha256:9e9944d63194f324901c323ea44e17de128c1ec91130b5f6db17f985d0bdda27",
             "locator": {
-              "end": 114,
+              "end": 118,
               "kind": "line_range",
-              "start": 112
+              "start": 116
             },
             "path": "skills/l-01-agent-lifecycles/operations/review.md"
           },
@@ -515,12 +515,12 @@
         },
         {
           "anchor": {
-            "blob": "7abeac8a7f1762d40a037256fbe0adc0f7f7fe22",
+            "blob": "778d8bf121da98696a3b9a8b382007ae99277f00",
             "content": "sha256:41f9de9a713c3271a0ae2eb70ba8597c21c2113bd07cedd961f480ab970b0da2",
             "locator": {
-              "end": 91,
+              "end": 95,
               "kind": "line_range",
-              "start": 89
+              "start": 93
             },
             "path": "skills/l-01-agent-lifecycles/operations/review.md"
           },
@@ -557,12 +557,12 @@
         },
         {
           "anchor": {
-            "blob": "7abeac8a7f1762d40a037256fbe0adc0f7f7fe22",
+            "blob": "778d8bf121da98696a3b9a8b382007ae99277f00",
             "content": "sha256:5096aee15573cde31b4c8216091887fae42bcf581cb8508a366538b8f7a6529a",
             "locator": {
-              "end": 67,
+              "end": 71,
               "kind": "line_range",
-              "start": 64
+              "start": 68
             },
             "path": "skills/l-01-agent-lifecycles/operations/review.md"
           },
@@ -570,12 +570,12 @@
         },
         {
           "anchor": {
-            "blob": "7abeac8a7f1762d40a037256fbe0adc0f7f7fe22",
+            "blob": "778d8bf121da98696a3b9a8b382007ae99277f00",
             "content": "sha256:134469903097cc2218a6667bc9d2bd9d79a70b88044c7ad55c6d08bb4ead9a75",
             "locator": {
-              "end": 116,
+              "end": 120,
               "kind": "line_range",
-              "start": 116
+              "start": 120
             },
             "path": "skills/l-01-agent-lifecycles/operations/review.md"
           },

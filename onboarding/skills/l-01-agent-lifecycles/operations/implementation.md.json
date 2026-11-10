@@ -3,8 +3,8 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "3ced1293eb5a72b969424a768fbea7e5a086143b",
-        "content": "sha256:3deb9c9eb9f10a3bd2448ca80a5415fb5e0b383d6b3895aafcb3f3e202be5f25",
+        "blob": "9f9d3c088f7f66b2c348754fb1f8da0839cee9ba",
+        "content": "sha256:1df4cde6c66f5c8102da746a0602cb603eb198610f5a625ee25578910ca97d57",
         "locator": {
           "end": 52,
           "kind": "line_range",
@@ -22,12 +22,31 @@
     },
     {
       "anchor": {
-        "blob": "3ced1293eb5a72b969424a768fbea7e5a086143b",
+        "blob": "9f9d3c088f7f66b2c348754fb1f8da0839cee9ba",
+        "content": "sha256:5bca58348a9cedbcb2afa0005c0f48deeef34ae14c2e6eca830a36c509d470a5",
+        "locator": {
+          "end": 20,
+          "kind": "line_range",
+          "start": 20
+        }
+      },
+      "id": "RLZ-27TK2D",
+      "invariant": "INV-972YFR",
+      "origin": {
+        "handoffEntry": "MIK-R218.1@v1",
+        "leaf": "260928-MIK-L205"
+      },
+      "rationale": "The implementation operation's final-candidate step is the always-loaded build stage where the Worker selects, records and runs the frozen focused tests.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "9f9d3c088f7f66b2c348754fb1f8da0839cee9ba",
         "content": "sha256:5f96765bd480015dd201e0e99308c06a69fe32f205e55b2f25ffba81f75d8259",
         "locator": {
-          "end": 85,
+          "end": 87,
           "kind": "line_range",
-          "start": 78
+          "start": 80
         }
       },
       "id": "RLZ-3QTBC5",
@@ -41,12 +60,12 @@
     },
     {
       "anchor": {
-        "blob": "3ced1293eb5a72b969424a768fbea7e5a086143b",
+        "blob": "9f9d3c088f7f66b2c348754fb1f8da0839cee9ba",
         "content": "sha256:5120ba3868a8a19481ec6a7015246af0f409f915154041909761e3b6e9f1f2e1",
         "locator": {
-          "end": 52,
+          "end": 54,
           "kind": "line_range",
-          "start": 43
+          "start": 45
         }
       },
       "id": "RLZ-6P4D1B",
@@ -60,8 +79,8 @@
     },
     {
       "anchor": {
-        "blob": "3ced1293eb5a72b969424a768fbea7e5a086143b",
-        "content": "sha256:a4ab1088ea6a45a3c900a15960d864e2c59386af7c01f1f6dc77d16b2cadb596",
+        "blob": "9f9d3c088f7f66b2c348754fb1f8da0839cee9ba",
+        "content": "sha256:94c3d3c4628a450586a9522c436ee1c1f1e4478ee9b1e6af0feb8cb73582caa8",
         "locator": {
           "kind": "file"
         }
@@ -77,12 +96,12 @@
     },
     {
       "anchor": {
-        "blob": "3ced1293eb5a72b969424a768fbea7e5a086143b",
+        "blob": "9f9d3c088f7f66b2c348754fb1f8da0839cee9ba",
         "content": "sha256:340b75c0f75cd25023fcd41e73c89607ce9b14d0f2d8aad9c385e2d1bc4a7c2d",
         "locator": {
-          "end": 85,
+          "end": 87,
           "kind": "line_range",
-          "start": 83
+          "start": 85
         }
       },
       "id": "RLZ-7KXE63",
@@ -96,8 +115,27 @@
     },
     {
       "anchor": {
-        "blob": "3ced1293eb5a72b969424a768fbea7e5a086143b",
-        "content": "sha256:3deb9c9eb9f10a3bd2448ca80a5415fb5e0b383d6b3895aafcb3f3e202be5f25",
+        "blob": "9f9d3c088f7f66b2c348754fb1f8da0839cee9ba",
+        "content": "sha256:5bca58348a9cedbcb2afa0005c0f48deeef34ae14c2e6eca830a36c509d470a5",
+        "locator": {
+          "end": 20,
+          "kind": "line_range",
+          "start": 20
+        }
+      },
+      "id": "RLZ-CCM727",
+      "invariant": "INV-YGXGEC",
+      "origin": {
+        "handoffEntry": "MIK-R218.3@v1",
+        "leaf": "260928-MIK-L205"
+      },
+      "rationale": "The implementation operation states that a repair follows the same search rule, binding the Worker's repair round to the freeze rule.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "9f9d3c088f7f66b2c348754fb1f8da0839cee9ba",
+        "content": "sha256:1df4cde6c66f5c8102da746a0602cb603eb198610f5a625ee25578910ca97d57",
         "locator": {
           "end": 52,
           "kind": "line_range",
@@ -120,12 +158,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3ced1293eb5a72b969424a768fbea7e5a086143b",
+            "blob": "9f9d3c088f7f66b2c348754fb1f8da0839cee9ba",
             "content": "sha256:a214d72d4436bafca4d0b439d16882af5e8466e5a38d4c4674dbd4c8f1060d2e",
             "locator": {
-              "end": 48,
+              "end": 50,
               "kind": "line_range",
-              "start": 45
+              "start": 47
             }
           },
           "kind": "code"
@@ -163,12 +201,12 @@
         },
         {
           "anchor": {
-            "blob": "3ced1293eb5a72b969424a768fbea7e5a086143b",
+            "blob": "9f9d3c088f7f66b2c348754fb1f8da0839cee9ba",
             "content": "sha256:89a01d31fa37bc62f88cc1d3268a51f2c417ab0e3ac7b0caeee74fd6cfaaa09e",
             "locator": {
-              "end": 85,
+              "end": 87,
               "kind": "line_range",
-              "start": 85
+              "start": 87
             }
           },
           "kind": "code"
@@ -180,12 +218,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3ced1293eb5a72b969424a768fbea7e5a086143b",
+            "blob": "9f9d3c088f7f66b2c348754fb1f8da0839cee9ba",
             "content": "sha256:9a55e35d84457acf3218843c28532fefed39979cfc1cd497185d7de91aa612c2",
             "locator": {
-              "end": 74,
+              "end": 76,
               "kind": "line_range",
-              "start": 70
+              "start": 72
             }
           },
           "kind": "code"
@@ -223,12 +261,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3ced1293eb5a72b969424a768fbea7e5a086143b",
-            "content": "sha256:a4ab1088ea6a45a3c900a15960d864e2c59386af7c01f1f6dc77d16b2cadb596",
+            "blob": "9f9d3c088f7f66b2c348754fb1f8da0839cee9ba",
+            "content": "sha256:94c3d3c4628a450586a9522c436ee1c1f1e4478ee9b1e6af0feb8cb73582caa8",
             "locator": {
-              "end": 93,
-              "kind": "line_range",
-              "start": 1
+              "kind": "file"
             }
           },
           "kind": "code"
@@ -240,7 +276,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3ced1293eb5a72b969424a768fbea7e5a086143b",
+            "blob": "9f9d3c088f7f66b2c348754fb1f8da0839cee9ba",
             "content": "sha256:85f4f5278f612f3e6560e5e636d92ad2d81efd7c631ef89bcb2e3243152b3d93",
             "locator": {
               "end": 1,
@@ -252,12 +288,12 @@
         },
         {
           "anchor": {
-            "blob": "3ced1293eb5a72b969424a768fbea7e5a086143b",
+            "blob": "9f9d3c088f7f66b2c348754fb1f8da0839cee9ba",
             "content": "sha256:81a43bbfdc8bfca71585cedebd0b3dcac4a105ad3361ee3f4901529ea9f6de96",
             "locator": {
-              "end": 85,
+              "end": 87,
               "kind": "line_range",
-              "start": 66
+              "start": 68
             }
           },
           "kind": "code"
@@ -282,12 +318,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3ced1293eb5a72b969424a768fbea7e5a086143b",
+            "blob": "9f9d3c088f7f66b2c348754fb1f8da0839cee9ba",
             "content": "sha256:c50264ab8ae886b8cc191cf9bc35799880ea1f228aebd4d81863bcba8cbaf409",
             "locator": {
-              "end": 81,
+              "end": 83,
               "kind": "line_range",
-              "start": 66
+              "start": 68
             }
           },
           "kind": "code"
@@ -299,24 +335,41 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3ced1293eb5a72b969424a768fbea7e5a086143b",
+            "blob": "9f9d3c088f7f66b2c348754fb1f8da0839cee9ba",
             "content": "sha256:8dde060e2db755c2555199a3c33fa773d79ab1374d30820c374c60d9e4b6356c",
             "locator": {
-              "end": 48,
+              "end": 50,
               "kind": "line_range",
-              "start": 39
+              "start": 41
             }
           },
           "kind": "code"
         },
         {
           "anchor": {
-            "blob": "3ced1293eb5a72b969424a768fbea7e5a086143b",
+            "blob": "9f9d3c088f7f66b2c348754fb1f8da0839cee9ba",
             "content": "sha256:2a67283b79019c7469fb5a39a5e4dc0e156b2a87199c7b96b29c6ab664a5ec26",
             "locator": {
-              "end": 68,
+              "end": 70,
               "kind": "line_range",
-              "start": 68
+              "start": 70
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "A freeze's focused tests are chosen by a recorded search of the tracked test files for every touched path, name and identifier, and a repair repeats it.\n\nAnchor: \"Choose a freeze's focused tests by searching\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9f9d3c088f7f66b2c348754fb1f8da0839cee9ba",
+            "content": "sha256:5bca58348a9cedbcb2afa0005c0f48deeef34ae14c2e6eca830a36c509d470a5",
+            "locator": {
+              "end": 20,
+              "kind": "line_range",
+              "start": 20
             }
           },
           "kind": "code"

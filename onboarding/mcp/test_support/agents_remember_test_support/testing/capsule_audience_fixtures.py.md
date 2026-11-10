@@ -19,14 +19,14 @@ The module defines no functions. Its tables hold:
 - role pointer qualifications (the section anchor a role's action must target);
 - rule clauses inlined into owning sections, short rules delivered in the shared digest with their recipients, removed short-rule actions, and grouped detail clauses whose one read covers several actions.
 
-The expected recipients and pins come from a reviewed source snapshot; tests do not derive them from current audience markers. The stage and operation pins are the end of a chain: `capsule_audience_v13_fixtures.py` first restores current bytes to these pinned bytes before comparison.
+The expected recipients and pins come from a reviewed source snapshot; tests do not derive them from current audience markers. The stage and operation pins are the end of a chain: `capsule_audience_v13_fixtures.py` first restores current bytes to these pinned bytes before comparison. A pin or grouped-detail clause moves only with the bytes it pins or covers, so a source that changes without its pin renewed fails the audience tests.
 
 ## Evidence
 
 - Role pointer actions are pairs of reference path and action prefix. [1]
 
-- Operation sources and per-role compiled stages carry SHA-256 pins. [2]
-
 - Short rules delivered in the shared digest name their owner source, clause and recipient roles. [3]
+
+- `D656_OPERATION_SHA256`, and the stage table beside it, carry SHA-256 pins of each operation source and each per-role compiled stage. [2]
 - A grouped detail read names several actions and keeps their owner clauses. [4]
 - The module is data only; consumer tests own compilation and assertions. [5]

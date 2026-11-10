@@ -313,12 +313,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3ced1293eb5a72b969424a768fbea7e5a086143b",
+            "blob": "9f9d3c088f7f66b2c348754fb1f8da0839cee9ba",
             "content": "sha256:a214d72d4436bafca4d0b439d16882af5e8466e5a38d4c4674dbd4c8f1060d2e",
             "locator": {
-              "end": 48,
+              "end": 50,
               "kind": "line_range",
-              "start": 45
+              "start": 47
             },
             "path": "skills/l-01-agent-lifecycles/operations/implementation.md"
           },
@@ -430,12 +430,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3ced1293eb5a72b969424a768fbea7e5a086143b",
+            "blob": "9f9d3c088f7f66b2c348754fb1f8da0839cee9ba",
             "content": "sha256:2a67283b79019c7469fb5a39a5e4dc0e156b2a87199c7b96b29c6ab664a5ec26",
             "locator": {
-              "end": 68,
+              "end": 70,
               "kind": "line_range",
-              "start": 68
+              "start": 70
             },
             "path": "skills/l-01-agent-lifecycles/operations/implementation.md"
           },
@@ -566,12 +566,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3ced1293eb5a72b969424a768fbea7e5a086143b",
+            "blob": "9f9d3c088f7f66b2c348754fb1f8da0839cee9ba",
             "content": "sha256:a214d72d4436bafca4d0b439d16882af5e8466e5a38d4c4674dbd4c8f1060d2e",
             "locator": {
-              "end": 48,
+              "end": 50,
               "kind": "line_range",
-              "start": 45
+              "start": 47
             },
             "path": "skills/l-01-agent-lifecycles/operations/implementation.md"
           },
